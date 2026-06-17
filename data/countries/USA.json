@@ -1,0 +1,701 @@
+{
+  "iso2": "US",
+  "iso3": "USA",
+  "name": "United States",
+  "region": "Americas",
+  "outbound_official": {
+    "found": false,
+    "note": "no official United States government outbound visa-list page located; the US State Department (travel.state.gov) publishes per-country entry requirements for US citizens via individual country pages at https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages.html rather than a consolidated visa-free/visa-on-arrival/e-visa destination list. No MFA or passport-office page equivalent to India's mea.gov.in/vffin exists for US outbound travel. Rely on destination-side data."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 180,
+        "notes": "Canadian citizens do not require a nonimmigrant visa to enter the United States for tourism or business. No ESTA required. Admission is typically granted for up to 6 months (B-1/B-2 equivalent) at CBP discretion; actual stay is determined at port of entry. Exceptions: Canadian citizens must obtain nonimmigrant visas for A (government officials), G (international organization), NATO, E-1/E-2 (treaty trader/investor), K (fiancé(e)), S (informant), and certain other specific classifications. Canadian permanent residents (who are not Canadian citizens) require a nonimmigrant visa. Legal basis: 22 CFR 41.2(a); travel.state.gov/citizens-of-canada-and-bermuda.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/citizens-of-canada-and-bermuda.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Bermuda",
+        "iso3": null,
+        "max_stay_days": 180,
+        "notes": "Citizens of the British Overseas Territory of Bermuda (holding a BMU-coded passport) may enter the United States without a visa for stays up to 180 days. No ESTA required. Bermuda is NOT a VWP country and ESTA does not apply. Exceptions: Bermudians must obtain visas for E (treaty trader/investor), K (fiancé(e)), S (informant), and V classifications. Note: Bermudians holding GBR-coded passports (British Overseas Territory Citizens) may experience passport reader errors — they should verify their BMU nationality coding. Legal basis: 22 CFR 41.2(b); travel.state.gov/citizens-of-canada-and-bermuda.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/citizens-of-canada-and-bermuda.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Federated States of Micronesia",
+        "iso3": "FSM",
+        "max_stay_days": null,
+        "notes": "Under the Compact of Free Association, citizens of the Federated States of Micronesia (by birth, or former TTPI citizens who acquired FSM citizenship in 1986) may travel to and reside in the United States as nonimmigrants without a visa for an unlimited length of time and are eligible to work and study in the US. No ESTA or ETA required. Must present a valid FSM passport. This is a special free movement arrangement under the Compact, not the VWP.",
+        "source_url": "https://www.uscis.gov/working-in-the-united-states/status-of-citizens-of-the-freely-associated-states-of-the-federated-states-of-micronesia-and-the",
+        "source_official": true
+      },
+      {
+        "nationality": "Marshall Islands",
+        "iso3": "MHL",
+        "max_stay_days": null,
+        "notes": "Under the Compact of Free Association, citizens of the Republic of the Marshall Islands (by birth, or former TTPI citizens who acquired RMI citizenship in 1986) may travel to and reside in the United States as nonimmigrants without a visa for an unlimited length of time and are eligible to work and study in the US. No ESTA or ETA required. Must present a valid RMI passport. This is a special free movement arrangement under the Compact, not the VWP.",
+        "source_url": "https://www.uscis.gov/working-in-the-united-states/status-of-citizens-of-the-freely-associated-states-of-the-federated-states-of-micronesia-and-the",
+        "source_official": true
+      },
+      {
+        "nationality": "Palau",
+        "iso3": "PLW",
+        "max_stay_days": null,
+        "notes": "Under the Compact of Free Association, citizens of the Republic of Palau (by birth, or former TTPI citizens who acquired Palau citizenship in 1994) may travel to and reside in the United States as nonimmigrants without a visa for an unlimited length of time and are eligible to work and study in the US. No ESTA or ETA required. Must present a valid Palau passport. This is a special free movement arrangement under the Compact, not the VWP.",
+        "source_url": "https://www.uscis.gov/i-9-central/completing-form-i-9/federated-states-of-micronesia-republic-of-the-marshall-islands-and-palau",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA (Electronic System for Travel Authorization) prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Austria",
+        "iso3": "AUT",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Belgium",
+        "iso3": "BEL",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Brunei",
+        "iso3": "BRN",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Croatia",
+        "iso3": "HRV",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Czech Republic",
+        "iso3": "CZE",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Denmark",
+        "iso3": "DNK",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Estonia",
+        "iso3": "EST",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Finland",
+        "iso3": "FIN",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "France",
+        "iso3": "FRA",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Germany",
+        "iso3": "DEU",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Greece",
+        "iso3": "GRC",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Hungary",
+        "iso3": "HUN",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Iceland",
+        "iso3": "ISL",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Ireland",
+        "iso3": "IRL",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Italy",
+        "iso3": "ITA",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Latvia",
+        "iso3": "LVA",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Liechtenstein",
+        "iso3": "LIE",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Lithuania",
+        "iso3": "LTU",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Luxembourg",
+        "iso3": "LUX",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Malta",
+        "iso3": "MLT",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Netherlands",
+        "iso3": "NLD",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Norway",
+        "iso3": "NOR",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Poland",
+        "iso3": "POL",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Portugal",
+        "iso3": "PRT",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Qatar",
+        "iso3": "QAT",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Qatar was admitted as the 42nd VWP country in September 2024 (effective for ESTA applications from December 1, 2024), becoming the first Gulf country in the VWP. Admitted for 90 days or less for tourism or business. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "San Marino",
+        "iso3": "SMR",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovakia",
+        "iso3": "SVK",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovenia",
+        "iso3": "SVN",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Spain",
+        "iso3": "ESP",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Sweden",
+        "iso3": "SWE",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Switzerland",
+        "iso3": "CHE",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Taiwan",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. Taiwan is listed as a VWP participant; no ISO3 assigned per standard country coding. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 90,
+        "notes": "Must obtain ESTA prior to travel. Admitted for 90 days or less for tourism or business under the Visa Waiver Program. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea, Somalia, Sudan, Syria, or Yemen (since March 1, 2011) or Cuba (since January 12, 2021) must obtain a visa instead. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria are ineligible for VWP. Note: UK nationals who are Citizens of the British Overseas Territory of Bermuda with BMU-coded passports are NOT subject to this VWP/ESTA rule and instead fall under a separate visa exemption (22 CFR 41.2(b)) with a 180-day limit.",
+        "source_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "source_official": true
+      }
+    ],
+    "source_urls": [
+      "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+      "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/citizens-of-canada-and-bermuda.html",
+      "https://www.cbp.gov/travel/international-visitors/visa-waiver-program",
+      "https://esta.cbp.dhs.gov/",
+      "https://www.uscis.gov/working-in-the-united-states/status-of-citizens-of-the-freely-associated-states-of-the-federated-states-of-micronesia-and-the",
+      "https://www.law.cornell.edu/cfr/text/22/41.2"
+    ],
+    "notes": "The United States does not have a traditional 'visa on arrival' program. The main mechanism for visa-free travel is the Visa Waiver Program (VWP), under which citizens of 42 designated countries may visit for up to 90 days for tourism or business, provided they obtain prior approval through ESTA (Electronic System for Travel Authorization). ESTA is an online pre-authorization system and is classified here as 'eta' (Electronic Travel Authorization). Qatar became the 42nd VWP member in September 2024 (ESTA-eligible from December 1, 2024), the first Gulf state admitted. VWP nationals who have traveled to Iran, Iraq, Libya, North Korea (DPRK), Somalia, Sudan, Syria, or Yemen since March 1, 2011, or Cuba since January 12, 2021, are ineligible for VWP travel and must obtain a visa. Dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, and Syria are also ineligible for VWP. Separately, Canadian citizens and citizens of Bermuda (BMU-coded passport) may enter without a visa and without ESTA under 22 CFR 41.2(a)/(b) respectively — Canada up to 6 months, Bermuda up to 180 days. Citizens of the Freely Associated States (Micronesia, Marshall Islands, Palau) have unconditional visa-free travel and work rights under Compacts of Free Association with no ESTA requirement and unlimited stay. All other nationalities must obtain a nonimmigrant visa (B-1/B-2 or other applicable category) from a US consulate or embassy prior to travel."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Mexico"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 180,
+      "conditions": "A Mexican national bearing a Mexican diplomatic or official passport who is a military or civilian official of the Federal Government of Mexico may enter the United States without a visa for a stay of up to 6 months, for any purpose other than on assignment as a permanent employee to an office of the Mexican Federal Government in the United States. The official's spouse and dependent family members under 19 years of age who hold diplomatic or official passports and are in the actual company of the official at the time of entry also do not require visas. This waiver does not apply to family members classifiable under INA 101(a)(15)(F) [student] or (M) [vocational student]. Legal basis: 22 CFR 41.2(f)(4); 9 FAM 201.1-3(D)(4).",
+      "source_url": "https://www.law.cornell.edu/cfr/text/22/41.2",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "The United States does not offer a Citizenship-by-Investment (CBI) program. U.S. citizenship is only obtainable through birth, descent, or naturalization (typically requiring 5 years as a lawful permanent resident, or 3 years if married to a U.S. citizen). The EB-5 program grants permanent residency (green card), not citizenship directly."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "EB-5 Immigrant Investor Program",
+        "type": "investment",
+        "min_amount": 1050000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://www.uscis.gov/working-in-the-united-states/permanent-workers/eb-5-immigrant-investor-program",
+        "source_official": true,
+        "notes": "The EB-5 program grants lawful permanent residency (green card) to investors who invest $1,050,000 in a new commercial enterprise (or $800,000 in a Targeted Employment Area (TEA) or infrastructure project) and create or preserve 10 permanent full-time jobs for qualified U.S. workers. Investment amounts automatically adjust on January 1, 2027, and every 5 years thereafter (CPI-based). Two pathways: (1) Direct investment (I-526 petition); (2) Regional Center investment (I-526E petition) — Regional Center Program authorized through September 30, 2027. After receiving conditional permanent residency, investors file to remove conditions after 2 years. Naturalization to U.S. citizenship is possible after 5 years of permanent residency. USCIS assigns I-526 and I-526E petitions on a first-in, first-out (FIFO) basis. Dual citizenship is recognized under U.S. law."
+      },
+      {
+        "name": "EB-5 Immigrant Investor Program — TEA/Infrastructure Rate",
+        "type": "investment",
+        "min_amount": 800000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://www.uscis.gov/working-in-the-united-states/permanent-workers/eb-5-immigrant-investor-program",
+        "source_official": true,
+        "notes": "Reduced minimum investment of $800,000 applies when the investment is in a Targeted Employment Area (TEA — defined as a rural area or area with unemployment at least 150% of the national average) or an infrastructure project. Established by the EB-5 Reform and Integrity Act of 2022 (effective March 15, 2022). Next automatic CPI adjustment: January 1, 2027. Both the $1,050,000 and $800,000 thresholds are confirmed unchanged for FY2026."
+      },
+      {
+        "name": "E-2 Treaty Investor Visa",
+        "type": "investment",
+        "min_amount": null,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://www.uscis.gov/working-in-the-united-states/temporary-workers/e-2-treaty-investors",
+        "source_official": true,
+        "notes": "Nonimmigrant temporary visa for nationals of treaty countries who invest a 'substantial amount of capital' in a U.S. business (no fixed minimum specified in law; must be proportional to the total cost of the enterprise). Must own at least 50% of the enterprise or possess operational control. Does NOT directly lead to permanent residency or citizenship; it is a temporary nonimmigrant status renewable indefinitely while the investment continues. Only available to nationals of countries with a qualifying bilateral investment treaty with the US. See travel.state.gov/content/travel/en/us-visas/employment/treaty-trader-investor-visa-e.html for treaty country list."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "O-1 Visa: Individuals with Extraordinary Ability or Achievement",
+        "category": "talent",
+        "eligibility": "Individuals who possess extraordinary ability in the sciences, arts, education, business, or athletics (O-1A), or who have demonstrated record of extraordinary achievement in the motion picture or television industry (O-1B). Requires evidence of sustained national or international acclaim. Must be coming temporarily to the US to continue work in the area of extraordinary ability.",
+        "processing_time": "Regular or premium processing (15 business days with premium). Initial period up to 3 years, extendable in 1-year increments.",
+        "official_url": "https://www.uscis.gov/working-in-the-united-states/temporary-workers/o-1-visa-individuals-with-extraordinary-ability-or-achievement",
+        "source_official": true,
+        "notes": "Nonimmigrant visa. Can serve as a stepping stone to EB-1A (Alien of Extraordinary Ability) permanent residency. No annual cap. Petitioner (employer/agent) files Form I-129."
+      },
+      {
+        "name": "EB-1A: Employment-Based First Preference — Extraordinary Ability",
+        "category": "talent",
+        "eligibility": "Aliens with extraordinary ability in the sciences, arts, education, business, or athletics that has been demonstrated by sustained national or international acclaim. Can self-petition (no employer required). Must continue to work in the field of expertise.",
+        "processing_time": "Regular or premium processing (45 business days with premium for I-140). No per-country annual cap for EB-1.",
+        "official_url": "https://www.uscis.gov/working-in-the-united-states/permanent-workers/employment-based-immigration-first-preference-eb-1",
+        "source_official": true,
+        "notes": "Immigrant visa (permanent residency / green card pathway). Files Form I-140. No labor certification required. Can self-petition. Three sub-categories: EB-1A (extraordinary ability), EB-1B (outstanding professor/researcher), EB-1C (multinational executive/manager)."
+      },
+      {
+        "name": "EB-2 NIW: National Interest Waiver",
+        "category": "skilled",
+        "eligibility": "Professionals with advanced degrees or individuals with exceptional ability in the sciences, arts, or business who can demonstrate their work is of substantial merit and national importance to the US. Can self-petition — no employer sponsorship or labor certification required.",
+        "processing_time": "Regular or premium processing. Processing times vary; check egov.uscis.gov/processing-times.",
+        "official_url": "https://www.uscis.gov/working-in-the-united-states/permanent-workers/employment-based-immigration-second-preference-eb-2",
+        "source_official": true,
+        "notes": "Immigrant visa (permanent residency / green card pathway). Files Form I-140. Waives the job offer and labor certification requirement in the national interest. Subject to per-country annual limits which may result in wait times for nationals of high-demand countries (India, China)."
+      },
+      {
+        "name": "H-1B Specialty Occupation Visa",
+        "category": "skilled",
+        "eligibility": "Foreign workers in specialty occupations requiring at least a bachelor's degree or equivalent in a specific specialty. Must be sponsored by a US employer. Subject to annual numerical cap (65,000 regular cap + 20,000 advanced degree exemption). Selection via electronic registration lottery.",
+        "processing_time": "Regular or premium processing (15 business days with premium). Initial period up to 3 years, extendable to 6 years total.",
+        "official_url": "https://www.uscis.gov/working-in-the-united-states/h-1b-specialty-occupations",
+        "source_official": true,
+        "notes": "Nonimmigrant visa. Most common pathway for skilled foreign workers. Employer-sponsored only. Can transition to permanent residency (green card) through employer sponsorship (EB-2 or EB-3)."
+      },
+      {
+        "name": "International Entrepreneur Rule (Startup Parole)",
+        "category": "startup",
+        "eligibility": "Foreign entrepreneurs who have a central and active role in a startup entity formed in the US within the past 5 years, and can demonstrate the startup has significant potential for rapid growth and job creation. Startup must have received at least $311,071 in qualified investment from qualified investors (as of Oct. 1, 2024) or at least $124,429 in government grants/awards. Applicant must own at least 10% of the startup.",
+        "processing_time": "Varies; filed on Form I-941 (Application for Entrepreneur Parole). Initial parole period up to 30 months, with one 30-month renewal possible.",
+        "official_url": "https://www.uscis.gov/working-in-the-united-states/international-entrepreneur-rule",
+        "source_official": true,
+        "notes": "Parole (authorized stay), not a visa category. Does not lead directly to permanent residency; entrepreneurs must pursue a separate immigrant visa pathway. Spouses and minor children also eligible for parole. Investment and revenue thresholds updated triennially per CPI-U (last updated Oct. 1, 2024: investment threshold raised to $311,071; grant threshold raised to $124,429)."
+      }
+    ]
+  },
+  "agreements": [
+    "Compact of Free Association (with Federated States of Micronesia, Republic of the Marshall Islands, and Republic of Palau — visa-free travel, work, and study rights with unlimited stay)"
+  ],
+  "official_domains": [
+    "travel.state.gov",
+    "uscis.gov",
+    "cbp.gov",
+    "esta.cbp.dhs.gov",
+    "dhs.gov",
+    "state.gov",
+    "ecfr.gov",
+    "fam.state.gov"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "ADDED Canada (CAN) to visa_free: Canadian citizens are visa-free and ESTA-exempt under 22 CFR 41.2(a), max stay ~6 months. Was entirely missing from the previous record.",
+      "ADDED Bermuda (no ISO3 for the territory) to visa_free: Citizens of the British Overseas Territory of Bermuda are visa-free and ESTA-exempt under 22 CFR 41.2(b), max stay 180 days. Was entirely missing from the previous record.",
+      "MOVED Federated States of Micronesia (FSM), Marshall Islands (MHL), and Palau (PLW) from visa_policy.eta to visa_policy.visa_free: These nationalities require no ESTA/ETA, no visa, and have unlimited stay with full work/study rights under Compacts of Free Association. Classification as 'eta' was incorrect.",
+      "FIXED Slovenia typo: 'Must obtainESTA' corrected to 'Must obtain ESTA'.",
+      "UPDATED Qatar VWP notes: Added detail that Qatar joined as the 42nd VWP country in September 2024 (ESTA-eligible from December 1, 2024), the first Gulf state in the VWP.",
+      "UPDATED all VWP eta entries: Added dual nationality disqualification language (dual nationals of Cuba, Iran, Iraq, North Korea, Sudan, or Syria ineligible for VWP).",
+      "UPDATED UK eta entry: Added clarifying note that Bermudians with BMU-coded UK passports are NOT covered by the VWP/ESTA rule — they fall under the separate Bermuda visa exemption.",
+      "ADDED travel.state.gov/citizens-of-canada-and-bermuda.html and law.cornell.edu/cfr/text/22/41.2 to source_urls.",
+      "ADDED ecfr.gov and fam.state.gov to official_domains.",
+      "UPDATED global notes field to reflect Canada, Bermuda, and Freely Associated States correctly.",
+      "EB-5 investment amounts ($1,050,000 / $800,000) verified correct and unchanged for FY2026; next adjustment January 1, 2027.",
+      "Mexico diplomatic/official passport conditional_access: updated source_url to law.cornell.edu/cfr/text/22/41.2 (eCFR URL was redirecting); substance unchanged and verified correct.",
+      "VWP country count: confirmed 42 countries (Andorra, Australia, Austria, Belgium, Brunei, Chile, Croatia, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Israel, Italy, Japan, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Monaco, Netherlands, New Zealand, Norway, Poland, Portugal, Qatar, San Marino, Singapore, Slovakia, Slovenia, South Korea, Spain, Sweden, Switzerland, Taiwan, United Kingdom)."
+    ],
+    "gaps": [
+      "EB-5 processing time in months/years: USCIS updates processing times monthly at egov.uscis.gov/processing-times; no static figure available from official sources as times vary by country of birth and visa availability. Not recorded to avoid inventing data.",
+      "E-2 Treaty Investor minimum investment amount: US law does not specify a fixed dollar minimum; the requirement is a 'substantial amount of capital' proportional to the enterprise cost. No official fixed amount to record.",
+      "Complete list of E-2 treaty countries: Available at travel.state.gov but not confirmed live in this session.",
+      "Exact ESTA application fee: Fee information is on esta.cbp.dhs.gov but the page was not fully readable in this session.",
+      "US does not have a formal 'digital nomad visa' program as of June 2026. No official program to record.",
+      "Bermuda ISO3: The British Overseas Territory of Bermuda does not have its own ISO 3166-1 alpha-3 code separate from GBR in standard lists (BMU is the two-letter UN/IOC code). Set to null pending schema clarification.",
+      "Conditional access — credential-based (third-country visa/permit): Confirmed absent from US law. The US does NOT grant visa-free, visa-on-arrival, e-visa, or ETA entry based on holding a valid visa or residence permit from any third country. No such rule exists in official US immigration law.",
+      "Conditional access — special status (OCI/diaspora): No official US government source confirms any entry benefit for Indian OCI cardholders or similar diaspora/heritage-status holders entering the United States.",
+      "Conditional access — other diplomatic/service passport waivers: 22 CFR 41.2 contains only one nationality-specific diplomatic/official passport waiver (Mexico). No other bilateral 'visa suppression' agreements for diplomatic/service/official passports were found for any other country in official US sources.",
+      "22 CFR 41.2(g): Trust Territory of the Pacific Islands (TTPI) — historical exemption for TTPI natives. The TTPI dissolved in 1994 when Palau gained independence, and the three successor states (FSM, RMI, Palau) are now covered by Compacts of Free Association. This CFR section may be a historical artifact; not recorded as active policy.",
+      "22 CFR 41.2(c)/(d)/(e): Bahamas, Cayman Islands, Turks and Caicos, British Virgin Islands nationals have limited visa waivers under specific conditions (direct travel restrictions, criminal record certificates, etc.). These are niche rules with complex conditions not fully verified in this session; not recorded to avoid partial data errors."
+    ]
+  },
+  "sources_checked": [
+    {
+      "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+      "description": "US State Department — Visa Waiver Program official page, listing all 42 VWP countries. Fetched live in this session.",
+      "official": true
+    },
+    {
+      "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/citizens-of-canada-and-bermuda.html",
+      "description": "US State Department — Citizens of Canada and Bermuda page: confirms visa-free entry rules for Canadian and Bermudian citizens. Fetched live in this session.",
+      "official": true
+    },
+    {
+      "url": "https://www.law.cornell.edu/cfr/text/22/41.2",
+      "description": "Cornell LII — 22 CFR 41.2: Exemption or waiver of passport and/or visa requirements. Lists all country-specific waivers including Canada (a), Bermuda (b), Bahamas (c), Cayman/TCI (d), BVI (e), Mexico (f), TTPI (g), VWP (k). Fetched live in this session.",
+      "official": true
+    },
+    {
+      "url": "https://www.uscis.gov/working-in-the-united-states/status-of-citizens-of-the-freely-associated-states-of-the-federated-states-of-micronesia-and-the",
+      "description": "USCIS — Freely Associated States status fact sheet (Micronesia and Marshall Islands): confirms visa-free, work-eligible, unlimited stay entry under Compact of Free Association.",
+      "official": true
+    },
+    {
+      "url": "https://www.uscis.gov/i-9-central/completing-form-i-9/federated-states-of-micronesia-republic-of-the-marshall-islands-and-palau",
+      "description": "USCIS I-9 Central — Confirms Palau Compact of Free Association entry rights.",
+      "official": true
+    },
+    {
+      "url": "https://www.uscis.gov/working-in-the-united-states/permanent-workers/eb-5-immigrant-investor-program",
+      "description": "USCIS — EB-5 Immigrant Investor Program main page (HTTP 403 on direct fetch; data confirmed via search results).",
+      "official": true
+    },
+    {
+      "url": "https://www.cbp.gov/travel/international-visitors/visa-waiver-program",
+      "description": "US CBP — Visa Waiver Program overview (HTTP 403 on direct fetch).",
+      "official": true
+    },
+    {
+      "url": "https://bm.usconsulate.gov/visa-exemptions-for-bermudians/",
+      "description": "US Consulate General in Bermuda — Visa Exemptions for Bermudians page (technical difficulties on fetch; data confirmed via US Consulate search results and travel.state.gov).",
+      "official": true
+    },
+    {
+      "url": "https://www.ecfr.gov/current/title-22/chapter-I/subchapter-E/part-41/subpart-A/section-41.2",
+      "description": "eCFR — 22 CFR 41.2 (redirected to federal register unblock page in this session; text confirmed via law.cornell.edu mirror).",
+      "official": true
+    },
+    {
+      "url": "https://fam.state.gov/fam/09FAM/09FAM020101.html",
+      "description": "US State Department Foreign Affairs Manual — 9 FAM 201.1 (referenced from prior session; confirms Mexico diplomatic/official passport waiver).",
+      "official": true
+    }
+  ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "B-1/B-2 Visitor Visa",
+      "purpose": "Tourism, business visits, transit, medical treatment",
+      "max_stay_days": 180,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": 185,
+      "processing_days_min": 3,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html",
+      "notes": "Admission period (typically up to 6 months) is set at port of entry by CBP. Must apply at a US embassy or consulate."
+    },
+    {
+      "category": "student",
+      "name": "F-1 Student Visa",
+      "purpose": "Full-time academic study at SEVP-approved institutions",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 185,
+      "processing_days_min": 5,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "notes": "Duration of Status (D/S) — valid for the duration of your academic program. Requires I-20 from school and SEVIS fee."
+    },
+    {
+      "category": "work",
+      "name": "H-1B Specialty Occupation Visa",
+      "purpose": "Working in specialty occupations requiring at least a bachelor's degree",
+      "max_stay_days": 1095,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": 190,
+      "processing_days_min": 15,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/us-visas/employment/h1b-specialty-occupation.html",
+      "notes": "Requires employer sponsorship. Annual cap of 65,000 (plus 20,000 for US master's). Initial period 3 years, extendable to 6."
+    },
+    {
+      "category": "work",
+      "name": "L-1 Intracompany Transferee Visa",
+      "purpose": "Transferring to a US office in a managerial, executive, or specialised knowledge role",
+      "max_stay_days": 1825,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 190,
+      "processing_days_min": 15,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/us-visas/employment/l-1-intracompany-transferee.html",
+      "notes": "Must have worked for the sponsoring company for at least 1 year in the past 3 years."
+    },
+    {
+      "category": "student",
+      "name": "J-1 Exchange Visitor Visa",
+      "purpose": "Au pairs, camp counsellors, interns, teachers, research scholars, professors",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 185,
+      "processing_days_min": 5,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/us-visas/study/exchange.html",
+      "notes": "Duration of Status. Requires DS-2019 from a designated exchange program sponsor."
+    },
+    {
+      "category": "investment",
+      "name": "EB-5 Investor Visa",
+      "purpose": "Immigrant visa through investment of at least USD 1.05M (or USD 800K in rural/high-unemployment areas) creating 10 US jobs",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 3675,
+      "processing_days_min": 365,
+      "processing_days_max": 730,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.uscis.gov/working-in-the-united-states/permanent-workers/eb-5-immigrant-investor-program",
+      "notes": "Leads to lawful permanent residence (Green Card). Can apply through a USCIS-designated Regional Center."
+    }
+  ]
+}

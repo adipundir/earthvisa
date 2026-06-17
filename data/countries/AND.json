@@ -1,0 +1,231 @@
+{
+  "iso2": "AD",
+  "iso3": "AND",
+  "name": "Andorra",
+  "region": "Europe",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "EU and EEA citizens",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "EU and EEA nationals may enter with a valid national identity card or passport. No visa required. Max stay 90 days within any 365-day period per Article 15 of the Qualified Immigration Law (Llei qualificada d'immigracio). Andorra is not part of the Schengen area but is accessible only through Spain or France. Article 11.2 of the law specifically provides that EU/EEA nationals may enter with a valid national identity document.",
+        "source_url": "https://portaljuridicandorra.ad/L2012009_12",
+        "source_official": true
+      },
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": null,
+        "notes": "Andorran nationals are nationals of the country itself.",
+        "source_url": "https://portaljuridicandorra.ad/L2012009_12",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://portaljuridicandorra.ad/L2012009_12",
+      "https://www.govern.ad/en/ministries-and-secretaries-of-state/ministry-of-foreign-affairs/the-ministry/bilateral-and-consular-affairs/consular-affairs/tourist-visas",
+      "https://visitandorra.com/en/visitor-information/passports-visas-and-customs/"
+    ],
+    "notes": "Andorra imposes no visa of its own. Entry requires a valid passport (or EU/EEA national identity card for EU/EEA nationals). Non-EU/EEA third-country nationals who require a Schengen visa must hold a valid double- or multiple-entry Schengen visa because Andorra is only accessible via France or Spain (both Schengen members). This is confirmed by the official govern.ad tourist visas page: 'Any national from a third-country travelling to Andorra must get information from the French or Spanish Embassies or Consulates (depending on the country of entrance) about the need of a Schengen visa.' The official Qualified Immigration Law (portaljuridicandorra.ad/L2012009_12) does not enumerate a country-by-country visa-free list; it categorises entry by document type (Art. 11: passport or travel document; Art. 11.2: EU/EEA national identity card). The visitandorra.com official tourism page confirms: non-EU Schengen-exempt nationals need a valid passport; non-EU Schengen-visa-required nationals need a valid passport plus a double/multiple-entry Schengen visa. Maximum tourist stay: 90 days within any 365-day period (Art. 15). Specific country-level visa-free lists were not found on official Andorran government pages and are therefore not enumerated here."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "double-entry or multiple-entry Schengen visa (Type C short-stay or Type D national)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Non-EU/EEA third-country nationals who require a Schengen visa must hold a valid double-entry or multiple-entry Schengen visa (Type C or Type D) to travel to Andorra, because Andorra is accessible only via France or Spain (both Schengen members). A single-entry Schengen visa does not suffice if the traveller intends to re-enter the Schengen area on return. Andorra itself imposes no visa; the credential requirement is a de facto consequence of Andorra's geographic position. Confirmed by govern.ad tourist visas page and visitandorra.com.",
+      "source_url": "https://www.govern.ad/en/ministries-and-secretaries-of-state/ministry-of-foreign-affairs/the-ministry/bilateral-and-consular-affairs/consular-affairs/tourist-visas",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["India"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Indian diplomatic and official passports may enter, exit, and transit Andorra without a visa for a maximum stay of 90 days in any 180-day period. Agreement on Exemption from Visa Requirement for Holders of Diplomatic and Official Passports between India and the Principality of Andorra, signed 15 March 2024 at Andorra la Vella, entered into force 15 June 2024.",
+      "source_url": "https://www.mea.gov.in/bvwa-passport",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": true,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": false,
+    "residency_required": true,
+    "notes": "Andorra has no citizenship-by-investment program. Citizenship is acquired only through naturalisation after 20 years of continuous residency (or 10 years if compulsory education was completed in Andorra, or 3 years for spouses of Andorran nationals). Andorra does not permit dual citizenship; applicants must renounce prior nationality. Confirmed by absence of any such program on official sources: portaljuridicandorra.ad and govern.ad."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Residència sense treball (Passive/Non-lucrative Residency)",
+        "type": "passive_investment",
+        "min_amount": 1000000,
+        "currency": "EUR",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 20,
+        "official_url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-sense-treball-autoritzacio-inicial",
+        "source_official": true,
+        "notes": "Requires a minimum investment of €1,000,000 (one million euros) permanently and effectively in Andorran assets (real estate, corporate shareholdings, debt instruments, collective investment funds, public debt, life insurance products, or non-remunerated AFA deposits). Special provision: investment reduced to €400,000 if directed to the Andorran Housing Fund. Additionally, a non-refundable payment of €50,000 to the Andorran Financial Authority (AFA) is required for the main applicant, plus €12,000 per dependent. Under the prior regime the AFA deposit was refundable; Llei 2/2026 made it non-refundable. Investment threshold raised from €600,000 to €1,000,000 by Llei 2/2026 of 22 January 2026 (BOPA No. 15, 12 February 2026; in force 13 February 2026). Minimum stay: 90 days per calendar year. Work/business activity not permitted under this permit. First authorization valid 2 years; first renewal 2 years; second renewal 3 years; subsequent renewals 10 years. Official regulation: portaljuridicandorra.ad/L2026002 (Art. 96) and portaljuridicandorra.ad/R20251112A."
+      },
+      {
+        "name": "Residència i treball per a professionals amb projecció internacional (Residency for Professionals with International Projection)",
+        "type": "active_business",
+        "min_amount": 1000000,
+        "currency": "EUR",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 20,
+        "official_url": "https://www.govern.ad/ca/tematiques/immigracio/residencia-i-treball/residencia-i-treball-autoritzacio-inicial",
+        "source_official": true,
+        "notes": "For professionals and entrepreneurs who carry out activity with at least 85% of income/work generated outside Andorra. Requires establishing or acquiring an Andorran company (minimum 34% shareholding). Non-refundable payment of €50,000 to AFA (made non-refundable by Llei 2/2026) plus €12,000 per dependent, and investment of €1,000,000 in Andorran assets (post-Llei 2/2026). Minimum stay: 90 days per year. Governed by the Qualified Immigration Law as amended by Llei 2/2026."
+      },
+      {
+        "name": "Residència i treball per compte propi (Self-Employed/Active Residency)",
+        "type": "active_employment",
+        "min_amount": 50000,
+        "currency": "EUR",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 20,
+        "official_url": "https://www.govern.ad/ca/tematiques/immigracio/residencia-i-treball/residencia-i-treball-autoritzacio-inicial",
+        "source_official": true,
+        "notes": "For self-employed individuals establishing a business in Andorra. Requires constituting or acquiring an Andorran company (at least 34% shareholding) and obtaining a Foreign Investment Authorization. Non-refundable AFA payment of €50,000 (non-refundable under Llei 2/2026; Art. 38 ter) plus €12,000 per dependent. Must reside in Andorra for at least 183 days per year. Governed by Qualified Immigration Law as amended by Llei 2/2026 (portaljuridicandorra.ad/L2026002)."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Residència per a nòmada digital (Digital Nomad Residency)",
+        "category": "digital_nomad",
+        "eligibility": "Individuals who work remotely for employers or clients based outside Andorra using telecommunications and technology, without requiring a specific geographic location. Annual quota: 50 permits per year for digital nomads specifically. If the 50-permit digital nomad quota is exhausted, additional permits may still be granted up to a combined ceiling of 100 permits shared with the entrepreneurship programme quota.",
+        "processing_time": "Not specified on official source",
+        "official_url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-per-a-nomada-digital",
+        "source_official": true,
+        "notes": "Introduced by Llei 42/2022 del 1 de desembre, d'economia digital, emprenedoria i innovació (Digital Economy, Entrepreneurship and Innovation Law), with implementing regulations from 2023. Annual quota of 50 permits for digital nomads; a combined ceiling of 100 applies across both the digital nomad and entrepreneurship categories. Exempt from the €50,000 AFA contribution (unlike passive residents). No obligation to incorporate an Andorran entity or register with social security. Minimum stay: 90 days per calendar year. Private health and disability insurance required. No work for Andorran clients/employers permitted. Permit duration: 2 years initially, first renewal 2 years, second renewal 3 years, subsequent renewals 10 years."
+      },
+      {
+        "name": "Programa d'emprenedoria (Entrepreneurship Programme)",
+        "category": "startup_entrepreneur",
+        "eligibility": "Entrepreneurs participating in the entrepreneurship programme promoted by the Ministry in charge of the economy. Annual quota: 50 permits per year for entrepreneurship specifically, with a combined ceiling of 100 permits shared with the digital nomad quota.",
+        "processing_time": "Not specified on official source",
+        "official_url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-per-a-nomada-digital",
+        "source_official": true,
+        "notes": "Governed by Llei 42/2022. Requires prior authorization from the Ministry of Economy. Annual quota of 50 permits for entrepreneurship; a combined ceiling of 100 applies across both the entrepreneurship and digital nomad categories. Exempt from €50,000 AFA contribution provided the business project has been validated by a government-recognised entity under the digital economy/innovation/technological entrepreneurship regulatory criteria."
+      }
+    ]
+  },
+  "agreements": [
+    "Bilateral Convention with France and Spain on entry, movement, sojourn and establishment (signed 4 December 2000) — Andorran, French and Spanish nationals benefit from coordinated movement and certain equal treatment provisions",
+    "Bilateral Convention with Portugal on residency and movement (signed 23 July 2007, in force 1 September 2008)",
+    "Coordinated visa policy with Schengen Area (2003 tripartite agreement between France, Spain and Andorra — Andorra follows Schengen visa requirements for third-country nationals)",
+    "Agreement on Exemption from Visa Requirement for Holders of Diplomatic and Official Passports between India and the Principality of Andorra (signed 15 March 2024 at Andorra la Vella, in force 15 June 2024)"
+  ],
+  "official_domains": [
+    "govern.ad",
+    "portaljuridicandorra.ad",
+    "visitandorra.com",
+    "exteriors.ad"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "Re-validated 2026-06-14 against official sources: govern.ad tourist visas page, portaljuridicandorra.ad/L2012009_12 (Qualified Immigration Law), portaljuridicandorra.ad/L2026002 (Llei 2/2026), visitandorra.com, and mea.gov.in.",
+      "CORRECTED: Digital nomad and entrepreneurship quota notes updated to clarify that each category has its own 50-permit quota, but there is also a combined ceiling of 100 permits shared across both categories — the prior record implied each had an independent 50-permit limit with no shared ceiling.",
+      "CORRECTED: Passive residency notes updated to add the Housing Fund exception (€400,000 minimum investment if directed to the Andorran Housing Fund instead of the standard €1,000,000), which was confirmed in Llei 2/2026 Art. 96 but not captured in the prior record.",
+      "CORRECTED: The AFA contribution clarification added — under previous regime it was refundable; Llei 2/2026 made it non-refundable. Prior record stated only 'non-refundable' without the historical context.",
+      "CORRECTED: Conditional access source_url for Schengen credential rule updated to point to the govern.ad tourist visas page (primary official government source) rather than visitandorra.com (tourism board), which is a stronger official citation.",
+      "CORRECTED: Added exteriors.ad to official_domains (the Ministry of Foreign Affairs uses this domain for citizen information; it redirects to govern.ad paths).",
+      "CONFIRMED UNCHANGED: India diplomatic/official passport agreement (90 days, signed 15 March 2024, in force 15 June 2024) — verified against mea.gov.in.",
+      "CONFIRMED UNCHANGED: No CBI program exists for Andorra.",
+      "CONFIRMED UNCHANGED: Passive residency minimum investment €1,000,000 per Llei 2/2026.",
+      "CONFIRMED UNCHANGED: No e-visa or visa-on-arrival system for Andorra.",
+      "CONFIRMED UNCHANGED: Visa-free entry for EU/EEA nationals with national ID card or passport per Art. 11.2 of the Qualified Immigration Law."
+    ],
+    "gaps": [
+      "Visa policy: Andorra's official sources (govern.ad, portaljuridicandorra.ad) do not publish a specific country-by-country visa-free list; the law categorises entry by document type (EU/EEA ID card, passport for others, Schengen visa for those requiring it). Country-specific enumerations were found only on aggregators (Wikipedia, Henley) which are not official and therefore not recorded.",
+      "No official e-visa or ETA system exists for Andorra — none found on official sources.",
+      "Visa-on-arrival: No official sources mention a visa-on-arrival system for Andorra.",
+      "Digital nomad and entrepreneurship program pages on govern.ad render as navigation-only in WebFetch (JavaScript-rendered); full text of program requirements was obtained from Llei 42/2022 references and cross-checked against multiple advisory sources, but specific text could not be verbatim-confirmed from the govern.ad page itself.",
+      "Path to permanent residency (years) is not specified in the official sources reviewed; renewal schedule is 2-2-3-10 years but no explicit 'permanent residency' designation found.",
+      "Conditional access — other bilateral diplomatic/official passport agreements: The govern.ad international agreements page references an Excel file (ACORDS_BILATERALS_en vigor.xlsx) listing all of Andorra's bilateral treaties, but the file could not be accessed programmatically. Only the India-Andorra agreement (15 March 2024) was confirmed from an official source (mea.gov.in). Other potential diplomatic passport waiver agreements with third countries cannot be excluded but were not confirmed from official sources.",
+      "Conditional access — OCI (Overseas Citizen of India) cardholders: No official Andorran or Indian government source mentions any special entry benefit for OCI cardholders to Andorra. Not recorded.",
+      "Conditional access — US visa holders, UK visa holders, Canadian visa holders, Australian visa holders, UAE residence permit holders: Aggregator sources (Wikipedia, Henley) mention some of these as conferring Andorra access but no official Andorran government source was found confirming credential-based conditional access beyond the de facto Schengen visa requirement. Not recorded per hard rules.",
+      "Housing Fund investment option (€400,000 minimum under Llei 2/2026): Confirmed in legal text at portaljuridicandorra.ad/L2026002 Art. 96, but the Fund's operational status and application process details could not be verified from a standalone official page.",
+      "Collective investment fund timing restriction (Llei 2/2026): Certain financial instruments and Andorran collective investment funds count toward the €1,000,000 passive residency investment only for a maximum of 36 months, after which investment must shift to other Andorran asset classes — confirmed in Llei 2/2026 but full regulatory detail not captured."
+    ]
+  },
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://www.govern.ad/en/ministries-and-secretaries-of-state/ministry-of-foreign-affairs/the-ministry/bilateral-and-consular-affairs/consular-affairs/tourist-visas",
+    "source_official": true,
+    "asof": null,
+    "visa_free": [],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "The Andorran Government (Govern d'Andorra) Ministry of Foreign Affairs, Consular Affairs section, publishes a 'Tourist visas' (Visats turístics) page under Citizen Information at the URL above. This page is the official origin-side source for Andorran ordinary passport holders. It states that Andorran passport holders can use an embedded interactive search engine to check whether they need a visa to travel to a given country ('Podeu consultar el cercador per saber si, amb el passaport andorrà, necessiteu visat per viatjar al país que vulgueu visitar'). The page does NOT publish a static enumerable list of visa-free, visa-on-arrival, e-visa, or eTA destinations; the country-level data is delivered only through the JavaScript-rendered interactive search tool, which could not be scraped statically. Destination-side (inbound) data or third-party passport index aggregators must be used for a full enumerable list. Country arrays left empty because no static official list was extractable from the page."
+  },
+  "sources_checked": [
+    {
+      "url": "https://portaljuridicandorra.ad/L2012009_12",
+      "description": "Llei qualificada d'immigracio (Qualified Immigration Law, consolidated text) — official Andorran legal portal. Articles 11 (entry requirements), 11.2 (EU/EEA national ID card entry), 15 (90-day tourist limit).",
+      "official": true
+    },
+    {
+      "url": "https://portaljuridicandorra.ad/L2026002",
+      "description": "Llei 2/2026, del 22 de gener, de continuïtat i consolidació de les mesures per al creixement sostenible (Omnibus 2) — raises passive residency investment to €1,000,000 (Art. 96); reduces to €400,000 for Housing Fund; makes AFA deposit non-refundable; Art. 38 ter for self-employed. In force 13 February 2026.",
+      "official": true
+    },
+    {
+      "url": "https://portaljuridicandorra.ad/R20251112A",
+      "description": "Reglament del 12 de novembre del 2025 de les autoritzacions d'immigracio de residència sense treball — regulation on residence without work authorizations.",
+      "official": true
+    },
+    {
+      "url": "https://www.govern.ad/en/ministries-and-secretaries-of-state/ministry-of-foreign-affairs/the-ministry/bilateral-and-consular-affairs/consular-affairs/tourist-visas",
+      "description": "Tourist visas page — Ministry of Foreign Affairs, Government of Andorra. Confirms: Andorra has no visa; third-country nationals requiring Schengen visa must obtain double/multiple-entry Schengen visa through French or Spanish embassies.",
+      "official": true
+    },
+    {
+      "url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-sense-treball-autoritzacio-inicial",
+      "description": "D.1 Residència sense treball (initial authorization) — official immigration page (JavaScript-rendered; content obtained via legal text cross-reference).",
+      "official": true
+    },
+    {
+      "url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-per-a-nomada-digital",
+      "description": "D.3 Residència per a nòmada digital — official digital nomad residency page (JavaScript-rendered; content cross-checked with Llei 42/2022 and advisory sources).",
+      "official": true
+    },
+    {
+      "url": "https://visitandorra.com/en/visitor-information/passports-visas-and-customs/",
+      "description": "Passports, visas and customs — official Andorra Tourism Board (Visit Andorra). Confirms EU/EEA entry with ID card; non-EU Schengen-exempt nationals with passport only; non-EU Schengen-visa-required nationals need double/multiple-entry Schengen visa.",
+      "official": true
+    },
+    {
+      "url": "https://www.mea.gov.in/bvwa-passport",
+      "description": "Countries with which India has operational Visa Exemption Agreement for holders of Diplomatic, Official/Service Passports — Ministry of External Affairs, Government of India. Andorra listed: Diplomatic & Official Passports, 90 days, signed 15-03-2024, in force 15-06-2024.",
+      "official": true
+    },
+    {
+      "url": "https://www.govern.ad/en/ministries-and-secretaries-of-state/ministry-of-foreign-affairs/international-agreements",
+      "description": "International agreements — Ministry of Foreign Affairs, Government of Andorra. References ACORDS_BILATERALS_en vigor.xlsx (not programmatically accessible).",
+      "official": true
+    }
+  ]
+}

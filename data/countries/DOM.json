@@ -1,0 +1,574 @@
+{
+  "iso2": "DO",
+  "iso3": "DOM",
+  "name": "Dominican Republic",
+  "region": "Americas",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://servicios360.mirex.gob.do/condiciones-para-dominicanos-viajar/",
+    "source_official": true,
+    "asof": null,
+    "visa_free": [
+      {"name": "Bangladesh", "iso3": "BGD"},
+      {"name": "Botswana", "iso3": "BWA"},
+      {"name": "Brazil", "iso3": "BRA"},
+      {"name": "Colombia", "iso3": "COL"},
+      {"name": "Cook Islands", "iso3": "COK"},
+      {"name": "Cuba", "iso3": "CUB"},
+      {"name": "Ecuador", "iso3": "ECU"},
+      {"name": "El Salvador", "iso3": "SLV"},
+      {"name": "Gambia", "iso3": "GMB"},
+      {"name": "Georgia", "iso3": "GEO"},
+      {"name": "Honduras", "iso3": "HND"},
+      {"name": "Hong Kong", "iso3": "HKG"},
+      {"name": "Israel", "iso3": "ISR"},
+      {"name": "Japan", "iso3": "JPN"},
+      {"name": "Lebanon", "iso3": "LBN"},
+      {"name": "Malaysia", "iso3": "MYS"},
+      {"name": "Morocco", "iso3": "MAR"},
+      {"name": "Nicaragua", "iso3": "NIC"},
+      {"name": "Niue", "iso3": "NIU"},
+      {"name": "Paraguay", "iso3": "PRY"},
+      {"name": "Peru", "iso3": "PER"},
+      {"name": "Philippines", "iso3": "PHL"},
+      {"name": "Russia", "iso3": "RUS"},
+      {"name": "South Korea", "iso3": "KOR"},
+      {"name": "Taiwan", "iso3": "TWN"},
+      {"name": "Trinidad and Tobago", "iso3": "TTO"},
+      {"name": "Tunisia", "iso3": "TUN"},
+      {"name": "Uzbekistan", "iso3": "UZB"}
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "Official MIREX (Ministerio de Relaciones Exteriores) page 'Condiciones para dominicanos viajar' at servicios360.mirex.gob.do/condiciones-para-dominicanos-viajar/ is confirmed as the Dominican government's authoritative outbound visa-conditions list for ordinary-passport holders. The page is JavaScript-rendered and the full country list could not be extracted by static scraping. The country list above (~28-29 destinations) reflects MIREX-cited data from the institutional article at mirex.gob.do/paises-que-dominicanos-puedacceder-sin-necesidad-visa/ cross-referenced with the eldinero.com.do article quoting MIREX data as of 2023-2024; it covers only visa-free (no prior consular visa) destinations for ordinary passports. El Salvador requires a US$12 tourist card at arrival despite being listed as no-prior-visa required. The full interactive lookup tool is at https://servicios360.mirex.gob.do/condiciones-para-dominicanos-viajar/."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "United States",
+        "iso3": "USA",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers since April 2018; payable separately for land/sea arrivals). Stay beyond 30 days incurs additional departure fees on a sliding scale. Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for the duration of stay and departure, waiving the usual 6-month rule.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Stay beyond 30 days incurs departure fees. Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for duration of stay and departure.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Stay beyond 30 days incurs departure fees. Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for duration of stay and departure.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "European Union member states",
+        "iso3": null,
+        "max_stay_days": 30,
+        "notes": "All EU nationals enter visa-free for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Stay beyond 30 days incurs departure fees. Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for duration of stay and departure, waiving the usual 6-month rule.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Russia",
+        "iso3": "RUS",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Kazakhstan",
+        "iso3": "KAZ",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Travelers from Espiritu Santo, Minas Gerais, Rio de Janeiro, and Sao Paulo must present yellow fever vaccination proof. Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for duration of stay and departure.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for duration of stay and departure.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for duration of stay and departure.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Must pay mandatory Tourist Card fee of US$10 (included in airfare for air travelers). Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for duration of stay and departure.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Ecuador",
+        "iso3": "ECU",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Passport validity exception (Dec 1 2024 – Dec 31 2026): passport need only be valid for duration of stay and departure.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://dr1.com/travel/prepare/documentation.shtml",
+        "source_official": false
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://dr1.com/travel/prepare/documentation.shtml",
+        "source_official": false
+      },
+      {
+        "nationality": "Uruguay",
+        "iso3": "URY",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://dr1.com/travel/prepare/documentation.shtml",
+        "source_official": false
+      },
+      {
+        "nationality": "Iceland",
+        "iso3": "ISL",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://dr1.com/travel/prepare/documentation.shtml",
+        "source_official": false
+      },
+      {
+        "nationality": "Liechtenstein",
+        "iso3": "LIE",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism. Exempt from Tourist Card fee (bilateral agreement). Neither a visa nor tourist card fee is required. Stay beyond 30 days incurs departure fees.",
+        "source_url": "https://dr1.com/travel/prepare/documentation.shtml",
+        "source_official": false
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism with Tourist Card (US$10, included in airfare for air travelers). Confirmed by multiple sources including dr1.com.",
+        "source_url": "https://dr1.com/travel/prepare/documentation.shtml",
+        "source_official": false
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism with Tourist Card (US$10, included in airfare for air travelers). Confirmed by dr1.com.",
+        "source_url": "https://dr1.com/travel/prepare/documentation.shtml",
+        "source_official": false
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism with Tourist Card (US$10, included in airfare for air travelers). Central American countries listed as visa-free on official tourism site.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 30,
+        "notes": "Visa-free entry for tourism with Tourist Card (US$10, included in airfare for air travelers). Central American countries listed as visa-free on official tourism site.",
+        "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://www.godominicanrepublic.com/travel/entry-requirements",
+      "https://servicios360.mirex.gob.do/visas/",
+      "https://migracion.gob.do/en/e-ticket-electronic-ticket-of-entry-and-exit-of-the-dominican-republic/",
+      "https://eticket.migracion.gob.do/",
+      "https://dr1.com/travel/prepare/documentation.shtml"
+    ],
+    "notes": "The Dominican Republic has a layered entry system: (1) Visa-free entry for ~130+ nationalities. (2) Within visa-free nationalities, a subset — Argentina, Chile, Ecuador, Iceland, Israel, Japan, Liechtenstein, Peru, South Korea, Uruguay — are also exempt from the US$10 Tourist Card fee. All other visa-free nationalities pay the Tourist Card fee, which since April 2018 is included in airline ticket prices for air travelers (Executive Order 430-17). (3) The mandatory free e-Ticket (electronic entry/exit declaration form) at eticket.migracion.gob.do is required of ALL arriving passengers regardless of nationality under Laws 285-04, 115-17, 72-02, and 226-06 — it is NOT a visa, ETA, or entry permit, but a customs/immigration declaration form. (4) Initial tourist stays are 30 days; stays beyond 30 days incur departure fees on a sliding scale. (5) Venezuela: all arrivals require yellow fever vaccination proof. (6) Entry from Equatorial Guinea suspended since Feb 21, 2023 (Marburg virus). (7) Dominican Republic is NOT a CARICOM full member and does not participate in CARICOM free movement. (8) Decree 691-07 (Dec 18, 2007) allows any nationality holding a valid multiple-entry visa or permanent residency from US, EU/Schengen, Canada, or UK to enter with just passport and Tourist Card — see conditional_access."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "multiple-entry visa (visado de entradas múltiples)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Decree No. 691-07, 18 December 2007: 'El Decreto Núm. 691-07, del 18 de diciembre de 2007, facilita la entrada a la República Dominicana a extranjeros con residencia permanente o visado de entradas múltiples vigente en Estados Unidos, Unión Europea (Schengen), Canadá o Gran Bretaña.' Traveller must present valid passport and Tourist Card (Tarjeta de Turismo). For tourism purposes only. Stay up to 30 days; extensions payable at DGM. Note: the MIREX portal specifies 'visado de entradas múltiples' (multiple-entry only); single-entry visas do not qualify.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "US",
+        "type": "permanent_resident",
+        "subtype": "Green Card (permanent residence / residencia permanente)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Decree No. 691-07, 18 December 2007: holders of US permanent residence ('residencia permanente') may enter with valid passport and Tourist Card for tourism purposes. Stay up to 30 days. Note: Cuban nationals may use an expired passport (expired ≤24 months) combined with a valid US Green Card per special resolution.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "multiple-entry visa (visado de entradas múltiples)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Decree No. 691-07, 18 December 2007: holders of a valid Schengen multiple-entry visa may enter with valid passport and Tourist Card for tourism purposes. Stay up to 30 days. The decree specifies 'Unión Europea (Schengen)' as the issuing zone. Note: Cyprus and Ireland are NOT Schengen members; a Cyprus or Ireland national-only visa may not qualify under this decree. Schengen-area visa only.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "residence_permit",
+        "subtype": "permanent residence (residencia permanente) in EU/Schengen member state"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Decree No. 691-07, 18 December 2007: holders of permanent residence in an EU (Schengen) member state may enter with valid passport and Tourist Card for tourism purposes. Stay up to 30 days.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Canada",
+        "type": "visa",
+        "subtype": "multiple-entry visa (visado de entradas múltiples)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Decree No. 691-07, 18 December 2007: holders of a valid Canadian multiple-entry visa may enter with valid passport and Tourist Card for tourism purposes. Stay up to 30 days.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Canada",
+        "type": "permanent_resident",
+        "subtype": "Canadian permanent residence (residencia permanente)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Decree No. 691-07, 18 December 2007: holders of Canadian permanent residence may enter with valid passport and Tourist Card for tourism purposes. Stay up to 30 days.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "UK",
+        "type": "visa",
+        "subtype": "multiple-entry visa (visado de entradas múltiples)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Decree No. 691-07, 18 December 2007: holders of a valid UK multiple-entry visa ('Gran Bretaña') may enter with valid passport and Tourist Card for tourism purposes. Stay up to 30 days.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "UK",
+        "type": "permanent_resident",
+        "subtype": "UK permanent residence / ILR (residencia permanente en Gran Bretaña)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Decree No. 691-07, 18 December 2007: holders of UK permanent residence may enter with valid passport and Tourist Card for tourism purposes. Stay up to 30 days.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": "any",
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "The Dominican Republic has concluded bilateral visa suppression/waiver agreements for holders of diplomatic, official, and/or service passports with numerous countries. The MIREX services portal lists these categories (DM = Diplomatic, OS/OM = Official/Service, CS/CM = Courtesy) and states that a Diplomatic Note from the relevant mission specifying diplomatic rank or position is required. Sources confirm holders of diplomatic, official or service passports of at least the following countries enter without visa: Argentina, Brazil, Chile, Colombia, Costa Rica, Ecuador, El Salvador, France, Guatemala, Honduras, India, Israel, Japan, Malaysia, Morocco, Nicaragua, Panama, Paraguay, Peru, Russia, Serbia, Singapore, South Korea, Switzerland, Tajikistan, Taiwan, Trinidad and Tobago, Ukraine, Uruguay, Vietnam. Exact per-country durations and bilateral agreement dates not published on MIREX portal.",
+      "source_url": "https://servicios360.mirex.gob.do/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": ["CUB"],
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "US",
+        "type": "permanent_resident",
+        "subtype": "US Green Card (permanent residence)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Cuban nationals legally residing in the USA may enter even with an expired passport (expired no more than 24 months) plus a valid US Green Card.",
+      "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": true,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "The Dominican Republic does not offer a Citizenship-by-Investment (CBI) program. It is often confused with the Commonwealth of Dominica (a separate nation) which does have a CBI program. The Dominican Republic has Residency-by-Investment (RBI) that can later lead to naturalisation, but this is not a CBI scheme. Confirmed via official migracion.gob.do which lists only residence categories, not direct citizenship-for-investment. Source: https://migracion.gob.do/en/servicios/residence/"
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Investor Residence (Inversionista)",
+        "type": "real_estate_or_business_investment",
+        "min_amount": 200000,
+        "currency": "USD",
+        "path_to_pr_years": 0,
+        "path_to_citizenship_years": null,
+        "official_url": "https://migracion.gob.do/en/servicio/investment-residence-in-investment-quality/",
+        "source_official": true,
+        "notes": "Minimum capital contribution of US$200,000 in a Dominican company, registered with ProDominicana (formerly CEI-RD). Investment may be in currency, in kind, financial instruments, or technology. Grants immediate permanent residency (no prior temporary residency required). Permit valid for 1 year, renewable. After 2 years of permanent residence, eligible to apply for naturalisation (reduced 6-month track available for property/business owners). Source: migracion.gob.do and Law 285-04 / Regulation 631-11. NOTE: migracion.gob.do returns HTTP 403 — amount confirmed from multiple secondary sources citing this page."
+      },
+      {
+        "name": "Rentista Residence (Passive Income)",
+        "type": "passive_income",
+        "min_amount": 2000,
+        "currency": "USD",
+        "path_to_pr_years": 0,
+        "path_to_citizenship_years": null,
+        "official_url": "https://migracion.gob.do/en/servicio/renter-residence/",
+        "source_official": true,
+        "notes": "Requires proof of regular passive income of at least US$2,000 per month from a foreign source, plus US$250 per dependent. Income must derive from investments, dividends, rental income, or similar passive sources — not active employment. Grants immediate permanent residency. Source: migracion.gob.do under Law 285-04 / Regulation 631-11. NOTE: official page returns HTTP 403 — amount confirmed from multiple secondary sources citing this page."
+      },
+      {
+        "name": "Pensionado/Retired Residence",
+        "type": "pension",
+        "min_amount": 1500,
+        "currency": "USD",
+        "path_to_pr_years": 0,
+        "path_to_citizenship_years": null,
+        "official_url": "https://migracion.gob.do/en/servicio/residence-for-investment-in-quality-of-retired-or-pensioned/",
+        "source_official": true,
+        "notes": "Requires proof of a monthly pension of at least US$1,500 from a government or private entity, plus US$250 per dependent. Grants immediate permanent residency. Source: migracion.gob.do under Law 285-04 / Regulation 631-11. NOTE: official page returns HTTP 403 — amount confirmed from multiple secondary sources citing this page."
+      },
+      {
+        "name": "Ordinary Temporary Residence (RT-9)",
+        "type": "general_temporary_residence",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": null,
+        "official_url": "https://migracion.gob.do/en/servicio/temporaryresidence-rt-9/",
+        "source_official": true,
+        "notes": "Standard temporary residence requiring annual renewal. After 5 consecutive years of renewed temporary residency, applicant may apply for permanent residency. After 2 years of permanent residence, eligible for naturalisation (standard track). Source: migracion.gob.do. NOTE: official page returns HTTP 403."
+      },
+      {
+        "name": "Permanent Residence (RP-1)",
+        "type": "permanent_residence",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 2,
+        "official_url": "https://migracion.gob.do/en/servicio/permanent-residence-application/",
+        "source_official": true,
+        "notes": "Permanent residency can be obtained after 5 years of temporary residence (standard track) or immediately via Inversionista/Rentista/Pensionado categories. After 2 years of permanent residence, naturalisation may be applied for (under Law 1683). A reduced 6-month naturalisation track exists for property owners, business owners, or spouses of Dominican nationals. Source: migracion.gob.do."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Investment/Management Staff Temporary Residence",
+        "category": "intra-company_transfer",
+        "eligibility": "Management or technical staff of a foreign company operating in the Dominican Republic",
+        "processing_time": null,
+        "official_url": "https://migracion.gob.do/en/servicio/investment-residence-for-management-staff-and-or-foreign-technician/",
+        "source_official": true,
+        "notes": "Temporary residence for management staff and/or foreign technicians of investment companies. Permit valid for 1 year, renewable. Source: migracion.gob.do."
+      }
+    ]
+  },
+  "agreements": [
+    "CARIFORUM (CARICOM–Dominican Republic–EU economic pact)"
+  ],
+  "official_domains": [
+    "migracion.gob.do",
+    "servicios360.mirex.gob.do",
+    "eticket.migracion.gob.do",
+    "godominicanrepublic.com"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTION: Removed e-Ticket from visa_policy.eta array. The e-Ticket (eticket.migracion.gob.do) is a mandatory customs/immigration travel declaration form required of ALL passengers regardless of nationality — it is NOT an ETA, visa, or entry permit. It has been moved to the visa_policy.notes field only.",
+      "CORRECTION: Added tourist card fee distinction to all visa_free entries. Argentina, Chile, Ecuador, Iceland, Israel, Japan, Liechtenstein, Peru, South Korea, and Uruguay are exempt from both the visa AND the US$10 Tourist Card fee per bilateral agreements. All other visa-free nationalities pay the Tourist Card fee (included in airfare since April 2018 under Executive Order 430-17).",
+      "CORRECTION: Added South Korea (KOR) explicitly to visa_free list — it was previously only mentioned in the diplomatic passport conditional_access entry and the vague South American/Central American catch-all, but South Korea is explicitly confirmed as visa-free AND tourist-card-fee-exempt.",
+      "CORRECTION: Added Peru (PER) explicitly to visa_free list — confirmed visa-free and tourist-card-fee-exempt; was only implied under 'many South American countries' catch-all.",
+      "CORRECTION: Added Uruguay (URY) explicitly to visa_free list — confirmed visa-free and tourist-card-fee-exempt.",
+      "CORRECTION: Added Iceland (ISL) to visa_free list — confirmed visa-free and tourist-card-fee-exempt per dr1.com and multiple secondary sources.",
+      "CORRECTION: Added Liechtenstein (LIE) to visa_free list — confirmed visa-free and tourist-card-fee-exempt per dr1.com and multiple secondary sources.",
+      "CORRECTION: Added Australia (AUS) and New Zealand (NZL) to visa_free list — confirmed visa-free with tourist card by dr1.com.",
+      "CORRECTION: Added Panama (PAN) and Costa Rica (CRI) explicitly to visa_free list (Central American countries confirmed visa-free by official tourism site).",
+      "CORRECTION: Removed the duplicate/redundant conditional_access entry that combined all four Decree 691-07 issuers (US|Schengen|Canada|UK) into one record — this was redundant with the eight individual per-issuer and per-credential-type entries that follow it. The individual entries are more precise.",
+      "CORRECTION: Confirmed passport validity exception start date is December 1, 2024 (not 2025) per re-fetch of godominicanrepublic.com. The current record was correct; the search summary had misstated 2025.",
+      "CONFIRMED UNCHANGED: Decree 691-07 details, max_stay_days of 30 for all visa-free entries, CBI has_program=false, RBI amounts (US$200,000 investor / US$2,000/month rentista / US$1,500/month pensionado), diplomatic/service passport conditional_access, Cuban special Green Card provision."
+    ],
+    "gaps": [
+      "The official MIREX portal (servicios360.mirex.gob.do) and DGM (migracion.gob.do) return HTTP 403 on direct fetch — the complete enumerated list of all visa-exempt nationalities and RBI minimum amounts could not be verified directly from the primary official domain.",
+      "Tourist card fee exemption list (Argentina, Chile, Ecuador, Iceland, Israel, Japan, Liechtenstein, Peru, South Korea, Uruguay) is confirmed by multiple secondary sources (dr1.com, everythingpuntacana.com) but the authoritative official government decree granting these specific exemptions was not directly fetched.",
+      "Extended stay durations reportedly available for certain nationalities (e.g., Brazil/Russia/Morocco/Peru reportedly 60 days; Ecuador/Singapore reportedly 90 days per bilateral agreements) could not be confirmed from an official DR government source — the official tourism site only states that stays beyond 30 days incur fees. These extended durations have been omitted from the record pending official confirmation.",
+      "South Korea, Peru, Uruguay, Iceland, Liechtenstein entries are sourced from dr1.com (authoritative DR travel guide but not an official government domain) — these should be verified against a directly fetchable official MIREX source.",
+      "The complete definitive per-nationality visa requirement lookup is at mirex.gob.do/condiciones-para-extranjeros-ingresar/ (mentioned on godominicanrepublic.com FAQs) but this URL was not directly fetchable.",
+      "No formal digital nomad visa program found on any official source.",
+      "No e-visa program found — the mandatory e-Ticket is an entry declaration form, not a visa.",
+      "Dominican Republic is a CARIFORUM member and CARICOM Observer/Associate Applicant but is NOT a full CARICOM member and does not participate in CARICOM free movement protocols.",
+      "Equatorial Guinea entry suspension (Feb 2023) noted but no official end date found.",
+      "Venezuela yellow fever vaccination requirement confirmed on official tourism site but not on MIREX or DGM pages directly.",
+      "Cyprus and Ireland are not Schengen members; a Cyprus or Ireland national-only visa may not qualify under Decree 691-07 'Union Europea (Schengen)' wording — this ambiguity remains unresolved from official sources.",
+      "Diplomatic/service/official passport bilateral agreement per-country details (exact durations, agreement dates) not published on the MIREX portal page."
+    ]
+  },
+  "sources_checked": [
+    {
+      "url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+      "domain": "godominicanrepublic.com",
+      "official": true,
+      "notes": "Official Ministry of Tourism of the Dominican Republic — primary source for visa-free nationality list, passport validity exception dates (Dec 1 2024 – Dec 31 2026), e-ticket requirement, and yellow fever/Equatorial Guinea notes. Successfully fetched on 2026-06-14."
+    },
+    {
+      "url": "https://servicios360.mirex.gob.do/visas/",
+      "domain": "servicios360.mirex.gob.do",
+      "official": true,
+      "notes": "Official MIREX (Ministry of Foreign Affairs) portal — source for Decree 691-07 exact Spanish text ('visado de entradas múltiples vigente') and diplomatic visa categories. Successfully fetched on 2026-06-14."
+    },
+    {
+      "url": "https://migracion.gob.do/en/",
+      "domain": "migracion.gob.do",
+      "official": true,
+      "notes": "Official Dirección General de Migración (DGM) — residence programs, e-Ticket, services. Returns HTTP 403 on all sub-pages fetched on 2026-06-14."
+    },
+    {
+      "url": "https://eticket.migracion.gob.do/",
+      "domain": "eticket.migracion.gob.do",
+      "official": true,
+      "notes": "Official free e-Ticket portal for all passengers entering/exiting Dominican Republic."
+    },
+    {
+      "url": "https://www.godominicanrepublic.com/travel/faqs",
+      "domain": "godominicanrepublic.com",
+      "official": true,
+      "notes": "Official Ministry of Tourism FAQs — confirmed e-Ticket requirement, mirex.gob.do/condiciones-para-extranjeros-ingresar/ as the definitive nationality lookup, and diplomatic/consular exemptions. Successfully fetched on 2026-06-14."
+    },
+    {
+      "url": "https://dr1.com/travel/prepare/documentation.shtml",
+      "domain": "dr1.com",
+      "official": false,
+      "notes": "DR1 — authoritative Dominican Republic travel/news resource (not a government domain). Confirmed tourist card fee exemption list for Argentina, Chile, Ecuador, Iceland, Israel, Japan, Liechtenstein, Peru, South Korea, Uruguay. Also confirmed visa-required nationalities include Afghanistan, Cuba, Haiti, India, Nigeria, Philippines, Vietnam (unless holding qualifying Decree 691-07 credential). Successfully fetched on 2026-06-14."
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Dominican_Republic",
+      "domain": "en.wikipedia.org",
+      "official": false,
+      "notes": "Wikipedia visa policy article — used for cross-reference; notes tourist fee exemptions for Argentine, Chilean, Israeli, Japanese, South Korean, and Uruguayan citizens and tourist-card-only entry for broader list. Successfully fetched on 2026-06-14."
+    },
+    {
+      "url": "https://inmobiliario.do/en/entry-to-the-dominican-republic-the-types-of-visas-granted-according-to-the-ministry-of-foreign-affairs-mirex-/",
+      "domain": "inmobiliario.do",
+      "official": false,
+      "notes": "Secondary source reporting on MIREX — confirmed 8 nations (Argentina, Chile, South Korea, Ecuador, Israel, Japan, Peru, Uruguay) need neither visa nor tourist card; broader list enters with tourist card only. Successfully fetched on 2026-06-14."
+    }
+  ]
+}

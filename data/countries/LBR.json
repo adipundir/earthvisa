@@ -1,0 +1,194 @@
+{
+  "iso2": "LR",
+  "iso3": "LBR",
+  "name": "Liberia",
+  "region": "Africa",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "ECOWAS citizens (Benin, Burkina Faso, Cabo Verde, Cote d'Ivoire, Gambia, Ghana, Guinea, Guinea-Bissau, Liberia, Mali, Niger, Nigeria, Senegal, Sierra Leone, Togo)",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "All ECOWAS citizens can enter Liberia visa-free under ECOWAS Protocol A/P 1/5/79 on Free Movement of Persons, the Right of Residence and Establishment. Must hold a valid ECOWAS Biometric Passport with at least 6 months validity. Confirmed by the official Consulate General of Liberia in New York (liberiaconsulate-ny.com): 'all ECOWAS citizens can enter Liberia visa-free using ECOWAS passports that are valid at least six (6) months.' Also confirmed by LIS (lis.gov.lr) which states it 'adheres to the ECOWAS, MRU Protocols on the free movement of people, goods and services.' Citizens of ECOWAS member states are explicitly excluded from the e-VoA requirement per the March 2025 LIS announcement. No maximum stay duration specified on official sources. 16 member states including Liberia itself; 15 other nationalities exempt.",
+        "source_url": "https://liberiaconsulate-ny.com/consulate-services/ecowas/",
+        "source_official": true
+      },
+      {
+        "nationality": "Rwandan",
+        "iso3": "RWA",
+        "max_stay_days": null,
+        "notes": "Liberia and Rwanda signed a Reciprocal Visa Waiver Agreement on September 11, 2025, at the Liberian Ministry of Foreign Affairs in Monrovia. The agreement allows citizens of both countries to travel without visa restrictions and is intended to boost mobility, tourism, and business travel. Signed in the presence of Liberia's Foreign Minister Sara Beysolow Nyanti and Rwanda's Foreign Minister Olivier Jean Patrick Nduhungirehe. Agreement covers ordinary passport holders. Entry into force date not specified in the mofa.gov.lr press release. Applies mutually. Maximum stay duration not specified in available official source.",
+        "source_url": "https://www.mofa.gov.lr/index.php/media/press-releases/liberias-recent-election-united-nations-security-council-spurs-high-level",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "nationality": "All nationalities not otherwise exempt and not from countries where a Liberian embassy exists",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Electronic Visa on Arrival (e-VoA) is available via pre-application at visaonarrival.lis.gov.lr. The upgraded electronic system launched March 11, 2025, replacing the prior manual VoA. Fee: USD 102.50 (non-refundable). Validity: 30 or 90 days (single entry) as determined by immigration officer at arrival. Approval valid for 3 months from issuance; must enter Liberia within that window. Available only at Roberts International Airport (ROB), Monrovia. If a Liberian embassy exists in the traveler's country of nationality, they must apply at the embassy instead (23 countries as of March 2025 launch: Belgium, Cameroon, China, Cote d'Ivoire, Democratic Republic of the Congo, Egypt, Ethiopia, France, Germany, Ghana, Guinea, Italy, Japan, Kuwait, Morocco, Nigeria, Qatar, Saudi Arabia, Senegal, Sierra Leone, South Africa, United Kingdom, United States). ECOWAS citizens are not subject to this requirement due to free movement agreements. Operated by Liberia Immigration Service (LIS).",
+        "source_url": "https://visaonarrival.lis.gov.lr/",
+        "source_official": true
+      }
+    ],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://visaonarrival.lis.gov.lr/",
+      "https://lis.gov.lr/",
+      "https://lis.gov.lr/visa",
+      "https://liberiaconsulate-ny.com/consulate-services/ecowas/",
+      "https://www.mofa.gov.lr/media/press-releases/ministry-foreign-affairs-responds-frontpageafricas-editorial-monday-may-2-2016",
+      "https://mofa.gov.lr/index.php/media/press-releases/liberia-signs-mou-united-arab-emirates-visa-waiver-liberia-and-uaes-diplomats",
+      "https://www.mofa.gov.lr/media/press-releases/liberia-south-africa-governments-sign-visa-waiver-officials",
+      "https://www.mofa.gov.lr/index.php/media/press-releases/liberias-recent-election-united-nations-security-council-spurs-high-level"
+    ],
+    "notes": "Liberia's primary entry mechanism for non-ECOWAS visitors (where no Liberian embassy exists in their country) is the Electronic Visa on Arrival (e-VoA), launched March 11, 2025, via visaonarrival.lis.gov.lr. Travelers from 23 countries with Liberian embassies must apply at those embassies instead. ECOWAS nationals have visa-free access under the ECOWAS Free Movement Protocol. Rwanda gained visa-free access under a September 2025 bilateral agreement covering all citizens. Bilateral visa waiver agreements for diplomatic/official passport holders exist with UAE, South Africa, and China (confirmed on official sources). LIS resident permit fees distinguish ECOWAS citizens (USD 150), non-ECOWAS Africans (USD 600), and non-Africans (USD 750) for stays beyond 90 days."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["ARE"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of UAE Diplomatic Passports may enter Liberia visa-free under the MOU signed October 26, 2018, between the Republic of Liberia and the United Arab Emirates. Signatories: Acting FM B. Elias Shoniyin (Liberia) and Assistant Minister Hon. Shabab Alhosoni (UAE). Applies mutually.",
+      "source_url": "https://mofa.gov.lr/index.php/media/press-releases/liberia-signs-mou-united-arab-emirates-visa-waiver-liberia-and-uaes-diplomats",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["ARE"],
+      "passport_types": ["service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Liberian Service Passport holders traveling to UAE on official duties 'maybe accorded Visa Free privilege as well' per MOU signed October 26, 2018. Condition: traveling on official duties. Note: the MOU text uses 'maybe' (permissive, not mandatory), indicating this is at the discretion of UAE authorities for this category. This entry records the UAE-side service passport provision; for Liberia-side, UAE diplomatic passport holders are confirmed visa-free (see sibling entry).",
+      "source_url": "https://mofa.gov.lr/index.php/media/press-releases/liberia-signs-mou-united-arab-emirates-visa-waiver-liberia-and-uaes-diplomats",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["ZAF"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of South African Diplomatic and Official passports (ECOWAS E-Passport format required per MFA press release) may enter Liberia visa-free under the Visa Waiver Agreement signed April 3, 2018, entered into force May 4, 2018. Mutual agreement. Ordinary passport holders are NOT covered.",
+      "source_url": "https://www.mofa.gov.lr/media/press-releases/liberia-south-africa-governments-sign-visa-waiver-officials",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["CHN"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of Chinese Diplomatic Passports may enter Liberia visa-free under a mutual visa exemption agreement. Effective date: February 10, 2016, per China MFA official list of mutual visa exemption agreements (cs.mfa.gov.cn). Also referenced in Liberia MOFA cooperation agreements list (mofa.gov.lr, listed September 5, 2016). Covers diplomatic passports only; ordinary, service, and official passports are NOT covered. Note: China is also among the 23 countries whose citizens must apply at the Liberian embassy for an ordinary visa rather than use the e-VoA, consistent with a functional Liberian embassy existing in China.",
+      "source_url": "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No official Citizenship-by-Investment program was found on any Liberian government domain (lis.gov.lr, mofa.gov.lr). A 'Pathway to Citizenship' program for African American investors has been referenced in news media, but no official program page on a gov.lr domain was found; therefore not recorded per hard rules requiring official sources."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Resident Permit",
+        "type": "general_residence",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://rp.lis.gov.lr/",
+        "source_official": true,
+        "notes": "All foreign nationals wishing to remain in Liberia beyond 90 days must apply for a Resident Permit via rp.lis.gov.lr. This is a general residence permit, not an investment-based golden visa. Fees (new application): Non-African Citizen USD 750; Non-ECOWAS African Citizen USD 600; ECOWAS Citizen USD 150. Renewal: Non-African USD 350; Non-ECOWAS African USD 300; ECOWAS Citizen USD 100. Processing time: up to 2 weeks after in-person biometric appointment. No minimum investment required; this is a standard residence permit. No investment-based path to PR or citizenship defined on the official portal."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "ECOWAS (Economic Community of West African States) - Free Movement Protocol A/P 1/5/79 on Free Movement of Persons, Right of Residence and Establishment",
+    "Liberia-Rwanda Reciprocal Visa Waiver Agreement (signed September 11, 2025) - all citizens visa-free"
+  ],
+  "official_domains": [
+    "lis.gov.lr",
+    "visaonarrival.lis.gov.lr",
+    "rp.lis.gov.lr",
+    "mofa.gov.lr",
+    "liberiaconsulate-ny.com"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "ADDED: Rwanda (RWA) to visa_policy.visa_free — Liberia-Rwanda Reciprocal Visa Waiver Agreement signed September 11, 2025 covering all citizens, confirmed via mofa.gov.lr press release. Previously listed only in gaps as pending confirmation.",
+      "UPDATED: visa_on_arrival entry — Clarified that the VoA system was upgraded to an Electronic Visa on Arrival (e-VoA) on March 11, 2025 (lis.gov.lr/visa official announcement). Added the explicit list of 23 countries whose citizens must use embassies instead of the e-VoA portal.",
+      "UPDATED: visa_policy.source_urls — Added lis.gov.lr/visa and the mofa.gov.lr Rwanda press release URL.",
+      "UPDATED: agreements array — Added the Rwanda bilateral agreement.",
+      "CORRECTED: ECOWAS nationality list — Added 'Liberia' itself to the list (the prior record listed 14 other ECOWAS states but omitted Liberia; the consulate page lists all 16 including Liberia).",
+      "RETAINED: UAE, South Africa, China diplomatic/official passport conditional_access entries — all re-verified against original official sources.",
+      "RETAINED: cbi.has_program = false — no official CBI program found on gov.lr domains.",
+      "RETAINED: rbi general Resident Permit — no change to fee structure found.",
+      "NO CHANGE: Vietnam, Kuwait, Turkey, South Korea diplomatic passport exemptions mentioned on Wikipedia but not confirmable on official Liberian government sources (mofa.gov.lr); remain in gaps per policy."
+    ],
+    "gaps": [
+      "Max stay days for ECOWAS visa-free entry not specified on the official consulate page or MFA sources.",
+      "Max stay days for Rwanda visa-free entry not specified in the mofa.gov.lr press release.",
+      "Rwanda agreement effective/in-force date not confirmed on official Liberian sources; the September 11, 2025 signing date is confirmed but implementation date is unknown.",
+      "Vietnam diplomatic passport exemption: mentioned in Wikipedia and news aggregators but no official Liberian government (mofa.gov.lr or lis.gov.lr) source confirmed in this validation session. Not recorded.",
+      "Kuwait diplomatic passport exemption: listed in Wikipedia and noted on unofficial aggregators but no official Liberian government source confirmed. Not recorded.",
+      "Turkey diplomatic passport exemption: listed in Wikipedia but no official Liberian government source confirmed. Note: Turkey is establishing an embassy in Liberia per mofa.gov.lr. Not recorded.",
+      "South Korea: Wikipedia notes South Korea had visa-free entry (ordinary passport) from September 23, 1982, but this was cancelled on July 18, 2019. South Korea diplomatic passport exemption listed by Wikipedia but unconfirmed on official Liberian sources. Not recorded.",
+      "Morocco: referenced as a country where Liberians must apply at the embassy (i.e., a Liberian embassy exists in Morocco), and a Morocco visa waiver for Liberian officials was mentioned in press (2019), but the original mofa.gov.lr press release URL was not accessible; not recorded.",
+      "No comprehensive country-by-country visa exemption list published on official Liberian government domains (lis.gov.lr or mofa.gov.lr).",
+      "Mano River Union (MRU) membership confirmed but no explicit MRU-specific visa-free benefits beyond ECOWAS coverage found on official sources.",
+      "Dual citizenship allowance not determinable from official sources found.",
+      "No credential-based conditional access (e.g., valid US/Schengen/UK visa holders exempt) found on any official Liberian government source.",
+      "No OCI or comparable diaspora status rules found on any official Liberian government source.",
+      "No official digital nomad, startup visa, or talent/fast-track scheme found on any official domain.",
+      "Work Permit portal (workpermit-liberia.com) referenced from lis.gov.lr but is a contractor-managed domain, not .gov.lr; not included as official domain."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "no official Liberia government outbound visa-list page located; rely on destination-side data. Checked mofa.gov.lr (passport info, foreign missions, steps for biometric passport, international relations pages) and lis.gov.lr (immigration services) — neither publishes a list of countries where Liberian ordinary-passport holders can travel without a prior consular visa. The MOFA site focuses on passport issuance; the LIS site focuses on inbound visa services for foreigners entering Liberia."
+  },
+  "sources_checked": [
+    "https://lis.gov.lr/",
+    "https://lis.gov.lr/visa",
+    "https://visaonarrival.lis.gov.lr/",
+    "https://apply.visaonarrival.lis.gov.lr/LiberiaVisa",
+    "https://rp.lis.gov.lr/",
+    "https://rp.lis.gov.lr/Faq.aspx",
+    "https://www.mofa.gov.lr/",
+    "https://www.mofa.gov.lr/media/press-releases/ministry-foreign-affairs-responds-frontpageafricas-editorial-monday-may-2-2016",
+    "https://www.mofa.gov.lr/media/press-releases/liberia-south-africa-governments-sign-visa-waiver-officials",
+    "https://mofa.gov.lr/index.php/media/press-releases/liberia-signs-mou-united-arab-emirates-visa-waiver-liberia-and-uaes-diplomats",
+    "https://www.mofa.gov.lr/index.php/media/press-releases/liberias-recent-election-united-nations-security-council-spurs-high-level",
+    "https://liberiaconsulate-ny.com/consulate-services/ecowas/",
+    "https://liberiaconsulate-ny.com/consulate-services/visa/",
+    "https://lis.gov.lr/index.php/visa-passes/",
+    "https://www.gov.uk/foreign-travel-advice/liberia/entry-requirements",
+    "https://www.liberianembassyus.org/page/visa",
+    "https://www.mofa.gov.lr/publications/document-type/coorperation-agreements",
+    "https://www.mofa.gov.lr/general/foreign-missions",
+    "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Liberia",
+    "https://www.thesierraleonetelegraph.com/liberia-launches-e-visa-on-arrival/",
+    "https://visasnews.com/en/liberia-activates-its-electronic-visa-on-arrival-service"
+  ]
+}

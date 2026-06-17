@@ -1,0 +1,301 @@
+{
+  "iso2": "GT",
+  "iso3": "GTM",
+  "name": "Guatemala",
+  "region": "Americas",
+  "outbound_official": {
+    "found": false,
+    "note": "no official Guatemala government outbound visa-list page located; rely on destination-side data"
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Category A countries (visa-exempt nationals)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Nationals of countries classified in Category A by the Instituto Guatemalteco de Migración (IGM) enter Guatemala without a visa using a valid passport only. The official classification list is maintained at igm.gob.gt/clasificacion-de-paises/ — that page loads but the country list itself is embedded as a static image (JPG), making individual country enumeration unextractable programmatically. The framework is confirmed by igm.gob.gt: 'Los países que se encuentran en la categoría A, no necesitan visa para ingresar al territorio guatemalteco, ingresan únicamente con pasaporte vigente.' The current governing regulation is Acuerdo IGM-015-2025 (Acuerdo AMN 04-2025), in force since October 8, 2025. Max stay: 90 days per tourist entry, extendable once for up to 90 additional days (total max 180 days). Passport must have minimum 6 months validity. El Salvador, Honduras, and Nicaragua travel under the CA-4 agreement with a shared 90-day allowance.",
+        "source_url": "https://igm.gob.gt/clasificacion-de-paises/",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 90,
+        "notes": "Mexican nationals are confirmed visa-free for tourism/business stays under 3 months. Mexico is also explicitly named as a credential issuer for Category B waivers, confirming its Category A status. Passport must have at least 6 months validity.",
+        "source_url": "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/259-guatemala",
+        "source_official": true
+      },
+      {
+        "nationality": "El Salvador",
+        "iso3": "SLV",
+        "max_stay_days": 90,
+        "notes": "CA-4 member state. Salvadoran nationals move freely within the CA-4 zone (Guatemala, El Salvador, Honduras, Nicaragua) with a shared 90-day stay allowance. May travel with national identity document in lieu of passport.",
+        "source_url": "https://igm.gob.gt/wp-content/uploads/2017/09/MANUAL-CA4-Unificado.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Honduras",
+        "iso3": "HND",
+        "max_stay_days": 90,
+        "notes": "CA-4 member state. Honduran nationals move freely within the CA-4 zone (Guatemala, El Salvador, Honduras, Nicaragua) with a shared 90-day stay allowance. May travel with national identity document in lieu of passport.",
+        "source_url": "https://igm.gob.gt/wp-content/uploads/2017/09/MANUAL-CA4-Unificado.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Nicaragua",
+        "iso3": "NIC",
+        "max_stay_days": 90,
+        "notes": "CA-4 member state. Nicaraguan nationals move freely within the CA-4 zone (Guatemala, El Salvador, Honduras, Nicaragua) with a shared 90-day stay allowance. May travel with national identity document in lieu of passport.",
+        "source_url": "https://igm.gob.gt/wp-content/uploads/2017/09/MANUAL-CA4-Unificado.pdf",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://igm.gob.gt/clasificacion-de-paises/",
+      "https://igm.gob.gt/requisitos-de-ingreso-a-territorio-guatemalteco/",
+      "https://igm.gob.gt/consultas-frecuentes-para-tramite-de-visas-guatemaltecas/",
+      "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.3-Reglamento-de-Visas-ACUERDO-NUMERO-IGM-015-2025.pdf",
+      "https://igm.gob.gt/wp-content/uploads/2017/09/MANUAL-CA4-Unificado.pdf",
+      "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/259-guatemala",
+      "https://guatemalainindia.com/visas-category-b/"
+    ],
+    "notes": "Guatemala classifies countries into three categories under the Reglamento de Visas Guatemaltecas (Acuerdo IGM-015-2025 / AMN 04-2025, in force October 8, 2025): Category A (visa-exempt — passport only), Category B (consular visa required, unless Category B national holds a valid US/Canada/Schengen or Mexico visa per guatemalainindia.com; the IGM FAQ page at igm.gob.gt cites only US/Canada/Schengen explicitly), and Category C (consulted visa — requires prior IGM authorization before consular issuance). Tourist/traveler stay is capped at 90 days, extendable once by up to 90 days (max 180 days total). Guatemala participates in the CA-4 Central America-4 agreement with El Salvador, Honduras, and Nicaragua, under which the 90-day allowance is shared across all four countries. No e-visa or visa-on-arrival system exists. The Category A country list is published at igm.gob.gt/clasificacion-de-paises/ but the list is embedded as a static image, making individual nationality enumeration impossible without OCR. IGM-015-2025 also provides: Category B/C nationals married to Guatemalan nationals (minimum 6 months of marriage registered in RENAP) or who have Guatemalan children are upgraded to Category A (basis: family status, not credential — see conditional_access notes)."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "any valid visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Category B countries holding a valid US visa are exempt from obtaining a Guatemalan visa and may enter for up to 90 days (extendable to 180 days total). Confirmed by the IGM official FAQ page: 'Si te encuentras dentro de los países categoría B y tienes visa Americana, Canadiense o de Schengen vigente, no es necesario tramitar visa guatemalteca.' Applies to ordinary passport holders of Category B countries only. Category C nationals must still obtain a Guatemalan visa regardless of US/Schengen/Canada visa held.",
+      "source_url": "https://igm.gob.gt/consultas-frecuentes-para-tramite-de-visas-guatemaltecas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "US",
+        "type": "residence_permit",
+        "subtype": "any valid residence (Green Card / permanent resident)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Category B countries holding a valid US residence permit (including permanent resident / Green Card) are treated as Category A and may enter Guatemala without a Guatemalan visa for up to 90 days. Sourced from Acuerdo IGM-015-2025 (image-based PDF, Article 10 not extractable as text); same nationality-category restrictions apply as for US visa holders. Category C nationals are excluded from this waiver.",
+      "source_url": "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.3-Reglamento-de-Visas-ACUERDO-NUMERO-IGM-015-2025.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Canada",
+        "type": "visa",
+        "subtype": "any valid visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Category B countries holding a valid Canadian visa are exempt from obtaining a Guatemalan visa for up to 90 days. Confirmed by the IGM official FAQ page (igm.gob.gt): 'visa Americana, Canadiense o de Schengen vigente, no es necesario tramitar visa guatemalteca.' Also confirmed by Guatemala Embassy in India (@minex.gob.gt). Category C nationals are excluded.",
+      "source_url": "https://igm.gob.gt/consultas-frecuentes-para-tramite-de-visas-guatemaltecas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Canada",
+        "type": "residence_permit",
+        "subtype": "any valid residence (PR card / permanent resident)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Category B countries holding a valid Canadian permanent residence permit (PR card) are treated as Category A and may enter Guatemala without a Guatemalan visa for up to 90 days. Sourced from Acuerdo IGM-015-2025 (image-based PDF, Article 10 not extractable as text). Category C nationals are excluded.",
+      "source_url": "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.3-Reglamento-de-Visas-ACUERDO-NUMERO-IGM-015-2025.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "any valid Schengen visa (Type C or Type D)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Category B countries holding a valid Schengen area visa (issued by any Schengen member state; both Type C short-stay and Type D national/long-stay accepted) are exempt from obtaining a Guatemalan visa for up to 90 days. Confirmed by the IGM official FAQ page (igm.gob.gt): 'visa Americana, Canadiense o de Schengen vigente, no es necesario tramitar visa guatemalteca.' Also confirmed by Guatemala Embassy in India advisory. Category C nationals are excluded.",
+      "source_url": "https://igm.gob.gt/consultas-frecuentes-para-tramite-de-visas-guatemaltecas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "EU",
+        "type": "residence_permit",
+        "subtype": "any valid EU member state residence permit"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Category B countries holding a valid residence permit issued by an EU member state are treated as Category A and may enter Guatemala without a Guatemalan visa for up to 90 days. Sourced from Acuerdo IGM-015-2025 (image-based PDF, Article 10 not extractable as text). Category C nationals are excluded.",
+      "source_url": "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.3-Reglamento-de-Visas-ACUERDO-NUMERO-IGM-015-2025.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Mexico",
+        "type": "visa",
+        "subtype": "any valid visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Category B countries holding a valid Mexican visa are exempt from obtaining a Guatemalan visa for up to 90 days. Confirmed by the Guatemala Embassy in India official advisory (consindia@minex.gob.gt): 'Nationals of the category B countries with valid visas only from the USA/Canada/Schengen or Mexico would not require a visa from Guatemala.' Note: The IGM FAQ page at igm.gob.gt lists only US/Canada/Schengen in its public FAQ text and does not explicitly mention Mexico — the Mexico visa waiver is supported by the Embassy India page (official MINEX domain contact) but not confirmed from igm.gob.gt text directly. Category C nationals are excluded.",
+      "source_url": "https://guatemalainindia.com/visas-category-b/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Mexico",
+        "type": "residence_permit",
+        "subtype": "any valid Mexican residence"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Category B countries holding a valid Mexican residence permit are treated as Category A and may enter Guatemala without a Guatemalan visa for up to 90 days. Sourced from Acuerdo IGM-015-2025 (image-based PDF, Article 10 not extractable as text). Category C nationals are excluded.",
+      "source_url": "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.3-Reglamento-de-Visas-ACUERDO-NUMERO-IGM-015-2025.pdf",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": true,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "Guatemala does not have a Citizenship-by-Investment (CBI) program. There is no official scheme granting citizenship in exchange for direct investment without prior residency. Citizenship for foreign nationals is obtained only through naturalization (naturalizacion concesiva) under Decreto 1613 (Nationality Law) and Decree 86-96 amendments, requiring 5 years of continuous legal residency (reduced to 2 years for Central Americans, Spaniards, and Iberoamericans). Guatemala does permit dual citizenship. Applications are submitted to the Ministerio de Gobernación (MINGOB) via the Departmental Governor's office and evaluated by the Ministerio de Relaciones Exteriores (MINEX). The naturalization fee itself is officially Q0 (free). Source: Decree 1613/Nationality Law; confirmed via igm.gob.gt residency framework and MINGOB naturalization process."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Temporary Residency for Investors (Residencia Temporal como Inversionista)",
+        "type": "investor",
+        "min_amount": 100000,
+        "currency": "USD",
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.4-Reglamento-de-Residencias-Guatemaltecas-Acdo-IGM-016-2025-AMN-05-2025.pdf",
+        "source_official": true,
+        "notes": "Article 17 of Reglamento de Residencias Guatemaltecas (Acuerdo IGM-016-2025, in force October 8, 2025) requires the applicant to demonstrate participation in one or more commercial entities and/or investment in movable or immovable assets totaling at least USD 100,000. Consortium Legal (law firm analysis of IGM-016-2025) confirms the USD 100,000 minimum. Qualifying evidence includes: property registrations, securities title certificates, fixed asset invoices, proof of fund origin. Temporary residency is renewable annually. After 5 years of temporary residency, applicant may apply for permanent residency. After meeting the Nationality Law residency thresholds, naturalization may be sought. No direct path to citizenship — standard naturalization timeline applies."
+      },
+      {
+        "name": "Permanent Residency as Rentista or Pensionado (Residencia Permanente como Rentista o Pensionado)",
+        "type": "passive_income",
+        "min_amount": 1250,
+        "currency": "USD",
+        "path_to_pr_years": 0,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://igm.gob.gt/wp-content/uploads/2024/01/17.-Residencia-Permanente-para-rentistas-o-pensionados.pdf",
+        "source_official": true,
+        "notes": "Article 31 of Reglamento IGM-016-2025 and official IGM requirements form confirm: minimum individual monthly income of USD 1,250 generated outside Guatemala; each dependent adds USD 300/month. Rentistas are individuals subsisting on stable foreign-generated income (bank deposits, foreign company investments, real estate remittances, etc.). Pensionados receive periodic payments from government, international organizations, or private foreign entities. Income must be proven with certified bank statements or official pension documentation. Residency is granted directly as permanent (not temporary). Path to citizenship: standard naturalization after 5 continuous years residency (reduced to 2 years for qualifying nationalities). Rentistas/pensionados must renew income proof every 5 years."
+      },
+      {
+        "name": "Temporary Residency for Remote Workers / Digital Nomads (Trabajador Migrante con Empleador Extranjero)",
+        "type": "digital_nomad",
+        "min_amount": 2000,
+        "currency": "USD",
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.4-Reglamento-de-Residencias-Guatemaltecas-Acdo-IGM-016-2025-AMN-05-2025.pdf",
+        "source_official": true,
+        "notes": "Article 11 of Reglamento IGM-016-2025 (for remote workers employed by a foreign employer): requires bank statements showing a minimum monthly income of USD 2,000 from abroad (USD 3,000 if accompanied by dependents). Effective October 8, 2025 per Acuerdo IGM-016-2025, confirmed by Consortium Legal analysis. No Guatemalan employer or local guarantor required for this category. Residency valid for 1 year, renewable annually. After 5 years, eligible for permanent residency. The official category designation is 'trabajador migrante con empleador extranjero' — there is no separate formal 'digital nomad visa' branding in the official regulation."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Temporary Residency for Intellectuals, Researchers, and Scientists (Residencia Temporal para Intelectuales, Investigadores y Científicos)",
+        "category": "skilled_worker",
+        "eligibility": "Foreign nationals with documented qualifications to practice as intellectuals, researchers, or scientists under Article 75(e) of the Migration Code (Código de Migración, Decreto 44-2016)",
+        "processing_time": "Not specified in official regulation; standard IGM processing applies",
+        "official_url": "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.4-Reglamento-de-Residencias-Guatemaltecas-Acdo-IGM-016-2025-AMN-05-2025.pdf",
+        "source_official": true,
+        "notes": "Article 19 of Reglamento de Residencias Guatemaltecas (Acuerdo IGM-016-2025). Requirements: documentation certifying qualifications as intellectual, researcher, or scientist; updated Guatemalan guarantor certification; valid contract. Residency is temporary and tied to the contract. Extensions require proof of continued contract. Not a fast-track in the sense of expedited processing, but represents a recognized skilled talent category distinct from general employment."
+      }
+    ]
+  },
+  "agreements": [
+    "CA-4 Central America-4 Border Control Agreement (Guatemala, El Salvador, Honduras, Nicaragua — 2006: harmonized visa regime and free movement for nationals of the four states; foreign nationals admitted under CA-4 receive a single 90-day stay allowance across all four countries)"
+  ],
+  "official_domains": [
+    "igm.gob.gt",
+    "servicios.igm.gob.gt",
+    "minex.gob.gt",
+    "portales.sre.gob.mx"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "Re-verified June 2026 against live official pages. The IGM clasificacion-de-paises page was successfully fetched (Firecrawl stealth) — it confirms the A/B/C framework and that Category A nationals enter with passport only, but the country list itself is embedded as a static image (JPG) at igm.gob.gt/wp-content/uploads/2023/01/Categoria-a-actualizada-2023.jpg and cannot be enumerated without OCR; this is consistent with the prior record's note about the 403 issue.",
+      "The IGM FAQ page (igm.gob.gt/consultas-frecuentes-para-tramite-de-visas-guatemaltecas/) was successfully fetched and provides extractable official text. It explicitly confirms that Category B nationals with valid US/Canada/Schengen visas are waived. It does NOT mention Mexico visa in this text. The prior record cited Mexico visa waiver only from the Embassy India page (guatemalainindia.com, contact @minex.gob.gt). Mexico visa waiver entry updated with a clarifying note about this source discrepancy. Entry is retained because the Embassy India page is an official MINEX-affiliated source.",
+      "The conditional_access source_urls for the US/Canada/Schengen VISA entries have been updated to cite the IGM FAQ page (igm.gob.gt) as primary, since that page provides directly extractable official confirmation. The prior record cited only the IGM-015-2025 PDF (image-based, non-extractable) for these.",
+      "The conditional_access entries for residence permits (US Green Card, Canada PR, EU residence permit, Mexico residence) remain cited to the IGM-015-2025 PDF as before, since the IGM FAQ text did not confirm residence permits specifically — only visas. These entries are plausible from the framework but lack extractable official text confirmation.",
+      "New finding from Consortium Legal (law firm analysis of IGM-015-2025): Category B/C nationals who can prove 3 continuous years of residence in a Category A country are also upgraded to Category A. This rule was NOT in the prior record. However, Consortium Legal is not an official government source, and the underlying PDF is image-based; this rule is therefore recorded in gaps, not added to conditional_access.",
+      "The October 8, 2025 entry-into-force date for IGM-015-2025 and IGM-016-2025 was confirmed directly from the official IGM news page (igm.gob.gt).",
+      "No e-visa or visa on arrival system detected on any official page — confirmed absent.",
+      "CBI: confirmed absent. RBI programs: USD 100,000 investor minimum re-confirmed by Consortium Legal (law firm) consistent with the official PDF; USD 1,250/month rentista confirmed by official IGM form; USD 2,000/month digital nomad confirmed by Consortium Legal.",
+      "The 'Nómada Digital / Trabajador Migrante' program name corrected in this update: official regulation uses 'trabajador migrante con empleador extranjero' — the prior record's notes already flagged this; the program name field has been updated accordingly."
+    ],
+    "gaps": [
+      "Official Category A (visa-free) country list is published at igm.gob.gt/clasificacion-de-paises/ but embedded as a static image (JPG), preventing enumeration without OCR; only the framework and a few individually confirmed examples are recorded",
+      "Category B and Category C country lists similarly embedded as images; framework confirmed but full enumerations not verifiable from extractable text",
+      "The IGM-015-2025 PDF (Reglamento de Visas, Article 10) is an image-based PDF — the exact regulatory text covering residence permit waivers (US Green Card, Canada PR, EU residence, Mexico residence) cannot be extracted as text; these conditional_access entries are retained from prior research but cannot be independently verified by text extraction",
+      "The IGM FAQ page (official, extractable) lists only visa waivers for US/Canada/Schengen and does NOT mention Mexico visa or any residence permit waivers in its public FAQ text; Mexico visa waiver retained based on Guatemala Embassy India official page (MINEX-affiliated domain)",
+      "New unconfirmed rule (from Consortium Legal, secondary source): Category B/C nationals who can prove 3 continuous years of residence in a Category A country are also upgraded to Category A. Not yet confirmed from an official extractable source; not added to conditional_access",
+      "Diplomatic/service/official passport bilateral visa suppression agreements: aggregator sources (Wikipedia) list Belarus, Bolivia, Burkina Faso, Cuba, Dominica, Dominican Republic, Ecuador, Egypt, Grenada, Guyana, Haiti, India, Jamaica, Jordan, Kenya, Montenegro, Morocco, Pakistan, Papua New Guinea, Philippines, Serbia, Suriname, Thailand as reportedly exempt for diplomatic/service/official passports — no official Guatemalan page listing these agreements was accessible in extractable form; not recorded",
+      "UK visa: The Guatemala Embassy in India advisory and the IGM FAQ both do NOT list UK visa as a qualifying credential for Category B waiver. UK is not included in the conditional_access entries",
+      "Australia/Japan/GCC visa: No official source found confirming any waiver for holders of Australian, Japanese, or GCC visas. Not recorded",
+      "OCI (Overseas Citizen of India): No official Guatemalan source grants OCI-specific privileges. Not recorded",
+      "No e-visa portal or ETA system exists for Guatemala as of June 2026 — confirmed absent across all official pages checked",
+      "Exact processing time for investor and rentista residency applications not officially published",
+      "Naturalization timelines sourced from Decree 1613 framework — direct access to current consolidated nationality law text was not verified in this session"
+    ]
+  },
+  "sources_checked": [
+    "https://igm.gob.gt/clasificacion-de-paises/",
+    "https://igm.gob.gt/requisitos-de-ingreso-a-territorio-guatemalteco/",
+    "https://igm.gob.gt/consultas-frecuentes-para-tramite-de-visas-guatemaltecas/",
+    "https://igm.gob.gt/el-instituto-guatemalteco-de-migracion-fortalece-su-marco-normativo-con-nuevos-reglamentos/",
+    "https://igm.gob.gt/modalidades-de-visa-en-guatemala/",
+    "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.3-Reglamento-de-Visas-ACUERDO-NUMERO-IGM-015-2025.pdf",
+    "https://igm.gob.gt/wp-content/uploads/2025/09/24.1.4-Reglamento-de-Residencias-Guatemaltecas-Acdo-IGM-016-2025-AMN-05-2025.pdf",
+    "https://igm.gob.gt/wp-content/uploads/2024/01/17.-Residencia-Permanente-para-rentistas-o-pensionados.pdf",
+    "https://igm.gob.gt/wp-content/uploads/2017/09/MANUAL-CA4-Unificado.pdf",
+    "https://guatemalainindia.com/visas-category-b/",
+    "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/259-guatemala",
+    "https://consortiumlegal.com/en/2025/08/22/update-on-immigration-regulations-in-guatemala/"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "iso2": "PS",
+  "iso3": "PSE",
+  "name": "Palestine",
+  "region": "Asia",
+  "visa_policy": {
+    "visa_free": [],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Visa_policy_of_Palestine",
+      "https://www.mofa.pna.ps/en-us/theministry/generaldepartmentofprotocol",
+      "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/IsraeltheWestBankandGaza.html",
+      "https://www.gov.uk/foreign-travel-advice/palestine/entry-requirements"
+    ],
+    "notes": "Palestine does not independently impose visa conditions on foreign nationals. Wikipedia (Visa policy of Palestine) states explicitly: 'There are no visa conditions imposed on foreign nationals other than those imposed by the visa policy of Israel.' Access to the West Bank is controlled by the Government of Israel; access to Gaza is controlled by Hamas. Visitors to the West Bank effectively receive entry under Israeli visa policy (ETA-IL as of January 1, 2025 for eligible nationalities, costs 25 NIS, valid 2 years, max stay 90 days per visit). The Palestinian Authority's Ministry of Foreign Affairs (mofa.pna.ps) maintains a General Department of Protocol which references outbound visa rules for Palestinian passport holders — not inbound visa rules for foreign nationals entering Palestine. No independent Palestinian Authority visa issuance system exists."
+  },
+  "conditional_access": [],
+  "cbi": {
+    "has_program": false,
+    "notes": "No Palestinian Authority citizenship-by-investment program found on official sources. Palestinian citizenship is governed by historical and legal frameworks predating a fully independent state; no CBI portal or official program page was identified."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [],
+  "official_domains": [
+    "mofa.pna.ps",
+    "mfae.gov.ps",
+    "gov.ps"
+  ],
+  "data_quality": {
+    "completeness": "low",
+    "validation_notes": [
+      "Re-verified June 2026. Core policy unchanged: Palestine has no independent visa system. All prior visa_policy and conditional_access entries (already empty) confirmed correct.",
+      "Updated crossing status in gaps: Rafah crossing briefly reopened February 2, 2026 under ceasefire agreement (limited to ~150 persons/day including medical patients), then reclosed by Israel in March 2026. Erez crossing remains closed since October 7, 2023.",
+      "Added UK FCDO (gov.uk) as an additional source_url — confirms Israeli ETA-IL requirement, 90-day passport validity requirement beyond arrival, and Palestinian Population Register holders must use Palestinian travel documents.",
+      "Confirmed no Palestinian Authority MFA official page publishes inbound visa waiver agreements or conditional entry rules for foreign nationals as of June 2026.",
+      "US State Dept ETA-IL entry remains the operative mechanism for West Bank access; no change from prior record.",
+      "No cbi/rbi/fast_track programs identified or changed."
+    ],
+    "gaps": [
+      "Palestine does not operate an independent border control or visa issuance system. Entry to the West Bank is governed by Israeli immigration policy (cogat.mod.gov.il, eta.gov.il); entry to Gaza is controlled by Hamas and subject to severe restrictions. Rafah crossing (Egypt-Gaza) briefly reopened February 2, 2026 under ceasefire terms, then reclosed by Israel in March 2026. Erez crossing (Gaza-Israel) has been damaged and closed since October 7, 2023. No regular entry system is operational for Gaza as of June 2026.",
+      "The Palestinian MFA General Department of Protocol page (mofa.pna.ps/en-us/theministry/generaldepartmentofprotocol) contains only a reference to 'Countries Palestinian Passport Holders Can Enter With/Without Visa' — outbound travel data, not inbound visa policy. No inbound conditional access rules are published there. The domain returns SSL certificate errors preventing direct WebFetch.",
+      "Diplomatic passport bilateral agreements: The Palestinian Authority issues diplomatic passports. Aggregators list countries granting visa-free access to Palestinian diplomatic passports, but no official Palestinian MFA source documenting specific bilateral visa suppression or waiver agreements with named dates was found. Not recorded per the hard rule requiring an official source.",
+      "Schengen/US/UK/GCC visa holder conditional entry rules: Palestine does not publish such rules because it does not operate an independent entry system. No aggregator or official source documents such rules for Palestine specifically.",
+      "Gaza entry: Rafah crossing (Egypt-Gaza) closed since March 2026 (briefly opened Feb 2–March 2026 under ceasefire). Erez crossing (Gaza-Israel) closed since October 7, 2023. No regular foreign-national entry system operational.",
+      "OCI / diaspora status entry rules: No evidence in any source that Palestine grants special entry status to OCI cardholders or diaspora holders. Not recorded.",
+      "UK FCDO notes British-Palestinians on the Palestinian Population Register or holding Palestinian IDs must use a Palestinian travel document to exit Gaza or the West Bank, and may only exit through Allenby (Jordan) or Rafah (Egypt) crossings. This is an exit rule for PA-registered individuals, not an inbound entry rule for ordinary foreign nationals."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "The Palestinian Authority Ministry of Foreign Affairs (mofa.pna.ps) General Department of Protocol page references a section titled 'Countries Palestinian Passport Holders Can Enter With/Without Visa', indicating an outbound visa-free list exists on the site. However, the mofa.pna.ps domain returns SSL certificate errors blocking all WebFetch access, and Firecrawl scraping is unavailable. The newer domain mfae.gov.ps returns HTTP 503. No accessible, readable, official Palestinian government page listing outbound visa-free/visa-on-arrival/e-visa destinations for Palestinian ordinary passport holders was located. No aggregator substitute is acceptable per policy. Rely on destination-side data until the Palestinian MFA site becomes accessible."
+  },
+  "sources_checked": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Palestine",
+      "domain": "en.wikipedia.org",
+      "official": false,
+      "notes": "Explicitly states: 'There are no visa conditions imposed on foreign nationals other than those imposed by the visa policy of Israel.' Describes West Bank access as controlled by the Government of Israel and Gaza access as controlled by Hamas. No conditional entry rules documented. Confirmed current June 2026."
+    },
+    {
+      "url": "https://www.mofa.pna.ps/en-us/theministry/generaldepartmentofprotocol",
+      "domain": "mofa.pna.ps",
+      "official": true,
+      "notes": "Palestinian MFA General Department of Protocol page. Contains outbound travel reference ('Countries Palestinian Passport Holders Can Enter With/Without Visa') but no inbound visa/conditional entry rules. SSL errors prevent direct WebFetch; confirmed via prior Firecrawl scrape. No change detected."
+    },
+    {
+      "url": "https://www.mofa.pna.ps/portals/0/Diplomatic%20List%20February%202025.pdf",
+      "domain": "mofa.pna.ps",
+      "official": true,
+      "notes": "Palestinian MFA Diplomatic List (February 2025). Contains listing of embassies and diplomatic personnel accredited to the State of Palestine. No visa waiver agreements or conditional entry rules documented."
+    },
+    {
+      "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/IsraeltheWestBankandGaza.html",
+      "domain": "travel.state.gov",
+      "official": true,
+      "notes": "US State Department country information page for Israel, West Bank and Gaza. Confirms ETA-IL requirement for entry since January 1, 2025. West Bank work/study/volunteer/research requires Israeli COGAT permits. Gaza: Do Not Travel advisory; Erez crossing closed since October 7, 2023; Rafah crossing closed since May 7, 2024 (briefly reopened February 2026, reclosed March 2026). No Palestinian Authority-specific conditional entry rules. Confirmed current June 2026."
+    },
+    {
+      "url": "https://www.gov.uk/foreign-travel-advice/palestine/entry-requirements",
+      "domain": "gov.uk",
+      "official": true,
+      "notes": "UK FCDO Palestine entry requirements page. Confirms Israeli authorities control all entry to Palestine; ETA-IL required as of January 1, 2025; passport must be valid 90 days beyond arrival. British-Palestinians on PA Population Register must use Palestinian travel documents and exit via Allenby or Rafah only. Rafah 'regularly closes with no warning and for long periods.' No Palestinian Authority-specific visa or conditional entry rules for ordinary foreign nationals. Fetched June 2026."
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_Palestinian_citizens",
+      "domain": "en.wikipedia.org",
+      "official": false,
+      "notes": "Documents outbound visa requirements for Palestinian passport holders. Not relevant to inbound conditional entry rules for Palestine itself."
+    },
+    {
+      "url": "https://ecpalestine.org/how-to-get-a-visa-to-enter-palestine/",
+      "domain": "ecpalestine.org",
+      "official": false,
+      "notes": "NGO/civil society guide. Confirms visitors need an Israeli tourist visa (now ETA-IL since 2025) to enter Palestine; no separate Palestinian visa exists. Entry based entirely on Israeli visa policy. Confirms no Palestinian Authority administrative involvement in visa issuance."
+    },
+    {
+      "url": "https://gisha.org/en/update-on-rafah-crossing/",
+      "domain": "gisha.org",
+      "official": false,
+      "notes": "Israeli NGO tracking Gaza crossing status. Confirms Rafah crossing briefly reopened February 2, 2026 under ceasefire terms (limited ~150 persons/day), then reclosed by Israel March 2026. HTTP 403 on direct fetch; status confirmed via WebSearch results citing Gisha and Chatham House. Not an official source but corroborates US State Dept data."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+import { chromium } from "playwright";
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1280, height: 1500 }, deviceScaleFactor: 1 });
+await p.goto("http://localhost:3000/", { waitUntil: "networkidle" });
+await p.getByPlaceholder("Search a country…").fill("France");
+await p.waitForTimeout(300);
+await p.getByRole("button", { name: /France/ }).first().click();
+await p.waitForTimeout(600);
+await p.screenshot({ path: "/tmp/bw-home.png", fullPage: true });
+await b.close();
+console.log("shot saved");

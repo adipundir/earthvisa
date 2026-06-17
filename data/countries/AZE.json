@@ -1,0 +1,1060 @@
+{
+  "iso2": "AZ",
+  "iso3": "AZE",
+  "name": "Azerbaijan",
+  "region": "Asia",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://mfa.gov.az/en/category/visa/visa-free-countries",
+    "source_official": true,
+    "asof": "2026-04-29",
+    "visa_free": [
+      {"name": "Belarus", "iso3": "BLR", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Georgia", "iso3": "GEO", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Kazakhstan", "iso3": "KAZ", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Kyrgyzstan", "iso3": "KGZ", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Moldova", "iso3": "MDA", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Uzbekistan", "iso3": "UZB", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Russia", "iso3": "RUS", "max_stay_days": 90, "notes": "Group II bilateral; 90 days per calendar year; all passport types including ordinary"},
+      {"name": "Tajikistan", "iso3": "TJK", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Ukraine", "iso3": "UKR", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Turkey", "iso3": "TUR", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Qatar", "iso3": "QAT", "max_stay_days": 30, "notes": "Group II bilateral; all passport types including ordinary; educational/labor activities require prior visa"},
+      {"name": "United Arab Emirates", "iso3": "ARE", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Serbia", "iso3": "SRB", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Albania", "iso3": "ALB", "max_stay_days": 90, "notes": "Group II bilateral; all passport types including ordinary"},
+      {"name": "Morocco", "iso3": "MAR", "max_stay_days": 90, "notes": "Group II bilateral; ordinary passport holders noted"},
+      {"name": "China", "iso3": "CHN", "max_stay_days": 30, "notes": "Group II bilateral; 30 days per entry, cumulative stay not exceeding 90 days in any 180-day period; all passport types including ordinary"},
+      {"name": "Maldives", "iso3": "MDV", "max_stay_days": 90, "notes": "Group II bilateral; ordinary passport holders noted; stays over 90 days or work/study/business require prior visa"},
+      {"name": "Iran", "iso3": "IRN", "max_stay_days": 15, "notes": "Group III unilateral; Azerbaijan citizens with ordinary passport may enter Iran for 15 days without a visa"},
+      {"name": "Montenegro", "iso3": "MNE", "max_stay_days": 90, "notes": "Group III unilateral; Azerbaijan citizens may enter without a visa"},
+      {"name": "Bosnia and Herzegovina", "iso3": "BIH", "max_stay_days": 90, "notes": "Group III unilateral; Azerbaijan citizens may enter without a visa"},
+      {"name": "Malaysia", "iso3": "MYS", "max_stay_days": 30, "notes": "Group III unilateral; ordinary, diplomatic and service passports; Azerbaijan citizens may enter without a visa"},
+      {"name": "Lebanon", "iso3": "LBN", "max_stay_days": 30, "notes": "Group III unilateral; ordinary, diplomatic and service passports; 30 days for ordinary passport holders (page shows multiple figures: 30/180/90 for different passport types)"}
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "Source is the official Azerbaijan Ministry of Foreign Affairs page listing visa-free countries (mfa.gov.az/en/category/visa/visa-free-countries). The page organises outbound access into groups: Group II lists bilateral agreements where ALL passport types (including ordinary/civil) are covered; Group III lists countries where Azerbaijan citizens (holding civil/ordinary passports) may travel unilaterally without a visa for the stated period. The diplomatic/service-passport-only bilateral list (Group I, 79 countries per the April 2026 PDF) is excluded here as it does not apply to ordinary passport holders. North Macedonia (Group III, March 2022–March 2023) has expired. Hong Kong SAR under Group III is listed for diplomatic/service only. The page URL asof date reflects the latest PDF on the page (29 April 2026)."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Belarus",
+        "iso3": "BLR",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Georgia",
+        "iso3": "GEO",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Kazakhstan",
+        "iso3": "KAZ",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Kyrgyzstan",
+        "iso3": "KGZ",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Moldova",
+        "iso3": "MDA",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Uzbekistan",
+        "iso3": "UZB",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Russia",
+        "iso3": "RUS",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; 90 days for each calendar year; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Tajikistan",
+        "iso3": "TJK",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Turkey",
+        "iso3": "TUR",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Qatar",
+        "iso3": "QAT",
+        "max_stay_days": 30,
+        "notes": "Group II bilateral visa-free. Citizens wishing to engage in educational or labor activities must obtain a visa in advance.",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "United Arab Emirates",
+        "iso3": "ARE",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Serbia",
+        "iso3": "SRB",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Albania",
+        "iso3": "ALB",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; any valid passport type",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Morocco",
+        "iso3": "MAR",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; holders of ordinary passports only",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "China",
+        "iso3": "CHN",
+        "max_stay_days": 30,
+        "notes": "Group II bilateral visa-free; 30 days per entry with cumulative stay not exceeding 90 days in any 180-day period",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Maldives",
+        "iso3": "MDV",
+        "max_stay_days": 90,
+        "notes": "Group II bilateral visa-free; holders of ordinary passports only. Citizens wishing to stay more than 90 days or work/study/conduct business must obtain a visa in advance.",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Hong Kong SAR (China) — ordinary passport holders",
+        "iso3": null,
+        "max_stay_days": 30,
+        "notes": "Group IV unilateral visa-free by Azerbaijan; valid from February 2, 2026 to February 2, 2027; up to 3 entries and up to 30 days per entry",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Macao SAR (China) — ordinary passport holders",
+        "iso3": null,
+        "max_stay_days": 30,
+        "notes": "Group IV unilateral visa-free by Azerbaijan; valid from February 2, 2026 to February 2, 2027; up to 3 entries and up to 30 days per entry",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Saudi Arabia",
+        "iso3": "SAU",
+        "max_stay_days": 30,
+        "notes": "Group IV unilateral visa-free by Azerbaijan; valid from February 15, 2026 to February 15, 2027; up to 3 entries and up to 30 days per entry. Upon 4th entry, a valid visa is required.",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Oman",
+        "iso3": "OMN",
+        "max_stay_days": 30,
+        "notes": "Group IV unilateral visa-free by Azerbaijan; valid from February 15, 2026 to February 15, 2027; up to 3 entries and up to 30 days per entry. Upon 4th entry, a valid visa is required.",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahrain",
+        "iso3": "BHR",
+        "max_stay_days": 30,
+        "notes": "Group IV unilateral visa-free by Azerbaijan; valid from February 15, 2026 to February 15, 2027; up to 3 entries and up to 30 days per entry. Upon 4th entry, a valid visa is required. Also eligible for e-visa.",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      },
+      {
+        "nationality": "Kuwait",
+        "iso3": "KWT",
+        "max_stay_days": 30,
+        "notes": "Group IV unilateral visa-free by Azerbaijan; valid from February 15, 2026 to February 15, 2027; up to 3 entries and up to 30 days per entry. Upon 4th entry, a valid visa is required. Also eligible for e-visa.",
+        "source_url": "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {
+        "nationality": "Algeria",
+        "iso3": "DZA",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay. Standard processing 3 working days; urgent processing 3 hours.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Austria",
+        "iso3": "AUT",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahamas",
+        "iso3": "BHS",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahrain",
+        "iso3": "BHR",
+        "max_stay_days": 30,
+        "notes": "Eligible for e-visa; also currently eligible for visa-free entry under Group IV (Feb 15 2026–Feb 15 2027, up to 3 entries, 30 days each; 4th entry requires a valid visa).",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Barbados",
+        "iso3": "BRB",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Belgium",
+        "iso3": "BEL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Bolivia",
+        "iso3": "BOL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Bosnia and Herzegovina",
+        "iso3": "BIH",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Brunei",
+        "iso3": "BRN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Bulgaria",
+        "iso3": "BGR",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Croatia",
+        "iso3": "HRV",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Cuba",
+        "iso3": "CUB",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Cyprus",
+        "iso3": "CYP",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Czechia",
+        "iso3": "CZE",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Denmark",
+        "iso3": "DNK",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Djibouti",
+        "iso3": "DJI",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Ecuador",
+        "iso3": "ECU",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Estonia",
+        "iso3": "EST",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Finland",
+        "iso3": "FIN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "France",
+        "iso3": "FRA",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Germany",
+        "iso3": "DEU",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Greece",
+        "iso3": "GRC",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Guatemala",
+        "iso3": "GTM",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Holy See (Vatican)",
+        "iso3": "VAT",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Honduras",
+        "iso3": "HND",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Hungary",
+        "iso3": "HUN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Iceland",
+        "iso3": "ISL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "India",
+        "iso3": "IND",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Indonesia",
+        "iso3": "IDN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Iran",
+        "iso3": "IRN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay. Note: Group III on the MFA page refers to Azerbaijani citizens traveling TO Iran visa-free (15 days), not Iranians entering Azerbaijan; Iranians require an e-visa to enter Azerbaijan.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Ireland",
+        "iso3": "IRL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Italy",
+        "iso3": "ITA",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Jamaica",
+        "iso3": "JAM",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Jordan",
+        "iso3": "JOR",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Kuwait",
+        "iso3": "KWT",
+        "max_stay_days": 30,
+        "notes": "Eligible for e-visa; also currently eligible for visa-free entry under Group IV (Feb 15 2026–Feb 15 2027, up to 3 entries, 30 days each; 4th entry requires a valid visa).",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Latvia",
+        "iso3": "LVA",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Liechtenstein",
+        "iso3": "LIE",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Lithuania",
+        "iso3": "LTU",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Luxembourg",
+        "iso3": "LUX",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Malta",
+        "iso3": "MLT",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Mauritius",
+        "iso3": "MUS",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Mongolia",
+        "iso3": "MNG",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Montenegro",
+        "iso3": "MNE",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Nepal",
+        "iso3": "NPL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Netherlands",
+        "iso3": "NLD",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "North Macedonia",
+        "iso3": "MKD",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Norway",
+        "iso3": "NOR",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Oman",
+        "iso3": "OMN",
+        "max_stay_days": 30,
+        "notes": "Eligible for e-visa; also currently eligible for visa-free entry under Group IV (Feb 15 2026–Feb 15 2027, up to 3 entries, 30 days each; 4th entry requires a valid visa).",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Pakistan",
+        "iso3": "PAK",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Paraguay",
+        "iso3": "PRY",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Poland",
+        "iso3": "POL",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Portugal",
+        "iso3": "PRT",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Republic of Korea",
+        "iso3": "KOR",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Romania",
+        "iso3": "ROU",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "San Marino",
+        "iso3": "SMR",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Saudi Arabia",
+        "iso3": "SAU",
+        "max_stay_days": 30,
+        "notes": "Eligible for e-visa; also currently eligible for visa-free entry under Group IV (Feb 15 2026–Feb 15 2027, up to 3 entries, 30 days each; 4th entry requires a valid visa).",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovakia",
+        "iso3": "SVK",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovenia",
+        "iso3": "SVN",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "South Africa",
+        "iso3": "ZAF",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Spain",
+        "iso3": "ESP",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Sri Lanka",
+        "iso3": "LKA",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Sweden",
+        "iso3": "SWE",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Switzerland",
+        "iso3": "CHE",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Thailand",
+        "iso3": "THA",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Trinidad and Tobago",
+        "iso3": "TTO",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Turkmenistan",
+        "iso3": "TKM",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "United States of America",
+        "iso3": "USA",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Viet Nam",
+        "iso3": "VNM",
+        "max_stay_days": 30,
+        "notes": "Single entry e-visa valid for 30 days stay.",
+        "source_url": "https://evisa.gov.az/countries",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+      "https://evisa.gov.az/countries",
+      "https://evisa.gov.az/"
+    ],
+    "notes": "Azerbaijan's official MFA page lists visa-free countries in four groups. Group I: diplomatic/service passport bilateral (PDF list). Group II: all passport types bilateral — 17 countries including CIS states, Turkey, UAE, Serbia, Albania, Morocco, China, Maldives, Qatar. Group III: unilateral visa-free for Azerbaijani citizens traveling OUTBOUND (e.g., to Iran for 15 days, Malaysia 30 days, Montenegro 90 days, Bosnia 90 days) — these are NOT inbound visa-free grants to Azerbaijan. Group IV: unilateral visa-free for foreign ordinary passport holders entering Azerbaijan — Hong Kong/Macao SAR (Feb 2 2026–Feb 2 2027, 3 entries, 30 days) and Saudi Arabia, Oman, Bahrain, Kuwait (Feb 15 2026–Feb 15 2027, 3 entries, 30 days; 4th entry requires a visa). The e-visa (ASAN Visa) at evisa.gov.az issues single-entry electronic visas valid for 30 days stay; standard processing 3 working days, urgent 3 hours."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "UAE",
+        "type": "residence_permit",
+        "subtype": "resident visa of the United Arab Emirates"
+      },
+      "level": "visa_on_arrival",
+      "max_stay_days": 30,
+      "conditions": "Holders of a resident visa (residence permit) of the United Arab Emirates can be issued a visa at the international airports of the Republic of Azerbaijan. UAE resident visa must have at least 6 months validity remaining. Traveller must hold a passport (not a travel document) valid for at least 4 months. Excludes nationals of Syria, Iraq, and Afghanistan.",
+      "source_url": "https://migration.gov.az/en/page/49",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": "any",
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Citizens of the relevant foreign country holding diplomatic or service (or official/special) passport are visa-free under bilateral intergovernmental agreements (Group I). 79 countries listed in the official PDF dated 29 April 2026. Permitted stay varies by country (30 or 90 days). Libya temporarily suspended. See PDF for full per-country details.",
+      "source_url": "https://mfa.gov.az/files/VIZA/Visa%20Free%20Countries%20List%20-%2029%20April%202026.pdf",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program found on official government sources. The State Migration Service (migration.gov.az) offers investment-based residence permits but no direct citizenship-by-investment pathway. Citizenship grants are handled by presidential decree and no investment-for-citizenship scheme is advertised on any official government site."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Investment-Based Temporary Residence Permit",
+        "type": "investment",
+        "min_amount": 100000,
+        "currency": "AZN",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://migration.gov.az/en/page/73",
+        "source_official": true,
+        "notes": "Foreigners can obtain a temporary residence permit by: (1) possessing real estate worth at least AZN 100,000 in Azerbaijan; (2) holding a fixed-term bank deposit of at least AZN 100,000 in Azerbaijani banks; (3) owning government securities or state-majority (51%+) company investment securities with nominal value of at least AZN 100,000; or (4) making a general economic investment of at least AZN 500,000. Initial permit issued for period requested (up to 1 year); extendable each time for up to 2 years."
+      },
+      {
+        "name": "Investment-Based Permanent Residence Permit",
+        "type": "investment",
+        "min_amount": 200000,
+        "currency": "AZN",
+        "path_to_pr_years": 2,
+        "path_to_citizenship_years": null,
+        "official_url": "https://migration.gov.az/en/page/73",
+        "source_official": true,
+        "notes": "Foreigners can obtain a permanent residence permit after 2 years of continuous temporary residence by: (1) possessing real estate worth at least AZN 200,000; (2) holding a fixed-term bank deposit of at least AZN 200,000; (3) owning securities with nominal value of at least AZN 200,000; or (4) maintaining general economic investment of at least AZN 500,000. Permanent permits issued for 5 years, extendable for further 5-year periods."
+      },
+      {
+        "name": "Highly Qualified Specialist Temporary Residence Permit",
+        "type": "skilled_worker",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 2,
+        "path_to_citizenship_years": null,
+        "official_url": "https://migration.gov.az/en/page/73",
+        "source_official": true,
+        "notes": "Highly qualified specialists in spheres of economy, industry, military, science, culture, sports, etc. may obtain a temporary residence permit for up to 1 year (extendable up to 2 years). Requires a justified application from the inviting authority, enterprise, or organization. After 2 years of continuous temporary residence, transition to permanent residence is possible."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "ASAN Visa — Urgent Electronic Visa",
+        "category": "e-visa fast track",
+        "eligibility": "Nationals of countries eligible for Azerbaijan e-visa (as listed at evisa.gov.az/countries)",
+        "processing_time": "3 hours (regardless of holidays and non-working days)",
+        "official_url": "https://evisa.gov.az/apply-step1?urgent=1",
+        "source_official": true,
+        "notes": "The ASAN Visa urgent service processes single-entry e-visa applications within 3 hours for any eligible nationality. Standard processing takes 3 working days. The visa is valid for 30 days stay in Azerbaijan."
+      }
+    ]
+  },
+  "agreements": [],
+  "official_domains": [
+    "mfa.gov.az",
+    "evisa.gov.az",
+    "migration.gov.az"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "CORRECTED: Iran e-visa entry previously stated 'Also eligible for unilateral visa-free (Group III, 15 days).' This was factually wrong. Group III on the MFA page lists countries where AZERBAIJANI CITIZENS can travel visa-free outbound (e.g., Azerbaijanis going to Iran get 15 days). It does NOT grant Iranians visa-free entry to Azerbaijan. The note has been corrected to clarify this directional error.",
+      "CORRECTED: Bahrain, Kuwait, Oman, Saudi Arabia e-visa notes updated to explicitly state '4th entry requires a valid visa' per the evisa.gov.az footnote (previously said 'visa-free entry (Feb 15 2026–Feb 15 2027, up to 3 entries)' without the 4th-entry requirement).",
+      "VERIFIED: Group II countries (Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Uzbekistan, Russia, Tajikistan, Ukraine, Turkey, Qatar, UAE, Serbia, Albania, Morocco, China, Maldives) all confirmed against live MFA page — all nationalities and stay durations match.",
+      "VERIFIED: Group IV temporary visa-free entries (Hong Kong/Macao Feb 2 2026–Feb 2 2027; Saudi Arabia/Oman/Bahrain/Kuwait Feb 15 2026–Feb 15 2027) confirmed as still active per live MFA page (today is June 13 2026, within the valid window).",
+      "VERIFIED: E-visa country list at evisa.gov.az matches existing record — 79 countries confirmed; Bahrain, Kuwait, Oman, Saudi Arabia marked with asterisk noting their temporary visa-free status.",
+      "VERIFIED: RBI investment thresholds confirmed from migration.gov.az/en/page/73 — AZN 100,000 for temporary, AZN 200,000 for permanent, AZN 500,000 for general economic investment.",
+      "NOTED: North Macedonia appeared in Group III (outbound for Azerbaijanis) but the MFA page lists it with dates 'March 16, 2022 to March 15, 2023' — this has expired. North Macedonia is correctly in e_visa for inbound travelers.",
+      "NOTED: The visa-on-arrival page (migration.gov.az/en/page/49) listed countries for airport visa issuance including Qatar, Oman, Saudi Arabia, Bahrain, Kuwait, Japan, Indonesia, Iran, China, South Korea, Malaysia, Singapore, Israel, UAE. Many of these nationalities now have e-visa access; the airport VOA arrangement appears to be an older/parallel channel referenced in the migration site."
+    ],
+    "gaps": [
+      "Group I visa-free list (diplomatic/service passport holders) is published as a PDF (https://mfa.gov.az/files/VIZA/Visa%20Free%20Countries%20List%20-%2029%20April%202026.pdf); 79 countries are listed; individual per-country stay durations vary (30 or 90 days) and should be consulted in the PDF.",
+      "The UAE residence permit visa-on-arrival rule: the migration.gov.az page may be outdated (last updated reference June 2022); conditions around UAE resident visa validity (6 months) and excluded nationalities (Syria, Iraq, Afghanistan) were noted from embassy sources and not independently re-confirmed on migration.gov.az in this session.",
+      "No conditional entry based on holding a valid US visa, Schengen visa, UK visa, Canadian visa, or Australian visa was found on any official Azerbaijan government source.",
+      "E-visa fee/cost amount not confirmed from official page.",
+      "Exact e-visa entry validity window (how long after issue the visa must be used) not confirmed from official page.",
+      "Dual citizenship policy for Azerbaijan not confirmed from official sources in this research session.",
+      "Path to citizenship via naturalization duration not confirmed from official sources in this research session.",
+      "The migration.gov.az/en/page/49 airport VOA list appears to overlap with the e-visa and Group IV visa-free arrangements — it is unclear whether the airport VOA is a distinct parallel channel or has been superseded. No separate official confirmation found."
+    ]
+  },
+  "sources_checked": [
+    "https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler",
+    "https://mfa.gov.az/files/VIZA/Visa%20Free%20Countries%20List%20-%2029%20April%202026.pdf",
+    "https://evisa.gov.az/countries",
+    "https://evisa.gov.az/",
+    "https://migration.gov.az/en/page/49",
+    "https://migration.gov.az/en/page/73"
+  ]
+}

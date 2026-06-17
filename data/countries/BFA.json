@@ -1,0 +1,167 @@
+{
+  "iso2": "BF",
+  "iso3": "BFA",
+  "name": "Burkina Faso",
+  "region": "Africa",
+  "outbound_official": {
+    "found": false,
+    "note": "no official Burkina Faso government outbound visa-list page located; rely on destination-side data"
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "ECOWAS member-state nationals (Benin, Cabo Verde, Côte d'Ivoire, The Gambia, Ghana, Guinea, Guinea-Bissau, Liberia, Nigeria, Senegal, Sierra Leone, Togo)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Burkina Faso formally withdrew from ECOWAS on 29 January 2025 (together with Mali and Niger, forming the Alliance des États du Sahel / AES). The official visaburkina.bf portal (Ministry of Security) states that ECOWAS nationals are exempt from the residence permit and only need a valid consular identity card for stays. On 14 December 2024, the AES joint declaration adopted in Bamako explicitly stated 'The Confederation of Sahel States (AES) is a visa-free zone for all nationals of the Economic Community of West African States (ECOWAS),' granting ECOWAS nationals the right to 'enter, circulate, reside, settle and leave the territory of AES member states in compliance with national laws in force.' The 12 current ECOWAS member states are: Benin, Cabo Verde, Côte d'Ivoire, The Gambia, Ghana, Guinea, Guinea-Bissau, Liberia, Nigeria, Senegal, Sierra Leone, and Togo. Note: Burkina Faso itself is an AES country, not an ECOWAS member. Max stay of 90 days is based on the ECOWAS Free Movement Protocol standard; AES declaration does not specify a numeric cap but references compliance with national laws.",
+        "source_url": "https://www.visaburkina.bf/en/stay-conditions-while-in-burkina-faso/",
+        "source_official": true
+      },
+      {
+        "nationality": "Mali (AES member)",
+        "iso3": "MLI",
+        "max_stay_days": null,
+        "notes": "Mali is a fellow Alliance des États du Sahel (AES) member. Free movement within the AES is established under the AES Confederation framework (AES Confederation summit resolutions, July 2024). Max stay days not confirmed from an official AES treaty text.",
+        "source_url": "https://gouvernement.gov.bf/",
+        "source_official": true
+      },
+      {
+        "nationality": "Niger (AES member)",
+        "iso3": "NER",
+        "max_stay_days": null,
+        "notes": "Niger is a fellow Alliance des États du Sahel (AES) member. Free movement within the AES is established under the AES Confederation framework (AES Confederation summit resolutions, July 2024). Max stay days not confirmed from an official AES treaty text.",
+        "source_url": "https://gouvernement.gov.bf/",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {
+        "nationality": "All nationalities except US citizens (see banned_nationalities below)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Burkina Faso operates an official e-visa system via applicant.visaburkina.bf (Ministry of Security / Direction Générale de la Police Nationale). The eVisa authorises entry and stay for a maximum of 90 days for tourism or family purposes. On 11 September 2025, the Council of Ministers (presided over by Capitaine Ibrahim TRAORÉ) adopted a measure waiving visa FEES (not visa requirement) for all nationals of African AU member states (all 54 African Union member states; excludes non-sovereign territories). African nationals still must apply online via the e-visa portal — this is a fee waiver only, not a visa exemption; confirmed by the Council of Ministers statement. Short-stay visa costs (for non-African applicants): Tourist visa 33,000 FCFA single / 55,000 FCFA multiple; Business visa 77,000 FCFA single / 93,500 FCFA multiple; Conference/Studies/Training/Visit visa 55,000 FCFA single / 71,500 FCFA multiple; Express visa 104,500 FCFA. IMPORTANT: US citizens are subject to a total entry and visa ban as of 1 January 2026. On 30 December 2025, Burkina Faso's Ministry of Foreign Affairs announced the adoption of equivalent/reciprocal visa restrictions against US citizens, in response to the US proclamation of 16 December 2025 placing Burkina Faso under a full entry ban. US citizens are currently unable to obtain a Burkina Faso visa or enter the country.",
+        "source_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "banned_nationalities": [
+      {
+        "nationality": "United States",
+        "iso3": "USA",
+        "basis": "reciprocal_ban",
+        "effective_date": "2026-01-01",
+        "notes": "On 16 December 2025, the US issued a proclamation placing Burkina Faso under a full entry ban effective 1 January 2026. On 30 December 2025, Burkina Faso's Minister of Foreign Affairs announced an equivalent reciprocal measure: total restriction on visas and entry for US nationals, to remain in force until the US revises its policy. US citizens are currently unable to enter Burkina Faso.",
+        "source_url": "https://www.loc.gov/item/global-legal-monitor/2026-01-20/burkina-faso-mali-reciprocal-entry-and-visa-restrictions-for-us-citizens-adopted",
+        "source_official": false,
+        "source_note": "LOC Global Legal Monitor secondary source (official Burkina Faso MFA communiqué URL not directly retrieved)"
+      }
+    ],
+    "source_urls": [
+      "https://www.visaburkina.bf/en/home/",
+      "https://www.visaburkina.bf/en/burkina-faso-entry-conditions/",
+      "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "https://www.visaburkina.bf/en/stay-conditions-while-in-burkina-faso/",
+      "https://applicant.visaburkina.bf/",
+      "https://gouvernement.gov.bf/"
+    ],
+    "notes": "The official e-visa portal (visaburkina.bf) is operated by the Ministry of Security / Direction Générale de la Police Nationale. The portal does not enumerate a public-facing list of visa-exempt nationalities by country. ECOWAS nationals retain visa-free rights confirmed both by the visaburkina.bf stay-conditions page and the December 2024 AES-ECOWAS Bamako joint declaration. Burkina Faso is now a member of the Alliance des États du Sahel (AES) with Mali and Niger. As of 11 September 2025, visa FEES are waived for all 54 AU member-state nationals (fee waiver only; visa application via e-visa portal still mandatory). As of 1 January 2026, US citizens are subject to a total reciprocal entry and visa ban. ECOWAS nationals and AES nationals (Mali, Niger) remain in visa_free as ordinary-nationality grants based on regional bloc agreements."
+  },
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program found on any official Burkina Faso government source (visaburkina.bf, mae.gov.bf, gouvernement.gov.bf, presidencedufaso.bf, securite.gov.bf). Burkina Faso does not operate a CBI scheme. References found only on third-party aggregators and marketing sites — not accepted under the strict official-source rule."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "ECOWAS Free Movement Protocol (post-withdrawal: ECOWAS nationals retain right to visa-free entry into Burkina Faso per official visaburkina.bf stay conditions page and AES–ECOWAS joint declaration, Bamako, 14 December 2024)",
+    "Alliance des États du Sahel (AES) Confederation — free movement among Burkina Faso, Mali, Niger (AES summit resolutions, July 2024)",
+    "Burkina Faso–Turkey bilateral visa exemption agreement for diplomatic passport holders, signed 8–10 May 2013, in force 16 October 2013 (source: Republic of Türkiye Ministry of Foreign Affairs official page)",
+    "Agreement between the Government of the Republic of the Philippines and the Government of Burkina Faso on the Waiver of Visa Requirements for Holders of Diplomatic, Official and Service Passports, signed Manila 7 April 2017, in force 7 July 2018 (source: Philippine Supreme Court E-Library)"
+  ],
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Turkey"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of valid Turkish diplomatic passports are visa-exempt under the bilateral visa exemption agreement signed 8–10 May 2013, in force from 16 October 2013. The agreement covers diplomatic passports only; no mention of service or official passports in the Turkish MFA source.",
+      "source_url": "https://www.mfa.gov.tr/relations-between-turkiye-and-burkina-faso.en.mfa",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Philippines"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Philippine holders of valid diplomatic or official passports (Philippine side covers diplomatic and official; Burkina Faso side covers diplomatic and service) are visa-exempt for stays not exceeding 30 days, under the Agreement on the Waiver of Visa Requirements for Holders of Diplomatic, Official and Service Passports signed at Manila on 7 April 2017, in force 7 July 2018. Passport must be valid for at least 6 months from entry. Holders may not engage in paid work without written permission. Either government may deny admission to persons deemed undesirable.",
+      "source_url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/35/91242",
+      "source_official": true
+    }
+  ],
+  "official_domains": [
+    "visaburkina.bf",
+    "applicant.visaburkina.bf",
+    "mae.gov.bf",
+    "gouvernement.gov.bf",
+    "presidencedufaso.bf",
+    "securite.gov.bf"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CHANGED: Added banned_nationalities array with US citizens entry ban effective 2026-01-01. Previously, the US ban was mentioned only as a note buried in the e_visa notes field — it is now elevated to its own structured field for correct classification.",
+      "CHANGED: Updated e_visa nationality field to explicitly exclude US citizens ('All nationalities except US citizens') with pointer to banned_nationalities.",
+      "CHANGED: Confirmed the September 2025 African fee waiver applies to all 54 AU member states (not vaguely 'African nationals'); updated notes to be explicit about fee-waiver-only (not exemption) nature, consistent with Council of Ministers statement.",
+      "CHANGED: Added the 14 December 2024 Bamako joint AES declaration ('AES is a visa-free zone for all ECOWAS nationals') as an explicit citation in the ECOWAS visa_free entry notes, providing a stronger official source basis.",
+      "CHANGED: Removed unverifiable named-minister attribution ('Mahamadou SANA') from e_visa notes since the official visaburkina.bf page itself did not contain this quote; the fee-waiver decree is confirmed from secondary reporting of the Council of Ministers announcement.",
+      "UNCHANGED: CBI/RBI/fast_track all remain null — no new official program found.",
+      "UNCHANGED: Turkey and Philippines conditional_access diplomatic entries remain as previously verified.",
+      "UNCHANGED: AES max_stay_days for Mali and Niger remain null — official treaty text not directly retrieved.",
+      "UNCHANGED: ECOWAS max_stay_days remains 90 days based on ECOWAS Free Movement Protocol standard."
+    ],
+    "gaps": [
+      "The official visaburkina.bf portal does not publish a complete enumerated list of visa-exempt nationalities; only group-level information (ECOWAS, AES) confirmed from official sources.",
+      "AES confederation free-movement agreement text was not directly scraped from an official AES or Burkina Faso government URL — confirmed indirectly via gouvernement.gov.bf and third-party reporting of AES summit resolutions.",
+      "Specific max_stay_days for AES intra-confederation travel (Mali, Niger) not confirmed from an official treaty text.",
+      "No official Burkina Faso source enumerates bilateral visa-free agreements with non-African/non-ECOWAS countries beyond what is found on partner-country official sites (Turkey MFA, Philippine Supreme Court E-Library). Wikipedia/Timatic list additional diplomatic-passport waivers for Brazil, China, Congo, Cuba, Russia, Taiwan — no official Burkina Faso government source retrieved to confirm these; excluded.",
+      "No official RBI, fast-track, talent visa, or digital nomad program found on any official Burkina Faso government domain.",
+      "The primary official Burkina Faso MFA communiqué URL for the 30 December 2025 US entry ban announcement was not directly retrievable (LOC Global Legal Monitor used as secondary source).",
+      "No credential-based conditional access rules (e.g. VoA for Schengen/US visa holders) found on any official Burkina Faso government source.",
+      "No OCI or similar special-status conditional entry rules found on any official Burkina Faso source.",
+      "Turkey agreement max_stay_days not stated in the Turkish MFA page; full agreement text not directly retrieved.",
+      "Indonesia–Burkina Faso diplomatic passport agreement was still under negotiation as of last reporting; excluded."
+    ]
+  },
+  "sources_checked": [
+    "https://www.visaburkina.bf/en/home/",
+    "https://www.visaburkina.bf/en/burkina-faso-entry-conditions/",
+    "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+    "https://www.visaburkina.bf/en/stay-conditions-while-in-burkina-faso/",
+    "https://applicant.visaburkina.bf/",
+    "https://gouvernement.gov.bf/",
+    "https://mae.gov.bf/",
+    "https://www.mfa.gov.tr/relations-between-turkiye-and-burkina-faso.en.mfa",
+    "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/35/91242",
+    "https://www.togofirst.com/en/economic-governance/1712-15409-burkina-faso-mali-and-niger-maintain-visa-free-travel-for-ecowas-nationals",
+    "https://www.fragomen.com/insights/burkina-fasomaliniger-ecowas-withdrawal-to-eventually-change-business-and-tourist-visa-entry-requirements.html",
+    "https://www.africanews.com/2025/09/12/all-africans-can-now-travel-with-free-visas-to-burkina-faso-says-government/",
+    "https://www.loc.gov/item/global-legal-monitor/2026-01-20/burkina-faso-mali-reciprocal-entry-and-visa-restrictions-for-us-citizens-adopted"
+  ]
+}

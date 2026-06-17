@@ -1,0 +1,785 @@
+{
+  "iso2": "DZ",
+  "iso3": "DZA",
+  "name": "Algeria",
+  "region": "Africa",
+  "outbound_official": {
+    "found": false,
+    "source_url": null,
+    "source_official": false,
+    "asof": null,
+    "visa_free": [],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "No official Algeria government outbound visa-list page located. The MFA (mfa.gov.dz) 'services-for-algerians' section covers only civil status, document legalization, emergency passports, deregistration certificates, T@SDIK, and the DZ Travellers emergency registration platform (apcs.mfa.gov.dz) — the latter is a crisis/emergency traveler registration form, not a visa entitlement list. No page analogous to India's MEA VFFIN exists on any official Algerian government domain. All outbound access data for Algerian passport holders appears only on third-party aggregator sources (Henley, Wikipedia, visa-agency sites). Rely on destination-side data."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Libya",
+        "iso3": "LBY",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders. Max stay 90 days per entry; cumulative stay may not exceed 180 days per year.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders. Also listed in diplomatic/service passport exemptions on Oslo embassy page.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      },
+      {
+        "nationality": "Maldives",
+        "iso3": "MDV",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      },
+      {
+        "nationality": "Mali",
+        "iso3": "MLI",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders. Also listed in diplomatic/service passport exemptions on Oslo and Dublin embassy pages.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      },
+      {
+        "nationality": "Mauritania",
+        "iso3": "MRT",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      },
+      {
+        "nationality": "Morocco",
+        "iso3": "MAR",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders per London CG. Note: Dublin embassy list omits Morocco — London CG is the primary public-facing source for ordinary passport exemptions and explicitly includes Morocco.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      },
+      {
+        "nationality": "Sahrawi Arab Democratic Republic",
+        "iso3": "ESH",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders. Listed as 'Sahrawi Arab Democratic Republic' / 'Arab Sahrawi Democratic Republic' across official Algerian sources. This is a disputed territory; inclusion reflects the official Algerian government listing.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      },
+      {
+        "nationality": "Tunisia",
+        "iso3": "TUN",
+        "max_stay_days": 90,
+        "notes": "Visa-free for ordinary passport holders.",
+        "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://www.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria",
+      "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+      "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "https://embabudhabi.mfa.gov.dz/en/visa/entry-visa-to-algeria-1",
+      "https://embdublin.mfa.gov.dz/en/visas/general-information"
+    ],
+    "notes": "All non-Algerians require a visa except for citizens of: Libya, Malaysia, Maldives, Mali, Mauritania, Morocco, Sahrawi Arab Democratic Republic, Seychelles, and Tunisia (ordinary passports). Diplomatic passport-only exemptions: Argentina, Croatia, France, Germany, Hungary, Poland, Romania. Diplomatic or service/official passport exemptions: Albania, Benin, Brazil, Cuba, Egypt, Ethiopia, Greece, Guinea, Italy, Malaysia, Mali, Malta, Mexico, Niger, Peru, Portugal, Republic of Korea, Senegal, Slovakia, South Africa, Spain, Switzerland, Tanzania, Turkey, United Arab Emirates, Venezuela, Vietnam, Belarus. A regularization visa (visa on arrival) exists only for organized tours to southern Algeria (all nationalities). Citizens of Hungary and Slovenia (ordinary passports) and holders of a residence permit from those countries may obtain a regularization visa on arrival for southern Algeria without prior embassy visa (southern provinces only, organized tour required). No e-visa or ETA system is in place. Visa validity periods: 90 days, 180 days, 1 year, or 2 years. Max stay per entry: 90 days; cumulative: 180 days per year."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Hungary",
+        "Slovenia"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": null,
+      "level": "visa_on_arrival",
+      "max_stay_days": 30,
+      "conditions": "Citizens of Hungary and Slovenia wishing to travel for tourist purposes for a period not exceeding one month to specific southern Algerian provinces (Adrar, Laghouat, Biskra, Bechar, Tamanrasset, Djelfa, Msila, Ouargla, El-Bayad, Illizi, Tindouf, El-Oued, Naama, Ghardaia, Timimoune, Bordj Badji Mokhtar, Ouled Djellal, Beni Abbes, Ain Salah, Ain Guezzam, Touggourt, Djanet, El M'Ghaier, El Menia) are not required to apply for a tourist visa at the Embassy level. Instead, they must obtain a Boarding Authorisation with a QR Code from an Algerian Accredited Travel Agency approved by Algerian Competent Authorities. A regularization visa is obtained upon arrival at airports or sea/land border crossing points. Tourist visa fees are paid on arrival. Applies to southern provinces only; entry visa arrangements for non-southern city destinations remain unchanged.",
+      "source_url": "https://embbudapest.mfa.gov.dz/news-and-press-releases/algerian-great-south-tourist-destination-new-visa-issuance-measures",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "Hungary",
+        "type": "residence_permit",
+        "subtype": "any valid residence permit issued by Hungary"
+      },
+      "level": "visa_on_arrival",
+      "max_stay_days": 30,
+      "conditions": "Holders of a valid residence permit issued by Hungary, wishing to travel for tourist purposes for a period not exceeding one month to specific southern Algerian provinces (Adrar, Laghouat, Biskra, Bechar, Tamanrasset, Djelfa, Msila, Ouargla, El-Bayad, Illizi, Tindouf, El-Oued, Naama, Ghardaia, Timimoune, Bordj Badji Mokhtar, Ouled Djellal, Beni Abbes, Ain Salah, Ain Guezzam, Touggourt, Djanet, El M'Ghaier, El Menia) are not required to apply for a tourist visa at the Embassy level. Instead, they must obtain a Boarding Authorisation with a QR Code from an Algerian Accredited Travel Agency approved by Algerian Competent Authorities. A regularization visa is obtained upon arrival. Tourist visa fees are paid on arrival. Applies to southern provinces only; entry visa arrangements for non-southern city destinations remain unchanged.",
+      "source_url": "https://embbudapest.mfa.gov.dz/news-and-press-releases/algerian-great-south-tourist-destination-new-visa-issuance-measures",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "Slovenia",
+        "type": "residence_permit",
+        "subtype": "any valid residence permit issued by Slovenia"
+      },
+      "level": "visa_on_arrival",
+      "max_stay_days": 30,
+      "conditions": "Holders of a valid residence permit issued by Slovenia, wishing to travel for tourist purposes for a period not exceeding one month to specific southern Algerian provinces (Adrar, Laghouat, Biskra, Bechar, Tamanrasset, Djelfa, Msila, Ouargla, El-Bayad, Illizi, Tindouf, El-Oued, Naama, Ghardaia, Timimoune, Bordj Badji Mokhtar, Ouled Djellal, Beni Abbes, Ain Salah, Ain Guezzam, Touggourt, Djanet, El M'Ghaier, El Menia) are not required to apply for a tourist visa at the Embassy level. Instead, they must obtain a Boarding Authorisation with a QR Code from an Algerian Accredited Travel Agency approved by Algerian Competent Authorities. A regularization visa is obtained upon arrival. Tourist visa fees are paid on arrival. Applies to southern provinces only; entry visa arrangements for non-southern city destinations remain unchanged.",
+      "source_url": "https://embbudapest.mfa.gov.dz/news-and-press-releases/algerian-great-south-tourist-destination-new-visa-issuance-measures",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Argentina"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Croatia"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "France"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Germany"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Hungary"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Poland"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Romania"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Albania"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Belarus"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Dublin.",
+      "source_url": "https://embdublin.mfa.gov.dz/en/visas/general-information",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Benin"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Brazil"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Cuba"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Egypt"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Ethiopia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Greece"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Guinea"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Italy"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Malaysia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders are additionally listed as visa-free per Oslo embassy. (Malaysia ordinary passport holders are already visa-free.)",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Mali"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders are additionally listed as visa-free per Oslo and Dublin embassies. (Mali ordinary passport holders are already visa-free.)",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Malta"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Mexico"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Niger"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Peru"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Portugal"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Republic of Korea"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Senegal"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Slovakia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "South Africa"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Spain"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Switzerland"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Tanzania"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Turkey"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "United Arab Emirates"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Venezuela"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Vietnam"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Diplomatic or official/service passport holders only are visa-free. Confirmed at Embassy of Algeria in Oslo and Dublin.",
+      "source_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program found on any official Algerian government source. Searches of mfa.gov.dz and related official domains returned no CBI program."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [],
+  "official_domains": [
+    "mfa.gov.dz",
+    "cglondon.mfa.gov.dz",
+    "emboslo.mfa.gov.dz",
+    "embabudhabi.mfa.gov.dz",
+    "embdublin.mfa.gov.dz",
+    "embbudapest.mfa.gov.dz",
+    "embwashington.mfa.gov.dz",
+    "embankara.mfa.gov.dz",
+    "embthehague.mfa.gov.dz",
+    "cgsanfrancisco.mfa.gov.dz",
+    "embpretoria.mfa.gov.dz",
+    "algeria-cgny.org"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "2026-06-13 re-validation: Live-scraped Oslo (2024), London CG (2023), Dublin (2023), Budapest (2023), Washington (2026), and Pretoria (2023) embassy pages via Firecrawl and WebSearch.",
+      "ADDED: New conditional_access entry for Hungary and Slovenia CITIZENS (ordinary passports) for southern Algeria regularization visa — the Budapest press release covers 'Citizens from Hungary and Slovenia as well as holders of a residence permit issued by these countries'; the prior record only captured the residence-permit-holder angle, missing the nationality-based component.",
+      "ADDED: Malaysia and Mali diplomatic/service passport entries to conditional_access — Oslo embassy explicitly lists both in the diplomatic+service exemption table alongside their ordinary-passport visa-free status.",
+      "CONFIRMED: Argentina and Poland appear in diplomatic-only list on Oslo embassy page; Dublin page does not list them but Oslo is authoritative — prior record was correct.",
+      "CONFIRMED: Morocco remains in visa_free (ordinary passport) per London CG explicit listing; Dublin omits Morocco but London CG is a primary public-facing source for ordinary passport exemptions — no correction made.",
+      "CONFIRMED: Belarus in diplomatic+service list per Dublin embassy — prior record correct.",
+      "CONFIRMED: Regularization visa (VoA for organized southern tours) confirmed on Oslo page with same list of wilayas — no change to that entry.",
+      "CONFIRMED: No e-visa, no ETA system in place per all official sources checked.",
+      "CONFIRMED: No CBI, RBI, or fast_track programs on any official source."
+    ],
+    "gaps": [
+      "Morocco is in the London CG visa-free list but absent from the Dublin list — minor inter-post discrepancy; London CG is the primary UK-facing official source and is used here.",
+      "The Dublin embassy omits Argentina and Poland from the diplomatic-only list; Oslo includes them. Minor inter-post discrepancy; Oslo used as source.",
+      "Max stay days for diplomatic/official passport exempt categories not explicitly stated on official source; the general 90-day-per-entry rule applies to regular visas but is not confirmed for diplomatic/official passport holders.",
+      "No official Algerian government source confirms an e-visa or ETA system.",
+      "RBI and fast-track programs: no official English-language source found; may exist in domestic legislation or Arabic-language publications.",
+      "Algeria is a member of the Arab Maghreb Union (AMU), which calls for eventual free movement, but the AMU has been largely inactive. No operationally active free-movement agreement is in force.",
+      "Dual citizenship policy for Algeria not found on official English-language MFA pages.",
+      "The Sahrawi Arab Democratic Republic is a disputed territory; its inclusion in the visa-free list reflects the official Algerian government listing.",
+      "The Budapest press release for Hungary/Slovenia does not specify the date the measure took effect.",
+      "Claims that holders of valid US, Canada, UK, or Schengen visas/residence permits (beyond Hungary and Slovenia) can enter Algeria visa-free or obtain a VoA appear only in aggregator sources — NOT confirmed on any official mfa.gov.dz page verified during this research. Not recorded pending official confirmation.",
+      "OCI (Overseas Citizen of India) cardholder exemption for Algeria not found on any official Algerian government source.",
+      "The MFA main 'Work and Residence in Algeria' page (mfa.gov.dz/services-for-foreigners/work-and-residence-in-algeria) returned no content — formal residence permit and long-term residence details could not be verified from official source."
+    ]
+  },
+  "sources_checked": [
+    "https://www.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria",
+    "https://www.mfa.gov.dz/services-for-foreigners/work-and-residence-in-algeria",
+    "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+    "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+    "https://embabudhabi.mfa.gov.dz/en/visa/entry-visa-to-algeria-1",
+    "https://embdublin.mfa.gov.dz/en/visas/general-information",
+    "https://embwashington.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria-1",
+    "https://embbudapest.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+    "https://embbudapest.mfa.gov.dz/news-and-press-releases/algerian-great-south-tourist-destination-new-visa-issuance-measures",
+    "https://embankara.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+    "https://embthehague.mfa.gov.dz/services-for-foreigners-1/general-conditions-for-submitting-and-processing-visa-applications",
+    "https://cgsanfrancisco.mfa.gov.dz/en/visas/tourist-visa",
+    "https://www.algeria-cgny.org/visa/",
+    "https://embpretoria.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria-1"
+  ]
+}

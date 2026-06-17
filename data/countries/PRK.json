@@ -1,0 +1,170 @@
+{
+  "iso2": "KP",
+  "iso3": "PRK",
+  "name": "North Korea",
+  "region": "Asia",
+  "visa_policy": {
+    "visa_free": [],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "http://www.mfa.gov.kp/",
+      "http://www.tourismdprk.gov.kp/",
+      "http://www.naenara.com.kp/main/index/en/first"
+    ],
+    "notes": "All foreign nationals holding ordinary passports must obtain a visa prior to entering North Korea. Visas are not issued independently; visitors must be sponsored by an authorised DPRK tour operator or receive a formal invitation from a state-approved institution. Independent travel is prohibited. The official DPRK Ministry of Foreign Affairs website (mfa.gov.kp) timed out during June 2026 re-verification (previously accessible in Korean only with no extractable visa-exemption list). The official DPRK tourism portal (tourismdprk.gov.kp) also timed out in the June 2026 re-check. The Naenara state portal (naenara.com.kp) homepage previously accessible in English but contains no visa policy data. No official DPRK government page listing visa exemptions for ordinary passport holders was found. Diplomatic/service/official-passport exemptions (widely cited in IATA Timatic / Wikipedia for China, Russia, Belarus, Mongolia, Vietnam, etc.) were NOT recorded unless confirmed via an official government source. US ordinary passports are declared invalid for travel to North Korea; the restriction is extended through at least August 31, 2026 (US Federal Register, 2025-08511)."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["China"],
+      "passport_types": ["diplomatic", "official", "official_ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Visa-free entry for holders of Chinese diplomatic, official (公务), or official ordinary (因公普通) passports. Stay not exceeding 30 days. Requires an official invitation and a designated hosting/receiving unit in North Korea. Those intending to stay longer than 30 days, or to work, study, establish permanent residence, or conduct journalism, must apply for a visa before entry. Holders of private ordinary passports (因私普通护照) must obtain a visa outside North Korea before arrival. Agreement originally effective 1956-10-01 (diplomatic and official passports) and 1965-01-01 (official ordinary passports); updated/re-notified effective 2024-07-26.",
+      "source_url": "https://kp.china-embassy.gov.cn/chn/lsyw/lqfw/rjyjl/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Serbia"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Visa-free entry for holders of Serbian diplomatic or official passports for stays up to 90 days. Ordinary (national) passport holders require a visa, which must be obtained before arrival and cannot be obtained at the border.",
+      "source_url": "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/korea-dpr",
+      "source_official": true
+    }
+  ],
+  "visa_required": null,
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program exists in North Korea. No official DPRK government source was found offering any investment-based citizenship pathway."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [],
+  "official_domains": [
+    "mfa.gov.kp",
+    "tourismdprk.gov.kp",
+    "naenara.com.kp"
+  ],
+  "data_quality": {
+    "completeness": "low",
+    "validation_notes": [
+      "Re-verified June 2026. China conditional_access entry re-confirmed via kp.china-embassy.gov.cn: diplomatic, official, and official ordinary passport holders are visa-free ≤30 days with invitation and hosting unit; private ordinary passport holders must obtain a visa before arrival. Data unchanged, minor wording clarification added to conditions field.",
+      "Serbia conditional_access entry re-confirmed via mfa.gov.rs: diplomatic and official passports visa-free ≤90 days. Data unchanged.",
+      "mfa.gov.kp timed out during June 2026 re-check (previously accessible June 2026 with Korean-only content). Still no extractable official visa exemption data.",
+      "tourismdprk.gov.kp timed out during June 2026 re-check.",
+      "Russian MFA (mid.ru) connection refused/closed; no confirmation of Russia-DPRK diplomatic passport exemption obtainable from official source.",
+      "Belarus MFA page for bilateral relations returned 404; no confirmation of Belarus-DPRK diplomatic exemption from official source.",
+      "US Federal Register (2025-08511, published 2025-05-14) confirms US passport invalidity restriction for DPRK extended through August 31, 2026. Added to visa_policy notes.",
+      "No new official sources found granting visa_free, visa_on_arrival, e_visa, or eta access for ordinary passport holders. Record structure unchanged.",
+      "No new CBI, RBI, or fast-track programs found."
+    ],
+    "gaps": [
+      "mfa.gov.kp served Korean-only content (when accessible) and timed out in June 2026 re-check; no English visa-policy or exemption list is published.",
+      "tourismdprk.gov.kp has an Entry Procedures section (입국수속) but timed out in June 2026 re-check; no extractable content obtainable from outside the DPRK.",
+      "Diplomatic and service-passport visa exemptions for Belarus, Bulgaria, Cambodia, Cuba, Indonesia, Iran, Kyrgyzstan, Laos, Mongolia, Montenegro, Myanmar, Russia, Singapore, Tajikistan, Vietnam, and Zimbabwe are widely cited by IATA Timatic and Wikipedia but could not be confirmed from any official government source of those countries or an official DPRK source; they are therefore omitted per hard rules. Only China (via kp.china-embassy.gov.cn and mfa.gov.cn) and Serbia (via mfa.gov.rs) were confirmed from official sources.",
+      "No holder-of-third-country-visa conditional rules (e.g. US visa, Schengen visa, residence permit) were found on any official DPRK or partner-country government source.",
+      "No OCI or similar special diaspora-status conditional entry rules were found for North Korea on any official source.",
+      "No official DPRK page enumerates visa-on-arrival, e-visa, or ETA arrangements.",
+      "No official source for CBI, RBI, skilled/talent/startup, or digital-nomad programs found.",
+      "No freedom-of-movement agreements apply to the DPRK.",
+      "Russian MFA (mid.ru) was inaccessible during re-verification; Russia-DPRK diplomatic passport exemption (widely cited) remains unconfirmed from official source.",
+      "Belarus MFA bilateral page returned 404; Belarus-DPRK arrangements unconfirmable from official source."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "No official North Korea government outbound visa-list page located; rely on destination-side data. The DPRK Ministry of Foreign Affairs (mfa.gov.kp), state portal Naenara (naenara.com.kp), and DPRK Tourism portal (tourismdprk.gov.kp) are all inaccessible from outside the country (connection timeouts in June 2026). No official DPRK government publication listing visa-free, visa-on-arrival, e-visa, or ETA destinations for North Korean ordinary-passport holders was found via web search or direct fetch. North Korea does not publish an outbound travel guidance page analogous to India's mea.gov.in/vffin; ordinary citizens are effectively prohibited from international travel without explicit state authorisation and passport issuance is tightly controlled."
+  },
+  "sources_checked": [
+    {
+      "url": "http://www.mfa.gov.kp/",
+      "description": "DPRK Ministry of Foreign Affairs official website — timed out in June 2026 re-check; previously accessible (Korean only, no visa data extractable)",
+      "accessible": false,
+      "source_official": true
+    },
+    {
+      "url": "http://www.tourismdprk.gov.kp/",
+      "description": "DPRK State General Bureau of Tourism official portal — timed out in June 2026 re-check",
+      "accessible": false,
+      "source_official": true
+    },
+    {
+      "url": "http://www.naenara.com.kp/main/index/en/first",
+      "description": "Naenara — official DPRK state portal (English homepage) — timed out in June 2026 re-check; previously accessible with no visa data",
+      "accessible": false,
+      "source_official": true
+    },
+    {
+      "url": "https://kp.china-embassy.gov.cn/chn/lsyw/lqfw/rjyjl/",
+      "description": "Chinese Embassy in DPRK — re-confirmed June 2026: diplomatic/official/official-ordinary Chinese passport holders are visa-free ≤30 days with invitation and hosting unit; private ordinary passport holders must obtain visa before arrival",
+      "accessible": true,
+      "source_official": true
+    },
+    {
+      "url": "https://www.mfa.gov.cn/wjbzwfwpt/kzx/tzgg/202504/t20250414_11594222.html",
+      "description": "Chinese MFA — re-confirmed June 2026: official list of mutual visa exemption agreements, entry covers DPRK diplomatic/official passports effective 1956 and official ordinary passports effective 1965",
+      "accessible": true,
+      "source_official": true
+    },
+    {
+      "url": "https://www.fuzhou.gov.cn/zwgk/tzgg/202407/t20240722_4863305.htm",
+      "description": "Fuzhou Municipal Government — official notice on China-DPRK mutual visa exemption agreement effective 2024-07-26, covering diplomatic, official, and official ordinary passports, ≤30 days",
+      "accessible": true,
+      "source_official": true
+    },
+    {
+      "url": "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/korea-dpr",
+      "description": "Serbia Ministry of Foreign Affairs — re-confirmed June 2026: diplomatic/official passport holders from Serbia are visa-free ≤90 days in DPRK; ordinary passport holders require a pre-obtained visa",
+      "accessible": true,
+      "source_official": true
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2025/05/14/2025-08511/united-states-passports-invalid-for-travel-to-in-or-through-the-democratic-peoples-republic-of-korea",
+      "description": "US Federal Register — US passport invalidity restriction for DPRK extended through August 31, 2026 (accessed via search result June 2026)",
+      "accessible": true,
+      "source_official": true
+    },
+    {
+      "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/KoreaDemocraticPeoplesRepublicof.html",
+      "description": "US State Department — Travel Level 4 (Do Not Travel) for North Korea; confirms mandatory tourist visa, US passport invalidity restriction, and special validation passport requirement",
+      "accessible": true,
+      "source_official": true
+    },
+    {
+      "url": "https://www.mid.ru/en/maps/kp",
+      "description": "Russian MFA — connection refused/closed during June 2026 re-check; Russia-DPRK diplomatic exemption not confirmable",
+      "accessible": false,
+      "source_official": true
+    },
+    {
+      "url": "https://mfa.gov.by/en/bilateral/countries/",
+      "description": "Belarus MFA bilateral countries — returned 404 during June 2026 re-check; Belarus-DPRK arrangements not confirmable",
+      "accessible": false,
+      "source_official": true
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Korea",
+      "description": "Wikipedia — Visa policy of North Korea — aggregator citing IATA Timatic and news sources, not official DPRK sources — data not recorded per hard rules",
+      "accessible": true,
+      "source_official": false
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "iso2": "NG",
+  "iso3": "NGA",
+  "name": "Nigeria",
+  "region": "Africa",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "ECOWAS member states (Benin, Cabo Verde, Côte d'Ivoire, The Gambia, Ghana, Guinea, Guinea-Bissau, Liberia, Senegal, Sierra Leone, Togo)",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "Citizens of ECOWAS member states are exempt from the standard visa requirement. The NIS Tourism Visa (F5A) page explicitly states it applies to 'Citizens of all countries except ECOWAS member States and other countries which Nigeria has entered into visa abolition/waiver agreements'. As of June 2026 there are 12 active ECOWAS members; Burkina Faso, Mali, and Niger are in the process of formal withdrawal from ECOWAS (extraordinary ECOWAS Council of Ministers session held 22–23 April 2025 in Accra to address withdrawal modalities). Their visa-free status under the ECOWAS Protocol while withdrawal is pending is not clarified on the official NIS website. Max stay under free movement protocol is governed by the ECOWAS Protocol and is not stated verbatim on the NIS website.",
+        "source_url": "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+        "source_official": true
+      },
+      {
+        "nationality": "Countries with which Nigeria has entered into visa abolition/waiver agreements (non-ECOWAS)",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "The official NIS Tourism Visa (F5A) page states the visa exemption also applies to 'other countries which Nigeria has entered into visa abolition/waiver agreements'. The Ministry of Interior visa policy page confirms that 'citizens of countries with which Nigeria has visa agreements are being issued entry visa at points of entry'. The specific list of named bilateral waiver countries for ordinary passport holders is not published in a consolidated official online source on immigration.gov.ng or interior.gov.ng.",
+        "source_url": "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Kitts and Nevis",
+        "iso3": "KNA",
+        "max_stay_days": 90,
+        "notes": "Reciprocal 90-day visa-free entry agreement effective 4 August 2025. Confirmed by Nigeria Immigration Service spokesperson Akinsola Akinlabi (cited by TheCable). High-level agreement follows engagements between President Tinubu and PM Dr. Terrance M. Drew. The official SKNIS announcement (sknis.gov.kn) and SKN Consulate Toronto announcement (skncgtoronto.gov.kn) confirm the effective date and reciprocal nature. Specific passport types (ordinary/official/diplomatic) not delineated in official announcement text; 90-day duration confirmed by NIS spokesperson.",
+        "source_url": "https://skncgtoronto.gov.kn/2025/09/01/saint-kitts-and-nevis-secures-reciprocal-visa-free-access-with-nigeria/",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {
+        "nationality": "All nationalities not covered by visa-free/waiver exemptions",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Nigeria offers an e-Visa for short visits via evisa.immigration.gov.ng. The NIS visa classes page states 'Short Visit Visas allow travelers to visit Nigeria for a period not exceeding three months (90 days)'. Individual sub-categories have specific durations: Tourism Visa (F5A) – single entry, 30-day stay, valid 90 days from issuance, not extendable; Business Single Entry (F4A) – 30 days; Business Multiple Entry (F4B) – up to 30 days per visit; Visiting Single Entry (F6A) – 30 days; Transit Visa (F3B) – 1 to 7 days; Sports (F7E), Creative Arts (F7F), Study Tour (F7G), Academic Exchange Programme (F7H), International Cultural Exchange (F7I), Emergency/Relief Work (F7K), and others. The maximum ceiling across all short-stay e-visa categories is 90 days; most specific tourism/business categories are capped at 30 days per visit. All short-stay e-Visa categories are non-extendable. Nigeria phased out Visa-on-Arrival effective 1 May 2025; all short-stay applications must now be submitted via the e-Visa portal or Nigerian embassy/consulate.",
+        "source_url": "https://immigration.gov.ng/nigerian-visa/",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://immigration.gov.ng/nigerian-visa/",
+      "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+      "https://immigration.gov.ng/info-center/transit-without-visa-f3a/",
+      "https://interior.gov.ng/visa-policy/",
+      "https://evisa.immigration.gov.ng/",
+      "https://skncgtoronto.gov.kn/2025/09/01/saint-kitts-and-nevis-secures-reciprocal-visa-free-access-with-nigeria/",
+      "https://www.sknis.gov.kn/2025/09/01/saint-kitts-and-nevis-secures-reciprocal-visa-free-access-with-nigeria/"
+    ],
+    "notes": "Nigeria phased out Visa-on-Arrival (VoA) effective 1 May 2025. All short-stay visa applications must now be submitted via the e-Visa portal (evisa.immigration.gov.ng) or at Nigerian embassies/consulates. Transit Without Visa (F3A) is available to airside transit passengers who remain in the airport transit zone for up to 48 hours with a confirmed onward ticket — no formal visa is issued. The Ministry of Interior visa policy page notes that notable businessmen (frequent travelers) and top management of multinationals may be issued entry visas at points of entry, and that citizens of visa-agreement countries may also receive entry visas at points of entry. The general NIS short-visit-visa page states the ceiling as 90 days; most individual e-visa sub-categories (tourism, visiting, business single entry) are limited to 30 days per stay."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["AGO"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Bilateral Agreement on the Waiver of Visa requirements for holders of Diplomatic and Official/Service Passports signed 15 February 2026 on the margins of the 39th Ordinary Session of the African Union in Addis Ababa, Ethiopia. Signed by Nigeria's Minister of Foreign Affairs Ambassador Yusuf Maitama Tuggar and Angola's Minister of External Relations Ambassador Tete Antonio. The foreignaffairs.gov.ng page confirming this had an SSL certificate issue at time of re-validation (June 2026); the agreement is confirmed by the official MFA press center URL and corroborated by Voice of Nigeria (state broadcaster, von.gov.ng).",
+      "issuer_country": "Angola",
+      "source_url": "https://foreignaffairs.gov.ng/news/nigeria-and-angola-signs-agreement-to-ease-the-movement-of-diplomats-and-government-officials/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["VNM"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Agreement on waiver of visa requirements for holders of valid Diplomatic and Official Passports signed 30 October 2019 at Presidential Villa, Abuja (witnessed by Vice President Yemi Osinbajo and Vietnamese Deputy PM Vuong Dinh Hue). Effective 29 November 2019. Holders may enter, exit, and transit Nigeria without a visa for a maximum of 90 days from date of entry. No standalone official Nigerian MFA/NIS press-release page was accessible at time of research; source is Channels Television (state-accredited Nigerian broadcaster reporting the signing ceremony at the Presidential Villa).",
+      "issuer_country": "Vietnam",
+      "source_url": "https://www.channelstv.com/2019/10/31/nigeria-vietnam-sign-visa-waiver-deal-for-diplomatic-official-passport-holders/",
+      "source_official": false
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["ETH"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "MOU on waiver of visa requirements for holders of Diplomatic and Official Passports signed February 2020 in Addis Ababa in the presence of President Muhammadu Buhari and Ethiopian PM Abiy Ahmed. Signed by Nigeria's Minister of Foreign Affairs Geoffrey Onyeama and Ethiopian counterpart Gedu Andargachew. A subsequent ratification by Ethiopia's cabinet was reported in July 2025. No standalone official Nigerian MFA/NIS press-release page was accessible at time of research; source is TheCable, a credible Nigerian news outlet reporting the official signing ceremony.",
+      "issuer_country": "Ethiopia",
+      "source_url": "https://www.thecable.ng/nigeria-ethiopia-sign-visa-waiver-agreement-for-diplomatic-passport-holders/",
+      "source_official": false
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program found on any official Nigerian government domain. Nigeria's investor immigration pathway (Investor Visa N3A–N3E) leads to Permanent Residence, not citizenship. No official CBI program has been launched on immigration.gov.ng or any other official government domain as of June 2026."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Investor Visa – Small Scale Enterprise (N3A)",
+        "type": "investor_residence",
+        "min_amount": 250000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://immigration.gov.ng/info-center/investor-visa-small-scale-enterprise-n3a/",
+        "source_official": true,
+        "notes": "Permanent Residence Visa (PRV) for small-scale enterprise investors. Requires evidence of US$250,000 – US$500,000 imported and retained as investor's capital, prior holding of F4B or F4C visa, security clearance from place of residence, proof of investment in a small enterprise, and business plan. Stay duration: 3 years, multiple entry (residence permit). Not applicable for extension, but residency can be renewed subject to continued compliance."
+      },
+      {
+        "name": "Investor Visa – Medium Scale Enterprise (N3B)",
+        "type": "investor_residence",
+        "min_amount": 500000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://immigration.gov.ng/info-center/investor-visa-medium-scale-enterprise-n3b/",
+        "source_official": true,
+        "notes": "Permanent Residence Visa (PRV) for medium-scale enterprise investors. Requires evidence of US$500,000 – US$1,000,000 imported and retained as investor's capital, prior F4B or F4C visa holding, security clearance. Stay duration: 4 years, multiple entry (residence permit)."
+      },
+      {
+        "name": "Investor Visa – Large Scale Corporations (N3C)",
+        "type": "investor_residence",
+        "min_amount": null,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://immigration.gov.ng/info-center/investor-visa-large-scale-corporations-n3c/",
+        "source_official": true,
+        "notes": "Permanent Residence Visa (PRV) for large-scale corporation investors. Minimum capital threshold is not stated as a verbatim dollar amount on the accessible official page. Requires significant capital/asset requirements verified by corporate registration and audited financial statements. Residency granted to key executives."
+      },
+      {
+        "name": "Investor Visa – Ultra Large Scale Corporations (N3D)",
+        "type": "investor_residence",
+        "min_amount": null,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://immigration.gov.ng/info-center/investor-visa-ultra-large-scale-corporations-n3d/",
+        "source_official": true,
+        "notes": "Permanent Residence Visa (PRV) for investors leading major multinational or ultra-large corporations. Must meet the highest thresholds of capital, assets, or turnover (specific amounts not stated verbatim on official page). Multi-year residency for strategic oversight."
+      },
+      {
+        "name": "Investor Visa – Oil, Gas & Power Sector (N3E)",
+        "type": "investor_residence",
+        "min_amount": null,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://immigration.gov.ng/info-center/investor-visa-oil-gas-power-sector-n3e/",
+        "source_official": true,
+        "notes": "Specialized Permanent Residence Visa (PRV) for significant ventures in Nigeria's oil, gas, or power sectors. Requires technical expertise, substantial capital, and relevant industry licenses or partnerships. Minimum capital not stated verbatim on official page."
+      },
+      {
+        "name": "Retirement Visa – Retiree from Abroad (N5B)",
+        "type": "retirement_residence",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://immigration.gov.ng/nigerian-visa/",
+        "source_official": true,
+        "notes": "Permanent Residence Visa (PRV) for foreign retirees wishing to relocate to Nigeria from overseas. Applicants must demonstrate sufficient financial resources (pensions, annuities, savings) and secure local accommodation. Health insurance strongly recommended. Employment not permitted. Specific minimum income/savings threshold not stated verbatim on official page."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Highly Skilled Immigrant Visa (N4A)",
+        "category": "highly_skilled",
+        "eligibility": "Foreign nationals with specialized knowledge, abilities, and technical know-how deemed highly relevant to current and future needs of the Nigerian economy. Requires letter of recommendation from the Nigerian Skills Gap Assessment (under ITF), vetted credentials and CV/skill profile, and police report from place of residence.",
+        "processing_time": null,
+        "official_url": "https://immigration.gov.ng/info-center/highly-skilled-immigrant-visa-n4a/",
+        "source_official": true,
+        "notes": "Permanent Residence Visa (PRV) category. Stay duration: 5 years, multiple entry (residence permit), extendable. Holder is permitted to work and reside in Nigeria. Falls under the Nigerian Immigration Service's Permanent Residence framework."
+      },
+      {
+        "name": "Business – Frequently Travelled Business Executives Visa (F4C)",
+        "category": "business_investor",
+        "eligibility": "High-profile business travelers who invest at least USD 250,000 in Nigeria. Requires proof of investment from a recognized agency, invitation letter, and CAC documentation for the host company.",
+        "processing_time": null,
+        "official_url": "https://immigration.gov.ng/nigerian-visa/",
+        "source_official": true,
+        "notes": "Short Visit Visa (Embassy) valid for 1 year with multiple entries; each stay capped at 30 days. Employment not permitted. This is a short-stay visa category (not a residence permit). It is a prerequisite for applying for the Investor Visa Permanent Residence categories (N3A/N3B)."
+      }
+    ]
+  },
+  "agreements": [
+    "ECOWAS (Economic Community of West African States) free movement of persons protocol"
+  ],
+  "official_domains": [
+    "immigration.gov.ng",
+    "evisa.immigration.gov.ng",
+    "interior.gov.ng",
+    "foreignaffairs.gov.ng",
+    "von.gov.ng",
+    "ecowas.int"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTION: Saint Kitts and Nevis visa_free entry: source_official changed from false to true. The source URL (skncgtoronto.gov.kn) is the official Saint Kitts and Nevis Consulate General in Toronto — a .gov.kn domain, which is an official government domain.",
+      "CORRECTION: e_visa max_stay_days updated from 30 to 90. The NIS visa classes page explicitly states short visit visas allow stays 'not exceeding three months (90 days)'. Individual sub-categories (e.g., F5A Tourism = 30 days) have shorter specific limits; 90 is the stated ceiling. Notes updated to clarify both the ceiling and sub-category specifics.",
+      "CORRECTION: conditional_access entries now use iso3 arrays for eligible_nationalities (AGO, VNM, ETH) instead of the string 'any', which was incorrect — these are bilateral agreements covering specific nationalities only.",
+      "CORRECTION: ECOWAS status note updated: Burkina Faso, Mali, and Niger are formally in withdrawal proceedings (ECOWAS extraordinary session 22–23 April 2025 in Accra) — they are no longer merely 'suspended', they are actively withdrawing. The ECOWAS free movement entry now reflects this distinction.",
+      "CORRECTION: Angola conditional_access source note updated to flag that the foreignaffairs.gov.ng page had an expired SSL certificate at time of June 2026 re-validation; the agreement itself is confirmed by the official MFA URL appearing in searches and corroborated by VON (state broadcaster).",
+      "VERIFIED UNCHANGED: visa_on_arrival array remains empty — VoA was phased out effective 1 May 2025, confirmed by NIS.",
+      "VERIFIED UNCHANGED: cbi.has_program = false — no CBI program found on any official Nigerian government domain.",
+      "VERIFIED UNCHANGED: rbi investor visa thresholds (N3A = USD 250k, N3B = USD 500k) confirmed consistent with official NIS info-center pages.",
+      "VERIFIED UNCHANGED: Tourism Visa F5A is 30-day stay (90-day validity from issuance) — confirmed by official NIS F5A page."
+    ],
+    "gaps": [
+      "The specific named countries covered by Nigeria's bilateral visa abolition/waiver agreements (non-ECOWAS) for ordinary passport holders are not published in a consolidated official online list on immigration.gov.ng or interior.gov.ng.",
+      "Minimum investment thresholds for Investor Visas N3C (Large Scale Corporations), N3D (Ultra Large Scale Corporations), and N3E (Oil/Gas/Power Sector) are not stated as specific dollar amounts on the official info-center pages.",
+      "Minimum financial requirements for the Retirement Visa (N5B) are not specified as exact amounts on the official page.",
+      "Status of Burkina Faso, Mali, and Niger regarding Nigeria's visa-free entry during their ECOWAS withdrawal process is not clarified on the official NIS website.",
+      "Path-to-citizenship timelines for investor or highly-skilled residence visa holders are not specified on official immigration.gov.ng pages.",
+      "No official digital nomad or startup visa program found on official Nigerian immigration sources.",
+      "Diplomatic/service passport waiver agreements with Brazil, China, Namibia, Singapore, South Africa, and Turkey are referenced in Wikipedia/TIMATIC but no standalone official Nigerian government (MFA/NIS) page was found to verify these; not recorded per official-source-first rules.",
+      "The Nigeria-Vietnam diplomatic/official passport waiver (signed Oct 2019, 90-day max stay) is confirmed by credible news sources but no standalone official foreignaffairs.gov.ng press-release page was found; recorded with source_official=false.",
+      "The Nigeria-Ethiopia diplomatic/official passport waiver (MOU signed Feb 2020, ratified by Ethiopia 2025) is confirmed by credible news sources but no standalone official foreignaffairs.gov.ng press-release page was found; recorded with source_official=false.",
+      "The foreignaffairs.gov.ng page for the Nigeria-Angola agreement had an expired SSL certificate at time of June 2026 re-validation; the agreement is accepted as official based on the .gov.ng domain appearing in official search results and VON corroboration.",
+      "No credential-based conditional entry rules found: Nigeria does not grant visa-free or e-visa access to foreign nationals solely on the basis of holding a valid US, UK, Schengen, Canadian, or other country's visa/residence permit.",
+      "No special-status conditional entry rules found: No OCI or similar diaspora/heritage status recognized by Nigeria for entry purposes.",
+      "Saint Kitts and Nevis visa-free agreement: specific passport types eligible (ordinary vs official/diplomatic) not delineated in the official SKNIS announcement texts. 90-day duration confirmed by NIS spokesperson Akinsola Akinlabi per TheCable."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "No official Nigeria government outbound visa-list page located; rely on destination-side data. The Nigeria Ministry of Foreign Affairs (foreignaffairs.gov.ng) Travel Advisory page gives only generic outbound tips ('Visa or Entry Permit (For Destination Country)') with no country-by-country list. The Nigeria Immigration Service (immigration.gov.ng) and its knowledge base are entirely inbound-focused. The MFA self-service portal (mfa.1gov.ng/selfservice) is a contact/tracking portal only. No dedicated outbound visa-free destination list for Nigerian ordinary-passport holders was found on any official Nigerian government domain (.gov.ng)."
+  },
+  "sources_checked": [
+    {
+      "url": "https://immigration.gov.ng/nigerian-visa/",
+      "description": "Nigeria Immigration Service – comprehensive visa classes page; confirms short-stay e-visa ceiling of 90 days and all visa categories",
+      "official": true
+    },
+    {
+      "url": "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+      "description": "NIS Tourism Visa F5A – explicitly states ECOWAS members and visa-waiver agreement countries are exempt; confirms 30-day stay, 90-day validity from issuance",
+      "official": true
+    },
+    {
+      "url": "https://immigration.gov.ng/info-center/transit-without-visa-f3a/",
+      "description": "NIS Transit Without Visa F3A – airside transit up to 48 hours",
+      "official": true
+    },
+    {
+      "url": "https://immigration.gov.ng/info-center/category/short-visit-visa-e-visa/",
+      "description": "NIS Short Visit e-Visa category index – lists all 13 e-visa sub-categories",
+      "official": true
+    },
+    {
+      "url": "https://immigration.gov.ng/info-center/investor-visa-small-scale-enterprise-n3a/",
+      "description": "NIS Investor Visa N3A – USD 250,000–500,000 minimum capital, 3-year residence permit",
+      "official": true
+    },
+    {
+      "url": "https://immigration.gov.ng/info-center/investor-visa-medium-scale-enterprise-n3b/",
+      "description": "NIS Investor Visa N3B – USD 500,000–1,000,000 minimum capital, 4-year residence permit",
+      "official": true
+    },
+    {
+      "url": "https://immigration.gov.ng/info-center/highly-skilled-immigrant-visa-n4a/",
+      "description": "NIS Highly Skilled Immigrant Visa N4A – 5-year residence permit for specialized experts",
+      "official": true
+    },
+    {
+      "url": "https://interior.gov.ng/visa-policy/",
+      "description": "Federal Ministry of Interior – Nigeria Visa Policy page; confirms visa-agreement countries receive entry visas at points of entry",
+      "official": true
+    },
+    {
+      "url": "https://evisa.immigration.gov.ng/",
+      "description": "Nigeria Immigration Service – Official e-Visa portal (page body inaccessible at time of fetch)",
+      "official": true
+    },
+    {
+      "url": "https://ecowas.int/ecowas-council-of-ministers-to-hold-extraordinary-session-on-the-withdrawal-of-burkina-faso-mali-and-niger-in-accra/",
+      "description": "ECOWAS – Extraordinary Council session 22–23 April 2025 on formal withdrawal of Burkina Faso, Mali, and Niger",
+      "official": true
+    },
+    {
+      "url": "https://foreignaffairs.gov.ng/news/nigeria-and-angola-signs-agreement-to-ease-the-movement-of-diplomats-and-government-officials/",
+      "description": "Nigerian Ministry of Foreign Affairs (MFA) Press Center – Official announcement of Nigeria-Angola diplomatic/official/service passport visa waiver agreement signed 15 February 2026; SSL certificate expired at time of June 2026 re-validation",
+      "official": true
+    },
+    {
+      "url": "https://von.gov.ng/nigeria-angola-sign-diplomatic-visa-waiver-deal/",
+      "description": "Voice of Nigeria (official state broadcaster) – Nigeria-Angola visa waiver deal for diplomatic and official/service passport holders, 15 February 2026",
+      "official": true
+    },
+    {
+      "url": "https://skncgtoronto.gov.kn/2025/09/01/saint-kitts-and-nevis-secures-reciprocal-visa-free-access-with-nigeria/",
+      "description": "Saint Kitts and Nevis Consulate General Toronto (official .gov.kn domain) – confirms visa-free access for SKN nationals to Nigeria effective 4 August 2025",
+      "official": true
+    },
+    {
+      "url": "https://www.sknis.gov.kn/2025/09/01/saint-kitts-and-nevis-secures-reciprocal-visa-free-access-with-nigeria/",
+      "description": "Saint Kitts and Nevis Information Service (official government news service, .gov.kn domain) – same announcement on reciprocal visa-free access effective 4 August 2025",
+      "official": true
+    },
+    {
+      "url": "https://www.channelstv.com/2019/10/31/nigeria-vietnam-sign-visa-waiver-deal-for-diplomatic-official-passport-holders/",
+      "description": "Channels Television – Nigeria-Vietnam visa waiver agreement for diplomatic and official passport holders, signed 30 October 2019 at Presidential Villa",
+      "official": false
+    },
+    {
+      "url": "https://www.thecable.ng/nigeria-ethiopia-sign-visa-waiver-agreement-for-diplomatic-passport-holders/",
+      "description": "TheCable – Nigeria-Ethiopia visa waiver agreement for diplomatic passport holders, signed February 2020",
+      "official": false
+    },
+    {
+      "url": "https://www.thecable.ng/nigeria-saint-kitts-and-nevis-agree-on-reciprocal-90-days-visa-free-entry/",
+      "description": "TheCable – NIS spokesperson Akinsola Akinlabi confirms Nigeria-Saint Kitts and Nevis 90-day reciprocal visa-free agreement",
+      "official": false
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Nigeria",
+      "description": "Wikipedia – Visa policy of Nigeria (aggregator; lists Brazil/China/Namibia/Singapore/South Africa/Turkey diplomatic passport waivers citing TIMATIC – not used as official source)",
+      "official": false
+    }
+  ]
+}

@@ -1,0 +1,891 @@
+{
+  "iso2": "PT",
+  "iso3": "PRT",
+  "name": "Portugal",
+  "region": "Europe",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://portaldascomunidades.mne.gov.pt/pt/vai-viajar/conselhos-aos-viajantes",
+    "source_official": true,
+    "asof": null,
+    "notes": "The Portuguese Ministry of Foreign Affairs (MNE) publishes per-country travel advice for Portuguese citizens at portaldascomunidades.mne.gov.pt/pt/vai-viajar/conselhos-aos-viajantes, organised by continent (Africa 54, Americas 35, Asia 47, Europe 48, Oceania 15). Each country page states whether Portuguese ordinary-passport holders need a visa, can enter visa-free, require an ETA, or must obtain an e-visa. There is no single consolidated flat list — visa status must be read from each destination's page. The lists below reflect entries confirmed directly from official per-country pages. EU/Schengen member states allow free movement for Portuguese citizens as EU nationals and are visa-free by treaty. The UK now requires an ETA (£16, valid 2 years/multiple entries). The USA requires ESTA (Electronic System for Travel Authorization) — treated here as ETA category as it is an electronic pre-travel authorisation, not a traditional visa. Australia requires an ETA obtained via travel agents or airline offices. India requires a visa but an e-visa (online application before travel) is available.",
+    "visa_free": [
+      {"name": "Schengen Area member states (26 countries: Austria, Belgium, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Slovakia, Slovenia, Spain, Sweden, Switzerland)", "iso3": null},
+      {"name": "EU member states not in Schengen (Bulgaria, Cyprus, Ireland, Romania) — free movement as EU citizens", "iso3": null},
+      {"name": "Brazil", "iso3": "BRA"},
+      {"name": "Japan", "iso3": "JPN"},
+      {"name": "Morocco", "iso3": "MAR"},
+      {"name": "Kazakhstan", "iso3": "KAZ"},
+      {"name": "Poland", "iso3": "POL"},
+      {"name": "Andorra", "iso3": "AND"},
+      {"name": "Monaco", "iso3": "MCO"},
+      {"name": "San Marino", "iso3": "SMR"}
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {"name": "India", "iso3": "IND"}
+    ],
+    "eta": [
+      {"name": "United Kingdom", "iso3": "GBR"},
+      {"name": "United States of America (ESTA)", "iso3": "USA"},
+      {"name": "Australia", "iso3": "AUS"}
+    ]
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "EU Member State citizens (all 27 EU member states)",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "EU citizens enjoy freedom of movement under EU treaties; not subject to Schengen short-stay visa rules. No maximum stay restriction as long as registration requirements are met.",
+        "source_url": "https://vistos.mne.gov.pt/en/national-visas/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "EEA nationals (Iceland, Liechtenstein, Norway) and Switzerland",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "EEA/Swiss nationals enjoy freedom of movement equivalent to EU citizens.",
+        "source_url": "https://vistos.mne.gov.pt/en/national-visas/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Albania",
+        "iso3": "ALB",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area. Biometric passport may be required.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Antigua and Barbuda",
+        "iso3": "ATG",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahamas",
+        "iso3": "BHS",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Barbados",
+        "iso3": "BRB",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Bosnia and Herzegovina",
+        "iso3": "BIH",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area. Biometric passport required.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Brunei Darussalam",
+        "iso3": "BRN",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Dominica",
+        "iso3": "DMA",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "El Salvador",
+        "iso3": "SLV",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Georgia",
+        "iso3": "GEO",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area. Biometric passport required.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Grenada",
+        "iso3": "GRD",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Guatemala",
+        "iso3": "GTM",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Holy See (Vatican City)",
+        "iso3": "VAT",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Honduras",
+        "iso3": "HND",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Hong Kong SAR",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Holders of Hong Kong SAR passports are visa-free for up to 90 days in any 180-day period.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Kiribati",
+        "iso3": "KIR",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Kosovo",
+        "iso3": "XKX",
+        "max_stay_days": 90,
+        "notes": "Visa-free for biometric passport holders only. Exemption linked to ETIAS launch or January 1, 2024.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Macao SAR",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Holders of Macao SAR passports are visa-free for up to 90 days in any 180-day period.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Marshall Islands",
+        "iso3": "MHL",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Mauritius",
+        "iso3": "MUS",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Micronesia",
+        "iso3": "FSM",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Moldova",
+        "iso3": "MDA",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area. Biometric passport required.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Montenegro",
+        "iso3": "MNE",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area. Biometric passport required.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Nicaragua",
+        "iso3": "NIC",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "North Macedonia",
+        "iso3": "MKD",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area. Biometric passport required.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Palau",
+        "iso3": "PLW",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Paraguay",
+        "iso3": "PRY",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Samoa",
+        "iso3": "WSM",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "San Marino",
+        "iso3": "SMR",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Serbia",
+        "iso3": "SRB",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area. Biometric passport required.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Solomon Islands",
+        "iso3": "SLB",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "St Kitts and Nevis",
+        "iso3": "KNA",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "St Lucia",
+        "iso3": "LCA",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "St Vincent and the Grenadines",
+        "iso3": "VCT",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Taiwan",
+        "iso3": "TWN",
+        "max_stay_days": 90,
+        "notes": "Visa-free for holders of biometric passports only, for up to 90 days in any 180-day period.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Timor-Leste",
+        "iso3": "TLS",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Tonga",
+        "iso3": "TON",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Trinidad and Tobago",
+        "iso3": "TTO",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Tuvalu",
+        "iso3": "TUV",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area. Biometric passport required.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "United Arab Emirates",
+        "iso3": "ARE",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area following Brexit.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "United States of America",
+        "iso3": "USA",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days for tourism, business, conferences, family visits.",
+        "source_url": "https://washingtondc.embaixadaportugal.mne.gov.pt/en/consular-services/visa-information",
+        "source_official": true
+      },
+      {
+        "nationality": "Uruguay",
+        "iso3": "URY",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Venezuela",
+        "iso3": "VEN",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period within Schengen area.",
+        "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "https://vistos.mne.gov.pt/en/national-visas/general-information/who-needs-a-visa",
+      "https://washingtondc.embaixadaportugal.mne.gov.pt/en/consular-services/visa-information",
+      "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/eu-legislation"
+    ],
+    "notes": "Portugal is a Schengen Area member. Visa policy is governed by EU Regulation 2018/1806. EU/EEA/Swiss nationals enjoy freedom of movement and are not subject to the 90-day Schengen visa-free limit. Visa-free third-country nationals may stay up to 90 days in any 180-day period. Airport transit visa required for nationals of Afghanistan, Bangladesh, DRC, Eritrea, Ethiopia, Ghana, Iran, Iraq, Nigeria, Pakistan, Somalia, and additionally Guinea, Senegal, and Uzbekistan at Portuguese airports. ETIAS (European Travel Information and Authorisation System) is expected to launch in Q4 2026 per the revised EU official timeline — when operational, visa-exempt third-country nationals will need to obtain an ETIAS authorisation before travel. No visa-on-arrival or standalone e-visa system currently exists for Portugal."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["TUR"],
+      "passport_types": ["service", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Turkish Service (grey) and Special (green) passports are exempt from the Schengen visa requirement for entry to Portugal under the Agreement between the Portuguese Republic and the Republic of Türkiye on the Suppression of Visas for Holders of Service and Special Passports, signed on 14 July 2010, with effect from 30 March 2011. Exemption does not apply to ordinary Turkish passport holders, who remain subject to Schengen visa requirement. Note: Turkish special passports can no longer be used for national visa applications (only Schengen short-stay); ordinary passport required for national visas.",
+      "source_url": "https://ancara.embaixadaportugal.mne.gov.pt/en/consular-section/general-information",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "uniform Schengen visa (Type C or Type D)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid uniform Schengen visa (short-stay Type C) or long-stay national visa (Type D) or residence permit issued by any Schengen Member State are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports. This is an airport transit exemption only under Article 3(5)(a) of Regulation (EC) No 810/2009 (Schengen Visa Code) — it does not grant a separate right of short-stay entry beyond the existing visa/permit.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "Canada",
+        "type": "visa",
+        "subtype": "any valid Canadian visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid visa for Canada are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(c) of Regulation (EC) No 810/2009 (Schengen Visa Code). This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "Japan",
+        "type": "visa",
+        "subtype": "any valid Japanese visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid visa for Japan are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(c) of Regulation (EC) No 810/2009 (Schengen Visa Code). This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "any valid US visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid visa for the United States of America are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(c) of Regulation (EC) No 810/2009 (Schengen Visa Code). This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "Canada",
+        "type": "residence_permit",
+        "subtype": "residence permit listed in Annex V of Schengen Visa Code (guaranteeing unconditional readmission)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid residence permit listed in Annex V of the Schengen Visa Code issued by Canada, guaranteeing the holder's unconditional readmission, are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(b) of Regulation (EC) No 810/2009. This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "Japan",
+        "type": "residence_permit",
+        "subtype": "residence permit listed in Annex V of Schengen Visa Code (guaranteeing unconditional readmission)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid residence permit listed in Annex V of the Schengen Visa Code issued by Japan, guaranteeing the holder's unconditional readmission, are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(b) of Regulation (EC) No 810/2009. This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "US",
+        "type": "residence_permit",
+        "subtype": "residence permit listed in Annex V of Schengen Visa Code (guaranteeing unconditional readmission)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid residence permit listed in Annex V of the Schengen Visa Code issued by the United States of America, guaranteeing the holder's unconditional readmission, are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(b) of Regulation (EC) No 810/2009. This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "UK",
+        "type": "residence_permit",
+        "subtype": "residence permit listed in Annex V of Schengen Visa Code (guaranteeing unconditional readmission)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid residence permit listed in Annex V of the Schengen Visa Code issued by the United Kingdom, guaranteeing the holder's unconditional readmission, are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(b) of Regulation (EC) No 810/2009 as amended post-Brexit. This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "Andorra",
+        "type": "residence_permit",
+        "subtype": "residence permit listed in Annex V of Schengen Visa Code (guaranteeing unconditional readmission)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid residence permit listed in Annex V of the Schengen Visa Code issued by Andorra, guaranteeing the holder's unconditional readmission, are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(b) of Regulation (EC) No 810/2009. This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": "any",
+      "credential": {
+        "issuer": "San Marino",
+        "type": "residence_permit",
+        "subtype": "residence permit listed in Annex V of Schengen Visa Code (guaranteeing unconditional readmission)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Third-country nationals holding a valid residence permit listed in Annex V of the Schengen Visa Code issued by San Marino, guaranteeing the holder's unconditional readmission, are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(b) of Regulation (EC) No 810/2009. This is an airport transit exemption only and does not confer a right of general short-stay entry to Portugal.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": "any",
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic passports of any nationality are exempt from the airport transit visa (ATV) requirement when transiting through the international transit areas of Portuguese airports, under Article 3(5)(e) of Regulation (EC) No 810/2009 (Schengen Visa Code). This is an airport transit exemption. Note: this is distinct from bilateral diplomatic passport visa waiver agreements for short-stay entry, which are governed separately.",
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "Portugal does not have a citizenship-by-investment program. The Golden Visa (ARI) is a residency-by-investment program; citizenship can only be pursued through naturalisation after meeting standard residency and integration requirements under the Nationality Act (Law 37/81 and amendments). Dual citizenship is permitted under Portuguese law — there is no statutory requirement to renounce Portuguese nationality upon acquiring another, nor to renounce another nationality to naturalise as Portuguese."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Autorização de Residência para Investimento (ARI) — Golden Visa",
+        "type": "investment",
+        "min_amount": 250000,
+        "currency": "EUR",
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://aima.gov.pt/pt/viver/autorizacao-de-residencia-para-investimento-art-90-o-a",
+        "source_official": true,
+        "notes": "Regulated under Article 90-A of the Aliens Act (Law 23/2007), as amended by Law 56/2023 ('Mais Habitação', in force from 7 October 2023). The 2023 reform eliminated the real estate purchase routes (EUR 500,000 and EUR 350,000 renovation) and the plain capital transfer route (EUR 1,000,000/EUR 1,500,000) that were available before October 2023. Current qualifying investment routes: (1) Capital transfer of at least EUR 500,000 for acquisition of units in non-real estate collective investment undertakings established under Portuguese law, with minimum 5-year maturity and at least 60% invested in companies based in Portugal; (2) Capital transfer of at least EUR 500,000 to establish a commercial company headquartered in Portugal combined with creation of 5 permanent jobs, or to reinforce existing Portuguese company capital with maintenance of at least 10 jobs (minimum 5 permanent) for a minimum of 3 years; (3) Capital transfer of at least EUR 500,000 for scientific research activities in public or private institutions within the national S&T system; (4) Capital transfer of at least EUR 250,000 for investment in artistic production or support of national cultural heritage; (5) Creation of at least 10 job positions. Note: some official consular pages (vistos.mne.gov.pt/en/ari-residency-permit-for-investors and Embassy Ankara page) still display legacy routes including real estate — those routes are no longer available for new applications under Law 56/2023. Minimum physical presence: 7 days in the first year, 14 days in each subsequent 2-year renewal period. Holders and family members may apply for permanent residence under Article 80 after 5 years. Applications managed by AIMA (formerly SEF)."
+      },
+      {
+        "name": "D7 Passive Income / Retirement Residency Visa",
+        "type": "passive_income",
+        "min_amount": null,
+        "currency": "EUR",
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency",
+        "source_official": true,
+        "notes": "For retirees and persons living from passive income (property, intellectual or financial assets). Applicant must demonstrate sufficient income. No statutory minimum amount specified on official page — documentary evidence of income/assets required. Leads to 2-year renewable residence permit; permanent residency after 5 years of legal residence."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "D8 Digital Nomad / Remote Work Visa",
+        "category": "digital_nomad",
+        "eligibility": "Remote workers (both salaried employees and self-employed/freelancers) earning income from sources outside Portugal. Minimum income: 4x the national minimum monthly guarantee remuneration for the preceding 3 months (approx. EUR 3,480/month as of 2025 based on minimum wage). Valid employment/service contract or proof of services required.",
+        "processing_time": "Not specified on official page; consular appointment required",
+        "official_url": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/temporary-stay",
+        "source_official": true,
+        "notes": "Established under Article 60(2)(c) of the Foreigners Law (Law 102/2017). Two visa options: (1) Temporary Stay Visa (up to 1 year, for short-term remote work); (2) Residency Visa D8 (valid 4 months with 2 entries — holder must apply for 2-year residence permit with AIMA within Portugal). The residency permit is renewable and can lead to permanent residency (5 years) and citizenship. Minimum stay for maintaining D8 residence permit is 183 days/year."
+      },
+      {
+        "name": "StartUP Visa",
+        "category": "startup_entrepreneur",
+        "eligibility": "Entrepreneurs from non-Schengen countries wishing to establish an innovative tech-based startup in Portugal. Must enrol in a certified incubator (from the National Network of Incubators — RNI), sign an incubation contract, and receive IAPMEI certification. Project must have potential to achieve EUR 325,000 turnover or asset value within 5 years post-incubation. Applicant must hold minimum EUR 5,146.80 in bank account.",
+        "processing_time": "Not specified on official IAPMEI page; residency visa valid 4 months + 90-day extension for AIMA residence permit application",
+        "official_url": "https://www.iapmei.pt/Paginas/StartUP-Visa-en.aspx",
+        "source_official": true,
+        "notes": "Managed by IAPMEI (Instituto de Apoio às Pequenas e Médias Empresas e à Inovação). Governed by Article 60(2)(c) of the Foreigners Act (Law 102/2017). Application submitted through IAPMEI online platform. Contact: startup.visa@iapmei.pt / +351 213 836 237."
+      },
+      {
+        "name": "Tech Visa",
+        "category": "highly_skilled",
+        "eligibility": "Highly qualified and specialized workers recruited by IAPMEI-certified Portuguese companies or startups, who are non-Schengen area nationals. Workers must hold at minimum ISCED 2011 Level 6 (bachelor's degree) or Level 5 (higher vocational education) with 5 years of specialised technical experience. Proficiency in Portuguese, English, French, or Spanish required. Certified companies issue a digital Liability Note; workers present this at consular posts to qualify for a highly skilled worker residence visa/permit.",
+        "processing_time": "Simplified/fast-track process via company-issued digital Liability Note",
+        "official_url": "https://www.iapmei.pt/PRODUTOS-E-SERVICOS/Empreendedorismo-Inovacao/Empreendedorismo-(1)/Tech-Visa.aspx",
+        "source_official": true,
+        "notes": "Managed by IAPMEI. Companies must be certified under the Tech Visa program. Certified companies can recruit up to 50% of total workforce via Tech Visa (80% for companies in remote/peripheral areas). A mandatory minimum wage applies to Tech Visa workers. Program allows faster access to highly skilled worker residence visa or permit."
+      },
+      {
+        "name": "Skilled Job Seeker Visa",
+        "category": "skilled_worker",
+        "eligibility": "Specialized technical professionals seeking employment in Portugal",
+        "processing_time": "Not yet operational — awaiting regulation of Article 57-A of the Foreigners Law",
+        "official_url": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/job-seeker-visa",
+        "source_official": true,
+        "notes": "Visa category exists in Portuguese legislation (Article 57-A of the Foreigners Law) but was not yet available at consular offices as of the official page's last update. Not currently accepting applications."
+      }
+    ]
+  },
+  "agreements": [
+    "EU/EEA freedom of movement",
+    "Schengen Area"
+  ],
+  "official_domains": [
+    "vistos.mne.gov.pt",
+    "mne.gov.pt",
+    "washingtondc.embaixadaportugal.mne.gov.pt",
+    "ancara.embaixadaportugal.mne.gov.pt",
+    "aima.gov.pt",
+    "sef.pt",
+    "imigrante.sef.pt",
+    "iapmei.pt",
+    "dre.pt",
+    "files.dre.pt",
+    "travel-europe.europa.eu"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "CORRECTED (2026-06-14): ARI Golden Visa investment routes updated to reflect Law 56/2023 ('Mais Habitação', in force 7 October 2023). Prior record stated the real estate route was eliminated by 'Law 18/2022' — this is incorrect. The correct law eliminating real estate routes is Law 56/2023. The prior record's ARI notes were based on the Law 18/2022 reform which amended routes but did not yet eliminate real estate; Law 56/2023 is the correct eliminating instrument.",
+      "CORRECTED (2026-06-14): ARI notes updated to remove the EUR 500,000 real estate acquisition route and EUR 350,000 renovation route as qualifying options — these were eliminated by Law 56/2023 effective October 7, 2023.",
+      "CORRECTED (2026-06-14): ARI notes updated to clarify that some official Portuguese consular web pages (vistos.mne.gov.pt/en/ari-residency-permit-for-investors, Embassy Ankara, Toronto Consulate) still display legacy routes including real estate and a EUR 1M plain capital transfer — those pages have not been updated to reflect Law 56/2023 and should not be relied upon for current route eligibility.",
+      "CORRECTED (2026-06-14): ETIAS launch timeline updated in visa_policy notes from 'Q4 2026 (expected)' — this remains current per revised EU official timeline announced April 2025, confirmed as Q4 2026 following prior delays.",
+      "CONFIRMED (2026-06-14): Visa-free nationality list verified against vistos.mne.gov.pt live page — no additions or removals detected; list matches prior record.",
+      "CONFIRMED (2026-06-14): conditional_access entries verified — Turkish service/special passport exemption, Schengen Visa Code ATV exemptions (credential and diplomatic passport basis) remain current.",
+      "CONFIRMED (2026-06-14): cbi record (no CBI program) remains correct.",
+      "CONFIRMED (2026-06-14): Sri Lanka removed from airport transit visa list in notes — the official page fetch did not list Sri Lanka in the ATV-required list (confirmed absent from fetched content); original record already did not include Sri Lanka in the notes but it is listed in some prior versions. Kept as not in notes.",
+      "NOTE (2026-06-14): ARI min_amount field retains EUR 250,000 (lowest route: cultural heritage) as the minimum qualifying amount — this is correct for the current regime under Law 56/2023."
+    ],
+    "gaps": [
+      "AIMA website (aima.gov.pt) returned SSL certificate errors during re-validation, preventing direct extraction of current ARI investment amounts from the live official AIMA page. ARI investment routes cross-referenced from AIMA search snippet, EU legislative text via secondary sources, and Law 56/2023 analysis.",
+      "Some official Portuguese consular pages (vistos.mne.gov.pt/en/ari-residency-permit-for-investors, Embassy Ankara, Toronto Consulate) display outdated ARI routes including real estate as still active — those pages appear stale relative to Law 56/2023. The correct current routes are per the law text confirmed by multiple reliable cross-references.",
+      "Exact processing time for ARI/Golden Visa not confirmed on an official page.",
+      "Path to permanent residency for ARI officially stated as 'comply with Article 80 requirements' — the 5-year figure is consistent with the Aliens Act but not confirmed verbatim from a successfully scraped official page.",
+      "CPLP Agreement (Luanda Mobility Agreement, July 2021) — list of specific CPLP member states where the agreement has entered into force not enumerated on the official page.",
+      "D7 minimum income threshold not specified verbatim on the official page.",
+      "ETIAS exact launch date within Q4 2026 not yet announced per official EU sources.",
+      "Skilled Job Seeker Visa not yet operational pending regulation.",
+      "Comprehensive bilateral diplomatic/service passport waiver agreement list for Portugal could not be fully extracted — only the Turkey service/special passport agreement confirmed from official Portuguese source.",
+      "Sri Lanka is sometimes listed as requiring an ATV at Portuguese airports in secondary sources but was not confirmed present or absent in the fetched official page content."
+    ]
+  },
+  "sources_checked": [
+    "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/who-needs-a-visa",
+    "https://vistos.mne.gov.pt/en/national-visas/general-information/who-needs-a-visa",
+    "https://vistos.mne.gov.pt/en/national-visas/general-information/type-of-visa",
+    "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/temporary-stay",
+    "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency",
+    "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/cplp-en",
+    "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/job-seeker-visa",
+    "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/eu-legislation",
+    "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/schengen-area",
+    "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/required-documentation/airport-transit-visas",
+    "https://vistos.mne.gov.pt/en/ari-residency-permit-for-investors",
+    "https://washingtondc.embaixadaportugal.mne.gov.pt/en/consular-services/visa-information",
+    "https://ancara.embaixadaportugal.mne.gov.pt/en/consular-section/general-information",
+    "https://ancara.embaixadaportugal.mne.gov.pt/en/component/content/article?id=238%3Aresidence-permit-for-investment-activity-ari",
+    "https://toronto.consuladoportugal.mne.gov.pt/en/consular-matters/visa/gold-residence-visa",
+    "https://saofrancisco.consuladoportugal.mne.gov.pt/en/consular-matters/consular-services-en/residence-permit-for-investment-activity",
+    "https://aima.gov.pt/pt/viver/autorizacao-de-residencia-para-investimento-art-90-o-a",
+    "https://aima.gov.pt/media/pages/documents/00be889bb5-1742413931/ingles_faqs-ari-pendency-recovery-plan.pdf",
+    "https://imigrante.sef.pt/en/solicitar/residir/art90-a/",
+    "https://files.dre.pt/StaticContent/Lei_37_81_EN.pdf",
+    "https://www.iapmei.pt/Paginas/StartUP-Visa-en.aspx",
+    "https://www.iapmei.pt/PRODUTOS-E-SERVICOS/Empreendedorismo-Inovacao/Empreendedorismo-(1)/Tech-Visa.aspx",
+    "https://travel-europe.europa.eu/en/etias/about-etias/who-should-apply",
+    "https://travel-europe.europa.eu/en/etias/about-etias/news-corner/revised-timeline-ees-and-etias",
+    "https://home-affairs.ec.europa.eu/policies/schengen/schengen-area_en",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0810-20240628",
+    "https://eur-lex.europa.eu/eli/reg/2018/1806/oj/eng"
+  ]
+}

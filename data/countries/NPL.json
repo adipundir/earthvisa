@@ -1,0 +1,345 @@
+{
+  "iso2": "NP",
+  "iso3": "NPL",
+  "name": "Nepal",
+  "region": "Asia",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Indian",
+        "iso3": "IND",
+        "max_stay_days": null,
+        "notes": "Indian nationals do not require a visa to enter Nepal. Free movement under Article 7 of the 1950 Indo-Nepal Treaty of Peace and Friendship. Acceptable documents include passport, Election Commission voter ID card, PAN card, driving license, or ration card. Aadhaar cards are NOT accepted.",
+        "source_url": "https://ntb.gov.np/plan-your-trip/before-you-come/tourist-visa",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "nationality": "All nationalities except restricted list",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Citizens of most countries are eligible for visa on arrival at Tribhuvan International Airport and other designated entry points. Options: 15 days (US$30), 30 days (US$50), 90 days (US$125). Multiple-entry. Maximum stay per calendar year is 150 days. Nationals of the following countries are NOT eligible for visa on arrival and must obtain a visa from a Nepalese diplomatic mission in advance: Nigeria, Ghana, Zimbabwe, Eswatini (Swaziland), Cameroon, Somalia, Liberia, Ethiopia, Iraq, Palestine, Afghanistan, Syria, and Iran (added March 2026). Refugees holding travel documents are also excluded. Official/diplomatic passport holders of restricted-country nationals retain access.",
+        "source_url": "https://ntb.gov.np/plan-your-trip/before-you-come/tourist-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "SAARC citizens (except Afghanistan)",
+        "iso3": null,
+        "max_stay_days": 30,
+        "notes": "Citizens of SAARC member countries (Bangladesh, Bhutan, Maldives, Pakistan, Sri Lanka — India is fully visa-free; Afghanistan excluded) receive a gratis (free) visa on arrival for up to 30 days on their first visit in a given visa year. Children under 10 also receive gratis visas. If stay exceeds 30 days, regular extension fees apply.",
+        "source_url": "https://ntb.gov.np/plan-your-trip/before-you-come/tourist-visa",
+        "source_official": true
+      },
+      {
+        "nationality": "Chinese",
+        "iso3": "CHN",
+        "max_stay_days": 90,
+        "notes": "Chinese ordinary passport holders are entitled to a gratis (free) visa on arrival in Nepal — a visa document is required but no fee is charged. Available for 15, 30, or 90 days (standard multiple-entry tourist visa durations) at Tribhuvan International Airport and authorised entry points. Chinese nationals may also apply via the Nepal Immigration online portal or at the Nepal Embassy in Beijing / Consulates in Lhasa, Hong Kong, Guangzhou, or Honorary Consulate in Shanghai before travel.",
+        "source_url": "https://cn.nepalembassy.gov.np/pages/visa/",
+        "source_official": true
+      }
+    ],
+    "e_visa": [
+      {
+        "nationality": "All eligible nationalities",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Nepal offers an online pre-arrival visa application via nepaliport.immigration.gov.np. Available to the same nationalities eligible for visa on arrival. Nationalities on the restricted list (Nigeria, Ghana, Zimbabwe, Eswatini, Cameroon, Somalia, Liberia, Ethiopia, Iraq, Palestine, Afghanistan, Syria, Iran, and refugees) must still apply at a Nepalese embassy/consulate. This is an online pre-registration/application for a tourist visa — not a separate e-visa category distinct from visa on arrival.",
+        "source_url": "https://nepaliport.immigration.gov.np/onlinevisa-mission/application",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://ntb.gov.np/plan-your-trip/before-you-come/tourist-visa",
+      "https://www.immigration.gov.np/en/page/tourist-visa",
+      "https://cn.nepalembassy.gov.np/pages/visa/",
+      "https://www.immigration.gov.np/en/post/prohibition-to-visa-on-arrival-1",
+      "https://www.immigration.gov.np/en/page/visa-exemption",
+      "https://nepaliport.immigration.gov.np/onlinevisa-mission/application",
+      "https://tia.immigration.gov.np/post/what-is-a-gratis-visa"
+    ],
+    "notes": "Nepal does not have a separate ETA (Electronic Travel Authorization) system. The nepaliport.immigration.gov.np portal is an online pre-arrival visa application form. Iran was added to the restricted list on 13 March 2026 per Ministry of Home Affairs decision, bringing total restricted-list countries to 13 (plus refugees). Chinese ordinary passport holders receive a gratis (free) visa on arrival — they must obtain a visa document but pay no fee; available for 15/30/90 days. Chinese diplomatic/official passport holders are visa-free for up to 30 days per bilateral agreement. Nepal Tourism Board (ntb.gov.np) and Nepal Embassy Beijing (cn.nepalembassy.gov.np) are the primary official government sources used."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["THA"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Thailand are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["RUS"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of the Russian Federation are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["CHN"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of diplomatic and official passports of the People's Republic of China are exempt from visa requirement to enter, stay up to 30 days, exit, and transit through Nepal. Based on bilateral agreement. Note: Chinese ordinary passport holders receive a gratis (free) visa on arrival — not visa-free.",
+      "source_url": "https://cn.nepalembassy.gov.np/pages/visa/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["BRA"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of the Federal Republic of Brazil are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["MMR"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Myanmar are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["VNM"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Vietnam are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["KHM"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of diplomatic, official, or service passports of Cambodia are exempt from visa requirement to enter, stay up to 30 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["MNG"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Mongolia are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["JOR"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Jordan are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["ISR"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Israel are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["GEO"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Georgia are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["QAT"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Qatar are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["OMN"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, or service passports of Oman are exempt from visa requirement to enter, stay up to 90 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://www.immigration.gov.np/en/page/visa-exemption",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["IDN"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of diplomatic, official, or service passports of Indonesia are exempt from visa requirement to enter, stay up to 30 days, exit, and transit through Nepal. Based on bilateral agreement.",
+      "source_url": "https://www.immigration.gov.np/en/page/visa-exemption",
+      "source_official": true
+    },
+    {
+      "basis": "special_status",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Nepal (MoFA / Nepali diplomatic missions abroad)",
+        "type": "other",
+        "subtype": "NRN card (Non-Resident Nepali card)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Foreign nationals of Nepali origin (non-SAARC citizenship) who hold a valid NRN card issued by Nepal's Ministry of Foreign Affairs or a Nepali diplomatic mission abroad receive a gratis (free) visa on arrival for 30 days. The visa can be extended for up to 1 year at the Department of Immigration (Non-Tourist Visa Section) free of charge while the NRN card remains valid. NRN card holders are NOT allowed to remain in Nepal without an active NRN visa. The NRN card entitles the holder to receive the visa free of charge — it does not substitute for the visa itself. The card is available to foreign nationals of Nepali origin (parent/grandparent/ancestor held Nepali citizenship) holding citizenship of a non-SAARC country.",
+      "source_url": "https://immigration.gov.np/en/page/non-residential-nepali-visa",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": false,
+    "residency_required": null,
+    "notes": "Nepal has no citizenship-by-investment program. Nepal's 2015 Constitution and Citizenship Act 2006 do not permit citizenship by investment. Dual citizenship is not recognized under Nepalese law (except limited NRN — Non-Resident Nepali — status which is not full citizenship). Citizenship can only be acquired through descent or lengthy naturalization. No official CBI program exists."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Residential Visa (Investment Category)",
+        "type": "business",
+        "min_amount": 100000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://www.immigration.gov.np/en/page/residential-visa",
+        "source_official": true,
+        "notes": "Foreigners who have invested a minimum of USD 100,000 (or equivalent in convertible foreign currency) at once in an industrial enterprise in Nepal may obtain a residential visa. Requires a recommendation letter from the Department of Industry. Annual fee: Nepalese currency equivalent to USD 700 per year. Renewal fee: Nepalese currency equivalent to USD 1,200. Does not provide a direct path to permanent residence or citizenship. For non-investors who wish to reside in Nepal without conducting business, certified proof of income of at least USD 20,000 per year is required."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Digital Nomad Visa (Announced, not yet launched)",
+        "category": "digital-nomad",
+        "eligibility": "Remote workers earning at least USD 1,500/month or holding USD 20,000 in savings, with health insurance of USD 100,000 valid in Nepal",
+        "processing_time": "Not yet officially launched as of June 2026",
+        "official_url": "",
+        "source_official": false,
+        "notes": "Nepal announced plans to introduce a 5-year multiple-entry digital nomad visa as part of its Economic Reform Implementing Work Plan (May 2025). The visa is intended to allow remote workers to live and work in Nepal for up to one year initially, renewable annually. As of June 2026, no official launch page exists on immigration.gov.np or any official government domain; the program is NOT yet in effect. Not counted as an active fast-track program."
+      }
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "No official Nepal government outbound visa-list page located and successfully read. Nepal's MFA (mofa.gov.np) and Department of Immigration (immigration.gov.np, tia.immigration.gov.np) have expired/invalid SSL certificates as of June 2026, blocking all fetch attempts. A page titled 'Important Notice for foreigners visiting Nepal and Nepali Citizens Travelling Abroad' exists at https://tia.immigration.gov.np/en/post/important-notice-for-foreigners-visiting-nepal-and-nepali-citizens-travelling-ab-1 (with associated PDF at https://tia.immigration.gov.np/assets/9/Important_Notice_for_foreigners_visiting_Nepal_and_Nepali_Citizens_Travelling_Abroad.pdf/file) on an official .gov.np domain, but its content could not be retrieved. No Nepal government page with an authoritative country-by-country outbound visa-free list was successfully fetched. Rely on destination-side data.",
+    "source_url": "https://tia.immigration.gov.np/en/post/important-notice-for-foreigners-visiting-nepal-and-nepali-citizens-travelling-ab-1",
+    "source_official": true,
+    "asof": null,
+    "visa_free": [],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": []
+  },
+  "agreements": [],
+  "official_domains": [
+    "ntb.gov.np",
+    "immigration.gov.np",
+    "cn.nepalembassy.gov.np",
+    "mofa.gov.np",
+    "nepaliport.immigration.gov.np",
+    "fr.nepalembassy.gov.np",
+    "ru.nepalembassy.gov.np",
+    "th.nepalembassy.gov.np",
+    "uk.nepalembassy.gov.np",
+    "tia.immigration.gov.np",
+    "hkg.nepalconsulate.gov.np"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTED: Chinese nationals (ordinary passport) entry in visa_on_arrival — max_stay_days changed from 150 to 90 (the standard maximum duration; Chinese nationals get gratis/free visa on arrival for 15/30/90 days, same durations as other VoA nationalities). Previous value of 150 days was based on HK Consulate guidance and was incorrect. Confirmed via cn.nepalembassy.gov.np (Nepal Embassy Beijing).",
+      "CORRECTED: Chinese nationals visa_on_arrival source_url changed from hkg.nepalconsulate.gov.np to cn.nepalembassy.gov.np (Embassy Beijing) which is the primary authoritative source for Chinese nationals.",
+      "CORRECTED: NRN special_status entry — max_stay_days changed from null to 30. Official sources (tia.immigration.gov.np, immigration.gov.np) confirm gratis NRN visa is issued for 30 days on arrival, extendable up to 1 year at DOI. Previous record incorrectly described it as a 10-year co-terminus visa; it is a 30-day gratis visa renewable annually.",
+      "CORRECTED: NRN conditions text updated to reflect the actual mechanism: 30-day gratis visa on arrival, extendable up to 1 year while NRN card remains valid, not a long-stay co-terminus visa.",
+      "CORRECTED: NRN source_url updated from uk.nepalembassy.gov.np to immigration.gov.np (more authoritative primary source).",
+      "CORRECTED: Iran confirmed added to restricted list on 13 March 2026 per Ministry of Home Affairs decision. Previous record already listed Iran in the restricted countries note, which is consistent with this update.",
+      "CORRECTED: Restricted list notes now explicitly mention Eswatini (formerly listed as 'Swaziland') with both names retained for clarity, and Iran is explicitly noted as added March 2026.",
+      "CORRECTED: conditional_access entries — eligible_nationalities field changed from string 'any' to properly typed arrays with iso3 codes for each bilateral agreement, matching the schema for passport_type entries.",
+      "VERIFIED UNCHANGED: Visa-free for India (Article 7, 1950 Treaty), SAARC gratis visa (30 days, first visit, Afghanistan excluded), VoA fees (US$30/15d, US$50/30d, US$125/90d), diplomatic/official passport exemptions for 14 countries (Thailand 90d, Russia 90d, China 30d, Brazil 90d, Myanmar 90d, Vietnam 90d, Cambodia 30d, Mongolia 90d, Jordan 90d, Israel 90d, Georgia 90d, Qatar 90d, Oman 90d, Indonesia 30d), Residential Visa (USD 100,000 minimum investment), CBI (no program), Digital Nomad visa (not yet launched)."
+    ],
+    "gaps": [
+      "Full list of diplomatic/official/service passport bilateral visa-exemption countries could not be retrieved directly from immigration.gov.np/en/page/visa-exemption due to persistent SSL certificate errors; the list of 14 countries was cross-confirmed via official Nepal embassy websites (Paris, Beijing, Moscow, Bangkok) and authoritative search engine extracts from immigration.gov.np.",
+      "Serbia signed a bilateral diplomatic/official passport visa exemption agreement on 18 March 2025, but entry-into-force status is unconfirmed; not included in conditional_access.",
+      "No official conditional entry rule found based on holding a third-country credential (US visa, Schengen visa, UK visa, residence permit, Green Card, etc.) — Nepal grants no such exemptions per all official sources checked.",
+      "OCI (Overseas Citizenship of India) cardholders have NO visa exemption for Nepal — OCI is an Indian government document with no legal validity for Nepal entry; OCI holders must obtain a standard tourist visa.",
+      "Complete enumeration of all individual nationalities eligible for visa on arrival (as opposed to just the restricted list) was not available on any official page; the policy is 'all nationalities except the restricted list'.",
+      "Nepal's digital nomad visa was announced in May 2025 but has no official launch page as of June 2026; not recorded as an active fast-track program.",
+      "Residential visa path to permanent residence or citizenship is unclear from official sources — no official statement found on whether long-term residential visa holders can naturalize.",
+      "The maximum per-entry continuous stay for NRN visa holders is not explicitly stated in official sources beyond the 30-day on-arrival grant; extension up to 1 year per DOI is confirmed."
+    ]
+  },
+  "sources_checked": [
+    "https://ntb.gov.np/plan-your-trip/before-you-come/tourist-visa",
+    "https://www.immigration.gov.np/en/page/tourist-visa",
+    "https://www.immigration.gov.np/en/page/visa-exemption",
+    "https://www.immigration.gov.np/en/post/prohibition-to-visa-on-arrival-1",
+    "https://www.immigration.gov.np/en/page/residential-visa",
+    "https://www.immigration.gov.np/en/service/9",
+    "https://cn.nepalembassy.gov.np/pages/visa/",
+    "https://hkg.nepalconsulate.gov.np/pages/nepal-visa/",
+    "https://mofa.gov.np/pages/bilateral-relations-2/",
+    "https://nepaliport.immigration.gov.np/onlinevisa-mission/application",
+    "https://tia.immigration.gov.np/en/post/frequently-asked-questions",
+    "https://tia.immigration.gov.np/post/what-is-a-gratis-visa",
+    "https://fr.nepalembassy.gov.np/pages/visa-related-service-1/",
+    "https://ru.nepalembassy.gov.np/pages/visa-2/",
+    "https://th.nepalembassy.gov.np/pages/visa-related-5/",
+    "https://uk.nepalembassy.gov.np/pages/nrn-id/",
+    "https://immigration.gov.np/en/page/non-residential-nepali-visa",
+    "https://hcgnca.org/visa-exemption/",
+    "https://english.nepalnews.com/s/security/nepal-expands-visa-on-arrival-ban-list-to-13-countries-with-iran-add/"
+  ]
+}

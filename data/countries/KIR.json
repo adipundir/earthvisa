@@ -1,0 +1,111 @@
+{
+  "iso2": "KI",
+  "iso3": "KIR",
+  "name": "Kiribati",
+  "region": "Pacific",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "max_stay_days": 90,
+        "passport_types": ["ordinary", "official", "service", "diplomatic"],
+        "notes": "Citizens of the 124 countries and territories listed in the Kiribati Immigration Entry and Visa Exemption Order 2023 (in force 01 September 2023) are exempt from visa requirements. Passport or travel document must be issued per ICAO standards and valid for not less than 6 months on the day of departure from Kiribati. Maximum stay: 90 days in any 12-month period. The Order repealed the prior Visa (Exemption) Order 2007.",
+        "source_url": "https://www.mfa.gov.ki/wp-content/uploads/2023/09/VISA-EXEMPTION-ORDER-2023-1.pdf",
+        "source_official": true,
+        "exempt_countries": [
+          "Bangladesh", "Brunei", "China (People's Republic of)", "East Timor",
+          "Hong Kong (Special Administration Region)", "India", "Indonesia",
+          "Israel", "Japan", "Macao (Special Administration Region)", "Malaysia",
+          "Maldives", "Philippines", "Qatar", "Saudi Arabia", "Singapore",
+          "South Korea", "Sri Lanka", "Thailand", "United Arab Emirates",
+          "Botswana", "Cameroon", "Egypt", "Gabon", "Gambia", "Ghana", "Kenya",
+          "Kingdom of Eswatini", "Lesotho", "Malawi", "Mauritius", "Morocco",
+          "Mozambique", "Namibia", "Nigeria", "Rwanda", "Seychelles",
+          "Sierra Leone", "South Africa", "Togo", "Uganda",
+          "United Republic of Tanzania", "Zambia",
+          "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus",
+          "Czech Republic", "Denmark", "Estonia", "Finland", "France",
+          "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy",
+          "Liechtenstein", "Luxembourg", "Netherlands", "Norway", "Poland",
+          "Portugal", "Romania", "Russia", "Slovakia", "Slovenia", "Spain",
+          "Sweden", "Switzerland", "Ukraine", "United Kingdom",
+          "Antigua and Barbuda", "Argentina", "Bahamas", "Barbados", "Belize",
+          "Bolivia", "Brazil", "Canada", "Chile", "Colombia", "Costa Rica",
+          "Cuba", "Dominican Republic", "Dominica", "El Salvador", "Greenland",
+          "Grenada", "Guatemala", "Guyana", "Haiti", "Honduras", "Jamaica",
+          "Mexico", "Panama", "Paraguay", "Peru", "Puerto Rico",
+          "St Kitts and Nevis", "St Lucia", "St Vincent and the Grenadines",
+          "Suriname", "Trinidad and Tobago", "United States of America",
+          "Uruguay", "Venezuela",
+          "Australia", "Cook Islands", "Fiji", "Marshall Islands", "Micronesia",
+          "Nauru", "Niue", "New Zealand", "Palau", "Papua New Guinea",
+          "Solomon Islands", "Samoa", "Tonga", "Tuvalu", "Vanuatu"
+        ]
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": []
+  },
+  "conditional_access": [],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program found on any official Kiribati government source. A historical investor-passport scheme was repealed in 2004 and has not been replaced."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "EU-Kiribati Short-Stay Visa Waiver Agreement, signed 23 June 2016, Brussels; provisionally in force 24 June 2016. Bidirectional: covers holders of valid ordinary, diplomatic, service/official or special passports of Schengen area member states. Kiribati citizens may enter the Schengen area visa-free for up to 90 days in any 180-day period; Schengen-area passport holders may enter Kiribati visa-free under the same arrangement. Excludes persons travelling for the purpose of carrying out a paid activity. Note: The 2023 Kiribati domestic Visa Exemption Order lists most Schengen-area countries explicitly for ordinary passport holders, but Latvia, Lithuania, and Malta are absent from that domestic order (see data_quality.gaps). EU member states Cyprus and Ireland (not Schengen members) are listed in the 2023 domestic order."
+  ],
+  "official_domains": [
+    "mfa.gov.ki",
+    "kiribati.gov.ki"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "ADDED max_stay_days: 90 field to the visa_free entry — this was previously stated only in prose notes but was absent as a machine-readable field.",
+      "ADDED passport_types field to the visa_free entry, reflecting the 2023 Order's explicit inclusion of ordinary/normal, official/service, and diplomatic travel documents.",
+      "ADDED visa_on_arrival: [], e_visa: [], eta: [] arrays to visa_policy for schema completeness; no such programs exist per official sources.",
+      "CONFIRMED the 124-country exempt list is identical to the official PDF (Firecrawl parse of the 2023 Order). Minor spelling normalizations in the current record (Morocco vs Morroco; Dominican Republic vs Dominicans Republic) are correct corrections of PDF typos.",
+      "CONFIRMED no e-visa system exists; Kiribati MFA website lists no online visa application portal.",
+      "CONFIRMED no CBI or RBI program; historical investor-passport scheme was repealed in 2004.",
+      "UPDATED cbi.notes to mention the repealed 2004 historical investor-passport scheme.",
+      "UPDATED agreements[] entry to clarify the 2016 EU-Kiribati agreement covers Schengen area members (not all EU members), and to note the Latvia/Lithuania/Malta omission from the 2023 domestic order.",
+      "CONFIRMED max stay is 90 days in any 12-month period per the official 2023 Order. Wikipedia incorrectly states '1 month'; the official order is authoritative.",
+      "No changes to the country list — all 124 entries confirmed correct against the official PDF."
+    ],
+    "gaps": [
+      "Latvia, Lithuania, and Malta are Schengen area members and should be covered by the EU-Kiribati 2016 bilateral visa waiver agreement, but they are absent from the 2023 Kiribati domestic Visa Exemption Order. It is unclear whether this omission is intentional or an error in the domestic order. Border application of the 2016 bilateral agreement for these three nationalities is unconfirmed.",
+      "No conditional entry rules of type A (held third-country credential) found on any official Kiribati government source. The 2023 Order contains no exemptions based on holding a US visa, UK visa, Schengen visa, Australian visa, or any foreign residence permit, Green Card, or OCI card.",
+      "No OCI (Overseas Citizen of India) cardholder special-status rule for Kiribati found on any official source.",
+      "No diplomatic/service-passport-only bilateral visa waiver agreements (beyond the EU-Kiribati 2016 agreement) found for countries not already exempt on ordinary passports.",
+      "Maximum stay for visa-required nationalities (those not on the 2023 Order) is not enumerated on any official public page; contact visaofficer@mfa.gov.ki for specifics.",
+      "kiribati.gov.ki/services/passport-and-visas returned HTTP 500 during re-validation; page content could not be verified.",
+      "The official Kiribati Visa Exemption Order 2023 PDF is image-based and was parsed via Firecrawl; full text confirmed but may have rendering artifacts."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "No official Kiribati government outbound visa-list page located. The Kiribati Ministry of Foreign Affairs & Immigration (mfa.gov.ki) publishes only inbound visa policy (Visa Exemption Order 2023 — which countries may enter Kiribati without a visa) and passport application services. No page or document listing visa-free, visa-on-arrival, eTA, or e-visa destinations for I-Kiribati citizens traveling abroad was found on mfa.gov.ki, kiribati.gov.ki, or any other official Kiribati government domain. Rely on destination-side data."
+  },
+  "sources_checked": [
+    "https://www.mfa.gov.ki/immigration/",
+    "https://www.mfa.gov.ki/wp-content/uploads/2023/09/VISA-EXEMPTION-ORDER-2023-1.pdf",
+    "https://www.mfa.gov.ki/visa/",
+    "https://kiribati.gov.ki/services/passport-and-visas",
+    "https://www.eeas.europa.eu/node/8022_en",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Kiribati",
+    "https://visitkiribati.travel/getting-here/visa-info/"
+  ]
+}

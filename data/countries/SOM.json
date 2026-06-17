@@ -1,0 +1,312 @@
+{
+  "iso2": "SO",
+  "iso3": "SOM",
+  "name": "Somalia",
+  "region": "Africa",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Rwanda",
+        "iso3": "RWA",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are granted visa-free entry into Somalia. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are granted visa-free entry into Somalia. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "nationality": "Djibouti",
+        "iso3": "DJI",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Ethiopia",
+        "iso3": "ETH",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Burundi",
+        "iso3": "BDI",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Mauritania",
+        "iso3": "MRT",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Tanzania",
+        "iso3": "TZA",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Uganda",
+        "iso3": "UGA",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Algeria",
+        "iso3": "DZA",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Libya",
+        "iso3": "LBY",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Tunisia",
+        "iso3": "TUN",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Egypt",
+        "iso3": "EGY",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      },
+      {
+        "nationality": "Comoros",
+        "iso3": "COM",
+        "max_stay_days": null,
+        "notes": "Holders of diplomatic, service, or ordinary passports are eligible for visa on arrival. No max stay days stated on official source.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      }
+    ],
+    "e_visa": [
+      {
+        "nationality": "All other nationalities",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "All visitors not listed under visa-free or visa-on-arrival categories must apply for eTAS (Electronic Travel Authorisation for Somalia) online before departure via etas.gov.so. The eTAS is a single-entry permit valid from the stated arrival date; entry must occur within 180 days of the arrival date. Effective September 1, 2025.",
+        "source_url": "https://etas.gov.so/",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://etas.gov.so/",
+      "https://sominvest.gov.so/procedures/visa-regime/",
+      "https://usa.mfa.gov.so/how-to-apply-somali-evisa-online/"
+    ],
+    "notes": "Somalia's Immigration and Citizenship Agency (ICA) launched the mandatory eTAS (Electronic Travel Authorisation for Somalia) system on September 1, 2025, replacing the previous evisa.gov.so portal. All travelers must apply online at etas.gov.so before departure, except those holding nationality of Rwanda or Malaysia (visa-free), or 11 listed countries eligible for visa on arrival. Travelers holding multiple-entry visas, residence permits, or UN Laissez-Passer are also exempt from eTAS. The etas.gov.so data is as of June 2026 per official site."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary", "diplomatic", "service"],
+      "credential": {
+        "issuer": "any",
+        "type": "visa",
+        "subtype": "multiple-entry visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Traveler must hold a valid multiple-entry visa issued by any country. Exempt from eTAS (Electronic Travel Authorisation for Somalia) requirement per ICA/SCAA AIC A 10/2025, effective 3 September 2025. Issuer country and visa class not restricted by official text.",
+      "source_url": "https://aip.scaa.gov.so/eAIC/HC-eAIC-2025-10-A-en-GB.html",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary", "diplomatic", "service"],
+      "credential": {
+        "issuer": "any",
+        "type": "residence_permit",
+        "subtype": "any valid residence permit"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Traveler must hold a valid residence permit issued by any country. Exempt from eTAS (Electronic Travel Authorisation for Somalia) requirement per ICA/SCAA AIC A 10/2025, effective 3 September 2025. Issuer country not restricted by official text.",
+      "source_url": "https://aip.scaa.gov.so/eAIC/HC-eAIC-2025-10-A-en-GB.html",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary", "diplomatic", "service"],
+      "credential": {
+        "issuer": "United Nations",
+        "type": "other",
+        "subtype": "United Nations Laissez-Passer (UNLP)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Traveler must hold a valid United Nations Laissez-Passer (UNLP). Exempt from eTAS (Electronic Travel Authorisation for Somalia) requirement per ICA/SCAA AIC A 10/2025, effective 3 September 2025.",
+      "source_url": "https://aip.scaa.gov.so/eAIC/HC-eAIC-2025-10-A-en-GB.html",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Azerbaijan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Mutual visa exemption for diplomatic passport holders under Memorandum of Understanding (MoU) signed at the sidelines of the 19th Intersessional Meeting of the Non-Aligned Movement (NAM) Foreign Ministers in Kampala. Date of signing: October 2025 (described as 'Wednesday' in official text; exact date not stated). Ordinary passport holders are NOT covered.",
+      "source_url": "https://web.mfa.gov.so/somalia-and-azerbaijan-ink-mou-for-visa-free-travel-for-diplomatic-passport-holders/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Pakistan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Visa waiver agreement abolishing visa requirements for holders of diplomatic passports, signed in Islamabad, February 2026. Witnessed by Pakistani President H.E. Asif Ali Zardari. Signed by Pakistan's Special Secretary (Ministry of Interior and Narcotics Control) and Somalia's Permanent Secretary (Ministry of Foreign Affairs). Ordinary passport holders are NOT covered.",
+      "source_url": "https://web.mfa.gov.so/%F0%9D%90%92%F0%9D%90%A8%F0%9D%90%A6%F0%9D%90%9A%F0%9D%90%A5%F0%9D%90%A2%F0%9D%90%9A-%F0%9D%90%9A%F0%9D%90%A7%F0%9D%90%9D-%F0%9D%90%8F%F0%9D%90%9A%F0%9D%90%A4%F0%9D%90%A2%F0%9D%90%AC%F0%9D%90%AD/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Egypt"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Mutual visa waiver agreement signed 23 January 2025 in Cairo by Somalia's Minister of Foreign Affairs H.E. Ahmed Moallim Fiqi Ahmed and Egypt's Minister of Foreign Affairs H.E. Dr. Badr Abdelatty. Allows diplomatic passport holders to enter, exit, transit, and reside without restrictions for up to 90 days. Approved by Somali Cabinet (chaired by PM Hamza Abdi Barre). Note: Egyptian ordinary passport holders are already eligible for visa on arrival under the separate eTAS framework.",
+      "source_url": "https://web.mfa.gov.so/somali-cabinet-approves-mutual-visa-waiver-agreement-with-egypt-for-diplomatic-passport-holders-2/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Morocco"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Mutual visa-waiver agreement for holders of diplomatic passports signed 28 November 2025 in Rabat by Somalia's Minister of Foreign Affairs H.E. Abdisalam Abdi Ali and Morocco's Minister of Foreign Affairs H.E. Nasser Bourita, alongside a broader 2026-2028 cooperation roadmap. No max stay days stated in official text. Ordinary passport holders are NOT covered.",
+      "source_url": "https://web.mfa.gov.so/somali-fm-signs-agreement-with-moroccan-counterpart-marking-a-new-era-in-bilateral-relations/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Sudan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Mutual visa exemption agreement for holders of diplomatic passports, concluded 2 April 2026 in Mogadishu during the second session of the Somalia-Sudan Political Consultation Committee. Co-chaired by Somalia's Permanent Secretary H.E. Hamza Adan Haadow and Sudan's Undersecretary H.E. Ambassador Muawiya Osman Khalid. No max stay days stated in official text. Ordinary passport holders are NOT covered.",
+      "source_url": "https://web.mfa.gov.so/somalia-hosts-the-second-session-of-the-somalia-sudan-political-consultation-committee/",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program found on any official Somalia government source. No program exists as of the research date."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "IGAD Protocol on Free Movement of Persons (signed by Somalia; not yet in operative force as a free movement area as of June 2026)"
+  ],
+  "official_domains": [
+    "etas.gov.so",
+    "immigration.gov.so",
+    "sominvest.gov.so",
+    "web.mfa.gov.so",
+    "usa.mfa.gov.so",
+    "somaliembassy.se",
+    "aip.scaa.gov.so"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "VERIFIED (2026-06-14): India (IND) ordinary passport holders require eTAS (e_visa) to enter Somalia — NOT visa-free or visa-on-arrival. Only Rwanda and Malaysia are visa-free; only 11 listed African/Arab nations get visa-on-arrival. India falls under 'all other nationalities' eTAS category per etas.gov.so (official ICA portal) and usa.mfa.gov.so/how-to-apply-somali-evisa-online/. Aggregator claim of visa-free/visa-on-arrival for India is incorrect. No separate India entry added; existing e_visa catch-all entry covers India.",
+      "ADDED: Morocco diplomatic passport visa-waiver agreement (signed 28 Nov 2025 in Rabat, confirmed on web.mfa.gov.so). Was missing from prior record.",
+      "ADDED: Sudan diplomatic passport visa-waiver agreement (signed 2 April 2026 in Mogadishu, confirmed on web.mfa.gov.so). Previously listed only in gaps as unconfirmed non-official reports; now confirmed on official MFA source.",
+      "VERIFIED: All existing visa_policy entries (Rwanda, Malaysia visa-free; 11 visa-on-arrival nationalities; eTAS for all others) unchanged — etas.gov.so homepage accessible, no revised list published.",
+      "VERIFIED: Azerbaijan, Pakistan, Egypt diplomatic passport conditional_access entries confirmed against official MFA pages — no factual corrections needed.",
+      "VERIFIED: Qatar agreements (Dec 2025) cover customs, youth, agriculture, culture — no visa waiver component.",
+      "VERIFIED: Spain MoU (March 2026) is political consultations only — no visa waiver component.",
+      "VERIFIED: sominvest.gov.so visa-regime page (last modified 2022) pre-dates the eTAS system and says 'Visa on arrival is available to citizens of all countries with no exception' — this is superseded by the eTAS system and is correctly not used as the authoritative source for current policy.",
+      "UPDATED: Egypt conditional_access notes expanded to match primary signing-event MFA article language (enter, exit, transit, and reside)."
+    ],
+    "gaps": [
+      "Max stay days for visa-free (Rwanda, Malaysia) and visa-on-arrival countries not stated on official etas.gov.so.",
+      "The eTAS exemption for 'multiple-entry visas' does not specify which issuing countries are accepted or whether the visa must be used/unused. Exact scope (e.g., does a Schengen C visa qualify) is not clarified on official source.",
+      "Azerbaijan MoU: exact date of signing in Kampala not stated in MFA official text; only described as 'Wednesday' at the NAM Intersessional in October 2025.",
+      "Pakistan agreement: exact date in February 2026 not stated in MFA official text.",
+      "Morocco agreement: max stay days not stated in official MFA text.",
+      "Sudan agreement: max stay days not stated in official MFA text.",
+      "No OCI or similar special diaspora/heritage status rules found on any official Somalia immigration source.",
+      "No RBI, fast-track, or talent visa programs found on official sources — absence confirmed but not explicitly stated by government.",
+      "IGAD Protocol on Free Movement of Persons signed by Somalia (confirmed igad.int) but not yet ratified into force; operational free movement not confirmed via official Somali government source.",
+      "Kuwait MoUs (August 2025) confirmed on MFA site but cover only joint committee and diplomatic institute cooperation — no visa waiver provision found in official text."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "no official Somalia government outbound visa-list page located; rely on destination-side data. Checked: web.mfa.gov.so (MFA — no outbound list; only diplomatic news and bilateral MoUs), immigration.gov.so/en/visa/ (ICA — covers only inbound visas to Somalia, not outbound travel for Somali citizens), somalia.gov.so (main government portal — no travel/visa information for Somali nationals), ankara.mfa.gov.so and usa.mfa.gov.so embassy sites (consular services cover passport issuance and authentication, not outbound visa-free lists). Somalia MFA's 'Services for Citizens Abroad' section provides emergency travel documents and passport services only."
+  },
+  "sources_checked": [
+    "https://etas.gov.so/",
+    "https://aip.scaa.gov.so/eAIC/HC-eAIC-2025-10-A-en-GB.html",
+    "https://immigration.gov.so/en/visa/",
+    "https://sominvest.gov.so/procedures/visa-regime/",
+    "https://web.mfa.gov.so/somalia-and-azerbaijan-ink-mou-for-visa-free-travel-for-diplomatic-passport-holders/",
+    "https://web.mfa.gov.so/%F0%9D%90%92%F0%9D%90%A8%F0%9D%90%A6%F0%9D%90%9A%F0%9D%90%A5%F0%9D%90%A2%F0%9D%90%9A-%F0%9D%90%9A%F0%9D%90%A7%F0%9D%90%9D-%F0%9D%90%8F%F0%9D%90%9A%F0%9D%90%A4%F0%9D%90%A2%F0%9D%90%AC%F0%9D%90%AD/",
+    "https://web.mfa.gov.so/somali-cabinet-approves-mutual-visa-waiver-agreement-with-egypt-for-diplomatic-passport-holders-2/",
+    "https://web.mfa.gov.so/somalia-and-egypt-enhance-strategic-partnership-with-key-agreements/",
+    "https://web.mfa.gov.so/somalia-hosts-the-second-session-of-the-somalia-sudan-political-consultation-committee/",
+    "https://web.mfa.gov.so/somali-fm-signs-agreement-with-moroccan-counterpart-marking-a-new-era-in-bilateral-relations/",
+    "https://web.mfa.gov.so/somalia-and-qatar-forge-stronger-bilateral-relations-through-key-agreements/",
+    "https://web.mfa.gov.so/somalia-spain-sign-political-consultations-mou/",
+    "https://web.mfa.gov.so/somalia-and-kuwait-sign-three-mous-to-enhance-diplomatic-ties/",
+    "https://usa.mfa.gov.so/how-to-apply-somali-evisa-online/",
+    "https://somaliembassy.se/visa_requirements.php",
+    "https://igad.int/uganda-ratifies-the-igad-free-movement-of-persons-protocol/"
+  ]
+}

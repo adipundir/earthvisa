@@ -1,0 +1,209 @@
+{
+  "iso2": "HN",
+  "iso3": "HND",
+  "name": "Honduras",
+  "region": "Americas",
+  "outbound_official": {
+    "found": false,
+    "note": "no official Honduras government outbound visa-list page located; rely on destination-side data. The Secretaría de Relaciones Exteriores y Cooperación Internacional (sreci.gob.hn) is the competent authority but its website has persistent SSL certificate failures preventing access. The Instituto Nacional de Migración (inm.gob.hn) visa page consistently times out. No cached or mirror version of an official Honduras government page listing countries where Honduran ordinary-passport holders can travel visa-free, visa on arrival, or with e-visa/ETA was found. Third-party aggregators (Henley, Wikipedia, visaindex.com, etc.) exist but are explicitly excluded per methodology. Searches on sreci.gob.hn, inm.gob.hn, conmigho.sreci.gob.hn, asuntosconsulares.inm.gob.hn, and sre.gob.hn returned no accessible outbound visa lists for Honduran nationals."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "United States",
+        "iso3": "USA",
+        "max_stay_days": 90,
+        "notes": "US citizens do not need a visa for tourism stays up to 90 days. Passport valid at least 6 months required.",
+        "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Honduras.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Guatemala, El Salvador, Nicaragua (CA-4 nationals)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Under the Central American Free Mobility Agreement (CA-4), nationals of Guatemala, El Salvador, and Nicaragua may enter Honduras using either a national ID (DNI) or passport. The 90-day stay counts cumulatively across the CA-4 territory.",
+        "source_url": "https://inm.gob.hn/visas.html",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 90,
+        "notes": "Colombian nationals do not require a visa to enter Honduras since reciprocal visa exemption agreement effective September 12, 2007. Stays for tourism, transit, or business up to 90 days.",
+        "source_url": "https://www.embajadadehonduras.org.co/?page_id=20",
+        "source_official": true
+      },
+      {
+        "nationality": "Bolivia",
+        "iso3": "BOL",
+        "max_stay_days": 90,
+        "notes": "Bolivian ordinary, official, and diplomatic passport holders are exempt from visa requirements under the Acuerdo sobre Supresión de Visas signed 20 September 2023 (Acuerdo Ejecutivo No. 14-DGAJTC-2023). Entered into force 17 March 2024. Stay limited to 90 days cumulatively per calendar year for tourism/visit purposes.",
+        "source_url": "https://www.tsc.gob.hn/biblioteca/index.php/varios/1269-acuerdo-sobre-supresion-de-visas-para-titulares-de-pasaportes-diplomaticos-oficiales-y-corrientes-entre-los-gobiernos-de-la-republica-de-honduras-y-el-estado-plurinacional-de-bolivia",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://inm.gob.hn/visas.html",
+      "https://inm.gob.hn/extranjeria.html",
+      "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Honduras.html",
+      "https://hondurasembassyuk.com/visa/",
+      "https://www.embajadadehonduras.org.co/?page_id=20",
+      "https://www.tsc.gob.hn/biblioteca/index.php/varios/1269-acuerdo-sobre-supresion-de-visas-para-titulares-de-pasaportes-diplomaticos-oficiales-y-corrientes-entre-los-gobiernos-de-la-republica-de-honduras-y-el-estado-plurinacional-de-bolivia"
+    ],
+    "notes": "Honduras has no e-visa system. Tourists may stay up to 90 days, extendable by an additional 30 days at the INM. Citizens of all nationalities (other than CA-4) must hold a passport valid at least 6 months. Honduras is a CA-4 member: a single entry authorisation is valid across Guatemala, El Salvador, Honduras, and Nicaragua for a cumulative 90 days. UK visa exemption was cancelled effective 15 August 2024 — UK ordinary passport holders now require a visa (narrow exception for UK citizens domiciled in the Cayman Islands). The INM official website (inm.gob.hn) lists visa categories but a comprehensive enumerated list of all visa-free nationalities was not retrievable from the official page during research sessions. A broader list of approximately 84 visa-free jurisdictions is cited by aggregators (including USA, Canada, EU/Schengen states, Japan, South Korea, Australia, New Zealand, most of South America, GCC states, etc.) but those specific enumerations could not be independently verified against the official INM source for this validation run."
+  },
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "Honduras does not operate a Citizenship-by-Investment (CBI) program. No official CBI programme was found on any Honduran government domain. Investment-based residency is available (see rbi), and naturalization requires 3 years of continuous residency plus language/civics requirements."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Residente Inversionista (Investor Resident)",
+        "type": "business_investment",
+        "min_amount": 50000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 3,
+        "official_url": "https://inm.gob.hn/residencias.html",
+        "source_official": true,
+        "notes": "Minimum investment of USD $50,000 in any lawful economic activity in Honduras (including certificates, securities, or State bonds). Also requires a certificate of deposit of not less than USD $5,000 issued by the Central Bank of Honduras as guarantee. A technical feasibility study and investment schedule must be submitted. Application processed through a Honduran lawyer registered with the National Bar Association. Investment covers principal investor and immediate family. After 3 years of continuous residency, naturalization may be pursued subject to language/civics requirements."
+      },
+      {
+        "name": "Residente Pensionado (Pensioner Resident)",
+        "type": "passive_income",
+        "min_amount": 1500,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://inm.gob.hn/residencias.html",
+        "source_official": true,
+        "notes": "Must demonstrate permanent, lawful, and stable pension income generated abroad of not less than USD $1,500 per month or equivalent in national currency. Pension must be received via a Honduran financial institution. Supporting authenticated documents required."
+      },
+      {
+        "name": "Residente Rentista (Rentier Resident)",
+        "type": "passive_income",
+        "min_amount": 2500,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://inm.gob.hn/residencias.html",
+        "source_official": true,
+        "notes": "Must demonstrate permanent, lawful, and stable rental or passive income (generated abroad or within Honduras) of not less than USD $2,500 per month or equivalent in national currency. Income must be received via a Honduran financial institution. Supporting authenticated documents required."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "CA-4 (Central America-4 Free Mobility Agreement — Guatemala, El Salvador, Honduras, Nicaragua)",
+    "Honduras-Bolivia Visa Suppression Agreement (Acuerdo Ejecutivo No. 14-DGAJTC-2023, in force 17 March 2024) — covers ordinary, official, and diplomatic passports"
+  ],
+  "official_domains": [
+    "inm.gob.hn",
+    "sreci.gob.hn",
+    "prechequeo.inm.gob.hn",
+    "hn.usembassy.gov",
+    "travel.state.gov",
+    "embajadahonduras.org.co",
+    "hondurasembassyuk.com",
+    "consuladohondurasmontreal.com",
+    "tsc.gob.hn",
+    "sde.gob.hn"
+  ],
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["China"],
+      "passport_types": ["diplomatic", "service", "official_public_affairs"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Chinese nationals holding valid Diplomatic Passports, Service Passports, or Public Affairs Passports (Pasaportes de Asuntos Públicos) are exempt from visa requirements for entry, exit, transit, or stay in Honduras for up to 30 days from date of entry. Those wishing to stay beyond 30 days or for purposes other than tourism/transit must obtain a visa in advance. Holders assigned as members of a diplomatic/consular mission must still obtain the appropriate Diplomatic or Consular visa. Agreement signed Beijing, 12 June 2023 (Acuerdo Ejecutivo No. 09-DGAJTC-2023); entered into force 30 days after last internal-law notification. NOTE: China ordinary passport holders separately benefit from the full bilateral visa-free agreement under Acuerdo Ejecutivo No. 14-DGAJTC-2023 (Bolivia agreement covers Bolivia, not China); the China full ordinary-passport waiver is reported by aggregators but could not be confirmed from an official Honduran government source distinct from the diplomatic/service/public affairs passport agreement. China ordinary passports may only qualify under the US/Schengen/Canada credential rule unless confirmed separately.",
+      "source_url": "https://www.tsc.gob.hn/web/leyes/Acuerdo-Ejecutivo-09-DGAJTC-2023.pdf",
+      "source_official": true
+    }
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "ADDED Bolivia to visa_free: Acuerdo Ejecutivo No. 14-DGAJTC-2023 (signed 20 September 2023, in force 17 March 2024) covers ordinary, official, and diplomatic passports for up to 90 days cumulatively per calendar year. Previously listed only in data_quality.gaps as a 'standard bilateral visa-free rule' — now correctly recorded in visa_free with official TSC library source.",
+      "UPDATED agreements array: Added Honduras-Bolivia Visa Suppression Agreement with entry-into-force date.",
+      "UPDATED visa_policy.notes: Added explicit note that UK ordinary passport visa exemption was cancelled effective 15 August 2024; UK citizens now require a visa (narrow Cayman Islands domicile exception confirmed by Cayman News Service citing tnh.gob.hn). Prior record did not have UK in visa_free but did not explicitly note the cancellation in the main notes field.",
+      "CLARIFIED China conditional_access entry: Added note distinguishing diplomatic/service/public affairs passport waiver (confirmed, 30 days) from ordinary passport status (not independently confirmed on an official Honduran source). The Bolivia Acuerdo No. 14 referenced in prior gaps was for Bolivia, not China.",
+      "NO CHANGE to USA, CA-4, Colombia entries — all verified as still accurate.",
+      "NO CHANGE to RBI programs — inm.gob.hn/residencias.html was unreachable (timeout) during this session; prior figures retained as no contradictory evidence found.",
+      "NO CHANGE to CBI section — Honduras still has no CBI program.",
+      "NO CHANGE to fast_track — no programs found.",
+      "CONFIRMED: No e-visa or visa-on-arrival system in Honduras as of validation date.",
+      "ADDED outbound_official field (2026-06-14): sreci.gob.hn has SSL certificate failures; inm.gob.hn/visas.html times out; no accessible official Honduras government outbound visa list found for Honduran ordinary-passport holders."
+    ],
+    "gaps": [
+      "The official INM visa page (inm.gob.hn/visas.html) timed out during re-validation; a full enumerated list of visa-free nationalities could not be scraped directly from the official source.",
+      "No official e-visa system found; Honduras does not offer e-visas as of the validation date.",
+      "No official digital nomad visa or fast-track skilled worker scheme found on any Honduran government domain.",
+      "Processing time for investor residency could not be confirmed from the INM official page.",
+      "The comprehensive list of ~84 visa-free jurisdictions cited by aggregators (including EU/Schengen states, UK pre-August 2024, Canada, Australia, Japan, South Korea, etc.) could not be fully verified against the official INM source due to server unavailability. Only specific bilateral agreements (CA-4, Colombia, Bolivia) were confirmed from official/embassy sources during this research.",
+      "UK visa exemption cancelled August 15, 2024. A narrow exemption exists for UK nationals domiciled in the Cayman Islands per Honduran government announcement (tnh.gob.hn — cited by Cayman News Service August 2024); this narrow exemption was not added to conditional_access as the underlying official document could not be fetched directly.",
+      "Credential-based entry rule (US/Schengen/Canada valid visa holders admitted visa-free to Honduras): Widely and consistently reported by aggregators including Wikipedia, visalist.io, VisaHQ, and others. Excluded nationalities per Wikipedia: Afghanistan, Algeria, Angola, Armenia, Bangladesh, Botswana, Republic of the Congo, Democratic Republic of the Congo, Cuba, Eritrea, Ethiopia, Ghana, Iran, Iraq, Jordan, Kenya, Laos, Lebanon, Liberia, Libya, Mali, Mongolia, Mozambique, Nepal, Nigeria, North Korea, Oman, Pakistan, Sierra Leone, Somalia, Sri Lanka, Sudan, Syria, Timor-Leste, United Kingdom, Venezuela, Vietnam, Yemen. NOT recorded in conditional_access because the underlying Honduran executive decree/resolution has not been located or fetched from any official Honduran government domain (inm.gob.hn, sreci.gob.hn, tsc.gob.hn). Honduras Embassy in Canada page and Honduras Consulate Madrid do not mention it. Should be re-verified when official INM decree is accessible.",
+      "Diplomatic/service/official passport exemptions for additional countries (Belarus, Cuba, Dominica, Egypt, Fiji, Grenada, Guyana, Haiti, India, Jamaica, Kenya, Libya, Montenegro, Morocco, Pakistan, Papua New Guinea, Peru, Philippines, Serbia, Suriname, Thailand; diplomatic only for Palestine) reported by Wikipedia but could not be verified against official Honduran government sources in this session. Only China (Acuerdo Ejecutivo No. 09-DGAJTC-2023) confirmed from an official Honduran source.",
+      "China ordinary passport status: The bilateral China-Honduras full mutual visa waiver (for ordinary passports) is reported by Wikipedia but the specific official document has not been located on a Honduran government domain separate from the diplomatic/service/public affairs passport agreement.",
+      "Dominican Republic: Wikipedia lists 30-day visa-free stay (shorter than standard 90 days). Not confirmed from official Honduran source; not recorded.",
+      "ZEDE (Zona Empleos y Desarrollo Económico) e-residency programs (e.g., Prospera) are not nationally recognised immigration instruments and were excluded.",
+      "Dual citizenship allowance under Honduras law not confirmed from official INM source.",
+      "Costa Rica re-admission (Acuerdo N.003-SG-2023, published 24 October 2023): Costa Rican ordinary passport holders are in Category A (visa-free) per official source; Acuerdo 001-SG-2026 modified it to exempt airline crew from criminal record certificate requirement. Not independently confirmed from an official Honduran government source accessible during this research; not added to visa_free.",
+      "Acuerdo Ejecutivo No. 13-DGAJTC-2025 (published 24 June 2025) is the Honduras-US Asylum Cooperation Agreement — not a visa entry rule.",
+      "Acuerdo Ejecutivo No. 04-DGAJTC-2025 (published 5 February 2025) is the Austria-Honduras MoU on reciprocal labour market access for diplomatic mission dependents — not a visa entry rule.",
+      "Acuerdo-Ejecutivo-3-DGAJTC-2024 and Acuerdo-Ejecutivo-005-DGAJTC-2024 appeared in TSC search results but content could not be fetched (SSL certificate error) — subject matter unknown, may or may not relate to visa exemptions.",
+      "outbound_official.found = false: Honduras's SRECI (sreci.gob.hn) has SSL certificate failures and the INM (inm.gob.hn) times out. No official Honduras government-published list of countries where Honduran ordinary-passport holders may travel without a prior consular visa was located. The competent authority is SRECI; their page should be re-checked when SSL issues are resolved."
+    ]
+  },
+  "sources_checked": [
+    "https://inm.gob.hn/visas.html",
+    "https://inm.gob.hn/extranjeria.html",
+    "https://inm.gob.hn/residencias.html",
+    "https://prechequeo.inm.gob.hn/",
+    "https://sreci.gob.hn/",
+    "https://sreci.gob.hn/node/1372",
+    "https://sreci.gob.hn/node/1522",
+    "https://sreci.gob.hn/Secretaria-General",
+    "https://conmigho.sreci.gob.hn/arancel-consular/",
+    "https://asuntosconsulares.inm.gob.hn/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Honduras.html",
+    "https://hn.usembassy.gov/passport-validity/",
+    "https://hondurasembassyuk.com/visa/",
+    "https://www.embajadadehonduras.org.co/?page_id=20",
+    "https://www.consuladohondurasmontreal.com/residencia",
+    "https://www.tsc.gob.hn/web/leyes/Ley%20de%20Migraci%C3%B3n%20y%20Extranjeria.pdf",
+    "https://sde.gob.hn/wp-content/uploads/2024/07/SDE-The-Investors-Guide-2024.pdf",
+    "https://www.tsc.gob.hn/web/leyes/Acuerdo-001-SG-2026.pdf",
+    "https://tramites.diger.gob.hn/landingPage/DetalleTramite/574",
+    "https://www.tsc.gob.hn/web/leyes/Acuerdo-Ejecutivo-09-DGAJTC-2023.pdf",
+    "https://www.tsc.gob.hn/biblioteca/index.php/reglamentos/1246-acuerdo-entre-el-gobierno-de-la-republica-de-honduras-y-el-gobierno-de-la-republica-popular-china-sobre-la-exoneracion-mutua-de-visas-para",
+    "https://www.tsc.gob.hn/web/leyes/Acuerdo-Ejecutivo-14-DGAJTC-2023.pdf",
+    "https://www.tsc.gob.hn/biblioteca/index.php/varios/1269-acuerdo-sobre-supresion-de-visas-para-titulares-de-pasaportes-diplomaticos-oficiales-y-corrientes-entre-los-gobiernos-de-la-republica-de-honduras-y-el-estado-plurinacional-de-bolivia",
+    "https://www.tsc.gob.hn/biblioteca/index.php/varios",
+    "https://www.tsc.gob.hn/biblioteca/index.php/reglamentos",
+    "https://www.tsc.gob.hn/web/leyes/Acuerdo-Ejecutivo-13-DGAJTC-2025.pdf",
+    "https://www.tsc.gob.hn/web/leyes/Acuerdo-Ejecutivo-04-DGAJTC-2025.pdf",
+    "https://embajadahondurasencanada.hn/en/visas-2/",
+    "https://www.consuladohondurasmadrid.es/visa-para-entrar-a-honduras/",
+    "https://caymannewsservice.com/2024/08/british-passport-holders-need-visa-to-enter-honduras/",
+    "https://www.ey.com/en_gl/technical/tax-alerts/honduras-elimination-of-the-consular-visa-requirement-for-bolivian-nationals-entering-honduras",
+    "https://thingstodoinhonduras.com/entry-requirements/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Honduras",
+    "https://www.eeas.europa.eu/delegations/honduras/nuevo-requisito-para-viajar-diversos-pa%C3%ADses-europeos_es?s=188",
+    "http://www.sre.gob.hn/secretariageneralrnew.html"
+  ]
+}

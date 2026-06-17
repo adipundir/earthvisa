@@ -1,0 +1,802 @@
+{
+  "iso2": "WS",
+  "iso3": "WSM",
+  "name": "Samoa",
+  "region": "Oceania",
+  "visa_policy": {
+    "visa_free": [],
+    "visa_on_arrival": [
+      {
+        "nationality": "All nationalities",
+        "iso3": null,
+        "max_stay_days": 60,
+        "notes": "All nationalities traveling to Samoa are not required to obtain an entry permit/visa for stays less than 60 days. Visitors must hold a passport valid for 6 months or more, have a return or onward ticket, provide a copy of a bank statement, have no record of deportation from other countries, and no health problems posing a risk to Samoa. For stays exceeding 60 days, a permit must be obtained in advance from the nearest Samoa Consulate General, High Commission, or Embassy (in New Zealand, Australia, New York, Tokyo, Beijing, and Belgium). Extensions within Samoa are handled by Samoa Immigration (MPMC). Source: official MFAT PDF re-confirmed via Firecrawl scrape June 2026.",
+        "source_url": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Entry-requirements-into-Samoa.pdf",
+        "source_official": true
+      }
+    ],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://www.mfat.gov.ws/visas/",
+      "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Entry-requirements-into-Samoa.pdf",
+      "https://www.mfat.gov.ws/wp-content/uploads/2013/10/List-of-Visa-waiver-Agreements.pdf"
+    ],
+    "notes": "All nationalities may enter Samoa visa-free for up to 60 days per the official MFAT 'Entry requirements into Samoa' PDF (re-scraped and confirmed June 2026). Bilateral visa-waiver agreements as documented in the official MFAT 'List of Visa Waiver Agreements' PDF (re-scraped June 2026) and supplementary official sources: (1) European Union — 28 member states as of signing on 28 May 2015, ratified 15 Dec 2015, up to 90 days in any 180-day period for EU citizens (note: UK left the EU in 2020 — official Samoa government update on UK status not confirmed); (2) Russia — signed 4 Apr 2017, in force 9 Jul 2017, up to 60 days for citizens of both countries; (3) Macau SAR — signed 2000, up to 60 days, applies only to Macau Special Administrative Region passport holders; (4) Israel — signed 7 Mar 2019, ratified but NOT YET IN FORCE as of the MFAT PDF (PDF states 'Yet to be ratified due to political situation in Israel'); (5) China (PRC) — signed 23 Jan 2025, in force 2 Apr 2025 (confirmed by Chinese Embassy official notice), covers Samoan ordinary/official/diplomatic passports and Chinese ordinary/service/public affairs/diplomatic passports, max 30 days single stay / 90 days in any 180-day period. The China agreement is not yet reflected in the MFAT visa waiver PDF."
+  },
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://www.mfat.gov.ws/wp-content/uploads/2021/07/Visa-Requirement-for-Samoan-Citizens-2-March-2021.pdf",
+    "source_official": true,
+    "asof": "2 March 2021",
+    "visa_free": [
+      {
+        "name": "Andorra",
+        "iso3": "AND"
+      },
+      {
+        "name": "Antigua and Barbuda",
+        "iso3": "ATG"
+      },
+      {
+        "name": "Austria",
+        "iso3": "AUT"
+      },
+      {
+        "name": "Bahamas",
+        "iso3": "BHS"
+      },
+      {
+        "name": "Bangladesh",
+        "iso3": "BGD"
+      },
+      {
+        "name": "Barbados",
+        "iso3": "BRB"
+      },
+      {
+        "name": "Belgium",
+        "iso3": "BEL"
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "iso3": "BIH"
+      },
+      {
+        "name": "Botswana",
+        "iso3": "BWA"
+      },
+      {
+        "name": "Bulgaria",
+        "iso3": "BGR"
+      },
+      {
+        "name": "Colombia",
+        "iso3": "COL"
+      },
+      {
+        "name": "Costa Rica",
+        "iso3": "CRI"
+      },
+      {
+        "name": "Croatia",
+        "iso3": "HRV"
+      },
+      {
+        "name": "Cyprus",
+        "iso3": "CYP"
+      },
+      {
+        "name": "Czech Republic",
+        "iso3": "CZE"
+      },
+      {
+        "name": "Denmark",
+        "iso3": "DNK"
+      },
+      {
+        "name": "Dominica",
+        "iso3": "DMA"
+      },
+      {
+        "name": "Ecuador",
+        "iso3": "ECU"
+      },
+      {
+        "name": "Estonia",
+        "iso3": "EST"
+      },
+      {
+        "name": "Eswatini",
+        "iso3": "SWZ"
+      },
+      {
+        "name": "Fiji",
+        "iso3": "FJI"
+      },
+      {
+        "name": "Finland",
+        "iso3": "FIN"
+      },
+      {
+        "name": "France",
+        "iso3": "FRA"
+      },
+      {
+        "name": "Gambia",
+        "iso3": "GMB"
+      },
+      {
+        "name": "Germany",
+        "iso3": "DEU"
+      },
+      {
+        "name": "Greece",
+        "iso3": "GRC"
+      },
+      {
+        "name": "Grenada",
+        "iso3": "GRD"
+      },
+      {
+        "name": "Haiti",
+        "iso3": "HTI"
+      },
+      {
+        "name": "Hungary",
+        "iso3": "HUN"
+      },
+      {
+        "name": "Iceland",
+        "iso3": "ISL"
+      },
+      {
+        "name": "Indonesia",
+        "iso3": "IDN"
+      },
+      {
+        "name": "Ireland",
+        "iso3": "IRL"
+      },
+      {
+        "name": "Israel",
+        "iso3": "ISR"
+      },
+      {
+        "name": "Italy",
+        "iso3": "ITA"
+      },
+      {
+        "name": "Jamaica",
+        "iso3": "JAM"
+      },
+      {
+        "name": "Kenya",
+        "iso3": "KEN"
+      },
+      {
+        "name": "Kiribati",
+        "iso3": "KIR"
+      },
+      {
+        "name": "Latvia",
+        "iso3": "LVA"
+      },
+      {
+        "name": "Lesotho",
+        "iso3": "LSO"
+      },
+      {
+        "name": "Liechtenstein",
+        "iso3": "LIE"
+      },
+      {
+        "name": "Lithuania",
+        "iso3": "LTU"
+      },
+      {
+        "name": "Luxembourg",
+        "iso3": "LUX"
+      },
+      {
+        "name": "Malawi",
+        "iso3": "MWI"
+      },
+      {
+        "name": "Malaysia",
+        "iso3": "MYS"
+      },
+      {
+        "name": "Malta",
+        "iso3": "MLT"
+      },
+      {
+        "name": "Mauritius",
+        "iso3": "MUS"
+      },
+      {
+        "name": "Micronesia",
+        "iso3": "FSM"
+      },
+      {
+        "name": "Moldova",
+        "iso3": "MDA"
+      },
+      {
+        "name": "Monaco",
+        "iso3": "MCO"
+      },
+      {
+        "name": "Montenegro",
+        "iso3": "MNE"
+      },
+      {
+        "name": "Netherlands",
+        "iso3": "NLD"
+      },
+      {
+        "name": "Norway",
+        "iso3": "NOR"
+      },
+      {
+        "name": "Pakistan",
+        "iso3": "PAK"
+      },
+      {
+        "name": "Panama",
+        "iso3": "PAN"
+      },
+      {
+        "name": "Peru",
+        "iso3": "PER"
+      },
+      {
+        "name": "Philippines",
+        "iso3": "PHL"
+      },
+      {
+        "name": "Poland",
+        "iso3": "POL"
+      },
+      {
+        "name": "Portugal",
+        "iso3": "PRT"
+      },
+      {
+        "name": "Romania",
+        "iso3": "ROU"
+      },
+      {
+        "name": "Russia",
+        "iso3": "RUS"
+      },
+      {
+        "name": "Saint Lucia",
+        "iso3": "LCA"
+      },
+      {
+        "name": "Saint Vincent and the Grenadines",
+        "iso3": "VCT"
+      },
+      {
+        "name": "San Marino",
+        "iso3": "SMR"
+      },
+      {
+        "name": "Singapore",
+        "iso3": "SGP"
+      },
+      {
+        "name": "Slovakia",
+        "iso3": "SVK"
+      },
+      {
+        "name": "Slovenia",
+        "iso3": "SVN"
+      },
+      {
+        "name": "South Korea",
+        "iso3": "KOR"
+      },
+      {
+        "name": "Spain",
+        "iso3": "ESP"
+      },
+      {
+        "name": "Sweden",
+        "iso3": "SWE"
+      },
+      {
+        "name": "Switzerland",
+        "iso3": "CHE"
+      },
+      {
+        "name": "Trinidad and Tobago",
+        "iso3": "TTO"
+      },
+      {
+        "name": "United Kingdom and Crown dependencies",
+        "iso3": "GBR"
+      },
+      {
+        "name": "Vanuatu",
+        "iso3": "VUT"
+      },
+      {
+        "name": "Vatican City",
+        "iso3": "VAT"
+      },
+      {
+        "name": "Zambia",
+        "iso3": "ZMB"
+      },
+      {
+        "name": "Zimbabwe",
+        "iso3": "ZWE"
+      },
+      {
+        "name": "Kosovo (territory)",
+        "iso3": null
+      },
+      {
+        "name": "Northern Cyprus (territory)",
+        "iso3": null
+      },
+      {
+        "name": "Palestine (territory)",
+        "iso3": "PSE"
+      },
+      {
+        "name": "South Ossetia (territory)",
+        "iso3": null
+      },
+      {
+        "name": "Transnistria (territory)",
+        "iso3": null
+      },
+      {
+        "name": "Hong Kong (China)",
+        "iso3": null
+      },
+      {
+        "name": "Macau (China)",
+        "iso3": null
+      },
+      {
+        "name": "Faroe Islands (Denmark)",
+        "iso3": null
+      },
+      {
+        "name": "Greenland (Denmark)",
+        "iso3": null
+      },
+      {
+        "name": "French Guiana (France)",
+        "iso3": null
+      },
+      {
+        "name": "French Polynesia (France)",
+        "iso3": null
+      },
+      {
+        "name": "French West Indies — Guadeloupe and Martinique (France)",
+        "iso3": null
+      },
+      {
+        "name": "Mayotte (France)",
+        "iso3": null
+      },
+      {
+        "name": "New Caledonia (France)",
+        "iso3": null
+      },
+      {
+        "name": "Reunion (France)",
+        "iso3": null
+      },
+      {
+        "name": "Saint Pierre and Miquelon (France)",
+        "iso3": null
+      },
+      {
+        "name": "Wallis and Futuna (France)",
+        "iso3": null
+      },
+      {
+        "name": "Cook Islands (New Zealand)",
+        "iso3": null
+      },
+      {
+        "name": "Niue (New Zealand)",
+        "iso3": null
+      },
+      {
+        "name": "Akrotiri and Dhekelia (UK)",
+        "iso3": null
+      },
+      {
+        "name": "Anguilla (UK)",
+        "iso3": null
+      },
+      {
+        "name": "Bermuda (UK)",
+        "iso3": null
+      },
+      {
+        "name": "British Virgin Islands (UK)",
+        "iso3": null
+      },
+      {
+        "name": "Cayman Islands (UK)",
+        "iso3": null
+      },
+      {
+        "name": "Gibraltar (UK)",
+        "iso3": null
+      },
+      {
+        "name": "Montserrat (UK)",
+        "iso3": null
+      },
+      {
+        "name": "Pitcairn Islands (UK)",
+        "iso3": null
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "name": "Armenia",
+        "iso3": "ARM"
+      },
+      {
+        "name": "Bolivia",
+        "iso3": "BOL"
+      },
+      {
+        "name": "Cambodia",
+        "iso3": "KHM"
+      },
+      {
+        "name": "Cape Verde",
+        "iso3": "CPV"
+      },
+      {
+        "name": "Comoros",
+        "iso3": "COM"
+      },
+      {
+        "name": "Egypt",
+        "iso3": "EGY"
+      },
+      {
+        "name": "Guinea-Bissau",
+        "iso3": "GNB"
+      },
+      {
+        "name": "Iran",
+        "iso3": "IRN"
+      },
+      {
+        "name": "Jordan",
+        "iso3": "JOR"
+      },
+      {
+        "name": "Laos (also eVisa)",
+        "iso3": "LAO"
+      },
+      {
+        "name": "Lebanon",
+        "iso3": "LBN"
+      },
+      {
+        "name": "Madagascar (also eVisa)",
+        "iso3": "MDG"
+      },
+      {
+        "name": "Maldives",
+        "iso3": "MDV"
+      },
+      {
+        "name": "Marshall Islands",
+        "iso3": "MHL"
+      },
+      {
+        "name": "Mauritania",
+        "iso3": "MRT"
+      },
+      {
+        "name": "Mozambique",
+        "iso3": "MOZ"
+      },
+      {
+        "name": "Nauru",
+        "iso3": "NRU"
+      },
+      {
+        "name": "Nepal",
+        "iso3": "NPL"
+      },
+      {
+        "name": "Nicaragua",
+        "iso3": "NIC"
+      },
+      {
+        "name": "Palau",
+        "iso3": "PLW"
+      },
+      {
+        "name": "Papua New Guinea (also eVisa)",
+        "iso3": "PNG"
+      },
+      {
+        "name": "Rwanda (also eVisa)",
+        "iso3": "RWA"
+      },
+      {
+        "name": "Senegal",
+        "iso3": "SEN"
+      },
+      {
+        "name": "Seychelles (Visitor's Permit on arrival)",
+        "iso3": "SYC"
+      },
+      {
+        "name": "Sierra Leone",
+        "iso3": "SLE"
+      },
+      {
+        "name": "Solomon Islands",
+        "iso3": "SLB"
+      },
+      {
+        "name": "Somalia",
+        "iso3": "SOM"
+      },
+      {
+        "name": "Somaliland (territory)",
+        "iso3": null
+      },
+      {
+        "name": "Sri Lanka",
+        "iso3": "LKA"
+      },
+      {
+        "name": "Tanzania (also eVisa)",
+        "iso3": "TZA"
+      },
+      {
+        "name": "Timor-Leste",
+        "iso3": "TLS"
+      },
+      {
+        "name": "Togo",
+        "iso3": "TGO"
+      },
+      {
+        "name": "Tonga",
+        "iso3": "TON"
+      },
+      {
+        "name": "Tuvalu",
+        "iso3": "TUV"
+      },
+      {
+        "name": "Uganda",
+        "iso3": "UGA"
+      },
+      {
+        "name": "Benin (also eVisa)",
+        "iso3": "BEN"
+      }
+    ],
+    "e_visa": [
+      {
+        "name": "Djibouti",
+        "iso3": "DJI"
+      },
+      {
+        "name": "Ethiopia",
+        "iso3": "ETH"
+      },
+      {
+        "name": "Georgia",
+        "iso3": "GEO"
+      },
+      {
+        "name": "India",
+        "iso3": "IND"
+      },
+      {
+        "name": "Kyrgyzstan",
+        "iso3": "KGZ"
+      },
+      {
+        "name": "Laos (also visa on arrival)",
+        "iso3": "LAO"
+      },
+      {
+        "name": "Madagascar (also visa on arrival)",
+        "iso3": "MDG"
+      },
+      {
+        "name": "Myanmar",
+        "iso3": "MMR"
+      },
+      {
+        "name": "Papua New Guinea (also visa on arrival)",
+        "iso3": "PNG"
+      },
+      {
+        "name": "Qatar",
+        "iso3": "QAT"
+      },
+      {
+        "name": "Rwanda (also visa on arrival)",
+        "iso3": "RWA"
+      },
+      {
+        "name": "Saint Kitts and Nevis",
+        "iso3": "KNA"
+      },
+      {
+        "name": "São Tomé and Príncipe",
+        "iso3": "STP"
+      },
+      {
+        "name": "South Sudan",
+        "iso3": "SSD"
+      },
+      {
+        "name": "Suriname",
+        "iso3": "SUR"
+      },
+      {
+        "name": "Tanzania (also visa on arrival)",
+        "iso3": "TZA"
+      },
+      {
+        "name": "Ukraine",
+        "iso3": "UKR"
+      },
+      {
+        "name": "Uzbekistan",
+        "iso3": "UZB"
+      },
+      {
+        "name": "Vietnam",
+        "iso3": "VNM"
+      },
+      {
+        "name": "Benin (also visa on arrival)",
+        "iso3": "BEN"
+      },
+      {
+        "name": "Ascension Island (UK territory)",
+        "iso3": null
+      }
+    ],
+    "eta": [
+      {
+        "name": "Canada (ETA required if arriving by air; no prior consular visa required)",
+        "iso3": "CAN"
+      }
+    ],
+    "notes": "Source is the official Samoa Ministry of Foreign Affairs and Trade PDF 'Visa Requirement for Samoa Citizens', dated 2 March 2021, published at mfat.gov.ws. Cuba requires a Tourist Card (not a standard visa). Pakistan is listed as 'Visa not required 1 month' with a note that an Electronic Travel Authorization is available for visa on arrival (tourism/business); recorded as visa_free per the document's own classification. South Sudan is listed as 'Electronic Visa' obtainable online. French West Indies: visa-free only for Guadeloupe and Martinique; Saint Barthelemy and Saint Martin require a visa. New Zealand (mainland) is listed as Visa required; only Cook Islands and Niue (associated states) are visa-free. Australia and USA are listed as Visa required. Territories and partial-recognition entities are included as documented in the official PDF."
+  },
+  "cbi": {
+    "has_program": true,
+    "program_name": "Citizenship Investment Program (Citizenship Investment Act 2015)",
+    "official_url": "https://www.mcil.gov.ws/services/industry",
+    "source_official": true,
+    "options": [
+      {
+        "type": "business",
+        "min_amount": 4000000,
+        "currency": "WST",
+        "notes": "Investment in qualifying sectors: leasing and developing government lands; processing or manufacturing of agricultural or fishery products; tourism hotel resort development; information and communication technology; renewable electricity generation (solar, biofuel); or other services not restricted under the Foreign Investment Act 2000. Minimum net worth requirement of WST 2.5 million also cited in secondary sources. The Samoa Chamber of Commerce and Industry proposed in October 2025 to reduce the threshold to WST 2 million, but this reduction had not been enacted as of June 2026."
+      },
+      {
+        "type": "fund",
+        "min_amount": 4000000,
+        "currency": "WST",
+        "notes": "Investment in a government development fund for national development purposes. This option was proposed following Cabinet approval of recommendations in May 2024. Minimum amount not independently confirmed from an accessible official document as of June 2026."
+      }
+    ],
+    "processing_time": "Minimum 3-year timeline: begins with temporary resident permit, progresses to permanent resident permit (with minimum 15 days per year physical presence requirement), then citizenship eligibility after 3 years.",
+    "dual_citizenship_allowed": null,
+    "residency_required": true,
+    "notes": "The program was established under the Citizenship Investment Act 2015 and officially launched on 31 January 2017. It is administered by the Ministry of Commerce, Industry and Labour (MCIL). As of 2025 reporting, no investor has successfully completed the process — the only application filed was subsequently withdrawn. In May 2024, Cabinet approved recommendations to amend the Act, including adding government bonds and national development fund as qualifying investment options. A stakeholder validation workshop was held on 26 September 2025 at Tanoa Hotel to develop a revised policy framework. The prior CBI-specific page at mcil.gov.ws/?page_id=2879 (old WordPress URL) no longer resolves to a CBI page — MCIL has migrated to a new Drupal site. CBI brochure PDFs from mcil.gov.ws returned 404 at time of research (June 2026). Investment amounts are drawn from secondary sources referencing the Citizenship Investment Act 2015 and Regulations 2016; they could not be independently confirmed from a directly accessible official PDF."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Temporary Resident Permit (Investment pathway)",
+        "type": "investor_residence",
+        "min_amount": 4000000,
+        "currency": "WST",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 3,
+        "official_url": "https://www.mcil.gov.ws/services/industry",
+        "source_official": true,
+        "notes": "The Citizenship Investment Act 2015 establishes a three-stage pathway: (1) Temporary Resident Permit, (2) Permanent Resident Permit (requiring minimum 15 days physical presence per year), (3) citizenship eligibility after 3 years. This is the only known official investment-based residency pathway in Samoa."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "PICTA (Pacific Island Countries Trade Agreement) — trade in goods among Pacific Forum Island Countries",
+    "PACER Plus — Free Trade Agreement with Australia, New Zealand and Forum Island Countries (in force 13 December 2020)"
+  ],
+  "official_domains": [
+    "mfat.gov.ws",
+    "mcil.gov.ws",
+    "mpmc.gov.ws"
+  ],
+  "conditional_access": [],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTION: Israel visa waiver — prior record stated 'entered into force 6 Jul 2023'; the official MFAT Visa Waiver Agreements PDF (re-scraped June 2026) explicitly states the Israel agreement is 'Yet to be ratified due to political situation in Israel'. The prior record's in-force date of 6 Jul 2023 is not supported by any accessible official Samoa government source and has been removed. Samoa High Commission news article confirms it was only signed in 2019 with no ratification confirmed.",
+      "CORRECTION: CBI official_url updated from mcil.gov.ws/?page_id=2879 (old WordPress URL, now redirects to homepage) to mcil.gov.ws/services/industry (current MCIL industry/investment page on new Drupal site).",
+      "CONFIRMED: Universal visa-free policy for all nationalities for up to 60 days — re-verified against the official MFAT PDF via Firecrawl scrape in June 2026. No change required.",
+      "CONFIRMED: China (PRC) visa waiver (signed 23 Jan 2025, in force 2 Apr 2025) is valid per Chinese Embassy official notice; ordinary passports covered; max 30 days single stay / 90 days per 180 days.",
+      "CONFIRMED: EU (90 days), Russia (60 days), Macau (60 days) visa waivers confirmed from official MFAT PDF re-scraped June 2026.",
+      "NOTE: No ETA or e-visa scheme found on any official Samoa government source. Aggregator claims of an 'ETA for some nationalities' could not be verified from official sources and are not included in visa_policy.",
+      "NOTE: CBI minimum investment threshold of WST 4 million confirmed by multiple secondary sources referencing the Act; a proposal to reduce to WST 2 million was made by Samoa Chamber of Commerce in October 2025 but not enacted as of June 2026."
+    ],
+    "gaps": [
+      "Israel visa waiver: MFAT's official PDF (re-scraped June 2026) states the agreement is not yet ratified. Secondary sources suggest ratification may have occurred in 2023, but no official Samoa government source confirms in-force date. Marked as 'signed only' in notes pending official confirmation.",
+      "UK post-Brexit status: The EU visa waiver was signed referencing 28 EU member states (2015). The UK left the EU in 2020. No official Samoa government announcement on whether UK nationals retain or lost visa-free treatment under this agreement was found.",
+      "CBI investment amounts: The MCIL website has migrated to a new Drupal platform; CBI brochure PDFs previously linked returned 404. The WST 4 million minimum is widely cited in secondary sources but could not be independently confirmed from a directly accessible official PDF as of June 2026.",
+      "Dual citizenship allowance under the CBI program: Not confirmed from any accessible official source.",
+      "MPMC immigration page (mpmc.gov.ws/divisions/immigration/permits-2/): Returns HTTP 403; detailed permit rules and any nationality-specific conditions could not be verified.",
+      "No official e-visa or ETA portal was found for Samoa; aggregator claims of a Samoa ETA/e-visa for certain nationalities could not be verified against official government sources.",
+      "No official digital nomad, talent, or fast-track skilled visa scheme found on official Samoa government sources.",
+      "Conditional access (credential-based entry, OCI/diaspora, diplomatic/service-only passport waivers): No such rules found on any official Samoa government source. Samoa's stated entry policy is universal visa-free for all nationalities. No diplomatic-only or service-passport-only bilateral visa suppression agreements were identified."
+    ]
+  },
+  "sources_checked": [
+    {
+      "url": "https://www.mfat.gov.ws/visas/",
+      "description": "Samoa Ministry of Foreign Affairs and Trade — Visas page (official); re-checked June 2026",
+      "official": true
+    },
+    {
+      "url": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Entry-requirements-into-Samoa.pdf",
+      "description": "Official MFAT PDF — Entry requirements into Samoa; re-scraped via Firecrawl June 2026 — confirms all nationalities visa-free for <60 days",
+      "official": true
+    },
+    {
+      "url": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/List-of-Visa-waiver-Agreements.pdf",
+      "description": "Official MFAT PDF — List of Visa Waiver Agreements; re-scraped via Firecrawl June 2026 — lists EU, Russia, Macau, Israel (not yet ratified); China not yet added",
+      "official": true
+    },
+    {
+      "url": "https://www.mcil.gov.ws/services/industry",
+      "description": "Samoa Ministry of Commerce, Industry and Labour — Industry & Investment page (official, new Drupal site); confirmed live June 2026",
+      "official": true
+    },
+    {
+      "url": "https://mcil.gov.ws/stakeholder-validation-workshop-development-of-the-policy-framework-for-the-citizenship-investment-program/",
+      "description": "MCIL — Stakeholder Validation Workshop for CBI Policy Framework (September 2025); official",
+      "official": true
+    },
+    {
+      "url": "https://ws.china-embassy.gov.cn/eng/lsfw_142098/zytz_142073/202503/t20250314_11574531.htm",
+      "description": "Embassy of the People's Republic of China in Samoa — Official notice on China-Samoa Mutual Visa Exemption Agreement entering force 2 Apr 2025; covers diplomatic/official/ordinary Samoan passports and diplomatic/service/public affairs/ordinary Chinese passports, max 30 days single stay / 90 days per 180 days",
+      "official": true
+    },
+    {
+      "url": "https://samoa.org.nz/news/israel-and-samoa-sign-visa-waiver-agreement-in-jerusalem/",
+      "description": "Samoa High Commission (NZ) — article on Israel-Samoa visa waiver agreement signing in 2019; notes agreement not yet ratified due to political situation in Israel",
+      "official": true
+    },
+    {
+      "url": "https://mpmc.gov.ws/divisions/immigration/",
+      "description": "Ministry of the Prime Minister and Cabinet — Immigration Division (official); page metadata confirmed (last modified 2026-03-01) but main content not extracted",
+      "official": true
+    }
+  ]
+}

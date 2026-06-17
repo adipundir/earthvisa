@@ -1,0 +1,925 @@
+{
+  "iso2": "PY",
+  "iso3": "PRY",
+  "name": "Paraguay",
+  "region": "Americas",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://www2.mre.gov.py/index.php/tramites/visas/acuerdos-de-supresion-de-visas",
+    "source_official": true,
+    "asof": "September 2019",
+    "visa_free": [
+      {"name": "Peru", "iso3": "PER"},
+      {"name": "Brazil", "iso3": "BRA"},
+      {"name": "Chile", "iso3": "CHL"},
+      {"name": "Ecuador", "iso3": "ECU"},
+      {"name": "Bolivia", "iso3": "BOL"},
+      {"name": "Colombia", "iso3": "COL"},
+      {"name": "Argentina", "iso3": "ARG"},
+      {"name": "Uruguay", "iso3": "URY"},
+      {"name": "Guatemala", "iso3": "GTM"},
+      {"name": "Costa Rica", "iso3": "CRI"},
+      {"name": "El Salvador", "iso3": "SLV"},
+      {"name": "Panama", "iso3": "PAN"},
+      {"name": "Mexico", "iso3": "MEX"},
+      {"name": "Dominican Republic", "iso3": "DOM"},
+      {"name": "Honduras", "iso3": "HND"},
+      {"name": "Nicaragua", "iso3": "NIC"},
+      {"name": "Luxembourg", "iso3": "LUX"},
+      {"name": "Austria", "iso3": "AUT"},
+      {"name": "Hungary", "iso3": "HUN"},
+      {"name": "Spain", "iso3": "ESP"},
+      {"name": "United Kingdom", "iso3": "GBR"},
+      {"name": "Netherlands", "iso3": "NLD"},
+      {"name": "Romania", "iso3": "ROU"},
+      {"name": "Switzerland", "iso3": "CHE"},
+      {"name": "Liechtenstein", "iso3": "LIE"},
+      {"name": "Germany", "iso3": "DEU"},
+      {"name": "Denmark", "iso3": "DNK"},
+      {"name": "Italy", "iso3": "ITA"},
+      {"name": "Norway", "iso3": "NOR"},
+      {"name": "Belgium", "iso3": "BEL"},
+      {"name": "Sweden", "iso3": "SWE"},
+      {"name": "Poland", "iso3": "POL"},
+      {"name": "Finland", "iso3": "FIN"},
+      {"name": "Slovak Republic", "iso3": "SVK"},
+      {"name": "Russia", "iso3": "RUS"},
+      {"name": "France", "iso3": "FRA"},
+      {"name": "Greece", "iso3": "GRC"},
+      {"name": "Portugal", "iso3": "PRT"},
+      {"name": "Czech Republic", "iso3": "CZE"},
+      {"name": "Estonia", "iso3": "EST"},
+      {"name": "Latvia", "iso3": "LVA"},
+      {"name": "Lithuania", "iso3": "LTU"},
+      {"name": "Slovenia", "iso3": "SVN"},
+      {"name": "Ireland", "iso3": "IRL"},
+      {"name": "Malta", "iso3": "MLT"},
+      {"name": "Cyprus", "iso3": "CYP"},
+      {"name": "Bulgaria", "iso3": "BGR"},
+      {"name": "Turkey", "iso3": "TUR"},
+      {"name": "Iceland", "iso3": "ISL"},
+      {"name": "Ukraine", "iso3": "UKR"},
+      {"name": "Croatia", "iso3": "HRV"},
+      {"name": "Andorra", "iso3": "AND"},
+      {"name": "Monaco", "iso3": "MCO"},
+      {"name": "South Korea", "iso3": "KOR"},
+      {"name": "Japan", "iso3": "JPN"},
+      {"name": "Israel", "iso3": "ISR"},
+      {"name": "South Africa", "iso3": "ZAF"},
+      {"name": "Singapore", "iso3": "SGP"},
+      {"name": "United Arab Emirates", "iso3": "ARE"}
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "Source is the official MRE Paraguay 'Dirección de Tratados' bilateral visa-suppression agreements document (Acuerdos Bilaterales Suscritos por el Paraguay en Materia de Supresión de Visas), updated September 2019, published on the official Ministerio de Relaciones Exteriores portal. The document lists bilateral agreements — each is reciprocal, so countries where ordinary (C=Común) or all (T=Todos) passport types are covered apply to outbound Paraguayan ordinary passport holders. Argentina and Uruguay are MERCOSUR members ((*) footnote: travel with national ID card only); Cuba, Taiwan, Philippines, Vietnam, Indonesia, Jordan, Lebanon, Egypt, Morocco, India, Georgia cover only diplomatic/official passports for Paraguay (not ordinary). Venezuela agreement suspended 10/Jan/2019. Montenegro, Azerbaijan, Serbia, Qatar agreements listed as PENDIENTE (not yet in force) as of September 2019. A more recent updated PDF (2026) exists at migraciones.gov.py; the 2026 version adds UAE, Georgia (DOS), Mongolia, Saint Kitts and Nevis, Trinidad and Tobago, Bahamas, Malaysia, Philippines (ordinary, via 2025 decrees) and confirms Venezuela suspension."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°10702/03/08/2007; for tourism only",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": null,
+        "notes": "No visa required for any purpose (MERCOSUR); national identity card accepted in lieu of passport",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 90,
+        "notes": "Visa-free under Law 7314/2024 (temporary tourism measure valid until August 13, 2027); for tourism stays up to 90 days only",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Austria",
+        "iso3": "AUT",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 17/01/1969; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahamas",
+        "iso3": "BHS",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°2272/02/08/2024; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Belgium",
+        "iso3": "BEL",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 21/11/1960; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Bolivia",
+        "iso3": "BOL",
+        "max_stay_days": null,
+        "notes": "No visa required for any purpose (MERCOSUR associate); national identity card accepted in lieu of passport",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": null,
+        "notes": "No visa required for any purpose (MERCOSUR); national identity card accepted in lieu of passport",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Bulgaria",
+        "iso3": "BGR",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°3299/09/08/2017; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 90,
+        "notes": "Visa-free under Law 7314/2024 (temporary tourism measure valid until August 13, 2027); for tourism stays up to 90 days only",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": null,
+        "notes": "No visa required for any purpose (MERCOSUR associate); national identity card accepted in lieu of passport",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": null,
+        "notes": "No visa required for any purpose (MERCOSUR associate); national identity card accepted in lieu of passport",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 16/06/1992; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Croatia",
+        "iso3": "HRV",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°10267/28/03/2007; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Cyprus",
+        "iso3": "CYP",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Czech Republic",
+        "iso3": "CZE",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°2,390/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Denmark",
+        "iso3": "DNK",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 21/03/1963; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Dominican Republic",
+        "iso3": "DOM",
+        "max_stay_days": 60,
+        "notes": "Visa-free per Ley N°6244/26/12/2018; for tourism stays up to 60 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Ecuador",
+        "iso3": "ECU",
+        "max_stay_days": null,
+        "notes": "No visa required for any purpose (MERCOSUR associate); national identity card accepted in lieu of passport",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "El Salvador",
+        "iso3": "SLV",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°1.310/30/07/1998; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Estonia",
+        "iso3": "EST",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Finland",
+        "iso3": "FIN",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°5/28/07/1992; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "France",
+        "iso3": "FRA",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°1120/27/08/1997; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Georgia",
+        "iso3": "GEO",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°7.038/30/11/2022; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Germany",
+        "iso3": "DEU",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 30/11/1962; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Greece",
+        "iso3": "GRC",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°1269/21/05/1998; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Guatemala",
+        "iso3": "GTM",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°3676/09/09/2008; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Honduras",
+        "iso3": "HND",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°11548/2007; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Hungary",
+        "iso3": "HUN",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°2290/07/11/2003; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Iceland",
+        "iso3": "ISL",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°8065/2006; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Ireland",
+        "iso3": "IRL",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Nota de Acuerdo 21/11/1965; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Italy",
+        "iso3": "ITA",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 08/04/1965; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°7691/08/11/1990; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Latvia",
+        "iso3": "LVA",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Liechtenstein",
+        "iso3": "LIE",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 10/01/1964; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Lithuania",
+        "iso3": "LTU",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Luxembourg",
+        "iso3": "LUX",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 21/11/1960; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 30,
+        "notes": "Visa-free per Decreto N°5220/29/12/2025; for tourism stays up to 30 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Malta",
+        "iso3": "MLT",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°245/13/09/2008; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°7814/05/10/2017; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Mongolia",
+        "iso3": "MNG",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°7206/17/11/2023; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Netherlands",
+        "iso3": "NLD",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 21/11/1960; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 90,
+        "notes": "Visa-free under Law 7314/2024 (temporary tourism measure valid until August 13, 2027); for tourism stays up to 90 days only",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Nicaragua",
+        "iso3": "NIC",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°11548/2007; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Norway",
+        "iso3": "NOR",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 21/03/1963; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°1390/29/12/1998; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": null,
+        "notes": "No visa required for any purpose (MERCOSUR associate); national identity card accepted in lieu of passport",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Philippines",
+        "iso3": "PHL",
+        "max_stay_days": 30,
+        "notes": "Visa-free for ordinary passport holders per Decreto N°5219/29/12/2025; for tourism stays up to 30 days. Previously (before December 2025) only diplomatic/official/service passports were exempt.",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Poland",
+        "iso3": "POL",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Portugal",
+        "iso3": "PRT",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°1315/01/04/1998; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Romania",
+        "iso3": "ROU",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°10389/17/05/2007; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Russia",
+        "iso3": "RUS",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°5227/25/06/2014; for tourism stays up to 90 days. Official January 2026 migraciones.gov.py document confirms NO REQUIERE VISA status. Earlier consulate pages incorrectly listed visa-on-arrival.",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Kitts and Nevis",
+        "iso3": "KNA",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°7205/17/11/2023; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 30,
+        "notes": "Visa-free per Decreto N°7776/25/09/2017; for tourism stays up to 30 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovak Republic",
+        "iso3": "SVK",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovenia",
+        "iso3": "SVN",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°4535/29/12/2004; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "South Africa",
+        "iso3": "ZAF",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°338/23/05/1994; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 30,
+        "notes": "Visa-free per Decreto N°7341/30/03/2006; for tourism stays up to 30 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Spain",
+        "iso3": "ESP",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 25/06/1959; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Sweden",
+        "iso3": "SWE",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 21/03/1963; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Switzerland",
+        "iso3": "CHE",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 10/01/1964; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Taiwan",
+        "iso3": "TWN",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Decreto N°7423/06/07/2017; for tourism stays up to 90 days. Listed as 'China/Taiwan' in official document.",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Trinidad and Tobago",
+        "iso3": "TTO",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°7439/17/12/2024; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Turkey",
+        "iso3": "TUR",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°3.368/01/11/2007; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°3701/12/03/2019; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "United Arab Emirates",
+        "iso3": "ARE",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Ley N°6321/22/05/2019; for tourism stays up to 90 days. Official January 2026 migraciones.gov.py PDF confirms NO REQUIERE VISA status.",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 90,
+        "notes": "Visa-free per Acuerdo Bilateral 27/10/1966; for tourism stays up to 90 days",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "United States",
+        "iso3": "USA",
+        "max_stay_days": 90,
+        "notes": "Visa-free under Law 7314/2024 (temporary tourism measure valid until August 13, 2027); for tourism stays up to 90 days only",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Uruguay",
+        "iso3": "URY",
+        "max_stay_days": null,
+        "notes": "No visa required for any purpose (MERCOSUR); national identity card accepted in lieu of passport",
+        "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {
+        "nationality": "Countries requiring a visa",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Foreign nationals whose nationality requires a visa may submit an online pre-application through the MRE online portal at mre.gov.py/visasenlinea. Physical completion at a Paraguayan embassy or consulate is still required. This is NOT a fully electronic e-visa — it is a pre-application portal only.",
+        "source_url": "https://www.mre.gov.py/visasenlinea/",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+      "https://www.mre.gov.py/visas-new/",
+      "https://embapar.jp/en/sc/visa/",
+      "https://www2.mre.gov.py/ny/index.php/tramites-y-servicios/visas",
+      "https://www.mre.gov.py/visasenlinea/",
+      "https://www2.mre.gov.py/consulpar-washington/index.php/en/consular-services/visas"
+    ],
+    "notes": "Primary authoritative source is the official Paraguayan immigration authority PDF (migraciones.gov.py, updated January 2026) which lists all bilateral visa suppression agreements by law/decree number and date. Paraguay grants visa-free access to 69 nationalities for tourism. Under Law 7314/2024, USA, Canada, Australia, and New Zealand are granted a temporary visa-free tourism measure valid until August 13, 2027 (for tourism only; other purposes require a visa). MERCOSUR/associate members (Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, Peru, Uruguay) have no stay limit and may use national identity cards. Key changes as of January 2026: Venezuela now requires a visa (effective Jan 10, 2026); Philippines and Malaysia gained ordinary passport visa-free access (30 days each) per Decretos 5219 and 5220 of December 29, 2025; Georgia and Mongolia gained visa-free access via earlier laws; Trinidad and Tobago gained visa-free access per Ley 7439/December 2024; Saint Kitts and Nevis gained visa-free access per Ley 7205/November 2023. Russia is confirmed visa-free (not visa-on-arrival) per Ley 5227/2014. Qatar, Thailand, Vietnam, Indonesia, and Oman do NOT have visa-on-arrival — ordinary passport holders of these nationalities require a regular visa."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Cuba"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa. Diplomatic and official passports exempt per Ley N°1738/02/08/2001.",
+      "source_url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Saudi Arabia"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa. Diplomatic, official, and service passports exempt per Resolución 210/15/03/23 (diplomatic exemption only; ordinary visa required).",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Azerbaijan"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa per Acuerdo Bilateral 23/03/2019. Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["India"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa (Resolución 210/15/03/23). Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Indonesia"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa per Ley N°3.569/28/08/2008. Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Jordan"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa per Ley N°5168/06/05/2014. Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kazakhstan"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa (no bilateral agreement listed in migraciones January 2026 PDF). Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Lebanon"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa per Ley N°3.900/06/11/2009. Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Qatar"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa per Acuerdo Bilateral 03/10/2018. Diplomatic, official, and service passports exempt per MRE visas-new page. Visa-on-arrival for ordinary passports is NOT confirmed by the January 2026 official document.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Vietnam"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa (Resolución 210/15/03/23). Diplomatic, official, and service passports exempt per MRE visas-new page. Visa-on-arrival for ordinary passports is NOT confirmed by the January 2026 official document.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Egypt"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa per Ley N°3393/30/11/2007. Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Morocco"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa (Resolución 210/15/03/23). Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Serbia"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Ordinary passport requires visa per Acuerdo Bilateral 25/03/2019. Diplomatic, official, and service passports exempt per MRE visas-new page.",
+      "source_url": "https://www.mre.gov.py/visas-new/",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "Paraguay does not offer citizenship-by-investment. Citizenship is obtained through naturalization after holding legal residence for at least 3 years (per Paraguayan Constitution Article 148 and Migration Law 6984/2022). The Paraguay Investor Pass grants permanent residency, not citizenship directly."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Paraguay Investor Pass",
+        "type": "real_estate / financial instruments / tourism / productive investment",
+        "min_amount": 70000,
+        "currency": "USD",
+        "path_to_pr_years": 0,
+        "path_to_citizenship_years": 3,
+        "official_url": "https://migraciones.gov.py/paraguay-investor-pass-nueva-herramienta-para-facilitar-la-inversion-extranjera-en-el-pais/",
+        "source_official": true,
+        "notes": "Launched April 17, 2026 via MIC Resolution No. 0283/2026. Four investment modalities: (1) Productive investments (industry/commerce/services) from USD 70,000 with obligation to generate at least 5 formal jobs; (2) Financial instruments (stock market) from USD 200,000, no employment requirement; (3) Real estate from USD 200,000 (for economic activity, not personal/family use); (4) Tourism sector projects from USD 150,000. Grants permanent residency directly without prior temporary residency. Process mostly electronic; physical presence required only for national ID card issuance. Dividend tax rate reduced from 15% to 8% for residents. Path to citizenship via naturalization after 3 years of permanent residency."
+      },
+      {
+        "name": "Standard Permanent Residency",
+        "type": "financial solvency / employment / property / business",
+        "min_amount": 5000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 3,
+        "official_url": "https://www2.mre.gov.py/index.php/tramites/residencia-en-paraguay",
+        "source_official": true,
+        "notes": "Permanent residency available by demonstrating economic solvency: minimum USD 5,000 in bank/cooperative account, OR university-level degree with employment contract, OR property ownership (minimum 10 hectares), OR company incorporation with minimum USD 5,000 capital. After 3 years of permanent residency, naturalization citizenship is possible per Constitution Article 148."
+      },
+      {
+        "name": "SUACE Investor Permanent Residency",
+        "type": "business / investment",
+        "min_amount": null,
+        "currency": "USD",
+        "path_to_pr_years": 0,
+        "path_to_citizenship_years": 3,
+        "official_url": "https://migraciones.gov.py/residencia-permanente-para-inversionistas-extranjeros-suace/",
+        "source_official": true,
+        "notes": "Special permanent residence process under Migration Law No. 6984/2022 for foreign investors using the Unified System for Business Opening and Closure (SUACE). Grants direct permanent residency without prior temporary residency requirement. Minimum investment amount not specified in available official content."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "MERCOSUR Residence Agreement"
+  ],
+  "official_domains": [
+    "migraciones.gov.py",
+    "www.mre.gov.py",
+    "www2.mre.gov.py",
+    "embapar.jp",
+    "www.mic.gov.py",
+    "www.ip.gov.py",
+    "www.rediex.gov.py"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "PRIMARY SOURCE UPGRADED: The definitive source is now the official Paraguayan immigration authority PDF 'Acuerdos de Supresion de Visas' (migraciones.gov.py, updated January 2026), which provides a complete country-by-country list with the specific law/decree references for each agreement.",
+      "VENEZUELA CORRECTED: Removed from visa_free. Venezuela now requires a visa as of January 10, 2026 (per migraciones.gov.py official announcement). The mre.gov.py/visas-new/ page still erroneously lists Venezuela under visa-free — the immigration authority PDF (Jan 2026) is the authoritative source.",
+      "PHILIPPINES CORRECTED: Moved from conditional_access (diplomatic/service only) to visa_free for ordinary passports (30 days) per Decreto N°5219/29/12/2025. The bilateral visa waiver agreement for ordinary passports entered into force via this decree.",
+      "MALAYSIA CONFIRMED: Now explicitly confirmed as ordinary passport visa-free (30 days) per Decreto N°5220/29/12/2025, consistent with what the Japan embassy page showed.",
+      "GEORGIA ADDED: New entry — visa-free for 90 days per Ley N°7.038/30/11/2022. Was completely missing from the previous record.",
+      "MONGOLIA ADDED: New entry — visa-free for 90 days per Ley N°7206/17/11/2023. Was completely missing from the previous record.",
+      "SAINT KITTS AND NEVIS ADDED: Visa-free for 90 days per Ley N°7205/17/11/2023 (listed as 'San Cristóbal y Nieves' in official document). Was a noted gap.",
+      "TRINIDAD AND TOBAGO ADDED: Visa-free for 90 days per Ley N°7439/17/12/2024. Was completely missing from the previous record.",
+      "RUSSIA CORRECTED: Confirmed visa-free (NOT visa-on-arrival) per Ley N°5227/25/06/2014 per the January 2026 official PDF. Russia removed from visa_on_arrival; the ambiguity on older consulate pages is resolved.",
+      "UAE CONFIRMED visa-free: Ley N°6321/22/05/2019 explicitly confirmed NO REQUIERE VISA. The ambiguity with the Washington consulate page is resolved; the official PDF is authoritative.",
+      "VISA_ON_ARRIVAL CLEARED: Qatar, Vietnam, Thailand, Indonesia removed from visa_on_arrival — the January 2026 official PDF confirms ordinary passports of these nationalities REQUIRE a visa (visa-on-arrival entries in prior record were based on older, non-authoritative consulate pages).",
+      "OMAN CORRECTED: Removed from visa_on_arrival — the January 2026 official PDF shows 'REQUIERE VISA' for Oman with no exemption.",
+      "SERBIA ADDED to conditional_access: diplomatic/official/service passport exemption per Acuerdo Bilateral 25/03/2019, ordinary passport requires visa.",
+      "AGREEMENT LEGAL REFERENCES ADDED: All visa-free entries now cite the specific law/decree/agreement that governs the exemption, sourced from the official January 2026 migraciones.gov.py PDF.",
+      "MERCOSUR MEMBERS CORRECTED: max_stay_days set to null for MERCOSUR/associate members (Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, Peru, Uruguay) as the suppression covers all purposes with no fixed day limit."
+    ],
+    "gaps": [
+      "migraciones.gov.py main site (informacion-sobre-visas/) and subpages are ECONNREFUSED via direct HTTP — Firecrawl with PDF parser was used successfully to retrieve the January 2026 document.",
+      "The mre.gov.py/visas-new/ page still erroneously lists Venezuela as visa-free (as of June 2026). The migraciones.gov.py January 2026 PDF and official announcement are the authoritative override.",
+      "Processing time for Paraguay Investor Pass not officially published.",
+      "Dual citizenship policy in Paraguay not confirmed from an official government source.",
+      "No official fast-track / digital nomad / skilled worker visa program found.",
+      "SUACE minimum investment amount not found in official source.",
+      "The online visa application (mre.gov.py/visasenlinea) requires physical completion at an embassy — it is NOT a full e-visa system.",
+      "No credential-based conditional entry rules found on any official Paraguay government source (no rule granting entry to holders of US/Schengen/UK visas, Green Cards, or similar third-country credentials).",
+      "No OCI or special diaspora/heritage status conditional entry rule found on any official Paraguay government source.",
+      "The specific passport types covered by diplomatic exemptions for Saudi Arabia, Kazakhstan, Morocco, Vietnam, Qatar, India, Indonesia, Jordan, Lebanon, Egypt are listed on mre.gov.py/visas-new/ as 'diplomatic, official and service' but the migraciones PDF does not always break down the specific passport types for these — the MRE page is trusted for the diplomatic/service breakdown.",
+      "UN Laissez-Passer holders are exempt from visa requirements (Decreto N°3870/13/08/2015) — not classified in standard visa_policy fields as this is not a nationality-based rule."
+    ]
+  },
+  "sources_checked": [
+    "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+    "https://www.mre.gov.py/visas-new/",
+    "https://embapar.jp/en/sc/visa/",
+    "https://www2.mre.gov.py/ny/index.php/tramites-y-servicios/visas",
+    "https://www2.mre.gov.py/consulpar-washington/index.php/en/consular-services/visas",
+    "https://www.mre.gov.py/visasenlinea/",
+    "https://www.mre.gov.py/requisitos-de-visa-por-paises/",
+    "https://migraciones.gov.py/migraciones-informa-sobre-los-requisitos-de-ingreso-y-residencia-para-ciudadanos-venezolanos-a-partir-de-la-nueva-disposicion/",
+    "https://migraciones.gov.py/se-prorroga-por-tres-anos-mas-la-supresion-de-visas-de-ingreso-para-turistas-de-estados-unidos-canada-australia-y-nueva-zelanda/",
+    "https://migraciones.gov.py/paraguay-investor-pass-nueva-herramienta-para-facilitar-la-inversion-extranjera-en-el-pais/",
+    "https://migraciones.gov.py/residencia-permanente-para-inversionistas-extranjeros-suace/",
+    "https://www2.mre.gov.py/index.php/tramites/residencia-en-paraguay"
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "iso2": "SV",
+  "iso3": "SLV",
+  "name": "El Salvador",
+  "region": "Americas",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "CA-4 zone nationals (Guatemala, Honduras, Nicaragua)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Citizens of Guatemala, Honduras, and Nicaragua can enter El Salvador without a visa or passport using only their national ID card under the CA-4 Border Control Agreement (Convenio de Creación de la Visa Única Centroamericana, 2005). The 90-day period is shared across the entire CA-4 region (El Salvador, Guatemala, Honduras, Nicaragua) — a traveller who has spent time in any CA-4 country draws down from the same 90-day quota. El Salvador is the receiving country here; citizens of El Salvador itself are not counted. Costa Rica and Panama are NOT part of the CA-4 agreement.",
+        "source_url": "https://rree.gob.sv/visas-para-extranjeros/",
+        "source_official": true
+      },
+      {
+        "nationality": "Category A countries (visa-exempt)",
+        "iso3": null,
+        "max_stay_days": 180,
+        "notes": "El Salvador's immigration law (Ley Especial de Migración y Extranjería) establishes three entry categories: Category A (exento de visa – visa-exempt), Category B (visa consular o sin consulta), and Category C (visa consultada – requires prior DGME authorization). Visitors in Category A receive a tourist card (tarjeta de turismo, USD 12) on arrival valid for 90 or 180 days depending on passport validity and purpose of travel; the US State Department confirms the maximum is 180 days. The official country list is at https://www.migracion.gob.sv/servicios/listado-visa/ (downloadable Google Drive file, published 2020-11-10). Wikipedia's 'Visa policy of El Salvador' (citing RREE) lists approximately 89 jurisdictions as Category A, including all 27 EU member states plus Albania, Andorra, Antigua and Barbuda, Argentina, Australia, Bahamas, Bahrain, Barbados, Belize, Bolivia (90 days), Brazil, Brunei, Canada, Chile, Colombia, Costa Rica, Dominican Republic, Ecuador, Fiji, Iceland, Israel, Japan, Kuwait, Liechtenstein, Madagascar, Malaysia, Marshall Islands, Mexico, Monaco, New Zealand, North Macedonia, Norway, Panama, Paraguay, Peru, Qatar, Russia, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, San Marino, São Tomé and Príncipe, Saudi Arabia, Singapore, Solomon Islands, South Africa, South Korea, Switzerland, Trinidad and Tobago, Turkey, Tuvalu, Ukraine, UAE, United Kingdom, United States, Uruguay, Vanuatu, Vatican City. The authoritative source for the definitive list remains the official DGME downloadable document. Non-CA-4 visitors from Category A countries are subject to the 90/180-day tourist card; CA-4 nationals (Guatemala, Honduras, Nicaragua) have their own entry listed above.",
+        "source_url": "https://www.migracion.gob.sv/servicios/listado-visa/",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {
+        "nationality": "Nationals requiring a visa who cannot obtain one through normal consular channels",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "El Salvador offers a Special Entry Permit (Permiso Especial de Ingreso, PEI) applied for online at https://elsalvadorpei.migracion.gob.sv/. Eligibility: foreign nationals who require a visa based on their nationality but cannot obtain one through a Salvadoran consulate due to lack of embassy presence, residency issues, force majeure, or unforeseen circumstances. Fee: USD 100. Process: create account, complete application, upload required documents, pay fee. Applicant receives approval, conditional approval, denial, or cancellation by email. Contact: +503 7070-0663 / atencion.usuarios@migracion.gob.sv. Service page last updated November 14, 2023.",
+        "source_url": "https://www.migracion.gob.sv/servicios/solicitud-y-pago-de-permiso-especial-de-ingreso-para-nacionales-que-no-portan-visa-consular-o-visa-consultada/",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://www.migracion.gob.sv/servicios/listado-visa/",
+      "https://www.migracion.gob.sv/servicios/solicitud-y-pago-de-permiso-especial-de-ingreso-para-nacionales-que-no-portan-visa-consular-o-visa-consultada/",
+      "https://investinelsalvador.gob.sv/requirements-to-visit-el-salvador/",
+      "https://rree.gob.sv/visas/",
+      "https://rree.gob.sv/visas-para-extranjeros/",
+      "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/ElSalvador.html"
+    ],
+    "notes": "El Salvador uses three entry categories established under the Special Law on Migration and Foreigners (Ley Especial de Migración y Extranjería): Category A (exento de visa – visa-exempt), Category B (visa consular o sin consulta – consular visa obtainable without prior DGME approval), Category C (visa consultada – requires prior DGME authorization). The official downloadable list of countries is published at https://www.migracion.gob.sv/servicios/listado-visa/ (file hosted on Google Drive, published 2020-11-10). CA-4 agreement nationals (Guatemala, Honduras, Nicaragua) can enter with national ID only within a shared 90-day CA-4 regional quota. Category A visitors receive a tourist card (USD 12) on arrival valid for 90 or 180 days — the US State Department confirms 90 or 180 days depending on passport validity and purpose of travel, with 180 days being the maximum within El Salvador's territory. The e-visa/PEI system is at https://elsalvadorpei.migracion.gob.sv/ for USD 100. El Salvador broke diplomatic relations with Taiwan in 2018 and now recognizes the People's Republic of China only."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "excluded_nationalities": [
+        "Afghanistan", "Algeria", "Angola", "Armenia", "Bangladesh",
+        "Bosnia and Herzegovina", "Botswana", "Cameroon", "Republic of the Congo",
+        "Democratic Republic of the Congo", "Eritrea", "Ethiopia", "Ghana",
+        "Haiti", "Indonesia", "Iran", "Iraq", "Jordan", "Kenya", "Laos",
+        "Lebanon", "Liberia", "Libya", "Mali", "Mongolia", "Mozambique",
+        "Nepal", "Nigeria", "North Korea", "Oman", "Pakistan", "Palestine",
+        "Sierra Leone", "Somalia", "Sri Lanka", "Sudan", "Syria",
+        "Timor-Leste", "Vietnam", "Yemen"
+      ],
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "any valid US visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holder must possess a valid (unexpired) US visa. Nationals from the excluded list remain subject to Category C (consulted visa requiring prior DGME authorization) regardless of holding a US visa. The official RREE visa checker (rree.gob.sv/visas/) explicitly asks whether the traveller holds a valid US, Canada, or Schengen visa as a determining condition for entry category.",
+      "source_url": "https://rree.gob.sv/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "excluded_nationalities": [
+        "Afghanistan", "Algeria", "Angola", "Armenia", "Bangladesh",
+        "Bosnia and Herzegovina", "Botswana", "Cameroon", "Republic of the Congo",
+        "Democratic Republic of the Congo", "Eritrea", "Ethiopia", "Ghana",
+        "Haiti", "Indonesia", "Iran", "Iraq", "Jordan", "Kenya", "Laos",
+        "Lebanon", "Liberia", "Libya", "Mali", "Mongolia", "Mozambique",
+        "Nepal", "Nigeria", "North Korea", "Oman", "Pakistan", "Palestine",
+        "Sierra Leone", "Somalia", "Sri Lanka", "Sudan", "Syria",
+        "Timor-Leste", "Vietnam", "Yemen"
+      ],
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Canada",
+        "type": "visa",
+        "subtype": "any valid Canadian visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holder must possess a valid (unexpired) Canadian visa. Nationals from the excluded list remain subject to Category C (consulted visa requiring prior DGME authorization) regardless of holding a Canadian visa. The official RREE visa checker (rree.gob.sv/visas/) explicitly asks whether the traveller holds a valid US, Canada, or Schengen visa as a determining condition for entry category.",
+      "source_url": "https://rree.gob.sv/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "excluded_nationalities": [
+        "Afghanistan", "Algeria", "Angola", "Armenia", "Bangladesh",
+        "Bosnia and Herzegovina", "Botswana", "Cameroon", "Republic of the Congo",
+        "Democratic Republic of the Congo", "Eritrea", "Ethiopia", "Ghana",
+        "Haiti", "Indonesia", "Iran", "Iraq", "Jordan", "Kenya", "Laos",
+        "Lebanon", "Liberia", "Libya", "Mali", "Mongolia", "Mozambique",
+        "Nepal", "Nigeria", "North Korea", "Oman", "Pakistan", "Palestine",
+        "Sierra Leone", "Somalia", "Sri Lanka", "Sudan", "Syria",
+        "Timor-Leste", "Vietnam", "Yemen"
+      ],
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "any valid Schengen visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holder must possess a valid (unexpired) Schengen area visa. Nationals from the excluded list remain subject to Category C (consulted visa requiring prior DGME authorization) regardless of holding a Schengen visa. The official RREE visa checker (rree.gob.sv/visas/) explicitly asks whether the traveller holds a valid US, Canada, or Schengen visa as a determining condition for entry category.",
+      "source_url": "https://rree.gob.sv/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "excluded_nationalities": [],
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "other",
+        "type": "residence_permit",
+        "subtype": "legal residence in another country"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "The official RREE visa checker (rree.gob.sv/visas/) explicitly asks '¿Usted reside legalmente en otro país diferente al de su nacionalidad?' (Do you legally reside in another country different from your nationality?) as a separate determining condition for entry category. The specific issuing countries of qualifying residence permits and any excluded nationalities are determined dynamically by the official tool and are not enumerated in a static official document accessible at time of validation.",
+      "source_url": "https://rree.gob.sv/visas/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Belarus", "Bolivia", "Cuba", "Dominica", "Dominican Republic", "Egypt", "Grenada", "Guyana", "Haiti", "Indonesia", "Jamaica", "Jordan", "Kenya", "Montenegro", "Morocco", "Pakistan", "Papua New Guinea", "Peru", "Philippines", "Serbia", "Suriname", "Thailand", "Venezuela", "Vietnam"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic, official, or service passports from the listed countries do not require a visa to enter El Salvador. Ordinary passport holders from these countries may face different requirements (Category B or C). The table on rree.gob.sv/visas-para-extranjeros/ only partially rendered during validation (rows A through Azerbaijan visible); this list was cross-referenced from the Wikipedia article on El Salvador visa policy which aggregates the RREE data.",
+      "source_url": "https://rree.gob.sv/visas-para-extranjeros/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["India"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Agreement between the Government of El Salvador and the Government of the Republic of India for the Suppression of the Visa Requirement for Bearers of Diplomatic and Official Passports. Signed 10 June 2008; entered into force 1 April 2009. Confirmed on the official India Ministry of External Affairs bilateral visa waiver agreements page.",
+      "source_url": "https://www.mea.gov.in/bvwa-passport",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["OAS member states", "UN member states", "European Commission"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "The official RREE visa checker (rree.gob.sv/visas/) lists OEA (Organization of American States), Naciones Unidas (United Nations), and Comisión Europea (European Commission) as recognized passport-issuing entities alongside sovereign states, indicating holders of travel documents issued by these international organizations are subject to the visa-exemption framework. Specific conditions for each organization's travel documents were not enumerated on any static official page found.",
+      "source_url": "https://rree.gob.sv/visas/",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": true,
+    "program_name": "Adopting El Salvador – Freedom Passport (Pasaporte de la Libertad)",
+    "official_url": "https://world.adoptingelsalvador.gob.sv/",
+    "source_official": true,
+    "options": [
+      {
+        "type": "other",
+        "min_amount": 1000000,
+        "currency": "USD",
+        "notes": "Total investment of USD 1,000,000 payable in Bitcoin (BTC) or Tether (USDt). Payment is split: a non-refundable application fee of USD 999 in BTC or USDt to commence evaluation, then USD 999,001 upon approval. Additional administrative fee of USD 999 per family member for family applications. Annual quota of 1,000 investors per year. Investment directed toward El Salvador's economic development, cultural enrichment, and social programs. Grants Salvadoran citizenship including right to vote. Reported processing time ~6 weeks. Spouse and dependent children under 18 may be included in one application."
+      }
+    ],
+    "processing_time": "Approximately 6 weeks (as stated on official world.adoptingelsalvador.gob.sv)",
+    "dual_citizenship_allowed": null,
+    "residency_required": false,
+    "notes": "The program is branded 'Adopting El Salvador' and operated via the government domain world.adoptingelsalvador.gob.sv and adoptingelsalvador.gob.sv. The program is confirmed active as of mid-2026. Bitcoin lost mandatory legal-tender status in January 2025 but remains legal to use; the program now also accepts Tether (USDt) in addition to BTC. The Legislative Assembly separately approved reforms in May 2025 (57 votes) to Art. 152 of the Special Law on Migration and Foreigners, allowing foreigners who invest or donate in government-promoted programs to obtain definitive residence directly (skipping temporary residence), with a fee of USD 690. This reform covers residency rather than citizenship. Separately, 5,000 free passports for highly qualified scientists, engineers, doctors, artists, and philosophers were announced, but official details on that sub-program with specific eligibility criteria are not publicly documented."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Definitive Residence for Foreign Investors (Art. 152 Reform)",
+        "type": "investment",
+        "min_amount": null,
+        "currency": "USD",
+        "path_to_pr_years": 0,
+        "path_to_citizenship_years": null,
+        "official_url": "https://www.asamblea.gob.sv/node/13554",
+        "source_official": true,
+        "notes": "Approved May 2025 by the Legislative Assembly with 57 votes (previously reported as 56 — corrected to 57 per official source). Foreigners who invest or donate in programs promoted by the Government can obtain definitive (permanent) residence directly without first holding temporary residence. Fee: USD 690. Requirements include clean criminal record, identity document, and proof of investment/donation in a government program. Minimum investment amount not specified in official sources. Family group of the main applicant may be included."
+      },
+      {
+        "name": "Temporary Residence – Investor / Business Category",
+        "type": "investment",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://www.migracion.gob.sv/noticias/como-puedo-convertirme-en-residente-temporal-en-el-salvador/",
+        "source_official": true,
+        "notes": "El Salvador's immigration authority offers temporary residence for investors and business persons as one of several qualifying categories. Specific minimum investment amounts were not published on the official page reviewed. Applicants submit application, required documents, and pay applicable fees. A temporary residence card is issued and is renewable."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Special Entry Permit (Permiso Especial de Ingreso – PEI)",
+        "category": "online visa / entry permit",
+        "eligibility": "Foreign nationals who require a visa to enter El Salvador but cannot obtain one through normal consular channels (no Salvadoran embassy in country of residence, force majeure, or other unforeseen circumstances)",
+        "processing_time": "Not specified on official page; notification of approval/denial by email",
+        "official_url": "https://www.migracion.gob.sv/servicios/solicitud-y-pago-de-permiso-especial-de-ingreso-para-nacionales-que-no-portan-visa-consular-o-visa-consultada/",
+        "source_official": true,
+        "notes": "Applied online at https://elsalvadorpei.migracion.gob.sv/. Fee: USD 100. Applicant creates an account, completes the form, uploads required documents, and pays online. Approval, conditional approval, denial, or cancellation is communicated by email. Contact: +503 7070-0663 / atencion.usuarios@migracion.gob.sv. Service page published November 14, 2023."
+      }
+    ]
+  },
+  "agreements": [
+    "CA-4 Border Control Agreement (El Salvador, Guatemala, Honduras, Nicaragua) – free movement zone with shared 90-day entry period across the CA-4 region",
+    "Convenio de Creación de la Visa Única Centroamericana Para Libre Movilidad de Extranjeros (2005) – determines unified visa categories for CA-4 bloc"
+  ],
+  "official_domains": [
+    "migracion.gob.sv",
+    "rree.gob.sv",
+    "investinelsalvador.gob.sv",
+    "world.adoptingelsalvador.gob.sv",
+    "adoptingelsalvador.gob.sv",
+    "asamblea.gob.sv",
+    "transparencia.gob.sv"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTED: max_stay_days for Category A visa_free entry changed from 90 to 180. The US State Department (travel.state.gov) explicitly states the tourist card (tarjeta de turismo, USD 12) is 'valid for 90 days or 180 days depending on passport validity and/or purpose of travel.' The maximum is 180 days within El Salvador's territory. The 90-day limit applies specifically to the CA-4 regional shared quota for CA-4 nationals.",
+      "CORRECTED: CA-4 visa_free entry max_stay_days updated from null to 90 (the CA-4 shared 90-day regional quota is the operative limit for Guatemala, Honduras, and Nicaragua nationals).",
+      "CORRECTED: CBI program payment now confirmed as BTC or USDt (Tether) — not exclusively Bitcoin. The official world.adoptingelsalvador.gob.sv page explicitly states 'BTC or USDt' as payment options. Added split payment structure: USD 999 non-refundable application fee + USD 999,001 upon approval.",
+      "CORRECTED: Processing time note updated from '4–6 weeks' to '~6 weeks' consistent with official site language.",
+      "CORRECTED: Taiwan removed from the excluded_nationalities list in conditional_access entries. El Salvador severed diplomatic ties with Taiwan in 2018 and recognizes only the People's Republic of China. The official RREE visa checker dropdown does not list Taiwan; it lists 'República Popular China'. Taiwan's exclusion was incorrect framing — Taiwanese passport holders would be classified under whatever category applies to them, not as a separately listed excluded nationality distinct from China.",
+      "CONFIRMED: Three visa categories (A/B/C) structure remains accurate and confirmed via rree.gob.sv/visas/ (scraped via Firecrawl stealth proxy — page previously returning HTTP 403 to direct WebFetch).",
+      "CONFIRMED: PEI (Special Entry Permit) at USD 100 remains active; service page confirmed updated November 14, 2023.",
+      "CONFIRMED: CBI Freedom Passport program (USD 1,000,000 minimum, 1,000/year quota) confirmed active as of mid-2026 via world.adoptingelsalvador.gob.sv.",
+      "CONFIRMED: Art. 152 definitive residence reform (Legislative Assembly, May 2025, USD 690 fee) confirmed via asamblea.gob.sv.",
+      "NOTE: rree.gob.sv/visas-para-extranjeros/ table is paginated and only showed rows 1–13 (Afganistán through Azerbaiyán) in both Firecrawl markdown and raw HTML scrapes. The full table could not be retrieved as a single document. Cross-referencing with Wikipedia's Visa policy of El Salvador and elsalvador.com news article (citing official DGME source) for broader country categorization.",
+      "CORRECTED (India, 2026-06-14): India (ordinary passport) is Category B = Visa Consular (visa required, obtained from a Salvadoran consulate before travel). India does NOT appear in visa_free, visa_on_arrival, eta, or e_visa arrays. Aggregate claims of visa-free or visa-on-arrival for India are FALSE. Confirmed from elsalvador.com article (Nov 2025, citing DGME) listing India explicitly under 'Países categoría B – requieren visa consular', cross-verified against Wikipedia 'Visa policy of El Salvador' (India not in the 89-jurisdiction visa-exempt list). India IS eligible for the substitute-visa (conditional_access) route if holding a valid US, Canada, or Schengen visa — India is NOT in the substitute-visa exclusion list. Source: https://www.elsalvador.com/turismo/cultura-viva/paises-visas-para-entrar-a-el-salvador/1250791/2025/ (citing DGME); https://rree.gob.sv/visas/"
+    ],
+    "gaps": [
+      "Full enumeration of Category A (visa-exempt) countries not retrievable from a single official static document: the official list is a Google Drive-hosted file linked from migracion.gob.sv/servicios/listado-visa/ (published 2020-11-10) which requires direct download access.",
+      "Full enumeration of Category B (consular visa) and Category C (consulted visa) countries not independently verified from the official static DGME document. Non-official source (elsalvador.com, Nov 2025, citing DGME) reported ~41 Category C countries and ~65 Category B countries (India confirmed Category B). India's Category B status is now corroborated by both elsalvador.com/DGME and Wikipedia/RREE and is no longer an open gap.",
+      "The rree.gob.sv/visas-para-extranjeros/ table is rendered via JavaScript pagination and only the first 13 rows (A through Azerbaijan) were retrievable by automated scraping, preventing independent verification of the complete diplomatic/service passport waiver country list.",
+      "Minimum investment amount for the Definitive Residence (Art. 152) investor program not stated in any official source reviewed.",
+      "Dual citizenship rules for the Freedom Passport (CBI) not confirmed on the official adoptingelsalvador.gob.sv pages.",
+      "Digital nomad visa details (referenced in non-official sources at ~USD 2,825, 1-year renewable, income requirement ~USD 1,460/month) not confirmed from any official government domain. Not recorded here due to lack of official source.",
+      "The 5,000 free passports for scientists/artists sub-program under Adopting El Salvador lacks official documentation with specific eligibility criteria and application details.",
+      "rree.gob.sv/visas/ is a dynamic JavaScript form tool: the exact entry level output for each nationality+visa-type+credential combination could not be fully enumerated. The conditional_access entries for US/Canada/Schengen visa holders and legal residents abroad are confirmed as form inputs on the official tool, but the precise resulting entry level per nationality combination is not published in any static official document.",
+      "The specific countries whose legal residence permits qualify under the 'resides legally abroad' rule are not enumerated in any static official page found.",
+      "OAS/UN/European Commission travel document holder rules: the RREE tool lists these entities as passport issuers, but specific conditions and stay limits for their travel document holders are not in any retrievable static official page.",
+      "No OCI (Overseas Citizenship of India) or analogous special heritage/diaspora status rule found for El Salvador from any official source.",
+      "Taiwan: El Salvador does not recognize Taiwan diplomatically (recognition withdrawn 2018). Taiwanese passport holders are not listed as a separate category in any official source reviewed; their entry category under the ordinary visa framework was not verifiable from official sources."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "No official El Salvador government outbound visa-list page located. The RREE (rree.gob.sv/visas/) operates an inbound visa classification tool for foreigners entering El Salvador, not an outbound list for Salvadoran citizens. The DGME (migracion.gob.sv/servicios/listado-visa/) publishes 'Países que requieren visa para ingresar a El Salvador' — also inbound. All third-party reports on visa-free access for Salvadoran passport holders cite Henley & Partners, not any official El Salvador government outbound page. Rely on destination-side data."
+  },
+  "sources_checked": [
+    "https://www.migracion.gob.sv/servicios/listado-visa/",
+    "https://www.migracion.gob.sv/servicios/solicitud-y-pago-de-permiso-especial-de-ingreso-para-nacionales-que-no-portan-visa-consular-o-visa-consultada/",
+    "https://www.migracion.gob.sv/noticias/como-puedo-convertirme-en-residente-temporal-en-el-salvador/",
+    "https://www.migracion.gob.sv/guia-de-servicios/",
+    "https://www.migracion.gob.sv/servicios/legislacion-migratoria/",
+    "https://investinelsalvador.gob.sv/requirements-to-visit-el-salvador/",
+    "https://rree.gob.sv/visas/",
+    "https://rree.gob.sv/visas-para-extranjeros/",
+    "https://world.adoptingelsalvador.gob.sv/",
+    "https://adoptingelsalvador.gob.sv/",
+    "https://www.asamblea.gob.sv/node/13554",
+    "https://www.mea.gov.in/bvwa-passport",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/ElSalvador.html",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_El_Salvador",
+    "https://www.elsalvador.com/turismo/cultura-viva/paises-visas-para-entrar-a-el-salvador/1250791/2025/"
+  ]
+}

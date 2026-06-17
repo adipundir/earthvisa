@@ -1,0 +1,689 @@
+{
+  "iso2": "MK",
+  "iso3": "MKD",
+  "name": "North Macedonia",
+  "region": "Europe",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/proveri-dali-ti-e-potrebna-viza",
+    "source_official": true,
+    "asof": null,
+    "visa_free": [
+      {"name": "Albania", "iso3": "ALB", "notes": "ID card sufficient"},
+      {"name": "Austria", "iso3": "AUT", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Belgium", "iso3": "BEL", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Bosnia and Herzegovina", "iso3": "BIH", "notes": "ID card sufficient"},
+      {"name": "Bulgaria", "iso3": "BGR", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Croatia", "iso3": "HRV", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Cyprus", "iso3": "CYP", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Czech Republic", "iso3": "CZE", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Denmark", "iso3": "DNK", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Estonia", "iso3": "EST", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Finland", "iso3": "FIN", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "France", "iso3": "FRA", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Germany", "iso3": "DEU", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Greece", "iso3": "GRC", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Hungary", "iso3": "HUN", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Iceland", "iso3": "ISL", "notes": "Schengen signatory (non-EU); up to 90 days in any 180-day period"},
+      {"name": "Italy", "iso3": "ITA", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Kosovo", "iso3": "XKX", "notes": "ID card sufficient"},
+      {"name": "Latvia", "iso3": "LVA", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Liechtenstein", "iso3": "LIE", "notes": "Schengen signatory (non-EU); up to 90 days in any 180-day period"},
+      {"name": "Lithuania", "iso3": "LTU", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Luxembourg", "iso3": "LUX", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Malta", "iso3": "MLT", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Montenegro", "iso3": "MNE", "notes": "ID card sufficient"},
+      {"name": "Netherlands", "iso3": "NLD", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Norway", "iso3": "NOR", "notes": "Schengen signatory (non-EU); up to 90 days in any 180-day period"},
+      {"name": "Poland", "iso3": "POL", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Portugal", "iso3": "PRT", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Romania", "iso3": "ROU", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Serbia", "iso3": "SRB", "notes": "ID card sufficient"},
+      {"name": "Slovakia", "iso3": "SVK", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Slovenia", "iso3": "SVN", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Spain", "iso3": "ESP", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Sweden", "iso3": "SWE", "notes": "EU member state; up to 90 days in any 180-day period"},
+      {"name": "Switzerland", "iso3": "CHE", "notes": "Schengen signatory (non-EU); up to 90 days in any 180-day period"}
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "The North Macedonia MFA operates an interactive country-by-country outbound visa checker at https://mfa.gov.mk/en-GB/konzularni-uslugi/proveri-dali-ti-e-potrebna-viza (JavaScript-rendered; full country list requires live browser interaction). The FAQ page (https://mfa.gov.mk/en-GB/kontakt/cpp-cesto-postavuvani-prasanja) explicitly states: (1) Macedonian nationals enjoy visa-free entry and short-term stay of up to 90 days within a 180-day period in all EU member states except UK and Ireland, and in Iceland, Norway, and Switzerland; (2) Citizens may travel with a valid ID card to Albania, Kosovo, Serbia, Montenegro, and Bosnia and Herzegovina. UK and Republic of Ireland require a visa. The visa_free list above reflects only what the official MFA sources explicitly confirm — the interactive tool covers additional countries but its full output could not be statically extracted. No visa-on-arrival, e-visa, or ETA categories are mentioned on MFA official pages."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "EU Member States nationals",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "All nationals of EU Member States do not need a visa to enter North Macedonia. May enter with a valid national identity card. 90 days within any 180-day period.",
+        "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+        "source_official": true
+      },
+      {
+        "nationality": "Schengen Agreement signatory states nationals (non-EU)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Nationals of non-EU Schengen countries (Iceland, Liechtenstein, Norway, Switzerland) do not need a visa. May enter with national ID card. 90 days within any 180-day period.",
+        "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+        "source_official": true
+      },
+      {
+        "nationality": "Albania",
+        "iso3": "ALB",
+        "max_stay_days": 90,
+        "notes": "Visa-free. Also part of the Open Balkan Initiative with North Macedonia. 90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Antigua and Barbuda",
+        "iso3": "ATG",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Bahamas",
+        "iso3": "BHS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Barbados",
+        "iso3": "BRB",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Bosnia and Herzegovina",
+        "iso3": "BIH",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Brunei",
+        "iso3": "BRN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "El Salvador",
+        "iso3": "SLV",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Guatemala",
+        "iso3": "GTM",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Honduras",
+        "iso3": "HND",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Hong Kong (SAR)",
+        "iso3": "HKG",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. BN(O) and HKSAR passport holders.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Kosovo",
+        "iso3": "XKX",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Macao (SAR)",
+        "iso3": "MAC",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Mauritius",
+        "iso3": "MUS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Moldova",
+        "iso3": "MDA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Montenegro",
+        "iso3": "MNE",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Nicaragua",
+        "iso3": "NIC",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Paraguay",
+        "iso3": "PRY",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Ordinary passport holders are visa-free; a separate diplomatic/official passport waiver also exists per bilateral agreement.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Saint Kitts and Nevis",
+        "iso3": "KNA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "San Marino",
+        "iso3": "SMR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Serbia",
+        "iso3": "SRB",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Also part of the Open Balkan Initiative with North Macedonia.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Taiwan",
+        "iso3": "TWN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Turkey",
+        "iso3": "TUR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Note: Turkey is not on Schengen Annex II but North Macedonia grants visa-free access independently.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "United Arab Emirates",
+        "iso3": "ARE",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. UK nationals are also covered by the temporary 2026 credential-based provision (15 days for visa holders), but ordinary UK passport holders are unconditionally visa-free for 90 days.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "United States",
+        "iso3": "USA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Uruguay",
+        "iso3": "URY",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Vatican City",
+        "iso3": "VAT",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      },
+      {
+        "nationality": "Venezuela",
+        "iso3": "VEN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+        "source_official": false
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "https://mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza",
+      "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia"
+    ],
+    "notes": "The MFA official page (mfa.gov.mk) confirms EU and Schengen nationals are visa-free with national ID cards (90 days within 180-day period). A comprehensive country-by-country list is sourced from Wikipedia's 'Visa policy of North Macedonia' article (which in turn sources bilateral agreements). The official MFA interactive tool (dali-ti-e-potrebna-viza) requires JavaScript to enumerate all countries. No e-visa or ETA program exists. Schengen Annex II nationalities are largely visa-free, with 15 specific exclusions: Dominica, Grenada, Kiribati, Marshall Islands, Micronesia, Palau, Samoa, Saint Lucia, Saint Vincent and the Grenadines, Solomon Islands, Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, and Vanuatu — these nationals require a visa."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["GEO"],
+      "passport_types": ["ordinary_biometric"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Georgia nationals holding a biometric ordinary passport may enter North Macedonia visa-free for 90 days (single entry). Non-biometric ordinary passport holders require a visa. Diplomatic/official passport holders have a separate waiver.",
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+      "source_official": false
+    },
+    {
+      "basis": "special_status",
+      "eligible_nationalities": ["BLR"],
+      "passport_types": ["ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Belarusian nationals may enter North Macedonia without a visa only if entering as a tourist and holding a 'tourist voucher' or participating in travel organised by a licensed travel agency.",
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+      "source_official": false
+    },
+    {
+      "basis": "special_status",
+      "eligible_nationalities": ["CHN"],
+      "passport_types": ["ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Chinese nationals are visa-exempt only if the passport is endorsed 'for public affairs'. All other ordinary passport holders require a visa.",
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+      "source_official": false
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["BLR", "CHN", "IND", "IRN", "IDN", "MNG"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Nationals of Belarus, China, Georgia (all passports), India (diplomatic only), Iran, Indonesia, and Mongolia holding diplomatic, official, or service passports may enter North Macedonia visa-free under bilateral waiver agreements. India: diplomatic passport only (not service/official). Specific stay durations not confirmed from official North Macedonian government pages; bilateral agreement texts not directly scrapeable.",
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+      "source_official": false
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "EU or Schengen",
+        "type": "residence_permit",
+        "subtype": "temporary or permanent residence permit"
+      },
+      "level": "visa_free",
+      "max_stay_days": 15,
+      "conditions": "Third-country nationals holding a valid temporary or permanent residence permit issued by an EU Member State or Schengen Agreement signatory country may enter visa-free for no longer than 15 days upon every entry, with total stay not exceeding 90 days in any 180-day period.",
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "Type C (short-stay) multiple-entry"
+      },
+      "level": "visa_free",
+      "max_stay_days": 15,
+      "conditions": "Holders of a valid multiple-entry Schengen Type C visa, valid for at least 5 days beyond the intended stay, may enter North Macedonia visa-free for up to 15 days per entry; total stay not exceeding 90 days in any 180-day period.",
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "UK",
+        "type": "visa",
+        "subtype": "any valid multiple-entry visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": 15,
+      "conditions": "Temporary decision valid from January 1, 2026 to December 31, 2026. Holders of a valid multiple-entry British visa inserted in the passport may enter North Macedonia visa-free for up to 15 days provided the visa validity extends at least 5 days beyond the planned stay. Note: this is superseded for UK nationals themselves (who are visa-free for 90 days); this applies to third-country nationals holding a UK visa.",
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "any valid multiple-entry visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": 15,
+      "conditions": "Temporary decision valid from January 1, 2026 to December 31, 2026. Holders of a valid multiple-entry American (US) visa inserted in the passport may enter North Macedonia visa-free for up to 15 days provided the visa validity extends at least 5 days beyond the planned stay.",
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Canada",
+        "type": "visa",
+        "subtype": "any valid multiple-entry visa"
+      },
+      "level": "visa_free",
+      "max_stay_days": 15,
+      "conditions": "Temporary decision valid from January 1, 2026 to December 31, 2026. Holders of a valid multiple-entry Canadian visa inserted in the passport may enter North Macedonia visa-free for up to 15 days provided the visa validity extends at least 5 days beyond the planned stay.",
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": "any",
+      "passport_types": ["un_travel_document"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of UN travel documents do not require a visa to enter North Macedonia.",
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": true,
+    "program_name": "North Macedonia Citizenship by Investment Program",
+    "official_url": "https://mkcitizenship.gov.mk/",
+    "source_official": true,
+    "options": [
+      {
+        "type": "fund",
+        "min_amount": 200000,
+        "currency": "EUR",
+        "notes": "Investment in a private investment fund established under North Macedonia law for at least 2 years. The fund must have minimum EUR 5,000,000 initial capital, invest in support of the economy/innovation (not real estate), and have no more than 500 foreign investor-applicants."
+      },
+      {
+        "type": "business",
+        "min_amount": 400000,
+        "currency": "EUR",
+        "notes": "Direct investment in new business facilities (excluding hospitality/restaurants/shopping) that create at least 10 new job positions maintained for at least 1 year. Per adult applicant."
+      }
+    ],
+    "processing_time": "5–10 months (officially stated as ~5 months; industry sources estimate 8–10 months)",
+    "dual_citizenship_allowed": true,
+    "residency_required": false,
+    "notes": "Program was legislated in 2019 and has an annual quota of 1,000 applicants. Application fees: EUR 20,000 for main applicant, EUR 20,000 for spouse, EUR 10,000 per child under 18. As of 2026, Henley & Partners describes the program as 'under development — the government is currently in the process of setting up the program.' No passports have been confirmed as issued under this program since it was introduced. The official site mkcitizenship.gov.mk remains registered but was unreachable (ECONNREFUSED) during this research session. Program should be treated as legislatively active but operationally non-functional pending full government setup."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Temporary Residence Permit for Property Owners (EU/OECD nationals)",
+        "type": "real_estate",
+        "min_amount": 40000,
+        "currency": "EUR",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+        "source_official": true,
+        "notes": "Under the Law on Foreigners, EU/OECD citizens who acquire ownership of an apartment, residential building, or house in North Macedonia valued at a minimum of EUR 40,000 are eligible to apply for a long-stay (D) visa leading to temporary residence. Temporary residence is issued for up to 1 year and can be extended annually. Eligibility is restricted to EU/OECD nationals. Path to permanent residence and citizenship timelines not specified on official sources reviewed."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "Open Balkan Initiative (North Macedonia, Serbia, Albania — free movement of people, goods, services, capital)"
+  ],
+  "official_domains": [
+    "mfa.gov.mk",
+    "mkcitizenship.gov.mk",
+    "mzsv.gov.mk",
+    "investnorthmacedonia.gov.mk"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "ADDED: 47 specific visa-free nationality entries (Australia, Brazil, Canada, Japan, South Korea, UAE, UK, USA, and many others) that were entirely missing from the prior record. Previous record only listed 'EU Member States', 'Schengen signatories', and Albania.",
+      "CORRECTED: max_stay_days for EU and Schengen entries changed from null to 90 (within any 180-day period), as confirmed by MFA official text.",
+      "CORRECTED: Schengen non-EU entry split from the blanket 'Schengen Agreement signatory states nationals' to clarify it refers to Iceland, Liechtenstein, Norway, Switzerland — avoiding confusion with Schengen Type C visa holders.",
+      "ADDED: Conditional entry for Georgia — biometric ordinary passports get 90-day visa-free (single entry); previously Georgia was not listed at all.",
+      "ADDED: Conditional entry for Belarus — tourist voucher or organized travel group required for visa exemption; previously missing.",
+      "ADDED: Conditional entry for China — passport must be endorsed 'for public affairs'; previously missing.",
+      "ADDED: Diplomatic/official passport waivers for Belarus, China, India (diplomatic only), Iran, Indonesia, Mongolia as a single conditional_access entry (basis=passport_type).",
+      "CONSOLIDATED: The four separate EU/Schengen residence permit conditional_access entries (temporary + permanent, EU + Schengen — four entries) have been merged into one entry covering 'EU or Schengen, temporary or permanent residence permit'.",
+      "CORRECTED: CBI processing time updated from '4-6 months' to '5-10 months' to reflect both official claim (~5 months) and industry estimates (8-10 months).",
+      "NOTED: Schengen Annex II exclusions documented in the visa_policy notes — 15 nationalities (Dominica, Grenada, Kiribati, Marshall Islands, Micronesia, Palau, Samoa, Saint Lucia, Saint Vincent and the Grenadines, Solomon Islands, Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, Vanuatu) require visas despite being on Schengen Annex II.",
+      "CLARIFIED: Peru appears in both the 90-day visa-free list and in the diplomatic/service passport waiver list — ordinary passport holders are visa-free for 90 days; a separate bilateral agreement also covers diplomatic passports."
+    ],
+    "gaps": [
+      "The MFA interactive visa tool (mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza) requires JavaScript interaction to enumerate all countries; the comprehensive country list in visa_free section is sourced from Wikipedia, not directly from official North Macedonian government text. Source_official is therefore false for those individual entries.",
+      "Official bilateral agreement texts on mfa.gov.mk/en-GB/dogovori-rezolucii-i-merki/megjunarodni-dogovori require JavaScript/click interaction and could not be directly fetched — diplomatic/service passport waiver details (countries, precise stay limits) are therefore sourced from Wikipedia only.",
+      "The official CBI website mkcitizenship.gov.mk was unreachable (ECONNREFUSED) during research; program details based on search excerpts and Henley & Partners page referencing the official program.",
+      "Invest North Macedonia (investnorthmacedonia.gov.mk) returned HTTP 403 Forbidden, preventing direct verification of investor permit details.",
+      "Stay duration for diplomatic/service passport holders (conditional_access passport_type entries) not confirmed from official North Macedonian government pages.",
+      "Path to permanent residence and citizenship timelines for RBI programs not specified on official sources found.",
+      "No e-visa or ETA system found on official sources.",
+      "Georgia's conditional visa-free status (biometric passport only) sourced from Wikipedia; could not be verified from a directly fetchable official North Macedonian government page.",
+      "No digital nomad or startup visa program found on official MFA sources.",
+      "Open Balkan is an initiative; practical full implementation status is unclear from official sources.",
+      "OCI (Overseas Citizen of India) cardholder entry rules: no mention found on any official North Macedonian government source."
+    ]
+  },
+  "sources_checked": [
+    "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+    "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+    "https://mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza",
+    "https://mfa.gov.mk/en-GB/konzularni-uslugi/proveri-dali-ti-e-potrebna-viza",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
+    "https://mkcitizenship.gov.mk/",
+    "https://www.henleyglobal.com/citizenship-investment/north-macedonia",
+    "https://investnorthmacedonia.gov.mk/visa-requirements-and-procedure/"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "iso2": "HT",
+  "iso3": "HTI",
+  "name": "Haiti",
+  "region": "Americas",
+  "outbound_official": {
+    "found": false,
+    "note": "no official Haiti government outbound visa-list page located; rely on destination-side data"
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "India",
+        "iso3": "IND",
+        "max_stay_days": 90,
+        "notes": "India is not in Haiti's 9-country visa-required list. Indian ordinary passport holders enter visa-free under Haiti's default-visa-free policy for up to 90 days. A US$10 tourist fee is payable on arrival. Passport must be valid at least 6 months from entry date.",
+        "source_url": "https://www.haiti.org/tourist-visa/",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://www.haiti.org/tourist-visa/",
+      "https://immigration.mict.gouv.ht/"
+    ],
+    "notes": "Haiti operates a default-visa-free policy: all nationalities except a short list may enter without a visa for up to 90 days. The 9 excluded nationalities (which require a prior visa) are listed in visa_required. A US$10 tourist fee is payable on arrival at the airport. Passports must be valid for at least 6 months from entry date. No e-visa or ETA system was found on any official Haiti government source. The DIE (Direction de l'Immigration et de l'Émigration) operates the iKat digital arrival form for all persons entering Haiti. Stays beyond 90 days require a residence permit from the DIE."
+  },
+  "visa_required": {
+    "default_visa_free": true,
+    "nationalities_iso3": [
+      "COL",
+      "CUB",
+      "DOM",
+      "IRN",
+      "LBY",
+      "PAN",
+      "SYR",
+      "VNM",
+      "YEM"
+    ],
+    "source_url": "https://www.haiti.org/tourist-visa/",
+    "source_official": true,
+    "notes": "Citizens of these 9 countries must apply for a visa at least one month before departure. Application is submitted to the Embassy of Haiti in Washington DC (or the nearest Haitian consulate). Required documents: completed visa application form, two recent color passport photos, letter detailing travel purpose and duration (including hotel name, address, phone), valid passport (6+ months), flight reservation or round-trip ticket copy, letter from current employer. Fee paid by money order, certified check, or cashier's check payable to 'Embassy of Haiti in Washington'."
+  },
+  "conditional_access": [],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No official citizenship-by-investment program found on any Haiti government domain (gouv.ht, haiti.org). Searches of mae.gouv.ht, mci.gouv.ht, and mef.gouv.ht returned no such program. Haiti historically had early economic citizenship arrangements but no active official CBI program is currently documented on official sources."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "CARICOM (member since 2002; has requested derogation from free movement provisions)"
+  ],
+  "official_domains": [
+    "haiti.org",
+    "immigration.mict.gouv.ht",
+    "mae.gouv.ht",
+    "mci.gouv.ht",
+    "servicespublics.gouv.ht",
+    "cgmiami.gouv.ht"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "RESTRUCTURED: Moved from visa_policy.visa_free (with embedded exclusion list in notes) to the dedicated visa_required block with default_visa_free:true and nationalities_iso3 array — this matches the schema classification for 'visa-free for all EXCEPT a list' policies.",
+      "CONFIRMED: The 9 nationalities requiring a visa (COL, CUB, DOM, IRN, LBY, PAN, SYR, VNM, YEM) remain unchanged and are sourced exclusively from the official Embassy of Haiti in Washington (haiti.org/tourist-visa/). Re-fetch on 2026-06-14 confirms no changes to this list.",
+      "CONFIRMED: 90-day maximum stay and US$10 on-arrival fee remain accurate per haiti.org.",
+      "NOTED: IATA data (referenced in Wikipedia's Visa policy of Haiti article) includes Kosovo (XKX) as requiring a visa in addition to the 9 listed on haiti.org. Kosovo is NOT included here because it does not appear on the official Embassy of Haiti source (haiti.org/tourist-visa/). This discrepancy is recorded in gaps.",
+      "NO CHANGE: conditional_access remains empty. Re-verification on 2026-06-14 confirmed that no official Haiti government source publishes any credential-based entry rule (e.g. entry with valid US/Schengen/UK visa). This claim appears only on non-official aggregators and has not been recorded.",
+      "NO CHANGE: No diplomatic/service/official passport waiver list was found. haiti.org/diplomatic-and-official-visas/ describes only the application process, not exemptions.",
+      "NO CHANGE: CBI, RBI, fast_track remain empty — no programs found on official sources.",
+      "ADDED 2026-06-14: Explicit India (IND) entry added to visa_policy.visa_free (max_stay_days:90, source_official:true). Verified via official Embassy of Haiti in Washington (haiti.org/tourist-visa/): India is not in the 9-country visa-required list (COL, CUB, DOM, IRN, LBY, PAN, SYR, VNM, YEM), confirming ordinary Indian passport holders enter Haiti visa-free for up to 90 days under the default-visa-free policy. Airline aggregator claim of visa-free is CORRECT for India; no visa-on-arrival, ETA, or e-visa system exists per any official Haiti government source."
+    ],
+    "gaps": [
+      "Official Haiti government websites (immigration.mict.gouv.ht, mae.gouv.ht) do not publish a detailed visa policy page in English or a country-by-country visa exemption list — visa policy details sourced from the official Embassy of Haiti in Washington (haiti.org).",
+      "The 9 countries requiring visas are listed on haiti.org but no official Haitian government regulation number or decree is cited on that page.",
+      "Kosovo (XKX): IATA travel data (cited in Wikipedia's Visa policy of Haiti article) lists Kosovo as also requiring a visa for Haiti, but this is not confirmed by the official haiti.org source. Until confirmed on an official Haiti government domain, Kosovo has not been added to visa_required.nationalities_iso3.",
+      "Credential-based conditional access: Multiple non-official aggregators (visaverge.com, visahq.com) claim that holders of valid US, Schengen, or UK visas/residence permits may enter Haiti visa-free for 90 days regardless of nationality. No official Haiti government source confirms this rule; it has not been recorded in conditional_access.",
+      "Diplomatic/official/service passport waiver agreements: No bilateral visa-suppression or visa-waiver agreements for diplomatic/official/service passports were found on any Haitian government domain. mae.gouv.ht/accords-bilateraux/ returns 404. haiti.org/diplomatic-and-official-visas/ describes only the application process for obtaining such visas, not exemptions.",
+      "No official information found on residency-by-investment or golden visa programs from any Haiti government domain.",
+      "No official digital nomad, startup visa, or fast-track skilled worker program found on official sources.",
+      "Haiti's CARICOM free movement status: Haiti is a CARICOM member but has requested a derogation from the free movement agreement; the exact current status of this derogation was not confirmed on an official Haiti government source.",
+      "Maximum stay of 90 days confirmed only via haiti.org (Embassy of Haiti Washington); not independently verified against a primary Haiti immigration regulation text.",
+      "OCI / diaspora status: Some non-official sources mention entry privileges for persons of Haitian origin with proof of Haitian heritage, but no official Haiti government source details this as a formal program.",
+      "OUTBOUND: No official Haiti government page (mae.gouv.ht, haiti.org, immigration.mict.gouv.ht, cgmiami.gouv.ht, haitianembassy.uk) was found listing countries where Haitian ordinary passport holders can travel without a prior consular visa. The mae.gouv.ht covers only document legalization and diplomatic representation; no outbound travel advisory or visa-free country list for Haitian passport holders exists on any verified official Haitian government domain."
+    ]
+  },
+  "sources_checked": [
+    "https://www.haiti.org/tourist-visa/",
+    "https://www.haiti.org/diplomatic-and-official-visas/",
+    "https://immigration.mict.gouv.ht/",
+    "https://immigration.mict.gouv.ht/informations-utiles/",
+    "https://mae.gouv.ht/",
+    "https://mae.gouv.ht/accords-bilateraux/",
+    "https://mae.gouv.ht/services-aux-haitiens/",
+    "https://cgmiami.gouv.ht/en/",
+    "https://haitianembassy.uk/",
+    "https://www.mci.gouv.ht/",
+    "https://servicespublics.gouv.ht/site/rsservice/obtention_dun_permis_de_sejour_en_haiti_",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Haiti"
+  ]
+}

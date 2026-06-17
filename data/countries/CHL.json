@@ -1,0 +1,510 @@
+{
+  "iso2": "CL",
+  "iso3": "CHL",
+  "name": "Chile",
+  "region": "Americas",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "All nationalities NOT listed in Decreto Supremo N°359 (2024)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Under Article 27 of Ley N°21.325 de Migración y Extranjería, nationals of countries NOT enumerated in DS 359 enter Chile visa-free as holders of 'Permiso de Permanencia Transitoria' for up to 90 days (extendable once for 90 days). The decree published 17 Sep 2025 lists 104 nationalities that DO require prior authorization. All others are implicitly visa-free. Exceptions exist for holders of agreements/treaties per Article 2 of DS 359. Visitors must demonstrate a minimum of USD 46/day of funds for the duration of their stay (Resolución Exenta Nº 3.464 de 2023).",
+        "source_url": "https://www.diariooficial.interior.gob.cl/publicaciones/2025/09/17/44253/01/2702355.pdf",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://www.diariooficial.interior.gob.cl/publicaciones/2025/09/17/44253/01/2702355.pdf",
+      "https://www.consulado.gob.cl/autorizacion-previa-o-visa",
+      "https://serviciomigraciones.cl/en/permanencia-transitoria-permit/",
+      "https://www.chileatiende.gob.cl/fichas/104218-permanencia-transitoria"
+    ],
+    "notes": "Chile's visa policy is governed by Ley N°21.325 de Migración y Extranjería (Art. 27). The default is visa-free entry (Permiso de Permanencia Transitoria) for up to 90 days, extendable once for 90 more days. Decreto Supremo N°359 (signed 8 Nov 2024, published 17 Sep 2025) lists 104 nationalities that require prior Chilean consulate authorization or visa to obtain this permit. Nationals on the DS-359 list who hold valid agreements/treaties with Chile may be exempted per Article 2 of that decree. Australia was explicitly removed from the visa-required list in DS 359 due to international reciprocity. Visitors must demonstrate minimum funds of USD 46/day (Resolución Exenta Nº 3.464 de 2023). The decree structure means all nationalities NOT on the 104-country list are effectively visa-free."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": [
+        "IND"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "any valid visa (including Green Card/permanent residence), except type C (transit)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Indian citizens holding a valid US visa of any type (including Green Card / permanent residence) — except type C (transit) — with at least 6 months remaining validity at time of arrival in Chile are exempt from obtaining a Chilean visa. Entry as tourist, no paid employment. Verbatim: 'Los/as ciudadanos/as indios/as, titulares de un visado estadounidense de cualquier tipo (incluyendo Green Card) -exceptuando el tipo C (tránsito)- con al menos seis meses de validez en el momento de la llegada a Chile, estarán exentos de obtener visa'.",
+      "source_url": "https://www.chile.gob.cl/nueva-delhi/visas/visas",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": [
+        "DOM"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "any valid visa except type C (transit)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Dominican nationals holding a valid US visa of any type — except type C (transit) — with at least 6 months remaining validity at time of travel may enter Chile as a tourist without a Chilean visa. Verbatim: 'Los nacionales dominicanos que tengan visa de los Estados Unidos de América, de cualquier tipo a excepción del visado tipo C (de tránsito), con una vigencia restante de al menos 6 meses al momento de viaje, no necesitan visa para ingresar a Chile en calidad de Turista.'",
+      "source_url": "https://www.chile.gob.cl/santo-domingo/informacion-sobre-visas",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": [
+        "CHN"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "any valid visa (including Green Card), except type C (transit)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Chinese nationals holding any valid US visa type (including Green Card/permanent residence) — except type C — with at least 6 months remaining validity may enter Chile visa-free as a tourist for up to 90 days. No paid employment permitted. Source: Sección Consular de Chile en Beijing (chile.gob.cl/beijing).",
+      "source_url": "https://www.chile.gob.cl/beijing/noticias/visa-de-estados-unidos-o-canada",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": [
+        "CHN"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "Canada",
+        "type": "visa",
+        "subtype": "any valid visa (including permanent residence), except type C (transit)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Chinese nationals holding any valid Canadian visa type (including permanent residence) — except type C — with at least 6 months remaining validity may enter Chile visa-free as a tourist for up to 90 days. No paid employment permitted. Source: Sección Consular de Chile en Beijing (chile.gob.cl/beijing).",
+      "source_url": "https://www.chile.gob.cl/beijing/noticias/visa-de-estados-unidos-o-canada",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "diplomatic",
+        "official",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Chile has approximately 73 bilateral visa exemption agreements for holders of diplomatic, official, and/or service passports. Under these agreements, nationals of the partner country holding the specified passport type may enter Chile visa-free for up to 90 days (tourism, no paid employment). Officials posted to a diplomatic mission or consular office may remain for the duration of their assignment. Confirmed individual agreements include: Switzerland (diplomatic/official/service passports, signed 19 Jan 2024, ratified by Chilean Senate 7 Mar 2025); Oman (diplomatic/special/service/official passports, signed 22 Mar 2022); Morocco (diplomatic/official/special/service passports, signed 20 Sep 2016); South Africa (diplomatic/official passports, signed 1 Sep 2016); Azerbaijan (diplomatic/service/official passports, signed 13 Sep 2018); Bolivia (diplomatic/official passports, signed 25 Apr 2025, in force Mar 2026). Full authoritative list in MINREL VIDO Manual (May 2025 edition) — image-based PDF, not machine-readable.",
+      "source_url": "https://www.minrel.gob.cl/minrel/site/docs/20250624/20250624181127/manual_vido_ultima_version_19_mayo_2025.pdf",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "Chile does not offer a citizenship-by-investment program. Citizenship is obtained only through naturalization after accumulating 5 years of legal residence (combining temporary and permanent residency periods). No expedited citizenship pathway for investors exists under current law."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Residencia Temporal - Inversores y Personal Relacionado (Investor Temporary Residency)",
+        "type": "investor",
+        "min_amount": 500000,
+        "currency": "USD",
+        "path_to_pr_years": 2,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/investors/",
+        "source_official": true,
+        "notes": "Requires investment of USD 500,000 or equivalent in productive goods or services in the planning or execution phase (residential real estate for personal use does not qualify). Alternatively available to legal representatives, directors and senior management of foreign companies, or specialized technical/management personnel of Chilean companies where a qualifying foreign investor controls at least 10% voting rights. Requires a sponsorship letter from INVESTCHILE (Chile Foreign Investment Agency) per Interior Ministry Supreme Decree No. 177 of 2022 (Arts. 62-64). Must apply from outside Chile via SERMIG digital portal. Issued for maximum 2 years (renewable with tax folder and investment proof). After 2 years temporal residency, holders may qualify for Residencia Definitiva (permanent residency). After 5 total years of legal residence, eligible for citizenship by naturalization. USD 500,000 threshold confirmed by InvestChile (blog.investchile.gob.cl) and SERMIG."
+      },
+      {
+        "name": "Residencia Temporal - Reciprocidad Internacional MERCOSUR",
+        "type": "treaty",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 2,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/international-reciprocity/",
+        "source_official": true,
+        "notes": "Available to nationals of Argentina, Bolivia, Brazil, Paraguay, and Uruguay under the Mercosur Residence Agreement (signed 6 Dec 2002, in force 28 Jul 2009). Bolivia-Chile bilateral agreement eliminates application fees for Bolivian nationals. Valid for up to 2 years. Holders may engage in lawful remunerated activities. Colombia, Ecuador, and Peru ratified the Mercosur Residence Agreement as of January 2024 and may also be covered."
+      },
+      {
+        "name": "Residencia Temporal - Rentistas y Pensionados (Retired Persons and Income Earners)",
+        "type": "passive_income",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 2,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/",
+        "source_official": true,
+        "notes": "Available to foreign nationals who can demonstrate sufficient regular income (rental income, dividends, salaries, pensions). Specific minimum income thresholds are not published verbatim on the official SERMIG page; amounts cited by third parties (~USD 1,500-2,000/month) could not be verified on the official site. Issued for maximum 2 years renewable."
+      },
+      {
+        "name": "Residencia Definitiva (Permanent Residency)",
+        "type": "permanent_residency",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://serviciomigraciones.cl/en/residencia-definitiva-permit/",
+        "source_official": true,
+        "notes": "Available after 24 months of Residencia Temporal (standard), or 12 months if the applicant has family ties with Chilean nationals/permanent residents, prior official missions in Chile, stable income/pensions, active business investments, or qualifies under international agreements. Permit is valid for life; ID card renewed every 5 years. Absence from Chile for more than 2 continuous years voids the permit."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Working Holiday Agreement - Australia",
+        "category": "working_holiday",
+        "eligibility": "Australian nationals aged up to 31 years",
+        "processing_time": null,
+        "official_url": "https://www.chile.gob.cl/chile/tramites/para-extranjeros/obtencion-visas/obtencion-visas",
+        "source_official": true,
+        "notes": "Bilateral Working Holiday Agreement between Chile and Australia. Allows young Australian nationals to live and work in Chile temporarily. Age limit up to 31 years. Australia was also removed from the DS 359 visa-required list (effective Sep 2025) due to international reciprocity, meaning Australians now also enter visa-free as tourists for up to 90 days."
+      },
+      {
+        "name": "Working Holiday Agreement - New Zealand",
+        "category": "working_holiday",
+        "eligibility": "New Zealand nationals aged up to 30 years",
+        "processing_time": null,
+        "official_url": "https://www.chile.gob.cl/chile/tramites/para-extranjeros/obtencion-visas/obtencion-visas",
+        "source_official": true,
+        "notes": "Bilateral Working Holiday Agreement between Chile and New Zealand. Allows young New Zealand nationals to live and work in Chile temporarily. Age limit up to 30 years."
+      }
+    ]
+  },
+  "agreements": [
+    "Mercosur Residence Agreement (associate member - Argentina, Bolivia, Brazil, Paraguay, Uruguay; and Colombia, Ecuador, Peru from Jan 2024)"
+  ],
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://www.consulado.gob.cl/chilenas-os-que-viajan-fuera-de-chile",
+    "source_official": true,
+    "asof": null,
+    "notes": "Chile's official outbound visa information is published by the Ministerio de Relaciones Exteriores through its consular portal (consulado.gob.cl). There is no single consolidated list page; the hub page at /chilenas-os-que-viajan-fuera-de-chile highlights recent electronic-authorization changes, and per-country detail pages at /quiero-viajar/info-para-viajar-fuera-de-chile/visas/[country-slug] each state '¿Requiere Visa de Turismo? SI/NO'. Countries confirmed visa-free (NO) from individual pages verified in June 2026: Argentina, Colombia, Costa Rica, Japan, United Kingdom (no prior consular visa but UK ETA required since 2024), Netherlands/Spain/Italy/Greece/Iceland (Schengen — no prior visa, 90 days per 180). Countries confirmed visa-required (SI): USA (ESTA Visa Waiver available), Australia (eVisitor/ETA available). Electronic authorizations highlighted on hub page: UK (ETA), Canada (eTA, entry itself is NO-visa), New Zealand (NZeTA, entry itself appears conditional), South Korea (K-ETA), USA (ESTA under Visa Waiver Program), Israel (ETA-IL effective Jan 2025). e-Visa required: Ethiopia, Indonesia (digital VOA), Cuba (electronic tourist visa), Mauritania (electronic visa). The full alphabetical country index is available only via the per-country dropdown selector on the site (approx. 195 destinations covered).",
+    "visa_free": [
+      {"name": "Argentina", "iso3": "ARG"},
+      {"name": "Colombia", "iso3": "COL"},
+      {"name": "Costa Rica", "iso3": "CRI"},
+      {"name": "Japan", "iso3": "JPN"},
+      {"name": "Netherlands", "iso3": "NLD"},
+      {"name": "Spain", "iso3": "ESP"},
+      {"name": "Italy", "iso3": "ITA"},
+      {"name": "Greece", "iso3": "GRC"},
+      {"name": "Iceland", "iso3": "ISL"},
+      {"name": "Guatemala", "iso3": "GTM"},
+      {"name": "San Vicente y las Granadinas", "iso3": "VCT"},
+      {"name": "Santa Lucia", "iso3": "LCA"},
+      {"name": "Corea del Norte (DPRK)", "iso3": "PRK"}
+    ],
+    "visa_on_arrival": [
+      {"name": "Indonesia", "iso3": "IDN", "note": "Digital visa on arrival via All Indonesia system (effective Oct 2025)"},
+      {"name": "Tanzania (Zanzibar)", "iso3": "TZA", "note": "Visa on arrival available; travel insurance mandatory for stays up to 91 days"}
+    ],
+    "e_visa": [
+      {"name": "Ethiopia", "iso3": "ETH", "note": "e-Visa required"},
+      {"name": "Cuba", "iso3": "CUB", "note": "Electronic tourist visa required (effective June 2025)"},
+      {"name": "Mauritania", "iso3": "MRT", "note": "Electronic visa via official agency"},
+      {"name": "Kenya", "iso3": "KEN", "note": "e-Visa (evisa.go.ke), single-entry USD 51 / 90 days"},
+      {"name": "Uganda", "iso3": "UGA", "note": "Online visa application required"},
+      {"name": "Rwanda", "iso3": "RWA", "note": "Online visa application available"},
+      {"name": "Australia", "iso3": "AUS", "note": "Visa required (SI); eVisitor / ETA available online"}
+    ],
+    "eta": [
+      {"name": "United Kingdom", "iso3": "GBR", "note": "No prior consular visa (NO) but UK Electronic Travel Authorisation (ETA) required for stays under 90 days (effective 2024)"},
+      {"name": "Canada", "iso3": "CAN", "note": "No prior consular visa (NO*) but eTA (Electronic Travel Authorization) required"},
+      {"name": "New Zealand", "iso3": "NZL", "note": "NZeTA electronic permit required"},
+      {"name": "South Korea", "iso3": "KOR", "note": "K-ETA authorization required"},
+      {"name": "United States", "iso3": "USA", "note": "Visa required (SI) but ESTA authorization available under US Visa Waiver Program (effective March 2014; Chile is the only Latin American country in VWP); stays up to 90 days"},
+      {"name": "Israel", "iso3": "ISR", "note": "ETA-IL required (effective January 2025)"}
+    ]
+  },
+  "official_domains": [
+    "diariooficial.interior.gob.cl",
+    "serviciomigraciones.cl",
+    "consulado.gob.cl",
+    "minrel.gob.cl",
+    "chile.gob.cl",
+    "tramites.extranjeria.gob.cl",
+    "investchile.gob.cl",
+    "chileatiende.gob.cl"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "Removed non-schema field 'visa_policy.requires_prior_authorization': the 104-country list was duplicated inside visa_policy under a non-canonical key. These nationalities are correctly and solely captured in visa_required.nationalities_iso3.",
+      "Added USD 46/day minimum funds requirement to visa_free notes and policy notes (confirmed from ChileAtiende Resolución Exenta Nº 3.464 de 2023).",
+      "Updated cuadro_de_visas source URL: old link returned 404; new PDF found at /consulados/site/docs/20190220/20190220161313/cuadro_de_visas_corregido060326.pdf (document metadata shows March 6, 2026 revision date, binary-encoded so full content not extractable).",
+      "DS 359 (published 17 Sep 2025) confirmed as the current operative decree for 104-country visa-required list; no superseding 2026 decree found.",
+      "Indian US-visa exemption re-verified against chile.gob.cl/nueva-delhi — conditions unchanged.",
+      "Dominican Republic US-visa exemption re-verified against chile.gob.cl/santo-domingo — conditions unchanged.",
+      "Chinese US/Canada visa exemption re-verified against chile.gob.cl/beijing — conditions unchanged.",
+      "Investor residency USD 500,000 threshold re-confirmed by InvestChile blog and SERMIG investor page; regulatory basis clarified as Interior Ministry Supreme Decree No. 177 of 2022 (Arts. 62-64).",
+      "Added chileatiende.gob.cl to official_domains list.",
+      "Added investchile.gob.cl to official_domains list.",
+      "All prior source_urls for conditional_access entries re-verified as live and accurate as of June 2026."
+    ],
+    "gaps": [
+      "The visa-free list is presented as a negation of DS 359's 104-country list: individual visa-free nationality entries with specific stay-day confirmations per country are not enumerated on a single official page. The 90-day default is from the law and consulado.gob.cl.",
+      "Specific processing times for investor residency and working holiday visas not found on official SERMIG pages.",
+      "Exact minimum income threshold for Rentista/Pensionado category not confirmed verbatim from official SERMIG source (only third-party sources cite USD 1,500-2,000/month).",
+      "No official digital nomad visa exists; Chile has not launched a dedicated digital nomad visa program as of the research date.",
+      "Cuadro de Visas y Aranceles PDF (updated March 6, 2026) is binary-encoded and full country table could not be extracted; it supersedes the previous 2024 version.",
+      "Path from Mercosur residency to Residencia Definitiva is not explicitly stated on the official SERMIG subcategory page; the 2-year general rule is applied by inference from the broader Residencia Definitiva page.",
+      "Dual citizenship status for naturalized Chileans not confirmed from official source; omitted from CBI section accordingly.",
+      "Conditional US-visa exemption may apply to additional DS-359 nationalities beyond IND, DOM, CHN (e.g. Bangladesh, Nepal, Sri Lanka, Philippines) — this could not be confirmed from official consulate pages for each country; only IND, DOM, CHN were verified at official chile.gob.cl consulate sub-sites.",
+      "The full list of ~73 countries with diplomatic/official/service passport waivers is published only in the MINREL VIDO Manual (image-based PDF, May 2025 edition) which could not be machine-read. Individual agreements confirmed from official sources: Switzerland, Oman, Morocco, South Africa, Azerbaijan, Bolivia.",
+      "No OCI (Overseas Citizen of India) cardholder exemption found for Chile on any official source; OCI is an India-issued travel document for entry to India only and does not appear to confer Chile entry benefits.",
+      "Schengen visa holder exemption for Chile not found on any official source; aggregator sites sometimes cite this but it could not be verified from official Chilean government pages."
+    ]
+  },
+  "sources_checked": [
+    {
+      "url": "https://www.diariooficial.interior.gob.cl/publicaciones/2025/09/17/44253/01/2702355.pdf",
+      "description": "Decreto Supremo N°359 (signed 8 Nov 2024, published 17 Sep 2025) - Official list of 104 nationalities requiring prior authorization/visa to enter Chile as Permanencia Transitoria holders. Diario Oficial de la República de Chile.",
+      "official": true
+    },
+    {
+      "url": "https://serviciomigraciones.cl/en/permanencia-transitoria-permit/",
+      "description": "SERMIG - Permanencia Transitoria permit overview, maximum 90-day stay, extension rules",
+      "official": true
+    },
+    {
+      "url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/investors/",
+      "description": "SERMIG - Investors and related personnel temporary residency permit (official Servicio Nacional de Migraciones); USD 500,000 threshold confirmed",
+      "official": true
+    },
+    {
+      "url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/international-reciprocity/",
+      "description": "SERMIG - Mercosur international reciprocity residency subcategory",
+      "official": true
+    },
+    {
+      "url": "https://serviciomigraciones.cl/en/residencia-definitiva-permit/",
+      "description": "SERMIG - Residencia Definitiva (permanent residency) official requirements",
+      "official": true
+    },
+    {
+      "url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/",
+      "description": "SERMIG - Full list of Residencia Temporal subcategories",
+      "official": true
+    },
+    {
+      "url": "https://www.consulado.gob.cl/autorizacion-previa-o-visa",
+      "description": "Consulado.gob.cl - Prior authorization or visa requirements for entering Chile",
+      "official": true
+    },
+    {
+      "url": "https://www.consulado.gob.cl/cuadro-de-visas-y-aranceles-de-chile",
+      "description": "Consulado.gob.cl - Visa and tariff table landing page (links to PDF updated March 6, 2026)",
+      "official": true
+    },
+    {
+      "url": "https://www.consulado.gob.cl/consulados/site/docs/20190220/20190220161313/cuadro_de_visas_corregido060326.pdf",
+      "description": "Consulado.gob.cl - Cuadro de Visas y Aranceles PDF (March 6, 2026 revision); binary-encoded, content not fully extractable",
+      "official": true
+    },
+    {
+      "url": "https://www.chileatiende.gob.cl/fichas/104218-permanencia-transitoria",
+      "description": "ChileAtiende - Permanencia Transitoria ficha; confirms 90-day stay, USD 46/day minimum funds (Resolución Exenta Nº 3.464 de 2023)",
+      "official": true
+    },
+    {
+      "url": "https://www.chile.gob.cl/chile/tramites/para-extranjeros/obtencion-visas/obtencion-visas",
+      "description": "Chile.gob.cl - Visa types for foreigners including Working Holiday agreements",
+      "official": true
+    },
+    {
+      "url": "https://www.chile.gob.cl/nueva-delhi/visas/visas",
+      "description": "Embajada de Chile en Nueva Delhi - Visa requirements for Indian nationals, including US visa/Green Card exemption rule (official chile.gob.cl sub-site); re-verified June 2026",
+      "official": true
+    },
+    {
+      "url": "https://www.chile.gob.cl/santo-domingo/informacion-sobre-visas",
+      "description": "Consulado de Chile en Santo Domingo - Visa information for Dominican Republic nationals, including US visa exemption rule (official chile.gob.cl sub-site); re-verified June 2026",
+      "official": true
+    },
+    {
+      "url": "https://www.chile.gob.cl/beijing/noticias/visa-de-estados-unidos-o-canada",
+      "description": "Sección Consular de Chile en Beijing - US or Canadian visa/Green Card exemption for Chinese nationals entering Chile (official chile.gob.cl sub-site); re-verified June 2026",
+      "official": true
+    },
+    {
+      "url": "https://blog.investchile.gob.cl/visa-to-invest-in-chile",
+      "description": "InvestChile blog - confirms USD 500,000 investor visa threshold, 2-year permit duration, path to permanent residency; SD 177/2022 regulatory basis",
+      "official": true
+    },
+    {
+      "url": "https://www.investchile.gob.cl/visas-and-foreign-citizens-2/",
+      "description": "InvestChile - Visas and foreign citizens overview page",
+      "official": true
+    },
+    {
+      "url": "https://www.minrel.gob.cl/minrel/site/docs/20250624/20250624181127/manual_vido_ultima_version_19_mayo_2025.pdf",
+      "description": "MINREL - Manual VIDO (Visas Diplomáticas y Oficiales), May 2025 edition - authoritative list of all ~73 countries with diplomatic passport visa exemption agreements with Chile; image-based PDF not machine-readable",
+      "official": true
+    },
+    {
+      "url": "https://www.minrel.gob.cl/sala-de-prensa/chile-y-suiza-suscriben-convenio-de-exencion-de-visas-para-titulares-de",
+      "description": "MINREL press release - Chile-Switzerland mutual visa exemption for diplomatic/official/service passport holders, signed 19 Jan 2024",
+      "official": true
+    },
+    {
+      "url": "https://www.chile.gob.cl/egipto/acuerdo-para-la-exencion-mutua-de-visas-para-pasaportes-diplomaticos-y",
+      "description": "Chile en el Exterior (Egypt) - Chile-Oman mutual visa exemption for diplomatic/special/service/official passport holders, signed 22 Mar 2022",
+      "official": true
+    },
+    {
+      "url": "https://www.senado.cl/comunicaciones/noticias/con-marruecos-y-sudafrica-respaldan-acuerdos-internacionales-de-exencion-de",
+      "description": "Senado de Chile - Approval of diplomatic passport visa exemption agreements with Morocco (signed 20 Sep 2016) and South Africa (signed 1 Sep 2016)",
+      "official": true
+    },
+    {
+      "url": "https://www.minrel.gob.cl/sala-de-prensa/canciller-s-valdivia-suscribio-acuerdo-de-exencion-de-visa-para",
+      "description": "MINREL press release - Chile-Azerbaijan visa exemption for diplomatic/service/official passport holders, signed 13 Sep 2018",
+      "official": true
+    },
+    {
+      "url": "https://cancilleria.gob.bo/mre/2026/03/09/24588/",
+      "description": "Cancillería de Bolivia - Bolivia-Chile diplomatic/official passport visa exemption agreement entered into force March 2026",
+      "official": true
+    }
+  ],
+  "visa_required": {
+    "default_visa_free": true,
+    "nationalities_iso3": [
+      "AFG",
+      "AGO",
+      "SAU",
+      "DZA",
+      "ARM",
+      "AZE",
+      "BHR",
+      "BGD",
+      "BLR",
+      "BEN",
+      "BTN",
+      "BWA",
+      "BRN",
+      "BFA",
+      "BDI",
+      "CPV",
+      "KHM",
+      "CMR",
+      "QAT",
+      "TCD",
+      "CHN",
+      "COD",
+      "COG",
+      "PRK",
+      "CIV",
+      "CUB",
+      "DJI",
+      "DMA",
+      "EGY",
+      "ERI",
+      "SWZ",
+      "ETH",
+      "PHL",
+      "GAB",
+      "GMB",
+      "GHA",
+      "GIN",
+      "GNB",
+      "GNQ",
+      "HTI",
+      "IND",
+      "IRQ",
+      "IRN",
+      "COM",
+      "MHL",
+      "SLB",
+      "JOR",
+      "KAZ",
+      "KEN",
+      "KGZ",
+      "KIR",
+      "XKX",
+      "KWT",
+      "LAO",
+      "LSO",
+      "LBN",
+      "LBR",
+      "LBY",
+      "MDG",
+      "MWI",
+      "MDV",
+      "MLI",
+      "MAR",
+      "MRT",
+      "FSM",
+      "MOZ",
+      "MMR",
+      "NAM",
+      "NRU",
+      "NPL",
+      "NER",
+      "NGA",
+      "OMN",
+      "PAK",
+      "PLW",
+      "PSE",
+      "PNG",
+      "CAF",
+      "DOM",
+      "RWA",
+      "WSM",
+      "STP",
+      "SEN",
+      "SYC",
+      "SLE",
+      "SYR",
+      "SOM",
+      "LKA",
+      "SDN",
+      "SSD",
+      "TZA",
+      "TJK",
+      "TLS",
+      "TGO",
+      "TUN",
+      "TKM",
+      "TUV",
+      "UGA",
+      "UZB",
+      "VUT",
+      "VEN",
+      "YEM",
+      "ZMB",
+      "ZWE"
+    ],
+    "source_url": "https://www.diariooficial.interior.gob.cl/publicaciones/2025/09/17/44253/01/2702355.pdf",
+    "source_official": true
+  }
+}

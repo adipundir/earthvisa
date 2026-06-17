@@ -1,0 +1,129 @@
+{
+  "iso2": "AF",
+  "iso3": "AFG",
+  "name": "Afghanistan",
+  "region": "Asia",
+  "visa_policy": {
+    "visa_free": [],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://mfa.gov.af/en/types-of-visa",
+      "https://mfa.gov.af/en/page/30209",
+      "https://mfa.gov.af/en/page/38993",
+      "https://mfa.gov.af/en/page/38942",
+      "https://mfa.gov.af/en/page/38999",
+      "https://mfa.gov.af/en/page/39100",
+      "https://mfa.gov.af/en/visit-visa",
+      "http://econsulate.mfa.gov.af/",
+      "https://islamabad.mfa.gov.af/visa/",
+      "https://doha.mfa.gov.af/index.php/visa/"
+    ],
+    "notes": "Afghanistan's official MFA website does not publish a nationality-specific visa-free list. The default policy requires all foreign nationals to obtain a visa. The only visa-free entry officially documented is for foreign nationals of Afghan origin (entry permit). Visa on arrival (Arrival Visa) is restricted to those with official organizational invitations from domestic or international organizations operating in Afghanistan. Visa types and fees confirmed from official MFA pages: Tourist Visa USD 80 (3-month validity, 1-month stay); Entry Visa USD 100 (3-month validity, 1-month stay — for those invited by licensed companies/institutions, or Afghans with foreign passports married to foreign nationals who have not renounced Afghan citizenship); Visit Visa USD 80–240 (3-month validity, 1–3 month stay); Arrival Visa USD 200 (1-month stay, Kabul Airport only); Business Visa up to 3 years multiple entry. All visa applications processed via econsulate.mfa.gov.af or in person at Afghan embassies/consulates."
+  },
+  "conditional_access": [
+    {
+      "basis": "special_status",
+      "eligible_nationalities": ["any"],
+      "passport_types": ["ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Entry Permit (visa-free) granted to foreign nationals of Afghan origin under specific conditions: (1) birthplace listed as Afghanistan on passport, or (2) birthplace not listed as Afghanistan but holder of Afghan identification card (Tazkira), Afghan passport, or certificate of identity from Afghan diplomatic/consular missions abroad. Afghan nationals who have relinquished citizenship are treated as foreign nationals for visa purposes and do not qualify.",
+      "source_url": "https://mfa.gov.af/en/page/38993",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": ["any"],
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "domestic organization or international organization operating in Afghanistan",
+        "type": "visa",
+        "subtype": "official letter from a domestic organization or official invitation from an international organization operating in Afghanistan"
+      },
+      "level": "visa_on_arrival",
+      "max_stay_days": 30,
+      "conditions": "Arrival Visa (visa on arrival) is issued based on an official letter from a domestic organization or an official invitation from an international organization operating in Afghanistan. Granted with approval of the Ministry of Foreign Affairs at Kabul International Airport only. Validity: one month. Fee: USD 200.",
+      "source_url": "https://mfa.gov.af/en/page/38942",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program found on any official Afghan government source (mfa.gov.af, moci.gov.af, or embassy sites). General investment facilitation is mentioned on moci.gov.af (100% foreign ownership, no restriction on capital repatriation, flat corporate tax rate) but no CBI scheme is offered."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [],
+  "official_domains": [
+    "mfa.gov.af",
+    "econsulate.mfa.gov.af",
+    "islamabad.mfa.gov.af",
+    "doha.mfa.gov.af",
+    "moci.gov.af"
+  ],
+  "data_quality": {
+    "completeness": "low",
+    "validation_notes": [
+      "Re-verified 2026-06-13 against live official MFA pages. All core facts confirmed unchanged.",
+      "Entry permit (visa-free for Afghan-origin foreign nationals) confirmed at mfa.gov.af/en/page/38993 — criteria unchanged.",
+      "Arrival Visa (VoA with org invitation, USD 200, 30-day stay, Kabul Airport only) confirmed at mfa.gov.af/en/page/38942 — no changes.",
+      "Tourist visa fee (USD 80, 3-month validity, 1-month stay) confirmed at mfa.gov.af/en/page/38999 — no change.",
+      "Added new source mfa.gov.af/en/page/39100 (Entry Visa): USD 100, 3-month validity, 1-month stay, for those invited by licensed companies or Afghans with foreign passports married to foreign nationals who have not renounced citizenship. This is a visa type detail, not a conditional_access rule; captured in notes.",
+      "Added new source mfa.gov.af/en/visit-visa: Visit Visa USD 80–240, 3-month validity, 1–3 month stay, for sports/exhibition/family visits.",
+      "Added doha.mfa.gov.af to official_domains and source_urls — confirms standard visa fee schedule consistent with main MFA site.",
+      "conditional_access eligible_nationalities corrected from informal description strings to 'any' — the Afghan-origin entry permit and arrival visa are not nationality-restricted; any nationality of person meeting the stated condition qualifies.",
+      "No nationality-specific visa-free list found on any official mfa.gov.af page in this re-verification.",
+      "No e-visa portal confirmed operational under any .gov.af domain.",
+      "No CBI, RBI, or fast-track programs confirmed on any official source.",
+      "econsulate.mfa.gov.af returned a connection error during this re-verification pass (June 2026); status of online application portal is uncertain."
+    ],
+    "gaps": [
+      "No official nationality-specific visa-free or visa-on-arrival country list is published on mfa.gov.af or any official Afghan government domain.",
+      "No official e-visa portal found operating under a .gov.af domain; econsulate.mfa.gov.af was unreachable during this validation pass (June 2026).",
+      "Investor residency permit program (1–10 year permits for foreign investors) reported in news sources but no official program page, decree, or application procedure found on moci.gov.af, mfa.gov.af, or moi.gov.af; omitted per hard rules.",
+      "No official CBI, golden visa, digital nomad, startup, or fast-track talent program found on any official Afghan government source.",
+      "Afghanistan is under Taliban (Islamic Emirate) governance since August 2021; many official digital services are limited or inconsistently maintained. Completeness is accordingly low.",
+      "Bilateral diplomatic/service passport visa exemption agreements: Wikipedia (citing IATA data) lists China, Cuba, India, Iran, Tajikistan, Vietnam as having 30-day visa-free arrangements for non-ordinary passport holders; Turkey suspended its 2008 agreement effective June 2024. However, NO official mfa.gov.af or embassy page publishes this list — all sourcing is from aggregators. Excluded per official-source-first rules.",
+      "UN Laissez-Passer / Interpol Travel Document holders reportedly receive visa on arrival at Kabul International Airport only (Wikipedia). No confirmation found on any official mfa.gov.af page; excluded per hard rules.",
+      "No OCI or comparable special diaspora/heritage status entry rule found on any official Afghan government source.",
+      "No credential-based conditional entry rules (e.g., visa-free/VoA/e-visa for holders of US, Schengen, UK, GCC, or other third-country visas or residence permits) found on any official Afghan government source.",
+      "Entry visa eligibility for Afghans with foreign passports married to foreign nationals (who have not renounced Afghan citizenship) is mentioned on mfa.gov.af/en/page/39100 but the legal basis and scope are not further detailed on the official site."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "no official Afghanistan government outbound visa-list page located; rely on destination-side data"
+  },
+  "sources_checked": [
+    "https://mfa.gov.af/en/types-of-visa",
+    "https://mfa.gov.af/en/page/30209",
+    "https://mfa.gov.af/en/page/38993",
+    "https://mfa.gov.af/en/page/38942",
+    "https://mfa.gov.af/en/page/38999",
+    "https://mfa.gov.af/en/page/39100",
+    "https://mfa.gov.af/en/visit-visa",
+    "https://mfa.gov.af/en/page/37948",
+    "https://mfa.gov.af/en/page/38943",
+    "https://mfa.gov.af/en/page/diplomatic-service-en",
+    "https://mfa.gov.af/en/47309",
+    "http://econsulate.mfa.gov.af/",
+    "https://islamabad.mfa.gov.af/visa/",
+    "https://doha.mfa.gov.af/index.php/visa/",
+    "https://moci.gov.af/en",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Afghanistan"
+  ]
+}

@@ -1,0 +1,1037 @@
+{
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://mofa.gov.qa/en/qatar-and-the-world",
+    "source_official": true,
+    "asof": null,
+    "notes": "Qatar's Ministry of Foreign Affairs publishes per-country visa requirements for Qatar CITIZENS traveling abroad via the 'Qatar and the World' section (mofa.gov.qa/en/qatar-and-the-world?country=XX). Each country page states whether a Qatari regular passport holder 'is not required to apply for visa' (visa-free), can obtain a visa 'at airport/borders upon arrival' (visa on arrival), or 'must obtain from nearest embassy before departure' (prior visa). There is no single consolidated list page — data is per-country only. Lists below reflect countries explicitly checked from official MOFA pages.",
+    "visa_free": [
+      {"name": "Bahrain", "iso3": "BHR"},
+      {"name": "Bosnia and Herzegovina", "iso3": "BIH"},
+      {"name": "Brazil", "iso3": "BRA"},
+      {"name": "Ecuador", "iso3": "ECU"},
+      {"name": "Georgia", "iso3": "GEO"},
+      {"name": "Hong Kong SAR", "iso3": null},
+      {"name": "Jordan", "iso3": "JOR"},
+      {"name": "Kuwait", "iso3": "KWT"},
+      {"name": "Lebanon", "iso3": "LBN"},
+      {"name": "Malaysia", "iso3": "MYS"},
+      {"name": "Oman", "iso3": "OMN"},
+      {"name": "Rwanda", "iso3": "RWA"},
+      {"name": "Saudi Arabia", "iso3": "SAU"},
+      {"name": "Serbia", "iso3": "SRB"},
+      {"name": "South Africa", "iso3": "ZAF"},
+      {"name": "South Korea", "iso3": "KOR"},
+      {"name": "Tunisia", "iso3": "TUN"},
+      {"name": "Turkey", "iso3": "TUR"},
+      {"name": "United Arab Emirates", "iso3": "ARE"}
+    ],
+    "visa_on_arrival": [
+      {"name": "Azerbaijan", "iso3": "AZE"},
+      {"name": "Brunei", "iso3": "BRN"},
+      {"name": "Indonesia", "iso3": "IDN"},
+      {"name": "Kenya", "iso3": "KEN"},
+      {"name": "Mongolia", "iso3": "MNG"},
+      {"name": "Morocco", "iso3": "MAR"},
+      {"name": "Philippines", "iso3": "PHL"},
+      {"name": "Seychelles", "iso3": "SYC"},
+      {"name": "Singapore", "iso3": "SGP"},
+      {"name": "Tanzania", "iso3": "TZA"},
+      {"name": "Thailand", "iso3": "THA"},
+      {"name": "Uzbekistan", "iso3": "UZB"}
+    ],
+    "e_visa": [
+      {"name": "Myanmar", "iso3": "MMR"},
+      {"name": "Sri Lanka", "iso3": "LKA"}
+    ],
+    "eta": [
+      {"name": "Japan", "iso3": "JPN"}
+    ]
+  },
+  "iso2": "QA",
+  "iso3": "QAT",
+  "name": "Qatar",
+  "region": "Asia",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Bahrain",
+        "iso3": "BHR",
+        "max_stay_days": null,
+        "notes": "GCC member — visa-free entry with passport or national ID. No stay limit published for GCC citizens.",
+        "source_url": "https://portal.moi.gov.qa/qatarvisas/",
+        "source_official": true
+      },
+      {
+        "nationality": "Kuwait",
+        "iso3": "KWT",
+        "max_stay_days": null,
+        "notes": "GCC member — visa-free entry with passport or national ID. No stay limit published for GCC citizens.",
+        "source_url": "https://portal.moi.gov.qa/qatarvisas/",
+        "source_official": true
+      },
+      {
+        "nationality": "Oman",
+        "iso3": "OMN",
+        "max_stay_days": null,
+        "notes": "GCC member — visa-free entry with passport or national ID. No stay limit published for GCC citizens.",
+        "source_url": "https://portal.moi.gov.qa/qatarvisas/",
+        "source_official": true
+      },
+      {
+        "nationality": "Saudi Arabia",
+        "iso3": "SAU",
+        "max_stay_days": null,
+        "notes": "GCC member — visa-free entry with passport or national ID. No stay limit published for GCC citizens.",
+        "source_url": "https://portal.moi.gov.qa/qatarvisas/",
+        "source_official": true
+      },
+      {
+        "nationality": "United Arab Emirates",
+        "iso3": "ARE",
+        "max_stay_days": null,
+        "notes": "GCC member — visa-free entry with passport or national ID. No stay limit published for GCC citizens.",
+        "source_url": "https://portal.moi.gov.qa/qatarvisas/",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "nationality": "United States",
+        "iso3": "USA",
+        "max_stay_days": 90,
+        "notes": "US citizens receive a visa valid for 2 years (or until passport expires, whichever comes first), enabling multiple entries with each stay up to 90 days. Passport must be valid for at least 3 months from arrival. Return/onward ticket required. Previously classified as Hayya F1 (Visa-Free for US Citizens).",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Antigua and Barbuda",
+        "iso3": "ATG",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days. Passport valid 3+ months from arrival required.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Armenia",
+        "iso3": "ARM",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Austria",
+        "iso3": "AUT",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahamas",
+        "iso3": "BHS",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Belgium",
+        "iso3": "BEL",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Bulgaria",
+        "iso3": "BGR",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Croatia",
+        "iso3": "HRV",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Cyprus",
+        "iso3": "CYP",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Czech Republic",
+        "iso3": "CZE",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Denmark",
+        "iso3": "DNK",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Dominican Republic",
+        "iso3": "DOM",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Estonia",
+        "iso3": "EST",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Finland",
+        "iso3": "FIN",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "France",
+        "iso3": "FRA",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Germany",
+        "iso3": "DEU",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Greece",
+        "iso3": "GRC",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Hungary",
+        "iso3": "HUN",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Iceland",
+        "iso3": "ISL",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Italy",
+        "iso3": "ITA",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Latvia",
+        "iso3": "LVA",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Liechtenstein",
+        "iso3": "LIE",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Lithuania",
+        "iso3": "LTU",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Luxembourg",
+        "iso3": "LUX",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Malta",
+        "iso3": "MLT",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Netherlands",
+        "iso3": "NLD",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Norway",
+        "iso3": "NOR",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Poland",
+        "iso3": "POL",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Portugal",
+        "iso3": "PRT",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Romania",
+        "iso3": "ROU",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Russia",
+        "iso3": "RUS",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Serbia",
+        "iso3": "SRB",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovakia",
+        "iso3": "SVK",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovenia",
+        "iso3": "SVN",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "South Africa",
+        "iso3": "ZAF",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Spain",
+        "iso3": "ESP",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Sweden",
+        "iso3": "SWE",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Switzerland",
+        "iso3": "CHE",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Turkey",
+        "iso3": "TUR",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, 90 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 90,
+        "notes": "Visa on arrival, free of charge, 90 days maximum stay.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Azerbaijan",
+        "iso3": "AZE",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Bolivia",
+        "iso3": "BOL",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Bosnia and Herzegovina",
+        "iso3": "BIH",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Brunei",
+        "iso3": "BRN",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "China",
+        "iso3": "CHN",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days. Bilateral visa exemption agreement entered into force December 2018.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Cuba",
+        "iso3": "CUB",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Ecuador",
+        "iso3": "ECU",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Georgia",
+        "iso3": "GEO",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Guyana",
+        "iso3": "GUY",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Hong Kong",
+        "iso3": null,
+        "max_stay_days": 30,
+        "notes": "Hong Kong SAR BN(O)/HKSAR passport holders. Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Indonesia",
+        "iso3": "IDN",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Ireland",
+        "iso3": "IRL",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days. Bilateral mutual visa exemption memoranda signed.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Kazakhstan",
+        "iso3": "KAZ",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Maldives",
+        "iso3": "MDV",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Moldova",
+        "iso3": "MDA",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "North Macedonia",
+        "iso3": "MKD",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Paraguay",
+        "iso3": "PRY",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Philippines",
+        "iso3": "PHL",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Rwanda",
+        "iso3": "RWA",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "San Marino",
+        "iso3": "SMR",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Suriname",
+        "iso3": "SUR",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Uruguay",
+        "iso3": "URY",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Uzbekistan",
+        "iso3": "UZB",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Vatican City",
+        "iso3": "VAT",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Venezuela",
+        "iso3": "VEN",
+        "max_stay_days": 30,
+        "notes": "Visa on arrival, 30 days, extendable by another 30 days.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "India",
+        "iso3": "IND",
+        "max_stay_days": 30,
+        "notes": "Free visa on arrival up to 30 days (extendable +30); hotel must be pre-booked via Discover Qatar. Nationals of India, Iran, and Thailand qualify for visa on arrival but must pre-book hotel accommodation through the Discover Qatar platform prior to travel. Fee QAR 100. 30 days, extendable by another 30 days. Thailand ordinary passport visa-on-arrival status may be affected by diplomatic passport agreement; verify current status. Pakistan visa-on-arrival suspended March 2026.",
+        "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+        "source_official": true
+      }
+    ],
+    "e_visa": [],
+    "eta": [],
+    "suspended": [
+      {
+        "nationality": "Pakistan",
+        "iso3": "PAK",
+        "suspension_date": "2026-03-31",
+        "notes": "Visa on arrival temporarily suspended as of 31 March 2026 per advisory from Pakistani Embassy in Doha, citing prevailing regional situation. Pakistani nationals must now obtain a pre-approved visa via the Hayya platform before travel. No resumption date announced.",
+        "source_url": "https://blog.wego.com/qatar-visa-free-entry/",
+        "source_official": false
+      },
+      {
+        "nationality": "Lebanon",
+        "iso3": "LBN",
+        "suspension_date": "2026-04-02",
+        "notes": "Visa on arrival suspended effective 2 April 2026. Lebanese citizens must obtain a pre-approved visa through the Hayya platform before departure. Suspension indefinite.",
+        "source_url": "https://blog.wego.com/qatar-suspends-visa-on-arrival-for-lebanese-nationals/",
+        "source_official": false
+      }
+    ],
+    "source_urls": [
+      "https://portal.moi.gov.qa/qatarvisas/",
+      "https://visitqatar.com/intl-en/plan-your-trip/visas",
+      "https://hayya.qa/en/faq",
+      "https://mofa.gov.qa/en/consular-services/visas/visas"
+    ],
+    "notes": "Qatar's entry permit system is administered through the Ministry of Interior (MOI) and the Hayya e-platform (hayya.qa). Citizens of more than 100 nationalities can enter without a pre-arranged visa (on arrival). GCC citizens enter visa-free with no stay limit. Most other eligible nationalities receive a free on-arrival tourist visa. 90-day stay is granted to eligible EU member states and selected other nationalities; 30-day stay (extendable) applies to most other eligible nationalities. India, Iran, and Thailand nationals must pre-book hotel accommodation through the Discover Qatar platform for visa-on-arrival eligibility. Pakistan and Lebanon visa-on-arrival temporarily suspended as of March-April 2026. The Hayya platform offers tourist e-visas (A1), GCC resident visa (A2), ETA-backed visa for holders of major country visas/residency (A3), and companion of GCC citizen visa (A4). All rules are subject to change without notice per portal.moi.gov.qa."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "GCC",
+        "type": "residence_permit",
+        "subtype": "any valid GCC residence permit (Bahrain, Kuwait, Oman, Saudi Arabia, or UAE) with approved profession"
+      },
+      "level": "e_visa",
+      "max_stay_days": 30,
+      "conditions": "Holder must have a valid GCC residence permit valid for at least 3 months from date of arrival. Passport must be valid for at least 3 months from date of arrival. Applicant must be travelling to Qatar from their country of GCC residency. Return flight ticket required. Fee QAR 100. Single entry. Extendable. Job title on application must match title on residence permit (Hayya dropdown list). On-arrival visa also available at port of entry. Hayya A2 e-visa applies.",
+      "source_url": "https://hayya.qa/en/faq",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "US",
+        "type": "visa",
+        "subtype": "any valid US visa or US residency permit/Green Card"
+      },
+      "level": "eta",
+      "max_stay_days": 30,
+      "conditions": "Holder must have a valid US visa or US residency at the time of Hayya e-visa issuance (not merely at time of travel). Passport must be valid for at least 3 months from date of arrival. Return flight ticket required. Fee QAR 100. Single entry. Hayya A3 (Visa with ETA) applies. Credential must be valid when e-visa is received, not only at travel date. This applies to nationalities that do NOT otherwise qualify for unconditional visa-on-arrival.",
+      "source_url": "https://hayya.qa/en/faq",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "UK",
+        "type": "visa",
+        "subtype": "any valid UK visa or UK residency"
+      },
+      "level": "eta",
+      "max_stay_days": 30,
+      "conditions": "Holder must have a valid UK visa or UK residency at the time of Hayya e-visa issuance. Passport must be valid for at least 3 months from date of arrival. Return flight ticket required. Fee QAR 100. Single entry. Hayya A3 (Visa with ETA) applies. Credential must be valid when e-visa is received, not only at travel date.",
+      "source_url": "https://hayya.qa/en/faq",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "Canada",
+        "type": "visa",
+        "subtype": "any valid Canadian visa or Canadian residency"
+      },
+      "level": "eta",
+      "max_stay_days": 30,
+      "conditions": "Holder must have a valid Canadian visa or Canadian residency at the time of Hayya e-visa issuance. Passport must be valid for at least 3 months from date of arrival. Return flight ticket required. Fee QAR 100. Single entry. Hayya A3 (Visa with ETA) applies. Credential must be valid when e-visa is received, not only at travel date.",
+      "source_url": "https://hayya.qa/en/faq",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "any valid Schengen visa or Schengen area residency permit"
+      },
+      "level": "eta",
+      "max_stay_days": 30,
+      "conditions": "Holder must have a valid Schengen visa or Schengen area residency at the time of Hayya e-visa issuance. Passport must be valid for at least 3 months from date of arrival. Return flight ticket required. Fee QAR 100. Single entry. Hayya A3 (Visa with ETA) applies. Credential must be valid when e-visa is received, not only at travel date.",
+      "source_url": "https://hayya.qa/en/faq",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "Australia",
+        "type": "visa",
+        "subtype": "any valid Australian visa or Australian residency"
+      },
+      "level": "eta",
+      "max_stay_days": 30,
+      "conditions": "Holder must have a valid Australian visa or Australian residency at the time of Hayya e-visa issuance. Passport must be valid for at least 3 months from date of arrival. Return flight ticket required. Fee QAR 100. Single entry. Hayya A3 (Visa with ETA) applies. Credential must be valid when e-visa is received, not only at travel date.",
+      "source_url": "https://hayya.qa/en/faq",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "New Zealand",
+        "type": "visa",
+        "subtype": "any valid New Zealand visa or New Zealand residency"
+      },
+      "level": "eta",
+      "max_stay_days": 30,
+      "conditions": "Holder must have a valid New Zealand visa or New Zealand residency at the time of Hayya e-visa issuance. Passport must be valid for at least 3 months from date of arrival. Return flight ticket required. Fee QAR 100. Single entry. Hayya A3 (Visa with ETA) applies. Credential must be valid when e-visa is received, not only at travel date.",
+      "source_url": "https://hayya.qa/en/faq",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Thailand"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official",
+        "special"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Bilateral agreement signed 3 March 2025 between State of Qatar and Kingdom of Thailand exempting holders of diplomatic, official, and special passports from visa requirements. Stay duration and further terms not published in official press release. Agreement signed by Qatar's Minister of State for Foreign Affairs Sultan bin Saad Al Muraikhi and Thailand's Foreign Minister Maris Sangiampongsa. Note: Thai ORDINARY passport holders must pre-book hotel accommodation via Discover Qatar for visa-on-arrival; their visa-on-arrival is currently suspended (see suspension notice above).",
+      "source_url": "https://mofa.gov.qa/en/qatar/latest-articles/latest-news/details/2025/03/03/qatar--thailand-sign-agreement-on-exempting-diplomatic--official--special-passport-holders-from-visa-requirements",
+      "source_official": true
+    },
+    {
+      "basis": "special_status",
+      "eligible_nationalities": [
+        "Iran",
+        "Thailand"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": null,
+      "level": "visa_on_arrival",
+      "max_stay_days": 30,
+      "conditions": "Nationals of India, Iran, and Thailand qualify for visa on arrival but must pre-book hotel accommodation through the Discover Qatar platform prior to travel. Fee QAR 100. 30 days, extendable by another 30 days. Thailand ordinary passport visa-on-arrival status may be affected by diplomatic passport agreement; verify current status. Pakistan visa-on-arrival suspended March 2026.",
+      "source_url": "https://visitqatar.com/intl-en/plan-your-trip/visas",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No citizenship-by-investment program found on official Qatar government sources (moi.gov.qa, mofa.gov.qa)."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "GCC (Gulf Cooperation Council) — citizens of Bahrain, Kuwait, Oman, Saudi Arabia, UAE enter Qatar visa-free with no published maximum stay",
+    "Qatar-China bilateral visa exemption agreement — entered into force December 2018",
+    "Qatar-Japan mutual visa exemption — exchange of official memorandums signed 2018/2019",
+    "Qatar-Thailand bilateral agreement (3 March 2025) — diplomatic, official, special passport holders exempt from visa requirements"
+  ],
+  "official_domains": [
+    "portal.moi.gov.qa",
+    "moi.gov.qa",
+    "hayya.qa",
+    "mofa.gov.qa",
+    "visitqatar.com"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "CORRECTED: visa_policy.visa_free and visa_on_arrival were empty arrays in prior record — populated with 5 GCC visa_free entries and ~80 visa_on_arrival entries for nationalities across two stay-duration tiers.",
+      "CORRECTED: Prior record noted '95+ countries' in notes but had no structured entries — now structured with individual nationality entries for all confirmed countries.",
+      "CORRECTED: Stay duration split added — 90-day group (US, EU members, Argentina, Brazil, Russia, South Africa, South Korea, Turkey, Ukraine, etc.) vs 30-day group (UK, Canada, Australia, China, Japan, Singapore, etc.) — prior record treated all as 30 days or left unspecified.",
+      "CORRECTED: US citizens now correctly documented as receiving a 2-year multiple-entry visa with 90-day stays per visit (not 30 days as implied by old Hayya F1 categorization).",
+      "ADDED: Pakistan visa-on-arrival suspension effective 31 March 2026.",
+      "ADDED: Lebanon visa-on-arrival suspension effective 2 April 2026.",
+      "ADDED: India, Iran, Thailand Discover Qatar hotel pre-booking requirement noted in conditional_access as special_status.",
+      "ADDED: Suspended array in visa_policy to track nationalities with temporary suspensions.",
+      "RETAINED: Hayya A2/A3 conditional_access credential entries (GCC resident visa, US/UK/Canada/Schengen/Australia/NZ visa-holders) unchanged as these were confirmed accurate.",
+      "RETAINED: Thailand diplomatic/official/special passport visa-free agreement (March 2025) — confirmed via MOFA official source.",
+      "NOTE: visitqatar.com (Qatar Tourism, government tourism board) used as supplementary source alongside portal.moi.gov.qa and hayya.qa for the nationality lists, as MOI portal pages return dynamic/gated content.",
+      "VERIFIED 2026-06-14: India (IND) correctly classified as visa_on_arrival with mandatory Discover Qatar hotel pre-booking condition — NOT visa_free. Aggregator claim of 'visa_free or visa_on_arrival' is misleading; hotel pre-booking via discoverqatar.qa is required by MOI. Source: portal.moi.gov.qa (MOI) and discoverqatar.qa (Discover Qatar mandatory hotels page). India remains in conditional_access[special_status] with level=visa_on_arrival and is absent from visa_policy.visa_free — no changes to policy entries needed, only this verification note added."
+    ],
+    "gaps": [
+      "Comprehensive official list of all visa-on-arrival eligible countries not directly accessible from portal.moi.gov.qa dynamic pages — nationality list cross-verified from visitqatar.com (government tourism board) and wego.com which cites Visit Qatar and MOI as sources.",
+      "Exact stay duration for GCC citizens not published — no maximum stay limit identified for GCC nationals (Bahrain, Kuwait, Oman, Saudi Arabia, UAE).",
+      "Maximum stay for Thailand diplomatic/official/special passport holders: the official MOFA press release does not state the maximum permitted stay duration.",
+      "Complete list of bilateral diplomatic/service/official passport visa waiver agreements: Qatar likely has bilateral agreements with many more countries beyond Thailand (e.g., Arab League members, GCC, other bilateral partners) but no comprehensive official list is publicly enumerated on mofa.gov.qa public pages.",
+      "Discover Qatar platform exact requirements for India, Iran, Thailand visa-on-arrival: specific hotel booking process, whether it also applies to other nationalities, and whether Iran's visa-on-arrival is currently active were not confirmed from MOI official page.",
+      "Pakistan and Lebanon suspension end dates: both suspensions are indefinite with no official government press release found on portal.moi.gov.qa or mofa.gov.qa directly — suspension confirmed via embassy advisories and travel news aggregators only.",
+      "Belarus, Macau, Falkland Islands, French Guiana, Mauritius, Montenegro, Taiwan classification: some aggregator sources list these under 'special processing' or 'paid visa' rather than standard visa-on-arrival — not confirmed from MOI official page and excluded from visa_policy entries.",
+      "A3 credential subtype: Hayya FAQ states 'valid visa or residency' without specifying visa subclasses (e.g., B1/B2, F-1, Tier 2). All subtypes appear to qualify; exact subtype list not published.",
+      "GCC Resident Visa (A2) eligible professions: Hayya FAQ states job title on permit must be on the dropdown list; full eligible professions list not published on official source found.",
+      "OCI (Overseas Citizen of India) cardholder entry rules: No official Qatar government source mentions OCI cardholder entry privileges — not recorded."
+    ]
+  },
+  "sources_checked": [
+    "https://portal.moi.gov.qa/qatarvisas/",
+    "https://portal.moi.gov.qa/qatarvisas/index.html",
+    "https://portal.moi.gov.qa/wps/portal/MOIInternet/departmentcommittees/visasentrypermeits/",
+    "https://portal.moi.gov.qa/wps/portal/MOIInternet/departmentcommittees/ganationalborderexpatriateaffairs/",
+    "https://hayya.qa/en/",
+    "https://hayya.qa/en/faq",
+    "https://mofa.gov.qa/en/consular-services/visas/visas",
+    "https://mofa.gov.qa/en/qatar/latest-articles/latest-news",
+    "https://mofa.gov.qa/en/qatar/latest-articles/latest-news/details/2025/03/03/qatar--thailand-sign-agreement-on-exempting-diplomatic--official--special-passport-holders-from-visa-requirements",
+    "https://visitqatar.com/intl-en/plan-your-trip/visas",
+    "https://blog.wego.com/qatar-visa-free-entry/",
+    "https://blog.wego.com/qatar-suspends-visa-on-arrival-for-lebanese-nationals/",
+    "https://www.travelandtourworld.com/news/article/qatar-joins-saudi-arabia-uae-bahrain-kuwait-and-oman-in-tightening-entry-rules-as-visa-on-arrival-for-lebanese-nationals-suspended-from-april-2026-impacting-travel-across-other-countries-including/",
+    "https://www.visaguideqatar.com/qatar-visa-on-arrival/"
+  ]
+}

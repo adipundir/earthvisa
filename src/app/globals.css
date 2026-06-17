@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─────────────────────────────────────────────────────────────
+   Project Bluewhale — clean immigration-document look.
+   Readable IBM Plex Sans, warm paper, soft gradient, a faint
+   glimpse of passport entry-stamps in the background.
+   ───────────────────────────────────────────────────────────── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-plex-sans);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+
+  /* paper */
+  --color-paper: #f6f2e9;
+  --color-paper-2: #fffdf8;
+  --color-paper-3: #efe8d8;
+  /* ink — higher contrast for readability */
+  --color-ink: #11203a;
+  --color-ink-soft: #33425c;
+  --color-ink-mute: #6a6552;
+  --color-line: #ddd3bf;
+  --color-line-strong: #c9bc9f;
+  /* stamps / accents */
+  --color-stamp: #b23528;
+  --color-stamp-deep: #7c241d;
+  --color-vfree: #2c6b3f;
+  --color-voa: #275a86;
+  --color-eta: #8a5a12;
+  --color-evisa: #5f4a78;
+  --color-bloc: #8a2b22;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --paper: #f6f2e9;
+  --ink: #11203a;
 }
+
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  /* soft vertical gradient on warm paper */
+  background:
+    linear-gradient(180deg, #f8f4ec 0%, #f4eee2 55%, #efe7d6 100%) fixed;
 }
+
+::selection { background: var(--color-stamp); color: #fffdf8; }
+
+/* type helpers (display now maps to the sans too — clean, not fancy) */
+.font-display { font-family: var(--font-display), system-ui, sans-serif; }
+.font-mono { font-family: var(--font-mono), ui-monospace, monospace; }
+
+.rule-double {
+  border-bottom: 1px solid var(--color-line-strong);
+  box-shadow: 0 3px 0 -2px var(--color-line-strong);
+}
+
+.mrz {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: 0.18em;
+  word-break: break-all;
+  line-height: 1.7;
+}
+
+/* an inked rubber-stamp badge */
+.stamp {
+  border: 2px solid var(--color-stamp);
+  color: var(--color-stamp);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* No entrance animations — the page is static on load/reload (nothing moves). */
+.reveal { opacity: 1; }
+.stamp-in { opacity: 1; }
+
+* { scrollbar-color: var(--color-line-strong) transparent; }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-thumb { background: var(--color-line-strong); border: 3px solid var(--paper); border-radius: 10px; }

@@ -1,0 +1,727 @@
+{
+  "iso2": "LT",
+  "iso3": "LTU",
+  "name": "Lithuania",
+  "region": "Europe",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://keliauk.urm.lt/keliaujantiems/pries-pradedant-kelione/vizos",
+    "source_official": true,
+    "asof": null,
+    "visa_free": [],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "keliauk.urm.lt is the official Lithuanian Ministry of Foreign Affairs travel portal (Užsienio reikalų ministerija). The page at /keliaujantiems/pries-pradedant-kelione/vizos is the outbound visa advice section for Lithuanian citizens traveling abroad. The portal also provides per-country travel advice at /location/<country> (e.g. /location/tailandas for Thailand — confirmed 60-day visa-free stay for Lithuanian citizens). The entire keliauk.urm.lt domain returns HTTP 403 to automated HTTP clients, preventing extraction of the consolidated country list; country-level data must be read directly in a browser. Lithuania is an EU/Schengen member state — Lithuanian citizens' outbound visa-free access is primarily governed by bilateral agreements between destination countries and the EU or Lithuania specifically. A non-exhaustive sample confirmed by the MFA portal: USA (ESTA required, no prior visa), Canada (eTA required), Thailand (visa-free 60 days), Sri Lanka (ETA required). No single downloadable consolidated list equivalent to India's mea.gov.in/vffin was located."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "EU/EEA citizens (all EU Member States + Iceland, Liechtenstein, Norway, Switzerland)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "EU/EEA citizens and Swiss nationals enjoy free movement rights. Stays beyond 3 months require registration/residence certificate. Lithuania is a Schengen Member State — all Schengen rules apply.",
+        "source_url": "https://www.migracija.lt/en/eu-citizen",
+        "source_official": true
+      },
+      {
+        "nationality": "Albania",
+        "iso3": "ALB",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Antigua and Barbuda",
+        "iso3": "ATG",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahamas",
+        "iso3": "BHS",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Barbados",
+        "iso3": "BRB",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Bosnia and Herzegovina",
+        "iso3": "BIH",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Brunei Darussalam",
+        "iso3": "BRN",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Dominica",
+        "iso3": "DMA",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "El Salvador",
+        "iso3": "SLV",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Georgia",
+        "iso3": "GEO",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Grenada",
+        "iso3": "GRD",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Guatemala",
+        "iso3": "GTM",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Holy See (Vatican)",
+        "iso3": "VAT",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Honduras",
+        "iso3": "HND",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Hong Kong SAR (China)",
+        "iso3": "HKG",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Covers HKSAR passport holders and British Nationals (Overseas).",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Kiribati",
+        "iso3": "KIR",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Kosovo",
+        "iso3": "XKX",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Macao SAR (China)",
+        "iso3": "MAC",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Marshall Islands",
+        "iso3": "MHL",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Mauritius",
+        "iso3": "MUS",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Micronesia (Federated States of)",
+        "iso3": "FSM",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Moldova",
+        "iso3": "MDA",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Montenegro",
+        "iso3": "MNE",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Nicaragua",
+        "iso3": "NIC",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. NOTE: Nicaragua reimposed a visa requirement for Lithuanian nationals in February 2026 (does not affect Nicaraguan nationals entering Lithuania).",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "North Macedonia",
+        "iso3": "MKD",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Palau",
+        "iso3": "PLW",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Paraguay",
+        "iso3": "PRY",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Kitts and Nevis",
+        "iso3": "KNA",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Lucia",
+        "iso3": "LCA",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Vincent and the Grenadines",
+        "iso3": "VCT",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Samoa",
+        "iso3": "WSM",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "San Marino",
+        "iso3": "SMR",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Serbia",
+        "iso3": "SRB",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Solomon Islands",
+        "iso3": "SLB",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Taiwan",
+        "iso3": "TWN",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Passport with personal ID number required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Timor-Leste",
+        "iso3": "TLS",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Tonga",
+        "iso3": "TON",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Trinidad and Tobago",
+        "iso3": "TTO",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Tuvalu",
+        "iso3": "TUV",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "United Arab Emirates",
+        "iso3": "ARE",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Covers British Citizens and specified British Nationals (Overseas), British Overseas Territories Citizens, British Overseas Citizens, British Protected Persons, British Subjects.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "United States of America",
+        "iso3": "USA",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Uruguay",
+        "iso3": "URY",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      },
+      {
+        "nationality": "Venezuela",
+        "iso3": "VEN",
+        "max_stay_days": 90,
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://keliauk.urm.lt/en/entry-to-lithuania/visas/list-of-countries-whose-citizens-do-not-require-visas-to-enter-the-republic-of-lithuania",
+      "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+      "https://eur-lex.europa.eu/eli/reg/2018/1806/oj/eng",
+      "https://www.migracija.lt/en/stay-less-than-3-months",
+      "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en"
+    ],
+    "notes": "Lithuania is a full Schengen Member State. Its visa policy for short stays (up to 90 days in any 180-day period) is governed by EU Regulation 2018/1806, applying uniformly across all Schengen states. Source references have been updated to the EUR-Lex consolidated version of Regulation 2018/1806 as of 30 December 2025. IMPORTANT CHANGE: Vanuatu (VUT) was permanently removed from Annex II by EU Regulation 2025/11 (adopted 19 December 2024, effective 4 February 2025) and transferred to Annex I; Vanuatu nationals now require a Schengen visa. There is no separate Lithuanian e-visa system; visa applications are filed via Schengen consulates or through MIGRIS (visa.vrm.lt/epm). Lithuania issues Schengen (C) visas and national long-stay (D) visas. ETIAS (European Travel Information and Authorisation System) is expected to launch in the last quarter of 2026 — visa-free nationals will require ETIAS authorization once operational; as of June 2026 ETIAS is not yet operational. EU/EEA/Swiss nationals enjoy free movement and may stay beyond 3 months by registering for a residence certificate."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": "any",
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Agreement between the Government of the Republic of Lithuania and the Government of the State of Israel on the waiver of the visa requirement for the holders of diplomatic or service passports. Signed Jerusalem 01/03/1995; entered into force 27/11/1995. Note: as of 2001 Israeli ordinary passport holders are also visa-free under Annex II, so this agreement is practically applicable only to diplomatic/service passport holders; the treaty remains in force and expressly covers diplomatic and service passports.",
+      "source_url": "https://www.urm.lt/en/treaties/bilateral/israel/1257",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["VNM"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Agreement between the Government of the Republic of Lithuania and the Government of the Socialist Republic of Vietnam on the Exemption of Visa Requirement for Holders of Diplomatic Passports. Signed Hanoi 23/01/2019; entered into force 17/11/2019. Covers diplomatic passports only (not service or official passports). Vietnamese ordinary passport holders require a Schengen visa.",
+      "source_url": "https://www.urm.lt/en/treaties/bilateral/vietnam/1307",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["ZAF"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Agreement between the Government of the Republic of Lithuania and the Government of the Republic of South Africa on the Exemption from Visa Requirements for Holders of Diplomatic and Official Passports. Signed Pretoria 29/08/2022; entered into force 14/12/2022. Covers diplomatic and official passports. South African ordinary passport holders remain on Annex I of EU Regulation 2018/1806 and require a Schengen visa to enter Lithuania; the October 2025 news of South Africa admitting Lithuanians visa-free was a unilateral South African decision (not reciprocal for South African nationals entering Lithuania). The official urm.lt bilateral treaty page for South Africa (updated 2025-03-19) lists only this diplomatic/official passport agreement.",
+      "source_url": "https://www.urm.lt/en/treaties/bilateral/south-africa/1295",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["THA"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Agreement between the Republic of Lithuania and the Kingdom of Thailand on the Exemption of Visa Requirement for Holders of Diplomatic and Official or Service Passports. Signed Bangkok 18/06/2024; entered into force 07/04/2025. Published in TAR on 03/02/2025 (i.c. 2025-01650). Covers diplomatic, official, and service passports. Thai ordinary passport holders require a Schengen visa.",
+      "source_url": "https://www.urm.lt/en/treaties/bilateral/thailand/2220",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": true,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": false,
+    "residency_required": null,
+    "notes": "Lithuania does not offer a direct citizenship-by-investment program. The Law on Citizenship of the Republic of Lithuania (No. XI-1196) does not provide for citizenship in exchange for investment. Dual citizenship is generally not permitted under Lithuanian law except for limited exceptions (e.g., persons who acquired Lithuanian citizenship at birth and acquired foreign citizenship before age 18, persons granted citizenship by exception for special merits, refugees who obtained Lithuanian citizenship). Naturalization to Lithuanian citizenship requires 10 years of permanent residence. Source: e-seimas.lrs.lt (Law on Citizenship XI-1196); migracija.lt/en/daugybine-pilietybe."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Temporary Residence Permit — Investor (Special Investment Agreement)",
+        "type": "business",
+        "min_amount": 1448100,
+        "currency": "EUR",
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 15,
+        "official_url": "https://www.migracija.lt/en/atvykstu-pagal-investiciju-sutarti-kurioje-nustatytos-specialios-investavimo-ir-verslo-salygos",
+        "source_official": true,
+        "notes": "Investment agreement under Article 13(1)(3) and (4) of the Law on Investments. Minimum private investment of EUR 1,448,100 in a project with job creation obligations. Annual revenue of the investor group must be at least EUR 2,500,000 in at least one of the last three years. Permit issued for up to 3 years. After 5 continuous years of temporary residence, may apply for permanent residence (EU long-term resident status). Path to citizenship: 10 years of permanent residence + naturalization = approximately 15 years total from first temporary permit."
+      },
+      {
+        "name": "Temporary Residence Permit — Investor (Business / Company Participation)",
+        "type": "business",
+        "min_amount": 14000,
+        "currency": "EUR",
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 15,
+        "official_url": "https://www.migracija.lt/en/atvykstu-pagal-investiciju-sutarti-kurioje-nustatytos-specialios-investavimo-ir-verslo-salygos",
+        "source_official": true,
+        "notes": "Lower-threshold investment: investor or participant owning at least 1/10 of authorized capital of a Lithuanian company with personal investment of at least EUR 14,000 in the enterprise. Permit issued for up to 3 years. Path to permanent residence after 5 continuous years of temporary residence."
+      },
+      {
+        "name": "Temporary Residence Permit — Major Project Investor",
+        "type": "business",
+        "min_amount": 20000000,
+        "currency": "EUR",
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 15,
+        "official_url": "https://www.migracija.lt/en/atvykstu-pagal-stambaus-projekto-investiciju-sutarti",
+        "source_official": true,
+        "notes": "Major project investment agreement under Article 15(7)(6) of the Law on Investments. Requires at least EUR 20 million in private capital investment (EUR 30 million for Vilnius) AND creation of at least 150 new jobs (200 for Vilnius). Permit issued for up to 3 years."
+      },
+      {
+        "name": "Permanent Residence Permit (EU Long-Term Resident)",
+        "type": "other",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 10,
+        "official_url": "https://www.migracija.lt/en/ilgalaikis-gyvenimas",
+        "source_official": true,
+        "notes": "Available after 5 continuous years of legal residence in Lithuania on a temporary residence permit. Absence rules: periods outside Lithuania must not exceed 6 consecutive months and not exceed 10 months total within the 5-year period. Path to citizenship: naturalization after 10 years of permanent residence."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Startup Temporary Residence Permit",
+        "category": "startup",
+        "eligibility": "Non-EU/EEA nationals who are founders or key personnel of an innovative startup. Must obtain confirmation from the Lithuanian Innovation Agency (Inovacijų agentūra) that the startup activity is innovative and involves new technologies or significant innovations for Lithuania's economic/social development. Applicant must have necessary qualifications, funding, and a business plan.",
+        "processing_time": "Application via MIGRIS; within 4 months must personally submit petition with biometric data and original documents.",
+        "official_url": "https://www.migracija.lt/en/noriu-gauti/pakeisti-leidim%C4%85-laikinai-gyventi1",
+        "source_official": true,
+        "notes": "Permit issued for 2 years initially. Renewable for up to 3 additional years upon confirmation from the Innovation Agency. Applicant must establish the enterprise and commence activities specified in founding documents within 120 days of permit issuance."
+      },
+      {
+        "name": "EU Blue Card (Highly Qualified Worker)",
+        "category": "highly_skilled",
+        "eligibility": "Higher education diploma OR at least 5 years of equivalent professional experience (for ICT: at least 3 years of relevant professional experience in the last 7 years). Must have a job offer from a Lithuanian employer for at least 6 months. Salary must be at least 1.5x average monthly gross wage (for high-value-added/shortage occupations: 1.2x average monthly gross wage).",
+        "processing_time": "Standard: 1 month; Expedited: 15 days",
+        "official_url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card/eu-blue-card-lithuania_en",
+        "source_official": true,
+        "notes": "Permit duration: 36 months or duration of employment contract plus 3 months (whichever is shorter). Fee: EUR 160 initial/renewal; EUR 320 expedited. After 18 months in Lithuania on EU Blue Card, may apply for EU Blue Card in another member state. Path to permanent residence: 5 years of continuous residence."
+      }
+    ]
+  },
+  "agreements": [
+    "EU/EEA Freedom of Movement",
+    "Schengen Area"
+  ],
+  "official_domains": [
+    "keliauk.urm.lt",
+    "urm.lt",
+    "migracija.lt",
+    "e-seimas.lrs.lt",
+    "startuplithuania.lt",
+    "home-affairs.ec.europa.eu",
+    "eur-lex.europa.eu",
+    "travel-europe.europa.eu"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "CORRECTION 1 — Vanuatu (VUT) REMOVED from visa_policy.visa_free: EU Regulation 2025/11 (adopted 19 Dec 2024, effective 4 Feb 2025) permanently transferred Vanuatu from Annex II to Annex I of Regulation 2018/1806. Vanuatu nationals now require a Schengen visa. Confirmed from EUR-Lex consolidated text (CELEX:02018R1806-20251230) and EU Council press release (consilium.europa.eu, 12 Dec 2024).",
+      "CORRECTION 2 — New conditional_access entry ADDED for Thailand (THA): Agreement between Lithuania and Thailand on visa exemption for holders of diplomatic and official or service passports, signed Bangkok 18/06/2024, entered into force 07/04/2025. Confirmed from official urm.lt bilateral treaty page for Thailand (https://www.urm.lt/en/treaties/bilateral/thailand/2220, updated 2025-05-05).",
+      "CORRECTION 3 — South Africa clarification in conditions text: The October 2025 news that South Africa granted visa-free access to Lithuanians was a UNILATERAL South African decision, not reciprocal. South African ordinary passport holders remain on Annex I and require a Schengen visa to enter Lithuania. The official urm.lt South Africa treaty page (updated 2025-03-19) lists only the 2022 diplomatic/official passport agreement. Conditions text updated to reflect this clearly.",
+      "CORRECTION 4 — source_url references for visa_free entries updated from vistos.mne.gov.pt (Portuguese MFA) to the canonical EUR-Lex consolidated regulation URL (CELEX:02018R1806-20251230) which is the primary authoritative EU legal source for Annex II.",
+      "CORRECTION 5 — vistos.mne.gov.pt removed from official_domains (not a Lithuanian official domain); list now reflects Lithuanian and EU official domains only.",
+      "VERIFIED UNCHANGED — conditional_access entries for Israel, Vietnam, South Africa (diplomatic/official) remain correct as confirmed from urm.lt bilateral treaty pages.",
+      "VERIFIED UNCHANGED — cbi (no program), rbi investment amounts (EUR 1,448,100 / EUR 14,000 / EUR 20,000,000), fast_track programs all remain consistent with available sources.",
+      "VERIFIED UNCHANGED — ETIAS status: not yet operational as of June 2026; expected Q4 2026."
+    ],
+    "gaps": [
+      "The keliauk.urm.lt official Lithuanian MFA page listing visa-free countries returns HTTP 403 and cannot be directly fetched; Annex II list sourced from EUR-Lex consolidated text of Regulation 2018/1806 (CELEX:02018R1806-20251230) which is the primary authoritative EU legal source.",
+      "migracija.lt pages are JavaScript-rendered (Liferay CMS) and return only 'Migris' to non-browser clients; investment amounts and startup visa details confirmed via search result snippets citing official domain and the European Commission EU Immigration Portal for the EU Blue Card.",
+      "ETIAS is not yet operational as of June 2026 (expected launch Q4 2026); no ETIAS entries recorded.",
+      "Lithuania has no visa-on-arrival scheme for any nationality.",
+      "Lithuania has no national e-visa system; all visa applications go through Schengen consulates or MIGRIS portal.",
+      "Exact processing times for investment-based residence permits could not be confirmed from a directly scraped official migracija.lt page.",
+      "Dual citizenship provisions confirmed via search snippets citing e-seimas.lrs.lt Law on Citizenship (XI-1196); exact article text not directly extracted due to JS rendering issues.",
+      "No credential-based conditional entry rules found for Lithuania: as a full Schengen state Lithuania does not operate any 'visa-free if you hold a US/UK/Schengen visa' scheme for ordinary travellers.",
+      "No OCI or special diaspora status rules found for Lithuania.",
+      "Additional diplomatic/service passport waivers with other countries not individually confirmed from urm.lt treaty pages in this validation pass; the bilateral treaty index was checked and Thailand was the only new entry added since prior validation. Full traversal of all 50+ country bilateral pages was not performed."
+    ]
+  },
+  "sources_checked": [
+    "https://www.urm.lt/en/foreign-policy/treaties/bilateral/1221 (SUCCESS via Firecrawl — bilateral treaty index confirmed, updated 2025-02-04, Thailand new entry at /thailand/2220 identified)",
+    "https://www.urm.lt/en/treaties/bilateral/south-africa/1295 (SUCCESS via Firecrawl — only one treaty listed: diplomatic/official passport waiver signed 29/08/2022, in force 14/12/2022; updated 2025-03-19; no ordinary passport agreement registered)",
+    "https://www.urm.lt/en/treaties/bilateral/thailand/2220 (SUCCESS via Firecrawl — diplomatic and official/service passport waiver signed 18/06/2024, in force 07/04/2025, confirmed new entry)",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230 (SUCCESS via WebFetch — consolidated Annex II list confirmed; Vanuatu moved to Annex I by Regulation 2025/11 effective 4 Feb 2025; South Africa confirmed in Annex I)",
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en (SUCCESS via WebFetch — Vanuatu suspension confirmed; South Africa not on visa-free list)",
+    "https://keliauk.urm.lt/en/entry-to-lithuania/visas (HTTP 403 — blocked)",
+    "https://keliauk.urm.lt/en/entry-to-lithuania/visas/list-of-countries-whose-citizens-do-not-require-visas-to-enter-the-republic-of-lithuania (HTTP 403 — blocked)",
+    "https://keliauk.urm.lt/en/entry-to-lithuania/lithuania-in-the-schengen-area (HTTP 403 — blocked)",
+    "https://www.migracija.lt/en/atvykstu-pagal-investiciju-sutarti-kurioje-nustatytos-specialios-investavimo-ir-verslo-salygos (Firecrawl — JS-rendered, page not found / redirected to Lithuanian homepage)",
+    "https://www.migracija.lt/en/stay-less-than-3-months (JS-rendered, only 'Migris' returned)",
+    "https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/ (HTTP 403 via WebFetch; confirmed via WebSearch results citing same)",
+    "WebSearch: 'Lithuania South Africa ordinary passport visa-free 2025 2026' — confirmed agreement is not reciprocal for ordinary passport holders entering Lithuania",
+    "WebSearch: 'Vanuatu Schengen visa-free suspension 2025 EU Regulation reinstated OR revoked' — confirmed permanent removal effective 4 Feb 2025",
+    "WebSearch: 'Lithuania bilateral visa-free agreement 2025 2026 diplomatic passport new treaty urm.lt' — Thailand treaty surfaced",
+    "WebSearch: 'Lithuania ETIAS launch date 2026 operational' — confirmed not yet launched, expected Q4 2026"
+  ]
+}

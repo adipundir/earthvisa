@@ -1,0 +1,705 @@
+{
+  "iso2": "PK",
+  "iso3": "PAK",
+  "name": "Pakistan",
+  "region": "Asia",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Maldives",
+        "iso3": "MDV",
+        "max_stay_days": 90,
+        "notes": "All Maldivian nationals (ordinary passport holders) may enter Pakistan without a visa for up to three months under visa abolition agreement. Entry 26 in the official dgip.gov.pk table (as of 21-02-2024): 'Maldives — Three Months — All Nationals of the Country'.",
+        "source_url": "https://dgip.gov.pk/visa/categories.php",
+        "source_official": true
+      },
+      {
+        "nationality": "Nepal",
+        "iso3": "NPL",
+        "max_stay_days": 30,
+        "notes": "All Nepali nationals (ordinary passport holders) may enter Pakistan without a visa for up to one month under visa abolition agreement. Entry 32 in the official dgip.gov.pk table (as of 21-02-2024): 'Nepal — One Month — All Nationals of the Country'.",
+        "source_url": "https://dgip.gov.pk/visa/categories.php",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {
+        "nationality": "175 countries (List A minus exclusions)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Pakistan Online Visa System (POVS) at visa.nadra.gov.pk is open to citizens of 175 countries (as enumerated on dgip.gov.pk). List-B countries (India, Somalia) are excluded. Armenia, Israel and Taiwan are not part of any list. Standard processing time is approximately 7-10 working days at Pakistan missions abroad (or up to 20 business days per Fragomen March 2026 alert). The Visa Prior to Arrival (VPA) free fast-track program and the Visa on Arrival (VOA) program were both suspended effective 1 January 2026 — only the standard paid e-visa route remains operative. Russia is listed with an asterisk on the dgip.gov.pk e-visa table (possible restriction or note). Nationals of Afghanistan, China, Japan, Iceland, North Korea, Slovakia, Malaysia, UAE, and Saudi Arabia reportedly pay no visa fee (except work visas) but must still apply via POVS portal.",
+        "source_url": "https://dgip.gov.pk/visa/categories.php",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://visa.nadra.gov.pk/",
+      "https://visa.nadra.gov.pk/visa-abolition-list/",
+      "https://dgip.gov.pk/visa/categories.php",
+      "https://www.interior.gov.pk/index.php/about-moi/policies-moi/visa-abolition-agreements-2",
+      "https://www.fragomen.com/insights/pakistan-suspension-of-visas-on-arrival-and-visa-prior-to-arrival-programs.html",
+      "https://mofa.gov.pk/agreement-between-the-government-of-the-islamic-republic-of-pakistan-of-and-the-government-of-lao-peoples-democratic-republic-on-visa-exemption-for-holders-of-diplomatic-and-official-passports"
+    ],
+    "notes": "Pakistan has bilateral visa abolition/exemption agreements with 49 countries (per Ministry of Interior and dgip.gov.pk as of 21-02-2024). Of these, only 2 countries (Maldives and Nepal) have agreements covering ALL passport types including ordinary. All other agreements cover diplomatic and/or official passport holders only. The Visa Prior to Arrival (VPA) free program and the Visa on Arrival (VOA) program were both suspended effective 1 January 2026 per multiple sources — e-visa (POVS) is now the only operative route for most nationalities. GCC nationals (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE) who previously had visa abolition for ordinary passports are NOT confirmed by the official 49-country dgip.gov.pk table for ordinary passports; their agreements appear in the diplomatic/official section only."
+  },
+  "conditional_access": [
+    {
+      "basis": "special_status",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Pakistan",
+        "type": "other",
+        "subtype": "Pakistan Origin Card (POC)"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Foreign nationals of Pakistani origin holding a valid Pakistan Origin Card (POC) issued by NADRA under Section 11 of NADRA Ordinance, 2000 do not require a visa to enter Pakistan. Stay permitted for duration of card validity. Eligible categories: former Pakistani citizens, foreign nationals whose parents/grandparents are/were Pakistani, foreigners married to Pakistani citizens (excluding nationals of India, Bangladesh, unrecognised states or enemy countries), and dependent children of foreign spouses of Pakistani citizens. Not applicable to Indian or Bangladeshi nationals.",
+      "source_url": "https://www.nadra.gov.pk/identityDocument/poc?action=new",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Argentina"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Argentine diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 1 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Austria"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Austrian diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 2 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Azerbaijan"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Azerbaijani diplomatic and official passports may enter Pakistan without a visa for up to one month. Entry 3 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Bahrain"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Bahraini diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 4 in dgip.gov.pk visa abolition table (as of 21-02-2024). Ordinary passport holders of Bahrain are NOT included in the official 49-country visa abolition list.",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Belarus"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Belarusian diplomatic, official and service passports may enter Pakistan without a visa for up to three months. Entry 5 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Belgium"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Belgian diplomatic passports may enter Pakistan without a visa for up to three months. Entry 6 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Brazil"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Brazilian diplomatic passports may enter Pakistan without a visa for up to three months. Entry 7 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Brunei"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Bruneian diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 8 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Cyprus"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Cypriot diplomatic, official and service passports may enter Pakistan without a visa for up to three months. Entry 9 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Czech Republic"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Czech diplomatic, official and service passports may enter Pakistan without a visa for up to three months. Entry 10 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Cuba"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Cuban diplomatic, official and service passports may enter Pakistan without a visa for up to three months. Entry 11 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Denmark"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Danish diplomatic, official and service passports may enter Pakistan without a visa for up to three months. Entry 12 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Egypt"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Egyptian diplomatic passports may enter Pakistan without a visa for up to one month. Entry 13 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Finland"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Finnish diplomatic passports may enter Pakistan without a visa for up to three months. Entry 14 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Georgia"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Georgian diplomatic, official and service passports may enter Pakistan without a visa for up to three months. Entry 15 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Germany"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of German diplomatic passports may enter Pakistan without a visa for up to three months. Entry 16 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Indonesia"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Indonesian diplomatic, official and service passports may enter Pakistan without a visa for up to one month. Entry 17 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Iran"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Iranian diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 18 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["China (Hong Kong)"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Hong Kong (China) diplomatic and official passports may enter Pakistan without a visa for up to one month. Entry 19 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Jordan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Jordanian diplomatic passports may enter Pakistan without a visa for up to one month. Entry 20 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kazakhstan"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Kazakhstani diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 21 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kuwait"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Kuwaiti diplomatic, special and official passports may enter Pakistan without a visa for up to three months. Entry 22 in dgip.gov.pk visa abolition table (as of 21-02-2024). Ordinary passport holders of Kuwait are NOT included in the official 49-country visa abolition list.",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kyrgyz Republic"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 60,
+      "conditions": "Holders of Kyrgyz diplomatic and official passports may enter Pakistan without a visa for up to two months. Entry 23 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Lao PDR"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Laotian diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 24 in dgip.gov.pk visa abolition table (as of 21-02-2024). Agreement signed at Vientiane on 25 July 2016.",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Luxembourg"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Luxembourgish diplomatic passports may enter Pakistan without a visa for up to three months. Entry 25 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Malaysia"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Malaysian diplomatic and official passports may enter Pakistan without a visa for up to one month. Entry 27 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Morocco"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Moroccan diplomatic and service passports may enter Pakistan without a visa for up to three months. Entry 28 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Mexico"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Mexican diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 29 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Malta"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Maltese diplomatic and official passports may enter Pakistan without a visa for up to one month. Entry 30 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Netherlands"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Dutch diplomatic passports may enter Pakistan without a visa for up to three months. Entry 31 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Norway"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Norwegian diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 33 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Oman"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Omani diplomatic and official passports may enter Pakistan without a visa. Oman does NOT appear in the official dgip.gov.pk 49-country table (as of 21-02-2024) — this entry is flagged as unverified from the primary official source and may reflect a more recent agreement or a gap in the table. Ordinary passport holders of Oman are NOT confirmed in the official table.",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Philippines"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Filipino diplomatic passports may enter Pakistan without a visa for up to three months. Entry 34 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Poland"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Polish diplomatic passports may enter Pakistan without a visa for up to three months. Entry 35 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Romania"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Romanian diplomatic and official passports may enter Pakistan without a visa for up to one month. Entry 36 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Russia"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Russian diplomatic and official passports may enter Pakistan without a visa for up to three months for short-term/official business visits. For members of Diplomatic/Consular Missions and their families, the exemption covers the entire period of assignment. Entry 37 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Saudi Arabia"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Saudi Arabia does NOT appear in the official dgip.gov.pk 49-country visa abolition table (as of 21-02-2024). This entry is retained from prior record as unverified from primary source. Ordinary passport holders of Saudi Arabia are NOT confirmed in the official table. Saudi Arabia does appear in the Business Visa List (BVL) and in the VOA 50-country list on dgip.gov.pk, but both are separate from visa abolition for ordinary passports.",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Senegal"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Senegalese diplomatic, official and service passports may enter Pakistan without a visa for up to three months. Entry 38 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Serbia"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Serbian diplomatic and official passports may enter Pakistan without a visa for up to one month. Entry 39 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Slovak Republic"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Slovak diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 40 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["South Korea"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of South Korean diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 41 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Sri Lanka"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Sri Lankan diplomatic and official passports may enter Pakistan without a visa for up to one month. Entry 42 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Thailand"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Thai diplomatic passports may enter Pakistan without a visa for up to one month. Entry 43 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Tunisia"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Tunisian diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 44 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Turkey"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Turkish diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 45 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Turkmenistan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of Turkmen diplomatic passports may enter Pakistan without a visa for up to one month. Entry 46 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Tajikistan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Tajik diplomatic passports may enter Pakistan without a visa for up to three months. Entry 47 in dgip.gov.pk visa abolition table (as of 21-02-2024). Note: only diplomatic passports confirmed; a separate agreement for official passports has been referenced but was not ratified as of the official list date.",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Vietnam"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Vietnamese diplomatic and official passports may enter Pakistan without a visa for up to three months. Entry 48 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Yemen"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of Yemeni diplomatic, special and official passports may enter Pakistan without a visa for up to three months. Entry 49 in dgip.gov.pk visa abolition table (as of 21-02-2024).",
+      "source_url": "https://dgip.gov.pk/visa/categories.php",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": true,
+    "residency_required": null,
+    "notes": "Pakistan does not operate a formal Citizenship-by-Investment (CBI) program. There is a provision under Section 20 of the Pakistan Citizenship Act 1951 allowing Commonwealth citizens to apply for Pakistani citizenship after remitting Rs. 5 million in foreign exchange (verified by State Bank of Pakistan), but approval is discretionary and not guaranteed — this is not a structured CBI program. Pakistan has dual nationality agreements with 22 specific countries (UK, US, Canada, Australia, France, Italy, Belgium, Iceland, New Zealand, Finland, Egypt, Jordan, Syria, Switzerland, Netherlands, Sweden, Ireland, Bahrain, Denmark, Germany, Norway, Luxembourg) under Pakistan Citizenship (Amendment) Bill 2024."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Long Term Residency (LTR) Scheme",
+        "type": "investment",
+        "min_amount": 50000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://invest.gov.pk/long-term-residency",
+        "source_official": true,
+        "notes": "Established under the Foreigners (Long Term Residency) Order, 2025. Grants foreign investors and their families residency in Pakistan for 5, 7, or 10 years, renewable. Minimum investment of USD 50,000 must be materialized within one year of approval through authorized banking channels. Each additional dependent (up to 7 — spouse, children under 25, parents) requires an additional USD 50,000. Annual renewal requires USD 50,000. LTR provides residency rights only — does not grant nationality or citizenship. Priority sectors: IT/technology, renewable energy, export-led manufacturing, agriculture, industrial development including SEZs. LTR Card issued by NADRA as proof of residency. LTR Digital Portal to go live; apply via invest.gov.pk. Confirmed from invest.gov.pk search result summary — direct page scrape timed out."
+      },
+      {
+        "name": "SIFC Investor Visa",
+        "type": "investor_visa",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://visa.nadra.gov.pk/sifc-investor-visa/",
+        "source_official": true,
+        "notes": "Special Investment Facilitation Council (SIFC) investor visa. Short-term: up to 3 years; long-term: up to 5 years (extendable by 2 additional years). No publicly disclosed investment threshold. SIFC recommendation letter required for visas over 1 year. For non-SIFC investor visas under the Business-Investor category: investment in SECP-registered companies of not less than USD 50,000 or real estate investment exceeding USD 100,000. Processing: 1-14 business days. Long-term categories allow legal residence. After 5 years legal residence and mastering an official language, foreigners can apply for citizenship (per visa.nadra.gov.pk)."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "SIFC Business Visa",
+        "category": "investor/business",
+        "eligibility": "Citizens of all countries (BVL and non-BVL); intent to conduct business or invest in Pakistan, particularly in priority sectors such as mining and gold industries. SIFC recommendation letter may be required.",
+        "processing_time": "1-14 business days",
+        "official_url": "https://visa.nadra.gov.pk/sifc-business-visa/",
+        "source_official": true,
+        "notes": "Issued under the Special Investment Facilitation Council (SIFC) framework. Short-term: single-entry up to 6 months; long-term: multiple-entry up to 5 years (extendable by 2 years). Operated alongside SIFC Investor Visa to attract foreign investment in priority sectors."
+      }
+    ]
+  },
+  "agreements": [],
+  "official_domains": [
+    "visa.nadra.gov.pk",
+    "nadra.gov.pk",
+    "interior.gov.pk",
+    "dgip.gov.pk",
+    "invest.gov.pk",
+    "sifc.gov.pk",
+    "mofa.gov.pk"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTION 1 (critical): Removed Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, and UAE from visa_policy.visa_free. The official dgip.gov.pk 49-country visa abolition table (as of 21-02-2024, scraped June 2026) confirms that only Maldives and Nepal have agreements covering ALL nationals (ordinary passport holders). GCC countries appear only in the diplomatic/official section. The prior record erroneously listed these 6 GCC nations as visa-free for ordinary passport holders — moved to conditional_access as diplomatic/official passport entries (already present there) or flagged as unverified.",
+      "CORRECTION 2: Updated Maldives max_stay_days from null to 90 (three months). The official dgip.gov.pk table entry 26 explicitly states 'Three Months — All Nationals of the Country'.",
+      "CORRECTION 3: Cleared visa_policy.visa_on_arrival entirely. Both the VOA and VPA (Visa Prior to Arrival) programs were suspended effective 1 January 2026 per multiple consistent sources (Fragomen March 2026, VisasNews, Young Pioneer Tours, PassportIndex). The suspension has not been reversed as of June 2026. The dgip.gov.pk policy page still lists the VOA framework as policy text but this does not reflect the operational reality post-January 2026.",
+      "CORRECTION 4: Updated e_visa country count from '192 countries' to '175 countries'. The authoritative dgip.gov.pk page explicitly lists 175 countries eligible for e-visa, with List-B (India, Somalia) excluded and Armenia, Israel, Taiwan not part of any list. The prior record's '192 countries' figure was unsourced and incorrect.",
+      "CORRECTION 5: Removed the erroneous duplicate aggregated conditional_access entry that listed all diplomatic/official countries in a single object (lines 178-184 of prior record). Each country now has its own properly-sourced individual entry.",
+      "CORRECTION 6: Austria — confirmed as 'Diplomatic & Official Passport Holders' per dgip.gov.pk table. Prior record was correct.",
+      "CORRECTION 7: Oman — does NOT appear in the official 49-country dgip.gov.pk table (as of 21-02-2024). Retained in conditional_access but flagged as unverified from primary source. Oman appears in the VOA-50 list and BVL list but these are separate from visa abolition for ordinary passports.",
+      "CORRECTION 8: Saudi Arabia — does NOT appear in the official 49-country dgip.gov.pk table (as of 21-02-2024). Retained in conditional_access flagged as unverified. Saudi Arabia appears in BVL and VOA-50 lists.",
+      "VERIFICATION CONFIRMED: Nepal 30 days (one month) — correct. Maldives three months (90 days) — now corrected. All 49 diplomatic/official country entries verified against authoritative dgip.gov.pk table scraped June 2026."
+    ],
+    "gaps": [
+      "Oman and Saudi Arabia are absent from the official 49-country dgip.gov.pk visa abolition table (as of 21-02-2024); their exact visa-free status for ordinary/diplomatic passport holders cannot be confirmed from the available official source. They may have agreements recorded in the Ministry of Interior PDF which was inaccessible (403 Forbidden) during all scrape attempts.",
+      "UAE diplomatic/official passport visa exemption — reportedly entered into force July 2025 per prior research, but UAE does not appear in the dgip.gov.pk table dated 21-02-2024. Should be verified when the official list is next updated.",
+      "Italy diplomatic passport visa waiver — reportedly signed June 2026 but not yet in the dgip.gov.pk table. To be verified.",
+      "Full 175-country e-visa list per dgip.gov.pk scraped; Russia has an asterisk (*) notation whose meaning is not specified on the scraped page — possible fee exemption or restriction.",
+      "VOA/VPA suspension is confirmed operationally (effective 1 January 2026) but no official Pakistani government press release or gazette notification was directly accessible — suspension confirmed only through Fragomen and travel media sources.",
+      "LTR Digital Portal status: not yet live as of information available; exact application procedures and sector-specific investment minimums not published in machine-readable form. Direct scrape of invest.gov.pk timed out; details sourced from search result summaries.",
+      "Turkey 'substitute visa' rule (VOA for Turkish nationals holding valid Schengen/UK/US visa) cited only by Wikipedia — no official Pakistani government page confirmed this rule; not recorded.",
+      "UN Laissez-Passer and Interpol Travel Document exemptions — not confirmed from directly accessible official Pakistani government page; not recorded.",
+      "Pakistan's Commonwealth citizenship provision (Section 20, Pakistan Citizenship Act 1951) is a discretionary route, not a structured CBI program — included in cbi.notes only.",
+      "Exact GCC ordinary-passport visa-free status: the prior record listed 6 GCC countries as visa-free for ordinary passport holders, citing visa.nadra.gov.pk/visa-abolition-list/ (which returned 403 during prior research). The dgip.gov.pk table — which is the most complete official source scraped — does NOT include any GCC country under 'All Nationals'. These entries have been removed from visa_free per official-source-first rule."
+    ]
+  },
+  "sources_checked": [
+    "https://dgip.gov.pk/visa/categories.php (scraped successfully via Firecrawl June 2026 — authoritative 49-country visa abolition table, e-visa 175-country list, VOA 50-country list, last modified March 2024)",
+    "https://visa.nadra.gov.pk/visa-abolition-list/ (scraped via Firecrawl June 2026 — paginated; only first 10 entries visible in scrape, consistent with dgip.gov.pk table)",
+    "https://visa.nadra.gov.pk/ (403 Forbidden)",
+    "https://www.interior.gov.pk/index.php/about-moi/policies-moi/visa-abolition-agreements-2 (403 Forbidden)",
+    "https://www.interior.gov.pk/download/updated-list-of-countries-with-whom-pakistan-has-visa-abolition-exemption/ (403 Forbidden)",
+    "https://invest.gov.pk/long-term-residency (timeout — details confirmed via search result summaries from invest.gov.pk)",
+    "https://www.fragomen.com/insights/pakistan-suspension-of-visas-on-arrival-and-visa-prior-to-arrival-programs.html (fetched — confirmed VOA/VPA suspension as of January 2026, e-visa processing ~20 business days)",
+    "https://www.nadra.gov.pk/identityDocument/poc?action=new (POC details — confirmed in prior research)",
+    "WebSearch: Pakistan visa on arrival 2026 suspended restored — confirmed suspension remains in effect as of June 2026, no reinstatement",
+    "WebSearch: Pakistan LTR scheme 2025 — confirmed USD 50,000 minimum, 5/7/10 year options, no citizenship path"
+  ],
+  "outbound_official": {
+    "found": false,
+    "note": "No official Pakistan government outbound visa-list page located; rely on destination-side data. Extensive search (June 2026) of mofa.gov.pk, dgip.gov.pk, passport.gov.pk, interior.gov.pk, visa.nadra.gov.pk found no page analogous to India's mea.gov.in/vffin listing where Pakistani ordinary-passport holders can travel without a prior consular visa. The mofa.gov.pk/tabs/higher-education-commission page is indexed by Google as 'Travel Information' but was inaccessible (timeout) on all fetch attempts. The dgip.gov.pk site covers only inbound visa categories for foreigners entering Pakistan. Pakistan does not appear to publish an official origin-side outbound visa-exemption list for its own citizens."
+  }
+}

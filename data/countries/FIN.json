@@ -1,0 +1,280 @@
+{
+  "iso2": "FI",
+  "iso3": "FIN",
+  "name": "Finland",
+  "region": "Europe",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "EU/EEA Member State nationals (all EU member states, Iceland, Liechtenstein, Norway)",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "No visa or residence permit required; freedom of movement applies. EU citizens registered after 3 months.",
+        "source_url": "https://migri.fi/en/visiting-finland",
+        "source_official": true
+      },
+      {
+        "nationality": "Switzerland",
+        "iso3": "CHE",
+        "max_stay_days": null,
+        "notes": "No visa required; bilateral agreement with Schengen/EU freedom of movement applies.",
+        "source_url": "https://migri.fi/en/visiting-finland",
+        "source_official": true
+      },
+      {
+        "nationality": "Schengen Annex II third countries (visa-exempt for up to 90 days in any 180-day period)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Finland applies EU Regulation 2018/1806 Annex II (consolidated version as of 3 February 2025, per amendment M6 effective 19 December 2024). Nationals of these countries do not need a visa for stays up to 90 days in any 180-day period. Includes: Albania (biometric passport only), Andorra, Antigua and Barbuda, Argentina, Australia, Bahamas, Barbados, Bosnia and Herzegovina (biometric passport only), Brazil, Brunei, Canada, Chile, Colombia, Costa Rica, Dominica, Georgia (biometric ordinary passport only — NOTE: diplomatic/service/official passports suspended 6 March 2026 to 6 March 2027 per Commission Implementing Regulation EU 2026/496), Grenada, Guatemala, Honduras, Hong Kong SAR (SAR passport only), Israel, Japan, Kiribati, Kosovo (biometric passport only — visa-free since 1 January 2024), Macau SAR (SAR passport only), Malaysia, Marshall Islands, Mauritius, Mexico, Micronesia, Moldova (biometric passport only), Monaco, Montenegro (biometric passport only), Nauru, New Zealand, Nicaragua, North Macedonia (biometric passport only), Palau, Panama, Paraguay, Peru, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Samoa, San Marino, Serbia (biometric passport only, excluding Serbian Coordination Directorate passports), Seychelles, Solomon Islands, South Korea, Taiwan (passport with identity card number), Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, Ukraine (biometric passport only), United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vatican City. NOTE: Vanuatu was permanently moved to Annex I (visa required) by amendment M6 of Regulation 2018/1806 (effective 19 December 2024) and is NO LONGER visa-exempt.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [
+      {
+        "nationality": "Schengen Annex II visa-exempt third country nationals (except EU/EEA/Swiss citizens)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "ETIAS (European Travel Information and Authorisation System) will be required for visa-exempt third country nationals to visit Finland and the Schengen Area. ETIAS is expected to launch in Q4 2026. The fee is EUR 20 per application (increased from the originally proposed EUR 7). EU/EEA/Swiss citizens and holders of valid Schengen residence permits, Schengen long-stay (Type D) visas, or Schengen short-stay (Type C) visas are exempt from ETIAS. ETIAS does not permit work or study. Dual nationals who are EU citizens must use their EU passport to enter the Schengen Area once ETIAS is operational.",
+        "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en",
+        "source_official": true
+      }
+    ],
+    "source_urls": [
+      "https://um.fi/visa-to-visit-finland",
+      "https://um.fi/visa-requirement-and-travel-documents-accepted-by-finland",
+      "https://um.fi/faq-visas-and-residence-permits",
+      "https://migri.fi/en/visiting-finland",
+      "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1806",
+      "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203"
+    ],
+    "notes": "Finland is a Schengen member state and applies EU Regulation 2018/1806 for visa policy. Finland only grants Schengen Category C visas (max 90 days). Category A airport transit visas are required for nationals of: Afghanistan, Bangladesh, Democratic Republic of Congo, Eritrea, Ethiopia, Ghana, Iran, Iraq, Nigeria, Pakistan, Somalia, and Sri Lanka (confirmed via um.fi/faq-visas-and-residence-permits). Russia: citizens may enter only in exempted categories (family of EU/EEA residents, work visa holders, students, etc.). There is no visa-on-arrival or e-visa scheme; Finland does not offer electronic visas. Individual country visa requirement pages are listed at um.fi/visa-requirement-and-travel-documents-accepted-by-finland. VANUATU: removed from Annex II (visa-free list) and moved to Annex I (visa required) effective 19 December 2024 per Regulation EU 2025/11 / amendment M6 to Regulation 2018/1806."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "residence_permit",
+        "subtype": "any valid Schengen residence permit (issued by any Schengen member state)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "A third-country national holding a valid residence permit issued by any Schengen member state satisfies the visa entry condition for Finland under Schengen Borders Code Article 6(1)(b) (Regulation EU 2016/399): they do not need an additional Finnish or Schengen short-stay visa. Stay subject to the 90/180-day rule. Periods of stay under a residence permit are not counted toward the 90-day limit. Transit through other Schengen states to reach the issuing state also permitted under Article 6(5)(a). Additionally, holders of a residence permit issued by an ETIAS country are exempt from the ETIAS travel authorisation requirement (ETIAS Regulation EU 2018/1240, Article 2(2); confirmed by Finnish Border Guard FAQ at raja.fi).",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02016R0399-20240710",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "Type D long-stay (national) visa issued by any Schengen member state"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "A third-country national holding a valid long-stay (Type D / national) visa issued by any Schengen member state satisfies the visa entry condition for Finland under Schengen Borders Code Article 6(1)(b) (Regulation EU 2016/399): no additional Finnish or Schengen short-stay visa required. Stay subject to the 90/180-day rule. Periods under a long-stay visa are not counted toward the 90-day limit. Holders of a long-stay visa issued by an ETIAS country are also exempt from ETIAS (ETIAS Regulation EU 2018/1240, Article 2(2)).",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02016R0399-20240710",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "Type C short-stay (uniform Schengen) visa issued by any Schengen member state"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "A valid Schengen short-stay (Type C / uniform) visa issued by any Schengen member state is valid for travel to and entry into all Schengen states including Finland, for a maximum of 90 days in any 180-day period (Schengen Visa Code, Regulation EC 810/2009; Schengen Borders Code Regulation EU 2016/399). A single-entry visa permits one entry; double-entry two entries; multiple-entry permits multiple entries within validity. Holders of a uniform (Type C) Schengen visa are also exempt from the ETIAS travel authorisation requirement (ETIAS Regulation EU 2018/1240, Article 2(2)(e)). Source also confirmed at home-affairs.ec.europa.eu: 'A Schengen visa is generally valid for every country in the Schengen area.'",
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["CHN"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of valid Chinese diplomatic passports are exempt from the short-stay visa requirement for Finland and the entire Schengen Area under the EU-China Agreement on short-stay visa waiver for holders of diplomatic passports. Agreement provisionally applied from 12 February 2016; in force 1 January 2017 (Council Decisions 2016/431 and 2016/2044). Covers diplomatic passports only; service, official, and ordinary passport holders are not covered by this agreement. Maximum stay 90 days in any 180-day period.",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=LEGISSUM:4384449",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["BRA"],
+      "passport_types": ["diplomatic", "service", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of valid Brazilian diplomatic, service, or official passports are exempt from the short-stay visa requirement for Finland and the entire Schengen Area under the EU-Brazil Agreement on short-stay visa waiver for holders of diplomatic, service or official passports. Agreement signed 8 October 2010; in force 1 April 2011 (Council Decisions 2010/621/EU and 2011/157/EU; amended agreement published OJ L 113, 11.4.2022). Covers diplomatic, service, and official passports. Ordinary Brazilian passport holders are also visa-exempt under a separate agreement (in force 1 October 2012) and under Annex II of Regulation 2018/1806. Maximum stay 90 days in any 180-day period.",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=LEGISSUM:4384449",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["GEO"],
+      "passport_types": ["diplomatic", "service", "official"],
+      "credential": null,
+      "level": "visa_required",
+      "max_stay_days": null,
+      "conditions": "Holders of Georgian diplomatic, service, or official passports have their visa exemption temporarily suspended from 6 March 2026 to 6 March 2027 under Commission Implementing Regulation (EU) 2026/496 of 6 March 2026. During this period they require a Schengen visa. Ordinary biometric passport holders from Georgia remain visa-exempt under Annex II of Regulation 2018/1806 (biometric passports only). The suspension may be extended by a further 24 months and could be expanded to all Georgian nationals if the underlying governance concerns are not addressed.",
+      "source_url": "https://home-affairs.ec.europa.eu/commission-implementing-regulation-temporary-suspension-visa-exemption-georgian-nationals-holding_en",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": true,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "Finland has no citizenship-by-investment program. Finnish authorities have supported EU-wide efforts to curb sale of citizenship. The only path to citizenship is through naturalisation after fulfilling residency, language, and integration requirements. As of 1 October 2024, the general requirement is 8 years of residence; most applicants can apply after 5 years if language skills are met. Source: https://migri.fi/en/citizenship-for-adults and https://migri.fi/en/faq-finnish-citizenship"
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Entrepreneur Residence Permit",
+        "type": "business",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 4,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://migri.fi/en/entrepreneur",
+        "source_official": true,
+        "notes": "No minimum investment threshold. Applicant must actively work in the company in Finland (not just own it). Business must be profitable and income must be sufficient for livelihood. Financial resources assessed by the Centre for Economic Development, Transport and the Environment (ELY Centre/elinvoimakeskus.fi). Monthly net income requirement: at least EUR 1,030–1,210 (2026, depending on region). No pure real estate investment pathway. Permanent residence permit obtainable after 4 years with sufficient income; citizenship after approximately 5 years with language skills."
+      },
+      {
+        "name": "Start-up Entrepreneur Residence Permit",
+        "type": "business",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 4,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://migri.fi/en/start-up-entrepreneur",
+        "source_official": true,
+        "notes": "For founders of growth-oriented startup companies. Requires positive Eligibility Statement from Business Finland (average processing ~1 month). First permit granted for 2 years. Fast-track option available: permit issued in 2 weeks. Monthly net income requirement: at least EUR 1,030–1,210 (2026). No stated minimum investment amount by Migri; Business Finland assesses viability of the startup. Only available as first permit (not extension); cannot apply if already in Finland."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Fast Track for Specialist",
+        "category": "highly_skilled",
+        "eligibility": "Coming to Finland for expert duties requiring special expertise; must have higher education degree or equivalent expertise through work experience; confirmed employment; salary at least EUR 3,937/month (2026); first residence permit only (not extension); must not already be in Finland",
+        "processing_time": "2 weeks",
+        "official_url": "https://migri.fi/en/fast-track-for-specialist",
+        "source_official": true,
+        "notes": "Salary threshold confirmed at EUR 3,937/month for 2026 per migri.fi/en/income-requirement. Fringe benefits not counted. Employer must add terms of employment within 2 working days via Enter Finland for Employers. Application fee (online): EUR 530 (first permit). Permit valid up to 2 years."
+      },
+      {
+        "name": "Fast Track for EU Blue Card",
+        "category": "highly_skilled",
+        "eligibility": "Highly qualified employment; higher education degree (minimum 3 years) or 5 years professional experience at equivalent level; employment contract minimum 6 months; salary at least EUR 3,937/month (2026); first residence permit only",
+        "processing_time": "2 weeks",
+        "official_url": "https://migri.fi/en/fast-track-for-eu-blue-card",
+        "source_official": true,
+        "notes": "EU Blue Card valid maximum 2 years (or duration of employment + 3 months, whichever shorter). Salary threshold confirmed at EUR 3,937/month for 2026 per migri.fi (same threshold as Specialist). No labour market test required. Application fee online: EUR 380 (per EC immigration portal). D visa can be applied simultaneously for immediate travel."
+      },
+      {
+        "name": "Fast Track for Startup Entrepreneur",
+        "category": "startup",
+        "eligibility": "Founder or co-founder of growth-oriented startup; must have positive Eligibility Statement from Business Finland (valid max 4 months at time of application); first residence permit only; cannot be in Finland already",
+        "processing_time": "2 weeks",
+        "official_url": "https://migri.fi/en/fast-track-for-startup-entrepreneur",
+        "source_official": true,
+        "notes": "Fast track not possible if identity not proven within 5 working days, if further information is needed, or if requirements are not met. Business Finland eligibility statement processing ~1 month average. Permit valid 2 years."
+      },
+      {
+        "name": "Fast Track for Specialist and Manager (ICT)",
+        "category": "intra_company_transfer",
+        "eligibility": "Intra-corporate transferees (specialists and managers within a multinational company); confirmed assignment in Finland",
+        "processing_time": "2 weeks",
+        "official_url": "https://migri.fi/en/fast-track-for-specialist-and-manager-ict",
+        "source_official": true,
+        "notes": "Part of Finland's fast track service for work-based residence permits. First permit only."
+      }
+    ]
+  },
+  "agreements": [
+    "EU/EEA Freedom of Movement",
+    "Schengen Area"
+  ],
+  "official_domains": [
+    "migri.fi",
+    "um.fi",
+    "enterfinland.fi",
+    "finlandabroad.fi",
+    "businessfinland.com",
+    "eur-lex.europa.eu",
+    "home-affairs.ec.europa.eu",
+    "raja.fi"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "CORRECTED (2026-06-14): Vanuatu removed from Annex II visa-free list. Per consolidated Regulation 2018/1806 as of 3 February 2025 (amendment M6, Regulation EU 2025/11, effective 19 December 2024), Vanuatu was permanently transferred to Annex I (visa required). Prior record listed Vanuatu as '(suspended)' in Annex II; now fully removed from visa-free list. Note added to visa_policy.notes.",
+      "CORRECTED (2026-06-14): Georgia diplomatic/service/official passport suspension clarified and added as a separate conditional_access entry (basis=passport_type, level=visa_required) for GEO diplomatic/service/official passports. Commission Implementing Regulation (EU) 2026/496 of 6 March 2026 suspends visa exemption for these passport types from 6 March 2026 to 6 March 2027. Ordinary biometric Georgian passports remain visa-free under Annex II (unchanged).",
+      "CORRECTED (2026-06-14): ETIAS fee updated to EUR 20 (from originally proposed EUR 7) per official EC sources. Prior ETA entry did not mention the fee. Added fee information to ETIAS notes.",
+      "CORRECTED (2026-06-14): Kosovo clarified as visa-free since 1 January 2024 (not contingent on ETIAS launch). The regulatory condition 'whichever date comes first' between ETIAS start and 1 January 2024 resolved in favour of the 2024 date. Kosovo biometric ordinary passport holders have been visa-free since that date. Updated Annex II note.",
+      "CONFIRMED (2026-06-14): Fast Track salary thresholds at EUR 3,937/month for both Specialist and EU Blue Card (2026) — confirmed via migri.fi search results.",
+      "CONFIRMED (2026-06-14): Airport transit visa list of 12 countries (Afghanistan, Bangladesh, DRC, Eritrea, Ethiopia, Ghana, Iran, Iraq, Nigeria, Pakistan, Somalia, Sri Lanka) confirmed via um.fi/faq-visas-and-residence-permits.",
+      "CONFIRMED (2026-06-14): No visa-on-arrival or e-visa scheme for Finland — confirmed via um.fi/visa-to-visit-finland ('All visa applications must be submitted in person').",
+      "CONFIRMED (2026-06-14): No CBI program — confirmed; Finland has no citizenship-by-investment scheme."
+    ],
+    "gaps": [
+      "Individual country-by-country visa requirement confirmations from um.fi were not fully accessible; Annex II list sourced from EU Regulation 2018/1806 via EUR-Lex, which is the authoritative basis for Finland's visa-free policy",
+      "Permanent residence permit path: exact years depend on specific route (4 years standard, shorter for degree-holders); detailed 2026 amendments to Aliens Act could not be directly scraped from migri.fi (403 error)",
+      "ETIAS exact launch date not confirmed — Q4 2026 per EC sources and finlandabroad.fi; no specific day/month confirmed",
+      "Georgia suspension could be extended by a further 24 months or expanded to all passport types; monitoring recommended",
+      "Finland has no digital nomad visa; no investor-only (real estate, fund, bonds) residence by investment pathway",
+      "No OCI (Overseas Citizen of India) cardholder exemption found for Finland: no official source mentions any OCI-based or similar diaspora/special-status-based entry rule for Finland",
+      "No comprehensive list of all bilateral diplomatic passport visa waiver agreements accessible from um.fi",
+      "No conditional entry rules based on holding a US, UK, Canadian, Australian, GCC, UAE, or Japanese visa were found for Finland — Finland does not operate a visa-on-arrival or e-visa scheme based on third-country credentials",
+      "EES (Entry-Exit System) launch date and Finland implementation details not confirmed in this validation pass"
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "No official Finnish government outbound visa-list page located. Finland's Ministry for Foreign Affairs (um.fi) explicitly states it only grants visas for travel TO Finland and does not publish a country-by-country visa-free list for Finnish citizens traveling abroad. Finnish nationals are directed to consult destination-country missions for entry requirements. The Finnish MFA page https://um.fi/visa-and-residence-permit-finnish-citizens explicitly states: 'The Finnish Ministry for Foreign Affairs and the Finnish missions abroad only grant visas to people travelling to Finland; they do not handle visa applications of Finnish citizens travelling abroad.' No equivalent of India's mea.gov.in/vffin outbound visa-listing page exists on um.fi, finlandabroad.fi, raja.fi, or migri.fi. Rely on destination-side data."
+  },
+  "sources_checked": [
+    "https://migri.fi/en/visiting-finland",
+    "https://migri.fi/en/fast-track-for-specialist",
+    "https://migri.fi/en/fast-track-for-startup-entrepreneur",
+    "https://migri.fi/en/fast-track-for-eu-blue-card",
+    "https://migri.fi/en/eu-blue-card",
+    "https://migri.fi/en/start-up-entrepreneur",
+    "https://migri.fi/en/entrepreneur",
+    "https://migri.fi/en/fast-track",
+    "https://migri.fi/en/income-requirement",
+    "https://um.fi/visa-to-visit-finland",
+    "https://um.fi/visa-requirement-and-travel-documents-accepted-by-finland",
+    "https://um.fi/faq-visas-and-residence-permits",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1806",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02016R0399-20240710",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=LEGISSUM:4384449",
+    "https://eur-lex.europa.eu/eli/reg_del/2024/2059/oj/eng",
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
+    "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en",
+    "https://home-affairs.ec.europa.eu/commission-implementing-regulation-temporary-suspension-visa-exemption-georgian-nationals-holding_en",
+    "https://home-affairs.ec.europa.eu/news/visa-free-travel-kosovo-citizens-eu-2024-01-03_en",
+    "https://finlandabroad.fi/web/usa/current-affairs/-/asset_publisher/h5w4iTUJhNne/content/eu-alueelle-matkustamisen-saannot-muuttuvat.-muutokset-tulevat-voimaan-vuoden-2026-viimeisella-neljanneksella./384951",
+    "https://raja.fi/en/frequently-asked-questions-about-travel",
+    "https://raja.fi/en/guidelines-for-travellers"
+  ]
+}

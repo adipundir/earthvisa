@@ -1,0 +1,943 @@
+{
+  "iso2": "PL",
+  "iso3": "POL",
+  "name": "Poland",
+  "region": "Europe",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://www.gov.pl/web/dyplomacja/informacje-dla-podrozujacych",
+    "source_official": true,
+    "asof": null,
+    "visa_free": [],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "The Polish Ministry of Foreign Affairs (MSZ) publishes per-country travel profiles at https://www.gov.pl/web/dyplomacja/informacje-dla-podrozujacych covering approximately 200 destinations. Each country profile includes a 'Wjazd i pobyt' (Entry and Stay) section stating whether Polish ordinary-passport holders need a visa and what documents are required. This is the authoritative origin-side resource for Polish outbound travel. There is NO single consolidated outbound visa-free list (analogous to India's mea.gov.in/vffin); entry requirements must be looked up per destination country. The per-country profiles are authored by Polish diplomatic posts abroad. The visa-free, visa_on_arrival, e_visa, and eta arrays are left empty here because the MFA publishes this data only at the individual country-profile level, not as an aggregated list."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period; standard Schengen rule applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Antigua and Barbuda",
+        "iso3": "ATG",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Austria",
+        "iso3": "AUT",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahamas",
+        "iso3": "BHS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/uae/list-of-countries-whose-citizens-can-travel-to-poland-without-visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Barbados",
+        "iso3": "BRB",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Belgium",
+        "iso3": "BEL",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Brunei",
+        "iso3": "BRN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Bulgaria",
+        "iso3": "BGR",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Croatia",
+        "iso3": "HRV",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Cyprus",
+        "iso3": "CYP",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Czech Republic",
+        "iso3": "CZE",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Denmark",
+        "iso3": "DNK",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Dominica",
+        "iso3": "DMA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "East Timor (Timor-Leste)",
+        "iso3": "TLS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "El Salvador",
+        "iso3": "SLV",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Estonia",
+        "iso3": "EST",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Finland",
+        "iso3": "FIN",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "France",
+        "iso3": "FRA",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Germany",
+        "iso3": "DEU",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Greece",
+        "iso3": "GRC",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Grenada",
+        "iso3": "GRD",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Guatemala",
+        "iso3": "GTM",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Honduras",
+        "iso3": "HND",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Hong Kong (SAR China)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Holders of Hong Kong SAR passport; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Hungary",
+        "iso3": "HUN",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Iceland",
+        "iso3": "ISL",
+        "max_stay_days": null,
+        "notes": "EEA member; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Ireland",
+        "iso3": "IRL",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Italy",
+        "iso3": "ITA",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Kiribati",
+        "iso3": "KIR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period; EU-Kiribati visa waiver agreement signed 24 June 2016",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Latvia",
+        "iso3": "LVA",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Liechtenstein",
+        "iso3": "LIE",
+        "max_stay_days": null,
+        "notes": "EEA member; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Lithuania",
+        "iso3": "LTU",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Luxembourg",
+        "iso3": "LUX",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Macao (SAR China)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Holders of Macao SAR passport; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Malta",
+        "iso3": "MLT",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Marshall Islands",
+        "iso3": "MHL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Mauritius",
+        "iso3": "MUS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Micronesia",
+        "iso3": "FSM",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Netherlands",
+        "iso3": "NLD",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Nicaragua",
+        "iso3": "NIC",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Norway",
+        "iso3": "NOR",
+        "max_stay_days": null,
+        "notes": "EEA member; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Palau",
+        "iso3": "PLW",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Paraguay",
+        "iso3": "PRY",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Portugal",
+        "iso3": "PRT",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Romania",
+        "iso3": "ROU",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Kitts and Nevis",
+        "iso3": "KNA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Lucia",
+        "iso3": "LCA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Vincent and the Grenadines",
+        "iso3": "VCT",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Samoa",
+        "iso3": "WSM",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "San Marino",
+        "iso3": "SMR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Sao Tome and Principe",
+        "iso3": "STP",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period; confirmed on gov.pl/georgia and gov.pl/canada embassy pages",
+        "source_url": "https://www.gov.pl/web/georgia/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovakia",
+        "iso3": "SVK",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Slovenia",
+        "iso3": "SVN",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Solomon Islands",
+        "iso3": "SLB",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period; EU-Solomon Islands visa waiver agreement signed 7 October 2016",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Spain",
+        "iso3": "ESP",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Sweden",
+        "iso3": "SWE",
+        "max_stay_days": null,
+        "notes": "EU member state; freedom of movement applies",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Switzerland",
+        "iso3": "CHE",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period; Schengen member",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Taiwan",
+        "iso3": "TWN",
+        "max_stay_days": 90,
+        "notes": "Passport must include identity card number; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Tonga",
+        "iso3": "TON",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Trinidad and Tobago",
+        "iso3": "TTO",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Tuvalu",
+        "iso3": "TUV",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "United Arab Emirates",
+        "iso3": "ARE",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/uae/list-of-countries-whose-citizens-can-travel-to-poland-without-visas",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period; post-Brexit standard Schengen rules apply",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "United States",
+        "iso3": "USA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Uruguay",
+        "iso3": "URY",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Vatican City",
+        "iso3": "VAT",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Venezuela",
+        "iso3": "VEN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Albania",
+        "iso3": "ALB",
+        "max_stay_days": 90,
+        "notes": "Biometric passport required; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Bosnia and Herzegovina",
+        "iso3": "BIH",
+        "max_stay_days": 90,
+        "notes": "Biometric passport required; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Georgia",
+        "iso3": "GEO",
+        "max_stay_days": 90,
+        "notes": "Biometric passport required; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "North Macedonia",
+        "iso3": "MKD",
+        "max_stay_days": 90,
+        "notes": "Biometric passport required; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Moldova",
+        "iso3": "MDA",
+        "max_stay_days": 90,
+        "notes": "Biometric passport required; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/georgia/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Montenegro",
+        "iso3": "MNE",
+        "max_stay_days": 90,
+        "notes": "Biometric passport required; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Serbia",
+        "iso3": "SRB",
+        "max_stay_days": 90,
+        "notes": "Biometric passport required; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 90,
+        "notes": "Biometric passport required; 90 days within any 180-day period",
+        "source_url": "https://www.gov.pl/web/canada-en/visa-free-countries",
+        "source_official": true
+      },
+      {
+        "nationality": "EU/EEA citizens (all member states)",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "All EU and EEA citizens enjoy freedom of movement; no visa or stay limit applies under EU law",
+        "source_url": "https://www.gov.pl/web/mswia-en/entry-and-residence-conditions-for-foreign-nationals-in-poland",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://www.gov.pl/web/canada-en/visa-free-countries",
+      "https://www.gov.pl/web/uae/list-of-countries-whose-citizens-can-travel-to-poland-without-visas",
+      "https://www.gov.pl/web/georgia/visa-free-countries",
+      "https://www.gov.pl/web/diplomacy/visas",
+      "https://www.gov.pl/web/mswia-en/entry-and-residence-conditions-for-foreign-nationals-in-poland"
+    ],
+    "notes": "Poland is a Schengen member. Visa-free visitors from third countries are generally permitted 90 days within any 180-day period under the standard Schengen rule. The visa exemption does not cover residence, work, or paid activity. Several Western Balkan and Eastern Partnership countries require biometric passports. Nationals of Afghanistan, Armenia, Bangladesh, Cuba, Democratic Republic of Congo, Egypt, Eritrea, Ethiopia, Ghana, Iran, Iraq, Nigeria, Pakistan, Somalia, and Sri Lanka require an airport transit visa (A-type) even when transiting through Polish airports. Poland does not operate a separate e-visa or ETA system; standard Schengen C-type visas are applied for via the e-Konsulat portal (secure.e-konsulat.gov.pl) at Polish embassies/consulates. VANUATU REMOVED: Vanuatu was formally removed from the EU Schengen Annex II visa-free list by EU Council Regulation amending Regulation (EU) 2018/1806, adopted 12 December 2024, entering into force 3 February 2025 (Official Journal OJ L 202402059). Vanuatu nationals now require a Schengen visa. Some official Polish gov.pl embassy pages have not yet been updated and still list Vanuatu — the governing EU regulation takes precedence. Saint Pierre and Miquelon is a French overseas collectivity; French EU citizen freedom-of-movement applies; the entry on official lists likely refers to travel document holders who are French nationals. ETIAS (European Travel Information and Authorisation System) is expected to launch in Q4 2026 and will require pre-travel authorisation for visa-exempt non-EU nationals; it was not yet operational as of June 2026."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "residence_permit",
+        "subtype": "any valid residence permit issued by another Schengen Member State"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Foreign nationals holding a valid residence permit issued by another Schengen Member State are entitled to stay in Schengen Member States other than the one which issued the permit (including Poland) during the validity of that residence permit for a period not exceeding 90 days in any 180-day period. Traveller must carry the residence permit and a valid travel document.",
+      "source_url": "https://www.gov.pl/web/mswia-en/entry-and-residence-conditions-for-foreign-nationals-in-poland",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "Type D (national/long-stay visa) issued by another Schengen Member State"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Foreign nationals holding a valid long-stay (D-type) visa issued by another Schengen Member State are entitled to stay in Schengen Member States other than the one which issued the visa (including Poland) during the validity of that visa for a period not exceeding 90 days in any 180-day period. Traveller must carry the D-type visa and a valid travel document.",
+      "source_url": "https://www.gov.pl/web/mswia-en/entry-and-residence-conditions-for-foreign-nationals-in-poland",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": true,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "Poland has no citizenship-by-investment program. The official Ministry of the Interior and Administration page on citizenship recognition does not mention any investment route. Polish citizenship can be granted by the President in exceptional cases (e.g. for special merits), but this is a discretionary presidential prerogative, not a formal investment program. Source: https://www.gov.pl/web/mswia-en/apply-to-be-recognised-as-a-polish-citizen"
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Temporary Residence Permit for Conducting Business Activity",
+        "type": "business_activity",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 8,
+        "official_url": "https://www.mos.cudzoziemcy.gov.pl/en/informacje/prow-dzial-gosp_EN",
+        "source_official": true,
+        "notes": "Available to non-EU nationals operating a sole proprietorship in the CEIDG register, holding shares/management board membership in a Polish limited liability or joint-stock company, or acting as a general partner in a limited partnership. The business must generate income not lower than twelve times the average monthly remuneration for the prior tax year. Minimum personal income requirement: PLN 1,010 net/month for a single applicant (2026 figures). No statutory minimum investment amount; program requires genuine business activity. Permit issued for up to 3 years. Permanent residence after 5 years of uninterrupted temporary residence; citizenship eligibility after further period. Applications submitted via the MOS portal (mos.cudzoziemcy.gov.pl) from April 2026."
+      },
+      {
+        "name": "Temporary Residence Permit for Conducting Business Activity (Company Director / Partner)",
+        "type": "business_activity",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": 5,
+        "path_to_citizenship_years": 8,
+        "official_url": "https://www.mos.cudzoziemcy.gov.pl/en/informacje/prow-dzial-spolka_EN",
+        "source_official": true,
+        "notes": "Specifically for management board members of a sp. z o.o. that the applicant appointed or of which they are a partner, or general/limited partners in partnerships. Same income conditions as general business activity permit. Issued for up to 3 years."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "EU Blue Card (Karta Niebieska UE)",
+        "category": "highly_qualified_worker",
+        "eligibility": "Non-EU nationals with a valid work contract of at least 1 year for highly qualified employment (higher education degree or 5 years relevant professional experience); gross monthly salary of at least PLN 9,519.23",
+        "processing_time": "Maximum 60 days from submission of complete application",
+        "official_url": "https://mos.cudzoziemcy.gov.pl/en/informacje/blue-card_EN/wprowadzenie_EN",
+        "source_official": true,
+        "notes": "The EU Blue Card is a single permit for residence and work; no separate work permit needed. Permit issued for the duration of the employment contract plus 3 months, up to a maximum of 3 years. Application fee: PLN 440. Minimum gross monthly salary threshold: PLN 9,519.23 (as confirmed on the European Commission EU immigration portal). Labour market test applies in Poland. Source also: https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card/eu-blue-card-poland_en"
+      },
+      {
+        "name": "Poland Business Harbour (PBH)",
+        "category": "startup_entrepreneur",
+        "eligibility": "Originally for IT/ICT specialists and entrepreneurs (initially from Belarus, later expanded to Georgia, Russia, Ukraine, Moldova, Armenia); required a partnership with a Polish company or founding own business in Poland. D23 visa type granted without separate work permit.",
+        "processing_time": "Approximately 2-5 weeks for visa; ~30 days for company verification",
+        "official_url": "https://www.gov.pl/web/poland-businessharbour-en/qa",
+        "source_official": true,
+        "notes": "Program is SUSPENDED – Minister of Foreign Affairs suspended MFA participation on 26 January 2024 due to concerns about inadequate verification of beneficiary companies and misuse of visas. No new visas or recommendations are being issued. Visas already issued remain valid. The MFA intends to develop streamlined standard business visa procedures as an alternative. See: https://www.gov.pl/web/diplomacy/statement-on-suspending-mfa-participation-in-poland-business-harbour-programme"
+      }
+    ]
+  },
+  "agreements": [
+    "EU/EEA freedom of movement",
+    "Schengen Area"
+  ],
+  "official_domains": [
+    "gov.pl",
+    "mos.cudzoziemcy.gov.pl",
+    "udsc.gov.pl",
+    "migrant.poznan.uw.gov.pl",
+    "home-affairs.ec.europa.eu",
+    "secure.e-konsulat.gov.pl"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "CORRECTION — Vanuatu removed from visa_free list: Vanuatu was moved from Annex II (visa-free) to Annex I (visa-required) of Regulation (EU) 2018/1806 by EU Council Regulation adopted 12 December 2024, entering into force 3 February 2025. Vanuatu nationals now require a Schengen visa to enter Poland. Removed from visa_free array. Some gov.pl embassy pages have not been updated and still list Vanuatu; the EU regulation is the governing legal instrument. Source: https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/",
+      "CORRECTION — Saint Pierre and Miquelon removed from visa_free list: Saint Pierre and Miquelon is a French overseas collectivity (not a sovereign state with its own nationality). Holders of French passports travel as EU/French citizens and are covered by the EU/EEA freedom-of-movement entry. There is no separate 'Saint Pierre and Miquelon' nationality that generates a distinct Schengen visa-free right. Entry removed to avoid misleading nationality classification; covered implicitly by France/EU freedom-of-movement entry.",
+      "CORRECTION — Poland Business Harbour suspension source updated: The suspension was formally announced on 26 January 2024 by Minister Sikorski, citing misuse of visas and inadequate company verification. Source added: https://www.gov.pl/web/diplomacy/statement-on-suspending-mfa-participation-in-poland-business-harbour-programme",
+      "VERIFIED — Sao Tome and Principe (STP) confirmed as visa-free on official gov.pl/georgia and gov.pl/canada embassy pages.",
+      "VERIFIED — Solomon Islands (SLB) confirmed as visa-free on official gov.pl/georgia and gov.pl/canada embassy pages; EU-Solomon Islands visa waiver agreement signed 7 October 2016.",
+      "VERIFIED — Dominican Republic (DOM) is NOT listed on any official Polish government page (gov.pl/canada, gov.pl/uae, gov.pl/georgia all checked). Not visa-free.",
+      "ADDED — ETIAS note: EU ETIAS system expected to launch Q4 2026; once operational, visa-exempt non-EU nationals will need an ETIAS authorisation before entering Poland/Schengen. Not yet in force as of June 2026. Source: https://travel-europe.europa.eu/en/etias",
+      "VERIFIED — Conditional access entries (Schengen D-visa and residence permit holders) confirmed accurate per gov.pl/mswia-en.",
+      "VERIFIED — No e-visa or visa-on-arrival system exists for Poland; confirmed absent on official sources.",
+      "VERIFIED — CBI: no program exists; confirmed on official MoIA page.",
+      "VERIFIED — RBI business activity permits and EU Blue Card entries confirmed active on mos.cudzoziemcy.gov.pl.",
+      "NOTE — Kiribati source_url was gov.pl/canada-en. Updated notes to reference EU-Kiribati visa waiver agreement (signed 24 June 2016) for completeness."
+    ],
+    "gaps": [
+      "The official master visa-free list at msz.gov.pl/en/travel_to_poland/entering_poland/visa_free/visa_free_countries now redirects to gov.pl/diplomacy without listing countries. List compiled from multiple official embassy-specific gov.pl subpages (UAE, Canada, Georgia missions).",
+      "Max stay days for EU/EEA citizens not specified (freedom of movement applies with no fixed cap for short stays).",
+      "Dominican Republic: confirmed absent from all official Polish government sources checked. No visa-free agreement with the EU is currently in force.",
+      "Vanuatu: some gov.pl embassy pages (Canada, Georgia, UAE) have not been updated and still list Vanuatu as visa-free despite the EU Regulation removing it from Annex II as of 3 February 2025. The EU regulation is the binding instrument.",
+      "No official e-visa or ETA scheme currently exists for Poland; ETIAS not yet operational (expected Q4 2026).",
+      "No official golden visa or CBI program; confirmed absent on official MoIA citizenship page.",
+      "Poland Business Harbour suspended since 26 January 2024; no active startup visa alternative announced yet on official sources.",
+      "Minimum investment threshold for business activity residence permit not stated numerically in official MOS portal; only income/revenue requirements specified.",
+      "No official Polish government source found confirming visa-free entry for holders of US, Canada, UK, Japan, or Australia residence permits for general visits. Not recorded.",
+      "No official Polish government source confirms OCI (Overseas Citizen of India) cardholder entry privileges for Poland. Not recorded.",
+      "Bilateral diplomatic/service-passport-only visa waiver agreements (e.g. reported Poland-Saudi Arabia January 2026): not confirmed on any official gov.pl or msz.gov.pl domain. Not recorded under official-source-first rule.",
+      "Airport transit visa (A-type) country list (Afghanistan, Armenia, Bangladesh, Cuba, DRC, Egypt, Eritrea, Ethiopia, Ghana, Iran, Iraq, Nigeria, Pakistan, Somalia, Sri Lanka) based on gov.pl/diplomacy/visas text; exact current list not individually confirmed against a published schedule."
+    ]
+  },
+  "sources_checked": [
+    "https://www.gov.pl/web/diplomacy/visas",
+    "https://www.gov.pl/web/canada-en/visa-free-countries",
+    "https://www.gov.pl/web/uae/list-of-countries-whose-citizens-can-travel-to-poland-without-visas",
+    "https://www.gov.pl/web/georgia/visa-free-countries",
+    "https://www.gov.pl/web/mswia-en/entry-and-residence-conditions-for-foreign-nationals-in-poland",
+    "https://www.gov.pl/web/mswia-en/entry-and-residence-rules",
+    "https://www.gov.pl/web/mswia-en/apply-to-be-recognised-as-a-polish-citizen",
+    "https://www.gov.pl/web/usa-en/visas---general-information",
+    "https://www.gov.pl/web/unitedkingdom/visas---general-information",
+    "https://www.gov.pl/web/saudiarabia/visas",
+    "https://www.gov.pl/web/saudiarabia/visas---general-information",
+    "https://www.gov.pl/web/diplomacy/diplomatic-protocol",
+    "https://www.gov.pl/web/poland-businessharbour-en/qa",
+    "https://www.gov.pl/web/diplomacy/statement-on-suspending-mfa-participation-in-poland-business-harbour-programme",
+    "https://mos.cudzoziemcy.gov.pl/en/informacje/prow-dzial-gosp_EN",
+    "https://mos.cudzoziemcy.gov.pl/en/informacje/prow-dzial-spolka_EN",
+    "https://mos.cudzoziemcy.gov.pl/en/informacje/blue-card_EN/wymogi_EN",
+    "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card/eu-blue-card-poland_en",
+    "https://migrant.poznan.uw.gov.pl/en/sciezki/visa-free-travel",
+    "https://secure.e-konsulat.gov.pl/",
+    "https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/",
+    "https://travel-europe.europa.eu/en/etias",
+    "https://travel-europe.europa.eu/en/etias/about-etias/news-corner/revised-timeline-ees-and-etias"
+  ]
+}

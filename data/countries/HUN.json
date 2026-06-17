@@ -1,0 +1,1340 @@
+{
+  "iso2": "HU",
+  "iso3": "HUN",
+  "name": "Hungary",
+  "region": "Europe",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://konzinfo.mfa.gov.hu/vizummentes-kulfoldre-utazas",
+    "source_official": true,
+    "asof": null,
+    "notes": "Official Hungarian MFA Consular Information page listing countries where Hungarian citizens (ordinary private passport holders, M) may travel without a prior consular visa. Entries marked with D/SZ only (diplomatic/service passport required) are excluded from the visa_free list as they do not cover ordinary passport holders. Some entries have pre-travel online registration requirements (eTA / digital arrival card) but no prior consular visa. The page explicitly states this list is informational; travelers should verify current conditions with the destination country embassy before travel. Page accessed June 2026 via direct HTTP fetch from konzinfo.mfa.gov.hu (TLS chain issue on client).",
+    "visa_free": [
+      {"name": "Albania", "iso3": "ALB", "notes": "90 days; card-type SZIG also accepted"},
+      {"name": "Algeria", "iso3": "DZA", "notes": "Diplomatic/service passport only (30/90 days); ordinary passport NOT visa-free"},
+      {"name": "Andorra", "iso3": "AND", "notes": "90 days"},
+      {"name": "Angola", "iso3": "AGO", "notes": "Ordinary passport: 30 days; diplomatic/service: 90 days"},
+      {"name": "Antigua and Barbuda", "iso3": "ATG", "notes": "3 months"},
+      {"name": "Argentina", "iso3": "ARG", "notes": "3 months"},
+      {"name": "Austria", "iso3": "AUT", "notes": "90 days; EU free movement"},
+      {"name": "Bahamas", "iso3": "BHS", "notes": "3 months"},
+      {"name": "Barbados", "iso3": "BRB", "notes": "3 months"},
+      {"name": "Belarus", "iso3": "BLR", "notes": "Ordinary passport: 30 days (special conditions apply — see travel advice); diplomatic/service: 90 days"},
+      {"name": "Belgium", "iso3": "BEL", "notes": "3 months; EU free movement"},
+      {"name": "Belize", "iso3": "BLZ", "notes": "30 days"},
+      {"name": "Bolivia", "iso3": "BOL", "notes": "90 days"},
+      {"name": "Bosnia and Herzegovina", "iso3": "BIH", "notes": "90 days"},
+      {"name": "Botswana", "iso3": "BWA", "notes": "90 days"},
+      {"name": "Brazil", "iso3": "BRA", "notes": "90 days"},
+      {"name": "British Virgin Islands", "iso3": "VGB", "notes": "90 days; ordinary passport only"},
+      {"name": "Brunei", "iso3": "BRN", "notes": "30 days"},
+      {"name": "Bulgaria", "iso3": "BGR", "notes": "90 days; EU free movement"},
+      {"name": "Chile", "iso3": "CHL", "notes": "90 days"},
+      {"name": "China", "iso3": "CHN", "notes": "Ordinary passport: 30 days (business, tourism, family visit, transit, networking only); diplomatic: 90 days; service: 30 days"},
+      {"name": "Colombia", "iso3": "COL", "notes": "90 days"},
+      {"name": "Cook Islands", "iso3": "COK", "notes": "31 days"},
+      {"name": "Costa Rica", "iso3": "CRI", "notes": "180 days"},
+      {"name": "Croatia", "iso3": "HRV", "notes": "90 days; EU free movement; all current SZIG types accepted"},
+      {"name": "Cyprus", "iso3": "CYP", "notes": "90 days; EU free movement"},
+      {"name": "Czech Republic", "iso3": "CZE", "notes": "90 days; EU free movement"},
+      {"name": "Denmark", "iso3": "DNK", "notes": "90 days; EU free movement"},
+      {"name": "Dominica", "iso3": "DMA", "notes": "90 days"},
+      {"name": "Dominican Republic", "iso3": "DOM", "notes": "90 days"},
+      {"name": "Ecuador", "iso3": "ECU", "notes": "90 days"},
+      {"name": "El Salvador", "iso3": "SLV", "notes": "90 days"},
+      {"name": "Estonia", "iso3": "EST", "notes": "90 days; EU free movement"},
+      {"name": "Eswatini", "iso3": "SWZ", "notes": "30 days; ordinary + diplomatic passport"},
+      {"name": "Fiji", "iso3": "FJI", "notes": "Maximum 4 months"},
+      {"name": "Finland", "iso3": "FIN", "notes": "3 months; EU free movement"},
+      {"name": "France", "iso3": "FRA", "notes": "3 months; EU free movement"},
+      {"name": "Gambia", "iso3": "GMB", "notes": "30 days"},
+      {"name": "Georgia", "iso3": "GEO", "notes": "1 year"},
+      {"name": "Germany", "iso3": "DEU", "notes": "90 days; EU free movement"},
+      {"name": "Greece", "iso3": "GRC", "notes": "3 months; EU free movement"},
+      {"name": "Grenada", "iso3": "GRD", "notes": "90 days"},
+      {"name": "Guatemala", "iso3": "GTM", "notes": "3 months"},
+      {"name": "Honduras", "iso3": "HND", "notes": "3 months"},
+      {"name": "Hong Kong", "iso3": null, "notes": "90 days (Hong Kong SAR travel document)"},
+      {"name": "Iceland", "iso3": "ISL", "notes": "3 months; EEA free movement"},
+      {"name": "Ireland", "iso3": "IRL", "notes": "90 days; EU free movement"},
+      {"name": "Israel", "iso3": "ISR", "notes": "3 months"},
+      {"name": "Italy", "iso3": "ITA", "notes": "90 days; EU free movement"},
+      {"name": "Jamaica", "iso3": "JAM", "notes": "30 days; ordinary passport only"},
+      {"name": "Japan", "iso3": "JPN", "notes": "90 days"},
+      {"name": "Kazakhstan", "iso3": "KAZ", "notes": "90 days (max 90 days within 180-day period)"},
+      {"name": "Kiribati", "iso3": "KIR", "notes": "Maximum 4 months"},
+      {"name": "Kosovo", "iso3": "XKX", "notes": "90 days"},
+      {"name": "Kyrgyzstan", "iso3": "KGZ", "notes": "Ordinary passport: 30 days (from 1 January 2026; re-entry allowed after 30-day gap); diplomatic/service: 30 days"},
+      {"name": "Liechtenstein", "iso3": "LIE", "notes": "90 days"},
+      {"name": "Lithuania", "iso3": "LTU", "notes": "90 days; EU free movement"},
+      {"name": "Luxembourg", "iso3": "LUX", "notes": "3 months; EU free movement"},
+      {"name": "Latvia", "iso3": "LVA", "notes": "90 days; EU free movement"},
+      {"name": "Macau", "iso3": null, "notes": "90 days (Macau SAR travel document)"},
+      {"name": "Malta", "iso3": "MLT", "notes": "90 days; EU free movement"},
+      {"name": "Marshall Islands", "iso3": "MHL", "notes": "90 days"},
+      {"name": "Mauritius", "iso3": "MUS", "notes": "3 months"},
+      {"name": "Mexico", "iso3": "MEX", "notes": "180 days; tourism and business only for ordinary passport"},
+      {"name": "Micronesia (Federated States of)", "iso3": "FSM", "notes": "90 days"},
+      {"name": "Moldova", "iso3": "MDA", "notes": "90 days"},
+      {"name": "Monaco", "iso3": "MCO", "notes": "90 days"},
+      {"name": "Mongolia", "iso3": "MNG", "notes": "Ordinary passport: 30 days (verify with Mongolian embassy before travel); diplomatic/service: 90 days"},
+      {"name": "Montenegro", "iso3": "MNE", "notes": "Ordinary passport + D + SZ: 90 days; SZIG: 30 days"},
+      {"name": "Morocco", "iso3": "MAR", "notes": "90 days"},
+      {"name": "Netherlands", "iso3": "NLD", "notes": "3 months; EU free movement"},
+      {"name": "Nicaragua", "iso3": "NIC", "notes": "90 days"},
+      {"name": "North Macedonia", "iso3": "MKD", "notes": "90 days"},
+      {"name": "Norway", "iso3": "NOR", "notes": "90 days; EEA free movement"},
+      {"name": "Palau", "iso3": "PLW", "notes": "90 days"},
+      {"name": "Panama", "iso3": "PAN", "notes": "90 days"},
+      {"name": "Paraguay", "iso3": "PRY", "notes": "90 days"},
+      {"name": "Peru", "iso3": "PER", "notes": "90 days (immigration officer may grant fewer days; supporting documents recommended)"},
+      {"name": "Philippines", "iso3": "PHL", "notes": "Ordinary passport: 30 days; diplomatic/service: 90 days"},
+      {"name": "Poland", "iso3": "POL", "notes": "90 days; EU free movement"},
+      {"name": "Portugal", "iso3": "PRT", "notes": "90 days; EU free movement"},
+      {"name": "Romania", "iso3": "ROU", "notes": "90 days; EU free movement"},
+      {"name": "Saint Kitts and Nevis", "iso3": "KNA", "notes": "3 months"},
+      {"name": "Saint Lucia", "iso3": "LCA", "notes": "90 days"},
+      {"name": "Saint Vincent and the Grenadines", "iso3": "VCT", "notes": "90 days"},
+      {"name": "Samoa", "iso3": "WSM", "notes": "90 days within 180-day period"},
+      {"name": "San Marino", "iso3": "SMR", "notes": "30 days"},
+      {"name": "São Tomé and Príncipe", "iso3": "STP", "notes": "15 days"},
+      {"name": "Senegal", "iso3": "SEN", "notes": "3 months"},
+      {"name": "Serbia", "iso3": "SRB", "notes": "90 days"},
+      {"name": "Seychelles", "iso3": "SYC", "notes": "3 months"},
+      {"name": "Singapore", "iso3": "SGP", "notes": "90 days"},
+      {"name": "Slovakia", "iso3": "SVK", "notes": "90 days; EU free movement"},
+      {"name": "Slovenia", "iso3": "SVN", "notes": "90 days; EU free movement"},
+      {"name": "Solomon Islands", "iso3": "SLB", "notes": "90 days"},
+      {"name": "South Africa", "iso3": "ZAF", "notes": "Ordinary passport: 90 days; diplomatic/service: 120 days"},
+      {"name": "South Korea", "iso3": "KOR", "notes": "90 days"},
+      {"name": "Spain", "iso3": "ESP", "notes": "90 days; EU free movement"},
+      {"name": "Sweden", "iso3": "SWE", "notes": "90 days; EU free movement"},
+      {"name": "Switzerland", "iso3": "CHE", "notes": "90 days"},
+      {"name": "Tajikistan", "iso3": "TJK", "notes": "Ordinary passport: 30 days; diplomatic/service: 90 days"},
+      {"name": "Thailand", "iso3": "THA", "notes": "Ordinary passport: 60 days; diplomatic/service: 90 days"},
+      {"name": "Timor-Leste", "iso3": "TLS", "notes": "90 days"},
+      {"name": "Tonga", "iso3": "TON", "notes": "60 days"},
+      {"name": "Trinidad and Tobago", "iso3": "TTO", "notes": "90 days"},
+      {"name": "Tunisia", "iso3": "TUN", "notes": "90 days"},
+      {"name": "Turkey", "iso3": "TUR", "notes": "90 days; SZIG card accepted for tourism/transit only"},
+      {"name": "Tuvalu", "iso3": "TUV", "notes": "30 days"},
+      {"name": "Ukraine", "iso3": "UKR", "notes": "90 days"},
+      {"name": "United Arab Emirates", "iso3": "ARE", "notes": "90 days"},
+      {"name": "United Kingdom", "iso3": "GBR", "notes": "6 months"},
+      {"name": "Uruguay", "iso3": "URY", "notes": "90 days"},
+      {"name": "Uzbekistan", "iso3": "UZB", "notes": "Ordinary passport: 30 days; diplomatic: 30 days"},
+      {"name": "Vanuatu", "iso3": "VUT", "notes": "90 days"},
+      {"name": "Vatican (Holy See)", "iso3": "VAT", "notes": "90 days"},
+      {"name": "Venezuela", "iso3": "VEN", "notes": "90 days"},
+      {"name": "Vietnam", "iso3": "VNM", "notes": "Ordinary passport: 45 days; diplomatic/service: 90 days"},
+      {"name": "Zambia", "iso3": "ZMB", "notes": "90 days (tourism/private visit within 1 year); stays over 30 days require extension at immigration"},
+      {"name": "Cape Verde", "iso3": "CPV", "notes": "30 days"}
+    ],
+    "visa_on_arrival": [
+      {"name": "Oman", "iso3": "OMN", "notes": "Ordinary passport: max 14 days tourism, visa issued on arrival; diplomatic/service: 90 days visa-free. Conditions: tourism purpose, return ticket, accommodation, insurance, passport valid 6+ months after departure"}
+    ],
+    "e_visa": [],
+    "eta": [
+      {"name": "United States", "iso3": "USA", "notes": "ESTA (Electronic System for Travel Authorization) required before boarding; valid for tourism/business up to 90 days. Biometric passport required."},
+      {"name": "Canada", "iso3": "CAN", "notes": "eTA (Electronic Travel Authorization) required for air travel and transit; up to 6 months. Other purposes (work, study) require visa."},
+      {"name": "Kenya", "iso3": "KEN", "notes": "Electronic Travel Authorization (ETA) mandatory before each entry via etakenya.go.ke; 90 days"},
+      {"name": "Taiwan", "iso3": null, "notes": "Online registration via Taiwan immigration authority (Online Immigration Arrival Card) required before arrival; 90 days"},
+      {"name": "Malaysia", "iso3": "MYS", "notes": "Malaysia Digital Arrival Card (MDAC) online pre-registration required; 90 days. Not a visa — entry remains visa-free."}
+    ]
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "EU/EEA member state nationals",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "All EU and EEA member state nationals have freedom of movement rights; no visa required for any duration.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Albania",
+        "iso3": "ALB",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Per EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Andorra",
+        "iso3": "AND",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Antigua and Barbuda",
+        "iso3": "ATG",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Argentina",
+        "iso3": "ARG",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Australia",
+        "iso3": "AUS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Bahamas",
+        "iso3": "BHS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Barbados",
+        "iso3": "BRB",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Bosnia and Herzegovina",
+        "iso3": "BIH",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Brazil",
+        "iso3": "BRA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "British Nationals (Overseas)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "UK nationals and certain British national categories (British Nationals Overseas, British Overseas Territories Citizens, British Overseas Citizens, British Protected Persons, British Commonwealth Members) admitted visa-free. UK excludes certain British nationals as specified.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Brunei",
+        "iso3": "BRN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Canada",
+        "iso3": "CAN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Chile",
+        "iso3": "CHL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Colombia",
+        "iso3": "COL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Costa Rica",
+        "iso3": "CRI",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Dominica",
+        "iso3": "DMA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "El Salvador",
+        "iso3": "SLV",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Georgia",
+        "iso3": "GEO",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Grenada",
+        "iso3": "GRD",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Guatemala",
+        "iso3": "GTM",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Holy See (Vatican)",
+        "iso3": "VAT",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Honduras",
+        "iso3": "HND",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Hong Kong SAR",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Holders of Hong Kong Special Administrative Region passports only. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Israel",
+        "iso3": "ISR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Japan",
+        "iso3": "JPN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Kiribati",
+        "iso3": "KIR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Kosovo",
+        "iso3": "XKX",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Non-recognized entity listed on official OIF factsheet.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Macao SAR",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Macao SAR (Chinese Special Administrative Region) passport holders. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Marshall Islands",
+        "iso3": "MHL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Mauritius",
+        "iso3": "MUS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Mexico",
+        "iso3": "MEX",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Micronesia (Federated States of)",
+        "iso3": "FSM",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Moldova",
+        "iso3": "MDA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Monaco",
+        "iso3": "MCO",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Montenegro",
+        "iso3": "MNE",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Nauru",
+        "iso3": "NRU",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "New Zealand",
+        "iso3": "NZL",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Nicaragua",
+        "iso3": "NIC",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "North Macedonia",
+        "iso3": "MKD",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Listed as 'Macedonia (Former Yugoslav Republic)' on official source.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Palau",
+        "iso3": "PLW",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Panama",
+        "iso3": "PAN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Paraguay",
+        "iso3": "PRY",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Kitts and Nevis",
+        "iso3": "KNA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Lucia",
+        "iso3": "LCA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Saint Vincent and the Grenadines",
+        "iso3": "VCT",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Samoa",
+        "iso3": "WSM",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "San Marino",
+        "iso3": "SMR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 30 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Serbia",
+        "iso3": "SRB",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Excludes holders of passports issued by the Serbian Coordination Directorate.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 30 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Solomon Islands",
+        "iso3": "SLB",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "South Korea",
+        "iso3": "KOR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Taiwan",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Non-recognized entity listed on official OIF factsheet.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "East Timor (Timor-Leste)",
+        "iso3": "TLS",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Tonga",
+        "iso3": "TON",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Trinidad and Tobago",
+        "iso3": "TTO",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Tuvalu",
+        "iso3": "TUV",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Ukraine",
+        "iso3": "UKR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "United Arab Emirates",
+        "iso3": "ARE",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "United Kingdom",
+        "iso3": "GBR",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Certain British national categories excluded per official source (see British Nationals (Overseas) entry).",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "United States",
+        "iso3": "USA",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Uruguay",
+        "iso3": "URY",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Vanuatu",
+        "iso3": "VUT",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      },
+      {
+        "nationality": "Venezuela",
+        "iso3": "VEN",
+        "max_stay_days": 90,
+        "notes": "90 days within any 180-day period. Bilateral agreement also permits up to 90 additional days beyond Schengen allowance.",
+        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [
+      {
+        "nationality": "All visa-free nationals listed in EU Regulation 2018/1806 Annex II (except EU/EEA/CH citizens)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "ETIAS (European Travel Information and Authorisation System) will be mandatory for all visa-exempt third-country nationals entering Schengen area including Hungary. Confirmed for Q4 2026 launch, with a 6-month transitional period (travellers meeting all other entry conditions will not be refused entry solely for lacking ETIAS during transition, extending into approximately April 2027). ETIAS is valid for 3 years or until passport expires. Fee applies. As of June 2026, ETIAS is not yet operational.",
+        "source_url": "https://travel-europe.europa.eu/en/etias",
+        "source_official": true
+      }
+    ],
+    "source_urls": [
+      "https://oif.gov.hu/factsheets/visa-free-citizens",
+      "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "https://konzinfo.mfa.gov.hu/en/short-term-stay",
+      "https://oif.gov.hu/factsheets/information-notice-for-persons-entitled-to-a-visa-free-stay",
+      "https://travel-europe.europa.eu/en/etias"
+    ],
+    "notes": "Hungary is a Schengen Area member. Visa-free nationals may stay up to 90 days in any 180-day period. All other third-country nationals require a Schengen visa (C visa) for short stays or a national D visa for long stays. The official list reflects EU Regulation 2018/1806 Annex II as implemented by Hungary. ETIAS (electronic travel authorization) will be required for visa-free visitors once operational (planned Q4 2026, with transition period into April 2027). Certain nationalities with bilateral agreements may stay an additional 30 or 90 days in Hungary beyond the standard Schengen allowance, subject to conditions (cannot travel to other Schengen states, must have not used full 90-day Schengen allocation in prior 6 months, must depart from Hungary)."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": "any",
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "Schengen",
+        "type": "visa",
+        "subtype": "Type D (national long-stay visa)"
+      },
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Per EU Regulation No 265/2010 of 25 March 2010: a third-country national holding a valid long-stay visa (Type D) issued by any Schengen Member State may travel to Hungary and other Schengen states for up to 90 days in any 180-day period, under the same conditions as a residence permit holder. Must hold a valid travel document and meet other entry conditions.",
+      "source_url": "https://delhi.mfa.gov.hu/en/2_2-short-term-stay-in-hungary-visa-free-entry-to-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Algeria"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Algerian diplomatic passports may enter Hungary visa-free for up to 30 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Angola"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Angolan diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Armenia"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Armenian diplomatic or service passports may enter Hungary visa-free for up to 30 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Azerbaijan"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Azerbaijani diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Bahrain"],
+      "passport_types": ["diplomatic", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Bahraini diplomatic or special passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Belarus"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Belarusian diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Cambodia"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Cambodian diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Cape Verde"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Cape Verdean diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["China"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Chinese diplomatic passports may enter Hungary visa-free for up to 90 days. Chinese service passport holders receive only 30 days (separate entry). NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["China"],
+      "passport_types": ["service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Chinese service passports may enter Hungary visa-free for up to 30 days. Chinese diplomatic passport holders receive 90 days (separate entry). NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Cuba"],
+      "passport_types": ["diplomatic", "service", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Cuban diplomatic, service, or official passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Ecuador"],
+      "passport_types": ["diplomatic", "service", "official", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Ecuadorian diplomatic, service, official, or special passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Egypt"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Egyptian diplomatic passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Eswatini"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Eswatini diplomatic passports may enter Hungary visa-free for up to 30 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Georgia"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Georgian diplomatic or service passports may enter Hungary visa-free (terms per agreement). NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information — this suspension note was previously recorded only for Georgia; it applies to ALL diplomatic/service/official passport waivers.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Ghana"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Ghanaian diplomatic or service passports may enter Hungary visa-free for up to 30 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["India"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Indian diplomatic or official passports may enter Hungary visa-free for up to 90 days. Ordinary Indian passport holders require a visa. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Indonesia"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Indonesian diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Iran"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Iranian diplomatic passports may enter Hungary visa-free for up to 30 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Jordan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Jordanian diplomatic passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kazakhstan"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Kazakhstani diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kuwait"],
+      "passport_types": ["diplomatic", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Kuwaiti diplomatic or special passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kyrgyzstan"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Kyrgyz diplomatic or service passports may enter Hungary visa-free for up to 30 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Laos"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Lao diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Lebanon"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Lebanese diplomatic passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Maldives"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Maldivian diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Mongolia"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Mongolian diplomatic or official passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Morocco"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Moroccan diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Oman"],
+      "passport_types": ["diplomatic", "service", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Omani diplomatic, service, or special passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Pakistan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Pakistani diplomatic passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Philippines"],
+      "passport_types": ["diplomatic", "service", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Philippine diplomatic, service, or official passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Qatar"],
+      "passport_types": ["diplomatic", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Qatari diplomatic or special passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Russia"],
+      "passport_types": ["service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Russian service passports may enter Hungary visa-free for up to 90 days (only service passports listed in official MFA table). NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["South Africa"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 120,
+      "conditions": "Bilateral visa waiver agreement: holders of South African diplomatic or service passports may enter Hungary visa-free for up to 120 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Tajikistan"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Tajik diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Thailand"],
+      "passport_types": ["diplomatic", "service", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Thai diplomatic, service, or official passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Tunisia"],
+      "passport_types": ["diplomatic", "service", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Tunisian diplomatic, service, or special passports may enter Hungary visa-free for up to 30 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Turkey"],
+      "passport_types": ["diplomatic", "service", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Turkish diplomatic, service, or special passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Turkmenistan"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Turkmen diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Uzbekistan"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa waiver agreement: holders of Uzbek diplomatic passports may enter Hungary visa-free for up to 30 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Vietnam"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Vietnamese diplomatic or service passports may enter Hungary visa-free for up to 90 days. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Yemen"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa waiver agreement: holders of Yemeni diplomatic passports may enter Hungary visa-free for up to 90 days, 'applicable under certain conditions' per the official MFA table. NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information.",
+      "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": true,
+    "residency_required": null,
+    "notes": "Hungary does not have a citizenship-by-investment program. The Guest Investor Program provides a residence permit only (valid up to 10 years, renewable for additional 10-year periods), not a pathway to citizenship. Guest investors are explicitly excluded from obtaining a national residence card (permanent residence). Hungary does allow dual citizenship under its citizenship law; applicants for naturalization do not need to renounce prior nationality."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Guest Investor Residence Permit",
+        "type": "investor",
+        "min_amount": 250000,
+        "currency": "EUR",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-investor",
+        "source_official": true,
+        "notes": "Two investment options: (1) Acquisition of investment fund share of at least EUR 250,000 issued by a real estate fund registered by the Hungarian National Bank — fund must allocate at least 40% of net asset value to Hungarian residential real estate; investor must hold for minimum 5 years. (2) Financial donation of at least EUR 1,000,000 to a public-trust higher education institution for educational, scientific research or artistic activities. A direct residential property purchase pathway (EUR 500,000) was abolished as of 15 January 2025. Permit valid up to 10 years, renewable for additional 10-year periods (no longer limited to one renewal). Guest investors explicitly CANNOT obtain a national residence card (permanent residence). No path to citizenship via this program. Work permitted without restrictions. Processing time: 21 days standard."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "EU Blue Card (Hungary)",
+        "category": "highly_skilled",
+        "eligibility": "Third-country nationals with tertiary education or 3+ years relevant professional experience (within past 7 years for ICT/executive roles) working in a position requiring high-level qualifications. Minimum salary: HUF 883,671/month (2025); HUF 1,001,048/month (2026). Healthcare roles: HUF 706,937/month (2025); HUF 800,838/month (2026).",
+        "processing_time": "70 days standard; 30 days for existing EU Blue Card holders from other EU member states",
+        "official_url": "https://www.oif.gov.hu/factsheets/eu-blue-card",
+        "source_official": true,
+        "notes": "Initial validity up to 4 years, renewable for up to 4 years at a time. Employment restrictions apply during first year. 2026 salary thresholds apply retroactively to 2025-initiated applications with 2026 decisions. Healthcare 2026 threshold updated to HUF 800,838."
+      },
+      {
+        "name": "White Card – Residency for Digital Nomads",
+        "category": "digital_nomad",
+        "eligibility": "Third-country nationals with verified employment relationship or company ownership outside Hungary, working remotely from Hungary using digital technology. Must not pursue any gainful activity in Hungary or hold shares in Hungarian companies. Minimum net monthly income: EUR 3,000 for at least 6 months prior to entry.",
+        "processing_time": "21 days (decision within 30 days of application)",
+        "official_url": "https://oif.gov.hu/factsheets/white-card-residency-for-digital-nomads",
+        "source_official": true,
+        "notes": "Initial validity: maximum 1 year. Extendable once for additional 1 year (total maximum 2 years). White Card holders CANNOT obtain a national residence card (permanent residence). Family reunification is not available for White Card holders (except for children born during the permit's validity). Must have resided in Hungary for at least 90 days within any 180-day period before extension application."
+      },
+      {
+        "name": "Guest Self-Employment Residence Permit",
+        "category": "self_employed",
+        "eligibility": "Third-country nationals pursuing self-employed activities or serving as chief executive of a business organization. Self-employed must demonstrate annual income exceeding 24 times the current minimum wage (via tax authority certification). Business executives: organization must employ at least 5 Hungarian/EEA nationals full-time for 6 consecutive months, or demonstrate sufficient income.",
+        "processing_time": "21 days standard",
+        "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-self-employment",
+        "source_official": true,
+        "notes": "Initial permit: maximum 1 year. Extendable up to 2 additional years (total maximum 3 years from first issuance). Holders CANNOT obtain a national residence card (permanent residence). Family reunification restricted for first year after issuance."
+      }
+    ]
+  },
+  "agreements": [
+    "EU freedom of movement (Directive 2004/38/EC)",
+    "Schengen Area"
+  ],
+  "official_domains": [
+    "oif.gov.hu",
+    "mfa.gov.hu",
+    "konzinfo.mfa.gov.hu",
+    "konzuliszolgalat.gov.hu",
+    "bmbah.hu",
+    "travel-europe.europa.eu",
+    "eur-lex.europa.eu"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "validation_notes": [
+      "CORRECTION (2026-06-14): Blanket suspension of ALL bilateral diplomatic/service/official passport waivers until 6 March 2027 propagated to all 40 conditional_access passport_type entries. Prior record noted this suspension only for Georgia; official Hungarian consular source (konzuliszolgalat.kormany.hu) confirms it applies universally.",
+      "CORRECTION (2026-06-14): ETIAS timeline updated — confirmed Q4 2026 launch with 6-month transition period extending into approximately April 2027. Prior record stated 'planned Q4 2026' without noting the transition period.",
+      "CORRECTION (2026-06-14): EU Blue Card 2026 healthcare salary threshold added: HUF 800,838/month (was absent from prior record; confirmed from oif.gov.hu/factsheets/eu-blue-card).",
+      "CORRECTION (2026-06-14): RBI Guest Investor program notes updated — permit renewals confirmed as renewable for additional 10-year periods (not limited to one renewal as previously implied), per oif.gov.hu factsheet updated March 3, 2026.",
+      "ADDITION (2026-06-14): Bilateral ordinary-passport extended stay details added to visa_free notes for 20 countries (Andorra, Argentina, Brazil, Canada, Chile, Costa Rica, Hong Kong SAR, Israel, Japan, Macao SAR, Malaysia, Mexico, New Zealand, Panama, Paraguay, San Marino (30 days), Singapore (30 days), South Korea, USA, Uruguay, Venezuela) — confirmed from oif.gov.hu/factsheets/information-notice-for-persons-entitled-to-a-visa-free-stay.",
+      "CORRECTION (2026-06-14): White Card family reunification note corrected — children born during the permit's validity are an exception to the no-family-reunification rule, per oif.gov.hu factsheet.",
+      "VERIFIED (2026-06-14): Ordinary-passport visa-free list confirmed accurate against oif.gov.hu/factsheets/visa-free-citizens (68 states + Hong Kong SAR + Macao SAR + British special categories + Taiwan + Kosovo).",
+      "VERIFIED (2026-06-14): CBI: no program confirmed. Guest Investor program provides residence only.",
+      "VERIFIED (2026-06-14): Real estate direct purchase pathway (EUR 500,000) confirmed abolished 15 January 2025.",
+      "ADDITION (2026-06-14): outbound_official field added — Hungarian MFA official page 'Vízummentes külföldre utazás' (https://konzinfo.mfa.gov.hu/vizummentes-kulfoldre-utazas) confirmed as the origin-side authoritative list for where Hungarian ordinary passport holders can travel without a prior consular visa. Page content retrieved via direct HTTP fetch. Full country table extracted and structured into visa_free, visa_on_arrival, and eta categories."
+    ],
+    "gaps": [
+      "Exact scope of which passport types are covered by the blanket diplomatic/service/official suspension (until 6 March 2027): the official search result states 'diplomatic, service and official passports' but some bilateral agreements in the record include 'special' passports — unclear whether 'special' passports are covered by the suspension.",
+      "Exact naturalization residence requirement years for standard (non-simplified) naturalization pathway could not be confirmed from official English-language sources.",
+      "Biometric passport conditions for some Annex II countries (e.g., Albania, Bosnia and Herzegovina, Georgia, Moldova, Montenegro, North Macedonia, Serbia, Ukraine) noted in some sources but not explicitly stated in the official oif.gov.hu factsheet retrieved.",
+      "ETIAS fee amount not confirmed from official source.",
+      "Taiwan passport condition (must contain identity card number) noted in secondary sources but not extracted directly from official page.",
+      "Macao SAR biometric/specific passport type condition not explicitly verified from official English text.",
+      "OCI (Overseas Citizen of India) card: no official Hungarian or Indian government source found granting OCI cardholders any special entry privileges to Hungary. Not recorded.",
+      "Bilateral agreement dates/names: the official MFA table lists diplomatic/service/official passport waivers but does not provide agreement names or signing dates.",
+      "Full list of countries covered by blanket diplomatic/service/official passport suspension not independently extracted from the official table (konzuliszolgalat.kormany.hu had SSL error); suspension confirmed via search results referencing this page.",
+      "Whether Georgia's ordinary-passport visa-free status (Annex II) is affected by the diplomatic/service/official passport suspension — it is not; ordinary passport visa-free access for Georgia is under EU Regulation 2018/1806 Annex II and is unaffected.",
+      "outbound_official: Page date/last-updated timestamp not visible in fetched HTML (no 'asof' value captured). Belarus ordinary passport conditions require checking travel advice section for special conditions not detailed in the table. Oman ordinary passport described as visa-on-arrival (max 14 days) — this may change; travelers should verify.",
+      "outbound_official: Algeria, Bahrain, Cambodia, Cuba, Egypt, Ghana, India, Indonesia, Iran, Jordan, Kuwait, Laos, Lebanon, Maldives, Pakistan, Qatar, Russia, Turkmenistan, Yemen — these appear in the official outbound table only for diplomatic/service passport holders (not ordinary M passport); they are NOT visa-free for ordinary Hungarian passport holders and are excluded from outbound_official.visa_free."
+    ]
+  },
+  "sources_checked": [
+    {
+      "url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+      "description": "Official Hungary immigration authority (OIF) factsheet listing all visa-free nationalities — re-fetched June 2026",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/information-notice-for-persons-entitled-to-a-visa-free-stay",
+      "description": "Official OIF factsheet: bilateral extended stay agreements for ordinary passport holders (20 countries)",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-investor",
+      "description": "Official OIF factsheet: Guest Investor Residence Permit — re-fetched June 2026, last edited March 3 2026",
+      "official": true
+    },
+    {
+      "url": "https://www.oif.gov.hu/factsheets/eu-blue-card",
+      "description": "Official OIF factsheet: EU Blue Card for highly qualified workers — re-fetched June 2026, 2026 salary thresholds confirmed",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/white-card-residency-for-digital-nomads",
+      "description": "Official OIF factsheet: White Card for digital nomads — re-fetched June 2026",
+      "official": true
+    },
+    {
+      "url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
+      "description": "Hungarian MFA Consular Services: Complete visa-free travel table by passport type (inbound — who can enter Hungary visa-free)",
+      "official": true
+    },
+    {
+      "url": "https://konzinfo.mfa.gov.hu/vizummentes-kulfoldre-utazas",
+      "description": "Hungarian MFA Consular Services: Official outbound visa-free travel list — where Hungarian citizens can travel without a prior visa (fetched June 2026)",
+      "official": true
+    },
+    {
+      "url": "https://konzuliszolgalat.kormany.hu/visa-waiver-agreements",
+      "description": "Hungarian Consular Service: Visa waiver agreements page — SSL error prevented direct fetch; suspension note confirmed via search results referencing this page",
+      "official": true
+    },
+    {
+      "url": "https://travel-europe.europa.eu/en/etias",
+      "description": "EU official ETIAS portal — ETIAS Q4 2026 launch with 6-month transition confirmed",
+      "official": true
+    },
+    {
+      "url": "https://delhi.mfa.gov.hu/en/2_2-short-term-stay-in-hungary-visa-free-entry-to-hungary",
+      "description": "Embassy of Hungary New Delhi: Short-term stay and visa-free entry rules, including Schengen D visa rule",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-self-employment",
+      "description": "Official OIF factsheet: Guest Self-Employment Residence Permit",
+      "official": true
+    }
+  ]
+}

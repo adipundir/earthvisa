@@ -1,0 +1,355 @@
+{
+  "iso2": "GQ",
+  "iso3": "GNQ",
+  "name": "Equatorial Guinea",
+  "region": "Africa",
+  "outbound_official": {
+    "found": false,
+    "note": "No official Equatorial Guinea government outbound visa-list page located. The Ministry of Foreign Affairs website (minexteriores.gob.gq) is a diplomatic news portal with no citizen-facing outbound visa-free destination list. The official government press (guineaecuatorialpress.com) publishes bilateral agreement news items but no consolidated list. The Embassy in Washington DC (egembassydc.com) covers only inbound consular services. A July 2024 article on ahoraeg.com (a private Equatorial Guinea news portal) lists visa-free, VoA, and eTA destinations but explicitly cites 'Guide Consultant' (guideconsultants.com — a private aggregator) as its source, not any official government document. Rely on destination-side data."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "CEMAC member states — Cameroon, Central African Republic, Chad, Republic of the Congo, Gabon",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Citizens of CEMAC member states may enter Equatorial Guinea without a visa using a national identity card or biometric passport under the CEMAC free movement of persons protocol, effective October 2017. Max stay 90 days. Equatorial Guinea is itself a CEMAC member. Spanish MFA confirms preferential land border treatment for CEMAC nationals. No primary official EG government page was accessible to confirm the exact stay duration — 90 days is from CEMAC protocol context and Wikipedia.",
+        "source_url": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=Guinea+Ecuatorial",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {
+        "nationality": "All nationalities (eligible travellers)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "E-visa launched 1 July 2023 via equatorialguinea-evisa.com (VFS Global as official technical partner of the Government of Equatorial Guinea). Confirmed operational by official Government Press of Equatorial Guinea (guineaecuatorialpress.com). Available for Tourist, Business, Emergency Humanitarian, and Congresses/Meetings/Seminars categories under Decree No. 49/2019 of December 2, 2019. Fee: approximately EUR 105 / USD 75 (Spanish MFA and Wikipedia respectively). Processing: 72 hours after payment. E-visa approval letter must be printed and presented on arrival. Entry via Malabo International Airport. The Embassy of Equatorial Guinea in Washington DC separately lists an embassy-based visa at USD 200 standard / USD 250 expedited (5–7 days / 1–3 days processing); visas issued must be used within 60 days of issuance. The egonline.vfsevisa.com VFS portal returned HTTP 403 during validation — status unclear.",
+        "source_url": "https://www.guineaecuatorialpress.com/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://www.egembassydc.com/visas",
+      "https://equatorialguinea-evisa.com/index.html",
+      "https://www.guineaecuatorialpress.com/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+      "https://gq.usembassy.gov/suspension-of-visa-free-travel-for-u-s-passport-holders/",
+      "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=Guinea+Ecuatorial",
+      "https://www.gov.uk/foreign-travel-advice/equatorial-guinea/entry-requirements"
+    ],
+    "notes": "The official Embassy of Equatorial Guinea in the USA (egembassydc.com) states: 'All visitors with a foreign passport must present a valid visa at the point of entry to be admitted to Equatorial Guinea.' An e-visa system was launched on 1 July 2023 via equatorialguinea-evisa.com (confirmed by guineaecuatorialpress.com — official government press). Legal basis: Presidential Decree No. 49/2019 of December 2, 2019. US citizens previously enjoyed visa-free travel but this was cancelled on 24 April 2023 per official notice from the Ministry of Foreign Affairs (confirmed by US Embassy in Equatorial Guinea). UK FCDO confirms visa required for British citizens; e-visa processing time 72 hours. CEMAC free movement (effective October 2017) grants visa-free entry for Cameroon, CAR, Chad, Republic of Congo, and Gabon nationals. Aggregator sources (Wikipedia, embassies.net, travel blogs) cite visa-free agreements with Barbados (30 days), Tunisia (30 days), Turkey (90 days) and UAE visa-on-arrival (90 days) for regular passports — these could NOT be verified on any official EG government domain and are omitted per data quality rules. Embassy visa fee updated to USD 200 standard / USD 250 expedited as of latest egembassydc.com content."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Gabon"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic, official, and service passports issued by Gabon may enter Equatorial Guinea without a visa under a reciprocal visa exemption agreement. Agreement approved by the Senate of Equatorial Guinea on October 9, 2015. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/el_senado_aprueba_distintos_acuerdos_internacionales",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Cameroon"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic, official, and service passports issued by Cameroon may enter Equatorial Guinea without a visa under a reciprocal visa exemption agreement. Agreement approved by the Senate of Equatorial Guinea on October 9, 2015. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/el_senado_aprueba_distintos_acuerdos_internacionales",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Gambia"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic and service passports issued by Gambia may enter Equatorial Guinea without a visa under a reciprocal visa exemption agreement approved by the Equatorial Guinea Senate. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/aprobacion_en_el_senado_de_los_convenios_y_acuerdos_con_paises_amigos",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Mauritania"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic and service passports issued by Mauritania may enter Equatorial Guinea without a visa under a reciprocal visa exemption agreement approved by the Equatorial Guinea Senate. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/aprobacion_en_el_senado_de_los_convenios_y_acuerdos_con_paises_amigos",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Mozambique"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic passports issued by Mozambique may enter Equatorial Guinea without a visa under a reciprocal visa exemption agreement approved by the Equatorial Guinea Senate. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/aprobacion_en_el_senado_de_los_convenios_y_acuerdos_con_paises_amigos",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Serbia"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic and official passports issued by Serbia may enter Equatorial Guinea without a visa for stays of up to 90 days. Agreement on the Abolition of Visas for Holders of Diplomatic and Official Passports signed 10 February 2022 in Belgrade during Minister Selaković's official visit. No income-generating activity permitted.",
+      "source_url": "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/equatorial-guinea",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Bolivia"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, and service passports issued by Bolivia may enter Equatorial Guinea without a visa for stays not exceeding 90 days. Agreement on visa exemption for diplomatic, official, and service passport holders signed in La Paz (exact date not specified in source). Purpose limited to official trips or transit.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/la_camara_de_los_diputados_analiza_los_acuerdos_firmados_por_el_gobierno_con_paises_amigos",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["India"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic, official, and service passports issued by India may enter Equatorial Guinea without a visa. Agreement on visa exemption for diplomatic, official, and service passport holders signed August 2017. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/la_camara_de_los_diputados_analiza_los_acuerdos_firmados_por_el_gobierno_con_paises_amigos",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Ghana"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic, official, and service passports issued by Ghana may enter Equatorial Guinea without a visa. Agreement on visa exemption for diplomatic, official, and service passport holders signed August 2017. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/la_camara_de_los_diputados_analiza_los_acuerdos_firmados_por_el_gobierno_con_paises_amigos",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Belarus"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic and service passports issued by Belarus may enter Equatorial Guinea without a visa for stays not exceeding 90 days from the date of first entry. Agreement on Suppression of Visas for holders of Diplomatic and Service Passports reviewed by Senate May 23, 2024. No lucrative activity permitted.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/estudio_en_el_senado_de_los_acuerdos_suscritos_por_guinea_ecuatorial_con_paises_amigos",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Qatar"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic, special/official, and service passports issued by Qatar may enter Equatorial Guinea without a visa. Agreement on Reciprocal Suppression of Entry Visas for holders of Diplomatic, Special and Service Passports reviewed by Senate Foreign Policy Commission (2022). Must enter through legally established international border checkpoints. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/index.php/noticias/revision_del_acuerdo_de_supresion_de_visados_de_guinea_ecuatorial_con_qatar",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Burundi"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic and service passports issued by Burundi may enter Equatorial Guinea without a visa. Acuerdo de exención recíproca de visados para los titulares de pasaportes diplomáticos y de servicio signed during state visit of Burundi's President to Equatorial Guinea, November 2–7, 2020. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/index.php/noticias/acuerdos_firmados_entre_el_gobierno_de_guinea_ecuatorial_y_el_de_burundi",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Guinea-Bissau"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic, official, and service passports issued by Guinea-Bissau may enter Equatorial Guinea without a visa. Acuerdo sobre la exención recíproca de visados para los titulares de pasaportes diplomáticos, oficiales y servicios signed December 7, 2018. Stay duration not specified in source.",
+      "source_url": "https://www.guineaecuatorialpress.com/noticias/firma_de_varios_acuerdos_entre_los_gobiernos_de_guinea_ecuatorial_y_guinea_bissau",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Dominican Republic"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Holders of diplomatic, official, and service passports issued by the Dominican Republic may enter Equatorial Guinea without a visa for a maximum of 90 days within any 180-day period following first entry. Reciprocal agreement signed September 26, 2024 in New York; approved by Dominican Republic Chamber of Deputies May 19, 2026. No income-generating activity permitted.",
+      "source_url": "https://www.elfarord.com/2026/05/camara-de-diputados-aprueba-acuerdos.html",
+      "source_official": false
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "No official citizenship-by-investment program found for Equatorial Guinea. No official government source references such a program."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "CEMAC (Communauté Économique et Monétaire de l'Afrique Centrale) — free movement of persons treaty; Equatorial Guinea is a founding member",
+    "CPLP (Community of Portuguese Language Countries) — Equatorial Guinea joined CPLP; a diplomatic/service/official passport visa exemption within the CPLP bloc is under parliamentary study as of 2024"
+  ],
+  "official_domains": [
+    "egembassydc.com",
+    "minexteriores.gob.gq",
+    "guineaecuatorialpress.com",
+    "gq.usembassy.gov",
+    "exteriores.gob.es",
+    "travel.state.gov",
+    "mfa.gov.rs",
+    "gov.uk"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "ADDED Gabon and Cameroon diplomatic/official/service passport visa exemptions — previously missing; both confirmed by guineaecuatorialpress.com Senate approval October 9, 2015.",
+      "ADDED Gambia, Mauritania, Mozambique diplomatic/service passport visa exemptions — previously missing; confirmed by guineaecuatorialpress.com Senate approval article.",
+      "CORRECTED e-visa source_url changed from equatorialguinea-evisa.com/information (a VFS-operated portal, source_official: false) to guineaecuatorialpress.com official launch article (source_official: true). The VFS portal URL is retained in source_urls for reference.",
+      "UPDATED e-visa notes: fee updated to EUR 105 / USD 75 (Spanish MFA / Wikipedia) rather than the prior USD 50 + USD 25 service fee; added note that e-visa holders must arrive via Malabo International Airport (per Wikipedia); added that egembassydc.com now lists a USD 200 standard / USD 250 expedited embassy visa fee (distinct from the e-visa).",
+      "ADDED CPLP note to agreements array — Equatorial Guinea is a CPLP member; an intra-CPLP diplomatic passport exemption is under parliamentary study.",
+      "ADDED gov.uk to official_domains.",
+      "Dominican Republic conditional_access entry retained; source remains elfarord.com (non-official) — source_official: false preserved.",
+      "Visa-free access for Barbados, Tunisia, Turkey ordinary passports and UAE visa-on-arrival continue to be excluded — no official EG government source found during this validation pass."
+    ],
+    "gaps": [
+      "No official Equatorial Guinea government source (including minexteriores.gob.gq or egembassydc.com) publishes a complete enumerated list of visa-exempt or visa-on-arrival nationalities.",
+      "CEMAC free movement (Cameroon, Chad, Central African Republic, Republic of Congo, Gabon) effective October 2017 — only Spanish MFA and secondary sources confirm the 90-day max stay; no primary EG government page accessible.",
+      "The e-visa portal (equatorialguinea-evisa.com) is operated by VFS Global as government technical partner; the domain is not .gq or .gob.gq. The egonline.vfsevisa.com portal returned HTTP 403 Forbidden during this validation.",
+      "Bilateral visa-free agreements for ordinary passports: Barbados (30 days), Tunisia (30 days), Turkey (90 days) reported by aggregators (Wikipedia, embassies.net) but not confirmed on any official EG government domain — omitted.",
+      "UAE visa-on-arrival (90 days) for regular passports reported by multiple aggregators but not confirmed on any official EG government domain — omitted.",
+      "Diplomatic/official passport exemptions for Brazil, China, Cuba, Morocco, South Korea reported by Wikipedia (with [citation needed]) but not confirmed on any official EG government domain — omitted.",
+      "Gabon and Cameroon diplomatic passport agreements (2015): stay duration not specified in the guineaecuatorialpress.com Senate article.",
+      "Gambia, Mauritania, Mozambique diplomatic passport agreements: stay durations not specified; exact signing dates not found.",
+      "Stay durations for India, Ghana, Qatar, Burundi, Guinea-Bissau agreements not confirmed in accessible official sources.",
+      "CPLP intra-bloc diplomatic passport exemption: status (ratified vs. under study) not confirmed; ordinary passport terms unknown.",
+      "Dominican Republic agreement (Sept 26, 2024): confirmed from Dominican Republic newspaper source (elfarord.com), not an official government domain. No guineaecuatorialpress.com article found for this agreement during this validation.",
+      "No credential-based (Type A) conditional access rules found — no official source confirms visa-free or VoA entry for holders of US, Schengen, UK, GCC, or other foreign visas/residence permits.",
+      "No OCI or comparable special status entry privileges found on any official source.",
+      "No official RBI, fast-track, talent visa, digital-nomad, or skilled-migration programs found.",
+      "Ministry of Foreign Affairs website (minexteriores.gob.gq) returned SSL certificate error during this validation — inaccessible.",
+      "South Korea agreement (December 1, 2016) from guineaecuatorialpress.com appears to be a visa extension accord rather than full visa suppression — excluded pending clarification.",
+      "Indonesia agreement (signed August 2019 per Indonesia MFA) reported as 'yet to come into force' — not included as active conditional_access rule.",
+      "ahoraeg.com article (2026) references 38 total visa suppression agreements by Equatorial Guinea — full list of partner countries unknown from official sources."
+    ]
+  },
+  "sources_checked": [
+    {
+      "url": "https://www.egembassydc.com/visas",
+      "description": "Embassy of Equatorial Guinea in the USA — official visa requirements page; confirms USD 200 standard / USD 250 expedited embassy visa fees as of June 2026",
+      "official": true
+    },
+    {
+      "url": "https://minexteriores.gob.gq/",
+      "description": "Ministry of Foreign Affairs, Cooperation, International and Diaspora of Equatorial Guinea — returned SSL error during June 2026 validation",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+      "description": "Official Government Press of Equatorial Guinea — confirms e-visa launch July 1, 2023; 72-hour processing",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/noticias/el_senado_aprueba_distintos_acuerdos_internacionales",
+      "description": "Official Government Press of Equatorial Guinea — Senate October 9, 2015 approval of diplomatic/official/service passport visa exemptions with Gabon and Cameroon",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/noticias/aprobacion_en_el_senado_de_los_convenios_y_acuerdos_con_paises_amigos",
+      "description": "Official Government Press of Equatorial Guinea — Senate approval of diplomatic/service passport agreements with Gambia and Mauritania; diplomatic passport agreement with Mozambique",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/noticias/estudio_del_acuerdo_de_exencion_de_visados_de_los_paises_de_la_cplp",
+      "description": "Official Government Press of Equatorial Guinea — CPLP intra-bloc diplomatic/service/official passport exemption under parliamentary study",
+      "official": true
+    },
+    {
+      "url": "https://equatorialguinea-evisa.com/information",
+      "description": "Equatorial Guinea E-Visa portal (VFS Global as government technical partner) — page returned minimal content during June 2026 validation",
+      "official": false
+    },
+    {
+      "url": "https://gq.usembassy.gov/suspension-of-visa-free-travel-for-u-s-passport-holders/",
+      "description": "US Embassy in Equatorial Guinea — April 2023 alert on suspension of visa-free travel for US citizens",
+      "official": false
+    },
+    {
+      "url": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=Guinea+Ecuatorial",
+      "description": "Spanish Ministry of Foreign Affairs — confirms visa required for Spanish citizens; e-visa EUR 105; CEMAC preferential treatment confirmed; Decree 49/2019 cited",
+      "official": true
+    },
+    {
+      "url": "https://www.gov.uk/foreign-travel-advice/equatorial-guinea/entry-requirements",
+      "description": "UK FCDO entry requirements for Equatorial Guinea — confirms visa required; e-visa processing 72 hours; no credential-based exceptions",
+      "official": false
+    },
+    {
+      "url": "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/equatorial-guinea",
+      "description": "Serbian Ministry of Foreign Affairs — confirms diplomatic and official passport holders visa-free up to 90 days; agreement signed February 10, 2022",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/noticias/la_camara_de_los_diputados_analiza_los_acuerdos_firmados_por_el_gobierno_con_paises_amigos",
+      "description": "Official Government Press of Equatorial Guinea — Chamber of Deputies review of agreements with India (Aug 2017), Ghana (Aug 2017), Bolivia — diplomatic, official, service passport visa exemptions; Bolivia stay up to 90 days",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/noticias/estudio_en_el_senado_de_los_acuerdos_suscritos_por_guinea_ecuatorial_con_paises_amigos",
+      "description": "Official Government Press of Equatorial Guinea — Senate review May 23, 2024 of Belarus diplomatic and service passport agreement; 90-day stay limit confirmed",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/index.php/noticias/revision_del_acuerdo_de_supresion_de_visados_de_guinea_ecuatorial_con_qatar",
+      "description": "Official Government Press of Equatorial Guinea — Senate review of Qatar diplomatic, special, service passport visa suppression agreement (2022)",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/index.php/noticias/acuerdos_firmados_entre_el_gobierno_de_guinea_ecuatorial_y_el_de_burundi",
+      "description": "Official Government Press of Equatorial Guinea — diplomatic and service passport visa exemption with Burundi signed November 2020",
+      "official": true
+    },
+    {
+      "url": "https://www.guineaecuatorialpress.com/noticias/firma_de_varios_acuerdos_entre_los_gobiernos_de_guinea_ecuatorial_y_guinea_bissau",
+      "description": "Official Government Press of Equatorial Guinea — diplomatic, official, service passport visa exemption with Guinea-Bissau signed December 7, 2018",
+      "official": true
+    },
+    {
+      "url": "https://www.elfarord.com/2026/05/camara-de-diputados-aprueba-acuerdos.html",
+      "description": "Dominican Republic newspaper — Chamber of Deputies approved Equatorial Guinea visa agreement (diplomatic, official, service; 90 days/180-day period); agreement signed September 26, 2024",
+      "official": false
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Equatorial_Guinea",
+      "description": "Wikipedia — visa policy overview; used for cross-reference only; not an official source; lists Barbados/Tunisia/Turkey ordinary passport exemptions and UAE VoA — unconfirmed on official EG sources",
+      "official": false
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "iso2": "BT",
+  "iso3": "BTN",
+  "name": "Bhutan",
+  "region": "Asia",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "India",
+        "iso3": "IND",
+        "max_stay_days": null,
+        "notes": "Indian nationals receive an Entry Permit at the port of entry (not a visa). Indian citizens may use an Indian Voter Identity Card instead of a passport. Permit on arrival is available but advance online application at immi.gov.bt is recommended to reduce processing time. Based on the 1949 India-Bhutan Treaty of Friendship and bilateral relations. No advance visa clearance required. OCI/PIO card holders do NOT qualify under this exemption and must apply for a standard visa.",
+        "source_url": "https://www.doi.gov.bt/?page_id=566&lang=en",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "nationality": "Bangladesh",
+        "iso3": "BGD",
+        "max_stay_days": null,
+        "notes": "Bangladeshi nationals do not require advance visa clearance; visa is stamped on passport upon arrival at port of entry. Valid passport with minimum 6 months validity required.",
+        "source_url": "https://www.doi.gov.bt/?page_id=566&lang=en",
+        "source_official": true
+      },
+      {
+        "nationality": "Maldives",
+        "iso3": "MDV",
+        "max_stay_days": null,
+        "notes": "Maldivian nationals do not require advance visa clearance; visa is stamped on passport upon arrival at port of entry. Valid passport with minimum 6 months validity required.",
+        "source_url": "https://www.doi.gov.bt/?page_id=566&lang=en",
+        "source_official": true
+      }
+    ],
+    "e_visa": [
+      {
+        "nationality": "All other nationalities (excluding India, Bangladesh, Maldives, and SAARC Visa Exemption Sticker holders)",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "All foreign nationals not falling under visa-free or visa-on-arrival categories must obtain an e-visa/e-permit prior to entry into Bhutan. Applications are processed through the tourist online visa/permit system at immi.gov.bt. Processing time is a maximum of two working days. Passport must have minimum 6 months validity from intended date of departure from Bhutan. Valid travel insurance is mandatory. All tourists must book through a licensed Bhutanese tour operator and pay the Sustainable Development Fee (SDF).",
+        "source_url": "https://www.doi.gov.bt/?page_id=192&lang=en",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://www.doi.gov.bt/?page_id=566&lang=en",
+      "https://www.doi.gov.bt/wp-content/uploads/2025/04/GENERAL-INFORMATION.pdf",
+      "https://www.mfa.gov.bt/visa/",
+      "https://www.mfa.gov.bt/visa-to-enter-bhutan/",
+      "https://www.doi.gov.bt/?page_id=192&lang=en",
+      "https://www.doi.gov.bt/?page_id=153&lang=en",
+      "https://www.doi.gov.bt/?page_id=579&lang=en",
+      "https://www.mfa.gov.bt/rbckolkata/visa/",
+      "https://doi.gov.bt/?lang=en&p=2721"
+    ],
+    "notes": "Bhutan operates a strictly controlled tourism policy. All tourists (except nationals of India, Bangladesh, and Maldives) must book through a licensed Bhutanese tour operator and pay a Sustainable Development Fee (SDF). Diplomatic and official passport holders of Thailand and Switzerland receive visas at entry points (classified under conditional_access). UN passport holders and diplomats receive gratis visas. A Stamp-less Visa Regime was implemented with immediate effect as part of digital transformation; e-Gates have been deployed at Paro International Airport and Phuntsholing Pedestrian Terminal. The Bhutanese visa division issues visas for all foreign nationals other than nationals of Bangladesh, India, and the Maldives."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Thailand"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_on_arrival",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Thailand holding diplomatic or official passports are issued Visa on Arrival at the point of entry. Ordinary passport holders must obtain e-visa in advance. Bilateral visa exemption agreement exists between Bhutan and Thailand for diplomatic/official passport holders (exact date not published on official sources reviewed).",
+      "source_url": "https://www.doi.gov.bt/?page_id=566&lang=en",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Switzerland"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_on_arrival",
+      "max_stay_days": 90,
+      "conditions": "Nationals of Switzerland holding diplomatic or official passports are admitted without visa for up to 90 days. Bilateral mutual visa exemption agreement for holders of diplomatic and official passports signed on 8 October 2014 between Foreign Secretary Yeshey Dorji and H.E. Linus von Castelmur (Swiss Ambassador). Switzerland is noted as Bhutan's 5th country with such an agreement; Bhutan was Switzerland's 27th. Diplomatic relations established 1985. Ordinary passport holders must obtain e-visa in advance.",
+      "source_url": "https://www.mfa.gov.bt/press-release-101/",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": ["India", "Pakistan", "Bangladesh", "Bhutan", "Nepal", "Sri Lanka", "Maldives", "Afghanistan"],
+      "passport_types": ["ordinary"],
+      "credential": {
+        "issuer": "SAARC",
+        "type": "visa",
+        "subtype": "SAARC Visa Exemption Sticker"
+      },
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Nationals of SAARC member states (India, Pakistan, Bangladesh, Bhutan, Nepal, Sri Lanka, Maldives, Afghanistan) holding a valid SAARC Visa Exemption Sticker do not require prior visa or entry permit clearance. The sticker is issued for 24 specific categories including dignitaries, judges, MPs, senior officials, journalists, sports persons, and business leaders. The sticker is affixed to the passport and allows multiple entries. Note: Nepal ordinary passport holders without the sticker require an e-visa.",
+      "source_url": "https://www.doi.gov.bt/?page_id=566&lang=en",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": false,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "Bhutan does not have an official Citizenship by Investment program. Bhutanese citizenship is restricted to individuals of Bhutanese descent, with strict naturalization requirements. No official government source confirms any CBI program. Third-party aggregator sites mentioning such programs are not backed by official Bhutanese government documentation."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Investor / Promoter Visa",
+        "type": "investor_visa",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://www.doi.gov.bt/?page_id=604&lang=en",
+        "source_official": true,
+        "notes": "A visa category for foreign investors and promoters. Requires prior approval from the Director, Department of Industry, Ministry of Industry Commerce and Employment (MoICE). Valid passport with minimum 6 months validity and a detailed day-wise program required. No minimum investment amount is published on the official page. Does not confer permanent residency or a path to citizenship."
+      },
+      {
+        "name": "Investor Card",
+        "type": "investor_residence_card",
+        "min_amount": null,
+        "currency": null,
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": null,
+        "official_url": "https://www.doi.gov.bt/?page_id=1313&lang=en",
+        "source_official": true,
+        "notes": "A residence card category for investors, managed by the Department of Immigration. Requires a letter of endorsement from the Ministry of Industry Commerce and Employment. Specific investment thresholds, duration of card validity, and path to permanent residency are not published on the official webpage. Indian nationals may use Entry Permit with voter ID; other nationalities need a visa."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Gelephu Mindfulness City (GMC) Digital Nomad Residence Programme",
+        "category": "digital_nomad",
+        "eligibility": "Remote workers, freelancers, entrepreneurs, and professionals working for entities established outside Bhutan. Must be able to work remotely. No mandatory minimum income requirement if annual visa fee is paid.",
+        "processing_time": "Online application; final decision by Gelephu Mindfulness City Authority (GMCA)",
+        "official_url": "https://digitalgmc.com/",
+        "source_official": false,
+        "notes": "Launched in February 2026 by the Gelephu Mindfulness City Authority (GMCA), a special administrative zone authority of Bhutan's government, in partnership with private operator NomadClub. Application fee: USD 2,800/year (non-refundable). Mandatory deposit of USD 10,000 in TER tokens (a Solana blockchain gold-backed digital token issued by DK Bank) — fully refundable on exit. Visa valid 12 months, renewable for up to 24 months total. Residents may travel throughout Bhutan but must pay USD 100/day Sustainable Development Fee outside GMC. The application portal (digitalgmc.com) is operated by NomadClub (private), not a .gov.bt domain; source_official is therefore false despite GMCA's government backing."
+      }
+    ]
+  },
+  "agreements": [
+    "SAARC Visa Exemption Scheme (SVES) — Bhutan is a member of the 8-nation SAARC bloc; holders of valid SAARC Visa Exemption Stickers from other SAARC countries may enter Bhutan without prior visa clearance",
+    "Bilateral mutual visa exemption agreement with Switzerland for diplomatic/official passport holders — signed 8 October 2014 (Switzerland noted as the 5th country with such an agreement; Bhutan was Switzerland's 27th)",
+    "Bilateral visa exemption agreement with Thailand for diplomatic/official passport holders — exact date not confirmed on official sources reviewed",
+    "1949 India-Bhutan Treaty of Friendship — basis for Indian nationals' special entry permit arrangement"
+  ],
+  "official_domains": [
+    "doi.gov.bt",
+    "mfa.gov.bt",
+    "immi.gov.bt"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTION: SAARC Visa Exemption Sticker conditional_access entry level changed from 'eta' to 'visa_free' — holders bypass visa/entry permit clearance entirely; 'eta' is semantically incorrect for this credential-based exemption.",
+      "CONFIRMED: India = Entry Permit (not a visa), visa_free classification is correct per doi.gov.bt page_id=153 which states the Visa Division does not issue visas to Indian, Bangladeshi, or Maldivian nationals. Notes updated to clarify OCI/PIO holders do NOT qualify.",
+      "CONFIRMED: Bangladesh and Maldives = Visa on Arrival, confirmed by mfa.gov.bt/visa/ ('Bangladeshi, Maldivian & Indian nationals do not require visa') and doi.gov.bt/?page_id=566.",
+      "CONFIRMED: Switzerland diplomatic/official passport agreement — date 8 October 2014, up to 90 days, verified from mfa.gov.bt/press-release-101/. Notes updated to include that Bhutan was Switzerland's 27th country with such an agreement.",
+      "CONFIRMED: Stamp-less Visa Regime confirmed as implemented per doi.gov.bt notification page (doi.gov.bt/?lang=en&p=2721); e-Gates deployed at Paro International Airport and Phuntsholing Pedestrian Terminal.",
+      "ADDED: doi.gov.bt/?page_id=579 (Visa on Arrival) and doi.gov.bt/?lang=en&p=2721 (stamp-less regime notification) added to source_urls.",
+      "CONFIRMED: Thailand diplomatic/official passport conditional_access — confirmed from doi.gov.bt/?page_id=566; bilateral agreement date still not found on official sources.",
+      "CONFIRMED: No Nepal ordinary passport visa-free access; Nepal nationals require e-visa unless holding SAARC Visa Exemption Sticker.",
+      "CONFIRMED: cbi.has_program=false — no CBI program exists for Bhutan, confirmed by absence of any official government source.",
+      "CONFIRMED: 1949 India-Bhutan Treaty of Friendship added to agreements list as the formal legal basis for India's special entry arrangement."
+    ],
+    "gaps": [
+      "Maximum stay duration for India, Bangladesh, and Maldives nationals not specified on official pages (doi.gov.bt does not publish a specific day limit for these nationalities)",
+      "Exact list of all countries eligible for e-visa not enumerated on official source (official page states 'all other nationalities')",
+      "Investment minimums for Investor Visa and Investor Card not published on official doi.gov.bt pages",
+      "Duration/validity of Investor Card not stated on official page",
+      "SAARC Visa Exemption Sticker: complete list of all 24 eligible professional/official categories not confirmed from a directly scraped official page",
+      "Thailand bilateral diplomatic/official passport agreement date not found on any official Bhutan government source",
+      "Gratis visa list (UN passports, diplomatic passports, MOU countries) — countries with signed MOU waiving visa fees not enumerated officially",
+      "GMC Digital Nomad Programme official domain (digitalgmc.com) is operated by private partner NomadClub, not a government domain; GMCA's official .gov.bt domain was not reachable for direct confirmation",
+      "Switzerland press release (mfa.gov.bt/press-release-101/) states Switzerland is the '5th country' with a diplomatic/official passport waiver but does not name the other four countries; those four remain unidentified",
+      "No conditional entry rules based on holding third-country credentials (US visa, Schengen visa, UK visa, Canada visa, Australia visa, Japan visa, residence permits, permanent residency) found on any official Bhutan government source",
+      "OCI/PIO cards explicitly do NOT grant Indian-equivalent entry privileges per official sources; OCI holders must follow standard visa procedures",
+      "No rules found granting visa-free or VoA entry based on holding a GCC, UAE, or other regional credential",
+      "No startup visa, skilled worker fast-track, or talent visa scheme found on official sources",
+      "Visa on Arrival page (doi.gov.bt/?page_id=579) mentions a recommendation letter from local host/counterpart as a general requirement; it is unclear if this applies to Bangladesh/Maldives nationals or only to other VoA applicants"
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "no official Bhutan government outbound visa-list page located; rely on destination-side data"
+  },
+  "sources_checked": [
+    "https://www.doi.gov.bt/?page_id=566&lang=en",
+    "https://www.doi.gov.bt/wp-content/uploads/2025/04/GENERAL-INFORMATION.pdf",
+    "https://www.doi.gov.bt/wp-content/uploads/2022/06/pamphlet-final.pdf",
+    "https://www.doi.gov.bt/?page_id=153&lang=en",
+    "https://www.doi.gov.bt/?page_id=192&lang=en",
+    "https://www.doi.gov.bt/?page_id=579&lang=en",
+    "https://www.doi.gov.bt/?page_id=594&lang=en",
+    "https://www.doi.gov.bt/?page_id=604&lang=en",
+    "https://www.doi.gov.bt/?page_id=1313&lang=en",
+    "https://www.doi.gov.bt/?page_id=1271&lang=en",
+    "https://www.doi.gov.bt/?page_id=182&lang=en",
+    "https://www.doi.gov.bt/?page_id=609&lang=en",
+    "https://www.doi.gov.bt/wp-content/uploads/2024/01/GENERAL-INFORMATION.pdf",
+    "https://www.doi.gov.bt/wp-content/uploads/2023/05/revised_non_tourist-categories_Public.pdf",
+    "https://doi.gov.bt/?lang=en&p=2721",
+    "https://www.mfa.gov.bt/visa/",
+    "https://www.mfa.gov.bt/visa-to-enter-bhutan/",
+    "https://www.mfa.gov.bt/rbckolkata/visa/",
+    "https://www.mfa.gov.bt/rbedhaka/visa-for-visiting-bhutan/",
+    "https://www.mfa.gov.bt/regional-engagements/",
+    "https://www.mfa.gov.bt/press-release-101/",
+    "https://www.mfa.gov.bt/notification-11/",
+    "https://www.mfa.gov.bt/rbebrussels/visa/",
+    "https://immi.gov.bt/"
+  ]
+}

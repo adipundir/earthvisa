@@ -1,0 +1,194 @@
+{
+  "iso2": "SB",
+  "iso3": "SLB",
+  "name": "Solomon Islands",
+  "region": "Oceania",
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "All nationalities not on the prior-approval list (visitor permit granted on arrival)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Visitors with a valid passport (6 months validity), return/onward ticket, and sufficient funds receive a visitor's permit on arrival for up to 3 months in any 12-month period (Immigration Act). Extendable for a further 3 months under special circumstances. Countries requiring PRIOR APPROVAL from the Director of Immigration before arrival are listed in visa_policy.notes.",
+        "source_url": "https://www.un.int/solomonislands/solomonislands/visa-information",
+        "source_official": true
+      },
+      {
+        "nationality": "MSG citizens (Fiji, Papua New Guinea, Vanuatu) — Melanesian Spearhead Group visa",
+        "iso3": null,
+        "max_stay_days": 60,
+        "notes": "Citizens of MSG member states (Fiji, PNG, Vanuatu) receive a complimentary 60-day single-entry visitor visa with no extension, no documents required. Listed under 'MSG (Melanesian Spearhead Group)' visitor visa category at no charge.",
+        "source_url": "https://immigration.gov.sb/visas/",
+        "source_official": true
+      },
+      {
+        "nationality": "EU member states (all except Ireland; France and Netherlands: European territory only)",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "EU-Solomon Islands Short-Stay Visa Waiver Agreement (signed 7 October 2016, provisionally applied from 8 October 2016, formally concluded by Council Decision 2017/235 of 7 February 2017). Covers holders of valid ordinary, diplomatic, service, official, or special passports of all EU member states. UK excluded (not EU at time of agreement). Ireland excluded by agreement text. France and Netherlands: European territory only. Maximum 90 days in any 180-day period. Work/paid activities not permitted.",
+        "source_url": "https://eur-lex.europa.eu/eli/agree_internation/2016/1888/oj/eng",
+        "source_official": true
+      },
+      {
+        "nationality": "China (ordinary passports) — Mutual Visa Exemption Agreement for ordinary passports",
+        "iso3": "CHN",
+        "max_stay_days": 30,
+        "notes": "Mutual Visa Exemption Agreement for ordinary passport holders announced November 2024. Permits Chinese ordinary passport holders to enter without a visa. Per the China diplomatic/service passport agreement (in force 24 November 2022), stay for diplomatic/service/gongwu passport holders is 30 days. The ordinary passport agreement's precise entry-into-force date and maximum stay duration were not confirmed from an directly accessible official government page (solomons.gov.sb redirected); 30 days cited by analogy with the diplomatic agreement. The immigration.gov.sb visas page lists China under 'Mutual Reciprocal Visa' at 90 days for that specific pathway (requires application before arrival). This entry reflects the on-arrival visa-free entitlement for Chinese ordinary passport holders pending official confirmation of exact terms.",
+        "source_url": "https://solomons.gov.sb/solomon-islands-china-visa-free-agreement-vital-for-tourism/",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "source_urls": [
+      "https://immigration.gov.sb/visas/",
+      "https://immigration.gov.sb/know-your-visa-requirements/",
+      "https://immigration.gov.sb/visitor-visa-tourist/",
+      "https://www.un.int/solomonislands/solomonislands/visa-information",
+      "https://eur-lex.europa.eu/eli/agree_internation/2016/1888/oj/eng"
+    ],
+    "notes": "Solomon Islands issues visitor permits on arrival to nationals of most countries who hold a valid passport (6+ months validity), return ticket, and sufficient funds. Nationals of the following countries require PRIOR APPROVAL from the Director of Immigration before arrival: Africa — Algeria, Angola, Benin, Botswana, Burkina Faso, Cameroon, Cape Verde, Central African Republic, Chad, Congo, Democratic Republic of Congo, Comoros, Côte d'Ivoire, Djibouti, Egypt, Equatorial Guinea, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia, Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mozambique, Morocco, Namibia, Niger, Nigeria, Rwanda, São Tomé & Príncipe, Senegal, Seychelles, Sierra Leone, Somalia, South Africa, Sudan, Swaziland, Tanzania, Togo, Tunisia, Uganda, Zimbabwe; Asia — Afghanistan, Bahrain, Bangladesh, Bhutan, Myanmar, Cambodia, China (prior to ordinary passport agreement Nov 2024), Hong Kong, India, Indonesia, Iran, Iraq, Jordan, Kazakhstan, North Korea, Laos, Lebanon, Mongolia, Nepal, Oman, Pakistan, Philippines, Qatar, Saudi Arabia, Sri Lanka, Syria, Tajikistan, Tibet, Turkey, Turkmenistan, Vietnam, Yemen, UAE, Uzbekistan; Europe — Albania, Azerbaijan, Bosnia Herzegovina, Bulgaria, Croatia, Cyprus, Armenia, Estonia, Georgia, Kosovo, Latvia, Lithuania, Moldova, Romania, Russia, Ukraine, North Macedonia; Caribbean — Cuba, Haiti, Jamaica; Oceania — Kiribati, Tuvalu; Central America — Costa Rica, El Salvador, Guatemala, Honduras, Mexico, Nicaragua, Panama; South America — Bolivia, Colombia, Ecuador, Venezuela. Note: China, India, UAE, and Indonesia nationals who have applied for and received a Mutual Reciprocal Visa grant letter before arrival may enter under that arrangement (90 days, see conditional_access). Chinese ordinary passport holders may now be eligible for on-arrival access under the November 2024 agreement. No e-visa or ETA system is currently operational (site notes 'ONLINE PAYMENT COMING SOON' only)."
+  },
+  "conditional_access": [
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["CHN"],
+      "passport_types": ["diplomatic", "service", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Mutual Visa Exemption Agreement between People's Republic of China and Solomon Islands, in force 24 November 2022. Covers holders of valid diplomatic passports, service passports, and passports for public affairs (gongwu/official) of the PRC. Stay not to exceed 30 days from date of entry. Work prohibited. A separate ordinary passport agreement was announced November 2024 (see visa_policy.visa_free).",
+      "source_url": "http://www.mfaet.gov.sb/media-center/press-releases/foreign-affairs-news/371-mutual-visa-exemption-agreement-between-prc-and-si-officially-enforced.html",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["IND"],
+      "passport_types": ["diplomatic", "official", "ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Mutual Reciprocal Visa arrangement between India and Solomon Islands, established 21 June 2022 per immigration.gov.sb. Covers Indian citizens holding official, diplomatic, or ordinary passports. Validity: 90 days, single entry, fee exempted, work prohibited. Applicants MUST apply before arrival via the eVisa portal and present the grant letter on entry — this is a pre-approval required arrangement, not a traditional visa-on-arrival or visa-free entry. India nationals otherwise require prior approval from Director of Immigration.",
+      "source_url": "https://immigration.gov.sb/mutual-visa-india/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["ARE"],
+      "passport_types": ["diplomatic", "official", "ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Mutual Reciprocal Visa arrangement between United Arab Emirates and Solomon Islands, officially in place as of September 2022 per immigration.gov.sb. Covers all passport classifications: ordinary, official, and diplomatic. Maximum 90 days, single entry, fee exempted, work prohibited. Applicants must apply before arrival via eVisa portal and present grant letter on entry. UAE nationals otherwise require prior approval from Director of Immigration.",
+      "source_url": "https://immigration.gov.sb/mutual-visa-uae/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["IDN"],
+      "passport_types": ["diplomatic", "official", "ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Mutual Reciprocal Visa arrangement between Indonesia and Solomon Islands, extended to ordinary passports under subsequent arrangement per immigration.gov.sb. Covers diplomat, official, and ordinary passport holders. Maximum 90 days, single entry, fee exempted, work prohibited. Applicants must apply before arrival via eVisa portal and present grant letter on entry. Indonesian nationals otherwise require prior approval from Director of Immigration.",
+      "source_url": "https://immigration.gov.sb/mutual-visa-indonesia/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["SAU"],
+      "passport_types": ["diplomatic", "official", "ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Mutual Visa Exemption Agreement between Kingdom of Saudi Arabia and Solomon Islands signed 9 October 2024 in Riyadh. Agreement covers holders of diplomatic, private (ordinary), and official passports ('short-stay visa requirements' mutually exempted per SPA press release title). Maximum stay duration not confirmed from any directly accessible official source (spa.gov.sa returned HTTP 403; sibconline.com.sb returned HTTP 403). Saudi nationals otherwise require prior approval from Director of Immigration.",
+      "source_url": "https://www.spa.gov.sa/en/N2183858",
+      "source_official": false
+    }
+  ],
+  "visa_required": null,
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "https://solomons.gov.sb/citizenship-by-investment-bill/",
+    "source_official": true,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": null,
+    "residency_required": null,
+    "notes": "As of June 2026, Solomon Islands does not have a functioning Citizenship by Investment program. A Citizenship by Investment Bill was drafted and included in the Government's 100-day agenda (announced September 2024 by PM Jeremiah Manele); it was undergoing peer review at the Attorney General's Chambers as of the last accessible official records. The bill has not been enacted into law and no official program with published investment amounts or application procedures has been launched. Third-party sources (Global Citizen Solutions, IMI Daily) referenced a possible 2025 launch but no official confirmation exists."
+  },
+  "rbi": {
+    "programs": []
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "Melanesian Spearhead Group (MSG) — regional visa arrangement providing complimentary 60-day single-entry visitor visa for citizens of Fiji, Papua New Guinea, and Vanuatu",
+    "EU-Solomon Islands Short-Stay Visa Waiver Agreement (signed 7 October 2016, provisionally effective 8 October 2016, concluded by Council Decision 2017/235) — covers ALL passport types (ordinary, diplomatic, service, official, special), 90 days/180-day period, excludes Ireland and UK; France and Netherlands: European territory only",
+    "China-Solomon Islands Mutual Visa Exemption Agreement (diplomatic/service/official passports, in force 24 November 2022 — 30 days; ordinary passports agreement announced November 2024)",
+    "India-Solomon Islands Mutual Reciprocal Visa arrangement (established June 2022) — all passport types, 90 days, pre-approval application required",
+    "UAE-Solomon Islands Mutual Reciprocal Visa arrangement (September 2022) — all passport types, 90 days, pre-approval application required",
+    "Indonesia-Solomon Islands Mutual Reciprocal Visa arrangement (September 2022, extended to ordinary passports) — all passport types, 90 days, pre-approval application required",
+    "Saudi Arabia-Solomon Islands Mutual Visa Exemption Agreement (signed October 9, 2024) — diplomatic, private (ordinary), and official passports; exact stay duration unconfirmed"
+  ],
+  "official_domains": [
+    "immigration.gov.sb",
+    "solomons.gov.sb",
+    "commerce.gov.sb",
+    "un.int",
+    "mfaet.gov.sb",
+    "eur-lex.europa.eu"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTED: EU agreement source upgraded from solomonislandsembassy.com (source_official:false) to EUR-Lex official treaty text (CELEX:22016A1027(01), eur-lex.europa.eu, source_official:true).",
+      "CORRECTED: EU agreement now correctly placed in visa_policy.visa_free (not only conditional_access) since it covers ordinary passport holders of all EU member states (except Ireland and UK). EU citizens with ordinary passports are visa-free for 90 days/180-day period.",
+      "CORRECTED: India, UAE, and Indonesia mutual reciprocal visa entries now clarify that applicants must apply before arrival via the eVisa portal and present a grant letter on entry — these are pre-approval required arrangements, not traditional visa-free or on-arrival access. The basis:passport_type classification is retained since the eligibility is still nationality+passport-type based.",
+      "CORRECTED: China ordinary passport visa-free agreement (announced November 2024) added to visa_policy.visa_free. The diplomatic/service/official passport entry (30 days, in force 24 November 2022) retained in conditional_access.",
+      "CORRECTED: EU conditional_access entry removed (EU ordinary passport holders now correctly in visa_policy.visa_free; the diplomatic/service passport coverage is part of the same agreement so no separate conditional_access entry is needed).",
+      "CORRECTED: Saudi Arabia agreement now correctly notes coverage includes 'private' (ordinary) passports per SPA press release title, not just diplomatic/official — though source_official remains false as spa.gov.sa returned HTTP 403.",
+      "UNCHANGED: CBI has_program remains false — bill still in peer review/draft stage as of June 2026 per available sources.",
+      "UNCHANGED: MSG arrangement confirmed by immigration.gov.sb as 60-day complimentary visa for Fiji, PNG, Vanuatu.",
+      "UNCHANGED: No e-visa or ETA system operational.",
+      "UNCHANGED: on-arrival visitor permit is 90 days (3 months) per UN Mission / Immigration Act; tourist visa page's '150 days maximum' reflects the extended pathway after formal application, not the on-arrival permit."
+    ],
+    "gaps": [
+      "The official immigration.gov.sb site does not publish a complete enumerated list of visa-free nationalities; the prior-approval country list (from the UN Mission page) was used to infer which nationalities receive on-arrival permits.",
+      "China ordinary passport agreement (announced November 2024): exact entry-into-force date and maximum stay duration not confirmed from a directly accessible official page (solomons.gov.sb returned HTTP 307 redirect during verification). Placed in visa_policy.visa_free with 30-day max_stay_days noted as estimated.",
+      "Saudi Arabia agreement: maximum stay duration not confirmed from any official source (spa.gov.sa and sibconline.com.sb both returned HTTP 403). source_official set to false.",
+      "No 'conditional access based on third-country credentials' (e.g., entry because holder has a valid US/Schengen/Australian visa) was found on any official Solomon Islands immigration source.",
+      "No OCI cardholder exemption or special diaspora status provision found on any official source.",
+      "The Citizenship by Investment Bill status beyond mid-2025 could not be confirmed from an accessible official page (solomons.gov.sb redirected).",
+      "No official RBI, digital nomad, or skilled-worker fast-track programs found on official government sites.",
+      "No e-visa or ETA system is currently operational per official immigration site.",
+      "EU agreement: France and Netherlands partial exclusion (European territory only) confirmed from EUR-Lex. UK exclusion confirmed. Ireland exclusion confirmed. Danish territories status not explicitly addressed in available summary."
+    ]
+  },
+  "outbound_official": {
+    "found": false,
+    "note": "No official Solomon Islands government outbound visa-list page located. The Ministry of Foreign Affairs and External Trade site (mfaet.gov.sb) returned HTTP 500 errors throughout the search session and does not appear to publish an enumerated outbound visa-free list for Solomon Islands citizens. The Immigration Division site (immigration.gov.sb) covers only inbound visa requirements for visitors to Solomon Islands. The Solomon Islands High Commission (sihc.org.nz) page at /index.php/visa-passports/ returned HTTP 404. The solomons.gov.sb portal's travel/visa page redirects without accessible content. No other *.gov.sb or official diplomatic domain was found to host an authoritative outbound visa-free list. Rely on destination-side data."
+  },
+  "sources_checked": [
+    "https://immigration.gov.sb/",
+    "https://immigration.gov.sb/visas/",
+    "https://immigration.gov.sb/visitor-visa-tourist/",
+    "https://immigration.gov.sb/know-your-visa-requirements/",
+    "https://immigration.gov.sb/mutual-visa-india/",
+    "https://immigration.gov.sb/mutual-visa-eu/",
+    "https://immigration.gov.sb/mutual-visa-uae/",
+    "https://immigration.gov.sb/mutual-visa-indonesia/",
+    "https://www.un.int/solomonislands/solomonislands/visa-information",
+    "https://solomons.gov.sb/citizenship-by-investment-bill/",
+    "https://solomons.gov.sb/solomon-islands-china-visa-free-agreement-vital-for-tourism/",
+    "https://eur-lex.europa.eu/eli/agree_internation/2016/1888/oj/eng",
+    "http://www.mfaet.gov.sb/media-center/press-releases/foreign-affairs-news/371-mutual-visa-exemption-agreement-between-prc-and-si-officially-enforced.html",
+    "https://www.spa.gov.sa/en/N2183858",
+    "https://www.sibconline.com.sb/61128-2/",
+    "https://www.globalcitizensolutions.com/solomon-islands-citizenship-by-investment/",
+    "https://visaguide.world/news/saudi-arabia-solomon-islands-establish-visa-exemption-agreement-for-diplomatic-passport-holders/"
+  ]
+}

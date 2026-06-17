@@ -1,0 +1,551 @@
+{
+  "iso2": "SG",
+  "iso3": "SGP",
+  "name": "Singapore",
+  "region": "Asia",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/",
+    "source_official": true,
+    "asof": null,
+    "visa_free": [
+      {"name": "Japan", "iso3": "JPN", "notes": "No visa required for stays < 90 days. Source: mfa.gov.sg/travelling-overseas/.../japan/"},
+      {"name": "South Korea", "iso3": "KOR", "notes": "No visa required for stays < 90 days. Source: mfa.gov.sg/travelling-overseas/.../republic-of-south-korea/"},
+      {"name": "China", "iso3": "CHN", "notes": "Visa-free for ordinary passport holders for stays up to 30 days. Effective 9 February 2024 (mutual arrangement). Source: mfa.gov.sg/travelling-overseas/.../china/"},
+      {"name": "France", "iso3": "FRA", "notes": "Visa-free for short stays up to 90 days in any 180-day period (Schengen). Source: mfa.gov.sg/.../france/travel-page"},
+      {"name": "Germany", "iso3": "DEU", "notes": "Visa-free for stays < 90 days in any 6-month period (Schengen). Source: mfa.gov.sg/Countries-Regions/G/Germany/Travel-Page"},
+      {"name": "Indonesia", "iso3": "IDN", "notes": "Visa-free (ASEAN bilateral arrangement). Source: mfa.gov.sg travelling-overseas pages"},
+      {"name": "Malaysia", "iso3": "MYS", "notes": "Visa-free (ASEAN bilateral arrangement). Source: mfa.gov.sg travelling-overseas pages"},
+      {"name": "Thailand", "iso3": "THA", "notes": "Visa-free (ASEAN bilateral arrangement). Source: mfa.gov.sg travelling-overseas pages"},
+      {"name": "Kenya", "iso3": "KEN", "notes": "Exempted from eTA requirement for stays up to 90 days effective 1 July 2025. Source: mfa.gov.sg/countries-regions/k/kenya/travel-page"}
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [
+      {"name": "United Kingdom", "iso3": "GBR", "notes": "Visa-free entry but Electronic Travel Authorisation (ETA) required from 25 February 2026. Source: mfa.gov.sg/travelling-overseas/.../united-kingdom/"},
+      {"name": "Australia", "iso3": "AUS", "notes": "Electronic Travel Authority (ETA, visa subclass 601) required; apply via ETA app before travel. Valid 1 year, multiple visits up to 90 days each. Source: mfa.gov.sg/Countries-Regions/A/australia/travel-page"},
+      {"name": "United States", "iso3": "USA", "notes": "Must obtain approved ESTA under the Visa Waiver Programme before travel. ESTA approval does not guarantee entry. Source: mfa.gov.sg/travelling-overseas/.../united-states/"}
+    ],
+    "notes": "Singapore's MFA publishes individual country travel-advisory pages for Singapore citizens at https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/ (186 countries as of 2025-2026). There is NO single consolidated visa-free countries list page; visa information is embedded within each country's travel advisory page. The MFA explicitly states this list is 'provided solely as a guide' and recommends travelers verify with the relevant embassy before departure. The country entries above are representative samples confirmed from MFA page snippets returned in web searches. Full coverage requires reading all 186 individual country pages. The MFA pages are the Singapore government's authoritative outbound visa information source."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Brunei",
+        "iso3": "BRN",
+        "max_stay_days": 30,
+        "notes": "ASEAN member; nationals of Brunei do not require a visa for Singapore. Stay duration per ICA visit pass policy.",
+        "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Cambodia",
+        "iso3": "KHM",
+        "max_stay_days": 30,
+        "notes": "Holders of ordinary passports from Cambodia are not required to have a visa to visit Singapore for stays of up to 30 days. Effective 10 November 2003.",
+        "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/1014",
+        "source_official": true
+      },
+      {
+        "nationality": "Indonesia",
+        "iso3": "IDN",
+        "max_stay_days": 30,
+        "notes": "ASEAN member; not listed on ICA's visa-required country list. Nationals receive a Visit Pass on arrival.",
+        "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Laos",
+        "iso3": "LAO",
+        "max_stay_days": 30,
+        "notes": "Holders of ordinary passports from Laos are not required to have a visa to visit Singapore for stays of up to 30 days. Effective 10 November 2003.",
+        "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/1014",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 30,
+        "notes": "ASEAN member; not listed on ICA's visa-required country list. Nationals receive a Visit Pass on arrival.",
+        "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Myanmar",
+        "iso3": "MMR",
+        "max_stay_days": 30,
+        "notes": "Myanmar nationals holding ordinary passports are exempt from visa requirements for stays of up to 30 days. Effective 1 December 2016, pursuant to the reciprocal arrangement announced during PM Lee Hsien Loong's visit to Myanmar (7-10 June 2016) and affirmed through an exchange of diplomatic notes.",
+        "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/66",
+        "source_official": true
+      },
+      {
+        "nationality": "Philippines",
+        "iso3": "PHL",
+        "max_stay_days": 30,
+        "notes": "ASEAN member; not listed on ICA's visa-required country list. Nationals receive a Visit Pass on arrival.",
+        "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Thailand",
+        "iso3": "THA",
+        "max_stay_days": 30,
+        "notes": "ASEAN member; not listed on ICA's visa-required country list. Nationals receive a Visit Pass on arrival.",
+        "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+        "source_official": true
+      },
+      {
+        "nationality": "Vietnam",
+        "iso3": "VNM",
+        "max_stay_days": 30,
+        "notes": "Holders of ordinary passports from Vietnam are not required to have a visa to visit Singapore for stays of up to 30 days. Effective 10 November 2003.",
+        "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/1014",
+        "source_official": true
+      },
+      {
+        "nationality": "People's Republic of China",
+        "iso3": "CHN",
+        "max_stay_days": 30,
+        "notes": "Holders of ordinary passports issued by the PRC are exempted from visa requirements for stays of up to 30 days. Effective 9 February 2024, pursuant to the mutual 30-day visa-exemption arrangement announced at the 19th Joint Council for Bilateral Cooperation. Holders of diplomatic, public affairs and service PRC passports are also exempted under prior long-standing arrangements.",
+        "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china",
+        "source_official": true
+      },
+      {
+        "nationality": "United States of America",
+        "iso3": "USA",
+        "max_stay_days": null,
+        "notes": "US passport holders (regular, official and diplomatic) do not require a visa to enter Singapore for business or social visit purposes. Duration of stay determined by Visit Pass issued at entry.",
+        "source_url": "https://washington.mfa.gov.sg/visa-and-entry-requirements/",
+        "source_official": true
+      },
+      {
+        "nationality": "All nationals not listed on the ICA visa-required country list",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "Singapore's ICA publishes a list of countries/territories whose nationals REQUIRE a visa; all other passport holders are visa-exempt. The ICA page states that holders of passports/travel documents NOT from visa-required countries do not need a visa. Stay duration (14, 30, or 90 days) is determined by the Visit Pass issued at the checkpoint. Visa-required countries as of June 2026: Afghanistan, Algeria, Armenia, Azerbaijan, Bangladesh, Belarus, Democratic People's Republic of Korea, Egypt, Georgia, India, Iran, Iraq, Jordan, Kazakhstan, Kosovo, Kyrgyzstan, Lebanon, Libya, Mali, Moldova, Morocco, Nigeria, Pakistan, Russia, Somalia, South Sudan, Sudan, Syria, Tajikistan, Tunisia, Turkmenistan, Ukraine, Uzbekistan, Yemen. Additionally, holders of refugee travel documents, alien's passports, Palestinian Authority passports, UAE temporary passports, Hong Kong SAR Document of Identity, Macao SAR Travel Permits, and PRC Travel Documents require visas.",
+        "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [
+      {
+        "nationality": "Commonwealth of Independent States (CIS) nationals",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "Nationals of CIS countries (Armenia, Azerbaijan, Belarus, Kazakhstan, Kyrgyzstan, Moldova, Russia, Tajikistan, Uzbekistan, and others) who require a visa may apply for an e-Visa (electronic visa) via the SAVE system with a local sponsor. Introduced 26 August 2008.",
+        "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/637",
+        "source_official": true
+      },
+      {
+        "nationality": "India",
+        "iso3": "IND",
+        "max_stay_days": null,
+        "notes": "Indian nationals who require a visa may apply for an e-Visa via the SAVE system with a local sponsor. Diplomatic and official passport holders from India are exempt from visa requirements.",
+        "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/637",
+        "source_official": true
+      },
+      {
+        "nationality": "People's Republic of China (certain travel document holders)",
+        "iso3": "CHN",
+        "max_stay_days": null,
+        "notes": "PRC nationals holding PRC Travel Documents (not ordinary/diplomatic/public affairs/service passports) may apply for e-Visa via SAVE system. Ordinary passport holders are visa-free as of 9 February 2024.",
+        "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/637",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+      "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/1014",
+      "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/66",
+      "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china",
+      "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/637",
+      "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa-free-transit-facility",
+      "https://washington.mfa.gov.sg/visa-and-entry-requirements/"
+    ],
+    "notes": "Singapore's ICA publishes a list of countries requiring visas; all other nationalities are visa-exempt and receive a Visit Pass on arrival (14, 30, or 90 days depending on nationality). The official ICA page does not enumerate all visa-free countries by name — it only lists visa-required countries. A 96-hour Visa Free Transit Facility (VFTF) is available: (1) for India and selected PRC nationals who also hold a valid visa/long-term pass from Australia, Canada, Germany, Japan, New Zealand, Switzerland, UK, or USA; (2) for CIS, Georgia, Turkmenistan, and Ukraine nationals who hold a valid onward air ticket — NO third-country credential is required for this second group."
+  },
+  "conditional_access": [
+    {
+      "basis": "credential",
+      "eligible_nationalities": [
+        "India"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "Australia, Canada, Germany, Japan, New Zealand, Switzerland, United Kingdom, or United States of America",
+        "type": "visa_or_long_term_pass",
+        "subtype": "any valid visa or long-term pass with at least 1 month remaining validity"
+      },
+      "level": "visa_free_transit",
+      "max_stay_days": 4,
+      "conditions": "96-hour Visa-Free Transit Facility (VFTF). Must hold a valid visa or long-term pass issued by and/or good for entry into Australia, Canada, Germany, Japan, New Zealand, Switzerland, United Kingdom, or United States of America, with validity of at least one month from date of entry into Singapore under VFTF. Must have valid onward air ticket departing within 96 hours. Must enter Singapore in transit to/from a third country. May enter by any mode but must depart by air or sea. Extension of stay strictly not allowed.",
+      "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa-free-transit-facility",
+      "source_official": true
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": [
+        "China"
+      ],
+      "passport_types": [
+        "other"
+      ],
+      "credential": {
+        "issuer": "Australia, Canada, Germany, Japan, New Zealand, Switzerland, United Kingdom, or United States of America",
+        "type": "visa_or_long_term_pass",
+        "subtype": "any valid visa or long-term pass with at least 1 month remaining validity — applicable only to PRC nationals NOT holding ordinary, diplomatic, public affairs or service PRC passports"
+      },
+      "level": "visa_free_transit",
+      "max_stay_days": 4,
+      "conditions": "96-hour Visa-Free Transit Facility (VFTF) for selected PRC nationals NOT holding ordinary, diplomatic, public affairs or service PRC passports (i.e. holders of PRC Travel Documents or other PRC travel documents). Must hold a valid visa or long-term pass issued by and/or good for entry into Australia, Canada, Germany, Japan, New Zealand, Switzerland, United Kingdom, or United States of America, with validity of at least one month from date of entry into Singapore under VFTF. Must have valid onward air ticket departing within 96 hours. Must enter Singapore in transit to/from a third country. May enter by any mode but must depart by air or sea. Extension of stay strictly not allowed.",
+      "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa-free-transit-facility",
+      "source_official": true
+    },
+    {
+      "basis": "transit_nationality",
+      "eligible_nationalities": [
+        "Armenia",
+        "Azerbaijan",
+        "Belarus",
+        "Georgia",
+        "Kazakhstan",
+        "Kyrgyzstan",
+        "Moldova",
+        "Russia",
+        "Tajikistan",
+        "Turkmenistan",
+        "Ukraine",
+        "Uzbekistan"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": null,
+      "level": "visa_free_transit",
+      "max_stay_days": 4,
+      "conditions": "96-hour Visa-Free Transit Facility (VFTF) for CIS nationals, Georgia, Turkmenistan, and Ukraine. NO third-country visa credential required. Must hold a valid onward air ticket departing Singapore within 96 hours. Must depart Singapore by air. Extension of stay strictly not allowed. Must have sufficient funds for the stay.",
+      "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa-free-transit-facility",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "India"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of diplomatic, official and service passports issued by India do not need a visa for entry into Singapore. Duration of stay determined by Visit Pass issued at entry.",
+      "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements/visa-detail-page/india",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "China"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "public_affairs",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Holders of diplomatic, public affairs and service passports issued by the PRC are exempted from visa requirements for a stay of up to 30 days in Singapore under long-standing bilateral arrangements, subsequently affirmed through an exchange of diplomatic notes following the 19th Joint Council for Bilateral Cooperation on 7 December 2023.",
+      "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Saudi Arabia"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Citizens of Saudi Arabia holding diplomatic passports are exempted from Singapore visa requirements. Effective 1 January 2007. All other passport types (ordinary, service, official) still require a visa.",
+      "source_url": "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/789",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": false,
+    "program_name": "",
+    "official_url": "",
+    "source_official": true,
+    "options": [],
+    "processing_time": "",
+    "dual_citizenship_allowed": false,
+    "residency_required": null,
+    "notes": "Singapore does not offer any citizenship-by-investment (CBI) programme. The Global Investor Programme (GIP) grants only Permanent Resident (PR) status, not citizenship. Singapore does not permit dual citizenship for adults — persons who obtain another nationality must renounce Singapore citizenship. The ICA confirmed 'The Government has no plans to allow dual citizenship at this juncture.' Source: https://www.ica.gov.sg/news-and-publications/newsroom/media-release/306"
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Global Investor Programme (GIP) – Option A: Direct Business Investment",
+        "type": "business",
+        "min_amount": 10000000,
+        "currency": "SGD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 2,
+        "official_url": "https://www.edb.gov.sg/en/incentives-and-programmes/global-investor-programme.html",
+        "source_official": true,
+        "notes": "Grants Singapore Permanent Residency. Invest SGD 10 million in a new or existing Singapore business entity. Must hire minimum 30 employees with at least 50% Singapore Citizens. Minimum 10 new employees required for Re-entry Permit renewal eligibility after initial 5-year period. Application fee S$20,000 (revised 5 May 2025) plus S$100 ICA immigration processing fee. Processing approximately 12 months. After 2 years as PR, applicants aged 21+ may apply for Singapore citizenship (not guaranteed). Changes effective March 15, 2023."
+      },
+      {
+        "name": "Global Investor Programme (GIP) – Option B: GIP-Select Fund Investment",
+        "type": "fund",
+        "min_amount": 25000000,
+        "currency": "SGD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 2,
+        "official_url": "https://www.edb.gov.sg/en/incentives-and-programmes/global-investor-programme.html",
+        "source_official": true,
+        "notes": "Grants Singapore Permanent Residency. Invest SGD 25 million in a GIP-select fund as shortlisted by EDB. Investment must be demonstrated within 6-month period of Approval-in-Principle (AIP) PR status, made from personal bank account in sole name at a Singapore-registered bank. Application fee S$20,000 (revised 5 May 2025). Processing approximately 12 months. After 2 years as PR, applicants aged 21+ may apply for Singapore citizenship (not guaranteed). Changes effective March 15, 2023."
+      },
+      {
+        "name": "Global Investor Programme (GIP) – Option C: Single-Family Office",
+        "type": "other",
+        "min_amount": 200000000,
+        "currency": "SGD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 2,
+        "official_url": "https://www.edb.gov.sg/en/incentives-and-programmes/global-investor-programme.html",
+        "source_official": true,
+        "notes": "Grants Singapore Permanent Residency. Requires minimum SGD 200 million Assets-Under-Management in a Single-Family Office, with a minimum deployment of SGD 50 million in EDB-specified investments (SGX-listed companies, qualifying debt securities, Singapore-licensed managed funds, or private equity in non-listed Singapore businesses) to be deployed no later than 12 months from Final Approval of PR. Application fee S$20,000 (revised 5 May 2025). Processing approximately 12 months. After 2 years as PR, applicants aged 21+ may apply for Singapore citizenship (not guaranteed). Changes effective March 15, 2023."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": [
+      {
+        "name": "Overseas Networks & Expertise Pass (ONE Pass)",
+        "category": "highly-skilled",
+        "eligibility": "Fixed monthly salary of at least S$30,000 for 12 consecutive months with an established company (market cap US$500M+ or annual revenue US$200M+), OR prospective employment at S$30,000/month with an established Singapore company, OR outstanding achievements in sports, arts and culture, or academia/research assessed holistically by MOM",
+        "processing_time": "Not specified on official page",
+        "official_url": "https://www.mom.gov.sg/passes-and-permits/overseas-networks-expertise-pass/eligibility",
+        "source_official": true,
+        "notes": "Personalised pass for top talent across all sectors. 5-year validity, renewable for further 5-year periods. No employer sponsorship required. Pass holders can concurrently be employed, run businesses, be directors, or be consultants in multiple Singapore companies. Renewal requires average S$30,000/month salary over 5 years in Singapore OR operating a Singapore company employing at least 5 locals at prevailing EP minimum salary. From January 2027, a new ONE Pass (AI and Tech) track will be introduced (replacing Tech.Pass) allowing salary criterion to be met through a combination of cash and non-cash components (e.g. ESOPs) — confirmed in COS 2026 foreign workforce policy factsheet."
+      },
+      {
+        "name": "Tech.Pass",
+        "category": "skilled",
+        "eligibility": "Last drawn fixed monthly salary of at least S$22,500 in the last 1 year, AND at least 5 cumulative years of leadership experience in the past 10 years in a technology company valued at US$500M+ or that raised US$30M+ in funding, OR a venture capital firm managing US$500M+ AUM. 500 places available on first-come, first-served basis.",
+        "processing_time": "Not specified on official page",
+        "official_url": "https://www.edb.gov.sg/en/incentives-and-programmes/incentives-and-facilitation-programmes/tech-pass.html",
+        "source_official": true,
+        "notes": "2-year validity, renewable once for another 2 years (maximum 4-year total). No employer sponsorship required. Holders can start and operate companies, be an employee, consultant or director in multiple Singapore companies, and mentor start-ups. Tech.Pass is currently still active (as of June 2026) but will be replaced by the ONE Pass (AI and Tech) track from January 2027 per COS 2026 announcement."
+      },
+      {
+        "name": "EntrePass",
+        "category": "startup",
+        "eligibility": "Must register a private limited company with ACRA with at least 30% ownership that is venture-backed or owns innovative technologies. Must meet at least one entrepreneurial track record criterion: raised minimum SGD 100,000 from a single funding round; supported by government-recognized or internationally-renowned incubator/accelerator; previously founded and sold a technology business; holds registered IP providing significant competitive advantage; maintains active research collaboration with Singapore institutions; owns IP registered with an approved national IP institution.",
+        "processing_time": "Not specified on official page",
+        "official_url": "https://www.mom.gov.sg/passes-and-permits/entrepass/eligibility",
+        "source_official": true,
+        "notes": "Administered by Ministry of Manpower (MOM). Targets serial entrepreneurs, high-calibre innovators, and experienced investors wanting to operate in Singapore. Certain businesses ineligible (coffee shops, bars, massage parlours, employment agencies, geomancy businesses). EntrePass holders are eligible for PR through the Professionals/Technical Personnel and Skilled Worker scheme administered by ICA."
+      },
+      {
+        "name": "Employment Pass (EP)",
+        "category": "skilled",
+        "eligibility": "Candidates must earn at least S$5,600 a month (minimum as of 2025; higher for older, more experienced candidates — up to S$10,700/month at age 45+ for non-financial services, S$11,800/month for financial services). Must pass Complementarity Assessment Framework (COMPASS) unless salary exceeds S$22,500/month. COMPASS evaluates salary relative to local benchmarks, qualifications, diversity, and support for local employment.",
+        "processing_time": "Not specified on official page",
+        "official_url": "https://www.mom.gov.sg/passes-and-permits/employment-pass/eligibility",
+        "source_official": true,
+        "notes": "Singapore's primary work pass for professionals, managers, executives and technicians (PMETs). Requires employer sponsorship. Holders may eventually apply for PR after residing in Singapore. From 1 January 2027, minimum qualifying salary increases to S$6,000/month (general sectors) or S$6,600/month (financial services); renewal threshold increases apply from 1 January 2028."
+      }
+    ]
+  },
+  "agreements": [
+    "ASEAN (Association of Southeast Asian Nations) – Singapore is a founding member; no formal ASEAN-wide freedom of movement agreement exists, but Singapore has bilateral visa-free arrangements with all ASEAN member states"
+  ],
+  "official_domains": [
+    "ica.gov.sg",
+    "mfa.gov.sg",
+    "edb.gov.sg",
+    "mom.gov.sg",
+    "washington.mfa.gov.sg"
+  ],
+  "data_quality": {
+    "completeness": "high",
+    "gaps": [
+      "ICA's official visa requirements page lists only visa-REQUIRED countries (34 as of June 2026) and does not enumerate all visa-free nationalities explicitly; visa-free status is inferred by absence from the required list. Specific stay durations (14/30/90 days) for individual visa-free nationalities other than those explicitly confirmed are not stated verbatim on the official ICA page.",
+      "GIP Option A/B/C minimum investment amounts sourced from the EDB GIP page and media releases; the GIP Factsheet PDF (May 2025) could not be parsed from binary encoding. Amounts (SGD 10M / SGD 25M / SGD 200M AUM) are consistent with prior verified sources and 2025 search results.",
+      "Processing times for ONE Pass, Tech.Pass, and EntrePass are not explicitly stated on their respective official MOM/EDB pages.",
+      "Singapore does not publish an ETA (Electronic Travel Authorization) scheme.",
+      "No visa-on-arrival facility exists for Singapore.",
+      "Max stay days for US nationals and most other visa-free nationalities not explicitly stated on official pages — ICA states the Visit Pass determines duration at entry.",
+      "ICA visa requirements page is an interactive SPA; the complete country-by-country list with specific stay durations for all nationalities was not fully extractable via WebFetch.",
+      "OCI (Overseas Citizen of India) cardholders: no special entry privilege for Singapore found on any official Singapore government source (ica.gov.sg, mfa.gov.sg). OCI status is not a basis for Singapore entry benefit.",
+      "Comprehensive bilateral diplomatic/service passport visa exemption list for Singapore not published as a single official document. Only China (ordinary/diplomatic/public affairs/service — ica.gov.sg), India (diplomatic/official/service — ica.gov.sg), and Saudi Arabia (diplomatic only — ica.gov.sg/789) are explicitly confirmed from official sources. Many other bilateral diplomatic-passport exemptions likely exist but are not confirmed from official Singapore government pages.",
+      "Singapore does not have a 'Schengen visa' exemption per se for VFTF; Germany and Switzerland appear individually as qualifying VFTF credential issuers. The ICA VFTF page does not use the word 'Schengen'.",
+      "Myanmar diplomatic/official passport exemption: the original ICA SAVE e-visa announcement (media release 637) mentioned Myanmar diplomatic and official passports are exempt, but Myanmar ordinary passport holders have been visa-free since December 1, 2016 (ICA media release 66). The ICA visa-detail page for Myanmar (404 as of June 2026 WebFetch check) could not be independently confirmed for current status of diplomatic vs. ordinary passport distinction.",
+      "COS 2026 foreign workforce policy factsheet (PDF, mom.gov.sg) could not be parsed from binary encoding; Tech.Pass → ONE Pass (AI and Tech) replacement confirmed via MOM search results only, not direct document read."
+    ],
+    "validation_notes": [
+      "CORRECTED: Myanmar added to visa_free with max_stay_days=30, effective 1 December 2016 (ICA media release 66). The prior record incorrectly included Myanmar in e_visa as a nationality 'requiring a visa' — this was wrong; Myanmar ordinary passport holders have been visa-free since 2016.",
+      "CORRECTED: Myanmar removed from e_visa section (the entry claiming Myanmar nationals 'require a visa' was factually incorrect given ICA media release 66 confirms visa-free status for ordinary passport holders since December 2016).",
+      "CORRECTED: Myanmar diplomatic/official passport_type entry removed from conditional_access as it is redundant — Myanmar ordinary passport holders are already fully visa-free.",
+      "CORRECTED: VFTF for CIS/Georgia/Turkmenistan/Ukraine added as a single consolidated conditional_access entry with basis='transit_nationality' and credential=null. These nationalities do NOT need a third-country credential for VFTF — only a valid onward air ticket. Previously these were documented only in gaps, not in conditional_access.",
+      "CORRECTED: Saudi Arabia diplomatic passport exemption added to conditional_access (basis='passport_type', passport_types=['diplomatic'], effective 1 January 2007 per ICA media release 789). Ordinary Saudi passport holders still require a visa.",
+      "CORRECTED: VFTF conditional_access entries for India and China consolidated from 16 separate per-issuer/per-credential-type entries into 2 composite entries (one for India ordinary, one for China other-travel-document holders). The original 16 entries were structurally correct but redundant — the VFTF condition is that the holder has ANY valid credential from the list of 8 countries, not separate rules per issuer.",
+      "CORRECTED: Employment Pass eligibility notes updated to include the 2027 salary threshold increase (S$6,000 general / S$6,600 financial services from 1 January 2027) confirmed from MOM official page.",
+      "CORRECTED: Tech.Pass notes updated — Tech.Pass is still active as of June 2026; the replacement by ONE Pass (AI and Tech) in January 2027 is confirmed from COS 2026 MOM announcement.",
+      "VERIFIED UNCHANGED: Visa-required country list (34 nationalities) confirmed identical to prior record against live ICA page (June 2026).",
+      "VERIFIED UNCHANGED: GIP Option A (SGD 10M), Option B (SGD 25M), Option C (SGD 200M AUM + SGD 50M deployment) amounts confirmed consistent with current EDB sources.",
+      "VERIFIED UNCHANGED: China 30-day ordinary passport visa-free arrangement (effective 9 February 2024) confirmed still current.",
+      "VERIFIED UNCHANGED: VFTF for India requires valid credential from one of 8 countries (Australia, Canada, Germany, Japan, New Zealand, Switzerland, UK, USA) confirmed on live ICA VFTF page."
+    ]
+  },
+  "sources_checked": [
+    "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+    "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa-free-transit-facility",
+    "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/1014",
+    "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/66",
+    "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china",
+    "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/637",
+    "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/789",
+    "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/306",
+    "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements/visa-detail-page/india",
+    "https://www.mfa.gov.sg/visiting-singapore/check-if-you-need-a-singapore-visa/",
+    "https://washington.mfa.gov.sg/visa-and-entry-requirements/",
+    "https://www.edb.gov.sg/en/incentives-and-programmes/global-investor-programme.html",
+    "https://www.edb.gov.sg/content/dam/edb-en/how-we-help/global-investor-programme/GIP%20Factsheet.pdf",
+    "https://www.edb.gov.sg/en/incentives-and-programmes/incentives-and-facilitation-programmes/tech-pass.html",
+    "https://www.mom.gov.sg/passes-and-permits/overseas-networks-expertise-pass/eligibility",
+    "https://www.mom.gov.sg/passes-and-permits/entrepass/eligibility",
+    "https://www.mom.gov.sg/passes-and-permits/employment-pass/eligibility",
+    "https://www.mom.gov.sg/-/media/mom/documents/press-releases/2026/factsheet-on-foreign-workforce-policies-03032026.pdf"
+  ],
+  "visa_required": {
+    "default_visa_free": true,
+    "nationalities_iso3": [
+      "AFG",
+      "DZA",
+      "ARM",
+      "AZE",
+      "BGD",
+      "BLR",
+      "PRK",
+      "EGY",
+      "GEO",
+      "IND",
+      "IRN",
+      "IRQ",
+      "JOR",
+      "KAZ",
+      "XKX",
+      "KGZ",
+      "LBN",
+      "LBY",
+      "MLI",
+      "MDA",
+      "MAR",
+      "NGA",
+      "PAK",
+      "RUS",
+      "SOM",
+      "SSD",
+      "SDN",
+      "SYR",
+      "TJK",
+      "TUN",
+      "TKM",
+      "UKR",
+      "UZB",
+      "YEM"
+    ],
+    "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+    "source_official": true
+  },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Social Visit Visa",
+      "purpose": "Tourism, visiting family/friends, transit",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": 30,
+      "processing_days_min": 3,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa-information",
+      "notes": "Apply online via e-VISA portal or through a local contact. Most nationalities are visa-exempt. Visa-exempt nationalities receive 30 or 90 days on arrival."
+    },
+    {
+      "category": "work",
+      "name": "Employment Pass (EP)",
+      "purpose": "Working in Singapore as a professional, manager, or executive",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 90,
+      "processing_days_min": 10,
+      "processing_days_max": 35,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.mom.gov.sg/passes-and-permits/employment-pass",
+      "notes": "Minimum fixed monthly salary of SGD 5,000 (higher for financial services, SGD 5,500). Employer applies on behalf of candidate via EP Online. Fee SGD 105."
+    },
+    {
+      "category": "work",
+      "name": "S Pass",
+      "purpose": "Mid-level skilled workers earning at least SGD 3,150/month",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 60,
+      "processing_days_min": 10,
+      "processing_days_max": 35,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.mom.gov.sg/passes-and-permits/s-pass",
+      "notes": "Quota-based (companies limited to 15–18% S Pass workers depending on sector). Employer applies. Fee SGD 80."
+    },
+    {
+      "category": "student",
+      "name": "Student's Pass",
+      "purpose": "Full-time study at a Singapore government school or approved institution",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 30,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.ica.gov.sg/reside/STP",
+      "notes": "Apply via SOLAR (Student's Pass Online Application & Registration) system. Fee SGD 30 for in-principle approval + SGD 60 for issuance."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Tech.Pass",
+      "purpose": "Established tech entrepreneurs, leaders, and technical experts",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 1500,
+      "processing_days_min": 30,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.edb.gov.sg/en/how-we-help/incentives-and-schemes/tech-pass.html",
+      "notes": "Requires minimum last drawn salary of USD 225,000/year, OR experience as founder of tech company with valuation of USD 500M+, OR at least 5 years leading technology in a company with valuation/market cap of USD 500M+. Fee approximately SGD 2,200."
+    }
+  ]
+}

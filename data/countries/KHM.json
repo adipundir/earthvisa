@@ -1,0 +1,637 @@
+{
+  "iso2": "KH",
+  "iso3": "KHM",
+  "name": "Cambodia",
+  "region": "Asia",
+  "outbound_official": {
+    "found": true,
+    "source_url": "https://www.mfaic.gov.kh/Page/2025-03-26-Visa-Exemption-List-of-Visa-Exemption-between-Cambodia-and-other-Countries-15-22-56",
+    "source_official": true,
+    "asof": "2025-03-26",
+    "visa_free": [
+      {"name": "Brunei Darussalam", "iso3": "BRN", "max_stay_days": 14},
+      {"name": "Indonesia", "iso3": "IDN", "max_stay_days": 30},
+      {"name": "Lao PDR", "iso3": "LAO", "max_stay_days": 30},
+      {"name": "Malaysia", "iso3": "MYS", "max_stay_days": 30},
+      {"name": "Maldives", "iso3": "MDV", "max_stay_days": 30},
+      {"name": "Myanmar", "iso3": "MMR", "max_stay_days": 14},
+      {"name": "Philippines", "iso3": "PHL", "max_stay_days": 30},
+      {"name": "Seychelles", "iso3": "SYC", "max_stay_days": 15},
+      {"name": "Singapore", "iso3": "SGP", "max_stay_days": 30},
+      {"name": "Thailand", "iso3": "THA", "max_stay_days": 14},
+      {"name": "Vietnam", "iso3": "VNM", "max_stay_days": 30}
+    ],
+    "visa_on_arrival": [],
+    "e_visa": [],
+    "eta": [],
+    "notes": "The official MFAIC page (mfaic.gov.kh) is titled 'List of Visa Exemption between Cambodia and other Countries' and covers bilateral ordinary-passport visa exemptions. The page returned 'Request Rejected' errors during all direct-fetch attempts (WAF blocking); content is known from Google search snippets and cross-reference with the Cambodia Osaka embassy PDF (updated 09-05-2023). Under the bilateral agreements, the outbound visa-free list for ordinary Cambodian passport holders consists of 9 ASEAN member states (Brunei 14d, Indonesia 30d, Lao PDR 30d, Malaysia 30d, Myanmar 14d, Philippines 30d, Singapore 30d, Thailand 14d, Vietnam 30d) plus Maldives (30d) and Seychelles (15d). All other bilateral agreements in the MFAIC list (Azerbaijan, Bangladesh, Belarus, Brazil, Chile, China, Colombia, Dominica, Ecuador, Georgia, etc.) have ordinary passport marked as 'Not yet' — meaning Cambodian ordinary passport holders are NOT currently exempt for those countries. Note: Thailand stay was reduced to 7 days during the 2025 Cambodia-Thailand border crisis (see visa_policy for detail); the 14-day figure here reflects the original bilateral treaty text as shown in the MFAIC source. The page requires login (mfaic.gov.kh/publish/Account/Login) for full access."
+  },
+  "visa_policy": {
+    "visa_free": [
+      {
+        "nationality": "Brunei Darussalam",
+        "iso3": "BRN",
+        "max_stay_days": 14,
+        "notes": "Ordinary/Normal passport: 14 days. Bilateral visa exemption agreement signed 26-11-2011.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Indonesia",
+        "iso3": "IDN",
+        "max_stay_days": 30,
+        "notes": "Ordinary/Normal passport: 30 days. Bilateral visa exemption agreement signed 22-09-2011.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Lao PDR",
+        "iso3": "LAO",
+        "max_stay_days": 30,
+        "notes": "Ordinary/Normal passport: 30 days. Bilateral visa exemption agreement signed 01-07-2004.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 30,
+        "notes": "Ordinary/Normal passport: 30 days. Bilateral visa exemption agreement signed 26-05-1997.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Myanmar",
+        "iso3": "MMR",
+        "max_stay_days": 14,
+        "notes": "Ordinary/Normal passport: 14 days. Bilateral visa exemption agreement signed 12-01-2014.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Philippines",
+        "iso3": "PHL",
+        "max_stay_days": 30,
+        "notes": "Ordinary/Normal passport: 30 days. Bilateral visa exemption agreement signed 31-05-2019.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 30,
+        "notes": "Ordinary/Normal passport: 30 days. Bilateral visa exemption agreement signed 01-01-2006.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Thailand",
+        "iso3": "THA",
+        "max_stay_days": 7,
+        "notes": "Ordinary/Normal passport: 7 days (CORRECTED from 14 — stay duration was reduced due to the 2025 Cambodian-Thai border crisis; original bilateral agreement signed 06-12-2010 granted 14 days). All land borders between Cambodia and Thailand are currently closed due to the conflict; air entry subject to 7-day limit.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Cambodia",
+        "source_official": false
+      },
+      {
+        "nationality": "Vietnam",
+        "iso3": "VNM",
+        "max_stay_days": 30,
+        "notes": "Ordinary/Normal passport: 30 days. Bilateral visa exemption agreement signed 01-01-2010.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Maldives",
+        "iso3": "MDV",
+        "max_stay_days": 30,
+        "notes": "Ordinary/Normal passport: 30 days. Bilateral visa exemption agreement in force from 04-05-2023.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 15,
+        "notes": "Ordinary/Normal passport: 15 days. Bilateral visa exemption agreement signed 08-10-2012.",
+        "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "nationality": "India",
+        "iso3": "IND",
+        "max_stay_days": 30,
+        "notes": "Ordinary Indian passport holders are eligible for Cambodia Visa on Arrival (Tourist T-class: USD 30, Business E-class: USD 35) at all international airports and major land/sea border crossings. Single entry, 30-day stay. Also eligible for e-Visa via evisa.gov.kh (USD 30 tourist, USD 35 business). India is NOT on the visa-exemption list (only ASEAN nations are exempt) and is NOT a restricted nationality. Diplomatic and official passport holders are visa-free for 60 days under a bilateral agreement (see conditional_access). Airline aggregator claim of 'visa-free' for India is FALSE — verified against Cambodia's official e-Visa portal (evisa.gov.kh/information/visa_type/4, Jan 2025).",
+        "source_url": "https://www.evisa.gov.kh/information/visa_type/4",
+        "source_official": true
+      },
+      {
+        "nationality": "Most nationalities (except restricted countries)",
+        "iso3": null,
+        "max_stay_days": 30,
+        "notes": "Cambodia offers visa on arrival (Tourist T-class: USD 30, Business E-class: USD 35) for most nationalities at all major international airports and land/sea border crossings. Citizens of visa-exempt countries do not need VOA. Citizens of Afghanistan, Algeria, Bangladesh, Iran, Iraq, Pakistan, Saudi Arabia, Sri Lanka, Sudan, and Syria must apply via a Cambodian Embassy and are not eligible for VOA or e-Visa. Kosovo nationals are refused entry and transit. Note: land borders with Thailand are currently closed due to the 2025 Cambodia-Thailand border crisis.",
+        "source_url": "https://www.evisa.gov.kh/",
+        "source_official": true
+      }
+    ],
+    "e_visa": [
+      {
+        "nationality": "Most nationalities (except restricted countries)",
+        "iso3": null,
+        "max_stay_days": 30,
+        "notes": "Cambodia e-Visa (Tourist T-class) is available for nationals of most countries via evisa.gov.kh. Single entry, 30-day stay, valid 3 months from issue date, fee USD 36 (including service charge). Citizens of Afghanistan, Algeria, Bangladesh, Iran, Iraq, Pakistan, Saudi Arabia, Sri Lanka, Sudan, Syria, and Nigeria are NOT eligible and must apply through a Cambodian embassy. Kosovo nationals are refused entry. Visa-exempt nationals do not need an e-Visa.",
+        "source_url": "https://www.evisa.gov.kh/",
+        "source_official": true
+      }
+    ],
+    "eta": [],
+    "source_urls": [
+      "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "https://www.evisa.gov.kh/",
+      "https://www.mfaic.gov.kh/Page/2025-03-26-Visa-Exemption-List-of-Visa-Exemption-between-Cambodia-and-other-Countries-15-22-56",
+      "https://en.wikipedia.org/wiki/Visa_policy_of_Cambodia",
+      "https://foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa/cambodia"
+    ],
+    "notes": "Cambodia's ordinary-passport visa-free list consists of 10 ASEAN members (Brunei 14d, Indonesia 30d, Lao PDR 30d, Malaysia 30d, Myanmar 14d, Philippines 30d, Singapore 30d, Thailand 7d, Vietnam 30d) plus Maldives (30d) and Seychelles (15d). Kuwait (2016 agreement) and all other non-ASEAN agreements remain 'Not yet' for ordinary passports in the official 2023 PDF. Kuwait is therefore removed from visa_free and moved to conditional_access. Thailand's stay was reduced from 14 to 7 days due to the 2025 Cambodian-Thai border crisis; land borders with Thailand are closed. A temporary pilot visa-free program for mainland China, Hong Kong SAR, and Macao SAR ordinary-passport holders (14 days, multiple entries, no fee) runs 15 June to 15 October 2026 only — this is a time-limited pilot, not a permanent bilateral agreement, so it is classified under conditional_access. The MFAIC main site (mfaic.gov.kh) returned 'URL rejected' errors during all access attempts. The Osaka embassy PDF (updated 09-05-2023) remains the most current official public document found."
+  },
+  "conditional_access": [
+    {
+      "basis": "temporary_visa_free_pilot",
+      "eligible_nationalities": ["China", "Hong Kong SAR (China)", "Macao SAR (China)"],
+      "eligible_nationalities_iso3": ["CHN", "HKG", "MAC"],
+      "passport_types": ["ordinary"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 14,
+      "conditions": "Temporary pilot visa-free entry for holders of ordinary PRC passports (mainland China), Hong Kong SAR travel documents, and Macao SAR passports. Valid ONLY from 15 June 2026 to 15 October 2026. Multiple entries permitted. No visa fee. E-Arrival card required. Announced by Cambodia's Council of Ministers in December 2025 as part of China-Cambodia Tourism Year. This is a time-limited pilot, NOT a permanent bilateral agreement.",
+      "source_url": "https://www.globaltimes.cn/page/202512/1349635.shtml",
+      "source_official": false
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kuwait"],
+      "eligible_nationalities_iso3": ["KWT"],
+      "passport_types": ["special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement signed 11-07-2016. The 2023 Osaka embassy PDF lists exemption for special passport holders only; ordinary passport column is marked 'Not yet'. Wikipedia (Visa policy of Cambodia, updated June 2026) confirms ordinary Kuwaiti passports are not visa-exempt. Only special passport holders benefit from the agreement currently.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Azerbaijan"],
+      "eligible_nationalities_iso3": ["AZE"],
+      "passport_types": ["diplomatic"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic passports only. Ordinary passport holders are not exempt. Agreement signed 10-12-2022.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Bangladesh"],
+      "eligible_nationalities_iso3": ["BGD"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt (must apply via Cambodian embassy). Agreement signed 21-04-2014.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Belarus"],
+      "eligible_nationalities_iso3": ["BLR"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 07-02-2015.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Brazil"],
+      "eligible_nationalities_iso3": ["BRA"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 24-06-2011.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Chile"],
+      "eligible_nationalities_iso3": ["CHL"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["China"],
+      "eligible_nationalities_iso3": ["CHN"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary PRC passport holders may additionally benefit from the temporary June–October 2026 pilot program (see conditional_access: temporary_visa_free_pilot). Agreement date listed in Osaka embassy PDF.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Colombia"],
+      "eligible_nationalities_iso3": ["COL"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Dominica"],
+      "eligible_nationalities_iso3": ["DMA"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement (Commonwealth of Dominica) for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Cuba"],
+      "eligible_nationalities_iso3": ["CUB"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 24-08-1980.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Ecuador"],
+      "eligible_nationalities_iso3": ["ECU"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 01-07-2013.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Georgia"],
+      "eligible_nationalities_iso3": ["GEO"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 01-07-2022.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Hungary"],
+      "eligible_nationalities_iso3": ["HUN"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 18-02-1981.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["India"],
+      "eligible_nationalities_iso3": ["IND"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 60,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and official passports only. Ordinary passport holders are not exempt. Agreement signed 09-04-2002, in force 09-05-2002. Confirmed by Indian Ministry of External Affairs (mea.gov.in).",
+      "source_url": "https://www.mea.gov.in/bvwa-passport",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Iran"],
+      "eligible_nationalities_iso3": ["IRN"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt (must apply via Cambodian embassy). Agreement signed 10-09-2010.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Japan"],
+      "eligible_nationalities_iso3": ["JPN"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 11-12-2013.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Kazakhstan"],
+      "eligible_nationalities_iso3": ["KAZ"],
+      "passport_types": ["diplomatic", "official", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "NEW (added 2026 revalidation): Cambodia and Kazakhstan signed a visa exemption agreement for holders of diplomatic and official/service passports on 29-05-2026. Agreement terms (duration) not yet confirmed from official text — MFAIC page was inaccessible. Agreement reported by MFAIC news headline.",
+      "source_url": "https://www.mfaic.gov.kh/en/media/view/2026-05-30-news-cambodia--kazakhstan-sign-agreement-on-visa-exemption-for-holders-of-diplomatic-and-official-service-23-10-55",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["South Korea"],
+      "eligible_nationalities_iso3": ["KOR"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 60,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 21-12-2006.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Mongolia"],
+      "eligible_nationalities_iso3": ["MNG"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 27-09-2012.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Morocco"],
+      "eligible_nationalities_iso3": ["MAR"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 24-04-2019.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Nepal"],
+      "eligible_nationalities_iso3": ["NPL"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 09-06-2019.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Peru"],
+      "eligible_nationalities_iso3": ["PER"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 10-03-2010.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Romania"],
+      "eligible_nationalities_iso3": ["ROU"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 25-07-2021.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Russia"],
+      "eligible_nationalities_iso3": ["RUS"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 90,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 17-03-1988.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Serbia"],
+      "eligible_nationalities_iso3": ["SRB"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 25-02-2022.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Sri Lanka"],
+      "eligible_nationalities_iso3": ["LKA"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt (must apply via Cambodian embassy). Agreement signed 24-12-2022.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Timor-Leste"],
+      "eligible_nationalities_iso3": ["TLS"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 05-09-2022.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Turkey"],
+      "eligible_nationalities_iso3": ["TUR"],
+      "passport_types": ["diplomatic", "service", "special"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic, service/official, and special passports only. Ordinary passport holders are not exempt. Agreement signed 23-08-2015.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Ukraine"],
+      "eligible_nationalities_iso3": ["UKR"],
+      "passport_types": ["diplomatic", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "NEW (added 2026 revalidation): Cambodia and Ukraine signed a visa exemption agreement for holders of diplomatic and official passports on 17-09-2024. As of June 2026, the agreement has NOT yet been ratified and is therefore NOT yet in effect. Ordinary passport holders are not covered. Duration not confirmed.",
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Cambodia",
+      "source_official": false
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Uruguay"],
+      "eligible_nationalities_iso3": ["URY"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": 30,
+      "conditions": "Bilateral visa exemption agreement for holders of diplomatic and service/official passports only. Ordinary passport holders are not exempt. Agreement signed 25-05-2014.",
+      "source_url": "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+      "source_official": true
+    }
+  ],
+  "cbi": {
+    "has_program": true,
+    "program_name": "Citizenship by Investment / Naturalization by Investment (Sub-Decree No. 225)",
+    "official_url": "https://data.opendevelopmentcambodia.net/laws_record/sub-decree-no-225-on-the-implementation-of-law-on-nationality",
+    "source_official": false,
+    "options": [
+      {
+        "type": "business",
+        "min_amount": 1000000,
+        "currency": "USD",
+        "notes": "Personal investment of at least KHR 4 billion (approx. USD 1 million) in an approved priority-sector project with a valid investment permit. Priority sectors include agriculture, food processing, manufacturing, waste management, tourism, digital/tech industries, innovation, SMEs, industrial parks, and affordable housing."
+      },
+      {
+        "type": "donation",
+        "min_amount": 3000000,
+        "currency": "USD",
+        "notes": "Personal cash donation of at least KHR 12 billion (approx. USD 3 million) to the national budget or humanitarian sector, paid through the Ministry of Economy and Finance."
+      }
+    ],
+    "processing_time": "Not specified officially; applications require approval from Ministry of Interior and final grant by Royal Decree.",
+    "dual_citizenship_allowed": true,
+    "residency_required": null,
+    "notes": "Cambodia's citizenship by investment framework was formalized effective December 1, 2025 under Sub-Decree No. 225 implementing the amended Law on Nationality (Articles 21 and 22). The program is a discretionary sovereign naturalization framework — not a standardized CBI program. Final citizenship is granted by Royal Decree after Ministry of Interior vetting. Dual citizenship is explicitly permitted under the new law. Sub-Decree No. 225 has been reported by multiple law firms (Andersen Cambodia, Angkor Law Firm) citing the official Royal Gazette."
+  },
+  "rbi": {
+    "programs": [
+      {
+        "name": "Cambodia My Second Home (CM2H)",
+        "type": "real_estate",
+        "min_amount": 100000,
+        "currency": "USD",
+        "path_to_pr_years": null,
+        "path_to_citizenship_years": 5,
+        "official_url": "https://www.cm2h.com/",
+        "source_official": false,
+        "notes": "10-year renewable residency visa for foreign nationals investing in approved real estate projects. As of 2025-2026, the minimum investment is reported as USD 100,000 in government-approved real estate (excluding land; condominiums and units above ground floor only). Earlier figures of USD 50,000 or USD 85,000 cited in older sources appear outdated. Administered by the General Department of Immigration (Ministry of Interior) in partnership with Khmer Home Charity Association (KHCA). Holders can apply for Cambodian citizenship after 5 years. No minimum stay requirement. Grants right to live, work, and study in Cambodia. Processing time 4–6 months. Nationals from Iran, Iraq, Lebanon, North Korea, and Syria are restricted. Note: official cm2h.com site returned no usable content; minimum investment figure based on Harvey Law Group and other immigration law firm sources as of 2025-2026."
+      }
+    ]
+  },
+  "fast_track": {
+    "programs": []
+  },
+  "agreements": [
+    "ASEAN (freedom of movement for ASEAN nationals — visa-free entry under bilateral agreements)"
+  ],
+  "official_domains": [
+    "cambodia-osaka.com",
+    "mfaic.gov.kh",
+    "evisa.gov.kh",
+    "immigration.gov.kh",
+    "embassyofcambodiadc.org",
+    "foreign.gov.mv",
+    "arrival.gov.kh",
+    "mea.gov.in"
+  ],
+  "data_quality": {
+    "completeness": "medium",
+    "validation_notes": [
+      "CORRECTED: Thailand ordinary passport stay reduced from 14 days to 7 days — the 2025 Cambodian-Thai border crisis caused Cambodia to reduce the stay. All land borders between Cambodia and Thailand are currently closed. Source: Wikipedia Visa policy of Cambodia (updated June 5, 2026).",
+      "CORRECTED: Kuwait removed from visa_free (ordinary passport); moved to conditional_access under basis=passport_type for special passport holders only. The 2023 Osaka PDF ambiguity is resolved: Wikipedia (June 2026) confirms ordinary Kuwaiti passports are not visa-exempt.",
+      "CORRECTED: China (mainland), Hong Kong SAR, and Macao SAR pilot visa-free program (14 days, ordinary passport, 15 June–15 October 2026) moved OUT of visa_policy notes and into conditional_access with basis=temporary_visa_free_pilot. This is a time-limited pilot announced December 2025, not a permanent agreement.",
+      "CORRECTED: China Hong Kong SAR entry removed from conditional_access under 'China' diplomatic/service (it was a duplicate/confused entry). Hong Kong SAR pilot is now captured under the temporary_visa_free_pilot entry covering CHN/HKG/MAC.",
+      "ADDED: Kazakhstan added to conditional_access (basis=passport_type, diplomatic/official/service) — agreement signed 29-05-2026, reported by MFAIC. Stay duration not confirmed (MFAIC page blocked).",
+      "ADDED: Ukraine added to conditional_access (basis=passport_type, diplomatic/official) — agreement signed 17-09-2024, NOT YET RATIFIED as of June 2026. Not in effect.",
+      "CORRECTED: CM2H minimum investment updated from USD 50,000 to USD 100,000 based on 2025-2026 sources (Harvey Law Group, Cambodia Market Entry) citing current program requirements. The USD 50,000 figure appears outdated.",
+      "ADDED: Kosovo entry restriction noted — Kosovo nationals are refused entry and transit to Cambodia.",
+      "FIXED: Removed duplicate China entry in conditional_access (was listed twice — once for mainland and once for 'Hong Kong SAR'). Now consolidated into one entry for CHN diplomatic/service, with pilot handled separately.",
+      "RETAINED: All other conditional_access entries (diplomatic/service passport exemptions for Azerbaijan, Bangladesh, Belarus, Brazil, Chile, Colombia, Cuba, Dominica, Ecuador, Georgia, Hungary, India, Iran, Japan, South Korea, Mongolia, Morocco, Nepal, Peru, Romania, Russia, Serbia, Sri Lanka, Timor-Leste, Turkey, Uruguay) — verified against 2023 Osaka PDF; no changes detected.",
+      "CORRECTED: India (IND) ordinary passport — airline aggregator claim of 'visa-free' is FALSE. Added explicit India entry to visa_on_arrival (Tourist VOA USD 30, 30 days, single entry; e-Visa also available via evisa.gov.kh). India is NOT on Cambodia's visa-exemption list (only 9 ASEAN nations exempt). Confirmed from Cambodia's official e-Visa portal evisa.gov.kh/information/visa_type/4 (last updated Jan 01, 2025) successfully scraped on 2026-06-14."
+    ],
+    "gaps": [
+      "The MFAIC main website (mfaic.gov.kh) returned 'URL rejected' errors during all access attempts; the updated March 2025 visa exemption list (mfaic.gov.kh/Page/2025-03-26...) could not be directly verified.",
+      "RESOLVED (2026-06-14): The official e-visa portal (evisa.gov.kh/information/visa_type/4) was successfully scraped. Visa exemption confirmed for ASEAN nations only (Laos, Malaysia, Philippines, Singapore, Vietnam, Thailand, Indonesia, Brunei Darussalam, Myanmar). All other nationalities including India must obtain e-Visa or VOA. India is not restricted.",
+      "Kazakhstan agreement stay duration: MFAIC page was blocked; max_stay_days is null until official text can be read.",
+      "Ukraine agreement: signed September 2024 but not yet ratified as of June 2026 — entry is informational only (not in effect).",
+      "Thailand: The exact current status of border crossings and stay duration may continue to evolve with the ongoing 2025 Cambodia-Thailand border crisis; 7-day figure is from Wikipedia (June 2026) and may not reflect the most current bilateral agreement text.",
+      "CM2H minimum investment: official cm2h.com was inaccessible; USD 100,000 figure sourced from immigration law firm summaries (Harvey Law Group, 2025-2026); exact current official minimum should be verified at cm2h.com or immigration.gov.kh.",
+      "The visa exemption PDF (cambodia-osaka.com) is dated 09-05-2023; agreements signed after that date (Kazakhstan May 2026, Ukraine September 2024, any others) are not reflected in that document.",
+      "Sub-Decree No. 225 (citizenship by investment): original Royal Gazette text not directly accessible; amounts rely on law firm reporting (Andersen Cambodia, Angkor Law Firm).",
+      "Bulgaria: agreement terms (diplomatic/service, 90 days, 25-11-1980) sourced from Wikipedia aggregator only; not directly confirmed from current official Cambodian source.",
+      "Poland: agreement for diplomatic passport holders (23-07-2023) post-dates the Osaka PDF; not directly confirmed from official Cambodian source.",
+      "No official Cambodian government source confirms any credential-based access (e.g. holding a valid US/Schengen/UK/Australian visa grants preferential entry to Cambodia) — this type of conditional_access is not applicable.",
+      "No official Cambodian government source found for OCI (Overseas Citizen of India) or diaspora-status preferential entry."
+    ]
+  },
+  "sources_checked": [
+    "https://www.cambodia-osaka.com/news/wp-content/uploads/Lastest-update-of-Cam-others-Agreement-on-Visa-Exemption.pdf",
+    "https://www.mfaic.gov.kh/Page/2025-03-26-Visa-Exemption-List-of-Visa-Exemption-between-Cambodia-and-other-Countries-15-22-56",
+    "https://www.mfaic.gov.kh/en/2025-03-26-visa-exemption-list-of-visa-exemption-between-cambodia-and-other-countries-15-22-56",
+    "https://recberlin.mfaic.gov.kh/en-us/visa-exemption",
+    "https://www.mfaic.gov.kh/en/media/view/2026-05-30-news-cambodia--kazakhstan-sign-agreement-on-visa-exemption-for-holders-of-diplomatic-and-official-service-23-10-55",
+    "https://www.evisa.gov.kh/",
+    "https://immigration.gov.kh/",
+    "https://arrival.gov.kh/",
+    "https://www.embassyofcambodiadc.org/how-to-get-a-visa.html",
+    "https://foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa/cambodia",
+    "https://www.mea.gov.in/bvwa-passport",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Cambodia",
+    "https://www.gov.mo/en/news/392184/",
+    "https://www.globaltimes.cn/page/202512/1349635.shtml",
+    "https://www.cm2h.com/",
+    "https://harveylawcorporation.com/cambodia-my-second-home-program/",
+    "https://kh.andersen.com/publications/new-sub-decree-guides-implementation-of-the-law-on-nationality/",
+    "https://data.opendevelopmentcambodia.net/laws_record/sub-decree-no-225-on-the-implementation-of-law-on-nationality"
+  ]
+}
