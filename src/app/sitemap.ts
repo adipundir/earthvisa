@@ -6,7 +6,7 @@ function nameToSlug(name: string): string {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://passportpower.co";
+  const base = "https://earthvisa.in";
   const passportPages = dataset.allCountries.map((c) => ({
     url: `${base}/passport/${nameToSlug(c.name)}`,
     lastModified: new Date(),

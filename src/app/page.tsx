@@ -1,5 +1,26 @@
+import type { Metadata } from "next";
 import PassportExplorer from "@/components/PassportExplorer";
 import { dataset } from "@/lib/dataset";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "What Can My Passport Do? Visa-Free Countries Checker",
+  },
+  description:
+    "Enter your passport to see visa-free countries, visa on arrival, eTA, freedom-of-movement rights, golden visas and citizenship by investment - all from official government sources.",
+  alternates: { canonical: "https://earthvisa.in" },
+  openGraph: {
+    title: "What Can My Passport Do? Visa-Free Countries Checker",
+    description:
+      "See visa-free travel, visa on arrival, golden visas and citizenship by investment for your passport - from official government sources.",
+    url: "https://earthvisa.in",
+  },
+  twitter: {
+    title: "What Can My Passport Do? Visa-Free Countries Checker",
+    description:
+      "See visa-free travel, visa on arrival, golden visas and citizenship by investment for your passport - from official government sources.",
+  },
+};
 
 export default function Home() {
   const { meta } = dataset;
@@ -61,7 +82,7 @@ export default function Home() {
       {/* ── SEO content: How it works + FAQ ── */}
       <section className="border-t border-line bg-paper-2">
         <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="font-display text-2xl font-semibold text-ink">How Passport Power works</h2>
+          <h2 className="font-display text-2xl font-semibold text-ink">How Earth Visa works</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             <div>
               <p className="mono text-[10px] uppercase tracking-[0.2em] text-stamp">01</p>
@@ -86,8 +107,8 @@ export default function Home() {
             <div className="mt-6 divide-y divide-line">
               {[
                 {
-                  q: "What is passport power and how is it measured?",
-                  a: "Passport power refers to how many countries a passport holder can visit without obtaining a visa in advance. It is measured by counting the number of destinations offering visa-free access, visa on arrival, or electronic travel authorisation (eTA) to holders of a given passport. Stronger passports - typically those from the EU, US, Japan, UK, Australia, and Canada - can access 170+ destinations without prior visa arrangements."
+                  q: "What is passport strength and how is it measured?",
+                  a: "Passport strength refers to how many countries a passport holder can visit without obtaining a visa in advance. It is measured by counting the number of destinations offering visa-free access, visa on arrival, or electronic travel authorisation (eTA) to holders of a given passport. Stronger passports - typically those from the EU, US, Japan, UK, Australia, and Canada - can access 170+ destinations without prior visa arrangements."
                 },
                 {
                   q: "Which passport gives the most visa-free countries in 2025?",
@@ -107,7 +128,7 @@ export default function Home() {
                 },
                 {
                   q: "How accurate is this passport data?",
-                  a: "Passport Power sources visa policy data exclusively from official government sources - foreign ministry pages, border authority portals, and published bilateral visa agreements. Each entry links to its official source. Data is updated continuously. Where governments do not publish structured visa-free lists, we do not extrapolate - so reach counts are conservative lower bounds."
+                  a: "Earth Visa sources visa policy data exclusively from official government sources - foreign ministry pages, border authority portals, and published bilateral visa agreements. Each entry links to its official source. Data is updated continuously. Where governments do not publish structured visa-free lists, we do not extrapolate - so reach counts are conservative lower bounds."
                 },
                 {
                   q: "What is the difference between visa-free and visa on arrival?",
@@ -153,9 +174,9 @@ export default function Home() {
           </p>
 
           <div className="mrz mt-8 select-none overflow-hidden rounded-sm border border-line bg-paper-2/70 px-4 py-3 text-xs text-ink-soft">
-            <div>P&lt;BWHPASSPORT&lt;LEDGER&lt;&lt;WHAT&lt;CAN&lt;YOURS&lt;DO&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+            <div>P&lt;EARTHVISA&lt;PASSPORT&lt;&lt;WHAT&lt;CAN&lt;YOURS&lt;DO&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
             <div>
-              BWH{meta.totalCountries}
+              EVH{meta.totalCountries}
               {String(dataset.cbi.length).padStart(2, "0")}
               {String(dataset.rbi.length).padStart(3, "0")}&lt;OFFICIAL&lt;SOURCE&lt;FIRST&lt;&lt;&lt;&lt;{issued.replace(/-/g, "")}&lt;&lt;
             </div>
@@ -252,13 +273,13 @@ function PassportIllustration() {
 
           {/* ── Passport number chip area ── */}
           <rect x="182" y="110" width="48" height="14" rx="3" fill="#1a2744" opacity="0.06" stroke="#1a2744" strokeWidth="0.5" />
-          <text x="206" y="120" textAnchor="middle" fontFamily="monospace" fontSize="5.5" fill="#1a2744" opacity="0.25" letterSpacing="0.5">BWH 2025</text>
+          <text x="206" y="120" textAnchor="middle" fontFamily="monospace" fontSize="5.5" fill="#1a2744" opacity="0.25" letterSpacing="0.5">EVH 2026</text>
 
           {/* ── MRZ zone ── */}
           <rect x="96" y="188" width="244" height="42" fill="#ede8d8" />
           <line x1="96" y1="188" x2="340" y2="188" stroke="#1a2744" strokeWidth="0.5" opacity="0.12" />
-          <text x="102" y="202" fontFamily="monospace" fontSize="6.5" fill="#1a2744" opacity="0.22" letterSpacing="0.5">P&lt;BWHPASSPORT&lt;&lt;POWER&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</text>
-          <text x="102" y="220" fontFamily="monospace" fontSize="6.5" fill="#1a2744" opacity="0.22" letterSpacing="0.5">A12345&lt;3BWH8901019M3012315&lt;&lt;&lt;&lt;&lt;&lt;</text>
+          <text x="102" y="202" fontFamily="monospace" fontSize="6.5" fill="#1a2744" opacity="0.22" letterSpacing="0.5">P&lt;EARTHVISA&lt;&lt;VISA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</text>
+          <text x="102" y="220" fontFamily="monospace" fontSize="6.5" fill="#1a2744" opacity="0.22" letterSpacing="0.5">A12345&lt;3EVH8901019M3012315&lt;&lt;&lt;&lt;&lt;&lt;</text>
         </g>
 
         {/* ── VISA STAMP 1 - Entry (green), top right ── */}

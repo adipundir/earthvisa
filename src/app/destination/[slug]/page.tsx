@@ -128,10 +128,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title,
       description,
-      url: `https://passportpower.co/destination/${slug}`,
+      url: `https://earthvisa.in/destination/${slug}`,
       type: "article",
     },
-    alternates: { canonical: `https://passportpower.co/destination/${slug}` },
+    alternates: { canonical: `https://earthvisa.in/destination/${slug}` },
   };
 }
 
@@ -173,13 +173,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Passport Power", item: "https://passportpower.co" },
-          { "@type": "ListItem", position: 2, name: "Destinations", item: "https://passportpower.co/destination" },
+          { "@type": "ListItem", position: 1, name: "Earth Visa", item: "https://earthvisa.in" },
+          { "@type": "ListItem", position: 2, name: "Destinations", item: "https://earthvisa.in/destination" },
           {
             "@type": "ListItem",
             position: 3,
             name: `${country.name} Visa Requirements`,
-            item: `https://passportpower.co/destination/${slug}`,
+            item: `https://earthvisa.in/destination/${slug}`,
           },
         ],
       },
@@ -199,7 +199,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             name: `Which countries can visit ${country.name} without a visa?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `${vfCount} countries can visit ${country.name} without a visa in 2026${topVfNames ? `, including: ${topVfNames}` : ""}. Use Passport Power to check whether your specific passport grants visa-free access to ${country.name}.`,
+              text: `${vfCount} countries can visit ${country.name} without a visa in 2026${topVfNames ? `, including: ${topVfNames}` : ""}. Use Earth Visa to check whether your specific passport grants visa-free access to ${country.name}.`,
             },
           },
           {
@@ -232,8 +232,8 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         "@type": "Dataset",
         name: `${country.name} Visa Requirements by Nationality 2026`,
         description: `Official-source visa policy data for ${country.name} showing which nationalities can visit visa-free, on arrival, or require a visa`,
-        url: `https://passportpower.co/destination/${slug}`,
-        creator: { "@type": "Organization", name: "Passport Power" },
+        url: `https://earthvisa.in/destination/${slug}`,
+        creator: { "@type": "Organization", name: "Earth Visa" },
         temporalCoverage: "2026",
         variableMeasured: "Visa-free nationalities admitted",
         measurementTechnique: "Official government visa policy publications",
@@ -251,7 +251,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
             <nav className="mono mb-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
-              <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passport Power</Link>
+              <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span>/</span>
               <Link href="/destination" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Destinations</Link>
               <span>/</span>
@@ -425,7 +425,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 },
                 {
                   q: `Which countries can visit ${country.name} without a visa?`,
-                  a: `${vfCount} countries can visit ${country.name} without a visa in 2026${topVfNames ? `, including: ${topVfNames}` : ""}. Use Passport Power to check whether your specific passport grants visa-free access to ${country.name}.`,
+                  a: `${vfCount} countries can visit ${country.name} without a visa in 2026${topVfNames ? `, including: ${topVfNames}` : ""}. Use Earth Visa to check whether your specific passport grants visa-free access to ${country.name}.`,
                 },
                 {
                   q: `How many countries can visit ${country.name} without a visa?`,
@@ -463,7 +463,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               href={`/visit?dest=${destIso3}`}
               className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-paper-2"
             >
-              Check visa requirements on Passport Power →
+              Check visa requirements on Earth Visa →
             </Link>
           </section>
 

@@ -16,15 +16,15 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://passportpower.co"),
+  metadataBase: new URL("https://earthvisa.in"),
   title: {
-    default: "Passport Power - Visa-Free Countries for 199 Passports",
-    template: "%s | Passport Power",
+    default: "Earth Visa - Visa-Free Countries for 199 Passports",
+    template: "%s | Earth Visa",
   },
   description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment programs worldwide. Official government sources only.",
   keywords: [
-    "passport power", "passport index", "passport ranking", "most powerful passport",
-    "strongest passport in the world", "passport power index", "visa free countries",
+    "passport strength", "passport index", "passport ranking", "most powerful passport",
+    "strongest passport in the world", "passport strength index", "visa free countries",
     "visa on arrival countries", "how many countries can I visit without visa",
     "citizenship by investment", "golden visa", "second passport", "digital nomad visa",
     "easiest country to get citizenship", "dual citizenship", "free movement rights",
@@ -32,26 +32,26 @@ export const metadata: Metadata = {
     "visa free countries for indian passport", "us passport visa free countries",
     "passport rankings 2026", "best passport in the world"
   ],
-  authors: [{ name: "Passport Power" }],
-  creator: "Passport Power",
-  publisher: "Passport Power",
+  authors: [{ name: "Earth Visa" }],
+  creator: "Earth Visa",
+  publisher: "Earth Visa",
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://passportpower.co",
-    siteName: "Passport Power",
-    title: "Passport Power - Visa-Free Countries for 199 Passports",
+    url: "https://earthvisa.in",
+    siteName: "Earth Visa",
+    title: "Earth Visa - Visa-Free Countries for 199 Passports",
     description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Passport Power - World Passport Rankings & Visa-Free Countries 2026" }],
+    // OG image is supplied by app/opengraph-image.tsx (file-based Metadata API).
   },
   twitter: {
     card: "summary_large_image",
-    title: "Passport Power - Visa-Free Countries for 199 Passports",
+    title: "Earth Visa - Visa-Free Countries for 199 Passports",
     description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.",
-    images: ["/og-image.png"],
+    // Twitter image is supplied by app/twitter-image.tsx (file-based Metadata API).
   },
-  alternates: { canonical: "https://passportpower.co" },
+  alternates: { canonical: "https://earthvisa.in" },
 };
 
 export default function RootLayout({
@@ -71,10 +71,43 @@ export default function RootLayout({
             __html: JSON.stringify([
               {
                 "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://earthvisa.in/#website",
+                "name": "Earth Visa",
+                "alternateName": "Earth Visa - passport & visa tool",
+                "url": "https://earthvisa.in",
+                "description": "Check what your passport can do and whether you need a visa, covering 199 passports and 227 destinations from official government sources.",
+                "inLanguage": "en",
+                "publisher": { "@id": "https://earthvisa.in/#organization" },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://earthvisa.in/passport?q={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "@id": "https://earthvisa.in/#organization",
+                "name": "Earth Visa",
+                "url": "https://earthvisa.in",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://earthvisa.in/icon.svg",
+                  "width": 32,
+                  "height": 32
+                },
+                "description": "Earth Visa tracks visa-free travel, visa on arrival, eTA, e-visa, golden visas, citizenship by investment and fast-track immigration for 199 passports, sourced exclusively from official government publications."
+              },
+              {
+                "@context": "https://schema.org",
                 "@type": "WebApplication",
-                "name": "Passport Power",
-                "description": "Passport Power shows visa-free countries, visa on arrival, citizenship by investment, golden visas and fast-track immigration programs for 199 passports, sourced exclusively from official government publications.",
-                "url": "https://passportpower.co",
+                "name": "Earth Visa",
+                "description": "Earth Visa shows visa-free countries, visa on arrival, citizenship by investment, golden visas and fast-track immigration programs for 199 passports, sourced exclusively from official government publications.",
+                "url": "https://earthvisa.in",
                 "applicationCategory": "TravelApplication",
                 "operatingSystem": "Any",
                 "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -86,11 +119,7 @@ export default function RootLayout({
                   "Fast-track immigration program search",
                   "Freedom of movement rights by regional bloc"
                 ],
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Passport Power",
-                  "url": "https://passportpower.co"
-                }
+                "provider": { "@id": "https://earthvisa.in/#organization" }
               },
               {
                 "@context": "https://schema.org",
@@ -99,12 +128,12 @@ export default function RootLayout({
                   {
                     "@type": "Question",
                     "name": "Which passport has the most visa-free countries in 2026?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "As of 2026, Singapore, Japan, and several European passports (France, Germany, Italy, Spain) consistently rank among the most powerful, offering visa-free or visa-on-arrival access to 190+ destinations. Passport Power tracks live rankings for all 199 passports based on official government data." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "As of 2026, Singapore, Japan, and several European passports (France, Germany, Italy, Spain) consistently rank among the most powerful, offering visa-free or visa-on-arrival access to 190+ destinations. Earth Visa tracks live rankings for all 199 passports based on official government data." }
                   },
                   {
                     "@type": "Question",
                     "name": "How many countries can I visit without a visa?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "It depends on your passport. Top-ranked passports access 190+ countries visa-free or on arrival. Search your nationality on Passport Power to see the exact list of visa-free countries, visa-on-arrival destinations, and e-visa options for your specific passport." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "It depends on your passport. Top-ranked passports access 190+ countries visa-free or on arrival. Search your nationality on Earth Visa to see the exact list of visa-free countries, visa-on-arrival destinations, and e-visa options for your specific passport." }
                   },
                   {
                     "@type": "Question",
@@ -123,8 +152,8 @@ export default function RootLayout({
                   },
                   {
                     "@type": "Question",
-                    "name": "What is a passport power index?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A passport power index ranks passports by the number of countries their holders can visit without obtaining a visa in advance. Passport Power ranks all 199 passports using official government data, covering visa-free, visa on arrival, eTA, and e-visa access across 227 destinations." }
+                    "name": "What is a passport strength index?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "A passport strength index ranks passports by the number of countries their holders can visit without obtaining a visa in advance. Earth Visa ranks all 199 passports using official government data, covering visa-free, visa on arrival, eTA, and e-visa access across 227 destinations." }
                   },
                   {
                     "@type": "Question",

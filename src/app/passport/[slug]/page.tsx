@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       `${country.name.toLowerCase()} passport ranking 2026`,
       `${country.name.toLowerCase()} passport ranking`,
       `how many countries can ${country.name.toLowerCase()} visit without visa`,
-      `${country.name.toLowerCase()} passport power`,
+      `${country.name.toLowerCase()} passport strength`,
       `${country.name.toLowerCase()} visa on arrival countries`,
       `visa on arrival countries for ${country.name.toLowerCase()} passport`,
       `countries ${country.name.toLowerCase()} can visit without visa`,
@@ -51,10 +51,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title,
       description,
-      url: `https://passportpower.co/passport/${slug}`,
+      url: `https://earthvisa.in/passport/${slug}`,
       type: "article",
     },
-    alternates: { canonical: `https://passportpower.co/passport/${slug}` },
+    alternates: { canonical: `https://earthvisa.in/passport/${slug}` },
   };
 }
 
@@ -98,9 +98,9 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Passport Power", "item": "https://passportpower.co" },
-          { "@type": "ListItem", "position": 2, "name": "Passports", "item": "https://passportpower.co/passport" },
-          { "@type": "ListItem", "position": 3, "name": `${country.name} Passport`, "item": `https://passportpower.co/passport/${slug}` },
+          { "@type": "ListItem", "position": 1, "name": "Earth Visa", "item": "https://earthvisa.in" },
+          { "@type": "ListItem", "position": 2, "name": "Passports", "item": "https://earthvisa.in/passport" },
+          { "@type": "ListItem", "position": 3, "name": `${country.name} Passport`, "item": `https://earthvisa.in/passport/${slug}` },
         ],
       },
       {
@@ -132,8 +132,8 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
         "@type": "Dataset",
         "name": `${country.name} Passport Visa-Free Access Data 2026`,
         "description": `Official-source visa-free access data for ${country.name} passport holders covering ${total} destinations`,
-        "url": `https://passportpower.co/passport/${slug}`,
-        "creator": { "@type": "Organization", "name": "Passport Power" },
+        "url": `https://earthvisa.in/passport/${slug}`,
+        "creator": { "@type": "Organization", "name": "Earth Visa" },
         "temporalCoverage": "2026",
         "variableMeasured": "Visa-free destination count",
         "measurementTechnique": "Official government visa policy publications",
@@ -151,7 +151,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
             <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
-              <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passport Power</Link>
+              <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
               <span aria-hidden>/</span>
@@ -440,7 +440,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   q: `Do ${country.name} passport holders need a visa to travel to Europe?`,
                   a: result.reachByLevel.visa_free.some(e => ["DEU","FRA","ESP","ITA","GRC","PRT"].includes(e.dest))
                     ? `${country.name} passport holders can travel to many EU/Schengen countries visa-free. Check the full list above for specific destinations and maximum stay durations.`
-                    : `${country.name} passport holders typically require a Schengen visa to enter EU countries. However, holding a valid US visa, UK visa, or Schengen visa may unlock additional travel options. Use Passport Power to explore your full options.`,
+                    : `${country.name} passport holders typically require a Schengen visa to enter EU countries. However, holding a valid US visa, UK visa, or Schengen visa may unlock additional travel options. Use Earth Visa to explore your full options.`,
                 },
                 ...(cbiCount > 0 ? [{
                   q: `Can ${country.name} citizens get a second citizenship through investment?`,
@@ -448,7 +448,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 }] : []),
                 {
                   q: `Which countries can ${country.name} passport holders visit on arrival?`,
-                  a: voaCount > 0 ? `${voaCount} countries offer visa on arrival to ${country.name} passport holders. Top destinations include: ${result.reachByLevel.visa_on_arrival.slice(0, 5).map(e => nameFor(e.dest)).join(", ")}${voaCount > 5 ? `, and ${voaCount - 5} more` : ""}.` : `${country.name} passport holders have limited visa on arrival access. Consider using the full Passport Power tool to explore credential-based access unlocked by holding a US visa, Schengen visa, or other documents.`,
+                  a: voaCount > 0 ? `${voaCount} countries offer visa on arrival to ${country.name} passport holders. Top destinations include: ${result.reachByLevel.visa_on_arrival.slice(0, 5).map(e => nameFor(e.dest)).join(", ")}${voaCount > 5 ? `, and ${voaCount - 5} more` : ""}.` : `${country.name} passport holders have limited visa on arrival access. Consider using the full Earth Visa tool to explore credential-based access unlocked by holding a US visa, Schengen visa, or other documents.`,
                 },
               ].map(({ q, a }) => (
                 <details key={q} className="group py-1">
@@ -460,22 +460,6 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 </details>
               ))}
             </div>
-          </section>
-
-          {/* CTA back to explorer */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
-              Explore the full {country.name} passport profile
-            </h2>
-            <p className="mt-2 text-sm text-ink-soft">
-              Add visas you hold to unlock extra destinations. Compare with other passports. Explore citizenship by investment and golden visa programs.
-            </p>
-            <Link
-              href={`/?passport=${country.iso3}`}
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-paper-2"
-            >
-              Open in Passport Power →
-            </Link>
           </section>
 
         </div>

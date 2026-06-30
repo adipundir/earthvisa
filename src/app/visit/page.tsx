@@ -9,11 +9,15 @@ export const metadata: Metadata = {
     "passport visa checker", "need visa for country", "travel visa check",
     "can I travel without visa", "visa free travel checker"
   ],
-  alternates: { canonical: "https://passportpower.co/visit" },
+  alternates: { canonical: "https://earthvisa.in/visit" },
   openGraph: {
-    title: "Entry Check - Do I Need a Visa? | Passport Power",
+    title: "Entry Check - Do I Need a Visa? | Earth Visa",
     description: "Find out instantly if you need a visa for your destination. Official sources only.",
-    url: "https://passportpower.co/visit",
+    url: "https://earthvisa.in/visit",
+  },
+  twitter: {
+    title: "Entry Check - Do I Need a Visa? | Earth Visa",
+    description: "Find out instantly if you need a visa for your destination. Official sources only.",
   },
 };
 

@@ -636,14 +636,14 @@ export default function DestinationExplorer() {
       {destIso3 && selected.length > 0 && (
         <div className="mt-8 flex items-center gap-3 rounded-lg border border-line bg-paper-2 px-5 py-4">
           <div className="min-w-0 flex-1">
-            <p className="font-display text-[14px] font-medium text-ink">Also check - your full passport power</p>
+            <p className="font-display text-[14px] font-medium text-ink">Also check - everything your passport unlocks</p>
             <p className="mt-0.5 text-sm text-ink-soft">See all visa-free destinations, freedom of movement rights, golden visas and citizenship programs open to you</p>
           </div>
           <Link
             href="/"
             className="mono shrink-0 rounded border border-stamp/30 bg-white px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
           >
-            Passport Explorer →
+            Explore your passport →
           </Link>
         </div>
       )}

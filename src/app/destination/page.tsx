@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import { dataset } from "@/lib/dataset";
 import CountryIndex, { type RegionGroup } from "@/components/CountryIndex";
@@ -6,7 +7,16 @@ import CountryIndex, { type RegionGroup } from "@/components/CountryIndex";
 export const metadata: Metadata = {
   title: "Destination Index - Visa Requirements by Country",
   description: "Browse every destination. See which nationalities can enter visa-free, visa-on-arrival, or with an eTA, plus visa types and document requirements, from official sources.",
-  alternates: { canonical: "https://passportpower.co/destination" },
+  alternates: { canonical: "https://earthvisa.in/destination" },
+  openGraph: {
+    title: "Destination Index - Visa Requirements by Country | Earth Visa",
+    description: "Browse every destination and see which nationalities enter visa-free, on arrival or with an eTA, plus visa types and document requirements - from official sources.",
+    url: "https://earthvisa.in/destination",
+  },
+  twitter: {
+    title: "Destination Index - Visa Requirements by Country | Earth Visa",
+    description: "Browse every destination and see which nationalities enter visa-free, on arrival or with an eTA, plus visa types and document requirements - from official sources.",
+  },
 };
 
 const REGION_ORDER = ["Europe", "Asia", "Americas", "Africa", "Oceania", "Pacific"];
@@ -37,7 +47,7 @@ export default function DestinationIndex() {
       <header className="border-b border-line-strong bg-paper-2/60">
         <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-10 sm:px-8">
           <nav className="mono mb-4 text-[11px] uppercase tracking-[0.15em] text-ink-mute">
-            <Link href="/" className="transition hover:text-ink">Passport Power</Link> / Destinations
+            <Link href="/" className="transition hover:text-ink">Earth Visa</Link> / Destinations
           </nav>
           <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
             Browse by Destination
@@ -58,7 +68,9 @@ export default function DestinationIndex() {
         </div>
       </header>
 
-      <CountryIndex regions={regions} kind="destination" />
+      <Suspense fallback={null}>
+        <CountryIndex regions={regions} kind="destination" />
+      </Suspense>
     </main>
   );
 }

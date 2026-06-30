@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, useId } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { isoToFlag, nameToSlug } from "@/lib/dataset";
 
@@ -28,7 +29,10 @@ export default function CountryIndex({
   regions: RegionGroup[];
   kind: Kind;
 }) {
-  const [query, setQuery] = useState("");
+  // Seed the filter from the ?q= search param so the sitelinks search box
+  // (WebSite SearchAction) lands users on a pre-filtered list.
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(() => searchParams.get("q") ?? "");
   const inputId = useId();
 
   const normalized = query.trim().toLowerCase();

@@ -10,10 +10,12 @@ function fmtDate(iso: string): string {
   return `${Number(d)} ${MONTHS[Number(m) - 1] ?? m} ${y}`;
 }
 
-function WhaleMark({ className }: { className?: string }) {
+function GlobeMark({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
-      <path d="M12 22c0-4.3-.5-7.4-2.1-9.7C8 9.4 4.4 9 3 8.1c2-1.4 6.2-.4 8.4 2.9.2-1.1.5-2.6 1.1-3.5.6.9.9 2.4 1.1 3.5 2.2-3.3 6.4-4.3 8.4-2.9-1.4.9-5 1.3-6.9 4.2C13.5 14.6 13 17.7 13 22Z" />
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <circle cx="12" cy="12" r="9.25" />
+      <ellipse cx="12" cy="12" rx="4" ry="9.25" />
+      <path d="M2.75 12h18.5M4.6 6.6h14.8M4.6 17.4h14.8" strokeLinecap="round" />
     </svg>
   );
 }
@@ -31,12 +33,12 @@ export default function Navbar() {
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-3 gap-y-1.5 px-5 py-3 sm:gap-6 sm:px-8">
         <Link
           href="/"
-          aria-label="Passport Power - home"
+          aria-label="Earth Visa - home"
           aria-current={path === "/" ? "page" : undefined}
           className="flex items-center gap-2 text-stamp transition hover:opacity-75"
         >
-          <WhaleMark className="h-5 w-5" />
-          <span className="font-display text-[15px] font-semibold tracking-tight">Passport Power</span>
+          <GlobeMark className="h-5 w-5" />
+          <span className="font-display text-[15px] font-semibold tracking-tight">Earth Visa</span>
         </Link>
 
         <div className="flex items-center gap-0.5 sm:gap-1">

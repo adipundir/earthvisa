@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (
@@ -16,7 +22,7 @@ export default function NotFound() {
             href="/"
             className="mono rounded border border-stamp/30 bg-white px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
           >
-            Passport Power →
+            Earth Visa →
           </Link>
           <Link href="/passport" className="mono text-[12px] uppercase tracking-[0.12em] text-ink-mute transition hover:text-ink">
             All passports
