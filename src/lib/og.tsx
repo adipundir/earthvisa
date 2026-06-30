@@ -30,13 +30,13 @@ async function fetchFlag(iso2: string): Promise<string | null> {
 
 function GlobeMark({ size = 64 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
-      <g stroke="#fffdf8" strokeWidth={2} strokeLinecap="round" fill="none">
-        <circle cx="16" cy="16" r="9.5" />
-        <ellipse cx="16" cy="16" rx="4.2" ry="9.5" />
-        <path d="M6.5 16h19" />
-        <path d="M8.8 10.6h14.4" />
-        <path d="M8.8 21.4h14.4" />
+    <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+      <g stroke="#fffdf8" strokeLinecap="round" fill="none">
+        <circle cx="24" cy="24" r="21" strokeWidth={2.6} />
+        <circle cx="24" cy="24" r="15.5" strokeWidth={2.1} />
+        <ellipse cx="24" cy="24" rx="6.4" ry="15.5" strokeWidth={2.1} />
+        <path d="M8.5 24h31M11 16.5h26M11 31.5h26" strokeWidth={2.1} />
+        <path d="M24 1.6v3.4M24 43v3.4M1.6 24h3.4M43 24h3.4" strokeWidth={2.4} />
       </g>
     </svg>
   );

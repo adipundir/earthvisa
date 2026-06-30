@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     url: "https://earthvisa.in",
   },
   twitter: {
+    card: "summary_large_image",
     title: "What Can My Passport Do? Visa-Free Countries Checker",
     description:
       "See visa-free travel, visa on arrival, golden visas and citizenship by investment for your passport - from official government sources.",

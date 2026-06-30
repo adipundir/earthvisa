@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     url: "https://earthvisa.in/passport",
   },
   twitter: {
+    card: "summary_large_image",
     title: "Passport Index - Visa-Free Travel by Passport | Earth Visa",
     description: "Browse every passport and see its visa-free destinations, visa on arrival access, golden visas and citizenship by investment - from official sources.",
   },

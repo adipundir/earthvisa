@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     url: "https://earthvisa.in/visit",
   },
   twitter: {
+    card: "summary_large_image",
     title: "Entry Check - Do I Need a Visa? | Earth Visa",
     description: "Find out instantly if you need a visa for your destination. Official sources only.",
   },

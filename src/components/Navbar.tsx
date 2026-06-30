@@ -10,12 +10,14 @@ function fmtDate(iso: string): string {
   return `${Number(d)} ${MONTHS[Number(m) - 1] ?? m} ${y}`;
 }
 
-function GlobeMark({ className }: { className?: string }) {
+function LogoMark({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <circle cx="12" cy="12" r="9.25" />
-      <ellipse cx="12" cy="12" rx="4" ry="9.25" />
-      <path d="M2.75 12h18.5M4.6 6.6h14.8M4.6 17.4h14.8" strokeLinecap="round" />
+    <svg viewBox="0 0 48 48" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round">
+      <circle cx="24" cy="24" r="21" strokeWidth="2.6" />
+      <circle cx="24" cy="24" r="15.5" strokeWidth="2.1" />
+      <ellipse cx="24" cy="24" rx="6.4" ry="15.5" strokeWidth="2.1" />
+      <path d="M8.5 24h31M11 16.5h26M11 31.5h26" strokeWidth="2.1" />
+      <path d="M24 1.6v3.4M24 43v3.4M1.6 24h3.4M43 24h3.4" strokeWidth="2.4" />
     </svg>
   );
 }
@@ -37,7 +39,7 @@ export default function Navbar() {
           aria-current={path === "/" ? "page" : undefined}
           className="flex items-center gap-2 text-stamp transition hover:opacity-75"
         >
-          <GlobeMark className="h-5 w-5" />
+          <LogoMark className="h-6 w-6" />
           <span className="font-display text-[15px] font-semibold tracking-tight">Earth Visa</span>
         </Link>
 

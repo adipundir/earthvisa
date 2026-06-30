@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     url: "https://earthvisa.in/destination",
   },
   twitter: {
+    card: "summary_large_image",
     title: "Destination Index - Visa Requirements by Country | Earth Visa",
     description: "Browse every destination and see which nationalities enter visa-free, on arrival or with an eTA, plus visa types and document requirements - from official sources.",
   },
