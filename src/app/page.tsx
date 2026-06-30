@@ -45,7 +45,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+              <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-line pt-4 text-ink sm:flex sm:flex-wrap sm:items-start sm:justify-between">
                 <Field k="Countries" v={meta.countriesWithData} />
                 <Field k="Visa policies" v={meta.destinationsWithVisaPolicy} />
                 <Field k="CBI · Golden-visa" v={`${dataset.cbi.length} · ${dataset.rbi.length}`} />
@@ -192,7 +192,7 @@ export default function Home() {
 function Field({ k, v }: { k: string; v: React.ReactNode }) {
   return (
     <div>
-      <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+      <dt className="whitespace-nowrap text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
       <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
     </div>
   );
