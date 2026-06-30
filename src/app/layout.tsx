@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -170,6 +171,7 @@ export default function RootLayout({
         <div id="main" tabIndex={-1} className="flex flex-1 flex-col outline-none">
           {children}
         </div>
+        <Analytics />
       </body>
     </html>
   );
