@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { dataset, flagFor, nameFor, isoToFlag } from "@/lib/dataset";
+import { useDetectedPassport } from "@/lib/geo";
 import { compute, fmtMoney, LEVEL_LABEL, type CombinedEdge } from "@/lib/compute";
 import type { AccessLevel, PassportType, VisaType } from "@/lib/types";
 
@@ -123,6 +124,9 @@ export default function PassportExplorer() {
   const [tab, setTab] = useState<TabKey>("visa_free");
   const [reachFilter, setReachFilter] = useState("");
   const [hi, setHi] = useState(-1); // highlighted option index in the passport combobox
+  const [autoDetected, setAutoDetected] = useState<string | null>(null);
+  const detectedPassport = useDetectedPassport();
+  const autoSeededRef = useRef(false);
   const [detail, setDetail] = useState<Detail | null>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const credBoxRef = useRef<HTMLDivElement>(null);
@@ -143,6 +147,18 @@ export default function PassportExplorer() {
       .split(",").map((s) => s.trim()).filter((id) => dataset.credentials.some((c) => c.id === id));
     if (credParam.length) setCreds(credParam);
   }, []);
+
+  // Auto-fill the passport from the visitor's detected country — but only on a
+  // truly empty field, and never over a deep-link or a manual choice. The chip
+  // is removable like any other; we surface a hint so it isn't a surprise.
+  useEffect(() => {
+    if (!detectedPassport || autoSeededRef.current) return;
+    if (new URLSearchParams(window.location.search).get("passport")) return;
+    autoSeededRef.current = true;
+    setSelected((prev) => (prev.length ? prev : [detectedPassport]));
+    setPtypes((prev) => (detectedPassport in prev ? prev : { ...prev, [detectedPassport]: "ordinary" }));
+    setAutoDetected(detectedPassport);
+  }, [detectedPassport]);
 
   useEffect(() => {
     if (!detail) return;
@@ -353,6 +369,14 @@ export default function PassportExplorer() {
             </ul>
           )}
         </div>
+
+        {autoDetected && selected.includes(autoDetected) && (
+          <p className="mt-2.5 text-[12px] text-ink-mute">
+            <span aria-hidden="true">📍</span> Added{" "}
+            <span className="font-medium text-ink-soft">{flagFor(autoDetected)} {nameFor(autoDetected)}</span>{" "}
+            from your location. Not yours? Remove it above.
+          </p>
+        )}
 
         {/* Quick-add popular countries */}
         {selected.length === 0 && !query && (

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { dataset, flagFor, nameFor, isoToFlag } from "@/lib/dataset";
+import { useDetectedPassport } from "@/lib/geo";
 import { compute, LEVEL_LABEL, type CombinedEdge } from "@/lib/compute";
 import type { AccessLevel, PassportType, VisaType } from "@/lib/types";
 
@@ -155,6 +156,9 @@ export default function DestinationExplorer() {
   const [typeOpen, setTypeOpen] = useState<string | null>(null);
   const [destHi, setDestHi] = useState(-1); // highlighted option in destination combobox
   const [passHi, setPassHi] = useState(-1); // highlighted option in passport combobox
+  const [autoDetected, setAutoDetected] = useState<string | null>(null);
+  const detectedPassport = useDetectedPassport();
+  const autoSeededRef = useRef(false);
 
   const destBoxRef = useRef<HTMLDivElement>(null);
   const passBoxRef = useRef<HTMLDivElement>(null);
@@ -176,6 +180,17 @@ export default function DestinationExplorer() {
       setPtypes(Object.fromEntries(passports.map((p) => [p, "ordinary" as PassportType])));
     }
   }, []);
+
+  // Auto-fill the passport from the visitor's detected country — only on an empty
+  // field, never over a deep-link or manual choice. Removable like any chip.
+  useEffect(() => {
+    if (!detectedPassport || autoSeededRef.current) return;
+    if (new URLSearchParams(window.location.search).get("passport")) return;
+    autoSeededRef.current = true;
+    setSelected((prev) => (prev.length ? prev : [detectedPassport]));
+    setPtypes((prev) => (detectedPassport in prev ? prev : { ...prev, [detectedPassport]: "ordinary" }));
+    setAutoDetected(detectedPassport);
+  }, [detectedPassport]);
 
   // ── Click-outside handlers ───────────────────────────────────────────────────
   useEffect(() => {
@@ -478,6 +493,14 @@ export default function DestinationExplorer() {
             </ul>
           )}
         </div>
+
+        {autoDetected && selected.includes(autoDetected) && (
+          <p className="mt-2.5 text-[12px] text-ink-mute">
+            <span aria-hidden="true">📍</span> Added{" "}
+            <span className="font-medium text-ink-soft">{flagFor(autoDetected)} {nameFor(autoDetected)}</span>{" "}
+            from your location. Not yours? Remove it above.
+          </p>
+        )}
 
         {/* Quick-add popular passports */}
         {selected.length === 0 && !passQuery && (
