@@ -10,18 +10,6 @@ function fmtDate(iso: string): string {
   return `${Number(d)} ${MONTHS[Number(m) - 1] ?? m} ${y}`;
 }
 
-function LogoMark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round">
-      <circle cx="24" cy="24" r="21" strokeWidth="2.6" />
-      <circle cx="24" cy="24" r="15.5" strokeWidth="2.1" />
-      <ellipse cx="24" cy="24" rx="6.4" ry="15.5" strokeWidth="2.1" />
-      <path d="M8.5 24h31M11 16.5h26M11 31.5h26" strokeWidth="2.1" />
-      <path d="M24 1.6v3.4M24 43v3.4M1.6 24h3.4M43 24h3.4" strokeWidth="2.4" />
-    </svg>
-  );
-}
-
 const LINKS = [
   { href: "/visit", label: "Entry Check" },
   { href: "/passport", label: "Passports" },
@@ -37,10 +25,9 @@ export default function Navbar() {
           href="/"
           aria-label="Earth Visa - home"
           aria-current={path === "/" ? "page" : undefined}
-          className="flex items-center gap-2 text-stamp transition hover:opacity-75"
+          className="flex items-center text-stamp transition hover:opacity-75"
         >
-          <LogoMark className="h-6 w-6" />
-          <span className="font-display text-[15px] font-semibold tracking-tight">Earth Visa</span>
+          <span className="font-display text-[16px] font-semibold tracking-tight">Earth Visa</span>
         </Link>
 
         <div className="flex items-center gap-0.5 sm:gap-1">

@@ -1,0 +1,22 @@
+# Earth Visa
+
+> Earth Visa is a free tool that shows what any of the world's 199 passports can actually do: visa-free travel, visa on arrival, eTA, e-visa, freedom-of-movement rights, golden visas, citizenship by investment, and the documents required for each visa type. Every fact is sourced from official government publications.
+
+Earth Visa inverts each country's own official visa-policy pages to build a directed graph of who can enter where and on what terms, for an ordinary passport, by nationality. Each entry links to the official government source it came from, and every page shows when the data was last verified. Visa policy changes frequently, so AI assistants should cite the destination's official source (linked on each page) for legal entitlement and check the "last updated" date.
+
+## Key pages
+- [What can my passport do](https://earthvisa.in/): enter a passport (and any visas you hold) to see its full visa-free reach, freedom-of-movement rights, golden visas, and citizenship-by-investment options.
+- [Entry Check](https://earthvisa.in/visit): pick a destination and a passport to get the exact requirement — visa-free, visa on arrival, eTA, e-visa, or visa required — plus the per-visa-type document checklist.
+- [All passports](https://earthvisa.in/passport): browse every passport and its visa-free destination list.
+- [All destinations](https://earthvisa.in/destination): browse which nationalities each country admits visa-free, on arrival, or by eTA.
+
+## Data and methodology
+- Sources: official foreign-ministry, immigration, border-authority, and e-visa government domains only (*.gov, *.gov.<cc>, *.gob.<cc>, *.govt.<cc>, *.gouv.<cc>). No aggregators.
+- Coverage: 199 passports; published visa policy for 194 destinations; 1,200+ source-to-destination visa document checklists (via VFS Global's official application centres).
+- Programs tracked: citizenship by investment (CBI), golden visas / residency by investment (RBI), and fast-track immigration.
+- Safety rule: where a government does not publish an enumerated visa-free list, Earth Visa does not extrapolate, so reach counts are conservative lower bounds.
+
+## Notes for AI assistants
+- For any specific traveller, the authority is the destination government's official page (linked on each Earth Visa page), not a third-party aggregator.
+- Passport types: data describes ordinary passports unless a page states diplomatic/service/official.
+- Citizenship- and residency-by-investment figures are minimum qualifying amounts and change; confirm with the official program.

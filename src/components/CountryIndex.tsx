@@ -18,10 +18,6 @@ export interface RegionGroup {
 
 type Kind = "passport" | "destination";
 
-function regionAnchor(region: string): string {
-  return `region-${region.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-}
-
 export default function CountryIndex({
   regions,
   kind,
@@ -37,112 +33,83 @@ export default function CountryIndex({
 
   const normalized = query.trim().toLowerCase();
 
-  // Per-region filtered rows (memoized on the query).
-  const filtered = useMemo(() => {
-    return regions.map((g) => ({
-      region: g.region,
-      countries: normalized
-        ? g.countries.filter((c) => c.name.toLowerCase().includes(normalized))
-        : g.countries,
-    }));
-  }, [regions, normalized]);
+  // Flat, alphabetical list of every country (no continent grouping).
+  const all = useMemo(
+    () =>
+      regions
+        .flatMap((g) => g.countries)
+        .sort((a, b) => a.name.localeCompare(b.name)),
+    [regions]
+  );
 
-  const matchCount = useMemo(
-    () => filtered.reduce((sum, g) => sum + g.countries.length, 0),
-    [filtered]
+  const rows = useMemo(
+    () => (normalized ? all.filter((c) => c.name.toLowerCase().includes(normalized)) : all),
+    [all, normalized]
   );
 
   const hrefBase = kind === "passport" ? "/passport" : "/destination";
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-8">
-      {/* Search filter */}
-      <div className="mb-6">
+      {/* Search */}
+      <div className="mb-8">
         <label
           htmlFor={inputId}
           className="mono mb-2 block text-[11px] uppercase tracking-[0.2em] text-ink-mute"
         >
-          Filter countries
+          Search countries
         </label>
-        <div className="relative max-w-md">
+        <div className="relative w-full">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-mute/70"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="M21 21l-4.3-4.3" />
+          </svg>
           <input
             id={inputId}
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Type a country name…"
-            aria-label="Filter countries by name"
+            aria-label="Search countries by name"
             autoComplete="off"
-            className="w-full rounded-md border border-line bg-paper-2/60 px-4 py-3 text-[15px] text-ink placeholder:text-ink-mute outline-none transition focus:border-line-strong focus:bg-paper-2"
+            className="w-full rounded-lg border border-line-strong bg-paper-2/50 py-2.5 pl-10 pr-4 text-[15px] text-ink outline-none transition placeholder:text-ink-mute/70 focus:border-ink-mute focus:bg-white"
           />
         </div>
-        <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-ink-mute" aria-live="polite">
+        <p
+          className="mono mt-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-mute"
+          aria-live="polite"
+        >
           {normalized
-            ? `${matchCount} ${matchCount === 1 ? "match" : "matches"}`
-            : `${matchCount} countries`}
+            ? `${rows.length} ${rows.length === 1 ? "match" : "matches"}`
+            : `${rows.length} countries`}
         </p>
       </div>
 
-      {/* Sticky region jump bar */}
-      <nav
-        aria-label="Jump to region"
-        className="sticky top-0 z-10 -mx-5 mb-8 border-y border-line bg-paper/90 px-5 py-2 backdrop-blur supports-[backdrop-filter]:bg-paper/75 sm:-mx-8 sm:px-8"
-      >
-        <ul className="flex flex-wrap items-center gap-x-1 gap-y-1">
-          {filtered.map((g) => {
-            const empty = g.countries.length === 0;
-            return (
-              <li key={g.region}>
-                <a
-                  href={`#${regionAnchor(g.region)}`}
-                  aria-disabled={empty}
-                  className={[
-                    "mono flex min-h-[44px] items-center rounded-md px-3 text-[11px] uppercase tracking-[0.18em] transition",
-                    empty
-                      ? "pointer-events-none text-ink-mute/40"
-                      : "text-stamp hover:bg-paper-2 hover:text-ink",
-                  ].join(" ")}
-                >
-                  {g.region}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-
-      {/* Region sections */}
-      {filtered.map((g) => {
-        const empty = g.countries.length === 0;
-        return (
-          <section
-            key={g.region}
-            id={regionAnchor(g.region)}
-            hidden={empty}
-            className="mb-10 scroll-mt-20"
-          >
-            <h2 className="mono mb-4 text-[11px] uppercase tracking-[0.2em] text-stamp">
-              {g.region}
-            </h2>
-            <ul className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
-              {g.countries.map((c) => (
-                <li key={c.iso3}>
-                  <Link
-                    href={`${hrefBase}/${nameToSlug(c.name)}`}
-                    className="flex min-h-[44px] items-center gap-2.5 rounded-md px-2 py-2 text-[15px] text-ink-soft transition hover:bg-paper-2 hover:text-ink"
-                  >
-                    <span className="text-lg">{isoToFlag(c.iso2)}</span>
-                    <span className="font-display">{c.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        );
-      })}
+      {/* Flat A–Z country list */}
+      <ul className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+        {rows.map((c) => (
+          <li key={c.iso3}>
+            <Link
+              href={`${hrefBase}/${nameToSlug(c.name)}`}
+              className="flex min-h-[44px] items-center gap-2.5 rounded-md px-2 py-2 text-[15px] text-ink-soft transition hover:bg-paper-2 hover:text-ink"
+            >
+              <span className="text-lg">{isoToFlag(c.iso2)}</span>
+              <span className="font-display">{c.name}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
 
       {/* No-results state */}
-      {matchCount === 0 && (
+      {rows.length === 0 && (
         <p className="text-base leading-relaxed text-ink-soft">
           No countries match{" "}
           <span className="font-display text-ink">“{query.trim()}”</span>. Try a different spelling.
