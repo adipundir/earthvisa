@@ -1,39 +1,34 @@
 @import "tailwindcss";
 
-/* ─────────────────────────────────────────────────────────────
-   Project Bluewhale — clean immigration-document look.
-   Readable IBM Plex Sans, warm paper, soft gradient, a faint
-   glimpse of passport entry-stamps in the background.
-   ───────────────────────────────────────────────────────────── */
-
 @theme inline {
   --font-display: var(--font-plex-sans);
   --font-body: var(--font-plex-sans);
   --font-mono: var(--font-plex-mono);
 
-  /* paper */
-  --color-paper: #f6f2e9;
+  /* warm paper */
+  --color-paper:   #f6f2e9;
   --color-paper-2: #fffdf8;
   --color-paper-3: #efe8d8;
-  /* ink — higher contrast for readability */
-  --color-ink: #11203a;
-  --color-ink-soft: #33425c;
-  --color-ink-mute: #6a6552;
-  --color-line: #ddd3bf;
+  /* ink - higher contrast for readability */
+  --color-ink:       #11203a;
+  --color-ink-soft:  #33425c;
+  --color-ink-mute:  #6a6552;
+  --color-line:       #ddd3bf;
   --color-line-strong: #c9bc9f;
   /* stamps / accents */
-  --color-stamp: #b23528;
+  --color-stamp:      #b23528;
   --color-stamp-deep: #7c241d;
+  /* access status */
   --color-vfree: #2c6b3f;
-  --color-voa: #275a86;
-  --color-eta: #8a5a12;
+  --color-voa:   #275a86;
+  --color-eta:   #8a5a12;
   --color-evisa: #5f4a78;
-  --color-bloc: #8a2b22;
+  --color-bloc:  #8a2b22;
 }
 
 :root {
   --paper: #f6f2e9;
-  --ink: #11203a;
+  --ink:   #11203a;
 }
 
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -43,15 +38,14 @@ body {
   color: var(--ink);
   font-family: var(--font-body), system-ui, sans-serif;
   /* soft vertical gradient on warm paper */
-  background:
-    linear-gradient(180deg, #f8f4ec 0%, #f4eee2 55%, #efe7d6 100%) fixed;
+  background: linear-gradient(180deg, #f8f4ec 0%, #f4eee2 55%, #efe7d6 100%) fixed;
 }
 
 ::selection { background: var(--color-stamp); color: #fffdf8; }
 
-/* type helpers (display now maps to the sans too — clean, not fancy) */
 .font-display { font-family: var(--font-display), system-ui, sans-serif; }
-.font-mono { font-family: var(--font-mono), ui-monospace, monospace; }
+.font-mono    { font-family: var(--font-mono), ui-monospace, monospace; }
+.mono         { font-family: var(--font-mono), ui-monospace, monospace; }
 
 .rule-double {
   border-bottom: 1px solid var(--color-line-strong);
@@ -65,7 +59,6 @@ body {
   line-height: 1.7;
 }
 
-/* an inked rubber-stamp badge */
 .stamp {
   border: 2px solid var(--color-stamp);
   color: var(--color-stamp);
@@ -74,9 +67,37 @@ body {
   letter-spacing: 0.1em;
 }
 
-/* No entrance animations — the page is static on load/reload (nothing moves). */
-.reveal { opacity: 1; }
-.stamp-in { opacity: 1; }
+.reveal    { opacity: 1; }
+.stamp-in  { opacity: 1; }
+
+/* Skip-to-content link: hidden until keyboard-focused */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  background: var(--color-stamp);
+  color: #fffdf8;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform 0.15s ease;
+}
+.skip-link:focus { transform: translateY(0); outline: 2px solid #fffdf8; outline-offset: 2px; }
+
+/* Visible focus ring for keyboard users across interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+[role="option"]:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-stamp);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 * { scrollbar-color: var(--color-line-strong) transparent; }
 ::-webkit-scrollbar { width: 11px; height: 11px; }

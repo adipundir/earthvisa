@@ -3,6 +3,173 @@
   "iso3": "IRN",
   "name": "Iran",
   "region": "Asia",
+  "visa_types": [
+    {
+      "category": "business",
+      "name": "Type A - Entry Visa (Business/Commercial)",
+      "purpose": "For business visits including negotiations, contract signing, machinery installation, and commercial activities. Also covers UN employees, faculty, and official business travelers.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Covers merchants, academics, carrier personnel, and officials. Fee paid in EUR at airport banking terminals for on-arrival equivalent. Must apply via evisa.mfa.ir or at Iranian consulate. US, UK, Canada, Colombia nationals must apply at embassy only."
+    },
+    {
+      "category": "tourist",
+      "name": "Type B - Tourist Visa",
+      "purpose": "For leisure tourism and recreational travel within Iran. Issued to foreign nationals wishing to visit Iran as tourists.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Visa on arrival (45-day stay) available at major international airports for eligible nationalities who apply electronically at least 2 days before travel. Fee paid in EUR at airport. US, UK, Canada, Colombia, Afghanistan, Nepal, Bangladesh, Jordan, Pakistan, Somalia, Sri Lanka, and Israel nationals excluded from VOA. E-visa (30-day stay) available via evisatraveller.mfa.ir for ~48 eligible nationalities. As of August 2025, EU/AU/NZ nationals subject to mandatory guided-tour requirement (partially relaxed October 2025). US/UK/CA nationals must use pre-arranged tour packages."
+    },
+    {
+      "category": "other",
+      "name": "Type C - Pilgrimage Visa",
+      "purpose": "For Muslim tourists visiting holy and religious sites in Iran, primarily Mashhad (Imam Reza shrine) and Shiraz (Shah Cheragh).",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Restricted to Muslim travelers. Applicant typically requires documentation from an approved Islamic travel organization. Apply at Iranian consulate or embassy."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Type D - Diplomatic/Service Visa",
+      "purpose": "For official government representatives, diplomats, consular officers, and holders of diplomatic or service passports traveling on official duties.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Issued through diplomatic channels. Holders of diplomatic passports from most countries benefit from additional visa suppression agreements. Duration varies by bilateral agreement. Typically exempt from standard fees."
+    },
+    {
+      "category": "student",
+      "name": "Type E - Education Visa",
+      "purpose": "For foreign nationals undertaking academic study, research, or scholarly activities at recognized Iranian universities and educational institutions.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Requires acceptance letter from an approved Iranian university or research institute. Must be applied for at an Iranian embassy or consulate. Renewable annually. Students must register with the Ministry of Science, Research and Technology."
+    },
+    {
+      "category": "work",
+      "name": "Type F - Temporary Work Visa",
+      "purpose": "For skilled foreign workers, specialists, engineers, and technicians employed temporarily in Iran by Iranian or international companies.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 21,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Requires work permit (issued by Ministry of Labour and Social Affairs) and employment contract with an Iranian entity. Applied at Iranian embassy or consulate. Renewable. Foreign executives and technicians employed by overseas firms operating in Iran may also qualify."
+    },
+    {
+      "category": "transit",
+      "name": "Type G - Transit Visa",
+      "purpose": "For travelers passing through Iran en route to a third country, including truck drivers, overland travelers, and merchants in transit.",
+      "max_stay_days": 5,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Issued for transit purposes only. Duration typically 5 days but may vary. Travelers must have valid onward documentation for the destination country. Apply at Iranian embassy or consulate prior to travel."
+    },
+    {
+      "category": "other",
+      "name": "Type H - Media Visa",
+      "purpose": "For journalists, reporters, film crews, producers, cameramen, and other media professionals working in Iran.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Requires prior accreditation and approval from the Islamic Republic of Iran Broadcasting (IRIB) or the Ministry of Culture and Islamic Guidance. Apply at Iranian embassy or consulate. Processing time may be lengthy due to ministry approval requirements."
+    },
+    {
+      "category": "investment",
+      "name": "Type I - Investment Visa / Residence Permit",
+      "purpose": "For foreign nationals making qualifying investments in Iran, enabling residency through the 5-year renewable investor residence permit.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.investiniran.ir/",
+      "notes": "Minimum qualifying investment approximately USD 90,000 (reduced from EUR 250,000 in April 2022). Eligible investment forms: long-term bank deposits in Iranian banks, investment bonds and securities, housing/real estate. Administered by the Organization for Investment, Economic and Technical Assistance of Iran (OIETA). Provides 5-year renewable residency only - not a path to citizenship. Iran does not permit dual citizenship."
+    },
+    {
+      "category": "family",
+      "name": "Type M - Marital/Family Visa",
+      "purpose": "For foreign nationals married to Iranian citizens (particularly foreign men married to Iranian women) and their dependent children, for family unification.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 21,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Requires proof of legal marriage recognized under Iranian law and documentation of family relationship. Must apply at an Iranian embassy or consulate. Iranian law governing family reunification applies asymmetrically by gender. Renewable."
+    },
+    {
+      "category": "medical",
+      "name": "Type T - Medical Visa",
+      "purpose": "For foreign nationals traveling to Iran to receive medical treatment at approved Iranian hospitals and healthcare facilities.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 14,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visitiran.ir/en/visa",
+      "notes": "Requires prior authorization from an approved Iranian medical center. Applicant must submit documentation of the required treatment, including confirmation from the Iranian hospital or medical institution. Apply at Iranian embassy or consulate."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -65,7 +232,7 @@
         "nationality": "Iraq",
         "iso3": "IRQ",
         "max_stay_days": 30,
-        "notes": "Bilateral visa waiver agreement. Ordinary passport holders. Max stay 30 days per visit. Note: Iraqi passport holders are excluded from visa on arrival — this bilateral visa-free arrangement is separate. Corrected from null.",
+        "notes": "Bilateral visa waiver agreement. Ordinary passport holders. Max stay 30 days per visit. Note: Iraqi passport holders are excluded from visa on arrival - this bilateral visa-free arrangement is separate. Corrected from null.",
         "source_url": "https://evisa.mfa.ir/en/",
         "source_official": true
       },
@@ -86,18 +253,10 @@
         "source_official": true
       },
       {
-        "nationality": "Lebanon",
-        "iso3": "LBN",
-        "max_stay_days": 29,
-        "notes": "Bilateral visa waiver agreement. Ordinary passport holders. 29-day visa-free stay confirmed by 2025 sources. Reclassified from visa_on_arrival to visa_free; reclassification reflects bilateral agreement (not a VOA fee-based entry).",
-        "source_url": "https://evisa.mfa.ir/en/",
-        "source_official": true
-      },
-      {
         "nationality": "Bolivia",
         "iso3": "BOL",
         "max_stay_days": 30,
-        "notes": "Bilateral visa waiver agreement. Ordinary passport holders. 30-day stay confirmed by 2025 sources. Added — missing from prior record.",
+        "notes": "Bilateral visa waiver agreement. Ordinary passport holders. 30-day stay confirmed by 2025 sources. Added - missing from prior record.",
         "source_url": "https://evisa.mfa.ir/en/",
         "source_official": true
       },
@@ -113,7 +272,7 @@
         "nationality": "Tajikistan",
         "iso3": "TJK",
         "max_stay_days": 30,
-        "notes": "Bilateral visa-free agreement effective February 3, 2025. Air travel only (Tehran–Dushanbe route). Maximum stay 30 days within any 90-day period. Added — new bilateral agreement not in prior record.",
+        "notes": "Bilateral visa-free agreement effective February 3, 2025 for air travelers (Tehran–Dushanbe route), maximum stay 30 days within any 90-day period. As of March 2026, the exemption was extended to road transport drivers (up to 30 days within 90-day period). Added - bilateral agreement not in prior record.",
         "source_url": "https://www.tehrantimes.com/news/509145/Iran-Tajikistan-agree-to-abolish-visa-requirements-for-air-travelers",
         "source_official": false
       },
@@ -344,6 +503,14 @@
     ],
     "visa_on_arrival": [
       {
+        "nationality": "Lebanon",
+        "iso3": "LBN",
+        "max_stay_days": 15,
+        "notes": "As of May 2026, Lebanon's bilateral visa-free agreement with Iran was cancelled by Lebanon. Iran subsequently implemented visa on arrival for Lebanese nationals at all Iranian airports. Fee: €20 for tourism, €10 for religious visits. 15-day stay. Airlines require a Visa Grant Notice for boarding. Reclassified from visa_free (previously 29 days) to visa_on_arrival (15 days) effective May 2026.",
+        "source_url": "https://today.lorientlejour.com/article/1505765/iran-implements-visa-on-arrival-for-lebanese-after-beirut-tightens-measures-in-march.html",
+        "source_official": false
+      },
+      {
         "nationality": "Most nationalities (general rule)",
         "iso3": null,
         "max_stay_days": 45,
@@ -375,9 +542,13 @@
       "https://english.news.cn/20240131/c1afe4a641ca4c52831cce73616bd7fe/c.html",
       "https://www.tehrantimes.com/news/509145/Iran-Tajikistan-agree-to-abolish-visa-requirements-for-air-travelers",
       "https://iranstravel.com/new-iran-visa-regulations/",
-      "https://www.iransafar.co/visa/"
+      "https://www.iransafar.co/visa/",
+      "https://www.visitiran.ir/en/visa",
+      "https://today.lorientlejour.com/article/1505765/iran-implements-visa-on-arrival-for-lebanese-after-beirut-tightens-measures-in-march.html",
+      "https://immersiveiran.com/travel-guide/iran-visa/",
+      "https://visalogy.com/destination/Iran"
     ],
-    "notes": "Iran's visa policy underwent significant changes in 2024-2025. The February 2024 28-country visa waiver grants 15-day tourism-only stays (once per 6 months, non-extendable). Older bilateral agreements typically grant longer stays (Turkey 90 days, Armenia 90 days, Georgia 45 days, etc.). Key 2025 updates: (1) India's visa-free access was SUSPENDED effective November 22, 2025, due to fraud/trafficking concerns; (2) Iran–Tajikistan visa-free agreement for air travelers took effect February 3, 2025 (30 days within 90-day period); (3) Iran–Malaysia bilateral agreement updated September 2025, extending stay from 14 to 30 days; (4) In August 2025 a mandatory guided-tour requirement was imposed for European, Australian, New Zealand, US, UK, and Canadian visitors — this was partially relaxed in October 2025, though US/UK/Canadian nationals must still travel with pre-arranged tour packages and licensed escort guides. Citizens of USA, UK, Canada, and Colombia are excluded from both visa on arrival and e-visa and must apply at an Iranian embassy."
+    "notes": "Iran's visa policy underwent significant changes in 2024-2026. The February 2024 28-country visa waiver grants 15-day tourism-only stays (once per 6 months, non-extendable). Older bilateral agreements typically grant longer stays (Turkey 90 days, Armenia 90 days, Georgia 45 days, etc.). Key 2025-2026 updates: (1) India's visa-free access was SUSPENDED effective November 22, 2025, due to fraud/trafficking concerns; (2) Iran–Tajikistan visa-free agreement for air travelers took effect February 3, 2025 (30 days within 90-day period), extended to road transport drivers from March 2026; (3) Iran–Malaysia bilateral agreement updated September 2025, extending stay from 14 to 30 days; (4) In August 2025 a mandatory guided-tour requirement was imposed for European, Australian, New Zealand, US, UK, and Canadian visitors - this was partially relaxed in October 2025, though US/UK/Canadian nationals must still travel with pre-arranged tour packages and licensed escort guides; (5) Lebanon's bilateral visa-free agreement was cancelled by Lebanon in March/May 2026 - Iran now issues visa on arrival to Lebanese nationals (15 days, €20 tourism/€10 religious per J-Post/L'Orient Today reporting of Iranian Embassy announcement) at all Iranian airports; Lebanese passport is no longer visa-free for Iran as of May 4, 2026. Citizens of USA, UK, Canada, and Colombia are excluded from both visa on arrival and e-visa and must apply at an Iranian embassy. Note: some non-official aggregators (iranianvisa.com) as of June 2026 still incorrectly list India as visa-free for 15 days and Lebanon at 29 days visa-free — both are outdated and incorrect per verified 2025-2026 official announcements."
   },
   "conditional_access": [
     {
@@ -425,7 +596,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://www.investiniran.ir/",
         "source_official": true,
-        "notes": "Iran offers a 5-year renewable residence permit for foreign investors. Originally introduced 30 June 2019 with a minimum investment of 250,000 EUR (or equivalent). On 5 April 2022, the minimum investment threshold was reduced to approximately $90,000 USD. Eligible investment forms include: long-term deposits in Iranian banks and credit institutions, investment bonds and securities, and housing/real estate investment. The permit is administered by the Organization for Investment, Economic and Technical Assistance of Iran (OIETA / investiniran.ir). Executives and foreign technicians employed by overseas firms, as well as their spouses and children, may also qualify. This provides residency only, not citizenship. No official path to permanent residence or citizenship through this program is documented on official sources. Note: some sources cite €90,000 — the ambiguity stems from exchange-rate equivalence at the time of the April 2022 announcement; USD 90,000 is the most commonly cited figure in English-language official-adjacent sources."
+        "notes": "Iran offers a 5-year renewable residence permit for foreign investors. Originally introduced 30 June 2019 with a minimum investment of 250,000 EUR (or equivalent). On 5 April 2022, the minimum investment threshold was reduced to approximately $90,000 USD. Eligible investment forms include: long-term deposits in Iranian banks and credit institutions, investment bonds and securities, and housing/real estate investment. The permit is administered by the Organization for Investment, Economic and Technical Assistance of Iran (OIETA / investiniran.ir). Executives and foreign technicians employed by overseas firms, as well as their spouses and children, may also qualify. This provides residency only, not citizenship. No official path to permanent residence or citizenship through this program is documented on official sources. Note: some sources cite €90,000 - the ambiguity stems from exchange-rate equivalence at the time of the April 2022 announcement; USD 90,000 is the most commonly cited figure in English-language official-adjacent sources."
       }
     ]
   },
@@ -446,41 +617,63 @@
   ],
   "data_quality": {
     "completeness": "medium",
-    "validation_notes": "Validated June 2026. Changes made vs prior record: (1) Azerbaijan max_stay_days corrected 15→14 days per 2024-2025 sources; (2) Syria max_stay_days filled null→90 days (direct flight from Damascus only); (3) Iraq max_stay_days filled null→30 days; (4) Oman max_stay_days corrected 15→29 days (bilateral agreement term per 2025 sources); (5) Kazakhstan max_stay_days filled null→14 days; (6) Lebanon reclassified from visa_on_arrival to visa_free with max_stay_days filled null→29 days; (7) Bolivia (BOL, 30 days) added — was absent from prior record; (8) Tajikistan (TJK, 30 days, air only, effective Feb 2025) added — new bilateral agreement; (9) Malaysia max_stay_days corrected null→30 days (updated Sept 2025 from 14 days); (10) India REMOVED from visa_free — visa-free access suspended effective November 22, 2025; added to conditional_access with basis=special_status, level=visa_required; (11) Venezuela reclassified from visa_on_arrival to visa_free at 15 days (bilateral arrangement confirmed); (12) Lebanon removed from visa_on_arrival section (reclassified to visa_free); (13) China notes updated to clarify HK/Macao SAR also covered at 21 days; (14) source_urls expanded with Xinhua confirmation of 28-country list, Tehran Times for Tajikistan agreement, iranstravel.com and iransafar.co for 2025 updates. [2026-06-14] India IND re-verified: visa_required confirmed — Iran MFA official portal (evisa.mfa.ir) lists 27 countries for 15-day tourism waiver and India is absent; Iranian embassy in New Delhi officially announced suspension effective 2025-11-22 (cited by PressTV/presstv.ir and MEA India); conditional_access source_url updated to official evisa.mfa.ir (source_official set true); airline aggregator claim of visa-free/VOA for India is FALSE.",
+    "validation_notes": "Validated June 2026. Changes made vs prior record: (1) Azerbaijan max_stay_days corrected 15→14 days per 2024-2025 sources; (2) Syria max_stay_days filled null→90 days (direct flight from Damascus only); (3) Iraq max_stay_days filled null→30 days; (4) Oman max_stay_days corrected 15→29 days (bilateral agreement term per 2025 sources); (5) Kazakhstan max_stay_days filled null→14 days; (6) Lebanon reclassified from visa_on_arrival to visa_free with max_stay_days filled null→29 days; (7) Bolivia (BOL, 30 days) added - was absent from prior record; (8) Tajikistan (TJK, 30 days, air only, effective Feb 2025) added - new bilateral agreement; (9) Malaysia max_stay_days corrected null→30 days (updated Sept 2025 from 14 days); (10) India REMOVED from visa_free - visa-free access suspended effective November 22, 2025; added to conditional_access with basis=special_status, level=visa_required; (11) Venezuela reclassified from visa_on_arrival to visa_free at 15 days (bilateral arrangement confirmed); (12) Lebanon removed from visa_on_arrival section (reclassified to visa_free); (13) China notes updated to clarify HK/Macao SAR also covered at 21 days; (14) source_urls expanded with Xinhua confirmation of 28-country list, Tehran Times for Tajikistan agreement, iranstravel.com and iransafar.co for 2025 updates. [2026-06-14] India IND re-verified: visa_required confirmed - Iran MFA official portal (evisa.mfa.ir) lists 27 countries for 15-day tourism waiver and India is absent; Iranian embassy in New Delhi officially announced suspension effective 2025-11-22 (cited by PressTV/presstv.ir and MEA India); conditional_access source_url updated to official evisa.mfa.ir (source_official set true); airline aggregator claim of visa-free/VOA for India is FALSE. [2026-06-20] visa_types field added: 11 official Iranian visa categories (A through T) extracted from visitiran.ir (official Iran Tourism Authority). Fee data not published on any reachable official page - all mfa.ir subdomains returned redirect loops during this session. [2026-06-27] Lebanon RECLASSIFIED from visa_free (29 days) to visa_on_arrival (15 days): Lebanon cancelled the bilateral visa-free agreement in March 2026 following a ban on IRGC activities; Iran responded on May 4, 2026 by announcing visa on arrival for Lebanese nationals at all Iranian airports (€20 tourism, €10 religious, 15-day stay). Source: L'Orient Today reporting on Iranian Embassy announcement (today.lorientlejour.com/article/1505765). Tajikistan notes updated: March 2026 road transport driver exemption added (30 days/90-day period). South Korea: South Korea imposed an outbound travel ban on its citizens to Iran on March 5, 2026 (due to Middle East conflict) - this is a Korean government restriction, NOT an Iranian entry ban; Iran's policy toward South Korean ordinary passport holders is unchanged (they remain eligible for e-visa/VOA). Russia: some 2023-era sources indicate Russia is eligible for group tour visa waivers (5-50 persons, 90 days) but this could not be confirmed from a directly fetched official page and was not added. [2026-06-29] Re-validation pass: all mfa.ir official portals (evisa.mfa.ir, evisatraveller.mfa.ir, en-economic.mfa.ir) still returning redirect loops - cannot fetch official pages directly. Wikipedia visa_policy_of_Iran fetched successfully and corroborates existing record: Turkey 90d, Armenia 90d, Syria 90d, Georgia 45d, Iraq 30d, Tajikistan 30d, China/HK/Macau 21d, Egypt 20d, Azerbaijan 14d, Kazakhstan 14d, Lebanon now listed as VOA (consistent with May 2026 reclassification). Wikipedia shows Malaysia at 14d which appears outdated - the Sept 2025 bilateral update to 30d is confirmed by multiple news sources (travelandtourworld.com, iranianvisa.com, immersiveiran.com); Malaysia kept at 30d. India visa-free suspension re-confirmed by multiple sources (Outlook Traveller, Gulf News, Khaleej Times, Iran International, MEA India advisory). Lebanon VOA fees confirmed by J-Post direct fetch (www.jpost.com/middle-east/iran-news/article-895192): €20 tourists / €10 religious - consistent with existing record. The National article (thenationalnews.com, May 4 2026) confirms Iran issued VOA for Lebanese at all airports following Lebanon cancellation of bilateral deal. No new access-level changes warranted this pass; all existing entries confirmed or preserved per safety rules.",
     "gaps": [
-      "Exact list of all e-visa eligible nationalities (~48 countries) not enumerated from official source — the evisatraveller.mfa.ir pages returned redirect errors during this validation.",
-      "Official direct-fetch from evisa.mfa.ir, evisa.mfa.ir/en/visa-arrival/, and en-economic.mfa.ir was blocked by redirect loops — data validated via secondary official-domain consulate pages and corroborated travel sources.",
+      "Exact list of all e-visa eligible nationalities (~48 countries) not enumerated from official source - the evisatraveller.mfa.ir pages returned redirect errors during this validation.",
+      "Official direct-fetch from evisa.mfa.ir, evisa.mfa.ir/en/visa-arrival/, and en-economic.mfa.ir was blocked by redirect loops - data validated via secondary official-domain consulate pages and corroborated travel sources.",
       "The official investiniran.ir investment residence permit page returned connection errors; $90,000 USD figure confirmed by multiple aligned sources but original currency (EUR vs USD) is ambiguous in the April 2022 announcement.",
-      "Tajikistan bilateral agreement cited from Tehran Times (state media) not a directly fetched MFA circular — primary official government source could not be reached via WebFetch.",
+      "Tajikistan bilateral agreement for air travelers cited from Tehran Times (state media); road transport extension from March 2026 cited from Caspian News (returned 403). Primary Iranian MFA official government source could not be reached via WebFetch.",
       "India suspension of visa-free access confirmed by multiple credible news sources citing MEA and Iranian government communications, but the exact official Iranian MFA announcement URL was not directly fetched.",
-      "Oman's stay duration (29 days vs 15 days under the 2024 waiver) presents apparent inconsistency — the 29-day figure reflects the bilateral agreement while 15 days may apply only to the 2024 waiver conditions; the definitive Iranian MFA official page could not be directly fetched to confirm which applies.",
+      "Oman's stay duration (29 days) sourced from bilateral agreement via secondary sources; the 2024 waiver may only offer 15 days - the definitive Iranian MFA official page could not be directly fetched to confirm which applies to ordinary passport holders arriving for tourism.",
       "Countries ineligible for visa on arrival (restricted list) sourced from iransafar.co and traveller guides, not a directly fetched official evisa.mfa.ir page.",
       "The 2025 mandatory tour package requirement for EU/AU/NZ/UK/US/CA nationals was partially relaxed in October 2025; the precise current status (especially for EU/AU/NZ nationals) remains unclear from the available sources.",
-      "Hong Kong SAR and Macao SAR passport-holders' 21-day visa-free access is noted in China entry but not recorded as separate entries — should be verified as to whether they use Chinese travel documents or SAR documents.",
-      "Russia was mentioned in some older sources as eligible for group-visit visa waivers but was not confirmed from any 2025 source and has been excluded."
+      "Hong Kong SAR and Macao SAR passport-holders' 21-day visa-free access is noted in China entry but not recorded as separate entries - should be verified as to whether they use Chinese travel documents or SAR documents.",
+      "Russia: group visa waiver (5-50 persons, 90 days) reported in 2023 sources but could not be confirmed from any 2025-2026 directly fetched official source - excluded pending confirmation.",
+      "Visa fees (in EUR or USD) for each visa type not published on any reachable official page - mfa.ir and embassy subdomains all returned redirect loops. Fee amounts must be confirmed directly at an Iranian embassy or via the evisatraveller.mfa.ir portal when accessible.",
+      "Max stay days for Type E (student), F (work), and M (family) visas not confirmed from official source - figures noted as typical but not verified from a fetched official page.",
+      "Type C (pilgrimage) visa current availability not confirmed - visitiran.ir noted it as 'currently unavailable per COVID-19 alert' but that alert may be outdated.",
+      "Lebanon visa-on-arrival exact stay duration (15 days) confirmed from L'Orient Today (secondary source) reporting Iranian Embassy announcement; the official Iranian Embassy in Lebanon X/social post was not directly fetched to confirm the 15-day figure specifically.",
+      "South Korea outbound travel ban on citizens going to Iran (March 5, 2026) confirmed from UPI; Iran's own entry policy for South Korean passport holders was not separately verified from an official Iranian source but no change was detected in any fetched source.",
+      "[2026-06-29] Lebanon VOA max stay (15 days): still unconfirmed from an official Iranian source. J-Post (fetched directly) confirms fees and VOA-at-airports but does not specify max stay. Wikipedia lists Lebanon under the 15-day group prior to May 2026 switch; the 15-day figure in this record is reasonable but should be verified from Iranian embassy announcement when accessible.",
+      "[2026-06-29] General VOA max stay: current record says 45 days per evisa.mfa.ir (which cannot be fetched). One non-official source (againstthecompass.com) says 30 days. Prefer the official figure (45 days) but this discrepancy should be resolved when the official portal becomes reachable.",
+      "[2026-06-29] Lebanon VOA fee direction: The National search synthesis suggested €10 tourism/€20 religious but direct J-Post fetch and L'Orient Today sourcing support €20 tourism/€10 religious (current record). No change made; flag for independent re-check.",
+      "[2026-06-29] Nepal and Sri Lanka exclusion from VOA: current record lists both as excluded nationalities. One 2026 source (iranianvisa.com) did not list Nepal or Sri Lanka in its excluded list. This discrepancy should be verified from the official evisa.mfa.ir VOA page when reachable."
     ]
   },
   "outbound_official": {
     "found": false,
-    "note": "No official Iranian government outbound visa-list page located. The Iranian Ministry of Foreign Affairs (mfa.gov.ir / mfa.ir) publishes only inbound visa policy for foreigners wishing to visit Iran (evisa.mfa.ir, evisatraveller.mfa.ir). No origin-side page analogous to India's mea.gov.in/vffin — listing countries where Iranian ordinary-passport holders may travel without a prior consular visa — was found on any official Iranian government domain. All mfa.gov.ir and mfa.ir subdomains returned redirect errors during fetch attempts. Rely on destination-side data."
+    "note": "No official Iranian government outbound visa-list page located. The Iranian Ministry of Foreign Affairs (mfa.gov.ir / mfa.ir) publishes only inbound visa policy for foreigners wishing to visit Iran (evisa.mfa.ir, evisatraveller.mfa.ir). No origin-side page analogous to India's mea.gov.in/vffin - listing countries where Iranian ordinary-passport holders may travel without a prior consular visa - was found on any official Iranian government domain. All mfa.gov.ir and mfa.ir subdomains returned redirect errors during fetch attempts. Rely on destination-side data."
   },
   "sources_checked": [
-    "https://evisa.mfa.ir/en/ (official Iranian MFA e-visa portal — redirect loop, could not fetch directly)",
-    "https://evisa.mfa.ir/en/visa-arrival/ (official VOA page — redirect loop)",
-    "https://evisatraveller.mfa.ir/en/request/ (official e-visa portal — redirect loop)",
-    "https://en-economic.mfa.ir/en/news/45731-Iran-Waives-Visa-Requirement-for-28-Countries.html (official MFA economic affairs — redirect loop)",
-    "https://hongkong.mfa.gov.ir/en/newsview/739159 (official Iranian consulate Hong Kong — redirect loop)",
-    "https://karachi.mfa.ir/en/newsview/740272/ (official Iranian consulate Karachi — redirect loop)",
-    "https://mumbai.mfa.gov.ir/en/ViewPage/16457 (official Iranian consulate Mumbai — redirect loop)",
-    "https://english.news.cn/20240131/c1afe4a641ca4c52831cce73616bd7fe/c.html (Xinhua — confirmed 28-country list and conditions)",
-    "https://www.visitiran.ir/en/visa (official visitiran.ir — partial data, fetched successfully)",
-    "https://www.iransafar.co/visa/ (third-party travel aggregator — detailed bilateral agreement durations, fetched successfully)",
-    "https://iranamaze.com/iran-visa-exemptions/ (IranAmaze travel — 42-country list, Jan 2025 update, fetched successfully)",
-    "https://iranstravel.com/new-iran-visa-regulations/ (Iran's Travel — September 2025 regulation update, fetched successfully)",
-    "https://www.goldenvisas.com/iran (Golden Visas — confirmed $90,000 USD RBI amount)",
-    "https://www.tehrantimes.com/news/509145/Iran-Tajikistan-agree-to-abolish-visa-requirements-for-air-travelers (Tehran Times state media — Tajikistan bilateral)",
-    "https://www.outlooktraveller.com/News/iran-suspends-visa-free-entry-for-indian-nationals (Outlook Traveller — India suspension Nov 22, 2025)",
-    "https://visaguide.world/news/iran-permits-visa-free-entry-for-citizens-of-kazakhstan/ (VisaGuide — 403 Forbidden)",
-    "https://investmentpolicy.unctad.org/investment-policy-monitor/measures/3847 (UNCTAD — 403 Forbidden)"
+    "https://evisa.mfa.ir/en/ (official Iranian MFA e-visa portal - redirect loop, could not fetch directly)",
+    "https://evisa.mfa.ir/en/visa-arrival/ (official VOA page - redirect loop [2026-06-27: same result])",
+    "https://evisatraveller.mfa.ir/en/request/ (official e-visa portal - redirect loop)",
+    "https://en-economic.mfa.ir/en/news/45731-Iran-Waives-Visa-Requirement-for-28-Countries.html (official MFA economic affairs - redirect loop)",
+    "https://hongkong.mfa.gov.ir/en/newsview/739159 (official Iranian consulate Hong Kong - redirect loop)",
+    "https://karachi.mfa.ir/en/newsview/740272/ (official Iranian consulate Karachi - redirect loop)",
+    "https://mumbai.mfa.gov.ir/en/ViewPage/16457 (official Iranian consulate Mumbai - redirect loop)",
+    "https://english.news.cn/20240131/c1afe4a641ca4c52831cce73616bd7fe/c.html (Xinhua - confirmed 28-country list and conditions)",
+    "https://www.visitiran.ir/en/visa (official Iran Tourism Authority - visa type taxonomy A-T extracted successfully)",
+    "https://www.visitiran.ir/en/voa (official visitiran.ir VOA page - no visa detail content returned)",
+    "https://www.iransafar.co/visa/ (third-party travel aggregator - detailed bilateral agreement durations, fetched successfully)",
+    "https://iranamaze.com/iran-visa-exemptions/ (IranAmaze travel - 42-country list, Jan 2025 update, fetched successfully)",
+    "https://iranstravel.com/new-iran-visa-regulations/ (Iran's Travel - September 2025 regulation update, fetched successfully)",
+    "https://www.goldenvisas.com/iran (Golden Visas - confirmed $90,000 USD RBI amount)",
+    "https://www.tehrantimes.com/news/509145/Iran-Tajikistan-agree-to-abolish-visa-requirements-for-air-travelers (Tehran Times state media - Tajikistan bilateral)",
+    "https://www.outlooktraveller.com/News/iran-suspends-visa-free-entry-for-indian-nationals (Outlook Traveller - India suspension Nov 22, 2025)",
+    "https://investiniran.ir/en/live-and-invest-in-iran/residence-permit/ (official investiniran.ir - no content returned)",
+    "https://visaguide.world/news/iran-permits-visa-free-entry-for-citizens-of-kazakhstan/ (VisaGuide - 403 Forbidden)",
+    "https://investmentpolicy.unctad.org/investment-policy-monitor/measures/3847 (UNCTAD - 403 Forbidden)",
+    "[2026-06-27] https://en.wikipedia.org/wiki/Visa_policy_of_Iran (Wikipedia - fetched successfully, confirmed bilateral agreement durations, Lebanon VOA reclassification, South Korea travel ban context)",
+    "[2026-06-27] https://today.lorientlejour.com/article/1505765/iran-implements-visa-on-arrival-for-lebanese-after-beirut-tightens-measures-in-march.html (L'Orient Today - Lebanese nationals Iran VOA policy May 2026, fetched successfully)",
+    "[2026-06-27] https://visalogy.com/destination/Iran (Visalogy - Iran visa destination page, fetched successfully, confirmed 44 visa-free countries list, South Korea travel ban note)",
+    "[2026-06-27] https://immersiveiran.com/travel-guide/iran-visa/ (ImmersiveIran - Iran visa guide 2025-2026, fetched successfully, confirmed Malaysia 30 days, Bolivia 30 days, bilateral durations)",
+    "[2026-06-27] https://caspiannews.com/news-detail/tajikistan-iran-to-lift-visa-requirements-for-road-transport-drivers-from-march-2026-2026-1-16-0/ (Caspian News - 403 Forbidden)",
+    "[2026-06-29] https://en.wikipedia.org/wiki/Visa_policy_of_Iran (Wikipedia - fetched successfully, corroborates bilateral agreement durations, confirms Lebanon listed as VOA post-May 2026, Malaysia shown at 14d suggesting Wikipedia not updated for Sept 2025 bilateral change)",
+    "[2026-06-29] https://www.visitiran.ir/en/visa (visitiran.ir official Iran Tourism Authority - fetched successfully, confirms visa type taxonomy, notes tourist/pilgrimage visas 'currently unavailable' message may be outdated COVID-era notice)",
+    "[2026-06-29] https://www.thenationalnews.com/news/mena/2026/05/04/iran-introduces-visa-on-arrival-for-lebanese-travellers-after-beirut-cancels-entry-deal/ (The National - confirms Lebanon VOA effective May 4 2026, fees €20/€10, issued at all Iranian airports)",
+    "[2026-06-29] https://www.jpost.com/middle-east/iran-news/article-895192 (Jerusalem Post - fetched successfully, confirms Lebanon VOA fees: €20 tourists, €10 religious, visas issued immediately at all Iranian airports)",
+    "[2026-06-29] https://againstthecompass.com/en/iran-visa-code/ (Against the Compass travel guide - fetched; lists VOA max stay as 30 days contradicting official 45-day figure; not official source, prefer prior official figure)",
+    "[2026-06-29] https://www.iranianvisa.com/iran_visa_policy (IranianVisa.com - fetched; still lists India as visa-free for 15 days - INCORRECT per 2025-11-22 suspension; Lebanon listed at 29 days visa-free - INCORRECT per May 2026 VOA reclassification; source is outdated aggregator)"
   ]
 }

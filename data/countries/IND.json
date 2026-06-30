@@ -1624,7 +1624,7 @@
     ]
   },
   "agreements": [
-    "SAARC Visa Exemption Scheme (limited categories: dignitaries, lawmakers, senior officials, business leaders, journalists, sportspersons — not general public; SVES suspended for Pakistani nationals as of April 2025)"
+    "SAARC Visa Exemption Scheme (limited categories: dignitaries, lawmakers, senior officials, business leaders, journalists, sportspersons - not general public; SVES suspended for Pakistani nationals as of April 2025)"
   ],
   "official_domains": [
     "indianvisaonline.gov.in",
@@ -1639,12 +1639,12 @@
     "completeness": "high",
     "validation_notes": [
       "CORRECTED: Nepal and Bhutan visa_free notes updated to include BOI-confirmed rule that citizens must carry a valid passport (plus visa, in Bhutan's case) when entering India from China, Macau, Hong Kong, or Pakistan. Prior record omitted this restriction.",
-      "CORRECTED: Maldives notes simplified — removed the unverified '6-month rolling' clause; BOI page states stay must not exceed 90 days without specifying a rolling-period formula.",
+      "CORRECTED: Maldives notes simplified - removed the unverified '6-month rolling' clause; BOI page states stay must not exceed 90 days without specifying a rolling-period formula.",
       "CORRECTED: 'Cameroon' nationality label corrected to 'Cameroon Union Republic' to match the exact name on the official e-visa eligible countries list.",
       "CORRECTED: 'Vatican City' nationality label corrected to 'Vatican City-Holy See' to match the exact name on the official e-visa eligible countries list.",
       "CORRECTED: UAE entry in e_visa notes updated to remove erroneous reference to 60-day max_stay_days; standard e-Visa max_stay_days is 180 days. The 60-day limit applies only to the Visa on Arrival, which is captured in conditional_access.",
       "CORRECTED: UAE max_stay_days in e_visa changed from 60 to 180 (VoA 60-day limit does not apply to e-Visa path).",
-      "CORRECTED: USA e_visa notes simplified — removed the unverified claim about '10-year Business Visa for US citizens' on the e-visa route; 10-year B visa is a separate regular visa category and cannot be confirmed from the e-visa page.",
+      "CORRECTED: USA e_visa notes simplified - removed the unverified claim about '10-year Business Visa for US citizens' on the e-visa route; 10-year B visa is a separate regular visa category and cannot be confirmed from the e-visa page.",
       "CONFIRMED: e-visa list confirmed at 174 countries via live WebFetch of indianvisaonline.gov.in/evisa/tvoa.html (June 2026).",
       "CONFIRMED: Visa on Arrival eligibility for Japan, South Korea, and UAE (with prior Indian visa) confirmed via live WebFetch of indianvisaonline.gov.in/visa/visa-on-arrival.html.",
       "CONFIRMED: Visa on Arrival available at 6 airports (Bengaluru, Chennai, Delhi, Hyderabad, Kolkata, Mumbai), 60 days, double entry, fee INR 2,000, not for diplomatic/official passports.",
@@ -1652,17 +1652,28 @@
       "UPDATED: FTI-TTP notes updated to reflect Citizenship (Amendment) Rules, 2026 requirement for new OCI applicants to consent to biometric enrollment during registration.",
       "UPDATED: agreements entry updated to note SVES suspension for Pakistani nationals as of April 2025.",
       "UPDATED: visa_policy.notes updated to remove unverified 72-hour e-Arrival Card window claim (official page just says 'before arrival'); removed '165-174' estimate and replaced with confirmed 174 countries.",
-      "SOURCE CHANGE: boi.gov.in visa_free source_url updated from the now-404 path to the confirmed alternate BOI page path for the visa-free regime content."
+      "SOURCE CHANGE: boi.gov.in visa_free source_url updated from the now-404 path to the confirmed alternate BOI page path for the visa-free regime content.",
+      "RE-VERIFIED 2026-06-27: Full re-fetch of indianvisaonline.gov.in/evisa/tvoa.html confirmed 174 e-visa eligible nationalities - no additions or removals detected versus current record. All 174 entries in visa_policy.e_visa match the live official page.",
+      "RE-VERIFIED 2026-06-27: indianvisaonline.gov.in/visa/visa-on-arrival.html re-fetched and confirmed - Visa on Arrival remains limited to Japan, South Korea, and UAE (prior India visa/e-visa holders only); fee INR 2,000, 60 days double-entry, 6 airports. No changes detected.",
+      "RE-VERIFIED 2026-06-27: visa_free entries for Nepal, Bhutan, and Maldives - conditions consistent with BOI WebSearch snippets (BOI direct URLs remain HTTP 404). No contradicting evidence found; entries preserved as-is per safety rule.",
+      "RE-VERIFIED 2026-06-27: No new visa-free regime introductions for ordinary passport holders found in official sources. Pakistan-origin exclusion from e-Visa and VoA still in force per live official page.",
+      "RE-VERIFIED 2026-06-27: Some third-party sources cite 175 e-visa eligible countries (Ministry of Tourism, March 2026 claim); however, the live official indianvisaonline.gov.in/evisa/tvoa.html page as of June 2026 lists 174 - the official page count is used.",
+      "RE-VERIFIED 2026-06-29: Full re-fetch of indianvisaonline.gov.in/evisa/tvoa.html confirms 174 e-visa eligible nationalities. Kenya appears twice in the raw portal HTML (a rendering artifact) but is correctly recorded once in this file. All 174 e_visa entries in visa_policy.e_visa match the live official page - no additions or removals detected.",
+      "RE-VERIFIED 2026-06-29: indianvisaonline.gov.in/visa/visa-on-arrival.html re-fetched and confirmed - Visa on Arrival remains limited to Japan, South Korea, and UAE (UAE requires prior Indian e-Visa or regular/paper visa); fee INR 2,000, 60 days double-entry, 6 airports (Bangalore, Chennai, Delhi, Hyderabad, Kolkata, Mumbai). No changes detected.",
+      "INVESTIGATED 2026-06-29: Third-party sources (e.g. india-online-visa.com, visahq.com) claim Saudi Arabia was added to India's e-visa list in January 2026. However, the live official portal (indianvisaonline.gov.in/evisa/tvoa.html) as of June 2026 does NOT list Saudi Arabia among eligible nationalities. Per safety rules (false visa-free is worst error), Saudi Arabia has NOT been added to the e_visa list. This claim is noted in gaps.",
+      "RE-VERIFIED 2026-06-29: Visa-free entries for Nepal, Bhutan, Maldives - boi.gov.in source URL continues to return HTTP 404. No contradicting evidence found from any source. Entries preserved per safety rule (preservation beats guessing when source is unreachable).",
+      "RE-VERIFIED 2026-06-29: No new visa-free or visa-on-arrival regimes for ordinary passport holders found from any official Indian government source. Pakistan-origin exclusion from e-Visa and VoA still in force per live official portal."
     ],
     "gaps": [
       "The official MHA PRS circular PDF (mha.gov.in/PDF_Other/prsforeigninvestors_17042017.pdf) returns HTTP 403; PRS details sourced from indembassyseoul.gov.in (official Indian embassy domain). Direct verification of INR thresholds from the MHA circular was not possible.",
-      "The boi.gov.in visa-free page (content/pages/572eefaa-f918-4f64-af0a-a3a4f2157b0f) returned HTTP 404 on direct fetch; details sourced from a BOI search result snippet and confirmed via WebSearch.",
+      "The boi.gov.in visa-free pages return HTTP 404 on all attempted direct fetches (content/pages/572eefaa-f918-4f64-af0a-a3a4f2157b0f and multiple alternate BOI content paths); details for Nepal/Bhutan/Maldives visa-free regime sourced from BOI WebSearch result snippets and confirmed consistent with record. BOI main site also returns 404 as of June 2026.",
       "The mha.gov.in OCI cardholder page returns HTTP 403, preventing direct page verification. OCI rights confirmed via multiple official search result snippets and Citizenship (Amendment) Rules, 2026 news from official government news sources (newsonair.gov.in).",
       "The complete per-country detail of India's bilateral diplomatic/official passport visa exemption agreements (107+ countries) is accessible at mea.gov.in/bvwa-passport; the conditional_access passport_type entry summarises the overall picture without per-country breakdowns.",
       "India does NOT grant visa-free or visa-on-arrival access to ordinary passport holders based on holding a foreign third-country credential (US visa, Schengen, UK visa, Canadian PR, etc.); no such rule exists in Indian official sources and none has been recorded.",
       "No startup visa or digital nomad visa scheme found on official Indian government sources as of June 2026.",
-      "The e-visa eligible country count is confirmed at 174 per the live official page; the record captures all 174 nationalities listed on the page as of June 2026.",
-      "Protected area permits (PAP/RAP) are still required even for OCI cardholders in restricted zones (e.g. parts of Sikkim, Arunachal Pradesh); this is noted in the OCI conditions but full list of restricted areas is not enumerated."
+      "The e-visa eligible country count is confirmed at 174 per the live official page; the record captures all 174 nationalities listed on the page as of June 2026. A March 2026 Ministry of Tourism communication cited 175 countries but the live portal shows 174 - portal is authoritative.",
+      "Protected area permits (PAP/RAP) are still required even for OCI cardholders in restricted zones (e.g. parts of Sikkim, Arunachal Pradesh); this is noted in the OCI conditions but full list of restricted areas is not enumerated.",
+      "Saudi Arabia e-visa eligibility: Multiple third-party sources (india-online-visa.com, visahq.com dated Jan 2026) claim Saudi Arabia was added to India's e-visa list in January 2026, but the live official portal (indianvisaonline.gov.in/evisa/tvoa.html) as of June 2026 does not list Saudi Arabia. Saudi Arabia has NOT been added to this record until confirmed from the official portal. Requires monitoring at each future validation."
     ]
   },
   "sources_checked": [
@@ -1673,7 +1684,9 @@
     "https://www.indembassyseoul.gov.in/permanent-residency-status-foreign-investors",
     "https://www.mha.gov.in/en/divisionofmha/foreigners-division/overseas-citizen-of-india-cardholder",
     "https://www.mea.gov.in/bvwa-passport",
-    "https://newsonair.gov.in/govt-notifies-citizenship-amendment-rules-2026-introducing-revised-provisions-related-to-oci-cardholders-citizenship-applications/"
+    "https://newsonair.gov.in/govt-notifies-citizenship-amendment-rules-2026-introducing-revised-provisions-related-to-oci-cardholders-citizenship-applications/",
+    "https://www.mea.gov.in/VFFIN.htm",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_India"
   ],
   "outbound_official": {
     "found": true,
@@ -2252,6 +2265,6 @@
         "iso3": "KEN"
       }
     ],
-    "notes": "Source: Ministry of External Affairs, Government of India — 'Visa Facility for Indian Nationals (Ordinary Passports)' (mea.gov.in/VFFIN.htm), last updated 26 May 2026, data current as of 2 February 2026. Malaysia visa-free valid until 31 December 2026. Myanmar visa-on-arrival valid up to 29 August 2026. Philippines e-visa in force from 28 October 2024. Mauritania e-visa from 5 January 2025. Kenya moved from e-visa to ETA from 5 January 2024. Some destinations appear in multiple categories (both visa-free and e-visa, or both visa-on-arrival and e-visa) as the MEA page lists them under more than one regime. Citizens are advised to verify with the destination country's mission before travel."
+    "notes": "Source: Ministry of External Affairs, Government of India - 'Visa Facility for Indian Nationals (Ordinary Passports)' (mea.gov.in/VFFIN.htm), last updated 26 May 2026, data current as of 2 February 2026. Malaysia visa-free valid until 31 December 2026. Myanmar visa-on-arrival valid up to 29 August 2026. Philippines e-visa in force from 28 October 2024. Mauritania e-visa from 5 January 2025. Kenya moved from e-visa to ETA from 5 January 2024. Some destinations appear in multiple categories (both visa-free and e-visa, or both visa-on-arrival and e-visa) as the MEA page lists them under more than one regime. Citizens are advised to verify with the destination country's mission before travel."
   }
 }

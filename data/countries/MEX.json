@@ -511,48 +511,49 @@
       }
     ],
     "visa_on_arrival": [],
-    "e_visa": [],
-    "eta": [
+    "e_visa": [
       {
         "nationality": "Brazil",
         "iso3": "BRA",
         "max_stay_days": 180,
-        "notes": "Sistema de Autorización Electrónica (SAE) / Electronic Visa (Visa Electronica) — required as of February 5, 2026 for air travel only. Single entry. Must apply at visaelectronica.sre.gob.mx. Valid electronic passport required. The SAE/e-visa does not replace the traditional consular visa, which remains available for those needing multiple entries (up to 10 years validity) or entering by sea or land.",
+        "notes": "Visa Electrónica (SAE - Sistema de Autorización Electrónica) - required as of February 5, 2026 for air travel only. Single entry. Must apply online at visaelectronica.sre.gob.mx. Valid electronic passport required. The official SRE press release explicitly calls this an 'electronic visa' (not an ETA). Does not replace the traditional consular visa for multiple entries or land/sea entry.",
         "source_url": "https://www.gob.mx/sre/prensa/electronic-visa-for-brazilian-nationals?idiom=en",
         "source_official": true
       },
       {
         "nationality": "Russia",
         "iso3": "RUS",
-        "max_stay_days": null,
-        "notes": "Sistema de Autorización Electrónica (SAE) — electronic authorization for air travel only. Single entry, authorization valid 30 days from issuance. Number of days permitted in Mexico is determined by the immigration officer at the port of entry (not fixed in advance). Land and sea entry requires a traditional consular visa.",
-        "source_url": "https://www.gob.mx/inm/acciones-y-programas/sistema-de-autorizacion-electronica-sae",
+        "max_stay_days": 180,
+        "notes": "Visa Electrónica (SAE - Sistema de Autorización Electrónica) - air travel only. Single entry. Authorization document is valid for 30 days from issuance (i.e., must be used within 30 days). Once in Mexico, immigration officer may authorize up to 180 days stay. The official SRE program explicitly names this 'Visa Electrónica'. Land and sea entry requires a traditional consular visa.",
+        "source_url": "https://embamex.sre.gob.mx/italia/index.php/es/seccion-consular/199-visa-electronica-para-ciudadanos-rusos-turcos-y-ucranianos",
         "source_official": true
       },
       {
         "nationality": "Turkey",
         "iso3": "TUR",
-        "max_stay_days": null,
-        "notes": "Sistema de Autorización Electrónica (SAE) — electronic authorization for air travel only. Single entry, authorization valid 30 days from issuance. Number of days permitted in Mexico is determined by the immigration officer at the port of entry (not fixed in advance). Land and sea entry requires a traditional consular visa.",
-        "source_url": "https://www.gob.mx/inm/acciones-y-programas/sistema-de-autorizacion-electronica-sae",
+        "max_stay_days": 180,
+        "notes": "Visa Electrónica (SAE - Sistema de Autorización Electrónica) - air travel only. Single entry. Authorization document is valid for 30 days from issuance (i.e., must be used within 30 days). Once in Mexico, immigration officer may authorize up to 180 days stay. The official SRE program explicitly names this 'Visa Electrónica'. Applies to ordinary (bordo) passport holders only; green/grey passport holders must apply for consular visa. Land and sea entry requires a traditional consular visa.",
+        "source_url": "https://embamex.sre.gob.mx/italia/index.php/es/seccion-consular/199-visa-electronica-para-ciudadanos-rusos-turcos-y-ucranianos",
         "source_official": true
       },
       {
         "nationality": "Ukraine",
         "iso3": "UKR",
-        "max_stay_days": null,
-        "notes": "Sistema de Autorización Electrónica (SAE) — electronic authorization for air travel only. Single entry, authorization valid 30 days from issuance. Number of days permitted in Mexico is determined by the immigration officer at the port of entry (not fixed in advance). Land and sea entry requires a traditional consular visa.",
-        "source_url": "https://www.gob.mx/inm/acciones-y-programas/sistema-de-autorizacion-electronica-sae",
+        "max_stay_days": 180,
+        "notes": "Visa Electrónica (SAE - Sistema de Autorización Electrónica) - air travel only. Single entry. Authorization document is valid for 30 days from issuance (i.e., must be used within 30 days). Once in Mexico, immigration officer may authorize up to 180 days stay. The official SRE program explicitly names this 'Visa Electrónica'. Land and sea entry requires a traditional consular visa.",
+        "source_url": "https://embamex.sre.gob.mx/italia/index.php/es/seccion-consular/199-visa-electronica-para-ciudadanos-rusos-turcos-y-ucranianos",
         "source_official": true
       }
     ],
+    "eta": [],
     "source_urls": [
       "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
+      "https://www.gob.mx/sre/acciones-y-programas/visa-electronica-sae",
       "https://www.gob.mx/inm/acciones-y-programas/sistema-de-autorizacion-electronica-sae",
       "https://www.gob.mx/sre/prensa/electronic-visa-for-brazilian-nationals?idiom=en",
       "https://www.gob.mx/sre/prensa/mexico-temporarily-suspends-visa-waiver-for-peruvian-nationals?idiom=en"
     ],
-    "notes": "Visa-free list sourced from Mexican Consulate General in the UK (consulmex.sre.gob.mx/reinounido). Peru had visa-free access until April 20, 2024 when Mexico suspended it (temporary, per SRE press release) — no official reinstatement as of June 2026 confirmed. Brazil moved to electronic authorization/e-visa (SAE/Visa Electronica) as of February 5, 2026 — single entry, air travel only; multiple-entry or land/sea entry still requires a consular visa. Colombia: passport holders are visa-free but must pre-register at INM website before arrival. The full exhaustive list of all nationalities requiring a consular visa is not published in an English-language official page; the SAE system also covers additional nationalities beyond Russia, Turkey, Ukraine not fully enumerated in accessible official English pages."
+    "notes": "Visa-free list sourced from Mexican Consulate General in the UK (consulmex.sre.gob.mx/reinounido). Peru had visa-free access until April 20, 2024 when Mexico suspended it (temporary, per SRE press release) - no official reinstatement as of June 2026 confirmed (Mexico Embassy in Lima explicitly states Peruvians require a visa). Brazil requires a Visa Electrónica (SAE) as of February 5, 2026 - single entry, air travel only, up to 180 days; multiple-entry or land/sea entry still requires a consular visa. Russia, Turkey, and Ukraine require a Visa Electrónica (SAE) for air travel; authorization valid 30 days from issuance (use-by window), stay in Mexico up to 180 days as authorized by immigration officer at port of entry. All four (Brazil, Russia, Turkey, Ukraine) are classified under e_visa because the SRE officially calls the system 'Visa Electrónica' (not an ETA). Colombia: passport holders are visa-free but must pre-register at INM website before arrival. Marshall Islands, Micronesia, and Palau confirmed visa-free at 180 days (re-verified June 2026)."
   },
   "conditional_access": [
     {
@@ -581,7 +582,7 @@
       },
       "level": "visa_free",
       "max_stay_days": 180,
-      "conditions": "Visa must be valid, multiple-entry, and stamped in passport. Applies to non-lucrative visits. Does NOT apply to Tier 4 student, Tier 5, Skilled Worker, Spouse, Family, Investor, Global Talent, Partner, Ancestry, or similar temporary resident visas — those require a separate Mexican visitor visa.",
+      "conditions": "Visa must be valid, multiple-entry, and stamped in passport. Applies to non-lucrative visits. Does NOT apply to Tier 4 student, Tier 5, Skilled Worker, Spouse, Family, Investor, Global Talent, Partner, Ancestry, or similar temporary resident visas - those require a separate Mexican visitor visa.",
       "source_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
       "source_official": true
     },
@@ -746,7 +747,7 @@
       },
       "level": "visa_free",
       "max_stay_days": 180,
-      "conditions": "Permanent residents of Peru (Pacific Alliance member) of any nationality do not require a Mexican visa for tourism, business, or transit. Note: Peru's own nationals had visa-free access suspended April 20, 2024 — this PR-holder exemption for third-country nationals is listed in the official SAE page.",
+      "conditions": "Permanent residents of Peru (Pacific Alliance member) of any nationality do not require a Mexican visa for tourism, business, or transit. Note: Peru's own nationals had visa-free access suspended April 20, 2024 - this PR-holder exemption for third-country nationals is listed in the official SAE page.",
       "source_url": "https://www.gob.mx/inm/acciones-y-programas/sistema-de-autorizacion-electronica-sae",
       "source_official": true
     },
@@ -1579,7 +1580,7 @@
         "notes": "Investment must exceed 45,850 days of UMA. As of February 1, 2026 the daily UMA value is MXN $117.31 (confirmed by INEGI), giving a threshold of approximately MXN $5,378,663. Investment can be demonstrated through: (1) equity interest/shares in a Mexican company; (2) movable or fixed assets for business purposes; or (3) evidence of Mexican economic activity employing at least 3 workers. Visa grants stay of more than 180 days and up to 4 years. Must apply for Temporary Resident Card at INM within 30 days of arrival."
       },
       {
-        "name": "Temporary Resident Visa — Economic Solvency (Rentista)",
+        "name": "Temporary Resident Visa - Economic Solvency (Rentista)",
         "type": "economic_solvency",
         "min_amount": null,
         "currency": "MXN",
@@ -1590,7 +1591,7 @@
         "notes": "For retirees or those with passive income. Financial requirements include: average monthly income equivalent to 400 days of UMA (~MXN $46,924/month as of February 2026, based on UMA $117.31/day) for 6 months, OR average monthly bank balance of 20,000 days of UMA (~MXN $2,346,200/month) for 12 months, OR real estate ownership exceeding 40,000 UMA days (~MXN $4,692,400) in assessed value. Grants temporary residency for up to 4 years."
       },
       {
-        "name": "Permanent Resident Visa — Economic Solvency",
+        "name": "Permanent Resident Visa - Economic Solvency",
         "type": "economic_solvency_pr",
         "min_amount": null,
         "currency": "USD",
@@ -1616,7 +1617,7 @@
     ]
   },
   "agreements": [
-    "Pacific Alliance (free movement of people in progress — Mexico, Chile, Colombia, Peru)"
+    "Pacific Alliance (free movement of people in progress - Mexico, Chile, Colombia, Peru)"
   ],
   "official_domains": [
     "consulmex.sre.gob.mx",
@@ -1629,29 +1630,39 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTED: Brazil SAE entry — max_stay_days updated from null to 180 (confirmed by official SRE press release: single entry, air only, 180 days for tourism/business/transit).",
+      "CORRECTED: Brazil SAE entry - max_stay_days updated from null to 180 (confirmed by official SRE press release: single entry, air only, 180 days for tourism/business/transit).",
       "CORRECTED: Colombia visa_free notes updated to include mandatory INM pre-registration requirement, confirmed from official consulmex.sre.gob.mx/reinounido page re-fetched June 2026.",
       "CORRECTED: Russia/Turkey/Ukraine SAE notes updated to clarify that the authorization is for air travel only and stay duration is determined by immigration officer at port of entry (not a fixed number of days granted by the SAE document itself).",
       "CORRECTED: UK visa_free notes updated to explicitly mention British Overseas Territory Citizens and Crown dependency passport holders (Bermuda, Gibraltar, Jersey, Cayman Islands) as included, per official consulate page.",
       "CORRECTED: USA visa_free notes cleaned up to clarify US territories note.",
       "CORRECTED: France visa_free notes updated to mention French overseas territories (French Polynesia, Guadeloupe) as listed on the official page.",
       "CORRECTED: Netherlands visa_free notes updated to reflect that Netherlands Antilles and Curaçao are listed as dependent territory entries on the official page.",
-      "CORRECTED: RBI Rentista thresholds recalculated — monthly bank balance figure corrected to ~MXN $2,346,200/month (20,000 x $117.31) and real estate threshold corrected to ~MXN $4,692,400 (40,000 x $117.31); prior record had these figures incorrect.",
+      "CORRECTED: RBI Rentista thresholds recalculated - monthly bank balance figure corrected to ~MXN $2,346,200/month (20,000 x $117.31) and real estate threshold corrected to ~MXN $4,692,400 (40,000 x $117.31); prior record had these figures incorrect.",
       "CONFIRMED: Peru ordinary passport visa-free access remains suspended as of June 2026; no official SRE reinstatement announcement found.",
       "CONFIRMED: UMA 2026 daily value is MXN $117.31, effective February 1, 2026 per INEGI official announcement.",
       "CONFIRMED: Tunisia entry in conditional_access corrected to use passport_types ['diplomatic', 'special'] (not 'diplomatic' alone; the Tunisian Special passport is explicitly noted in the bilateral agreement text).",
-      "ADDED: visaelectronica.sre.gob.mx to official_domains."
+      "ADDED: visaelectronica.sre.gob.mx to official_domains.",
+      "2026-06-27 RECLASSIFIED: Brazil, Russia, Turkey, Ukraine moved from eta[] to e_visa[]. The SRE officially names the system 'Visa Electrónica' (not an ETA) at gob.mx/sre/acciones-y-programas/visa-electronica-sae and in the SRE press release for Brazilian nationals (gob.mx/sre/prensa/electronic-visa-for-brazilian-nationals). An ETA is typically issued automatically or by the carrier; Mexico's SAE requires an explicit online application and is called a visa by the issuing authority. Source URLs for Russia/Turkey/Ukraine updated to the SRE Visa Electrónica program page.",
+      "2026-06-27 CONFIRMED: Visa-free list (63 nationalities at 180 days) re-verified against consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa. No additions or removals detected.",
+      "2026-06-27 CONFIRMED: Marshall Islands, Micronesia (FSM), and Palau remain visa-free at 180 days per official consulate page re-fetch.",
+      "2026-06-27 CONFIRMED: Peru ordinary passport visa-free access still suspended - Mexico Embassy in Lima (embamex.sre.gob.mx/peru) explicitly states Peruvians require a visa.",
+      "2026-06-27 CONFIRMED: Brazil Visa Electrónica effective February 5, 2026, air only, single entry - confirmed from official SRE press release. Max stay 180 days (confirmed from search results citing official portals).",
+      "2026-06-29 CORRECTED: Russia, Turkey, Ukraine e_visa max_stay_days updated from null to 180. Confirmed by Mexico Embassy in Italy (embamex.sre.gob.mx/italia) which lists all four nationalities (Brazil, Russia, Turkey, Ukraine) and states immigration officer authorizes up to 180 days. The '30 days' figure in the SAE program pages is the authorization use-by window (time to enter Mexico after issuance), not the permitted stay duration. Source: embamex.sre.gob.mx/italia/index.php/es/seccion-consular/199-visa-electronica-para-ciudadanos-rusos-turcos-y-ucranianos.",
+      "2026-06-29 CORRECTED: Turkey e_visa notes updated to clarify applies to ordinary (bordo) passport holders only; green/grey special/service passport holders must obtain a stamped consular visa. Source: consulmex.sre.gob.mx/estambul (Radware-blocked but confirmed via web search summary referencing the page).",
+      "2026-06-29 CONFIRMED: Visa-free list (63 nationalities at 180 days) re-verified against consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa. No additions or removals detected.",
+      "2026-06-29 CONFIRMED: SAE still active for Russia, Turkey, Ukraine (per INM SAE page and multiple official embassy pages as of June 2026). Brazil reinstated to SAE effective February 5, 2026 per SRE press release.",
+      "2026-06-29 NOTE: Brazil SAE source_url updated to keep primary SRE press release; Russia/Turkey/Ukraine source_url updated to Italy embassy page which is the most explicit official source for the 180-day stay figure."
     ],
     "gaps": [
       "The comprehensive official list of ALL nationalities requiring a consular visa (the negative list) is not published in an accessible English-language official page; the full Spanish-language DOF agreement (Acuerdo) was not retrievable due to connection errors.",
       "Exact UMA-based financial thresholds for the Rentista/economic solvency temporary resident visa expressed in USD (for non-MXN visitors) are approximate; the official page denominates in UMA days only.",
-      "The exact list of nationalities covered by Mexico's SAE electronic authorization beyond Russia, Turkey, Ukraine (and Brazil for air travel) could not be fully enumerated from accessible official English-language pages — the INM SAE application form loads nationality options dynamically and does not list them statically.",
-      "Peruvian nationals: visa waiver was suspended April 20, 2024 per official SRE press release (temporary measure); current status as of June 2026 not reinstated — no official SRE announcement of reinstatement found.",
-      "Path to citizenship years after permanent residency not confirmed from official source — Mexico's Nationality Law requires physical residence periods but the exact years for naturalization were not retrieved from an official English page in this session.",
-      "OCI (Overseas Citizen of India) card: no official Mexican government source (sre.gob.mx, gob.mx, inm.gob.mx) mentions OCI cards as a basis for visa-free entry — not recorded.",
+      "The exact list of nationalities covered by Mexico's SAE electronic authorization beyond Russia, Turkey, Ukraine (and Brazil for air travel) could not be fully enumerated from accessible official English-language pages - the INM SAE application form loads nationality options dynamically and does not list them statically.",
+      "Peruvian nationals: visa waiver was suspended April 20, 2024 per official SRE press release (temporary measure); current status as of June 2026 not reinstated - no official SRE announcement of reinstatement found.",
+      "Path to citizenship years after permanent residency not confirmed from official source - Mexico's Nationality Law requires physical residence periods but the exact years for naturalization were not retrieved from an official English page in this session.",
+      "OCI (Overseas Citizen of India) card: no official Mexican government source (sre.gob.mx, gob.mx, inm.gob.mx) mentions OCI cards as a basis for visa-free entry - not recorded.",
       "Diplomatic passport waiver agreements: the official table lists countries with bilateral exemptions but does not cite specific agreement dates or treaty names in the accessible English-language consulate page.",
-      "Schengen Type D (national long-stay visa): explicitly excluded per the official source — only Type C (short-stay) qualifies.",
-      "Colombia pre-registration: exact URL/form at INM for Colombian pre-registration not extractable from the official consulate page in this session — the requirement is mentioned but the link target was not fully confirmed.",
+      "Schengen Type D (national long-stay visa): explicitly excluded per the official source - only Type C (short-stay) qualifies.",
+      "Colombia pre-registration: exact URL/form at INM for Colombian pre-registration not extractable from the official consulate page in this session - the requirement is mentioned but the link target was not fully confirmed.",
       "British Antarctic Territory, Bermuda, Gibraltar, Jersey, and other British Crown dependency passports are listed on the official page as visa-exempt but these are territories, not sovereign states with ISO 3166-1 alpha-3 codes; they are noted in the UK entry rather than listed separately."
     ]
   },
@@ -1752,15 +1763,199 @@
       {"name": "Canada", "iso3": "CAN"},
       {"name": "Australia", "iso3": "AUS"}
     ],
-    "notes": "Official source is Mexico SRE's Guia del Viajero (Traveler's Guide) at portales.sre.gob.mx/guiadeviaje/index.php/informacion-por-destino — confirmed as the authoritative outbound visa reference for Mexican citizens per an official SRE passport information PDF (retrieved June 2026 from seasuntours.com.mx/docs/SRE.pdf, originally published by SRE). The SRE Guia del Viajero provides individual country-by-country fichas (fact sheets) for Mexican travelers. The site was inaccessible to automated scraping during this session due to Radware bot protection on the portales.sre.gob.mx domain; the guiadelviajero.sre.gob.mx subdomain (older URL) also returned ECONNREFUSED. Country list is compiled from: (1) SRE official PDF listing countries requiring a visa from Mexicans (USA, Canada eTA, Cuba tourist card, China, Egypt, Russia, Thailand, Turkey e-visa, Australia); (2) individual Guia del Viajero country page snippets retrieved via web search (Portugal, Argentina, Netherlands, Dominica, Serbia, Montenegro, North Macedonia, South Korea, Seychelles); (3) SRE Mexico Embassy in Serbia page listing visa-free entry for Mexico citizens. Canada requires an ETA (Autorizacion Electronica/eTA, CAD 7) for air travel; Cuba requires a Tourist Card (Tarjeta de Turismo); USA and China require prior consular visa; Australia requires a subclass 600 visitor visa applied online. The full definitive list should be verified directly at portales.sre.gob.mx/guiadeviaje when the site is accessible."
+    "notes": "Official source is Mexico SRE's Guia del Viajero (Traveler's Guide) at portales.sre.gob.mx/guiadeviaje/index.php/informacion-por-destino - confirmed as the authoritative outbound visa reference for Mexican citizens per an official SRE passport information PDF (retrieved June 2026 from seasuntours.com.mx/docs/SRE.pdf, originally published by SRE). The SRE Guia del Viajero provides individual country-by-country fichas (fact sheets) for Mexican travelers. The site was inaccessible to automated scraping during this session due to Radware bot protection on the portales.sre.gob.mx domain; the guiadelviajero.sre.gob.mx subdomain (older URL) also returned ECONNREFUSED. Country list is compiled from: (1) SRE official PDF listing countries requiring a visa from Mexicans (USA, Canada eTA, Cuba tourist card, China, Egypt, Russia, Thailand, Turkey e-visa, Australia); (2) individual Guia del Viajero country page snippets retrieved via web search (Portugal, Argentina, Netherlands, Dominica, Serbia, Montenegro, North Macedonia, South Korea, Seychelles); (3) SRE Mexico Embassy in Serbia page listing visa-free entry for Mexico citizens. Canada requires an ETA (Autorizacion Electronica/eTA, CAD 7) for air travel; Cuba requires a Tourist Card (Tarjeta de Turismo); USA and China require prior consular visa; Australia requires a subclass 600 visitor visa applied online. The full definitive list should be verified directly at portales.sre.gob.mx/guiadeviaje when the site is accessible."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visitor Visa - Non-Lucrative (Visa de Visitante sin Permiso para Realizar Actividades Remuneradas)",
+      "purpose": "Allows foreign nationals to visit Mexico for tourism, transit, business meetings, studies, or medical treatment without engaging in paid activities. Covers activities that do not generate income within Mexico.",
+      "max_stay_days": 180,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
+      "notes": "Citizens of 50+ nationalities are visa-exempt and may enter without a visa for up to 180 days. Those requiring a visa must apply at a Mexican consulate. Immigration officer determines the exact authorized stay up to 180 days. FMM card issued at land borders must be retained for departure. UK temporary residents (students, workers) who are not permanent residents must apply for this visa even if their nationality is on the visa-free list."
+    },
+    {
+      "category": "business",
+      "name": "Visitor Visa - Business (Visa de Visitante con Permiso para Realizar Actividades Remuneradas)",
+      "purpose": "Allows foreign nationals to enter Mexico to carry out paid or lucrative activities on a temporary basis, such as short-term contracts, conferences, or professional services paid from abroad.",
+      "max_stay_days": 180,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
+      "notes": "This category authorizes remunerated activities during the visitor stay. Applicants must demonstrate the purpose of the visit and source of remuneration. Issued at Mexican consulates abroad. For stays intended to exceed 180 days or for full employment in Mexico, a Temporary Resident Visa with work authorization is required instead."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visitor Visa (Visa de Visitante en Tránsito)",
+      "purpose": "Permits foreign nationals to transit through Mexico en route to a third country, covering layovers or brief stops that require passing through Mexican immigration.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
+      "notes": "Visa-exempt nationals do not require a transit visa. Citizens of nationalities that require a visa must obtain one prior to transit. Transit visas are covered under the Visitor Visa framework in Mexico's Ley de Migración. The standard non-lucrative visitor visa also covers transit purposes for those who require a visa."
+    },
+    {
+      "category": "student",
+      "name": "Temporary Resident Visa - Studies (Residente Temporal - Estudiante)",
+      "purpose": "Allows foreign nationals to reside in Mexico for the purpose of studying at an accredited educational institution for a period exceeding 180 days.",
+      "max_stay_days": 1461,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
+      "notes": "Issued for stays exceeding 180 days and up to 4 years (annual renewals). Requires acceptance letter from a Mexican educational institution. Holder must apply for a Temporary Resident Card (Tarjeta de Residente Temporal) at INM within 30 days of arrival. Short-term study programs of up to 180 days may use the non-lucrative visitor visa instead."
+    },
+    {
+      "category": "work",
+      "name": "Temporary Resident Visa with Authorization for Paid Activities (Residente Temporal con Permiso para Realizar Actividades Remuneradas)",
+      "purpose": "Allows foreign nationals to reside in Mexico and engage in paid employment or professional activities under a Mexican employer or contract for stays exceeding 180 days.",
+      "max_stay_days": 1461,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
+      "notes": "Requires an offer of employment or contract from a Mexican company. The employer typically initiates the process with INM to obtain a work authorization (oficio de autorización) before the applicant applies at the consulate. Issued for up to 1 year, renewable annually up to 4 years total. Holder must register at INM within 30 days of arrival for Temporary Resident Card."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Temporary Resident Visa - Remote Worker / Digital Nomad (Residente Temporal - Solvencia Económica)",
+      "purpose": "Allows foreign nationals with income from outside Mexico to reside in the country for more than 180 days without taking local employment, serving as the de facto digital nomad pathway.",
+      "max_stay_days": 1461,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/leamington/index.php/non-mexicans/visas/115-temporary-resident-visa",
+      "notes": "Mexico has no separately named digital nomad visa. Remote workers apply for the standard Temporary Resident Visa under economic solvency. Requirements: minimum monthly income of approximately $3,738 USD (equivalent to ~400 UMA days/month based on UMA $117.31/day as of February 2026) evidenced for 6 months, OR savings of approximately $73,258 USD. Income must originate from outside Mexico. Valid for 1 year, renewable annually up to 4 years. No minimum presence requirement."
+    },
+    {
+      "category": "retirement",
+      "name": "Temporary Resident Visa - Rentista / Economic Solvency (Residente Temporal - Solvencia Económica / Rentista)",
+      "purpose": "Allows retirees and persons with passive income or sufficient assets to reside in Mexico on a temporary basis without working locally.",
+      "max_stay_days": 1461,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/96-rentista-visitor-carnet-visa",
+      "notes": "Financial requirements (based on UMA $117.31/day as of February 2026): average monthly income equivalent to ~400 UMA days (~MXN $46,924/month) for 6 months; OR average monthly bank balance of ~20,000 UMA days (~MXN $2,346,200) for 12 months; OR real property in Mexico exceeding ~40,000 UMA days (~MXN $4,692,400) in assessed value. Grants up to 4 years temporary residency, renewable. After 4 years can apply for Permanent Residency."
+    },
+    {
+      "category": "investment",
+      "name": "Temporary Resident Visa for Investors (Residente Temporal - Inversión)",
+      "purpose": "Allows foreign nationals who have made qualifying investments in Mexico to reside there on a temporary basis for up to 4 years.",
+      "max_stay_days": 1461,
+      "validity_days": 180,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://embamex.sre.gob.mx/belgica/index.php/es/sercons/visas-es/22-seccion-consular/visas/612-temporary-resident-visa-for-investors",
+      "notes": "Investment threshold: equity stake, assets, or business activity exceeding approximately MXN $5,378,663 (45,850 UMA days at $117.31/day as of February 2026; approximately EUR 256,127 per Belgium embassy page). Can also qualify by employing at least 3 Mexican workers. Visa must be used within 180 days of issuance. Does not authorize paid employment in Mexico. Must apply for Temporary Resident Card at INM within 30 days of arrival. After 4 years of temporary residency can apply for Permanent Residency."
+    },
+    {
+      "category": "family",
+      "name": "Temporary Resident Visa - Family Unity (Residente Temporal - Unidad Familiar / Vínculo Familiar)",
+      "purpose": "Allows immediate family members (spouse, children, dependent parents) of Mexican citizens, permanent residents, or temporary residents to live in Mexico under family reunification.",
+      "max_stay_days": 1461,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
+      "notes": "Issued to spouses, children, and dependent parents of Mexican nationals or of foreigners holding temporary or permanent resident status. Duration mirrors the principal holder's residency or up to 4 years. Holder must apply for Temporary Resident Card at INM within 30 days of arrival. Can lead to Permanent Residency after required period."
+    },
+    {
+      "category": "other",
+      "name": "Permanent Resident Visa (Visa de Residente Permanente)",
+      "purpose": "Grants indefinite authorization to reside in Mexico without the need for periodic renewal, available to those who have completed 4 years as a Temporary Resident, qualify through marriage to a Mexican national, or meet the economic solvency threshold for permanent residency.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/265-Permanent-Residence-Visa-by-economic-solvency",
+      "notes": "Pathways to permanent residency include: (1) completing 4 consecutive years as a Temporary Resident; (2) being the spouse or dependent child of a Mexican citizen; (3) economic solvency - requires average monthly bank balance exceeding approximately $292,859 USD (12-month period). Grants indefinite right of residence. Work authorization included. After the required period of actual physical residence, permanent residents may apply for Mexican nationality by naturalization."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic and Official Visa (Visa Diplomática / Visa Oficial)",
+      "purpose": "Issued to holders of diplomatic, official, service, or consular passports traveling to Mexico on official missions or private visits, under bilateral agreements between Mexico and the issuing country.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": 1,
+      "processing_days_max": 1,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/80-diplomatic-and-official-visas-",
+      "notes": "No consular fee applies. Many countries' diplomatic/official/service passport holders are visa-exempt under bilateral agreements (see conditional_access entries). Where a visa is required, it is issued within 1 working day of submitting complete documentation. A verbal note from the applicant's diplomatic representation is required. US diplomatic/official passport holders receive 180 days (not 90). Pakistan diplomatic passport holders receive 3 months. Passport must remain valid from entry date onward."
+    },
+    {
+      "category": "other",
+      "name": "Visa Electrónica / SAE (Sistema de Autorización Electrónica)",
+      "purpose": "An electronic visa (officially called 'Visa Electrónica' by the SRE) required for certain nationalities traveling to Mexico by air. Applied for online before travel; classified as e_visa not ETA because the SRE itself calls it a visa.",
+      "max_stay_days": 180,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gob.mx/sre/acciones-y-programas/visa-electronica-sae",
+      "notes": "Currently covers: Brazil (air travel only, effective February 5, 2026; 180 days max stay); Russia, Turkey, Ukraine (air travel only; stay duration determined by immigration officer at port of entry, not fixed by the document). Authorization valid 30 days from issuance. Single entry. Land and sea entry by these nationalities still requires a traditional consular visa. Apply online at visaelectronica.sre.gob.mx. The SRE program page at gob.mx/sre/acciones-y-programas/visa-electronica-sae confirms this is officially called 'Visa Electrónica'."
+    }
+  ],
   "sources_checked": [
     "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/92-tourist-visa",
     "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/80-diplomatic-and-official-visas-",
     "https://embamex.sre.gob.mx/belgica/index.php/es/sercons/visas-es/22-seccion-consular/visas/612-temporary-resident-visa-for-investors",
+    "https://www.gob.mx/sre/acciones-y-programas/visa-electronica-sae",
     "https://www.gob.mx/inm/acciones-y-programas/sistema-de-autorizacion-electronica-sae",
     "https://www.gob.mx/sre/prensa/electronic-visa-for-brazilian-nationals?idiom=en",
     "https://www.gob.mx/sre/prensa/mexico-temporarily-suspends-visa-waiver-for-peruvian-nationals?idiom=en",
+    "https://embamex.sre.gob.mx/peru/index.php/sconsulares/visas",
     "https://www.inm.gob.mx/sae/publico/en/solicitud.html",
     "https://www.inm.gob.mx/mpublic/publico/inm-tramites.html",
     "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/265-Permanent-Residence-Visa-by-economic-solvency",
@@ -1768,6 +1963,7 @@
     "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/uma/uma2026.pdf",
     "https://www.gob.mx/epn/en/articulos/pacific-alliance-our-common-future",
     "https://embamex.sre.gob.mx/sudafrica/index.php/english/visa-for-mexico",
-    "https://visaelectronica.sre.gob.mx"
+    "https://visaelectronica.sre.gob.mx",
+    "https://embamex.sre.gob.mx/italia/index.php/es/seccion-consular/199-visa-electronica-para-ciudadanos-rusos-turcos-y-ucranianos"
   ]
 }

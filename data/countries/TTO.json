@@ -1115,7 +1115,7 @@
       "https://nationalsecurity.gov.tt/mediarelease/trinidad-and-tobago-launches-online-arrival-and-departure-card-platform/",
       "https://foreign.gov.tt/resources/news/launch-of-trinidad-and-tobago-online-arrivaldeparture-platform/"
     ],
-    "notes": "Trinidad and Tobago grants visa-free access primarily to Commonwealth members, CARICOM members, and EU member states. Many Latin American countries benefit from bilateral agreements granting 90-day visa-free stays. All visas are now electronic only (no physical stamp/endorsement). Aircraft/vessel crew members do not require a visa regardless of nationality. As of 17 June 2019, all Venezuelan nationals require a visa for entry (visa-free status cancelled). Effective 17 March 2026, ALL travellers (including visa-exempt nationals) must complete an Online Arrival/Departure Card via travel.gov.tt up to 72 hours before travel and present the QR code receipt on arrival — this replaced the traditional paper form. Citizens of Australia, New Zealand, and Philippines may obtain a Waiver of the Visa on arrival (TT$400, up to 30 days) at ports of entry."
+    "notes": "Trinidad and Tobago grants visa-free access primarily to Commonwealth members, CARICOM members, and EU member states. Many Latin American countries benefit from bilateral agreements granting 90-day visa-free stays. All visas are now electronic only (no physical stamp/endorsement). Aircraft/vessel crew members do not require a visa regardless of nationality. As of 17 June 2019, all Venezuelan nationals require a visa for entry (visa-free status cancelled). Effective 17 March 2026, ALL travellers (including visa-exempt nationals) must complete an Online Arrival/Departure Card via travel.gov.tt up to 72 hours before travel and present the QR code receipt on arrival - this replaced the traditional paper form. Citizens of Australia, New Zealand, and Philippines may obtain a Waiver of the Visa on arrival (TT$400, up to 30 days) at ports of entry."
   },
   "conditional_access": [
     {
@@ -1169,7 +1169,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Bearers of valid Diplomatic, Official or Service passports do not require visas. Per Cabinet Note No. 1870 dated 10th July 2008 (SI 1/09). Note: Haiti is also a CARICOM member — ordinary Haitian passports require a visa.",
+      "conditions": "Bearers of valid Diplomatic, Official or Service passports do not require visas. Per Cabinet Note No. 1870 dated 10th July 2008 (SI 1/09). Note: Haiti is also a CARICOM member - ordinary Haitian passports require a visa.",
       "source_url": "https://foreign.gov.tt/documents/232/Visa-Requirements-for-all-Countries.pdf",
       "source_official": true
     },
@@ -1240,7 +1240,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://nationalsecurity.gov.tt/appforms/residence/",
         "source_official": true,
-        "notes": "Foreign nationals may apply for permanent residence after 5 years of continuous lawful residence. Pathways include employment (work permit holders), family connections (parent/grandparent sponsorship or marriage to a citizen/resident), and investment. No specific minimum investment amount found on official sources. Categories: 5(3) — 5 years continuous residence; 6(1)a — work permit holders or CSME Certificate holders; 6(1)b — parental/grandparental sponsorship; 6(1)c — marriage to a citizen or resident."
+        "notes": "Foreign nationals may apply for permanent residence after 5 years of continuous lawful residence. Pathways include employment (work permit holders), family connections (parent/grandparent sponsorship or marriage to a citizen/resident), and investment. No specific minimum investment amount found on official sources. Categories: 5(3) - 5 years continuous residence; 6(1)a - work permit holders or CSME Certificate holders; 6(1)b - parental/grandparental sponsorship; 6(1)c - marriage to a citizen or resident."
       }
     ]
   },
@@ -1279,43 +1279,58 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTED: Removed Venezuela (VEN) from visa_free — visa-free entry cancelled officially on 17 June 2019 per TT Ministry of Foreign and CARICOM Affairs visa application instructions (foreign.gov.tt). Venezuela (ordinary passports) now requires a visa. Diplomatic/service/official passport exemption preserved in conditional_access.",
-      "ADDED: Japan (JPN, 90 days) to visa_free — listed on official Feb 2024 visa-exempt PDF (nationalsecurity.gov.tt) and corroborated by multiple aggregators; was missing from previous record.",
-      "ADDED: South Africa (ZAF, 90 days) to visa_free — listed on official Feb 2024 visa-exempt PDF and corroborated by embassies.net and visarun.ai data drawn from official TT lists; was missing from previous record.",
-      "ADDED: Australia (AUS), New Zealand (NZL), Philippines (PHL) to visa_on_arrival — citizens of these three countries may obtain a Waiver of the Visa on arrival at TT$400 (30 days, single entry); confirmed by official TT government source aggregation and multiple reputable immigration databases. These were entirely absent from the previous record.",
-      "UPDATED: visa_policy.notes — added Venezuela cancellation (June 2019), online arrival/departure card requirement (mandatory from 17 March 2026 via travel.gov.tt), and visa on arrival provisions for AUS/NZL/PHL.",
-      "ADDED: Online arrival/departure card requirement to source_urls — all travellers must complete online form (travel.gov.tt) from 17 March 2026; replaces paper forms.",
-      "UPDATED: conditional_access Venezuela entry — clarified ordinary passports require visa since June 2019; diplomatic/official/service exemption remains.",
-      "UPDATED: rbi.programs notes — expanded to include specific residence pathways (5(3), 6(1)a, 6(1)b, 6(1)c categories) as found on official nationalsecurity.gov.tt residence page.",
-      "NOTE: UK removed 'EU (historically)' parenthetical from notes field as UK is no longer an EU member."
+      "CORRECTED: Removed Venezuela (VEN) from visa_free - visa-free entry cancelled officially on 17 June 2019 per TT Ministry of Foreign and CARICOM Affairs visa application instructions (foreign.gov.tt). Venezuela (ordinary passports) now requires a visa. Diplomatic/service/official passport exemption preserved in conditional_access.",
+      "ADDED: Japan (JPN, 90 days) to visa_free - listed on official Feb 2024 visa-exempt PDF (nationalsecurity.gov.tt) and corroborated by multiple aggregators; was missing from previous record.",
+      "ADDED: South Africa (ZAF, 90 days) to visa_free - listed on official Feb 2024 visa-exempt PDF and corroborated by embassies.net and visarun.ai data drawn from official TT lists; was missing from previous record.",
+      "ADDED: Australia (AUS), New Zealand (NZL), Philippines (PHL) to visa_on_arrival - citizens of these three countries may obtain a Waiver of the Visa on arrival at TT$400 (30 days, single entry); confirmed by official TT government source aggregation and multiple reputable immigration databases. These were entirely absent from the previous record.",
+      "UPDATED: visa_policy.notes - added Venezuela cancellation (June 2019), online arrival/departure card requirement (mandatory from 17 March 2026 via travel.gov.tt), and visa on arrival provisions for AUS/NZL/PHL.",
+      "ADDED: Online arrival/departure card requirement to source_urls - all travellers must complete online form (travel.gov.tt) from 17 March 2026; replaces paper forms.",
+      "UPDATED: conditional_access Venezuela entry - clarified ordinary passports require visa since June 2019; diplomatic/official/service exemption remains.",
+      "UPDATED: rbi.programs notes - expanded to include specific residence pathways (5(3), 6(1)a, 6(1)b, 6(1)c categories) as found on official nationalsecurity.gov.tt residence page.",
+      "NOTE: UK removed 'EU (historically)' parenthetical from notes field as UK is no longer an EU member.",
+      "VERIFIED 2026-06-27: Re-fetched nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/ - e-visa fee confirmed at TT$800 (multiple entry); no change to e-visa entry.",
+      "VERIFIED 2026-06-27: Visa waiver on arrival (TT$400, 30 days, single entry) for AUS/NZL/PHL confirmed still in force from official evisa page.",
+      "VERIFIED 2026-06-27: Commonwealth exclusions confirmed via tntairports.com (TT airport authority, references official TT policy) - Fiji, Sri Lanka, Nigeria, Uganda, Tanzania, Cameroon, Papua New Guinea, Mozambique, Australia, New Zealand are all EXCLUDED from the blanket Commonwealth visa-free exemption and require a visa or waiver. None of these (except AUS/NZL/PHL) were in the visa_free list; record is correct.",
+      "VERIFIED 2026-06-27: No new official visa-free additions or removals found from .gov.tt sources. Paraguay and UAE mentioned on Wikipedia as 90-day visa-free but CANNOT be confirmed from any parseable .gov.tt source - not added (safety rule: preserve over guess).",
+      "VERIFIED 2026-06-27: Online arrival/departure card (travel.gov.tt) mandatory from 17 March 2026 - confirmed in existing notes; no change.",
+      "VERIFIED 2026-06-29: Re-fetched nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/ - e-visa fee confirmed at TT$800 (multiple entry); visa waiver on arrival for AUS/NZL/PHL at TT$400 (30 days, single entry) still in force; no new countries added or removed. No change to e-visa or visa-on-arrival entries.",
+      "VERIFIED 2026-06-29: nationalsecurity.gov.tt/divisions/immigrationdivision/ - no new policy announcements, no new visa programs, no new country-list changes found.",
+      "VERIFIED 2026-06-29: tntairports.com/travel/before-you-fly/visa-requirements/ - Commonwealth exclusions list re-confirmed: Fiji, Mozambique, Sri Lanka, New Zealand, Tanzania, Australia, Nigeria, Uganda, Cameroon, Papua New Guinea listed as visa-required. South Africa is NOT in this exception list, consistent with South Africa's visa-free addition to record. All existing classifications remain correct.",
+      "VERIFIED 2026-06-29: Paraguay - TT Newsday (newsday.co.tt/2024/06/28/) confirms a bilateral visa-free agreement signed 27 June 2024 at the OAS 54th General Assembly by TT Foreign Minister Dr Amery Browne covering ordinary, official, and diplomatic passports for up to 90 days (reciprocal). This is a strong government-act source but NOT confirmed from a live parseable .gov.tt page. Keeping in gaps per safety rule. NOT added to visa_free.",
+      "VERIFIED 2026-06-29: UAE - Khaleej Times and Dubai Eye (September 2025) confirm a mutual visa-exemption agreement signed 27 September 2025 at the 80th UN General Assembly by TT Foreign Minister Sean Sobers and UAE Deputy PM. UAE holders of ordinary, diplomatic, special, and mission passports gain visa-free TT entry. Duration not specified in sources. NOT confirmed from a live parseable .gov.tt page. Keeping in gaps per safety rule. NOT added to visa_free.",
+      "VERIFIED 2026-06-29: Wikipedia (Visa policy of Trinidad and Tobago) also lists Paraguay and UAE as 90-day visa-free; not independently authoritative but corroborates news reports. Still NOT added to visa_free without official .gov.tt confirmation.",
+      "VERIFIED 2026-06-29: No other new countries identified as added or removed from visa-free/visa-on-arrival lists. Record remains accurate as of this date."
     ],
     "gaps": [
-      "Max stay days for some visa-free countries (Commonwealth/CARICOM) not explicitly stated in official PDFs — the official documents confirm visa-free status but do not always specify a maximum stay for all nationalities.",
+      "Max stay days for some visa-free countries (Commonwealth/CARICOM) not explicitly stated in official PDFs - the official documents confirm visa-free status but do not always specify a maximum stay for all nationalities.",
       "Specific investment threshold for residence-by-investment pathway not found on official government sources.",
       "The Visa Requirements for All Countries PDF from foreign.gov.tt does not have a clear publication/update date; some entries may be outdated (e.g., Netherlands Antilles dissolved 2010, Yugoslavia no longer exists).",
       "No official digital nomad visa or startup visa scheme found on official government sources.",
-      "No e-visa eligible country list found on official government website — the e-visa portal only states which countries do NOT need a visa; the specific list of e-visa eligible nationalities is not published.",
-      "No official rule found granting entry to Trinidad and Tobago based on holding a US visa, UK visa, Schengen visa, Canadian visa, residence permit, Green Card, OCI card, or any other third-country credential — no such conditional credential-based entry rule appears in any official TT government source checked.",
+      "No e-visa eligible country list found on official government website - the e-visa portal only states which countries do NOT need a visa; the specific list of e-visa eligible nationalities is not published.",
+      "No official rule found granting entry to Trinidad and Tobago based on holding a US visa, UK visa, Schengen visa, Canadian visa, residence permit, Green Card, OCI card, or any other third-country credential - no such conditional credential-based entry rule appears in any official TT government source checked.",
       "No OCI (Overseas Citizen of India) cardholder exemption found in any official TT government source.",
-      "Exact status of Australia and New Zealand (visa on arrival vs. visa-free as of 2024 PDF) needs re-verification against the raw Feb 2024 PDF text — the PDF was not directly readable; visa-on-arrival (waiver) classification is based on multiple consistent secondary sources referencing official TT policy.",
+      "Exact status of Australia and New Zealand (visa on arrival vs. visa-free as of 2024 PDF) needs re-verification against the raw Feb 2024 PDF text - the PDF was not directly readable; visa-on-arrival (waiver) classification is based on multiple consistent secondary sources referencing official TT policy.",
       "Venezuela ordinary passport requirement confirmed (2019) but the official TT government PDFs could not be parsed to independently re-verify this from the raw document text.",
-      "Status of certain other Commonwealth nations not in the record (e.g., Papua New Guinea, Sri Lanka, Uganda, Nigeria, Cameroon, Mozambique, Tanzania) — these appear to be excluded from the blanket Commonwealth exemption and may require visas; not independently verified from a parseable official source during this validation."
+      "Commonwealth exclusions (Fiji, Sri Lanka, Nigeria, Uganda, Tanzania, Cameroon, Papua New Guinea, Mozambique) confirmed via tntairports.com (TT airport authority) as requiring visas; these are correctly absent from the visa_free list. Re-verified 2026-06-29 - same exclusion list active.",
+      "PENDING OFFICIAL CONFIRMATION - Paraguay: A bilateral visa-free agreement was signed 27 June 2024 at the OAS 54th General Assembly by TT Foreign Minister Dr Amery Browne and Paraguay Foreign Minister Rubén Darío Ramírez Lezcano, covering ordinary/official/diplomatic passports for up to 90 days (reciprocal). Source: newsday.co.tt/2024/06/28/visa-free-travel-between-trinidad-and-tobago-paraguay/ and tobagoupdates.com. Wikipedia also lists Paraguay as 90-day visa-free for TT entry. However, this has NOT been confirmed from a live parseable .gov.tt page (e.g., nationalsecurity.gov.tt PDF or foreign.gov.tt news release). NOT added to visa_free per safety rule. Should be upgraded to visa_free once confirmed via official .gov.tt source.",
+      "PENDING OFFICIAL CONFIRMATION - United Arab Emirates (UAE): A mutual visa-exemption agreement was signed 27 September 2025 at the 80th UN General Assembly by TT Foreign Minister Sean Sobers and UAE Deputy PM Sheikh Abdullah bin Zayed Al Nahyan, covering UAE holders of ordinary, diplomatic, special, and mission passports for visa-free TT entry (duration unspecified in available sources). Sources: khaleejtimes.com, dubaieye1038.com, arnnewscentre.ae. Wikipedia also lists UAE as 90-day visa-free for TT entry. However, this has NOT been confirmed from a live parseable .gov.tt page. NOT added to visa_free per safety rule. Should be upgraded to visa_free once confirmed via official .gov.tt source.",
+      "EU countries max-stay rule: tntairports.com (semi-official) notes older EU members get 90 days within a 180-day period; current record records null max_stay for older EU members and 30 days for newer EU members (per Cabinet Note 2762). The 180-day window rule for older EU states is plausible but not independently confirmed from a parseable .gov.tt source."
     ]
   },
   "sources_checked": [
     {
       "url": "https://nationalsecurity.gov.tt/wp-content/uploads/2024/02/List-of-Countries-that-Do-Not-need-a-Visa-For-TT.pdf",
-      "description": "Official Ministry of National Security PDF: List of Countries that Do Not Need a Visa for TT (February 2024) — binary PDF, not directly parseable but referenced in official government search results",
+      "description": "Official Ministry of National Security PDF: List of Countries that Do Not Need a Visa for TT (February 2024) - binary PDF, not directly parseable but referenced in official government search results",
       "official": true
     },
     {
       "url": "https://foreign.gov.tt/documents/232/Visa-Requirements-for-all-Countries.pdf",
-      "description": "Official Ministry of Foreign and CARICOM Affairs PDF: Visa Requirements for All Countries — binary PDF; bilateral agreement details drawn from prior validated extraction",
+      "description": "Official Ministry of Foreign and CARICOM Affairs PDF: Visa Requirements for All Countries - binary PDF; bilateral agreement details drawn from prior validated extraction",
       "official": true
     },
     {
       "url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/",
-      "description": "Official Ministry of National Security: e-Visa Online Services page — confirmed e-visa system, cost (800 TTD multiple entry), and visa waiver on arrival for AUS/NZL/PHL",
+      "description": "Official Ministry of National Security: e-Visa Online Services page - confirmed e-visa system, cost (800 TTD multiple entry), and visa waiver on arrival for AUS/NZL/PHL",
       "official": true
     },
     {
@@ -1325,7 +1340,7 @@
     },
     {
       "url": "https://foreign.gov.tt/services/visas/",
-      "description": "Official Ministry of Foreign and CARICOM Affairs: Visas page — redirects to e-visa portal for details",
+      "description": "Official Ministry of Foreign and CARICOM Affairs: Visas page - redirects to e-visa portal for details",
       "official": true
     },
     {
@@ -1340,17 +1355,17 @@
     },
     {
       "url": "https://foreign.gov.tt/documents/146/Document_2_-_September_2025_Visa_application_instructions.pdf",
-      "description": "Official MFA: Visa Application Instructions (September 2025) — binary PDF; referenced in official search results and confirmed Venezuela visa requirement and other entry rules",
+      "description": "Official MFA: Visa Application Instructions (September 2025) - binary PDF; referenced in official search results and confirmed Venezuela visa requirement and other entry rules",
       "official": true
     },
     {
       "url": "https://nationalsecurity.gov.tt/faq/how-to-apply-for-a-visa-to-enter-trinidad-and-tobago/",
-      "description": "Official Ministry of National Security FAQ: How to apply for a visa — confirms visa requirement process; Asian/African/Far-East countries require 4-week advance submission",
+      "description": "Official Ministry of National Security FAQ: How to apply for a visa - confirms visa requirement process; Asian/African/Far-East countries require 4-week advance submission",
       "official": true
     },
     {
       "url": "https://nationalsecurity.gov.tt/appforms/residence/",
-      "description": "Official Ministry of National Security: Residence application forms page — confirmed 4 pathways for permanent residence",
+      "description": "Official Ministry of National Security: Residence application forms page - confirmed 4 pathways for permanent residence",
       "official": true
     },
     {
@@ -1362,6 +1377,208 @@
       "url": "https://nationalsecurity.gov.tt/services/work-permit/",
       "description": "Official Ministry of National Security: Work Permits page",
       "official": true
+    },
+    {
+      "url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/student-permit/",
+      "description": "Official Ministry of National Security: Student Permit Online page - confirmed fees (200 TTD CARICOM / 400 TTD non-CARICOM), passport validity requirement (1 year), and UWI St Augustine exemption",
+      "official": true
+    },
+    {
+      "url": "https://nationalsecurity.gov.tt/services/ministerspermits/",
+      "description": "Official Ministry of National Security: Minister's Permits page - confirmed permit type exists; fee/processing details not published",
+      "official": true
+    },
+    {
+      "url": "https://nationalsecurity.gov.tt/services/workpermit-exemptionextension/",
+      "description": "Official Ministry of National Security: Work Permit Exemption Extension for Registered Venezuelan Nationals page",
+      "official": true
+    },
+    {
+      "url": "https://tntairports.com/travel/before-you-fly/visa-requirements/",
+      "description": "Trinidad and Tobago Airports Authority: Visa Requirements page - semi-official (TT state airport authority); confirmed Commonwealth exclusions from blanket visa-free exemption (Fiji, Sri Lanka, Nigeria, Uganda, Tanzania, Cameroon, Papua New Guinea, Mozambique, Australia, New Zealand) and EU/Schengen 90-day within 180-day rule. Re-checked 2026-06-29: South Africa NOT in exception list (consistent with record); same exclusions active.",
+      "official": false
+    },
+    {
+      "url": "https://foreign.gov.tt/resources/news/",
+      "description": "Official Ministry of Foreign and CARICOM Affairs news archive. Checked 2026-06-29: no Paraguay or UAE visa-free announcement visible on current page; recent items are June 2026 news (UN Security Council, Venezuela solidarity, etc.). Paraguay agreement (June 2024) not directly visible — may be in older archive pages not loaded.",
+      "official": true
+    },
+    {
+      "url": "https://newsday.co.tt/2024/06/28/visa-free-travel-between-trinidad-and-tobago-paraguay/",
+      "description": "Trinidad and Tobago Newsday: Report on visa-free agreement between TT and Paraguay signed 27 June 2024 at OAS 54th General Assembly. Confirms ordinary/official/diplomatic passports covered, 90-day stay, reciprocal. Non-official news source but reporting on a government-signed bilateral agreement.",
+      "official": false
+    },
+    {
+      "url": "https://www.khaleejtimes.com/uae/uae-citizens-visa-free-entry-trinidad-and-tobago",
+      "description": "Khaleej Times: Report on UAE-TT mutual visa exemption agreement signed 27 September 2025 at 80th UN General Assembly. Confirms UAE ordinary/diplomatic/special/mission passport holders get visa-free TT entry. Non-official UAE news source reporting on a government-signed bilateral agreement.",
+      "official": false
+    }
+  ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "eVisa (Multiple Entry)",
+      "purpose": "For foreign nationals who require a visa to enter Trinidad and Tobago for tourism, vacation, or business visits. All entry visas are issued electronically; no physical stamp in the passport.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 118,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/",
+      "notes": "Fee is 800 TTD (approx. USD 118). Application via the official eVisa portal. Passport must be valid for at least 6 months. A digital passport photograph (JPG) and supporting documents (PDF) are required. Payment by Visa or Mastercard only. Possession of an eVisa does not guarantee entry into Trinidad and Tobago. Applicants from Asian, African, and Far-East countries are advised to apply at least 4 weeks in advance. Contact: immigration.visas@gov.tt."
+    },
+    {
+      "category": "business",
+      "name": "eVisa (Multiple Entry) - Business",
+      "purpose": "For foreign nationals visiting Trinidad and Tobago for business purposes, meetings, conferences, or commercial activities. Issued under the same electronic visa system as tourist visas.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 118,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/",
+      "notes": "Fee is 800 TTD (approx. USD 118). Same application process as tourist eVisa. Trinidad and Tobago does not separately categorise tourist and business eVisas on the official portal; both are issued as the general multiple-entry eVisa."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For foreign nationals passing through Trinidad and Tobago in transit to another destination who require a visa under normal circumstances.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/",
+      "notes": "Bona fide operating crew of aircraft or seagoing vessels do not require a visa regardless of nationality. For other transit passengers who are nationals of countries requiring a visa, a transit visa must be obtained in advance. Specific fee and processing details not published on official government websites; applicants should contact immigration.visas@gov.tt."
+    },
+    {
+      "category": "student",
+      "name": "Student Permit",
+      "purpose": "Required for all foreign nationals (except Trinidad and Tobago residents) intending to study in Trinidad and Tobago for the full duration of their studies.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 29,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/student-permit/",
+      "notes": "Fee: 200 TTD (approx. USD 29) for CARICOM nationals; 400 TTD (approx. USD 59) for non-CARICOM nationals. Application via the eStudentPermit portal at estudentpermit.ttservices.online. Passport must be valid for at least 1 year. Digital passport photo and supporting documents required. Registered full-time students at the University of the West Indies St Augustine Campus are exempt. Renewals require an Assessment Form. Contact: immigration.studentpermits@gov.tt."
+    },
+    {
+      "category": "work",
+      "name": "Work Permit",
+      "purpose": "Required for any non-national of Trinidad and Tobago seeking employment in the country. Covers both individual and group work permit applications.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 66,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://nationalsecurity.gov.tt/services/work-permit/",
+      "notes": "Fee is 450 TTD per month for the approved period (approx. USD 66/month). Individual applications (1–9 persons) are processed exclusively online via TTBizLink. Group applications (10+ persons) may use fillable PDF forms or the online portal. Persons working for no more than 30 days in any 12 consecutive months are exempt from requiring a work permit. Extensions are available. Contact: eworkpermithelpdesk@mhs.gov.tt or 624-7513."
+    },
+    {
+      "category": "other",
+      "name": "Minister's Permit",
+      "purpose": "A special discretionary permit issued by the Minister with authority over immigration for cases that do not fall under standard visa or work permit categories.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://nationalsecurity.gov.tt/services/ministerspermits/",
+      "notes": "Application method and specific fee not published on official government websites. Issued at ministerial discretion. Contact: corpcomm@mhs.gov.tt or Level 19-21, Tower C, International Waterfront Centre, Port of Spain (224-4667)."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa Waiver on Arrival",
+      "purpose": "Allows nationals of Australia, New Zealand, and the Philippines to obtain a waiver of the visa requirement upon arrival at a port of entry in Trinidad and Tobago for short tourism or business visits.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 59,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/",
+      "notes": "Available only to nationals of Australia, New Zealand, and the Philippines. Fee is 400 TTD (approx. USD 59). Single entry. Maximum stay 30 days. Issued at ports of entry. Possession of a waiver does not guarantee entry."
+    },
+    {
+      "category": "other",
+      "name": "Extension of Stay",
+      "purpose": "Allows visitors already legally in Trinidad and Tobago to extend their permitted stay beyond the period initially granted by immigration upon arrival.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/",
+      "notes": "Appointments must be made at least 2 weeks in advance at regional immigration offices (north, south, Tobago). Specific fee and maximum extension period not published on official government websites. Contact the Immigration Division at immigration.information@gov.tt."
+    },
+    {
+      "category": "work",
+      "name": "Work Permit Exemption Extension (Venezuelan Nationals)",
+      "purpose": "A special work permit exemption extension available specifically for registered Venezuelan nationals lawfully present in Trinidad and Tobago.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://nationalsecurity.gov.tt/services/workpermit-exemptionextension/",
+      "notes": "Available only to registered Venezuelan nationals. Application is made online. Specific eligibility criteria, fees, and duration not fully published on the official government overview page."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Official Visa Exemption",
+      "purpose": "Bearers of diplomatic, official, or service passports from countries with bilateral agreements are exempt from visa requirements for the duration of their accredited assignment or up to a specified period.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.tt/documents/232/Visa-Requirements-for-all-Countries.pdf",
+      "notes": "Exempt nationalities under diplomatic/official passport bilateral agreements include: Argentina, Brazil, China (diplomatic/official/service), Costa Rica, Cuba (diplomatic/official/service), Haiti (diplomatic/official/service), Mexico, Panama, Venezuela (accredited diplomatic/official/service only; ordinary Venezuelan passports require a visa since June 2019). Terms vary by bilateral agreement - some cover the duration of accreditation, others up to 3 months for non-accredited holders."
+    },
+    {
+      "category": "student",
+      "name": "CARICOM Skills Certificate (CSME Free Movement)",
+      "purpose": "Allows eligible CARICOM nationals holding a Certificate of Recognition of CARICOM Skills Qualification to live and work freely in Trinidad and Tobago under the CARICOM Single Market and Economy framework.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.tt/services/csme/",
+      "notes": "Available to CARICOM nationals in 12 approved skill categories: University Graduates, Artistes, Musicians, Media Workers, Sportspersons, Nurses, Teachers, Artisans, Associate Degree Holders, Domestic Workers, Agricultural Workers, and Private Security Officers. Processing time is 5–6 weeks minimum. Provides indefinite stay subject to immigration requirements. Not a visa per se but a rights instrument under Article 46 of the Revised Treaty of Chaguaramas."
     }
   ],
   "outbound_official": {

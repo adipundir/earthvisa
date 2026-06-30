@@ -42,10 +42,17 @@ const GROUP_ISO3: Record<string, string> = {
 };
 
 const LEVEL_STYLE: Record<AccessLevel, string> = {
-  visa_free: "text-vfree ring-vfree/45 bg-vfree/10",
-  visa_on_arrival: "text-voa ring-voa/45 bg-voa/10",
-  eta: "text-eta ring-eta/45 bg-eta/10",
-  e_visa: "text-evisa ring-evisa/45 bg-evisa/10",
+  visa_free:       "text-vfree bg-vfree/[0.08] border border-vfree/25",
+  visa_on_arrival: "text-voa bg-voa/[0.08] border border-voa/25",
+  eta:             "text-eta bg-eta/[0.08] border border-eta/25",
+  e_visa:          "text-evisa bg-evisa/[0.08] border border-evisa/25",
+};
+
+const LEVEL_LEFT_BORDER: Record<AccessLevel, string> = {
+  visa_free:       "border-l-vfree",
+  visa_on_arrival: "border-l-voa",
+  eta:             "border-l-eta",
+  e_visa:          "border-l-evisa",
 };
 
 const CRED_SHORT: Record<string, string> = Object.fromEntries(
@@ -115,10 +122,27 @@ export default function PassportExplorer() {
   const [typeOpen, setTypeOpen] = useState<string | null>(null);
   const [tab, setTab] = useState<TabKey>("visa_free");
   const [reachFilter, setReachFilter] = useState("");
+  const [hi, setHi] = useState(-1); // highlighted option index in the passport combobox
   const [detail, setDetail] = useState<Detail | null>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const credBoxRef = useRef<HTMLDivElement>(null);
   const typeRefs = useRef<Record<string, HTMLElement | null>>({});
+
+  // Seed selection from deep-link query params (e.g. /?passport=IND,DEU&cred=US_VISA)
+  // so links from the static passport/destination pages land pre-filled.
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const valid = new Set(dataset.allCountries.map((c) => c.iso3));
+    const passports = (sp.get("passport") ?? "")
+      .split(",").map((s) => s.trim().toUpperCase()).filter((s) => valid.has(s));
+    if (passports.length) {
+      setSelected(passports);
+      setPtypes(Object.fromEntries(passports.map((p) => [p, "ordinary" as PassportType])));
+    }
+    const credParam = (sp.get("cred") ?? "")
+      .split(",").map((s) => s.trim()).filter((id) => dataset.credentials.some((c) => c.id === id));
+    if (credParam.length) setCreds(credParam);
+  }, []);
 
   useEffect(() => {
     if (!detail) return;
@@ -127,19 +151,6 @@ export default function PassportExplorer() {
     return () => document.removeEventListener("keydown", onKey);
   }, [detail]);
 
-  useEffect(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem("bw.passports") || "[]");
-      if (Array.isArray(saved) && saved.length) setSelected(saved);
-      const savedC = JSON.parse(localStorage.getItem("bw.creds") || "[]");
-      if (Array.isArray(savedC) && savedC.length) setCreds(savedC);
-      const savedPtypes = JSON.parse(localStorage.getItem("bw.ptypes") || "{}");
-      if (savedPtypes && typeof savedPtypes === "object") setPtypes(savedPtypes);
-    } catch {}
-  }, []);
-  useEffect(() => { try { localStorage.setItem("bw.passports", JSON.stringify(selected)); } catch {} }, [selected]);
-  useEffect(() => { try { localStorage.setItem("bw.creds", JSON.stringify(creds)); } catch {} }, [creds]);
-  useEffect(() => { try { localStorage.setItem("bw.ptypes", JSON.stringify(ptypes)); } catch {} }, [ptypes]);
 
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -215,26 +226,26 @@ export default function PassportExplorer() {
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
 
-      {/* ── Passport search — full width ── */}
+      {/* ── Passport search - full width ── */}
       <div className="mt-8">
         <div className="mb-3">
           <p className="font-display text-[17px] font-semibold text-ink">Your Passport(s)</p>
-          <p className="mt-0.5 text-sm text-ink-soft">Enter the country whose passport you hold — add multiple if you have dual citizenship</p>
+          <p className="mt-0.5 text-sm text-ink-soft">Enter the country whose passport you hold - add multiple if you have dual citizenship</p>
         </div>
 
         <div ref={boxRef} className="relative z-30 w-full">
           {/* Full-width search box */}
-          <div className="flex min-h-[3.75rem] w-full flex-wrap items-center gap-2 rounded-lg border-2 border-line-strong bg-paper-2 px-4 py-3 transition-all focus-within:border-stamp/70 focus-within:shadow-[0_0_0_3px_rgba(178,53,40,0.07)]">
+          <div className="flex min-h-[3.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-3 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
               const isOpen = typeOpen === iso3;
               return (
-                <span key={iso3} className="inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-3/70 px-2.5 py-1.5 text-[14px] text-ink">
+                <span key={iso3} className="group/chip inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-2 px-2.5 py-1.5 text-[14px] text-ink">
                   <span className="text-lg leading-none">{flagFor(iso3)}</span>
                   <span className="font-display font-semibold">{nameFor(iso3)}</span>
 
-                  {/* per-passport type selector */}
+                  {/* per-passport type selector - always visible so touch/keyboard users can reach it */}
                   <span
                     className="relative ml-0.5"
                     ref={(el) => { typeRefs.current[iso3] = el; }}
@@ -295,7 +306,7 @@ export default function PassportExplorer() {
 
                   <button
                     onClick={() => remove(iso3)}
-                    className="grid h-4 w-4 place-items-center rounded-full text-[11px] text-ink-mute transition hover:bg-stamp/20 hover:text-stamp"
+                    className="ml-0.5 grid h-6 w-6 place-items-center rounded-full text-[14px] text-ink-mute transition hover:bg-stamp/20 hover:text-stamp"
                     aria-label={`Remove ${nameFor(iso3)}`}
                   >×</button>
                 </span>
@@ -303,21 +314,35 @@ export default function PassportExplorer() {
             })}
             <input
               value={query}
-              onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
+              onChange={(e) => { setQuery(e.target.value); setOpen(true); setHi(-1); }}
               onFocus={() => setOpen(true)}
-              placeholder={selected.length ? "Add another country…" : "Type a country name — e.g. India, Germany, Nigeria, United States…"}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") { setOpen(false); setHi(-1); }
+                else if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setHi((h) => Math.min(h + 1, options.length - 1)); }
+                else if (e.key === "ArrowUp") { e.preventDefault(); setHi((h) => Math.max(h - 1, 0)); }
+                else if (e.key === "Enter") { const pick = options[hi] ?? options[0]; if (pick) { e.preventDefault(); add(pick.iso3); setHi(-1); } }
+              }}
+              role="combobox"
+              aria-expanded={open && options.length > 0}
+              aria-controls="passport-listbox"
+              aria-autocomplete="list"
+              aria-activedescendant={hi >= 0 ? `passport-opt-${hi}` : undefined}
+              aria-label="Search for a passport country"
+              placeholder={selected.length ? "Add another country…" : "Search for a country…"}
               className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/55"
             />
           </div>
 
-          {/* Dropdown */}
           {open && options.length > 0 && (
-            <ul className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-ink/20">
-              {options.map((c) => (
-                <li key={c.iso3}>
+            <ul id="passport-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-white py-1 shadow-xl shadow-ink/10">
+              {options.map((c, i) => (
+                <li key={c.iso3} role="option" id={`passport-opt-${i}`} aria-selected={hi === i}>
                   <button
-                    onClick={() => add(c.iso3)}
-                    className="flex w-full items-center gap-3 px-4 py-2.5 text-left transition hover:bg-stamp/[0.06]"
+                    type="button"
+                    tabIndex={-1}
+                    onClick={() => { add(c.iso3); setHi(-1); }}
+                    onMouseEnter={() => setHi(i)}
+                    className={`flex w-full items-center gap-3 px-4 py-2.5 text-left transition ${hi === i ? "bg-paper-2" : "hover:bg-paper-2"}`}
                   >
                     <span className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
@@ -332,12 +357,12 @@ export default function PassportExplorer() {
         {/* Quick-add popular countries */}
         {selected.length === 0 && !query && (
           <div className="mt-2.5 flex flex-wrap items-center gap-2">
-            <span className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute/70">Popular:</span>
+            <span className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Popular:</span>
             {EXAMPLE_PASSPORTS.map((iso3) => (
               <button
                 key={iso3}
                 onClick={() => add(iso3)}
-                className="inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-2/80 px-3 py-1.5 text-[13px] text-ink-soft transition hover:border-stamp/40 hover:bg-stamp/[0.04] hover:text-ink"
+                className="inline-flex items-center gap-1.5 rounded border border-line-strong bg-white px-3 py-1.5 text-[13px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
               >
                 <span>{flagFor(iso3)}</span>
                 <span>{nameFor(iso3)}</span>
@@ -348,7 +373,7 @@ export default function PassportExplorer() {
 
       </div>
 
-      {/* ── Visas & permits — search-based selector ── */}
+      {/* ── Visas & permits - search-based selector ── */}
       <div className="mt-8">
         <div className="mb-3">
           <p className="font-display text-[17px] font-semibold text-ink">
@@ -359,7 +384,7 @@ export default function PassportExplorer() {
         </div>
 
         <div ref={credBoxRef} className="relative z-20 w-full">
-          <div className={`flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border-2 bg-paper-2 px-4 py-2.5 transition-all ${credOpen ? "border-stamp/70 shadow-[0_0_0_3px_rgba(178,53,40,0.07)]" : "border-line-strong"}`}>
+          <div className={`flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2.5 transition-all ${credOpen ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]" : "border-line-strong"}`}>
             {/* Selected credential chips */}
             {creds.map((credId) => {
               const c = dataset.credentials.find((x) => x.id === credId);
@@ -370,7 +395,7 @@ export default function PassportExplorer() {
                   <span className="font-display font-medium">{c.short}</span>
                   <button
                     onClick={() => toggleCred(credId)}
-                    className="ml-0.5 grid h-4 w-4 place-items-center rounded-full text-[11px] transition hover:bg-stamp/20"
+                    className="ml-0.5 grid h-6 w-6 place-items-center rounded-full text-[14px] transition hover:bg-stamp/20"
                     aria-label={`Remove ${c.short}`}
                   >×</button>
                 </span>
@@ -380,7 +405,9 @@ export default function PassportExplorer() {
               value={credQuery}
               onChange={(e) => { setCredQuery(e.target.value); setCredOpen(true); }}
               onFocus={() => setCredOpen(true)}
-              placeholder={creds.length ? "Add another visa or permit…" : "Search by country — e.g. Japan visa, US Green Card, Schengen…"}
+              onKeyDown={(e) => { if (e.key === "Escape") setCredOpen(false); }}
+              aria-label="Search visas and permits you hold"
+              placeholder={creds.length ? "Add another visa or permit…" : "Search by country - e.g. Japan visa, US Green Card, Schengen…"}
               className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/55"
             />
             {creds.length > 0 && (
@@ -390,9 +417,8 @@ export default function PassportExplorer() {
             )}
           </div>
 
-          {/* Credential dropdown */}
-          {credOpen && credGroupOptions.length > 0 && (
-            <div className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-paper-2 shadow-2xl shadow-ink/20">
+          {credOpen && (
+            <div className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-white shadow-xl shadow-ink/10">
               {credGroupOptions.map(({ name, items }) => (
                 <div key={name} className="border-b border-line last:border-0">
                   <div className="flex items-center gap-2.5 px-4 pt-3 pb-2">
@@ -405,12 +431,12 @@ export default function PassportExplorer() {
                       return (
                         <button
                           key={c.id}
-                          onClick={() => { toggleCred(c.id); }}
+                          onClick={() => { toggleCred(c.id); setCredOpen(false); }}
                           aria-pressed={on}
-                          className={`inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-[12px] transition ${
+                          className={`inline-flex items-center gap-1.5 rounded border px-3 py-1.5 text-[12px] transition ${
                             on
-                              ? "border-stamp bg-stamp/10 font-semibold text-stamp"
-                              : "border-line-strong bg-paper-2/80 text-ink-soft hover:border-stamp/50 hover:text-ink"
+                              ? "border-stamp/40 bg-stamp/[0.06] font-semibold text-stamp"
+                              : "border-line-strong bg-white text-ink-soft hover:border-ink-mute hover:text-ink"
                           }`}
                         >
                           {on && <span className="text-[10px] font-bold">✓</span>}
@@ -426,6 +452,25 @@ export default function PassportExplorer() {
               )}
             </div>
           )}
+        {creds.length === 0 && !credQuery && (
+          <div className="mt-2.5 flex flex-wrap items-center gap-2">
+            <span className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Common:</span>
+            {["US_VISA", "SCHENGEN_VISA", "UK_VISA", "JP_VISA", "CA_VISA", "AU_VISA"].map((id) => {
+              const c = dataset.credentials.find((x) => x.id === id);
+              if (!c) return null;
+              return (
+                <button
+                  key={id}
+                  onClick={() => toggleCred(id)}
+                  className="inline-flex items-center gap-1.5 rounded border border-line-strong bg-white px-3 py-1.5 text-[13px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
+                >
+                  <span>{GROUP_ISO3[c.group] ? flagFor(GROUP_ISO3[c.group]) : "🌐"}</span>
+                  <span>{c.short}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
         </div>
       </div>
 
@@ -464,18 +509,18 @@ export default function PassportExplorer() {
 
 function EmptyState({ onAdd }: { onAdd: (iso3: string) => void }) {
   return (
-    <div className="reveal mt-14 overflow-hidden rounded-sm border border-line-strong bg-paper-2/60 px-6 py-16 text-center">
+    <div className="reveal mt-14 overflow-hidden rounded-xl border border-line bg-white px-6 py-16 text-center">
       <PassportBook className="mx-auto h-14 w-14 text-ink/75" />
       <h2 className="font-display mt-5 text-2xl font-semibold text-ink">Add your passport above to get started</h2>
       <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
-        See visa-free destinations, freedom-of-movement rights, golden visas, citizenship programs, and fast-track immigration open to you — all from official government sources.
+        See visa-free destinations, freedom-of-movement rights, golden visas, citizenship programs, and fast-track immigration open to you - all from official government sources.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-2">
         {EXAMPLE_PASSPORTS.slice(0, 6).map((iso3) => (
           <button
             key={iso3}
             onClick={() => onAdd(iso3)}
-            className="mono inline-flex items-center gap-2 rounded-sm border border-line-strong bg-paper-2 px-3 py-2 text-[12px] text-ink-soft transition hover:border-stamp/50 hover:bg-stamp/[0.05] hover:text-ink"
+            className="mono inline-flex items-center gap-2 rounded border border-line-strong bg-white px-3 py-2 text-[12px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
           >
             <span className="text-base">{flagFor(iso3)}</span>
             {nameFor(iso3)}
@@ -496,23 +541,21 @@ function StatBand({ result, activeTab, setTab }: {
   const strongest = result.perPassportReach[0];
   const etaCount = result.reachByLevel.eta.length + result.reachByLevel.e_visa.length;
 
-  const cards: { tab: TabKey; count: number; label: string; accent: string; border: string; bg: string; tooltip: string }[] = [
+  const cards: { tab: TabKey; count: number; label: string; accent: string; activeBar: string; tooltip: string }[] = [
     {
       tab: "visa_free",
       count: result.reachByLevel.visa_free.length,
       label: "Visa-free",
       accent: "text-vfree",
-      border: "border-vfree/30",
-      bg: "bg-vfree/[0.05]",
-      tooltip: "You can enter with just your passport — no visa application, no fee, no border paperwork. Walk straight through.",
+      activeBar: "border-t-vfree",
+      tooltip: "You can enter with just your passport - no visa application, no fee, no border paperwork. Walk straight through.",
     },
     {
       tab: "visa_on_arrival",
       count: result.reachByLevel.visa_on_arrival.length,
       label: "Visa on arrival",
       accent: "text-voa",
-      border: "border-voa/30",
-      bg: "bg-voa/[0.05]",
+      activeBar: "border-t-voa",
       tooltip: "You get a stamp or sticker at the airport when you land. No pre-application needed, but you typically pay a small fee on arrival.",
     },
     {
@@ -520,17 +563,15 @@ function StatBand({ result, activeTab, setTab }: {
       count: etaCount,
       label: "eTA / e-Visa",
       accent: "text-eta",
-      border: "border-eta/30",
-      bg: "bg-eta/[0.05]",
-      tooltip: "Apply online before you travel — usually takes minutes to a few days and costs a small fee. No embassy visit or paper visa needed.",
+      activeBar: "border-t-eta",
+      tooltip: "Apply online before you travel - usually takes minutes to a few days and costs a small fee. No embassy visit or paper visa needed.",
     },
     {
       tab: "fom",
       count: result.freedomOfMovement.length,
       label: "Free movement",
       accent: "text-bloc",
-      border: "border-bloc/30",
-      bg: "bg-bloc/[0.05]",
+      activeBar: "border-t-bloc",
       tooltip: "As a member of a regional bloc (EU, GCC, ECOWAS…) you have the right to live, work, and travel in fellow member states with no visa at all.",
     },
     {
@@ -538,17 +579,15 @@ function StatBand({ result, activeTab, setTab }: {
       count: result.cbi.length,
       label: "Citizenship (CBI)",
       accent: "text-stamp",
-      border: "border-stamp/30",
-      bg: "bg-stamp/[0.05]",
-      tooltip: "Obtain a second citizenship through a qualifying investment — typically a donation, real estate purchase, or government fund contribution.",
+      activeBar: "border-t-stamp",
+      tooltip: "Obtain a second citizenship through a qualifying investment - typically a donation, real estate purchase, or government fund contribution.",
     },
     {
       tab: "rbi",
       count: result.rbi.length,
       label: "Golden visas",
       accent: "text-voa",
-      border: "border-voa/30",
-      bg: "bg-voa/[0.05]",
+      activeBar: "border-t-voa",
       tooltip: "Residency-by-investment programs: make a qualifying investment and receive the right to live in that country, often with a path to citizenship later.",
     },
   ];
@@ -566,26 +605,25 @@ function StatBand({ result, activeTab, setTab }: {
         )}
       </div>
 
-      {/* clickable stat cards */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
         {cards.map((c, i) => (
           <div key={i} className="group relative">
             <button
               onClick={() => setTab(c.tab)}
-              className={`flex h-[4.75rem] w-full flex-col justify-center rounded-lg border-2 px-4 text-left transition hover:shadow-sm ${
+              aria-pressed={activeTab === c.tab}
+              className={`flex h-[4.5rem] w-full flex-col justify-center rounded-lg border px-4 text-left transition ${
                 activeTab === c.tab
-                  ? `${c.border} ${c.bg} shadow-sm`
-                  : "border-line-strong bg-paper-2/60 hover:border-line-strong/70"
+                  ? `border-t-[3px] ${c.activeBar} border-x-line-strong border-b-line-strong bg-paper-2 shadow-sm ring-1 ring-inset ring-stamp/15`
+                  : "border-line-strong bg-white hover:bg-paper-2"
               }`}
             >
-              <div className={`font-display text-3xl font-semibold tabular-nums leading-none ${c.accent}`}>{c.count}</div>
-              <div className="mono mt-1.5 flex items-center gap-1 text-[10px] uppercase tracking-[0.12em] text-ink-mute">
+              <div className={`font-display text-[28px] font-semibold tabular-nums leading-none ${c.accent}`}>{c.count}</div>
+              <div className="mono mt-1.5 flex items-center gap-1 text-[10px] uppercase tracking-[0.1em] text-ink-mute">
                 <span className="whitespace-nowrap">{c.label}</span>
-                <span className="ml-0.5 inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-ink-mute/40 text-[8px] font-bold leading-none text-ink-mute/60">?</span>
+                <span className="ml-0.5 inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-line-strong text-[8px] font-bold leading-none text-ink-mute">?</span>
               </div>
             </button>
-            {/* tooltip */}
-            <div className="pointer-events-none absolute bottom-full left-0 z-40 mb-2 w-56 rounded-md border border-line-strong bg-paper-2 p-3 text-[12px] leading-relaxed text-ink-soft shadow-xl opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+            <div className="pointer-events-none absolute bottom-full left-0 z-40 mb-2 w-56 rounded-md border border-line-strong bg-white p-3 text-[12px] leading-relaxed text-ink-soft shadow-lg opacity-0 transition-opacity duration-150 group-hover:opacity-100">
               {c.tooltip}
               <div className="absolute left-4 top-full h-0 w-0 border-x-4 border-t-4 border-x-transparent border-t-line-strong" />
             </div>
@@ -602,19 +640,19 @@ function StatBand({ result, activeTab, setTab }: {
           </p>
         )}
         <div className="ml-auto flex flex-wrap gap-2">
-          {result.transitReach.length > 0 && (
-            <button
-              onClick={() => setTab("transit")}
-              className={`mono inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] uppercase tracking-[0.12em] transition ${
-                activeTab === "transit"
-                  ? "border-eta/40 bg-eta/[0.07] text-eta"
-                  : "border-line-strong bg-paper-2/60 text-ink-mute hover:border-eta/40 hover:text-ink"
-              }`}
-            >
-              Transit access
-              <span className="tabular-nums">{result.transitReach.length}</span>
-            </button>
-          )}
+          <button
+            onClick={() => setTab("transit")}
+            aria-pressed={activeTab === "transit"}
+            title="Destinations you can transit (change planes) without a visa. Some appear only once a held visa unlocks them."
+            className={`mono inline-flex min-h-[36px] items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] uppercase tracking-[0.12em] transition ${
+              activeTab === "transit"
+                ? "border-eta/40 bg-eta/[0.07] text-eta"
+                : "border-line-strong bg-paper-2/60 text-ink-mute hover:border-eta/40 hover:text-ink"
+            }`}
+          >
+            Transit access
+            <span className="tabular-nums">{result.transitReach.length}</span>
+          </button>
           <button
             onClick={() => setTab("fast")}
             className={`mono inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] uppercase tracking-[0.12em] transition ${
@@ -664,32 +702,69 @@ const CATEGORY_COLOR: Record<string, string> = {
 };
 
 function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
+  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
+  const cats = Array.from(new Set(visaTypes.map(v => v.category)));
+  const filtered = categoryFilter ? visaTypes.filter(v => v.category === categoryFilter) : visaTypes;
   return (
-    <div className="mt-5">
-      <p className="mono mb-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
-        Visa types offered
+    <div className="mt-6 border-t border-line pt-6">
+      <p className="mono mb-3 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+        {visaTypes.length} visa type{visaTypes.length !== 1 ? "s" : ""} available
       </p>
-      <div className="divide-y divide-line/60">
-        {visaTypes.map((v, i) => (
-          <div key={i} className="flex items-center gap-3 py-2">
-            <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_COLOR[v.category] ?? "text-ink-soft bg-paper-3 ring-line"}`}>
-              {CATEGORY_LABEL[v.category] ?? v.category}
-            </span>
-            <span className="min-w-0 flex-1 truncate text-[12px] text-ink">{v.name}</span>
-            <span className="mono ml-auto flex shrink-0 items-center gap-3 text-[11px] text-ink-mute">
-              {v.max_stay_days != null && <span>≤{v.max_stay_days}d</span>}
+      {cats.length > 1 && (
+        <div className="mb-4 flex flex-wrap gap-1.5">
+          <button
+            onClick={() => setCategoryFilter(null)}
+            className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+          >All</button>
+          {cats.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setCategoryFilter(cat === categoryFilter ? null : cat)}
+              className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+            >{CATEGORY_LABEL[cat] ?? cat}</button>
+          ))}
+        </div>
+      )}
+      <div className="space-y-3">
+        {filtered.map((v, i) => (
+          <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+            <div className="flex flex-wrap items-start gap-2">
+              <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_COLOR[v.category] ?? "text-ink-soft bg-paper-3 ring-line"}`}>
+                {CATEGORY_LABEL[v.category] ?? v.category}
+              </span>
+              <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
+            </div>
+            {v.purpose && <p className="mt-1.5 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
+            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+              {v.max_stay_days != null && (
+                <span className="mono text-[11px] text-ink-mute"><span className="font-semibold text-ink">{v.max_stay_days}</span> days max stay</span>
+              )}
+              {v.validity_days != null && (
+                <span className="mono text-[11px] text-ink-mute">valid <span className="font-semibold text-ink">{v.validity_days}</span> days</span>
+              )}
+              {v.entries && (
+                <span className="mono text-[11px] text-ink-mute"><span className="font-semibold text-ink capitalize">{v.entries}</span> entry</span>
+              )}
               {v.fee_usd != null && (
-                <span className="text-stamp">{v.fee_usd === 0 ? "free" : `~$${v.fee_usd}`}</span>
+                <span className="mono text-[11px] text-ink-mute">fee: <span className="font-semibold text-stamp">{v.fee_usd === 0 ? "free" : `~$${v.fee_usd}`}</span></span>
               )}
-              {v.on_arrival && <span>on arrival</span>}
-              {!v.on_arrival && v.online && (
-                v.official_url
-                  ? <a href={v.official_url} target="_blank" rel="noreferrer" className="text-vfree hover:underline">online ↗</a>
-                  : <span className="text-vfree">online</span>
+              {(v.processing_days_min != null || v.processing_days_max != null) && (
+                <span className="mono text-[11px] text-ink-mute">processing: <span className="font-semibold text-ink">{v.processing_days_min != null && v.processing_days_max != null && v.processing_days_min !== v.processing_days_max ? `${v.processing_days_min}–${v.processing_days_max} days` : `${v.processing_days_min ?? v.processing_days_max} days`}</span></span>
               )}
-            </span>
+              {v.on_arrival && <span className="mono text-[11px] font-semibold text-voa">on arrival</span>}
+              {v.online && !v.on_arrival && <span className="mono text-[11px] font-semibold text-vfree">apply online</span>}
+            </div>
+            {v.notes && <p className="mt-2 line-clamp-2 text-[11px] leading-relaxed text-ink-mute">{v.notes}</p>}
+            {v.official_url && (
+              <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">
+                {hostOf(v.official_url)} ↗
+              </a>
+            )}
           </div>
         ))}
+        {filtered.length === 0 && (
+          <p className="text-sm text-ink-mute">No visa types match this filter.</p>
+        )}
       </div>
     </div>
   );
@@ -700,11 +775,13 @@ function DestinationResult({
   result,
   onOpen,
   onClear,
+  creds,
 }: {
   destIso3: string;
   result: ReturnType<typeof compute>;
   onOpen: (d: Detail) => void;
   onClear: () => void;
+  creds: string[];
 }) {
   const reach = result.reach.find((e) => e.dest === destIso3) as (CombinedEdge & { conditions?: string | null }) | undefined;
   const transit = result.transitReach.find((e) => e.dest === destIso3) as (CombinedEdge & { conditions?: string | null }) | undefined;
@@ -714,21 +791,23 @@ function DestinationResult({
   const flag = flagFor(destIso3);
   const name = nameFor(destIso3);
 
+  const leftBorder = reach
+    ? (LEVEL_LEFT_BORDER[reach.level] ?? "border-l-line-strong")
+    : fom ? "border-l-bloc"
+    : isOwnCountry ? "border-l-bloc"
+    : "border-l-ink-mute/40";
+
   return (
-    <div className="reveal mt-8 overflow-hidden rounded-lg border-2 border-bloc/25 bg-bloc/[0.03]">
-      {/* Header */}
+    <div className={`reveal mt-8 overflow-hidden rounded-xl border border-line-strong bg-white shadow-sm border-l-4 ${leftBorder}`}>
       <div className="flex items-center justify-between border-b border-line px-6 py-4">
         <div className="flex items-center gap-3">
           <span className="text-3xl leading-none">{flag}</span>
           <div>
-            <p className="mono text-[10px] uppercase tracking-[0.18em] text-ink-mute">Your access to</p>
+            <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Your access to</p>
             <h3 className="font-display text-xl font-semibold text-ink">{name}</h3>
           </div>
         </div>
-        <button
-          onClick={onClear}
-          className="mono text-[10px] uppercase tracking-[0.12em] text-ink-mute transition hover:text-stamp"
-        >
+        <button onClick={onClear} className="mono text-[10px] uppercase tracking-[0.12em] text-ink-mute transition hover:text-ink">
           Clear ×
         </button>
       </div>
@@ -738,68 +817,47 @@ function DestinationResult({
           <div className="flex items-center gap-3">
             <span className="text-2xl">🏠</span>
             <div>
-              <p className="font-display font-semibold text-ink">This is one of your home countries</p>
-              <p className="mt-0.5 text-sm text-ink-soft">You hold citizenship here — no visa needed to enter.</p>
+              <p className="font-semibold text-ink">This is one of your home countries</p>
+              <p className="mt-0.5 text-sm text-ink-soft">You hold citizenship here - no visa required.</p>
             </div>
           </div>
         ) : reach ? (
           <div>
-            {/* Access status */}
-            <div className="flex flex-wrap items-start gap-4">
-              <div className={`rounded-lg border-2 ${
-                reach.level === "visa_free" ? "border-vfree/30 bg-vfree/[0.06]"
-                : reach.level === "visa_on_arrival" ? "border-voa/30 bg-voa/[0.06]"
-                : "border-eta/30 bg-eta/[0.06]"
-              } px-5 py-3.5`}>
-                <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Access type</p>
-                <AccessPill level={reach.level} />
-                <p className={`mt-1.5 font-display text-sm font-medium ${
-                  reach.level === "visa_free" ? "text-vfree"
-                  : reach.level === "visa_on_arrival" ? "text-voa"
-                  : "text-eta"
-                }`}>
-                  {reach.level === "visa_free"
-                    ? "Enter with just your passport — no visa needed"
-                    : reach.level === "visa_on_arrival"
-                    ? "Get your visa at the airport on arrival"
-                    : "Apply online before travel"}
-                </p>
-              </div>
-
+            <div className="flex flex-wrap items-center gap-3">
+              <AccessPill level={reach.level} />
               {reach.maxStayDays != null && (
-                <div className="rounded-lg border-2 border-line-strong bg-paper-2/80 px-5 py-3.5">
-                  <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Maximum stay</p>
-                  <p className="font-display text-2xl font-semibold text-ink">{reach.maxStayDays}</p>
-                  <p className="mono text-[11px] text-ink-mute">days</p>
-                </div>
+                <span className="text-sm text-ink-soft">
+                  <span className="font-semibold text-ink">{reach.maxStayDays}</span> days max stay
+                </span>
               )}
-
               {reach.viaIso3 && (
-                <div className="rounded-lg border-2 border-line-strong bg-paper-2/80 px-5 py-3.5">
-                  <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Via passport</p>
-                  <p className="font-display font-semibold text-ink">{flagFor(reach.viaIso3)} {nameFor(reach.viaIso3)}</p>
-                </div>
+                <span className="text-sm text-ink-soft">
+                  via {flagFor(reach.viaIso3)} <span className="font-medium text-ink">{nameFor(reach.viaIso3)}</span>
+                </span>
               )}
-
               {reach.viaCredential && (
-                <div className="rounded-lg border-2 border-stamp/25 bg-stamp/[0.04] px-5 py-3.5">
-                  <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Unlocked by</p>
-                  <p className="font-display font-semibold text-stamp">{CRED_SHORT[reach.viaCredential] ?? "held visa"}</p>
-                </div>
+                <span className="mono rounded border border-stamp/30 bg-stamp/[0.05] px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-stamp">
+                  via {CRED_SHORT[reach.viaCredential] ?? "held visa"}
+                </span>
               )}
             </div>
+            <p className="mt-2 text-sm text-ink-soft">
+              {reach.level === "visa_free"
+                ? "Enter with just your passport - no visa application needed."
+                : reach.level === "visa_on_arrival"
+                ? "Get your visa stamp at the airport on arrival."
+                : "Apply online before you travel - no embassy visit required."}
+            </p>
 
-            {/* Conditions */}
             {(reach.conditions || reach.notes) && (
-              <div className="mt-4 rounded-md border border-eta/20 bg-eta/[0.04] px-4 py-3">
-                <p className="mono mb-1 text-[10px] uppercase tracking-[0.15em] text-eta">Conditions &amp; notes</p>
+              <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+                <p className="mono mb-1.5 text-[10px] uppercase tracking-[0.15em] text-ink-mute">Conditions &amp; notes</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
-                  {reach.conditions && reach.notes ? `${reach.conditions} — ${reach.notes}` : reach.conditions ?? reach.notes}
+                  {reach.conditions && reach.notes ? `${reach.conditions} - ${reach.notes}` : reach.conditions ?? reach.notes}
                 </p>
               </div>
             )}
 
-            {/* Source */}
             <div className="mt-4 flex items-center gap-3">
               {reach.sourceUrl && <SourceLink url={reach.sourceUrl} official={reach.sourceOfficial} />}
               <button
@@ -812,16 +870,15 @@ function DestinationResult({
           </div>
         ) : fom ? (
           <div>
-            <div className="flex items-start gap-4">
-              <div className="rounded-lg border-2 border-bloc/30 bg-bloc/[0.06] px-5 py-3.5">
-                <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Access type</p>
-                <p className="mt-0.5 font-display text-lg font-semibold text-bloc">Freedom of movement</p>
-                <p className="mt-1 text-sm text-ink-soft">Right to live and work — no visa required</p>
-              </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="mono inline-flex items-center rounded border border-bloc/30 bg-bloc/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-bloc">
+                Freedom of movement
+              </span>
+              <span className="text-sm text-ink-soft">Right to live and work - no visa required</span>
             </div>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {fom.groups.map((g) => (
-                <span key={g} className="mono rounded-[3px] bg-bloc/10 px-2 py-1 text-[10px] uppercase tracking-[0.1em] text-bloc">
+                <span key={g} className="mono rounded bg-paper-3 px-2 py-1 text-[10px] uppercase tracking-[0.1em] text-ink-soft">
                   {dataset.groupLabels[g] ?? g}
                 </span>
               ))}
@@ -829,50 +886,56 @@ function DestinationResult({
           </div>
         ) : transit ? (
           <div>
-            <div className="mb-3 rounded-md border border-eta/25 bg-eta/[0.05] px-4 py-3 text-sm leading-relaxed text-ink-soft">
-              <span className="mono mr-2 font-semibold uppercase tracking-[0.1em] text-eta">Transit only</span>
-              You can change planes or transit the country without a visa — but <strong className="font-semibold text-ink">not for tourism or extended stays</strong>.
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="mono inline-flex items-center rounded border border-eta/30 bg-eta/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-eta">
+                Transit only
+              </span>
+              {transit.maxStayDays != null && (
+                <span className="text-sm text-ink-soft">up to {transit.maxStayDays} hours</span>
+              )}
             </div>
-            {transit.maxStayDays != null && (
-              <p className="mono text-sm text-ink-mute">Transit up to {transit.maxStayDays} hours.</p>
-            )}
+            <p className="mt-2 text-sm text-ink-soft">
+              You can change planes or transit without a visa - but <strong className="font-medium text-ink">not for tourism or extended stays</strong>.
+            </p>
             {transit.conditions && <p className="mt-2 text-sm text-ink-soft">{transit.conditions}</p>}
           </div>
         ) : (
-          /* No access found */
           <div>
-            <div className="flex items-start gap-4">
-              <div className="rounded-lg border-2 border-stamp/25 bg-stamp/[0.04] px-5 py-4">
-                <p className="mono text-[10px] uppercase tracking-[0.15em] text-stamp">Access status</p>
-                <p className="mt-0.5 font-display text-lg font-semibold text-ink">Visa required</p>
-                <p className="mt-1 text-sm text-ink-soft">
-                  {result.selected.length === 0
-                    ? "Add your passport above to see visa requirements."
-                    : "No automatic access found with your current passport(s) and credentials. You will need to apply for a visa before travelling."}
-                </p>
-              </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="mono inline-flex items-center rounded border border-line-strong bg-paper-2 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-soft">
+                Visa required
+              </span>
             </div>
+            <p className="mt-2 text-sm text-ink-soft">
+              {result.selected.length === 0
+                ? "Add your passport above to see visa requirements."
+                : `No automatic access found with your current passport(s) and credentials. You will need to apply for a visa before travelling to ${name}.`}
+            </p>
             {result.selected.length > 0 && (
-              <div className="mt-4 rounded-md border border-line bg-paper-2/70 px-4 py-3">
+              <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
                 <p className="mono mb-2 text-[10px] uppercase tracking-[0.15em] text-ink-mute">What you can do</p>
                 <ul className="space-y-1.5 text-sm text-ink-soft">
                   <li>→ Apply for a tourist/visitor visa at {name}&apos;s embassy or consulate</li>
-                  <li>→ Check if holding a US, Schengen, UK, or Japan visa unlocks access (add credentials above)</li>
+                  {creds.length === 0 && (
+                    <li>→ Check if holding a US, Schengen, UK, or Japan visa unlocks access (add credentials above)</li>
+                  )}
                   {result.cbi.some(p => p.iso3 === destIso3) && (
-                    <li>→ <span className="font-medium text-stamp">CBI program available</span> — invest to obtain citizenship here</li>
+                    <li>→ <span className="font-medium text-stamp">CBI program available</span> - invest to obtain citizenship here</li>
                   )}
                   {result.rbi.some(p => p.iso3 === destIso3) && (
-                    <li>→ <span className="font-medium text-voa">Golden visa available</span> — invest to obtain residency here</li>
+                    <li>→ <span className="font-medium text-voa">Golden visa available</span> - invest to obtain residency here</li>
                   )}
                 </ul>
               </div>
             )}
-            {(() => {
-              const visaTypes = dataset.destinationVisaTypes?.[destIso3];
-              return visaTypes && visaTypes.length > 0 ? <VisaTypeCards visaTypes={visaTypes} /> : null;
-            })()}
           </div>
         )}
+        {!isOwnCountry && (() => {
+          const visaTypes = dataset.destinationVisaTypes?.[destIso3];
+          return visaTypes && visaTypes.length > 0 ? <VisaTypeCards visaTypes={visaTypes} /> : (
+            <p className="mt-4 text-[12px] text-ink-mute">Detailed visa type data not yet available for this country.</p>
+          );
+        })()}
       </div>
     </div>
   );
@@ -880,7 +943,7 @@ function DestinationResult({
 
 function AccessPill({ level }: { level: AccessLevel }) {
   return (
-    <span className={`mono rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${LEVEL_STYLE[level]}`}>
+    <span className={`mono inline-flex items-center rounded px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] ${LEVEL_STYLE[level]}`}>
       {LEVEL_LABEL[level]}
     </span>
   );
@@ -901,10 +964,11 @@ function SourceLink({ url, official }: { url: string; official: boolean }) {
 }
 
 function SourceDot({ official }: { official: boolean }) {
-  return <span className={`inline-block h-2 w-2 rounded-full ring-2 ${official ? "bg-vfree ring-vfree/30" : "bg-eta ring-eta/30"}`} title={official ? "Official government source" : "Non-official source"} />;
+  const label = official ? "Official government source" : "Non-official source";
+  return <span role="img" aria-label={label} className={`inline-block h-2 w-2 rounded-full ${official ? "bg-vfree" : "bg-eta"}`} title={label} />;
 }
 
-const CARD = "cursor-pointer rounded-sm border border-line bg-paper-2/70 shadow-[0_1px_2px_rgba(24,37,60,0.06)] transition hover:-translate-y-0.5 hover:border-stamp/40 hover:shadow-[0_8px_22px_-12px_rgba(24,37,60,0.45)] focus:outline-none focus-visible:ring-2 focus-visible:ring-stamp/50";
+const CARD = "cursor-pointer rounded-lg border border-line bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition hover:border-line-strong hover:shadow-[0_4px_12px_-4px_rgba(15,23,42,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-stamp/30";
 
 function ClickCard({ onOpen, className, style, children }: { onOpen: () => void; className?: string; style?: React.CSSProperties; children: React.ReactNode }) {
   return (
@@ -943,9 +1007,17 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
       <input
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
+        onKeyDown={(e) => { if (e.key === "Escape") setFilter(""); }}
+        aria-label="Filter destinations by name"
         placeholder="Filter destinations…"
         className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-paper-2/80 px-3 py-2 text-sm text-ink outline-none transition focus:border-ink/40 placeholder:text-ink-mute/70"
       />
+      {rows.length === 0 && (
+        <p className="rounded-lg border border-dashed border-line bg-paper-2/40 px-4 py-6 text-center text-sm text-ink-soft">
+          No destinations match &ldquo;{filter}&rdquo;.{" "}
+          <button onClick={() => setFilter("")} className="font-medium text-stamp underline-offset-2 hover:underline">Clear filter</button>
+        </p>
+      )}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {rows.map((e) => (
           <ClickCard key={e.dest} onOpen={() => onOpen(reachDetail(e))} className={`group flex items-start gap-3 p-3.5 ${CARD}`}>
@@ -970,7 +1042,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
                 {e.sourceUrl && <span className="mono inline-flex items-center gap-1.5 text-[11px] text-ink-mute"><SourceDot official={e.sourceOfficial} />{hostOf(e.sourceUrl)}</span>}
               </div>
               {e.notes && <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink-mute">{e.notes}</p>}
-              <span className="mono mt-1.5 block text-[10px] uppercase tracking-[0.1em] text-stamp opacity-0 transition group-hover:opacity-100">Click for details →</span>
+              <span className="mono mt-1.5 block text-[10px] uppercase tracking-[0.1em] text-stamp/50 transition group-hover:text-stamp">Details ›</span>
             </div>
           </ClickCard>
         ))}
@@ -986,7 +1058,7 @@ function TransitPanel({ result, onOpen }: { result: ReturnType<typeof compute>; 
     <div className="reveal">
       <div className="mb-5 rounded-md border border-eta/25 bg-eta/[0.05] px-4 py-3 text-sm leading-relaxed text-ink-soft">
         <span className="mono mr-2 font-semibold uppercase tracking-[0.1em] text-eta">Transit only</span>
-        These destinations allow you to change planes or transit the country without a visa — but{" "}
+        These destinations allow you to change planes or transit the country without a visa - but{" "}
         <strong className="font-semibold text-ink">not for tourism or extended stays</strong>. They appear here separately so they aren't confused with regular visa-free access.
       </div>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -1022,7 +1094,7 @@ function FomPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
   return (
     <div>
       <p className="mb-5 max-w-2xl leading-relaxed text-ink-soft">
-        Regional bloc privileges from your membership — these typically grant visa-free entry, and
+        Regional bloc privileges from your membership - these typically grant visa-free entry, and
         depending on the bloc the right to{" "}
         <span className="font-medium text-bloc">live and work</span> (e.g. EU/EEA, GCC, ECOWAS,
         Mercosur). Confirm the specific rights per bloc.
@@ -1034,7 +1106,7 @@ function FomPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
             onOpen={() => onOpen({
               iso3: e.dest, title: nameFor(e.dest), subtitle: "Freedom of movement",
               badges: e.groups.map((g) => ({ text: dataset.groupLabels[g] ?? g, tone: "bloc" as const })),
-              notes: "Shared regional-bloc membership — typically grants visa-free entry and, depending on the bloc, the right to live and work. Confirm the specific rights per bloc.",
+              notes: "Shared regional-bloc membership - typically grants visa-free entry and, depending on the bloc, the right to live and work. Confirm the specific rights per bloc.",
             })}
             className={`reveal flex items-center gap-3 border-bloc/20 bg-bloc/[0.04] p-3.5 ${CARD}`}
             style={{ animationDelay: `${(i % 10) * 35}ms` }}
@@ -1182,14 +1254,19 @@ function FastPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onO
 }
 
 function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void }) {
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, []);
   const toneCls = (tone: string) =>
     tone === "bloc" ? "bg-bloc/10 text-bloc ring-bloc/30"
       : tone === "vfree" ? "bg-vfree/10 text-vfree ring-vfree/30"
       : "bg-stamp/10 text-stamp ring-stamp/30";
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={detail.title}>
-      <div className="reveal absolute inset-0 bg-ink/40 backdrop-blur-[2px]" style={{ animationDuration: "0.25s" }} onClick={onClose} />
-      <div className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-sm border border-line-strong bg-paper-2 shadow-2xl shadow-ink/30" style={{ animationDuration: "0.3s" }}>
+      <div className="reveal absolute inset-0 bg-ink/30 backdrop-blur-[2px]" style={{ animationDuration: "0.25s" }} onClick={onClose} />
+      <div className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-xl border border-line-strong bg-white shadow-2xl shadow-ink/20" style={{ animationDuration: "0.3s" }}>
         <div className="rule-double flex items-start gap-3 px-6 pb-4 pt-6">
           <span className="text-4xl leading-none">{flagFor(detail.iso3)}</span>
           <div className="min-w-0 flex-1">
@@ -1242,7 +1319,7 @@ function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void 
 
 function Note({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-sm border border-dashed border-line-strong bg-paper-2/40 px-5 py-10 text-center leading-relaxed text-ink-soft">
+    <div className="rounded-xl border border-dashed border-line px-5 py-10 text-center leading-relaxed text-ink-soft">
       {children}
     </div>
   );

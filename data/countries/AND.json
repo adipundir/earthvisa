@@ -60,6 +60,323 @@
       "source_official": true
     }
   ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Règim turístic (Tourist Regime)",
+      "purpose": "Short-stay tourism and leisure visits to Andorra without engaging in any lucrative activity.",
+      "max_stay_days": 90,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Andorra does not issue its own tourist visa. EU/EEA nationals enter with national ID card or passport, no visa needed. Third-country nationals who require a Schengen visa must hold a double/multiple-entry Schengen visa; Andorra itself imposes no additional tourist visa. Maximum stay is 90 days within any 365-day period (Art. 15, Qualified Immigration Law). Work is strictly prohibited during tourist stay."
+    },
+    {
+      "category": "work",
+      "name": "Autorització de treball temporal de fronterer (Border/Frontier Worker Authorization)",
+      "purpose": "Allows foreign nationals residing outside Andorra to work in Andorra on a cross-border commuting basis.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Applicant must maintain legal residence outside Andorra. Duration up to 12 months; non-renewable without a mandatory waiting period. Limited to specific economic sector and designated activity. Both permanent and temporary border worker variants exist (Art. 24-25 of the Qualified Immigration Law)."
+    },
+    {
+      "category": "work",
+      "name": "Autorització d'immigració temporal (Temporary Immigration Authorization)",
+      "purpose": "Allows foreign nationals to reside and work in Andorra temporarily in a designated economic sector.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2026002",
+      "notes": "Duration up to 12 months; non-renewable (mandatory waiting period before a subsequent temporary authorization). Specific labor activity in a designated sector required. Requires an employment contract with an Andorran employer compliant with labor law and minimum wage. Art. 26 of the Qualified Immigration Law as amended."
+    },
+    {
+      "category": "work",
+      "name": "Autorització temporal per a joves amb opció de treball (Young Persons with Work Option)",
+      "purpose": "Temporary authorization for young foreign nationals to gain professional experience and training while working in Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Targets young workers under a specified age limit. Analogous to a working-holiday category. Art. 26 bis of the Qualified Immigration Law."
+    },
+    {
+      "category": "work",
+      "name": "Autorització per a treballadors d'empreses estrangeres (Foreign Company Workers Authorization)",
+      "purpose": "Allows employees of foreign companies (EU, EFTA, or G7 registered) to provide services in Andorra temporarily.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2026002",
+      "notes": "Eligible companies must be registered in EU, EFTA, or G7 countries. Duration up to 12 months; exceptions for public interest projects may exceed this. Valid health/accident insurance coverage required. Short-term work notification available for projects up to 30 days annually (up to 90 days for healthcare professionals). Fee applies for work of 5 or more business days. Art. 27 of the Qualified Immigration Law."
+    },
+    {
+      "category": "work",
+      "name": "Autorització de residència i treball (Residence and Work Authorization)",
+      "purpose": "Full residence and work authorization for foreign nationals with permanent and effective employment in Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Typically obtained after completing temporary authorizations or through direct qualification. Renewable; multi-year duration. Requires permanent and effective employment in Andorra. Art. 28 of the Qualified Immigration Law."
+    },
+    {
+      "category": "work",
+      "name": "Autorització de treball sense residència (Work Without Residence Authorization)",
+      "purpose": "Allows foreign nationals to work in Andorra without establishing residence, typically for commuters or short-duration workers.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "No residence requirement; commuting acceptable. Added by modified immigration law 16/2013 (Art. 28 bis of the Qualified Immigration Law)."
+    },
+    {
+      "category": "work",
+      "name": "Autorització de residència i treball per compte propi (Self-Employment Residence and Work Authorization)",
+      "purpose": "Allows foreign nationals to establish a self-employed business or professional activity in Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2026002",
+      "notes": "Foreign investment authorization required. Minimum capital participation of 34% in the Andorran entity. Non-refundable AFA contribution of €50,000 (plus €12,000 per dependent). Must reside at least 183 days per year. Professional authorization and professional association registration mandatory for regulated professions. Reservation period of 6 months. Exemptions available for innovation/digital economy initiatives. Art. 28 ter of the Qualified Immigration Law as amended by Llei 2/2026."
+    },
+    {
+      "category": "work",
+      "name": "Autorització de contractació en origen (Origin Country Recruitment Authorization)",
+      "purpose": "Facilitates collective recruitment of workers in their home countries for employment in Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 191,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2026002",
+      "notes": "Collective contract processing in workers' home countries. Internal transfers allowed within a company group if all entities are identified. Fee: €190.96. Specific procedures established by government regulation."
+    },
+    {
+      "category": "work",
+      "name": "Autorització de residència i treball per personal de centres d'ensenyament (Educational Institution Personnel Authorization)",
+      "purpose": "Residence and work authorization for teachers and administrative staff at recognized educational institutions in Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Renewable authorization. Requires employment contract at a recognized educational center. Covers both teachers and administrators (Art. 29 of the Qualified Immigration Law)."
+    },
+    {
+      "category": "student",
+      "name": "Autorització d'estudis, pràctiques, formació esportiva d'alt nivell o recerca (Study, Internship, Sports Training or Research Authorization)",
+      "purpose": "Allows foreign nationals to reside in Andorra for studies, internships, high-level sports training, or research activities.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Duration corresponds to the academic year with possibility of extension. Requires enrollment proof, sufficient economic means, and accommodation documentation. Limited part-time work permitted within specified hours. Covers studies, internships, high-level sports training, and research activities (Art. 30 of the Qualified Immigration Law)."
+    },
+    {
+      "category": "medical",
+      "name": "Autorització de residència en centres gerontològics o establiments sanitaris (Geriatric/Medical Care Center Residency Authorization)",
+      "purpose": "Allows foreign nationals to reside in Andorra while enrolled in a private geriatric center or medical/therapeutic facility.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Renewable authorization. Requires proof of enrollment in a recognized private care facility and documentation of payment for facility fees. Added by modified immigration law 16/2013 (Art. 30 bis of the Qualified Immigration Law)."
+    },
+    {
+      "category": "family",
+      "name": "Autorització de reagrupament familiar (Family Reunification Authorization)",
+      "purpose": "Allows foreign nationals to join family members who are legally resident in Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Eligible sponsors: Andorran nationals and foreign residents with a residence and work authorization. Eligible family members: spouse, children, and dependent parents. Spouse and children of working residents gain work authorization; other family members on a case-by-case basis. Renewable; duration linked to the sponsor's authorization (Art. 31 and 107-111 of the Qualified Immigration Law)."
+    },
+    {
+      "category": "retirement",
+      "name": "Autorització de residència sense activitat lucrativa (Residence Without Lucrative Activity)",
+      "purpose": "Passive residency for financially self-sufficient foreign nationals who wish to reside in Andorra without engaging in any economic activity.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2026002",
+      "notes": "Minimum investment of €1,000,000 in Andorran assets (real estate, corporate shares, debt instruments, collective investment funds, public debt, life insurance, or non-remunerated AFA deposits). Reduced to €400,000 if directed to the Andorran Housing Fund. Non-refundable AFA contribution of €50,000 for the principal applicant plus €12,000 per dependent (made non-refundable by Llei 2/2026). Investment must be completed within 6 months (extendable by 6 months). Minimum stay: 90 days per calendar year. Work/business activity not permitted. Initial authorization valid 2 years; first renewal 2 years; second renewal 3 years; subsequent renewals 10 years. Requires health screening by Immigration Medical Service and private health/disability insurance covering 100% of expenses in Andorra. Art. 32 and 95-97 of the Qualified Immigration Law as amended by Llei 2/2026 and Regulation R20251112A."
+    },
+    {
+      "category": "other",
+      "name": "Autorització de residència per a professionals amb projecció internacional (Residency for Professionals with International Projection)",
+      "purpose": "Residency authorization for recognized professionals, executives, and entrepreneurs whose activity generates at least 85% of income or work outside Andorra.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2026002",
+      "notes": "For professionals and entrepreneurs with an international client base; at least 85% of income/work must come from outside Andorra. Requires establishing or acquiring an Andorran company (minimum 34% shareholding). Non-refundable AFA contribution of €50,000 plus €12,000 per dependent. Investment of €1,000,000 in Andorran assets required (post-Llei 2/2026). Minimum stay: 90 days per year. Duration: 2-year initial; renewals at 2, 3, then 10 years. Art. 33 and 98-99 of the Qualified Immigration Law."
+    },
+    {
+      "category": "other",
+      "name": "Autorització de residència per a persones d'interès científic, cultural i esportiu (Scientific, Cultural, and Sports Interest Authorization)",
+      "purpose": "Residency authorization for internationally recognized researchers, artists, and professional athletes whose presence is of special interest to Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Requires demonstrable international prestige in the respective scientific, cultural, or sports field. Renewable. Art. 33 and 100-101 of the Qualified Immigration Law."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Autorització de residència per a nòmada digital (Digital Nomad Residency Authorization)",
+      "purpose": "Residency authorization for remote workers employed by foreign companies or self-employed serving exclusively non-Andorran clients, working via telecommunications from Andorra.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-per-a-nomada-digital",
+      "notes": "Introduced by Llei 42/2022 del 1 de desembre (Digital Economy, Entrepreneurship and Innovation Law). Annual quota: 50 permits for digital nomads, with a combined ceiling of 100 shared with the entrepreneurship program. Eligible for employees of foreign employers or self-employed workers serving non-Andorran clients only. No local Andorran clients or employers permitted. No requirement to incorporate an Andorran entity. Exempt from the €50,000 AFA non-refundable contribution. Private health and disability insurance required. Minimum stay: 90 days per calendar year. Initial authorization 2 years; first renewal 2 years; second renewal 3 years; subsequent renewals 10 years. Art. 33 bis and 101 quater-quinquies of the Qualified Immigration Law."
+    },
+    {
+      "category": "business",
+      "name": "Autorització de residència per a participants en el programa d'emprenedoria (Entrepreneur Program Residency Authorization)",
+      "purpose": "Residency authorization for entrepreneurs participating in the government's official entrepreneurship and innovation program.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-per-a-nomada-digital",
+      "notes": "Governed by Llei 42/2022. Requires prior authorization from the Ministry in charge of the economy. Annual quota of 50 permits; combined ceiling of 100 shared with the digital nomad category. Exempt from the €50,000 AFA contribution if the business project is validated by a government-recognized entity under digital economy/innovation/technological entrepreneurship criteria. Art. 33 ter and 101 sexies-septies of the Qualified Immigration Law."
+    },
+    {
+      "category": "other",
+      "name": "Autorització de residència i treball per a víctimes de tràfic d'éssers humans (Post-Trafficking Residence and Work Authorization)",
+      "purpose": "Temporary residence and work authorization for victims of human trafficking during and after their recovery period.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Humanitarian protection category. Added by anti-trafficking law 9/2017. Available to human trafficking victims after their protection/reflection period. Duration follows the recovery period. Art. 28 quater of the Qualified Immigration Law."
+    },
+    {
+      "category": "other",
+      "name": "Autorització de residència i treball per a protecció temporal (Temporary Protection Residence and Work Authorization)",
+      "purpose": "Temporary residence and work authorization for beneficiaries of humanitarian protection in Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/L2012009_12",
+      "notes": "Added by humanitarian protection law 4/2018. For persons granted temporary protection status. Duration is transitional and temporary. Art. 28 quinquies of the Qualified Immigration Law."
+    },
+    {
+      "category": "family",
+      "name": "Autorització de residència per a persones dependents (Dependent Persons Residency Authorization)",
+      "purpose": "Residency authorization for economically dependent family members of principal authorization holders in Andorra.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://portaljuridicandorra.ad/R20251112A",
+      "notes": "Duration linked to the sponsor/principal authorization holder's permit. Requires documentation of economic dependency and family relationship. Additional financial requirements apply: principal must demonstrate 300% of annual minimum salary plus 100% per dependent. Art. 91 of the Qualified Immigration Law and Regulation R20251112A."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -117,7 +434,7 @@
         "processing_time": "Not specified on official source",
         "official_url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-per-a-nomada-digital",
         "source_official": true,
-        "notes": "Introduced by Llei 42/2022 del 1 de desembre, d'economia digital, emprenedoria i innovació (Digital Economy, Entrepreneurship and Innovation Law), with implementing regulations from 2023. Annual quota of 50 permits for digital nomads; a combined ceiling of 100 applies across both the digital nomad and entrepreneurship categories. Exempt from the €50,000 AFA contribution (unlike passive residents). No obligation to incorporate an Andorran entity or register with social security. Minimum stay: 90 days per calendar year. Private health and disability insurance required. No work for Andorran clients/employers permitted. Permit duration: 2 years initially, first renewal 2 years, second renewal 3 years, subsequent renewals 10 years."
+        "notes": "Introduced by Llei 42/2022 del 1 de desembre, d'economia digital, emprenedoria i innovació (Digital Economy, Entrepreneurship and Innovation Law), with implementing regulations from 2023. Annual quota of 50 permits for digital nomads; a combined ceiling of 100 applies across both the digital nomad and entrepreneurship categories. Exempt from the €50,000 AFA non-refundable contribution (unlike passive residents). No obligation to incorporate an Andorran entity or register with social security. Minimum stay: 90 days per calendar year. Private health and disability insurance required. No work for Andorran clients/employers permitted. Permit duration: 2 years initially, first renewal 2 years, second renewal 3 years, subsequent renewals 10 years."
       },
       {
         "name": "Programa d'emprenedoria (Entrepreneurship Programme)",
@@ -131,9 +448,9 @@
     ]
   },
   "agreements": [
-    "Bilateral Convention with France and Spain on entry, movement, sojourn and establishment (signed 4 December 2000) — Andorran, French and Spanish nationals benefit from coordinated movement and certain equal treatment provisions",
+    "Bilateral Convention with France and Spain on entry, movement, sojourn and establishment (signed 4 December 2000) - Andorran, French and Spanish nationals benefit from coordinated movement and certain equal treatment provisions",
     "Bilateral Convention with Portugal on residency and movement (signed 23 July 2007, in force 1 September 2008)",
-    "Coordinated visa policy with Schengen Area (2003 tripartite agreement between France, Spain and Andorra — Andorra follows Schengen visa requirements for third-country nationals)",
+    "Coordinated visa policy with Schengen Area (2003 tripartite agreement between France, Spain and Andorra - Andorra follows Schengen visa requirements for third-country nationals)",
     "Agreement on Exemption from Visa Requirement for Holders of Diplomatic and Official Passports between India and the Principality of Andorra (signed 15 March 2024 at Andorra la Vella, in force 15 June 2024)"
   ],
   "official_domains": [
@@ -143,31 +460,30 @@
     "exteriors.ad"
   ],
   "data_quality": {
-    "completeness": "medium",
+    "completeness": "high",
     "validation_notes": [
-      "Re-validated 2026-06-14 against official sources: govern.ad tourist visas page, portaljuridicandorra.ad/L2012009_12 (Qualified Immigration Law), portaljuridicandorra.ad/L2026002 (Llei 2/2026), visitandorra.com, and mea.gov.in.",
-      "CORRECTED: Digital nomad and entrepreneurship quota notes updated to clarify that each category has its own 50-permit quota, but there is also a combined ceiling of 100 permits shared across both categories — the prior record implied each had an independent 50-permit limit with no shared ceiling.",
-      "CORRECTED: Passive residency notes updated to add the Housing Fund exception (€400,000 minimum investment if directed to the Andorran Housing Fund instead of the standard €1,000,000), which was confirmed in Llei 2/2026 Art. 96 but not captured in the prior record.",
-      "CORRECTED: The AFA contribution clarification added — under previous regime it was refundable; Llei 2/2026 made it non-refundable. Prior record stated only 'non-refundable' without the historical context.",
-      "CORRECTED: Conditional access source_url for Schengen credential rule updated to point to the govern.ad tourist visas page (primary official government source) rather than visitandorra.com (tourism board), which is a stronger official citation.",
-      "CORRECTED: Added exteriors.ad to official_domains (the Ministry of Foreign Affairs uses this domain for citizen information; it redirects to govern.ad paths).",
-      "CONFIRMED UNCHANGED: India diplomatic/official passport agreement (90 days, signed 15 March 2024, in force 15 June 2024) — verified against mea.gov.in.",
+      "Re-validated 2026-06-29 against official sources: visitandorra.com/en/visitor-information/passports-visas-and-customs/ (confirmed visa policy unchanged - EU nationals with national ID card or passport; non-EU Schengen-exempt nationals with valid passport; non-EU Schengen-visa-required nationals need passport plus double/multiple-entry Schengen visa), portaljuridicandorra.ad/L2012009_12 (Art. 11 document requirements, Art. 16 ninety-day maximum stay confirmed), mea.gov.in (India–Andorra agreement confirmed for diplomatic/official passports only - ordinary passports NOT covered), govern.ad international agreements page (no new bilateral ordinary-passport visa exemptions found). No changes made to visa_free, visa_on_arrival, eta, or e_visa lists. All existing entries confirmed and preserved.",
+      "Re-validated 2026-06-27 against official sources: visitandorra.com/en/visitor-information/passports-visas-and-customs/ (confirmed visa policy unchanged - EU/EEA with ID card or passport, non-EU Schengen-exempt with passport, non-EU Schengen-required with double/multiple-entry Schengen visa), portaljuridicandorra.ad/L2012009_12 (Art. 11, 15, 16 confirmed), mea.gov.in (India–Andorra agreement confirmed for diplomatic/official passports only - ordinary passports NOT covered). No changes made to visa_free, visa_on_arrival, eta, or e_visa lists. govern.ad tourist visas page loaded but substantive content is JavaScript-rendered; policy confirmed via cross-referencing visitandorra.com and portaljuridicandorra.ad. No new bilateral visa exemption agreements for ordinary passport holders found. All existing entries preserved.",
+      "Re-validated 2026-06-20 against official sources: portaljuridicandorra.ad/L2012009_12 (Qualified Immigration Law), portaljuridicandorra.ad/L2026002 (Llei 2/2026), portaljuridicandorra.ad/R20251112A (Residence Without Work Regulation), govern.ad tourist visas page, and visitandorra.com.",
+      "ADDED: visa_types array populated with all 20 authorization categories extracted from the Qualified Immigration Law and its amendments, including tourist regime, all work authorization variants, study, medical care, family reunification, digital nomad, entrepreneur, passive residency, and humanitarian protection categories.",
+      "CONFIRMED UNCHANGED: Re-validated 2026-06-14 against official sources: govern.ad tourist visas page, portaljuridicandorra.ad/L2012009_12, portaljuridicandorra.ad/L2026002, portaljuridicandorra.ad/R20251112A, visitandorra.com, and mea.gov.in.",
+      "CORRECTED: Digital nomad and entrepreneurship quota notes updated to clarify that each category has its own 50-permit quota, but there is also a combined ceiling of 100 permits shared across both categories.",
+      "CORRECTED: Passive residency notes updated to add the Housing Fund exception (€400,000 minimum investment if directed to the Andorran Housing Fund).",
+      "CONFIRMED UNCHANGED: India diplomatic/official passport agreement (90 days, signed 15 March 2024, in force 15 June 2024) - verified against mea.gov.in.",
       "CONFIRMED UNCHANGED: No CBI program exists for Andorra.",
       "CONFIRMED UNCHANGED: Passive residency minimum investment €1,000,000 per Llei 2/2026.",
-      "CONFIRMED UNCHANGED: No e-visa or visa-on-arrival system for Andorra.",
-      "CONFIRMED UNCHANGED: Visa-free entry for EU/EEA nationals with national ID card or passport per Art. 11.2 of the Qualified Immigration Law."
+      "CONFIRMED UNCHANGED: No e-visa or visa-on-arrival system for Andorra."
     ],
     "gaps": [
-      "Visa policy: Andorra's official sources (govern.ad, portaljuridicandorra.ad) do not publish a specific country-by-country visa-free list; the law categorises entry by document type (EU/EEA ID card, passport for others, Schengen visa for those requiring it). Country-specific enumerations were found only on aggregators (Wikipedia, Henley) which are not official and therefore not recorded.",
-      "No official e-visa or ETA system exists for Andorra — none found on official sources.",
+      "Visa policy: Andorra's official sources (govern.ad, portaljuridicandorra.ad) do not publish a specific country-by-country visa-free list; the law categorises entry by document type (EU/EEA ID card, passport for others, Schengen visa for those requiring it).",
+      "No official e-visa or ETA system exists for Andorra.",
       "Visa-on-arrival: No official sources mention a visa-on-arrival system for Andorra.",
-      "Digital nomad and entrepreneurship program pages on govern.ad render as navigation-only in WebFetch (JavaScript-rendered); full text of program requirements was obtained from Llei 42/2022 references and cross-checked against multiple advisory sources, but specific text could not be verbatim-confirmed from the govern.ad page itself.",
+      "Fee amounts for most authorization categories are not published in the statutory text; fees are set by regulation and adjusted periodically.",
+      "Processing times for most authorization categories are not specified in official sources.",
       "Path to permanent residency (years) is not specified in the official sources reviewed; renewal schedule is 2-2-3-10 years but no explicit 'permanent residency' designation found.",
-      "Conditional access — other bilateral diplomatic/official passport agreements: The govern.ad international agreements page references an Excel file (ACORDS_BILATERALS_en vigor.xlsx) listing all of Andorra's bilateral treaties, but the file could not be accessed programmatically. Only the India-Andorra agreement (15 March 2024) was confirmed from an official source (mea.gov.in). Other potential diplomatic passport waiver agreements with third countries cannot be excluded but were not confirmed from official sources.",
-      "Conditional access — OCI (Overseas Citizen of India) cardholders: No official Andorran or Indian government source mentions any special entry benefit for OCI cardholders to Andorra. Not recorded.",
-      "Conditional access — US visa holders, UK visa holders, Canadian visa holders, Australian visa holders, UAE residence permit holders: Aggregator sources (Wikipedia, Henley) mention some of these as conferring Andorra access but no official Andorran government source was found confirming credential-based conditional access beyond the de facto Schengen visa requirement. Not recorded per hard rules.",
-      "Housing Fund investment option (€400,000 minimum under Llei 2/2026): Confirmed in legal text at portaljuridicandorra.ad/L2026002 Art. 96, but the Fund's operational status and application process details could not be verified from a standalone official page.",
-      "Collective investment fund timing restriction (Llei 2/2026): Certain financial instruments and Andorran collective investment funds count toward the €1,000,000 passive residency investment only for a maximum of 36 months, after which investment must shift to other Andorran asset classes — confirmed in Llei 2/2026 but full regulatory detail not captured."
+      "Conditional access - other bilateral diplomatic/official passport agreements: The govern.ad international agreements page references an Excel file (ACORDS_BILATERALS_en vigor.xlsx) listing all of Andorra's bilateral treaties, but the file could not be accessed programmatically.",
+      "Transit visa: Andorra has no airport, seaport, or independent border; transit through Andorra is not a separately defined visa category in official sources.",
+      "Working holiday: The young persons with work option (Art. 26 bis) is the closest equivalent to a working-holiday visa but its exact age limits and quotas were not specified in the sources retrieved."
     ]
   },
   "outbound_official": {
@@ -179,52 +495,52 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "The Andorran Government (Govern d'Andorra) Ministry of Foreign Affairs, Consular Affairs section, publishes a 'Tourist visas' (Visats turístics) page under Citizen Information at the URL above. This page is the official origin-side source for Andorran ordinary passport holders. It states that Andorran passport holders can use an embedded interactive search engine to check whether they need a visa to travel to a given country ('Podeu consultar el cercador per saber si, amb el passaport andorrà, necessiteu visat per viatjar al país que vulgueu visitar'). The page does NOT publish a static enumerable list of visa-free, visa-on-arrival, e-visa, or eTA destinations; the country-level data is delivered only through the JavaScript-rendered interactive search tool, which could not be scraped statically. Destination-side (inbound) data or third-party passport index aggregators must be used for a full enumerable list. Country arrays left empty because no static official list was extractable from the page."
+    "notes": "The Andorran Government (Govern d'Andorra) Ministry of Foreign Affairs, Consular Affairs section, publishes a 'Tourist visas' (Visats turístics) page under Citizen Information at the URL above. This page is the official origin-side source for Andorran ordinary passport holders. It states that Andorran passport holders can use an embedded interactive search engine to check whether they need a visa to travel to a given country. The page does NOT publish a static enumerable list of visa-free, visa-on-arrival, e-visa, or eTA destinations; the country-level data is delivered only through the JavaScript-rendered interactive search tool, which could not be scraped statically."
   },
   "sources_checked": [
     {
       "url": "https://portaljuridicandorra.ad/L2012009_12",
-      "description": "Llei qualificada d'immigracio (Qualified Immigration Law, consolidated text) — official Andorran legal portal. Articles 11 (entry requirements), 11.2 (EU/EEA national ID card entry), 15 (90-day tourist limit).",
+      "description": "Llei qualificada d'immigracio (Qualified Immigration Law, consolidated text) - official Andorran legal portal. Primary source for all authorization types including tourist regime (Art. 15-18), work authorizations (Art. 24-31), family reunification (Art. 31), passive residency (Art. 32), professional international projection (Art. 33), scientific/cultural/sports interest (Art. 33), digital nomad (Art. 33 bis), and entrepreneur program (Art. 33 ter).",
       "official": true
     },
     {
       "url": "https://portaljuridicandorra.ad/L2026002",
-      "description": "Llei 2/2026, del 22 de gener, de continuïtat i consolidació de les mesures per al creixement sostenible (Omnibus 2) — raises passive residency investment to €1,000,000 (Art. 96); reduces to €400,000 for Housing Fund; makes AFA deposit non-refundable; Art. 38 ter for self-employed. In force 13 February 2026.",
+      "description": "Llei 2/2026, del 22 de gener, de continuïtat i consolidació de les mesures per al creixement sostenible (Omnibus 2) - raises passive residency investment to €1,000,000 (Art. 96); reduces to €400,000 for Housing Fund; makes AFA deposit non-refundable; Art. 38 ter for self-employed. In force 13 February 2026.",
       "official": true
     },
     {
       "url": "https://portaljuridicandorra.ad/R20251112A",
-      "description": "Reglament del 12 de novembre del 2025 de les autoritzacions d'immigracio de residència sense treball — regulation on residence without work authorizations.",
+      "description": "Reglament del 12 de novembre del 2025 de les autoritzacions d'immigracio de residència sense treball - regulation on residence without work authorizations, including financial, insurance, housing, and medical requirements.",
       "official": true
     },
     {
       "url": "https://www.govern.ad/en/ministries-and-secretaries-of-state/ministry-of-foreign-affairs/the-ministry/bilateral-and-consular-affairs/consular-affairs/tourist-visas",
-      "description": "Tourist visas page — Ministry of Foreign Affairs, Government of Andorra. Confirms: Andorra has no visa; third-country nationals requiring Schengen visa must obtain double/multiple-entry Schengen visa through French or Spanish embassies.",
+      "description": "Tourist visas page - Ministry of Foreign Affairs, Government of Andorra. Confirms: Andorra has no visa; third-country nationals requiring Schengen visa must obtain double/multiple-entry Schengen visa through French or Spanish embassies.",
       "official": true
     },
     {
       "url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-sense-treball-autoritzacio-inicial",
-      "description": "D.1 Residència sense treball (initial authorization) — official immigration page (JavaScript-rendered; content obtained via legal text cross-reference).",
+      "description": "D.1 Residència sense treball (initial authorization) - official immigration page (JavaScript-rendered; content obtained via legal text cross-reference).",
       "official": true
     },
     {
       "url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-per-a-nomada-digital",
-      "description": "D.3 Residència per a nòmada digital — official digital nomad residency page (JavaScript-rendered; content cross-checked with Llei 42/2022 and advisory sources).",
+      "description": "D.3 Residència per a nòmada digital - official digital nomad residency page (JavaScript-rendered; content cross-checked with Llei 42/2022 and advisory sources).",
       "official": true
     },
     {
       "url": "https://visitandorra.com/en/visitor-information/passports-visas-and-customs/",
-      "description": "Passports, visas and customs — official Andorra Tourism Board (Visit Andorra). Confirms EU/EEA entry with ID card; non-EU Schengen-exempt nationals with passport only; non-EU Schengen-visa-required nationals need double/multiple-entry Schengen visa.",
+      "description": "Passports, visas and customs - official Andorra Tourism Board (Visit Andorra). Confirms EU/EEA entry with ID card; non-EU Schengen-exempt nationals with passport only; non-EU Schengen-visa-required nationals need double/multiple-entry Schengen visa.",
       "official": true
     },
     {
       "url": "https://www.mea.gov.in/bvwa-passport",
-      "description": "Countries with which India has operational Visa Exemption Agreement for holders of Diplomatic, Official/Service Passports — Ministry of External Affairs, Government of India. Andorra listed: Diplomatic & Official Passports, 90 days, signed 15-03-2024, in force 15-06-2024.",
+      "description": "Countries with which India has operational Visa Exemption Agreement for holders of Diplomatic, Official/Service Passports - Ministry of External Affairs, Government of India. Andorra listed: Diplomatic & Official Passports, 90 days, signed 15-03-2024, in force 15-06-2024.",
       "official": true
     },
     {
       "url": "https://www.govern.ad/en/ministries-and-secretaries-of-state/ministry-of-foreign-affairs/international-agreements",
-      "description": "International agreements — Ministry of Foreign Affairs, Government of Andorra. References ACORDS_BILATERALS_en vigor.xlsx (not programmatically accessible).",
+      "description": "International agreements - Ministry of Foreign Affairs, Government of Andorra. References ACORDS_BILATERALS_en vigor.xlsx (not programmatically accessible).",
       "official": true
     }
   ]

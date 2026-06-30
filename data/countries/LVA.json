@@ -3,6 +3,158 @@
   "iso3": "LVA",
   "name": "Latvia",
   "region": "Europe",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Type C) - Tourist/Visit",
+      "purpose": "Allows foreign nationals to visit Latvia and the Schengen Area for tourism, visiting family/friends, or other short stays not involving paid employment.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.lv/en/applying-visa",
+      "notes": "Fee is EUR 90 (approx USD 97) for adults 12+; EUR 45 for ages 6–11; free for children under 6. Maximum stay 90 days in any 180-day period across Schengen. Applied for at Latvian embassies/consulates abroad or via VFS Global. Single or multiple entry issued at consular discretion. Other Schengen states may represent Latvia for short-stay visas where Latvia has no mission. Fee reduced to EUR 35 for nationals of Albania, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Serbia, Montenegro, North Macedonia, Moldova (facilitation agreements). Ukraine: EUR 35 standard (10 calendar days) or EUR 70 expedited (3 days)."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Short-Stay Visa (Type C) - Business",
+      "purpose": "Allows foreign nationals to travel to Latvia for business meetings, conferences, trade fairs, and other commercial activities not constituting paid employment in Latvia.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.lv/en/applying-visa",
+      "notes": "Same Type C Schengen visa as tourist; purpose noted on visa sticker as 'BUSINESS'. Fee EUR 90 for adults. Applied at Latvian embassies/consulates or VFS Global. Work/employment requires a separate work visa. Subsistence requirement: EUR 14/day for stays under 30 days; EUR 780 for stays exceeding 30 days."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (Type A)",
+      "purpose": "Required for nationals of certain countries transiting through Latvian international airports without entering the Schengen Area.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.pmlp.gov.lv/en/airport-transit",
+      "notes": "Required for nationals of: Afghanistan, Bangladesh, Eritrea, Ethiopia, Ghana, Iraq, Iran, Democratic Republic of the Congo, Nigeria, Pakistan, Somalia, Sri Lanka. Exemptions include holders of valid Latvian/Schengen visas or residence permits, and holders of residence permits from Andorra, USA, Japan, Canada, Liechtenstein, Monaco, San Marino, Switzerland, or Vatican. Also exempt: ICAO member state aircraft crew. Applied at Latvian embassies/consulates. Fee amounts not published on official page."
+    },
+    {
+      "category": "work",
+      "name": "Long-Stay Visa with Right to Employment (Type D)",
+      "purpose": "Allows foreign nationals to reside and work in Latvia for a specific employer, subject to a State Employment Agency opinion.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.pmlp.gov.lv/en/visa-right-employment",
+      "notes": "Visa sticker endorsed with one of: 'THE RIGHT TO WORK WITH A SPECIFIC EMPLOYER', 'THE RIGHT TO WORK 20 H PER WEEK', 'VOLUNTARY WORK', or 'THE RIGHT TO WORK WITH NO RESTRICTIONS'. Employer must obtain State Employment Agency opinion before submitting invitation. Minimum subsistence: EUR 1,815/month (general employment). Application in-person at Latvian embassy/consulate abroad. Also possible as short-stay Type C visa for employment not exceeding 90 days in 180."
+    },
+    {
+      "category": "work",
+      "name": "Seasonal Work Visa (Type D - Seasonal)",
+      "purpose": "Permits foreign nationals to engage in temporary employment during peak seasons in specific sectors of the Latvian economy, primarily agriculture, forestry, and fishing.",
+      "max_stay_days": 180,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.pmlp.gov.lv/en/seasonal-work",
+      "notes": "Visa sticker marked 'SEASONAL WORK'. Maximum 180 days within a 12-month period (seasonal worker provision). Minimum financial resources: EUR 1,815/month (general employment); EUR 1,516–EUR 1,990/month for agriculture/forestry/fishing depending on subsector. Application via paper form downloadable from pmlp.gov.lv; submitted at Latvian embassy/consulate."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Long-Stay Visa for Remote Work (Type D)",
+      "purpose": "Enables third-country nationals employed by an OECD-registered employer or self-employed in an OECD country to reside in Latvia while working remotely.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.pmlp.gov.lv/en/article/obtaining-long-stay-visa-remote-work",
+      "notes": "Minimum gross monthly income EUR 4,213 (2.5x Latvia's average monthly gross salary). Employees must show minimum 6 months employment with current employer. Health insurance required with minimum EUR 42,600 liability coverage valid in Latvia and all Schengen states. No right to local employment in Latvia. Application via e-form at epak.pmlp.gov.lv. Page last updated 11 February 2026."
+    },
+    {
+      "category": "student",
+      "name": "Long-Stay Visa for Study (Type D)",
+      "purpose": "Allows foreign nationals to reside in Latvia for the purpose of studying at an accredited Latvian educational institution.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.lv/en/applying-visa",
+      "notes": "Long-stay national visa (Type D) issued for study purposes. Students attending short programs under 90 days may use a Schengen short-stay Type C visa (with fee exemptions for students/pupils on educational visits). Fee EUR 90 for long-stay visa (children under 12 exempt). Required documents include enrollment confirmation. Students staying longer than 1 year typically require a residence permit rather than a visa. EU Directive 2016/801 applies to researchers; fee exemptions apply for scientific research visits."
+    },
+    {
+      "category": "family",
+      "name": "Long-Stay Visa for Family Reunion (Type D)",
+      "purpose": "Allows family members of Latvian citizens or legal residents to enter and reside in Latvia pending a long-term residence permit.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.lv/en/applying-visa",
+      "notes": "Type D national long-stay visa issued for family reunification purpose. Applicants typically transition to a residence permit after entry. Fee EUR 90. Application submitted at Latvian embassy/consulate with supporting family relationship documentation."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Official/Service Visa",
+      "purpose": "Issued to foreign diplomatic and official passport holders visiting Latvia on official government or diplomatic business.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.lv/en/applying-visa",
+      "notes": "Many diplomatic/service passport holders are visa-exempt under bilateral agreements (see conditional_access). Where not exempt, diplomatic visas are issued fee-free through diplomatic channels (Ministry of Foreign Affairs to Ministry of Foreign Affairs) for official visits. Standard Schengen short-stay limits apply unless a longer-term arrangement is in place."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa - Other Purposes (Type D)",
+      "purpose": "Covers any lawful long-stay purpose not falling under employment, study, remote work, or family reunification - including medical treatment, voluntary work, and cultural activities.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.lv/en/applying-visa",
+      "notes": "Catch-all Type D national visa category. Includes voluntary work (visa sticker endorsed 'VOLUNTARY WORK'). Medical stays, cultural exchange, and other long-stay purposes handled under this category. Fee EUR 90 standard; children under 12 exempt. Subsistence minimum EUR 780 for stays over 30 days. Applied at Latvian embassy/consulate. Latvia does not issue a specific medical or retirement visa - these purposes are covered by the general long-stay Type D visa."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -765,7 +917,7 @@
         "nationality": "All third-country nationals not on the visa-free list (excluding EU/NATO/OECD/EEA/Swiss/Brazilian nationals)",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Latvia introduced an Electronic Travel Declaration system from 1 September 2025 (amendment to Article 4.4 of the Immigration Law). Third-country nationals who are not citizens of an EU member state, NATO member state, OECD member state, EEA country, Swiss Confederation or Brazil, AND who do not have a valid Latvian visa or residence permit, must submit the declaration at least 48 hours before arrival via eta.gov.lv. Note: ETA exemption is based on EU/NATO/OECD/EEA/Swiss/Brazil bloc membership, NOT identity with the ordinary-passport visa-free list. Turkey (NATO member) is ETA-exempt even though Turkish ordinary passport holders are NOT on the ordinary visa-free list. Exempt nationals include all visa-free countries plus Turkey. This is NOT a travel authorization/permission to enter — it is a pre-arrival security declaration. Page last updated May 19, 2026.",
+        "notes": "Latvia introduced an Electronic Travel Declaration system from 1 September 2025 (amendment to Article 4.4 of the Immigration Law). Third-country nationals who are not citizens of an EU member state, NATO member state, OECD member state, EEA country, Swiss Confederation or Brazil, AND who do not have a valid Latvian visa or residence permit, must submit the declaration at least 48 hours before arrival via eta.gov.lv. Note: ETA exemption is based on EU/NATO/OECD/EEA/Swiss/Brazil bloc membership, NOT identity with the ordinary-passport visa-free list. Turkey (NATO member) is ETA-exempt even though Turkish ordinary passport holders are NOT on the ordinary visa-free list. Exempt nationals include all visa-free countries plus Turkey. This is NOT a travel authorization/permission to enter - it is a pre-arrival security declaration. Page last updated May 19, 2026.",
         "source_url": "https://www.mfa.gov.lv/en/electronic-travel-declaration",
         "source_official": true
       }
@@ -777,7 +929,7 @@
       "https://www.mfa.gov.lv/en/entry-latvia",
       "https://www.mfa.gov.lv/en/article/procedures-entry-latvia-1-september-2025"
     ],
-    "notes": "Latvia is a Schengen Area member. EU/EEA citizens enjoy freedom of movement without visa or stay limits. For non-EU visa-free nationals, the standard Schengen 90/180-day rule applies. Several Western Balkan and post-Soviet countries require biometric passports. An Electronic Travel Declaration (eta.gov.lv) is required since 1 September 2025 for third-country nationals who are not EU/NATO/OECD/EEA/Swiss/Brazilian nationals and who do not hold a Latvian visa or residence permit. ETA exemption criterion is broader than the ordinary-passport visa-free list: Turkey (NATO) is ETA-exempt but Turkish ordinary passports are not visa-free. Latvia does not operate a visa-on-arrival or e-visa program — applications are submitted at embassies/consulates or through the OCMA e-service portal. The EU Entry/Exit System (EES) launched at Latvia's border crossings from October 12, 2025, fully operational from April 10, 2026. From 15 July 2025, Latvia stopped accepting visa/first residence permit applications from Russian citizens without biometric passports; existing holders may stay until 15 January 2026. Georgia's diplomatic/service passport bilateral waiver was suspended from June 2025. Visa-free list last confirmed updated 26 March 2026 per mfa.gov.lv."
+    "notes": "Latvia is a Schengen Area member. EU/EEA citizens enjoy freedom of movement without visa or stay limits. For non-EU visa-free nationals, the standard Schengen 90/180-day rule applies. Several Western Balkan and post-Soviet countries require biometric passports. An Electronic Travel Declaration (eta.gov.lv) is required since 1 September 2025 for third-country nationals who are not EU/NATO/OECD/EEA/Swiss/Brazilian nationals and who do not hold a Latvian visa or residence permit. ETA exemption criterion is broader than the ordinary-passport visa-free list: Turkey (NATO) is ETA-exempt but Turkish ordinary passports are not visa-free. Latvia does not operate a visa-on-arrival or e-visa program - applications are submitted at embassies/consulates or through the OCMA e-service portal. The EU Entry/Exit System (EES) launched at Latvia's border crossings from October 12, 2025, fully operational from April 10, 2026. From 15 July 2025, Latvia stopped accepting visa/first residence permit applications from Russian citizens without biometric passports; existing holders may stay until 15 January 2026. Georgia's diplomatic/service passport bilateral waiver was suspended from June 2025. Visa-free list last confirmed updated 26 March 2026 per mfa.gov.lv."
   },
   "conditional_access": [
     {
@@ -1112,7 +1264,7 @@
         "path_to_citizenship_years": 5,
         "official_url": "https://www.pmlp.gov.lv/en/share-capital-investor-0",
         "source_official": true,
-        "notes": "Two tiers: (1) EUR 50,000 minimum for companies with 50 or fewer employees and annual turnover/balance at or below EUR 10 million; (2) EUR 100,000 minimum for companies with more than 50 employees and annual turnover/balance above EUR 10 million. In both cases, up to 10 foreign investors per company allowed; each must also pay EUR 10,000 into the State budget. Grants temporary residence permit. Pathway to citizenship requires 5 years of residence and naturalization process (not automatic via investment). Page last updated April 22, 2022 on pmlp.gov.lv; amounts confirmed via live fetch."
+        "notes": "Two tiers: (1) EUR 50,000 minimum for companies with 50 or fewer employees and annual turnover/balance at or below EUR 10 million; (2) EUR 100,000 minimum for companies with more than 50 employees and annual turnover/balance above EUR 10 million. In both cases, up to 10 foreign investors per company allowed; each must also pay EUR 10,000 into the State budget. Grants temporary residence permit. Pathway to citizenship requires 5 years of residence and naturalization process (not automatic via investment). Page last updated April 22, 2022 on pmlp.gov.lv; amounts confirmed via live fetch. PENDING LEGISLATIVE CHANGE: Under the new immigration law passed by Saeima on 11 June 2026 (not yet promulgated as of 29 June 2026 - returned by President Rinkevics), share capital permits would remain available but validity would be reduced from 5 years to 2 years, and renewed on same basis. The EUR 50k/100k thresholds and EUR 10,000 state budget payment would remain. Source: cobalt.legal/news-cases/new-immigration-law-latvia-employers-investors-temporary-residence-holders/"
       },
       {
         "name": "Residence Permit for Person with Subordinate Liabilities to Credit Institution",
@@ -1123,7 +1275,7 @@
         "path_to_citizenship_years": 5,
         "official_url": "https://www.pmlp.gov.lv/en/investments",
         "source_official": true,
-        "notes": "Minimum EUR 280,000 in subordinate liabilities to a Latvian credit institution for a minimum 5-year term. First-time permit applicants must pay EUR 25,000 into the State budget. Grants temporary residence permit. Citizenship only via standard naturalization (5 years residence, language, etc.). Confirmed via live fetch of pmlp.gov.lv/en/investments."
+        "notes": "Minimum EUR 280,000 in subordinate liabilities to a Latvian credit institution for a minimum 5-year term. First-time permit applicants must pay EUR 25,000 into the State budget. Grants temporary residence permit. Citizenship only via standard naturalization (5 years residence, language, etc.). Confirmed via live fetch of pmlp.gov.lv/en/investments. PENDING ABOLITION: Latvia's Saeima passed amendments on 11 June 2026 to abolish this route from 1 January 2027, but President Rinkēvičs returned the law for reconsideration before the spring session closed 18 June 2026. The law is NOT yet promulgated; this route remains available until further notice."
       },
       {
         "name": "Government Bonds Investor Residence Permit",
@@ -1134,7 +1286,7 @@
         "path_to_citizenship_years": 5,
         "official_url": "https://www.pmlp.gov.lv/en/person-investing-bonds",
         "source_official": true,
-        "notes": "Acquisition of interest-free government bonds designated for special purposes with nominal value of EUR 250,000. Applicant must pay EUR 38,000 into the State budget upon receiving first temporary residence permit. Bond acquisition occurs after a positive decision on the permit application. Citizenship only via standard naturalization. Confirmed via live fetch."
+        "notes": "Acquisition of interest-free government bonds designated for special purposes with nominal value of EUR 250,000. Applicant must pay EUR 38,000 into the State budget upon receiving first temporary residence permit. Bond acquisition occurs after a positive decision on the permit application. Citizenship only via standard naturalization. Confirmed via live fetch. PENDING ABOLITION: Latvia's Saeima passed amendments on 11 June 2026 to abolish this route from 1 January 2027, but President Rinkēvičs returned the law for reconsideration before the spring session closed 18 June 2026. The law is NOT yet promulgated; this route remains available until further notice."
       },
       {
         "name": "Real Estate Owner Residence Permit",
@@ -1145,7 +1297,7 @@
         "path_to_citizenship_years": 5,
         "official_url": "https://www.pmlp.gov.lv/en/real-estate-owner-01072016",
         "source_official": true,
-        "notes": "For real estate acquired from 1 July 2016. Minimum EUR 250,000 property value in Riga, Jurmala or specified municipalities (Adazi, Babite, Baldone, Carnikava, Garkalne, Ikskile, Kekava, Marupe, Olaine, Ropazi, Salaspils, Stopini). For other regions: up to two properties, combined EUR 250,000 minimum. Minimum cadastral value: EUR 80,000 (single) or EUR 40,000 each (two). Must pay 5% of real estate purchase value into State budget on first permit. Non-cash payment required. Agricultural and wooded land excluded. Citizenship only via standard naturalization. Confirmed via live fetch (page last updated April 22, 2022)."
+        "notes": "For real estate acquired from 1 July 2016. Minimum EUR 250,000 property value in Riga, Jurmala or specified municipalities (Adazi, Babite, Baldone, Carnikava, Garkalne, Ikskile, Kekava, Marupe, Olaine, Ropazi, Salaspils, Stopini). For other regions: up to two properties, combined EUR 250,000 minimum. Minimum cadastral value: EUR 80,000 (single) or EUR 40,000 each (two). Must pay 5% of real estate purchase value into State budget on first permit. Non-cash payment required. Agricultural and wooded land excluded. Citizenship only via standard naturalization. Confirmed via live fetch (page last updated April 22, 2022). PENDING ABOLITION: Latvia's Saeima passed amendments on 11 June 2026 to abolish this route from 1 January 2027, but President Rinkēvičs returned the law for reconsideration before the spring session closed 18 June 2026. The law is NOT yet promulgated. This route remains available until further notice; verify current status with PMLP before advising clients."
       }
     ]
   },
@@ -1192,30 +1344,41 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTED: ETA nationality description updated — the ETA exemption criterion is EU/NATO/OECD/EEA/Swiss/Brazil bloc membership, NOT identity with the ordinary visa-free list. Turkey (NATO) is ETA-exempt but Turkish ordinary passport holders still require a visa. Prior record's ETA note implied exemption equalled visa-free; this was inaccurate.",
+      "CORRECTED: ETA nationality description updated - the ETA exemption criterion is EU/NATO/OECD/EEA/Swiss/Brazil bloc membership, NOT identity with the ordinary visa-free list. Turkey (NATO) is ETA-exempt but Turkish ordinary passport holders still require a visa. Prior record's ETA note implied exemption equalled visa-free; this was inaccurate.",
       "ADDED: Georgia diplomatic/service passport bilateral waiver reclassified to level=visa_required in conditional_access (suspended June 2025 per EU Council decision). Prior record left it as visa_free level which was incorrect post-suspension.",
-      "ADDED: Russia entry note added to conditional_access — from 15 July 2025, Latvia stopped accepting new visa/first residence permit applications from Russian nationals without biometric passports; existing permits valid until 15 January 2026.",
-      "ADDED: EU Entry/Exit System (EES) launch noted in visa_policy notes — operational from October 12 2025 at Latvia borders, fully operational April 10 2026.",
+      "ADDED: Russia entry note added to conditional_access - from 15 July 2025, Latvia stopped accepting new visa/first residence permit applications from Russian nationals without biometric passports; existing permits valid until 15 January 2026.",
+      "ADDED: EU Entry/Exit System (EES) launch noted in visa_policy notes - operational from October 12 2025 at Latvia borders, fully operational April 10 2026.",
       "ADDED: Real estate permit now enumerates the specific eligible municipalities (Adazi, Babite, Baldone, Carnikava, Garkalne, Ikskile, Kekava, Marupe, Olaine, Ropazi, Salaspils, Stopini) confirmed from live fetch.",
       "ADDED: Digital nomad visa note clarified with 6-month employment requirement confirmed from live fetch.",
       "CORRECTED: Turkey conditional_access entry now explicitly notes Turkish ordinary passport holders still require a visa despite Turkey being ETA-exempt as a NATO member.",
       "VERIFIED: All RBI program amounts (EUR 50k/100k share capital; EUR 280k credit institution; EUR 250k bonds; EUR 250k real estate) confirmed unchanged from official pmlp.gov.lv pages.",
-      "VERIFIED: visa-free list page confirmed last updated 26 March 2026 on mfa.gov.lv — no new countries added or removed from ordinary visa-free list.",
-      "VERIFIED: ETA system confirmed still active and page updated May 19, 2026 per official source."
+      "VERIFIED: visa-free list page confirmed last updated 26 March 2026 on mfa.gov.lv - no new countries added or removed from ordinary visa-free list.",
+      "VERIFIED: ETA system confirmed still active and page updated May 19, 2026 per official source.",
+      "ADDED: visa_types array populated from official mfa.gov.lv and pmlp.gov.lv sources covering all Latvia-issued visa categories: Schengen Type C (tourist/business), Type A (airport transit), Type D work/employment, seasonal work, remote work/digital nomad, student, family reunification, diplomatic, and other long-stay purposes.",
+      "VALIDATION 2026-06-27: Re-fetched mfa.gov.lv visa-free list - confirmed last updated 26 March 2026, no new countries added or removed. All 109+ visa-free entries verified against live page. ETA page re-fetched, confirmed updated May 19 2026, still active and requirements unchanged.",
+      "VALIDATION 2026-06-27: Re-fetched entry-latvia page (updated May 20, 2026) and bilateral visa waiver agreement page (updated March 26, 2026). No changes to conditional_access entries identified.",
+      "ADDED 2026-06-27: RBI program notes updated to flag PENDING ABOLITION - Latvia's Saeima passed amendments on 11 June 2026 to abolish real estate, government bonds, and bank deposit subordinate liabilities investment routes effective 1 January 2027. However, President Rinkevics returned the law for reconsideration before the spring session closed 18 June 2026. The law is NOT yet promulgated. Programs remain technically available. New alternative: EUR 150,000 in a state-created alternative investment fund for 5 years (not yet law). Share capital route (EUR 50,000/100,000) also retained under the proposed changes. Sources: visasnews.com/en/latvia-adopts-new-immigration-law-with-tighter-controls-from-2027/ and imidaily.com reports dated June 2026.",
+      "VALIDATION 2026-06-27: RBI share capital program (EUR 50k/100k) confirmed still active at pmlp.gov.lv/en/share-capital-investor-0 (page last updated April 22, 2022, still live). Real estate program confirmed still listed at pmlp.gov.lv/en/real-estate-owner-01072016 (same update date). Bonds program confirmed at pmlp.gov.lv/en/person-investing-bonds.",
+      "VALIDATION 2026-06-29: Re-fetched mfa.gov.lv visa-free list (last updated 26 March 2026 - unchanged), bilateral visa waiver page (last updated 26 March 2026 - unchanged, 13 jurisdictions confirmed), entry-latvia page (last updated 20 May 2026), and ETA page (updated 19 May 2026, still active). No new countries added or removed from the ordinary visa-free list. All conditional_access entries confirmed unchanged. RBI law status confirmed: President Rinkevics returned the law to Saeima before spring session closed 18 June 2026; NOT yet promulgated; second vote deferred to autumn 2026 session. UPDATED: If the pending law is promulgated, share capital permit validity would reduce from 5 years to 2 years (source: cobalt.legal/news-cases/new-immigration-law-latvia-employers-investors-temporary-residence-holders/). The bonds route is officially described as 'non-interest-bearing state securities' (matches current record). PMLP list (pmlp.gov.lv/en/home/services/visas-and-invitations/list-countries.html, last updated March 16, 2026) cross-checked against MFA list - fully consistent, no discrepancies found. No changes required to visa_policy entries. 6 official sources reached."
     ],
     "gaps": [
       "Processing times for startup residence permit and investment residence permits not published on official pages; applicants directed to contact PMLP directly.",
       "Exact path-to-permanent-residence timeline for investment permit holders not specified on official pmlp.gov.lv pages (standard 5-year naturalization timeline referenced for citizenship only).",
-      "The official visa-free country list page (mfa.gov.lv) does not specify whether all Pacific island states (Kiribati, Marshall Islands, Micronesia, Palau, Solomon Islands, Tonga, Tuvalu, Samoa) have any specific conditions — assumed standard 90/180-day Schengen rule based on list inclusion.",
-      "E-visa (online national visa issuable without in-person embassy visit) not confirmed by official sources — Latvia uses an electronic form submission service (epak.pmlp.gov.lv) but this is for pre-filling forms, not a standalone e-visa. No e-visa program listed.",
+      "The official visa-free country list page (mfa.gov.lv) does not specify whether all Pacific island states (Kiribati, Marshall Islands, Micronesia, Palau, Solomon Islands, Tonga, Tuvalu, Samoa) have any specific conditions - assumed standard 90/180-day Schengen rule based on list inclusion.",
+      "E-visa (online national visa issuable without in-person embassy visit) not confirmed by official sources - Latvia uses an electronic form submission service (epak.pmlp.gov.lv) but this is for pre-filling forms, not a standalone e-visa. No e-visa program listed.",
       "Validity period/renewal details for investment-based residence permits not specified on official pages.",
       "Exact agreement dates for each diplomatic/service passport bilateral waiver are not published on the mfa.gov.lv visa-free page; only the existence of bilateral agreements is indicated.",
       "OCI (Overseas Citizen of India) cardholder conditional entry: no official Latvia government source (mfa.gov.lv, pmlp.gov.lv) confirms any special provision for OCI cardholders. Not recorded.",
       "Russia bilateral diplomatic passport treatment under any remaining agreement not confirmed after July 2025 policy change; recorded as visa_required for caution.",
-      "Brazil and Kuwait 'special passport' subtype not further defined on the official page — recorded as listed.",
+      "Brazil and Kuwait 'special passport' subtype not further defined on the official page - recorded as listed.",
       "Credential-based entry for holders of US visas, UK visas, or non-Schengen residence permits: no official Latvia source confirms a separate exemption for these. Only Schengen-issued credentials (Type C visa, Type D visa, residence permit) are referenced officially.",
-      "Duration of Georgia diplomatic/service passport waiver suspension not specified on official pages — recorded as suspended without end date.",
-      "Venezuela's inclusion on the visa-free list not cross-referenced with a secondary bilateral source; appears in the main MFA list but no specific notes available."
+      "Duration of Georgia diplomatic/service passport waiver suspension not specified on official pages - recorded as suspended without end date.",
+      "Venezuela's inclusion on the visa-free list not cross-referenced with a secondary bilateral source; appears in the main MFA list but no specific notes available.",
+      "Processing times for standard Type C and Type D visa applications not published on mfa.gov.lv or pmlp.gov.lv - max_stay_days of 15 calendar days used per standard Schengen Visa Code; actual consulate times vary.",
+      "Fee for airport transit visa (Type A) not published on official pmlp.gov.lv page.",
+      "Latvia does not issue specific named visas for medical treatment, retirement, or investment purposes - these fall under the general Type D long-stay visa. No working holiday visa agreement identified on official sources.",
+      "RBI: Final fate of Saeima immigration law amendments (passed 11 June 2026) pending presidential promulgation or second Saeima vote in autumn 2026 session. If promulgated, real estate, bonds, and bank deposit routes abolished 1 January 2027; new EUR 150,000 alternative investment fund route and tighter share capital route would be added. Cannot confirm final text from official pmlp.gov.lv or iem.gov.lv pages yet - noting as gap until promulgation confirmed.",
+      "Non-citizen (nepilsonis) of Latvia: stateless persons holding Latvia's non-citizen passport are covered by separate entry rules not mapped here."
     ]
   },
   "outbound_official": {
@@ -1346,7 +1509,7 @@
       {"name": "United Kingdom", "iso3": "GBR", "notes": "UK ETA required before travel"},
       {"name": "United States", "iso3": "USA", "notes": "ESTA (Electronic System for Travel Authorization) required before travel; no prior consular visa needed"}
     ],
-    "notes": "Official Latvia MFA outbound list for Latvia ordinary passport holders. Page last updated 25 May 2026. Schengen member states are included in the visa-free list (Latvia citizens enjoy EU freedom of movement within the EU/EEA, and Schengen 90/180-day access to non-EU Schengen states). Indonesia listed on page but its visa-free regime noted as temporarily suspended as of the page date. Mongolia's temporary visa-free arrangement noted as expiring 31 December 2025. China listed with a 30-day tourism visa-free arrangement until 31 December 2026. Australia, Canada, New Zealand, UK, and USA require pre-travel electronic authorization (eVisitor, eTA, NZeTA, UK ETA, ESTA respectively) but no consular visa — listed under eta. Suriname requires trip registration and EUR 25 entry fee."
+    "notes": "Official Latvia MFA outbound list for Latvia ordinary passport holders. Page last updated 25 May 2026. Schengen member states are included in the visa-free list (Latvia citizens enjoy EU freedom of movement within the EU/EEA, and Schengen 90/180-day access to non-EU Schengen states). Indonesia listed on page but its visa-free regime noted as temporarily suspended as of the page date. Mongolia's temporary visa-free arrangement noted as expiring 31 December 2025. China listed with a 30-day tourism visa-free arrangement until 31 December 2026. Australia, Canada, New Zealand, UK, and USA require pre-travel electronic authorization (eVisitor, eTA, NZeTA, UK ETA, ESTA respectively) but no consular visa - listed under eta. Suriname requires trip registration and EUR 25 entry fee."
   },
   "sources_checked": [
     "https://www.mfa.gov.lv/en/countries-and-territories-whose-citizens-may-enter-latvia-without-visa",
@@ -1368,6 +1531,17 @@
     "https://www.pmlp.gov.lv/en/acquiring-latvian-citizenship",
     "https://www.pmlp.gov.lv/en/naturalisation",
     "https://www.pmlp.gov.lv/en/visas-and-invitations",
-    "https://www.pmlp.gov.lv/en/list-countries-citizens-which-do-not-need-visas"
+    "https://www.pmlp.gov.lv/en/list-countries-citizens-which-do-not-need-visas",
+    "https://www.mfa.gov.lv/en/visa-application-fees",
+    "https://www.pmlp.gov.lv/en/visa-right-employment",
+    "https://www.pmlp.gov.lv/en/seasonal-work",
+    "https://www.pmlp.gov.lv/en/airport-transit",
+    "https://www.pmlp.gov.lv/en/types-visas-categories-and-places-issuance",
+    "https://www.mfa.gov.lv/en/electronic-travel-declaration",
+    "https://www.mfa.gov.lv/en/entry-latvia",
+    "https://www.mfa.gov.lv/en/entry-requirements-citizens-countries-whom-latvia-has-signed-bilateral-visa-waiver-agremeent",
+    "https://www.pmlp.gov.lv/en/updated-information-amendments-immigration-law",
+    "https://www.mfa.gov.lv/en/article/current-information-implementation-amendments-immigration-law",
+    "https://www.iem.gov.lv/en/article/changes-immigration-law-will-affect-rules-entry-and-residence-foreigners"
   ]
 }

@@ -12,15 +12,197 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "keliauk.urm.lt is the official Lithuanian Ministry of Foreign Affairs travel portal (Užsienio reikalų ministerija). The page at /keliaujantiems/pries-pradedant-kelione/vizos is the outbound visa advice section for Lithuanian citizens traveling abroad. The portal also provides per-country travel advice at /location/<country> (e.g. /location/tailandas for Thailand — confirmed 60-day visa-free stay for Lithuanian citizens). The entire keliauk.urm.lt domain returns HTTP 403 to automated HTTP clients, preventing extraction of the consolidated country list; country-level data must be read directly in a browser. Lithuania is an EU/Schengen member state — Lithuanian citizens' outbound visa-free access is primarily governed by bilateral agreements between destination countries and the EU or Lithuania specifically. A non-exhaustive sample confirmed by the MFA portal: USA (ESTA required, no prior visa), Canada (eTA required), Thailand (visa-free 60 days), Sri Lanka (ETA required). No single downloadable consolidated list equivalent to India's mea.gov.in/vffin was located."
+    "notes": "keliauk.urm.lt is the official Lithuanian Ministry of Foreign Affairs travel portal (Užsienio reikalų ministerija). The page at /keliaujantiems/pries-pradedant-kelione/vizos is the outbound visa advice section for Lithuanian citizens traveling abroad. The portal also provides per-country travel advice at /location/<country> (e.g. /location/tailandas for Thailand - confirmed 60-day visa-free stay for Lithuanian citizens). The entire keliauk.urm.lt domain returns HTTP 403 to automated HTTP clients, preventing extraction of the consolidated country list; country-level data must be read directly in a browser. Lithuania is an EU/Schengen member state - Lithuanian citizens' outbound visa-free access is primarily governed by bilateral agreements between destination countries and the EU or Lithuania specifically. A non-exhaustive sample confirmed by the MFA portal: USA (ESTA required, no prior visa), Canada (eTA required), Thailand (visa-free 60 days), Sri Lanka (ETA required). No single downloadable consolidated list equivalent to India's mea.gov.in/vffin was located."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Type C Visa (Uniform Short-Stay Visa)",
+      "purpose": "Short stays for tourism, family visits, business trips, cultural events, or any other purpose not involving paid employment; valid across the entire Schengen Area including Lithuania.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 88,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0810-20200202",
+      "notes": "Fee is EUR 80 (approx USD 88) for adults; EUR 40 for children aged 6-11; free for children under 6. Valid for up to 90 days in any 180-day rolling period across the Schengen Area. Single, double, or multiple entry. Maximum validity 5 years for multiple-entry visas (graduated based on travel history). Standard processing 15 calendar days; up to 45 days for complex cases. Applications submitted via Lithuanian consulates or VFS Global centres. Lithuania has no national e-visa portal - Schengen visa applications are filed through MIGRIS (visa.vrm.lt/epm) or in-person at the consulate. The 'tourist' and 'business' purposes are both covered by the same Type C Schengen visa instrument."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Type C Visa (Uniform Short-Stay Visa - Business Purpose)",
+      "purpose": "Short-term business activities in Lithuania or the Schengen Area including meetings, negotiations, conferences, and training, but not paid employment; uses the same Type C visa as tourist visits.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 88,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0810-20200202",
+      "notes": "Same instrument as tourist Schengen C visa. Business purpose declared in application. Fee EUR 80 adult. Processing 15-45 calendar days. For paid employment or long-term business activity a national D visa is required."
+    },
+    {
+      "category": "transit",
+      "name": "Schengen Type A Visa (Airport Transit Visa)",
+      "purpose": "Transit through the international transit areas of Lithuanian airports (primarily Vilnius) without entering Schengen territory; required only for nationals of countries listed on the Airport Transit Visa list.",
+      "max_stay_days": null,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 88,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0810-20200202",
+      "notes": "Type A visa covers airside transit only; holder does not enter Schengen territory. Multiple airport transit visas may be issued with a maximum validity of 6 months. Fee EUR 80. Required only for nationals of countries on the EU airport transit visa list (e.g. Afghanistan, Ghana, India, Iran, Iraq, Nigeria, Pakistan, Somalia, Sri Lanka, and others). Processing 15-45 calendar days."
+    },
+    {
+      "category": "work",
+      "name": "National Long-Stay Visa Type D - Work",
+      "purpose": "Issued to foreign nationals who have been granted a work permit or temporary residence permit for employment purposes in Lithuania, allowing them to enter and reside while working.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migracija.lt/en/web/migration/national-visas",
+      "notes": "Lithuania's national D visa is issued for stays exceeding 90 days. A work D visa is linked to a work permit or a temporary residence permit for employment. Valid for up to 1 year. Applications submitted via MIGRIS portal (www.migracija.lt) or Lithuanian consulate. Holders must obtain a temporary residence permit if staying beyond the D visa period. Specific fee confirmed at migracija.lt but site is JavaScript-rendered and cannot be directly scraped; fee information unavailable via WebFetch. EU Blue Card holders also receive a D visa if entering from outside Lithuania."
+    },
+    {
+      "category": "student",
+      "name": "National Long-Stay Visa Type D - Study",
+      "purpose": "Issued to foreign nationals accepted for full-time studies at a Lithuanian higher education institution, language school, or other accredited educational establishment.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migracija.lt/en/web/migration/national-visas",
+      "notes": "Requires acceptance letter from a Lithuanian educational institution and proof of sufficient funds. Valid up to 1 year; students in programmes longer than 1 year must obtain a temporary residence permit. Students may work part-time (up to 20 hours/week during term time) under Lithuanian labour law. Applications via MIGRIS portal or Lithuanian consulate."
+    },
+    {
+      "category": "work",
+      "name": "EU Blue Card (Highly Qualified Worker)",
+      "purpose": "Residence and work permit for highly qualified non-EU nationals employed in Lithuania under a contract for at least 6 months, meeting minimum salary thresholds.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": 175,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card/eu-blue-card-lithuania_en",
+      "notes": "Fee EUR 160 (approx USD 175); expedited EUR 320 (approx USD 350). Minimum salary: EUR 3,165/month for standard occupations (1.5x average wage); EUR 2,532/month for shortage/high-value-added occupations (1.2x average wage). Based on 2023 average monthly gross wage of EUR 2,110. Duration: 3 years or employment contract duration + 3 months (whichever shorter). Eligible for EU mobility after 18 months. Applied for via MIGRIS portal. Standard processing: 1 month; expedited: 15 days."
+    },
+    {
+      "category": "work",
+      "name": "National Long-Stay Visa Type D - Startup / Self-Employment",
+      "purpose": "Issued to non-EU founders or key personnel of innovative startups confirmed by the Lithuanian Innovation Agency, or to qualified self-employed persons establishing a business in Lithuania.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migracija.lt/en/web/migration/national-visas",
+      "notes": "Startup applicants must first obtain confirmation from the Lithuanian Innovation Agency (Inovacijų agentūra) that the planned activity is innovative. Temporary residence permit issued for 2 years, renewable for up to 3 additional years upon Innovation Agency confirmation. Enterprise must be established and operations commenced within 120 days of permit issuance. Applications via MIGRIS."
+    },
+    {
+      "category": "family",
+      "name": "National Long-Stay Visa Type D - Family Reunification",
+      "purpose": "Issued to family members (spouse, minor children, dependent relatives) of Lithuanian citizens, EU/EEA nationals residing in Lithuania, or third-country nationals holding a valid temporary or permanent residence permit.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migracija.lt/en/web/migration/national-visas",
+      "notes": "Requires proof of family relationship with the sponsor, sponsor's valid residence status, proof of adequate accommodation and financial means. Sponsor must have held a temporary residence permit for at least 1 year and have the right to reside for at least another year before applying. Applications via MIGRIS portal or Lithuanian consulate."
+    },
+    {
+      "category": "other",
+      "name": "National Long-Stay Visa Type D - Scientific Research",
+      "purpose": "Issued to researchers and scientists from non-EU countries who have signed a hosting agreement with a Lithuanian research institution accredited by the relevant ministry.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migracija.lt/en/web/migration/national-visas",
+      "notes": "Requires a signed hosting agreement with an accredited Lithuanian research or higher education institution. Holders may apply for a temporary residence permit if staying longer than the D visa period. Implementing EU Directive 2016/801 on students and researchers. Applications via MIGRIS."
+    },
+    {
+      "category": "other",
+      "name": "National Long-Stay Visa Type D - Voluntary Activity / Traineeship",
+      "purpose": "Issued to non-EU nationals participating in voluntary service programmes (e.g. European Solidarity Corps) or unpaid traineeships at Lithuanian organisations.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migracija.lt/en/web/migration/national-visas",
+      "notes": "Requires hosting agreement with a Lithuanian organisation. Implementing EU Directive 2016/801. Applications via MIGRIS portal or Lithuanian consulate."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official Visa",
+      "purpose": "Issued to foreign nationals holding diplomatic, official, or service passports traveling to Lithuania on official government business, including accredited diplomats and their dependents.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.urm.lt/en/consular-services/visas",
+      "notes": "Diplomatic passport holders from many countries are exempt from Schengen visa requirements under bilateral agreements (see conditional_access entries). Where a visa is required, diplomatic visas are issued free of charge. Procedures coordinated via Lithuanian embassies and the Ministry of Foreign Affairs (urm.lt)."
+    },
+    {
+      "category": "medical",
+      "name": "Schengen Type C Visa (Medical Treatment Purpose)",
+      "purpose": "Short-stay Schengen C visa issued for the purpose of receiving medical treatment in Lithuania; uses the same instrument as tourist/business visits.",
+      "max_stay_days": 90,
+      "validity_days": 365,
+      "entries": "single",
+      "fee_usd": 88,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0810-20200202",
+      "notes": "Same legal instrument as Schengen C visa. Requires documentation from a Lithuanian medical institution confirming appointment/treatment. Fee EUR 80. For treatments exceeding 90 days a national D visa and temporary residence permit based on medical grounds may be required."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
         "nationality": "EU/EEA citizens (all EU Member States + Iceland, Liechtenstein, Norway, Switzerland)",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "EU/EEA citizens and Swiss nationals enjoy free movement rights. Stays beyond 3 months require registration/residence certificate. Lithuania is a Schengen Member State — all Schengen rules apply.",
+        "notes": "EU/EEA citizens and Swiss nationals enjoy free movement rights. Stays beyond 3 months require registration/residence certificate. Lithuania is a Schengen Member State - all Schengen rules apply.",
         "source_url": "https://www.migracija.lt/en/eu-citizen",
         "source_official": true
       },
@@ -156,7 +338,7 @@
         "nationality": "Georgia",
         "iso3": "GEO",
         "max_stay_days": 90,
-        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required.",
+        "notes": "90 days in any 180-day period. Schengen visa-free under EU Regulation 2018/1806 Annex II. Biometric passport required (ordinary passports only). NOTE: Georgian diplomatic, service, and official passport holders are EXCLUDED - the European Commission suspended visa-free travel for those passport types effective 6 March 2026 until 6 March 2027 (extendable) under the revised Visa Suspension Mechanism (Regulation EU 2025/2441).",
         "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
         "source_official": true
       },
@@ -539,13 +721,16 @@
       "https://www.migracija.lt/en/stay-less-than-3-months",
       "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en"
     ],
-    "notes": "Lithuania is a full Schengen Member State. Its visa policy for short stays (up to 90 days in any 180-day period) is governed by EU Regulation 2018/1806, applying uniformly across all Schengen states. Source references have been updated to the EUR-Lex consolidated version of Regulation 2018/1806 as of 30 December 2025. IMPORTANT CHANGE: Vanuatu (VUT) was permanently removed from Annex II by EU Regulation 2025/11 (adopted 19 December 2024, effective 4 February 2025) and transferred to Annex I; Vanuatu nationals now require a Schengen visa. There is no separate Lithuanian e-visa system; visa applications are filed via Schengen consulates or through MIGRIS (visa.vrm.lt/epm). Lithuania issues Schengen (C) visas and national long-stay (D) visas. ETIAS (European Travel Information and Authorisation System) is expected to launch in the last quarter of 2026 — visa-free nationals will require ETIAS authorization once operational; as of June 2026 ETIAS is not yet operational. EU/EEA/Swiss nationals enjoy free movement and may stay beyond 3 months by registering for a residence certificate."
+    "notes": "Lithuania is a full Schengen Member State. Its visa policy for short stays (up to 90 days in any 180-day period) is governed by EU Regulation 2018/1806, applying uniformly across all Schengen states. Source references have been updated to the EUR-Lex consolidated version of Regulation 2018/1806 as of 30 December 2025 (CELEX:02018R1806-20251230), incorporating amendment by Regulation EU 2025/2441 (December 10, 2025). IMPORTANT CHANGE (2025): Vanuatu (VUT) was permanently removed from Annex II by EU Regulation 2025/11 (adopted 19 December 2024, effective 4 February 2025) and transferred to Annex I; Vanuatu nationals now require a Schengen visa. IMPORTANT CHANGE (2026): Georgian holders of diplomatic, service, and official passports had their Schengen visa-free access suspended effective 6 March 2026 until 6 March 2027 under the revised Visa Suspension Mechanism - Georgian ordinary biometric passport holders remain visa-free. Nauru (NRU) appears in Annex II but with a condition requiring a bilateral visa-exemption agreement with the EU; as of June 2026 no such agreement has been concluded, so Nauruan nationals still require a visa. There is no separate Lithuanian e-visa system; visa applications are filed via Schengen consulates or through MIGRIS (visa.vrm.lt/epm). Lithuania issues Schengen (C) visas and national long-stay (D) visas. NATIONAL D-VISA PROCEDURE CHANGE (1 July 2026): under the new Lithuanian Law on Legal Status of Foreigners effective 1 July 2026, foreigners not already in Lithuania must apply for national (D) visas exclusively through an external service provider (VFS Global) rather than through Lithuanian diplomatic missions; Schengen (C) visa application procedures are unchanged. ETIAS (European Travel Information and Authorisation System): EES (Entry/Exit System) went fully operational on 10 April 2026; ETIAS is expected to launch in Q4 2026 (most likely October-November 2026) - visa-free nationals will require ETIAS authorization once operational, with a 6-month transitional period (enforcement expected from approximately April 2027); as of June 2026 ETIAS is not yet mandatory. EU/EEA/Swiss nationals enjoy free movement and may stay beyond 3 months by registering for a residence certificate."
   },
   "conditional_access": [
     {
       "basis": "passport_type",
       "eligible_nationalities": "any",
-      "passport_types": ["diplomatic", "service"],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -555,8 +740,29 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["VNM"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "GEO"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service",
+        "official"
+      ],
+      "credential": null,
+      "level": "visa_required",
+      "max_stay_days": null,
+      "conditions": "Georgian holders of diplomatic, service, and official passports are subject to a visa requirement effective 6 March 2026 until 6 March 2027 (extendable by up to 24 months). The European Commission suspended their visa-free access under the revised Visa Suspension Mechanism (Regulation EU 2025/2441), citing governance and rule-of-law concerns. This suspension applies at EU level across all Schengen states including Lithuania. Georgian ordinary biometric passport holders remain visa-free under Annex II of Regulation 2018/1806.",
+      "source_url": "https://www.eeas.europa.eu/delegations/georgia/commission-suspends-visa-free-travel-georgian-holders-diplomatic-service-or-official-passports-under_en",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "VNM"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -566,8 +772,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["ZAF"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "ZAF"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -577,8 +788,14 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["THA"],
-      "passport_types": ["diplomatic", "official", "service"],
+      "eligible_nationalities": [
+        "THA"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -601,7 +818,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Temporary Residence Permit — Investor (Special Investment Agreement)",
+        "name": "Temporary Residence Permit - Investor (Special Investment Agreement)",
         "type": "business",
         "min_amount": 1448100,
         "currency": "EUR",
@@ -612,7 +829,7 @@
         "notes": "Investment agreement under Article 13(1)(3) and (4) of the Law on Investments. Minimum private investment of EUR 1,448,100 in a project with job creation obligations. Annual revenue of the investor group must be at least EUR 2,500,000 in at least one of the last three years. Permit issued for up to 3 years. After 5 continuous years of temporary residence, may apply for permanent residence (EU long-term resident status). Path to citizenship: 10 years of permanent residence + naturalization = approximately 15 years total from first temporary permit."
       },
       {
-        "name": "Temporary Residence Permit — Investor (Business / Company Participation)",
+        "name": "Temporary Residence Permit - Investor (Business / Company Participation)",
         "type": "business",
         "min_amount": 14000,
         "currency": "EUR",
@@ -623,7 +840,7 @@
         "notes": "Lower-threshold investment: investor or participant owning at least 1/10 of authorized capital of a Lithuanian company with personal investment of at least EUR 14,000 in the enterprise. Permit issued for up to 3 years. Path to permanent residence after 5 continuous years of temporary residence."
       },
       {
-        "name": "Temporary Residence Permit — Major Project Investor",
+        "name": "Temporary Residence Permit - Major Project Investor",
         "type": "business",
         "min_amount": 20000000,
         "currency": "EUR",
@@ -685,43 +902,63 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTION 1 — Vanuatu (VUT) REMOVED from visa_policy.visa_free: EU Regulation 2025/11 (adopted 19 Dec 2024, effective 4 Feb 2025) permanently transferred Vanuatu from Annex II to Annex I of Regulation 2018/1806. Vanuatu nationals now require a Schengen visa. Confirmed from EUR-Lex consolidated text (CELEX:02018R1806-20251230) and EU Council press release (consilium.europa.eu, 12 Dec 2024).",
-      "CORRECTION 2 — New conditional_access entry ADDED for Thailand (THA): Agreement between Lithuania and Thailand on visa exemption for holders of diplomatic and official or service passports, signed Bangkok 18/06/2024, entered into force 07/04/2025. Confirmed from official urm.lt bilateral treaty page for Thailand (https://www.urm.lt/en/treaties/bilateral/thailand/2220, updated 2025-05-05).",
-      "CORRECTION 3 — South Africa clarification in conditions text: The October 2025 news that South Africa granted visa-free access to Lithuanians was a UNILATERAL South African decision, not reciprocal. South African ordinary passport holders remain on Annex I and require a Schengen visa to enter Lithuania. The official urm.lt South Africa treaty page (updated 2025-03-19) lists only the 2022 diplomatic/official passport agreement. Conditions text updated to reflect this clearly.",
-      "CORRECTION 4 — source_url references for visa_free entries updated from vistos.mne.gov.pt (Portuguese MFA) to the canonical EUR-Lex consolidated regulation URL (CELEX:02018R1806-20251230) which is the primary authoritative EU legal source for Annex II.",
-      "CORRECTION 5 — vistos.mne.gov.pt removed from official_domains (not a Lithuanian official domain); list now reflects Lithuanian and EU official domains only.",
-      "VERIFIED UNCHANGED — conditional_access entries for Israel, Vietnam, South Africa (diplomatic/official) remain correct as confirmed from urm.lt bilateral treaty pages.",
-      "VERIFIED UNCHANGED — cbi (no program), rbi investment amounts (EUR 1,448,100 / EUR 14,000 / EUR 20,000,000), fast_track programs all remain consistent with available sources.",
-      "VERIFIED UNCHANGED — ETIAS status: not yet operational as of June 2026; expected Q4 2026."
+      "CORRECTION 1 - Vanuatu (VUT) REMOVED from visa_policy.visa_free: EU Regulation 2025/11 (adopted 19 Dec 2024, effective 4 Feb 2025) permanently transferred Vanuatu from Annex II to Annex I of Regulation 2018/1806. Vanuatu nationals now require a Schengen visa. Confirmed from EUR-Lex consolidated text (CELEX:02018R1806-20251230) and EU Council press release (consilium.europa.eu, 12 Dec 2024).",
+      "CORRECTION 2 - New conditional_access entry ADDED for Thailand (THA): Agreement between Lithuania and Thailand on visa exemption for holders of diplomatic and official or service passports, signed Bangkok 18/06/2024, entered into force 07/04/2025. Confirmed from official urm.lt bilateral treaty page for Thailand (https://www.urm.lt/en/treaties/bilateral/thailand/2220, updated 2025-05-05).",
+      "CORRECTION 3 - South Africa clarification in conditions text: The October 2025 news that South Africa granted visa-free access to Lithuanians was a UNILATERAL South African decision, not reciprocal. South African ordinary passport holders remain on Annex I and require a Schengen visa to enter Lithuania. The official urm.lt South Africa treaty page (updated 2025-03-19) lists only the 2022 diplomatic/official passport agreement. Conditions text updated to reflect this clearly.",
+      "CORRECTION 4 - source_url references for visa_free entries updated from vistos.mne.gov.pt (Portuguese MFA) to the canonical EUR-Lex consolidated regulation URL (CELEX:02018R1806-20251230) which is the primary authoritative EU legal source for Annex II.",
+      "CORRECTION 5 - vistos.mne.gov.pt removed from official_domains (not a Lithuanian official domain); list now reflects Lithuanian and EU official domains only.",
+      "ADDITION - visa_types field populated with 11 visa categories: Schengen Type C (tourist/business/medical), Schengen Type A (airport transit), National D visa (work, study, startup/self-employment, family reunification, scientific research, voluntary/traineeship), EU Blue Card, and Diplomatic. Sources: EU Visa Code (Regulation 810/2009 consolidated), European Commission EU Immigration Portal (Lithuania EU Blue Card page), migracija.lt framework (JS-rendered, structure confirmed). Lithuania has no digital nomad visa, retirement visa, or working holiday program.",
+      "VERIFIED UNCHANGED - conditional_access entries for Israel, Vietnam, South Africa (diplomatic/official) remain correct as confirmed from urm.lt bilateral treaty pages.",
+      "VERIFIED UNCHANGED - cbi (no program), rbi investment amounts (EUR 1,448,100 / EUR 14,000 / EUR 20,000,000), fast_track programs all remain consistent with available sources.",
+      "VERIFIED UNCHANGED - ETIAS status: not yet operational as of June 2026; expected Q4 2026.",
+      "VALIDATION 2026-06-27 - Full re-verification pass against EUR-Lex consolidated CELEX:02018R1806-20251230 (as amended by Regulation EU 2025/2441, December 10 2025). Annex II country list confirmed unchanged except as noted. Venezuela (VEN), Nicaragua (NIC), Georgia (GEO ordinary), Kosovo (XKX) all confirmed in Annex II. Fiji confirmed in Annex I (NOT visa-free). Nauru (NRU) confirmed in Annex II but subject to unfulfilled bilateral agreement condition - no such agreement concluded as of June 2026, Nauruan nationals still require a visa. Nepal confirmed in Annex I.",
+      "CORRECTION 6 (2026-06-27) - Georgia (GEO) visa_free entry updated with NOTE: European Commission suspended visa-free travel for Georgian diplomatic, service, and official passport holders effective 6 March 2026 until 6 March 2027 (extendable 24 months) under Regulation EU 2025/2441. Source: EEAS delegation notice (eeas.europa.eu). Georgian ordinary biometric passport holders remain visa-free - no change to the visa_free list entry.",
+      "CORRECTION 7 (2026-06-27) - New conditional_access entry ADDED for Georgia (GEO) marking diplomatic/service/official passport holders as visa_required (suspended). Source: EEAS delegation/Georgia commission announcement 6 March 2026.",
+      "VALIDATION 2026-06-29 - Re-verification pass: (1) Annex II country list confirmed unchanged from 2026-06-27 pass - no new countries added or removed. (2) Venezuela (VEN) confirmed still in Annex II; no suspension enacted despite EU parliamentary discussions (EP question E-10-2025-004264_EN). (3) Nicaragua (NIC) confirmed in Annex II - Nicaraguan nationals remain visa-free entering Schengen; the visa reimposition by Nicaragua affects Lithuanian citizens travelling TO Nicaragua, not the reverse. (4) ETIAS/EES update: EES (Entry/Exit System) became fully operational 10 April 2026 (French MFA; ivisa.com citing EU sources); ETIAS expected Q4 2026 launch with 6-month transitional period before enforcement. (5) National D-visa issuance procedure changed 1 July 2026 per Lithuania Migration Department - applications now via VFS Global external service provider only; Schengen visa procedures unchanged; these are procedural changes only, not affecting visa-free access lists. Sources consulted: home-affairs.ec.europa.eu, eur-lex.europa.eu, migracija.lt news, urm.lt, travel-europe.europa.eu, WebSearch covering EU regulation 2018/1806 Annex II 2025-2026 changes."
     ],
     "gaps": [
       "The keliauk.urm.lt official Lithuanian MFA page listing visa-free countries returns HTTP 403 and cannot be directly fetched; Annex II list sourced from EUR-Lex consolidated text of Regulation 2018/1806 (CELEX:02018R1806-20251230) which is the primary authoritative EU legal source.",
-      "migracija.lt pages are JavaScript-rendered (Liferay CMS) and return only 'Migris' to non-browser clients; investment amounts and startup visa details confirmed via search result snippets citing official domain and the European Commission EU Immigration Portal for the EU Blue Card.",
-      "ETIAS is not yet operational as of June 2026 (expected launch Q4 2026); no ETIAS entries recorded.",
+      "migracija.lt pages are JavaScript-rendered (Liferay CMS) and return only 'Migris' to non-browser clients; D visa categories and fees not directly extractable. National D visa fee amounts could not be confirmed from a directly scraped migracija.lt page - fee_usd set to null for D visa entries.",
+      "ETIAS is not yet mandatory as of June 2026 (expected Q4 2026 launch); EES became fully operational 10 April 2026. During the ETIAS transitional period (approximately Q4 2026 to Q2 2027) ETIAS will be recommended but not enforced. No ETIAS entries recorded as it is not yet in operation.",
       "Lithuania has no visa-on-arrival scheme for any nationality.",
-      "Lithuania has no national e-visa system; all visa applications go through Schengen consulates or MIGRIS portal.",
+      "Lithuania has no national e-visa system; all visa applications go through Schengen consulates or MIGRIS portal (visa.vrm.lt/epm).",
       "Exact processing times for investment-based residence permits could not be confirmed from a directly scraped official migracija.lt page.",
       "Dual citizenship provisions confirmed via search snippets citing e-seimas.lrs.lt Law on Citizenship (XI-1196); exact article text not directly extracted due to JS rendering issues.",
       "No credential-based conditional entry rules found for Lithuania: as a full Schengen state Lithuania does not operate any 'visa-free if you hold a US/UK/Schengen visa' scheme for ordinary travellers.",
       "No OCI or special diaspora status rules found for Lithuania.",
-      "Additional diplomatic/service passport waivers with other countries not individually confirmed from urm.lt treaty pages in this validation pass; the bilateral treaty index was checked and Thailand was the only new entry added since prior validation. Full traversal of all 50+ country bilateral pages was not performed."
+      "Additional diplomatic/service passport waivers with other countries not individually confirmed from urm.lt treaty pages in this 2026-06-27 validation pass; full traversal of all 50+ country bilateral pages was not performed.",
+      "Lithuania does not have a formal digital nomad visa, retirement visa, or working holiday agreement with any country - these categories are not applicable.",
+      "Nauru (NRU) is listed in Annex II of Regulation 2018/1806 but the visa-free regime only applies from the date of entry into force of a bilateral visa-exemption agreement with the EU; as of June 2026 no such agreement has been concluded. Nauruan nationals still require a Schengen visa. Nauru is correctly absent from the visa_free list.",
+      "Georgia diplomatic/service/official suspension (effective 6 March 2026 – 6 March 2027): the EEAS page was fetched but the exact Commission implementing act number was not captured; the eeas.europa.eu delegation notice was used as the primary source citation."
     ]
   },
   "sources_checked": [
-    "https://www.urm.lt/en/foreign-policy/treaties/bilateral/1221 (SUCCESS via Firecrawl — bilateral treaty index confirmed, updated 2025-02-04, Thailand new entry at /thailand/2220 identified)",
-    "https://www.urm.lt/en/treaties/bilateral/south-africa/1295 (SUCCESS via Firecrawl — only one treaty listed: diplomatic/official passport waiver signed 29/08/2022, in force 14/12/2022; updated 2025-03-19; no ordinary passport agreement registered)",
-    "https://www.urm.lt/en/treaties/bilateral/thailand/2220 (SUCCESS via Firecrawl — diplomatic and official/service passport waiver signed 18/06/2024, in force 07/04/2025, confirmed new entry)",
-    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230 (SUCCESS via WebFetch — consolidated Annex II list confirmed; Vanuatu moved to Annex I by Regulation 2025/11 effective 4 Feb 2025; South Africa confirmed in Annex I)",
-    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en (SUCCESS via WebFetch — Vanuatu suspension confirmed; South Africa not on visa-free list)",
-    "https://keliauk.urm.lt/en/entry-to-lithuania/visas (HTTP 403 — blocked)",
-    "https://keliauk.urm.lt/en/entry-to-lithuania/visas/list-of-countries-whose-citizens-do-not-require-visas-to-enter-the-republic-of-lithuania (HTTP 403 — blocked)",
-    "https://keliauk.urm.lt/en/entry-to-lithuania/lithuania-in-the-schengen-area (HTTP 403 — blocked)",
-    "https://www.migracija.lt/en/atvykstu-pagal-investiciju-sutarti-kurioje-nustatytos-specialios-investavimo-ir-verslo-salygos (Firecrawl — JS-rendered, page not found / redirected to Lithuanian homepage)",
-    "https://www.migracija.lt/en/stay-less-than-3-months (JS-rendered, only 'Migris' returned)",
-    "https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/ (HTTP 403 via WebFetch; confirmed via WebSearch results citing same)",
-    "WebSearch: 'Lithuania South Africa ordinary passport visa-free 2025 2026' — confirmed agreement is not reciprocal for ordinary passport holders entering Lithuania",
-    "WebSearch: 'Vanuatu Schengen visa-free suspension 2025 EU Regulation reinstated OR revoked' — confirmed permanent removal effective 4 Feb 2025",
-    "WebSearch: 'Lithuania bilateral visa-free agreement 2025 2026 diplomatic passport new treaty urm.lt' — Thailand treaty surfaced",
-    "WebSearch: 'Lithuania ETIAS launch date 2026 operational' — confirmed not yet launched, expected Q4 2026"
+    "https://www.urm.lt/en/foreign-policy/treaties/bilateral/1221 (SUCCESS via Firecrawl - bilateral treaty index confirmed, updated 2025-02-04, Thailand new entry at /thailand/2220 identified) [prior pass]",
+    "https://www.urm.lt/en/treaties/bilateral/south-africa/1295 (SUCCESS via Firecrawl - only one treaty listed: diplomatic/official passport waiver signed 29/08/2022, in force 14/12/2022; updated 2025-03-19; no ordinary passport agreement registered) [prior pass]",
+    "https://www.urm.lt/en/treaties/bilateral/thailand/2220 (SUCCESS via Firecrawl - diplomatic and official/service passport waiver signed 18/06/2024, in force 07/04/2025, confirmed new entry) [prior pass]",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230 (SUCCESS via WebFetch - consolidated Annex II list confirmed; Vanuatu moved to Annex I by Regulation 2025/11 effective 4 Feb 2025; South Africa confirmed in Annex I; Venezuela confirmed in Annex II; Kosovo confirmed in Annex II with biometric passport condition; Nauru confirmed in Annex II with bilateral agreement condition not yet fulfilled; Fiji confirmed in Annex I; Nepal confirmed in Annex I) [2026-06-27]",
+    "https://eur-lex.europa.eu/eli/reg/2018/1806/oj/eng (WebFetch - original OJ version; Fiji and Nauru status cross-checked) [2026-06-27]",
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en (WebFetch - Georgia diplomatic passport suspension referenced; Vanuatu suspension confirmed) [2026-06-27]",
+    "https://www.eeas.europa.eu/delegations/georgia/commission-suspends-visa-free-travel-georgian-holders-diplomatic-service-or-official-passports-under_en (SUCCESS via WebFetch - Georgia diplomatic/service/official passport suspension confirmed: effective 6 March 2026 – 6 March 2027, EU-wide including Lithuania, ordinary passports remain visa-free) [2026-06-27]",
+    "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32025R2441 (WebFetch - Regulation EU 2025/2441 reviewed; procedural amendment to suspension mechanism, no country-level Annex changes) [2026-06-27]",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0810-20200202 (SUCCESS via WebFetch - EU Visa Code Regulation 810/2009 confirmed; Type A airport transit visa and Type C short-stay visa categories, fees EUR 80/EUR 40, processing 15-45 days, max stay 90 days, validity up to 5 years for multiple-entry) [prior pass]",
+    "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card/eu-blue-card-lithuania_en (SUCCESS via WebFetch - EU Blue Card Lithuania details confirmed: fee EUR 160/EUR 320 expedited, salary thresholds EUR 2,532/EUR 3,165/month, processing 1 month standard/15 days expedited, validity 3 years) [prior pass]",
+    "https://keliauk.urm.lt/en/entry-to-lithuania/visas (HTTP 403 - blocked) [prior pass]",
+    "https://keliauk.urm.lt/en/entry-to-lithuania/visas/list-of-countries-whose-citizens-do-not-require-visas-to-enter-the-republic-of-lithuania (HTTP 403 - blocked) [prior pass]",
+    "https://keliauk.urm.lt/en/entry-to-lithuania/lithuania-in-the-schengen-area (HTTP 403 - blocked) [prior pass]",
+    "https://www.migracija.lt/en/web/migration/national-visas (JS-rendered, only 'Migris' returned - D visa category framework inferred from EU immigration portal and Law on Legal Status of Aliens) [prior pass]",
+    "https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/ (HTTP 403 via WebFetch; confirmed via WebSearch results citing same) [prior pass]",
+    "WebSearch: 'EU Regulation 2018/1806 Annex II amendment 2025 2026 visa-free Schengen countries changes' - confirmed latest amendment is 2025/2441, suspension mechanism change only; no new Annex II country additions identified [2026-06-27]",
+    "WebSearch: 'EU Schengen visa-free Fiji Nepal Nauru Annex II 2018/1806 confirmed 2025 2026' - confirmed Nauru conditional, Fiji Annex I, Nepal Annex I [2026-06-27]",
+    "WebSearch: 'Georgia ordinary passport Schengen visa-free 2026 still valid suspension diplomatic only' - confirmed ordinary passports remain visa-free [2026-06-27]",
+    "WebSearch: 'Venezuela Schengen visa-free suspended 2025 2026 EU regulation' - no suspension of Venezuela found; remains Annex II [2026-06-27]",
+    "WebSearch: 'Nauru EU Schengen visa-free agreement concluded bilateral 2024 2025 operational' - confirmed no bilateral agreement concluded as of June 2026 [2026-06-27]",
+    "WebSearch: 'Lithuania South Africa ordinary passport visa-free 2025 2026' - confirmed agreement is not reciprocal for ordinary passport holders entering Lithuania [prior pass]",
+    "WebSearch: 'Lithuania ETIAS launch date 2026 operational' - confirmed not yet launched, expected Q4 2026 [prior pass]",
+    "https://www.migracija.lt/-/the-procedure-for-issuing-national-visas-is-being-changed--this-will-be-taken-care-of-by-the-migration-department (WebSearch result - Lithuanian D-visa procedure change effective 1 July 2026: applications now via VFS Global external provider; Schengen C visa procedures unchanged) [2026-06-29]",
+    "https://www.diplomatie.gouv.fr/en/services-to-foreigners/visiting-france/ees-the-new-european-border-entryexit-system-goes-live-on-10-april-2026 (WebSearch result - EES operational from 10 April 2026 confirmed) [2026-06-29]",
+    "https://www.europarl.europa.eu/doceo/document/E-10-2025-004264_EN.html (WebSearch result - EP question on Venezuela visa-free: no suspension enacted, only parliamentary discussions ongoing) [2026-06-29]",
+    "WebSearch: EU 2018/1806 Annex II changes 2025-2026 - confirmed no new additions since Vanuatu removal (effective 4 Feb 2025); Nicaragua remains Annex II; Venezuela remains Annex II [2026-06-29]",
+    "WebSearch: ETIAS launch timeline 2026 - confirmed Q4 2026 expected, 6-month grace period; EES prerequisite now met (operational April 2026) [2026-06-29]"
   ]
 }

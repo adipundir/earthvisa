@@ -3,6 +3,83 @@
   "iso3": "SDN",
   "name": "Sudan",
   "region": "Africa",
+  "visa_types": [
+    {
+      "category": "business",
+      "name": "Entry Visa - Business/Official",
+      "purpose": "Issued to foreign nationals traveling to Sudan for business, official, or work purposes. Requires a sponsorship letter from a Sudanese organization detailing the nature of work, duration, and financial responsibility.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 154,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://sudanembassy.org/entry-visa/",
+      "notes": "Requires sponsorship letter from a recognized Sudanese organization. Non-US passport holders applying at Washington D.C. embassy must include a valid US residence permit copy. Processing time is 'up to 10 working days'. Fee is $154 USD (Washington D.C. embassy) or £100 (London embassy). Payment by money order, company check, cashier's check, or cash (walk-in); no personal checks or credit cards. Entry permit from Sudan's Aliens Department (Ministry of Interior) must be obtained by the sponsor in Khartoum before a visa can be issued by London embassy."
+    },
+    {
+      "category": "work",
+      "name": "Entry Visa - Work",
+      "purpose": "Issued to foreign nationals entering Sudan for employment purposes, sponsored by a Sudanese employer or organization.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 154,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://sudanembassy.org/entry-visa/",
+      "notes": "Listed alongside business/official visas under the same application category. Requires sponsorship letter from employer specifying type of work and duration. Same fee and processing as business visa ($154, up to 10 working days)."
+    },
+    {
+      "category": "other",
+      "name": "Entry Visa - Humanitarian",
+      "purpose": "Issued to humanitarian workers and NGO personnel traveling to Sudan for relief and aid operations.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 154,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://sudanembassy.org/entry-visa/",
+      "notes": "Requires a certificate from Sudan's Humanitarian Aid Commission (HAC) in addition to standard sponsorship letter. Same fee ($154) and processing time (up to 10 working days) as business visa."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official Visa (Note Verbale)",
+      "purpose": "Issued to diplomatic and UN personnel, State Department officials, and other government representatives requiring entry to Sudan on official missions.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://sudanembassy.org/entry-visa/",
+      "notes": "Requires a note verbale from the U.S. Department of State or the applicant's international organization. Actual passport is submitted only after Ministry of Foreign Affairs approval. Fee not specified on official page. Processing up to 10 working days."
+    },
+    {
+      "category": "other",
+      "name": "Entry Visa - Sudanese National (Foreign Passport Holder)",
+      "purpose": "Issued to individuals of Sudanese nationality who hold a foreign passport, allowing them to enter Sudan.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 154,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://sudanembassy.org/entry-visa/",
+      "notes": "Requires a valid Sudanese identification document (passport or national number) plus a copy of the Sudanese sponsor's ID. For minors under 18: paternal written consent and father's ID copy required. Minors traveling without parents require a notarized paternal no-objection letter. Fee £50 (London embassy) or $154 (Washington D.C. embassy)."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -95,7 +172,7 @@
       "https://www.sudanembassy.org.uk/visa-service/",
       "https://en.wikipedia.org/wiki/Visa_policy_of_Sudan"
     ],
-    "notes": "All primary official Sudan government websites (passport.gov.sd, moi.gov.sd, mfa.gov.sd, eservice.passport.gov.sd) were inaccessible during research (connection refused, 403, or certificate errors). Visa-free and visa-on-arrival data is sourced from the Wikipedia article on the Visa policy of Sudan, which cites IATA Timatic as its primary source — all entries are therefore marked source_official=false. No official Sudan government page enumerating visa-free, visa-on-arrival, or e-visa eligible nationalities was accessible. Sudan does not operate a public e-visa portal. Bangladesh nationals with ordinary passports are refused entry except commercial delegations or university students with residence permits. All visitors must complete mandatory police registration within 24 hours of arrival. Passports must be valid for at least 6 months from the date of arrival. Entry is denied to holders of Israeli passports or passports with Israeli entry/exit stamps. Diplomatic and official passport holders from additional countries (Algeria, Brazil, China, Congo, Ethiopia, Iran, Libya, Namibia, Russia [diplomatic only], Turkey, Vietnam) have separate visa-free access for non-ordinary passports — recorded in conditional_access, not here. Saudi Arabia visa-free access was MOVED to conditional_access (basis=credential) because it requires a letter from the Sudanese Ministry of Investment confirming business purpose — it is conditional on a document, not plain nationality."
+    "notes": "All primary official Sudan government websites (passport.gov.sd, moi.gov.sd, mfa.gov.sd, eservice.passport.gov.sd) were inaccessible during research (connection refused, 403, or certificate errors). Visa-free and visa-on-arrival data is sourced from the Wikipedia article on the Visa policy of Sudan, which cites IATA Timatic as its primary source - all entries are therefore marked source_official=false. No official Sudan government page enumerating visa-free, visa-on-arrival, or e-visa eligible nationalities was accessible. Sudan does not operate a public e-visa portal. Bangladesh nationals with ordinary passports are refused entry except commercial delegations or university students with residence permits. All visitors must complete mandatory police registration within 24 hours of arrival. Passports must be valid for at least 6 months from the date of arrival. Entry is denied to holders of Israeli passports or passports with Israeli entry/exit stamps. Diplomatic and official passport holders from additional countries (Algeria, Brazil, China, Congo, Ethiopia, Iran, Libya, Namibia, Russia [diplomatic only], Turkey, Vietnam) have separate visa-free access for non-ordinary passports - recorded in conditional_access, not here. Saudi Arabia visa-free access was MOVED to conditional_access (basis=credential) because it requires a letter from the Sudanese Ministry of Investment confirming business purpose - it is conditional on a document, not plain nationality."
   },
   "cbi": {
     "has_program": false,
@@ -119,7 +196,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://investmentpolicy.unctad.org/investment-laws/laws/334/sudan-the-investment-act",
         "source_official": false,
-        "notes": "Section 21(1) of Sudan's Investment (Encouragement) Act, 2021 provides that non-Sudanese investors shall be granted residence throughout the duration of their investment project. This is project-tied residency, not a standalone RBI/golden visa program. The law does not set a minimum amount for residence per se; the closest verifiable foreign-investor threshold is the earnest-money deposit in Section 22(2): the foreign investor shall deposit, before being granted a license, an amount that 'shall not be less than two hundred and fifty thousand Dollars or what equivalent thereof in foreign currencies acceptable by the Central Bank, through external transfer' (USD 250,000), recorded here as min_amount. Section 22(1) leaves the general minimum invested capital to be specified by regulations (not published on any accessible official source). The UNCTAD page mirrors the law text verbatim but is not itself a Sudan government domain — marked source_official=false."
+        "notes": "Section 21(1) of Sudan's Investment (Encouragement) Act, 2021 provides that non-Sudanese investors shall be granted residence throughout the duration of their investment project. This is project-tied residency, not a standalone RBI/golden visa program. The law does not set a minimum amount for residence per se; the closest verifiable foreign-investor threshold is the earnest-money deposit in Section 22(2): the foreign investor shall deposit, before being granted a license, an amount that 'shall not be less than two hundred and fifty thousand Dollars or what equivalent thereof in foreign currencies acceptable by the Central Bank, through external transfer' (USD 250,000), recorded here as min_amount. Section 22(1) leaves the general minimum invested capital to be specified by regulations (not published on any accessible official source). The UNCTAD page mirrors the law text verbatim but is not itself a Sudan government domain - marked source_official=false."
       }
     ]
   },
@@ -139,7 +216,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Saudi nationals with ordinary passports may enter visa-free for business visits only; must present a letter from the Sudanese Ministry of Investment confirming the business purpose. This is a conditional grant dependent on a document credential, not a plain nationality waiver — moved from visa_free to conditional_access.",
+      "conditions": "Saudi nationals with ordinary passports may enter visa-free for business visits only; must present a letter from the Sudanese Ministry of Investment confirming the business purpose. This is a conditional grant dependent on a document credential, not a plain nationality waiver - moved from visa_free to conditional_access.",
       "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Sudan",
       "source_official": false
     },
@@ -185,14 +262,14 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Mutual visa exemption agreement for holders of diplomatic passports signed between Sudan and Somalia on 5 April 2026 in Mogadishu, during the second session of the Somalia-Sudan Political Consultation Committee. Signed by Hamza Adan Haadow, Permanent Secretary of Somalia's Ministry of Foreign Affairs, and Ambassador Muawiya Osman Khalid, Undersecretary of Sudan's Ministry of Foreign Affairs. Confirmed by Somali-focused news outlets (dawan.africa, hiiraan.com, ftlsomalia.com) citing a Somali MFA statement. No SUNA article confirmed; Somali MFA website inaccessible. Added in June 2026 validation after prior research noted the agreement as unconfirmable — secondary sources now corroborate the date and signatories.",
+      "conditions": "Mutual visa exemption agreement for holders of diplomatic passports signed between Sudan and Somalia on 5 April 2026 in Mogadishu, during the second session of the Somalia-Sudan Political Consultation Committee. Signed by Hamza Adan Haadow, Permanent Secretary of Somalia's Ministry of Foreign Affairs, and Ambassador Muawiya Osman Khalid, Undersecretary of Sudan's Ministry of Foreign Affairs. Confirmed by Somali-focused news outlets (dawan.africa, hiiraan.com, ftlsomalia.com) citing a Somali MFA statement. No SUNA article confirmed; Somali MFA website inaccessible. Added in June 2026 validation after prior research noted the agreement as unconfirmable - secondary sources now corroborate the date and signatories.",
       "source_url": "https://www.dawan.africa/news/somalia-and-sudan-sign-diplomatic-visa-exemption-agreement",
       "source_official": false
     }
   ],
   "outbound_official": {
     "found": false,
-    "note": "No official Sudan government outbound visa-list page located; rely on destination-side data. All primary official Sudanese government domains checked (mfa.gov.sd — TLS certificate expired; passport.gov.sd / passports.gov.sd — HTTP 403 Forbidden; moi.gov.sd — HTTP 403; eservice.passport.gov.sd — connection refused; et-sudanembassy.gov.sd — TLS certificate invalid; sudanembassyuk.gov.sd — timeout; sudanembassyeg.gov.sd — accessible but covers only inbound/consular services, no outbound list). The Sudan Embassy Ottawa page (sudanembassyottawa.com/visa-sudanese-nationals) returned HTTP 404. No Sudan Ministry of Foreign Affairs or Passport Authority page enumerating countries where Sudan ordinary-passport citizens may travel without a prior consular visa was accessible or found via web search as of 2026-06-14."
+    "note": "No official Sudan government outbound visa-list page located; rely on destination-side data. All primary official Sudanese government domains checked (mfa.gov.sd - TLS certificate expired; passport.gov.sd / passports.gov.sd - HTTP 403 Forbidden; moi.gov.sd - HTTP 403; eservice.passport.gov.sd - connection refused; et-sudanembassy.gov.sd - TLS certificate invalid; sudanembassyuk.gov.sd - timeout; sudanembassyeg.gov.sd - accessible but covers only inbound/consular services, no outbound list). The Sudan Embassy Ottawa page (sudanembassyottawa.com/visa-sudanese-nationals) returned HTTP 404. No Sudan Ministry of Foreign Affairs or Passport Authority page enumerating countries where Sudan ordinary-passport citizens may travel without a prior consular visa was accessible or found via web search as of 2026-06-14."
   },
   "official_domains": [
     "sudanembassy.org",
@@ -202,21 +279,25 @@
   "data_quality": {
     "completeness": "low",
     "validation_notes": [
-      "CORRECTION: Saudi Arabia (SAU) moved from visa_policy.visa_free to conditional_access with basis='credential'. The grant requires a letter from the Sudanese Ministry of Investment confirming business purpose — it is not an unconditional ordinary-nationality waiver and must not appear in visa_free.",
+      "CORRECTION: Saudi Arabia (SAU) moved from visa_policy.visa_free to conditional_access with basis='credential'. The grant requires a letter from the Sudanese Ministry of Investment confirming business purpose - it is not an unconditional ordinary-nationality waiver and must not appear in visa_free.",
       "ADDITION: Somalia (SOM) diplomatic passport visa exemption agreement (signed 5 April 2026, Mogadishu) added to conditional_access. Previously flagged as unconfirmable; multiple secondary sources (dawan.africa, hiiraan.com, ftlsomalia.com) now corroborate the event, date, and signatories. Marked source_official=false as no Sudan official government domain was accessible to confirm.",
       "UPDATE: Azerbaijan (AZE) diplomatic passport entry in conditional_access source_url updated to allafrica.com (confirmed corroborating source) since suna-sd.net returned HTTP 403 Forbidden during this validation pass. The original suna-sd.net URL is preserved in sources_checked. The event itself is multiply corroborated by allAfrica, trend.az, and en.apa.az.",
-      "NO CHANGE: visa_policy.visa_free entries for Egypt, Kuwait, UAE, Qatar, Yemen, Saint Kitts and Nevis — unchanged, consistent with Wikipedia/IATA Timatic; no contradicting official source found.",
-      "NO CHANGE: visa_policy.visa_on_arrival entries for Eritrea, Kenya, Malaysia, Turkey — unchanged, consistent with Wikipedia/IATA Timatic.",
-      "NO CHANGE: conditional_access diplomatic/official passport blocks (Algeria, Brazil, China, etc.) and African nations VoA block — unchanged.",
+      "NO CHANGE: visa_policy.visa_free entries for Egypt, Kuwait, UAE, Qatar, Yemen, Saint Kitts and Nevis - unchanged, consistent with Wikipedia/IATA Timatic; no contradicting official source found.",
+      "NO CHANGE: visa_policy.visa_on_arrival entries for Eritrea, Kenya, Malaysia, Turkey - unchanged, consistent with Wikipedia/IATA Timatic.",
+      "NO CHANGE: conditional_access diplomatic/official passport blocks (Algeria, Brazil, China, etc.) and African nations VoA block - unchanged.",
       "CONFIRMED: No e-visa portal or ETA scheme for Sudan. Sudan embassy London and Washington pages do not reference e-visa or online entry authorization.",
       "CONFIRMED: CBI has_program=false; no new program found.",
-      "CONFIRMED: RBI program (Sudan Investment Act 2021, USD 250k) — unchanged; UNCTAD source inaccessible but law details not contradicted."
+      "CONFIRMED: RBI program (Sudan Investment Act 2021, USD 250k) - unchanged; UNCTAD source inaccessible but law details not contradicted.",
+      "ADDITION (visa_types): 5 visa categories extracted from Embassy of Sudan (Washington D.C.) and Embassy of Sudan (London) official pages. Sudan's official government passport/immigration portals (passport.gov.sd) were inaccessible (ECONNREFUSED). No tourist, transit, student, digital_nomad, retirement, working_holiday, or medical visa categories were found on any accessible official Sudan government page. Sudan's visa system requires a sponsor and entry permit from the Aliens Department for non-Sudanese nationals; there is no self-sponsored tourist visa documented on official sources.",
+      "REVALIDATION 2026-06-27: Full re-check of all official and secondary sources. sudanembassy.org and sudanembassy.org.uk both loaded and confirmed no new visa-free or VoA categories. Wikipedia (IATA Timatic) still shows the same 5 visa-free and 4 VoA countries - no additions or removals. All Sudanese government portals (passport.gov.sd, moi.gov.sd, mfa.gov.sd, eservice.passport.gov.sd) remain inaccessible. No official e-visa portal found for Sudan. Saudi Arabia conditional_access entry re-confirmed from Wikipedia and VisaHQ sources (credential=letter from Sudan Ministry of Investment). Sudan-Israel normalization agreement of 2020/2023 has NOT entered into force - postponed indefinitely due to ongoing civil war and Gaza conflict; Israel entry ban remains in effect per current evidence. No new bilateral ordinary-passport visa agreements found. Record unchanged; no risky_changes to visa access lists.",
+      "REVALIDATION 2026-06-29: Re-fetched sudanembassy.org (Washington D.C.) - same content as prior runs; no visa-free list, no e-visa. Re-fetched sudanembassy.org.uk (London) - same content; non-Sudanese require entry permit from Aliens Department (eservice.passport.gov.sd), £100 fee. Re-fetched Wikipedia visa policy of Sudan - still shows same 5 visa-free (Egypt, Kuwait, UAE, Qatar, Yemen + KNA waiver agreement) and 4 visa-on-arrival (Eritrea, Kenya, Malaysia, Turkey) countries; no new additions or removals. mfa.gov.sd: TLS certificate still expired. passport.gov.sd: still ECONNREFUSED. suna-sd.net: still HTTP 403. Web search found no new ordinary-passport bilateral visa agreements for Sudan signed in 2026. Somalia-Sudan diplomatic passport exemption (April 2026) already recorded in conditional_access - unchanged. Azerbaijan-Sudan diplomatic passport exemption (May 2026) already recorded in conditional_access - unchanged. No changes made to any visa access lists. Record confirmed stable."
     ],
     "gaps": [
-      "All primary official Sudanese government websites (passport.gov.sd, moi.gov.sd, mfa.gov.sd, eservice.passport.gov.sd, suna-sd.net) were inaccessible during this validation — connection refused, 403 Forbidden, or expired TLS certificate.",
-      "Visa-free and visa-on-arrival nationality lists are sourced only from Wikipedia (citing IATA Timatic) — no direct official government source was accessible. All visa_policy entries are marked source_official=false.",
-      "No official e-visa portal for Sudan was found; searches for Sudan e-visa returned South Sudan (evisa.gov.ss) results.",
+      "All primary official Sudanese government websites (passport.gov.sd, moi.gov.sd, mfa.gov.sd, eservice.passport.gov.sd, suna-sd.net) were inaccessible during this validation - connection refused, 403 Forbidden, or expired TLS certificate. Status unchanged as of 2026-06-27 re-check.",
+      "Visa-free and visa-on-arrival nationality lists are sourced only from Wikipedia (citing IATA Timatic) - no direct official government source was accessible. All visa_policy entries are marked source_official=false.",
+      "No official e-visa portal for Sudan was found; searches for Sudan e-visa returned South Sudan (evisa.gov.ss) results. VisaHQ (visahq.com/sudan/) mentions a 60-day single-entry e-visa valid for 30 days with possible extension, but this cannot be verified from any official Sudanese government source or embassy page and is NOT recorded in visa_policy. Treating as aggregator error or reference to the Aliens Department sponsorship-based online entry permit (eservice.passport.gov.sd), not a public e-visa scheme.",
       "No official ETA scheme found for Sudan.",
+      "Sudan-Israel normalization: The October 2020 Abraham Accords normalization agreement and the February 2023 finalization deal are both postponed indefinitely due to Sudan's ongoing civil war (since April 2023) and the Gaza conflict (since October 2023). The Wikipedia note that Israeli entry restrictions 'are likely to change' is speculative and not enacted policy. Israeli passport holders and passports with Israeli stamps continue to be denied entry per all available evidence as of 2026-06-27. Not changed in the record.",
       "Investment (Encouragement) Act, 2021 residency details: the USD 250,000 figure recorded for the RBI program is the Section 22(2) earnest-money deposit required of foreign investors before licensing, confirmed verbatim from the UNCTAD-mirrored law text; it is not a residence-specific threshold. The general minimum invested capital (Section 22(1)), fee schedule, application process, and renewal terms are delegated to regulations not published on any accessible official Sudanese government source.",
       "Sudan's ongoing civil conflict (since April 2023) has likely disrupted government digital infrastructure and normal visa-processing operations.",
       "Bilateral visa exemption agreements with additional Arab League member states may exist but could not be confirmed from accessible official sources.",
@@ -227,68 +308,79 @@
       "Somalia diplomatic passport visa waiver (April 2026): confirmed by Somali-side secondary sources only; no Sudan government or SUNA confirmation accessible. Recorded with source_official=false.",
       "A claim that Sudan grants visa on arrival to holders of a valid multiple-entry US, UK, or Schengen visa (used at least once, proven by entry/exit stamps) and to those with a Canadian, US, UK, or Schengen residency/visa (max 30 days, fee USD 100) appears in travel aggregator summaries (visalogy, visahq, schengenvisainfo) but is NOT present in the Wikipedia article text, in any accessible official Sudan government source, or in IATA Timatic via the Wikipedia citation. Not recorded because no official-source confirmation was found.",
       "No OCI (Overseas Citizen of India) or analogous special-status credential entry rules for Sudan found on any official or aggregator source.",
-      "Saint Kitts and Nevis visa-waiver agreement: present in Wikipedia but implementation status, effective date, and stay duration unconfirmable from any official source."
+      "Saint Kitts and Nevis visa-waiver agreement: present in Wikipedia but implementation status, effective date, and stay duration unconfirmable from any official source.",
+      "Tourist visa, transit visa, student visa, medical visa, family visa, and working holiday visa: not found on any accessible official Sudan government or embassy page. Sudan's civil conflict and disrupted government web infrastructure make it impossible to confirm whether these categories formally exist or have been suspended."
     ]
   },
   "sources_checked": [
     {
       "url": "https://sudanembassy.org/entry-visa/",
-      "description": "Embassy of Sudan (Washington D.C.) — Entry Visa requirements page; confirms visa required and $154 processing fee; no visa-free list published",
+      "description": "Embassy of Sudan (Washington D.C.) - Entry Visa requirements page; confirms visa required and $154 processing fee; lists business/work/humanitarian/diplomatic visa categories; no tourist or transit visa mentioned. Re-fetched 2026-06-27: same content, no new visa-free or e-visa information.",
       "official": true
     },
     {
       "url": "https://www.sudanembassy.org.uk/visa-service/",
-      "description": "Embassy of Sudan in London — Visa Services page; states non-Sudanese require entry permit from Aliens Department; no visa-free list; fee £100 for non-Sudanese",
+      "description": "Embassy of Sudan in London - Visa Services page; states non-Sudanese require entry permit from Aliens Department; fee £100 for non-Sudanese, £50 for Sudanese nationals with foreign passports; no visa-free list; no tourist visa category. Re-fetched 2026-06-27: same content confirmed.",
       "official": true
     },
     {
       "url": "https://passport.gov.sd/S_sudanese.php",
-      "description": "Official Directorate General of Passports and Immigration — connection refused",
+      "description": "Official Directorate General of Passports and Immigration - connection refused (ECONNREFUSED). Still ECONNREFUSED as of 2026-06-27 re-check.",
       "official": true
     },
     {
       "url": "https://moi.gov.sd/home",
-      "description": "Sudan Ministry of Interior official site — 403 Forbidden",
+      "description": "Sudan Ministry of Interior official site - 403 Forbidden. Still inaccessible as of 2026-06-27.",
       "official": true
     },
     {
       "url": "https://mfa.gov.sd",
-      "description": "Sudan Ministry of Foreign Affairs — TLS certificate expired, inaccessible",
+      "description": "Sudan Ministry of Foreign Affairs - TLS certificate expired, inaccessible. Still inaccessible as of 2026-06-27 re-check.",
       "official": true
     },
     {
       "url": "https://eservice.passport.gov.sd/aliens/home",
-      "description": "Sudan Aliens Department e-service portal — connection refused",
+      "description": "Sudan Aliens Department e-service portal - connection refused. Still ECONNREFUSED as of 2026-06-27 re-check.",
       "official": true
     },
     {
       "url": "https://suna-sd.net/posts/sudan-azerbaijan-sign-visa-waiver-agreement-for-diplomatic-passport-holders",
-      "description": "Sudan News Agency (SUNA) — original source for Sudan-Azerbaijan diplomatic passport visa exemption agreement (May 2026); returned HTTP 403 Forbidden during this validation pass",
+      "description": "Sudan News Agency (SUNA) - original source for Sudan-Azerbaijan diplomatic passport visa exemption agreement (May 2026); returned HTTP 403 Forbidden during prior and current validation passes.",
       "official": true
     },
     {
       "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Sudan",
-      "description": "Wikipedia article on Sudan visa policy — secondary source citing IATA Timatic; used as best available source for visa-free/VOA lists and non-ordinary passport categories",
+      "description": "Wikipedia article on Sudan visa policy - secondary source citing IATA Timatic; used as best available source for visa-free/VoA lists and non-ordinary passport categories. Re-fetched 2026-06-27: same 5 visa-free and 4 VoA countries confirmed; no new categories added.",
       "official": false
     },
     {
       "url": "https://allafrica.com/stories/202605200068.html",
-      "description": "allAfrica — corroborates Sudan-Azerbaijan diplomatic passport visa exemption agreement signed 19 May 2026 in Baku",
+      "description": "allAfrica - corroborates Sudan-Azerbaijan diplomatic passport visa exemption agreement signed 19 May 2026 in Baku.",
       "official": false
     },
     {
       "url": "https://www.dawan.africa/news/somalia-and-sudan-sign-diplomatic-visa-exemption-agreement",
-      "description": "Dawan Africa — corroborates Somalia-Sudan diplomatic passport visa exemption agreement signed 5 April 2026 in Mogadishu; cites Somali MFA",
+      "description": "Dawan Africa - corroborates Somalia-Sudan diplomatic passport visa exemption agreement signed 5 April 2026 in Mogadishu; cites Somali MFA.",
       "official": false
     },
     {
       "url": "https://www.hiiraan.com/news4/2026/Apr/204824/somalia_sudan_sign_diplomatic_visa_waiver_deal_to_deepen_ties.aspx",
-      "description": "Hiiraan Online — corroborates Somalia-Sudan diplomatic passport visa exemption agreement signed April 2026",
+      "description": "Hiiraan Online - corroborates Somalia-Sudan diplomatic passport visa exemption agreement signed April 2026.",
       "official": false
     },
     {
       "url": "https://investmentpolicy.unctad.org/investment-laws/laws/334/sudan-the-investment-act",
-      "description": "UNCTAD Investment Policy Hub — mirrors Sudan Investment Act text; referenced for RBI program details; not a Sudan government domain",
+      "description": "UNCTAD Investment Policy Hub - mirrors Sudan Investment Act text; referenced for RBI program details; not a Sudan government domain.",
+      "official": false
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Israel%E2%80%93Sudan_normalization_agreement",
+      "description": "Wikipedia article on Israel-Sudan normalization agreement - confirms the 2020 Abraham Accords agreement and February 2023 finalization, both postponed indefinitely due to Sudan's civil war and the Gaza conflict. Checked 2026-06-27 to verify Israel entry ban status.",
+      "official": false
+    },
+    {
+      "url": "https://www.visahq.com/sudan/",
+      "description": "VisaHQ Sudan visa page - aggregator; mentions e-visa option but this cannot be verified from any official Sudanese government source. Also confirms Saudi Arabia business visit conditional exemption (Ministry of Investment letter required). Checked 2026-06-27; e-visa claim treated as unverified aggregator content and NOT added to visa_policy.",
       "official": false
     }
   ]

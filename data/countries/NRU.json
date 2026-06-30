@@ -16,8 +16,190 @@
       "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
       "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Nauru.html"
     ],
-    "notes": "The Immigration Regulations 2014 (GN No. 66/2014) establish the visa framework. Regulation 14(4) exempts nationals of 'visa waiver agreement countries' from visa requirements — these are enumerated in Schedule 5 (added by amendment). The March 2025 gazette (No. 124) added items 4–6 to Schedule 5 (China, India, Cuba — diplomatic/official passports only), implying items 1–3 were added by earlier amendments that were not located in official online sources. There is NO visa on arrival (confirmed by U.S. State Dept travel advisory). Schedule 3 of the 2014 Regulations lists 16 countries whose nationals are exempt from paying the Visitor's Visa fee but still require an advance visa: Cook Islands, Federated States of Micronesia, Fiji, Israel, Kiribati, Marshall Islands, Niue, Palau, Papua New Guinea, Republic of China (Taiwan), Russian Federation, Samoa, Solomon Islands, Tonga, Tuvalu, Vanuatu. Schedule 4 lists ~66 countries eligible for a Simplified Visitor's Visa Application process (abbreviated procedure, not visa-free): Antigua and Barbuda, Australia, Austria, Bahamas, Bangladesh, Barbados, Belgium, Belize, Botswana, Brunei, Bulgaria, Canada, Cape Verde, Comoros, Cuba, Cyprus, Czech Republic, Denmark, Dominica, Dominican Republic, Timor-Leste, Estonia, Finland, France, Germany, Ghana, Greece, Grenada, Guinea-Bissau, Guyana, Haiti, Hungary, Iceland, India, Ireland, Italy, Jamaica, Japan, Kenya, South Korea, Latvia, Lesotho, Lithuania, Luxembourg, Malawi, Malaysia, Maldives, Malta, Mauritius, Netherlands, New Zealand, Norway, Poland, Portugal, Romania, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, San Marino, Sao Tome and Principe, Slovakia, Slovenia, Spain, Sweden, Switzerland, Trinidad and Tobago. Neither Schedule 3 nor Schedule 4 confers visa-free entry. All applications are sent by email to the Immigration Division (visa@naurugov.nr). No official e-visa portal exists."
+    "notes": "The Immigration Regulations 2014 (GN No. 66/2014) establish the visa framework. Regulation 14(4) exempts nationals of 'visa waiver agreement countries' from visa requirements - these are enumerated in Schedule 5 (added by amendment). The March 2025 gazette (No. 124) added items 4–6 to Schedule 5 (China, India, Cuba - diplomatic/official passports only), implying items 1–3 were added by earlier amendments that were not located in official online sources. There is NO visa on arrival (confirmed by U.S. State Dept travel advisory). Schedule 3 of the 2014 Regulations lists 16 countries whose nationals are exempt from paying the Visitor's Visa fee but still require an advance visa: Cook Islands, Federated States of Micronesia, Fiji, Israel, Kiribati, Marshall Islands, Niue, Palau, Papua New Guinea, Republic of China (Taiwan), Russian Federation, Samoa, Solomon Islands, Tonga, Tuvalu, Vanuatu. Schedule 4 lists ~66 countries eligible for a Simplified Visitor's Visa Application process (abbreviated procedure, not visa-free): Antigua and Barbuda, Australia, Austria, Bahamas, Bangladesh, Barbados, Belgium, Belize, Botswana, Brunei, Bulgaria, Canada, Cape Verde, Comoros, Cuba, Cyprus, Czech Republic, Denmark, Dominica, Dominican Republic, Timor-Leste, Estonia, Finland, France, Germany, Ghana, Greece, Grenada, Guinea-Bissau, Guyana, Haiti, Hungary, Iceland, India, Ireland, Italy, Jamaica, Japan, Kenya, South Korea, Latvia, Lesotho, Lithuania, Luxembourg, Malawi, Malaysia, Maldives, Malta, Mauritius, Netherlands, New Zealand, Norway, Poland, Portugal, Romania, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, San Marino, Sao Tome and Principe, Slovakia, Slovenia, Spain, Sweden, Switzerland, Trinidad and Tobago. Neither Schedule 3 nor Schedule 4 confers visa-free entry. All applications are sent by email to the Immigration Division (visa@naurugov.nr). No official e-visa portal exists."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visitor Visa (up to 1 month)",
+      "purpose": "Short-term tourism and personal visits to Nauru for up to one month.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Application submitted by email to the Immigration Division (visa@naurugov.nr or darlenenauruimmi@gmail.com). Schedule 3 countries (16 Pacific/regional nations) are exempt from the visitor visa fee. Schedule 4 countries (~66 nations) qualify for a Simplified Visitor's Visa Application process. No e-visa portal exists."
+    },
+    {
+      "category": "tourist",
+      "name": "Visitor Visa (up to 2 months)",
+      "purpose": "Short-term tourism and personal visits to Nauru for stays of up to two months.",
+      "max_stay_days": 60,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": 150,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Application submitted by email to the Immigration Division. This 2-month tier confirmed by justice.gov.nr/immigration-division/ fee schedule. Schedule 3 countries are fee-exempt. Schedule 4 countries qualify for simplified application process."
+    },
+    {
+      "category": "tourist",
+      "name": "Visitor Visa (up to 3 months)",
+      "purpose": "Short-term tourism and personal visits to Nauru for stays of up to three months.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 250,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Application submitted by email to the Immigration Division. Schedule 3 countries are fee-exempt but still require an advance visa. Schedule 4 countries qualify for simplified application process."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "Permits foreign nationals to conduct business activities in Nauru, with specialized subtypes covering diplomatic, education, media, religious, research, employment, and general business purposes.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 6000,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "The AUD 8,000 (approx. USD 5,200) non-refundable fee applies specifically to the media subtype. The general 12-month Business Visa is listed at AUD ~6,000. Multiple subtypes exist: diplomatic, education, media, religious, research, employment, and general. Application by email. Media applicants must provide employer letter; passports collected at airport on arrival and returned same day or next morning."
+    },
+    {
+      "category": "work",
+      "name": "Local Business (Employment) Visa",
+      "purpose": "Permits employment with Nauruan businesses or 100% Nauruan-owned companies operating in Nauru.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Fee is AUD 300–400 depending on duration. Restricted to work with Nauruan nationals or 100% Nauruan-owned businesses. Introduced by Immigration (Amendment) Regulations 2023 (SL No. 8 of 2023), Gazette No. 47, 6 March 2023."
+    },
+    {
+      "category": "other",
+      "name": "Residence Visa",
+      "purpose": "Grants long-term or permanent settlement rights in Nauru for eligible foreign nationals.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "No application fee. Specific eligibility criteria and processing times not published officially online. Application by email to the Immigration Division."
+    },
+    {
+      "category": "other",
+      "name": "Regional Processing Centre Visa",
+      "purpose": "Issued to asylum seekers undergoing refugee processing at the Nauru Regional Processing Centre established under bilateral arrangements with Australia.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Fee is AUD 1,000/month. This is not a standard immigration pathway for ordinary foreign nationals. Issued under bilateral arrangements between Nauru and Australia."
+    },
+    {
+      "category": "other",
+      "name": "Special Purpose Visa",
+      "purpose": "Covers various specialized entry purposes as defined in the Immigration Regulations 2014 that do not fall under other visa classes.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Specific fee, duration, and eligibility depend on the specific purpose authorized under the regulations. Application by email to the Immigration Division."
+    },
+    {
+      "category": "other",
+      "name": "Long Term Stay Visa",
+      "purpose": "A special long-term visa class for persons from states with bilateral arrangements with Nauru, introduced in 2025.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.nauru.gov.nr/media/203148/gazette_58-25.pdf",
+      "notes": "Established by Immigration (Long Term Stay Visa) Regulations 2025 (SL No. 3 of 2025), Gazette No. 58, 12 February 2025. Primarily for individuals from states holding bilateral arrangements with Nauru (context includes Australia's NZYQ cohort). Not a standard tourist or work pathway."
+    },
+    {
+      "category": "other",
+      "name": "Temporary Settlement Visa",
+      "purpose": "Issued to recognized refugees for temporary settlement in Nauru.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Fee is AUD 2,000/month. Not a standard immigration pathway for ordinary foreign nationals. Applicable only to persons granted refugee status in Nauru."
+    },
+    {
+      "category": "family",
+      "name": "Dependant Visa",
+      "purpose": "Permits family members (dependants) of valid Nauru visa holders to accompany or join them in Nauru.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Fee is AUD 1,000. Issued to dependants of holders of other valid Nauru visas. Application by email to the Immigration Division. Specific eligibility (relationship types, age limits) not published in detail online."
+    },
+    {
+      "category": "other",
+      "name": "Public Service Employment Visa",
+      "purpose": "Permits foreign nationals to take up employment in the Nauru public service sector.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.nauru.gov.nr/media/205323/gazette-256-25.pdf",
+      "notes": "Established by Immigration (Public Service Employment Visa) Regulations 2025, Gazette No. 256, 2025. Full fee and duration details not extractable from binary PDF. Specifically for employment within Nauru government/public sector."
+    }
+  ],
   "conditional_access": [
     {
       "basis": "passport_type",
@@ -63,7 +245,7 @@
         "type": "donation",
         "min_amount": 90000,
         "currency": "USD",
-        "notes": "Contribution to the Nauru Treasury Fund. Standard rate USD 90,000 for a principal applicant (effective as of the Iruwa Initiative restructuring in early 2026). A limited-time promotional rate of USD 65,000 applies for applications submitted before 30 June 2026 (a USD 25,000 discount per the programme's first-anniversary 'Iruwa Initiative' offer from 3 February 2026). Additional dependant contribution: USD 2,000 per dependent aged 16+; USD 15,000 per sibling of principal applicant or spouse (USD 17,000 if sibling is aged 16+). Application fee: USD 5,000 (principal applicant), USD 2,000 per dependent. Due diligence fee: USD 6,000 (principal applicant), USD 3,000 per dependent aged 16+, USD 3,000 per benefactor. Bank due diligence/transaction charges: USD 1,200 (applicant alone), USD 1,700 (applicant + up to 3 dependents), USD 2,200 (applicant + 4+ dependents), USD 1,000 per benefactor. Passport fee: USD 500 per passport. Source: ecrcp.gov.nr/contribution (official Nauru Program Office website)."
+        "notes": "Contribution to the Nauru Treasury Fund. Standard rate USD 90,000 for a principal applicant (effective as of the Iruwa Initiative restructuring in early 2026). A limited-time promotional rate of USD 65,000 applies for the Iruwa Initiative (USD 25,000 discount from 3 February 2026): the ecrcp.gov.nr/contribution page body states deadline is 31 December 2026, while the ecrcp.gov.nr homepage and footer quote 30 June 2026 — the official page contains conflicting dates (both re-fetched 2026-06-29); the later date (31 December 2026) is recorded as the operative deadline in the contribution page body. Additional dependant contribution: USD 2,000 per dependent aged 16+; USD 15,000 per sibling of principal applicant or spouse (USD 17,000 if sibling is aged 16+). Application fee: USD 5,000 (principal applicant), USD 2,000 per dependent. Due diligence fee: USD 6,000 (principal applicant), USD 3,000 per dependent aged 16+, USD 3,000 per benefactor. Bank due diligence/transaction charges: USD 1,200 (applicant alone), USD 1,700 (applicant + up to 3 dependents), USD 2,200 (applicant + 4+ dependents), USD 1,000 per benefactor. Passport fee: USD 500 per passport. Source: ecrcp.gov.nr/contribution (official Nauru Program Office website)."
       }
     ],
     "processing_time": "Three to four months from date of application submission",
@@ -92,15 +274,18 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTED (2026-06-14): ECRCP standard contribution amount updated from USD 115,000 to USD 90,000 — the official ecrcp.gov.nr/contribution page now lists USD 90,000 as the standard rate for a principal applicant, reflecting a programme restructuring. The promotional rate (Iruwa Initiative, valid until 30 June 2026) is now USD 65,000 (USD 25,000 discount from USD 90,000), not USD 90,000 as previously recorded.",
+      "CORRECTED (2026-06-14): ECRCP standard contribution amount updated from USD 115,000 to USD 90,000 - the official ecrcp.gov.nr/contribution page now lists USD 90,000 as the standard rate for a principal applicant, reflecting a programme restructuring. The promotional rate (Iruwa Initiative, valid until 30 June 2026) is now USD 65,000 (USD 25,000 discount from USD 90,000), not USD 90,000 as previously recorded.",
       "CORRECTED (2026-06-14): ECRCP notes updated to reflect the January 2026 Iruwa Initiative restructuring: removal of age caps for children and parents, elimination of financial dependency requirements, abolition of marital status restrictions for dependent qualification.",
-      "CONFIRMED (2026-06-14): visa_policy entries (no visa_free, no visa_on_arrival, no e_visa, no eta for ordinary passports) remain accurate — no new ordinary-passport visa-free access was found.",
+      "CONFIRMED (2026-06-14): visa_policy entries (no visa_free, no visa_on_arrival, no e_visa, no eta for ordinary passports) remain accurate - no new ordinary-passport visa-free access was found.",
       "CONFIRMED (2026-06-14): conditional_access entries for China (diplomatic/service/official, 30 days), India (diplomatic/official), and Cuba (diplomatic/official) remain accurate per Gazette No. 124 of 25 March 2025.",
-      "CONFIRMED (2026-06-14): rbi.programs and fast_track.programs remain empty — no official RBI or fast-track program found.",
-      "CONFIRMED (2026-06-14): processing_time remains '3-4 months' per ecrcp.gov.nr/frequently-asked-questions."
+      "CONFIRMED (2026-06-14): rbi.programs and fast_track.programs remain empty - no official RBI or fast-track program found.",
+      "CONFIRMED (2026-06-14): processing_time remains '3-4 months' per ecrcp.gov.nr/frequently-asked-questions.",
+      "UPDATED (2026-06-20): visa_types array populated from justice.gov.nr/immigration-division/ and nauru.gov.nr visa requirements page. Eight visa classes identified: Visitor Visa (1-month and 3-month tiers), Business Visa (with multiple subtypes including media), Local Business Employment Visa, Residence Visa, Regional Processing Centre Visa, Special Purpose Visa, Long Term Stay Visa, Temporary Settlement Visa, Dependant Visa, and Public Service Employment Visa.",
+      "CORRECTED (2026-06-27): Added Visitor Visa (up to 2 months, USD 150) to visa_types - this tier is explicitly listed on the current justice.gov.nr/immigration-division/ fee schedule (between 1-month/USD 50 and 3-month/USD 250) but was absent from the prior record. No change to visa_policy access lists (all remain empty for ordinary passports). No change to conditional_access (China/India/Cuba diplomatic only, per Gazette No. 124). US State Dept (re-fetched 2026-06-27) reconfirms no visa on arrival. ECRCP standard contribution USD 90,000 and promotional rate USD 65,000 (until 30 June 2026) reconfirmed at ecrcp.gov.nr/contribution. No extension of the Iruwa Initiative promotional deadline beyond 30 June 2026 was found. No new ordinary-passport visa-free, VoA, eTA, or e-visa access found in 2025 or 2026 gazette listings.",
+      "CORRECTED (2026-06-29): ECRCP Iruwa Initiative promotional deadline updated — ecrcp.gov.nr/contribution page body now states 31 December 2026 as the deadline (extended from 30 June 2026), though the homepage and footer still quote 30 June 2026 (conflicting dates on official site). The cbi.options[0].notes now records the later date (31 December 2026) as the operative deadline in the contribution page body, with the discrepancy flagged. CONFIRMED: visa_policy all-empty for ordinary passports (justice.gov.nr and US State Dept re-fetched 2026-06-29, no visa on arrival, no e-visa, no ETA found). CONFIRMED: conditional_access (China/India/Cuba diplomatic/official only) unchanged. CONFIRMED: rbi.programs and fast_track.programs remain empty. No new ordinary-passport visa-free, VoA, eTA, or e-visa access found in 2026 gazette search (221 gazettes in 2026, not individually indexed; no immigration amendment found via search). No new Schedule 5 amendment (beyond Gazette No. 124, March 2025) identified in official sources."
     ],
     "gaps": [
-      "Schedule 5 items 1–3 (the visa-waiver agreement countries that existed in Schedule 5 before the March 2025 amendment adding China, India, Cuba as items 4–6) could not be identified — the gazette(s) that first created Schedule 5 and added items 1–3 were not found in official online sources accessed.",
+      "Schedule 5 items 1–3 (the visa-waiver agreement countries that existed in Schedule 5 before the March 2025 amendment adding China, India, Cuba as items 4–6) could not be identified - the gazette(s) that first created Schedule 5 and added items 1–3 were not found in official online sources accessed.",
       "Japan is frequently cited in non-official sources (Wikipedia, Visa policy of Nauru article) as having a visa-free arrangement for diplomatic/official passport holders, but no official Nauru gazette confirming Japan in Schedule 5 was found.",
       "Schedule 3 (Visitor's Visa Fee Exempt Countries) and Schedule 4 (Simplified Visitor's Visa Application Countries) from the 2014 Regulations may have been amended by subsequent Gazette notices not found during research.",
       "No official RBI (residency by investment) or golden visa program found on official sources.",
@@ -108,8 +293,13 @@
       "Nauru does not publish a comprehensive freedom-of-movement agreement list; Pacific Islands Forum does not yet have a binding free movement treaty in force.",
       "RONLAW consolidated Immigration Regulations 2014 (with all amendments) could not be fully extracted due to JavaScript PDF viewer rendering / binary PDF format.",
       "No official Nauru source was found establishing conditional entry (visa-free, VoA, e-visa, or eTA) for holders of third-country credentials (e.g. US visa, Schengen visa, Australian visa, UK visa, residence permits, OCI cards).",
-      "South Ossetia mutual visa-free agreement (90 days, signed 3 February 2018) noted in Wikipedia as 'yet to be ratified' — no official Nauru gazette confirmation found.",
-      "The ECRCP standard rate prior to the Iruwa Initiative restructuring (previously listed as USD 115,000) could not be independently confirmed as a now-deprecated figure from an official archived source; the current official page shows USD 90,000 as standard."
+      "South Ossetia mutual visa-free agreement (90 days, signed 3 February 2018) noted in Wikipedia as 'yet to be ratified' - no official Nauru gazette confirmation found.",
+      "The ECRCP standard rate prior to the Iruwa Initiative restructuring (previously listed as USD 115,000) could not be independently confirmed as a now-deprecated figure from an official archived source; the current official page shows USD 90,000 as standard.",
+      "Exact fee amounts for Business Visa subtypes (diplomatic, education, religious, research, employment subtypes vs. general AUD 6,000 rate) not officially published in detail online.",
+      "Full details of Public Service Employment Visa (Gazette No. 256, 2025) could not be extracted from binary PDF.",
+      "Processing times for all visa categories are not officially published online.",
+      "No transit visa category found on official sources - Nauru does not appear to have a formal transit visa given its limited air connections.",
+      "No student, digital nomad, retirement, investment, working holiday, or medical visa categories found in official sources."
     ]
   },
   "outbound_official": {
@@ -119,77 +309,87 @@
   "sources_checked": [
     {
       "url": "https://nauru.tradeportal.org/media/Immigration%20Regulations%202014.pdf",
-      "description": "Immigration Regulations 2014 (GN No. 66/2014) — official Nauru government gazette, primary legislation including Schedule 3 (Visitor's Visa Fee Exempt Countries) and Schedule 4 (Simplified Visitor's Visa Application Countries)",
+      "description": "Immigration Regulations 2014 (GN No. 66/2014) - official Nauru government gazette, primary legislation including Schedule 3 (Visitor's Visa Fee Exempt Countries) and Schedule 4 (Simplified Visitor's Visa Application Countries)",
       "official": true
     },
     {
       "url": "https://justice.gov.nr/immigration-division/",
-      "description": "Nauru Department of Justice & Border Control — Immigration Division official page listing visa classes",
+      "description": "Nauru Department of Justice & Border Control - Immigration Division official page listing all eight visa classes with fee schedule",
       "official": true
     },
     {
       "url": "https://www.nauru.gov.nr/about-nauru/visiting-nauru/visa-requirements.aspx",
-      "description": "Government of Nauru — Visa Requirements page",
+      "description": "Government of Nauru - Visa Requirements page; details media visa (AUD 8,000 non-refundable fee) and general visa application process",
       "official": true
     },
     {
       "url": "https://www.nauru.gov.nr/about-nauru/visiting-nauru.aspx",
-      "description": "Government of Nauru — Visiting Nauru page",
+      "description": "Government of Nauru - Visiting Nauru page",
       "official": true
     },
     {
       "url": "https://www.nauru.gov.nr/government-information-office/media-release/visitor-visas-to-nauru.aspx",
-      "description": "Government of Nauru — media release on visitor visa procedural change for Australian and New Zealand nationals (security context)",
+      "description": "Government of Nauru - media release on visitor visa procedural change for Australian and New Zealand nationals (security context)",
       "official": true
     },
     {
       "url": "https://www.nauru.gov.nr/media/203804/gazette-124-25.pdf",
-      "description": "Republic of Nauru Government Gazette No. 124, 25 March 2025 (GN No. 344/2025) — Immigration (Amendment) Regulations 2025 (SL No. 10 of 2025): amends Schedule 5 to add China (item 4), India (item 5), Cuba (item 6) as diplomatic/official passport visa exemptions",
+      "description": "Republic of Nauru Government Gazette No. 124, 25 March 2025 (GN No. 344/2025) - Immigration (Amendment) Regulations 2025 (SL No. 10 of 2025): amends Schedule 5 to add China (item 4), India (item 5), Cuba (item 6) as diplomatic/official passport visa exemptions",
       "official": true
     },
     {
       "url": "https://www.nauru.gov.nr/media/203148/gazette_58-25.pdf",
-      "description": "Republic of Nauru Government Gazette No. 58, 12 February 2025 (GN No. 137/2025) — Immigration (Long Term Stay Visa) Regulations 2025 (SL No. 3 of 2025): a special long-term visa class for persons from states with bilateral arrangements (primarily for refugee/asylum seeker context with Australia's NZYQ cohort); not a conditional entry rule based on third-country credentials",
+      "description": "Republic of Nauru Government Gazette No. 58, 12 February 2025 (GN No. 137/2025) - Immigration (Long Term Stay Visa) Regulations 2025 (SL No. 3 of 2025): a special long-term visa class for persons from states with bilateral arrangements (primarily for refugee/asylum seeker context with Australia's NZYQ cohort); not a conditional entry rule based on third-country credentials",
       "official": true
     },
     {
       "url": "https://www.nauru.gov.nr/media/192287/gazette_47-23.pdf",
-      "description": "Republic of Nauru Government Gazette No. 47, 6 March 2023 (GN No. 265/2023) — Immigration (Amendment) Regulations 2023 (SL No. 8 of 2023): introduces Local Business (Employment) Visa class",
+      "description": "Republic of Nauru Government Gazette No. 47, 6 March 2023 (GN No. 265/2023) - Immigration (Amendment) Regulations 2023 (SL No. 8 of 2023): introduces Local Business (Employment) Visa class",
       "official": true
     },
     {
       "url": "https://www.nauru.gov.nr/media/205323/gazette-256-25.pdf",
-      "description": "Republic of Nauru Government Gazette No. 256, 2025 — Immigration (Public Service Employment Visa) Regulations 2025; PDF binary could not be fully parsed; no conditional entry rules identified",
+      "description": "Republic of Nauru Government Gazette No. 256, 2025 - Immigration (Public Service Employment Visa) Regulations 2025; PDF binary could not be fully parsed; no conditional entry rules identified",
       "official": true
     },
     {
       "url": "https://www.ecrcp.gov.nr/",
-      "description": "Nauru Program Office — ECRCP official program homepage (ecrcp.gov.nr is the official government citizenship program site)",
+      "description": "Nauru Program Office - ECRCP official program homepage (ecrcp.gov.nr is the official government citizenship program site)",
       "official": true
     },
     {
       "url": "https://www.ecrcp.gov.nr/contribution",
-      "description": "Nauru Program Office — ECRCP contribution/investment amounts page (verbatim: USD 90,000 standard; USD 65,000 promotional until 30 June 2026 per Iruwa Initiative). Re-fetched 2026-06-14.",
+      "description": "Nauru Program Office - ECRCP contribution/investment amounts page (verbatim: USD 90,000 standard; USD 65,000 promotional until 30 June 2026 per Iruwa Initiative). Re-fetched 2026-06-14.",
       "official": true
     },
     {
       "url": "https://www.ecrcp.gov.nr/frequently-asked-questions",
-      "description": "Nauru Program Office — ECRCP FAQ page confirming no residency requirement, dual citizenship allowed, 3–4 months processing. Re-fetched 2026-06-14.",
+      "description": "Nauru Program Office - ECRCP FAQ page confirming no residency requirement, dual citizenship allowed, 3–4 months processing. Re-fetched 2026-06-14.",
       "official": true
     },
     {
       "url": "https://www.ecrcp.gov.nr/news",
-      "description": "Nauru Program Office — ECRCP news page confirming Iruwa Initiative anniversary discount of USD 25,000 from 3 February 2026 through 30 June 2026. Re-fetched 2026-06-14.",
+      "description": "Nauru Program Office - ECRCP news page confirming Iruwa Initiative anniversary discount of USD 25,000 from 3 February 2026 through 30 June 2026. Re-fetched 2026-06-14 and 2026-06-29 (still shows 30 June 2026 deadline).",
+      "official": true
+    },
+    {
+      "url": "https://www.ecrcp.gov.nr/",
+      "description": "Nauru Program Office - ECRCP homepage. Re-fetched 2026-06-29: homepage quotes Iruwa Initiative discount deadline as 30 June 2026.",
+      "official": true
+    },
+    {
+      "url": "https://www.nauru.gov.nr/government-information-office/government-gazette/gazette-2026.aspx",
+      "description": "Republic of Nauru Government Gazette index for 2026 (221 gazettes numbered 01-26 through 221-26). No immigration-amendment gazettes identified by title in the index (not individually described). Re-fetched 2026-06-29.",
       "official": true
     },
     {
       "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Nauru.html",
-      "description": "U.S. State Department — Nauru international travel information confirming no visa issuance on arrival",
+      "description": "U.S. State Department - Nauru international travel information confirming no visa issuance on arrival",
       "official": false
     },
     {
       "url": "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
-      "description": "China Ministry of Foreign Affairs — List of Agreements on Mutual Visa Exemption: Nauru is entry #99, agreement covers diplomatic/service/public affairs passports, in force 1 April 2025, max stay fewer than 30 days",
+      "description": "China Ministry of Foreign Affairs - List of Agreements on Mutual Visa Exemption: Nauru is entry #99, agreement covers diplomatic/service/public affairs passports, in force 1 April 2025, max stay fewer than 30 days",
       "official": true
     }
   ]

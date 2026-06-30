@@ -1,6 +1,6 @@
 export const meta = {
   name: 'outbound-origin-verify',
-  description: "ORIGIN-side verification: for ~200 passports, parallel agents find each country's OWN government list of visa requirements for ITS citizens (the MEA-vffin analog — MFA/passport-office 'visa-free / VoA / e-visa countries for our nationals' page) and record it as that passport's official source-of-record in `outbound_official`. This is the second, origin-side official confirmation of the directed graph (we already verified the inbound/destination side). Official sources only; no aggregators.",
+  description: "ORIGIN-side verification: for ~200 passports, parallel agents find each country's OWN government list of visa requirements for ITS citizens (the MEA-vffin analog - MFA/passport-office 'visa-free / VoA / e-visa countries for our nationals' page) and record it as that passport's official source-of-record in `outbound_official`. This is the second, origin-side official confirmation of the directed graph (we already verified the inbound/destination side). Official sources only; no aggregators.",
   phases: [
     { title: 'Outbound', detail: "one agent per passport finds its government's outbound visa-info page and records the official source + asserted destinations (Sonnet, WebFetch-first)" },
   ],
@@ -110,14 +110,14 @@ function outboundPrompt(c) {
   const file = `${DATA_DIR}/${c.iso3}.json`;
   return `Find **${c.name}**'s OWN government's authoritative list of where ${c.name} ORDINARY-passport citizens can travel without obtaining a prior consular visa, and record it as this passport's official source-of-record. India's analog is mea.gov.in/vffin ("Visa Facility for Indian Nationals (Ordinary Passport Holders)"). Many foreign ministries / passport offices publish such a page for their own citizens.
 
-## STEP 1 — find the OFFICIAL origin-side page
-Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch). Search for ${c.name}'s government page listing visa-free / visa-on-arrival / e-visa destinations FOR ${c.name} CITIZENS — on the Ministry of Foreign Affairs, passport office, or consular-services domain (*.gov, *.gov.<cc>, *.gob.<cc>, *.govt.<cc>, *.gouv.<cc>, official MFA). Read it with WebFetch (fall back to Firecrawl select:mcp__firecrawl-mcp__firecrawl_scrape only if blocked). Seeds: "${c.name} visa free countries for citizens official", "${c.name} ministry foreign affairs visa requirements ${c.name} nationals", "${c.name} passport visa free travel official list". Be economical (~5–10 calls).
+## STEP 1 - find the OFFICIAL origin-side page
+Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch). Search for ${c.name}'s government page listing visa-free / visa-on-arrival / e-visa destinations FOR ${c.name} CITIZENS - on the Ministry of Foreign Affairs, passport office, or consular-services domain (*.gov, *.gov.<cc>, *.gob.<cc>, *.govt.<cc>, *.gouv.<cc>, official MFA). Read it with WebFetch (fall back to Firecrawl select:mcp__firecrawl-mcp__firecrawl_scrape only if blocked). Seeds: "${c.name} visa free countries for citizens official", "${c.name} ministry foreign affairs visa requirements ${c.name} nationals", "${c.name} passport visa free travel official list". Be economical (~5–10 calls).
 DO NOT use aggregators (Wikipedia, Henley, IATA, airlines, visa-agencies). If only those exist, treat as NOT found.
 
-## STEP 2 — extract what the official source asserts
+## STEP 2 - extract what the official source asserts
 List the destinations ${c.name} citizens may enter, grouped by level: visa_free, visa_on_arrival, e_visa, eta. Capture destination names (and ISO3 if known).
 
-## STEP 3 — write it to the file as source-of-record
+## STEP 3 - write it to the file as source-of-record
 Read ${file}. Add/replace a top-level field \`outbound_official\` (KEEP everything else unchanged):
 {"found": true/false, "source_url": "<official url>", "source_official": true, "asof": "<date on page if any>",
  "visa_free": [{"name":"","iso3":null}], "visa_on_arrival": [], "e_visa": [], "eta": [], "notes": ""}

@@ -145,7 +145,7 @@
         "nationality": "Georgia",
         "iso3": "GEO",
         "max_stay_days": 90,
-        "notes": "Visa-free for up to 90 days in any 180-day period for holders of biometric passports. Annex II of EU Regulation 2018/1806.",
+        "notes": "Visa-free for up to 90 days in any 180-day period for holders of biometric passports. Annex II of EU Regulation 2018/1806. NOTE: Commission Implementing Regulation (EU) 2026/496 (6 March 2026) temporarily suspended visa-free travel for Georgian holders of diplomatic, service, and official passports for 12 months (until 6 March 2027). Ordinary/biometric passport holders remain visa-free.",
         "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02018R1806-20251230",
         "source_official": true
       },
@@ -230,6 +230,14 @@
         "source_official": true
       },
       {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "Visa-free for up to 90 days in any 180-day period. Annex II of EU Regulation 2018/1806 (confirmed in consolidated version 30 December 2025).",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02018R1806-20251230",
+        "source_official": true
+      },
+      {
         "nationality": "Mexico",
         "iso3": "MEX",
         "max_stay_days": 90,
@@ -273,7 +281,7 @@
         "nationality": "Nauru",
         "iso3": "NRU",
         "max_stay_days": 90,
-        "notes": "Visa-free for up to 90 days in any 180-day period. Listed in Annex II of EU Regulation 2018/1806; exemption applies from date of entry into force of visa waiver agreement with EU. Note: the government.se visa-required list (last updated September 2023) still shows Nauru — the EUR-Lex consolidated Regulation 2018/1806 (December 2025) is the authoritative EU legal text and supersedes the national list for Schengen-wide policy.",
+        "notes": "Visa-free for up to 90 days in any 180-day period. Listed in Annex II of EU Regulation 2018/1806; exemption applies from date of entry into force of visa waiver agreement with EU. Note: the government.se visa-required list (last updated September 2023) still shows Nauru - the EUR-Lex consolidated Regulation 2018/1806 (December 2025) is the authoritative EU legal text and supersedes the national list for Schengen-wide policy.",
         "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02018R1806-20251230",
         "source_official": true
       },
@@ -777,13 +785,24 @@
       "CORRECTED: ETIAS fee updated from EUR 7 to EUR 20, reflecting the Commission's revised fee announced in 2025 to account for operational costs and inflation.",
       "CORRECTED: ETIAS launch timeline updated from 'late 2026' to 'Q4 2026' based on European Council announcement of March 2025.",
       "CORRECTED: Turkey passport_types array now explicitly includes 'special' as a distinct type, matching the literal text of footnote *) on the government.se list ('Visa-free travel also applies to Turkish citizens who hold special passports').",
-      "CORRECTED: Japan entry notes simplified — the claim about 'exempt from application fees at Migrationsverket' was unverifiable from official sources and has been removed.",
+      "CORRECTED: Japan entry notes simplified - the claim about 'exempt from application fees at Migrationsverket' was unverifiable from official sources and has been removed.",
       "CORRECTED: cbi.notes removed reference to government.se/dual-citizenship page as a separate citation; the information is fully sourced to migrationsverket.se.",
       "VERIFIED: EU Blue Card salary threshold SEK 52,000/month as of 9 July 2025 confirmed via migrationsverket.se.",
       "VERIFIED: Citizenship residency requirement of 8 years from 6 June 2026 confirmed via migrationsverket.se.",
-      "VERIFIED: government.se visa list last updated 01 September 2023 — no more recent update found; conditional_access entries remain valid against that source.",
+      "VERIFIED: government.se visa list last updated 01 September 2023 - no more recent update found; conditional_access entries remain valid against that source.",
       "VERIFIED: Nauru still listed on government.se visa-required list (last updated September 2023) but Annex II of the consolidated Regulation 2018/1806 (December 2025) is the authoritative EU law and supersedes the national list; Nauru remains in visa_free with an explanatory note added.",
-      "VERIFIED: Albania, Bosnia-Herzegovina, Georgia, Kosovo, Moldova, Montenegro, North Macedonia, Serbia, Ukraine all appear on government.se visa list with biometric passport exemptions (footnote ****); these are correctly classified as visa_free in visa_policy because they are listed in Annex II of the consolidated Regulation 2018/1806 (December 2025). The government.se list is an older/national reference; the EU Regulation takes legal precedence."
+      "VERIFIED: Albania, Bosnia-Herzegovina, Georgia, Kosovo, Moldova, Montenegro, North Macedonia, Serbia, Ukraine all appear on government.se visa list with biometric passport exemptions (footnote ****); these are correctly classified as visa_free in visa_policy because they are listed in Annex II of the consolidated Regulation 2018/1806 (December 2025). The government.se list is an older/national reference; the EU Regulation takes legal precedence.",
+      "ADDED (2026-06-27): Malaysia (MYS) added to visa_free - confirmed in Annex II of consolidated EU Regulation 2018/1806 (30 December 2025 version). Malaysia was present in Annex II but was missing from the previous version of this file. Source: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02018R1806-20251230",
+      "CORRECTED (2026-06-27): Georgia (GEO) visa_free entry updated to note that Commission Implementing Regulation (EU) 2026/496 (6 March 2026) temporarily suspended visa-free travel for Georgian holders of diplomatic, service, and official passports for 12 months (until 6 March 2027). Ordinary biometric passport holders remain visa-free under Annex II. Source: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202600496",
+      "VERIFIED (2026-06-27): No additional amendments to Annex I or Annex II of Regulation 2018/1806 beyond the December 2025 consolidated version found that would affect ordinary-passport visa-free list. The new suspension mechanism (Articles 8a-8f added by Regulation (EU) 2025/2441) is in force but no suspension of all Georgian nationals has been implemented - only the diplomatic/official passport category.",
+      "VERIFIED (2026-06-27): ETIAS Q4 2026 launch timeline and EUR 20 fee confirmed via official EU travel-europe.europa.eu portal.",
+      "VERIFIED (2026-06-27): EU Blue Card salary threshold: the June 2026 update on migrationsverket.se referencing SEK 34,470 applies to the general work permit (90% of median salary). The EU Blue Card requirement of SEK 52,000/month (1.25x average gross salary, effective 9 July 2025) appears to remain distinct and was not explicitly changed in the June 2026 work permit rules update.",
+      "VERIFIED (2026-06-29): Re-fetched migrationsverket.se visiting-sweden-for-up-to-90-days page — Schengen visa fee confirmed EUR 90 adults, EUR 45 children 6-11, free under 6. Proof of finances SEK 450/day confirmed. No changes from prior verification.",
+      "VERIFIED (2026-06-29): ETIAS fee EUR 20 confirmed via official EC press release (home-affairs.ec.europa.eu, 17 July 2025). Launch expected 'last quarter of 2026' per official EU travel-europe.europa.eu revised timeline page. The file's 'Q4 2026' phrasing is consistent with this.",
+      "VERIFIED (2026-06-29): Vanuatu permanent removal from Annex II confirmed via EUR-Lex search — Regulation (EU) 2025/11 moved Vanuatu to Annex I effective 14 January 2025. No additional Annex I/II changes found beyond what was already in this record.",
+      "VERIFIED (2026-06-29): Nicaragua (NIC) and Venezuela (VEN) confirmed still in Annex II visa-free list. No suspensions enacted. European Parliament approved reform of suspension mechanism in 2025 (Regulation (EU) 2025/2441), but no individual country suspension has been triggered for Latin American countries.",
+      "VERIFIED (2026-06-29): Georgia (GEO) ordinary passport holders remain visa-free. Diplomatic/service/official passport suspension (Regulation (EU) 2026/496, valid 6 March 2026–6 March 2027) correctly noted in visa_free entry. No escalation to all Georgian nationals as of June 2026.",
+      "VERIFIED (2026-06-29): government.se visa list page returned HTTP 403 on re-fetch; no indication of update since September 2023. Conditional_access entries remain grounded in that source without change."
     ],
     "gaps": [
       "The Swedish government.se visa list page was last updated 01 September 2023; no more recent version found. Exact agreement dates for bilateral diplomatic passport waivers (footnotes */**) are not stated on that page.",
@@ -791,12 +810,301 @@
       "Turkey 'special passports' (footnote *): the precise definition of 'special passport' was not further described in the official source. Likely refers to official/government service-equivalent passports but not confirmed.",
       "No held-credential (Type A) rules found from official Swedish/Schengen sources: Sweden follows standard Schengen rules whereby a valid Schengen visa or residence permit from any member state grants entry; this is a function of the Schengen visa itself, not a standalone Swedish credential waiver. No US/UK/Canadian/Australian visa credential waivers found in official Swedish sources.",
       "No special-status (OCI/diaspora) rules found: OCI cardholders are not mentioned in any official Swedish government or Migrationsverket source as receiving special entry privileges.",
-      "ETIAS exact launch date: expected Q4 2026 per European Council announcement (March 2025) but not yet confirmed by final EU implementing decision; European Parliament must also approve the approach.",
+      "ETIAS exact launch date: expected Q4 2026 per European Council announcement (March 2025) but not yet confirmed by final EU implementing decision; confirmed via travel-europe.europa.eu as of June 2026.",
       "Sweden does not have a standalone 'digital nomad visa' program; no dedicated program found on official sources.",
-      "Vanuatu: permanently removed from Annex II via Regulation (EU) 2025/11 (effective 14 January 2025) — confirmed from EUR-Lex consolidated regulation (December 2025) and EU Council press release.",
-      "Exact list of all Annex I countries was extracted from EUR-Lex consolidated regulation (30 December 2025); subsequent minor amendments may not yet be consolidated."
+      "Vanuatu: permanently removed from Annex II via Regulation (EU) 2025/11 (effective 14 January 2025) - confirmed from EUR-Lex consolidated regulation (December 2025) and EU Council press release.",
+      "Exact list of all Annex I countries was extracted from EUR-Lex consolidated regulation (30 December 2025); the new suspension mechanism (Articles 8a-8f, added by Regulation (EU) 2025/2441) enables delegated acts to suspend individual Annex II countries - monitor for further Georgian escalation beyond the diplomatic/official passport suspension currently in force.",
+      "Georgia diplomatic passport suspension (Regulation (EU) 2026/496, valid 6 March 2026 – 6 March 2027): the government.se visa list (last updated September 2023) does not reflect this change; the implementing regulation is the authoritative source. The suspension could be escalated to all Georgian nationals if Georgia does not comply with visa-free regime commitments. No escalation had been implemented as of June 2026.",
+      "EU Blue Card salary threshold: the June 2026 update to general work permit rules (SEK 34,470/month for work permit) did not explicitly state a corresponding update to the EU Blue Card threshold (SEK 52,000/month, set 9 July 2025). Monitor migrationsverket.se for any explicit Blue Card threshold update."
     ]
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Type C) – Tourism",
+      "purpose": "Allows foreign nationals from visa-required countries to visit Sweden and the Schengen area for tourism, family visits, or cultural events for up to 90 days in any 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Fee is EUR 90 for adults (approx. USD 99), EUR 45 for children 6-11, free for children under 6. Standard processing is 15 days; may extend up to 30 days for complex cases. Multiple-entry visas valid up to 5 years may be issued to frequent travellers. Reduced fee (EUR 35) applies to citizens of Albania, Armenia, Azerbaijan, Belarus, Bosnia-Herzegovina, Cape Verde, Georgia, North Macedonia, Moldova, Montenegro, Serbia, and Ukraine. Must show proof of accommodation, return travel, and financial means of SEK 450 per day. Applied through Swedish embassies or VFS Global."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Short-Stay Visa (Type C) – Business",
+      "purpose": "Allows foreign nationals from visa-required countries to enter Sweden for business meetings, conferences, negotiations, or trade activities for up to 90 days in any 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Same fee structure and processing times as tourism Schengen visa. Requires an invitation letter from the Swedish company or organisation. Does not permit gainful employment; only business activities such as meetings and conferences."
+    },
+    {
+      "category": "medical",
+      "name": "Schengen Short-Stay Visa (Type C) – Medical Treatment",
+      "purpose": "Allows foreign nationals from visa-required countries to enter Sweden to receive medical treatment for up to 90 days in any 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 365,
+      "entries": "single",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Requires two medical certificates confirming diagnosis and treatment necessity, and proof of a deposit or payment guarantee for treatment costs. Same base fee as standard Schengen visa (EUR 90 adults). If medical stay exceeds 90 days, a visitor's residence permit must be applied for instead."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (Type A)",
+      "purpose": "Allows nationals of certain countries to transit through Swedish international airport zones without entering the Schengen area.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Required for nationals of specific high-risk countries transiting through Schengen airports (e.g., Afghanistan, Iraq, Iran, Somalia, and others as listed in EU Regulation 2018/1806 Annex IV). Holders of valid Schengen visas, residence permits from Schengen states, or certain other countries' valid travel documents may be exempt. Fee is EUR 90 (same as Type C). Applied through Swedish embassies."
+    },
+    {
+      "category": "tourist",
+      "name": "Visitor's Residence Permit (Long-Stay Tourist)",
+      "purpose": "Allows foreign nationals to visit Sweden for tourism or to visit family/friends for stays exceeding 90 days, up to a maximum of 6 months (or 9 months in exceptional cases).",
+      "max_stay_days": 270,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 165,
+      "processing_days_min": 60,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-more-than-90-days.html",
+      "notes": "Fee is SEK 1,500 for adults (approx. USD 165), SEK 750 for children. Standard tourist purpose: up to 6 months; exceptionally up to 9 months. Processing: 75% of cases decided within 3 months (outside Sweden) or 4 months (from within Sweden). Requires valid passport, medical travel insurance (EUR 30,000 minimum), and financial means of SEK 450/day. Must demonstrate genuine intent to leave after the visit."
+    },
+    {
+      "category": "family",
+      "name": "Visitor's Residence Permit – Family/Relative Visit",
+      "purpose": "Allows foreign nationals to visit a relative, spouse, or close family member residing in Sweden for extended stays exceeding 90 days.",
+      "max_stay_days": 365,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 165,
+      "processing_days_min": 60,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-more-than-90-days.html",
+      "notes": "Parents visiting their children in Sweden may be granted up to 1 year. Relatives visiting family members may receive up to 6 months. Fee SEK 1,500 adults / SEK 750 children. Requires invitation from the host in Sweden along with the host's ID and income documentation. Processing: 75% within 3-4 months."
+    },
+    {
+      "category": "medical",
+      "name": "Visitor's Residence Permit – Medical Treatment (Long-Stay)",
+      "purpose": "Allows foreign nationals to stay in Sweden for medical treatment for extended periods exceeding 90 days, up to a maximum of 1 year.",
+      "max_stay_days": 365,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 165,
+      "processing_days_min": 60,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-more-than-90-days.html",
+      "notes": "Maximum stay 1 year. Requires medical certificates and proof of treatment costs. Fee SEK 1,500 adults / SEK 750 children."
+    },
+    {
+      "category": "work",
+      "name": "Work Permit (Employee)",
+      "purpose": "Allows non-EU/EEA nationals with a job offer from a Swedish employer to live and work in Sweden.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 220,
+      "processing_days_min": 18,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/work/employee-or-self-employed/employees.html",
+      "notes": "Fee is SEK 2,000 (approx. USD 220). As of 1 June 2026, minimum salary is SEK 34,470/month (90% of median salary). Comprehensive health insurance required from 1 June 2026. Permit typically issued for up to 2 years, renewable. Eligible for permanent residence after 4 years of work permit. Processing averages 18 days for fast-tracked complete applications. The employer must advertise the position in the EU/EEA before offering to a third-country national (new rule from June 2026)."
+    },
+    {
+      "category": "work",
+      "name": "Work Permit (Self-Employed)",
+      "purpose": "Allows non-EU/EEA nationals to reside in Sweden and run their own business.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 220,
+      "processing_days_min": 60,
+      "processing_days_max": 180,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/work/employee-or-self-employed/self-employed-people.html",
+      "notes": "Fee SEK 2,000. Must own and actively manage at least 51% of the business. Financial self-sufficiency requirement: SEK 200,000 for applicant plus SEK 100,000 per accompanying spouse and SEK 50,000 per child. Requires good industry experience, language skills, and a credible business plan with established customer contacts. Permit up to 2 years, renewable. Path to permanent residence after 4 years."
+    },
+    {
+      "category": "work",
+      "name": "EU Blue Card",
+      "purpose": "Allows highly qualified non-EU/EEA nationals with a high-salary job offer to live and work in Sweden with facilitated pathways to permanent residence.",
+      "max_stay_days": null,
+      "validity_days": 1460,
+      "entries": "multiple",
+      "fee_usd": 220,
+      "processing_days_min": 30,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/work/employee-or-self-employed/eu-blue-cards.html",
+      "notes": "Fee SEK 2,000. Minimum salary: SEK 52,000/month (1.25x average Swedish salary, effective 9 July 2025). Requires higher education (minimum 180 credits) or 5+ years relevant professional experience. Employment contract for minimum 6 months required. Comprehensive health insurance required. Permit duration: 9 months to 4 years. Processing: 75% of complete applications decided within 1 month. Path to permanent residence after 4 years."
+    },
+    {
+      "category": "work",
+      "name": "Seasonal Work Permit",
+      "purpose": "Allows non-EU/EEA nationals to perform seasonal agricultural or horticultural work in Sweden for a limited period.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/work.html",
+      "notes": "Sweden implements the EU Seasonal Workers Directive. Seasonal work permits are issued for up to 90 days and cover sectors such as agriculture, horticulture, and tourism. Must have a job offer meeting Swedish collective agreement or industry-standard wages. Specific fee and processing times not published on the main Migrationsverket page."
+    },
+    {
+      "category": "work",
+      "name": "ICT Permit (Intra-Company Transfer)",
+      "purpose": "Allows non-EU/EEA nationals to be temporarily posted to a Swedish entity of a multinational company as a manager, specialist, or trainee.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/work.html",
+      "notes": "Sweden implements the EU ICT Directive. Minimum salary thresholds apply and were updated from 1 June 2026. Managers and specialists may be granted up to 3 years; trainees up to 1 year. ICT permit holders may move between EU member states under the directive's mobility provisions. Specific fee not published on the main listing page."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit to Look for Work or Start a Business",
+      "purpose": "Allows highly-educated non-EU/EEA nationals to enter Sweden for up to 9 months to search for employment or explore business establishment, without a prior job offer.",
+      "max_stay_days": 270,
+      "validity_days": 270,
+      "entries": "multiple",
+      "fee_usd": 242,
+      "processing_days_min": 90,
+      "processing_days_max": 210,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/work/look-for-work/look-for-work-or-start-a-business.html",
+      "notes": "Fee SEK 2,200 (approx. USD 242). Requires a second-cycle qualification (60+ credit Master's, professional degree, or PhD). Must show financial self-sufficiency of SEK 13,000/month and hold comprehensive health insurance. If employment or business is secured during the permit period, holder may apply for a work/self-employment residence permit from within Sweden. Processing: 75% decided within 7 months. Not a digital nomad visa per se, but functionally similar for job-seeking professionals."
+    },
+    {
+      "category": "student",
+      "name": "Student Residence Permit – Higher Education",
+      "purpose": "Allows non-EU/EEA nationals to reside in Sweden to pursue bachelor's or master's degree studies at a Swedish higher education institution.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 165,
+      "processing_days_min": 30,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/study/higher-education.html",
+      "notes": "Fee SEK 1,500 adults / SEK 750 children under 18. Processing: 75% decided within 2 months. Maximum 1-2 years per permit depending on institution (designated universities can issue up to 2 years). Cannot exceed passport validity. Full-time enrollment required (30 credits/semester). Tuition fees must be paid before applying. Financial requirement: SEK 10,656/month (2026). Work limited to 15 hours/week for bachelor's/master's students from June 11, 2026. Permit renewable for duration of studies."
+    },
+    {
+      "category": "student",
+      "name": "Student Residence Permit – Doctoral Studies",
+      "purpose": "Allows non-EU/EEA nationals to reside in Sweden to pursue doctoral research at a Swedish university.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 165,
+      "processing_days_min": 30,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/study.html",
+      "notes": "Fee SEK 1,500. Doctoral students may be eligible to apply for permanent residence directly after completing doctoral studies. Accompanying family members can apply simultaneously. Processing similar to higher education student permit."
+    },
+    {
+      "category": "student",
+      "name": "Student Residence Permit – Other Studies and Upper Secondary School",
+      "purpose": "Allows non-EU/EEA nationals to reside in Sweden to attend upper secondary school or other study programmes lasting more than 90 days.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 165,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/study.html",
+      "notes": "Fee SEK 1,500 adults / SEK 750 children. Covers exchange programmes, upper secondary studies, contract or specialisation education. Full-time study required (minimum 20 teaching hours weekly). Health insurance required for studies under one year. Financial requirement SEK 10,656/month."
+    },
+    {
+      "category": "family",
+      "name": "Family Reunification Residence Permit",
+      "purpose": "Allows the partner, spouse, children, or other close relatives of a person with a Swedish residence permit or citizenship to join them and live in Sweden.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 165,
+      "processing_days_min": 90,
+      "processing_days_max": 365,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/live-with-someone.html",
+      "notes": "Fee SEK 1,500 adults / SEK 750 children. Covers partners/spouses, children, parents visiting adult children, and other relatives. The sponsor (anchor person) in Sweden must generally have a permanent residence permit, Swedish citizenship, or a valid temporary residence permit of sufficient duration. Maintenance requirement: sponsor must demonstrate adequate housing and income. Processing times can be lengthy (12+ months for complex family cases)."
+    },
+    {
+      "category": "other",
+      "name": "Temporary Protection Permit (Ukraine/EU Directive)",
+      "purpose": "Grants temporary residence in Sweden to displaced persons from Ukraine under the EU Temporary Protection Directive, allowing right to work and access to social services.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.migrationsverket.se/en/you-want-to-apply/protection-under-temporary-protection-directive.html",
+      "notes": "No application fee. Granted to Ukrainian nationals and stateless persons who were residing in Ukraine before 24 February 2022. Provides access to employment, housing, social welfare, and healthcare. Duration aligned with EU Council decisions on temporary protection extension."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Official Visa Exemption",
+      "purpose": "Visa-free entry for holders of diplomatic, service, official, or special passports from designated countries under bilateral agreements or Sweden's national visa list.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.government.se/government-policy/migration-and-asylum/list-of-foreign-citizens-who-require-visa-for-entry-into-sweden/",
+      "notes": "Countries whose nationals ordinarily require a Schengen visa but whose diplomatic/service/special passport holders are exempt include: Bolivia, Indonesia, Philippines, Thailand, Turkey (including special passport holders), China (diplomatic only), India (diplomatic only), Morocco (diplomatic only), Tunisia (diplomatic only), Armenia (diplomatic only, per EC-Armenia agreement), Azerbaijan (diplomatic only, per EC-Azerbaijan agreement), Belarus (diplomatic only, per EC-Belarus agreement - NOTE: suspended in practice due to EU sanctions since 2021), Cape Verde (diplomatic only). Based on Swedish Government official visa list last updated 01 September 2023."
+    }
+  ],
   "outbound_official": {
     "found": false,
     "note": "No official Sweden government outbound visa-list page located; rely on destination-side data. The Swedish Ministry of Foreign Affairs (UD) at regeringen.se/uds-reseinformation/reseinformation-for-olika-lander/visum-till-andra-lander/ explicitly states that UD and Swedish embassies do not handle or publish visa requirements for Swedish citizens traveling to other countries, and directs citizens to contact destination-country embassies directly. The swedenabroad.se portal provides per-country travel advisories but no consolidated visa-free list. No Swedish origin-side equivalent of India's mea.gov.in/vffin page was found."
@@ -809,7 +1117,7 @@
     },
     {
       "url": "https://www.government.se/government-policy/migration-and-asylum/list-of-foreign-citizens-who-require-visa-for-entry-into-sweden/",
-      "description": "Government.se – List of third countries requiring visas for entry into Sweden (last updated 01 September 2023); includes footnotes on diplomatic/service passport exemptions. Re-fetched June 2026 via Firecrawl — content confirmed unchanged.",
+      "description": "Government.se – List of third countries requiring visas for entry into Sweden (last updated 01 September 2023); includes footnotes on diplomatic/service passport exemptions. Re-fetched June 2026 via Firecrawl - content confirmed unchanged.",
       "accessible": true
     },
     {
@@ -852,6 +1160,64 @@
       "description": "EU Council press release – Vanuatu visa exemption ended; Council amends Regulation 2018/1806",
       "accessible": false,
       "note": "HTTP 403 on WebFetch; confirmed via EUR-Lex consolidated regulation and web search results"
+    },
+    {
+      "url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-more-than-90-days.html",
+      "description": "Swedish Migration Agency – Visitor's residence permit for stays longer than 90 days; fee SEK 1,500 adults / SEK 750 children, processing 3-4 months",
+      "accessible": true
+    },
+    {
+      "url": "https://www.migrationsverket.se/en/you-want-to-apply/study/higher-education.html",
+      "description": "Swedish Migration Agency – Student residence permit for higher education; fee SEK 1,500, processing 75% within 2 months, financial requirement SEK 10,656/month",
+      "accessible": true
+    },
+    {
+      "url": "https://www.migrationsverket.se/en/you-want-to-apply/study.html",
+      "description": "Swedish Migration Agency – Study permits overview; lists all study categories including doctoral, higher education, upper secondary, and specialisation education",
+      "accessible": true
+    },
+    {
+      "url": "https://www.migrationsverket.se/en/you-want-to-apply/work.html",
+      "description": "Swedish Migration Agency – Work permits overview; lists employee, self-employed, EU Blue Card, ICT, seasonal work, and job-seeker categories",
+      "accessible": true
+    },
+    {
+      "url": "https://www.migrationsverket.se/en/you-want-to-apply/live-with-someone.html",
+      "description": "Swedish Migration Agency – Family reunification permits overview; lists partner/spouse, children, relative, and accompanying family member categories",
+      "accessible": true
+    },
+    {
+      "url": "https://www.migrationsverket.se/en/you-want-to-apply/work/employee-or-self-employed.html",
+      "description": "Swedish Migration Agency – Employee or self-employed work permit; minimum salary SEK 34,470/month from June 2026, comprehensive health insurance required",
+      "accessible": true
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202600496",
+      "description": "Commission Implementing Regulation (EU) 2026/496 of 6 March 2026 – Temporary suspension of visa exemption for Georgian nationals holding diplomatic, service or official passports. Valid 6 March 2026 – 6 March 2027. Ordinary Georgian passport holders remain visa-free under Annex II.",
+      "accessible": true
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20251230",
+      "description": "EUR-Lex – Consolidated EU Regulation 2018/1806 (HTML version, 30 December 2025). Confirmed Malaysia in Annex II (visa-free). Confirmed no active Annex II suspensions of ordinary passport holders beyond Georgia diplomatic/service/official suspension via implementing act.",
+      "accessible": true
+    },
+    {
+      "url": "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en",
+      "description": "European Commission DG HOME – Official announcement (17 July 2025) confirming ETIAS fee will be EUR 20, replacing the originally proposed EUR 7. Source used to verify ETIAS fee in eta[] entry.",
+      "accessible": true,
+      "note": "Confirmed via web search citation; direct WebFetch not attempted on this URL."
+    },
+    {
+      "url": "https://travel-europe.europa.eu/en/etias/about-etias/news-corner/revised-timeline-ees-and-etias",
+      "description": "EU Travel Europe – Revised timeline for EES and ETIAS. Launch expected last quarter of 2026. Re-verified 29 June 2026 (page content minimal on direct fetch but confirmed via EU-domain web search).",
+      "accessible": true,
+      "note": "Confirmed via web search; direct WebFetch returned minimal content."
+    },
+    {
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/11/oj/eng",
+      "description": "EUR-Lex – Regulation (EU) 2025/11 permanently moving Vanuatu from Annex II to Annex I of Regulation 2018/1806, effective 14 January 2025. Confirmed via web search on 29 June 2026.",
+      "accessible": true,
+      "note": "Confirmed via web search citation; direct WebFetch not attempted on this URL."
     }
   ]
 }

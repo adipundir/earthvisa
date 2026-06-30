@@ -21,7 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   return [
     { url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
+    { url: `${base}/visit`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/passport`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/destination`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     ...passportPages,
     ...destinationPages,
   ];

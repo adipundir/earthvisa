@@ -14,8 +14,8 @@
         "nationality": "All nationalities (general policy)",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Visitors of any nationality may obtain a tourist visa on arrival at Djibouti (Ambouli International Airport and other border crossings). Payment is in cash in US dollars. The US State Department (updated August 2025) confirms visa on arrival is available and is now the primary route following discontinuation of the e-visa. The UK FCDO (June 2026) also confirms tourists can purchase a visa on arrival in cash USD. No official Djiboutian government source publishes a nationality exclusion list or the exact maximum stay duration. Wikipedia/Timatic cites 31 days maximum stay for short-stay tourism visas obtained on arrival, but this is not confirmed on an official Djiboutian government domain.",
-        "source_url": "https://travel.state.gov/content/travel/en/us-visas/Supplements/Supplements_by_Post/DJI-Djibouti.html",
+        "notes": "Visitors of any nationality may obtain a tourist visa on arrival at Djibouti (Ambouli International Airport and other border crossings). Fee is USD 23, paid in cash. The US State Department country information page confirms visa on arrival is available at a $23 fee. The French MFA (diplomatie.gouv.fr, updated June 2026) confirms VOA is possible for one month ('pour un mois'). The UK FCDO (June 2026) also confirms tourists can purchase a visa on arrival in cash USD. No official Djiboutian government source publishes a nationality exclusion list. Max stay: French MFA states 1 month for VOA; exact figure not confirmed on official Djiboutian government domain but the French MFA's June 2026 update provides the most recent official-government confirmation of 30 days.",
+        "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Djibouti.html",
         "source_official": true
       }
     ],
@@ -23,15 +23,64 @@
     "eta": [],
     "source_urls": [
       "https://travel.state.gov/content/travel/en/us-visas/Supplements/Supplements_by_Post/DJI-Djibouti.html",
+      "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Djibouti.html",
       "https://www.gov.uk/foreign-travel-advice/djibouti/entry-requirements",
+      "https://www.diplomatie.gouv.fr/fr/information-par-pays/djibouti/conseils-aux-voyageurs-entree-sejour",
       "http://www.evisa.gouv.dj/",
       "https://diplomatie.gouv.dj/",
       "https://interieur.gouv.dj/",
       "https://www.mea.gov.in/bvwa-passport",
       "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml"
     ],
-    "notes": "The official Djibouti Immigration Directorate e-visa portal (evisa.gouv.dj) is no longer operational as an e-visa issuance system: the US State Department (August 2025) explicitly states 'The Government of Djibouti has discontinued use of the e-Visa.' Visa on arrival (cash USD) at Ambouli Airport remains the primary entry method for all nationalities. The UK FCDO (June 2026) references online application via evisa.gouv.dj as a secondary option, but this conflicts with the US State Dept official announcement and the portal now returning minimal content. E-visa is therefore classified as discontinued and removed from visa_policy. No official Djiboutian MFA or Ministry of Interior page publishes a per-nationality visa policy breakdown or visa-free nationality list. No bilateral visa-exemption agreements for ordinary passport holders were confirmed on official Djiboutian government or partner-country MFA domains (Wikipedia/aggregators cite Singapore as visa-free but no official source from Singapore MFA or Djibouti government confirms this for ordinary passports)."
+    "notes": "Visa on arrival (cash USD, $23 fee) at Ambouli Airport is the primary entry method confirmed by multiple official foreign-government sources. E-visa status is conflicting: the US Embassy Djibouti supplement page states 'The Government of Djibouti has discontinued use of the e-Visa' (August 2025), but the US State Dept country info page (June 2026) states the evisa.gouv.dj portal 'is still up and accepting applications' while noting reports that 'applications do not go through successfully.' The UK FCDO (June 2026) and French MFA (June 2026) both list e-visa as a current option. The evisa.gouv.dj portal itself returns only the word 'Evisa' with no functional portal content. Given the non-functional portal and the US Embassy discontinuation notice, e-visa is NOT listed in visa_policy.e_visa; this is a safety-first classification. No bilateral ordinary-passport visa-free agreements were confirmed on any official government source."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa",
+      "purpose": "For travel to Djibouti for tourism and leisure purposes. Available on arrival at Ambouli International Airport and border crossings, paid in cash USD.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 23,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Djibouti.html",
+      "notes": "Visa on arrival is the primary route. Fee is USD 23 confirmed on US State Dept country information page (June 2026). French MFA (June 2026) states VOA is for 1 month. UK FCDO confirms payment in cash USD. Evidence of onward journey required per UK FCDO. The evisa.gouv.dj portal exists but is non-functional; e-visa route is in disputed status (US Embassy says discontinued August 2025; UK FCDO and French MFA June 2026 still list it as an option). Embassy application also available (e.g., Djibouti Embassy in Japan issues tourist visas at ¥4,000 for 1-month or 3-month stays). Overstay penalty: 40,000 FDJ for overstays up to 90 days; 80,000 FDJ for overstays exceeding 90 days (French MFA)."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "For foreign nationals travelling to Djibouti for business purposes such as meetings, negotiations, or commercial activities.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 2,
+      "processing_days_max": 2,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://djiboutiembassy.jp/en/visa/",
+      "notes": "Issued by Djibouti embassies abroad. The Djibouti Embassy in Japan issues 1-month or 3-month business visas at ¥4,000, requiring a company letter from employer. Processing typically 2 business days at embassy. Applications accepted Tuesdays and Thursdays (10:30am–12:00pm). Pickup 2:00pm–3:30pm. Passport must be valid for at least 6 months with minimum two blank facing pages."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Official / Diplomatic Visa",
+      "purpose": "For holders of diplomatic or official passports travelling on official government business.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": 2,
+      "processing_days_max": 2,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://djiboutiembassy.jp/en/visa/",
+      "notes": "No visa fee charged. Requires official or diplomatic passport plus photocopy, and a Note Verbale (mandatory). Holders of Indian diplomatic/official/service passports may enter Djibouti visa-free for up to 90 days under the India-Djibouti bilateral agreement (in force 01.02.2023). Holders of Chinese diplomatic/service/public affairs passports may enter visa-free for stays under 30 days (in force 04.12.2014)."
+    }
+  ],
   "conditional_access": [
     {
       "basis": "passport_type",
@@ -90,49 +139,78 @@
   "data_quality": {
     "completeness": "low",
     "validation_notes": [
-      "CORRECTED: Removed e-visa entry from visa_policy.e_visa. The US State Department (August 2025, official) explicitly states 'The Government of Djibouti has discontinued use of the e-Visa.' The previous record included e-visa as an active entry despite noting the contradiction. With two conflicting signals and the official Djibouti evisa.gouv.dj portal returning only the word 'Evisa' (no functional portal content), the e-visa is now classified as discontinued and removed from the active visa_policy list.",
-      "CORRECTED: Updated visa_on_arrival notes to reflect that visa on arrival is now the primary entry method following e-visa discontinuation, per US State Dept (August 2025) and UK FCDO (June 2026).",
-      "UNCHANGED: India diplomatic/official/service passport conditional access confirmed unchanged — 90 days, signed 22 Sep 2022, in force 1 Feb 2023 (source: MEA India mea.gov.in).",
-      "UNCHANGED: China diplomatic/service/public affairs passport conditional access confirmed unchanged — <30 days, in force 4 Dec 2014 (source: China MFA cs.mfa.gov.cn).",
-      "NOT ADDED: Singapore ordinary passport visa-free claim (cited by Wikipedia/aggregators) was NOT added to visa_policy.visa_free. Singapore MFA (mfa.gov.sg) page for Djibouti only states passport validity requirement and defers to the Djibouti embassy; no official Singapore MFA or Djiboutian government source confirms an ordinary-passport bilateral visa-exemption agreement with Singapore.",
-      "NO CHANGE to cbi/rbi/fast_track — no programs found on any official Djibouti government source."
+      "2026-06-29: CONFIRMED - Visa on arrival remains the primary entry method for all nationalities. US State Dept country info page re-fetched: confirms VOA at $23 fee, no nationality exclusions. UK FCDO re-fetched: confirms VOA in cash USD. French MFA re-fetched (June 9, 2026): confirms VOA for 1 month; also notes general authorized stay up to 3 months before residence card required (this is the maximum authorised presence, not necessarily the VOA grant). No change to visa_policy.visa_on_arrival structure.",
+      "2026-06-29: E-VISA STATUS REMAINS UNRESOLVED - US Embassy Djibouti supplement re-fetched: still states e-visa discontinued. evisa.gouv.dj portal re-fetched: returns only 'Evisa', no functional content. evisa.gouv.dj/applicant-api/ endpoint also returns only 'Evisa', non-functional. UK FCDO re-fetched: still lists online application via evisa.gouv.dj as an option. French MFA (June 9, 2026): still lists e-visa as an option for transit and short-stay visas. Conflict persists; safety-first rule maintained - e-visa NOT listed in visa_policy.e_visa.",
+      "2026-06-29: CONFIRMED - India-Djibouti bilateral visa exemption (diplomatic/official/service passports, 90 days, in force 2023-02-01) re-confirmed unchanged on mea.gov.in.",
+      "2026-06-29: CONFIRMED - China-Djibouti bilateral visa exemption (diplomatic/service/public affairs passports, <30 days, in force 2014-12-04) re-confirmed unchanged on cs.mfa.gov.cn.",
+      "2026-06-29: NO CHANGE - cbi/rbi/fast_track: no programs found; unchanged.",
+      "2026-06-27: CONFIRMED - Visa on arrival remains the primary entry method for all nationalities. No change to visa_policy.visa_on_arrival structure.",
+      "2026-06-27: CORRECTED - Added fee_usd: 23 to tourist visa type. Source: US State Dept country information page (travel.state.gov, June 2026), which explicitly states VOA fee is $23. Previously the fee was null.",
+      "2026-06-27: UPDATED - VOA notes now reference French MFA (diplomatie.gouv.fr, updated June 9, 2026) confirming 1-month VOA duration, consistent with the previously unconfirmed Wikipedia/Timatic 30-day figure. Max stay in visa_on_arrival entry remains null (not confirmed on official Djiboutian government domain), but the notes now reference the French MFA June 2026 confirmation of 1 month.",
+      "2026-06-27: UPDATED - Added US State Dept country information page URL (travel.state.gov/…/Djibouti.html) and French MFA URL (diplomatie.gouv.fr) to source_urls and sources_checked. These sources were newly confirmed live during this validation run.",
+      "2026-06-27: E-VISA STATUS REMAINS UNRESOLVED - US Embassy Djibouti supplement (August 2025): e-visa discontinued. US State Dept country info page (June 2026): portal still up but applications reportedly failing. UK FCDO (June 2026): lists e-visa as option. French MFA (June 2026): lists e-visa as option. evisa.gouv.dj portal: returns only 'Evisa', non-functional. Applying safety-first rule: e-visa NOT listed in visa_policy.e_visa. This is unchanged from previous validation.",
+      "2026-06-27: CONFIRMED - India-Djibouti bilateral visa exemption (diplomatic/official/service passports, 90 days, in force 2023-02-01) confirmed unchanged on mea.gov.in.",
+      "2026-06-27: CONFIRMED - China-Djibouti bilateral visa exemption (diplomatic/service/public affairs passports, <30 days, in force 2014-12-04) confirmed unchanged on cs.mfa.gov.cn.",
+      "2026-06-27: NO CHANGE - cbi/rbi/fast_track: no programs found; unchanged.",
+      "PRIOR NOTE: CORRECTED (previous run) - Removed e-visa entry from visa_policy.e_visa. The US State Department (August 2025, official) explicitly states 'The Government of Djibouti has discontinued use of the e-Visa.'",
+      "PRIOR NOTE: NOT ADDED - Singapore ordinary passport visa-free claim (cited by Wikipedia/aggregators) was NOT added to visa_policy.visa_free. Singapore MFA (mfa.gov.sg) page for Djibouti only states passport validity requirement and defers to the Djibouti embassy; no official Singapore MFA or Djiboutian government source confirms an ordinary-passport bilateral visa-exemption agreement with Singapore."
     ],
     "gaps": [
-      "E-visa discontinuation: The UK FCDO (June 2026) still references online application via evisa.gouv.dj, conflicting with the US State Dept (August 2025) official discontinuation notice. The evisa.gouv.dj portal is live but returns no functional content. The exact date of discontinuation and whether a partial e-visa route exists cannot be confirmed solely from official Djiboutian government sources.",
-      "Visa-on-arrival maximum stay duration not confirmed on any official Djibouti government source. Wikipedia/Timatic cites 31 days but this is not from an official Djiboutian domain.",
-      "Visa-on-arrival fee amount not confirmed on any official Djibouti government source.",
+      "E-visa status is genuinely conflicting across official foreign-government sources as of June 2026/June 2026: US Embassy Djibouti supplement says discontinued; US State Dept country page says portal is up but applications may fail; UK FCDO and French MFA (June 2026) list e-visa as current option. The evisa.gouv.dj portal and its /applicant-api/ endpoint both return only 'Evisa' (non-functional as of June 29, 2026 re-fetch). Until confirmed operational on the Djibouti government's own domain, e-visa is excluded from visa_policy.",
+      "Visa-on-arrival maximum stay duration: French MFA (June 2026, official foreign government source) states '1 month' for VOA. This aligns with Wikipedia/Timatic's 31-day figure. Not confirmed on official Djiboutian government domain - max_stay_days in visa_on_arrival remains null to avoid over-claiming.",
       "No official Djibouti government page publishes a per-nationality visa policy breakdown (visa-free list, visa-on-arrival eligible list, or excluded nationalities).",
       "Singapore ordinary passport visa-free claim appears in Wikipedia and aggregator sites but cannot be confirmed from Singapore MFA (mfa.gov.sg) or any official Djiboutian government source. Not recorded.",
       "Additional diplomatic/service passport waiver countries cited by Wikipedia/aggregators (Turkey, Egypt, Kenya, Morocco, Russia, Libya, Benin, Angola, Azerbaijan) were not confirmed on official partner-country MFA or Djiboutian government sources. Angola and Benin agreements (reportedly signed February 2024) are reportedly not yet in force. Azerbaijan agreement (reportedly signed September 2025) not confirmed on official Azerbaijani source. None recorded.",
       "No official confirmation of COMESA Free Movement Protocol participation or IGAD free movement participation by Djibouti was found on official Djiboutian government domains.",
       "No official residency-by-investment, golden visa, digital nomad, or skilled worker visa program documentation found.",
       "No OCI cardholder exemption for Djibouti entry was found on any official source.",
-      "outbound_official: No Djibouti government MFA, Ministry of Interior, or passport-office page was found that lists visa-free/VOA/eVisa destinations for Djiboutian ordinary-passport holders. Domains checked: evisa.gouv.dj (inbound only), diplomatie.gouv.dj (SSL error/no relevant content), interieur.gouv.dj (no immigration/travel policy content), mae.gouv.dj (ECONNREFUSED), mfa.dj (ECONNREFUSED), presidence.dj (no relevant content), egouv.dj (TLS error), gouv.dj (ECONNREFUSED). All outbound travel information for Djiboutian citizens found online comes exclusively from third-party aggregators."
+      "Work, student, transit, medical, and family visa categories: no official Djibouti government source (embassy website, MFA, Ministry of Interior) publishes details of these visa categories.",
+      "outbound_official: No Djibouti government MFA, Ministry of Interior, or passport-office page was found that lists visa-free/VOA/eVisa destinations for Djiboutian ordinary-passport holders. Domains checked: evisa.gouv.dj (inbound only), diplomatie.gouv.dj (SSL error/no relevant content), interieur.gouv.dj (no immigration/visa policy information), mae.gouv.dj (ECONNREFUSED), mfa.dj (ECONNREFUSED), presidence.dj (no relevant content), egouv.dj (TLS error), gouv.dj (ECONNREFUSED).",
+      "Overstay penalty details (40,000 FDJ / 80,000 FDJ) are from French MFA (June 2026) and not confirmed on official Djiboutian government domain."
     ]
   },
   "sources_checked": [
     {
       "url": "https://travel.state.gov/content/travel/en/us-visas/Supplements/Supplements_by_Post/DJI-Djibouti.html",
-      "description": "US State Department — U.S. Embassy Djibouti page (updated August 2025): confirms e-visa discontinued by Government of Djibouti; visa on arrival still available",
+      "description": "US State Department - U.S. Embassy Djibouti supplement page (updated August 2025): confirms e-visa discontinued by Government of Djibouti; visa on arrival still available",
+      "official": true,
+      "useful": true
+    },
+    {
+      "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Djibouti.html",
+      "description": "US State Department - Djibouti Country Information Page (June 2026): confirms VOA available at $23 fee; notes evisa.gouv.dj portal is 'still up' but reports say applications may not go through",
       "official": true,
       "useful": true
     },
     {
       "url": "https://www.gov.uk/foreign-travel-advice/djibouti/entry-requirements",
-      "description": "UK FCDO — Djibouti entry requirements (updated June 2026): confirms visa on arrival available in cash USD; still references evisa.gouv.dj online application",
+      "description": "UK FCDO - Djibouti entry requirements (updated June 2026): confirms visa on arrival available in cash USD; still references evisa.gouv.dj online application as a current option",
+      "official": true,
+      "useful": true
+    },
+    {
+      "url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/djibouti/conseils-aux-voyageurs-entree-sejour",
+      "description": "French Ministry of Foreign Affairs - Djibouti entry and stay advice (updated June 9, 2026): confirms VOA for 1 month; lists e-visa at evisa.gouv.dj as an option; notes overstay penalties",
       "official": true,
       "useful": true
     },
     {
       "url": "http://www.evisa.gouv.dj/",
-      "description": "Official Djibouti Immigration Directorate eVisa portal — returns only the word 'Evisa'; no functional portal content accessible",
+      "description": "Official Djibouti Immigration Directorate eVisa portal - returns only the word 'Evisa'; no functional portal content accessible",
       "official": true,
       "useful": false,
-      "note": "Portal appears live but returns minimal content; e-visa system confirmed discontinued per US State Dept August 2025"
+      "note": "Portal appears live but returns minimal content; e-visa system status disputed (confirmed discontinued per US Embassy August 2025; still listed as option per French MFA and UK FCDO June 2026). Re-fetched June 29, 2026: still returns only 'Evisa', non-functional."
+    },
+    {
+      "url": "https://www.evisa.gouv.dj/applicant-api/",
+      "description": "Official Djibouti eVisa applicant API endpoint - returns only the word 'Evisa'; non-functional",
+      "official": true,
+      "useful": false,
+      "note": "Re-fetched June 29, 2026: returns only 'Evisa', no API content or portal functionality present."
     },
     {
       "url": "https://diplomatie.gouv.dj/",
-      "description": "MAECI — Ministère des Affaires Étrangères et de la Coopération Internationale (official MFA of Djibouti)",
+      "description": "MAECI - Ministère des Affaires Étrangères et de la Coopération Internationale (official MFA of Djibouti)",
       "official": true,
       "useful": false,
       "note": "SSL certificate error on direct fetch; only news/press releases in search results; no visa policy or nationality list pages found"
@@ -146,24 +224,31 @@
     },
     {
       "url": "https://www.mea.gov.in/bvwa-passport",
-      "description": "India Ministry of External Affairs — Countries with operational Visa Exemption Agreements for Diplomatic/Official/Service passport holders",
+      "description": "India Ministry of External Affairs - Countries with operational Visa Exemption Agreements for Diplomatic/Official/Service passport holders (June 2026 re-check)",
       "official": true,
       "useful": true,
-      "note": "Confirms India-Djibouti bilateral visa exemption for diplomatic and official/service passport holders; signed 22.09.2022, in force 01.02.2023, 90-day stay"
+      "note": "Confirms India-Djibouti bilateral visa exemption for diplomatic and official/service passport holders; signed 22.09.2022, in force 01.02.2023, 90-day stay - UNCHANGED"
     },
     {
       "url": "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
-      "description": "China MFA Consular Department — List of Agreements on Mutual Visa Exemption (updated February 2026)",
+      "description": "China MFA Consular Department - List of Agreements on Mutual Visa Exemption (June 2026 re-check)",
       "official": true,
       "useful": true,
-      "note": "Confirms China-Djibouti bilateral visa exemption for diplomatic, service, and public affairs passport holders; in force 04.12.2014, max stay <30 days"
+      "note": "Confirms China-Djibouti bilateral visa exemption for diplomatic, service, and public affairs passport holders; in force 04.12.2014, max stay <30 days - UNCHANGED"
     },
     {
       "url": "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/djibouti/",
-      "description": "Singapore Ministry of Foreign Affairs — Djibouti travel page",
+      "description": "Singapore Ministry of Foreign Affairs - Djibouti travel page",
       "official": true,
       "useful": false,
       "note": "Only states 6-month passport validity requirement; no visa-free confirmation for ordinary passport holders; defers to Djibouti embassy for entry requirements"
+    },
+    {
+      "url": "https://djiboutiembassy.jp/en/visa/",
+      "description": "Embassy of Djibouti in Japan - Visa types and requirements page (June 2026 re-check)",
+      "official": true,
+      "useful": true,
+      "note": "Confirms tourist and business visa categories (1-month or 3-month stay options, ¥4,000 fee), official/diplomatic visa (no fee, Note Verbale required), 2-day processing, applications accepted Tuesdays and Thursdays only"
     }
   ]
 }

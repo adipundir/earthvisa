@@ -49,7 +49,7 @@
         "nationality": "Dominican Republic",
         "iso3": "DOM",
         "max_stay_days": 90,
-        "notes": "Visa-free for up to 90 days; ordinary passport holders",
+        "notes": "Visa-free for up to 90 days; MFA verbatim: 'Dominican Republic for 90 days'. ISS page says 30 days - MFA (primary) used.",
         "source_url": "https://minfor.gov.gy/visa-information",
         "source_official": true
       },
@@ -161,7 +161,7 @@
         "nationality": "Costa Rica",
         "iso3": "CRI",
         "max_stay_days": 90,
-        "notes": "Up to 90 days for tourism. MFA verbatim: 'for a period not exceeding 90 days for tourism'",
+        "notes": "Up to 90 days for tourism. MFA verbatim: 'for a period not exceeding 90 days for tourism'. ISS page says 30 days - MFA (primary) used.",
         "source_url": "https://minfor.gov.gy/visa-information",
         "source_official": true
       },
@@ -177,7 +177,7 @@
         "nationality": "Peru",
         "iso3": "PER",
         "max_stay_days": 90,
-        "notes": "Up to 90 days for tourism. MFA verbatim: 'for a period not exceeding 90 days for tourism'",
+        "notes": "Up to 90 days for tourism. MFA verbatim: 'Peru for a period not exceeding 90 days for tourism'. No passport-type restriction on MFA page - all ordinary passport holders eligible.",
         "source_url": "https://minfor.gov.gy/visa-information",
         "source_official": true
       },
@@ -185,7 +185,7 @@
         "nationality": "Panama",
         "iso3": "PAN",
         "max_stay_days": 90,
-        "notes": "Up to 90 days for tourism. MFA verbatim: 'for a period not exceeding 90 days for tourism'. Note: Embassy of Guyana Belgium lists 180 days but minfor.gov.gy (primary official source) says 90 days — 90 days used.",
+        "notes": "Up to 90 days for tourism. MFA verbatim: 'Panama for a period not exceeding 90 days for tourism'. ISS page says 180 days; MFA (primary) says 90 days - 90 days used.",
         "source_url": "https://minfor.gov.gy/visa-information",
         "source_official": true
       },
@@ -233,7 +233,7 @@
         "nationality": "North Korea",
         "iso3": "PRK",
         "max_stay_days": null,
-        "notes": "Listed on official Guyana MFA page (minfor.gov.gy) with no stay limit. Verified on re-fetch June 2026.",
+        "notes": "Listed on official Guyana MFA page (minfor.gov.gy) with no stay limit. Also confirmed on ISS eligible countries page (eservices.iss.gov.gy). Verified on re-fetch June 2026.",
         "source_url": "https://minfor.gov.gy/visa-information",
         "source_official": true
       },
@@ -273,7 +273,7 @@
         "nationality": "Botswana",
         "iso3": "BWA",
         "max_stay_days": null,
-        "notes": "Visa-free entry; no stay limit specified on official MFA page",
+        "notes": "Visa-free entry; no stay limit specified on official MFA page. ISS page says 90 days - MFA (primary) does not specify a limit; null retained.",
         "source_url": "https://minfor.gov.gy/visa-information",
         "source_official": true
       },
@@ -283,6 +283,22 @@
         "max_stay_days": 90,
         "notes": "Up to 90 days. MFA verbatim: 'for a period not exceeding 90 days'",
         "source_url": "https://minfor.gov.gy/visa-information",
+        "source_official": true
+      },
+      {
+        "nationality": "Lesotho",
+        "iso3": "LSO",
+        "max_stay_days": 14,
+        "notes": "Up to 14 days. Confirmed on ISS official eligible-countries page (eservices.iss.gov.gy/eligible-countries-landing-permit). Not separately enumerated on minfor.gov.gy main list - confirmed as official iss.gov.gy government domain. Added 2026-06-27.",
+        "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
+        "source_official": true
+      },
+      {
+        "nationality": "Eswatini",
+        "iso3": "SWZ",
+        "max_stay_days": 60,
+        "notes": "Up to 60 days. Listed as 'Swaziland' on ISS official eligible-countries page (eservices.iss.gov.gy/eligible-countries-landing-permit). Country officially renamed Eswatini in 2018. Not separately enumerated on minfor.gov.gy main list - confirmed as official iss.gov.gy government domain. Added 2026-06-27.",
+        "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
         "source_official": true
       },
       {
@@ -353,8 +369,8 @@
         "nationality": "Germany",
         "iso3": "DEU",
         "max_stay_days": null,
-        "notes": "Visa-free entry. Confirmed on Embassy of Guyana Belgium page; not separately listed in the enumerated country list on minfor.gov.gy but listed in the introductory summary as a European visa-free country.",
-        "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+        "notes": "Visa-free entry; no stay limit. Confirmed on ISS official eligible-countries page (eservices.iss.gov.gy/eligible-countries-landing-permit) and Embassy of Guyana Belgium. Does not appear in enumerated country list on minfor.gov.gy on re-fetch June 2026 - secondary official sources (ISS) used. Source updated 2026-06-27.",
+        "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
         "source_official": true
       },
       {
@@ -457,8 +473,8 @@
         "nationality": "Malaysia",
         "iso3": "MYS",
         "max_stay_days": 60,
-        "notes": "Up to 60 days. Listed on Embassy of Guyana Belgium page; not separately enumerated in the minfor.gov.gy country list on re-fetch June 2026.",
-        "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+        "notes": "Up to 60 days. Confirmed on ISS official eligible-countries page (eservices.iss.gov.gy/eligible-countries-landing-permit) and Embassy of Guyana Belgium. Not separately enumerated in the minfor.gov.gy country list on re-fetch June 2026. Source updated 2026-06-27 to ISS official domain.",
+        "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
         "source_official": true
       }
     ],
@@ -468,7 +484,7 @@
         "nationality": "All eligible nationalities",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Online visitor visa applications can be submitted through the official ISS eServices portal at eservices.iss.gov.gy. Visa types include Visitor, Business, Employment, and Student. This is an online pre-approval system rather than a traditional e-visa; applicants receive a reference number to check status. The portal returned HTTP 403 on re-fetch June 2026 — the URL is known from prior validated data.",
+        "notes": "Online visitor visa applications can be submitted through the official ISS eServices portal at eservices.iss.gov.gy. Visa types include Visitor, Business, Employment, and Student. This is an online pre-approval system rather than a traditional e-visa; applicants receive a reference number to check status. The portal returned HTTP 403 on re-fetch June 2026 - the URL is known from prior validated data.",
         "source_url": "https://eservices.iss.gov.gy/visitor-visa",
         "source_official": true
       }
@@ -478,10 +494,11 @@
       "https://minfor.gov.gy/visa-information",
       "https://eservices.iss.gov.gy/",
       "https://eservices.iss.gov.gy/visitor-visa",
+      "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
       "https://moha.gov.gy/"
     ],
-    "notes": "Visa-free list sourced primarily from Guyana Ministry of Foreign Affairs (minfor.gov.gy/visa-information), re-verified June 2026. Secondary source: Embassy of Guyana Belgium (embassyofguyana.be). Guyana's immigration eServices portal (eservices.iss.gov.gy) handles online visa applications. Nationals of countries not on the visa-free list must apply for a visa at a Guyana embassy/consulate or, if no diplomatic presence is accessible, apply online for a visa approval letter (treated as visa-on-arrival upon presentation). Countries listed where only diplomatic/official/service passports qualify are noted in conditional_access, NOT visa_free."
+    "notes": "Visa-free list sourced primarily from Guyana Ministry of Foreign Affairs (minfor.gov.gy/visa-information), re-verified June 2026. Secondary source: ISS eligible-countries page (eservices.iss.gov.gy/eligible-countries-landing-permit) and Embassy of Guyana Belgium (embassyofguyana.be). Guyana's immigration eServices portal (eservices.iss.gov.gy) handles online visa applications. Nationals of countries not on the visa-free list must apply for a visa at a Guyana embassy/consulate or, if no diplomatic presence is accessible, apply online for a visa approval letter (treated as visa-on-arrival upon presentation). Countries listed where only diplomatic/official/service passports qualify are noted in conditional_access, NOT visa_free."
   },
   "conditional_access": [
     {
@@ -575,8 +592,8 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Honduran nationals holding a US Permanent Resident Card may enter Guyana visa-free for up to 90 days. Source: Embassy of Guyana Belgium verbatim: '90 days holders of a US Permanent Resident Card or a valid US/Canadian/Schengen Visa'. NOT independently confirmed on minfor.gov.gy — Honduras does not appear in the enumerated MFA list.",
-      "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+      "conditions": "Honduran nationals holding a US Permanent Resident Card may enter Guyana visa-free for up to 90 days. Source: Embassy of Guyana Belgium and ISS eligible-countries page verbatim: '90 days holders of a US Permanent Resident Card or a valid US/Canadian/Schengen Visa'. NOT independently confirmed on minfor.gov.gy - Honduras does not appear in the enumerated MFA list.",
+      "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "source_official": true
     },
     {
@@ -594,8 +611,8 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Honduran nationals holding a valid US visa may enter Guyana visa-free for up to 90 days. Source: Embassy of Guyana Belgium. NOT independently confirmed on minfor.gov.gy.",
-      "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+      "conditions": "Honduran nationals holding a valid US visa may enter Guyana visa-free for up to 90 days. Source: Embassy of Guyana Belgium and ISS eligible-countries page. NOT independently confirmed on minfor.gov.gy.",
+      "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "source_official": true
     },
     {
@@ -613,8 +630,8 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Honduran nationals holding a valid Canadian visa may enter Guyana visa-free for up to 90 days. Source: Embassy of Guyana Belgium. NOT independently confirmed on minfor.gov.gy.",
-      "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+      "conditions": "Honduran nationals holding a valid Canadian visa may enter Guyana visa-free for up to 90 days. Source: Embassy of Guyana Belgium and ISS eligible-countries page. NOT independently confirmed on minfor.gov.gy.",
+      "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "source_official": true
     },
     {
@@ -632,8 +649,8 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Honduran nationals holding a valid Schengen visa may enter Guyana visa-free for up to 90 days. Source: Embassy of Guyana Belgium. NOT independently confirmed on minfor.gov.gy.",
-      "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+      "conditions": "Honduran nationals holding a valid Schengen visa may enter Guyana visa-free for up to 90 days. Source: Embassy of Guyana Belgium and ISS eligible-countries page. NOT independently confirmed on minfor.gov.gy.",
+      "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "source_official": true
     },
     {
@@ -651,8 +668,8 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Mexican ordinary passport holders with a US Permanent Resident Card may enter visa-free for up to 90 days. Source: Embassy of Guyana Belgium. Note: minfor.gov.gy lists Mexico only for diplomatic/official/service passport holders — ordinary-passport credential access is NOT confirmed on the primary MFA source.",
-      "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+      "conditions": "Mexican ordinary passport holders with a US Permanent Resident Card may enter visa-free for up to 90 days. Source: Embassy of Guyana Belgium and ISS eligible-countries page. Note: minfor.gov.gy lists Mexico only for diplomatic/official/service passport holders - ordinary-passport credential access is NOT confirmed on the primary MFA source.",
+      "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "source_official": true
     },
     {
@@ -670,8 +687,8 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Mexican ordinary passport holders with a valid US visa may enter visa-free for up to 90 days. Source: Embassy of Guyana Belgium. NOT confirmed on minfor.gov.gy.",
-      "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+      "conditions": "Mexican ordinary passport holders with a valid US visa may enter visa-free for up to 90 days. Source: Embassy of Guyana Belgium and ISS eligible-countries page. NOT confirmed on minfor.gov.gy.",
+      "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "source_official": true
     },
     {
@@ -689,8 +706,8 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Mexican ordinary passport holders with a valid Canadian visa may enter visa-free for up to 90 days. Source: Embassy of Guyana Belgium. NOT confirmed on minfor.gov.gy.",
-      "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+      "conditions": "Mexican ordinary passport holders with a valid Canadian visa may enter visa-free for up to 90 days. Source: Embassy of Guyana Belgium and ISS eligible-countries page. NOT confirmed on minfor.gov.gy.",
+      "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "source_official": true
     },
     {
@@ -708,8 +725,8 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Mexican ordinary passport holders with a valid Schengen visa may enter visa-free for up to 90 days. Source: Embassy of Guyana Belgium. NOT confirmed on minfor.gov.gy.",
-      "source_url": "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
+      "conditions": "Mexican ordinary passport holders with a valid Schengen visa may enter visa-free for up to 90 days. Source: Embassy of Guyana Belgium and ISS eligible-countries page. NOT confirmed on minfor.gov.gy.",
+      "source_url": "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
       "source_official": true
     },
     {
@@ -741,7 +758,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Cuban diplomatic, official and service passport holders enter visa-free. MFA verbatim: 'Cuba for holders of Diplomatic/Official/Service Passports'.",
+      "conditions": "Cuban diplomatic, official and service passport holders enter visa-free. MFA verbatim: 'Cuba for holders of Diplomatic/Official/Service Passports'. Note: ISS eligible-countries page lists Cuba without restriction - MFA (primary) is authoritative for diplomatic/service/official restriction.",
       "source_url": "https://minfor.gov.gy/visa-information",
       "source_official": true
     },
@@ -791,7 +808,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Uruguayan diplomatic and official passport holders enter visa-free for up to 90 days. MFA verbatim: 'Uruguay for holders of Diplomatic/Official Passports for 90 days'.",
+      "conditions": "Uruguayan diplomatic and official passport holders enter visa-free for up to 90 days. MFA verbatim: 'Uruguay for holders of Diplomatic/Official Passports for 90 days'. Note: ISS eligible-countries page says ordinary passports also eligible for 90 days - MFA (primary) restricts to diplomatic/official; ordinary-passport visa-free access is NOT confirmed on minfor.gov.gy.",
       "source_url": "https://minfor.gov.gy/visa-information",
       "source_official": true
     },
@@ -806,7 +823,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Haitian diplomatic passport holders only. MFA verbatim: 'Haitians for holders of Diplomatic Passport'.",
+      "conditions": "Haitian diplomatic passport holders only. MFA verbatim: 'Haitians for holders of Diplomatic Passport'. Note: ISS page says 90 days for diplomatic/official/special - MFA says diplomatic only with no stay limit; MFA used.",
       "source_url": "https://minfor.gov.gy/visa-information",
       "source_official": true
     },
@@ -854,7 +871,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 30,
-      "conditions": "Indonesian diplomatic and service passport holders enter visa-free for up to 30 days. MFA verbatim: 'Indonesia for 30 days for holders of Diplomatic/Service Passports'. Note: Embassy of Guyana Belgium lists Indonesia without passport-type restriction (ordinary passports 30 days) — minfor.gov.gy (primary source) restricts this to diplomatic/service passports only.",
+      "conditions": "Indonesian diplomatic and service passport holders enter visa-free for up to 30 days. MFA verbatim: 'Indonesia for 30 days for holders of Diplomatic/Service Passports'. Note: ISS eligible-countries page lists Indonesia at 30 days without a passport-type restriction - MFA (primary) restricts to diplomatic/service passports only.",
       "source_url": "https://minfor.gov.gy/visa-information",
       "source_official": true
     },
@@ -887,7 +904,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Indian diplomatic, official and service passport holders enter visa-free. MFA verbatim: 'India for holders of Diplomatic/Official/Service Passports'. OCI cardholders are NOT covered — no official Guyana source mentions OCI as a qualifying credential.",
+      "conditions": "Indian diplomatic, official and service passport holders enter visa-free. MFA verbatim: 'India for holders of Diplomatic/Official/Service Passports'. OCI cardholders are NOT covered - no official Guyana source mentions OCI as a qualifying credential.",
       "source_url": "https://minfor.gov.gy/visa-information",
       "source_official": true
     },
@@ -952,7 +969,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Georgian diplomatic passport holders only. MFA verbatim: 'Georgia for holders of Diplomatic Passports'.",
+      "conditions": "Georgian diplomatic passport holders only. MFA verbatim: 'Georgia for holders of Diplomatic Passports'. Note: ISS page says 90 days for diplomatic/official/service - MFA says diplomatic only; MFA used as primary.",
       "source_url": "https://minfor.gov.gy/visa-information",
       "source_official": true
     },
@@ -967,7 +984,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Spanish diplomatic passport holders only. MFA verbatim: 'Spain for holders of Diplomatic passports'.",
+      "conditions": "Spanish diplomatic passport holders only. MFA verbatim: 'Spain for holders of Diplomatic passports'. Note: ISS eligible-countries page lists Spain without restriction - MFA (primary) restricts to diplomatic passports only.",
       "source_url": "https://minfor.gov.gy/visa-information",
       "source_official": true
     }
@@ -977,7 +994,7 @@
     "source_url": "https://www.minfor.gov.gy/visa-information",
     "source_official": true,
     "asof": "2025-10-16",
-    "notes": "Guyana Ministry of Foreign Affairs (minfor.gov.gy/visa-information) publishes two lists: (1) who may enter Guyana without a visa, and (2) countries for which Guyanese citizens do not require a visa. The outbound list below is sourced from list (2). Entries restricted to diplomatic/official/service passports only are excluded from visa_free and visa_on_arrival — they apply only to non-ordinary passport holders. Cuba (dipl/official/service only), Bolivia (dipl/service/official only), Venezuela (dipl/official/service only), Uruguay (dipl/official only), Mexico (dipl/official/service only), Guatemala (dipl/official or with US/CA/Schengen visa/PR), China (dipl/service only), Cyprus (dipl/service only), Indonesia (dipl/service only), Israel (dipl/service only), Kuwait (dipl/service only), Turkey (dipl/service/special only), Georgia (dipl only), Spain (dipl only), Switzerland (dipl/service for official short-term events only), India (dipl/official/service only) are NOT listed here as they do not apply to ordinary-passport Guyanese citizens. Page last updated: October 16, 2025.",
+    "notes": "Guyana Ministry of Foreign Affairs (minfor.gov.gy/visa-information) publishes two lists: (1) who may enter Guyana without a visa, and (2) countries for which Guyanese citizens do not require a visa. The outbound list below is sourced from list (2). Entries restricted to diplomatic/official/service passports only are excluded from visa_free and visa_on_arrival - they apply only to non-ordinary passport holders. Cuba (dipl/official/service only), Bolivia (dipl/service/official only), Venezuela (dipl/official/service only), Uruguay (dipl/official only), Mexico (dipl/official/service only), Guatemala (dipl/official or with US/CA/Schengen visa/PR), China (dipl/service only), Cyprus (dipl/service only), Indonesia (dipl/service only), Israel (dipl/service only), Kuwait (dipl/service only), Turkey (dipl/service/special only), Georgia (dipl only), Spain (dipl only), Switzerland (dipl/service for official short-term events only), India (dipl/official/service only) are NOT listed here as they do not apply to ordinary-passport Guyanese citizens. Page last updated: October 16, 2025.",
     "visa_free": [
       {
         "name": "Antigua and Barbuda",
@@ -1206,6 +1223,143 @@
     "e_visa": [],
     "eta": []
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visitor Visa (Tourist)",
+      "purpose": "For tourism, vacation, meetings, workshops, seminars, events, religious functions, site visits, and short-term training.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 48,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://embassyofguyana.be/services.php?sid=30",
+      "notes": "Single-entry valid 3 months (EUR 45 at Belgian embassy). Multiple-entry also available (valid 6 months, EUR 75). Embassy in Belgium does not accept electronic visa - physical submission required for that mission. Online pre-approval application available via eservices.iss.gov.gy for applicants in countries without a Guyana embassy. Processing approx. 5 working days at embassy; 10-14 working days via online portal. Guyana does not issue traditional e-visas - online portal issues a pre-approval letter. Fee shown is EUR 45 converted approximately to USD."
+    },
+    {
+      "category": "tourist",
+      "name": "Visitor Visa (Multiple Entry)",
+      "purpose": "For repeated short-term visits for tourism, vacation, meetings, and similar purposes.",
+      "max_stay_days": null,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://embassyofguyana.be/services.php?sid=30",
+      "notes": "Multiple-entry, valid 6 months (EUR 75 at Belgian embassy). Same requirements as single-entry visitor visa. Online pre-approval available via eservices.iss.gov.gy for countries without Guyana diplomatic presence."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa / Landing Permit",
+      "purpose": "For travelers passing through Guyana en route to a third country, or for short transit stays.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://embassyofguyana.be/services.php?sid=31",
+      "notes": "The Embassy of Guyana in Belgium does not issue transit visas - these are issued by Guyana immigration authorities upon arrival. Whether a transit visa or landing permit is granted depends on the length of stay. Requirements: passport valid 6+ months, valid Yellow Fever certificate (if applicable), proof of onward travel, proof of accommodation and funds if staying overnight. Fee not published on official sources."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "For foreign nationals conducting business activities in Guyana, including meetings, negotiations, and commercial visits.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 162,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://embassyofguyana.be/services.php?sid=33",
+      "notes": "Multiple-entry, valid 1 year (EUR 150 at Belgian embassy). Requires letter of support from sponsoring company/organization and invitation letter from host company if applicable. Also requires business registration and tax ID certificate from host entity if applicable. Online pre-approval also available via eservices.iss.gov.gy."
+    },
+    {
+      "category": "work",
+      "name": "Employment Visa",
+      "purpose": "For foreign nationals who have secured employment in Guyana and wish to reside and work in the country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://eservices.iss.gov.gy/employment-visa",
+      "notes": "Requires a signed contract or letter of employment, police clearance, and medical report. Applications accepted online via eservices.iss.gov.gy. Extensions also available through the same portal. Work permit (landing permit for employment) valid up to 3 years, renewable. Specific fee not published on official government pages."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "For foreign nationals admitted to an accredited school or educational institution in Guyana.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": 140,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://embassyofguyana.be/services.php?sid=32",
+      "notes": "Multiple-entry, valid 3 years (EUR 130 at Belgian embassy). Requires Student Acceptance Letter from an accredited institution. Online applications also accepted via eservices.iss.gov.gy. Extensions available through the ISS eServices portal."
+    },
+    {
+      "category": "other",
+      "name": "Visa on Arrival (Pre-Approval Letter)",
+      "purpose": "For nationals of countries that require a visa but have no access to a Guyana embassy or consulate - allows obtaining a pre-approval letter online, which is converted to a visa upon arrival at the airport.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 10,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://eservices.iss.gov.gy/visitor-visa",
+      "notes": "Applicants must obtain a pre-approval letter through the online portal before travel - travelers cannot board without this letter. Upon arrival at the airport, the visa is affixed to the passport. Processing time is 10-14 working days. Applicants should confirm receipt with the Department of Immigration and Citizenship at (592) 223-5210. Fee not specified on official sources."
+    },
+    {
+      "category": "other",
+      "name": "Landing Permit (Business/Employment/Student)",
+      "purpose": "An in-country permit that allows holders of a relevant visa category to reside and engage in the specific activity (business operations, employment, or study) in Guyana.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://eservices.iss.gov.gy/",
+      "notes": "Landing permits are issued for business, employment, and student purposes and are extensions/supplements to the corresponding visa. Available through eservices.iss.gov.gy as new applications or renewals. Fees and validity not published on official portal."
+    },
+    {
+      "category": "other",
+      "name": "CARICOM Free Movement Certificate",
+      "purpose": "Allows qualified skilled nationals of CARICOM member states to live and work in Guyana without a work permit under the CARICOM Single Market and Economy (CSME) framework.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 42,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.minfor.gov.gy/csme",
+      "notes": "Available to CARICOM nationals who qualify as skilled workers: university graduates (bachelor's or equivalent including ACCA), musicians and artistes, sports persons, media workers, registered nurses, trained teachers, artisans with Caribbean Vocational Qualifications, associate degree holders, self-employed and service providers. Fee in Guyana: G$1,500. Processing 3-6 weeks. Participating states: Antigua and Barbuda, Barbados, Belize, Dominica, Grenada, Guyana, Jamaica, St. Lucia, St. Kitts and Nevis, St. Vincent and the Grenadines, Suriname, Trinidad and Tobago. Bahamas, Montserrat, and Haiti are excluded."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -1259,53 +1413,94 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "Re-validated against minfor.gov.gy and embassyofguyana.be on 2026-06-14.",
-      "CORRECTED: North Korea (PRK) source updated — confirmed present on minfor.gov.gy (primary MFA), not just Belgium embassy as previously noted.",
-      "CORRECTED: Cuba, Venezuela, Bolivia, Haiti, Uruguay, Mexico, Georgia, Spain were already in conditional_access in the prior record. Split verified: Cuba/Venezuela/Bolivia had been incorrectly grouped as a single conditional_access entry; now separated into individual country entries for Bolivia, Venezuela, Cuba, and Haiti for clarity and correctness per MFA verbatim text.",
-      "CORRECTED: Guatemala conditional_access updated — prior record used 'eligible_nationalities: Guatemala' grouping but also had an incorrect combined passport_type entry for 'Guatemala, Honduras'. Now separated: Guatemala diplomatic/official entry is its own conditional_access entry sourced from minfor.gov.gy; Honduras entries remain sourced only from Belgium embassy.",
-      "CORRECTED: Indonesia — minfor.gov.gy clearly restricts to diplomatic/service passports only (30 days). Belgium embassy suggests ordinary passports allowed. MFA is authoritative; Indonesia moved firmly into conditional_access (passport_type basis). Indonesia was already in conditional_access; added note about discrepancy.",
-      "CORRECTED: Panama stay limit — minfor.gov.gy states 90 days; Belgium embassy states 180 days. Primary MFA source used (90 days). Note added to visa_free entry.",
-      "CORRECTED: Prior record had a combined conditional_access entry for 'Guatemala and Honduras' for diplomatic/official passports — now separated into Guatemala-only entry (confirmed on MFA) since Honduras does not appear on minfor.gov.gy at all.",
-      "VERIFIED UNCHANGED: Argentina, Brazil, Chile, Colombia, Costa Rica, Ecuador, Peru as ordinary-passport 90-day visa-free — all confirmed present on minfor.gov.gy.",
-      "VERIFIED UNCHANGED: All CARICOM members visa-free with no limit — confirmed.",
-      "VERIFIED UNCHANGED: North America (Canada, USA) visa-free no limit — confirmed.",
-      "VERIFIED UNCHANGED: European countries (Austria, Belgium, Denmark, Finland, France, Greece, Ireland, Italy, Luxembourg, New Zealand, Norway, Portugal, Sweden, Switzerland, Netherlands, UK, Albania) — all confirmed on minfor.gov.gy.",
-      "VERIFIED UNCHANGED: Russia (90 days), Hong Kong (90 days), Maldives (30 days), Qatar (30 days), Korea (30 days), Singapore (30 days), UAE (90 days), Botswana, Ghana (90 days), South Africa (30 days) — all confirmed on minfor.gov.gy.",
-      "UNVERIFIED: Germany — not in the enumerated minfor.gov.gy list on re-fetch but present on Belgium embassy page. Retained with Belgium embassy source.",
-      "UNVERIFIED: Malaysia (60 days) — not in the enumerated minfor.gov.gy list on re-fetch but present on Belgium embassy. Retained with Belgium embassy source.",
-      "NOTE: Japan is listed on minfor.gov.gy with no conditional restriction and no stay limit.",
-      "NOTE: Australia listed explicitly on minfor.gov.gy — confirmed, no limit."
+      "Re-validated against minfor.gov.gy, eservices.iss.gov.gy/eligible-countries-landing-permit, and embassyofguyana.be on 2026-06-29. All three official sources loaded successfully. No changes required — all existing visa_free and conditional_access entries confirmed accurate against live pages.",
+      "VERIFIED UNCHANGED (2026-06-29): Full visa_free list re-confirmed against live minfor.gov.gy/visa-information. All 58 ordinary-passport visa-free entries match. All conditional_access passport-type and credential entries match MFA verbatim text.",
+      "VERIFIED UNCHANGED (2026-06-29): Dominican Republic 90 days (MFA) vs 30 days (ISS/Belgium) — MFA primary used, unchanged.",
+      "VERIFIED UNCHANGED (2026-06-29): Costa Rica 90 days (MFA) vs 30 days (ISS/Belgium) — MFA primary used, unchanged.",
+      "VERIFIED UNCHANGED (2026-06-29): Panama 90 days (MFA) vs 180 days (ISS/Belgium) — MFA primary used, unchanged.",
+      "VERIFIED UNCHANGED (2026-06-29): Uruguay conditional_access (dipl/official only per MFA) vs ordinary eligible 90 days (ISS/Belgium) — MFA primary used, unchanged.",
+      "VERIFIED UNCHANGED (2026-06-29): Spain conditional_access (dipl only per MFA) vs no restriction (ISS/Belgium) — MFA primary used, unchanged.",
+      "VERIFIED UNCHANGED (2026-06-29): Cuba conditional_access (dipl/official/service per MFA) vs unrestricted (ISS) — MFA primary used, unchanged.",
+      "VERIFIED UNCHANGED (2026-06-29): Indonesia conditional_access (dipl/service only, 30 days per MFA) vs 30 days no restriction (ISS/Belgium) — MFA primary used, unchanged.",
+      "VERIFIED UNCHANGED (2026-06-29): Georgia conditional_access (dipl only per MFA) vs dipl/official/service 90 days (ISS/Belgium) — MFA primary used, unchanged.",
+      "VERIFIED UNCHANGED (2026-06-29): Maldives visa_free (30 days per MFA) — NOT listed on ISS or Belgium pages; MFA primary used, entry retained.",
+      "VERIFIED UNCHANGED (2026-06-29): Peru visa_free (90 days tourism, ordinary passport, no restriction per MFA). Belgium embassy says 'Holders of Diplomatic/Service/Official Passports and 90 days for tourism' — MFA does not restrict by passport type; ordinary passport access confirmed.",
+      "GAPS UPDATED (2026-06-29): Added Aruba, Cayman Islands, and Turks and Caicos Islands to gaps — these appear on ISS eligible-countries page and Belgium embassy page but NOT on minfor.gov.gy primary source; cannot classify as visa_free without MFA confirmation.",
+      "Re-validated against minfor.gov.gy, eservices.iss.gov.gy/eligible-countries-landing-permit, and embassyofguyana.be on 2026-06-27.",
+      "ADDED (2026-06-27): Lesotho (14 days) - confirmed on ISS official eligible-countries page (eservices.iss.gov.gy/eligible-countries-landing-permit). Not in enumerated minfor.gov.gy list; ISS is an official .gov.gy domain.",
+      "ADDED (2026-06-27): Eswatini/Swaziland (60 days) - confirmed on ISS official eligible-countries page. Listed as 'Swaziland' (pre-2018 name). Not in enumerated minfor.gov.gy list; ISS is an official .gov.gy domain.",
+      "SOURCE UPDATED (2026-06-27): Germany - source changed from embassyofguyana.be to eservices.iss.gov.gy/eligible-countries-landing-permit, which also confirms Germany (no restriction). Now sourced from official iss.gov.gy government domain.",
+      "SOURCE UPDATED (2026-06-27): Malaysia (60 days) - source changed from embassyofguyana.be to eservices.iss.gov.gy/eligible-countries-landing-permit, which also confirms Malaysia at 60 days. Now sourced from official iss.gov.gy government domain.",
+      "VERIFIED UNCHANGED (2026-06-27): Peru in visa_free (90 days tourism, no passport restriction) - re-confirmed by MFA verbatim 'Peru for a period not exceeding 90 days for tourism'. No passport-type restriction on MFA page.",
+      "VERIFIED UNCHANGED (2026-06-27): Dominican Republic 90 days - MFA says 90 days; ISS says 30 days; MFA (primary) used.",
+      "VERIFIED UNCHANGED (2026-06-27): Costa Rica 90 days - MFA says 90 days for tourism; ISS says 30 days; MFA (primary) used.",
+      "VERIFIED UNCHANGED (2026-06-27): Panama 90 days - MFA says 90 days; ISS says 180 days; MFA (primary) used.",
+      "VERIFIED UNCHANGED (2026-06-27): Uruguay in conditional_access (diplomatic/official only) - MFA says diplomatic/official only; ISS says ordinary passports also eligible; MFA (primary) used.",
+      "VERIFIED UNCHANGED (2026-06-27): Spain in conditional_access (diplomatic only) - MFA says diplomatic only; ISS says no restriction; MFA (primary) used.",
+      "VERIFIED UNCHANGED (2026-06-27): Cuba in conditional_access (diplomatic/official/service only) - MFA says diplomatic/official/service; ISS says no restriction; MFA (primary) used.",
+      "VERIFIED UNCHANGED (2026-06-27): Indonesia in conditional_access (diplomatic/service only, 30 days) - MFA restricts to diplomatic/service; ISS says 30 days with no restriction; MFA (primary) used.",
+      "VERIFIED UNCHANGED (2026-06-27): Argentina, Brazil, Chile, Colombia, Ecuador, Costa Rica, Panama, Peru as ordinary-passport visa-free - all confirmed on minfor.gov.gy.",
+      "VERIFIED UNCHANGED (2026-06-27): All CARICOM members visa-free with no limit - confirmed.",
+      "VERIFIED UNCHANGED (2026-06-27): North America (Canada, USA) visa-free no limit - confirmed.",
+      "VERIFIED UNCHANGED (2026-06-27): European countries (Austria, Belgium, Denmark, Finland, France, Greece, Ireland, Italy, Luxembourg, New Zealand, Norway, Portugal, Sweden, Switzerland, Netherlands, UK, Albania) - all confirmed on minfor.gov.gy.",
+      "VERIFIED UNCHANGED (2026-06-27): Russia (90 days), Hong Kong (90 days), Maldives (30 days), Qatar (30 days), Korea (30 days), Singapore (30 days), UAE (90 days), Botswana (null limit), Ghana (90 days), South Africa (30 days) - all confirmed on minfor.gov.gy.",
+      "NOTE (2026-06-27): Japan confirmed on minfor.gov.gy with no conditional restriction and no stay limit.",
+      "NOTE (2026-06-27): North Korea confirmed on both minfor.gov.gy and ISS eligible-countries page.",
+      "Re-validated against minfor.gov.gy and embassyofguyana.be on 2026-06-14 (prior run).",
+      "CORRECTED (prior run): North Korea (PRK) source updated - confirmed present on minfor.gov.gy (primary MFA), not just Belgium embassy as previously noted.",
+      "CORRECTED (prior run): Cuba, Venezuela, Bolivia, Haiti, Uruguay, Mexico, Georgia, Spain were already in conditional_access in the prior record. Split verified: Cuba/Venezuela/Bolivia had been incorrectly grouped as a single conditional_access entry; now separated into individual country entries.",
+      "CORRECTED (prior run): Guatemala conditional_access updated - prior record used 'eligible_nationalities: Guatemala' grouping but also had an incorrect combined passport_type entry for 'Guatemala, Honduras'. Now separated.",
+      "CORRECTED (prior run): Indonesia - minfor.gov.gy clearly restricts to diplomatic/service passports only (30 days). Moved firmly into conditional_access.",
+      "CORRECTED (prior run): Panama stay limit - minfor.gov.gy states 90 days; Belgium embassy states 180 days. Primary MFA source used (90 days)."
     ],
     "gaps": [
       "Exact maximum stay duration not specified for several CARICOM visa-free nationals on the official MFA page (listed as no limit)",
-      "The Embassy of Guyana Belgium domain (embassyofguyana.be) is an official embassy site but not a .gov.gy domain — data from it has been included only where it corroborates or extends the MFA list",
-      "North Korea listed on both minfor.gov.gy and Belgium embassy — unusual and may be outdated; included with minfor.gov.gy as source",
-      "Germany listed on Belgium embassy page only (not in the enumerated country list on minfor.gov.gy re-fetch); may be listed in MFA introductory text only — needs direct verification",
-      "Malaysia (60 days) listed on Belgium embassy page only — not in enumerated minfor.gov.gy list on re-fetch; status uncertain",
-      "Honduras conditional credential access: sourced ONLY from Belgium embassy — Honduras does not appear in any enumerated entry on minfor.gov.gy; may be outdated or only apply conditionally",
-      "Mexico ordinary passport credential access: sourced ONLY from Belgium embassy — minfor.gov.gy lists Mexico only for diplomatic/official/service passports; discrepancy may reflect page update lag or a separate bilateral agreement not published on primary MFA page",
-      "Lesotho (14 days) appears on Belgium embassy page but was not included in the current record — insufficient confirmation from primary MFA source",
-      "Bangladesh diplomatic/official/special passports (30 days) appears on Belgium embassy page but not in the current record — insufficient confirmation from primary MFA source",
-      "Aruba, Cayman Islands, Turks & Caicos Islands listed on Belgium embassy page — omitted as these are territories, not independent states, and their status on official MFA page is unclear",
-      "Indonesia discrepancy: Belgium embassy implies ordinary passports (30 days); minfor.gov.gy restricts to diplomatic/service passports only — MFA is authoritative",
-      "Panama stay discrepancy: Belgium embassy says 180 days; minfor.gov.gy says 90 days — MFA used (90 days)",
-      "No official e-visa in the traditional sense; eservices.iss.gov.gy portal returned HTTP 403 on re-fetch — the URL is known from prior validated data and ISS is the official immigration system",
+      "The Embassy of Guyana Belgium domain (embassyofguyana.be) is an official embassy site but not a .gov.gy domain - data from it has been included only where it corroborates or extends the MFA/ISS list",
+      "North Korea listed on both minfor.gov.gy and ISS eligible-countries page - unusual and may be outdated; included with minfor.gov.gy as primary source",
+      "Germany confirmed on ISS eligible-countries page but NOT in enumerated list on minfor.gov.gy main visa page - discrepancy between two official Guyana government sources; ISS used",
+      "Malaysia (60 days) confirmed on ISS eligible-countries page but NOT in enumerated list on minfor.gov.gy main visa page - discrepancy between two official Guyana government sources; ISS used",
+      "Lesotho (14 days) confirmed on ISS eligible-countries page but not on minfor.gov.gy main page",
+      "Eswatini/Swaziland (60 days) confirmed on ISS eligible-countries page (listed as 'Swaziland') but not on minfor.gov.gy main page",
+      "Honduras conditional credential access: confirmed on ISS eligible-countries page and Belgium embassy - Honduras does not appear in any enumerated entry on minfor.gov.gy; may reflect a secondary source only",
+      "Mexico ordinary passport credential access: confirmed on ISS eligible-countries page and Belgium embassy - minfor.gov.gy lists Mexico only for diplomatic/official/service passports; discrepancy between primary MFA and ISS sources",
+      "Uruguay: ISS says ordinary passports eligible (90 days); minfor.gov.gy says diplomatic/official only - discrepancy retained, MFA used as primary",
+      "Spain: ISS says no restriction; minfor.gov.gy says diplomatic only - discrepancy retained, MFA used as primary",
+      "Cuba: ISS says no restriction; minfor.gov.gy says diplomatic/official/service only - discrepancy retained, MFA used as primary",
+      "Costa Rica: ISS says 30 days; minfor.gov.gy says 90 days - discrepancy retained, MFA used as primary",
+      "Dominican Republic: ISS says 30 days; minfor.gov.gy says 90 days - discrepancy retained, MFA used as primary",
+      "Panama: ISS says 180 days; minfor.gov.gy says 90 days - discrepancy retained, MFA used as primary",
+      "Indonesia: ISS says all passports (30 days); minfor.gov.gy restricts to diplomatic/service - MFA used as primary",
+      "No official e-visa in the traditional sense; eservices.iss.gov.gy portal returned HTTP 403 on prior fetch - the URL is known from prior validated data and ISS is the official immigration system",
       "No digital nomad, startup, or fast-track talent visa scheme found on official sources",
       "No official CBI or dedicated golden visa/RBI program found on official government sources",
       "Minimum investment amount for investor/employment visa not specified in official materials",
       "Path to permanent residency timeline not officially published",
       "No OCI (Overseas Citizen of India) cardholder conditional access found on any official Guyana government source",
-      "No bilateral visa waiver/suppression agreement dates found in official sources for diplomatic passport waivers — dates not published on minfor.gov.gy",
-      "Cape Verde diplomatic/service passport conditional access appears on Belgium embassy page but not confirmed on minfor.gov.gy — not included in this record"
+      "No bilateral visa waiver/suppression agreement dates found in official sources for diplomatic passport waivers - dates not published on minfor.gov.gy",
+      "Cape Verde diplomatic/service passport conditional access appears on Belgium embassy page - not confirmed on minfor.gov.gy; not included in this record",
+      "Bangladesh diplomatic/official/special passports (30 days) appears on Belgium embassy and ISS pages but passport-type restriction needs primary MFA confirmation; not in visa_free record",
+      "Egypt diplomatic passports and service/special 30 days appear on ISS and Belgium embassy pages but not confirmed on minfor.gov.gy main list; not in record",
+      "Iran diplomatic and special passports appear on ISS and Belgium embassy pages but not confirmed on minfor.gov.gy main list; not in record",
+      "Georgia: ISS says 90 days for diplomatic/official/service; minfor.gov.gy says diplomatic only - MFA used as primary; ISS discrepancy noted",
+      "Botswana: ISS says 90 days; minfor.gov.gy says no limit - null retained per MFA",
+      "Aruba (90 days): listed on ISS eligible-countries page (eservices.iss.gov.gy/eligible-countries-landing-permit) and Belgium embassy page but NOT present on minfor.gov.gy primary MFA page — cannot classify as visa_free without MFA confirmation; not added to record",
+      "Cayman Islands (30 days): listed on ISS eligible-countries page and Belgium embassy page but NOT present on minfor.gov.gy primary MFA page — cannot classify as visa_free without MFA confirmation; not added to record",
+      "Turks and Caicos Islands (30 days): listed on ISS eligible-countries page and Belgium embassy page but NOT present on minfor.gov.gy primary MFA page — cannot classify as visa_free without MFA confirmation; not added to record"
     ]
   },
   "sources_checked": [
     "https://minfor.gov.gy/visa-information",
     "https://eservices.iss.gov.gy/",
     "https://eservices.iss.gov.gy/visitor-visa",
+    "https://eservices.iss.gov.gy/employment-visa",
+    "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
     "https://moha.gov.gy/",
     "https://www.embassyofguyana.be/countries-whose-nationals-do-not-require-visas-to-enter-guyana.php",
     "https://www.embassyofguyana.be/services.php?sid=34",
+    "https://embassyofguyana.be/services.php?sid=30",
+    "https://embassyofguyana.be/services.php?sid=31",
+    "https://embassyofguyana.be/services.php?sid=32",
+    "https://embassyofguyana.be/services.php?sid=33",
     "https://www.minfor.gov.gy/csme",
     "https://caricom.org/category/free-movement/",
     "https://en.wikipedia.org/wiki/Visa_policy_of_Guyana"

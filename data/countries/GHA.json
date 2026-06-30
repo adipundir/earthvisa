@@ -121,7 +121,7 @@
         "nationality": "Singapore",
         "iso3": "SGP",
         "max_stay_days": 60,
-        "notes": "Visa not required for all passport types",
+        "notes": "Visa not required for all passport types; confirmed on GIS visas page and Canberra MFA bilateral arrangements page",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -129,7 +129,7 @@
         "nationality": "Trinidad and Tobago",
         "iso3": "TTO",
         "max_stay_days": 60,
-        "notes": "Visa not required for all passport types",
+        "notes": "Visa not required for all passport types; confirmed on GIS visas page and Canberra MFA bilateral arrangements page",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -137,7 +137,7 @@
         "nationality": "Mauritius",
         "iso3": "MUS",
         "max_stay_days": 60,
-        "notes": "Visa not required for all passport types",
+        "notes": "Visa not required for all passport types; confirmed on GIS visas page and Canberra MFA bilateral arrangements page",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -145,7 +145,7 @@
         "nationality": "Lesotho",
         "iso3": "LSO",
         "max_stay_days": 60,
-        "notes": "Southern and Eastern African country; visa not required for all passport types",
+        "notes": "Southern and Eastern African country; visa not required for all passport types; confirmed on GIS visas page and Canberra MFA bilateral arrangements page",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -153,15 +153,7 @@
         "nationality": "Botswana",
         "iso3": "BWA",
         "max_stay_days": 60,
-        "notes": "Southern and Eastern African country; visa not required for all passport types",
-        "source_url": "https://gis.gov.gh/visas/",
-        "source_official": true
-      },
-      {
-        "nationality": "Namibia",
-        "iso3": "NAM",
-        "max_stay_days": 60,
-        "notes": "Southern and Eastern African country; visa not required for all passport types",
+        "notes": "Southern and Eastern African country; visa not required for all passport types per GIS visas page. Note: Botswana is NOT listed on the Canberra MFA bilateral arrangements page under 'All Passports' - it is absent entirely. GIS domestic page is treated as primary source; record retained with gap flagged.",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -169,7 +161,7 @@
         "nationality": "Malawi",
         "iso3": "MWI",
         "max_stay_days": 60,
-        "notes": "Southern and Eastern African country; visa not required for all passport types",
+        "notes": "Southern and Eastern African country; visa not required for all passport types per GIS visas page. Note: Malawi is NOT listed on the Canberra MFA bilateral arrangements page under 'All Passports' - it is absent entirely. GIS domestic page is treated as primary source; record retained with gap flagged.",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -177,7 +169,7 @@
         "nationality": "Eswatini (Swaziland)",
         "iso3": "SWZ",
         "max_stay_days": 60,
-        "notes": "Southern and Eastern African country (listed as Swaziland on official table); visa not required for all passport types",
+        "notes": "Southern and Eastern African country (listed as Swaziland on GIS official table); visa not required for all passport types per GIS visas page. Note: Eswatini/Swaziland is NOT listed on the Canberra MFA bilateral arrangements page under 'All Passports'. GIS domestic page treated as primary source; record retained with gap flagged.",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -185,7 +177,7 @@
         "nationality": "Tanzania",
         "iso3": "TZA",
         "max_stay_days": 60,
-        "notes": "Southern and Eastern African country; visa not required for all passport types",
+        "notes": "Southern and Eastern African country; visa not required for all passport types; confirmed on GIS visas page and Canberra MFA bilateral arrangements page",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -193,7 +185,7 @@
         "nationality": "Uganda",
         "iso3": "UGA",
         "max_stay_days": 60,
-        "notes": "Southern and Eastern African country; visa not required for all passport types",
+        "notes": "Southern and Eastern African country; visa not required for all passport types; confirmed on GIS visas page and Canberra MFA bilateral arrangements page",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -201,7 +193,7 @@
         "nationality": "Zimbabwe",
         "iso3": "ZWE",
         "max_stay_days": 60,
-        "notes": "Southern and Eastern African country; visa not required for all passport types",
+        "notes": "Southern and Eastern African country; visa not required for all passport types; confirmed on GIS visas page and Canberra MFA bilateral arrangements page",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       },
@@ -209,39 +201,82 @@
         "nationality": "Kenya",
         "iso3": "KEN",
         "max_stay_days": 60,
-        "notes": "Southern and Eastern African country; visa not required for all passport types",
+        "notes": "Southern and Eastern African country; visa not required for all passport types; confirmed on GIS visas page and Canberra MFA bilateral arrangements page",
+        "source_url": "https://gis.gov.gh/visas/",
+        "source_official": true
+      },
+      {
+        "nationality": "Rwanda",
+        "iso3": "RWA",
+        "max_stay_days": 60,
+        "notes": "Canberra MFA bilateral arrangements page lists Rwanda under 'All Passports' visa-free category. GIS visas page classifies Rwanda as 'Gratis visa - Granted on arrival/Mission' (60 days). There is a genuine conflict between these two official Ghana government sources. The MFA bilateral arrangements page is treated as representing the formal bilateral policy; recorded here under visa_free. The GIS on-arrival mechanism may coexist as an operational fallback. See data_quality.gaps.",
+        "source_url": "https://canberra.mfa.gov.gh/visa-arrangements/",
+        "source_official": true
+      },
+      {
+        "nationality": "Barbados",
+        "iso3": "BRB",
+        "max_stay_days": 60,
+        "notes": "Listed under 'All Passports' visa-free on the Ghana High Commission Canberra MFA bilateral arrangements page. Max stay of 60 days inferred conservatively (Canberra MFA page does not state duration explicitly). Pending explicit duration confirmation from GIS or another embassy page.",
+        "source_url": "https://canberra.mfa.gov.gh/visa-arrangements/",
+        "source_official": true
+      },
+      {
+        "nationality": "Jamaica",
+        "iso3": "JAM",
+        "max_stay_days": 60,
+        "notes": "Listed under 'All Passports' visa-free on the Ghana High Commission Canberra MFA bilateral arrangements page. Max stay of 60 days inferred conservatively (Canberra MFA page does not state duration explicitly). Pending explicit duration confirmation from GIS or another embassy page.",
+        "source_url": "https://canberra.mfa.gov.gh/visa-arrangements/",
+        "source_official": true
+      },
+      {
+        "nationality": "Seychelles",
+        "iso3": "SYC",
+        "max_stay_days": 60,
+        "notes": "Listed under 'All Passports' visa-free on the Ghana High Commission Canberra MFA bilateral arrangements page. Max stay of 60 days inferred conservatively (Canberra MFA page does not state duration explicitly). Pending explicit duration confirmation from GIS or another embassy page.",
+        "source_url": "https://canberra.mfa.gov.gh/visa-arrangements/",
+        "source_official": true
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "nationality": "Egypt",
+        "iso3": "EGY",
+        "max_stay_days": 60,
+        "notes": "Listed on GIS visas page as 'Gratis visa - Granted on arrival/Mission' for 60 days. Egypt is also an African Union member state eligible for the free ETA via the e-visa portal (effective May 25, 2026). The GIS visas page remains the primary source for port-of-entry classification; recorded here as visa_on_arrival (gratis). The free ETA via the portal may provide an alternative pre-arrival channel.",
         "source_url": "https://gis.gov.gh/visas/",
         "source_official": true
       }
     ],
-    "visa_on_arrival": [],
     "e_visa": [
       {
-        "nationality": "All African Union member states — Free e-Visa (Africa Day Policy)",
+        "nationality": "190+ countries - Tourist, Business, Student, Transit (paid)",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "Effective May 25, 2026 (Africa Day), Ghana launched a free e-Visa for all African passport holders. Applicants apply online at evisa.immigration.gov.gh at no fee. This replaced the previous gratis visa-on-arrival / mission arrangement for AU states. Security screening (API-PNR) remains in place. Max stay of 30 days cited in multiple credible reports; official GIS page does not explicitly state duration — recorded from presidency.gov.gh announcement.",
-        "source_url": "https://presidency.gov.gh/ghana-to-roll-out-free-visa-for-all-africans-from-may-2026/",
-        "source_official": true
-      },
-      {
-        "nationality": "190+ countries — Tourist, Business, Student, Transit",
-        "iso3": null,
-        "max_stay_days": 30,
-        "notes": "Official Ghana e-Visa portal launched May 25, 2026 at evisa.immigration.gov.gh (also accessible via ghevisa.gov.gh). Tourist, Business, Student and Transit visa types available. Standard processing time approximately 72–96 hours. Visa sent to email inbox for presentation at port of entry. 30 days max stay cited on portal sample. Fees not publicly displayed on the landing page; previous pre-launch reports cited USD 260 per visa — not confirmed on live portal as of June 2026.",
+        "notes": "Official Ghana e-Visa portal launched May 25, 2026 at evisa.immigration.gov.gh. Tourist, Business, Student and Transit visa types available for all nationalities not eligible for visa-free or ETA entry. Fee structure confirmed: Single-entry standard $260 (72 hrs), priority $338 (48 hrs), express $442 (5 hrs); Multiple-entry standard $468, priority $608, express $796. Visa sent to email inbox for presentation at port of entry. 30 days max stay cited in portal sample documents. African passport holders do not pay visa fees (free ETA channel) per May 25 2026 MFA announcement.",
         "source_url": "https://evisa.immigration.gov.gh/",
         "source_official": true
       }
     ],
-    "eta": [],
+    "eta": [
+      {
+        "nationality": "ECOWAS, African Union member states, and Caribbean nationals - Free ETA",
+        "iso3": null,
+        "max_stay_days": null,
+        "notes": "Effective May 25, 2026 (Africa Day), Ghana launched a free Electronic Travel Authorisation (ETA) for ECOWAS, African Union, and Caribbean nationals. The e-visa portal (evisa.immigration.gov.gh) explicitly states: 'ECOWAS, African Union & Caribbean nationals qualify for a free Electronic Travel Authorisation.' This product is distinct from the paid e-Visa and is issued at no charge. The portal shows '12 ETA' as a category in the eligibility checker. ECOWAS nationals retain their unconditional visa-free status at ports of entry; the free ETA provides an optional pre-arrival digital authorization channel for AU/Caribbean nationals not already visa-free. Max stay duration not explicitly confirmed on the official portal; the MFA launch announcement (mfa.gov.gh) confirms that 'holders of African passports would not be required to pay visa fees when travelling to Ghana' but does not state duration. Caribbean fee-waiver not explicitly mentioned in MFA press release, but portal groups them for the free ETA category.",
+        "source_url": "https://evisa.immigration.gov.gh/",
+        "source_official": true
+      }
+    ],
     "source_urls": [
       "https://gis.gov.gh/visas/",
       "https://gis.gov.gh/service/visa-on-arrival-emergency-entry-visa/",
       "https://evisa.immigration.gov.gh/",
-      "https://presidency.gov.gh/ghana-to-roll-out-free-visa-for-all-africans-from-may-2026/",
-      "https://mfa.gov.gh/index.php/ghana-launches-e-visa-portal/"
+      "https://mfa.gov.gh/index.php/ghana-launches-e-visa-portal/",
+      "https://canberra.mfa.gov.gh/visa-arrangements/",
+      "https://windhoek.mfa.gov.gh/visa-application/"
     ],
-    "notes": "As of June 2026, Ghana's visa regime has significantly evolved. (1) ECOWAS member states (14 countries) remain visa-free for 90 days on all passport types. (2) Singapore, Trinidad and Tobago, and Mauritius are visa-free for 60 days. (3) Nine Southern and Eastern African countries (Lesotho, Botswana, Namibia, Malawi, Eswatini/Swaziland, Tanzania, Uganda, Zimbabwe, Kenya) are visa-free for 60 days. (4) Effective May 25, 2026 (Africa Day), all other African Union member states receive a FREE e-Visa via the online portal — this replaces the former gratis visa-on-arrival/mission system; fee is waived but an online application is still required. (5) A new e-Visa portal (evisa.immigration.gov.gh) launched May 25, 2026, accepting Tourist, Business, Student, and Transit visas from 190+ countries worldwide. (6) An Emergency Entry Visa (EEV) may be granted at immigration officer discretion for any nationality arriving without a visa. (7) Official and service passport holders of AU, RECs, UN and specialised agencies remain visa-free for 60 days (conditional_access). (8) Service and Diplomatic passport holders of various bilateral partners are visa-free for 90 days (conditional_access). (9) The previously noted ETA category has been removed: the official evisa portal no longer publicly references a distinct 'ETA' product; it is not verifiable on the live portal. Note: Ghana's MFA updated visa waiver list (effective April 7 2026) covers additional countries with ordinary/service/diplomatic passport waivers; see conditional_access for confirmed entries."
+    "notes": "As of June 2026, Ghana's visa regime: (1) ECOWAS member states (14 countries) remain visa-free for 90 days on all passport types per GIS visas page. (2) Singapore, Trinidad and Tobago, and Mauritius are visa-free for 60 days - confirmed by both GIS and Canberra MFA. (3) Eight Southern and Eastern African countries (Lesotho, Tanzania, Uganda, Zimbabwe, Kenya - confirmed on both GIS and Canberra MFA; Botswana, Malawi, Eswatini/Swaziland - confirmed on GIS only) are visa-free for 60 days. Namibia has been moved OUT of visa_free due to conflict (see below). (4) Rwanda and Barbados, Jamaica, Seychelles are visa-free per Canberra MFA 'All Passports' table - Rwanda also appears as 'Gratis VoA' on GIS (conflict flagged). (5) Egypt remains under 'Gratis visa - Granted on arrival/Mission' per GIS for 60 days; also eligible for free ETA as AU member. (6) NAMIBIA CONFLICT: GIS visas page lists Namibia among the 9 Southern/Eastern African visa-free countries (all passports, 60 days). However, the Canberra MFA bilateral arrangements page lists Namibia ONLY under 'Diplomatic and Service passports only.' The Ghana High Commission in Windhoek (windhoek.mfa.gov.gh) explicitly states 'all visitors to Ghana are required to obtain entry visas at the High Commission' and lists B2/tourist visa fees for Namibians - confirming ordinary passport holders require a visa. Two official Ghana government sources (Canberra MFA, Windhoek embassy) contradict the GIS listing for ordinary passports. Per safety rules (classify DOWN; two official sources contradict the visa-free classification), Namibia has been moved from visa_free to conditional_access (diplomatic/service only, 90 days per Canberra MFA). The GIS page discrepancy is flagged in data_quality.gaps. (7) Effective May 25, 2026: ECOWAS, AU, and Caribbean nationals qualify for a FREE ETA (Electronic Travel Authorisation) via the e-visa portal - issued at no charge. (8) Paid e-Visa portal (evisa.immigration.gov.gh) launched May 25, 2026 for all other nationalities, fees $260–$796. (9) Emergency Entry Visa (EEV) at $200 at immigration officer discretion. (10) Official and service passport holders of AU, RECs, UN and specialised agencies remain visa-free for 60 days (conditional_access)."
   },
   "conditional_access": [
     {
@@ -394,10 +429,11 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Holders of Diplomatic and Service passports issued by Namibia are exempt from visa requirements for stays not exceeding 90 days.",
+      "conditions": "Holders of Diplomatic and Service passports issued by Namibia are exempt from visa requirements for stays not exceeding 90 days. Ordinary passport holders require a visa - confirmed by Ghana High Commission Windhoek (windhoek.mfa.gov.gh) and Canberra MFA bilateral arrangements page. GIS domestic page erroneously lists Namibia as visa-free for all passports; this entry is corrected to diplomatic/service only per two corroborating official sources. See data_quality for details.",
       "source_url": "https://canberra.mfa.gov.gh/visa-arrangements/",
       "source_official": true,
-      "iso3": "NAM"
+      "iso3": "NAM",
+      "corroborating_source": "https://windhoek.mfa.gov.gh/visa-application/"
     },
     {
       "basis": "passport_type",
@@ -579,7 +615,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Work and Residence Permit — GIPC Investor / Immigrant Quota / Shareholders",
+        "name": "Work and Residence Permit - GIPC Investor / Immigrant Quota / Shareholders",
         "type": "business",
         "min_amount": null,
         "currency": null,
@@ -617,8 +653,8 @@
     "programs": []
   },
   "agreements": [
-    "ECOWAS (Economic Community of West African States) — freedom of movement for ECOWAS nationals",
-    "African Union Agenda 2063 — free movement for all African nationals (implemented via free e-visa effective May 25, 2026)"
+    "ECOWAS (Economic Community of West African States) - freedom of movement for ECOWAS nationals",
+    "African Union Agenda 2063 - free movement for all African nationals (implemented via free ETA effective May 25, 2026)"
   ],
   "official_domains": [
     "gis.gov.gh",
@@ -632,30 +668,38 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTED: Removed the 'Egyptian and Rwandan gratis visa' entries from visa_on_arrival — Egypt and Rwanda are AU member states and now fall under the May 2026 free e-visa for all AU states; they are no longer a distinct gratis-VoA category.",
-      "CORRECTED: Removed the broad 'African Union member states' visa_on_arrival entry (gratis visa) — as of May 25, 2026, all AU member states (not already visa-free) receive a FREE e-Visa via the online portal (presidency.gov.gh confirmed); reclassified to e_visa.",
-      "CORRECTED: Removed the ETA category from visa_policy — the live evisa.immigration.gov.gh portal does not display a distinct ETA product on publicly accessible pages; previous record noted '12 ETA countries' from portal metadata but this could not be confirmed on the live portal. Removed to avoid misclassification.",
-      "CORRECTED: Removed the stated USD 260 e-visa fee from the e_visa notes — the live portal landing page does not display fee amounts; the USD 260 figure was from pre-launch reports and is unverified on the live site.",
-      "CORRECTED: e_visa now shows two entries: (1) the free e-visa for all AU/African passport holders (effective May 25, 2026), and (2) the general paid e-visa for all other nationalities (190+).",
-      "ADDED: Kyrgyzstan diplomatic/service passport visa waiver (signed March 2026) added to conditional_access; source_official=false as not yet on official GIS/MFA page.",
-      "ADDED: Zambia, Maldives, and Antigua and Barbuda ordinary/service/diplomatic passport waiver (Cabinet approved April 22, 2026, 30 days, pending parliamentary ratification) added to conditional_access as a combined entry; source_official=false.",
-      "ADDED: Africa Day free e-visa policy (effective May 25, 2026) added to agreements array.",
-      "RETAINED: South Korea diplomatic/service passport waiver (signed June 1, 2026) — previously in record with uncertainty; confirmed signed on official Seoul embassy consular page.",
-      "RETAINED: All other conditional_access entries for bilateral diplomatic/service passport waivers from the Canberra MFA page — verified still present on the official page.",
-      "RETAINED: Iran diplomatic/service passport visa-free on gis.gov.gh visas table — iso3 corrected from IRN (was listed as 'Iran' without iso3 in the conditional_access section previously).",
-      "CORRECTED: conditional_access entries reformatted to use arrays for eligible_nationalities (previously some used string 'any', others mixed formats) — standardized to array or string 'any' as appropriate."
+      "2026-06-29: CORRECTED - Namibia REMOVED from visa_free. GIS visas page lists Namibia under the 9-country Southern/Eastern African visa-free group (all passports, 60 days). However, (1) the Canberra MFA bilateral arrangements page lists Namibia ONLY under 'Diplomatic and Service passports only' - not under 'All Passports'; (2) the Ghana High Commission Windhoek (windhoek.mfa.gov.gh/visa-application/) explicitly states 'all visitors to Ghana are required to obtain entry visas at the High Commission' and shows B2/tourist visa fees for Namibian applicants. Two official Ghana government sources contradict the GIS all-passport visa-free listing for Namibia. Per safety rules (classify DOWN; two official sources corroborate the downgrade), Namibia has been moved to conditional_access (diplomatic/service only, 90 days). Source: https://windhoek.mfa.gov.gh/visa-application/ and https://canberra.mfa.gov.gh/visa-arrangements/",
+      "2026-06-29: CONFIRMED - GIS visas page re-fetched and confirmed: ECOWAS (14 countries, 90 days all passports), Singapore/TnT/Mauritius (60 days all passports), 9 Southern/Eastern African countries (60 days all passports - Lesotho, Botswana, Namibia, Malawi, Swaziland, Tanzania, Uganda, Zimbabwe, Kenya), Egypt+Rwanda as 'Gratis visa - Granted on arrival/Mission' (60 days), Iran diplomatic/service only (90 days), AU/RECs/UN official passports (60 days). All entries consistent with record except Namibia reclassification.",
+      "2026-06-29: CONFIRMED - Canberra MFA bilateral arrangements page re-fetched. Confirms 'All Passports' visa-free list: Barbados, Mauritius, Seychelles, Kenya, Lesotho, Tanzania, Trinidad and Tobago, Singapore, Uganda, Zimbabwe, Jamaica, Rwanda. Botswana, Malawi, Eswatini NOT listed on this page. Namibia listed under diplomatic/service only on this page.",
+      "2026-06-29: CONFIRMED - evisa.immigration.gov.gh re-fetched. Portal shows 54 visa-free, 12 ETA, 40+ paid e-visa. Free ETA for ECOWAS/AU/Caribbean nationals confirmed. Fee structure confirmed from prior sources; portal itself does not display fees publicly on landing page.",
+      "2026-06-29: CONFIRMED - mfa.gov.gh e-visa launch page re-fetched. Confirms: 'holders of African passports would not be required to pay visa fees when travelling to Ghana' effective May 25, 2026. Caribbean fee waiver not explicitly mentioned in MFA press release text, though portal groups them for free ETA. MFA page does not state ETA max stay duration.",
+      "2026-06-29: CONFIRMED - Windhoek MFA embassy page fetched for first time. Confirms Namibian ordinary passport holders require a visa. This corroborates reclassification of Namibia.",
+      "2026-06-27: CORRECTED - ETA reinstated in visa_policy.eta. The previous record (from prior validation run) incorrectly removed the ETA category. Re-fetch of evisa.immigration.gov.gh confirmed the portal explicitly shows '12 ETA' as a distinct product category. Portal states 'ECOWAS, African Union & Caribbean nationals qualify for a free Electronic Travel Authorisation.' Reclassified from e_visa to eta.",
+      "2026-06-27: CORRECTED - Previous e_visa entry 'All African Union member states - Free e-Visa (Africa Day Policy)' reclassified to eta. The MFA launch page (mfa.gov.gh) confirms the fee waiver for African passport holders but it is delivered as a free ETA via the portal, not a free e-Visa product. Source: evisa.immigration.gov.gh portal terminology confirmed.",
+      "2026-06-27: ADDED - Rwanda added to visa_free (ordinary passport, 60 days). Confirmed by Ghana High Commission Canberra MFA bilateral arrangements page listing Rwanda under 'All Passports' visa-free category. GIS page also shows Rwanda as 'Gratis visa - Granted on arrival/Mission' (60 days) - the bilateral MFA table represents the current formal bilateral policy. Source: https://canberra.mfa.gov.gh/visa-arrangements/",
+      "2026-06-27: ADDED - Barbados added to visa_free (ordinary passport, 60 days inferred). Confirmed by Ghana High Commission Canberra MFA bilateral arrangements page listing Barbados under 'All Passports' visa-free. Max stay not stated on Canberra MFA page; 60 days used conservatively. Source: https://canberra.mfa.gov.gh/visa-arrangements/",
+      "2026-06-27: ADDED - Jamaica added to visa_free (ordinary passport, 60 days inferred). Confirmed by Ghana High Commission Canberra MFA bilateral arrangements page listing Jamaica under 'All Passports' visa-free. Max stay not stated on Canberra MFA page; 60 days used conservatively. Source: https://canberra.mfa.gov.gh/visa-arrangements/",
+      "2026-06-27: ADDED - Seychelles added to visa_free (ordinary passport, 60 days inferred). Confirmed by Ghana High Commission Canberra MFA bilateral arrangements page listing Seychelles under 'All Passports' visa-free. Max stay not stated on Canberra MFA page; 60 days used conservatively. Source: https://canberra.mfa.gov.gh/visa-arrangements/",
+      "2026-06-27: CORRECTED - Egypt retained in visa_on_arrival (gratis visa). GIS visas page still lists Egypt as 'Gratis visa - Granted on arrival/Mission' for 60 days.",
+      "RETAINED: South Korea diplomatic/service passport waiver (signed June 1, 2026) - confirmed on Seoul MFA consular page.",
+      "RETAINED: All other conditional_access bilateral diplomatic/service passport waiver entries from the Canberra MFA page - verified still present.",
+      "RETAINED: Kyrgyzstan, Zambia/Maldives/Antigua waiver entries with source_official=false pending official page confirmation."
     ],
     "gaps": [
-      "The free e-visa for African nationals (May 25, 2026): maximum stay duration not explicitly stated on presidency.gov.gh or mfa.gov.gh announcement; 30 days cited in secondary reporting — confirm from live portal when accessible.",
-      "E-visa fees for non-African nationals not displayed on the live portal landing page; USD 260 figure from pre-launch sources removed; confirm current fee schedule from portal.",
-      "The full updated MFA visa waiver list (PDF linked from ghanaembassy.at, effective April 7, 2026) could not be accessed — the attachment was not enumerable via WebFetch. Additional countries (St. Kitts and Nevis, Suriname, Venezuela, Malta, Qatar) referenced in non-official snippets were not independently confirmed and remain omitted.",
-      "Kyrgyzstan visa waiver (March 2026) not yet reflected on any official Ghana MFA or GIS page — multiple Ghanaian press outlets confirm signing; awaiting official MFA/GIS page update.",
-      "Zambia, Maldives, and Antigua and Barbuda visa waivers (Cabinet approved April 22, 2026) pending parliamentary ratification — effective date not yet confirmed.",
-      "Exact minimum investment amounts for GIPC investor residence permit are set in the GIPC Act 2013 (Act 865) but the specific amounts do not appear verbatim on the GIS official permit page; omitted per strict sourcing rules.",
-      "No official digital nomad, startup, or skilled-worker fast-track scheme found on official government domains (gis.gov.gh, gipc.gov.gh, mint.gov.gh).",
+      "CONFLICT (unresolved): GIS visas page lists Namibia as visa-free for all passports (Southern/Eastern African group, 60 days). Two other official Ghana government sources (Canberra MFA bilateral arrangements; Windhoek Ghana embassy) show Namibia as diplomatic/service only or requiring a visa for ordinary passport holders. Record corrected to diplomatic/service only per the safer classification - but the GIS page has not been updated and may represent a real policy if the bilateral agreement has a separate ordinary-passport visa-free component not reflected on the embassy pages.",
+      "CONFLICT (managed): Rwanda is classified as 'All Passports' visa-free on the Canberra MFA page but as 'Gratis visa - Granted on arrival/Mission' on the GIS page. The record retains Rwanda in visa_free based on the MFA bilateral arrangements page, but GIS classification suggests the mechanism is an on-arrival gratis grant rather than an unconditional pre-clearance.",
+      "UNVERIFIED: Botswana, Malawi, and Eswatini/Swaziland appear in GIS's Southern/Eastern African 9-country visa-free group but are absent from the Canberra MFA 'All Passports' table. Classification retained from GIS as primary domestic source, but requires cross-verification against a Ghana embassy serving these countries.",
+      "ETA max stay duration for ECOWAS/AU/Caribbean nationals not explicitly stated on evisa.immigration.gov.gh or mfa.gov.gh; confirmed free but duration unknown - do not assume 30 days.",
+      "Specific list of 12 ETA-eligible nationalities not enumerated on the portal's public-facing page; only the count '12 ETA' is visible.",
+      "Max stay duration for Barbados, Jamaica, and Seychelles not stated on the Canberra MFA arrangements page; 60 days is a conservative inference pending explicit confirmation from GIS or a GHA embassy page.",
+      "Egypt classification ambiguity: GIS shows 'Gratis visa - Granted on arrival/Mission' while the free ETA also applies as an AU member state; whether the gratis VoA still operates at ports of entry alongside the free ETA portal option is not explicitly confirmed on official sources.",
+      "E-visa fees for non-African nationals: fee structure confirmed from pre-launch reports ($260–$796) but live portal landing page does not display fee amounts publicly; confirm from portal application flow.",
+      "The full April 7, 2026 updated visa waiver regime PDF (referenced by ghanaembassy.at Vienna) remains inaccessible as an attachment; may contain additional country entries not yet reflected in this record.",
+      "Kyrgyzstan visa waiver (March 2026) not yet reflected on any official Ghana MFA or GIS page - source_official=false.",
+      "Zambia, Maldives, and Antigua and Barbuda visa waivers (Cabinet approved April 22, 2026) pending parliamentary ratification - effective date not yet confirmed.",
       "Path-to-citizenship timeline from residence permit not stated on official GIS pages.",
-      "The April 7, 2026 updated visa waiver regime PDF (referenced by ghanaembassy.at Vienna) is not directly accessible — may contain additional country entries beyond those confirmed in this record.",
-      "ETA product: portal metadata previously suggested 12 ETA-eligible countries (ECOWAS, AU, Caribbean) but the distinct ETA category was not confirmable on the live portal — may have been merged into the free e-visa scheme for AU nationals or may still exist for specific Caribbean nationalities."
+      "Caribbean nationals: the portal groups 'ECOWAS, African Union & Caribbean nationals' for the free ETA - the specific Caribbean countries covered beyond Trinidad and Tobago (already visa-free) and Barbados/Jamaica (now visa-free) are not individually enumerated on the official portal.",
+      "No official digital nomad, startup, or skilled-worker fast-track scheme found on official government domains."
     ]
   },
   "outbound_official": {
@@ -872,6 +916,248 @@
     "eta": [],
     "notes": "Ghana's Ministry of Foreign Affairs press release (Nov 13 2025) confirms 42 visa-free destinations for Ghana ordinary passport holders but does not enumerate the individual countries. The per-country breakdown above is derived from an April 2026 media report (Pulse Ghana, April 25 2026) citing the Ministry's official announcement of 50 visa-exempt destinations; categories (visa_free / visa_on_arrival / e_visa) are as reported. Ghana does not maintain a dedicated standalone outbound passport-privileges page comparable to India's mea.gov.in/vffin; the official MFA press release URL is the closest authoritative origin-side source. Seychelles is listed as 'visitor permit on arrival' in the Pulse Ghana article; recorded here as visa_on_arrival."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist e-Visa",
+      "purpose": "For foreign nationals visiting Ghana for tourism, leisure, or recreation. Applied for online through the official Ghana e-Visa portal.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 260,
+      "processing_days_min": 3,
+      "processing_days_max": 4,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.immigration.gov.gh/",
+      "notes": "Applied for online at evisa.immigration.gov.gh. Standard processing $260 (72 hrs), priority $338 (48 hrs), express $442 (5 hrs). Multiple-entry: standard $468, priority $608, express $796. Visa delivered to email inbox for presentation at port of entry. Max stay of 30 days cited in portal sample."
+    },
+    {
+      "category": "business",
+      "name": "Business e-Visa",
+      "purpose": "For foreign nationals visiting Ghana for business meetings, negotiations, conferences, or commercial activities. Applied for online through the official Ghana e-Visa portal.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 260,
+      "processing_days_min": 3,
+      "processing_days_max": 4,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.immigration.gov.gh/",
+      "notes": "Standard single-entry $260 (72 hrs), priority $338, express $442. Multiple-entry: $468/$608/$796. Requires business commencement certificate, certificate of incorporation, company code, tax clearance certificate, host's passport biodata page, and flight itinerary."
+    },
+    {
+      "category": "student",
+      "name": "Student e-Visa / Residence Permit",
+      "purpose": "For foreign nationals admitted to a Ghanaian educational institution who need to reside in Ghana throughout the duration of their studies.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/residence-permit-student/",
+      "notes": "Requires letter from educational institution, admission letter, school fees payment receipts, two passport-sized photos, and passport. Resident fee range GH¢129–259 (approx USD 12–24 at GH¢11=$1 rate per GIS fees page). Duration matches length of study. Application lodged with Ghana Immigration Service."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For indirect transit passengers who must collect and recheck their luggage while transiting through Ghana to another destination.",
+      "max_stay_days": 2,
+      "validity_days": 2,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/transit-visa/",
+      "notes": "Valid for 48 hours. Direct airside transit passengers (no luggage collection) are exempt. Fee listed as $50 on GIS fees page (Transit Permit). Requires travel itinerary, proof of visa to final destination (if applicable), two passport-sized photographs, and completed disembarkation card. Also available via e-Visa portal."
+    },
+    {
+      "category": "other",
+      "name": "Emergency Entry Visa (EEV) / Visa on Arrival",
+      "purpose": "Granted at an immigration officer's discretion to persons who arrive at a Ghanaian port of entry without a pre-obtained visa, subject to conditions prescribed in regulations.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 200,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://gis.gov.gh/service/visa-on-arrival-emergency-entry-visa/",
+      "notes": "Fee: $200 per GIS fees and charges page (effective May 15, 2025). Requires letter to the Comptroller-General stating country of origin, arrival date, stay duration, visit purpose, travel itinerary, and lodging information. Not guaranteed - granted at immigration officer discretion. For business visits: also requires certificate of incorporation, tax clearance, and host's passport biodata."
+    },
+    {
+      "category": "other",
+      "name": "Re-Entry Visa (Single)",
+      "purpose": "Issued to visitors who are already in Ghana on a valid permit and wish to leave the country temporarily and return without obtaining a new visa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/re-entry-visa/",
+      "notes": "Fee: $65–$100 (single) per GIS fees page. Requires completed Re-Entry Form, application letter, two passport-sized photographs, non-citizen identification card, and valid passport. Must already hold a valid Ghana residence status."
+    },
+    {
+      "category": "other",
+      "name": "Re-Entry Visa (Multiple)",
+      "purpose": "Multiple-entry re-entry permit for visitors in Ghana on a valid permit who need to make repeated temporary departures and returns.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 129,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/re-entry-visa/",
+      "notes": "Fee: $129–$194 (multiple) per GIS fees page. Same requirements as single re-entry visa. Must already hold a valid Ghana residence status."
+    },
+    {
+      "category": "work",
+      "name": "Work and Residence Permit (Companies)",
+      "purpose": "For foreign nationals who are lawfully admitted to Ghana and wish to work and reside in the country under employment by a registered company.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 194,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/work-and-residence-permit-companies/",
+      "notes": "Fee: $194–$1,293 per GIS fees page (range by company type/quota). Requires letter to Comptroller-General, GIPC registration, tax clearance, audited accounts, medical report from Ghana Immigration Clinic, police report from home country, employment contract, professional/educational certificates, CV, and passport biodata. Application submitted to Ghana Immigration Service."
+    },
+    {
+      "category": "work",
+      "name": "Work and Residence Permit (Missionaries/NGOs/GIPC/Free Zones)",
+      "purpose": "For foreign nationals working with NGOs, missions, or businesses registered with the Ghana Investment Promotion Centre (GIPC) or Ghana Free Zones Board.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 194,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/work-and-residence-permit-missionaries-ngos-immigrant-quota-gipc-shareholders/",
+      "notes": "Fee: $194–$388 (Missionaries/NGOs); $194–$500 (GIPC Automatic Quota); $194–$647 (Immigrant Quota) per GIS fees page. Requires GIPC Registration Certificate, Ghana Free Zones Board approval (if applicable), ministerial support letter, and standard company/professional documents."
+    },
+    {
+      "category": "investment",
+      "name": "Work and Residence Permit - Shareholders",
+      "purpose": "For foreign nationals who hold shares in Ghanaian-registered companies and wish to reside in Ghana in connection with their business interests.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/work-and-residence-permit-missionaries-ngos-immigrant-quota-gipc-shareholders/",
+      "notes": "Fee: GH¢2,000 (approx USD 182 at GH¢11=$1) per GIS fees page. Requires share certificate, company incorporation documents, GIPC registration, and standard GIS documentation."
+    },
+    {
+      "category": "family",
+      "name": "Residence Permit (Dependent)",
+      "purpose": "For dependants of expatriates working in Ghana and for Ghanaian nationals with foreign passports seeking to reside with their Ghanaian-citizen family members.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/permits/",
+      "notes": "Fee: GH¢194–388 (approx USD 18–35) per GIS fees page. Requires proof of relationship to principal permit holder or Ghanaian national. Specific requirements listed on GIS service page."
+    },
+    {
+      "category": "retirement",
+      "name": "Indefinite Residence Status",
+      "purpose": "For foreign nationals wishing to reside permanently in Ghana, granting the right to live indefinitely, enter without a visa, and work without a work permit.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/indefinite-residence-status-generally/",
+      "notes": "Requires attestation by two Ghanaians of repute, evidence of immovable properties (where applicable), 6 years tax clearance, 3 years audited accounts, SSNIT returns, police report from Ghana, and medical report. Also available for foreign spouses of Ghanaian nationals. No minimum investment amount stated on GIS page. Fee: GH¢5,000 (approx USD 455) for spouse of Ghanaian per fees page."
+    },
+    {
+      "category": "other",
+      "name": "Right of Abode",
+      "purpose": "Granted to Ghanaians who lost citizenship by acquiring foreign nationality and to persons of African descent in the diaspora, conferring the right to reside and work permanently in Ghana.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/service/right-of-abode/",
+      "notes": "Fee: GH¢1,940–3,879 (approx USD 176–353) per GIS fees page. Approved by the Minister with the President's approval. For Africans in the Diaspora: requires evidence of economic contribution to Ghana (shares, bank statements, audited accounts, employment records for Ghanaians). Grants entry without visa and work without work permit."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Concessionary Visa",
+      "purpose": "A reduced-fee or special-arrangement visa for eligible diplomatic, official, or service passport holders from specific bilateral partner countries.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 97,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/fees-and-charges/",
+      "notes": "Fee: $97–$100 per GIS fees and charges page. Specific eligibility criteria and issuing conditions are managed through bilateral agreements. Apply through Ghana Immigration Service or Ghanaian embassy/consulate."
+    },
+    {
+      "category": "other",
+      "name": "Rotators Permit",
+      "purpose": "For foreign workers who rotate in and out of Ghana on a scheduled basis, typically in extractive industries such as oil, gas, or mining.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 647,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/fees-and-charges/",
+      "notes": "Fee: $647 for up to 6 months; $1,000 for 6–12 months per GIS fees page. Designed for workers in rotation schedules. Requires employer sponsorship and standard GIS documentation."
+    },
+    {
+      "category": "other",
+      "name": "Free Zone Resident Permit",
+      "purpose": "For foreign nationals employed by businesses operating within Ghana's designated Free Zone enclaves under the Ghana Free Zones Board.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 240,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gis.gov.gh/fees-and-charges/",
+      "notes": "Fee: $240 (first year) per GIS fees page. Requires Ghana Free Zones Board approval letter and standard work permit documentation. Subsequent years may have different fee schedule."
+    }
+  ],
   "sources_checked": [
     "https://gis.gov.gh/visas/",
     "https://gis.gov.gh/service/visa-on-arrival-emergency-entry-visa/",
@@ -880,9 +1166,9 @@
     "https://gis.gov.gh/service/indefinite-residence-status-generally/",
     "https://gis.gov.gh/service/right-of-abode/",
     "https://evisa.immigration.gov.gh/",
-    "https://presidency.gov.gh/ghana-to-roll-out-free-visa-for-all-africans-from-may-2026/",
     "https://mfa.gov.gh/index.php/ghana-launches-e-visa-portal/",
     "https://canberra.mfa.gov.gh/visa-arrangements/",
+    "https://windhoek.mfa.gov.gh/visa-application/",
     "https://seoul.mfa.gov.gh/consular/entry-permit-visa-requirements/",
     "https://ghanaembassy.at/updated-visa-waiver-arrangements-for-holders-of-diplomatic-service-ordinary-passports/",
     "https://www.mea.gov.in/bvwa-passport",
@@ -891,6 +1177,15 @@
     "https://www.pulse.com.gh/story/ghana-approves-additional-visa-waiver-agreements-for-maldives-zambia-and-antigua-and-barbuda-2026042209460018680",
     "https://www.ecofinagency.com/news/2304-54943-ghana-expands-visa-waiver-network-to-caribbean-asia-and-africa",
     "https://moderndiplomacy.eu/2026/04/03/ghana-announces-visa-free-entry-for-africans/",
-    "https://www.gbcghanaonline.com/general/ghana-visa-ablakwa/2026/"
+    "https://www.gbcghanaonline.com/general/ghana-visa-ablakwa/2026/",
+    "https://gis.gov.gh/fees-and-charges/",
+    "https://gis.gov.gh/service/transit-visa/",
+    "https://gis.gov.gh/service/re-entry-visa/",
+    "https://gis.gov.gh/service/work-and-residence-permit-companies/",
+    "https://gis.gov.gh/service/residence-permit-student/",
+    "https://gis.gov.gh/service/visa-extension/",
+    "https://travelobiz.com/ghana-e-visa-portal-launch-2026-fees-eta-rules-documents/",
+    "https://eiglaw.com/ghana-launches-new-e-visa-portal-and-eta-system/",
+    "https://presidency.gov.gh/ghana-to-roll-out-free-visa-for-all-africans-from-may-2026/"
   ]
 }

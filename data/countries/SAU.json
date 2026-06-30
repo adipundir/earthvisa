@@ -452,7 +452,7 @@
         "nationality": "Spain",
         "iso3": "ESP",
         "max_stay_days": 90,
-        "notes": "1-year multiple-entry e-visa. 90 days maximum stay per year.",
+        "notes": "1-year multiple-entry e-visa. 90 days maximum stay per year. Note: a separate bilateral agreement signed May 15, 2026 provides visa exemption for diplomatic, special, and service passport holders (recorded in conditional_access).",
         "source_url": "https://visa.visitsaudi.com/",
         "source_official": true
       },
@@ -539,7 +539,9 @@
       "https://www.spa.gov.sa/en/8413de62f6m",
       "https://mt.gov.sa/about/media-center/news/179/Saudi-Arabia-expands-E-visa-accessibility-to-66-countries",
       "https://www.gcc-sg.org/en/AboutUs/MemberStates/Pages/default.aspx",
-      "https://www.spa.gov.sa/en/N2582764"
+      "https://www.spa.gov.sa/en/N2582764",
+      "https://spa.gov.sa/en/N2585110",
+      "https://www.mofa.gov.sa/en/ministry/news/Pages/%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D9%88%D8%B1%D9%88%D8%B3%D9%8A%D8%A7-%D8%AA%D9%88%D9%82%D8%B9%D8%A7%D9%86-%D8%A7%D8%AA%D9%81%D8%A7%D9%82%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D8%B9%D9%81%D8%A7%D8%A1-%D8%A7%D9%84%D9%85%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D9%85%D9%86-%D8%AA%D8%A3%D8%B4%D9%8A%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D8%AE%D9%88%D9%84-%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A-%D8%A7%D9%84%D8%A8%D9%84%D8%AF%D9%8A%D9%86.aspx"
     ],
     "notes": "Saudi Arabia offers a tourist e-visa (SAR 480 including insurance, 1-year multiple-entry, 90 days max stay per year) to citizens of 66 countries as of May 2024. The program was launched in September 2019 with 49 countries and has since been expanded. Uzbekistan and Tajikistan were added in August 2023 but removed from the eligible list in April 2025; they are excluded here. Russia was previously on the e-visa list but is now fully visa-free under a bilateral mutual exemption agreement in force since May 11, 2026 (covers all passport types including ordinary), reducing the current e-visa list to approximately 64 countries. Holders of valid US, UK, or Schengen visas (used at least once) are also eligible via conditional access. GCC nationals (Bahrain, Kuwait, Oman, Qatar, UAE) enjoy visa-free entry under GCC freedom of movement. The total confirmed by SPA as of May 2024 was 66 countries; effective count changes with Russia's upgrade to visa-free and Uzbekistan/Tajikistan removal."
   },
@@ -587,7 +589,7 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://absher.sa/",
-      "notes": "Employer-sponsored. Work visa issued by Saudi embassy abroad; upon arrival, converted to Iqama (residence permit) within 90 days. Iqama valid 1-2 years, renewable. Kafala (sponsorship) system — employer is legal sponsor. Annual Iqama fees: SAR 2,400-4,800 depending on category. Fee listed is approximate combined cost. Employees under kafala require employer permission to change jobs (partially reformed via Saudi Vision 2030 labor reforms)."
+      "notes": "Employer-sponsored. Work visa issued by Saudi embassy abroad; upon arrival, converted to Iqama (residence permit) within 90 days. Iqama valid 1-2 years, renewable. Kafala (sponsorship) system - employer is legal sponsor. Annual Iqama fees: SAR 2,400-4,800 depending on category. Fee listed is approximate combined cost. Employees under kafala require employer permission to change jobs (partially reformed via Saudi Vision 2030 labor reforms)."
     },
     {
       "category": "investment",
@@ -757,6 +759,40 @@
       "conditions": "Agreement between the governments of the Kingdom of Saudi Arabia and the Republic of Türkiye on mutual exemption from visa requirements for holders of diplomatic and special passports. Signed May 6, 2026 in Ankara. Ordinary passport holders remain eligible for the tourist e-visa.",
       "source_url": "https://spa.gov.sa/en/N2579352",
       "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Egypt"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "special",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Agreement between the Government of the Kingdom of Saudi Arabia and the Government of the Arab Republic of Egypt on mutual exemption from short-stay visa requirements for holders of diplomatic, special, and service passports. Signed March 19, 2026 in Riyadh by Prince Faisal bin Farhan (Saudi FM) and Badr Abdelatty (Egyptian FM). Entry into force date not confirmed; not applicable to ordinary passport holders.",
+      "source_url": "https://www.spa.gov.sa/en/N2541609",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": [
+        "Spain"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "special",
+        "service"
+      ],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Agreement between the Kingdom of Saudi Arabia and the Kingdom of Spain on mutual visa exemption for holders of diplomatic, special, and service passports. Signed May 15, 2026 in Madrid during Saudi FM Prince Faisal bin Farhan's visit. Does not apply to ordinary passport holders; Spanish ordinary passport holders remain eligible for the tourist e-visa. Entry into force date not confirmed in official sources.",
+      "source_url": "https://spa.gov.sa/en/N2585110",
+      "source_official": true
     }
   ],
   "cbi": {
@@ -773,7 +809,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Premium Residency — Limited Duration (Temporary)",
+        "name": "Premium Residency - Limited Duration (Temporary)",
         "type": "fee_based_residency",
         "min_amount": 100000,
         "currency": "SAR",
@@ -784,7 +820,7 @@
         "notes": "Annual fee of SAR 100,000 per year, renewable for up to 5 years. Does not automatically lead to permanent residency or citizenship. Administered by the Saudi Premium Residency Center."
       },
       {
-        "name": "Premium Residency — Unlimited Duration (Permanent)",
+        "name": "Premium Residency - Unlimited Duration (Permanent)",
         "type": "fee_based_residency",
         "min_amount": 800000,
         "currency": "SAR",
@@ -863,7 +899,7 @@
         "notes": "In October 2024, Saudi Arabia's Health Minister granted Premium Residency to 2,645 exceptional healthcare professionals from 56 countries under this program. Application fee SAR 4,000."
       },
       {
-        "name": "CODE (Coding Institute for Digital Excellence) Premium Residency — MCIT",
+        "name": "CODE (Coding Institute for Digital Excellence) Premium Residency - MCIT",
         "category": "digital_talent",
         "eligibility": "Tech professionals and digital talent invited or sponsored through the Ministry of Communications and Information Technology's CODE program.",
         "processing_time": null,
@@ -883,10 +919,12 @@
     ]
   },
   "agreements": [
-    "GCC (Gulf Cooperation Council) — freedom of movement for GCC nationals",
-    "Saudi Arabia–India — mutual visa exemption for diplomatic, special, and official passport holders (signed December 17, 2025)",
-    "Saudi Arabia–Türkiye — mutual visa exemption for diplomatic and special passport holders (signed May 6, 2026)",
-    "Saudi Arabia–Russia — mutual visa exemption for all passport types including ordinary (signed December 1, 2025; in force May 11, 2026)"
+    "GCC (Gulf Cooperation Council) - freedom of movement for GCC nationals",
+    "Saudi Arabia–India - mutual visa exemption for diplomatic, special, and official passport holders (signed December 17, 2025)",
+    "Saudi Arabia–Türkiye - mutual visa exemption for diplomatic and special passport holders (signed May 6, 2026)",
+    "Saudi Arabia–Russia - mutual visa exemption for all passport types including ordinary (signed December 1, 2025; in force May 11, 2026)",
+    "Saudi Arabia–Egypt - mutual visa exemption for diplomatic, special, and service passport holders (signed March 19, 2026)",
+    "Saudi Arabia–Spain - mutual visa exemption for diplomatic, special, and service passport holders (signed May 15, 2026)"
   ],
   "official_domains": [
     "visa.visitsaudi.com",
@@ -906,23 +944,30 @@
     "completeness": "medium",
     "validation_notes": [
       "CORRECTION: Russia (RUS) moved from visa_policy.e_visa to visa_policy.visa_free. The mutual visa exemption agreement entered into force May 11, 2026 and covers all passport types including ordinary passports. Confirmed from official SPA article https://www.spa.gov.sa/en/N2582764 fetched directly on 2026-06-13.",
-      "CORRECTION: Saudi Arabia–Russia agreement notes clarified: SPA confirms 'Russia is the first country with which the Kingdom has concluded a mutual visa exemption agreement for holders of ordinary passports.' The prior record placed Russia in e_visa — this was stale data as of the in-force date (May 11, 2026).",
-      "CONFIRMED: Saudi Arabia–Türkiye diplomatic/special passport agreement (signed May 6, 2026) confirmed from SPA article https://spa.gov.sa/en/N2579352 fetched directly. No ordinary passport visa-free for Turkey — ordinary passport remains e-visa.",
+      "CORRECTION: Saudi Arabia–Russia agreement notes clarified: SPA confirms 'Russia is the first country with which the Kingdom has concluded a mutual visa exemption agreement for holders of ordinary passports.' The prior record placed Russia in e_visa - this was stale data as of the in-force date (May 11, 2026).",
+      "CONFIRMED: Saudi Arabia–Türkiye diplomatic/special passport agreement (signed May 6, 2026) confirmed from SPA article https://spa.gov.sa/en/N2579352 fetched directly. No ordinary passport visa-free for Turkey - ordinary passport remains e-visa.",
       "CONFIRMED: Saudi Arabia–India diplomatic/special/official passport agreement (signed December 17, 2025) confirmed from SPA article https://www.spa.gov.sa/en/N2470556 fetched directly.",
       "CONFIRMED: e-visa expansion to 66 countries (May 2024) confirmed from SPA article https://www.spa.gov.sa/en/N2098278 fetched directly. Bahamas, Barbados, Grenada correctly listed.",
       "NOTE: Uzbekistan and Tajikistan were previously in the e-visa list (added August 2023) but were removed in April 2025. They are correctly absent from the e_visa entries and noted in the policy notes.",
       "NOTE: e_visa expansion notes for Bahamas, Barbados, Grenada changed from '2024 expansion' to 'May 2024 expansion' to match the SPA article date (May 8, 2024).",
-      "NOTE: Turkey e_visa entry updated to clarify distinction between ordinary passport (e-visa) and diplomatic/special passport (visa-free under May 2026 agreement)."
+      "NOTE: Turkey e_visa entry updated to clarify distinction between ordinary passport (e-visa) and diplomatic/special passport (visa-free under May 2026 agreement).",
+      "ADDITION (2026-06-27): Saudi Arabia–Egypt mutual visa exemption agreement for diplomatic, special, and service passport holders added to conditional_access and agreements. Signed March 19, 2026 in Riyadh. Confirmed via Arab News report (arabnews.com/node/2636964/amp) and SPA article index entry https://www.spa.gov.sa/en/N2541609. SPA article returned HTTP 403 on direct fetch; agreement details confirmed from Arab News (official source corroboration via MOFA/SPA search results). Egypt ordinary passport holders remain subject to standard visa requirements. No visa_policy (ordinary passport) change warranted.",
+      "CONFIRMED (2026-06-27): Saudi Arabia–Russia visa exemption confirmed again from MOFA official page - signed December 1, 2025, covers 'all types of passports (diplomatic, special and regular)', up to 90 consecutive or nonconsecutive days within a year. MOFA source: https://www.mofa.gov.sa/en/ministry/news/Pages/...",
+      "ADDITION (2026-06-29): Saudi Arabia–Spain mutual visa exemption agreement for diplomatic, special, and service passport holders added to conditional_access and agreements. Signed May 15, 2026 in Madrid. Source: SPA article https://spa.gov.sa/en/N2585110 (returned HTTP 403 on direct fetch; confirmed from WebSearch and secondary source corroboration at visahq.com/news/2026-05-15 identifying diplomatic/special/service passports only). Spanish ordinary passport holders remain on e-visa list - no ordinary-passport access change warranted. Spain entry in e_visa list updated with a note referencing the diplomatic-level agreement.",
+      "CONFIRMED (2026-06-29): Russia (visa_free, ordinary passport) - re-confirmed via MOFA official page (mofa.gov.sa) which loaded and described the agreement as covering 'all types of passports (diplomatic, special and regular)', 90 days. No change needed.",
+      "CONFIRMED (2026-06-29): No new ordinary passport visa-free agreements found beyond Russia. Russia remains the only country with an ordinary-passport mutual visa exemption with Saudi Arabia as of June 29, 2026."
     ],
     "gaps": [
       "The official visa.visitsaudi.com portal returns HTTP 403, preventing direct extraction of the comprehensive, definitive list of currently eligible e-visa countries.",
       "Uzbekistan and Tajikistan removal in April 2025: referenced in secondary sources but no official Saudi government press release confirming the removal was found; they are excluded based on credible reports.",
       "Exact entry-into-force date for the Saudi Arabia–India diplomatic passport agreement is not stated in the SPA announcement (only signing date December 17, 2025 confirmed).",
       "Exact entry-into-force date and max stay days for the Saudi Arabia–Türkiye diplomatic/special passport agreement not stated in the SPA announcement (only signing date May 6, 2026 confirmed).",
+      "Exact entry-into-force date and max stay days for the Saudi Arabia–Egypt diplomatic/special/service passport agreement not confirmed (only signing date March 19, 2026 confirmed; SPA article https://www.spa.gov.sa/en/N2541609 returned HTTP 403 on direct fetch).",
+      "Exact entry-into-force date and max stay days for the Saudi Arabia–Spain diplomatic/special/service passport agreement not confirmed (only signing date May 15, 2026 confirmed; SPA article https://spa.gov.sa/en/N2585110 returned HTTP 403 on direct fetch).",
       "Precise effective count of the e-visa eligible countries as of June 2026 is uncertain: started at 66 (May 2024), then Uzbekistan/Tajikistan removed (−2 = 64), and Russia moved to fully visa-free; the official portal cannot be scraped to verify.",
       "Exact processing times for Premium Residency categories not found on official pages (pr.gov.sa is JavaScript-rendered).",
       "GCC resident eligible professions list (Article 6.2.d of Tourist Visa Regulations) could not be extracted due to 403 access errors on visitsaudi.com.",
-      "Additional bilateral diplomatic/service passport waiver agreements beyond India, Turkey, and Russia may exist but were not identified on official sources during this session.",
+      "Additional bilateral diplomatic/service passport waiver agreements beyond India, Turkey, Russia, Egypt, and Spain may exist but were not identified on official sources during this session.",
       "OCI (Overseas Citizen of India) cardholder status: No official Saudi government source specifically grants entry benefits to OCI cardholders. Not recorded."
     ]
   },
@@ -948,37 +993,37 @@
       "url": "https://www.visitsaudi.com/en/plan-your-trip/visa-regulations",
       "domain": "visitsaudi.com",
       "official": true,
-      "note": "Official Visit Saudi tourism portal visa regulations page. No substantive content extracted."
+      "note": "Official Visit Saudi tourism portal visa regulations page. No substantive content extracted (only page title returned)."
     },
     {
       "url": "https://www.spa.gov.sa/en/N1981235",
       "domain": "spa.gov.sa",
       "official": true,
-      "note": "Official Saudi Press Agency announcement — expansion of e-visa to 63 countries."
+      "note": "Official Saudi Press Agency announcement - expansion of e-visa to 63 countries. Returned HTTP 403 on 2026-06-29 re-fetch."
     },
     {
       "url": "https://www.spa.gov.sa/en/N2098278",
       "domain": "spa.gov.sa",
       "official": true,
-      "note": "Official Saudi Press Agency announcement — expansion of e-visa to 66 countries (Bahamas, Barbados, Grenada added). Fetched via Firecrawl on 2026-06-13. Confirmed May 8, 2024 date."
+      "note": "Official Saudi Press Agency announcement - expansion of e-visa to 66 countries (Bahamas, Barbados, Grenada added). Returned HTTP 403 on 2026-06-29 re-fetch."
     },
     {
       "url": "https://www.spa.gov.sa/en/6bb0aa6315z",
       "domain": "spa.gov.sa",
       "official": true,
-      "note": "Official SPA announcement — expansion to 8 additional countries including Albania, Azerbaijan, Georgia, Kyrgyzstan, Maldives, South Africa."
+      "note": "Official SPA announcement - expansion to 8 additional countries including Albania, Azerbaijan, Georgia, Kyrgyzstan, Maldives, South Africa. Returned HTTP 403 on 2026-06-29 re-fetch."
     },
     {
       "url": "https://www.spa.gov.sa/en/8413de62f6m",
       "domain": "spa.gov.sa",
       "official": true,
-      "note": "Official SPA — Ministry of Tourism announcement on streamlined entry for US, UK, Schengen visa holders."
+      "note": "Official SPA - Ministry of Tourism announcement on streamlined entry for US, UK, Schengen visa holders."
     },
     {
       "url": "https://www.spa.gov.sa/en/65dafa3c62v",
       "domain": "spa.gov.sa",
       "official": true,
-      "note": "Official SPA — June 2023 announcement: instant e-visa for UK, US, Schengen visa holders and permanent residents of UK, US, any EU country; e-visa eligibility extended to GCC residents."
+      "note": "Official SPA - June 2023 announcement: instant e-visa for UK, US, Schengen visa holders and permanent residents of UK, US, any EU country; e-visa eligibility extended to GCC residents."
     },
     {
       "url": "https://cdn.mt.gov.sa/mtportal/mt-fe-production/content/policies-regulations/documents/tourism-regulations/Tourist-Visa-Regulations-En-V012.pdf",
@@ -990,25 +1035,31 @@
       "url": "https://mt.gov.sa/about/media-center/news/179/Saudi-Arabia-expands-E-visa-accessibility-to-66-countries",
       "domain": "mt.gov.sa",
       "official": true,
-      "note": "Official Ministry of Tourism announcement — 66 countries total. Returned HTTP 403."
+      "note": "Official Ministry of Tourism announcement - 66 countries total. Returned HTTP 403."
     },
     {
       "url": "https://www.spa.gov.sa/en/N2470556",
       "domain": "spa.gov.sa",
       "official": true,
-      "note": "Official SPA — Saudi Arabia–India agreement on mutual exemption for diplomatic, special, and official passport holders. Signed December 17, 2025. Fetched via Firecrawl on 2026-06-13 and confirmed."
+      "note": "Official SPA - Saudi Arabia–India agreement on mutual exemption for diplomatic, special, and official passport holders. Signed December 17, 2025. Fetched via Firecrawl on 2026-06-13 and confirmed."
     },
     {
       "url": "https://spa.gov.sa/en/N2579352",
       "domain": "spa.gov.sa",
       "official": true,
-      "note": "Official SPA — Saudi Arabia–Türkiye agreement on mutual exemption for diplomatic and special passport holders. Signed May 6, 2026. Fetched via Firecrawl on 2026-06-13 and confirmed."
+      "note": "Official SPA - Saudi Arabia–Türkiye agreement on mutual exemption for diplomatic and special passport holders. Signed May 6, 2026. Fetched via Firecrawl on 2026-06-13 and confirmed."
     },
     {
       "url": "https://www.spa.gov.sa/en/N2582764",
       "domain": "spa.gov.sa",
       "official": true,
-      "note": "Official SPA — Saudi Arabia–Russia mutual visa exemption agreement entered into force May 11, 2026. Covers all passport types including ordinary. 90 days per visit or in multiple periods within a calendar year. Fetched via Firecrawl on 2026-06-13 and confirmed."
+      "note": "Official SPA - Saudi Arabia–Russia mutual visa exemption agreement entered into force May 11, 2026. Covers all passport types including ordinary. 90 days per visit or in multiple periods within a calendar year. Returned HTTP 403 on 2026-06-29 re-fetch; confirmed via MOFA official page and WebSearch."
+    },
+    {
+      "url": "https://www.mofa.gov.sa/en/ministry/news/Pages/%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D9%88%D8%B1%D9%88%D8%B3%D9%8A%D8%A7-%D8%AA%D9%88%D9%82%D8%B9%D8%A7%D9%86-%D8%A7%D8%AA%D9%81%D8%A7%D9%82%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D8%B9%D9%81%D8%A7%D8%A1-%D8%A7%D9%84%D9%85%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D9%85%D9%86-%D8%AA%D8%A3%D8%B4%D9%8A%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D8%AE%D9%88%D9%84-%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A-%D8%A7%D9%84%D8%A8%D9%84%D8%AF%D9%8A%D9%86.aspx",
+      "domain": "mofa.gov.sa",
+      "official": true,
+      "note": "Official Saudi MOFA - Saudi Arabia–Russia visa exemption article. Successfully fetched 2026-06-29. Confirmed: covers 'all types of passports (diplomatic, special and regular)', 90 days consecutive or nonconsecutive within a year. Signed December 1, 2025."
     },
     {
       "url": "https://pr.gov.sa/",
@@ -1059,16 +1110,28 @@
       "note": "Official Ministry of Foreign Affairs eServices directory."
     },
     {
+      "url": "https://www.spa.gov.sa/en/N2541609",
+      "domain": "spa.gov.sa",
+      "official": true,
+      "note": "Official SPA - Saudi Arabia–Egypt agreement on mutual exemption for diplomatic, special, and service passport holders. Signed March 19, 2026. Direct fetch returned HTTP 403; confirmed via SPA search index and secondary source corroboration."
+    },
+    {
+      "url": "https://spa.gov.sa/en/N2585110",
+      "domain": "spa.gov.sa",
+      "official": true,
+      "note": "Official SPA - Saudi Arabia–Spain Strategic Partnership and visa exemption agreement for diplomatic, special, and service passport holders. Signed May 15, 2026. Direct fetch returned HTTP 403; confirmed via WebSearch title/description and secondary source corroboration (visahq.com/news/2026-05-15)."
+    },
+    {
       "url": "https://www.gcc-sg.org/en/AboutUs/MemberStates/Pages/default.aspx",
       "domain": "gcc-sg.org",
       "official": true,
-      "note": "Official GCC Secretariat — member states list."
+      "note": "Official GCC Secretariat - member states list."
     },
     {
       "url": "https://www.moi.gov.sa/wps/wcm/connect/121c03004d4bb7c98e2cdfbed7ca8368/EN_saudi_nationality_system.pdf",
       "domain": "moi.gov.sa",
       "official": true,
-      "note": "Official Ministry of Interior — Saudi Arabian Nationality System PDF."
+      "note": "Official Ministry of Interior - Saudi Arabian Nationality System PDF."
     }
   ]
 }

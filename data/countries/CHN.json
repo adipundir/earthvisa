@@ -193,7 +193,7 @@
       {
         "name": "Uzbekistan",
         "iso3": "UZB",
-        "notes": "Bilateral agreement effective 2025-06-01; ordinary passport; typically ≤30 days (2023 table noted 10-day transit/return-flight condition — superseded by full bilateral agreement from 2025-06-01)"
+        "notes": "Bilateral agreement effective 2025-06-01; ordinary passport; typically ≤30 days (2023 table noted 10-day transit/return-flight condition - superseded by full bilateral agreement from 2025-06-01)"
       },
       {
         "name": "French Polynesia",
@@ -1114,7 +1114,7 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://www.visaforchina.cn/",
-      "notes": "For travelers transiting China. Note: nationals of 53 countries qualify for Visa-Free Transit (72/144 hours) at designated ports without a G visa — check official list. G visa required for those who do not qualify for visa-free transit or who will exceed the free transit window."
+      "notes": "For travelers transiting China. Note: nationals of 53 countries qualify for Visa-Free Transit (72/144 hours) at designated ports without a G visa - check official list. G visa required for those who do not qualify for visa-free transit or who will exceed the free transit window."
     }
   ],
   "conditional_access": [
@@ -1146,7 +1146,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 30,
-      "conditions": "China has bilateral mutual visa exemption agreements with 158 countries/entities covering diplomatic and/or service/official passport holders. Max stay is typically 30 days per entry; some agreements allow 90 days (e.g. Vietnam, Mexico, Mali, Rwanda, Bahrain, Burkina Faso, El Salvador, Madagascar, Lebanon); unlimited stays for specific passport types under agreements with Bolivia, Mongolia, Turkey, Laos, Bangladesh. A small number of agreements also cover ordinary passports (e.g. Mauritius, Seychelles, Fiji, Georgia, Solomon Islands, Antigua and Barbuda, San Marino, UK, Mexico, Vietnam). Exact passport types and stay limits vary by bilateral agreement — full list at cs.mfa.gov.cn.",
+      "conditions": "China has bilateral mutual visa exemption agreements with 158 countries/entities covering diplomatic and/or service/official passport holders. Max stay is typically 30 days per entry; some agreements allow 90 days (e.g. Vietnam, Mexico, Mali, Rwanda, Bahrain, Burkina Faso, El Salvador, Madagascar, Lebanon); unlimited stays for specific passport types under agreements with Bolivia, Mongolia, Turkey, Laos, Bangladesh. A small number of agreements also cover ordinary passports (e.g. Mauritius, Seychelles, Fiji, Georgia, Solomon Islands, Antigua and Barbuda, San Marino, UK, Mexico, Vietnam). Exact passport types and stay limits vary by bilateral agreement - full list at cs.mfa.gov.cn.",
       "source_url": "https://en.nia.gov.cn/n147418/n147463/c181470/content.html",
       "source_official": true
     }
@@ -1160,7 +1160,7 @@
     "processing_time": "",
     "dual_citizenship_allowed": false,
     "residency_required": null,
-    "notes": "China has no citizenship-by-investment program. The Nationality Law of the People's Republic of China (Article 7) provides for naturalization of foreigners who are 'near relatives of Chinese nationals', have 'settled in China', or have 'other legitimate reasons' — no investment pathway is mentioned. China does not recognize dual nationality (Article 3). All naturalization applications are subject to approval by the Ministry of Public Security. Source: https://en.nia.gov.cn/n147418/n147458/c155976/content.html"
+    "notes": "China has no citizenship-by-investment program. The Nationality Law of the People's Republic of China (Article 7) provides for naturalization of foreigners who are 'near relatives of Chinese nationals', have 'settled in China', or have 'other legitimate reasons' - no investment pathway is mentioned. China does not recognize dual nationality (Article 3). All naturalization applications are subject to approval by the Ministry of Public Security. Source: https://en.nia.gov.cn/n147418/n147458/c155976/content.html"
   },
   "rbi": {
     "programs": [
@@ -1259,16 +1259,17 @@
   ],
   "data_quality": {
     "completeness": "high",
-    "validation_notes": "Validated 2026-06-13 against live official sources. Key corrections made vs prior record: (1) Russia visa-free expiry corrected from 'September 14, 2026' to 'December 31, 2027' — per MFA spokesperson Guo Jiakun announcement on May 20, 2026 (source: english.www.gov.cn). (2) Corrected visa_free country count in notes from '51 countries' to '50 countries', matching official NIA page (dated 2026-02-17) which lists exactly 50: 35 European, 2 Oceania, 7 Asian, 6 Americas. (3) The Hainan Province group entry has been moved from visa_policy.visa_free to the new visa_policy.regional_policies array where it is properly classified as a regional conditional policy (not a unilateral nationality-based waiver). (4) The 240-hour transit eta entry country list has been corrected: Mexico (MEX) was missing from the South America group — NIA page (dated 2025-07-04) lists 4 South American countries: Argentina, Brazil, Chile, Mexico. (5) Added 5 additional regional policies now documented on the NIA regional policies page (cruise ship groups, Xishuangbanna ASEAN, Guilin ASEAN, Guangdong via HK/Macao, Hainan via HK/Macao). (6) Added english.www.gov.cn/news/202605/21 and english.www.gov.cn/news/202509/02 to source_urls.",
+    "validation_notes": "Validated 2026-06-29 against live official sources. Previous validation: 2026-06-27. This run re-fetched: en.nia.gov.cn/n147418/n147463/c183390/content.html (visa-free list, page still dated 2026-02-17 - no update), en.nia.gov.cn/n147418/n147463/c183412/content.html (240-hour transit, dated 2025-07-04), en.nia.gov.cn/n147418/n147463/c180637/content.html (regional policies, dated 2025-02-14), mfa.gov.cn/wjbzwfwpt/kzx/tzgg/202511/t20251110_11749824.html (MFA FAQ on unilateral visa-free policy - confirms 50 countries and expiry dates), english.www.gov.cn/news/202511/04 (Nov 2025 expansion to Sweden + 40-country extension), english.www.gov.cn/news/202505/28 (Gulf countries trial: original June 8, 2026 expiry), english.www.gov.cn/news/202506/02 (LatAm expansion June 2025), en.nia.gov.cn/n147413/c199828 (NIA news Q1 2026 stats). Key findings: (1) Visa-free list confirmed at exactly 50 countries (35 Europe, 7 Asia, 6 Americas, 2 Oceania) - no expansion beyond 50 confirmed. (2) MFA FAQ page directly confirms: Gulf countries (SAU/OMN/KWT/BHR) originally trialled June 9, 2025-June 8, 2026, then extended to Dec 31, 2026 along with all others. LatAm countries (BRA/ARG/CHL/PER/URY) originally trialled June 1, 2025-May 31, 2026, then extended to Dec 31, 2026. All 48 non-Brunei/non-Russia entries in file correctly show Dec 31, 2026 expiry. (3) Russia extension to December 31, 2027 confirmed. Brunei has no stated expiry - confirmed. (4) NIA Q1 2026 report (April 10, 2026) references visa-free expansion in general statistics but does not enumerate any new countries beyond the 50. (5) No data corrections required - file is accurate as of 2026-06-29.",
     "gaps": [
-      "Full enumerated list of all 158 bilateral mutual visa exemption agreement countries with exact passport types and max stay days was not scraped in full detail — the cs.mfa.gov.cn list page was not re-scraped in this validation run. The NIA summary page confirms 158 agreements exist.",
+      "Full enumerated list of all 158 bilateral mutual visa exemption agreement countries with exact passport types and max stay days was not scraped in full detail - the cs.mfa.gov.cn list page was not re-scraped in this validation run. The NIA summary page confirms 158 agreements exist.",
       "E-visa system eligibility list by nationality was not enumerated from official source. The official portal (evisa.mofa.gov.cn) was not directly scraped.",
       "Specific validity period and exact stay duration granted by the R visa was not found verbatim on official pages.",
-      "Path-to-citizenship timeline from permanent residence is not stated on official sources — China's Nationality Law does not specify a fixed residency period for naturalization.",
+      "Path-to-citizenship timeline from permanent residence is not stated on official sources - China's Nationality Law does not specify a fixed residency period for naturalization.",
       "No official Chinese government source confirms any visa-free / VoA / e-visa rule based on holding a foreign (US, Schengen, UK, Canada, Australia, GCC) visa or residence permit/permanent resident card. China does NOT grant conditional entry based on third-country visas or residence permits.",
       "No OCI (Overseas Citizen of India) cardholder exemption rule found on any official Chinese government source.",
       "Exact list of APEC economies whose ABTCs list 'CHN' as a visa-free destination could not be confirmed from a directly-scraped NIA page.",
-      "Russia's extension announcement was confirmed via english.www.gov.cn summary; direct MFA press conference transcript (mfa.gov.cn) returned maintenance page during validation — the extension fact is corroborated by multiple secondary sources and the official government news summary."
+      "Russia's extension to Dec 31, 2027 confirmed via english.www.gov.cn official announcement; the US Embassy FAQ page (last updated Feb 22, 2026) still shows the older September 14, 2026 expiry and has not been updated. The official english.www.gov.cn source takes precedence.",
+      "Secondary sources (msadvisory.com, visahq.com, travel blogs) cite '77 countries' for China's visa-free list as of 2026; however direct fetch of the official NIA page en.nia.gov.cn/n147418/n147463/c183390/content.html (dated 2026-02-17) lists exactly 50 countries. The 77-country figure may aggregate the unilateral list (50) + transit program (55) or include bilateral agreements - it is not reflected in the official NIA unilateral page and was NOT adopted. Monitor for any future NIA page update that confirms an expanded list."
     ]
   },
   "sources_checked": [
@@ -1282,14 +1283,21 @@
     "https://en.nia.gov.cn/n147413/c187308/content.html",
     "https://en.nia.gov.cn/n147423/n147478/n147725/c158356/content.html",
     "https://en.nia.gov.cn/n147418/n147463/c156110/content.html",
+    "https://en.nia.gov.cn/n147413/c199828/content.html",
     "https://english.www.gov.cn/news/202605/21/content_WS6a0e5466c6d00ca5f9a0b24c.html",
     "https://english.www.gov.cn/news/202509/02/content_WS68b6ce1ac6d0868f4e8f5437.html",
     "https://english.www.gov.cn/news/202511/04/content_WS69094ae0c6d00ca5f9a07472.html",
     "https://english.www.gov.cn/news/202511/04/content_WS690964b0c6d00ca5f9a0749d.html",
+    "https://english.www.gov.cn/news/202506/02/content_WS683cebdac6d0868f4e8f3071.html",
+    "https://english.www.gov.cn/news/202505/28/content_WS68390156c6d0868f4e8f2f9b.html",
+    "https://english.www.gov.cn/news/202505/15/content_WS6825a468c6d0868f4e8f2912.html",
+    "https://english.www.gov.cn/news/202505/22/content_WS682e6113c6d0868f4e8f2b86.html",
     "https://english.www.gov.cn/policies/latestreleases/202508/14/content_WS689dd0d3c6d0868f4e8f4d1e.html",
     "https://newyork.china-consulate.gov.cn/eng/tzgg/202511/t20251118_11754975.htm",
     "https://en.tj.gov.cn/services/ForeignServiceChecklist/EntryandExit/TIANJIN_ENTRY_EXIT_SERVICES_GUIDE/ENTRY_AND_EXIT_VISA/202402/t20240221_6541512.html",
     "https://www.mfa.gov.cn/eng/xw/fyrbt/lxjzh/202605/t20260522_11916315.html",
-    "https://www.mfa.gov.cn/mfa_eng/xw/fyrbt/lxjzh/202605/t20260518_11912625.html"
+    "https://www.mfa.gov.cn/mfa_eng/xw/fyrbt/lxjzh/202605/t20260518_11912625.html",
+    "https://www.mfa.gov.cn/wjbzwfwpt/kzx/tzgg/202511/t20251110_11749824.html",
+    "https://us.china-embassy.gov.cn/eng/lsfw/zj/notice/202412/t20241224_11516392.htm"
   ]
 }

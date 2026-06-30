@@ -6,37 +6,70 @@
   "visa_policy": {
     "visa_free": [
       {
+        "nationality": "Burundi",
+        "iso3": "BDI",
+        "max_stay_days": 90,
+        "notes": "Burundian nationals may enter DRC without a visa. Confirmed as visa-exempt on the official Kinshasa N'djili Airport (Aéroport de Kinshasa) visa conditions page. Max stay 90 days per Wikipedia citing the same source. No bilateral agreement effective date available from an official DRC .gouv.cd domain source.",
+        "source_url": "https://www.aeroport-kinshasa.com/en/visa_on_arrival_congo.php",
+        "source_official": true
+      },
+      {
+        "nationality": "Congo (Republic of the)",
+        "iso3": "COG",
+        "max_stay_days": 90,
+        "notes": "Citizens of the Republic of the Congo (Congo-Brazzaville) may enter DRC without a visa. Confirmed as visa-exempt on the official Kinshasa N'djili Airport visa conditions page. Max stay 90 days per Wikipedia citing the same source. No specific bilateral agreement date available from an official DRC .gouv.cd source.",
+        "source_url": "https://www.aeroport-kinshasa.com/en/visa_on_arrival_congo.php",
+        "source_official": true
+      },
+      {
         "nationality": "Kenya",
         "iso3": "KEN",
         "max_stay_days": 30,
-        "notes": "Reciprocal visa waiver effective September 1, 2023. DRC lifted visa restrictions for Kenyan nationals on the same date that Kenya waived requirements for Congolese nationals (effective August 25, 2023). Announced by the DRC Directorate General of Migration (DGM). Maximum stay of 30 days confirmed on the Kenya side of the reciprocal agreement. Purpose: tourism and business.",
-        "source_url": "https://www.eac.int/press-releases/2871-eac-lauds-the-republic-of-kenya-and-the-united-republic-of-tanzania-for-waiving-visa-requirements-for-citizens-of-the-democratic-republic-of-congo",
+        "notes": "Reciprocal visa waiver effective September 1, 2023. DRC lifted visa restrictions for Kenyan nationals on the same date that Kenya waived requirements for Congolese nationals (effective August 25, 2023). Confirmed visa-free by the official DRC Embassy in Nairobi (ambardcke.org): 'For Kenyans, entry to the DRC is Visa-Free.' Maximum stay of 30 days confirmed per the Kenya-DRC joint visa waiver program (Fragomen, Africanews, EAC press release). Note: The Kinshasa Airport official page (aeroport-kinshasa.com) re-verified June 2026 still lists Kenya under 'visa-on-arrival' (7-day airport visa), which appears operationally outdated relative to the September 2023 waiver. The DRC Embassy in Nairobi (official DRC source) overrides the airport page.",
+        "source_url": "https://ambardcke.org/obtaining-a-visa/",
+        "source_official": true
+      },
+      {
+        "nationality": "Rwanda",
+        "iso3": "RWA",
+        "max_stay_days": 90,
+        "notes": "Rwandan nationals may enter DRC without a visa. Confirmed as visa-exempt on the official Kinshasa N'djili Airport visa conditions page. Max stay 90 days per Wikipedia. No specific bilateral exemption agreement date available from an official DRC .gouv.cd source.",
+        "source_url": "https://www.aeroport-kinshasa.com/en/visa_on_arrival_congo.php",
         "source_official": true
       },
       {
         "nationality": "Tanzania",
         "iso3": "TZA",
         "max_stay_days": null,
-        "notes": "DRC officially waived visa requirements for Tanzanian citizens effective March 20, 2025. Reciprocal arrangement — Tanzania had waived visa fees for Congolese travelers effective September 2, 2023. Announced by Tanzania's Ministry of Foreign Affairs and East African Cooperation. Maximum stay not officially specified from a DRC official source. Part of EAC Common Market Protocol implementation.",
-        "source_url": "https://www.eac.int/press-releases/2871-eac-lauds-the-republic-of-kenya-and-the-united-republic-of-tanzania-for-waiving-visa-requirements-for-citizens-of-the-democratic-republic-of-congo",
-        "source_official": true
+        "notes": "DRC officially waived visa requirements for Tanzanian citizens effective March 20, 2025. Announced by Tanzania's Ministry of Foreign Affairs and East African Cooperation; DRC reciprocated Tanzania's earlier elimination of visa fees for Congolese travelers (effective September 1, 2023). Part of EAC Common Market Protocol implementation. Wikipedia (May 2026 update) lists Tanzania in the 90-day visa-free group, but no official DRC .gouv.cd source specifies the max stay duration for Tanzania; max_stay_days kept null. Note: the Kinshasa Airport official page (aeroport-kinshasa.com) re-verified June 2026 still lists Tanzania under 'visa-on-arrival' (7-day airport visa); that page appears to predate the March 2025 waiver. The ministerial announcement supersedes the airport page.",
+        "source_url": "https://www.thecitizen.co.tz/tanzania/news/east-africa-news/drc-waives-visa-requirements-for-tanzanians-4975294",
+        "source_official": false
       },
       {
-        "nationality": "Uganda",
-        "iso3": "UGA",
-        "max_stay_days": null,
-        "notes": "Reciprocal visa waiver agreed during 8th Ordinary Session of the Joint Permanent Commission between Uganda and DRC on October 21, 2023, in Kinshasa. Uganda lifted visa requirements for DRC nationals effective January 1, 2024. The reciprocal DRC waiver for Ugandans was agreed in the same declaration. Maximum stay not specified in the official EAC press release. Implementation consistency is uncertain — some aggregator sources indicate Ugandans may still be required to obtain a visa in practice; confirmed direction is Uganda admits DRC nationals, but full confirmation of DRC admitting Ugandans without visa from an official DRC domain was not found.",
-        "source_url": "https://www.eac.int/press-releases/2889-eac-lauds-the-republic-of-uganda-and-the-democratic-republic-of-congo-for-waiving-visa-requirements-for-their-citizens",
+        "nationality": "Zimbabwe",
+        "iso3": "ZWE",
+        "max_stay_days": 90,
+        "notes": "Zimbabwean nationals may enter DRC without a visa for tourism/general purposes. Confirmed as visa-exempt on the official Kinshasa N'djili Airport visa conditions page and per Wikipedia. IMPORTANT: In April 2025, DRC abolished the visa exemption specifically for Zimbabwean transport drivers, who now require a 30-day visa costing USD 50. General tourist/ordinary visitor visa-free status remains in place. Max stay 90 days per Wikipedia. No specific bilateral agreement effective date available from an official DRC .gouv.cd source.",
+        "source_url": "https://www.aeroport-kinshasa.com/en/visa_on_arrival_congo.php",
         "source_official": true
       }
     ],
-    "visa_on_arrival": [],
+    "visa_on_arrival": [
+      {
+        "nationality": "Mauritius",
+        "iso3": "MUS",
+        "max_stay_days": 7,
+        "notes": "Mauritian nationals may obtain a visa on arrival at Kinshasa N'djili Airport (airport visa / visa aéroportuaire) valid for 7 days. After 7 days the holder must regularise their stay with migration authorities. Confirmed on the official Kinshasa Airport visa conditions page re-verified June 2026. No fee specified for the Mauritius VOA on the airport page specifically.",
+        "source_url": "https://www.aeroport-kinshasa.com/en/visa_on_arrival_congo.php",
+        "source_official": true
+      }
+    ],
     "e_visa": [
       {
         "nationality": "All eligible nationalities (nationals of countries with no DRC diplomatic representation, or any foreigner travelling for business or tourism)",
         "iso3": null,
         "max_stay_days": 7,
-        "notes": "Three types of e-visa (visa volant) are offered: ordinary flying visa (visa volant ordinaire), specific flying visa (visa volant spécifique), and family visit flying visa (visa volant pour visite de famille). Eligible applicants per FAQ: (A) nationals of countries without DRC diplomatic representation; (B) foreigners wishing to visit for business; (C) foreigners wishing to visit for tourism. Total e-visa cost: USD 300 (USD 50 non-refundable admin fees + USD 250 visa fee). Processing time: 72 hours. Upon arrival, the e-visa holder receives a VAP (Visa Aéroportuaire / airport visa) valid for 7 days; the VAP costs USD 90 payable at the border entry point. The e-visa is valid for use within 3 months of issue date. Single entry. Applicable at any DRC border post (air, land, river/lake).",
+        "notes": "Three types of e-visa (visa volant) are offered: ordinary flying visa (visa volant ordinaire), specific flying visa (visa volant spécifique), and family visit flying visa (visa volant pour visite de famille). Eligible applicants per FAQ: (A) nationals of countries without DRC diplomatic representation; (B) foreigners wishing to visit for business; (C) foreigners wishing to visit for tourism. Total e-visa cost: USD 300 (USD 50 non-refundable admin fees + USD 250 visa fee). Processing time: 72 hours. Upon arrival, the e-visa holder receives a VAP (Visa Aéroportuaire / airport visa) valid for 7 days; the VAP costs USD 90 payable at the border entry point. The e-visa is valid for use within 3 months of issue date. Single entry. Applicable at any DRC border post (air, land, river/lake). System introduced/relaunched in early 2025 per official DGM/evisa.gouv.cd portal.",
         "source_url": "https://evisa.gouv.cd/helps/faqs",
         "source_official": true
       }
@@ -46,12 +79,214 @@
       "https://evisa.gouv.cd/",
       "https://evisa.gouv.cd/helps/faqs",
       "https://dgm.cd/",
+      "https://ambardcke.org/obtaining-a-visa/",
       "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
       "https://www.eac.int/press-releases/2871-eac-lauds-the-republic-of-kenya-and-the-united-republic-of-tanzania-for-waiving-visa-requirements-for-citizens-of-the-democratic-republic-of-congo",
-      "https://www.eac.int/press-releases/2889-eac-lauds-the-republic-of-uganda-and-the-democratic-republic-of-congo-for-waiving-visa-requirements-for-their-citizens"
+      "https://www.eac.int/press-releases/2889-eac-lauds-the-republic-of-uganda-and-the-democratic-republic-of-congo-for-waiving-visa-requirements-for-their-citizens",
+      "https://ambardcparis.com/en/visas/",
+      "https://www.aeroport-kinshasa.com/en/visa_on_arrival_congo.php",
+      "https://www.thecitizen.co.tz/tanzania/news/east-africa-news/drc-waives-visa-requirements-for-tanzanians-4975294",
+      "https://en.wikipedia.org/wiki/Visa_policy_of_the_Democratic_Republic_of_the_Congo"
     ],
-    "notes": "DRC requires a visa for entry for most foreign nationals. The official e-visa portal evisa.gouv.cd (operated by the Direction Générale de Migration under the .gouv.cd domain) confirms the flying visa (e-visa) system and its fees. The official DGM website (dgm.cd) does not publish a public list of visa-exempt or visa-on-arrival nationalities. As of 2023–2025, DRC has entered into reciprocal visa-free arrangements with EAC partner states Kenya (effective September 1, 2023), Tanzania (effective March 20, 2025), and Uganda (agreed October 21, 2023; Uganda side effective January 1, 2024). These waivers were confirmed through EAC official press releases. US citizens: the DRC Embassy in Washington DC (ambadrcusa.org) notes that DRC and USA signed a visa reciprocity agreement; a 2-year visa for US citizens costs USD 185. Visa types at embassies: airport transit (USD 45 one-way / USD 75 roundtrip), single entry (USD 100–400 depending on validity), multiple entry (USD 120–450 depending on validity)."
+    "notes": "DRC requires a visa for entry for most foreign nationals. The official e-visa portal evisa.gouv.cd (operated by the Direction Générale de Migration under the .gouv.cd domain) confirms the flying visa (e-visa) system and its fees. The official DGM website (dgm.cd) does not publish a public list of visa-exempt or visa-on-arrival nationalities. The Kinshasa N'djili Airport official page (aeroport-kinshasa.com) is an operational list, though it is partially outdated - re-verified June 2026, it still shows Kenya and Tanzania as 'visa-on-arrival' contrary to post-2023/2025 waiver agreements. As of 2023–2025, DRC has visa-free arrangements with: Burundi, Republic of Congo, Kenya (effective September 1, 2023, 30 days), Rwanda, Tanzania (effective March 20, 2025, max stay unspecified), and Zimbabwe (general visitors; transport driver exemption abolished April 2025). Uganda: DRC and Uganda removed visa fees only (not requirements) in a 2023 agreement; full visa-free is not yet in force as of 2026. Mauritius: visa-on-arrival (7-day airport visa). US citizens: DRC Embassy in Washington DC notes a US-DRC reciprocity agreement; 2-year visa costs USD 185."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visa Volant Ordinaire (Ordinary Flying Visa / e-Visa for Tourism)",
+      "purpose": "Allows foreign nationals to visit the DRC for tourism purposes. Issued online via the official e-visa portal operated by the Direction Générale de Migration.",
+      "max_stay_days": 7,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 300,
+      "processing_days_min": 3,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gouv.cd/",
+      "notes": "Total cost is USD 300 (USD 50 non-refundable admin fee + USD 250 visa fee). Upon arrival at the border, the holder receives a VAP (Visa Aéroportuaire / airport visa) valid for 7 days, at an additional cost of USD 90 payable at the border post. The e-visa itself is valid for 3 months from issuance. Eligible for nationals of countries without DRC diplomatic representation, and any foreigner wishing to visit for tourism."
+    },
+    {
+      "category": "business",
+      "name": "Visa Volant Spécifique (Specific Flying Visa / e-Visa for Business)",
+      "purpose": "Allows foreign nationals to visit the DRC for business purposes. Issued online via the official e-visa portal.",
+      "max_stay_days": 7,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 300,
+      "processing_days_min": 3,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gouv.cd/",
+      "notes": "Total cost is USD 300 (USD 50 non-refundable admin fee + USD 250 visa fee). VAP (airport visa) of USD 90 payable at border upon arrival; VAP valid for 7 days. E-visa valid for 3 months from issuance. Eligible for nationals of countries without DRC diplomatic representation, and any foreigner wishing to visit for business."
+    },
+    {
+      "category": "family",
+      "name": "Visa Volant pour Visite de Famille (Family Visit Flying Visa / e-Visa)",
+      "purpose": "Allows foreign nationals to visit family members residing in the DRC. Issued online via the official e-visa portal.",
+      "max_stay_days": 7,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 300,
+      "processing_days_min": 3,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gouv.cd/",
+      "notes": "One of the three officially listed e-visa (visa volant) categories on the official DRC e-visa portal FAQ. Same fee structure as other e-visa types: USD 300 total + USD 90 VAP at border. VAP valid for 7 days."
+    },
+    {
+      "category": "tourist",
+      "name": "Single-Entry Short-Stay Visa (Embassy Issued - 1 Month)",
+      "purpose": "Standard short-stay visa for entry into the DRC for tourism or general purposes, issued at DRC embassies and consulates abroad.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambardcparis.com/en/visas/",
+      "notes": "Fee at DRC Embassy Paris: €85 for single entry, 1 month. Express processing available for additional €50. Applications must be submitted at least 7 days before planned departure. Fees vary by embassy; ambadrcusa.org lists USD 100–400 for single entry depending on validity. Consular fees are non-refundable. Visa approval subject to National Provisional Commission for Visa Granting."
+    },
+    {
+      "category": "tourist",
+      "name": "Multiple-Entry Short-Stay Visa (Embassy Issued - 1 to 6 Months)",
+      "purpose": "Allows multiple entries into the DRC during the validity period. Issued at DRC embassies and consulates for tourism or general purposes.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambardcparis.com/en/visas/",
+      "notes": "Fee at DRC Embassy Paris: €115–€310 depending on validity (1–6 months). Express processing available for additional €50. DRC Embassy in Washington DC (ambadrcusa.org) lists multiple-entry at USD 120–450. Double-entry variant also available at intermediate pricing. Visa approved by National Provisional Commission for Visa Granting."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa",
+      "purpose": "Permits transit through a DRC airport without entering the country proper, for passengers connecting to onward flights.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 45,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "USD 45 for one-way transit; USD 75 for roundtrip transit, per DRC Embassy Washington DC (ambadrcusa.org). Issued at DRC embassies and consulates abroad."
+    },
+    {
+      "category": "work",
+      "name": "Visa de Travail (Work Visa / Temporary Work Authorization)",
+      "purpose": "Authorises foreign nationals to enter the DRC for employment purposes. Initial temporary work authorisation is limited to 6 consecutive months.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "After the initial temporary work visa period (up to 6 months), the foreign worker may qualify for an Establishment Visa (Visa d'Établissement) with a minimum 1-year validity. Facilitation for initial investments over USD 200,000 is available via ANAPI (National Agency for Investment Promotion). Specific fee not published on official sources consulted."
+    },
+    {
+      "category": "other",
+      "name": "Visa d'Établissement - Régulier (Regular Establishment Visa)",
+      "purpose": "Long-stay residence visa for foreign nationals wishing to settle in the DRC without a specific professional or matrimonial basis.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "One of five subtypes of the Establishment Visa (Visa d'Établissement): Regular, Professional, Studies, Matrimonial, and Permanent. Minimum validity of 1 year. Grants resident status and authorises activities under conditions set by law."
+    },
+    {
+      "category": "work",
+      "name": "Visa d'Établissement - Professionnel (Professional Establishment Visa)",
+      "purpose": "Long-stay residence visa for foreign nationals establishing themselves in the DRC for professional or economic activities.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "Professional subtype of the Establishment Visa. Typically follows an initial temporary work visa (up to 6 months). Authorises professional or economic activities."
+    },
+    {
+      "category": "student",
+      "name": "Visa d'Établissement - Études (Studies Establishment Visa)",
+      "purpose": "Long-stay residence visa for foreign nationals pursuing academic studies in the DRC.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "Studies subtype of the Establishment Visa (Visa d'Établissement). One of five official subtypes noted on the DRC Embassy USA website."
+    },
+    {
+      "category": "family",
+      "name": "Visa d'Établissement - Matrimonial (Matrimonial Establishment Visa)",
+      "purpose": "Long-stay residence visa for foreign nationals married to a DRC national or resident, allowing family reunification in the DRC.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "Matrimonial subtype of the Establishment Visa. One of five official subtypes. Authorises residence based on marital ties."
+    },
+    {
+      "category": "other",
+      "name": "Visa d'Établissement - Permanent (Permanent Establishment Visa)",
+      "purpose": "Permanent residence authorisation for foreign nationals who have met the requirements for long-term settlement in the DRC.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "Permanent subtype of the Establishment Visa (Visa d'Établissement Permanent). One of five official subtypes noted on the DRC Embassy USA website. Specific eligibility criteria and fees not published on official sources consulted."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Visa Diplomatique / de Service (Diplomatic and Service Visa)",
+      "purpose": "Visa-free entry for holders of diplomatic, service, and United Nations travel documents, in accordance with bilateral agreements and international protocols.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambardcparis.com/en/visas/",
+      "notes": "Per DRC Embassy Paris: special passports such as Diplomatic, Service, and United Nations travel documents are issued visas free of charge. Russia-DRC bilateral agreement (signed 27 July 2023) grants 90-day visa-free stay for diplomatic and service passport holders of both countries. Wikipedia also confirms diplomatic/official passport exemptions for Angola (on duty), Iran, South Africa, Turkey, and UAE (diplomatic only). Similar bilateral agreements exist with other states. DRC embassies issue diplomatic visas under diplomatic conventions."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -82,18 +317,20 @@
     "programs": []
   },
   "agreements": [
-    "EAC (East African Community) — DRC member state since July 2022; EAC Common Market Protocol requires visa-free movement among partner states",
-    "SADC (Southern African Development Community) — DRC is a member state per sadc.int",
-    "COMESA (Common Market for Eastern and Southern Africa) — DRC is a member state per comesa.int"
+    "EAC (East African Community) - DRC member state since July 2022; EAC Common Market Protocol requires visa-free movement among partner states",
+    "SADC (Southern African Development Community) - DRC is a member state per sadc.int",
+    "COMESA (Common Market for Eastern and Southern Africa) - DRC is a member state per comesa.int"
   ],
   "official_domains": [
     "evisa.gouv.cd",
     "dgm.cd",
+    "ambardcke.org",
     "ambadrcusa.org",
     "eac.int",
     "sadc.int",
     "comesa.int",
-    "mid.ru"
+    "mid.ru",
+    "aeroport-kinshasa.com"
   ],
   "conditional_access": [
     {
@@ -106,35 +343,58 @@
       "conditions": "Agreement between the Government of the Russian Federation and the Government of the Democratic Republic of the Congo on visa-free travel for holders of diplomatic and service passports, signed 27 July 2023 on the sidelines of the second Russia-Africa Summit in St. Petersburg. Citizens of either state holding a valid diplomatic or service passport may enter, leave, transit and stay in the territory of the other state without a visa for 90 days from the date of entry. Agreement enters into force 90 days after both parties complete domestic procedures and notify each other through diplomatic channels. Entry into force date not independently confirmed from a DRC official source.",
       "source_url": "https://mid.ru/en/foreign_policy/news/1898777/",
       "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Uganda"],
+      "passport_types": ["ordinary"],
+      "credential": null,
+      "level": "visa_free_pending",
+      "max_stay_days": null,
+      "conditions": "DRC and Uganda agreed to mutually waive visa FEE requirements during their 8th Joint Permanent Commission meeting on October 21, 2023 in Kinshasa. This was a removal of visa fees, not a full visa exemption. Multiple 2026 sources confirm Ugandan citizens still require a DRC sticker visa - the agreement has not yet been fully implemented as visa-free ordinary travel. Remains in conditional_access as visa_free_pending.",
+      "source_url": "https://www.eac.int/press-releases/2889-eac-lauds-the-republic-of-uganda-and-the-democratic-republic-of-congo-for-waiving-visa-requirements-for-their-citizens",
+      "source_official": true
     }
   ],
   "data_quality": {
     "completeness": "medium",
     "gaps": [
-      "Maximum stay duration for Tanzania and Uganda visa-free entry is not specified in any official DRC government source; only the Kenya reciprocal (30 days) is confirmed from the Kenya-side of the agreement.",
-      "Implementation consistency for the Uganda waiver is uncertain: the EAC press release confirms the agreement was made, but some travel aggregators still report Ugandans require a visa for DRC entry, suggesting the DRC-side waiver may not yet be fully implemented or enforced.",
+      "Maximum stay duration for Tanzania visa-free entry is not specified in any official DRC government source; the March 2025 waiver announcement from Tanzania's MoFA does not specify a max stay on the DRC side. Wikipedia (May 2026) generalises all 6 visa-free countries as 90 days, but this is not confirmed from an official DRC source.",
+      "The Kinshasa Airport official page (aeroport-kinshasa.com) re-verified June 2026 still lists Kenya and Tanzania as visa-on-arrival (7-day airport visa); it predates the 2023 Kenya waiver and March 2025 Tanzania waiver. Operational ground truth may differ from announced policy.",
+      "Burundi, Republic of Congo, and Rwanda visa-free status is confirmed on the Kinshasa Airport official page and Wikipedia, but no official DRC .gouv.cd government page was accessible to independently confirm these exemptions. Kept as visa_free given consistency of sources.",
+      "Zimbabwe general visa-free status is confirmed on the Kinshasa Airport page; April 2025 abolished the specific transport driver exemption. Unclear whether any broader Zimbabwe category has changed. A .gouv.cd confirmation is not available.",
+      "Uganda visa-free status: the October 2023 agreement removed visa FEES, not requirements. Multiple 2026 aggregator sources confirm Ugandan citizens still need a DRC sticker visa. Remains correctly in conditional_access as visa_free_pending. Full implementation status as of June 2026 not confirmed from an official DRC source.",
+      "Chad: a visa-free agreement was signed June 26, 2024 per Wikipedia, but is listed as pending / not yet in force. No official DRC source confirms implementation.",
       "The official DGM website (dgm.cd) does not publish a public navigable visa policy section with nationality-by-nationality breakdowns.",
       "No official Ministry of Foreign Affairs website for DRC (minaffet.gouv.cd or diplomatie.gouv.cd) was found to be publicly accessible with visa policy content.",
       "No official information found on citizenship-by-investment, golden visa, or investor residence programs.",
       "No official information found on digital nomad, startup, or fast-track skilled-worker visa schemes.",
       "No official DRC government source confirms visa-free or visa-on-arrival entry for holders of third-country credentials (US visa, Schengen visa, UK visa, Canadian visa, resident permits, permanent residence, OCI cards). Multiple aggregator sites claim such rules exist, but these could not be confirmed on any official DRC source.",
       "The Russia-DRC agreement (mid.ru, signed 27 July 2023) specifies the agreement enters force 90 days after both parties complete domestic procedures. Entry into force date has not been independently confirmed from a DRC official source.",
-      "Other diplomatic/service passport bilateral agreements (Angola, South Africa, UAE, Iran, Turkey) were mentioned in non-official sources but could not be confirmed from official DRC or counterpart government sources.",
+      "Other diplomatic/service passport bilateral agreements (Angola, South Africa, UAE, Iran, Turkey) were confirmed via Wikipedia but not independently confirmed from official DRC or counterpart government domains.",
       "DRC's COMESA Protocol on Free Movement of Persons ratification/implementation status not confirmed from official sources.",
-      "SADC Protocol on Facilitation of Movement of Persons — DRC implementation status not confirmed from official sources.",
-      "Status of Burundi and Rwanda as potentially visa-free based on EAC membership not confirmed from any official DRC source."
+      "SADC Protocol on Facilitation of Movement of Persons - DRC implementation status not confirmed from official sources.",
+      "evisa.gouv.cd portal returned empty content on June 2026 re-fetch (JavaScript-rendered). E-visa details retained from prior confirmed session and consistent with secondary sources including dgm.cd reference to the portal."
     ],
     "validation_notes": [
-      "ADDED: Kenya (KEN) to visa_free with 30-day max stay, effective September 1, 2023 — confirmed via EAC official press release (eac.int) citing DGM announcement.",
-      "ADDED: Tanzania (TZA) to visa_free, effective March 20, 2025 — confirmed via Tanzania MoFA announcement reported in The Citizen; max stay not officially confirmed.",
-      "ADDED: Uganda (UGA) to visa_free — EAC official press release confirms reciprocal waiver agreed October 21, 2023; implementation date for Uganda admitting DRC nationals was January 1, 2024; DRC-side waiver included in same agreement but implementation on ground is uncertain.",
-      "ADDED: EAC membership to agreements list (DRC joined July 2022), as EAC is the legal basis for the Kenya/Tanzania/Uganda waivers.",
-      "UPDATED: data_quality.completeness from 'low' to 'medium' reflecting the newly confirmed EAC visa-free entries.",
-      "RETAINED: Russia conditional_access entry (diplomatic/service passports, 90 days) — source mid.ru still cited and valid.",
-      "RETAINED: e-visa entry unchanged — evisa.gouv.cd was not accessible for live re-verification but all available secondary and official sources confirm the same fee structure (USD 300 + USD 90 VAP, 7-day VAP, 72-hour processing).",
-      "RETAINED: cbi has_program=false — no new official source found for any CBI program.",
-      "RETAINED: rbi Establishment Visa — ambadrcusa.org confirmed this is still current.",
-      "NO CHANGE: visa_on_arrival remains empty — no official DRC source confirms any nationality-specific VOA scheme."
+      "(2026-06-29) RE-VERIFIED: Kenya (KEN) visa_free status confirmed via DRC Embassy Nairobi (ambardcke.org official source): 'For Kenyans, entry to the DRC is Visa-Free.' Source updated to ambardcke.org. Max stay 30 days retained as confirmed by Fragomen and EAC press release. Airport page discrepancy (airport page still shows Kenya as VOA) noted - airport page considered outdated relative to the DRC Embassy Nairobi official statement.",
+      "(2026-06-29) RE-VERIFIED: Kinshasa Airport page (aeroport-kinshasa.com) re-fetched June 2026. Confirmed visa-exempt: Burundi, Congo Brazzaville, Rwanda, Zimbabwe. Confirmed visa-on-arrival (7-day): Kenya, Mauritius, Tanzania. Airport page appears outdated for Kenya and Tanzania; DRC Embassy Nairobi (Kenya) and ministerial waiver (Tanzania, March 2025) override.",
+      "(2026-06-29) RE-VERIFIED: Uganda remains visa_free_pending. 2026 aggregator sources confirm Ugandan citizens still require DRC sticker visa. Conditional_access entry unchanged.",
+      "(2026-06-29) RE-VERIFIED: Tanzania (TZA) remains visa_free per March 2025 DRC ministerial waiver. Max stay null retained - no official DRC source specifies duration. Wikipedia's 90-day figure noted in gaps but not adopted without official DRC confirmation.",
+      "(2026-06-29) RE-VERIFIED: evisa.gouv.cd returned empty (JS-rendered). E-visa entry retained unchanged; consistent with dgm.cd reference to portal and secondary sources.",
+      "(2026-06-29) RE-VERIFIED: cbi has_program=false - no new official source found for any CBI program.",
+      "(2026-06-29) RE-VERIFIED: rbi Establishment Visa - ambadrcusa.org confirmed still current.",
+      "(2026-06-29) ADDED: ambardcke.org (DRC Embassy Kenya) to official_domains.",
+      "(2026-06-27) ADDED: Burundi (BDI) to visa_free with 90-day max stay - confirmed on official Kinshasa N'djili Airport (aeroport-kinshasa.com) visa conditions page and consistent with Wikipedia citing same source.",
+      "(2026-06-27) ADDED: Republic of Congo/Congo-Brazzaville (COG) to visa_free with 90-day max stay - confirmed on official Kinshasa Airport visa conditions page and Wikipedia.",
+      "(2026-06-27) ADDED: Rwanda (RWA) to visa_free with 90-day max stay - confirmed on official Kinshasa Airport visa conditions page and Wikipedia.",
+      "(2026-06-27) ADDED: Zimbabwe (ZWE) to visa_free with 90-day max stay - confirmed on Kinshasa Airport official page; note transport driver exemption abolished April 2025.",
+      "(2026-06-27) ADDED: Mauritius (MUS) to visa_on_arrival with 7-day max stay - confirmed on official Kinshasa Airport visa conditions page.",
+      "(2026-06-27) REMOVED: Uganda (UGA) from visa_free - the October 2023 DRC-Uganda agreement removed visa FEES only, not visa requirements. Wikipedia explicitly states the agreement is pending / not yet in force for full visa-free travel. Moved Uganda to conditional_access as visa_free_pending.",
+      "(2026-06-27) RETAINED: Kenya (KEN) in visa_free at 30 days - EAC official press release (eac.int) confirms DRC lifted visa restrictions for Kenyans effective September 1, 2023.",
+      "(2026-06-27) RETAINED: Tanzania (TZA) in visa_free - DRC officially waived visa requirements effective March 20, 2025 per Tanzania MoFA announcement. Max stay still unspecified.",
+      "(2026-06-27) RETAINED: Russia conditional_access (diplomatic/service passports, 90 days) - source mid.ru still cited and valid.",
+      "(2026-06-27) RETAINED: e-visa entry - evisa.gouv.cd not directly accessible (JS-rendered) but DGM and secondary sources confirm same fee structure."
     ]
   },
   "outbound_official": {
@@ -146,43 +406,73 @@
       "url": "https://evisa.gouv.cd/",
       "domain": "evisa.gouv.cd",
       "official": true,
-      "notes": "Official DRC e-visa portal operated by Direction Générale de Migration (.gouv.cd domain). Page returned empty content on re-fetch — likely JavaScript-rendered; previously confirmed content treated as accurate."
+      "notes": "Official DRC e-visa portal operated by Direction Générale de Migration (.gouv.cd domain). Page returned empty content on re-fetch June 2026 - JavaScript-rendered; prior session content treated as accurate. System relaunched early 2025."
     },
     {
       "url": "https://evisa.gouv.cd/helps/faqs",
       "domain": "evisa.gouv.cd",
       "official": true,
-      "notes": "Official FAQ: e-visa types, costs (USD 300 total), processing (72 hrs), VAP (7 days, USD 90), 3-month validity. Page returned empty on re-fetch (JS-rendered); prior session content confirmed consistent with secondary sources."
+      "notes": "Official FAQ: e-visa types, costs (USD 300 total), processing (72 hrs), VAP (7 days, USD 90), 3-month validity. Page returned empty on re-fetch June 2026 (JS-rendered); prior session content confirmed consistent with secondary sources."
     },
     {
       "url": "https://dgm.cd/",
       "domain": "dgm.cd",
       "official": true,
-      "notes": "Official Direction Générale de Migration website; confirms DGM mandate and references evisa.gouv.cd portal; no public visa exemption list found; confirms DRC is open to entrepreneurs and tourists."
+      "notes": "Official Direction Générale de Migration website; confirms DGM mandate and references evisa.gouv.cd portal; no public visa exemption list found; confirms DRC is open to entrepreneurs and tourists. Re-verified June 2026."
+    },
+    {
+      "url": "https://ambardcke.org/obtaining-a-visa/",
+      "domain": "ambardcke.org",
+      "official": true,
+      "notes": "Official DRC Embassy in Nairobi, Kenya. Explicitly states: 'For Kenyans, entry to the DRC is Visa-Free.' Re-fetched June 2026. Primary source for Kenya visa-free status, superseding the Kinshasa Airport page which still shows Kenya as visa-on-arrival."
     },
     {
       "url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
       "domain": "ambadrcusa.org",
       "official": true,
-      "notes": "Official DRC Embassy in Washington DC; visa fees confirmed (transit USD 45/75, single entry USD 100–400, multiple entry USD 120–450); US-DRC reciprocity agreement (USD 185, 2-year visa for US citizens); non-US citizens applying via embassy must present Permanent Resident Card, US visa, and I-94 (this is an embassy application requirement, not a conditional entry rule)."
+      "notes": "Official DRC Embassy in Washington DC; visa fees confirmed (transit USD 45/75, single entry USD 100–400, multiple entry USD 120–450); US-DRC reciprocity agreement (USD 185, 2-year visa for US citizens); no visa-exempt nationality list published."
     },
     {
       "url": "https://www.eac.int/press-releases/2871-eac-lauds-the-republic-of-kenya-and-the-united-republic-of-tanzania-for-waiving-visa-requirements-for-citizens-of-the-democratic-republic-of-congo",
       "domain": "eac.int",
       "official": true,
-      "notes": "Official EAC press release confirming Kenya (effective August 25, 2023) and Tanzania (effective September 1, 2023) waived visa requirements for DRC nationals, and DRC reciprocated by lifting visa restrictions for Kenyan nationals effective September 1, 2023."
+      "notes": "Official EAC press release confirming DRC lifted visa restrictions for Kenyan nationals effective September 1, 2023. Does NOT confirm Tanzania receiving reciprocal DRC waiver at the same time. Re-verified June 2026."
     },
     {
       "url": "https://www.eac.int/press-releases/2889-eac-lauds-the-republic-of-uganda-and-the-democratic-republic-of-congo-for-waiving-visa-requirements-for-their-citizens",
       "domain": "eac.int",
       "official": true,
-      "notes": "Official EAC press release confirming Uganda and DRC agreed to mutually waive visa requirements during 8th JPC on October 21, 2023 in Kinshasa. Uganda became 3rd EAC state to waive for DRC. Reciprocal — both countries included."
+      "notes": "Official EAC press release confirming Uganda and DRC agreed to mutually waive visa FEE requirements during 8th JPC on October 21, 2023 in Kinshasa. Body text clarifies this was a fee waiver. Uganda citizens confirmed still requiring DRC visa as of 2026."
     },
     {
       "url": "https://mid.ru/en/foreign_policy/news/1898777/",
       "domain": "mid.ru",
       "official": true,
       "notes": "Official Russian Ministry of Foreign Affairs press release dated 28 July 2023: confirms Agreement between Russia and DRC on visa-free travel for diplomatic and service passport holders, signed 27 July 2023 in St. Petersburg. 90-day stay."
+    },
+    {
+      "url": "https://ambardcparis.com/en/visas/",
+      "domain": "ambardcparis.com",
+      "official": true,
+      "notes": "Official DRC Embassy in Paris consular services page. Confirmed visa fee schedule (€85–€310), entry types, express processing surcharge (€50), minimum 7-day advance application, free visas for diplomatic/service/UN travel documents."
+    },
+    {
+      "url": "https://www.aeroport-kinshasa.com/en/visa_on_arrival_congo.php",
+      "domain": "aeroport-kinshasa.com",
+      "official": true,
+      "notes": "Official Kinshasa N'djili International Airport website visa conditions page. Re-fetched June 2026. Lists Burundi, Republic of Congo, Rwanda, Zimbabwe as visa-exempt. Lists Kenya, Mauritius, Tanzania as visa-on-arrival (7-day airport visa). Airport page appears outdated for Kenya (DRC Embassy Nairobi overrides) and Tanzania (March 2025 ministerial waiver overrides). Still valid for Burundi, Congo, Rwanda, Zimbabwe, Mauritius."
+    },
+    {
+      "url": "https://www.thecitizen.co.tz/tanzania/news/east-africa-news/drc-waives-visa-requirements-for-tanzanians-4975294",
+      "domain": "thecitizen.co.tz",
+      "official": false,
+      "notes": "The Citizen (Tanzania) news article confirming DRC waived visa requirements for Tanzanians effective March 20, 2025. Sourced from Tanzania's Ministry of Foreign Affairs and East African Cooperation announcement. Not an official DRC source but corroborates EAC integration path."
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Democratic_Republic_of_the_Congo",
+      "domain": "wikipedia.org",
+      "official": false,
+      "notes": "Wikipedia article on DRC visa policy (updated May 2026, re-checked June 2026). Lists 6 visa-free countries at 90 days: Burundi, Congo, Kenya, Rwanda, Tanzania, Zimbabwe. Lists Uganda and Chad as pending. Lists Mauritius as visa-on-arrival (7 days). Used as cross-reference; not an official source."
     },
     {
       "url": "https://www.sadc.int/member-states",

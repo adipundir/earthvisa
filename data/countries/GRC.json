@@ -294,14 +294,6 @@
         "source_official": true
       },
       {
-        "nationality": "Nauru",
-        "iso3": "NRU",
-        "max_stay_days": 90,
-        "notes": "Visa-free for up to 90 days in any 180-day period per Hellenic Republic MFA country visa table. Note: the consolidated EU Regulation 2018/1806 Annex I lists Nauru as visa required, but the MFA table (authoritative for Greece) shows VISA for all passport types for Nauru — see gap note.",
-        "source_url": "https://www.mfa.gr/en/services/visas-for-foreigners-traveling-to-greece/countries-requiring-or-not-requiring-a-visa/",
-        "source_official": true
-      },
-      {
         "nationality": "New Zealand",
         "iso3": "NZL",
         "max_stay_days": 90,
@@ -497,7 +489,7 @@
         "nationality": "United Kingdom",
         "iso3": "GBR",
         "max_stay_days": 90,
-        "notes": "Visa-free for up to 90 days in any 180-day period per Schengen Regulation (EU) 2018/1806 Annex II (post-Brexit, added April 2019). ETIAS authorization will be required once the system launches (expected Q4 2026). British nationals not qualifying as UK nationals under EU law (BON, BOTC, BOC, British Subjects, British Protected Persons) are also visa-free per MFA table.",
+        "notes": "Visa-free for up to 90 days in any 180-day period per Schengen Regulation (EU) 2018/1806 Annex II (post-Brexit, added April 2019). ETIAS authorization is expected to launch Q4 2026. EU official sources confirm a transitional period of at least 6 months after launch (during which travelers without ETIAS will not be denied entry), followed by a further grace period of at least 6 months; ETIAS carrier checks are not expected to be mandatory until at least Q4 2027. British nationals not qualifying as UK nationals under EU law (BON, BOTC, BOC, British Subjects, British Protected Persons) are also visa-free per MFA table.",
         "source_url": "https://www.mfa.gr/en/services/visas-for-foreigners-traveling-to-greece/countries-requiring-or-not-requiring-a-visa/",
         "source_official": true
       },
@@ -505,7 +497,7 @@
         "nationality": "United States of America",
         "iso3": "USA",
         "max_stay_days": 90,
-        "notes": "Visa-free for ordinary passport holders for up to 90 days in any 180-day period per Schengen Regulation (EU) 2018/1806 Annex II. ETIAS authorization will be required once the system launches (expected Q4 2026). Note: MFA table shows US diplomatic and service passport holders require a VISA — this is an unusual bilateral arrangement. Only ordinary US passport holders are visa-free.",
+        "notes": "Visa-free for ordinary passport holders for up to 90 days in any 180-day period per Schengen Regulation (EU) 2018/1806 Annex II. ETIAS authorization is expected to launch Q4 2026. EU official sources confirm a transitional period of at least 6 months after launch (during which travelers without ETIAS will not be denied entry), followed by a further grace period of at least 6 months; ETIAS carrier checks are not expected to be mandatory until at least Q4 2027. Note: MFA table shows US diplomatic and service passport holders require a VISA - this is an unusual bilateral arrangement. Only ordinary US passport holders are visa-free.",
         "source_url": "https://www.mfa.gr/en/services/visas-for-foreigners-traveling-to-greece/countries-requiring-or-not-requiring-a-visa/",
         "source_official": true
       },
@@ -534,8 +526,235 @@
       "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1806",
       "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203"
     ],
-    "notes": "Greece is a Schengen Area member. Visa policy is governed by EU Regulation 2018/1806 (as amended). Nationals listed in Annex II are exempt from visas for stays up to 90 days in any 180-day period. All other third-country nationals require a Schengen visa (Type C) for short stays, or a National Visa (Type D) for stays exceeding 90 days. The authoritative source is the Hellenic Republic MFA table (last modified 2026-03-17), successfully scraped via Firecrawl stealth proxy. Vanuatu was removed from Annex II and appears as VISA on the MFA table. ETIAS travel authorization is expected to launch Q4 2026 — once live, most visa-free nationals (excluding EU/EEA/Schengen) will need prior ETIAS authorization."
+    "notes": "Greece is a Schengen Area member. Visa policy is governed by EU Regulation 2018/1806 (as amended). Nationals listed in Annex II are exempt from visas for stays up to 90 days in any 180-day period. All other third-country nationals require a Schengen visa (Type C) for short stays, or a National Visa (Type D) for stays exceeding 90 days. The authoritative source is the Hellenic Republic MFA table (last modified 2026-03-17). Vanuatu was removed from Annex II (effective January 2025) and requires a visa. Nauru appears in EU Regulation 2018/1806 Annex II but with a conditional footnote: the exemption applies only from the date of entry into force of a visa waiver agreement between Nauru and the EU; no such agreement has been concluded, so Nauru nationals require a visa in practice. ETIAS travel authorization is expected to launch Q4 2026; a transitional period of at least 6 months follows launch (travelers without ETIAS will not be denied entry during this period), and a further grace period of at least 6 months applies thereafter; ETIAS is not expected to be a mandatory condition of carrier boarding until at least Q4 2027. Sources: home-affairs.ec.europa.eu (April 2026); travel-europe.europa.eu."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Type C) - Tourist/Visit",
+      "purpose": "Authorizes entry into the Schengen Area, including Greece, for tourism, visiting family or friends, or other short-stay purposes not exceeding 90 days in any 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy/applying-schengen-visa_en",
+      "notes": "Standard fee €90 (approx $99 USD). Children aged 6–12 pay €45. Children under 6 are free. Multiple-entry visas may be valid up to 5 years for repeat applicants with good track record. Applied for at the Greek consulate of the applicant's country of residence. Governed by EU Visa Code (Regulation (EC) 810/2009). Applications must be submitted at least 15 days before travel."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Short-Stay Visa (Type C) - Business",
+      "purpose": "Permits entry for business meetings, conferences, trade fairs, negotiations, or other commercial activities for up to 90 days in any 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy/applying-schengen-visa_en",
+      "notes": "Same Type C Schengen visa as tourist; purpose is distinguished by supporting documents (invitation letters from Greek companies, trade fair registrations, etc.). Fee €90. Governed by EU Visa Code (Regulation (EC) 810/2009)."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (Type A)",
+      "purpose": "Required for certain nationalities to pass through the international transit zone of Greek airports without entering the Schengen Area.",
+      "max_stay_days": null,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 88,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0810-20200202",
+      "notes": "Fee €80 (approx $88 USD); children 6–12 pay €40. Maximum validity 6 months for multiple airport transit visas. Only required for nationals of countries listed in Annex IV of the EU Visa Code. Issued by Greek consulates. Does not permit entry into Greek territory outside the airport international zone."
+    },
+    {
+      "category": "student",
+      "name": "National Long-Stay Visa (Type D) - Studies",
+      "purpose": "Allows third-country nationals to enter Greece to pursue full-time studies at a recognized educational institution. Required prior to arriving to apply for a Student Residence Permit.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/adeia-diamonis-gia-spoudes/",
+      "notes": "Issued by Greek embassies/consulates abroad. After arrival, the holder must apply for a Student Residence Permit (Άδεια Διαμονής λόγω Σπουδών), renewable annually for the duration of studies. Governed by Law 4251/2014. Applicants must show proof of enrollment, sufficient funds, and health insurance."
+    },
+    {
+      "category": "work",
+      "name": "National Long-Stay Visa (Type D) - Employment",
+      "purpose": "Grants entry for third-country nationals intending to take up employment in Greece under a contract with a Greek employer.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/prosorini-ergasia/",
+      "notes": "Requires employer sponsorship and labor market test approval. After entry, the worker must convert to a Residence Permit for Employment. Seasonal workers (e.g., agriculture, tourism) may be covered under the Seasonal Worker permit category (Art. 13a, Law 4251/2014). EU nationals are exempt (freedom of movement). Governed by Law 4251/2014 as amended."
+    },
+    {
+      "category": "work",
+      "name": "EU Blue Card (Highly Qualified Worker)",
+      "purpose": "Residence and work permit for third-country nationals who are highly qualified workers employed in Greece, providing preferential treatment and path to long-term residence.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-greece_en",
+      "notes": "Valid 2 years (or employment contract duration + 3 months if shorter). Renewable. Requires employment contract of at least 1 year and salary of at least 1.5x the average gross annual salary in Greece. Blue Card holders enjoy equal treatment with Greek nationals in employment, social security, and education. After 5 years of continuous legal residence, may apply for long-term residence. Governed by EU Blue Card Directive 2009/50/EC transposed into Greek law via Law 4251/2014."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Digital Nomad Visa (Type D) - Remote Work",
+      "purpose": "Allows non-EU/EEA/Swiss nationals who work remotely for employers or clients based entirely outside Greece to reside in Greece while conducting their work.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 1100,
+      "processing_days_min": 14,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/en/",
+      "notes": "Introduced under Law 4825/2021, updated by Law 5038/2023. Minimum monthly income of €3,500 net (€4,200 with a dependent spouse; €4,830 with additional dependents). Application fee approximately €1,000 (visa) plus ~€150 per family member. Initial visa valid 12 months (Type D). After arrival, applicants may apply for a 2-year Digital Nomad Residence Permit, renewable every 2 years. Eligible holders may receive a 50% income tax reduction for up to 7 years. Employer/clients must be based entirely outside Greece."
+    },
+    {
+      "category": "investment",
+      "name": "Golden Visa - Investor Residence Permit",
+      "purpose": "Grants a renewable 5-year residence permit to non-EU nationals who make qualifying investments in Greece, including real estate, government bonds, bank deposits, or startup investments.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/en/golden-visa/",
+      "notes": "Minimum investment thresholds (per Law 5100/2024, effective 31 August 2024): €800,000 for residential/commercial real estate in high-demand zones (Attica, Thessaloniki, islands with 3,100+ inhabitants); €400,000 in all other regions; €250,000 for commercial-to-residential conversion or heritage building restoration; €500,000 in Greek government bonds (3-year minimum maturity); €500,000 in fixed-term Greek bank deposit (1-year minimum); €350,000 in Greek-focused investment fund units; €250,000 in an Elevate Greece-registered startup. Fees: €16 for permit issuance; €2,000 electronic fee for renewals. No minimum stay requirement. Path to citizenship after 7 years of legal residence. Family members included. Short-term (Airbnb-type) rentals prohibited for real estate route."
+    },
+    {
+      "category": "family",
+      "name": "National Long-Stay Visa (Type D) - Family Reunification",
+      "purpose": "Enables family members of legally resident third-country nationals in Greece to join and reside with them under the family reunification framework.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/en/",
+      "notes": "Governed by EU Family Reunification Directive (2003/86/EC) transposed into Greek law. The sponsor must hold a valid Greek residence permit of at least 1 year validity and have reasonable prospects of obtaining permanent residence. Covers spouse, minor children, and in certain cases dependent parents. After entry, family members must apply for their own residence permit at the Aliens and Immigration service."
+    },
+    {
+      "category": "other",
+      "name": "National Long-Stay Visa (Type D) - Economically Independent Persons",
+      "purpose": "Allows financially self-sufficient third-country nationals who do not intend to work in Greece to reside in the country, provided they can demonstrate sufficient regular income from abroad.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/adeia-diamonis-gia-oikonomika-anexartita-atoma/",
+      "notes": "Applicants must demonstrate regular income from abroad (pensions, investments, property income, etc.) sufficient to support themselves and dependents without working in Greece. Similar to a 'retirement/passive income' visa category. Governed by Law 4251/2014. Work is prohibited under this permit. Residence permit initially issued for 2 years and renewable."
+    },
+    {
+      "category": "other",
+      "name": "Humanitarian Residence Permit",
+      "purpose": "Granted to third-country nationals who face exceptional humanitarian circumstances that prevent their return to their country of origin, outside the formal asylum process.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/adeia-diamonis-gia-anthropistikous-logous/",
+      "notes": "Issued on humanitarian grounds (e.g., serious illness, protection from violence, other compelling circumstances). Renewable annually. Governed by Law 4251/2014, Art. 19A. Applicants must be residing in Greece and apply through the local Aliens and Immigration Service. Does not require departure and re-entry."
+    },
+    {
+      "category": "other",
+      "name": "Long-Term Resident Permit (EU)",
+      "purpose": "Grants permanent or long-term residence status to third-country nationals who have legally resided in Greece continuously for at least 5 years, conferring near-equal rights to Greek nationals.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/adeia-epimakron-diamenontos/",
+      "notes": "Based on EU Long-Term Residents Directive (2003/109/EC). Requires 5 years of continuous legal residence in Greece. Holders have the right to work, access social benefits, and move to other EU member states for work or study. Valid for 5 years and renewable. Processing decision should arrive within 6 months (extendable by 3 months) per EU directive requirements."
+    },
+    {
+      "category": "other",
+      "name": "Tech Visa",
+      "purpose": "Allows third-country nationals to enter Greece to work for a registered Greek tech startup, providing fast-track immigration for the technology sector.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/en/",
+      "notes": "Introduced by Greek immigration reforms effective 6 February 2026. Salary must be at least 1.6x the national average gross salary. The Tech Visa cannot be transferred to another employer; immigration status lapses if employment ends. May be converted to an EU Blue Card if eligibility is met. Valid 12 months initially."
+    },
+    {
+      "category": "other",
+      "name": "Talent Visa",
+      "purpose": "Permits entry for highly educated third-country nationals with at minimum a Master's degree from a globally-ranked university to seek employment in Greece.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/en/",
+      "notes": "Introduced by Greek immigration reforms effective 6 February 2026. Requires at minimum a Master's degree (or PhD/Postdoc) from an institution ranked on at least two international university ranking lists. No job offer required at entry. Does not grant immediate work authorization; upon securing employment in Greece, holder can transition to work/residence permits or EU Blue Card. Valid 12 months."
+    },
+    {
+      "category": "work",
+      "name": "Seasonal Worker Permit",
+      "purpose": "Authorizes third-country nationals to enter Greece for temporary seasonal employment, primarily in agriculture and tourism sectors.",
+      "max_stay_days": 270,
+      "validity_days": 270,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.gr/prosorini-ergasia-epochiakoi-ergazomenoi/",
+      "notes": "Governed by Article 13a of Law 4251/2014 and the EU Seasonal Workers Directive (2014/36/EU). Covers seasonal work in agriculture, tourism, and related sectors. Maximum stay varies by sector. Employer must obtain prior authorization from Greek labor authorities before the visa can be issued. Bilateral agreements may govern admission quotas for certain nationalities."
+    }
+  ],
   "conditional_access": [
     {
       "basis": "credential",
@@ -901,7 +1120,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Golden Visa — Investor Residence Permit (Real Estate — High-Demand Zones)",
+        "name": "Golden Visa - Investor Residence Permit (Real Estate - High-Demand Zones)",
         "type": "real_estate",
         "min_amount": 800000,
         "currency": "EUR",
@@ -912,7 +1131,7 @@
         "notes": "Minimum €800,000 investment in residential or commercial real estate in high-demand regions: Attica (Athens area), Thessaloniki area, islands with over 3,100 inhabitants (including Mykonos and Santorini). Single property unit of minimum 120 sq.m. required. Short-term (sharing economy) rentals are prohibited. Grants a renewable 5-year residence permit. Path to citizenship requires 7 years of legal residence with naturalization requirements. Rules introduced by Law 5100/2024, effective 31 August 2024. Transitional periods expired; all new 2026 applications face full thresholds."
       },
       {
-        "name": "Golden Visa — Investor Residence Permit (Real Estate — Other Regions)",
+        "name": "Golden Visa - Investor Residence Permit (Real Estate - Other Regions)",
         "type": "real_estate",
         "min_amount": 400000,
         "currency": "EUR",
@@ -923,7 +1142,7 @@
         "notes": "Minimum €400,000 investment in residential or commercial real estate in all other regions of Greece (outside high-demand zones). Single property unit of minimum 120 sq.m. required. Short-term (sharing economy) rentals are prohibited. Grants a renewable 5-year residence permit. Law 5100/2024, effective 31 August 2024. All new 2026 applications face the full threshold."
       },
       {
-        "name": "Golden Visa — Investor Residence Permit (Commercial/Heritage Conversion)",
+        "name": "Golden Visa - Investor Residence Permit (Commercial/Heritage Conversion)",
         "type": "real_estate",
         "min_amount": 250000,
         "currency": "EUR",
@@ -934,7 +1153,7 @@
         "notes": "Minimum €250,000 for conversion of commercial/industrial buildings into residential use, or restoration of heritage/listed buildings. Conversion must be fully completed before Golden Visa application. Law 5100/2024."
       },
       {
-        "name": "Golden Visa — Startup Investment (Type B.6)",
+        "name": "Golden Visa - Startup Investment (Type B.6)",
         "type": "business",
         "min_amount": 250000,
         "currency": "EUR",
@@ -945,7 +1164,7 @@
         "notes": "Minimum €250,000 investment in a startup registered with Elevate Greece (national startup registry). Investment via capital increase (shares) or bonds of the startup. Investor may not hold more than 33% of share capital or voting rights. Startup must create at least 2 new jobs within 1 year and maintain them for 5 years. Grants a 5-year renewable residence permit. Introduced under Article 44 of Law 5162/2024."
       },
       {
-        "name": "Golden Visa — Government Bonds",
+        "name": "Golden Visa - Government Bonds",
         "type": "bonds",
         "min_amount": 500000,
         "currency": "EUR",
@@ -956,7 +1175,7 @@
         "notes": "Minimum €500,000 in Greek government bonds with a minimum 3-year maturity period. Alternative financial investment route under the Golden Visa program."
       },
       {
-        "name": "Golden Visa — Fixed-Term Bank Deposit",
+        "name": "Golden Visa - Fixed-Term Bank Deposit",
         "type": "other",
         "min_amount": 500000,
         "currency": "EUR",
@@ -967,7 +1186,7 @@
         "notes": "Minimum €500,000 fixed-term deposit in a Greek credit institution with a minimum 1-year term and automatic renewal. Alternative financial investment route under the Golden Visa program."
       },
       {
-        "name": "Golden Visa — Investment Fund Units",
+        "name": "Golden Visa - Investment Fund Units",
         "type": "fund",
         "min_amount": 350000,
         "currency": "EUR",
@@ -1041,18 +1260,23 @@
       "ADDED new conditional_access entry for USA (diplomatic/service): MFA table shows USA diplomatic=VISA, service=VISA, while ordinary=VISA-FREE. Added visa_required conditional entry for US diplomatic and service passport holders.",
       "CORRECTED Turkey conditional_access: Prior record listed passport_types as ['service', 'official']. MFA table shows Turkey diplomatic=VISA-FREE, consistent with Note 4 ('service and special passports'). Updated to ['diplomatic', 'service', 'special'] to reflect all three categories visible in the table.",
       "CORRECTED Bahrain conditional_access: passport_types changed from ['diplomatic', 'official'] to ['diplomatic', 'special'] to match MFA Note 9 exact wording ('diplomatic and special passports of Bahrain').",
-      "UPDATED Serbia notes: Added MFA Note 2 — exemption does NOT apply to holders of Serbian passports issued by the Serbian Coordination Directorate (Koordinaciona Uprava).",
+      "UPDATED Serbia notes: Added MFA Note 2 - exemption does NOT apply to holders of Serbian passports issued by the Serbian Coordination Directorate (Koordinaciona Uprava).",
       "UPDATED all visa_free source_url references to point to the live MFA table (mfa.gr) as primary source, rather than the EUR-Lex regulation URL, since the MFA table is the authoritative per-country record for Greece.",
       "UPDATED Brazil notes: Added MFA table footnote that Brazilian Official Passports (which replaced Service Passports) are also included in the visa-free regime.",
       "UPDATED ETIAS notes for UK and USA: Changed 'when that system launches' to 'expected Q4 2026' based on EU official timeline as of June 2026.",
-      "CONFIRMED Nauru: appears as VISA-FREE on MFA table for all passport types — retained in visa_free list. Note added that the consolidated EU Regulation lists Nauru under Annex I; the discrepancy is documented.",
-      "CONFIRMED Golden Visa thresholds: €800k/€400k/€250k structure verified against Law 5100/2024 references in search results. No changes needed to rbi section.",
-      "CONFIRMED cbi section: Greece has no CBI program — confirmed unchanged.",
-      "CONFIRMED Vanuatu is excluded from visa_free (appears as VISA on MFA table for all passport types)."
+      "CONFIRMED cbi section: Greece has no CBI program - confirmed unchanged.",
+      "CONFIRMED Vanuatu is excluded from visa_free (appears as VISA on MFA table for all passport types).",
+      "Validation performed 2026-06-27 against EU Regulation 2018/1806 consolidated text (CELEX:02018R1806-20250203) and multiple official sources. MFA main visa page returned HTTP 403 (inaccessible this run); decisions relying solely on the MFA page have been preserved unchanged per safety rules.",
+      "REMOVED Nauru (NRU) from visa_free: EU Regulation 2018/1806 Annex II lists Nauru with a conditional footnote - visa exemption applies only from the date of entry into force of a bilateral visa waiver agreement between Nauru and the EU; no such agreement has been concluded. Wikipedia confirms Nauruan citizens require a visa for Greece. Previous validation note that 'MFA table shows VISA-FREE' is also contradicted by external sources - Nauru is correctly classified as visa_required. This was a false visa-free entry and is the highest-risk correction type. Source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
+      "CONFIRMED Georgia (diplomatic/service): EU Commission suspended visa-free travel for Georgian diplomatic, service, and official passport holders effective 6 March 2026 until 6 March 2027 (Commission Implementing Regulation, announced via https://ec.europa.eu/commission/presscorner/detail/en/ip_26_564). The existing conditional_access entry for Georgia (diplomatic/service) already correctly shows level=visa_required. Georgia ordinary biometric passport holders remain visa-free per Annex II - unchanged.",
+      "UPDATED ETIAS notes for UK and USA: EU revised timeline confirms ETIAS will launch Q4 2026 with a 6-month transition grace period; ETIAS will not be mandatory for boarding until at least April 2027. Notes updated to reflect this.",
+      "CONFIRMED all other visa_free entries: checked against EU Regulation 2018/1806 Annex II consolidated to 20250203. No additional removals or additions found. Kosovo remains in Annex II since April 2023. Vanuatu removed January 2025. All other Annex II entries in the record remain valid.",
+      "CORRECTED ETIAS timeline notes (2026-06-29): EU official sources (home-affairs.ec.europa.eu April 2026 article; travel-europe.europa.eu) confirm that after ETIAS launches Q4 2026, there is a transitional period of AT LEAST 6 months (during which travelers without ETIAS won't be denied entry and carriers need not verify), followed by a further grace period of AT LEAST 6 months. ETIAS carrier boarding checks are not expected to be mandatory until at least Q4 2027, not 'April 2027' as previously stated. UK and USA visa_free notes and the policy-level notes field updated accordingly. No change to any nationality access level; this is a clarification of the ETIAS timeline only.",
+      "CONFIRMED all visa_free entries as of 2026-06-29: MFA page still returning HTTP 403; no direct re-scrape possible. EU Regulation 2018/1806 Annex II confirmed unchanged since 20250203 consolidation per web search; no new countries added or removed in 2025-2026 beyond Vanuatu (already excluded). Georgia diplomatic/service suspension (March 6, 2026 - March 6, 2027) confirmed; already correctly reflected as visa_required in conditional_access. No new bilateral waiver agreements found for 2025-2026."
     ],
     "gaps": [
-      "Nauru discrepancy: MFA table (2026-03-17) shows VISA-FREE for Nauru while the consolidated EU Regulation 2018/1806 (Annex I, as of Feb 2025) lists Nauru as requiring a visa. The MFA table is treated as authoritative for Greece; the discrepancy may reflect an outdated EU regulation listing or a bilateral agreement. Requires further verification against the very latest EU regulation consolidated text.",
-      "ETIAS launch date remains uncertain: EU official sources indicate Q4 2026 but no specific date confirmed. Once ETIAS launches, most third-country visa-free nationals (excluding EU/EEA/Schengen, UK-specific status) will require prior authorization.",
+      "MFA main visa page (mfa.gr/en/services/visas-for-foreigners-traveling-to-greece/countries-requiring-or-not-requiring-a-visa/) returned HTTP 403 during both 2026-06-27 and 2026-06-29 validation runs; the full country table could not be re-scraped. Existing nationality entries preserved unchanged per safety rules. The MFA table should be re-scraped on the next run when accessible.",
+      "ETIAS exact mandatory boarding date remains officially unannounced. Best current estimate is at least Q4 2027 (Q4 2026 launch + at least 6 months transitional + at least 6 months grace). Official EU pages confirm 'at least 12 months' of combined transition/grace after launch. Exact dates pending official EU Commission announcement.",
       "Bilateral visa waiver agreement dates for most diplomatic/service passport exemptions (Algeria, Bolivia, Egypt, etc.) are not specified on the MFA table; exact agreement dates could not be retrieved without access to individual bilateral treaty texts.",
       "MFA table note states that visa exemption agreements do NOT apply to diplomatic/service passport holders who intend to be accredited in Greece (they must obtain a Type D national visa instead).",
       "Exact processing times for Golden Visa (RBI) applications not found on official migration.gov.gr page.",
@@ -1072,38 +1296,113 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "The Hellenic Republic Ministry of Foreign Affairs publishes a page titled 'Visas for Greeks traveling abroad' at this URL, confirmed indexed by Google as an official mfa.gr service page covering visa requirements by country of destination for Greek ordinary passport holders. The page was not directly scrapable (HTTP 403 on all tools including Firecrawl stealth proxy — credit exhausted). Country-level lists could not be extracted from the live page. The destination arrays are left empty pending a direct fetch; the source_url is the authoritative origin-side record for Greece. As an EU/Schengen member state, Greek citizens travel freely within the EU/EEA/Schengen Area by right; for third countries the MFA directs citizens to verify with destination consular authorities."
+    "notes": "The Hellenic Republic Ministry of Foreign Affairs publishes a page titled 'Visas for Greeks traveling abroad' at this URL, confirmed indexed by Google as an official mfa.gr service page covering visa requirements by country of destination for Greek ordinary passport holders. The page was not directly scrapable (HTTP 403 on all tools including Firecrawl stealth proxy - credit exhausted). Country-level lists could not be extracted from the live page. The destination arrays are left empty pending a direct fetch; the source_url is the authoritative origin-side record for Greece. As an EU/Schengen member state, Greek citizens travel freely within the EU/EEA/Schengen Area by right; for third countries the MFA directs citizens to verify with destination consular authorities."
   },
   "sources_checked": [
     {
       "url": "https://www.mfa.gr/en/services/visas-for-foreigners-traveling-to-greece/countries-requiring-or-not-requiring-a-visa/",
-      "description": "Hellenic Republic Ministry of Foreign Affairs — Countries requiring or not requiring a visa (last modified 2026-03-17). Successfully scraped via Firecrawl stealth proxy during this validation.",
+      "description": "Hellenic Republic Ministry of Foreign Affairs - Countries requiring or not requiring a visa (last modified 2026-03-17). Successfully scraped via Firecrawl stealth proxy during this validation.",
       "accessible": true
     },
     {
       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
-      "description": "EUR-Lex — Regulation (EU) 2018/1806 consolidated version (as of 03 February 2025). Annex I and Annex II country lists verified.",
+      "description": "EUR-Lex - Regulation (EU) 2018/1806 consolidated version (as of 03 February 2025). Annex I and Annex II country lists verified.",
       "accessible": true
     },
     {
       "url": "https://migration.gov.gr/en/golden-visa/",
-      "description": "Greek Ministry of Migration and Asylum — Golden Visa program page",
+      "description": "Greek Ministry of Migration and Asylum - Golden Visa program page",
       "accessible": true
     },
     {
       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32010R0265",
-      "description": "EUR-Lex — Regulation (EC) 265/2010 amending the Schengen Convention — equivalence of long-stay visas and residence permits for intra-Schengen travel",
+      "description": "EUR-Lex - Regulation (EC) 265/2010 amending the Schengen Convention - equivalence of long-stay visas and residence permits for intra-Schengen travel",
       "accessible": true
     },
     {
       "url": "https://travel-europe.europa.eu/en/etias",
-      "description": "EU official ETIAS portal — ETIAS launch timeline (Q4 2026 expected)",
+      "description": "EU official ETIAS portal - ETIAS launch timeline (Q4 2026 expected)",
       "accessible": true
     },
     {
       "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-greece_en",
-      "description": "European Commission DG HOME — Highly Qualified Worker (EU Blue Card) in Greece",
+      "description": "European Commission DG HOME - Highly Qualified Worker (EU Blue Card) in Greece",
       "accessible": true
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0810-20200202",
+      "description": "EUR-Lex - EU Visa Code (Regulation EC 810/2009, consolidated) - Schengen Type A and Type C visa rules, fees, processing times",
+      "accessible": true
+    },
+    {
+      "url": "https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en",
+      "description": "European Commission - Schengen visa policy overview, short-stay and airport transit rules",
+      "accessible": true
+    },
+    {
+      "url": "https://migration.gov.gr/adeia-diamonis-gia-spoudes/",
+      "description": "Greek Ministry of Migration - Student Residence Permit (Άδεια Διαμονής λόγω Σπουδών)",
+      "accessible": true
+    },
+    {
+      "url": "https://migration.gov.gr/prosorini-ergasia/",
+      "description": "Greek Ministry of Migration - Temporary Employment / Work Permit",
+      "accessible": true
+    },
+    {
+      "url": "https://migration.gov.gr/prosorini-ergasia-epochiakoi-ergazomenoi/",
+      "description": "Greek Ministry of Migration - Seasonal Worker Permits",
+      "accessible": true
+    },
+    {
+      "url": "https://migration.gov.gr/adeia-diamonis-gia-oikonomika-anexartita-atoma/",
+      "description": "Greek Ministry of Migration - Residence Permit for Economically Independent Persons",
+      "accessible": true
+    },
+    {
+      "url": "https://migration.gov.gr/adeia-diamonis-gia-anthropistikous-logous/",
+      "description": "Greek Ministry of Migration - Humanitarian Residence Permit",
+      "accessible": true
+    },
+    {
+      "url": "https://migration.gov.gr/adeia-epimakron-diamenontos/",
+      "description": "Greek Ministry of Migration - Long-Term Resident Permit (EU)",
+      "accessible": true
+    },
+    {
+      "url": "https://migration.gov.gr/eu-blue-card/",
+      "description": "Greek Ministry of Migration - EU Blue Card page",
+      "accessible": true
+    },
+    {
+      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_564",
+      "description": "European Commission - Press release: Commission suspends visa-free travel for Georgian holders of diplomatic, service or official passports (6 March 2026). Confirmed via search results; page content not directly retrieved.",
+      "accessible": false
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
+      "description": "EUR-Lex - EU Regulation 2018/1806 consolidated version (03 February 2025). Nauru listed in Annex II with conditional footnote: exemption conditional on bilateral agreement not yet concluded. Verified 2026-06-27.",
+      "accessible": true
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_Nauruan_citizens",
+      "description": "Wikipedia - Visa requirements for Nauruan citizens. Confirms Greece requires visa for Nauru passport holders. Used as corroboration for Nauru removal from visa_free.",
+      "accessible": true
+    },
+    {
+      "url": "https://home-affairs.ec.europa.eu/news/main-differences-between-ees-and-etias-what-travellers-need-know-2026-04-28_en",
+      "description": "European Commission DG HOME - Main differences between EES and ETIAS (published 28 April 2026). Confirms ETIAS scheduled Q4 2026; no grace period detail explicitly stated in this article.",
+      "accessible": true
+    },
+    {
+      "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
+      "description": "European Commission DG HOME - Schengen visa policy overview. Confirmed Georgia diplomatic/service suspension March 2026; no new Annex II country additions/removals in 2025-2026 beyond Vanuatu.",
+      "accessible": true
+    },
+    {
+      "url": "https://travel-europe.europa.eu/en/etias",
+      "description": "EU Travel Europe - ETIAS official portal. Confirms ETIAS Q4 2026 launch; transitional period of at least 6 months + grace period of at least 6 months after transitional period confirmed via search results from this domain.",
+      "accessible": false
     }
   ]
 }

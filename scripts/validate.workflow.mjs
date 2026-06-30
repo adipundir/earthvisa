@@ -1,6 +1,6 @@
 export const meta = {
   name: 'validate-revisit-official',
-  description: 'VALIDATION re-fetch: for ~200 countries, parallel agents re-visit each country\'s OWN official immigration/MFA/e-visa/CBI sites, re-verify the existing data/countries/<ISO3>.json against the live official pages, and rewrite it correctly — ordinary nationality grants in visa_policy, all held-credential / diplomatic-service / OCI rules in conditional_access, negation visa-required lists captured, CBI/RBI amounts confirmed. Reports corrections found vs the prior data.',
+  description: 'VALIDATION re-fetch: for ~200 countries, parallel agents re-visit each country\'s OWN official immigration/MFA/e-visa/CBI sites, re-verify the existing data/countries/<ISO3>.json against the live official pages, and rewrite it correctly - ordinary nationality grants in visa_policy, all held-credential / diplomatic-service / OCI rules in conditional_access, negation visa-required lists captured, CBI/RBI amounts confirmed. Reports corrections found vs the prior data.',
   phases: [
     { title: 'Validate', detail: 'one agent per country re-visits official sites (WebFetch-first, Firecrawl fallback), verifies + corrects, and reports discrepancies (Sonnet)' },
   ],
@@ -109,18 +109,18 @@ const VALIDATE_SCHEMA = {
 
 function validatePrompt(c) {
   const file = `${DATA_DIR}/${c.iso3}.json`;
-  return `You are VALIDATING the immigration record for ONE destination — **${c.name}** (iso2=${c.iso2}, iso3=${c.iso3}). Re-visit ${c.name}'s OWN official sources, verify the existing record against the live pages, correct anything wrong, and rewrite the file with correct classification. This is a directed-graph node: it captures who ${c.name} admits and on what terms.
+  return `You are VALIDATING the immigration record for ONE destination - **${c.name}** (iso2=${c.iso2}, iso3=${c.iso3}). Re-visit ${c.name}'s OWN official sources, verify the existing record against the live pages, correct anything wrong, and rewrite the file with correct classification. This is a directed-graph node: it captures who ${c.name} admits and on what terms.
 
-## STEP 1 — read current record
+## STEP 1 - read current record
 Read the existing file with the Read tool: ${file} (note its current visa_policy / conditional_access / cbi / rbi / fast_track and source_urls).
 
-## STEP 2 — re-visit OFFICIAL sources (this is a re-fetch, not a memory check)
+## STEP 2 - re-visit OFFICIAL sources (this is a re-fetch, not a memory check)
 Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch). PREFER reading the raw official page via WebFetch directly from ${c.name}'s government / MFA / immigration / e-visa / citizenship domain (*.gov, *.gov.<cc>, *.gob.<cc>, *.govt.<cc>, *.gouv.<cc>). Fall back to Firecrawl (ToolSearch select:mcp__firecrawl-mcp__firecrawl_scrape) ONLY if WebFetch is blocked/empty. Re-open the source_urls already in the file plus search for the current official visa-policy page. Be economical (~6–14 tool calls).
 
-## STEP 3 — verify + CORRECT, with strict classification
+## STEP 3 - verify + CORRECT, with strict classification
 Record a fact ONLY from an official government/immigration domain; cite the exact source_url; never invent. Then classify EVERY entry correctly:
 - **visa_policy** (visa_free / visa_on_arrival / e_visa / eta): ONLY grants available to an ORDINARY passport by NATIONALITY alone (incl. freedom-of-movement blocs, Annex II/ETIAS, plain nationality waivers). Entry: {nationality, iso3|null, max_stay_days, notes, source_url, source_official}.
-- **conditional_access**: EVERYTHING that is NOT an unconditional ordinary-nationality grant — these must NOT be in visa_policy:
+- **conditional_access**: EVERYTHING that is NOT an unconditional ordinary-nationality grant - these must NOT be in visa_policy:
    · held-credential ("requires/with a valid US/Schengen/EU/UK/Canada visa, residence permit, Green Card/PR") → basis="credential", credential={issuer,type(visa|residence_permit|permanent_resident),subtype}, eligible_nationalities=[…], passport_types=["ordinary"].
    · diplomatic/service/official passport ONLY ("visa suppression agreement", "diplomatic and service passports only") → basis="passport_type", credential=null, passport_types=[…].
    · OCI / diaspora status → basis="special_status".
@@ -128,7 +128,7 @@ Record a fact ONLY from an official government/immigration domain; cite the exac
 - **visa_required** (only if ${c.name}'s policy is "visa-free for all EXCEPT a list"): {default_visa_free:true, nationalities_iso3:[…], source_url, source_official}.
 - **cbi / rbi / fast_track**: re-verify program names + min amounts + currency against the official page; correct or null-out anything unconfirmable.
 
-## STEP 4 — rewrite the file
+## STEP 4 - rewrite the file
 Write the corrected JSON back to EXACTLY ${file} (same overall shape; keep iso2/iso3/name/region). Put a short list of what you CHANGED vs the prior record into data_quality.validation_notes, and unverifiable items into data_quality.gaps.
 
 After writing, your FINAL message must be ONLY the structured summary (counts, corrections[], sources_visited[], completeness, gaps[]).`;

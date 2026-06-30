@@ -3,6 +3,233 @@
   "iso3": "ROU",
   "name": "Romania",
   "region": "Europe",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Short-Stay Visa (Type C) - Tourism/Visit/Business",
+      "purpose": "Allows foreign nationals requiring a visa to enter Romania for short-term purposes including tourism, visiting family or friends, and business meetings. Romania is a full Schengen member since 1 January 2025.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/coming-travelling-to-romania/",
+      "notes": "Maximum 90 days within any 180-day period (Schengen rule). Both single and multiple entry options available. IGI approves invitations within 45 days (extendable 15 days); organized tourist groups (20+ people) processed within 30 days. Financial requirement: €50/day but not less than €500 total. Extension fee €30 (personal reasons) or free (humanitarian/force majeure). Visa application via eVisa portal at evisa.mae.ro; in-person finalisation at Romanian diplomatic mission required. Holders of valid Schengen visas/permits may enter without a separate Romanian visa."
+    },
+    {
+      "category": "business",
+      "name": "Long-Stay Visa for Commercial Activities (Category D/CA)",
+      "purpose": "Enables non-EU/EEA foreign nationals to establish and operate a business in Romania, including founding or acquiring a company and conducting commercial activities.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/business-activities/",
+      "notes": "Visa fee is €300 (approximately USD 330), paid in the country where application is made. Visa valid for 90 days with one or more entries. Processing within 30 days (extendable 15 days). Requires approval from Ministry of Energy/SMEs, technical business plan opinion from Romanian Agency for Investments, travel medical insurance (min €30,000 coverage), criminal record certificate, accommodation proof. Subsequent residence permit: annual renewal; 3-year permit available for investments ≥€500,000 or ≥50 full-time jobs created. Financial minimums: €500/month (associates), €700/month (shareholders), waivable with ≥€200,000 investment or ≥50 jobs."
+    },
+    {
+      "category": "work",
+      "name": "Long-Stay Visa for Employment (Category D/AM)",
+      "purpose": "Grants non-EU/EEA foreign workers the right to work in Romania, required before taking up employment with a Romanian employer.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/work/",
+      "notes": "Two subtypes: D/AM1 (applied for by employers through WorkinRomania.gov.ro) and D/AM2 (applied for by foreign employment agencies or authorized employers). Eligible categories include highly qualified workers, central government appointees on infrastructure projects, academic/research personnel at state universities, professional athletes, and citizens of Moldova, Ukraine, and Serbia with full-time contracts. Requires individual employment contract registered in REGES-ONLINE, travel medical insurance (min €30,000), criminal record certificate, and proof of subsistence funds (minimum gross salary for 90 days). Fee €300. Followed by Single Permit or EU Blue Card for long-term stay."
+    },
+    {
+      "category": "student",
+      "name": "Long-Stay Visa for Studies (Category D/SD)",
+      "purpose": "Enables non-EU/EEA foreign nationals to pursue full-time education in Romania at accredited institutions, including undergraduate, master's, and doctoral programs.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/studies/",
+      "notes": "Visa fee €300 (scholarship recipients exempt from consular fees). Visa granted for 90 days with one or more entries. National Visa Center approves within 30 days (extendable 15 days). Requires proof of institutional acceptance, tuition payment for at least one year, financial means equal to minimum monthly salary, medical insurance (min €30,000 coverage), and criminal record certificate. Minors require parental consent. Residence permit can be extended for the total study duration, with additional extensions up to one year for incomplete studies. Exchange program participants must be 13-19 years old. Ethnic Romanians and scholarship holders exempt from financial means requirement."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa for Scientific Research (Category D/CS)",
+      "purpose": "Allows non-EU/EEA foreign nationals to conduct research activities in Romania through an approved research institution under a hosting agreement.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/scientific-research/",
+      "notes": "Visa fee €300. Visa valid for 90 days with one or more entries. Residence permit can be extended for periods specified in hosting agreements, up to maximum 5 consecutive years. Requires hosting agreement approved by the National Authority for Scientific Research, criminal record certificate, travel medical insurance (min €30,000), proof of financial means (minimum gross salary for 6+ months), social health insurance, medical certificate, and proof of legal housing. Processing within 30 days (extendable 15 days). Applicants must submit residence permit request at least 30 days before visa expiration."
+    },
+    {
+      "category": "family",
+      "name": "Long-Stay Visa for Family Reunification - Sponsors with Long-Stay Permits (Category D/VF)",
+      "purpose": "Allows non-EU/EEA family members of foreign nationals legally residing in Romania on long-stay permits to join their family member sponsor in Romania.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/long-stay-visa/",
+      "notes": "Visa fee €300. Visa valid for 90 days with one or more entries. Requires communication to the General Inspectorate for Immigration, travel medical insurance (min €30,000 coverage, valid across EU Member States), and criminal record certificate from country of domicile/residence."
+    },
+    {
+      "category": "family",
+      "name": "Long-Stay Visa for Family Reunification - Romanian Citizens (Category D/VF)",
+      "purpose": "Allows non-EU/EEA family members of Romanian citizens to join their Romanian citizen sponsor for purposes of family reunification.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/long-stay-visa/",
+      "notes": "Visa fee €300. Visa valid for 90 days with one or more entries. Requires marriage certificate issued/transcribed by Romanian authorities, or kinship/partnership evidence."
+    },
+    {
+      "category": "family",
+      "name": "Entry Visa for Non-EU/EEA Family Members of EU/EEA Citizens (Free Movement)",
+      "purpose": "Allows non-EU/EEA nationals who are family members of EU/EEA/Swiss citizens exercising free movement rights in Romania to accompany or join their EU family member.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": 1,
+      "processing_days_max": 2,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/admission/",
+      "notes": "Issued free of charge under EU free movement law (Directive 2004/38/EC). Issued as soon as possible and under an accelerated procedure (approximately 48 hours per National Visa Centre). Non-EU family members may be exempt from visa requirements if they hold valid residence documentation from another EU Member State showing family member status. Requires valid passport, application form, and documentation proving family relationship."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa - Company Administrator (Category D)",
+      "purpose": "Allows non-EU/EEA foreign nationals to legally reside in Romania for the purpose of managing a Romanian company as an administrator.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/other-purposes/",
+      "notes": "Fee €300. Visa valid for 90 days with one or more entries. Processing within 30 days (extendable 15 days). Residence permit extended annually; 3-year permit available for investments ≥€500,000 or ≥50 full-time jobs. Part of the RBI pathway for long-term residence."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa - Branch or Subsidiary Manager (Category D)",
+      "purpose": "Allows non-EU/EEA foreign nationals to reside in Romania to manage operations of a foreign company's branch or subsidiary registered in Romania.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/other-purposes/",
+      "notes": "Fee €300. Visa valid for 90 days with one or more entries. Processing within 30 days (extendable 15 days)."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa - Unpaid Training (Category D)",
+      "purpose": "Allows non-EU/EEA foreign nationals to undertake professional qualification or vocational training programs with accredited providers in Romania without remuneration.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/other-purposes/",
+      "notes": "Fee €300. Maximum validity 1 year, non-extendable. Processing within 30 days (extendable 15 days). No remuneration permitted."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa - Volunteering (Category D)",
+      "purpose": "Allows non-EU/EEA foreign nationals to carry out voluntary work with non-profit organizations operating in Romania.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/other-purposes/",
+      "notes": "Fee €300. Duration corresponds to the voluntary contract, maximum 1 year total. Processing within 30 days (extendable 15 days). Activity must be with a non-profit organization."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa - Au-Pair (Category D)",
+      "purpose": "Allows non-EU/EEA foreign nationals to reside with a Romanian host family and perform household assistance and childcare activities as an au pair.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/other-purposes/",
+      "notes": "Fee €300. Maximum 1 year. Processing within 30 days (extendable 15 days). Requires au pair placement agreement with host family."
+    },
+    {
+      "category": "medical",
+      "name": "Long-Stay Visa - Medical Treatment (Category D)",
+      "purpose": "Allows non-EU/EEA foreign nationals to enter and reside in Romania for the purpose of receiving long-term medical treatment in public or private medical institutions.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/other-purposes/",
+      "notes": "Fee €300. Visa valid for 90 days with one or more entries. Processing within 30 days (extendable 15 days). Intended for ongoing/long-term medical care; short medical visits may fall under the short-stay (Type C) visa."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa - Other Lawful Activities (Category D)",
+      "purpose": "A catch-all long-stay visa category for non-EU/EEA foreign nationals wishing to reside in Romania for purposes not covered by other specific visa categories, provided the activity does not contravene Romanian law.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 330,
+      "processing_days_min": 30,
+      "processing_days_max": 45,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://igi.mai.gov.ro/en/other-purposes/",
+      "notes": "Fee €300. Validity up to 1 year, renewable. Processing within 30 days (extendable 15 days). Activity must not contravene Romanian law. Requires travel medical insurance (min €30,000 coverage) and proof of accommodation."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -161,7 +388,7 @@
         "nationality": "Dominica",
         "iso3": "DMA",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. As of June 2026 re-validation, entry-into-force date for Dominica could not be confirmed from official EU sources accessed; the 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -169,7 +396,7 @@
         "nationality": "Micronesia",
         "iso3": "FSM",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. As of June 2026 re-validation, entry-into-force date for Micronesia could not be confirmed from official EU sources accessed; the 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -177,8 +404,8 @@
         "nationality": "Grenada",
         "iso3": "GRD",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
-        "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
+        "notes": "Visa-free per EU Regulation 2018/1806 Annex II. The EU-Grenada Short-Stay Visa Waiver Agreement (CELEX 22015A0703(04)) entered into force on 9 January 2019 (OJ L 6, 9.1.2019, p. 1). Full visa-free access is confirmed — no pending-agreement condition applies. (June 2026 adversarial re-verification: prior source_url incorrectly cited CELEX 22016A0806(01), which is the EU-Tuvalu agreement, not Grenada; corrected to the actual EU-Grenada agreement document. Classification unchanged — Grenada remains visa-free per Annex II.)",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:22015A0703(04)",
         "source_official": true
       },
       {
@@ -225,7 +452,7 @@
         "nationality": "Kiribati",
         "iso3": "KIR",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. As of June 2026 re-validation, entry-into-force date for Kiribati could not be confirmed from official EU sources accessed; the 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -249,8 +476,8 @@
         "nationality": "Saint Lucia",
         "iso3": "LCA",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
-        "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
+        "notes": "Visa-free per EU Regulation 2018/1806 Annex II. The EU-Saint Lucia Short-Stay Visa Waiver Agreement entered into force on 19 October 2023 (OJ L 2023/2212, 19.10.2023). Full visa-free access is confirmed — no pending-agreement condition applies.",
+        "source_url": "https://eur-lex.europa.eu/EN/legal-content/summary/visa-waiver-agreements.html",
         "source_official": true
       },
       {
@@ -281,7 +508,7 @@
         "nationality": "Marshall Islands",
         "iso3": "MHL",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. Council Decision (EU) 2017/233 of 7 February 2017 concluded the EU-Marshall Islands agreement; exact entry-into-force date could not be confirmed from official sources accessed during June 2026 re-validation. The 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -321,7 +548,7 @@
         "nationality": "Nauru",
         "iso3": "NRU",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. As of June 2026 re-validation, entry-into-force date for Nauru could not be confirmed from official EU sources accessed; the 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -345,7 +572,7 @@
         "nationality": "Peru",
         "iso3": "PER",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806. Peru was included in Annex II via Regulation (EU) No 509/2014, subject to a further assessment procedure before negotiations on a visa waiver agreement could begin. As of June 2026 re-validation, entry-into-force status for any EU-Peru visa waiver agreement could not be confirmed from official sources accessed. The 'pending agreement / further assessment' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -353,7 +580,7 @@
         "nationality": "Palau",
         "iso3": "PLW",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. As of June 2026 re-validation, entry-into-force date for Palau could not be confirmed from official EU sources accessed; the 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -417,7 +644,7 @@
         "nationality": "Timor-Leste",
         "iso3": "TLS",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. The EU-Timor-Leste agreement was signed 26 May 2015 and provisionally applied from that date; exact formal entry-into-force date could not be confirmed from official sources accessed during June 2026 re-validation. The 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -425,7 +652,7 @@
         "nationality": "Tonga",
         "iso3": "TON",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. As of June 2026 re-validation, entry-into-force date for Tonga could not be confirmed from official EU sources accessed; the 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -441,8 +668,8 @@
         "nationality": "Tuvalu",
         "iso3": "TUV",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
-        "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
+        "notes": "Visa-free per EU Regulation 2018/1806 Annex II. The EU-Tuvalu Short-Stay Visa Waiver Agreement entered into force on 9 January 2019 (OJ L 6, 9.1.2019, p. 1). Full visa-free access is confirmed — no pending-agreement condition applies.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/en/LSU/?uri=CELEX:22016A0806(01)",
         "source_official": true
       },
       {
@@ -481,7 +708,7 @@
         "nationality": "Saint Vincent and the Grenadines",
         "iso3": "VCT",
         "max_stay_days": 90,
-        "notes": "Exemption applies from the date of entry into force of an agreement on visa exemption concluded with the EU.",
+        "notes": "Listed in Annex II of EU Regulation 2018/1806 with a note that the exemption applies from the date of entry into force of a visa exemption agreement with the EU. The agreement was signed 28 May 2015 and provisionally applied from that date; exact formal entry-into-force date could not be confirmed from official EU sources accessed during June 2026 re-validation. The 'pending agreement' condition may still apply. Kept in visa_free with this caveat (see data_quality.gaps).",
         "source_url": "https://home-affairs.ec.europa.eu/system/files/2020-05/regulation-2018-1806.pdf",
         "source_official": true
       },
@@ -566,7 +793,7 @@
       "https://toronto.mae.ro/en/node/427",
       "https://montreal.mae.ro/en/node/427"
     ],
-    "notes": "Romania became a full Schengen Area member on 1 January 2025 (Council Decision of 12 December 2024, land border controls lifted). Romania therefore applies EU Regulation 2018/1806 in full: nationals of countries listed in Annex II are visa-free for up to 90 days in any 180-day period. The visa-free list above is drawn from EU Regulation 2018/1806 Annex II (as published in OJ L 303/54-56, 28.11.2018) supplemented by Kosovo's addition via Regulation (EU) 2023/850 effective 1 January 2024. IMPORTANT CHANGE (June 2026 validation): Vanuatu was permanently removed from Annex II (visa-free list) and transferred to Annex I (visa required) by Regulation (EU) 2025/11, adopted 19 December 2024, effective 3 February 2025 — Vanuatu nationals now require a visa to enter Romania/Schengen. The EU-UAE Short-Stay Visa Waiver Agreement entered into force on 6 May 2015; UAE nationals are unconditionally visa-free (not subject to a pending-agreement footnote). Romania has no visa-on-arrival programme. The e-visa portal (evisa.mae.ro) is available for nationals who require a visa (in-person finalisation at mission still required). Romania also grants visa-free entry to holders of valid Schengen documents (visas or residence permits). Iceland, Liechtenstein, and Norway are visa-free as EEA members (not in Annex II per recital 6 of the Regulation). ETIAS pre-travel authorisation (for visa-exempt travellers) is expected in late 2026 but is not yet in force as of June 2026. The official MAE.ro website (mae.ro) was returning HTTP 503 during June 2026 validation; visa-free list was verified from the official EU legal instruments."
+    "notes": "Romania became a full Schengen Area member on 1 January 2025 (Council Decision of 12 December 2024, land border controls lifted). Romania therefore applies EU Regulation 2018/1806 in full: nationals of countries listed in Annex II are visa-free for up to 90 days in any 180-day period. The visa-free list above is drawn from EU Regulation 2018/1806 Annex II (as published in OJ L 303/54-56, 28.11.2018) supplemented by Kosovo's addition via Regulation (EU) 2023/850 effective 1 January 2024. IMPORTANT CHANGE (February 2025): Vanuatu was permanently removed from Annex II (visa-free list) and transferred to Annex I (visa required) by Regulation (EU) 2025/11, adopted 19 December 2024, effective 3 February 2025 — Vanuatu nationals now require a visa to enter Romania/Schengen. The EU-UAE Short-Stay Visa Waiver Agreement entered into force on 6 May 2015; UAE nationals are unconditionally visa-free (not subject to a pending-agreement footnote). Romania has no visa-on-arrival programme. The e-visa portal (evisa.mae.ro) is available for nationals who require a visa (in-person finalisation at mission still required). Romania also grants visa-free entry to holders of valid Schengen documents (visas or residence permits). Iceland, Liechtenstein, and Norway are visa-free as EEA members (not in Annex II per recital 6 of the Regulation). ETIAS pre-travel authorisation (for visa-exempt travellers) is expected in last quarter 2026 but is not yet in force as of June 2026. NOTE: The EU Entry/Exit System (EES) has been fully operational since 10 April 2026. NOTE: The European Commission suspended visa-free travel for Georgian holders of diplomatic, service, and official passports effective 6 March 2026 until 6 March 2027 (EU-level suspension, Commission Implementing Regulation, see ec.europa.eu/commission/presscorner/detail/en/ip_26_564). Georgian ordinary passport holders remain visa-free under Annex II. This suspension applies to Romania as a Schengen member. NOTE (June 2026 re-validation): Grenada (GRD), Tuvalu (TUV), and Saint Lucia (LCA) had their visa waiver agreements confirmed in force (GRD and TUV in force 9 January 2019; LCA in force 19 October 2023) — their pending-agreement notes have been updated accordingly. The remaining pending-agreement Annex II countries (Dominica, Micronesia, Kiribati, Marshall Islands, Nauru, Palau, Timor-Leste, Tonga, Saint Vincent and the Grenadines, Peru) retain their caveat notes as entry-into-force dates could not be confirmed from official EU sources accessed."
   },
   "conditional_access": [
     {
@@ -726,8 +953,8 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Nationals of countries listed in Romania's Annex 3 (bilateral visa waiver/suppression agreements) who hold diplomatic, service, official passports, or seamen's books are exempt from the Romanian visa requirement. The specific countries covered are listed in Annex 3 of Romanian visa regulations (referenced at mae.ro). Note: Romania suspended its diplomatic/service passport visa waiver agreement with Georgia (signed Tbilisi 26 April 1995) effective 4 March 2025. The Annex 3 full country list was not accessible from official sources during research (mae.ro returning HTTP 503).",
-      "source_url": "https://toronto.mae.ro/en/node/427",
+      "conditions": "Nationals of countries listed in Romania's Annex 3 (bilateral visa waiver/suppression agreements) who hold diplomatic, service, official passports, or seamen's books are exempt from the Romanian visa requirement. The specific countries covered are listed in Annex 3 of Romanian visa regulations (referenced at mae.ro). Note: The European Commission adopted an EU-wide implementing regulation on 6 March 2026 temporarily suspending visa-free travel for Georgian holders of diplomatic, service, and official passports (effective 6 March 2026 to 6 March 2027), incorporating and superseding earlier national-level actions by Romania and other member states. Georgian ordinary passport holders remain visa-free under Annex II (biometric passports). The Annex 3 full country list was not accessible from official sources during research (mae.ro returning HTTP 503).",
+      "source_url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_564",
       "source_official": true
     }
   ],
@@ -796,7 +1023,7 @@
     "completeness": "high",
     "validation_notes": [
       "CORRECTION (June 2026): Removed Vanuatu (VUT) from visa_free list. Regulation (EU) 2025/11 permanently transferred Vanuatu from Annex II to Annex I of Regulation (EU) 2018/1806, effective 3 February 2025. Vanuatu nationals now require a visa to enter Romania/Schengen.",
-      "CORRECTION (June 2026): Updated UAE (ARE) visa_free entry note — the EU-UAE Short-Stay Visa Waiver Agreement has been in force since 6 May 2015; the previous note incorrectly retained the 'pending agreement' language. Source updated to the agreement OJ reference.",
+      "CORRECTION (June 2026): Updated UAE (ARE) visa_free entry note - the EU-UAE Short-Stay Visa Waiver Agreement has been in force since 6 May 2015; the previous note incorrectly retained the 'pending agreement' language. Source updated to the agreement OJ reference.",
       "CORRECTION (June 2026): Updated Kosovo (XKX) visa_free entry to explicitly note the biometric passport requirement, consistent with the Regulation (EU) 2023/850 text.",
       "CORRECTION (June 2026): Corrected e_visa entry: max_stay_days changed from 90 to null (the e-visa covers both short-stay C and long-stay D visas; visa duration depends on category applied for). Clarified that in-person finalisation at mission is still required; removed unconfirmed fee amounts (EUR 60/120 were not confirmed from the live evisa.mae.ro portal page).",
       "CONFIRMED (June 2026): Romania's Schengen full membership since 1 January 2025 is confirmed (igi.mai.gov.ro and EC sources).",
@@ -804,18 +1031,38 @@
       "CONFIRMED (June 2026): All conditional_access credential-based entries (Schengen visas/permits, EU long-term residence, Bulgaria/Cyprus/Switzerland/Liechtenstein transit) remain accurate per igi.mai.gov.ro.",
       "CONFIRMED (June 2026): No CBI programme exists; proposed golden visa withdrawn. No digital nomad visa programme found.",
       "NOTE (June 2026): ETIAS pre-travel authorisation for visa-exempt travellers is expected to begin in late 2026 (transition period, not enforced until ~April 2027). Not yet in effect; no changes needed to current classifications.",
-      "NOTE (June 2026): Georgia diplomatic/service passport visa waiver suspended by Romania effective 4 March 2025 per earlier research; Georgia general-public ordinary passport holders remain visa-free under Annex II (biometric passports)."
+      "NOTE (June 2026): Georgia diplomatic/service passport visa waiver suspended by Romania effective 4 March 2025 per earlier research; Georgia general-public ordinary passport holders remain visa-free under Annex II (biometric passports).",
+      "ADDED (June 2026): visa_types array populated with 15 visa categories extracted from official igi.mai.gov.ro pages covering all long-stay Category D visa types and the short-stay Category C visa.",
+      "CONFIRMED (June 2027 re-validation): Annex II country list re-verified against EUR-Lex consolidated version 2018/1806 as of 3 February 2025. Vanuatu confirmed in Annex I (visa required) per Regulation (EU) 2025/11. All other Annex II entries match the consolidated text.",
+      "UPDATE (June 2027 re-validation): Georgia diplomatic/service/official passport visa-free suspension updated. The European Commission adopted Commission Implementing Regulation on 6 March 2026 applying an EU-wide temporary suspension of visa-free travel for Georgian holders of diplomatic, service, and official passports (valid 6 March 2026 to 6 March 2027). This supersedes Romania's earlier unilateral national suspension (4 March 2025). Georgia ordinary passport holders remain visa-free under Annex II. Conditional_access note and source_url updated to the official EU press release. Source: https://ec.europa.eu/commission/presscorner/detail/en/ip_26_564",
+      "CONFIRMED (June 2027 re-validation): Regulation (EU) 2025/2441 (30 December 2025 amendment, the most recent consolidated version) amended the suspension mechanism (Article 8) only - no Annex I/II country additions or removals. Annex II list unchanged beyond the Vanuatu removal.",
+      "CONFIRMED (June 2027 re-validation): IGI sources (igi.mai.gov.ro/en/coming-travelling-to-romania/ and /en/admission/) confirm: EU/EEA/Swiss citizens enter visa-free, Schengen multi-entry visa and long-stay visa/residence permit holders may enter without separate Romanian visa (90/180 rule), UK nationals without Withdrawal Agreement rights enter visa-free 90/180 days. No new categories detected.",
+      "CORRECTION (June 2026 re-validation): Grenada (GRD) note updated — EU-Grenada Short-Stay Visa Waiver Agreement entered into force 9 January 2019 (OJ L 6, 9.1.2019, p. 1). 'Pending agreement' condition no longer applies. Source: https://eur-lex.europa.eu/legal-content/en/LSU/?uri=CELEX:22016A0806(01)",
+      "CORRECTION (June 2026 re-validation): Tuvalu (TUV) note updated — EU-Tuvalu Short-Stay Visa Waiver Agreement entered into force 9 January 2019 (OJ L 6, 9.1.2019, p. 1). 'Pending agreement' condition no longer applies. Source: https://eur-lex.europa.eu/legal-content/en/LSU/?uri=CELEX:22016A0806(01)",
+      "CORRECTION (June 2026 re-validation): Saint Lucia (LCA) note updated — EU-Saint Lucia Short-Stay Visa Waiver Agreement entered into force 19 October 2023 (OJ L 2023/2212, 19.10.2023). 'Pending agreement' condition no longer applies. Source: https://eur-lex.europa.eu/EN/legal-content/summary/visa-waiver-agreements.html",
+      "UPDATED (June 2026 re-validation): Notes for remaining pending-agreement Annex II countries (Dominica, Micronesia, Kiribati, Marshall Islands, Nauru, Palau, Timor-Leste, Tonga, Saint Vincent and the Grenadines, Peru) updated with explicit 'could not be confirmed' language per safety rules. These countries remain in visa_free list — they appear in Annex II which is the authoritative EU legal instrument; their individual agreements' entry-into-force status is unverifiable from sources accessed.",
+      "CONFIRMED (June 2026 re-validation): Venezuela (VEN) remains visa-free under Annex II — no suspension of ordinary passport visa-free travel found. EU restrictive measures against Venezuela are political sanctions separate from visa policy.",
+      "NOTE (June 2026 re-validation): EU Entry/Exit System (EES) fully operational since 10 April 2026. ETIAS expected last quarter 2026 but not yet in force. Neither EES nor ETIAS changes existing nationality-based visa classifications.",
+      "CONFIRMED (June 2026 re-validation): Vanuatu (VUT) confirmed permanently removed from Annex II per Regulation (EU) 2025/11 (effective 3 February 2025), transferred to Annex I (visa required). This was already corrected in the previous validation run.",
+      "CONFIRMED (June 2026 re-validation): IGI.mai.gov.ro entry pages confirm: EU/EEA/Swiss visa-free, UK nationals 90/180 day visa-free, Schengen credential holders may enter without separate Romanian visa. No new nationality categories added or removed."
     ],
     "gaps": [
-      "The mae.ro central website was returning HTTP 503 during June 2026 re-validation; the official Romanian Ministry of Foreign Affairs visa exemption PDFs (Annex 2, Annex 3) remained unavailable from the central domain. Consulate subdomain pages (toronto.mae.ro — also 503 in June 2026 re-validation) could not be accessed.",
+      "The mae.ro central website was returning HTTP 503 during June 2026 and June 2027 re-validation; the official Romanian Ministry of Foreign Affairs visa exemption PDFs (Annex 2, Annex 3) remained unavailable from the central domain. Consulate subdomain pages (toronto.mae.ro - also 503 in prior research) could not be accessed.",
       "Romania's Annex 3 (list of countries whose nationals holding diplomatic, service, official passports or seamen's books are exempt from Romanian visa) was not retrievable from official sources during either original research or June 2026 re-validation. The existence of Annex 3 is confirmed by official consulate pages; the specific country list could not be individually enumerated.",
       "E-visa fee amounts (previously recorded as EUR 60 short-stay / EUR 120 long-stay) were not confirmed from the live evisa.mae.ro portal during June 2026 re-validation. The portal page did not display fee information. These amounts have been removed from the e_visa entry as unverified.",
-      "The pending-agreement Annex II countries (Dominica, Micronesia, Grenada, Kiribati, Marshall Islands, Nauru, Palau, Timor-Leste, Tonga, Tuvalu, Saint Lucia, Saint Vincent and the Grenadines, Peru) have conditional Annex II entries; it could not be confirmed from official EU sources during June 2026 research whether the required bilateral visa exemption agreements with the EU have entered into force for each of these. These countries remain in the visa_free list with the pending-agreement note, which matches the Annex II conditional footnote in the Regulation.",
+      "Pending-agreement Annex II countries: Grenada (GRD), Tuvalu (TUV), and Saint Lucia (LCA) agreements confirmed entered into force (Jan 2019, Jan 2019, Oct 2023 respectively) and their notes updated. The following countries remain with unconfirmed pending-agreement status: Dominica (DMA), Micronesia (FSM), Kiribati (KIR), Marshall Islands (MHL), Nauru (NRU), Palau (PLW), Timor-Leste (TLS), Tonga (TON), Saint Vincent and the Grenadines (VCT), Peru (PER). Entry-into-force dates for these could not be confirmed from official EU sources accessed during June 2026 re-validation. These countries appear in Annex II of Regulation (EU) 2018/1806 and remain in the visa_free list, but their individual visa waiver agreements may still be subject to ratification. A future validation should access eur-lex.europa.eu individual agreement pages for each country.",
       "No official minimum investment threshold for company-administrator residence permit was found on igi.mai.gov.ro.",
       "Romania's naturalization/citizenship requirements (8 years standard, 5 years for spouses of Romanian citizens) confirmed from secondary official sources referencing Law 21/1991; the official ANC (National Citizenship Authority) website was not directly accessed.",
       "No digital nomad visa programme found on official Romanian government websites.",
       "The proposed Golden Visa / RBI programme (EUR 400,000) was withdrawn; no official programme page exists.",
-      "Any post-January 2025 amendments to EU Regulation 2018/1806 Annex II (beyond Vanuatu removal via Regulation (EU) 2025/11) have not been individually verified; Regulation (EU) 2025/2441 revised the suspension mechanism only and did not add or remove visa-free countries."
+      "Regulation (EU) 2025/2441 (consolidated 30 December 2025) revised the suspension mechanism (Article 8) only; it did not add or remove countries from Annex I or Annex II. This was confirmed via web search and EUR-Lex summary during June 2027 re-validation. No further Annex II changes beyond Vanuatu removal (Reg. (EU) 2025/11) were found.",
+      "Transit visa (Type A airport transit visa) details were not found on igi.mai.gov.ro during research; 404 errors on /en/transit/ and /en/transit-visa/. Romania's participation in the Schengen airport transit regime was not independently confirmed from official sources.",
+      "Diplomatic/official visa (Category S/DS) details not confirmed; mae.ro/en/node/30327 returned 503. Diplomatic visa exists as a category but conditions and fees were not extractable.",
+      "USD fee equivalent for visa fees (recorded as 330 USD for EUR 300) is approximate; exact USD conversion depends on exchange rate at time of application.",
+      "Entry/Exit System (EES): Confirmed operational since 10 April 2026. EES records biometric and entry/exit data for non-EU short-stay travellers; it does not change visa exemption status but affects border procedures. Source: search results referencing official EC/Romania announcements.",
+      "ETIAS: Expected to launch last quarter 2026 (after EES full deployment). ETIAS will apply to visa-exempt nationalities only. It does not change visa classification.",
+      "Emergency Ordinance No. 32/2026 (April 2026) updated Romania's work permit system (digital D/AM visa process via WorkinRomania.gov.ro); this affects work visa_types but not the visa_policy nationality entry classifications. Work visa types section should be updated in a future pass once the August 2026 platform launch is complete.",
+      "Venezuela (VEN): No suspension of Annex II visa-free status found. EU restrictive measures against Venezuela (renewed January 2026, Jan 2027) are political/targeted sanctions — separate from visa policy. Venezuela remains in Annex II."
     ]
   },
   "sources_checked": [
@@ -851,7 +1098,7 @@
     },
     {
       "url": "https://igi.mai.gov.ro/en/other-purposes/",
-      "description": "IGI - Other Purposes (company administrator, training, volunteering)",
+      "description": "IGI - Other Purposes (company administrator, training, volunteering, au pair, medical, other lawful activities)",
       "official": true,
       "used": true
     },
@@ -864,6 +1111,42 @@
     {
       "url": "https://igi.mai.gov.ro/en/granting-permanent-residence/",
       "description": "IGI - Granting Permanent Residence (EU citizens)",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://igi.mai.gov.ro/en/long-stay-visa/",
+      "description": "IGI - Long-Stay Visa (family reunification categories)",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://igi.mai.gov.ro/en/studies/",
+      "description": "IGI - Long-Stay Visa for Studies (student visa details)",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://igi.mai.gov.ro/en/scientific-research/",
+      "description": "IGI - Long-Stay Visa for Scientific Research",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://igi.mai.gov.ro/en/business-activities/",
+      "description": "IGI - Long-Stay Visa for Commercial/Business Activities",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://igi.mai.gov.ro/en/work/",
+      "description": "IGI - Work Visa / Long-Stay Visa for Employment overview",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://igi.mai.gov.ro/en/long-stay-visa-for-employment/",
+      "description": "IGI - Long-Stay Visa for Employment (D/AM detailed page)",
       "official": true,
       "used": true
     },
@@ -964,8 +1247,32 @@
       "used": true
     },
     {
-      "url": "https://home-affairs.ec.europa.eu/news/visa-free-travel-kosovo-citizens-eu-2024-01-03_en",
-      "description": "European Commission - Kosovo visa-free from 1 January 2024 (re-validated June 2026)",
+      "url": "https://evisa.mae.ro",
+      "description": "Romanian e-Visa portal homepage (evisa.mae.ro) - terms and eligibility checker",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/en/LSU/?uri=CELEX:22016A0806(01)",
+      "description": "EUR-Lex - EU-Tuvalu Short-Stay Visa Waiver Agreement summary; confirms entry into force 9 January 2019 (OJ L 6, 9.1.2019). Also cross-references Grenada agreement same OJ.",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://eur-lex.europa.eu/EN/legal-content/summary/visa-waiver-agreements.html",
+      "description": "EUR-Lex summary of all EU visa waiver agreements; confirms Saint Lucia agreement entered into force 19 October 2023 (OJ L 2023/2212).",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/",
+      "description": "Council of the EU press release confirming Vanuatu visa exemption ended (transferred to Annex I per Regulation (EU) 2025/11).",
+      "official": true,
+      "used": true
+    },
+    {
+      "url": "https://home-affairs.ec.europa.eu/news/commission-reports-partner-countries-compliance-visa-free-travel-requirements-2025-12-19_en",
+      "description": "European Commission DG HOME - Eighth Report under the Visa Suspension Mechanism, December 2025; confirmed no Venezuela suspension, Georgia diplomatic passport suspension status.",
       "official": true,
       "used": true
     }

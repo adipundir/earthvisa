@@ -31,7 +31,7 @@ export interface CredentialEdge extends AccessEdge {
   nationalityScope: string[] | null;
   /** verbatim-ish conditions, e.g. "visa must have been used at least once" */
   conditions?: string;
-  /** true when access is airside/landside transit only — NOT regular tourist entry */
+  /** true when access is airside/landside transit only - NOT regular tourist entry */
   transit?: boolean;
 }
 
@@ -117,9 +117,22 @@ export interface VisaType {
   notes: string | null;
 }
 
+/** one VFS Global source→destination corridor (document checklists per visa type) */
+export interface VfsCorridorSummary {
+  sourceIso3: string;
+  sourceCode: string;
+  destCode: string;
+  /** path under data/vfs holding the full sectioned document detail */
+  detailFile: string;
+  sourceUrl: string;
+  visaTypes: { name: string; category: VisaType["category"] | "other"; hasDocuments: boolean }[];
+}
+
 export interface Dataset {
   meta: {
     note: string;
+    /** ISO date (YYYY-MM-DD) the dataset was last built/refreshed */
+    lastUpdated: string;
     totalCountries: number;
     countriesWithData: number;
     destinationsWithVisaPolicy: number;
@@ -143,4 +156,6 @@ export interface Dataset {
   rbi: RbiProgram[];
   fastTrack: FastTrackProgram[];
   destinationVisaTypes: Record<string, VisaType[]>;
+  /** destination iso3 -> VFS corridors that serve it (one per source country) */
+  vfsCorridors: Record<string, VfsCorridorSummary[]>;
 }

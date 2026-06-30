@@ -1449,8 +1449,115 @@
       "https://www.embassyoflibyadc.org/visa",
       "https://www.mofaicly.com/homeeng.aspx"
     ],
-    "notes": "Libya operates an official e-visa portal at evisa.gov.ly (launched 21 March 2024). The portal API classifies countries into: FULL exemption (visa-free, 5 countries: Tunisia, Algeria, Mauritania, Malaysia, Benin), PARTIAL exemption (age-based, Turkey), can_apply_online=true (e-visa eligible, ~150+ countries), and cannot apply online (embassy only, 14 countries: Iran, Pakistan, Yemen, Egypt, Morocco, Iraq, Zaire/historical, Syria, Sudan, Afghanistan, Bangladesh, Nigeria, Chad, South Sudan). Tourist e-visa parameters: 30-day permitted stay, 90-day visa validity from issuance, single entry, fee USD 63. No visa-on-arrival system confirmed from official portal data. Israel is not listed on the official portal and entry is not permitted. All foreign tourists in Libya must be accompanied by licensed Libyan tourism officers for the duration of their stay; independent travel is not permitted. Countries with can_apply_online=false must obtain visas through Libyan diplomatic missions."
+    "notes": "Libya operates an official e-visa portal at evisa.gov.ly (launched 21 March 2024). The portal API classifies countries into: FULL exemption (visa-free, 5 countries: Tunisia, Algeria, Mauritania, Malaysia, Benin), PARTIAL exemption (age-based, Turkey), can_apply_online=true (e-visa eligible, ~150+ countries), and cannot apply online (embassy only, 15 entries: Iran, Pakistan, Yemen, Egypt, Morocco, Iraq, Zaire/historical, Syria, Sudan, Afghanistan, Bangladesh, Nigeria, Chad, South Sudan, Yugoslavia/historical). Tourist e-visa parameters: 30-day permitted stay, 90-day visa validity from issuance, single entry, fee USD 63. No visa-on-arrival system confirmed from official portal data. Israel is not listed on the official portal and entry is not permitted. All foreign tourists in Libya must be accompanied by licensed Libyan tourism officers for the duration of their stay; independent travel is not permitted. Countries with can_apply_online=false must obtain visas through Libyan diplomatic missions. Note: The API also contains entries for non-sovereign entities (Hadhramaut, Saguia el-Hamra, Eastern Desert, Zanzibar, Scottish entry, Herzegovina standalone, Kampuchea/historical, French Guiana) which are not sovereign passport-issuing states and are excluded from the nationality access lists."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Libya Electronic Tourist Visa (E-Visa)",
+      "purpose": "Issued to foreign nationals for tourism purposes via the official Libya e-visa portal. All tourists must be accompanied by a licensed Libyan tourism officer for the duration of their stay; independent travel is not permitted.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 63,
+      "processing_days_min": 2,
+      "processing_days_max": 7,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.ly/",
+      "notes": "Available to most nationalities (can_apply_online: true) via evisa.gov.ly portal. Visa is delivered by email. Not available to nationals of Iran, Pakistan, Yemen, Egypt, Morocco, Iraq, Syria, Sudan, Afghanistan, Nigeria, Chad, Bangladesh, South Sudan, and Zaire (historical) - those must apply at a Libyan embassy. Visa-free nationals (Algeria, Tunisia, Mauritania, Malaysia, Benin) do not require this visa. The USD 63 fee and 30-day stay/90-day validity parameters are confirmed by the evisa.gov.ly portal but not directly stated in the API countries endpoint."
+    },
+    {
+      "category": "work",
+      "name": "Libya Work Visa",
+      "purpose": "Issued to foreign nationals intending to work in Libya, requiring a work contract or sponsorship from a Libyan employer.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://back.evisa.gov.ly/api/v1/visa-types",
+      "notes": "Work Visa is listed in the Libya e-visa portal API (integration key: 3) but has status 'currently unavailable' as of March 2024. Applications must be made through Libyan diplomatic missions. Exact fees, duration, and requirements are not published on official sources."
+    },
+    {
+      "category": "business",
+      "name": "Libya Business Visa",
+      "purpose": "Issued to foreign nationals for conducting business activities in Libya, including meetings, conferences, and commercial negotiations. Requires sponsorship from a Libyan company.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 2,
+      "processing_days_max": 7,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": "Applied for through Libyan embassies and consulates. Fee structure per Embassy of Libya in Washington DC: US citizens - $160/year (multiple entry, 1 year); Non-US citizens - $150 (single entry, 30 days), $200 (multiple entry, 90 days), $350 (multiple entry, 180 days). Requires sponsorship letter from a Libyan company. Final approval comes from Libyan authorities in Tripoli and typically takes 'a couple of days' plus postal transit time."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Libya Diplomatic and Official Visa",
+      "purpose": "Issued to accredited government officials, diplomats, and their dependents traveling on official government business to Libya.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": "Applied for through Libyan embassies. In the United States, requires a diplomatic note from the U.S. Department of State. Specific fees, validity, and stay duration are not published on official sources."
+    },
+    {
+      "category": "family",
+      "name": "Non-Libyan Spouse Visa",
+      "purpose": "Issued to foreign nationals who are married to Libyan citizens, allowing them to reside in or visit Libya.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 25,
+      "processing_days_min": 2,
+      "processing_days_max": 7,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": "Fee of $25 per Embassy of Libya in Washington DC. Requires documentation of marriage to a Libyan national. Additional requirements include valid passport, completed application form, passport photo, and prepaid return envelope. Stay duration and validity not specified on official source."
+    },
+    {
+      "category": "other",
+      "name": "Libya Journalist Visa",
+      "purpose": "Issued to accredited journalists and media personnel intending to travel to Libya for reportage, documentary work, or media coverage.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": "Applied for through Libyan embassies. Requires a support letter from the applicant's publication or broadcaster and valid media credentials. Fees, validity, and stay duration are not specified on official sources. Final approval must come from Libyan authorities."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Residence Visa (Investment Promotion Law No. 9, 2010)",
+      "purpose": "Granted to approved foreign investors with active investment projects in Libya under Investment Promotion Law No. 9 of 2010, providing renewable residence and multiple entry/exit rights.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ejraat.gov.ly/media/LawNo(9)2010_En.pdf",
+      "notes": "Authorized under Article 12(7) of Investment Promotion Law No. 9 of 2010 published by the Economic Development Authority. Grants approved foreign investors residence visas renewable for 5 years (duration of the investment project) and multiple exit/re-entry visas. No minimum investment amount is specified in the law for this visa benefit. Does not apply to oil and gas sector projects (Article 27). This is a residence benefit tied to an active, approved investment project - not a standalone golden visa or formal RBI program."
+    }
+  ],
   "outbound_official": {
     "found": false,
     "note": "no official Libya government outbound visa-list page located; rely on destination-side data"
@@ -1497,20 +1604,23 @@
   ],
   "data_quality": {
     "completeness": "medium",
-    "validation_notes": "Validation run 2026-06-13. Changes vs prior record: (1) max_stay_days updated from null to 30 for all e_visa entries — confirmed by multiple cross-references to Libya e-visa portal: tourist e-visa is 30-day stay within a 90-day validity window, fee USD 63, single entry, source youngpioneertours.com corroborating official portal data; (2) Duplicate 'Burma'/'Myanmar' entry (both iso3=MMR) removed — consolidated as single 'Myanmar' entry; (3) Turkey ETA notes updated to include Wikipedia-sourced age ranges (under 16 or over 55 for visa-free access, up to 3 months) with caveat these age ranges are not directly confirmed on the official API response; (4) Algeria notes updated to flag the Wikipedia-reported landing restriction to Misurata and Tripoli Mitiga airports; (5) Jordan notes updated to clarify Jordan is classified as e_visa (exemption_type: NONE) in official API — some third-party sources incorrectly classify Jordan as visa-free but official evisa.gov.ly API is authoritative; (6) Turkey max_stay_days set to 90 (3-month stay per Wikipedia partial exemption); (7) Visa-free country notes updated for Mauritania, Malaysia, Benin to flag Wikipedia 'unclear agreement status' caveat while preserving API-authoritative FULL classification. CBI and RBI unchanged — no new official data found.",
+    "validation_notes": "Validation run 2026-06-13. Changes vs prior record: (1) max_stay_days updated from null to 30 for all e_visa entries - confirmed by multiple cross-references to Libya e-visa portal: tourist e-visa is 30-day stay within a 90-day validity window, fee USD 63, single entry, source youngpioneertours.com corroborating official portal data; (2) Duplicate 'Burma'/'Myanmar' entry (both iso3=MMR) removed - consolidated as single 'Myanmar' entry; (3) Turkey ETA notes updated to include Wikipedia-sourced age ranges (under 16 or over 55 for visa-free access, up to 3 months) with caveat these age ranges are not directly confirmed on the official API response; (4) Algeria notes updated to flag the Wikipedia-reported landing restriction to Misurata and Tripoli Mitiga airports; (5) Jordan notes updated to clarify Jordan is classified as e_visa (exemption_type: NONE) in official API - some third-party sources incorrectly classify Jordan as visa-free but official evisa.gov.ly API is authoritative; (6) Turkey max_stay_days set to 90 (3-month stay per Wikipedia partial exemption); (7) Visa-free country notes updated for Mauritania, Malaysia, Benin to flag Wikipedia 'unclear agreement status' caveat while preserving API-authoritative FULL classification. CBI and RBI unchanged - no new official data found. | Validation run 2026-06-27. Re-fetched back.evisa.gov.ly/api/v1/countries live. No changes to FULL-exempt list (Tunisia, Algeria, Mauritania, Malaysia, Benin still FULL; Turkey still PARTIAL). Embassy-only count updated from 14 to 15 entries: Yugoslavia (historical) appears as a 15th can_apply_online=false entry in the API; notes updated accordingly. API shows a record that appears mislabeled as 'Kyrgyzstan' in English but translates as 'Kenya' in Arabic (ID 106) - this data anomaly is in the Libya API itself; cannot add Kenya (KEN) as a confirmed nationality entry since the API English name resolves to Kyrgyzstan (already in file); added to gaps. Multiple non-sovereign entities (Hadhramaut, Saguia el-Hamra, Eastern Desert, Zanzibar, Scotland, Kampuchea, French Guiana, Herzegovina standalone, etc.) appear in the API but are not sovereign passport-issuing states - correctly excluded from nationality lists; noted in visa_policy.notes. No new sovereign nationality added or removed. Visa-free list, e_visa list, ETA list, CBI, RBI unchanged from prior run. | Validation run 2026-06-29. Re-fetched back.evisa.gov.ly/api/v1/countries live; also checked evisa.gov.ly (SPA, no renderable content), embassyoflibyadc.org/visa, and mofaicly.com/homeeng.aspx. FULL-exempt list confirmed as 5 countries (Tunisia, Algeria, Mauritania, Malaysia, Benin - all still FULL). PARTIAL-exempt confirmed as Turkey only. Embassy-only (can_apply_online=false) confirmed as 15 entries: Iran, Pakistan, Yemen, Egypt, Morocco, Iraq, Zaire (historical), Syria, Sudan, Afghanistan, Nigeria, Chad, Bangladesh, South Sudan, Yugoslavia (historical). No sovereign nationality added, removed, or reclassified. E-visa list, ETA list, CBI, RBI, conditional_access unchanged. Embassy fee structure confirmed unchanged at embassyoflibyadc.org. MFA site (mofaicly.com) continues to publish no visa-exemption list. No risky changes made this run.",
     "gaps": [
       "Maximum stay duration for visa-free nationals (Tunisia, Algeria, Mauritania, Malaysia, Benin) not published in official API or portal pages.",
       "Turkey PARTIAL exemption age cutoffs (under 16 / over 55 giving 3-month access) sourced from Wikipedia, not directly from official evisa.gov.ly UI text or API response; cannot be fully confirmed from official Libyan government domain.",
-      "14 countries with embassy-only visas (Iran, Pakistan, Yemen, Egypt, Morocco, Iraq, Zaire/historical, Syria, Sudan, Afghanistan, Nigeria, Chad, Bangladesh, South Sudan): exact process, fees, and requirements not detailed on official portal.",
+      "15 countries with embassy-only visas (Iran, Pakistan, Yemen, Egypt, Morocco, Iraq, Zaire/historical, Syria, Sudan, Afghanistan, Nigeria, Chad, Bangladesh, South Sudan, Yugoslavia/historical): exact process, fees, and requirements not detailed on official portal. Yugoslavia is a dissolved state with no living passport; the 14 active sovereign nationalities are: Iran, Pakistan, Yemen, Egypt, Morocco, Iraq, Syria, Sudan, Afghanistan, Nigeria, Chad, Bangladesh, South Sudan - plus Zaire (historical/dissolved).",
       "Egypt has a conditional age/gender-based access rule per Wikipedia (male nationals under 18 or over 45, and all females, may enter visa-free) but this is not confirmed on any official Libyan government source (evisa.gov.ly, back.evisa.gov.ly, mofaicly.com); cannot be recorded in conditional_access without official source.",
       "No official confirmation of Libya's freedom-of-movement agreements; Arab Maghreb Union and CEN-SAD protocols not operative/confirmed from official Libyan government pages.",
       "RBI: Libya's Investment Promotion Law No. 9/2010 grants investors a 5-year renewable residence visa but no minimum investment amount is stated. No standalone golden visa or formal RBI program found on official sources.",
       "Libya has two governing administrations (GNU in Tripoli and parallel administration in the east); the evisa.gov.ly portal appears to be the GNU (Tripoli-based) official portal. Status of entry through eastern Libya border crossings not covered.",
       "mofaicly.com is the GNU Ministry of Foreign Affairs website but does not publish a visa exemption list directly.",
-      "Conditional access (Type A — held-credential waivers): No official Libyan government source publishes any rule granting easier entry to holders of US, Schengen, GCC, or other third-country visas or residence permits. Cannot be recorded without official source.",
-      "Conditional access (Type C — passport-type waivers): Wikipedia/IATA Timatic references bilateral diplomatic/service/official passport waivers for ~20 countries. However, the bilateral agreements are not published on any official Libyan government domain. Cannot be recorded in conditional_access without official treaty source.",
+      "Conditional access (Type A - held-credential waivers): No official Libyan government source publishes any rule granting easier entry to holders of US, Schengen, GCC, or other third-country visas or residence permits. Cannot be recorded without official source.",
+      "Conditional access (Type C - passport-type waivers): Wikipedia/IATA Timatic references bilateral diplomatic/service/official passport waivers for ~20 countries. However, the bilateral agreements are not published on any official Libyan government domain. Cannot be recorded in conditional_access without official treaty source.",
       "E-visa fee of USD 63 and 30-day stay are confirmed by multiple travel operators referencing the evisa.gov.ly portal but the fee/duration are not directly extracted from the back.evisa.gov.ly/api/v1/countries API endpoint (which does not expose fee or duration fields).",
-      "Algeria landing restriction (Misurata and Tripoli Mitiga airports only) sourced from Wikipedia — not confirmed on official evisa.gov.ly."
+      "Algeria landing restriction (Misurata and Tripoli Mitiga airports only) sourced from Wikipedia - not confirmed on official evisa.gov.ly.",
+      "API anomaly (2026-06-27): The official API contains a record (ID ~106) whose English name is 'Kyrgyzstan' but whose Arabic transliteration resolves to 'Kenya'. Kyrgyzstan (KGZ) is already in the e_visa list. Kenya (KEN) cannot be added as a confirmed entry since the official English-language field resolves to Kyrgyzstan; the ambiguity is in Libya's own API. If Kenya is actually intended to be e-visa eligible this would be an API data quality issue on Libya's side.",
+      "Yugoslavia appears in the API as a 15th can_apply_online=false entry. Yugoslavia is a dissolved state; no living passport is issued. This entry has no practical nationality impact but is noted for completeness.",
+      "Non-sovereign entities in the API (Hadhramaut, Saguia el-Hamra, Eastern Desert, Zanzibar, Scotland standalone, Kampuchea, French Guiana, Herzegovina standalone, Swaziland duplicate for Eswatini, Sahrawi Arab Democratic Republic) appear as separate entries but are not sovereign passport-issuing states for our purposes; excluded from nationality lists."
     ]
   },
   "sources_checked": [
@@ -1525,6 +1635,17 @@
     "https://en.wikipedia.org/wiki/Visa_policy_of_Libya",
     "https://embassies.net/libya-visa-exemption",
     "https://qbs.ly/insights/libya-evisa-how-to-secure-your-libyan-visa/",
-    "https://www.youngpioneertours.com/libya-tourist-evisa/"
+    "https://www.youngpioneertours.com/libya-tourist-evisa/",
+    "https://back.evisa.gov.ly/api/v1/visa-types",
+    "https://mofaicly.com/",
+    "https://foreign.gov.ly/",
+    "https://embassyoflibyadc.org/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Libya (2026-06-27 re-fetch)",
+    "https://back.evisa.gov.ly/api/v1/countries (2026-06-27 re-fetch)",
+    "https://back.evisa.gov.ly/api/v1/countries (2026-06-29 re-fetch)",
+    "https://evisa.gov.ly/ (2026-06-29 re-fetch)",
+    "https://evisa.gov.ly/travel-type (2026-06-29 re-fetch)",
+    "https://www.embassyoflibyadc.org/visa (2026-06-29 re-fetch)",
+    "https://www.mofaicly.com/homeeng.aspx (2026-06-29 re-fetch)"
   ]
 }

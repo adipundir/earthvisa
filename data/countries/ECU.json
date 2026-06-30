@@ -91,7 +91,7 @@
       "https://www.cancilleria.gob.ec/washington/visas-espanol-english/",
       "https://www.fragomen.com/insights/EcuadorTransitVisaRequirementforVisaNationalsImplemented.html"
     ],
-    "notes": "Ecuador's visa policy is governed by the Ley Orgánica de Movilidad Humana (LOMH). Most nationalities (approx. 150+) receive visa-free entry for up to 90 days per 12-month period (extendable once for 90 more days). South American nationals under MERCOSUR/CAN agreements receive 180 days and may use national ID cards. As of July 1, 2024, China was removed from visa-free status (Acuerdo Ministerial No. 0000064). As of September 1, 2025, all 45 visa-required nationalities now also require a transit visa (Visa de Visitante Temporal de Transeúnte) when connecting through Ecuadorian airports — even if remaining in the international transit area."
+    "notes": "Ecuador's visa policy is governed by the Ley Orgánica de Movilidad Humana (LOMH). Most nationalities (approx. 150+) receive visa-free entry for up to 90 days per 12-month period (extendable once for 90 more days). South American nationals under MERCOSUR/CAN agreements receive 180 days and may use national ID cards. As of July 1, 2024, China was removed from visa-free status (Acuerdo Ministerial No. 0000064). As of September 1, 2025, all 45 visa-required nationalities now also require a transit visa (Visa de Visitante Temporal de Transeúnte) when connecting through Ecuadorian airports - even if remaining in the international transit area."
   },
   "visa_required": {
     "default_visa_free": true,
@@ -222,17 +222,19 @@
   ],
   "data_quality": {
     "completeness": "medium",
-    "validation_notes": "Validation performed 2026-06-14 against official Ecuador government sources and immigration law firms (Fragomen, EY) citing official documents. Changes from prior record: (1) REMOVED non-official gov.uk from official_domains — Ecuador's own official domains suffice and gov.uk is a secondary/advisory source. (2) MOVED the visa-required / e-visa content OUT of visa_policy.e_visa (where it was misclassified — e_visa in visa_policy must only contain unconditional nationality-based electronic visa grants, not visa-required categories) and into a new top-level visa_required block with the correct 45-country ISO3 list. (3) CORRECTED transit visa details: confirmed effective September 1, 2025 (not 'July-September 2025'), fee is USD 80 ($50 application + $30 issuance), validity 30 days, visa type is 'Visa de Visitante Temporal de Transeúnte'. (4) CONFIRMED the 45 visa-required countries list including explicit addition of Albania and China in 2024. (5) CONFIRMED investor visa minimum USD 48,200 for 2026 (SBU = USD 482/month, 100x SBU). (6) CONFIRMED MERCOSUR visa is now renewable for additional 2 years (change since July 2022). (7) NOTE: Acuerdo Ministerial 0000030 (June 2025) content uncertainty remains — the prior record noted it may relate to Venezuelan regularization rather than transit visa; the transit visa effective September 1, 2025 appears under a separate acuerdo (specific number not confirmed in accessible sources).",
+    "validation_notes": "Re-validation performed 2026-06-29 (third pass): gob.ec tramites page (https://www.gob.ec/mremh/tramites/concesion-visa-visitante-temporal-turista-90-dias) was directly fetched and explicitly confirmed all 45 visa-required nationalities — AFG, ALB, AGO, BGD, CMR, TCD, CIV, CUB, EGY, ERI, ETH, PHL, GMB, GHA, GIN, GNB, HTI, IND, IRQ, IRN, KEN, KGZ, LBY, MLI, MRT, MMR, NPL, NGA, PRK, PAK, COG, COD, CHN, SEN, SLE, SOM, SSD, LKA, SDN, SYR, TJK, UZB, VEN, VNM, YEM — matching the current record exactly. NO CHANGES to access lists. WebSearch confirmed the 45-country September 2025 transit visa list (VisasNews + ecuatraveling.com) and 90-day general visa-free rule. Wikipedia was re-fetched and lists Taiwan (TWN) and Macao (MAC) as visa-required and claims Kyrgyzstan (KGZ) was removed 2023-08-30; however, the authoritative gob.ec tramites page (directly loaded 2026-06-29) still explicitly includes KGZ and does NOT include TWN or MAC. Safety-first: KGZ retained (official source confirms it); TWN and MAC NOT added (official source does not list them). Cancilleria.gob.ec SSL errors persisted on all direct domain fetches; gob.ec tramites portal remains accessible. Prior notes: (2026-06-27) re-confirmed same 45-country list. (2026-06-14) removed gov.uk from official_domains; moved e-visa content to visa_required block; corrected transit visa details.",
     "gaps": [
-      "Direct scraping of cancilleria.gob.ec pages blocked by SSL certificate errors — all verifications rely on gob.ec (official tramites portal) and confirmed immigration law firm alerts (Fragomen, EY) citing the Ministry.",
-      "The exact Acuerdo Ministerial number establishing the September 1, 2025 transit visa requirement for 45 nationalities was not confirmed from an official source — secondary sources (Fragomen, EY, visasnews.com) confirm the requirement but do not cite the specific acuerdo number.",
-      "Acuerdo Ministerial 0000030 (June 2025 PDF on cancilleria.gob.ec): the prior record noted this appears to relate to Venezuelan regularization (VIRTE II), not transit visas. The PDF could not be directly accessed due to SSL errors; this discrepancy is unresolved.",
-      "The comprehensive official list of ~150 visa-free nationalities is not published in an accessible English-language format on cancilleria.gob.ec. The 'most nationalities — 90 days' visa-free rule is confirmed by the gob.ec tramites page; individual country confirmations rely on the negative (not on the 45-country required list = visa-free).",
+      "Direct scraping of cancilleria.gob.ec pages blocked by SSL certificate errors in all three validation runs (2026-06-14, 2026-06-27, 2026-06-29). All verifications rely on gob.ec (official tramites portal, which loaded successfully) and confirmed immigration alerts (Fragomen, EY, VisasNews) citing the Ministry.",
+      "Macao (MAC) and Taiwan (TWN): Wikipedia's 'Visa policy of Ecuador' article (re-fetched 2026-06-29) lists both as visa-required in a list totaling 46 entries. Wikipedia also claims Kyrgyzstan was removed on 2023-08-30. However, the authoritative official gob.ec tramites page (https://www.gob.ec/mremh/tramites/concesion-visa-visitante-temporal-turista-90-dias, re-fetched 2026-06-29) explicitly lists 45 countries including KGZ but NOT including TWN or MAC. The gob.ec tramites page is the higher-authority primary official source; Wikipedia is not official. The Acuerdo Ministerial PDFs (0000070, 0000064, 0000095, 0000115) could not be directly read due to SSL errors. Until an official source explicitly lists TWN/MAC, they are NOT added. KGZ is retained as it appears on the gob.ec page.",
+      "The exact Acuerdo Ministerial number establishing the September 1, 2025 transit visa requirement for 45 nationalities was not confirmed from a directly-read official source - the Cancilleria 2025-08-30 announcement page (cancilleria.gob.ec/2025/08/30/...) returned SSL error; confirmed via VisasNews citing that page.",
+      "Acuerdo Ministerial 0000115 (December 2024) and 0000095 (October 2024): both returned SSL errors when accessed. Their content regarding updates to the visa-required nationality list could not be verified. Wikipedia-cited changes (possible additions or removals of countries) may originate from these decrees.",
+      "Acuerdo Ministerial 0000030 (June 2025 PDF on cancilleria.gob.ec): remains unresolved - prior notes indicate this may relate to Venezuelan regularization (VIRTE II), not transit visas. Could not be directly accessed.",
+      "The comprehensive official list of ~150 visa-free nationalities is not published in an accessible format. The 'most nationalities - 90 days' visa-free rule is confirmed by the gob.ec tramites page; individual country confirmations rely on negation (not on the 45-country required list = visa-free).",
       "Third-country visa holder exemption: multiple aggregator sources claim holders of a valid US/Schengen/UK/Canada/Japan visa may enter Ecuador visa-free. NO official Ecuadorian government source confirms any such rule. Not recorded per official-source-first policy.",
       "OCI cardholder exemption: no official source confirms any exemption for OCI cardholders. Not recorded.",
       "Bilateral diplomatic/official passport exemption agreements: only the India-Ecuador agreement (MEA official source) was confirmed. Ecuador likely has similar bilateral agreements with other countries but the comprehensive list was not accessible.",
       "Criminal background certificate requirement: the October 2025 LOMH reform reportedly made criminal background certificates mandatory for all entrants (not just visa applicants). This could affect visa-free entry but could not be confirmed from an accessible official source.",
-      "The 180-day visa-free stay for South American MERCOSUR/CAN nationals and national ID card use in lieu of passport could not be directly verified from an accessible official page (cancilleria.gob.ec SSL errors); these are referenced from the consular Washington DC page and consistent with long-standing treaty arrangements.",
+      "The 180-day visa-free stay for South American MERCOSUR/CAN nationals and national ID card use in lieu of passport could not be directly verified from an accessible official page (cancilleria.gob.ec SSL errors); referenced from the consular Washington DC page and consistent with long-standing treaty arrangements.",
       "Ecuador's citizenship-by-investment status is confirmed absent by consensus of sources, but no single official government page explicitly stating 'no CBI program' was accessible."
     ]
   },
@@ -293,8 +295,160 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "Cancilleria del Ecuador publishes the authoritative outbound list at the source_url above. The page was originally published 2020-07-13 and has been updated over time; the most recent confirmed update (late November 2025) lists 47 countries where Ecuadorian ordinary-passport holders may enter without a prior consular visa. The Cancilleria clarifies that the list of 47 is distinct from a larger set (~22 additional) that require visa-on-arrival or e-visas — those are NOT included in this visa_free list as they require pre-travel or arrival formalities. Stay limits vary: some destinations allow unlimited stay, others 30 days, others up to 90 days — consult the official page for per-country conditions. Eight South American countries (Argentina, Bolivia, Brazil, Chile, Colombia, Paraguay, Peru, Uruguay) additionally allow entry with national ID card (cedula) only, under CAN/MERCOSUR agreements. The SSL certificate on cancilleria.gob.ec was unverifiable at time of research; content confirmed through multiple Ecuadorian national media outlets (primicias.ec, eltelegrafo.com.ec, vistazo.com, metroecuador.com.ec) all citing the official Cancilleria page and consistent in their 47-country count and list."
+    "notes": "Cancilleria del Ecuador publishes the authoritative outbound list at the source_url above. The page was originally published 2020-07-13 and has been updated over time; the most recent confirmed update (late November 2025) lists 47 countries where Ecuadorian ordinary-passport holders may enter without a prior consular visa. The Cancilleria clarifies that the list of 47 is distinct from a larger set (~22 additional) that require visa-on-arrival or e-visas - those are NOT included in this visa_free list as they require pre-travel or arrival formalities. Stay limits vary: some destinations allow unlimited stay, others 30 days, others up to 90 days - consult the official page for per-country conditions. Eight South American countries (Argentina, Bolivia, Brazil, Chile, Colombia, Paraguay, Peru, Uruguay) additionally allow entry with national ID card (cedula) only, under CAN/MERCOSUR agreements. The SSL certificate on cancilleria.gob.ec was unverifiable at time of research; content confirmed through multiple Ecuadorian national media outlets (primicias.ec, eltelegrafo.com.ec, vistazo.com, metroecuador.com.ec) all citing the official Cancilleria page and consistent in their 47-country count and list."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visa de Visitante Temporal – Turista (90 días)",
+      "purpose": "Allows nationals from countries on Ecuador's special-regime (visa-required) list to enter Ecuador for tourism. Citizens of the approximately 150+ other nationalities enter visa-free without needing this visa.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 80,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gob.ec/mremh/tramites/concesion-visa-visitante-temporal-turista-90-dias",
+      "notes": "Fee is USD 50 application + USD 30 issuance. Available exclusively online via eVISAS portal at serviciosdigitales.cancilleria.gob.ec. Requires valid passport (6+ months), color photo, criminal background certificate (max 180-day-old, for applicants 18+), proof of lawful income, and round-trip itinerary. Stay is extendable once for an additional 90 days upon request and payment. Only required for nationals of the 45 special-regime countries; other nationalities enter visa-free for 90 days."
+    },
+    {
+      "category": "transit",
+      "name": "Visa de Visitante Temporal de Transeúnte",
+      "purpose": "Required for nationals of the 45 visa-required countries who are transiting through Ecuadorian airports, including those remaining in the international transit zone.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 80,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gob.ec/mremh/tramites/concesion-visa-visitante-temporal-turista-90-dias",
+      "notes": "Fee is USD 50 application + USD 30 issuance. Effective September 1, 2025 for all 45 visa-required nationalities. Required even for airside transit (international transit area) without entering Ecuador. Applied online via eVISAS portal."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Visa de Residencia Temporal Rentista para Trabajo Remoto (Visa Nómada)",
+      "purpose": "Allows foreign nationals who work remotely for employers or clients based outside Ecuador to reside in Ecuador while conducting their work digitally.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 450,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-rentista-trabajo-remoto-visa-nomada",
+      "notes": "Fee is USD 50 application + USD 400 grant. Valid for 2 years, renewable for an additional 2 years. Minimum income requirement: 3x the Unified Basic Salary (SBU) per month (~USD 1,446/month in 2026, SBU = USD 482). Additional USD 250/month income required per accompanying dependent. Applicant must work for foreign employers/clients only; valid health insurance covering Ecuador required. No Ecuador income tax on foreign-sourced income. Available to approximately 183 nationalities."
+    },
+    {
+      "category": "investment",
+      "name": "Visa de Residencia Temporal Inversionista",
+      "purpose": "Grants temporary residence to foreign nationals who make a qualifying investment in Ecuador through bank time deposits, real estate, or equity shares in an Ecuadorian company.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 320,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-inversionista",
+      "notes": "Fee is USD 50 application + USD 270 grant. Minimum investment is 100 times the Unified Basic Salary (SBU): USD 48,200 in 2026 (SBU = USD 482/month); this amount changes annually. Three qualifying investment types: (1) bank time deposit for minimum 730 days; (2) real estate registered in cantonal Property Registry; (3) equity shares in Ecuadorian company registered with Superintendency of Companies. Visa valid 2 years; after 21 months of continuous residence, permanent residency can be requested. Path to citizenship after approximately 4 years."
+    },
+    {
+      "category": "retirement",
+      "name": "Visa de Residencia Temporal Rentista (Passive Income / Jubilado)",
+      "purpose": "Allows foreign nationals with passive income from pensions, rents, or investments to reside in Ecuador. Suitable for retirees and those living off investment returns.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 250,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-rentista",
+      "notes": "Fee is USD 50 application + USD 200 grant. Minimum income: 3x the Unified Basic Salary (SBU) per month (~USD 1,446/month in 2026). Income must come from national or foreign sources (pensions, rents, dividends, etc.). Documentation for 3 months prior to application required. Visa duration 2 years, renewable. After 21 months continuous residence, permanent residency can be requested. Path to citizenship after approximately 4 years."
+    },
+    {
+      "category": "work",
+      "name": "Visa de Residencia Temporal – Trabajo Autónomo / Servicios Profesionales / Consultoría",
+      "purpose": "Grants temporary residence to foreign professionals providing independent services, consulting, or autonomous professional activities in Ecuador.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-trabajo-autonomo-servicios-profesionales-civiles-consultoria-carta-auspicio",
+      "notes": "For independent professionals, consultants, and those providing professional services in Ecuador. Requires work authorization from Ministry of Labor or relevant authority. Specific income or qualification thresholds apply per ministerial requirements. Duration typically 2 years. Fee details not confirmed from accessible official sources at time of research."
+    },
+    {
+      "category": "work",
+      "name": "Visa de Residencia Temporal Profesional",
+      "purpose": "Grants temporary residence to foreign nationals employed by Ecuadorian entities or providing professional services under a sponsoring employer.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://serviciosdigitales.cancilleria.gob.ec/",
+      "notes": "Referenced in official eVISAS platform as a selectable visa category. Requires sponsorship or professional employment in Ecuador. Specific fees and income thresholds apply per ministerial requirements. Duration typically 2 years. Fee details not confirmed from accessible official sources at time of research."
+    },
+    {
+      "category": "family",
+      "name": "Visa de Residencia Permanente por Matrimonio",
+      "purpose": "Grants permanent residence to foreign nationals who are married to an Ecuadorian citizen or to a foreign national legally resident in Ecuador.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://serviciosdigitales.cancilleria.gob.ec/",
+      "notes": "Referenced in official eVISAS platform as a selectable visa category. Requires proof of legal marriage to an Ecuadorian citizen or legal resident. Permanent residency; fee details not confirmed from accessible official sources at time of research."
+    },
+    {
+      "category": "other",
+      "name": "MERCOSUR Residence Agreement Visa (Visa MERCOSUR)",
+      "purpose": "Grants temporary residence to nationals of MERCOSUR member and associated states (Argentina, Bolivia, Brazil, Chile, Colombia, Paraguay, Peru, Uruguay) based solely on nationality under the MERCOSUR Residence Agreement.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 250,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.cancilleria.gob.ec/",
+      "notes": "Fee is USD 50 application + USD 200 grant. Ecuador ratified the MERCOSUR Residence Agreement formally in January 2024. Grants 2-year temporary residence, renewable for an additional 2 years (change effective July 1, 2022). After two full years with proof of economic income, permanent residency can be requested. Eligible nationalities: ARG, BOL, BRA, CHL, COL, PRY, PER, URY."
+    },
+    {
+      "category": "other",
+      "name": "Andean Migration Statute Residence (Estatuto Migratorio Andino / CAN)",
+      "purpose": "Grants temporary residence and work authorization rights to nationals of Andean Community (CAN) member states based on the Andean Migration Statute (Decision 878).",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 250,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.cancilleria.gob.ec/",
+      "notes": "Fee is USD 50 application + USD 200 grant. Entered into effect April 2023 under Decision 878. Eligible nationalities: BOL, COL, PER (Andean Community members). Grants 2-year temporary residence with multiple entries and includes work authorization rights. After 21 months continuous residence, permanent residency can be requested."
+    }
+  ],
   "sources_checked": [
     "https://www.gob.ec/mremh/tramites/concesion-visa-visitante-temporal-turista-90-dias",
     "https://www.cancilleria.gob.ec/2020/06/30/lista-de-paises-que-deben-presentar-visa-al-ingresar-al-ecuador/",
@@ -317,6 +471,8 @@
     "https://visasnews.com/en/ecuador-transit-visa-now-required-for-45-nationalities/",
     "https://www.ey.com/en_gl/technical/tax-alerts/ecuador-announces-new-entry-visa-requirement-for-chinese-nationa",
     "https://myecuadorvisa.com/investment-visa/",
-    "https://www.ecuaassist.com/single-post/with-ecuador-s-new-2026-basic-salary-which-visas-are-more-accessible-today"
+    "https://www.ecuaassist.com/single-post/with-ecuador-s-new-2026-basic-salary-which-visas-are-more-accessible-today",
+    "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-trabajo-autonomo-servicios-profesionales-civiles-consultoria-carta-auspicio",
+    "https://serviciosdigitales.cancilleria.gob.ec/visas"
   ]
 }

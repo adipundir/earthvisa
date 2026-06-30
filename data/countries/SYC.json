@@ -21,7 +21,7 @@
         "nationality": "All nationalities (except Kosovo)",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "All travellers to Seychelles must obtain an Electronic Travel Authorisation (TA) before departure. The TA is a mandatory pre-travel requirement even though no visa is required. Applications are submitted online at seychelles.govtas.com or via the Seychelles e-Border app. Fee: EUR 10 for standard processing (24 hours); EUR 30 for premium processing (6 hours). Applications are accepted up to 10 days before travel. Documents required: valid passport, selfie, contact information, airline booking confirmation showing arrival and departure dates, accommodation booking confirmation, and payment card. Yellow fever certificate required only for travellers arriving from or transiting through yellow fever endemic countries. Kosovo passport holders are excluded from eligibility.",
+        "notes": "All travellers to Seychelles must obtain an Electronic Travel Authorisation (TA) before departure. The TA is a mandatory pre-travel requirement even though no visa is required. Applications are submitted online at seychelles.govtas.com or via the Seychelles e-Border app. Fee: EUR 10 for standard processing (24 hours); EUR 30 for premium processing (6 hours). The EUR 10.90 figure seen on some official pages reflects a payment processing surcharge. Applications are accepted up to 10 days before travel (up to 30 days for sea arrivals). Documents required: valid passport, selfie, contact information, airline booking confirmation showing arrival and departure dates, accommodation booking confirmation, and payment card. Yellow fever certificate required only for travellers arriving from or transiting through yellow fever endemic countries. Kosovo passport holders are excluded from eligibility. Extended to sea arrivals effective December 1, 2024 (Maritime Travel Authorisation); seafarers/crew disembarking and departing by air the same day are exempt.",
         "source_url": "https://mfa.gov.sc/travelling-to-seychelles/",
         "source_official": true
       }
@@ -32,7 +32,7 @@
       "https://seychelles.govtas.com/en",
       "https://mfa.gov.sc/travelling-to-seychelles/"
     ],
-    "notes": "Seychelles operates a universal visa-free entry policy for all nationalities except Kosovo (which is refused entry as Seychelles does not recognise the State of Kosovo). However, the Electronic Travel Authorisation (TA/ETA) is MANDATORY and PAID for all visitors before departure: EUR 10 standard (24h) / EUR 30 premium (6h). The Visitor's Permit (initial 3 months, free of charge on arrival) may be extended in 3-month increments up to a maximum of 12 months total at SCR 5,000 per period. Passport must be valid for the full duration of the intended stay."
+    "notes": "Seychelles operates a universal visa-free entry policy for all nationalities except Kosovo (which is refused entry as Seychelles does not recognise the State of Kosovo). However, the Electronic Travel Authorisation (TA/ETA) is MANDATORY and PAID for all visitors before departure: EUR 10 standard (24h) / EUR 30 premium (6h). The Visitor's Permit (initial 3 months, free of charge on arrival) may be extended in 3-month increments up to a maximum of 12 months total at SCR 5,000 per period. Passport must be valid for the full duration of the intended stay. As of December 1, 2024, the TA requirement was extended to sea arrivals (cruise ship/private yacht passengers); crew departing by air same day are exempt."
   },
   "visa_required": {
     "default_visa_free": true,
@@ -42,6 +42,128 @@
     "source_official": true
   },
   "conditional_access": [],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visitor's Permit",
+      "purpose": "Issued on arrival to visitors entering Seychelles for holiday, pleasure, visiting friends and family, or short-term business. Covers tourism and leisure activities.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": 0,
+      "processing_days_max": 0,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.ics.gov.sc/permits/visitors-permit",
+      "notes": "Initial 3-month (90-day) permit granted free of charge on arrival. Extendable in 3-month increments up to a maximum of 12 months total stay; each extension costs SCR 5,000. Extensions available online at permits.ics.gov.sc or in person at Independence House, Victoria, Mahé. Mandatory pre-travel ETA/TA required (EUR 10 standard / EUR 30 premium) via seychelles.govtas.com. Visitors must show proof of return/onward ticket, confirmed accommodation, and minimum funds of USD 150/day. Kosovo nationals excluded."
+    },
+    {
+      "category": "business",
+      "name": "Visitor's Permit (Business Purpose)",
+      "purpose": "Covers short-term business visits to Seychelles including meetings, negotiations, and commercial activities that do not constitute gainful occupation.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": 0,
+      "processing_days_max": 0,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.ics.gov.sc/permits/visitors-permit",
+      "notes": "Business visitors are covered under the same Visitor's Permit framework as tourists - no separate business visa exists. The permit does not authorise employment or self-employment; a Gainful Occupation Permit (GOP) is required for any work. Mandatory pre-travel ETA/TA required (EUR 10 standard / EUR 30 premium). Extendable up to 12 months total in 3-month increments at SCR 5,000 each."
+    },
+    {
+      "category": "work",
+      "name": "Gainful Occupation Permit (GOP)",
+      "purpose": "Authorises non-Seychellois nationals to reside and work in Seychelles either as an employee of a Seychellois organisation or as a self-employed person.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ics.gov.sc/permits/gainful-occupation-permit",
+      "notes": "All expatriate workers in Seychelles require a GOP. Two categories: employed (as an employee) and self-employed. Employer must first obtain approval from the Ministry of Employment and Social Affairs before applying. Application submitted at least 1 week before employment start. Fees: SCR 1,000 processing fee + SCR 500 per month or part thereof (permit fee, payable upfront for the full duration). Applied for in person at Independence House, Victoria. Holders of Permanent Residence by Investment are exempt from GOP fees. Extensions follow the same procedure as initial applications."
+    },
+    {
+      "category": "student",
+      "name": "Student's Permit",
+      "purpose": "Granted to non-Seychellois nationals accepted to follow a course of study at an approved educational institution in Seychelles. Does not authorise employment.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ics.gov.sc/permits/student-permit",
+      "notes": "Valid for one year or part thereof. Fees: SCR 1,000 processing fee + SCR 1,500 permit fee for one year. Required documents: completed application form, documentary proof of acceptance from the educational institution, evidence of financial means, passport bio-data copy, two recent passport photographs, full birth certificate (with translation if necessary), proof of accommodation (may be requested). Eligible for dependants of permit-holders in Seychelles who are aged 18+ and continuing studies. Employment not permitted under this permit."
+    },
+    {
+      "category": "family",
+      "name": "Residence Permit (Family/Special Contribution)",
+      "purpose": "Granted to non-Seychellois with family or domestic connections to Seychelles, or those who have made or will make a special contribution to the economic, social or cultural life of Seychelles.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ics.gov.sc/permits/residence-permit",
+      "notes": "Valid for 5 years (1,825 days). Does NOT authorise gainful occupation - a separate GOP is required for any work. Holder must reside in Seychelles for at least 5 days per 12-month period. Bank guarantee of SCR 20,000 required. Fees: SCR 1,000 processing fee + SCR 150,000 permit fee (main applicant, 5-year term) + SCR 75,000 for spouse (if applied simultaneously) + SCR 25,000 per child endorsement. No entitlement to free medical services or social security benefits. Contact: m.laporte@gov.sc / (+248) 4293636."
+    },
+    {
+      "category": "investment",
+      "name": "Permanent Residence Permit by Investment",
+      "purpose": "Grants permanent residence to foreign nationals who have made a qualifying investment in Seychelles and meet residence requirements, exempting them from Gainful Occupation Permits.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://investinseychelles.com/investors-guide/investor-resources/residency-by-investment/permanent-residence-permit",
+      "notes": "Requires: (1) direct investment of USD 1 million or more in a Seychelles business; (2) at least 5 years of business association from that investment; (3) residency in Seychelles for at least 5 years on a Dependent Permit or GOP; (4) not been absent continuously for 1+ year without ministerial consent; (5) not sentenced to imprisonment exceeding 1 year. Fees: SCR 1,000 processing fee (non-refundable, paid in cash upfront); SCR 350,000 permit fee if approved. Benefits: exempt from GOP fees; may purchase residential land from government at 50% sanction fee reduction; work authorisation without separate GOP."
+    },
+    {
+      "category": "other",
+      "name": "Permanent Residence Permit (General)",
+      "purpose": "Grants permanent residency to long-term residents of Seychelles who meet general eligibility criteria, providing the right to live and work without additional permits.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ics.gov.sc/permits/permanent-residence",
+      "notes": "Eligibility: must not be a prohibited immigrant; absence from Seychelles cannot exceed 1 year without ministerial consent; must not have been sentenced to imprisonment exceeding 1 year. Rights: authorises work without a separate GOP; exempt from other permits required for residency or employment; eligible to purchase land/property with government approval at 50% sanction fee reduction. Specific fees not published on the ICS page - contact Permanent Residence and Citizenship Section at (+248) 4293636."
+    },
+    {
+      "category": "other",
+      "name": "Electronic Travel Authorisation (TA/ETA)",
+      "purpose": "Mandatory pre-travel authorisation required for ALL visitors to Seychelles before departure. Enhances border security and provides government visibility of incoming travellers. Not a visa - does not replace the Visitor's Permit issued on arrival.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 11,
+      "processing_days_min": 0,
+      "processing_days_max": 1,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://seychelles.govtas.com/",
+      "notes": "Required by ALL nationalities (except Kosovo who are refused entry). Fee: EUR 10 for standard processing (up to 24 hours); EUR 30 for premium processing (approximately 6 hours). The EUR 10.90 figure seen on some pages reflects a payment processing surcharge on top of the EUR 10 base fee. Apply at seychelles.govtas.com or via the Seychelles e-Border mobile app. Applications accepted up to 10 days before travel (up to 30 days before for sea arrivals). Required documents: valid passport, selfie photograph, contact information, trip details, airline booking confirmation (showing arrival/departure dates), accommodation confirmation. Failure to obtain the TA before departure may result in a penalty fee on arrival. Extended to sea arrivals (cruise ship/private yacht) effective December 1, 2024: all international passengers arriving by sea must apply online prior to arrival (Maritime Travel Authorisation); seafarers/crew disembarking and leaving by air the same day are exempt."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -51,7 +173,7 @@
     "processing_time": "",
     "dual_citizenship_allowed": null,
     "residency_required": null,
-    "notes": "No citizenship-by-investment (CBI) program exists in Seychelles. The official ICS page (ics.gov.sc/citizenship/aquisition-of-citizenship) confirms only three pathways: (1) naturalization — married to a Seychellois citizen for 15+ years with 2+ years aggregate residency and passing a citizenship exam at 80%; (2) parental/grandparental descent; (3) special circumstances (deceased Seychellois spouse). Third-party sources have referenced a USD 1M+ investment path to citizenship but this cannot be verified on any official government domain (ics.gov.sc, statehouse.gov.sc, mfa.gov.sc) and is therefore not recorded."
+    "notes": "No citizenship-by-investment (CBI) program exists in Seychelles. The official ICS page (ics.gov.sc/citizenship/aquisition-of-citizenship) confirms only three pathways: (1) naturalization - married to a Seychellois citizen for 15+ years with 2+ years aggregate residency and passing a citizenship exam at 80%; (2) parental/grandparental descent; (3) special circumstances (deceased Seychellois spouse). Third-party sources have referenced a USD 1M+ investment path to citizenship but this cannot be verified on any official government domain (ics.gov.sc, statehouse.gov.sc, mfa.gov.sc) and is therefore not recorded."
   },
   "rbi": {
     "programs": [
@@ -128,6 +250,30 @@
       "notes": "Seychelles and the Kyrgyz Republic signed a Visa Waiver Agreement on May 4, 2026 during Minister Barry Faure's official visit. Passport types covered and effective date are not specified in the press release. Kyrgyz ordinary passport holders already entered Seychelles visa-free under the general policy.",
       "source_url": "https://mfa.gov.sc/news/seychelles-and-kyrgyz-republic-sign-a-visa-waiver-agreement/",
       "source_official": true
+    },
+    {
+      "partner": "Maldives",
+      "iso3": "MDV",
+      "type": "visa_waiver",
+      "passport_types": ["unspecified"],
+      "direction": "bilateral",
+      "signed_date": null,
+      "in_force": "2026-05-15",
+      "notes": "Seychelles and the Maldives signed and implemented a mutual visa waiver agreement effective May 15, 2026, during Minister Barry Faure's official visit to the Maldives. Citizens of both countries can visit each other visa-free for up to 30 days. A short-stay visa waiver agreement was originally concluded in June 2023 that laid the foundation for the current implementation. Maldivian ordinary passport holders already entered Seychelles under the general universal visa-free policy; this agreement formalises mutual reciprocal access. Passport types not specified in available sources (likely all ordinary passports).",
+      "source_url": "https://en.maaldif.com/12941/",
+      "source_official": false
+    },
+    {
+      "partner": "Angola",
+      "iso3": "AGO",
+      "type": "visa_waiver",
+      "passport_types": ["diplomatic", "official", "service"],
+      "direction": "bilateral",
+      "signed_date": "2025-08-18",
+      "in_force": null,
+      "notes": "Seychelles and Angola signed an Agreement on Mutual Visa Exemption on August 18, 2025 at the Ivato Conference Center in Antananarivo, Madagascar. Covers ONLY diplomatic, official, and service passports - NOT ordinary passports. Signed by Angola's Minister of Foreign Affairs Téte António and Seychelles Prime Minister and Minister of Fisheries and Economy Jean-François Ferrari. Angolan ordinary passport holders continue to enter Seychelles under the general universal visa-free policy (not under this agreement). No official Seychelles MFA press release confirmed; source is Africa-Press reporting.",
+      "source_url": "https://www.africa-press.net/angola/all-news/angola-and-seychelles-sign-visa-waiver-agreement",
+      "source_official": false
     }
   ],
   "official_domains": [
@@ -143,98 +289,148 @@
       "CORRECTED: Official terminology is 'Travel Authorisation (TA)' per mfa.gov.sc, not merely 'ETA'. Both names are used across official sources; 'TA/ETA' is used in this record for clarity.",
       "CORRECTED: Added visa_required block explicitly listing Kosovo (XKX) as the only excluded nationality, making the default_visa_free=true logic explicit and machine-readable.",
       "CORRECTED: Added mfa.gov.sc/travelling-to-seychelles/ to source_urls in visa_policy (this page is the most detailed official entry requirements page and was missing from visa_policy.source_urls, though it appeared in sources_checked).",
-      "CORRECTED: Egypt-Seychelles agreement (April 2025) is ONLY for diplomatic/official passports — ordinary not included. The prior record correctly noted this in gaps but the agreements array now records it explicitly with passport_types=[diplomatic, official].",
-      "CORRECTED: Added agreements array with Lebanon (Nov 2024, all passports), Egypt (Apr 2025, diplomatic/official only), and Kyrgyz Republic (May 2026, passport types unspecified) — these were in sources_checked/gaps but not structured as agreement records.",
+      "CORRECTED: Egypt-Seychelles agreement (April 2025) is ONLY for diplomatic/official passports - ordinary not included. The prior record correctly noted this in gaps but the agreements array now records it explicitly with passport_types=[diplomatic, official].",
+      "CORRECTED: Added agreements array with Lebanon (Nov 2024, all passports), Egypt (Apr 2025, diplomatic/official only), and Kyrgyz Republic (May 2026, passport types unspecified) - these were in sources_checked/gaps but not structured as agreement records.",
       "CORRECTED: Added mfa.gov.sc to official_domains (was in sources_checked but missing from official_domains array).",
-      "CONFIRMED UNCHANGED: CBI program does not exist — confirmed against ics.gov.sc/citizenship/aquisition-of-citizenship.",
+      "CONFIRMED UNCHANGED: CBI program does not exist - confirmed against ics.gov.sc/citizenship/aquisition-of-citizenship.",
       "CONFIRMED UNCHANGED: RBI programs (PRP by Investment USD 1M, Residence Permit SCR 150,000) confirmed against official sources.",
-      "CONFIRMED UNCHANGED: conditional_access remains empty — Seychelles grants unconditional ordinary-passport entry to all except Kosovo; no credential-based or passport-type-only-waiver inbound rules exist.",
+      "CONFIRMED UNCHANGED: conditional_access remains empty - Seychelles grants unconditional ordinary-passport entry to all except Kosovo; no credential-based or passport-type-only-waiver inbound rules exist.",
       "CONFIRMED UNCHANGED: Kosovo passport holders refused entry per ics.gov.sc/visa-and-travel/visiting-seychelles.",
-      "ADDED: outbound_official field populated from official ICS PDF 'Countries Where Seychelles Nationals Do Not Require a Visa' (ics.gov.sc/other-documents/countries-without-visa-requirements/viewdocument). Visa-on-arrival entries (Madagascar, Zimbabwe, Jordan, Oman, Qatar) separated from visa-free. India marked with ** in PDF meaning 'Visa Issued By Diplomatic Missions/Consular Post In Seychelles' — treated as e-visa/prior-arrangement required. Ethiopia, Thailand, Vietnam restricted to diplomatic/official passports only — excluded from ordinary-passport visa-free list. Belarus, Angola, Benin, Togo, Belize, French Guiana, Guyana, Martinique listed without validity details in PDF."
+      "ADDED: outbound_official field populated from official ICS PDF 'Countries Where Seychelles Nationals Do Not Require a Visa' (ics.gov.sc/other-documents/countries-without-visa-requirements/viewdocument). Visa-on-arrival entries (Madagascar, Zimbabwe, Jordan, Oman, Qatar) separated from visa-free. India marked with ** in PDF meaning 'Visa Issued By Diplomatic Missions/Consular Post In Seychelles' - treated as e-visa/prior-arrangement required. Ethiopia, Thailand, Vietnam restricted to diplomatic/official passports only - excluded from ordinary-passport visa-free list. Belarus, Angola, Benin, Togo, Belize, French Guiana, Guyana, Martinique listed without validity details in PDF.",
+      "ADDED: visa_types field populated with 8 entries covering all major permit categories confirmed from official ICS sources: Visitor's Permit (tourist/business on arrival), Gainful Occupation Permit (work), Student's Permit, Residence Permit (family/special contribution), Permanent Residence by Investment, Permanent Residence (general), and Electronic Travel Authorisation (mandatory pre-travel). No digital_nomad, transit, medical, retirement, or working_holiday permit types found on any official source.",
+      "2026-06-27 CONFIRMED: Universal visa-free policy (all except Kosovo) re-confirmed live on ics.gov.sc/visa-and-travel/visiting-seychelles - no change to inbound nationality access.",
+      "2026-06-27 CONFIRMED: Kosovo entry refusal policy unchanged per ics.gov.sc.",
+      "2026-06-27 CONFIRMED: Visitor's Permit terms unchanged - 90 days free on arrival, extensions in 3-month increments at SCR 5,000 each, maximum 12 months total, per ics.gov.sc/permits/visitors-permit.",
+      "2026-06-27 CORRECTED: ETA fee clarified to EUR 10 (standard) / EUR 30 (premium) as confirmed by govtas.com FAQ search results. The EUR 10.90 figure seen on the mfa.gov.sc/travelling-to-seychelles/ page reflects a payment processing surcharge on top of the EUR 10 base fee; the canonical fee per official govtas.com FAQ is EUR 10. fee_usd in visa_types kept at 11 (approx EUR 10 at current exchange). Notes updated throughout to clarify this.",
+      "2026-06-27 ADDED: Maritime Travel Authorisation (MTA) - Travel Authorisation requirement extended to sea arrivals (cruise ship/private yacht passengers) effective December 1, 2024, per official announcement on tourism.gov.sc. Seafarers/crew who disembark and depart by air same day are exempt. Applications accepted up to 30 days before arrival at sea. Added to TA notes in both eta and visa_types sections.",
+      "2026-06-27 CONFIRMED: No new visa waiver agreements beyond what is already in the agreements array (Lebanon Nov 2024, Egypt Apr 2025 diplomatic/official only, Kyrgyz Republic May 2026). No new agreements found for 2026 on mfa.gov.sc.",
+      "2026-06-27 NOTE: UAE outbound visa-free agreement 'comes into force' news found (mfa.gov.sc) is an OUTBOUND Seychellois-to-UAE agreement, not inbound - does not affect inbound entry classification. UAE nationals already enter Seychelles under the universal visa-free policy.",
+      "2026-06-29 CONFIRMED: Universal visa-free policy (all except Kosovo) re-confirmed live on ics.gov.sc/visa-and-travel/visiting-seychelles - policy text unchanged: 'visa-free country... except for passport holder from Kosovo as Seychelles does not recognized the State of Kosovo therefore entry will not be permitted.'",
+      "2026-06-29 CONFIRMED: Visitor's Permit terms unchanged - 90 days free on arrival, extensions SCR 5,000 per 3-month period, max 12 months total, per ics.gov.sc/permits/visitors-permit.",
+      "2026-06-29 CONFIRMED: TA/ETA fees unchanged - EUR 10 standard (24h) / EUR 30 premium (6h) per seychelles.govtas.com FAQ.",
+      "2026-06-29 ADDED: Maldives visa waiver agreement (in force May 15, 2026) - short-stay up to 30 days mutual visa-free. Maldivian nationals already entered Seychelles under the universal visa-free policy; added to agreements[] with source_official=false (no mfa.gov.sc press release confirmed; sourced from Maldivian press en.maaldif.com).",
+      "2026-06-29 ADDED: Angola visa waiver agreement (signed August 18, 2025) - covers ONLY diplomatic, official, and service passports. Same pattern as Egypt agreement. Angolan ordinary passport holders already entered under general policy; added to agreements[] with source_official=false (no mfa.gov.sc press release confirmed; sourced from Africa-Press).",
+      "2026-06-29 CONFIRMED: No new agreements found on mfa.gov.sc beyond those already in the record (Lebanon Nov 2024, Egypt Apr 2025 diplomatic/official, Kyrgyz Republic May 2026, Maldives May 2026, Angola Aug 2025 diplomatic/official/service). No inbound policy changes found."
     ],
     "gaps": [
-      "ETA/TA exact fee: MFA page states EUR 10.90 while govtas.com FAQ search result states EUR 10 standard / EUR 30 premium. Minor discrepancy — EUR 10.90 may reflect a payment processing fee; EUR 10 is the base fee for standard processing. Official govtas.com FAQ headings were confirmed via search results but dynamic page content could not be fully scraped.",
+      "ETA/TA exact fee: Resolved as of 2026-06-27. The canonical base fee is EUR 10 standard / EUR 30 premium per govtas.com FAQ. The EUR 10.90 figure on mfa.gov.sc/travelling-to-seychelles/ is a payment processing surcharge. Dynamic page content at govtas.com could not be fully scraped but FAQ link confirmed EUR 10 as the advertised price.",
       "Egypt-Seychelles agreement (April 2025): covers only diplomatic/official passports; extension to ordinary passports was 'under discussion' but no follow-up official announcement confirming extension to ordinary passports was found as of June 2026.",
       "Kyrgyz Republic visa waiver (May 2026): passport types covered not specified in press release; full agreement text not available on official domain.",
       "Lebanon visa waiver (November 2024): in-force date not specified; press release confirms signing but not ratification/entry-into-force date.",
+      "Maritime Travel Authorisation (MTA) exact fee: tourism.gov.sc page confirming the December 1, 2024 extension did not specify fees for sea arrivals; fees may differ from the standard air-arrival EUR 10 TA. Full fee schedule for MTA not confirmed.",
       "No official Seychelles government page found for a digital nomad, remote-worker, or workation permit; third-party aggregators reference a 'Workation Retreat Program' but no official domain confirms this.",
       "No official confirmation of COMESA Free Movement Protocol ratification by Seychelles found on any official Seychelles government domain.",
       "The investinseychelles.com domain is not a *.gov.sc TLD, but uses sib.gov.sc as contact email and is the official Seychelles Investment Board portal; treated as official.",
       "Seychelles e-Israel ordinary passport visa exemption agreement (signed January 11, 2024 per mfa.gov.sc): Israeli ordinary passport holders now enter under a formal bilateral agreement, but since they already entered under the general visa-free policy, this does not change classification.",
+      "Maldives visa waiver (May 2026): passport types not specified in available sources; no official mfa.gov.sc press release confirmed; sourced from Maldivian media. Marked source_official=false. Maldivian ordinary nationals already admitted under general policy.",
+      "Angola visa waiver (August 2025): no official mfa.gov.sc press release found; sourced from Africa-Press. Marked source_official=false. Agreement confirmed as diplomatic/official/service only; ordinary passport holders already admitted under general policy.",
       "Kosovo XKX is a user-assigned ISO code, not an official ISO 3166-1 alpha-3 code; used here as widely accepted standard.",
-      "outbound_official PDF (ics.gov.sc) has no publication date. PDF appears to be from circa 2015 (latest dated entries: UAE 16 July 2015, Mozambique April 2013, Cambodia December 2012, India March 2015). The list is likely outdated and should be treated as a baseline; current access levels may differ."
+      "outbound_official PDF (ics.gov.sc) has no publication date. PDF appears to be from circa 2015 (latest dated entries: UAE 16 July 2015, Mozambique April 2013, Cambodia December 2012, India March 2015). The list is likely outdated and should be treated as a baseline; current access levels may differ.",
+      "Permanent Residence Permit (General) fees not published on ics.gov.sc/permits/permanent-residence - contact ICS directly for current fee schedule.",
+      "Student's Permit processing time not specified on official ICS page.",
+      "GOP duration/validity period not explicitly stated on official ICS page - likely tied to employment contract duration."
     ]
   },
   "sources_checked": [
     {
       "url": "https://www.ics.gov.sc/visa-and-travel/visiting-seychelles",
-      "description": "Official Immigration and Civil Status Seychelles — Visiting Seychelles page; confirms visa-free for all except Kosovo; ETA required via seychelles.govtas.com",
+      "description": "Official Immigration and Civil Status Seychelles - Visiting Seychelles page; confirms visa-free for all except Kosovo; ETA required via seychelles.govtas.com",
       "official": true
     },
     {
       "url": "https://www.ics.gov.sc/permits/visitors-permit",
-      "description": "Official ICS — Visitors Permit page; confirms 90-day initial grant free of charge; SCR 5,000 per 3-month extension; up to 12 months total",
+      "description": "Official ICS - Visitors Permit page; confirms 90-day initial grant free of charge; SCR 5,000 per 3-month extension; up to 12 months total",
       "official": true
     },
     {
       "url": "https://mfa.gov.sc/travelling-to-seychelles/",
-      "description": "Official MFA Seychelles — Travelling to Seychelles page; confirms mandatory paid TA (EUR 10.90 standard); all nationalities must apply; documents required listed",
+      "description": "Official MFA Seychelles - Travelling to Seychelles page; confirms mandatory paid TA (EUR 10.90 standard); all nationalities must apply; documents required listed",
       "official": true
     },
     {
       "url": "https://seychelles.govtas.com/en",
-      "description": "Official Seychelles Electronic Border System — mandatory TA portal for all travellers; Government of Seychelles owned; EUR 10 standard / EUR 30 premium processing fees confirmed via FAQ search",
+      "description": "Official Seychelles Electronic Border System - mandatory TA portal for all travellers; Government of Seychelles owned; EUR 10 standard / EUR 30 premium processing fees confirmed via FAQ search",
       "official": true
     },
     {
       "url": "https://mfa.gov.sc/visa/",
-      "description": "Official MFA Seychelles — Visa page; lists outbound visa requirements for Seychellois passport holders by country (NOT inbound rules for foreign nationals entering Seychelles)",
+      "description": "Official MFA Seychelles - Visa page; lists outbound visa requirements for Seychellois passport holders by country (NOT inbound rules for foreign nationals entering Seychelles)",
       "official": true
     },
     {
       "url": "https://www.ics.gov.sc/visa-and-travel/seychellois-travelling-abroad",
-      "description": "Official ICS Seychelles — Seychellois Travelling Abroad page; links to PDF documents listing countries with and without visa requirements for Seychelles nationals",
+      "description": "Official ICS Seychelles - Seychellois Travelling Abroad page; links to PDF documents listing countries with and without visa requirements for Seychelles nationals",
       "official": true
     },
     {
       "url": "https://www.ics.gov.sc/other-documents/countries-without-visa-requirements/viewdocument",
-      "description": "Official ICS Seychelles — PDF: 'Countries Where Seychelles Nationals Do Not Require a Visa'; primary source for outbound_official field; lists visa-free and visa-on-arrival countries by region",
+      "description": "Official ICS Seychelles - PDF: 'Countries Where Seychelles Nationals Do Not Require a Visa'; primary source for outbound_official field; lists visa-free and visa-on-arrival countries by region",
       "official": true
     },
     {
       "url": "https://www.ics.gov.sc/permits/residence-permit",
-      "description": "Official ICS — Residence Permit page (family/special contribution); SCR 150,000 permit fee for 5-year term",
+      "description": "Official ICS - Residence Permit page (family/special contribution); SCR 150,000 permit fee for 5-year term",
       "official": true
     },
     {
       "url": "https://www.ics.gov.sc/permits/gainful-occupation-permit",
-      "description": "Official ICS — Gainful Occupation Permit page; SCR 500/month, 1–5 day processing",
+      "description": "Official ICS - Gainful Occupation Permit page; SCR 500/month, 1–5 day processing",
       "official": true
     },
     {
       "url": "https://www.ics.gov.sc/citizenship/aquisition-of-citizenship",
-      "description": "Official ICS — Acquisition of Citizenship; only naturalization, descent, and special circumstances; no CBI confirmed",
+      "description": "Official ICS - Acquisition of Citizenship; only naturalization, descent, and special circumstances; no CBI confirmed",
       "official": true
     },
     {
       "url": "https://investinseychelles.com/investors-guide/investor-resources/residency-by-investment/permanent-residence-permit",
-      "description": "Official Seychelles Investment Board — Permanent Residence Permit by Investment (USD 1M+, 5 years, SCR 350,000 fee)",
+      "description": "Official Seychelles Investment Board - Permanent Residence Permit by Investment (USD 1M+, 5 years, SCR 350,000 fee)",
       "official": true
     },
     {
       "url": "https://mfa.gov.sc/news/seychelles-and-egypt-heighten-diplomatic-ties-through-official-visit-in-cairo-by-mr-sylvestre-radegonde-minister-for-foreign-affairs-and-tourism/",
-      "description": "Official MFA Seychelles — Egypt-Seychelles visa waiver signed April 5–6, 2025; covers ONLY diplomatic and official passport holders; ordinary under discussion",
+      "description": "Official MFA Seychelles - Egypt-Seychelles visa waiver signed April 5–6, 2025; covers ONLY diplomatic and official passport holders; ordinary under discussion",
       "official": true
     },
     {
       "url": "https://mfa.gov.sc/news/seychelles-and-lebanon-sign-visa-waiver-agreement/",
-      "description": "Official MFA Seychelles — Lebanon-Seychelles visa waiver signed November 12, 2024; covers all passport holders",
+      "description": "Official MFA Seychelles - Lebanon-Seychelles visa waiver signed November 12, 2024; covers all passport holders",
       "official": true
     },
     {
       "url": "https://mfa.gov.sc/news/seychelles-and-kyrgyz-republic-sign-a-visa-waiver-agreement/",
-      "description": "Official MFA Seychelles — Kyrgyz Republic-Seychelles visa waiver signed May 4, 2026; passport types not specified",
+      "description": "Official MFA Seychelles - Kyrgyz Republic-Seychelles visa waiver signed May 4, 2026; passport types not specified",
       "official": true
+    },
+    {
+      "url": "https://www.ics.gov.sc/permits/student-permit",
+      "description": "Official ICS - Student's Permit page; 1-year validity; SCR 1,000 processing + SCR 1,500 permit fee; no employment permitted",
+      "official": true
+    },
+    {
+      "url": "https://www.ics.gov.sc/permits/permanent-residence",
+      "description": "Official ICS - Permanent Residence page; general eligibility criteria; specific fees not published; contact ICS for details",
+      "official": true
+    },
+    {
+      "url": "https://tourism.gov.sc/?p=8181",
+      "description": "Official Seychelles Tourism - Travel Authorisation extended to sea arrivals; mandatory from December 1, 2024 for cruise ship and private yacht passengers; seafarers departing by air same day exempt",
+      "official": true
+    },
+    {
+      "url": "https://seychelles.govtas.com/en/FAQ/dc3d5be6-d29e-4881-84f8-ad93a2759682",
+      "description": "Official Seychelles Electronic Border System - FAQ: price of Travel Authorisation; page loaded but full fee text not rendered; EUR 10 standard / EUR 30 premium confirmed via search results",
+      "official": true
+    },
+    {
+      "url": "https://en.maaldif.com/12941/",
+      "description": "Maldivian media (Maaldif English Edition) - Maldives-Seychelles visa waiver in force May 15, 2026; up to 30 days mutual visa-free; not an official Seychelles government source",
+      "official": false
+    },
+    {
+      "url": "https://www.africa-press.net/angola/all-news/angola-and-seychelles-sign-visa-waiver-agreement",
+      "description": "Africa-Press - Angola-Seychelles visa waiver signed August 18, 2025; diplomatic/official/service passports only; not an official Seychelles government source",
+      "official": false
     }
   ],
   "outbound_official": {
@@ -242,7 +438,7 @@
     "source_url": "https://www.ics.gov.sc/other-documents/countries-without-visa-requirements/viewdocument",
     "source_official": true,
     "asof": null,
-    "notes": "Source is an official PDF published by Immigration and Civil Status (ICS), Government of Seychelles, linked from ics.gov.sc/visa-and-travel/seychellois-travelling-abroad. The PDF has no explicit publication date; the latest dated entries are UAE (16 July 2015), India (12 March 2015), Mozambique (April 2013), Cambodia (December 2012) — the list likely dates from circa 2015. Countries marked 'Issued Upon Arrival' in the PDF are placed in visa_on_arrival. India is marked ** meaning 'Visa Issued By Diplomatic Missions/Consular Post In Seychelles' — placed in e_visa as it requires prior arrangement. Ethiopia, Thailand, Vietnam listed as diplomatic/official passports only — excluded from ordinary-passport visa_free. Belarus, Angola, Benin, Togo, Belize, French Guiana, Guyana, Martinique appear in the list with no validity or condition details. UAE (3 months, as of 16 July 2015) is included as visa-free since it is in the no-visa-required document. The companion document 'Countries With Visa Requirement' was not retrieved.",
+    "notes": "Source is an official PDF published by Immigration and Civil Status (ICS), Government of Seychelles, linked from ics.gov.sc/visa-and-travel/seychellois-travelling-abroad. The PDF has no explicit publication date; the latest dated entries are UAE (16 July 2015), India (12 March 2015), Mozambique (April 2013), Cambodia (December 2012) - the list likely dates from circa 2015. Countries marked 'Issued Upon Arrival' in the PDF are placed in visa_on_arrival. India is marked ** meaning 'Visa Issued By Diplomatic Missions/Consular Post In Seychelles' - placed in e_visa as it requires prior arrangement. Ethiopia, Thailand, Vietnam listed as diplomatic/official passports only - excluded from ordinary-passport visa_free. Belarus, Angola, Benin, Togo, Belize, French Guiana, Guyana, Martinique appear in the list with no validity or condition details. UAE (3 months, as of 16 July 2015) is included as visa-free since it is in the no-visa-required document. The companion document 'Countries With Visa Requirement' was not retrieved.",
     "visa_free": [
       {"name": "Albania", "iso3": "ALB"},
       {"name": "Austria", "iso3": "AUT"},
@@ -360,7 +556,7 @@
       {"name": "Qatar", "iso3": "QAT"}
     ],
     "e_visa": [
-      {"name": "India", "iso3": "IND", "note": "Marked ** in PDF: 'Visa Issued By Diplomatic Missions/Consular Post In Seychelles' — requires visa arranged via Indian diplomatic mission in Seychelles, as of 12 March 2015"}
+      {"name": "India", "iso3": "IND", "note": "Marked ** in PDF: 'Visa Issued By Diplomatic Missions/Consular Post In Seychelles' - requires visa arranged via Indian diplomatic mission in Seychelles, as of 12 March 2015"}
     ],
     "eta": []
   }

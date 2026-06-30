@@ -10,7 +10,7 @@
         "nationality": "All nationalities except Burundi and Palestine",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "Visa on arrival available at international airports/ports for all nationalities except Burundian and Palestinian citizens, for stays up to 90 days. Fee structure (fees apply to both VoA and eVisa): 1–15 days = €30/US$35 (fee tripled from €10 effective 16 February 2026); 16–30 days = €35/US$41; 31–60 days = €40/US$47; 61–90 days = €50/US$59. Diplomats and employees of certain international organizations are exempt from visa fees. Visa can be extended to a maximum total stay of 90 days while in Madagascar.",
+        "notes": "Visa on arrival available at international airports/ports for all nationalities except Burundian and Palestinian citizens, for stays up to 90 days. The February 2026 fee increase (15-day tier tripled from €10 to €30) was confirmed to apply exclusively to the eVisa system; VoA fees at airports/embassies/consulates were not confirmed to have changed as of June 2026. Pre-increase VoA fee tiers per the eVisa portal (may still apply on arrival): 1–15 days = €10/US$10; 16–30 days = €35/US$41; 31–60 days = €40/US$47; 61–90 days = €50/US$59. Diplomats and employees of certain international organizations are exempt from visa fees. Visa can be extended to a maximum total stay of 90 days while in Madagascar.",
         "source_url": "https://evisamada-mg.com/en/home",
         "source_official": true
       }
@@ -20,7 +20,7 @@
         "nationality": "All nationalities except Burundi and Palestine",
         "iso3": null,
         "max_stay_days": 60,
-        "notes": "eVisa (tourist only) available online via the official evisamada-mg.com portal (operating as evisamada.gov.mg, the only official Republic of Madagascar online visa application website) for all nationalities except Burundian and Palestinian citizens. Single-entry tourist eVisa with maximum duration of 60 days (VoA allows up to 90 days). Fee structure effective 16 February 2026: 1–15 days = €30/US$35; 16–30 days = €35/US$41; 31–60 days = €40/US$47; 61–90 days = €50/US$59. Apply between 1 week and 6 months before departure. Electronic Travel Authorization issued no later than 72 hours after validation of online registration. Diplomats and employees of certain organizations are exempt from visa fees. Service temporarily upgrading as of June 2026.",
+        "notes": "eVisa (tourist only) available online via the official evisamada-mg.com portal (operating as evisamada.gov.mg, the only official Republic of Madagascar online visa application website) for all nationalities except Burundian and Palestinian citizens. Single-entry tourist eVisa with maximum duration of 60 days (VoA allows up to 90 days). Fee structure effective 16 February 2026 (applies to eVisa only, not confirmed for VoA): 1–15 days = €30/US$35 (tripled from €10/US$10); 16–30 days = €35/US$41; 31–60 days = €40/US$47; 61–90 days = €50/US$59. Apply between 1 week and 6 months before departure. Electronic Travel Authorization issued no later than 72 hours after validation of online registration. Diplomats and employees of certain organizations are exempt from visa fees. Service temporarily upgrading as of June 2026.",
         "source_url": "https://evisamada-mg.com/en/home",
         "source_official": true
       }
@@ -32,8 +32,160 @@
       "https://en.wikipedia.org/wiki/Visa_policy_of_Madagascar",
       "https://visasnews.com/en/madagascar-triples-its-15-day-e-visa-fee/"
     ],
-    "notes": "Madagascar operates a near-universal visa-on-arrival / eVisa policy. The sole confirmed nationality exclusions are Burundian and Palestinian citizens, who cannot obtain VoA or eVisa. The eVisa portal (evisamada.gov.mg / evisamada-mg.com) states 'All nationalities are eligible for eVisa' but multiple third-party sources citing embassy-level policy confirm Burundi and Palestine are excluded. The 15-day e-visa fee was tripled from €10 to €30 effective 16 February 2026 per the official eVisa portal announcement; other fee tiers were unchanged. VoA maximum stay is 90 days (confirmed by Wikipedia and Madagascar Embassy Paris); eVisa is capped at 60 days. Madagascar MFA (diplomatie.gov.mg) classifies short-stay non-immigrant visas as valid up to 90 days."
+    "notes": "Madagascar operates a near-universal visa-on-arrival / eVisa policy. The sole confirmed nationality exclusions are Burundian and Palestinian citizens, who cannot obtain VoA or eVisa. The eVisa portal (evisamada.gov.mg / evisamada-mg.com) states 'All nationalities are eligible for eVisa' but multiple third-party sources citing embassy-level policy confirm Burundi and Palestine are excluded. The 15-day eVisa fee was tripled from €10 to €30 effective 16 February 2026 per the official eVisa portal announcement; other eVisa fee tiers were unchanged. IMPORTANT: The February 2026 fee increase was confirmed to apply exclusively to the eVisa system (VisasNews citing official announcement); VoA fees at airports/consulates were not confirmed as changed. VoA maximum stay is 90 days (confirmed by Wikipedia and Madagascar Embassy Paris); eVisa is capped at 60 days. Madagascar MFA (diplomatie.gov.mg) classifies short-stay non-immigrant visas as valid up to 90 days."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist eVisa (Electronic Travel Authorization)",
+      "purpose": "Short-stay tourism visits to Madagascar. Covers leisure, sightseeing, and non-business activities.",
+      "max_stay_days": 60,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 35,
+      "processing_days_min": 1,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisamada-mg.com/en/home",
+      "notes": "Available to all nationalities except Burundi and Palestine. Four fee tiers based on stay duration (eVisa only - effective 16 February 2026): 1–15 days = US$35/€30 (tripled from US$10/€10); 16–30 days = US$41/€35; 31–60 days = US$47/€40; 61–90 days = US$59/€50. The fee increase applies exclusively to the eVisa system; VoA fees at airports/consulates were not confirmed as changed (may retain pre-increase 15-day rate of US$10/€10). Apply 1 week to 6 months before departure; ETA issued within 72 hours. Diplomats and employees of certain international organizations are exempt from fees."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Visa on Arrival",
+      "purpose": "Short-stay tourism visits granted at the port of entry for travelers who did not apply online in advance.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 35,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://evisamada-mg.com/en/home",
+      "notes": "Available at international airports and ports for all nationalities except Burundi and Palestine. Allows up to 90 days (eVisa is capped at 60 days). The February 2026 fee increase was confirmed to apply exclusively to the eVisa system; VoA fees at airports/embassies were not confirmed to have changed. Pre-increase VoA fee tiers (may still apply): 1–15 days = US$10/€10; 16–30 days = US$41/€35; 31–60 days = US$47/€40; 61–90 days = US$59/€50. Can be extended to a maximum total stay of 90 days within Madagascar. Diplomats and employees of certain international organizations are exempt from fees."
+    },
+    {
+      "category": "business",
+      "name": "Short-Stay Business Visa (Non-Immigrant)",
+      "purpose": "Short-term business visits including meetings, trade missions, internships, and short business assignments without paid employment in Madagascar.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://ambamad-paris.diplomatie.gov.mg/index.php/visa/visas-d-entree-et-de-sejour-a-madagascar",
+      "notes": "Classified under the short-stay non-immigrant visa category by Madagascar Embassy Paris. Covers business visits, short missions, internships, and journalism. Maximum stay up to 90 days with up to 3 entries. Work authorization is not included. Can be issued by diplomatic missions or at airport immigration offices. No paid work permitted."
+    },
+    {
+      "category": "work",
+      "name": "Long-Stay Work/Expatriate Visa (Transformable)",
+      "purpose": "Long-term stay for expatriate workers and employees of companies operating in Madagascar; intended to be converted into a long-stay residence permit at the Ministry of Interior.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambamad-paris.diplomatie.gov.mg/index.php/visa/visas-d-entree-et-de-sejour-a-madagascar",
+      "notes": "Initial visa validity is 1 month. Must be obtained from a consulate before arrival - cannot be issued on arrival. Once in Madagascar, the holder must apply for conversion to a Long Stay Visa at the Ministry of Interior (Department of Immigration) within 1 month of arrival. Categories include expatriate workers, NGO members, and religious missionaries. Source: Madagascar Embassy Paris visa categories page."
+    },
+    {
+      "category": "student",
+      "name": "Long-Stay Student Visa (Transformable)",
+      "purpose": "Long-term stay for foreign nationals enrolled in an educational institution in Madagascar; intended to be converted into a long-stay residence permit.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambamad-paris.diplomatie.gov.mg/index.php/visa/visas-d-entree-et-de-sejour-a-madagascar",
+      "notes": "Initial visa validity is 1 month. Must be obtained from a consulate before arrival - cannot be issued on arrival. Once in Madagascar, the holder must apply for conversion to a Long Stay Visa at the Ministry of Interior within 1 month of arrival. Listed explicitly as a long-stay transformable visa category by Madagascar Embassy Paris."
+    },
+    {
+      "category": "retirement",
+      "name": "Long-Stay Retirement/Rentier Visa (Transformable)",
+      "purpose": "Long-term residence for retirees and those making a definitive move to Madagascar; intended to be converted into a permanent residence permit.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambamad-paris.diplomatie.gov.mg/index.php/visa/visas-d-entree-et-de-sejour-a-madagascar",
+      "notes": "Initial visa validity is 1 month. Must be obtained from a consulate before arrival. Holder must apply for conversion to a Long Stay Visa at the Ministry of Interior within 1 month of arrival. Listed as 'rentiers' (retirees/those living on investment income) in the long-stay transformable category by Madagascar Embassy Paris. Vocation to obtain permanent residence permit."
+    },
+    {
+      "category": "investment",
+      "name": "Investor/Business Long-Stay Visa (Transformable)",
+      "purpose": "Long-term residence for foreign investors, business creators, or those transferring businesses to Madagascar; intended to be converted into a long-stay residence permit.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://edbm.mg/accord_debarquement/V1_visa_transformable_public%20_JAUNE.pdf",
+      "notes": "Initial visa validity is 1 month. Must be obtained from a consulate before arrival - cannot be issued on arrival or via eVisa. Once in Madagascar, the holder applies for a Long Stay Visa at the Ministry of Interior (Department of Immigration) within 1 month. Managed by EDBM (Economic Development Board of Madagascar). No minimum investment amount specified on accessible official pages. Categories include investors, business creators, and business transferees."
+    },
+    {
+      "category": "family",
+      "name": "Long-Stay Family Reunification Visa (Transformable)",
+      "purpose": "Long-term stay for foreign nationals joining family members residing in Madagascar; intended to be converted into a long-stay residence permit.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambamad-paris.diplomatie.gov.mg/index.php/visa/visas-d-entree-et-de-sejour-a-madagascar",
+      "notes": "Initial visa validity is 1 month. Must be obtained from a consulate before arrival. Once in Madagascar, the holder must apply for conversion to a Long Stay Visa at the Ministry of Interior within 1 month. Listed as a specific long-stay transformable category ('family reunification') by Madagascar Embassy Paris."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Special/Diplomatic Visa (Visa Spécial)",
+      "purpose": "Entry for diplomats, international organization staff, development agency personnel, and their eligible family members on official assignment.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambamad-paris.diplomatie.gov.mg/index.php/visa/visas-d-entree-et-de-sejour-a-madagascar",
+      "notes": "Issued to holders of diplomatic passports, international organization staff, development agency personnel, and their family members. Fee-exempt. Issued by diplomatic missions or the Madagascar Ministry of Foreign Affairs. Duration up to 1 month per the Madagascar Embassy Paris page. Bilateral agreements (with India, China, Morocco) additionally grant full visa-free entry for diplomatic/service passport holders of those countries."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Journalist/Mission Visa (Transformable)",
+      "purpose": "Long-term stay for foreign journalists and those on official missions (NGO, religious, humanitarian); intended to be converted into a long-stay residence permit.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambamad-paris.diplomatie.gov.mg/index.php/visa/visas-d-entree-et-de-sejour-a-madagascar",
+      "notes": "Initial visa validity is 1 month. Must be obtained from a consulate before arrival. Once in Madagascar, the holder must apply for conversion to a Long Stay Visa at the Ministry of Interior within 1 month. Listed as separate long-stay transformable categories by Madagascar Embassy Paris: journalists (journalistes), interns (stagiaires), NGO members, and religious missionaries (missionnaires). Short-stay non-immigrant visa also covers journalism (court séjour)."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -121,31 +273,47 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTED: visa_on_arrival and e_visa nationality coverage changed from 'All nationalities' to 'All nationalities except Burundi and Palestine' — confirmed by multiple sources citing Madagascar embassy policy.",
-      "CORRECTED: visa_on_arrival max_stay_days changed from 60 to 90 — Madagascar Embassy Paris and Wikipedia confirm VoA allows up to 90 days; the 60-day cap applies only to eVisa.",
+      "CORRECTED: visa_on_arrival and e_visa nationality coverage changed from 'All nationalities' to 'All nationalities except Burundi and Palestine' - confirmed by multiple sources citing Madagascar embassy policy.",
+      "CORRECTED: visa_on_arrival max_stay_days changed from 60 to 90 - Madagascar Embassy Paris and Wikipedia confirm VoA allows up to 90 days; the 60-day cap applies only to eVisa.",
       "CORRECTED: e-visa fee schedule updated to reflect fee change effective 16 February 2026: 1–15 day eVisa fee tripled from €10 to €30/US$35; other tiers unchanged (16–30 = €35/US$41; 31–60 = €40/US$47; 61–90 = €50/US$59). Per official eVisamada portal announcement.",
-      "CORRECTED: India conditional_access entry — eligible_nationalities changed from 'any' (incorrect) to ['IND'] — the agreement is bilateral India-Madagascar only.",
-      "CORRECTED: China conditional_access — passport_types updated to include 'official' (public affairs / gong wu) to match the Chinese MFA text which lists 'diplomatic, service passports, passports for public affairs of China.'",
-      "ADDED: Morocco conditional_access entry (basis=passport_type, MAR, diplomatic/service) — agreement signed Rabat 14 June 2024 between Morocco MFA Bourita and Madagascar MFA Rafaravavitafika. Morocco MFA domain (diplomatie.ma) confirms signing via joint communiqué page.",
+      "CORRECTED: India conditional_access entry - eligible_nationalities changed from 'any' (incorrect) to ['IND'] - the agreement is bilateral India-Madagascar only.",
+      "CORRECTED: China conditional_access - passport_types updated to include 'official' (public affairs / gong wu) to match the Chinese MFA text which lists 'diplomatic, service passports, passports for public affairs of China.'",
+      "ADDED: Morocco conditional_access entry (basis=passport_type, MAR, diplomatic/service) - agreement signed Rabat 14 June 2024 between Morocco MFA Bourita and Madagascar MFA Rafaravavitafika. Morocco MFA domain (diplomatie.ma) confirms signing via joint communiqué page.",
       "CORRECTED: RBI program source URL for investor visa updated from non-official madagaszkar.hu (Hungarian travel site) to official edbm.mg PDF; retirement visa URL updated to official Madagascar Embassy Paris page.",
-      "REMOVED: The €10 administrative border-control fee reference — superseded by the updated 2026 fee schedule where 15-day fee is now €30.",
-      "VERIFIED: No CBI program — confirmed no change.",
-      "VERIFIED: No fast-track programs — confirmed no change.",
-      "VERIFIED: eVisa portal (evisamada-mg.com) still active as of June 2026, noting service upgrade in progress."
+      "REMOVED: The €10 administrative border-control fee reference - superseded by the updated 2026 fee schedule where 15-day fee is now €30.",
+      "VERIFIED: No CBI program - confirmed no change.",
+      "VERIFIED: No fast-track programs - confirmed no change.",
+      "VERIFIED: eVisa portal (evisamada-mg.com) still active as of June 2026, noting service upgrade in progress.",
+      "ADDED: visa_types array populated with 10 visa categories extracted from official sources: evisamada-mg.com (tourist eVisa, tourist VoA), ambamad-paris.diplomatie.gov.mg (short-stay business, long-stay work/expatriate, student, retirement, family reunification, diplomatic/special, journalist/mission), and edbm.mg (investor long-stay). No digital nomad, working holiday, transit, or medical visa categories were found on any official Madagascar source.",
+      "CORRECTED (2026-06-27): VoA fee notes corrected - the February 2026 fee increase (15-day tier from €10 to €30) was confirmed by VisasNews (citing official portal announcement) to apply EXCLUSIVELY to the eVisa system; embassies/consulates/VoA at arrival were not confirmed to have adopted the new fee. VoA fee notes now reflect pre-increase rates pending official VoA-specific confirmation. Source: https://visasnews.com/en/madagascar-triples-its-15-day-e-visa-fee/",
+      "VERIFIED (2026-06-27): Burundi and Palestine exclusions from VoA/eVisa re-confirmed by Wikipedia Visa policy of Madagascar (updated June 11, 2026) and web search aggregating embassy policy. Official *.gov.mg page still does not explicitly enumerate excluded nationalities.",
+      "VERIFIED (2026-06-27): eVisa max_stay_days = 60, VoA max_stay_days = 90 - unchanged, confirmed by Wikipedia.",
+      "VERIFIED (2026-06-27): Indonesia-Madagascar diplomatic/service passport MoU (reported signed June 4, 2026) - kemlu.go.id page timed out; no official confirmation obtained. Remains in gaps.",
+      "VERIFIED (2026-06-29): eVisa portal (evisamada-mg.com) confirms 'All nationalities are eligible for eVisa' (no enumerated exclusions on portal itself; service still noting temporary upgrade). Burundi and Palestine exclusions re-confirmed via Wikipedia (last updated June 11, 2026) and multiple aggregator sources citing Madagascar embassy policy - no change to exclusions.",
+      "VERIFIED (2026-06-29): eVisa single-entry max_stay 60 days confirmed by evisamada-mg.com portal. VoA max stay 90 days unchanged.",
+      "VERIFIED (2026-06-29): Feb 16, 2026 eVisa fee increase (15-day tier tripled to €30/US$35) re-confirmed by multiple sources including VisasNews and visamundi.co citing official eVisa portal announcement. Confirmed scope is eVisa-only; VoA fees at consulates/airports still not confirmed as changed. Wikipedia fee table still showing old rates ($10 for 15 days) - Wikipedia not yet updated; current record correctly reflects post-Feb-2026 eVisa fees.",
+      "VERIFIED (2026-06-29): Indonesia-Madagascar MoU - additional web searches (kemlu.go.id, Wikipedia visa requirements for Indonesian citizens) found no official confirmation of in-force agreement. Madagascar not listed in Indonesia's confirmed diplomatic/service passport exemption agreements. Remains in gaps.",
+      "VERIFIED (2026-06-29): Morocco conditional_access - diplomatie.ma certificate error prevents direct page fetch again. Agreement signing still only confirmed via search result snippets. Remains in gaps pending direct page access.",
+      "VERIFIED (2026-06-29): ambamad-paris.diplomatie.gov.mg and diplomatie.gov.mg both returned ECONNREFUSED - official Madagascar Embassy Paris and MFA main visa pages not accessible in this session. No new information extractable from these sources; no changes made based on inaccessibility."
     ],
     "gaps": [
-      "Burundi and Palestine exclusion: confirmed by multiple third-party sources citing Madagascar embassy policy but no official Madagascar government page (*.gov.mg) was found explicitly listing these exclusions; the eVisa portal still states 'all nationalities are eligible.' Recommend verification against official MFA or immigration department page once accessible.",
+      "Burundi and Palestine exclusion: confirmed by multiple third-party sources citing Madagascar embassy policy but no official Madagascar government page (*.gov.mg) was found explicitly listing these exclusions; the eVisa portal states 'all nationalities are eligible.' Re-verified June 2026 - exclusions still only confirmed via third-party/Wikipedia sources citing embassy-level policy. Recommend verification against official MFA or immigration department page once accessible.",
+      "VoA fee structure post-February 2026: the fee increase (15-day tier from €10 to €30) was confirmed to apply exclusively to the eVisa system per VisasNews citing the official eVisa portal. Whether VoA fees at airports/consulates also changed was NOT confirmed from any official source. VoA notes now show pre-increase rates pending official VoA-specific fee confirmation.",
       "Morocco agreement (MAR conditional_access): signing confirmed via Morocco MFA search results but diplomatie.ma certificate error prevented direct page fetch; stay duration and ratification/entry-into-force date not confirmed from a directly fetched official page.",
-      "Indonesia-Madagascar MoU on diplomatic/service passport visa exemption: reported as signed 4 June 2026 in Jakarta per 2424.mg (non-official Malagasy news site) citing Madagascar MFA communiqué. The Indonesian MFA portal (kemlu.go.id) page content was not accessible. Not added to conditional_access pending confirmation from an official government domain (kemlu.go.id or diplomatie.gov.mg).",
+      "Indonesia-Madagascar MoU on diplomatic/service passport visa exemption: reported as signed 4 June 2026 in Jakarta per 2424.mg (non-official Malagasy news site) citing Madagascar MFA communiqué. The Indonesian MFA portal (kemlu.go.id) page content was not accessible (timeout). Not added to conditional_access pending confirmation from an official government domain (kemlu.go.id or diplomatie.gov.mg).",
       "No official minimum investment amount for investor residence found on any accessible official page.",
       "EDBM (edbm.mg) main site was not accessible during this validation; EDBM PDF document was previously accessed but investor program details remain partially unverified.",
       "Madagascar Ministry of Interior / National Immigration Department website not identified or accessible.",
       "No official enumeration of specific visa-free nationalities on any *.gov.mg page; universal VoA/eVisa policy confirmed for all eligible nationalities.",
-      "SADC membership confirmed but SADC free movement protocol not yet in force — not recorded as an active agreement.",
+      "SADC membership confirmed but SADC free movement protocol not yet in force - not recorded as an active agreement.",
       "COMESA visa protocol: no Madagascar-specific official page found confirming active implementation; omitted.",
       "No Type A held-credential conditional rules (e.g., 'admit if holder of valid US/Schengen visa') found on any official Madagascar source.",
       "No OCI or other special-status (Type B) conditional rules found on any official Madagascar source.",
-      "No digital nomad, startup, or talent fast-track visa scheme found on any official source."
+      "No digital nomad, startup, or talent fast-track visa scheme found on any official source.",
+      "Transit visa: no dedicated transit visa category was found on any official Madagascar source; travelers likely use VoA or are admitted airside without a visa. Status unverified.",
+      "Medical visa: no dedicated medical visa category found on official sources; medical visitors likely use tourist or short-stay non-immigrant visa.",
+      "Exact fee amounts for long-stay transformable visa categories (work, student, retirement, family, investment) not published on any accessible official page.",
+      "Processing time for long-stay transformable visas via consulates not specified on any official page fetched."
     ]
   },
   "outbound_official": {
@@ -156,67 +324,79 @@
     {
       "url": "https://evisamada-mg.com/en/home",
       "domain": "evisamada-mg.com",
-      "description": "Official eVisa portal of the Republic of Madagascar (self-identified as evisamada.gov.mg) for online tourist visa applications; fee change announcement (15-day fee to €30 effective 16 Feb 2026) verified here",
+      "description": "Official eVisa portal of the Republic of Madagascar (self-identified as evisamada.gov.mg) for online tourist visa applications; fee change announcement (15-day fee to €30 effective 16 Feb 2026) verified here; tourist eVisa and tourist VoA details extracted for visa_types",
       "official": true
     },
     {
       "url": "https://www.diplomatie.gov.mg/index.php/le-ministere/passeport-et-visa/visa",
       "domain": "diplomatie.gov.mg",
-      "description": "Madagascar Ministry of Foreign Affairs — official visa page; two main visa categories (immigrant and non-immigrant, max 90 days); no credential-based conditional rules found",
+      "description": "Madagascar Ministry of Foreign Affairs - official visa page; two main visa categories (immigrant and non-immigrant, max 90 days); no credential-based conditional rules found",
       "official": true
     },
     {
       "url": "https://ambamad-paris.diplomatie.gov.mg/index.php/visa/visas-d-entree-et-de-sejour-a-madagascar",
       "domain": "ambamad-paris.diplomatie.gov.mg",
-      "description": "Embassy of Madagascar in France — full visa categories page; confirms short-stay VoA up to 90 days, long-stay transformable visa categories; no credential-based conditional rules found",
+      "description": "Embassy of Madagascar in France - full visa categories page; confirms short-stay VoA up to 90 days, long-stay transformable visa categories (work, student, retirement, family reunification, NGO, missionary, journalist, investor); primary source for visa_types long-stay categories",
       "official": true
     },
     {
       "url": "https://www.mea.gov.in/bvwa-passport.htm",
       "domain": "mea.gov.in",
-      "description": "India Ministry of External Affairs — bilateral visa waiver agreements for Diplomatic/Official/Service passport holders; confirms India-Madagascar agreement (signed 13 Sep 2022, in force 1 Apr 2023, 90 days)",
+      "description": "India Ministry of External Affairs - bilateral visa waiver agreements for Diplomatic/Official/Service passport holders; confirms India-Madagascar agreement (signed 13 Sep 2022, in force 1 Apr 2023, 90 days)",
       "official": true
     },
     {
       "url": "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
       "domain": "cs.mfa.gov.cn",
-      "description": "China Ministry of Foreign Affairs — list of mutual visa exemption agreements; confirms China-Madagascar agreement (in force 4 Nov 2023, less than 30 days, diplomatic/service/public affairs passports)",
+      "description": "China Ministry of Foreign Affairs - list of mutual visa exemption agreements; confirms China-Madagascar agreement (in force 4 Nov 2023, less than 30 days, diplomatic/service/public affairs passports)",
       "official": true
     },
     {
       "url": "https://edbm.mg/accord_debarquement/V1_visa_transformable_public%20_JAUNE.pdf",
       "domain": "edbm.mg",
-      "description": "EDBM (Economic Development Board of Madagascar) — Transformable visa procedure document; confirms investor/business long-stay visa pathway",
+      "description": "EDBM (Economic Development Board of Madagascar) - Transformable visa procedure document; confirms investor/business long-stay visa pathway; source for investor visa_type entry",
       "official": true
     },
     {
       "url": "https://diplomatie.ma/en/morocco-madagascar-key-points-joint-communiqu%C3%A9",
       "domain": "diplomatie.ma",
-      "description": "Morocco Ministry of Foreign Affairs — joint communiqué confirming Morocco-Madagascar bilateral agreements signed 14 June 2024 in Rabat including visa exemption for diplomatic and service passport holders (certificate error prevented direct fetch; confirmed via search results citing this URL)",
+      "description": "Morocco Ministry of Foreign Affairs - joint communiqué confirming Morocco-Madagascar bilateral agreements signed 14 June 2024 in Rabat including visa exemption for diplomatic and service passport holders (certificate error prevented direct fetch; confirmed via search results citing this URL)",
       "official": true
     },
     {
       "url": "https://visasnews.com/en/madagascar-triples-its-15-day-e-visa-fee/",
       "domain": "visasnews.com",
-      "description": "VisasNews — report on Madagascar's e-visa fee change effective 16 February 2026; 15-day fee tripled from €10 to €30/US$35; other tiers unchanged",
+      "description": "VisasNews - report on Madagascar's e-visa fee change effective 16 February 2026; 15-day fee tripled from €10 to €30/US$35; other tiers unchanged",
       "official": false
     },
     {
       "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Madagascar",
       "domain": "en.wikipedia.org",
-      "description": "Wikipedia — Visa policy of Madagascar; confirms Burundi and Palestine exclusions, 90-day VoA, and fee schedule",
+      "description": "Wikipedia - Visa policy of Madagascar; confirms Burundi and Palestine exclusions, 90-day VoA, and fee schedule",
       "official": false
     },
     {
       "url": "https://www.us-madagascar-embassy.org/visa-consular-services",
       "domain": "us-madagascar-embassy.org",
-      "description": "Embassy of the Republic of Madagascar in the United States — Visa and Consular Services page (page content not fully accessible in this session)",
+      "description": "Embassy of the Republic of Madagascar in the United States - Visa and Consular Services page (page content not fully accessible in this session)",
       "official": true
     },
     {
       "url": "https://2424.mg/diplomatie-madagascar-et-lindonesie-se-mettent-daccord-sur-lexemption-de-visa-pour-les-detenteurs-de-passeports-diplomatique-et-de-service/",
       "domain": "2424.mg",
-      "description": "2424.mg news site (Madagascar) — reports Madagascar-Indonesia MoU on visa exemption for diplomatic/service passport holders signed 4 June 2026 in Jakarta; non-official aggregator domain; not added to conditional_access pending official source confirmation",
+      "description": "2424.mg news site (Madagascar) - reports Madagascar-Indonesia MoU on visa exemption for diplomatic/service passport holders signed 4 June 2026 in Jakarta; non-official aggregator domain; not added to conditional_access pending official source confirmation",
+      "official": false
+    },
+    {
+      "url": "https://evisamada-mg.com/en/home",
+      "domain": "evisamada-mg.com",
+      "description": "Re-fetched 2026-06-29: portal confirms all nationalities eligible (no enumerated exclusions), eVisa max 60 days, single-entry tourist, service temporarily upgrading. Fee amounts shown as '--' due to upgrade mode.",
+      "official": true
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Madagascar",
+      "domain": "en.wikipedia.org",
+      "description": "Re-fetched 2026-06-29 (last updated June 11, 2026): confirms Burundi and Palestine exclusions from VoA/eVisa, VoA up to 90 days. Note: Wikipedia fee table still shows old pre-2026 rates ($10/€10 for 15 days) - not yet updated to reflect Feb 2026 fee increase.",
       "official": false
     }
   ]

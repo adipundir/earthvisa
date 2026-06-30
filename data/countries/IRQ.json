@@ -7,6 +7,143 @@
     "found": false,
     "note": "no official Iraq government outbound visa-list page located; rely on destination-side data. Searched mofa.gov.iq (main site, /visa/, /consular-services/, and multiple embassy sub-pages), evisa.iq, epp.iq (Iraqi Electronic Passport portal), and icass.mofa.gov.iq as of 2026-06-14. The Iraqi MFA website covers only visas granted TO foreigners entering Iraq and consular services for Iraqis abroad; no page equivalent to India's mea.gov.in/vffin listing where Iraqi ordinary-passport holders may travel without a prior consular visa was found on any *.gov.iq domain."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist/Visit Visa",
+      "purpose": "Visiting tourist sites, religious landmarks, and holy sites in Iraq. Also granted to tourist groups arriving through licensed tourism companies.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 30,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mofa.gov.iq/visa/",
+      "notes": "Single entry valid within 3 months of issuance; 1-month permitted stay. Available at Iraqi embassies/consulates and (for eligible nationalities) at ports of entry. The e-visa portal (eservice.evisa.iq) appears to offer an electronic version for eligible nationalities. Mandatory health insurance and registration with Directorate of Residence within 10 days of arrival required."
+    },
+    {
+      "category": "other",
+      "name": "Normal Visa",
+      "purpose": "General purpose entry into Iraq for visits not classified under tourism. Covers a broader range of visit reasons.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 40,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofa.gov.iq/visa/",
+      "notes": "Single entry valid within 3 months; up to 3-month stay. Applicant must register with the Directorate of Residence within 10 days of arrival. Requires proof of financial means, full Iraqi address, and contact number."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Passing through Iraqi territory en route to another destination.",
+      "max_stay_days": 7,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 40,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofa.gov.iq/visa/",
+      "notes": "Single entry valid within 3 months of issuance; maximum 7-day stay permitted. Issued by Iraqi embassies/consulates abroad."
+    },
+    {
+      "category": "transit",
+      "name": "Non-Stop Transit Visa",
+      "purpose": "Transiting through Iraq without stopping - for travelers passing through Iraqi airspace or territory without entering the country.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofa.gov.iq/visa/",
+      "notes": "Single entry valid within 3 months. Fee not specified on official source. For transit without stopping in Iraq; different from standard transit visa."
+    },
+    {
+      "category": "other",
+      "name": "Multi-Entry Visa",
+      "purpose": "Allows foreign nationals to enter Iraq multiple times over an extended validity period without obtaining a new visa for each trip.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 100,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofa.gov.iq/visa/",
+      "notes": "Available in 3-month, 6-month, or 12-month validity options. Fee is $100 USD. Issued by Iraqi embassies/consulates abroad. Maximum stay per visit not specified on the official source."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Political Visa",
+      "purpose": "Issued to official government representatives, diplomatic mission staff and their families, and those traveling on official government business.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofa.gov.iq/visa/",
+      "notes": "Issued to diplomatic personnel and their families. Special residency granted per official Ministry memorandum. Duration and fee vary by official approval and diplomatic protocol."
+    },
+    {
+      "category": "other",
+      "name": "Service Visa",
+      "purpose": "Issued to holders of official service passports traveling for government-related purposes.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofa.gov.iq/visa/",
+      "notes": "Granted on a reciprocity basis per official Ministry memorandum. Fee and duration not specified in official sources."
+    },
+    {
+      "category": "other",
+      "name": "Urgent Visa",
+      "purpose": "Emergency entry visa for foreign nationals who arrive without a prior visa in exceptional or urgent circumstances.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mofa.gov.iq/visa/",
+      "notes": "Issued at border crossings by residency officers if the case is justified. Not a standard category - granted at officer discretion for emergency situations only. Duration and fee not specified."
+    },
+    {
+      "category": "other",
+      "name": "Electronic Entry Visa (E-Visa)",
+      "purpose": "Pre-travel electronic entry visa for nationals of designated countries who are no longer eligible for visa on arrival. Required before departure.",
+      "max_stay_days": 60,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 158,
+      "processing_days_min": 1,
+      "processing_days_max": 2,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://mofa.gov.iq/texas/en/2025/03/03/e-visa/",
+      "notes": "Mandatory since March 1, 2025 for 37 countries: all 27 EU member states plus USA, UK, Russia, China, Canada, Australia, New Zealand, Japan, South Korea, Switzerland, and Norway. Apply at eservice.evisa.iq before travel. Fee of approximately $158 USD (206,000 IQD) includes mandatory health insurance. Valid for 60 days from date of arrival per official mofa.gov.iq Texas consulate page (some secondary sources cite 30 days - official source taken as authoritative). Processing 24-48 hours."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -349,7 +486,7 @@
       "https://mofa.gov.iq/2019/6585/",
       "https://evisa.iq/en"
     ],
-    "notes": "Iraq's official e-visa portal is https://evisa.iq (application system at eservice.evisa.iq). As of March 1, 2025, the Ministry of Interior suspended visa on arrival for 37 countries; these must now obtain e-visa in advance. The confirmed 37 countries are all 27 EU member states plus USA, UK, Russia, China, Canada, Australia, New Zealand, Japan, South Korea, Switzerland, and Norway. The official Iraqi MFA Texas consulate page states the e-visa is valid for 60 days from date of arrival; some secondary sources say 30 days — the official mofa.gov.iq source is taken as authoritative here. E-visa fee approximately $158 USD (206,000 IQD), inclusive of mandatory health insurance, processing 24–48 hours. Malaysia was moved from the prior draft's visa_free consideration to visa_on_arrival per the official mofa.gov.iq Kuala Lumpur embassy announcement (effective September 11, 2024). Lebanon visa-free status for ordinary passports was removed as the mofa.gov.iq Beirut page shows standard visa requirements without any exemption. Turkey and Lebanon ordinary passport exemptions are noted in Wikipedia but were not confirmable on any mofa.gov.iq page and are therefore NOT recorded."
+    "notes": "Iraq's official e-visa portal is https://evisa.iq (application system at eservice.evisa.iq). As of March 1, 2025, the Ministry of Interior suspended visa on arrival for 37 countries; these must now obtain e-visa in advance. The confirmed 37 countries are all 27 EU member states plus USA, UK, Russia, China, Canada, Australia, New Zealand, Japan, South Korea, Switzerland, and Norway. The official Iraqi MFA Texas consulate page states the e-visa is valid for 60 days from date of arrival; some secondary sources say 30 days - the official mofa.gov.iq source is taken as authoritative here. E-visa fee approximately $158 USD (206,000 IQD), inclusive of mandatory health insurance, processing 24-48 hours. Malaysia was moved from the prior draft's visa_free consideration to visa_on_arrival per the official mofa.gov.iq Kuala Lumpur embassy announcement (effective September 11, 2024). Lebanon visa-free status for ordinary passports was removed as the mofa.gov.iq Beirut page shows standard visa requirements without any exemption. Turkey and Lebanon ordinary passport exemptions are noted in Wikipedia but were not confirmable on any mofa.gov.iq page and are therefore NOT recorded."
   },
   "conditional_access": [
     {
@@ -419,7 +556,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://invest.gov.krd/",
         "source_official": true,
-        "notes": "Foreign nationals who purchase a residential unit within an approved investment project valued at minimum USD 50,000 are eligible for a work residence permit valid for 1–3 years, renewable, upon approval by the Kurdistan Region Board of Investment (gov.krd/boi-en). Extends to spouse, children under 18, and parents. This is a Kurdistan Regional Government program, not a federal Iraq program. The official gov.krd/boi-en page returned HTTP 403 during verification; details sourced from invest.gov.krd."
+        "notes": "Foreign nationals who purchase a residential unit within an approved investment project valued at minimum USD 50,000 are eligible for a work residence permit valid for 1-3 years, renewable, upon approval by the Kurdistan Region Board of Investment (gov.krd/boi-en). Extends to spouse, children under 18, and parents. This is a Kurdistan Regional Government program, not a federal Iraq program. The official gov.krd/boi-en page returned HTTP 403 during verification; details sourced from invest.gov.krd."
       },
       {
         "name": "Kurdistan Region Investor Residence Permit (Board of Investment Confirmation Pathway)",
@@ -430,7 +567,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://gov.krd/boi-en/",
         "source_official": true,
-        "notes": "Foreign investors confirmed by the Kurdistan Region Board of Investment are eligible for a residency permit valid for 3–5 years, renewable. Extends to spouse, children under 18, and parents. No minimum investment amount specified in the legislation for this pathway. This is a Kurdistan Regional Government program, not a federal Iraq program."
+        "notes": "Foreign investors confirmed by the Kurdistan Region Board of Investment are eligible for a residency permit valid for 3-5 years, renewable. Extends to spouse, children under 18, and parents. No minimum investment amount specified in the legislation for this pathway. This is a Kurdistan Regional Government program, not a federal Iraq program."
       }
     ]
   },
@@ -447,10 +584,10 @@
   ],
   "data_quality": {
     "completeness": "medium",
-    "validation_notes": "Re-validation pass June 2026. Key corrections from prior record: (1) e-visa section expanded from 9 consolidated entries to all 37 individual countries (the full confirmed list: 27 EU member states + USA, UK, Russia, China, Canada, Australia, New Zealand, Japan, South Korea, Switzerland, Norway) — prior record used bloc/grouping entries which was imprecise. (2) Malaysia moved from erroneous implicit visa-free consideration to visa_on_arrival, per mofa.gov.iq Kuala Lumpur embassy announcement effective September 11, 2024 — the announcement explicitly says 'entry visa at points of entry', i.e. visa on arrival, not visa-free. (3) Lebanon and Turkey ordinary-passport visa-free claims removed: mofa.gov.iq Beirut page shows no exemption; no mofa.gov.iq URL confirms ordinary-passport exemption for either. These were only in Wikipedia and are now treated as unverified gaps. (4) China max_stay_days corrected from 30 to null — the mofa.gov.iq announcement (2022/32517) does not state a stay duration; 30-day figure was unconfirmed. (5) The prior visa_free Iran entry had null max_stay_days which remains correct; the Tehran embassy page shows standard visa types with no exemption noted, consistent with prior assessment. (6) Poland added to e-visa list (was missing from prior grouped EU entry count, now listed explicitly).",
+    "validation_notes": "Re-validation pass June 2026. Key corrections from prior record: (1) e-visa section expanded from 9 consolidated entries to all 37 individual countries (the full confirmed list: 27 EU member states + USA, UK, Russia, China, Canada, Australia, New Zealand, Japan, South Korea, Switzerland, Norway) - prior record used bloc/grouping entries which was imprecise. (2) Malaysia moved from erroneous implicit visa-free consideration to visa_on_arrival, per mofa.gov.iq Kuala Lumpur embassy announcement effective September 11, 2024 - the announcement explicitly says 'entry visa at points of entry', i.e. visa on arrival, not visa-free. (3) Lebanon and Turkey ordinary-passport visa-free claims removed: mofa.gov.iq Beirut page shows no exemption; no mofa.gov.iq URL confirms ordinary-passport exemption for either. These were only in Wikipedia and are now treated as unverified gaps. (4) China max_stay_days corrected from 30 to null - the mofa.gov.iq announcement (2022/32517) does not state a stay duration; 30-day figure was unconfirmed. (5) The prior visa_free Iran entry had null max_stay_days which remains correct; the Tehran embassy page shows standard visa types with no exemption noted, consistent with prior assessment. (6) Poland added to e-visa list (was missing from prior grouped EU entry count, now listed explicitly). visa_types field added June 2026 documenting all formal visa categories offered by Iraq: Tourist/Visit ($30, 30-day stay), Normal ($40, 90-day stay), Transit ($40, 7-day max), Non-Stop Transit, Multi-Entry ($100, 3/6/12-month validity), Political/Diplomatic, Service, Urgent, and Electronic Entry Visa (e-visa, $158 including health insurance, 60-day stay, 24-48hr processing). Iraq does not offer dedicated work, student, business, digital nomad, retirement, investment, working holiday, medical, or family visa categories on its official mofa.gov.iq visa page - these categories are not listed as distinct visa types. | Re-verification pass 2026-06-27: Re-opened mofa.gov.iq/texas/en/2025/03/03/e-visa/ (e-visa requirement for UN P5+1, EU, AUS/CAN/KOR/JPN/CHE/NZL confirmed - no new countries added or removed), mofa.gov.iq/kualalumpur/2025/01/21/iraq-grants-entry-visa-to-malaysian-citizen-at-points-of-entry/ (Malaysia visa-on-arrival confirmed, no stay duration stated), mofa.gov.iq/tehran (standard visa types only, no Iran exemption noted on page), mofa.gov.iq/beirut (standard visa types only, no Lebanon exemption), mofa.gov.iq/2025/53961/ (Morocco diplomatic-passport exemption confirmed, no new details), evisa.iq/en/about (e-visa portal confirmed active, no country list or fee published on about page), mofa.gov.iq/visa/ (no new visa-free or VOA categories listed). No new bilateral agreements or policy changes found for 2026. Wikipedia claims Lebanon and Turkey ordinary-passport visa-free, but neither mofa.gov.iq/beirut nor any mofa.gov.iq announcement confirms this - not recorded per safety rule. No substantive data changes made in this pass; all existing entries re-confirmed. | Re-verification pass 2026-06-29: Re-opened mofa.gov.iq/texas (e-visa 37 countries confirmed, no additions), mofa.gov.iq/visa/ (no new visa-free or VOA listed), mofa.gov.iq/kualalumpur Malaysian VOA announcement (still live, no stay duration added), mofa.gov.iq/tehran (no Iran visa-free exemption on page), mofa.gov.iq/beirut (no Lebanon ordinary-passport exemption on page), mofa.gov.iq/2025/53961/ (Morocco diplomatic confirmed), mofa.gov.iq/ottawa (e-visa 60-day validity additionally confirmed by Ottawa embassy page dated May 2026 - strengthens confidence in 60-day figure vs secondary sources citing 30 days), evisa.iq/en/news (news page loaded but no content visible). No substantive policy changes found since 2026-06-27 pass. No new bilateral agreements for ordinary passport visa-free or VOA. Record is confirmed accurate as of 2026-06-29.",
     "gaps": [
       "Maximum stay duration for the Iran bilateral visa-free arrangement is not stated on any official mofa.gov.iq page reviewed. The Iraq embassy in Tehran lists standard visa procedures without noting the exemption.",
-      "The Iraqi MFA Texas consulate (mofa.gov.iq) states e-visa is valid 60 days from arrival; multiple secondary sources say 30 days. The discrepancy between 60 days (official mofa.gov.iq Texas consulate) and 30 days (secondary aggregators, Wikipedia) is unresolved. 60 days used here as the official source.",
+      "E-visa validity: The mofa.gov.iq Texas consulate page AND the mofa.gov.iq Ottawa embassy page (re-verified 2026-06-29) both state e-visa is valid for 60 days and can be used for single or multiple entries. Wikipedia and some secondary aggregators say 30 days, but two independent official mofa.gov.iq consulate pages confirm 60 days. 60-day validity is used here. The fee discrepancy ($158 vs $160) between secondary sources is minor; the official evisa.iq portal does not publish the fee on its public pages.",
       "E-visa fee of approximately $158 USD (including mandatory health insurance) is confirmed by secondary sources; exact fee breakdown is not displayed on the official evisa.iq landing page itself.",
       "Lebanon ordinary passport: Wikipedia and secondary sources claim visa-free entry (up to 6 months for diplomatic / 3 months for service passports, and visa-free for ordinary passports). The mofa.gov.iq Beirut embassy page shows standard visa requirements with no exemption. No mofa.gov.iq bilateral agreement announcement URL found. Not recorded as visa-free.",
       "Turkey ordinary passport: Wikipedia states visa-free for Turks aged under 15 or over 50. The mofa.gov.iq announcement (2025/57778) concerns Iraqi nationals entering Turkey, not Turkish nationals entering Iraq. The Istanbul consulate page (mofa.gov.iq/istanbul) was not fully reviewed. Not recorded due to absence of mofa.gov.iq confirmation page.",
@@ -461,11 +598,13 @@
       "Malaysia visa on arrival stay duration: The mofa.gov.iq Kuala Lumpur announcement does not state maximum stay days for Malaysian visa-on-arrival holders.",
       "China diplomatic/service/special stay duration: Not stated in the mofa.gov.iq 2022 announcement.",
       "No official Iraqi federal government RBI or golden visa program exists. Only Kurdistan Regional Government (KRG) investor residence programs found. The gov.krd/boi-en page returned HTTP 403, so KRG details confirmed via invest.gov.krd and secondary sources.",
-      "Turkey bilateral 'joint entry visa' discussions (mofa.gov.iq August 2024 press conference) did not result in a confirmed visa-free or visa-on-arrival agreement for Turkish ordinary passport holders. The 2025 announcement (mofa.gov.iq/2025/57778) is about Iraqi nationals entering Turkey, not the reverse."
+      "Turkey bilateral 'joint entry visa' discussions (mofa.gov.iq August 2024 press conference) did not result in a confirmed visa-free or visa-on-arrival agreement for Turkish ordinary passport holders. The 2025 announcement (mofa.gov.iq/2025/57778) is about Iraqi nationals entering Turkey, not the reverse.",
+      "Iraq's mofa.gov.iq visa page does not list dedicated business, work, student, medical, family, or investment visa categories. It is unclear whether such applicants must use the Normal Visa or apply through separate Ministry of Interior/Labor channels not documented on mofa.gov.iq."
     ]
   },
   "sources_checked": [
     "https://mofa.gov.iq/visa/",
+    "https://mofa.gov.iq/en/visa/",
     "https://mofa.gov.iq/texas/en/2025/03/03/e-visa/",
     "https://mofa.gov.iq/kualalumpur/2025/01/21/iraq-grants-entry-visa-to-malaysian-citizen-at-points-of-entry/",
     "https://mofa.gov.iq/kualalumpur/visa/",
@@ -484,6 +623,21 @@
     "https://eservice.evisa.iq/",
     "https://invest.gov.krd/",
     "https://en.wikipedia.org/wiki/Visa_policy_of_Iraq",
-    "https://visasnews.com/en/iraq-imposes-electronic-visa-requirements-on-37-countries/"
+    "https://visasnews.com/en/iraq-imposes-electronic-visa-requirements-on-37-countries/",
+    "https://mofa.gov.iq/losangeles/en/entry-visa-for-foreigners/ [2026-06-27]",
+    "https://evisa.iq/en/about [2026-06-27 re-verified]",
+    "https://mofa.gov.iq/2025/53961/ [2026-06-27 re-verified]",
+    "https://mofa.gov.iq/texas/en/2025/03/03/e-visa/ [2026-06-27 re-verified]",
+    "https://mofa.gov.iq/kualalumpur/2025/01/21/iraq-grants-entry-visa-to-malaysian-citizen-at-points-of-entry/ [2026-06-27 re-verified]",
+    "https://mofa.gov.iq/tehran/?lang=en&page_id=554 [2026-06-27 re-verified]",
+    "https://mofa.gov.iq/beirut/?page_id=554&lang=en [2026-06-27 re-verified]",
+    "https://mofa.gov.iq/visa/ [2026-06-27 re-verified]",
+    "https://mofa.gov.iq/ottawa/?page_id=554&lang=en [2026-06-29 - confirms e-visa 60-day validity for single or multiple entries]",
+    "https://mofa.gov.iq/texas/en/2025/03/03/e-visa/ [2026-06-29 re-verified]",
+    "https://mofa.gov.iq/kualalumpur/2025/01/21/iraq-grants-entry-visa-to-malaysian-citizen-at-points-of-entry/ [2026-06-29 re-verified]",
+    "https://mofa.gov.iq/tehran/?lang=en&page_id=554 [2026-06-29 re-verified]",
+    "https://mofa.gov.iq/beirut/?page_id=554&lang=en [2026-06-29 re-verified]",
+    "https://mofa.gov.iq/2025/53961/ [2026-06-29 re-verified]",
+    "https://mofa.gov.iq/visa/ [2026-06-29 re-verified]"
   ]
 }

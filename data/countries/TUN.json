@@ -46,10 +46,10 @@
         "source_official": false
       },
       {
-        "nationality": "Organized-tour nationals (Azerbaijan, China, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan, and others)",
+        "nationality": "Organized-tour nationals (Azerbaijan, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan, and others)",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "Citizens of Azerbaijan, China, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, and Uzbekistan may enter Tunisia visa-free when travelling as part of an organized/package tour (Pauschalreise) and holding a hotel voucher. This condition makes the exemption tourism-specific and organized-travel-dependent, not a blanket nationality waiver. For India specifically: ordinary Indian passport holders are NOT visa-free for independent travel — a visa is required for independent tourism or business. The organized-tour exemption is confirmed by the official Tunisian Embassy Berlin (tunesien.tn/visum, archived Dec 2023), which lists India explicitly among 8 countries in this category. Wikipedia/IATA-derived sources also list Belarus, Kazakhstan, Macau, and Ukraine in similar categories, but these are not confirmed on the same official source.",
+        "notes": "Citizens of Azerbaijan, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, and Uzbekistan may enter Tunisia visa-free when travelling as part of an organized/package tour (Pauschalreise) and holding a hotel voucher. This condition makes the exemption tourism-specific and organized-travel-dependent, not a blanket nationality waiver. For India specifically: ordinary Indian passport holders are NOT visa-free for independent travel - a visa is required for independent tourism or business. The organized-tour exemption is confirmed by the official Tunisian Embassy Berlin (tunesien.tn/visum, archived Dec 2023), which lists India explicitly among 8 countries in this category; the 8th country was previously listed as China but China now has a separate standalone 90-day ordinary-passport visa-free policy (effective October 2023), making the organized-tour exemption redundant for Chinese nationals. NOTE: Wikipedia/IATA-derived sources also list Belarus, Kazakhstan, Macau, and Ukraine in similar categories, but these are not confirmed on the same official source.",
         "source_url": "https://web.archive.org/web/20231212152152/http://tunesien.tn/visum/",
         "source_official": true
       }
@@ -66,6 +66,98 @@
     ],
     "notes": "Tunisia's visa exemption policy is governed by Décret n° 68-198 du 22 juin 1968 and Law n° 68-7 of 8 March 1968, which provide for bilateral convention-based visa exemptions for up to three months. As of January 1, 2025, all foreign nationals entering Tunisia must present a valid passport (national identity cards are no longer accepted). China was added as a tourism-only visa-free country in October 2023 by unilateral Tunisian announcement. Iran and Iraq were added effective June 15, 2024, for tourism stays of up to 15 days per 180-day period with hotel and return-ticket documentation required. A planned national e-Visa platform was subject to an international tender in September 2024, but the tender was declared unsuccessful. No operational e-visa system currently exists. India ordinary passport holders require a visa for independent travel; however, they are exempt from visa requirements when entering on an organized/package tour with a hotel voucher (confirmed by the Tunisian Embassy Berlin official website). Diplomatic and official/special passport holders are separately exempt for up to 90 days (see conditional_access)."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Entry Visa (Visa d'entrée)",
+      "purpose": "Authorizes a foreign national to enter and stay in Tunisia for tourism or short-term visits. Required for nationals of countries without a bilateral exemption agreement.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/",
+      "notes": "Established under Décret n° 68-198 du 22 juin 1968. Validity not exceeding three months. Nationals of countries with bilateral exemption treaties do not need this visa. Applied for at a Tunisian embassy or consulate abroad. No operational e-visa system exists as of mid-2026."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa (Visa de transit)",
+      "purpose": "Allows a foreign national to pass through Tunisian territory en route to another destination, with a short permitted stay.",
+      "max_stay_days": 7,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/",
+      "notes": "Defined under Décret n° 68-198 du 22 juin 1968. Permits transit through Tunisian territory with a stay of up to 7 days. Applied for at a Tunisian embassy or consulate abroad."
+    },
+    {
+      "category": "other",
+      "name": "Temporary Residence Visa (Visa de résidence temporaire)",
+      "purpose": "Grants a foreign national temporary residency status in Tunisia for stays exceeding the standard short-term entry allowance, typically for work, study, or extended visits.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/",
+      "notes": "Established under Décret n° 68-198 du 22 juin 1968. Issued to foreigners not intending permanent settlement or those who do not qualify for ordinary residence. Holder receives a temporary residence card matching the visa validity. For stays exceeding 90 days, a residence permit must be obtained from the central police station in the traveler's district."
+    },
+    {
+      "category": "other",
+      "name": "Ordinary Residence Visa (Visa de résidence ordinaire)",
+      "purpose": "Grants long-term or permanent residency status to qualifying foreign nationals with established ties to Tunisia.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/",
+      "notes": "Established under Décret n° 68-198 du 22 juin 1968. Available to: foreigners who have resided temporarily in Tunisia for 5 continuous years; foreign women married to Tunisian nationals; foreigners with Tunisian children; foreigners who have rendered appreciable services to Tunisia. Holder receives an ordinary residence card valid for 2 years, renewable."
+    },
+    {
+      "category": "other",
+      "name": "Return Visa (Visa de retour)",
+      "purpose": "Permits an ordinary resident of Tunisia to travel abroad and return to Tunisia within the visa validity period.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/",
+      "notes": "Established under Décret n° 68-198 du 22 juin 1968. Issued exclusively to holders of ordinary residence status in Tunisia who need to travel abroad. Validity limited to one year."
+    },
+    {
+      "category": "other",
+      "name": "Exit Visa (Visa de sortie)",
+      "purpose": "Authorizes a foreign national holding temporary or ordinary residence in Tunisia to depart the country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/",
+      "notes": "Established under Décret n° 68-198 du 22 juin 1968. Issued to foreign nationals holding temporary or ordinary residence status in Tunisia who intend to leave the country."
+    }
+  ],
   "conditional_access": [
     {
       "basis": "passport_type",
@@ -85,7 +177,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Holders of diplomatic and official/special passports issued to Indian nationals may enter Tunisia visa-free for up to 90 days. Bilateral agreement signed 30 April 2015, effective 2 May 2016. Does not apply to ordinary passport holders — Indian citizens with ordinary passports require a visa for Tunisia.",
+      "conditions": "Holders of diplomatic and official/special passports issued to Indian nationals may enter Tunisia visa-free for up to 90 days. Bilateral agreement signed 30 April 2015, effective 2 May 2016. Does not apply to ordinary passport holders - Indian citizens with ordinary passports require a visa for Tunisia.",
       "source_url": "https://www.mea.gov.in/bvwa-passport",
       "source_official": true
     },
@@ -114,7 +206,7 @@
     "processing_time": "",
     "dual_citizenship_allowed": null,
     "residency_required": null,
-    "notes": "No citizenship-by-investment program found on any official Tunisian government source. Tunisian nationality law (Code de la Nationalité Tunisienne) provides for naturalization after 5 years of continuous legal residence — a standard naturalization process, not an investment-based citizenship program. No official Tunisian government website publishes a CBI program."
+    "notes": "No citizenship-by-investment program found on any official Tunisian government source. Tunisian nationality law (Code de la Nationalité Tunisienne) provides for naturalization after 5 years of continuous legal residence - a standard naturalization process, not an investment-based citizenship program. No official Tunisian government website publishes a CBI program."
   },
   "rbi": {
     "programs": []
@@ -123,7 +215,7 @@
     "programs": []
   },
   "agreements": [
-    "Arab Maghreb Union (AMU) — free movement of persons is a treaty objective (Treaty of Marrakech, 1989) but has not been implemented; the AMU is effectively dormant with no high-level meetings since 2008"
+    "Arab Maghreb Union (AMU) - free movement of persons is a treaty objective (Treaty of Marrakech, 1989) but has not been implemented; the AMU is effectively dormant with no high-level meetings since 2008"
   ],
   "official_domains": [
     "diplomatie.gov.tn",
@@ -137,18 +229,21 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "ADDED: China ordinary passport visa_free entry (90 days, tourism, hotel+ticket required) effective October 2023 — was missing from prior record, which only listed China under conditional_access for diplomatic/service passports.",
-      "ADDED: Iran ordinary passport visa_free entry (15 days per 180-day period, tourism only, hotel+return ticket required) announced June 15, 2024 by Tunisia MFA — not in prior record.",
-      "ADDED: Iraq ordinary passport visa_free entry (15 days per 180-day period, tourism only, hotel+return ticket required) announced June 15, 2024 by Tunisia MFA — not in prior record.",
+      "ADDED: China ordinary passport visa_free entry (90 days, tourism, hotel+ticket required) effective October 2023 - was missing from prior record, which only listed China under conditional_access for diplomatic/service passports.",
+      "ADDED: Iran ordinary passport visa_free entry (15 days per 180-day period, tourism only, hotel+return ticket required) announced June 15, 2024 by Tunisia MFA - not in prior record.",
+      "ADDED: Iraq ordinary passport visa_free entry (15 days per 180-day period, tourism only, hotel+return ticket required) announced June 15, 2024 by Tunisia MFA - not in prior record.",
       "ADDED: GCC residence permit holders conditional_access (visa on arrival, 15 days) moved from gaps section into conditional_access with source_official=false, since the ministerial announcement via Gulf News 2018 is substantive enough to record as unverified-official; flagged accordingly.",
-      "CONFIRMED: US citizens visa-free 90 days — verified against US State Department live page.",
-      "UPDATED 2026-06-14: India ordinary passport — CONDITIONAL (not fully visa-required). Official Tunisian Embassy Berlin (tunesien.tn/visum, archived 2023-12-12) explicitly lists India among 8 countries exempt from visa when entering on a package/organized tour with hotel voucher. Independent travel still requires a visa. Airline aggregator claim of unconditional visa-free or visa-on-arrival is INCORRECT. Organized-tour entry in visa_free updated to include India with source_official=true.",
-      "CONFIRMED: India ordinary passport holders require a visa for independent travel — only organized-tour entry is exempt (see visa_free organized-tour entry) and diplomatic/official passports are separately exempt (conditional_access entry retained).",
-      "CONFIRMED: China diplomatic/service passport exemption (30 days, bilateral 2006) — retained in conditional_access.",
-      "CONFIRMED: India diplomatic/official/special passport exemption (90 days, bilateral signed 2015, effective 2016) — retained in conditional_access.",
+      "CONFIRMED: US citizens visa-free 90 days - verified against US State Department live page.",
+      "UPDATED 2026-06-14: India ordinary passport - CONDITIONAL (not fully visa-required). Official Tunisian Embassy Berlin (tunesien.tn/visum, archived 2023-12-12) explicitly lists India among 8 countries exempt from visa when entering on a package/organized tour with hotel voucher. Independent travel still requires a visa. Organized-tour entry in visa_free updated to include India with source_official=true.",
+      "CONFIRMED: India ordinary passport holders require a visa for independent travel - only organized-tour entry is exempt (see visa_free organized-tour entry) and diplomatic/official passports are separately exempt (conditional_access entry retained).",
+      "CONFIRMED: China diplomatic/service passport exemption (30 days, bilateral 2006) - retained in conditional_access.",
+      "CONFIRMED: India diplomatic/official/special passport exemption (90 days, bilateral signed 2015, effective 2016) - retained in conditional_access.",
       "CONFIRMED: No operational e-visa system exists as of mid-2026.",
       "NOTE: The 2024 Iran/Iraq entries and 2023 China entry are sourced from Xinhua news agency (state media) citing the Tunisian MFA announcement, not from the diplomatie.gov.tn primary URL (which is not accessible); source_official set to false accordingly.",
-      "NOTE: Organized-tour exemption updated — the 8-country list (Azerbaijan, China, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan) now confirmed from official Tunisian Embassy Berlin website (Dec 2023 archive); source_official updated to true. Belarus, Kazakhstan, Macau, Ukraine mentioned in aggregator/IATA sources only — not confirmed on same official source, kept as note in gaps."
+      "NOTE: Organized-tour visa-free exemption for Belarus, Kazakhstan, Macau, Ukraine: mentioned in Wikipedia/IATA sources but not confirmed on official Tunisian Embassy Berlin page (which lists only 8 countries: Azerbaijan, China, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan). These 4 countries remain unconfirmed at official level.",
+      "ADDED 2026-06-20: visa_types field populated with 6 formal visa categories sourced from Décret n° 68-198 du 22 juin 1968 (legislation-securite.tn official legal database): Entry Visa, Transit Visa (7-day), Temporary Residence Visa, Ordinary Residence Visa, Return Visa (1-year), and Exit Visa. Fee amounts and processing times are not published in the decree text and remain null. No digital nomad, business-specific, student, investment, working holiday, medical, or family reunion visa categories were found in official Tunisian government sources - these distinctions are not codified in the primary legal framework.",
+      "VALIDATION 2026-06-27: Re-fetched all source URLs. CONFIRMED: US citizens 90 days visa-free (US State Dept live page). CONFIRMED: Décret 68-198 Article 2 bilateral treaty basis still describes same visa exemption framework. CONFIRMED: China ordinary passport tourism visa-free (90 days, hotel+ticket required) still referenced as current by aggregators and Wikipedia (updated June 2026). CONFIRMED: Iran/Iraq visa-free 15 days per 180-day period, tourism only - policy confirmed still in effect per multiple corroborating sources including Wikipedia (updated 3 weeks ago as of check date). CONFIRMED: China-Tunisia diplomatic/service passport exemption 30 days - re-verified against China MFA cs.mfa.gov.cn live page. CONFIRMED: No operational e-visa system - 2024 tender declared unsuccessful in August 2025. UPDATED: Removed China from the organized-tour exemption nationality string in visa_free, as China now has a broader standalone 90-day ordinary-passport visa-free policy (effective Oct 2023); the organized-tour exemption is superseded and listing China in both entries is redundant and misleading. diplomatie.gov.tn sub-pages: still returning SSL certificate errors, cannot reach.",
+      "VALIDATION 2026-06-29: Full re-fetch of all live source URLs. CONFIRMED: US citizens 90 days visa-free, 6-month passport validity required — live US State Dept page re-fetched, content unchanged. CONFIRMED: Décret 68-198 Article 2 bilateral convention framework still live on legislation-securite.tn, visa type categories (transit 7 days, entry up to 3 months, temporary/ordinary/return/exit residence categories) confirmed. CONFIRMED: China ordinary passport tourism visa-free (90 days, hotel reservation + air ticket required) — Xinhua page re-fetched, confirmed; Wikipedia (re-fetched) confirms China moved from organized-tour (Feb 2017) to full visa-free (Oct 7, 2023). CONFIRMED: Iran/Iraq visa-free (15 days per 180-day period, tourism only, hotel + return ticket required) — Wikipedia re-fetched, policy confirmed still in effect as of June 2026. CONFIRMED: China-Tunisia diplomatic/service passport exemption 30 days effective Sept 29, 2006 — China MFA cs.mfa.gov.cn re-fetched, content confirmed. CONFIRMED: India diplomatic/official/special passport exemption 90 days, signed 30/04/2015, effective 02/05/2016 — India MEA mea.gov.in/bvwa-passport re-fetched, confirmed. CONFIRMED: No operational e-visa system; e-visa tender declared unsuccessful August 2025 — confirmed via Wikipedia and aggregators. CONFIRMED: diplomatie.gov.tn still returning SSL certificate errors, primary official MFA source remains inaccessible. NO CHANGES to any access lists in this run — all entries confirmed against live or archived official sources. GCC VoA (15 days for GCC-resident permit holders): multiple aggregators confirm still in effect for 2025-2026 but no official Tunisian government URL confirmed; kept as source_official=false in conditional_access."
     ],
     "gaps": [
       "The official Tunisian MFA visa pages (diplomatie.gov.tn/visa sub-pages) return errors, making it impossible to directly verify the complete official list of visa-exempt nationalities from the primary official source.",
@@ -161,8 +256,10 @@
       "RBI/Investor residence: non-official sources mention an investor residency pathway (TND 250,000 real estate or TND 300,000 business investment) but no official Tunisian government webpage (TIA, FIPA, MFA, or interior ministry) was found that formally publishes this program. NOT recorded.",
       "Fast-track/digital nomad/startup visa: no official program found.",
       "Tunisia's AMU membership does not currently confer operational free movement rights.",
-      "Organized-tour visa-free exemption for Belarus, Kazakhstan, Macau, Ukraine: mentioned in Wikipedia/IATA sources but not confirmed on official Tunisian Embassy Berlin page (which lists only 8 countries: Azerbaijan, China, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan). These 4 countries remain unconfirmed at official level.",
-      "E-visa platform: Tunisia's 2024 international tender for a national e-visa system was declared unsuccessful. No operational e-visa exists as of mid-2026."
+      "Organized-tour visa-free exemption for Belarus, Kazakhstan, Macau, Ukraine, Benin: Wikipedia (re-checked 2026-06-27) lists organized-tour exemption countries as Azerbaijan, Benin, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, Ukraine, Uzbekistan. This differs from the Tunisian Embassy Berlin archived source (which listed 8 countries including China). Ukraine and Benin appear in Wikipedia but not in the official archived source; Kazakhstan, Belarus, and Macau were mentioned in older aggregator sources but not in Wikipedia's current version. These discrepancies remain unresolved without a live official Tunisian government source.",
+      "E-visa platform: Tunisia's 2024 international tender for a national e-visa system was declared unsuccessful. No operational e-visa exists as of mid-2026.",
+      "Visa fees, processing times, and specific application procedures are not published in the primary legal text (Décret 68-198) and were not found on any accessible official Tunisian government URL. These fields remain null across all visa_types entries.",
+      "Specific visa categories for work, study, business, medical, and family reunion purposes may exist in practice (issued by embassies/consulates) but are not separately codified in the primary enabling legislation. These sub-categories were not found on any official Tunisian government online source."
     ]
   },
   "outbound_official": {
@@ -170,18 +267,21 @@
     "note": "no official Tunisia government outbound visa-list page located; rely on destination-side data"
   },
   "sources_checked": [
-    "https://www.diplomatie.gov.tn/ (official MFA site — SSL certificate error, sub-pages inaccessible)",
-    "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/ (official legal database — Décret 68-198, Article 2 confirmed bilateral treaty basis)",
-    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tunisia.html (US State Dept — confirms US citizens visa-free 90 days, 6-month passport validity required)",
-    "https://www.mea.gov.in/bvwa-passport (India MEA — confirms India-Tunisia diplomatic/official/special passport agreement, 90 days, signed 30/04/2015, effective 02/05/2016)",
-    "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml (China MFA — confirms China-Tunisia diplomatic/service passport exemption, 30 days, effective 29/09/2006)",
-    "https://english.news.cn/africa/20231007/9b33c7a0839448a29fa69ee13416f55a/c.html (Xinhua — Chinese Embassy Tunis confirms ordinary passport tourism visa-free effective October 7, 2023)",
-    "https://english.news.cn/africa/20240615/24570e0cba3e4c7a805b9ec802fc8099/c.html (Xinhua — Tunisia MFA announcement of visa-free for Iran and Iraq, 15 days per 180-day period, June 15, 2024)",
-    "https://www.tehrantimes.com/news/499903/Tunisia-lifts-visa-requirement-for-Iranian-nationals (Tehran Times — confirms Iran visa-free 15 days per 180-day period, hotel + return ticket required)",
-    "https://gulfnews.com/world/mena/visa-on-arrival-for-gcc-residents-in-tunisia-1.2110258 (Gulf News — tourism minister Selma Elloumi announcement, GCC resident VoA 15 days; not an official government URL)",
-    "https://web.archive.org/web/20231212152152/http://tunesien.tn/visum/ (Tunisian Embassy Berlin — official; confirms 8-country organized-tour exemption list including India; direct text: 'Indien' listed among Azerbaijan, China, Georgia, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan)",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Tunisia (Wikipedia/IATA-derived — aggregator; used for cross-reference only, not as data source)",
-    "https://tunisia-e-visa.com/countries-that-enter-tunisia-visa-free/ (aggregator — cross-reference only, not official)",
-    "https://www.embassyofindiatunis.gov.in/visa-procedure-fee-structure.php (Embassy of India Tunis — SSL certificate error)"
+    "https://www.diplomatie.gov.tn/ (official MFA site - SSL certificate error 2026-06-14, 2026-06-27, and 2026-06-29; sub-pages inaccessible across all runs)",
+    "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/ (official legal database - Décret 68-198, Article 2 confirmed bilateral treaty basis; visa categories: transit 7 days, entry up to 3 months, temporary residence, ordinary residence, return visa 1 year, exit visa; re-fetched 2026-06-29, content confirmed unchanged)",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tunisia.html (US State Dept - confirms US citizens visa-free 90 days, 6-month passport validity required, 1 blank page required; residence permit required for stays >90 days; re-fetched 2026-06-29, confirmed current)",
+    "https://www.mea.gov.in/bvwa-passport (India MEA - confirms India-Tunisia diplomatic/official/special passport agreement, 90 days, signed 30/04/2015, effective 02/05/2016; re-fetched 2026-06-29, confirmed)",
+    "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml (China MFA - confirms China-Tunisia diplomatic/service passport exemption, 30 days, effective 29/09/2006; re-fetched 2026-06-29, confirmed current)",
+    "https://english.news.cn/africa/20231007/9b33c7a0839448a29fa69ee13416f55a/c.html (Xinhua - Chinese Embassy Tunis confirms ordinary passport tourism visa-free effective October 7, 2023, hotel reservation + air ticket required; re-fetched 2026-06-29, confirmed)",
+    "https://english.news.cn/africa/20240615/24570e0cba3e4c7a805b9ec802fc8099/c.html (Xinhua - Tunisia MFA announcement of visa-free for Iran and Iraq, 15 days per 180-day period, June 15, 2024; re-fetched 2026-06-27, confirmed current)",
+    "https://www.tehrantimes.com/news/499903/Tunisia-lifts-visa-requirement-for-Iranian-nationals (Tehran Times - confirms Iran visa-free 15 days per 180-day period, hotel + return ticket required)",
+    "https://gulfnews.com/world/mena/visa-on-arrival-for-gcc-residents-in-tunisia-1.2110258 (Gulf News - tourism minister Selma Elloumi announcement, GCC resident VoA 15 days; not an official government URL)",
+    "https://web.archive.org/web/20231212152152/http://tunesien.tn/visum/ (Tunisian Embassy Berlin - official; confirms 8-country organized-tour exemption list including India; direct text: 'Indien' listed among Azerbaijan, China, Georgia, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan; web.archive.org not fetchable in live runs, original data preserved)",
+    "https://tia.gov.tn/en/ (Tunisia Investment Authority - fetched 2026-06-20; no visa type details found; site focuses on investment environment)",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Tunisia (Wikipedia/IATA-derived - aggregator; used for cross-reference only, not as data source; re-fetched 2026-06-29: confirms Iran/Iraq 15 days, organized-tour list includes Azerbaijan, Benin, Georgia, India, Kyrgyzstan, Tajikistan, Turkmenistan, Ukraine, Uzbekistan; confirms China full visa-free effective Oct 7, 2023 separate from Feb 2017 organized-tour exemption; e-visa tender unsuccessful August 2025)",
+    "https://www.tunisianembassy.org/visa-services (Tunisian Embassy Washington DC - fetched 2026-06-29; page covers tourist/business/transit visa application procedures for applicants in the US; does not publish visa-exempt nationalities list)",
+    "https://newlandchase.com/tunisia-expats-in-gcc-countries-now-eligible-for-visa-on-arrival/ (Newland Chase immigration services - fetched 2026-06-27: page content did not contain GCC Tunisia information; source not usable)",
+    "https://tunisia-e-visa.com/countries-that-enter-tunisia-visa-free/ (aggregator - cross-reference only, not official)",
+    "https://www.embassyofindiatunis.gov.in/visa-procedure-fee-structure.php (Embassy of India Tunis - SSL certificate error)"
   ]
 }

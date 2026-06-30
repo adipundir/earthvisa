@@ -9,7 +9,7 @@
         "nationality": "Azerbaijan",
         "iso3": "AZE",
         "max_stay_days": 90,
-        "notes": "Bilateral Agreement on the Mutual Exemption of Visa Requirements for holders of Ordinary Passports signed 25 September 2025 on the sidelines of the 80th UN General Assembly in New York. Grants 90 days visa-free entry — a more favourable arrangement than the 30-day universal tourist visa on arrival. Builds on an earlier Visa Agreement (2024) exempting diplomatic and official passport holders from visa requirements for up to 90 days.",
+        "notes": "Bilateral Agreement on the Mutual Exemption of Visa Requirements for holders of Ordinary Passports signed 25 September 2025 on the sidelines of the 80th UN General Assembly in New York. Grants 90 days visa-free entry - a more favourable arrangement than the 30-day universal tourist visa on arrival. Builds on an earlier Visa Agreement (2024) exempting diplomatic and official passport holders from visa requirements for up to 90 days.",
         "source_url": "https://foreign.gov.mv/index.php/en/media-center/news/the-maldives-and-azerbaijan-sign-visa-exemption-agreement",
         "source_official": true
       }
@@ -19,7 +19,7 @@
         "nationality": "All nationalities except Israeli passport holders",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "Tourist visa granted on arrival free of charge to all nationalities. No pre-approval required. Effective 15 April 2025, entry is not granted on Israeli passports (Third Amendment to Immigration Act 1/2007, ratified by President Dr. Mohamed Muizzu). Entry requirements: passport with MRZ and minimum 1 month validity (passengers with extended passport validity are not allowed to enter), confirmed return ticket, prepaid accommodation at a registered facility or proof of sufficient funds, completed IMUGA Traveller Declaration (within 96 hours before arrival). Yellow Fever vaccination certificate required if coming from endemic countries (children under 1 year exempt). Entry at port of entry subject to admissibility determination by Immigration officers (Immigration Act ss. 7 & 8). Max stay of 30 days is the standard tourist visa on arrival period (extendable up to 90 days total in-country by applying to Maldives Immigration before expiry). The official immigration.gov.mv tourist visa page (last updated 27 August 2025) does not state the 30-day figure explicitly, but it is confirmed by the Maldives High Commission UK official page and is the standard applied in practice.",
+        "notes": "Tourist visa granted on arrival free of charge to all nationalities. No pre-approval required. Effective 15 April 2025, entry is not granted on Israeli passports (Third Amendment to Immigration Act 1/2007, ratified by President Dr. Mohamed Muizzu on 15 April 2025). Entry requirements: passport with MRZ and minimum 1 month validity, confirmed return ticket within 30 days of arrival, prepaid accommodation at a registered facility or proof of sufficient funds (minimum USD 100 plus USD 50/day), completed IMUGA Traveller Declaration (within 96 hours before arrival). Yellow Fever vaccination certificate required if coming from endemic countries (children under 1 year exempt). Entry at port of entry subject to admissibility determination by Immigration officers (Immigration Act ss. 7 & 8). Max stay of 30 days confirmed by Maldives High Commission London official page (re-verified 2026-06-29). Extendable up to 60 additional days (total 90 days) in-country by applying to Maldives Immigration before expiry. Extension process was streamlined by Maldives Immigration effective April 23, 2026 under the Maldives 2.0 Initiative.",
         "source_url": "https://www.immigration.gov.mv/visa/tourist-visa",
         "source_official": true
       }
@@ -30,11 +30,11 @@
       "https://www.immigration.gov.mv/visa/tourist-visa",
       "https://foreign.gov.mv/index.php/en/consular/for-foreigners-visiting-maldives/maldives-visa",
       "https://www.maldiveshighcommission.uk/index.php/maldives/maldives-visa-and-passport-information",
-      "https://www.immigration.gov.mv/entry-into-the-maldives-is-prohibited-on-israeli-passports/",
       "https://presidency.gov.mv/Press/Article/33500",
-      "https://foreign.gov.mv/index.php/en/media-center/news/the-maldives-and-azerbaijan-sign-visa-exemption-agreement"
+      "https://foreign.gov.mv/index.php/en/media-center/news/the-maldives-and-azerbaijan-sign-visa-exemption-agreement",
+      "https://www.immigration.gov.mv/news"
     ],
-    "notes": "The Maldives grants tourist visa on arrival to all nationalities free of charge. The official immigration.gov.mv page (updated 27 August 2025) and MFA page (foreign.gov.mv) both confirm 'tourist visa is granted for all nationalities on arrival.' Israeli passport holders are banned from entry as of 15 April 2025 under the Third Amendment to the Immigration Act 1/2007 (ratified by the President on 15 April 2025). The standard tourist VoA allows 30 days extendable to 90 days total. Azerbaijan ordinary passport holders have a distinct bilateral visa exemption for 90 days (signed 25 September 2025), which is superior to the general VoA, and is recorded in visa_free. China and Tajikistan have bilateral mutual exemption agreements for ordinary passport holders (30 days each — same as the general VoA) and are recorded in the agreements list. No e-visa or ETA system exists for the tourist category — all tourists receive visa on arrival. An e-Visa digital service is available for work, business, and other non-tourist categories. SAARC Visa Exemption Scheme applies to certain categories of dignitaries/officials from SAARC member states but does not confer general free movement."
+    "notes": "The Maldives grants tourist visa on arrival to all nationalities free of charge. The official immigration.gov.mv page (updated 27 August 2025) and MFA page (foreign.gov.mv) both confirm 'tourist visa is granted for all nationalities on arrival.' Israeli passport holders are banned from entry as of 15 April 2025 under the Third Amendment to the Immigration Act 1/2007 (ratified by the President on 15 April 2025 per presidency.gov.mv/Press/Article/33500; confirmed still in force as of June 2026). The standard tourist VoA allows 30 days extendable to 90 days total. The 30-day figure is explicitly confirmed by the Maldives High Commission London official page (re-verified 2026-06-29). Azerbaijan ordinary passport holders have a distinct bilateral visa exemption for 90 days (signed 25 September 2025), which is superior to the general VoA, and is recorded in visa_free. China and Tajikistan have bilateral mutual exemption agreements for ordinary passport holders (30 days each - same as the general VoA) and are recorded in the agreements list. No e-visa or ETA system exists for the tourist category - all tourists receive visa on arrival. An e-Visa digital service is available for work, business, and other non-tourist categories. SAARC Visa Exemption Scheme applies to certain categories of dignitaries/officials from SAARC member states but does not confer general free movement. India MEA vffin page lists Maldives as '90 days' for Indian ordinary passport holders, but this reflects the maximum extendable stay (30-day VoA + 60-day extension) available to ALL nationalities - not a special bilateral visa-free grant. Indian ordinary passport holders receive the same 30-day VoA as other nationalities."
   },
   "conditional_access": [
     {
@@ -44,7 +44,7 @@
       "credential": null,
       "level": "visa_on_arrival",
       "max_stay_days": 30,
-      "conditions": "Holder of a diplomatic passport (MRZ-compliant, minimum 6 months validity). Free visa on arrival for 30 days. Official visits must be pre-notified to Maldives Immigration via the relevant authority in Maldives. Note: the immigration.gov.mv/diplomatic/ page has returned HTTP 404 as of research dates; the diplomatic VoA policy is confirmed via search cache snippets referencing that page but not via direct retrieval of the current live page.",
+      "conditions": "Holder of a diplomatic passport (MRZ-compliant, minimum 6 months validity). Free visa on arrival for 30 days. Official visits must be pre-notified to Maldives Immigration via the relevant authority in Maldives. Note: the immigration.gov.mv/diplomatic/ page has returned HTTP 404 on multiple research occasions; the diplomatic VoA policy is referenced in search cache but not directly verifiable from the live page.",
       "source_url": "https://www.immigration.gov.mv/diplomatic/",
       "source_official": true
     },
@@ -66,7 +66,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Reciprocal Visa Exemption Arrangement between Japan and the Maldives for holders of Diplomatic and Official passports. Listed in Japan Ministry of Foreign Affairs official table of visa exemption arrangements for diplomatic and official passport holders (January 2026 update). Specific stay duration for entry INTO Maldives is not stated on the Japan MFA page — unconfirmed from a Maldives-side official source.",
+      "conditions": "Reciprocal Visa Exemption Arrangement between Japan and the Maldives for holders of Diplomatic and Official passports. Listed in Japan Ministry of Foreign Affairs official table of visa exemption arrangements for diplomatic and official passport holders (January 2026 update). Specific stay duration for entry INTO Maldives is not stated on the Japan MFA page - unconfirmed from a Maldives-side official source.",
       "source_url": "https://www.mofa.go.jp/ca/fna/page22e_000692.html",
       "source_official": true
     },
@@ -77,7 +77,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Bilateral Visa Agreement between the Maldives and Azerbaijan for holders of Diplomatic and Official passports (signed 2024, predating the September 2025 ordinary passport agreement). Up to 90 days. Referenced in the September 2025 foreign.gov.mv press release as 'the Visa Agreement signed last year' — not independently confirmed from a standalone Maldives official announcement.",
+      "conditions": "Bilateral Visa Agreement between the Maldives and Azerbaijan for holders of Diplomatic and Official passports (signed 2024, predating the September 2025 ordinary passport agreement). Up to 90 days. Referenced in the September 2025 foreign.gov.mv press release as 'the Visa Agreement signed last year' - not independently confirmed from a standalone Maldives official announcement.",
       "source_url": "https://foreign.gov.mv/index.php/en/media-center/news/the-maldives-and-azerbaijan-sign-visa-exemption-agreement",
       "source_official": true
     }
@@ -104,7 +104,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://investmaldives.gov.mv/maldives-and-henley-partners-sign-landmark-partnership-agreement-to-launch-pioneering-residence-by-investment-program/",
         "source_official": true,
-        "notes": "Partnership Agreement between the Government of Maldives and Henley & Partners signed 1 July 2025 to develop and implement the program. Formally introduced by Minister of Economic Development at the 19th Global Citizenship Conference in London (5 November 2025). Program is specifically linked to real estate acquisition in designated development zones (Gaafaru, Fushidhiggaru, and Ras Mala in Kaafu Atoll). As of June 2026, the detailed investment minimums, residency duration, and full eligibility criteria remain unfinalized and not published on official government pages — program is still in development. No path to citizenship offered (Maldives Constitution restricts citizenship to Muslims). Contact: Invest Maldives (investmaldives.gov.mv)."
+        "notes": "Partnership Agreement between the Government of Maldives and Henley & Partners signed 1 July 2025 to develop and implement the program. Formally introduced by Minister of Economic Development at the 19th Global Citizenship Conference in London (5 November 2025). Program is specifically linked to real estate acquisition in designated development zones (Gaafaru, Fushidhiggaru, and Ras Mala in Kaafu Atoll). As of June 2026, the detailed investment minimums, residency duration, and full eligibility criteria remain unfinalized and not published on official government pages - program is still in development. No path to citizenship offered (Maldives Constitution restricts citizenship to Muslims). Contact: Invest Maldives (investmaldives.gov.mv)."
       },
       {
         "name": "Corporate Resident Maldives",
@@ -115,7 +115,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://www.immigration.gov.mv/",
         "source_official": true,
-        "notes": "Launched by Maldives Immigration. Aims to provide foreign investors in the Maldives with privileged and fast-track immigration services. Card holders receive permanent residency and priority (no-queue) processing at immigration. Investment thresholds and detailed eligibility not found on the official immigration.gov.mv page. The original announcement URL (immigration.gov.mv/corporate-resident-maldives-launched/) returned HTTP 404."
+        "notes": "Launched by Maldives Immigration. Aims to provide foreign investors in the Maldives with privileged and fast-track immigration services. Card holders receive permanent residency and priority (no-queue) processing at immigration. Investment thresholds and detailed eligibility not found on the official immigration.gov.mv page. The original announcement URL (immigration.gov.mv/corporate-resident-maldives-launched/) returned HTTP 404 again on re-verification 2026-06-29."
       },
       {
         "name": "Resident Visa (Marriage-based)",
@@ -126,7 +126,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://foreign.gov.mv/index.php/en/consular/for-foreigners-visiting-maldives/maldives-visa",
         "source_official": true,
-        "notes": "For foreign nationals married to Maldivian citizens. Apply for Marriage Visa within 30 days of arrival. Initial validity 1 year; renewable (extensions issued for 5 years per renewal). Applications submitted via IMUGA. MVR 50 card fee. Not an investment-based residency — included for completeness. Confirmed on MFA official page (foreign.gov.mv)."
+        "notes": "For foreign nationals married to Maldivian citizens. Apply for Marriage Visa within 30 days of arrival. Initial validity 1 year; renewable (extensions issued for 5 years per renewal). Applications submitted via IMUGA. MVR 50 card fee. Not an investment-based residency - included for completeness. Confirmed on MFA official page (foreign.gov.mv)."
       }
     ]
   },
@@ -134,13 +134,13 @@
     "programs": []
   },
   "agreements": [
-    "SAARC Visa Exemption Scheme (limited categories: dignitaries, judges, parliamentarians, senior officials, businessmen, journalists, sportsmen — not general free movement for ordinary passport holders)",
+    "SAARC Visa Exemption Scheme (limited categories: dignitaries, judges, parliamentarians, senior officials, businessmen, journalists, sportsmen - not general free movement for ordinary passport holders)",
     "Bilateral Visa Exemption Agreement with India for Diplomatic & Official passport holders (signed 17 March 2019, in force 5 August 2019, 90 days)",
-    "Bilateral Visa Exemption Arrangement with Japan for Diplomatic & Official passport holders (in force, listed on Japan MFA official table — stay duration for entry into Maldives unconfirmed from Maldives-side source)",
-    "Bilateral Visa Agreement with Azerbaijan for Diplomatic & Official passport holders (signed 2024, 90 days — referenced in September 2025 MFA press release as predating the ordinary passport agreement)",
-    "Bilateral Agreement on Mutual Exemption of Visa Requirements with Azerbaijan for Ordinary passport holders (signed 25 September 2025, 90 days — recorded in visa_policy.visa_free)",
+    "Bilateral Visa Exemption Arrangement with Japan for Diplomatic & Official passport holders (in force, listed on Japan MFA official table - stay duration for entry into Maldives unconfirmed from Maldives-side source)",
+    "Bilateral Visa Agreement with Azerbaijan for Diplomatic & Official passport holders (signed 2024, 90 days - referenced in September 2025 MFA press release as predating the ordinary passport agreement)",
+    "Bilateral Agreement on Mutual Exemption of Visa Requirements with Azerbaijan for Ordinary passport holders (signed 25 September 2025, 90 days - recorded in visa_policy.visa_free)",
     "Mutual Visa Exemption Agreement with China for all passport types (ordinary, diplomatic, official; signed January 2022, in force 20 May 2022, 30 days)",
-    "Bilateral Visa Exemption Agreement with Tajikistan for Ordinary passport holders (signed 26 November 2024, 30 days — formalises existing unilateral visa-free regimes; enters into force 30 days after completion of domestic procedures by both parties)",
+    "Bilateral Visa Exemption Agreement with Tajikistan for Ordinary passport holders (signed 26 November 2024, 30 days - formalises existing unilateral visa-free regimes; enters into force 30 days after completion of domestic procedures by both parties)",
     "Bilateral Visa Waiver Agreement with Togo for all passport types (signed 19 September 2023, 30 days)",
     "Bilateral Visa Waiver Agreement with The Gambia for all passport types (signed 11 June 2023, 30 days)",
     "Bilateral Visa Waiver Agreement with Andorra for all passport types (signed 20 September 2023, 90 days)",
@@ -158,34 +158,42 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTED: Removed the duplicate 'Israeli passport holders — EXCLUDED' entry from visa_on_arrival (iso3: ISR, max_stay_days: null) — the Israeli ban is already captured in the notes of the universal VoA entry. A null-stay entry in visa_on_arrival was structurally incorrect.",
-      "CORRECTED: Added Azerbaijan ordinary passport holders to visa_policy.visa_free (90 days, bilateral agreement signed 25 September 2025, confirmed on foreign.gov.mv). The prior record only listed this in the agreements array but did not reflect it as a visa_free entry despite it being a bilateral ordinary-passport exemption with a superior 30→90 day stay.",
-      "CORRECTED: Added Tajikistan ordinary passport bilateral visa exemption agreement (signed 26 November 2024, 30 days) to the agreements array — it was entirely absent from the prior record.",
-      "CORRECTED: Added Azerbaijan diplomatic/official passport bilateral visa agreement (2024, 90 days) to conditional_access, confirmed by reference in the September 2025 foreign.gov.mv press release.",
-      "CORRECTED: Updated Pearl Residence RBI official_url to the investmaldives.gov.mv Henley & Partners announcement page (more specific and current than the presidency.gov.mv blog post).",
-      "CORRECTED: Updated Marriage Visa official_url from immigration.gov.mv/visa/resident to foreign.gov.mv MFA page where the visa details are confirmed live (the immigration.gov.mv page for 'resident' was not verified to still be active).",
-      "CONFIRMED: Israeli passport ban remains in force (effective 15 April 2025, Third Amendment to Immigration Act 1/2007, ratified by President Muizzu — confirmed on immigration.gov.mv tourist visa page updated 27 August 2025 and presidency.gov.mv Press/Article/33500).",
-      "CONFIRMED: Tourist VoA still granted to all nationalities except Israeli passport holders — no new nationality bans found.",
-      "CONFIRMED: No e-visa or ETA for tourist category — all tourists receive VoA on arrival.",
-      "CONFIRMED: MFA foreign.gov.mv tourist visa page does NOT specify 30-day figure; 30 days is confirmed by Maldives High Commission UK official page.",
-      "NOTE: www2.immigration.gov.mv removed from source_urls as it appears to be a legacy domain — the primary immigration domain is www.immigration.gov.mv."
+      "VALIDATION 2026-06-29: Re-verified core tourist VoA policy against immigration.gov.mv/visa/tourist-visa (loaded successfully). Policy CONFIRMED: tourist visa granted on arrival to all foreign nationals without pre-approval; Israeli passport holders explicitly banned effective 15 April 2025. Page does not state the 30-day duration explicitly.",
+      "VALIDATION 2026-06-29: Israeli passport ban CONFIRMED still in force as of June 2026. presidency.gov.mv/Press/Article/33500 loaded and confirmed Third Amendment to Immigration Act 1/2007 ratified 15 April 2025 expressly prohibiting Israeli passport holder entry. Ban described as conditional ('until inhumane actions stop') but remains active. Source URL immigration.gov.mv/entry-into-the-maldives-is-prohibited-on-israeli-passports/ now returns HTTP 404 - removed from source_urls; ban remains confirmed by presidency.gov.mv Article 33500.",
+      "VALIDATION 2026-06-29: 30-day max stay CONFIRMED by Maldives High Commission London (maldiveshighcommission.uk): 'All tourists, of all nationalities, can receive a 30 day visa free of charge on arrival in the Maldives.' Also confirmed extension up to 60 additional days (total 90 days). No change required.",
+      "VALIDATION 2026-06-29: Azerbaijan ordinary passport 90-day visa_free CONFIRMED. foreign.gov.mv press release returns HTTP 403 to automated fetch but agreement confirmed via official search index snippets and MEA secondary source. No change.",
+      "VALIDATION 2026-06-29: No new bilateral ordinary-passport visa exemption agreements for 2026 found in official sources. WebSearch on foreign.gov.mv/immigration.gov.mv/presidency.gov.mv returned no new agreements beyond those already recorded.",
+      "VALIDATION 2026-06-29: immigration.gov.mv/news reviewed - new operational updates noted: (1) Tourist visa extension process streamlined effective April 23, 2026 under Maldives 2.0 Initiative (noted in VoA entry notes); (2) e-Visa for workers launched November 2025 (already reflected in visa_types); (3) e-Gate for Maldivian citizens at Velana Airport (December 2025). No policy changes to inbound visa categories detected.",
+      "VALIDATION 2026-06-29: India ordinary passport holders - investigated claim that India receives 90-day visa-free (not VoA). India MEA vffin page lists Maldives at '90 days' for Indian ordinary passports. However, cross-referencing with travel sources and the HCI Malé information indicates this '90 days' reflects the maximum extendable stay (30-day VoA + 60-day extension) available to ALL nationalities - not a special bilateral visa-free grant for India. India ordinary passport holders receive the standard 30-day VoA per immigration.gov.mv. NOT adding India to visa_free per safety rule (false visa-free = worst error).",
+      "VALIDATION 2026-06-29: Corporate Resident Maldives - announcement URL (immigration.gov.mv/corporate-resident-maldives-launched/) confirmed 404 again. Program still referenced in base immigration.gov.mv site. No investment threshold details found on official pages.",
+      "VALIDATION 2026-06-29: Pearl Residence program - investmaldives.gov.mv confirmed partnership still exists; no investment minimums or launch date published on official pages as of June 2026.",
+      "CORRECTED 2026-06-29: Removed immigration.gov.mv/entry-into-the-maldives-is-prohibited-on-israeli-passports/ from source_urls (now returns HTTP 404). Israeli ban remains confirmed via presidency.gov.mv/Press/Article/33500 (loaded successfully in this session).",
+      "VALIDATION 2026-06-27: Dominica agreement CONFIRMED signed 9 July 2025 per foreign.gov.mv news page (URL indexed and snippet confirmed). Agreement covers nationals of both countries, 30 days. Since Dominicans already receive VoA (30 days), no change to visa_policy classification needed.",
+      "CORRECTED (prior session): Removed the duplicate 'Israeli passport holders - EXCLUDED' entry from visa_on_arrival (iso3: ISR, max_stay_days: null) - the Israeli ban is already captured in the notes of the universal VoA entry.",
+      "CORRECTED (prior session): Added Azerbaijan ordinary passport holders to visa_policy.visa_free (90 days, bilateral agreement signed 25 September 2025, confirmed on foreign.gov.mv).",
+      "CORRECTED (prior session): Added Tajikistan ordinary passport bilateral visa exemption agreement (signed 26 November 2024, 30 days) to the agreements array.",
+      "CORRECTED (prior session): Added Azerbaijan diplomatic/official passport bilateral visa agreement (2024, 90 days) to conditional_access.",
+      "CONFIRMED (prior session): No e-visa or ETA for tourist category - all tourists receive VoA on arrival.",
+      "NOTE: www2.immigration.gov.mv removed from source_urls as it appears to be a legacy domain - the primary immigration domain is www.immigration.gov.mv."
     ],
     "gaps": [
-      "The official immigration.gov.mv tourist visa page (updated 27 August 2025) does not explicitly state the 30-day maximum stay duration — the 30-day figure is confirmed by the Maldives High Commission UK official page but not verbatim from immigration.gov.mv.",
-      "Corporate Resident Maldives: investment thresholds and full eligibility criteria not found on official page; original announcement URL returned 404.",
+      "The 30-day max stay is confirmed by Maldives High Commission London page (explicit statement); however immigration.gov.mv tourist visa page itself does not state the 30-day figure explicitly (page updated 27 Aug 2025 - gap partially resolved but primary official page gap remains).",
+      "Corporate Resident Maldives: investment thresholds and full eligibility criteria not found on official page; original announcement URL returned 404 again on 2026-06-29.",
       "Pearl Residence program: investment minimums and complete program terms remain unfinalized and unpublished on official government pages as of June 2026.",
       "Diplomatic passport VoA (30 days, immigration.gov.mv/diplomatic/): the page has returned HTTP 404 on multiple research occasions; the policy is referenced in search cache but not directly verifiable from the live page.",
       "Japan-Maldives diplomatic/official passport exemption: maximum stay duration for entry into Maldives specifically is not stated on the Japan MFA page and has not been confirmed from a Maldives-side official source.",
-      "Azerbaijan diplomatic/official passport agreement (2024): confirmed only by an indirect reference in the September 2025 MFA press release ('the Visa Agreement signed last year') — no standalone Maldives MFA announcement found for this agreement.",
-      "Tajikistan bilateral visa exemption (signed November 2024): entry-into-force date not confirmed; agreement enters into force 30 days after both parties complete domestic notification procedures — whether this has occurred is not confirmed from an official source.",
-      "China mutual visa exemption (May 2022): covers all passport types per official source but entry-into-force date and detailed terms from the Maldives-side official page were not directly retrieved (confirmed via search result citing foreign.gov.mv).",
+      "Azerbaijan diplomatic/official passport agreement (2024): confirmed only by an indirect reference in the September 2025 MFA press release ('the Visa Agreement signed last year') - no standalone Maldives MFA announcement found for this agreement.",
+      "Tajikistan bilateral visa exemption (signed November 2024): entry-into-force date not confirmed; agreement enters into force 30 days after both parties complete domestic notification procedures - whether this has occurred is not confirmed from an official source.",
+      "China mutual visa exemption (May 2022): covers all passport types per official source. The specific MFA page (foreign.gov.mv/media-center/news/maldives-and-china-sign-five-agreements) returned HTTP 403 on re-verification; confirmed via Google-indexed search snippet. Chinese ordinary passport holders technically have bilateral visa-free entry (not VoA) but stay duration is identical to VoA (30 days) - classified in agreements[] pending direct page access.",
       "SAARC Visa Exemption Scheme specific category list for Maldives not verified on a Maldives-specific official page.",
-      "No official English-language page enumerating visa-on-arrival rules by specific nationality — policy stated as universal ('all nationalities') with only the Israeli ban as explicit exception.",
+      "No official English-language page enumerating visa-on-arrival rules by specific nationality - policy stated as universal ('all nationalities') with only the Israeli ban as explicit exception.",
       "No digital nomad, startup, or skilled migrant fast-track visa found on any official Maldives government source.",
       "No OCI (Overseas Citizen of India) cardholder special entry rule found on any official Maldives government source.",
-      "No conditional entry rules based on holding a third-country visa (e.g., US, Schengen, UK, Australia) or residence permit found — such rules do not appear to exist given the universal VoA policy.",
-      "Serbia-Maldives and Oman-Maldives diplomatic/official passport agreements noted in secondary sources but not confirmed from official Maldives government pages — not recorded.",
-      "Tourist visa extension: the Maldives High Commission UK confirms extension up to 60 additional days (total 90 days), but the official immigration.gov.mv tourist visa page does not detail the extension process or maximum duration."
+      "No conditional entry rules based on holding a third-country visa (e.g., US, Schengen, UK, Australia) or residence permit found - such rules do not appear to exist given the universal VoA policy.",
+      "Serbia-Maldives and Oman-Maldives diplomatic/official passport agreements noted in secondary sources but not confirmed from official Maldives government pages - not recorded.",
+      "Tourist visa extension: the Maldives High Commission UK confirms extension up to 60 additional days (total 90 days), but the official immigration.gov.mv tourist visa page does not detail the extension process or maximum duration.",
+      "foreign.gov.mv pages return HTTP 403 to automated fetch (bot protection active as of 2026-06-29); content confirmed only via Google search index snippets for press releases.",
+      "India MEA vffin page lists Maldives at '90 days' for Indian ordinary passport holders - this appears to reflect the maximum extendable stay (30+60 days) rather than a special bilateral visa-free grant, but a Maldives-side official confirmation of the exact India arrangement for ordinary passports has not been directly retrieved."
     ]
   },
   "outbound_official": {
@@ -320,13 +328,134 @@
       {"name": "Vietnam", "iso3": "VNM"}
     ],
     "eta": [],
-    "notes": "Official source page is https://foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa-free-access-for-maldivian-passport-holders (Maldives Ministry of Foreign Affairs). The page returned HTTP 403 to all automated requests (WebFetch and Firecrawl) and could not be directly scraped; its existence is confirmed by Google search index. The country lists above are derived from the best available secondary aggregation (immigrantinvest.com and related sources cross-referenced with the MFA page snippet data as of March 2024). The MFA site also has companion pages: visa-on-arrival (foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa-on-arrival-for-maldivian-passports), e-visa (foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/e-visa-for-maldivian-passports), and visa-required countries (foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa-required-countries). Country lists should be re-verified by direct access to the official page when possible. Note: Azerbaijan appears in e_visa list above from aggregator data but also has a bilateral ordinary-passport visa-exemption agreement (90 days, signed Sep 2025) recorded in visa_policy.visa_free — the e_visa entry reflects the pre-agreement situation."
+    "notes": "Official source page is https://foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa-free-access-for-maldivian-passport-holders (Maldives Ministry of Foreign Affairs). The page returned HTTP 403 to all automated requests (WebFetch and Firecrawl) and could not be directly scraped; its existence is confirmed by Google search index. The country lists above are derived from the best available secondary aggregation (immigrantinvest.com and related sources cross-referenced with the MFA page snippet data as of March 2024). The MFA site also has companion pages: visa-on-arrival (foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa-on-arrival-for-maldivian-passports), e-visa (foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/e-visa-for-maldivian-passports), and visa-required countries (foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa-required-countries). Country lists should be re-verified by direct access to the official page when possible. Note: Azerbaijan appears in e_visa list above from aggregator data but also has a bilateral ordinary-passport visa-exemption agreement (90 days, signed Sep 2025) recorded in visa_policy.visa_free - the e_visa entry reflects the pre-agreement situation."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa on Arrival",
+      "purpose": "Leisure travel and tourism to the Maldives. No business activities or paid/unpaid work permitted.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.immigration.gov.mv/visa/tourist-visa",
+      "notes": "Granted free of charge on arrival to all nationalities except Israeli passport holders (ban effective 15 April 2025). Requires: MRZ-compliant passport with minimum 1 month validity, return/onward ticket within 30 days of arrival, confirmed accommodation or proof of funds (min USD 100 + USD 50/day), completed IMUGA Traveller Declaration (via imuga.immigration.gov.mv, up to 96 hours before arrival). Yellow Fever vaccination certificate required if travelling from endemic countries (children under 1 exempt). Extendable in-country up to 60 additional days (total 90 days) by applying to Maldives Immigration before expiry. Extension process streamlined effective April 23, 2026 under Maldives 2.0 Initiative. Azerbaijan ordinary passport holders receive 90 days visa-free under bilateral agreement (signed Sept 2025)."
+    },
+    {
+      "category": "work",
+      "name": "Work e-Visa",
+      "purpose": "For foreign nationals holding an approved Work Permit to reside and work in the Maldives.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.mv/visa/work-visa",
+      "notes": "Validity mirrors the associated Work Permit; renewed visas have a maximum validity of 1 year. Must be obtained within 15 days of arrival in the Maldives on a valid Work Permit. As of 23 November 2025, physical visa stickers are no longer valid - only the digital e-Visa via the Xpat Online System (xpat.egov.mv) is recognized. Employer or authorized representative submits the application. Requires valid Work Permit from Ministry of Homeland Security and Technology."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "For foreign nationals visiting the Maldives for business-related purposes.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.mv/",
+      "notes": "Listed as a distinct category on immigration.gov.mv. Specific fees, duration, and processing times not published on official pages. Applied through Maldives Immigration e-Visa portal. Distinct from the tourist visa which prohibits business engagements."
+    },
+    {
+      "category": "family",
+      "name": "Dependent Visa",
+      "purpose": "For dependents (family members) of foreign nationals holding a valid visa or permit in the Maldives.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.mv/",
+      "notes": "Listed as a distinct visa category on immigration.gov.mv. Specific fees, duration, and processing times not published on official English-language pages. Applies to dependents of work permit or resident visa holders."
+    },
+    {
+      "category": "family",
+      "name": "Marriage Visa (Resident Visa - Marriage-based)",
+      "purpose": "For foreign nationals married to Maldivian citizens, allowing long-term residence in the Maldives.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.mv/index.php/en/consular/for-foreigners-visiting-maldives/maldives-visa",
+      "notes": "Must apply within 30 days of arrival. Initial validity 1 year; renewable with extensions issued for 5 years per renewal. MVR 50 card fee (approx. USD 3). Applications submitted via IMUGA portal. Confirmed on Maldives Ministry of Foreign Affairs official page."
+    },
+    {
+      "category": "other",
+      "name": "Sponsorship Visa",
+      "purpose": "For foreign nationals entering the Maldives under sponsorship by an approved Maldivian entity or individual.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.mv/",
+      "notes": "Listed as a distinct category on immigration.gov.mv. Sponsor must provide a formal sponsorship declaration. Specific fees, duration, and processing times not published on official English-language pages."
+    },
+    {
+      "category": "other",
+      "name": "Meeting Visa",
+      "purpose": "For foreign nationals attending conferences, meetings, or official events in the Maldives.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.mv/",
+      "notes": "Listed as a distinct visa category on immigration.gov.mv for conference and meeting attendees. Specific fees, duration, and processing times not published on official English-language pages."
+    },
+    {
+      "category": "other",
+      "name": "Resident Visa",
+      "purpose": "For foreign nationals seeking long-term residence in the Maldives beyond short-term categories.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.mv/",
+      "notes": "Listed as a distinct category on immigration.gov.mv. Covers long-term residence cases. Sub-types include marriage-based residence (see Marriage Visa entry). Corporate Resident Maldives program offers permanent residency card for qualifying foreign investors. Specific standard fees and processing times not published on official English-language pages."
+    }
+  ],
   "sources_checked": [
     "https://www.immigration.gov.mv/visa/tourist-visa",
     "https://foreign.gov.mv/index.php/en/consular/for-foreigners-visiting-maldives/maldives-visa",
     "https://www.maldiveshighcommission.uk/index.php/maldives/maldives-visa-and-passport-information",
-    "https://www.immigration.gov.mv/entry-into-the-maldives-is-prohibited-on-israeli-passports/",
     "https://presidency.gov.mv/Press/Article/33500",
     "https://foreign.gov.mv/index.php/en/media-center/news/the-maldives-and-azerbaijan-sign-visa-exemption-agreement",
     "https://foreign.gov.mv/index.php/en/media-center/news/the-maldives-and-tajikistan-sign-a-visa-exemption-agreement",
@@ -340,6 +469,12 @@
     "https://foreign.gov.mv/index.php/en/media-center/news/the-maldives-and-dominica-sign-a-visa-waiver-agreement",
     "https://www.mea.gov.in/bvwa-passport",
     "https://www.mofa.go.jp/ca/fna/page22e_000692.html",
-    "https://imuga.immigration.gov.mv/"
+    "https://imuga.immigration.gov.mv/",
+    "https://www.immigration.gov.mv/visa/work-visa",
+    "https://xpat.egov.mv/",
+    "https://foreign.gov.mv/index.php/en/media-center/news/maldives-and-china-sign-five-agreements-during-official-visit",
+    "https://www.immigration.gov.mv/faqs",
+    "https://www.immigration.gov.mv/news",
+    "https://www.mea.gov.in/vffin"
   ]
 }

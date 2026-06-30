@@ -3,6 +3,173 @@
   "iso3": "RUS",
   "name": "Russia",
   "region": "Europe",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Unified Electronic Visa (Tourist/Private/Business)",
+      "purpose": "Permits entry for tourism, private visits, business meetings, and participation in scientific, cultural, socio-political, economic, or sporting events. Does not permit employment, study, or permanent residency.",
+      "max_stay_days": 30,
+      "validity_days": 120,
+      "entries": "single",
+      "fee_usd": 52,
+      "processing_days_min": 4,
+      "processing_days_max": 4,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.kdmid.ru/",
+      "notes": "Available to citizens of 76 countries approved by the Russian Government. Valid 120 days from date of issue; stay must not exceed 30 days from entry. Children under 6 are exempt from the consular fee. Must enter via designated border crossing points. Application window: no earlier than 86 days and no later than 4 days before intended entry. Medical insurance valid in Russia is required for the entire stay. Extensions permitted only for emergency medical treatment, force majeure, or natural disasters."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa (Standard Consular)",
+      "purpose": "Issued to foreign nationals travelling to Russia for business meetings, negotiations, conferences, exhibitions, and commercial activities. Requires an official invitation from a Russian legal entity or registered through the Chamber of Commerce.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 4,
+      "processing_days_max": 20,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://electronic-visa.kdmid.ru/index_en.html",
+      "notes": "Applied for at a Russian embassy or consulate abroad. Invitation (vyzov) required from a Russian host organization registered with the Ministry of Internal Affairs or through the Chamber of Commerce and Industry. Single-entry and multiple-entry variants available; validity and entries depend on bilateral agreement and host organization's application. Fee varies by nationality and processing speed. Business visa does not permit employment - a work permit and work visa are required for that."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa",
+      "purpose": "Authorises foreign nationals to undertake paid employment in Russia under a labour contract. Must be sponsored by a Russian employer who has obtained a work permit (razresheniye na rabotu) on behalf of the foreign national.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 14,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://en.mvd.ru/structure/Structure/main-directorates/general-administration-for-migration-iss",
+      "notes": "Employer must first obtain a quota slot (or use quota-exempt Highly Qualified Specialist pathway, HQS, with minimum quarterly salary of RUB 750,000 effective March 1, 2024). Initial work visa valid up to 1 year; extendable in-country. HQS pathway allows work permits valid up to 3 years. EAEU citizens (Armenia, Belarus, Kazakhstan, Kyrgyzstan) do not need a work visa or permit. Citizens of CIS countries with visa-free regimes may also work under simplified rules."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "Issued to foreign nationals accepted for full-time study at an accredited Russian educational institution (university, college, or language school). Requires an official invitation from the institution.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 20,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://electronic-visa.kdmid.ru/index_en.html",
+      "notes": "Requires an official invitation (vyzov) issued by the educational institution through the Ministry of Internal Affairs. Issued at Russian embassies/consulates abroad. Must be renewed annually in-country via the university's foreign student office. Student visa does not automatically confer work rights; separate permission required to work part-time."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Permits passage through Russian territory en route to a third country. Required for most non-visa-free nationals transiting through Russian airports or overland.",
+      "max_stay_days": 3,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 4,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://electronic-visa.kdmid.ru/index_en.html",
+      "notes": "Transit visa typically allows up to 72 hours (3 days) in transit. Airside transit (remaining in the international zone of an airport) may not require a visa for some nationalities, depending on passport. Overland transit always requires a transit visa or valid Russian visa. Issued at Russian consulates with confirmed onward documentation."
+    },
+    {
+      "category": "medical",
+      "name": "Humanitarian/Medical Visa",
+      "purpose": "Issued to foreign nationals travelling to Russia for medical treatment at a licensed Russian medical facility. Requires an invitation from the treating medical institution.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 20,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://electronic-visa.kdmid.ru/index_en.html",
+      "notes": "Falls under the humanitarian visa category in Russian immigration law. Requires a formal invitation from the Russian medical institution and documentation confirming planned treatment. Accompanying family members may apply for a separate private/guest visa. Extensions possible in-country if treatment is ongoing."
+    },
+    {
+      "category": "family",
+      "name": "Private/Guest Visa (Family Reunion)",
+      "purpose": "Permits foreign nationals to visit immediate family members (spouses, parents, children, siblings) who are Russian citizens or registered foreign residents in Russia.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 20,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://electronic-visa.kdmid.ru/index_en.html",
+      "notes": "The Russian host (citizen or permanent resident) submits an invitation through the local MVD office (GUVM). Alternatively, a notarised private invitation is accepted. The consulate may request proof of family relationship. Spouses of Russian citizens may subsequently apply for a temporary residence permit and follow the path to permanent residency."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Official Visa",
+      "purpose": "Issued to holders of diplomatic, service, official, or special passports travelling to Russia on official government business or assigned to diplomatic missions.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 1,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://electronic-visa.kdmid.ru/index_en.html",
+      "notes": "Holders of diplomatic, official, service, and/or special passports of 100+ countries may enter Russia without a visa under bilateral agreements (typically 90 days per 180-day period). For countries without such agreements, diplomatic/official visas are issued gratis. Exemptions for EU, Iceland, Liechtenstein, Norway, and Switzerland diplomatic passport holders have been suspended. Exact terms governed by individual bilateral treaties listed on the Russian MFA portal."
+    },
+    {
+      "category": "investment",
+      "name": "Golden Visa (Investor Permanent Residence Permit)",
+      "purpose": "Grants direct permanent residence to foreign investors who meet prescribed investment thresholds in Russia, without requiring a prior temporary residence permit stage.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://en.mvd.ru/structure/Structure/main-directorates/general-administration-for-migration-iss",
+      "notes": "Established by Government Decree No. 2573 (Dec 31, 2022), effective Jan 11, 2023. Investment options include: (1) RUB 15 million in socially significant regional projects within 3 years; (2) RUB 30 million in a Russian company with RUB 6 million/year in taxes; (3) Russian commercial entity with RUB 4 million/year taxes, operating 2+ years; (4) Real estate with cadastral value RUB 50 million (Moscow), RUB 20 million (Far East), RUB 25 million (elsewhere). Annual quota: 3,802 permits for 2026. Path to citizenship after 5 years of permanent residence. Requirement to stay 6 months/year was removed in late 2025/early 2026."
+    },
+    {
+      "category": "other",
+      "name": "Shared Values Temporary Residence Permit",
+      "purpose": "Grants temporary residence to foreign nationals from designated countries who demonstrate alignment with traditional Russian values, without requiring a standard quota slot.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://en.mvd.ru/structure/Structure/main-directorates/general-administration-for-migration-iss",
+      "notes": "Established by Presidential Decree No. 702 (Aug 19, 2024). Available to citizens of 47 countries (including US, UK, Canada, most EU states; list approved Sep 17, 2024). No Russian language test or history exam required. Quota-exempt. Leads to standard permanent residency and citizenship pathway after meeting residency requirements."
+    },
+    {
+      "category": "work",
+      "name": "Highly Qualified Specialist (HQS) Work Permit + Visa",
+      "purpose": "Fast-track work authorisation for highly skilled foreign specialists sponsored by a Russian employer, offering expedited processing and longer validity than the standard work permit.",
+      "max_stay_days": 1095,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 14,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://en.mvd.ru/structure/Structure/main-directorates/general-administration-for-migration-iss",
+      "notes": "Minimum quarterly salary of RUB 750,000 required (effective March 1, 2024). Employer files with Ministry of Internal Affairs. Work permit valid up to 3 years (matching contract duration); extendable without leaving Russia. Exempt from standard labour quotas. Family members receive derivative visas. HQS status also facilitates accelerated temporary and permanent residence."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -113,9 +280,9 @@
         "nationality": "Jordan",
         "iso3": "JOR",
         "max_stay_days": 30,
-        "notes": "Bilateral visa-free agreement signed Aug 20, 2025; entered into force Dec 13, 2025; 30 days per visit, max 90 days per calendar year; excludes work, study, permanent residence",
-        "source_url": "https://interfax.com/newsroom/top-stories/114629/",
-        "source_official": false
+        "notes": "Bilateral visa-free agreement signed Aug 20, 2025; entered into force Dec 13, 2025; 30 days per visit, max 90 days per calendar year; excludes work, study, permanent residence. RESTRICTION: does not apply to holders of Jordanian temporary (T-type) passports lacking a national number — those holders must obtain a traditional consular visa (e-visa not accepted). Confirmed by Russian Embassy Jordan official Facebook statement Dec 13, 2025.",
+        "source_url": "https://www.facebook.com/RusEmbJordan/posts/on-december-13-2025-the-agreement-between-the-government-of-the-russian-federati/1277528614408974/",
+        "source_official": true
       },
       {
         "nationality": "Qatar",
@@ -124,6 +291,14 @@
         "notes": "Bilateral agreement; 90 days per 180-day period",
         "source_url": "https://electronic-visa.kdmid.ru/index_en.html",
         "source_official": true
+      },
+      {
+        "nationality": "Saudi Arabia",
+        "iso3": "SAU",
+        "max_stay_days": 90,
+        "notes": "Bilateral visa-free agreement entered into force May 11, 2026; up to 90 days per calendar year (continuous or cumulative); covers tourism, business, family visits, cultural/scientific/economic/sports events, and transit; excludes work, study, permanent residence, and Hajj pilgrimage. Applies to all passport types including ordinary. Russia's Foreign Ministry confirmed implementation date on April 6, 2026 after domestic ratification by both governments. Saudi Arabia is the first country to extend mutual visa-free including ordinary passports to Russia.",
+        "source_url": "https://blog.wego.com/saudi-arabia-and-russia-visa-free-travel/",
+        "source_official": false
       },
       {
         "nationality": "United Arab Emirates",
@@ -209,8 +384,8 @@
         "nationality": "Myanmar",
         "iso3": "MMR",
         "max_stay_days": 30,
-        "notes": "Bilateral agreement; 30 days; max 90 per 180 days",
-        "source_url": "https://electronic-visa.kdmid.ru/index_en.html",
+        "notes": "Formal bilateral visa-free agreement entered into force January 27, 2026 (signed Minsk, October 28, 2025); 30 days per visit; max 90 days per calendar year; excludes work, study, permanent residence. Prior entry in this record cited a generic bilateral agreement - now confirmed against TASS official reporting and MFA Russia (Myanmar embassy) statement.",
+        "source_url": "https://tass.com/economy/2073127",
         "source_official": true
       },
       {
@@ -233,7 +408,7 @@
         "nationality": "China",
         "iso3": "CHN",
         "max_stay_days": 30,
-        "notes": "Executive Order (signed Dec 1, 2025, in force Dec 1, 2025 – Sep 14, 2026): individual ordinary-passport holders may enter visa-free for up to 30 days for tourism, business, cultural/scientific/sports events, or transit; reciprocal to China's Sep 15, 2025 trial. Separate group-tour visa-free (5–50 persons, 15 days) remains per bilateral treaty. CORRECTION: updated from '15 days group tours only' — individual visa-free now available under executive order through Sep 14, 2026.",
+        "notes": "Executive Order (signed Dec 1, 2025, in force Dec 1, 2025 – Sep 14, 2026): individual ordinary-passport holders may enter visa-free for up to 30 days for tourism, business, cultural/scientific/sports events, or transit; reciprocal to China's Sep 15, 2025 trial. Separate group-tour visa-free (5–50 persons, 15 days) remains per bilateral treaty. CORRECTION: updated from '15 days group tours only' - individual visa-free now available under executive order through Sep 14, 2026.",
         "source_url": "http://en.kremlin.ru/acts/news/78616",
         "source_official": true
       },
@@ -945,6 +1120,14 @@
         "source_official": true
       },
       {
+        "nationality": "North Korea",
+        "iso3": "PRK",
+        "max_stay_days": 30,
+        "notes": "E-visa eligible; valid 120 days from issue; single entry. Russia issued 710 e-visas to North Koreans in 2025 (635 actual entries) and 88 e-visas in January–February 2026 per Korea Times reporting citing Russian consular data. North Korea appeared on the official kdmid.ru country list when fetched June 2026. CORRECTION: previously removed in error - now re-added based on confirmed e-visa issuance data and official list appearance.",
+        "source_url": "https://electronic-visa.kdmid.ru/country.html",
+        "source_official": true
+      },
+      {
         "nationality": "Norway",
         "iso3": "NOR",
         "max_stay_days": 30,
@@ -1012,7 +1195,7 @@
         "nationality": "Saudi Arabia",
         "iso3": "SAU",
         "max_stay_days": 30,
-        "notes": "Unified e-visa; valid 120 days from issue; single entry",
+        "notes": "E-visa remains available as alternative pathway; bilateral visa-free agreement entered into force May 11, 2026 - e-visa now superseded for most ordinary-passport travel purposes; valid 120 days from issue; single entry",
         "source_url": "https://electronic-visa.kdmid.ru/country.html",
         "source_official": true
       },
@@ -1146,7 +1329,7 @@
       "http://en.kremlin.ru/acts/news/78616",
       "https://interfax.com/newsroom/top-stories/114629/"
     ],
-    "notes": "Russia's e-visa (unified electronic visa) is available to citizens of 68 countries as listed by the Russian Government on the official kdmid.ru portal. Validity is 120 days from issue date; permitted stay up to 30 days; single-entry; processed in 4 calendar days; fee USD 52 (children under 6 exempt). Visa-free countries are based on bilateral agreements. RuID digital pre-registration: from June 30, 2025, Russia launched an experimental electronic notification system for visa-free travelers; registration via Gosuslugi portal or RuID app is VOLUNTARY during the experiment (until Dec 31, 2027) per official Ministry of Digital Development clarifications — NOT mandatory as previously stated. EAEU members (Armenia, Belarus, Kazakhstan, Kyrgyzstan) have free movement of labor. Starting Jan 1, 2025, EAEU citizens face a 90-day per calendar year cap without additional documents. China individual visa-free (30 days) is active Dec 1, 2025 – Sep 14, 2026 under Presidential Executive Order. Jordan full ordinary-passport visa-free (30 days) entered force Dec 13, 2025."
+    "notes": "Russia's e-visa (unified electronic visa) is available to citizens of approximately 64–66 countries as listed by the Russian Government on the official kdmid.ru portal (fetched June 2026 showed 64 countries; prior record count of 68 may have been inflated). Validity is 120 days from issue date (extended from 60 days effective August 23, 2025); permitted stay up to 30 days; single-entry; processed in 4 calendar days; fee USD 52 (children under 6 exempt). Visa-free countries are based on bilateral agreements. RuID digital pre-registration: from June 30, 2025, Russia launched an experimental electronic notification system for visa-free travelers; registration via Gosuslugi portal or RuID app is VOLUNTARY during the experiment (until Dec 31, 2027) per official Ministry of Digital Development clarifications - NOT mandatory. EAEU members (Armenia, Belarus, Kazakhstan, Kyrgyzstan) have free movement of labor. Starting Jan 1, 2025, EAEU citizens face a 90-day per calendar year cap without additional documents. China individual visa-free (30 days) is active Dec 1, 2025 – Sep 14, 2026 under Presidential Executive Order. Jordan full ordinary-passport visa-free (30 days) entered force Dec 13, 2025. Myanmar formal bilateral visa-free agreement entered force January 27, 2026 (30 days/visit, 90 days/year). Saudi Arabia bilateral visa-free entered force May 11, 2026 (90 days/calendar year, ordinary passports)."
   },
   "conditional_access": [
     {
@@ -1190,7 +1373,7 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Foreign nationals holding an APEC Business Travel Card (physical card only — virtual ABTC requires a special multiple-entry permit) with 'RUS' code on the back side may enter and exit Russia without a visa on the basis of the card plus a valid identity document recognized by Russia. Permitted for business trips only. Maximum 90 days per any 180-day period. Priority lane access at immigration checkpoints. Russia became a full APEC participant on June 1, 2013. Governing decree: Presidential Decree No. 777 of June 5, 2012. Eligible cardholders are business persons approved by APEC economies: Australia, Brunei, Chile, China, Hong Kong, Indonesia, Japan, South Korea, Malaysia, Mexico, New Zealand, Papua New Guinea, Peru, Philippines, Singapore, Taiwan, Thailand, Vietnam and other full APEC members.",
+      "conditions": "Foreign nationals holding an APEC Business Travel Card (physical card only - virtual ABTC requires a special multiple-entry permit) with 'RUS' code on the back side may enter and exit Russia without a visa on the basis of the card plus a valid identity document recognized by Russia. Permitted for business trips only. Maximum 90 days per any 180-day period. Priority lane access at immigration checkpoints. Russia became a full APEC participant on June 1, 2013. Governing decree: Presidential Decree No. 777 of June 5, 2012. Eligible cardholders are business persons approved by APEC economies: Australia, Brunei, Chile, China, Hong Kong, Indonesia, Japan, South Korea, Malaysia, Mexico, New Zealand, Papua New Guinea, Peru, Philippines, Singapore, Taiwan, Thailand, Vietnam and other full APEC members.",
       "source_url": "https://www.apec.org/press/news-releases/2013/0606_travel",
       "source_official": true
     },
@@ -1254,7 +1437,7 @@
         "path_to_citizenship_years": 5,
         "official_url": "https://en.mvd.ru/structure/Structure/main-directorates/general-administration-for-migration-iss",
         "source_official": true,
-        "notes": "Established by Government Decree No. 2573 (Dec 31, 2022), effective Jan 11, 2023. Grants direct permanent residence (not temporary residence first). Investment options: (1) RUB 15 million in socially significant regional projects within 3 years; (2) RUB 30 million in a Russian company operating 3+ years and paying RUB 6 million/year in taxes; (3) Registration of a Russian commercial entity with RUB 4 million/year taxes paid, operating 2+ years; (4) Real estate investment with cadastral value: RUB 50 million (Moscow), RUB 20 million (Far East), RUB 25 million (elsewhere) — new build under 2 years old, held 1+ year before applying. Total annual quotas: 3,802 for 2026. Requirement to stay 6 months/year in Russia was removed in late 2025/early 2026."
+        "notes": "Established by Government Decree No. 2573 (Dec 31, 2022), effective Jan 11, 2023. Grants direct permanent residence (not temporary residence first). Investment options: (1) RUB 15 million in socially significant regional projects within 3 years; (2) RUB 30 million in a Russian company operating 3+ years and paying RUB 6 million/year in taxes; (3) Registration of a Russian commercial entity with RUB 4 million/year taxes paid, operating 2+ years; (4) Real estate investment with cadastral value: RUB 50 million (Moscow), RUB 20 million (Far East), RUB 25 million (elsewhere) - new build under 2 years old, held 1+ year before applying. Total annual quotas: 3,802 for 2026. Requirement to stay 6 months/year in Russia was removed in late 2025/early 2026."
       },
       {
         "name": "Shared Values Visa (Temporary Residence Permit)",
@@ -1265,7 +1448,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://en.mvd.ru/structure/Structure/main-directorates/general-administration-for-migration-iss",
         "source_official": true,
-        "notes": "Presidential Decree No. 702 (Aug 19, 2024). Grants temporary residence permit (TRP) without quota for foreigners who align with traditional Russian values. Available to citizens of 47 countries (including US, UK, Canada, most EU states — list approved Sep 17, 2024 by PM Mishustin). No Russian language test or history exam required. Path to PR and citizenship follows standard TRP route."
+        "notes": "Presidential Decree No. 702 (Aug 19, 2024). Grants temporary residence permit (TRP) without quota for foreigners who align with traditional Russian values. Available to citizens of 47 countries (including US, UK, Canada, most EU states - list approved Sep 17, 2024 by PM Mishustin). No Russian language test or history exam required. Path to PR and citizenship follows standard TRP route."
       }
     ]
   },
@@ -1292,7 +1475,7 @@
     ]
   },
   "agreements": [
-    "EAEU (Eurasian Economic Union) free movement of labor — Russia, Armenia, Belarus, Kazakhstan, Kyrgyzstan",
+    "EAEU (Eurasian Economic Union) free movement of labor - Russia, Armenia, Belarus, Kazakhstan, Kyrgyzstan",
     "CIS (Commonwealth of Independent States) open borders/freedom of movement provisions"
   ],
   "outbound_official": {
@@ -1351,6 +1534,7 @@
       {"name": "Paraguay", "iso3": "PRY"},
       {"name": "Peru", "iso3": "PER"},
       {"name": "Qatar", "iso3": "QAT"},
+      {"name": "Saudi Arabia", "iso3": "SAU"},
       {"name": "Saint Kitts and Nevis", "iso3": "KNA"},
       {"name": "Saint Lucia", "iso3": "LCA"},
       {"name": "Saint Vincent and the Grenadines", "iso3": "VCT"},
@@ -1424,6 +1608,7 @@
       {"name": "Myanmar", "iso3": "MMR"},
       {"name": "Netherlands", "iso3": "NLD"},
       {"name": "North Macedonia", "iso3": "MKD"},
+      {"name": "North Korea", "iso3": "PRK"},
       {"name": "Norway", "iso3": "NOR"},
       {"name": "Oman", "iso3": "OMN"},
       {"name": "Papua New Guinea", "iso3": "PNG"},
@@ -1450,7 +1635,7 @@
       {"name": "Saint Lucia", "iso3": "LCA"}
     ],
     "eta": [],
-    "notes": "Official source: Consular Information Portal of the Russian MFA (kdmid.ru), page titled 'Information about visa/visa-free travel regime for citizens with various passport types established through international agreements and unilateral decisions', as of 2026-05-08. Lists regimes for ordinary passport (общегражданский паспорт) holders. Russia's unified e-visa (single-entry, 30-day stay, 120-day validity, USD 52 fee) covers ~68 countries per electronic-visa.kdmid.ru. visa_on_arrival is empty — Russia does not operate a general visa-on-arrival outbound programme (these are destination-side VOA schemes). Some countries appear in both visa_free and e_visa where e-visa remains available as an alternative pathway. Albania, Algeria, Benin, Bulgaria, Bahrain listed as visa-free may apply only to diplomatic/service passports for ordinary-passport holders — full ordinary-passport verification was limited by page truncation; cross-referenced from existing visa_policy field in this file."
+    "notes": "Official source: Consular Information Portal of the Russian MFA (kdmid.ru), page titled 'Information about visa/visa-free travel regime for citizens with various passport types established through international agreements and unilateral decisions', as of 2026-05-08. Lists regimes for ordinary passport (общегражданский паспорт) holders. Russia's unified e-visa (single-entry, 30-day stay, 120-day validity, USD 52 fee) covers ~68 countries per electronic-visa.kdmid.ru. visa_on_arrival is empty - Russia does not operate a general visa-on-arrival outbound programme (these are destination-side VOA schemes). Some countries appear in both visa_free and e_visa where e-visa remains available as an alternative pathway. Albania, Algeria, Benin, Bulgaria, Bahrain listed as visa-free may apply only to diplomatic/service passports for ordinary-passport holders - full ordinary-passport verification was limited by page truncation; cross-referenced from existing visa_policy field in this file."
   },
   "official_domains": [
     "electronic-visa.kdmid.ru",
@@ -1468,33 +1653,51 @@
       "CORRECTED: China (CHN) in visa_free updated from '15 days for organized group tours only' to '30 days individual travel' per Presidential Executive Order signed Dec 1, 2025 (in force Dec 1, 2025 – Sep 14, 2026). Group tour visa-free (15 days, bilateral treaty) remains as fallback.",
       "CORRECTED: Jordan (JOR) added to visa_free. Jordan-Russia bilateral visa-free agreement for ordinary passports entered into force Dec 13, 2025 (30 days per visit, max 90 days/year). Jordan was previously only in e_visa.",
       "CORRECTED: Macao SAR max_stay_days updated from 14 to 30 days per current official information.",
-      "CORRECTED: Bolivia (BOL) source_url fixed — was incorrectly pointing to uae.mid.ru; corrected to electronic-visa.kdmid.ru.",
-      "CORRECTED: North Korea (PRK) REMOVED from e_visa list. North Korea did not appear in the official kdmid.ru country.html list of 68 e-visa eligible countries, nor in any official Russian government source consulted. Inclusion in prior record was an error.",
-      "CORRECTED: RuID/electronic registration note in visa_policy.notes updated — prior record stated registration is mandatory from June 30, 2025. Verified: registration is VOLUNTARY during experiment period until Dec 31, 2027 per Russian Ministry of Digital Development official clarifications.",
-      "CORRECTED: E-visa country count in notes updated from '66 countries' to '68 countries' per current official kdmid.ru portal.",
+      "CORRECTED: Bolivia (BOL) source_url fixed - was incorrectly pointing to uae.mid.ru; corrected to electronic-visa.kdmid.ru.",
+      "CORRECTED: RuID/electronic registration note in visa_policy.notes updated - prior record stated registration is mandatory from June 30, 2025. Verified: registration is VOLUNTARY during experiment period until Dec 31, 2027 per Russian Ministry of Digital Development official clarifications.",
       "ADDED: Georgia (GEO) added to visa_free with unlimited stay; CIS bilateral arrangement confirmed by multiple corroborating sources.",
       "ADDED: en.kremlin.ru added to official_domains.",
-      "UPDATED: Iran (IRN) notes clarified — group-tours-only condition confirmed. Individual travelers from Iran must use e_visa (30-day, available on kdmid.ru portal).",
-      "NOTE: Lebanon diplomatic/service passport agreement (April 22, 2026) noted as signed but NOT yet in force."
+      "UPDATED: Iran (IRN) notes clarified - group-tours-only condition confirmed. Individual travelers from Iran must use e_visa (30-day, available on kdmid.ru portal).",
+      "NOTE: Lebanon diplomatic/service passport agreement (April 22, 2026) noted as signed but NOT yet in force.",
+      "ADDED: visa_types field populated with 11 visa categories sourced from evisa.kdmid.ru and electronic-visa.kdmid.ru (official sources).",
+      "2026-06-27 CORRECTED: North Korea (PRK) RE-ADDED to e_visa list. Prior run incorrectly removed PRK - Russian consular data confirms 710 e-visas issued to North Koreans in 2025 (635 entries) and PRK appeared on official kdmid.ru/country.html list when fetched June 2026. The correction removing PRK was wrong.",
+      "2026-06-27 ADDED: Saudi Arabia (SAU) added to visa_free. Bilateral visa-free agreement entered into force May 11, 2026 (90 days per calendar year, all passport types including ordinary). Russia's Foreign Ministry confirmed implementation April 6, 2026. Source: multiple travel press citing official Russian MFA statement. SAU previously only in e_visa.",
+      "2026-06-27 UPDATED: Myanmar (MMR) notes updated to reflect formal bilateral agreement entered force January 27, 2026 (signed Minsk, October 28, 2025). Max stay confirmed as 30 days/visit, 90 days/calendar year. Source: TASS official report and MFA Russia Myanmar embassy page.",
+      "2026-06-27 UPDATED: visa_policy.notes updated to reflect correct e-visa country count (~64–66 countries per June 2026 fetch vs prior '68 countries'), and added Saudi Arabia and Myanmar agreement entries.",
+      "2026-06-27 UPDATED: Saudi Arabia e_visa entry notes updated to reflect visa-free supersession as of May 11, 2026.",
+      "2026-06-27 UPDATED: outbound_official.visa_free list updated to add Saudi Arabia (SAU). outbound_official.e_visa list updated to add North Korea (PRK).",
+      "2026-06-29 CORRECTED: Jordan (JOR) visa_free entry - notes updated to include T-type (temporary) passport restriction: Jordanian T-type passport holders without a national number are excluded from visa-free access and must obtain a traditional consular visa (e-visa also not accepted). Source: Russian Embassy Jordan official Facebook post Dec 13, 2025 (source_official upgraded from false to true; source_url updated to official Russian Embassy post).",
+      "2026-06-29 CONFIRMED: e-visa list verified as 64 countries per official electronic-visa.kdmid.ru fetch. Current file has 65 entries due to Barbados and Saint Lucia appearing both in visa_free and e_visa (which is correct — they qualify for both). No countries added or removed from e_visa.",
+      "2026-06-29 CONFIRMED: Jordan visa-free (30 days/visit, 90 days/year, in force Dec 13 2025) - verified against Russian Embassy Jordan official post. Saudi Arabia visa-free (90 days/calendar year, in force May 11 2026) - confirmed from multiple secondary sources citing Russian MFA; mid.ru direct access failed. China individual visa-free (30 days, trial to Sep 14 2026) - confirmed. Myanmar visa-free - confirmed. Georgia unlimited-stay visa-free under CIS agreement - confirmed from multiple sources.",
+      "2026-06-29 NOTE: mid.ru and uae.mid.ru direct pages failed to load during this validation run. e_visa list and visa_free list cross-checked against electronic-visa.kdmid.ru (loaded successfully) and secondary official sources. No changes made to entries that could not be re-confirmed."
     ],
     "gaps": [
-      "China (CHN) individual visa-free (Dec 2025 executive order) expires Sep 14, 2026 — record will need updating after that date; it reverts to group tours only or a new permanent agreement.",
-      "The complete official visa-free country list with specific max-stay days per bilateral agreement could not be directly scraped from mid.ru due to connection errors — the visa-free entries are cross-referenced from mid.ru sub-domains and corroborated by multiple official Russian embassy sources but individual bilateral treaty texts were not retrieved.",
+      "China (CHN) individual visa-free (Dec 2025 executive order) expires Sep 14, 2026 - record will need updating after that date; it reverts to group tours only unless a new permanent agreement is signed.",
+      "The complete official visa-free country list with specific max-stay days per bilateral agreement could not be directly scraped from mid.ru due to connection errors - the visa-free entries are cross-referenced from mid.ru sub-domains and corroborated by multiple official Russian embassy sources but individual bilateral treaty texts were not retrieved.",
       "Ukraine is listed in some sources as having visa-free access but given current geopolitical situation the status is unclear; omitted.",
-      "Abkhazia and South Ossetia visa-free entries omitted as these are contested territories not universally recognized; their status is based on Russian government declarations but not verifiable from a neutral official source.",
-      "Georgia (GEO) unlimited-stay visa-free was sourced from secondary sources (gw2ru.com) — direct official Russian MFA page for Georgia could not be fetched; treat as medium-confidence until verified from mid.ru directly.",
+      "Abkhazia and South Ossetia visa-free entries omitted as these are contested territories not universally recognized.",
+      "Georgia (GEO) unlimited-stay visa-free was sourced from secondary sources (gw2ru.com) - direct official Russian MFA page for Georgia could not be fetched; treat as medium-confidence until verified from mid.ru directly.",
       "The 'Shared Values Visa' list of 47 eligible countries was not independently verified from an official government domain.",
       "Golden Visa (Decree No. 2573) min_amount shown is the lowest threshold (RUB 15M for socially significant projects); full investment criteria details are from secondary legal sources, not the decree text itself.",
       "Russia does not have a digital nomad visa or ETA scheme as of available information.",
       "The new Skilled Visa (Presidential Decree No. 883, April 2026) was verified via multiple immigration news sources referencing kremlin.ru but the kremlin.ru page itself timed out during direct access.",
       "Visa-on-arrival: Russia does not operate a general visa-on-arrival program; omitted.",
-      "CONDITIONAL ACCESS — Alaska indigenous (Chukotka): The special visa-free arrangement for Alaska indigenous residents visiting Chukotka was not verifiable from a live official Russian government domain; sourced from Wikipedia. Treat as low-confidence.",
-      "CONDITIONAL ACCESS — Diplomatic/service passport holders (general): Full official per-country list could not be fetched from mid.ru directly. Entry sourced from Wikipedia.",
-      "CONDITIONAL ACCESS — Lebanon diplomatic passport waiver (April 22, 2026): Agreement signed but not yet in force; specific stay limits not published.",
-      "CONDITIONAL ACCESS — No OCI cardholder exemption found: Russia does not appear to offer any special conditional entry benefit for India OCI cardholders based on OCI status alone.",
-      "CONDITIONAL ACCESS — No US/UK/Schengen visa-based entry confirmed: Some aggregators claimed holders of valid US or Schengen multiple-entry visas can enter Russia visa-free for 15 days, but no official Russian government domain confirmed this rule. Not recorded.",
+      "CONDITIONAL ACCESS - Alaska indigenous (Chukotka): The special visa-free arrangement for Alaska indigenous residents visiting Chukotka was not verifiable from a live official Russian government domain; sourced from Wikipedia. Treat as low-confidence.",
+      "CONDITIONAL ACCESS - Diplomatic/service passport holders (general): Full official per-country list could not be fetched from mid.ru directly. Entry sourced from Wikipedia.",
+      "CONDITIONAL ACCESS - Lebanon diplomatic passport waiver (April 22, 2026): Agreement signed but not yet in force; specific stay limits not published.",
+      "CONDITIONAL ACCESS - No OCI cardholder exemption found: Russia does not appear to offer any special conditional entry benefit for India OCI cardholders based on OCI status alone.",
+      "CONDITIONAL ACCESS - No US/UK/Schengen visa-based entry confirmed: Some aggregators claimed holders of valid US or Schengen multiple-entry visas can enter Russia visa-free for 15 days, but no official Russian government domain confirmed this rule. Not recorded.",
       "Macao SAR max_stay updated to 30 days but could not be verified from live hongkong.mid.ru (connection failed); sourced from secondary sources.",
-      "North Korea e-visa eligibility: North Korea NOT on official kdmid.ru list but relationship with Russia has deepened significantly since 2024; possibility of special bilateral arrangement cannot be excluded — needs monitoring."
+      "North Korea (PRK) e-visa: Re-added based on confirmed issuance data. Official kdmid.ru/country.html showed PRK as of June 2026 fetch, and Korean Times confirmed 710 e-visas issued in 2025. However, practical travel to Russia for North Koreans may be further restricted by DPRK exit controls - the e-visa reflects Russia's admission policy only.",
+      "Saudi Arabia (SAU) visa-free: Confirmed from multiple press sources citing Russian MFA statement effective May 11, 2026. Direct official Russian MFA source (mid.ru) was unavailable due to connection errors; treat as high-confidence secondary confirmation.",
+      "E-visa eligible country count: Fetched page showed 64 countries (vs prior count of 68); discrepancy may be due to some countries being shown separately or removed. Exact current count unresolved without a direct scrape of the full list.",
+      "visa_types: Standard consular visa fees (business, work, student, transit, medical, family) vary by nationality and processing speed and could not be confirmed from official sources fetched; set to null.",
+      "visa_types: Transit visa 72-hour limit is standard Russian practice but the specific official page confirming this could not be fetched due to mid.ru connection issues.",
+      "digital_nomad visa: Russia has no official digital nomad visa category as of June 2026.",
+      "2026-06-29 GAP: mid.ru and uae.mid.ru connections failed during this validation run - unable to directly verify the full bilateral visa-free country list with stay limits from official MFA source.",
+      "2026-06-29 GAP: Saudi Arabia (SAU) visa_free source_url remains a secondary source (blog.wego.com); mid.ru confirmation unavailable due to connection failure. Treat as high-confidence pending official source.",
+      "2026-06-29 GAP: Georgia (GEO) visa_free unlimited-stay entry remains sourced from gw2ru.com; multiple independent sources confirm visa-free access for Georgian citizens but 'unlimited' stay limit is unconfirmed from official Russian MFA domain.",
+      "2026-06-29 GAP: Jordan visa-free T-type passport restriction confirmed from Russian Embassy Jordan Facebook (official) but the full text of the intergovernmental agreement was not retrieved."
     ]
   },
   "sources_checked": [
@@ -1516,6 +1719,17 @@
     "https://russiable.com/e-visa-russian-electronic-visa/",
     "https://russiable.com/electronic-travel-authorization-russia-visa-free/",
     "https://www.gw2ru.com/visa-help/239189-travel-to-russia-visa-free-2025",
-    "https://www.themoscowtimes.com/2025/12/01/putin-signs-order-granting-visa-free-entry-to-chinese-travelers-a91287"
+    "https://www.themoscowtimes.com/2025/12/01/putin-signs-order-granting-visa-free-entry-to-chinese-travelers-a91287",
+    "https://electronic-visa.kdmid.ru/faq.html",
+    "https://tass.com/economy/2073127",
+    "https://blog.wego.com/saudi-arabia-and-russia-visa-free-travel/",
+    "https://myanmar.mid.ru/en/consular-services/information/",
+    "https://www.moi.gov.mm/moi:eng/news/20107",
+    "https://www.koreatimes.co.kr/foreignaffairs/northkorea/20260408/russia-issued-over-36000-visas-to-north-koreans-in-2025-almost-all-for-education",
+    "https://www.facebook.com/RusEmbJordan/posts/on-december-13-2025-the-agreement-between-the-government-of-the-russian-federati/1277528614408974/",
+    "https://electronic-visa.kdmid.ru/country.html",
+    "https://goingrus.com/info/en/get-russian-visa/types-of-russian-visa/list-of-e-visa-to-russia",
+    "https://visaindex.com/news/russia-jordan-mutual-visa-free-travel-dec-13-2025/",
+    "https://www.fragomen.com/insights/russiasaudi-arabia-mutual-visa-free-entry-forthcoming.html"
   ]
 }

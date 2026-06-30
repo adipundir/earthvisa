@@ -1,6 +1,6 @@
 export const meta = {
   name: 'conditional-access-crawl',
-  description: 'For ~200 countries, scrape each one\'s OWN official sources for CONDITIONAL entry rules — exemptions granted for holding a third-country visa/residence/PR (US/Canada/UK/Schengen/EU/Australia/Japan/GCC), special statuses (India OCI), and passport-type-only waivers (diplomatic/service/official). Augments data/countries/<ISO3>.json with a structured conditional_access array.',
+  description: 'For ~200 countries, scrape each one\'s OWN official sources for CONDITIONAL entry rules - exemptions granted for holding a third-country visa/residence/PR (US/Canada/UK/Schengen/EU/Australia/Japan/GCC), special statuses (India OCI), and passport-type-only waivers (diplomatic/service/official). Augments data/countries/<ISO3>.json with a structured conditional_access array.',
   phases: [
     { title: 'Conditional', detail: 'one agent per country reads its file and adds official conditional-access rules (Sonnet, WebFetch-first)' },
   ],
@@ -112,23 +112,23 @@ const COND_SCHEMA = {
 
 function conditionalPrompt(c) {
   const file = `${DATA_DIR}/${c.iso3}.json`;
-  return `You are a meticulous immigration researcher. For ONE destination — **${c.name}** (iso2=${c.iso2}, iso3=${c.iso3}) — collect every OFFICIAL **conditional entry rule**: a rule that lets a traveller enter ${c.name} based on something OTHER than (or in addition to) their nationality. Three kinds:
+  return `You are a meticulous immigration researcher. For ONE destination - **${c.name}** (iso2=${c.iso2}, iso3=${c.iso3}) - collect every OFFICIAL **conditional entry rule**: a rule that lets a traveller enter ${c.name} based on something OTHER than (or in addition to) their nationality. Three kinds:
 
-A) **Held third-country credential** — visa-free / VoA / e-visa / eTA granted because the traveller HOLDS a valid foreign visa, residence permit, or permanent residence. Capture the EXACT credential, because conditions differ by type:
+A) **Held third-country credential** - visa-free / VoA / e-visa / eTA granted because the traveller HOLDS a valid foreign visa, residence permit, or permanent residence. Capture the EXACT credential, because conditions differ by type:
    - issuer: US | Canada | UK | Schengen | EU | Australia | Japan | GCC | UAE | other (name it)
    - credential.type: visa | residence_permit | permanent_resident | other
-   - credential.subtype: the SPECIFIC class verbatim if stated — e.g. "B1/B2", "B2 tourist", "F-1 student", "H-1B", "C transit", "any valid visa", "Type C (short-stay)", "Type D (national/long-stay)", "Green Card", "ILR / settlement", "PR card". If the page says "any valid US visa", subtype="any valid visa".
-B) **Special status** — e.g. India **OCI** (Overseas Citizen of India) cardholders, or similar diaspora/heritage statuses. Capture issuer="India", credential.type="oci".
-C) **Passport-type-only waiver** — visa exemption that applies ONLY to **diplomatic / service / official** passports (often via a named bilateral "visa suppression / visa waiver agreement" with a date). These must NOT be counted for ordinary passport holders.
+   - credential.subtype: the SPECIFIC class verbatim if stated - e.g. "B1/B2", "B2 tourist", "F-1 student", "H-1B", "C transit", "any valid visa", "Type C (short-stay)", "Type D (national/long-stay)", "Green Card", "ILR / settlement", "PR card". If the page says "any valid US visa", subtype="any valid visa".
+B) **Special status** - e.g. India **OCI** (Overseas Citizen of India) cardholders, or similar diaspora/heritage statuses. Capture issuer="India", credential.type="oci".
+C) **Passport-type-only waiver** - visa exemption that applies ONLY to **diplomatic / service / official** passports (often via a named bilateral "visa suppression / visa waiver agreement" with a date). These must NOT be counted for ordinary passport holders.
 
 ## HARD RULES (official-source-first)
-- Record a rule ONLY from an OFFICIAL government / immigration / MFA / e-visa domain (*.gov, *.gov.<cc>, *.gob.<cc>, *.govt.<cc>, *.gouv.<cc>, official ministry/agency). Capture exact source_url; source_official=true only for genuine official domains. If only an aggregator (Wikipedia/Henley/IATA/news/law-firm) has it, DO NOT record — note it under gaps. NEVER invent.
+- Record a rule ONLY from an OFFICIAL government / immigration / MFA / e-visa domain (*.gov, *.gov.<cc>, *.gob.<cc>, *.govt.<cc>, *.gouv.<cc>, official ministry/agency). Capture exact source_url; source_official=true only for genuine official domains. If only an aggregator (Wikipedia/Henley/IATA/news/law-firm) has it, DO NOT record - note it under gaps. NEVER invent.
 - Capture conditions verbatim-ish (e.g. "visa must have been used at least once", "passport/visa valid ≥6 months", "single entry, 30 days, fee US$100", "agreement dated 29 July 2019").
 
 ## TOOLS
 PREFER raw official pages via WebFetch. Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch); WebSearch to find the official URL, WebFetch to read it. Fall back to Firecrawl (ToolSearch select:mcp__firecrawl-mcp__firecrawl_scrape) ONLY when WebFetch is blocked/empty. Be economical (~6–12 calls). Search seeds: "${c.name} visa exemption holders of US visa official", "${c.name} visa free Schengen visa holders immigration", "${c.name} diplomatic service passport visa waiver agreement", "${c.name} OCI cardholder entry", "${c.name} visa policy official residence permit".
 
-## OUTPUT — MERGE INTO THE FILE
+## OUTPUT - MERGE INTO THE FILE
 1. Read the existing file with the Read tool: ${file}
 2. Keep ALL existing fields unchanged. ADD a top-level "conditional_access" array (replace it if already present). Each element:
 {"basis":"credential|special_status|passport_type","eligible_nationalities":["India"] or "any","passport_types":["diplomatic","service"] or ["ordinary"] or "any","credential":{"issuer":"US","type":"visa","subtype":"B1/B2"} or null,"level":"visa_free|visa_on_arrival|e_visa|eta","max_stay_days":number|null,"conditions":"","source_url":"","source_official":true}

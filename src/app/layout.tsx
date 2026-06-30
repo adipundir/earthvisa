@@ -18,7 +18,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://passportpower.co"),
   title: {
-    default: "Passport Power — Visa-Free Countries for 199 Passports",
+    default: "Passport Power - Visa-Free Countries for 199 Passports",
     template: "%s | Passport Power",
   },
   description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment programs worldwide. Official government sources only.",
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://passportpower.co",
     siteName: "Passport Power",
-    title: "Passport Power — Visa-Free Countries for 199 Passports",
+    title: "Passport Power - Visa-Free Countries for 199 Passports",
     description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Passport Power — World Passport Rankings & Visa-Free Countries 2026" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Passport Power - World Passport Rankings & Visa-Free Countries 2026" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Passport Power — Visa-Free Countries for 199 Passports",
+    title: "Passport Power - Visa-Free Countries for 199 Passports",
     description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.",
     images: ["/og-image.png"],
   },
@@ -109,12 +109,12 @@ export default function RootLayout({
                   {
                     "@type": "Question",
                     "name": "What is the difference between visa on arrival and e-visa?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Visa on arrival (VoA) means you obtain your visa at the airport or border upon arrival — no advance application required. An e-visa (electronic visa) requires you to apply and receive approval online before you travel. Both allow entry but e-visas must be secured in advance." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Visa on arrival (VoA) means you obtain your visa at the airport or border upon arrival - no advance application required. An e-visa (electronic visa) requires you to apply and receive approval online before you travel. Both allow entry but e-visas must be secured in advance." }
                   },
                   {
                     "@type": "Question",
                     "name": "What is citizenship by investment?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Citizenship by investment (CBI) allows foreign nationals to obtain a second passport by making a qualifying investment — typically a donation to a national development fund or real estate purchase. Popular programs include those in the Caribbean (St Kitts, Grenada, Dominica) and Europe (Malta, Vanuatu). Costs typically range from $100,000 to $1,000,000+." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Citizenship by investment (CBI) allows foreign nationals to obtain a second passport by making a qualifying investment - typically a donation to a national development fund or real estate purchase. Popular programs include those in the Caribbean (St Kitts, Grenada, Dominica) and Europe (Malta, Vanuatu). Costs typically range from $100,000 to $1,000,000+." }
                   },
                   {
                     "@type": "Question",
@@ -129,15 +129,18 @@ export default function RootLayout({
                   {
                     "@type": "Question",
                     "name": "What is an eTA (Electronic Travel Authorization)?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "An eTA (Electronic Travel Authorization) is a lightweight pre-travel permission required by some countries — such as Canada, Australia (ETA), and the UK (ETA) — for nationalities that are otherwise visa-exempt. It is applied for online, costs a small fee, and is typically approved within minutes to hours. An eTA does not require a visa appointment." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "An eTA (Electronic Travel Authorization) is a lightweight pre-travel permission required by some countries - such as Canada, Australia (ETA), and the UK (ETA) - for nationalities that are otherwise visa-exempt. It is applied for online, costs a small fee, and is typically approved within minutes to hours. An eTA does not require a visa appointment." }
                   }
                 ]
               }
             ])
           }}
         />
+        <a href="#main" className="skip-link">Skip to main content</a>
         <Navbar />
-        {children}
+        <div id="main" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+          {children}
+        </div>
       </body>
     </html>
   );

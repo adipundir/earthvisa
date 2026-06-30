@@ -7,6 +7,233 @@
   },
   "name": "Germany",
   "region": "Europe",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Visa (Type C) - Tourist/Visitor",
+      "purpose": "Short-stay visits to Germany and the Schengen Area for tourism, visiting family or friends, or cultural purposes. Valid for the entire Schengen zone.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 97,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Standard fee €90 (approx. USD 97 at 2026 rates). Children ages 6-12 pay €45; under 6 free. Reduced fee of €35 for nationals of Albania, Armenia, Azerbaijan, Belarus, Bosnia-Herzegovina, Georgia, Moldova, Montenegro, North Macedonia, Serbia, Ukraine. Schengen visa applications cannot be submitted online - in-person appointment required. Applications must be submitted at the German mission of the country of main destination. Stay limited to 90 days in any 180-day period across all Schengen states."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Visa (Type C) - Business",
+      "purpose": "Short-stay visits for business activities such as attending meetings, conferences, trade fairs, or negotiations. Does not permit taking up employment.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 97,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Same fee structure as tourist Schengen visa (€90 standard). Business activities permitted but not employment. Applicants must demonstrate purpose of visit with invitation letters or conference documentation. Stay limited to 90 days in any 180-day period."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (Type A)",
+      "purpose": "Allows nationals of certain countries to transit through the international transit area of German airports (Frankfurt, Munich, Hamburg, Düsseldorf, Berlin-Brandenburg) without entering the Schengen Area.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/606848-606848",
+      "notes": "Required only for nationals of specific high-risk countries (approximately 20 nationalities including Afghanistan, Pakistan, Syria, etc.). Transit visa holders remain in the international transit area and do not enter Schengen territory. Holders of valid Schengen, US, Canadian, Japanese visas or residence permits are exempt from this requirement. The five major German airports with international transit zones are Frankfurt, Munich, Hamburg, Düsseldorf, and Berlin-Brandenburg."
+    },
+    {
+      "category": "student",
+      "name": "National Visa for Study (Category D) - Student Visa",
+      "purpose": "Long-stay visa for non-EU nationals accepted to study at a German university, language school, or other recognized educational institution for more than 90 days.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 30,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "National visa fee €75 (approx. USD 81); minors pay €37.50. Fee waivers apply in certain cases (researchers, some scholars). Processing typically takes 'several weeks, in individual cases even months' per official FAQ. Online application through the Consular Services Portal available as of January 2025 for national visa categories including study, though in-person appointment still required for biometrics and fee payment. Applicants must show proof of acceptance at a German institution and sufficient financing (blocked account of approx. €11,904/year, scholarship, or parental guarantee). Upon arrival, students convert the visa to a residence permit at the local Foreigners' Authority (Ausländerbehörde)."
+    },
+    {
+      "category": "work",
+      "name": "National Visa for Employment (Category D) - Skilled Worker",
+      "purpose": "Long-stay visa for non-EU nationals with recognized foreign vocational or academic qualifications who have a concrete employment offer from a German employer.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 30,
+      "processing_days_max": 180,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "National visa fee €75 standard; minors €37.50. Must apply before entering Germany (exceptions: nationals of Australia, Canada, Israel, Japan, New Zealand, South Korea, USA may enter visa-free and apply for residence permit in Germany). Based on Skilled Immigration Act (Fachkräfteeinwanderungsgesetz). Requires Federal Employment Agency (BA) approval in most cases. Online application through Consular Services Portal available as of January 2025. Fast-track procedure (Section 81a AufenthG) available for employer-sponsored cases at extra fee (€411 paid by employer). Path to settlement permit (permanent residence) after 4 years."
+    },
+    {
+      "category": "work",
+      "name": "EU Blue Card (Blaue Karte EU)",
+      "purpose": "Residence permit for highly qualified non-EU nationals with a university degree and a job offer meeting minimum salary thresholds, enabling high-skilled employment in Germany.",
+      "max_stay_days": null,
+      "validity_days": 1460,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Migrathek/BlaueKarteEU/blauekarteeu-node.html",
+      "notes": "Requires minimum gross annual salary of €50,700 (general occupations) or €45,934.20 for shortage occupations (STEM, IT, medicine, engineering). Initial permit issued for 4 years (or contract duration +3 months if shorter). Settlement permit (permanent residence) accessible after 27 months; reduced to 21 months with B1-level German. Spouses granted immediate unlimited work permission. Salary thresholds current as of 2026."
+    },
+    {
+      "category": "work",
+      "name": "National Visa - Job Search / Opportunity Card (Chancenkarte)",
+      "purpose": "Allows non-EU nationals to enter Germany to search for qualified employment without a pre-existing job offer, based on a points system or recognized German-equivalent qualification.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 28,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.make-it-in-germany.com/en/visa-residence/opportunity-card",
+      "notes": "Introduced under the 2023 Skilled Immigration Act reform. Eligibility: either a foreign qualification recognized in Germany, OR at least 6 points in the points system (qualifications, work experience, language skills, age, ties to Germany). Requires proof of financial resources (blocked account with min. €1,091 net/month or equivalent). German language minimum A1 level required. Allows limited employment (e.g., trial work of up to 2 weeks) during the search period. Can be extended up to 2 years if a qualifying job offer is received."
+    },
+    {
+      "category": "family",
+      "name": "National Visa for Family Reunification (Category D)",
+      "purpose": "Allows spouses and minor children of German residents or citizens to join their family member in Germany for long-term stays.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 60,
+      "processing_days_max": 180,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/606848-606848",
+      "notes": "National visa fee €75 standard; minors €37.50. Fee waivers apply for family members of German/EU citizens. Foreign spouses joining German residents generally must demonstrate basic German language proficiency (A1 level) prior to entry. Application forwarded to local Foreigners' Authority for approval - processing can take several months. Online application through Consular Services Portal available as of January 2025. Family members of EU Blue Card holders receive immediate unlimited work authorization."
+    },
+    {
+      "category": "work",
+      "name": "National Visa for Self-Employment / Business (Section 21 AufenthG)",
+      "purpose": "Residence permit for non-EU nationals wishing to establish or run a business or self-employed activity in Germany, subject to demonstrating economic viability and interest.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 60,
+      "processing_days_max": 180,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Arbeit/SelbstaendigeTaetigkeit/selbstaendigetaetigkeit-node.html",
+      "notes": "No fixed minimum investment amount - viability and economic impact assessed case by case. Requires demonstration of economic interest, positive impact, and secured financing. Initial permit valid up to 3 years; settlement permit (permanent residence) possible after 3 years of successful operation. Persons over 45 must show adequate pension provision. For liberal professions (freelancers), Section 21(5) applies with slightly different criteria."
+    },
+    {
+      "category": "working_holiday",
+      "name": "Working Holiday Visa",
+      "purpose": "Allows young nationals of bilateral agreement partner countries to combine travel and short-term employment in Germany, primarily for holiday purposes.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 14,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/606848-606848",
+      "notes": "Available to nationals of: Australia, New Zealand, Japan, South Korea, Taiwan, Israel, Chile, and Hong Kong SAR under bilateral agreements. Applicants generally must be aged 18-30 (some agreements allow up to 35). Employment is permitted but must remain secondary to the holiday purpose. Specific terms vary per bilateral agreement. National visa fee €75 applies where applicable."
+    },
+    {
+      "category": "student",
+      "name": "National Visa for Language Course / Preparatory College (Studienkolleg)",
+      "purpose": "Allows non-EU nationals to attend German language courses or a university preparatory college (Studienkolleg) in preparation for university admission in Germany.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 30,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "National visa fee €75; minors €37.50. Applicants must present proof of enrollment in a recognized language school or Studienkolleg and sufficient financial means. Processing takes several weeks to months. On completion of preparatory studies, permit can be converted to a student residence permit."
+    },
+    {
+      "category": "work",
+      "name": "National Visa for Vocational Training (Berufsausbildung)",
+      "purpose": "Allows non-EU nationals to enter Germany to complete recognized vocational training (Ausbildung) or retraining programs at German companies.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 81,
+      "processing_days_min": 30,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "National visa fee €75. Expanded under 2023 Skilled Immigration Act reform. Requires a training contract with a recognized German company. Federal Employment Agency approval required. Online application through Consular Services Portal available as of January 2025. Trainees are permitted to work during training as part of the program."
+    },
+    {
+      "category": "other",
+      "name": "National Visa for Research / Scientists",
+      "purpose": "Allows researchers and scientists from non-EU countries to conduct research activities at recognized German research institutions under a hosting agreement.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Fee waiver applies for researchers per visa facilitation agreements and official policy. Requires a hosting agreement with a recognized German research institution (university, Fraunhofer, Max Planck, Helmholtz, etc.). Based on Section 18d AufenthG. Online application through Consular Services Portal available as of January 2025."
+    },
+    {
+      "category": "medical",
+      "name": "Schengen Visa (Type C) - Medical Treatment",
+      "purpose": "Short-stay visa for non-EU nationals seeking medical treatment in Germany for up to 90 days.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": 97,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Standard Schengen visa fee €90. Applicants must provide documentation from a German medical institution confirming treatment and estimated duration, proof of financial coverage, and accompanying person documentation if applicable. For treatments requiring more than 90 days, a national visa (Category D) for medical reasons may be issued instead."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official Visa",
+      "purpose": "Visas issued to holders of diplomatic, official, or service passports for official government purposes, accreditation, or international organization activities in Germany.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
+      "notes": "Fee exempt. Governed by the Vienna Convention on Diplomatic Relations and bilateral agreements. Note: Georgian holders of official passports specifically REQUIRE a visa for entry into Germany per footnote 9 of the official visa requirements table - unlike ordinary passport holders who are visa-free. Diplomatic/official visa terms vary by nationality and specific bilateral agreements."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -37,7 +264,7 @@
         "nationality": "Andorra",
         "iso3": "AND",
         "max_stay_days": 90,
-        "notes": "Visa-free for short stays up to 90 days in any 180-day period.",
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period (footnote 1). Footnote 4 also applies: residence permit may be applied for after entry without a visa, provided gainful employment is not taken up.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -93,7 +320,7 @@
         "nationality": "Brazil",
         "iso3": "BRA",
         "max_stay_days": 90,
-        "notes": "Visa-free for short stays up to 90 days in any 180-day period.",
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period (footnote 1). Footnote 4 also applies: residence permit may be applied for after entry without a visa, provided gainful employment is not taken up.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -149,6 +376,14 @@
         "nationality": "El Salvador",
         "iso3": "SLV",
         "max_stay_days": 90,
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period (footnote 1). Footnote 4 also applies: residence permit may be applied for after entry without a visa, provided gainful employment is not taken up.",
+        "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
+        "source_official": true
+      },
+      {
+        "nationality": "Fiji",
+        "iso3": "FJI",
+        "max_stay_days": 90,
         "notes": "Visa-free for short stays up to 90 days in any 180-day period.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
@@ -157,7 +392,7 @@
         "nationality": "Georgia",
         "iso3": "GEO",
         "max_stay_days": 90,
-        "notes": "Visa-free for short stays up to 90 days in any 180-day period. Biometric passport required (footnote 5). IMPORTANT: Holders of official passports require a visa (footnote 9) — the visa waiver applies to ordinary biometric passport holders only.",
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period. Biometric passport required (footnote 5). IMPORTANT: Holders of official passports require a visa (footnote 9) - the visa waiver applies to ordinary biometric passport holders only.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -181,7 +416,7 @@
         "nationality": "Honduras",
         "iso3": "HND",
         "max_stay_days": 90,
-        "notes": "Visa-free for short stays up to 90 days in any 180-day period.",
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period (footnote 1). Footnote 4 also applies: residence permit may be applied for after entry without a visa, provided gainful employment is not taken up.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -189,7 +424,7 @@
         "nationality": "Hong Kong SAR",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "Holders of Hong Kong SAR passports are visa-free for short stays up to 90 days in any 180-day period.",
+        "notes": "Holders of Hong Kong Special Administrative Region (SAR) passports are visa-free for short stays up to 90 days in any 180-day period (footnote 6). Gainful employment is not permitted during the stay. The official table lists Hong Kong under 'China (People's Republic)' with footnote 6 covering SAR passport holders.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -237,7 +472,7 @@
         "nationality": "Macao SAR",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "Holders of Macao SAR passports are visa-free for short stays up to 90 days in any 180-day period.",
+        "notes": "Holders of Macao Special Administrative Region (SAR) passports are visa-free for short stays up to 90 days in any six-month period (footnote 6). Gainful employment is not permitted during the stay. Footnote 6 of the official table explicitly covers both Hong Kong and Macao SAR passports.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -293,7 +528,7 @@
         "nationality": "Monaco",
         "iso3": "MCO",
         "max_stay_days": 90,
-        "notes": "Visa-free for short stays up to 90 days in any 180-day period.",
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period (footnote 1). Footnote 4 also applies: residence permit may be applied for after entry without a visa, provided gainful employment is not taken up.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -302,6 +537,14 @@
         "iso3": "MNE",
         "max_stay_days": 90,
         "notes": "Visa-free for short stays up to 90 days in any 180-day period. Biometric passport required (footnote 5).",
+        "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
+        "source_official": true
+      },
+      {
+        "nationality": "Nauru",
+        "iso3": "NRU",
+        "max_stay_days": 90,
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period (footnote 1). No biometric passport requirement listed.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -397,7 +640,7 @@
         "nationality": "San Marino",
         "iso3": "SMR",
         "max_stay_days": 90,
-        "notes": "Visa-free for short stays up to 90 days in any 180-day period.",
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period (footnote 1). Footnote 4 also applies: residence permit may be applied for after entry without a visa, provided gainful employment is not taken up.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -405,7 +648,7 @@
         "nationality": "Serbia",
         "iso3": "SRB",
         "max_stay_days": 90,
-        "notes": "Visa-free for short stays up to 90 days in any 180-day period. Biometric passport required (footnote 5).",
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -517,7 +760,7 @@
         "nationality": "Vatican City",
         "iso3": "VAT",
         "max_stay_days": 90,
-        "notes": "Visa-free for short stays up to 90 days in any 180-day period.",
+        "notes": "Visa-free for short stays up to 90 days in any 180-day period (footnote 1). Footnote 4 also applies: residence permit may be applied for after entry without a visa, provided gainful employment is not taken up.",
         "source_url": "https://www.auswaertiges-amt.de/en/visa-service/231148-231148",
         "source_official": true
       },
@@ -596,7 +839,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of valid visas and national residence permits of EU and Schengen states (including EEA states) are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of valid visas and national residence permits of EU and Schengen states (including EEA states) are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -611,7 +854,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of a valid visa issued by the United States of America are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of a valid visa issued by the United States of America are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -626,7 +869,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of a valid visa issued by Canada are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of a valid visa issued by Canada are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -641,7 +884,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of a valid visa issued by Japan are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of a valid visa issued by Japan are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -656,7 +899,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of a valid national residence permit issued by the United States of America are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of a valid national residence permit issued by the United States of America are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -671,7 +914,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of a valid national residence permit issued by Canada are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of a valid national residence permit issued by Canada are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -686,7 +929,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of a valid national residence permit issued by Japan are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of a valid national residence permit issued by Japan are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -701,7 +944,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of a valid national residence permit issued by Andorra are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of a valid national residence permit issued by Andorra are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -716,7 +959,7 @@
       },
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of a valid national residence permit issued by San Marino are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only — travellers remain in the international transit area without entering Schengen territory.",
+      "conditions": "Holders of a valid national residence permit issued by San Marino are exempt from the airport transit visa (Type A) requirement at German international airports (Frankfurt, Munich, Hamburg, Duesseldorf, Berlin-Brandenburg). This is an airside transit exemption only - travellers remain in the international transit area without entering Schengen territory.",
       "source_url": "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/33-transit/606710",
       "source_official": true
     },
@@ -758,7 +1001,7 @@
         "path_to_citizenship_years": 8,
         "official_url": "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Arbeit/SelbstaendigeTaetigkeit/selbstaendigetaetigkeit-node.html",
         "source_official": true,
-        "notes": "Under Section 21(1) of the Residence Act, third-country nationals can obtain a residence permit for self-employment if there is an economic interest or regional demand for the business, a positive economic impact is expected, and financing is secured. No fixed minimum investment amount is specified in official sources — viability and economic impact are assessed case by case. Initial permit valid up to 3 years; settlement permit (permanent residence) possible after 3 years of successful operation. Persons over 45 must show adequate pension provision. For freelancers in liberal professions, Section 21(5) applies. Citizenship path generally 8 years (or 5 years under skilled immigration rules if applicable)."
+        "notes": "Under Section 21(1) of the Residence Act, third-country nationals can obtain a residence permit for self-employment if there is an economic interest or regional demand for the business, a positive economic impact is expected, and financing is secured. No fixed minimum investment amount is specified in official sources - viability and economic impact are assessed case by case. Initial permit valid up to 3 years; settlement permit (permanent residence) possible after 3 years of successful operation. Persons over 45 must show adequate pension provision. For freelancers in liberal professions, Section 21(5) applies. Citizenship path generally 8 years (or 5 years under skilled immigration rules if applicable)."
       }
     ]
   },
@@ -783,7 +1026,7 @@
         "notes": "Fee of EUR 411 charged to employer. Based on Section 81a of the Residence Act. Covers recognition of foreign professional qualifications, Federal Employment Agency approval, and visa issuance in an accelerated coordinated procedure. Source domain make-it-in-germany.com is the official German government portal for skilled immigration."
       },
       {
-        "name": "Opportunity Card (Chancenkarte) — Job-Search Visa",
+        "name": "Opportunity Card (Chancenkarte) - Job-Search Visa",
         "category": "job_search_points_based",
         "eligibility": "Non-EU nationals who either (1) hold a foreign qualification recognised in Germany, or (2) score at least 6 points in the points system (based on qualifications, work experience, language skills, age, Germany ties). Must demonstrate sufficient financial resources (blocked bank account with min. EUR 1,091 net/month or declaration of commitment). German language knowledge at A1 level required.",
         "processing_time": "Minimum 4 weeks",
@@ -792,7 +1035,7 @@
         "notes": "Introduced under the new Skilled Immigration Act (Fachkraefteeinwanderungsgesetz). Allows entry to Germany to search for qualified employment without a pre-existing job offer. Initial duration for job search; if a concrete job offer is received but a regular work permit cannot yet be issued, an Opportunity Card extension (up to 2 years) is available providing access to qualified employment."
       },
       {
-        "name": "Skilled Immigration Act (Fachkraefteeinwanderungsgesetz) — Skilled Worker Residence Permit",
+        "name": "Skilled Immigration Act (Fachkraefteeinwanderungsgesetz) - Skilled Worker Residence Permit",
         "category": "skilled_employment",
         "eligibility": "Third-country nationals with a recognized foreign vocational or academic qualification and a concrete employment offer. Expanded under 2023 reform to include experience-based skilled workers (without formal recognition in some cases) and a points-based pathway.",
         "processing_time": "Standard procedure; fast-track option available via Section 81a",
@@ -805,7 +1048,7 @@
   "agreements": [
     "EU freedom of movement (Treaty on the Functioning of the European Union)",
     "Schengen Area",
-    "EEA freedom of movement (Agreement on the European Economic Area — Iceland, Liechtenstein, Norway)"
+    "EEA freedom of movement (Agreement on the European Economic Area - Iceland, Liechtenstein, Norway)"
   ],
   "official_domains": [
     "auswaertiges-amt.de",
@@ -817,22 +1060,32 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTION: Georgia conditional_access entry reformatted. Prior record had basis='passport_type' with passport_types=['diplomatic','service','official'] and level='visa_free', but the conditions text contradicted the level — it said holders REQUIRE a visa. This was logically inverted. Corrected to level='visa_required' with passport_types=['official'] matching footnote 9 wording from auswaertiges-amt.de.",
-      "CORRECTION: Footnote 5 (biometric passport requirement) added to notes for visa-free entries for Albania, Bosnia and Herzegovina, Georgia, Kosovo, Moldova, Montenegro, North Macedonia, Serbia, Seychelles, Ukraine per official table footnote citations. These were omitted in the prior record.",
+      "CORRECTION: Georgia conditional_access entry reformatted. Prior record had basis='passport_type' with passport_types=['diplomatic','service','official'] and level='visa_free', but the conditions text contradicted the level - it said holders REQUIRE a visa. This was logically inverted. Corrected to level='visa_required' with passport_types=['official'] matching footnote 9 wording from auswaertiges-amt.de.",
+      "CORRECTION: Footnote 5 (biometric passport requirement) added to notes for visa-free entries for Albania, Bosnia and Herzegovina, Georgia, Kosovo, Moldova, Montenegro, North Macedonia, Seychelles, Ukraine per official table footnote citations. These were omitted in the prior record.",
       "CORRECTION: EU Blue Card minimum salary thresholds added to fast_track entry: EUR 50,700 general / EUR 45,934.20 shortage occupations, sourced from make-it-in-germany.com glossary and search results. This gap is now closed.",
       "CORRECTION: ETIAS/EES notes updated. EES (Entry/Exit System) became fully operational 10 April 2026, per European Commission official announcement. ETIAS expected Q4 2026 with transitional grace period. Prior notes said 'not yet in force at time of research' which is now outdated.",
       "CORRECTION: Schengen residence permit conditional_access source URL updated from /faq/28-visa---eu-laender/606744 to /faq/28-visa-eu-laender-606744 to match confirmed active URL.",
-      "VERIFIED CORRECT: Jamaica and South Africa are NOT in the visa_free list — confirmed visa required per official auswaertiges-amt.de table. A prior intermediate scrape result incorrectly suggested they were visa-free; the definitive table confirms visa required.",
+      "VERIFIED CORRECT: Jamaica and South Africa are NOT in the visa_free list - confirmed visa required per official auswaertiges-amt.de table. A prior intermediate scrape result incorrectly suggested they were visa-free; the definitive table confirms visa required.",
       "VERIFIED CORRECT: Ukraine is correctly listed in visa_free (with biometric passport condition, footnote 5).",
-      "VERIFIED CORRECT: No visa-on-arrival, e-visa, or ETA category exists for Germany — all non-EU/EEA/CH nationals either have nationality-based visa waiver or must apply in advance."
+      "VERIFIED CORRECT: No visa-on-arrival, e-visa, or ETA category exists for Germany - all non-EU/EEA/CH nationals either have nationality-based visa waiver or must apply in advance.",
+      "ADDED: visa_types array populated June 2026 from official sources (auswaertiges-amt.de, bamf.de, make-it-in-germany.com). Covers 13 visa categories: Schengen tourist/business (Type C), airport transit (Type A), student, skilled worker employment, EU Blue Card, Opportunity Card/job-search, family reunification, self-employment, working holiday, language course/Studienkolleg, vocational training, research, medical, and diplomatic visas.",
+      "CORRECTION (2026-06-27): ADDED Fiji (FJI) to visa_free list. Re-verification of auswaertiges-amt.de/en/visa-service/231148-231148 on 2026-06-27 confirmed Fiji is listed as visa-free (footnote 1: 90 days in any 180-day period, no work). Fiji was entirely absent from the prior record - this was an omission error.",
+      "CORRECTION (2026-06-27): REMOVED erroneous biometric passport footnote from Serbia (SRB). Re-verification of auswaertiges-amt.de/en/visa-service/231148-231148 on 2026-06-27 confirmed Serbia carries only footnote 1 (90-day limit) - NOT footnote 5 (biometric passport required). The prior record incorrectly listed Serbia as requiring a biometric passport. Note: the other Western Balkan countries Albania, Bosnia and Herzegovina, Kosovo, Montenegro, North Macedonia DO correctly retain footnote 5 (biometric required).",
+      "VERIFIED (2026-06-27): EES operational status confirmed via EC press release (home-affairs.ec.europa.eu, 2026-04-28). ETIAS still Q4 2026 per same source. visa_policy.notes is accurate.",
+      "CORRECTION (2026-06-29): ADDED Nauru (NRU) to visa_free list. Re-verification of auswaertiges-amt.de/en/visa-service/231148-231148 on 2026-06-29 confirmed Nauru is listed as visa-free (footnote 1 only: 90 days in any 180-day period). Nauru was entirely absent from the prior record - this was an omission error.",
+      "CORRECTION (2026-06-29): Added footnote 4 restriction notes to Andorra (AND), Brazil (BRA), El Salvador (SLV), Honduras (HND), Monaco (MCO), San Marino (SMR), and Vatican City (VAT). Official table carries footnote 4 for these entries meaning: footnote 3 (RP application after entry without visa) also applies but only if gainful employment is not taken up. These notes were previously omitted.",
+      "CORRECTION (2026-06-29): Updated Hong Kong SAR notes to clarify that the official table handles Hong Kong under 'China (People's Republic)' with footnote 6 covering SAR passport holders. Footnote 6 explicitly states no gainful employment permitted. Updated Macao SAR notes similarly to reflect footnote 6 wording and the no-employment restriction. The prior notes for both omitted the employment restriction from footnote 6.",
+      "VERIFIED (2026-06-29): Full re-verification of auswaertiges-amt.de/en/visa-service/231148-231148 completed. All other visa_free entries (Albania, Antigua and Barbuda, Argentina, Australia, Bahamas, Barbados, Bosnia and Herzegovina, Brunei, Canada, Chile, Colombia, Costa Rica, Dominica, Fiji, Georgia, Grenada, Guatemala, Israel, Japan, Kiribati, Korea, Kosovo, Malaysia, Marshall Islands, Mauritius, Mexico, Micronesia, Moldova, Montenegro, New Zealand, Nicaragua, North Macedonia, Palau, Panama, Paraguay, Peru, Saint Kitts, Saint Lucia, Saint Vincent, Samoa, Serbia, Seychelles, Singapore, Solomon Islands, Taiwan, Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, UAE, UK, USA, Uruguay, Venezuela) all confirmed present and correctly classified. visa_on_arrival, e_visa, eta remain empty - confirmed correct."
     ],
     "gaps": [
       "Exact processing times for self-employment visa not stated on official pages.",
-      "ETIAS exact launch date within Q4 2026 not yet confirmed by European Commission — to be announced at least 6 months in advance per eu.europa.eu.",
+      "ETIAS exact launch date within Q4 2026 not yet confirmed by European Commission - to be announced at least 6 months in advance per eu.europa.eu.",
       "Diplomatic/service passport-specific bilateral visa waiver agreements for entry into Germany (beyond the Georgia footnote 9 restriction) not comprehensively listed in a single official public document.",
-      "OCI (Overseas Citizen of India) cardholder status confers no special conditional entry privilege for Germany — no official German source found granting any credential-based waiver for OCI holders.",
+      "OCI (Overseas Citizen of India) cardholder status confers no special conditional entry privilege for Germany - no official German source found granting any credential-based waiver for OCI holders.",
       "Airport transit visa exemption for holders of valid US/Canada/Japan visas confirmed official; however the official source does not specify whether 'valid' means 'previously used at least once' or 'not yet used'.",
-      "EU Blue Card salary thresholds are updated annually; figures of EUR 50,700 and EUR 45,934.20 reflect 2026 values per make-it-in-germany.com — should be re-verified annually."
+      "EU Blue Card salary thresholds are updated annually; figures of EUR 50,700 and EUR 45,934.20 reflect 2026 values per make-it-in-germany.com - should be re-verified annually.",
+      "Germany does not offer a formal 'digital nomad' visa or 'retirement' visa as distinct categories - freelancers use Section 21(5) AufenthG; retirees with sufficient income may apply via Section 7(1) AufenthG on a case-by-case basis.",
+      "Investment visa minimum amounts under Section 21 AufenthG are not specified in official sources - assessed case by case."
     ]
   },
   "sources_checked": [
@@ -848,6 +1101,7 @@
     "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Arbeit/SelbstaendigeTaetigkeit/selbstaendigetaetigkeit-node.html",
     "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererEuropa/zuwanderereuropa-node.html",
     "https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Einbuergerung/einbuergerung.html",
+    "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/zuwandererdrittstaaten-node.html",
     "https://www.make-it-in-germany.com/en/visa-residence/skilled-immigration-act",
     "https://www.make-it-in-germany.com/en/looking-for-foreign-professionals/entering/the-fast-track-procedure-for-skilled-workers",
     "https://www.make-it-in-germany.com/en/visa-residence/types/eu-blue-card",

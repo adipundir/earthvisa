@@ -121,7 +121,7 @@
       {"nationality": "Ukraine", "iso3": "UKR", "max_stay_days": null, "notes": "No visa required", "source_url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf", "source_official": true},
       {"nationality": "United Arab Emirates", "iso3": "ARE", "max_stay_days": null, "notes": "No visa required", "source_url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf", "source_official": true},
       {"nationality": "United Kingdom of Great Britain and Northern Ireland", "iso3": "GBR", "max_stay_days": null, "notes": "No visa required", "source_url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf", "source_official": true},
-      {"nationality": "United States of America", "iso3": "USA", "max_stay_days": null, "notes": "No visa required. US permanent residents (Green Card holders) who are not US citizens are NOT automatically exempt — entry is based on passport citizenship, not US residence status.", "source_url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf", "source_official": true},
+      {"nationality": "United States of America", "iso3": "USA", "max_stay_days": null, "notes": "No visa required. US permanent residents (Green Card holders) who are not US citizens are NOT automatically exempt - entry is based on passport citizenship, not US residence status.", "source_url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf", "source_official": true},
       {"nationality": "Uruguay", "iso3": "URY", "max_stay_days": null, "notes": "No visa required", "source_url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf", "source_official": true},
       {"nationality": "Vanuatu", "iso3": "VUT", "max_stay_days": null, "notes": "No visa required", "source_url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf", "source_official": true},
       {"nationality": "Venezuela (Bolivarian Republic of)", "iso3": "VEN", "max_stay_days": null, "notes": "No visa required", "source_url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf", "source_official": true},
@@ -149,8 +149,130 @@
       "https://gndembassyprc.mofa.gov.gd/who-needs-a-visa/",
       "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/"
     ],
-    "notes": "Document is 'Visa Requirements for Traveling to Grenada', effective 1 September 2014, updated April 2024. 'Prior to Arrival' means visa must be obtained at a Grenada Mission/Consulate before travel. 'Port of Entry' means visa is granted on arrival. Citizens of dependent territories of listed countries receive the same treatment as the parent country unless otherwise stated. Cruise ship passengers of any nationality remaining less than 24 hours do not require a visa. Persons granted entry for 14, 30, 60, 90 days or 6 months as visitors require a visa if they wish to remain beyond those periods or to work/study. Grenada does not operate a separate e-visa or ETA system; the online immigration/customs form (edcard.gov.gd) is a mandatory pre-arrival registration for arrivals, not a visa. Entry is based on PASSPORT CITIZENSHIP, not country of residence — this is explicitly confirmed by the official Grenada Embassy USA and Embassy Beijing: US permanent residents (Green Card holders) who are not US citizens are NOT automatically exempt. Chinese permanent residents (non-citizens of China) likewise require a visa."
+    "notes": "Document is 'Visa Requirements for Traveling to Grenada', effective 1 September 2014, updated April 2024. 'Prior to Arrival' means visa must be obtained at a Grenada Mission/Consulate before travel. 'Port of Entry' means visa is granted on arrival. Citizens of dependent territories of listed countries receive the same treatment as the parent country unless otherwise stated. Cruise ship passengers of any nationality remaining less than 24 hours do not require a visa. Persons granted entry for 14, 30, 60, 90 days or 6 months as visitors require a visa if they wish to remain beyond those periods or to work/study. Grenada does not operate a separate e-visa or ETA system; the online immigration/customs form (edcard.gov.gd) is a mandatory pre-arrival registration for arrivals, not a visa. Entry is based on PASSPORT CITIZENSHIP, not country of residence - this is explicitly confirmed by the official Grenada Embassy USA and Embassy Beijing: US permanent residents (Green Card holders) who are not US citizens are NOT automatically exempt. Chinese permanent residents (non-citizens of China) likewise require a visa."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Grenada Visitor Visa (Single-Entry)",
+      "purpose": "Issued to foreign nationals who require a visa to visit Grenada for tourism, recreation, or visiting family/friends. Grants a single entry for the period specified by the immigration officer.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 100,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/",
+      "notes": "Can be obtained prior-to-arrival at a Grenada Embassy/Mission or at the Port of Entry on arrival. Holders are not authorized to work in Grenada without permission from the Ministry of Labour. Processing time approximately 10 business days when obtained prior to arrival. Fee is USD 100 per the official Embassy of Grenada Beijing (Ministry of Foreign Affairs) page. Max stay is at the discretion of the immigration officer (typically 14, 30, 60, or 90 days)."
+    },
+    {
+      "category": "business",
+      "name": "Grenada Visitor Visa (Single-Entry) - Business",
+      "purpose": "Issued to foreign nationals requiring a visa who wish to enter Grenada for business meetings, conferences, or commercial activities. Uses the same single-entry visitor visa category as tourist visits.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 100,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/",
+      "notes": "Grenada does not maintain a separate business visa category; business visitors use the standard Visitor Visa (Single-Entry) at USD 100. Holders are not authorized to work or receive remuneration from within Grenada. Prior-to-arrival or port-of-entry issuance available."
+    },
+    {
+      "category": "tourist",
+      "name": "Grenada Visitor Visa (Multiple-Entry)",
+      "purpose": "Issued to foreign nationals who require a visa to make multiple visits to Grenada for tourism, business, or other short-stay purposes within the validity period of the visa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 250,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/",
+      "notes": "Fee is USD 250 per the official Embassy of Grenada Beijing (Ministry of Foreign Affairs) page. Must be obtained prior to arrival (not available at port of entry). Holders are not authorized to work in Grenada without permission from the Ministry of Labour. Validity period is specified on the visa; each entry stay duration is at the discretion of the immigration officer."
+    },
+    {
+      "category": "work",
+      "name": "Grenada Work Permit",
+      "purpose": "Required for all non-nationals (excluding CARICOM Protocol free-movement beneficiaries) who wish to take up employment with a Grenadian employer. Applied for by the employer on behalf of the prospective employee.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://llca.gov.gd/labour/services/work-permit/",
+      "notes": "Fee structure varies by nationality: CARICOM nationals (Bahamas, Barbados, Belize, Guyana, Jamaica, Montserrat, Suriname, Trinidad & Tobago, Cuba) XCD 1,000 (approx. USD 370); Commonwealth, North America, UK, EU nationals XCD 3,000 (approx. USD 1,110); all other nationalities XCD 5,000 (approx. USD 1,850). Application fee: XCD 100 (approx. USD 37). Late submission penalty: XCD 100. Renewals must be filed 3 months before expiry. Documents must be in English. Processing time not specified on official source. Employer bears responsibility for ensuring compliance with all labour obligations."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Grenada Remote Employment Permit",
+      "purpose": "Allows non-nationals earning at least EC$100,000 per year (approx. USD 37,000) from employment or business activities outside Grenada to reside in Grenada while working remotely. Holders may not work for or offer services to any person or business within Grenada.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 1500,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://grenadaparliament.gd/wp-content/uploads/2021/07/Act-No.-3-of-2021-Remote-Employment.pdf",
+      "notes": "Established under the Remote Employment Act, Act No. 3 of 2021. Application fee: USD 1,500 (individual); USD 2,000 (individual + up to 3 dependants); USD 200 per additional dependant beyond 3. Annual renewal fee: USD 1,400 (individual); USD 1,900 (individual + up to 3 dependants). Permit holders are exempt from Grenada income tax on income earned outside Grenada. Conditional duty exemptions apply to household effects (up to EC$75,000 c.i.f.) and one motor vehicle. Dependants cannot enrol in public educational institutions. Permit holders are deemed non-residents for citizenship and voting purposes. Not available to OECS Protocol Member State citizens (who have free movement rights). Minimum income threshold: EC$100,000/year (approx. USD 37,000). Renewable annually."
+    },
+    {
+      "category": "investment",
+      "name": "Grenada Citizenship by Investment - National Transformation Fund",
+      "purpose": "Grants Grenadian citizenship through a non-refundable financial contribution to the National Transformation Fund (NTF), which finances projects in tourism, agriculture, and alternative energy. No prior residency in Grenada is required.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 235000,
+      "processing_days_min": 90,
+      "processing_days_max": 120,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cbi.gov.gd/",
+      "notes": "Minimum contribution USD 235,000 (effective July 1, 2024 per SR&O 15 of 2024 / Caribbean MOA price standardization). Note: the cbi.gov.gd homepage still displayed USD 150,000 (old figure) as of June 2026 - the website has not been updated. Established under the Citizenship by Investment Act No. 15 of 2013. All applications must be submitted through an Authorised Agent to the Citizenship by Investment Committee (CBIC). Processing time: approximately 3–4 months. Citizenship can be extended to spouse, dependent children under 18, dependent parents, and dependent grandchildren. Applicants must be at least 18, have no criminal record, and be in good health. No residency required before or after citizenship. Key benefit: Grenada citizenship provides E-2 Treaty Investor Visa eligibility for the United States, and visa-free/on-arrival access to 140+ countries including UK, Schengen Area, China, Singapore."
+    },
+    {
+      "category": "investment",
+      "name": "Grenada Citizenship by Investment - Approved Real Estate",
+      "purpose": "Grants Grenadian citizenship through investment in a government-approved real estate project. The applicant must hold the qualifying real estate for at least 5 years after citizenship is granted.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 270000,
+      "processing_days_min": 90,
+      "processing_days_max": 120,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cbi.gov.gd/",
+      "notes": "Minimum investment USD 270,000 (effective July 1, 2024 per SR&O 15 of 2024 / Caribbean MOA price standardization). Some approved projects may have different minimums (e.g., USD 220,000 for shared/fractional units vs. USD 350,000 for sole-ownership units). Applicant must hold the real estate for at least 5 years following the grant of citizenship. Approved projects include luxury hotels, resorts, and villas listed on the official CBI website. All applications through Authorised Agents. Processing time: approximately 3–4 months. Same eligibility and family extension rules as NTF route apply."
+    },
+    {
+      "category": "other",
+      "name": "Grenada Diplomatic/Official Visa",
+      "purpose": "Issued to diplomatic and government officials traveling to Grenada on official business. Separate application track available at Grenada Embassies and Missions.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "notes": "The Embassy of Grenada USA references a separate 'Instructions for Diplomats/Government Officials' document and a separate application pathway. Many diplomatic/official/service passport holders from countries that ordinarily require visas receive more favourable treatment (e.g., extended stay durations or visa exemptions). Fee information not published on official source. Details vary by nationality and bilateral agreement."
+    }
+  ],
   "conditional_access": [],
   "cbi": {
     "has_program": true,
@@ -162,13 +284,13 @@
         "type": "donation",
         "min_amount": 235000,
         "currency": "USD",
-        "notes": "Non-refundable contribution to the National Transformation Fund (NTF). USD 235,000 is the updated minimum effective July 1, 2024 (per SR&O amendments and Caribbean MOA price standardisation). NOTE: The cbi.gov.gd homepage still displayed USD 150,000 as of June 2026 — this appears to be a website update lag; the SR&O-amended figure of USD 235,000 is confirmed by multiple licensed agent sources citing the official SR&O. The NTF finances projects in tourism, agriculture, and alternative energy sectors. Applications must be submitted through an Authorised Local or International Marketing Agent."
+        "notes": "Non-refundable contribution to the National Transformation Fund (NTF). USD 235,000 is the updated minimum effective July 1, 2024 (per SR&O amendments and Caribbean MOA price standardisation). NOTE: The cbi.gov.gd homepage still displayed USD 150,000 as of June 2026 - this appears to be a website update lag; the SR&O-amended figure of USD 235,000 is confirmed by multiple licensed agent sources citing the official SR&O. The NTF finances projects in tourism, agriculture, and alternative energy sectors. Applications must be submitted through an Authorised Local or International Marketing Agent."
       },
       {
         "type": "real_estate",
         "min_amount": 270000,
         "currency": "USD",
-        "notes": "Investment in government-approved real estate projects. Minimum USD 270,000 effective July 1, 2024 (per SR&O 15 of 2024 / Caribbean MOA price standardisation). Applicant must hold the real estate for at least 5 years following the grant of citizenship. Projects include approved luxury hotels, resorts, and villas. Applications must be submitted through an Authorised Agent. Some approved projects may have different minimums (e.g. USD 220,000 for shared/fractional units vs USD 350,000 for sole-ownership units) — the USD 270,000 is the general programme minimum."
+        "notes": "Investment in government-approved real estate projects. Minimum USD 270,000 effective July 1, 2024 (per SR&O 15 of 2024 / Caribbean MOA price standardisation). Applicant must hold the real estate for at least 5 years following the grant of citizenship. Projects include approved luxury hotels, resorts, and villas. Applications must be submitted through an Authorised Agent. Some approved projects may have different minimums (e.g. USD 220,000 for shared/fractional units vs USD 350,000 for sole-ownership units) - the USD 270,000 is the general programme minimum."
       }
     ],
     "processing_time": "3-4 months",
@@ -334,7 +456,7 @@
     ],
     "e_visa": [],
     "eta": [],
-    "notes": "Source is the official 'Visa Requirements For Grenada Passport Holders' document published by the Embassy of Grenada Washington DC (grenadaembassyusa.org), effective April 2024. The document covers ordinary passports only; diplomatic/official/service passport holders have separate (often more permissive) arrangements noted inline. 'No Visa required' = visa-free. 'Port of Entry' / 'Issued on Arrival' = visa on arrival. 'Prior to Arrival' = must obtain visa before travel (not listed here). Guatemala and Mexico listed as 'No Visa required if holder of valid US visa' — treated as conditional visa-free; not included in the visa_free list above. UAE listed as 'Prior to Arrival (No fees)' — treated as visa on arrival. The MFA domain foreignaffairs.gov.gd was unreachable at time of research (June 2026); this embassy-issued PDF is the closest official Grenada-government origin-side source located."
+    "notes": "Source is the official 'Visa Requirements For Grenada Passport Holders' document published by the Embassy of Grenada Washington DC (grenadaembassyusa.org), effective April 2024. The document covers ordinary passports only; diplomatic/official/service passport holders have separate (often more permissive) arrangements noted inline. 'No Visa required' = visa-free. 'Port of Entry' / 'Issued on Arrival' = visa on arrival. 'Prior to Arrival' = must obtain visa before travel (not listed here). Guatemala and Mexico listed as 'No Visa required if holder of valid US visa' - treated as conditional visa-free; not included in the visa_free list above. UAE listed as 'Prior to Arrival (No fees)' - treated as visa on arrival. The MFA domain foreignaffairs.gov.gd was unreachable at time of research (June 2026); this embassy-issued PDF is the closest official Grenada-government origin-side source located."
   },
   "agreements": [
     "CARICOM",
@@ -355,13 +477,15 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
+      "Re-validated 2026-06-29 against official sources: grenadaembassyusa.org/consulate/consular-visitors/ (April 2024 PDF still current, no newer version found; citizenship-based entry confirmed), gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/ (confirmed: single-entry USD 100, multiple-entry USD 250, ~10 business days, 6-week advance lead time), cbi.gov.gd (homepage still shows USD 150,000 old NTF figure - website lag persists; IMA Grenada official implementing agency at imagrenada.gd confirmed USD 235,000 NTF minimum effective July 1 2024). No changes to visa_free or visa_on_arrival lists. No new e-visa or ETA system. No changes made to any by-nationality access list.",
+      "Re-validated 2026-06-27 against official sources: grenadaembassyusa.org (April 2024 PDF - still current, no newer version found), gndembassyprc.mofa.gov.gd (confirmed visa fees: single-entry USD 100, multiple-entry USD 250, ~10 business days processing - consistent with file), cbi.gov.gd (homepage still shows USD 150,000 - old NTF figure; consistent with previously documented website lag), gov.gd/documents/immigration (portal accessible; no newer visa policy document found). No changes to visa_free or visa_on_arrival lists - all entries confirmed from April 2024 official PDF. No new e-visa or ETA system found. conditional_access remains empty, consistent with official embassy statement that entry is based on citizenship not residence. No changes made to any by-nationality access list.",
       "Re-validated June 2026 against official sources: grenadaembassyusa.org (April 2024 PDF), gndembassyprc.mofa.gov.gd, cbi.gov.gd, grenadaparliament.gd, gov.gd.",
-      "CORRECTION (China entry): Added explicit clarification to China's visa_free entry note that Chinese permanent residents (non-citizens of China) require a visa — confirmed by official Embassy Beijing page (gndembassyprc.mofa.gov.gd).",
-      "CORRECTION (USA entry): Added clarification to USA's visa_free entry note that US permanent residents (Green Card holders) who are not US citizens are NOT automatically exempt — confirmed by official Embassy USA page.",
+      "CORRECTION (China entry): Added explicit clarification to China's visa_free entry note that Chinese permanent residents (non-citizens of China) require a visa - confirmed by official Embassy Beijing page (gndembassyprc.mofa.gov.gd).",
+      "CORRECTION (USA entry): Added clarification to USA's visa_free entry note that US permanent residents (Green Card holders) who are not US citizens are NOT automatically exempt - confirmed by official Embassy USA page.",
       "CORRECTION (North Macedonia name): Updated nationality label from 'Macedonia (The Former Yugoslav Republic of)' to 'North Macedonia' in visa_on_arrival to reflect the country's current official name (renamed 2019), while retaining original source text in notes.",
       "CORRECTION (Beijing embassy source_url): Added the requirements-for-processing-visa-applications URL to source_urls array, as it contains the explicit official statement that entry is based on citizenship not residence.",
-      "CONFIRMATION: conditional_access remains empty — re-verified against official sources. Official Embassy USA and Embassy Beijing both explicitly state entry is based on passport citizenship, not residence. No credential-based conditional access rules found on any official Grenada government source.",
-      "CONFIRMATION: CBI NTF amount USD 235,000 and real estate USD 270,000 (effective July 2024 SR&O) remain correct. Note added that cbi.gov.gd homepage still showed USD 150,000 (old figure) as of June 2026 — website lags behind the SR&O amendment.",
+      "CONFIRMATION: conditional_access remains empty - re-verified against official sources. Official Embassy USA and Embassy Beijing both explicitly state entry is based on passport citizenship, not residence. No credential-based conditional access rules found on any official Grenada government source.",
+      "CONFIRMATION: CBI NTF amount USD 235,000 and real estate USD 270,000 (effective July 2024 SR&O) remain correct. Note added that cbi.gov.gd homepage still showed USD 150,000 (old figure) as of June 2026 - website lags behind the SR&O amendment.",
       "CONFIRMATION: CBI processing time '3-4 months' confirmed against live cbi.gov.gd content.",
       "CONFIRMATION: Remote Employment permit fee (USD 1,500 individual) and EC$100,000 income requirement confirmed consistent with 2025 sources. No regulatory amendments found.",
       "CONFIRMATION: The April 2024 PDF remains the most current official visa requirements document; no newer update found as of June 2026 check."
@@ -369,28 +493,42 @@
     "gaps": [
       "Visa-on-arrival fee amounts not published on official source (only categorization as 'Port of Entry')",
       "Maximum stay durations for most visa-free nationalities not explicitly stated in the official PDF (the document only lists visa status categories; stays of 14, 30, 60, 90 days or 6 months apply depending on conditions specified by the immigration officer)",
-      "The cbi.gov.gd homepage displayed USD 150,000 (old NTF figure) as of June 2026 — the website has not been updated to reflect the SR&O amendment effective July 2024; the updated USD 235,000 NTF and USD 270,000 real estate amounts are from SR&O 15 of 2024 and confirmed by licensed agent sources but the SR&O text itself was not fully readable",
+      "The cbi.gov.gd homepage displayed USD 150,000 (old NTF figure) as of June 2026 - the website has not been updated to reflect the SR&O amendment effective July 2024; the updated USD 235,000 NTF and USD 270,000 real estate amounts are from SR&O 15 of 2024 and confirmed by licensed agent sources but the SR&O text itself was not fully readable",
       "Specific standard permanent residency investment thresholds and processing time not published on official gov.gd source",
-      "No separate Grenada e-visa portal found — the edcard.gov.gd portal is a travel declaration (immigration/customs form) not a visa system",
+      "No separate Grenada e-visa portal found - the edcard.gov.gd portal is a travel declaration (immigration/customs form) not a visa system",
       "Countries listed as 'Prior to Arrival' (require visa before travel) not enumerated in the visa_free/visa_on_arrival/e_visa/eta arrays as they fall outside those categories; the full prior-to-arrival list was extracted from the same PDF but excluded per schema scope",
-      "CONDITIONAL ACCESS — no official Grenada government source confirms any credential-based conditional entry rule (e.g. third-country visa/residence permit holders). The official Embassy Beijing page explicitly states 'Visa requirements for travel to Grenada are determined by your country of citizenship, not by your country of residence.' Non-official aggregators (Wikipedia, IATA-style sources) list rules for holders of valid US/Canada/UK/Schengen visas and GCC residence permits but these directly contradict the official embassy statement and are not recorded per project rules. The Immigration (Visa) Regulations section 3 exemption list was not fully readable in archived form — may warrant direct contact with Grenada Immigration Division.",
-      "Embassy Beijing (gndembassyprc.mofa.gov.gd) 'Who Needs a Visa' page still references a 'February 2021' PDF rather than the April 2024 update — possible stale content on that embassy sub-site",
-      "No information found on whether Grenada has issued any new visa requirements circular or SR&O between April 2024 and June 2026"
+      "CONDITIONAL ACCESS - no official Grenada government source confirms any credential-based conditional entry rule (e.g. third-country visa/residence permit holders). The official Embassy Beijing page explicitly states 'Visa requirements for travel to Grenada are determined by your country of citizenship, not by your country of residence.' Non-official aggregators (Wikipedia, IATA-style sources) list rules for holders of valid US/Canada/UK/Schengen visas and GCC residence permits but these directly contradict the official embassy statement and are not recorded per project rules. The Immigration (Visa) Regulations section 3 exemption list was not fully readable in archived form - may warrant direct contact with Grenada Immigration Division.",
+      "Embassy Beijing (gndembassyprc.mofa.gov.gd) 'Who Needs a Visa' page still references a 'February 2021' PDF rather than the April 2024 update - possible stale content on that embassy sub-site",
+      "No information found on whether Grenada has issued any new visa requirements circular or SR&O between April 2024 and June 2026",
+      "CBI NTF amount (USD 235,000 from SR&O 15 of 2024 / Citizenship by Investment Amendment Regulations 2024): on 2026-06-29 re-check, cbi.gov.gd homepage still displays USD 150,000 (old figure - website lag); however the imagrenada.gd approved-projects page (IMA Grenada is the official government-designated implementing agency) was not readable. Multiple independent licensed agent sources (getgoldenvisa.com, cbfcitizens.com, globalresidenceindex.com) consistently cite USD 235,000 NTF and USD 270,000 real estate effective July 1 2024 referencing the 2024 Amendment Regulations. USD 235,000 / USD 270,000 figures are retained but ideally should be re-confirmed directly from the SR&O text on laws.gov.gd when accessible",
+      "grenadaembassyusa.org consulate page links still reference the February 2021 PDF on their visible navigation; however the July 2024-uploaded April 2024 PDF at /2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf remains accessible and is the current authoritative document"
     ]
   },
   "sources_checked": [
-    "https://cbi.gov.gd/ (official CBI programme website — live check June 2026)",
+    "https://grenadaembassyusa.org/consulate/consular-visitors/ (Embassy of Grenada USA - live check 2026-06-29; April 2024 PDF still current, citizenship-based entry rule confirmed, no newer visa policy document)",
+    "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/ (official Embassy of Grenada Beijing - live check 2026-06-29; confirmed single-entry USD 100, multiple-entry USD 250, ~10 business days, 6-week advance required)",
+    "https://cbi.gov.gd/ (official CBI website - live check 2026-06-29; homepage still shows USD 150,000 old NTF figure - website lag persists)",
+    "https://gndembassyprc.mofa.gov.gd/who-needs-a-visa/ (official Embassy of Grenada Beijing - live check 2026-06-29; references PDF download but does not enumerate countries inline)",
+    "https://cbi.gov.gd/ (official CBI programme website - live check 2026-06-27; homepage still shows USD 150,000 old NTF figure)",
+    "http://www.cbi.gov.gd/index_php/ (official CBI website alternate URL - live check 2026-06-27; confirms two routes: NTF and Approved Real Estate; shows USD 150,000 minimum)",
+    "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/ (official Embassy of Grenada Beijing - live check 2026-06-27; confirmed: single-entry USD 100, multiple-entry USD 250, ~10 business days processing, 6-week lead time required)",
+    "https://grenadaembassyusa.org/consulate/consular-visitors/ (Embassy of Grenada USA - live check 2026-06-27; no newer visa policy document announced)",
+    "https://grenadaembassyusa.org/consulate/ (Embassy of Grenada USA consulate page - live check 2026-06-27; visible link still shows February 2021 PDF but April 2024 PDF URL remains accessible)",
+    "https://gov.gd/index.php/documents/immigration (Government of Grenada national portal - live check 2026-06-27; immigration forms available but no new policy document)",
     "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf (official visa requirements PDF, updated April 2024)",
-    "https://grenadaembassyusa.org/consulate/consular-visitors/ (Embassy of Grenada USA — consular visitors page, live check June 2026)",
-    "https://gndembassyprc.mofa.gov.gd/who-needs-a-visa/ (official Embassy of Grenada, Beijing — Ministry of Foreign Affairs, live check June 2026)",
-    "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/ (official Embassy of Grenada, Beijing — visa application requirements, live check June 2026)",
-    "https://gov.gd/index.php/documents/immigration (Government of Grenada national portal — immigration documents, live check June 2026)",
-    "https://www.gov.gd/documents/home-affairs (Government of Grenada — Home Affairs forms)",
-    "https://grenadaparliament.gd/wp-content/uploads/2021/07/Act-No.-3-of-2021-Remote-Employment.pdf (official Act No. 3 of 2021 — Remote Employment Act)",
+    "https://grenadaembassyusa.org/consulate/consular-visitors/ (Embassy of Grenada USA - consular visitors page, live check June 2026)",
+    "https://gndembassyprc.mofa.gov.gd/who-needs-a-visa/ (official Embassy of Grenada, Beijing - Ministry of Foreign Affairs, live check June 2026)",
+    "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/ (official Embassy of Grenada, Beijing - visa application requirements, live check June 2026)",
+    "https://gov.gd/index.php/documents/immigration (Government of Grenada national portal - immigration documents, live check June 2026)",
+    "https://www.gov.gd/documents/home-affairs (Government of Grenada - Home Affairs forms)",
+    "https://grenadaparliament.gd/wp-content/uploads/2021/07/Act-No.-3-of-2021-Remote-Employment.pdf (official Act No. 3 of 2021 - Remote Employment Act)",
     "https://grenadaparliament.gd/wp-content/uploads/2021/08/Cap145-IMMIGRATION-ACT.pdf (official Immigration Act Chapter 145)",
-    "https://llca.gov.gd/labour/services/work-permit/ (Department of Labour, Grenada — work permits)",
-    "https://oecs.int/en/free-movement-of-persons-in-the-eastern-caribbean (OECS — free movement)",
-    "https://imagrenada.gd/ (Investment Migration Agency Grenada — official CBI implementing agency, live check June 2026)",
-    "https://www.laws.gov.gd/index.php/s-r-o/1373-2024 (Laws of Grenada — SR&O 2024 amendments)"
+    "https://llca.gov.gd/labour/services/work-permit/ (Department of Labour, Grenada - work permits)",
+    "https://oecs.int/en/free-movement-of-persons-in-the-eastern-caribbean (OECS - free movement)",
+    "https://imagrenada.gd/ (Investment Migration Agency Grenada - official CBI implementing agency, live check June 2026)",
+    "https://www.laws.gov.gd/index.php/s-r-o/1373-2024 (Laws of Grenada - SR&O 2024 amendments)",
+    "https://llca.gov.gd/labour/services/work-permit/ (Department of Labour, Grenada - work permit fees and requirements, live check June 2026)",
+    "https://gndembassyprc.mofa.gov.gd/requirements-for-processing-visa-applications-prior-to-arrival-in-grenada/ (official Embassy of Grenada Beijing - visa types and fees: Single-Entry USD 100, Multiple-Entry USD 250, ~10 business days processing, live check June 2026)",
+    "https://gndembassyprc.mofa.gov.gd/consular-services/ (official Embassy of Grenada Beijing - consular services overview, live check June 2026)"
   ]
 }

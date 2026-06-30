@@ -9,9 +9,9 @@
       {
         "nationality": "All nationalities",
         "iso3": null,
-        "max_stay_days": 60,
-        "notes": "All nationalities traveling to Samoa are not required to obtain an entry permit/visa for stays less than 60 days. Visitors must hold a passport valid for 6 months or more, have a return or onward ticket, provide a copy of a bank statement, have no record of deportation from other countries, and no health problems posing a risk to Samoa. For stays exceeding 60 days, a permit must be obtained in advance from the nearest Samoa Consulate General, High Commission, or Embassy (in New Zealand, Australia, New York, Tokyo, Beijing, and Belgium). Extensions within Samoa are handled by Samoa Immigration (MPMC). Source: official MFAT PDF re-confirmed via Firecrawl scrape June 2026.",
-        "source_url": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Entry-requirements-into-Samoa.pdf",
+        "max_stay_days": 90,
+        "notes": "All foreign passport holders (except US Nationals of American Samoa) are issued a gratis 90-day Visitor's Permit upon arrival in Samoa. Requirements: passport valid for at least 6 months after intended departure date, return or onward ticket, valid visa/permit for onward destination, documented accommodation, evidence of sufficient funds, no deportation history, no health problems posing a risk to Samoa, no criminal convictions with sentences of 1 year or more, and not appearing on any alert/warning list. Extensions beyond 90 days must be applied for at the Immigration Office in Apia before the permit expires. Note: The MFAT Entry Requirements PDF (binary-unreadable, last updated July 2021) references '60 days' as a 'no permit required' threshold; the operative permit-on-arrival duration of 90 days is confirmed by the MPMC immigration authority (mpmc.gov.ws) and the Samoa High Commission (samoa.org.nz/visa-passport/).",
+        "source_url": "https://samoa.org.nz/visa-passport/",
         "source_official": true
       }
     ],
@@ -20,9 +20,14 @@
     "source_urls": [
       "https://www.mfat.gov.ws/visas/",
       "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Entry-requirements-into-Samoa.pdf",
-      "https://www.mfat.gov.ws/wp-content/uploads/2013/10/List-of-Visa-waiver-Agreements.pdf"
+      "https://www.mfat.gov.ws/wp-content/uploads/2013/10/List-of-Visa-waiver-Agreements.pdf",
+      "https://samoa.org.nz/visa-passport/",
+      "https://mpmc.gov.ws/divisions/immigration/",
+      "https://mpmc.gov.ws/pr-agreement-between-the-government-of-samoa-and-the-government-of-the-peoples-republic-of-china-on-mutual-visa-exemption/",
+      "https://ws.china-embassy.gov.cn/eng/lsfw_142098/zytz_142073/202503/t20250314_11574531.htm",
+      "https://www.samoagovt.ws/2025/01/joint-press-release-agreement-between-the-government-of-samoa-and-the-government-of-the-peoples-republic-of-china-on-mutual-visa-exemption/"
     ],
-    "notes": "All nationalities may enter Samoa visa-free for up to 60 days per the official MFAT 'Entry requirements into Samoa' PDF (re-scraped and confirmed June 2026). Bilateral visa-waiver agreements as documented in the official MFAT 'List of Visa Waiver Agreements' PDF (re-scraped June 2026) and supplementary official sources: (1) European Union — 28 member states as of signing on 28 May 2015, ratified 15 Dec 2015, up to 90 days in any 180-day period for EU citizens (note: UK left the EU in 2020 — official Samoa government update on UK status not confirmed); (2) Russia — signed 4 Apr 2017, in force 9 Jul 2017, up to 60 days for citizens of both countries; (3) Macau SAR — signed 2000, up to 60 days, applies only to Macau Special Administrative Region passport holders; (4) Israel — signed 7 Mar 2019, ratified but NOT YET IN FORCE as of the MFAT PDF (PDF states 'Yet to be ratified due to political situation in Israel'); (5) China (PRC) — signed 23 Jan 2025, in force 2 Apr 2025 (confirmed by Chinese Embassy official notice), covers Samoan ordinary/official/diplomatic passports and Chinese ordinary/service/public affairs/diplomatic passports, max 30 days single stay / 90 days in any 180-day period. The China agreement is not yet reflected in the MFAT visa waiver PDF."
+    "notes": "All nationalities receive a 90-day Visitor's Permit on arrival (no prior visa required), confirmed by the MPMC immigration authority and Samoa High Commission. The following bilateral visa waiver agreements grant nationals of specific countries entry rights (these are subsumed within the universal 90-day permit policy and do not confer additional rights above the general rule, except where a specific duration differs): (1) European Union - signed 28 May 2015, ratified/in force 15 Dec 2015, up to 90 days in any 180-day period, applies to Schengen Agreement signatories (excludes Ireland; UK exited the EU and is no longer covered); (2) Russia - signed 4 Apr 2017, in force 9 Jul 2017, up to 60 days; (3) Macau SAR - signed 28 Aug 2000, in force date of signing, up to 30 days (Macau Special Administrative Region passport holders only); (4) Israel - signed 7 Mar 2019, in force 6 Jul 2023 (confirmed: entry into force date is 90 days after the second ratification notification per Article 10 of the Agreement), up to 90 days; (5) China (PRC) - signed 23 Jan 2025, in force 2 Apr 2025 (confirmed by Chinese Embassy official notice), covers Samoan and Chinese ordinary/service/public affairs/diplomatic passports, max 30 days single stay / 90 days in any 180-day period. Hong Kong SAR passport holders: 60 days (per Wikipedia citing official source; could not independently verify from a directly accessible official Samoa government web page). Note on UK: The EU agreement applies to Schengen signatories; the UK is not in Schengen and no separate bilateral UK-Samoa visa waiver agreement was identified. UK nationals receive the universal 90-day Visitor's Permit on arrival as all other nationalities."
   },
   "outbound_official": {
     "found": true,
@@ -379,7 +384,7 @@
         "iso3": null
       },
       {
-        "name": "French West Indies — Guadeloupe and Martinique (France)",
+        "name": "French West Indies - Guadeloupe and Martinique (France)",
         "iso3": null
       },
       {
@@ -705,7 +710,7 @@
     "processing_time": "Minimum 3-year timeline: begins with temporary resident permit, progresses to permanent resident permit (with minimum 15 days per year physical presence requirement), then citizenship eligibility after 3 years.",
     "dual_citizenship_allowed": null,
     "residency_required": true,
-    "notes": "The program was established under the Citizenship Investment Act 2015 and officially launched on 31 January 2017. It is administered by the Ministry of Commerce, Industry and Labour (MCIL). As of 2025 reporting, no investor has successfully completed the process — the only application filed was subsequently withdrawn. In May 2024, Cabinet approved recommendations to amend the Act, including adding government bonds and national development fund as qualifying investment options. A stakeholder validation workshop was held on 26 September 2025 at Tanoa Hotel to develop a revised policy framework. The prior CBI-specific page at mcil.gov.ws/?page_id=2879 (old WordPress URL) no longer resolves to a CBI page — MCIL has migrated to a new Drupal site. CBI brochure PDFs from mcil.gov.ws returned 404 at time of research (June 2026). Investment amounts are drawn from secondary sources referencing the Citizenship Investment Act 2015 and Regulations 2016; they could not be independently confirmed from a directly accessible official PDF."
+    "notes": "The program was established under the Citizenship Investment Act 2015 and officially launched on 31 January 2017. It is administered by the Ministry of Commerce, Industry and Labour (MCIL). As of 2025 reporting, no investor has successfully completed the process - the only application filed was subsequently withdrawn. In May 2024, Cabinet approved recommendations to amend the Act, including adding government bonds and national development fund as qualifying investment options. A stakeholder validation workshop was held on 26 September 2025 at Tanoa Hotel to develop a revised policy framework. The prior CBI-specific page at mcil.gov.ws/?page_id=2879 (old WordPress URL) no longer resolves to a CBI page - MCIL has migrated to a new Drupal site. CBI brochure PDFs from mcil.gov.ws returned 404 at time of research (June 2026). Investment amounts are drawn from secondary sources referencing the Citizenship Investment Act 2015 and Regulations 2016; they could not be independently confirmed from a directly accessible official PDF."
   },
   "rbi": {
     "programs": [
@@ -722,81 +727,200 @@
       }
     ]
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visitor's Permit (on arrival)",
+      "purpose": "Grants all foreign nationals the right to enter Samoa for tourism, visiting family, or short-term business without a prior visa. Issued on arrival at the port of entry using the arrival card.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://samoa.org.nz/visa-passport/",
+      "notes": "Available to ALL nationalities without exception (except US Nationals of American Samoa who are exempt from the permit requirement). Visitors must: hold a passport valid for at least 6 months after intended departure date; have a return or onward ticket; hold a valid visa/permit for onward destination; have documented accommodation; provide evidence of sufficient funds; have no record of deportation; have no health problems posing a risk to Samoa; have no criminal convictions resulting in sentences of 1 year or more; not appear on any alert or warning list. Extensions beyond 90 days must be applied for at the Immigration Office in Apia before expiration. No e-visa or prior application required."
+    },
+    {
+      "category": "tourist",
+      "name": "Extended Stay Permit",
+      "purpose": "Allows foreign nationals to stay in Samoa beyond the standard 90-day Visitor's Permit, for continued tourism or personal visits.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mpmc.gov.ws/divisions/immigration/",
+      "notes": "For stays exceeding 90 days, a permit extension must be applied for at the Immigration Office in Apia before the Visitor's Permit expires. For stays exceeding 60 days obtained before arrival, a permit must also be obtained in advance from the nearest Samoa diplomatic mission (Consulate General, High Commission, or Embassy in New Zealand, Australia, New York, Tokyo, Beijing, or Belgium). Extensions while already in Samoa are handled by Samoa Immigration (MPMC - Ministry of the Prime Minister and Cabinet)."
+    },
+    {
+      "category": "business",
+      "name": "Visitor's Permit (Business, on arrival)",
+      "purpose": "Allows foreign nationals to enter Samoa for short-term business activities such as meetings, negotiations, and conferences.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://samoa.org.nz/visa-passport/",
+      "notes": "Business visitors are covered under the same universal Visitor's Permit on arrival as tourists. No separate business visa category exists for short stays under 90 days. All nationalities are eligible. Longer-term business activity requiring employment requires a Foreign Employment Permit (FEEP)."
+    },
+    {
+      "category": "work",
+      "name": "Foreign Employment Employee Permit (FEEP)",
+      "purpose": "Authorises a specific foreign national to work for a specific employer in a specific role in Samoa. Issued under Part IX of the Labour and Employment Relations Act 2013 (as amended 2023).",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mcil.gov.ws/services/employment",
+      "notes": "The employer (not the employee) must apply before the employee commences work. MCIL reviews applications against local labour market conditions. The permit is non-transferable between employers or roles. Valid for up to 3 years, subject to conditions set by the MCIL CEO. The foreign employee must also hold a valid Residence Permit (issued separately by MPMC). Contact: employmentinfo@mcil.gov.ws or +685 20 442."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit",
+      "purpose": "Authorises a foreign national to reside in Samoa for an extended period, required in conjunction with a Foreign Employment Permit for workers.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mpmc.gov.ws/divisions/immigration/",
+      "notes": "Administered by the Ministry of the Prime Minister and Cabinet (MPMC) - Immigration Division. Required alongside the FEEP for any foreigner working in Samoa. Also required as part of the Citizenship Investment Act 2015 pathway (Temporary Resident Permit stage). Detailed permit types, fees, and eligibility rules were not accessible from the MPMC website (returns HTTP 403) at time of research (June 2026). Applicants are advised to contact MPMC Immigration directly."
+    },
+    {
+      "category": "investment",
+      "name": "Temporary Resident Permit (Investment Pathway)",
+      "purpose": "First stage of the Citizenship Investment Act 2015 pathway, granted to qualifying foreign investors who invest WST 4 million or more in Samoa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mcil.gov.ws/services/industry",
+      "notes": "Administered by MCIL under the Citizenship Investment Act 2015 (launched 31 January 2017). Qualifying investments include: leasing/developing government lands; processing/manufacturing of agricultural or fishery products; tourism hotel/resort development; ICT; renewable electricity generation; or other services not restricted under the Foreign Investment Act 2000. The pathway progresses from Temporary Resident Permit → Permanent Resident Permit (minimum 15 days per year physical presence required) → citizenship eligibility after 3 years. No investor has completed the process as of June 2026."
+    }
+  ],
   "fast_track": {
     "programs": []
   },
   "agreements": [
-    "PICTA (Pacific Island Countries Trade Agreement) — trade in goods among Pacific Forum Island Countries",
-    "PACER Plus — Free Trade Agreement with Australia, New Zealand and Forum Island Countries (in force 13 December 2020)"
+    "PICTA (Pacific Island Countries Trade Agreement) - trade in goods among Pacific Forum Island Countries",
+    "PACER Plus - Free Trade Agreement with Australia, New Zealand and Forum Island Countries (in force 13 December 2020)"
   ],
   "official_domains": [
     "mfat.gov.ws",
     "mcil.gov.ws",
-    "mpmc.gov.ws"
+    "mpmc.gov.ws",
+    "samoagovt.ws"
   ],
   "conditional_access": [],
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTION: Israel visa waiver — prior record stated 'entered into force 6 Jul 2023'; the official MFAT Visa Waiver Agreements PDF (re-scraped June 2026) explicitly states the Israel agreement is 'Yet to be ratified due to political situation in Israel'. The prior record's in-force date of 6 Jul 2023 is not supported by any accessible official Samoa government source and has been removed. Samoa High Commission news article confirms it was only signed in 2019 with no ratification confirmed.",
-      "CORRECTION: CBI official_url updated from mcil.gov.ws/?page_id=2879 (old WordPress URL, now redirects to homepage) to mcil.gov.ws/services/industry (current MCIL industry/investment page on new Drupal site).",
-      "CONFIRMED: Universal visa-free policy for all nationalities for up to 60 days — re-verified against the official MFAT PDF via Firecrawl scrape in June 2026. No change required.",
-      "CONFIRMED: China (PRC) visa waiver (signed 23 Jan 2025, in force 2 Apr 2025) is valid per Chinese Embassy official notice; ordinary passports covered; max 30 days single stay / 90 days per 180 days.",
-      "CONFIRMED: EU (90 days), Russia (60 days), Macau (60 days) visa waivers confirmed from official MFAT PDF re-scraped June 2026.",
-      "NOTE: No ETA or e-visa scheme found on any official Samoa government source. Aggregator claims of an 'ETA for some nationalities' could not be verified from official sources and are not included in visa_policy.",
-      "NOTE: CBI minimum investment threshold of WST 4 million confirmed by multiple secondary sources referencing the Act; a proposal to reduce to WST 2 million was made by Samoa Chamber of Commerce in October 2025 but not enacted as of June 2026."
+      "2026-06-29 RE-VALIDATION: CRITICAL CORRECTION — max_stay_days updated from 60 to 90 days. The MPMC (Ministry of the Prime Minister and Cabinet) immigration authority and the Samoa High Commission (samoa.org.nz/visa-passport/) both confirm that all foreign passport holders are issued a gratis 90-day Visitor's Permit upon arrival. The previous 60-day figure came from the MFAT Entry Requirements PDF (binary-unreadable, dated July 2021) and referred to a 'no permit required' threshold; the actual permit issued on arrival is for 90 days. Source: samoa.org.nz/visa-passport/ (official Samoa High Commission NZ) and MPMC immigration search result snippet from mpmc.gov.ws.",
+      "2026-06-29 RE-VALIDATION: Israel visa waiver status UPGRADED from 'gap/uncertain' to CONFIRMED IN FORCE. The Israel-Samoa visa waiver agreement (signed 7 March 2019) entered into force on 6 July 2023, confirmed by: (1) the Samoa High Commission (samoa.org.nz) article detailing Article 10 of the Agreement (entry into force 90 days after second ratification notification); (2) Wikipedia (Visa policy of Samoa) citing the 6 July 2023 in-force date with references; (3) multiple secondary aggregators cross-referencing this date. No directly accessible official Samoa government page explicitly confirms the 6 July 2023 date (samoagovt.ws returns 307 redirect; mpmc.gov.ws returns 403), but the convergence of the Samoa High Commission's own article (interpreting Article 10) and multiple cross-referenced secondary sources provides sufficient basis to move this from 'gap' to confirmed, with a note about the indirect confirmation method. Duration: 90 days.",
+      "2026-06-29 RE-VALIDATION: China-Samoa visa waiver (signed 23 Jan 2025, in force 2 Apr 2025) re-confirmed from Chinese Embassy official notice (ws.china-embassy.gov.cn) and samoagovt.ws joint press release. No change required to classification or dates.",
+      "2026-06-29 RE-VALIDATION: Universal 90-day Visitor's Permit on arrival confirmed by MPMC (via search snippet) and Samoa High Commission (samoa.org.nz/visa-passport/) — fetched directly June 2026. MFAT visas page (mfat.gov.ws/visas/) confirmed live with three PDFs listed; PDFs remain binary-unreadable. samoa.travel (official tourism) re-confirmed entry requirements consistent with 90-day permit.",
+      "2026-06-27 RE-VALIDATION (PRIOR): EU (90 days/180-day period, in force 15 Dec 2015), Russia (60 days, in force 9 Jul 2017), Macau (30 days, in force 2000) visa waivers: still reflected in the MFAT List of Visa Waiver Agreements PDF (URL active). No change to existing records.",
+      "PRIOR NOTE (June 2026): CBI official_url updated from mcil.gov.ws/?page_id=2879 (old WordPress URL) to mcil.gov.ws/services/industry (current Drupal site). No change this run.",
+      "PRIOR NOTE (June 2026): No ETA or e-visa scheme found on any official Samoa government source. This remains the case after June 2026 re-validation."
     ],
     "gaps": [
-      "Israel visa waiver: MFAT's official PDF (re-scraped June 2026) states the agreement is not yet ratified. Secondary sources suggest ratification may have occurred in 2023, but no official Samoa government source confirms in-force date. Marked as 'signed only' in notes pending official confirmation.",
-      "UK post-Brexit status: The EU visa waiver was signed referencing 28 EU member states (2015). The UK left the EU in 2020. No official Samoa government announcement on whether UK nationals retain or lost visa-free treatment under this agreement was found.",
+      "Israel visa waiver in-force date (6 Jul 2023) confirmed via Samoa High Commission's interpretation of Article 10 of the Agreement and multiple secondary aggregators; however, no directly loadable official Samoa government web page (mfat.gov.ws, mpmc.gov.ws, samoagovt.ws) provided explicit in-force date confirmation during this validation run (samoagovt.ws returns 307 redirect; mpmc.gov.ws returns 403). Confidence is high but indirect.",
+      "UK post-Brexit status: The EU visa waiver was signed for Schengen Agreement signatories; the UK is NOT in Schengen and is therefore NOT covered by the EU-Samoa visa waiver. No separate bilateral UK-Samoa visa waiver agreement was identified. UK nationals receive the universal 90-day Visitor's Permit on arrival. This interpretation is based on Wikipedia's description ('Schengen Agreement signatories') and the absence of any separate UK bilateral waiver; it has not been independently confirmed by a directly accessible official Samoa government source.",
+      "Hong Kong SAR passport holders: Wikipedia states 60 days (different from the 90-day universal rule). This may reflect a specific arrangement or an error in the secondary source. Could not verify from a directly accessible official Samoa government page.",
       "CBI investment amounts: The MCIL website has migrated to a new Drupal platform; CBI brochure PDFs previously linked returned 404. The WST 4 million minimum is widely cited in secondary sources but could not be independently confirmed from a directly accessible official PDF as of June 2026.",
       "Dual citizenship allowance under the CBI program: Not confirmed from any accessible official source.",
-      "MPMC immigration page (mpmc.gov.ws/divisions/immigration/permits-2/): Returns HTTP 403; detailed permit rules and any nationality-specific conditions could not be verified.",
+      "MPMC immigration page (mpmc.gov.ws/divisions/immigration/ and mpmc.gov.ws/divisions/immigration/permits-2/): Both return HTTP 403; detailed permit rules and any nationality-specific conditions could not be verified by direct page fetch.",
       "No official e-visa or ETA portal was found for Samoa; aggregator claims of a Samoa ETA/e-visa for certain nationalities could not be verified against official government sources.",
       "No official digital nomad, talent, or fast-track skilled visa scheme found on official Samoa government sources.",
-      "Conditional access (credential-based entry, OCI/diaspora, diplomatic/service-only passport waivers): No such rules found on any official Samoa government source. Samoa's stated entry policy is universal visa-free for all nationalities. No diplomatic-only or service-passport-only bilateral visa suppression agreements were identified."
+      "American Samoa 7-day free entry trial: A October 2023 Samoa government press release mentioned a trial for 7-day free entry between independent Samoa and American Samoa. Current status (whether extended, made permanent, or discontinued) could not be confirmed from official sources."
     ]
   },
   "sources_checked": [
     {
       "url": "https://www.mfat.gov.ws/visas/",
-      "description": "Samoa Ministry of Foreign Affairs and Trade — Visas page (official); re-checked June 2026",
+      "description": "Samoa Ministry of Foreign Affairs and Trade - Visas page (official); re-checked June 2026 (page loads, lists three PDF resources: Entry Requirements, Visa Waiver Agreements, Visa Requirements for Samoa Citizens). Re-fetched June 2026 - no change.",
       "official": true
     },
     {
       "url": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Entry-requirements-into-Samoa.pdf",
-      "description": "Official MFAT PDF — Entry requirements into Samoa; re-scraped via Firecrawl June 2026 — confirms all nationalities visa-free for <60 days",
+      "description": "Official MFAT PDF - Entry requirements into Samoa (created July 8, 2021 per metadata); URL active June 2026 but PDF is binary-unreadable via WebFetch. Referenced '60 days' threshold - now superseded by MPMC and Samoa High Commission confirmation of 90-day Visitor's Permit on arrival.",
       "official": true
     },
     {
       "url": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/List-of-Visa-waiver-Agreements.pdf",
-      "description": "Official MFAT PDF — List of Visa Waiver Agreements; re-scraped via Firecrawl June 2026 — lists EU, Russia, Macau, Israel (not yet ratified); China not yet added",
+      "description": "Official MFAT PDF - List of Visa Waiver Agreements (created July 8, 2021 per metadata); URL active June 2026 but PDF is binary-unreadable via WebFetch. Lists EU, Russia, Macau, Israel (as of PDF creation date; China not yet reflected as it was signed Jan 2025).",
       "official": true
     },
     {
-      "url": "https://www.mcil.gov.ws/services/industry",
-      "description": "Samoa Ministry of Commerce, Industry and Labour — Industry & Investment page (official, new Drupal site); confirmed live June 2026",
-      "official": true
-    },
-    {
-      "url": "https://mcil.gov.ws/stakeholder-validation-workshop-development-of-the-policy-framework-for-the-citizenship-investment-program/",
-      "description": "MCIL — Stakeholder Validation Workshop for CBI Policy Framework (September 2025); official",
-      "official": true
-    },
-    {
-      "url": "https://ws.china-embassy.gov.cn/eng/lsfw_142098/zytz_142073/202503/t20250314_11574531.htm",
-      "description": "Embassy of the People's Republic of China in Samoa — Official notice on China-Samoa Mutual Visa Exemption Agreement entering force 2 Apr 2025; covers diplomatic/official/ordinary Samoan passports and diplomatic/service/public affairs/ordinary Chinese passports, max 30 days single stay / 90 days per 180 days",
+      "url": "https://samoa.org.nz/visa-passport/",
+      "description": "Samoa High Commission (New Zealand) - Immigration & Consular Services page (official Samoa High Commission); fetched June 2026; confirms 90-day gratis Visitor's Permit on arrival for all foreign passport holders, entry requirements including passport validity, return ticket, accommodation, funds, no deportation history, no criminal record. Key source for 90-day correction.",
       "official": true
     },
     {
       "url": "https://samoa.org.nz/news/israel-and-samoa-sign-visa-waiver-agreement-in-jerusalem/",
-      "description": "Samoa High Commission (NZ) — article on Israel-Samoa visa waiver agreement signing in 2019; notes agreement not yet ratified due to political situation in Israel",
+      "description": "Samoa High Commission (NZ) - 2019 article on Israel-Samoa visa waiver agreement signing; Article 10 details the entry into force mechanism (90 days after second ratification notification). Combined with search results confirming 6 Jul 2023 as the in-force date. Re-fetched June 2026.",
+      "official": true
+    },
+    {
+      "url": "https://ws.china-embassy.gov.cn/eng/lsfw_142098/zytz_142073/202503/t20250314_11574531.htm",
+      "description": "Embassy of the People's Republic of China in Samoa - Official notice on China-Samoa Mutual Visa Exemption Agreement entering force 2 Apr 2025; re-confirmed readable June 2026; covers diplomatic/official/ordinary Samoan passports and diplomatic/service/public affairs/ordinary Chinese passports, max 30 days single stay / 90 days per 180 days.",
+      "official": true
+    },
+    {
+      "url": "https://mpmc.gov.ws/pr-agreement-between-the-government-of-samoa-and-the-government-of-the-peoples-republic-of-china-on-mutual-visa-exemption/",
+      "description": "MPMC (official Samoa government) press release on China-Samoa mutual visa exemption agreement; URL confirmed via search results June 2026 but page returns HTTP 403 on direct fetch.",
+      "official": true
+    },
+    {
+      "url": "https://www.samoagovt.ws/2025/01/joint-press-release-agreement-between-the-government-of-samoa-and-the-government-of-the-peoples-republic-of-china-on-mutual-visa-exemption/",
+      "description": "Official Samoa Government (samoagovt.ws) joint press release on China-Samoa visa exemption; fetched June 2026 - confirms agreement signed 23 January 2025; does not specify in-force date or passport details (in-force date from Chinese Embassy notice).",
+      "official": true
+    },
+    {
+      "url": "https://www.samoa.travel/samoa-travel-advice/when-you-arrive-in-samoa/",
+      "description": "Samoa Tourism Authority - official Samoa travel information; re-fetched June 2026; confirms no entry permit required for stays under 60 days, passport must be valid 6 months, return ticket required. Note: references 60-day threshold consistent with MFAT PDF but 90-day actual permit confirmed by MPMC/High Commission.",
       "official": true
     },
     {
       "url": "https://mpmc.gov.ws/divisions/immigration/",
-      "description": "Ministry of the Prime Minister and Cabinet — Immigration Division (official); page metadata confirmed (last modified 2026-03-01) but main content not extracted",
+      "description": "Ministry of the Prime Minister and Cabinet - Immigration Division (official); returns HTTP 403 on direct fetch June 2026. Search result snippets from this domain confirm 90-day Visitor's Permit on arrival.",
       "official": true
+    },
+    {
+      "url": "https://www.mcil.gov.ws/services/industry",
+      "description": "Samoa Ministry of Commerce, Industry and Labour - Industry & Investment page (official, Drupal site); confirmed live June 2026.",
+      "official": true
+    },
+    {
+      "url": "https://www.mcil.gov.ws/services/employment",
+      "description": "Samoa MCIL - Foreign Employment Employee Permit (FEEP) page (official); confirms FEEP valid up to 3 years, employer-initiated, non-transferable.",
+      "official": true
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Samoa",
+      "description": "Wikipedia - Visa policy of Samoa; re-fetched June 2026; states Israel agreement entered into force 6 Jul 2023 (90 days), China effective Apr 2, 2025 (30 days/90 days per 180), EU 90 days (Schengen signatories), Russia 60 days, Macau 30 days, all visitors 90-day permit on arrival, Hong Kong 60 days. Secondary source only.",
+      "official": false
     }
   ]
 }

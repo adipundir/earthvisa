@@ -13,7 +13,7 @@
         "nationality": "United Kingdom nationals visiting Sinai Peninsula resorts only",
         "iso3": "GBR",
         "max_stay_days": 15,
-        "notes": "Free entry permission stamp granted upon arrival. Valid ONLY for Sharm El Sheikh, Dahab, Nuweiba and Taba resorts. Travellers intending to go outside these areas MUST obtain a visa. The consulate visa page states 15 days; the consulate FAQ page states 14 days — a discrepancy between two pages of the same source; 15 days is used here per the primary visas page.",
+        "notes": "Free entry permission stamp granted upon arrival. Valid ONLY for Sharm El Sheikh, Dahab, Nuweiba and Taba resorts. Travellers intending to go outside these areas MUST obtain a visa. The consulate visa page states 15 days; the consulate FAQ page states 14 days - a discrepancy between two pages of the same source; 15 days is used here per the primary visas page.",
         "source_url": "https://egyptconsulate.co.uk/visas/",
         "source_official": true
       },
@@ -143,7 +143,7 @@
         "nationality": "Serbia",
         "iso3": "SRB",
         "max_stay_days": 30,
-        "notes": "Visa on arrival available at any Egyptian port of entry. Confirmed by multiple corroborating sources as of 2026. Single entry $30. Maximum stay 30 days. Not in prior record — added in this validation.",
+        "notes": "Visa on arrival available at any Egyptian port of entry. Confirmed by multiple corroborating sources as of 2026. Single entry $30. Maximum stay 30 days. Not in prior record - added in this validation.",
         "source_url": "https://egyptconsulate.co.uk/faq/",
         "source_official": true
       },
@@ -151,7 +151,7 @@
         "nationality": "Ukraine",
         "iso3": "UKR",
         "max_stay_days": 30,
-        "notes": "Visa on arrival available at any Egyptian port of entry. Confirmed by multiple corroborating sources as of 2026. Single entry $30. Maximum stay 30 days. Not in prior record — added in this validation.",
+        "notes": "Visa on arrival available at any Egyptian port of entry. Confirmed by multiple corroborating sources as of 2026. Single entry $30. Maximum stay 30 days. Not in prior record - added in this validation.",
         "source_url": "https://egyptconsulate.co.uk/faq/",
         "source_official": true
       }
@@ -417,7 +417,7 @@
         "nationality": "Iraq",
         "iso3": "IRQ",
         "max_stay_days": 30,
-        "notes": "Single entry $30, multiple entry $65 (fees updated April 2026). Tourist visa only. Max stay per entry 30 days. Note: Iraqi nationals are listed as requiring pre-approval before visa issuance at some sources — verify current status.",
+        "notes": "Single entry $30, multiple entry $65 (fees updated April 2026). Tourist visa only. Max stay per entry 30 days.",
         "source_url": "https://visa2egypt.gov.eg/eVisa/FAQ",
         "source_official": true
       },
@@ -497,7 +497,7 @@
         "nationality": "Malaysia",
         "iso3": "MYS",
         "max_stay_days": 30,
-        "notes": "Single entry $30, multiple entry $65 (fees updated April 2026). Tourist visa only. Max stay per entry 30 days. Note: Egypt Consulate UK FAQ also states Malaysians can stay up to 2 weeks without a visa — the more restrictive and formal e-visa route is retained here pending official clarification from Egyptian government.",
+        "notes": "Single entry $30, multiple entry $65 (fees updated April 2026). Tourist visa only. Max stay per entry 30 days. Note: Egypt Consulate UK FAQ also states Malaysians can stay up to 2 weeks without a visa - the more restrictive and formal e-visa route is retained here pending official clarification from Egyptian government.",
         "source_url": "https://visa2egypt.gov.eg/eVisa/FAQ",
         "source_official": true
       },
@@ -665,7 +665,7 @@
         "nationality": "Singapore",
         "iso3": "SGP",
         "max_stay_days": 30,
-        "notes": "Single entry $30, multiple entry $65 (fees updated April 2026). Tourist visa only. Max stay per entry 30 days.",
+        "notes": "Single entry $30, multiple entry $65 (fees updated April 2026). Tourist visa only. Max stay per entry 30 days. Note: Singapore diplomatic passport holders have a separate bilateral visa-free exemption (90 days) under conditional_access.",
         "source_url": "https://visa2egypt.gov.eg/eVisa/FAQ",
         "source_official": true
       },
@@ -770,6 +770,14 @@
         "iso3": "VEN",
         "max_stay_days": 30,
         "notes": "Single entry $30, multiple entry $65 (fees updated April 2026). Tourist visa only. Max stay per entry 30 days.",
+        "source_url": "https://visa2egypt.gov.eg/eVisa/FAQ",
+        "source_official": true
+      },
+      {
+        "nationality": "Vietnam",
+        "iso3": "VNM",
+        "max_stay_days": 30,
+        "notes": "Single entry $30, multiple entry $65. Tourist visa only. Max stay per entry 30 days. Added 2026-06-27 after confirmation on official Egypt e-visa portal (visa2egypt.gov.eg/eVisa/FAQ).",
         "source_url": "https://visa2egypt.gov.eg/eVisa/FAQ",
         "source_official": true
       }
@@ -1176,23 +1184,34 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTION: e-visa max_stay_days field updated from null to 30. The e-visa grants a stay of up to 30 days per entry. Single-entry e-visa is valid for 90 days from issue date; multiple-entry is valid 180 days from issue date. These validity windows were previously not recorded — only the 30-day max stay is the correct max_stay_days value.",
-      "CORRECTION: e-visa fees updated. As of April 2026, Egypt's official visa2egypt.gov.eg portal lists single-entry tourist e-visa at $30 and multiple-entry at $65 — both increased by $5 from prior $25/$60 rates. The prior record already had $30/$65 in notes but did not specify the fee change date. Notes now reference April 2026 fee update explicitly.",
+      "CORRECTION: e-visa max_stay_days field updated from null to 30. The e-visa grants a stay of up to 30 days per entry. Single-entry e-visa is valid for 90 days from issue date; multiple-entry is valid 180 days from issue date. These validity windows were previously not recorded - only the 30-day max stay is the correct max_stay_days value.",
+      "CORRECTION: e-visa fees updated. As of April 2026, Egypt's official visa2egypt.gov.eg portal lists single-entry tourist e-visa at $30 and multiple-entry at $65 - both increased by $5 from prior $25/$60 rates. The prior record already had $30/$65 in notes but did not specify the fee change date. Notes now reference April 2026 fee update explicitly.",
       "CORRECTION: Visa on arrival fee increased. Single-entry visa on arrival fee increased from $25 to $30 effective 1 March 2026 per visasnews.com reporting official airport sticker surcharge. Updated in VoA entry notes.",
       "CORRECTION: Two new VoA nationalities added: Serbia (SRB) and Ukraine (UKR). Both confirmed by Egypt Consulate UK FAQ page (January 2026) and multiple corroborating aggregator sources. These were absent from the prior record.",
       "CORRECTION: Russia added to VoA list. Egypt Consulate UK FAQ page lists Russian Federation as eligible for visa on arrival. Previously only listed in e_visa section.",
       "CORRECTION: 'Macedonia' renamed to 'North Macedonia' in e_visa list to use correct current country name (consistent with VoA entry).",
-      "VERIFIED: Sinai resort stamp duration of 15 days is used per the egypt consulate UK visas page. The FAQ page of the same consulate states 14 days — this discrepancy was noted in entry notes.",
-      "VERIFIED: Conditional access entries (credential-based VoA for holders of US/UK/Schengen/Canada/Australia/Japan/New Zealand visas/permits) remain unchanged — no official Egyptian government .gov.eg primary URL found for the December 2020 decree but multiple embassy sources corroborate it.",
-      "VERIFIED: CBI program details unchanged — GAFI official URL confirmed still active.",
-      "VERIFIED: Diplomatic passport exemptions for SAU (sis.gov.eg, March 2026) and SGP (mfa.gov.sg, June 2024) remain confirmed."
+      "VERIFIED: Sinai resort stamp duration of 15 days is used per the egypt consulate UK visas page. The FAQ page of the same consulate states 14 days - this discrepancy was noted in entry notes.",
+      "VERIFIED: Conditional access entries (credential-based VoA for holders of US/UK/Schengen/Canada/Australia/Japan/New Zealand visas/permits) remain unchanged - no official Egyptian government .gov.eg primary URL found for the December 2020 decree but multiple embassy sources corroborate it.",
+      "VERIFIED: CBI program details unchanged - GAFI official URL confirmed still active.",
+      "VERIFIED: Diplomatic passport exemptions for SAU (sis.gov.eg, March 2026) and SGP (mfa.gov.sg, June 2024) remain confirmed.",
+      "CORRECTION 2026-06-27: Vietnam (VNM) added to e_visa list. Confirmed on official Egypt e-visa portal (visa2egypt.gov.eg/eVisa/FAQ) on 2026-06-27. Country was not previously listed in any visa_policy category. E-visa single entry $30, multiple $65, max stay 30 days.",
+      "CORRECTION 2026-06-27: Singapore (SGP) added to e_visa list for ordinary passport holders. Confirmed on official Egypt e-visa portal (visa2egypt.gov.eg/eVisa/FAQ) on 2026-06-27. Country was only listed under conditional_access (diplomatic passport bilateral exemption) - ordinary SGP passport holders are eligible for e-visa. E-visa single entry $30, multiple $65, max stay 30 days.",
+      "VERIFIED 2026-06-27: VoA fee of $30 (effective 1 March 2026) re-confirmed via VisasNews report citing official Egyptian airport sticker surcharge. Egypt Consulate UK FAQ still shows $25 - that page is outdated; the $30 figure in the record is correct.",
+      "VERIFIED 2026-06-27: All VoA nationalities (UK, EU, USA, Australia, Canada, Japan, South Korea, New Zealand, Norway, Croatia, Georgia, North Macedonia, Russia, Serbia, Ukraine) re-confirmed via egyptconsulate.co.uk/faq/ and egyptconsulate.co.uk/visas/.",
+      "VERIFIED 2026-06-27: E-visa eligible country list re-confirmed at 99 countries per official portal. All existing entries verified present. Vietnam and Singapore are newly confirmed additions.",
+      "CORRECTION 2026-06-29: Duplicate Singapore (SGP) entry removed from e_visa list. Two entries existed for Singapore - the first (alphabetically sorted, lines 664-671) and the second appended at end (lines 784-791). Merged into single entry with full notes including diplomatic passport reference. Source: visa2egypt.gov.eg/eVisa/FAQ.",
+      "CORRECTION 2026-06-29: Iraq (IRQ) e-visa entry note revised. Prior note flagged Iraqi nationals as 'requiring pre-approval at some sources'. The authoritative list of nationalities requiring pre-approval on egyptembassy.net lists: Afghanistan, Ethiopia, Iran, Israel, Mali, Niger, Palestine, Sudan, Syria, and Travel Document holders - Iraq is NOT on this list. The unsubstantiated Iraq pre-approval caveat has been removed. Iraq remains in e_visa list as originally sourced from visa2egypt.gov.eg.",
+      "VERIFIED 2026-06-29: Canada VoA and e-visa status confirmed correct. Egypt lifted pre-entry visa requirements for Canadians effective December 1, 2024 (announced by Egyptian Foreign Ministry October 14, 2024, confirmed by sis.gov.eg). Canada's presence in both VoA and e_visa lists is accurate.",
+      "VERIFIED 2026-06-29: VoA nationalities list re-confirmed via egyptconsulate.co.uk/visas/ and egyptconsulate.co.uk/faq/. Confirmed: UK, EU members, USA, Australia, Croatia, Georgia, Japan, Canada, New Zealand, Norway, North Macedonia, Republic of Korea, Russia, Serbia, Ukraine. All match current record.",
+      "VERIFIED 2026-06-29: E-visa country list re-confirmed on official portal (visa2egypt.gov.eg/eVisa/FAQ). All currently listed nationalities verified present. Portal still shows 'Macedonia' (not 'North Macedonia') - the record's use of 'North Macedonia' is the correct ISO name.",
+      "VERIFIED 2026-06-29: Pre-approval required list (not eligible for standard e-visa/VoA): Afghanistan, Ethiopia, Iran, Israel, Mali, Niger, Palestine, Sudan, Syria, and Travel Document holders - confirmed on egyptembassy.net. This is unchanged."
     ],
     "gaps": [
       "Credential-based VoA rule (December 2020 decree): The rule allowing holders of valid and used visas from US/UK/Schengen/Canada/Australia/Japan/New Zealand to obtain visa on arrival was announced by Egypt's Ministry of Tourism and Antiquities on 15-17 December 2020. No permanent official Egyptian government .gov.eg URL publishing this rule was found; recorded under conditional_access based on multiple corroborating embassy and aggregator sources.",
-      "Diplomatic passport exemption list — comprehensive: Only two bilateral agreements were confirmed from official sources (Egypt-Saudi Arabia from sis.gov.eg dated 19 March 2026; Singapore-Egypt from mfa.gov.sg dated 1 June 2024). Many other countries (Greece, India, Brazil, Austria, Philippines, etc.) may have diplomatic/official/service passport exemptions per Timatic/Wikipedia but no official Egyptian government page listing all such agreements was accessible (mofa.gov.eg DNS was not resolvable).",
+      "Diplomatic passport exemption list - comprehensive: Only two bilateral agreements were confirmed from official sources (Egypt-Saudi Arabia from sis.gov.eg dated 19 March 2026; Singapore-Egypt from mfa.gov.sg dated 1 June 2024). Many other countries (Greece, India, Brazil, Austria, Philippines, etc.) may have diplomatic/official/service passport exemptions per Timatic/Wikipedia but no official Egyptian government page listing all such agreements was accessible (mofa.gov.eg DNS was not resolvable).",
       "Malaysia visa-free status: Egypt Consulate UK FAQ page states Malaysian nationals can stay up to 2 weeks without a visa. However, Malaysia is also listed on the official e-visa portal (visa2egypt.gov.eg). No official .gov.eg page was found confirming Malaysia's visa-free status definitively. Malaysia is retained in e_visa list pending official clarification; the reported visa-free status (14 days) should be verified against an official Egyptian government source.",
       "GCC nationals visa-free entry: Multiple aggregator sources state GCC nationals (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE) may enter Egypt visa-free for up to 90 days, and GCC residents of any nationality may obtain VoA. No official Egyptian government page was found confirming this specific rule. Not recorded until confirmed from an official .gov.eg or equivalent source.",
-      "Max stay days for e-Visa: The official visa2egypt.gov.eg FAQ page does not explicitly state the 30-day maximum stay in the retrieved text — this figure comes from corroborating travel sources and search result synthesis. Visa validity periods (90/180 days) are confirmed; the 30-day per-entry limit should be verified directly on the portal.",
+      "Max stay days for e-Visa: The official visa2egypt.gov.eg FAQ page does not explicitly state the 30-day maximum stay in the retrieved text - this figure comes from corroborating travel sources and search result synthesis. Visa validity periods (90/180 days) are confirmed; the 30-day per-entry limit should be verified directly on the portal.",
       "VoA multiple-entry fee: As of March 2026 the VoA single-entry fee increased to $30. The multiple-entry VoA fee was reported as still $60 as of that date but may have subsequently changed. Not updated pending official confirmation.",
       "OCI (Overseas Citizen of India) cards: No evidence found from any official source that OCI cardholders receive any special entry treatment to Egypt beyond what Indian passport holders receive.",
       "Residence by Investment (RBI) specific program details: Non-official sources cite a residence-by-investment scheme starting at USD 50,000 under a 2020 regulation, but no official government page confirming current RBI program terms (amounts, duration, conditions) was found.",
@@ -1205,6 +1224,7 @@
   },
   "sources_checked": [
     "https://visa2egypt.gov.eg/eVisa/FAQ?lang=en",
+    "https://visa2egypt.gov.eg/eVisa/FAQ",
     "https://visa2egypt.gov.eg/eVisa/Home?lang=en",
     "https://www.gafi.gov.eg/English/Howcanwehelp/Pages/Egyptian-Citizenship.aspx",
     "https://www.investinegypt.gov.eg/PublishingImages/Lists/We%20Can%20Help/AllItems/Introduction%20and%20Content.PDF",
@@ -1221,6 +1241,9 @@
     "https://visasnews.com/en/egypt-raises-tourist-e-visa-fees/",
     "https://evisa-egypt.info/egypt-visa-on-arrival/",
     "https://www.agatetravel.com/egypt/visa-on-arrival.html",
-    "https://alrahhal.net/en/egypt-visa-on-arrival/"
+    "https://alrahhal.net/en/egypt-visa-on-arrival/",
+    "https://www.visa2egypt.gov.eg/eVisa/FAQ?VISTK=EA7B-JNK2-HDXE-ULXC-OZUX-US2Z-J5FO-U6WX-5NMB-BR7H-BML6-I1MJ-1DO3-LA24-PL0D-660H",
+    "https://egyptembassy.net/consular-services/visas-travel/6874-2/",
+    "https://www.sis.gov.eg/Story/196408/Egypt-cancels-pre-entry-visa-requirements-for-Canadians?lang=en-uk"
   ]
 }

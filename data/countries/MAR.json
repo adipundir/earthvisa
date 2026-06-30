@@ -6,6 +6,14 @@
   "visa_policy": {
     "visa_free": [
       {
+        "nationality": "Albania",
+        "iso3": "ALB",
+        "max_stay_days": null,
+        "notes": "Visa-free for ordinary passport holders effective 1 March 2025. Morocco unilaterally lifted visa requirements during the official visit of Albanian FM Igli Hasani to Rabat on 1 March 2025; announced in the joint declaration signed by Moroccan FM Nasser Bourita and Albanian FM Hasani. Not reciprocal - Moroccan nationals still require a visa for Albania. No stay duration stated in available official sources.",
+        "source_url": "https://diplomatie.ma/en/joint-declaration-between-kingdom-morocco-and-republic-albania",
+        "source_official": true
+      },
+      {
         "nationality": "Algeria",
         "iso3": "DZA",
         "max_stay_days": null,
@@ -57,8 +65,8 @@
         "nationality": "Azerbaijan",
         "iso3": "AZE",
         "max_stay_days": 90,
-        "notes": "Visa exemption agreement entered into force 28 August 2024; 90-day stay. Added per official MFA announcement and news coverage; ordinary passport holders.",
-        "source_url": "https://diplomatie.ma/en/visa-exemption-agreement-between-morocco-kazakhstan-takes-effect",
+        "notes": "Visa exemption agreement signed in Banjul on 4 May 2024; entered into force 28 August 2024. Stay up to 90 days for tourism, passport must be valid minimum 180 days from date of entry. Covers ordinary passport holders. Sourced from AZERTAC (official Azerbaijani state news agency).",
+        "source_url": "https://azertag.az/en/xeber/visa_exemption_agreement_between_morocco_and_azerbaijan_to_take_effect_on_august_28-3131354",
         "source_official": true
       },
       {
@@ -401,7 +409,7 @@
         "nationality": "Mali",
         "iso3": "MLI",
         "max_stay_days": null,
-        "notes": "Visa-free. Previously required AEVM (Electronic Travel Authorization). AEVM requirement lifted 27 April 2026 — Mali now has plain visa-free entry with no AEVM needed.",
+        "notes": "Visa-free. Previously required AEVM (Electronic Travel Authorization). AEVM requirement lifted 27 April 2026 - Mali now has plain visa-free entry with no AEVM needed.",
         "source_url": "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc",
         "source_official": true
       },
@@ -513,7 +521,7 @@
         "nationality": "Puerto Rico",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Listed as Porto-Rico on official page; US territory — holders travel on US passports (USA already listed separately)",
+        "notes": "Listed as Porto-Rico on official page; US territory - holders travel on US passports (USA already listed separately)",
         "source_url": "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc",
         "source_official": true
       },
@@ -719,6 +727,7 @@
       "https://diplomatie.ma/en/launch-electronic-visa-evisa",
       "https://diplomatie.ma/en/statement-nationals-new-countries-will-benefit-electronic-visa-evisa",
       "https://diplomatie.ma/en/visa-exemption-agreement-between-morocco-kazakhstan-takes-effect",
+      "https://diplomatie.ma/en/joint-declaration-between-kingdom-morocco-and-republic-albania",
       "https://diplomatie.ma/en/visiting-morocco",
       "https://www.acces-maroc.ma/"
     ],
@@ -1029,6 +1038,158 @@
       "source_official": true
     }
   ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Short-Stay Visa (Visa de Court Séjour)",
+      "purpose": "Tourism, leisure, and short visits to Morocco for nationals not exempt from visa requirements. Required for stays up to 90 days for visa-obligated nationalities.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulat.ma/en/ordinary-visas",
+      "notes": "Applied for at a Moroccan embassy or consulate. Most Western nationals receive visa-free access instead. Processing times are approximately 5-10 business days per unofficial sources. Official fees and processing times not available from official sources due to WAF access restrictions on consulat.ma."
+    },
+    {
+      "category": "business",
+      "name": "Business Short-Stay Visa",
+      "purpose": "For foreign nationals visiting Morocco for business meetings, commercial activities, or professional visits of short duration not requiring work authorization.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulat.ma/en/ordinary-visas",
+      "notes": "Applied for at a Moroccan embassy or consulate. Many nationalities receive visa-free entry for business purposes (e.g., German, UK, US, Canadian nationals for up to 90 days). This visa is for visa-obligated nationals conducting business activities. Official fees not published on accessible official sources."
+    },
+    {
+      "category": "work",
+      "name": "Work/Employment Long-Stay Visa",
+      "purpose": "For foreign nationals intending to take up paid employment in Morocco. Applicants require a work contract from a Moroccan employer and approval from the National Agency for the Promotion of Employment and Skills (ANAPEC).",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulat.ma/en/ordinary-visas",
+      "notes": "Long-stay visa (visa de long séjour). After arrival, holders must obtain a Certificat d'Immatriculation (residence permit) from the Bureau des Etrangers of the local police prefecture or Commissariat Central within 90 days. Requires an employer-signed work contract and ANAPEC endorsement for most nationalities."
+    },
+    {
+      "category": "student",
+      "name": "Student Long-Stay Visa",
+      "purpose": "For foreign nationals admitted to a Moroccan educational institution for studies of more than 90 days duration. Requires proof of enrollment in a recognized Moroccan institution.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulat.ma/en/ordinary-visas",
+      "notes": "Long-stay visa (visa de long séjour - étudiant). Requires university or school acceptance letter, proof of financial means for the duration of study, and accommodation proof. After arrival, holders must register for a residence permit (Certificat d'Immatriculation)."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Long-Stay Visa",
+      "purpose": "For foreign nationals intending to invest in Morocco, requiring a recommendation from official investment authorities including Regional Centers of Investment (C.R.I.) or the Management of External Investments.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulat.ma/en/ordinary-visas",
+      "notes": "Requires recommendation from the Management of External Investments, a professional federation, a proper authority for supervision, Regional Centers of Investment (C.R.I.), or a Moroccan partner or foreign investor branch in Morocco. No formal minimum investment threshold is published on official sources. This is a long-stay visa within the ordinary visa framework, not a golden visa or CBI program."
+    },
+    {
+      "category": "family",
+      "name": "Family Reunification Long-Stay Visa",
+      "purpose": "For foreign nationals joining a spouse, parent, or other close family member who is legally residing in Morocco. Enables long-term family reunification stays.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulat.ma/en/ordinary-visas",
+      "notes": "Long-stay visa (visa de long séjour - regroupement familial). Requires proof of family relationship, proof that the sponsor is legally resident in Morocco with a valid residence permit (Certificat d'Immatriculation), and proof of adequate housing and financial means."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa",
+      "purpose": "For foreign nationals transiting through a Moroccan international airport who need to pass through the international transit zone without entering Morocco territory.",
+      "max_stay_days": 1,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulat.ma/en/ordinary-visas",
+      "notes": "Required only for nationals of countries that require a transit visa for Morocco. Most nationals who are visa-exempt for Morocco itself do not need a transit visa. Applied for at a Moroccan embassy or consulate prior to travel."
+    },
+    {
+      "category": "other",
+      "name": "eVisa (Visa Electronique - Category A: Nationality-Based)",
+      "purpose": "Electronic visa for tourism and short stays, available to nationals of specific countries who are otherwise subject to standard visa requirements. Applied for online prior to travel via the official acces-maroc.ma portal.",
+      "max_stay_days": 30,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://diplomatie.ma/en/launch-electronic-visa-evisa",
+      "notes": "Launched 10 July 2022 via the official acces-maroc.ma portal. Valid for 30 days, extendable up to 6 months, with multiple entries. Processing time 24-72 Moroccan working hours. Category A nationalities (nationality-based): Thailand, Israel, India (effective 10 Jan 2023), Jordan (effective 10 Jan 2023), Guatemala (effective 10 Jan 2023), and others including Benin, Brunei, Cambodia, Laos, Vietnam per secondary sources. Eligible nationals apply online without visiting an embassy."
+    },
+    {
+      "category": "other",
+      "name": "eVisa (Visa Electronique - Category B: Credential-Based)",
+      "purpose": "Electronic visa for tourism and short stays available to any nationality that holds a valid residence permit or multiple-entry visa issued by an eligible country (EU states, US, UK, Canada, Japan, Norway, Switzerland, New Zealand, Australia, Israel, UAE).",
+      "max_stay_days": 30,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://diplomatie.ma/en/launch-electronic-visa-evisa",
+      "notes": "Credential-based eVisa eligibility: (1) valid residence permit of an EU member state, US, UK, Canada, Japan, Norway, Switzerland, New Zealand, Australia, Israel, or UAE - valid minimum 180 days from application date; OR (2) valid non-electronic multiple-entry visa of the US, Australia, Canada, UK, Ireland, New Zealand, or Schengen area - valid minimum 90 days from application date. Apply via www.acces-maroc.ma. Visa valid 30 days, extendable up to 6 months with multiple entries. Processing 24-72 Moroccan working hours."
+    },
+    {
+      "category": "other",
+      "name": "Electronic Travel Authorization (AEVM - Autorisation Electronique de Voyage au Maroc)",
+      "purpose": "Required prior travel authorization for visa-free nationals of certain countries (Congo Brazzaville, Guinea Conakry, Ecuador, Ghana). Not a visa but a mandatory pre-registration for otherwise visa-free nationals.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.acces-maroc.ma/",
+      "notes": "Required permanently for Congo (Brazzaville), Guinea (Conakry), Ecuador, and Ghana nationals despite their visa-free status. Applied for online via www.acces-maroc.ma before departure. This is not a visa - it is an electronic pre-authorization for entry. Several other African nations had temporary AEVM requirements for AFCON 2025 (25 September 2025 to 25 January 2026) which have since been lifted."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -1043,7 +1204,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Moroccan Residence Permit — Investor Category (Certificat d'Immatriculation)",
+        "name": "Moroccan Residence Permit - Investor Category (Certificat d'Immatriculation)",
         "type": "investor_residence",
         "min_amount": null,
         "currency": null,
@@ -1083,19 +1244,27 @@
       "CORRECTED e_visa source_url for Thailand and Israel to use official diplomatie.ma launch page instead of India embassy page.",
       "ADDED UAE as a conditional_access residence permit issuer (Category B e-visa) per Wikipedia/secondary sources.",
       "ADDED us.diplomatie.ma to official_domains.",
-      "UPDATED Congo (Brazzaville) and Guinea (Conakry) notes to clarify permanent AEVM status (not related to AFCON temporary measure)."
+      "UPDATED Congo (Brazzaville) and Guinea (Conakry) notes to clarify permanent AEVM status (not related to AFCON temporary measure).",
+      "[2026-06-27] CORRECTED Azerbaijan (AZE) source_url: previous entry incorrectly cited the Kazakhstan diplomatie.ma URL (https://diplomatie.ma/en/visa-exemption-agreement-between-morocco-kazakhstan-takes-effect). Corrected to AZERTAC official Azerbaijani state news agency URL confirming the agreement signed 4 May 2024 in Banjul, in force 28 August 2024 for ordinary passport holders. No other changes to visa_policy entries - all other entries confirmed consistent with Wikipedia and secondary sources as of 2026-06-27. Consulat.ma and diplomatie.ma continue to return WAF/SSL errors preventing direct re-fetch.",
+      "[2026-06-27] CONFIRMED Ivory Coast (CIV) remains visa-required: the 2-year suspension imposed 1 September 2024 runs until September 2026 and has not been restored. No restoration found in any official or secondary source as of 2026-06-27.",
+      "[2026-06-27] CONFIRMED AEVM status: as of 27 April 2026 only Congo (Brazzaville), Ecuador, Ghana, and Guinea require AEVM; all AFCON-temporary AEVM requirements have been lifted. This matches current record entries.",
+      "[2026-06-29] ADDED Albania (ALB) to visa_free: Morocco unilaterally lifted visa requirements for Albanian ordinary passport holders effective 1 March 2025, announced via joint declaration signed by FM Bourita and Albanian FM Hasani on 1 March 2025 in Rabat. Confirmed from diplomatie.ma search results (joint declaration URL on diplomatie.ma domain) and multiple corroborating secondary sources. Entry was missing from prior record. Wikipedia and multiple secondary sources (MoroccoWorldNews, VisaGuide, TravelAndTourWorld) all confirm effective date of 1 March 2025 for ordinary passports. Not reciprocal - Moroccan nationals still require a visa for Albania.",
+      "[2026-06-29] CONFIRMED no new ordinary passport visa-free agreements in 2026 beyond those already recorded: search of diplomatie.ma, secondary news sources, and Wikipedia finds no new ordinary-passport visa exemption agreements in force in 2026 other than Albania (March 2025). The only 2026 multilateral agreement found is Morocco-Comoros for diplomatic/service passports only (already recorded in conditional_access).",
+      "[2026-06-29] CONFIRMED consulat.ma and diplomatie.ma official pages continue to return WAF/SSL errors blocking direct re-fetch. Albania entry sourced from diplomatie.ma joint declaration URL (confirmed domain via search) and multiple independent secondary sources. All other existing entries retained per preservation-beats-guessing rule."
     ],
     "gaps": [
-      "Maximum stay duration not specified for the majority of visa-free countries on the official consulat.ma list; only 7 countries have explicit limits stated (Dominican Republic 60 days, Hong Kong 30 days, Hungary 90 days, Malaysia 90 days, Maldives 30 days, Kazakhstan 30 days/180-day period, Azerbaijan 90 days).",
-      "Official consulat.ma visa-free list page (consulat.ma/fr/...) is returning access errors (WAF rejection) during this validation; the list content was verified against the Wikipedia Visa policy of Morocco article and secondary sources but could not be read directly from the official page.",
+      "Maximum stay duration not specified for the majority of visa-free countries on the official consulat.ma list; only 7 countries have explicit limits stated (Dominican Republic 60 days, Hong Kong 30 days, Hungary 90 days, Malaysia 90 days, Maldives 30 days, Kazakhstan 30 days/180-day period, Azerbaijan 90 days). Albania stay duration not confirmed from official source - no maximum stated in the joint declaration or secondary reporting.",
+      "Official consulat.ma visa-free list page (consulat.ma/fr/... and consulat.ma/en/...) is returning access errors (WAF rejection) on 2026-06-27 re-validation; the list content was verified against Wikipedia Visa policy of Morocco article and secondary sources but could not be read directly from the official page.",
       "Full official announcement for e-visa expansion to Benin, Brunei, Cambodia, Laos, Vietnam not found on diplomatie.ma directly; confirmed from Fragomen/Wikipedia secondary sources only.",
-      "Ghana and Ecuador ordinary-passport visa-free + AEVM entries use secondary sources (en.hespress.com, Wikipedia) as diplomatie.ma official announcement pages were inaccessible due to SSL errors.",
+      "Ghana and Ecuador ordinary-passport visa-free + AEVM entries use secondary sources (en.hespress.com, Wikipedia) as diplomatie.ma official announcement pages were inaccessible due to SSL errors on 2026-06-27.",
+      "diplomatie.ma domain returns SSL certificate errors on all direct WebFetch attempts as of 2026-06-27; all diplomatie.ma source_urls are pre-validated from prior sessions; could not re-confirm live content.",
       "The acces-maroc.ma portal is a JavaScript SPA; real-time eligibility list could not be scraped to enumerate all currently active e-visa nationalities.",
       "Investor residence permit minimum investment amount not found on any official Moroccan government source; no golden visa or formal investment-threshold residency program exists.",
-      "Iraq diplomatic passport MoU (8 Feb 2025) sourced from Iraqi MFA (mofa.gov.iq); no corresponding announcement confirmed on Moroccan diplomatie.ma — recorded with source_official=true as mofa.gov.iq is an official government domain.",
+      "Iraq diplomatic passport MoU (8 Feb 2025) sourced from Iraqi MFA (mofa.gov.iq); no corresponding announcement confirmed on Moroccan diplomatie.ma - recorded with source_official=true as mofa.gov.iq is an official government domain.",
       "No official digital nomad, startup, talent, or fast-track visa program found on official Moroccan government sources.",
       "Morocco is not a member of any formal freedom-of-movement bloc; the agreements array is empty because no official source confirms membership in ECOWAS, GCC, EU/EEA, Arab League free movement, or similar multilateral arrangements.",
-      "The diplomatic/official passport agreement table on consulat.ma does not specify agreement dates or maximum stay durations for most bilateral agreements."
+      "The diplomatic/official passport agreement table on consulat.ma does not specify agreement dates or maximum stay durations for most bilateral agreements.",
+      "Azerbaijan official Moroccan MFA announcement URL could not be confirmed from diplomatie.ma directly (SSL error); AZERTAC (official Azerbaijani state news agency) used as source - bilateral facts cross-checked via multiple secondary sources (MoroccoWorldNews, APA News, hespress)."
     ]
   },
   "outbound_official": {
@@ -1110,7 +1279,7 @@
       {"name": "Brazil", "iso3": "BRA"},
       {"name": "Colombia", "iso3": "COL"},
       {"name": "South Korea", "iso3": "KOR"},
-      {"name": "Ivory Coast", "iso3": "CIV", "notes": "Listed as Côte d'Ivoire on official outbound page; note inbound policy cancelled CIV visa-free for Moroccan visitors in Sep 2024 — this is the Moroccan-side outbound list"},
+      {"name": "Ivory Coast", "iso3": "CIV", "notes": "Listed as Côte d'Ivoire on official outbound page; note inbound policy cancelled CIV visa-free for Moroccan visitors in Sep 2024 - this is the Moroccan-side outbound list"},
       {"name": "Ecuador", "iso3": "ECU"},
       {"name": "Egypt", "iso3": "EGY", "notes": "Only for Moroccan nationals married to Egyptian nationals, traveling to Egypt from Morocco with marriage certificate"},
       {"name": "Gabon", "iso3": "GAB"},
@@ -1141,32 +1310,32 @@
   "sources_checked": [
     {
       "url": "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc",
-      "description": "Official Moroccan MFA consular portal — complete visa-exempt nationalities list (French). Returned WAF error during this validation; content verified against secondary sources.",
+      "description": "Official Moroccan MFA consular portal - complete visa-exempt nationalities list (French). Returned WAF error during this validation; content verified against secondary sources.",
       "official": true
     },
     {
       "url": "https://diplomatie.ma/en/launch-electronic-visa-evisa",
-      "description": "Official Moroccan Ministry of Foreign Affairs — e-visa launch announcement (July 2022) with Category A/B details",
+      "description": "Official Moroccan Ministry of Foreign Affairs - e-visa launch announcement (July 2022) with Category A/B details",
       "official": true
     },
     {
       "url": "https://diplomatie.ma/en/statement-nationals-new-countries-will-benefit-electronic-visa-evisa",
-      "description": "Official Moroccan MFA — statement on new countries benefiting from e-visa effective 10 January 2023 (India, Jordan, Guatemala confirmed)",
+      "description": "Official Moroccan MFA - statement on new countries benefiting from e-visa effective 10 January 2023 (India, Jordan, Guatemala confirmed)",
       "official": true
     },
     {
       "url": "https://diplomatie.ma/en/visa-exemption-agreement-between-morocco-kazakhstan-takes-effect",
-      "description": "Official Moroccan MFA — announcement of Morocco-Kazakhstan visa exemption agreement effective 19 March 2025",
+      "description": "Official Moroccan MFA - announcement of Morocco-Kazakhstan visa exemption agreement effective 19 March 2025",
       "official": true
     },
     {
       "url": "https://diplomatie.ma/en/kingdom-morocco-and-republic-cabo-verde-proceed-signature-cooperation-roadmap-and-numerous-agreements",
-      "description": "Official Moroccan MFA — Cape Verde-Morocco cooperation agreements including ordinary passport visa exemption",
+      "description": "Official Moroccan MFA - Cape Verde-Morocco cooperation agreements including ordinary passport visa exemption",
       "official": true
     },
     {
       "url": "https://diplomatie.ma/en/visiting-morocco",
-      "description": "Official Moroccan Ministry of Foreign Affairs — Visiting Morocco page",
+      "description": "Official Moroccan Ministry of Foreign Affairs - Visiting Morocco page",
       "official": true
     },
     {
@@ -1176,27 +1345,57 @@
     },
     {
       "url": "https://www.consulat.ma/en/list-countries-agreements-signed-morocco-abolition-visas-official-passports",
-      "description": "Official Moroccan MFA consular portal — complete list of countries with bilateral agreements for visa abolition for holders of official/diplomatic/service passports",
+      "description": "Official Moroccan MFA consular portal - complete list of countries with bilateral agreements for visa abolition for holders of official/diplomatic/service passports",
       "official": true
     },
     {
       "url": "https://diplomatie.ma/en/morocco-comoros-sign-visa-exemption-agreement-diplomatic-service-passport-holders",
-      "description": "Official Moroccan MFA diplomatie.ma — press release on Morocco-Comoros visa exemption agreement for diplomatic and service passport holders, signed 11 February 2026",
+      "description": "Official Moroccan MFA diplomatie.ma - press release on Morocco-Comoros visa exemption agreement for diplomatic and service passport holders, signed 11 February 2026",
       "official": true
     },
     {
       "url": "https://mofa.gov.iq/2025/53961/",
-      "description": "Official Iraqi Ministry of Foreign Affairs — announcement of Morocco-Iraq mutual MoU on visa exemption for diplomatic passport holders, signed 8 February 2025",
+      "description": "Official Iraqi Ministry of Foreign Affairs - announcement of Morocco-Iraq mutual MoU on visa exemption for diplomatic passport holders, signed 8 February 2025",
       "official": true
     },
     {
       "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Morocco",
-      "description": "Wikipedia Visa policy of Morocco — used to cross-check recent policy changes (2024-2026) including Ivory Coast cancellation, new visa-free countries, AEVM requirements, and e-visa expansion. Not an official source; used for gap-filling only.",
+      "description": "Wikipedia Visa policy of Morocco - used to cross-check recent policy changes (2024-2026) including Ivory Coast cancellation, new visa-free countries, AEVM requirements, and e-visa expansion. Not an official source; used for gap-filling only.",
       "official": false
     },
     {
       "url": "https://en.hespress.com/113109-ghanaians-can-now-enter-morocco-visa-free.html",
-      "description": "Hespress (Moroccan news) — Ghana visa-free with AEVM from 6 June 2025. Used as secondary source; Hespress is a major Moroccan news outlet citing official sources.",
+      "description": "Hespress (Moroccan news) - Ghana visa-free with AEVM from 6 June 2025. Used as secondary source; Hespress is a major Moroccan news outlet citing official sources.",
+      "official": false
+    },
+    {
+      "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Morocco.html",
+      "description": "US State Department Morocco country information - confirms 90-day visa-free for most nationals, residence permit requirements for stays over 90 days.",
+      "official": true
+    },
+    {
+      "url": "https://www.gov.uk/foreign-travel-advice/morocco/entry-requirements",
+      "description": "UK Government (GOV.UK) Morocco entry requirements - confirms 90-day visa-free for UK nationals, no eVisa mentioned, passport validity requirements.",
+      "official": true
+    },
+    {
+      "url": "https://travel.gc.ca/destinations/morocco",
+      "description": "Government of Canada travel advice for Morocco - confirms 90-day visa-free for Canadians (tourism, business, and study), no eVisa for Canadians.",
+      "official": true
+    },
+    {
+      "url": "https://www.auswaertiges-amt.de/de/service/laender/marokko-node/marokkosicherheit-224080",
+      "description": "German Federal Foreign Office (Auswärtiges Amt) - Morocco travel advice confirming 90-day visa-free for German nationals for tourism and business.",
+      "official": true
+    },
+    {
+      "url": "https://diplomatie.ma/en/joint-declaration-between-kingdom-morocco-and-republic-albania",
+      "description": "Official Moroccan MFA diplomatie.ma - joint declaration between Morocco and Albania (1 March 2025) confirming Morocco's decision to lift visa requirements for Albanian ordinary passport holders. Page confirmed to exist via search index; direct fetch blocked by SSL error on 2026-06-29.",
+      "official": true
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Morocco",
+      "description": "Wikipedia Visa policy of Morocco - re-fetched 2026-06-29; confirms Albania visa-free from 1 March 2025; confirms all previously recorded changes (Ghana, Ecuador, Kazakhstan, Cape Verde, Azerbaijan, Ivory Coast removal) consistent with existing record; no new ordinary-passport visa-free changes found beyond Albania.",
       "official": false
     }
   ]

@@ -3,6 +3,128 @@
   "iso3": "TKM",
   "name": "Turkmenistan",
   "region": "Asia",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa",
+      "purpose": "Leisure and tourism visits to Turkmenistan. Only a licensed national tourism agency of Turkmenistan may submit the Letter of Invitation (LOI) application on behalf of the foreign visitor.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 40,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://austria.tmembassy.gov.tm/en/consular-services/visa-for-turkmenistan",
+      "notes": "Requires a certified Letter of Invitation (LOI) from a licensed Turkmenistan national travel agency, submitted to the State Migration Service. Visa sticker issued at embassy/consulate or Ashgabat airport (airport issuance carries a +$50 surcharge). Standard single-entry up to 1 month is $40; up to 20 days is $30; up to 10 days is $20. Expedited 3-business-day processing doubles the fee. Processing time is 10 calendar days from receipt of documents. E-visa system signed into law April 2025 but portal not yet operational as of June 2026."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "Commercial activities, meetings, and negotiations with Turkmenistan-registered business partners. The Turkmen business partner entity submits the LOI application on behalf of the visitor.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 40,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://austria.tmembassy.gov.tm/en/consular-services/visa-for-turkmenistan",
+      "notes": "Requires certified LOI from the Turkmen business partner, approved by the State Migration Service. Single entry up to 1 month is $40; multiple entry up to 1 month is $60 (each additional month +$40). Airport issuance carries a +$50 surcharge. Expedited 3-business-day processing doubles the fee. Standard processing is 10 calendar days."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa (Single)",
+      "purpose": "Transit through Turkmenistan territory (land or air) to a third country, for a single crossing.",
+      "max_stay_days": 5,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 20,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.tm/en/articles/57",
+      "notes": "Single transit visa valid for up to 5 days. Requires travel documents and proof of onward journey. Contact a national travel agency of Turkmenistan or embassy for LOI. Airport issuance at Ashgabat airport carries a +$50 surcharge. Expedited processing doubles the fee. Standard processing: 10 calendar days."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa (Double)",
+      "purpose": "Transit through Turkmenistan territory twice (e.g. entering and exiting on a return journey), each crossing up to 5 days.",
+      "max_stay_days": 5,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 40,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.tm/en/articles/57",
+      "notes": "Double transit visa; each transit leg valid for up to 5 days. Fee is $40 USD. Airport issuance carries a +$50 surcharge. Expedited processing doubles the fee. Standard processing: 10 calendar days."
+    },
+    {
+      "category": "family",
+      "name": "Private/Family Visa",
+      "purpose": "Visiting family members or private individuals residing in Turkmenistan. Covers personal visits not for tourism or business purposes.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 40,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://austria.tmembassy.gov.tm/en/consular-services/visa-for-turkmenistan",
+      "notes": "Listed as 'Private Visa' and 'Family Visa' on the Austria embassy page; detailed procedures marked 'information coming soon' at time of research. Requires an LOI certified by the State Migration Service from the host individual in Turkmenistan. Fee structure follows standard single-entry schedule ($20–$40 depending on duration). Airport issuance surcharge applies."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic Visa",
+      "purpose": "Entry for holders of diplomatic passports on official diplomatic missions. Issued upon submission of a Note Verbale from the applicant's foreign embassy to the Turkmenistan embassy.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://austria.tmembassy.gov.tm/en/consular-services/visa-for-turkmenistan",
+      "notes": "Requires the foreign embassy to submit a Note Verbale to the Embassy of Turkmenistan. Specific validity, fee, and stay duration details are not published on accessible official pages. Diplomatic passport holders from countries with bilateral visa-waiver agreements (Armenia, Azerbaijan, Belarus, Bulgaria, China, Georgia, Hungary, Iran, Japan, Kazakhstan, Kyrgyzstan, Malaysia, Moldova, Mongolia, Romania, Russia, Singapore, Slovakia, South Korea, Switzerland, Tajikistan, Turkey, Ukraine, UAE) do not require a visa - see conditional_access."
+    },
+    {
+      "category": "other",
+      "name": "Official/Service Visa",
+      "purpose": "Entry for holders of official or service passports traveling on government business. Separate from full diplomatic visa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://austria.tmembassy.gov.tm/en/consular-services/visa-for-turkmenistan",
+      "notes": "Listed as 'Official Visa' and 'Service Visa' on the Austria embassy consular page; detailed procedures marked 'information coming soon' at time of research. Holders of official/service passports from countries with bilateral waiver agreements are visa-exempt (see conditional_access). For others, requires embassy-to-embassy process similar to diplomatic visa."
+    },
+    {
+      "category": "other",
+      "name": "Electronic Visa (e-Visa) - Enacted, Not Yet Operational",
+      "purpose": "Online visa application system for all nationalities, eliminating the Letter of Invitation requirement. Signed into law by presidential decree on April 18, 2025 as part of the Migration Law amendments.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.tm/en",
+      "notes": "Presidential Decree of April 18, 2025 introduced the e-visa system and abolished the LOI requirement for the new system. The State Migration Service (migration.gov.tm) will administer the platform. As of June 2026, the portal is still not operational and no confirmed launch date has been announced. Fees, eligible nationalities, maximum stay, and processing times remain undefined pending Presidential implementation decrees. Until the platform launches, the old paper-application + certified LOI system remains in force."
+    }
+  ],
   "visa_policy": {
     "visa_free": [],
     "visa_on_arrival": [],
@@ -25,7 +147,7 @@
       "https://www.indoneo.com/2026/02/23/turkmenistan-visa-update-new-e-visa-system/",
       "https://traveltomorrow.com/turkmenistan-eyes-tourism-growth-with-turkmentravel-2026-and-new-e-visa-policy/"
     ],
-    "notes": "Turkmenistan operates one of the world's most restrictive visa policies. Citizens of virtually all countries require a visa with a certified Letter of Invitation (LOI) from a licensed travel agency or host, certified by the State Migration Service. The MFA consular fees page (mfa.gov.tm/en/articles/57 and /684) states: 'For citizens of states with which there are relevant bilateral agreements and understanding, a different procedure for issuing entry visas to Turkmenistan may be provided,' but does not enumerate those countries. The diplomatic/official/service passport exemptions listed in conditional_access are based on widely reported bilateral agreements consistent with Wikipedia's visa policy of Turkmenistan article; however, the complete official list is not published as a single document on any accessible Turkmenistan government page. Citizens of all countries have the right of visa-free transit through the international transfer area of Ashgabat International Airport (airside transit only). Holders of diplomatic passports of Canada and the United States may obtain a free visa on arrival per aggregator sources; this could not be independently confirmed from an official Turkmenistan government page and is therefore NOT included in this record."
+    "notes": "Turkmenistan operates one of the world's most restrictive visa policies. Citizens of virtually all countries require a visa with a certified Letter of Invitation (LOI) from a licensed travel agency or host, certified by the State Migration Service. The MFA consular fees page (mfa.gov.tm/en/articles/57 and /684) states: 'For citizens of states with which there are relevant bilateral agreements and understanding, a different procedure for issuing entry visas to Turkmenistan may be provided,' but does not enumerate those countries. The diplomatic/official/service passport exemptions listed in conditional_access are based on widely reported bilateral agreements consistent with Wikipedia's visa policy of Turkmenistan article; however, the complete official list is not published as a single document on any accessible Turkmenistan government page. Citizens of all countries have the right of visa-free transit through the international transfer area of Ashgabat International Airport (airside transit only). Holders of diplomatic passports of Canada and the United States may obtain a free visa on arrival per aggregator sources; this could not be independently confirmed from an official Turkmenistan government page and is therefore NOT included in this record. Wikipedia's visa policy of Turkmenistan article additionally lists Estonia, India, Pakistan, and Uzbekistan (diplomatic passport only) as visa-exempt; these could not be confirmed from any live official Turkmenistan government page and are documented in data_quality.gaps."
   },
   "conditional_access": [
     {
@@ -325,7 +447,7 @@
       },
       "level": "visa_on_arrival",
       "max_stay_days": 10,
-      "conditions": "Visa on arrival is available at Ashgabat International Airport for travelers from all countries who hold a prior MFA/Migration Service approval and a certified Letter of Invitation (LOI). Valid for 10 days, extendable once for an additional 10 days. An additional $50 surcharge applies at the airport. This is a pre-approved visa issuance at the airport counter — it is NOT an unconditional visa on arrival. The LOI must be certified before travel. Standard consular fee applies plus the $50 airport surcharge.",
+      "conditions": "Visa on arrival is available at Ashgabat International Airport for travelers from all countries who hold a prior MFA/Migration Service approval and a certified Letter of Invitation (LOI). Valid for 10 days, extendable once for an additional 10 days. An additional $50 surcharge applies at the airport. This is a pre-approved visa issuance at the airport counter - it is NOT an unconditional visa on arrival. The LOI must be certified before travel. Standard consular fee applies plus the $50 airport surcharge.",
       "source_url": "https://usa.tmembassy.gov.tm/en/consular-services/visa",
       "source_official": true
     }
@@ -365,20 +487,25 @@
     "usa.tmembassy.gov.tm",
     "turkey.tmembassy.gov.tm",
     "istanbul.tmconsulate.gov.tm",
+    "austria.tmembassy.gov.tm",
+    "uae.tmembassy.gov.tm",
     "migration.gov.tm",
     "invest.gov.tm"
   ],
   "data_quality": {
     "completeness": "low",
     "validation_notes": [
-      "Re-verified June 2026. The prior e-visa entry note said 'as of early 2026' with no confirmed launch date — updated to 'as of June 2026' with additional context from March 2026 travel reporting and TurkmenTravel 2026 forum references. Platform still not operational.",
+      "Re-verified June 2026. The prior e-visa entry note said 'as of early 2026' with no confirmed launch date - updated to 'as of June 2026' with additional context from March 2026 travel reporting and TurkmenTravel 2026 forum references. Platform still not operational.",
       "Removed business.com.tm from official_domains (it is a Turkmenistan business news aggregator, not a government domain).",
       "Updated e-visa entry source_url from non-official business.com.tm to migration.gov.tm (the official domain responsible for the e-visa system), and set source_official to true (the law is official even though the platform is not yet live).",
-      "Added mfa.gov.tm/en/articles/684 (consular tariffs page) to source_urls for completeness — it confirms the bilateral agreement provision language.",
+      "Added mfa.gov.tm/en/articles/684 (consular tariffs page) to source_urls for completeness - it confirms the bilateral agreement provision language.",
       "Added references to traveltomorrow.com and indoneo.com as corroborating secondary sources on e-visa status.",
       "All 24 diplomatic/service/official passport conditional_access entries confirmed consistent with Wikipedia's visa policy of Turkmenistan article (which aggregates from official bilateral agreement records). No changes to that list.",
-      "Removed unconfirmed Canada/US diplomatic passport free VOA note from main policy notes — it was already flagged as unconfirmable; moved to explicit exclusion note in policy notes for clarity.",
-      "The credential-based LOI visa on arrival entry updated to clarify issuer is 'State Migration Service' (the correct administrative body) rather than 'Turkmenistan MFA' (the MFA certifies the LOI, but issuance is handled by Migration Service)."
+      "Removed unconfirmed Canada/US diplomatic passport free VOA note from main policy notes - it was already flagged as unconfirmable; moved to explicit exclusion note in policy notes for clarity.",
+      "The credential-based LOI visa on arrival entry updated to clarify issuer is 'State Migration Service' (the correct administrative body) rather than 'Turkmenistan MFA' (the MFA certifies the LOI, but issuance is handled by Migration Service).",
+      "Added visa_types field (June 2026) based on Austria embassy consular page (austria.tmembassy.gov.tm), UAE embassy page, and MFA consular fee tariff pages (articles/57, articles/684). Identified 8 visa types: Tourist, Business, Transit (Single), Transit (Double), Private/Family, Diplomatic, Official/Service, and pending E-Visa. Fee structure sourced from official MFA tariff pages.",
+      "Re-validation 2026-06-27: Re-fetched mfa.gov.tm/en/articles/57, mfa.gov.tm/en/articles/684, usa.tmembassy.gov.tm/en/consular-services/visa, austria.tmembassy.gov.tm/en/consular-services/visa-for-turkmenistan, migration.gov.tm/en, turkey.tmembassy.gov.tm. No changes to visa fees, processing times, or bilateral agreement language found. E-visa portal confirmed still not operational as of June 2026. Wikipedia's visa policy of Turkmenistan article references diplomatic-passport-only exemptions for Estonia (EST), India (IND), Pakistan (PAK), and Uzbekistan (UZB - diplomatic only, separate from the border zone exemption) - these could not be confirmed from any live official Turkmenistan government source and are therefore NOT added to the record; documented in gaps instead. The India MEA agreement PDF (mea.gov.in/Images/CPV/visa-exemption/Turkmenistan.pdf) returned 404 during this validation run. All 24 existing conditional_access entries remain unchanged as no official source contradicted them.",
+      "Re-validation 2026-06-29: Re-fetched mfa.gov.tm/en/articles/57 (fee schedule confirmed unchanged: $20/$30/$40 single-entry tiers, $20/$40 transit, +$50 airport surcharge, 10-day standard processing, bilateral language unchanged), mfa.gov.tm/en/articles/684 (same fee schedule confirmed), usa.tmembassy.gov.tm/en/consular-services/visa (LOI-based process confirmed; note USA embassy lists $35 minimum vs $20 on MFA tariff page - USA-specific exchange/fee schedule, not a discrepancy requiring record change), austria.tmembassy.gov.tm/en/consular-services/visa-for-turkmenistan (8 visa types confirmed; LOI €15 fee confirmed; no exemption list published), migration.gov.tm/en (page still primarily in Turkmen; no e-visa portal launch announced), turkey.tmembassy.gov.tm/en/consular-services/konsullyk-hyzmatlary/visa-requirements (15 visa categories confirmed but no fees or bilateral details), uk.tmembassy.gov.tm/en/consular-services/visa-info (confirms Investor Visa and Study Visa categories exist - not currently in visa_types field; documented in gaps), india.tmembassy.gov.tm/en/consular-services/viza-application-of-turkmenistan (confirms LOI-based process; no India-Turkmenistan bilateral ordinary passport agreement found on this page). Web search confirms e-visa system still not operational as of June 2026 with no confirmed launch date; old LOI system remains in effect. No changes to visa_policy, visa_on_arrival, eta, e_visa, or conditional_access lists. All 24 diplomatic/service passport conditional_access entries remain unchanged. No ordinary-passport visa-free nationalities found on any official source."
     ],
     "gaps": [
       "The official Turkmenistan MFA and State Migration Service websites (mfa.gov.tm, migration.gov.tm) do not publish a comprehensive enumerated list of visa-exempt nationalities or countries with bilateral special passport agreements in English on any accessible page.",
@@ -386,18 +513,25 @@
       "The e-visa portal on migration.gov.tm is still not operational as of June 2026. Eligible nationalities, fees, processing times, and maximum stay duration remain undefined until the Presidential decree is published.",
       "The specific minimum investment amount for the investor residence permit right is not stated in the accessible version of the Law on Foreign Investments; the invest.gov.tm SSL certificate was expired during research.",
       "No official English-language page comprehensively lists all Turkmenistan entry rules by nationality for ordinary passport holders.",
-      "Holders of diplomatic passports of Canada and the USA receiving a free visa on arrival could not be independently confirmed from any official Turkmenistan government page — excluded from this record.",
+      "Holders of diplomatic passports of Canada and the USA receiving a free visa on arrival could not be independently confirmed from any official Turkmenistan government page - excluded from this record.",
       "Turkmenistan is an associate member of CIS (not full member); no CIS freedom-of-movement provisions apply to Turkmenistan based on available official sources.",
       "No fast-track, skilled worker, digital nomad, or talent visa schemes found on any official Turkmenistan source.",
       "No freedom-of-movement regional agreement memberships applicable to Turkmenistan were found on official sources.",
-      "No credential-based conditional access rules (held third-country visa or residence permit) found on any official Turkmenistan government source. Aggregator mentions of Schengen/UK/US visa holders benefiting appear to be misattributed — the underlying rule applies to Turkmenistan passport holders traveling abroad, not to foreigners entering Turkmenistan.",
+      "No credential-based conditional access rules (held third-country visa or residence permit) found on any official Turkmenistan government source. Aggregator mentions of Schengen/UK/US visa holders benefiting appear to be misattributed - the underlying rule applies to Turkmenistan passport holders traveling abroad, not to foreigners entering Turkmenistan.",
       "The bilateral agreement dates and formal names for the 24 diplomatic/service/official passport waivers listed in conditional_access are not published on any accessible official Turkmenistan government page.",
-      "The Uzbekistan Shavat-Dashoguz border zone exemption (15 days, from November 2025) was based on reporting via migration.gov.tm; the specific regulation text or decree has not been independently verified from a directly accessible official document."
+      "The Uzbekistan Shavat-Dashoguz border zone exemption (15 days, from November 2025) was based on reporting via migration.gov.tm; the specific regulation text or decree has not been independently verified from a directly accessible official document.",
+      "Work visa and student visa categories are not described on any accessible official Turkmenistan government page in English. These likely exist under the Law on Migration but no official source describes their requirements, fees, or procedures.",
+      "Private/Family visa and Official/Service visa procedures were listed on the Austria embassy page as 'information coming soon' - no detailed requirements, fees, or validity periods were published.",
+      "The Austria embassy page lists 15 EUR as the LOI processing consular fee; the main MFA tariff schedule lists USD fees for visa stickers - the relationship between these two fees is not clearly explained on any official page.",
+      "Wikipedia's visa policy of Turkmenistan article lists Estonia (EST), India (IND), Pakistan (PAK), and Uzbekistan (UZB, diplomatic only) as having diplomatic-passport-only visa exemptions for Turkmenistan. These four countries are NOT in the current conditional_access list because no live official Turkmenistan government source (mfa.gov.tm, migration.gov.tm, embassy pages) was found to confirm them during the 2026-06-27 validation run. The India MEA bilateral agreement PDF (mea.gov.in/Images/CPV/visa-exemption/Turkmenistan.pdf) returned 404. These should be re-checked on next validation cycle against India MEA (mea.gov.in), Pakistan MOFA, Estonian MFA, and Uzbekistan MFA sources.",
+      "Turkey embassy page (turkey.tmembassy.gov.tm) lists 15 visa categories including Investment (IN), Work (WP), Sports, Health, and Driving visas not described on other embassy pages - the fee structure, LOI requirements, and eligibility for these additional categories are not confirmed on any other official page.",
+      "UK embassy page (uk.tmembassy.gov.tm) lists Investor Visa and Study Visa as distinct categories not currently in the visa_types field of this record. Procedures and fees are described only as requiring an SMST invitation letter, with fees payable in GBP per Bank of England exchange rate; no USD equivalent or stay duration was published.",
+      "The USA embassy (usa.tmembassy.gov.tm) lists a $35 minimum single-entry fee vs. $20 on the MFA main tariff page (mfa.gov.tm/en/articles/57). This likely reflects a USA-specific exchange rate adjustment or separate fee schedule; the MFA tariff page is the authoritative source for the base schedule and is retained in the record."
     ]
   },
   "outbound_official": {
     "found": false,
-    "note": "no official Turkmenistan government outbound visa-list page located; rely on destination-side data. Checked mfa.gov.tm, migration.gov.tm, usa.tmembassy.gov.tm, turkey.tmembassy.gov.tm, istanbul.tmconsulate.gov.tm, india.tmembassy.gov.tm, uk.tmembassy.gov.tm — all pages focus exclusively on inbound visa requirements for foreign nationals entering Turkmenistan. No page equivalent to India's mea.gov.in/vffin was found on any *.gov.tm domain."
+    "note": "no official Turkmenistan government outbound visa-list page located; rely on destination-side data. Checked mfa.gov.tm, migration.gov.tm, usa.tmembassy.gov.tm, turkey.tmembassy.gov.tm, istanbul.tmconsulate.gov.tm, india.tmembassy.gov.tm, uk.tmembassy.gov.tm - all pages focus exclusively on inbound visa requirements for foreign nationals entering Turkmenistan. No page equivalent to India's mea.gov.in/vffin was found on any *.gov.tm domain."
   },
   "sources_checked": [
     "https://www.mfa.gov.tm/en",
@@ -412,11 +546,20 @@
     "https://india.tmembassy.gov.tm/en/news/156312",
     "https://migration.gov.tm/en",
     "https://migration.gov.tm/en/information/getting-a-visa-list-of-required-documents/",
+    "https://migration.gov.tm/en/citizen/registration-and-renewal-of-visa/",
+    "https://migration.gov.tm/en/information/chasto-zadavaemye-voprosy-en/",
     "https://invest.gov.tm/norm/view?id=14",
     "https://en.wikipedia.org/wiki/Visa_policy_of_Turkmenistan",
+    "https://www.mfa.gov.tm/en/articles/55",
+    "https://www.mea.gov.in/Images/CPV/visa-exemption/Turkmenistan.pdf",
     "https://www.indoneo.com/2026/02/23/turkmenistan-visa-update-new-e-visa-system/",
     "https://traveltomorrow.com/turkmenistan-eyes-tourism-growth-with-turkmentravel-2026-and-new-e-visa-policy/",
     "https://tm.usembassy.gov/visas/",
-    "https://investmentpolicy.unctad.org/investment-laws/laws/539/turkmenistan-law-of-turkmenistan-on-foreign-investments"
+    "https://investmentpolicy.unctad.org/investment-laws/laws/539/turkmenistan-law-of-turkmenistan-on-foreign-investments",
+    "https://turkey.tmembassy.gov.tm/en",
+    "https://istanbul.tmconsulate.gov.tm/en",
+    "https://usa.tmembassy.gov.tm/en",
+    "https://uk.tmembassy.gov.tm/en/consular-services/visa-info",
+    "https://india.tmembassy.gov.tm/en/consular-services/viza-application-of-turkmenistan"
   ]
 }

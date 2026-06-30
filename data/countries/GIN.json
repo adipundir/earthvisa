@@ -1,12 +1,89 @@
 {
   "outbound_official": {
     "found": false,
-    "note": "No official Guinea government outbound visa-list page located; rely on destination-side data. Checked mae.gov.gn (Ministry of Foreign Affairs), paf.gov.gn (Police aux Frontières / DCPAF visa portal), gouvernement.gov.gn, service-public.gov.gn — all focus on inbound visa requirements for foreign nationals entering Guinea, not on where Guinean ordinary-passport holders can travel without a prior consular visa."
+    "note": "No official Guinea government outbound visa-list page located; rely on destination-side data. Checked mae.gov.gn (Ministry of Foreign Affairs), paf.gov.gn (Police aux Frontières / DCPAF visa portal), gouvernement.gov.gn, service-public.gov.gn - all focus on inbound visa requirements for foreign nationals entering Guinea, not on where Guinean ordinary-passport holders can travel without a prior consular visa."
   },
   "iso2": "GN",
   "iso3": "GIN",
   "name": "Guinea",
   "region": "Africa",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa",
+      "purpose": "Short-stay visits for tourism and leisure purposes. Requires a valid passport, return ticket, and Yellow Fever certificate.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": 80,
+      "processing_days_min": null,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.paf.gov.gn/visa",
+      "notes": "Applied online via paf.gov.gn; Entry Visa Letter received after approval (processing ~72 hours); physical visa collected at border arrival counter with biometric capture. Valid for stays not exceeding 90 days."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa (Visa de Transit)",
+      "purpose": "For travelers passing through Guinea in transit to a third country. Permits brief stay not exceeding three days.",
+      "max_stay_days": 3,
+      "validity_days": 3,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.paf.gov.gn/visa",
+      "notes": "Applied online via paf.gov.gn; collected at border arrival counter with biometric registration. Requires valid passport, onward ticket, and Yellow Fever certificate."
+    },
+    {
+      "category": "other",
+      "name": "Transborderment Visa (Visa de Transbordement)",
+      "purpose": "Long-validity cross-border movement visa, likely for frequent cross-border travelers or regional transit. Valid for up to five years.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 150,
+      "processing_days_min": null,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.paf.gov.gn/visa",
+      "notes": "Applied online via paf.gov.gn; collected at border arrival counter. Validity up to 5 years. Requires valid passport, return ticket, and Yellow Fever certificate. Individual stay duration per entry not specified on official portal."
+    },
+    {
+      "category": "work",
+      "name": "Long Term Visa (Visa de Long Séjour / VLS)",
+      "purpose": "For foreign nationals intending to reside in Guinea for an extended period, typically for employment. Valid for one year from date of issuance.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 150,
+      "processing_days_min": null,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.paf.gov.gn/visa",
+      "notes": "Applied online via paf.gov.gn; collected at border arrival counter. Requires valid passport, copy of any prior visa, employment contract or equivalent supporting documentation, and Yellow Fever certificate. Non-ECOWAS foreign employers hiring foreign nationals must also obtain prior authorization from AGUIPE (Guinea's Employment Promotion Agency)."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic, Service and Courtesy Visa (VDSC)",
+      "purpose": "For holders of diplomatic, service, or official passports and invited government guests. Issued upon prior official approval.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.paf.gov.gn/visa",
+      "notes": "Requires a security code authorization from the relevant Guinea authority before online application can proceed. Duration and fee are governed by the official approval documentation. Requires valid passport, appointment letter, and Yellow Fever certificate."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -109,7 +186,7 @@
         "nationality": "Namibia",
         "iso3": "NAM",
         "max_stay_days": null,
-        "notes": "Visa exempt per PAF e-visa portal country selector (code 2). Max stay duration not stated on official page.",
+        "notes": "Visa exempt per PAF e-visa portal country selector (code 2). Max stay duration not stated on official page. No official bilateral agreement source found; retained from prior record per safety rule (no disconfirmation found).",
         "source_url": "https://www.paf.gov.gn/visa",
         "source_official": true
       },
@@ -126,14 +203,6 @@
         "iso3": "NGA",
         "max_stay_days": 90,
         "notes": "ECOWAS member. Visa exempt per PAF e-visa portal country selector (code 2). 90-day max stay confirmed by APIP official page.",
-        "source_url": "https://www.paf.gov.gn/visa",
-        "source_official": true
-      },
-      {
-        "nationality": "Rwanda",
-        "iso3": "RWA",
-        "max_stay_days": null,
-        "notes": "Visa exempt per PAF e-visa portal country selector (code 2). Max stay duration not stated on official page.",
         "source_url": "https://www.paf.gov.gn/visa",
         "source_official": true
       },
@@ -157,7 +226,7 @@
         "nationality": "Singapore",
         "iso3": "SGP",
         "max_stay_days": 30,
-        "notes": "Visa-free, 30-day maximum stay. Confirmed by Singapore Ministry of Foreign Affairs official travel advisory page (mfa.gov.sg): 'Singaporeans may stay up to 30 days in Guinea without a visa.' Prior record had max_stay_days as null; corrected to 30.",
+        "notes": "Visa-free, 30-day maximum stay. Confirmed by Singapore Ministry of Foreign Affairs official travel advisory page (mfa.gov.sg): 'Singaporeans may stay up to 30 days in Guinea without a visa.' Re-confirmed 2026-06-29.",
         "source_url": "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/republic-of-guinea/",
         "source_official": true
       },
@@ -180,27 +249,11 @@
     ],
     "visa_on_arrival": [
       {
-        "nationality": "United Arab Emirates",
-        "iso3": "ARE",
-        "max_stay_days": 90,
-        "notes": "UAE nationals may obtain a visa on arrival in Guinea for a maximum stay of 90 days. Confirmed by multiple secondary sources (VisaHQ, Wikipedia Visa policy of Guinea) citing the PAF portal category assignment. No dedicated Guinea official page could be directly fetched to show the exact portal code, but PAF portal assigns a special code (code 1, as previously noted for USA and Canada) to UAE as well. UAE was not in the prior record; added based on corroborating secondary sources consistent with PAF system.",
-        "source_url": "https://www.paf.gov.gn/visa",
-        "source_official": true
-      },
-      {
-        "nationality": "Canada",
-        "iso3": "CAN",
+        "nationality": "Rwanda",
+        "iso3": "RWA",
         "max_stay_days": null,
-        "notes": "PAF e-visa portal assigns code 1 (distinct from standard e-visa code 0 and visa-free code 2). Multiple secondary sources report that Canadian citizens receive an e-visa with exceptionally long validity (up to 5 years) rather than a standard 90-day e-visa. Exact entitlement (direct visa on arrival vs. extended e-visa tier) remains ambiguous; recorded under visa_on_arrival with caveat pending official confirmation of the 5-year extended validity claim.",
-        "source_url": "https://www.paf.gov.gn/visa",
-        "source_official": true
-      },
-      {
-        "nationality": "United States of America",
-        "iso3": "USA",
-        "max_stay_days": null,
-        "notes": "PAF e-visa portal assigns code 1 (distinct from standard e-visa code 0 and visa-free code 2). Multiple secondary sources report that US citizens receive an e-visa with exceptionally long validity (up to 5 years) rather than a standard 90-day e-visa. US State Department advisory says 'a visa is required' without specifying visa on arrival. Exact entitlement remains ambiguous; recorded under visa_on_arrival with caveat pending official confirmation.",
-        "source_url": "https://www.paf.gov.gn/visa",
+        "notes": "Reclassified from visa_free to visa_on_arrival 2026-06-29. Rwanda MFA official page (minaffet.gov.rw) confirms the 2016 Rwanda-Guinea bilateral agreement provides: 'visa waiver for holders of diplomatic, service, or official passports, AND issuance of visas at entry points to the territory for holders of ordinary passports.' The 'issuance of visas at entry points' language indicates visa-on-arrival for ordinary passport holders, not unconditional visa-free entry. Per safety rule (classify DOWN when in doubt), moved to visa_on_arrival. Max stay duration not specified in the agreement text. The prior entry had no max_stay_days.",
+        "source_url": "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-republic-of-guinea-to-elevate-cooperation-to-greater-heights",
         "source_official": true
       }
     ],
@@ -209,7 +262,7 @@
         "nationality": "All other nationalities (default)",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "The PAF portal designates all countries not in the visa-free (code 2) or special (code 1) category as requiring an e-visa. Visa types: Tourist Visa (USD 80, max 90 days), Transborderment Visa (USD 50, max 3 days), Transit Visa (USD 50, max 3 days), Long Term Visa/VLS (USD 150, 1 year), Diplomatic/Service/Courtesy (VDSC, fee per approval letter). Process: apply online at paf.gov.gn/visa, receive Entry Visa Letter, collect visa at border arrival counter. Processing time: 72 hours.",
+        "notes": "The PAF portal designates all countries not in the visa-free (code 2) category as requiring an e-visa. This includes USA, Canada, and UAE - previously recorded under visa_on_arrival with PAF 'code 1' designation, but re-classified to e_visa after 2026-06-27 re-verification: (a) US State Dept confirms US citizens must 'apply online' for a visa before travel - no VOA option; (b) official paf.gov.gn states UAE nationals require an e-visa; (c) secondary sources describing US/Canada 'code 1' as an extended-validity e-visa (up to 5 years) rather than a true visa on arrival. Visa types: Tourist Visa (USD 80, max 90 days), Transit Visa (USD 50, max 3 days), Transborderment Visa (USD 150, 5-year validity), Long Term Visa/VLS (USD 150, 1 year), Diplomatic/Service/Courtesy (VDSC, fee per approval letter). Process: apply online at paf.gov.gn/visa, receive Entry Visa Letter, collect visa at border arrival counter. Processing time: ~72 hours.",
         "source_url": "https://www.paf.gov.gn/visa",
         "source_official": true
       }
@@ -219,9 +272,11 @@
       "https://www.paf.gov.gn/visa",
       "https://www.paf.gov.gn/visa/Home/TermsCond",
       "https://apip.gov.gn/vivre-en-guinee/",
-      "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/republic-of-guinea/"
+      "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/republic-of-guinea/",
+      "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Guinea.html",
+      "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-republic-of-guinea-to-elevate-cooperation-to-greater-heights"
     ],
-    "notes": "Guinea operates an e-visa system branded as 'ETA Electronic Travel Authorisation of GUINEA' via paf.gov.gn/visa (Police aux Frontières / DCPAF portal). All 15 ECOWAS member states are visa-free (90-day max stay per APIP). Non-ECOWAS visa-free countries (Algeria, Egypt, Morocco, Namibia, Rwanda, Tunisia) confirmed via PAF portal code 2; max stay not stated. Singapore confirmed visa-free 30 days per Singapore MFA official advisory. UAE nationals confirmed for visa on arrival (90 days) per multiple consistent secondary sources citing PAF portal. USA and Canada are assigned a special portal code (code 1) distinct from the standard e-visa — secondary sources describe this as an extended-validity e-visa (up to 5 years). The portal is maintained by the Ministry of Security and Civil Protection, Government of Guinea."
+    "notes": "Guinea operates an e-visa system branded as 'ETA Electronic Travel Authorisation of GUINEA' via paf.gov.gn/visa (Police aux Frontières / DCPAF portal). All 15 ECOWAS member states are visa-free (90-day max stay per APIP, re-confirmed 2026-06-29). Non-ECOWAS visa-free countries (Algeria, Egypt, Morocco, Namibia, Tunisia) confirmed via PAF portal code 2; max stay not stated. Singapore confirmed visa-free 30 days per Singapore MFA official advisory (re-confirmed 2026-06-29). Rwanda MOVED from visa_free to visa_on_arrival: Rwanda MFA official page confirms 2016 agreement provides ordinary passport holders 'issuance of visas at entry points' (VOA), not unconditional visa-free entry; diplomatic/service/official passport holders get full waiver (see conditional_access). USA and Canada require e-visa (US State Dept confirmed). The portal is maintained by the Ministry of Security and Civil Protection, Government of Guinea."
   },
   "conditional_access": [
     {
@@ -244,6 +299,17 @@
       "max_stay_days": 90,
       "conditions": "Holders of South African diplomatic, official, and service passports do not require a visa for Guinea for a maximum stay of 90 days. Based on bilateral visa waiver agreement signed in Pretoria on 24 November 2006, entered into force 23 January 2007 (UN Treaty No. 45066).",
       "source_url": "https://dirco.gov.za/uk/visa-countries-waivers/",
+      "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Rwanda"],
+      "passport_types": ["diplomatic", "service", "official"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Holders of Rwandan diplomatic, service, and official passports do not require a visa for Guinea per the 2016 bilateral agreement. Ordinary Rwandan passport holders obtain visa on arrival at Guinea's entry points (see visa_on_arrival). Max stay not specified in the agreement text.",
+      "source_url": "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-republic-of-guinea-to-elevate-cooperation-to-greater-heights",
       "source_official": true
     }
   ],
@@ -272,29 +338,39 @@
     "apip.gov.gn",
     "mae.gov.gn",
     "ecowas.int",
-    "mfa.gov.sg"
+    "mfa.gov.sg",
+    "travel.state.gov",
+    "minaffet.gov.rw"
   ],
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTION: Singapore max_stay_days updated from null to 30, confirmed by Singapore MFA official advisory (mfa.gov.sg): 'Singaporeans may stay up to 30 days in Guinea without a visa.'",
-      "ADDITION: UAE (ARE) added to visa_on_arrival with 90-day max stay, confirmed by multiple corroborating secondary sources (Wikipedia 'Visa policy of Guinea', VisaHQ) citing PAF portal category. UAE was entirely absent from prior record.",
-      "RETENTION: USA and Canada remain in visa_on_arrival (PAF portal code 1) with null max_stay_days and caveat; secondary sources describe an extended e-visa (up to 5 years validity) rather than a traditional VOA, but the PAF code 1 classification is not standard e-visa code 0, so classification under visa_on_arrival is retained pending clearer official documentation.",
-      "RETENTION: Diplomatic/service passport exemptions for Romania, Russia, Zimbabwe, and Turkey remain unrecorded in conditional_access as no official Guinea, Romanian, Russian, Zimbabwean, or Turkish government source confirmed these specific bilateral arrangements. Multiple non-official aggregators report them (90 days for Romania/Russia/Zimbabwe diplomatic+service, 90 days for Turkey diplomatic only).",
-      "RETENTION: China (30 days, diplomatic/service/official, per Chinese NIA en.nia.gov.cn) and South Africa (90 days, diplomatic/service/official, per DIRCO dirco.gov.za) remain in conditional_access, unchanged.",
-      "NO CHANGE: CBI, RBI, and fast_track remain empty — no official programs found.",
-      "SOURCE UPDATE: Singapore MFA page added as official source for Singapore visa-free confirmation."
+      "2026-06-29 RE-VERIFICATION: Rwanda (RWA) MOVED from visa_free to visa_on_arrival. Rwanda MFA official page (minaffet.gov.rw) documents 2016 Rwanda-Guinea bilateral agreement as providing 'visa waiver for holders of diplomatic, service, or official passports, AND issuance of visas at entry points to the territory for holders of ordinary passports.' The 'visa at entry points' language is visa-on-arrival, not unconditional visa-free. Diplomatic/service/official passport exemption added to conditional_access. Safety rule applied: classify DOWN when in doubt.",
+      "2026-06-29 RE-CONFIRMATION: ECOWAS 15-member visa-free (90-day max stay) re-confirmed via apip.gov.gn and paf.gov.gn. No change.",
+      "2026-06-29 RE-CONFIRMATION: Singapore visa-free 30 days re-confirmed by Singapore MFA official advisory (mfa.gov.sg): 'Singaporeans may stay up to 30 days in Guinea without a visa.' No change.",
+      "2026-06-29 RE-CONFIRMATION: US State Dept re-confirms US citizens must apply online for e-visa; no visa on arrival. No change to e_visa default classification.",
+      "2026-06-27 RE-VERIFICATION: USA (USA), Canada (CAN), and UAE (ARE) REMOVED from visa_on_arrival and reclassified to e_visa (default). Basis: (1) US State Dept (travel.state.gov) confirms US citizens must apply online for a visa before travel to Guinea - no visa on arrival option exists; (2) paf.gov.gn official portal (per search result citing DCPAF) states UAE nationals require an e-visa, contradicting the Timatic VOA claim; (3) PAF portal 'code 1' appears to designate extended-validity e-visa (up to 5 years reported for US/Canada by secondary sources) rather than a true visa on arrival. Safety rule: classify DOWN when in doubt - these have been moved to e_visa.",
+      "2026-06-29 NOT ADDED: Tanzania (TZA) appears on embassies.net guinea-visa-exemption list but is absent from PAF portal visa-free list (Timatic/Wikipedia) and has no confirmation from any official Guinea source. Tanzania's own immigration portal does not list Guinea as visa-exempt. NOT added per official-source-first rule.",
+      "RETENTION: Non-ECOWAS visa-free (Algeria, Egypt, Morocco, Namibia, Tunisia) - kept; no new official source confirms or contradicts; max stay still unknown from official Guinea pages.",
+      "RETENTION: Diplomatic/service passport exemptions for China and South Africa unchanged.",
+      "RETENTION: Diplomatic/service passport exemptions reportedly exist for Romania, Russia, Zimbabwe, and Turkey per non-official aggregators - not added; no official confirmation found.",
+      "NO CHANGE: CBI, RBI, and fast_track remain empty - no official programs found.",
+      "PRIOR CORRECTION (previous run): Singapore max_stay_days updated from null to 30, confirmed by Singapore MFA.",
+      "PRIOR ADDITION (previous run): visa_types field populated with 5 official visa categories from paf.gov.gn."
     ],
     "gaps": [
-      "Max stay days for non-ECOWAS visa-free nationals (Algeria, Egypt, Morocco, Namibia, Rwanda, Tunisia) not stated on any official Guinea page.",
-      "The meaning of PAF portal code 1 (assigned to USA, Canada, and possibly UAE) is not explicitly documented on any accessible official Guinea page — may indicate visa on arrival, extended-validity e-visa, or a legacy category. US State Department page states 'a visa is required' without specifying VOA. Secondary sources claim 5-year validity for US/Canada e-visas, unconfirmed from official Guinea sources.",
+      "Max stay days for non-ECOWAS visa-free nationals (Algeria, Egypt, Morocco, Namibia, Tunisia) not stated on any official Guinea page.",
+      "Rwanda visa-on-arrival: max stay duration not specified in the 2016 agreement text per Rwanda MFA page; fee unknown.",
+      "PAF portal 'code 1' meaning (assigned to USA and Canada, possibly others) is not explicitly documented on any accessible official Guinea page - secondary sources describe 5-year validity e-visa for US/Canada, unconfirmed from official Guinea sources.",
+      "UAE status remains ambiguous: Timatic reports visa on arrival (90 days, added April 2018), but official paf.gov.gn states e-visa required. Classified as e_visa per safety rule (classify DOWN). If UAE has a bilateral VOA agreement with Guinea, this would need an official Guinea government confirmation to re-classify.",
       "Diplomatic/service passport visa exemptions reportedly exist for Romania, Russia, Zimbabwe (90 days), and Turkey (90 days diplomatic only) per Wikipedia and travel aggregators, but no official Guinea, Romanian, Russian, Zimbabwean, or Turkish government source could be confirmed. NOT recorded per official-source-first rule.",
+      "Tanzania appears on some non-official aggregator lists (embassies.net) as visa-free for Guinea, but not confirmed by PAF portal (Timatic/Wikipedia) or any official Guinea source. NOT recorded.",
       "No RBI / golden visa / investor-residence program found on official sources.",
       "No fast-track / talent / digital-nomad / startup visa program found on official sources.",
       "No CBI program found on official sources.",
-      "No credential-based (Type A) conditional entry rules found on any official Guinea government source — no evidence that holders of US visas, Schengen visas, UK visas, GCC visas, or other foreign residence permits receive any preferential entry to Guinea beyond their ordinary nationality-based entitlement.",
-      "No OCI or other special diaspora status conditional entry rules found on any official Guinea source.",
-      "The paf.gov.gn WordPress main site returns 500 errors on some subpages, limiting direct access to the full country-code listing from the visa application portal."
+      "No credential-based conditional entry rules found on any official Guinea government source.",
+      "Transborderment Visa individual stay duration per entry not specified on official portal; only overall validity (5 years) is stated.",
+      "Number of entries (single/multiple) not specified for Tourist Visa and Long Term Visa on official portal."
     ]
   },
   "sources_checked": [
@@ -310,6 +386,10 @@
     "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/republic-of-guinea/",
     "https://en.wikipedia.org/wiki/Visa_policy_of_Guinea",
     "https://www.visahq.com/guinea/",
-    "https://www.paf.gov.gn/dnpaf/?page_id=335&lang=en"
+    "https://www.paf.gov.gn/dnpaf/?page_id=335&lang=en",
+    "https://embassies.net/guinea-visa-exemption",
+    "https://www.immigration.go.tz/index.php/countries-which-are-not-required-to-apply-for-visa",
+    "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-republic-of-guinea-to-elevate-cooperation-to-greater-heights",
+    "https://gn.usembassy.gov/visas/"
   ]
 }

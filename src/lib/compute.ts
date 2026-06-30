@@ -74,7 +74,7 @@ export function compute(
     }
   }
 
-  // --- diplomatic/service/official passport waivers — applied per-passport based on its own type ---
+  // --- diplomatic/service/official passport waivers - applied per-passport based on its own type ---
   for (const iso3 of sel) {
     const ptype = ptypesInput[iso3] ?? "ordinary";
     if (ptype === "ordinary") continue;
@@ -91,7 +91,7 @@ export function compute(
   }
 
   // --- add reach unlocked by held credentials (e.g. "visa-free if you hold a US visa") ---
-  // Transit-only entries (ATV exemptions, TWOV) are kept separate — they are NOT tourist access.
+  // Transit-only entries (ATV exemptions, TWOV) are kept separate - they are NOT tourist access.
   const transitBest = new Map<string, CombinedEdge>();
   for (const cred of creds) {
     for (const e of dataset.credentialAccess[cred] ?? []) {
@@ -164,7 +164,7 @@ export function compute(
 }
 
 export function fmtMoney(amount: number | null, currency: string): string {
-  if (amount == null) return "—";
+  if (amount == null) return "-";
   const cur = currency || "USD";
   try {
     return new Intl.NumberFormat("en-US", {

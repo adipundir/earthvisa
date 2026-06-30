@@ -76,17 +76,19 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "RESTRUCTURED: Moved from visa_policy.visa_free (with embedded exclusion list in notes) to the dedicated visa_required block with default_visa_free:true and nationalities_iso3 array — this matches the schema classification for 'visa-free for all EXCEPT a list' policies.",
+      "RESTRUCTURED: Moved from visa_policy.visa_free (with embedded exclusion list in notes) to the dedicated visa_required block with default_visa_free:true and nationalities_iso3 array - this matches the schema classification for 'visa-free for all EXCEPT a list' policies.",
       "CONFIRMED: The 9 nationalities requiring a visa (COL, CUB, DOM, IRN, LBY, PAN, SYR, VNM, YEM) remain unchanged and are sourced exclusively from the official Embassy of Haiti in Washington (haiti.org/tourist-visa/). Re-fetch on 2026-06-14 confirms no changes to this list.",
       "CONFIRMED: 90-day maximum stay and US$10 on-arrival fee remain accurate per haiti.org.",
       "NOTED: IATA data (referenced in Wikipedia's Visa policy of Haiti article) includes Kosovo (XKX) as requiring a visa in addition to the 9 listed on haiti.org. Kosovo is NOT included here because it does not appear on the official Embassy of Haiti source (haiti.org/tourist-visa/). This discrepancy is recorded in gaps.",
       "NO CHANGE: conditional_access remains empty. Re-verification on 2026-06-14 confirmed that no official Haiti government source publishes any credential-based entry rule (e.g. entry with valid US/Schengen/UK visa). This claim appears only on non-official aggregators and has not been recorded.",
       "NO CHANGE: No diplomatic/service/official passport waiver list was found. haiti.org/diplomatic-and-official-visas/ describes only the application process, not exemptions.",
-      "NO CHANGE: CBI, RBI, fast_track remain empty — no programs found on official sources.",
-      "ADDED 2026-06-14: Explicit India (IND) entry added to visa_policy.visa_free (max_stay_days:90, source_official:true). Verified via official Embassy of Haiti in Washington (haiti.org/tourist-visa/): India is not in the 9-country visa-required list (COL, CUB, DOM, IRN, LBY, PAN, SYR, VNM, YEM), confirming ordinary Indian passport holders enter Haiti visa-free for up to 90 days under the default-visa-free policy. Airline aggregator claim of visa-free is CORRECT for India; no visa-on-arrival, ETA, or e-visa system exists per any official Haiti government source."
+      "NO CHANGE: CBI, RBI, fast_track remain empty - no programs found on official sources.",
+      "ADDED 2026-06-14: Explicit India (IND) entry added to visa_policy.visa_free (max_stay_days:90, source_official:true). Verified via official Embassy of Haiti in Washington (haiti.org/tourist-visa/): India is not in the 9-country visa-required list (COL, CUB, DOM, IRN, LBY, PAN, SYR, VNM, YEM), confirming ordinary Indian passport holders enter Haiti visa-free for up to 90 days under the default-visa-free policy. Airline aggregator claim of visa-free is CORRECT for India; no visa-on-arrival, ETA, or e-visa system exists per any official Haiti government source.",
+      "VALIDATED 2026-06-27: Re-fetched haiti.org/tourist-visa/, immigration.mict.gouv.ht/, mae.gouv.ht/, haiti.org/fees/, immigration.mict.gouv.ht/informations-utiles/, haiti.org/consular-services/, en.wikipedia.org/wiki/Visa_policy_of_Haiti. No changes detected to the visa-required list (still 9 countries: COL, CUB, DOM, IRN, LBY, PAN, SYR, VNM, YEM). The US$10 tourist arrival fee and 90-day maximum stay are confirmed across official and secondary sources. No new e-visa, ETA, or visa-on-arrival program found. No new conditional_access rules found on official sources. Record confirmed correct as-is; no corrections required.",
+      "VALIDATED 2026-06-29: Re-fetched haiti.org/tourist-visa/, immigration.mict.gouv.ht/, immigration.mict.gouv.ht/informations-utiles/, mae.gouv.ht/, haiti.org/fees/, haiti.org/consular-services/, en.wikipedia.org/wiki/Visa_policy_of_Haiti. Web search found no Haiti inbound visa policy changes for 2025-2026 (search results exclusively concerned US restrictions on Haitian nationals, not Haiti's own entry policy). The 9-country visa-required list (COL, CUB, DOM, IRN, LBY, PAN, SYR, VNM, YEM), US$10 arrival fee, 90-day maximum stay, absence of e-visa/ETA system, and absence of conditional_access rules are all re-confirmed. Wikipedia continues to note IATA lists Kosovo (XKX) as requiring a visa but official haiti.org does not; Kosovo remains in gaps only. No corrections were required; record is unchanged."
     ],
     "gaps": [
-      "Official Haiti government websites (immigration.mict.gouv.ht, mae.gouv.ht) do not publish a detailed visa policy page in English or a country-by-country visa exemption list — visa policy details sourced from the official Embassy of Haiti in Washington (haiti.org).",
+      "Official Haiti government websites (immigration.mict.gouv.ht, mae.gouv.ht) do not publish a detailed visa policy page in English or a country-by-country visa exemption list - visa policy details sourced from the official Embassy of Haiti in Washington (haiti.org).",
       "The 9 countries requiring visas are listed on haiti.org but no official Haitian government regulation number or decree is cited on that page.",
       "Kosovo (XKX): IATA travel data (cited in Wikipedia's Visa policy of Haiti article) lists Kosovo as also requiring a visa for Haiti, but this is not confirmed by the official haiti.org source. Until confirmed on an official Haiti government domain, Kosovo has not been added to visa_required.nationalities_iso3.",
       "Credential-based conditional access: Multiple non-official aggregators (visaverge.com, visahq.com) claim that holders of valid US, Schengen, or UK visas/residence permits may enter Haiti visa-free for 90 days regardless of nationality. No official Haiti government source confirms this rule; it has not been recorded in conditional_access.",
@@ -99,6 +101,68 @@
       "OUTBOUND: No official Haiti government page (mae.gouv.ht, haiti.org, immigration.mict.gouv.ht, cgmiami.gouv.ht, haitianembassy.uk) was found listing countries where Haitian ordinary passport holders can travel without a prior consular visa. The mae.gouv.ht covers only document legalization and diplomatic representation; no outbound travel advisory or visa-free country list for Haitian passport holders exists on any verified official Haitian government domain."
     ]
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa",
+      "purpose": "Issued to foreign nationals visiting Haiti for tourism or leisure. Most nationalities do not require this visa (default visa-free policy); only nationals of 9 specific countries must apply in advance.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 100,
+      "processing_days_min": 30,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.haiti.org/tourist-visa/",
+      "notes": "Only required for nationals of: Dominican Republic, Panama, Colombia, Cuba, Syria, Libya, Iran, Vietnam, and Yemen. All other nationalities enter visa-free and pay a US$10 tourist fee on arrival. Application must be submitted at least 1 month before departure to the Embassy of Haiti in Washington DC. Required documents: completed visa application form, two recent color passport photos, letter explaining purpose/duration of visit (including accommodation details), valid passport (6+ months validity), airline confirmation/round-trip ticket copy, employer letter. Payment by money order, certified check, or cashier's check payable to 'Embassy of Haiti in Washington'. A 6-month multiple-entry tourist visa is available for US$200."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Visa (Multiple Entry, 6 months)",
+      "purpose": "Multiple-entry tourist visa valid for 6 months, for nationals who require a visa to enter Haiti.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 200,
+      "processing_days_min": 30,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.haiti.org/fees/",
+      "notes": "Available to nationals of the 9 countries that require a visa to enter Haiti. Same application process as the single-entry tourist visa. Payment by certified check or cashier's check payable to 'Embassy of Haiti in Washington'."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic Visa",
+      "purpose": "Issued on diplomatic passports and UN laissez-passer at the request of the institution for which the applicant works.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.haiti.org/diplomatic-and-official-visas/",
+      "notes": "Required documents: visa application letter from the relevant institution, valid diplomatic passport, two color passport photos. Issued on diplomatic passports or UN laissez-passer. Fee details not published on official page - contact Embassy of Haiti (+1 202-332-4090)."
+    },
+    {
+      "category": "other",
+      "name": "Official Visa",
+      "purpose": "Issued on official passports at the request of the institution for which the applicant works.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.haiti.org/diplomatic-and-official-visas/",
+      "notes": "Issued on official passports. Required documents: visa application letter from the relevant institution, valid official passport, two color passport photos. Fee details not published on official page - contact Embassy of Haiti (+1 202-332-4090)."
+    }
+  ],
   "sources_checked": [
     "https://www.haiti.org/tourist-visa/",
     "https://www.haiti.org/diplomatic-and-official-visas/",
@@ -111,6 +175,8 @@
     "https://haitianembassy.uk/",
     "https://www.mci.gouv.ht/",
     "https://servicespublics.gouv.ht/site/rsservice/obtention_dun_permis_de_sejour_en_haiti_",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Haiti"
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Haiti",
+    "https://www.haiti.org/consular-services/",
+    "https://www.haiti.org/fees/"
   ]
 }

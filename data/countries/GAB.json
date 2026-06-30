@@ -3,6 +3,128 @@
   "iso3": "GAB",
   "name": "Gabon",
   "region": "Africa",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visa Court-séjour Tourisme (Short-Stay Tourist Visa)",
+      "purpose": "For leisure travel and tourism to Gabon. Applicable to nationals who require a visa and are not eligible for visa-free entry.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/",
+      "notes": "Issued by Gabonese diplomatic missions and consulates abroad. E-visa version available at evisa.dgdi.ga for approximately 70 EUR + 15 EUR processing fee for single-entry up to 3 months. Valid for air entry via Léon Mba International Airport, Libreville. A visa does not guarantee entry - immigration authorities make final admission decisions. Processing at embassy up to 2 weeks."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa Court-séjour Tourisme - Entrées Multiples (Short-Stay Tourist Visa, Multiple Entry)",
+      "purpose": "For multiple short visits to Gabon for tourism or family visits within the validity period.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/",
+      "notes": "Multiple-entry e-visa available via evisa.dgdi.ga for approximately 185 EUR + 15 EUR processing fee for 6-month validity. Processing time ~72 hours for e-visa route."
+    },
+    {
+      "category": "business",
+      "name": "Visa Court-séjour Affaires (Short-Stay Business Visa)",
+      "purpose": "For foreign nationals travelling to Gabon for business purposes including meetings, negotiations, and commercial activities.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/",
+      "notes": "Requires a letter of invitation from an individual or company in Gabon explaining the reason for the trip (per UK FCDO guidance). E-visa option available via evisa.dgdi.ga at approximately 70 EUR + 15 EUR processing fee. Valid only for air entry at Libreville (Léon Mba International Airport) for e-visa route."
+    },
+    {
+      "category": "other",
+      "name": "Visa de Courtoisie (Courtesy Visa)",
+      "purpose": "For government officials and employees of international organizations travelling to Gabon on an official mission.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 14,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/",
+      "notes": "Issued to government officials and international organization staff with official mission orders. Not available via e-visa portal; must apply through diplomatic missions."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Visa Diplomatique (Diplomatic Visa)",
+      "purpose": "For holders of diplomatic passports and their accredited embassy/consulate staff and dependents.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/",
+      "notes": "Issued to diplomatic passport holders and their embassy/consulate staff with dependents. Many nationalities with bilateral agreements are visa-free on diplomatic passports. Duration and conditions set by bilateral agreements."
+    },
+    {
+      "category": "other",
+      "name": "Visa Long-séjour / Permis de Séjour (Long-Stay Visa / Residence Permit)",
+      "purpose": "For foreign nationals intending to reside in Gabon for more than 90 days for work, study, or family reunification.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/",
+      "notes": "Long-stay visas are NOT issued by Gabonese diplomatic missions or consular posts abroad. Applicants must enter on a short-stay visa and then apply within one month of arrival to the Direction Générale de la Documentation et de l'Immigration (DGDI) for a residence card (carte de séjour). Governed by Law N°5/86 of 18 June 1986."
+    },
+    {
+      "category": "work",
+      "name": "Autorisation de Travail / Carte de Séjour (Work Permit / Residence Card for Workers)",
+      "purpose": "For foreign nationals employed or seconded in Gabon requiring legal authorisation to work and reside in the country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/",
+      "notes": "Work authorisation is processed through the DGDI after entry on a short-stay visa. No separate work visa is issued abroad; the long-stay residence card pathway applies. Employer sponsorship typically required."
+    },
+    {
+      "category": "student",
+      "name": "Visa Études / Carte de Séjour Étudiant (Student Visa / Student Residence Card)",
+      "purpose": "For foreign nationals enrolled in Gabonese educational institutions for studies exceeding 90 days.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/",
+      "notes": "Students enter on a short-stay visa with proof of enrolment and must apply to DGDI within one month of arrival for a student residence card. No dedicated student e-visa category exists on the evisa.dgdi.ga portal. The MFA short-stay visa page lists 'études' as a supported purpose under the short-stay visa application."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -132,7 +254,7 @@
       "https://en.wikipedia.org/wiki/Visa_policy_of_Gabon",
       "https://travel.state.gov/en/international-travel/travel-advisories/gabon.html"
     ],
-    "notes": "The official DGDI e-visa portal (evisa.dgdi.ga) is operated by the Direction Générale de la Documentation et de l'Immigration (DGDI). The official exemptions page at evisa.dgdi.ga/#/exemptions lists bilateral visa exemptions but is incomplete — it does not list CEMAC member states (Cameroon, CAR, Chad, Republic of Congo, Equatorial Guinea) despite their ordinary passport exemption being confirmed by the Wikipedia article on Gabon visa policy (which reflects the MFA PDF last updated March 27, 2023). The MFA PDF at diplomatie.gouv.ga/object.getObject.do?id=1681 is the authoritative source for the bilateral exemptions list but is binary-encoded and not directly parseable. US citizens: visa issuance suspended as of January 1, 2026 (announced December 18, 2025 by Gabonese Council of Ministers) in reciprocity for US restrictions on Gabonese citizens under Presidential Proclamation 10998."
+    "notes": "The official DGDI e-visa portal (evisa.dgdi.ga) is operated by the Direction Générale de la Documentation et de l'Immigration (DGDI). The official exemptions page at evisa.dgdi.ga/#/exemptions lists bilateral visa exemptions but is incomplete - it does not list CEMAC member states (Cameroon, CAR, Chad, Republic of Congo, Equatorial Guinea) despite their ordinary passport exemption being confirmed by the Wikipedia article on Gabon visa policy (which reflects the MFA PDF last updated March 27, 2023). The MFA PDF at diplomatie.gouv.ga/object.getObject.do?id=1681 is the authoritative source for the bilateral exemptions list but is binary-encoded and not directly parseable. VISA-ON-ARRIVAL: G20 countries visa-on-arrival that existed prior to October 2023 was CANCELLED effective 4 October 2023 - visa_on_arrival is correctly empty. US citizens: visa issuance suspended as of January 1, 2026 (announced December 18, 2025 by Gabonese Council of Ministers) in reciprocity for US restrictions on Gabonese citizens under Presidential Proclamation 10998; confirmed still in effect as of 2026-06-27 per US State Dept travel advisory. BILATERAL AGREEMENTS: Many countries listed in the Gabon MFA PDF (France, Germany, Russia, South Korea, Brazil, Cuba, Benin, Burkina Faso, Djibouti, Egypt, Guinea, Mali, Senegal, Tunisia, Turkey, Angola, Ethiopia, Rwanda, Niger, Serbia, Togo, St Kitts & Nevis, China, UAE, Iran) have bilateral visa exemptions ONLY for diplomatic/service/official passports - NOT ordinary passports. Only the 12 nationalities in visa_free[] have confirmed ordinary passport exemptions."
   },
   "conditional_access": [
     {
@@ -307,7 +429,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Diplomatic, Official, and Service passports exempt from visa under bilateral agreement; ordinary passport holders require e-visa. NOTE: embassies.net lists Tunisia as ordinary passport exempt with no duration, but Wikipedia (Visa_requirements_for_Tunisian_citizens) specifies e-visa for Tunisian ordinary passport holders. Diplomatic/service exemption is confirmed; ordinary passport status remains unresolved — e-visa required is the conservative classification.",
+      "conditions": "Diplomatic, Official, and Service passports exempt from visa under bilateral agreement; ordinary passport holders require e-visa. NOTE: embassies.net lists Tunisia as ordinary passport exempt with no duration, but Wikipedia (Visa_requirements_for_Tunisian_citizens) specifies e-visa for Tunisian ordinary passport holders. Diplomatic/service exemption is confirmed; ordinary passport status remains unresolved - e-visa required is the conservative classification.",
       "source_url": "https://evisa.dgdi.ga/#/exemptions",
       "source_official": true
     },
@@ -341,7 +463,7 @@
     "programs": []
   },
   "agreements": [
-    "CEMAC (Economic and Monetary Community of Central Africa) — Gabon is a member state; 2013 Freedom of Movement Protocol among CEMAC members (Cameroon, CAR, Chad, Republic of Congo, Equatorial Guinea) grants ordinary passport holders visa-free entry"
+    "CEMAC (Economic and Monetary Community of Central Africa) - Gabon is a member state; 2013 Freedom of Movement Protocol among CEMAC members (Cameroon, CAR, Chad, Republic of Congo, Equatorial Guinea) grants ordinary passport holders visa-free entry"
   ],
   "official_domains": [
     "evisa.dgdi.ga",
@@ -355,25 +477,28 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "ADDED visa_free entries for CEMAC member states (Cameroon, CAR, Chad, Republic of Congo, Equatorial Guinea) with 90-day ordinary passport exemption — confirmed by Wikipedia Visa policy of Gabon (reflecting Gabon MFA bilateral exemptions PDF) and CEMAC Free Movement Agreement 2013; these were previously missing from the record entirely despite being confirmed in the gaps section",
-      "ADDED visa_free entry for São Tomé and Príncipe (ordinary passport, 90 days) — confirmed by Wikipedia and embassies.net; was missing from the prior record",
-      "ADDED visa_free entries for Malaysia (30 days) and Singapore (30 days) ordinary passports — confirmed by Wikipedia; were missing from the prior record",
-      "ADDED visa_free entry for Panama (ordinary passport, 90 days) — confirmed by Wikipedia; was missing from the prior record",
+      "ADDED visa_free entries for CEMAC member states (Cameroon, CAR, Chad, Republic of Congo, Equatorial Guinea) with 90-day ordinary passport exemption - confirmed by Wikipedia Visa policy of Gabon (reflecting Gabon MFA bilateral exemptions PDF) and CEMAC Free Movement Agreement 2013; these were previously missing from the record entirely despite being confirmed in the gaps section",
+      "ADDED visa_free entry for São Tomé and Príncipe (ordinary passport, 90 days) - confirmed by Wikipedia and embassies.net; was missing from the prior record",
+      "ADDED visa_free entries for Malaysia (30 days) and Singapore (30 days) ordinary passports - confirmed by Wikipedia; were missing from the prior record",
+      "ADDED visa_free entry for Panama (ordinary passport, 90 days) - confirmed by Wikipedia; was missing from the prior record",
       "UPDATED max_stay_days for Mauritius from null to 30 (confirmed by Wikipedia and embassies.net)",
       "UPDATED max_stay_days for Morocco from null to 90 (confirmed by Wikipedia and embassies.net)",
       "UPDATED max_stay_days for South Africa from null to 30 (extendable to 90, confirmed by Wikipedia)",
-      "UPDATED Tunisia's passport_types in conditional_access from ['diplomatic','service'] to ['diplomatic','official','service'] — Wikipedia notes diplomatic, official, service, and special category passports are exempt",
+      "UPDATED Tunisia's passport_types in conditional_access from ['diplomatic','service'] to ['diplomatic','official','service'] - Wikipedia notes diplomatic, official, service, and special category passports are exempt",
       "RENAMED 'Ivory Coast' to 'Côte d'Ivoire' in conditional_access for consistent official naming",
       "UPDATED US visa suspension note: suspension effective January 1, 2026 (not just announced December 18, 2025), now confirmed by US State Department travel advisory for Gabon",
       "ADDED diplomatie.gouv.ga/pays-exempts-de-visa and en.wikipedia.org/wiki/Visa_policy_of_Gabon to source_urls",
       "MARKED new CEMAC and bilateral entries as source_official: false since evisa.dgdi.ga portal does not list them, and they are sourced through Wikipedia (which cites the Gabon MFA PDF)",
-      "ADDED explicit India (IND) entry to e_visa array: Indian ordinary passport holders require a paid e-visa (70 EUR + 15 EUR fee, 72-hour processing, Libreville air entry only); India is absent from the official bilateral visa-exemption list at evisa.dgdi.ga/#/exemptions — aggregator claims of visa-free or visa-on-arrival for India are FALSE per official Gabon DGDI source (verified 2026-06-14)"
+      "ADDED explicit India (IND) entry to e_visa array: Indian ordinary passport holders require a paid e-visa (70 EUR + 15 EUR fee, 72-hour processing, Libreville air entry only); India is absent from the official bilateral visa-exemption list at evisa.dgdi.ga/#/exemptions - aggregator claims of visa-free or visa-on-arrival for India are FALSE per official Gabon DGDI source (verified 2026-06-14)",
+      "ADDED visa_types array (2026-06-20): sourced from official Gabon MFA page (diplomatie.gouv.ga/4-services-aux-usagers/244-visa/) and evisa.dgdi.ga. Categories documented: tourist (single+multiple entry), business, courtesy, diplomatic, long-stay/residence, work permit, student. No transit visa, digital_nomad, retirement, investment, working_holiday or medical visa categories found on any official Gabon source.",
+      "RE-VERIFIED 2026-06-27: All 12 visa_free ordinary passport entries confirmed against Wikipedia (Visa policy of Gabon, citing Gabon MFA PDF). visa_on_arrival correctly empty - G20 VoA was cancelled 4 October 2023 per Wikipedia. US visa suspension still confirmed in effect per US State Dept travel advisory (fetched 2026-06-27). Bilateral agreements for France, Germany, Russia, South Korea, Brazil, Cuba, Benin, Burkina Faso, Djibouti, Egypt, Guinea, Mali, Senegal, Tunisia, Turkey, Angola, Ethiopia, Rwanda, Niger, Serbia, Togo, St Kitts & Nevis, China, UAE, Iran confirmed to apply ONLY to diplomatic/service/official passports - correctly in conditional_access or gaps, NOT in visa_free. evisa.dgdi.ga SSL certificate error persists (unable to re-fetch #/exemptions directly). No new ordinary passport exemptions found. No changes made to visa_free[], visa_on_arrival[], eta[]. Policy notes field updated to document VoA cancellation date and bilateral passport-type clarification.",
+      "RE-VERIFIED 2026-06-29: All 12 ordinary-passport visa_free entries re-confirmed against Wikipedia (Visa policy of Gabon, fetched 2026-06-29) - Cameroon, CAR, Chad, Republic of Congo, Equatorial Guinea (CEMAC, 90d), Morocco (90d), Panama (90d), São Tomé and Príncipe (90d), Mauritius (30d), Malaysia (30d), Singapore (30d), South Africa (30d). No new visa-free or visa-on-arrival nationalities found. G20 VoA cancellation (4 October 2023) still reflected correctly with empty visa_on_arrival[]. US visa suspension for US citizens confirmed still in effect as of April 2, 2026 per US State Dept travel advisory (travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Gabon.html, fetched 2026-06-29) - no lifting or restoration reported. evisa.dgdi.ga SSL error persists; diplomatie.gouv.ga and affaires-etrangeres.gouv.ga MFA pages only link to downloadable PDF, list not machine-readable. No changes made to visa_free[], visa_on_arrival[], e_visa[], eta[], or conditional_access[]."
     ],
     "gaps": [
-      "The official evisa.dgdi.ga exemptions portal does NOT list CEMAC member states (Cameroon, CAR, Chad, Congo, Equatorial Guinea) despite their ordinary passport visa-free status being recognised under the CEMAC 2013 Freedom of Movement Agreement — this gap between official portal and actual policy creates uncertainty",
+      "The official evisa.dgdi.ga exemptions portal does NOT list CEMAC member states (Cameroon, CAR, Chad, Congo, Equatorial Guinea) despite their ordinary passport visa-free status being recognised under the CEMAC 2013 Freedom of Movement Agreement - this gap between official portal and actual policy creates uncertainty",
       "The Gabon MFA PDF (diplomatie.gouv.ga/object.getObject.do?id=1681, signed March 27, 2023) is the primary official source for bilateral exemptions but is only available as a binary-encoded PDF; the list of all countries, passport types, and stay durations from this document cannot be independently verified through web fetching",
       "Tunisia ordinary passport status is conflicted: embassies.net lists ordinary passport as visa-exempt; Wikipedia (Tunisian citizens article) says e-visa. Diplomatic/service confirmed; ordinary passport conservative classification is e-visa required",
-      "Malaysia, Singapore, Panama visa-free status for ordinary passports is sourced only through Wikipedia (citing Gabon MFA PDF) — not verifiable on the official evisa.dgdi.ga portal",
+      "Malaysia, Singapore, Panama visa-free status for ordinary passports is sourced only through Wikipedia (citing Gabon MFA PDF) - not verifiable on the official evisa.dgdi.ga portal",
       "São Tomé and Príncipe ordinary passport exemption not on the official evisa.dgdi.ga portal; sourced from Wikipedia and embassies.net",
       "Max stay durations for diplomatic/service passport holders in conditional_access entries not stated on official evisa.dgdi.ga exemptions page",
       "CEMAC free movement: practical implementation for ordinary passport holders at Gabon's land and sea borders vs. air entry only (e-visa restriction) is unclear",
@@ -381,7 +506,9 @@
       "No official Gabon government page found for residency-by-investment or golden visa program",
       "No official Gabon government page found for digital nomad, skilled worker, or startup visa schemes",
       "US visa suspension: Official Gabon government announcement (Council of Ministers December 18, 2025) confirmed by US State Dept advisory but original Gabon government source URL not directly scrapeable",
-      "Angola, Serbia, Ethiopia, Niger, Rwanda, China, UAE, Iran conditional_access entries mentioned in the prior gaps (from the Gabon MFA 2023 PDF) have not been added to conditional_access due to lack of independent official-source verification — they remain as unresolved gaps"
+      "Angola, Serbia, Ethiopia, Niger, Rwanda, China, UAE, Iran conditional_access entries mentioned in the prior gaps (from the Gabon MFA 2023 PDF) have not been added to conditional_access due to lack of independent official-source verification - they remain as unresolved gaps",
+      "No dedicated transit visa details found on any official Gabon source; transit visa exists as a category (per visahunter.com) but fee, duration and eligibility not confirmed from official sources",
+      "Exact USD fees for sticker visas issued at embassies/consulates not found; e-visa fees confirmed in EUR (~70 EUR single-entry + 15 EUR fee; ~185 EUR multiple-entry + 15 EUR fee)"
     ]
   },
   "outbound_official": {
@@ -436,16 +563,21 @@
     "notes": "Source: PDF officiel du Ministère des Affaires Étrangères gabonais, 'PAYS EXEMPTÉS DE VISA AVEC LE GABON', signé le 27 mars 2023 (mis à jour avec un tampon du 14 mars 2018). Le document liste les pays avec lesquels le Gabon a conclu des accords de suppression de visa. Le tableau inclut les types de passeports (D=Diplomatique, S=Service, OR=Ordinaire, OF=Officiel, SP=Spécial), mais les colonnes cochées n'ont pas pu être extraites avec précision depuis le PDF image-based. La plupart des entrées semblent couvrir tous les types de passeports sauf indication contraire (ex: Afrique du Sud: 30j pour ordinaires, 90j pour diplomatiques/service). Ce document est la source officielle de référence pour les droits de voyage des citoyens gabonais. Lien page officielle: https://www.diplomatie.gouv.ga/pays-exempts-de-visa"
   },
   "sources_checked": [
-    "https://evisa.dgdi.ga/ — official DGDI e-visa portal (primary source)",
-    "https://evisa.dgdi.ga/#/exemptions — official bilateral visa exemptions list (SSL certificate error prevented direct scraping; data from previous research session)",
-    "https://edgdi.dgdi.ga/ — official DGDI e-services portal",
-    "https://dgdi.ga/ — DGDI main website (ECONNREFUSED at time of research)",
-    "https://www.diplomatie.gouv.ga/pays-exempts-de-visa — Gabon MFA visa-exempt countries page (HTML lists download link only; PDF not directly readable)",
-    "https://www.diplomatie.gouv.ga/object.getObject.do?id=1681 — Gabon MFA official PDF (binary-encoded; could not extract table data)",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Gabon — Wikipedia article reflecting Gabon MFA bilateral exemptions PDF (source_official: false)",
-    "https://en.wikipedia.org/wiki/Visa_requirements_for_Tunisian_citizens — confirms e-visa for Tunisian ordinary passport holders",
-    "https://travel.state.gov/en/international-travel/travel-advisories/gabon.html — US State Dept: confirms visa suspension for US citizens effective January 1, 2026",
-    "https://embassies.net/gabon-visa-exemption — aggregates Gabon MFA data; lists 10 ordinary-passport-exempt countries",
-    "https://www.chaloafrica.com/gabon-visas-requirements-instructions/ — secondary source confirming Mauritius, Morocco, South Africa exemptions"
+    "https://evisa.dgdi.ga/ - official DGDI e-visa portal (primary source)",
+    "https://evisa.dgdi.ga/#/exemptions - official bilateral visa exemptions list (SSL certificate error prevented direct scraping; data from previous research session)",
+    "https://edgdi.dgdi.ga/ - official DGDI e-services portal",
+    "https://dgdi.ga/ - DGDI main website (ECONNREFUSED at time of research)",
+    "https://www.diplomatie.gouv.ga/pays-exempts-de-visa - Gabon MFA visa-exempt countries page (HTML lists download link only; PDF not directly readable)",
+    "https://www.diplomatie.gouv.ga/object.getObject.do?id=1681 - Gabon MFA official PDF (binary-encoded; could not extract table data)",
+    "https://www.diplomatie.gouv.ga/4-services-aux-usagers/244-visa/ - Gabon MFA official visa types page (fetched 2026-06-20; confirmed short-stay, long-stay, tourist, business, courtesy, diplomatic visa categories)",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Gabon - Wikipedia article reflecting Gabon MFA bilateral exemptions PDF (source_official: false)",
+    "https://en.wikipedia.org/wiki/Visa_requirements_for_Tunisian_citizens - confirms e-visa for Tunisian ordinary passport holders",
+    "https://travel.state.gov/en/international-travel/travel-advisories/gabon.html - US State Dept: confirms visa suspension for US citizens effective January 1, 2026",
+    "https://embassies.net/gabon-visa-exemption - aggregates Gabon MFA data; lists 10 ordinary-passport-exempt countries",
+    "https://www.chaloafrica.com/gabon-visas-requirements-instructions/ - secondary source confirming Mauritius, Morocco, South Africa exemptions",
+    "https://www.interieur.gouv.ga/ - Gabon Ministry of Interior; references DGDI portal for visa details (fetched 2026-06-20)",
+    "https://tourisme.gouv.ga/ - Gabon Tourism Ministry; no visa details (fetched 2026-06-20)",
+    "https://www.gov.uk/foreign-travel-advice/gabon/entry-requirements - UK FCDO: confirms business and tourist visa documentation requirements (fetched 2026-06-20)",
+    "https://www.projectvisa.com/visainformation/Gabon - aggregator confirming e-visa at 70 EUR and visa-on-arrival list (not official; fetched 2026-06-20)"
   ]
 }

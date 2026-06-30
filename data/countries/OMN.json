@@ -577,7 +577,7 @@
         "nationality": "Turkey",
         "iso3": "TUR",
         "max_stay_days": 30,
-        "notes": "Bilateral mutual visa exemption (ordinary passports) effective November 1, 2025; announced December 22, 2025 on fm.gov.om. Maximum stay 30 consecutive days per visit, total not exceeding 90 days within any 180-day period. Passport valid ≥6 months required. The fm.gov.om entry-visas page still lists Turkey in Group 1 (14 days) but the specific bilateral agreement supersedes this with 30 days.",
+        "notes": "Bilateral mutual visa exemption (ordinary passports) effective December 22, 2025 per official fm.gov.om announcement. Maximum stay 30 consecutive days per visit, total not exceeding 90 days within any 180-day period. Passport valid ≥6 months required. The fm.gov.om entry-visas page still lists Turkey in Group 1 (14 days) but the specific bilateral agreement supersedes this with 30 days.",
         "source_url": "https://www.fm.gov.om/en/33835/",
         "source_official": true
       },
@@ -995,15 +995,18 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTED: Turkey max_stay_days updated from 14 to 30. Bilateral mutual visa exemption (ordinary passports) entered into force November 1, 2025; announced December 22, 2025 on fm.gov.om/en/33835/. Stay is 30 consecutive days per visit, max 90 days within any 180-day period. The entry-visas page still lists Turkey in Group 1 at 14 days, but the bilateral agreement supersedes this.",
+      "CORRECTED (2026-06-27): Turkey effective date corrected from 'November 1, 2025' to 'December 22, 2025'. The official fm.gov.om/en/33835/ announcement is dated December 22, 2025 and states that date as when the mutual visa exemption agreement came into implementation. The earlier 'November 1' date was not verifiable from any official Oman government source. Stay duration (30 days/visit, 90 days/180-day period) confirmed unchanged.",
+      "CORRECTED (prior run): Turkey max_stay_days updated from 14 to 30. Bilateral mutual visa exemption (ordinary passports) came into effect December 22, 2025 on fm.gov.om/en/33835/. Stay is 30 consecutive days per visit, max 90 days within any 180-day period. The entry-visas page still lists Turkey in Group 1 at 14 days, but the bilateral agreement supersedes this.",
       "CORRECTED: Russia max_stay_days updated from 14 to 30. Bilateral mutual visa exemption (ordinary passports) effective July 18, 2025. Agreement signed Moscow April 22, 2025; ratified by Royal Decree 53/2025. Stay is 30 days per visit, max 90 days per calendar year. The entry-visas page still shows Russia in Group 1 at 14 days but the bilateral agreement supersedes this.",
       "CORRECTED: Belarus max_stay_days updated from 14 to 30. Bilateral mutual visa exemption (ordinary passports) effective March 17, 2026 per fm.gov.om/en/39389/. Stay is 30 consecutive days per visit, max 90 days per calendar year. Not for business/paid activities.",
       "CONFIRMED: Philippines remains in Group 1 at 14 days. A December 2025 announcement (fm.gov.om/en/32199/) confirmed Philippines citizens exempt from short-visit visa requirements from 2026, consistent with existing Group 1 listing.",
       "CONFIRMED: Group 2 country list and conditions match the live fm.gov.om/en/visitors/entry-visas/ page exactly.",
       "CONFIRMED: GCC citizen freedom-of-movement entry is correct.",
       "CONFIRMED: GCC resident visa on arrival (Type 29A) confirmed via gov.om/en/w/get-a-gcc-resident-visa; fee OMR 5, 28-day stay, approved profession required.",
-      "NOTE: The fm.gov.om entry-visas page does not yet reflect updated bilateral stay durations for Russia, Turkey, and Belarus — the page still lists all Group 1 countries at 14 days. The bilateral-specific stay durations are sourced from dedicated fm.gov.om bilateral announcement pages.",
-      "CONFIRMED (2026-06-14): India (IND) classification as 'conditional' is correct. India is an Oman Group 2 country per fm.gov.om/en/visitors/entry-visas/ — ordinary passport holders may enter visa-free for 14 days ONLY if holding a valid visa or residence permit from USA, UK, Canada, Schengen area, Australia, or Japan, or if resident in a GCC state. Without such credentials, Indians must apply for an e-visa via evisa.rop.gov.om. Aggregator claim of visa-free or visa-on-arrival for India is incorrect. Source: https://www.fm.gov.om/en/visitors/entry-visas/"
+      "NOTE: The fm.gov.om entry-visas page does not yet reflect updated bilateral stay durations for Russia, Turkey, and Belarus - the page still lists all Group 1 countries at 14 days. The bilateral-specific stay durations are sourced from dedicated fm.gov.om bilateral announcement pages.",
+      "CONFIRMED (2026-06-14): India (IND) classification as 'conditional' is correct. India is an Oman Group 2 country per fm.gov.om/en/visitors/entry-visas/ - ordinary passport holders may enter visa-free for 14 days ONLY if holding a valid visa or residence permit from USA, UK, Canada, Schengen area, Australia, or Japan, or if resident in a GCC state. Without such credentials, Indians must apply for an e-visa via evisa.rop.gov.om. Aggregator claim of visa-free or visa-on-arrival for India is incorrect. Source: https://www.fm.gov.om/en/visitors/entry-visas/",
+      "VALIDATED (2026-06-27): Full re-fetch of fm.gov.om/en/visitors/entry-visas/ confirmed Group 1 and Group 2 lists are unchanged. All 76 Group 1 nationalities and 24 Group 2 nationalities match current file entries exactly. Belarus 30-day bilateral exemption effective March 17, 2026 confirmed from fm.gov.om/en/39389/. Russia 30-day bilateral exemption effective July 18, 2025 confirmed from multiple corroborating sources. No new ordinary-passport visa-free additions found beyond existing record. Colombia Oman agreement (2022) confirmed diplomatic/service passports only, not ordinary passports - no change to Group 1 Colombia entry needed. Mongolia agreement confirmed diplomatic/official/special/service passports only - no change to conditional_access entry needed.",
+      "VALIDATED (2026-06-29): Full re-fetch of fm.gov.om/en/visitors/entry-visas/ confirmed all Group 1 (76 nationalities) and Group 2 (24 nationalities) lists are unchanged. Turkey: 30-day bilateral exemption effective December 22, 2025 re-confirmed from fm.gov.om/en/33835/ (max 30 consecutive days per visit, 90 days in any 180-day period). Belarus: 30-day bilateral exemption effective March 17, 2026 re-confirmed from fm.gov.om/en/39389/ (max 30 days per visit, 90 days per calendar year, no paid activities). Russia: 30-day bilateral exemption effective July 18, 2025 confirmed via multiple corroborating official sources including Russian MFA press releases, interfax.com, and Royal Decree 53/2025; the fm.gov.om/en/24628/ page is a pre-implementation notice only — it does not confirm the implementation date but the agreement is confirmed in force since July 18, 2025. Philippines: confirmed in Group 1 at 14 days, consistent with December 2025 fm.gov.om exemption announcement. No new ordinary-passport visa-free additions found for 2026. Spain ordinary-passport entry in Group 1 confirmed unchanged; the January 2026 agreement with Spain covers diplomatic/service passports only. An early 2020 archived page (archive.fm.gov.om/en/469/) referenced 10-day visa-free for 103 countries — this is a superseded pre-2022 policy; current policy is 14 days for Group 1."
     ],
     "gaps": [
       "The evisa.rop.gov.om eligibility wizard is interactive and does not expose a static list of e-visa eligible nationalities; the full list of nationalities eligible for e-visa vs. requiring embassy visa could not be scraped from official pages.",
@@ -1012,16 +1015,155 @@
       "Diplomatic passport waiver for Mongolia: maximum stay duration not accessible publicly on decree.om (subscription required); lawrtal.com used as secondary source, source_official=false.",
       "Diplomatic passport waiver for Spain: no direct official Omani government URL found for this specific decree at time of research; visahq.com used as secondary source, source_official=false.",
       "GCC resident visa approved professions list (139 professions per ROP platform) not fully enumerated from official sources; only the general framework confirmed from gov.om.",
-      "The fm.gov.om entry-visas page has not been updated to reflect bilateral stay durations for Turkey, Russia, and Belarus — it still shows all Group 1 countries at 14 days. The actual permissible stay for these three countries (30 days) is sourced from separate bilateral announcement pages on fm.gov.om.",
+      "The fm.gov.om entry-visas page has not been updated to reflect bilateral stay durations for Turkey, Russia, and Belarus - it still shows all Group 1 countries at 14 days. The actual permissible stay for these three countries (30 days) is sourced from separate bilateral announcement pages on fm.gov.om. Turkey effective date of December 22, 2025 confirmed from fm.gov.om/en/33835/; the earlier 'November 1, 2025' date appeared in aggregator sources but is not stated on any official Oman government page.",
       "Philippines visa exemption announcement (fm.gov.om/en/32199/) confirms visa-free status from 2026 but does not specify the exact maximum stay duration.",
       "Fast-track, digital nomad, and skilled talent visa programs referenced in media but no official government page with binding details found; omitted.",
-      "'French Guinea' listing on official source is ambiguous — may refer to French Guiana (an overseas territory of France, not a sovereign state); no iso3 assigned."
+      "'French Guinea' listing on official source is ambiguous - may refer to French Guiana (an overseas territory of France, not a sovereign state); no iso3 assigned.",
+      "Russia visa_free source_url (fm.gov.om/notice-on-mutual-visa-exemption-agreement-with-russian-federation/ = same as fm.gov.om/en/24628/) is a pre-implementation notice page that does not state the July 18, 2025 effective date or stay terms. Implementation confirmed via external official sources (Russian MFA press release mid.ru/en/foreign_policy/news/1572401/, Royal Decree 53/2025, interfax.com/newsroom/top-stories/112679/) but no standalone official Oman government page confirming 'agreement now in force as of July 18, 2025' was reachable. The source remains the best available official Oman government URL for this bilateral agreement.",
+      "Spain bilateral agreement for ordinary passports (Royal Decree 3/2026, possibly ratifying agreement): one secondary source referenced 'Royal Decree 3/2026' in connection with the Spain diplomatic/service passport agreement, but no official decree.om page was reached to confirm this numbering. The file's conditional_access entry for Spain uses a non-official source (visahq.com); source_official=false retained."
     ]
   },
   "outbound_official": {
     "found": false,
-    "note": "No official Oman government outbound visa-list page located. The Ministry of Foreign Affairs page at fm.gov.om/en/citizens/visa-requirements/ explicitly states visa regulations are complex and directs Omani citizens to check with individual destination-country embassies/consulates or use the IATA Travel Centre — it does not enumerate countries by visa category. No equivalent of India's mea.gov.in/vffin page exists on fm.gov.om, mofa.gov.om, rop.gov.om, or any other official Omani government domain. Rely on destination-side data (inversion of inbound visa_policy records)."
+    "note": "No official Oman government outbound visa-list page located. The Ministry of Foreign Affairs page at fm.gov.om/en/citizens/visa-requirements/ explicitly states visa regulations are complex and directs Omani citizens to check with individual destination-country embassies/consulates or use the IATA Travel Centre - it does not enumerate countries by visa category. No equivalent of India's mea.gov.in/vffin page exists on fm.gov.om, mofa.gov.om, rop.gov.om, or any other official Omani government domain. Rely on destination-side data (inversion of inbound visa_policy records)."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visit Visa (Unsponsored)",
+      "purpose": "For foreign nationals visiting Oman for tourism without a local sponsor. The standard tourist visa applied for online through the ROP eVisa portal.",
+      "max_stay_days": 28,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.rop.gov.om/",
+      "notes": "Falls under the 'Visit Unsponsored' visa class on the ROP eVisa platform. The fm.gov.om entry-visas page describes this as 'usually appropriate' for tourists. Applied for at evisa.rop.gov.om. Eligibility depends on nationality; check evisa.rop.gov.om/visa-eligibility."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Visit Visa (Sponsored)",
+      "purpose": "For foreign nationals visiting Oman for tourism where a local resident or entity in Oman acts as sponsor.",
+      "max_stay_days": 28,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.rop.gov.om/",
+      "notes": "Falls under the 'Visit Sponsored' visa class on the ROP eVisa platform. Requires a sponsor who is a legal resident or entity in Oman. Applied for at evisa.rop.gov.om."
+    },
+    {
+      "category": "tourist",
+      "name": "GCC Resident Tourist Visa (Type 29A)",
+      "purpose": "Allows any foreign national holding a valid GCC country residence permit with an approved profession to visit Oman for tourism.",
+      "max_stay_days": 28,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 13,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://gov.om/en/w/get-a-gcc-resident-visa",
+      "notes": "Fee is OMR 5 (approximately USD 13). Available at Oman airports and land borders (on arrival) or via evisa.rop.gov.om. Requires valid GCC residence permit with approved profession and minimum 3 months validity. Companion visa (Type 29B) also available. GCC resident must hold one of 139 approved professions."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa",
+      "purpose": "Granted to foreign nationals coming to Oman for employment at the request and responsibility of an Omani employer (sponsor).",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 52,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.rop.gov.om/english/visas.aspx",
+      "notes": "Fee is OMR 20 (approximately USD 52). Valid for 2 years from date of passport stamping. Multi-entry. Applicant must be at least 21 years old. Sponsor must be a locally registered entity with full legal competence. Requires Ministry of Manpower labor permit, valid passport (6+ months), two photographs, and medical certificate for nationals of India, Pakistan, Philippines, Bangladesh, Indonesia, Sri Lanka, Egypt, Sudan, Ethiopia, Syria, Nepal. Monthly fine of OMR 50 for delay in renewal. PRO accreditation required on the eVisa system for work visa applications."
+    },
+    {
+      "category": "work",
+      "name": "Employment Contracting Visa",
+      "purpose": "A visa category for foreign nationals entering Oman under an employment contracting arrangement.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.rop.gov.om/english/visas.aspx",
+      "notes": "Listed as a distinct visa category by the Royal Oman Police alongside Work Visa, Temporary Work Visa, Family Joining Visa, and Student Visa. Specific fee, duration, and detailed eligibility requirements were not publicly available on official pages at time of research. Managed via the ROP eVisa portal with PRO accreditation."
+    },
+    {
+      "category": "work",
+      "name": "Temporary Work Visa",
+      "purpose": "A short-term work visa for foreign nationals coming to Oman for temporary employment or project-based work.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.rop.gov.om/english/visas.aspx",
+      "notes": "Listed as a distinct visa category by the Royal Oman Police. Specific fee, duration, and detailed eligibility requirements were not publicly available on official pages at time of research. Managed via the ROP eVisa portal with PRO accreditation."
+    },
+    {
+      "category": "family",
+      "name": "Family Joining Visa",
+      "purpose": "Allows family members of foreign nationals legally residing in Oman to join their resident sponsor.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.rop.gov.om/english/visas.aspx",
+      "notes": "Listed as a distinct visa category by the Royal Oman Police. Falls under the 'Resident Sponsored' visa class. Specific fee, duration, and detailed eligibility requirements were not publicly available on official pages at time of research. Managed via the ROP eVisa portal."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "For foreign nationals enrolling in educational institutions in Oman, requiring a local sponsor (typically the educational institution).",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.rop.gov.om/english/visas.aspx",
+      "notes": "Listed as a distinct visa category by the Royal Oman Police. Falls under the 'Resident Sponsored' visa class. Specific fee, duration, and detailed eligibility requirements were not publicly available on official pages at time of research. Managed via the ROP eVisa portal."
+    },
+    {
+      "category": "investment",
+      "name": "Oman Golden Residency (10-Year Residency)",
+      "purpose": "Long-term renewable residency for international investors, entrepreneurs, and high-net-worth individuals investing in Oman through one of seven qualifying routes.",
+      "max_stay_days": null,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://omanresidence.gov.om/en-us",
+      "notes": "Renewable 10-year residency. Minimum investment approximately OMR 200,000 (approx. USD 520,000). Seven qualifying routes: (1) Real estate in Integrated Tourism Complexes; (2) Company formation in Oman; (3) Government Development Bonds; (4) Muscat Stock Exchange shares; (5) Fixed-term bank deposit (min. 5 years); (6) Owning a company employing 50+ Omani nationals; (7) Nomination under Foreign Capital Investment Law. Benefits include full foreign ownership rights, up to 3 domestic workers, sponsorship of spouse and children, fast-track immigration lanes. No pathway to citizenship."
+    }
+  ],
   "sources_checked": [
     "https://www.fm.gov.om/en/visitors/entry-visas/",
     "https://evisa.rop.gov.om/",
@@ -1044,6 +1186,13 @@
     "https://www.fm.gov.om/en/39389/",
     "https://www.fm.gov.om/en/32199/",
     "https://www.fm.gov.om/notice-on-mutual-visa-exemption-agreement-with-russian-federation/",
-    "https://www.fm.gov.om/en/24628/"
+    "https://www.fm.gov.om/en/24628/",
+    "https://evisa.rop.gov.om/en/home",
+    "https://evisa.rop.gov.om/en/types-of-visa",
+    "https://www.rop.gov.om/english/visaservices_mainpage.aspx",
+    "https://www.fm.gov.om/mutual-visa-exemption-between-oman-and-turkiye-comes-into-effect/",
+    "https://archive.fm.gov.om/en/469/",
+    "https://www.fm.gov.om/en/news/news/",
+    "https://omanvisacheck.com/oman-visa-news-today/"
   ]
 }

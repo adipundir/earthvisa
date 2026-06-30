@@ -3,6 +3,143 @@
   "iso3": "MKD",
   "name": "North Macedonia",
   "region": "Europe",
+  "visa_types": [
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (Type A)",
+      "purpose": "Permits transit through an international airport in North Macedonia without passing through border control. Required for certain nationalities transiting through Macedonian airports.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Airport transit only; does not permit entry into North Macedonia territory. Must be obtained at a North Macedonian embassy or consulate abroad."
+    },
+    {
+      "category": "tourist",
+      "name": "Short-Stay Visa (Type C) - Tourism/Business/Transit",
+      "purpose": "Permits short-term entry for tourism, business, or transit through North Macedonia. Valid for stays up to 90 days for tourism/business, or up to 5 days for transit purposes.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 65,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Fee is 60 EUR (approximately 65 USD); reduced fee of 35 EUR for children aged 6–12. Transit sub-category allows up to 5 days stay. Applicant's travel document must be valid for at least 3 months beyond the intended stay. Required documents: valid passport, travel insurance, invitation letter (if applicable), proof of sufficient funds, and a recent photograph (3.5×4.5 cm). Covers tourism, business visits, and transit through the country."
+    },
+    {
+      "category": "other",
+      "name": "Short-Stay Transit Visa (Type C - Transit)",
+      "purpose": "Specifically for transit through North Macedonia territory (not airport-only), permitting a short stay of up to 5 days while transiting between countries.",
+      "max_stay_days": 5,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "This is a sub-category of the Type C visa specifically issued for transit. Maximum stay is 5 days. Fee is 60 EUR. Must be applied for at a North Macedonian embassy or consulate abroad."
+    },
+    {
+      "category": "work",
+      "name": "Long-Stay Visa (Type D) - Work",
+      "purpose": "Permits entry into North Macedonia for the purpose of taking up employment. Requires prior approval of a temporary residence permit from the Ministry of Interior.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Long-stay D visa sub-category for work purposes. Must have prior approval of temporary residence permit from the Ministry of Interior before applying. Also covers vocational training and practical training."
+    },
+    {
+      "category": "student",
+      "name": "Long-Stay Visa (Type D) - Study / Student Exchange",
+      "purpose": "Permits entry for the purpose of studying, enrolling in educational institutions, or participating in international student exchange programmes in North Macedonia.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Long-stay D visa sub-category for study. Covers study, participation in international student exchange programmes, and specialisation programmes. Requires prior approval of temporary residence permit from the Ministry of Interior."
+    },
+    {
+      "category": "medical",
+      "name": "Long-Stay Visa (Type D) - Medical Treatment",
+      "purpose": "Permits entry into North Macedonia for the purpose of receiving medical treatment or accommodation in nursing homes.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Long-stay D visa sub-category for medical purposes. Covers medical treatment and accommodation in nursing/care homes. Requires prior approval of temporary residence permit from the Ministry of Interior."
+    },
+    {
+      "category": "family",
+      "name": "Long-Stay Visa (Type D) - Family Reunion",
+      "purpose": "Permits entry into North Macedonia for family reunification with a North Macedonian citizen or a foreign national legally residing in the country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Long-stay D visa sub-category for family reunion. Also extends to family members of North Macedonian citizens and of persons of Macedonian origin. Requires prior approval of temporary residence permit from the Ministry of Interior."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa (Type D) - Scientific Research / Volunteering / Humanitarian",
+      "purpose": "Permits entry for scientific-research activities, volunteering, or humanitarian reasons in North Macedonia.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Long-stay D visa covering scientific-research activities, volunteering, and humanitarian reasons. Requires prior approval of temporary residence permit from the Ministry of Interior."
+    },
+    {
+      "category": "investment",
+      "name": "Long-Stay Visa (Type D) - Property Owner (EU/OECD nationals)",
+      "purpose": "Permits EU and OECD nationals who own property in North Macedonia (valued at minimum EUR 40,000) to apply for a long-stay visa leading to temporary residence.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Restricted to EU and OECD nationals. Property must be an apartment, residential building, or house valued at a minimum of EUR 40,000. Temporary residence issued for up to 1 year and can be renewed annually. Path to permanent residence/citizenship not specified in official sources reviewed."
+    }
+  ],
   "outbound_official": {
     "found": true,
     "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/proveri-dali-ti-e-potrebna-viza",
@@ -48,7 +185,7 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "The North Macedonia MFA operates an interactive country-by-country outbound visa checker at https://mfa.gov.mk/en-GB/konzularni-uslugi/proveri-dali-ti-e-potrebna-viza (JavaScript-rendered; full country list requires live browser interaction). The FAQ page (https://mfa.gov.mk/en-GB/kontakt/cpp-cesto-postavuvani-prasanja) explicitly states: (1) Macedonian nationals enjoy visa-free entry and short-term stay of up to 90 days within a 180-day period in all EU member states except UK and Ireland, and in Iceland, Norway, and Switzerland; (2) Citizens may travel with a valid ID card to Albania, Kosovo, Serbia, Montenegro, and Bosnia and Herzegovina. UK and Republic of Ireland require a visa. The visa_free list above reflects only what the official MFA sources explicitly confirm — the interactive tool covers additional countries but its full output could not be statically extracted. No visa-on-arrival, e-visa, or ETA categories are mentioned on MFA official pages."
+    "notes": "The North Macedonia MFA operates an interactive country-by-country outbound visa checker at https://mfa.gov.mk/en-GB/konzularni-uslugi/proveri-dali-ti-e-potrebna-viza (JavaScript-rendered; full country list requires live browser interaction). The FAQ page (https://mfa.gov.mk/en-GB/kontakt/cpp-cesto-postavuvani-prasanja) explicitly states: (1) Macedonian nationals enjoy visa-free entry and short-term stay of up to 90 days within a 180-day period in all EU member states except UK and Ireland, and in Iceland, Norway, and Switzerland; (2) Citizens may travel with a valid ID card to Albania, Kosovo, Serbia, Montenegro, and Bosnia and Herzegovina. UK and Republic of Ireland require a visa. The visa_free list above reflects only what the official MFA sources explicitly confirm - the interactive tool covers additional countries but its full output could not be statically extracted. No visa-on-arrival, e-visa, or ETA categories are mentioned on MFA official pages."
   },
   "visa_policy": {
     "visa_free": [
@@ -462,7 +599,7 @@
       "https://mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza",
       "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia"
     ],
-    "notes": "The MFA official page (mfa.gov.mk) confirms EU and Schengen nationals are visa-free with national ID cards (90 days within 180-day period). A comprehensive country-by-country list is sourced from Wikipedia's 'Visa policy of North Macedonia' article (which in turn sources bilateral agreements). The official MFA interactive tool (dali-ti-e-potrebna-viza) requires JavaScript to enumerate all countries. No e-visa or ETA program exists. Schengen Annex II nationalities are largely visa-free, with 15 specific exclusions: Dominica, Grenada, Kiribati, Marshall Islands, Micronesia, Palau, Samoa, Saint Lucia, Saint Vincent and the Grenadines, Solomon Islands, Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, and Vanuatu — these nationals require a visa."
+    "notes": "The MFA official page (mfa.gov.mk) confirms EU and Schengen nationals are visa-free with national ID cards (90 days within 180-day period). A comprehensive country-by-country list is sourced from Wikipedia's 'Visa policy of North Macedonia' article (which in turn sources bilateral agreements). The official MFA interactive tool (dali-ti-e-potrebna-viza) requires JavaScript to enumerate all countries. No e-visa or ETA program exists. Schengen Annex II nationalities are largely visa-free, with 15 specific exclusions: Dominica, Grenada, Kiribati, Marshall Islands, Micronesia, Palau, Samoa, Saint Lucia, Saint Vincent and the Grenadines, Solomon Islands, Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, and Vanuatu - these nationals require a visa."
   },
   "conditional_access": [
     {
@@ -618,7 +755,7 @@
     "processing_time": "5–10 months (officially stated as ~5 months; industry sources estimate 8–10 months)",
     "dual_citizenship_allowed": true,
     "residency_required": false,
-    "notes": "Program was legislated in 2019 and has an annual quota of 1,000 applicants. Application fees: EUR 20,000 for main applicant, EUR 20,000 for spouse, EUR 10,000 per child under 18. As of 2026, Henley & Partners describes the program as 'under development — the government is currently in the process of setting up the program.' No passports have been confirmed as issued under this program since it was introduced. The official site mkcitizenship.gov.mk remains registered but was unreachable (ECONNREFUSED) during this research session. Program should be treated as legislatively active but operationally non-functional pending full government setup."
+    "notes": "Program was legislated in 2019 and has an annual quota of 1,000 applicants. Application fees: EUR 20,000 for main applicant, EUR 20,000 for spouse, EUR 10,000 per child under 18. As of 2026, Henley & Partners describes the program as 'under development - the government is currently in the process of setting up the program.' No passports have been confirmed as issued under this program since it was introduced. The official site mkcitizenship.gov.mk remains registered but was unreachable (ECONNREFUSED) during this research session. Program should be treated as legislatively active but operationally non-functional pending full government setup."
   },
   "rbi": {
     "programs": [
@@ -639,7 +776,7 @@
     "programs": []
   },
   "agreements": [
-    "Open Balkan Initiative (North Macedonia, Serbia, Albania — free movement of people, goods, services, capital)"
+    "Open Balkan Initiative (North Macedonia, Serbia, Albania - free movement of people, goods, services, capital)"
   ],
   "official_domains": [
     "mfa.gov.mk",
@@ -652,20 +789,23 @@
     "validation_notes": [
       "ADDED: 47 specific visa-free nationality entries (Australia, Brazil, Canada, Japan, South Korea, UAE, UK, USA, and many others) that were entirely missing from the prior record. Previous record only listed 'EU Member States', 'Schengen signatories', and Albania.",
       "CORRECTED: max_stay_days for EU and Schengen entries changed from null to 90 (within any 180-day period), as confirmed by MFA official text.",
-      "CORRECTED: Schengen non-EU entry split from the blanket 'Schengen Agreement signatory states nationals' to clarify it refers to Iceland, Liechtenstein, Norway, Switzerland — avoiding confusion with Schengen Type C visa holders.",
-      "ADDED: Conditional entry for Georgia — biometric ordinary passports get 90-day visa-free (single entry); previously Georgia was not listed at all.",
-      "ADDED: Conditional entry for Belarus — tourist voucher or organized travel group required for visa exemption; previously missing.",
-      "ADDED: Conditional entry for China — passport must be endorsed 'for public affairs'; previously missing.",
+      "CORRECTED: Schengen non-EU entry split from the blanket 'Schengen Agreement signatory states nationals' to clarify it refers to Iceland, Liechtenstein, Norway, Switzerland - avoiding confusion with Schengen Type C visa holders.",
+      "ADDED: Conditional entry for Georgia - biometric ordinary passports get 90-day visa-free (single entry); previously Georgia was not listed at all.",
+      "ADDED: Conditional entry for Belarus - tourist voucher or organized travel group required for visa exemption; previously missing.",
+      "ADDED: Conditional entry for China - passport must be endorsed 'for public affairs'; previously missing.",
       "ADDED: Diplomatic/official passport waivers for Belarus, China, India (diplomatic only), Iran, Indonesia, Mongolia as a single conditional_access entry (basis=passport_type).",
-      "CONSOLIDATED: The four separate EU/Schengen residence permit conditional_access entries (temporary + permanent, EU + Schengen — four entries) have been merged into one entry covering 'EU or Schengen, temporary or permanent residence permit'.",
+      "CONSOLIDATED: The four separate EU/Schengen residence permit conditional_access entries (temporary + permanent, EU + Schengen - four entries) have been merged into one entry covering 'EU or Schengen, temporary or permanent residence permit'.",
       "CORRECTED: CBI processing time updated from '4-6 months' to '5-10 months' to reflect both official claim (~5 months) and industry estimates (8-10 months).",
-      "NOTED: Schengen Annex II exclusions documented in the visa_policy notes — 15 nationalities (Dominica, Grenada, Kiribati, Marshall Islands, Micronesia, Palau, Samoa, Saint Lucia, Saint Vincent and the Grenadines, Solomon Islands, Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, Vanuatu) require visas despite being on Schengen Annex II.",
-      "CLARIFIED: Peru appears in both the 90-day visa-free list and in the diplomatic/service passport waiver list — ordinary passport holders are visa-free for 90 days; a separate bilateral agreement also covers diplomatic passports."
+      "NOTED: Schengen Annex II exclusions documented in the visa_policy notes - 15 nationalities (Dominica, Grenada, Kiribati, Marshall Islands, Micronesia, Palau, Samoa, Saint Lucia, Saint Vincent and the Grenadines, Solomon Islands, Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, Vanuatu) require visas despite being on Schengen Annex II.",
+      "CLARIFIED: Peru appears in both the 90-day visa-free list and in the diplomatic/service passport waiver list - ordinary passport holders are visa-free for 90 days; a separate bilateral agreement also covers diplomatic passports.",
+      "ADDED: visa_types array populated with all 9 formal visa types extracted from official MFA source (mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm): Airport Transit (A), Short-Stay/Tourism-Business (C), Short-Stay Transit (C), and Long-Stay (D) sub-categories for Work, Study, Medical, Family Reunion, Scientific Research/Volunteering/Humanitarian, and Property Owner investment pathway.",
+      "VALIDATION 2026-06-27: Re-fetched mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm and mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm - both pages load and confirm existing record: EU/Schengen nationals visa-free with ID card (90 days/180-day period); credential-based entries (EU/Schengen residence permit, multiple-entry Schengen/UK/US/CA visa) valid 15 days per entry through 31 Dec 2026; UN travel document holders exempt. No new access categories found. Wikipedia article (last updated 14 June 2026) cross-checked - confirms same visa-free country list as currently recorded. No additions or removals to visa_policy lists are warranted. Russia, Ireland, Cuba, and Azerbaijan appeared on a third-party aggregator (embassies.net) but are NOT confirmed by Wikipedia's June 2026 update or the MFA official page; those entries were NOT added (safety rule: when in doubt, classify down). UAE (ARE) already in record - confirmed correct per MFA sources and Wikipedia (MK-UAE visa-free in force since May 2025). CBI: mkcitizenship.gov.mk remains ECONNREFUSED; industry sources report program 'reopened in 2026' but this cannot be verified from the official government domain; CBI notes updated to reflect both the official 'under development' status per Henley & Partners and the 2026 industry reopening reports.",
+      "VALIDATION 2026-06-29: Re-fetched mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm (loaded, confirmed), mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm (loaded, confirmed), and Wikipedia 'Visa policy of North Macedonia' (last updated 14 June 2026, confirmed). All three primary sources re-opened and checked against current record. Findings: (1) EU/Schengen nationals visa-free with national ID card, 90 days per 180-day period — CONFIRMED unchanged. (2) Credential-based entries (EU/Schengen residence permit, multiple-entry Schengen/UK/US/CA visa) — 15 days per entry, effective 1 Jan–31 Dec 2026 — CONFIRMED unchanged. (3) UN travel document holders visa-free — CONFIRMED unchanged. (4) Full visa-free country list (Albania, Andorra, Antigua and Barbuda, Argentina, Australia, Bahamas, Barbados, BiH, Brazil, Brunei, Canada, Chile, Colombia, Costa Rica, El Salvador, Guatemala, Honduras, HK-SAR, Israel, Japan, Kosovo, Macao-SAR, Malaysia, Mauritius, Mexico, Moldova, Monaco, Montenegro, New Zealand, Nicaragua, Panama, Paraguay, Peru, KNA, San Marino, Serbia, Seychelles, Singapore, South Korea, Taiwan, Turkey, UAE, Ukraine, UK, USA, Uruguay, Vatican, Venezuela) — ALL CONFIRMED via Wikipedia June 14 2026 update; no additions or removals. (5) No new bilateral visa-free agreements signed between June 27 and June 29, 2026 found on official sources. (6) CBI: mkcitizenship.gov.mk still ECONNREFUSED; Henley & Partners continues to describe program as 'under development' — CBI section preserved unchanged. NO changes to visa_policy lists warranted by this re-verification."
     ],
     "gaps": [
       "The MFA interactive visa tool (mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza) requires JavaScript interaction to enumerate all countries; the comprehensive country list in visa_free section is sourced from Wikipedia, not directly from official North Macedonian government text. Source_official is therefore false for those individual entries.",
-      "Official bilateral agreement texts on mfa.gov.mk/en-GB/dogovori-rezolucii-i-merki/megjunarodni-dogovori require JavaScript/click interaction and could not be directly fetched — diplomatic/service passport waiver details (countries, precise stay limits) are therefore sourced from Wikipedia only.",
-      "The official CBI website mkcitizenship.gov.mk was unreachable (ECONNREFUSED) during research; program details based on search excerpts and Henley & Partners page referencing the official program.",
+      "Official bilateral agreement texts on mfa.gov.mk/en-GB/dogovori-rezolucii-i-merki/megjunarodni-dogovori require JavaScript/click interaction and could not be directly fetched - diplomatic/service passport waiver details (countries, precise stay limits) are therefore sourced from Wikipedia only.",
+      "The official CBI website mkcitizenship.gov.mk remains unreachable (ECONNREFUSED) as of 2026-06-29 re-verification. Third-party industry sources (ITC iLand, Global Investments) report the program 'officially reopened' in April 2026, but this cannot be confirmed from the official government domain. Henley & Partners (fetched 2026-06-29) still describes it as 'under development — the government is currently in the process of setting up the program.' CBI data is therefore preserved as-is; no verified passport issuances under this program have been confirmed.",
       "Invest North Macedonia (investnorthmacedonia.gov.mk) returned HTTP 403 Forbidden, preventing direct verification of investor permit details.",
       "Stay duration for diplomatic/service passport holders (conditional_access passport_type entries) not confirmed from official North Macedonian government pages.",
       "Path to permanent residence and citizenship timelines for RBI programs not specified on official sources found.",
@@ -673,7 +813,10 @@
       "Georgia's conditional visa-free status (biometric passport only) sourced from Wikipedia; could not be verified from a directly fetchable official North Macedonian government page.",
       "No digital nomad or startup visa program found on official MFA sources.",
       "Open Balkan is an initiative; practical full implementation status is unclear from official sources.",
-      "OCI (Overseas Citizen of India) cardholder entry rules: no mention found on any official North Macedonian government source."
+      "OCI (Overseas Citizen of India) cardholder entry rules: no mention found on any official North Macedonian government source.",
+      "Exact fee amounts for Type A and Type D visas not stated on official MFA visa types page; only Type C fee (60 EUR / 35 EUR for children aged 6-12) is confirmed.",
+      "Processing times for all visa types not published on official MFA pages reviewed.",
+      "Business visa is handled under the Type C short-stay visa (not a separate category); no distinct business visa category exists."
     ]
   },
   "sources_checked": [
@@ -681,9 +824,14 @@
     "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
     "https://mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza",
     "https://mfa.gov.mk/en-GB/konzularni-uslugi/proveri-dali-ti-e-potrebna-viza",
+    "https://mfa.gov.mk/en-GB/kontakt/cpp-cesto-postavuvani-prasanja",
     "https://en.wikipedia.org/wiki/Visa_policy_of_North_Macedonia",
     "https://mkcitizenship.gov.mk/",
     "https://www.henleyglobal.com/citizenship-investment/north-macedonia",
-    "https://investnorthmacedonia.gov.mk/visa-requirements-and-procedure/"
+    "https://investnorthmacedonia.gov.mk/visa-requirements-and-procedure/",
+    "https://embassies.net/north-macedonia-visa-exemption",
+    "https://www.itciland.com/en/blog/north-macedonia-citizenship-by-investment-reopens-2026",
+    "https://www.globalinvestments.net/citizenship/north-macedonia",
+    "https://www.henleyglobal.com/citizenship-investment/north-macedonia"
   ]
 }

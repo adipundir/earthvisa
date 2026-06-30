@@ -19,7 +19,7 @@
       {"name": "Austria", "iso3": "AUT", "notes": "90 days; EU free movement"},
       {"name": "Bahamas", "iso3": "BHS", "notes": "3 months"},
       {"name": "Barbados", "iso3": "BRB", "notes": "3 months"},
-      {"name": "Belarus", "iso3": "BLR", "notes": "Ordinary passport: 30 days (special conditions apply — see travel advice); diplomatic/service: 90 days"},
+      {"name": "Belarus", "iso3": "BLR", "notes": "Ordinary passport: 30 days (special conditions apply - see travel advice); diplomatic/service: 90 days"},
       {"name": "Belgium", "iso3": "BEL", "notes": "3 months; EU free movement"},
       {"name": "Belize", "iso3": "BLZ", "notes": "30 days"},
       {"name": "Bolivia", "iso3": "BOL", "notes": "90 days"},
@@ -139,7 +139,7 @@
       {"name": "Canada", "iso3": "CAN", "notes": "eTA (Electronic Travel Authorization) required for air travel and transit; up to 6 months. Other purposes (work, study) require visa."},
       {"name": "Kenya", "iso3": "KEN", "notes": "Electronic Travel Authorization (ETA) mandatory before each entry via etakenya.go.ke; 90 days"},
       {"name": "Taiwan", "iso3": null, "notes": "Online registration via Taiwan immigration authority (Online Immigration Arrival Card) required before arrival; 90 days"},
-      {"name": "Malaysia", "iso3": "MYS", "notes": "Malaysia Digital Arrival Card (MDAC) online pre-registration required; 90 days. Not a visa — entry remains visa-free."}
+      {"name": "Malaysia", "iso3": "MYS", "notes": "Malaysia Digital Arrival Card (MDAC) online pre-registration required; 90 days. Not a visa - entry remains visa-free."}
     ]
   },
   "visa_policy": {
@@ -665,14 +665,6 @@
         "source_official": true
       },
       {
-        "nationality": "Vanuatu",
-        "iso3": "VUT",
-        "max_stay_days": 90,
-        "notes": "90 days within any 180-day period.",
-        "source_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
-        "source_official": true
-      },
-      {
         "nationality": "Venezuela",
         "iso3": "VEN",
         "max_stay_days": 90,
@@ -879,7 +871,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Bilateral visa waiver agreement: holders of Georgian diplomatic or service passports may enter Hungary visa-free (terms per agreement). NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information — this suspension note was previously recorded only for Georgia; it applies to ALL diplomatic/service/official passport waivers.",
+      "conditions": "Bilateral visa waiver agreement: holders of Georgian diplomatic or service passports may enter Hungary visa-free (terms per agreement). NOTE: Visa-free travel for diplomatic, service and official passports is temporarily suspended until 6 March 2027 per official Hungarian consular information - this suspension note was previously recorded only for Georgia; it applies to ALL diplomatic/service/official passport waivers.",
       "source_url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
       "source_official": true
     },
@@ -1181,6 +1173,323 @@
       "source_official": true
     }
   ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Type C)",
+      "purpose": "Permits short-term tourism, family visits, or business activity in Hungary and the Schengen Area for nationals not eligible for visa-free entry.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+      "notes": "Hungary is a Schengen member. Type C visas are issued by Hungarian consulates abroad. Allows up to 90 days in any 180-day period across the entire Schengen Area. Visa-free nationals do not need this visa. Applied for at the Hungarian embassy/consulate in the applicant's country of residence."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Short-Stay Visa (Type C) - Business",
+      "purpose": "Covers short-term business activities in Hungary such as meetings, negotiations, and conferences for nationals of countries not on the Schengen visa-free list.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+      "notes": "Business is a permitted purpose under the Schengen short-stay visa. For longer-term employment or self-employment a national long-stay (Type D) visa is required. Applied for at the Hungarian embassy/consulate."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (ATV)",
+      "purpose": "Permits transit through the international zone of a Hungarian airport without entering the Schengen Area, required for certain nationalities.",
+      "max_stay_days": 1,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+      "notes": "Required only for nationals of countries listed on the EU airport transit visa list. Does not permit entry into Hungary or other Schengen states. Applied for at the Hungarian consulate."
+    },
+    {
+      "category": "work",
+      "name": "EU Blue Card (Kék Kártya)",
+      "purpose": "Residence permit for highly qualified third-country nationals employed in Hungary in a job requiring tertiary education or equivalent professional experience.",
+      "max_stay_days": null,
+      "validity_days": 1460,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 70,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.oif.gov.hu/factsheets/eu-blue-card",
+      "notes": "Valid up to 4 years, renewable. Minimum salary threshold: HUF 1,001,048/month (2026). Healthcare roles: HUF 800,838/month (2026). Employment restricted to sponsoring employer during first year. Must be applied for via Enter Hungary platform or Hungarian consulate. Grants access to EU-wide long-term mobility after 18 months."
+    },
+    {
+      "category": "work",
+      "name": "Residence Permit for Intra-Corporate Transfer",
+      "purpose": "Allows third-country nationals employed by a multinational group to be temporarily posted to a Hungarian entity within the same group for employment or training.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 70,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-intra-corporate-transfer-and-permit-for-long-term-mobility",
+      "notes": "Executive/specialist permits valid up to 3 years. Trainee permits valid up to 1 year. Requires proof of at least 3 months continuous employment at the sending company. Not available to private entrepreneurs, agency workers, full-time students, or researchers. Long-term mobility (for ICT permit holders from other EU states) must be applied for 20 days before posting starts."
+    },
+    {
+      "category": "work",
+      "name": "Residence Permit for Posted Work",
+      "purpose": "Allows third-country nationals holding an EU employment residence permit to work in Hungary on a temporary posting from their EU-based employer.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-posted-work",
+      "notes": "Valid for up to 2 years, aligned with posting duration. Requires a valid EU employment residence permit from another Member State. Cannot exceed the original EU permit's validity. Does not lead to permanent residence. Extendable via Enter Hungary platform only."
+    },
+    {
+      "category": "work",
+      "name": "Residence Permit for Seasonal Employment",
+      "purpose": "Covers third-country nationals employed in plant production, forest management, animal breeding, or fishery sectors in Hungary on a seasonal basis.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 21,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-seasonal-employment",
+      "notes": "Initial permit up to 6 months; extendable for up to 6 months within a 12-month period. Expedited 15-day processing for applicants with prior lawful stay in Hungary within last 5 years. Workers may only work for the designated employer listed on the permit. Employment termination invalidates permit after 6 days notice."
+    },
+    {
+      "category": "work",
+      "name": "Hungarian Card (Magyar Kártya)",
+      "purpose": "Work and residence permit for third-country nationals employed by a Hungarian employer, covering general employment not requiring the EU Blue Card level of qualification.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 70,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
+      "notes": "Referenced in official OIF factsheets as an employment-based permit. Standard employment category; distinct from EU Blue Card. Applied for via Enter Hungary platform or Hungarian consulate."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "White Card - Residency for Digital Nomads",
+      "purpose": "Allows third-country nationals working remotely for a foreign employer or managing their own foreign company to reside in Hungary for up to 2 years.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/white-card-residency-for-digital-nomads",
+      "notes": "Initial validity up to 1 year, extendable once for another year (maximum 2 years total). Requires minimum net monthly income of EUR 3,000 for at least 6 months prior to application. Applicant must not work for any Hungarian employer or hold shares in Hungarian companies. Family reunification not permitted (except children born during the permit's validity). Cannot transition to other permit types or obtain permanent residence. Must be applied for via Enter Hungary platform or at the NDGAP directorate."
+    },
+    {
+      "category": "investment",
+      "name": "Guest Investor Visa",
+      "purpose": "Entry visa for third-country nationals committing to a qualifying investment in Hungary before applying for the Guest Investor Residence Permit.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/visa-for-guest-investors",
+      "notes": "Valid up to 6 months; becomes void upon issuance of Guest Investor Residence Permit. Two qualifying investment routes: (1) EUR 250,000 minimum in Hungarian National Bank-registered real estate investment fund shares (5-year holding required); (2) EUR 1,000,000 donation to a public higher education institution. Applied for at a Hungarian consulate in the applicant's country of residence, nationality, or legal stay. Residence permit application must be filed within 30 days of first entry into Hungary."
+    },
+    {
+      "category": "investment",
+      "name": "Guest Investor Residence Permit",
+      "purpose": "Long-term residence permit for third-country nationals who make a qualifying investment of national economic interest in Hungary.",
+      "max_stay_days": null,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-investor",
+      "notes": "Valid up to 10 years, renewable for additional 10-year periods indefinitely. Two investment routes: EUR 250,000 in real estate fund shares (5-year hold), or EUR 1,000,000 educational/cultural donation to a public higher education institution. Work permitted without restrictions including employment, self-employment, and chief executive roles. Guest investors cannot obtain a National Residence Card (permanent residence). Not a citizenship pathway. Processing time: 21 days. Applied for via Enter Hungary platform or regional NDGAP directorate."
+    },
+    {
+      "category": "other",
+      "name": "Guest Self-Employment Residence Permit",
+      "purpose": "Allows third-country nationals to pursue self-employed activities or act as chief executive of a business organization registered in Hungary.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-self-employment",
+      "notes": "Initial permit up to 1 year, extendable up to 3 years total. Self-employed must demonstrate annual income exceeding 24 times the minimum wage (via tax authority certification). Business executives: organization must employ at least 5 Hungarian/EEA nationals full-time for 6 consecutive months, or demonstrate sufficient income. Family reunification restricted for the first year after issuance. Cannot obtain National Residence Card (permanent residence). Cannot hold Hungarian Card or EU Blue Card simultaneously."
+    },
+    {
+      "category": "student",
+      "name": "Residence Permit for Traineeship",
+      "purpose": "Permits third-country nationals who recently obtained a higher education degree or are currently studying to undertake a traineeship with a Hungarian host organization.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-traineeship",
+      "notes": "Valid for up to 6 months; not renewable. Applicant must have obtained a higher education degree within 2 years prior, or be currently pursuing relevant studies. Requires a traineeship contract with an approved Hungarian host organization, language proficiency documentation, proof of financial resources, and health insurance. Host organization must commit to covering expulsion costs if needed."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit for Seeking a Job or Starting a Business",
+      "purpose": "Grants third-country nationals who held a research or study permit additional time to find employment or set up a business in Hungary.",
+      "max_stay_days": 270,
+      "validity_days": 270,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-seeking-a-job-or-starting-a-business",
+      "notes": "Valid for maximum 9 months; not extendable. Only available to those transitioning from a research or study residence permit. Must apply via Enter Hungary platform at least 15 days before current permit expires. Holders may subsequently apply for a Hungarian Card, EU Blue Card, or Guest Self-Employment Residence Permit. Must register with employment services or provide employer certification of job commencement within 3 months."
+    },
+    {
+      "category": "work",
+      "name": "Researcher Residence Permit",
+      "purpose": "Allows third-country national researchers to reside in Hungary while conducting research under a hosting agreement with an accredited Hungarian research organization.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/the-residence-of-the-researcher-and-hisher-family-member",
+      "notes": "Valid 1–2 years depending on hosting agreement duration. Long-term mobility permit for researchers from other EU Member States valid up to 365 days. Host organizations can submit applications on behalf of researchers via Enter Hungary. Family members of researchers may apply for their own permits. Initial examination within 15 days; final decision within 60 days."
+    },
+    {
+      "category": "family",
+      "name": "Residence Permit for Family Reunification",
+      "purpose": "Allows family members of Hungarian citizens, residence permit holders, refugees, or qualifying EEA nationals to reside in Hungary.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 70,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-family-reunification",
+      "notes": "Valid up to 3 years (extendable); 4 years if sponsor holds EU Blue Card or Corporate Card; 5 years if sponsor is Hungarian citizen with permanent residence; 10 years if sponsor is guest investor. Eligible family members: spouses, minor children (including adopted/foster), and dependent minors with parental custody. Processing time: 21 days standard, 70 days when combined with employment. Cannot exceed the validity of the applicant's travel document or sponsor's permit."
+    },
+    {
+      "category": "medical",
+      "name": "Residence Permit for Medical Treatment",
+      "purpose": "Permits third-country nationals to reside in Hungary to receive medical treatment at a Hungarian medical facility, or to accompany a family member receiving treatment.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 8,
+      "processing_days_max": 21,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-medical-treatment",
+      "notes": "Valid up to 2 years; potentially extended for an additional 2 years based on treatment duration. Requires formal statement from the host medical facility. Processing time: 21 days standard, 8 days for minor applicants. Must enter Hungary within 3 months of approval or permit becomes invalid. Cannot apply for other permit types while holding this permit; does not lead to permanent residence. Family members cannot use family reunification provisions."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit for Voluntary Activities",
+      "purpose": "Allows third-country nationals to reside in Hungary to perform public interest voluntary activities under contract with an approved host organization or participate in European Voluntary Service.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-voluntary-activities",
+      "notes": "Valid for the duration of the hosting contract, capped at 2 years. Not available to those with refugee status, subsidiary protection, tolerated status, or EU residence permits. Family members cannot obtain permits through family reunification. Does not lead to permanent residence eligibility. Cannot apply for other permit types while holding or after holding this permit."
+    },
+    {
+      "category": "other",
+      "name": "National Residence Card",
+      "purpose": "Permanent residence card for third-country nationals who have legally and continuously resided in Hungary for at least 3 years, granting the right to stay indefinitely.",
+      "max_stay_days": null,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 70,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/national-residence-card",
+      "notes": "Card valid up to 10 years, renewable for additional 10-year periods. Eligibility: 3 years continuous lawful residence, OR spouse of Hungarian citizen (married 2+ years), OR previously held Hungarian citizenship, OR minor children of long-term residents/recognized refugees, OR dependent ancestors residing with sponsor for 1+ years. Not available to those holding temporary work or study permits or to guest investors. Processing time 70 days standard; 5 days for children born in Hungary to eligible parents. Applications submitted via Enter Hungary platform only."
+    },
+    {
+      "category": "other",
+      "name": "EU Long-Term Residence Card (EU Residence Card)",
+      "purpose": "EU-standard permanent residence status for third-country nationals who have resided legally in Hungary for at least 5 years, conferring rights comparable to EU citizens within Hungary.",
+      "max_stay_days": null,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 70,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/eu-residence-card",
+      "notes": "Card valid up to 10 years, renewable. Requires 5 years continuous lawful residence, or 2 years in Hungary plus 5 years total holding EU Blue Card, research, or study permits across EU Member States. Not available to students, seasonal workers, those under diplomatic immunity, asylum applicants, refugees, or those with tolerated status. Requires Hungarian cultural knowledge exam certificate. Applications via Enter Hungary platform only. Administrative fee: confirmed applicable, amount not extracted."
+    },
+    {
+      "category": "other",
+      "name": "Permanent Residence Card (EEA Nationals)",
+      "purpose": "Grants EEA nationals the right to permanent residence in Hungary after 5 years of continuous legal residence.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 70,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/permanent-residence-card",
+      "notes": "Available to EEA nationals who have resided continuously and legally in Hungary for 5 years, with accelerated pathways for workers reaching retirement age (3+ years residence), those forced to stop work due to illness (2+ years residence), accident-related incapacity, or workers commuting to another EEA state. Administrative fee: HUF 1,500 (paid electronically). Processing time: 70 days. Card remains valid indefinitely when paired with a valid travel/ID document. Application requires both in-person and electronic submission."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -1203,7 +1512,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-investor",
         "source_official": true,
-        "notes": "Two investment options: (1) Acquisition of investment fund share of at least EUR 250,000 issued by a real estate fund registered by the Hungarian National Bank — fund must allocate at least 40% of net asset value to Hungarian residential real estate; investor must hold for minimum 5 years. (2) Financial donation of at least EUR 1,000,000 to a public-trust higher education institution for educational, scientific research or artistic activities. A direct residential property purchase pathway (EUR 500,000) was abolished as of 15 January 2025. Permit valid up to 10 years, renewable for additional 10-year periods (no longer limited to one renewal). Guest investors explicitly CANNOT obtain a national residence card (permanent residence). No path to citizenship via this program. Work permitted without restrictions. Processing time: 21 days standard."
+        "notes": "Two investment options: (1) Acquisition of investment fund share of at least EUR 250,000 issued by a real estate fund registered by the Hungarian National Bank - fund must allocate at least 40% of net asset value to Hungarian residential real estate; investor must hold for minimum 5 years. (2) Financial donation of at least EUR 1,000,000 to a public-trust higher education institution for educational, scientific research or artistic activities. A direct residential property purchase pathway (EUR 500,000) was abolished as of 15 January 2025. Permit valid up to 10 years, renewable for additional 10-year periods (no longer limited to one renewal). Guest investors explicitly CANNOT obtain a national residence card (permanent residence). No path to citizenship via this program. Work permitted without restrictions. Processing time: 21 days standard."
       }
     ]
   },
@@ -1255,18 +1564,29 @@
     "completeness": "high",
     "validation_notes": [
       "CORRECTION (2026-06-14): Blanket suspension of ALL bilateral diplomatic/service/official passport waivers until 6 March 2027 propagated to all 40 conditional_access passport_type entries. Prior record noted this suspension only for Georgia; official Hungarian consular source (konzuliszolgalat.kormany.hu) confirms it applies universally.",
-      "CORRECTION (2026-06-14): ETIAS timeline updated — confirmed Q4 2026 launch with 6-month transition period extending into approximately April 2027. Prior record stated 'planned Q4 2026' without noting the transition period.",
+      "CORRECTION (2026-06-14): ETIAS timeline updated - confirmed Q4 2026 launch with 6-month transition period extending into approximately April 2027. Prior record stated 'planned Q4 2026' without noting the transition period.",
       "CORRECTION (2026-06-14): EU Blue Card 2026 healthcare salary threshold added: HUF 800,838/month (was absent from prior record; confirmed from oif.gov.hu/factsheets/eu-blue-card).",
-      "CORRECTION (2026-06-14): RBI Guest Investor program notes updated — permit renewals confirmed as renewable for additional 10-year periods (not limited to one renewal as previously implied), per oif.gov.hu factsheet updated March 3, 2026.",
-      "ADDITION (2026-06-14): Bilateral ordinary-passport extended stay details added to visa_free notes for 20 countries (Andorra, Argentina, Brazil, Canada, Chile, Costa Rica, Hong Kong SAR, Israel, Japan, Macao SAR, Malaysia, Mexico, New Zealand, Panama, Paraguay, San Marino (30 days), Singapore (30 days), South Korea, USA, Uruguay, Venezuela) — confirmed from oif.gov.hu/factsheets/information-notice-for-persons-entitled-to-a-visa-free-stay.",
-      "CORRECTION (2026-06-14): White Card family reunification note corrected — children born during the permit's validity are an exception to the no-family-reunification rule, per oif.gov.hu factsheet.",
+      "CORRECTION (2026-06-14): RBI Guest Investor program notes updated - permit renewals confirmed as renewable for additional 10-year periods (not limited to one renewal as previously implied), per oif.gov.hu factsheet updated March 3, 2026.",
+      "ADDITION (2026-06-14): Bilateral ordinary-passport extended stay details added to visa_free notes for 20 countries (Andorra, Argentina, Brazil, Canada, Chile, Costa Rica, Hong Kong SAR, Israel, Japan, Macao SAR, Malaysia, Mexico, New Zealand, Panama, Paraguay, San Marino (30 days), Singapore (30 days), South Korea, USA, Uruguay, Venezuela) - confirmed from oif.gov.hu/factsheets/information-notice-for-persons-entitled-to-a-visa-free-stay.",
+      "CORRECTION (2026-06-14): White Card family reunification note corrected - children born during the permit's validity are an exception to the no-family-reunification rule, per oif.gov.hu factsheet.",
       "VERIFIED (2026-06-14): Ordinary-passport visa-free list confirmed accurate against oif.gov.hu/factsheets/visa-free-citizens (68 states + Hong Kong SAR + Macao SAR + British special categories + Taiwan + Kosovo).",
       "VERIFIED (2026-06-14): CBI: no program confirmed. Guest Investor program provides residence only.",
       "VERIFIED (2026-06-14): Real estate direct purchase pathway (EUR 500,000) confirmed abolished 15 January 2025.",
-      "ADDITION (2026-06-14): outbound_official field added — Hungarian MFA official page 'Vízummentes külföldre utazás' (https://konzinfo.mfa.gov.hu/vizummentes-kulfoldre-utazas) confirmed as the origin-side authoritative list for where Hungarian ordinary passport holders can travel without a prior consular visa. Page content retrieved via direct HTTP fetch. Full country table extracted and structured into visa_free, visa_on_arrival, and eta categories."
+      "ADDITION (2026-06-14): outbound_official field added - Hungarian MFA official page 'Vízummentes külföldre utazás' (https://konzinfo.mfa.gov.hu/vizummentes-kulfoldre-utazas) confirmed as the origin-side authoritative list for where Hungarian ordinary passport holders can travel without a prior consular visa. Page content retrieved via direct HTTP fetch. Full country table extracted and structured into visa_free, visa_on_arrival, and eta categories.",
+      "CORRECTION (2026-06-27): REMOVED Vanuatu from visa_policy.visa_free. EU Regulation 2018/1806 Annex II was amended (M6, effective 3 February 2025) to move Vanuatu to Annex I (visa required) due to concerns about Vanuatu's investor citizenship scheme (golden passport program). The suspension of Vanuatu's visa waiver began May 4 2022 and became a permanent Annex I placement as of February 3 2025. Confirmed from EUR-Lex (CELEX:02018R1806-20250203). This was an error in the previous record.",
+      "VERIFIED (2026-06-27): EU Blue Card salary thresholds re-confirmed from oif.gov.hu/factsheets/eu-blue-card - HUF 1,001,048/month general, HUF 800,838/month healthcare (2026). No changes required.",
+      "VERIFIED (2026-06-27): Guest Investor Residence Permit confirmed from oif.gov.hu - EUR 250,000 fund option and EUR 1,000,000 donation option both still active. No changes required.",
+      "VERIFIED (2026-06-27): ETIAS Q4 2026 launch confirmed. EES became fully operational April 2026. ETIAS portal not yet open as of June 2026; launch expected October-November 2026. Mandatory with 6-month grace period (approximately April 2027).",
+      "VERIFIED (2026-06-27): Bilateral diplomatic/service/official passport suspension until 6 March 2027 confirmed still in effect per konzuliszolgalat.kormany.hu.",
+      "VERIFIED (2026-06-27): Dominican Republic correctly absent from visa_free list - confirmed Annex I (visa required) per EUR-Lex consolidated regulation.",
+      "VERIFIED (2026-06-29): visa_policy.visa_free list re-confirmed against oif.gov.hu/factsheets/visa-free-citizens (last updated March 3, 2026). No additions or removals detected. All 60+ entries remain accurate.",
+      "VERIFIED (2026-06-29): Bilateral extended-stay agreements re-confirmed from oif.gov.hu bilateral-agreement-based-continued-stay page (last updated March 17, 2026). Same 21-country list (20 x 90-day extensions + Singapore 30 days + San Marino 30 days). No changes.",
+      "VERIFIED (2026-06-29): ETIAS Q4 2026 launch and 6-month transition period (~April 2027 mandatory) confirmed from multiple sources including travel-europe.europa.eu. Record is accurate.",
+      "VERIFIED (2026-06-29): Diplomatic/service/official passport blanket suspension until 6 March 2027 confirmed still in effect per search results referencing konzuliszolgalat.kormany.hu.",
+      "VERIFIED (2026-06-29): No new EU Regulation 2018/1806 Annex II amendments found for 2025-2026 beyond the Vanuatu removal already recorded. Armenia visa liberalisation action plan published November 2025 but no visa-free access granted yet."
     ],
     "gaps": [
-      "Exact scope of which passport types are covered by the blanket diplomatic/service/official suspension (until 6 March 2027): the official search result states 'diplomatic, service and official passports' but some bilateral agreements in the record include 'special' passports — unclear whether 'special' passports are covered by the suspension.",
+      "Exact scope of which passport types are covered by the blanket diplomatic/service/official suspension (until 6 March 2027): the official search result states 'diplomatic, service and official passports' but some bilateral agreements in the record include 'special' passports - unclear whether 'special' passports are covered by the suspension.",
       "Exact naturalization residence requirement years for standard (non-simplified) naturalization pathway could not be confirmed from official English-language sources.",
       "Biometric passport conditions for some Annex II countries (e.g., Albania, Bosnia and Herzegovina, Georgia, Moldova, Montenegro, North Macedonia, Serbia, Ukraine) noted in some sources but not explicitly stated in the official oif.gov.hu factsheet retrieved.",
       "ETIAS fee amount not confirmed from official source.",
@@ -1275,15 +1595,15 @@
       "OCI (Overseas Citizen of India) card: no official Hungarian or Indian government source found granting OCI cardholders any special entry privileges to Hungary. Not recorded.",
       "Bilateral agreement dates/names: the official MFA table lists diplomatic/service/official passport waivers but does not provide agreement names or signing dates.",
       "Full list of countries covered by blanket diplomatic/service/official passport suspension not independently extracted from the official table (konzuliszolgalat.kormany.hu had SSL error); suspension confirmed via search results referencing this page.",
-      "Whether Georgia's ordinary-passport visa-free status (Annex II) is affected by the diplomatic/service/official passport suspension — it is not; ordinary passport visa-free access for Georgia is under EU Regulation 2018/1806 Annex II and is unaffected.",
-      "outbound_official: Page date/last-updated timestamp not visible in fetched HTML (no 'asof' value captured). Belarus ordinary passport conditions require checking travel advice section for special conditions not detailed in the table. Oman ordinary passport described as visa-on-arrival (max 14 days) — this may change; travelers should verify.",
-      "outbound_official: Algeria, Bahrain, Cambodia, Cuba, Egypt, Ghana, India, Indonesia, Iran, Jordan, Kuwait, Laos, Lebanon, Maldives, Pakistan, Qatar, Russia, Turkmenistan, Yemen — these appear in the official outbound table only for diplomatic/service passport holders (not ordinary M passport); they are NOT visa-free for ordinary Hungarian passport holders and are excluded from outbound_official.visa_free."
+      "Whether Georgia's ordinary-passport visa-free status (Annex II) is affected by the diplomatic/service/official passport suspension - it is not; ordinary passport visa-free access for Georgia is under EU Regulation 2018/1806 Annex II and is unaffected.",
+      "outbound_official: Page date/last-updated timestamp not visible in fetched HTML (no 'asof' value captured). Belarus ordinary passport conditions require checking travel advice section for special conditions not detailed in the table. Oman ordinary passport described as visa-on-arrival (max 14 days) - this may change; travelers should verify.",
+      "outbound_official: Algeria, Bahrain, Cambodia, Cuba, Egypt, Ghana, India, Indonesia, Iran, Jordan, Kuwait, Laos, Lebanon, Maldives, Pakistan, Qatar, Russia, Turkmenistan, Yemen - these appear in the official outbound table only for diplomatic/service passport holders (not ordinary M passport); they are NOT visa-free for ordinary Hungarian passport holders and are excluded from outbound_official.visa_free."
     ]
   },
   "sources_checked": [
     {
       "url": "https://oif.gov.hu/factsheets/visa-free-citizens",
-      "description": "Official Hungary immigration authority (OIF) factsheet listing all visa-free nationalities — re-fetched June 2026",
+      "description": "Official Hungary immigration authority (OIF) factsheet listing all visa-free nationalities - re-fetched June 2026",
       "official": true
     },
     {
@@ -1293,37 +1613,37 @@
     },
     {
       "url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-investor",
-      "description": "Official OIF factsheet: Guest Investor Residence Permit — re-fetched June 2026, last edited March 3 2026",
+      "description": "Official OIF factsheet: Guest Investor Residence Permit - re-fetched June 2026, last edited March 3 2026",
       "official": true
     },
     {
       "url": "https://www.oif.gov.hu/factsheets/eu-blue-card",
-      "description": "Official OIF factsheet: EU Blue Card for highly qualified workers — re-fetched June 2026, 2026 salary thresholds confirmed",
+      "description": "Official OIF factsheet: EU Blue Card for highly qualified workers - re-fetched June 2026, 2026 salary thresholds confirmed",
       "official": true
     },
     {
       "url": "https://oif.gov.hu/factsheets/white-card-residency-for-digital-nomads",
-      "description": "Official OIF factsheet: White Card for digital nomads — re-fetched June 2026",
+      "description": "Official OIF factsheet: White Card for digital nomads - re-fetched June 2026",
       "official": true
     },
     {
       "url": "https://konzinfo.mfa.gov.hu/en/visa-free-travel-hungary",
-      "description": "Hungarian MFA Consular Services: Complete visa-free travel table by passport type (inbound — who can enter Hungary visa-free)",
+      "description": "Hungarian MFA Consular Services: Complete visa-free travel table by passport type (inbound - who can enter Hungary visa-free)",
       "official": true
     },
     {
       "url": "https://konzinfo.mfa.gov.hu/vizummentes-kulfoldre-utazas",
-      "description": "Hungarian MFA Consular Services: Official outbound visa-free travel list — where Hungarian citizens can travel without a prior visa (fetched June 2026)",
+      "description": "Hungarian MFA Consular Services: Official outbound visa-free travel list - where Hungarian citizens can travel without a prior visa (fetched June 2026)",
       "official": true
     },
     {
       "url": "https://konzuliszolgalat.kormany.hu/visa-waiver-agreements",
-      "description": "Hungarian Consular Service: Visa waiver agreements page — SSL error prevented direct fetch; suspension note confirmed via search results referencing this page",
+      "description": "Hungarian Consular Service: Visa waiver agreements page - SSL error prevented direct fetch; suspension note confirmed via search results referencing this page",
       "official": true
     },
     {
       "url": "https://travel-europe.europa.eu/en/etias",
-      "description": "EU official ETIAS portal — ETIAS Q4 2026 launch with 6-month transition confirmed",
+      "description": "EU official ETIAS portal - ETIAS Q4 2026 launch with 6-month transition confirmed",
       "official": true
     },
     {
@@ -1334,6 +1654,71 @@
     {
       "url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-self-employment",
       "description": "Official OIF factsheet: Guest Self-Employment Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/visa-for-guest-investors",
+      "description": "Official OIF factsheet: Guest Investor Visa (entry visa prior to residence permit)",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-family-reunification",
+      "description": "Official OIF factsheet: Family Reunification Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-seasonal-employment",
+      "description": "Official OIF factsheet: Seasonal Employment Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/the-residence-of-the-researcher-and-hisher-family-member",
+      "description": "Official OIF factsheet: Researcher Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-traineeship",
+      "description": "Official OIF factsheet: Traineeship Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-seeking-a-job-or-starting-a-business",
+      "description": "Official OIF factsheet: Residence Permit for Job Seeking or Starting a Business",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-medical-treatment",
+      "description": "Official OIF factsheet: Medical Treatment Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-voluntary-activities",
+      "description": "Official OIF factsheet: Voluntary Activities Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-intra-corporate-transfer-and-permit-for-long-term-mobility",
+      "description": "Official OIF factsheet: Intra-Corporate Transfer Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-posted-work",
+      "description": "Official OIF factsheet: Posted Work Residence Permit",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/national-residence-card",
+      "description": "Official OIF factsheet: National Residence Card (permanent residence for third-country nationals)",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/eu-residence-card",
+      "description": "Official OIF factsheet: EU Long-Term Residence Card",
+      "official": true
+    },
+    {
+      "url": "https://oif.gov.hu/factsheets/permanent-residence-card",
+      "description": "Official OIF factsheet: Permanent Residence Card (for EEA nationals)",
       "official": true
     }
   ]

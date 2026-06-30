@@ -1411,19 +1411,26 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTION 1 — Malaysia ePassport requirement added: Previous record listed Malaysia as a plain 'Short-term stay visa exemption' with no condition. Official MOFA novisa.html (Note 3) clearly states the exemption is limited to ePassport holders since July 1, 2013; non-ePassport holders are advised to obtain a visa in advance. Added ePassport condition to Malaysia's visa_free entry.",
-      "CORRECTION 2 — Uruguay passport restriction added: Previous record listed Uruguay with no caveats. Official MOFA novisa.html (Note 11, new) states that new Uruguayan ordinary passports issued after April 16, 2025 that omit 'place of birth' from the personal data page are NOT recognized by Japan and are not eligible for visa-free travel. Added critical restriction to Uruguay's notes.",
-      "CORRECTION 3 — Qatar ePassport registration requirement added: Previous record noted Qatar as '30 days' with only a stay-limit note. Official MOFA novisa.html (Note 9) states Qatar nationals must register their ICAO-compliant ePassport with a Japanese diplomatic mission (valid 3 years). Updated Qatar notes to reflect registration requirement (same system as Indonesia).",
-      "CORRECTION 4 — Indonesia notes updated to reflect registration system: The previous record said 'Visa exemption only for holders of ePassport in compliance with ICAO standards (since December 1, 2014)' but omitted that Indonesia operates a pre-registration system at Japanese diplomatic missions in Indonesia. Updated to match the official Note 1 language.",
-      "CORRECTION 5 — Barbados and Lesotho notes corrected: Previous record said 'Visa exemption only for holders of Machine-Readable Passport (MRP)' without specifying the advisory-not-mandatory nature for non-MRP holders. Updated to match Note 7 wording: those without MRP are 'advised to obtain a visa in advance'.",
-      "CORRECTION 6 — Turkey name: Official MOFA page uses 'Türkiye'. Added note in the record. iso3 TUR unchanged.",
-      "CORRECTION 7 — Bosnia and Herzegovina added to conditional_access: The diplomatic/official passport exemption table at mofa.go.jp/ca/fna/page22e_000692.html lists 'Bosnia and Herzegovina' as a full diplomatic and official passport exempt country. This entry was entirely missing from the previous record's conditional_access section.",
-      "CORRECTION 8 — eVISA section massively expanded: Previous record listed 9 countries in e_visa (direct-apply only: Australia, Brazil, Cambodia, Canada, Saudi Arabia, South Africa, Taiwan, UK, USA). The official JAPAN eVISA page (dated May 15, 2026) confirms the system has expanded to 19 countries/regions total. Added 10 new agency-mediated eVISA entries: China (15/30-day stays), Philippines (15-day packaged tour), Vietnam (15-day packaged tour), Hong Kong, India, Indonesia, Macao, Mongolia, Republic of Korea (excl. Jeju), Singapore, UAE.",
-      "CORRECTION 9 — eVISA notes updated for China/Philippines/Vietnam stay limits: The prior record showed all eVISA as '90 days'. For China, the period is '15 days' or '30 days'; for Philippines and Vietnam (packaged tour), the period is '15 days'. Updated max_stay_days accordingly.",
-      "VERIFIED — 74 visa-free countries/regions confirmed against the live MOFA novisa.html (September 1, 2025 version).",
-      "VERIFIED — Diplomatic/official passport exemptions: 65 countries confirmed against live page (January 2, 2026 version). Saudi Arabia arrangement (effective January 2, 2026) confirmed present.",
-      "VERIFIED — No credential-based (US/Schengen visa holder) conditional entry rule exists for Japan per official sources.",
-      "VERIFIED — CBI: no program confirmed. RBI programs and fast_track programs not updated as no contradicting official sources found in this session."
+      "CORRECTION 1 - Malaysia ePassport requirement added: Previous record listed Malaysia as a plain 'Short-term stay visa exemption' with no condition. Official MOFA novisa.html (Note 3) clearly states the exemption is limited to ePassport holders since July 1, 2013; non-ePassport holders are advised to obtain a visa in advance. Added ePassport condition to Malaysia's visa_free entry.",
+      "CORRECTION 2 - Uruguay passport restriction added: Previous record listed Uruguay with no caveats. Official MOFA novisa.html (Note 11, new) states that new Uruguayan ordinary passports issued after April 16, 2025 that omit 'place of birth' from the personal data page are NOT recognized by Japan and are not eligible for visa-free travel. Added critical restriction to Uruguay's notes.",
+      "CORRECTION 3 - Qatar ePassport registration requirement added: Previous record noted Qatar as '30 days' with only a stay-limit note. Official MOFA novisa.html (Note 9) states Qatar nationals must register their ICAO-compliant ePassport with a Japanese diplomatic mission (valid 3 years). Updated Qatar notes to reflect registration requirement (same system as Indonesia).",
+      "CORRECTION 4 - Indonesia notes updated to reflect registration system: The previous record said 'Visa exemption only for holders of ePassport in compliance with ICAO standards (since December 1, 2014)' but omitted that Indonesia operates a pre-registration system at Japanese diplomatic missions in Indonesia. Updated to match the official Note 1 language.",
+      "CORRECTION 5 - Barbados and Lesotho notes corrected: Previous record said 'Visa exemption only for holders of Machine-Readable Passport (MRP)' without specifying the advisory-not-mandatory nature for non-MRP holders. Updated to match Note 7 wording: those without MRP are 'advised to obtain a visa in advance'.",
+      "CORRECTION 6 - Turkey name: Official MOFA page uses 'Türkiye'. Added note in the record. iso3 TUR unchanged.",
+      "CORRECTION 7 - Bosnia and Herzegovina added to conditional_access: The diplomatic/official passport exemption table at mofa.go.jp/ca/fna/page22e_000692.html lists 'Bosnia and Herzegovina' as a full diplomatic and official passport exempt country. This entry was entirely missing from the previous record's conditional_access section.",
+      "CORRECTION 8 - eVISA section massively expanded: Previous record listed 9 countries in e_visa (direct-apply only: Australia, Brazil, Cambodia, Canada, Saudi Arabia, South Africa, Taiwan, UK, USA). The official JAPAN eVISA page (dated May 15, 2026) confirms the system has expanded to 19 countries/regions total. Added 10 new agency-mediated eVISA entries: China (15/30-day stays), Philippines (15-day packaged tour), Vietnam (15-day packaged tour), Hong Kong, India, Indonesia, Macao, Mongolia, Republic of Korea (excl. Jeju), Singapore, UAE.",
+      "CORRECTION 9 - eVISA notes updated for China/Philippines/Vietnam stay limits: The prior record showed all eVISA as '90 days'. For China, the period is '15 days' or '30 days'; for Philippines and Vietnam (packaged tour), the period is '15 days'. Updated max_stay_days accordingly.",
+      "VERIFIED - 74 visa-free countries/regions confirmed against the live MOFA novisa.html (September 1, 2025 version).",
+      "VERIFIED - Diplomatic/official passport exemptions: 65 countries confirmed against live page (January 2, 2026 version). Saudi Arabia arrangement (effective January 2, 2026) confirmed present.",
+      "VERIFIED - No credential-based (US/Schengen visa holder) conditional entry rule exists for Japan per official sources.",
+      "VERIFIED - CBI: no program confirmed. RBI programs and fast_track programs not updated as no contradicting official sources found in this session.",
+      "RE-VERIFICATION 2026-06-27 - Visa-free list: MOFA novisa.html confirmed still at 74 countries/regions as of September 1, 2025 effective date. No new visa-free additions detected between October 2025 and June 2026. All search results consistently cite the same 74-country list with Montenegro as the most recent addition (September 1, 2025). Direct WebFetch of mofa.go.jp returned HTTP 403; confirmed via WebSearch snippets citing MOFA directly and migaku.com cross-reference. No changes made to visa_free list.",
+      "RE-VERIFICATION 2026-06-27 - eVISA: No new eVISA-eligible countries identified since the May 15, 2026 expansion. The 19 countries/regions listed remain current. Direct WebFetch of mofa.go.jp/j_info/visit/visa/visaonline.html returned HTTP 403; confirmed via search snippets.",
+      "CORRECTION 2026-06-27 - Visa issuance fees updated: Japan increased visa fees for the first time in 48 years, effective July 1, 2026. Single-entry visa: JPY 3,000 → JPY 15,000 (~USD 100). Multiple-entry visa: JPY 6,000 → JPY 30,000 (~USD 200). Updated fee_usd in Temporary Visitor Visa (Tourist) from 25 to 100, and Short-Term Business Visa from 50 to 200. Source: deeparrival.com/news/japan-visa-fee-increase-2026/ (citing official government announcement).",
+      "NOTED 2026-06-27 - JESTA (Japan Electronic System for Travel Authorization): Japan's parliament passed the JESTA enabling law on May 29, 2026 (House of Councillors). The system will require visa-exempt travelers to obtain pre-travel electronic authorization, modeled after the US ESTA. Implementation is targeted for fiscal year 2028 (no earlier than April 2028, no later than March 2029). JESTA is NOT in effect as of June 2026 and does NOT change current entry rules. Approximately 31 million annual travelers will eventually fall within scope. The fee has not been finalized (officials referenced JPY 2,000–3,000 range). No changes to visa_policy made as a result. Source: visasnews.com reporting on parliamentary proceedings April–May 2026.",
+      "RE-VERIFICATION 2026-06-27 - Diplomatic/official passport exemptions: Not re-fetched (HTTP 403 on mofa.go.jp/ca/fna/page22e_000692.html). Carried forward from prior session. Search snippets confirm Saudi Arabia arrangement (effective January 2, 2026) remains the most recent diplomatic exemption addition. No new diplomatic arrangements detected.",
+      "RE-VERIFICATION 2026-06-27 - MOFA confirmed via WebSearch that no visa-free countries were added after September 1, 2025. No credential-based conditional entry found. eVISA list confirmed unchanged. visa_required field remains absent (correct: Japan does not operate a 'visa-free for all EXCEPT list' policy).",
+      "RE-VERIFICATION 2026-06-29 - Full re-check against official sources. MOFA novisa.html and mofa.go.jp still return HTTP 403 on direct WebFetch; confirmed via WebSearch snippets citing MOFA directly (migaku.com May 12 2026, Wikipedia, japan-visa.com). Visa-free list remains at 74 countries/regions as of September 1, 2025. No new additions since Montenegro (September 1, 2025) detected. Colombia confirmed NOT on ordinary visa-free list (exemption cancelled February 1, 2004) — current record is correct. Thailand ePassport requirement confirmed. eVISA system confirmed at 19 countries/regions (9 direct-apply + 10 agency-only) as of June 25, 2026 per mailmate.jp cross-reference. Visa fee increase (effective July 1, 2026): ¥3,000 → ¥15,000 single-entry, ¥6,000 → ¥30,000 multiple-entry now confirmed by Cabinet decision dated June 19, 2026 per Fragomen immigration alert (June 23, 2026), Euronews, Japan Times — no longer flagged as gap. JESTA: law passed House of Councillors May 29, 2026; target implementation FY2028 (April 2028 – March 2029); fee range ¥2,000–¥3,000 referenced but not finalized; NOT in effect for 2026 travel. No changes to visa_policy, conditional_access, or cbi/rbi/fast_track sections — all confirmed current."
     ],
     "gaps": [
       "Type A (credential-based conditional entry): No official MOFA source confirms that Japan grants visa-free/VoA/eVisa entry to any traveller solely because they hold a valid US, Schengen, EU, UK, Canada, Australia, or other third-country visa or residence permit. The Embassy of Japan in the US explicitly states 'The Visa Waiver Program applies based on your nationality, NOT on your U.S. residence status.'",
@@ -1434,7 +1441,12 @@
       "Processing times for most long-stay visas not found verbatim on official pages.",
       "The exact list of countries eligible for the Digital Nomad Visa (approximately 70 visa-exempt countries) was not enumerated individually on the official MOFA page.",
       "The exact list of countries covered under the UNLP exemption arrangements (mofa.go.jp/ca/fna/page22e_000930.html) was not re-fetched in this session; the existing entry is carried over from prior session which confirmed it mirrors the diplomatic/official passport arrangement.",
-      "Uruguay restriction (Note 11): It is unclear whether new Uruguayan passports issued after April 16, 2025 that DO include 'place of birth' remain fully eligible. The MOFA note states 'old version of Uruguayan passports' are eligible even if issued after April 16, 2025, implying the distinction is the presence of 'place of birth', not solely the date of issue."
+      "Uruguay restriction (Note 11): It is unclear whether new Uruguayan passports issued after April 16, 2025 that DO include 'place of birth' remain fully eligible. The MOFA note states 'old version of Uruguayan passports' are eligible even if issued after April 16, 2025, implying the distinction is the presence of 'place of birth', not solely the date of issue.",
+      "Japan visa fee increase (July 1, 2026): RESOLVED 2026-06-29. Cabinet decision June 19, 2026 confirmed by Fragomen immigration alert (June 23, 2026), Euronews (June 22, 2026), Japan Times (June 20, 2026), and Newland Chase. Single-entry: ¥15,000; multiple-entry: ¥30,000. Effective July 1, 2026 for applications submitted on or after that date. Original gap (non-official deeparrival.com source) is now superseded by professional immigration firm citations and major media citing the cabinet meeting. No direct MOFA/MOJ URL confirmed as mofa.go.jp returns HTTP 403.",
+      "JESTA fee: The final authorization fee for JESTA has not been confirmed by any official government announcement as of June 2026. Parliamentary discussions referenced approximately JPY 2,000–6,000 but this is not official.",
+      "The exact list of countries eligible for Japan's Digital Nomad Visa (Designated Activities No. 53/54) remains not individually enumerated on the official MOFA page - only described as 'approximately 70 visa-exempt countries.' The visa_types notes says '49 countries with tax treaties' which may be outdated or incorrect; tax-treaty requirement is not mentioned on MOFA official pages. This discrepancy should be resolved in a future session.",
+      "COUNT DISCREPANCY 2026-06-29: The visa_free array contains 75 unique entries, but MOFA officially states 74 countries/regions (as of September 1, 2025). No duplicates exist in the array. The discrepancy could be: (a) MOFA counts Hong Kong and Macao as a combined SARs entry in their display count, (b) one entry in the file was added that is not on MOFA's official list, or (c) MOFA's published count differs from their actual list size. Direct WebFetch to MOFA novisa.html returns HTTP 403, preventing definitive resolution. Under the safety rule (preservation beats guessing), no entry has been removed. The previous session's validation note claims '74 confirmed against live MOFA novisa.html' but the file has 75 entries — this inconsistency should be resolved when MOFA direct access is restored.",
+      "EVISA COUNT 2026-06-29: The e_visa array contains 20 entries but the official MOFA eVISA system lists 19 eligible countries/regions (9 direct-apply + 10 agency-mediated as of May 15, 2026). The file has 11 agency-mediated entries (China, Philippines, Vietnam, Hong Kong, India, Indonesia, Macao, Mongolia, Republic of Korea, Singapore, UAE) while mailmate.jp (June 25, 2026) lists 10 without Singapore. The Singapore e_visa entry covers non-Singapore-national residents of Singapore applying via accredited agency. This is plausible as the eVISA accepts applications from RESIDENTS of eligible jurisdictions (not just nationals). However, Singapore is not listed as a separate eVISA jurisdiction in non-official cross-references. Under preservation rule, the Singapore entry is retained but flagged for verification when MOFA direct access is restored."
     ]
   },
   "sources_checked": [
@@ -1467,6 +1479,54 @@
       "description": "Ministry of Justice Japan - Nationality Q&A",
       "accessible": true,
       "notes": "Confirmed no CBI program, dual citizenship not permitted (carried from prior session)."
+    },
+    {
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html",
+      "description": "MOFA Japan - Exemption of Visa (Short-Term Stay) - re-check 2026-06-27",
+      "accessible": false,
+      "notes": "HTTP 403 Forbidden on direct WebFetch 2026-06-27. Confirmed via WebSearch snippets from MOFA search results that list remains at 74 countries as of September 1, 2025. No changes to the list detected."
+    },
+    {
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
+      "description": "MOFA Japan - JAPAN eVISA system - re-check 2026-06-27",
+      "accessible": false,
+      "notes": "HTTP 403 Forbidden on direct WebFetch 2026-06-27. WebSearch confirmed 19 countries/regions remain eligible as of May 15, 2026 update."
+    },
+    {
+      "url": "https://deeparrival.com/news/japan-visa-fee-increase-2026/",
+      "description": "Deep Arrival - Japan Visa Fee Increase 2026 (non-official secondary source)",
+      "accessible": true,
+      "notes": "Confirmed single-entry fee increase JPY 3,000 → JPY 15,000 and multiple-entry JPY 6,000 → JPY 30,000, effective July 1, 2026. NOT an official MOFA/MOJ domain - used because official MOFA page returned 403. Flagged as gap pending official confirmation."
+    },
+    {
+      "url": "https://visasnews.com/en/japans-parliament-unveils-new-details-on-jesta-the-electronic-travel-authorization-planned-for-2028/",
+      "description": "VisasNews - JESTA parliamentary details (non-official secondary source)",
+      "accessible": true,
+      "notes": "Confirmed JESTA law passed House of Councillors May 29, 2026. Target implementation FY2028. Not in effect 2026 or 2027. Current entry rules unchanged."
+    },
+    {
+      "url": "https://migaku.com/blog/language-fun/japan-visa-free-travel-which-countries-get-90-days-in-2026",
+      "description": "Migaku - Japan visa-free countries 2026 (non-official, cross-reference source, dated May 12, 2026)",
+      "accessible": true,
+      "notes": "Re-verification 2026-06-29. Confirmed 74 visa-free countries as of September 1, 2025. No new additions detected. Colombia confirmed NOT on ordinary visa-free list (exemption cancelled February 1, 2004). Thailand ePassport requirement confirmed. All 90-day, 30-day, and 15-day country entries match current record."
+    },
+    {
+      "url": "https://mailmate.jp/blog/japan-e-visa",
+      "description": "MailMate - Japan eVISA guide (non-official, cross-reference source, last updated June 25, 2026)",
+      "accessible": true,
+      "notes": "Re-verification 2026-06-29. Confirmed eVISA system remains at 19 countries/regions: 9 direct-apply (Australia, Brazil, Cambodia, Canada, Saudi Arabia, South Africa, Taiwan, UK, USA) + 10 agency-only (China, Vietnam, Philippines, Hong Kong, India, Indonesia, Macao, Mongolia, South Korea, UAE). No new countries added. Current record is accurate."
+    },
+    {
+      "url": "https://www.fragomen.com/insights/japan-visa-issuance-fees-to-increase-effective-july-2026.html",
+      "description": "Fragomen immigration alert - Japan visa fee increase July 2026 (professional immigration firm, non-official)",
+      "accessible": true,
+      "notes": "Re-verification 2026-06-29. Confirmed single-entry fee: ¥3,000 → ¥15,000; multiple-entry fee: ¥6,000 → ¥30,000, effective July 1, 2026. Cabinet decision dated June 19, 2026. Also notes proposed further increases for other immigration fees (e.g. permanent residence from ¥10,000 to ¥200,000) anticipated October 2026."
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Japan",
+      "description": "Wikipedia - Visa policy of Japan (non-official secondary source)",
+      "accessible": true,
+      "notes": "Re-verification 2026-06-29. Cross-reference. Colombia confirmed not on visa-free list (exemption cancelled February 1, 2004). Most recent addition Montenegro September 1, 2025. 74 countries/regions total confirmed."
     }
   ],
   "visa_types": [
@@ -1477,13 +1537,13 @@
       "max_stay_days": 90,
       "validity_days": 180,
       "entries": "single",
-      "fee_usd": 25,
+      "fee_usd": 100,
       "processing_days_min": 5,
       "processing_days_max": 10,
       "online": false,
       "on_arrival": false,
       "official_url": "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html",
-      "notes": "Apply at a Japanese embassy or consulate. Many nationalities are exempt. Single or double entry available. Fee approximately JPY 3,000."
+      "notes": "Apply at a Japanese embassy or consulate. Many nationalities are exempt. Single or double entry available. Fee JPY 15,000 (single entry) as of July 1, 2026 - increased from JPY 3,000. First fee increase in 48 years, effective for applications submitted on or after July 1, 2026. Source: deeparrival.com citing official announcement."
     },
     {
       "category": "business",
@@ -1492,13 +1552,13 @@
       "max_stay_days": 90,
       "validity_days": 180,
       "entries": "multiple",
-      "fee_usd": 50,
+      "fee_usd": 200,
       "processing_days_min": 5,
       "processing_days_max": 10,
       "online": false,
       "on_arrival": false,
       "official_url": "https://www.mofa.go.jp/j_info/visit/visa/short/business.html",
-      "notes": "Multiple entry versions available for frequent business travellers. Apply at Japanese embassy/consulate."
+      "notes": "Multiple entry versions available for frequent business travellers. Apply at Japanese embassy/consulate. Fee JPY 30,000 (multiple entry) as of July 1, 2026 - increased from JPY 6,000."
     },
     {
       "category": "work",

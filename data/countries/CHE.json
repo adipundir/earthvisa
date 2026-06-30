@@ -106,7 +106,7 @@
         "nationality": "Approximately 59 nationalities currently visa-exempt for Schengen area",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "ETIAS (European Travel Information and Authorisation System) launching final quarter of 2026. Will apply to visa-exempt third-country nationals. Cost EUR 20, valid up to 3 years or until passport expiration, allows stays up to 90 days in any 180-day period. Switzerland participates in ETIAS as Schengen member.",
+        "notes": "ETIAS (European Travel Information and Authorisation System) launching final quarter of 2026. Will apply to visa-exempt third-country nationals. Cost EUR 20 (confirmed July 2025), valid up to 3 years or until passport expiration, allows stays up to 90 days in any 180-day period. Mandatory enforcement begins approximately 6 months after launch (around April 2027), with full strict enforcement around October 2027. Switzerland participates in ETIAS as Schengen member. Application portal expected to open mid-to-late 2026 ahead of Q4 launch.",
         "source_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
         "source_official": true
       }
@@ -115,7 +115,7 @@
       "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/bfm-anh01-liste1-e.pdf",
       "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html"
     ],
-    "notes": "Switzerland applies Schengen Area visa rules. Maximum stay for short-stay visits is 90 days in any 180-day period. V1 = visa-free for tourism but visa required for certain work sectors (construction, catering, cleaning, security, erotic services) or any work exceeding 8 days/year. V12/V13/V14/V16/V17/V18 = conditions apply (e.g. biometric passport required). Schengen/EEA member states: no visa required. No visa-on-arrival or e-visa system exists for Switzerland. ETIAS launching final quarter of 2026 for currently visa-exempt nationalities. Source: Annex CH-1 List 1, version 3 April 2026, State Secretariat for Migration (SEM). Note: Vietnam (VNM) is NOT visa-free for ordinary passport holders — visa required; only diplomatic passport holders are exempt (see conditional_access)."
+    "notes": "Switzerland applies Schengen Area visa rules. Maximum stay for short-stay visits is 90 days in any 180-day period. V1 = visa-free for tourism but visa required for certain work sectors (construction, catering, cleaning, security, erotic services) or any work exceeding 8 days/year. V12/V13/V14/V16/V17/V18 = conditions apply (e.g. biometric passport required). Schengen/EEA member states: no visa required. No visa-on-arrival or e-visa system exists for Switzerland. ETIAS launching final quarter of 2026 for currently visa-exempt nationalities (fee EUR 20 confirmed); mandatory enforcement begins ~6 months post-launch (~April 2027), full enforcement ~October 2027. Source: Annex CH-1 List 1, version 3 April 2026, State Secretariat for Migration (SEM). Note: Vietnam (VNM) is NOT visa-free for ordinary passport holders - visa required; only diplomatic passport holders are exempt (see conditional_access)."
   },
   "conditional_access": [
     {
@@ -736,6 +736,158 @@
       "source_official": true
     }
   ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Category C) – Tourism/Visit",
+      "purpose": "Covers tourism, visiting family or friends, and cultural or sports events in Switzerland and the Schengen Area for stays up to 90 days in any 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Fee is EUR 90 for adults, EUR 45 for children aged 6–12; free for EU/EFTA family members. Multiple-entry visas valid up to 5 years may be issued to frequent compliant travelers. Apply at swiss-visa.ch or directly at a Swiss representation. Valid across all Schengen member states."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Short-Stay Visa (Category C) – Business",
+      "purpose": "Permits short-term business activities such as meetings, conferences, and negotiations in Switzerland for up to 90 days in any 180-day period. Does not authorize gainful employment.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Same Category C fee structure as tourist visa (EUR 90 adults). Gainful employment requires an additional work permit. Business activities in sectors such as construction, catering, cleaning, security require a separate work authorization even for short stays."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa",
+      "purpose": "Required for certain nationalities transiting through a Swiss international airport without entering Schengen territory, remaining in the international transit zone.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 99,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Fee EUR 90 (standard Schengen visa fee). Required only for nationalities listed on the common Schengen Airport Transit Visa list. Travelers with a valid Schengen visa, residence permit, or valid visa from specific countries (USA, Canada, Japan, etc.) may be exempt."
+    },
+    {
+      "category": "work",
+      "name": "National Long-Stay Visa (Category D) – Employment",
+      "purpose": "Issued to non-EU/EFTA nationals approved for gainful employment in Switzerland, covering stays exceeding 90 days. Accompanies a B permit (residence permit) issued by cantonal authorities.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 30,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/arbeit/nicht-eu_efta-angehoerige/grundlagen_zur_arbeitsmarktzulassung.html",
+      "notes": "Strictly restricted to managers, specialists, and highly qualified workers (university degree + experience). Employer must prove no suitable Swiss or EU/EFTA candidate available. Annual federal quotas apply. Canton processes the permit application; SEM approves. Fee EUR 90 base plus up to 50% surcharge for urgent processing. EU/EFTA nationals are not subject to these restrictions under the Agreement on Free Movement of Persons."
+    },
+    {
+      "category": "student",
+      "name": "National Long-Stay Visa (Category D) – Education/Vocational Training",
+      "purpose": "Issued to non-EU/EFTA nationals accepted for study or vocational training programs in Switzerland for stays exceeding 90 days.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 30,
+      "processing_days_max": 120,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Requires enrollment confirmation from a Swiss educational institution recognized by cantonal authorities. Canton processes application; SEM approves. Limited part-time work may be permitted alongside studies. Processing takes one to several months depending on canton."
+    },
+    {
+      "category": "family",
+      "name": "National Long-Stay Visa (Category D) – Family Reunification",
+      "purpose": "Issued to non-EU/EFTA family members joining a Swiss citizen or lawful resident in Switzerland for stays exceeding 90 days.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 99,
+      "processing_days_min": 30,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Cantonal authorities process family reunification permits. Sponsor must demonstrate sufficient financial means and adequate housing. Processing time is one to several months. Family members of EU/EFTA citizens benefit from faster processing under free movement rules; visa issued free of charge to EU/EFTA family members."
+    },
+    {
+      "category": "working_holiday",
+      "name": "Working Holiday Permit / Youth Mobility Visa",
+      "purpose": "Allows young nationals from partner countries to live and work in Switzerland temporarily, combining travel with work experience.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen.html",
+      "notes": "Switzerland maintains bilateral youth mobility / working holiday agreements with a limited number of countries including Australia, New Zealand, Canada, Japan, South Korea, and others. Age limits (typically 18–30 or 18–35), once-per-lifetime, and additional conditions apply and vary by agreement. Annual quotas may apply. Applications processed via Swiss embassies/consulates in the applicant's country."
+    },
+    {
+      "category": "investment",
+      "name": "Residence Permit via Expenditure-Based Taxation (Lump-Sum Tax – B Permit)",
+      "purpose": "Allows foreign nationals who do not engage in gainful employment in Switzerland to establish residence based on their cost of living, with tax calculated as a lump sum rather than on worldwide income.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 60,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.efd.admin.ch/en/lump-sum-taxation",
+      "notes": "Available only to foreign nationals establishing Swiss domicile for the first time (or after 10+ years abroad) who do not engage in gainful employment in Switzerland. Available in 21 of 26 cantons (not in Zurich, Basel-Stadt, Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden). Federal minimum tax base is CHF 434,700; cantonal minimums vary. Results in a standard B permit (5-year renewable). After 10 years total residence and C permit, may apply for ordinary naturalization."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Official/Service Passport Visa Exemption",
+      "purpose": "Holders of diplomatic, official, service, or special passports from countries with bilateral visa exemption agreements with Switzerland may enter and stay without a visa for up to 90 days.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen/visumbefreiung-dipl.html",
+      "notes": "Switzerland has bilateral visa exemption agreements with 50+ countries for diplomatic/service/official passport holders. Countries include Algeria, Angola, Armenia, Benin, Bhutan, Brazil, Cameroon, Chile, China, Colombia, Cuba, Dominican Republic, Ecuador, Grenada, Guyana, India, Indonesia, Iran (official only), Jamaica, Kazakhstan, Kuwait, Kyrgyzstan, Laos, Lebanon, Mauritius, Mexico, Moldova, Mongolia, Morocco, Namibia, North Macedonia, Oman, Palau, Peru, Philippines, Qatar, Saint Lucia, Saint Vincent, South Africa, Thailand, Trinidad and Tobago, Tunisia, Turkey, Turkmenistan, Ukraine, UAE, Venezuela, Vietnam. Exact passport types vary by agreement."
+    },
+    {
+      "category": "other",
+      "name": "Return Visa",
+      "purpose": "Issued to holders of expired Swiss residence permits who need to re-enter Switzerland after travel abroad.",
+      "max_stay_days": 90,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 99,
+      "processing_days_min": 1,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Issued to former residence permit holders who left Switzerland and whose permit has since expired but who need to return (e.g. to finalize affairs). Not a standard immigration visa category. Standard Schengen fee (EUR 90) typically applies."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -758,7 +910,7 @@
         "path_to_citizenship_years": 10,
         "official_url": "https://www.efd.admin.ch/en/lump-sum-taxation",
         "source_official": true,
-        "notes": "Foreign nationals who establish Swiss domicile for the first time (or after 10+ years abroad) and do not engage in gainful employment in Switzerland may apply for expenditure-based taxation (forfait fiscal). Tax is calculated on total annual cost of living in Switzerland and abroad. The cantonal tax ruling underpins a B-permit (residence permit) issued by cantonal authorities. Available in 21 of 26 cantons (not available in Zurich, Basel-Stadt, Basel-Landschaft, Schaffhausen, and Appenzell Ausserrhoden). No specific minimum investment is prescribed by federal law; minimum tax base is CHF 434,700 as of 2025 under federal law with cantonal minimums varying. This is not an 'investment' program per se — no minimum investment threshold is legislated federally. The residence permit type is standard B permit. Right to lump-sum taxation ends upon acquiring Swiss citizenship or gainful employment in Switzerland. Official source: Swiss Federal Department of Finance (EFD)."
+        "notes": "Foreign nationals who establish Swiss domicile for the first time (or after 10+ years abroad) and do not engage in gainful employment in Switzerland may apply for expenditure-based taxation (forfait fiscal). Tax is calculated on total annual cost of living in Switzerland and abroad. The cantonal tax ruling underpins a B-permit (residence permit) issued by cantonal authorities. Available in 21 of 26 cantons (not available in Zurich, Basel-Stadt, Basel-Landschaft, Schaffhausen, and Appenzell Ausserrhoden). No specific minimum investment is prescribed by federal law; minimum tax base is CHF 434,700 as of 2025 under federal law with cantonal minimums varying. This is not an 'investment' program per se - no minimum investment threshold is legislated federally. The residence permit type is standard B permit. Right to lump-sum taxation ends upon acquiring Swiss citizenship or gainful employment in Switzerland. Official source: Swiss Federal Department of Finance (EFD)."
       },
       {
         "name": "EU/EFTA Residence Permit (B Permit) – Financially Independent Persons",
@@ -799,26 +951,29 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
+      "2026-06-29 re-validation against live official SEM nationality pages: fetched sem.admin.ch alphabetical nationality pages for letters A, B, C, G, K, M, N, P, S, T, U, V. All visa_free entries in current record confirmed accurate. Specifically confirmed: Albania (V12 biometric, no visa 90 days), Andorra, Antigua/Barbuda (V1), Argentina (V1), Australia, Austria (Schengen), Bahamas (V1 confirmed no visa), Barbados (V1), Belgium (Schengen), Bosnia (V12), Brazil (V1), Brunei (no visa both durations), Bulgaria (Schengen), Canada (V1), Chile (V1), Colombia (V1), Costa Rica (V1), Croatia (Schengen), Cyprus (Schengen), Czech Republic (Schengen), Georgia (V18 biometric), Grenada (V1), Guatemala (V1), Honduras (V1), Kiribati (V1), Kosovo (V12), Malaysia (no visa both durations), Marshall Islands (V1), Mauritius (V1), Mexico (V1), Micronesia (V1), Moldova (V12), Montenegro (V12), New Zealand, Nicaragua (V1), North Macedonia (V12), Norway (Schengen), Palau (V1), Panama (V1), Paraguay (V1), Peru (V1), Saint Kitts and Nevis (V1), Saint Lucia (V1), Saint Vincent and the Grenadines (V1), Serbia (V13 biometric), Seychelles (V1), Singapore (no visa both durations), Solomon Islands (V1), Samoa (V1), Tonga (V1), Trinidad and Tobago (V1), Timor-Leste (V1), Tuvalu (V1), Ukraine (V12), UAE (V1), USA (V1), Uruguay (V1), Vietnam (VISA REQUIRED - re-confirmed). Philippines confirmed VISA REQUIRED for ordinary passports (only in conditional_access for diplomatic/service/special - consistent with record). Turkey confirmed VISA REQUIRED for ordinary passports (only in conditional_access for diplomatic - consistent with record). ETIAS confirmed Q4 2026 launch, EUR 20 fee. Footnote definitions V1/V2/V9/V12-V18 re-confirmed from leg_visum.html. Diplomatic exemption page summary confirms Turkey appears under 'Diplomatic Only' (discrepancy with record's 'diplomatic, service, special' - gap retained). No changes made to visa_free, conditional_access, cbi, rbi, or fast_track - all verified accurate.",
+      "2026-06-27 re-validation against live official sources: sem.admin.ch leg_visum.html (footnote definitions V1/V2/V9/V12–V18 confirmed), sem.admin.ch visumbefreiung-dipl.html (bilateral diplomatic exemption list re-fetched and confirmed), sem.admin.ch FAQ page (ETIAS Q4 2026 confirmed, Schengen residence permit and Type C/D visa exemption confirmed), sem.admin.ch/v.html (Vietnam visa-required confirmed). ETIAS note updated to reflect EUR 20 fee (confirmed July 2025 by EC), mandatory enforcement ~6 months post-launch (~April 2027), full enforcement ~October 2027. No changes to visa_free, conditional_access, cbi, rbi, or fast_track entries - all verified as accurate against live official sources.",
       "2026-06-14 re-validation against live official sources: sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/v.html, sem.admin.ch diplomatic visa exemption page, sem.admin.ch FAQ entry, efd.admin.ch lump-sum page.",
-      "CORRECTION 1 — Vietnam (VNM) REMOVED from visa_free: The official sem.admin.ch List-1 alphabetical page for 'V' (https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/v.html) explicitly states Vietnam ordinary passport holders are VISA REQUIRED for stays up to 90 days. Vietnam was wrongly listed as visa-free. The diplomatic passport exemption (since 16 Aug 2009) is already correctly captured in conditional_access and remains.",
-      "CORRECTION 2 — Algeria conditional_access entry: passport_types updated from ['diplomatic','official'] to ['diplomatic','service','official']. The live sem.admin.ch diplomatic visa exemption page lists Algeria as 'Diplomatic, Service, Official' (agreement in force 28 May 1991). 'service' passport type was missing in the prior record.",
+      "CORRECTION 1 - Vietnam (VNM) REMOVED from visa_free: The official sem.admin.ch List-1 alphabetical page for 'V' (https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/v.html) explicitly states Vietnam ordinary passport holders are VISA REQUIRED for stays up to 90 days. Vietnam was wrongly listed as visa-free. The diplomatic passport exemption (since 16 Aug 2009) is already correctly captured in conditional_access and remains.",
+      "CORRECTION 2 - Algeria conditional_access entry: passport_types updated from ['diplomatic','official'] to ['diplomatic','service','official']. The live sem.admin.ch diplomatic visa exemption page lists Algeria as 'Diplomatic, Service, Official' (agreement in force 28 May 1991). 'service' passport type was missing in the prior record.",
       "Verified: all other visa_free entries (Albania biometric V12, Bosnia V12, Georgia V18 with 3 Apr 2026 dipl/service/official note, Kosovo V12, Moldova V12, Montenegro V12, North Macedonia V12, Serbia V13, Taiwan V14, Ukraine V12, HKSAR V16, Macao V17) match footnote definitions from leg_visum.html.",
       "Verified: ETIAS launch 'final quarter of 2026' confirmed from sem.admin.ch/sem/en/home/themen/einreise/info-einreise/voraussetzungen-nach-staat/etias.html.",
       "Verified: all diplomatic/service/official passport agreement dates and passport types confirmed against live sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen/visumbefreiung-dipl.html.",
-      "Verified: cbi.has_program=false confirmed — Switzerland has no CBI program.",
-      "Verified: rbi lump-sum tax program confirmed from efd.admin.ch; 5 cantons (Zurich, Basel-Stadt, Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden) have abolished it; minimum federal tax base figure (CHF 434,700) not re-confirmed from live page — retained with gap flag.",
-      "Verified: ordinary naturalization requires 10 years residence + C permit — confirmed from sem.admin.ch/sem/en/home/integration-einbuergerung/schweizer-werden/ordentlich.html."
+      "Verified: cbi.has_program=false confirmed - Switzerland has no CBI program.",
+      "Verified: rbi lump-sum tax program confirmed from efd.admin.ch; 5 cantons (Zurich, Basel-Stadt, Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden) have abolished it; minimum federal tax base figure (CHF 434,700) not re-confirmed from live page - retained with gap flag.",
+      "Verified: ordinary naturalization requires 10 years residence + C permit - confirmed from sem.admin.ch/sem/en/home/integration-einbuergerung/schweizer-werden/ordentlich.html."
     ],
     "gaps": [
       "Exact federal minimum lump-sum tax base (CHF 434,700 cited as 2025 figure) not confirmed from the live efd.admin.ch page during this validation; EFD page did not display the numeric figure explicitly. Recommend direct check of Art. 14 para. 2 DBG (Swiss Federal Direct Tax Act).",
       "Processing times for B permit (highly qualified worker) not published verbatim on official SEM English pages.",
       "ETIAS exact launch date within Q4 2026 not yet finalized; EU will announce several months in advance.",
-      "No visa-on-arrival or e-visa system exists for Switzerland — these categories are empty by official confirmation, not by omission.",
+      "No visa-on-arrival or e-visa system exists for Switzerland - these categories are empty by official confirmation, not by omission.",
       "Fast-track or dedicated startup/digital-nomad visa: no official SEM program found as of June 2026.",
-      "No OCI (India Overseas Citizen of India) card exemption found for Switzerland — OCI is an Indian domestic benefit granting entry to India, not to Switzerland.",
-      "No credential-based exemption found for holders of US, UK, Canadian, Australian, or other non-Schengen visas — only Schengen member state residence permits and Type C/D visas trigger Swiss visa-free entry.",
+      "No OCI (India Overseas Citizen of India) card exemption found for Switzerland - OCI is an Indian domestic benefit granting entry to India, not to Switzerland.",
+      "No credential-based exemption found for holders of US, UK, Canadian, Australian, or other non-Schengen visas - only Schengen member state residence permits and Type C/D visas trigger Swiss visa-free entry.",
       "The specific list of which Schengen member state residence permits are recognized is a PDF updated 08.05.2026 at sem.admin.ch; individual permit types per country not enumerated here.",
-      "Vietnam ordinary passport holders (VNM): visa REQUIRED — removed from visa_free in this validation. Not placed in any alternative access category as no visa-on-arrival or e-visa exists for Switzerland."
+      "Vietnam ordinary passport holders (VNM): visa REQUIRED - removed from visa_free in prior validation (2026-06-14). Re-confirmed visa-required in 2026-06-27 validation against live sem.admin.ch/v.html page.",
+      "Turkey bilateral diplomatic passport exemption (in force 11 July 1954): current record lists 'diplomatic, service, special' passport types. Live sem.admin.ch diplomatic exemption page (2026-06-27 fetch) returned Turkey as 'Diplomatic' only in the summary table - full page content may have been truncated in scrape. Cannot confirm or deny 'service, special' passport coverage from live page. Entry KEPT as-is pending manual verification of the original 1954 agreement text or the full SEM diplomatic agreement page. Gap flagged for manual review."
     ]
   },
   "outbound_official": {
@@ -888,6 +1043,76 @@
     {
       "url": "https://www.sem.admin.ch/sem/en/home/integration-einbuergerung/schweizer-werden/doppelbuerger.html",
       "description": "SEM – Dual nationality (permitted since 1 January 1992)",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen.html",
+      "description": "SEM – International agreements overview including working holiday/youth mobility and trainee exchange agreements",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/a.html",
+      "description": "SEM – Nationalities A: Albania (V12), Algeria (visa required), Andorra, Antigua and Barbuda (V1), Argentina (V1), Armenia (visa required), Australia confirmed",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/b.html",
+      "description": "SEM – Nationalities B: Bahamas (V1), Barbados (V1), Belgium (Schengen), Bosnia (V12), Brazil (V1), Brunei, Bulgaria (Schengen) confirmed",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/c.html",
+      "description": "SEM – Nationalities C: Canada, Chile, Colombia, Costa Rica, Croatia (Schengen), Cyprus (Schengen), Czech Republic (Schengen); Cuba visa required",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/g.html",
+      "description": "SEM – Nationalities G: Georgia (V18 biometric), Germany (Schengen), Greece (Schengen), Grenada (V1), Guatemala (V1)",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/k.html",
+      "description": "SEM – Nationalities K: Kiribati (V1), Kosovo (V12); Kazakhstan, Kuwait, Kyrgyzstan visa required",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/m.html",
+      "description": "SEM – Nationalities M: Macao (V17), Malaysia, Marshall Islands (V1), Mauritius (V1), Mexico (V1), Micronesia (V1), Moldova (V12), Monaco (Schengen), Montenegro (V12); Mongolia, Morocco visa required",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/n.html",
+      "description": "SEM – Nationalities N: Netherlands (Schengen), New Zealand, Nicaragua (V1), North Macedonia (V12), Norway (Schengen)",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/p.html",
+      "description": "SEM – Nationalities P: Palau (V1), Panama (V1), Paraguay (V1), Peru (V1), Poland (Schengen), Portugal (Schengen); Philippines visa required for ordinary passport",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/s.html",
+      "description": "SEM – Nationalities S: Saint Kitts (V1), Saint Lucia (V1), Saint Vincent (V1), Samoa (V1), Seychelles (V1), Singapore, Slovakia (Schengen), Slovenia (Schengen), Solomon Islands (V1), South Korea (V1), Spain (Schengen), Sweden (Schengen); Serbia (V13 biometric)",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/t.html",
+      "description": "SEM – Nationalities T: Timor-Leste (V1), Tonga (V1), Trinidad and Tobago (V1), Tuvalu (V1), Taiwan (V14); Turkey (Türkiye) visa required for ordinary passport",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/u.html",
+      "description": "SEM – Nationalities U: Ukraine (V12), UAE (V1), United Kingdom (V2), USA (V1), Uruguay (V1); Uzbekistan visa required",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/v.html",
+      "description": "SEM – Nationalities V: Vietnam visa REQUIRED for all stays; Vatican, Venezuela (V1) confirmed visa-free",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/info-einreise/voraussetzungen-nach-staat/etias.html",
+      "description": "SEM – ETIAS information page: launching Q4 2026, EUR 20 fee, 59 currently visa-exempt nationalities affected",
       "official": true
     }
   ]

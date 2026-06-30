@@ -9,7 +9,7 @@
         "nationality": "Kenya",
         "iso3": "KEN",
         "max_stay_days": null,
-        "notes": "Visa-free entry for Kenyan passport holders announced with immediate effect by President Azali Assoumani in joint communiqué with Kenyan President Ruto on 6 July 2023. No specific maximum stay duration stated in the communiqué. Reciprocal: Kenya also committed to removing visa requirement for Comorian travel-document holders before end of 2023.",
+        "notes": "Visa-free entry for Kenyan passport holders announced with immediate effect by President Azali Assoumani in joint communiqué with Kenyan President Ruto on 6 July 2023. No specific maximum stay duration stated in the communiqué. Reciprocal: Kenya also committed to removing visa requirement for Comorian travel-document holders before end of 2023. The communiqué specifies 'all persons holding valid travel documents issued by the Republic of Kenya' - not limited to ordinary passports. Not confirmed in any later official Comoros government publication; retained on the basis of the original beit-salam.km communiqué.",
         "source_url": "https://beit-salam.km/actualit%C3%A9s/communiqu%C3%A9-conjoint-a-loccasion-de-la-visite-officielle-de-son-excellence-william-ruto,-president-de-la-republique-du-kenya-a-lunion-des-comores-du-5-au-7-juillet-2023.html",
         "source_official": true
       }
@@ -19,7 +19,7 @@
         "nationality": "All nationalities",
         "iso3": null,
         "max_stay_days": 45,
-        "notes": "Comoros law (Loi n°88-025, Art. 2) requires all foreign nationals to hold a valid passport and a Comorian visa. Visas are available on arrival at the airport or port. Tourist visa: up to 45 days; short-stay visa: up to 3 months; transit visa: up to 5 days. The UN Mission page (official) lists 45-day visa at 60 EUR; the Wikipedia Visa policy of the Comoros article (citing IATA Timatic) states 30 EUR for a 45-day visa on arrival. The discrepancy between 30 EUR and 60 EUR could not be resolved from an authoritative Comoros government source — 60 EUR is from the official Comoros UN Mission page and is retained here pending clarification.",
+        "notes": "Comoros law (Loi n°88-025, Art. 2) requires all foreign nationals to hold a valid passport and a Comorian visa. Visas are available on arrival at the airport or port. Tourist visa: up to 45 days; short-stay visa: up to 3 months; transit visa: up to 5 days. Fee discrepancy: UN Mission page (official) lists 60 EUR for 45 days; IATA Timatic/Wikipedia states 30 EUR; US State Department (travel.state.gov) notes 'between 30–50 Euros'. The 30–50 EUR range is more consistent with aggregator sources; 60 EUR is retained from the UN Mission page as the official Comoros government citation pending clarification.",
         "source_url": "http://www.un.int/comoros/comoros/passport-and-visa-process",
         "source_official": true
       }
@@ -29,10 +29,163 @@
     "source_urls": [
       "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
       "http://www.un.int/comoros/comoros/passport-and-visa-process",
-      "https://beit-salam.km/actualit%C3%A9s/communiqu%C3%A9-conjoint-a-loccasion-de-la-visite-officielle-de-son-excellence-william-ruto,-president-de-la-republique-du-kenya-a-lunion-des-comores-du-5-au-7-juillet-2023.html"
+      "https://beit-salam.km/actualit%C3%A9s/communiqu%C3%A9-conjoint-a-loccasion-de-la-visite-officielle-de-son-excellence-william-ruto,-president-de-la-republique-du-kenya-a-lunion-des-comores-du-5-au-7-juillet-2023.html",
+      "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Comoros.html"
     ],
-    "notes": "Comoros law (Loi n°88-025, justice.gouv.km) requires all foreign nationals to hold a valid passport and a Comorian visa. Visas available on arrival for tourist stays (max 45 days), short stay (up to 3 months), and transit (up to 5 days). Long-stay visa (over 3 months) must be applied for in advance via Council of Ministers decision. Kenya is the only nationality confirmed visa-free via an official Comoros source (Presidency communiqué July 2023). No official e-visa portal or ETA system exists as of June 2026. Visa fee: 60 EUR per UN Mission (official); 30 EUR per IATA Timatic/Wikipedia — discrepancy unresolved."
+    "notes": "Comoros law (Loi n°88-025, justice.gouv.km) requires all foreign nationals to hold a valid passport and a Comorian visa. Visas available on arrival for tourist stays (max 45 days), short stay (up to 3 months), and transit (up to 5 days). Long-stay visa (over 3 months) must be applied for in advance via Council of Ministers decision. Kenya is the only nationality confirmed visa-free via an official Comoros source (Presidency communiqué July 2023). No official e-visa portal or ETA system exists as of June 2026. Visa fee: 60 EUR per UN Mission (official); 30 EUR per IATA Timatic/Wikipedia; 30–50 EUR per US State Department - discrepancy unresolved. COMESA membership does not confer ordinary-passport visa-free entry to Comoros; Comoros has not implemented free movement for COMESA ordinary-passport holders."
   },
+  "visa_types": [
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Allows foreign nationals to transit through Comoros en route to another destination. Issued at the airport or port of entry.",
+      "max_stay_days": 5,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
+      "notes": "Defined under Loi n°88-025, Art. 2 as 'un visa de transit permettant un séjour d'une durée maximum de cinq jours'. Issued at the point of entry. No paid work permitted during stay."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Visa (45-day)",
+      "purpose": "Permits short-term tourism and leisure visits to Comoros for up to 45 days. Available on arrival at the airport or port.",
+      "max_stay_days": 45,
+      "validity_days": 45,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "http://www.un.int/comoros/comoros/passport-and-visa-process",
+      "notes": "Fee listed as 60 EUR by the official UN Mission of Comoros page (approximately USD 65 at typical rates). IATA Timatic cites 30 EUR; US State Department cites 30–50 EUR - discrepancy unresolved; 60 EUR is retained from the official UN Mission source. Holder may not engage in any paid work (Loi n°88-025, Art. 8). Defined under Loi n°88-025, Art. 2."
+    },
+    {
+      "category": "tourist",
+      "name": "Short-Stay Visa",
+      "purpose": "Permits stays of up to 3 months for tourism or short-term purposes. Renewable once.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
+      "notes": "Defined under Loi n°88-025, Art. 2 as a short-stay visa valid for a maximum of 3 months, renewable once. No paid work permitted. Fee determined by Finance Law - not specified in the law text itself."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa (1-Year)",
+      "purpose": "Allows foreign nationals to reside in Comoros for up to one year. Issued to those intending stays exceeding 3 months.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 272,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "http://www.un.int/comoros/comoros/passport-and-visa-process",
+      "notes": "Fee listed as 250 EUR by the official UN Mission of Comoros page (approximately USD 272). Application must be made through diplomatic channels; decision is by Council of Ministers (Loi n°88-025, Art. 5). A residence card is issued within 10 days of entry and is renewable annually."
+    },
+    {
+      "category": "other",
+      "name": "Long-Stay Visa (10-Year)",
+      "purpose": "Allows long-term residence in Comoros for up to 10 years. Intended for foreign nationals with established ties or professional presence.",
+      "max_stay_days": 3650,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": 543,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "http://www.un.int/comoros/comoros/passport-and-visa-process",
+      "notes": "Fee listed as 500 EUR by the official UN Mission of Comoros page (approximately USD 543). The 10-year residence card for professional workers is defined under Loi n°88-025, Art. 10, renewable. Holder requires special authorization for professional economic activity."
+    },
+    {
+      "category": "work",
+      "name": "Residence Card (Professional/Work)",
+      "purpose": "Issued to foreign nationals intending to engage in professional or salaried economic activities in Comoros. Required for any paid employment.",
+      "max_stay_days": 3650,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
+      "notes": "Defined under Loi n°88-025, Art. 10. Issued for 10 years and renewable. Ordinary tourist and short-stay visa holders are strictly prohibited from any paid work (Art. 8). Brief business transactions and temporary commerce may be authorized by special permission. Fee set by Finance Law (not specified in law text)."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic Visa",
+      "purpose": "Issued to members of diplomatic missions, consular representations, and their families. Exempt from visa fees.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
+      "notes": "Defined under Loi n°88-025, Art. 3. Covers heads of diplomatic missions, consular representatives, and their household family members. Exempt from visa fees per Art. 15. Duration tied to accreditation period."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Service Visa",
+      "purpose": "Issued to non-diplomatic foreign government personnel and public servants on official assignment in Comoros.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
+      "notes": "Defined under Loi n°88-025, Art. 3. Covers non-diplomatic administrative and technical personnel at foreign missions and foreign public servants on official duty. Duration tied to the period of official assignment."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Courtesy Visa",
+      "purpose": "Issued to official visitors and dignitaries visiting Comoros at the invitation of the government.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
+      "notes": "Defined under Loi n°88-025, Art. 3. Issued at government discretion for official visitors. Fee exemption applies per Art. 15 alongside diplomatic visas."
+    },
+    {
+      "category": "business",
+      "name": "Business / Short-Stay Visa with Commercial Authorization",
+      "purpose": "Permits brief business transactions and temporary commercial activity in Comoros for foreign nationals, subject to special authorization.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
+      "notes": "Loi n°88-025, Art. 8 prohibits all paid work on a standard tourist or short-stay visa. Brief commercial transactions and temporary commerce are permitted only with specific governmental authorization. This is not a separate named visa category in the law but a conditional permission layer applied to the short-stay visa. No standalone business visa category found in official sources."
+    }
+  ],
   "conditional_access": [
     {
       "basis": "passport_type",
@@ -63,7 +216,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Nationals of Morocco holding diplomatic or service passports valid for at least six months are authorized to enter, stay, exit, and transit through Comoros without a visa for a period not exceeding 90 days within a period of 180 days from the date of first entry. Members of diplomatic missions and consular representations accredited to Comoros and their household family members holding diplomatic or service passports may enter, stay, and transit without a visa for the entire period of accreditation. Agreement signed in Addis Ababa on 11 February 2026 by Minister Nasser Bourita and Comorian FM Mbae Mohamed; reported to enter into force March 2026.",
+      "conditions": "Nationals of Morocco holding diplomatic or service passports valid for at least six months are authorized to enter, stay, exit, and transit through Comoros without a visa for a period not exceeding 90 days within a period of 180 days from the date of first entry. Members of diplomatic missions and consular representations accredited to Comoros and their household family members holding diplomatic or service passports may enter, stay, and transit without a visa for the entire period of accreditation. Agreement signed in Addis Ababa on 11 February 2026 by Minister Nasser Bourita and Comorian FM Mbae Mohamed; reported to enter into force March 2026. diplomatie.ma SSL error prevented direct fetch on both 2026-06-13 and 2026-06-27 validation runs; terms confirmed via consistent news reporting (moroccoworldnews.com, yabiladi.com, apanews.net).",
       "source_url": "https://diplomatie.ma/en/morocco-comoros-sign-visa-exemption-agreement-diplomatic-service-passport-holders",
       "source_official": true
     }
@@ -77,7 +230,7 @@
     "processing_time": "",
     "dual_citizenship_allowed": null,
     "residency_required": null,
-    "notes": "No active official Citizenship-by-Investment program found. Comoros previously operated an Economic Citizenship Program authorized by 2008 legislation. Non-official sources indicate it was terminated circa 2013–2017. US State Department page for Comoros (travel.state.gov) warns that 'economic citizen' passports (ECPs) do not confer right of return to Comoros and holders may be stateless — confirming the program is no longer officially operative. No official Comoros government website currently advertises an active CBI program."
+    "notes": "No active official Citizenship-by-Investment program found. Comoros previously operated an Economic Citizenship Program authorized by 2008 legislation. Non-official sources indicate it was terminated circa 2013–2017. US State Department page for Comoros (travel.state.gov) warns that 'economic citizen' passports (ECPs) do not confer right of return to Comoros and holders may be stateless - confirming the program is no longer officially operative. No official Comoros government website currently advertises an active CBI program."
   },
   "rbi": {
     "programs": []
@@ -87,7 +240,7 @@
   },
   "agreements": [
     "AU Free Movement Protocol (signed by Comoros; not ratified; protocol not yet in force as of 2026)",
-    "COMESA (Common Market for Eastern and Southern Africa) — member state; COMESA 1984 Protocol on Gradual Relaxation and Elimination of Visa Requirements; COMESA Free Movement Protocol (1998) signed by only 4 member states as of 2025 — Comoros implementation status not confirmed on official sources"
+    "COMESA (Common Market for Eastern and Southern Africa) - member state; COMESA 1984 Protocol on Gradual Relaxation and Elimination of Visa Requirements; COMESA Free Movement Protocol (1998) signed by only 4 member states as of 2025 - Comoros implementation status not confirmed on official sources; ordinary-passport COMESA free movement not implemented by Comoros as of June 2026"
   ],
   "official_domains": [
     "justice.gouv.km",
@@ -100,77 +253,82 @@
     "completeness": "medium",
     "validation_notes": [
       "VALIDATED 2026-06-13. Re-fetched all core official sources.",
-      "Kenya visa-free (beit-salam.km): CONFIRMED — communiqué explicitly states immediate removal of visa obligation for Kenyan travel document holders; no max stay duration specified in communiqué.",
-      "Visa on arrival for all nationalities (un.int): CONFIRMED — fee 60 EUR for 45-day tourist visa per UN Mission page.",
-      "Loi n°88-025 (justice.gouv.km): CONFIRMED — Art. 2 requires visa for all foreigners; visa types (transit 5d, tourist 45d, short-stay 3m, long-stay >3m) confirmed; fee amounts not in the law itself (set by Finance Law).",
-      "India-Comoros diplomatic passport agreement (mea.gov.in/bvwa-passport): CONFIRMED — row 105, signed 11 Oct 2019, in force 1 Mar 2021, 90 days, Diplomatic/Official/Service. Direct PDF URL remains 404 but list page is authoritative.",
-      "China-Comoros diplomatic passport agreement (cs.mfa.gov.cn): CONFIRMED — entry #30, diplomatic/service/public affairs passports, in force 26 Feb 2016, max 30 days.",
-      "Morocco-Comoros agreement (diplomatie.ma): CONFIRMED signed 11 Feb 2026; reported to enter into force March 2026. diplomatie.ma SSL certificate error prevented direct WebFetch; confirmed via news search (moroccoworldnews.com, yabiladi.com, apanews.net reporting same date and terms). Entry into force date March 2026 added as note — now likely in force.",
-      "No official Comoros e-visa portal found: CONFIRMED — no evisa.km or government immigration portal operational as of June 2026.",
+      "Kenya visa-free (beit-salam.km): CONFIRMED - communiqué explicitly states immediate removal of visa obligation for Kenyan travel document holders; no max stay duration specified in communiqué.",
+      "Visa on arrival for all nationalities (un.int): CONFIRMED - fee 60 EUR for 45-day tourist visa per UN Mission page.",
+      "Loi n°88-025 (justice.gouv.km): CONFIRMED - Art. 2 requires visa for all foreigners; visa types (transit 5d, tourist 45d, short-stay 3m, long-stay >3m) confirmed; fee amounts not in the law itself (set by Finance Law).",
+      "India-Comoros diplomatic passport agreement (mea.gov.in/bvwa-passport): CONFIRMED - row 105, signed 11 Oct 2019, in force 1 Mar 2021, 90 days, Diplomatic/Official/Service. Direct PDF URL remains 404 but list page is authoritative.",
+      "China-Comoros diplomatic passport agreement (cs.mfa.gov.cn): CONFIRMED - entry #30, diplomatic/service/public affairs passports, in force 26 Feb 2016, max 30 days.",
+      "Morocco-Comoros agreement (diplomatie.ma): CONFIRMED signed 11 Feb 2026; reported to enter into force March 2026. diplomatie.ma SSL certificate error prevented direct WebFetch on both validation runs (2026-06-13 and 2026-06-27); confirmed via news search (moroccoworldnews.com, yabiladi.com, apanews.net reporting same date and terms).",
+      "No official Comoros e-visa portal found: CONFIRMED - no evisa.km or government immigration portal operational as of June 2026; WebSearch 2026-06-27 confirms no such portal exists.",
+      "VALIDATED 2026-06-27. Re-fetched: justice.gouv.km (Loi n°88-025), un.int/comoros (visa fees), beit-salam.km (Kenya communiqué), mea.gov.in/bvwa-passport (India agreement), travel.state.gov (US country info), Wikipedia visa policy. No material changes found requiring corrections.",
+      "UPDATED 2026-06-27: Added US State Department (travel.state.gov) as a source_url in visa_policy.source_urls. US State Dept confirms visa-on-arrival availability and notes fee range 30–50 EUR, partially corroborating IATA Timatic vs UN Mission discrepancy.",
+      "UPDATED 2026-06-27: Strengthened COMESA note in agreements array to explicitly confirm Comoros has not implemented ordinary-passport free movement for COMESA nationals.",
+      "UPDATED 2026-06-27: Expanded Kenya visa-free notes to clarify the communiqué covers 'all persons holding valid travel documents' (not limited to ordinary passports) and that the agreement has not been confirmed in any later official Comoros government publication.",
+      "NO CHANGE to classification structure - all entries verified as correctly placed (ordinary-passport grants in visa_policy; passport-type restrictions in conditional_access).",
       "CBI status note strengthened: US State Department (travel.state.gov) explicitly warns economic citizen passports (ECPs) do not confer right of return, corroborating program termination.",
-      "CHANGED: Added Morocco agreement entry-into-force month (March 2026) to conditions note, sourced from news reports consistent with MFA announcement.",
-      "CHANGED: Added US State Department ECP warning to CBI notes for stronger corroboration of termination.",
-      "NO CHANGE to classification structure — all entries verified as correctly placed (ordinary-passport grants in visa_policy; passport-type restrictions in conditional_access)."
+      "VALIDATED 2026-06-29. Re-fetched: justice.gouv.km (Loi n°88-025), un.int/comoros (visa fees), beit-salam.km (Kenya communiqué), mea.gov.in/bvwa-passport (India agreement list page), travel.state.gov (US country info), Wikipedia visa policy of Comoros. No material changes found. All classifications re-confirmed. No new bilateral ordinary-passport visa-free agreements detected. No official Comoros e-visa portal found (search confirms none exists). India MEA PDF (Exemption_UOC_visa.pdf) still 404; list page (mea.gov.in/bvwa-passport) re-confirmed entry 105 for Comoros - 90 days, Diplomatic/Official/Service, in force 01.03.2021. Wikipedia now omits India from Comoros visa exemption table but MEA official page remains authoritative. Libya diplomatic/official/service 45-day waiver still only sourced from Wikipedia - no official bilateral source accessible; remains in gaps. Morocco-Comoros agreement remains diplomatic/service only (not ordinary passport); no upgrade. COMESA ordinary-passport free movement not implemented by Comoros - confirmed by COMESA.int programme description noting protocol still in ratification phase. NO CHANGE to any access list (visa_free, visa_on_arrival, conditional_access, eta, e_visa)."
     ],
     "gaps": [
       "No dedicated official Comoros immigration or Ministry of Foreign Affairs English-language website was found or accessible.",
       "Kenya visa-free: no specific maximum stay duration stated in the July 2023 communiqué.",
       "Full enumerated list of bilaterally visa-exempt nationalities for ordinary passports (beyond Kenya) could not be verified from official Comoros government sources.",
-      "Visa fee discrepancy between IATA Timatic/Wikipedia (30 EUR) and UN Mission Comoros (60 EUR for 45 days) remains unresolved — 60 EUR is retained as it comes from the official UN Mission page.",
-      "COMESA Free Movement Protocol implementation status for Comoros not confirmed from official Comoros sources.",
+      "Visa fee discrepancy between IATA Timatic/Wikipedia (30 EUR), US State Department (30–50 EUR range), and UN Mission Comoros (60 EUR for 45 days) remains unresolved - 60 EUR is retained as it comes from the official UN Mission page.",
+      "COMESA Free Movement Protocol implementation status for Comoros not confirmed from official Comoros sources; non-implementation inferred from aggregator data and COMESA.int description of implementing countries.",
       "AU Free Movement Protocol: exact date of Comoros signature not confirmed.",
       "No official residence-by-investment or golden visa program found.",
-      "No official digital nomad, skilled worker, or fast-track visa scheme found.",
-      "Morocco-Comoros agreement (Feb 2026): entered into force March 2026 per news reporting; no official Comoros government source confirmed ratification or exact EIF date — diplomatie.ma SSL error prevented direct page verification.",
-      "Libya diplomatic/official/service passport waiver (max 45 days) mentioned on Wikipedia visa policy page but no official bilateral source (Libya MFA or Comoros MFA) accessible to confirm — not recorded.",
-      "OCI cardholder entry to Comoros: no official source found — not recorded.",
-      "US/Schengen/UK visa holder conditional entry: referenced by third-party aggregators but no official Comoros government source found to confirm — not recorded.",
-      "India-Comoros agreement original PDF (mea.gov.in/Images/CPV/visa-exemption/Exemption_UOC_visa.pdf) returns 404; only list-page reference available."
+      "No official digital nomad, skilled worker, student, medical, or fast-track visa scheme found in official sources.",
+      "Morocco-Comoros agreement (Feb 2026): entered into force March 2026 per news reporting; no official Comoros government source confirmed ratification or exact EIF date - diplomatie.ma SSL error prevented direct page verification on both validation runs.",
+      "Libya diplomatic/official/service passport waiver (max 45 days) mentioned on Wikipedia visa policy page but no official bilateral source (Libya MFA or Comoros MFA) accessible to confirm - not recorded.",
+      "OCI cardholder entry to Comoros: no official source found - not recorded.",
+      "US/Schengen/UK visa holder conditional entry: referenced by third-party aggregators but no official Comoros government source found to confirm - not recorded.",
+      "India-Comoros agreement original PDF (mea.gov.in/Images/CPV/visa-exemption/Exemption_UOC_visa.pdf) returns 404; only list-page reference available.",
+      "Exact fee amounts for transit, short-stay, service, and courtesy visas not specified in Loi n°88-025 (deferred to Finance Law); not resolvable from available official sources.",
+      "Kenya visa-free status not independently confirmed by any post-2023 official Comoros government publication; retained solely on basis of July 2023 Presidency communiqué."
     ]
   },
   "outbound_official": {
     "found": false,
-    "note": "No official Comoros government outbound visa-list page located; rely on destination-side data. The Comoros Ministry of Foreign Affairs website (diplomatie.gouv.km) fails DNS resolution and is not reachable; the alternative MFA portal (diplomatie-comores.org) is also unreachable (ERR_TUNNEL_CONNECTION_FAILED via Firecrawl). The gouvernement.km domain likewise returns ECONNREFUSED. The UN Mission site (un.int/comoros) covers only inbound visa requirements. No search results reveal any official Comoros government page that enumerates countries where Comorian ordinary-passport holders may travel without a prior consular visa."
+    "note": "No official Comoros government outbound visa-list page located; rely on destination-side data. The Comoros Ministry of Foreign Affairs website (diplomatie.gouv.km) fails DNS resolution and is not reachable; the alternative MFA portal (diplomatie-comores.org) is also unreachable. The gouvernement.km domain likewise returns ECONNREFUSED. The UN Mission site (un.int/comoros) covers only inbound visa requirements. No search results reveal any official Comoros government page that enumerates countries where Comorian ordinary-passport holders may travel without a prior consular visa."
   },
   "sources_checked": [
     {
       "url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
-      "description": "Official Comoros Ministry of Justice — Loi n°88-025 on conditions of entry and stay of foreigners in Comoros",
+      "description": "Official Comoros Ministry of Justice - Loi n°88-025 on conditions of entry and stay of foreigners in Comoros. Re-fetched 2026-06-27: CONFIRMED. Art. 2 mandates visa for all foreigners; visa types confirmed (transit 5d, tourist 45d, short-stay 3m, long-stay >3m). No nationality exemptions in the law text.",
       "official": true
     },
     {
       "url": "https://beit-salam.km/actualit%C3%A9s/communiqu%C3%A9-conjoint-a-loccasion-de-la-visite-officielle-de-son-excellence-william-ruto,-president-de-la-republique-du-kenya-a-lunion-des-comores-du-5-au-7-juillet-2023.html",
-      "description": "Official Comoros Presidency (Beit-Salam) — Joint communiqué with Kenya July 2023, announcing mutual visa-free travel",
+      "description": "Official Comoros Presidency (Beit-Salam) - Joint communiqué with Kenya July 2023, announcing mutual visa-free travel for all persons holding valid travel documents. Re-fetched 2026-06-27: CONFIRMED. No max stay stated.",
       "official": true
     },
     {
       "url": "http://www.un.int/comoros/comoros/passport-and-visa-process",
-      "description": "Permanent Mission of the Union of Comoros to the United Nations — official visa/passport page; lists visa-on-arrival fees: 45 days = 60 EUR, 1 year = 250 EUR, 10 years = 500 EUR",
+      "description": "Permanent Mission of the Union of Comoros to the United Nations - official visa/passport page; lists visa-on-arrival fees: 45 days = 60 EUR, 1 year = 250 EUR, 10 years = 500 EUR. Re-fetched 2026-06-27: CONFIRMED.",
       "official": true
     },
     {
       "url": "https://www.mea.gov.in/bvwa-passport",
-      "description": "India Ministry of External Affairs — Countries with operational Visa Exemption Agreement for holders of Diplomatic/Official/Service passports; Comoros listed as row 105, agreement signed 11 Oct 2019, in force 1 Mar 2021, 90 days",
+      "description": "India Ministry of External Affairs - Countries with operational Visa Exemption Agreement for holders of Diplomatic/Official/Service passports; Comoros listed, agreement signed 11 Oct 2019, in force 1 Mar 2021, 90 days. Re-fetched 2026-06-27: CONFIRMED.",
       "official": true
     },
     {
       "url": "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
-      "description": "China Ministry of Foreign Affairs — List of Agreements on Mutual Visa Exemption; Comoros listed as entry #30, in force 26 Feb 2016, diplomatic/service/public affairs passports, max 30 days",
+      "description": "China Ministry of Foreign Affairs - List of Agreements on Mutual Visa Exemption; Comoros listed as entry #30, in force 26 Feb 2016, diplomatic/service/public affairs passports, max 30 days.",
       "official": true
     },
     {
       "url": "https://diplomatie.ma/en/morocco-comoros-sign-visa-exemption-agreement-diplomatic-service-passport-holders",
-      "description": "Morocco Ministry of Foreign Affairs (diplomatie.ma) — Morocco-Comoros visa exemption agreement for diplomatic and service passport holders signed 11 February 2026 in Addis Ababa; entered into force March 2026; 90 days in 180. SSL error prevented direct fetch; terms confirmed via consistent reporting from moroccoworldnews.com, yabiladi.com, and apanews.net.",
+      "description": "Morocco Ministry of Foreign Affairs (diplomatie.ma) - Morocco-Comoros visa exemption agreement for diplomatic and service passport holders signed 11 February 2026 in Addis Ababa; entered into force March 2026; 90 days in 180. SSL error prevented direct fetch on both 2026-06-13 and 2026-06-27 attempts; terms confirmed via consistent reporting from moroccoworldnews.com, yabiladi.com, and apanews.net.",
       "official": true
     },
     {
-      "url": "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Comoros.html",
-      "description": "US State Department — Comoros visa reciprocity page; warns economic citizen passports (ECPs) do not confer right of return to Comoros, corroborating CBI program termination",
+      "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Comoros.html",
+      "description": "US State Department - Comoros country information page; confirms visa-on-arrival availability for US citizens, fee range 30–50 EUR. Warns economic citizen passports (ECPs) do not confer right of return to Comoros, corroborating CBI program termination. Re-fetched 2026-06-27: CONFIRMED.",
       "official": true
     },
     {
       "url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Comoros",
-      "description": "Wikipedia — Visa policy of the Comoros; non-official aggregator; notes 30 EUR on-arrival fee (IATA Timatic) and Libya diplomatic passport waiver (unconfirmed from official source). Used for cross-reference only.",
+      "description": "Wikipedia - Visa policy of the Comoros; non-official aggregator; notes 30 EUR on-arrival fee (IATA Timatic) and Libya diplomatic passport waiver (unconfirmed from official source). Only lists China and Libya for diplomatic/service passport exemptions - does not mention Kenya visa-free for ordinary passports. Used for cross-reference only. Checked 2026-06-27.",
       "official": false
     }
   ]

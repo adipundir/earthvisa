@@ -80,10 +80,10 @@
       {
         "nationality": "Dominica",
         "iso3": "DMA",
-        "max_stay_days": 30,
-        "notes": "Ordinary passport. Added to visa-free regime 17 July 2025.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Tajikistan",
-        "source_official": false
+        "max_stay_days": 90,
+        "notes": "Ordinary passport. Mutual visa-free agreement signed 11 February 2025, entered into force 17 July 2025. Agreement covers holders of diplomatic, official and ordinary passports for 90 days.",
+        "source_url": "https://mfa.tj/en/washington/view/17331/visa-free-regime-with-commonwealth-of-dominica",
+        "source_official": true
       },
       {
         "nationality": "Andorra",
@@ -662,14 +662,6 @@
         "source_official": true
       },
       {
-        "nationality": "Turkey",
-        "iso3": "TUR",
-        "max_stay_days": 30,
-        "notes": "Ordinary passport. Diplomatic/service passports receive 90 days (see conditional_access).",
-        "source_url": "https://conf2024.dushanbewaterprocess.org/visa-to-tajikistan-2/",
-        "source_official": true
-      },
-      {
         "nationality": "United Arab Emirates",
         "iso3": "ARE",
         "max_stay_days": 30,
@@ -796,7 +788,7 @@
       "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tajikistan.html",
       "https://en.wikipedia.org/wiki/Visa_policy_of_Tajikistan"
     ],
-    "notes": "Visa policy based on Government Decree No. 464 (26 October 2021) granting visa-free to 52 countries, Government Decree No. 190 (28 March 2024) expanding the list (adding ~25 more countries), and May 1 2024 additions including all remaining EU member states (Bulgaria, Cyprus, Ireland, Malta, Romania, Slovakia, Slovenia). Iran added August 10 2024 (air travel only, 30 days — see conditional_access). Dominica added July 17, 2025. Citizens aged 55+ from 16 specific countries may also enter visa-free for up to 14 days per Government Decree No. 190."
+    "notes": "Visa policy based on Government Decree No. 464 (26 October 2021) granting visa-free to 52 countries, Government Decree No. 190 (28 March 2024) expanding the list (adding ~25 more countries), and May 1 2024 additions including all remaining EU member states (Bulgaria, Cyprus, Ireland, Malta, Romania, Slovakia, Slovenia). Iran added August 10 2024 (air travel only, 30 days - see conditional_access). Dominica added July 17, 2025. Citizens aged 55+ from 16 specific countries may also enter visa-free for up to 14 days per Government Decree No. 190. NOTE: Turkey was removed from the visa-free list effective 20 April 2024 as a reciprocal response to Turkey cancelling visa-free access for Tajik citizens on the same date."
   },
   "conditional_access": [
     {
@@ -949,9 +941,9 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Service/diplomatic passport holders receive 90-day stay. Ordinary passport holders receive 30 days visa-free.",
-      "source_url": "https://conf2024.dushanbewaterprocess.org/visa-to-tajikistan-2/",
-      "source_official": true
+      "conditions": "UNCONFIRMED: Diplomatic/service passport holders may still receive 90-day stay under separate bilateral agreement, but the ordinary passport visa-free regime was cancelled effective 20 April 2024 (reciprocal cancellation after Turkey ended visa-free for Tajik citizens). Diplomatic/service status post-cancellation not confirmed from official source. Retained here with gap flag.",
+      "source_url": "https://old.asiaplustj.info/en/news/tajikistan/politics/20240416/tajikistan-ends-visa-free-access-for-citizens-of-turkiye",
+      "source_official": false
     }
   ],
   "cbi": {
@@ -972,7 +964,7 @@
     "programs": []
   },
   "agreements": [
-    "CIS (Commonwealth of Independent States) — Agreement on Visa-Free Travel / Freedom of Movement",
+    "CIS (Commonwealth of Independent States) - Agreement on Visa-Free Travel / Freedom of Movement",
     "Tajikistan–Iran MOU on visa abolition for ordinary passports (air travel only), signed 8 November 2023, effective 3 February 2025"
   ],
   "official_domains": [
@@ -987,26 +979,32 @@
     "validation_notes": [
       "CORRECTED: South Korea moved from conditional_access (diplomatic/service only) to visa_policy.visa_free (ordinary passport, 30 days). The prior record incorrectly restricted South Korea to service/diplomatic passports only. Wikipedia Visa policy of Tajikistan and the official conference site both confirm ordinary South Korean passport holders get 30-day visa-free entry.",
       "CORRECTED: Brunei removed from conditional_access (was listed as diplomatic/service only 14 days) and added to visa_policy.visa_free (ordinary passport, 30 days). Wikipedia confirms ordinary Brunei passports receive 30-day visa-free.",
-      "CORRECTED: Romania reclassified — ordinary passport holders now get 30-day visa-free (added May 2024 EU member state expansion). Retained in conditional_access for diplomatic/service passports (90 days).",
-      "ADDED: Iran added to conditional_access with basis=transport_mode — ordinary Iranian passports admitted visa-free for 30 days via air travel only, effective 3 February 2025. Previously omitted due to lack of confirmed official source; now confirmed via mfa.tj announcement (view/16551) and cs.gov.tj.",
+      "CORRECTED: Romania reclassified - ordinary passport holders now get 30-day visa-free (added May 2024 EU member state expansion). Retained in conditional_access for diplomatic/service passports (90 days).",
+      "ADDED: Iran added to conditional_access with basis=transport_mode - ordinary Iranian passports admitted visa-free for 30 days via air travel only, effective 3 February 2025. Previously omitted due to lack of confirmed official source; now confirmed via mfa.tj announcement (view/16551) and cs.gov.tj.",
       "ADDED: 55+ age-based exemption (14-day visa-free) added to conditional_access with basis=special_status for 16 specific countries per Government Decree No. 190.",
-      "ADDED: Visa on arrival entries individually enumerated (Algeria, Egypt, Lebanon, Morocco 60 days, South Africa, Tunisia, Turkmenistan, Venezuela, Vietnam — 45 days each) replacing prior vague ~126-country bundle.",
+      "ADDED: Visa on arrival entries individually enumerated (Algeria, Egypt, Lebanon, Morocco 60 days, South Africa, Tunisia, Turkmenistan, Venezuela, Vietnam - 45 days each) replacing prior vague ~126-country bundle.",
       "ADDED: Many missing 30-day visa-free countries per 2024 expansions: Bulgaria, Cyprus, Ireland, Malta, Slovakia, Slovenia (May 2024 EU expansion); also Andorra, Bahamas, Bosnia and Herzegovina, Brazil, Brunei, Costa Rica, Kuwait, Marshall Islands, Mexico, Mongolia, Montenegro, Oman, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, San Marino, Serbia, Solomon Islands, Vatican City.",
-      "ADDED: Dominica (DMA) added to 30-day visa-free list effective 17 July 2025.",
-      "CORRECTED: Turkmenistan — ordinary passport holders now correctly classified as visa on arrival (45 days) rather than visa-free.",
-      "NOTE: cs.gov.tj added to official_domains as it is the Communication Service under the Government of the Republic of Tajikistan."
+      "CORRECTED: Dominica (DMA) max_stay_days corrected from 30 to 90 days and source updated to official mfa.tj Washington embassy page. The mutual visa-free agreement signed 11 February 2025 and in force 17 July 2025 grants 90 days, not 30 days. Source: https://mfa.tj/en/washington/view/17331/visa-free-regime-with-commonwealth-of-dominica (2026-06-27).",
+      "CORRECTED: Turkmenistan - ordinary passport holders now correctly classified as visa on arrival (45 days) rather than visa-free.",
+      "NOTE: cs.gov.tj added to official_domains as it is the Communication Service under the Government of the Republic of Tajikistan.",
+      "VERIFIED 2026-06-27: conf2024.dushanbewaterprocess.org re-fetched - table confirms all existing 30-day ordinary-passport visa-free countries. Brunei and South Korea listed as Service/Diplomatic only on that page; however Wikipedia (re-fetched 2026-06-27) explicitly states both are ordinary passport 30-day visa-free. Current record retains both under visa_free per Wikipedia. Iran cs.gov.tj air-travel-only rule re-confirmed. US State Dept page confirms 30-day visa-free for US citizens. No new countries added or removed in 2025-2026 detected beyond Dominica (corrected this run).",
+      "CORRECTED 2026-06-29: Turkey REMOVED from visa_policy.visa_free. Tajikistan cancelled visa-free entry for Turkish ordinary passport holders effective 20 April 2024, as a reciprocal measure after Turkey cancelled visa-free entry for Tajik citizens on the same date. Multiple news sources confirm this (Asia Plus Tajikistan, RFERL, The Diplomat, VisaGuide.News, EY Tax Alerts). The prior record entry for Turkey (30 days visa-free, ordinary passport) was therefore incorrect as of April 2024. Turkey now requires a visa to enter Tajikistan on ordinary passport. Turkey conditional_access entry (diplomatic/service 90 days) updated with unconfirmed flag - the general bilateral agreement may have been suspended; official confirmation not obtainable from mfa.tj due to SSL errors.",
+      "VERIFIED 2026-06-29: Iran visa-free regime remains air-travel-only (direct Dushanbe-Tehran flights), effective 3 February 2025. Confirmed via cs.gov.tj announcement and multiple cross-references. Iran correctly remains in conditional_access (not visa_policy.visa_free). US State Dept page re-fetched and confirms 30-day visa-free for US citizens still in effect."
     ],
     "gaps": [
-      "mfa.tj SSL certificate errors prevent direct scraping of primary Ministry of Foreign Affairs pages; key data sourced from official conference site, mfa.tj embassy sub-pages via search, and Wikipedia.",
-      "Complete enumerated list of all ~121 e-visa eligible countries not individually confirmed from a single official source (evisa.tj returned minimal content).",
+      "mfa.tj SSL certificate errors persist (2026-06-27) - direct fetch of mfa.tj pages still fails; data sourced from official conference site, mfa.tj embassy sub-pages via search snippets, cs.gov.tj, and Wikipedia.",
+      "Complete enumerated list of all ~121 e-visa eligible countries not individually confirmed from a single official source (evisa.tj returned minimal content on 2026-06-27 re-fetch).",
       "The individual breakdown of which 25 countries were added by Decree No. 190 (28 March 2024) vs. which were in the original 52-country Decree No. 464 (26 October 2021) is not fully documented here.",
-      "Residency by Investment (investor visa Category C) route mentioned in secondary sources with USD 500,000 / USD 1,000,000 thresholds, but no official government page confirmed — omitted.",
+      "Residency by Investment (investor visa Category C) route mentioned in secondary sources with USD 500,000 / USD 1,000,000 thresholds, but no official government page confirmed - omitted.",
       "Fast-track / digital nomad / startup visa programs: no official Tajikistan government program found.",
       "Bilateral diplomatic/service passport agreement dates not confirmed from official Tajikistan government sources for many countries.",
-      "Palestine and Syria mentioned in some aggregator sources as having diplomatic passport waivers — unconfirmed from official sources, omitted.",
-      "No credential-based (held-visa/permit) conditional entry rules found for Tajikistan — entry eligibility is exclusively nationality/passport-type/age based.",
+      "Palestine and Syria mentioned in some aggregator sources as having diplomatic passport waivers - unconfirmed from official sources, omitted.",
+      "No credential-based (held-visa/permit) conditional entry rules found for Tajikistan - entry eligibility is exclusively nationality/passport-type/age based.",
       "No OCI or analogous diaspora/special-status provisions found for Tajikistan from any official source.",
-      "Wikipedia July 2025 Dominica addition sourced from Wikipedia only — mfa.tj direct confirmation not possible due to SSL errors."
+      "Brunei and South Korea: conf2024 conference page lists both as Service/Diplomatic only; Wikipedia (re-fetched 2026-06-27) lists both under ordinary passport 30-day visa-free. This inconsistency remains unresolved due to mfa.tj SSL errors blocking direct government confirmation.",
+      "Yemen ETA (mentioned in Wikipedia 2026-06-27 re-fetch) - not in current record; could not confirm from official Tajikistan government source. Added to gaps for future verification.",
+      "Turkey diplomatic/service passport status post-April 2024 cancellation: unclear whether bilateral diplomatic/service passport exemption (90 days) survives the general visa-regime cancellation. mfa.tj SSL errors block direct verification. Retained in conditional_access with unconfirmed flag.",
+      "Brunei and South Korea: inconsistency persists - conf2024 conference page lists both as Service/Diplomatic only; Wikipedia lists both under ordinary passport 30-day visa-free. mfa.tj SSL errors block direct resolution."
     ]
   },
   "outbound_official": {
@@ -1043,11 +1041,133 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "Source is the Tajikistan consular authority outbound page (consular.tj/citizens/11-visa-free.html — Bezvisovaya sistema / Visa-free regime for citizens of the Republic of Tajikistan). Table covers ordinary passport holders only. Countries where ordinary passport column is blank or visa-required are omitted. North Korea listed as unlimited but travel is effectively restricted; page-level data only recorded here. Page date not shown; scraped June 2026."
+    "notes": "Source is the Tajikistan consular authority outbound page (consular.tj/citizens/11-visa-free.html - Bezvisovaya sistema / Visa-free regime for citizens of the Republic of Tajikistan). Table covers ordinary passport holders only. Countries where ordinary passport column is blank or visa-required are omitted. North Korea listed as unlimited but travel is effectively restricted; page-level data only recorded here. Page date not shown; scraped June 2026."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist E-Visa (Single Entry)",
+      "purpose": "Short-term tourism and sightseeing in Tajikistan. Applied for online before travel.",
+      "max_stay_days": 60,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 30,
+      "processing_days_min": 3,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.tj/",
+      "notes": "Must apply from outside Tajikistan. Cannot be extended once issued. Registration at Ministry of Internal Affairs (OVIR) required within 10 days of arrival if staying 10+ days. Optional GBAO (Gorno-Badakhshan Autonomous Region) permit available as add-on at additional cost."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist E-Visa (Multiple Entry)",
+      "purpose": "Short-term tourism allowing multiple entries into Tajikistan within the visa validity period.",
+      "max_stay_days": 60,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 50,
+      "processing_days_min": 3,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.tj/",
+      "notes": "Must apply from outside Tajikistan. Cannot be extended. Available to citizens of approximately 121 eligible countries. GBAO permit available as add-on."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Visa on Arrival (T-Visa)",
+      "purpose": "Tourist visa issued at Dushanbe International Airport for stays longer than 30 days or for nationalities requiring a visa that do not have an e-visa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tajikistan.html",
+      "notes": "Available at Dushanbe International Airport. Certain nationalities (Algeria, Egypt, Lebanon, Morocco, South Africa, Tunisia, Turkmenistan, Venezuela, Vietnam) may obtain a visa on arrival. Additional fees may apply. May require prior arrangement or invitation letter for some nationalities."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa (K-Visa)",
+      "purpose": "For foreign nationals traveling to Tajikistan for business purposes, meetings, or commercial activities.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tajikistan.html",
+      "notes": "Classified as category K. Requires a visa support letter from a Tajikistan-based organization. Applicants may be required to appear in person at a Tajik embassy or consulate. Also available via e-visa portal for eligible nationalities."
+    },
+    {
+      "category": "student",
+      "name": "Student / Education Visa (O-Visa)",
+      "purpose": "For foreign nationals admitted to an educational institution in Tajikistan for the purpose of study.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tajikistan.html",
+      "notes": "Classified as category O. Requires visa support letter from the educational institution in Tajikistan. Must register with OVIR (Ministry of Internal Affairs) within 3 days of arrival. Applicants may need to appear in person at a Tajik embassy or consulate."
+    },
+    {
+      "category": "family",
+      "name": "Private Visit / Family Visa (XC1)",
+      "purpose": "For foreign nationals visiting family members or friends residing in Tajikistan.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tajikistan.html",
+      "notes": "Classified as category XC1. Requires a visa support letter/invitation from the host in Tajikistan. Must register with OVIR within 3 days of arrival. Applicants may need to appear in person at a Tajik embassy or consulate."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For travelers passing through Tajikistan en route to another country.",
+      "max_stay_days": 3,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.uk/foreign-travel-advice/tajikistan/entry-requirements",
+      "notes": "Transit visas are usually valid for 3 days. Extensions may be obtained through the Ministry of Foreign Affairs. Apply at a Tajik embassy or consulate prior to travel."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official Visa",
+      "purpose": "For foreign diplomats, government officials, and holders of diplomatic or service passports traveling on official government business.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.tj/en/main/entry-visa/visa-information",
+      "notes": "Many nationalities holding diplomatic or service passports receive visa-free access for 30–90 days under bilateral agreements. Issued through the Ministry of Foreign Affairs. Conditions vary by nationality."
+    }
+  ],
   "sources_checked": [
     "https://mfa.tj/en/main/entry-visa/visa-information (SSL error, could not fetch)",
-    "https://mfa.tj/en/main/view/14951/... (visa-free expansion announcement — SSL error, confirmed via search)",
+    "https://mfa.tj/en/main/view/14951/... (visa-free expansion announcement - SSL error, confirmed via search)",
     "https://mfa.tj/en/main/view/16551/visa-free-regime-with-the-islamic-republic-of-iran (SSL error, confirmed via search)",
     "https://mfa.tj/en/washington/view/16551/visa-free-regime-with-the-islamic-republic-of-iran (SSL error, confirmed via search)",
     "https://mfa.tj/en/paris/view/9124/... (SSL error, confirmed via search)",
@@ -1058,6 +1178,13 @@
     "https://www.evisa.tj/ (minimal content returned)",
     "https://conf2024.dushanbewaterprocess.org/visa-to-tajikistan-2/ (fetched successfully)",
     "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tajikistan.html",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Tajikistan (fetched successfully — used as secondary source for countries not verifiable via official pages due to SSL)"
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Tajikistan (fetched successfully - used as secondary source for countries not verifiable via official pages due to SSL)",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tajikistan.html (fetched successfully - confirmed visa categories K/O/XC1, e-visa details, visa-free 30 days for US citizens)",
+    "https://www.gov.uk/foreign-travel-advice/tajikistan/entry-requirements (fetched successfully - confirmed transit visa 3 days, e-visa 60-day max stay, on-arrival physical visa)",
+    "https://conf2024.dushanbewaterprocess.org/visa-to-tajikistan-2/ (re-fetched 2026-06-29 - Turkey NOT listed; confirms current visa-free countries)",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Tajikistan.html (re-fetched 2026-06-29 - US citizens 30-day visa-free confirmed still in effect)",
+    "https://old.asiaplustj.info/en/news/tajikistan/politics/20240416/tajikistan-ends-visa-free-access-for-citizens-of-turkiye (Tajikistan Asia-Plus news - confirmed Tajikistan ended visa-free for Turkey effective 20 April 2024)",
+    "https://visaguide.world/news/tajikistan-cancels-visa-free-entry-for-turkish-citizens/ (VisaGuide.News - confirmed Tajikistan cancelled Turkey visa-free)",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Tajikistan (re-fetched 2026-06-29 - Turkey not in visa-free list; Iran listed as conditional 30-day air-travel-only)"
   ]
 }

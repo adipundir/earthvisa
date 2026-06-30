@@ -9,7 +9,7 @@
         "nationality": "GCC Citizens (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia)",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Citizens of Gulf Cooperation Council member states may enter using passport or national ID card with no visa required. Stay duration is unrestricted for GCC nationals — they are not subject to visa on arrival stamp but enter visa-free under the GCC free movement framework.",
+        "notes": "Citizens of Gulf Cooperation Council member states may enter using passport or national ID card with no visa required. Stay duration is unrestricted for GCC nationals - they are not subject to visa on arrival stamp but enter visa-free under the GCC free movement framework.",
         "source_url": "https://www.gdrfad.gov.ae/en/node/2086",
         "source_official": true
       },
@@ -75,7 +75,7 @@
         "nationality": "China",
         "iso3": "CHN",
         "max_stay_days": 30,
-        "notes": "Visa-free entry by mutual agreement (not visa on arrival stamp); ordinary, special, official, and diplomatic passports all included. Maximum 30 days per visit per UAE Embassy Beijing. The prior record erroneously stated 90 days — corrected to 30 days per official MOFA Beijing source.",
+        "notes": "Visa-free entry by mutual agreement (not visa on arrival stamp); ordinary, special, official, and diplomatic passports all included. Maximum 30 days per visit per UAE Embassy Beijing. The prior record erroneously stated 90 days - corrected to 30 days per official MOFA Beijing source.",
         "source_url": "https://www.mofa.gov.ae/en/missions/beijing/services/visas",
         "source_official": true
       },
@@ -418,12 +418,12 @@
       "https://www.mofa.gov.ae/en/visa-exemptions-for-non-citizen",
       "https://www.mofa.gov.ae/en/missions/beijing/services/visas"
     ],
-    "notes": "The GDRFA Dubai official page lists nationalities eligible for visa on arrival (stamped at airport, no advance application needed). GCC nationals (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia) enter visa-free using passport or national ID, with no fixed stay limit. Israel ordinary passport holders are visa-free (up to 30 days) per the MOFA official visa exemptions page — confirmed by the UAE–Israel mutual visa exemption signed October 2021; laissez passer and extension-sticker passports are not accepted. China: 30 days visa-free for ordinary, special, official, and diplomatic passports per the mutual agreement confirmed on the UAE Embassy Beijing page; the prior 90-day figure has been corrected. All other nationalities typically apply for e-visa online prior to travel. The GDRFA list may not be exhaustive — additional bilateral agreements may apply."
+    "notes": "The GDRFA Dubai official page lists nationalities eligible for visa on arrival (stamped at airport, no advance application needed). GCC nationals (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia) enter visa-free using passport or national ID, with no fixed stay limit. Israel ordinary passport holders are visa-free (up to 30 days) per the MOFA official visa exemptions page - confirmed by the UAE–Israel mutual visa exemption signed October 2021; laissez passer and extension-sticker passports are not accepted. China: 30 days visa-free for ordinary, special, official, and diplomatic passports per the mutual agreement confirmed on the UAE Embassy Beijing page; the prior 90-day figure has been corrected. All other nationalities typically apply for e-visa online prior to travel. The GDRFA list may not be exhaustive - additional bilateral agreements may apply."
   },
   "visa_types": [
     {
       "category": "tourist",
-      "name": "Tourist Visa — 30 Days Single Entry",
+      "name": "Tourist Visa - 30 Days Single Entry",
       "purpose": "Tourism and short visits",
       "max_stay_days": 30,
       "validity_days": 60,
@@ -438,7 +438,7 @@
     },
     {
       "category": "tourist",
-      "name": "Tourist Visa — 60 Days Single Entry",
+      "name": "Tourist Visa - 60 Days Single Entry",
       "purpose": "Extended tourism and visits",
       "max_stay_days": 60,
       "validity_days": 60,
@@ -513,7 +513,7 @@
     },
     {
       "category": "retirement",
-      "name": "Retirement Visa — 5 Years",
+      "name": "Retirement Visa - 5 Years",
       "purpose": "Retirement residence in UAE",
       "max_stay_days": null,
       "validity_days": 1825,
@@ -619,7 +619,7 @@
       },
       "level": "visa_on_arrival",
       "max_stay_days": 14,
-      "conditions": "Indian ordinary passport holder must hold a valid residence permit from Australia. Effective 13 February 2025 per official UAE MOFA New Delhi announcement. Visa on arrival at any UAE entry point for tourism or business; stay up to 14 days (extendable once for 14 days). Study and work require pre-arrival visa. Prior record stated 60 days — corrected to 14 days per confirmation that the GDRFA terms apply to all qualifying credential holders.",
+      "conditions": "Indian ordinary passport holder must hold a valid residence permit from Australia. Effective 13 February 2025 per official UAE MOFA New Delhi announcement. Visa on arrival at any UAE entry point for tourism or business; stay up to 14 days (extendable once for 14 days). Study and work require pre-arrival visa. Prior record stated 60 days - corrected to 14 days per confirmation that the GDRFA terms apply to all qualifying credential holders.",
       "source_url": "https://www.mofa.gov.ae/en/missions/new-delhi/media-hub/embassy-news/19-2-2025-new-delhi",
       "source_official": true
     },
@@ -733,6 +733,30 @@
       "conditions": "Pakistani holders of diplomatic and official passports are exempt from UAE entry visa requirement per the UAE–Pakistan mutual visa waiver MoU signed June 24, 2025, and activated effective July 25, 2025. Does not apply to ordinary Pakistani passport holders. Confirmed active at all UAE airports. Stay duration not specified in available official announcement.",
       "source_url": "https://www.dawn.com/news/1926939/uae-visa-waiver-for-diplomatic-official-pakistani-passports-in-effect",
       "source_official": false
+    },
+    {
+      "basis": "credential",
+      "eligible_nationalities": [
+        "Indonesia",
+        "Vietnam",
+        "Thailand",
+        "Philippines",
+        "Kenya",
+        "South Africa"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
+      "credential": {
+        "issuer": "US, EU member states, UK, Singapore, Japan, South Korea, Australia, New Zealand, or Canada",
+        "type": "residence_permit",
+        "subtype": "any valid residence permit from any of the nine approved countries"
+      },
+      "level": "visa_on_arrival",
+      "max_stay_days": 60,
+      "conditions": "Ordinary passport holders of Indonesia, Vietnam, Thailand, Philippines, Kenya, and South Africa may obtain a visa on arrival provided they hold a valid residence permit issued by the United States, any EU member state, the United Kingdom, Singapore, Japan, the Republic of Korea, Australia, New Zealand, or Canada. Two options: (1) 14-day visa (AED 100 fee), extendable once during stay; (2) 60-day single-entry visa (AED 250 fee), non-extendable. Overstay fine: AED 50 per day. Accompanying family members also eligible. Effective June 25, 2026 per ICP and MOFA official announcements.",
+      "source_url": "https://icp.gov.ae/en/media-center/icp-expands-eligibility-for-uae-entry-visa-for-nationals-of-certain-countries/",
+      "source_official": true
     }
   ],
   "cbi": {
@@ -779,7 +803,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://www.gdrfad.gov.ae/en/services/8ea80da7-f43e-11eb-0320-0050569629e8",
         "source_official": true,
-        "notes": "5-year renewable residency for entrepreneurs. Requires valid commercial/industrial license with Articles of Association (capital not less than AED 2 million) OR Federal Tax Authority letter confirming annual tax payments of at least AED 250,000. Project must be innovative/technological. Confirmed current per ICP Golden Residency page (March 2026)."
+        "notes": "5-year renewable residency for entrepreneurs with innovative/technical projects. Requires a certified auditor letter proving project value is no less than AED 500,000, plus approval from a recognised business incubator or relevant emirate authority. Confirmed per live ICP Golden Residency page (June 2026). Note: a prior validation note (June 2026) incorrectly stated the commercial-license route required AED 2 million capital - this has been corrected; the ICP page threshold for entrepreneurs is AED 500,000 project value."
       },
       {
         "name": "Green Residency (Skilled Workers)",
@@ -812,7 +836,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/the-blue-visa",
         "source_official": true,
-        "notes": "10-year renewable residency for individuals who have made exceptional contributions to environmental protection and sustainability inside or outside UAE. Categories include: environmental influencers, scientists/researchers, environmental investors/entrepreneurs, inventors/innovators, elite specialists, members of international organisations/companies/NGOs, and global award winners. No fixed minimum investment amount confirmed on official u.ae page — prior AED 1 million figure for 'investors' category is unconfirmed on the live official page and has been removed. No sponsor required."
+        "notes": "10-year renewable residency for individuals who have made exceptional contributions to environmental protection and sustainability inside or outside UAE. Categories include: environmental influencers, scientists/researchers, environmental investors/entrepreneurs, inventors/innovators, elite specialists, members of international organisations/companies/NGOs, and global award winners. No fixed minimum investment amount confirmed on official u.ae page - prior AED 1 million figure for 'investors' category is unconfirmed on the live official page and has been removed. No sponsor required."
       }
     ]
   },
@@ -848,19 +872,20 @@
       {
         "name": "Golden Residency for Outstanding Students",
         "category": "high_achiever",
-        "eligibility": "High school graduates with cumulative GPA of at least 95% (or equivalent); OR university graduates with GPA of at least 3.5 (Classification A) or 3.8 (Classification B) within 2 years of graduation from UAE universities",
+        "eligibility": "High school graduates with cumulative GPA of at least 95% (or equivalent); OR university graduates with GPA of at least 3.8 within 2 years of graduation from UAE universities",
         "processing_time": "2 days",
         "official_url": "https://icp.gov.ae/en/services/golden-residency/",
         "source_official": true,
-        "notes": "5-year residency for high school graduates (95%+), 10-year residency for top UAE university graduates. GPA thresholds corrected per live ICP page (March 2026): Classification A requires GPA 3.5+, Classification B requires GPA 3.8+. Prior record stated 3.8+ for all university graduates — corrected to reflect tiered classification."
+        "notes": "5-year residency for high school graduates (95%+), 10-year residency for top UAE university graduates. Live ICP Golden Residency page (June 2026) states university GPA threshold of ≥3.8. A prior correction (March 2026) introduced a tiered Classification A (3.5+) / B (3.8+) system that is not reflected on the current live ICP page — reverted to the single ≥3.8 threshold. See data_quality.gaps for unresolved classification uncertainty."
       }
     ]
   },
   "agreements": [
     "GCC (Gulf Cooperation Council) free movement",
     "UAE–Israel mutual visa exemption (October 2021)",
-    "UAE–China mutual visa exemption (ordinary, special, official, diplomatic passports — 30 days)",
-    "UAE–Pakistan mutual visa waiver for diplomatic and official passports (effective July 25, 2025)"
+    "UAE–China mutual visa exemption (ordinary, special, official, diplomatic passports - 30 days)",
+    "UAE–Pakistan mutual visa waiver for diplomatic and official passports (effective July 25, 2025)",
+    "UAE credential-based visa on arrival scheme (expanded June 25, 2026): Indonesia, Vietnam, Thailand, Philippines, Kenya, South Africa added; qualifying residence countries: US, EU, UK, Singapore, Japan, South Korea, Australia, New Zealand, Canada"
   ],
   "official_domains": [
     "icp.gov.ae",
@@ -873,30 +898,38 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTION: GCC nationals moved from visa_on_arrival to visa_free — they do not receive a visa on arrival stamp; they enter via free movement framework using passport or national ID with no fixed stay limit.",
+      "CORRECTION: GCC nationals moved from visa_on_arrival to visa_free - they do not receive a visa on arrival stamp; they enter via free movement framework using passport or national ID with no fixed stay limit.",
       "CORRECTION: Israel added to visa_policy.visa_free (up to 30 days) sourced from mofa.gov.ae/en/visa-exemptions-for-non-citizen (official MOFA visa exemptions page). Prior record only mentioned Israel in notes without classifying it; now correctly classified as visa_free.",
-      "CORRECTION: China max_stay_days corrected from 90 to 30 days, per UAE Embassy Beijing official page (mofa.gov.ae/en/missions/beijing/services/visas). The bilateral agreement covers ordinary, special, official, and diplomatic passports for 30 days — not 90 days.",
+      "CORRECTION: China max_stay_days corrected from 90 to 30 days, per UAE Embassy Beijing official page (mofa.gov.ae/en/missions/beijing/services/visas). The bilateral agreement covers ordinary, special, official, and diplomatic passports for 30 days - not 90 days.",
       "CORRECTION: India conditional access for Australia/Canada/Japan/New Zealand/South Korea/Singapore residence permits: max_stay_days corrected from 60 to 14 days. The official MOFA New Delhi announcement (mofa.gov.ae) does not state the duration; the GDRFA service page specifies 14 days extendable once. The prior 60-day figure was from a non-official immigration law firm source and has been replaced.",
-      "ADDITION: Pakistan diplomatic/official passport visa waiver added to conditional_access (basis=passport_type) per multiple corroborating news sources confirming activation on July 25, 2025. Marked source_official=false as no direct UAE MOFA announcement URL was accessible — sourced from Dawn.com (Pakistani national newspaper) and corroborating Gulf News report.",
+      "ADDITION: Pakistan diplomatic/official passport visa waiver added to conditional_access (basis=passport_type) per multiple corroborating news sources confirming activation on July 25, 2025. Marked source_official=false as no direct UAE MOFA announcement URL was accessible - sourced from Dawn.com (Pakistani national newspaper) and corroborating Gulf News report.",
       "CORRECTION: Blue Residency min_amount removed (set to null). The prior AED 1 million figure for the environmental investor sub-category was not confirmed on the current official u.ae Blue Visa page.",
       "CORRECTION: Golden Residency for Outstanding Students eligibility updated to reflect tiered GPA classification per live ICP page: Classification A (GPA 3.5+) and Classification B (GPA 3.8+). Prior record stated a single 3.8+ threshold.",
-      "CORRECTION: Entrepreneur Golden Residency notes updated — the capital requirement is AED 2 million for commercial license route OR AED 250,000 annual tax (confirmed per ICP search results), not AED 500,000 project value as prior record stated. This was a significant error.",
+      "CORRECTION: Entrepreneur Golden Residency notes updated - the capital requirement is AED 2 million for commercial license route OR AED 250,000 annual tax (confirmed per ICP search results), not AED 500,000 project value as prior record stated. This was a significant error.",
       "CORRECTION: e-visa notes updated to reflect current ICP page wording: continuous stay up to 90 days (extendable to 180 total in a year). Prior description of '30-day and 60-day options at AED 200 and AED 300' is no longer reflected on the live ICP page.",
-      "ADDITION: agreements array updated to include UAE-Israel, UAE-China, and UAE-Pakistan bilateral agreements."
+      "ADDITION: agreements array updated to include UAE-Israel, UAE-China, and UAE-Pakistan bilateral agreements.",
+      "ADDITION (2026-06-27): Six new nationalities - Indonesia (IDN), Vietnam (VNM), Thailand (THA), Philippines (PHL), Kenya (KEN), South Africa (ZAF) - added to conditional_access effective June 25, 2026. These nationalities are eligible for a 14-day (AED 100) or 60-day (AED 250) visa on arrival ONLY if holding a valid residence permit from one of nine approved countries: USA, EU member states, UK, Singapore, Japan, South Korea, Australia, New Zealand, or Canada. Source: ICP official announcement icp.gov.ae/en/media-center/icp-expands-eligibility-for-uae-entry-visa-for-nationals-of-certain-countries/ and MOFA announcement mofa.gov.ae/en/mediahub/news/2026/6/25/uae-grants-visa-on-arrival. These nationalities do NOT have unconditional visa on arrival access and are correctly placed in conditional_access, not visa_policy.",
+      "VALIDATION PASS (2026-06-29): Re-fetched gdrfad.gov.ae/en/node/2086 (VOA list confirmed; same ~47 countries as in record); mofa.gov.ae/en/visa-exemptions-for-non-citizen (MOFA lists additional countries as visa-free including many also listed as VOA by GDRFA — this is a labelling difference, not a data error; the GDRFA VOA classification is retained as it reflects the operational entry mechanism); icp.gov.ae/en/media-center/icp-expands-eligibility-for-uae-entry-visa-for-nationals-of-certain-countries/ (confirmed 6-nationality expansion, conditions, and fees as recorded); mofa.gov.ae/en/mediahub/news/2026/6/25/uae-grants-visa-on-arrival (confirmed conditional nature — residence permit required); gdrfad.gov.ae/en/services/727c91b1-52eb-11ea-0320-0050569629e8 (India VOA: confirmed 14 days, AED 253, US PR/UK/EU route); icp.gov.ae/en/golden-residency/ (confirmed entrepreneur threshold AED 500,000 project value, not AED 2 million).",
+      "CORRECTION (2026-06-29): Golden Residency (Entrepreneurs) rbi.programs notes corrected. Previous validation note incorrectly stated 'capital not less than AED 2 million for commercial license route'; live ICP page (June 2026) confirms the project value threshold for entrepreneurs is AED 500,000 (certified auditor letter). The min_amount field (500000) was already correct; the notes text has been updated to match.",
+      "CORRECTION (2026-06-29): Golden Residency for Outstanding Students eligibility reverted from tiered GPA system (Classification A 3.5+ / Classification B 3.8+) back to single threshold (≥3.8). The live ICP Golden Residency page (June 2026) shows only a single ≥3.8 university GPA requirement. The prior tiered classification cannot be confirmed on the current live official page."
     ],
     "gaps": [
       "Pakistan diplomatic/official passport waiver (effective July 25, 2025) confirmed by multiple news sources but no direct UAE MOFA official announcement URL was accessible to verify; recorded with source_official=false.",
       "Stay duration for Pakistan diplomatic/official passport holders not specified in available sources.",
-      "Israel stay duration (30 days) inferred from the mutual exemption agreement terms — the MOFA visa exemptions page listing does not specify duration explicitly per the fetched content.",
+      "Israel stay duration (30 days) inferred from the mutual exemption agreement terms - the MOFA visa exemptions page listing does not specify duration explicitly per the fetched content.",
       "GCC nationals' exact stay duration is not specified on the official page (unlimited/unrestricted implied by national ID entry rules).",
-      "Complete list of e-visa eligible nationalities is not publicly enumerated on official pages — only the VOA list and the MOFA exemption list are enumerated; all others are implied e-visa required.",
-      "Path to citizenship from residency programs is not officially stated on ICP pages — UAE citizenship is granted only by presidential decree; no official pathway duration published.",
+      "Complete list of e-visa eligible nationalities is not publicly enumerated on official pages - only the VOA list and the MOFA exemption list are enumerated; all others are implied e-visa required.",
+      "Path to citizenship from residency programs is not officially stated on ICP pages - UAE citizenship is granted only by presidential decree; no official pathway duration published.",
       "UAE does not have a formal CBI program; absence confirmed by absence on official sites but no official statement explicitly denying one was found.",
-      "No Schengen visa holder conditional entry rule found on any official UAE source — the GDRFA/ICP pages do not reference Schengen Type C visa as a qualifying credential; only EU residence permit is confirmed.",
+      "No Schengen visa holder conditional entry rule found on any official UAE source - the GDRFA/ICP pages do not reference Schengen Type C visa as a qualifying credential; only EU residence permit is confirmed.",
       "No OCI (Overseas Citizen of India) cardholder-specific conditional entry rule for UAE found on any official UAE government source.",
       "Blue Residency minimum investment amount for environmental investor sub-category: AED 1 million figure from prior record is unconfirmed on current official u.ae page and has been removed.",
-      "The GDRFA Dubai list (gdrfad.gov.ae/en/node/2086) may not reflect all bilateral agreements — the MOFA exemptions page lists more countries; a comprehensive merged list was not compiled.",
-      "Minimum permit validity requirements for Australia/Canada/Japan/New Zealand/South Korea/Singapore residence permits (Indian passport holders) not stated in the official MOFA announcement."
+      "The GDRFA Dubai list (gdrfad.gov.ae/en/node/2086) may not reflect all bilateral agreements - the MOFA exemptions page lists more countries; a comprehensive merged list was not compiled.",
+      "Minimum permit validity requirements for Australia/Canada/Japan/New Zealand/South Korea/Singapore residence permits (Indian passport holders) not stated in the official MOFA announcement.",
+      "Minimum permit validity requirement for the June 2026 credential-based VOA (Indonesia/Vietnam/Thailand/Philippines/Kenya/South Africa): ICP announcement does not specify minimum remaining validity on the qualifying residence permit; wego.com article states 6 months but this was not confirmed on the official ICP/MOFA pages fetched.",
+      "The 14-day credential-based VOA for India (GDRFA service page) and the June 2026 14-day VOA for the 6 new nationalities (ICP announcement) appear to be the same scheme. However, the fee for India's original US Green Card route is listed as AED 253 (GDRFA page) while the June 2026 announcement states AED 100 for 14-day visa. This discrepancy was not resolved against live official pages.",
+      "Outstanding Students GPA classification uncertainty (2026-06-29): The current live ICP Golden Residency page shows a single ≥3.8 GPA threshold for university graduates. A prior correction introduced a tiered Classification A (≥3.5) / B (≥3.8) framework. Both ≥3.8 (from current live page) and the tiered system have been claimed on official pages at different points; recommend re-verification directly at icp.gov.ae/en/services/golden-residency/ before relying on the specific sub-3.8 threshold.",
+      "MOFA visa-exemptions page (mofa.gov.ae/en/visa-exemptions-for-non-citizen) lists many countries (e.g. Serbia, Kazakhstan, Argentina, Brazil, Mexico, etc.) as 'visa-free' that are not in the current record's visa_policy.visa_free list. It is unclear whether these countries receive a visa on arrival stamp (as listed on GDRFA) or true advance-free entry. Recommend cross-checking whether countries like Serbia, Kazakhstan, Argentina, Brazil, Mexico carry a VOA stamp or truly no formality at UAE airports. These were not added to visa_free out of caution (could not confirm the mechanism on a live official source in this pass)."
     ]
   },
   "outbound_official": {
@@ -1444,7 +1477,7 @@
         "iso3": "GBR"
       }
     ],
-    "notes": "Source is the UAE Ministry of Foreign Affairs interactive travel requirements map at mofa.gov.ae/en/travel-updates, queried per-country using the ?code= parameter. Data reflects normal (ordinary) passport holder category. Israel is listed as visa-free but requires an Electronic Travel Authorization (ETA-IL) before travel via israel-entry.piba.gov.il — classified as visa_free per the MOFA page label. Thailand requires a Thailand Digital Arrival Card (TDAC) before arrival but is classified as visa_free per MOFA. Lebanon is technically visa-free but a UAE travel ban to Lebanon is in effect. USA requires a visa (visa required). This list covers countries checked; the MOFA page contains ~195 countries — not all were individually queried. Countries not listed here should be verified directly at mofa.gov.ae/en/travel-updates."
+    "notes": "Source is the UAE Ministry of Foreign Affairs interactive travel requirements map at mofa.gov.ae/en/travel-updates, queried per-country using the ?code= parameter. Data reflects normal (ordinary) passport holder category. Israel is listed as visa-free but requires an Electronic Travel Authorization (ETA-IL) before travel via israel-entry.piba.gov.il - classified as visa_free per the MOFA page label. Thailand requires a Thailand Digital Arrival Card (TDAC) before arrival but is classified as visa_free per MOFA. Lebanon is technically visa-free but a UAE travel ban to Lebanon is in effect. USA requires a visa (visa required). This list covers countries checked; the MOFA page contains ~195 countries - not all were individually queried. Countries not listed here should be verified directly at mofa.gov.ae/en/travel-updates."
   },
   "sources_checked": [
     "https://icp.gov.ae/en/golden-residence/",
@@ -1472,6 +1505,9 @@
     "https://u.ae/en/information-and-services/visa-and-emirates-id/do-you-need-an-entry-permit-or-a-visa-to-enter-the-uae/visa-on-arrival",
     "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/golden-visa",
     "https://gulfnews.com/uae/uae-updates-visa-on-arrival-list-for-citizens-of-87-countries-1.101695198",
-    "https://www.dawn.com/news/1926939/uae-visa-waiver-for-diplomatic-official-pakistani-passports-in-effect"
+    "https://www.dawn.com/news/1926939/uae-visa-waiver-for-diplomatic-official-pakistani-passports-in-effect",
+    "https://icp.gov.ae/en/media-center/icp-expands-eligibility-for-uae-entry-visa-for-nationals-of-certain-countries/",
+    "https://www.mofa.gov.ae/en/mediahub/news/2026/6/25/uae-grants-visa-on-arrival",
+    "https://icp.gov.ae/en/golden-residency/"
   ]
 }

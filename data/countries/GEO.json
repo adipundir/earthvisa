@@ -732,14 +732,6 @@
         "notes": "Citizens of the Hashemite Kingdom of Jordan may enter and stay in Georgia without a visa for one full year, as confirmed by the Georgian Embassy in Jordan. Study purposes require a separate D3 Study Visa.",
         "source_url": "https://jordan.mfa.gov.ge/en/visa-information",
         "source_official": true
-      },
-      {
-        "nationality": "Peru",
-        "iso3": "PER",
-        "max_stay_days": 90,
-        "notes": "Citizens may enter and stay in Georgia without visa for 90 days within a 180-day period. Added to the visa-free list as of April 1, 2024 (Ordinance No. 147, April 23, 2024). Previously in the simplified e-visa category.",
-        "source_url": "https://matsne.gov.ge/en/document/view/2867361",
-        "source_official": true
       }
     ],
     "visa_on_arrival": [],
@@ -1169,6 +1161,14 @@
         "source_official": true
       },
       {
+        "nationality": "Peru",
+        "iso3": "PER",
+        "max_stay_days": null,
+        "notes": "Simplified e-visa category: requires only biometric photo and passport copy. A bilateral visa-free travel agreement between Georgia and Peru was signed September 18, 2023, but the evisa.gov.ge portal as of June 2026 continues to list Peru in the simplified e-visa category, and Peru does not appear in the official visa-free ordinance on matsne.gov.ge. Pending confirmation of the bilateral agreement's entry-into-force status, Peruvians should apply for an e-visa.",
+        "source_url": "https://www.evisa.gov.ge/geovisa/countries/index.html",
+        "source_official": true
+      },
+      {
         "nationality": "Chile",
         "iso3": "CHL",
         "max_stay_days": null,
@@ -1412,7 +1412,7 @@
       "https://jordan.mfa.gov.ge/en/visa-information",
       "https://mfa.gov.ge/en/news/425297-28-misidan-saqartvelosa-da-chinetis-sakhalkho-respublikas-shoris-uvizo-mimosvlis-shesakheb-shetankhm"
     ],
-    "notes": "Georgia's visa-free list is governed by Government Ordinance No. 255 (05/06/2015, as amended). As of February 2026 (Ordinance No. 80, 24/02/2026), approximately 98 countries' citizens may enter and stay visa-free. The core 94-country list grants 365-day stays. Additions since 2023 include: China (ordinary passport, 30 days, tourism only, since 11/09/2023 per PM Ordinance No. 359; formalized by bilateral agreement in force 28/05/2024); Jordan (365 days); Peru (90 days in 180-day period, since Ordinance No. 147, 23/04/2024). EU citizens may use identity cards. UN Laissez-Passer holders receive equivalent privileges. A separate ordinance (2867377) allows citizens of 50 specific countries to enter visa-free for 90 days in any 180-day period if they hold a valid visa or residence permit from qualifying OECD/Schengen countries. Effective 17 April 2025 (Ordinance No. 122), 17 nationalities under the second ordinance now require a multiple-entry visa or permit valid for at least 1 year at entry. E-visa fee: USD 20 + 2% service fee; processing: not less than 5 working days; stay duration varies by nationality (typically 30 days per visit within 120-day validity, or 90 days within 180-day validity)."
+    "notes": "Georgia's visa-free list is governed by Government Ordinance No. 255 (05/06/2015, as amended). The core 94-country list (ordinance 2867361) grants 365-day stays; the original 2015 PDF text (retrieved 29/06/2026 from matsne.gov.ge) confirms 94 countries numbered 1-94 ending with Honduras — Jordan is NOT in the original 94-country text but was added to the consolidated list by a later amendment (cited as Ordinance 255 by the Georgian Embassy in Jordan). Additionally, China (ordinary passport, 30 days, tourism only, since PM Ordinance No. 359 11/09/2023; formalized by bilateral agreement in force 28/05/2024) is visa-free under a separate bilateral arrangement. Total approximately 96 nationalities have unconditional visa-free access to Georgia. EU citizens may use identity cards. UN Laissez-Passer holders receive equivalent privileges. A separate ordinance (2867377, last amended 17/04/2025 by Ordinance No. 122) allows citizens of any country holding a valid visa or residence permit from one of 50 qualifying OECD/Schengen states to enter visa-free for 90 days in any 180-day period; 17 nationalities under this pathway now require a multiple-entry visa or permit valid for at least 1 year. E-visa fee: USD 20 + 2% service fee; processing: not less than 5 working days; stay duration varies by nationality (typically 30 days per visit within 120-day validity, or 90 days within 180-day validity). Most recent amendments to the 94-country list: Ordinance No. 98 (02/04/2025) and Ordinance No. 80 (24/02/2026). MANDATORY TRAVEL INSURANCE: Since January 1, 2026 (Government Decree No. 602, 26/12/2025), all foreign nationals entering Georgia are required to hold valid travel health and accident insurance covering the entire duration of stay with minimum coverage of 30,000 GEL (approximately USD 11,000)."
   },
   "outbound_official": {
     "found": true,
@@ -1420,32 +1420,110 @@
     "source_official": true,
     "asof": null,
     "visa_free": [
-      {"name": "Austria", "iso3": "AUT"},
-      {"name": "Belgium", "iso3": "BEL"},
-      {"name": "Czech Republic", "iso3": "CZE"},
-      {"name": "Denmark", "iso3": "DNK"},
-      {"name": "Estonia", "iso3": "EST"},
-      {"name": "Finland", "iso3": "FIN"},
-      {"name": "France", "iso3": "FRA"},
-      {"name": "Germany", "iso3": "DEU"},
-      {"name": "Greece", "iso3": "GRC"},
-      {"name": "Hungary", "iso3": "HUN"},
-      {"name": "Iceland", "iso3": "ISL"},
-      {"name": "Italy", "iso3": "ITA"},
-      {"name": "Latvia", "iso3": "LVA"},
-      {"name": "Liechtenstein", "iso3": "LIE"},
-      {"name": "Lithuania", "iso3": "LTU"},
-      {"name": "Luxembourg", "iso3": "LUX"},
-      {"name": "Malta", "iso3": "MLT"},
-      {"name": "Netherlands", "iso3": "NLD"},
-      {"name": "Norway", "iso3": "NOR"},
-      {"name": "Poland", "iso3": "POL"},
-      {"name": "Portugal", "iso3": "PRT"},
-      {"name": "Slovakia", "iso3": "SVK"},
-      {"name": "Slovenia", "iso3": "SVN"},
-      {"name": "Spain", "iso3": "ESP"},
-      {"name": "Sweden", "iso3": "SWE"},
-      {"name": "Switzerland", "iso3": "CHE"}
+      {
+        "name": "Austria",
+        "iso3": "AUT"
+      },
+      {
+        "name": "Belgium",
+        "iso3": "BEL"
+      },
+      {
+        "name": "Czech Republic",
+        "iso3": "CZE"
+      },
+      {
+        "name": "Denmark",
+        "iso3": "DNK"
+      },
+      {
+        "name": "Estonia",
+        "iso3": "EST"
+      },
+      {
+        "name": "Finland",
+        "iso3": "FIN"
+      },
+      {
+        "name": "France",
+        "iso3": "FRA"
+      },
+      {
+        "name": "Germany",
+        "iso3": "DEU"
+      },
+      {
+        "name": "Greece",
+        "iso3": "GRC"
+      },
+      {
+        "name": "Hungary",
+        "iso3": "HUN"
+      },
+      {
+        "name": "Iceland",
+        "iso3": "ISL"
+      },
+      {
+        "name": "Italy",
+        "iso3": "ITA"
+      },
+      {
+        "name": "Latvia",
+        "iso3": "LVA"
+      },
+      {
+        "name": "Liechtenstein",
+        "iso3": "LIE"
+      },
+      {
+        "name": "Lithuania",
+        "iso3": "LTU"
+      },
+      {
+        "name": "Luxembourg",
+        "iso3": "LUX"
+      },
+      {
+        "name": "Malta",
+        "iso3": "MLT"
+      },
+      {
+        "name": "Netherlands",
+        "iso3": "NLD"
+      },
+      {
+        "name": "Norway",
+        "iso3": "NOR"
+      },
+      {
+        "name": "Poland",
+        "iso3": "POL"
+      },
+      {
+        "name": "Portugal",
+        "iso3": "PRT"
+      },
+      {
+        "name": "Slovakia",
+        "iso3": "SVK"
+      },
+      {
+        "name": "Slovenia",
+        "iso3": "SVN"
+      },
+      {
+        "name": "Spain",
+        "iso3": "ESP"
+      },
+      {
+        "name": "Sweden",
+        "iso3": "SWE"
+      },
+      {
+        "name": "Switzerland",
+        "iso3": "CHE"
+      }
     ],
     "visa_on_arrival": [],
     "e_visa": [],
@@ -1480,7 +1558,7 @@
     "processing_time": "3 to 6 months",
     "dual_citizenship_allowed": true,
     "residency_required": false,
-    "notes": "Georgia does not have a standalone CBI program in the traditional sense. Citizenship by exception is granted by the President under Article 17 of the Organic Law on Georgian Citizenship. The 'Special Contribution Citizenship Program' was announced February 24, 2025 by Deputy Foreign Minister Khvtisiashvili. Dual citizenship is permitted for those granted citizenship under Article 17 and Article 21-1 of the law. No language test or residency required for citizenship by exception. Regular naturalization requires 10 years of continuous lawful residence. The specific investment amounts (EUR 3M business / EUR 2M refundable fund / EUR 300K donation) were announced for the program but the official government implementing regulation details were not directly verifiable on matsne.gov.ge at time of research — figures sourced from government official announcements reported in February 2025."
+    "notes": "Georgia does not have a standalone CBI program in the traditional sense. Citizenship by exception is granted by the President under Article 17 of the Organic Law on Georgian Citizenship. The 'Special Contribution Citizenship Program' was announced February 24, 2025 by Deputy Foreign Minister Khvtisiashvili. Dual citizenship is permitted for those granted citizenship under Article 17 and Article 21-1 of the law. No language test or residency required for citizenship by exception. Regular naturalization requires 10 years of continuous lawful residence. The specific investment amounts (EUR 3M business / EUR 2M refundable fund / EUR 300K donation) were announced for the program but the official government implementing regulation details were not directly verifiable on matsne.gov.ge at time of research - figures sourced from government official announcements reported in February 2025."
   },
   "rbi": {
     "programs": [
@@ -1513,7 +1591,7 @@
       {
         "name": "Remotely from Georgia",
         "category": "digital_nomad",
-        "eligibility": "Citizens of visa-free countries (98+ nationalities) who are remote workers, freelancers, full-time employees, or business owners working for foreign employers. Minimum income USD 2,000/month or USD 24,000 in savings required. Health insurance required.",
+        "eligibility": "Citizens of visa-free countries (approximately 96 nationalities) who are remote workers, freelancers, full-time employees, or business owners working for foreign employers. Minimum income USD 2,000/month or USD 24,000 in savings required. Health insurance required.",
         "processing_time": "Online application",
         "official_url": "https://www.geoconsul.gov.ge/en/news/16",
         "source_official": true,
@@ -1525,7 +1603,9 @@
     {
       "basis": "credential",
       "eligible_nationalities": "any",
-      "passport_types": ["ordinary"],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "any of 50 qualifying states",
         "type": "visa",
@@ -1533,14 +1613,16 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Alien holding a valid visa and/or residence permit of any country listed in Government Ordinance No. 256 (5 June 2015, as amended) — Australia, Austria, USA, UAE, New Zealand, Bahrain, Belgium, Bulgaria, Germany, Denmark (incl. Faroe Islands and Greenland), UK (incl. overseas territories and Crown Dependencies), Spain, Estonia, Japan, Ireland, Iceland, Israel, Italy, Canada, Qatar, Cyprus, South Korea, Latvia, Lithuania, Liechtenstein, Luxembourg, Malta, Netherlands (incl. Aruba and Netherlands Antilles), Norway, Oman, Poland, Portugal, Romania, Greece, France (incl. French Polynesia and New Caledonia), Saudi Arabia, Slovakia, Slovenia, Hungary, Finland, Kuwait, Sweden, Switzerland, Czech Republic, Croatia — may enter and stay in Georgia without visa for 90 calendar days in any 180-day period. Visa/permit must be valid on the day of entry (crossing the border). Effective 17 April 2025 (Ordinance No. 122), nationals of Afghanistan, Bangladesh, Cameroon, DRC, Côte d'Ivoire, Eritrea, Ethiopia, Ghana, Morocco, Nigeria, Pakistan, Somalia, Sudan, Syria, Tanzania, Uganda, and Yemen must hold a multiple-entry visa or residence permit valid for not less than 1 year at the time of entry.",
+      "conditions": "Alien holding a valid visa and/or residence permit of any country listed in Government Ordinance No. 256 (5 June 2015, as amended) - Australia, Austria, USA, UAE, New Zealand, Bahrain, Belgium, Bulgaria, Germany, Denmark (incl. Faroe Islands and Greenland), UK (incl. overseas territories and Crown Dependencies), Spain, Estonia, Japan, Ireland, Iceland, Israel, Italy, Canada, Qatar, Cyprus, South Korea, Latvia, Lithuania, Liechtenstein, Luxembourg, Malta, Netherlands (incl. Aruba and Netherlands Antilles), Norway, Oman, Poland, Portugal, Romania, Greece, France (incl. French Polynesia and New Caledonia), Saudi Arabia, Slovakia, Slovenia, Hungary, Finland, Kuwait, Sweden, Switzerland, Czech Republic, Croatia - may enter and stay in Georgia without visa for 90 calendar days in any 180-day period. Visa/permit must be valid on the day of entry (crossing the border). Effective 17 April 2025 (Ordinance No. 122), nationals of Afghanistan, Bangladesh, Cameroon, DRC, Côte d'Ivoire, Eritrea, Ethiopia, Ghana, Morocco, Nigeria, Pakistan, Somalia, Sudan, Syria, Tanzania, Uganda, and Yemen must hold a multiple-entry visa or residence permit valid for not less than 1 year at the time of entry.",
       "source_url": "https://matsne.gov.ge/en/document/view/2867377",
       "source_official": true
     },
     {
       "basis": "credential",
       "eligible_nationalities": "any",
-      "passport_types": ["ordinary"],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "any of 50 qualifying states",
         "type": "residence_permit",
@@ -1548,14 +1630,20 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Alien holding a valid residence permit of any country listed in Government Ordinance No. 256 (5 June 2015, as amended) — same 50-country list as for visa holders — may enter and stay in Georgia without visa for 90 calendar days in any 180-day period. Permit must be valid on the day of entry (crossing the border). Effective 17 April 2025 (Ordinance No. 122), nationals of Afghanistan, Bangladesh, Cameroon, DRC, Côte d'Ivoire, Eritrea, Ethiopia, Ghana, Morocco, Nigeria, Pakistan, Somalia, Sudan, Syria, Tanzania, Uganda, and Yemen must hold a multiple-entry residence permit valid for not less than 1 year at the time of entry.",
+      "conditions": "Alien holding a valid residence permit of any country listed in Government Ordinance No. 256 (5 June 2015, as amended) - same 50-country list as for visa holders - may enter and stay in Georgia without visa for 90 calendar days in any 180-day period. Permit must be valid on the day of entry (crossing the border). Effective 17 April 2025 (Ordinance No. 122), nationals of Afghanistan, Bangladesh, Cameroon, DRC, Côte d'Ivoire, Eritrea, Ethiopia, Ghana, Morocco, Nigeria, Pakistan, Somalia, Sudan, Syria, Tanzania, Uganda, and Yemen must hold a multiple-entry residence permit valid for not less than 1 year at the time of entry.",
       "source_url": "https://matsne.gov.ge/en/document/view/2867377",
       "source_official": true
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["China"],
-      "passport_types": ["diplomatic", "service", "official"],
+      "eligible_nationalities": [
+        "China"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 30,
@@ -1565,8 +1653,14 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Pakistan"],
-      "passport_types": ["diplomatic", "service", "official"],
+      "eligible_nationalities": [
+        "Pakistan"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1576,8 +1670,20 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["India", "Nepal", "Peru", "Indonesia", "Egypt", "Guyana", "Sri Lanka"],
-      "passport_types": ["diplomatic", "service", "official"],
+      "eligible_nationalities": [
+        "India",
+        "Nepal",
+        "Peru",
+        "Indonesia",
+        "Egypt",
+        "Guyana",
+        "Sri Lanka"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -1587,8 +1693,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Nigeria"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Nigeria"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1602,8 +1712,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Cameroon"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Cameroon"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1617,8 +1731,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Somalia"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Somalia"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1632,8 +1750,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Chad"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Chad"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1647,8 +1769,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Mali"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Mali"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1662,8 +1788,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Congo (Republic of)"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Congo (Republic of)"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1677,8 +1807,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["South Sudan"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "South Sudan"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1692,8 +1826,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Gabon"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Gabon"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1707,8 +1845,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Sierra Leone"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Sierra Leone"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1722,8 +1864,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Guinea"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Guinea"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1737,8 +1883,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Liberia"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Liberia"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1752,8 +1902,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Pakistan"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Pakistan"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1767,8 +1921,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Bangladesh"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Bangladesh"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1782,8 +1940,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Sri Lanka"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Sri Lanka"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1797,8 +1959,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Afghanistan"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Afghanistan"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1812,8 +1978,12 @@
     },
     {
       "basis": "credential",
-      "eligible_nationalities": ["Iraq"],
-      "passport_types": ["ordinary"],
+      "eligible_nationalities": [
+        "Iraq"
+      ],
+      "passport_types": [
+        "ordinary"
+      ],
       "credential": {
         "issuer": "Schengen|OECD",
         "type": "visa",
@@ -1824,6 +1994,128 @@
       "conditions": "Conditional e-visa category: must possess a valid Schengen visa, OECD-member-country visa, or valid residence permit of a Schengen or OECD country.",
       "source_url": "https://www.evisa.gov.ge/geovisa/countries/index.html",
       "source_official": true
+    }
+  ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "e-Visa (Tourism - Short Stay)",
+      "purpose": "Short-stay tourism visits to Georgia for leisure and sightseeing. Applied for online through the official e-visa portal.",
+      "max_stay_days": 30,
+      "validity_days": 120,
+      "entries": "multiple",
+      "fee_usd": 20,
+      "processing_days_min": 5,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ge/GeoVisa/en/VisaApp",
+      "notes": "Fee is USD 20 + 2% service fee (non-refundable). Processing is 'not less than 5 working days'. Stay duration and validity vary by nationality - standard configurations are 30 days stay within 120-day validity (multiple entry), or 90 days stay within 180-day validity (multiple entry). Applicants must check the online calculator for their specific entitlement. Requires: biometric photo, passport scan, accommodation proof, flight ticket, travel insurance, proof of financial means. Passport must be valid for at least 3 months beyond visa validity, with at least 2 blank pages, issued within 10 years."
+    },
+    {
+      "category": "tourist",
+      "name": "e-Visa (Tourism up to 1 Year)",
+      "purpose": "Extended tourism stay in Georgia for up to one year, available through the e-visa portal for eligible nationalities.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 20,
+      "processing_days_min": 5,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ge/GeoVisa/en/VisaApp",
+      "notes": "Fee is USD 20 + 2% service fee. This is an extended tourism category distinct from the standard short-stay tourism e-visa. Processing is 'not less than 5 working days'. Actual availability depends on applicant's nationality. Same documentation requirements as standard tourism e-visa."
+    },
+    {
+      "category": "business",
+      "name": "e-Visa (Business/Professional)",
+      "purpose": "Short-stay visits to Georgia for business activities, professional meetings, conferences, and commercial purposes.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 20,
+      "processing_days_min": 5,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ge/GeoVisa/en/VisaApp",
+      "notes": "Fee is USD 20 + 2% service fee. Processing is 'not less than 5 working days'. Stay duration and validity vary by nationality (typically 30/120 or 90/180 configurations). Requires: biometric photo, passport scan, proof of travel purpose/business purpose, accommodation proof, flight ticket, travel insurance. The e-visa portal is for short-stay visits (under 90 days); long-term business or work authorization requires separate permits."
+    },
+    {
+      "category": "other",
+      "name": "e-Visa (Visiting Friends and Relatives)",
+      "purpose": "Short-stay visits to Georgia for the purpose of visiting friends or family members residing in Georgia.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 20,
+      "processing_days_min": 5,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ge/GeoVisa/en/VisaApp",
+      "notes": "Fee is USD 20 + 2% service fee. Processing is 'not less than 5 working days'. Requires: biometric photo, passport scan, supporting documentation, accommodation proof, flight ticket, travel insurance, proof of financial means. Duration and validity vary by nationality."
+    },
+    {
+      "category": "student",
+      "name": "e-Visa (Study and Training - Short Stay)",
+      "purpose": "Short-stay visits to Georgia for study, training, or educational programs lasting less than 90 days.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": 20,
+      "processing_days_min": 5,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ge/GeoVisa/en/VisaApp",
+      "notes": "Fee is USD 20 + 2% service fee. Explicitly for study/training durations under 90 days only. For longer-term study, a separate long-stay national visa (D3 Study Visa) is required, obtained through a Georgian embassy/consulate abroad. Processing is 'not less than 5 working days'. Requires supporting documentation from educational institution."
+    },
+    {
+      "category": "medical",
+      "name": "e-Visa (Health and Medical Care)",
+      "purpose": "Short-stay visits to Georgia for medical treatment, health consultations, or recuperation at Georgian medical facilities.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": 20,
+      "processing_days_min": 5,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ge/GeoVisa/en/VisaApp",
+      "notes": "Fee is USD 20 + 2% service fee. Processing is 'not less than 5 working days'. Requires proof of medical appointment or treatment documentation in Georgia. Duration and validity may vary by nationality."
+    },
+    {
+      "category": "other",
+      "name": "e-Visa (Religion/Pilgrimages)",
+      "purpose": "Short-stay visits to Georgia for religious purposes, pilgrimages, or participation in religious events and ceremonies.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": 20,
+      "processing_days_min": 5,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ge/GeoVisa/en/VisaApp",
+      "notes": "Fee is USD 20 + 2% service fee. Georgia has significant Orthodox Christian religious sites making it a destination for pilgrimages. Processing is 'not less than 5 working days'. Requires supporting documentation related to religious purpose."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Remotely from Georgia Program",
+      "purpose": "Allows remote workers, freelancers, and employees of foreign companies to live and work remotely from Georgia for up to 360 days.",
+      "max_stay_days": 360,
+      "validity_days": 360,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.geoconsul.gov.ge/en/news/16",
+      "notes": "Launched in 2020. Open to citizens of visa-free countries (98+ nationalities). Requires: remote worker/freelancer/employee of foreign employer status, minimum income of USD 2,000/month or USD 24,000 in savings, health insurance. As of June 2025, Georgia passed amendments requiring mandatory work permits for foreign nationals (including remote workers) starting March 1, 2026, which may significantly affect or effectively end this program. Current status as of 2026 is uncertain. This is not a separate visa category but a formalization scheme for visa-free nationals staying long-term."
     }
   ],
   "agreements": [],
@@ -1837,116 +2129,137 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTION: China (CHN) moved from e_visa to visa_free. Ordinary Chinese passport holders (incl. HK and Macao SAR) have been visa-free since PM Ordinance No. 359 (11/09/2023, 30 days, tourism only), formalized by bilateral agreement in force 28/05/2024. Source: china.mfa.gov.ge/en/important-information and mfa.gov.ge.",
-      "CORRECTION: Jordan (JOR) moved from e_visa to visa_free. Jordanian citizens may enter and stay in Georgia without a visa for one full year (365 days) as confirmed by the Georgian Embassy to Jordan official page. Source: jordan.mfa.gov.ge/en/visa-information.",
-      "CORRECTION: Peru (PER) moved from e_visa (simplified category) to visa_free with max_stay_days set to 90. Peru was added to the visa-free list as of April 1, 2024 (Ordinance No. 147, 23/04/2024). Duration is 90 days within a 180-day period. Source: matsne.gov.ge/en/document/view/2867361.",
-      "CORRECTION: Jordan entry removed from e_visa list (was incorrectly listed there in prior record).",
-      "CORRECTION: China entry removed from e_visa list (was incorrectly listed there in prior record).",
-      "CORRECTION: Peru entry removed from e_visa simplified category list (moved to visa_free).",
-      "UPDATED: visa_policy notes and fast_track eligibility updated to reflect approximately 98 visa-free countries (up from 94) following amendments including Ordinance No. 80 (24/02/2026) and Ordinance No. 147 (23/04/2024).",
-      "NOTED: Gabon appears in both the conditional (Category 1) and standard (Category 2) e-visa listings on the live evisa.gov.ge portal — both pathways appear available; conditional_access entry updated with clarifying note.",
-      "VERIFIED: The 17-country restriction list in conditional_access (requiring multiple-entry visa/permit valid 1+ year as of April 17, 2025) confirmed via UAE Embassy of Georgia page and passportindex.org citing official Georgian government sources: Afghanistan, Bangladesh, Cameroon, DRC, Cote d'Ivoire, Eritrea, Ethiopia, Ghana, Morocco, Nigeria, Pakistan, Somalia, Sudan, Syria, Tanzania, Uganda, Yemen.",
-      "VERIFIED: conditional_access Ordinance No. 256 credential pathway (90 days/180) confirmed unchanged.",
-      "VERIFIED: CBI program details (EUR 3M business / EUR 2M fund / EUR 300K donation) not yet confirmed via official matsne.gov.ge implementing regulation — retained with existing caveat notes.",
-      "VERIFIED: RBI real estate threshold increased to USD 300,000 effective March 1, 2026 (from USD 100,000) — confirmed as already correctly stated in existing record.",
-      "China's ordinary passport note updated to reference both the 2023 ordinance and the 2024 bilateral agreement."
+      "CORRECTION (prior run): China (CHN) moved from e_visa to visa_free. Ordinary Chinese passport holders (incl. HK and Macao SAR) have been visa-free since PM Ordinance No. 359 (11/09/2023, 30 days, tourism only), formalized by bilateral agreement in force 28/05/2024. Source: china.mfa.gov.ge/en/important-information and mfa.gov.ge.",
+      "CORRECTION (prior run): Jordan (JOR) moved from e_visa to visa_free. Jordanian citizens may enter and stay in Georgia without a visa for one full year (365 days) as confirmed by the Georgian Embassy to Jordan official page. Source: jordan.mfa.gov.ge/en/visa-information.",
+      "CORRECTION (2026-06-27): Peru (PER) REVERTED from visa_free back to e_visa (simplified category). The prior run incorrectly moved Peru to visa_free citing Ordinance No. 147 (23/04/2024). Re-verification on 2026-06-27 shows: (1) matsne.gov.ge confirms Peru is NOT in the 94-country visa-free ordinance (document/view/2867361); (2) evisa.gov.ge portal (authoritative operational source) lists Peru in Category 3 (simplified e-visa, requiring only biometric photo and passport copy); (3) Wikipedia's Visa policy of Georgia article states Peru moved TO e-visa on April 1, 2024 (not FROM). A bilateral visa-free agreement was signed Sep 18, 2023 (mfa.gov.ge/en/news/979610) but no evidence found it has entered into force as a visa-free arrangement distinct from the e-visa system. Applying safety rule: classify DOWN to e_visa. Source: evisa.gov.ge/geovisa/countries/index.html.",
+      "VERIFIED (2026-06-27): China (CHN) visa-free status confirmed via Georgia Embassy in China page (china.mfa.gov.ge/en/important-information): ordinary passport holders (incl. HK and Macao SAR) may enter visa-free for 30 days, tourism purposes only, since September 11, 2023. The evisa.gov.ge portal also lists China in Category 2 (standard e-visa) - both may be available but visa-free status is established via separate bilateral mechanism. China correctly remains in visa_free.",
+      "VERIFIED (2026-06-27): Jordan (JOR) visa-free status confirmed via Georgia Embassy in Jordan page (jordan.mfa.gov.ge/en/visa-information): Jordanian citizens may enter and stay in Georgia without a visa for 1 full year. Jordan correctly remains in visa_free.",
+      "VERIFIED (2026-06-27): The 94-country base visa-free list (matsne.gov.ge/en/document/view/2867361) confirmed re-fetched. Most recent amendments: Ordinance No. 80 (24/02/2026) and Ordinance No. 98 (02/04/2025). The 94-country list does NOT include China, Jordan, or Peru - these are covered by separate bilateral agreements/PM ordinances where applicable.",
+      "VERIFIED (2026-06-27): evisa.gov.ge Category 1 (16 countries conditional), Category 2 (53 countries standard), Category 3 (29 countries simplified) - all confirmed re-fetched. Peru appears in Category 3 (simplified).",
+      "VERIFIED (2026-06-27): Ordinance No. 2867377 (credential-based 90-day access) last amended April 17, 2025 (Ordinance No. 122). The 50-country qualifying issuer list confirmed.",
+      "NOTED: Gabon appears in both the conditional (Category 1) and standard (Category 2) e-visa listings on the live evisa.gov.ge portal - both pathways appear available; conditional_access entry retains clarifying note.",
+      "VERIFIED (2026-06-27): The 17-country restriction list in conditional_access (requiring multiple-entry visa/permit valid 1+ year as of April 17, 2025) confirmed via UAE Embassy of Georgia page: Afghanistan, Bangladesh, Cameroon, DRC, Cote d'Ivoire, Eritrea, Ethiopia, Ghana, Morocco, Nigeria, Pakistan, Somalia, Sudan, Syria, Tanzania, Uganda, Yemen.",
+      "VERIFIED (2026-06-27): RBI real estate threshold confirmed at USD 300,000 effective March 1, 2026 (from USD 100,000) - already correctly stated in existing record.",
+      "VERIFIED (2026-06-27): CBI program details (EUR 3M business / EUR 2M fund / EUR 300K donation) not yet confirmed via official matsne.gov.ge implementing regulation - retained with existing caveat notes.",
+      "VERIFIED (2026-06-29): Original Ordinance No. 255 PDF (matsne.gov.ge/en/document/download/2867361/0/en/pdf) retrieved and read — confirms exactly 94 countries numbered 1-94, ending with Republic of Honduras. Jordan is NOT in the original 2015 text; it was added by a subsequent amendment. China is also not in the original text (added later via separate PM Ordinance No. 359 and bilateral agreement). All 94 original countries match the current visa_free list exactly.",
+      "VERIFIED (2026-06-29): China visa-free status re-confirmed via china.mfa.gov.ge/en/important-information: 30 days, tourism only, since September 11, 2023. Remains in visa_free.",
+      "VERIFIED (2026-06-29): Jordan visa-free status re-confirmed via jordan.mfa.gov.ge/en/visa-information: 1 full year, per Ordinance 255 amendment. Remains in visa_free.",
+      "VERIFIED (2026-06-29): evisa.gov.ge countries page re-fetched. Category 1 (16 conditional): Nigeria, Cameroon, Somalia, Chad, Mali, Congo Brazzaville, South Sudan, Gabon, Sierra Leone, Guinea, Liberia, Pakistan, Bangladesh, Sri Lanka, Afghanistan, Iraq. Category 2 (standard, 55 countries including China and Jordan noted but visa-free via bilateral). Category 3 (simplified, 29 countries including Chile, Peru, Uruguay, Paraguay, North Macedonia, Trinidad and Tobago, etc.) — all consistent with current file.",
+      "NOTED (2026-06-29): Mandatory travel insurance requirement confirmed effective January 1, 2026 (Government Decree No. 602 of 26/12/2025): all foreign nationals entering Georgia must hold travel health and accident insurance valid for the entire stay with minimum coverage of 30,000 GEL (~USD 11,000). Added to visa_policy notes. Source: jordan.mfa.gov.ge/en/visa-information cites this requirement explicitly.",
+      "VERIFIED (2026-06-29): Third-party sources (Wikipedia, georgia-spirit.com) claim Chile, Uruguay, Paraguay, North Macedonia, Fiji are 90-day visa-free. This was cross-checked against official Georgian sources: (1) evisa.gov.ge lists all of these in e-visa categories (Chile/Peru/Uruguay/Paraguay/NMK in Category 3 simplified; Fiji in Category 2 standard); (2) georgia.travel does NOT list these in the visa-free section. Applying safety rule: official evisa.gov.ge classification (e-visa) takes precedence over third-party claims. These countries remain classified as e-visa in this record."
     ],
     "gaps": [
-      "Exact additional countries added by Ordinance No. 80 (24/02/2026) to the visa-free list beyond China, Jordan, and Peru could not be identified from publicly available sources. The matsne.gov.ge ordinance page references this amendment but specific newly added nationalities were not retrievable from the document portal during this research session.",
-      "Exact current text of the April 17, 2025 amendment to Ordinance 2867377 (adding the 17-country multi-entry requirement) could not be directly scraped from matsne.gov.ge — the amendment details were confirmed via official government domain search results and UAE embassy of Georgia page.",
-      "E-visa maximum stay duration per nationality is not published as a simple table on evisa.gov.ge — it varies by passport country and requires selecting in the portal; only general ranges (30/120 days or 90/180 days) confirmed from official FAQ.",
+      "Exact content of Ordinance No. 80 (24/02/2026) - what specific countries were added or changed in the visa-free list - could not be retrieved. The document portal returns amendment metadata but not the full amendment text. The base 94-country list is confirmed as of the consolidated version fetched.",
+      "Exact content of Ordinance No. 98 (02/04/2025) - what specific changes were made to the visa-free list - could not be retrieved.",
+      "Peru bilateral visa-free agreement (signed 18 Sep 2023, mfa.gov.ge/en/news/979610) - it is unclear whether this agreement has entered into force or if the evisa.gov.ge classification supersedes it. Until evisa.gov.ge removes Peru from Category 3 or an official gazette entry confirms visa-free entry, Peru is classified as e-visa (simplified) by this record.",
+      "Exact current text of the April 17, 2025 amendment to Ordinance 2867377 (adding the 17-country multi-entry requirement) could not be directly scraped from matsne.gov.ge - confirmed via UAE Embassy of Georgia page (uae.mfa.gov.ge).",
+      "E-visa maximum stay duration per nationality is not published as a simple table on evisa.gov.ge - it varies by passport country and requires selecting in the portal; only general ranges (30/120 days or 90/180 days) confirmed from official FAQ.",
       "The Special Contribution Citizenship Program (CBI) investment amounts (EUR 3M business / EUR 2M fund / EUR 300K donation) were announced by a government official in February 2025 but the specific implementing regulation was not located on matsne.gov.ge at time of research.",
       "Syria listed as e-visa eligible based on its inclusion in the second visa ordinance (2867377) update list, but its standalone e-visa eligibility from evisa.gov.ge was not directly confirmed on the countries page.",
       "Georgia has no ETA (electronic travel authority) system.",
       "No visa-on-arrival program found on official sources.",
-      "The 'Remotely from Georgia' digital nomad program official page (geoconsul.gov.ge/en/news/16) returned no readable content — program current status uncertain due to March 2026 work permit amendments.",
+      "The 'Remotely from Georgia' digital nomad program official page (geoconsul.gov.ge/en/news/16) returned no readable content - program current status uncertain due to March 2026 work permit amendments.",
       "Georgia left the CIS in August 2009 and is not a member of any formal freedom-of-movement area; no regional agreements applicable.",
-      "Exact stay durations for the India/Nepal/Peru/Indonesia/Egypt/Guyana/Sri Lanka diplomatic/official/service passport bilateral agreements could not be confirmed from an official Georgian MFA source — georgia.travel confirms eligibility but not stay duration per agreement. The geoconsul.gov.ge detailed page (id=956) was inaccessible during research.",
-      "No OCI (Overseas Citizen of India) cardholder-specific conditional entry rule found on any official Georgian government source — not applicable to Georgia.",
+      "Exact stay durations for the India/Nepal/Indonesia/Egypt/Guyana/Sri Lanka diplomatic/official/service passport bilateral agreements could not be confirmed from an official Georgian MFA source - georgia.travel confirms eligibility but not stay duration per agreement.",
+      "No OCI (Overseas Citizen of India) cardholder-specific conditional entry rule found on any official Georgian government source - not applicable to Georgia.",
       "The full list of all bilateral visa waiver agreements for diplomatic/service/official passports with Georgia was not available as a consolidated document on matsne.gov.ge or mfa.gov.ge at time of research.",
-      "Gabon's dual appearance in Category 1 (conditional) and Category 2 (standard) on evisa.gov.ge could not be definitively explained — may be a portal data error or reflect two genuinely separate e-visa pathways.",
-      "Peru's exact ordinance number and implementation date for its visa-free status could not be confirmed directly from matsne.gov.ge (Ordinance No. 147, April 23, 2024 referenced but document text not verified)."
+      "Gabon's dual appearance in Category 1 (conditional) and Category 2 (standard) on evisa.gov.ge could not be definitively explained - may be a portal data error or reflect two genuinely separate e-visa pathways."
     ]
   },
   "sources_checked": [
     {
       "url": "https://matsne.gov.ge/en/document/view/2867361",
-      "description": "Official Georgian law portal — Ordinance No. 255: List of countries whose citizens may enter Georgia without a visa (visa-free list, 94+ countries, 365-day stay, most recent amendment Ordinance No. 80, 24/02/2026)",
+      "description": "Official Georgian law portal - Ordinance No. 255: List of countries whose citizens may enter Georgia without a visa (visa-free list, 94 countries, 365-day stay, most recent amendments: Ordinance No. 98 02/04/2025 and Ordinance No. 80 24/02/2026; China, Jordan, Peru are NOT in this list - covered by separate bilateral arrangements or e-visa)",
       "official": true
     },
     {
       "url": "https://matsne.gov.ge/en/document/view/2867377",
-      "description": "Official Georgian law portal — Ordinance: List of countries whose visa/residence permit holders may enter Georgia without a visa (50 qualifying issuers, 90 days in 180)",
+      "description": "Official Georgian law portal - Ordinance: List of countries whose visa/residence permit holders may enter Georgia without a visa (50 qualifying issuers, 90 days in 180)",
       "official": true
     },
     {
       "url": "https://www.evisa.gov.ge/geovisa/countries/index.html",
-      "description": "Official Georgia e-visa portal — countries list with three e-visa categories (Category 1: conditional with Schengen/OECD requirement, 16 countries; Category 2: standard, 53 countries; Category 3: simplified, 29 countries)",
+      "description": "Official Georgia e-visa portal - countries list with three e-visa categories (Category 1: conditional with Schengen/OECD requirement, 16 countries; Category 2: standard, 53 countries; Category 3: simplified, 29 countries)",
       "official": true
     },
     {
       "url": "https://www.evisa.gov.ge/GeoVisa/en/Home/FAQ",
-      "description": "Official Georgia e-visa portal FAQ — fees, processing time, stay duration",
+      "description": "Official Georgia e-visa portal FAQ - fees, processing time, stay duration",
       "official": true
     },
     {
       "url": "https://matsne.gov.ge/en/document/view/2342552",
-      "description": "Organic Law of Georgia on Georgian Citizenship — citizenship by exception, dual citizenship, Article 17",
+      "description": "Organic Law of Georgia on Georgian Citizenship - citizenship by exception, dual citizenship, Article 17",
       "official": true
     },
     {
       "url": "https://matsne.gov.ge/en/document/view/2278806",
-      "description": "Law of Georgia on the Legal Status of Aliens and Stateless Persons — investment residence permit provisions",
+      "description": "Law of Georgia on the Legal Status of Aliens and Stateless Persons - investment residence permit provisions",
       "official": true
     },
     {
       "url": "https://matsne.gov.ge/en/document/view/2483468",
-      "description": "Procedures for Reviewing and Deciding the Granting of Georgian Residence Permits — investment residence permit documentation and processing",
+      "description": "Procedures for Reviewing and Deciding the Granting of Georgian Residence Permits - investment residence permit documentation and processing",
       "official": true
     },
     {
       "url": "https://www.geoconsul.gov.ge/en/news/16",
-      "description": "Georgian MFA geoconsul — Remotely from Georgia program announcement (content not accessible)",
+      "description": "Georgian MFA geoconsul - Remotely from Georgia program announcement (content not accessible)",
       "official": true
     },
     {
       "url": "https://geoconsul.gov.ge/en/entering-georgia-visa",
-      "description": "Georgian MFA geoconsul — Do I need a visa page (dynamic JS content, limited extraction)",
+      "description": "Georgian MFA geoconsul - Do I need a visa page (dynamic JS content, limited extraction)",
       "official": true
     },
     {
       "url": "https://georgia.travel/coming-to-georgia/georgia-travel-visa-application",
-      "description": "Georgia official tourism authority — visa application page listing diplomatic/official/service passport exempt countries (China, Egypt, Guyana, Indonesia, India, Sri Lanka, Nepal, Peru)",
+      "description": "Georgia official tourism authority - visa application page listing diplomatic/official/service passport exempt countries (China, Egypt, Guyana, Indonesia, India, Sri Lanka, Nepal, Peru)",
       "official": true
     },
     {
       "url": "https://mfa.gov.ge/en/news/794969-saqartvelosa-da-pakistanis-islamur-respublikas-shoris-uvizo-mimosvlis-shesakheb-shetankhmeba-gaphorm",
-      "description": "Georgian MFA — Georgia-Pakistan visa waiver agreement announcement (diplomatic and official/service passports, signed 21 Sep 2023, in force 2 Apr 2024, 90 days/180)",
+      "description": "Georgian MFA - Georgia-Pakistan visa waiver agreement announcement (diplomatic and official/service passports, signed 21 Sep 2023, in force 2 Apr 2024, 90 days/180)",
       "official": true
     },
     {
       "url": "https://uae.mfa.gov.ge/en/visa-information",
-      "description": "Embassy of Georgia to UAE — confirms April 2025 amendment details: 17 restricted nationalities (15 cited in this page, consistent with confirmed 17 total from other sources) must hold multiple-entry visa/permit valid not less than 1 year",
+      "description": "Embassy of Georgia to UAE - confirms April 2025 amendment details: 17 restricted nationalities (15 cited in this page, consistent with confirmed 17 total from other sources) must hold multiple-entry visa/permit valid not less than 1 year",
       "official": true
     },
     {
       "url": "https://en.nia.gov.cn/n147418/n147463/c181470/content.html",
-      "description": "China NIA (National Immigration Administration) — mutual visa exemption details confirming Georgia-China diplomatic/service/official passport agreement in force since 3 February 1994, 30-day stay",
+      "description": "China NIA (National Immigration Administration) - mutual visa exemption details confirming Georgia-China diplomatic/service/official passport agreement in force since 3 February 1994, 30-day stay",
       "official": true
     },
     {
       "url": "https://china.mfa.gov.ge/en/important-information",
-      "description": "Embassy of Georgia to China — confirms Chinese citizens (including HK and Macao SAR) may enter Georgia without a visa for 30 days for tourism purposes only, since 11 September 2023",
+      "description": "Embassy of Georgia to China - confirms Chinese citizens (including HK and Macao SAR) may enter Georgia without a visa for 30 days for tourism purposes only, since 11 September 2023",
       "official": true
     },
     {
       "url": "https://jordan.mfa.gov.ge/en/visa-information",
-      "description": "Embassy of Georgia to Jordan — confirms Jordanian citizens may enter and stay in Georgia without a visa for one full year",
+      "description": "Embassy of Georgia to Jordan - confirms Jordanian citizens may enter and stay in Georgia without a visa for one full year",
       "official": true
     },
     {
       "url": "https://mfa.gov.ge/en/news/425297-28-misidan-saqartvelosa-da-chinetis-sakhalkho-respublikas-shoris-uvizo-mimosvlis-shesakheb-shetankhm",
-      "description": "Georgian MFA — Bilateral Visa Exemption Agreement for ordinary passport holders between Georgia and China, signed April 10, 2024, in force May 28, 2024",
+      "description": "Georgian MFA - Bilateral Visa Exemption Agreement for ordinary passport holders between Georgia and China, signed April 10, 2024, in force May 28, 2024",
+      "official": true
+    },
+    {
+      "url": "https://www.evisa.gov.ge/GeoVisa/en/VisaApp",
+      "description": "Official Georgia e-visa portal - visa application form listing all visa purpose categories: Tourism, Business/Professional, Visiting Friends and Relatives, Study and Training (under 90 days), Health and Medical Care, Religion/Pilgrimages, Tourism up to 1 Year",
+      "official": true
+    },
+    {
+      "url": "https://www.evisa.gov.ge/GeoVisa/en/Home",
+      "description": "Official Georgia e-visa portal home page - general e-visa description, links to FAQ, application, and crossing the border pages",
+      "official": true
+    },
+    {
+      "url": "https://matsne.gov.ge/en/document/download/2867361/0/en/pdf",
+      "description": "Official Georgian law portal - Ordinance No. 255 original 2015 PDF text (4 pages, 94 countries confirmed, Jordan and China NOT in original list). Retrieved 29/06/2026.",
       "official": true
     }
   ]

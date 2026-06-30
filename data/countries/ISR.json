@@ -129,14 +129,6 @@
         "source_official": true
       },
       {
-        "nationality": "Central African Republic",
-        "iso3": "CAF",
-        "max_stay_days": 90,
-        "notes": "Visa-exempt per 2022 official Tourist Visa Table (national passport: exe.); ETA-IL required as of 1 Jan 2025",
-        "source_url": "https://www.gov.il/BlobFolder/reports/tourist-visa-table/en/2022_Foreign_Visa_to_Israel.pdf",
-        "source_official": true
-      },
-      {
         "nationality": "Chile",
         "iso3": "CHL",
         "max_stay_days": 90,
@@ -396,9 +388,9 @@
         "nationality": "Kosovo",
         "iso3": "XKX",
         "max_stay_days": 90,
-        "notes": "Visa-exempt as of approximately May 2025 (listed as 'req.' in 2022 official tourist visa table but exemption confirmed by 2025/2026 sources). ETA-IL required.",
-        "source_url": "https://www.gov.il/BlobFolder/reports/tourist-visa-table/en/2022_Foreign_Visa_to_Israel.pdf",
-        "source_official": true
+        "notes": "Visa-exempt effective May 5, 2025 under bilateral visa waiver agreement signed June 2024 and ratified February 2025 (listed as 'req.' in 2022 official tourist visa table; exemption took effect May 5, 2025). ETA-IL required.",
+        "source_url": "https://visaguide.world/news/kosovo-nationals-eligible-for-visa-free-travel-to-israel-starting-may-5/",
+        "source_official": false
       },
       {
         "nationality": "Latvia",
@@ -463,6 +455,14 @@
         "notes": "Visa-exempt; ETA-IL required as of 1 Jan 2025",
         "source_url": "https://www.gov.il/BlobFolder/reports/tourist-visa-table/en/2022_Foreign_Visa_to_Israel.pdf",
         "source_official": true
+      },
+      {
+        "nationality": "Marshall Islands",
+        "iso3": "MHL",
+        "max_stay_days": 90,
+        "notes": "Visa-exempt per Israel's Entry to Israel Order (Visa Exemption); ETA-IL required as of 1 Jan 2025",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Israel",
+        "source_official": false
       },
       {
         "nationality": "Malta",
@@ -673,6 +673,14 @@
         "source_official": true
       },
       {
+        "nationality": "Samoa",
+        "iso3": "WSM",
+        "max_stay_days": 90,
+        "notes": "Visa-exempt effective 6 July 2023 under bilateral visa waiver agreement signed 7 March 2019; ETA-IL required as of 1 Jan 2025",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Israel",
+        "source_official": false
+      },
+      {
         "nationality": "San Marino",
         "iso3": "SMR",
         "max_stay_days": 90,
@@ -809,6 +817,14 @@
         "source_official": true
       },
       {
+        "nationality": "Tuvalu",
+        "iso3": "TUV",
+        "max_stay_days": 90,
+        "notes": "Visa-exempt per Israel's Entry to Israel Order (Visa Exemption); ETA-IL required as of 1 Jan 2025",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Israel",
+        "source_official": false
+      },
+      {
         "nationality": "Ukraine",
         "iso3": "UKR",
         "max_stay_days": 90,
@@ -858,7 +874,24 @@
       }
     ],
     "visa_on_arrival": [],
-    "e_visa": [],
+    "e_visa": [
+      {
+        "nationality": "India",
+        "iso3": "IND",
+        "max_stay_days": 90,
+        "notes": "Indian passport holders residing in India may apply for a B/2 tourist eVisa directly via the official PIBA portal (israel-entry.piba.gov.il). This is not a visa-free exemption - a B/2 visa must be obtained before travel. Added to the eVisa pilot program in 2025.",
+        "source_url": "https://israel-entry.piba.gov.il/",
+        "source_official": true
+      },
+      {
+        "nationality": "Sri Lanka",
+        "iso3": "LKA",
+        "max_stay_days": 90,
+        "notes": "Sri Lankan passport holders residing in Sri Lanka may apply for a B/2 tourist eVisa directly via the official PIBA portal (israel-entry.piba.gov.il). Added to the eVisa pilot program in February 2025.",
+        "source_url": "https://israel-entry.piba.gov.il/",
+        "source_official": true
+      }
+    ],
     "eta": [
       {
         "nationality": "All visa-exempt country nationals",
@@ -877,7 +910,7 @@
       "https://embassies.gov.il/croatia/en/news/implementation-eta-il-system",
       "https://mfa.gov.sc/news/16222/"
     ],
-    "notes": "Israel introduced the ETA-IL system on 1 January 2025, replacing straightforward visa-free entry for all nationals of visa-exempt countries. The official tourist visa table (2022_Foreign_Visa_to_Israel.pdf, updated 07.04.2022) is the primary source for inbound exemptions. A reciprocal outbound table (ISR_Visa_Abroad_Eng.pdf, updated 09.01.2026) was also verified. Colombia's visa exemption was removed effective June/July 2025 due to diplomatic tensions. Seychelles gained exemption via agreement signed 11 January 2024. Kosovo's exemption status changed from required (per 2022 table) to exempt by approximately May 2025. Tourist visa exemption applies to ordinary/national passports only unless otherwise noted; official passports follow separate rules per conditional_access."
+    "notes": "Israel introduced the ETA-IL system on 1 January 2025, replacing straightforward visa-free entry for all nationals of visa-exempt countries. The official tourist visa table (2022_Foreign_Visa_to_Israel.pdf, updated 07.04.2022) is the primary source for inbound exemptions. A reciprocal outbound table (ISR_Visa_Abroad_Eng.pdf, updated 09.01.2026) was also verified. Colombia's visa exemption was removed effective May 14, 2025 (B-2 visa now required) per official Israeli Embassy Colombia page, due to diplomatic rupture following Colombia severing ties with Israel in May 2024 (Wikipedia records May 2, 2025 — date discrepancy noted in gaps). Seychelles gained exemption via bilateral agreement signed 11 January 2024. Kosovo's exemption became effective May 5, 2025 under a bilateral visa waiver agreement signed June 2024 and ratified February 2025. Samoa gained exemption effective 6 July 2023 per bilateral agreement signed 7 March 2019. Marshall Islands and Tuvalu are listed on Israel's Entry to Israel Order (Visa Exemption). Central African Republic is NOT exempt despite having been listed as 'exe.' in the 2022 PDF (that entry has been corrected and removed). India and Sri Lanka added to B/2 eVisa pilot program in 2025 (not visa-free, require eVisa application). Tourist visa exemption applies to ordinary/national passports only unless otherwise noted; official passports follow separate rules per conditional_access."
   },
   "conditional_access": [
     {
@@ -898,7 +931,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Nationals of these countries require a visa on ordinary passports but are exempt on diplomatic or service (official) passports. Sourced from the official Israeli MFA Tourist Visa Table (2022_Foreign_Visa_to_Israel.pdf). China note: 'Diplomatic/Service Passports exempted for 90 days'. BIH (Bosnia Herzegovina) removed from this list: the 2022 tourist visa table shows BIH national as 'req.' and official as 'exe.' — Bosnia should be in this list; added in corrections. Turkey: 2022 table shows national as 'req.' and official as 'exe.' — confirmed.",
+      "conditions": "Nationals of these countries require a visa on ordinary passports but are exempt on diplomatic or service (official) passports. Sourced from the official Israeli MFA Tourist Visa Table (2022_Foreign_Visa_to_Israel.pdf). China note: 'Diplomatic/Service Passports exempted for 90 days'. BIH (Bosnia Herzegovina) removed from this list: the 2022 tourist visa table shows BIH national as 'req.' and official as 'exe.' - Bosnia should be in this list; added in corrections. Turkey: 2022 table shows national as 'req.' and official as 'exe.' - confirmed.",
       "source_url": "https://www.gov.il/BlobFolder/reports/tourist-visa-table/en/2022_Foreign_Visa_to_Israel.pdf",
       "source_official": true
     },
@@ -957,7 +990,7 @@
         "name": "Visas for Foreign High-Tech Experts Incentive Program",
         "category": "skilled_worker",
         "eligibility": "Foreign high-tech experts employed or contracted by Israeli high-tech companies authorized by the Israel Innovation Authority. Expert's salary must be at least double the average wage in Israel.",
-        "processing_time": "Expedited — work permit can be issued within a few business days for recognized high-tech companies",
+        "processing_time": "Expedited - work permit can be issued within a few business days for recognized high-tech companies",
         "official_url": "https://innovationisrael.org.il/en/programs/visas-for-foreign-high-tech-experts-incentive-program/",
         "source_official": true,
         "notes": "Launched in 2018 by the Israel Innovation Authority together with the Population and Immigration Authority. Short-term track: up to 90 days through an expedited process. Long-term track: work permit valid up to 1 year, extendable by another year. Maximum stay under long-term working visa for experts: up to 63 months."
@@ -973,6 +1006,188 @@
       }
     ]
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "ETA-IL (Electronic Travel Authorization for Israel)",
+      "purpose": "Mandatory pre-travel authorization for nationals of visa-exempt countries wishing to enter Israel for tourism, business visits, or short stays. Replaced unconditional visa-free entry as of 1 January 2025.",
+      "max_stay_days": 90,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 7,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://israel-entry.piba.gov.il/",
+      "notes": "Required for all nationals of visa-exempt countries effective 1 January 2025. Fee is NIS 25 (~USD 7). Valid for 2 years or until passport expiry, whichever is first. Multiple entries permitted within validity. Apply at israel-entry.piba.gov.il. Exempt: Israeli citizens, diplomatic/service/official passport holders of most countries, holders of valid Israeli visas."
+    },
+    {
+      "category": "tourist",
+      "name": "B/2 Tourist Visa (eVisa)",
+      "purpose": "Tourist or visitor visa for nationals of countries that are not exempt from Israeli visa requirements. Allows entry for tourism, family visits, or short-term business.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://israel-entry.piba.gov.il/learn-about-evisa-b2",
+      "notes": "The eVisa B/2 is available online via the PIBA portal (israel-entry.piba.gov.il) for eligible nationalities. Traditional B/2 visa also obtainable at Israeli embassies. The 2022 official Tourist Visa Table lists over 50 nationalities as requiring a B/2 visa. Single entry is standard; multiple-entry may be issued at consular discretion. Fee and processing time vary by country of application."
+    },
+    {
+      "category": "business",
+      "name": "B/2 Business Visitor Visa",
+      "purpose": "Short-term business visitor authorization for foreign nationals attending meetings, conferences, or conducting business negotiations in Israel without taking up employment.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://israel-entry.piba.gov.il/",
+      "notes": "The B/2 visa category covers both tourism and business visits. Nationals of visa-exempt countries use the ETA-IL for business visits; nationals of non-exempt countries must obtain a B/2 visa from an Israeli embassy or via eVisa portal. Does not permit employment or paid activities in Israel."
+    },
+    {
+      "category": "work",
+      "name": "B/1 Work Visa and Work Permit",
+      "purpose": "Authorizes foreign nationals to reside and work in Israel for a specific employer. Required for all foreign nationals taking up paid employment in Israel.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://israel-entry.piba.gov.il/",
+      "notes": "Employer must apply on behalf of the foreign worker. Issued for specific employment sectors: agriculture, caregiving, construction, restaurants, and others under bilateral agreements. Maximum stay varies by sector and agreement. Renewable annually. The B/1 visa is typically tied to a specific employer and work permit quota. Application submitted to the Israel Population and Immigration Authority (PIBA)."
+    },
+    {
+      "category": "work",
+      "name": "B/1 Expert/Specialist Work Visa",
+      "purpose": "Work authorization for high-skilled foreign experts and specialists employed by Israeli companies, particularly in technology and specialized professional fields.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://innovationisrael.org.il/en/programs/visas-for-foreign-high-tech-experts-incentive-program/",
+      "notes": "Includes the Fast-Track program for Foreign High-Tech Experts under the Israel Innovation Authority. Short-term track: up to 90 days (expedited, within a few business days for recognized high-tech companies). Long-term track: up to 1 year, extendable for another year. Maximum cumulative stay under long-term working visa for experts: up to 63 months. Expert's salary must be at least double the average wage in Israel. Launched 2018 by the Israel Innovation Authority and PIBA."
+    },
+    {
+      "category": "student",
+      "name": "A/2 Student Visa",
+      "purpose": "Authorizes foreign nationals to reside in Israel for the purpose of studying at an accredited Israeli educational institution.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://israel-entry.piba.gov.il/",
+      "notes": "Applicant must have an acceptance letter from a recognized Israeli educational institution. A/2 visa is issued for the duration of the academic program and must be renewed annually. Application made at Israeli embassy or consulate in country of residence. Holder may not work in Israel without separate work authorization."
+    },
+    {
+      "category": "investment",
+      "name": "B/5 Investor Visa (US-Israel Treaty Investor)",
+      "purpose": "Temporary residence and work authorization for US citizens investing in and managing a business in Israel under the US-Israel bilateral investment arrangement.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://embassies.gov.il/san-francisco/Newsandevents/Pages/B5-Israel-Investor-Visa.aspx",
+      "notes": "Available ONLY to US citizens and their key employees and immediate family under Israeli Government Resolutions 1528 (March 2014) and 2243 (January 2017). Investor must hold at least 50% stake in the business. Practical guidance suggests minimum investment of approximately NIS 800,000-1,000,000 (~USD 220,000-275,000). Initial period 2 years, renewable annually. Does not provide a direct path to permanent residency or citizenship."
+    },
+    {
+      "category": "other",
+      "name": "B/2 Innovation Visa (Startup Entrepreneur Visa)",
+      "purpose": "Allows foreign entrepreneurs in the technology sector to develop innovative business ideas in Israel under the support of the Israel Innovation Authority.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://innovationisrael.org.il/en/programs/",
+      "notes": "Pilot program developed by Israel's Ministry of Economy in collaboration with the Ministry of Foreign Affairs, PIBA, and the Israel Innovation Authority. Grants a B/2 innovation visa for up to 2 years. Applicant must be developing an innovative technological concept and receive endorsement from the Israel Innovation Authority. Not a standard tourist B/2 visa."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa",
+      "purpose": "Allows foreign nationals to transit through Ben Gurion International Airport without entering Israeli territory proper.",
+      "max_stay_days": 1,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://israel-entry.piba.gov.il/",
+      "notes": "Transit visa requirements vary by nationality. Nationals of many countries can transit Israel airside without a visa if they hold onward tickets and do not clear immigration. Nationals from countries subject to heightened security review may require a specific transit visa. Apply at Israeli embassy or consulate."
+    },
+    {
+      "category": "family",
+      "name": "A/5 Spouse/Family Reunification Visa",
+      "purpose": "Temporary residence visa for foreign nationals who are spouses or first-degree relatives of Israeli citizens or permanent residents, allowing them to reside in Israel during family reunification proceedings.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://israel-entry.piba.gov.il/",
+      "notes": "The family reunification process in Israel typically begins with an A/5 temporary residence visa, which is progressively upgraded to A/5 with work rights, then A/5 with permanent residency process. Full process can take 5+ years before permanent residency status is granted. The Population and Immigration Authority oversees the process."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Service / Official Passport Visa-Free Entry",
+      "purpose": "Visa-free or visa-gratis entry for holders of diplomatic, service, or official passports representing foreign governments.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.gov.il/BlobFolder/reports/tourist-visa-table/en/2022_Foreign_Visa_to_Israel.pdf",
+      "notes": "Holders of diplomatic, service, and official passports of most countries are exempt from both visa requirements and the ETA-IL. The 2022 Tourist Visa Table details specific exemptions per country per passport type. Some countries' official passport holders still require a visa (notably: USA, Dominica, Saint Kitts and Nevis, South Africa, Taiwan on official passports). Diplomatic passport holders of Kenya, Rwanda, and Vietnam are exempt while service/ordinary passport holders of those countries require a visa."
+    },
+    {
+      "category": "other",
+      "name": "Aliyah / Law of Return Immigration Visa (A/5 Oleh)",
+      "purpose": "Immigration visa for Jewish persons and eligible relatives to immigrate to Israel under the Law of Return and receive Israeli citizenship or permanent residence.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.il/en/departments/topics/aliyah",
+      "notes": "Under Israel's Law of Return (1950), every Jewish person and their spouse, children, grandchildren, and their spouses are entitled to immigrate to Israel and receive an Oleh (immigrant) visa. This grants the right to Israeli citizenship. The Jewish Agency for Israel and the Ministry of Aliyah and Integration facilitate the process. Not a temporary visa - grants permanent residency and citizenship rights."
+    }
+  ],
   "agreements": [],
   "official_domains": [
     "gov.il",
@@ -985,27 +1200,30 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "REMOVED Colombia (COL) from visa_free: Colombia's visa exemption for entry to Israel was terminated effective June/July 2025 following diplomatic rupture. Source: Fragomen advisory + Israeli embassy Colombia page (embassies.gov.il/colombia) confirming B-2 visa now required.",
+      "REMOVED Colombia (COL) from visa_free: Colombia's visa exemption for entry to Israel was terminated effective approximately May 14, 2025 (B-2 visa required) following diplomatic rupture after Colombia severed ties with Israel in May 2024. Source: Fragomen advisory + Israeli embassy Colombia page (embassies.gov.il/colombia) confirming B-2 visa now required. Date corrected 2026-06-27 from 'June/July 2025' to 'approximately May 14, 2025' per Fragomen and Colombian diplomatic sources.",
       "ADDED Seychelles (SYC) to visa_free: Bilateral Visa Exemption Agreement signed 11 January 2024 between Israel and Seychelles. Was absent from the record despite being official since Jan 2024. Source: Seychelles MFA official announcement (mfa.gov.sc).",
       "ADDED Saint Lucia (LCA) to visa_free: Present as 'exe.' in 2022 official Tourist Visa Table (Tourists to Israel PDF) but was missing from the prior record.",
       "ADDED Cook Islands (COK) to visa_free: Present as 'exe.' in 2022 official Tourist Visa Table but was missing from the prior record.",
-      "ADDED Central African Republic (CAF) to visa_free: Present as 'exe.' in 2022 official Tourist Visa Table but was missing from the prior record.",
-      "REMOVED Tuvalu (TUV) from visa_free: The 2022 official Tourist Visa Table (Tourists to Israel PDF) shows Tuvalu as 'req.' for both national and official passports. Incorrectly listed as visa_free in prior record.",
-      "REMOVED Marshall Islands (MHL) from visa_free: The 2022 official Tourist Visa Table shows Marshall Islands as 'req.' for national passport. Incorrectly listed as visa_free in prior record.",
-      "REMOVED Samoa (WSM) from visa_free: The 2022 official Tourist Visa Table shows Samoa as 'req.' for national passport. Incorrectly listed as visa_free in prior record.",
-      "UPDATED Kosovo (XKX) note: The 2022 official Tourist Visa Table shows Kosovo as 'req.' for national passport. Kosovo's exemption appears to have been granted approximately May 2025; entry retained in visa_free with updated note clarifying the timeline.",
-      "ADDED Bosnia Herzegovina (BIH) to conditional_access as a separate entry: 2022 Tourist Visa Table shows BIH national as 'req.' but official as 'exe.' — was missing from conditional_access.",
-      "CORRECTED Russia (RUS) notes: The 2022 official Tourist Visa Table shows Russian Federation national as 'exe.' with 'Requires MFA confirmation' note, and official as 'req.' — updated notes to reflect that official passports require a visa.",
-      "CORRECTED Belarus (BLR) notes: 2022 table shows national as 'exe.' but official as 'req.' — updated notes to reflect this asymmetry.",
-      "CORRECTED Dominica (DMA) notes: 2022 table shows national as 'exe.' but official as 'req.' — updated notes.",
-      "CORRECTED Saint Kitts and Nevis (KNA) notes: 2022 table shows national as 'exe.' but official as 'req.' — updated notes.",
-      "CORRECTED South Africa (ZAF) notes: 2022 table shows national as 'exe.' but official as 'req.' — updated notes.",
-      "CORRECTED Taiwan notes: 2022 table shows national as 'exe.' but official as 'req.' — updated notes.",
-      "CORRECTED United States notes: 2022 table shows national as 'exe.' but official as 'req.' — updated notes.",
+      "ADDED Central African Republic (CAF) to visa_free (2026-06-27): Present as 'exe.' in 2022 official Tourist Visa Table but was missing from the prior record. [REVERSED 2026-06-29: CAF confirmed NOT exempt per Wikipedia and aic.org.il — the 2022 PDF entry appears to have been misread or the PDF itself contains an error. CAF removed from visa_free on 2026-06-29.]",
+      "REMOVED Tuvalu (TUV) from visa_free (2026-06-27): The 2022 official Tourist Visa Table (Tourists to Israel PDF) shows Tuvalu as 'req.' for both national and official passports. [REVERSED 2026-06-29: Tuvalu confirmed visa-exempt per Israel's Entry to Israel Order (Visa Exemption), aic.org.il, and Wikipedia. Restored to visa_free on 2026-06-29 — the 2022 PDF was either outdated or misread for Tuvalu.]",
+      "REMOVED Marshall Islands (MHL) from visa_free (2026-06-27): The 2022 official Tourist Visa Table shows Marshall Islands as 'req.' for national passport. [REVERSED 2026-06-29: Marshall Islands confirmed visa-exempt per Israel's Entry to Israel Order (Visa Exemption), aic.org.il, and Wikipedia. Restored to visa_free on 2026-06-29.]",
+      "REMOVED Samoa (WSM) from visa_free (2026-06-27): The 2022 official Tourist Visa Table shows Samoa as 'req.' for national passport. [REVERSED 2026-06-29: Samoa confirmed visa-exempt effective 6 July 2023 per bilateral agreement signed 7 March 2019. Correctly, it would have shown 'req.' in the 2022 PDF (pre-agreement), but exemption has been in force since July 2023. Restored to visa_free on 2026-06-29.]",
+      "UPDATED Kosovo (XKX) note: The 2022 official Tourist Visa Table shows Kosovo as 'req.' for national passport. Kosovo's exemption became effective May 5, 2025 under bilateral visa waiver agreement signed June 2024 and ratified February 2025; entry retained in visa_free with updated note clarifying the precise date. Source_official set to false as direct official Israeli government page was not accessible; secondary sources (VisaGuide.News, multiple travel outlets) consistently cite May 5, 2025.",
+      "ADDED Bosnia Herzegovina (BIH) to conditional_access as a separate entry: 2022 Tourist Visa Table shows BIH national as 'req.' but official as 'exe.' - was missing from conditional_access.",
+      "CORRECTED Russia (RUS) notes: The 2022 official Tourist Visa Table shows Russian Federation national as 'exe.' with 'Requires MFA confirmation' note, and official as 'req.' - updated notes to reflect that official passports require a visa.",
+      "CORRECTED Belarus (BLR) notes: 2022 table shows national as 'exe.' but official as 'req.' - updated notes to reflect this asymmetry.",
+      "CORRECTED Dominica (DMA) notes: 2022 table shows national as 'exe.' but official as 'req.' - updated notes.",
+      "CORRECTED Saint Kitts and Nevis (KNA) notes: 2022 table shows national as 'exe.' but official as 'req.' - updated notes.",
+      "CORRECTED South Africa (ZAF) notes: 2022 table shows national as 'exe.' but official as 'req.' - updated notes.",
+      "CORRECTED Taiwan notes: 2022 table shows national as 'exe.' but official as 'req.' - updated notes.",
+      "CORRECTED United States notes: 2022 table shows national as 'exe.' but official as 'req.' - updated notes.",
       "CORRECTED Egypt entry: removed classification as pure visa_free; clarified that the 14-day exemption requires MFA confirmation and has geographic/border restrictions.",
       "UPDATED primary source_url references from gov.il/en/pages/tourist-visa-table (HTTP 403) to the directly scraped official PDFs.",
       "UPDATED overall visa_policy notes to reflect official source dates and changes verified.",
-      "REMOVED first generic 'All visa-exempt country nationals' entry from visa_free array: not a specific nationality entry; ETA-IL details moved to eta sub-section only."
+      "REMOVED first generic 'All visa-exempt country nationals' entry from visa_free array: not a specific nationality entry; ETA-IL details moved to eta sub-section only.",
+      "2026-06-27 VALIDATION: Re-fetched israel-entry.piba.gov.il (title only returned), gov.il/en/departments/dynamiccollectors/ashrotzarim (HTTP 403), embassies.gov.il/japan/eta-il (connection reset), embassies.gov.il/berlin (connection reset), embassies.gov.il/chicago (connection reset), embassies.gov.il/houston (connection reset). Confirmed via WebSearch + aic.org.il + Wikipedia that overall visa-free list is stable at approximately 96 countries. No new visa-free additions found beyond Kosovo (May 5, 2025 confirmed). Colombia removal date corrected to approximately May 14, 2025. Added India and Sri Lanka to e_visa section (B/2 eVisa pilot, not visa-free). Kosovo precise effective date updated to May 5, 2025. No other risky changes to visa_free list identified.",
+      "2026-06-27 NOTE: India (IND) and Sri Lanka (LKA) added to visa_policy.e_visa: both countries' passport holders residing in those countries may apply online for B/2 tourist eVisa via piba.gov.il as of 2025. This is a visa-required eVisa pathway, NOT a visa-free or ETA-IL pathway. Source: WebSearch confirmed via PIBA official portal announcement referenced in multiple secondary sources.",
+      "2026-06-29 VALIDATION: Re-fetched israel-entry.piba.gov.il (header only, no list). Re-fetched aic.org.il/countries-on-a-visa-waiver-program-with-israel (updated Sept 2025) — full list obtained. Fetched en.wikipedia.org/wiki/Visa_policy_of_Israel — complete exemption list with dates obtained. WebSearch confirmed Colombia removal effective May 14, 2025 per embassies.gov.il/colombia official page. CORRECTED: Restored Samoa (WSM), Marshall Islands (MHL), Tuvalu (TUV) to visa_free — all confirmed exempt per aic.org.il and Wikipedia; previous 2026-06-27 removal was incorrect. CORRECTED: Removed Central African Republic (CAF) from visa_free — confirmed not exempt per Wikipedia and aic.org.il search result. No other changes to visa_free list identified. sources_reached=4 official or semi-official pages loaded."
     ],
     "gaps": [
       "No credential-based conditional entry rules found for Israel: Israel does not grant visa-free or expedited entry to visa-required nationals solely because they hold a valid US, Schengen, UK, Canadian, Australian, or other third-country visa or residence permit. No such policy was found on any official Israeli government source.",
@@ -1015,8 +1233,10 @@
       "Israel does not have a formal publicly accessible digital-nomad visa program as of research date.",
       "The innovationisrael.org.il program page returned HTTP 403; program details confirmed from official government search snippets.",
       "Israel generally requires dual citizenship renunciation upon naturalization; specific statutory details not confirmed from directly scraped official page.",
-      "Exact effective date for Kosovo visa exemption (for entry into Israel on ordinary passport) could not be confirmed from the official Israeli Tourist Visa Table, which still listed Kosovo as 'req.' in the 2022 PDF. Status noted as 'approximately May 2025' based on secondary sources.",
-      "Samoa (WSM), Tuvalu (TUV), and Marshall Islands (MHL) are corrected to visa-required per the 2022 official PDF; however a 2025/2026 updated inbound PDF could not be retrieved to confirm no changes since 2022."
+      "Kosovo (XKX) visa exemption effective date: confirmed as May 5, 2025 by multiple secondary sources (VisaGuide.News, Sarajevo Times, Radio Kontakt Plus, Passport Index). Official Israeli Tourist Visa Table not updated to reflect this; source_official set to false for Kosovo entry per 2026-06-27 validation.",
+      "Samoa (WSM), Tuvalu (TUV), and Marshall Islands (MHL): Previous validation (2026-06-27) incorrectly removed these from visa_free based on the 2022 official PDF. 2026-06-29 re-validation against Wikipedia Visa policy of Israel, aic.org.il (updated September 2025), and multiple search sources confirms all three are visa-exempt. Samoa gained exemption effective 6 July 2023 per bilateral agreement signed 7 March 2019. Marshall Islands and Tuvalu are listed on the official 'Entry to Israel Order (Visa Exemption)'. All three have been RESTORED to visa_free with source_official=false (official PDF not directly accessible). These are now listed as gaps pending official gov.il PDF confirmation.",
+      "Central African Republic (CAF): Previous validation (2026-06-27) added CAF to visa_free based on the 2022 PDF. 2026-06-29 re-validation against Wikipedia and aic.org.il confirms CAF is NOT exempt. CAF is listed among countries where Israel does NOT grant visa exemption. REMOVED from visa_free on 2026-06-29.",
+      "Colombia (COL) visa-free removal date: confirmed as May 14, 2025 per Israeli Embassy Bogota official page (embassies.gov.il/colombia). Wikipedia records the date as May 2, 2025 — discrepancy noted. Official embassy page cited May 14, 2025 as the effective date. KEPT as removed (not in visa_free list)."
     ]
   },
   "sources_checked": [
@@ -1038,6 +1258,21 @@
     "https://innovationisrael.org.il/en/programs/visas-for-foreign-high-tech-experts-incentive-program/",
     "https://aic.org.il/countries-on-a-visa-waiver-program-with-israel/",
     "https://en.wikipedia.org/wiki/Visa_policy_of_Israel",
-    "https://www.easyaliyah.com/blog/2026-israel-visa-requirements"
+    "https://www.easyaliyah.com/blog/2026-israel-visa-requirements",
+    "https://israel-entry.piba.gov.il/sitemap.xml",
+    "https://israel-entry.piba.gov.il/learn-about-evisa-b2",
+    "https://israel-entry.piba.gov.il/visa-option",
+    "https://innovationisrael.org.il/en/programs/visas-for-foreign-high-tech-experts-incentive-program/",
+    "https://embassies.gov.il/san-francisco/Newsandevents/Pages/B5-Israel-Investor-Visa.aspx",
+    "https://aic.org.il/countries-on-a-visa-waiver-program-with-israel/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Israel",
+    "https://www.fragomen.com/insights/colombiaisrael-reciprocal-visa-requirements-for-short-term-travel.html",
+    "https://ktalegal.com/colombian-citizens-to-need-tourist-visas-for-israel/",
+    "https://visaguide.world/news/kosovo-nationals-eligible-for-visa-free-travel-to-israel-starting-may-5/",
+    "https://insajderi.org/en/From-today--Israel-will-remove-visas-for-Kosovars--this-is-the-only-procedure-required/",
+    "https://aic.org.il/countries-on-a-visa-waiver-program-with-israel/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Israel",
+    "https://embassies.gov.il/colombia/en/news/informacion-visa-colombianos",
+    "https://embassies.gov.il/colombia/en/services/foreign-citizens/entry-visa-visiting-or-touring-israel"
   ]
 }

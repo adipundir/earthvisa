@@ -5,7 +5,7 @@
   "region": "Asia",
   "outbound_official": {
     "found": false,
-    "note": "no official Yemen government outbound visa-list page located; rely on destination-side data. Checked mofa-ye.org (Yemen MFA — navigation-only, no outbound travel list), mofa.gov.ye (timed out / unreachable), yemen-nic.info immigration page (inbound visas to Yemen only), yemenembassynl.org/yemenembassy.org/yemenun.org (embassy consular pages covering inbound visas or passport issuance, not outbound access lists). No Yemeni passport authority (IPNA) or Interior Ministry portal was found publishing a country-by-country list of where Yemen ordinary-passport holders may travel visa-free, visa-on-arrival, or e-visa. Yemen's conflict-fractured governance and the absence of a functional public-facing travel-advisory service means no India-MEA-equivalent outbound reference page exists."
+    "note": "no official Yemen government outbound visa-list page located; rely on destination-side data. Checked mofa-ye.org (Yemen MFA - navigation-only, no outbound travel list), mofa.gov.ye (timed out / unreachable), yemen-nic.info immigration page (inbound visas to Yemen only), yemenembassynl.org/yemenembassy.org/yemenun.org (embassy consular pages covering inbound visas or passport issuance, not outbound access lists). No Yemeni passport authority (IPNA) or Interior Ministry portal was found publishing a country-by-country list of where Yemen ordinary-passport holders may travel visa-free, visa-on-arrival, or e-visa. Yemen's conflict-fractured governance and the absence of a functional public-facing travel-advisory service means no India-MEA-equivalent outbound reference page exists."
   },
   "visa_policy": {
     "visa_free": [],
@@ -18,11 +18,119 @@
       "https://yemenevisa.org/FAQ",
       "https://yemenevisa.org/About",
       "https://www.mofa-ye.org/Pages/en/",
-      "https://www.yemenembassy.org/consuloraffairs/visa-services/",
-      "https://www.yemenembassynl.org/consulate/yemen-entry-visa-request"
+      "https://www.yemenembassy.org/consulate/visa-service",
+      "https://www.yemenembassynl.org/consulate/yemen-entry-visa-request",
+      "https://www.yemenun.org/visa.php"
     ],
-    "notes": "Yemen's official e-visa portal (yemenevisa.org), operated by the Republic of Yemen Ministry of Interior Immigration, Passports and Nationality Authority (IPNA, contact: info@ipnaye.org), renders all eligibility and country-list pages as a JavaScript SPA; no static publicly readable list of visa-free, visa-on-arrival, or e-visa eligible nationalities is obtainable from the official site. The e-visa system was launched on June 24, 2025 (announced by Yemen MFA/IPNA, implemented with IOM/US funding). The portal supports five visa categories: group tourism, business, diplomatic, work, and transit. Currently only tourist group applications submitted by accredited travel agencies (minimum 10 members) are accepted. Processing time is 3–5 working days; payment is cash-only in USD at the IPNA main center in Aden or via embassies/consulates. The Yemen Embassy Washington DC states it is not issuing tourist visas and that business visas require an employer letter plus MOFA Yemen approval. The Yemen Embassy Netherlands states entry visas are issued only for those of Yemeni origin, workers at international organisations, journalists and media delegates, and diplomats (fee EUR 50; ~2-week processing). The official MOFA website (mofa-ye.org) publishes no public visa policy country list. The Timatic/IATA airline database (not an official Yemen government source) lists 1 visa-free entry (HKSAR, 30 days), persons of Yemeni origin (proof required), and 11 visa-on-arrival countries for ordinary passports (Algeria 1 month — must arrive from home country; Bahrain, Egypt — must arrive from home country, Jordan, Kuwait, Malaysia, Oman, Qatar, Saudi Arabia, Syria, UAE — all 3 months); these could not be verified against any official government-published source and are therefore omitted from visa_policy per the official-source-first rule."
+    "notes": "Yemen's official e-visa portal (yemenevisa.org), operated by the Republic of Yemen Ministry of Interior Immigration, Passports and Nationality Authority (IPNA, contact: info@ipnaye.org), renders all eligibility and country-list pages as a JavaScript SPA; no static publicly readable list of visa-free, visa-on-arrival, or e-visa eligible nationalities is obtainable from the official site. The e-visa system was launched on June 24, 2025 (announced by Yemen MFA/IPNA, implemented with IOM/US funding). The portal supports five visa categories: group tourism, business, diplomatic, work, and transit. Currently only tourist group applications submitted by accredited travel agencies (minimum 10 members) are accepted. Processing time is 3–5 working days; payment is cash-only in USD at the IPNA main center in Aden or via embassies/consulates. The Yemen Embassy Washington DC states it is not issuing tourist visas and that business visas require an employer letter plus MOFA Yemen approval. The Yemen Permanent Mission to the UN similarly states it is not issuing tourist visas. The Yemen Embassy Netherlands states entry visas are issued only for those of Yemeni origin, workers at international organisations, journalists and media delegates, and diplomats (fee EUR 50; ~2-week processing). The official MOFA website (mofa-ye.org) publishes no public visa policy country list. CRITICAL CONFLICT: Timatic/IATA (non-official) lists 11 visa-on-arrival countries for ordinary passports, including Gulf states (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE). However, the official Yemen Embassy Washington DC page (yemenembassy.org/consulate/visa-service) and the Yemen Permanent Mission to the UN (yemenun.org/visa.php) explicitly list Saudi Arabia, UAE, Qatar, Oman, Bahrain, and Kuwait among the 40–50+ countries whose citizens require a visa to enter Yemen. This official-source conflict means VOA claims for Gulf states cannot be verified and must be excluded per the official-source-first rule and safety-first classification. All visa_free, visa_on_arrival, e_visa, and eta arrays remain empty pending publication of a static official list."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Group Tourism Visa",
+      "purpose": "Allows organised group tourism to Yemen for sightseeing and leisure. Only accepted through accredited travel agencies with a minimum group size of 10 members.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://yemenevisa.org/Types-Of-Visas",
+      "notes": "Only tourist group visas submitted by accredited travel agencies are currently accepted through the e-visa portal (launched June 24, 2025). The Yemen Embassy Washington DC states it is not issuing tourist visas at this time. The Yemen Permanent Mission to the UN also states it is not issuing tourist visas. Payment is cash-only in USD at the IPNA main centre in Aden or via embassies/consulates. Individual tourist visa applications are not accepted."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "Issued for business activities in Yemen including meetings, trade, and commercial activities. Requires an employer or sponsoring entity letter from Yemen.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 65,
+      "processing_days_min": 2,
+      "processing_days_max": 4,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.yemenembassy.org/consulate/visa-service",
+      "notes": "Requires an employer letter from a Yemeni company and MOFA Yemen approval. Fee of $65 (money order) is for embassy applications in the US; may vary at other missions. E-visa application also available via yemenevisa.org. Valid passport with at least 6 months validity required plus two passport photos and a doctor's letter confirming no contagious diseases."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "Issued to foreign nationals accepted at Yemeni educational institutions for the purpose of study.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 65,
+      "processing_days_min": 2,
+      "processing_days_max": 4,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.yemenembassy.org/consulate/visa-service",
+      "notes": "Requires an acceptance letter from a Yemeni educational institution indicating the nature and duration of study. Application must include valid passport (6+ months), two passport photos, and a doctor's letter confirming no contagious diseases. Embassy in Washington DC handles applications for US-based applicants."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa",
+      "purpose": "Authorises foreign nationals to reside and work in Yemen under a sponsor or employer.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://yemenevisa.org/Types-Of-Visas",
+      "notes": "Listed as one of the five visa categories on the official e-visa portal (yemenevisa.org). Specific fee and stay duration not published in accessible static form on the portal (JavaScript SPA). Sponsor/employer in Yemen required."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Permits foreign nationals to transit through Yemen en route to a third country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://yemenevisa.org/Types-Of-Visas",
+      "notes": "Listed as one of the five visa categories on the official e-visa portal. Onward ticket confirmation required. Specific fee and stay duration not published in accessible static form on the portal (JavaScript SPA)."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official Visa",
+      "purpose": "Issued to diplomats, government officials, and staff of international organisations on official missions to Yemen.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 2,
+      "processing_days_max": 4,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.yemenembassy.org/consulate/visa-service",
+      "notes": "Listed as one of the five categories on the e-visa portal. Embassy Washington DC requires two typed application forms, valid passport (6+ months), two passport photos, and an original letter from the concerned government agency. Must include sponsor/host information in Yemen. The Yemen Embassy Netherlands issues entry visas for diplomats at a fee of approximately EUR 50 with approximately 2-week processing."
+    },
+    {
+      "category": "other",
+      "name": "Entry Visa (Yemeni Origin / International Organisation / Media)",
+      "purpose": "Special entry visa issued to persons of Yemeni origin, workers at international organisations, and journalists or media delegates, as the only categories currently receiving general entry visas at certain Yemen missions.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 10,
+      "processing_days_max": 14,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.yemenembassynl.org/consulate/yemen-entry-visa-request",
+      "notes": "Yemen Embassy Netherlands (official source) states entry visas are issued only for those of Yemeni origin, workers at international organisations, journalists and media delegates, and diplomats. Fee approximately EUR 50 (~2-week processing). Proof of heritage or organisational affiliation required. This reflects practical operational policy under Yemen's ongoing armed conflict."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -54,26 +162,30 @@
     "completeness": "low",
     "validation_notes": [
       "Re-fetched all source_urls on 2026-06-14. No changes to official-source-verifiable data: all Yemen government portals (yemenevisa.org, mofa-ye.org, yemenembassy.org, yemenembassynl.org) continue to publish no enumerated visa-policy country lists.",
-      "visa_policy.visa_free, visa_on_arrival, e_visa, eta all remain empty arrays: confirmed correct per official-source-first rule — no official Yemen government domain publishes these lists in static/readable form.",
+      "visa_policy.visa_free, visa_on_arrival, e_visa, eta all remain empty arrays: confirmed correct per official-source-first rule - no official Yemen government domain publishes these lists in static/readable form.",
       "conditional_access remains empty: Timatic/Wikipedia data on credential-based access (residence permit holders, multi-entry visa holders) and diplomatic/service passport VOA countries (Cuba, Mauritania, Morocco, Pakistan, Turkey, Lebanon, Palestine Authority VIP) continues to be unconfirmable from official Yemen government sources; excluded per classification rules.",
       "visa_policy.notes updated to reflect re-verification date (2026-06-14), additional e-visa context (group tourism only, min 10 members), and explicit reference to Algeria/Egypt home-country-origin restrictions as found in Timatic.",
-      "cbi, rbi, fast_track, agreements: confirmed no change — all correctly null/empty.",
-      "Yemen Embassy Netherlands (official source) confirms practical policy: visas issued only to Yemeni-origin holders, international org workers, journalists, and diplomats — effectively a de-facto restriction superseding any published general visa/VOA policy.",
+      "cbi, rbi, fast_track, agreements: confirmed no change - all correctly null/empty.",
+      "Yemen Embassy Netherlands (official source) confirms practical policy: visas issued only to Yemeni-origin holders, international org workers, journalists, and diplomats - effectively a de-facto restriction superseding any published general visa/VOA policy.",
       "No new official sources found for e-visa eligible nationalities despite the June 2025 e-visa launch.",
-      "outbound_official added 2026-06-14: searched mofa-ye.org, mofa.gov.ye, yemen-nic.info, yemenembassynl.org, yemenembassy.org, yemenun.org for any Yemen-government-published list of countries where Yemeni ordinary-passport holders may travel without prior consular visa. None found. Yemen has no India-MEA-equivalent outbound travel reference page."
+      "outbound_official added 2026-06-14: searched mofa-ye.org, mofa.gov.ye, yemen-nic.info, yemenembassynl.org, yemenembassy.org, yemenun.org for any Yemen-government-published list of countries where Yemeni ordinary-passport holders may travel without prior consular visa. None found. Yemen has no India-MEA-equivalent outbound reference page.",
+      "visa_types added 2026-06-20: extracted from yemenembassy.org/consulate/visa-service (official) and yemenevisa.org (official IPNA portal). Seven visa categories identified: group tourism (e-visa only, min 10 via accredited agency), business, student, work, transit, diplomatic/official, and a special entry visa category for Yemeni-origin persons/IO workers/journalists per Yemen Embassy Netherlands. Tourist visa individual applications suspended. Fees for most categories not publicly disclosed in static form; embassy applications in US quoted at $65.",
+      "Re-verified 2026-06-27: Re-fetched yemenevisa.org/Eligibility (JS SPA, no country list), yemenevisa.org/Types-Of-Visas (JS SPA, no static content), yemenevisa.org/About (organisational info only), mofa-ye.org (press releases only, no visa policy), yemenembassy.org/consulate/visa-service (tourist visas still not issued; Gulf states Saudi Arabia/UAE/Qatar/Oman/Bahrain/Kuwait listed explicitly among 50+ countries requiring visas), yemenembassynl.org (entry visas only for Yemeni-origin, IO workers, journalists, diplomats - unchanged), yemenun.org/visa.php (not issuing tourist visas; Gulf states among 40+ countries requiring visas). KEY FINDING: Both yemenembassy.org and yemenun.org (official Yemen government sources) explicitly list Gulf states - including Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE - among countries whose citizens REQUIRE a visa to enter Yemen. This directly contradicts Timatic/Wikipedia claims that these nationalities receive visa on arrival. Per the official-source-first and safety-first rules, VOA status for Gulf states and all other Timatic-listed nationalities cannot be confirmed from official Yemen government sources. visa_free, visa_on_arrival, e_visa, eta arrays remain empty (no change from prior record - this is a confirmation not a correction). visa_policy.notes updated with conflict-of-sources detail. No risky changes made to by-nationality access lists.",
+      "Re-verified 2026-06-29: Re-fetched yemenembassy.org/consulate/visa-service (51 countries listed requiring visas including Gulf states Bahrain/Kuwait/Oman/Qatar/Saudi Arabia; tourist visa suspension still in force), yemenun.org/visa.php (52 countries requiring visas including same Gulf states; tourist visas still not issued), yemenevisa.org/Eligibility (JS SPA, nationality search only, no static country list), yemenevisa.org/About (IPNA operator confirmed; no eligibility list), mofa-ye.org (press releases only, no visa policy). Also reviewed yemenembassynl.org (entry visas only for Yemeni-origin, IO workers, journalists, diplomats - unchanged). Third-party sites (cso-yemen.org, ivisatravel.com, Wikipedia) continue to make unverifiable VOA/visa-free claims; none are official Yemen government sources. FINDING: No change to any access list warranted. All visa_free, visa_on_arrival, e_visa, eta arrays remain correctly empty. All official Yemen government sources available today confirm the same policy: visas required for all ordinary-passport nationalities, with tourist visas suspended. Gulf states (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE) remain explicitly listed as requiring visas per yemenembassy.org and yemenun.org. No new official source confirms any nationality-based waiver. Record confirmed correct with no data changes."
     ],
     "gaps": [
-      "visa_policy.visa_free: Official government portal (yemenevisa.org/Eligibility) is a JavaScript SPA that does not expose a static country list; could not verify any visa-free nationalities from official source. Timatic (non-official) cites HKSAR (30 days) and persons of Yemeni origin — unconfirmed by official Yemen government source.",
-      "visa_policy.visa_on_arrival: No static official list found. Timatic (IATA, non-official) cites 11 ordinary-passport countries: Algeria (1 month, must arrive from own country), Bahrain, Egypt (must arrive from own country), Jordan, Kuwait, Malaysia, Oman, Qatar, Saudi Arabia, Syria, UAE (3 months each) — unconfirmed by official Yemen government source.",
+      "visa_policy.visa_free: Official government portal (yemenevisa.org/Eligibility) is a JavaScript SPA that does not expose a static country list; could not verify any visa-free nationalities from official source. Timatic (non-official) cites HKSAR (30 days) and persons of Yemeni origin - unconfirmed by official Yemen government source.",
+      "visa_policy.visa_on_arrival: No static official list found. Timatic (IATA, non-official) cites 11 ordinary-passport countries: Algeria (1 month, must arrive from own country), Bahrain, Egypt (must arrive from own country), Jordan, Kuwait, Malaysia, Oman, Qatar, Saudi Arabia, Syria, UAE (3 months each). HOWEVER, the official Yemen Embassy Washington DC (yemenembassy.org/consulate/visa-service) and Yemen Permanent Mission to the UN (yemenun.org/visa.php) explicitly list Gulf states (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE) among countries whose citizens require a visa - directly conflicting with Timatic's VOA claim for these nationalities. Excluded per safety-first rule.",
       "visa_policy.e_visa eligible countries: The yemenevisa.org/Eligibility page requires dynamic nationality lookup; no exportable official list found despite system being live since June 24, 2025.",
-      "conditional_access.credential_holders: Timatic/Wikipedia claims visa-free/VOA for holders of valid residence permits or multi-entry visas from select countries — cannot be verified against any official Yemen government source.",
-      "conditional_access.passport_type_waivers: Timatic/Wikipedia lists diplomatic/official/service passport VOA for Cuba (1 month), Mauritania (1 month), Morocco (1 month), Pakistan (3 months), Turkey (1 month), Lebanon diplomatic (indefinite), Palestine Authority VIP (indefinite) — cannot be verified against any official Yemen government source.",
-      "conditional_access.special_status: Persons of Yemeni origin mentioned in Timatic/Wikipedia as visa-free with proof of heritage — no official Yemen government source confirms this as a formal policy category.",
+      "conditional_access.credential_holders: Timatic/Wikipedia claims visa-free/VOA for holders of valid residence permits or multi-entry visas from select countries - cannot be verified against any official Yemen government source.",
+      "conditional_access.passport_type_waivers: Timatic/Wikipedia lists diplomatic/official/service passport VOA for Cuba (1 month), Mauritania (1 month), Morocco (1 month), Pakistan (3 months), Turkey (1 month), Lebanon diplomatic (indefinite), Palestine Authority VIP (indefinite) - cannot be verified against any official Yemen government source.",
+      "conditional_access.special_status: Persons of Yemeni origin mentioned in Timatic/Wikipedia as visa-free with proof of heritage - no official Yemen government source confirms this as a formal policy category (though Yemen Embassy Netherlands and Washington DC references to 'Yemeni origin' holders provide partial confirmation that this group receives facilitated access).",
+      "visa_types: Fee amounts for work, transit, and diplomatic visas not published in static form on official portals. Max stay and validity data not disclosed. E-visa portal (yemenevisa.org) is a JavaScript SPA and does not render static content.",
       "rbi: No official residency-by-investment program announced or documented on any official Yemen government source.",
       "fast_track: No official skilled/talent/digital-nomad/startup visa program found on any official Yemen government source.",
       "agreements: Yemen is a member of the Arab League; bilateral or multilateral free-movement agreements may exist but cannot be confirmed from active official sources given ongoing conflict.",
       "cbi: Confirmed absent; no official program exists.",
-      "general: Yemen's ongoing armed conflict and fractured governance (Aden-based internationally recognised government vs. Houthi-controlled north) means that published policies may not be operationally enforced. The Yemen Embassy Netherlands (official source) states entry visas are issued only for those of Yemeni origin, international organisation workers, journalists, and diplomats — effectively superseding any general conditional-access rules even if they exist on paper.",
+      "general: Yemen's ongoing armed conflict and fractured governance (Aden-based internationally recognised government vs. Houthi-controlled north) means that published policies may not be operationally enforced. The Yemen Embassy Netherlands (official source) states entry visas are issued only for those of Yemeni origin, international organisation workers, journalists, and diplomats - effectively superseding any general conditional-access rules even if they exist on paper.",
       "outbound_official: No Yemen government page found listing visa-free/VOA/e-visa destinations for Yemeni ordinary-passport holders. Both MFA portals (mofa-ye.org and mofa.gov.ye) confirmed to publish no such list."
     ]
   },
@@ -82,67 +194,61 @@
       "url": "https://yemenevisa.org/Eligibility",
       "domain": "yemenevisa.org",
       "official": true,
-      "notes": "Official Yemen IPNA e-visa portal eligibility page — re-fetched 2026-06-14; renders as JS SPA with dynamic nationality search only; no static country list extractable"
+      "notes": "Official Yemen IPNA e-visa portal eligibility page - re-fetched 2026-06-27; renders as JS SPA with dynamic nationality search only; no static country list extractable"
     },
     {
       "url": "https://yemenevisa.org/Types-Of-Visas",
       "domain": "yemenevisa.org",
       "official": true,
-      "notes": "Types of visa page — re-fetched 2026-06-14; JS template, no static content"
+      "notes": "Types of visa page - re-fetched 2026-06-27; JS template, no static content; confirms 5 visa categories: group tourism, business, diplomatic, work, transit"
     },
     {
       "url": "https://yemenevisa.org/FAQ",
       "domain": "yemenevisa.org",
       "official": true,
-      "notes": "FAQ page — re-fetched 2026-06-14; uses template variables {{item.Question}}, no static FAQ content rendered"
+      "notes": "FAQ page - re-fetched 2026-06-14; uses template variables {{item.Question}}, no static FAQ content rendered"
     },
     {
       "url": "https://yemenevisa.org/About",
       "domain": "yemenevisa.org",
       "official": true,
-      "notes": "About page — re-fetched 2026-06-14; organisational description only; confirms IPNA as operator, no country lists"
+      "notes": "About page - re-fetched 2026-06-27; organisational description only; confirms IPNA as operator, services include passports/visas/residencies; no country lists"
     },
     {
       "url": "https://www.mofa-ye.org/Pages/en/",
       "domain": "mofa-ye.org",
       "official": true,
-      "notes": "Yemen Ministry of Foreign Affairs and Expatriates — re-fetched 2026-06-14; press releases and diplomatic news only; no visa policy country list published; consulates page also checked — directory of 4 consulates only, no outbound travel list"
+      "notes": "Yemen Ministry of Foreign Affairs and Expatriates - re-fetched 2026-06-27; press releases and diplomatic news only; no visa policy country list published; no 2025/2026 visa policy announcements found"
     },
     {
-      "url": "https://www.yemenembassy.org/consuloraffairs/visa-services/",
+      "url": "https://www.yemenembassy.org/consulate/visa-service",
       "domain": "yemenembassy.org",
       "official": true,
-      "notes": "Yemen Embassy Washington DC — re-fetched 2026-06-14; tourist visas not being issued; requires employer letter + MOFA approval for business visas; no conditional access rules for third-country credential holders confirmed"
+      "notes": "Yemen Embassy Washington DC visa service page - re-fetched 2026-06-27; confirms tourist visas not being issued; Gulf states (Saudi Arabia, UAE, Qatar, Oman, Bahrain, Kuwait) explicitly listed among 50+ countries requiring visas - contradicts Timatic VOA claim for these nationalities; documents requirements for standard ($65), business (employer letter), student (acceptance letter), and diplomatic/official visas"
     },
     {
       "url": "https://www.yemenembassynl.org/consulate/yemen-entry-visa-request",
       "domain": "yemenembassynl.org",
       "official": true,
-      "notes": "Yemen Embassy Netherlands — re-fetched 2026-06-14; entry visas only for Yemeni-origin holders, international org workers, journalists, and diplomats; fee EUR 50; ~2-week processing; no conditional access rules for third-country credential holders mentioned"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Yemen",
-      "domain": "en.wikipedia.org",
-      "official": false,
-      "notes": "Wikipedia — fetched 2026-06-14; cites Timatic (IATA) as primary source; lists HKSAR (30 days visa-free), Yemeni origin (visa-free with proof), 11 ordinary-passport VOA countries, diplomatic/official/service passport VOA for Cuba/Mauritania/Morocco/Pakistan/Turkey/Lebanon/Palestine Authority VIP; also mentions credential-based access for residence permit and multi-entry visa holders; not an official government source, excluded from visa_policy and conditional_access per rules"
+      "notes": "Yemen Embassy Netherlands - re-fetched 2026-06-27; entry visas only for Yemeni-origin holders, international org workers, journalists, and diplomats; fee EUR 50; ~2-week processing; all other nationalities (40+) require standard visa; no VOA confirmed"
     },
     {
       "url": "https://www.yemenun.org/visa.php",
       "domain": "yemenun.org",
       "official": true,
-      "notes": "Yemen Permanent Mission to the UN — tourist visas not currently issued; no conditional access rules for foreign visa/permit holders confirmed"
+      "notes": "Yemen Permanent Mission to the UN - re-fetched 2026-06-27; not issuing tourist visas; Gulf states (Saudi Arabia, UAE, Qatar, Oman, Bahrain, Kuwait) among 40+ countries requiring visas; no VOA for any nationality confirmed from this source"
     },
     {
-      "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Yemen.html",
-      "domain": "travel.state.gov",
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Yemen",
+      "domain": "en.wikipedia.org",
       "official": false,
-      "notes": "US State Dept Yemen travel advisory — covers US traveller warnings; not Yemen's own policy; not a Yemen government source"
+      "notes": "Wikipedia - re-fetched 2026-06-27; cites Timatic (IATA) as primary source; lists HKSAR (30 days visa-free), Yemeni origin (visa-free with proof), 11 ordinary-passport VOA countries (Algeria, Bahrain, Egypt, Jordan, Kuwait, Malaysia, Oman, Qatar, Saudi Arabia, Syria, UAE), diplomatic/official/service passport VOA for Cuba/Mauritania/Morocco/Pakistan/Turkey/Lebanon/Palestine Authority VIP; also mentions credential-based access for residence permit and multi-entry visa holders; NOT an official government source; official Yemen sources (yemenembassy.org, yemenun.org) contradict the Gulf state VOA claims; excluded from visa_policy and conditional_access per rules"
     },
     {
       "url": "http://www.yemen-nic.info/ministations/corp_438/3.php",
       "domain": "yemen-nic.info",
       "official": true,
-      "notes": "Yemen National Information Center — immigration/passports page — checked 2026-06-14 for outbound_official research; page covers inbound visa conditions for foreigners entering Yemen only; no outbound list for Yemeni citizens"
+      "notes": "Yemen National Information Center - immigration/passports page - checked 2026-06-14 for outbound_official research; page covers inbound visa conditions for foreigners entering Yemen only; no outbound list for Yemeni citizens"
     }
   ]
 }

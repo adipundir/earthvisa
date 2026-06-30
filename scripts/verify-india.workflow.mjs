@@ -6,7 +6,7 @@ export const meta = {
 
 const DATA_DIR = '/Users/adityapundir/Documents/Projects/project-bluewhale/data/countries';
 
-// [iso3, name] — destinations where IndiGo and our data disagree about India
+// [iso3, name] - destinations where IndiGo and our data disagree about India
 const TARGETS = [
   ['SLV', 'El Salvador'], ['TUN', 'Tunisia'], ['OMN', 'Oman'], ['QAT', 'Qatar'],
   ['DMA', 'Dominica'], ['HTI', 'Haiti'], ['JAM', 'Jamaica'], ['KNA', 'Saint Kitts and Nevis'],
@@ -34,15 +34,15 @@ const SCHEMA = {
 
 function prompt(iso3, name) {
   const file = `${DATA_DIR}/${iso3}.json`;
-  return `Determine how **${name}** (${iso3}) treats ORDINARY **Indian passport** holders for short tourist/business entry, and correct our record. An airline aggregator claims India is visa-free or visa-on-arrival here; verify the TRUTH from ${name}'s OWN official source — do NOT trust the aggregator.
+  return `Determine how **${name}** (${iso3}) treats ORDINARY **Indian passport** holders for short tourist/business entry, and correct our record. An airline aggregator claims India is visa-free or visa-on-arrival here; verify the TRUTH from ${name}'s OWN official source - do NOT trust the aggregator.
 
-## STEP 1 — official source
+## STEP 1 - official source
 Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch). Find ${name}'s official immigration / MFA / e-visa page (government domain) and read how Indian nationals enter. Fall back to Firecrawl (select:mcp__firecrawl-mcp__firecrawl_scrape) only if WebFetch is blocked. If ${name} has no usable official English page, say so and do not invent.
 
-## STEP 2 — classify India's treatment (ordinary passport)
+## STEP 2 - classify India's treatment (ordinary passport)
 One of: visa_free | visa_on_arrival | eta | e_visa | visa_required | conditional (only with a held third-country visa/permit). Capture max stay (days) and the exact official source_url. Note any condition (fee, pre-registration like HK, hotel booking, etc.).
 
-## STEP 3 — correct the file
+## STEP 3 - correct the file
 Read ${file}. Update ONLY the India-relevant data; keep everything else intact:
 - visa_free / visa_on_arrival / eta / e_visa → ensure an India entry exists in that level array {nationality:"India", iso3:"IND", max_stay_days, notes, source_url, source_official:true}, and remove any stale India entry from the other levels.
 - conditional → put it in conditional_access (basis=credential, eligible_nationalities:["India"], credential{...}) and ensure India is NOT in any visa_policy level.

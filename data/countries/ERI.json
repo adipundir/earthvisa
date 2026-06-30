@@ -3,13 +3,135 @@
   "iso3": "ERI",
   "name": "Eritrea",
   "region": "Africa",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa",
+      "purpose": "Allows foreign nationals to visit Eritrea for tourism purposes. Valid for one month from arrival; may be extended in Asmara.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": 15,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Fee is USD 50 per US Embassy (Washington D.C.) plus $23 in additional fees ($13 photo printing + $10 service fee). Australian consulate charges AUD 90 (adult) / AUD 45 (under 18). Validity 90 days from issue; upon arrival, permitted stay is one month. Urgent processing available (+AUD 20 surcharge at Melbourne consulate). Minors under 17 require birth certificate copies."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "Allows foreign nationals to enter Eritrea for business activities. Available in durations of up to 1 month, 3 months, 6 months, or 1 year.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": 100,
+      "processing_days_min": 15,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Fee tiers at US Embassy: $100 (single/1 month), $150 (3 months), $200 (6 months), $300 (1 year) plus $23 additional fees. Australian consulate charges AUD 170 (up to 1 month), AUD 240 (up to 3 months). Requires employment/business letter and proof of funds."
+    },
+    {
+      "category": "work",
+      "name": "Employment Visa",
+      "purpose": "Allows foreign nationals to enter Eritrea for employment purposes under a specific Eritrean employer sponsorship.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 100,
+      "processing_days_min": 15,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Requires sponsorship letter from Eritrean employer detailing role and duration. Australian consulate charges AUD 170. Additional $23 in fees ($13 photo printing + $10 service fee) at US embassy."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "Allows foreign nationals to enter Eritrea to undertake study at an Eritrean educational institution.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": 15,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Requires acceptance/enrollment letter from Eritrean school and proof of financial support. Additional $23 in fees ($13 photo printing + $10 service fee) at US embassy."
+    },
+    {
+      "category": "family",
+      "name": "Family Visit Visa",
+      "purpose": "Allows foreign nationals (or Eritreans without valid national ID) to visit family members resident in Eritrea.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 70,
+      "processing_days_min": 15,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Requires details of Eritrean reference/host resident in Eritrea. Australian consulate charges AUD 120 (adult) / AUD 60 (under 18). Minors under 24 born to Eritrean parents must include copies of birth certificates. Additional $23 in fees at US embassy."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Allows foreign nationals to transit through Eritrea en route to a final destination.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 30,
+      "processing_days_min": 15,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Requires air ticket and proof of valid visa for final destination country. Additional $23 in fees ($13 photo printing + $10 service fee) at US embassy."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Official Visa",
+      "purpose": "Issued to holders of G4 visas, diplomats, or those invited by Eritrean government ministries or organizations for official purposes.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": 15,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Gratis (no fee). Requires diplomatic note from sponsoring ministry or organization. At US Embassy, available only to G4 visa holders. At Australian consulate, available to government/organizational invitees."
+    },
+    {
+      "category": "other",
+      "name": "Other Visa",
+      "purpose": "Miscellaneous visa category for purposes not covered by the named categories above.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": 70,
+      "processing_days_min": 15,
+      "processing_days_max": 28,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Listed as a separate fee category on the US Embassy visa page at $70. No further description provided by the embassy. Additional $23 in fees apply."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
         "nationality": "Kenya",
         "iso3": "KEN",
         "max_stay_days": null,
-        "notes": "Kenya and Eritrea permanently abolished visa requirements for their citizens, announced by Kenyan President Ruto on February 9, 2023. The term 'permanently' is used; no specific maximum stay or conditions were published in the official announcement. Reciprocal ordinary-passport bilateral waiver. As of 2024, Kenya's Immigration also waived ETA fees for Eritreans, confirming the arrangement remains in effect.",
+        "notes": "Kenya and Eritrea permanently abolished visa requirements for their citizens, announced by Kenyan President Ruto on February 9, 2023, during bilateral talks at State House Nairobi. The term 'permanently' is used; no specific maximum stay or conditions were published in the official announcement. Reciprocal ordinary-passport bilateral waiver.",
         "source_url": "https://www.president.go.ke/kenya-eritrea-permanently-abolish-visa-requirements-for-their-citizens/",
         "source_official": true
       }
@@ -25,7 +147,7 @@
       "https://www.president.go.ke/kenya-eritrea-permanently-abolish-visa-requirements-for-their-citizens/",
       "https://www.refworld.org/legal/decreees/natlegbod/1992/17881"
     ],
-    "notes": "Official Eritrean embassy/consulate sources (Washington D.C., Melbourne AU, London UK) state that a visa is required for all non-Eritreans and for Eritreans without a valid National ID. No official Eritrean government website publishes a comprehensive list of visa-exempt nationalities. The 1992 Regulation No. 4/1992 on Travel Documents and Immigration establishes the visa framework. The Kenya-Eritrea mutual visa waiver was confirmed on Kenya's official State House website (president.go.ke) on February 9, 2023 as a permanent abolition of visa requirements for both countries' citizens; no specific max stay was published. Uganda visa-free entry for Ugandan nationals into Eritrea is reported by aggregators (TIMATIC/Wikipedia) but not confirmed from any official Eritrean or Ugandan government source specifically covering Eritrea's admission policy — omitted per research policy. Ethiopia and Sudan visa-on-arrival for Eritrea is reported only via TIMATIC/Wikipedia aggregators — not confirmed from any official source — omitted. Eritrean nationals holding a valid National ID do not require a visa to enter Eritrea. Children of Eritrean parentage under 18 holding an Eritrean under-age ID card may also travel without a visa (confirmed by UK Embassy consular services page). The e-visa portal evisa.mfa.gov.er returned ECONNREFUSED at time of research. Eritrea withdrew from IGAD on December 12, 2025 (confirmed via shabait.com). COMESA Free Movement Protocol signed only by Burundi, Kenya, Rwanda, and Zimbabwe — not Eritrea."
+    "notes": "Official Eritrean embassy/consulate sources (Washington D.C., Melbourne AU, London UK) state that a visa is required for all non-Eritreans and for Eritreans without a valid National ID. No official Eritrean government website publishes a comprehensive list of visa-exempt nationalities. The 1992 Regulation No. 4/1992 on Travel Documents and Immigration establishes the visa framework. The Kenya-Eritrea mutual visa waiver was confirmed on Kenya's official State House website (president.go.ke) on February 9, 2023 as a permanent abolition of visa requirements for both countries' citizens; no specific max stay was published. Uganda visa-free entry for Ugandan nationals into Eritrea is reported by aggregators (TIMATIC/Wikipedia) but not confirmed from any official Eritrean or Ugandan government source specifically covering Eritrea's admission policy - omitted per research policy. Ethiopia and Sudan visa-on-arrival for Eritrea is reported only via TIMATIC/Wikipedia aggregators - not confirmed from any official source - omitted. Eritrean nationals holding a valid National ID do not require a visa to enter Eritrea. Children of Eritrean parentage under 18 holding an Eritrean under-age ID card may also travel without a visa (confirmed by UK Embassy consular services page). The e-visa portal evisa.mfa.gov.er returned ECONNREFUSED at time of research. Eritrea withdrew from IGAD on December 12, 2025 (confirmed via shabait.com press release, though page now returns empty body on re-fetch). COMESA Free Movement Protocol signed only by Burundi, Kenya, Rwanda, and Zimbabwe - not Eritrea."
   },
   "cbi": {
     "has_program": false,
@@ -70,28 +192,51 @@
   "data_quality": {
     "completeness": "low",
     "validation_notes": [
-      "ADDED: Kenya (KEN) to visa_free based on official Kenya State House announcement (president.go.ke, Feb 9 2023) confirming permanent abolition of visa requirements for both countries' citizens — this was previously omitted despite having an official-government-side source (Kenya's own State House website).",
-      "REMOVED: immigration.go.ug from official_domains — it was listed as an official source for Eritrea's policy toward Ugandans, but that page reflects Uganda's inbound visa policy (who Uganda admits), not Eritrea's outbound/inbound visa policy toward Ugandans. Source mismatch corrected.",
-      "VERIFIED: China conditional_access entry (diplomatic/service/official passports, 30 days, in force 2015-04-15) — confirmed unchanged against cs.mfa.gov.cn.",
+      "ADDED: Kenya (KEN) to visa_free based on official Kenya State House announcement (president.go.ke, Feb 9 2023) confirming permanent abolition of visa requirements for both countries' citizens - this was previously omitted despite having an official-government-side source (Kenya's own State House website).",
+      "REMOVED: immigration.go.ug from official_domains - it was listed as an official source for Eritrea's policy toward Ugandans, but that page reflects Uganda's inbound visa policy (who Uganda admits), not Eritrea's outbound/inbound visa policy toward Ugandans. Source mismatch corrected.",
+      "VERIFIED: China conditional_access entry (diplomatic/service/official passports, 30 days, in force 2015-04-15) - confirmed unchanged against cs.mfa.gov.cn.",
       "VERIFIED: No e-visa portal accessible (evisa.mfa.gov.er returns ECONNREFUSED on re-check).",
-      "VERIFIED: Libya diplomatic/service passport exemption (claimed 60 days by aggregators) — Libya MFA (foreign.gov.ly) has no mention of Eritrea exemption; only aggregator/Wikipedia sources cite this — NOT added per research policy requiring official-source confirmation.",
-      "VERIFIED: Uganda visa-free for Ugandans entering Eritrea — only aggregator sources; no official Eritrean or Ugandan government source confirmed Eritrea's admission policy toward Ugandans — NOT added.",
-      "VERIFIED: Ethiopia/Sudan visa on arrival — only TIMATIC/Wikipedia aggregators; no official source — NOT added.",
-      "VERIFIED: Eritrea withdrawn from IGAD December 12, 2025 per shabait.com.",
-      "VERIFIED: COMESA Free Movement Protocol — Eritrea not a signatory per comesa.int."
+      "VERIFIED: Libya diplomatic/service passport exemption (claimed 60 days by aggregators) - Libya MFA (foreign.gov.ly) has no mention of Eritrea exemption; only aggregator/Wikipedia sources cite this - NOT added per research policy requiring official-source confirmation.",
+      "VERIFIED: Uganda visa-free for Ugandans entering Eritrea - only aggregator sources; no official Eritrean or Ugandan government source confirmed Eritrea's admission policy toward Ugandans - NOT added.",
+      "VERIFIED: Ethiopia/Sudan visa on arrival - only TIMATIC/Wikipedia aggregators; no official source - NOT added.",
+      "VERIFIED: Eritrea withdrawn from IGAD December 12, 2025 per shabait.com (page body empty on re-fetch; retained from prior verified pass).",
+      "VERIFIED: COMESA Free Movement Protocol - Eritrea not a signatory per comesa.int.",
+      "ADDED: visa_types array populated from official embassy sources (US Embassy Washington D.C., Melbourne AU consulate, London UK embassy). 8 visa categories documented: tourist, business, employment/work, student, family, transit, official/diplomatic, other.",
+      "RE-VERIFIED 2026-06-27: Kenya (KEN) visa_free entry re-confirmed - president.go.ke announcement still live and accessible; permanent bilateral waiver unchanged.",
+      "RE-VERIFIED 2026-06-27: China conditional_access entry (diplomatic/service/public affairs passports, max 30 days, in force 2015-04-15) re-confirmed against cs.mfa.gov.cn - unchanged.",
+      "RE-VERIFIED 2026-06-27: us.embassyeritrea.org/visa/ re-fetched - no bilateral visa-free agreements or exemptions listed; visa required for all non-Eritreans confirmed.",
+      "RE-VERIFIED 2026-06-27: ericon.org.au/services/visa/ re-fetched - no visa-free nationalities or bilateral agreements mentioned.",
+      "RE-VERIFIED 2026-06-27: Uganda - Uganda's immigration.go.ug returned HTTP 403; the March 2026 Uganda visa-free expansion (Africanews, March 2026) confirms Uganda granted visa-free to Eritrean citizens traveling TO Uganda, NOT Ugandans entering Eritrea. Wikipedia still claims Ugandans enter Eritrea visa-free but no official Eritrean or Ugandan government source confirms Eritrea's admission policy toward Ugandan nationals. NOT added.",
+      "RE-VERIFIED 2026-06-27: shabait.com IGAD withdrawal press release page did not return content on re-fetch (empty body); IGAD withdrawal note retained from prior verified pass.",
+      "RE-VERIFIED 2026-06-27: Libya diplomatic/service passport exemption still only cited by aggregators (Wikipedia claims 60 days); no official source found. NOT added.",
+      "RE-VERIFIED 2026-06-27: No changes to visa_free, visa_on_arrival, e_visa, or eta lists. Record preserved as-is per official-source-first policy.",
+      "RE-VERIFIED 2026-06-29: us.embassyeritrea.org/visa/ re-fetched - fee structure confirmed as $50 tourist/$70 family/$30 transit/$50 student/$100 employment/$100-$300 business/$70 other/gratis official, plus $23 in additional fees ($13 photo + $10 service). No bilateral exemptions. No change to visa_policy.",
+      "RE-VERIFIED 2026-06-29: ericon.org.au/services/visa/ re-fetched - Australian consulate fees confirmed (AUD 90/45 tourist, AUD 120/60 family, AUD 170/240 business). Exit visa requirement for Eritrean nationals confirmed. No bilateral exemptions.",
+      "RE-VERIFIED 2026-06-29: eritreanembassyuk.org.uk/services-3/ re-fetched - UK embassy references updated fee schedule 'Consular Fees-Updated-Nov-25' (November 2025 update); no bilateral exemptions; children under 18 with Eritrean parentage may use Under-Age ID card. No visa_policy changes.",
+      "RE-VERIFIED 2026-06-29: president.go.ke Kenya-Eritrea announcement re-fetched - still live; confirms permanent abolition at State House Nairobi February 9 2023; applies to ordinary passports; no max stay specified. Kenya (KEN) visa_free entry unchanged.",
+      "RE-VERIFIED 2026-06-29: cs.mfa.gov.cn China bilateral exemption re-fetched - confirmed diplomatic/service/public affairs passports, max 30 days, in force 2015-04-15. conditional_access unchanged.",
+      "RE-VERIFIED 2026-06-29: gov.uk/foreign-travel-advice/eritrea - confirms all visitors must obtain visa beforehand; no exemptions listed. No change.",
+      "RE-VERIFIED 2026-06-29: evisa.mfa.gov.er - ECONNREFUSED again. E-visa portal remains inaccessible.",
+      "RE-VERIFIED 2026-06-29: WebSearch for new 2025-2026 Eritrea bilateral agreements - no new official bilateral visa agreements found. No changes to access lists.",
+      "RE-VERIFIED 2026-06-29: Wikipedia Eritrea visa policy - cites only TIMATIC (2017); Uganda/Libya/Ethiopia/Sudan entries unconfirmed by official sources. NOT added.",
+      "RE-VERIFIED 2026-06-29: No changes to visa_free, visa_on_arrival, e_visa, or eta lists. Record confirmed correct as of 2026-06-29."
     ],
     "gaps": [
       "No publicly accessible official Eritrean government immigration portal found (evisa.mfa.gov.er returns ECONNREFUSED; no mfa.gov.er or immigration.gov.er accessible).",
       "Kenya-Eritrea visa waiver (Feb 9, 2023): confirmed as permanent bilateral waiver from Kenya's official State House site; however, no official maximum stay published in the announcement. No Eritrean government source independently confirms. Max stay therefore recorded as null.",
-      "Uganda visa-free entry for Ugandans into Eritrea is widely cited by aggregators (TIMATIC/Wikipedia) and Uganda's own immigration page lists Eritrea as visa-exempt for Ugandans traveling to Uganda (not vice versa). No Eritrean official source nor specific Ugandan official source confirms Eritrea's policy for Ugandan nationals — omitted.",
-      "Ethiopia and Sudan visa-on-arrival for Eritrea reported only via TIMATIC/Wikipedia aggregators — not confirmed from any official Eritrean government source — omitted.",
-      "Libya diplomatic/service passport visa exemption (reportedly 60 days) cited in aggregators but not found on Libya's MFA website (foreign.gov.ly) or any official source — omitted.",
+      "Uganda visa-free entry for Ugandans into Eritrea is widely cited by aggregators (TIMATIC/Wikipedia) and Uganda's own immigration page lists Eritrea as visa-exempt for Ugandans traveling to Uganda (not vice versa). No Eritrean official source nor specific Ugandan official source confirms Eritrea's policy for Ugandan nationals - omitted.",
+      "Ethiopia and Sudan visa-on-arrival for Eritrea reported only via TIMATIC/Wikipedia aggregators - not confirmed from any official Eritrean government source - omitted.",
+      "Libya diplomatic/service passport visa exemption (reportedly 60 days per Wikipedia/TIMATIC) cited in aggregators but not found on Libya's MFA website (foreign.gov.ly) or any official source - omitted.",
       "No official Eritrean government page in English lists specific bilateral visa agreements or exemptions for foreign nationals.",
-      "Eritrea's official government website shabait.com (Ministry of Information) does not publish immigration/visa policy details.",
+      "Eritrea's official government website shabait.com (Ministry of Information) does not publish immigration/visa policy details; IGAD withdrawal press release page now returns empty body.",
       "No data found on residency by investment, golden visa, or fast-track/skilled migrant schemes from any official source.",
       "No credential-based conditional access rules found (no rules granting Eritrea entry based on holding a US visa, Schengen visa, UK visa, residence permit, or permanent residency in a third country) from any official Eritrean government source.",
       "No OCI or similar special diaspora/heritage status rules applicable to Eritrea entry found from any official source.",
-      "Eritrea has not signed the COMESA Free Movement Protocol (per comesa.int); not a member of IGAD as of December 2025."
+      "Eritrea has not signed the COMESA Free Movement Protocol (per comesa.int); not a member of IGAD as of December 2025.",
+      "Fees listed in USD are from US Embassy (Washington D.C.); AUD fees from Melbourne consulate differ. No single authoritative USD fee schedule exists from Eritrean central government.",
+      "max_stay_days for business, employment, and transit visas not definitively stated in embassy sources; stay is implicitly one month from arrival for all single-entry visas based on tourist visa phrasing.",
+      "No digital nomad, retirement, investment, working holiday, or medical visa categories found in any official Eritrean source.",
+      "UK Eritrean Embassy fee schedule updated to 'Nov-25' version but fee amounts not published in text on the page - only a fee schedule image referenced."
     ]
   },
   "outbound_official": {
@@ -101,31 +246,31 @@
   "sources_checked": [
     {
       "url": "https://us.embassyeritrea.org/visa/",
-      "description": "Eritrean Embassy Washington D.C. — official embassy visa page; confirms visa required for all non-Eritreans",
+      "description": "Eritrean Embassy Washington D.C. - official embassy visa page; lists Tourist ($50), Business ($100-$300), Employment ($100), Family Visit ($70), Official (gratis), Student ($50), Transit ($30), Other ($70) visa categories; $23 in additional fees per application; 15 business day processing minimum. Re-verified 2026-06-29.",
       "official": true,
       "domain": "us.embassyeritrea.org"
     },
     {
       "url": "https://ericon.org.au/services/visa/",
-      "description": "Consulate of the State of Eritrea in Melbourne, Australia — official visa services page (timed out on re-check; previously confirmed visa required for all non-Eritreans)",
+      "description": "Consulate of the State of Eritrea in Melbourne, Australia - official visa services page; confirms Tourist (AUD 90/45), Family Visit (AUD 120/60), Business/Employment (AUD 170-240), Official (gratis) categories; processing up to 4 weeks; validity 90 days from issue. Re-verified 2026-06-29.",
       "official": true,
       "domain": "ericon.org.au"
     },
     {
       "url": "https://www.eritreanembassyuk.org.uk/services-3/",
-      "description": "Eritrean Embassy UK London — consular services page; confirms visa required; Eritreans under 35 without national ID must apply like any non-national",
+      "description": "Eritrean Embassy UK London - consular services page; confirms visa required; lists Tourist, Business, Official, Family Visit, Other visa types; appointments required; fee schedule image 'Consular Fees-Updated-Nov-25' referenced (fees not in text); children under 18 with Eritrean parentage may use Under-Age ID card. Re-verified 2026-06-29.",
       "official": true,
       "domain": "eritreanembassyuk.org.uk"
     },
     {
       "url": "https://www.gov.uk/foreign-travel-advice/eritrea/entry-requirements",
-      "description": "UK FCDO travel advice — entry requirements for Eritrea; confirms all visitors must obtain a visa prior to entry; no visa-free exceptions listed",
+      "description": "UK FCDO travel advice - entry requirements for Eritrea; confirms all visitors must obtain a visa prior to entry; no visa-free exceptions listed. Re-verified 2026-06-29.",
       "official": false,
       "domain": "gov.uk"
     },
     {
       "url": "https://www.president.go.ke/kenya-eritrea-permanently-abolish-visa-requirements-for-their-citizens/",
-      "description": "Official Website of the President of the Republic of Kenya — confirms bilateral permanent abolition of visa requirements for Kenyan and Eritrean citizens, announced February 9, 2023",
+      "description": "Official Website of the President of the Republic of Kenya - confirms bilateral permanent abolition of visa requirements for Kenyan and Eritrean citizens, announced February 9, 2023 at State House Nairobi. Re-verified 2026-06-29.",
       "official": true,
       "domain": "president.go.ke"
     },
@@ -138,44 +283,44 @@
     },
     {
       "url": "https://shabait.com/2025/12/12/press-release-eritrea-has-withdrawn-its-membership-from-igad/",
-      "description": "Eritrea Ministry of Information — official press release confirming IGAD withdrawal on December 12, 2025",
+      "description": "Eritrea Ministry of Information - official press release confirming IGAD withdrawal on December 12, 2025; page returns empty body on re-fetch as of 2026-06-27 and 2026-06-29.",
       "official": true,
       "domain": "shabait.com"
     },
     {
       "url": "https://evisa.mfa.gov.er/",
-      "description": "Purported Eritrean official e-visa portal — ECONNREFUSED on re-check; site not accessible",
+      "description": "Purported Eritrean official e-visa portal - ECONNREFUSED on re-checks; site not accessible as of 2026-06-29.",
       "official": false,
       "domain": "evisa.mfa.gov.er",
       "notes": "Connection refused; site does not appear to exist at time of research"
     },
     {
       "url": "https://www.comesa.int/the-comesa-protocol-on-free-movement-of-persons-labour-services-the-right-of-establishment-and-residence-free-movement-protocol/",
-      "description": "COMESA official website — Free Movement Protocol; confirms Eritrea has not signed/ratified the protocol",
+      "description": "COMESA official website - Free Movement Protocol; confirms Eritrea has not signed/ratified the protocol",
       "official": true,
       "domain": "comesa.int"
     },
     {
       "url": "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
-      "description": "China Ministry of Foreign Affairs — official list of mutual visa exemption agreements; confirms China-Eritrea bilateral agreement for diplomatic, service, and public affairs passports, entered into force 2015-04-15, max stay 30 days",
+      "description": "China Ministry of Foreign Affairs - official list of mutual visa exemption agreements; confirms China-Eritrea bilateral agreement for diplomatic, service, and public affairs passports, entered into force 2015-04-15, max stay 30 days. Re-verified 2026-06-29.",
       "official": true,
       "domain": "cs.mfa.gov.cn"
     },
     {
       "url": "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/eritrea",
-      "description": "Serbia Ministry of Foreign Affairs — confirms diplomatic and official passport holders from Serbia require a visa for Eritrea, supporting bilateral-only nature of China exemption",
+      "description": "Serbia Ministry of Foreign Affairs - confirms diplomatic and official passport holders from Serbia require a visa for Eritrea, supporting bilateral-only nature of China exemption",
       "official": true,
       "domain": "mfa.gov.rs"
     },
     {
       "url": "https://foreign.gov.ly/MOFA/",
-      "description": "Libya Ministry of Foreign Affairs — re-checked; no mention of Eritrea or visa exemption agreement found on the page",
+      "description": "Libya Ministry of Foreign Affairs - re-checked; no mention of Eritrea or visa exemption agreement found on the page",
       "official": true,
       "domain": "foreign.gov.ly"
     },
     {
       "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Eritrea",
-      "description": "Wikipedia: Visa policy of Eritrea — aggregator source consulted to identify leads; cites Kenya/Uganda visa-free (ordinary), Ethiopia/Sudan visa on arrival, China/Libya diplomatic exemptions. Non-official; used only for leads.",
+      "description": "Wikipedia: Visa policy of Eritrea - aggregator source consulted to identify leads; cites Kenya/Uganda visa-free (ordinary), Ethiopia/Sudan visa on arrival, China/Libya diplomatic exemptions; sole citation is TIMATIC (2017) - non-official; used only for leads. Re-verified 2026-06-29.",
       "official": false,
       "domain": "en.wikipedia.org"
     }

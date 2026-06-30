@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import type { AccessLevel } from "@/lib/types";
 
@@ -21,6 +22,62 @@ const LEVEL_COLORS: Record<AccessLevel, string> = {
   eta: "text-eta bg-eta/10 ring-eta/30",
   e_visa: "text-evisa bg-evisa/10 ring-evisa/30",
 };
+
+// How many entries to show before the in-place "Show all" disclosure.
+const PREVIEW_VF = 30;
+const PREVIEW_VOA = 20;
+const PREVIEW_ETA = 15;
+
+// aria-hidden chevron that rotates when its parent <details> is open.
+function Chevron() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="size-3.5 shrink-0 text-ink-mute transition-transform duration-200 group-open:rotate-180"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
+// A single nationality entry. The whole ≥44px row is one tappable next/link.
+function NationalityRow({
+  iso3,
+  maxStayDays,
+  levelClass,
+  label,
+}: {
+  iso3: string;
+  maxStayDays: number | null;
+  levelClass: string;
+  label: string;
+}) {
+  return (
+    <Link
+      href={`/passport/${nameToSlug(nameFor(iso3))}`}
+      className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+    >
+      <span className="text-xl">{flagFor(iso3)}</span>
+      <div className="min-w-0">
+        <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+          {nameFor(iso3)}
+        </span>
+        {maxStayDays != null && (
+          <div className="mono text-[10px] text-ink-mute">≤ {maxStayDays} days</div>
+        )}
+      </div>
+      <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${levelClass}`}>
+        {label}
+      </span>
+    </Link>
+  );
+}
 
 function buildReverseIndex(destIso3: string) {
   const accessByLevel: Record<AccessLevel, { iso3: string; maxStayDays: number | null }[]> = {
@@ -150,7 +207,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             name: `How many countries can visit ${country.name} without a visa?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `${vfCount} nationalities can visit ${country.name} completely visa-free in 2026. Additionally, ${voaCount} countries can obtain a visa on arrival${etaCount > 0 ? `, and ${etaCount} can enter via eTA or e-Visa` : ""} — bringing the total to ${totalWithAccess} nationalities with streamlined entry to ${country.name}.`,
+              text: `${vfCount} nationalities can visit ${country.name} completely visa-free in 2026. Additionally, ${voaCount} countries can obtain a visa on arrival${etaCount > 0 ? `, and ${etaCount} can enter via eTA or e-Visa` : ""} - bringing the total to ${totalWithAccess} nationalities with streamlined entry to ${country.name}.`,
             },
           },
           {
@@ -158,7 +215,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             name: `How do I apply for a ${country.name} tourist visa?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `If your nationality is not eligible for visa-free entry or visa on arrival to ${country.name}, you typically need to apply at a ${country.name} embassy or consulate in your home country. Requirements generally include a valid passport, completed application form, passport-sized photos, proof of accommodation and onward travel, travel insurance, and proof of sufficient funds. Processing times and fees vary — check the official ${country.name} immigration authority website for current requirements.`,
+              text: `If your nationality is not eligible for visa-free entry or visa on arrival to ${country.name}, you typically need to apply at a ${country.name} embassy or consulate in your home country. Requirements generally include a valid passport, completed application form, passport-sized photos, proof of accommodation and onward travel, travel insurance, and proof of sufficient funds. Processing times and fees vary - check the official ${country.name} immigration authority website for current requirements.`,
             },
           },
           {
@@ -194,9 +251,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
             <nav className="mono mb-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
-              <a href="/" className="hover:text-ink transition">Passport Power</a>
+              <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passport Power</Link>
               <span>/</span>
-              <a href="/destination" className="hover:text-ink transition">Destinations</a>
+              <Link href="/destination" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Destinations</Link>
               <span>/</span>
               <span className="text-ink">{country.name}</span>
             </nav>
@@ -237,7 +294,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
 
-          {/* Intro paragraph — keyword-rich */}
+          {/* Intro paragraph - keyword-rich */}
           <section className="mt-10 max-w-3xl">
             <p className="text-base leading-relaxed text-ink-soft">
               Citizens of <strong className="text-ink">{vfCount} countries</strong> can visit{" "}
@@ -269,36 +326,26 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 Countries Whose Citizens Can Visit {country.name} Visa-Free ({vfCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                Passport holders from these countries can enter {country.name} without a visa — no embassy appointment, no advance fee.
+                Passport holders from these countries can enter {country.name} without a visa - no embassy appointment, no advance fee.
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                {accessByLevel.visa_free.slice(0, 30).map((e) => (
-                  <div key={e.iso3} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                    <span className="text-xl">{flagFor(e.iso3)}</span>
-                    <div className="min-w-0">
-                      <a
-                        href={`/passport/${nameToSlug(nameFor(e.iso3))}`}
-                        className="font-display text-sm font-medium text-ink hover:text-stamp transition"
-                      >
-                        {nameFor(e.iso3)}
-                      </a>
-                      {e.maxStayDays != null && (
-                        <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>
-                      )}
-                    </div>
-                    <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS.visa_free}`}>
-                      Visa-free
-                    </span>
-                  </div>
+                {accessByLevel.visa_free.slice(0, PREVIEW_VF).map((e) => (
+                  <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_free} label="Visa-free" />
                 ))}
               </div>
-              {vfCount > 30 && (
-                <p className="mono mt-3 text-[11px] text-ink-mute">
-                  + {vfCount - 30} more nationalities admitted visa-free.{" "}
-                  <a href={`/?dest=${destIso3}`} className="text-stamp hover:underline">
-                    View all on Passport Power →
-                  </a>
-                </p>
+              {vfCount > PREVIEW_VF && (
+                <details className="group mt-2.5">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                    <span className="group-open:hidden">Show all {vfCount}</span>
+                    <span className="hidden group-open:inline">Show fewer</span>
+                    <Chevron />
+                  </summary>
+                  <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                    {accessByLevel.visa_free.slice(PREVIEW_VF).map((e) => (
+                      <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_free} label="Visa-free" />
+                    ))}
+                  </div>
+                </details>
               )}
             </section>
           )}
@@ -310,36 +357,26 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 Nationalities That Get Visa on Arrival to {country.name} ({voaCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                Citizens of these countries can obtain a visa stamp at the {country.name} border on arrival — no advance embassy visit required.
+                Citizens of these countries can obtain a visa stamp at the {country.name} border on arrival - no advance embassy visit required.
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                {accessByLevel.visa_on_arrival.slice(0, 20).map((e) => (
-                  <div key={e.iso3} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                    <span className="text-xl">{flagFor(e.iso3)}</span>
-                    <div className="min-w-0">
-                      <a
-                        href={`/passport/${nameToSlug(nameFor(e.iso3))}`}
-                        className="font-display text-sm font-medium text-ink hover:text-stamp transition"
-                      >
-                        {nameFor(e.iso3)}
-                      </a>
-                      {e.maxStayDays != null && (
-                        <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>
-                      )}
-                    </div>
-                    <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS.visa_on_arrival}`}>
-                      On arrival
-                    </span>
-                  </div>
+                {accessByLevel.visa_on_arrival.slice(0, PREVIEW_VOA).map((e) => (
+                  <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_on_arrival} label="On arrival" />
                 ))}
               </div>
-              {voaCount > 20 && (
-                <p className="mono mt-3 text-[11px] text-ink-mute">
-                  + {voaCount - 20} more.{" "}
-                  <a href={`/?dest=${destIso3}`} className="text-stamp hover:underline">
-                    View all on Passport Power →
-                  </a>
-                </p>
+              {voaCount > PREVIEW_VOA && (
+                <details className="group mt-2.5">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                    <span className="group-open:hidden">Show all {voaCount}</span>
+                    <span className="hidden group-open:inline">Show fewer</span>
+                    <Chevron />
+                  </summary>
+                  <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                    {accessByLevel.visa_on_arrival.slice(PREVIEW_VOA).map((e) => (
+                      <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_on_arrival} label="On arrival" />
+                    ))}
+                  </div>
+                </details>
               )}
             </section>
           )}
@@ -351,31 +388,26 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 eTA &amp; e-Visa Eligible Countries for {country.name} ({etaCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                These nationalities can apply for an electronic travel authorisation or e-Visa online before travel — no embassy visit required.
+                These nationalities can apply for an electronic travel authorisation or e-Visa online before travel - no embassy visit required.
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                {etaAndEvisa.slice(0, 15).map((e) => (
-                  <div key={e.iso3} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                    <span className="text-xl">{flagFor(e.iso3)}</span>
-                    <div className="min-w-0">
-                      <a
-                        href={`/passport/${nameToSlug(nameFor(e.iso3))}`}
-                        className="font-display text-sm font-medium text-ink hover:text-stamp transition"
-                      >
-                        {nameFor(e.iso3)}
-                      </a>
-                      {e.maxStayDays != null && (
-                        <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>
-                      )}
-                    </div>
-                    <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS.eta}`}>
-                      eTA
-                    </span>
-                  </div>
+                {etaAndEvisa.slice(0, PREVIEW_ETA).map((e) => (
+                  <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.eta} label="eTA" />
                 ))}
               </div>
-              {etaCount > 15 && (
-                <p className="mono mt-3 text-[11px] text-ink-mute">+ {etaCount - 15} more.</p>
+              {etaCount > PREVIEW_ETA && (
+                <details className="group mt-2.5">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                    <span className="group-open:hidden">Show all {etaCount}</span>
+                    <span className="hidden group-open:inline">Show fewer</span>
+                    <Chevron />
+                  </summary>
+                  <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                    {etaAndEvisa.slice(PREVIEW_ETA).map((e) => (
+                      <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.eta} label="eTA" />
+                    ))}
+                  </div>
+                </details>
               )}
             </section>
           )}
@@ -397,23 +429,23 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 },
                 {
                   q: `How many countries can visit ${country.name} without a visa?`,
-                  a: `${vfCount} nationalities can visit ${country.name} completely visa-free in 2026. Additionally, ${voaCount} countries can obtain a visa on arrival${etaCount > 0 ? `, and ${etaCount} can enter via eTA or e-Visa` : ""} — bringing the total to ${totalWithAccess} nationalities with streamlined entry to ${country.name}.`,
+                  a: `${vfCount} nationalities can visit ${country.name} completely visa-free in 2026. Additionally, ${voaCount} countries can obtain a visa on arrival${etaCount > 0 ? `, and ${etaCount} can enter via eTA or e-Visa` : ""} - bringing the total to ${totalWithAccess} nationalities with streamlined entry to ${country.name}.`,
                 },
                 {
                   q: `How do I apply for a ${country.name} tourist visa?`,
-                  a: `If your nationality is not eligible for visa-free entry or visa on arrival to ${country.name}, you typically need to apply at a ${country.name} embassy or consulate in your home country. Requirements generally include a valid passport, completed application form, passport-sized photos, proof of accommodation and onward travel, travel insurance, and proof of sufficient funds. Processing times and fees vary — check the official ${country.name} immigration authority website for current requirements.`,
+                  a: `If your nationality is not eligible for visa-free entry or visa on arrival to ${country.name}, you typically need to apply at a ${country.name} embassy or consulate in your home country. Requirements generally include a valid passport, completed application form, passport-sized photos, proof of accommodation and onward travel, travel insurance, and proof of sufficient funds. Processing times and fees vary - check the official ${country.name} immigration authority website for current requirements.`,
                 },
                 {
                   q: `How long can I stay in ${country.name} without a visa?`,
                   a: `The maximum visa-free stay duration in ${country.name} varies by nationality. Common allowances are 30, 60, or 90 days. See the visa-free country list above for specific stay durations per nationality. Always verify with the official ${country.name} border authority before traveling.`,
                 },
               ].map(({ q, a }) => (
-                <details key={q} className="group py-4">
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-medium text-ink">
+                <details key={q} className="group">
+                  <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
-                    <span className="mono shrink-0 text-ink-mute">▾</span>
+                    <Chevron />
                   </summary>
-                  <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -427,12 +459,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             <p className="mt-2 text-sm text-ink-soft">
               Enter your passport to instantly see whether you need a visa for {country.name}, how long you can stay, and what documents you need.
             </p>
-            <a
-              href={`/?dest=${destIso3}`}
-              className="mono mt-5 inline-flex items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-paper-2"
+            <Link
+              href={`/visit?dest=${destIso3}`}
+              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-paper-2"
             >
               Check visa requirements on Passport Power →
-            </a>
+            </Link>
           </section>
 
         </div>

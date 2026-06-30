@@ -7,6 +7,173 @@
     "found": false,
     "note": "no official Burkina Faso government outbound visa-list page located; rely on destination-side data"
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Short-Stay Visa (Single Entry)",
+      "purpose": "Short-term tourism visits to Burkina Faso. Does not permit employment without prior authorization from the minister in charge of labor.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 55,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 33,000 FCFA. Hotel reservation required. Available online via applicant.visaburkina.bf, at embassies, or at the border. As of September 2025, African AU member-state nationals receive a fee waiver (must still apply). US citizens are banned effective 2026-01-01."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Short-Stay Visa (Multiple Entry)",
+      "purpose": "Short-term tourism visits to Burkina Faso with multiple entries. Does not permit employment without prior authorization.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 92,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 55,000 FCFA. Hotel reservation required. Multiple entries allowed but total stay must not exceed 90 days within validity period. As of September 2025, African AU member-state nationals receive a fee waiver."
+    },
+    {
+      "category": "business",
+      "name": "Business Short-Stay Visa (Single Entry)",
+      "purpose": "Short-term visits to Burkina Faso for business purposes. Does not permit employment without prior authorization from the minister in charge of labor.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 128,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 77,000 FCFA. Available online via applicant.visaburkina.bf, at embassies, or at the border. As of September 2025, African AU member-state nationals receive a fee waiver. US citizens are banned effective 2026-01-01."
+    },
+    {
+      "category": "business",
+      "name": "Business Short-Stay Visa (Multiple Entry)",
+      "purpose": "Short-term business visits to Burkina Faso with multiple entries. Does not permit employment without prior authorization.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 156,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 93,500 FCFA. Multiple entries allowed but total stay must not exceed 90 days within validity period. As of September 2025, African AU member-state nationals receive a fee waiver."
+    },
+    {
+      "category": "other",
+      "name": "Conference/Studies/Training/Visit Short-Stay Visa (Single Entry)",
+      "purpose": "Short-term visits to Burkina Faso for conferences, studies, training, or family/official visits. Does not permit employment without prior authorization.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 92,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 55,000 FCFA. Covers conferences, studies (short-term), training programs, and family/official visits under the short-stay framework. As of September 2025, African AU member-state nationals receive a fee waiver."
+    },
+    {
+      "category": "other",
+      "name": "Conference/Studies/Training/Visit Short-Stay Visa (Multiple Entry)",
+      "purpose": "Short-term visits to Burkina Faso for conferences, studies, training, or family/official visits with multiple entries.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 119,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 71,500 FCFA. Multiple entries allowed but total stay must not exceed 90 days within validity period. As of September 2025, African AU member-state nationals receive a fee waiver."
+    },
+    {
+      "category": "other",
+      "name": "Cooperation Visa (Single Entry)",
+      "purpose": "Short-term visa for cooperation-related activities in Burkina Faso, typically for NGO workers, development cooperation, and official bilateral cooperation visits.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 73,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 44,000 FCFA. As of September 2025, African AU member-state nationals receive a fee waiver."
+    },
+    {
+      "category": "other",
+      "name": "Cooperation Visa (Multiple Entry)",
+      "purpose": "Short-term visa with multiple entries for cooperation-related activities in Burkina Faso.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 133,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 79,500 FCFA. Multiple entries allowed but total stay must not exceed 90 days within validity period. As of September 2025, African AU member-state nationals receive a fee waiver."
+    },
+    {
+      "category": "other",
+      "name": "Express Short-Stay Visa",
+      "purpose": "Emergency or expedited short-stay visa for urgent travel to Burkina Faso when standard processing timelines are not feasible.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 174,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
+      "notes": "Fee is 104,500 FCFA. For emergency/urgent travel situations. Entry type (single/multiple) not specified on official page. As of September 2025, African AU member-state nationals receive a fee waiver."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For travelers passing through Burkina Faso in transit to another destination.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.visaburkina.bf/en/burkina-faso-entry-conditions/",
+      "notes": "Transit visa is listed as a distinct category on visaburkina.bf. Specific fee, duration, and validity details were not published on the official portal pages retrieved. Available via online application, at embassies, or at border immigration services."
+    },
+    {
+      "category": "other",
+      "name": "Long-Term Visa",
+      "purpose": "For extended stays in Burkina Faso beyond the 90-day short-stay limit, covering purposes such as work, extended study, family reunification, or residency.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.visaburkina.bf/en/burkina-faso-entry-conditions/",
+      "notes": "Listed as a distinct visa category on visaburkina.bf alongside short-term and transit visas. Specific subcategories, fees, durations, and conditions for the long-term visa were not published on the official portal pages retrieved. Applicants are directed to the e-visa portal or embassies."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -32,6 +199,14 @@
         "notes": "Niger is a fellow Alliance des États du Sahel (AES) member. Free movement within the AES is established under the AES Confederation framework (AES Confederation summit resolutions, July 2024). Max stay days not confirmed from an official AES treaty text.",
         "source_url": "https://gouvernement.gov.bf/",
         "source_official": true
+      },
+      {
+        "nationality": "Singapore",
+        "iso3": "SGP",
+        "max_stay_days": 30,
+        "notes": "Singaporeans may stay up to 30 days in Burkina Faso without a visa. Confirmed by Singapore Ministry of Foreign Affairs (mfa.gov.sg) official travel advisory for Burkina Faso. Passport must have at least 6 months validity from expected departure date. Yellow Fever vaccination certificate required.",
+        "source_url": "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/burkina-faso/",
+        "source_official": true
       }
     ],
     "visa_on_arrival": [],
@@ -40,7 +215,7 @@
         "nationality": "All nationalities except US citizens (see banned_nationalities below)",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "Burkina Faso operates an official e-visa system via applicant.visaburkina.bf (Ministry of Security / Direction Générale de la Police Nationale). The eVisa authorises entry and stay for a maximum of 90 days for tourism or family purposes. On 11 September 2025, the Council of Ministers (presided over by Capitaine Ibrahim TRAORÉ) adopted a measure waiving visa FEES (not visa requirement) for all nationals of African AU member states (all 54 African Union member states; excludes non-sovereign territories). African nationals still must apply online via the e-visa portal — this is a fee waiver only, not a visa exemption; confirmed by the Council of Ministers statement. Short-stay visa costs (for non-African applicants): Tourist visa 33,000 FCFA single / 55,000 FCFA multiple; Business visa 77,000 FCFA single / 93,500 FCFA multiple; Conference/Studies/Training/Visit visa 55,000 FCFA single / 71,500 FCFA multiple; Express visa 104,500 FCFA. IMPORTANT: US citizens are subject to a total entry and visa ban as of 1 January 2026. On 30 December 2025, Burkina Faso's Ministry of Foreign Affairs announced the adoption of equivalent/reciprocal visa restrictions against US citizens, in response to the US proclamation of 16 December 2025 placing Burkina Faso under a full entry ban. US citizens are currently unable to obtain a Burkina Faso visa or enter the country.",
+        "notes": "Burkina Faso operates an official e-visa system via applicant.visaburkina.bf (Ministry of Security / Direction Générale de la Police Nationale). The eVisa authorises entry and stay for a maximum of 90 days for tourism or family purposes. On 11 September 2025, the Council of Ministers (presided over by Capitaine Ibrahim TRAORÉ) adopted a measure waiving visa FEES (not visa requirement) for all nationals of African AU member states (all 54 African Union member states; excludes non-sovereign territories). African nationals still must apply online via the e-visa portal - this is a fee waiver only, not a visa exemption; confirmed by the Council of Ministers statement. Short-stay visa costs (for non-African applicants): Tourist visa 33,000 FCFA single / 55,000 FCFA multiple; Business visa 77,000 FCFA single / 93,500 FCFA multiple; Conference/Studies/Training/Visit visa 55,000 FCFA single / 71,500 FCFA multiple; Express visa 104,500 FCFA. IMPORTANT: US citizens are subject to a total entry and visa ban as of 1 January 2026. On 30 December 2025, Burkina Faso's Ministry of Foreign Affairs announced the adoption of equivalent/reciprocal visa restrictions against US citizens, in response to the US proclamation of 16 December 2025 placing Burkina Faso under a full entry ban. US citizens are currently unable to obtain a Burkina Faso visa or enter the country.",
         "source_url": "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
         "source_official": true
       }
@@ -64,9 +239,10 @@
       "https://www.visaburkina.bf/en/entry-visas-to-burkina-faso-the-short-term-visa/",
       "https://www.visaburkina.bf/en/stay-conditions-while-in-burkina-faso/",
       "https://applicant.visaburkina.bf/",
-      "https://gouvernement.gov.bf/"
+      "https://gouvernement.gov.bf/",
+      "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/burkina-faso/"
     ],
-    "notes": "The official e-visa portal (visaburkina.bf) is operated by the Ministry of Security / Direction Générale de la Police Nationale. The portal does not enumerate a public-facing list of visa-exempt nationalities by country. ECOWAS nationals retain visa-free rights confirmed both by the visaburkina.bf stay-conditions page and the December 2024 AES-ECOWAS Bamako joint declaration. Burkina Faso is now a member of the Alliance des États du Sahel (AES) with Mali and Niger. As of 11 September 2025, visa FEES are waived for all 54 AU member-state nationals (fee waiver only; visa application via e-visa portal still mandatory). As of 1 January 2026, US citizens are subject to a total reciprocal entry and visa ban. ECOWAS nationals and AES nationals (Mali, Niger) remain in visa_free as ordinary-nationality grants based on regional bloc agreements."
+    "notes": "The official e-visa portal (visaburkina.bf) is operated by the Ministry of Security / Direction Générale de la Police Nationale. The portal does not enumerate a public-facing list of visa-exempt nationalities by country. ECOWAS nationals retain visa-free rights confirmed both by the visaburkina.bf stay-conditions page and the December 2024 AES-ECOWAS Bamako joint declaration. Burkina Faso is now a member of the Alliance des États du Sahel (AES) with Mali and Niger. As of 11 September 2025, visa FEES are waived for all 54 AU member-state nationals (fee waiver only; visa application via e-visa portal still mandatory). As of 1 January 2026, US citizens are subject to a total reciprocal entry and visa ban. ECOWAS nationals and AES nationals (Mali, Niger) remain in visa_free as ordinary-nationality grants based on regional bloc agreements. Singapore nationals are visa-free for up to 30 days per Singapore MFA official travel advisory."
   },
   "cbi": {
     "has_program": false,
@@ -77,7 +253,7 @@
     "processing_time": "",
     "dual_citizenship_allowed": null,
     "residency_required": null,
-    "notes": "No citizenship-by-investment program found on any official Burkina Faso government source (visaburkina.bf, mae.gov.bf, gouvernement.gov.bf, presidencedufaso.bf, securite.gov.bf). Burkina Faso does not operate a CBI scheme. References found only on third-party aggregators and marketing sites — not accepted under the strict official-source rule."
+    "notes": "No citizenship-by-investment program found on any official Burkina Faso government source (visaburkina.bf, mae.gov.bf, gouvernement.gov.bf, presidencedufaso.bf, securite.gov.bf). Burkina Faso does not operate a CBI scheme. References found only on third-party aggregators and marketing sites - not accepted under the strict official-source rule."
   },
   "rbi": {
     "programs": []
@@ -87,7 +263,7 @@
   },
   "agreements": [
     "ECOWAS Free Movement Protocol (post-withdrawal: ECOWAS nationals retain right to visa-free entry into Burkina Faso per official visaburkina.bf stay conditions page and AES–ECOWAS joint declaration, Bamako, 14 December 2024)",
-    "Alliance des États du Sahel (AES) Confederation — free movement among Burkina Faso, Mali, Niger (AES summit resolutions, July 2024)",
+    "Alliance des États du Sahel (AES) Confederation - free movement among Burkina Faso, Mali, Niger (AES summit resolutions, July 2024)",
     "Burkina Faso–Turkey bilateral visa exemption agreement for diplomatic passport holders, signed 8–10 May 2013, in force 16 October 2013 (source: Republic of Türkiye Ministry of Foreign Affairs official page)",
     "Agreement between the Government of the Republic of the Philippines and the Government of Burkina Faso on the Waiver of Visa Requirements for Holders of Diplomatic, Official and Service Passports, signed Manila 7 April 2017, in force 7 July 2018 (source: Philippine Supreme Court E-Library)"
   ],
@@ -126,27 +302,38 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CHANGED: Added banned_nationalities array with US citizens entry ban effective 2026-01-01. Previously, the US ban was mentioned only as a note buried in the e_visa notes field — it is now elevated to its own structured field for correct classification.",
+      "CHANGED: Added banned_nationalities array with US citizens entry ban effective 2026-01-01. Previously, the US ban was mentioned only as a note buried in the e_visa notes field - it is now elevated to its own structured field for correct classification.",
       "CHANGED: Updated e_visa nationality field to explicitly exclude US citizens ('All nationalities except US citizens') with pointer to banned_nationalities.",
       "CHANGED: Confirmed the September 2025 African fee waiver applies to all 54 AU member states (not vaguely 'African nationals'); updated notes to be explicit about fee-waiver-only (not exemption) nature, consistent with Council of Ministers statement.",
       "CHANGED: Added the 14 December 2024 Bamako joint AES declaration ('AES is a visa-free zone for all ECOWAS nationals') as an explicit citation in the ECOWAS visa_free entry notes, providing a stronger official source basis.",
       "CHANGED: Removed unverifiable named-minister attribution ('Mahamadou SANA') from e_visa notes since the official visaburkina.bf page itself did not contain this quote; the fee-waiver decree is confirmed from secondary reporting of the Council of Ministers announcement.",
-      "UNCHANGED: CBI/RBI/fast_track all remain null — no new official program found.",
+      "CHANGED: Added visa_types array with 11 entries covering all visa categories documented on visaburkina.bf: tourist (single/multiple), business (single/multiple), conference/studies/training/visit (single/multiple), cooperation (single/multiple), express, transit, and long-term visa.",
+      "UNCHANGED: CBI/RBI/fast_track all remain null - no new official program found.",
       "UNCHANGED: Turkey and Philippines conditional_access diplomatic entries remain as previously verified.",
-      "UNCHANGED: AES max_stay_days for Mali and Niger remain null — official treaty text not directly retrieved.",
-      "UNCHANGED: ECOWAS max_stay_days remains 90 days based on ECOWAS Free Movement Protocol standard."
+      "UNCHANGED: AES max_stay_days for Mali and Niger remain null - official treaty text not directly retrieved.",
+      "UNCHANGED: ECOWAS max_stay_days remains 90 days based on ECOWAS Free Movement Protocol standard.",
+      "2026-06-29 CHANGED: Added Singapore (SGP) to visa_free with max_stay_days=30. Confirmed by Singapore Ministry of Foreign Affairs official travel advisory page (mfa.gov.sg): 'Singaporeans may stay up to 30 days in Burkina Faso without a visa.' This was previously missing from the visa_free list.",
+      "2026-06-29 UNCHANGED: ECOWAS list confirmed still accurate - 12 member states (BF/ML/NI are AES, not ECOWAS). Visaburkina.bf stay-conditions page re-fetched and confirms ECOWAS nationals exempt from residence permit with valid consular identity card.",
+      "2026-06-29 UNCHANGED: US ban confirmed as active and current via multiple secondary sources (Al Jazeera, LOC) - no official BF MFA URL directly retrievable.",
+      "2026-06-29 UNCHANGED: Burkina Faso e-visa portal (visaburkina.bf) fees table re-confirmed - same FCFA amounts as recorded.",
+      "2026-06-29 UNVERIFIED (NOT CHANGED): Wikipedia cites additional ordinary-passport visa-free nationalities - Morocco (90 days, since 22 Dec 2020), Mauritania (90 days), UAE, Hong Kong (14 days, per HK Immigration Dept), Central African Republic (90 days) - but no official Burkina Faso source or partner-country official source was directly retrieved and confirmed during this run. These are added to gaps, not to visa_free, per safety rules."
     ],
     "gaps": [
       "The official visaburkina.bf portal does not publish a complete enumerated list of visa-exempt nationalities; only group-level information (ECOWAS, AES) confirmed from official sources.",
-      "AES confederation free-movement agreement text was not directly scraped from an official AES or Burkina Faso government URL — confirmed indirectly via gouvernement.gov.bf and third-party reporting of AES summit resolutions.",
+      "AES confederation free-movement agreement text was not directly scraped from an official AES or Burkina Faso government URL - confirmed indirectly via gouvernement.gov.bf and third-party reporting of AES summit resolutions.",
       "Specific max_stay_days for AES intra-confederation travel (Mali, Niger) not confirmed from an official treaty text.",
-      "No official Burkina Faso source enumerates bilateral visa-free agreements with non-African/non-ECOWAS countries beyond what is found on partner-country official sites (Turkey MFA, Philippine Supreme Court E-Library). Wikipedia/Timatic list additional diplomatic-passport waivers for Brazil, China, Congo, Cuba, Russia, Taiwan — no official Burkina Faso government source retrieved to confirm these; excluded.",
+      "UNVERIFIED bilateral visa-free ordinary-passport arrangements cited on Wikipedia but not confirmed against official sources during 2026-06-29 run: Morocco (90 days, agreement said to be effective 22 Dec 2020), Mauritania (90 days), UAE (per UAE MFA), Hong Kong (14 days, per HK Immigration Dept), Central African Republic (90 days). These should be verified on future runs against each partner-country's official government travel site.",
+      "No official Burkina Faso source enumerates bilateral visa-free agreements with non-African/non-ECOWAS/non-AES countries beyond what is found on partner-country official sites (Turkey MFA, Philippine Supreme Court E-Library, Singapore MFA). Wikipedia/Timatic list additional diplomatic-passport waivers for Brazil, China, Congo, Cuba, Russia, Taiwan - no official Burkina Faso government source retrieved to confirm these; excluded.",
       "No official RBI, fast-track, talent visa, or digital nomad program found on any official Burkina Faso government domain.",
       "The primary official Burkina Faso MFA communiqué URL for the 30 December 2025 US entry ban announcement was not directly retrievable (LOC Global Legal Monitor used as secondary source).",
       "No credential-based conditional access rules (e.g. VoA for Schengen/US visa holders) found on any official Burkina Faso government source.",
       "No OCI or similar special-status conditional entry rules found on any official Burkina Faso source.",
       "Turkey agreement max_stay_days not stated in the Turkish MFA page; full agreement text not directly retrieved.",
-      "Indonesia–Burkina Faso diplomatic passport agreement was still under negotiation as of last reporting; excluded."
+      "Indonesia–Burkina Faso diplomatic passport agreement was still under negotiation as of last reporting; excluded.",
+      "Transit visa fees, max_stay_days, and validity details not published on official visaburkina.bf pages retrieved.",
+      "Long-term visa subcategories, fees, and conditions not published on official visaburkina.bf pages retrieved.",
+      "Fee USD conversions are approximate (1 USD ≈ 600 XOF); actual amounts in FCFA are authoritative.",
+      "Processing time (days) for all visa types not published on official visaburkina.bf pages."
     ]
   },
   "sources_checked": [
@@ -162,6 +349,8 @@
     "https://www.togofirst.com/en/economic-governance/1712-15409-burkina-faso-mali-and-niger-maintain-visa-free-travel-for-ecowas-nationals",
     "https://www.fragomen.com/insights/burkina-fasomaliniger-ecowas-withdrawal-to-eventually-change-business-and-tourist-visa-entry-requirements.html",
     "https://www.africanews.com/2025/09/12/all-africans-can-now-travel-with-free-visas-to-burkina-faso-says-government/",
-    "https://www.loc.gov/item/global-legal-monitor/2026-01-20/burkina-faso-mali-reciprocal-entry-and-visa-restrictions-for-us-citizens-adopted"
+    "https://www.loc.gov/item/global-legal-monitor/2026-01-20/burkina-faso-mali-reciprocal-entry-and-visa-restrictions-for-us-citizens-adopted",
+    "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/burkina-faso/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Burkina_Faso"
   ]
 }

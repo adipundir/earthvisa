@@ -2,7 +2,7 @@ export const meta = {
   name: 'reclassify-visa-policy',
   description: 'For ~200 countries, reclassify each one\'s visa_policy entries: MOVE grants that actually require a held third-country visa/residence/PR (credential-conditional) or apply only to diplomatic/service/official passports OUT of the ordinary visa_policy lists and INTO conditional_access, so an ordinary passport only ever sees grants it truly qualifies for. Keeps genuine ordinary / freedom-of-movement / nationality-waiver grants untouched.',
   phases: [
-    { title: 'Reclassify', detail: 'one agent per country re-reads its file and separates conditional grants from ordinary ones (Sonnet, no web — uses the official notes already captured)' },
+    { title: 'Reclassify', detail: 'one agent per country re-reads its file and separates conditional grants from ordinary ones (Sonnet, no web - uses the official notes already captured)' },
   ],
 };
 
@@ -106,25 +106,25 @@ const RECLASS_SCHEMA = {
 
 function reclassifyPrompt(c) {
   const file = `${DATA_DIR}/${c.iso3}.json`;
-  return `You are cleaning the immigration dataset for ONE destination — **${c.name}** (${c.iso3}). The goal: an ORDINARY passport must only ever see entry grants it TRULY qualifies for. Right now some \`visa_policy\` entries are actually CONDITIONAL but are stored as if they were plain nationality grants. Reclassify them. Work ONLY from the data already in the file (its notes were captured from official sources) — do NOT browse the web.
+  return `You are cleaning the immigration dataset for ONE destination - **${c.name}** (${c.iso3}). The goal: an ORDINARY passport must only ever see entry grants it TRULY qualifies for. Right now some \`visa_policy\` entries are actually CONDITIONAL but are stored as if they were plain nationality grants. Reclassify them. Work ONLY from the data already in the file (its notes were captured from official sources) - do NOT browse the web.
 
-## STEP 1 — read the file
+## STEP 1 - read the file
 Use the Read tool on EXACTLY: ${file}
 
-## STEP 2 — examine every entry in visa_policy.{visa_free, visa_on_arrival, e_visa, eta}
+## STEP 2 - examine every entry in visa_policy.{visa_free, visa_on_arrival, e_visa, eta}
 For each entry decide which bucket it belongs to, using its \`nationality\` + \`notes\`:
 
-KEEP as ordinary (leave in visa_policy) — the grant applies to that nationality's ORDINARY passport by nationality alone:
+KEEP as ordinary (leave in visa_policy) - the grant applies to that nationality's ORDINARY passport by nationality alone:
 - plain nationality waivers ("Citizens of X visa-free 90 days"), visa-on-arrival/e-visa available to that nationality,
 - freedom-of-movement / blocs (EU/EEA/Schengen/GCC/CARICOM/ECOWAS/Mercosur…), "may enter with national ID card",
 - EU Regulation 2018/1806 Annex II / ETIAS / general eTA that apply to ordinary passports.
 DO NOT move these.
 
-MOVE to conditional_access — the grant is NOT available to an ordinary passport by nationality alone:
+MOVE to conditional_access - the grant is NOT available to an ordinary passport by nationality alone:
 - **credential-conditional**: it REQUIRES the traveller to HOLD a valid third-country visa / residence permit / permanent residence / Green Card (e.g. "requires valid multiple-entry EU/Schengen visa", "only with a valid US visa", "holders of a US Green Card").
 - **passport-type-only**: it applies ONLY to diplomatic / service / official passports (e.g. "Diplomatic and service passports only", "no visa required for diplomatic/official passport holders", bilateral "visa suppression agreement").
 
-## STEP 3 — rewrite the file
+## STEP 3 - rewrite the file
 - REMOVE every moved entry from its visa_policy.{level} array.
 - ADD it to the top-level \`conditional_access\` array (create if missing; keep any existing elements, avoid duplicates) in this shape:
 {"basis":"credential|passport_type|special_status","eligible_nationalities":["<the entry's nationality>"],"passport_types":["diplomatic","service"]|["ordinary"]|"any","credential":{"issuer":"US|Schengen|EU|UK|Canada|Australia|Japan|GCC|India|…","type":"visa|residence_permit|permanent_resident|oci","subtype":"<verbatim if stated, else 'any valid visa'>"}|null,"level":"<same level>","max_stay_days":<number|null>,"conditions":"<copy the entry's note text>","source_url":"<entry.source_url>","source_official":<entry.source_official>}

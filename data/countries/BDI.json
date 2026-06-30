@@ -7,6 +7,173 @@
     "found": false,
     "note": "No dedicated Burundi government outbound visa-list page located for Burundian ordinary passport holders traveling abroad. Burundi's MAE (mae.gov.bi) publishes a bilateral visa exemption agreements page (mae.gov.bi/2024/09/27/les-pays-signes-avec-le-burundi-les-accords-dexemption-des-visas-2/) which is inbound-focused (listing who can enter Burundi visa-free), not an outbound 'where Burundian citizens can travel without a visa' list. No India-MEA-VFFIN analog found. Rely on destination-side data and the bilateral reciprocity implied by the MAE agreements page. The bilateral agreements that include ordinary passports are: Maldives and Singapore (Serbia suspended). EAC and COMESA multilateral frameworks also grant reciprocal outbound access for Burundian citizens to member states."
   },
+  "visa_types": [
+    {
+      "category": "transit",
+      "name": "Visa de Transit (Transit Visa)",
+      "purpose": "For foreign nationals transiting through Burundi en route to another destination. Available at all entry points.",
+      "max_stay_days": 3,
+      "validity_days": 3,
+      "entries": "single",
+      "fee_usd": 40,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://migration.gov.bi/Apply/step1/1",
+      "notes": "Available at all entry points including airport. Crew members of aircraft, trains, and boats are exempt from the transit visa requirement. Fee is $40 USD or equivalent in Euros."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa d'Entrée Simple (Single Entry Visa)",
+      "purpose": "For foreign nationals visiting Burundi for tourism, short visits, or business. Single-entry permit valid for one month.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 90,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://migration.gov.bi/Apply/step1/1",
+      "notes": "Issued online, at the international airport, and at embassies. $90 USD or equivalent. The Burundi Embassy Paris charges approximately €65 for advance applications."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa d'Entrée Multiple (Multiple Entry Visa)",
+      "purpose": "For foreign nationals requiring multiple entries into Burundi. Allows re-entry up to a maximum cumulative stay of 90 days. Renewable up to two times.",
+      "max_stay_days": 90,
+      "validity_days": 30,
+      "entries": "multiple",
+      "fee_usd": 90,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://migration.gov.bi/Apply/step1/1",
+      "notes": "Base fee $90 USD for 1 month; $180 for 2 months; $270 for 3 months. Renewable maximum 2 times. Issued at CGM (Commissariat Général des Migrations), international airport, and embassies."
+    },
+    {
+      "category": "other",
+      "name": "Visa de Séjour (Extended Stay Visa)",
+      "purpose": "For foreign nationals who need to extend their stay beyond the expiry of their initial entry visa. Issued by CGM only.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.bi/Apply/step1/1",
+      "notes": "Fee: $10 for every 5 days (up to 25 days); $70 per month thereafter. Validity from 5 days up to 1 month, renewable. Available at CGM only, not at border points."
+    },
+    {
+      "category": "other",
+      "name": "Visa EAC (East African Community Access Visa)",
+      "purpose": "Free access visa for citizens of EAC Partner States (Kenya, Rwanda, Tanzania, Uganda, South Sudan, DRC, Somalia) under the EAC Common Market Protocol Article 7(1).",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.mae.gov.bi/en/free-visa/",
+      "notes": "Valid 1 to 6 months. Free of charge. Documents required: passport/travel document photocopy, access stamp photocopy, and passport photo. Issued at CGM or entry points. Somalia joined EAC on March 4, 2024."
+    },
+    {
+      "category": "other",
+      "name": "Visa CEPGL (Great Lakes Countries Access Visa)",
+      "purpose": "Free access visa for citizens of CEPGL (Economic Community of the Great Lakes Countries) member states - DRC and Rwanda.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.mae.gov.bi/en/free-visa/",
+      "notes": "Valid 1 to 3 months. Free of charge. Documents required: passport/travel document photocopy, access stamp photocopy, and passport photo. Issued at CGM or entry points."
+    },
+    {
+      "category": "student",
+      "name": "Visa d'Étude EAC (EAC Study Visa)",
+      "purpose": "For students from EAC member countries studying in Burundi. Free of charge under EAC Common Market Protocol.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mae.gov.bi/en/free-visa/",
+      "notes": "12 months validity. Free for EAC member country students. Issued at CGM. DRC students (also CEPGL members) pay $25 USD and visa expires December 31st of the year."
+    },
+    {
+      "category": "other",
+      "name": "Visa d'Établissement (Establishment Visa / Long-Stay Residence Permit)",
+      "purpose": "For foreign nationals and their dependents who wish to reside and establish themselves in Burundi for an extended period of up to 2 years.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 500,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.bi/Apply/step1/1",
+      "notes": "Fee: $500 USD. Valid 2 years. Issued at CGM only. A courtesy establishment visa (free, 2 years) and diplomatic establishment visa (free, 3 years) also exist for qualifying holders of diplomatic/official status - these require a note verbale from the relevant organization and a letter from the Ministry of Home Affairs."
+    },
+    {
+      "category": "other",
+      "name": "Visa de Résident Permanent (Permanent Residence Visa)",
+      "purpose": "For foreign nationals who qualify for indefinite residence in Burundi. Grants a 99-year permanent resident status.",
+      "max_stay_days": null,
+      "validity_days": 36135,
+      "entries": "multiple",
+      "fee_usd": 1200,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.bi/Apply/step1/1",
+      "notes": "Fee: $1,200 USD. Valid 99 years. Issued at CGM only. Requires ministerial authorization from Ministry of Interior, letter of application, passport copy, property title, and previous establishment visas received. A free variant exists for transfer to a new passport for existing permanent residents. The MAE also describes a free 'Visa de Résident Permanent' for diplomatic/courtesy holders under the free-visa page."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Visa d'Établissement Diplomatique (Diplomatic Establishment Visa)",
+      "purpose": "For holders of diplomatic passports seeking to establish residence in Burundi as part of an official diplomatic mission.",
+      "max_stay_days": 1095,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mae.gov.bi/en/free-visa/",
+      "notes": "Free of charge. Valid 3 years. Requires: note verbale from organization, letter from Ministry of Home Affairs, diplomatic passport copy, and current visa photocopy. Issued by MAE."
+    },
+    {
+      "category": "other",
+      "name": "Visa Sauf-Conduit (Safe Conduct Visa)",
+      "purpose": "Emergency travel document for lost passport holders and Burundian citizens who require a short-term travel document.",
+      "max_stay_days": 7,
+      "validity_days": 7,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.bi/Apply/step1/1",
+      "notes": "Free of charge. Valid 1 week. Issued at CGM or entry points. Intended for lost passport holders and Burundian citizens in exceptional circumstances."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -55,7 +222,7 @@
         "nationality": "All nationalities (general)",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "The Burundi Embassy in Washington DC (official) references visa on arrival at Bujumbura Melchior Ndadaye International Airport and states visa on arrival costs $90 for multiple entries valid up to 30 days, $70 for single entry, and $40 transit visa (72 hours). The official CGM portal (migration.gov.bi) also lists 'Visa d'entrée aéroport' and an online pre-registration process for arrival visas. However, it is uncertain whether universal visa on arrival is currently operational for all nationalities: Wikipedia notes that until approximately 2015 Burundi provided VOA at the airport but now travelers who do not belong to visa-free countries may need a visa in advance. The Paris Embassy website only describes advance embassy applications. This entry is retained pending clearer official confirmation of the current VOA policy for all nationalities.",
+        "notes": "Visa on arrival (Visa d’entrée aéroport) is confirmed available at Bujumbura Melchior Ndadaye International Airport via the official migration.gov.bi portal (step1/8). Fee: $70 USD single entry, valid 1 month. The Burundi Embassy Washington DC (official) also confirms visa on arrival at the airport ($90 multiple entry up to 30 days, $70 single entry, $40 transit). Applicants must complete an online pre-registration form via migration.gov.bi prior to boarding. Note: The Paris Embassy website only describes advance applications; the migration portal and US Embassy both confirm VOA is operational.",
         "source_url": "https://burundiembassy.us/visa-services/",
         "source_official": true
       }
@@ -93,7 +260,7 @@
       "https://www.mae.gov.bi/en/burundi-strengthens-bilateral-cooperation/",
       "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml"
     ],
-    "notes": "The official Burundi migration portal (migration.gov.bi) is primarily in French. Key visa types on official portal include: Visa d'établissement ($500, 2 yrs), Visa de résident permanent ($1,200, 99 yrs), Visa d'entrée multiple ($90-270, 1-3 months), Visa d'entrée EAC (free, 1-6 months for EAC nationals), Visa d'entrée CEPGL (free, 1-3 months for CEPGL nationals), Visa de séjour ($10-210, 5 days to 3 months), Visa d'études EAC (free, 1 yr for EAC students). COMESA short-stay visa exemption announced Oct 31, 2024. Transit visa costs $40 USD for 3 days; crew members of aircraft, trains and boats exempt from transit visa. The official MAE page (Sep 2024) lists only three ordinary passport visa-free countries: Maldives, Singapore, and Serbia (Serbia is currently suspended). Chad and Benin bilateral agreements cover diplomatic passports only (not ordinary), correcting a prior record error."
+    "notes": "The official Burundi migration portal (migration.gov.bi) is primarily in French. Key visa types on official portal include: Visa d'établissement ($500, 2 yrs), Visa de résident permanent ($1,200, 99 yrs), Visa d'entrée multiple ($90-270, 1-3 months), Visa d'entrée EAC (free, 1-6 months for EAC nationals), Visa d'entrée CEPGL (free, 1-3 months for CEPGL nationals), Visa de séjour ($10-210, 5 days to 3 months), Visa d'études EAC (free, 1 yr for EAC students). COMESA short-stay visa exemption announced Oct 31, 2024. Transit visa costs $40 USD for 3 days; crew members of aircraft, trains and boats exempt from transit visa. The official MAE page (Sep 2024) lists only three ordinary passport visa-free countries: Maldives, Singapore, and Serbia (Serbia currently suspended). Chad and Benin bilateral agreements cover diplomatic passports only (not ordinary), correcting a prior record error. Visa on arrival confirmed via official migration portal (migration.gov.bi/Apply/step1/8): 'Visa déntrée aéroport' is , single entry, 1 month. April 2026 MAE flagship achievements page reconfirms bilateral exemptions with partner countries apply only to diplomatic and service passport holders - no new ordinary passport exemptions announced as of April 2026."
   },
   "cbi": {
     "has_program": false,
@@ -142,10 +309,11 @@
     "Germany - diplomatic and service passport exemption",
     "Laos - diplomatic passport exemption (service passport pending ratification)",
     "Equatorial Guinea - diplomatic and service passport exemption",
-    "Morocco - diplomatic and service passport exemption (status uncertain)",
+    "Morocco - diplomatic and service passport exemption (MAE Sep 2024 bilateral list; May 2025 MAE article confirms ongoing discussions on visa suppression; agreement more likely in force as of 2025)",
     "Brazil - diplomatic and service passport exemption",
     "Turkey - diplomatic passport exemption (90 days)",
-    "United Arab Emirates - diplomatic and service passport exemption (agreement signed Jan 2019, status uncertain)"
+    "United Arab Emirates - diplomatic and service passport exemption (agreement signed Jan 2019, status uncertain)",
+    "Hungary - bilateral agreement signed 2024-2025 (cited in MAE semi-annual report February 2025 and April 2026 flagship achievements report among 17 bilateral agreements); passport types and terms not yet specified in official source"
   ],
   "official_domains": [
     "migration.gov.bi",
@@ -162,8 +330,14 @@
   "conditional_access": [
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["China"],
-      "passport_types": ["diplomatic", "service", "public_affairs"],
+      "eligible_nationalities": [
+        "China"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service",
+        "public_affairs"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 30,
@@ -173,8 +347,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Russia"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Russia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -184,8 +363,14 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Egypt"],
-      "passport_types": ["diplomatic", "service", "official"],
+      "eligible_nationalities": [
+        "Egypt"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -195,8 +380,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Algeria"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Algeria"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -206,19 +396,28 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Indonesia"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Indonesia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Holders of diplomatic and service passports of Indonesia do not require a visa. Agreement on Visa Exemption for Diplomatic and Service Passport Holders between Indonesia and Burundi — ratified as of July 2023 MAE press conference.",
+      "conditions": "Holders of diplomatic and service passports of Indonesia do not require a visa. Agreement on Visa Exemption for Diplomatic and Service Passport Holders between Indonesia and Burundi - ratified as of July 2023 MAE press conference.",
       "source_url": "https://www.mae.gov.bi/en/burundi-signs-and-ratifies-several-bilateral-agreements-with-the-partner-countries/",
       "source_official": true
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Chad"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Chad"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -228,8 +427,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Benin"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Benin"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -239,8 +442,14 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Cuba"],
-      "passport_types": ["diplomatic", "official", "service"],
+      "eligible_nationalities": [
+        "Cuba"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -250,8 +459,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Germany"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Germany"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -261,8 +475,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Laos"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Laos"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -272,8 +490,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Equatorial Guinea"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Equatorial Guinea"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -283,8 +506,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Serbia"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Serbia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -294,8 +522,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Brazil"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Brazil"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -305,8 +538,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Turkey"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Turkey"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -316,8 +553,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Morocco"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Morocco"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -327,8 +569,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["United Arab Emirates"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "United Arab Emirates"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -338,8 +585,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Maldives"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Maldives"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -349,8 +601,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Singapore"],
-      "passport_types": ["diplomatic", "service"],
+      "eligible_nationalities": [
+        "Singapore"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "service"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
@@ -366,16 +623,18 @@
       "Maximum stay days for Chad and Benin diplomatic passport exemptions not specified in official sources.",
       "Whether the COMESA exemption has been formally gazetted as domestic law in Burundi is not confirmed from a Burundian legal/gazette official source beyond the presidential announcement.",
       "The September 2024 MAE bilateral list (mae.gov.bi/2024/09/27) does not include stay duration for any bilateral agreement.",
-      "The current operational status of visa on arrival for all nationalities is uncertain: the US Embassy and migration.gov.bi reference VOA/airport visa, but the Paris Embassy only references advance applications. An unambiguous current confirmation from the official migration portal was not obtainable due to JavaScript rendering.",
       "Serbia ordinary passport exemption status is 'suspended' per the MAE Sep 2024 page but no official date or reason for the suspension was found.",
-      "UAE visa exemption agreement (signed 2019) status is uncertain — listed on MAE Sep 2024 page but previously reported as 'inactive.'",
+      "UAE visa exemption agreement (signed 2019) status is uncertain - listed on MAE Sep 2024 page but previously reported as 'inactive.'",
       "Brazil, Hong Kong, and Singapore diplomatic/service passport exemptions (30 days/14 days) cited in Wikipedia lack independently confirmed max-stay figures from official Burundian sources beyond the Sep 2024 MAE list which omits Hong Kong.",
       "Hong Kong (HKSAR) is not listed on the official MAE bilateral agreements page (Sep 2024); prior Wikipedia claim of 14-day diplomatic exemption unconfirmed from official Burundian source.",
-      "The July 2024 MAE press release for Chad stated ordinary passports were covered, but by September 2024 the official MAE bilateral list only shows Chad under diplomatic (service pending). Discrepancy unresolved — possible the ordinary passport provision was removed or the ratification of that specific provision is still pending.",
+      "The July 2024 MAE press release for Chad stated ordinary passports were covered, but by September 2024 the official MAE bilateral list only shows Chad under diplomatic (service pending). Discrepancy unresolved - possible the ordinary passport provision was removed or the ratification of that specific provision is still pending.",
       "Zambia ratification: the November 2024 Council of Ministers communiqué confirms ratification of a Zambia exemption agreement; however, the Sep 2024 MAE bilateral list does not include Zambia. The exact passport types covered and entry-into-force date are not confirmed from a single definitive official source.",
       "No credential-based conditional access rules found on any official Burundi government source: Burundi does not grant visa-free, VoA, e-visa, or eTA to travellers solely on the basis of holding a US, Schengen, UK, Canadian, Australian, UAE, or other third-country visa or residence permit.",
       "No OCI (Overseas Citizen of India) or equivalent diaspora/heritage special status entry benefit found on any official Burundi government source.",
-      "No official skilled worker, digital nomad, startup, or fast-track visa program found on official sources."
+      "No official skilled worker, digital nomad, startup, or fast-track visa program found on official sources.",
+      "Processing time (days) for all visa categories not specified on official portal - portal only describes online application steps, not turnaround times.",
+      "Hungary: bilateral agreement signed with Burundi per MAE semi-annual reports (Feb 2025 and Apr 2026). Passport types covered (ordinary vs. diplomatic/service) and entry-into-force date not confirmed from official source. Not added to any access list pending confirmation.",
+      "Morocco 2025 update: MAE published article May 13, 2025 on strengthened bilateral relations and visa suppression discussions. The existing diplomatic/service exemption (listed in Sep 2024 MAE bilateral page) appears to be in force, but no new ordinary passport exemption was confirmed from this article."
     ],
     "validation_notes": [
       "CORRECTED: Chad removed from visa_policy.visa_free (ordinary passport). Official MAE bilateral agreements page (Sep 27, 2024) lists Chad under diplomatic passport exemptions only (service passport pending ratification). Prior record incorrectly cited the July 2024 announcement as establishing an ordinary passport exemption in force.",
@@ -388,9 +647,27 @@
       "ADDED: Laos to conditional_access (diplomatic passport; service pending). Listed on MAE Sep 2024 bilateral page.",
       "ADDED: Equatorial Guinea to conditional_access (diplomatic/service passports). Listed on MAE Sep 2024 bilateral page.",
       "ADDED: Brazil, Turkey, Morocco, UAE, Singapore, Maldives, Serbia to conditional_access (diplomatic/service) based on MAE Sep 2024 bilateral page. Previously only China, Russia, Egypt, Algeria, Indonesia were in conditional_access.",
-      "RETAINED: Russia (diplomatic/service, 90 days), Egypt (diplomatic/official/service), Algeria (diplomatic/service), Indonesia (diplomatic/service), China (diplomatic/service/public_affairs, 30 days) — all confirmed on MAE Sep 2024 bilateral page.",
+      "RETAINED: Russia (diplomatic/service, 90 days), Egypt (diplomatic/official/service), Algeria (diplomatic/service), Indonesia (diplomatic/service), China (diplomatic/service/public_affairs, 30 days) - all confirmed on MAE Sep 2024 bilateral page.",
       "NOTE: Serbia's ordinary passport exemption is listed as 'suspended' on the MAE Sep 2024 page; it is NOT included in visa_free.",
-      "NOTE: Visa on arrival entry retained but flagged as uncertain — the Paris Burundi Embassy (official) only describes advance applications; VOA operational status for all nationalities is not clearly confirmed on current official pages."
+      "NOTE: Visa on arrival entry retained but flagged as uncertain - the Paris Burundi Embassy (official) only describes advance applications; VOA operational status for all nationalities is not clearly confirmed on current official pages.",
+      "ADDED: visa_types field populated from official migration.gov.bi portal (step1/1 application form) and mae.gov.bi/en/free-visa/ - 11 visa categories documented covering transit, tourist (single/multiple), extended stay, EAC access, CEPGL access, student (EAC), establishment, permanent residence, diplomatic establishment, and safe conduct.",
+      "VALIDATION 2026-06-27: Re-fetched all key official sources. No changes to visa_free, visa_on_arrival, e_visa, or eta nationality lists - all existing entries reconfirmed.",
+      "CONFIRMED 2026-06-27: MAE bilateral agreements page (Sep 2024) re-fetched and confirmed: Maldives, Singapore = ordinary passport visa-free; Serbia = ordinary passport suspended; 17 countries = diplomatic/service only. No update or new version of this page found.",
+      "UPDATED 2026-06-27: Visa on arrival uncertainty resolved. Official migration.gov.bi portal (step1/8 Visa d’entrée aéroport) confirms VOA is operational at , single entry, 1 month. Updated visa_on_arrival notes to reflect confirmed status.",
+      "NOTED 2026-06-27: April 2026 MAE flagship achievements page explicitly states bilateral visa exemptions with EAC and partner countries apply only to holders of diplomatic and service passports - reaffirming that no new ordinary passport bilateral exemptions have been added since Sep 2024.",
+      "NOTED 2026-06-27: Hungary cited in MAE semi-annual reports as having a bilateral agreement with Burundi. Passport types not confirmed - added to agreements list and gaps. NOT added to visa_policy.",
+      "NOTED 2026-06-27: Morocco bilateral relationship reinforced in May 2025 MAE article; no new ordinary passport exemption confirmed. Existing diplomatic/service conditional_access entry retained.",
+      "NOTED 2026-06-27: June 22, 2026 MAE article on Morocco-Burundi cooperation references existing agreements but no new visa exemption terms announced.",
+      "RETAINED 2026-06-27: COMESA short-stay exemption (Oct 31, 2024) retained - no official reversal or formal gazette found. Max stay days remain unspecified.",
+      "RETAINED 2026-06-27: EAC (free access visa, 1-6 months) and CEPGL (free access visa, 1-3 months) confirmed via MAE free-visa page re-fetch. These are multilateral framework visas for ordinary passport holders, not bilateral agreements - the April 2026 minister statement about diplomatic/service-only exemptions refers to bilateral partner agreements, not the EAC/CEPGL multilateral framework.",
+      "VALIDATION 2026-06-29: Full re-verification of all official sources. Re-fetched MAE bilateral agreements page (Sep 2024), MAE free-visa page, migration.gov.bi portal, April 2026 MAE flagship achievements page, and Burundi Embassy Washington DC. All visa_free, visa_on_arrival, e_visa, and conditional_access entries remain correct. No new ordinary passport bilateral exemptions found in 2025-2026 from official sources.",
+      "CONFIRMED 2026-06-29: MAE bilateral ordinary passport list (Sep 2024) still shows only Maldives and Singapore active; Serbia remains suspended. No updated version of this page found.",
+      "CONFIRMED 2026-06-29: April 2026 MAE flagship achievements page re-fetched and re-confirmed: all bilateral visa exemptions apply only to holders of diplomatic and service passports. No new ordinary passport agreements announced.",
+      "CONFIRMED 2026-06-29: EAC access visa (free, 1-6 months) and CEPGL access visa (free, 1-3 months) re-confirmed via MAE free-visa page.",
+      "CONFIRMED 2026-06-29: COMESA short-stay exemption (Oct 31, 2024) - third-party sources suggest up to 3 months but no official Burundian source specifies the exact duration. Max stay days remain unspecified in the record; 'short-stay' gap retained.",
+      "CORRECTED 2026-06-29: Visa on arrival notes updated to include confirmed fee amounts - $70 USD single entry, $90 multiple entry, $40 transit - sourced from Burundi Embassy Washington DC re-fetch. Prior record had blank fee placeholders in the notes field.",
+      "CONFIRMED 2026-06-29: Visa on arrival available at Bujumbura Melchior Ndadaye International Airport, max stay 30 days, single entry $70 USD. Pre-registration via migration.gov.bi required. Confirmed by US Embassy official page.",
+      "CONFIRMED 2026-06-29: No new CBI, fast-track, or digital nomad programs found. RBI (permanent residence at $1,200 USD) unchanged."
     ]
   },
   "sources_checked": [
@@ -404,13 +681,13 @@
       "url": "https://migration.gov.bi/Apply/step1/1",
       "domain": "migration.gov.bi",
       "official": true,
-      "notes": "Online visa application form at official CGM portal."
+      "notes": "Online visa application form at official CGM portal. Primary source for visa_types: lists Transit ($40, 3 days), Single Entry ($90, 1 month), Multiple Entry ($90-270, 1-3 months), Extended Stay ($10/5 days or $70/month), EAC Visa (free, 6 months), Study Visa (free EAC / $25 DRC), Establishment Visa ($500, 2 years), Permanent Residence ($1,200, 99 years), Safe Conduct (free, 1 week)."
     },
     {
       "url": "https://www.mae.gov.bi/en/free-visa/",
       "domain": "mae.gov.bi",
       "official": true,
-      "notes": "Key source: MAE official Free Visa categories page. Confirms EAC access visa (free, 1-6 months), CEPGL access visa (free, 1-3 months), diplomatic/courtesy establishment visas, and EAC study visa."
+      "notes": "Key source: MAE official Free Visa categories page. Confirms EAC access visa (free, 1-6 months), CEPGL access visa (free, 1-3 months), diplomatic/courtesy establishment visas (free, 2-3 years), and EAC study visa (free, 1 year)."
     },
     {
       "url": "https://www.mae.gov.bi/2024/09/27/les-pays-signes-avec-le-burundi-les-accords-dexemption-des-visas-2/",
@@ -434,7 +711,7 @@
       "url": "https://www.mae.gov.bi/en/the-republic-of-burundi-and-the-republic-of-chad-strengthen-their-cooperation-through-the-signing-of-historic-agreements/",
       "domain": "mae.gov.bi",
       "official": true,
-      "notes": "MAE news article (July 2024) on Burundi-Chad visa exemption agreement — original announcement covered diplomatic, service, and ordinary passports. However, September 2024 MAE bilateral list only confirms diplomatic passport for Chad."
+      "notes": "MAE news article (July 2024) on Burundi-Chad visa exemption agreement - original announcement covered diplomatic, service, and ordinary passports. However, September 2024 MAE bilateral list only confirms diplomatic passport for Chad."
     },
     {
       "url": "https://ambabubruxelles.mae.gov.bi/wp-content/uploads/2024/12/18-va.pdf",
@@ -512,13 +789,37 @@
       "url": "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
       "domain": "cs.mfa.gov.cn",
       "official": true,
-      "notes": "Chinese MFA list of mutual visa exemption agreements. Entry 23: Burundi — diplomatic, service, public affairs; effective 2014-11-25; max stay <30 days per entry."
+      "notes": "Chinese MFA list of mutual visa exemption agreements. Entry 23: Burundi - diplomatic, service, public affairs; effective 2014-11-25; max stay <30 days per entry."
     },
     {
       "url": "https://www.mae.gov.bi/en/the-minister-of-foreign-affairs-and-development-cooperation-presents-his-semi-annual-report-and-reaffirms-the-implementation-of-burundis-vision-for-the-horizon2040-2060/",
       "domain": "mae.gov.bi",
       "official": true,
       "notes": "MAE semi-annual report (February 2025). References 17 bilateral agreements signed including China, Zambia, Chad, Hungary covering visa exemption among other areas."
+    },
+    {
+      "url": "https://migration.gov.bi/Apply/step1/8",
+      "domain": "migration.gov.bi",
+      "official": true,
+      "notes": "NEWLY FETCHED 2026-06-27: Official CGM airport entry visa page. Confirms Visa d’entrée aéroport is available at Bujumbura Melchior Ndadaye International Airport. Fee , single entry, 1 month. Online pre-registration required. Resolves prior VOA uncertainty."
+    },
+    {
+      "url": "https://www.mae.gov.bi/2026/04/04/le-ministre-en-charges-des-affaires-etrangeres-presente-le-bilan-des-realisations-phares-du-ministere/",
+      "domain": "mae.gov.bi",
+      "official": true,
+      "notes": "NEWLY FETCHED 2026-06-27: MAE April 2026 flagship achievements page. Minister clarified that visa exemption agreements apply only to holders of diplomatic and service passports. No new ordinary passport exemptions announced. Hungary mentioned among 17 bilateral agreements signed."
+    },
+    {
+      "url": "https://www.mae.gov.bi/2025/05/13/renforcement-des-relations-bilaterales-entre-le-burundi-et-le-maroc-un-partenariat-strategique-en-marche/",
+      "domain": "mae.gov.bi",
+      "official": true,
+      "notes": "NEWLY FOUND 2026-06-27: MAE May 2025 article on Burundi-Morocco bilateral relations. References cooperation and visa suppression discussions. No new ordinary passport exemption confirmed; existing diplomatic/service arrangement ongoing."
+    },
+    {
+      "url": "https://www.mae.gov.bi/2026/06/22/cooperation-renforcee-entre-le-maroc-et-le-burundi/",
+      "domain": "mae.gov.bi",
+      "official": true,
+      "notes": "NEWLY FETCHED 2026-06-27: MAE June 22, 2026 article on Burundi-Morocco cooperation. June 19, 2026 meeting between foreign ministers. Focuses on implementing existing agreements. No visa policy change announced."
     }
   ]
 }

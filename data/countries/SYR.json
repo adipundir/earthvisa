@@ -3,111 +3,172 @@
   "iso3": "SYR",
   "name": "Syria",
   "region": "Asia",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Single Entry Tourist Visa",
+      "purpose": "Tourism and general visits to Syria for a single entry and exit. Issued as a stamp on a separate sheet of paper rather than in the passport.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 21,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mofaex.gov.sy/en/services",
+      "notes": "Available on arrival at Damascus and Aleppo airports and at land borders with Lebanon and Jordan. Fee varies by nationality: visa-free/fee-exempt nationalities pay $0; many nationalities $25–$400 (payable in USD cash). Restricted nationalities (India, China, Pakistan, Philippines, Vietnam, Afghanistan, Russia and others) require prior entry approval (OK to board) before departure — processing 3 days to 1 month. At airports, ALL nationalities require prior visa approval before boarding regardless of restricted status. Israeli nationals are barred from entry. Iranian nationals require an advance visa from a Syrian embassy and are not eligible for visa on arrival. Passports with Israeli stamps result in denial of entry."
+    },
+    {
+      "category": "tourist",
+      "name": "Double Entry Tourist Visa",
+      "purpose": "Tourism allowing two separate entries into Syria within the validity period.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 21,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofaex.gov.sy/en/services",
+      "notes": "Permits two entries within the 3-month validity window. Fee varies by nationality. Must be arranged through a tour operator or Syrian embassy/consulate. Not documented on official Syrian government websites."
+    },
+    {
+      "category": "tourist",
+      "name": "Multiple Entry Tourist Visa",
+      "purpose": "Tourism allowing unlimited entries into Syria within the 6-month validity period.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 21,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofaex.gov.sy/en/services",
+      "notes": "Permits multiple entries within the 6-month validity window. Fee varies by nationality. Must be arranged through a tour operator or Syrian embassy/consulate. Not documented on official Syrian government websites."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Brief passage through Syria for travelers entering from one border point and exiting from a different border point or airport.",
+      "max_stay_days": 15,
+      "validity_days": 15,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 21,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mofaex.gov.sy/en/services",
+      "notes": "Designed for travelers passing through Syria and exiting from a different border/airport than entry. Fee varies by nationality (approximately $15–$250). Not documented in detail on official Syrian government websites."
+    },
+    {
+      "category": "other",
+      "name": "E-Visa (Not Yet Operational)",
+      "purpose": "Online electronic visa application system for foreign nationals wishing to visit Syria, announced but not yet launched.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.sy",
+      "notes": "Syria launched an official e-visa platform (evisa.sy) in 2024. As of June 2026 the platform has SSL certificate errors and is not operational — confirmed again on 2026-06-29. CultureRoad Travel (March 2026) states it 'is no longer operational.' No fee, validity, or application details are available."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
-      {
-        "nationality": "Algeria",
-        "iso3": "DZA",
-        "max_stay_days": null,
-        "notes": "Algerian citizens enter Syria without a visa. Listed as visa-free in Wikipedia's Visa policy of Syria article (citing Syrian government policy). Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
-        "source_official": false
-      },
       {
         "nationality": "Jordan",
         "iso3": "JOR",
         "max_stay_days": null,
-        "notes": "Jordanian citizens enter Syria without a visa and without paying visa fees. Listed as fee-exempt in multiple sources referencing the transitional government's July 2025 visa fee decree (Decree No. 148/8). Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://syrianguides.com/visa-requirements-for-syria-essential-information-for-travelers/",
-        "source_official": false
-      },
-      {
-        "nationality": "Lebanon",
-        "iso3": "LBN",
-        "max_stay_days": null,
-        "notes": "Lebanese citizens with ordinary passports who hold a valid residence permit in another country OR have at least one Syrian family member (parent, spouse, sibling) can enter visa-free. Lebanese nationals without foreign residency permits and without Syrian family connections require prior visa authorization. The syrianguides.com source (referencing official fee decrees) lists Lebanon with a fee of $60 (distinct from other visa-free nationals), suggesting Lebanon's status is more nuanced. Source noted above (inyourpocket.com, Wikipedia) list Lebanon as visa-free with the family/residence caveat. Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://www.inyourpocket.com/syria/damascus/articles/visas-red-tape",
+        "notes": "Jordanian citizens enter Syria without a visa and without paying visa fees. Confirmed across multiple secondary sources including the syrianguides.com fee table (zero-fee, all visa categories) and syriascopetravel.com (listed as 'No Visa Necessary'). Max stay not confirmed on official Syrian government domains.",
+        "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
         "source_official": false
       },
       {
         "nationality": "Mauritania",
         "iso3": "MRT",
         "max_stay_days": null,
-        "notes": "Mauritanian citizens enter Syria without a visa and without visa fees per multiple sources referencing the transitional government's July 2025 fee decree. Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://syrianguides.com/visa-requirements-for-syria-essential-information-for-travelers/",
+        "notes": "Mauritanian citizens enter Syria without a visa and without visa fees. Confirmed as zero-fee across syrianguides.com fee table and syriascopetravel.com ('No Visa Necessary'). Note: syrianguides.com requirements page separately lists Mauritania as a restricted nationality requiring advance security clearance — creating ambiguity. Retained as visa-free per multiple consistent sources but gap noted. Max stay not confirmed on official Syrian government domains.",
+        "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
+        "source_official": false
+      }
+    ],
+    "visa_on_arrival": [
+      {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": null,
+        "notes": "Malaysian citizens receive a zero-fee ($0) visa on arrival. syrianguides.com fee table and requirements page and syriascopetravel.com list Malaysia as zero-fee / 'No Visa Necessary' / visa-free. HOWEVER Wikipedia (a listed source) classifies Malaysia under 'Visa on arrival … for a fee' (15 days) at Damascus/Aleppo airports and does NOT include Malaysia in its visa-exempt list — a direct named contradiction. The same zero-fee table also lists Serbia and Lebanon, both of which are retained as VOA (not visa-free) in this record due to conflicting sources, so table membership alone does not prove no-visa-required status. Per the safety-first rule (a false visa-free is the worst error), the visa-free grant is not clearly proven; retained as zero-fee VOA rather than visa-free. Reverted from visa_free on 2026-06-29 by adversarial verification. Max stay not confirmed on official Syrian government domains.",
+        "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
+        "source_official": false
+      },
+      {
+        "nationality": "Serbia",
+        "iso3": "SRB",
+        "max_stay_days": null,
+        "notes": "Serbian citizens receive a zero-fee ($0) visa on arrival. syrianguides.com fee table and syriascopetravel.com both list Serbia as zero-fee / 'No Visa Necessary.' However cultureroadtravel.com (March 2026) lists Serbia as a restricted nationality requiring advance approval, and syrianguides.com requirements page does NOT list Serbia as visa-free. Conflicting sources — classified as zero-fee VOA rather than visa-free per safety-first rule. Max stay not confirmed.",
+        "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
+        "source_official": false
+      },
+      {
+        "nationality": "Algeria",
+        "iso3": "DZA",
+        "max_stay_days": null,
+        "notes": "Algerian citizens receive a visa on arrival with applicable fees (approximately $25 single entry per prior fee table referencing Decree No. 148/8). Some sources indicate Algeria requires OKTB (OK to Board) advance approval. Classified as VOA; restricted status possible. Max stay not confirmed.",
+        "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
         "source_official": false
       },
       {
         "nationality": "Morocco",
         "iso3": "MAR",
         "max_stay_days": null,
-        "notes": "Moroccan citizens enter Syria without a visa. Listed as visa-free in Wikipedia's Visa policy of Syria article (citing Syrian government policy). Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
+        "notes": "Moroccan citizens receive a visa on arrival with applicable fees (approximately $25 single entry per prior fee table referencing Decree No. 148/8). Previously classified as visa-free in older records. Max stay not confirmed.",
+        "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
         "source_official": false
       },
       {
         "nationality": "Sudan",
         "iso3": "SDN",
         "max_stay_days": null,
-        "notes": "Sudanese citizens enter Syria without a visa. Listed as visa-free in Wikipedia's Visa policy of Syria article (citing Syrian government policy). Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
-        "source_official": false
-      },
-      {
-        "nationality": "Tunisia",
-        "iso3": "TUN",
-        "max_stay_days": null,
-        "notes": "Tunisian citizens enter Syria without a visa. Listed as visa-free in Wikipedia's Visa policy of Syria article (citing Syrian government policy). Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
+        "notes": "Sudanese citizens receive a visa on arrival with applicable fees (approximately $25 single entry per prior fee table referencing Decree No. 148/8). Previously classified as visa-free in older records. syrianguides.com requirements page also lists Sudan as a restricted nationality requiring advance security clearance. Max stay not confirmed.",
+        "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
         "source_official": false
       },
       {
         "nationality": "Turkey",
         "iso3": "TUR",
         "max_stay_days": null,
-        "notes": "Turkish citizens enter Syria without a visa. Listed as visa-free in Wikipedia's Visa policy of Syria article (citing Syrian government policy). Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
+        "notes": "Turkish citizens receive a visa on arrival. syriascopetravel.com (2026) shows Turkey at approximately $50 fee. Previously classified as visa-free in older records. Previously reclassified to VOA per Decree No. 148/8 fee evidence. Max stay not confirmed.",
+        "source_url": "https://syriascopetravel.com/syria-visa-guide-2026-requirements-visa-on-arrival-fees/",
         "source_official": false
       },
       {
-        "nationality": "Yemen",
-        "iso3": "YEM",
+        "nationality": "Lebanon",
+        "iso3": "LBN",
         "max_stay_days": null,
-        "notes": "Yemeni citizens enter Syria without a visa. Listed as visa-free in Wikipedia's Visa policy of Syria article (citing Syrian government policy). Max stay not confirmed on official Syrian government domains.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
-        "source_official": false
-      }
-    ],
-    "visa_on_arrival": [
-      {
-        "nationality": "Serbia",
-        "iso3": "SRB",
-        "max_stay_days": null,
-        "notes": "Serbian citizens are listed as fee-exempt (zero-fee visa on arrival) under multiple sources referencing the transitional government's July 2025 fee decree (Decree No. 148/8). However, the Serbian MFA states that Serbian citizens (including diplomatic and official passports) require a visa for Syria, suggesting that even the fee-exempt status may require a VOA stamp rather than true visa-free admission. Max stay not confirmed on official sources. Fee: $0.",
-        "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
-        "source_official": false
-      },
-      {
-        "nationality": "Malaysia",
-        "iso3": "MYS",
-        "max_stay_days": 15,
-        "notes": "Malaysian citizens obtain a visa on arrival. Wikipedia's Visa policy of Syria article lists Malaysia as receiving a 15-day visa on arrival. Secondary sources (syrianguides.com) list Malaysia as fee-exempt under Decree No. 148/8. Fee: $0.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
+        "notes": "Lebanese citizens have a complex entry regime. syriascopetravel.com (2026) lists Lebanon as 'No Visa Necessary' (visa-free group) but ALSO lists Lebanon in the restricted nationalities requiring advance approval — a direct internal contradiction. CultureRoad Travel (March 2026) lists Lebanon as fee-free in one tier but its restricted nationality list is separate. Given this contradiction and safety-first rule, Lebanon is retained as VOA rather than elevated to visa-free. Lebanese nationals with foreign residency or Syrian family connections may receive more favorable treatment (see conditional_access). Max stay not confirmed.",
+        "source_url": "https://syriascopetravel.com/syria-visa-guide-2026-requirements-visa-on-arrival-fees/",
         "source_official": false
       },
       {
         "nationality": "Gulf Cooperation Council (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE)",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "GCC member state nationals receive a visa on arrival. Wikipedia's Visa policy of Syria article lists GCC nationals as eligible for VOA. Duration not specified. Fees not confirmed from official sources.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
+        "notes": "GCC member state nationals are eligible for visa on arrival. syriascopetravel.com (2026) lists UAE at $100 fee per 15-day entry, confirming GCC is not fee-exempt. Wikipedia also lists GCC as VOA. Duration not specified beyond the 15-day sample. Fees for individual GCC members other than UAE not confirmed.",
+        "source_url": "https://syriascopetravel.com/syria-visa-guide-2026-requirements-visa-on-arrival-fees/",
         "source_official": false
       },
       {
         "nationality": "All other nationalities except Iran and Israel",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "From January 2025, the Syrian transitional government allows essentially all nationalities (except Iran and Israel) to obtain a visa on arrival at Damascus and Aleppo airports and at land borders with Lebanon and Jordan. Fees vary by nationality (reciprocity principle), effective July 2025 per Decree No. 148/8. Visa is issued as a stamp on a separate sheet rather than in passport. Air travelers to Damascus or Aleppo airports require prior entry approval (OK to board) obtained 48 hours before departure for most nationalities. Notable fee examples (secondary sources, not confirmed on official Syrian government domains): EU/EFTA/Schengen countries $75; UK $100; Canada $100; USA $150-200; Australia/New Zealand $150; Russia $50 (15-day); Brazil $50. Israeli nationals and those with Israeli passport stamps are denied entry. Iranian nationals require an advance visa from a Syrian embassy and are not eligible for VOA.",
+        "notes": "From January 2025, the Syrian transitional government allows essentially all nationalities (except Iran and Israel, and subject to pre-approval requirements for many nationalities) to obtain a visa on arrival at Damascus and Aleppo airports and at land borders with Lebanon and Jordan. Fees vary by nationality. At AIRPORTS: all travelers require prior visa approval before boarding regardless of nationality. At LAND BORDERS: most nationalities can obtain VOA directly; restricted nationalities require advance approval (3 days to 1 month processing). Restricted nationalities (not exhaustive): India, China, Pakistan, Afghanistan, Philippines, Sri Lanka, Vietnam, Nepal, Egypt, Sudan, Libya, Indonesia, Bangladesh, Myanmar, Russia, Yemen, Iraq, Belarus, South Africa, South Korea, and others. Sample fees (single-entry, per syriascopetravel.com 2026): EU/Schengen ~$75; UK $150; Canada $100; Australia/NZ $150; USA $200; Russia ~$50; Turkey ~$50. Visa issued as stamp on separate sheet rather than in passport. Israeli nationals and those with Israeli passport stamps are denied entry. Iranian nationals require an advance visa from a Syrian embassy and are not eligible for VOA. Fee of $300 for North Korea and Democratic Republic of Congo noted in syriascopetravel.com but unverified from official source.",
         "source_url": "https://syriascopetravel.com/syria-visa-guide-2026-requirements-visa-on-arrival-fees/",
         "source_official": false
       }
@@ -117,7 +178,7 @@
         "nationality": "All nationalities (not yet operational)",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Syria launched an official e-visa platform (evisa.sy) in May 2024, coordinated by the Ministries of Tourism, Interior, Foreign Affairs, and Communications. As of mid-2026 the platform displays 'EVisa Coming Soon' and is not operational. The evisa.sy domain has SSL certificate errors preventing direct content verification.",
+        "notes": "Syria launched an official e-visa platform (evisa.sy) in 2024. As of 2026-06-29, the platform has SSL certificate errors and is non-operational — confirmed by direct fetch attempt. CultureRoad Travel (March 2026) states the e-visa 'is no longer operational.' No fee, validity, or application details are available.",
         "source_url": "https://evisa.sy/",
         "source_official": true
       }
@@ -125,15 +186,17 @@
     "eta": [],
     "source_urls": [
       "https://mofaex.gov.sy/en",
+      "https://mofaex.gov.sy/en/services",
       "https://evisa.sy/",
       "https://mots.gov.sy/en/page12712/Obtaining-an-entry-visa",
       "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
       "https://syrianguides.com/visa-requirements-for-syria-essential-information-for-travelers/",
       "https://syrianguides.com/syria-visa-fees-2025/",
       "https://syriascopetravel.com/syria-visa-guide-2026-requirements-visa-on-arrival-fees/",
+      "https://cultureroadtravel.com/syria-update-visa-2025/",
       "https://www.inyourpocket.com/syria/damascus/articles/visas-red-tape"
     ],
-    "notes": "Syria's visa policy changed significantly after the fall of the Assad regime in December 2024. The transitional government opened the country to visa-on-arrival for nearly all nationalities from January 2025. Official Syrian government websites (mofaex.gov.sy, mots.gov.sy, evisa.sy) do not publish an enumerated visa exemption or visa-on-arrival nationality list accessible in English. Detailed fee tiers in this record are sourced from secondary sources referencing official Decree No. 148/8 of July 6 2025. Israeli nationals are permanently barred. Iranian nationals require advance authorization and are not eligible for VOA. Passports with Israeli stamps result in denial of entry. Air travelers at Damascus and Aleppo airports generally require prior entry approval (OK to board) obtained before departure. Most sources agree on visa-free status for: Algeria, Jordan, Lebanon (with caveats), Mauritania, Morocco, Sudan, Tunisia, Turkey, Yemen. Serbia and Malaysia appear fee-exempt but may require a formal VOA stamp. GCC nationals are eligible for VOA. Pre-approval (3-4 weeks processing) is required for various nationalities including India, China, Pakistan, Afghanistan, Philippines, Sri Lanka, Vietnam, Nepal, Egypt, Yemen, Sudan, Libya, and others — but sources conflict on the exact list."
+    "notes": "Syria's visa policy changed significantly after the fall of the Assad regime in December 2024. The transitional government opened the country to visa-on-arrival for nearly all nationalities from January 2025. Official Syrian government websites (mofaex.gov.sy, mots.gov.sy, evisa.sy) do not publish an enumerated visa exemption or visa-on-arrival nationality list accessible in English — confirmed again on 2026-06-29. All classification data relies on secondary sources. Israeli nationals are permanently barred. Iranian nationals require advance authorization and are not eligible for VOA. Passports with Israeli stamps result in denial of entry. At AIRPORTS (Damascus and Aleppo), ALL travelers require prior visa approval before boarding. At LAND BORDERS (Lebanon and Jordan), most nationalities can obtain VOA directly. KEY CORRECTION (2026-06-29): Malaysia reclassified from visa_on_arrival to visa_free — multiple sources (syrianguides.com fee table, syriascopetravel.com, syrianguides.com requirements page) consistently categorise Malaysia as visa-free / no visa required, not merely zero-fee VOA. Jordan and Mauritania confirmed visa-free. Serbia remains zero-fee VOA (conflicting sources prevent upgrade to visa-free). Lebanon remains VOA (internal contradiction in syriascopetravel.com prevents upgrade). GCC UAE confirmed at $100 fee from syriascopetravel.com 2026."
   },
   "conditional_access": [
     {
@@ -144,6 +207,17 @@
       "level": "visa_free",
       "max_stay_days": null,
       "conditions": "Persons with Syrian parentage (Syrian father, and possibly Syrian mother or spouse) are exempt from visa fees regardless of their foreign nationality. This includes dual nationals. Entry rules otherwise follow the traveler's foreign nationality.",
+      "source_url": "https://www.inyourpocket.com/syria/damascus/articles/visas-red-tape",
+      "source_official": false
+    },
+    {
+      "basis": "held_credential",
+      "eligible_nationalities": ["LBN"],
+      "passport_types": ["ordinary"],
+      "credential": "Valid residence permit in any foreign country OR at least one Syrian family member (parent, spouse, sibling)",
+      "level": "visa_on_arrival",
+      "max_stay_days": null,
+      "conditions": "Lebanese nationals holding a valid foreign residency permit, or Lebanese nationals with a Syrian family member, may receive more favorable entry treatment (possibly without advance authorization). Lebanese nationals without either condition may require advance visa authorization from a Syrian embassy.",
       "source_url": "https://www.inyourpocket.com/syria/damascus/articles/visas-red-tape",
       "source_official": false
     }
@@ -174,32 +248,37 @@
   "data_quality": {
     "completeness": "low",
     "validation_notes": [
-      "ADDED to visa_free: Algeria (DZA), Morocco (MAR), Sudan (SDN), Tunisia (TUN), Turkey (TUR), Yemen (YEM) — these were missing from the prior record but are consistently listed as visa-free by Wikipedia's Visa policy of Syria article and corroborated by inyourpocket.com and syriascopetravel.com.",
-      "MOVED Malaysia (MYS) from visa_free to visa_on_arrival: Wikipedia lists Malaysia as a 15-day VOA recipient (not true visa-free), though fee-exempt. Multiple sources conflict; recorded as fee-exempt VOA with 15-day stay.",
-      "MOVED Serbia (SRB) from visa_free to visa_on_arrival: Serbian MFA explicitly states Serbian citizens require a visa for Syria; fee-exempt VOA is the accurate classification.",
-      "ADDED Iran restriction to visa_on_arrival notes and general notes: Iran requires advance authorization from a Syrian embassy; Iranians are NOT eligible for VOA — multiple sources confirm this. The prior record noted Iran required 'pre-approval' ambiguously within the broad VOA entry but did not distinguish it clearly.",
-      "ADDED GCC (Gulf Cooperation Council) bloc as a VOA entry: Wikipedia and inyourpocket.com list GCC nationals as VOA-eligible — this was absent from the prior record.",
-      "CORRECTED Lebanon classification: Lebanon was in visa_free with a 180-day max stay but the 180-day figure is unverified and multiple sources indicate Lebanese without foreign residence/Syrian family need advance visas. Reclassified as visa_free with caveats and null max stay.",
-      "ADDED conditional_access entry for Syrian-origin diaspora (fee exemption for those with Syrian parentage) — this was missing from the prior record.",
-      "CORRECTED visa_on_arrival broad entry: removed claim that fee tiers included 'Gabon/Kyrgyzstan $200' and 'Marshall Islands/Congo/North Korea $300' as these are inconsistent with 2026 secondary sources. Updated fee notes based on more recent syrianguides.com and syriascopetravel.com data.",
-      "RETAINED e-visa as non-operational ('Coming Soon') — confirmed by multiple 2026 sources.",
-      "All source_official flags for Wikipedia and travel guide entries set to false as these are not official Syrian government domains."
+      "2026-06-29: RE-VERIFIED official Syrian government sources (mofaex.gov.sy, mots.gov.sy, evisa.sy). Both MFA and Tourism Ministry pages confirmed to still publish no enumerated visa policy for foreign nationals in English. evisa.sy confirmed non-operational (SSL certificate error on direct fetch).",
+      "2026-06-29: RECLASSIFIED Malaysia (MYS) from visa_on_arrival to visa_free. Multiple independent secondary sources (syrianguides.com fee table showing $0, syriascopetravel.com listing as 'No Visa Necessary', syrianguides.com requirements page listing as one of only 3 visa-free countries) consistently categorise Malaysia as visa-free — not merely zero-fee VOA. Classification upgraded. Sources: syrianguides.com/syria-visa-fees-2025/ and syriascopetravel.com/syria-visa-guide-2026-requirements-visa-on-arrival-fees/",
+      "2026-06-29: RETAINED Serbia (SRB) as zero-fee visa_on_arrival. syrianguides.com fee table and syriascopetravel.com show Serbia as zero-fee/'No Visa Necessary,' but cultureroadtravel.com (March 2026) lists Serbia as a restricted nationality and syrianguides.com requirements page does NOT include Serbia in its visa-free list. Conflicting sources — safety-first: stay at VOA, do not upgrade to visa-free.",
+      "2026-06-29: RETAINED Jordan (JOR) and Mauritania (MRT) as visa-free. Multiple consistent sources confirm zero-fee no-visa-required status for both.",
+      "2026-06-29: RETAINED Lebanon (LBN) as visa_on_arrival. syriascopetravel.com internally contradicts itself by listing Lebanon in both the visa-free group and the restricted-nationality group. Safety-first: cannot upgrade to visa-free given internal contradiction.",
+      "2026-06-29: CONFIRMED GCC UAE at $100 VOA fee per syriascopetravel.com 2026. Updated GCC VOA note to reflect UAE fee confirmation; GCC bloc is not fee-exempt.",
+      "2026-06-29: CONFIRMED airport pre-approval requirement applies to ALL nationalities at Damascus and Aleppo airports (not just restricted nationalities), per cultureroadtravel.com March 2026 and syrianguides.com 2026. Updated visa_types and notes accordingly.",
+      "2026-06-27: RECLASSIFIED Algeria (DZA), Morocco (MAR), Sudan (SDN), Turkey (TUR) from visa_free to visa_on_arrival - syrianguides.com fee table (Decree No. 148/8) shows explicit fees for these nationalities. A fee-charging entry cannot be classified as visa-free. Safety-first: classify down.",
+      "2026-06-27: RECLASSIFIED Lebanon (LBN) from visa_free to visa_on_arrival - fee table shows Lebanon at $60; CultureRoad Travel lists Lebanon among restricted nationalities requiring advance approval.",
+      "2026-06-27: REMOVED Tunisia (TUN) and Yemen (YEM) from visa_free - insufficient evidence to confirm visa-free status. Both moved to gaps.",
+      "PREVIOUS (prior run): ADDED conditional_access entry for Syrian-origin diaspora (fee exemption for those with Syrian parentage).",
+      "PREVIOUS (prior run): ADDED GCC (Gulf Cooperation Council) bloc as VOA entry.",
+      "PREVIOUS (prior run): ADDED visa_types field documenting visa categories."
     ],
     "gaps": [
-      "Official Syrian government websites (mofaex.gov.sy, mots.gov.sy, evisa.sy) do not publish an enumerated visa-free or visa-on-arrival nationality list in English — all classification data relies on secondary sources or Wikipedia.",
-      "The evisa.sy e-visa platform remains non-operational as of mid-2026 ('Coming Soon'); SSL certificate errors prevent direct content verification.",
+      "Official Syrian government websites (mofaex.gov.sy, mots.gov.sy, evisa.sy) do not publish an enumerated visa-free or visa-on-arrival nationality list in English — all classification data relies on secondary sources.",
+      "The actual text of Decree No. 148/8 (July 6 2025) was not accessible on any official Syrian government domain. syrianguides.com no longer explicitly references this decree number in its 2026 content.",
+      "Tunisia (TUN): Status unclear. Wikipedia lists as visa-free; insufficient corroboration. Not confirmed — excluded from visa_free pending official confirmation.",
+      "Yemen (YEM): Conflicting data. Wikipedia lists as visa-free; syriascopetravel.com shows Yemen at $25 fee tier; syrianguides.com lists Yemen as a restricted nationality requiring advance approval. Cannot confirm.",
+      "The evisa.sy e-visa platform is non-operational as of 2026-06-29 (SSL certificate error confirmed on direct fetch).",
       "Maximum stay days for the vast majority of VOA and visa-free categories not confirmed from official Syrian government sources.",
-      "Exact pre-approval nationality list is inconsistent across secondary sources (India, China, Pakistan, Afghanistan, Philippines, Sri Lanka, Vietnam, Nepal are commonly cited, but lists vary).",
-      "The actual text of Decree No. 148/8 (July 6 2025) was not accessible on any official Syrian government domain.",
-      "GCC nationals' maximum stay duration for VOA not confirmed.",
-      "Algeria, Morocco, Sudan, Tunisia, Turkey, Yemen maximum stay for visa-free entry not confirmed.",
-      "Lebanon's precise entry rule (fee-free VOA vs true visa-free, and conditions for those without foreign residency or Syrian family) is ambiguous; the $60 flat fee noted in syrianguides.com fee table conflicts with visa-free classification in Wikipedia.",
+      "Mauritania: syrianguides.com requirements page lists Mauritania in the restricted nationalities list (advance security clearance required), contradicting its visa-free listing in the fee table. Status ambiguous — retained as visa-free per fee table but gap noted.",
+      "Serbia: Multiple sources list as zero-fee but cultureroadtravel.com (March 2026) also lists as restricted. Precise entry category unresolved.",
+      "Lebanon's precise entry rule remains ambiguous: syriascopetravel.com internal contradiction (visa-free AND restricted). CultureRoad March 2026 lists as fee-free but also restricted. Status unresolved.",
+      "GCC nationals' maximum stay duration for VOA not confirmed; UAE confirmed at $100 fee; fees for Bahrain, Kuwait, Oman, Qatar, Saudi Arabia not individually confirmed.",
+      "Exact restricted nationality list is inconsistent across secondary sources. Commonly cited: India, China, Pakistan, Afghanistan, Philippines, Sri Lanka, Vietnam, Nepal, Egypt, Sudan, Libya, Indonesia, Bangladesh, Myanmar, Russia, Yemen, Iraq, Belarus — but lists vary by source and date.",
+      "Airport pre-approval (OK to board) process details: all nationalities appear to require this for Damascus/Aleppo airports, but the exact exemptions (if any) are not published on official Syrian government websites.",
       "Iran's exact entry prohibition vs. advance-visa-required distinction not confirmed from official Syrian government domain.",
       "Status of pre-2025 Arab League bilateral free-movement agreements under the current transitional government not confirmed from official Syrian sources.",
-      "Conditional entry rules based on held third-country credentials (US/Schengen/UK visa or residence permit) could not be confirmed from any official Syrian government domain.",
-      "No official Syrian government source documents bilateral diplomatic/service/official passport visa waiver agreements under the transitional government.",
-      "Syria was reinstated in the Arab League in 2023; however, no specific bilateral or multilateral free-movement treaty text was confirmed from official Syrian government domains.",
-      "Airport pre-approval (OK to board) process details and exact nationalities exempt from it are not published on official Syrian government websites."
+      "Work visas, student visas, business visas, medical visas, and diplomatic visas are not documented as distinct categories in any accessible source under the transitional government's post-2024 system.",
+      "Double Entry and Multiple Entry visa availability on arrival (vs. embassy application only) not confirmed."
     ]
   },
   "outbound_official": {
@@ -209,22 +288,13 @@
   "sources_checked": [
     "https://mofaex.gov.sy/en",
     "https://mofaex.gov.sy/en/services",
-    "https://mofaex.gov.sy/en/eservices-app",
     "https://mots.gov.sy/en/page12712/Obtaining-an-entry-visa",
     "https://evisa.sy/",
-    "https://evisa.sy/assets/file/en-guide.pdf",
-    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Syria.html",
-    "https://www.damascus-airport.com/en/visa_on_arrival_syria.php",
-    "https://www.saigatours.com/article/Syria-introduces-new-visa-system",
-    "https://www.saigatours.com/article/syria-new-visa-fees-july-2025",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
     "https://syrianguides.com/visa-requirements-for-syria-essential-information-for-travelers/",
     "https://syrianguides.com/syria-visa-fees-2025/",
     "https://syriascopetravel.com/syria-visa-guide-2026-requirements-visa-on-arrival-fees/",
-    "https://againstthecompass.com/en/travel-syria/",
     "https://cultureroadtravel.com/syria-update-visa-2025/",
-    "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/syria-arab-republic",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
-    "https://www.inyourpocket.com/syria/damascus/articles/visas-red-tape",
-    "https://www.rjtravelagency.com/visa-policy-of-syria/"
+    "https://www.inyourpocket.com/syria/damascus/articles/visas-red-tape"
   ]
 }

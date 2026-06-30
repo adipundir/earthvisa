@@ -81,10 +81,17 @@ const CREDENTIAL_GROUPS: { name: string; items: typeof dataset.credentials }[] =
 }
 
 const LEVEL_STYLE: Record<AccessLevel, string> = {
-  visa_free: "text-vfree ring-vfree/45 bg-vfree/10",
-  visa_on_arrival: "text-voa ring-voa/45 bg-voa/10",
-  eta: "text-eta ring-eta/45 bg-eta/10",
-  e_visa: "text-evisa ring-evisa/45 bg-evisa/10",
+  visa_free:     "text-vfree bg-vfree/[0.08] border border-vfree/25",
+  visa_on_arrival: "text-voa bg-voa/[0.08] border border-voa/25",
+  eta:           "text-eta bg-eta/[0.08] border border-eta/25",
+  e_visa:        "text-evisa bg-evisa/[0.08] border border-evisa/25",
+};
+
+const LEVEL_LEFT_BORDER: Record<AccessLevel, string> = {
+  visa_free:     "border-l-vfree",
+  visa_on_arrival: "border-l-voa",
+  eta:           "border-l-eta",
+  e_visa:        "border-l-evisa",
 };
 
 const EXAMPLE_PASSPORTS = ["IND", "DEU", "USA", "BRA", "NGA", "PHL"];
@@ -97,17 +104,20 @@ function hostOf(url: string): string {
 
 function AccessPill({ level }: { level: AccessLevel }) {
   return (
-    <span className={`mono rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${LEVEL_STYLE[level]}`}>
+    <span className={`mono inline-flex items-center rounded px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] ${LEVEL_STYLE[level]}`}>
       {LEVEL_LABEL[level]}
     </span>
   );
 }
 
 function SourceDot({ official }: { official: boolean }) {
+  const label = official ? "Official government source" : "Non-official source";
   return (
     <span
-      className={`inline-block h-2 w-2 rounded-full ring-2 ${official ? "bg-vfree ring-vfree/30" : "bg-eta ring-eta/30"}`}
-      title={official ? "Official government source" : "Non-official source"}
+      role="img"
+      aria-label={label}
+      className={`inline-block h-2 w-2 rounded-full ${official ? "bg-vfree" : "bg-eta"}`}
+      title={label}
     />
   );
 }
@@ -143,29 +153,29 @@ export default function DestinationExplorer() {
 
   // Passport type dropdown
   const [typeOpen, setTypeOpen] = useState<string | null>(null);
+  const [destHi, setDestHi] = useState(-1); // highlighted option in destination combobox
+  const [passHi, setPassHi] = useState(-1); // highlighted option in passport combobox
 
   const destBoxRef = useRef<HTMLDivElement>(null);
   const passBoxRef = useRef<HTMLDivElement>(null);
   const credBoxRef = useRef<HTMLDivElement>(null);
   const typeRefs = useRef<Record<string, HTMLElement | null>>({});
 
-  // ── Persistence ─────────────────────────────────────────────────────────────
+
+  // Seed from deep-link query params (e.g. /visit?dest=PRT&passport=IND) so links
+  // from the static destination pages land pre-filled on the right destination.
   useEffect(() => {
-    try {
-      const d = localStorage.getItem("pp.dest");
-      if (d) setDestIso3(d);
-      const p = JSON.parse(localStorage.getItem("pp.passports") || "[]");
-      if (Array.isArray(p) && p.length) setSelected(p);
-      const c = JSON.parse(localStorage.getItem("pp.creds") || "[]");
-      if (Array.isArray(c) && c.length) setCreds(c);
-      const pt = JSON.parse(localStorage.getItem("pp.ptypes") || "{}");
-      if (pt && typeof pt === "object") setPtypes(pt);
-    } catch {}
+    const sp = new URLSearchParams(window.location.search);
+    const valid = new Set(dataset.allCountries.map((c) => c.iso3));
+    const dest = (sp.get("dest") ?? "").trim().toUpperCase();
+    if (valid.has(dest)) setDestIso3(dest);
+    const passports = (sp.get("passport") ?? "")
+      .split(",").map((s) => s.trim().toUpperCase()).filter((s) => valid.has(s));
+    if (passports.length) {
+      setSelected(passports);
+      setPtypes(Object.fromEntries(passports.map((p) => [p, "ordinary" as PassportType])));
+    }
   }, []);
-  useEffect(() => { try { if (destIso3) localStorage.setItem("pp.dest", destIso3); else localStorage.removeItem("pp.dest"); } catch {} }, [destIso3]);
-  useEffect(() => { try { localStorage.setItem("pp.passports", JSON.stringify(selected)); } catch {} }, [selected]);
-  useEffect(() => { try { localStorage.setItem("pp.creds", JSON.stringify(creds)); } catch {} }, [creds]);
-  useEffect(() => { try { localStorage.setItem("pp.ptypes", JSON.stringify(ptypes)); } catch {} }, [ptypes]);
 
   // ── Click-outside handlers ───────────────────────────────────────────────────
   useEffect(() => {
@@ -270,28 +280,28 @@ export default function DestinationExplorer() {
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
 
-      {/* ── DESTINATION — primary, big ── */}
+      {/* ── DESTINATION - primary, big ── */}
       <div className="mt-8">
         <div className="mb-3">
           <p className="font-display text-[17px] font-semibold text-ink">Destination</p>
-          <p className="mt-0.5 text-sm text-ink-soft">Where do you want to go? Start here — enter your destination first</p>
+          <p className="mt-0.5 text-sm text-ink-soft">Where do you want to go? Start here - enter your destination first</p>
         </div>
 
         <div ref={destBoxRef} className="relative z-30 w-full">
-          <div className={`flex min-h-[4.5rem] w-full items-center gap-3 rounded-xl border-2 bg-paper-2 px-5 py-4 transition-all ${
+          <div className={`flex min-h-[4.5rem] w-full items-center gap-3 rounded-xl border bg-white px-5 py-4 transition-all ${
             destIso3
-              ? "border-bloc/40 bg-paper-2"
+              ? "border-line-strong"
               : destOpen
-              ? "border-stamp/70 shadow-[0_0_0_3px_rgba(178,53,40,0.07)]"
-              : "border-line-strong hover:border-stamp/40"
+              ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]"
+              : "border-line-strong hover:border-ink-mute"
           }`}>
             {destIso3 ? (
-              <span className="inline-flex flex-1 items-center gap-3">
+              <span className="inline-flex items-center gap-2">
                 <span className="text-3xl leading-none">{flagFor(destIso3)}</span>
                 <span className="font-display text-xl font-semibold text-ink">{nameFor(destIso3)}</span>
                 <button
                   onClick={clearDest}
-                  className="ml-auto grid h-6 w-6 place-items-center rounded-full text-[13px] text-ink-mute transition hover:bg-stamp/20 hover:text-stamp"
+                  className="grid h-6 w-6 place-items-center rounded-full text-[13px] text-ink-mute transition hover:bg-stamp/20 hover:text-stamp"
                   aria-label={`Remove destination ${nameFor(destIso3)}`}
                 >×</button>
               </span>
@@ -300,9 +310,21 @@ export default function DestinationExplorer() {
                 <span className="text-2xl text-ink-mute/40">🌍</span>
                 <input
                   value={destQuery}
-                  onChange={(e) => { setDestQuery(e.target.value); setDestOpen(true); }}
+                  onChange={(e) => { setDestQuery(e.target.value); setDestOpen(true); setDestHi(-1); }}
                   onFocus={() => setDestOpen(true)}
-                  placeholder="Type a destination — France, Japan, UAE, Brazil…"
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") { setDestOpen(false); setDestHi(-1); }
+                    else if (e.key === "ArrowDown") { e.preventDefault(); setDestOpen(true); setDestHi((h) => Math.min(h + 1, destOptions.length - 1)); }
+                    else if (e.key === "ArrowUp") { e.preventDefault(); setDestHi((h) => Math.max(h - 1, 0)); }
+                    else if (e.key === "Enter") { const pick = destOptions[destHi] ?? destOptions[0]; if (pick) { e.preventDefault(); selectDest(pick.iso3); setDestHi(-1); } }
+                  }}
+                  role="combobox"
+                  aria-expanded={destOpen && destOptions.length > 0}
+                  aria-controls="dest-listbox"
+                  aria-autocomplete="list"
+                  aria-activedescendant={destHi >= 0 ? `dest-opt-${destHi}` : undefined}
+                  aria-label="Search for a destination country"
+                  placeholder="Type a destination - France, Japan, UAE, Brazil…"
                   className="flex-1 bg-transparent py-1 font-display text-[16px] text-ink outline-none placeholder:text-ink-mute/50"
                   autoComplete="off"
                 />
@@ -311,12 +333,15 @@ export default function DestinationExplorer() {
           </div>
 
           {destOpen && !destIso3 && destOptions.length > 0 && (
-            <ul className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-ink/20">
-              {destOptions.map((c) => (
-                <li key={c.iso3}>
+            <ul id="dest-listbox" role="listbox" aria-label="Matching destinations" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-white py-1 shadow-xl shadow-ink/10">
+              {destOptions.map((c, i) => (
+                <li key={c.iso3} role="option" id={`dest-opt-${i}`} aria-selected={destHi === i}>
                   <button
+                    type="button"
+                    tabIndex={-1}
                     onClick={() => selectDest(c.iso3)}
-                    className="flex w-full items-center gap-3 px-4 py-2.5 text-left transition hover:bg-stamp/[0.06]"
+                    onMouseEnter={() => setDestHi(i)}
+                    className={`flex w-full items-center gap-3 px-4 py-2.5 text-left transition ${destHi === i ? "bg-paper-2" : "hover:bg-paper-2"}`}
                   >
                     <span className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
@@ -333,17 +358,17 @@ export default function DestinationExplorer() {
       <div className="mt-7">
         <div className="mb-3">
           <p className="font-display text-[17px] font-semibold text-ink">Your Passport(s)</p>
-          <p className="mt-0.5 text-sm text-ink-soft">Add one or more — dual citizens get the best access from either</p>
+          <p className="mt-0.5 text-sm text-ink-soft">Add one or more - dual citizens get the best access from either</p>
         </div>
 
         <div ref={passBoxRef} className="relative z-20 w-full">
-          <div className="flex min-h-[3.75rem] w-full flex-wrap items-center gap-2 rounded-lg border-2 border-line-strong bg-paper-2 px-4 py-3 transition-all focus-within:border-stamp/70 focus-within:shadow-[0_0_0_3px_rgba(178,53,40,0.07)]">
+          <div className="flex min-h-[3.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-3 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
               const isOpen = typeOpen === iso3;
               return (
-                <span key={iso3} className="inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-3/70 px-2.5 py-1.5 text-[14px] text-ink">
+                <span key={iso3} className="inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-2 px-2.5 py-1.5 text-[14px] text-ink">
                   <span className="text-lg leading-none">{flagFor(iso3)}</span>
                   <span className="font-display font-semibold">{nameFor(iso3)}</span>
 
@@ -406,7 +431,7 @@ export default function DestinationExplorer() {
 
                   <button
                     onClick={() => removePassport(iso3)}
-                    className="grid h-4 w-4 place-items-center rounded-full text-[11px] text-ink-mute transition hover:bg-stamp/20 hover:text-stamp"
+                    className="ml-0.5 grid h-6 w-6 place-items-center rounded-full text-[14px] text-ink-mute transition hover:bg-stamp/20 hover:text-stamp"
                     aria-label={`Remove ${nameFor(iso3)}`}
                   >×</button>
                 </span>
@@ -414,20 +439,35 @@ export default function DestinationExplorer() {
             })}
             <input
               value={passQuery}
-              onChange={(e) => { setPassQuery(e.target.value); setPassOpen(true); }}
+              onChange={(e) => { setPassQuery(e.target.value); setPassOpen(true); setPassHi(-1); }}
               onFocus={() => setPassOpen(true)}
-              placeholder={selected.length ? "Add another country…" : "Type a country — India, Germany, USA…"}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") { setPassOpen(false); setPassHi(-1); }
+                else if (e.key === "ArrowDown") { e.preventDefault(); setPassOpen(true); setPassHi((h) => Math.min(h + 1, passOptions.length - 1)); }
+                else if (e.key === "ArrowUp") { e.preventDefault(); setPassHi((h) => Math.max(h - 1, 0)); }
+                else if (e.key === "Enter") { const pick = passOptions[passHi] ?? passOptions[0]; if (pick) { e.preventDefault(); addPassport(pick.iso3); setPassHi(-1); } }
+              }}
+              role="combobox"
+              aria-expanded={passOpen && passOptions.length > 0}
+              aria-controls="dest-pass-listbox"
+              aria-autocomplete="list"
+              aria-activedescendant={passHi >= 0 ? `dest-pass-opt-${passHi}` : undefined}
+              aria-label="Search for a passport country"
+              placeholder={selected.length ? "Add another country…" : "Type a country - India, Germany, USA…"}
               className="min-w-[200px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/55"
             />
           </div>
 
           {passOpen && passOptions.length > 0 && (
-            <ul className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-ink/20">
-              {passOptions.map((c) => (
-                <li key={c.iso3}>
+            <ul id="dest-pass-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-white py-1 shadow-xl shadow-ink/10">
+              {passOptions.map((c, i) => (
+                <li key={c.iso3} role="option" id={`dest-pass-opt-${i}`} aria-selected={passHi === i}>
                   <button
+                    type="button"
+                    tabIndex={-1}
                     onClick={() => addPassport(c.iso3)}
-                    className="flex w-full items-center gap-3 px-4 py-2.5 text-left transition hover:bg-stamp/[0.06]"
+                    onMouseEnter={() => setPassHi(i)}
+                    className={`flex w-full items-center gap-3 px-4 py-2.5 text-left transition ${passHi === i ? "bg-paper-2" : "hover:bg-paper-2"}`}
                   >
                     <span className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
@@ -476,8 +516,8 @@ export default function DestinationExplorer() {
         </div>
 
         <div ref={credBoxRef} className="relative z-10 w-full">
-          <div className={`flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border-2 bg-paper-2 px-4 py-2.5 transition-all ${
-            credOpen ? "border-stamp/70 shadow-[0_0_0_3px_rgba(178,53,40,0.07)]" : "border-line-strong"
+          <div className={`flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2.5 transition-all ${
+            credOpen ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]" : "border-line-strong"
           }`}>
             {creds.map((credId) => {
               const c = dataset.credentials.find((x) => x.id === credId);
@@ -488,7 +528,7 @@ export default function DestinationExplorer() {
                   <span className="font-display font-medium">{c.short}</span>
                   <button
                     onClick={() => toggleCred(credId)}
-                    className="ml-0.5 grid h-4 w-4 place-items-center rounded-full text-[11px] transition hover:bg-stamp/20"
+                    className="ml-0.5 grid h-6 w-6 place-items-center rounded-full text-[14px] transition hover:bg-stamp/20"
                     aria-label={`Remove ${c.short}`}
                   >×</button>
                 </span>
@@ -498,7 +538,9 @@ export default function DestinationExplorer() {
               value={credQuery}
               onChange={(e) => { setCredQuery(e.target.value); setCredOpen(true); }}
               onFocus={() => setCredOpen(true)}
-              placeholder={creds.length ? "Add another visa or permit…" : "Search — US Green Card, Schengen visa, Japan residence…"}
+              onKeyDown={(e) => { if (e.key === "Escape") setCredOpen(false); }}
+              aria-label="Search visas and permits you hold"
+              placeholder={creds.length ? "Add another visa or permit…" : "Search - US Green Card, Schengen visa, Japan residence…"}
               className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/55"
             />
             {creds.length > 0 && (
@@ -508,8 +550,11 @@ export default function DestinationExplorer() {
             )}
           </div>
 
-          {credOpen && credGroupOptions.length > 0 && (
-            <div className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-paper-2 shadow-2xl shadow-ink/20">
+          {credOpen && (
+            <div className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-white shadow-xl shadow-ink/10">
+              {credGroupOptions.length === 0 && (
+                <p className="px-4 py-6 text-center text-sm text-ink-mute">No visas or permits found for &ldquo;{credQuery}&rdquo;</p>
+              )}
               {credGroupOptions.map(({ name, items }) => (
                 <div key={name} className="border-b border-line last:border-0">
                   <div className="flex items-center gap-2.5 px-4 pt-3 pb-2">
@@ -522,12 +567,12 @@ export default function DestinationExplorer() {
                       return (
                         <button
                           key={c.id}
-                          onClick={() => toggleCred(c.id)}
+                          onClick={() => { toggleCred(c.id); setCredOpen(false); }}
                           aria-pressed={on}
-                          className={`inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-[12px] transition ${
+                          className={`inline-flex items-center gap-1.5 rounded border px-3 py-1.5 text-[12px] transition ${
                             on
-                              ? "border-stamp bg-stamp/10 font-semibold text-stamp"
-                              : "border-line-strong bg-paper-2/80 text-ink-soft hover:border-stamp/50 hover:text-ink"
+                              ? "border-stamp/40 bg-stamp/[0.06] font-semibold text-stamp"
+                              : "border-line-strong bg-white text-ink-soft hover:border-ink-mute hover:text-ink"
                           }`}
                         >
                           {on && <span className="text-[10px] font-bold">✓</span>}
@@ -541,13 +586,50 @@ export default function DestinationExplorer() {
             </div>
           )}
         </div>
+
+        {/* Credential quick-picks */}
+        {creds.length === 0 && !credQuery && (
+          <div className="mt-2.5 flex flex-wrap items-center gap-2">
+            <span className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute/70">Common:</span>
+            {["US_VISA", "SCHENGEN_VISA", "UK_VISA", "JP_VISA", "CA_VISA", "AU_VISA"].map((id) => {
+              const c = dataset.credentials.find((x) => x.id === id);
+              if (!c) return null;
+              return (
+                <button
+                  key={id}
+                  onClick={() => toggleCred(id)}
+                  className="inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-2/80 px-3 py-1.5 text-[13px] text-ink-soft transition hover:border-stamp/40 hover:bg-stamp/[0.04] hover:text-ink"
+                >
+                  <span>{GROUP_ISO3[c.group] ? flagFor(GROUP_ISO3[c.group]) : "🌐"}</span>
+                  <span>{c.short}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
+
+      {/* ── "Also check" cross-link - shown above result when passport is selected ── */}
+      {destIso3 && selected.length > 0 && (
+        <div className="mt-8 flex items-center gap-3 rounded-lg border border-line bg-paper-2 px-5 py-4">
+          <div className="min-w-0 flex-1">
+            <p className="font-display text-[14px] font-medium text-ink">Also check - your full passport power</p>
+            <p className="mt-0.5 text-sm text-ink-soft">See all visa-free destinations, freedom of movement rights, golden visas and citizenship programs open to you</p>
+          </div>
+          <Link
+            href="/"
+            className="mono shrink-0 rounded border border-stamp/30 bg-white px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
+          >
+            Passport Explorer →
+          </Link>
+        </div>
+      )}
 
       {/* ── RESULT CARD ── */}
       {destIso3 && (
-        <div className="mt-10">
+        <div className="mt-6">
           {selected.length === 0 ? (
-            /* No passport yet — prompt */
+            /* No passport yet - prompt */
             <div className="rounded-xl border-2 border-dashed border-line-strong bg-paper-2/40 px-8 py-12 text-center">
               <p className="font-display text-lg font-medium text-ink">Add your passport above</p>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">
@@ -564,33 +646,17 @@ export default function DestinationExplorer() {
               fomEdge={fomEdge}
               result={result!}
               selected={selected}
+              creds={creds}
             />
           )}
         </div>
       )}
 
-      {/* ── "Also check" cross-link ── */}
-      {destIso3 && selected.length > 0 && (
-        <div className="mt-8 flex items-center gap-3 rounded-lg border border-line-strong bg-paper-2/60 px-5 py-4">
-          <div className="min-w-0 flex-1">
-            <p className="font-display text-[14px] font-medium text-ink">Also check — your full passport power</p>
-            <p className="mt-0.5 text-sm text-ink-soft">See all visa-free destinations, freedom of movement rights, golden visas and citizenship programs open to you</p>
-          </div>
-          <Link
-            href="/"
-            className="mono shrink-0 rounded-md border border-stamp/40 bg-stamp/[0.06] px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/10"
-          >
-            Passport Explorer →
-          </Link>
-        </div>
-      )}
-
-      {/* If no destination selected at all */}
       {!destIso3 && (
-        <div className="mt-14 rounded-xl border border-dashed border-line-strong bg-paper-2/40 px-8 py-16 text-center">
+        <div className="mt-14 rounded-xl border border-dashed border-line px-8 py-16 text-center">
           <p className="font-display text-2xl font-semibold text-ink">Enter your destination above</p>
           <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
-            Type the country you want to visit. Then add your passport — we&apos;ll tell you exactly what access you have with conditions and official source links.
+            Type the country you want to visit. Then add your passport - we&apos;ll tell you exactly what access you have with conditions and official source links.
           </p>
         </div>
       )}
@@ -629,34 +695,248 @@ const CATEGORY_COLOR: Record<string, string> = {
   investment: "text-voa bg-voa/10 ring-voa/30",
 };
 
-function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
+function NotesField({ notes }: { notes: string }) {
+  const [expanded, setExpanded] = useState(false);
   return (
-    <div className="mt-5">
-      <p className="mono mb-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
-        Visa types offered
+    <div className="mt-2">
+      <p className={`text-[11px] leading-relaxed text-ink-mute ${expanded ? "" : "line-clamp-2"}`}>{notes}</p>
+      {notes.length > 120 && (
+        <button onClick={() => setExpanded(e => !e)} className="mono mt-0.5 text-[10px] text-ink-mute/60 transition hover:text-ink-soft">
+          {expanded ? "Show less ▴" : "Show more ▾"}
+        </button>
+      )}
+    </div>
+  );
+}
+
+function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
+  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
+  const cats = Array.from(new Set(visaTypes.map(v => v.category)));
+  const filtered = categoryFilter ? visaTypes.filter(v => v.category === categoryFilter) : visaTypes;
+  return (
+    <div className="mt-6 border-t border-line pt-6">
+      <p className="mono mb-3 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+        {visaTypes.length} visa type{visaTypes.length !== 1 ? "s" : ""} available
       </p>
-      <div className="divide-y divide-line/60">
-        {visaTypes.map((v, i) => (
-          <div key={i} className="flex items-center gap-3 py-2">
-            <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_COLOR[v.category] ?? "text-ink-soft bg-paper-3 ring-line"}`}>
-              {CATEGORY_LABEL[v.category] ?? v.category}
-            </span>
-            <span className="min-w-0 flex-1 truncate text-[12px] text-ink">{v.name}</span>
-            <span className="mono ml-auto flex shrink-0 items-center gap-3 text-[11px] text-ink-mute">
-              {v.max_stay_days != null && <span>≤{v.max_stay_days}d</span>}
+      {cats.length > 1 && (
+        <div className="mb-4 flex flex-wrap gap-1.5">
+          <button
+            onClick={() => setCategoryFilter(null)}
+            className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+          >All</button>
+          {cats.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setCategoryFilter(cat === categoryFilter ? null : cat)}
+              className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+            >{CATEGORY_LABEL[cat] ?? cat}</button>
+          ))}
+        </div>
+      )}
+      <div className="space-y-3">
+        {filtered.map((v, i) => (
+          <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+            <div className="flex flex-wrap items-start gap-2">
+              <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_COLOR[v.category] ?? "text-ink-soft bg-paper-3 ring-line"}`}>
+                {CATEGORY_LABEL[v.category] ?? v.category}
+              </span>
+              <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
+            </div>
+            {v.purpose && (
+              <p className="mt-1.5 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>
+            )}
+            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+              {v.max_stay_days != null && (
+                <span className="mono text-[11px] text-ink-mute">
+                  <span className="font-semibold text-ink">{v.max_stay_days}</span> days max stay
+                </span>
+              )}
+              {v.validity_days != null && (
+                <span className="mono text-[11px] text-ink-mute">
+                  valid <span className="font-semibold text-ink">{v.validity_days}</span> days
+                </span>
+              )}
+              {v.entries && (
+                <span className="mono text-[11px] text-ink-mute">
+                  <span className="font-semibold text-ink capitalize">{v.entries}</span> entry
+                </span>
+              )}
               {v.fee_usd != null && (
-                <span className="text-stamp">{v.fee_usd === 0 ? "free" : `~$${v.fee_usd}`}</span>
+                <span className="mono text-[11px] text-ink-mute">
+                  fee: <span className="font-semibold text-stamp">{v.fee_usd === 0 ? "free" : `~$${v.fee_usd}`}</span>
+                </span>
               )}
-              {v.on_arrival && <span>on arrival</span>}
-              {!v.on_arrival && v.online && (
-                v.official_url
-                  ? <a href={v.official_url} target="_blank" rel="noreferrer" className="text-vfree hover:underline">online ↗</a>
-                  : <span className="text-vfree">online</span>
+              {(v.processing_days_min != null || v.processing_days_max != null) && (
+                <span className="mono text-[11px] text-ink-mute">
+                  processing: <span className="font-semibold text-ink">
+                    {v.processing_days_min != null && v.processing_days_max != null && v.processing_days_min !== v.processing_days_max
+                      ? `${v.processing_days_min}–${v.processing_days_max} days`
+                      : `${v.processing_days_min ?? v.processing_days_max} days`}
+                  </span>
+                </span>
               )}
-            </span>
+              {v.on_arrival && (
+                <span className="mono text-[11px] font-semibold text-voa">on arrival</span>
+              )}
+              {v.online && !v.on_arrival && (
+                <span className="mono text-[11px] font-semibold text-vfree">apply online</span>
+              )}
+            </div>
+            {v.notes && <NotesField notes={v.notes} />}
+            {v.official_url && (
+              <a href={v.official_url} target="_blank" rel="noreferrer"
+                className="mono mt-2 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">
+                {hostOf(v.official_url)} ↗
+              </a>
+            )}
           </div>
         ))}
+        {filtered.length === 0 && (
+          <p className="text-sm text-ink-mute">No visa types match this filter.</p>
+        )}
       </div>
+    </div>
+  );
+}
+
+// ── VFS Global document checklists (corridor-specific, fetched on demand) ──────
+
+type VfsVisaType = {
+  name: string;
+  category: string;
+  documents_required: string | null;
+  visa_fees: string | null;
+  processing_time: string | null;
+  forms: string | null;
+  overview: string | null;
+};
+type VfsCorridorDetail = {
+  source_code: string;
+  destination_code: string;
+  source_url: string;
+  visa_types: VfsVisaType[];
+};
+
+function VfsTypeRow({ v }: { v: VfsVisaType }) {
+  const [open, setOpen] = useState(false);
+  const docs = v.documents_required?.trim();
+  return (
+    <div className="rounded-lg border border-line-strong bg-white">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        className="flex w-full items-center gap-2 px-4 py-2.5 text-left"
+      >
+        <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_COLOR[v.category] ?? "text-ink-soft bg-paper-3 ring-line"}`}>
+          {CATEGORY_LABEL[v.category] ?? v.category}
+        </span>
+        <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
+        <svg viewBox="0 0 10 6" className={`ml-auto h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform ${open ? "rotate-180" : ""}`} fill="currentColor"><path d="M0 0l5 6 5-6z" /></svg>
+      </button>
+      {open && (
+        <div className="border-t border-line px-4 py-3">
+          {docs ? (
+            <div>
+              <p className="mono mb-1.5 text-[10px] uppercase tracking-[0.15em] text-ink-mute">Documents required</p>
+              <p className="whitespace-pre-wrap text-[12px] leading-relaxed text-ink-soft">{docs}</p>
+            </div>
+          ) : (
+            <p className="text-[12px] text-ink-mute">No document checklist published for this type.</p>
+          )}
+          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+            {v.visa_fees && <span className="mono text-[11px] text-ink-mute">fees ✓</span>}
+            {v.processing_time && <span className="mono text-[11px] text-ink-mute">processing time ✓</span>}
+            {v.forms && <span className="mono text-[11px] text-ink-mute">forms ✓</span>}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function VfsDocuments({ destIso3, selected }: { destIso3: string; selected: string[] }) {
+  // Find the VFS corridor for one of the held passports → this destination.
+  const corridor = useMemo(() => {
+    const list = dataset.vfsCorridors?.[destIso3] ?? [];
+    for (const iso3 of selected) {
+      const c = list.find((x) => x.sourceIso3 === iso3);
+      if (c) return c;
+    }
+    return null;
+  }, [destIso3, selected]);
+
+  const [detail, setDetail] = useState<VfsCorridorDetail | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [catFilter, setCatFilter] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!corridor) { setDetail(null); return; }
+    let cancelled = false;
+    setLoading(true); setFailed(false); setDetail(null); setCatFilter(null);
+    fetch(`/api/vfs?src=${corridor.sourceCode}&dest=${corridor.destCode}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((d: VfsCorridorDetail) => { if (!cancelled) setDetail(d); })
+      .catch(() => { if (!cancelled) setFailed(true); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [corridor]);
+
+  if (!corridor) return null;
+
+  const types = detail?.visa_types?.filter((v) => v.documents_required || v.visa_fees) ?? [];
+  const cats = Array.from(new Set(types.map((v) => v.category)));
+  const shown = catFilter ? types.filter((v) => v.category === catFilter) : types;
+  const srcName = nameFor(corridor.sourceIso3);
+
+  return (
+    <div className="mt-6 border-t border-line pt-6">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <p className="mono text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+          Document checklists - applying from {srcName}
+        </p>
+        <span className="mono text-[10px] text-ink-mute/70">via VFS Global</span>
+      </div>
+      <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">
+        Required documents for {srcName} residents applying for {nameFor(destIso3)} at the VFS visa application centre, by visa type. VFS is the official outsourcing partner - confirm against the embassy before applying.
+      </p>
+
+      {loading && <p className="mt-4 text-sm text-ink-mute">Loading document checklists…</p>}
+      {failed && (
+        <p className="mt-4 text-sm text-ink-mute">
+          Couldn&apos;t load checklists. <a href={corridor.sourceUrl} target="_blank" rel="noreferrer" className="text-stamp hover:underline">View on VFS Global ↗</a>
+        </p>
+      )}
+
+      {!loading && !failed && types.length > 0 && (
+        <>
+          {cats.length > 1 && (
+            <div className="mt-4 mb-3 flex flex-wrap gap-1.5">
+              <button
+                onClick={() => setCatFilter(null)}
+                className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${!catFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+              >All</button>
+              {cats.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setCatFilter(cat === catFilter ? null : cat)}
+                  className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${catFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+                >{CATEGORY_LABEL[cat] ?? cat}</button>
+              ))}
+            </div>
+          )}
+          <div className="mt-2 space-y-2">
+            {shown.map((v, i) => <VfsTypeRow key={i} v={v} />)}
+          </div>
+          <a href={corridor.sourceUrl} target="_blank" rel="noreferrer"
+            className="mono mt-3 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">
+            {hostOf(corridor.sourceUrl)} ↗
+          </a>
+        </>
+      )}
+      {!loading && !failed && detail && types.length === 0 && (
+        <p className="mt-4 text-sm text-ink-mute">No document checklists published for this corridor.</p>
+      )}
     </div>
   );
 }
@@ -671,6 +951,7 @@ function ResultCard({
   fomEdge,
   result,
   selected,
+  creds,
 }: {
   destIso3: string;
   isOwnCountry: boolean;
@@ -679,53 +960,49 @@ function ResultCard({
   fomEdge: ReturnType<typeof compute>["freedomOfMovement"][number] | undefined;
   result: ReturnType<typeof compute>;
   selected: string[];
+  creds: string[];
 }) {
   const flag = flagFor(destIso3);
   const name = nameFor(destIso3);
 
-  // Determine card border/bg based on access type
-  const cardStyle = (() => {
-    if (isOwnCountry) return "border-bloc/25 bg-bloc/[0.03]";
-    if (fomEdge) return "border-bloc/30 bg-bloc/[0.06]";
-    if (!accessEdge && !transitEdge) return "border-stamp/25 bg-stamp/[0.04]";
-    if (accessEdge?.level === "visa_free") return "border-vfree/30 bg-vfree/[0.06]";
-    if (accessEdge?.level === "visa_on_arrival") return "border-voa/30 bg-voa/[0.06]";
-    if (accessEdge?.level === "eta" || accessEdge?.level === "e_visa") return "border-eta/30 bg-eta/[0.06]";
-    return "border-line-strong bg-paper-2/60";
+  const leftBorder = (() => {
+    if (isOwnCountry || fomEdge) return "border-l-bloc";
+    if (!accessEdge && !transitEdge) return "border-l-ink-mute/40";
+    return LEVEL_LEFT_BORDER[accessEdge!.level] ?? "border-l-line-strong";
   })();
 
   return (
-    <div className={`overflow-hidden rounded-xl border-2 ${cardStyle}`}>
+    <div className={`overflow-hidden rounded-xl border border-line-strong bg-white shadow-sm border-l-4 ${leftBorder}`}>
       {/* Header */}
       <div className="flex items-center gap-4 border-b border-line px-6 py-5">
         <span className="text-4xl leading-none">{flag}</span>
         <div>
-          <p className="mono text-[10px] uppercase tracking-[0.18em] text-ink-mute">Entry requirements for</p>
-          <h2 className="font-display text-2xl font-semibold text-ink">{name}</h2>
+          <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Entry requirements for</p>
+          <h2 className="font-display text-[22px] font-semibold text-ink">{name}</h2>
         </div>
       </div>
 
-      <div className="px-6 py-6 space-y-4">
+      <div className="space-y-4 px-6 py-6">
         {isOwnCountry ? (
           <div className="flex items-center gap-3">
             <span className="text-2xl">🏠</span>
             <div>
-              <p className="font-display font-semibold text-ink">This is one of your home countries</p>
-              <p className="mt-0.5 text-sm text-ink-soft">You hold citizenship here — no visa needed to enter.</p>
+              <p className="font-semibold text-ink">This is one of your home countries</p>
+              <p className="mt-0.5 text-sm text-ink-soft">You hold citizenship here - no visa required.</p>
             </div>
           </div>
         ) : fomEdge ? (
-          /* Freedom of movement */
           <div>
-            <div className="inline-block rounded-lg border-2 border-bloc/30 bg-bloc/[0.08] px-5 py-3.5">
-              <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Access type</p>
-              <p className="mt-1 font-display text-xl font-semibold text-bloc">Freedom of movement</p>
-              <p className="mt-1 text-sm text-ink-soft">Right to live and work — no visa required</p>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="mono inline-flex items-center rounded border border-bloc/30 bg-bloc/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-bloc">
+                Freedom of movement
+              </span>
+              <span className="text-sm text-ink-soft">Right to live and work - no visa required</span>
             </div>
             {fomEdge.groups.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {fomEdge.groups.map((g) => (
-                  <span key={g} className="mono rounded-[3px] bg-bloc/10 px-2 py-1 text-[10px] uppercase tracking-[0.1em] text-bloc">
+                  <span key={g} className="mono rounded bg-paper-3 px-2 py-1 text-[10px] uppercase tracking-[0.1em] text-ink-soft">
                     {dataset.groupLabels[g] ?? g}
                   </span>
                 ))}
@@ -733,72 +1010,45 @@ function ResultCard({
             )}
           </div>
         ) : accessEdge ? (
-          /* Has direct access */
           <div>
-            {/* Access type + stats row */}
-            <div className="flex flex-wrap items-start gap-3">
-              {/* Access level card */}
-              <div className={`rounded-lg border-2 px-5 py-3.5 ${
-                accessEdge.level === "visa_free" ? "border-vfree/30 bg-vfree/[0.08]"
-                : accessEdge.level === "visa_on_arrival" ? "border-voa/30 bg-voa/[0.08]"
-                : "border-eta/30 bg-eta/[0.08]"
-              }`}>
-                <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Access type</p>
-                <AccessPill level={accessEdge.level} />
-                <p className={`mt-1.5 font-display text-sm font-medium ${
-                  accessEdge.level === "visa_free" ? "text-vfree"
-                  : accessEdge.level === "visa_on_arrival" ? "text-voa"
-                  : "text-eta"
-                }`}>
-                  {accessEdge.level === "visa_free"
-                    ? "Enter with just your passport"
-                    : accessEdge.level === "visa_on_arrival"
-                    ? "Get your visa stamp at the airport"
-                    : "Apply online before you travel"}
-                </p>
-              </div>
-
-              {/* Max stay */}
+            {/* Single info row */}
+            <div className="flex flex-wrap items-center gap-3">
+              <AccessPill level={accessEdge.level} />
               {accessEdge.maxStayDays != null && (
-                <div className="rounded-lg border-2 border-line-strong bg-paper-2/80 px-5 py-3.5">
-                  <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Maximum stay</p>
-                  <p className="font-display text-2xl font-semibold tabular-nums text-ink">{accessEdge.maxStayDays}</p>
-                  <p className="mono text-[11px] text-ink-mute">days</p>
-                </div>
+                <span className="text-sm text-ink-soft">
+                  <span className="font-semibold text-ink">{accessEdge.maxStayDays}</span> days max stay
+                </span>
               )}
-
-              {/* Via passport */}
               {accessEdge.viaIso3 && (
-                <div className="rounded-lg border-2 border-line-strong bg-paper-2/80 px-5 py-3.5">
-                  <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Via passport</p>
-                  <p className="font-display font-semibold text-ink">
-                    {flagFor(accessEdge.viaIso3)} {nameFor(accessEdge.viaIso3)}
-                  </p>
-                </div>
+                <span className="text-sm text-ink-soft">
+                  via {flagFor(accessEdge.viaIso3)} <span className="font-medium text-ink">{nameFor(accessEdge.viaIso3)}</span>
+                </span>
               )}
-
-              {/* Via credential */}
               {accessEdge.viaCredential && (
-                <div className="rounded-lg border-2 border-stamp/25 bg-stamp/[0.04] px-5 py-3.5">
-                  <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Unlocked by</p>
-                  <p className="font-display font-semibold text-stamp">{CRED_SHORT[accessEdge.viaCredential] ?? "held visa"}</p>
-                </div>
+                <span className="mono rounded border border-stamp/30 bg-stamp/[0.05] px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-stamp">
+                  via {CRED_SHORT[accessEdge.viaCredential] ?? "held visa"}
+                </span>
               )}
             </div>
+            <p className="mt-2 text-sm text-ink-soft">
+              {accessEdge.level === "visa_free"
+                ? "Enter with just your passport - no visa application needed."
+                : accessEdge.level === "visa_on_arrival"
+                ? "Get your visa stamp at the airport on arrival."
+                : "Apply online before you travel - no embassy visit required."}
+            </p>
 
-            {/* Conditions / notes */}
             {(accessEdge.conditions || accessEdge.notes) && (
-              <div className="mt-4 rounded-md border border-eta/20 bg-eta/[0.04] px-4 py-3">
-                <p className="mono mb-1 text-[10px] uppercase tracking-[0.15em] text-eta">Conditions &amp; notes</p>
+              <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+                <p className="mono mb-1.5 text-[10px] uppercase tracking-[0.15em] text-ink-mute">Conditions &amp; notes</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
                   {accessEdge.conditions && accessEdge.notes
-                    ? `${accessEdge.conditions} — ${accessEdge.notes}`
+                    ? `${accessEdge.conditions} - ${accessEdge.notes}`
                     : accessEdge.conditions ?? accessEdge.notes}
                 </p>
               </div>
             )}
 
-            {/* Source */}
             {accessEdge.sourceUrl && (
               <div className="mt-4">
                 <SourceLink url={accessEdge.sourceUrl} official={accessEdge.sourceOfficial} />
@@ -806,16 +1056,18 @@ function ResultCard({
             )}
           </div>
         ) : transitEdge ? (
-          /* Transit only */
           <div>
-            <div className="mb-3 rounded-md border border-eta/25 bg-eta/[0.05] px-4 py-3 text-sm leading-relaxed text-ink-soft">
-              <span className="mono mr-2 font-semibold uppercase tracking-[0.1em] text-eta">Transit only</span>
-              You can change planes or transit without a visa — but{" "}
-              <strong className="font-semibold text-ink">not for tourism or extended stays</strong>.
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="mono inline-flex items-center rounded border border-eta/30 bg-eta/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-eta">
+                Transit only
+              </span>
+              {transitEdge.maxStayDays != null && (
+                <span className="text-sm text-ink-soft">up to {transitEdge.maxStayDays} hours</span>
+              )}
             </div>
-            {transitEdge.maxStayDays != null && (
-              <p className="mono text-sm text-ink-mute">Transit up to {transitEdge.maxStayDays} hours.</p>
-            )}
+            <p className="mt-2 text-sm text-ink-soft">
+              You can change planes or transit without a visa - but <strong className="font-medium text-ink">not for tourism or extended stays</strong>.
+            </p>
             {transitEdge.conditions && <p className="mt-2 text-sm text-ink-soft">{transitEdge.conditions}</p>}
             {transitEdge.sourceUrl && (
               <div className="mt-3">
@@ -824,37 +1076,43 @@ function ResultCard({
             )}
           </div>
         ) : (
-          /* Visa required */
           <div>
-            <div className="rounded-lg border-2 border-stamp/25 bg-stamp/[0.04] px-5 py-4">
-              <p className="mono text-[10px] uppercase tracking-[0.15em] text-stamp">Access status</p>
-              <p className="mt-1 font-display text-xl font-semibold text-ink">Visa required</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                No automatic entry found for your passport{selected.length > 1 ? "s" : ""} and credentials. You will need to apply for a visa before travelling to {name}.
-              </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="mono inline-flex items-center rounded border border-line-strong bg-paper-2 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-soft">
+                Visa required
+              </span>
             </div>
+            <p className="mt-2 text-sm text-ink-soft">
+              No automatic entry found for your passport{selected.length > 1 ? "s" : ""} and credentials. You will need to apply for a visa before travelling to {name}.
+            </p>
 
-            {/* What you can do */}
-            <div className="mt-4 rounded-md border border-line bg-paper-2/70 px-4 py-3">
+            <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
               <p className="mono mb-2 text-[10px] uppercase tracking-[0.15em] text-ink-mute">What you can do</p>
               <ul className="space-y-1.5 text-sm text-ink-soft">
                 <li>→ Apply for a tourist/visitor visa at {name}&apos;s embassy or consulate</li>
-                <li>→ Check if holding a US, Schengen, UK, or Japan visa unlocks access (add credentials above)</li>
+                {creds.length === 0 && (
+                  <li>→ Check if holding a US, Schengen, UK, or Japan visa unlocks access (add credentials above)</li>
+                )}
                 {result.cbi.some((p) => p.iso3 === destIso3) && (
-                  <li>→ <span className="font-medium text-stamp">CBI program available</span> — invest to obtain citizenship here</li>
+                  <li>→ <span className="font-medium text-stamp">CBI program available</span> - invest to obtain citizenship here</li>
                 )}
                 {result.rbi.some((p) => p.iso3 === destIso3) && (
-                  <li>→ <span className="font-medium text-voa">Golden visa available</span> — invest to obtain residency here</li>
+                  <li>→ <span className="font-medium text-voa">Golden visa available</span> - invest to obtain residency here</li>
                 )}
               </ul>
             </div>
 
-            {(() => {
-              const visaTypes = dataset.destinationVisaTypes?.[destIso3];
-              return visaTypes && visaTypes.length > 0 ? <VisaTypeCards visaTypes={visaTypes} /> : null;
-            })()}
           </div>
         )}
+
+        {/* Visa types - always shown when data is available */}
+        {(() => {
+          const visaTypes = dataset.destinationVisaTypes?.[destIso3];
+          return visaTypes && visaTypes.length > 0 ? <VisaTypeCards visaTypes={visaTypes} /> : null;
+        })()}
+
+        {/* VFS Global document checklists - corridor-specific, for the held passport */}
+        <VfsDocuments destIso3={destIso3} selected={selected} />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* ── Header ── */}
-      <header className="border-b border-line-strong bg-paper-2/60">
+      <header className="border-b border-line bg-white">
         <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px]">
             {/* Left: headline + stats */}
@@ -19,7 +19,7 @@ export default function Home() {
                 </h1>
                 <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
                   Enter your passport below to instantly see visa-free travel, freedom-of-movement rights,
-                  citizenship-by-investment, golden visas, and fast-track immigration — all from official government sources.
+                  citizenship-by-investment, golden visas, and fast-track immigration - all from official government sources.
                 </p>
               </div>
 
@@ -48,9 +48,9 @@ export default function Home() {
             "mainEntity": [
               { "@type": "Question", "name": "Which passport gives the most visa-free countries in 2025?", "acceptedAnswer": { "@type": "Answer", "text": "European passports (Luxembourg, Germany, France, Italy, Spain, Denmark, Finland, Netherlands) and Japan consistently top the passport index, offering visa-free or visa-on-arrival access to 170+ destinations in 2025." } },
               { "@type": "Question", "name": "Can holding a US visa increase my travel options?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A valid US B1/B2 visa or Green Card unlocks visa-free or visa-on-arrival access to dozens of additional countries including Mexico, Costa Rica, Guatemala, Albania, Kosovo and more." } },
-              { "@type": "Question", "name": "What is citizenship by investment?", "acceptedAnswer": { "@type": "Answer", "text": "Citizenship by investment (CBI) grants citizenship to foreign nationals who make a qualifying economic contribution — donations, real estate, or bond investments — in Caribbean nations, Malta, Turkey, and others." } },
+              { "@type": "Question", "name": "What is citizenship by investment?", "acceptedAnswer": { "@type": "Answer", "text": "Citizenship by investment (CBI) grants citizenship to foreign nationals who make a qualifying economic contribution - donations, real estate, or bond investments - in Caribbean nations, Malta, Turkey, and others." } },
               { "@type": "Question", "name": "What is a golden visa?", "acceptedAnswer": { "@type": "Answer", "text": "A golden visa grants residency rights (not citizenship) in exchange for a qualifying investment. Popular programs include Portugal, Greece, Spain, UAE, and Malta, with pathways to citizenship after residency." } },
-              { "@type": "Question", "name": "What is the difference between visa-free and visa on arrival?", "acceptedAnswer": { "@type": "Answer", "text": "Visa-free means entry with just your passport — no application or fee. Visa on arrival means you get a stamp at the airport upon landing and pay a small fee there. Both avoid embassy appointments." } },
+              { "@type": "Question", "name": "What is the difference between visa-free and visa on arrival?", "acceptedAnswer": { "@type": "Answer", "text": "Visa-free means entry with just your passport - no application or fee. Visa on arrival means you get a stamp at the airport upon landing and pay a small fee there. Both avoid embassy appointments." } },
             ]
           })
         }}
@@ -59,7 +59,7 @@ export default function Home() {
       <PassportExplorer />
 
       {/* ── SEO content: How it works + FAQ ── */}
-      <section className="border-t border-line bg-paper-2/30">
+      <section className="border-t border-line bg-paper-2">
         <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="font-display text-2xl font-semibold text-ink">How Passport Power works</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
@@ -76,7 +76,7 @@ export default function Home() {
             <div>
               <p className="mono text-[10px] uppercase tracking-[0.2em] text-stamp">03</p>
               <h3 className="mt-2 font-display text-lg font-semibold text-ink">Explore your options</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">See every destination you can reach visa-free, on arrival, or with an eTA — plus citizenship by investment, golden visas, and fast-track immigration programs.</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">See every destination you can reach visa-free, on arrival, or with an eTA - plus citizenship by investment, golden visas, and fast-track immigration programs.</p>
             </div>
           </div>
 
@@ -87,7 +87,7 @@ export default function Home() {
               {[
                 {
                   q: "What is passport power and how is it measured?",
-                  a: "Passport power refers to how many countries a passport holder can visit without obtaining a visa in advance. It is measured by counting the number of destinations offering visa-free access, visa on arrival, or electronic travel authorisation (eTA) to holders of a given passport. Stronger passports — typically those from the EU, US, Japan, UK, Australia, and Canada — can access 170+ destinations without prior visa arrangements."
+                  a: "Passport power refers to how many countries a passport holder can visit without obtaining a visa in advance. It is measured by counting the number of destinations offering visa-free access, visa on arrival, or electronic travel authorisation (eTA) to holders of a given passport. Stronger passports - typically those from the EU, US, Japan, UK, Australia, and Canada - can access 170+ destinations without prior visa arrangements."
                 },
                 {
                   q: "Which passport gives the most visa-free countries in 2025?",
@@ -95,33 +95,33 @@ export default function Home() {
                 },
                 {
                   q: "Can holding a US visa increase my travel options?",
-                  a: "Yes. Holding a valid US visa (B1/B2 tourist or business visa, or a US Green Card) unlocks additional visa-free or visa-on-arrival access to dozens of countries including Mexico, Costa Rica, Guatemala, Albania, Kosovo, and several others — destinations that may otherwise require a visa for your nationality."
+                  a: "Yes. Holding a valid US visa (B1/B2 tourist or business visa, or a US Green Card) unlocks additional visa-free or visa-on-arrival access to dozens of countries including Mexico, Costa Rica, Guatemala, Albania, Kosovo, and several others - destinations that may otherwise require a visa for your nationality."
                 },
                 {
                   q: "What is citizenship by investment (CBI)?",
-                  a: "Citizenship by investment (CBI) is a legal process by which a country grants citizenship to foreign nationals who make a qualifying economic contribution — typically a donation to a national development fund, purchase of real estate, or investment in government bonds. Popular CBI programs include those offered by Caribbean nations (St Kitts and Nevis, Dominica, Grenada, Antigua and Barbuda, St Lucia), Malta, Turkey, Jordan, and Vanuatu."
+                  a: "Citizenship by investment (CBI) is a legal process by which a country grants citizenship to foreign nationals who make a qualifying economic contribution - typically a donation to a national development fund, purchase of real estate, or investment in government bonds. Popular CBI programs include those offered by Caribbean nations (St Kitts and Nevis, Dominica, Grenada, Antigua and Barbuda, St Lucia), Malta, Turkey, Jordan, and Vanuatu."
                 },
                 {
                   q: "What is a golden visa and how does it differ from CBI?",
-                  a: "A golden visa (also called residency by investment or RBI) grants residency rights — not citizenship — in exchange for a qualifying investment. Unlike citizenship by investment programs, golden visas typically offer a pathway to citizenship after a period of residency. Popular golden visa programs include those of Portugal, Greece, Spain, UAE, Malta, and several other EU and Gulf states."
+                  a: "A golden visa (also called residency by investment or RBI) grants residency rights - not citizenship - in exchange for a qualifying investment. Unlike citizenship by investment programs, golden visas typically offer a pathway to citizenship after a period of residency. Popular golden visa programs include those of Portugal, Greece, Spain, UAE, Malta, and several other EU and Gulf states."
                 },
                 {
                   q: "How accurate is this passport data?",
-                  a: "Passport Power sources visa policy data exclusively from official government sources — foreign ministry pages, border authority portals, and published bilateral visa agreements. Each entry links to its official source. Data is updated continuously. Where governments do not publish structured visa-free lists, we do not extrapolate — so reach counts are conservative lower bounds."
+                  a: "Passport Power sources visa policy data exclusively from official government sources - foreign ministry pages, border authority portals, and published bilateral visa agreements. Each entry links to its official source. Data is updated continuously. Where governments do not publish structured visa-free lists, we do not extrapolate - so reach counts are conservative lower bounds."
                 },
                 {
                   q: "What is the difference between visa-free and visa on arrival?",
-                  a: "Visa-free access means you can enter a country with just your passport — no advance application, no fee, no paperwork at the border. Visa on arrival means you receive an entry stamp or sticker at the airport upon landing and pay a small fee there. Both allow entry without pre-arranged appointments at embassies or consulates, but visa on arrival typically involves a short queue and a fee at the port of entry."
+                  a: "Visa-free access means you can enter a country with just your passport - no advance application, no fee, no paperwork at the border. Visa on arrival means you receive an entry stamp or sticker at the airport upon landing and pay a small fee there. Both allow entry without pre-arranged appointments at embassies or consulates, but visa on arrival typically involves a short queue and a fee at the port of entry."
                 },
                 {
                   q: "What is an eTA or e-Visa?",
-                  a: "An Electronic Travel Authorisation (eTA) or e-Visa requires a brief online application — usually 5–15 minutes — and approval typically arrives within minutes to a few days. It costs a small fee but requires no embassy visit or paper visa. Countries offering eTAs to your passport include Australia, Canada, UK, and many others."
+                  a: "An Electronic Travel Authorisation (eTA) or e-Visa requires a brief online application - usually 5–15 minutes - and approval typically arrives within minutes to a few days. It costs a small fee but requires no embassy visit or paper visa. Countries offering eTAs to your passport include Australia, Canada, UK, and many others."
                 },
               ].map(({ q, a }) => (
-                <details key={q} className="group py-4">
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-medium text-ink">
+                <details key={q} className="group py-1">
+                  <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-4 py-3 font-display text-[15px] font-medium text-ink">
                     {q}
-                    <span className="mono shrink-0 text-ink-mute transition group-open:rotate-180">▾</span>
+                    <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform duration-150 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </summary>
                   <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-soft">{a}</p>
                 </details>
@@ -132,19 +132,24 @@ export default function Home() {
       </section>
 
       {/* ── Footer / methodology with machine-readable zone ── */}
-      <footer className="mt-auto border-t border-line-strong bg-paper-3/50">
+      <footer className="mt-auto border-t border-line bg-paper-2">
         <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
-          <p className="mono text-[11px] uppercase tracking-[0.2em] text-stamp">
+          <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink-mute">
             Methodology &amp; caveats
           </p>
           <p className="mt-3 max-w-3xl leading-relaxed text-ink-soft">
             {meta.note} Each visa-free destination links to the official source that
-            lists it — a{" "}
+            lists it - a{" "}
             <span className="font-medium text-vfree">green seal</span> marks a
             government domain, <span className="font-medium text-eta">amber</span>{" "}
             a non-official one. This ledger is informational only and not legal or
-            immigration advice — always confirm requirements with the destination&apos;s
+            immigration advice - always confirm requirements with the destination&apos;s
             authorities before travelling or applying.
+          </p>
+
+          <p className="mono mt-5 text-[11px] uppercase tracking-[0.18em] text-ink-mute">
+            Data last updated{" "}
+            <span className="font-semibold text-ink-soft">{meta.lastUpdated}</span>
           </p>
 
           <div className="mrz mt-8 select-none overflow-hidden rounded-sm border border-line bg-paper-2/70 px-4 py-3 text-xs text-ink-soft">
@@ -158,22 +163,6 @@ export default function Home() {
         </div>
       </footer>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              { "@type": "Question", "name": "Which passport gives the most visa-free countries in 2025?", "acceptedAnswer": { "@type": "Answer", "text": "European passports (Luxembourg, Germany, France, Italy, Spain, Denmark, Finland, Netherlands) and Japan consistently top the passport index, offering visa-free or visa-on-arrival access to 170+ destinations in 2025." } },
-              { "@type": "Question", "name": "Can holding a US visa increase my travel options?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A valid US B1/B2 visa or Green Card unlocks visa-free or visa-on-arrival access to dozens of additional countries including Mexico, Costa Rica, Guatemala, Albania, Kosovo and more." } },
-              { "@type": "Question", "name": "What is citizenship by investment?", "acceptedAnswer": { "@type": "Answer", "text": "Citizenship by investment (CBI) grants citizenship to foreign nationals who make a qualifying economic contribution — donations, real estate, or bond investments — in Caribbean nations, Malta, Turkey, and others." } },
-              { "@type": "Question", "name": "What is a golden visa?", "acceptedAnswer": { "@type": "Answer", "text": "A golden visa grants residency rights (not citizenship) in exchange for a qualifying investment. Popular programs include Portugal, Greece, Spain, UAE, and Malta, with pathways to citizenship after residency." } },
-              { "@type": "Question", "name": "What is the difference between visa-free and visa on arrival?", "acceptedAnswer": { "@type": "Answer", "text": "Visa-free means entry with just your passport — no application or fee. Visa on arrival means you get a stamp at the airport upon landing and pay a small fee there. Both avoid embassy appointments." } },
-            ]
-          })
-        }}
-      />
     </main>
   );
 }
@@ -272,7 +261,7 @@ function PassportIllustration() {
           <text x="102" y="220" fontFamily="monospace" fontSize="6.5" fill="#1a2744" opacity="0.22" letterSpacing="0.5">A12345&lt;3BWH8901019M3012315&lt;&lt;&lt;&lt;&lt;&lt;</text>
         </g>
 
-        {/* ── VISA STAMP 1 — Entry (green), top right ── */}
+        {/* ── VISA STAMP 1 - Entry (green), top right ── */}
         <g transform="translate(292, 52) rotate(14)">
           <circle cx="0" cy="0" r="36" fill="#f0faf5" fillOpacity="0.85" stroke="#2a7a4a" strokeWidth="1.8" />
           <circle cx="0" cy="0" r="29" fill="none" stroke="#2a7a4a" strokeWidth="0.6" opacity="0.5" />
@@ -283,7 +272,7 @@ function PassportIllustration() {
           <text x="0" y="24" textAnchor="middle" fontFamily="monospace" fontSize="5" fill="#2a7a4a" opacity="0.5">PORT: INTL-A</text>
         </g>
 
-        {/* ── VISA STAMP 2 — Departure (stamp red), mid right ── */}
+        {/* ── VISA STAMP 2 - Departure (stamp red), mid right ── */}
         <g transform="translate(250, 148) rotate(-9)">
           <rect x="-32" y="-22" width="64" height="44" rx="4" fill="#fff8f7" fillOpacity="0.9" stroke="#b23528" strokeWidth="1.5" />
           <line x1="-28" y1="-12" x2="28" y2="-12" stroke="#b23528" strokeWidth="0.5" opacity="0.4" />
@@ -292,7 +281,7 @@ function PassportIllustration() {
           <text x="0" y="8" textAnchor="middle" fontFamily="monospace" fontSize="5.5" fill="#b23528" opacity="0.75" letterSpacing="0.5">14 MAR 2025</text>
         </g>
 
-        {/* ── VISA STAMP 3 — Transit (blue), lower left of bio page ── */}
+        {/* ── VISA STAMP 3 - Transit (blue), lower left of bio page ── */}
         <g transform="translate(138, 152) rotate(-12)">
           <circle cx="0" cy="0" r="28" fill="#f0f4ff" fillOpacity="0.8" stroke="#3b5bdb" strokeWidth="1.4" />
           <circle cx="0" cy="0" r="22" fill="none" stroke="#3b5bdb" strokeWidth="0.5" opacity="0.45" />

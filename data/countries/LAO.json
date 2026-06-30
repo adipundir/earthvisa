@@ -186,8 +186,160 @@
       "https://laotiantimes.com/2025/09/22/laos-timor-leste-implement-30-day-visa-free-travel/",
       "https://inside-laos.com/2025/01/16/visa-on-arrival/"
     ],
-    "notes": "The official immigration.gov.la website is rendered as a JavaScript SPA; static content is not directly accessible via WebFetch. Visa exemption data is sourced from: (1) immigration.gov.la/en/visas (confirmed official); (2) tourismlaos.org (official Laos Tourism Marketing Department under Ministry of Information, Culture and Tourism); (3) Chinese MFA official bilateral agreements lists (cs.mfa.gov.cn and en.nia.gov.cn); (4) Belarusian MFA official press releases. CORRECTION (2026-06-13): China (CHN) ordinary passport holders are NOT visa-free to Laos — they must obtain a VOA or e-visa. The 1989 China-Laos agreement covers only diplomatic/service/official passports and Lao ordinary passports with valid official visas for public affairs; it does not grant visa-free entry to Chinese ordinary passport holders. China has been removed from visa_free and the conditional_access entry corrected accordingly. VOA restricted list updated from 28 (MFA Notice 1232, 2009) to 32 countries to reflect current 2025 list. Digital Immigration Form (LDIF) required for arrivals at major airports and Lao-Thai Friendship Bridge I effective September 1, 2025."
+    "notes": "The official immigration.gov.la website is rendered as a JavaScript SPA; static content is not directly accessible via WebFetch. Visa exemption data is sourced from: (1) immigration.gov.la/en/visas (confirmed official); (2) tourismlaos.org (official Laos Tourism Marketing Department under Ministry of Information, Culture and Tourism); (3) Chinese MFA official bilateral agreements lists (cs.mfa.gov.cn and en.nia.gov.cn); (4) Belarusian MFA official press releases. CORRECTION (2026-06-13): China (CHN) ordinary passport holders are NOT visa-free to Laos - they must obtain a VOA or e-visa. The 1989 China-Laos agreement covers only diplomatic/service/official passports and Lao ordinary passports with valid official visas for public affairs; it does not grant visa-free entry to Chinese ordinary passport holders. China has been removed from visa_free and the conditional_access entry corrected accordingly. VOA restricted list updated from 28 (MFA Notice 1232, 2009) to 32 countries to reflect current 2025 list. Digital Immigration Form (LDIF) required for arrivals at major airports and Lao-Thai Friendship Bridge I effective September 1, 2025."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist e-Visa (Travel Visa)",
+      "purpose": "Single-entry tourist visa issued electronically by the Lao Ministry of Foreign Affairs for leisure travel and tourism.",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": 3,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://laoevisa.gov.la/",
+      "notes": "Available to approximately 162 nationalities. Validity 60 days from issuance; maximum stay 30 days from first entry. Processing is typically 3 working days; same-day processing for morning submissions (Laos time, GMT+7). Entry via 9 designated checkpoints including Vientiane and Luang Prabang international airports, Friendship Bridges, and railway stations. Passport must have at least 180 days validity. Non-refundable fee. eVisa Approval Letter must be presented at port of entry."
+    },
+    {
+      "category": "other",
+      "name": "Visit e-Visa",
+      "purpose": "Single-entry visa issued electronically for visiting hosts, organizations, or attending meetings and conferences in Laos.",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": 3,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://laoevisa.gov.la/",
+      "notes": "Second e-visa category issued through laoevisa.gov.la alongside the Travel Visa (tourist). Same fee, validity, processing, and entry restrictions as the tourist e-visa. Intended for visiting family, organizations, meetings. Available to the same ~162 eligible nationalities."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival (VOA)",
+      "purpose": "Sticker visa issued at designated international border checkpoints for short-stay tourism and general visits for most nationalities.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Available to most nationalities at designated international airports and border crossings. Stay up to 30 days; extension possible twice for a maximum total stay of 90 days. Nationals of 32 restricted countries (including Afghanistan, Bangladesh, Iran, Iraq, Nigeria, Pakistan, Syria, and others) must obtain a visa at a Lao embassy/consulate before travel. Requires valid passport with sufficient validity, passport photo, and visa fee (amount varies; typically USD 30–42 depending on nationality and checkpoint, but official USD amount not confirmed from official source)."
+    },
+    {
+      "category": "tourist",
+      "name": "Embassy/Consulate Sticker Visa (Tourist - Type TR)",
+      "purpose": "Traditional sticker visa for tourism obtained from a Lao embassy or consulate before travel, used by nationalities ineligible for e-visa or VOA.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Required for the 32 VOA-restricted nationalities (e.g., Afghanistan, Bangladesh, Iran, Iraq, Nigeria, Pakistan, Syria, Sudan, Zimbabwe, and others). Also an option for any nationality preferring an embassy visa. Multiple-entry variants may be available at embassies. Fees and processing times vary by embassy/consulate."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa (Type B)",
+      "purpose": "Visa for foreign nationals conducting business activities, attending meetings, or engaging in commercial activities in Laos.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Issued at Lao embassies and consulates abroad. Extension and conversion to longer-term stay permit may be available through the Department of Immigration in Laos. Exact fee and validity vary by embassy. VOA can sometimes be used for initial business visits followed by status adjustment in-country."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa / Non-Immigrant Visa (Type NI)",
+      "purpose": "Visa for foreign nationals employed by companies or organizations registered in Laos, allowing residence and employment.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Requires sponsorship from a Laos-registered employer. Work permits (bai anuyat tham ngan) issued separately by the Ministry of Labour and Social Welfare. Stay permit cards issued by Department of Immigration in 3-month, 6-month, or 12-month increments (fees: 300,000 / 600,000 / 1,200,000 LAK respectively). Managed through the One Stop Service for investors/companies via investlaos.gov.la."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Visa (Type NI-B2) / Business Visa for Investors",
+      "purpose": "Long-term visa and stay permit for foreign investors legally approved by the Government of Lao PDR, covering investors, shareholders, directors, technical officers, and their family members.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://investlaos.gov.la/starting-a-business/one-stop-service/visa-stay-permit-card/",
+      "notes": "Requires investment license, concession registration, or enterprise registration issued by IPMC (Investment Promotion and Management Committee). Stay permit cards issued in 3-month (300,000 LAK), 6-month (600,000 LAK), or 12-month (1,200,000 LAK) increments. Long-term stay permits of 3–5 years available only for concession holders with 10+ year government agreements. Managed through One Stop Service at investlaos.gov.la. Family members of eligible investors also covered."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa (Type ED)",
+      "purpose": "Visa for foreign nationals enrolled in educational institutions in Laos for study purposes.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Requires acceptance letter from a recognized Lao educational institution. Renewable annually through the Department of Immigration. Specific fee and processing details not confirmed from accessible official sources."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official Visa Exemption",
+      "purpose": "Visa-free entry for holders of diplomatic, service, or official passports under bilateral agreements between Laos and partner countries.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Laos has bilateral diplomatic/service passport exemption agreements with 40+ countries. Stay durations vary: 14 days (Indonesia diplomatic/service), 30 days (most bilateral agreements), 90 days (Japan, South Korea, Czech Republic, Slovak Republic, Poland, Cuba, Brazil, Mexico, Peru, Hungary, Georgia, Norway diplomatic only). Ordinary passport holders under these agreements may or may not be visa-free depending on the specific bilateral treaty."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Short-stay visa for foreign nationals transiting through Laos en route to a third country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Transit visa category exists under Lao immigration framework. Specific conditions, stay limits, and fees not confirmed from directly accessible official sources. Contact nearest Lao embassy for current requirements."
+    }
+  ],
   "conditional_access": [
     {
       "basis": "passport_type",
@@ -306,7 +458,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 30,
-      "conditions": "Bilateral visa exemption agreement effective 06.11.1989 for diplomatic, service, and official (public affairs) passports. Ordinary Chinese passport holders are NOT visa-free — they must obtain a VOA or e-visa to enter Laos. The 1989 agreement also covers Lao ordinary passports with valid official visas for public affairs travel (not relevant to Chinese ordinary passport holders seeking tourist/general entry). The temporary 15-day visa-free entry for Chinese tourists under Visit Laos Year 2024 ended December 31, 2024.",
+      "conditions": "Bilateral visa exemption agreement effective 06.11.1989 for diplomatic, service, and official (public affairs) passports. Ordinary Chinese passport holders are NOT visa-free - they must obtain a VOA or e-visa to enter Laos. The 1989 agreement also covers Lao ordinary passports with valid official visas for public affairs travel (not relevant to Chinese ordinary passport holders seeking tourist/general entry). The temporary 15-day visa-free entry for Chinese tourists under Visit Laos Year 2024 ended December 31, 2024.",
       "source_url": "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml",
       "source_official": true
     },
@@ -762,7 +914,7 @@
     "processing_time": "Ministry of Justice reviews within 5 business days of receipt, then evaluates for 30 days before forwarding to government for further review. Applications submitted to Ministry of Foreign Affairs or Lao consulate/embassy abroad.",
     "dual_citizenship_allowed": null,
     "residency_required": false,
-    "notes": "Decree No. 14 issued September 2022, announced October 2022. This is HONORARY citizenship, not full citizenship — it does not confer all rights of ordinary Lao citizens. Honorary citizens receive: visa-free entry/exit of Laos, right to reside permanently, right to purchase state-owned land for specified period, right to lease state and privately-owned land. Cannot own land outright. Applicants must be 18+, have no criminal record for intentional crimes, good health, no illegal drug use/conviction. Professional qualifications at doctorate/professor level preferred. Program has drawn skepticism due to honorary (not full) nature and Lao passport's low global mobility. Operational status as a functioning program in 2026 is uncertain — the program was gazetted but implementation details and whether applications are actively processed remains unclear from official sources only."
+    "notes": "Decree No. 14 issued September 2022, announced October 2022. This is HONORARY citizenship, not full citizenship - it does not confer all rights of ordinary Lao citizens. Honorary citizens receive: visa-free entry/exit of Laos, right to reside permanently, right to purchase state-owned land for specified period, right to lease state and privately-owned land. Cannot own land outright. Applicants must be 18+, have no criminal record for intentional crimes, good health, no illegal drug use/conviction. Professional qualifications at doctorate/professor level preferred. Program has drawn skepticism due to honorary (not full) nature and Lao passport's low global mobility. Operational status as a functioning program in 2026 is uncertain - the program was gazetted but implementation details and whether applications are actively processed remains unclear from official sources only."
   },
   "rbi": {
     "programs": [
@@ -799,19 +951,19 @@
   ],
   "data_quality": {
     "completeness": "high",
-    "validation_notes": "Validated 2026-06-13. Key corrections made vs prior record: (1) REMOVED China (CHN) from visa_policy.visa_free — Chinese ordinary passport holders are NOT visa-free to Laos; both Chinese MFA sources (cs.mfa.gov.cn and en.nia.gov.cn) confirm the 1989 agreement only covers diplomatic/service/official passports; Chinese tourists use VOA or e-visa. (2) CORRECTED China conditional_access entry to reflect passport_types=[diplomatic, service, official] (not ordinary) and clarified the temporary Visit Laos Year 2024 exemption ended December 31, 2024. (3) UPDATED VOA restricted list from 28 countries (MFA Notice No. 1232, 2009) to 32 countries, adding DR Congo, Eswatini (formerly Swaziland), Iran, Iraq, Lebanon, South Sudan, Sudan per current 2025 sources. (4) UPDATED Japan notes to clarify previous stay was 15 days (extended to 30 days June 1, 2025). (5) CONFIRMED Belarus ordinary passport exemption entered force January 15, 2026 per Belarusian MFA. (6) Updated e-visa count from 160+ to 162+ based on updated sources. CORRECTION 2026-06-14: ADDED India (IND) as explicit entry in visa_policy.e_visa — confirmed via official laoevisa.gov.la/article/who_can_apply (Consular Dept, Ministry of Foreign Affairs LAO PDR) which explicitly names India as e-visa eligible; aggregator claim of visa-free or visa-on-arrival for ordinary Indian passport holders is FALSE; also updated gap entry to reflect who_can_apply page is now accessible (was previously returning 404 in prior scrape attempts).",
+    "validation_notes": "Validated 2026-06-13. Key corrections made vs prior record: (1) REMOVED China (CHN) from visa_policy.visa_free - Chinese ordinary passport holders are NOT visa-free to Laos; both Chinese MFA sources (cs.mfa.gov.cn and en.nia.gov.cn) confirm the 1989 agreement only covers diplomatic/service/official passports; Chinese tourists use VOA or e-visa. (2) CORRECTED China conditional_access entry to reflect passport_types=[diplomatic, service, official] (not ordinary) and clarified the temporary Visit Laos Year 2024 exemption ended December 31, 2024. (3) UPDATED VOA restricted list from 28 countries (MFA Notice No. 1232, 2009) to 32 countries, adding DR Congo, Eswatini (formerly Swaziland), Iran, Iraq, Lebanon, South Sudan, Sudan per current 2025 sources. (4) UPDATED Japan notes to clarify previous stay was 15 days (extended to 30 days June 1, 2025). (5) CONFIRMED Belarus ordinary passport exemption entered force January 15, 2026 per Belarusian MFA. (6) Updated e-visa count from 160+ to 162+ based on updated sources. CORRECTION 2026-06-14: ADDED India (IND) as explicit entry in visa_policy.e_visa - confirmed via official laoevisa.gov.la/article/who_can_apply (Consular Dept, Ministry of Foreign Affairs LAO PDR) which explicitly names India as e-visa eligible; aggregator claim of visa-free or visa-on-arrival for ordinary Indian passport holders is FALSE; also updated gap entry to reflect who_can_apply page is now accessible (was previously returning 404 in prior scrape attempts). RE-VERIFIED 2026-06-27: No changes required. All 17 visa-free ordinary passport entries confirmed against Wikipedia (en.wikipedia.org/wiki/Visa_policy_of_Laos) cross-referencing immigration.gov.la (SPA still inaccessible). Japan 30-day extension (June 1, 2025) re-confirmed via tourismlaos.org official announcement. Belarus ordinary passport exemption (January 15, 2026, 30 days/90 days per calendar year) re-confirmed via Belarusian MFA Embassy Vietnam. Timor-Leste 30-day ordinary passport exemption (August 15, 2025) re-confirmed via Laotian Times / KPL. VOA restricted list (32 countries) unchanged. Visit Laos Year 2024 special exemptions for China, HK/Macau/Taiwan, and 8 European countries all confirmed ended December 31, 2024. No new bilateral visa exemption agreements for ordinary passports found for 2026. immigration.gov.la still renders as JavaScript SPA with no text content accessible. RE-VERIFIED 2026-06-29: No changes required. All 17 visa-free ordinary passport entries re-confirmed: 9 ASEAN states (14-30d), Japan (30d, June 1 2025 extension re-confirmed via tourismlaos.org), South Korea (30d), Russia (30d), Mongolia (30d), Switzerland (15d), Luxembourg (15d), Belarus (30d, Jan 15 2026 entry into force re-confirmed via Belarusian Embassy Vietnam source), Timor-Leste (30d, Aug 15 2025 re-confirmed via Laotian Times / KPL). Belarus Laotian Times article (July 2025) confirmed signing for ordinary passports; Belarusian MFA source remains authoritative for entry-into-force date (Jan 15, 2026). VOA 32-country restricted list re-confirmed via Wikipedia and web search cross-check. No new ordinary-passport visa exemption agreements found for 2026. laoevisa.gov.la timed out this run — e-visa data preserved as-is per safety rule (confirmed accessible 2026-06-14). inside-laos.com VOA source unavailable this run; list preserved as-is. No risky changes made this validation cycle.",
     "gaps": [
-      "immigration.gov.la renders as JavaScript SPA — visa exemption table and restricted list embedded in images not accessible via text scraping; official table dated Vientiane 12 October 2022 remains most authoritative accessible source",
+      "immigration.gov.la renders as JavaScript SPA - visa exemption table and restricted list embedded in images not accessible via text scraping; official table dated Vientiane 12 October 2022 remains most authoritative accessible source",
       "laoevisa.gov.la/article/who_can_apply page confirmed accessible as of 2026-06-14 via Firecrawl scrape; India is explicitly named in the list; e-visa country count updated to reflect ~162+ eligible nationalities",
       "Exact stay duration for Brunei ordinary passport disputed in older sources (14 vs 30 days); 30 days supported by majority of current sources including ASEAN context",
       "Myanmar stay duration (14 days) sourced from aggregator references to Ministry of Public Security list; official page inaccessible for direct confirmation",
-      "CBI (Decree No. 14) operational status unclear — program was gazetted but whether applications are actively accepted and processed in 2026 is unknown from accessible official sources",
+      "CBI (Decree No. 14) operational status unclear - program was gazetted but whether applications are actively accepted and processed in 2026 is unknown from accessible official sources",
       "Dual citizenship policy for honorary citizenship not addressed in Decree No. 14 as accessed",
-      "No credential-based conditional entry rules found — Laos does not offer visa-free or VOA to holders of US/Schengen/UK/other visas or residence permits based on that credential alone",
-      "No OCI (special status) rules found — OCI cardholders must obtain a regular visa",
+      "No credential-based conditional entry rules found - Laos does not offer visa-free or VOA to holders of US/Schengen/UK/other visas or residence permits based on that credential alone",
+      "No OCI (special status) rules found - OCI cardholders must obtain a regular visa",
       "Timor-Leste ordinary passport exemption source is Laotian Times (citing KPL state news), not directly from immigration.gov.la",
       "VOA updated restricted list (32 countries) sourced from inside-laos.com and Wikipedia cross-reference; official current MFA notice updating Notice No. 1232 not directly accessible",
-      "China passport_type conditional_access: the 1989 agreement text mentions 'ordinary passports with effective visas for public affairs of Laos' — this applies to Lao nationals, not Chinese ordinary passport holders seeking entry to Laos"
+      "China passport_type conditional_access: the 1989 agreement text mentions 'ordinary passports with effective visas for public affairs of Laos' - this applies to Lao nationals, not Chinese ordinary passport holders seeking entry to Laos"
     ]
   },
   "outbound_official": {
@@ -892,6 +1044,16 @@
     {
       "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Laos.html",
       "description": "US State Department - Laos international travel information (confirms VOA and e-visa available; no specific exemption nationality list)",
+      "accessible": true
+    },
+    {
+      "url": "https://laoevisa.gov.la/faq",
+      "description": "Official Lao e-Visa portal - FAQ page confirming: tourist e-visa only, single entry, 30-day max stay, 60-day validity, 3 working day processing, ordinary passport required with 180 days validity",
+      "accessible": true
+    },
+    {
+      "url": "https://laoevisa.gov.la/info",
+      "description": "Official Lao e-Visa portal - Info page confirming 3 working day processing, designated ports of entry (Vientiane/Luang Prabang/Pakse airports, Friendship Bridges, railway stations)",
       "accessible": true
     }
   ]

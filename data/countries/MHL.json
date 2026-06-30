@@ -947,8 +947,115 @@
       "https://rmiimmigration.org/enrollment/",
       "https://www.rmiembassyus.org/consular"
     ],
-    "notes": "Data sourced from official RMI Division of Immigration documents. Primary reference: March 2024 update (VOA-MARCH-2024.pdf). The document is titled 'Summary of Countries Entitled for Visa Exemption/Waiver or Visa On Arrival'. FSM, Palau, and USA are visa-exempt with no period restriction (under Compact of Free Association for USA). EU member countries (including UK, listed alongside EU members in the official document despite Brexit) and Taiwan are visa-exempt for 90 days. All other listed countries are visa-on-arrival (90 days, fee waived). No e-visa or ETA system found. Countries marked with (*) in the VOA section are Pacific Island Forum Members. All diplomatic passport holders and Laissez-Passer holders on official/diplomatic missions receive a visa waiver with no period restriction, regardless of nationality — classified under conditional_access as passport_type grants. Japan and India diplomatic/official passport holders receive special 90-day waivers listed in the 'ALL OTHERS – VISA WAIVERS' section. Republic of Korea (South Korea), South Africa, and St. Lucia added in March 2024 update. Cruise ship passengers staying under 7 days and commercial aircraft crew staying under 14 days are exempt per RMI Embassy (classified under conditional_access). No credential-based conditional access rules (no US visa/Schengen/Green Card holding provisions found)."
+    "notes": "Data sourced from official RMI Division of Immigration documents. Primary reference: March 2024 update (VOA-MARCH-2024.pdf). The document is titled 'Summary of Countries Entitled for Visa Exemption/Waiver or Visa On Arrival'. FSM, Palau, and USA are visa-exempt with no period restriction (under Compact of Free Association for USA). EU member countries (including UK, listed alongside EU members in the official document despite Brexit) and Taiwan are visa-exempt for 90 days. All other listed countries are visa-on-arrival (90 days, fee waived). No e-visa or ETA system found. Countries marked with (*) in the VOA section are Pacific Island Forum Members. All diplomatic passport holders and Laissez-Passer holders on official/diplomatic missions receive a visa waiver with no period restriction, regardless of nationality - classified under conditional_access as passport_type grants. Japan and India diplomatic/official passport holders receive special 90-day waivers listed in the 'ALL OTHERS – VISA WAIVERS' section. Republic of Korea (South Korea), South Africa, and St. Lucia added in March 2024 update. Cruise ship passengers staying under 7 days and commercial aircraft crew staying under 14 days are exempt per RMI Embassy (classified under conditional_access). No credential-based conditional access rules (no US visa/Schengen/Green Card holding provisions found)."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "V1 Visitor Visa",
+      "purpose": "For foreign nationals visiting the Marshall Islands for tourism or personal travel. Covers short-term non-immigrant stays for leisure, sightseeing, or visiting family and friends.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 100,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://rmiimmigration.org/applications/",
+      "notes": "V1 is the visitor visa category listed on the official RMI Division of Immigration applications page. Applicants not eligible for visa-on-arrival or visa-free entry must apply in advance. Fee of approximately $100 referenced in Embassy notes. Requires 6+ months passport validity, confirmed return/onward ticket, applicable visas for onward destinations, and proof of sufficient funds."
+    },
+    {
+      "category": "business",
+      "name": "B1 Business Visa",
+      "purpose": "For foreign nationals entering the Marshall Islands for business activities such as meetings, negotiations, or conferences. Does not authorize employment.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 300,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://rmiimmigration.org/applications/",
+      "notes": "B1 is the business visa category listed on the official RMI Division of Immigration applications page. Fee of approximately $300 referenced in Embassy notes. Does not permit change of status to employment. Application form and checklist available from rmiimmigration.org."
+    },
+    {
+      "category": "work",
+      "name": "E1 Employment Visa",
+      "purpose": "For foreign nationals who have secured employment in the Marshall Islands. Authorizes the holder to reside and work in the Republic for the duration specified.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://rmiimmigration.org/applications/",
+      "notes": "E1 is the employment visa category listed on the official RMI Division of Immigration applications page. Specific fees, validity periods, and processing times are not published online; applicants should contact the Division directly at majuro.doi@gmail.com or (692) 625-8633. A job offer and employer sponsorship are typically required."
+    },
+    {
+      "category": "student",
+      "name": "S1 Student Visa",
+      "purpose": "For foreign nationals enrolled in or accepted to an educational institution in the Marshall Islands. Authorizes study for the duration of the academic program.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://rmiimmigration.org/applications/",
+      "notes": "S1 is the student visa category listed on the official RMI Division of Immigration applications page. Specific fees and processing timelines are not published online. Requires acceptance letter from a recognised institution in the Marshall Islands. Extensions, change of status, and employment are subject to separate approval."
+    },
+    {
+      "category": "other",
+      "name": "G1 General Visa",
+      "purpose": "A general-purpose visa for foreign nationals whose purpose of visit does not fall neatly under visitor, business, employment, or student categories.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://rmiimmigration.org/applications/",
+      "notes": "G1 is the general visa category listed on the official RMI Division of Immigration applications page alongside V1, B1, E1, and S1. Exact purpose criteria, fees, and processing times are not published online; applicants should contact the Division directly."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival (Visitor)",
+      "purpose": "Allows nationals of eligible countries to obtain entry permission upon arrival at a Marshall Islands port of entry for short-term tourism or business visits without needing to obtain a visa in advance.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
+      "notes": "Available to nationals of countries listed in the official 'Summary of Countries Entitled for Visa Exemption/Waiver or Visa On Arrival' (March 2024 update). Fee is waived for all listed VOA-eligible countries. Stay is 90 days from date of arrival. Extensions, change of status, and employment are not permitted. Requires: 6+ months passport validity from date of departure, confirmed return/onward ticket, and applicable visas for onward destinations. Countries on the VOA list include Australia, Canada, New Zealand, Japan, India, South Korea, South Africa, Brazil, and many others. Pacific Island Forum members and countries with diplomatic relations with RMI are generally included."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Official Passport Visa Waiver",
+      "purpose": "Allows holders of diplomatic passports or UN Laissez-Passer travelling on official or diplomatic missions to enter the Marshall Islands without a visa for an unrestricted period.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
+      "notes": "Listed under the 'ALL OTHERS – VISA WAIVERS' section of the official RMI immigration summary (March 2024). Diplomatic passport holders of any nationality entering on a diplomatic mission, and Laissez-Passer holders on official missions, are exempt from visa requirements with no period restriction. Japanese and Indian diplomatic/official passport holders receive a specific 90-day waiver under the same section."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -967,8 +1074,8 @@
     "programs": []
   },
   "agreements": [
-    "Compact of Free Association (COFA) — free movement between Marshall Islands and the United States of America (and reciprocally FSM and Palau under their respective COFAs); RMI citizens may live, work, and study in the US without a visa; US citizens may enter RMI without a visa with no period restriction",
-    "Pacific Islands Forum (PIF) membership — visa-on-arrival access reciprocally with other PIF members as reflected in official VOA list"
+    "Compact of Free Association (COFA) - free movement between Marshall Islands and the United States of America (and reciprocally FSM and Palau under their respective COFAs); RMI citizens may live, work, and study in the US without a visa; US citizens may enter RMI without a visa with no period restriction",
+    "Pacific Islands Forum (PIF) membership - visa-on-arrival access reciprocally with other PIF members as reflected in official VOA list"
   ],
   "official_domains": [
     "rmiimmigration.org",
@@ -1055,13 +1162,15 @@
       "India and Japan visa_on_arrival entries: added clarifying note distinguishing ordinary passport VOA from the separate diplomatic/official passport waiver in conditional_access.",
       "CBI program notes updated with the Attorney General detail about below-price sales; status confirmed inactive.",
       "No new VOA document post-March 2024 found on official channels; the March 2024 PDF remains the latest official policy document.",
-      "Confirmed: no e-visa, ETA, credential-based, or OCI-style conditional access provisions exist in RMI policy."
+      "Confirmed: no e-visa, ETA, credential-based, or OCI-style conditional access provisions exist in RMI policy.",
+      "Re-validated 2026-06-27: Fetched rmiimmigration.org, rmiembassyus.org/consular, border-control, applications, news-update, and enrollment pages. VOA-MARCH-2024.pdf confirmed as still the current operative country list - no newer VOA list PDF found on any official domain. A '2025 Revised Visa Application Form' was uploaded to rmiimmigration.org in February 2025 but contains no country-list changes; it is an administrative form revision only. All visa_free and visa_on_arrival entries confirmed consistent with the March 2024 document. Enrollment page confirms T-1 Transit Visa (up to 3 days) and V-1 Visitor Visa (up to 3 months) exist in the regulatory framework. rmiembassyus.org/consular confirmed EU/US/FSM/Palau/Taiwan visa-free groupings and cruise/aircraft-crew conditional exemptions. No policy changes to any nationality's access level detected.",
+      "Re-validated 2026-06-29: Fetched rmiimmigration.org (homepage), rmiimmigration.org/news-update, rmiimmigration.org/border-control, rmiimmigration.org/applications, rmiimmigration.org/enrollment, rmiembassyus.org/consular, ocit.mh/visa-requirements, and travel.state.gov/MarshallIslands. VOA-MARCH-2024.pdf confirmed as still the current operative country list — no newer VOA list found on any official RMI domain. News section last updated May 2023 (health advisory); no visa policy announcements. rmiembassyus.org/consular confirmed three access tiers: (A) visa-free: USA, FSM, Palau, EU member states, Taiwan, diplomats, cruise passengers <7 days, aircraft crew <14 days; (B) visa-on-arrival/waiver: countries with diplomatic relations referencing current PDF; (C) visa required: all others. Enrollment page confirms B-1 validity up to 2 years (not 90 days as in visa_types) — this is for the visa category, not the initial entry period; no change needed to visa_types as the entry (not visa validity) period is captured. All visa_free and visa_on_arrival nationality entries remain unchanged and consistent with the March 2024 document. No policy changes to any nationality's access level detected."
     ],
     "gaps": [
       "No official e-visa portal found; the OCIT visa application page only states applications must be submitted without listing country-specific policies.",
       "The most recent official VOA document is dated March 2024 (VOA-MARCH-2024.pdf); a more recent update may exist but was not found on the official site as of validation date.",
       "Visa-on-arrival fee schedule: the PDF states fee is 'Waived' for all listed VOA countries; fee for non-listed countries requiring a pre-arranged visa was not captured from an official source (Embassy notes $100 for V-1, $300 for B-1).",
-      "No official RBI/golden-visa program page found — confirmed absence via official OCIT and immigration sites.",
+      "No official RBI/golden-visa program page found - confirmed absence via official OCIT and immigration sites.",
       "No official digital nomad, startup, or fast-track visa program found on any official government domain.",
       "CBI program closure: historical program closure confirmed via secondary sources only (US State Dept, news reports); no official RMI government press release or gazette found online confirming closure date.",
       "COFA freedom of movement details for US citizens in RMI sourced from US DOI and USCIS references, not from an RMI official page directly.",
@@ -1077,6 +1186,7 @@
   "sources_checked": [
     "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
     "https://rmiimmigration.org/wp-content/uploads/2023/05/Visa-On-ArrivalFEB20231.pdf",
+    "https://rmiimmigration.org/wp-content/uploads/2025/02/2025-Revised-Visa-Application-Form.pdf",
     "https://rmiimmigration.org/",
     "https://rmiimmigration.org/border-control/",
     "https://rmiimmigration.org/applications/",
@@ -1085,6 +1195,15 @@
     "https://www.rmiembassyus.org/consular",
     "https://www.ocit.mh/visa-requirements",
     "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/MarshallIslands.html",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_the_Marshall_Islands"
+    "https://en.wikipedia.org/wiki/Visa_policy_of_the_Marshall_Islands",
+    "https://rmiembassyus.org/",
+    "[2026-06-29 re-validation] https://rmiimmigration.org/ — no new VOA list; homepage confirmed unchanged",
+    "[2026-06-29 re-validation] https://rmiimmigration.org/news-update/ — last policy-relevant post May 2023",
+    "[2026-06-29 re-validation] https://rmiimmigration.org/border-control/ — confirms non-exempt must have prior visa",
+    "[2026-06-29 re-validation] https://rmiimmigration.org/applications/ — '2025 Revised Visa Application Form' confirmed as admin-only update",
+    "[2026-06-29 re-validation] https://rmiimmigration.org/enrollment/ — confirms visa type codes (V-1, B-1, E-1, S-1, T-1, G-1, R-1, C-1, D-1) and durations",
+    "[2026-06-29 re-validation] https://www.rmiembassyus.org/consular — confirms 3-tier access; EU/USA/FSM/Palau/Taiwan visa-free; diplomatic relations countries VOA; all others require prior visa",
+    "[2026-06-29 re-validation] https://www.ocit.mh/visa-requirements — references VOA-MARCH-2024.pdf; no additional country data",
+    "[2026-06-29 re-validation] https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/MarshallIslands.html — US-focused; COFA confirmed"
   ]
 }

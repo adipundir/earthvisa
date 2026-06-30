@@ -422,14 +422,6 @@
         "source_official": true
       },
       {
-        "nationality": "Vanuatu",
-        "iso3": "VUT",
-        "max_stay_days": 90,
-        "notes": "Visa-free under EU Regulation 2018/1806 Annex II (Schengen area, 90 days within any 180-day period).",
-        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1806",
-        "source_official": true
-      },
-      {
         "nationality": "Albania",
         "iso3": "ALB",
         "max_stay_days": 90,
@@ -465,7 +457,7 @@
         "nationality": "Serbia",
         "iso3": "SRB",
         "max_stay_days": 90,
-        "notes": "Visa-free under EU Regulation 2018/1806 Annex II for holders of biometric passports (Schengen area, 90 days within any 180-day period). As of ~13 October 2024 (Regulation EU 2024/2495, published OJ 23 September 2024), the prior exclusion of holders of passports issued by the Serbian Coordination Directorate (Koordinaciona uprava) has been REMOVED — all Serbian biometric passport holders, including those issued by the Coordination Directorate, are now visa-exempt.",
+        "notes": "Visa-free under EU Regulation 2018/1806 Annex II for holders of biometric passports (Schengen area, 90 days within any 180-day period). As of ~13 October 2024 (Regulation EU 2024/2495, published OJ 23 September 2024), the prior exclusion of holders of passports issued by the Serbian Coordination Directorate (Koordinaciona uprava) has been REMOVED - all Serbian biometric passport holders, including those issued by the Coordination Directorate, are now visa-exempt.",
         "source_url": "https://eur-lex.europa.eu/eli/reg/2024/2495/oj",
         "source_official": true
       },
@@ -505,7 +497,7 @@
         "nationality": "United Kingdom",
         "iso3": "GBR",
         "max_stay_days": 90,
-        "notes": "Visa-free under EU Regulation 2018/1806 Annex II following UK withdrawal from EU (Schengen area, 90 days within any 180-day period). Also covers British nationals (Overseas), British Overseas Territories citizens, British Overseas citizens, British Protected Persons, and British subjects holding relevant UK-issued travel documents — all listed in Annex II.",
+        "notes": "Visa-free under EU Regulation 2018/1806 Annex II following UK withdrawal from EU (Schengen area, 90 days within any 180-day period). Also covers British nationals (Overseas), British Overseas Territories citizens, British Overseas citizens, British Protected Persons, and British subjects holding relevant UK-issued travel documents - all listed in Annex II.",
         "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1806",
         "source_official": true
       },
@@ -543,10 +535,12 @@
       "https://guichet.public.lu/en/citoyens/immigration/moins-3-mois/ressortissant-tiers/sejour.html",
       "https://maint.gouvernement.lu/en/visa-immigration.html",
       "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1806",
+      "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
       "https://eur-lex.europa.eu/eli/reg/2024/2495/oj",
-      "https://home-affairs.ec.europa.eu/news/kosovo-visa-liberalisation-signed-entry-early-2024-2023-04-21_en"
+      "https://home-affairs.ec.europa.eu/news/kosovo-visa-liberalisation-signed-entry-early-2024-2023-04-21_en",
+      "https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/"
     ],
-    "notes": "Luxembourg is a Schengen member state and applies EU Regulation 2018/1806 uniformly. Annex II of this regulation lists all visa-free third-country nationals (up to 90 days in any 180-day period). The official Luxembourg Ministry of Foreign Affairs provides PDF lists of visa-exempt and visa-required nationalities. There is no separate Luxembourg-specific visa-on-arrival or e-visa system; all Schengen rules apply. ETIAS (European Travel Information and Authorisation System) is confirmed for Q4 2026 launch (October–November 2026) but was not operational as of the research date (June 2026); no ETA entries recorded."
+    "notes": "Luxembourg is a Schengen member state and applies EU Regulation 2018/1806 uniformly. Annex II of this regulation lists all visa-free third-country nationals (up to 90 days in any 180-day period). The official Luxembourg Ministry of Foreign Affairs provides PDF lists of visa-exempt and visa-required nationalities. There is no separate Luxembourg-specific visa-on-arrival or e-visa system; all Schengen rules apply. NOTE: Vanuatu (VUT) was permanently removed from Annex II by Council decision of 12 December 2024 (transferring it from the visa-free to the visa-required list), effective 4 February 2025; Vanuatu nationals now require a Schengen visa. ETIAS (European Travel Information and Authorisation System) is scheduled for Q4 2026 launch (October–November 2026) but is not yet operational as of the validation date (June 2026); ETIAS will not be mandatory until approximately April 2027 after a 6-month transitional period. No ETA entries recorded."
   },
   "conditional_access": [
     {
@@ -594,7 +588,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Investor Residence Permit — Existing Business",
+        "name": "Investor Residence Permit - Existing Business",
         "type": "business",
         "min_amount": 500000,
         "currency": "EUR",
@@ -605,7 +599,7 @@
         "notes": "Minimum EUR 500,000 invested in an existing company with its registered office in Luxembourg. Investor must commit to maintaining the investment and employment levels for 5 years. Permit valid for up to 3 years, renewable. Ministerial opinion from the Ministry of Economy required before application. Long-term residence (permanent residence) available after 5 years of lawful uninterrupted stay. Citizenship by naturalization available after 5 years of legal residence with language and civics requirements."
       },
       {
-        "name": "Investor Residence Permit — New Business Creation",
+        "name": "Investor Residence Permit - New Business Creation",
         "type": "business",
         "min_amount": 500000,
         "currency": "EUR",
@@ -616,7 +610,7 @@
         "notes": "Minimum EUR 500,000 in a new business to be created with its registered office in Luxembourg. Must establish minimum 5 work positions within 3 years, coordinated with the National Employment Agency (ADEM). Ministerial opinion from the Ministry of Economy required. Permit valid for up to 3 years, renewable."
       },
       {
-        "name": "Investor Residence Permit — Management and Investment Structure",
+        "name": "Investor Residence Permit - Management and Investment Structure",
         "type": "fund",
         "min_amount": 3000000,
         "currency": "EUR",
@@ -627,7 +621,7 @@
         "notes": "Minimum EUR 3,000,000 in an existing or new management and investment structure with registered office and required substance in Luxembourg. Ministerial opinion from the Ministry of Finance required before application. Permit valid for up to 3 years, renewable."
       },
       {
-        "name": "Investor Residence Permit — Financial Deposit",
+        "name": "Investor Residence Permit - Financial Deposit",
         "type": "other",
         "min_amount": 20000000,
         "currency": "EUR",
@@ -648,7 +642,7 @@
         "processing_time": "Maximum 3 months for temporary authorization to stay from the Ministry of Home Affairs; residence permit application must be submitted within 3 months of arrival.",
         "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/hautement-qualifie/salarie-hautement-qualifie.html",
         "source_official": true,
-        "notes": "Permit valid for 4 years (or duration of employment contract plus 3 months if shorter). Not subject to mandatory labour market testing (faster than standard worker permits). Path to long-term residence after 5 years of regular EU residence as an EU Blue Card holder, with the last 2 years in Luxembourg. Salary threshold as of 2024: EUR 65,652 gross annual (confirmed via guichet.public.lu re-fetch June 2026)."
+        "notes": "Permit valid for 4 years (or duration of employment contract plus 3 months if shorter). Not subject to mandatory labour market testing (faster than standard worker permits). Path to long-term residence after 5 years of regular EU residence as an EU Blue Card holder, with the last 2 years in Luxembourg. Salary threshold: EUR 65,652 gross annual (confirmed via guichet.public.lu re-fetch June 2026, page last updated March 3 2026). Note: the new EU Blue Card Directive was transposed by Luxembourg via Act of June 4 2024 (announced July 2024); the directive links the threshold to the average gross annual salary (set by Grand-Ducal regulation), which currently equals EUR 65,652. Other changes under the 2024 transposition: minimum employment contract reduced from 12 to 6 months; unrestricted labour market access after 12 months (previously 2 years); enhanced EU mobility rights."
       }
     ]
   },
@@ -666,16 +660,17 @@
   ],
   "data_quality": {
     "completeness": "high",
-    "validation_notes": "Validated June 2026. Corrections applied: (1) Added Nauru (NRU) to visa_free list — was present in EU Regulation 2018/1806 Annex II but omitted from prior record. (2) Updated Serbia (SRB) note: removed reference to Coordination Directorate exclusion, which was abolished by Regulation EU 2024/2495 (OJ 23 September 2024, effective ~13 October 2024); all Serbian biometric passport holders are now visa-exempt. (3) Updated Kosovo (XKX) note: added explicit biometric passport requirement (required per Regulation EU 2023/850). (4) Clarified Georgia, Moldova, Ukraine notes to specify ICAO-compliant biometric passport requirement. (5) Added British nationals (Overseas)/BOTC/BOC/BPP/British subjects coverage to GBR entry note. (6) Updated ETIAS note from 'late 2026' to 'Q4 2026 (October–November 2026)' per confirmed official timeline. (7) Added home-affairs.ec.europa.eu and the 2024/2495 OJ URL to source_urls and official_domains. (8) Updated dual citizenship note in CBI to reflect that no explicit renunciation requirement was found on the naturalization page.",
+    "validation_notes": "Validated June 2026. Corrections applied in initial June 2026 run: (1) Added Nauru (NRU) to visa_free list - was present in EU Regulation 2018/1806 Annex II but omitted from prior record. (2) Updated Serbia (SRB) note: removed reference to Coordination Directorate exclusion, which was abolished by Regulation EU 2024/2495 (OJ 23 September 2024, effective ~13 October 2024); all Serbian biometric passport holders are now visa-exempt. (3) Updated Kosovo (XKX) note: added explicit biometric passport requirement (required per Regulation EU 2023/850). (4) Clarified Georgia, Moldova, Ukraine notes to specify ICAO-compliant biometric passport requirement. (5) Added British nationals (Overseas)/BOTC/BOC/BPP/British subjects coverage to GBR entry note. (6) Updated ETIAS note from 'late 2026' to 'Q4 2026 (October–November 2026)' per confirmed official timeline. (7) Added home-affairs.ec.europa.eu and the 2024/2495 OJ URL to source_urls and official_domains. (8) Updated dual citizenship note in CBI to reflect that no explicit renunciation requirement was found on the naturalization page. Re-validation 2026-06-27: Re-fetched guichet.public.lu/entree-visa, mae.gouvernement.lu/visa-immigration, EUR-Lex Reg 2018/1806 Annex II, home-affairs.ec.europa.eu (Kosovo), guichet.public.lu Blue Card page (updated 2026-03-03), and guichet.public.lu investor page (updated 2023-07-10). Findings: (a) visa_free access list confirmed complete and correct against live Annex II - no additions or removals needed; (b) EU Blue Card salary threshold EUR 65,652 re-confirmed on live page (March 2026 update); EU Blue Card directive transposed by Act of June 4 2024 - noted in fast_track.notes; minimum contract duration is now 6 months (not 12); unrestricted labour market access after 12 months (not 24); (c) ETIAS note corrected: mandatory only from ~April 2027 after 6-month transition post Q4 2026 launch; (d) investor program amounts (EUR 500k / EUR 3M / EUR 20M) re-confirmed on guichet.public.lu (last updated 2023-07-10); (e) no new visa-free nationalities, no removals, no level changes found. Re-validation 2026-06-29: Re-fetched mae.gouvernement.lu/visa-immigration (last updated June 5 2026), guichet.public.lu/entree-visa, and performed web search for Annex II changes 2025-2026. CRITICAL CORRECTION: Vanuatu (VUT) REMOVED from visa_free list. EU Council permanently ended visa exemption for Vanuatu nationals by decision of 12 December 2024 (consilium.europa.eu press release), effective 4 February 2025. The exemption had been temporarily suspended since May 2022 due to Vanuatu's investor citizenship scheme; after Vanuatu failed to meet EU conditions, the exemption was permanently revoked via transfer from Annex II to Annex I of Regulation 2018/1806. Source confirmed via Council press release and multiple corroborating sources (schengen.news, consilium.europa.eu). Consolidated regulation text as of 3 February 2025 (EUR-Lex CELEX:02018R1806-20250203) reflects this removal. All other visa_free entries remain confirmed. ETIAS timeline re-confirmed: Q4 2026 launch, mandatory from ~April 2027.",
     "gaps": [
-      "The full enumerated list of all visa-required nationalities (Annex I of EU Regulation 2018/1806) was not captured in detail — the EU Regulation itself (eur-lex.europa.eu) is authoritative.",
+      "The full enumerated list of all visa-required nationalities (Annex I of EU Regulation 2018/1806) was not captured in detail - the EU Regulation itself (eur-lex.europa.eu) is authoritative.",
       "Dual citizenship policy for Luxembourg is not explicitly confirmed as permitted or prohibited on the official naturalization page found. The Law of 8 March 2017 on Luxembourgish nationality would need direct consultation for a definitive answer.",
-      "ETIAS (European Travel Information and Authorisation System) is confirmed for Q4 2026 launch but not yet operational as of June 2026 — no ETA entries recorded. Once launched, visa-free nationals (Annex II) will need ETIAS authorization.",
+      "ETIAS (European Travel Information and Authorisation System) is scheduled for Q4 2026 launch but not yet operational as of June 2026 - no ETA entries recorded. ETIAS will not be mandatory until approximately April 2027 after a 6-month transitional period. Once mandatory, visa-free nationals (Annex II) will need ETIAS authorization before travel to Luxembourg/Schengen.",
       "No digital nomad visa or startup visa with a dedicated immigration pathway was found on official Luxembourg government sources.",
       "Diplomatic/service/official passport bilateral visa waivers: mae.gouvernement.lu acknowledges bilateral exemptions for certain passport types but does not publish a specific enumerated list on any public-facing page found. Not recorded as conditional_access to avoid fabrication.",
       "No OCI (Overseas Citizen of India) or other diaspora-status exemption was found on any official Luxembourg government source.",
       "No US/Canada/UK/other third-country visa holder exemption was found on any official Luxembourg government source. Luxembourg does not operate such credential-based exemptions as a Schengen state.",
-      "Nauru (NRU) Annex II status was confirmed via the EUR-Lex HTML fetch but the consolidated regulation HTML may reflect the state at its original adoption date; the listing should be cross-checked against the latest consolidated version of Regulation 2018/1806 if precision is critical."
+      "Nauru (NRU) Annex II status should be cross-checked against the latest consolidated version of Regulation 2018/1806 (CELEX:02018R1806-20250203) if precision is critical; the EUR-Lex HTML page did not return readable content in this run.",
+      "The guichet.public.lu/entree-visa page (fetched 2026-06-29) still displayed the old Serbia Coordination Directorate exclusion text in its HTML; this is an outdated page that has not been updated to reflect Regulation EU 2024/2495 (effective 13 October 2024). The Regulation itself is authoritative."
     ]
   },
   "outbound_official": {
@@ -694,8 +689,310 @@
       {"name": "Canada", "iso3": "CAN"},
       {"name": "Australia", "iso3": "AUS"}
     ],
-    "notes": "The Luxembourg Ministry of Foreign and European Affairs (mae.gouvernement.lu) does NOT publish a comprehensive outbound visa-free country list for Luxembourg citizens — no page analogous to India's MEA VFFIN was located. The 'Plan your trip' section (voyages.html) contains only two partial sub-pages: (1) e-visas (voyages/e-visas.html) listing India and Ukraine as countries requiring a pre-travel e-Tourist Visa; (2) electronic travel authorisations (demarches/voyages/autorisation-de-voyage.html) listing USA (ESTA), Canada (eTA), and Australia (ETA) — explicitly noted as a non-exhaustive list. For all other destinations the MFA instructs citizens to consult the destination country's own embassy/consulate. Rely on destination-side data for the full visa-free picture."
+    "notes": "The Luxembourg Ministry of Foreign and European Affairs (mae.gouvernement.lu) does NOT publish a comprehensive outbound visa-free country list for Luxembourg citizens - no page analogous to India's MEA VFFIN was located. The 'Plan your trip' section (voyages.html) contains only two partial sub-pages: (1) e-visas (voyages/e-visas.html) listing India and Ukraine as countries requiring a pre-travel e-Tourist Visa; (2) electronic travel authorisations (demarches/voyages/autorisation-de-voyage.html) listing USA (ESTA), Canada (eTA), and Australia (ETA) - explicitly noted as a non-exhaustive list. For all other destinations the MFA instructs citizens to consult the destination country's own embassy/consulate. Rely on destination-side data for the full visa-free picture."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Type C) - Single Entry",
+      "purpose": "Allows one entry into the Schengen Area for tourism, family visits, cultural or sporting events, or business travel. Does not permit paid employment.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 98,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/moins-3-mois/ressortissant-tiers/entree-visa.html",
+      "notes": "Fee is EUR 90 (approx. USD 98). Reduced fee of EUR 35 for nationals of Moldova, Ukraine, Serbia, Montenegro, Bosnia-Herzegovina, Albania, Georgia, North Macedonia, Armenia, and Azerbaijan. Children aged 6–12 pay EUR 45; children under 6, students on school trips, and researchers are exempt. Submit application at least 15 days before travel but no more than 6 months in advance. Maximum 90 days within any 180-day period."
+    },
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Type C) - Multiple Entry",
+      "purpose": "Permits multiple entries into the Schengen Area for tourism, business, family visits, or other permitted short-stay purposes as long as the visa remains valid and the 90/180-day rule is respected.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 98,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/moins-3-mois/ressortissant-tiers/entree-visa.html",
+      "notes": "Fee is EUR 90 (approx. USD 98). Same reduced-fee nationalities as single-entry Type C. Validity period and number of entries determined at consulate's discretion. Maximum 90 days within any 180-day period across all Schengen member states."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (Type A)",
+      "purpose": "Enables transit through the international zone of a Luxembourg airport without entering the Schengen Area or leaving the international transit zone.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 98,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/moins-3-mois/ressortissant-tiers/entree-visa.html",
+      "notes": "Fee is EUR 90 (approx. USD 98). Only required for certain nationalities listed in the EU's common list; many nationalities do not require a Type A visa for airport transit. Holder does not enter Schengen territory."
+    },
+    {
+      "category": "work",
+      "name": "Long-Stay Visa (Type D) + Salaried Worker Residence Permit",
+      "purpose": "Authorises third-country nationals to enter Luxembourg to take up paid employment under a contract compliant with Luxembourg labour law, requiring prior authorisation from the National Employment Agency (ADEM).",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": 120,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/salarie/salarie-pays-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87) for residence permit. Type D visa obtained from Luxembourg or Belgian diplomatic post before entry; valid 90 days to allow entry. First residence permit valid maximum 1 year, restricted to one profession and sector. Renewal valid up to 3 years, granting access to any sector. Processing for initial temporary authorisation normally up to 4 months. Employer must first obtain ADEM certificate confirming no suitable EU candidate is available."
+    },
+    {
+      "category": "work",
+      "name": "EU Blue Card (Carte Bleue Européenne)",
+      "purpose": "Residence and work permit for highly qualified third-country nationals who hold an employment contract for highly skilled work in Luxembourg meeting the minimum salary threshold.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/hautement-qualifie/salarie-hautement-qualifie.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Annual gross salary threshold: EUR 65,652. Employment contract must be for at least 6 months. Permit valid for 4 years (or contract duration + 3 months if shorter). No mandatory labour market test (unlike standard salaried worker permit). Path to long-term residence after 5 years of regular EU residence as Blue Card holder, with last 2 years in Luxembourg."
+    },
+    {
+      "category": "student",
+      "name": "Long-Stay Visa (Type D) + Student Residence Permit",
+      "purpose": "Allows third-country nationals to reside in Luxembourg for the purpose of pursuing higher education studies at an approved educational institution.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": 87,
+      "processing_days_min": 60,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/etudiant/etudiant-pays-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Applicant must be enrolled in an approved Luxembourg higher education institution. Ministry of Home Affairs normally responds within 60 days. Permit valid annually and renewable as long as enrolment and conditions are met. Renewal application must be submitted 2 months before expiry. Post-study job-search permit available after completing studies."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Residence Permit - Existing Business",
+      "purpose": "Allows third-country nationals who invest at least EUR 500,000 in an existing Luxembourg-registered company to reside in Luxembourg, provided they commit to maintaining the investment and employment levels for 5 years.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/investisseur/investisseur-pays-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Minimum investment EUR 500,000. Ministerial opinion from Ministry of Economy required before submitting immigration application. Initial temporary authorisation processing: normally within 3 months. Permit valid up to 3 years, renewable. Long-term residence available after 5 years of lawful continuous stay."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Residence Permit - New Business Creation",
+      "purpose": "Allows third-country nationals who invest at least EUR 500,000 in a new Luxembourg-registered business creating at least 5 jobs within 3 years to reside in Luxembourg.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/investisseur/investisseur-pays-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Minimum investment EUR 500,000. Must create at least 5 positions within 3 years, coordinated with ADEM. Ministerial opinion from Ministry of Economy required. Permit valid up to 3 years, renewable."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Residence Permit - Management and Investment Structure",
+      "purpose": "Allows third-country nationals who invest at least EUR 3,000,000 in a Luxembourg-based management or investment structure with real substance to reside in Luxembourg.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/investisseur/investisseur-pays-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Minimum investment EUR 3,000,000. Ministerial opinion from Ministry of Finance required. Permit valid up to 3 years, renewable."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Residence Permit - Financial Deposit",
+      "purpose": "Allows third-country nationals who deposit at least EUR 20,000,000 with a Luxembourg-established financial institution for a minimum of 5 years to reside in Luxembourg.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/investisseur/investisseur-pays-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Minimum deposit EUR 20,000,000, held for at least 5 years. Ministerial opinion from Ministry of Finance required. Real estate investments do not qualify for any investor permit. Permit valid up to 3 years, renewable."
+    },
+    {
+      "category": "family",
+      "name": "Family Reunification - Temporary Authorisation + Residence Permit",
+      "purpose": "Allows spouses, registered partners, and unmarried children under 18 of lawfully resident third-country nationals to join them in Luxembourg.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": 270,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/membre-famille/regroupement-familial.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Sponsor must demonstrate stable/regular/sufficient resources (at least minimum wage level for 12 months), suitable accommodation, and health insurance. Processing for temporary authorisation to stay normally up to 9 months. Temporary authorisation valid 90 days; residence permit must be applied for within 3 months of arrival. Family members may take employment once permit is obtained."
+    },
+    {
+      "category": "work",
+      "name": "Working Holiday (Work & Travel) Permit",
+      "purpose": "Allows young nationals from partner countries to live, work temporarily, and travel in Luxembourg for up to 12 months to experience cultural exchange and international mobility.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/salarie/work-and-travel.html",
+      "notes": "Available to nationals of Australia, New Zealand, Taiwan, Canada, Chile, Japan, and South Korea. Age limit: 18–30 years (up to 35 for nationals of Taiwan, Chile, Canada, and South Korea). Participants must have sufficient financial resources, valid passport, medical certification, and clean criminal record. Cannot travel with dependants. Specific fees depend on the destination country's diplomatic mission. Does not provide social welfare or unemployment benefits. Japan requires a re-entry permit for multiple entries."
+    },
+    {
+      "category": "other",
+      "name": "Researcher Residence Permit",
+      "purpose": "Allows third-country nationals to reside in Luxembourg for the purpose of conducting research at a recognised research organisation under a hosting agreement.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/chercheur.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Researcher must have a hosting agreement with a Luxembourg-approved research organisation. Also available for EU-mobility researchers already holding a permit in another EU Member State. Post-research job-search permit available after completing research."
+    },
+    {
+      "category": "other",
+      "name": "Trainee Residence Permit",
+      "purpose": "Allows third-country nationals to reside in Luxembourg for the purpose of completing a traineeship or internship with a Luxembourg employer.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Part of the broader third-country national long-stay category. Specific requirements and duration depend on the traineeship agreement."
+    },
+    {
+      "category": "other",
+      "name": "Au Pair Residence Permit",
+      "purpose": "Allows young third-country nationals to live with a host family in Luxembourg as an au pair, performing limited household duties in exchange for accommodation, meals, and pocket money.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Listed under 'Young au pairs' category on the guichet.public.lu immigration portal. Age and duration conditions apply per au pair agreement."
+    },
+    {
+      "category": "other",
+      "name": "Volunteer Worker Residence Permit",
+      "purpose": "Allows third-country nationals to reside in Luxembourg for the purpose of carrying out voluntary work with an approved organisation under a volunteer agreement.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Listed under the third-country national long-stay categories on guichet.public.lu. Must have a formal volunteer agreement with an approved Luxembourg organisation."
+    },
+    {
+      "category": "work",
+      "name": "Self-Employed Person Residence Permit",
+      "purpose": "Allows third-country nationals to reside in Luxembourg for the purpose of conducting self-employed or entrepreneurial activity.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Listed as a separate category from salaried worker on guichet.public.lu. Must obtain appropriate business authorisation from the relevant Luxembourg authority. Specific conditions depend on the sector and nature of the self-employed activity."
+    },
+    {
+      "category": "work",
+      "name": "Intra-Corporate Transferee (Transferred Salaried Worker) Permit",
+      "purpose": "Allows third-country nationals transferred within a multinational company to work temporarily in the Luxembourg entity of that company.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Covers managers, specialists, and trainee employees transferred within a multinational group. Aligned with EU ICT Directive. Separate category from standard salaried worker on guichet.public.lu portal."
+    },
+    {
+      "category": "work",
+      "name": "Seasonal Worker Residence Permit",
+      "purpose": "Allows third-country nationals to work in Luxembourg for seasonal employment in sectors with cyclical demand, such as agriculture or hospitality.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Listed as a distinct category on guichet.public.lu. Duration tied to the seasonal employment contract. Specific sectors and conditions set by Grand-Ducal regulation."
+    },
+    {
+      "category": "other",
+      "name": "Long-Term Resident Status (Statut de Résident de Longue Durée)",
+      "purpose": "Grants stable long-term residence rights to third-country nationals who have lawfully and continuously resided in Luxembourg for at least 5 years.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 87,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers.html",
+      "notes": "Fee is EUR 80 (approx. USD 87). Requires 5 years of lawful, uninterrupted residence in Luxembourg. Provides enhanced protection against expulsion and broader access to employment and social rights. Permit is of unlimited duration, subject to renewal. Pathway to citizenship by naturalisation after total 5 years of legal residence (with final year uninterrupted) plus language and civics requirements."
+    }
+  ],
   "sources_checked": [
     "https://mae.gouvernement.lu/en/services-aux-citoyens/visa-immigration.html",
     "https://guichet.public.lu/en/citoyens/immigration.html",
@@ -709,6 +1006,15 @@
     "https://eur-lex.europa.eu/eli/reg/2024/2495/oj",
     "https://home-affairs.ec.europa.eu/news/kosovo-visa-liberalisation-signed-entry-early-2024-2023-04-21_en",
     "https://mae.gouvernement.lu/dam-assets/services-aux-citoyens/visa-et-immigration/list-of-countries-whose-citizens-are-exempted-from-the-visa-requirement.pdf",
-    "https://www.consilium.europa.eu/en/press/press-releases/2024/07/22/council-decides-to-remove-visa-requirement-for-holders-of-serbian-passports-issued-by-serbian-coordination-directorate/"
+    "https://www.consilium.europa.eu/en/press/press-releases/2024/07/22/council-decides-to-remove-visa-requirement-for-holders-of-serbian-passports-issued-by-serbian-coordination-directorate/",
+    "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers.html",
+    "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/salarie.html",
+    "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/salarie/salarie-pays-tiers.html",
+    "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/salarie/work-and-travel.html",
+    "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/etudiant.html",
+    "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/etudiant/etudiant-pays-tiers.html",
+    "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/membre-famille/regroupement-familial.html",
+    "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/chercheur.html",
+    "https://mae.gouvernement.lu/en/services-aux-citoyens/work-travel.html"
   ]
 }

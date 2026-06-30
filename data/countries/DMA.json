@@ -3,9 +3,86 @@
   "iso3": "DMA",
   "name": "Dominica",
   "region": "Americas",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visitor's Visa",
+      "purpose": "Permits nationals of countries not on the visa-free list to enter Dominica for tourism, visiting family/friends, or short-term stays. Required only for nationalities not exempt by bilateral or regional agreement.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/how-do-i-apply-for-a-visitor-s-visa",
+      "notes": "Application fee is EC$200 (Eastern Caribbean dollars), payable at the Treasury Department. Required documents: completed visa application form, valid passport (at least 6 months validity), 2 recent passport photos, bank statement from sponsor, medical certificate (not older than 6 months), employment letter or proof of self-employment, invitation letter from sponsor, marriage/birth certificate (where applicable), and notarized applicant signature before a Commissioner of Oaths. All foreign-language documents must be translated into English and notarized. Contact: Ministry of Justice, Immigration and National Security, Phone: (767) 266-3354. No processing time or validity period published on official page."
+    },
+    {
+      "category": "transit",
+      "name": "Transit / Short-Stay Exemption",
+      "purpose": "Allows bona fide in-transit passengers and tourists in possession of a valid return ticket to enter Dominica without a visa for up to 21 days.",
+      "max_stay_days": 21,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/do-i-need-a-visa-to-enter-into-dominica",
+      "notes": "Applies to any nationality. Applicant must hold a valid return ticket and have no intent to remain beyond 21 days. Cruise/tourist vessel passengers are also exempt for the duration of the port call. This is a conditional exemption, not an unconditional nationality-based visa-free grant. The mandatory free ED Card (edcard.dominica.gov.dm) must still be completed before travel."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit",
+      "purpose": "Allows non-nationals to reside in Dominica on a temporary basis beyond the initial visitor admission period. Covers general residence including work and family residence purposes.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://dominica.gov.dm/services/residency/how-do-i-apply-for-a-residence-permit",
+      "notes": "Fee: EC$250 for CARICOM nationals; EC$800 for non-CARICOM nationals. Applicants must first obtain an Extension of Stay from Immigration and regularize visitor status before applying. Required documents: 2 completed application forms plus medical form, medical certificate (no communicable disease in past 3 years, including HIV test and chest X-ray), two testimonials (one from last employer), banker's statement, police record, proof of return ticket or travel deposit, 2 passport photos, valid passport (6+ months validity), Treasury fee receipt, sponsor letter, marriage certificate (if applicable), and cover letter. No duration or path to permanent residence published on official page. Ministry of National Security, Labour and Immigration: (767) 266-3553."
+    },
+    {
+      "category": "investment",
+      "name": "Citizenship by Investment - Economic Diversification Fund (EDF)",
+      "purpose": "Grants Dominican citizenship through a non-refundable donation to the Economic Diversification Fund, providing full citizenship rights and visa-free access to 140+ countries.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 200000,
+      "processing_days_min": 90,
+      "processing_days_max": 120,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cbiu.gov.dm",
+      "notes": "Minimum donation: US$200,000 (single applicant); US$250,000 (main applicant + up to 3 dependants). Additional government fees: processing US$1,000; due diligence US$7,500 (main applicant), US$4,000 (dependants 16+); Certificate of Naturalisation US$500 per person; mandatory interview US$1,000 per person aged 16+. Applications submitted through authorized CBI agents only. Dual citizenship permitted, no residency requirement. Banned nationalities include Belarus, Russia, Yemen, and Northern Iraq (Kurdish cities). Established by Citizenship By Investment Regulations 2013 (SRO 43 of 2013)."
+    },
+    {
+      "category": "investment",
+      "name": "Citizenship by Investment - Real Estate",
+      "purpose": "Grants Dominican citizenship through a qualifying investment in approved real estate projects, providing full citizenship rights and a return-generating asset.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 200000,
+      "processing_days_min": 90,
+      "processing_days_max": 120,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cbiu.gov.dm",
+      "notes": "Minimum real estate investment: US$200,000 in a government-approved project. Government fees (in addition to investment): US$75,000 (single applicant); US$100,000 (main applicant + up to 3 dependants); additional dependants under 18 US$25,000 each; dependants 18+ US$40,000 each. Due diligence: US$7,500 (main applicant); mandatory interview US$1,000 per person aged 16+. Property must be held for 3 years from citizenship grant date (5 years if future purchaser is also a CBI applicant). Same banned nationality rules apply as EDF option."
+    }
+  ],
   "outbound_official": {
     "found": false,
-    "note": "No official Dominica government outbound visa-list page located. The government's online presence (dominica.gov.dm, nationalsecurity.gov.dm, foreignaffairs.gov.dm, pressroomopm.gov.dm) covers only inbound immigration — who may enter Dominica and under what conditions. The Ministry of Foreign Affairs (Foreign Affairs, International Business, Trade and Energy) has no standalone website and no published outbound travel privilege list. No analog to India's mea.gov.in/vffin found. Rely on destination-side data."
+    "note": "No official Dominica government outbound visa-list page located. The government's online presence (dominica.gov.dm, nationalsecurity.gov.dm, foreignaffairs.gov.dm, pressroomopm.gov.dm) covers only inbound immigration - who may enter Dominica and under what conditions. The Ministry of Foreign Affairs (Foreign Affairs, International Business, Trade and Energy) has no standalone website and no published outbound travel privilege list. No analog to India's mea.gov.in/vffin found. Rely on destination-side data."
   },
   "visa_policy": {
     "visa_free": [
@@ -336,6 +413,14 @@
         "notes": "3 months visa-free",
         "source_url": "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/do-i-need-a-visa-to-enter-into-dominica",
         "source_official": true
+      },
+      {
+        "nationality": "Dominican Republic",
+        "iso3": "DOM",
+        "max_stay_days": 180,
+        "notes": "Visa-free for up to 180 days effective 2026-02-01 following Cabinet approval. Cabinet directed amendments to the Visa (Exemptions) Regulations to formalise this change. Note: the main dominica.gov.dm visa-exemption page had not yet been updated as of 2026-06-27 - authoritative source is the official OPM Pressroom announcement.",
+        "source_url": "https://pressroomopm.gov.dm/cabinet-approves-removal-of-visa-requirements-for-citizens-of-the-dominican-republic/",
+        "source_official": true
       }
     ],
     "visa_on_arrival": [],
@@ -346,7 +431,7 @@
       "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/what-are-the-entry-requirements-for-the-commonwealth-of-dominica",
       "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/how-do-i-apply-for-a-visitor-s-visa"
     ],
-    "notes": "All other nationalities not listed must apply for a visitor's visa (fee: EC$200 paid at Treasury). Official page lists two tiers: 6-month visa-free (Commonwealth nations, CARICOM, USA, and specific EU/Eastern European states) and 3-month visa-free (various European, Latin American, and Asian countries). No e-visa or ETA system found on official sources. The edcard (edcard.dominica.gov.dm) is a mandatory free online immigration and customs declaration form for all arriving visitors — it is NOT a visa or ETA; it replaces the paper embarkation/disembarkation card. Transit passengers (up to 21 days with return ticket) and cruise ship passengers are conditionally exempt from visa requirements — these are not unconditional nationality-based grants and are recorded in conditional_access."
+    "notes": "All other nationalities not listed must apply for a visitor's visa (fee: EC$200 paid at Treasury). Official page lists two tiers: 6-month visa-free (Commonwealth nations, CARICOM, USA, and specific EU/Eastern European states) and 3-month visa-free (various European, Latin American, and Asian countries). No e-visa or ETA system found on official sources. The edcard (edcard.dominica.gov.dm) is a mandatory free online immigration and customs declaration form for all arriving visitors - it is NOT a visa or ETA; it replaces the paper embarkation/disembarkation card. Transit passengers (up to 21 days with return ticket) and cruise ship passengers are conditionally exempt from visa requirements - these are not unconditional nationality-based grants and are recorded in conditional_access."
   },
   "conditional_access": [
     {
@@ -436,7 +521,7 @@
   "agreements": [
     "CARICOM (Caribbean Community)",
     "OECS (Organisation of Eastern Caribbean States) Free Movement",
-    "CARICOM Enhanced Cooperation Protocol Full Free Movement with Barbados, Belize, and Saint Vincent and the Grenadines — implemented 1 October 2025 (nationals of all four countries may enter, reside, work, and remain indefinitely without work or residency permit)"
+    "CARICOM Enhanced Cooperation Protocol Full Free Movement with Barbados, Belize, and Saint Vincent and the Grenadines - implemented 1 October 2025 (nationals of all four countries may enter, reside, work, and remain indefinitely without work or residency permit)"
   ],
   "edcard": {
     "name": "Online Immigration and Customs Declaration Card (ED Card)",
@@ -446,7 +531,7 @@
     "is_visa": false,
     "mandatory": true,
     "fee": null,
-    "notes": "Mandatory free online embarkation/disembarkation declaration form for all visitors (residents and returning nationals also complete it). Must be submitted no more than 3 days before travel. Generates a QR code to present at port of entry. Does NOT grant or replace a visa or ETA — it is a procedural pre-arrival registration. Launched officially via notice from the Ministry of National Security and Home Affairs.",
+    "notes": "Mandatory free online embarkation/disembarkation declaration form for all visitors (residents and returning nationals also complete it). Must be submitted no more than 3 days before travel. Generates a QR code to present at port of entry. Does NOT grant or replace a visa or ETA - it is a procedural pre-arrival registration. Launched officially via notice from the Ministry of National Security and Home Affairs.",
     "source_url": "https://dominica.gov.dm/notices/online-immigration-and-customs-declaration-card-website-notice",
     "source_official": true
   },
@@ -462,25 +547,31 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTION 1: Moved 'in-transit passengers with return ticket' (21 days) and 'cruise ship passengers' from visa_policy.visa_free to conditional_access. These are not unconditional nationality-based grants — they depend on possession of a return ticket or vessel membership, not nationality alone.",
-      "CORRECTION 2: Added edcard top-level object documenting Dominica's mandatory online immigration/customs declaration form (edcard.dominica.gov.dm). Confirmed it is NOT an ETA or e-visa — it is a free procedural pre-arrival declaration form. Source: official government notice.",
+      "CORRECTION 1: Moved 'in-transit passengers with return ticket' (21 days) and 'cruise ship passengers' from visa_policy.visa_free to conditional_access. These are not unconditional nationality-based grants - they depend on possession of a return ticket or vessel membership, not nationality alone.",
+      "CORRECTION 2: Added edcard top-level object documenting Dominica's mandatory online immigration/customs declaration form (edcard.dominica.gov.dm). Confirmed it is NOT an ETA or e-visa - it is a free procedural pre-arrival declaration form. Source: official government notice.",
       "CORRECTION 3: Added verified banned_nationalities block to cbi from the live cbiu.gov.dm/banned-nationalities/ page. Fully banned: Belarus, Russia, Yemen, Northern Iraq (specific Kurdish cities). Conditionally banned with 10-year residency exception: North Korea, Sudan, Iran. Prior record listed this as an unresolved gap.",
       "CORRECTION 4: Updated agreements entry for CARICOM Enhanced Cooperation Protocol to reflect confirmed 1 October 2025 implementation date (nationals of Barbados, Belize, Dominica, and Saint Vincent and the Grenadines now have full free movement rights among the four states).",
       "CORRECTION 5: Added nationalsecurity.gov.dm and tourism.gov.dm to official_domains (referenced in visitor's visa and edcard notice pages respectively).",
       "CORRECTION 6: Added medical requirement detail (HIV test and chest X-ray) to RBI residence permit notes, per official page content.",
       "VERIFIED UNCHANGED: All visa-free nationality entries and stay durations match the live official page exactly. CBI investment amounts (EDF: US$200,000 single; real estate: US$200,000 + US$75,000 govt fee solo) confirmed unchanged. No e-visa, visa-on-arrival, or ETA found.",
-      "CORRECTION 7: Added explicit India (IND) entry to visa_policy.visa_free (180 days / 6 months). India qualifies as a Commonwealth of Nations member state under the blanket Commonwealth exemption on the official dominica.gov.dm immigration page. No separate India-specific entry previously existed; airline aggregator claim of visa-free is confirmed correct. Source: https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/do-i-need-a-visa-to-enter-into-dominica (official)."
+      "CORRECTION 7: Added explicit India (IND) entry to visa_policy.visa_free (180 days / 6 months). India qualifies as a Commonwealth of Nations member state under the blanket Commonwealth exemption on the official dominica.gov.dm immigration page. No separate India-specific entry previously existed; airline aggregator claim of visa-free is confirmed correct. Source: https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/do-i-need-a-visa-to-enter-into-dominica (official).",
+      "CORRECTION 8 (2026-06-27): Added Dominican Republic (DOM) to visa_policy.visa_free with max_stay_days 180. Cabinet approved removal of visa requirement effective 2026-02-01 per official OPM Pressroom announcement (pressroomopm.gov.dm). Cabinet directed amendments to Visa (Exemptions) Regulations. The main dominica.gov.dm visa-exemption page had not yet reflected this change as of the validation date. Source: https://pressroomopm.gov.dm/cabinet-approves-removal-of-visa-requirements-for-citizens-of-the-dominican-republic/",
+      "VERIFIED UNCHANGED (2026-06-27): All other visa-free nationality entries and stay durations confirmed against live official dominica.gov.dm visa page - 6-month tier (Commonwealth, CARICOM, Austria, Bulgaria, Cyprus, Czech Republic, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, Slovakia, Slovenia, USA) and 3-month tier (Argentina, Belgium, Costa Rica, Denmark, France, Germany, Greece, Ireland, Israel, Italy, Japan, Luxembourg, Malta, Mexico, Netherlands incl. Antilles, Norway, China, Portugal, South Korea, Spain, Suriname, Sweden, UK, Venezuela) all match exactly. No e-visa, visa-on-arrival, or ETA introduced. edcard confirmed as declaration form only. CBI pages did not load - CBI data kept unchanged (preserved per safety rule).",
+      "VERIFIED UNCHANGED (2026-06-29): Re-fetched dominica.gov.dm visa-exemption page - all visa-free lists (6-month and 3-month tiers) confirmed identical to prior record. Dominican Republic (DOM) 180-day visa-free confirmed again from pressroomopm.gov.dm (effective 2026-02-01). Entry requirements page confirmed unchanged. CBI subpages (investment options, banned-nationalities) returned empty again - CBI data kept as-is per safety rule. cbiu.gov.dm homepage loaded and mentions planned in-country visit requirement announced June 10, 2026 by PM Skerrit - details not yet finalised (pending national budget); recorded as gap. No changes to visa_policy lists this pass."
     ],
     "gaps": [
       "The official visa exemption page at dominica.gov.dm may not enumerate every exempt nationality; the full list may be more extensive than what is shown for the two tiers.",
-      "Conditional access based on held credentials (e.g. US/Schengen/UK visa or residence permit): no official Dominica government source mentions visa-free or reduced-requirement entry based on a traveller holding a valid foreign visa or residence permit. Multiple aggregator sites hint at such rules but no official source confirms them — not recorded.",
+      "Conditional access based on held credentials (e.g. US/Schengen/UK visa or residence permit): no official Dominica government source mentions visa-free or reduced-requirement entry based on a traveller holding a valid foreign visa or residence permit. Multiple aggregator sites hint at such rules but no official source confirms them - not recorded.",
       "Conditional access (diplomatic/service/official passport only waivers): previously documented bilateral diplomatic-passport-only waiver pages on news.gov.dm return 404 and cannot be verified. No currently-in-force diplomatic/service-only passport waiver confirmed from a live official source.",
       "No digital nomad, startup, or fast-track skilled worker visa found on official sources.",
-      "No investor-specific golden visa or residence-by-investment track found on official sources — only standard residence permit documented.",
+      "No investor-specific golden visa or residence-by-investment track found on official sources - only standard residence permit documented.",
       "Path to permanent residence and citizenship via standard residence permit not specified on official page.",
       "Processing time for the standard residence permit not specified on official page.",
-      "Dominica does not publish a complete list of visa-required nationalities — the exemption list is enumerated but the converse (who needs a visa) can only be inferred by exclusion.",
-      "Enhanced due diligence fee amounts for CBI conditionally-banned nationalities (Iran, North Korea, Sudan) not specified on cbiu.gov.dm."
+      "Dominica does not publish a complete list of visa-required nationalities - the exemption list is enumerated but the converse (who needs a visa) can only be inferred by exclusion.",
+      "Enhanced due diligence fee amounts for CBI conditionally-banned nationalities (Iran, North Korea, Sudan) not specified on cbiu.gov.dm.",
+      "CBI pages (cbiu.gov.dm/investment-options/economic-diversification-fund/, cbiu.gov.dm/investment-options/real-estate/, cbiu.gov.dm/banned-nationalities/) returned empty content on 2026-06-27 and 2026-06-29 re-fetches - existing CBI data preserved unchanged as per safety rule.",
+      "The main dominica.gov.dm visa-exemption page had not yet been updated to include Dominican Republic as of 2026-06-29, despite Cabinet approval and effective date of 2026-02-01. Authoritative source is the official OPM Pressroom press release.",
+      "CBI in-country visit requirement: PM Skerrit announced on June 10, 2026 that Dominica plans to require successful CBI applicants to visit in person to collect their passports. Full operational details and effective date are still being finalised in the upcoming national budget (cbiu.gov.dm/news-dominica-cbi-in-country-visit-requirement). This is a prospective procedural change, not yet in force; does not affect visa_policy."
     ]
   },
   "sources_checked": [
@@ -494,6 +585,11 @@
     "https://cbiu.gov.dm/investment-options/economic-diversification-fund/",
     "https://cbiu.gov.dm/investment-options/real-estate/",
     "https://cbiu.gov.dm/banned-nationalities/",
-    "https://caricom.org/barbados-belize-dominica-and-st-vincent-and-the-grenadines-ready-for-full-free-movement-on-1-october-2025/"
+    "https://caricom.org/barbados-belize-dominica-and-st-vincent-and-the-grenadines-ready-for-full-free-movement-on-1-october-2025/",
+    "https://dominica.gov.dm/services",
+    "https://nationalsecurity.gov.dm/",
+    "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals",
+    "https://pressroomopm.gov.dm/cabinet-approves-removal-of-visa-requirements-for-citizens-of-the-dominican-republic/",
+    "https://www.cbiu.gov.dm/news-dominica-cbi-in-country-visit-requirement"
   ]
 }

@@ -3,13 +3,75 @@
   "iso3": "VAT",
   "name": "Holy See (Vatican City)",
   "region": "Europe",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "No separate Vatican tourist visa - entry via Italy/Schengen",
+      "purpose": "Vatican City issues no national tourist visa. Foreign nationals who are lawfully admitted to Italy under Schengen rules may enter Vatican City freely through its five guarded entrances (St. Peter's Square, Arco delle Campane, Porta Sant'Anna, Porta Perugino, and the access via the Vatican Museums).",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.vaticanstate.va/en/state-and-government/general-informations/population.html",
+      "notes": "Entry is governed by the Lateran Treaty open-border arrangement with Italy (1929). The vaticanstate.va population page confirms: 'Acquiring and losing citizenship, permits to reside within the State's territory and any other formality related to access are regulated by specific provisions, issued in line with the Lateran Treaty.' The Secretariat of State informazione_generale page references Law N. III of 7 June 1929 on citizenship and residence and Regulation N. XXXVI of 27 September 1932 as the governing instruments. A 2011 law (Law N. CXXXI of 22 February 2011) on citizenship, residence and access is referenced in Vatican population data but is NOT cited on the informazione_generale page; both references are retained pending clarification. Vatican City does not publish a separate tourist visa scheme. Visitors holding a valid Schengen visa or qualifying under Schengen visa-exempt rules for Italy may enter. Most public areas (St. Peter's Square, Basilica) are freely accessible during opening hours; the Vatican Museums require a ticketed entry but no visa. ETIAS - the EU travel authorisation - is expected in late 2026 and will apply to roughly 59 currently visa-exempt nationalities entering via Italy; Vatican City citizens and European microstates (Andorra, Monaco, San Marino) are ETIAS-exempt."
+    },
+    {
+      "category": "other",
+      "name": "Authorisation to reside / access (non-citizens/non-residents)",
+      "purpose": "Chapter Three of Law N. CXXXI of 22 February 2011 provides for individual authorisations for non-citizens and non-residents who need access to Vatican City beyond normal public visiting hours or to restricted areas (e.g. staff of accredited Holy See entities, researchers, accredited journalists). These authorisations are granted by Vatican authorities on a case-by-case basis.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.vatican.va/roman_curia/secretariat_state/documents/informazione_generale/sp_ss_scv_info-generale_en.html",
+      "notes": "The full text of Chapter Three of Law N. CXXXI of 2011 is not publicly available in English on any official Vatican domain. Authorisations are not equivalent to visas and are not available to the general public through a publicly documented application process. Separate from, and in addition to, any required Italy/Schengen entry credentials."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / official access (accredited personnel)",
+      "purpose": "Diplomatic, consular, and official personnel accredited to the Holy See, and staff of international organisations with agreements with the Holy See, are granted access to Vatican City through accreditation procedures administered by the Pontifical Commission for Vatican City State and the Secretariat of State.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.vatican.va/roman_curia/secretariat_state/documents/informazione_generale/sp_ss_scv_info-generale_en.html",
+      "notes": "The Holy See maintains diplomatic relations with over 180 states. Diplomatic personnel are accredited to the Holy See (not Vatican City State per se) through normal diplomatic channels. No online application portal is publicly available. Vatican City is not a Schengen member but operates an open border with Italy under the Lateran Treaty; diplomatic staff must still comply with Italy/Schengen entry requirements or hold a diplomatic visa for Italy."
+    },
+    {
+      "category": "work",
+      "name": "Residence by reason of office / service",
+      "purpose": "Vatican citizenship and the right to reside in Vatican City are granted to specific categories of persons holding qualifying ecclesiastical or administrative appointments: Cardinals resident in Vatican City, Holy See diplomats on active mission, Pontifical Swiss Guards, and other persons residing in Vatican City by reason of office. Citizenship - and thus residence - is automatically lost when the qualifying appointment ends.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.vatican.va/roman_curia/secretariat_state/documents/informazione_generale/cittadini-vaticani_en.html",
+      "notes": "This is not a conventional work visa but a functional citizenship/residency tied to employment by the Holy See or Vatican City State. Governed by Law N. III of 7 June 1929 on citizenship and residence (per the informazione_generale page) and potentially also Law N. CXXXI of 22 February 2011 (referenced in population data). Only the Pope holds Vatican citizenship for life. No application process is publicly documented for external applicants; appointments are made by the Holy See through internal ecclesiastical and administrative procedures. As of December 31, 2024 (per vaticanstate.va population page re-verified 2026-06-29), 673 citizens and 882 residents (citizens + non-citizens) exist."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
-        "nationality": "All nationalities (de facto — no separate Vatican visa system exists; entry is governed by Italy/Schengen rules under the Lateran Treaty open-border arrangement)",
+        "nationality": "All nationalities (de facto - no separate Vatican visa system exists; entry is governed by Italy/Schengen rules under the Lateran Treaty open-border arrangement)",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Vatican City has no border controls with Italy per the Lateran Treaty of 11 February 1929. The five entrances into Vatican City State are manned by the Pontifical Swiss Guard and Gendarmerie Corps but entry formalities for foreign visitors are governed by Italy/Schengen rules, not a separate Vatican visa. The governing legislation is Law N. CXXXI of 22 February 2011 on citizenship, residence and access (which replaced the original Law N. III of 7 June 1929). Chapter Three of Law N. CXXXI concerns the authorisation non-citizens and non-residents need in order to access Vatican City State; however, the full text is not publicly available in English online. In practice, no separate Vatican visa is required; visitors who can lawfully enter Italy under Schengen rules can enter Vatican City. Vatican authorities have not published a nationality-specific visa-free list. Note: ETIAS (European Travel Information and Authorisation System) is expected to be implemented by the EU in late 2026, at which point nationals of approximately 59 currently visa-exempt countries (including the US, UK, Canada, Australia, Japan, South Korea) will require an ETIAS authorisation before entering Italy/Schengen and by extension Vatican City. ETIAS is a travel authorisation, not a visa, and does not change Vatican City's underlying policy of having no separate national visa system.",
+        "notes": "Vatican City has no border controls with Italy per the Lateran Treaty of 11 February 1929. The five entrances into Vatican City State are manned by the Pontifical Swiss Guard and Gendarmerie Corps but entry formalities for foreign visitors are governed by Italy/Schengen rules, not a separate Vatican visa. The governing legislation per the official informazione_generale page is Law N. III of 7 June 1929 on citizenship and residence and Regulation N. XXXVI of 27 September 1932. Vatican authorities have not published a nationality-specific visa-free list. In practice, no separate Vatican visa is required; visitors who can lawfully enter Italy under Schengen rules can enter Vatican City. Note: ETIAS (European Travel Information and Authorisation System) is expected in late 2026; nationals of approximately 59 currently visa-exempt countries (including the US, UK, Canada, Australia, Japan, South Korea) will require ETIAS authorisation before entering Italy/Schengen and by extension Vatican City. Vatican City citizens and European microstate nationals (Andorra, Monaco, San Marino) are explicitly ETIAS-exempt. ETIAS is a travel authorisation, not a visa, and does not change Vatican City's underlying policy of having no separate national visa system.",
         "source_url": "https://www.vaticanstate.va/en/state-and-government/general-informations/population.html",
         "source_official": true
       }
@@ -21,9 +83,10 @@
       "https://www.vaticanstate.va/en/state-and-government/general-informations/population.html",
       "https://www.vatican.va/roman_curia/secretariat_state/documents/informazione_generale/sp_ss_scv_info-generale_en.html",
       "https://www.vaticanstate.va/en/state-and-government/general-informations/geography.html",
-      "https://visnews-en.blogspot.com/2011/03/law-on-citizenship-residency-and-access.html"
+      "https://www.vatican.va/roman_curia/secretariat_state/documents/informazione_generale/cittadini-vaticani_en.html",
+      "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/HolySee.html"
     ],
-    "notes": "Vatican City does not operate a standalone national visa system. The open-border arrangement with Italy under the Lateran Treaty (1929) means entry to Vatican City is contingent on lawful entry into Italy/Schengen. No official Vatican government page enumerates per-nationality visa-free, VOA, or e-visa lists. The official vaticanstate.va population page confirms that access formalities are set by provisions aligned with the Lateran Treaty. The governing law is Law N. CXXXI of 22 February 2011 on citizenship, residence and access (replaced the original Law N. III of 7 June 1929). ETIAS — the EU-level travel authorisation expected in late 2026 — will apply de facto to Vatican City visitors from approximately 59 currently visa-exempt countries, as they must first enter Italy to reach Vatican City."
+    "notes": "Vatican City does not operate a standalone national visa system. The open-border arrangement with Italy under the Lateran Treaty (1929) means entry to Vatican City is contingent on lawful entry into Italy/Schengen. No official Vatican government page enumerates per-nationality visa-free, VOA, or e-visa lists. The official vaticanstate.va population page confirms that access formalities are set by provisions aligned with the Lateran Treaty. The governing law per the Secretariat of State informazione_generale page is Law N. III of 7 June 1929 on citizenship and residence and Regulation N. XXXVI of 27 September 1932; a 2011 replacement law (N. CXXXI) is referenced in demographic data but not on the informazione_generale page. ETIAS - the EU-level travel authorisation expected in late 2026 - will apply de facto to Vatican City visitors from approximately 59 currently visa-exempt countries, as they must first enter Italy to reach Vatican City. Vatican City citizens and European microstate nationals are ETIAS-exempt."
   },
   "conditional_access": [],
   "cbi": {
@@ -35,7 +98,7 @@
     "processing_time": "",
     "dual_citizenship_allowed": null,
     "residency_required": null,
-    "notes": "No citizenship-by-investment or golden visa program exists. Vatican citizenship is granted solely by the Holy See to individuals holding qualifying ecclesiastical or administrative appointments under Law N. CXXXI of 22 February 2011. Citizenship is functional and temporary in nature (automatic for Cardinals, Holy See diplomats, Swiss Guards, and persons residing in Vatican City by reason of office or service), and is lost automatically when qualifying employment or residence ends. Only the Pope holds Vatican citizenship for life. Confirmed absent from all major CBI/golden-visa program lists and consistent with official Vatican sources."
+    "notes": "No citizenship-by-investment or golden visa program exists. Vatican citizenship is granted solely by the Holy See to individuals holding qualifying ecclesiastical or administrative appointments under Law N. III of 7 June 1929 (and potentially the 2011 revision). Citizenship is functional and temporary in nature (automatic for Cardinals, Holy See diplomats, Swiss Guards, and persons residing in Vatican City by reason of office or service), and is lost automatically when qualifying employment or residence ends. Only the Pope holds Vatican citizenship for life. Confirmed absent from all major CBI/golden-visa program lists and consistent with official Vatican sources."
   },
   "rbi": {
     "programs": []
@@ -44,7 +107,7 @@
     "programs": []
   },
   "agreements": [
-    "Lateran Treaty open-border arrangement with Italy (1929) — no border controls between Vatican City and Italy"
+    "Lateran Treaty open-border arrangement with Italy (1929) - no border controls between Vatican City and Italy"
   ],
   "official_domains": [
     "vatican.va",
@@ -54,26 +117,40 @@
   "data_quality": {
     "completeness": "low",
     "validation_notes": [
-      "Law citation corrected: the original governing law was Law N. III of 7 June 1929; it was replaced by Law N. CXXXI of 22 February 2011 on citizenship, residence and access. Both references are now accurately reflected in the notes.",
-      "Added ETIAS context: ETIAS (EU travel authorisation) is expected to be implemented in late 2026 and will apply de facto to Vatican City visitors from approximately 59 currently visa-exempt countries who must enter Italy first.",
-      "cbi notes updated to reference Law N. CXXXI of 2011 explicitly and to accurately describe the Pope as the only Vatican citizen for life.",
-      "Geography page verified: confirmed five entrances protected by Pontifical Swiss Guard and Gendarmerie Corps.",
-      "vaticanstate.va population page re-verified: confirms access formalities regulated by Lateran Treaty-aligned provisions. No new nationality-specific information found.",
-      "No change to conditional_access (remains empty): Vatican City publishes no bilateral credential-based or diplomatic-passport-only entry rules on any official domain."
+      "2026-06-29: Re-verified vaticanstate.va population page - confirmed Lateran Treaty still governs access formalities; population data updated: 673 citizens and 882 total residents as of December 31, 2024 (updated from 594 in 2011). Visa policy record unchanged - no separate Vatican visa system confirmed.",
+      "2026-06-29: Re-verified vaticanstate.va geography page - confirms five entrances protected by Pontifical Swiss Guard and Gendarmerie Corps, St. Peter's Square freely accessible, Italian police supervise St. Peter's Square under a coordination arrangement. No change to visa policy record.",
+      "2026-06-29: Re-verified Secretariat of State informazione_generale page - still explicitly references Law N. III of 7 June 1929 and Regulation N. XXXVI of 27 September 1932 as governing instruments for entry/citizenship/residence formalities. Law N. CXXXI of 2011 not cited on this page. Gap retained.",
+      "2026-06-29: Re-verified US State Department visa reciprocity page for Holy See - confirms 'See Italy' for all civil documents; US Embassy Rome handles NIV; no separate Vatican visa system confirmed. No change.",
+      "2026-06-29: vaticanstate.va norms page fetched - lists Fundamental Law of Vatican City State (May 13, 2023) as current governing fundamental law; no entry/visa provisions visible on the page. No change to visa policy.",
+      "2026-06-29: epass.vatican.va PDF (Dossier_INFO_ENGL.pdf) could not be parsed as text; binary content only. Gap retained.",
+      "2026-06-29: Wikipedia article on Visa policy of Vatican City re-verified - sparse stub; confirms Schengen/Italy de facto arrangement and mentions a 2017 Vatican-Russia visa-free diplomatic travel agreement; no official Vatican source for the Russia agreement found. Agreement not recorded per official-source-first rules; retained in gaps.",
+      "2026-06-29: No change to visa_policy (visa_free/voa/e_visa/eta lists), conditional_access, cbi, rbi, or fast_track - all re-confirmed correct from official sources.",
+      "2026-06-27: Re-verified vaticanstate.va population page - still confirms Lateran Treaty governs access formalities; no nationality-specific visa data added. Record unchanged.",
+      "2026-06-27: Re-verified vaticanstate.va geography page - confirms five entrances protected by Pontifical Swiss Guard and Gendarmerie Corps. No change to record.",
+      "2026-06-27: Re-verified Secretariat of State informazione_generale page - this page explicitly references Law N. III of 7 June 1929 and Regulation N. XXXVI of 27 September 1932 as the governing instruments for entry formalities. It does NOT cite Law N. CXXXI of 2011. Both references are retained in notes; the discrepancy is flagged in gaps.",
+      "2026-06-27: ETIAS timeline updated from 'late 2026' to 'Q4 2026' based on current search consensus. Vatican City citizens and European microstate nationals (Andorra, Monaco, San Marino) confirmed explicitly ETIAS-exempt.",
+      "2026-06-27: US State Department visa reciprocity page re-verified - confirms civil document requirements are 'See Italy'; US Embassy in Rome handles NIV for Holy See; no separate Vatican visa system confirmed.",
+      "2026-06-27: cittadini-vaticani page re-verified - 2011 population data (594 citizens) confirmed; no nationality-by-nationality access policy found.",
+      "2026-06-27: No change to visa_policy (visa_free/voa/e_visa/eta lists), conditional_access, cbi, rbi, or fast_track - all re-confirmed correct from official sources.",
+      "Prior notes: Law citation corrected in previous validation - original governing law was Law N. III of 7 June 1929; Law N. CXXXI of 22 February 2011 referenced in population data. Both accurately reflected.",
+      "Prior notes: cbi notes updated to reference Law N. CXXXI of 2011 explicitly and to accurately describe the Pope as the only Vatican citizen for life.",
+      "Prior notes: No change to conditional_access (remains empty): Vatican City publishes no bilateral credential-based or diplomatic-passport-only entry rules on any official domain."
     ],
     "gaps": [
+      "Law discrepancy: Secretariat of State informazione_generale page (official) cites Law N. III of 7 June 1929 and Regulation N. XXXVI of 1932 as governing entry formalities. Law N. CXXXI of 22 February 2011 is referenced in population/demographic data but not confirmed as the operative replacement on the informazione_generale page. Cannot confirm supersession from currently accessible official pages.",
+      "Fundamental Law of Vatican City State (May 13, 2023) listed on vaticanstate.va norms page - may supersede or modify earlier legal framework for access/entry; full text not parsed from official page during this verification run.",
       "Full text of Law N. CXXXI of 22 February 2011 on citizenship, residence and access (Chapter Three: authorisation for non-citizens/non-residents to access Vatican City) is not publicly available in English online; Vatican authorities have not published a nationality-by-nationality visa policy document.",
-      "No official English-language page from Vatican authorities enumerates specific visa-free nationalities, visa-on-arrival, or e-visa categories — only non-official aggregators cover this, so no per-nationality entries were recorded.",
+      "No official English-language page from Vatican authorities enumerates specific visa-free nationalities, visa-on-arrival, or e-visa categories - only non-official aggregators cover this, so no per-nationality entries were recorded.",
       "Vatican City's de facto Schengen-adjacent status is widely reported but not formally documented on an official Vatican government page in accessible English.",
       "No official Vatican government source (vaticanstate.va, vatican.va, epass.vatican.va) publishes conditional entry rules based on holding third-country visas (e.g. US, Schengen, UK), residence permits, or OCI cards. Because Vatican entry is governed by Italy/Schengen rules under the Lateran Treaty, such conditional rules (if any) would be found in Italian/Schengen law, not Vatican law.",
-      "No bilateral visa-suppression agreements for diplomatic/service passport holders were found on any official Vatican domain. Wikipedia cites a 2017 Vatican–Russia visa-free diplomatic travel agreement, but the agreement text was not found on any official Vatican page; not recorded per official-source-first rules.",
-      "epass.vatican.va PDF documents (Dossier_INFO_ENGL.pdf, VAT_passports_gen_info.pdf) could not be parsed; may contain additional information about passport-specific agreements.",
-      "ETIAS implementation timeline (late 2026) sourced from non-official aggregators; official ETIAS launch date subject to change by EU authorities."
+      "No bilateral visa-suppression agreements for diplomatic/service passport holders were found on any official Vatican domain. Wikipedia cites a 2017 Vatican-Russia visa-free diplomatic travel agreement, but the agreement text was not found on any official Vatican page; not recorded per official-source-first rules.",
+      "epass.vatican.va PDF documents (Dossier_INFO_ENGL.pdf, VAT_passports_gen_info.pdf) could not be parsed as text during either verification run (2026-06-27 and 2026-06-29); may contain additional information about passport-specific agreements.",
+      "ETIAS official EU launch date (late 2026) sourced from web search consensus; official ETIAS launch date subject to change by EU authorities."
     ]
   },
   "outbound_official": {
     "found": false,
-    "note": "no official Holy See (Vatican City) government outbound visa-list page located; rely on destination-side data. The Holy See's official domains (vatican.va, vaticanstate.va, epass.vatican.va) publish no page enumerating where Vatican ordinary-passport citizens may travel without a prior consular visa. epass.vatican.va covers only technical passport specifications. The Secretariat of State pages cover diplomatic relations and institutional matters, not citizen travel guidance. With only ~673 Vatican citizens — most of them clergy or Swiss Guards in diplomatic roles — outbound travel guidance is handled through diplomatic channels rather than a public webpage."
+    "note": "no official Holy See (Vatican City) government outbound visa-list page located; rely on destination-side data. The Holy See's official domains (vatican.va, vaticanstate.va, epass.vatican.va) publish no page enumerating where Vatican ordinary-passport citizens may travel without a prior consular visa. epass.vatican.va covers only technical passport specifications. The Secretariat of State pages cover diplomatic relations and institutional matters, not citizen travel guidance. With only ~673 Vatican citizens (as of December 31, 2024) - most of them clergy or Swiss Guards in diplomatic roles - outbound travel guidance is handled through diplomatic channels rather than a public webpage."
   },
   "sources_checked": [
     "https://www.vatican.va/roman_curia/secretariat_state/documents/informazione_generale/sp_ss_scv_info-generale_en.html",
@@ -90,6 +167,9 @@
     "https://www.vatican.va/roman_curia/secretariat_state/documents/rc_seg-st_20010123_holy-see-relations_en.html",
     "https://www.vaticanstate.va/en/norm-general.html?start=20",
     "https://visnews-en.blogspot.com/2011/03/law-on-citizenship-residency-and-access.html",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Vatican_City"
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Vatican_City",
+    "https://www.vaticanstate.va/en/",
+    "https://www.vatican.va/roman_curia/secretariat_state/index.htm",
+    "https://travel-europe.europa.eu/en/etias/about-etias/who-should-apply"
   ]
 }

@@ -294,7 +294,7 @@
         "nationality": "Portugal",
         "iso3": "PRT",
         "max_stay_days": 30,
-        "notes": "All types of passport eligible for ETA (30 days). Diplomatic/Service passport holders are also listed under Visa Exempt (90 days) on the official portal — see conditional_access.",
+        "notes": "All types of passport eligible for ETA (30 days). Diplomatic/Service passport holders are also listed under Visa Exempt (90 days) on the official portal - see conditional_access.",
         "source_url": "https://evisa.gov.mz/",
         "source_official": true
       },
@@ -334,7 +334,7 @@
         "nationality": "South Korea",
         "iso3": "KOR",
         "max_stay_days": 30,
-        "notes": "All types of passport eligible for ETA (30 days). Diplomatic/Service passport holders are also listed under Visa Exempt (90 days) on the official portal — see conditional_access.",
+        "notes": "All types of passport eligible for ETA (30 days). Diplomatic/Service passport holders are also listed under Visa Exempt (90 days) on the official portal - see conditional_access.",
         "source_url": "https://evisa.gov.mz/",
         "source_official": true
       },
@@ -402,7 +402,7 @@
       "https://usa.embamoc.gov.mz/?page_id=99",
       "https://embassymozambique.se/en/visa/"
     ],
-    "notes": "Visa categories on evisa.gov.mz (platform relaunched 11 February 2026): (1) Visa Exempt (waiver countries) - listed in visa_free and conditional_access above; (2) Special/ETA countries listed in eta above (30-day pre-travel Electronic Travel Authorization for selected nationalities); (3) eVisa eligible — the majority of the world's countries, including all ETA and visa-exempt nationalities who need longer stays or non-Tourist/Business visa types; (4) Restricted countries (Pakistan, Bangladesh, Ethiopia, Nigeria, Nepal, Somalia) must apply at nearest Mozambican embassy and cannot use the eVisa portal. Standard eVisa processing: approximately 5 business days. ETA processing: at least 48 hours before departure. Tourist and Business eVisas permit stays up to 90 days; Investment Visa up to 730 days (multiple-entry)."
+    "notes": "Visa categories on evisa.gov.mz (platform relaunched 11 February 2026, operated with VFS Global): (1) Visa Exempt (waiver countries) - listed in visa_free and conditional_access above - no ETA or pre-registration required; (2) ETA countries (29 nationalities listed in eta above) - 30-day pre-travel Electronic Travel Authorization required, applied via evisa.gov.mz at least 48 hours before departure, fee approximately USD 48 (increased from ~USD 10/650 MZN on previous portal); (3) eVisa eligible - the majority of the world's countries, including all ETA and visa-exempt nationalities who need longer stays or non-Tourist/Business visa types; (4) Restricted countries (Pakistan, Bangladesh, Ethiopia, Nigeria, Nepal, Somalia) must apply at nearest Mozambican embassy and cannot use the eVisa portal. Standard eVisa processing: approximately 5 business days. ETA processing: at least 48 hours before departure. Tourist and Business eVisas permit stays up to 90 days; Investment Visa up to 730 days (multiple-entry)."
   },
   "conditional_access": [
     {
@@ -560,6 +560,248 @@
       "source_official": true
     }
   ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist eVisa (Single Entry)",
+      "purpose": "Short-stay tourism and leisure visits to Mozambique for eligible nationalities applying online through the official eVisa portal.",
+      "max_stay_days": 90,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.mz/",
+      "notes": "Duration options of 30, 60, or 90 days. Visa must be used within 60 days of issuance. Restricted nationalities (Pakistan, Bangladesh, Ethiopia, Nigeria, Nepal, Somalia) must apply at nearest embassy and cannot use the eVisa portal. Standard processing approximately 5 business days."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Visa (Consular / Single Entry)",
+      "purpose": "Tourism visits obtained at a Mozambican embassy or consulate for applicants not eligible for the eVisa portal, or those applying in person.",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": 220,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Normal processing: 10 business days, $220 USD. Expedited processing (3 business days): $280 USD. Requires confirmed flight and hotel reservations. Visa must be used within 60 days from issuance date."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Visa (Consular / Multiple Entry)",
+      "purpose": "Multi-entry tourism visits obtained at a Mozambican embassy or consulate, permitting multiple entries over the validity period.",
+      "max_stay_days": 90,
+      "validity_days": 60,
+      "entries": "multiple",
+      "fee_usd": 240,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Normal processing: 10 business days, $240 USD. Expedited processing (3 business days): $310 USD. Requires confirmed flight and hotel reservations. Visa must be used within 60 days from issuance date."
+    },
+    {
+      "category": "business",
+      "name": "Business eVisa",
+      "purpose": "Business activities in Mozambique for eligible nationalities applying online through the official eVisa portal.",
+      "max_stay_days": 90,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.mz/",
+      "notes": "Duration options of 30, 60, or 90 days. Visa must be used within 60 days of issuance. Restricted nationalities must apply at nearest embassy."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa (Consular)",
+      "purpose": "Business activities in Mozambique obtained at a Mozambican embassy or consulate.",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": 220,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Normal processing: 10 business days, $220 USD. Expedited processing (3 business days): $280 USD. Requires letter from applicant's or inviting company, hotel and flight reservations."
+    },
+    {
+      "category": "other",
+      "name": "Visit Visa (Consular)",
+      "purpose": "Visiting family or friends in Mozambique with a signed invitation from the inviting party in Mozambique.",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": 220,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Normal processing: 10 business days, $220 USD. Expedited processing (3 business days): $280 USD. Requires signed invitation letter from the inviting party in Mozambique plus flight itinerary and identification documentation."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa (Consular)",
+      "purpose": "Employment in Mozambique; single-entry visa obtained at a Mozambican embassy or consulate for those with authorized employment.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 240,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Single entry only. Requires authorization from Ministry of Labor, health certificate, work contract, authenticated police clearance, business letter, and business permit (ALVARA)."
+    },
+    {
+      "category": "work",
+      "name": "Work eVisa (Oil & Gas Business/Work)",
+      "purpose": "Work or business activities in Mozambique's oil and gas sector via the official eVisa portal.",
+      "max_stay_days": 90,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.mz/",
+      "notes": "Listed as a distinct eVisa category on the official portal separate from standard Business eVisa. Processing approximately 5 business days."
+    },
+    {
+      "category": "other",
+      "name": "Sports & Culture eVisa",
+      "purpose": "Participation in sports events or cultural activities in Mozambique for eligible nationalities applying online.",
+      "max_stay_days": 90,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.mz/",
+      "notes": "Listed as a distinct eVisa category on the official portal."
+    },
+    {
+      "category": "other",
+      "name": "Crew eVisa",
+      "purpose": "Entry for crew members of vessels or aircraft operating in or through Mozambique.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.mz/",
+      "notes": "Listed as a distinct eVisa category on the official portal."
+    },
+    {
+      "category": "other",
+      "name": "Humanitarian eVisa",
+      "purpose": "Entry for humanitarian workers and aid personnel conducting relief or development activities in Mozambique.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.mz/",
+      "notes": "Listed as a distinct eVisa category on the official portal."
+    },
+    {
+      "category": "investment",
+      "name": "Investment Visa (eVisa)",
+      "purpose": "Entry for foreign investors undertaking a qualifying investment project in Mozambique worth USD 500,000 or more.",
+      "max_stay_days": 730,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.mz/investment-visa.html",
+      "notes": "Duration options: 90, 180, 365 or 730 days (multiple-entry). Minimum investment threshold: USD 500,000. Governed by Law No. 23/2022 of December 29. Processing time: 3 to 5 business days. This is an entry/investment visa; it is not a formal long-term residency-by-investment or golden visa program."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa (Consular)",
+      "purpose": "Short stay in Mozambique for passengers transiting to another destination.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 220,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Requires valid visa for the final destination unless the final destination is the applicant's country of origin or residence. Normal processing: 10 business days, $220 USD. Expedited processing (3 business days): $280 USD."
+    },
+    {
+      "category": "family",
+      "name": "Residence Visa (Consular)",
+      "purpose": "Long-stay residence in Mozambique for individuals with authorized employment or family ties, obtained at a Mozambican embassy or consulate.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 240,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Single entry only. Requires authorization letter from Ministry of Labor, work contract, authenticated police clearance, and business documentation. Fee: $240 USD (normal processing, 10 business days); expedited 3 business days: $310 USD."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official / UN Visa (Consular)",
+      "purpose": "Entry for foreign government officials, diplomats, and staff of international organizations (UN, World Bank, IMF) on official business in Mozambique.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Reserved for government officials and UN/World Bank/IMF staff on official business. Separate requirements apply. Many bilateral agreements grant diplomatic/service passport holders visa-free entry - see conditional_access."
+    },
+    {
+      "category": "other",
+      "name": "Electronic Travel Authorization (ETA)",
+      "purpose": "Pre-travel electronic authorization for selected nationalities allowing short-stay tourist and business visits without a full visa.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 48,
+      "processing_days_min": 2,
+      "processing_days_max": 2,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.gov.mz/",
+      "notes": "Available to exactly 29 nationalities (Belgium, Canada, China, Côte d'Ivoire, Denmark, Finland, France, Germany, Ghana, Indonesia, Ireland, Israel, Italy, Japan, Netherlands, Norway, Portugal, Russia, Saudi Arabia, Senegal, Singapore, South Korea, Spain, Sweden, Switzerland, Ukraine, UAE, UK, USA) via the evisa.gov.mz portal (relaunched February 11, 2026 with VFS Global). Processing: at least 48 hours before departure. Permits stay up to 30 days for tourist/business purposes. Fee: approximately USD 48 (increased from approximately USD 10/650 MZN under the previous portal). ETA was briefly suspended May 16–early 2026 due to technical issues; fully reinstated on the new portal."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -591,7 +833,7 @@
   },
   "agreements": [
     "SADC (Southern African Development Community) member state",
-    "CPLP (Community of Portuguese Language Countries) member state — multilateral diplomatic/service/special passport visa suppression agreement among CPLP members"
+    "CPLP (Community of Portuguese Language Countries) member state - multilateral diplomatic/service/special passport visa suppression agreement among CPLP members"
   ],
   "official_domains": [
     "evisa.gov.mz",
@@ -605,29 +847,34 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "ADDED explicit India (IND) entry to e_visa array on 2026-06-14: verified against live evisa.gov.mz (official Mozambique National Immigration Service portal); India's flag appears in the eVisa-eligible section and is absent from visa_free, ETA, and restricted-country lists — ordinary Indian passport holders require an e-visa applied for in advance; aggregator claim of visa-free or visa-on-arrival for India is FALSE per the official source.",
+      "ADDED explicit India (IND) entry to e_visa array on 2026-06-14: verified against live evisa.gov.mz (official Mozambique National Immigration Service portal); India's flag appears in the eVisa-eligible section and is absent from visa_free, ETA, and restricted-country lists - ordinary Indian passport holders require an e-visa applied for in advance; aggregator claim of visa-free or visa-on-arrival for India is FALSE per the official source.",
       "Re-verified against live evisa.gov.mz on 2026-06-13 via Firecrawl stealth scrape (HTTP 200, full page content retrieved).",
       "REMOVED the redundant CPLP grouped entry from conditional_access that listed Angola, Brazil, Cabo Verde, Guinea Bissau, Portugal, Sao Tome & Principe together. Angola and Cabo Verde ordinary passports are visa-free, not a CPLP diplomatic special case. Individual entries for Brazil, Guinea Bissau, Portugal, Sao Tome & Principe diplomatic/service are retained and corrected.",
       "CORRECTED visa_free nationality labels: 'Sao Tome & Principe (Ordinary)' cleaned to 'Sao Tome & Principe' (ordinary passport noted in notes field); 'South Africa (Ordinary)' cleaned to 'South Africa' (ordinary passport noted in notes field); 'Swaziland / Eswatini' changed to 'Eswatini' (primary current name) with original portal label noted.",
       "CORRECTED eta nationality labels: Removed parenthetical '(all passport types)' and '(Ordinary)' suffixes from nationality field for Indonesia, Portugal, South Korea to use clean nationality names with clarification in notes field instead.",
       "CORRECTED e_visa max_stay_days from null to 90: the portal confirms Tourist and Business eVisas permit up to 90 days; Investment Visa up to 730 days.",
-      "CONFIRMED Argentina conditional_access: live portal shows 'Diplomatic and Service' only (90 days) — 'official' passport type removed from passport_types as portal does not list it for Argentina (only Cuba uses 'official').",
+      "CONFIRMED Argentina conditional_access: live portal shows 'Diplomatic and Service' only (90 days) - 'official' passport type removed from passport_types as portal does not list it for Argentina (only Cuba uses 'official').",
       "CONFIRMED investment visa minimum: USD 500,000, durations 90/180/365/730 days, multiple-entry, processing 3-5 business days.",
-      "CONFIRMED restricted countries: Pakistan, Bangladesh, Ethiopia, Nigeria, Nepal, Somalia — unchanged.",
+      "CONFIRMED restricted countries: Pakistan, Bangladesh, Ethiopia, Nigeria, Nepal, Somalia - unchanged.",
       "CONFIRMED ETA processing: at least 48 hours before departure. eVisa standard: approximately 5 business days.",
       "ADDED pae.gov.mz to official_domains (PAE is Mozambique's Agency for Business Environment, publishes official visa policy announcements on government domain).",
-      "ADDED CPLP agreement to agreements array."
+      "ADDED CPLP agreement to agreements array.",
+      "RE-VERIFIED 2026-06-27: evisa.gov.mz returned HTTP 403 (inaccessible) in this pass. All ETA, visa_free, and e_visa lists re-confirmed via Mozambique High Commission UK (mozambiquehighcommission.org.uk) and Embassy of Mozambique in Japan (embamoc.jp/visas). ETA list of 29 countries confirmed by official High Commission UK page and VisasNews (citing SENAMI decree). Visa-free SADC list (Angola, Botswana, Cabo Verde, Eswatini, Kenya, Lesotho, Malawi, Mauritius, Namibia, Rwanda, Sao Tome & Principe, Seychelles, South Africa, Tanzania, Uganda, Zambia, Zimbabwe, Seychelles) confirmed by Japan Embassy regional waiver list. Uganda visa exemption effective September 4, 2025 confirmed via Wikipedia (non-official but corroborated by multiple sources). NO changes to visa_policy lists were warranted based on 2026-06-27 sources. CLARIFICATION: ETA countries pay 650 MZN (~USD 10) on arrival per Mozambique High Commission UK and VisasNews; this is a nominal arrival registration fee, not a visa-on-arrival fee; classification as ETA (pre-travel authorization required 48+ hours before departure) remains correct and unchanged.",
+      "RE-VERIFIED 2026-06-29: evisa.gov.mz again returned HTTP 403 in this pass. ETA list (29 countries), visa-free list (17 countries), restricted countries (6), and eVisa general availability re-confirmed against: Mozambique High Commission UK (mozambiquehighcommission.org.uk/visa-section.html), Embassy of Mozambique in Japan (embamoc.jp/visas, embamoc.jp/news/visa-waiver-program), VisasNews (Feb 2026 portal makeover article), and Wikipedia (Visa policy of Mozambique). KEY CORRECTION THIS PASS: ETA fee updated to approximately USD 48 (was recorded as ~USD 10 / 650 MZN in prior note). The new evisa.gov.mz portal relaunched February 11, 2026 with VFS Global increased the ETA fee significantly - confirmed by VisasNews Feb 2026 article ('approximately $48 / €40') and Wikipedia ($48). fee_usd updated from null to 48 in ETA visa_type entry. ETA was briefly suspended May 16, 2025 due to technical issues with the old portal; fully reinstated with the new February 2026 portal. NO changes to any visa_policy nationality lists (visa_free, eta, e_visa) were warranted in this pass."
     ],
     "gaps": [
-      "The eVisa portal's eVisa-eligible section lists a comprehensive global country list but does not individually enumerate stay durations per country — only that they are eligible for eVisa (specific approved duration varies by visa type applied for).",
+      "The eVisa portal's eVisa-eligible section lists a comprehensive global country list but does not individually enumerate stay durations per country - only that they are eligible for eVisa (specific approved duration varies by visa type applied for).",
       "Restricted countries (Pakistan, Bangladesh, Ethiopia, Nigeria, Nepal, Somalia) are noted as requiring embassy-based visa applications; no further details (fees, processing times) found on official sources.",
       "No official government page found confirming a formal citizenship-by-investment or golden visa/residency-by-investment program. Media sources (November 2025) mention a proposed tiered investor residency (USD 500,000 for 5 years, USD 5,000,000 for 10 years) but no official government page confirms this program is live.",
       "No official digital nomad, skilled worker fast-track, or startup visa program found on official Mozambican government domains.",
+      "ETA fee as of February 2026 portal: approximately USD 48 per VisasNews and Wikipedia - not yet confirmed directly from evisa.gov.mz (returned HTTP 403 in two consecutive validation passes, June 2026). fee_usd set to 48 in ETA visa_type entry based on non-official corroboration; treat as provisional until evisa.gov.mz is directly accessible.",
       "SADC Protocol on Facilitation of Movement of Persons: Mozambique is a SADC member but it is unclear from official sources whether Mozambique has fully ratified the free movement protocol; practical bilateral visa-free arrangements are captured in the visa_free list.",
       "TYPE A (held third-country credential): No official Mozambican government source found granting visa-free, VoA, ETA, or expedited eVisa entry based on holding a valid US, Schengen, UK, UAE, GCC, Australian, Canadian, or any other foreign visa or residence permit.",
       "TYPE B (special status): No official Mozambican source mentions India OCI card, or any equivalent diaspora/heritage status, as conferring conditional entry.",
       "Bilateral diplomatic/service passport agreement texts for Egypt, Turkey, Thailand, Venezuela, Vietnam bilateral waivers were not found on official Mozambican government domains; their presence on evisa.gov.mz waiver table is taken as authoritative confirmation.",
-      "The senami.gov.mz domain redirects to visitos.senami.gov.mz which may contain additional immigration details not checked in this validation pass."
+      "visitos.senami.gov.mz (SENAMI eVisa portal) returned ECONNREFUSED in 2026-06-27 validation pass; could not confirm whether it contains additional immigration details beyond the evisa.gov.mz platform. Previously noted as the redirect target for senami.gov.mz.",
+      "Wikipedia (Visa policy of Mozambique) and the Embassy of Mozambique in Japan mention a visa-on-arrival option at border posts for nationalities without Mozambican embassy representation (~USD 50, 30 days). The Japan Embassy qualifies this as applicable for 'travelers from nations lacking Mozambican diplomatic representation.' No official SENAMI or evisa.gov.mz page was found confirming a universal visa-on-arrival service - this is NOT added to visa_on_arrival without official confirmation. Preserve as gap.",
+      "Wikipedia cites Eritrea and Sri Lanka as nationalities requiring prior SENAMI written approval before entry (similar restriction to the known 6 restricted countries). This was not confirmed on any live official Mozambican government domain in this validation pass - the restricted list (Pakistan, Bangladesh, Ethiopia, Nigeria, Nepal, Somalia) is preserved unchanged pending official confirmation."
     ]
   },
   "outbound_official": {
@@ -637,48 +884,73 @@
   "sources_checked": [
     {
       "url": "https://evisa.gov.mz/",
-      "description": "Official Mozambique National Immigration Service eVisa & eTA portal — primary source for visa policy and waiver list; re-scraped 2026-06-13 via Firecrawl stealth proxy (HTTP 200 success)",
+      "description": "Official Mozambique National Immigration Service eVisa & eTA portal - primary source for visa policy and waiver list; re-scraped 2026-06-13 via Firecrawl stealth proxy (HTTP 200 success)",
       "official": true
     },
     {
       "url": "https://evisa.gov.mz/investment-visa.html",
-      "description": "Official Investment Visa details on eVisa portal — re-scraped 2026-06-13",
+      "description": "Official Investment Visa details on eVisa portal - re-scraped 2026-06-13",
       "official": true
     },
     {
       "url": "https://evisa.gov.mz/faqs.html",
-      "description": "Official FAQ page on eVisa portal — explains ETA vs eVisa distinction; re-scraped 2026-06-13",
+      "description": "Official FAQ page on eVisa portal - explains ETA vs eVisa distinction; re-scraped 2026-06-13",
       "official": true
     },
     {
       "url": "https://usa.embamoc.gov.mz/?page_id=99",
-      "description": "Embassy of Mozambique in Washington DC — visa requirements; note: page appears outdated (no eVisa/ETA mention), not used as primary source",
+      "description": "Embassy of Mozambique in Washington DC - visa requirements; note: page appears outdated (no eVisa/ETA mention), not used as primary source",
       "official": true
     },
     {
       "url": "https://embassymozambique.se/en/visa/",
-      "description": "Embassy of Mozambique in Nordic Countries — confirms visa-exempt nationalities",
+      "description": "Embassy of Mozambique in Nordic Countries - confirms visa-exempt nationalities",
       "official": true
     },
     {
       "url": "https://embamoc.jp/visas",
-      "description": "Embassy of Mozambique in Japan — full visa requirements including consular jurisdiction rule for Japan/South Korea/Australia/New Zealand residents",
+      "description": "Embassy of Mozambique in Japan - full visa requirements including consular jurisdiction rule for Japan/South Korea/Australia/New Zealand residents",
       "official": true
     },
     {
       "url": "https://embamoc.jp/news/visa-waiver-program",
-      "description": "Embassy of Mozambique in Japan — Decree 10/2023 visa waiver program announcement",
+      "description": "Embassy of Mozambique in Japan - Decree 10/2023 visa waiver program announcement",
       "official": true
     },
     {
       "url": "https://pae.gov.mz/language/en/council-of-ministers-approve-decree-with-visa-exemption-for-selected-countries-for-tourism-and-business/",
-      "description": "Mozambique PAE (Agency for Business Environment, government domain) — decree approving visa exemption for selected countries; timeout during this validation pass but previously verified",
+      "description": "Mozambique PAE (Agency for Business Environment, government domain) - decree approving visa exemption for selected countries; timeout during this validation pass but previously verified",
       "official": true
     },
     {
       "url": "https://www.sadc.int/member-states/mozambique",
       "description": "SADC official site confirming Mozambique founding membership",
       "official": true
+    },
+    {
+      "url": "https://www.mozambiquehighcommission.org.uk/visa-section.html",
+      "description": "High Commission of Mozambique to the UK - confirms 29 ETA countries (30-day stay), ETA/eVisa distinction post February 2026 relaunch, 650 MZN arrival fee; accessed 2026-06-27",
+      "official": true
+    },
+    {
+      "url": "https://visasnews.com/en/mozambique-eta-now-mandatory-for-travelers-from-29-visa-exempt-countries/",
+      "description": "VisasNews - confirms full list of 29 ETA countries and 650 MZN fee requirement; non-official but corroborates official sources; accessed 2026-06-27",
+      "official": false
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Mozambique",
+      "description": "Wikipedia - Visa policy of Mozambique; non-official; used only to identify gaps (Eritrea/Sri Lanka restriction, Uganda Sep 2025 exemption, VoA at border posts); accessed 2026-06-27; re-accessed 2026-06-29 - confirmed ETA fee ~USD 48 and 29-country ETA list",
+      "official": false
+    },
+    {
+      "url": "https://visasnews.com/en/mozambique-e-visa-and-eta-application-portal-gets-a-makeover/",
+      "description": "VisasNews - Mozambique new evisa.gov.mz portal (Feb 2026) with VFS Global: confirms ETA reinstated, fee now ~USD 48, eVisa fee ~USD 190; accessed 2026-06-29",
+      "official": false
+    },
+    {
+      "url": "https://visasnews.com/en/mozambique-temporarily-suspends-eta-requirement-for-visa-exempt-travelers/",
+      "description": "VisasNews - Mozambique ETA temporarily suspended May 16, 2025 due to technical issues; accessed 2026-06-29",
+      "official": false
     }
   ]
 }

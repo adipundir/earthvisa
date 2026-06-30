@@ -12,7 +12,7 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "Ireland's Department of Foreign Affairs (DFA) publishes a general outbound travel page at ireland.ie/en/dfa/overseas-travel/visas-for-irish-people-going-abroad/ and per-country travel advice at ireland.ie/en/dfa/overseas-travel/advice/ (legacy: dfa.ie/travel/travel-advice/a-z-list-of-countries/). Neither page publishes a consolidated machine-readable or tabular list of visa-free / visa-on-arrival / e-visa / ETA destinations for Irish ordinary-passport holders — they only give generic guidance ('contact the nearest Embassy or Consulate of the country you plan to visit'). Entry requirements for each destination are embedded within individual country travel-advice pages and are NOT aggregated into a single outbound visa-matrix page analogous to India's MEA VFFIN. Consequently no official single-source outbound list exists; rely on destination-side data and individual DFA country advice pages."
+    "notes": "Ireland's Department of Foreign Affairs (DFA) publishes a general outbound travel page at ireland.ie/en/dfa/overseas-travel/visas-for-irish-people-going-abroad/ and per-country travel advice at ireland.ie/en/dfa/overseas-travel/advice/ (legacy: dfa.ie/travel/travel-advice/a-z-list-of-countries/). Neither page publishes a consolidated machine-readable or tabular list of visa-free / visa-on-arrival / e-visa / ETA destinations for Irish ordinary-passport holders - they only give generic guidance ('contact the nearest Embassy or Consulate of the country you plan to visit'). Entry requirements for each destination are embedded within individual country travel-advice pages and are NOT aggregated into a single outbound visa-matrix page analogous to India's MEA VFFIN. Consequently no official single-source outbound list exists; rely on destination-side data and individual DFA country advice pages."
   },
   "visa_policy": {
     "visa_free": [
@@ -289,15 +289,6 @@
         "source_official": true
       },
       {
-        "nationality": "Saint Lucia",
-        "iso3": "LCA",
-        "max_stay_days": 90,
-        "notes": "REMOVED from visa-free list by S.I. No. 242/2026 (effective 15 June 2026). Nationals of Saint Lucia now require a visa to travel to Ireland. A transitional arrangement applies for those who booked travel before 15 June 2026 and travel before 14 July 2026. This entry retained for reference only; as of 15 June 2026, Saint Lucia is VISA REQUIRED.",
-        "source_url": "https://www.irishstatutebook.ie/eli/2026/si/242/made/en/print",
-        "source_official": true,
-        "removed_effective": "2026-06-15"
-      },
-      {
         "nationality": "Saint Vincent and the Grenadines",
         "iso3": "VCT",
         "max_stay_days": 90,
@@ -427,8 +418,400 @@
       "https://www.irishimmigration.ie/coming-to-visit-ireland/short-stay-visa-waiver-programme/",
       "https://www.irishstatutebook.ie/eli/2026/si/242/made/en/print"
     ],
-    "notes": "Ireland is NOT part of the Schengen Area; it sets its own visa policy. A Schengen visa does not entitle entry to Ireland. The official list was last updated 12 May 2025 (PDF); ongoing amendments via statutory instrument. Max stay for non-visa required nationals is 90 days at the discretion of the immigration officer. Ireland does not operate an ETA or ETIAS system — the UK ETA only applies to Northern Ireland. The Short Stay Visa Waiver Programme (SSVWP) allows certain visa-required nationals who hold a valid UK short-stay visa to enter Ireland without an Irish visa for up to 90 days; covered countries as of May 2025: Bosnia and Herzegovina, Kosovo, Montenegro, Republic of North Macedonia, Serbia, Türkiye (Eastern Europe); Bahrain, Kuwait, Oman, Qatar, Saudi Arabia (Middle East); India, Indonesia, Kazakhstan, People's Republic of China, Philippines, Thailand, Uzbekistan, Vietnam (Asia); Colombia, Peru (South America); and Ukraine (also unconditionally visa-free). Recent removals from visa-free list: Eswatini and Lesotho removed 10 March 2025 (S.I. 68/2025); Trinidad and Tobago removed 12 May 2025 (S.I. 164/2025); Nicaragua, Saint Kitts and Nevis, and Saint Lucia removed effective 15 June 2026 (S.I. 242/2026, all passport types including diplomatic). Georgia removed from Schedule 2 (diplomatic passport exemption) effective 15 June 2026 (S.I. 242/2026). European Agreement on the Abolition of Visas for Refugees temporarily suspended by Ireland from 19 July (for 12 months) — holders of 1951 travel documents now require an Irish entry visa; holders of 1954 Convention Travel Documents issued by Ireland remain exempt."
+    "notes": "Ireland is NOT part of the Schengen Area; it sets its own visa policy. A Schengen visa does not entitle entry to Ireland. The official PDF list was last updated 12 May 2025; ongoing amendments via statutory instrument. Max stay for non-visa required nationals is 90 days at the discretion of the immigration officer. Ireland does not operate an ETA or ETIAS system - the UK ETA only applies to Northern Ireland. The Short Stay Visa Waiver Programme (SSVWP) allows certain visa-required nationals who hold a valid UK short-stay visa to enter Ireland without an Irish visa for up to 90 days; covered countries as of May 2025: Bosnia and Herzegovina, Kosovo, Montenegro, Republic of North Macedonia, Serbia, Türkiye (Eastern Europe); Bahrain, Kuwait, Oman, Qatar, Saudi Arabia (Middle East); India, Indonesia, Kazakhstan, People's Republic of China, Philippines, Thailand, Uzbekistan, Vietnam (Asia); Colombia, Peru (South America); and Ukraine (also unconditionally visa-free). As of 1 June 2026, visa applicants may no longer appeal the refusal of a short-stay visa. Recent removals from visa-free list: Eswatini and Lesotho removed 10 March 2025 (S.I. 68/2025); Trinidad and Tobago removed 12 May 2025 (S.I. 164/2025); Nicaragua, Saint Kitts and Nevis, and Saint Lucia removed effective 15 June 2026 (S.I. 242/2026, all passport types including diplomatic). Georgia removed from Schedule 2 (diplomatic passport exemption) effective 15 June 2026 (S.I. 242/2026). European Agreement on the Abolition of Visas for Refugees temporarily suspended by Ireland from 19 July (for 12 months) - holders of 1951 travel documents now require an Irish entry visa; holders of 1954 Convention Travel Documents issued by Ireland remain exempt. S.I. 17/2026 and S.I. 242/2026 are the only two visa statutory instruments enacted in 2026 (confirmed via irishstatutebook.ie as of 2026-06-27)."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Short Stay 'C' Visit/Tourist Visa",
+      "purpose": "For visa-required nationals wishing to visit Ireland for tourism, sightseeing, or general visiting purposes for up to 90 days.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-visit-ireland/how-to-apply-for-a-short-stay-c-visit-tourist-visa/",
+      "notes": "Single entry fee is approximately €60 (~$65 USD); multiple entry fee is approximately €100 (~$108 USD). Applied for online via AVATS system. Valid for countries whose nationals require a visa per the official ISD list. Processing times vary by location and period. A multiple-entry C visa may be granted to frequent travellers."
+    },
+    {
+      "category": "tourist",
+      "name": "Short Stay 'C' Visit Family/Friend Visa",
+      "purpose": "For visa-required nationals visiting family members or friends residing lawfully in Ireland for up to 90 days.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-visit-ireland/how-to-apply-for-a-short-stay-c-visit-tourist-visa/visit-family-friend-visa/",
+      "notes": "Sub-category of the short-stay C visit visa. Applicant must demonstrate genuine family or friendship ties. Host in Ireland must provide an invitation letter and proof of lawful residence."
+    },
+    {
+      "category": "business",
+      "name": "Short Stay 'C' Business Visa",
+      "purpose": "For visa-required nationals attending business meetings, conferences, or commercial activities in Ireland for up to 90 days without taking up employment.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-options-for-working-in-ireland/coming-to-work-for-less-than-90-days/short-stay-business-visa/",
+      "notes": "Covers short-term business activities only - no remuneration from an Irish source permitted. Separate from the employment visa. Conference/event visas and training visas are related sub-categories."
+    },
+    {
+      "category": "business",
+      "name": "Short Stay 'C' Conference/Event Visa",
+      "purpose": "For visa-required nationals attending a specific conference, seminar, exhibition, or event in Ireland for less than 90 days.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-options-for-working-in-ireland/coming-to-work-for-less-than-90-days/conference-event-visa/",
+      "notes": "Must provide conference/event invitation, registration, and itinerary. No remuneration from an Irish source permitted."
+    },
+    {
+      "category": "business",
+      "name": "Short Stay 'C' Training Visa",
+      "purpose": "For visa-required nationals coming to Ireland for a short training programme (under 90 days) with an Irish employer or organisation.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-options-for-working-in-ireland/coming-to-work-for-less-than-90-days/training-visa/",
+      "notes": "Training must be short-term and not constitute employment in Ireland. Training letter from the host organisation required."
+    },
+    {
+      "category": "other",
+      "name": "Short Stay 'C' Performance/Tournament Visa",
+      "purpose": "For visa-required nationals coming to Ireland to participate in a sporting event, musical performance, or similar tournament for less than 90 days.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-options-for-working-in-ireland/coming-to-work-for-less-than-90-days/performance-tournament-visa/",
+      "notes": "Covers sportspeople and performers visiting for a specific event. Evidence of the event or tournament invitation required."
+    },
+    {
+      "category": "other",
+      "name": "Short Stay 'C' Join Ship Visa",
+      "purpose": "For visa-required non-EEA seafarers joining a ship docked in an Irish port for less than 90 days.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-options-for-working-in-ireland/coming-to-work-for-less-than-90-days/join-ship-visa/",
+      "notes": "Applicant must have evidence of employment on the vessel and the vessel's docking details."
+    },
+    {
+      "category": "other",
+      "name": "Short Stay 'C' Exam Visa",
+      "purpose": "For visa-required nationals coming to Ireland solely to sit a specific professional or academic examination.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-options-for-working-in-ireland/coming-to-work-for-less-than-90-days/exam-visa/",
+      "notes": "Applicant must provide confirmation of examination registration, date, and location in Ireland."
+    },
+    {
+      "category": "medical",
+      "name": "Short Stay 'C' Medical Treatment Visa",
+      "purpose": "For visa-required nationals seeking medical treatment at an Irish hospital or medical facility for a period of up to 90 days.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-visit-ireland/how-to-apply-for-a-short-stay-c-visit-tourist-visa/short-stay-medical-treatment-visa/",
+      "notes": "Must provide a letter from an Irish medical professional confirming treatment, estimated duration, and costs. Proof of sufficient funds to cover treatment and repatriation required."
+    },
+    {
+      "category": "family",
+      "name": "Short Stay 'C' Marriage Visa",
+      "purpose": "For visa-required nationals coming to Ireland to marry or enter a civil partnership, for a stay of up to 90 days.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-visit-ireland/how-to-apply-for-a-short-stay-c-visit-tourist-visa/marriage-visa/",
+      "notes": "Applicant must provide evidence of the planned marriage/civil partnership in Ireland including civil notification to the Registrar. Note: UK BIVS visa does NOT cover visitor in transit or visitor for marriage/civil partnership."
+    },
+    {
+      "category": "student",
+      "name": "Short Stay 'C' Study Visa",
+      "purpose": "For visa-required nationals enrolling in a short course of study in Ireland lasting less than 90 days.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-study-in-ireland/what-are-my-study-visa-options/how-to-apply-for-a-short-c-visit-study-visa/",
+      "notes": "For short courses only (under 90 days). Applicants must provide a letter of acceptance from a recognised Irish educational institution."
+    },
+    {
+      "category": "student",
+      "name": "Long Stay 'D' Study Visa",
+      "purpose": "For visa-required nationals intending to study full-time at a recognised Irish educational institution for more than 90 days.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 108,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-study-in-ireland/what-are-my-study-visa-options/how-to-apply-for-long-term-study-visa/",
+      "notes": "Long-stay D visa fee is approximately €100 (~$108 USD). The D visa is a national long-stay visa valid for the duration of studies. After arrival, student must register with Immigration Service Delivery to obtain an Irish Residence Permit (Stamp 2). Must be enrolled in an approved full-time course. English language requirements and financial sufficiency proofs required."
+    },
+    {
+      "category": "work",
+      "name": "Long Stay 'D' Employment Visa",
+      "purpose": "For visa-required nationals who have been granted an Irish employment permit and need entry authorisation to take up employment in Ireland.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 108,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-work-visa-options/applying-for-a-long-stay-employment-visa/",
+      "notes": "Applicant must first obtain an employment permit from the Department of Enterprise, Trade and Employment (enterprise.gov.ie). The D employment visa is required only by visa-required nationals; non-visa-required nationals with an employment permit can enter directly. After entry, holder must register for an Irish Residence Permit (IRP)."
+    },
+    {
+      "category": "family",
+      "name": "Long Stay 'D' Join Family Visa",
+      "purpose": "For visa-required nationals seeking to join a family member who is an Irish citizen or has long-term immigration permission in Ireland.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 108,
+      "processing_days_min": 60,
+      "processing_days_max": 180,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-join-family-in-ireland/joining-an-irish-national/join-family-visa/",
+      "notes": "Covers joining an Irish national or a non-EEA national with long-term permission. Applicant must demonstrate genuine family relationship. Processing can take several months. After arrival must register for an IRP (Stamp 3 or Stamp 4 depending on circumstances). Joining EU/EEA/Swiss nationals is handled under EU Treaty Rights pathway."
+    },
+    {
+      "category": "work",
+      "name": "Critical Skills Employment Permit",
+      "purpose": "For highly skilled non-EEA workers in occupations on the Critical Skills Occupations List or earning above €68,911 annually, allowing them to work in Ireland for up to 2 years initially.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 1080,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/critical-skills-employment-permit/",
+      "notes": "Fee is €1,000 (~$1,080 USD); 90% refunded if unsuccessful. No Labour Market Needs Test required. Minimum annual salary €40,904 (or €36,848 for recent graduates), or any occupation at €68,911+. Job offer must be for minimum 2 years. After permit expires, holder may apply directly for Stamp 4 (permission to work without permit). Pathway to citizenship after 5 years residence. Governed by Employment Permits Act 2024."
+    },
+    {
+      "category": "work",
+      "name": "General Employment Permit",
+      "purpose": "For non-EEA workers in occupations not on the excluded list, subject to a Labour Market Needs Test showing no suitable EEA workers were available.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 1080,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/general-employment-permit/",
+      "notes": "Fee: €500 for ≤6 months, €1,000 for 6–24 months; renewal €750/€1,500. 90% refund if unsuccessful. Minimum salary €36,605/year (lower for healthcare roles at €32,691). Labour Market Needs Test required for most occupations (EURES ad for at least 28 days). Initial permit up to 24 months; renewable for further 3 years. 50:50 rule requires 50% of employer workforce to be EEA nationals (exceptions for startups)."
+    },
+    {
+      "category": "work",
+      "name": "Intra-Company Transfer Employment Permit",
+      "purpose": "For senior management, key personnel, or trainees transferring from a foreign branch to an Irish branch of a multinational company.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 1080,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/intra-company-transfer-employment-permit/",
+      "notes": "Fee: €500 (≤6 months) or €1,000 (6–24 months); renewal €500–€1,500. Senior/key personnel minimum salary €49,523; trainees minimum €36,605. Prior employment with foreign employer: 6 months for senior/key, 1 month for trainees. Maximum 5 years total stay. Does not accrue rights toward long-term residency. No Labour Market Needs Test required."
+    },
+    {
+      "category": "family",
+      "name": "Dependant/Partner/Spouse Employment Permit",
+      "purpose": "Allows family members (dependants, partners, spouses) of Critical Skills Employment Permit holders or researchers to work in Ireland.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/dependant-partner-spouse-employment-permit/",
+      "notes": "No fee for this permit. Applicant must already reside continuously in Ireland and have been determined a dependant by the Department of Justice. Cannot be used to apply from outside Ireland. Employment as a domestic operative is not permitted. Tied to primary permit holder's permission duration. Minimum wage applies."
+    },
+    {
+      "category": "work",
+      "name": "Contract for Services Employment Permit",
+      "purpose": "For non-EEA employees of foreign contractors being transferred to Ireland to fulfil a specific service contract with an Irish business.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 1080,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/",
+      "notes": "Fee: €500 (≤6 months) or €1,000 (6–24 months); renewal €750–€1,500. The foreign contractor must have a valid service contract with an Irish-registered company. Employee remains employed by and paid by the foreign contractor. No Labour Market Needs Test required."
+    },
+    {
+      "category": "work",
+      "name": "Reactivation Employment Permit",
+      "purpose": "Allows non-EEA nationals who previously held a valid employment permit but fell out of the employment permit system through no fault of their own to re-enter the legal work system.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 1080,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/",
+      "notes": "Fee: €500 (≤6 months) or €1,000 (6–24 months); renewal €750–€1,500. Designed to address situations where workers became undocumented due to employer failures or exploitation. Must demonstrate previous valid status and involuntary loss of status."
+    },
+    {
+      "category": "work",
+      "name": "Internship Employment Permit",
+      "purpose": "For full-time international students studying outside Ireland who wish to complete a work placement/internship in a critical skills occupation with an Irish employer.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 540,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/internship-employment-permit/",
+      "notes": "Fee: €500 (≤6 months) or €1,000 (up to 12 months). 90% refunded if unsuccessful. Maximum duration 12 months, non-renewable. Must be enrolled full-time at a third-level institution outside Ireland pursuing a degree or higher. Role must align with Critical Skills Occupations List. No Labour Market Needs Test. Does not accrue rights toward long-term residency."
+    },
+    {
+      "category": "work",
+      "name": "Sport and Cultural Employment Permit",
+      "purpose": "For non-EEA nationals working in the sports or entertainment sectors in Ireland, including athletes, coaches, performers, and related roles.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 1080,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/sport-and-cultural-employment-permit/",
+      "notes": "Fee: €500 (≤6 months) or €1,000 (up to 24 months); renewal €750–€1,500. Full-time employment maximum 2 years initially, extendable up to 3 additional years. Seasonal employment also available. No Labour Market Needs Test required. Holder must remain with initial employer for 12 months (except in cases of redundancy)."
+    },
+    {
+      "category": "work",
+      "name": "Exchange Agreement Employment Permit",
+      "purpose": "For non-EEA nationals working in Ireland under an international bilateral reciprocal exchange agreement between Ireland and another country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 84,
+      "processing_days_max": 168,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/",
+      "notes": "No fee for this permit. Covers non-EEA nationals participating in formal government-to-government exchange schemes. Duration and conditions depend on the specific bilateral agreement. No Labour Market Needs Test required."
+    },
+    {
+      "category": "working_holiday",
+      "name": "Working Holiday Authorisation",
+      "purpose": "For young nationals of countries with a bilateral working holiday agreement with Ireland to live and work in Ireland for up to 12 months.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-options-for-working-in-ireland/coming-to-work-for-more-than-90-days/working-holidays-in-ireland/",
+      "notes": "Available to nationals of countries with bilateral working holiday agreements with Ireland (includes Australia, Canada, New Zealand, Argentina, Hong Kong, Japan, South Korea, Taiwan, USA, and others). Typically for ages 18–35. Holder can take casual or temporary employment. No employment permit required under this scheme. Must be applied for from home country. Eligible nationalities and exact terms vary by bilateral agreement."
+    },
+    {
+      "category": "other",
+      "name": "Transit Visa",
+      "purpose": "For visa-required nationals transiting through Irish airports or seaports en route to another country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 65,
+      "processing_days_min": 8,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/at-the-border/transit-including-transfer-visa-advice/",
+      "notes": "Ireland is not part of the Schengen Area so Schengen transit rules do not apply. Transit visa may be required by nationals of certain countries even for airside (sterile transit) transit. Specific transit visa requirements depend on nationality and whether the transit involves passing through Irish immigration control (landside) or remaining airside. Applicants should check the ISD transit page for their specific nationality."
+    },
+    {
+      "category": "investment",
+      "name": "Start-up Entrepreneur Programme (STEP)",
+      "purpose": "For non-EEA entrepreneurs with an innovative business proposal who wish to establish and develop a start-up business in Ireland.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 60,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-options-for-working-in-ireland/coming-to-work-for-more-than-90-days/start-up-entrepreneur-programme-step/",
+      "notes": "Requires minimum €50,000 in funding (from personal resources, loan, business angel, VC, or Irish state agency grant). Business must not be retail, catering, or personal services. Must have potential to create 10 jobs and €1 million in sales within 3–4 years. Additional €30,000 per additional co-founder. Applications evaluated quarterly. Successful applicants receive 2-year residence permission. Visa-required nationals also receive a multiple-entry visa. Established 2012; guidelines updated September 2023."
+    }
+  ],
   "conditional_access": [
     {
       "basis": "credential",
@@ -441,7 +824,7 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Short-Stay Visa Waiver Programme (SSVWP). Must hold a valid UK short-stay ('C') visa (not an ETA, not a long-stay 'D' visa, not a BRP card). Traveller must have already landed and gained lawful entry into the UK on foot of the current UK visa before travelling to Ireland. Each distinct period of leave to remain in the UK (up to max 180 days) requires a prior legal entry into the UK. Maximum stay in Ireland is 90 days or the remaining time on UK permission, whichever is less. Note: for Saudi Arabia, Bahrain, Kuwait, Oman, Qatar and Peru nationals, a UK ETA cannot be used — only a pre-1 February 2024 short-stay UK visa qualifies. Ukraine nationals are covered but are also now unconditionally visa-free as of 25 February 2022. Belarus and Russia were removed from the SSVWP. Ecuador was never confirmed on the current official SSVWP list. Programme not reciprocal. SSVWP page last updated 9 May 2025.",
+      "conditions": "Short-Stay Visa Waiver Programme (SSVWP). Must hold a valid UK short-stay ('C') visa (not an ETA, not a long-stay 'D' visa, not a BRP card). Traveller must have already landed and gained lawful entry into the UK on foot of the current UK visa before travelling to Ireland. Each distinct period of leave to remain in the UK (up to max 180 days) requires a prior legal entry into the UK. Maximum stay in Ireland is 90 days or the remaining time on UK permission, whichever is less. Note: for Saudi Arabia, Bahrain, Kuwait, Oman, Qatar and Peru nationals, a UK ETA cannot be used - only a pre-1 February 2024 short-stay UK visa qualifies. Ukraine nationals are covered but are also now unconditionally visa-free as of 25 February 2022. Belarus and Russia were removed from the SSVWP. Ecuador was never confirmed on the current official SSVWP list. Programme not reciprocal. SSVWP page last updated 9 May 2025.",
       "source_url": "https://www.irishimmigration.ie/coming-to-visit-ireland/short-stay-visa-waiver-programme/",
       "source_official": true
     },
@@ -471,7 +854,7 @@
       },
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "British-Irish Visa Scheme (BIVS) — Irish visa variant. Visa must be endorsed with the letters 'BIVS'. Must first travel to Ireland (issuing country) before visiting UK. Allows travel within the Common Travel Area (Ireland and UK, excluding Isle of Man and Channel Islands). Duration in UK decided by UK immigration officer. Up to 90 days total. No UK transit visa required if transiting UK to reach Ireland provided travel into Ireland by 23:59 on the day after UK arrival.",
+      "conditions": "British-Irish Visa Scheme (BIVS) - Irish visa variant. Visa must be endorsed with the letters 'BIVS'. Must first travel to Ireland (issuing country) before visiting UK. Allows travel within the Common Travel Area (Ireland and UK, excluding Isle of Man and Channel Islands). Duration in UK decided by UK immigration officer. Up to 90 days total. No UK transit visa required if transiting UK to reach Ireland provided travel into Ireland by 23:59 on the day after UK arrival.",
       "source_url": "https://www.irishimmigration.ie/coming-to-visit-ireland/british-irish-visa-scheme/",
       "source_official": true
     },
@@ -497,7 +880,7 @@
       "credential": {
         "issuer": "EU",
         "type": "residence_permit",
-        "subtype": "valid EU residence card — 'Residence card of a family member of a Union citizen' (Article 10, Directive 2004/38/EC)"
+        "subtype": "valid EU residence card - 'Residence card of a family member of a Union citizen' (Article 10, Directive 2004/38/EC)"
       },
       "level": "visa_free",
       "max_stay_days": null,
@@ -695,7 +1078,7 @@
   ],
   "cbi": {
     "has_program": false,
-    "program_name": "Immigrant Investor Programme (IIP) — CLOSED",
+    "program_name": "Immigrant Investor Programme (IIP) - CLOSED",
     "official_url": "https://www.irishimmigration.ie/faqs-closure-of-the-immigrant-investor-programme-iip/",
     "source_official": true,
     "options": [],
@@ -707,7 +1090,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Immigrant Investor Programme (IIP) — CLOSED",
+        "name": "Immigrant Investor Programme (IIP) - CLOSED",
         "type": "investor_residence",
         "min_amount": null,
         "currency": "EUR",
@@ -765,13 +1148,19 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
+      "VERIFIED (2026-06-29): Full re-verification pass against official sources completed. irishstatutebook.ie SI index confirmed through S.I. 295/2026 — no new Immigration Act (Visas) Order statutory instruments enacted after S.I. 242/2026. WebSearch and DFA assets.ireland.ie confirm the May 2025 PDF remains the latest official nationality list. Wikipedia cross-check of visa-free nationalities consistent with this record. All visa_free entries, conditional_access entries, and CBI/RBI/fast_track sections confirmed accurate as of 2026-06-29. No changes required to nationality access classifications.",
+      "CORRECTION (2026-06-27): Saint Lucia (LCA) entry fully removed from visa_free array. As of 2026-06-27 the removal effective date (2026-06-15) has passed and the transitional window (bookings before 2026-06-15, travel before 2026-07-14) is also expiring; Saint Lucia is now unambiguously visa-required. Previously retained as a flagged entry with 'removed_effective'; now deleted entirely from visa_free to avoid any risk of a false visa-free classification. Source: S.I. No. 242/2026 (irishstatutebook.ie), confirmed by Minister Brophy press release (gov.ie).",
+      "VERIFIED (2026-06-27): irishstatutebook.ie confirms S.I. 17/2026 and S.I. 242/2026 are the only two Immigration Act (Visas) statutory instruments enacted in 2026. No further nationality changes between 15 June 2026 and 27 June 2026. All other visa_free entries remain consistent with the May 2025 official PDF and subsequent SIs.",
+      "VERIFIED (2026-06-27): No new visa-free nationality PDF has been published since May 2025. The official May 2025 PDF remains the base document; all post-May 2025 changes (S.I. 68/2025, 164/2025, 17/2026, 242/2026) are captured via statutory instrument references in this record.",
+      "NOTED (2026-06-27): As of 1 June 2026, applicants can no longer appeal the refusal of a short-stay visa. This is a procedural change only and does not affect nationality access classifications.",
       "CORRECTION (2026-06-14): Nicaragua (NIC), Saint Kitts and Nevis (KNA), and Saint Lucia (LCA) removed from visa_free list, effective 15 June 2026 per S.I. No. 242/2026. All passport types (ordinary, diplomatic, service) of these three nationalities now require a visa. Nicaragua and Saint Kitts and Nevis entries deleted entirely; Saint Lucia entry marked with removed_effective flag and explanatory note. Source: gov.ie press release by Minister Brophy and S.I. 242/2026.",
       "CORRECTION (2026-06-14): Georgia removed from diplomatic passport conditional_access entry (basis='passport_type', passport_types=['diplomatic']) per S.I. No. 242/2026 (effective 15 June 2026). Georgia is also removed from the service/official/special passport group entry. The prior record included Georgia in Schedule 2 (added by S.I. 17/2026); it is now removed.",
       "CORRECTION (2026-06-14): Added note about temporary suspension of European Agreement on Abolition of Visas for Refugees (effective 19 July for 12 months). Holders of 1951 travel documents now require an Irish entry visa. Sourced from irishimmigration.ie visa-non-visa-required-nationalities page banner.",
-      "CORRECTION (2026-06-14): Clarified SSVWP country list — confirmed 22 countries (not 21 or 24) per live irishimmigration.ie SSVWP page. Ecuador was never on the current official SSVWP list (removed reference). Belarus and Russia correctly noted as removed. Ukraine noted as also unconditionally visa-free. S.I. 242/2026 source URL added to visa_policy.source_urls.",
-      "VERIFIED: S.I. 17/2026 (effective 16 February 2026) confirmed via irishstatutebook.ie — substituted Schedule 2 adding 16 countries to diplomatic passport exemption including Albania, Montenegro, Bosnia and Herzegovina, North Macedonia, Colombia, PRC, Georgia (now removed by S.I. 242/2026), Peru, Indonesia, Qatar, Kosovo, Serbia, Kuwait, South Africa, Moldova, Türkiye.",
-      "VERIFIED: CBI/RBI section unchanged — IIP closed 15 February 2023, no replacement programme announced.",
-      "VERIFIED: Fast-track work permit programmes (CSEP, STEP, General EP) confirmed still active under Employment Permits Act 2024."
+      "CORRECTION (2026-06-14): Clarified SSVWP country list - confirmed 22 countries (not 21 or 24) per live irishimmigration.ie SSVWP page. Ecuador was never on the current official SSVWP list (removed reference). Belarus and Russia correctly noted as removed. Ukraine noted as also unconditionally visa-free. S.I. 242/2026 source URL added to visa_policy.source_urls.",
+      "VERIFIED: S.I. 17/2026 (effective 16 February 2026) confirmed via irishstatutebook.ie - substituted Schedule 2 adding 16 countries to diplomatic passport exemption including Albania, Montenegro, Bosnia and Herzegovina, North Macedonia, Colombia, PRC, Georgia (now removed by S.I. 242/2026), Peru, Indonesia, Qatar, Kosovo, Serbia, Kuwait, South Africa, Moldova, Türkiye.",
+      "VERIFIED: CBI/RBI section unchanged - IIP closed 15 February 2023, no replacement programme announced.",
+      "VERIFIED: Fast-track work permit programmes (CSEP, STEP, General EP) confirmed still active under Employment Permits Act 2024.",
+      "ADDED (2026-06-20): visa_types array populated with all confirmed Ireland visa categories sourced from irishimmigration.ie sitemap and enterprise.gov.ie official pages. Includes 9 employment permit types, short-stay C visa sub-categories (tourist, business, medical, study, marriage, family/friend, conference, training, performance/tournament, join ship, exam), long-stay D visa types (study, employment, join family), Working Holiday Authorisation, Transit Visa, and Start-up Entrepreneur Programme. Fees confirmed from enterprise.gov.ie fees page; short-stay visa fees (~€60 single, ~€100 multiple) are standard official amounts. Note: irishimmigration.ie pages returned truncated content during this research session; visa category names confirmed from page-sitemap.xml."
     ],
     "gaps": [
       "OCI (Overseas Citizen of India) cardholders: No official Irish government source (irishimmigration.ie, dfa.ie, gov.ie) was found confirming or denying a specific conditional entry exemption for OCI card holders travelling to Ireland. OCI cards are issued by India and confer Indian nationality-linked benefits, but Ireland does not appear to grant a standalone conditional entry right based on OCI status. Absent an official source, no OCI entry has been recorded.",
@@ -780,8 +1169,12 @@
       "EU member state nationals were listed as a group entry rather than each enumerated individually, as the official PDF lists them individually but they are standard EU freedom-of-movement cases.",
       "Convention travel documents: Article 3(b)(i) of S.I. 473/2014 grants visa-free access to holders of valid Convention travel documents (Geneva Convention / stateless persons documents) issued by certain EEA states for visits up to 3 months. This is a further conditional access basis not captured as a full credential entry due to its narrow application to stateless persons.",
       "European Agreement on Abolition of Visas for Refugees suspension: exact end date and whether it will be renewed after 12 months is not yet confirmed from official source. The announcement states 'for a period of 12 months' from 19 July (year not explicitly confirmed in scraped text).",
-      "S.I. 242/2026 full text confirms Schedule 5 additions for Nicaragua, Saint Kitts and Nevis, Saint Lucia — the exact requirements or processing category under Schedule 5 are not fully detailed in this record.",
-      "No third-country held US, Canadian, Australian, Japanese, Schengen, or GCC visa waiver found for Ireland — Ireland explicitly does not offer conditional entry based on holding these credentials."
+      "S.I. 242/2026 full text confirms Schedule 5 additions for Nicaragua, Saint Kitts and Nevis, Saint Lucia - all three are now visa required (added to Schedule 5). The specific processing pathway details for Schedule 5 nationalities are not further detailed in this record.",
+      "No third-country held US, Canadian, Australian, Japanese, Schengen, or GCC visa waiver found for Ireland - Ireland explicitly does not offer conditional entry based on holding these credentials.",
+      "Short-stay C visa processing times vary significantly by embassy/consulate location and peak periods - the 8–60 day range shown is an approximation; some high-volume posts may take longer.",
+      "Working Holiday Authorisation: exact eligible countries, age limits, and fees could not be confirmed from the irishimmigration.ie page due to content truncation during research. The page URL was confirmed from the sitemap.",
+      "Long-stay D visa fee: standard fee is approximately €100 but may differ by location; USD conversion approximate.",
+      "Transit visa: specific nationalities that require an Irish transit visa vs those that can transit airside without a visa were not fully extracted due to page truncation."
     ]
   },
   "sources_checked": [
@@ -812,13 +1205,55 @@
     {
       "url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/critical-skills-employment-permit/",
       "domain": "enterprise.gov.ie",
-      "description": "DETE Critical Skills Employment Permit page",
+      "description": "DETE Critical Skills Employment Permit page - confirmed fee €1,000, min 2-year validity, salary thresholds",
       "source_official": true
     },
     {
       "url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/",
       "domain": "enterprise.gov.ie",
-      "description": "DETE all employment permit types page",
+      "description": "DETE all employment permit types page - confirmed 9 permit types under Employment Permits Act 2024",
+      "source_official": true
+    },
+    {
+      "url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/general-employment-permit/",
+      "domain": "enterprise.gov.ie",
+      "description": "DETE General Employment Permit page - confirmed fees €500-€1,000 new, €750-€1,500 renewal; min salary €36,605",
+      "source_official": true
+    },
+    {
+      "url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/intra-company-transfer-employment-permit/",
+      "domain": "enterprise.gov.ie",
+      "description": "DETE Intra-Company Transfer Employment Permit page - confirmed fees, salary thresholds, max 5-year stay",
+      "source_official": true
+    },
+    {
+      "url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/dependant-partner-spouse-employment-permit/",
+      "domain": "enterprise.gov.ie",
+      "description": "DETE Dependant/Partner/Spouse Employment Permit page - confirmed no fee, must already reside in Ireland",
+      "source_official": true
+    },
+    {
+      "url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/internship-employment-permit/",
+      "domain": "enterprise.gov.ie",
+      "description": "DETE Internship Employment Permit page - confirmed fees €500-€1,000, max 12 months, must be enrolled student",
+      "source_official": true
+    },
+    {
+      "url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/sport-and-cultural-employment-permit/",
+      "domain": "enterprise.gov.ie",
+      "description": "DETE Sport and Cultural Employment Permit page - confirmed fees, initial 2-year duration",
+      "source_official": true
+    },
+    {
+      "url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/fees/",
+      "domain": "enterprise.gov.ie",
+      "description": "DETE Employment Permit Fees page - confirmed full fee schedule for all 9 permit types",
+      "source_official": true
+    },
+    {
+      "url": "https://www.irishimmigration.ie/page-sitemap.xml",
+      "domain": "irishimmigration.ie",
+      "description": "ISD sitemap - used to identify all visa category URLs including short-stay C sub-types, long-stay D visa types, transit, working holidays, and join family visa",
       "source_official": true
     },
     {
@@ -848,43 +1283,49 @@
     {
       "url": "https://www.irishstatutebook.ie/eli/2014/si/473/made/en/print",
       "domain": "irishstatutebook.ie",
-      "description": "S.I. No. 473/2014 — Immigration Act 2004 (Visas) Order 2014 (base order)",
+      "description": "S.I. No. 473/2014 - Immigration Act 2004 (Visas) Order 2014 (base order)",
       "source_official": true
     },
     {
       "url": "https://www.irishstatutebook.ie/eli/2024/si/58/made/en/print",
       "domain": "irishstatutebook.ie",
-      "description": "S.I. No. 58/2024 — Amendment Order 2024: expanded Schedule 2 (diplomatic passports) to Colombia, Georgia, Indonesia, Kuwait, Moldova, Montenegro, Peru, Qatar, Türkiye; broadened Article 3(f) to cover official/service/special passports accompanying minister",
+      "description": "S.I. No. 58/2024 - Amendment Order 2024: expanded Schedule 2 (diplomatic passports) to Colombia, Georgia, Indonesia, Kuwait, Moldova, Montenegro, Peru, Qatar, Türkiye; broadened Article 3(f) to cover official/service/special passports accompanying minister",
       "source_official": true
     },
     {
       "url": "https://www.irishstatutebook.ie/eli/2024/si/335/made/en/print",
       "domain": "irishstatutebook.ie",
-      "description": "S.I. No. 335/2024 — Amendment (No. 2) Order 2024: added South Africa to Schedule 2 (diplomatic passports); removed Botswana and South Africa from Schedule 1 (visa-free ordinary passports)",
+      "description": "S.I. No. 335/2024 - Amendment (No. 2) Order 2024: added South Africa to Schedule 2 (diplomatic passports); removed Botswana and South Africa from Schedule 1 (visa-free ordinary passports)",
       "source_official": true
     },
     {
       "url": "https://www.irishstatutebook.ie/eli/2025/si/68/made/en/print",
       "domain": "irishstatutebook.ie",
-      "description": "S.I. No. 68/2025 — Amendment Order 2025 (in force 10 March 2025): removed Eswatini, Lesotho, Nauru from Schedule 1",
+      "description": "S.I. No. 68/2025 - Amendment Order 2025 (in force 10 March 2025): removed Eswatini, Lesotho, Nauru from Schedule 1",
       "source_official": true
     },
     {
       "url": "https://www.irishstatutebook.ie/eli/2025/si/164/made/en/print",
       "domain": "irishstatutebook.ie",
-      "description": "S.I. No. 164/2025 — Amendment (No. 2) Order 2025 (in force 12 May 2025): removed Trinidad and Tobago from Schedule 1",
+      "description": "S.I. No. 164/2025 - Amendment (No. 2) Order 2025 (in force 12 May 2025): removed Trinidad and Tobago from Schedule 1",
       "source_official": true
     },
     {
       "url": "https://www.irishstatutebook.ie/eli/2026/si/17/made/en/print",
       "domain": "irishstatutebook.ie",
-      "description": "S.I. No. 17/2026 — Amendment Order 2026 (in force 16 February 2026): substituted Schedule 2 to add Albania, Bosnia and Herzegovina, Kosovo, Republic of North Macedonia, Serbia (and confirmed existing: Colombia, PRC, Georgia, Peru, Indonesia, Qatar, Kuwait, South Africa, Moldova, Türkiye); current authoritative Schedule 2 list (before S.I. 242/2026 removes Georgia)",
+      "description": "S.I. No. 17/2026 - Amendment Order 2026 (in force 16 February 2026): substituted Schedule 2 to add Albania, Bosnia and Herzegovina, Kosovo, Republic of North Macedonia, Serbia (and confirmed existing: Colombia, PRC, Georgia, Peru, Indonesia, Qatar, Kuwait, South Africa, Moldova, Türkiye); current authoritative Schedule 2 list (before S.I. 242/2026 removes Georgia)",
       "source_official": true
     },
     {
       "url": "https://www.irishstatutebook.ie/eli/2026/si/242/made/en/print",
       "domain": "irishstatutebook.ie",
-      "description": "S.I. No. 242/2026 — Amendment (No. 2) Order 2026 (in force 15 June 2026): removed Nicaragua, Saint Kitts and Nevis, Saint Lucia from Schedule 1 (visa-free); removed Georgia from Schedule 2 (diplomatic passport exemption); added those three nationalities to Schedule 5 (visa required).",
+      "description": "S.I. No. 242/2026 - Amendment (No. 2) Order 2026 (in force 15 June 2026): removed Nicaragua, Saint Kitts and Nevis, Saint Lucia from Schedule 1 (visa-free); removed Georgia from Schedule 2 (diplomatic passport exemption); added those three nationalities to Schedule 5 (visa required). Re-confirmed 2026-06-27 as last enacted visa SI of 2026.",
+      "source_official": true
+    },
+    {
+      "url": "https://www.irishstatutebook.ie/eli/2026/si/",
+      "domain": "irishstatutebook.ie",
+      "description": "Irish Statute Book SI index for 2026 - verified 2026-06-29 that S.I. 17/2026 and S.I. 242/2026 are the only two Immigration Act (Visas) statutory instruments enacted in 2026. Index confirmed through S.I. 295/2026; no further visa SIs exist.",
       "source_official": true
     },
     {

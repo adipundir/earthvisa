@@ -3,6 +3,158 @@
   "iso3": "LIE",
   "name": "Liechtenstein",
   "region": "Europe",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Category C)",
+      "purpose": "Allows entry for tourism, visiting family or friends, business meetings, cultural or sports events, and short-term studies. Valid across all Schengen member states including Liechtenstein.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 98,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Liechtenstein does not issue its own visas. Schengen C visas are issued by Swiss representations abroad on behalf of Liechtenstein. Fee is EUR 90 (approx. USD 98) for adults, EUR 45 for children aged 6–12. Processing is generally within 15 days; may extend to 30–60 days in exceptional cases. Maximum stay is 90 days in any 180-day period. Requires valid travel document, EUR 30,000 minimum medical insurance, and proof of sufficient financial means (min. CHF 100/day). Apply via swiss-visa.ch."
+    },
+    {
+      "category": "transit",
+      "name": "Schengen Airport Transit Visa (Category A)",
+      "purpose": "Required for nationals of certain third countries to pass through the international transit zone of a Schengen airport without entering the Schengen area. Liechtenstein has no international airport, but Category A visas issued for Swiss airports apply in this framework.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 98,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Category A transit visa issued by Swiss representations abroad. Liechtenstein has no international airport of its own; travelers transit through Swiss airports. The same Swiss Schengen visa requirements apply to Liechtenstein without exception per official Liechtenstein Embassy (liechtensteinusa.org). Fee follows standard Schengen rate (EUR 90 adults)."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Short-Stay Visa (Category C) - Business",
+      "purpose": "Permits short-term business activities such as attending meetings, conferences, trade fairs, and negotiations in Liechtenstein and across the Schengen area, for up to 90 days in any 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 98,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Business is a permitted purpose under the standard Schengen C Visa. Gainful employment or income-generating work in Liechtenstein is not permitted under this category. Issued by Swiss representations abroad. Fee EUR 90 (approx. USD 98) for adults."
+    },
+    {
+      "category": "work",
+      "name": "National Long-Stay Visa (Category D) - Gainful Employment",
+      "purpose": "Grants entry to Liechtenstein for the purpose of taking up gainful employment for periods exceeding 90 days. This is a national (not Schengen-wide) visa, valid only for Liechtenstein and Switzerland.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Category D visa for stays exceeding 90 days for the purpose of gainful employment. Processing time 'one to several months must be expected' per SEM. Non-EEA/non-Swiss nationals must be managers, specialists, or otherwise qualified employees sponsored by a Liechtenstein employer. Applications processed through cantonal migration offices in coordination with the Liechtenstein Migration and Passport Office (APA). EEA nationals instead participate in the B permit draw. A national visa premium of up to 50% surcharge may apply for urgent processing."
+    },
+    {
+      "category": "student",
+      "name": "National Long-Stay Visa (Category D) - Education",
+      "purpose": "Allows foreign nationals to reside in Liechtenstein for the purpose of studying or vocational training for periods exceeding 90 days.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Education is a permitted purpose under the Swiss/Liechtenstein Category D national visa framework. Students must demonstrate financial means (minimum CHF 30/day per SEM). Processed through Swiss representations abroad in coordination with Liechtenstein APA. Processing time generally one to several months."
+    },
+    {
+      "category": "family",
+      "name": "National Long-Stay Visa (Category D) - Family Reunification",
+      "purpose": "Permits entry and stay in Liechtenstein for the purpose of joining a family member who is lawfully resident, for periods exceeding 90 days.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Family reunification is a recognised purpose under the Category D national visa. Issued by Swiss representations abroad. Processing one to several months. The family member residing in Liechtenstein must hold a valid B or C residence permit. Liechtenstein's strict residence quota system makes approval for family reunification subject to available quota."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit B (Draw) - With Gainful Employment (EEA Nationals)",
+      "purpose": "Annual lottery-based residence permit allowing EEA nationals to live and work in Liechtenstein for more than 12 months. Quota of 56 permits per year, allocated 50% by lottery and 50% by government decision.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.llv.li/en/national-administration/migration-and-passport-office/residence-in-liechtenstein-for-employment-purposes/draw-residence-permit-b-",
+      "notes": "EEA nationals only (Swiss nationals excluded). Draws held twice yearly (spring and autumn). B permit is renewable annually. After 5 years of lawful residence, permanent residence (C permit) may be obtained. Citizenship requires 30 years continuous residence. No monetary investment requirement. Non-EEA nationals are not eligible for this draw."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit B (Draw) - Without Gainful Employment (EEA Nationals)",
+      "purpose": "Annual lottery-based residence permit for EEA nationals wishing to reside in Liechtenstein without working, subject to demonstrating sufficient financial means. Quota of 16 permits per year.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.llv.li/en/national-administration/migration-and-passport-office/residence-in-liechtenstein-without-employment/draw-residence-permit-b-",
+      "notes": "EEA nationals only (Swiss and UK nationals excluded post-Brexit). Draws held twice yearly. Applicants must prove sufficient financial means to sustain themselves without social assistance. B permit renewable. After 5 years, permanent residence (C permit) may be obtained. Citizenship requires 30 years residence."
+    },
+    {
+      "category": "work",
+      "name": "Short-term Residence Permit L - Qualified Specialists (Non-EEA Nationals)",
+      "purpose": "Allows non-EEA and non-Swiss qualified specialists sponsored by a Liechtenstein employer to reside and work in Liechtenstein for up to 12 months.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.llv.li/en/national-administration/migration-and-passport-office/residence-in-liechtenstein-for-employment-purposes/short-stay-permit-l-",
+      "notes": "For managers, specialists, or other qualified employees who have completed an apprenticeship or have many years of professional experience. Must be sponsored by a Liechtenstein company. L permit valid for up to 12 months, extendable once for up to 6 months upon proof of extraordinary need. Application filed by the Liechtenstein employer through the Migration and Passport Office (APA). No digital nomad or startup visa exists."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Service/Official Passport Visa Exemption",
+      "purpose": "Bilateral visa exemption agreements allow holders of diplomatic, service, special, or official passports from specific countries to enter Liechtenstein (via Schengen/Switzerland) without a visa for stays up to 90 days.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen/visumbefreiung-dipl.html",
+      "notes": "Liechtenstein applies Switzerland's bilateral diplomatic passport visa exemption agreements. As of June 2026, over 50 bilateral agreements exist covering countries including Albania (diplomatic), Angola (diplomatic/service), Brazil (diplomatic/official/service), China (diplomatic), India (diplomatic), and others. Stays are non-working and limited to 90 days in any 180-day period. See conditional_access array for full country-by-country breakdown."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -539,7 +691,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Official passports only. Bilateral visa exemption agreement signed 15 January / 28 May 1991, entered into force 28 May 1991. Non-working stays of a maximum of 90 days within any 180-day period. SEM source lists only 'Official' passport type for Algeria — diplomatic not covered.",
+      "conditions": "Official passports only. Bilateral visa exemption agreement signed 15 January / 28 May 1991, entered into force 28 May 1991. Non-working stays of a maximum of 90 days within any 180-day period. SEM source lists only 'Official' passport type for Algeria - diplomatic not covered.",
       "source_url": "https://www.sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen/visumbefreiung-dipl.html",
       "source_official": true
     },
@@ -1384,7 +1536,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Residence Permit (B) Draw for EEA Nationals — With Gainful Employment",
+        "name": "Residence Permit (B) Draw for EEA Nationals - With Gainful Employment",
         "type": "employment_lottery",
         "min_amount": null,
         "currency": null,
@@ -1392,10 +1544,10 @@
         "path_to_citizenship_years": 30,
         "official_url": "https://www.llv.li/en/national-administration/migration-and-passport-office/residence-in-liechtenstein-for-employment-purposes/draw-residence-permit-b-",
         "source_official": true,
-        "notes": "EEA nationals only (Swiss nationals excluded). Annual quota of 56 permits for gainful employment, allocated 50% by lottery (twice yearly, spring and autumn) and 50% by government decision. B permit is issued for more than 12 months and is renewable. After 5 years of lawful residence, permanent residence (C permit) may be obtained. Citizenship requires 30 years continuous residence (or ordinary naturalization after 10 years subject to municipal ballot). No monetary investment requirement — residence is earned through employment. Non-EEA/non-Swiss nationals may not participate in the draw; they must apply for direct-issue permits in exceptional cases of national interest only."
+        "notes": "EEA nationals only (Swiss nationals excluded). Annual quota of 56 permits for gainful employment, allocated 50% by lottery (twice yearly, spring and autumn) and 50% by government decision. B permit is issued for more than 12 months and is renewable. After 5 years of lawful residence, permanent residence (C permit) may be obtained. Citizenship requires 30 years continuous residence (or ordinary naturalization after 10 years subject to municipal ballot). No monetary investment requirement - residence is earned through employment. Non-EEA/non-Swiss nationals may not participate in the draw; they must apply for direct-issue permits in exceptional cases of national interest only."
       },
       {
-        "name": "Residence Permit (B) Draw for EEA Nationals — Without Gainful Employment",
+        "name": "Residence Permit (B) Draw for EEA Nationals - Without Gainful Employment",
         "type": "passive_income_lottery",
         "min_amount": null,
         "currency": null,
@@ -1410,7 +1562,7 @@
   "fast_track": {
     "programs": [
       {
-        "name": "Short-term Residence Permit (L) for Qualified Specialists — Non-EEA Nationals",
+        "name": "Short-term Residence Permit (L) for Qualified Specialists - Non-EEA Nationals",
         "category": "skilled_worker",
         "eligibility": "Non-EEA and non-Swiss nationals who are managers, specialists, or other qualified employees who have completed an apprenticeship or have many years of professional experience. Must be sponsored by a Liechtenstein company.",
         "processing_time": null,
@@ -1433,19 +1585,21 @@
     "completeness": "high",
     "validation_notes": [
       "Re-validation performed 2026-06-14 against live official sources.",
-      "CORRECTED: Algeria conditional_access entry had passport_types ['diplomatic','official'] — corrected to ['official'] only. Live SEM bilateral agreements page (sem.admin.ch) lists Algeria's agreement as covering only 'Official' passports, consistent with the agreement entered into force 28 May 1991.",
-      "CORRECTED: Turkey conditional_access conditions text said 'Diplomatic and other official passports' — corrected to 'Diplomatic passports only'. SEM source confirms only diplomatic passport type for Turkey in the bilateral agreement.",
-      "CORRECTED: RBI non-gainful B permit lottery official_url had a path typo ('national-administrative' instead of 'national-administration') — fixed to match the confirmed llv.li URL structure.",
+      "CORRECTED: Algeria conditional_access entry had passport_types ['diplomatic','official'] - corrected to ['official'] only. Live SEM bilateral agreements page (sem.admin.ch) lists Algeria's agreement as covering only 'Official' passports, consistent with the agreement entered into force 28 May 1991.",
+      "CORRECTED: Turkey conditional_access conditions text said 'Diplomatic and other official passports' - corrected to 'Diplomatic passports only'. SEM source confirms only diplomatic passport type for Turkey in the bilateral agreement.",
+      "CORRECTED: RBI non-gainful B permit lottery official_url had a path typo ('national-administrative' instead of 'national-administration') - fixed to match the confirmed llv.li URL structure.",
       "UPDATED: ETIAS ETA entry notes updated to reflect Q4 2026 planned mandatory date with 6-month transitional period (confirmed via ETIAS search results and ec.europa.eu; llv.li ETIAS page returns HTTP 403).",
       "VERIFIED UNCHANGED: All 52 bilateral diplomatic visa exemption agreements confirmed against live SEM page. All entries verified correct for country name, passport types, and dates.",
       "VERIFIED UNCHANGED: liechtensteinusa.org confirms identical Swiss/Schengen visa rules apply to Liechtenstein.",
       "VERIFIED UNCHANGED: CBI program correctly listed as not existing. Naturalization requires 30 years ordinary residence (with years from birth to 20 counted twice) or 10-year residence subject to municipal ballot vote.",
-      "VERIFIED UNCHANGED: RBI B permit lottery (EEA only) for employment (56 permits/year) and non-employment (16 permits/year) confirmed as still operational per llv.li search results."
+      "VERIFIED UNCHANGED: RBI B permit lottery (EEA only) for employment (56 permits/year) and non-employment (16 permits/year) confirmed as still operational per llv.li search results.",
+      "Re-validation performed 2026-06-27 against live official sources. Sources visited: liechtensteinusa.org (loaded - confirms identical Swiss/Schengen rules); sem.admin.ch bilateral agreements page (loaded - confirmed all 50+ diplomatic passport bilateral agreement entries are current, Chile May 2025 most recent); sem.admin.ch Annex CH-1 List 1 version 3 April 2026 (PDF - binary only, version date confirmed via index page); sem.admin.ch/G page (loaded - confirms Georgia ordinary biometric passport remains visa-free under V18 condition); sem.admin.ch visa requirements page (loaded - confirms Georgia diplomatic/service/official visa required from 3 April 2026; ordinary biometric still exempt); llv.li ETIAS page (HTTP 403 again); ETIAS timeline search results confirmed Q4 2026 launch with ~6-month transitional period (mandatory ~April 2027). NO changes made to visa_policy lists - all entries re-confirmed as correct against live official sources. Georgia ordinary passport entry and note about diplomatic/service/official suspension from 3 April 2026 confirmed accurate. Vanuatu correctly absent (EU Council removed Vanuatu from Schengen visa-exempt list December 2024 - confirmed via search results). ETIAS gap note updated to reflect April 2027 mandatory enforcement estimate.",
+      "Re-validation performed 2026-06-29 against live official sources. Sources visited: liechtensteinusa.org (loaded - confirms identical Swiss/Schengen rules apply, no changes); sem.admin.ch bilateral diplomatic agreements page (loaded - confirmed 49 bilateral agreements, Chile May 2025 and Turkmenistan March 2025 remain the most recent, no new agreements since last validation); sem.admin.ch Annex CH-1 List 1 index page (loaded - confirms version still 3 April 2026, no new version issued); sem.admin.ch letter pages G, E, K, M, S, T, V (all loaded - confirmed individual country entries: Georgia ordinary biometric visa-free V18 confirmed; El Salvador visa-free V1; Kiribati visa-free V1; Marshall Islands, Mauritius, Mexico, Micronesia, Moldova, Montenegro, Malaysia, Macao SAR all visa-free; Samoa, Serbia, Seychelles, Singapore, Solomon Islands, South Korea all visa-free; Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu all visa-free V1; Taiwan visa-free V14; Vatican City visa-free; Venezuela visa-free V1; Vanuatu visa required - correctly absent); ETIAS search confirmed Q4 2026 launch, ~April 2027 mandatory enforcement unchanged. NO changes made to visa_policy, conditional_access, cbi, rbi, or fast_track sections - all entries verified correct against live official sources."
     ],
     "gaps": [
       "Exact financial sufficiency thresholds for the non-gainful employment residence permit draw are not published verbatim in any accessible official English-language page (llv.li returns HTTP 403 on direct page fetch).",
       "Exact processing times for the Short-term Residence Permit (L) not found on official sources.",
-      "ETIAS exact mandatory implementation date: Q4 2026 is planned per search results but not confirmed on official llv.li page (page was 403 blocked during this validation).",
+      "ETIAS exact mandatory implementation date: Q4 2026 launch planned per multiple search results; transitional period of ~6 months means strict enforcement expected ~April 2027. Not confirmed on official llv.li page (HTTP 403 blocked on direct fetch during both 2026-06-14 and 2026-06-27 validations). Official EU travel-europe.europa.eu page also returned minimal content.",
       "No official English-language page enumerating all specific permit fees was accessible.",
       "Conditional_access type A (credential-based): No official Swiss/Liechtenstein source was found granting visa-free entry based on holding a non-Schengen foreign visa (US, UK, Canada, Japan, etc.). Aggregator sites claim such rules exist but no official sem.admin.ch or llv.li page confirms them. NOT recorded per hard rules.",
       "Conditional_access type B (OCI/special status): No official Swiss/Liechtenstein source found granting any special entry privilege to Indian OCI cardholders or similar diaspora status holders. NOT recorded per hard rules.",
@@ -1461,32 +1615,32 @@
   "sources_checked": [
     {
       "url": "https://www.liechtensteinusa.org/visa-information",
-      "description": "Official Embassy of Liechtenstein in the USA — visa information page confirming identical Schengen/Swiss visa rules apply to Liechtenstein",
+      "description": "Official Embassy of Liechtenstein in the USA - visa information page confirming identical Schengen/Swiss visa rules apply to Liechtenstein",
       "official": true
     },
     {
       "url": "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/bfm-anh01-liste1-e.pdf",
-      "description": "Swiss State Secretariat for Migration (SEM) — Annex CH-1 List 1: Overview of ID and visa provisions according to nationality, version 3 April 2026. This list applies to Liechtenstein as confirmed by official Liechtenstein sources.",
+      "description": "Swiss State Secretariat for Migration (SEM) - Annex CH-1 List 1: Overview of ID and visa provisions according to nationality, version 3 April 2026. This list applies to Liechtenstein as confirmed by official Liechtenstein sources.",
       "official": true
     },
     {
       "url": "https://www.sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen/visumbefreiung-dipl.html",
-      "description": "Swiss SEM — Bilateral visa exemption agreements for diplomatic passport holders (46 agreements as of June 2026). These apply to Liechtenstein as it uses identical Swiss Schengen rules.",
+      "description": "Swiss SEM - Bilateral visa exemption agreements for diplomatic passport holders (46 agreements as of June 2026). These apply to Liechtenstein as it uses identical Swiss Schengen rules.",
       "official": true
     },
     {
       "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/leg_dipl.html",
-      "description": "Swiss SEM — List of visa requirements for holders of diplomatic, service, special, or official passports (index page, version 3 April 2026).",
+      "description": "Swiss SEM - List of visa requirements for holders of diplomatic, service, special, or official passports (index page, version 3 April 2026).",
       "official": true
     },
     {
       "url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/info-einreise/voraussetzungen-nach-staat/mit-visum.html",
-      "description": "Swiss SEM — Entry with visa page: confirms that entry requires valid C visa (Schengen), D visa (national), or Schengen residence permit; no credential-based (non-Schengen visa holder) exemption found.",
+      "description": "Swiss SEM - Entry with visa page: confirms that entry requires valid C visa (Schengen), D visa (national), or Schengen residence permit; no credential-based (non-Schengen visa holder) exemption found.",
       "official": true
     },
     {
       "url": "https://www.llv.li/en/national-administration/migration-and-passport-office",
-      "description": "Liechtenstein National Administration — Migration and Passport Office main page (HTTP 403 on direct fetch, but confirmed via search results)",
+      "description": "Liechtenstein National Administration - Migration and Passport Office main page (HTTP 403 on direct fetch, but confirmed via search results)",
       "official": true
     },
     {
@@ -1502,6 +1656,61 @@
     {
       "url": "https://www.llv.li/en/national-administration/migration-and-passport-office/residence-in-liechtenstein-without-employment/draw-residence-permit-b-",
       "description": "Official llv.li page on B permit lottery for non-gainful employment (HTTP 403 on direct fetch, confirmed via search results)",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "description": "Swiss SEM FAQ on entry to Switzerland/Liechtenstein - confirms Schengen C visa (EUR 90, 15–60 day processing, 90-day max stay) and national D visa (long-stay for work, study, family reunification) categories with fees and processing times.",
+      "official": true
+    },
+    {
+      "url": "https://www.llv.li/en/national-administration/migration-and-passport-office/residence-in-liechtenstein-for-employment-purposes/short-stay-permit-l-",
+      "description": "Official llv.li page on Short-term Residence Permit L for non-EEA qualified specialists (employer-sponsored, max 12 months).",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/g.html",
+      "description": "Swiss SEM - Visa requirements for G-countries (version 3 April 2026). Confirms Georgia ordinary biometric passport remains visa-free (V18); diplomatic/service/official visa required from 3 April 2026.",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/v.html",
+      "description": "Swiss SEM - Visa requirements for V-countries (version 3 April 2026). Confirms Venezuela remains visa-free (V1); Vatican City visa-free; Vanuatu visa required; Vietnam visa required for ordinary passport.",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit.html",
+      "description": "Swiss SEM - Annex CH-1 List 1 index page. Confirms document version date 3 April 2026.",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/e.html",
+      "description": "Swiss SEM - Visa requirements for E-countries (version 3 April 2026). Confirms El Salvador visa-free V1; Ecuador visa required.",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/k.html",
+      "description": "Swiss SEM - Visa requirements for K-countries (version 3 April 2026). Confirms Kiribati visa-free V1.",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/m.html",
+      "description": "Swiss SEM - Visa requirements for M-countries (version 3 April 2026). Confirms Marshall Islands, Mauritius, Mexico, Micronesia, Moldova, Montenegro, Malaysia, Macao SAR all visa-free.",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/s.html",
+      "description": "Swiss SEM - Visa requirements for S-countries (version 3 April 2026). Confirms Samoa, Serbia, Seychelles, Singapore, Solomon Islands, South Korea all visa-free.",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit/t.html",
+      "description": "Swiss SEM - Visa requirements for T-countries (version 3 April 2026). Confirms Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu visa-free V1; Taiwan visa-free V14; Turkey visa required.",
+      "official": true
+    },
+    {
+      "url": "https://www.sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen/visumbefreiung.html",
+      "description": "Swiss SEM - Visa waiver agreements for standard passports (bilateral). Lists 19 standard passport agreements, mostly with EU/EEA/EFTA and a handful of third countries. Last modified April 2024.",
       "official": true
     }
   ]

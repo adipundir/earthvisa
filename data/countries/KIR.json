@@ -46,6 +46,128 @@
     "e_visa": [],
     "eta": []
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visitor Visa",
+      "purpose": "Issued to foreign nationals wishing to visit Kiribati for tourism, leisure, or social visits. Governed by the Kiribati Immigration Act 2019 and Immigration Procedure 2020.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.ki/visa/",
+      "notes": "Nationals not covered by the Visa Exemption Order 2023 must apply. A sponsorship form may be required. Contact visaofficer@mfa.gov.ki for fee and processing details. Applications submitted in person at the Immigration Office in Bairiki, Tarawa, or at the London Kiritimati branch."
+    },
+    {
+      "category": "business",
+      "name": "Group Visa",
+      "purpose": "Issued to groups of foreign nationals travelling together for business, tourism, or other lawful group purposes. Covers multiple individuals under a single visa arrangement.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.ki/visa/",
+      "notes": "Specific eligibility criteria and fees not published on the official website. Contact visaofficer@mfa.gov.ki for details."
+    },
+    {
+      "category": "investment",
+      "name": "Investment Visa",
+      "purpose": "Issued to foreign nationals intending to invest in or conduct business activities in Kiribati. Intended to facilitate legitimate foreign investment.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.ki/visa/",
+      "notes": "No minimum investment threshold or specific conditions published on the official website. Contact visaofficer@mfa.gov.ki. Distinct from the historical investor-passport scheme which was repealed in 2004."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "Issued to foreign nationals accepted for study at an approved educational institution in Kiribati.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.ki/visa/",
+      "notes": "Governed by the Kiribati Immigration Act 2019. Specific requirements and fees not published on the official website. Contact visaofficer@mfa.gov.ki."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa",
+      "purpose": "Issued to foreign nationals who have obtained employment in Kiribati and need authorisation to work and reside in the country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.ki/visa/",
+      "notes": "A sponsorship form from the employer may be required. Governed by the Kiribati Immigration Act 2019. Contact visaofficer@mfa.gov.ki for requirements and fees."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Issued to foreign nationals transiting through Kiribati en route to another destination.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.ki/visa/",
+      "notes": "Specific conditions and fees not published on the official website. Contact visaofficer@mfa.gov.ki."
+    },
+    {
+      "category": "other",
+      "name": "Religious Worker Sponsorship",
+      "purpose": "Authorises foreign religious workers (missionaries, clergy, etc.) to reside and carry out religious activities in Kiribati under sponsorship from a recognised religious organisation.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.ki/visa/",
+      "notes": "A dedicated Religious Worker Sponsorship form is available on the MFA website (mfa.gov.ki/wp-content/uploads/2020/11/Religious-Worker-Sponsorship-form-FINAL.pdf). Governed by the Kiribati Immigration Act 2019. Contact visaofficer@mfa.gov.ki for details."
+    },
+    {
+      "category": "other",
+      "name": "Medical Entry (Medical Form)",
+      "purpose": "A supporting medical form required for certain visa applications where health conditions are relevant. Not a standalone visa category but a medical declaration/health assessment form used in conjunction with other visa types.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.ki/visa/",
+      "notes": "The Medical Form (mfa.gov.ki/wp-content/uploads/2020/11/Medical-form-FINAL.pdf) is a supporting document, not a standalone visa. It is used alongside other visa applications requiring health declarations. Confirmed present on mfa.gov.ki as of 2026-06-29 re-verification."
+    }
+  ],
   "conditional_access": [],
   "cbi": {
     "has_program": false,
@@ -74,7 +196,7 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "ADDED max_stay_days: 90 field to the visa_free entry — this was previously stated only in prose notes but was absent as a machine-readable field.",
+      "ADDED max_stay_days: 90 field to the visa_free entry - this was previously stated only in prose notes but was absent as a machine-readable field.",
       "ADDED passport_types field to the visa_free entry, reflecting the 2023 Order's explicit inclusion of ordinary/normal, official/service, and diplomatic travel documents.",
       "ADDED visa_on_arrival: [], e_visa: [], eta: [] arrays to visa_policy for schema completeness; no such programs exist per official sources.",
       "CONFIRMED the 124-country exempt list is identical to the official PDF (Firecrawl parse of the 2023 Order). Minor spelling normalizations in the current record (Morocco vs Morroco; Dominican Republic vs Dominicans Republic) are correct corrections of PDF typos.",
@@ -82,8 +204,11 @@
       "CONFIRMED no CBI or RBI program; historical investor-passport scheme was repealed in 2004.",
       "UPDATED cbi.notes to mention the repealed 2004 historical investor-passport scheme.",
       "UPDATED agreements[] entry to clarify the 2016 EU-Kiribati agreement covers Schengen area members (not all EU members), and to note the Latvia/Lithuania/Malta omission from the 2023 domestic order.",
-      "CONFIRMED max stay is 90 days in any 12-month period per the official 2023 Order. Wikipedia incorrectly states '1 month'; the official order is authoritative.",
-      "No changes to the country list — all 124 entries confirmed correct against the official PDF."
+      "CONFIRMED max stay is 90 days in any 12-month period per the official 2023 Order. Wikipedia incorrectly states '1 month'; the official order is authoritative. US State Department page (travel.state.gov) incorrectly states '30 days' - this is secondary non-Kiribati source and is superseded by the official Kiribati Visa Exemption Order 2023.",
+      "No changes to the country list - all 124 entries confirmed correct against the official PDF.",
+      "ADDED visa_types array with 7 visa categories confirmed on mfa.gov.ki/visa/: Visitor Visa, Group Visa, Investment Visa, Student Visa, Work Visa, Transit Visa, and Religious Worker Sponsorship. Governed by Kiribati Immigration Act 2019 and Immigration Procedure 2020. Per-visa fee/duration sub-pages return HTTP 404; detailed parameters not publicly available - contact visaofficer@mfa.gov.ki.",
+      "2026-06-27 RE-VERIFICATION: Re-fetched mfa.gov.ki/immigration/, mfa.gov.ki/visa/, mfa.gov.ki/ (homepage), and mfa.gov.ki/travel-advisory/. No new visa exemption orders (2024/2025/2026) found. The Visa Exemption Order 2023 (in force 01 September 2023) remains the current operative order. No e-visa, ETA, or visa-on-arrival system found. No new bilateral visa waiver agreements found. The pandemic-era health form was reportedly scrapped as of January 2026 (non-official secondary source); no such form was part of the official visa_policy record. Medical Form confirmed as a supporting document on mfa.gov.ki, not a standalone visa category - added to visa_types as 'Medical Entry (Medical Form)' with clarifying notes. All visa_policy nationality-access entries remain unchanged.",
+      "2026-06-29 RE-VERIFICATION: Re-fetched mfa.gov.ki/immigration/, mfa.gov.ki/visa/, mfa.gov.ki/ (homepage), mfa.gov.ki/travel-advisory/, and searched for any 2024/2025/2026 exemption orders or legislative changes on official domains. Web search for newer exemption orders (2024/2025/2026) returned only the existing 2023 Order PDF as the most recent document on mfa.gov.ki. No new visa exemption orders, e-visa systems, ETA programs, or policy changes found. All visa_policy nationality-access entries remain unchanged. The Visa Exemption Order 2023 (in force 01 September 2023) confirmed as the current operative order. kiribati.gov.ki/services/passport-and-visas returned HTTP 500 again. Travel advisory page still shows outdated COVID-era content — no new entry requirements added since the pandemic restrictions were lifted. No risky changes made in this run."
     ],
     "gaps": [
       "Latvia, Lithuania, and Malta are Schengen area members and should be covered by the EU-Kiribati 2016 bilateral visa waiver agreement, but they are absent from the 2023 Kiribati domestic Visa Exemption Order. It is unclear whether this omission is intentional or an error in the domestic order. Border application of the 2016 bilateral agreement for these three nationalities is unconfirmed.",
@@ -91,21 +216,26 @@
       "No OCI (Overseas Citizen of India) cardholder special-status rule for Kiribati found on any official source.",
       "No diplomatic/service-passport-only bilateral visa waiver agreements (beyond the EU-Kiribati 2016 agreement) found for countries not already exempt on ordinary passports.",
       "Maximum stay for visa-required nationalities (those not on the 2023 Order) is not enumerated on any official public page; contact visaofficer@mfa.gov.ki for specifics.",
-      "kiribati.gov.ki/services/passport-and-visas returned HTTP 500 during re-validation; page content could not be verified.",
-      "The official Kiribati Visa Exemption Order 2023 PDF is image-based and was parsed via Firecrawl; full text confirmed but may have rendering artifacts."
+      "kiribati.gov.ki/services/passport-and-visas returned HTTP 500 during re-validation (2026-06-27 and 2026-06-29); page content could not be verified.",
+      "The official Kiribati Visa Exemption Order 2023 PDF is image-based and cannot be parsed by WebFetch; confirmed previously via Firecrawl (which is offline this run). Full text was confirmed in prior run but PDF re-parse was not possible in 2026-06-29 re-verification.",
+      "Per-visa fee, max_stay_days, validity_days, entries, and processing_days fields are null for all visa_types entries - the MFA website lists visa categories but individual sub-pages (e.g. /visa/visitor-visa/) return HTTP 404. Fee and duration details must be obtained directly from visaofficer@mfa.gov.ki or the Immigration Office in Bairiki, Tarawa.",
+      "visitkiribati.travel/getting-here/visa-info/ was not re-checked in 2026-06-29 run (previously returned HTTP 403); tourism board page content remains unverified."
     ]
   },
   "outbound_official": {
     "found": false,
-    "note": "No official Kiribati government outbound visa-list page located. The Kiribati Ministry of Foreign Affairs & Immigration (mfa.gov.ki) publishes only inbound visa policy (Visa Exemption Order 2023 — which countries may enter Kiribati without a visa) and passport application services. No page or document listing visa-free, visa-on-arrival, eTA, or e-visa destinations for I-Kiribati citizens traveling abroad was found on mfa.gov.ki, kiribati.gov.ki, or any other official Kiribati government domain. Rely on destination-side data."
+    "note": "No official Kiribati government outbound visa-list page located. The Kiribati Ministry of Foreign Affairs & Immigration (mfa.gov.ki) publishes only inbound visa policy (Visa Exemption Order 2023 - which countries may enter Kiribati without a visa) and passport application services. No page or document listing visa-free, visa-on-arrival, eTA, or e-visa destinations for I-Kiribati citizens traveling abroad was found on mfa.gov.ki, kiribati.gov.ki, or any other official Kiribati government domain. Rely on destination-side data."
   },
   "sources_checked": [
     "https://www.mfa.gov.ki/immigration/",
     "https://www.mfa.gov.ki/wp-content/uploads/2023/09/VISA-EXEMPTION-ORDER-2023-1.pdf",
     "https://www.mfa.gov.ki/visa/",
+    "https://www.mfa.gov.ki/",
     "https://kiribati.gov.ki/services/passport-and-visas",
+    "https://www.mfa.gov.ki/travel-advisory/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Kiribati.html",
+    "https://visitkiribati.travel/getting-here/visa-info/",
     "https://www.eeas.europa.eu/node/8022_en",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Kiribati",
-    "https://visitkiribati.travel/getting-here/visa-info/"
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Kiribati"
   ]
 }

@@ -1153,7 +1153,7 @@
       "https://beta.voyage.gouv.tg/procedure-voyages",
       "https://beta.voyage.gouv.tg/faq"
     ],
-    "notes": "Togo operates an e-visa system via voyage.gouv.tg. Visa on arrival and express visas are suspended until further notice; e-visa applications must be submitted at least 5 business days (5–6 days recommended) before arrival. All visitors — including visa-free nationals — must complete an online travel declaration at voyage.gouv.tg at least 24 hours before arrival and present the resulting travel slip at border checkpoints. ECOWAS member nationals (15 countries) are visa-free for up to 90 days under the ECOWAS free movement protocol (since April 30, 1980). As of May 18, 2026, all nationals of African Union member states may additionally enter visa-free for up to 30 days; ECOWAS members retain their longer 90-day privilege under the pre-existing protocol. E-visa fees (CFA francs): 15-day single entry 25,000; 15-day multiple entry 35,000; 30-day 45,000; 90-day 65,000. The e-visa max stay varies by type: tourist (up to 90 days), professional (up to 365 days), immigration (31–90 days). No visa on arrival. No conditional access rule based on holding a third-country credential (US/Schengen/UK visa, residence permit, Green Card) was found on any official Togolese source."
+    "notes": "Togo operates an e-visa system via voyage.gouv.tg. Visa on arrival and express visas are suspended until further notice; e-visa applications must be submitted at least 5 business days (5–6 days recommended) before arrival. All visitors - including visa-free nationals - must complete an online travel declaration at voyage.gouv.tg at least 24 hours before arrival and present the resulting travel slip at border checkpoints. ECOWAS member nationals (15 countries) are visa-free for up to 90 days under the ECOWAS free movement protocol (since April 30, 1980). As of May 18, 2026, all nationals of African Union member states may additionally enter visa-free for up to 30 days; ECOWAS members retain their longer 90-day privilege under the pre-existing protocol. E-visa fees (CFA francs): 15-day single entry 25,000; 15-day multiple entry 35,000; 30-day 45,000; 90-day 65,000. The e-visa max stay varies by type: tourist (up to 90 days), professional (up to 365 days), immigration (31–90 days). No visa on arrival. No conditional access rule based on holding a third-country credential (US/Schengen/UK visa, residence permit, Green Card) was found on any official Togolese source."
   },
   "conditional_access": [
     {
@@ -1198,8 +1198,8 @@
     "programs": []
   },
   "agreements": [
-    "ECOWAS (Economic Community of West African States) free movement protocol — visa-free 90 days for 15 member states since April 30, 1980",
-    "African Union visa-free entry for all AU member state nationals — 30 days, effective May 18, 2026"
+    "ECOWAS (Economic Community of West African States) free movement protocol - visa-free 90 days for 15 member states since April 30, 1980",
+    "African Union visa-free entry for all AU member state nationals - 30 days, effective May 18, 2026"
   ],
   "official_domains": [
     "voyage.gouv.tg",
@@ -1212,26 +1212,151 @@
     "completeness": "high",
     "validation_notes": [
       "CORRECTED: visa_free section split into two entries: (1) ECOWAS members, 90 days (pre-existing protocol since 1980); (2) non-ECOWAS AU members, 30 days (new policy effective May 18, 2026). Previously a single monolithic entry conflated both groups under '55 AU countries / 30 days', which was inaccurate for ECOWAS members who retain the 90-day right.",
-      "REMOVED: Invalid placeholder entry 'Note: African countries previously listed here are now visa-free' from the e_visa array — this was a non-standard annotation, not a valid nationality entry.",
+      "REMOVED: Invalid placeholder entry 'Note: African countries previously listed here are now visa-free' from the e_visa array - this was a non-standard annotation, not a valid nationality entry.",
       "REMOVED: 31 non-sovereign territories from the e_visa list that do not issue their own internationally recognized travel passports and whose nationals travel on parent-country passports: Antarctica, American Samoa, Anguilla, Aruba, Bermuda, Cayman Islands, Christmas Island, Cocos (Keeling) Islands, Curaçao, Falkland Islands, French Guiana, Guadeloupe, Guam, Martinique, Montserrat, New Caledonia, Norfolk Island, Northern Mariana Islands, Pitcairn, Puerto Rico, Saint Barthélemy, Saint Martin (French part), Saint Pierre and Miquelon, Sark, Sint Maarten (Dutch part), Svalbard and Jan Mayen, Tokelau, Turks and Caicos Islands, US Minor Outlying Islands, US Virgin Islands, Wallis and Futuna Islands.",
       "CORRECTED: Country name updated from 'The former Yugoslav Republic of Macedonia' to 'North Macedonia' (official UN name since February 2019).",
-      "CONFIRMED: Pre-arrival online travel declaration at voyage.gouv.tg (at least 24 hours before arrival) is mandatory for ALL visitors including visa-free nationals — this condition is now noted in both visa_free entries and the global notes.",
+      "CONFIRMED: Pre-arrival online travel declaration at voyage.gouv.tg (at least 24 hours before arrival) is mandatory for ALL visitors including visa-free nationals - this condition is now noted in both visa_free entries and the global notes.",
       "CONFIRMED: E-visa fees added to global notes: 15-day single 25,000 XOF; 15-day multiple 35,000 XOF; 30-day 45,000 XOF; 90-day 65,000 XOF.",
-      "CONFIRMED: Diplomatic/service passport bilateral list unchanged — Brazil, Tunisia, Central African Republic, Turkey, China, Iran, Comoros, Kenya, Cuba, Libya, Djibouti, Mauritania, Egypt, Morocco, Eritrea, Qatar, Gabon, Russia, Indonesia, São Tomé and Príncipe, Suriname, Somalia — as confirmed by voyage.gouv.tg/about.",
+      "CONFIRMED: Diplomatic/service passport bilateral list unchanged - Brazil, Tunisia, Central African Republic, Turkey, China, Iran, Comoros, Kenya, Cuba, Libya, Djibouti, Mauritania, Egypt, Morocco, Eritrea, Qatar, Gabon, Russia, Indonesia, São Tomé and Príncipe, Suriname, Somalia - as confirmed by voyage.gouv.tg/about.",
       "CONFIRMED: No CBI program, no credential-based conditional access, no OCI exemption found on any official source.",
       "CONFIRMED: agreements array updated to explicitly list both the ECOWAS protocol (with effective date 1980) and the new AU-wide policy (effective May 18, 2026).",
-      "VERIFIED 2026-06-14: India (IND) correctly classified as e_visa (not visa_free or visa_on_arrival). Airline aggregator claim of visa-free/visa-on-arrival is FALSE. Official Togo portal voyage.gouv.tg/about lists India in the e-visa category; visa on arrival and express visas are suspended until further notice per Indian Embassy Lome advisory (embassyofindialome.gov.in). E-visa must be applied at least 5 business days before arrival. Max stay up to 90 days depending on visa type selected."
+      "VERIFIED 2026-06-14: India (IND) correctly classified as e_visa (not visa_free or visa_on_arrival). Airline aggregator claim of visa-free/visa-on-arrival is FALSE. Official Togo portal voyage.gouv.tg/about lists India in the e-visa category; visa on arrival and express visas are suspended until further notice per Indian Embassy Lome advisory (embassyofindialome.gov.in). E-visa must be applied at least 5 business days before arrival. Max stay up to 90 days depending on visa type selected.",
+      "RE-VERIFIED 2026-06-27: Live re-fetch of voyage.gouv.tg/about and voyage.gouv.tg/faq confirmed: (1) visa on arrival remains suspended ('Togo no longer issues visas on arrival' per FAQ); (2) ECOWAS member states (15 countries) remain the only nationalities explicitly listed as visa-free on the live official portal - the page does NOT specify a maximum stay duration in its own text; the 90-day limit in the ECOWAS visa_free entry is sourced from the ECOWAS Protocol on Free Movement of Persons (1980), not from voyage.gouv.tg text directly; (3) the May 2026 all-AU 30-day visa-free policy is STILL not reflected on voyage.gouv.tg/about as of 2026-06-27 - the existing gap note remains accurate; (4) the non-ECOWAS AU visa_free entry is retained as-is per preservation rule: the policy is confirmed by multiple corroborating secondary sources (togofirst.com, visasnews.com, bellanaija.com, diplomatictimesonline.com, prnigeria.com) citing the Cabinet Council decision of May 18/26, 2026; (5) no new nationalities to add or remove from any list; (6) e-visa structure, fees, and conditional_access (diplomatic/service passports) all confirmed unchanged.",
+      "CORRECTED 2026-06-29: Added 5 missing e-visa entries confirmed by live re-fetch of voyage.gouv.tg/about — Brazil (BRA), China/PRC (CHN), Indonesia (IDN), Russian Federation (RUS), and Turkey (TUR) — all confirmed in the main 'Liste des pays éligibles au visa togolais' section for ordinary passport holders. These countries also appear in the bilateral agreements section for diplomatic/service passport holders, but their ordinary-passport e-visa eligibility was previously absent from the e_visa list. Malaysia (MYS) and Singapore (SGP) do not appear on the official portal's e-visa eligible list; they are added to gaps pending clarification. The AU visa-free policy (May 2026) is still not reflected on voyage.gouv.tg/about as of 2026-06-29 — gap note updated accordingly."
     ],
     "gaps": [
-      "Bilateral agreement details — exact stay duration per country for diplomatic/service passport holders — are not published in machine-readable form on the official portal; the diplomatie.gouv.tg exemption page renders the country/duration tables as images only.",
+      "Bilateral agreement details - exact stay duration per country for diplomatic/service passport holders - are not published in machine-readable form on the official portal; the diplomatie.gouv.tg exemption page renders the country/duration tables as images only.",
       "No official conditional entry rule based on holding a third-country credential (US visa, Schengen visa, UK visa, Canadian visa, GCC visa, residence permit, or OCI card) was found on any official Togolese government source.",
-      "The official legacy portal (voyage.gouv.tg/about) has not yet been updated to reflect the May 2026 all-AU visa-free policy; the policy is confirmed by multiple corroborating secondary sources citing official government announcements.",
+      "The official portal voyage.gouv.tg/about has still not been updated (as of 2026-06-29 re-verification) to reflect the May 2026 all-AU 30-day visa-free policy; only ECOWAS members appear as visa-free on the live page. The AU policy is confirmed by the formal Cabinet Council decree of May 26, 2026 (under President Faure Gnassingbé) and multiple corroborating secondary sources (togofirst.com, visasnews.com, diplomatictimesonline.com, visasnews.com). The non-ECOWAS AU visa_free entry is retained pending official portal update.",
+      "Malaysia (MYS) and Singapore (SGP) do not appear on voyage.gouv.tg/about's e-visa eligible list (as of 2026-06-29 live re-fetch); they appear only in the outbound Togo MFA exemption list (where Togolese nationals can visit without visa). Their inbound ordinary-passport classification for Togo entry cannot be confirmed from official sources and they are therefore not listed in the e_visa array pending clarification.",
       "No official digital nomad, startup, or skilled worker fast-track scheme found on official government sources.",
       "No official investor visa or golden-visa residence program found.",
       "Whether 'official' passport (as distinct from 'service' passport) is covered by the bilateral diplomatic exemptions is not clarified in machine-readable official text.",
       "Exact list of all 55 AU member states individually confirmed as eligible for the May 2026 visa-free policy is based on secondary reporting; the official portal does not yet publish a country-by-country breakdown of the new AU policy."
     ]
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visa Touristique (Tourist Visa)",
+      "purpose": "Permits foreign travelers to visit Togo for tourism or to participate in meetings, conferences, salons, or seminars by invitation.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 42,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://voyage.gouv.tg/about",
+      "notes": "Fee varies by duration and entry type: 1–15 days single entry 25,000 XOF (~$42 USD); 1–15 days multiple entry 35,000 XOF (~$58 USD); 16–30 days multiple entry 45,000 XOF (~$75 USD); 31–90 days multiple entry 65,000 XOF (~$108 USD). Applied online via voyage.gouv.tg; must be submitted at least 5 business days before arrival. Visa on arrival and express visas suspended until further notice."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa Touristique Entrées Multiples - Court Séjour (Tourist Visa Multiple Entry)",
+      "purpose": "Multiple-entry tourist visa for short stays in Togo, covering tourism, conferences, and short business visits.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 58,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://voyage.gouv.tg/about",
+      "notes": "Multiple-entry variant of the tourist visa. 1–15 days: 35,000 XOF (~$58 USD); 16–30 days: 45,000 XOF (~$75 USD); 31–90 days: 65,000 XOF (~$108 USD). Applied online via voyage.gouv.tg."
+    },
+    {
+      "category": "business",
+      "name": "Visa Professionnel (Professional Visa)",
+      "purpose": "Allows the exercise of certain professions (journalism, commerce) or the execution of projects with Togolese partners for up to 90 days, extendable to one year for business promoters.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 167,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://voyage.gouv.tg/about",
+      "notes": "Standard duration up to 90 days; extendable to one year (91–365 days multiple entry: 100,000 XOF, ~$167 USD) for business promoters or active professionals. Applied online via voyage.gouv.tg at least 5 business days before arrival."
+    },
+    {
+      "category": "student",
+      "name": "Visa d'Immigration - Études/Stage (Study/Internship Immigration Visa)",
+      "purpose": "Enables foreign nationals to settle in Togo for study or internship purposes on a sustainable basis.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 108,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://voyage.gouv.tg/about",
+      "notes": "Subcategory of the Immigration Visa. Fee: 65,000 XOF (~$108 USD) for 31–90 days multiple entry. Applicants must also obtain a Togolese residence permit (carte de séjour étudiant: 1-year at 100,000 XOF, 3-year at 250,000 XOF) to remain long-term. Applied online via voyage.gouv.tg."
+    },
+    {
+      "category": "family",
+      "name": "Visa d'Immigration - Regroupement Familial (Family Reunification Immigration Visa)",
+      "purpose": "Enables sustainable settlement in Togo for the purpose of family reunification with a legally residing family member.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 108,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://voyage.gouv.tg/about",
+      "notes": "Subcategory of the Immigration Visa. Fee: 65,000 XOF (~$108 USD) for 31–90 days multiple entry. Long-term stay requires a residence permit (carte de séjour). Applied online via voyage.gouv.tg."
+    },
+    {
+      "category": "work",
+      "name": "Visa d'Immigration Professionnel (Professional Immigration Visa)",
+      "purpose": "Enables sustainable settlement in Togo for the purpose of professional activity and employment.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 108,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://voyage.gouv.tg/about",
+      "notes": "Subcategory of the Immigration Visa intended for those establishing themselves professionally in Togo. Fee: 65,000 XOF (~$108 USD) for 31–90 days multiple entry. Long-term stay requires a residence permit (carte de séjour ordinaire or privileged). Applied online via voyage.gouv.tg."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Visa de Courtoisie (Courtesy Visa)",
+      "purpose": "Issued free of charge to official representatives for diplomatic missions and official visits under bilateral or multilateral agreements.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://voyage.gouv.tg/about",
+      "notes": "Issued free of charge (0 XOF) for all durations, multiple entry. Reserved for official diplomatic representatives and mission personnel. Long-term courtesy visas exempt holders from the standard visa requirement. Bilateral agreements also exempt holders of diplomatic and service passports from several countries from any visa requirement altogether."
+    },
+    {
+      "category": "transit",
+      "name": "Transit (Airside)",
+      "purpose": "Allows passengers to transit through Togolese international airports without entering Togo, remaining airside throughout.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://voyage.gouv.tg/faq",
+      "notes": "Passengers remaining airside (not passing through immigration) are exempt from visa requirements. No separate transit visa category is published on the official portal. Travelers who wish to exit the airside area and enter Togolese territory must hold a valid visa or qualify for visa-free entry."
+    }
+  ],
   "outbound_official": {
     "found": true,
     "source_url": "https://diplomatie.gouv.tg/exemption-de-visa-entre-le-togo-les-autres-pays/",
@@ -1266,7 +1391,7 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "The Togo MFA page (diplomatie.gouv.tg) renders destination lists as images (PNG files uploaded 2026-02). The ordinary-passport (passeport ordinaire) image shows 24 destinations grouped by region: 18 in Africa (ECOWAS members plus Morocco, Rwanda, Chad, and São Tomé and Príncipe), 3 in the Americas (Barbados, Saint Kitts and Nevis, Suriname), and 3 in Asia (Indonesia, Malaysia, Singapore). No Europe or Oceania section appears. The page title is 'Exemption de visa' — countries where Togolese passport holders are exempt from a prior consular visa. This outbound list is distinct from, and narrower than, the inbound e-visa list on voyage.gouv.tg. Suriname ISO3 corrected: SUR (not SRM)."
+    "notes": "The Togo MFA page (diplomatie.gouv.tg) renders destination lists as images (PNG files uploaded 2026-02). The ordinary-passport (passeport ordinaire) image shows 24 destinations grouped by region: 18 in Africa (ECOWAS members plus Morocco, Rwanda, Chad, and São Tomé and Príncipe), 3 in the Americas (Barbados, Saint Kitts and Nevis, Suriname), and 3 in Asia (Indonesia, Malaysia, Singapore). No Europe or Oceania section appears. The page title is 'Exemption de visa' - countries where Togolese passport holders are exempt from a prior consular visa. This outbound list is distinct from, and narrower than, the inbound e-visa list on voyage.gouv.tg. Suriname ISO3 corrected: SUR (not SRM)."
   },
   "sources_checked": [
     "https://voyage.gouv.tg/about",
@@ -1283,6 +1408,8 @@
     "https://en.wikipedia.org/wiki/Visa_policy_of_Togo",
     "https://www.togofirst.com/en/economic-governance/1905-19005-togo-introduces-visa-free-access-for-african-union-citizens",
     "https://visasnews.com/en/togo-confirms-visa-free-entry-for-african-travelers-after-cabinet-approval/",
-    "https://www.bellanaija.com/2026/05/togo-visa-free-african-citizens-2026/"
+    "https://www.bellanaija.com/2026/05/togo-visa-free-african-citizens-2026/",
+    "https://www.togofirst.com/en/economic-governance/2805-19090-togo-formalizes-visa-exemption-for-african-nationals",
+    "https://visasnews.com/en/togo-confirms-visa-free-entry-for-african-travelers-after-cabinet-approval/"
   ]
 }

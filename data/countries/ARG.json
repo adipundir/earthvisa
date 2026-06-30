@@ -3,6 +3,263 @@
   "iso3": "ARG",
   "name": "Argentina",
   "region": "Americas",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa (Visa de Turista)",
+      "purpose": "For foreign nationals whose nationality requires a visa to enter Argentina as tourists. Permits leisure travel, family visits, and short-stay tourism.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ctoro.cancilleria.gob.ar/en/consular-services",
+      "notes": "Required only for nationalities not covered by Argentina's visa exemption list. Many nationalities (Canada, USA, EU, Australia, etc.) enter visa-free for up to 90 days. Fee varies by consulate and reciprocity agreements. Application submitted to Argentine consulate or embassy in country of residence."
+    },
+    {
+      "category": "business",
+      "name": "Transitory Business Visa (Visa de Negocios Transitoria)",
+      "purpose": "For foreign nationals conducting short-term business activities in Argentina, such as commercial negotiations, market studies, meetings, and business representation.",
+      "max_stay_days": 60,
+      "validity_days": 60,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ctoro.cancilleria.gob.ar/en/consular-services",
+      "notes": "Permits business activities but not paid employment in Argentina. Separate from the temporary work visa categories. Applicable to nationals requiring a visa. Fee varies by consulate."
+    },
+    {
+      "category": "work",
+      "name": "Transitory Visa for Technicians, Professionals and Artists",
+      "purpose": "For foreign technicians, professionals, and artists performing short-term skilled work or artistic activities in Argentina for up to 30 days.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ctoro.cancilleria.gob.ar/en/consular-services",
+      "notes": "Short-term work authorization for technicians, professionals, and performing artists. For longer-term work, the Temporary Work Visa (23E or 23A) applies."
+    },
+    {
+      "category": "work",
+      "name": "Temporary Work Visa – Intra-Company Transfer (Category 23E / Personal de Traslado)",
+      "purpose": "For foreign employees transferred intra-company to work in Argentina under a multinational corporate arrangement.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 250,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cgmum.cancilleria.gob.ar/en/temporary-visas",
+      "notes": "Category 23E under Argentine immigration law. Fee is USD 250 (USD 150 base + USD 100 supplemental). Requires PIM (Entry Permit / Permiso de Ingreso) from DNM, valid RENURE, apostilled police clearance with Spanish translation, company incorporation certificate, work authorization document. Stay duration as per Entry Permit. Multiple entry. 60-day travel insurance required."
+    },
+    {
+      "category": "work",
+      "name": "Temporary Work Visa – Migrant Worker (Category 23A / Trabajador Migrante)",
+      "purpose": "For foreign nationals who have obtained a work contract in Argentina and wish to reside and work there on a temporary basis.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 250,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cgmum.cancilleria.gob.ar/en/temporary-visas",
+      "notes": "Category 23A under Argentine immigration law. Fee is USD 250 (USD 150 base + USD 100 supplemental). Requires original notarized and legalized work contract (Contrato de Trabajo), PIM from DNM, apostilled police clearance with Spanish translation, and travel insurance. Stay duration as per Entry Permit. Multiple entry."
+    },
+    {
+      "category": "student",
+      "name": "Transitory Student Visa (Visa de Estudiante Transitoria)",
+      "purpose": "For foreign students enrolled in academic programs, exchange programs, internships, scholarships, or cultural exchange activities in Argentina for up to 12 months.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 150,
+      "processing_days_min": 45,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ctoro.cancilleria.gob.ar/en/student-visa",
+      "notes": "Covers full-time students, international mobility students, cultural exchange volunteers, exchange program participants, interns, and scholarship holders per Directive 2802/2023. Valid up to 12 months (2 years for official education system). Requires PRECARGA / RENURE registration from Argentine educational institution, apostilled police clearance (for stays over 6 months if applicant is over 16), university acceptance letter, and proof of financial means. Application recommended at least 45 days before travel. Consular interview required after documentation approval."
+    },
+    {
+      "category": "student",
+      "name": "Temporary Student Visa (Category 23J)",
+      "purpose": "For foreign nationals pursuing long-term academic studies at Argentine universities or tertiary institutions requiring a full temporary residence classification.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 250,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cgmum.cancilleria.gob.ar/en/temporary-visas",
+      "notes": "Category 23J under Argentine immigration law. Fee is USD 250 (USD 150 base + USD 100 supplemental). Requires university acceptance letter with syllabus, academic certificates, PRECARGA from university, 6 months bank statements, sponsor details with income tax returns (3 years), and travel insurance covering full stay. Stay duration as per Entry Permit. Multiple entry."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Digital Nomad Transitional Residence (Residencia Transitoria como Nómada Digital)",
+      "purpose": "For foreign remote workers who provide services via digital or telecommunications means to clients or companies domiciled abroad, allowing extended stays in Argentina.",
+      "max_stay_days": 180,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.argentina.gob.ar/servicio/obtener-una-residencia-transitoria-como-nomada-digital",
+      "notes": "Established by DNM Disposition No. 758/2022. Available to nationals of countries that do not require a tourist visa to enter Argentina. Duration: 180 days, renewable once for an additional 180 days (total up to 12 months). Requires signed application, CV, proof of remote work activity (contracts, company endorsement, income receipts), and at least one professional reference. In-person application only; not available via the RADEX online system. Includes perks such as discounts on transportation, hotels, coworking spaces, and cultural activities. Standard migration fee applies."
+    },
+    {
+      "category": "other",
+      "name": "Seaman Visa (Visa de Marinero)",
+      "purpose": "For maritime seafarers visiting Argentine ports as part of their employment aboard a vessel.",
+      "max_stay_days": 10,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://cgmum.cancilleria.gob.ar/en/seaman-visa",
+      "notes": "Free of charge. Maximum stay is 10 days. Stamp validity up to 3 months. Two pathways: (1) E-Visa processed entirely by Argentina's Immigration Authority without consulate involvement; (2) Sticker Visa processed at the consulate. Sticker visa requires 14 documents including Spanish invitation letter from Argentine shipping company, Permiso de Ingreso from Immigration, original employment contract, and Seaman's book (CDC). For crew members on active maritime duties only."
+    },
+    {
+      "category": "other",
+      "name": "Transitory Religious Visa (Visa Religiosa Transitoria)",
+      "purpose": "For foreign nationals invited by a religious congregation in Argentina to participate in religious activities or missions.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 200,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cgmum.cancilleria.gob.ar/en/transitory-religious-visa",
+      "notes": "Requires invitation letter from Argentine congregation certified by Argentina's Ministry of Foreign Affairs. Maximum stay up to 30 days, multiple entry. Stamp validity up to 3 months. Fee: USD 200. Requires cover letter on congregation's letterhead, Spanish translation, round-trip flight tickets (dummy acceptable), hotel reservation (dummy acceptable), and travel insurance covering entire stay."
+    },
+    {
+      "category": "other",
+      "name": "Temporary Religious Visa (Category 23G)",
+      "purpose": "For foreign religious workers assigned to serve with a religious congregation in Argentina on a longer-term basis.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 150,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cgmum.cancilleria.gob.ar/en/temporary-visas",
+      "notes": "Category 23G under Argentine immigration law. Fee is USD 150. Requires apostilled police clearance with Spanish translation, congregation letterhead letter, flight reservations, and 60-day travel insurance. Stay up to 1 year, multiple entry."
+    },
+    {
+      "category": "other",
+      "name": "AVE – Electronic Travel Authorization (Autorización de Viaje Electrónica)",
+      "purpose": "An electronic travel authorization (e-visa equivalent) that allows foreign nationals who hold a valid US visa or ESTA to enter Argentina without applying for a full consular visa.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 400,
+      "processing_days_min": 20,
+      "processing_days_max": 20,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://esing.cancilleria.gob.ar/en/electronic-travel-authorization-ave-4",
+      "notes": "Available to any nationality that would otherwise require an Argentine consular visa, provided they hold a valid US visa (B2, J, B1, O, P (P1-P2-P3), E, or H-1B) with at least 110 days remaining validity, or a current ESTA, or have had at least one US entry within the past 2 years. Cost: USD 400. Processed in 20 business days by National Directorate of Migrations. For tourism purposes only. Payment receipt does not guarantee entry - approval email required before travel. One 90-day extension available in-country. Indian, Chinese (PRC), and Dominican Republic nationals with qualifying US credentials may be exempt from the AVE fee entirely under 2025 resolutions."
+    },
+    {
+      "category": "investment",
+      "name": "Temporary Residence as Investor (Residencia Temporaria como Inversionista)",
+      "purpose": "For foreign nationals making a qualifying productive, commercial, or service investment in Argentina, granting temporary residence leading to permanent residence.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.argentina.gob.ar/servicio/obtener-una-residencia-temporaria-como-inversionista-no-mercosur",
+      "notes": "Minimum investment of ARS 1,500,000 in a productive, commercial, or service activity (amount subject to inflation erosion; verify current threshold with official source). Temporary residence granted for 1 year, renewable up to 3 years. After 2 years of residence and maintaining investment, holders become eligible for citizenship; at year 3 eligible for permanent residency. Separate tracks for MERCOSUR and non-MERCOSUR nationals. No sector restriction."
+    },
+    {
+      "category": "retirement",
+      "name": "Temporary Residence as Rentista / Pensionado (Passive Income Residence)",
+      "purpose": "For foreign nationals with regular passive income from abroad (pensions, annuities, dividends, rents) who wish to reside in Argentina.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.argentina.gob.ar/servicio/obtener-una-residencia-temporaria-como-rentista",
+      "notes": "For foreign nationals with regular passive income from abroad such as pensions, annuities, dividends, or rental income. Temporary residence for up to 2 years, renewable. Specific minimum income amount not publicly confirmed on official page. Path to permanent residency after 3 years, citizenship after 2 years of residence."
+    },
+    {
+      "category": "other",
+      "name": "Citizenship by Investment (Ciudadanía por Inversión - Decreto 524/2025)",
+      "purpose": "Direct citizenship grant for foreign nationals making a 'relevant' investment in Argentina, as defined by the Ministry of Economy, with no prior residency requirement.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.argentina.gob.ar/normativa/nacional/decreto-524-2025-415710",
+      "notes": "Established by Decreto 524/2025, signed by President Javier Milei on July 30, 2025. Amends Citizenship Law No. 346 by adding Article 2° bis. No prior residency required. Minimum investment threshold and eligible sectors deferred to Ministry of Economy regulation - not yet published as of research date. Processing: 30 business days from receipt of Agency report by the National Directorate of Migration. Security clearance required from Ministry of Security, UIF (financial intelligence unit), and SIDE (intelligence agency). Applications submitted to the Agency for Citizenship by Investment Programs under the Ministry of Economy."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official / Service Passport Visa Exemption",
+      "purpose": "Visa-free entry for holders of diplomatic, official, or service passports from eligible countries on official missions to Argentina.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://cnyor.cancilleria.gob.ar/en/content/diplomatic-no-visa",
+      "notes": "Holders of diplomatic, official, and service passports from a broad list of countries are exempt from visa requirements for official missions. Exempt countries include Albania, Algeria, Andorra, Angola, Armenia, Azerbaijan, Austria, Barbados, Belarus, Belize, Belgium, Bolivia, Botswana, Brazil, Bulgaria, Chile, China (up to 30 days), Colombia, Costa Rica, Croatia, Cuba, Cyprus, Czech Republic, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Estonia, Finland, France, Germany, Georgia, Greece, Grenada, Guatemala, Guyana, Haiti, Holy See, Honduras, Hong Kong, Hungary, India, Indonesia, Iceland, Israel, Italy, Jamaica, Japan, Kazakhstan, Korea, Latvia, Liechtenstein, Lithuania, Luxembourg, Malaysia, Malta, S.M.O. of Malta, Macedonia, Mexico, Monaco, Montenegro, Morocco, Mozambique, Netherlands, New Zealand, Nicaragua, Norway, Pakistan, Panama, Paraguay, Peru, Philippines, Poland, Portugal, Romania, Russia, Saint Lucia, Saint Kitts and Nevis, Saint Vincent and the Grenadines, San Marino, Serbia, Singapore, Slovakia, Slovenia, South Africa, Suriname, Spain, Sweden, Switzerland, Thailand, Trinidad and Tobago, Tunisia, Turkey, Ukraine, UAE, United Kingdom, Uruguay, Vatican, Venezuela, and Vietnam. China limited to 30 days. UN Laissez-Passer holders require a visa regardless of nationality."
+    },
+    {
+      "category": "other",
+      "name": "MERCOSUR Nationality Visa (Visa por Nacionalidad MERCOSUR)",
+      "purpose": "Facilitates temporary establishment in Argentina for nationals of MERCOSUR member and associate states under the MERCOSUR Residency Agreement framework.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 200,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cancilleria.gob.ar/en/services/visas/visa-nationality",
+      "notes": "Available to nationals of MERCOSUR member or associate states: Brazil, Paraguay, Uruguay, Bolivia, Chile, Colombia, Ecuador, Guyana, Peru, and Suriname. Provides temporary establishment for up to 2 years. Requires valid passport (6+ months validity, 2 blank pages), photographs, application form, proof of address, certificate of good conduct (age 16+), and consular fee (USD/EUR 200 equivalent). Consular interview required."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -840,7 +1097,7 @@
       },
       "level": "e_visa",
       "max_stay_days": 90,
-      "conditions": "Any nationality requiring an Argentine visa may apply for the AVE (Autorización de Viaje Electrónica / Electronic Travel Authorization) instead of a consular visa, provided they hold a valid US visa in categories B2, J, B1, O, P (P1-P2-P3), E, or H-1B and the visa remains valid for at least 110 days. Cost: USD 400. Valid for 90 days from issue, multiple entries. Processed within 20 business days by the National Directorate of Migrations. For tourism purposes only. Payment receipt does not guarantee entry — approval email required before travel. One 90-day extension available in-country.",
+      "conditions": "Any nationality requiring an Argentine visa may apply for the AVE (Autorización de Viaje Electrónica / Electronic Travel Authorization) instead of a consular visa, provided they hold a valid US visa in categories B2, J, B1, O, P (P1-P2-P3), E, or H-1B and the visa remains valid for at least 110 days. Cost: USD 400. Valid for 90 days from issue, multiple entries. Processed within 20 business days by the National Directorate of Migrations. For tourism purposes only. Payment receipt does not guarantee entry - approval email required before travel. One 90-day extension available in-country.",
       "source_url": "https://esing.cancilleria.gob.ar/en/electronic-travel-authorization-ave-4",
       "source_official": true
     },
@@ -873,7 +1130,7 @@
   ],
   "cbi": {
     "has_program": true,
-    "program_name": "Citizenship by Investment (Ciudadanía por Inversión) — Decreto 524/2025",
+    "program_name": "Citizenship by Investment (Ciudadanía por Inversión) - Decreto 524/2025",
     "official_url": "https://www.argentina.gob.ar/normativa/nacional/decreto-524-2025-415710",
     "source_official": true,
     "options": [
@@ -881,18 +1138,18 @@
         "type": "other",
         "min_amount": null,
         "currency": null,
-        "notes": "Investment must be classified as 'relevant' by the Ministry of Economy. Minimum investment threshold and eligible sectors not specified in the decree text — the Ministry of Economy is tasked with defining qualifying investments via separate regulation. The decree was signed July 30, 2025 and published in the Official Gazette July 31, 2025 (Boletín Oficial). Applications are submitted to the Agency for Citizenship by Investment Programs (Agencia de Programas de Ciudadanía por Inversión) under the Ministry of Economy. Security clearance required from multiple agencies (Ministry of Security, UIF, SIDE) prior to approval."
+        "notes": "Investment must be classified as 'relevant' by the Ministry of Economy. Minimum investment threshold and eligible sectors not specified in the decree text - the Ministry of Economy is tasked with defining qualifying investments via separate regulation. The decree was signed July 30, 2025 and published in the Official Gazette July 31, 2025 (Boletín Oficial). Applications are submitted to the Agency for Citizenship by Investment Programs (Agencia de Programas de Ciudadanía por Inversión) under the Ministry of Economy. Security clearance required from multiple agencies (Ministry of Security, UIF, SIDE) prior to approval."
       }
     ],
     "processing_time": "30 business days (from receipt of Agency report by the National Directorate of Migration)",
     "dual_citizenship_allowed": null,
     "residency_required": false,
-    "notes": "Established by Decreto 524/2025, signed by President Javier Milei on July 30, 2025. Amends Citizenship Law No. 346, adding Article 2° bis. No prior residency required — applicants qualify 'regardless of length of residence'. Investment amounts not specified in the decree; deferred to Ministry of Economy regulation. ARCA (tax authority) tasked with enabling processing of tax identification numbers for approved applicants. Official Gazette source: https://www.boletinoficial.gob.ar/detalleAviso/primera/329061/20250731"
+    "notes": "Established by Decreto 524/2025, signed by President Javier Milei on July 30, 2025. Amends Citizenship Law No. 346, adding Article 2° bis. No prior residency required - applicants qualify 'regardless of length of residence'. Investment amounts not specified in the decree; deferred to Ministry of Economy regulation. ARCA (tax authority) tasked with enabling processing of tax identification numbers for approved applicants. Official Gazette source: https://www.boletinoficial.gob.ar/detalleAviso/primera/329061/20250731"
   },
   "rbi": {
     "programs": [
       {
-        "name": "Temporary Residence as Investor (Non-MERCOSUR) — Residencia Temporaria como Inversionista",
+        "name": "Temporary Residence as Investor (Non-MERCOSUR) - Residencia Temporaria como Inversionista",
         "type": "investor",
         "min_amount": 1500000,
         "currency": "ARS",
@@ -900,10 +1157,10 @@
         "path_to_citizenship_years": 2,
         "official_url": "https://www.argentina.gob.ar/servicio/obtener-una-residencia-temporaria-como-inversionista-no-mercosur",
         "source_official": true,
-        "notes": "For non-MERCOSUR nationals. Minimum investment of ARS 1,500,000 in a productive, commercial, or service activity. Temporary residence granted for 1 year, renewable for up to 3 years. After 2 years of residence and maintaining the investment, holders become eligible for citizenship; at year 3 eligible for permanent residency. No sector restriction. Requires title of property, securities, or partnership participation proving the effective capital investment. CAUTION: ARS 1,500,000 is subject to erosion from inflation and may not reflect current real-terms threshold — official page returned 403 on re-check and amount could not be independently re-verified as of June 2026."
+        "notes": "For non-MERCOSUR nationals. Minimum investment of ARS 1,500,000 in a productive, commercial, or service activity. Temporary residence granted for 1 year, renewable for up to 3 years. After 2 years of residence and maintaining the investment, holders become eligible for citizenship; at year 3 eligible for permanent residency. No sector restriction. Requires title of property, securities, or partnership participation proving the effective capital investment. CAUTION: ARS 1,500,000 is subject to erosion from inflation and may not reflect current real-terms threshold - official page returned 403 on re-check and amount could not be independently re-verified as of June 2026."
       },
       {
-        "name": "Temporary Residence as Investor (MERCOSUR) — Residencia Temporaria como Inversionista Mercosur",
+        "name": "Temporary Residence as Investor (MERCOSUR) - Residencia Temporaria como Inversionista Mercosur",
         "type": "investor",
         "min_amount": 1500000,
         "currency": "ARS",
@@ -914,7 +1171,7 @@
         "notes": "For MERCOSUR member and associate state nationals (Brazil, Paraguay, Uruguay, Bolivia, Chile, Colombia, Ecuador, Guyana, Peru, Suriname). Same investment requirements as non-MERCOSUR investor category. Temporary residence for 1 year, renewable up to 3 years. ARS amount subject to same inflation caveat as non-MERCOSUR program."
       },
       {
-        "name": "Temporary Residence as Rentista (Passive Income) — Residencia Temporaria como Rentista",
+        "name": "Temporary Residence as Rentista (Passive Income) - Residencia Temporaria como Rentista",
         "type": "passive_income",
         "min_amount": null,
         "currency": null,
@@ -925,7 +1182,7 @@
         "notes": "For foreign nationals with regular passive income from abroad (pensions, annuities, dividends, rents, etc.). Specific minimum income amount not confirmed from official source. Temporary residence for up to 2 years, renewable."
       },
       {
-        "name": "Special Transitional Residency for Business/Investment Studies — Residencia Transitoria Especial para Negocios e Inversiones",
+        "name": "Special Transitional Residency for Business/Investment Studies - Residencia Transitoria Especial para Negocios e Inversiones",
         "type": "business",
         "min_amount": null,
         "currency": null,
@@ -940,7 +1197,7 @@
   "fast_track": {
     "programs": [
       {
-        "name": "Digital Nomad Transitional Residence — Residencia Transitoria como Nómada Digital",
+        "name": "Digital Nomad Transitional Residence - Residencia Transitoria como Nómada Digital",
         "category": "digital_nomad",
         "eligibility": "Foreign nationals from countries that do not require a tourist visa to enter Argentina, who provide remote services using digital or telecommunications means to individuals or legal entities domiciled abroad",
         "processing_time": "In-person process; standard migration fee schedule applies",
@@ -960,7 +1217,7 @@
     ]
   },
   "agreements": [
-    "MERCOSUR (member state — common market, freedom of movement/residency framework for nationals of member and associate states)"
+    "MERCOSUR (member state - common market, freedom of movement/residency framework for nationals of member and associate states)"
   ],
   "official_domains": [
     "cancilleria.gob.ar",
@@ -981,28 +1238,46 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "ADDED Vatican City State (VAT, 90 days visa-free) to visa_policy.visa_free — was present on the official Toronto consulate exemption page but missing from prior record",
-      "ADDED Dominican Republic conditional_access entry for US visa holders (basis=credential, type=visa, 90 days) — Resolution 316/2025 (July 22, 2025) establishes this alongside the previously recorded Green Card pathway; prior record only captured the Green Card entry for Dominican Republic nationals",
+      "ADDED Vatican City State (VAT, 90 days visa-free) to visa_policy.visa_free - was present on the official Toronto consulate exemption page but missing from prior record",
+      "ADDED Dominican Republic conditional_access entry for US visa holders (basis=credential, type=visa, 90 days) - Resolution 316/2025 (July 22, 2025) establishes this alongside the previously recorded Green Card pathway; prior record only captured the Green Card entry for Dominican Republic nationals",
       "CORRECTED Resolution 316/2025 date note for China entries: date is July 22, 2025 (Official Gazette publication date), not 'July 21, 2025' as stated in prior conditions text for China; corrected in conditions field",
-      "ADDED clarification note in RBI investor program notes warning that ARS 1,500,000 minimum amount could not be re-verified from the official page (returned 403) and is likely eroded by inflation — flagged as a data quality concern",
+      "ADDED clarification note in RBI investor program notes warning that ARS 1,500,000 minimum amount could not be re-verified from the official page (returned 403) and is likely eroded by inflation - flagged as a data quality concern",
       "VERIFIED: India conditional_access entries (US visa and Green Card pathways) confirmed accurate via Sydney consulate page",
       "VERIFIED: China conditional_access entries confirmed accurate via Hong Kong consulate page",
       "VERIFIED: AVE (e-visa) program details confirmed accurate (USD 400, 20 business days, 90 days validity, qualifying US visa categories) via Singapore consulate AVE page",
-      "VERIFIED: Diplomatic/official/service passport exemption list confirmed via NYC consulate page — no changes needed",
-      "VERIFIED: CBI Decreto 524/2025 details confirmed — no minimum amount published in decree text, amount deferred to Ministry of Economy; record is accurate",
-      "NOTE: cgmum.cancilleria.gob.ar page for India US visa exemption returned HTTP 404 — page may have been removed or migrated; India entry confirmed via Sydney consulate (csidn) and AVE page instead"
+      "VERIFIED: Diplomatic/official/service passport exemption list confirmed via NYC consulate page - no changes needed",
+      "VERIFIED: CBI Decreto 524/2025 details confirmed - no minimum amount published in decree text, amount deferred to Ministry of Economy; record is accurate",
+      "NOTE: cgmum.cancilleria.gob.ar page for India US visa exemption returned HTTP 404 - page may have been removed or migrated; India entry confirmed via Sydney consulate (csidn) and AVE page instead",
+      "ADDED visa_types array (June 2026): extracted 16 distinct visa/immigration categories from official consulate pages (Toronto ctoro, Mumbai cgmum) covering tourist, business, work (23A/23E), student (transitory/23J), digital nomad, religious (transitory/23G), seaman, AVE e-visa, investor residence, rentista/pensionado, CBI, diplomatic exemption, and MERCOSUR nationality visa",
+      "2026-06-27 RE-VERIFICATION: Toronto consulate visa-free list (ctoro) re-fetched and confirmed - no new nationalities added, no existing entries removed; all 90-day/60-day/30-day stay limits verified as unchanged. No new unconditional ordinary-passport visa-free agreements found via web search.",
+      "2026-06-27 VERIFIED: India conditional_access (US visa B1/B2, J, O, P, E, H-1B and Green Card pathways) re-confirmed via Sydney consulate (csidn.cancilleria.gob.ar) - 90-day stay confirmed.",
+      "2026-06-27 VERIFIED: China conditional_access (US visa and Green Card pathways, 30 days) re-confirmed via HK consulate (chong.cancilleria.gob.ar/en/entry-argentina-peoples-republic-china-passport-tourism-or-business-without-visa).",
+      "2026-06-27 VERIFIED: AVE details re-confirmed via Singapore consulate AVE page (esing.cancilleria.gob.ar) - USD 400, 20 business days, 90 days validity, qualifying US visa categories unchanged.",
+      "2026-06-27 VERIFIED: Diplomatic/official/service passport exemption country list re-confirmed via NYC consulate (cnyor.cancilleria.gob.ar/en/content/diplomatic-no-visa) - list unchanged; China diplomatic passport limited to 30 days confirmed.",
+      "2026-06-27 NOTE: Dominican Republic Green Card pathway re-confirmed via NYC consulate node/1817 - only the Green Card pathway was explicitly shown in this re-fetch; US visa pathway for Dominican Republic not independently confirmed from that page on this run (see gaps).",
+      "2026-06-27 NOTE: Thailand embassy page (etail.cancilleria.gob.ar) confirms Thailand is in the 90-day visa-free list with no policy changes noted; last updated October 2025 on that page.",
+      "2026-06-29 RE-VERIFICATION: Toronto consulate visa-free list (ctoro.cancilleria.gob.ar) re-fetched — complete country list confirmed unchanged; all stay limits (90-day / 60-day / 30-day) verified as accurate. No new unconditional ordinary-passport visa-free agreements found via web search.",
+      "2026-06-29 VERIFIED: AVE (Electronic Travel Authorization) re-confirmed via Singapore consulate AVE page (esing.cancilleria.gob.ar) — USD 400, 20 business days, 90-day validity, qualifying US visa categories (B2, J, B1, O, P, E, H-1B) unchanged. No new nationality-specific exemptions beyond India, China, Dominican Republic.",
+      "2026-06-29 VERIFIED: China conditional_access (US visa and Green Card pathways, 30-day max stay) re-confirmed via Hong Kong consulate (chong.cancilleria.gob.ar) — no changes; Green Card and qualifying US visa categories confirmed.",
+      "2026-06-29 VERIFIED: India conditional_access (US visa B1/B2, J, O, P, E, H-1B and Green Card pathways, 90-day max stay) re-confirmed via Sydney consulate (csidn.cancilleria.gob.ar) — Green Card pathway effective January 15, 2026 confirmed; no changes.",
+      "2026-06-29 NOTE: Dominican Republic conditional_access — NYC consulate node/1817 re-fetched; Green Card pathway (effective January 15, 2026) confirmed. US visa (B1/B2 etc.) pathway for Dominican Republic nationals NOT independently confirmed from this page in this run — only the Green Card route was explicitly shown. US visa pathway entry in conditional_access retained per preservation rule; gap remains as flagged.",
+      "2026-06-29 NOTE: No changes made to any visa_free, visa_on_arrival, eta, or e_visa nationality lists — all entries confirmed accurate against live official pages. Record is current as of this validation."
     ],
     "gaps": [
-      "Exact minimum investment amount for CBI (Decreto 524/2025) not yet published — the decree defers to Ministry of Economy regulation; no official figure confirmed as of June 2026",
+      "Exact minimum investment amount for CBI (Decreto 524/2025) not yet published - the decree defers to Ministry of Economy regulation; no official figure confirmed as of June 2026",
       "Eligible investment sectors for CBI not formally specified in the decree text itself",
       "Dual citizenship allowance under CBI program not explicitly addressed in Decreto 524/2025 text",
       "Minimum income requirement for Rentista (passive income) residency not confirmed from official page",
-      "RBI investor minimum ARS 1,500,000 amount could not be re-verified from official argentina.gob.ar page (returned 403 on re-check June 2026) — ARS amount is likely significantly eroded by inflation and may no longer reflect real-terms policy threshold",
-      "Complete official list of all visa-requiring nationalities not accessible from a single official page — Toronto consulate page noted as undergoing updates",
-      "No official confirmation found for OCI (Overseas Citizen of India) card as a standalone conditional entry basis for Argentina — exemption for Indian nationals is tied to valid US visa or Green Card only",
-      "No official confirmation found for Schengen visa/residence permit or UK/Canada/Australia visa as conditional entry basis for Argentina — only US credentials confirmed",
+      "RBI investor minimum ARS 1,500,000 amount could not be re-verified from official argentina.gob.ar page (returned 403 on re-check June 2026) - ARS amount is likely significantly eroded by inflation and may no longer reflect real-terms policy threshold",
+      "Complete official list of all visa-requiring nationalities not accessible from a single official page - Toronto consulate page noted as undergoing updates",
+      "No official confirmation found for OCI (Overseas Citizen of India) card as a standalone conditional entry basis for Argentina - exemption for Indian nationals is tied to valid US visa or Green Card only",
+      "No official confirmation found for Schengen visa/residence permit or UK/Canada/Australia visa as conditional entry basis for Argentina - only US credentials confirmed",
       "Diplomatic/service/official passport exemption list does not specify individual bilateral agreement names or signing dates",
-      "Dominican Republic conditional entry via US visa: while Resolution 316/2025 is confirmed via KPMG advisory (not the primary Argentine government domain), the specific Argentine government consulate URL on record (cnyor.cancilleria.gob.ar/en/node/1817) was not re-fetched due to tool call budget — this URL previously confirmed the Green Card pathway; the US visa pathway for Dominican Republic requires cross-verification against a primary official domain page when budget allows"
+      "Dominican Republic conditional entry via US VISA (Resolution 316/2025): the NYC consulate node/1817 page was re-fetched on 2026-06-27 but only showed the Green Card pathway for Dominican Republic nationals. The US visa pathway (B1/B2 etc.) for Dominican Republic nationals, while documented from KPMG advisory and AVE page references, was NOT independently confirmed from that specific official page in this run - the AVE page (esing.cancilleria.gob.ar) also did not mention Dominican Republic in the 2026-06-27 re-fetch. The US visa pathway entry in conditional_access is retained as-is per the preservation rule; cross-verification against a DR-specific official government page is recommended when budget allows.",
+      "Transit visa (visa de transito) details not confirmed from official pages - multiple official consulate URLs returned 403/404; transit category may exist but could not be documented with official source",
+      "Working holiday visa: no official Argentine government page confirmed existence of a working holiday program; category not documented",
+      "Medical visa: not found as a distinct official category; visitors for medical purposes may use tourist visa",
+      "Family reunification visa: exists under Argentine immigration law (Law 25.871) but specific consulate page details not retrieved due to 403/404 responses"
     ]
   },
   "outbound_official": {
@@ -1014,7 +1289,7 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "no official Argentina government outbound visa-list page located; rely on destination-side data. Argentina's Ministry of Foreign Affairs (cancilleria.gob.ar) publishes a general travel-advice page ('Requisitos de ingreso a otros países') that directs Argentine citizens to contact destination country embassies and consulates for visa requirements — it does not enumerate a country-by-country visa-free list for Argentine ordinary-passport holders. Individual mission pages (e.g. cgtel.cancilleria.gob.ar for Israel ETA, cgest.cancilleria.gob.ar for Turkey) address specific destinations in isolation but there is no centralised origin-side outbound list analogous to India's MEA vffin page."
+    "notes": "no official Argentina government outbound visa-list page located; rely on destination-side data. Argentina's Ministry of Foreign Affairs (cancilleria.gob.ar) publishes a general travel-advice page ('Requisitos de ingreso a otros países') that directs Argentine citizens to contact destination country embassies and consulates for visa requirements - it does not enumerate a country-by-country visa-free list for Argentine ordinary-passport holders. Individual mission pages (e.g. cgtel.cancilleria.gob.ar for Israel ETA, cgest.cancilleria.gob.ar for Turkey) address specific destinations in isolation but there is no centralised origin-side outbound list analogous to India's MEA vffin page."
   },
   "sources_checked": [
     "https://ctoro.cancilleria.gob.ar/en/passport-holders-exempt-visa-requirements-certain-immigration-categories",
@@ -1044,6 +1319,23 @@
     "https://www.argentina.gob.ar/servicio/obtener-una-residencia-temporaria-como-inversionista-mercosur",
     "https://www.argentina.gob.ar/tema/extranjeros/invertir",
     "https://www.mercosur.int/en/about-mercosur/mercosur-countries",
-    "https://kpmg.com/xx/en/our-insights/gms-flash-alert/flash-alert-2025-166.html"
+    "https://kpmg.com/xx/en/our-insights/gms-flash-alert/flash-alert-2025-166.html",
+    "https://ctoro.cancilleria.gob.ar/en/consular-services",
+    "https://ctoro.cancilleria.gob.ar/en/student-visa",
+    "https://cgmum.cancilleria.gob.ar/en/consular-services",
+    "https://cgmum.cancilleria.gob.ar/en/seaman-visa",
+    "https://cgmum.cancilleria.gob.ar/en/transitory-religious-visa",
+    "https://cgmum.cancilleria.gob.ar/en/transitory-student-visa",
+    "https://cgmum.cancilleria.gob.ar/en/temporary-visas",
+    "https://www.argentina.gob.ar/migraciones",
+    "https://www.argentina.gob.ar/servicio/obtener-una-residencia-temporaria-como-rentista",
+    "https://cnyor.cancilleria.gob.ar/en/content/diplomatic-no-visa",
+    "https://chong.cancilleria.gob.ar/en/entry-argentina-peoples-republic-china-passport-tourism-or-business-without-visa",
+    "https://csidn.cancilleria.gob.ar/en/visas-foreign-citizens",
+    "https://esing.cancilleria.gob.ar/en/electronic-travel-authorization-ave-4",
+    "https://etail.cancilleria.gob.ar/en/entry-requirements-argentina-2",
+    "https://cancilleria.gob.ar/en/services/visas/visa-nationality",
+    "https://cnyor.cancilleria.gob.ar/en/node/1817",
+    "https://cnyor.cancilleria.gob.ar/en/node/2284"
   ]
 }

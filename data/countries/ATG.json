@@ -617,7 +617,15 @@
         "nationality": "China",
         "iso3": "CHN",
         "max_stay_days": 30,
-        "notes": "Citizens of China are exempt from visa requirements if travel does not exceed 30 days. Footnote on official page: 'Citizens of China and Cuba are exempt from the visa requirements if their travel do not exceed thirty (30) days.' China is listed in the Other Countries table; Cuba is mentioned only in the footnote and does not appear as a separate table entry.",
+        "notes": "Citizens of China are exempt from visa requirements if travel does not exceed 30 days. Footnote on official page: 'Citizens of China and Cuba are exempt from the visa requirements if their travel do not exceed thirty (30) days.' China appears in the Other Countries table and also in the footnote.",
+        "source_url": "https://immigration.gov.ag/visa-services/countries-exempt-from-visa/",
+        "source_official": true
+      },
+      {
+        "nationality": "Cuba",
+        "iso3": "CUB",
+        "max_stay_days": 30,
+        "notes": "Citizens of Cuba are exempt from visa requirements if travel does not exceed 30 days. This is stated explicitly in the official page footnote: 'Citizens of China and Cuba are exempt from the visa requirements if their travel do not exceed thirty (30) days.' Cuba is cited in the footnote text of immigration.gov.ag/visa-services/countries-exempt-from-visa/ and confirmed by official search snippets from that page. Cuba does not appear as a separate row in the three main exemption tables but is expressly included by the official footnote.",
         "source_url": "https://immigration.gov.ag/visa-services/countries-exempt-from-visa/",
         "source_official": true
       },
@@ -832,7 +840,7 @@
       "https://immigration.gov.ag/visa-services/general-visa-information/",
       "https://immigration.gov.ag/visa-services/visa-application-process/"
     ],
-    "notes": "Official immigration.gov.ag pages scraped successfully via Firecrawl (June 2026). The complete enumerated country-by-country list from immigration.gov.ag/visa-services/countries-exempt-from-visa/ is now reflected per-nationality in visa_free. Cuba appears ONLY in the footnote text of the official page and is NOT listed as a table entry — its visa-free status for 30 days is referenced in the footnote ('Citizens of China and Cuba are exempt from the visa requirements if their travel do not exceed thirty (30) days') but Cuba does not appear in any of the three exemption tables; Cuba has been noted as a gap. Citizens not on the exempt list require a visa (eVisa). Cruise ship visitors arriving morning/departing same evening and same-day transit passengers staying within controlled airport space are not mentioned on the fetched pages."
+    "notes": "Official immigration.gov.ag pages scraped successfully via Firecrawl (June 2026). The complete enumerated country-by-country list from immigration.gov.ag/visa-services/countries-exempt-from-visa/ is now reflected per-nationality in visa_free. Cuba appears ONLY in the footnote text of the official page and is NOT listed as a table entry - its visa-free status for 30 days is referenced in the footnote ('Citizens of China and Cuba are exempt from the visa requirements if their travel do not exceed thirty (30) days') but Cuba does not appear in any of the three exemption tables; Cuba has been noted as a gap. Citizens not on the exempt list require a visa (eVisa). Cruise ship visitors arriving morning/departing same evening and same-day transit passengers staying within controlled airport space are not mentioned on the fetched pages."
   },
   "conditional_access": [
     {
@@ -989,8 +997,8 @@
     ],
     "processing_time": "Not stated verbatim on cip.gov.ag fetched pages",
     "dual_citizenship_allowed": true,
-    "residency_required": false,
-    "notes": "Program established 2013. August 2024 price increase raised NDF minimum from US$100,000 to US$230,000. October 2025 reform: mandatory physical residency increased from 5 days to 30 days within the first 5 years of obtaining citizenship (multiple short visits count toward the 30-day total). Mandatory interview (in-person or remote) introduced for all applicants. Restricted Countries List (Afghanistan, Iran, North Korea, Somalia, Yemen, Sudan) confirmed on cip.gov.ag/faq/ — nationals may apply only if they migrated before age of majority OR maintained permanent residence outside those countries for at least 10 years. Applicants must take an oath of allegiance either in Antigua and Barbuda or at a diplomatic mission abroad. All fees subject to change per official schedule page."
+    "residency_required": true,
+    "notes": "Program established 2013. August 2024 price increase raised NDF minimum from US$100,000 to US$230,000. ECCIRA framework (signed September 2025): all five Eastern Caribbean CBI states (Antigua and Barbuda, Dominica, Grenada, Saint Kitts and Nevis, and Saint Lucia) have now ratified the ECCIRA agreement. Saint Lucia completed ratification after its December 1, 2025 general election reconstituted the National Assembly; implementation was formally postponed to June 2026 pending this ratification. As of June 2026, all five jurisdictions have ratified; the 30-day aggregate physical residency requirement within the first 5 years, mandatory interview protocols for all applicants and dependents aged 12+, enhanced due diligence, and biometric data collection are entering into force in June 2026. Applications submitted before June 30, 2026 bypass the new 30-day physical residency requirement. Post-June 2026 applicants are subject to the 30-day minimum aggregate physical presence within first 5 years (with a minimum of 5 days in the first year) plus mandatory participation in an integration or orientation programme. Restricted Countries List (Afghanistan, Iran, North Korea, Somalia, Yemen, Sudan) confirmed on cip.gov.ag/faq/ - nationals may apply only if they migrated before age of majority OR maintained permanent residence outside those countries for at least 10 years. Applicants must take an oath of allegiance either in Antigua and Barbuda or at a diplomatic mission abroad. All fees subject to change per official schedule page."
   },
   "rbi": {
     "programs": [
@@ -1026,7 +1034,7 @@
         "status": "DISCONTINUED",
         "discontinued_date": "2025-11-15",
         "eligibility": "Programme closed to new applications as of November 15, 2025. Previously required remote work capability and demonstrated minimum annual income of US$50,000 for each year of the 2-year stay. Valid medical insurance and police clearance were required.",
-        "processing_time": "Not applicable — programme discontinued",
+        "processing_time": "Not applicable - programme discontinued",
         "official_url": "https://nomad.gov.ag/ui/",
         "source_official": true,
         "notes": "The Antigua and Barbuda NDR Programme was officially discontinued effective November 15, 2025 per an official government announcement (ab.gov.ag). Previously: fees were US$1,500 (single applicant), US$2,000 (couple), US$3,000 (family of 3 or more); granted special-resident authorisation valid for up to 2 years; included income tax exemption on foreign-sourced income."
@@ -1034,9 +1042,9 @@
     ]
   },
   "agreements": [
-    "CARICOM (Caribbean Community) — free movement of skilled nationals under CSME",
-    "OECS (Organisation of Eastern Caribbean States) — free movement under Revised Treaty of Basseterre / OECS Economic Union; indefinite stay for OECS Protocol State nationals (Dominica, Grenada, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines)",
-    "Commonwealth of Nations — preferential entry treatment among member states"
+    "CARICOM (Caribbean Community) - free movement of skilled nationals under CSME",
+    "OECS (Organisation of Eastern Caribbean States) - free movement under Revised Treaty of Basseterre / OECS Economic Union; indefinite stay for OECS Protocol State nationals (Dominica, Grenada, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines)",
+    "Commonwealth of Nations - preferential entry treatment among member states"
   ],
   "official_domains": [
     "immigration.gov.ag",
@@ -1050,27 +1058,31 @@
     "completeness": "high",
     "validation_notes": [
       "CHANGED: visa_free expanded from 6 broad-group entries to per-nationality entries covering all 100+ countries enumerated on the official immigration.gov.ag page (scraped directly via Firecrawl June 2026). Previous record used groupings ('Most EU citizens', 'CARICOM member state nationals', 'Commonwealth countries nationals') which were replaced by individual-country entries matching the official tables exactly.",
-      "CHANGED: Cuba removed from visa_free table entries. The official page footnote says 'Citizens of China and Cuba are exempt from the visa requirements if their travel do not exceed thirty (30) days' but Cuba does NOT appear in any of the three country tables on the page. Cuba's status is noted as a gap pending future official confirmation.",
-      "CHANGED: USA, Japan, South Korea, UAE, Russia, Switzerland, Norway, Brazil, Mexico, Argentina, Turkey, and many other countries added to visa_free — they appeared in the 'Other Countries' table on immigration.gov.ag which was not previously retrieved.",
+      "CHANGED (2026-06-27): Cuba ADDED to visa_free with max_stay_days=30. The official immigration.gov.ag page footnote ('Citizens of China and Cuba are exempt from the visa requirements if their travel do not exceed thirty (30) days') was confirmed by official WebSearch snippets from immigration.gov.ag on 2026-06-27. Cuba was previously excluded as a gap; the footnote constitutes official confirmation of the 30-day exemption. Cuba does not appear as a table row but the footnote is authoritative.",
+      "CHANGED (2026-06-27): CBI notes corrected. Previous record overstated the October 2025 ECCIRA reforms as already enacted. Verification (2026-06-27) confirms that the 30-day aggregate residency requirement and mandatory interview protocols were proposed in September 2025 but implementation was formally postponed to mid-2026 pending Saint Lucia's parliamentary ratification. As of June 27, 2026, these requirements are NOT yet in force. The residency_required field remains false.",
+      "CHANGED: USA, Japan, South Korea, UAE, Russia, Switzerland, Norway, Brazil, Mexico, Argentina, Turkey, and many other countries added to visa_free - they appeared in the 'Other Countries' table on immigration.gov.ag which was not previously retrieved.",
       "CHANGED: Serbia added to visa_free (appears in the EU table on the official page though Serbia is not an EU member; classified as-listed with explanatory note).",
       "CHANGED: conditional_access UK credential subtype updated from 'ILR / settlement (Indefinite Leave to Remain or UK Resident Card)' to 'UK Resident Card (residence permit)' matching exact wording on official VoA page.",
       "CHANGED: fast_track Nomad Digital Residence Programme marked as DISCONTINUED effective 2025-11-15 per official government announcement (ab.gov.ag); was previously listed as active.",
-      "CHANGED: CBI residency requirement updated from '5 days within first 5 years' to '30 days within first 5 years' reflecting October 2025 parliamentary reform.",
-      "CHANGED: CBI notes updated to reflect mandatory interview requirement introduced in October 2025 reform.",
       "CHANGED: CBI processing_time set to 'Not stated verbatim on cip.gov.ag fetched pages' (removed the previously unverified 3-6 month claim).",
-      "CONFIRMED: CBI investment minimums (NDF US$230,000, Real Estate US$300,000, Business US$1,500,000 solo / US$5,000,000 joint / US$400,000 per person, UWI US$260,000) verified on cip.gov.ag investment option pages.",
-      "CONFIRMED: CBI due diligence fees (US$8,500 principal, US$5,000 spouse, free child 0-11, US$2,000 child 12-17, US$4,000 adult 18+ / parent 55+) verified on cip.gov.ag/schedule-of-fees/.",
-      "CONFIRMED: VoA credential list (US visa/Green Card, Canadian visa/PR, UK visa/Resident Card, Schengen visa/Resident Card) verified directly on immigration.gov.ag/visa-services/visa-on-arrival/.",
-      "CONFIRMED: Restricted Countries List (Afghanistan, Iran, North Korea, Somalia, Yemen, Sudan) verified on cip.gov.ag/faq/."
+      "CONFIRMED (2026-06-27): CBI investment minimums (NDF US$230,000, Real Estate US$300,000, Business US$1,500,000 solo / US$5,000,000 joint / US$400,000 per person, UWI US$260,000) re-verified on cip.gov.ag/investment-options/ndf/ and cip.gov.ag/schedule-of-fees/.",
+      "CONFIRMED (2026-06-27): CBI due diligence fees (US$8,500 principal, US$5,000 spouse, free child 0-11, US$2,000 child 12-17, US$4,000 adult 18+) re-verified on cip.gov.ag/schedule-of-fees/.",
+      "CONFIRMED (2026-06-27): Restricted Countries List (Afghanistan, Iran, North Korea, Somalia, Yemen, Sudan) re-verified on cip.gov.ag/faq/.",
+      "UNCONFIRMED (2026-06-27): immigration.gov.ag returned SSL certificate errors for all direct WebFetch attempts on 2026-06-27. The visa_free list, VoA details, and eVisa information from immigration.gov.ag could not be re-confirmed by direct fetch. The existing data from the prior Firecrawl fetch (June 2026) is preserved per the data preservation policy. Cuba exemption confirmed by official WebSearch snippet from immigration.gov.ag.",
+      "CHANGED (2026-06-29): CBI residency_required corrected from false to true. ECCIRA framework ratification is now complete by all five Eastern Caribbean CBI states including Saint Lucia (post-December 2025 election ratification). The 30-day aggregate physical residency requirement is entering into force in June 2026. Applications before June 30, 2026 bypass the requirement; post-June 2026 applicants face the 30-day minimum within first 5 years. Source: multiple secondary sources reporting on ECCIRA June 2026 launch (bayatgroup.com, alphaimmigration.net, citizensinternational.com). Direct official confirmation from cip.gov.ag not obtained in this run (page did not surface ECCIRA implementation announcement); CBI notes updated to reflect best available public reporting of confirmed ratification.",
+      "CONFIRMED (2026-06-29): CBI investment minimums and fee schedule re-verified from cip.gov.ag/schedule-of-fees/ (direct fetch). NDF US$230,000, Real Estate US$300,000, Business US$1,500,000 solo / US$5,000,000 joint / US$400,000 per person, UWI Fund US$260,000, processing US$10,000 single / US$20,000 family - all confirmed unchanged.",
+      "CONFIRMED (2026-06-29): CBI Restricted Countries List (Afghanistan, Iran, North Korea, Somalia, Yemen, Sudan) re-verified on cip.gov.ag/faq/ (direct fetch).",
+      "UNCONFIRMED (2026-06-29): immigration.gov.ag SSL certificate errors continue. The visa_free list and VoA conditional_access details could not be re-confirmed by direct fetch. Official WebSearch snippet confirms the China+Cuba 30-day footnote remains on the live immigration.gov.ag page. Existing visa_free data preserved per data preservation policy."
     ],
     "gaps": [
-      "Cuba: The official page footnote cites Cuba for the 30-day exemption alongside China, but Cuba does not appear in any of the three enumption tables on immigration.gov.ag/visa-services/countries-exempt-from-visa/. Cuba's visa-free status could not be confirmed from the table; excluded from visa_free pending clarification.",
+      "immigration.gov.ag SSL certificate errors on 2026-06-27: direct WebFetch failed for all immigration.gov.ag pages (countries-exempt-from-visa, visa-on-arrival, general-visa-information, visa-application-process). Visa_free list, VoA details cannot be re-confirmed until SSL is resolved.",
+      "Cuba visa_free entry (added 2026-06-27) is based on official page footnote confirmed via WebSearch snippet, not a direct page fetch. Source URL is official (immigration.gov.ag) but direct page verification was blocked by SSL error.",
+      "ECCIRA 30-day residency requirement: as of 2026-06-29 all five Eastern Caribbean CBI states have ratified. Implementation entering into force June 2026. Applications before June 30, 2026 reportedly bypass the requirement. Exact enforcement commencement date for new applications not confirmed from cip.gov.ag direct fetch — check cip.gov.ag for official June-July 2026 announcement. CBI notes and residency_required have been updated to reflect confirmed ratification.",
       "legalaffairs.gov.ag Permanent Residence Scheme PDF could not be fetched (SSL/404 errors); RBI details for the tax residency scheme are from previous validated record.",
       "CBI processing time (3-6 months) is widely cited in secondary sources but not found verbatim on cip.gov.ag pages fetched.",
-      "UAE visa waiver agreement (diplomatic/official passports) mentioned in earlier research — terms and whether it also covers ordinary passports not confirmed from the current official immigration.gov.ag page fetch.",
+      "UAE visa waiver agreement (diplomatic/official passports) mentioned in earlier research - terms and whether it also covers ordinary passports not confirmed from the current official immigration.gov.ag page fetch.",
       "The official page lists 'United Kingdom (overseas Territories) Vanuatu' in a single cell; exact scope of UK overseas territories included is unclear from the page formatting.",
-      "nomad.gov.ag main portal returned SSL error; NDR discontinuation confirmed from search snippets citing an official ab.gov.ag PDF announcement, but the PDF itself returned 404 at time of check.",
-      "October 2025 CBI reforms (30-day residency requirement, mandatory interviews) confirmed from multiple secondary sources citing parliamentary legislation but not yet reflected on cip.gov.ag FAQ or main pages fetched."
+      "nomad.gov.ag main portal returned SSL error; NDR discontinuation confirmed from search snippets citing an official ab.gov.ag PDF announcement, but the PDF itself returned 404 at time of check."
     ]
   },
   "outbound_official": {
@@ -1220,8 +1232,175 @@
     ],
     "e_visa": [],
     "eta": [],
-    "notes": "Source is cip.gov.ag (Citizenship by Investment Programme), an official .gov.ag domain. The page section 'Reciprocal Visa-free Access for Diplomatic, Official and/or Ordinary Passport holders of Antigua and Barbuda' lists countries where ATG ordinary passport holders are admitted without a prior consular visa. Countries marked * or ++ are visa-on-arrival (classified under visa_on_arrival). Countries marked ** (Argentina, United Arab Emirates) are reciprocal only for Diplomatic and Official passports — NOT ordinary passports — and are excluded from both lists here. The foreignaffairs.gov.ag domain (Ministry of Foreign Affairs, Trade and Barbuda Affairs) exists but had SSL certificate errors preventing fetch at time of research (June 2026); no dedicated outbound visa-free page was found on that domain or any other official ATG government domain. No date stamp appears on the cip.gov.ag page."
+    "notes": "Source is cip.gov.ag (Citizenship by Investment Programme), an official .gov.ag domain. The page section 'Reciprocal Visa-free Access for Diplomatic, Official and/or Ordinary Passport holders of Antigua and Barbuda' lists countries where ATG ordinary passport holders are admitted without a prior consular visa. Countries marked * or ++ are visa-on-arrival (classified under visa_on_arrival). Countries marked ** (Argentina, United Arab Emirates) are reciprocal only for Diplomatic and Official passports - NOT ordinary passports - and are excluded from both lists here. The foreignaffairs.gov.ag domain (Ministry of Foreign Affairs, Trade and Barbuda Affairs) exists but had SSL certificate errors preventing fetch at time of research (June 2026); no dedicated outbound visa-free page was found on that domain or any other official ATG government domain. No date stamp appears on the cip.gov.ag page."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visa Exemption (Visa-Free Entry)",
+      "purpose": "Short-stay tourism or visit for nationals of exempt countries without requiring a prior visa. Covers leisure, visiting family/friends, and short business visits.",
+      "max_stay_days": 180,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://immigration.gov.ag/visa-services/countries-exempt-from-visa/",
+      "notes": "Nationals of EU countries, Commonwealth countries, and other listed countries (100+ total) are exempt from visa requirements. Standard max stay is 180 days (6 months). OECS nationals (Dominica, Grenada, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines) enjoy indefinite stay rights. China and Cuba are limited to 30 days per official footnote. A valid passport, return/onward ticket, accommodation confirmation, and proof of sufficient funds are required."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival (VoA)",
+      "purpose": "Single-entry tourist visa granted at port of entry for holders of valid US, Canadian, UK, or Schengen visas or residence permits who would otherwise require a visa.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 100,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://immigration.gov.ag/visa-services/visa-on-arrival/",
+      "notes": "Available to any ordinary passport holder who holds a valid US visa, US Permanent Resident Card (Green Card), Canadian visa, Canadian Permanent Resident Card, UK visa or Resident Card, or Schengen visa or Resident Card. Fee is US$100 per passenger including children, or equivalent Eastern Caribbean Currency. Non-extendable and non-convertible except in medical emergencies. Not applicable to diplomatic or official passport holders."
+    },
+    {
+      "category": "tourist",
+      "name": "eVisa (Electronic Visa)",
+      "purpose": "Pre-travel visa for nationals not exempt from visa requirements, applied for online before travel for tourism, business visits, or other short-stay purposes.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://evisa.immigration.gov.ag/agEvisa-app/",
+      "notes": "All visa applications are processed online via the official eVisa portal at https://evisa.immigration.gov.ag/agEvisa-app/. Processing time is approximately 5 working days (non-guaranteed). An approval or denial letter is sent once processed. A soft or hard copy of the eVisa should be carried when travelling. Immigration officers at ports of entry reserve the right to deny entry even to eVisa holders."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa (eVisa)",
+      "purpose": "Allows foreign nationals not exempt from visa requirements to enter Antigua and Barbuda for business meetings, conferences, and short-term commercial activities.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.ag/visa-services/visa-application-process/",
+      "notes": "Applied for through the eVisa portal. Nationals from exempt countries do not need a visa for business visits up to 180 days. Specific fee for business category not publicly listed on official pages fetched."
+    },
+    {
+      "category": "investment",
+      "name": "Citizenship by Investment - National Development Fund (NDF)",
+      "purpose": "Grants full Antigua and Barbuda citizenship to qualifying investors who make a non-refundable contribution to the National Development Fund.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 230000,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cip.gov.ag/",
+      "notes": "Minimum contribution US$230,000 (non-refundable) to the NDF. Additional fees: processing US$10,000 (single) or US$20,000 (family up to 4); due diligence US$8,500 (principal), US$5,000 (spouse), free (child 0-11), US$2,000 (child 12-17), US$4,000 (adult dependent 18+); passport US$300/person. Physical residency requirement: 30 days within the first 5 years. Mandatory interview required. Restricted nationalities from Afghanistan, Iran, North Korea, Somalia, Yemen, Sudan face additional scrutiny. Applications via licensed agents only."
+    },
+    {
+      "category": "investment",
+      "name": "Citizenship by Investment - Real Estate",
+      "purpose": "Grants full Antigua and Barbuda citizenship to qualifying investors who purchase approved real estate at a minimum value.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 300000,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cip.gov.ag/",
+      "notes": "Minimum real estate purchase of US$300,000 in an approved project. Property cannot be re-sold until 5 years after purchase unless an alternative approved real estate is purchased. Same processing, due diligence, and passport fee structure as NDF option. Physical residency: 30 days within first 5 years. Mandatory interview required."
+    },
+    {
+      "category": "investment",
+      "name": "Citizenship by Investment - Business Investment",
+      "purpose": "Grants full Antigua and Barbuda citizenship to qualifying investors who invest in an approved business.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 1500000,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cip.gov.ag/",
+      "notes": "Single applicant: minimum US$1,500,000 in an approved business. Joint investment (minimum 2 persons): total US$5,000,000 with each person contributing at least US$400,000. Business must receive prior CIU approval. fee_usd reflects single applicant minimum. Same processing, due diligence, and passport fee structure. Physical residency: 30 days within first 5 years. Mandatory interview required."
+    },
+    {
+      "category": "investment",
+      "name": "Citizenship by Investment - UWI Fund",
+      "purpose": "Grants full Antigua and Barbuda citizenship to qualifying investors who contribute to the University of the West Indies Fund, including a scholarship benefit.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 260000,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cip.gov.ag/",
+      "notes": "Minimum US$260,000 contribution (processing fees included) for a family of 6 or more. One family member receives a one-year tuition-only scholarship at UWI. Families of 7+ incur an additional US$10,000 per additional dependent. Available only to families of 6 or more. Physical residency: 30 days within first 5 years. Mandatory interview required."
+    },
+    {
+      "category": "retirement",
+      "name": "Permanent Residence Scheme (Tax Residency)",
+      "purpose": "Allows high-net-worth individuals to obtain permanent residency in Antigua and Barbuda in exchange for a flat annual tax payment, targeting retirees and wealthy individuals seeking tax residency.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 20000,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://legalaffairs.gov.ag/pdf/PermanentResidenceScheme.pdf",
+      "notes": "Introduced 1995. Requirements: minimum annual income of US$100,000 demonstrated; flat annual tax payment of US$20,000; minimum physical presence of 30 days per year in Antigua and Barbuda. fee_usd reflects the annual flat tax. Not a citizenship program. Details sourced from reference to the scheme on immigration.gov.ag/general-services/residency/; PDF could not be fetched directly."
+    },
+    {
+      "category": "other",
+      "name": "Standard Resident Permit (Class A)",
+      "purpose": "Grants permanent residency to individuals who have been legally resident in Antigua and Barbuda for at least 4 years, or who are married to an Antiguan citizen.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.ag/general-services/residency/",
+      "notes": "Available to any person legally and ordinarily resident in Antigua and Barbuda for at least 4 years, or married to an Antiguan citizen for at least 1 year. Standard immigration residency route; not an investment program. Path to citizenship after further qualifying period."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Nomad Digital Residence (NDR) Programme",
+      "purpose": "Formerly allowed remote workers and digital nomads to legally reside in Antigua and Barbuda for up to 2 years while working for employers or clients outside the country.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 1500,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://nomad.gov.ag/",
+      "notes": "DISCONTINUED effective November 15, 2025. No new applications accepted. Previously required: remote work capability, demonstrated minimum annual income of US$50,000 for each year of the 2-year stay, valid medical insurance, police clearance. Fees were US$1,500 (single), US$2,000 (couple), US$3,000 (family of 3+). Granted special-resident authorisation for up to 2 years with income tax exemption on foreign-sourced income. fee_usd reflects the historical single-applicant fee."
+    }
+  ],
   "sources_checked": [
     "https://immigration.gov.ag/visa-services/countries-exempt-from-visa/",
     "https://immigration.gov.ag/visa-services/visa-on-arrival/",
@@ -1236,8 +1415,13 @@
     "https://cip.gov.ag/schedule-of-fees/",
     "https://cip.gov.ag/faq/",
     "https://cip.gov.ag/how-to-apply/",
+    "https://cip.gov.ag/how-to-apply/passport-visa-requirements/",
+    "https://nomad.gov.ag/",
     "https://nomad.gov.ag/ui/",
+    "https://ab.gov.ag/",
     "https://ab.gov.ag/pdf/Discontinuation_of_the_NDR_prg.pdf",
+    "https://evisa.immigration.gov.ag/agEvisa-app/",
+    "https://legalaffairs.gov.ag/pdf/PermanentResidenceScheme.pdf",
     "https://antigua-barbuda.com/ova_sev/nomad-digital-residence-visa-programme/"
   ]
 }

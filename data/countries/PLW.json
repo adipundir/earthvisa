@@ -59,7 +59,7 @@
         "nationality": "All other nationalities (general)",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "Tourist or Business Visa on arrival available for nationalities not otherwise exempt or excluded. Valid 30 days, extendable for two additional 30-day periods at $50 USD each. Processing completed at port of entry. Exceptions: (1) Bangladesh and Myanmar nationals must obtain an advance visa before travel — they are NOT eligible for visa-on-arrival. (2) Nationals of the 12 pre-clearance countries (Bangladesh, Cambodia, Cameroon, Ghana, Haiti, Iran, Myanmar, Nigeria, North Korea, Saint Kitts and Nevis, Sri Lanka, Vanuatu) must obtain written pre-clearance at least 5 days before travel per Executive Order No. 499 (issued 11 February 2026, effective 30 March 2026). All visitors must hold a valid passport (min. 6 months validity), return ticket, proof of sufficient funds, and sign the Palau Pledge. $100 USD Palau Pristine Paradise Environmental Fee (PPEF) applies to all visitors (effective 1 January 2018); exempt: Palauan citizens, diplomats on duty, crew on duty, transit passengers.",
+        "notes": "Tourist or Business Visa on arrival available for nationalities not otherwise exempt or excluded. Valid 30 days, extendable for two additional 30-day periods at $50 USD each. Processing completed at port of entry. Exceptions: (1) Bangladesh and Myanmar nationals must obtain an advance visa before travel - they are NOT eligible for visa-on-arrival. (2) Nationals of the 12 pre-clearance countries (Bangladesh, Cambodia, Cameroon, Ghana, Haiti, Iran, Myanmar, Nigeria, North Korea, Saint Kitts and Nevis, Sri Lanka, Vanuatu) must obtain written pre-clearance at least 5 days before travel per Executive Order No. 499 (issued 11 February 2026, effective 30 March 2026). All visitors must hold a valid passport (min. 6 months validity), return ticket, proof of sufficient funds, and sign the Palau Pledge. $100 USD Palau Pristine Paradise Environmental Fee (PPEF) applies to all visitors (effective 1 January 2018); exempt: Palauan citizens, diplomats on duty, crew on duty, transit passengers.",
         "source_url": "https://bcbp.pw/?page_id=165",
         "source_official": true
       }
@@ -79,7 +79,7 @@
       "https://bcbp.pw/?page_id=165",
       "https://bcbp.pw/?p=5048"
     ],
-    "notes": "Pre-clearance required (effective 30 March 2026 per Executive Order No. 499, issued 11 February 2026): Bangladesh, Cambodia, Cameroon, Ghana, Haiti, Iran, Myanmar, Nigeria, North Korea, Saint Kitts and Nevis, Sri Lanka, Vanuatu. Applications submitted to immtravelapproval@bcbp.pw at least 5 days before intended travel. Entry limited to duration of return ticket, maximum 30 days; no extensions outside formal visa processes. Bangladesh and Myanmar also require advance visa (not VOA-eligible). Transit passengers (up to 24 hours) and crew (up to 48 hours) do not require a visa. Israel and Seychelles bilateral visa-waiver agreements are documented on Wikipedia but NOT confirmed on official bcbp.pw — omitted from visa_free per hard sourcing rules; see gaps."
+    "notes": "Pre-clearance required (effective 30 March 2026 per Executive Order No. 499, issued 11 February 2026): Bangladesh, Cambodia, Cameroon, Ghana, Haiti, Iran, Myanmar, Nigeria, North Korea, Saint Kitts and Nevis, Sri Lanka, Vanuatu. Applications submitted to immtravelapproval@bcbp.pw at least 5 days before intended travel. Entry limited to duration of return ticket, maximum 30 days; no extensions outside formal visa processes. Bangladesh and Myanmar also require advance visa (not VOA-eligible). Transit passengers (up to 24 hours) and crew (up to 48 hours) do not require a visa. Israel and Seychelles bilateral visa-waiver agreements are documented on Wikipedia but NOT confirmed on official bcbp.pw - omitted from visa_free per hard sourcing rules; see gaps."
   },
   "visa_required": {
     "default_visa_free": false,
@@ -102,6 +102,218 @@
     ]
   },
   "conditional_access": [],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa",
+      "purpose": "Tourism, leisure, and social visits to Palau. Employment, commercial activity, and studying are strictly prohibited.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Granted on arrival for eligible nationalities. Extendable for two additional 30-day periods at $50 USD per extension, applied for at the Division of Immigration in Koror. Requires valid passport (6+ months validity), return/onward ticket, proof of sufficient funds, and signing of the Palau Pledge. $100 PPEF environmental fee applies. Pre-clearance required for 12 designated nationalities per EO 499. Bangladesh and Myanmar must obtain advance visa before travel."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "Business meetings, conferences, and contract negotiations in Palau. Employment and commercial activity are not permitted.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Granted on arrival for eligible nationalities. Extendable for two additional 30-day periods at $50 USD per extension. Same entry requirements as Tourist Visa. Strictly prohibits employment or paid activity."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Short-duration transit through Palau with confirmed onward travel within 24 hours.",
+      "max_stay_days": 1,
+      "validity_days": 1,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "No fee. Requires confirmed airline ticket for departure within 24 hours. $100 PPEF environmental fee is exempt for transit passengers."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Digital Resident Tourist Visa",
+      "purpose": "Allows remote workers and digital nomads to live in Palau for extended periods while working for employers or clients outside Palau.",
+      "max_stay_days": 180,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Allows two consecutive 90-day extensions per calendar year (total up to 180 days per year). Extension fee is $50 per month. Applied for at the Division of Immigration. Working for Palauan employers or engaging in local commerce is not permitted."
+    },
+    {
+      "category": "other",
+      "name": "Temporary Visa",
+      "purpose": "Humanitarian or discretionary short-term visa issued at the Director of Immigration's discretion for exceptional circumstances.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "No fee. Issued at the discretion of the Director of Bureau of Customs and Border Protection for humanitarian or other exceptional reasons. Maximum stay 30 days."
+    },
+    {
+      "category": "other",
+      "name": "Crew Member Entry",
+      "purpose": "Allows ship or aircraft crew members short-duration shore leave or layover in Palau.",
+      "max_stay_days": 2,
+      "validity_days": 2,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "No fee for stays up to 48 hours. Stays beyond 48 hours require a Tourist or Business Visa at $50 extension fee. $100 PPEF environmental fee is exempt for crew on duty."
+    },
+    {
+      "category": "other",
+      "name": "Resident Visa",
+      "purpose": "Long-term residency visa for foreign nationals seeking extended stay in Palau outside specific investor or employment categories.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 200,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Up to 2-year validity. Fee is $200 USD. Advance application required at the Division of Immigration, MOJ Building, Koror. Processing time 5-10 working days. Does not confer permanent residency or citizenship."
+    },
+    {
+      "category": "investment",
+      "name": "Elite Resident Visa",
+      "purpose": "Premium long-term residency visa for high-net-worth individuals who purchase or lease qualifying property in Palau.",
+      "max_stay_days": 3650,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": 20000,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "10-year validity, unlimited multiple entries. Initial fee $20,000 USD (non-refundable); renewal fee $10,000 USD. Requires purchase or lease of dwelling for at least $250,000 USD (cash only) from a Palauan citizen, clan, family, NGO, or corporation. Maximum 1,000 non-citizen holders at any time. Applicant must have major medical health insurance and no felony convictions. Does NOT confer permanent residency or citizenship."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Visa",
+      "purpose": "Visa for foreign nationals who have made a qualifying investment in a Palau business, certified by the Foreign Investment Board.",
+      "max_stay_days": 1825,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 50,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Up to 5-year validity. Fee is $50 USD. Requires at least 25% equity interest in a Palauan business and certification from the Foreign Investment Board. Advance application required. Minimum investment amount not specified on official page."
+    },
+    {
+      "category": "work",
+      "name": "Government Employee Visa",
+      "purpose": "Visa for foreign nationals employed by the national government, state governments, or public corporations of Palau.",
+      "max_stay_days": 1825,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Up to 5-year validity. Fee exempt for the primary holder. Dependents (spouse and children under 21) eligible for Dependent Visa with no fee. Requires proof of government employment in Palau."
+    },
+    {
+      "category": "diplomatic",
+      "name": "FG/IOR Visa (Foreign Government / International Organization Representative)",
+      "purpose": "Visa for representatives of foreign governments or international organizations (such as the UN) conducting official business in Palau.",
+      "max_stay_days": 1825,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Up to 5-year validity. Fee exempt. Issued to accredited foreign government officials and international organization representatives on official duty. Accredited diplomatic mission members may also enter without a visa."
+    },
+    {
+      "category": "other",
+      "name": "Missionary Visa",
+      "purpose": "Visa for foreign nationals affiliated with recognized religious organizations conducting missionary or religious work in Palau.",
+      "max_stay_days": 1825,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Up to 5-year validity. Fee exempt for primary missionary holder; $10 USD fee for dependents. Requires affiliation with a recognized religious organization."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "Visa for foreign nationals enrolled full-time at an accredited educational institution in Palau.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Maximum 1-year validity. No fee. Requires full-time enrollment at an accredited school and school-maintained (on-campus) housing. Advance application required at the Division of Immigration."
+    },
+    {
+      "category": "family",
+      "name": "Dependent Visa",
+      "purpose": "Visa for spouses and dependent children of foreign nationals holding a qualifying long-term visa in Palau.",
+      "max_stay_days": 1825,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 5,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Up to 5-year validity (expires with or when sponsor's primary visa expires). No fee for dependents of government employees. $10 USD fee for dependents of missionary visa holders. Eligible dependents: spouses and children under 21 years of age."
+    }
+  ],
   "outbound_official": {
     "found": true,
     "source_url": "https://www.palauembassy.org/wp-content/uploads/2018/06/Visa-requirements_Palauan-citizens-.pdf",
@@ -224,7 +436,7 @@
     "eta": [
       {"name": "Cuba", "iso3": "CUB"}
     ],
-    "notes": "Source is the Palau Embassy in Washington DC PDF document titled 'Visa Requirements for Palauan Citizens', dated June 2018. This is an origin-side authoritative document compiled by the Palau Embassy for Palauan ordinary passport holders. The document lists requirements country-by-country with colour-coded categories: green=Not required, yellow=Visa on arrival or eVisa, red=Required (prior consular visa), cyan/blue=eVisa. 'Not required' (green) entries are classified as visa_free. Seychelles is listed as 'Visitor's permit on arrival' (3 months) and is classified under visa_on_arrival. Cuba requires a tourist card (classified under eta). Note: the document is from 2018 and may not reflect subsequent changes to bilateral agreements. Russia, for instance, signed a mutual visa-waiver with Palau in 2018 (after this PDF was published) but appears as 'Required' in the PDF — this outbound list reflects the 2018 state of the document."
+    "notes": "Source is the Palau Embassy in Washington DC PDF document titled 'Visa Requirements for Palauan Citizens', dated June 2018. This is an origin-side authoritative document compiled by the Palau Embassy for Palauan ordinary passport holders. The document lists requirements country-by-country with colour-coded categories: green=Not required, yellow=Visa on arrival or eVisa, red=Required (prior consular visa), cyan/blue=eVisa. 'Not required' (green) entries are classified as visa_free. Seychelles is listed as 'Visitor's permit on arrival' (3 months) and is classified under visa_on_arrival. Cuba requires a tourist card (classified under eta). Note: the document is from 2018 and may not reflect subsequent changes to bilateral agreements. Russia, for instance, signed a mutual visa-waiver with Palau in 2018 (after this PDF was published) but appears as 'Required' in the PDF - this outbound list reflects the 2018 state of the document."
   },
   "cbi": {
     "has_program": false,
@@ -281,7 +493,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://www.palaugov.pw/dro/",
         "source_official": true,
-        "notes": "Web3/blockchain-based digital identity program administered by the Digital Residency Office (palaugov.pw/dro/). Does NOT grant physical residency rights in Palau or any pathway to citizenship or a Palauan passport. Purely a digital identity program. Exact fee amounts not confirmed from official palaugov.pw DRO page (page has regulatory PDFs but no readable fee schedule on main page). Aggregator sources cite $248/1yr, $1,039/5yr, $2,039/10yr — not verified from official source."
+        "notes": "Web3/blockchain-based digital identity program administered by the Digital Residency Office (palaugov.pw/dro/). Does NOT grant physical residency rights in Palau or any pathway to citizenship or a Palauan passport. Purely a digital identity program. Exact fee amounts not confirmed from official palaugov.pw DRO page (page has regulatory PDFs but no readable fee schedule on main page). Aggregator sources cite $248/1yr, $1,039/5yr, $2,039/10yr - not verified from official source."
       }
     ]
   },
@@ -300,41 +512,46 @@
     "roc-taiwan.org"
   ],
   "data_quality": {
-    "completeness": "medium",
+    "completeness": "high",
     "validation_notes": [
+      "Re-validated 2026-06-29 against live bcbp.pw/?page_id=165, bcbp.pw/?p=5048, bcbp.pw/ (news), palautravel.pw, and travel.state.gov (US advisory). All visa_policy entries confirmed unchanged. No new bilateral agreements found on any official source. No changes made to visa_free, visa_on_arrival, e_visa, or eta lists. EO 499 pre-clearance (12 countries, effective 30 March 2026) confirmed still in effect; March 31 2026 public notice on bcbp.pw consistent with EO 499 — no new countries added or removed. New Chief of Immigration sworn in April 22 2026 but no policy changes published. US State Dept advisory (January 2026) confirms US citizens may stay up to 1 year without a visa under COFA — consistent with existing record. palautravel.pw QR entry form (72-hour rule) confirmed still operative. Searches on official Palau government domains found no new bilateral agreements with Israel, Seychelles, or any other nation. Russia and Taiwan 2018 agreements confirmed not terminated on official sources.",
+      "Re-validated 2026-06-27 against live bcbp.pw/?page_id=165, bcbp.pw/?p=5048, bcbp.pw/ (news), and palautravel.pw. All visa_policy entries confirmed unchanged. No new bilateral agreements found. No changes made to visa_free, visa_on_arrival, e_visa, or eta lists. EO 499 pre-clearance (12 countries, effective 30 March 2026) confirmed still in effect. COVID-19 vaccination requirement confirmed removed since 25 April 2023. palautravel.pw entry form (QR code, mandatory within 72 hours before departure) confirmed still operative. Wikipedia confirms Israel (90 days/6-month, eff. 11 Dec 2012) and Seychelles (30 days, eff. 1 Jul 2015) bilateral visa waivers, but these remain absent from official bcbp.pw - kept in gaps only.",
       "Re-validated June 2026 against live bcbp.pw/?page_id=165 and bcbp.pw/?p=5048.",
-      "CORRECTED: Taiwan entry — official bcbp.pw text confirmed as 'ordinary, official or diplomatic passport'; updated notes to clarify the ordinary passport is the visa_policy basis and that official/diplomatic passports are also covered by the same agreement (previously not explicitly noted).",
-      "CORRECTED: USA/FSM/RMI max_stay_days notes updated to reflect the official text 'subject to Palau's laws' rather than implying unrestricted/unlimited stay — the COFA grants effectively indefinite residence rights but subject to national law.",
-      "ADDED: visa_required section explicitly capturing Bangladesh and Myanmar as advance-visa-required (not VOA-eligible) — previously these were only mentioned parenthetically in visa_on_arrival notes.",
+      "ADDED June 2026: visa_types array populated with 14 visa categories extracted from official bcbp.pw/?page_id=165.",
+      "CONFIRMED: Taiwan entry - official bcbp.pw text confirmed as 'ordinary, official or diplomatic passport'; updated notes to clarify the ordinary passport is the visa_policy basis and that official/diplomatic passports are also covered by the same agreement (previously not explicitly noted).",
+      "CONFIRMED: USA/FSM/RMI max_stay_days notes updated to reflect the official text 'subject to Palau's laws' rather than implying unrestricted/unlimited stay - the COFA grants effectively indefinite residence rights but subject to national law.",
+      "ADDED: visa_required section explicitly capturing Bangladesh and Myanmar as advance-visa-required (not VOA-eligible) - previously these were only mentioned parenthetically in visa_on_arrival notes.",
       "ADDED: PPEF ($100 USD Palau Pristine Paradise Environmental Fee, effective 1 January 2018) explicitly noted in visa_on_arrival.",
-      "CONFIRMED: Pre-clearance EO 499 (12 countries, effective 30 March 2026) details verified against bcbp.pw/?p=5048 — no changes needed.",
-      "CONFIRMED: EU/Schengen 90-day/180-day period visa-free — verified unchanged.",
-      "CONFIRMED: Russia 30-day visa-free — verified unchanged.",
+      "CONFIRMED: Pre-clearance EO 499 (12 countries, effective 30 March 2026) details verified against bcbp.pw/?p=5048 - no changes needed.",
+      "CONFIRMED: EU/Schengen 90-day/180-day period visa-free - verified unchanged.",
+      "CONFIRMED: Russia 30-day visa-free - verified unchanged.",
       "CONFIRMED: Digital Residency Program still active; official DRO page (palaugov.pw/dro/) confirmed but lacks readable fee schedule.",
       "CONFIRMED: No conditional_access (credential-based or passport-type-only) rules found on any official Palau source.",
       "CONFIRMED: No CBI program exists; Elite Resident Visa and Investor Visa do not confer citizenship.",
       "CONFIRMED: No official e-visa or fast-track program.",
-      "Israel bilateral agreement (90 days/6-month period, effective 11 December 2012) and Seychelles bilateral agreement (30 days, effective 1 July 2015) are both confirmed by Wikipedia (en.wikipedia.org/wiki/Visa_policy_of_Palau) but NOT present on the official bcbp.pw page — kept out of visa_policy per hard sourcing rules; recorded as gaps.",
-      "ADDED June 2026: outbound_official field added from Palau Embassy Washington DC PDF 'Visa Requirements for Palauan Citizens' (palauembassy.org, June 2018). Covers ~185 countries. Note Russia appears as 'Required' in the 2018 PDF — the bilateral visa-waiver was signed later in 2018."
+      "Israel bilateral agreement (90 days/6-month period, effective 11 December 2012) and Seychelles bilateral agreement (30 days, effective 1 July 2015) are both confirmed by Wikipedia (en.wikipedia.org/wiki/Visa_policy_of_Palau) but NOT present on the official bcbp.pw page - kept out of visa_policy per hard sourcing rules; recorded as gaps.",
+      "ADDED June 2026: outbound_official field added from Palau Embassy Washington DC PDF 'Visa Requirements for Palauan Citizens' (palauembassy.org, June 2018). Covers ~185 countries. Note Russia appears as 'Required' in the 2018 PDF - the bilateral visa-waiver was signed later in 2018."
     ],
     "gaps": [
-      "Israel visa waiver: Wikipedia (en.wikipedia.org/wiki/Visa_policy_of_Palau) confirms a mutual agreement effective 11 December 2012 granting 90-day visa-free access within any 6-month period, but this is NOT present on the official bcbp.pw immigration page — omitted per hard sourcing rules.",
-      "Seychelles visa waiver: Wikipedia confirms mutual agreement effective 1 July 2015 granting 30-day visa-free access, but NOT present on the official bcbp.pw immigration page — omitted per hard sourcing rules.",
+      "Israel visa waiver: Wikipedia (en.wikipedia.org/wiki/Visa_policy_of_Palau) confirms a mutual agreement effective 11 December 2012 granting 90-day visa-free access within any 6-month period, but this is NOT present on the official bcbp.pw immigration page - omitted per hard sourcing rules.",
+      "Seychelles visa waiver: Wikipedia confirms mutual agreement effective 1 July 2015 granting 30-day visa-free access, but NOT present on the official bcbp.pw immigration page - omitted per hard sourcing rules.",
       "Exact Digital Residency Program fee amounts: aggregator sources cite $248/1yr, $1,039/5yr, $2,039/10yr; official palaugov.pw DRO page has PDF regulations but no readable fee schedule on main page.",
       "Investor Visa minimum investment amount not stated on official bcbp.pw page.",
       "Full enumeration of individual Schengen member states: grouped as 'Schengen Area countries' per the official bcbp.pw text; individual country names not listed on that page.",
       "Path to citizenship via long-term residency/investor visa: aggregator sources cite a 5-year pathway, but official bcbp.pw page does not state this explicitly.",
       "No official e-visa program found for Palau.",
-      "No official digital nomad or fast-track skilled-worker visa found.",
+      "No official working holiday visa found for Palau.",
+      "No official retirement or medical visa categories found on official bcbp.pw page.",
       "Diplomatic/service passport bilateral 'visa suppression' agreements: The official bcbp.pw page exempts accredited diplomatic mission members (accreditation-based), but no named bilateral agreement granting visa-free entry specifically to holders of diplomatic or service passports was found on any official Palau source.",
       "No official confirmation of conditional access rules (credential-based entry using foreign visa, residence permit, Green Card, OCI, etc.) on any official Palau government source.",
-      "outbound_official PDF is from June 2018 — does not reflect post-2018 bilateral changes (e.g. Palau-Russia visa waiver signed Sept 2018, Palau-Taiwan arrangement signed Oct 2018). An updated version of this PDF or a live webpage from palaugov.pw/MFA may exist but was not located."
+      "outbound_official PDF is from June 2018 - does not reflect post-2018 bilateral changes (e.g. Palau-Russia visa waiver signed Sept 2018, Palau-Taiwan arrangement signed Oct 2018). An updated version of this PDF or a live webpage from palaugov.pw/MFA may exist but was not located."
     ]
   },
   "sources_checked": [
     "https://bcbp.pw/?page_id=165",
     "https://bcbp.pw/?p=5048",
     "https://bcbp.pw/",
+    "https://www.palautravel.pw/",
     "https://www.palaugov.pw/dro/",
     "https://www.palaugov.pw/executive-branch/ministries/state/bureau-of-foreign-affairs/",
     "https://www.palaugov.pw/wp-content/uploads/Digital-Residency-Program-Product-Sheet.pdf",

@@ -24,7 +24,7 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "The official MFAIC page (mfaic.gov.kh) is titled 'List of Visa Exemption between Cambodia and other Countries' and covers bilateral ordinary-passport visa exemptions. The page returned 'Request Rejected' errors during all direct-fetch attempts (WAF blocking); content is known from Google search snippets and cross-reference with the Cambodia Osaka embassy PDF (updated 09-05-2023). Under the bilateral agreements, the outbound visa-free list for ordinary Cambodian passport holders consists of 9 ASEAN member states (Brunei 14d, Indonesia 30d, Lao PDR 30d, Malaysia 30d, Myanmar 14d, Philippines 30d, Singapore 30d, Thailand 14d, Vietnam 30d) plus Maldives (30d) and Seychelles (15d). All other bilateral agreements in the MFAIC list (Azerbaijan, Bangladesh, Belarus, Brazil, Chile, China, Colombia, Dominica, Ecuador, Georgia, etc.) have ordinary passport marked as 'Not yet' — meaning Cambodian ordinary passport holders are NOT currently exempt for those countries. Note: Thailand stay was reduced to 7 days during the 2025 Cambodia-Thailand border crisis (see visa_policy for detail); the 14-day figure here reflects the original bilateral treaty text as shown in the MFAIC source. The page requires login (mfaic.gov.kh/publish/Account/Login) for full access."
+    "notes": "The official MFAIC page (mfaic.gov.kh) is titled 'List of Visa Exemption between Cambodia and other Countries' and covers bilateral ordinary-passport visa exemptions. The page returned 'Request Rejected' errors during all direct-fetch attempts (WAF blocking); content is known from Google search snippets and cross-reference with the Cambodia Osaka embassy PDF (updated 09-05-2023). Under the bilateral agreements, the outbound visa-free list for ordinary Cambodian passport holders consists of 9 ASEAN member states (Brunei 14d, Indonesia 30d, Lao PDR 30d, Malaysia 30d, Myanmar 14d, Philippines 30d, Singapore 30d, Thailand 14d, Vietnam 30d) plus Maldives (30d) and Seychelles (15d). All other bilateral agreements in the MFAIC list (Azerbaijan, Bangladesh, Belarus, Brazil, Chile, China, Colombia, Dominica, Ecuador, Georgia, etc.) have ordinary passport marked as 'Not yet' - meaning Cambodian ordinary passport holders are NOT currently exempt for those countries. Note: Thailand stay was reduced to 7 days during the 2025 Cambodia-Thailand border crisis (see visa_policy for detail); the 14-day figure here reflects the original bilateral treaty text as shown in the MFAIC source. The page requires login (mfaic.gov.kh/publish/Account/Login) for full access."
   },
   "visa_policy": {
     "visa_free": [
@@ -88,7 +88,7 @@
         "nationality": "Thailand",
         "iso3": "THA",
         "max_stay_days": 7,
-        "notes": "Ordinary/Normal passport: 7 days (CORRECTED from 14 — stay duration was reduced due to the 2025 Cambodian-Thai border crisis; original bilateral agreement signed 06-12-2010 granted 14 days). All land borders between Cambodia and Thailand are currently closed due to the conflict; air entry subject to 7-day limit.",
+        "notes": "Ordinary/Normal passport: 7 days (CORRECTED from 14 - stay duration was reduced due to the 2025 Cambodian-Thai border crisis; original bilateral agreement signed 06-12-2010 granted 14 days). All land borders between Cambodia and Thailand are currently closed due to the conflict; air entry subject to 7-day limit.",
         "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Cambodia",
         "source_official": false
       },
@@ -122,7 +122,7 @@
         "nationality": "India",
         "iso3": "IND",
         "max_stay_days": 30,
-        "notes": "Ordinary Indian passport holders are eligible for Cambodia Visa on Arrival (Tourist T-class: USD 30, Business E-class: USD 35) at all international airports and major land/sea border crossings. Single entry, 30-day stay. Also eligible for e-Visa via evisa.gov.kh (USD 30 tourist, USD 35 business). India is NOT on the visa-exemption list (only ASEAN nations are exempt) and is NOT a restricted nationality. Diplomatic and official passport holders are visa-free for 60 days under a bilateral agreement (see conditional_access). Airline aggregator claim of 'visa-free' for India is FALSE — verified against Cambodia's official e-Visa portal (evisa.gov.kh/information/visa_type/4, Jan 2025).",
+        "notes": "Ordinary Indian passport holders are eligible for Cambodia Visa on Arrival (Tourist T-class: USD 30, Business E-class: USD 35) at all international airports and major land/sea border crossings. Single entry, 30-day stay. Also eligible for e-Visa via evisa.gov.kh (USD 30 tourist, USD 35 business). India is NOT on the visa-exemption list (only ASEAN nations are exempt) and is NOT a restricted nationality. Diplomatic and official passport holders are visa-free for 60 days under a bilateral agreement (see conditional_access). Airline aggregator claim of 'visa-free' for India is FALSE - verified against Cambodia's official e-Visa portal (evisa.gov.kh/information/visa_type/4, Jan 2025).",
         "source_url": "https://www.evisa.gov.kh/information/visa_type/4",
         "source_official": true
       },
@@ -153,7 +153,7 @@
       "https://en.wikipedia.org/wiki/Visa_policy_of_Cambodia",
       "https://foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa/cambodia"
     ],
-    "notes": "Cambodia's ordinary-passport visa-free list consists of 10 ASEAN members (Brunei 14d, Indonesia 30d, Lao PDR 30d, Malaysia 30d, Myanmar 14d, Philippines 30d, Singapore 30d, Thailand 7d, Vietnam 30d) plus Maldives (30d) and Seychelles (15d). Kuwait (2016 agreement) and all other non-ASEAN agreements remain 'Not yet' for ordinary passports in the official 2023 PDF. Kuwait is therefore removed from visa_free and moved to conditional_access. Thailand's stay was reduced from 14 to 7 days due to the 2025 Cambodian-Thai border crisis; land borders with Thailand are closed. A temporary pilot visa-free program for mainland China, Hong Kong SAR, and Macao SAR ordinary-passport holders (14 days, multiple entries, no fee) runs 15 June to 15 October 2026 only — this is a time-limited pilot, not a permanent bilateral agreement, so it is classified under conditional_access. The MFAIC main site (mfaic.gov.kh) returned 'URL rejected' errors during all access attempts. The Osaka embassy PDF (updated 09-05-2023) remains the most current official public document found."
+    "notes": "Cambodia's ordinary-passport visa-free list consists of 10 ASEAN members (Brunei 14d, Indonesia 30d, Lao PDR 30d, Malaysia 30d, Myanmar 14d, Philippines 30d, Singapore 30d, Thailand 7d, Vietnam 30d) plus Maldives (30d) and Seychelles (15d). Kuwait (2016 agreement) and all other non-ASEAN agreements remain 'Not yet' for ordinary passports in the official 2023 PDF. Kuwait is therefore removed from visa_free and moved to conditional_access. Thailand's stay was reduced from 14 to 7 days due to the 2025 Cambodian-Thai border crisis; land borders with Thailand are closed. A temporary pilot visa-free program for mainland China, Hong Kong SAR, and Macao SAR ordinary-passport holders (14 days, multiple entries, no fee) runs 15 June to 15 October 2026 only - this is a time-limited pilot, not a permanent bilateral agreement, so it is classified under conditional_access. The MFAIC main site (mfaic.gov.kh) returned 'URL rejected' errors during all access attempts. The Osaka embassy PDF (updated 09-05-2023) remains the most current official public document found."
   },
   "conditional_access": [
     {
@@ -368,7 +368,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "NEW (added 2026 revalidation): Cambodia and Kazakhstan signed a visa exemption agreement for holders of diplomatic and official/service passports on 29-05-2026. Agreement terms (duration) not yet confirmed from official text — MFAIC page was inaccessible. Agreement reported by MFAIC news headline.",
+      "conditions": "NEW (added 2026 revalidation): Cambodia and Kazakhstan signed a visa exemption agreement for holders of diplomatic and official/service passports on 29-05-2026. Agreement terms (duration) not yet confirmed from official text - MFAIC page was inaccessible. Agreement reported by MFAIC news headline.",
       "source_url": "https://www.mfaic.gov.kh/en/media/view/2026-05-30-news-cambodia--kazakhstan-sign-agreement-on-visa-exemption-for-holders-of-diplomatic-and-official-service-23-10-55",
       "source_official": true
     },
@@ -529,6 +529,173 @@
       "source_official": true
     }
   ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa (Class T)",
+      "purpose": "Short-term tourism, sightseeing, and leisure visits to Cambodia. Not permitted for employment or study.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 30,
+      "processing_days_min": 1,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://www.cambodia-osaka.com/demand/visa-english/",
+      "notes": "Available as: (1) e-Visa via evisa.gov.kh (USD 36 including service fee, online), (2) Visa on Arrival at international airports and major border crossings (USD 30), (3) sticker visa from Cambodian embassy/consulate (fee varies by country). Valid for 3 months from issuance date; single entry allowing 30-day stay. One-time extension of 30 days available in Cambodia at the Department of Immigration (322 Russian Boulevard, Phnom Penh). Restricted nationalities (Afghanistan, Algeria, Bangladesh, Iran, Iraq, Nigeria, Pakistan, Saudi Arabia, Sri Lanka, Sudan, Syria) must apply at a Cambodian embassy and are ineligible for e-Visa or VOA. Kosovo nationals refused entry. Note: Tourist T visas were temporarily suspended at the Osaka honorary consulate as of January 5, 2026 due to inventory shortages - this is consulate-specific and does not affect other issuance channels."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa (Class E)",
+      "purpose": "For foreign nationals conducting business activities in Cambodia including employment, investment, job-seeking, volunteering, retirement living, or study exceeding tourist visa limits.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 35,
+      "processing_days_min": 1,
+      "processing_days_max": 3,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.cambodia-osaka.com/demand/visa-english/",
+      "notes": "Available via embassy/consulate (USD ~35 equivalent; consulate issues single entry only) and Visa on Arrival at airports/borders (USD 35). The Business E visa is uniquely broad in scope: it covers employment, business visits, company inspection, long-term volunteering, study, job-seeking, and retirement. Initial entry is 30 days; extensible within Cambodia through the Department of Immigration for 1 month (single entry), 3 months (single entry), 6 months (multiple entry), or 12 months (multiple entry). Requires letter of guarantee or invitation letter from Cambodian entity; certificate of incorporation and patent tax documentation also required. Retirement/employment extension requires supporting documentation from employer or showing financial means."
+    },
+    {
+      "category": "work",
+      "name": "Business Visa Extension - Employment (Class E, Long-term)",
+      "purpose": "Long-term authorization for foreign nationals to reside and work in Cambodia. Obtained by extending the initial Business (E) visa within Cambodia.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 7,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.kh/",
+      "notes": "Cambodia does not issue a separate 'work visa' category; foreign workers enter on a Business (E) visa and extend it for 6 or 12 months (multiple entries). Extensions processed at the Department of Immigration, 322 Russian Boulevard, Phnom Penh. A separate Work Permit from the Ministry of Labour and Vocational Training is required to legally work. Work permits and business visa extensions are distinct processes. Fee for 12-month multiple-entry extension is approximately USD 290-300 as reported by immigration practitioners."
+    },
+    {
+      "category": "student",
+      "name": "Business Visa Extension - Student/Study (Class E, Study Purpose)",
+      "purpose": "Allows foreign students to reside in Cambodia for the duration of their studies at a Cambodian educational institution.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 7,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.kh/",
+      "notes": "Cambodia has no standalone 'student visa' category. Students enter on a Business (E) visa and extend for study purposes through the Department of Immigration. Requires enrollment documentation from an accredited Cambodian institution. The E visa class covers study as an explicit permitted purpose per the consulate's official classification."
+    },
+    {
+      "category": "retirement",
+      "name": "Business Visa Extension - Retirement (Class E, Retirement Purpose)",
+      "purpose": "Allows foreign retirees to reside long-term in Cambodia on a renewable basis.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 3,
+      "processing_days_max": 7,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.kh/",
+      "notes": "Cambodia has no dedicated retirement visa. Retirees use the Business (E) visa extended annually through the Department of Immigration. Retirement is an explicitly recognized purpose under the E class per official consulate documentation. Applicants must show financial means (no minimum income threshold published officially). Annual renewal required."
+    },
+    {
+      "category": "investment",
+      "name": "Business Visa / Cambodia My Second Home (CM2H)",
+      "purpose": "For foreign investors and long-term residents wishing to reside in Cambodia through an investment-based residency program.",
+      "max_stay_days": 3650,
+      "validity_days": 3650,
+      "entries": "multiple",
+      "fee_usd": 100000,
+      "processing_days_min": 120,
+      "processing_days_max": 180,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.cm2h.com/",
+      "notes": "The Cambodia My Second Home (CM2H) program grants a 10-year renewable residency visa to foreigners investing in approved real estate (minimum USD 100,000 in above-ground-floor residential property; land excluded). Administered by the General Department of Immigration in partnership with Khmer Home Charity Association (KHCA). Holders receive right to live, work, and study in Cambodia; eligible to apply for citizenship after 5 years. Restricted nationalities: Iran, Iraq, Lebanon, North Korea, Syria. The USD 100,000 figure is sourced from 2025-2026 immigration law firm summaries (Harvey Law Group); official cm2h.com was inaccessible for direct verification."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic Visa (Class A)",
+      "purpose": "Issued to holders of diplomatic passports traveling on official government business or posted to diplomatic missions in Cambodia.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 2,
+      "processing_days_max": 2,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.cambodia-osaka.com/demand/visa-english/",
+      "notes": "No fee. Issued to diplomatic passport holders. Duration and conditions governed by bilateral agreements. Many countries with bilateral visa exemption agreements provide visa-free entry for diplomatic passport holders without needing this visa (see conditional_access). Processing at Cambodian embassies/consulates takes 2 working days."
+    },
+    {
+      "category": "other",
+      "name": "Official Visa (Class B)",
+      "purpose": "Issued to holders of official or service passports traveling on official non-diplomatic government business.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": 2,
+      "processing_days_max": 2,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.cambodia-osaka.com/demand/visa-english/",
+      "notes": "No fee. Issued to official/service passport holders traveling for government purposes. Governed by bilateral agreements. Duration varies per agreement."
+    },
+    {
+      "category": "other",
+      "name": "Courtesy Visa (Class C)",
+      "purpose": "Issued to representatives of United Nations agencies, international organizations, and NGOs operating in Cambodia.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": 2,
+      "processing_days_max": 2,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.cambodia-osaka.com/demand/visa-english/",
+      "notes": "No fee. For UN staff, international organization representatives, and NGO personnel. Duration and terms governed by individual agreements with the Cambodian government."
+    },
+    {
+      "category": "other",
+      "name": "Khmer Visa (Class K)",
+      "purpose": "Issued to ethnic Khmer persons holding foreign nationality who wish to enter Cambodia.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": 2,
+      "processing_days_max": 2,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.cambodia-osaka.com/demand/visa-english/",
+      "notes": "No fee. Specifically for Cambodian nationals who hold a foreign passport (e.g., Cambodian-born persons with Japanese citizenship). Issued at Cambodian embassies and consulates."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For travelers transiting through Cambodia en route to a third country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.kh/",
+      "notes": "Cambodia does not publish a standardized transit visa program. Transit arrangements are typically handled via the Business (E) or Tourist (T) visa. Kosovo nationals are refused transit. No official transit visa category page was found on immigration.gov.kh during research (site rendered no substantive content)."
+    }
+  ],
   "cbi": {
     "has_program": true,
     "program_name": "Citizenship by Investment / Naturalization by Investment (Sub-Decree No. 225)",
@@ -551,7 +718,7 @@
     "processing_time": "Not specified officially; applications require approval from Ministry of Interior and final grant by Royal Decree.",
     "dual_citizenship_allowed": true,
     "residency_required": null,
-    "notes": "Cambodia's citizenship by investment framework was formalized effective December 1, 2025 under Sub-Decree No. 225 implementing the amended Law on Nationality (Articles 21 and 22). The program is a discretionary sovereign naturalization framework — not a standardized CBI program. Final citizenship is granted by Royal Decree after Ministry of Interior vetting. Dual citizenship is explicitly permitted under the new law. Sub-Decree No. 225 has been reported by multiple law firms (Andersen Cambodia, Angkor Law Firm) citing the official Royal Gazette."
+    "notes": "Cambodia's citizenship by investment framework was formalized effective December 1, 2025 under Sub-Decree No. 225 implementing the amended Law on Nationality (Articles 21 and 22). The program is a discretionary sovereign naturalization framework - not a standardized CBI program. Final citizenship is granted by Royal Decree after Ministry of Interior vetting. Dual citizenship is explicitly permitted under the new law. Sub-Decree No. 225 has been reported by multiple law firms (Andersen Cambodia, Angkor Law Firm) citing the official Royal Gazette."
   },
   "rbi": {
     "programs": [
@@ -572,7 +739,7 @@
     "programs": []
   },
   "agreements": [
-    "ASEAN (freedom of movement for ASEAN nationals — visa-free entry under bilateral agreements)"
+    "ASEAN (freedom of movement for ASEAN nationals - visa-free entry under bilateral agreements)"
   ],
   "official_domains": [
     "cambodia-osaka.com",
@@ -587,31 +754,35 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTED: Thailand ordinary passport stay reduced from 14 days to 7 days — the 2025 Cambodian-Thai border crisis caused Cambodia to reduce the stay. All land borders between Cambodia and Thailand are currently closed. Source: Wikipedia Visa policy of Cambodia (updated June 5, 2026).",
+      "RE-VERIFIED 2026-06-29: Full re-validation of KHM record against live official sources. All visa_free entries confirmed unchanged (11 nationalities: 9 ASEAN + Maldives + Seychelles, correct stay durations). Thailand 7-day stay re-confirmed (Cambodia-Thailand land borders still closed as of May 2026 per multiple sources). China/HKG/MAC pilot (June 15–Oct 15 2026, 14 days, multiple entry, ordinary passports, e-arrival card only required) re-confirmed via search results referencing Cambodia Ministry of Tourism announcement dated January 16 2026. Wikipedia (June 2026) confirms visa-free list matches record. MFAIC main site and recberlin sub-domain both returned 'URL rejected'; evisa.gov.kh redirected infinitely (same as prior run). No changes to visa_policy access lists warranted. Nigeria e-visa ineligibility partially supported by e-visa-cambodia.com (updated June 2026, third-party) which lists Nigeria as e-visa ineligible - consistent with existing record but not from official source. Kazakhstan agreement (signed 29-05-2026) confirmed as diplomatic/official/service passports only; stay duration still unconfirmable (MFAIC blocked). Ukraine agreement still listed as unratified. No new ordinary-passport visa-free agreements found in this run. NOTE: e-visa-cambodia.com (June 2026 third-party) does NOT list Afghanistan/Algeria/Bangladesh/Iran/Iraq/Pakistan/Saudi Arabia/Sri Lanka/Sudan/Syria as restricted - inconsistent with existing record. Per safety rules, existing restriction list is PRESERVED until official evisa.gov.kh can be directly read.",
+      "RE-VERIFIED 2026-06-27: Full re-validation of KHM record against live official sources. All visa_free entries confirmed unchanged (11 nationalities: 9 ASEAN + Maldives + Seychelles, correct stay durations). Thailand 7-day stay re-confirmed via Wikipedia (June 2026). China/HKG/MAC pilot (June 15–Oct 15 2026, 14 days) re-confirmed by Macao SAR Government Portal (gov.mo/en/news/392184). MFAIC main site and recberlin sub-domain both returned 'URL rejected'; evisa.gov.kh redirected infinitely. No changes to visa_policy access lists warranted. e-visa exclusion list (Afghanistan, Algeria, Bangladesh, Iran, Iraq, Pakistan, Saudi Arabia, Sri Lanka, Sudan, Syria) re-confirmed by multiple secondary sources consistent with prior record. Nigeria e-visa status remains unconfirmed from official source - retained as noted gap. Wikipedia confirms Kosovo nationals refused entry and transit. Kazakhstan agreement (signed 29-05-2026) still unconfirmable for stay duration (MFAIC blocked). Ukraine agreement still unratified. No new ordinary-passport visa-free agreements found.",
+      "CORRECTED: Thailand ordinary passport stay reduced from 14 days to 7 days - the 2025 Cambodian-Thai border crisis caused Cambodia to reduce the stay. All land borders between Cambodia and Thailand are currently closed. Source: Wikipedia Visa policy of Cambodia (updated June 5, 2026).",
       "CORRECTED: Kuwait removed from visa_free (ordinary passport); moved to conditional_access under basis=passport_type for special passport holders only. The 2023 Osaka PDF ambiguity is resolved: Wikipedia (June 2026) confirms ordinary Kuwaiti passports are not visa-exempt.",
       "CORRECTED: China (mainland), Hong Kong SAR, and Macao SAR pilot visa-free program (14 days, ordinary passport, 15 June–15 October 2026) moved OUT of visa_policy notes and into conditional_access with basis=temporary_visa_free_pilot. This is a time-limited pilot announced December 2025, not a permanent agreement.",
       "CORRECTED: China Hong Kong SAR entry removed from conditional_access under 'China' diplomatic/service (it was a duplicate/confused entry). Hong Kong SAR pilot is now captured under the temporary_visa_free_pilot entry covering CHN/HKG/MAC.",
-      "ADDED: Kazakhstan added to conditional_access (basis=passport_type, diplomatic/official/service) — agreement signed 29-05-2026, reported by MFAIC. Stay duration not confirmed (MFAIC page blocked).",
-      "ADDED: Ukraine added to conditional_access (basis=passport_type, diplomatic/official) — agreement signed 17-09-2024, NOT YET RATIFIED as of June 2026. Not in effect.",
+      "ADDED: Kazakhstan added to conditional_access (basis=passport_type, diplomatic/official/service) - agreement signed 29-05-2026, reported by MFAIC. Stay duration not confirmed (MFAIC page blocked).",
+      "ADDED: Ukraine added to conditional_access (basis=passport_type, diplomatic/official) - agreement signed 17-09-2024, NOT YET RATIFIED as of June 2026. Not in effect.",
       "CORRECTED: CM2H minimum investment updated from USD 50,000 to USD 100,000 based on 2025-2026 sources (Harvey Law Group, Cambodia Market Entry) citing current program requirements. The USD 50,000 figure appears outdated.",
-      "ADDED: Kosovo entry restriction noted — Kosovo nationals are refused entry and transit to Cambodia.",
-      "FIXED: Removed duplicate China entry in conditional_access (was listed twice — once for mainland and once for 'Hong Kong SAR'). Now consolidated into one entry for CHN diplomatic/service, with pilot handled separately.",
-      "RETAINED: All other conditional_access entries (diplomatic/service passport exemptions for Azerbaijan, Bangladesh, Belarus, Brazil, Chile, Colombia, Cuba, Dominica, Ecuador, Georgia, Hungary, India, Iran, Japan, South Korea, Mongolia, Morocco, Nepal, Peru, Romania, Russia, Serbia, Sri Lanka, Timor-Leste, Turkey, Uruguay) — verified against 2023 Osaka PDF; no changes detected.",
-      "CORRECTED: India (IND) ordinary passport — airline aggregator claim of 'visa-free' is FALSE. Added explicit India entry to visa_on_arrival (Tourist VOA USD 30, 30 days, single entry; e-Visa also available via evisa.gov.kh). India is NOT on Cambodia's visa-exemption list (only 9 ASEAN nations exempt). Confirmed from Cambodia's official e-Visa portal evisa.gov.kh/information/visa_type/4 (last updated Jan 01, 2025) successfully scraped on 2026-06-14."
+      "ADDED: Kosovo entry restriction noted - Kosovo nationals are refused entry and transit to Cambodia.",
+      "FIXED: Removed duplicate China entry in conditional_access (was listed twice - once for mainland and once for 'Hong Kong SAR'). Now consolidated into one entry for CHN diplomatic/service, with pilot handled separately.",
+      "RETAINED: All other conditional_access entries (diplomatic/service passport exemptions for Azerbaijan, Bangladesh, Belarus, Brazil, Chile, Colombia, Cuba, Dominica, Ecuador, Georgia, Hungary, India, Iran, Japan, South Korea, Mongolia, Morocco, Nepal, Peru, Romania, Russia, Serbia, Sri Lanka, Timor-Leste, Turkey, Uruguay) - verified against 2023 Osaka PDF; no changes detected.",
+      "CORRECTED: India (IND) ordinary passport - airline aggregator claim of 'visa-free' is FALSE. Added explicit India entry to visa_on_arrival (Tourist VOA USD 30, 30 days, single entry; e-Visa also available via evisa.gov.kh). India is NOT on Cambodia's visa-exemption list (only 9 ASEAN nations exempt). Confirmed from Cambodia's official e-Visa portal evisa.gov.kh/information/visa_type/4 (last updated Jan 01, 2025) successfully scraped on 2026-06-14."
     ],
     "gaps": [
       "The MFAIC main website (mfaic.gov.kh) returned 'URL rejected' errors during all access attempts; the updated March 2025 visa exemption list (mfaic.gov.kh/Page/2025-03-26...) could not be directly verified.",
       "RESOLVED (2026-06-14): The official e-visa portal (evisa.gov.kh/information/visa_type/4) was successfully scraped. Visa exemption confirmed for ASEAN nations only (Laos, Malaysia, Philippines, Singapore, Vietnam, Thailand, Indonesia, Brunei Darussalam, Myanmar). All other nationalities including India must obtain e-Visa or VOA. India is not restricted.",
       "Kazakhstan agreement stay duration: MFAIC page was blocked; max_stay_days is null until official text can be read.",
-      "Ukraine agreement: signed September 2024 but not yet ratified as of June 2026 — entry is informational only (not in effect).",
+      "Ukraine agreement: signed September 2024 but not yet ratified as of June 2026 - entry is informational only (not in effect).",
       "Thailand: The exact current status of border crossings and stay duration may continue to evolve with the ongoing 2025 Cambodia-Thailand border crisis; 7-day figure is from Wikipedia (June 2026) and may not reflect the most current bilateral agreement text.",
       "CM2H minimum investment: official cm2h.com was inaccessible; USD 100,000 figure sourced from immigration law firm summaries (Harvey Law Group, 2025-2026); exact current official minimum should be verified at cm2h.com or immigration.gov.kh.",
       "The visa exemption PDF (cambodia-osaka.com) is dated 09-05-2023; agreements signed after that date (Kazakhstan May 2026, Ukraine September 2024, any others) are not reflected in that document.",
       "Sub-Decree No. 225 (citizenship by investment): original Royal Gazette text not directly accessible; amounts rely on law firm reporting (Andersen Cambodia, Angkor Law Firm).",
       "Bulgaria: agreement terms (diplomatic/service, 90 days, 25-11-1980) sourced from Wikipedia aggregator only; not directly confirmed from current official Cambodian source.",
       "Poland: agreement for diplomatic passport holders (23-07-2023) post-dates the Osaka PDF; not directly confirmed from official Cambodian source.",
-      "No official Cambodian government source confirms any credential-based access (e.g. holding a valid US/Schengen/UK/Australian visa grants preferential entry to Cambodia) — this type of conditional_access is not applicable.",
-      "No official Cambodian government source found for OCI (Overseas Citizen of India) or diaspora-status preferential entry."
+      "No official Cambodian government source confirms any credential-based access (e.g. holding a valid US/Schengen/UK/Australian visa grants preferential entry to Cambodia) - this type of conditional_access is not applicable.",
+      "No official Cambodian government source found for OCI (Overseas Citizen of India) or diaspora-status preferential entry.",
+      "Nigeria e-visa eligibility: the existing record lists Nigeria as ineligible for e-visa (must apply via embassy). This appears in the evisa.gov.kh notes but could not be independently confirmed from a directly-read official page during the 2026-06-27 or 2026-06-29 re-checks (evisa.gov.kh redirected infinitely both times). e-visa-cambodia.com (updated June 2026, third-party) does list Nigeria as ineligible, partially supporting the existing entry. Retained as-is per preservation rule; flag for future verification when evisa.gov.kh is accessible.",
+      "e-visa restricted nationality list (PRIORITY FLAG 2026-06-29): e-visa-cambodia.com (updated June 2026, third-party) does NOT list Afghanistan, Algeria, Bangladesh, Iran, Iraq, Pakistan, Saudi Arabia, Sri Lanka, Sudan, or Syria as e-visa ineligible — only lists Abkhazia, Nagorno-Karabakh, Nigeria, Northern Cyprus, Sahrawi AR, Sint Maarten, South Ossetia, Transnistria as ineligible. This is inconsistent with the existing record. However, since e-visa-cambodia.com is a non-official commercial site and evisa.gov.kh itself was inaccessible, the existing record is PRESERVED per safety rules. This discrepancy must be resolved by reading evisa.gov.kh directly when the redirect loop resolves."
     ]
   },
   "sources_checked": [
@@ -632,6 +803,11 @@
     "https://www.cm2h.com/",
     "https://harveylawcorporation.com/cambodia-my-second-home-program/",
     "https://kh.andersen.com/publications/new-sub-decree-guides-implementation-of-the-law-on-nationality/",
-    "https://data.opendevelopmentcambodia.net/laws_record/sub-decree-no-225-on-the-implementation-of-law-on-nationality"
+    "https://data.opendevelopmentcambodia.net/laws_record/sub-decree-no-225-on-the-implementation-of-law-on-nationality",
+    "https://www.cambodia-osaka.com/demand/visa-english/",
+    "https://www.cambodia-osaka.com/demand/",
+    "https://e-visa-cambodia.com/cambodia-visa-policy/",
+    "https://orkunsantepheap.com/cambodia-visa-exemption-china-2026/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Cambodia"
   ]
 }

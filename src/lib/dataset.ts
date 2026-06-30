@@ -23,3 +23,8 @@ export function flagFor(iso3: string): string {
 export function nameFor(iso3: string): string {
   return iso3ToCountry.get(iso3)?.name ?? iso3;
 }
+
+/** country name -> URL slug (must match the route generators in app/) */
+export function nameToSlug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}

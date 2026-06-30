@@ -1093,7 +1093,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://angolaconsulate.ae/wp-content/uploads/2023/10/Investor-and-tourism-Guide-in-Angola.pdf",
         "source_official": true,
-        "notes": "The investor visa is granted by the Migration Authority (SME) to foreign investors or representatives of investing companies under Law No. 13/19 of 23 May (Legal System of Foreign Citizens, DP 13/19). It allows multiple entries and is valid for up to 2 years. After 3 years of uninterrupted stay, the holder may apply for a temporary residence permit. No minimum investment amount is stated on official source pages for the visa itself — any amount is eligible under the 2021 Private Investment Law (Law No. 10/21 of 22 April 2021). Application requires: criminal record certificate, medical certificate, passport copy (6 months validity), proof of investment registration (CRIP from AIPEX), two photographs, and proof of fee payment. Investor visas are obtained through Angolan consular missions. Source: Official Angola Consulate Dubai Investors & Tourism Guide (angolaconsulate.ae, official consulate domain)."
+        "notes": "The investor visa is granted by the Migration Authority (SME) to foreign investors or representatives of investing companies under Law No. 13/19 of 23 May (Legal System of Foreign Citizens, DP 13/19). It allows multiple entries and is valid for up to 2 years. After 3 years of uninterrupted stay, the holder may apply for a temporary residence permit. No minimum investment amount is stated on official source pages for the visa itself - any amount is eligible under the 2021 Private Investment Law (Law No. 10/21 of 22 April 2021). Application requires: criminal record certificate, medical certificate, passport copy (6 months validity), proof of investment registration (CRIP from AIPEX), two photographs, and proof of fee payment. Investor visas are obtained through Angolan consular missions. Source: Official Angola Consulate Dubai Investors & Tourism Guide (angolaconsulate.ae, official consulate domain)."
       },
       {
         "name": "Residence Title (Titulo de Residencia)",
@@ -1123,13 +1123,15 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTED (2026-06-13): Entry 'American Samoa' (iso3=null) has been corrected to 'Samoa' (Independent State of Samoa, iso3=WSM). The SME FAQ English page erroneously renders 'American Samoa', but the official decree text (Decreto Presidencial n.º 189/23) reads 'Estados Unidos Independente de Samoa' and the official MIREX publication at brasil.mirex.gov.ao explicitly lists 'Estados Unidos Independente de Samoa' — the sovereign Independent State of Samoa (WSM), not the US territory of American Samoa. Source: https://brasil.mirex.gov.ao/web/noticias/angola-isenta-cidadaos-de-98-paises-de-vistos-de-turismo and https://governo.gov.ao/noticias/1046/governo/decreto-presidencial/angola-isenta-cidadaos-de-98-paises-de-vistos-de-turismo.",
-      "VERIFIED (2026-06-13): The 98-country decree list count and all other entries verified against official MIREX and governo.gov.ao publications — no other errors found.",
+      "CORRECTED (2026-06-13): Entry 'American Samoa' (iso3=null) has been corrected to 'Samoa' (Independent State of Samoa, iso3=WSM). The SME FAQ English page erroneously renders 'American Samoa', but the official decree text (Decreto Presidencial n.º 189/23) reads 'Estados Unidos Independente de Samoa' and the official MIREX publication at brasil.mirex.gov.ao explicitly lists 'Estados Unidos Independente de Samoa' - the sovereign Independent State of Samoa (WSM), not the US territory of American Samoa. Source: https://brasil.mirex.gov.ao/web/noticias/angola-isenta-cidadaos-de-98-paises-de-vistos-de-turismo and https://governo.gov.ao/noticias/1046/governo/decreto-presidencial/angola-isenta-cidadaos-de-98-paises-de-vistos-de-turismo.",
+      "VERIFIED (2026-06-13): The 98-country decree list count and all other entries verified against official MIREX and governo.gov.ao publications - no other errors found.",
       "VERIFIED (2026-06-13): Solomon Islands (SLB) correctly appears in visa_free list. The SME FAQ page calls them 'Salmon Islands' but the decree text lists 'Ilhas Salomão' = Solomon Islands (SLB).",
-      "VERIFIED (2026-06-13): Haiti (HTI) correctly in visa_free list — confirmed by official MIREX as 'República do Haiti'.",
+      "VERIFIED (2026-06-13): Haiti (HTI) correctly in visa_free list - confirmed by official MIREX as 'República do Haiti'.",
       "VERIFIED (2026-06-13): No new presidential decree found expanding or modifying the 98-country list since September 2023. The Fragomen reference to 'Decree 880/2023' refers to the same October 9 effective date update of Decree 189/23; no separate decree expands the list.",
-      "VERIFIED (2026-06-13): CBI section confirmed as null — no citizenship-by-investment program found on any official Angolan government source.",
-      "VERIFIED (2026-06-13): e-visa fee confirmed at 36,600 KZ paid in cash at the border per official SME FAQ page."
+      "VERIFIED (2026-06-13): CBI section confirmed as null - no citizenship-by-investment program found on any official Angolan government source.",
+      "VERIFIED (2026-06-13): e-visa fee confirmed at 36,600 KZ paid in cash at the border per official SME FAQ page.",
+      "VERIFIED (2026-06-27): Re-fetched SME FAQ page (sme.gov.ao/ao/perguntas-frequentes/evisa-english-version/) and governo.gov.ao decree page. All 98 visa-free countries confirmed unchanged. The 5 bilateral exemption countries (Mozambique, Namibia, Sao Tome and Principe, South Africa, Zambia) confirmed. e-visa fee 36,600 KZ confirmed. Philippines does NOT appear on the SME official page despite a Council of Ministers approval reported by O País (27 Aug 2025) and Philippine media (Inquirer, citing DFA notification from Angola Embassy Manila). The Philippines addition cannot be confirmed from an official Angolan government web page; it has been placed in gaps, not visa_free. Kenya–Angola mutual visa exemption agreed October 2023 but not reflected in any official Angolan source page; retained in gaps.",
+      "VERIFIED (2026-06-27): No new Presidential Decree (beyond 189/23) found on governo.gov.ao that expands, modifies, or revokes the visa-free tourism list. Record unchanged."
     ],
     "gaps": [
       "The SME portal pages for individual visa categories (e-visa, residence title, work visa) are behind a login wall and detailed eligibility criteria could not be confirmed from the public-facing official pages.",
@@ -1140,19 +1142,190 @@
       "Niue is listed in the Presidential Decree as one of the 14 Oceania countries; it is a New Zealand-associated territory with no sovereign ISO-3 code under ISO 3166-1 (NU is its two-letter code but not alpha-3); retained as iso3=null.",
       "No official Angolan source found granting conditional entry (visa-free/VoA/e-visa) based on holding a third-country visa (US, Schengen, UK, Canada, etc.), residence permit, or permanent residence card. Angola's entry rules are nationality-based, not credential-based.",
       "No official source found for OCI or equivalent diaspora special-status entry rules for Angola.",
-      "The MIREX bilateral agreements document (angola.or.jp, dated 12 February 2019) may not reflect post-2019 agreements. Wikipedia notes pending (not-yet-in-force) agreements with Benin, Republic of the Congo, Djibouti, Ghana, Morocco and Timor-Leste for diplomatic passports — these were not confirmed on any official Angolan government source and are excluded per strict official-source rule.",
+      "The MIREX bilateral agreements document (angola.or.jp, dated 12 February 2019) may not reflect post-2019 agreements. Wikipedia notes pending (not-yet-in-force) agreements with Benin, Republic of the Congo, Djibouti, Ghana, Morocco and Timor-Leste for diplomatic passports - these were not confirmed on any official Angolan government source and are excluded per strict official-source rule.",
       "Exact agreement dates for Cuba, Ecuador, and Zambia diplomatic/service passport waivers are not stated in the official MIREX document.",
-      "Angola–Congo Republic (Republic of the Congo, COG) diplomatic/service passport agreement details were found on angolex.com (non-official aggregator), not on an official .gov.ao domain; excluded from conditional_access per official-source rule — noted here as a gap."
+      "Angola–Congo Republic (Republic of the Congo, COG) diplomatic/service passport agreement details were found on angolex.com (non-official aggregator), not on an official .gov.ao domain; excluded from conditional_access per official-source rule - noted here as a gap.",
+      "UNRESOLVED (2026-06-27): Philippines (PHL) - Council of Ministers reportedly approved adding the Philippines to the visa-free tourism list at its 8th Ordinary Session (O País, 27 Aug 2025; Philippine Inquirer citing Angola Embassy Manila DFA notification). Wikipedia's Angola visa policy article (updated June 2026) records an October 17, 2025 effective date. However, the official Angolan SME FAQ page (sme.gov.ao/ao/perguntas-frequentes/evisa-english-version/) does NOT list the Philippines as of 2026-06-27 re-fetch. Per strict safety rule, Philippines has NOT been added to visa_free. Monitor the SME page and governo.gov.ao for publication of the amending Presidential Decree.",
+      "UNRESOLVED (2026-06-27): Kenya (KEN) - Angola and Kenya agreed on mutual visa exemption for ordinary passport holders on 21 October 2023. Kenya has broadened eTA exemptions to include Angolans (Legal Notice No. 93, May 2025). The reciprocal Angolan side (Kenyans entering Angola visa-free) is not confirmed on any official Angolan government page (SME, governo.gov.ao, MIREX). Kenya NOT added to visa_free pending official Angolan source confirmation.",
+      "UNRESOLVED (2026-06-27): The African Union Laissez-passer agreement signed in Addis Ababa (reported by africadosul.mirex.gov.ao) covers AU officials, dependents, and work specialists - it is NOT an ordinary-passport nationality-based exemption and does not affect the visa_free list. Correctly excluded."
     ]
   },
   "outbound_official": {
     "found": false,
-    "note": "No official Angola government outbound visa-list page located. The MIREX (Ministério das Relações Exteriores) portal at mirex.gov.ao and the SME (Serviço de Migração e Estrangeiros) at sme.gov.ao were checked exhaustively. The MIREX bilateral-agreements document (ucm.minfin.gov.ao PDF, hosted via angola.or.jp) lists bilateral visa-suppression/facilitation agreements but is framed as Angola granting inbound access to foreign nationals — it is not an outbound visa-free list for Angolan passport holders. No .gov.ao domain publishes a dedicated citizen-facing page (analogous to India's mea.gov.in/vffin) listing countries where Angolan ordinary-passport holders may travel without a prior consular visa. Rely on destination-side data."
+    "note": "No official Angola government outbound visa-list page located. The MIREX (Ministério das Relações Exteriores) portal at mirex.gov.ao and the SME (Serviço de Migração e Estrangeiros) at sme.gov.ao were checked exhaustively. The MIREX bilateral-agreements document (ucm.minfin.gov.ao PDF, hosted via angola.or.jp) lists bilateral visa-suppression/facilitation agreements but is framed as Angola granting inbound access to foreign nationals - it is not an outbound visa-free list for Angolan passport holders. No .gov.ao domain publishes a dedicated citizen-facing page (analogous to India's mea.gov.in/vffin) listing countries where Angolan ordinary-passport holders may travel without a prior consular visa. Rely on destination-side data."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourism Visa (Visto de Turismo)",
+      "purpose": "Recreational, sports, or cultural visits to Angola. Holders may not establish residence or engage in any paid activity.",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/perguntas-frequentes/evisa-english-version/",
+      "notes": "Fee is 36,600 KZ (Angolan kwanza) paid in cash at the border - no USD equivalent stated officially. Visa must be used within 60 days of issuance. Stay of up to 30 days, extendable once for an equal period. Requires valid passport (6+ months), photograph, vaccination certificate, and round-trip air ticket booking. Nationals of 98+ countries are exempt from this visa under Presidential Decree No. 189/23 of 29 September 2023. The e-visa portal (sme.gov.ao) allows online pre-authorization."
+    },
+    {
+      "category": "business",
+      "name": "Short-Duration Visa (Visto de Curta Duração)",
+      "purpose": "Urgent or short-term entry needs including business contacts, market research, and similar brief activities. No residence or paid employment permitted.",
+      "max_stay_days": 7,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/servicos/vistos/categoria-dos-vistos/",
+      "notes": "Must be used within 72 hours of issuance. Maximum stay of 7 days, renewable once for another 7 days. Issued for urgent entry needs. No residence establishment or paid employment allowed."
+    },
+    {
+      "category": "business",
+      "name": "Business/Temporary Stay Visa – Brazil Protocol (Visto Protocolo Brasil)",
+      "purpose": "Market research, business meetings, investment negotiations, and board representation under the Angola-Brazil bilateral protocol. No paid activity permitted.",
+      "max_stay_days": 90,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/perguntas-frequentes/evisa-english-version/",
+      "notes": "Valid for 24 months (730 days). Maximum stay of 90 days per 12-month period; non-renewable within the same period. Processing time: 10 days. Applies to Brazilian nationals only under the Angola-Brazil bilateral protocol. Covers market researchers, business people, investors, and board members."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa – Long-Stay / Cape Verde Protocol (Visto de Trabalho Longa Duração – Protocolo Cabo Verde)",
+      "purpose": "Long-term employment for Cape Verdean nationals under the Angola-Cape Verde bilateral agreement, covering periods of 3 to 36 months.",
+      "max_stay_days": 1080,
+      "validity_days": 1080,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/perguntas-frequentes/evisa-english-version/",
+      "notes": "Valid for 36 months (1080 days). Continuous stays of 3 to 36 months, extendable. Processing time: 15 working days. Applies to Cape Verdean nationals only under bilateral agreement. Short-stay variant (under 3 months): 36-month validity, multiple entries, processing 8 working days."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa – Long-Stay / France Protocol (Visto de Trabalho Longa Duração – Protocolo França)",
+      "purpose": "Long-term employment (over 3 months) for French nationals or those working with French companies under the Angola-France bilateral agreement, including company leadership and internship roles.",
+      "max_stay_days": 1080,
+      "validity_days": 1080,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/perguntas-frequentes/evisa-english-version/",
+      "notes": "Valid for 36 months (1080 days). Stays of 12–36 months, extendable. Processing time: 30 business days. Requires employment contract and minimum salary of 1.5x Angola minimum wage, or 3+ years higher education qualification. Interns (VIE program or higher education students): maximum 12 months, renewable. Short-stay professionals (under 3 months): 36-month validity, multiple entries, 90 days per 180-day period, processing 8 business days. French nationals only under bilateral agreement."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa – Long-Stay / Portugal Protocol (Visto de Trabalho Longa Duração – Protocolo Portugal)",
+      "purpose": "Long-term employment for Portuguese nationals under the Angola-Portugal bilateral protocol, covering stays of 12 to 36 months.",
+      "max_stay_days": 1080,
+      "validity_days": 1080,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/perguntas-frequentes/evisa-english-version/",
+      "notes": "Valid for 36 months. Stays of 12–36 months, extendable. Processing time: 30 working days; renewals: 5 working days. Portuguese nationals only under bilateral protocol. Short-term variant: 36-month validity, multiple entries, 90 days per semester, processing 8 working days. Academic, medical, sports, cultural, and scientific categories also available under same protocol with 8-working-day processing."
+    },
+    {
+      "category": "student",
+      "name": "Study Visa (Visto de Estudo)",
+      "purpose": "Academic studies or professional training at public or private institutions in Angola. Holders may not establish residence or engage in paid work except internship-related activities.",
+      "max_stay_days": 365,
+      "validity_days": 60,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/servicos/vistos/categoria-dos-vistos/",
+      "notes": "Must be used within 60 days of issuance. Maximum stay of 1 year (365 days), renewable for equal periods until studies conclude. Multiple entries permitted. Study visa extensions can be processed at the SME portal (sme.gov.ao/ao/catalogo/actos/). No paid employment permitted except internship activities directly related to the course."
+    },
+    {
+      "category": "medical",
+      "name": "Medical Treatment Visa (Visto de Tratamento Médico)",
+      "purpose": "Hospital or clinical treatment at public or private medical facilities in Angola. Holders may not engage in employment or establish residence.",
+      "max_stay_days": 180,
+      "validity_days": 60,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/servicos/vistos/categoria-dos-vistos/",
+      "notes": "Must be used within 60 days of issuance. Maximum stay of 180 days, extendable upon justified completion of medical treatment. Multiple entries. No employment or residence establishment permitted. Medical visa extensions available via SME portal."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Visa (Visto de Investidor)",
+      "purpose": "Granted to foreign investors or their representatives to execute and manage investment projects registered under Angola's Private Investment Law (Law No. 10/21 of 22 April 2021).",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://angolaconsulate.ae/wp-content/uploads/2023/10/Investor-and-tourism-Guide-in-Angola.pdf",
+      "notes": "Valid for up to 2 years (730 days), multiple entries. Issued by the Migration Authority (SME). After 3 years of uninterrupted stay, holder may apply for a temporary residence permit. Requires: criminal record certificate, medical certificate, passport copy (6+ months validity), proof of investment registration (CRIP from AIPEX), two photographs, and proof of fee payment. No minimum investment amount stated on official sources - any amount eligible under Private Investment Law. Application via Angolan consular missions. Based on Law No. 13/19 of 23 May (Legal System of Foreign Citizens) and Law No. 10/21."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official / Courtesy Visa (Visto Diplomático / Oficial / de Cortesia)",
+      "purpose": "For holders of diplomatic, service, special, or ordinary passports on official diplomatic visits, official government business, or courtesy calls to Angola.",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/servicos/vistos/categoria-dos-vistos/",
+      "notes": "Must be used within 60 days of issuance. Maximum stay of 30 days, extendable to 90 days in justified cases. One or two entries standard; multiple entries possible in special circumstances. Separate from the bilateral diplomatic/service passport waiver agreements - this visa category applies where a bilateral exemption does not exist. Many nationalities holding diplomatic or service passports benefit from visa-free entry under bilateral agreements with Angola."
+    },
+    {
+      "category": "other",
+      "name": "Temporary Residence Visa (Visto de Residência Temporária)",
+      "purpose": "For foreign nationals seeking temporary residence status in Angola, distinct from the short-stay tourist or business visa categories.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.sme.gov.ao/ao/catalogo/actos/",
+      "notes": "Extensions (prorrogação) of temporary residence visas are listed as a service on the SME catalog (sme.gov.ao/ao/catalogo/actos/). CPLP-track variant available for nationals of Community of Portuguese-speaking Countries (CPLP) member states. Detailed eligibility criteria and initial conditions are managed through the SME portal. No fee or processing time confirmed from publicly accessible official pages."
+    }
+  ],
   "sources_checked": [
     "https://www.sme.gov.ao/ao/perguntas-frequentes/evisa-english-version/",
     "https://www.sme.gov.ao/ao/",
     "https://www.sme.gov.ao/ao/catalogo/actos/",
+    "https://sme.gov.ao/ao/evisa/",
     "https://angolaconsulate.ae/wp-content/uploads/2023/10/Investor-and-tourism-Guide-in-Angola.pdf",
     "https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw4z/mjq5/~edisp/minfin3249736.pdf",
     "https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw4x/mjq3/~edisp/minfin1247728.pdf",
@@ -1161,7 +1334,9 @@
     "https://mirex.gov.ao/",
     "https://brasil.mirex.gov.ao/web/noticias/angola-isenta-cidadaos-de-98-paises-de-vistos-de-turismo",
     "https://africadosul.mirex.gov.ao/web/noticias/cidadaos-de-98-paises-tem-isencao-de-visto-de-entrada",
+    "https://africadosul.mirex.gov.ao/web/noticias/angola-e-uniao-africana-assinam-hoje-acordo-de-isencao-de-vistos",
     "https://www.angola.or.jp/pt/2019/02/13/acordos-sobre-isenca-supressao-e-facilitacao-de-vistos-em-passaportes-diplomaticos-de-servico-e-ordinarios/",
-    "https://www.sme.gov.ao/ao/servicos/vistos/categoria-dos-vistos/"
+    "https://www.sme.gov.ao/ao/servicos/vistos/categoria-dos-vistos/",
+    "https://mindcom.gov.ao/web/noticias/conhe%C3%A7a-a-lista-de-pa%C3%ADses-isentos-de-vistos-de-turismo-em-angola-discover-the-list-of-exempt-countries-of-tourist-visas-in-angola"
   ]
 }

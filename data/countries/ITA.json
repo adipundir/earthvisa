@@ -209,8 +209,8 @@
         "nationality": "Kosovo",
         "iso3": "XKX",
         "max_stay_days": 90,
-        "notes": "Visa-free for 90 days in any 180-day period for holders of biometric passports. Added to Annex II by EU Regulation 2024/1761, in effect from 1 January 2024.",
-        "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1761/oj/eng",
+        "notes": "Visa-free for 90 days in any 180-day period for holders of biometric ICAO-compliant passports. Added to Annex II by EU Regulation 2023/850, in effect from 1 January 2024.",
+        "source_url": "https://eur-lex.europa.eu/eli/reg/2023/850/oj",
         "source_official": true
       },
       {
@@ -525,8 +525,8 @@
         "nationality": "All Annex II (visa-exempt) third-country nationals (excluding EEA/CH/SM/AND/MC/VAT)",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "ETIAS (European Travel Information and Authorisation System) will be required for visa-exempt third-country nationals once operational. Timeline: six months after the full implementation of the Entry/Exit System (EES). As of June 2026, no firm launch date has been published by the European Commission. Applies to all Annex II nationals entering the Schengen area including Italy. Fee applies; authorization covers multiple short stays within 3 years.",
-        "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
+        "notes": "ETIAS (European Travel Information and Authorisation System) will be required for visa-exempt third-country nationals once operational. The Entry/Exit System (EES) became fully operational on 10 April 2026 across all Schengen countries, after a progressive rollout beginning 12 October 2025. ETIAS is scheduled to start operations in Q4 2026; no precise date confirmed as of June 2026. Applies to all Annex II nationals entering the Schengen area including Italy. The application fee is EUR 20 (updated from the originally proposed EUR 7, adjusted for inflation and additional operational costs); authorization covers multiple short stays within 3 years.",
+        "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en",
         "source_official": true
       }
     ],
@@ -537,7 +537,7 @@
       "https://eur-lex.europa.eu/eli/reg/2018/1806/oj/eng",
       "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en"
     ],
-    "notes": "Italy is a member of the Schengen Area. Visa policy for short stays (up to 90 days in any 180-day period) is governed by EU Regulation 2018/1806 and applies uniformly across all Schengen states. The regulation is periodically amended. Visa-on-arrival does not exist in the Schengen area. Italy does not offer its own standalone e-visa system for short stays. ETIAS (EU travel authorisation for visa-exempt nationals) is expected to become operational six months after the EES launch, with no confirmed date as of June 2026. All EU/EEA citizens have full freedom of movement. Vanuatu was suspended from Annex II and nationals require a visa; Nauru is listed in Annex II but only subject to a bilateral agreement with the EU that has not yet entered into force — Nauru nationals still require a Schengen visa. Georgia ordinary passport holders remain visa-free; Georgian diplomatic/service/official passport holders subject to EU-wide suspension from 6 March 2026 to 6 March 2027."
+    "notes": "Italy is a member of the Schengen Area. Visa policy for short stays (up to 90 days in any 180-day period) is governed by EU Regulation 2018/1806 and applies uniformly across all Schengen states. The regulation is periodically amended. Visa-on-arrival does not exist in the Schengen area. Italy does not offer its own standalone e-visa system for short stays. The Entry/Exit System (EES) became fully operational on 10 April 2026 (progressive rollout began 12 October 2025). ETIAS (EU travel authorisation for visa-exempt nationals) is scheduled to start operations in Q4 2026; no precise date confirmed as of June 2026. All EU/EEA citizens have full freedom of movement. Vanuatu was permanently removed from Annex II (suspension running from May 2022; Commission proposed permanent removal December 2024; Vanuatu nationals require a Schengen visa). Nauru is listed in Annex II but only subject to a bilateral agreement with the EU that has not yet entered into force - Nauru nationals still require a Schengen visa. Kosovo was added to Annex II by EU Regulation 2023/850, effective 1 January 2024, for biometric ICAO-compliant passport holders. Georgia ordinary passport holders remain visa-free; Georgian diplomatic/service/official passport holders subject to EU-wide suspension from 6 March 2026 to 6 March 2027."
   },
   "conditional_access": [
     {
@@ -629,9 +629,10 @@
   "visa_required_notable": {
     "vanuatu": {
       "iso3": "VUT",
-      "status": "suspended",
-      "notes": "Vanuatu was listed in Annex II of EU Regulation 2018/1806 but the visa-free exemption has been suspended under the EU visa suspension mechanism. The suspension was activated 4 May 2022 due to security risks from Vanuatu's golden passport (CBI) schemes. As of June 2026, the suspension remains in effect and Vanuatu nationals require a Schengen/Italian visa. A Commission proposal to permanently re-introduce the visa requirement for Vanuatu nationals was issued in December 2024; the permanent legislative change may not yet be fully enacted but the suspension makes a visa de facto required.",
-      "source_url": "https://home-affairs.ec.europa.eu/delegated-regulation-extension-temporary-suspension-visa-exemption-nationals-vanuatu_en",
+      "status": "permanently_removed",
+      "notes": "Vanuatu was listed in Annex II of EU Regulation 2018/1806 but the visa-free exemption has been permanently revoked. The suspension was activated 4 May 2022 due to security risks from Vanuatu's investor citizenship (golden passport/CBI) schemes. The permanent removal was enacted by EU Regulation 2025/11 of the European Parliament and of the Council of 19 December 2024, which amended Regulation (EU) 2018/1806 to move Vanuatu from Annex II (visa-free) to Annex I (visa-required). Vanuatu nationals require a Schengen/Italian visa to enter Italy.",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2025/11/oj/eng",
+      "source_url_secondary": "https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/",
       "source_official": true
     }
   },
@@ -713,29 +714,36 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTION: Vanuatu removed from visa_policy.visa_free. The prior record listed Vanuatu in visa_free with a 'suspended' notes field, which is a misclassification — suspended nationals cannot use the visa_free pathway. Vanuatu has been under EU visa suspension since 4 May 2022 due to CBI/golden passport security risks; as of June 2026 the suspension remains in effect and a permanent legislative withdrawal was proposed by the Commission in December 2024. Moved to a visa_required_notable block.",
+      "CORRECTION: Vanuatu removed from visa_policy.visa_free. The prior record listed Vanuatu in visa_free with a 'suspended' notes field, which is a misclassification - suspended nationals cannot use the visa_free pathway. Vanuatu has been under EU visa suspension since 4 May 2022 due to CBI/golden passport security risks; the Commission proposed permanent removal from Annex II in December 2024. Moved to a visa_required_notable block.",
       "CORRECTION: Georgia entry in visa_free updated to clarify that ORDINARY passport holders remain visa-free, while diplomatic/service/official passport holders are subject to an EU-wide suspension from 6 March 2026 to 6 March 2027.",
       "ADDITION: New conditional_access entry added for Georgia diplomatic/service/official passport holders (basis=passport_type, level=visa_required) documenting the EU suspension in force from 6 March 2026.",
-      "VERIFIED: Diplomatic, service, and special passport exemption lists from conslondra.esteri.it re-confirmed unchanged: 44 diplomatic, 30 service, 7 special countries. Lists match prior record.",
+      "VERIFIED: Diplomatic, service, and special passport exemption lists from conslondra.esteri.it re-confirmed unchanged: 44 diplomatic, 30 service, 7 special countries. Lists match prior record. Re-verified 2026-06-27.",
       "VERIFIED: Investor Visa for Italy investment thresholds unchanged: EUR 250,000 startup / EUR 500,000 limited company / EUR 1,000,000 philanthropic / EUR 2,000,000 government bonds. Suspension for Russian/Belarusian nationals confirmed still in place; extended to dual nationals as of March 2024.",
-      "VERIFIED: ETIAS still not operational as of June 2026; timeline remains '6 months after EES full implementation' with no confirmed date. ETA entry updated to remove the 'expected 2026' claim from the prior record.",
-      "VERIFIED: Saudi Arabia bilateral agreement (signed 26 Jan 2025, in force 13 Aug 2025) confirmed from two esteri.it official sources (ambriad.esteri.it and consgedda.esteri.it). No change needed.",
-      "VERIFIED: Kosovo added to Annex II by EU Regulation 2024/1761; source_url updated to the specific amending regulation.",
-      "VERIFIED: Nauru appears in Annex II as a conditional entry requiring a bilateral visa exemption agreement with the EU; as that agreement has not entered into force, Nauru nationals are not visa-free and Nauru is correctly absent from visa_free list.",
-      "NOTE: The EU adopted its first EU Visa Strategy in January 2026 (COM(2026) 43), but this is a strategic framework document and does not change current Annex I/II country classifications."
+      "CORRECTION (2026-06-27): Kosovo regulation number corrected from 2024/1761 to the correct EU Regulation 2023/850 (adopted 19 April 2023, in effect 1 January 2024). Source URL updated to https://eur-lex.europa.eu/eli/reg/2023/850/oj. The prior source URL pointed to a non-existent regulation number.",
+      "CORRECTION (2026-06-27): ETIAS/EES status updated. EES became fully operational on 10 April 2026 (progressive rollout began 12 October 2025). ETIAS is now confirmed for Q4 2026 launch per official EC source. Prior record incorrectly stated no firm launch date for EES and said EES was not yet implemented. ETA entry source_url updated to the ETIAS official page.",
+      "VERIFIED (2026-06-27): Saudi Arabia bilateral agreement (signed 26 Jan 2025, in force 13 Aug 2025) confirmed from two esteri.it official sources (ambriad.esteri.it and consgedda.esteri.it). No change needed.",
+      "VERIFIED (2026-06-27): Vanuatu suspension confirmed in effect. [SUPERSEDED: see 2026-06-29 correction - Vanuatu has been permanently removed from Annex II by EU Regulation 2025/11 of 19 December 2024; this is no longer a suspension but a permanent visa requirement.]",
+      "VERIFIED (2026-06-27): Nauru appears in Annex II as a conditional entry requiring a bilateral visa exemption agreement with the EU; as that agreement has not entered into force, Nauru nationals are not visa-free and Nauru is correctly absent from visa_free list.",
+      "NOTE: The EU adopted its first EU Visa Strategy in January 2026 (COM(2026) 43), but this is a strategic framework document and does not change current Annex I/II country classifications.",
+      "NOTE (2026-06-27): esteri.it main entry/visa page URL https://www.esteri.it/en/servizi-consolari-e-visti/ingressosoggiornoinitalia/ returned 404 - URL appears to have moved. Data integrity maintained from other esteri.it sources that are confirmed live.",
+      "CORRECTION (2026-06-29): Vanuatu visa_required_notable status updated from 'suspended' to 'permanently_removed'. EU Regulation 2025/11 of 19 December 2024 formally amended Regulation (EU) 2018/1806 to permanently move Vanuatu from Annex II to Annex I (visa-required). Prior record was awaiting confirmation of whether permanent legislation had been enacted - it has been confirmed enacted. Source: https://eur-lex.europa.eu/eli/reg/2025/11/oj/eng and https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/",
+      "CORRECTION (2026-06-29): ETIAS application fee updated to EUR 20 in the eta entry notes. Official EC ETIAS page confirms the fee was increased to EUR 20 (from originally proposed EUR 7) to account for inflation since 2018 and additional operational costs for new technical features. ETIAS remains scheduled for Q4 2026 and is not yet operational. Source: https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en",
+      "VERIFIED (2026-06-29): Diplomatic passport exemption list (Italian-language page at conslondra.esteri.it) confirmed 44 countries unchanged. Service passport list confirmed 30 countries unchanged. EU Schengen visa policy page confirms Vanuatu suspension and Georgia diplomatic passport suspension both still referenced. No new country additions or removals to Annex II detected beyond Vanuatu permanent removal.",
+      "NOTE (2026-06-29): esteri.it main entry/visa page URL https://www.esteri.it/en/servizi-consolari-e-visti/ingressosoggiornoinitalia/ returned 404 again on re-check. This URL has been dead since at least June 2026 validation runs. URL needs to be re-discovered on next cycle."
     ],
     "gaps": [
-      "Complete verbatim text of EU Regulation 2018/1806 Annex II as currently consolidated (including all amendments through 2026) could not be extracted directly from EUR-Lex — the visa-free list was reconstructed from multiple official EU sources.",
-      "Vanuatu final legislative status unclear: the Commission proposed permanent removal from Annex II in December 2024, but whether the implementing regulation has been formally adopted and published in the Official Journal as of June 2026 could not be confirmed. The suspension (which has the same practical effect) is confirmed.",
+      "Complete verbatim text of EU Regulation 2018/1806 Annex II as currently consolidated (including all amendments through 2026) could not be extracted directly from EUR-Lex - the visa-free list was reconstructed from multiple official EU sources.",
+      "Vanuatu permanent removal (EU Regulation 2025/11, 19 Dec 2024): confirmed enacted and in force per EU Council press release and EUR-Lex citation. The exact date of entry into force could not be extracted from the EUR-Lex page (rendered empty on fetch). Practical effect: Vanuatu nationals require a Schengen visa.",
       "Italy does not issue standalone e-visas; no e-visa data to record.",
       "Italy does not offer visa-on-arrival; no VOA data to record.",
-      "ETIAS launch date unconfirmed as of June 2026; EES implementation date not published.",
-      "Specific salary threshold for EU Blue Card (EUR 33,500) is from the official EC immigration portal for 2024; Italy may update annually — exact 2026 figure unverifiable without accessing the Italian Prefettura/Ministry official gazette.",
+      "ETIAS precise launch date unconfirmed as of June 2026; scheduled for Q4 2026 per EC official page but no date set.",
+      "Specific salary threshold for EU Blue Card (EUR 33,500) is from the official EC immigration portal for 2024; Italy may update annually - exact 2026 figure unverifiable without accessing the Italian Prefettura/Ministry official gazette.",
       "Digital Nomad Visa minimum income (EUR 24,789) sourced from Italian Consulate General New York (esteri.it) for 2024; annual recalculation not confirmed for 2026.",
       "Diplomatic/service/special passport exemption lists from conslondra.esteri.it do not publish stay duration or bilateral agreement dates for individual countries except Saudi Arabia.",
       "Pakistan-Italy diplomatic passport visa waiver agreement (reported June 2026) has no confirmed official publication on esteri.it; not included pending verification.",
       "No OCI (Overseas Citizen of India) cardholder exemption for Italy found on any official Italian or EU government source.",
-      "The diplomatic/service/special passport lists from conslondra.esteri.it may not be exhaustive; they represent the published list as accessed June 2026."
+      "The diplomatic/service/special passport lists from conslondra.esteri.it may not be exhaustive; they represent the published list as accessed June 2026.",
+      "esteri.it main entry/visa page (https://www.esteri.it/en/servizi-consolari-e-visti/ingressosoggiornoinitalia/) returned 404 - URL needs to be re-discovered on next validation cycle."
     ]
   },
   "sources_checked": [
@@ -743,85 +751,85 @@
       "url": "https://www.esteri.it/en/servizi-consolari-e-visti/ingressosoggiornoinitalia/",
       "domain": "esteri.it",
       "official": true,
-      "note": "Italian Ministry of Foreign Affairs — main entry/visa page; returned 404 on re-check June 2026 (URL may have moved)"
+      "note": "Italian Ministry of Foreign Affairs - main entry/visa page; returned 404 on re-check June 2026 (URL may have moved)"
     },
     {
       "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
       "domain": "home-affairs.ec.europa.eu",
       "official": true,
-      "note": "European Commission Schengen visa policy page — confirmed Vanuatu suspension in effect, Georgia diplomatic passport suspension from 6 March 2026, ETIAS timeline unchanged. Re-verified June 2026."
+      "note": "European Commission Schengen visa policy page - confirmed Vanuatu suspension in effect, Georgia diplomatic passport suspension from 6 March 2026. Re-verified 2026-06-27."
     },
     {
       "url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
       "domain": "esteri.it",
       "official": true,
-      "note": "Italian Embassy Washington — confirmed US citizens visa-free up to 90 days"
+      "note": "Italian Embassy Washington - confirmed US citizens visa-free up to 90 days"
     },
     {
       "url": "https://consnewyork.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/visas-to-enter-italy/digital-nomad-remote-worker-visa/",
       "domain": "esteri.it",
       "official": true,
-      "note": "Official Italian Consulate NY page on Digital Nomad Visa — income EUR 24,789, 1-year permit"
+      "note": "Official Italian Consulate NY page on Digital Nomad Visa - income EUR 24,789, 1-year permit"
     },
     {
       "url": "https://conslondra.esteri.it/it/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tourism-for-diplomatic-and-service-passport-holders/diplomatic-passports-exempt/",
       "domain": "esteri.it",
       "official": true,
-      "note": "Italian Consulate General London — List of diplomatic passports exempt from Italian visa (44 countries). Re-verified June 2026; list unchanged."
+      "note": "Italian Consulate General London - List of diplomatic passports exempt from Italian visa (44 countries). Re-verified June 2026; list unchanged."
     },
     {
       "url": "https://conslondra.esteri.it/it/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tourism-for-diplomatic-and-service-passport-holders/service-passports-exempt/",
       "domain": "esteri.it",
       "official": true,
-      "note": "Italian Consulate General London — List of service/official passports exempt from Italian visa (30 countries). Re-verified June 2026; list unchanged."
+      "note": "Italian Consulate General London - List of service/official passports exempt from Italian visa (30 countries). Re-verified June 2026; list unchanged."
     },
     {
       "url": "https://conslondra.esteri.it/it/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tourism-for-diplomatic-and-service-passport-holders/special-passports-exempt/",
       "domain": "esteri.it",
       "official": true,
-      "note": "Italian Consulate General London — List of special passports exempt from Italian visa (7 countries). Re-verified June 2026; list unchanged."
+      "note": "Italian Consulate General London - List of special passports exempt from Italian visa (7 countries). Re-verified June 2026; list unchanged."
     },
     {
       "url": "https://ambriad.esteri.it/en/news/dall_ambasciata/2025/08/implementation-of-the-bilateral-agreement-between-italy-and-saudi-arabia-on-mutual-visa-exemption-for-holders-of-diplomatic-special-or-service-passports/",
       "domain": "esteri.it",
       "official": true,
-      "note": "Italian Embassy Riyadh — Implementation notice for Italy-Saudi Arabia bilateral visa exemption agreement (signed 26 Jan 2025, in force 13 Aug 2025)."
+      "note": "Italian Embassy Riyadh - Implementation notice for Italy-Saudi Arabia bilateral visa exemption agreement (signed 26 Jan 2025, in force 13 Aug 2025)."
     },
     {
       "url": "https://consgedda.esteri.it/en/news/dal_consolato/2025/09/bilateral-agreement-between-italy-and-saudi-arabia-on-mutual-visa-exemption-for-holders-of-diplomatic-special-or-service-passports/",
       "domain": "esteri.it",
       "official": true,
-      "note": "Italian Consulate General Jeddah — Corroborating notice for Italy-Saudi Arabia bilateral visa exemption agreement."
+      "note": "Italian Consulate General Jeddah - Corroborating notice for Italy-Saudi Arabia bilateral visa exemption agreement."
     },
     {
       "url": "https://investorvisa.mise.gov.it/index.php/en/",
       "domain": "investorvisa.mise.gov.it",
       "official": true,
-      "note": "Official Italian Investor Visa portal — investment options and amounts re-confirmed unchanged. Russian/Belarusian suspension confirmed extended to dual nationals March 2024."
+      "note": "Official Italian Investor Visa portal - investment options and amounts re-confirmed unchanged. Russian/Belarusian suspension confirmed extended to dual nationals March 2024."
     },
     {
       "url": "https://italiastartupvisa.mise.gov.it/",
       "domain": "italiastartupvisa.mise.gov.it",
       "official": true,
-      "note": "Official Italia Startup Visa portal — program details, 30-day processing"
+      "note": "Official Italia Startup Visa portal - program details, 30-day processing"
     },
     {
       "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card/eu-blue-card-italy_en",
       "domain": "home-affairs.ec.europa.eu",
       "official": true,
-      "note": "European Commission EU Blue Card Italy page — salary EUR 33,500, 90-day max processing"
+      "note": "European Commission EU Blue Card Italy page - salary EUR 33,500, 90-day max processing"
     },
     {
       "url": "https://eur-lex.europa.eu/eli/reg/2018/1806/oj/eng",
       "domain": "eur-lex.europa.eu",
       "official": true,
-      "note": "EU Regulation 2018/1806 — governing Schengen visa policy Annex I/II. Annex II list confirmed; Nauru noted as conditional (requires bilateral agreement not yet in force)."
+      "note": "EU Regulation 2018/1806 - governing Schengen visa policy Annex I/II. Annex II list confirmed; Nauru noted as conditional (requires bilateral agreement not yet in force)."
     },
     {
       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32010R0265",
       "domain": "eur-lex.europa.eu",
       "official": true,
-      "note": "EU Regulation 265/2010 — Type D long-stay visa equivalence to residence permit for Schengen free movement"
+      "note": "EU Regulation 265/2010 - Type D long-stay visa equivalence to residence permit for Schengen free movement"
     },
     {
       "url": "https://home-affairs.ec.europa.eu/delegated-regulation-extension-temporary-suspension-visa-exemption-nationals-vanuatu_en",
@@ -833,7 +841,355 @@
       "url": "https://home-affairs.ec.europa.eu/commission-implementing-regulation-temporary-suspension-visa-exemption-georgian-nationals-holding_en",
       "domain": "home-affairs.ec.europa.eu",
       "official": true,
-      "note": "EU Commission Implementing Regulation — temporary suspension of visa exemption for Georgian nationals holding diplomatic, service or official passports. Effective 6 March 2026 to 6 March 2027."
+      "note": "EU Commission Implementing Regulation - temporary suspension of visa exemption for Georgian nationals holding diplomatic, service or official passports. Effective 6 March 2026 to 6 March 2027."
+    },
+    {
+      "url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "domain": "esteri.it",
+      "official": true,
+      "note": "Italian Embassy Beijing - visa types with fees: Schengen EUR 90 (children EUR 45), work EUR 116, study EUR 50. Processing times confirmed. Used to research visa_types array June 2026."
+    },
+    {
+      "url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tipologie-di-visto/",
+      "domain": "esteri.it",
+      "official": true,
+      "note": "Italian Embassy Washington - national visa type listing page. Confirmed two main categories (Schengen C and National D) plus Investor Visa. Used to document visa_types June 2026."
+    },
+    {
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/850/oj",
+      "domain": "eur-lex.europa.eu",
+      "official": true,
+      "note": "EU Regulation 2023/850 - amending Regulation 2018/1806 to add Kosovo to Annex II (visa-free). Adopted 19 April 2023, in effect 1 January 2024. Corrects prior record which cited the non-existent regulation number 2024/1761. Verified 2026-06-27."
+    },
+    {
+      "url": "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en",
+      "domain": "home-affairs.ec.europa.eu",
+      "official": true,
+      "note": "European Commission ETIAS official page - confirmed ETIAS start date scheduled for Q4 2026. EES fully operational from 10 April 2026. Verified 2026-06-27."
+    },
+    {
+      "url": "https://home-affairs.ec.europa.eu/news/entryexit-system-ees-fully-operational-2026-04-10_en",
+      "domain": "home-affairs.ec.europa.eu",
+      "official": true,
+      "note": "European Commission news - EES Entry/Exit System declared fully operational across all Schengen countries on 10 April 2026, following progressive rollout from 12 October 2025. Verified 2026-06-27."
+    },
+    {
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/11/oj/eng",
+      "domain": "eur-lex.europa.eu",
+      "official": true,
+      "note": "EU Regulation 2025/11 of 19 December 2024 - permanently amends Regulation (EU) 2018/1806 to move Vanuatu from Annex II (visa-free) to Annex I (visa-required). Confirms permanent removal of Vanuatu from the Schengen visa-free list. Verified 2026-06-29."
+    },
+    {
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2024/12/12/vanuatu-council-ends-visa-exemption/",
+      "domain": "consilium.europa.eu",
+      "official": true,
+      "note": "EU Council press release - 12 December 2024. Council formally ends Vanuatu visa exemption, citing investor citizenship scheme security risks. Corroborates permanent removal via EU Regulation 2025/11. Verified 2026-06-29."
+    }
+  ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Visa (Type C) - Tourism",
+      "purpose": "Short-stay tourism, leisure, and sightseeing in Italy and the Schengen Area. Covers individual tourists and group tourists (ADS groups).",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 90,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tipologie-di-visto/",
+      "notes": "Schengen Type C visa valid for max 90 days within any 180-day period across all Schengen states. Fee EUR 90 (EUR 45 for children aged 6-11; free for children under 6). Single or multiple entry. Apply at Italian consulate of primary destination country. Standard processing 15 calendar days, extendable up to 45 days in exceptional cases. Biometric data (fingerprints) collected at visa application center. Some nationalities with EU Visa Facilitation Agreements pay EUR 35."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Visa (Type C) - Business",
+      "purpose": "Short-term business activities in Italy including meetings, negotiations, trade fairs, conferences, and commercial visits. Does not permit employment.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 90,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "notes": "Same Schengen Type C framework as tourist visa. Business/commercial purposes require proof of business invitation or trade fair registration. No work authorization included. Multiple-entry often issued for frequent business travelers."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (ATV)",
+      "purpose": "Allows nationals of specified countries to transit through the international zone of an Italian airport without entering the Schengen territory.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_eur": 90,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
+      "notes": "Required for nationals of certain countries (Annex IV of EU Regulation 810/2009) transiting through the international transit zone of any Schengen airport including Italian airports. Does not permit entry into Italian territory. Standard Schengen visa fee of EUR 90 applies. Not required for holders of valid Schengen visas, residence permits, or certain other travel documents."
+    },
+    {
+      "category": "work",
+      "name": "National Visa (Type D) - Subordinate Employment (Lavoro Subordinato)",
+      "purpose": "Authorises non-EU nationals to enter Italy to take up employment under a contract with an Italian employer. Covers both seasonal and non-seasonal work.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 116,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "notes": "Requires a Nulla Osta (clearance) from the Single Desk for Immigration (Sportello Unico per l'Immigrazione) at the Italian Prefettura. Subject to annual immigration quotas (decreto flussi) except for EU Blue Card and certain exempt categories. Must convert to residence permit (Permesso di Soggiorno) within 8 working days of arrival. Non-seasonal work: processing ~90 days. Seasonal work: shorter timelines. Fee EUR 116."
+    },
+    {
+      "category": "work",
+      "name": "National Visa (Type D) - Self-Employment (Lavoro Autonomo)",
+      "purpose": "Permits non-EU nationals to enter Italy to carry out independent professional or business activity (freelance, entrepreneur, professional services) not covered by the Startup Visa.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 116,
+      "processing_days_min": 90,
+      "processing_days_max": 120,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "notes": "Subject to annual immigration quotas (decreto flussi). Requires authorization from the relevant ministry/chamber of commerce depending on profession. Processing time typically 90-120 days due to quota release schedule. Must register at Questura and convert to residence permit within 8 working days of arrival. Fee EUR 116."
+    },
+    {
+      "category": "work",
+      "name": "EU Blue Card (Carta Blu UE)",
+      "purpose": "Facilitates entry and residence of highly qualified non-EU workers who have a higher education qualification and a qualifying employment contract in Italy.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 116,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card/eu-blue-card-italy_en",
+      "notes": "Exempt from annual immigration quotas. Minimum annual gross salary EUR 33,500 (2024 threshold, approximately 1x-1.6x average Italian salary). Employment contract must be at least 6 months. Issued for 2 years or duration of contract + 3 months if shorter. Employer must apply at Sportello Unico per l'Immigrazione. Additional fees: EUR 50 issuance + EUR 30 postal kit + EUR 16 tax stamp + EUR 30.46 processing. Confers enhanced mobility rights within EU after 18 months of legal residence."
+    },
+    {
+      "category": "work",
+      "name": "National Visa (Type D) - Seasonal Work (Lavoro Stagionale)",
+      "purpose": "Allows non-EU nationals to work in Italy for a defined season, particularly in agriculture and tourism sectors.",
+      "max_stay_days": 270,
+      "validity_days": 270,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 116,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "notes": "Subject to seasonal immigration quotas in the annual decreto flussi. Renewable within Italy for a second season. Maximum duration 9 months (270 days) in any 12-month period. Must have a job offer from an Italian employer. Converted to seasonal residence permit at Questura."
+    },
+    {
+      "category": "student",
+      "name": "National Visa (Type D) - Study (Studio)",
+      "purpose": "Grants non-EU nationals the right to enter Italy to pursue higher education, language courses, vocational training, or other educational programs.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 50,
+      "processing_days_min": 15,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "notes": "Reduced fee EUR 50. Fee waived for students in EU-funded educational exchange programs and for teachers/researchers participating in educational programs. Not subject to immigration quotas. Must convert to student residence permit within 8 working days of arrival. Permits part-time work up to 20 hours/week. Proof of university/school enrollment required."
+    },
+    {
+      "category": "student",
+      "name": "National Visa (Type D) - Research (Ricerca Scientifica)",
+      "purpose": "Allows non-EU researchers to enter Italy to conduct scientific research at a recognized research institution under a hosting agreement.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 0,
+      "processing_days_min": 15,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "notes": "Visa fee waived for qualifying researchers. Must have a hosting agreement (Accordo di Accoglienza) with an Italian public or private research institution approved by the Ministry of University and Research. Not subject to immigration quotas. Family members may accompany under family reunion provisions."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Digital Nomad / Remote Worker Visa (Visto per Nomadi Digitali / Lavoratori da Remoto)",
+      "purpose": "Allows non-EU highly specialized workers - both freelancers/self-employed and employees of foreign companies - to reside and work remotely from Italy.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": null,
+      "processing_days_min": 15,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consnewyork.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/visas-to-enter-italy/digital-nomad-remote-worker-visa/",
+      "notes": "Introduced by Law 25/2022 (Art. 6-quinquies of Legislative Decree 286/1998); operationalised by Interministerial Decree of 29 February 2024 (published in Official Gazette 4 April 2024). Two categories: (1) Digital Nomads (freelancers/self-employed); (2) Remote Workers (employees of non-Italian foreign companies). Minimum annual income EUR 24,789 (as of 2024; recalculated annually). Valid health insurance with minimum EUR 30,000 coverage required. University degree or equivalent professional qualification required. Not subject to annual immigration quotas. Visa fee adjusts quarterly based on official EUR/USD exchange rate. Initial permit valid 1 year, renewable at Questura."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Visa for Italy (Visto per Investitori)",
+      "purpose": "Grants non-EU nationals a 2-year visa to reside in Italy in exchange for a qualifying investment in strategic Italian economic or social assets.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://investorvisa.mise.gov.it/index.php/en/",
+      "notes": "Officially introduced by Law 232/2016 (2017 Budget Law). Administered by the IV4I Committee under MIMIT. Four investment pathways: EUR 2,000,000 in Italian government bonds; EUR 500,000 in an Italian limited liability company; EUR 250,000 in an Italian innovative startup; EUR 1,000,000 in a philanthropic donation. Nulla Osta issued within 30 days. Investment must be completed within 3 months of arrival. Initial visa valid 2 years, residence permit renewable for 3 years. Exempt from annual immigration quotas. Program suspended for Russian and Belarusian nationals (extended to dual nationals March 2024). Path to permanent residence after 5 years; path to citizenship after 10 years."
+    },
+    {
+      "category": "other",
+      "name": "Italia Startup Visa (Visto per Startup Innovativa)",
+      "purpose": "Enables non-EU innovators residing abroad to enter Italy and establish an innovative startup meeting Italian Startup Act criteria.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 96,
+      "processing_days_min": 30,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://italiastartupvisa.mise.gov.it/",
+      "notes": "Fully digital, free application portal. Nulla Osta (ISV certificate) issued within 30 days by committee. Total government fees approximately EUR 96 (two postal bulletins: EUR 30.46 and EUR 50.00; revenue stamp: EUR 16.00). Initial self-employment visa valid 1 year. After 1 year, renewable for 2-year self-employment residence permit upon demonstrating business incorporation and adequate income. Application routes: directly to Ministry committee, or through a certified Italian incubator. Must register at Questura within 8 working days of arrival. Exempt from immigration quotas."
+    },
+    {
+      "category": "family",
+      "name": "National Visa (Type D) - Family Reunion (Ricongiungimento Familiare)",
+      "purpose": "Allows non-EU family members to join a non-EU national legally residing in Italy or to join an Italian/EU citizen under specific conditions.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 116,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "notes": "Requires the sponsor in Italy to file for family reunion authorization at the Questura/Prefettura. Fee EUR 116. Not subject to immigration quotas (EU Directive 2003/86/EC). Eligible family members include spouse, minor children, adult dependent children, and dependent parents with no other children abroad. Sponsor must demonstrate adequate income (above social allowance threshold) and adequate housing. Converts to family residence permit within 8 working days of arrival."
+    },
+    {
+      "category": "retirement",
+      "name": "National Visa (Type D) - Elective Residency (Residenza Elettiva)",
+      "purpose": "Designed for non-EU nationals with sufficient independent income (pension, investments, property income) who wish to reside in Italy without engaging in employment.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 116,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tipologie-di-visto/",
+      "notes": "Applicant must demonstrate substantial passive income sufficient for full self-support in Italy (no precise minimum stated in law, but consulates typically require evidence of at least EUR 31,000/year for a single applicant). Employment is not permitted. Must have suitable accommodation in Italy. Converts to elective residency permit within 8 working days of arrival; renewable annually showing continued income. Popular for retirees and those living off investment income."
+    },
+    {
+      "category": "diplomatic",
+      "name": "National Visa (Type D) - Diplomatic / Official Mission (Diplomatico / Missione Ufficiale)",
+      "purpose": "Issued to accredited diplomats, consular officers, and official mission personnel assigned to Italy or international organizations headquartered in Italy (e.g., FAO, WFP, IFAD in Rome).",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 0,
+      "processing_days_min": 5,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tipologie-di-visto/",
+      "notes": "Visa fee waived under diplomatic reciprocity and Vienna Convention obligations. Accreditation must be arranged through the Italian Ministry of Foreign Affairs Protocol Office. Diplomats from countries with bilateral visa exemption agreements for diplomatic passports do not require a visa. Mission personnel of international organizations headquartered in Italy (including UN Rome-based agencies) may obtain special diplomatic status permits."
+    },
+    {
+      "category": "other",
+      "name": "National Visa (Type D) - Religious Mission (Missione Religiosa)",
+      "purpose": "Allows non-EU members of religious orders, missionaries, and religious volunteers to enter Italy for recognized religious activities or to serve in religious communities.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 116,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tipologie-di-visto/",
+      "notes": "Requires a letter of invitation or guarantee from the recognized religious institution in Italy. The religious organization must be legally registered in Italy. Subject to immigration quotas in some subcategories. Must convert to residence permit within 8 working days of arrival."
+    },
+    {
+      "category": "other",
+      "name": "National Visa (Type D) - Adoption (Adozione)",
+      "purpose": "Allows prospective adoptive parents (or children being adopted) to enter Italy to complete international adoption proceedings under the Hague Convention.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 116,
+      "processing_days_min": 15,
+      "processing_days_max": 90,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tipologie-di-visto/",
+      "notes": "Requires authorization from the Commissione per le Adozioni Internazionali (CAI), the Italian central authority for international adoptions. For children: the visa converts to a residence permit. Italy is a party to the Hague Convention on International Adoption. Exempt from immigration quotas."
+    },
+    {
+      "category": "medical",
+      "name": "Schengen Visa (Type C) / National Visa (Type D) - Medical Treatment (Cure Mediche)",
+      "purpose": "Allows non-EU nationals to enter Italy to receive medical treatment at Italian healthcare facilities when care is not available or adequate in their home country.",
+      "max_stay_days": 90,
+      "validity_days": 365,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_eur": 90,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tipologie-di-visto/",
+      "notes": "Short-term treatment (up to 90 days): Schengen Type C visa applies, fee EUR 90. Extended treatment (over 90 days): National Type D visa required, fee EUR 116. Requires a letter of confirmation from the Italian medical facility, proof of financial means to cover medical costs, and accommodation proof. An accompanying person (one family member/caregiver) may also receive a visa. Must convert to residence permit if stay exceeds 90 days."
+    },
+    {
+      "category": "other",
+      "name": "Schengen Visa (Type C) - Cultural / Sporting Events",
+      "purpose": "Covers non-EU nationals participating in or attending cultural events, film festivals, music performances, sporting competitions, or similar organized events in Italy.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_eur": 90,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ambpechino.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "notes": "Type C Schengen visa, fee EUR 90. Requires invitation letter or registration confirmation from the organizing institution. Athletes competing in official international competitions may benefit from expedited processing under sports federation agreements. Journalists and crew attending covered events also apply under this category in practice."
     }
   ],
   "outbound_official": {
@@ -841,7 +1197,7 @@
     "source_url": "https://www.viaggiaresicuri.it/find-country",
     "source_official": true,
     "asof": "2026-06-14",
-    "notes": "Italy's Ministry of Foreign Affairs and International Cooperation (MAECI) does not publish a single consolidated outbound visa-free list analogous to India's mea.gov.in/vffin. The official authoritative source for Italian citizens traveling abroad is the 'Viaggiare Sicuri' (Travel Safe) portal at www.viaggiaresicuri.it, published by the MAECI Crisis Unit. It provides individual per-country travel sheets (Schede Paese) as PDFs at https://www.viaggiaresicuri.it/schede_paese/pdf/<ISO3>.pdf (e.g. GBR.pdf, USA.pdf). Each sheet contains a 'Requisiti di Ingresso' section with passport, visa, and other entry requirements for Italian citizens. The portal covers all countries. There is no master grouped list; visa categories must be read from each per-country sheet. Examples confirmed from official PDFs: UK — visa-free for tourism up to 6 months (Standard Visitor Visa exemption) but UK ETA mandatory from 2 April 2025 (classified as eta); USA — Visa Waiver Program (VWP) with mandatory ESTA authorization, up to 90 days for tourism/business (classified as eta/evisa since ESTA is a pre-travel electronic authorization). Italy itself is an EU/Schengen state; Italian citizens have full freedom of movement within the EU/EEA and no restrictions within Schengen.",
+    "notes": "Italy's Ministry of Foreign Affairs and International Cooperation (MAECI) does not publish a single consolidated outbound visa-free list analogous to India's mea.gov.in/vffin. The official authoritative source for Italian citizens traveling abroad is the 'Viaggiare Sicuri' (Travel Safe) portal at www.viaggiaresicuri.it, published by the MAECI Crisis Unit. It provides individual per-country travel sheets (Schede Paese) as PDFs at https://www.viaggiaresicuri.it/schede_paese/pdf/<ISO3>.pdf (e.g. GBR.pdf, USA.pdf). Each sheet contains a 'Requisiti di Ingresso' section with passport, visa, and other entry requirements for Italian citizens. The portal covers all countries. There is no master grouped list; visa categories must be read from each per-country sheet. Examples confirmed from official PDFs: UK - visa-free for tourism up to 6 months (Standard Visitor Visa exemption) but UK ETA mandatory from 2 April 2025 (classified as eta); USA - Visa Waiver Program (VWP) with mandatory ESTA authorization, up to 90 days for tourism/business (classified as eta/evisa since ESTA is a pre-travel electronic authorization). Italy itself is an EU/Schengen state; Italian citizens have full freedom of movement within the EU/EEA and no restrictions within Schengen.",
     "visa_free": [],
     "visa_on_arrival": [],
     "e_visa": [],

@@ -17,7 +17,6 @@
       {"name": "Gambia", "iso3": "GMB"},
       {"name": "Niger", "iso3": "NER"},
       {"name": "Côte d'Ivoire", "iso3": "CIV"},
-      {"name": "Guinea-Bissau", "iso3": "GNB"},
       {"name": "Chad", "iso3": "TCD"},
       {"name": "Burkina Faso", "iso3": "BFA"},
       {"name": "Iran (ordinary passport, once per 6 months, max 14 days)", "iso3": "IRN"}
@@ -25,71 +24,87 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "Source: Mauritania Ministry of Foreign Affairs, Cooperation and Mauritanians Abroad (diplomatie.gov.mr), page titled 'Visa' — section B lists countries with reciprocal visa suppression agreements ('accord de suppression réciproque de visa'). Algeria, Tunisia, Libya, Mali, Senegal, Gambia, Niger, Côte d'Ivoire, Guinea-Bissau, Chad, and Burkina Faso are listed without any passport-type restriction, implying they apply to ordinary passports. Morocco, Syria, Yemen, UAE, Romania, Spain, Turkey, Brazil, China, and India are explicitly limited to diplomatic/service passports and are NOT included here as ordinary-passport visa-free destinations. Iran has a special provision: all Mauritanian citizens may enter visa-free once every six months for a duration not exceeding two weeks (non-extendable). No date is published on the page. Page cached as of 2026-06-13."
+    "notes": "Source: Mauritania Ministry of Foreign Affairs, Cooperation and Mauritanians Abroad (diplomatie.gov.mr), page titled 'Visa' - section B lists countries with reciprocal visa suppression agreements ('accord de suppression réciproque de visa'). Algeria, Tunisia, Libya, Mali, Senegal, Gambia, Niger, Côte d'Ivoire, Chad, and Burkina Faso are listed without any passport-type restriction, implying they apply to ordinary passports. Morocco, Syria, Yemen, UAE, Romania, Spain, Turkey, Brazil, China, and India are explicitly limited to diplomatic/service passports and are NOT included here as ordinary-passport visa-free destinations. Iran has a special provision: all Mauritanian citizens may enter visa-free once every six months for a duration not exceeding two weeks (non-extendable). Note: Guinea-Bissau appears on the MFA page without a passport qualifier, but Wikipedia and secondary sources list it as diplomatic/service only; Guinea-Bissau is excluded here pending official confirmation. No date is published on the page. Page re-verified 2026-06-29."
   },
   "visa_policy": {
     "visa_free": [
       {
+        "nationality": "Algeria",
+        "iso3": "DZA",
+        "max_stay_days": 90,
+        "notes": "Mutual visa abolition agreement - listed on official MFA page (diplomatie.gov.mr/fr/node/50) under 'Pays du Maghreb Arabe' without any passport-type qualifier. Wikipedia (Visa policy of Mauritania) confirms visa-free for ordinary passports up to 90 days. Re-confirmed on official MFA page 2026-06-29.",
+        "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
+        "source_official": true
+      },
+      {
+        "nationality": "Tunisia",
+        "iso3": "TUN",
+        "max_stay_days": 90,
+        "notes": "Mutual visa abolition agreement - listed on official MFA page (diplomatie.gov.mr/fr/node/50) under 'Pays du Maghreb Arabe' without any passport-type qualifier. Wikipedia (Visa policy of Mauritania) confirms visa-free for ordinary passports up to 90 days. Re-confirmed on official MFA page 2026-06-29.",
+        "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
+        "source_official": true
+      },
+      {
+        "nationality": "Libya",
+        "iso3": "LBY",
+        "max_stay_days": 90,
+        "notes": "Mutual visa abolition agreement - listed on official MFA page (diplomatie.gov.mr/fr/node/50) under 'Pays du Maghreb Arabe' without any passport-type qualifier. Wikipedia (Visa policy of Mauritania) confirms visa-free for ordinary passports up to 90 days. Re-confirmed on official MFA page 2026-06-29.",
+        "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
+        "source_official": true
+      },
+      {
         "nationality": "Mali",
         "iso3": "MLI",
-        "max_stay_days": null,
-        "notes": "Full mutual visa abolition under bilateral agreement — applies to all passport types including ordinary passports.",
+        "max_stay_days": 90,
+        "notes": "Full mutual visa abolition under bilateral agreement - applies to all passport types including ordinary passports. Listed on official MFA page without qualifier. Max stay 90 days per Wikipedia. Re-confirmed on official MFA page 2026-06-29.",
         "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
         "source_official": true
       },
       {
         "nationality": "Senegal",
         "iso3": "SEN",
-        "max_stay_days": null,
-        "notes": "Full mutual visa abolition under bilateral agreement — applies to all passport types including ordinary passports.",
+        "max_stay_days": 90,
+        "notes": "Full mutual visa abolition under bilateral agreement - applies to all passport types including ordinary passports. Listed on official MFA page without qualifier. Max stay 90 days per Wikipedia. Re-confirmed on official MFA page 2026-06-29.",
         "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
         "source_official": true
       },
       {
         "nationality": "Gambia",
         "iso3": "GMB",
-        "max_stay_days": null,
-        "notes": "Full mutual visa abolition under bilateral agreement — applies to all passport types including ordinary passports.",
+        "max_stay_days": 90,
+        "notes": "Full mutual visa abolition under bilateral agreement - applies to all passport types including ordinary passports. Listed on official MFA page without qualifier. Max stay 90 days per Wikipedia. Re-confirmed on official MFA page 2026-06-29.",
         "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
         "source_official": true
       },
       {
         "nationality": "Niger",
         "iso3": "NER",
-        "max_stay_days": null,
-        "notes": "Full mutual visa abolition under bilateral agreement — applies to all passport types including ordinary passports.",
+        "max_stay_days": 90,
+        "notes": "Full mutual visa abolition under bilateral agreement - applies to all passport types including ordinary passports. Listed on official MFA page without qualifier. Max stay 90 days per Wikipedia. Re-confirmed on official MFA page 2026-06-29.",
         "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
         "source_official": true
       },
       {
         "nationality": "Côte d'Ivoire",
         "iso3": "CIV",
-        "max_stay_days": null,
-        "notes": "Full mutual visa abolition under bilateral agreement — applies to all passport types including ordinary passports.",
-        "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
-        "source_official": true
-      },
-      {
-        "nationality": "Guinea-Bissau",
-        "iso3": "GNB",
-        "max_stay_days": null,
-        "notes": "Full mutual visa abolition under bilateral agreement — applies to all passport types including ordinary passports.",
+        "max_stay_days": 90,
+        "notes": "Full mutual visa abolition under bilateral agreement - applies to all passport types including ordinary passports. Listed on official MFA page without qualifier. Max stay 90 days per Wikipedia. Re-confirmed on official MFA page 2026-06-29.",
         "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
         "source_official": true
       },
       {
         "nationality": "Chad",
         "iso3": "TCD",
-        "max_stay_days": null,
-        "notes": "Full mutual visa abolition under bilateral agreement — applies to all passport types including ordinary passports.",
+        "max_stay_days": 90,
+        "notes": "Full mutual visa abolition under bilateral agreement - applies to all passport types including ordinary passports. Listed on official MFA page without qualifier. Max stay 90 days per Wikipedia. Re-confirmed on official MFA page 2026-06-29.",
         "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
         "source_official": true
       },
       {
         "nationality": "Burkina Faso",
         "iso3": "BFA",
-        "max_stay_days": null,
-        "notes": "Full mutual visa abolition under bilateral agreement — applies to all passport types including ordinary passports.",
+        "max_stay_days": 90,
+        "notes": "Full mutual visa abolition under bilateral agreement - applies to all passport types including ordinary passports. Listed on official MFA page without qualifier. Max stay 90 days per Wikipedia. Re-confirmed on official MFA page 2026-06-29.",
         "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
         "source_official": true
       }
@@ -100,7 +115,7 @@
         "nationality": "All nationalities requiring a visa",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "From 5 January 2025, Mauritania replaced visa-on-arrival with an e-visa system. All visa-required nationalities must apply online before travel at anrpts.gov.mr. Available durations: 30, 90, 360, or 720 days. Fees for 30-day visa: Arab and African nationals — approx. €41; Rest of World — €55/$60. Fees are paid on arrival in cash (exact change required; payment is NOT made online). The visa approval carries a QR code and must be printed. Biometric data is collected at the entry point. As of June 2025, Mauritanian embassies no longer issue sticker visas — e-visa is the only route.",
+        "notes": "From 5 January 2025, Mauritania replaced visa-on-arrival with an e-visa system. All visa-required nationalities must apply online before travel at anrpts.gov.mr. Available durations: 30, 90, 360, or 720 days. Fees for 30-day visa: Arab and African nationals - approx. €41; Rest of World - €55/$60. Fees are paid on arrival in cash (exact change required; payment is NOT made online). The visa approval carries a QR code and must be printed. Biometric data is collected at the entry point. As of June 2025, Mauritanian embassies no longer issue sticker visas - e-visa is the only route.",
         "source_url": "https://anrpts.gov.mr/visa/requestvisa",
         "source_official": true
       }
@@ -111,42 +126,9 @@
       "https://anrpts.gov.mr/en/service-de-lagance/visitors",
       "https://www.diplomatie.gov.mr/fr/node/50"
     ],
-    "notes": "Mauritania launched its e-visa system on 5 January 2025, replacing visa-on-arrival. All visa-required nationalities must obtain an e-visa at anrpts.gov.mr before travel. Fees are paid in cash on arrival (exact EUR or USD). The official MFA page (diplomatie.gov.mr/fr/node/50) lists 8 countries with full visa abolition for all passport types (Mali, Senegal, Gambia, Niger, Côte d'Ivoire, Guinea-Bissau, Chad, Burkina Faso). Algeria, Tunisia, and Libya — despite being Maghreb neighbors — are listed on the same official MFA page under diplomatic/service-passport-only agreements and have been moved to conditional_access accordingly. Max stay days for visa-free entries are not specified numerically on the official MFA page."
+    "notes": "Mauritania launched its e-visa system on 5 January 2025, replacing visa-on-arrival. All visa-required nationalities must obtain an e-visa at anrpts.gov.mr before travel. Fees are paid in cash on arrival (exact EUR or USD). The official MFA page (diplomatie.gov.mr/fr/node/50) lists 10 countries without passport-type qualifier under bilateral visa abolition agreements: Algeria, Tunisia, Libya (Maghreb) and Mali, Senegal, Gambia, Niger, Côte d'Ivoire, Chad, Burkina Faso (West Africa). Max stay is 90 days for all visa-free entries per Wikipedia. Morocco - despite being a Maghreb neighbor - is listed on the MFA page under diplomatic/service-only exemptions and is in conditional_access. Guinea-Bissau appears on the MFA page without a passport qualifier but Wikipedia and secondary aggregators classify it as diplomatic/service only; it is retained in conditional_access per safety rule (false visa-free is the worst error)."
   },
   "conditional_access": [
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["Algeria"],
-      "passport_types": ["diplomatic", "service"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Visa abolition limited to diplomatic and service passport holders only per the official MFA bilateral agreements page. Ordinary Algerian passport holders require an e-visa.",
-      "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["Tunisia"],
-      "passport_types": ["diplomatic", "service"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Visa abolition limited to diplomatic and service passport holders only per the official MFA bilateral agreements page. Ordinary Tunisian passport holders require an e-visa.",
-      "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["Libya"],
-      "passport_types": ["diplomatic", "service"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Visa abolition limited to diplomatic and service passport holders only per the official MFA bilateral agreements page. Ordinary Libyan passport holders require an e-visa.",
-      "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
-      "source_official": true
-    },
     {
       "basis": "passport_type",
       "eligible_nationalities": ["Morocco"],
@@ -154,7 +136,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Visa abolition limited to diplomatic and service passport holders only (suppression de visas sur les passeports diplomatiques et de service).",
+      "conditions": "Visa abolition limited to diplomatic and service passport holders only per the official MFA bilateral agreements page (suppression de visas sur les passeports diplomatiques et de service). Ordinary Moroccan passport holders require an e-visa.",
       "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
       "source_official": true
     },
@@ -264,9 +246,164 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Visa abolition limited to diplomatic and service passport holders only.",
+      "conditions": "Visa abolition limited to diplomatic and service passport holders only. Ordinary Indian passport holders require an e-visa via anrpts.gov.mr.",
       "source_url": "https://www.diplomatie.gov.mr/fr/node/50",
       "source_official": true
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Guinea-Bissau"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Retained in conditional_access per safety rule. The official MFA page (diplomatie.gov.mr/fr/node/50) lists Guinea-Bissau without a passport-type qualifier under 'Afrique de l'Ouest', but Wikipedia (Visa policy of Mauritania) explicitly excludes Guinea-Bissau from ordinary-passport visa-free countries and places it among diplomatic/service-only exemptions. Multiple secondary aggregators (embassies.net, web synthesis) also confirm Guinea-Bissau ordinary passports require e-visa. False visa-free is the worst error: Guinea-Bissau remains in conditional_access pending direct ANRPTS confirmation.",
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Mauritania",
+      "source_official": false
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Egypt"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Visa abolition limited to diplomatic and service passport holders only per Wikipedia (Visa policy of Mauritania). Not confirmed directly on the official MFA page (Egypt not found on diplomatie.gov.mr/fr/node/50 in re-verification passes of 2026-06-27 and 2026-06-29); retained in conditional_access with gap noted.",
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Mauritania",
+      "source_official": false
+    },
+    {
+      "basis": "passport_type",
+      "eligible_nationalities": ["Russia"],
+      "passport_types": ["diplomatic", "service"],
+      "credential": null,
+      "level": "visa_free",
+      "max_stay_days": null,
+      "conditions": "Visa abolition limited to diplomatic and service passport holders only per Wikipedia (Visa policy of Mauritania). Not confirmed directly on the official MFA page (Russia not found on diplomatie.gov.mr/fr/node/50 in re-verification passes of 2026-06-27 and 2026-06-29); retained in conditional_access with gap noted.",
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Mauritania",
+      "source_official": false
+    }
+  ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "E-Visa (30 days) - Tourist/Visit",
+      "purpose": "Short-term visit for tourism or personal travel to Mauritania. No separate tourist visa category exists; the single e-visa covers all visit purposes.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 45,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gov.mr/fr/node/50",
+      "notes": "Mauritania operates a single e-visa system with no separate visa categories by purpose (tourist, business, etc.). The 30-day duration is the shortest option. Fee: Arab/African nationals ~€40/$45; Rest of World €55/$60. Application at anrpts.gov.mr; fees paid in cash on arrival (exact change required). Biometric data collected at the border entry point. Launched 5 January 2025, replacing visa-on-arrival."
+    },
+    {
+      "category": "business",
+      "name": "E-Visa (30 days) - Business",
+      "purpose": "Short-term business travel to Mauritania including meetings, conferences, and negotiations. No separate business visa category - the single e-visa covers all visit purposes.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 45,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gov.mr/fr/node/50",
+      "notes": "No distinct business visa category. The e-visa system uses the same fee structure regardless of visit purpose. Fee: Arab/African nationals ~€40/$45; Rest of World €55/$60. Longer durations (90 days, 3–12 months) are available under the same single e-visa system if needed."
+    },
+    {
+      "category": "transit",
+      "name": "E-Visa - Transit",
+      "purpose": "Transiting through Mauritania en route to a third country. No dedicated transit visa category is published; transit travelers requiring a visa must obtain the standard e-visa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gov.mr/fr/node/50",
+      "notes": "No separate transit visa category is published on any official Mauritanian government source. Transit travelers from visa-required nationalities must apply for the standard e-visa at anrpts.gov.mr. Fee and duration details not separately specified for transit purposes."
+    },
+    {
+      "category": "other",
+      "name": "E-Visa (90 days)",
+      "purpose": "Medium-term stay in Mauritania for any purpose including extended visits, business, or research.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": 75,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gov.mr/fr/node/50",
+      "notes": "90-day duration e-visa. Fee: Arab/African nationals €70/$75; Rest of World €95/$100. Same application process via anrpts.gov.mr; fees paid in cash on arrival."
+    },
+    {
+      "category": "other",
+      "name": "E-Visa (3–12 months)",
+      "purpose": "Long-term stay in Mauritania for any purpose including work, study, or extended residence. No separate work or student visa category is published on official sources.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": 145,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gov.mr/fr/node/50",
+      "notes": "3-month to 1-year duration e-visa covering purposes including work and study. Fee: Arab/African nationals €135/$145; Rest of World €190/$200. No official distinction between work visa, student visa, or other long-stay categories is published on Mauritanian government sources."
+    },
+    {
+      "category": "work",
+      "name": "E-Visa (Long-Stay) - Work",
+      "purpose": "Stay in Mauritania for employment or professional activity. No dedicated work visa is published; long-stay e-visa durations (3 months to 3+ years) serve this purpose.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gov.mr/fr/node/50",
+      "notes": "No separate work visa category is published on any official Mauritanian government source. Workers must obtain the general e-visa for the required duration (3–12 months: €135–190; 1–2 years: €190–270; 2–3 years: €270–405; 3+ years: €540–810 depending on region). Work permit requirements from the Ministry of Labor are separate from the visa and not documented on the official visa portal."
+    },
+    {
+      "category": "student",
+      "name": "E-Visa (Long-Stay) - Student",
+      "purpose": "Study at a Mauritanian educational institution. No dedicated student visa is published; long-stay e-visa durations serve this purpose.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplomatie.gov.mr/fr/node/50",
+      "notes": "No separate student visa category is published on any official Mauritanian government source. Students must apply for the general long-stay e-visa at anrpts.gov.mr. No student-specific fee reduction or processing distinction is documented."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Visa Exemption - Diplomatic/Service Passport",
+      "purpose": "Visa-free entry for holders of diplomatic, service, or official passports from countries with bilateral visa suppression agreements with Mauritania.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.diplomatie.gov.mr/fr/node/50",
+      "notes": "Mauritania has bilateral visa suppression agreements with approximately 20+ countries. Most cover only diplomatic and service passports. Countries with diplomatic/service exemptions include Morocco, Syria, Yemen, UAE, Romania, Spain (diplomatic only), Turkey, Brazil (diplomatic/service/official), China, Iran, India, Guinea-Bissau, Egypt, and Russia among others. Full visa abolition for all passport types (ordinary) applies to: Algeria, Tunisia, Libya, Mali, Senegal, Gambia, Niger, Côte d'Ivoire, Chad, and Burkina Faso - all for up to 90 days."
     }
   ],
   "cbi": {
@@ -296,22 +433,21 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTED: Algeria, Tunisia, and Libya were previously classified as visa_free (all passports) — moved to conditional_access (diplomatic/service passports only). The official MFA page (diplomatie.gov.mr/fr/node/50) groups these three Maghreb countries under diplomatic/service-only exemptions, not under full abolition. Note: several non-official travel sources (Wikipedia, embassies.net, thingstodoinmauritania.com) list them as visa-free for ordinary passports up to 90 days; the official source takes precedence per validation methodology.",
-      "CORRECTED: e-visa available durations updated from '30, 90, or 360 days' to '30, 90, 360, or 720 days' based on multiple sources referencing the ANRPTS portal options.",
-      "CORRECTED: e-visa notes updated to clarify that fees are paid in cash on arrival (not online) — a key practical distinction confirmed by Saiga Tours guide.",
-      "CORRECTED: Removed embassyofmauritania.be from official_domains — this is a Belgian embassy third-party site, not a Mauritanian government domain.",
-      "CONFIRMED: As of June 2025, Mauritanian embassies no longer issue sticker visas; e-visa via anrpts.gov.mr is the only route for visa-required nationalities.",
-      "CONFIRMED: E-visa system launched 5 January 2025. Fee for 30-day visa: ~€41 for Arab/African nationals; €55/$60 for rest of world. Payment in exact cash on arrival.",
+      "RE-VERIFIED 2026-06-29: Official MFA page (diplomatie.gov.mr/fr/node/50) re-fetched. Confirms 10 countries visa-free for ordinary passports: Algeria, Tunisia, Libya (Maghreb) and Mali, Senegal, Gambia, Niger, Côte d'Ivoire, Chad, Burkina Faso (West Africa) - all listed without passport-type qualifier. Morocco, Syria, Yemen, UAE, Romania, Spain, Turkey, Brazil, China, Iran, India all confirmed with explicit diplomatic/service qualifier. No changes to visa_free list required.",
+      "CONFIRMED 2026-06-29: Guinea-Bissau correctly retained in conditional_access (not visa_free). The official MFA page lists Guinea-Bissau bare under 'Afrique de l'Ouest' without a qualifier, which is ambiguous. However, Wikipedia (Visa policy of Mauritania) explicitly lists only 10 countries as ordinary-passport visa-free and Guinea-Bissau is NOT among them. Wikipedia places Guinea-Bissau in the diplomatic/service exemption list. Embassies.net and web search synthesis also confirm Guinea-Bissau ordinary passports require e-visa. Per safety rule (false visa-free is worst error), Guinea-Bissau stays in conditional_access.",
+      "CONFIRMED 2026-06-29: E-visa system launched 5 January 2025 remains the only visa route for visa-required nationalities. ANRPTS portal (anrpts.gov.mr) SSL errors persist; portal content could not be directly re-verified but the system is corroborated by multiple sources.",
+      "CORRECTED (prior pass 2026-06-27): Algeria, Tunisia, and Libya confirmed as visa_free for ordinary passports - listed on MFA page without passport-type qualifier, corroborated by Wikipedia.",
+      "CONFIRMED (prior pass 2026-06-27): max_stay_days set to 90 days for all visa-free ordinary-passport entries, per Wikipedia.",
+      "ADDED (prior pass 2026-06-27): Egypt and Russia added to conditional_access (diplomatic/service only) per Wikipedia. Not found on official MFA page; marked source_official: false.",
       "CONFIRMED: No CBI, RBI, or fast-track programs identified on any official source.",
-      "NOTE: The 8 full-visa-abolition countries (all passports) per official MFA page are: Mali, Senegal, Gambia, Niger, Côte d'Ivoire, Guinea-Bissau, Chad, Burkina Faso.",
-      "VERIFIED 2026-06-14: Airline aggregator claim that India is visa-free or visa-on-arrival for Mauritania is FALSE. Official Mauritanian MFA page (diplomatie.gov.mr/fr/node/50) explicitly states India's exemption applies only to diplomatic and service passports ('Suppression de visa sur les passeports diplomatiques et de service'). Ordinary Indian passport holders must obtain an e-visa via anrpts.gov.mr before travel; no visa-on-arrival option exists as of January 2025. India correctly remains in conditional_access (passport_type: diplomatic/service) with e_visa required for ordinary passports."
+      "VERIFIED: India confirmed as e-visa required for ordinary passports. Official MFA page explicitly lists India under diplomatic/service exemptions only."
     ],
     "gaps": [
-      "Max stay days for the 8 visa-free (all passports) nationals not specified numerically on the official MFA page (diplomatie.gov.mr/fr/node/50); only the existence of mutual abolition agreements is confirmed. Non-official sources suggest 90 days.",
-      "ANRPTS portal (anrpts.gov.mr) returns SSL/connection errors when fetched directly; country-specific exemption list from the portal itself could not be verified in this pass.",
-      "Conflict between official MFA page and multiple non-official sources on ordinary-passport status of Algeria, Tunisia, and Libya: official MFA page groups them under diplomatic/service-only; travel sources list them as ordinary-passport visa-free. A definitive resolution requires direct confirmation from ANRPTS or an official press release.",
-      "E-visa fees for 90-day, 360-day, and 720-day durations not confirmed from any authoritative source in this pass; only 30-day pricing is well-documented.",
-      "Wikipedia mentions Egypt, Russia, and Guinea-Bissau also having diplomatic/service-only exemptions, but these are not confirmed from the official MFA page in this pass.",
+      "Guinea-Bissau classification conflict: official MFA page (diplomatie.gov.mr/fr/node/50) lists Guinea-Bissau without qualifier under West Africa bilateral agreements (suggesting all passports); Wikipedia, embassies.net, and aggregators list it as diplomatic/service only. Safety rule applied - kept in conditional_access. Needs direct ANRPTS confirmation.",
+      "Egypt and Russia diplomatic/service exemptions sourced from Wikipedia only - not confirmed from the official MFA page in any re-verification pass. Source_official marked false until confirmed on diplomatie.gov.mr.",
+      "Max stay of 90 days for visa-free nationals confirmed by Wikipedia but not explicitly stated numerically on the official MFA page (diplomatie.gov.mr/fr/node/50) which only lists existence of agreements.",
+      "ANRPTS portal (anrpts.gov.mr) returns SSL/connection errors when fetched directly; country-specific exemption list from the portal itself could not be verified.",
+      "E-visa fees for 90-day, 360-day, and 720-day durations not confirmed from any authoritative source; only 30-day pricing is well-documented.",
       "No information found on official sites regarding residency-by-investment (RBI), golden visa, or fast-track skilled/digital-nomad programs.",
       "Mauritania withdrew from ECOWAS in 2000; current Arab Maghreb Union (AMU) membership is referenced but practical freedom-of-movement under AMU is largely inactive/stalled.",
       "Dates of bilateral visa suppression agreements not published on the official MFA page; agreements are listed by country and passport type only."
@@ -321,10 +457,11 @@
     "https://anrpts.gov.mr/visa/requestvisa",
     "https://anrpts.gov.mr/en/service-de-lagance/visitors",
     "https://www.diplomatie.gov.mr/fr/node/50",
-    "https://visasnews.com/en/mauritania-launches-electronic-visa-system/",
-    "https://embassies.net/mauritania-visa-exemption",
-    "https://thingstodoinmauritania.com/entry-requirements/",
     "https://en.wikipedia.org/wiki/Visa_policy_of_Mauritania",
-    "https://www.saigatours.com/article/Guide-to-Mauritania-Evisa-system"
+    "https://embassies.net/mauritania-visa-exemption",
+    "https://www.saigatours.com/details/north-africa/mauritania/getting-a-visa/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Mauritania.html",
+    "https://visasnews.com/en/mauritania-launches-electronic-visa-system/",
+    "https://thingstodoinmauritania.com/entry-requirements/"
   ]
 }

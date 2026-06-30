@@ -7,14 +7,193 @@
   },
   "name": "Sierra Leone",
   "region": "Africa",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Landing Visa / Visa on Arrival (Tourist/Visitor)",
+      "purpose": "Short-stay entry for tourism, family visits, religious travel, or academic purposes. Issued at designated ports of entry.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_local": {
+        "amount_single": 800000,
+        "amount_multiple": 1200000,
+        "currency": "SLL",
+        "note": "Le800,000 single entry / Le1,200,000 multiple re-entry for non-AU nationals. Le250,000 single / Le375,000 multiple for non-ECOWAS AU nationals. Free for ECOWAS member nationals, diplomats, and UN Laissez-Passer holders. Fee structure published by SLID (March 2023). Original 2019 NTB policy quoted USD 80 (non-AU) / USD 25 (non-ECOWAS AU) - these USD amounts may represent the pre-2023 structure."
+      },
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://slid.gov.sl/landing-visa/",
+      "notes": "Now officially termed 'Landing Visa' on SLID website (slid.gov.sl/landing-visa/, published March 2023). VoA policy originally introduced 5 September 2019 per NTB. Available at Freetown International Airport, Jendema (Liberia border), and Gbalamuya (Guinea border). Extendable once in-country. Single or multiple re-entry options available."
+    },
+    {
+      "category": "tourist",
+      "name": "E-Visa (Tourist/Visitor)",
+      "purpose": "Advance online visa for tourism, family visits, or short-stay purposes for nationals not eligible for visa on arrival or ECOWAS free movement.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.sl/",
+      "notes": "Applied for through the official Sierra Leone eVisa portal (evisa.sl), operated by the Government of Sierra Leone. Required for nationals not covered by ECOWAS free movement or the Landing Visa (VoA) policy. Specific fee, validity, and max-stay details are not published on a publicly accessible page of evisa.sl without beginning an application. Can also be obtained through Sierra Leone embassies and consulates abroad."
+    },
+    {
+      "category": "business",
+      "name": "Business Landing Visa / Visa on Arrival",
+      "purpose": "Short-stay entry for business meetings, negotiations, or commercial activities. Issued under the same VoA/landing visa framework as tourist visits.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_local": {
+        "amount_single": 800000,
+        "amount_multiple": 1200000,
+        "currency": "SLL",
+        "note": "Same fee structure as tourist landing visa. Le800,000 single / Le1,200,000 multiple for non-AU nationals; Le250,000 single / Le375,000 multiple for non-ECOWAS AU nationals."
+      },
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://slid.gov.sl/landing-visa/",
+      "notes": "Business visits are covered under the same landing visa framework as tourism. NTB official policy (effective September 5, 2019) confirms VoA covers tourism, business, religious, academic, and family visits. Same fee structure applies. Extendable once in-country."
+    },
+    {
+      "category": "work",
+      "name": "Work Permit (Employment Permit)",
+      "purpose": "Authorises a foreign national to undertake employment in Sierra Leone for a Sierra Leonean employer or organisation.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://unifiedpermit.gov.sl/",
+      "notes": "Applied for through the Unified Permit portal (unifiedpermit.gov.sl). Mandatory as of January 1, 2026 - all applications and renewals must go through the online platform. Non-ECOWAS fee per SLIEPA FAQ: Employee 3,000,000 Leones; Self-Employed 3,600,000 Leones; renewal 855,000 Leones. ECOWAS nationals: Employee/Self-Employed 1,500,000 Leones. Also referred to as the Employment category under the Unified Permit system."
+    },
+    {
+      "category": "work",
+      "name": "Business Immigration Quota (BIQ) Permit",
+      "purpose": "Permits foreign investors and business owners to reside and operate businesses in Sierra Leone, with an allocated immigration quota for key personnel.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://unifiedpermit.gov.sl/",
+      "notes": "One of the named categories under the Unified Permit system (unifiedpermit.gov.sl). BIQ allows companies to bring foreign workers up to a quota. Alongside this is the Company Quota (CQ) permit. Specific fees and validity periods are not published on the public-facing pages of unifiedpermit.gov.sl."
+    },
+    {
+      "category": "student",
+      "name": "Student Permit",
+      "purpose": "Authorises a foreign national to reside in Sierra Leone for the purpose of full-time study at an accredited institution.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://unifiedpermit.gov.sl/",
+      "notes": "Named as one of the categories in Sierra Leone's Unified Permit system. Applications and renewals must be submitted online via unifiedpermit.gov.sl as of January 1, 2026. Specific fee amounts, duration, and eligibility requirements are not published on publicly accessible pages of the unified permit portal."
+    },
+    {
+      "category": "family",
+      "name": "Dependant Permit",
+      "purpose": "Allows family members (dependants) of foreign nationals holding a valid work, business, or resident permit to reside in Sierra Leone.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://unifiedpermit.gov.sl/",
+      "notes": "Listed as a named category in Sierra Leone's Unified Permit system. Intended for spouses and dependent children of permit holders. Applications submitted online via unifiedpermit.gov.sl. Specific eligibility, fees, and durations are not published on publicly accessible portions of the portal."
+    },
+    {
+      "category": "investment",
+      "name": "GO-FOR-GOLD Permanent Residency Programme",
+      "purpose": "Grants immediate Permanent Residency to high-net-worth foreign investors who deposit gold bullion in Sierra Leone government vaults.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://slid.gov.sl/",
+      "notes": "Officially announced by SLID in a January 2025 press release. No in-country residency requirement to acquire or retain PR. Includes an upgrade pathway to citizenship. Administered by SLID. Minimum investment amounts appear only on the private operator website (goforgold.center) and are not published on any official *.gov.sl domain. Programme status as of June 2026 is uncertain - SLID website does not actively feature current articles about this programme."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Service Passport Visa Exemption (China)",
+      "purpose": "Mutual visa exemption for holders of valid PRC diplomatic and service passports travelling to Sierra Leone on official duties.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://sl.china-embassy.gov.cn/eng/zsgx/201911/t20191107_5994941.htm",
+      "notes": "Based on the Agreement Between China and Sierra Leone on Mutual Visa Exemption for Holders of Diplomatic and Service Passports, entered into force December 24, 2018. Covers diplomatic and service passports (including public affairs passports) of the PRC. Stays exceeding 30 days require registration with competent authorities. Diplomatic/consular mission members and accredited families are exempt for the duration of their accreditation. Ordinary PRC passport holders are NOT exempt; they qualify for VoA/landing visa under the BRICS category."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic/Service/Official Passport Visa Waiver (South Africa)",
+      "purpose": "Mutual visa waiver for holders of South African diplomatic, service, and official passports travelling to Sierra Leone.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofaic.gov.sl/sierra-leone-and-south-africa-agree-on-visa-waiver-for-holders-of-a-diplomatic-service-passport-mofaic-building-tower-hill-freetown-2nd-november-2023/",
+      "notes": "Agreed effective November 30, 2023, announced during a courtesy call by South African High Commissioner H.E. Grace Jeanet Mason at MoFAIC Building, Freetown on November 2, 2023. Ordinary South African passport holders qualify for landing visa under the BRICS/AU category. Max stay duration for diplomatic/service/official holders not confirmed - mofaic.gov.sl was inaccessible (ECONNREFUSED) during June 2026 re-validation."
+    },
+    {
+      "category": "other",
+      "name": "ECOWAS Free Movement Right of Entry",
+      "purpose": "Visa-free entry and right of residence for up to 90 days for citizens of ECOWAS member states, per the 1979 ECOWAS free movement protocol.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+      "notes": "Under ECOWAS Protocol A/P.1/5/79 dated May 29, 1979. Citizens of the 14 other ECOWAS member states (Benin, Burkina Faso, Cabo Verde, Gambia, Ghana, Guinea, Guinea-Bissau, Côte d'Ivoire, Liberia, Mali, Niger, Nigeria, Senegal, Togo) may enter without a visa and reside up to 90 days. Free landing visa per SLID (slid.gov.sl/landing-visa/, March 2023). Right to reside is granted but does not confer right to employment - a work permit is still required for employment."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
         "nationality": "ECOWAS member state nationals (Benin, Burkina Faso, Cabo Verde, Gambia, Ghana, Guinea, Guinea-Bissau, Côte d'Ivoire, Liberia, Mali, Niger, Nigeria, Senegal, Togo)",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "Under ECOWAS Protocol A/P.1/5/79 dated 29 May 1979, citizens of ECOWAS member states may enter without a visa and reside for up to 90 days. Current ECOWAS membership is 15 states (Mauritania withdrew). Right to reside is granted but does not confer right to employment. Sierra Leone itself is excluded from this list as the destination country. The NTB official page (September 2019) confirms: 'ECOWAS nationals – Visa-free'.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "Under ECOWAS Protocol A/P.1/5/79 dated 29 May 1979, citizens of ECOWAS member states may enter without a visa and reside for up to 90 days. Free landing visa issued at ports of entry per SLID (March 2023). Current ECOWAS membership is 15 states (Mauritania withdrew). Right to reside is granted but does not confer right to employment. Sierra Leone itself is excluded from this list as the destination country. Both the NTB official page (September 2019) and SLID landing-visa page (March 2023) confirm ECOWAS nationals as visa-free.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       }
     ],
@@ -23,79 +202,79 @@
         "nationality": "United Kingdom citizens",
         "iso3": "GBR",
         "max_stay_days": 30,
-        "notes": "Visa on arrival issued at Freetown International Airport, Jendema (border with Liberia) and Gbalamuya (border with Guinea) per NTB official policy effective 5 September 2019. Fee: USD 80 (non-AU). Duration: 1 month; extendable once in-country.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "Landing visa (visa on arrival) per NTB official policy effective 5 September 2019 and SLID landing-visa page (March 2023). Available at Freetown International Airport, Jendema (border with Liberia) and Gbalamuya (border with Guinea). Fee: Le800,000 single entry / Le1,200,000 multiple re-entry per SLID March 2023 (original NTB 2019 quoted USD 80). Duration: 30 days; extendable once in-country.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "European Union citizens",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "All EU member state nationals receive visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80 (non-AU). Duration: 1 month; extendable once in-country.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "All EU member state nationals receive landing visa per NTB official policy effective 5 September 2019 and SLID landing-visa page (March 2023). Fee: Le800,000 single / Le1,200,000 multiple (non-AU). Duration: 30 days; extendable once in-country.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "United States citizens",
         "iso3": "USA",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80 (non-AU). Duration: 1 month; extendable once in-country.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019 and SLID landing-visa page (March 2023). Fee: Le800,000 single / Le1,200,000 multiple (non-AU). Duration: 30 days; extendable once in-country.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "Commonwealth member country citizens",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "All Commonwealth member state nationals receive visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 25 for African Commonwealth members (non-ECOWAS AU nationals); USD 80 for non-African Commonwealth members. Duration: 1 month; extendable once in-country.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "All Commonwealth member state nationals receive landing visa per NTB official policy effective 5 September 2019. Fee varies: non-ECOWAS AU Commonwealth members pay Le250,000 single / Le375,000 multiple; non-African Commonwealth members pay Le800,000 single / Le1,200,000 multiple (per SLID March 2023). Duration: 30 days; extendable once in-country.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "Gulf Cooperation Council (GCC) member country citizens (UAE, Saudi Arabia, Bahrain, Qatar, Kuwait, Oman)",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "All GCC nationals receive visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80 (non-AU). Duration: 1 month; extendable once in-country.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "All GCC nationals receive landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "BRICS country citizens (Brazil, Russia, India, China, South Africa)",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "All BRICS nationals receive visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 25 for South Africa (non-ECOWAS AU national); USD 80 for Brazil, Russia, India, China (non-AU). Duration: 1 month; extendable once in-country. Note: BRICS expanded post-2019 (Egypt, Ethiopia, Iran, UAE joined 2024) but the NTB policy lists the original 5 BRICS members explicitly.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "All BRICS nationals receive landing visa per NTB official policy effective 5 September 2019. Fee varies: South Africa pays Le250,000 single / Le375,000 multiple (AU non-ECOWAS); Brazil, Russia, India, China pay Le800,000 single / Le1,200,000 multiple (non-AU) per SLID March 2023. Duration: 30 days; extendable once in-country. Note: BRICS expanded post-2019 (Egypt, Ethiopia, Iran, UAE joined 2024) but the NTB policy lists the original 5 BRICS members explicitly - expanded members not confirmed on any official Sierra Leone source.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "India",
         "iso3": "IND",
         "max_stay_days": 30,
-        "notes": "Indian ordinary passport holders receive visa on arrival as BRICS members per Sierra Leone NTB official policy effective 5 September 2019. Fee: USD 80 (non-AU country). Duration: 1 month (30 days); extendable once in-country with Chief Immigration Officer approval. Valid for tourism, business, religious, academic, or family visits. Single entry. Ports of entry: Freetown International Airport, Jendema (Liberia border), Gbalamuya (Guinea border). Airline aggregator claim of 'visa_free' is incorrect — entry requires payment of USD 80 at port of entry.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "Indian ordinary passport holders receive landing visa as BRICS members per Sierra Leone NTB official policy effective 5 September 2019 and SLID (March 2023). Fee: Le800,000 single / Le1,200,000 multiple (non-AU). Duration: 30 days; extendable once in-country with Chief Immigration Officer approval. Valid for tourism, business, religious, academic, or family visits. Single or multiple entry available. Ports of entry: Freetown International Airport, Jendema (Liberia border), Gbalamuya (Guinea border). Airline aggregator claim of 'visa_free' is INCORRECT - entry requires a landing visa at port of entry.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "Non-ECOWAS African Union member state nationals",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "Non-ECOWAS AU nationals receive visa on arrival at USD 25 per NTB official policy effective 5 September 2019. Specific AU members (Botswana, Eswatini, Kenya, Lesotho, Malawi, Mauritius) receive free VoA per reciprocal agreements. Duration: 1 month; extendable once in-country.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "Non-ECOWAS AU nationals receive landing visa at Le250,000 single / Le375,000 multiple per SLID official policy (March 2023). Specific AU members (Botswana, Eswatini, Kenya, Lesotho, Malawi, Mauritius) receive free landing visa per bilateral agreements. Duration: 30 days; extendable once in-country.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "Botswana",
         "iso3": "BWA",
         "max_stay_days": 30,
-        "notes": "Free visa on arrival (no fee) per official NTB policy effective 5 September 2019. The prior record classified this as 'visa_free' based on the SLIEPA FAQ, but the NTB official page (a government domain) frames it as a fee-waived VoA under the AU category, consistent with a reciprocal bilateral agreement. Duration: 1 month.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "Free landing visa per NTB official policy effective 5 September 2019 and confirmed on SLID (March 2023). Citizens with bilateral reciprocal agreements receive free landing visas. Duration: 30 days.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "Eswatini",
         "iso3": "SWZ",
         "max_stay_days": 30,
-        "notes": "Free visa on arrival (no fee) per official NTB policy effective 5 September 2019. Duration: 1 month.",
+        "notes": "Free landing visa per NTB official policy effective 5 September 2019. Duration: 30 days.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -103,15 +282,15 @@
         "nationality": "Kenya",
         "iso3": "KEN",
         "max_stay_days": 30,
-        "notes": "Free visa on arrival (no fee) per official NTB policy effective 5 September 2019. The prior record classified this as 'visa_free' based on the SLIEPA FAQ, but the NTB official page frames it as a fee-waived VoA. Duration: 1 month.",
-        "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
+        "notes": "Free landing visa per NTB official policy effective 5 September 2019 and confirmed on SLID (March 2023). Duration: 30 days.",
+        "source_url": "https://slid.gov.sl/landing-visa/",
         "source_official": true
       },
       {
         "nationality": "Lesotho",
         "iso3": "LSO",
         "max_stay_days": 30,
-        "notes": "Free visa on arrival (no fee) per official NTB policy effective 5 September 2019. Duration: 1 month.",
+        "notes": "Free landing visa per NTB official policy effective 5 September 2019. Duration: 30 days.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -119,7 +298,7 @@
         "nationality": "Malawi",
         "iso3": "MWI",
         "max_stay_days": 30,
-        "notes": "Free visa on arrival (no fee) per official NTB policy effective 5 September 2019. Duration: 1 month.",
+        "notes": "Free landing visa per NTB official policy effective 5 September 2019. Duration: 30 days.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -127,7 +306,7 @@
         "nationality": "Mauritius",
         "iso3": "MUS",
         "max_stay_days": 30,
-        "notes": "Free visa on arrival (no fee) per official NTB policy effective 5 September 2019. Duration: 1 month.",
+        "notes": "Free landing visa per NTB official policy effective 5 September 2019. Duration: 30 days.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -135,7 +314,7 @@
         "nationality": "Lebanon",
         "iso3": "LBN",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -143,7 +322,7 @@
         "nationality": "Iran",
         "iso3": "IRN",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country. Note: Iran is also referenced in unverified sources as having a diplomatic/service passport exemption, but only ordinary-passport VoA is confirmed on an official Sierra Leone government source (ntb.gov.sl).",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country. Note: Iran is also referenced in unverified sources as having a diplomatic/service passport exemption, but only ordinary-passport landing visa is confirmed on an official Sierra Leone government source.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -151,7 +330,7 @@
         "nationality": "Cambodia",
         "iso3": "KHM",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -159,7 +338,7 @@
         "nationality": "Vietnam",
         "iso3": "VNM",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -167,7 +346,7 @@
         "nationality": "Singapore",
         "iso3": "SGP",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80 under the 'other countries' bracket. Note: The SLIEPA FAQ (earlier source) listed Singapore as 'visa-exempt for 30 days'. The NTB official policy (2019 and still current per ntb.gov.sl 2026) places Singapore in the paid VoA category. Classification corrected to VoA per the more recent and specific government policy statement.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -175,7 +354,7 @@
         "nationality": "Indonesia",
         "iso3": "IDN",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -183,7 +362,7 @@
         "nationality": "Thailand",
         "iso3": "THA",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -191,7 +370,7 @@
         "nationality": "Turkey",
         "iso3": "TUR",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -199,7 +378,7 @@
         "nationality": "Japan",
         "iso3": "JPN",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -207,7 +386,7 @@
         "nationality": "South Korea",
         "iso3": "KOR",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -215,7 +394,7 @@
         "nationality": "Norway",
         "iso3": "NOR",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019 (listed individually alongside EU; Norway is EEA but not EU). Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019 (listed individually alongside EU; Norway is EEA but not EU). Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -223,7 +402,7 @@
         "nationality": "Israel",
         "iso3": "ISR",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -231,7 +410,7 @@
         "nationality": "Bolivia",
         "iso3": "BOL",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -239,7 +418,7 @@
         "nationality": "Timor-Leste (East Timor)",
         "iso3": "TLS",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019 (listed as 'East Timor'). Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019 (listed as 'East Timor'). Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -247,7 +426,7 @@
         "nationality": "Macau",
         "iso3": "MAC",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country. Note: Macau is a Special Administrative Region of China; this appears to apply to Macau SAR travel documents.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country. Note: Macau is a Special Administrative Region of China; this appears to apply to Macau SAR travel documents.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -255,7 +434,7 @@
         "nationality": "Samoa",
         "iso3": "WSM",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       },
@@ -263,29 +442,30 @@
         "nationality": "Tuvalu",
         "iso3": "TUV",
         "max_stay_days": 30,
-        "notes": "Visa on arrival per NTB official policy effective 5 September 2019. Fee: USD 80. Duration: 1 month; extendable once in-country.",
+        "notes": "Landing visa per NTB official policy effective 5 September 2019. Fee: Le800,000 single / Le1,200,000 multiple (non-AU, per SLID March 2023). Duration: 30 days; extendable once in-country.",
         "source_url": "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
         "source_official": true
       }
     ],
     "e_visa": [
       {
-        "nationality": "All nationalities not covered by ECOWAS free movement, VoA, or bilateral visa-exemption",
+        "nationality": "All nationalities not covered by ECOWAS free movement, landing visa (VoA), or bilateral visa-exemption",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Nationals not covered by ECOWAS free movement or the September 2019 VoA policy must obtain a visa in advance. The official eVisa portal (evisa.sl) is operated by the Government of Sierra Leone. SLID officially directs all advance visa applications to evisa.sl. Applications can also be submitted at Sierra Leone embassies or consulates abroad.",
+        "notes": "Nationals not covered by ECOWAS free movement or the September 2019 VoA/landing visa policy must obtain a visa in advance. The official eVisa portal (evisa.sl) is operated by the Government of Sierra Leone. SLID officially directs all advance visa applications to evisa.sl. Applications can also be submitted at Sierra Leone embassies or consulates abroad.",
         "source_url": "https://www.evisa.sl/",
         "source_official": true
       }
     ],
     "eta": [],
     "source_urls": [
+      "https://slid.gov.sl/landing-visa/",
       "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
       "https://slid.gov.sl/",
       "https://www.evisa.sl/",
       "https://www.sliepa.gov.sl/media/userfiles/subsite_198/files/resource-library/FAQS.docx"
     ],
-    "notes": "Sierra Leone's visa admission framework has three tiers: (1) Visa-free for ECOWAS nationals under the 1979 ECOWAS Protocol; (2) Visa on arrival (VoA) introduced 5 September 2019, covering UK/EU/US/Commonwealth/GCC/BRICS nationals and numerous additional countries — at USD 80 for non-AU, USD 25 for non-ECOWAS AU nationals, and free for Botswana, Eswatini, Kenya, Lesotho, Malawi, Mauritius; (3) E-visa (advance application at evisa.sl) for all remaining nationalities. The NTB official page (ntb.gov.sl/visa-on-arrival-to-sierra-leone/) is the primary source for the VoA policy and remains live as of 2026. The SLIEPA FAQ had previously listed Botswana, Kenya, Singapore as 'visa-exempt'; the NTB 2019 policy is more specific and authoritative. VoA is single-entry, 1-month, extendable once. Ports of entry: Freetown International Airport, Jendema (Liberia border), Gbalamuya (Guinea border)."
+    "notes": "Sierra Leone's visa admission framework has three tiers: (1) Visa-free for ECOWAS nationals under the 1979 ECOWAS Protocol - free landing visa at ports of entry per SLID March 2023; (2) Landing Visa / Visa on Arrival (VoA) introduced 5 September 2019, covering UK/EU/US/Commonwealth/GCC/BRICS nationals and numerous additional countries - fee structure updated by SLID (March 2023) to Le800,000 single / Le1,200,000 multiple for non-AU nationals, and Le250,000 single / Le375,000 multiple for non-ECOWAS AU nationals. Free landing visa for Botswana, Eswatini, Kenya, Lesotho, Malawi, Mauritius under bilateral agreements; (3) E-visa (advance application at evisa.sl) for all remaining nationalities. The SLID official page (slid.gov.sl/landing-visa/, published March 2023) is now the primary authoritative source for fees. The NTB page (ntb.gov.sl/visa-on-arrival-to-sierra-leone/) remains the primary source for the eligibility list (effective 5 September 2019). VoA is single or multiple entry, 1-month (30 days) max stay, extendable once. Ports of entry: Freetown International Airport, Jendema (Liberia border), Gbalamuya (Guinea border)."
   },
   "conditional_access": [
     {
@@ -295,7 +475,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 30,
-      "conditions": "Agreement Between the Government of the People's Republic of China and the Government of the Republic of Sierra Leone on Mutual Visa Exemption for Holders of Diplomatic and Service Passports, entered into force 24 December 2018. Covers holders of valid diplomatic or service passports (including passports for public affairs) of the PRC. Stay must not exceed 30 days; stays exceeding 30 days require registration with competent authorities. Diplomatic/consular mission members and families holding qualifying passports are exempt for the duration of accreditation. Ordinary passport holders are NOT exempt — they qualify for VoA under BRICS/non-AU category.",
+      "conditions": "Agreement Between the Government of the People's Republic of China and the Government of the Republic of Sierra Leone on Mutual Visa Exemption for Holders of Diplomatic and Service Passports, entered into force 24 December 2018. Covers holders of valid diplomatic or service passports (including passports for public affairs) of the PRC. Stay must not exceed 30 days; stays exceeding 30 days require registration with competent authorities. Diplomatic/consular mission members and families holding qualifying passports are exempt for the duration of accreditation. Ordinary passport holders are NOT exempt - they qualify for landing visa under BRICS/non-AU category.",
       "source_url": "https://sl.china-embassy.gov.cn/eng/zsgx/201911/t20191107_5994941.htm",
       "source_official": true
     },
@@ -306,7 +486,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": null,
-      "conditions": "Sierra Leone and South Africa agreed on a mutual visa waiver for holders of Diplomatic, Service, and Official passports, effective 30 November 2023. Announced at MoFAIC Building, Tower Hill, Freetown on 2 November 2023 during a courtesy call by South African High Commissioner H.E. Grace Jeanet Mason. Ordinary South African passport holders qualify for VoA under BRICS category (USD 25, free for South Africa as AU member). Max stay duration for diplomatic/service/official holders not confirmed on official source (mofaic.gov.sl was inaccessible at time of re-validation).",
+      "conditions": "Sierra Leone and South Africa agreed on a mutual visa waiver for holders of Diplomatic, Service, and Official passports, effective 30 November 2023. Announced at MoFAIC Building, Tower Hill, Freetown on 2 November 2023 during a courtesy call by South African High Commissioner H.E. Grace Jeanet Mason. Ordinary South African passport holders qualify for landing visa under BRICS category. Max stay duration for diplomatic/service/official holders not confirmed on official source (mofaic.gov.sl was inaccessible at time of re-validation, June 2026).",
       "source_url": "https://mofaic.gov.sl/sierra-leone-and-south-africa-agree-on-visa-waiver-for-holders-of-a-diplomatic-service-passport-mofaic-building-tower-hill-freetown-2nd-november-2023/",
       "source_official": true
     }
@@ -333,10 +513,10 @@
         "path_to_citizenship_years": null,
         "official_url": "https://slid.gov.sl/",
         "source_official": true,
-        "notes": "Officially announced by SLID in January 2025 press release. Program grants immediate Permanent Residency through investment in Sierra Leonean gold bullion deposited in government vaults for 5 years. No in-country residency requirement to acquire or retain PR. Upgrade pathway to citizenship exists. Specific investment amounts appear only on private operator website goforgold.center — therefore min_amount is omitted per hard rules."
+        "notes": "Officially announced by SLID in January 2025 press release. Program grants immediate Permanent Residency through investment in Sierra Leonean gold bullion deposited in government vaults for 5 years. No in-country residency requirement to acquire or retain PR. Upgrade pathway to citizenship exists. Specific investment amounts appear only on private operator website goforgold.center - therefore min_amount is omitted per hard rules."
       },
       {
-        "name": "Unified Permit — Residence Permit",
+        "name": "Unified Permit - Residence Permit",
         "type": "residence_permit",
         "min_amount": null,
         "currency": null,
@@ -367,40 +547,44 @@
   ],
   "data_quality": {
     "completeness": "medium",
-    "validation_notes": "Re-validated June 2026 against official Sierra Leone government sources. Key changes from prior record: (1) MAJOR ADDITION — visa_on_arrival section was entirely absent from the prior record. Official NTB government page (ntb.gov.sl/visa-on-arrival-to-sierra-leone/, effective 5 September 2019, still live 2026) establishes VoA for UK, EU, US, Commonwealth, GCC, BRICS, and 17 individually named countries. This is the most significant correction. (2) RECLASSIFICATION — Botswana (BWA) and Kenya (KEN) moved from visa_free to visa_on_arrival (free-of-charge VoA) per NTB official source which explicitly frames bilateral exemptions as fee-waived VoA under the AU category. (3) RECLASSIFICATION — Singapore (SGP) moved from visa_free to visa_on_arrival (paid, USD 80) per NTB official source. Earlier SLIEPA FAQ described Singapore as 'visa-exempt'; NTB 2019 policy lists Singapore in the paid VoA bracket. (4) ADDITIONS to visa_on_arrival — Eswatini, Lesotho, Malawi, Mauritius (free VoA) confirmed on official NTB source; these were entirely absent from the prior record. Also added individually named VoA countries: Lebanon, Iran, Cambodia, Vietnam, Indonesia, Thailand, Turkey, Japan, South Korea, Norway, Israel, Bolivia, Timor-Leste, Macau, Samoa, Tuvalu. (5) The e_visa entry scope narrowed to correctly reflect only those not covered by ECOWAS or VoA. (6) Added ntb.gov.sl to official_domains. (7) mofaic.gov.sl was inaccessible (SSL + ECONNREFUSED) during re-validation — South Africa diplomatic passport conditional_access retained from prior record with caveat. (8) [June 2026] Added dedicated India (IND) entry to visa_on_arrival confirming VoA at USD 80 / 30 days per ntb.gov.sl — airline aggregator claim of visa_free for India is INCORRECT; India is visa_on_arrival only, not visa_free.",
+    "validation_notes": "Re-validated 2026-06-29 against official Sierra Leone government sources. PREVIOUS (2026-06-27): slid.gov.sl/landing-visa/ confirmed via search snippet; fee structure in Leones confirmed; NTB eligibility list confirmed unchanged. CURRENT (2026-06-29): (1) ELIGIBILITY LIST UNCHANGED - ntb.gov.sl/visa-on-arrival-to-sierra-leone/ re-fetched and confirmed LIVE (June 2026). Same nationality groups as 2019 NTB announcement: ECOWAS (visa-free), UK, EU, US, Commonwealth, GCC, BRICS, Lebanon, Iran, Cambodia, Vietnam, Singapore, Indonesia, Thailand, Turkey, Japan, South Korea, Norway, Israel, Bolivia, East Timor, Macau, Samoa, Tuvalu. No additions or removals from this list found on any official source. (2) SLID PAGES STILL EMPTY - slid.gov.sl/, slid.gov.sl/landing-visa/, slid.gov.sl/visa-on-arrival/, slid.gov.sl/traveling-to-sierra-leone/ all return empty content on direct WebFetch (June 2026). Fee structure in Leones (Le800,000/Le1,200,000 non-AU; Le250,000/Le375,000 non-ECOWAS AU) confirmed via web search snippet of SLID page - not a direct page load. (3) CBI/GO-FOR-GOLD - Searched for 'Citizenship (Special Naturalization) Regulation 2026' on official gov.sl domains; not found. No formal legal text or investment minimum confirmed on any *.gov.sl page. slid.gov.sl/wp-content/uploads/2024/07/PublicNotice-Naturalization.pdf returned empty. The SLID citizenship page and notices page also returned empty. CBI program entry kept as-is per preservation rule. (4) mofaic.gov.sl remains inaccessible - South Africa conditional_access entry preserved unchanged. (5) ntb.gov.sl/visa-information/ continues to return 404. (6) evisa.sl returns navigation shell only - no policy details. No changes made to any visa_policy access lists.",
     "gaps": [
-      "VoA policy dated September 2019 — no official SLID/government source has published a subsequent update or amendment to this policy. The slid.gov.sl/visa-on-arrival/ URL returns 404 as of June 2026. The ntb.gov.sl page remains the most current official government source but carries no updated date.",
-      "VoA max stay: ntb.gov.sl page does not specify maximum stay in days beyond '1 month'. The visitsierraleone.org source (unofficial) states 30 days. Recorded as 30 days.",
-      "Countries receiving free VoA: NTB page lists AU member fee as USD 25 and says 'Citizens of Botswana, Eswatini, Kenya, Lesotho, Malawi and Mauritius are issued a free visa on arrival.' Wikipedia also lists Barbados, Fiji, Jamaica, Malaysia, Saint Kitts and Nevis, Sri Lanka, Trinidad and Tobago as receiving free VoA — however, these additional countries appear ONLY in the Wikipedia article, not on the official NTB page, and are therefore not recorded per hard rules.",
-      "mofaic.gov.sl was entirely inaccessible (ECONNREFUSED + SSL error) during re-validation. South Africa diplomatic/service/official passport waiver max stay remains unconfirmed.",
-      "CBI/RBI investment amounts: Specific minimum investment figures appear only on private commercial operator website (goforgold.center), not on any official *.gov.sl domain. Therefore amounts are not recorded.",
-      "Current CBI/GO-FOR-GOLD program status: The SLID website as of June 2026 does not actively promote or describe this programme on the articles page, creating uncertainty about whether it is still active.",
+      "SLID landing-visa page content did not render to WebFetch despite being indexed by search engines - content was confirmed via Google search snippet only. Direct fetch returned empty. The fee information (Leones amounts) is taken from the search engine snippet/excerpt of the SLID page, not a full page load.",
+      "VoA/landing visa max stay: NTB page references '1 month'. SLID search snippet confirms 30-day equivalence. Recorded as 30 days.",
+      "Countries receiving free landing visa: NTB page lists Botswana, Eswatini, Kenya, Lesotho, Malawi, Mauritius. Wikipedia also lists Barbados, Fiji, Jamaica, Malaysia, Saint Kitts and Nevis, Sri Lanka, Trinidad and Tobago as receiving free VoA - these additional countries appear ONLY in Wikipedia, not on any official Sierra Leone government page, and are therefore not recorded.",
+      "mofaic.gov.sl was entirely inaccessible (ECONNREFUSED) during re-validation June 2026. South Africa diplomatic/service/official passport waiver max stay remains unconfirmed.",
+      "CBI/RBI investment amounts: Specific minimum investment figures appear only on private commercial operator websites (goforgold.center, slcbi.com), not on any official *.gov.sl domain. A public notice PDF (slid.gov.sl/wp-content/uploads/2024/07/PublicNotice-Naturalization.pdf) returned empty content on fetch.",
+      "CBI formal legal framework: Search for 'Citizenship (Special Naturalization) Regulation 2026' on gov.sl and parliament.gov.sl returned no matching official document. Program existence confirmed by SLID press release (January 2025) and Tourism Ministry citizenship conferral events, but formal legal text not accessible on any official domain.",
+      "Current CBI/GO-FOR-GOLD program status: The SLID website as of June 2026 does not actively promote or describe this programme on any fetchable page, creating uncertainty about whether it is still active and what its current terms are.",
       "Dual citizenship: Sierra Leone's position on dual citizenship for CBI naturalized investors was not confirmed on any official source.",
-      "Conditional access — Iran diplomatic/service passport: Wikipedia states a max-stay-1-month visa exemption exists for Iranian diplomatic and service passport holders. The ntb.gov.sl source confirms ordinary Iranian passport holders get paid VoA ($80). The diplomatic passport exemption cannot be confirmed on any official Sierra Leone or Iranian government source and is therefore not recorded in conditional_access.",
-      "Conditional access — Rwanda: Wikipedia states a visa exemption agreement for diplomatic and service passports was signed with Rwanda in August 2019 but has yet to be ratified. No official source found. Not recorded.",
-      "Conditional access — Kazakhstan: Wikipedia lists a future agreement signed February 2017 for diplomatic/service passports, not yet in force. No official source found. Not recorded.",
+      "Conditional access - Iran diplomatic/service passport: Wikipedia states a max-stay-1-month visa exemption exists for Iranian diplomatic and service passport holders. Cannot be confirmed on any official Sierra Leone or Iranian government source - not recorded in conditional_access.",
+      "Conditional access - Rwanda: Wikipedia states a visa exemption agreement for diplomatic and service passports was signed August 2019 but has yet to be ratified. No official source found - not recorded.",
+      "Conditional access - Kazakhstan: Wikipedia lists a future agreement signed February 2017 for diplomatic/service passports, not yet in force. No official source found - not recorded.",
       "e-Visa validity and duration: The evisa.sl portal does not publish a public-facing page listing visa types and specific durations without completing an application.",
-      "The SLIEPA FAQ document does not carry an explicit publication date; it may partially reflect pre-VoA-era policies.",
       "BRICS expanded post-2019 (Egypt, Ethiopia, Iran, UAE, and others admitted 2024). The original NTB policy listed the original 5 BRICS members. Whether the expanded BRICS members are also covered is not confirmed on any official Sierra Leone source.",
       "Special status (OCI/diaspora): No official source was found granting special entry to OCI cardholders or any comparable diaspora/heritage status.",
-      "Credential-based entry: No official Sierra Leone source was found granting visa-free, VoA, or e-visa access based on the traveller holding a third-country visa (e.g., US visa, Schengen visa, UK visa) or residence permit."
+      "Credential-based entry: No official Sierra Leone source was found granting visa-free, VoA, or e-visa access based on the traveller holding a third-country visa or residence permit.",
+      "Unified Permit fee amounts in USD: Fees are published in Leones (Sierra Leone currency) on the SLIEPA FAQ. USD equivalents were not confirmed on any official source as of June 2026.",
+      "slid.gov.sl/visa-on-arrival/ and slid.gov.sl/traveling-to-sierra-leone/ listed in search results but direct fetch returned empty content (June 2026)."
     ]
   },
   "sources_checked": [
-    "https://slid.gov.sl/",
-    "https://slid.gov.sl/faq",
-    "https://slid.gov.sl/articles",
-    "https://slid.gov.sl/visa-on-arrival/ (404 Not Found as of June 2026)",
-    "https://slid.gov.sl/traveling-to-sierra-leone/ (404 Not Found as of June 2026)",
-    "https://slid.gov.sl/landing-visa/ (404 Not Found as of June 2026)",
-    "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/",
-    "https://www.evisa.sl/",
-    "https://www.sliepa.gov.sl/media/userfiles/subsite_198/files/resource-library/FAQS.docx",
-    "https://unifiedpermit.gov.sl/",
+    "https://slid.gov.sl/ (empty response June 2026)",
+    "https://slid.gov.sl/landing-visa/ (listed in search results; content confirmed via search snippet - direct fetch returned empty; published March 2023)",
+    "https://slid.gov.sl/visa-on-arrival/ (listed in search results; direct fetch returned empty, June 2026)",
+    "https://slid.gov.sl/traveling-to-sierra-leone/ (listed in search results; direct fetch returned empty, June 2026)",
+    "https://slid.gov.sl/citizenship/ (direct fetch returned empty, June 2026)",
+    "https://slid.gov.sl/wp-content/uploads/2024/07/PublicNotice-Naturalization.pdf (direct fetch returned empty, June 2026)",
+    "https://ntb.gov.sl/visa-on-arrival-to-sierra-leone/ (LIVE - re-confirmed June 2026; content matches prior record; 2019 eligibility list unchanged)",
+    "https://ntb.gov.sl/visa-information/ (404 Not Found as of June 2026)",
+    "https://www.evisa.sl/ (LIVE - navigation shell only, no policy details, June 2026)",
+    "https://www.sliepa.gov.sl/invest-in-sierra-leone/existing-investors/p/item/20733/immigration-department-sierra-leone (LIVE - general info only, no visa details, June 2026)",
+    "https://unifiedpermit.gov.sl/ (previously confirmed)",
     "https://mofaic.gov.sl/ (ECONNREFUSED as of June 2026)",
-    "https://mofaic.gov.sl/sierra-leone-and-south-africa-agree-on-visa-waiver-for-holders-of-a-diplomatic-service-passport-mofaic-building-tower-hill-freetown-2nd-november-2023/ (SSL error as of June 2026)",
-    "https://sl.china-embassy.gov.cn/eng/zsgx/201911/t20191107_5994941.htm",
-    "https://www.visitsierraleone.org/online-visa/",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Sierra_Leone"
+    "https://mofaic.gov.sl/sierra-leone-and-south-africa-agree-on-visa-waiver-for-holders-of-a-diplomatic-service-passport-mofaic-building-tower-hill-freetown-2nd-november-2023/ (SSL error / inaccessible as of June 2026)",
+    "https://sl.china-embassy.gov.cn/eng/zsgx/201911/t20191107_5994941.htm (LIVE - confirmed June 2026)",
+    "https://ma.slembassy.gov.sl/visas/ (LIVE - general requirements only; no nationality-specific eligibility, June 2026)",
+    "https://www.sliepa.gov.sl/media/userfiles/subsite_198/files/resource-library/FAQS.docx",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Sierra_Leone (non-official; used for cross-check only)"
   ]
 }

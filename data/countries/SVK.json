@@ -230,6 +230,14 @@
         "source_official": true
       },
       {
+        "nationality": "Malaysia",
+        "iso3": "MYS",
+        "max_stay_days": 90,
+        "notes": "Visa-free for stays up to 90 days in any 180-day period under EU Regulation 2018/1806 Annex II.",
+        "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
+        "source_official": true
+      },
+      {
         "nationality": "Marshall Islands",
         "iso3": "MHL",
         "max_stay_days": 90,
@@ -530,10 +538,10 @@
     "e_visa": [],
     "eta": [
       {
-        "nationality": "Annex II visa-free countries (approx. 60 nationalities) — ETIAS pending",
+        "nationality": "Annex II visa-free countries (approx. 60 nationalities) - ETIAS pending",
         "iso3": null,
         "max_stay_days": 90,
-        "notes": "ETIAS (European Travel Information and Authorisation System) will apply to all visa-free third-country nationals when it becomes operational, expected Q4 2026. Cost EUR 20, valid 3 years or until passport expiry (whichever comes first). Countries include USA, Canada, UK, Australia, NZ, Japan, South Korea, Brazil, and all others listed under visa_free above (excluding EU/EEA/Swiss and diplomatic exemptions). ETIAS is not yet operational as of June 2026.",
+        "notes": "ETIAS (European Travel Information and Authorisation System) will apply to all visa-free third-country nationals when it becomes operational, expected Q4 2026. Cost EUR 20 per application (fee waived for applicants under 18 and over 70), valid 3 years or until passport expiry (whichever comes first). Countries include USA, Canada, UK, Australia, NZ, Japan, South Korea, Brazil, and all others listed under visa_free above (excluding EU/EEA/Swiss and diplomatic exemptions). ETIAS is not yet operational as of June 2026.",
         "source_url": "https://travel-europe.europa.eu/en/etias/about-etias/news-corner/revised-timeline-ees-and-etias",
         "source_official": true
       }
@@ -541,11 +549,239 @@
     "source_urls": [
       "https://www.mzv.sk/en/web/en/visa-and-services/schengen-visa",
       "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02018R1806-20251230",
+      "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
       "https://travel-europe.europa.eu/en/etias/about-etias/news-corner/revised-timeline-ees-and-etias",
       "https://www.eeas.europa.eu/delegations/kosovo/faqs-visa-free-travel-eu-schengen-area_en"
     ],
-    "notes": "Slovakia is a Schengen Area member state. Its visa policy is governed by EU Regulation 2018/1806. Nationals not listed in Annex II (the visa-free list) require a Schengen visa for short stays. There is no Slovak national visa-on-arrival or e-visa program. The ETIAS travel authorisation system is expected to be introduced in Q4 2026 for visa-exempt nationalities (EUR 20, 3-year validity). Slovakia also issues national (Type D) visas for stays exceeding 90 days, governed by Slovak national law. Kosovo was added to Annex II on 1 January 2024; the exemption applies across all Schengen states including Slovakia, without prejudice to positions on Kosovo's status."
+    "notes": "Slovakia is a Schengen Area member state. Its visa policy is governed by EU Regulation 2018/1806. Nationals not listed in Annex II (the visa-free list) require a Schengen visa for short stays. There is no Slovak national visa-on-arrival or e-visa program. The ETIAS travel authorisation system is expected to be introduced in Q4 2026 for visa-exempt nationalities (EUR 20 per application; waived for under 18 and over 70; 3-year validity). Slovakia also issues national (Type D) visas for stays exceeding 90 days, governed by Slovak national law. Kosovo was added to Annex II on 1 January 2024; the exemption applies across all Schengen states including Slovakia, without prejudice to positions on Kosovo's status."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Schengen Short-Stay Visa (Type C)",
+      "purpose": "Short-term tourism, visiting friends or family, cultural events, and other non-work purposes within the Schengen Area. Valid for stays up to 90 days in any 180-day period across the entire Schengen Area.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza",
+      "notes": "Applied for at Slovak diplomatic missions or consulates abroad. Processing within 15 calendar days from receipt of application. Emergency issuance at border crossing possible for humanitarian cases only (up to 15 days). Applicant must provide valid travel document, photo, proof of purpose, financial means, return transport, health insurance, and accommodation confirmation not older than 90 days. Fee set by EU Regulation (EUR 80 for adults, EUR 40 for children 6–12 years). Slovakia as Schengen member state applies the common Schengen visa. Single or multiple entry at consular discretion."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (Type A)",
+      "purpose": "Authorises nationals of specific countries to transit through the international transit zone of a Slovak (or any Schengen) airport without entering the Schengen Area.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza",
+      "notes": "Required only for nationals of countries listed in Annex IV of the EU Visa Code. Applied for at Slovak diplomatic missions abroad. The holder does not enter Slovak territory; transit is confined to the international zone of the airport. Governed by the EU Visa Code (Regulation EC 810/2009)."
+    },
+    {
+      "category": "business",
+      "name": "Schengen Short-Stay Visa (Type C) – Business",
+      "purpose": "Short-term business activities such as meetings, negotiations, conferences, and trade fairs in Slovakia or the Schengen Area, not constituting employment.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza",
+      "notes": "Same Type C Schengen visa; purpose declared as business. Applicant must provide employment letter or invitation from Slovak company. Does not authorise paid work. For longer-term business activity or self-employment, see Temporary Residence for Business (Type D / residence permit)."
+    },
+    {
+      "category": "other",
+      "name": "National Long-Stay Visa (Type D)",
+      "purpose": "Authorises stays exceeding three months in Slovakia for specific purposes such as awaiting residence permit, language studies, national interest, or international treaty obligations. Serves as a bridge to a residence permit.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza",
+      "notes": "Maximum validity one year. Eligible categories include: persons with approved residence permit awaiting card issuance; language students aged 15+ enrolled in minimum 25 weekly hours; persons serving Slovakia's national interest; persons fulfilling international treaty obligations; family members of asylum seekers or persons under supplementary protection. Applications at Slovak diplomatic missions abroad, or at Border and Foreign Police in specific circumstances. Governed by Act No. 404/2011 on Residence of Foreigners. Online appointment booking mandatory via the national booking system since December 2022."
+    },
+    {
+      "category": "work",
+      "name": "Temporary Residence for Employment",
+      "purpose": "Allows third-country nationals to reside and work in Slovakia under a specific employment contract. Includes regular employment, seasonal work, and intra-company transfers.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?pobyt-cudzinca",
+      "notes": "Permit valid up to 3 years, renewable. Standard processing 90 days; expedited (30 days) for certain categories. Applicant must have an employment contract or binding job offer. Labour market test may apply unless employer holds a labour shortage exemption. Applications at Slovak diplomatic missions abroad (as of July 2025 for new applications). Governed by Act No. 404/2011. Digital application platform operational since December 2024. After 5 years continuous legal residence, permanent residence may be sought."
+    },
+    {
+      "category": "work",
+      "name": "EU Blue Card (Modrá karta EÚ)",
+      "purpose": "Temporary residence and work permit for highly qualified third-country nationals employed in a skilled occupation requiring at least a university degree, with a salary of at least 1.2x the average monthly wage in Slovakia.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 272,
+      "processing_days_min": 30,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/eu-blue-card/eu-blue-card-slovakia_en",
+      "notes": "Valid up to 5 years (or contract duration + 90 days if shorter). Fee EUR 250 initial (~USD 272), EUR 140 renewal. 30-day processing from complete application. No labour market test required as of 15 July 2024. Employment contract minimum 6 months. Salary threshold approximately EUR 1,716/month (1.2x 2023 average; updated annually). Employer must notify Labour Office. Blue Card holders may apply for long-term/permanent residence after 5 consecutive years. Governed by Act No. 404/2011 as amended."
+    },
+    {
+      "category": "student",
+      "name": "Temporary Residence for Study (Štúdium)",
+      "purpose": "Allows third-country nationals to reside in Slovakia for the purpose of studying at an accredited Slovak educational institution, including universities, secondary schools, and language courses.",
+      "max_stay_days": null,
+      "validity_days": 2190,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?pobyt-cudzinca",
+      "notes": "Permit valid up to 6 years. Processing 30 days from complete application. Administrative fees may be waived for students. Applicant must provide proof of admission to accredited institution, financial means, and accommodation. Governed by Act No. 404/2011. Digital application platform available since December 2024. Language students (15+ years) enrolled in minimum 25 weekly instruction hours may qualify for a National Visa (Type D) rather than a residence permit for shorter stays."
+    },
+    {
+      "category": "other",
+      "name": "Temporary Residence for Research and Development",
+      "purpose": "Allows third-country national researchers and scientists to reside in Slovakia to conduct research or development activities at accredited research organisations.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?pobyt-cudzinca",
+      "notes": "Permit valid up to 2 years. Processing 30 days. Applicant must hold a hosting agreement with an accredited research organisation in Slovakia. Governed by Act No. 404/2011. Implements EU Directive 2016/801 on students and researchers."
+    },
+    {
+      "category": "business",
+      "name": "Temporary Residence for Business / Entrepreneurship (Podnikanie)",
+      "purpose": "Allows third-country nationals to reside in Slovakia for the purpose of operating a business as a self-employed person (sole trader) or as a company director/owner managing a Slovak company.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 90,
+      "processing_days_max": 150,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.economy.gov.sk/podnikatelske-prostredie/cudzinci-foreigners/foreigners-running-a-business-in-the-slovak-republic",
+      "notes": "As of 1 July 2025, applications must be submitted exclusively at Slovak diplomatic missions abroad. Ministry of Economy issues opinion within 60 days; Border and Foreign Police issues final decision within 90 days (total up to 150 days). Permit valid up to 3 years, renewable. Feasibility and sustainability of the business plan is assessed, including job creation or activity in labour-shortage sectors. No fixed minimum investment in law but economic benefit must be demonstrated. After 5 years continuous legal residence, permanent residence may be applied for."
+    },
+    {
+      "category": "family",
+      "name": "Temporary Residence for Family Reunification (Zlúčenie rodiny)",
+      "purpose": "Allows family members of legally residing third-country nationals or Slovak citizens to join and reside with them in Slovakia.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 90,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?pobyt-cudzinca",
+      "notes": "Permit valid up to 3 years, tied to sponsor's permit duration. Standard processing 90 days. Family members of EU Blue Card holders and highly qualified workers may benefit from expedited 30-day processing. Administrative fee exemptions apply for minor children. Sponsor must demonstrate stable income, health insurance, and adequate accommodation. Governed by Act No. 404/2011."
+    },
+    {
+      "category": "other",
+      "name": "Temporary Residence for Special Activities (Špeciálna činnosť)",
+      "purpose": "Covers third-country nationals engaged in specific temporary activities in Slovakia not falling under standard employment, such as artists, athletes, journalists, or trainees on structured programmes.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 90,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?pobyt-cudzinca",
+      "notes": "Permit valid up to 3 years. Governed by Act No. 404/2011. Applicant must provide documentation of the specific activity and sponsor/organiser in Slovakia."
+    },
+    {
+      "category": "other",
+      "name": "Tolerated Residence (Tolerovaný pobyt)",
+      "purpose": "Granted to third-country nationals who cannot be removed from Slovakia due to legal or humanitarian obstacles, and to victims of trafficking in persons, pending regularisation or removal.",
+      "max_stay_days": null,
+      "validity_days": 180,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?pobyt-cudzinca",
+      "notes": "Issued by the Border and Foreign Police as a protection status rather than a typical visa or permit application. Valid in 6-month increments. Not a pathway to regular immigration status. Governed by Act No. 404/2011."
+    },
+    {
+      "category": "other",
+      "name": "Permanent Residence – 5-Year (Trvalý pobyt na 5 rokov)",
+      "purpose": "Grants long-term settlement rights in Slovakia to third-country nationals who have resided legally in the country for a qualifying period (generally 5 years of continuous temporary residence).",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?pobyt-cudzinca",
+      "notes": "Valid for 5 years, renewable. Standard processing 90 days; 30 days for families of significant investors. Requires proof of 5 years continuous legal residence, stable income, health insurance, and accommodation. After holding the 5-year permit for 4 years (total 9+ years legal residence), unlimited permanent residence may be sought. Governed by Act No. 404/2011."
+    },
+    {
+      "category": "other",
+      "name": "Permanent Residence – Unlimited (Trvalý pobyt na neurčitý čas)",
+      "purpose": "Grants indefinite settlement rights in Slovakia to qualifying long-term residents.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?pobyt-cudzinca",
+      "notes": "Eligible after 4 years of holding a 5-year permanent residence permit, or for minor children of permanent residents. Standard processing 90 days; 30 days for investor category. Permit becomes invalid if holder is outside Slovakia for 180+ consecutive days without authorisation. Governed by Act No. 404/2011. Pathway to citizenship after total 8 years continuous legal residence."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official Visa",
+      "purpose": "Issued to diplomatic and official passport holders of countries requiring visas for Slovakia, for the purpose of official government business, postings, or assignments.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.minv.sk/?bezvizovy-rezim",
+      "notes": "Diplomatic and service/official passport holders of many countries benefit from visa exemptions under bilateral agreements (separate from ordinary passport exemptions). NATO and Partnership for Peace military/civilian personnel are exempt from visa requirements on official assignment using military ID or movement orders. The full bilateral diplomatic passport table is published at www.minv.sk/?bezvizovy-rezim; the page was not fully machine-readable during June 2026 validation."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -710,19 +946,24 @@
   "data_quality": {
     "completeness": "high",
     "validation_notes": [
-      "CORRECTION: Bosnia and Herzegovina (BIH) — updated notes to add 'biometric passport holders only' condition, consistent with Annex II footnote and confirmed by web search of Regulation 2018/1806.",
-      "CORRECTION: Georgia (GEO) — updated notes to add 'biometric passport holders only, issued in line with ICAO standards' condition.",
-      "CORRECTION: Montenegro (MNE) — updated notes to add 'biometric passport holders only' condition.",
-      "CORRECTION: North Macedonia (MKD) — updated notes to add 'biometric passport holders only' condition; note updated to remove outdated 'former Yugoslav Republic of Macedonia' reference.",
-      "CORRECTION: Kosovo (XKX) — updated notes to add biometric passport requirement (ICAO-standard passports), effective date (1 January 2024), and clarify that the EU regulation applies uniformly to Slovakia despite its non-recognition of Kosovo independence; also corrected placement in Annex II Part 4.",
-      "CORRECTION: EU Blue Card (RBI and fast_track) — minimum contract duration corrected from '1 year' to '6 months' per European Commission official EU Blue Card Slovakia page.",
-      "CORRECTION: Significant Investor program — removed previously cited but unconfirmed EUR 100 million / 300 jobs thresholds and replaced with note that specific thresholds could not be confirmed from official published sources during June 2026 validation.",
+      "CORRECTION: Bosnia and Herzegovina (BIH) - updated notes to add 'biometric passport holders only' condition, consistent with Annex II footnote and confirmed by web search of Regulation 2018/1806.",
+      "CORRECTION: Georgia (GEO) - updated notes to add 'biometric passport holders only, issued in line with ICAO standards' condition.",
+      "CORRECTION: Montenegro (MNE) - updated notes to add 'biometric passport holders only' condition.",
+      "CORRECTION: North Macedonia (MKD) - updated notes to add 'biometric passport holders only' condition; note updated to remove outdated 'former Yugoslav Republic of Macedonia' reference.",
+      "CORRECTION: Kosovo (XKX) - updated notes to add biometric passport requirement (ICAO-standard passports), effective date (1 January 2024), and clarify that the EU regulation applies uniformly to Slovakia despite its non-recognition of Kosovo independence; also corrected placement in Annex II Part 4.",
+      "CORRECTION: EU Blue Card (RBI and fast_track) - minimum contract duration corrected from '1 year' to '6 months' per European Commission official EU Blue Card Slovakia page.",
+      "CORRECTION: Significant Investor program - removed previously cited but unconfirmed EUR 100 million / 300 jobs thresholds and replaced with note that specific thresholds could not be confirmed from official published sources during June 2026 validation.",
       "CORRECTION: ETIAS note updated from 'expected late 2026' to 'expected Q4 2026' per EU Home Affairs Council endorsed timeline (5 March 2026 endorsement); ETIAS fee confirmed at EUR 20.",
       "CORRECTION: ETIAS source_url updated to travel-europe.europa.eu (official EU ETIAS portal) from eeas.europa.eu delegation page.",
-      "CONFIRMED: Kosovo visa-free admission to Slovakia applies despite Slovakia's non-recognition; EU Regulation supersedes individual member state positions per EEAS FAQs on Kosovo visa-free travel."
+      "CONFIRMED: Kosovo visa-free admission to Slovakia applies despite Slovakia's non-recognition; EU Regulation supersedes individual member state positions per EEAS FAQs on Kosovo visa-free travel.",
+      "CORRECTION (2026-06-27): Malaysia (MYS) - ADDED to visa_free list. Malaysia is confirmed in Annex II of EU Regulation 2018/1806 (consolidated version as of 03.02.2025, CELEX:02018R1806-20250203). It was erroneously omitted from the previous record despite being a full Annex II country. Visa-free for up to 90 days in any 180-day period. Malaysia was already correctly listed in the conditional_access Geneva/New York Convention travel document exemption (as a qualifying residence country) but was missing from the primary visa_free list.",
+      "CONFIRMED (2026-06-27): Vanuatu - correctly absent from visa_free list; Vanuatu was moved from Annex II to Annex I (visa-required) via Regulation (EU) 2025/11 (M6 amendment, effective 14 January 2025). No correction needed.",
+      "CONFIRMED (2026-06-27): ETIAS - still expected Q4 2026, not yet operational as of June 2026. Fee EUR 20 confirmed. EES became fully operational April 2026; ETIAS follows in Q4 2026.",
+      "CONFIRMED (2026-06-27): All other Annex II countries (Andorra, Antigua and Barbuda, Argentina, Albania, Australia, Bahamas, Barbados, Bosnia and Herzegovina, Brazil, Brunei, Canada, Chile, Colombia, Costa Rica, Dominica, Micronesia, Grenada, Georgia, Guatemala, Holy See, Honduras, Hong Kong SAR, Israel, Japan, Kiribati, Kosovo, Macao SAR, Marshall Islands, Mauritius, Mexico, Moldova, Monaco, Montenegro, Nauru, New Zealand, Nicaragua, North Macedonia, Palau, Panama, Paraguay, Peru, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Samoa, San Marino, Serbia, Seychelles, Singapore, Solomon Islands, South Korea, Taiwan, Timor-Leste, Tonga, Trinidad and Tobago, Tuvalu, UAE, UK, Ukraine, Uruguay, Venezuela) are correctly listed and match EU Regulation 2018/1806 Annex II consolidated 03.02.2025.",
+      "CONFIRMED (2026-06-29): Re-validation pass. Regulation (EU) 2025/2441 (published OJ 10 Dec 2025) amends only the visa suspension mechanism (Article 8) — it does NOT modify Annex II's country list. No new countries have been added to Annex II since the 03.02.2025 consolidation. Vanuatu's removal (Annex I, via Regulation 2025/11) remains the last substantive list change. ETIAS Q4 2026 operational date confirmed by official travel-europe.europa.eu. CORRECTION (2026-06-29): ETIAS fee note updated to specify age exemptions: EUR 20 applies to ages 18-70; under 18 and over 70 are exempt from the fee. The Slovak MFA visa page (mzv.sk) continues to return HTTP 403 for automated fetching; no changes retrievable from that source. All visa_free, conditional_access, cbi, rbi, and fast_track data confirmed consistent with last validation. No risky changes to visa_free list entries were made this pass."
     ],
     "gaps": [
-      "The Slovak MFA website (mzv.sk) returned HTTP 403 Forbidden for direct scraping; visa policy data was sourced from the authoritative EU Regulation 2018/1806 (EUR-Lex consolidated version as of 2025) which is the primary legal instrument governing Schengen visa exemptions and applies uniformly to Slovakia.",
+      "The Slovak MFA website (mzv.sk) returned HTTP 403 Forbidden for direct scraping; visa policy data was sourced from the authoritative EU Regulation 2018/1806 (EUR-Lex consolidated version as of 03.02.2025) which is the primary legal instrument governing Schengen visa exemptions and applies uniformly to Slovakia.",
       "No official Slovak government page lists a dedicated digital nomad or startup visa category; Slovakia does not appear to have such programs as of June 2026.",
       "The exact minimum capital requirement for the standard business (entrepreneur) temporary residence permit is not published as a fixed number on official government pages.",
       "The exact minimum investment thresholds for the Certificate of Significant Investment (previously cited as EUR 100 million / 300 jobs from law firm sources) could not be confirmed from official Slovak government pages during June 2026 validation. Applicants should contact cudzinec@mhsr.sk or SARIO directly.",
@@ -730,7 +971,8 @@
       "The minv.sk visa-free regime page (?bezvizovy-rezim=) was not fully machine-readable in June 2026 (incomplete content returned). The full tabular data with country-specific bilateral diplomatic/service passport agreement dates was not extractable. Consumers should check https://www.minv.sk/?bezvizovy-rezim= directly for the complete bilateral diplomatic passport table.",
       "No evidence found of India OCI cardholder exemption for Slovakia: Slovakia has no OCI-equivalent bilateral arrangement. Indian OCI status does not confer visa-free entry to Slovakia.",
       "Slovakia does not operate a visa-on-arrival or e-visa program tied to holding a third-country credential (e.g. US visa, UK visa, UAE residence, Japan visa). Such conditional-credential VOA/eVisa schemes are not part of Slovakia's (Schengen) entry framework.",
-      "EU Blue Card salary threshold for 2025/2026 applications: the 2023 average wage was EUR 1,430/month (threshold ~EUR 1,716/month); updated figures for 2024 or 2025 average wage from Slovakia's Statistical Office were not retrieved during this validation and should be checked at statdat.statistics.sk."
+      "EU Blue Card salary threshold for 2025/2026 applications: the 2023 average wage was EUR 1,430/month (threshold ~EUR 1,716/month); updated figures for 2024 or 2025 average wage from Slovakia's Statistical Office were not retrieved during this validation and should be checked at statdat.statistics.sk.",
+      "A further consolidated version of Regulation 2018/1806 beyond 03.02.2025 (e.g., 20251230) was cited in earlier source_urls but the live EUR-Lex page for that exact CELEX returned content consistent with the 03.02.2025 version; the 20251230 date in the URL may reference the OJ publication date of the M6 amendment (Regulation 2025/11, deleting Vanuatu from Annex II). The substantive Annex II list used in this record matches both consolidations."
     ]
   },
   "sources_checked": [
@@ -738,13 +980,19 @@
       "url": "https://www.mzv.sk/en/web/en/visa-and-services/schengen-visa",
       "description": "Slovak MFA – Schengen Visa page",
       "accessible": false,
-      "note": "HTTP 403"
+      "note": "HTTP 403 (June 2026 and June 2026-27 validation)"
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
+      "description": "EU Regulation 2018/1806 consolidated version (3 Feb 2025) – Annex II visa-free list",
+      "accessible": true,
+      "note": "Re-fetched 2026-06-27. Confirmed full Annex II list including Malaysia (MYS) - which was missing from previous SVK.json record. Confirmed Vanuatu moved to Annex I via Regulation (EU) 2025/11. All other Annex II countries confirmed."
     },
     {
       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02018R1806-20251230",
-      "description": "EU Regulation 2018/1806 consolidated version (3 Feb 2025) – Annex II visa-free list",
+      "description": "EU Regulation 2018/1806 – OJ publication reference for M6 amendment (Regulation 2025/11, deleting Vanuatu from Annex II)",
       "accessible": true,
-      "note": "Primary source for visa_free list; confirmed biometric passport requirements for Albania, Bosnia, Georgia, Kosovo, Moldova, Montenegro, North Macedonia, Serbia, Ukraine"
+      "note": "Confirmed Annex II countries consistent with 03.02.2025 consolidation. Also confirmed Malaysia in Annex II."
     },
     {
       "url": "https://www.economy.gov.sk/podnikatelske-prostredie/cudzinci-foreigners/foreigners-running-a-business-in-the-slovak-republic",
@@ -781,6 +1029,60 @@
       "description": "EU Schengen Borders Code (Regulation (EU) 2016/399) – Article 6 entry conditions",
       "accessible": true,
       "note": "Article 6(1)(b) exempts holders of valid Schengen residence permits and Type D long-stay visas from requiring a short-stay Schengen visa. Article 6(5)(a) provides a transit exception."
+    },
+    {
+      "url": "https://www.minv.sk/?vizova-info-typy-viz-1",
+      "description": "Slovak Ministry of Interior – Foreigners visa information and visa types main page",
+      "accessible": true,
+      "note": "Lists Schengen visa and national visa application links; confirms ETIAS and visa-free regime references; no detailed fee or processing time data on this page."
+    },
+    {
+      "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
+      "description": "European Commission – Schengen visa policy (June 2026-29 fetch)",
+      "accessible": true,
+      "note": "Confirmed Regulation 2025/2441 amends only suspension mechanism (Article 8), not Annex II country list. No new Annex II additions since 03.02.2025 consolidation. Georgia diplomatic passport suspension noted (ordinary passport exemption unchanged)."
+    },
+    {
+      "url": "https://www.mzv.sk/en/services/information-for-foreigners/visas-for-foreigners-to-enter-sr",
+      "description": "Slovak MFA – Visa for foreigners entering SR (June 2026-29 fetch attempt)",
+      "accessible": false,
+      "note": "HTTP 403 Forbidden. Slovak MFA pages continue to block automated fetching."
+    },
+    {
+      "url": "https://travel-europe.europa.eu/en/etias/about-etias/news-corner/revised-timeline-ees-and-etias",
+      "description": "EU official ETIAS portal – revised EES and ETIAS timeline (June 2026-29 fetch attempt)",
+      "accessible": false,
+      "note": "Page returned no content via WebFetch. ETIAS Q4 2026 operational date confirmed via WebSearch and secondary official sources. Fee EUR 20 (ages 18-70), waived under 18 and over 70."
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02018R1806-20250203",
+      "description": "EU Regulation 2018/1806 consolidated 03.02.2025 (June 2026-29 fetch attempt)",
+      "accessible": false,
+      "note": "EUR-Lex page did not return content via WebFetch this pass. Malaysia confirmed in Annex II via Wikipedia cross-check and prior validation. Annex II country list confirmed unchanged since 03.02.2025 via web searches."
+    },
+    {
+      "url": "https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza",
+      "description": "Slovak Ministry of Interior – Application for Schengen visa",
+      "accessible": true,
+      "note": "Confirmed max stay 90 days in any 180-day period; 15-day processing from receipt; at-border issuance up to 15 days for humanitarian cases only; required documents listed."
+    },
+    {
+      "url": "https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza",
+      "description": "Slovak Ministry of Interior – Application for national visa (Type D)",
+      "accessible": true,
+      "note": "Confirmed eligibility categories; maximum validity 1 year; governed by Act No. 404/2011; applications at diplomatic missions abroad or Border Police under specific conditions."
+    },
+    {
+      "url": "https://www.minv.sk/?pobyt-cudzinca",
+      "description": "Slovak Ministry of Interior – Residence of foreign nationals (temporary, permanent, tolerated)",
+      "accessible": true,
+      "note": "Confirmed all temporary residence categories (business, employment, study, special activities, research, family, Blue Card, Slovak diaspora, long-term EU resident); permanent residence (5-year and unlimited); tolerated residence; EU citizen registration. Processing times and validity confirmed."
+    },
+    {
+      "url": "https://www.minv.sk/?cudzinecka-agenda",
+      "description": "Slovak Ministry of Interior – Frequently asked questions on alien matters",
+      "accessible": true,
+      "note": "Confirmed permit durations: business up to 3 years, study up to 6 years, research up to 2 years; processing times: standard 90 days, expedited 30 days for study/research; health insurance required within 3 working days of permit issuance; 180-day consecutive absence rule."
     }
   ],
   "outbound_official": {

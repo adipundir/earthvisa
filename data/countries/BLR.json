@@ -433,7 +433,7 @@
         "nationality": "Mexico",
         "iso3": "MEX",
         "max_stay_days": 30,
-        "notes": "Visa-free via airports (30 days). Under bilateral agreement: up to 180 days for tourism/business with valid Canada/US/Japan/UK/Schengen visa or Pacific Alliance permanent residence — see conditional_access.",
+        "notes": "Visa-free via airports (30 days). Under bilateral agreement: up to 180 days for tourism/business with valid Canada/US/Japan/UK/Schengen visa or Pacific Alliance permanent residence - see conditional_access.",
         "source_url": "https://mfa.gov.by/en/visa/freemove/airport/",
         "source_official": true
       },
@@ -794,7 +794,7 @@
       "https://gpk.gov.by/en/border-crossing/visa-free-entry-for-foreigners-to-the-republic-of-belarus/",
       "https://e-pasluga.by/en_US/services/visas-and-travel/30401e-visa-issuance"
     ],
-    "notes": "Airport visa-free entry (30 days) for 76 countries via Minsk, Brest, Gomel, Grodno, Mogilev, and Vitebsk airports, excluding flights from Russia. European countries visa-free regime for road/rail checkpoints valid to December 31, 2026 — Poland/Lithuania/Latvia citizens max 90 days per entry; all other 35 European countries max 30 days per entry. Total stay must not exceed 90 days per calendar year. Passport must be valid for at least 6 months after expected departure with minimum 2 blank pages. For airport entry, financial means required: equivalent of 2 base rates per day or 50 base rates for full 30-day stay, plus medical insurance covering minimum EUR 10,000. Travelers entering under European scheme cannot transit to Russia."
+    "notes": "Airport visa-free entry (30 days) for 76 countries via Minsk, Brest, Gomel, Grodno, Mogilev, and Vitebsk airports, excluding flights from Russia. European countries visa-free regime for road/rail checkpoints valid to December 31, 2026 - Poland/Lithuania/Latvia citizens max 90 days per entry; all other 35 European countries max 30 days per entry. Total stay must not exceed 90 days per calendar year. Passport must be valid for at least 6 months after expected departure with minimum 2 blank pages. For airport entry, financial means required: equivalent of 2 base rates per day or 50 base rates for full 30-day stay, plus medical insurance covering minimum EUR 10,000. Travelers entering under European scheme cannot transit to Russia."
   },
   "conditional_access": [
     {
@@ -804,7 +804,7 @@
       "credential": {
         "issuer": "Schengen",
         "type": "visa",
-        "subtype": "valid multiple-entry visa of EU member states or Schengen Area (must have been used at least once — border entry stamp required)"
+        "subtype": "valid multiple-entry visa of EU member states or Schengen Area (must have been used at least once - border entry stamp required)"
       },
       "level": "visa_free",
       "max_stay_days": 30,
@@ -1059,7 +1059,7 @@
   "fast_track": {
     "programs": [
       {
-        "name": "Hi-Tech Park (HTP) — Visa-Free and Simplified Residence for IT/Tech Talent",
+        "name": "Hi-Tech Park (HTP) - Visa-Free and Simplified Residence for IT/Tech Talent",
         "category": "startup/tech",
         "eligibility": "Foreign nationals who are founders or employees of companies that are residents of the Belarus Hi-Tech Park (HTP). Company must be engaged in software development, IT services, or high-tech R&D and registered as a legal entity in Belarus.",
         "processing_time": "Not specified on official page",
@@ -1070,10 +1070,188 @@
     ]
   },
   "agreements": [
-    "Commonwealth of Independent States (CIS) — freedom of movement / visa-free travel among member states",
-    "Eurasian Economic Union (EAEU) — free movement of goods, services, capital, and labor among Armenia, Belarus, Kazakhstan, Kyrgyzstan, and Russia",
-    "Union State of Belarus and Russia — full freedom of movement, residence, and work rights between Belarus and Russia without formal immigration procedures",
-    "Agreement between the Government of the Republic of Belarus and the Government of the Russian Federation on mutual recognition of visas (signed June 19, 2020; entered into force January 11, 2025) — foreign citizens holding a valid Belarus or Russia visa or residence permit may enter either country without a separate visa for the other; e-visas excluded due to technical incompatibility"
+    "Commonwealth of Independent States (CIS) - freedom of movement / visa-free travel among member states",
+    "Eurasian Economic Union (EAEU) - free movement of goods, services, capital, and labor among Armenia, Belarus, Kazakhstan, Kyrgyzstan, and Russia",
+    "Union State of Belarus and Russia - full freedom of movement, residence, and work rights between Belarus and Russia without formal immigration procedures",
+    "Agreement between the Government of the Republic of Belarus and the Government of the Russian Federation on mutual recognition of visas (signed June 19, 2020; entered into force January 11, 2025) - foreign citizens holding a valid Belarus or Russia visa or residence permit may enter either country without a separate visa for the other; e-visas excluded due to technical incompatibility"
+  ],
+  "visa_types": [
+    {
+      "category": "transit",
+      "name": "Type B - Transit Visa",
+      "purpose": "Allows passage through Belarus territory en route to a third country. Covers single, double, or multiple transit crossings.",
+      "max_stay_days": 2,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mfa.gov.by/en/visa/ru_visa_types/",
+      "notes": "Max 2 days per crossing (including entry day). Valid up to 1 year. Can be single, double, or multiple-entry. Fee is EUR 60 standard (EUR 35 for EU citizens under facilitation agreement). Expedited processing within 2 working days doubles the fee. Also issuable at Minsk National Airport 24/7 with advance document submission."
+    },
+    {
+      "category": "tourist",
+      "name": "Type C - Short-term Tourist Visa",
+      "purpose": "Short-term entry for tourism purposes. Allows single or double entry.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://mfa.gov.by/en/visa/ru_visa_types/",
+      "notes": "Tourism variant of Type C: max 30 days, single or double-entry. Fee EUR 60 standard (EUR 35 for EU citizens). Expedited processing in 2 working days doubles fee. Also available via e-visa (single-entry, 30 days, processed in 7 calendar days, EUR 60 or EUR 35 for EU). On-arrival available at Minsk National Airport with advance visa support document submission."
+    },
+    {
+      "category": "business",
+      "name": "Type C - Short-term Business Visa",
+      "purpose": "Short-term entry for business trips, negotiations, signing contracts, and commercial activities not amounting to employment.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": true,
+      "official_url": "https://mfa.gov.by/en/visa/ru_visa_types/",
+      "notes": "Part of the Type C short-term visa category covering business, private visits, cultural/scientific events, humanitarian work, religious ties, and journalism. Max validity 90 days; can be single, double, or multiple-entry. Supporting documents include invitation letters or employer letters. Fee EUR 60 standard (EUR 35 for EU citizens under facilitation agreement). E-visa available for eligible 67 nationalities (single-entry, 30-day stay, 7-day processing)."
+    },
+    {
+      "category": "student",
+      "name": "Type C - Short-term Student/Study Visa",
+      "purpose": "Short-term entry for study, educational internships, or participation in cultural and scientific programs.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mfa.gov.by/en/visa/ru_visa_types/",
+      "notes": "Type C category for study/educational purposes. Requires invitation or confirmation from educational institution. For on-arrival at Minsk National Airport, an institutional representative must be present. For long-term study (over 90 days), a Type D long-term visa is required."
+    },
+    {
+      "category": "other",
+      "name": "Type C - Short-term Private/Humanitarian/Religious/Press Visa",
+      "purpose": "Short-term entry for private visits, humanitarian activities, religious ties, or journalism purposes.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mfa.gov.by/en/visa/ru_visa_types/",
+      "notes": "Sub-category of Type C short-term visa for private, humanitarian, religious, and press purposes. Supporting documents vary by sub-purpose. Fee EUR 60 standard (EUR 35 for EU). Expedited 2-working-day processing available at double fee."
+    },
+    {
+      "category": "business",
+      "name": "Type D - Long-term Business Visa",
+      "purpose": "Long-term multiple-entry visa for extended business activities, cultural/scientific participation, humanitarian programs, religious ties, journalism, private purposes, or employment in Belarus.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.by/en/visa/ru_visa_types/",
+      "notes": "Type D long-term visa covers all purposes (business, employment, cultural/scientific, humanitarian, religious, press, private). Validity exceeds 90 days up to 5 years; multiple-entry. 2-year visas require prior long-term visa use within 3 years. 3–5 year visas require prior 2-year visa within 5 years. Max stay per visit is 90 days. Must apply at Belarusian diplomatic mission; not available on arrival or online."
+    },
+    {
+      "category": "work",
+      "name": "Type D - Long-term Employment/Work Visa",
+      "purpose": "Long-term visa for foreign nationals intending to work in Belarus under an employment contract with a Belarusian employer.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.by/en/visa/ru_visa_types/",
+      "notes": "Employment is one of the purposes explicitly covered under the Type D long-term visa. Requires employment contract or work permit documentation. Hi-Tech Park (HTP) resident company employees and founders enjoy simplified immigration: visa-free entry with stays up to 180 days, simplified temporary residence, and no special work permits needed. See park.by/en/membership/benefits/."
+    },
+    {
+      "category": "student",
+      "name": "Type D - Long-term Student Visa",
+      "purpose": "Long-term visa for foreign nationals enrolled in accredited Belarusian educational institutions for programs exceeding 90 days.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.by/en/visa/ru_visa_types/",
+      "notes": "Educational purposes fall under the cultural/scientific/educational sub-category of Type D. Requires official enrollment confirmation from a Belarusian institution. After entry, foreign students must register with migration authorities if staying beyond 10 working days."
+    },
+    {
+      "category": "tourist",
+      "name": "Belarus E-Visa (Single-entry Short-term)",
+      "purpose": "Electronic visa for tourism, business, private affairs, sports, cultural, scientific, and educational events. Applied for online without visiting a diplomatic mission.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": 7,
+      "processing_days_max": 7,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.by/en/visa/general/evisa/",
+      "notes": "Available to citizens of 67 eligible countries (including USA, Canada, EU states, UK, Australia, NZ, Japan). Fees: EUR 35 for EU citizens; EUR 60 for others; free for Japanese citizens and children under 12 (EU)/14 (others). Additional service fee EUR 6 for all. Processing: 7 calendar days. No visa support documents required. Valid for up to 30 days, single-entry. Entry via all international checkpoints including all 6 airports and road/rail borders. Program launched March 20, 2025. Apply at e-pasluga.by (service code 3.04.01)."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival - Minsk National Airport",
+      "purpose": "Visa issued upon arrival at Minsk National Airport for travelers who could not obtain a visa in advance, subject to advance visa support document submission.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_eur": 60,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mfa.gov.by/en/visa/NationalAirportMinsk/",
+      "notes": "Available 24/7 at Minsk National Airport's Division for the Admission of Foreigners (DAF). Citizens arriving from Russia CANNOT apply; they must obtain a visa in advance. Visa support documents (original invitation + copy) must be submitted at least 2 business days before arrival (delivered to DAF weekdays 11am–1pm or mailed). Short-term student and group visas require institutional representative present. Fee: EUR 60 standard; doubles if Belarus has no diplomatic representation in applicant's country; triples if Belarus has a mission there. Exceptional same-day submission allowed for death/critical illness of close relative. Contact: +375 17 279 20 58 / +375 17 279 28 72."
+    },
+    {
+      "category": "tourist",
+      "name": "Brest-Grodno Visa-Free Tourist Zone (15 days)",
+      "purpose": "Visa-free access to designated tourist zones in the Brest and Grodno regions for organized tour groups booked through licensed Belarusian travel agencies.",
+      "max_stay_days": 15,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_eur": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.by/en/visa/freemove/brest_hrodna/",
+      "notes": "Covers Brest city and Brest/Zhabinka/Kamenets/Pruzhany districts in Brest region, plus Grodno city and Grodno/Berestovitsa/Volkovysk/Voronovo/Lida/Svisloch/Shchuchin districts in Grodno region. Entry only at Brest (Terespol) international border crossing. Travelers must book tourism services through a licensed Belarusian travel agency which issues the required authorization document. Eligible nationalities not enumerated on official page. Health insurance for duration of stay required."
+    }
   ],
   "official_domains": [
     "mfa.gov.by",
@@ -1086,22 +1264,29 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "CORRECTED: Panama max_stay_days changed from 30 to 180 — official MFA /general/ page confirms 'up to 180 days' under bilateral agreement.",
-      "CORRECTED: Peru max_stay_days changed from 30 to 183 — official MFA /general/ page confirms 'up to 183 days for tourism purposes' under bilateral agreement.",
-      "CORRECTED: Panama notes updated — prior record cited only airport 30-day entry; the bilateral agreement (general page) grants 180 days unconditionally.",
-      "CORRECTED: Peru notes updated — prior record cited only airport 30-day entry; the bilateral agreement (general page) grants 183 days for tourism.",
-      "CORRECTED: North Macedonia notes clarified — the European road/rail scheme (38 countries, /europe/ page) grants unconditional 30-day visa-free access; the /general/ page conditions (private invitation / travel company / healthcare institution / Schengen visa) apply to the bilateral channel and are already captured in conditional_access.",
-      "CORRECTED: Haiti notes clarified — bilateral agreement (90 days, confirmed) is the primary visa_free entry; airport conditional entry (Schengen visa required) accurately noted.",
+      "CORRECTED: Panama max_stay_days changed from 30 to 180 - official MFA /general/ page confirms 'up to 180 days' under bilateral agreement.",
+      "CORRECTED: Peru max_stay_days changed from 30 to 183 - official MFA /general/ page confirms 'up to 183 days for tourism purposes' under bilateral agreement.",
+      "CORRECTED: Panama notes updated - prior record cited only airport 30-day entry; the bilateral agreement (general page) grants 180 days unconditionally.",
+      "CORRECTED: Peru notes updated - prior record cited only airport 30-day entry; the bilateral agreement (general page) grants 183 days for tourism.",
+      "CORRECTED: North Macedonia notes clarified - the European road/rail scheme (38 countries, /europe/ page) grants unconditional 30-day visa-free access; the /general/ page conditions (private invitation / travel company / healthcare institution / Schengen visa) apply to the bilateral channel and are already captured in conditional_access.",
+      "CORRECTED: Haiti notes clarified - bilateral agreement (90 days, confirmed) is the primary visa_free entry; airport conditional entry (Schengen visa required) accurately noted.",
       "CORRECTED: e-visa notes enriched with fee structure (EUR 35 EU / EUR 60 others / free Japan) and launch date (March 20, 2025) confirmed from official MFA page.",
       "CORRECTED: Russian residence permit conditional_access max_stay_days updated from null to 90 (per calendar year) for temporary residence permit holders, per the official agreement page.",
       "CORRECTED: Russian visa conditional_access notes updated to explicitly state e-visas are excluded due to technical incompatibility (confirmed from official agreement page).",
-      "VERIFIED UNCHANGED: El Salvador — correctly recorded as airport visa-free (30 days) plus credential-based conditional access only from general page; no unconditional bilateral.",
-      "VERIFIED UNCHANGED: European scheme 38 countries — confirmed valid to Dec 31 2026.",
-      "VERIFIED UNCHANGED: Airport visa-free = 76 countries per main MFA airport page (authoritative over UAE embassy page which cited 74)."
+      "VERIFIED UNCHANGED: El Salvador - correctly recorded as airport visa-free (30 days) plus credential-based conditional access only from general page; no unconditional bilateral.",
+      "VERIFIED UNCHANGED: European scheme 38 countries - confirmed valid to Dec 31 2026.",
+      "VERIFIED UNCHANGED: Airport visa-free = 76 countries per main MFA airport page (authoritative over UAE embassy page which cited 74).",
+      "VALIDATED 2026-06-27: Re-fetched mfa.gov.by/en/visa/freemove/general/, /airport/, /europe/, /general/evisa/, and gpk.gov.by border-crossing page. All existing bilateral visa-free entries confirmed against live official pages. Complete visa-free country list from /general/ page matches current record: Albania, Antigua and Barbuda, Argentina, Armenia, Azerbaijan, Barbados, Brazil, Colombia, Cook Islands, Cuba, Dominica, Ecuador, El Salvador (conditional), Georgia, Haiti, Hong Kong SAR, Iran, Israel, Kazakhstan, Kyrgyzstan, Laos, Macao SAR, Malaysia, Mexico (partial conditional), Micronesia, Moldova, Mongolia, Montenegro, Nicaragua, North Macedonia, Oman, Panama, Peru, Qatar, Russia, Saint Kitts and Nevis, Saint Vincent and the Grenadines, Serbia, Seychelles, Tajikistan, Turkey, Ukraine, UAE, Uzbekistan, Vanuatu, Venezuela, Vietnam - all confirmed present and unchanged.",
+      "VALIDATED 2026-06-27: 38-country European road/rail scheme confirmed valid through December 31 2026 (extended by Presidential decree). Andorra confirmed included (listed on gpk.gov.by). All 38 countries and stay durations (Poland/Lithuania/Latvia 90 days per entry; all others 30 days per entry, max 90 days/year) confirmed.",
+      "VALIDATED 2026-06-27: E-visa program confirmed - 67 countries, single-entry, 30 days, launched March 20 2025, fees unchanged (EUR 35 EU / EUR 60 others / free Japan / free children under 12 EU or under 14 others / EUR 6 service fee all). No new countries added to e-visa list per official MFA page.",
+      "VALIDATED 2026-06-27: Belarus-Russia Mutual Recognition of Visas agreement confirmed in force from January 11 2025. E-visas excluded from recognition. Temporary residence permit holders capped at 90 days/calendar year in Belarus.",
+      "VALIDATED 2026-06-27: Guinea-Bissau agreement signed May 7 2025 covers only diplomatic, official, and service passports - does NOT affect ordinary passport visa_free list. No change to record required.",
+      "NOT ADDED 2026-06-27: Turkmenistan - AI extraction of /general/ page returned Turkmenistan in one pass but a more specific extraction of the complete country list did NOT include Turkmenistan. Cannot confirm via live official page text. Per safety rule (false visa-free is worst error), Turkmenistan is NOT added to visa_free. Added to gaps for future verification.",
+      "VALIDATED 2026-06-29: Re-fetched mfa.gov.by/en/visa/freemove/general/, /airport/, /europe/, /general/evisa/, /viezd_vyezd/agreement/, gpk.gov.by, and mfa.gov.by/en/bilateral/cis/turkmenistan/. All visa_free bilateral entries confirmed unchanged. 38-country European road/rail scheme confirmed valid to Dec 31 2026. Airport scheme confirmed 76 countries (13 with Schengen visa condition in conditional_access). E-visa confirmed: 67 countries, 30 days, EUR 35 EU / EUR 60 others / free Japan, EUR 6 service fee. Belarus-Russia visa recognition agreement confirmed active (e-visas excluded). Turkmenistan re-checked: bilateral relations page has no mention of ordinary passport visa-free access; the /general/ page complete country list does NOT include Turkmenistan. Record confirmed accurate; no corrections required this run."
     ],
     "gaps": [
       "The complete list of 67 e-visa eligible countries is not enumerated on any MFA web page; the official list is only available as a downloadable PDF on e-pasluga.by which was not accessible in full text form.",
-      "The airport visa-free country count discrepancy (MFA main page: 76 vs UAE embassy page: 74) could not be fully resolved — the main MFA page is treated as authoritative.",
+      "The airport visa-free country count discrepancy (MFA main page: 76 vs UAE embassy page: 74) could not be fully resolved - the main MFA page is treated as authoritative.",
       "Max stay days for CIS member states (Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Tajikistan, Ukraine, Uzbekistan) are not explicitly stated on the official MFA page; visa-free status confirmed but duration omitted.",
       "USD/EUR equivalent of the 15,000 basic units investment threshold for permanent residence is not stated on any official page consulted; third-party sources cite approximately USD 202,000 but this is not verifiable from official sources.",
       "Path from investment-based permanent residence to citizenship is not documented on any official page found.",
@@ -1111,7 +1296,8 @@
       "No official Belarus government source found confirming or denying OCI (Overseas Citizen of India) cardholder conditional entry privileges.",
       "The maximum stay duration under the Belarus-Russia Mutual Recognition of Visas agreement for standard visa holders (as opposed to residence permit holders capped at 90 days/year) is not explicitly stated on the official MFA agreement page.",
       "The Belarus-EU Visa Facilitation Agreement enabling biometric diplomatic passport holders of EU member states to enter without visas does not state a specific maximum stay duration on the mfa.gov.by page consulted.",
-      "Brest-Grodno 15-day tourist zone — eligible nationalities not enumerated on official gpk.gov.by page; conditions (must book via Belarusian travel agency) confirmed but country scope unclear."
+      "Brest-Grodno 15-day tourist zone - eligible nationalities not enumerated on official gpk.gov.by page; conditions (must book via Belarusian travel agency) confirmed but country scope unclear.",
+      "Turkmenistan - one AI extraction of mfa.gov.by/en/visa/freemove/general/ returned Turkmenistan as a visa-free entry; a second targeted extraction of the complete country list did not include it. Official confirmation from a live, parseable page not achieved. Requires manual verification against the live /general/ page text. Do not add to visa_free until confirmed."
     ]
   },
   "sources_checked": [
@@ -1126,7 +1312,11 @@
     "https://uae.mfa.gov.by/en/consular_issues/visafree5days/",
     "https://park.by/en/membership/benefits/",
     "https://www.brest.brest-region.gov.by/en/news-en/view/how-can-a-foreigner-obtain-a-permanent-residence-permit-in-the-republic-of-belarus-2000004657",
-    "https://india.mfa.gov.by/en/consular_issues/visas/visa_free/"
+    "https://india.mfa.gov.by/en/consular_issues/visas/visa_free/",
+    "https://mfa.gov.by/en/visa/ru_visa_types/",
+    "https://mfa.gov.by/en/visa/stavki/",
+    "https://mfa.gov.by/en/visa/oformlenie/",
+    "https://mfa.gov.by/en/visa/NationalAirportMinsk/"
   ],
   "outbound_official": {
     "found": true,
@@ -1185,6 +1375,6 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "The Belarus MFA page mfa.gov.by/en/visa/freemove/general/ publishes a bilateral outbound visa-free list under the section 'Belarusian citizens with ordinary passports to'. The page carries a disclaimer that information is for reference only and should be confirmed through diplomatic missions. No 'as of' date is shown on the page. Mexico appears as visa-free but entry for up to 180 days is conditional on holding a valid Canada/US/Japan/UK/Schengen visa or Pacific Alliance permanent residence — it is included here as the page lists it under the visa-free section. El Salvador is listed on the same page but only with conditions (Russian/US/Canada/Schengen visa or Russian residence permit) — it is omitted from this outbound_official visa_free list as it has no unconditional bilateral regime for Belarus citizens."
+    "notes": "The Belarus MFA page mfa.gov.by/en/visa/freemove/general/ publishes a bilateral outbound visa-free list under the section 'Belarusian citizens with ordinary passports to'. The page carries a disclaimer that information is for reference only and should be confirmed through diplomatic missions. No 'as of' date is shown on the page. Mexico appears as visa-free but entry for up to 180 days is conditional on holding a valid Canada/US/Japan/UK/Schengen visa or Pacific Alliance permanent residence - it is included here as the page lists it under the visa-free section. El Salvador is listed on the same page but only with conditions (Russian/US/Canada/Schengen visa or Russian residence permit) - it is omitted from this outbound_official visa_free list as it has no unconditional bilateral regime for Belarus citizens."
   }
 }

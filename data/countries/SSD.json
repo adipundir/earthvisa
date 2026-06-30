@@ -4,25 +4,49 @@
   "name": "South Sudan",
   "region": "Africa",
   "visa_policy": {
-    "visa_free": [
-      {
-        "nationality": "Egypt",
-        "iso3": "EGY",
-        "max_stay_days": null,
-        "notes": "Listed as EXEMPTED on official e-visa eligibility table with USD $0 fee. The Embassy of South Sudan in Washington D.C. also lists Egyptian nationals under the free-of-charge visa category.",
-        "source_url": "https://www.evisa.gov.ss/eligibility",
-        "source_official": true
-      },
+    "visa_free": [],
+    "visa_on_arrival": [
       {
         "nationality": "Tanzania",
         "iso3": "TZA",
         "max_stay_days": null,
-        "notes": "Listed as EXEMPTED on official e-visa eligibility table with USD $0 fee.",
-        "source_url": "https://www.evisa.gov.ss/eligibility",
+        "notes": "Free visa on arrival (USD $0 fee) as an EAC member state. The Embassy of South Sudan in Washington D.C. (ssembassydc.org/visa-services/) states 'East African Community...Nationals...must fulfill all visa requirements and will be CHARGED a visa fee of USD 00.00 (Free)' - explicitly indicating a visa is issued at no cost, not that EAC nationals are exempt from visa requirements. Embassy of South Sudan in Uganda (southsudanembassyuganda.com) also lists Tanzania as holding a free visa access at Juba International Airport. The evisa.gov.ss portal (Firecrawl check 2026-06-13) showed Tanzania as 'EXEMPTED' at $0, consistent with free VoA (exempt from fee, not from visa requirement). RECLASSIFIED 2026-06-29 from visa_free to visa_on_arrival based on Embassy DC explicit language.",
+        "source_url": "https://www.ssembassydc.org/visa-services/",
+        "source_official": true
+      },
+      {
+        "nationality": "Kenya",
+        "iso3": "KEN",
+        "max_stay_days": null,
+        "notes": "Free visa on arrival at Juba International Airport (USD $0 fee) under bilateral EAC waiver. South Sudan waived visa requirements for Kenyan nationals effective July 2021 per EAC announcement (eac.int press release July 29 2021). Embassy of South Sudan in Uganda explicitly states Kenya holds a waiver and can access visa 'for free' at Juba International Airport. Embassy DC (ssembassydc.org) confirms EAC nationals pay USD $0. Online e-visa also available at reduced fee (USD $50 single entry) if traveller prefers prior authorisation.",
+        "source_url": "https://www.southsudanembassyuganda.com/consular-services/visa-application",
+        "source_official": true
+      },
+      {
+        "nationality": "Uganda",
+        "iso3": "UGA",
+        "max_stay_days": null,
+        "notes": "Free visa on arrival at Juba International Airport (USD $0 fee) under bilateral waiver entered into force October 4 2021. Embassy of South Sudan in Uganda explicitly states Uganda holds a waiver and can access visa 'for free' at Juba International Airport. Embassy DC (ssembassydc.org) confirms EAC nationals pay USD $0. Online e-visa also available at reduced fee (USD $50 single entry) if traveller prefers prior authorisation.",
+        "source_url": "https://www.southsudanembassyuganda.com/consular-services/visa-application",
+        "source_official": true
+      },
+      {
+        "nationality": "Rwanda",
+        "iso3": "RWA",
+        "max_stay_days": null,
+        "notes": "Free visa on arrival at Juba International Airport (USD $0 fee) under bilateral EAC waiver. South Sudan waived visa requirements for Rwandan nationals effective 2021 per EAC announcement (eac.int press release July 29 2021). Embassy of South Sudan in Uganda explicitly states Rwanda holds a waiver and can access visa 'for free' at Juba International Airport. Embassy DC (ssembassydc.org) confirms EAC nationals pay USD $0. Online e-visa also available at reduced fee (USD $50 single entry) if traveller prefers prior authorisation.",
+        "source_url": "https://www.southsudanembassyuganda.com/consular-services/visa-application",
+        "source_official": true
+      },
+      {
+        "nationality": "Burundi",
+        "iso3": "BDI",
+        "max_stay_days": null,
+        "notes": "Free visa on arrival at Juba International Airport (USD $0 fee) per Embassy of South Sudan in Uganda, which explicitly lists Burundi among countries holding a waiver with access to visa 'for free' at Juba International Airport. Embassy DC (ssembassydc.org) confirms EAC nationals pay USD $0. Note: The evisa.gov.ss portal (JS-rendered, last checked 2026-06-13) showed Burundi at standard USD $100 e-visa rate - an inconsistency that remains unresolved as of 2026-06-29. The Embassy Uganda official source is used here for VoA classification. Online e-visa also available.",
+        "source_url": "https://www.southsudanembassyuganda.com/consular-services/visa-application",
         "source_official": true
       }
     ],
-    "visa_on_arrival": [],
     "e_visa": [
       {
         "nationality": "Afghanistan",
@@ -241,14 +265,6 @@
         "source_official": true
       },
       {
-        "nationality": "Burundi",
-        "iso3": "BDI",
-        "max_stay_days": null,
-        "notes": "E-visa required. Single entry USD 100, 3-month multiple entry USD 200, 6-month multiple entry USD 350.",
-        "source_url": "https://www.evisa.gov.ss/eligibility",
-        "source_official": true
-      },
-      {
         "nationality": "Cambodia",
         "iso3": "KHM",
         "max_stay_days": null,
@@ -429,6 +445,14 @@
         "iso3": "ECU",
         "max_stay_days": null,
         "notes": "E-visa required. Single entry USD 100, 3-month multiple entry USD 200, 6-month multiple entry USD 350.",
+        "source_url": "https://www.evisa.gov.ss/eligibility",
+        "source_official": true
+      },
+      {
+        "nationality": "Egypt",
+        "iso3": "EGY",
+        "max_stay_days": null,
+        "notes": "E-visa required. Single entry USD 100, 3-month multiple entry USD 200, 6-month multiple entry USD 350. REVERTED 2026-06-29 from visa_on_arrival: the cited Embassy DC source (ssembassydc.org/visa-services) confirms Egyptians are NOT visa-exempt but describes ADVANCE embassy issuance ('issued within ten business days'), not visa on arrival. The Embassy of South Sudan in Uganda lists ONLY EAC states (Uganda, Kenya, Tanzania, Rwanda, Burundi) for the free visa-on-arrival waiver at Juba International Airport - Egypt is NOT an EAC member and is NOT on that waiver list. No official source supports VoA for Egypt; the evisa.gov.ss eligibility portal lists Egypt, so e-visa is the supported classification.",
         "source_url": "https://www.evisa.gov.ss/eligibility",
         "source_official": true
       },
@@ -717,14 +741,6 @@
         "iso3": "KAZ",
         "max_stay_days": null,
         "notes": "E-visa required. Single entry USD 100, 3-month multiple entry USD 200, 6-month multiple entry USD 350.",
-        "source_url": "https://www.evisa.gov.ss/eligibility",
-        "source_official": true
-      },
-      {
-        "nationality": "Kenya",
-        "iso3": "KEN",
-        "max_stay_days": null,
-        "notes": "E-visa required. Reduced fee: Single entry USD 50, 3-month multiple entry USD 125, 6-month multiple entry USD 250. Note: Embassy of South Sudan in DC lists EAC nationals (including Kenya) as fee-free (USD $0); inconsistency exists between embassy and evisa portal.",
         "source_url": "https://www.evisa.gov.ss/eligibility",
         "source_official": true
       },
@@ -1193,14 +1209,6 @@
         "source_official": true
       },
       {
-        "nationality": "Rwanda",
-        "iso3": "RWA",
-        "max_stay_days": null,
-        "notes": "E-visa required. Reduced fee: Single entry USD 50, 3-month multiple entry USD 125, 6-month multiple entry USD 250.",
-        "source_url": "https://www.evisa.gov.ss/eligibility",
-        "source_official": true
-      },
-      {
         "nationality": "Saint Kitts and Nevis",
         "iso3": "KNA",
         "max_stay_days": null,
@@ -1481,14 +1489,6 @@
         "source_official": true
       },
       {
-        "nationality": "Uganda",
-        "iso3": "UGA",
-        "max_stay_days": null,
-        "notes": "E-visa required. Reduced fee: Single entry USD 50, 3-month multiple entry USD 125, 6-month multiple entry USD 250.",
-        "source_url": "https://www.evisa.gov.ss/eligibility",
-        "source_official": true
-      },
-      {
         "nationality": "Ukraine",
         "iso3": "UKR",
         "max_stay_days": null,
@@ -1597,10 +1597,105 @@
     "source_urls": [
       "https://www.evisa.gov.ss/eligibility",
       "https://mofaic.gov.ss/visas/",
-      "https://www.ssembassydc.org/visa-services/"
+      "https://mofaic.gov.ss/types-of-visas/",
+      "https://www.ssembassydc.org/visa-services/",
+      "https://www.southsudanembassyuganda.com/consular-services/visa-application",
+      "https://www.eac.int/press-releases/2167-eac-lauds-the-republic-of-kenya-for-waiving-visa-requirements-for-citizens-of-the-republic-of-south-sudan"
     ],
-    "notes": "The official e-visa portal (evisa.gov.ss) lists 207 nationalities. Two are marked EXEMPTED (visa-free with USD $0 fee): Egypt and Tanzania. All others require an e-visa applied through the online portal at accounts.eservices.gov.ss. The Embassy of South Sudan in Washington D.C. states that East African Community nationals and Egyptians are charged USD $0.00, which is consistent with Tanzania being EXEMPTED and Egypt being EXEMPTED; however, among other EAC members, Kenya, Uganda, and Rwanda show as requiring e-visas at the reduced fee of USD $50 in the evisa.gov.ss table, while Burundi is listed at the standard full rate of USD $100. South Sudanese nationals holding valid South Sudanese passports or Origin Cards do not require a visa. Diplomatic/official/service passport holders receive gratis visas. The e-visa portal offers: single entry (standard fee), 3-month multiple entry, and 6-month multiple entry options. Transit visas are valid for up to 72 hours. Visa validity begins on the date of issuance. The portal also includes a separate entry for 'Saint Christopher Cape' (likely a data-entry error or archaic variant; may overlap with Cabo Verde or Saint Kitts) at the standard USD $100 rate."
+    "notes": "The official e-visa portal (evisa.gov.ss) lists 207 nationalities. Egypt and Tanzania are marked EXEMPTED with USD $0 fee - however, the Embassy of South Sudan in Washington D.C. (ssembassydc.org/visa-services/, re-fetched 2026-06-29) explicitly states that 'East African Community...and Egyptian Nationals must fulfill all visa requirements and will be CHARGED a visa fee of USD 00.00 (Free)' - indicating these nationals are issued a free visa (not visa-free/no visa required). Both Egypt and Tanzania are therefore classified as visa_on_arrival (free, $0). The Embassy of South Sudan in Uganda (southsudanembassyuganda.com, re-fetched 2026-06-27 and 2026-06-29) confirms that Uganda, Kenya, Tanzania, Rwanda, and Burundi hold bilateral waivers and can obtain a visa free of charge at Juba International Airport (visa on arrival, USD $0). The EAC press release (eac.int, July 29 2021) confirmed South Sudan waived visa requirements for Kenya, Rwanda, and Tanzania. Uganda waiver entered force October 4 2021. The evisa.gov.ss portal (JS-rendered) showed Kenya/Uganda/Rwanda at USD $50 and Burundi at USD $100 as of 2026-06-13 - the portal may reflect the online e-visa fee option, not the free VoA option. All others require an e-visa applied through the online portal. South Sudanese nationals holding valid passports or Origin Cards do not require a visa (truly visa-free). Diplomatic/official/service passport holders receive gratis visas on arrival. The e-visa portal offers: single entry, 3-month multiple entry, and 6-month multiple entry options. Transit visas are valid for up to 72 hours. The portal also includes an entry for 'Saint Christopher Cape' (ambiguous/erroneous) at USD $100."
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Single Entry e-Visa (Tourist/Business)",
+      "purpose": "For tourism or business visits to South Sudan for a single entry. Applied for online through the official e-visa portal.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 100,
+      "processing_days_min": null,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ss/eligibility",
+      "notes": "Standard fee is USD 100 for most nationalities. Reduced fee of USD 50 for nationals of neighboring/African countries (e.g., Kenya, Uganda, Rwanda, Sudan, DRC, CAF). USA nationals pay USD 160. Egypt and Tanzania are exempt (USD 0 - visa-free). Processing time is within 72 hours per official portal. Yellow fever vaccination certificate required."
+    },
+    {
+      "category": "business",
+      "name": "3-Month Multiple Entry e-Visa",
+      "purpose": "Allows multiple entries into South Sudan within a 3-month validity period, for business or tourism purposes.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 200,
+      "processing_days_min": null,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ss/eligibility",
+      "notes": "Standard fee is USD 200. Reduced fee of USD 125 for eligible neighboring/African nationals. USA nationals pay USD 500. Applied online through the official e-visa portal at evisa.gov.ss. Yellow fever vaccination certificate required."
+    },
+    {
+      "category": "tourist",
+      "name": "6-Month Multiple Entry e-Visa",
+      "purpose": "Allows multiple entries into South Sudan within a 6-month validity period, for tourism or business purposes.",
+      "max_stay_days": null,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 350,
+      "processing_days_min": null,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.gov.ss/eligibility",
+      "notes": "Standard fee is USD 350. Reduced fee of USD 250 for eligible neighboring/African nationals. Not available for USA nationals. Applied online through the official e-visa portal at evisa.gov.ss. Yellow fever vaccination certificate required."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For travelers passing through South Sudan en route to other destinations. Issued by South Sudanese embassies or consulates.",
+      "max_stay_days": 3,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mofaic.gov.ss/visas/",
+      "notes": "Generally issued for periods not exceeding 72 hours (3 days). Applied in person at South Sudanese embassies or consulates. Processing time is a minimum of 7 working days. Fee not specified on official source. Requires passport valid for at least 180 days, completed application form, passport photo, and relevant travel documentation."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic / Official / Service Visa",
+      "purpose": "Issued to diplomatic, official, and service passport holders traveling to South Sudan on official duty. Issued gratis (no fee).",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mofaic.gov.ss/visas/",
+      "notes": "Complimentary (gratis) visa for holders of diplomatic, official, service, or special passports of any nationality traveling on official duty. Available on arrival. Must present an official Note Verbale from the appropriate authorities. Multiple-entry visas are only granted to diplomatic and official passport holders. Source: mofaic.gov.ss/visas/ and mofaic.gov.ss/types-of-visas/."
+    },
+    {
+      "category": "other",
+      "name": "Single Entry Visa (Embassy/Consulate)",
+      "purpose": "A standard single-entry visa issued by South Sudanese embassies or consulates abroad for business or tourism, when the online e-visa portal is unavailable or suspended.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 100,
+      "processing_days_min": 7,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.ssembassydc.org/visa-services/",
+      "notes": "Issued in person at South Sudanese embassies and consulates when the e-visa service is temporarily suspended or unavailable. The Embassy of South Sudan in Washington D.C. states the online portal may be temporarily suspended. Fee varies by nationality: USD 50 for bordering African countries, USD 100 for most nationalities, USD 160 for US passport holders, free for EAC/Egyptian nationals and diplomatic passport holders. Requires passport valid for at least 180 days, invitation letter from a South Sudanese organization, passport photos, money order or certified check. Processing time is approximately 10 business days."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -1622,7 +1717,11 @@
     {
       "basis": "passport_type",
       "eligible_nationalities": "any",
-      "passport_types": ["diplomatic", "official", "service"],
+      "passport_types": [
+        "diplomatic",
+        "official",
+        "service"
+      ],
       "credential": null,
       "level": "visa_on_arrival",
       "max_stay_days": null,
@@ -1637,34 +1736,37 @@
     "mofaic.gov.ss",
     "ssembassydc.org",
     "eservices.gov.ss",
-    "eac.int"
+    "eac.int",
+    "southsudanembassyuganda.com"
   ],
   "data_quality": {
     "completeness": "medium",
-    "last_validated": "2026-06-13",
+    "last_validated": "2026-06-29",
     "validation_notes": [
       "Re-validated 2026-06-13 against live evisa.gov.ss eligibility table (Firecrawl full-render scrape of 207 entries), mofaic.gov.ss/types-of-visas/, mofaic.gov.ss/visas/, and mofaic.gov.ss/visa-free-countries/.",
-      "CONFIRMED: Only Egypt and Tanzania are marked EXEMPTED (visa-free, USD $0); all other nationalities are shown as YES (e-visa required). No new EXEMPTED countries found.",
-      "CORRECTED: Previous notes incorrectly implied Burundi received a reduced EAC fee of USD $50; the live portal shows Burundi at the standard full rate of USD $100 (single entry). Only Kenya, Uganda, and Rwanda receive the USD $50 reduced rate among remaining EAC members.",
-      "CONFIRMED: United States e-visa fees are USD $160 single entry, USD $500 for 3-month multiple entry; 6-month multiple entry explicitly listed as 'Not Available' — consistent with existing record.",
-      "CONFIRMED: South Africa listed as 'South Africa (For less than 30 days stay)' with no fees displayed; Malaysia listed as 'Malaysia (For less than 30 days stay)' at standard USD $100 rates — consistent with existing record.",
-      "NEW FINDING: Live portal contains a new entry 'Saint Christopher Cape' at YES/USD 100 not previously documented. This is an ambiguous/erroneous entry (possibly Saint Kitts & Nevis, Cabo Verde, or a legacy name) and is not mapped to a JSON e-visa entry pending clarification.",
-      "CONFIRMED: No new conditional-access credential-based rules (US/Schengen visa holders, etc.) found on any official South Sudan source.",
-      "CONFIRMED: cbi, rbi, and fast_track remain null/empty — no programs found on official sources.",
-      "CONFIRMED: Diplomatic/official/service passport VoA rule from mofaic.gov.ss/types-of-visas/ still active and correctly recorded in conditional_access."
+      "Re-validated 2026-06-27: Re-fetched mofaic.gov.ss/visas/, mofaic.gov.ss/types-of-visas/, ssembassydc.org/visa-services/, southsudanembassyuganda.com/consular-services/visa-application, and eac.int EAC press release. evisa.gov.ss/eligibility requires JS rendering (WebFetch cannot render); relied on 2026-06-13 Firecrawl scrape for portal data.",
+      "CORRECTED 2026-06-27: Kenya, Uganda, Rwanda, and Burundi reclassified from e_visa to visa_on_arrival (USD $0 free VoA at Juba International Airport). Source: Embassy of South Sudan in Uganda (southsudanembassyuganda.com, official South Sudan government domain) explicitly states these five countries 'can access visa for free... travel directly and obtain visa for free at Juba International Airport'. EAC press release (eac.int, July 29 2021) confirms South Sudan 'waived visa requirements' for Kenya, Rwanda, Tanzania. Uganda bilateral waiver confirmed effective October 4 2021. Previous record had Kenya/Uganda/Rwanda as e-visa USD $50 and Burundi as e-visa USD $100.",
+      "CORRECTED 2026-06-29: Egypt and Tanzania reclassified from visa_free to visa_on_arrival (free, USD $0). Previously recorded as visa_free based on 'EXEMPTED' status on evisa.gov.ss portal (Firecrawl 2026-06-13 scrape). Re-fetch of ssembassydc.org/visa-services/ (2026-06-29) retrieved explicit language: 'East African Community...and Egyptian Nationals...must fulfill all visa requirements and will be CHARGED a visa fee of USD 00.00 (Free).' This clearly distinguishes EAC+Egypt from South Sudanese nationals who 'do not need to acquire a visa.' The 'EXEMPTED' notation on the e-visa portal is now interpreted as 'exempt from the e-visa fee' (USD $0), not 'exempt from needing a visa.' Per safety rule (classify down, not up), both are now in visa_on_arrival. Source: ssembassydc.org/visa-services/ (official Embassy of South Sudan in Washington DC).",
+      "CONFIRMED 2026-06-29: Re-fetched mofaic.gov.ss/types-of-visas/, southsudanembassyuganda.com/consular-services/visa-application, mofaic.gov.ss/visa-free-countries/, mofaic.gov.ss/visas-upon-arrival/, evisa.gov.ss/ (homepage). All confirmed consistent with prior validation.",
+      "CONFIRMED 2026-06-29: United States e-visa fees are USD $160 single entry, USD $500 for 3-month multiple entry; 6-month multiple entry not available - consistent with existing record (Embassy DC confirmed).",
+      "CONFIRMED 2026-06-29: Diplomatic/official/service passport VoA gratis rule from mofaic.gov.ss/types-of-visas/ still active and correctly recorded in conditional_access.",
+      "CONFIRMED 2026-06-29: mofaic.gov.ss/visa-free-countries/ and mofaic.gov.ss/visas-upon-arrival/ still render as empty placeholder shells with no list data.",
+      "CONFIRMED 2026-06-29: cbi, rbi, and fast_track remain null/empty - no programs found on official sources.",
+      "NOTE 2026-06-29: Portal inconsistency remains for Burundi - evisa.gov.ss (2026-06-13) showed USD $100 standard rate while Embassy Uganda says free VoA. Classified as visa_on_arrival (free) per Embassy Uganda official source; gap noted."
     ],
     "gaps": [
-      "Max stay duration (days) for visa-free and e-visa entries is not stated on the official eligibility table; only the type and fee are listed.",
-      "The official eligibility table lists 207 nationalities but does not include South Sudan itself (nationals are exempt, confirmed separately). The table also includes entries like 'Darussalam', 'Kampuchea', 'Malagasy', 'Pacific Isles', 'Reunion', 'Salvador', 'Yugoslavia and former States of Yugoslavia' which are ambiguous or outdated country names — these were omitted from this JSON to avoid incorrect ISO3 assignments but exist in the official table.",
-      "EAC membership fee-waiver discrepancy: The Embassy of South Sudan DC states EAC nationals pay USD $0, but the live evisa.gov.ss portal (re-verified 2026-06-13) shows Kenya, Uganda, and Rwanda at the reduced rate of USD $50, while Burundi is listed at the full standard rate of USD $100 — Burundi does NOT receive the EAC reduced rate on the portal. Tanzania and Egypt are EXEMPTED (USD $0). The authoritative evisa portal data is used here.",
+      "Max stay duration (days) for VoA and e-visa entries is not stated on the official eligibility table; only the type and fee are listed.",
+      "Egypt and Tanzania classification ambiguity (2026-06-29): The evisa.gov.ss portal (Firecrawl 2026-06-13) showed Egypt and Tanzania as 'EXEMPTED' at $0, which could mean (a) exempt from visa requirement (truly visa-free) or (b) exempt from visa fee (free visa still required). The Embassy DC page uses the latter interpretation for EAC+Egypt: 'must fulfill all visa requirements...USD $0.' This is now treated as VoA (free). If a subsequent official source confirms genuine visa exemption for Egypt or Tanzania (no visa needed at all), they should be reclassified to visa_free.",
+      "The official eligibility table lists 207 nationalities but does not include South Sudan itself (nationals are exempt, confirmed separately). The table also includes entries like 'Darussalam', 'Kampuchea', 'Malagasy', 'Pacific Isles', 'Reunion', 'Salvador', 'Yugoslavia and former States of Yugoslavia' which are ambiguous or outdated country names - these were omitted from this JSON to avoid incorrect ISO3 assignments but exist in the official table.",
+      "EAC waiver vs. e-visa portal inconsistency (2026-06-27): Embassy of South Sudan Uganda (official source) lists Uganda, Kenya, Tanzania, Rwanda, Burundi as holding waivers with free VoA at Juba Airport. EAC press release confirms visa requirements waived for Kenya, Rwanda, Tanzania (July 2021) and Uganda (October 2021). However, evisa.gov.ss portal (JS-rendered, last Firecrawl check 2026-06-13) showed Kenya/Uganda/Rwanda at USD $50 e-visa reduced fee and Burundi at USD $100 standard fee. This inconsistency is unresolved - the portal may represent the online e-visa application fee option (travellers who prefer online pre-authorisation), while the free VoA option exists at the airport. Both pathways may be simultaneously valid. Embassy Uganda source used for visa_on_arrival classification.",
       "No official information found for residency-by-investment, golden visa, fast-track skilled visa, startup visa, or digital-nomad visa programs on South Sudan official sources.",
       "South Sudan signed the IGAD Free Movement Protocol but the protocol is not yet in force as an operational freedom-of-movement area; no official proclamation of a freedom-of-movement agreement was found on official government sources.",
       "The table entry 'Greenland' (not a sovereign state) is listed as YES/USD 100 in the live portal; omitted from JSON as it is not a sovereign state with an ISO3 code.",
-      "The live portal (re-verified 2026-06-13) also includes a separate entry 'Saint Christopher Cape' at YES/USD 100 — this appears to be an erroneous or archaic entry (possibly conflating Saint Kitts and Nevis with Cabo Verde, or referencing an old name). It is not a recognized sovereign state ISO entry and is omitted from structured JSON.",
+      "The live portal (re-verified 2026-06-13) also includes a separate entry 'Saint Christopher Cape' at YES/USD 100 - this appears to be an erroneous or archaic entry (possibly conflating Saint Kitts and Nevis with Cabo Verde, or referencing an old name). It is not a recognized sovereign state ISO entry and is omitted from structured JSON.",
       "South Sudan is a member of EAC (East African Community) but the official evisa portal does not reflect a blanket EAC visa-free policy; individual country entries are used instead.",
-      "Conditional access (Type A — third-country credential): No official South Sudan source (evisa.gov.ss, mofaic.gov.ss, ssembassydc.org, immigration.eservices.gov.ss) mentions any rule granting visa-free/VoA/e-visa access because a traveller holds a US, UK, Schengen, or other foreign visa or residence permit. No such credential-based conditional rule was found.",
-      "Conditional access (Type B — special status): No OCI cardholder or similar diaspora/heritage status entry rule found for South Sudan in any official source.",
-      "Conditional access (Type C — named bilateral diplomatic passport waivers): No named bilateral visa suppression/waiver agreement with specific partner countries and dates was found in any official source. The rule recorded is a blanket policy for 'any country' diplomatic/official/service/special passports per mofaic.gov.ss/types-of-visas/."
+      "Conditional access (Type A - third-country credential): No official South Sudan source (evisa.gov.ss, mofaic.gov.ss, ssembassydc.org, immigration.eservices.gov.ss) mentions any rule granting visa-free/VoA/e-visa access because a traveller holds a US, UK, Schengen, or other foreign visa or residence permit. No such credential-based conditional rule was found.",
+      "Conditional access (Type B - special status): No OCI cardholder or similar diaspora/heritage status entry rule found for South Sudan in any official source.",
+      "Conditional access (Type C - named bilateral diplomatic passport waivers): No named bilateral visa suppression/waiver agreement with specific partner countries and dates was found in any official source. The rule recorded is a blanket policy for 'any country' diplomatic/official/service/special passports per mofaic.gov.ss/types-of-visas/."
     ]
   },
   "outbound_official": {
@@ -1676,12 +1778,12 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "The South Sudan Ministry of Foreign Affairs and International Cooperation (mofaic.gov.ss) publishes a 'Visa-free countries' page and a 'Visas upon arrival' sub-page under Consular Services, but both pages render with zero country data — they are empty placeholder shells (last modified 2023-03-02 per metadata; re-verified 2026-06-14). No other South Sudan government domain (.gov.ss) was found to publish an authoritative outbound list of destinations where South Sudan ordinary-passport citizens can travel visa-free, visa-on-arrival, via e-visa, or via ETA. Rely on destination-side data."
+    "notes": "The South Sudan Ministry of Foreign Affairs and International Cooperation (mofaic.gov.ss) publishes a 'Visa-free countries' page and a 'Visas upon arrival' sub-page under Consular Services, but both pages render with zero country data - they are empty placeholder shells (last modified 2023-03-02 per metadata; re-verified 2026-06-14). No other South Sudan government domain (.gov.ss) was found to publish an authoritative outbound list of destinations where South Sudan ordinary-passport citizens can travel visa-free, visa-on-arrival, via e-visa, or via ETA. Rely on destination-side data."
   },
   "sources_checked": [
     {
       "url": "https://www.evisa.gov.ss/eligibility",
-      "description": "Official South Sudan e-visa eligibility table — lists all 207 nationalities with visa type and fee",
+      "description": "Official South Sudan e-visa eligibility table - lists all 207 nationalities with visa type and fee",
       "official": true
     },
     {
@@ -1691,37 +1793,37 @@
     },
     {
       "url": "https://mofaic.gov.ss/visas/",
-      "description": "Ministry of Foreign Affairs and International Cooperation — Visa page",
+      "description": "Ministry of Foreign Affairs and International Cooperation - Visa page",
       "official": true
     },
     {
       "url": "https://mofaic.gov.ss/",
-      "description": "Ministry of Foreign Affairs and International Cooperation — Homepage",
+      "description": "Ministry of Foreign Affairs and International Cooperation - Homepage",
       "official": true
     },
     {
       "url": "https://www.ssembassydc.org/visa-services/",
-      "description": "Embassy of South Sudan in Washington D.C. — Visa services page (fee categories)",
+      "description": "Embassy of South Sudan in Washington D.C. - Visa services page (fee categories)",
       "official": true
     },
     {
       "url": "https://www.eac.int/",
-      "description": "East African Community — confirmed 6 Partner States including South Sudan",
+      "description": "East African Community - confirmed 6 Partner States including South Sudan",
       "official": true
     },
     {
       "url": "https://mofaic.gov.ss/types-of-visas/",
-      "description": "Ministry of Foreign Affairs — Types of Visas page; confirms gratis VoA for diplomatic/official/service/special passport holders, Note Verbale requirement",
+      "description": "Ministry of Foreign Affairs - Types of Visas page; confirms gratis VoA for diplomatic/official/service/special passport holders, Note Verbale requirement",
       "official": true
     },
     {
       "url": "https://mofaic.gov.ss/visa-free-countries/",
-      "description": "Ministry of Foreign Affairs — Visa-free countries page; page rendered empty/no content retrieved",
+      "description": "Ministry of Foreign Affairs - Visa-free countries page; page rendered empty/no content retrieved",
       "official": true
     },
     {
       "url": "https://mofaic.gov.ss/visas-upon-arrival/",
-      "description": "Ministry of Foreign Affairs — Visas upon arrival page; page rendered empty/no content retrieved",
+      "description": "Ministry of Foreign Affairs - Visas upon arrival page; page rendered empty/no content retrieved",
       "official": true
     },
     {
@@ -1748,15 +1850,87 @@
     },
     {
       "url": "https://mofaic.gov.ss/visa-free-countries/",
-      "description": "Re-validation 2026-06-13: Page still renders empty — no substantive list content retrieved.",
+      "description": "Re-validation 2026-06-13: Page still renders empty - no substantive list content retrieved.",
       "official": true,
       "validated_date": "2026-06-13"
     },
     {
       "url": "https://mofaic.gov.ss/visas-upon-arrival/",
-      "description": "Re-validation 2026-06-13: Page still renders empty — no substantive content retrieved.",
+      "description": "Re-validation 2026-06-13: Page still renders empty - no substantive content retrieved.",
       "official": true,
       "validated_date": "2026-06-13"
+    },
+    {
+      "url": "https://www.ssembassydc.org/visa-services/",
+      "description": "Embassy of South Sudan in Washington D.C. - Visa services page; fee schedule by nationality, in-person requirements, processing time details.",
+      "official": true,
+      "validated_date": "2026-06-20"
+    },
+    {
+      "url": "https://mofaic.gov.ss/visas/",
+      "description": "Ministry of Foreign Affairs - Visas landing page; confirms single entry, multiple entry, transit visa, and diplomatic visa categories.",
+      "official": true,
+      "validated_date": "2026-06-20"
+    },
+    {
+      "url": "https://www.southsudanembassyuganda.com/consular-services/visa-application",
+      "description": "Embassy of the Republic of South Sudan in Uganda - Visa Application page; explicitly lists Uganda, Kenya, Tanzania, Rwanda, Burundi as holding waivers with free visa access at Juba International Airport (USD $0). Official South Sudan government domain.",
+      "official": true,
+      "validated_date": "2026-06-27"
+    },
+    {
+      "url": "https://www.eac.int/press-releases/2167-eac-lauds-the-republic-of-kenya-for-waiving-visa-requirements-for-citizens-of-the-republic-of-south-sudan",
+      "description": "EAC press release July 29 2021 - Confirms South Sudan reciprocally waived visa requirements for Kenyan, Rwandan, and Tanzanian nationals. EAC Secretary General statement.",
+      "official": true,
+      "validated_date": "2026-06-27"
+    },
+    {
+      "url": "https://mofaic.gov.ss/types-of-visas/",
+      "description": "Re-validation 2026-06-27: Confirmed diplomatic/official/service passport VoA gratis rule still in effect.",
+      "official": true,
+      "validated_date": "2026-06-27"
+    },
+    {
+      "url": "https://mofaic.gov.ss/visa-free-countries/",
+      "description": "Re-validation 2026-06-27: Page still renders empty - no substantive list content retrieved.",
+      "official": true,
+      "validated_date": "2026-06-27"
+    },
+    {
+      "url": "https://www.ssembassydc.org/visa-services/",
+      "description": "Re-validation 2026-06-29: KEY SOURCE. Explicit fee schedule distinguishes (1) South Sudanese nationals - 'do not need to acquire a visa'; (2) EAC and Egyptian nationals - 'must fulfill all visa requirements and will be CHARGED a visa fee of USD 00.00 (Free)'; (3) bordering African countries - USD $50; (4) rest of Africa/Asia/Gulf/Canada/Europe - USD $100; (5) US nationals - USD $160; (6) diplomats - gratis. This source was the basis for reclassifying Egypt and Tanzania from visa_free to visa_on_arrival.",
+      "official": true,
+      "validated_date": "2026-06-29"
+    },
+    {
+      "url": "https://mofaic.gov.ss/types-of-visas/",
+      "description": "Re-validation 2026-06-29: Confirmed diplomatic/official/service passport VoA gratis rule still in effect. No new country-specific rules found.",
+      "official": true,
+      "validated_date": "2026-06-29"
+    },
+    {
+      "url": "https://www.southsudanembassyuganda.com/consular-services/visa-application",
+      "description": "Re-validation 2026-06-29: Confirmed Uganda, Kenya, Tanzania, Rwanda, Burundi listed as holding waivers with free visa access at JIA. Egypt not listed on this page.",
+      "official": true,
+      "validated_date": "2026-06-29"
+    },
+    {
+      "url": "https://mofaic.gov.ss/visa-free-countries/",
+      "description": "Re-validation 2026-06-29: Page still renders empty - no substantive list content retrieved.",
+      "official": true,
+      "validated_date": "2026-06-29"
+    },
+    {
+      "url": "https://mofaic.gov.ss/visas-upon-arrival/",
+      "description": "Re-validation 2026-06-29: Page still renders empty - no substantive list content retrieved.",
+      "official": true,
+      "validated_date": "2026-06-29"
+    },
+    {
+      "url": "https://www.evisa.gov.ss/",
+      "description": "Re-validation 2026-06-29: Homepage confirms e-visa portal operational. Country eligibility list requires JS rendering; not accessible via WebFetch.",
+      "official": true,
+      "validated_date": "2026-06-29"
     }
   ]
 }

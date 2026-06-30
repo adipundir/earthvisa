@@ -7,6 +7,83 @@
     "found": false,
     "note": "no official São Tomé and Príncipe government outbound visa-list page located; rely on destination-side data"
   },
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Autorização de Entrada (e-Visa / Entry Authorization)",
+      "purpose": "Grants foreign nationals permission to enter São Tomé and Príncipe for tourism, leisure, or short visits. Applied for online via the official SMF e-Visa portal.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 7,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.smf.st/evisa/",
+      "notes": "Processing is 7 business days (7 dias úteis). Payment is collected at the border upon arrival, not during the online application. Requires: scanned passport in PDF (valid 3+ months beyond intended stay), return ticket, proof of accommodation or contact in STP, and proof of financial means (€100/day minimum at border). Minors additionally require birth certificate and guardian declarations. No information changes allowed after submission. Legal basis: Decreto Lei 11/2009 and Lei 5/2008. The official portal does not differentiate tourist from other short-stay categories - a single e-visa entry authorization covers all short-stay purposes."
+    },
+    {
+      "category": "business",
+      "name": "Autorização de Entrada (e-Visa / Entry Authorization) - Business",
+      "purpose": "Allows foreign nationals to enter São Tomé and Príncipe for business meetings, commercial activities, or investment-related visits. Applied via the same SMF e-Visa portal as tourist entry.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 7,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.smf.st/evisa/",
+      "notes": "The SMF e-visa portal (smf.st/evisa) uses a single entry authorization form for all short-stay purposes. No separate business visa category is listed officially; business travelers use the same Autorização de Entrada. Payment at border. Same documentation requirements as tourist entry authorization."
+    },
+    {
+      "category": "transit",
+      "name": "Visto de Trânsito (Transit Visa)",
+      "purpose": "Permits foreign nationals to transit through São Tomé and Príncipe en route to a third country.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 7,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.smf.st/evisa/",
+      "notes": "Transit is explicitly referenced on the SMF e-visa page as a separate use case. Applicants transiting must hold valid entry authorization for their destination country. Applied via the same e-visa portal. Specific fee and max transit duration not published on the official portal."
+    },
+    {
+      "category": "other",
+      "name": "Visto de Residência (Residence Visa)",
+      "purpose": "Authorizes foreign nationals to reside in São Tomé and Príncipe on a longer-term basis, covering work, family reunification, retirement, and other non-tourist stays.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.smf.st/",
+      "notes": "Residence visa (Visto de Residência) is available through the eCidadão system referenced on the main SMF website. Specific subcategories (work, student, family, retirement) are not enumerated on the official web portal. Detailed requirements, fees, and processing times are not published online; applicants should contact SMF directly at (+239) 2222098 or direccaosmf@gmail.com. This covers all long-stay/residency-based authorizations not served by the short-stay e-visa."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Isenção de Visto - Passaporte Diplomático/Serviço (Diplomatic/Service Passport Exemption)",
+      "purpose": "Visa-free entry for holders of diplomatic and service passports from CPLP member states and countries with bilateral diplomatic agreements.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.smf.st/noticiaSingle.php?loock=noticiasSingle&idnews=20",
+      "notes": "Presidential Decree n. 21/2002 (20 December 2002) ratifies CPLP agreement suppressing visas for diplomatic and service passports among CPLP member states (Angola, Brazil, Cabo Verde, Equatorial Guinea, Guinea-Bissau, Mozambique, Portugal, Timor-Leste). China diplomatic, service, and public-affairs passport holders also receive 30-day visa-free entry under bilateral agreement (Decree n. 09/2017, in force 2018-02-03). South Africa diplomatic/service passport agreement was approved November 2024. Duration for CPLP diplomatic/service passports not specified in available official sources."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -234,14 +311,6 @@
         "source_official": true
       },
       {
-        "nationality": "Togo",
-        "iso3": "TGO",
-        "max_stay_days": 90,
-        "notes": "Bilateral cooperation agreement (reciprocal, all passport types); visa-free up to 90 days. Agreement signed June 2024; implementation status should be verified against current official sources.",
-        "source_url": "https://www.smf.st/noticiaSingle.php?loock=noticiasSingle&idnews=20",
-        "source_official": true
-      },
-      {
         "nationality": "Brazil",
         "iso3": "BRA",
         "max_stay_days": 90,
@@ -300,7 +369,7 @@
       "https://www.smf.st/evisa/",
       "https://www.smf.st/noticiaSingle.php?loock=noticiasSingle&idnews=20"
     ],
-    "notes": "São Tomé and Príncipe implemented a visa exemption policy to promote tourism and business. Exemptions are divided into: (1) 15-day visa-free entry (extendable to 90 days) for CPLP countries, EU, and a specific list of countries/territories — the official SMF notice (idnews=20) is the authoritative source; (2) holders of valid Schengen or US visas (or resident permits per Wikipedia) also qualify for the 15-day exemption; (3) bilateral cooperation agreements allowing longer stays (up to 90 days) for specific African nations; (4) China ordinary passport holders may obtain a visa on arrival for 15 days (not on official SMF page, sourced from Wikipedia). All other nationalities must apply via the e-Visa portal at smf.st/evisa or at an embassy/consulate. Note: Brazil, San Marino, and Equatorial Guinea appear on aggregator lists (saotomeislands.com, Wikipedia) but are NOT explicitly listed on the official SMF notice (idnews=20) — Brazil and Equatorial Guinea are CPLP members and thus covered by the CPLP group entry; San Marino's status is unconfirmed on official sources."
+    "notes": "São Tomé and Príncipe implemented a visa exemption policy to promote tourism and business. Exemptions are divided into: (1) 15-day visa-free entry (extendable to 90 days) for CPLP countries, EU, and a specific list of countries/territories - the official SMF notice (idnews=20) is the authoritative source; (2) holders of valid Schengen or US visas (or resident permits per Wikipedia) also qualify for the 15-day exemption; (3) bilateral cooperation agreements allowing longer stays (up to 90 days) for specific African nations; (4) China ordinary passport holders may obtain a visa on arrival for 15 days (not on official SMF page, sourced from Wikipedia). All other nationalities must apply via the e-Visa portal at smf.st/evisa or at an embassy/consulate. Note: Brazil, San Marino, and Equatorial Guinea appear on aggregator lists (saotomeislands.com, Wikipedia) but are NOT explicitly listed on the official SMF notice (idnews=20) - Brazil and Equatorial Guinea are CPLP members and thus covered by the CPLP group entry; San Marino's status is unconfirmed on official sources."
   },
   "conditional_access": [
     {
@@ -403,8 +472,8 @@
     "programs": []
   },
   "agreements": [
-    "CPLP (Community of Portuguese Language Countries) — free movement and residency rights among member states",
-    "Bilateral visa exemption agreements with: Angola, Cabo Verde, Mozambique, Guinea-Bissau, Ghana, South Africa, Gabon, Rwanda, Togo"
+    "CPLP (Community of Portuguese Language Countries) - free movement and residency rights among member states",
+    "Bilateral visa exemption agreements with: Angola, Cabo Verde, Mozambique, Guinea-Bissau, Ghana, South Africa, Gabon, Rwanda"
   ],
   "official_domains": [
     "smf.st",
@@ -415,36 +484,54 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "ADDED: China (CHN) ordinary passport visa-on-arrival (15 days) — previously missing from visa_on_arrival; confirmed by Wikipedia and aggregator sources (not on official SMF page).",
-      "CLARIFIED: CPLP group entry updated to explicitly note that Brazil (BRA) and Equatorial Guinea (GNQ) are CPLP members and therefore covered by the group entry — they appeared on aggregator lists but were not individually listed in the prior record.",
+      "ADDED: visa_types array populated with 5 entries derived from official SMF sources (smf.st/evisa, smf.st/noticiaSingle.php?loock=noticiasSingle&idnews=20, smf.st main page).",
+      "ADDED: China (CHN) ordinary passport visa-on-arrival (15 days) - previously missing from visa_on_arrival; confirmed by Wikipedia and aggregator sources (not on official SMF page).",
+      "CLARIFIED: CPLP group entry updated to explicitly note that Brazil (BRA) and Equatorial Guinea (GNQ) are CPLP members and therefore covered by the group entry - they appeared on aggregator lists but were not individually listed in the prior record.",
       "CLARIFIED: Schengen/US credential exemption notes now reference both visas AND resident permits (Wikipedia confirms both qualify), whereas prior record mentioned only visas.",
       "UPDATED: CBI processing time corrected from '2–3 months' to '1.5–3 months' per cip.gov.st official site language ('1.5 - 3 Months average time to decision').",
       "UPDATED: CBI notes updated to include post-approval family addition fees (spouse USD 10,000; dependent USD 5,000; newborn USD 500) per cip.gov.st/investment-structure.",
       "UPDATED: CBI notes include '220+ applications received since launch' as of late 2025 per official CIP site.",
-      "RETAINED: San Marino (SMR) — appears on saotomeislands.com and Wikipedia as visa-free but NOT explicitly on the official SMF notice (idnews=20). Not added as a standalone entry; flagged in gaps.",
-      "RETAINED: CPLP diplomatic/service passport waiver (Presidential Decree n. 21/2002) — non-official source only (saotomeislands.com); retained with source_official=false.",
-      "NO CHANGE: The bilateral agreements (Angola 90d, Cabo Verde 60–120d, Mozambique 90d, Guinea-Bissau 90d, Ghana 90d, South Africa 90d, Gabon 90d, Rwanda 90d, Togo 90d) remain as previously recorded from the official SMF page."
+      "RETAINED: San Marino (SMR) - appears on saotomeislands.com and Wikipedia as visa-free but NOT explicitly on the official SMF notice (idnews=20). Not added as a standalone entry; flagged in gaps.",
+      "RETAINED: CPLP diplomatic/service passport waiver (Presidential Decree n. 21/2002) - non-official source only (saotomeislands.com); retained with source_official=false.",
+      "NO CHANGE: The bilateral agreements (Angola 90d, Cabo Verde 60–120d, Mozambique 90d, Guinea-Bissau 90d, Ghana 90d, South Africa 90d, Gabon 90d, Rwanda 90d) remain as previously recorded from the official SMF page.",
+      "CORRECTED 2026-06-27: Togo (TGO) REMOVED from visa_free. Re-verification against multiple sources (Wikipedia, Fragomen, Togo First, Dussey.com) confirms the STP-Togo visa exemption agreement was signed 18 June 2024 but remains PENDING RATIFICATION - it is not yet in force. Listing Togo as visa-free was a false visa-free. Moved to gaps.",
+      "VERIFIED 2026-06-27: All other visa-free entries (EU, UK, USA, Canada, Andorra, Switzerland, South Korea, UAE, Russia, Iceland, Japan, Kuwait, Liechtenstein, Morocco, Monaco, Norway, Qatar, Sint Maarten, Turkey, Vatican, Angola 90d, Cabo Verde 60-120d, Mozambique 90d, Guinea-Bissau 90d, Ghana 90d, South Africa 90d, Gabon 90d, Rwanda 90d, Brazil/Equatorial Guinea/Portugal/Timor-Leste as CPLP) re-confirmed against official SMF notice (idnews=20). No additions or other removals.",
+      "VERIFIED 2026-06-27: CBI program (cip.gov.st) confirmed still active - no new options, USD 90,000 minimum donation still current. No changes made.",
+      "VERIFIED 2026-06-27: e-visa (smf.st/evisa) still operational: 7 business days processing, payment at border, 100 EUR/day financial proof requirement. No fee amounts published online.",
+      "VERIFIED 2026-06-27: Conditional access (Schengen/US visa or resident permit → 15 days visa-free) re-confirmed against official SMF idnews=20 page.",
+      "VERIFIED 2026-06-29: Re-fetched smf.st/noticiaSingle.php?loock=noticiasSingle&idnews=20 - full visa-free list unchanged (EU, UK, USA, Canada, Andorra, Switzerland, South Korea, UAE, Russia, Iceland, Japan, Kuwait, Liechtenstein, Morocco, Monaco, Norway, Qatar, Saint Martin, Turkey, Vatican; bilateral 90d for Angola/Mozambique/Guinea-Bissau/Ghana/South Africa/Gabon/Rwanda; Cabo Verde 60-120d/yr; CPLP 90d for Brazil/Equatorial Guinea/Portugal/Timor-Leste). No new nationalities added by STP government.",
+      "VERIFIED 2026-06-29: Togo (TGO) agreement STILL pending ratification as of 2026-06-29 - confirmed by (a) Fragomen: 'implementation date has yet to be announced by both governments'; (b) Wikipedia (updated June 2026): 'signed between São Tomé and Príncipe and Saint Kitts and Nevis and Togo and they are yet to be ratified'. Correctly kept out of visa_free.",
+      "VERIFIED 2026-06-29: CBI program (cip.gov.st/investment-structure) re-confirmed: single applicant USD 90,000 donation, family 2-4 USD 95,000, additional dependent USD 5,000, citizenship documents USD 750/dependent, submission fee USD 5,000, processing 1.5-3 months. No changes to program structure.",
+      "VERIFIED 2026-06-29: e-visa (smf.st/evisa) still operational. No changes.",
+      "VERIFIED 2026-06-29: Saint Kitts and Nevis (KNA) agreement still listed as pending ratification on Wikipedia (June 2026 update). Correctly excluded from visa_free.",
+      "VERIFIED 2026-06-29: No new visa policy announcements found on smf.st main page. Electronic passport (ePassport) launch noted as new government initiative but no visa policy changes."
     ],
     "gaps": [
-      "San Marino (SMR) appears as visa-free on Wikipedia and saotomeislands.com but is NOT explicitly listed on the official SMF notice (idnews=20). Cannot confirm from official source alone — not added as standalone entry.",
-      "China ordinary passport visa-on-arrival (15 days) is NOT on the official SMF notice (idnews=20) — only confirmed via Wikipedia and aggregators. Source_official=false for this entry.",
+      "San Marino (SMR) appears as visa-free on Wikipedia and saotomeislands.com but is NOT explicitly listed on the official SMF notice (idnews=20). Cannot confirm from official source alone - not added as standalone entry.",
+      "China ordinary passport visa-on-arrival (15 days) is NOT on the official SMF notice (idnews=20) - only confirmed via Wikipedia and aggregators. Source_official=false for this entry.",
       "Exact max_stay_days for Cabo Verde not stated as a single number on the official page ('60 to 120 days per year').",
       "No official information found for RBI (residency-by-investment / golden visa) programs.",
       "No official information found for fast-track / digital-nomad / startup / talent visa schemes.",
       "South Africa diplomatic/service passport agreement (approved November 2024): referenced in SMF page notes but exact details (duration, decree number) not available on official source.",
       "CPLP diplomatic/service passport waiver (Presidential Decree n. 21/2002): cited only by non-official aggregator (saotomeislands.com); official STP gazette text not directly verified.",
       "Serbia bilateral agreement (signed 6 July 2022 for diplomatic/service passports): referenced only by Wikipedia and aggregators; not confirmed on any official STP government source.",
-      "Togo visa exemption (signed June 2024): not independently confirmed via a direct fetch of the official Togo/STP decree; current implementation status uncertain.",
-      "Canada and UK residence permit conditional exemption: mentioned only by Wikipedia as qualifying alongside Schengen/US permits; not found on official SMF page — not added to conditional_access.",
+      "Togo (TGO) visa exemption agreement: signed 18 June 2024 but NOT yet ratified as of 2026-06-29 (re-verified). Confirmed pending-ratification by Fragomen (implementation date not announced) and Wikipedia (updated June 2026). Do NOT add to visa_free until ratification confirmed on an official STP government source. Sources: https://www.fragomen.com/insights/sao-tome-and-principetogo-reciprocal-visa-waiver-agreement-signed.html; https://en.wikipedia.org/wiki/Visa_policy_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+      "Canada and UK residence permit conditional exemption: mentioned only by Wikipedia as qualifying alongside Schengen/US permits; not found on official SMF page - not added to conditional_access.",
       "No OCI (Overseas Citizen of India) or similar diaspora special-status provision found for STP.",
-      "The SMF portal URL https://www.smf.st/portal/visa-policy returned HTTP 404 — the visa policy notice at idnews=20 remains the primary official source.",
-      "No updated visa policy announcement from 2026 found on official SMF sources; the idnews=20 notice dated 2025-12-04 remains the most recent official document."
+      "The SMF portal URL https://www.smf.st/portal/visa-policy returned HTTP 404 - the visa policy notice at idnews=20 remains the primary official source.",
+      "No updated visa policy announcement from 2026 found on official SMF sources; the idnews=20 notice remains the most recent official document.",
+      "Official SMF e-visa portal does not publish specific fee amounts in USD - payment collected at border. Fees for business, work, student, and residence visa subcategories are not published online.",
+      "The SMF portal uses a single Autorizacao de Entrada form without distinguishing tourist/business/work subcategories - subcategory breakdown in visa_types is inferred from the legal framework and typical practice, not from explicitly labeled form fields.",
+      "Work permit and student visa specific requirements/fees not found on any official online source; applicants directed to contact SMF directly.",
+      "mne.gov.st availability in this session: not re-tested (returned HTTP 503 in prior session).",
+      "Saint Kitts and Nevis (KNA): Wikipedia states a visa waiver agreement was signed with STP but is pending ratification. Not in visa_free; flagged for future monitoring."
     ]
   },
   "sources_checked": [
     "https://www.smf.st/",
     "https://www.smf.st/evisa/",
     "https://www.smf.st/noticiaSingle.php?loock=noticiasSingle&idnews=20",
+    "https://www.smf.st/taxas.php",
     "https://www.smf.st/portal/visa-policy",
     "https://cip.gov.st/",
     "https://cip.gov.st/investment-structure",
@@ -452,6 +539,12 @@
     "https://saotomeislands.com/evisa/visa-policy.html",
     "https://saotomeislands.com/evisa/do-i-need-a-visa-for-the-sao-tome-and-principe.html",
     "https://en.wikipedia.org/wiki/Visa_policy_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
-    "https://www.africatourvisa.com/s-o-tom-and-pr-ncipe-visa/requirements/china/"
+    "https://www.africatourvisa.com/s-o-tom-and-pr-ncipe-visa/requirements/china/",
+    "https://mne.gov.st/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/SaoTomeandPrincipe.html",
+    "https://www.fragomen.com/insights/sao-tome-and-principetogo-reciprocal-visa-waiver-agreement-signed.html",
+    "https://www.togofirst.com/en/politics/1906-14286-togo-and-sao-tome-and-principe-abolish-visa-requirements",
+    "https://robertdussey.com/en/visa-exemption-agreement-between-the-government-of-the-democratic-republic-of-sao-tome-and-principe-and-the-togolese-republic/",
+    "https://cip.gov.st/investment-structure"
   ]
 }

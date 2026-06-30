@@ -3,6 +3,278 @@
   "iso3": "ALB",
   "name": "Albania",
   "region": "Europe",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Type C Visa - Tourism",
+      "purpose": "Short-stay visa for holiday and leisure travel to Albania. Permits tourism activities for up to 90 days within any 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Available as single, double, or multiple-entry. Maximum validity up to 5 years for multiple-entry C visas. Processing typically up to 15 working days; in exceptional circumstances up to 30 working days. Requires round-trip ticket, hotel booking, and proof of sufficient funds. Can be applied for via e-visa portal at e-visa.al. Fee based on reciprocity principles; waived for children under 6 and diplomatic passport holders."
+    },
+    {
+      "category": "tourist",
+      "name": "Type C Visa - Organised Group Tourism",
+      "purpose": "Short-stay visa for foreign nationals travelling to Albania as part of an organised group invited by an Albanian tourism agency.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires valid passports for all group members and a notarized license of the organising Albanian tourism agency. Processing up to 15 working days; exceptionally up to 30 working days."
+    },
+    {
+      "category": "business",
+      "name": "Type C Visa - Professional/Commercial/Business",
+      "purpose": "Short-stay visa for foreign nationals conducting business meetings, commercial activities, or professional engagements in Albania for up to 90 days within a 180-day period.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires invitation from Albanian host company, professional documentation, and business registration of the host entity. Available as single, double, or multiple-entry. Maximum validity up to 5 years for multiple-entry C visas."
+    },
+    {
+      "category": "other",
+      "name": "Type C Visa - Scientific/Cultural/Sports/Humanitarian",
+      "purpose": "Short-stay visa for foreign nationals attending scientific, cultural, sporting, or humanitarian events in Albania.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires invitation from Albanian host institution, accommodation proof, and proof of sufficient funds. Processing up to 15 working days; exceptionally up to 30 working days."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Type C Visa - Official Visit",
+      "purpose": "Short-stay visa for foreign officials conducting official visits to Albania on behalf of their government or institution.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires invitation from the Albanian host institution and a verbal note from the applicant's employer. Fee typically waived for diplomatic and official passport holders."
+    },
+    {
+      "category": "medical",
+      "name": "Type C Visa - Medical Reasons",
+      "purpose": "Short-stay visa for foreign nationals travelling to Albania to receive medical treatment.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires medical diagnosis documentation, declaration from the receiving Albanian hospital or medical facility, and proof of financial means to cover treatment and stay."
+    },
+    {
+      "category": "work",
+      "name": "Type D Visa - Employment Activities (D/APU)",
+      "purpose": "Long-stay visa for foreign nationals who have obtained an Albanian work permit and intend to take up employment in Albania beyond 90 days.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires a valid work permit, good character certificate, and employer invitation. Type D visas are issued for up to 1 year with a 90-day initial stay allowance, after which holders must apply for a residence permit (Unique Permit). Available as single, double, or multiple-entry."
+    },
+    {
+      "category": "work",
+      "name": "Type D Visa - Seasonal Employment (D/SP)",
+      "purpose": "Long-stay visa for foreign nationals undertaking seasonal employment in Albania under a fixed-term employment contract.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires a seasonal employment contract and valid work permit. Typically issued for the duration of the seasonal contract."
+    },
+    {
+      "category": "work",
+      "name": "Type D Visa - Economic Activities (D/AE)",
+      "purpose": "Long-stay visa for foreign nationals undertaking economic activities (self-employment, entrepreneurship) in Albania.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires work permit, good character certificate, and documentation of the planned economic activity. Holder must apply for a residence/unique permit after entry."
+    },
+    {
+      "category": "work",
+      "name": "Type D Visa - Professional Activities (D/AP)",
+      "purpose": "Long-stay visa for foreign nationals undertaking regulated professional activities (e.g., liberal professions) in Albania.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires work permit, professional credentials, good character certificate, and invitation. Holder must apply for a residence/unique permit after entry."
+    },
+    {
+      "category": "business",
+      "name": "Type D Visa - Commercial Activity (D/AT)",
+      "purpose": "Long-stay visa for foreign nationals engaging in commercial trade activities in Albania beyond 90 days.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires work permit, good character certificate, and commercial activity documentation. Holder must apply for a residence/unique permit after entry."
+    },
+    {
+      "category": "student",
+      "name": "Type D Visa - Study Purposes (D/ST)",
+      "purpose": "Long-stay visa for foreign nationals admitted to or enrolled in an educational institution in Albania for a period exceeding 90 days.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires a document certifying registration or admission to an Albanian educational institution. Holder must apply for a student residence permit after entry. Available as single, double, or multiple-entry."
+    },
+    {
+      "category": "family",
+      "name": "Type D Visa - Family Reunion (D/BF)",
+      "purpose": "Long-stay visa for foreign nationals joining a family member legally residing in Albania.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires proof of family relationship, housing documentation, and employment verification of the Albanian resident sponsor. Holder must apply for a family reunification residence permit after entry."
+    },
+    {
+      "category": "other",
+      "name": "Type D Visa - Humanitarian/Religious Activities (D/VHF)",
+      "purpose": "Long-stay visa for foreign nationals undertaking humanitarian or religious activities in Albania under an authorised organisation.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires organisation license, employer certificate, and motivation letter. Fee typically waived for humanitarian purposes. Holder must apply for a residence permit after entry."
+    },
+    {
+      "category": "other",
+      "name": "Type D Visa - Humanitarian Reasons (D/H)",
+      "purpose": "Long-stay visa issued on humanitarian grounds to foreign nationals who cannot return to their country of origin due to circumstances beyond their control.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires invitation and humanitarian motivation documentation. Fee typically waived. Holder must apply for a residence permit after entry."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Type D Visa - Diplomatic/Service Visa (D/DS)",
+      "purpose": "Long-stay visa for foreign diplomats, service passport holders, and accredited officials assigned to diplomatic missions, consular posts, or international organisations in Albania.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
+      "notes": "Requires a verbal note from the sending state's foreign ministry and an invitation from the receiving Albanian institution. Fee waived. Many nationalities with bilateral diplomatic waiver agreements do not require this visa at all."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Unique Permit for Digital Mobile Workers (Leje Unike per Punonjesin Dixhital)",
+      "purpose": "Residence permit for remote workers employed by or freelancing for companies and clients established outside Albania, allowing them to live and work remotely from Albania.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 84,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://e-albania.al/eAlbaniaServices/UseService.aspx?service_code=15146",
+      "notes": "Introduced under Law No. 79/2021 'On Foreigners'. Applicants must have a valid employment or service contract with a foreign entity and sufficient income (approximately EUR 450/month per secondary sources; not confirmed in official law text). Initial permit valid 1 year, renewable for 1 year, then extendable up to 5 years. Application submitted entirely online via e-Albania portal (service code 15146). Processing time up to 12 weeks maximum. Combines residence and work authorisation in a single biometric card. After 5 years continuous residence, eligible for permanent residency."
+    },
+    {
+      "category": "investment",
+      "name": "Unique Permit for Investors (Leje Unike per Investitorin)",
+      "purpose": "Residence permit for foreign nationals making a qualifying investment in Albania, including establishing or acquiring a business with a minimum capital threshold.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://e-albania.al/eAlbaniaServices/UseService.aspx?service_code=15146",
+      "notes": "Based on Article 69 of Law No. 79/2021 'On Foreigners'. Minimum investment approximately 10,000,000 ALL (approx. EUR 85,000–90,000); threshold set by joint ministerial instruction and may have been updated by Law 43/2025 (unconfirmed). Requires employment of at least 5 Albanian citizens. Initial permit valid 2 years, renewable for 3 years. After 5 years continuous legal residence, eligible for permanent residency. Standard naturalisation requires 7 years."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -519,7 +791,7 @@
       "https://punetejashtme.gov.al/en/aplikim-per-vize/",
       "https://e-visa.al/apply"
     ],
-    "notes": "Visa policy governed by Law No. 79/2021 'On Foreigners' and Decision of Council of Ministers No. 858, dated 29.12.2021. Albania's visa-free list largely mirrors Schengen Annex II but with notable additions (China, Turkey, Azerbaijan, etc.) and some exclusions. The official MFA website references a detailed country-by-country visa regime table via an interactive dropdown; exact per-country max_stay_days from the official table could not be extracted from the dynamic page. United States citizens receive a special 1-year visa-free period (confirmed by US Embassy Tirana circular, March 8, 2022). Saudi Arabia and Qatar citizens receive a temporary exemption for tourism only (15 April – 31 December 2026) as confirmed on the official MFA site. Seychelles visa-free status sourced from Wikipedia (citing Law No. 79/2021) — not independently verified from official MFA dynamic table. Bahrain, Oman, Thailand, and Indonesia had temporary ordinary-passport exemptions in prior years (2023–2025) but those exemptions did NOT extend into the 2026 season per the official MFA page (only Saudi Arabia and Qatar carry a 2026 temporary exemption)."
+    "notes": "Visa policy governed by Law No. 79/2021 'On Foreigners' and Decision of Council of Ministers No. 858, dated 29.12.2021. Albania's visa-free list largely mirrors Schengen Annex II but with notable additions (China, Turkey, Azerbaijan, etc.) and some exclusions. The official MFA website references a detailed country-by-country visa regime table via an interactive dropdown; exact per-country max_stay_days from the official table could not be extracted from the dynamic page. United States citizens receive a special 1-year visa-free period (confirmed by US Embassy Tirana circular, March 8, 2022). Saudi Arabia and Qatar citizens receive a temporary exemption for tourism only (15 April – 31 December 2026) as confirmed on the official MFA site. Seychelles visa-free status sourced from Wikipedia (citing Law No. 79/2021) - not independently verified from official MFA dynamic table. Bahrain, Oman, Thailand, and Indonesia had temporary ordinary-passport exemptions in prior years (2023–2025) but those exemptions did NOT extend into the 2026 season per the official MFA page (only Saudi Arabia and Qatar carry a 2026 temporary exemption)."
   },
   "conditional_access": [
     {
@@ -915,7 +1187,7 @@
         "path_to_citizenship_years": 12,
         "official_url": "https://e-albania.al/eAlbaniaServices/UseService.aspx?service_code=15146",
         "source_official": true,
-        "notes": "Based on Article 69 of Law No. 79/2021 'On Foreigners'. Minimum investment of 10,000,000 ALL (approximately EUR 85,000-90,000) — figure set by joint instruction of the Ministers of Finance and Interior; not independently verifiable from the official law text. One secondary legal source (imidaily.com, 2026) references a possible Law 43/2025 that may have updated investment thresholds significantly (e.g., EUR 300,000 for real estate, EUR 100,000 for business), but this could not be confirmed from any official Albanian government publication. Requires employment of 5 Albanian citizens per foreign investor. Initial permit valid 2 years, renewable for 3 years. After 5 years of legal residence, eligible for permanent residency. Standard naturalization requires 7 years of continuous residence."
+        "notes": "Based on Article 69 of Law No. 79/2021 'On Foreigners'. Minimum investment of 10,000,000 ALL (approximately EUR 85,000-90,000) - figure set by joint instruction of the Ministers of Finance and Interior; not independently verifiable from the official law text. One secondary legal source (imidaily.com, 2026) references a possible Law 43/2025 that may have updated investment thresholds significantly (e.g., EUR 300,000 for real estate, EUR 100,000 for business), but this could not be confirmed from any official Albanian government publication. Requires employment of 5 Albanian citizens per foreign investor. Initial permit valid 2 years, renewable for 3 years. After 5 years of legal residence, eligible for permanent residency. Standard naturalization requires 7 years of continuous residence."
       },
       {
         "name": "Residence Permit via Real Estate Ownership",
@@ -1017,7 +1289,7 @@
   "agreements": [
     "EU Candidate Country (accession negotiations ongoing)",
     "Stabilisation and Association Agreement with EU (in force since April 2009)",
-    "Visa Liberalisation with Schengen Area (since December 2010 — Albanian citizens travel visa-free to Schengen for short stays)",
+    "Visa Liberalisation with Schengen Area (since December 2010 - Albanian citizens travel visa-free to Schengen for short stays)",
     "SEPA (Single Euro Payments Area, joined November 2024)"
   ],
   "official_domains": [
@@ -1035,8 +1307,11 @@
       "CONFIRMED US 1-year visa-free is correct: corroborated by US Embassy Tirana circular (March 8, 2022). Updated USA entry notes to cite this source.",
       "CONFIRMED Bahrain, Oman, Thailand, Indonesia do NOT have ordinary-passport visa-free access in 2026: the official MFA page confirms only Saudi Arabia and Qatar carry a 2026 temporary exemption. Bahrain, Oman, Thailand, Indonesia had prior-year temporary exemptions that ended with the 2025 season. Indonesia and Thailand appear only in conditional_access (diplomatic/service/official passports).",
       "ADDED clarifying note to Indonesia and Thailand conditional_access entries explaining that ordinary passport temporary exemptions from prior years were NOT extended into 2026.",
-      "RETAINED all other entries unchanged — all credential-based conditional_access rules (Schengen, EU, US, UK, UAE Golden Visa) and special_status (Albanian ethnicity) entries remain as previously verified.",
-      "RBI investor permit min_amount of 10,000,000 ALL retained: secondary source referenced a possible Law 43/2025 that may have updated thresholds but this could not be confirmed from any official Albanian government publication. Noted in gaps."
+      "RETAINED all other entries unchanged - all credential-based conditional_access rules (Schengen, EU, US, UK, UAE Golden Visa) and special_status (Albanian ethnicity) entries remain as previously verified.",
+      "RBI investor permit min_amount of 10,000,000 ALL retained: secondary source referenced a possible Law 43/2025 that may have updated thresholds but this could not be confirmed from any official Albanian government publication. Noted in gaps.",
+      "ADDED visa_types field with 18 entries covering all Type C and Type D subcategories documented on official MFA site, plus the Digital Nomad Unique Permit and Investor Unique Permit. Sources: punetejashtme.gov.al/en/aplikim-per-vize/ and e-albania.al.",
+      "2026-06-27 RE-VALIDATION: Re-fetched official MFA page punetejashtme.gov.al/en/regjimi-i-vizave-per-te-huajt/ - confirms ONLY Saudi Arabia and Qatar have a 2026 temporary exemption (15 April – 31 December 2026, tourism only). Bahrain, Oman, Thailand, and Indonesia are NOT mentioned for 2026. Clarification on year-by-year history: 2023 exemption covered Bahrain, Oman, Qatar, Saudi Arabia, Thailand; 2024 same five countries; 2025 extended to Saudi Arabia, Qatar, Oman, Indonesia, Thailand (Bahrain removed; Indonesia added per Albanian cabinet decision 9 April 2025). For 2026, only Saudi Arabia and Qatar retained the exemption. All existing visa_free entries remain correct. No new nationalities added or removed from visa_policy.visa_free. Wikipedia article (re-checked June 2026) notes that Albania signed visa-waiver agreements with Morocco (March 2025) and Dominican Republic (September 2025) that were not yet in force as of October 2025; neither appears in the current visa_free list as no official confirmation of entry-into-force was found. These are noted in gaps.",
+      "2026-06-29 RE-VALIDATION: Re-fetched official MFA page punetejashtme.gov.al/en/regjimi-i-vizave-per-te-huajt/ and searched for any updates since prior cycle. CONFIRMED: Saudi Arabia and Qatar 2026 temporary exemption (15 April – 31 December 2026, tourism only, ordinary passport) remains active and correctly recorded. CONFIRMED: Bahrain, Oman, Thailand, Indonesia do NOT have ordinary-passport exemption in 2026. CONFIRMED: Dominican Republic ordinary passport holders still require an e-visa for Albania — the September 2025 bilateral agreement covers only diplomatic/official/special passports and has not been ratified for ordinary passports; Dominican Republic does not appear in visa_free list. CONFIRMED: Morocco ordinary-passport visa-waiver agreement (signed March 2025) is not yet in force; Morocco remains conditional_access (diplomatic only). CONFIRMED: Wikipedia (Visa policy of Albania, re-checked June 2026) continues to list Seychelles (SYC) as visa-free ordinary passport 90 days — Seychelles entry retained with source_official=false. No additions, removals, or level changes required to any access list. All conditional_access credential-based rules (Schengen/EU/US/UK/UAE Golden Visa) confirmed still present on official MFA page. No new countries added or removed in this cycle."
     ],
     "gaps": [
       "The official MFA visa regime table at punetejashtme.gov.al is rendered as an interactive JavaScript dropdown; the full per-country list with exact max_stay_days could not be programmatically extracted. Country names in the visa_free list are cross-referenced from the Wikipedia article on Visa policy of Albania, which cites Law No. 79/2021 and Council of Ministers Decision No. 858/2021 as its basis.",
@@ -1048,54 +1323,58 @@
       "Exact list of countries eligible for diplomatic passport visa exemptions cannot be independently confirmed from the official dynamic MFA table. The list is sourced from Wikipedia (Visa policy of Albania), which cites the official Albanian MFA page.",
       "No OCI (Overseas Citizen of India) card exemption was found for Albania in any official source.",
       "The diplomatic/service passport waiver list does not include specific bilateral agreement dates or names for most countries.",
-      "Status of Bahrain and Oman 2026 exemptions: the official MFA page confirms only Saudi Arabia and Qatar for 2026. Bahrain and Oman ordinary-passport exemptions observed in 2023 and possibly 2024/2025 appear to have lapsed. Their diplomatic passport status (if any) was not independently confirmed — they do not appear in the current record's conditional_access diplomatic list and that omission is retained.",
-      "No confirmation found that Thailand ordinary-passport exemption extended into 2026 — the official MFA page names only Saudi Arabia and Qatar for 2026."
+      "Status of Bahrain and Oman 2026 exemptions: the official MFA page confirms only Saudi Arabia and Qatar for 2026. Bahrain ordinary-passport exemption observed in 2023–2024 and Oman ordinary-passport exemption observed in 2023–2025 have lapsed for 2026. Their diplomatic passport status (if any) was not independently confirmed - they do not appear in the current record's conditional_access diplomatic list and that omission is retained.",
+      "No confirmation found that Thailand ordinary-passport exemption extended into 2026 - the official MFA page names only Saudi Arabia and Qatar for 2026.",
+      "Visa fees for Type C and D visas are set on a reciprocity basis and are not published in a fixed fee table on the official MFA website; exact USD amounts could not be confirmed.",
+      "Transit visa category not documented on official Albanian MFA website; Albania does not appear to have a separate airport transit visa regime per available official sources.",
+      "Albania-Morocco ordinary-passport visa-waiver agreement reportedly signed March 2025 but not yet confirmed in force as of June 2026 from any official Albanian government source. Morocco currently appears in conditional_access (diplomatic passports only) - not promoted to visa_free until entry-into-force is confirmed officially.",
+      "Albania-Dominican Republic agreement signed September 2025 covers diplomatic/official/special passports only and was not yet ratified as of June 2026. Dominican ordinary passport holders require an e-visa for Albania (confirmed via evisalbania.com and indirect official confirmation). Dominican Republic does not appear in visa_free or conditional_access (ordinary passport) lists — this is correct. If the agreement is ratified and extended to ordinary passports in the future, Dominican Republic would be added to visa_free."
     ]
   },
   "sources_checked": [
     {
       "url": "https://punetejashtme.gov.al/en/regjimi-i-vizave-per-te-huajt/",
-      "description": "Albanian Ministry for Europe and Foreign Affairs — Visa Regime for Foreign Citizens (re-fetched June 2026)",
+      "description": "Albanian Ministry for Europe and Foreign Affairs - Visa Regime for Foreign Citizens (re-fetched 2026-06-29)",
       "official": true
     },
     {
       "url": "https://punetejashtme.gov.al/en/aplikim-per-vize/",
-      "description": "Albanian Ministry for Europe and Foreign Affairs — Visa Application",
+      "description": "Albanian Ministry for Europe and Foreign Affairs - Visa Application (all visa types and subcategories)",
       "official": true
     },
     {
       "url": "https://e-albania.al/eAlbaniaServices/UseService.aspx?service_code=15146",
-      "description": "e-Albania portal — Unique Permit application service",
+      "description": "e-Albania portal - Unique Permit application service (Digital Nomad, Investor permits)",
       "official": true
     },
     {
       "url": "https://mb.gov.al/procedura-dhe-dokumentacioni-per-pajisjen-me-leje-qendrimi-dhe-leje-unike-residence-unique-permit-al-en/",
-      "description": "Albanian Ministry of Interior — Residence and Unique Permit procedures",
+      "description": "Albanian Ministry of Interior - Residence and Unique Permit procedures",
       "official": true
     },
     {
       "url": "https://mb.gov.al/wp-content/uploads/2024/10/Ligj-per-te-Huajt-%E2%80%93-nr.-79.2021_English.pdf",
-      "description": "Law No. 79/2021 'On Foreigners' — English translation (PDF, binary format — not fully readable)",
+      "description": "Law No. 79/2021 'On Foreigners' - English translation (PDF, binary format - not fully readable)",
       "official": true
     },
     {
       "url": "https://enlargement.ec.europa.eu/countries/albania_en",
-      "description": "European Commission — Albania accession status",
+      "description": "European Commission - Albania accession status",
       "official": true
     },
     {
       "url": "https://ambasadat.gov.al/israel/en/marredheniet-dypaleshe/",
-      "description": "Albanian Embassy in Israel — Bilateral Relations (confirms Albania-Israel visa waiver agreement signed 22 October 2007, in force 27 July 2008)",
+      "description": "Albanian Embassy in Israel - Bilateral Relations (confirms Albania-Israel visa waiver agreement signed 22 October 2007, in force 27 July 2008)",
       "official": true
     },
     {
       "url": "https://al.usembassy.gov/message-to-u-s-citizens-march-8-2022/",
-      "description": "US Embassy Tirana — Message to US Citizens (March 8, 2022) confirming 1-year visa-free stay for US citizens",
+      "description": "US Embassy Tirana - Message to US Citizens (March 8, 2022) confirming 1-year visa-free stay for US citizens",
       "official": true
     },
     {
       "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Albania",
-      "description": "Wikipedia — Visa policy of Albania (cross-reference, cites Law No. 79/2021; used to cross-check full country list including Seychelles)",
+      "description": "Wikipedia - Visa policy of Albania (cross-reference, cites Law No. 79/2021; used to cross-check full country list including Seychelles)",
       "official": false
     }
   ]

@@ -1,4 +1,4 @@
-// Generates data/countries.json — the canonical input list for the crawl.
+// Generates data/countries.json - the canonical input list for the crawl.
 // 193 UN member states + 6 key others (Kosovo, Taiwan, Holy See, Palestine, Hong Kong, Macau).
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";

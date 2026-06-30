@@ -12,7 +12,7 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "No official Algeria government outbound visa-list page located. The MFA (mfa.gov.dz) 'services-for-algerians' section covers only civil status, document legalization, emergency passports, deregistration certificates, T@SDIK, and the DZ Travellers emergency registration platform (apcs.mfa.gov.dz) — the latter is a crisis/emergency traveler registration form, not a visa entitlement list. No page analogous to India's MEA VFFIN exists on any official Algerian government domain. All outbound access data for Algerian passport holders appears only on third-party aggregator sources (Henley, Wikipedia, visa-agency sites). Rely on destination-side data."
+    "notes": "No official Algeria government outbound visa-list page located. The MFA (mfa.gov.dz) 'services-for-algerians' section covers only civil status, document legalization, emergency passports, deregistration certificates, T@SDIK, and the DZ Travellers emergency registration platform (apcs.mfa.gov.dz) - the latter is a crisis/emergency traveler registration form, not a visa entitlement list. No page analogous to India's MEA VFFIN exists on any official Algerian government domain. All outbound access data for Algerian passport holders appears only on third-party aggregator sources (Henley, Wikipedia, visa-agency sites). Rely on destination-side data."
   },
   "visa_policy": {
     "visa_free": [
@@ -60,7 +60,7 @@
         "nationality": "Morocco",
         "iso3": "MAR",
         "max_stay_days": 90,
-        "notes": "Visa-free for ordinary passport holders per London CG. Note: Dublin embassy list omits Morocco — London CG is the primary public-facing source for ordinary passport exemptions and explicitly includes Morocco.",
+        "notes": "Visa-free for ordinary passport holders per London CG. Note: Dublin embassy list omits Morocco - London CG is the primary public-facing source for ordinary passport exemptions and explicitly includes Morocco.",
         "source_url": "https://cglondon.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
         "source_official": true
       },
@@ -706,6 +706,167 @@
       "source_official": true
     }
   ],
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Tourist Visa",
+      "purpose": "Entry for holiday and leisure travel to Algeria. Also available as a regularization visa on arrival for organized tours exclusively to southern provinces.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_local": "£85 (UK applicants); €60 single / €100 multiple (Irish passport holders)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "Must apply at Algerian embassy/consulate before travel. No e-visa system exists. Visa on arrival (regularization visa) available only for organized tours to specific southern provinces (Adrar, Tamanrasset, etc.) for all nationalities when booked through an Algerian-accredited travel agency. Validity periods available: 90 days, 180 days, 1 year, or 2 years. Max stay per entry: 90 days; cumulative: 180 days per year."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa",
+      "purpose": "Short-term entry for commercial activities, meetings, and business negotiations in Algeria.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_local": "£85 (UK applicants)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "Must apply at Algerian embassy/consulate before travel. Supports single or multiple entry. Validity can range from 90 days to 2 years."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa",
+      "purpose": "Entry for long-term employment in Algeria under a contract with an Algerian employer.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_local": "£270 (UK applicants)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "Higher fee than tourist/business. Requires a work permit issued by Algerian authorities prior to visa application. Single or multiple entry supported."
+    },
+    {
+      "category": "work",
+      "name": "Temporary Work Visa",
+      "purpose": "Entry for contract-based or temporary employment in Algeria for a period not exceeding 90 days.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_local": "£270 (UK applicants)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "For short-term contract work of up to 90 days. Same fee category as the long-term work visa."
+    },
+    {
+      "category": "family",
+      "name": "Family Reunion Visa (Spouse)",
+      "purpose": "Entry for spouses of Algerian citizens or residents to join their family in Algeria.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_local": "£85 (UK applicants)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "Requires proof of marriage and Algerian spouse's documentation. Single or multiple entry supported."
+    },
+    {
+      "category": "family",
+      "name": "Family Reunion Visa (Children)",
+      "purpose": "Entry for minor children of Algerian citizens or residents to join their family in Algeria.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_local": "£85 (UK applicants)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "Requires proof of parentage and Algerian parent's documentation."
+    },
+    {
+      "category": "other",
+      "name": "Cultural / Scientific / Sports Visa",
+      "purpose": "Entry for foreign nationals invited to participate in cultural, scientific, social, or sporting events in Algeria.",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_local": "£85 (UK applicants)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "Requires official invitation from an Algerian institution or event organizer. Covers cultural, scientific, social, and sports event participants."
+    },
+    {
+      "category": "medical",
+      "name": "Medical / Study Visa",
+      "purpose": "Entry for foreign nationals seeking medical treatment or pursuing academic studies in Algeria.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "fee_local": "£85 (UK applicants)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "Covers both medical treatment and student study purposes. Requires supporting documentation (hospital/clinic invitation or university admission letter). The consulate groups 'medical' and 'study' into the same visa category."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Short-stay passage through Algeria en route to a third country.",
+      "max_stay_days": 3,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": null,
+      "fee_local": "£60 (UK applicants)",
+      "processing_days_min": 10,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+      "notes": "Lower fee than other visa types. Requires proof of onward travel and valid visa for destination country if required. Airport transit visa may also be required depending on nationality."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Visa Exemption (Diplomatic / Official Passport)",
+      "purpose": "Visa-free entry for holders of diplomatic or official/service passports from eligible countries under bilateral agreements.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://emboslo.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "notes": "Diplomatic-only exemptions: Argentina, Croatia, France, Germany, Hungary, Poland, Romania. Diplomatic or service/official passport exemptions: Albania, Belarus, Benin, Brazil, Cuba, Egypt, Ethiopia, Greece, Guinea, Italy, Malaysia, Mali, Malta, Mexico, Niger, Peru, Portugal, Republic of Korea, Senegal, Slovakia, South Africa, Spain, Switzerland, Tanzania, Turkey, United Arab Emirates, Venezuela, Vietnam. Confirmed across Oslo and Dublin embassy pages."
+    }
+  ],
   "cbi": {
     "has_program": false,
     "program_name": "",
@@ -741,18 +902,19 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
+      "2026-06-27 re-validation: All *.mfa.gov.dz subdomains returned SSL certificate errors and could not be fetched this run. algerian-consulate.org.uk (UK consulate, official) loaded and CONFIRMED the 9 ordinary-passport visa-free countries (Libya, Malaysia, Maldives, Mali, Mauritania, Morocco, SADR, Seychelles, Tunisia) unchanged. US State Dept (travel.state.gov) and UK FCDO (gov.uk) also fetched - both confirm no e-visa, no ETA, and visa on arrival only for organized southern tours. No new countries, policy changes, or new access programs found in any source. Per preservation rule, all conditional_access entries (Hungary/Slovenia citizens + residence-permit holders, and all diplomatic/service passport entries) are kept as-is; they could not be re-fetched due to SSL failures on mfa.gov.dz. No data changes made this run.",
       "2026-06-13 re-validation: Live-scraped Oslo (2024), London CG (2023), Dublin (2023), Budapest (2023), Washington (2026), and Pretoria (2023) embassy pages via Firecrawl and WebSearch.",
-      "ADDED: New conditional_access entry for Hungary and Slovenia CITIZENS (ordinary passports) for southern Algeria regularization visa — the Budapest press release covers 'Citizens from Hungary and Slovenia as well as holders of a residence permit issued by these countries'; the prior record only captured the residence-permit-holder angle, missing the nationality-based component.",
-      "ADDED: Malaysia and Mali diplomatic/service passport entries to conditional_access — Oslo embassy explicitly lists both in the diplomatic+service exemption table alongside their ordinary-passport visa-free status.",
-      "CONFIRMED: Argentina and Poland appear in diplomatic-only list on Oslo embassy page; Dublin page does not list them but Oslo is authoritative — prior record was correct.",
-      "CONFIRMED: Morocco remains in visa_free (ordinary passport) per London CG explicit listing; Dublin omits Morocco but London CG is a primary public-facing source for ordinary passport exemptions — no correction made.",
-      "CONFIRMED: Belarus in diplomatic+service list per Dublin embassy — prior record correct.",
-      "CONFIRMED: Regularization visa (VoA for organized southern tours) confirmed on Oslo page with same list of wilayas — no change to that entry.",
+      "ADDED: New conditional_access entry for Hungary and Slovenia CITIZENS (ordinary passports) for southern Algeria regularization visa - the Budapest press release covers 'Citizens from Hungary and Slovenia as well as holders of a residence permit issued by these countries'; the prior record only captured the residence-permit-holder angle, missing the nationality-based component.",
+      "ADDED: Malaysia and Mali diplomatic/service passport entries to conditional_access - Oslo embassy explicitly lists both in the diplomatic+service exemption table alongside their ordinary-passport visa-free status.",
+      "CONFIRMED: Argentina and Poland appear in diplomatic-only list on Oslo embassy page; Dublin page does not list them but Oslo is authoritative - prior record was correct.",
+      "CONFIRMED: Morocco remains in visa_free (ordinary passport) per London CG explicit listing; Dublin omits Morocco but London CG is a primary public-facing source for ordinary passport exemptions - no correction made.",
+      "CONFIRMED: Belarus in diplomatic+service list per Dublin embassy - prior record correct.",
+      "CONFIRMED: Regularization visa (VoA for organized southern tours) confirmed on Oslo page with same list of wilayas - no change to that entry.",
       "CONFIRMED: No e-visa, no ETA system in place per all official sources checked.",
       "CONFIRMED: No CBI, RBI, or fast_track programs on any official source."
     ],
     "gaps": [
-      "Morocco is in the London CG visa-free list but absent from the Dublin list — minor inter-post discrepancy; London CG is the primary UK-facing official source and is used here.",
+      "Morocco is in the London CG visa-free list but absent from the Dublin list - minor inter-post discrepancy; London CG is the primary UK-facing official source and is used here.",
       "The Dublin embassy omits Argentina and Poland from the diplomatic-only list; Oslo includes them. Minor inter-post discrepancy; Oslo used as source.",
       "Max stay days for diplomatic/official passport exempt categories not explicitly stated on official source; the general 90-day-per-entry rule applies to regular visas but is not confirmed for diplomatic/official passport holders.",
       "No official Algerian government source confirms an e-visa or ETA system.",
@@ -761,9 +923,10 @@
       "Dual citizenship policy for Algeria not found on official English-language MFA pages.",
       "The Sahrawi Arab Democratic Republic is a disputed territory; its inclusion in the visa-free list reflects the official Algerian government listing.",
       "The Budapest press release for Hungary/Slovenia does not specify the date the measure took effect.",
-      "Claims that holders of valid US, Canada, UK, or Schengen visas/residence permits (beyond Hungary and Slovenia) can enter Algeria visa-free or obtain a VoA appear only in aggregator sources — NOT confirmed on any official mfa.gov.dz page verified during this research. Not recorded pending official confirmation.",
+      "Claims that holders of valid US, Canada, UK, or Schengen visas/residence permits (beyond Hungary and Slovenia) can enter Algeria visa-free or obtain a VoA appear only in aggregator sources - NOT confirmed on any official mfa.gov.dz page verified during this research. Not recorded pending official confirmation.",
       "OCI (Overseas Citizen of India) cardholder exemption for Algeria not found on any official Algerian government source.",
-      "The MFA main 'Work and Residence in Algeria' page (mfa.gov.dz/services-for-foreigners/work-and-residence-in-algeria) returned no content — formal residence permit and long-term residence details could not be verified from official source."
+      "The MFA main 'Work and Residence in Algeria' page (mfa.gov.dz/services-for-foreigners/work-and-residence-in-algeria) returned no content - formal residence permit and long-term residence details could not be verified from official source.",
+      "2026-06-27: All *.mfa.gov.dz subdomains (cglondon, emboslo, embdublin, embbudapest, embwashington, embabudhabi, embcanberra) returned SSL certificate errors - could not re-confirm diplomatic/service passport conditional_access entries or southern-Algeria VoA press release this run. Entries preserved per safety rule. Re-check mfa.gov.dz SSL status on next validation run."
     ]
   },
   "sources_checked": [
@@ -780,6 +943,9 @@
     "https://embthehague.mfa.gov.dz/services-for-foreigners-1/general-conditions-for-submitting-and-processing-visa-applications",
     "https://cgsanfrancisco.mfa.gov.dz/en/visas/tourist-visa",
     "https://www.algeria-cgny.org/visa/",
-    "https://embpretoria.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria-1"
+    "https://embpretoria.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria-1",
+    "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Algeria.html",
+    "https://www.gov.uk/foreign-travel-advice/algeria/entry-requirements"
   ]
 }

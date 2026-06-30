@@ -138,7 +138,7 @@ function labelToGroup(label) {
 // ---- conditional access: held third-country credentials, special status, passport-type waivers ---
 // The credential catalog is DATA-DRIVEN: every (issuer, kind) pair found in the official rules
 // becomes a selectable credential. kind ∈ visa | tr (residence permit) | pr (permanent residence).
-// US-visa rules almost always say "any valid US visa", so visa classes are NOT split into chips —
+// US-visa rules almost always say "any valid US visa", so visa classes are NOT split into chips -
 // the exact accepted classes / exclusions are surfaced in each destination's note instead.
 const GROUP_ORDER = ["United States", "Canada", "United Kingdom", "Schengen / Europe", "Australia / NZ", "Japan / Asia", "Gulf (GCC)", "India", "Other"];
 
@@ -178,7 +178,7 @@ function normIssuer(raw) {
 function kindOf(type, subtype) {
   const t = String(type || "").toLowerCase();
   const sub = String(subtype || "").toLowerCase();
-  // respect the explicit type first — a "visa (incl. Green Card)" rule is still a visa
+  // respect the explicit type first - a "visa (incl. Green Card)" rule is still a visa
   if (t === "oci") return "oci";
   if (t === "permanent_resident") return "pr";
   if (t === "residence_permit") return "tr";
@@ -191,7 +191,7 @@ function kindOf(type, subtype) {
   return "visa";
 }
 
-// Consolidated, COMPLETE credential catalog — one clean chip per common held credential.
+// Consolidated, COMPLETE credential catalog - one clean chip per common held credential.
 // (EU member-state visas/permits all roll up to Schengen/EU; institutional permits roll to "other".)
 const CRED_CATALOG = [
   { id: "US_VISA", group: "United States", short: "US visa", label: "US visa (any valid type)" },
@@ -250,7 +250,7 @@ function credId(cr) {
 }
 
 // Safety net for entries NOT yet reclassified: detect a held-foreign-credential REQUIREMENT
-// stated in the NOTES (e.g. "requires valid multiple-entry EU/Schengen visa"). Conservative —
+// stated in the NOTES (e.g. "requires valid multiple-entry EU/Schengen visa"). Conservative -
 // must have a requirement marker AND a foreign visa/residence phrase, and must not be a plain
 // nationality/freedom-of-movement grant. Returns credential objects or [].
 function notesHeldCredential(notes) {
@@ -388,13 +388,13 @@ const countries = [];
 const cbi = [];
 const rbi = [];
 const fastTrack = [];
-// passportAccess[origin] = Map(dest -> bestEdge)  — ORDINARY-passport nationality reach only
+// passportAccess[origin] = Map(dest -> bestEdge)  - ORDINARY-passport nationality reach only
 const access = new Map();
-// credAccess[credentialId] = [ edges ]  — held-credential exemptions
+// credAccess[credentialId] = [ edges ]  - held-credential exemptions
 const credAccess = new Map();
-// diploAccess[origin] = [ edges {..., passportTypes} ]  — nationality-specific diplomatic waivers
+// diploAccess[origin] = [ edges {..., passportTypes} ]  - nationality-specific diplomatic waivers
 const diploAccess = new Map();
-// diploAny = [ edges {..., passportTypes} ]  — waivers for ANY nationality's diplomatic/service passport
+// diploAny = [ edges {..., passportTypes} ]  - waivers for ANY nationality's diplomatic/service passport
 // (stored once instead of duplicated across all 199 passports)
 const diploAny = [];
 let destinationsWithVisaPolicy = 0;
@@ -473,7 +473,7 @@ for (const f of files) {
         notes: entry.notes || "",
       };
       // Conditional entries (held-credential or diplomatic/service-only) must NOT be inverted
-      // as ordinary nationality reach — that mis-maps "valid Schengen visa" onto Schengen
+      // as ordinary nationality reach - that mis-maps "valid Schengen visa" onto Schengen
       // passports and counts diplomatic-only waivers for ordinary travellers.
       const credObjs = credObjsFromLabel(entry.nationality);
       const ptypes = restrictedPassportTypes(entry.nationality, entry.notes);
@@ -484,7 +484,7 @@ for (const f of files) {
         }
         continue;
       }
-      // passport-type-ONLY waiver — never count for an ordinary passport; route to the
+      // passport-type-ONLY waiver - never count for an ordinary passport; route to the
       // diplomatic/service dimension (always, even if structured data exists; addDiploEdge dedupes).
       if (ptypes.length) {
         const origins = resolveOrigins(entry);
@@ -493,14 +493,14 @@ for (const f of files) {
         continue;
       }
       // safety net: a grant whose NOTES require a held foreign visa/permit must not count for
-      // an ordinary passport — route it to the credential dimension instead.
+      // an ordinary passport - route it to the credential dimension instead.
       const noteCreds = notesHeldCredential(entry.notes);
       if (noteCreds.length) {
         const scope = resolveOrigins(entry);
         for (const obj of noteCreds) addCredEdge(credId(obj), iso3, level, scope.length ? scope : null, edge);
         continue;
       }
-      // "all nationalities EXCEPT …" — expand only when the excluded set is KNOWN, otherwise
+      // "all nationalities EXCEPT …" - expand only when the excluded set is KNOWN, otherwise
       // we'd wrongly grant entry to the very nationalities that actually need a visa.
       const neg = negationInfo(entry.nationality);
       if (neg) {
@@ -510,7 +510,7 @@ for (const f of files) {
         if (vr) vr.forEach((c) => exclude.add(String(c).toUpperCase()));
         if (neg.externalList && !vr) {
           // references an external visa-required list we don't have structured → cannot expand
-          negationGaps.push(`${iso3} [${level}] "${(entry.nationality || "").slice(0, 50)}" — needs structured visa_required list`);
+          negationGaps.push(`${iso3} [${level}] "${(entry.nationality || "").slice(0, 50)}" - needs structured visa_required list`);
           continue;
         }
         for (const o of ALL_ISO3) if (!exclude.has(o)) addEdge(o, iso3, level, edge);
@@ -538,7 +538,7 @@ for (const f of files) {
       // surface the exact issuer + accepted classes so granularity stays visible per destination
       const subtype = ca.credential && ca.credential.subtype ? String(ca.credential.subtype) : "";
       const issuer = ca.credential && ca.credential.issuer ? String(ca.credential.issuer) : "";
-      const accepts = [issuer && subtype ? `${issuer}: ${subtype}` : issuer || subtype, conditions].filter(Boolean).join(" — ");
+      const accepts = [issuer && subtype ? `${issuer}: ${subtype}` : issuer || subtype, conditions].filter(Boolean).join(" - ");
       const edge = { maxStayDays: typeof ca.max_stay_days === "number" ? ca.max_stay_days : null, sourceUrl: ca.source_url || "", sourceOfficial: ca.source_official !== false, notes: accepts, conditions };
       addCredEdge(cid, iso3, level, scope, edge);
     }
@@ -621,9 +621,55 @@ for (const file of files) {
   }
 }
 
+// Build vfsCorridors index from data/vfs/*.json (VFS Global document checklists).
+// The full sectioned document text stays in those files; here we keep only a
+// compact per-destination index so dataset.json stays lean.
+const vfsCorridors = {};
+const VFS_DIR = join(ROOT, "data", "vfs");
+let vfsFiles = [];
+try { vfsFiles = readdirSync(VFS_DIR).filter((f) => f.endsWith(".json") && !f.startsWith("_")); } catch {}
+// Only attach corridors to destinations that are real countries in our master
+// list. VFS uses some non-country URL slugs (e.g. ltr=long-term-resident program,
+// att=attestation, dha=SA Home Affairs) that must not become phantom dataset keys.
+const validIso3 = new Set(masterList.map((c) => c.iso3));
+const vfsSkipped = {};
+for (const file of vfsFiles) {
+  let c;
+  try { c = JSON.parse(readFileSync(join(VFS_DIR, file), "utf8")); } catch { continue; }
+  if (!c || !c.destination_iso3) continue;
+  const dest = c.destination_iso3;
+  if (!validIso3.has(dest)) {
+    vfsSkipped[c.destination_code || dest] = (vfsSkipped[c.destination_code || dest] || 0) + 1;
+    continue;
+  }
+  (vfsCorridors[dest] ||= []).push({
+    sourceIso3: c.source_iso3,
+    sourceCode: c.source_code,
+    destCode: c.destination_code,
+    detailFile: `vfs/${file}`,
+    sourceUrl: c.source_url,
+    visaTypes: (c.visa_types || []).map((v) => ({
+      name: v.name,
+      category: v.category,
+      hasDocuments: Boolean(v.documents_required),
+    })),
+  });
+}
+for (const dest of Object.keys(vfsCorridors)) {
+  vfsCorridors[dest].sort((a, b) => (a.sourceIso3 || "").localeCompare(b.sourceIso3 || ""));
+}
+const vfsCorridorCount = Object.values(vfsCorridors).reduce((s, a) => s + a.length, 0);
+if (Object.keys(vfsSkipped).length) {
+  console.log(
+    `  ⚠ VFS: skipped ${Object.values(vfsSkipped).reduce((a, b) => a + b, 0)} corridor(s) with non-country destination slugs: ${Object.entries(vfsSkipped).map(([k, v]) => `${k}(${v})`).join(", ")}`
+  );
+}
+console.log(`  VFS: indexed ${vfsCorridorCount} corridors across ${Object.keys(vfsCorridors).length} destinations.`);
+
 const dataset = {
   meta: {
     note: "Official-source-first dataset. Visa-free reach is derived by inverting each country's own official visa-policy pages; gaps remain where governments don't publish enumerated lists.",
+    lastUpdated: new Date().toISOString().slice(0, 10),
     totalCountries: masterList.length,
     countriesWithData: countries.length,
     destinationsWithVisaPolicy,
@@ -642,6 +688,7 @@ const dataset = {
   rbi: rbi.sort((a, b) => a.name.localeCompare(b.name)),
   fastTrack: fastTrack.sort((a, b) => a.name.localeCompare(b.name)),
   destinationVisaTypes,
+  vfsCorridors,
 };
 
 mkdirSync(OUT_DIR, { recursive: true });
@@ -653,7 +700,7 @@ console.log(`  CBI programs: ${cbi.length} | RBI: ${rbi.length} | fast-track: ${
 console.log(`  credential exemptions: ${credentials.map((c) => `${c.id}=${credentialAccess[c.id].length}`).join(", ") || "none"}`);
 console.log(`  diplomatic/service waivers: ${Object.values(diplomaticAccess).reduce((s, l) => s + l.length, 0)} nationality-specific edges + ${diplomaticAny.length} any-nationality`);
 if (negationGaps.length) {
-  console.log(`  ⚠ unresolved "all-except" negations (${negationGaps.length}) — NOT expanded to avoid false-positives:`);
+  console.log(`  ⚠ unresolved "all-except" negations (${negationGaps.length}) - NOT expanded to avoid false-positives:`);
   negationGaps.forEach((g) => console.log(`      ${g}`));
 }
 console.log(`  top unresolved nationality labels: ${topUnresolved.slice(0, 8).join(", ") || "none"}`);

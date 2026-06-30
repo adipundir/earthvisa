@@ -7,6 +7,248 @@
   },
   "name": "Jordan",
   "region": "Asia",
+  "visa_types": [
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival - Single Entry (1 month)",
+      "purpose": "Short-term tourism and leisure visit to Jordan. Issued at ports of entry for non-restricted nationalities.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 56,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "notes": "Fee is 40 JOD (~56 USD). Visa is valid for 3 months (90 days) from issue, single entry, maximum stay 30 days per entry. Available at Queen Alia International Airport and most land/sea border crossings EXCEPT the King Hussein (Allenby) Bridge. Requires onward/return ticket. Stays beyond 14 days require police registration. Overstay fine: 200 JOD plus 3 JOD/day. Confirmed by US State Dept and UK FCDO re-fetch 2026-06-29."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival - Dual Entry (3 months)",
+      "purpose": "Short-term tourism allowing two entries within a 3-month validity, useful for travelers combining Jordan with a visit to Israel/Palestine.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "multiple",
+      "fee_usd": 85,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "notes": "Fee is 60 JOD (~85 USD). Two entries permitted within 3-month validity. Available at airports and major border crossings except King Hussein Bridge. Commonly used for Jordan–Israel combination trips."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival - Multiple Entry (6 months)",
+      "purpose": "Multiple-entry tourist visa valid for 6 months for frequent visitors or longer itineraries.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 169,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "notes": "Fee is 120 JOD (~169 USD). Multiple entries permitted within 6-month validity. Available at airports and major border crossings except King Hussein Bridge."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival - Multiple Entry (1 year)",
+      "purpose": "Multiple-entry tourist visa valid for 1 year for frequent visitors to Jordan.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 282,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "notes": "Fee is 200 JOD (~282 USD). Multiple entries permitted within 1-year validity. Available at airports and major border crossings except King Hussein Bridge."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa on Arrival - Multiple Entry (5 years, US citizens only)",
+      "purpose": "Long-validity multiple-entry tourist visa available exclusively to US passport holders.",
+      "max_stay_days": 90,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": 155,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "notes": "Fee is 110 JOD (~155 USD). Only available to US citizens. Visa valid for 5 years with multiple entries; each stay is limited to 90 days per visit after police registration. Requires police registration for stays beyond 14 days."
+    },
+    {
+      "category": "tourist",
+      "name": "Jordan Pass (Tourist Visa Included)",
+      "purpose": "Combined tourism pass that includes the cost of the tourist entry visa plus access to over 40 major attractions including Petra, Jerash, and Wadi Rum.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.jordanpass.jo/Contents/AboutJordanPass.aspx",
+      "notes": "Costs 70–80 JOD (approximately 99–113 USD). Must be purchased online before arrival. Includes tourist visa fee and entry to 40+ sites. Valid for 3 months from date of entry. Minimum 3-night stay in Jordan required. Holders are exempt from police registration requirement if staying no longer than 30 days. Available to all nationalities eligible for a Jordan tourist visa."
+    },
+    {
+      "category": "tourist",
+      "name": "E-Visa (Tourist)",
+      "purpose": "Online pre-arrival tourist visa applied through the Jordan Ministry of Interior e-services portal.",
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://moi.gov.jo/En/Pages/Visa_E_Applications",
+      "notes": "Available at eservices.moi.gov.jo. Effective from 19 March 2023, e-visa replaced embassy visa processing for most nationalities. NOT available for: Afghanistan, Bangladesh, Iran, Nigeria, and Syria - these nationalities must apply via Jordanian embassies. Also not available for temporary passport or emergency travel document holders. Can be extended online for up to 6 months total."
+    },
+    {
+      "category": "tourist",
+      "name": "Tourist Visa Extension",
+      "purpose": "Extend an existing Jordan tourist visa beyond the initial stay period without leaving the country.",
+      "max_stay_days": 180,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gov.uk/foreign-travel-advice/jordan/entry-requirements",
+      "notes": "Visitors can extend their Jordan visit visa online for up to 6 months total stay. Extension must be applied for before the original visa expires. Overstaying without extension incurs a 200 JOD fine plus 3 JOD per day."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "Short-stay visa for travelers passing through Jordan en route to another destination.",
+      "max_stay_days": 3,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "notes": "Valid for 3 days. Available upon arrival. Transit visa holders are exempt from the residency registration requirements. Holders of connecting flights with short layovers may be exempt from transit visa requirements depending on nationality."
+    },
+    {
+      "category": "other",
+      "name": "Hajj Visa",
+      "purpose": "Special religious visa issued to Muslim pilgrims traveling through or to Jordan for the Hajj pilgrimage to Mecca.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "notes": "Pilgrimage-specific visa for Muslim travelers. Holders of Hajj visas are exempt from residency registration requirements. Must be arranged through official Hajj channels."
+    },
+    {
+      "category": "medical",
+      "name": "Medical Visa",
+      "purpose": "Visa for foreign nationals traveling to Jordan for medical treatment or healthcare procedures.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "notes": "Required for those traveling specifically for medical procedures. Must be applied for through the Embassy of Jordan or Jordanian consulate in advance. Jordan is a regional hub for medical tourism. Specific fee and duration determined by the embassy handling the application."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa",
+      "purpose": "Visa permitting foreign nationals to enter Jordan for the purpose of employment.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://moi.gov.jo/En/Pages/Visa_E_Applications",
+      "notes": "Must be applied for in advance through the Jordan Ministry of Interior online system or a Jordanian embassy. No on-arrival option available for work visa. Requires a job offer from a Jordanian employer and approval from the Ministry of Labour. Different extension procedures apply compared to tourist visas."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "Visa for foreign nationals admitted to accredited educational institutions in Jordan.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://moi.gov.jo/En/Pages/Visa_E_Applications",
+      "notes": "Must be applied for in advance through the Jordan Ministry of Interior online system or a Jordanian embassy. No on-arrival option available. Requires acceptance letter from a recognized Jordanian university or educational institution. Different extension procedures apply. Students typically must register with local police if staying longer than 14 days."
+    },
+    {
+      "category": "investment",
+      "name": "5-Year Renewable Residency Through Property Ownership",
+      "purpose": "Residency permit for foreign nationals who purchase qualifying real estate in Jordan from a developer.",
+      "max_stay_days": 1825,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://invest.jo/ready-for-doing-business/jordanian-citizenship/",
+      "notes": "Requires purchase of one property exclusively from a real estate developer valued at minimum 200,000 JOD per Department of Lands and Survey appraisal. Property must be retained for 5 years without sale or mortgage. Residency valid for 5 years, renewable. Covers investor and family members. Does NOT lead to citizenship under the July 2025 CBI reforms. Applications via Ministry of Investment e-Services Portal at portal.moin.gov.jo."
+    },
+    {
+      "category": "investment",
+      "name": "Annual Residency for Investors (Investment-Based)",
+      "purpose": "Annual renewable residency for foreign nationals conducting qualifying economic activity in Jordan.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://invest.jo/ready-for-doing-business/residency/",
+      "notes": "Annual residency granted within 14 working days for investors in sectors covered by the Investment Environment Regulation Law, or holding senior management positions (chairman, board member, general manager, director general, or CEO) in a Jordan-based investment. Covers investor and family (spouse, male children under 30, unmarried daughters, parents). Not available for commercial sector - apply via Ministry of Interior instead. No minimum investment amount stated. Applications via Ministry of Investment e-Services portal."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic Visa Exemption",
+      "purpose": "Visa-free entry for holders of diplomatic passports of countries with applicable bilateral agreements with Jordan.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://mfa.gov.jo/en",
+      "notes": "Holders of diplomatic passports of most countries may enter Jordan without a visa for up to 90 days within any 6-month period. Excluded diplomatic passports: Afghanistan, Bangladesh, Iran, Iraq, Japan, Mexico, Nigeria, Republic of Congo, Serbia, Syria, Yemen. Additionally, holders of diplomatic, official, or service passports of GCC countries, ASEAN countries, and many others including Brazil, Russia, Turkey, UK, and EU member states have specific bilateral visa-free agreements for 30–90 days. Based on multilateral diplomatic convention and bilateral waiver agreements."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -117,8 +359,8 @@
         "nationality": "Hong Kong SAR",
         "iso3": null,
         "max_stay_days": 14,
-        "notes": "Holders of HKSAR passports may enter visa-free for 14 days. Wikipedia (Timatic) confirms. Not on MoI restricted list.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Jordan",
+        "notes": "Holders of HKSAR passports may enter visa-free for 14 days. Confirmed 14-day limit via Wikipedia (citing Timatic/IATA) and via Hong Kong Immigration Department visa requirements page (fetched 2026-06-27). Not on MoI restricted list. Note: some third-party travel sites incorrectly state 30 days - the authoritative Timatic/IATA figure is 14 days.",
+        "source_url": "https://en.wikipedia.org/wiki/Visa_requirements_for_Chinese_citizens_of_Hong_Kong",
         "source_official": false
       }
     ],
@@ -127,7 +369,7 @@
         "nationality": "All nationalities not on the MoI restricted list and not visa-free",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "The official MoI page distinguishes 'Restricted Countries' (need prior approval) from 'Non-Restricted Countries' (no prior approval needed). Non-restricted nationals obtain visa on arrival at air, land, and sea ports, EXCEPT the Allenby/King Hussein Bridge crossing. Fee: 40 JOD for single-entry 1-month visa on arrival (per mota.gov.jo). Extension of stay possible for up to 60 days. Restricted nationals holding valid residence permits in EU, GCC, Australia, Canada, Iceland, Liechtenstein, Norway, Switzerland or US Green Card (valid at least 6 months) are treated as non-restricted for VoA — EXCEPT Afghanistan, Bangladesh, Iran, Nigeria who are unconditionally excluded. Iran is the sole nationality that must obtain a visa in advance from a Jordanian embassy/consulate. Travel document holders cannot obtain VoA (except Vatican Travel Pass holders).",
+        "notes": "The official MoI page distinguishes 'Restricted Countries' (need prior approval) from 'Non-Restricted Countries' (no prior approval needed). Non-restricted nationals obtain visa on arrival at air, land, and sea ports, EXCEPT the Allenby/King Hussein Bridge crossing. Fee: 40 JOD for single-entry 1-month visa on arrival (per mota.gov.jo). Extension of stay possible for up to 60 days. Restricted nationals holding valid residence permits in EU, GCC, Australia, Canada, Iceland, Liechtenstein, Norway, Switzerland or US Green Card (valid at least 6 months) are treated as non-restricted for VoA - EXCEPT Afghanistan, Bangladesh, Iran, Nigeria who are unconditionally excluded. Iran is the sole nationality that must obtain a visa in advance from a Jordanian embassy/consulate. Travel document holders cannot obtain VoA (except Vatican Travel Pass holders).",
         "source_url": "https://moi.gov.jo/EN/Pages/Restricted_and_Non_Restricted_Countries_Nationalities",
         "source_official": true
       }
@@ -137,7 +379,7 @@
         "nationality": "All nationalities except Afghanistan, Bangladesh, Iran, Nigeria, Syria",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "E-visa available at https://eservices.moi.gov.jo/. Effective 19 March 2023, e-visa replaced embassy processing. E-visa NOT available for: Afghanistan, Bangladesh, Iran, Nigeria, and Syria — these must apply via Jordanian embassies. Also not available for temporary passport holders, emergency travel document holders.",
+        "notes": "E-visa available at https://eservices.moi.gov.jo/. Effective 19 March 2023, e-visa replaced embassy processing. E-visa NOT available for: Afghanistan, Bangladesh, Iran, Nigeria, and Syria - these must apply via Jordanian embassies. Also not available for temporary passport holders, emergency travel document holders. E-visa exclusion for Afghanistan, Bangladesh, Iran, Nigeria, Syria re-confirmed via Wikipedia/Timatic re-fetch 2026-06-27.",
         "source_url": "https://moi.gov.jo/En/Pages/Visa_E_Applications",
         "source_official": true
       }
@@ -149,15 +391,17 @@
       "https://mota.gov.jo/En/Pages/Visa_information",
       "https://mfa.gov.jo/documents/260623Visa%20Applications%20for%20all%20Nationals-0623.pdf",
       "https://jordanembassy.org.au/visa-restricted/",
-      "https://en.wikipedia.org/wiki/Visa_policy_of_Jordan"
+      "https://en.wikipedia.org/wiki/Visa_policy_of_Jordan",
+      "https://en.wikipedia.org/wiki/Visa_requirements_for_Chinese_citizens_of_Hong_Kong",
+      "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html"
     ],
-    "notes": "The official MoI restricted countries list (moi.gov.jo) was scraped live June 2026. Restricted countries by continent — Asia (14): Afghanistan, Iran, Papua New Guinea, Pakistan, Sri Lanka, Philippines, Cambodia, Laos, Mongolia, Myanmar, Nepal, Iraq, Yemen, Bangladesh. Africa (37): Ethiopia, Eritrea, Central African Republic, Angola, Uganda, Botswana, Benin, Burkina Faso, Burundi, Chad, Tanzania, Togo, Djibouti, DRC, Zambia, Ivory Coast, Senegal, Sierra Leone, Somalia, Gabon, Gambia, Ghana, Guinea, Equatorial Guinea, Guinea-Bissau, Cameroon, Republic of Congo, Liberia, Mali, Madagascar, Comoros, Mauritania, Mozambique, Namibia, Niger, Nigeria, Sudan. South America (2): Belize, Cuba. Iran is the ONLY nationality that must obtain a visa in advance from an embassy (not just 'restricted'). All other restricted nationals may apply via the MoI e-services portal or qualify for VoA via credential exception. Visa-free countries (ordinary passports) confirmed via Wikipedia/Timatic: GCC (3 months), Lebanon (3 months), Tunisia (3 months), Turkey (3 months), Egypt (1 month), Palestine (1 month, passport not starting '00'), Russia (1 month), Uzbekistan (1 month), Hong Kong SAR (14 days). Syria and Yemen are on the restricted/VoA-excluded list but have a credential-based visa-free rule."
+    "notes": "The official MoI restricted countries list (moi.gov.jo) was scraped live June 2026 and re-attempted June 2026-06-27 (timed out - existing data preserved). Restricted countries by continent - Asia (14): Afghanistan, Iran, Papua New Guinea, Pakistan, Sri Lanka, Philippines, Cambodia, Laos, Mongolia, Myanmar, Nepal, Iraq, Yemen, Bangladesh. Africa (37): Ethiopia, Eritrea, Central African Republic, Angola, Uganda, Botswana, Benin, Burkina Faso, Burundi, Chad, Tanzania, Togo, Djibouti, DRC, Zambia, Ivory Coast, Senegal, Sierra Leone, Somalia, Gabon, Gambia, Ghana, Guinea, Equatorial Guinea, Guinea-Bissau, Cameroon, Republic of Congo, Liberia, Mali, Madagascar, Comoros, Mauritania, Mozambique, Namibia, Niger, Nigeria, Sudan. South America (2): Belize, Cuba. Iran is the ONLY nationality that must obtain a visa in advance from an embassy (not just 'restricted'). All other restricted nationals may apply via the MoI e-services portal or qualify for VoA via credential exception. Visa-free countries (ordinary passports) re-confirmed via Wikipedia/Timatic re-fetch 2026-06-27: GCC (3 months), Lebanon (3 months), Tunisia (3 months), Turkey (3 months), Egypt (1 month), Palestine (1 month, passport not starting '00'), Russia (1 month), Uzbekistan (1 month), Hong Kong SAR (14 days - NOT 30 days as some third-party sites claim). Syria and Yemen are on the restricted/VoA-excluded list but have a credential-based visa-free rule."
   },
   "conditional_access": [
     {
       "basis": "credential",
       "eligible_nationalities": "any_restricted_except",
-      "eligible_nationalities_notes": "All restricted nationals EXCEPT Afghanistan, Bangladesh, Iran, Nigeria. Confirmed by official Jordan Embassy Australia page. Syria and Yemen have a more favourable rule (visa-free, not VoA) under the same credential types — see separate entries.",
+      "eligible_nationalities_notes": "All restricted nationals EXCEPT Afghanistan, Bangladesh, Iran, Nigeria. Confirmed by official Jordan Embassy Australia page (re-fetched 2026-06-27). Syria and Yemen have a more favourable rule (visa-free, not VoA) under the same credential types - see separate entries.",
       "passport_types": ["ordinary"],
       "credential": {
         "issuer": "EU",
@@ -310,7 +554,7 @@
     {
       "basis": "credential",
       "eligible_nationalities": ["IRQ"],
-      "eligible_nationalities_notes": "Iraq nationals specifically — distinct rule from general restricted nationals' residence permit rule.",
+      "eligible_nationalities_notes": "Iraq nationals specifically - distinct rule from general restricted nationals' residence permit rule.",
       "passport_types": ["ordinary"],
       "credential": {
         "issuer": "Schengen",
@@ -361,7 +605,7 @@
     {
       "basis": "credential",
       "eligible_nationalities": ["SYR", "YEM"],
-      "eligible_nationalities_notes": "Syria and Yemen nationals — more favourable rule than general restricted nationals: visa-FREE (not VoA) if holding EU/GCC/EFTA/Canada residence permit or US Green Card.",
+      "eligible_nationalities_notes": "Syria and Yemen nationals - more favourable rule than general restricted nationals: visa-FREE (not VoA) if holding EU/GCC/EFTA/Canada residence permit or US Green Card.",
       "passport_types": ["ordinary"],
       "credential": {
         "issuer": "EU",
@@ -441,7 +685,7 @@
     {
       "basis": "other",
       "eligible_nationalities": ["MAR"],
-      "eligible_nationalities_notes": "Morocco — special partial restriction for women aged 17-35 only.",
+      "eligible_nationalities_notes": "Morocco - special partial restriction for women aged 17-35 only.",
       "passport_types": ["ordinary"],
       "credential": null,
       "level": "visa_on_arrival",
@@ -453,7 +697,7 @@
     {
       "basis": "other",
       "eligible_nationalities": ["LKA"],
-      "eligible_nationalities_notes": "Sri Lanka — special VoA rule with strict conditions.",
+      "eligible_nationalities_notes": "Sri Lanka - special VoA rule with strict conditions.",
       "passport_types": ["ordinary"],
       "credential": null,
       "level": "visa_on_arrival",
@@ -489,7 +733,7 @@
     {
       "basis": "passport_type",
       "eligible_nationalities": ["CHN", "EGY", "PER", "RUS", "SGP", "GBR"],
-      "eligible_nationalities_notes": "China, Egypt, Peru, Russia, Singapore, United Kingdom — special passport holders.",
+      "eligible_nationalities_notes": "China, Egypt, Peru, Russia, Singapore, United Kingdom - special passport holders.",
       "passport_types": ["special"],
       "credential": null,
       "level": "visa_free",
@@ -560,7 +804,7 @@
     "residency_required": false,
     "annual_cap": 500,
     "passive_options_eliminated": true,
-    "notes": "Program comprehensively overhauled 2 July 2025. All passive investment options (bank deposits, treasury bonds, direct real estate for citizenship) eliminated. Eight active investment pathways now required, all requiring job creation. Annual cap of 500 investors. Two tiers: (1) direct citizenship grants; (2) temporary passport (3-year) pathway leading to citizenship. Real estate no longer grants citizenship — only a 5-year renewable residency permit. Applications via Ministry of Investment E-Services Portal at https://portal.moin.gov.jo/Investment/LoginPage. Program administered by the Ministry of Investment in coordination with Ministry of Interior per Council of Ministers criteria. Reforms reviewed every 6 months per July 2025 decree."
+    "notes": "Program comprehensively overhauled 2 July 2025. All passive investment options (bank deposits, treasury bonds, direct real estate for citizenship) eliminated. Eight active investment pathways now required, all requiring job creation. Annual cap of 500 investors. Two tiers: (1) direct citizenship grants; (2) temporary passport (3-year) pathway leading to citizenship. Real estate no longer grants citizenship - only a 5-year renewable residency permit. Applications via Ministry of Investment E-Services Portal at https://portal.moin.gov.jo/Investment/LoginPage. Program administered by the Ministry of Investment in coordination with Ministry of Interior per Council of Ministers criteria. Reforms reviewed every 6 months per July 2025 decree. Re-validation 2026-06-27: invest.jo returned HTTP 403; CBI structure confirmed unchanged via third-party aggregator cross-checks (amounts and structure match July 2025 cabinet decision)."
   },
   "rbi": {
     "programs": [
@@ -573,7 +817,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://invest.jo/ready-for-doing-business/jordanian-citizenship/",
         "source_official": true,
-        "notes": "Residency granted for 5 years, renewable, upon purchase of one property exclusively from a real estate developer valued >= JOD 200,000 per Department of Lands and Survey appraisal. Property must be retained 5 years without sale or mortgage. Residency covers investor and family members. This pathway does NOT lead to citizenship under the July 2025 reforms. Commissioner of Minister of Interior at the Ministry of Investment authorized to renew residency after technical committee review. Applications via Ministry of Investment e-Services Portal."
+        "notes": "Residency granted for 5 years, renewable, upon purchase of one property exclusively from a real estate developer valued >= JOD 200,000 per Department of Lands and Survey appraisal. Property must be retained 5 years without sale or mortgage. Residency covers investor and family members. This pathway does NOT lead to citizenship under the July 2025 reforms. Commissioner of Minister of Interior at the Ministry of Investment authorized to renew residency after technical committee review. Applications via Ministry of Investment e-Services Portal. Re-validation 2026-06-27: invest.jo returned HTTP 403; amounts kept as previously confirmed."
       },
       {
         "name": "Annual Residency for Investors (Investment-Based)",
@@ -584,7 +828,7 @@
         "path_to_citizenship_years": null,
         "official_url": "https://invest.jo/ready-for-doing-business/residency/",
         "source_official": true,
-        "notes": "Annual residency granted within 14 working days for investors carrying out economic activity in sectors under the Investment Environment Regulation Law, or holding senior management positions (chairman, board member, general manager, director general, or CEO) in a Jordan-based investment. Covers investor and family (spouse, male children under 30, unmarried daughters of any age, parents). Not available for commercial sector (apply via MoI). No minimum investment amount stated on official page. Applications via Ministry of Investment e-Services portal."
+        "notes": "Annual residency granted within 14 working days for investors carrying out economic activity in sectors under the Investment Environment Regulation Law, or holding senior management positions (chairman, board member, general manager, director general, or CEO) in a Jordan-based investment. Covers investor and family (spouse, male children under 30, unmarried daughters of any age, parents). Not available for commercial sector (apply via MoI). No minimum investment amount stated on official page. Applications via Ministry of Investment e-Services portal. Re-validation 2026-06-27: invest.jo returned HTTP 403; kept as previously confirmed."
       }
     ]
   },
@@ -603,31 +847,39 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
-      "ADDED visa_free entries for Tunisia (3 months), Egypt (1 month), Palestine (1 month with passport-number caveat), Russia (1 month), Uzbekistan (1 month), and Hong Kong SAR (14 days) — all confirmed via Wikipedia/Timatic. Previous record only listed GCC (as a group), Lebanon, and Turkey.",
+      "ADDED visa_free entries for Tunisia (3 months), Egypt (1 month), Palestine (1 month with passport-number caveat), Russia (1 month), Uzbekistan (1 month), and Hong Kong SAR (14 days) - all confirmed via Wikipedia/Timatic. Previous record only listed GCC (as a group), Lebanon, and Turkey.",
       "SPLIT GCC group entry into 6 individual country entries (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE) for accurate directed-graph lookup per nationality.",
-      "ADDED e-visa exclusion for Syria — previous record listed Syria as eligible for e-visa, but Wikipedia/Timatic explicitly excludes Syria from e-visa (Syria must apply via embassy).",
+      "ADDED e-visa exclusion for Syria - previous record listed Syria as eligible for e-visa, but Wikipedia/Timatic explicitly excludes Syria from e-visa (Syria must apply via embassy).",
       "ADDED EFTA residence permit as a qualifying credential for the general restricted-nationals VoA exception (matching Wikipedia/Timatic which lists Iceland, Liechtenstein, Norway, Switzerland alongside EU/GCC/Australia/Canada/UK/US/Japan/South Korea).",
       "CORRECTED Syria/Yemen visa-free rule: max_stay_days updated from null to 30 (1 month per 6-month period) per Wikipedia/Timatic explicit statement.",
       "ADDED Morocco conditional access entry: women aged 17-35 require prior MoI approval; all other Moroccan nationals are VoA (Morocco is not on the MoI restricted list).",
       "ADDED Sri Lanka conditional VoA entry: restricted nationals with qualifying credential normally get VoA, but Sri Lanka also has a separate special VoA rule (Royal Jordanian flight + hotel + business docs = 2 months).",
       "CBI program_overhauled field added with date 2025-07-02 and passive_options_eliminated flag set to true. Annual cap of 500 investors added. All amounts and tiers verified consistent with invest.jo.",
       "Iran clarified as the ONLY nationality requiring advance embassy visa (visa required category), distinct from other restricted nationals who use MoI e-services portal.",
-      "Footnote 3 restricted nationals (Comoros, Djibouti, Mauritania, Somalia, Sudan) have an additional VoA path via residence permits from VoA-eligible countries — noted in visa_on_arrival notes but not yet expanded into separate conditional_access entries (complex circular rule)."
+      "Footnote 3 restricted nationals (Comoros, Djibouti, Mauritania, Somalia, Sudan) have an additional VoA path via residence permits from VoA-eligible countries - noted in visa_on_arrival notes but not yet expanded into separate conditional_access entries (complex circular rule).",
+      "ADDED visa_types array (2026-06-20): 16 visa type entries covering tourist VoA (5 tiers including US 5-year), Jordan Pass, e-visa, visa extension, transit, Hajj, medical, work, student, investment residency (2 types), and diplomatic exemption. Sources: US State Dept travel advisory, UK FCDO, Canadian government travel advisory, Jordan Pass official site.",
+      "RE-VALIDATION 2026-06-27: moi.gov.jo pages timed out - restricted list kept as previously confirmed from 2026-06-13 scrape. jordanembassy.org.au re-fetched: confirms credential exception list is EU/GCC/Australia/UK/USA/Canada/Japan/South Korea only - matches existing record. Wikipedia/Timatic re-fetched: visa-free list unchanged (GCC 3mo, Lebanon 3mo, Tunisia 3mo, Turkey 3mo, Egypt 1mo, Palestine 1mo, Russia 1mo, Uzbekistan 1mo, Hong Kong SAR 14 days). E-visa exclusions confirmed (AFG/BGD/IRN/NGA/SYR). Hong Kong SAR 14-day limit CONFIRMED - third-party sites claiming 30 days are incorrect; authoritative Timatic/IATA source via Wikipedia and Hong Kong Immigration Department both confirm 14 days. invest.jo returned HTTP 403 - CBI/RBI data kept as previously confirmed. NO CHANGES to visa_free, visa_on_arrival, eta, or e_visa access lists this validation run.",
+      "RE-VALIDATION 2026-06-29: jordanembassy.org.au/visa-restricted/ re-fetched successfully - credential exception list confirmed as AU/EU/UK/USA/Canada/Japan/South Korea/GCC; unconditional exclusions remain Iran, Bangladesh, Nigeria, Afghanistan. Wikipedia/Timatic visa policy of Jordan re-fetched: visa-free list confirmed (GCC 3mo, Lebanon 3mo, Tunisia 3mo, Turkey 3mo, Egypt 1mo, Palestine 1mo, Russia 1mo, Uzbekistan 1mo); Hong Kong SAR not listed in this re-fetch but preserved per 2026-06-27 HKSAR-specific Wikipedia confirmation. E-visa exclusions re-confirmed (AFG/BGD/IRN/NGA/SYR). moi.gov.jo timed out again; data preserved from 2026-06-13 scrape. invest.jo returned HTTP 403; CBI/RBI data preserved. mota.gov.jo timed out. US State Dept and UK FCDO re-fetched: VoA fee tiers and terms consistent with existing record. CORRECTED visa_types entry for 40 JOD VoA: validity_days updated from 30 to 90 (3 months) per US State Dept and UK FCDO re-fetch - the visa is valid for 3 months but max stay per entry is 30 days; visa_policy.visa_on_arrival max_stay_days: 30 is correct and unchanged. NO CHANGES to visa_free, visa_on_arrival, eta, or e_visa access lists (by-nationality entries) this validation run. Official pages reached: 3 (jordanembassy.org.au, travel.state.gov, gov.uk/FCDO). Non-official pages reached: 1 (Wikipedia)."
     ],
     "gaps": [
-      "The official MoI restricted/non-restricted page does not enumerate a visa-free list separately — it only lists restricted countries requiring prior approval. The visa-free bilateral partners (GCC, Lebanon, Tunisia, Turkey, Egypt, Palestine, Russia, Uzbekistan, Hong Kong) are sourced from Wikipedia/Timatic, not a dedicated official Jordanian government visa-free page.",
+      "The official MoI restricted/non-restricted page does not enumerate a visa-free list separately - it only lists restricted countries requiring prior approval. The visa-free bilateral partners (GCC, Lebanon, Tunisia, Turkey, Egypt, Palestine, Russia, Uzbekistan, Hong Kong) are sourced from Wikipedia/Timatic, not a dedicated official Jordanian government visa-free page.",
       "Dual citizenship policy for Jordan CBI not stated on the invest.jo official page.",
       "Fast-track, digital-nomad, startup, or talent visa programs: no official Jordan government program found.",
       "Freedom-of-movement regional agreements: Jordan is a member of the Arab League but no formal common travel area with confirmed official details was found on government domains.",
       "Annual cap of 500 investors for CBI confirmed via news/aggregator sources reporting on July 2025 cabinet decision, not directly scraped from a government decree page.",
       "Israel: not on MoI restricted list (implying VoA eligibility) but not explicitly confirmed with stay limits on any official Jordan government page fetched; excluded from visa_free and not independently confirmed.",
-      "Conditional access Footnote 3 (Comoros, Djibouti, Mauritania, Somalia, Sudan): VoA only if holding a residence permit from a country whose citizens can get VoA for max 2 months — complex circular dependency not fully expanded.",
+      "Conditional access Footnote 3 (Comoros, Djibouti, Mauritania, Somalia, Sudan): VoA only if holding a residence permit from a country whose citizens can get VoA for max 2 months - complex circular dependency not fully expanded.",
       "Diplomatic/service/official passport bilateral waiver agreements: comprehensive list from Wikipedia (Timatic) not independently verified against official MFA bilateral treaty pages (mfa.gov.jo returned errors during research).",
       "Morocco women 17-35 restriction: sourced from Wikipedia/Timatic only; no official Jordanian government URL confirmed.",
       "Sri Lanka special VoA (Royal Jordanian + hotel + business docs): sourced from Wikipedia/Timatic only; no official Jordanian government URL confirmed.",
-      "Philippines: Royal Jordanian/BAL sources previously indicated Philippines is excluded from credential exception (alongside Afghanistan, Bangladesh, Iran, Nigeria) — official Jordan Embassy Australia page lists only four exclusions. Philippines is on the restricted list (MoI confirmed) with footnote 1 credential exception; exclusion from credential exception not independently confirmed on official pages.",
-      "Ukraine family members: Wikipedia notes visa-free for family members of Ukrainian citizens residing in Jordan — no official source confirmed.",
-      "mota.gov.jo and moi.gov.jo direct fetches timed out during this validation session; content served via Firecrawl stealth proxy for MoI restricted list (confirmed current as of June 2026)."
+      "Philippines: Royal Jordanian/BAL sources previously indicated Philippines is excluded from credential exception (alongside Afghanistan, Bangladesh, Iran, Nigeria) - official Jordan Embassy Australia page lists only four exclusions. Philippines is on the restricted list (MoI confirmed) with footnote 1 credential exception; exclusion from credential exception not independently confirmed on official pages.",
+      "Ukraine family members: Wikipedia notes visa-free for family members of Ukrainian citizens residing in Jordan - no official source confirmed.",
+      "moi.gov.jo pages timed out on 2026-06-27 and 2026-06-29 re-validation attempts; restricted list data preserved from 2026-06-13 scrape.",
+      "invest.jo returned HTTP 403 on 2026-06-27 and 2026-06-29 re-validation attempts; CBI and RBI data preserved from 2026-06-13 confirmed fetch.",
+      "mota.gov.jo/En/Pages/Visa_information timed out on 2026-06-29 re-validation attempt; data preserved from previous record.",
+      "Work and student visa fee amounts and exact processing times not published on any accessible official Jordan government page during this research session.",
+      "Family reunion / family visa: no dedicated formal category found on official Jordanian government sources; likely handled under residency permit channels.",
+      "Business visa as a distinct category: not found as a separate product - Jordan issues the same tourist visa for business visits; specific long-stay business visas may exist but were not documented on accessible official pages."
     ]
   },
   "sources_checked": [
@@ -636,47 +888,95 @@
       "domain": "moi.gov.jo",
       "official": true,
       "fetched": "2026-06-13",
-      "notes": "Full restricted countries list by continent — scraped live via Firecrawl. Asia 14, Africa 37, South America 2. Unchanged from previous record. Iran still listed as restricted."
+      "notes": "Full restricted countries list by continent - scraped live via Firecrawl. Asia 14, Africa 37, South America 2. Unchanged from previous record. Iran still listed as restricted. Re-attempted 2026-06-27: timed out. Re-attempted 2026-06-29: timed out. Data preserved from 2026-06-13 scrape."
     },
     {
       "url": "https://moi.gov.jo/En/Pages/Visa_E_Applications",
       "domain": "moi.gov.jo",
       "official": true,
-      "notes": "E-visa application portal info. Wikipedia/Timatic cites this page for e-visa exclusions (Afghanistan, Bangladesh, Iran, Nigeria, Syria)."
+      "notes": "E-visa application portal info. Wikipedia/Timatic cites this page for e-visa exclusions (Afghanistan, Bangladesh, Iran, Nigeria, Syria). Re-attempted 2026-06-27: timed out. Re-attempted 2026-06-29: timed out."
     },
     {
       "url": "https://mota.gov.jo/En/Pages/Visa_information",
       "domain": "mota.gov.jo",
       "official": true,
-      "notes": "Attempted fetch; timed out. Previously confirmed visa fee schedule: 40 JOD single-entry on arrival."
+      "notes": "Attempted fetch 2026-06-13, 2026-06-27, and 2026-06-29; timed out all three times. Previously confirmed visa fee schedule: 40 JOD single-entry on arrival."
     },
     {
       "url": "https://jordanembassy.org.au/visa-restricted/",
       "domain": "jordanembassy.org.au",
       "official": true,
       "fetched": "2026-06-13",
-      "notes": "Official Jordan Embassy in Australia page. Confirms: restricted nationals EXCEPT Iran, Bangladesh, Nigeria, Afghanistan who hold residency or temporary visa in Australia, EU, UK, USA, Canada, Japan, South Korea, GCC are treated as non-restricted and may obtain visa on arrival. Travel document holders cannot obtain visa on arrival. Processing ~2 weeks for MoI approval."
+      "refetched": "2026-06-27",
+      "refetched2": "2026-06-29",
+      "notes": "Official Jordan Embassy in Australia page. Re-confirmed 2026-06-29: restricted nationals EXCEPT Iran, Bangladesh, Nigeria, Afghanistan who hold residency or temporary visa in Australia, EU, UK, USA, Canada, Japan, South Korea, and GCC are treated as non-restricted and may obtain visa on arrival. Credential list is exactly these 8 issuer groups. Travel document holders cannot obtain visa on arrival. Processing ~2 weeks for MoI approval. No changes from prior validation."
+    },
+    {
+      "url": "https://jordanembassy.org.au/visa-non-restricted/",
+      "domain": "jordanembassy.org.au",
+      "official": true,
+      "fetched": "2026-06-27",
+      "notes": "New source added 2026-06-27. Confirms non-restricted nationals may obtain visa on arrival. E-visa system in place. Processing approximately 2 weeks. Entry via King Hussein/Allenby Bridge requires advance MoI approval. Consistent with existing record."
     },
     {
       "url": "https://invest.jo/ready-for-doing-business/jordanian-citizenship/",
       "domain": "invest.jo",
       "official": true,
       "fetched": "2026-06-13",
-      "notes": "Official Ministry of Investment portal; CBI program details and 5-year real estate residency. Program overhauled July 2, 2025 — all amounts and tiers confirmed consistent with previous record."
+      "notes": "Official Ministry of Investment portal; CBI program details and 5-year real estate residency. Program overhauled July 2, 2025. Re-attempted 2026-06-27: returned HTTP 403. Data preserved from 2026-06-13 confirmed fetch."
     },
     {
       "url": "https://invest.jo/ready-for-doing-business/residency/",
       "domain": "invest.jo",
       "official": true,
       "fetched": "2026-06-13",
-      "notes": "Annual residency for investors through qualified sector activity. No minimum investment amount stated."
+      "notes": "Annual residency for investors through qualified sector activity. No minimum investment amount stated. Re-attempted 2026-06-27: returned HTTP 403. Data preserved from 2026-06-13 confirmed fetch."
     },
     {
       "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Jordan",
       "domain": "en.wikipedia.org",
       "official": false,
       "fetched": "2026-06-13",
-      "notes": "Wikipedia article citing Timatic/IATA database via Emirates. Used for: full visa-free list including Tunisia, Egypt, Palestine, Russia, Uzbekistan, Hong Kong; Syria/Yemen credential-based visa-free (1 month); e-visa exclusion of Syria; EFTA as qualifying credential; Iraq Schengen/UK/US visa rule; Morocco women restriction; Sri Lanka special VoA rule; diplomatic/service/official passport bilateral waiver list. All rules sourced solely here are marked source_official=false."
+      "refetched": "2026-06-27",
+      "refetched2": "2026-06-29",
+      "notes": "Wikipedia article citing Timatic/IATA database via Emirates. Re-fetched 2026-06-29 - visa-free list confirmed: GCC (3 months), Lebanon (3 months), Tunisia (3 months), Turkey (3 months), Egypt (1 month), Palestine (1 month, passport condition), Russia (1 month), Uzbekistan (1 month). Hong Kong SAR not listed in this re-fetch but preserved per 2026-06-27 HKSAR-specific Wikipedia page confirmation. E-visa exclusions confirmed: Afghanistan, Bangladesh, Iran, Nigeria, Syria. Restricted list structure and conditional access rules unchanged."
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_Chinese_citizens_of_Hong_Kong",
+      "domain": "en.wikipedia.org",
+      "official": false,
+      "fetched": "2026-06-27",
+      "notes": "New source added 2026-06-27 for Hong Kong SAR stay-limit verification. Confirms Jordan entry for HKSAR passport holders: visa not required, 14 days. Not available at all entry points. Confirms existing record of 14 days is correct; third-party sites citing 30 days are inaccurate."
+    },
+    {
+      "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Jordan.html",
+      "domain": "travel.state.gov",
+      "official": true,
+      "fetched": "2026-06-20",
+      "refetched": "2026-06-29",
+      "notes": "US State Department Jordan travel advisory. Re-confirmed 2026-06-29: VoA available at Queen Alia International Airport and most international land border crossings (not King Hussein/Allenby Bridge). Fee tiers: 40 JOD single/3 months, 60 JOD dual/3 months, 120 JOD multiple/6 months, 200 JOD multiple/1 year, 110 JOD multiple/5 years (US citizens only). Jordan Pass 70-80 JOD includes visa. Registration required after 2 weeks. Overstay fines apply. Note: 40 JOD VoA has 3-month validity window per this source (not 30-day); max stay per entry is 1 month/30 days. visa_on_arrival max_stay_days: 30 is correct; validity_days in visa_types corrected to 90 days for VoA entry."
+    },
+    {
+      "url": "https://www.gov.uk/foreign-travel-advice/jordan/entry-requirements",
+      "domain": "gov.uk",
+      "official": true,
+      "fetched": "2026-06-20",
+      "refetched": "2026-06-29",
+      "notes": "UK FCDO Jordan entry requirements. Re-confirmed 2026-06-29: 40 JOD single-entry VoA valid 3 months from airports and Sheikh Hussein/North Border crossing; Jordan Pass 70-80 JOD valid 3 months minimum 3-night stay; online visa extension up to 6 months total; work and study visas require advance application through MoI; registration required after 14 days with biometrics; overstay fine 200 JOD. No changes to existing record."
+    },
+    {
+      "url": "https://travel.gc.ca/destinations/jordan",
+      "domain": "travel.gc.ca",
+      "official": true,
+      "fetched": "2026-06-20",
+      "notes": "Canadian government Jordan travel advisory. Confirms: tourist visa valid 3 months; transit visa valid 3 days on arrival; VoA available at airports, Sheikh Hussein Bridge, Wadi Araba (Aqaba) crossing; NOT at King Hussein Bridge. Work and student visas require advance application. Registration required within 13 days of entry for stays over 14 days (tourist visa holders exempt first 30 days)."
+    },
+    {
+      "url": "https://www.jordanpass.jo/Contents/AboutJordanPass.aspx",
+      "domain": "jordanpass.jo",
+      "official": true,
+      "fetched": "2026-06-20",
+      "notes": "Official Jordan Pass website. Confirms pass includes tourist visa fee and entry to 40+ attractions including Petra, Jerash, Wadi Rum. Price range 70-80 JOD."
     }
   ]
 }

@@ -57,8 +57,115 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "Source is the official Saint Vincent and the Grenadines Ministry of Foreign Affairs, International Trade and Regional Integration outbound visa page (article id=296). The page states: (1) Vincentians are generally exempted from short-stay visa requirements for countries in the Americas, except USA and Canada; (2) Visa-free access to all CARICOM member states; (3) Indefinite stay in OECS member states (Antigua and Barbuda, Dominica, Grenada, Montserrat, Saint Kitts and Nevis, Saint Lucia — all also captured above as CARICOM); (4) United Kingdom — up to 6 months visa-free; (5) Schengen area (28 countries listed) — up to 90 days within a 6-month period under the EU-SVG Short-Stay Visa Waiver Agreement signed 28 May 2015. The CARICOM list above reflects the 14 full member states (excluding SVG itself). The Americas region exemption is stated broadly; individual non-CARICOM Americas countries are not enumerated by the official source. The page does not mention visa-on-arrival, e-visa, or ETA destinations. No date is published on the official page."
+    "notes": "Source is the official Saint Vincent and the Grenadines Ministry of Foreign Affairs, International Trade and Regional Integration outbound visa page (article id=296). The page states: (1) Vincentians are generally exempted from short-stay visa requirements for countries in the Americas, except USA and Canada; (2) Visa-free access to all CARICOM member states; (3) Indefinite stay in OECS member states (Antigua and Barbuda, Dominica, Grenada, Montserrat, Saint Kitts and Nevis, Saint Lucia - all also captured above as CARICOM); (4) United Kingdom - up to 6 months visa-free; (5) Schengen area (28 countries listed) - up to 90 days within a 6-month period under the EU-SVG Short-Stay Visa Waiver Agreement signed 28 May 2015. The CARICOM list above reflects the 14 full member states (excluding SVG itself). The Americas region exemption is stated broadly; individual non-CARICOM Americas countries are not enumerated by the official source. The page does not mention visa-on-arrival, e-visa, or ETA destinations. No date is published on the official page."
   },
+  "visa_types": [
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For foreign nationals transiting through Saint Vincent and the Grenadines to a destination outside the country. Required only for nationalities that cannot enter visa-free.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 74,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.vc/foreign/index.php/visas",
+      "notes": "Fee is EC$200 (approximately USD 74 at 2.7 EC per USD). Application submitted through the Ministry of Foreign Affairs (Consular Section) or Ministry of National Security. Only nationals of the 12 visa-required countries need this visa; all others transit visa-free. The official MFA page lists transit visa as a distinct category."
+    },
+    {
+      "category": "tourist",
+      "name": "Short-stay Visa",
+      "purpose": "For foreign nationals visiting Saint Vincent and the Grenadines for tourism, holiday, or short-term stays. Applies to the 12 nationalities that cannot enter visa-free.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 74,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.vc/foreign/index.php/visas",
+      "notes": "Fee is EC$200 (approximately USD 74 at 2.7 EC per USD). Application submitted through the Ministry of Foreign Affairs Consular Section or via fax to the Ministry of National Security. Applicants must provide: passport bio-page copy, 2 passport photographs, sponsorship letter, police character certificate, proof of financial means, hotel/accommodation reservation (where applicable), travel itinerary. Interview with proposed sponsor may be arranged. The official MFA page lists short-stay visa as a distinct category. Most nationalities do not require this visa and are admitted visa-free on arrival."
+    },
+    {
+      "category": "business",
+      "name": "Short-stay Visa (Business)",
+      "purpose": "For foreign nationals visiting Saint Vincent and the Grenadines for business meetings, negotiations, or commercial activities on a short-term basis.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 74,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.vc/foreign/index.php/visas",
+      "notes": "Fee is EC$200 (approximately USD 74 at 2.7 EC per USD). Business purposes are processed under the short-stay visa category. Only applicable to the 12 visa-required nationalities. Most nationals enter visa-free for business short stays. No separate business visa category is listed; business falls under short-stay."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "For foreign nationals intending to study at an educational institution in Saint Vincent and the Grenadines.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 74,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.vc/foreign/index.php/visas",
+      "notes": "Fee is EC$200 (approximately USD 74 at 2.7 EC per USD). The official MFA visas page explicitly lists 'Student' as a distinct visa category. Specific processing times, duration, and additional requirements for student visas are not published on official online sources as of June 2026. Applicants should contact the Ministry of Foreign Affairs Consular Section at (784) 456-2060 or office.foreignaffairs@mail.gov.vc."
+    },
+    {
+      "category": "other",
+      "name": "Long-stay Visa",
+      "purpose": "For foreign nationals intending to remain in Saint Vincent and the Grenadines for an extended period beyond the short-stay allowance, for purposes such as extended work, family, or residence.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 74,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.vc/foreign/index.php/visas",
+      "notes": "Fee is EC$200 (approximately USD 74 at 2.7 EC per USD). The official MFA visas page explicitly lists 'Long-stay Visa' as a distinct visa category. Specific duration, validity, conditions, and additional requirements are not published on official online sources as of June 2026. Applicants should contact the Ministry of Foreign Affairs Consular Section at (784) 456-2060 or office.foreignaffairs@mail.gov.vc."
+    },
+    {
+      "category": "other",
+      "name": "Humanitarian Visa",
+      "purpose": "For foreign nationals requiring entry into Saint Vincent and the Grenadines on humanitarian grounds, such as medical emergencies or family crises.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.vc/foreign/index.php/visas",
+      "notes": "The official MFA visas page explicitly lists 'Humanitarian' as a distinct visa category. Fee, duration, processing time, and specific requirements are not published on official online sources as of June 2026. Humanitarian visa fee may differ from the standard EC$200. Applicants should contact the Ministry of Foreign Affairs Consular Section at (784) 456-2060 or office.foreignaffairs@mail.gov.vc."
+    },
+    {
+      "category": "other",
+      "name": "Immigrant Visa",
+      "purpose": "For foreign nationals intending to immigrate and settle permanently in Saint Vincent and the Grenadines.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://foreign.gov.vc/foreign/index.php/visas",
+      "notes": "The official MFA visas page explicitly lists 'Immigrant' as a distinct visa category. Fee, processing time, eligibility criteria, and specific requirements for immigrant visa are not published on official online sources as of June 2026. Applicants should contact the Ministry of Foreign Affairs Consular Section at (784) 456-2060 or office.foreignaffairs@mail.gov.vc. Note: a Citizenship by Investment (CBI) program was announced in the February 2026 Budget Address with a mid-2026 launch target but has not yet been formally established."
+    }
+  ],
   "visa_policy": {
     "visa_free": [
       {
@@ -169,9 +276,9 @@
   },
   "agreements": [
     "CARICOM freedom of movement (6 months visa-free for all CARICOM nationals)",
-    "CARICOM Enhanced Cooperation Protocol — Barbados, Belize, Dominica, Saint Vincent and the Grenadines: full freedom of movement (right to reside and work without work permit), in effect 1 October 2025",
-    "OECS freedom of movement (Revised Treaty of Basseterre, OECS Economic Union, in force 2011) — indefinite stay for OECS nationals",
-    "EU-SVG Short-Stay Visa Waiver Agreement (signed 28 May 2015, in force 1 May 2023) — covers all passport types (ordinary, diplomatic, service, official, special) of EU and Schengen-area nationals; 90 days in any 180-day period",
+    "CARICOM Enhanced Cooperation Protocol - Barbados, Belize, Dominica, Saint Vincent and the Grenadines: full freedom of movement (right to reside and work without work permit), in effect 1 October 2025",
+    "OECS freedom of movement (Revised Treaty of Basseterre, OECS Economic Union, in force 2011) - indefinite stay for OECS nationals",
+    "EU-SVG Short-Stay Visa Waiver Agreement (signed 28 May 2015, in force 1 May 2023) - covers all passport types (ordinary, diplomatic, service, official, special) of EU and Schengen-area nationals; 90 days in any 180-day period",
     "India-SVG Visa Exemption Agreement for holders of Diplomatic and Official Passports (signed 10 September 2019, in force 13 January 2020)"
   ],
   "official_domains": [
@@ -182,9 +289,10 @@
   ],
   "data_quality": {
     "completeness": "medium",
-    "validation_notes": "Validated June 2026. Changes from prior record: (1) Added EU/Schengen ordinary passport holders explicitly to visa_free with 90-day max_stay per the EU-SVG treaty; they were previously only noted in agreements but omitted from visa_free entries. (2) Added United States nationals explicitly to visa_free with 180-day max_stay per security.gov.vc visitors permit schedule; this was omitted from the prior record despite being on the official visitors permit page. (3) Added visa_required block (default_visa_free:true with list of 12 nationalities) to formally capture the inversion structure. (4) Updated CBI notes to reflect the February 2026 Budget Address announcement by PM Goodwin Friday (NDP) of a mid-2026 CBI launch with mandatory residency; official page still says 'coming shortly' with no formal program published. (5) Updated CARICOM enhanced freedom-of-movement note to clarify it is a four-territory arrangement (Barbados, Belize, Dominica, SVG) not a full-CARICOM rule. (6) Corrected the prior record statement that the visa-required list contained 'Bangladesh and Nepal' on some pages but not others — the MFA visa criteria page explicitly lists all 12 including BGD and NPL; the discrepancy with the MoNSec page is preserved in gaps. 2026-06-14: Added explicit India (IND) entry to visa_free with 90-day max_stay (ordinary passport holders covered by general visa-free default as 'other international countries' per security.gov.vc/id=56 visitors permit schedule); corrected general default max_stay_days from 30 to 90 days per the same official page; India was previously only captured under conditional_access for diplomatic/official passports — ordinary passport India entry is now explicit. Source: security.gov.vc (official). Airline aggregator claim of visa-on-arrival is incorrect; correct classification is visa_free with no prior registration or fee required.",
+    "validation_notes": "Validated June 2026. Changes from prior record: (1) Added EU/Schengen ordinary passport holders explicitly to visa_free with 90-day max_stay per the EU-SVG treaty; they were previously only noted in agreements but omitted from visa_free entries. (2) Added United States nationals explicitly to visa_free with 180-day max_stay per security.gov.vc visitors permit schedule; this was omitted from the prior record despite being on the official visitors permit page. (3) Added visa_required block (default_visa_free:true with list of 12 nationalities) to formally capture the inversion structure. (4) Updated CBI notes to reflect the February 2026 Budget Address announcement by PM Goodwin Friday (NDP) of a mid-2026 CBI launch with mandatory residency; official page still says 'coming shortly' with no formal program published. (5) Updated CARICOM enhanced freedom-of-movement note to clarify it is a four-territory arrangement (Barbados, Belize, Dominica, SVG) not a full-CARICOM rule. (6) Corrected the prior record statement that the visa-required list contained 'Bangladesh and Nepal' on some pages but not others - the MFA visa criteria page explicitly lists all 12 including BGD and NPL; the discrepancy with the MoNSec page is preserved in gaps. 2026-06-14: Added explicit India (IND) entry to visa_free with 90-day max_stay (ordinary passport holders covered by general visa-free default as 'other international countries' per security.gov.vc/id=56 visitors permit schedule); corrected general default max_stay_days from 30 to 90 days per the same official page; India was previously only captured under conditional_access for diplomatic/official passports - ordinary passport India entry is now explicit. Source: security.gov.vc (official). Airline aggregator claim of visa-on-arrival is incorrect; correct classification is visa_free with no prior registration or fee required. 2026-06-20: Added visa_types field with 7 entries covering all 6 categories explicitly listed on the MFA visas page (foreign.gov.vc/foreign/index.php/visas): Transit Visa, Short-stay Visa (tourist), Short-stay Visa (business), Student Visa, Long-stay Visa, Humanitarian Visa, and Immigrant Visa. Fee of EC$200 (~USD 74) confirmed from official source. Detailed processing times and validity periods are not published on official SVG government websites. 2026-06-27: Full re-validation against live official sources. All key data points confirmed unchanged: (a) MFA Visas page (foreign.gov.vc/foreign/index.php/visas) still states general visa-free = 1 month, CARICOM = 6 months, British = 6 months, OECS = indefinite, EC$200 fee - consistent with prior record; (b) MFA Visa Criteria page (article id=54) still lists 12 visa-required nationalities including BGD and NPL; (c) gov.vc and security.gov.vc/id=53 pages still list only 10 (no BGD/NPL) - discrepancy unresolved; (d) security.gov.vc/id=56 visitors permit page confirms CARICOM 6mo, UK 6mo, Schengen 6mo, USA 6mo, other international 3 months - all consistent with current record; (e) pmoffice.gov.vc/citizenship CBI page still reads 'More information regarding Citizenship by Investment requirements will be made available shortly' - no formal program published; (f) no e-visa, visa-on-arrival, or ETA program found on any official source. No substantive data corrections required this run. 2026-06-29: Full re-validation run. Sources fetched: MFA Visas page, MFA Visa Criteria page (article 54), security.gov.vc/id=56 (visitors permit), security.gov.vc/id=53 (entry visa), gov.vc visa requirements, tourism.gov.vc entry requirements, pmoffice.gov.vc citizenship. Key findings: (a) MFA Visas page now describes 'thirteen (13) countries' as requiring visas but only enumerates 10 by name (Afghanistan, Cameroon, China, Dominican Republic, Haiti, Iran, Iraq, Lebanon, Nigeria, Syria) - 3 fewer than stated. This new 'thirteen' figure is a new discrepancy not seen in prior runs (page previously said '12'); the dedicated MFA Visa Criteria page (article 54) still explicitly lists 12 countries including Bangladesh and Nepal; tourism.gov.vc also confirms 12. Since the identity of any 13th country cannot be confirmed from any official source, the visa_required list is kept at 12 (AFG, BGD, CMR, CHN, DOM, HTI, IRN, IRQ, LBN, NPL, NGA, SYR) per the Visa Criteria page. The new 'thirteen' reference on the MFA Visas landing page is logged in gaps as an unresolved discrepancy. (b) security.gov.vc/id=56 visitors permit page continues to show CARICOM 6mo, UK 6mo, Schengen 6mo, USA 6mo, other international 3 months - all consistent with current record. (c) pmoffice.gov.vc/citizenship CBI page still reads 'More information regarding Citizenship by Investment requirements will be made available shortly' - confirmed still no formal CBI program published despite mid-2026 target announced in February 2026 Budget Address. (d) No e-visa, visa-on-arrival, or ETA program found. No substantive data corrections required this run.",
     "gaps": [
-      "The official visa policy pages do not enumerate all visa-free nationalities individually; only the 12 visa-required nationalities are listed by the MFA, with the remainder described as 'most foreign nationals' receiving 1 month visa-free.",
+      "The official visa policy pages do not enumerate all visa-free nationalities individually; only the visa-required nationalities are listed by the MFA, with the remainder described as 'most foreign nationals' receiving 1 month visa-free.",
+      "As of 2026-06-29, the MFA Visas landing page (foreign.gov.vc/foreign/index.php/visas) describes 'thirteen (13) countries' as requiring visas but only enumerates 10 by name. The dedicated MFA Visa Criteria page (article id=54) and tourism.gov.vc entry requirements page both list 12 countries (including Bangladesh and Nepal). The identity of the possible 13th country cannot be confirmed from any official source; the visa_required list is kept at 12 pending clarification from the MFA.",
       "Bangladesh and Nepal appear on the Ministry of Foreign Affairs visa criteria page but NOT on the Ministry of National Security entry visa application page or the gov.vc visa requirements page. Both pages are official; the discrepancy between SVG's own official sources is unresolved.",
       "The Ministry of National Security visitors permit page groups Schengen nationals with a 6-month permit, but the governing EU-SVG treaty specifies 90 days in any 180-day period. Which figure immigration officers actually enforce at the port of entry is unclear.",
       "No official breakdown of visa-free access by specific country or region (beyond CARICOM, OECS, British, EU/Schengen, and US nationals) was found on official sources.",
@@ -194,13 +302,14 @@
       "CBI program announced in the February 2026 Budget Address with a mid-2026 target but not yet formally established with published legislation or official investment routes as of June 2026.",
       "No official SVG government source found specifying conditional entry based on held third-country credentials (e.g., US visa, Schengen visa, UK visa, Canadian visa, residence permits, Green Card). Confirmed absent after research covering foreign.gov.vc, security.gov.vc, svgconsulate.vc, svghighcom.co.uk, gov.uk/FCDO, and US State Dept.",
       "No OCI (Overseas Citizen of India) cardholder-specific exemption rule found on any official SVG or Indian government source.",
-      "Other potential bilateral visa waiver agreements for diplomatic/service/official passports (beyond India) could not be confirmed from official SVG government sources; India MEA confirms the India-SVG diplomatic/official agreement as the only such agreement found on official sources."
+      "Other potential bilateral visa waiver agreements for diplomatic/service/official passports (beyond India) could not be confirmed from official SVG government sources; India MEA confirms the India-SVG diplomatic/official agreement as the only such agreement found on official sources.",
+      "Visa type details (processing times, validity periods, duration of stay, number of entries) for each of the 6 MFA-listed visa categories are not published on official SVG government websites. The MFA page names the categories but provides no per-type breakdown."
     ]
   },
   "sources_checked": [
     {
       "url": "https://foreign.gov.vc/foreign/index.php/visas",
-      "description": "Ministry of Foreign Affairs, International Trade and Regional Integration - Visas page; lists general 1-month rule, CARICOM 6-month, British 6-month, OECS indefinite; lists 10 visa-required nationalities (no Bangladesh/Nepal); EU agreement mentioned with 90-day rule and list of Schengen countries",
+      "description": "Ministry of Foreign Affairs, International Trade and Regional Integration - Visas page; lists general 1-month rule, CARICOM 6-month, British 6-month, OECS indefinite; lists 10 visa-required nationalities (no Bangladesh/Nepal); EU agreement mentioned with 90-day rule and list of Schengen countries; explicitly names 6 visa categories: Transit, Short-stay, Long-stay, Student, Humanitarian, Immigrant; fee EC$200 stated",
       "official": true
     },
     {
