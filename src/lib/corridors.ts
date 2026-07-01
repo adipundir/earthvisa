@@ -1,4 +1,5 @@
 import { dataset } from "./dataset";
+import { compute } from "./compute";
 
 // Highest-search-volume visa corridors ("<destination> visa for <nationality>").
 // Curated subset (top nationalities × top destinations) so the build stays lean
@@ -35,18 +36,44 @@ export function nameToSlug(name: string): string {
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 
-/** Every valid (nationality, destination) corridor in the curated set. */
-export function corridorPairs(): { nat: string; dest: string; natSlug: string; destSlug: string }[] {
-  const out: { nat: string; dest: string; natSlug: string; destSlug: string }[] = [];
+export interface CorridorPair { nat: string; dest: string; natSlug: string; destSlug: string }
+
+let _pairs: CorridorPair[] | null = null;
+let _useful: Set<string> | null = null;
+
+/**
+ * Curated (nationality, destination) corridors — but ONLY the ones that carry
+ * genuinely differentiated content: an access grant (visa-free / VoA / eTA /
+ * e-visa), freedom of movement, OR a VFS document checklist. Corridors that
+ * would only say a generic "visa required, apply at an embassy" (no grant, no
+ * documents) are skipped so we never publish thin, near-duplicate pages.
+ * Memoized so the build computes it once per worker.
+ */
+export function corridorPairs(): CorridorPair[] {
+  if (_pairs) return _pairs;
+  const vfs = dataset.vfsCorridors ?? {};
+  const out: CorridorPair[] = [];
   for (const nat of TOP_NATIONALITIES) {
     const n = byIso3.get(nat);
     if (!n) continue;
+    const r = compute([nat], [], {});
+    const reach = new Set(r.reach.map((e) => e.dest));
+    const fom = new Set(r.freedomOfMovement.map((e) => e.dest));
     for (const dst of TOP_DESTINATIONS) {
       if (dst === nat) continue;
       const d = byIso3.get(dst);
       if (!d) continue;
+      const hasVfs = (vfs[dst] ?? []).some((c) => c.sourceIso3 === nat);
+      if (!reach.has(dst) && !fom.has(dst) && !hasVfs) continue; // skip thin/generic
       out.push({ nat, dest: dst, natSlug: nameToSlug(n.name), destSlug: nameToSlug(d.name) });
     }
   }
+  _pairs = out;
   return out;
+}
+
+/** Fast membership check for the internal link mesh (so we never link to a pruned page). */
+export function isUsefulCorridor(nat: string, dest: string): boolean {
+  if (!_useful) _useful = new Set(corridorPairs().map((c) => `${c.nat}|${c.dest}`));
+  return _useful.has(`${nat}|${dest}`);
 }

@@ -4,11 +4,15 @@ import type { Metadata } from "next";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { compute, LEVEL_LABEL } from "@/lib/compute";
 import type { AccessLevel } from "@/lib/types";
-import { TOP_NATIONALITIES, TOP_DESTINATIONS, corridorPairs, nameToSlug, DEMONYM } from "@/lib/corridors";
+import { TOP_NATIONALITIES, TOP_DESTINATIONS, corridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
 const slugToCountry = (slug: string) => bySlug.get(slug) ?? null;
+
+// Only the curated, genuinely-useful corridors exist; anything else 404s rather
+// than rendering a thin "visa required" page.
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return corridorPairs().map((c) => ({ slug: c.natSlug, dest: c.destSlug }));
@@ -117,8 +121,8 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const hasVfs = (dataset.vfsCorridors?.[d.iso3] ?? []).some((c) => c.sourceIso3 === n.iso3);
 
   // Related corridors for internal linking (crawl mesh).
-  const sameNat = TOP_DESTINATIONS.filter((x) => x !== d.iso3 && x !== n.iso3).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
-  const sameDest = TOP_NATIONALITIES.filter((x) => x !== n.iso3 && x !== d.iso3).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
+  const sameNat = TOP_DESTINATIONS.filter((x) => x !== d.iso3 && x !== n.iso3 && isUsefulCorridor(n.iso3, x)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
+  const sameDest = TOP_NATIONALITIES.filter((x) => x !== n.iso3 && x !== d.iso3 && isUsefulCorridor(x, d.iso3)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
 
   const faq = [
     { q: `Do ${nd} citizens need a visa for ${d.name}?`, a: answerSentence(nd, d.name, s) },
