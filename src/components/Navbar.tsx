@@ -19,7 +19,7 @@ const LINKS = [
 export default function Navbar() {
   const path = usePathname();
   return (
-    <nav className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-sm">
+    <nav className="sticky top-0 z-50 border-b border-line bg-paper/80 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-3 gap-y-1.5 px-5 py-3 sm:gap-6 sm:px-8">
         <Link
           href="/"

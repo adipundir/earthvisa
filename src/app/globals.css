@@ -5,16 +5,16 @@
   --font-body: var(--font-plex-sans);
   --font-mono: var(--font-plex-mono);
 
-  /* warm paper */
-  --color-paper:   #f6f2e9;
-  --color-paper-2: #fffdf8;
-  --color-paper-3: #efe8d8;
+  /* bright warm canvas (unified, brightened) */
+  --color-paper:   #fbf9f4;
+  --color-paper-2: #ffffff;
+  --color-paper-3: #f3eee4;
   /* ink - higher contrast for readability */
   --color-ink:       #11203a;
   --color-ink-soft:  #33425c;
-  --color-ink-mute:  #6a6552;
-  --color-line:       #ddd3bf;
-  --color-line-strong: #c9bc9f;
+  --color-ink-mute:  #6f6a5c;
+  --color-line:       #e8e1d3;
+  --color-line-strong: #d9cfb9;
   /* stamps / accents */
   --color-stamp:      #b23528;
   --color-stamp-deep: #7c241d;
@@ -27,7 +27,7 @@
 }
 
 :root {
-  --paper: #f6f2e9;
+  --paper: #fbf9f4;
   --ink:   #11203a;
 }
 
@@ -37,8 +37,7 @@ body {
   position: relative;
   color: var(--ink);
   font-family: var(--font-body), system-ui, sans-serif;
-  /* soft vertical gradient on warm paper */
-  background: linear-gradient(180deg, #f8f4ec 0%, #f4eee2 55%, #efe7d6 100%) fixed;
+  background: var(--paper);
 }
 
 ::selection { background: var(--color-stamp); color: #fffdf8; }

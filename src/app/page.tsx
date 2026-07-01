@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* ── Header ── */}
-      <header className="border-b border-line bg-white">
+      <header className="border-b border-line">
         <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px]">
             {/* Left: headline + stats */}
