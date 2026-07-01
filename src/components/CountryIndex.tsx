@@ -9,6 +9,8 @@ export interface CountryRow {
   iso2: string;
   iso3: string;
   name: string;
+  /** small per-country figure shown at the row's end (e.g. "142 visa-free") */
+  stat?: string;
 }
 
 export interface RegionGroup {
@@ -103,6 +105,7 @@ export default function CountryIndex({
             >
               <span className="text-lg">{isoToFlag(c.iso2)}</span>
               <span className="font-display">{c.name}</span>
+              {c.stat && <span className="mono ml-auto pl-2 text-[11px] tabular-nums text-ink-mute">{c.stat}</span>}
             </Link>
           </li>
         ))}

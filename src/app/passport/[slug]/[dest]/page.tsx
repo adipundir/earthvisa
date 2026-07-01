@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -118,7 +120,19 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const nd = DEMONYM[n.iso3] ?? n.name;
   const need = s.kind === "visa_required" || s.kind === "e_visa" || s.kind === "eta";
   const visaTypes = dataset.destinationVisaTypes?.[d.iso3] ?? [];
-  const hasVfs = (dataset.vfsCorridors?.[d.iso3] ?? []).some((c) => c.sourceIso3 === n.iso3);
+  const vfsCorr = (dataset.vfsCorridors?.[d.iso3] ?? []).find((c) => c.sourceIso3 === n.iso3);
+  const hasVfs = !!vfsCorr;
+  // Inline the real corridor document checklist (unique per nationality→destination)
+  // instead of a destination-generic visa-types block. Read at build time.
+  let vfsDocs: { name: string; category: string; documents_required: string }[] = [];
+  if (vfsCorr) {
+    try {
+      const data = JSON.parse(readFileSync(join(process.cwd(), "data", vfsCorr.detailFile), "utf8"));
+      vfsDocs = (data.visa_types ?? [])
+        .filter((v: { documents_required?: string | null }) => v.documents_required)
+        .slice(0, 6);
+    } catch { /* fall back to the interactive link */ }
+  }
 
   // Related corridors for internal linking (crawl mesh).
   const sameNat = TOP_DESTINATIONS.filter((x) => x !== d.iso3 && x !== n.iso3 && isUsefulCorridor(n.iso3, x)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
@@ -202,8 +216,33 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             </ul>
           </section>
 
-          {/* Visa types for the destination */}
-          {visaTypes.length > 0 && (
+          {/* VFS document checklist — genuinely per-corridor content */}
+          {vfsDocs.length > 0 && (
+            <section className="mb-10 border-t border-line pt-8">
+              <h2 className="font-display text-xl font-semibold text-ink">Documents required for {nd} applicants</h2>
+              <p className="mt-1 text-sm text-ink-soft">The exact documents {nd} citizens must submit for {d.name}, by visa type, from the official visa application centre.</p>
+              <div className="mt-4 space-y-2">
+                {vfsDocs.map((v, i) => (
+                  <details key={i} className="group rounded-lg border border-line-strong bg-white">
+                    <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 px-4 py-2.5">
+                      <span className="mono shrink-0 rounded-[3px] bg-paper-3 px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] text-ink-soft">{v.category}</span>
+                      <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
+                      <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-auto h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </summary>
+                    <div className="border-t border-line px-4 py-3">
+                      <p className="whitespace-pre-wrap text-[12px] leading-relaxed text-ink-soft">{v.documents_required}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+              {vfsCorr?.sourceUrl && (
+                <a href={vfsCorr.sourceUrl} target="_blank" rel="noreferrer" className="mono mt-3 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">via VFS Global ↗</a>
+              )}
+            </section>
+          )}
+
+          {/* Destination visa types — only when a visa is actually needed and we have no richer per-corridor docs */}
+          {!hasVfs && need && visaTypes.length > 0 && (
             <section className="mb-10 border-t border-line pt-8">
               <h2 className="font-display text-xl font-semibold text-ink">{d.name} visa types</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">

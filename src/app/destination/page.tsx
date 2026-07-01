@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
 import { dataset } from "@/lib/dataset";
-import CountryIndex, { type RegionGroup } from "@/components/CountryIndex";
+import CountryIndex from "@/components/CountryIndex";
+import { buildRegions } from "@/lib/regions";
 
 export const metadata: Metadata = {
   title: "Destination Index - Visa Requirements by Country",
@@ -20,28 +21,16 @@ export const metadata: Metadata = {
   },
 };
 
-const REGION_ORDER = ["Europe", "Asia", "Americas", "Africa", "Oceania", "Pacific"];
-
-function buildRegions(): RegionGroup[] {
-  const byRegion = new Map<string, typeof dataset.allCountries>();
-  for (const c of dataset.allCountries) {
-    if (!byRegion.has(c.region)) byRegion.set(c.region, []);
-    byRegion.get(c.region)!.push(c);
-  }
-  return [...byRegion.keys()]
-    .sort((a, b) => (REGION_ORDER.indexOf(a) + 1 || 99) - (REGION_ORDER.indexOf(b) + 1 || 99))
-    .map((region) => ({
-      region,
-      countries: byRegion
-        .get(region)!
-        .slice()
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map((c) => ({ iso2: c.iso2, iso3: c.iso3, name: c.name })),
-    }));
-}
+// Inbound openness per destination — how many nationalities it admits visa-free.
+const admitsVisaFree = new Map(
+  dataset.countries.map((c) => [c.iso3, c.visaPolicyCounts?.visa_free ?? 0]),
+);
 
 export default function DestinationIndex() {
-  const regions = buildRegions();
+  const regions = buildRegions((iso3) => {
+    const n = admitsVisaFree.get(iso3) ?? 0;
+    return n ? `${n} admitted` : undefined;
+  });
 
   return (
     <main className="min-h-screen">

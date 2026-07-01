@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
 import { dataset } from "@/lib/dataset";
-import CountryIndex, { type RegionGroup } from "@/components/CountryIndex";
+import CountryIndex from "@/components/CountryIndex";
+import { buildRegions } from "@/lib/regions";
 
 export const metadata: Metadata = {
   title: "Passport Index - Visa-Free Travel by Passport",
@@ -20,28 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
-const REGION_ORDER = ["Europe", "Asia", "Americas", "Africa", "Oceania", "Pacific"];
-
-function buildRegions(): RegionGroup[] {
-  const byRegion = new Map<string, typeof dataset.allCountries>();
-  for (const c of dataset.allCountries) {
-    if (!byRegion.has(c.region)) byRegion.set(c.region, []);
-    byRegion.get(c.region)!.push(c);
-  }
-  return [...byRegion.keys()]
-    .sort((a, b) => (REGION_ORDER.indexOf(a) + 1 || 99) - (REGION_ORDER.indexOf(b) + 1 || 99))
-    .map((region) => ({
-      region,
-      countries: byRegion
-        .get(region)!
-        .slice()
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map((c) => ({ iso2: c.iso2, iso3: c.iso3, name: c.name })),
-    }));
-}
+// Outbound visa-free reach per passport — the "passport power" figure.
+const visaFreeReach = new Map(
+  Object.entries(dataset.passportAccess).map(([iso3, edges]) => [
+    iso3,
+    edges.filter((e) => e.level === "visa_free").length,
+  ]),
+);
 
 export default function PassportIndex() {
-  const regions = buildRegions();
+  const regions = buildRegions((iso3) => {
+    const n = visaFreeReach.get(iso3) ?? 0;
+    return n ? `${n} visa-free` : undefined;
+  });
 
   return (
     <main className="min-h-screen">

@@ -361,6 +361,14 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <p className="mt-2 text-sm text-ink-soft">
                 As a {country.name} citizen you have the right to live and work in these countries through regional bloc membership - no visa required.
               </p>
+              <div className="mt-5 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+                {result.freedomOfMovement.map((e) => (
+                  <div key={e.dest} className="flex min-h-[40px] items-center gap-2.5 text-[15px] text-ink-soft">
+                    <span className="text-lg">{flagFor(e.dest)}</span>
+                    <span className="font-display">{nameFor(e.dest)}</span>
+                  </div>
+                ))}
+              </div>
             </section>
           )}
 
