@@ -53,6 +53,17 @@ export const metadata: Metadata = {
     // Twitter image is supplied by app/twitter-image.tsx (file-based Metadata API).
   },
   alternates: { canonical: "https://earthvisa.in" },
+  // Search-engine ownership verification. Codes are supplied via Vercel env vars
+  // (GOOGLE_SITE_VERIFICATION from Google Search Console, BING_SITE_VERIFICATION
+  // from Bing Webmaster Tools) so they can be added without a code change.
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.BING_SITE_VERIFICATION } }
+      : {}),
+  },
 };
 
 export default function RootLayout({

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { compute } from "@/lib/compute";
+import { corridorsForNationality, DEMONYM } from "@/lib/corridors";
+import CorridorLinks from "@/components/CorridorLinks";
 import type { AccessLevel } from "@/lib/types";
 
 function nameToSlug(name: string): string {
@@ -90,6 +92,14 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
     .sort((a, b) => b.count - a.count);
   const rankIdx = allReachCounts.findIndex((r) => r.iso3 === country.iso3);
   const rank = rankIdx >= 0 ? rankIdx + 1 : null;
+
+  // Corridor guides where this passport is the traveller (internal link mesh).
+  const demonym = DEMONYM[country.iso3] ?? country.name;
+  const corridorLinks = corridorsForNationality(country.iso3).map((c) => ({
+    href: `/passport/${c.natSlug}/${c.destSlug}`,
+    label: nameFor(c.dest),
+    iso3: c.dest,
+  }));
 
   // JSON-LD
   const jsonLd = {
@@ -428,6 +438,13 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               )}
             </section>
           )}
+
+          {/* Corridor guides (internal link mesh to detailed per-destination pages) */}
+          <CorridorLinks
+            title={`${country.name} Visa Requirements by Destination`}
+            description={`Step-by-step visa guides, fees and document checklists for ${demonym} passport holders visiting popular destinations.`}
+            links={corridorLinks}
+          />
 
           {/* FAQ */}
           <section className="mt-14">

@@ -77,3 +77,13 @@ export function isUsefulCorridor(nat: string, dest: string): boolean {
   if (!_useful) _useful = new Set(corridorPairs().map((c) => `${c.nat}|${c.dest}`));
   return _useful.has(`${nat}|${dest}`);
 }
+
+/** Corridor pages where this country is the nationality (for the passport page's link mesh). */
+export function corridorsForNationality(natIso3: string): CorridorPair[] {
+  return corridorPairs().filter((c) => c.nat === natIso3);
+}
+
+/** Corridor pages where this country is the destination (for the destination page's link mesh). */
+export function corridorsForDestination(destIso3: string): CorridorPair[] {
+  return corridorPairs().filter((c) => c.dest === destIso3);
+}

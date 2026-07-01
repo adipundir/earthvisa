@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
+import { corridorsForDestination, DEMONYM } from "@/lib/corridors";
+import CorridorLinks from "@/components/CorridorLinks";
 import type { AccessLevel } from "@/lib/types";
 
 function nameToSlug(name: string): string {
@@ -166,6 +168,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
     .slice(0, 5)
     .map((e) => nameFor(e.iso3))
     .join(", ");
+
+  // Corridor guides where this country is the destination (internal link mesh).
+  const corridorLinks = corridorsForDestination(destIso3).map((c) => ({
+    href: `/passport/${c.natSlug}/${c.destSlug}`,
+    label: `${DEMONYM[c.nat] ?? nameFor(c.nat)} citizens`,
+    iso3: c.nat,
+  }));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -450,6 +459,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               ))}
             </div>
           </section>
+
+          {/* Corridor guides (internal link mesh to detailed per-nationality pages) */}
+          <CorridorLinks
+            title={`${country.name} Visa Guides by Nationality`}
+            description={`Step-by-step ${country.name} visa requirements, fees and document checklists for travellers from these countries.`}
+            links={corridorLinks}
+          />
 
           {/* CTA */}
           <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
