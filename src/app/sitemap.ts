@@ -1,5 +1,6 @@
 import { dataset } from "@/lib/dataset";
 import type { MetadataRoute } from "next";
+import { corridorPairs } from "@/lib/corridors";
 
 function nameToSlug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -19,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
+  const corridorPages = corridorPairs().map((c) => ({
+    url: `${base}/passport/${c.natSlug}/${c.destSlug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
   return [
     { url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
     { url: `${base}/visit`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
@@ -26,5 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/destination`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     ...passportPages,
     ...destinationPages,
+    ...corridorPages,
   ];
 }
