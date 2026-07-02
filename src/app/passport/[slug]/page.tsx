@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { compute } from "@/lib/compute";
-import { corridorsForNationality, DEMONYM } from "@/lib/corridors";
+import { corridorsForNationality, isUsefulCorridor, DEMONYM } from "@/lib/corridors";
 import CorridorLinks from "@/components/CorridorLinks";
 import type { AccessLevel } from "@/lib/types";
 
@@ -85,6 +85,37 @@ const LEVEL_COLORS: Record<AccessLevel, string> = {
   eta: "text-eta bg-eta/10 ring-eta/30",
   e_visa: "text-evisa bg-evisa/10 ring-evisa/30",
 };
+
+const LEVEL_LABEL_SHORT: Record<AccessLevel, string> = {
+  visa_free: "Visa-free",
+  visa_on_arrival: "On arrival",
+  eta: "eTA",
+  e_visa: "e-Visa",
+};
+
+// A tappable destination card. Links to the nationality-specific corridor page
+// when one exists (e.g. India -> Thailand), otherwise the destination's page -
+// so every destination in the reach lists leads somewhere with more detail.
+function DestCard({ natName, natIso3, edge }: {
+  natName: string;
+  natIso3: string;
+  edge: { dest: string; maxStayDays: number | null; level: AccessLevel };
+}) {
+  const destSlug = nameToSlug(nameFor(edge.dest));
+  const href = isUsefulCorridor(natIso3, edge.dest)
+    ? `/passport/${nameToSlug(natName)}/${destSlug}`
+    : `/destination/${destSlug}`;
+  return (
+    <Link href={href} className="group flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong hover:bg-paper-2">
+      <span className="text-xl">{flagFor(edge.dest)}</span>
+      <div className="min-w-0">
+        <div className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{nameFor(edge.dest)}</div>
+        {edge.maxStayDays != null && <div className="mono text-[10px] text-ink-mute">≤ {edge.maxStayDays} days</div>}
+      </div>
+      <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>{LEVEL_LABEL_SHORT[edge.level]}</span>
+    </Link>
+  );
+}
 
 export default async function PassportPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -251,14 +282,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {result.reachByLevel.visa_free.slice(0, 30).map((e) => (
-                  <div key={e.dest} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                    <span className="text-xl">{flagFor(e.dest)}</span>
-                    <div className="min-w-0">
-                      <div className="font-display text-sm font-medium text-ink">{nameFor(e.dest)}</div>
-                      {e.maxStayDays != null && <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>}
-                    </div>
-                    <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS.visa_free}`}>Visa-free</span>
-                  </div>
+                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                 ))}
               </div>
               {result.reachByLevel.visa_free.length > 30 && (
@@ -270,14 +294,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   </summary>
                   <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {result.reachByLevel.visa_free.slice(30).map((e) => (
-                      <div key={e.dest} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                        <span className="text-xl">{flagFor(e.dest)}</span>
-                        <div className="min-w-0">
-                          <div className="font-display text-sm font-medium text-ink">{nameFor(e.dest)}</div>
-                          {e.maxStayDays != null && <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>}
-                        </div>
-                        <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS.visa_free}`}>Visa-free</span>
-                      </div>
+                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                     ))}
                   </div>
                 </details>
@@ -296,14 +313,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {result.reachByLevel.visa_on_arrival.slice(0, 18).map((e) => (
-                  <div key={e.dest} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                    <span className="text-xl">{flagFor(e.dest)}</span>
-                    <div className="min-w-0">
-                      <div className="font-display text-sm font-medium text-ink">{nameFor(e.dest)}</div>
-                      {e.maxStayDays != null && <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>}
-                    </div>
-                    <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS.visa_on_arrival}`}>On arrival</span>
-                  </div>
+                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                 ))}
               </div>
               {result.reachByLevel.visa_on_arrival.length > 18 && (
@@ -315,14 +325,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   </summary>
                   <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {result.reachByLevel.visa_on_arrival.slice(18).map((e) => (
-                      <div key={e.dest} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                        <span className="text-xl">{flagFor(e.dest)}</span>
-                        <div className="min-w-0">
-                          <div className="font-display text-sm font-medium text-ink">{nameFor(e.dest)}</div>
-                          {e.maxStayDays != null && <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>}
-                        </div>
-                        <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS.visa_on_arrival}`}>On arrival</span>
-                      </div>
+                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                     ))}
                   </div>
                 </details>
@@ -341,16 +344,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {etaEdges.slice(0, 30).map((e) => (
-                  <div key={e.dest} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                    <span className="text-xl">{flagFor(e.dest)}</span>
-                    <div className="min-w-0">
-                      <div className="font-display text-sm font-medium text-ink">{nameFor(e.dest)}</div>
-                      {e.maxStayDays != null && <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>}
-                    </div>
-                    <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[e.level]}`}>
-                      {e.level === "eta" ? "eTA" : "e-Visa"}
-                    </span>
-                  </div>
+                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                 ))}
               </div>
               {etaEdges.length > 30 && (
@@ -362,16 +356,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   </summary>
                   <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {etaEdges.slice(30).map((e) => (
-                      <div key={e.dest} className="flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                        <span className="text-xl">{flagFor(e.dest)}</span>
-                        <div className="min-w-0">
-                          <div className="font-display text-sm font-medium text-ink">{nameFor(e.dest)}</div>
-                          {e.maxStayDays != null && <div className="mono text-[10px] text-ink-mute">≤ {e.maxStayDays} days</div>}
-                        </div>
-                        <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[e.level]}`}>
-                          {e.level === "eta" ? "eTA" : "e-Visa"}
-                        </span>
-                      </div>
+                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                     ))}
                   </div>
                 </details>
@@ -389,12 +374,18 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 As a {country.name} citizen you have the right to live and work in these countries through regional bloc membership - no visa required.
               </p>
               <div className="mt-5 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
-                {result.freedomOfMovement.map((e) => (
-                  <div key={e.dest} className="flex min-h-[40px] items-center gap-2.5 text-[15px] text-ink-soft">
-                    <span className="text-lg">{flagFor(e.dest)}</span>
-                    <span className="font-display">{nameFor(e.dest)}</span>
-                  </div>
-                ))}
+                {result.freedomOfMovement.map((e) => {
+                  const destSlug = nameToSlug(nameFor(e.dest));
+                  const href = isUsefulCorridor(country.iso3, e.dest)
+                    ? `/passport/${slug}/${destSlug}`
+                    : `/destination/${destSlug}`;
+                  return (
+                    <Link key={e.dest} href={href} className="group flex min-h-[40px] items-center gap-2.5 text-[15px] text-ink-soft transition hover:text-stamp">
+                      <span className="text-lg">{flagFor(e.dest)}</span>
+                      <span className="font-display">{nameFor(e.dest)}</span>
+                    </Link>
+                  );
+                })}
               </div>
             </section>
           )}
