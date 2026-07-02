@@ -7,6 +7,7 @@ import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { compute, LEVEL_LABEL } from "@/lib/compute";
 import type { AccessLevel } from "@/lib/types";
 import { TOP_NATIONALITIES, TOP_DESTINATIONS, corridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
+import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
@@ -46,6 +47,31 @@ function resolve(natIso3: string, destIso3: string): Status {
   return { kind: "visa_required" };
 }
 
+// SERP-facing status phrase: answers the query in the title itself (better CTR)
+// and matches how people search ("thailand visa for indians free / on arrival").
+function statusPhrase(s: Status): string {
+  switch (s.kind) {
+    case "visa_free": return "Visa-Free Entry";
+    case "visa_on_arrival": return "Visa on Arrival";
+    case "eta": return "eTA Required";
+    case "e_visa": return "e-Visa Guide";
+    case "fom": return "No Visa Needed";
+    case "own": return "Home Country";
+    default: return "Requirements & Cost";
+  }
+}
+
+// Title for a corridor page, using the colloquial token people actually search
+// (Dubai > UAE, Bali > Indonesia, UK > United Kingdom) while the page content
+// stays official-jurisdiction accurate.
+function corridorTitle(nIso3: string, dIso3: string, dName: string, nd: string, s: Status): string {
+  const aliasLead = CORRIDOR_TITLE_ALIAS[dIso3];
+  const short = SHORT_NAME[dIso3] ?? dName;
+  if (aliasLead) return `${aliasLead} Visa for ${nd} Citizens 2026 - ${short} ${statusPhrase(s)}`;
+  if (dIso3 === "SAU" && UMRAH_NATIONALITIES.has(nIso3)) return `Saudi Arabia Visa for ${nd} Citizens 2026 - Tourist & Umrah`;
+  return `${short} Visa for ${nd} Citizens 2026: ${statusPhrase(s)}`;
+}
+
 const VERB: Record<string, string> = {
   visa_free: "can travel visa-free to",
   visa_on_arrival: "can get a visa on arrival for",
@@ -72,10 +98,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!n || !d) return { title: "Not Found" };
   const s = resolve(n.iso3, d.iso3);
   const nd = DEMONYM[n.iso3] ?? n.name;
-  const need = s.kind === "visa_required" || s.kind === "e_visa" || s.kind === "eta";
-  const title = `${d.name} Visa for ${nd} Citizens (2026): ${need ? "Requirements" : "Visa-Free Entry"}`;
-  const description = `${answerSentence(nd, d.name, s)} See stay length, conditions, required documents and the official government source.`;
+  const title = corridorTitle(n.iso3, d.iso3, d.name, nd, s);
+  const description = `${answerSentence(nd, d.name, s)} See stay length, fees, conditions, required documents and the official government source.`;
   const canonical = `https://earthvisa.in/passport/${slug}/${dest}`;
+  const aliasLead = CORRIDOR_TITLE_ALIAS[d.iso3];
+  const short = SHORT_NAME[d.iso3] ?? d.name;
   return {
     title: { absolute: `${title} | Earth Visa` },
     description,
@@ -86,6 +113,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       `${n.name.toLowerCase()} passport ${d.name.toLowerCase()} visa`,
       `${d.name.toLowerCase()} visa requirements for ${nd.toLowerCase()}`,
       `${n.name.toLowerCase()} to ${d.name.toLowerCase()} visa`,
+      ...(aliasLead ? [
+        `${aliasLead.toLowerCase()} visa for ${nd.toLowerCase()}`,
+        `${aliasLead.toLowerCase()} visa for ${nd.toLowerCase()} citizens`,
+        `${aliasLead.toLowerCase()} visa requirements for ${nd.toLowerCase()}`,
+      ] : []),
+      ...(short !== d.name ? [`${short.toLowerCase()} visa for ${nd.toLowerCase()}`] : []),
+      ...(d.iso3 === "SAU" && UMRAH_NATIONALITIES.has(n.iso3) ? [
+        `umrah visa for ${nd.toLowerCase()}`,
+        `umrah visa requirements for ${nd.toLowerCase()}`,
+      ] : []),
     ],
     alternates: { canonical },
     openGraph: { title, description, url: canonical, type: "article" },
@@ -119,6 +156,10 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const s = resolve(n.iso3, d.iso3);
   const nd = DEMONYM[n.iso3] ?? n.name;
   const need = s.kind === "visa_required" || s.kind === "e_visa" || s.kind === "eta";
+  // Colloquial phrasing (Dubai/Bali/Umrah) - content stays official-jurisdiction accurate.
+  const aliasLead = CORRIDOR_TITLE_ALIAS[d.iso3];
+  const aliasNote = aliasLead ? ALIASES.find((a) => a.alias === aliasLead)?.note : undefined;
+  const umrah = d.iso3 === "SAU" && UMRAH_NATIONALITIES.has(n.iso3);
   const visaTypes = dataset.destinationVisaTypes?.[d.iso3] ?? [];
   const vfsCorr = (dataset.vfsCorridors?.[d.iso3] ?? []).find((c) => c.sourceIso3 === n.iso3);
   const hasVfs = !!vfsCorr;
@@ -144,6 +185,12 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       ? { q: `How long can ${nd} citizens stay in ${d.name}?`, a: `${nd} passport holders can stay in ${d.name} for up to ${s.maxStayDays} days per entry under the current ${LEVEL_LABEL[s.kind].toLowerCase()} arrangement.` }
       : null,
     { q: `What documents do ${nd} citizens need for ${d.name}?`, a: hasVfs ? `A valid passport plus the ${d.name} document checklist for your visa type — Earth Visa lists the full required documents per visa category from the official visa application centre.` : `A passport valid for at least six months, proof of onward travel and funds, and any documents required for the specific ${d.name} visa category. Always confirm with the official source.` },
+    aliasLead
+      ? { q: `Is the ${aliasLead} visa different from the ${SHORT_NAME[d.iso3] ?? d.name} visa?`, a: `No. ${aliasNote ?? `${aliasLead} follows ${d.name}'s national visa policy.`} There is no separate ${aliasLead} visa - the ${d.name} rules on this page are what apply.` }
+      : null,
+    umrah
+      ? { q: `Can ${nd} citizens perform Umrah - do they need a separate Umrah visa?`, a: `Saudi Arabia permits Umrah (not Hajj) on a tourist visa, and also issues dedicated Umrah visas processed through the official Nusuk platform. ${nd} pilgrims should apply via Nusuk or an authorised Umrah operator, and always confirm current rules on the official Saudi government portals before booking.` }
+      : null,
   ].filter(Boolean) as { q: string; a: string }[];
 
   const jsonLd = {
@@ -175,9 +222,17 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             <div className="flex items-center gap-3">
               <span className="text-4xl leading-none">{flagFor(d.iso3)}</span>
               <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
-                {d.name} Visa for {nd} Citizens
+                {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
+                <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
+                  {umrah ? "Tourist & Umrah - 2026 Requirements" : "2026 Requirements, Fees & Documents"}
+                </span>
               </h1>
             </div>
+            {aliasNote && (
+              <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                {aliasNote}
+              </p>
+            )}
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <StatusBadge s={s} />
               {"maxStayDays" in s && s.maxStayDays ? (

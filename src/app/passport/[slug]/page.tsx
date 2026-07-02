@@ -19,6 +19,24 @@ export async function generateStaticParams() {
   return dataset.allCountries.map((c) => ({ slug: nameToSlug(c.name) }));
 }
 
+// Global rank by total reach - shared by metadata and the page body.
+const rankOf = new Map(
+  Object.entries(dataset.passportAccess)
+    .map(([iso3, edges]) => ({ iso3, count: edges.length }))
+    .sort((a, b) => b.count - a.count)
+    .map((r, i) => [r.iso3, i + 1]),
+);
+
+// Head-term titles: "{country} passport ranking 2026" is the dominant query
+// shape, and rank-in-title answers it in the SERP. India gets the exact
+// highest-volume phrasing for its cluster.
+function passportTitle(iso3: string, name: string, rank: number | undefined, vfCount: number): string {
+  if (iso3 === "IND") return `Visa-Free Countries for Indians 2026 - Full List (${vfCount}) & Passport Rank`;
+  return rank
+    ? `${name} Passport Ranking 2026: #${rank} of 199 - ${vfCount} Visa-Free Countries`
+    : `${name} Passport Ranking 2026 - ${vfCount} Visa-Free Countries`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const country = slugToCountry(slug);
@@ -31,8 +49,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const total = result.reach.length;
   const flag = flagFor(country.iso3);
 
-  const title = `${country.name} Passport Ranking 2026 - ${vfCount} Visa-Free Countries`;
-  const description = `Visa-free countries for the ${country.name} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} e-visa. See the full list from official government sources.`;
+  const rank = rankOf.get(country.iso3);
+  const title = passportTitle(country.iso3, country.name, rank, vfCount);
+  const description = `Visa-free countries for the ${country.name} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} e-visa${rank ? `. Ranked #${rank} of 199 passports` : ""}. Full list from official government sources.`;
 
   return {
     title,
@@ -86,12 +105,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
   const cbiCount = result.cbi.length;
   const rbiCount = result.rbi.length;
 
-  // Rank: count how many passports have >= reach
-  const allReachCounts = Object.entries(dataset.passportAccess)
-    .map(([iso3, edges]) => ({ iso3, count: edges.length }))
-    .sort((a, b) => b.count - a.count);
-  const rankIdx = allReachCounts.findIndex((r) => r.iso3 === country.iso3);
-  const rank = rankIdx >= 0 ? rankIdx + 1 : null;
+  const rank = rankOf.get(country.iso3) ?? null;
 
   // Corridor guides where this passport is the traveller (internal link mesh).
   const demonym = DEMONYM[country.iso3] ?? country.name;
@@ -181,7 +195,10 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 </h1>
                 {rank && (
                   <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
-                    Ranked #{rank} of 199 passports worldwide
+                    Ranked #{rank} of 199 passports worldwide ·{" "}
+                    <Link href="/rankings" className="underline decoration-line underline-offset-4 transition hover:text-ink">
+                      Full 2026 passport index
+                    </Link>
                   </p>
                 )}
               </div>

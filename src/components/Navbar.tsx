@@ -14,6 +14,7 @@ const LINKS = [
   { href: "/visit", label: "Entry Check" },
   { href: "/passport", label: "Passports" },
   { href: "/destination", label: "Destinations" },
+  { href: "/rankings", label: "Rankings" },
 ];
 
 export default function Navbar() {

@@ -16,7 +16,17 @@ export const TOP_DESTINATIONS = [
   "MDV", "SAU", "QAT", "TUR", "OMN", "BHR", "KWT", "JOR", "CAN", "AUS",
   "NZL", "JPN", "KOR", "CHN", "HKG", "IND", "PHL", "EGY", "KEN", "ZAF",
   "MAR", "TZA", "BRA", "MEX", "ARG", "RUS", "GEO", "AZE", "KAZ", "UZB",
+  "IRL",
 ];
+
+// High-search-demand corridors that the thin-content prune would otherwise drop
+// (visa-required, no grant/VFS docs). These render destination visa types + fee
+// data instead, so they carry real content. "nat|dest" keys.
+const FORCE_CORRIDORS = new Set([
+  "IND|IRL", "PAK|IRL",
+  "NGA|CAN",
+  "IND|GBR", "PAK|GBR", "NGA|GBR",
+]);
 
 /** Adjectival demonym for the top nationalities, e.g. "Thailand Visa for Indian citizens". */
 export const DEMONYM: Record<string, string> = {
@@ -64,7 +74,7 @@ export function corridorPairs(): CorridorPair[] {
       const d = byIso3.get(dst);
       if (!d) continue;
       const hasVfs = (vfs[dst] ?? []).some((c) => c.sourceIso3 === nat);
-      if (!reach.has(dst) && !fom.has(dst) && !hasVfs) continue; // skip thin/generic
+      if (!reach.has(dst) && !fom.has(dst) && !hasVfs && !FORCE_CORRIDORS.has(`${nat}|${dst}`)) continue; // skip thin/generic
       out.push({ nat, dest: dst, natSlug: nameToSlug(n.name), destSlug: nameToSlug(d.name) });
     }
   }

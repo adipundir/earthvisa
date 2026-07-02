@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { corridorsForDestination, DEMONYM } from "@/lib/corridors";
+import { aliasBySlug, SHORT_NAME, type ColloquialAlias } from "@/lib/colloquial";
 import CorridorLinks from "@/components/CorridorLinks";
 import type { AccessLevel } from "@/lib/types";
 
@@ -10,12 +11,24 @@ function nameToSlug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-function slugToCountry(slug: string) {
-  return dataset.allCountries.find((c) => nameToSlug(c.name) === slug) ?? null;
+// A slug resolves to either a country or a colloquial alias (dubai → ARE).
+// Alias pages carry the query token people actually search while rendering the
+// official jurisdiction's rules, clearly labelled.
+function resolveSlug(slug: string): { country: (typeof dataset.allCountries)[number]; alias: ColloquialAlias | null } | null {
+  const alias = aliasBySlug.get(slug);
+  if (alias) {
+    const country = dataset.allCountries.find((c) => c.iso3 === alias.iso3);
+    return country ? { country, alias } : null;
+  }
+  const country = dataset.allCountries.find((c) => nameToSlug(c.name) === slug) ?? null;
+  return country ? { country, alias: null } : null;
 }
 
 export async function generateStaticParams() {
-  return dataset.allCountries.map((c) => ({ slug: nameToSlug(c.name) }));
+  return [
+    ...dataset.allCountries.map((c) => ({ slug: nameToSlug(c.name) })),
+    ...[...aliasBySlug.keys()].map((slug) => ({ slug })),
+  ];
 }
 
 const LEVEL_COLORS: Record<AccessLevel, string> = {
@@ -99,8 +112,9 @@ function buildReverseIndex(destIso3: string) {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const country = slugToCountry(slug);
-  if (!country) return { title: "Not Found" };
+  const resolved = resolveSlug(slug);
+  if (!resolved) return { title: "Not Found" };
+  const { country, alias } = resolved;
 
   const accessByLevel = buildReverseIndex(country.iso3);
   const vfCount = accessByLevel.visa_free.length;
@@ -108,19 +122,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const etaCount = accessByLevel.eta.length + accessByLevel.e_visa.length;
   const flag = flagFor(country.iso3);
 
-  const title = `Do I Need a Visa for ${country.name}? Entry Requirements 2026`;
-  const description = `${country.name} visa requirements 2026: ${vfCount} nationalities enter visa-free, ${voaCount} get visa on arrival. Check if your passport needs a visa, tourist visa rules, and entry conditions from official sources.`;
+  // Alias pages target the colloquial query ("do i need a visa for dubai")
+  // while making the governing jurisdiction explicit in the same title.
+  const display = alias?.alias ?? country.name;
+  const short = SHORT_NAME[country.iso3] ?? country.name;
+  const title = alias
+    ? `Do I Need a Visa for ${display}? ${short} Entry Requirements 2026`
+    : `Do I Need a Visa for ${country.name}? Entry Requirements 2026`;
+  const description = alias
+    ? `${display} visa requirements 2026: ${display} follows ${country.name}'s visa policy. ${vfCount} nationalities enter visa-free, ${voaCount} get visa on arrival. Check if your passport needs a visa, from official sources.`
+    : `${country.name} visa requirements 2026: ${vfCount} nationalities enter visa-free, ${voaCount} get visa on arrival. Check if your passport needs a visa, tourist visa rules, and entry conditions from official sources.`;
 
   return {
     title,
     description,
     keywords: [
-      `do I need a visa for ${country.name.toLowerCase()}`,
-      `${country.name.toLowerCase()} visa requirements`,
-      `${country.name.toLowerCase()} visa requirements 2026`,
-      `${country.name.toLowerCase()} entry requirements`,
-      `${country.name.toLowerCase()} tourist visa`,
-      `${country.name.toLowerCase()} visa on arrival`,
+      `do I need a visa for ${display.toLowerCase()}`,
+      `${display.toLowerCase()} visa requirements`,
+      `${display.toLowerCase()} visa requirements 2026`,
+      `${display.toLowerCase()} entry requirements`,
+      `${display.toLowerCase()} tourist visa`,
+      `${display.toLowerCase()} visa on arrival`,
       `${country.name.toLowerCase()} visa free countries`,
       `countries that can visit ${country.name.toLowerCase()} without visa`,
       `how many countries can visit ${country.name.toLowerCase()} without visa`,
@@ -139,8 +161,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function DestinationPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const country = slugToCountry(slug);
-  if (!country) notFound();
+  const resolved = resolveSlug(slug);
+  if (!resolved) notFound();
+  const { country, alias } = resolved;
+  const display = alias?.alias ?? country.name;
 
   const flag = flagFor(country.iso3);
   const destIso3 = country.iso3;
@@ -197,7 +221,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         mainEntity: [
           {
             "@type": "Question",
-            name: `Do I need a visa to visit ${country.name}?`,
+            name: `Do I need a visa to visit ${display}?`,
             acceptedAnswer: {
               "@type": "Answer",
               text: `It depends on your nationality. Citizens of ${vfCount} countries can visit ${country.name} without a visa in 2026. An additional ${voaCount} nationalities can obtain a visa on arrival. If your country is not among these, you will likely need to apply for a tourist visa in advance at a ${country.name} embassy or consulate.`,
@@ -273,9 +297,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <span className="text-6xl leading-none">{flag}</span>
               <div>
                 <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
-                  {country.name} Visa Requirements 2026
+                  {display} Visa Requirements 2026
                   <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
-                    Entry Rules &amp; Visa-Free Access by Passport
+                    {alias ? <>Entry Rules Under {country.name} Visa Policy</> : <>Entry Rules &amp; Visa-Free Access by Passport</>}
                   </span>
                 </h1>
                 <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
@@ -283,6 +307,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </p>
               </div>
             </div>
+            {alias && (
+              <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                {alias.note}
+              </p>
+            )}
 
             {/* Stats */}
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
@@ -429,7 +458,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             <div className="mt-5 divide-y divide-line">
               {[
                 {
-                  q: `Do I need a visa to visit ${country.name}?`,
+                  q: `Do I need a visa to visit ${display}?`,
                   a: `It depends on your nationality. Citizens of ${vfCount} countries can visit ${country.name} without a visa in 2026. An additional ${voaCount} nationalities can obtain a visa on arrival. If your country is not among these, you will likely need to apply for a ${country.name} tourist visa in advance at an embassy or consulate.`,
                 },
                 {

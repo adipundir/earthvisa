@@ -378,23 +378,6 @@ export default function PassportExplorer() {
           </p>
         )}
 
-        {/* Quick-add popular countries */}
-        {selected.length === 0 && !query && (
-          <div className="mt-2.5 flex flex-wrap items-center gap-2">
-            <span className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Popular:</span>
-            {EXAMPLE_PASSPORTS.map((iso3) => (
-              <button
-                key={iso3}
-                onClick={() => add(iso3)}
-                className="inline-flex items-center gap-1.5 rounded border border-line-strong bg-white px-3 py-1.5 text-[13px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
-              >
-                <span>{flagFor(iso3)}</span>
-                <span>{nameFor(iso3)}</span>
-              </button>
-            ))}
-          </div>
-        )}
-
       </div>
 
       {/* ── Visas & permits - search-based selector ── */}
@@ -476,25 +459,6 @@ export default function PassportExplorer() {
               )}
             </div>
           )}
-        {creds.length === 0 && !credQuery && (
-          <div className="mt-2.5 flex flex-wrap items-center gap-2">
-            <span className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Common:</span>
-            {["US_VISA", "SCHENGEN_VISA", "UK_VISA", "JP_VISA", "CA_VISA", "AU_VISA"].map((id) => {
-              const c = dataset.credentials.find((x) => x.id === id);
-              if (!c) return null;
-              return (
-                <button
-                  key={id}
-                  onClick={() => toggleCred(id)}
-                  className="inline-flex items-center gap-1.5 rounded border border-line-strong bg-white px-3 py-1.5 text-[13px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
-                >
-                  <span>{GROUP_ISO3[c.group] ? flagFor(GROUP_ISO3[c.group]) : "🌐"}</span>
-                  <span>{c.short}</span>
-                </button>
-              );
-            })}
-          </div>
-        )}
         </div>
       </div>
 

@@ -95,7 +95,6 @@ const LEVEL_LEFT_BORDER: Record<AccessLevel, string> = {
   e_visa:        "border-l-evisa",
 };
 
-const EXAMPLE_PASSPORTS = ["IND", "DEU", "USA", "BRA", "NGA", "PHL"];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -502,23 +501,6 @@ export default function DestinationExplorer() {
           </p>
         )}
 
-        {/* Quick-add popular passports */}
-        {selected.length === 0 && !passQuery && (
-          <div className="mt-2.5 flex flex-wrap items-center gap-2">
-            <span className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute/70">Popular:</span>
-            {EXAMPLE_PASSPORTS.map((iso3) => (
-              <button
-                key={iso3}
-                onClick={() => addPassport(iso3)}
-                className="inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-2/80 px-3 py-1.5 text-[13px] text-ink-soft transition hover:border-stamp/40 hover:bg-stamp/[0.04] hover:text-ink"
-              >
-                <span>{flagFor(iso3)}</span>
-                <span>{nameFor(iso3)}</span>
-              </button>
-            ))}
-          </div>
-        )}
-
         {/* Stat: visa-free count */}
         {result && selected.length > 0 && (
           <p className="mt-3 text-sm text-ink-soft">
@@ -610,26 +592,6 @@ export default function DestinationExplorer() {
           )}
         </div>
 
-        {/* Credential quick-picks */}
-        {creds.length === 0 && !credQuery && (
-          <div className="mt-2.5 flex flex-wrap items-center gap-2">
-            <span className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute/70">Common:</span>
-            {["US_VISA", "SCHENGEN_VISA", "UK_VISA", "JP_VISA", "CA_VISA", "AU_VISA"].map((id) => {
-              const c = dataset.credentials.find((x) => x.id === id);
-              if (!c) return null;
-              return (
-                <button
-                  key={id}
-                  onClick={() => toggleCred(id)}
-                  className="inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-2/80 px-3 py-1.5 text-[13px] text-ink-soft transition hover:border-stamp/40 hover:bg-stamp/[0.04] hover:text-ink"
-                >
-                  <span>{GROUP_ISO3[c.group] ? flagFor(GROUP_ISO3[c.group]) : "🌐"}</span>
-                  <span>{c.short}</span>
-                </button>
-              );
-            })}
-          </div>
-        )}
       </div>
 
       {/* ── "Also check" cross-link - shown above result when passport is selected ── */}
