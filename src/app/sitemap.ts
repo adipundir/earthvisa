@@ -8,7 +8,7 @@ function nameToSlug(name: string): string {
 }
 
 // Static SEO routes built outside the country/corridor graph.
-const GUIDE_PAGES = ["/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa"];
+const GUIDE_PAGES = ["/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds"];
 const PROGRAM_PAGES = [
   "/programs/citizenship-by-investment",
   "/programs/golden-visa",

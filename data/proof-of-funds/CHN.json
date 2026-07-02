@@ -1,0 +1,60 @@
+{
+  "key": "CHN",
+  "name": "China",
+  "visa": "China tourist (L) visa",
+  "scope": "country",
+  "updated": "2026-07-03",
+  "confidence": "medium",
+  "official": {
+    "published": true,
+    "daily_minimum": {
+      "amount": 100,
+      "currency": "USD",
+      "basis": "per day",
+      "note": "From the Chinese Embassy in Pakistan's visa instructions: for applicable visa categories (including cases requiring financial proof), the closing balance on the applicant's latest bank statement 'should be enough to cover all expenses during the applicant's real stay period in China, no less than US $100 per day or equivalent Pakistani Rupees.' This per-day figure is not published uniformly by every Chinese embassy/consulate - some posts (e.g. Cebu, Philippines) instead ask for a 6-month bank certificate/statement with no stated daily amount, and India's Mumbai consulate instead publishes a flat per-applicant minimum balance (see total_example) rather than a per-day rate. Requirements vary by the specific embassy/consulate processing the application.",
+      "source_url": "https://pk.china-embassy.gov.cn/eng/lsfw/va/202411/t20241104_11520719.htm",
+      "official": true
+    },
+    "total_example": {
+      "days": null,
+      "amount": 100000,
+      "currency": "INR",
+      "note": "Applies specifically to applicants filing at the Chinese Consulate-General in Mumbai (India jurisdiction), not a global figure: 'The minimum bank account balance of each applicant applying for tourist visa (L visa category) is adjusted to 100,000 (one Lakh) Rupees.' For a family where one person covers all members' expenses, that person's balance must cover the group (e.g. a 3-member family needs over INR 300,000 in the sponsor's account). Other Chinese visa jurisdictions (e.g. Pakistan) instead use a US$100/day formula; the Philippines (Cebu) asks only for a 6-month bank certificate with no stated minimum amount.",
+      "source_url": "https://www.visaforchina.cn/BOM3_EN/tongzhigonggao/326670203922550784.html"
+    },
+    "guidance": "Chinese visa offices do not publish one single global minimum for the L (tourist) visa. Requirements are set locally by the embassy/consulate-general with jurisdiction over the applicant: some (Mumbai, India) publish a fixed minimum bank balance in local currency; some (Pakistan) require the closing balance to cover the trip at no less than US$100/day or equivalent local currency; others (Cebu, Philippines) simply require a bank certificate of deposit balance plus 6 months of statements, with no numeric minimum stated. Applicants should check the specific instructions published by the Chinese embassy/consulate-general covering their location.",
+    "per_member": []
+  },
+  "community": {
+    "typical_approved": "Because the official minimum varies by jurisdiction (or is unstated in many), reported 'safe' amounts vary widely. Visa-consultant blogs and agents commonly suggest Indian applicants keep a steady balance of roughly INR 1-1.5 lakh (~USD 1,200-1,800) per person for about 3 months before applying - broadly consistent with Mumbai's official INR 100,000 minimum. For a 7-10 day trip, some agents suggest INR 1.5-2.5 lakh is a comfortable cushion. These are anecdotal benchmarks, not guarantees, and officers reportedly weigh transaction history and income consistency as much as the closing balance.",
+    "notes": "Anecdotal, drawn from visa-agency blogs, travel-consultant guidance, and general applicant reports rather than a single dedicated visa forum thread; treat as indicative only, not an official rule. Consistency of the balance over the 3-6 months before applying, and alignment with declared income/occupation, is repeatedly cited as more important than the single closing-balance number.",
+    "sources": [
+      "https://www.citrontours.ae/bank-balance-required-for-china-visa-approval/",
+      "https://btwvisas.com/blog/china-visa-rejection-reasons-india-2026--checklist--fix/",
+      "https://useteleport.com/blog/china-visa-rejection-reasons"
+    ]
+  },
+  "documents": [
+    "personal bank statement, usually the latest 3-6 months, original with bank stamp/seal on every page",
+    "bank certificate of deposit balance and the payment receipt for that certificate (required at some posts, e.g. Philippines)",
+    "income tax return (ITR) or BIR-stamped income tax return, where applicable",
+    "certificate of employment / employer letter detailing salary and length of employment, or a company-issued mission/sponsorship letter if the employer is paying for the trip",
+    "business registration certificate if self-employed/business owner",
+    "if a dependent (child, student, housewife, etc.) cannot show personal funds: parent's or spouse's financial documents plus a relationship proof",
+    "proof of prepaid flights and hotel bookings covering the stay"
+  ],
+  "red_flags": [
+    "large lump-sum deposit shortly before applying without a clear, documented source",
+    "closing balance inconsistent with declared income, occupation, or transaction history",
+    "thin or irregular account activity instead of steady salary/business credits over the review period",
+    "very low balance that does not plausibly cover the stated trip length and itinerary",
+    "undeclared prior visa refusals or inconsistent information across the application"
+  ],
+  "sources": [
+    "https://pk.china-embassy.gov.cn/eng/lsfw/va/202411/t20241104_11520719.htm",
+    "https://www.visaforchina.cn/BOM3_EN/tongzhigonggao/326670203922550784.html",
+    "https://cebu.china-consulate.gov.cn/eng/zytz/202311/t20231119_11183065.htm",
+    "https://www.citrontours.ae/bank-balance-required-for-china-visa-approval/",
+    "https://btwvisas.com/blog/china-visa-rejection-reasons-india-2026--checklist--fix/"
+  ]
+}

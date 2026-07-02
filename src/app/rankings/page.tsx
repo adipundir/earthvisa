@@ -68,6 +68,9 @@ export const metadata: Metadata = {
     "passport strength index",
     "visa free countries by passport",
     "passport power rank",
+    "strongest visa in the world",
+    "most powerful visa in the world",
+    "which is the strongest visa",
   ],
   alternates: { canonical: "https://earthvisa.in/rankings" },
   openGraph: {
@@ -87,6 +90,10 @@ const FAQS = [
   {
     q: "What is a passport index?",
     a: `A passport index is a ranking of the world's passports by how much visa-free travel each one allows. Each passport is scored by counting the destinations its holders can enter without arranging a visa at an embassy first - whether fully visa-free, with a visa on arrival, or with an electronic authorisation (eTA or e-visa). The Earth Visa passport index 2026 ranks all 199 passports by total reach across ${destCount} destinations, using official government sources only.`,
+  },
+  {
+    q: "Which is the strongest visa in the world?",
+    a: `People often say "strongest visa" when they mean the strongest passport - the document that grants the most visa-free travel. By that measure, the ${top1.name} passport is the strongest in the world in 2026, reaching ${top1.total} destinations without a pre-arranged embassy visa. (A "visa" itself is a permit to enter one country; a passport's strength is what determines how many countries you can enter visa-free.)`,
   },
   {
     q: "Which passport is the strongest in the world in 2026?",

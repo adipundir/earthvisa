@@ -488,6 +488,13 @@ export default function SchengenGuidePage() {
               consulate outsources intake to VFS Global or TLScontact, a separate service fee is charged on top. The
               visa fee is not refunded if the application is refused.
             </p>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+              Wondering how much money to show in your bank statement? See our{" "}
+              <Link href="/guide/proof-of-funds#schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
+                Schengen proof-of-funds guide
+              </Link>{" "}
+              for the official daily-subsistence amount required by each member state.
+            </p>
           </section>
 
           {/* Corridor guides per top destination */}
