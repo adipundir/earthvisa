@@ -1,0 +1,85 @@
+{
+  "iso3": "AGO",
+  "name": "Angola",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (embassy-issued)",
+      "amount": 70,
+      "currency": "USD",
+      "amount_usd": 70,
+      "validity": "90 days",
+      "applies": "nationalities not covered by the 30-day visa exemption",
+      "official": true,
+      "source_url": "https://angola.org/visa-requirements/",
+      "notes": "Fee published by the Embassy of Angola in Washington DC; consular fees can differ by embassy. Proof of subsistence means (~USD 200/day) required."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa / pre-approved visa on arrival (SME e-Visa portal)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "typically 30 days",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://www.smevisa.gov.ao/",
+      "notes": "Applied via the official SME e-Visa portal (smevisa.gov.ao); pre-approval issued online, visa collected and paid at the border in USD or kwanza. The fee is not published on a publicly accessible official page (third-party sites report ~USD 120), so amount is left null rather than guessed."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (with online pre-approval)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "30 days",
+      "applies": "eligible nationalities with SME pre-approval",
+      "official": true,
+      "source_url": "https://www.smevisa.gov.ao/",
+      "notes": "Paid at dedicated e-Visa counters at the port of entry in USD or kwanza. Amount not verifiable on an official public page (unofficial sources cite USD 120); left null per accuracy rules."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Ordinary (business) visa",
+      "amount": 70,
+      "currency": "USD",
+      "amount_usd": 70,
+      "validity": "up to 30 days per stay, extendable",
+      "applies": "all requiring a visa",
+      "official": true,
+      "source_url": "https://angola.org/visa-requirements/",
+      "notes": "Embassy of Angola (Washington DC) fee for ordinary/business visa for US applicants; processing 5-8 business days. Short-term visa is USD 80 at the same mission."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "up to 5 days",
+      "applies": "all requiring a visa",
+      "official": true,
+      "source_url": "https://angola.org/visa-requirements/",
+      "notes": "Requires yellow fever vaccination certificate and proof of onward travel."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "not publicly verifiable",
+    "currency": "USD",
+    "note": "VFS Global operates Angola visa application centres in some countries (e.g. Nigeria, visa.vfsglobal.com/nga/en/ago); the service fee is set per centre and the page was not publicly accessible to verify an amount. Many other corridors still apply directly to Angolan embassies.",
+    "source_url": "https://visa.vfsglobal.com/nga/en/ago"
+  },
+  "sources": [
+    "https://angola.org/visa-requirements/",
+    "https://angola.org/online-visa/",
+    "https://www.smevisa.gov.ao/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Angola.html",
+    "https://visa.vfsglobal.com/nga/en/ago"
+  ],
+  "free_visa_notes": "Since late 2023 Angola grants visa-free entry for tourism to citizens of ~98 countries (incl. USA, UK, Canada, EU, China, Russia and others) for up to 30 days per trip and 90 days per calendar year (Presidential Decree 189/23). Confirmed for US citizens by travel.state.gov. Nationals not on the exemption list (e.g. India, Nigeria, Pakistan, Philippines, Bangladesh generally) still need a visa. No fee for diplomatic/official/courtesy visas."
+}

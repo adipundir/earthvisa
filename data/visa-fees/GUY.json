@@ -1,0 +1,81 @@
+{
+  "iso3": "GUY",
+  "name": "Guyana",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visitor visa on arrival (standard)",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "up to 3 months",
+      "applies": "nationalities requiring a visa; pre-approval letter must be obtained before travel (visa affixed on arrival)",
+      "official": true,
+      "source_url": "https://guyanaconsulatenewyork.org/visas/",
+      "notes": "Approval letter required before boarding; apply via Ministry of Home Affairs eServices portal (eservices.iss.gov.gy), processing 10-14 working days per Embassy of Guyana Brussels."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visitor visa on arrival (expedited)",
+      "amount": 35,
+      "currency": "USD",
+      "amount_usd": 35,
+      "validity": "up to 3 months",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://guyanaconsulatenewyork.org/visas/",
+      "notes": "Expedited processing of the visa-on-arrival approval."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (embassy-issued, single entry)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa applying at a Guyana mission",
+      "official": true,
+      "source_url": "https://newdelhihc.mission.gov.gy/consular-services/visa-enter-guyana",
+      "notes": "Fees are set per mission in local currency (e.g. High Commission New Delhi charges INR 5,000 single-entry tourist). No universal USD schedule published; see reciprocity_variations."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (embassy-issued)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa; must apply online via Ministry of Home Affairs eServices",
+      "official": true,
+      "source_url": "https://newdelhihc.mission.gov.gy/consular-services/visa-enter-guyana",
+      "notes": "Per-mission local-currency fees (e.g. New Delhi: INR 7,000 single entry, INR 10,000 multiple entry). No universal USD schedule verified."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 5000,
+      "currency": "INR",
+      "note": "Single-entry tourist visa fee at the Guyana High Commission, New Delhi (non-refundable)."
+    },
+    {
+      "nationalities": ["IND"],
+      "kind": "business_visa",
+      "amount": 7000,
+      "currency": "INR",
+      "note": "Single-entry business visa at Guyana High Commission New Delhi; multiple entry INR 10,000."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://guyanaconsulatenewyork.org/visas/",
+    "https://eservices.iss.gov.gy/visitor-visa",
+    "https://www.embassyofguyana.be/services.php?sid=34",
+    "https://newdelhihc.mission.gov.gy/consular-services/visa-enter-guyana",
+    "https://www.minfor.gov.gy/consulates/visa-entry-requirements"
+  ],
+  "free_visa_notes": "Guyana grants visa-free entry to nationals of most countries, including USA, GBR, CAN, EU members, CARICOM and most Commonwealth states - no fee applies for them. Fees above apply only to the minority of nationalities (e.g. IND, CHN, NGA, PAK, BGD) that require a visa."
+}

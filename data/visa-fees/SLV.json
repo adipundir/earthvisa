@@ -1,0 +1,70 @@
+{
+  "iso3": "SLV",
+  "name": "El Salvador",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist card (tarjeta de turismo) on arrival",
+      "amount": 12,
+      "currency": "USD",
+      "amount_usd": 12,
+      "validity": "90 or 180 days depending on passport validity/purpose; single entry",
+      "applies": "visa-exempt (Category A) nationalities, e.g. USA, CAN, GBR, EU",
+      "official": true,
+      "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/ElSalvador.html",
+      "notes": "Not a visa - an entry tourist card purchased at the port of entry. El Salvador is part of the CA-4 agreement (free movement with Guatemala, Honduras, Nicaragua for 90 days total). Fee confirmed on US State Dept country page; DGME does not publish it online."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Consular visa (Visa Consular / Sin Consulta, Category B)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "typically up to 90 days stay",
+      "applies": "Category B nationalities; Category C holders of valid US/Canada/Schengen visas may upgrade to consular visa",
+      "official": true,
+      "source_url": "https://rree.gob.sv/visas/",
+      "notes": "Applied for at Salvadoran embassies/consulates (or by emailing form to visaselsalvador@rree.gob.sv). Fee amount is NOT published on rree.gob.sv or migracion.gob.sv; third-party sources report roughly USD 30-60 but this could not be verified on an official source, so amount left null."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Consulted visa (Visa Consultada, Category C)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "typically up to 90 days stay",
+      "applies": "Category C nationalities (higher-scrutiny list, e.g. requires prior authorisation from Direccion General de Migracion y Extranjeria)",
+      "official": true,
+      "source_url": "https://www.migracion.gob.sv/wp-content/uploads/2022/04/F.46-VISA-CONSULTADA-1.pdf",
+      "notes": "Requires prior approval from DGME before the consulate can issue. Application form F-46 is published by DGME; the fee amount is not published online, so amount left null. Holding a valid US/Canada/Schengen visa can upgrade the applicant from Category C to consular-visa (B) treatment per rree.gob.sv/visas."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Special Entry Permit (Permiso Especial de Ingreso, PEI)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": null,
+      "applies": "visa-required nationals who cannot obtain a consular/consulted visa (no Salvadoran consulate in their country, force majeure)",
+      "official": true,
+      "source_url": "https://www.migracion.gob.sv/servicios/solicitud-y-pago-de-permiso-especial-de-ingreso-para-nacionales-que-no-portan-visa-consular-o-visa-consultada/",
+      "notes": "Online application and payment via DGME - functions as the closest thing El Salvador has to an e-visa. USD 100.00 migration service fee confirmed on the official DGME page."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "El Salvador does not outsource visa applications to VFS Global, TLScontact or BLS; applications go directly through consulates/MFA (visaselsalvador@rree.gob.sv) or DGME online for the PEI."
+  },
+  "sources": [
+    "https://rree.gob.sv/visas/",
+    "https://rree.gob.sv/emision-de-visa-consular-y-de-cortesia/",
+    "https://www.migracion.gob.sv/servicios/solicitud-y-pago-de-permiso-especial-de-ingreso-para-nacionales-que-no-portan-visa-consular-o-visa-consultada/",
+    "https://www.migracion.gob.sv/servicios/listado-visa/",
+    "https://www.migracion.gob.sv/wp-content/uploads/2022/04/F.46-VISA-CONSULTADA-1.pdf",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/ElSalvador.html"
+  ],
+  "free_visa_notes": "Most Western/Latin American nationalities (Category A) need no visa - only the USD 12 tourist card on arrival. Visa fees by nationality reciprocity are not published; El Salvador instead uses a three-tier category system (A exempt / B consular / C consulted) and no per-nationality fee schedule could be verified on official sources."
+}

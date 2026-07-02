@@ -1,0 +1,86 @@
+{
+  "iso3": "BDI",
+  "name": "Burundi",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Entry visa (simple entry, online via migration.gov.bi)",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": "1 month",
+      "applies": "all (EAC citizens exempt/free)",
+      "official": true,
+      "source_url": "https://migration.gov.bi/Apply/step1/3",
+      "notes": "Applied online on the official CGM portal; same fee schedule as visas obtained at embassies or on arrival."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Entry visa - multiple entry",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": "1 month, renewable up to 2 times",
+      "applies": "all (EAC citizens exempt/free)",
+      "official": true,
+      "source_url": "https://migration.gov.bi/Apply/step1/3",
+      "notes": "Obtainable online, at the airport, or through Burundian embassies."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Airport entry visa (visa d'entree aeroport)",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": "1 month",
+      "applies": "all eligible nationalities",
+      "official": true,
+      "source_url": "https://migration.gov.bi/",
+      "notes": "CGM portal lists 'Visa d'entree aeroport' as a service; entry-visa tariff is USD 90 per the official fee table. Pre-application online is encouraged."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "3 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://migration.gov.bi/Apply/step1/3",
+      "notes": ""
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business travel (uses standard entry visa)",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": "1 month",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://migration.gov.bi/Apply/step1/3",
+      "notes": "Burundi does not publish a separate business-visa category; business travellers use the standard simple/multiple entry visa (USD 90). Stay extension: USD 10 per 5 days (max 25 days), then USD 70 per month."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["KEN", "UGA", "TZA", "RWA", "SSD", "COD", "SOM"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "East African Community citizens: free EAC visa/pass valid 6 months per official CGM tariff table."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://migration.gov.bi/Apply/step1/3",
+    "https://migration.gov.bi/",
+    "https://www.mae.gov.bi/en/visa-application-forms/"
+  ],
+  "free_visa_notes": "Visas are not free generally; EAC member-state citizens receive a free 6-month EAC entry pass and free student visas."
+}

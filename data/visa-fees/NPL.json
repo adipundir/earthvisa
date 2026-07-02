@@ -1,0 +1,125 @@
+{
+  "iso3": "NPL",
+  "name": "Nepal",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival - 15 days (multiple entry)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "15 days",
+      "applies": "all eligible nationalities (most nationalities; some must obtain visa in advance)",
+      "official": true,
+      "source_url": "https://tia.immigration.gov.np/en/page/on-arrival-tourist-visa",
+      "notes": "Payable in cash at entry points (USD preferred, major convertible currencies accepted). Confirmed on Embassy of Nepal Beijing (cn.nepalembassy.gov.np) and TIA Immigration Office pages."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival - 30 days (multiple entry)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30 days",
+      "applies": "all eligible nationalities",
+      "official": true,
+      "source_url": "https://tia.immigration.gov.np/en/page/on-arrival-tourist-visa",
+      "notes": "Extension: USD 45 for minimum 15 days, then USD 3/day; max 150 days per calendar year on tourist visa."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival - 90 days (multiple entry)",
+      "amount": 125,
+      "currency": "USD",
+      "amount_usd": 125,
+      "validity": "90 days",
+      "applies": "all eligible nationalities",
+      "official": true,
+      "source_url": "https://tia.immigration.gov.np/en/page/on-arrival-tourist-visa",
+      "notes": ""
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued tourist visa (pre-arrival sticker)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "15/30/90 days",
+      "applies": "all; mandatory for nationalities not eligible for visa on arrival",
+      "official": true,
+      "source_url": "https://cn.nepalembassy.gov.np/pages/visa/",
+      "notes": "Embassies charge in local currency at rates equivalent to the on-arrival USD schedule; e.g. Embassy of Nepal Beijing publishes RMB 225 (15d) / RMB 375 (30d) / RMB 950 (90d), cash only. Local-currency amounts vary by mission - check the relevant Nepal embassy."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 5,
+      "currency": "USD",
+      "amount_usd": 5,
+      "validity": "24 hours (transit through Nepal)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://immigration.gov.np/en/page/transit-visa",
+      "notes": "Fill online visa application, pay USD 5 at the bank counter, then proceed to the Transit Visa desk on arrival."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business (non-tourist) visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "investors/business visitors via Department of Immigration, Kathmandu",
+      "official": true,
+      "source_url": "https://immigration.gov.np/",
+      "notes": "Business visas are issued/converted by the Department of Immigration in Kathmandu (not on arrival); the fee schedule is not published on the pages verified for this record, so no amount is recorded. Embassy of Nepal Beijing directs applicants to the Department of Immigration for pricing."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Indian citizens do not require a visa to enter Nepal."
+    },
+    {
+      "nationalities": ["CHN"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Chinese nationals are exempted from the tourist visa fee (gratis visa). Source: cn.nepalembassy.gov.np and immigration.gov.np."
+    },
+    {
+      "nationalities": ["PAK", "BGD", "LKA", "BTN", "MDV"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "USD",
+      "note": "SAARC nationals (except Afghanistan) receive a gratis 30-day tourist visa on first entry in a calendar year; standard fees apply beyond 30 days or on repeat visits within the year."
+    },
+    {
+      "nationalities": ["AFG"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Afghan citizens: gratis visa on arrival only with prior recommendation of the Department of Immigration; otherwise must apply in advance."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": null,
+    "currency": null,
+    "note": "VFS Global operates a Nepal corridor in Saudi Arabia (visa.vfsglobal.com/sau/en/npl), but the published services there are Nepali passport/consular services (SAR 200-400), not visitor visas to Nepal. Visitor visas to Nepal are issued on arrival or by embassies directly; no VFS service fee for inbound Nepal visas is published.",
+    "source_url": "https://visa.vfsglobal.com/sau/en/npl/visa-type"
+  },
+  "sources": [
+    "https://tia.immigration.gov.np/en/page/on-arrival-tourist-visa",
+    "https://cn.nepalembassy.gov.np/pages/visa/",
+    "https://immigration.gov.np/en/page/transit-visa",
+    "https://visa.vfsglobal.com/sau/en/npl/visa-type"
+  ],
+  "free_visa_notes": "Not free for everyone, but gratis for: Indian citizens (visa-exempt), Chinese nationals, children under 10 (except US citizens per Embassy Beijing note), SAARC nationals (except Afghanistan) for 30 days on first visit each calendar year, and NRN card holders."
+}

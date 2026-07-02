@@ -1,0 +1,66 @@
+{
+  "iso3": "DNK",
+  "name": "Denmark",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C) - tourist/private visit",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://nyidanmark.dk/en-GB/You-want-to-apply/Short-stay-visa/Private-visits-and-tourist-visits-",
+      "notes": "Standard Schengen fee. Children aged 6-11 pay EUR 45; children under 6 are free. Paid in local currency at the application centre; a separate service fee to the outsourcing company (VAC) also applies."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C) - business",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/denmark/india/english/index.html",
+      "notes": "All short-stay categories (tourist, business, transit) share the identical EUR 90 fee per VFS Denmark fee schedule."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Schengen airport transit / transit visa",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": null,
+      "applies": "nationalities requiring airport transit visa",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/denmark/india/english/index.html",
+      "notes": "Same fee as other short-stay categories per VFS Denmark fee schedule."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARM"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "EUR",
+      "note": "Denmark (nyidanmark.dk) notes EU visa-facilitation agreements with Armenia and several other states (Albania, Bosnia and Herzegovina, Moldova, Montenegro, Serbia, Ukraine - most of which are now visa-exempt with biometric passports). Reduced facilitation fee (typically EUR 35) could not be verified on the official Danish page, so amount is left null."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2109",
+    "currency": "INR",
+    "note": "INR 2,109 (approx EUR 19) per application in India; service fee varies by country/centre. Mandatory courier charge EUR 4 (INR 444) for applicants outside Delhi. nyidanmark.dk confirms a service fee to the outsourcing company (VAC) applies in addition to the visa fee.",
+    "source_url": "https://www.vfsglobal.com/one-pager/denmark/india/english/index.html"
+  },
+  "sources": [
+    "https://nyidanmark.dk/en-GB/You-want-to-apply/Short-stay-visa/Private-visits-and-tourist-visits-",
+    "https://www.vfsglobal.com/one-pager/denmark/india/english/index.html"
+  ],
+  "free_visa_notes": "Denmark is a Schengen member: nationals of the EU/EEA and ~60 visa-exempt countries need no visa for short stays. Children under 6 pay no visa fee. Denmark has no e-visa, visa-on-arrival, or eTA scheme; the EU ETIAS travel authorisation (EUR 20) for visa-exempt travellers is expected but was not yet in operation at the time of writing."
+}

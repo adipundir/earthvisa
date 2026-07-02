@@ -1,0 +1,67 @@
+{
+  "iso3": "FJI",
+  "name": "Fiji",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Single Entry Visa (SEV)",
+      "amount": 93.0,
+      "currency": "FJD",
+      "amount_usd": 41,
+      "validity": "3 months, single journey",
+      "applies": "nationals of non visa-exempt countries; covers holiday/leisure, transit >3 hours, and business/training purposes",
+      "official": true,
+      "source_url": "https://www.immigration.gov.fj/wp-content/uploads/2025/08/new-fees-for-2025.pdf",
+      "notes": "Fiji Immigration Department fee schedule effective 1 Aug 2025 ('Application for Single Entry' FJD 93.00). Applied online via IMMIHUB portal; processing ~14 working days. amount_usd is approximate."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple Entry Visa (MEV)",
+      "amount": 185.0,
+      "currency": "FJD",
+      "amount_usd": 82,
+      "validity": "12 months from issuance, max 4 months per entry",
+      "applies": "nationals of non visa-exempt countries",
+      "official": true,
+      "source_url": "https://www.immigration.gov.fj/wp-content/uploads/2025/08/new-fees-for-2025.pdf",
+      "notes": "'Application for Multiple Entry' FJD 185.00 in the official 2025 fee schedule. amount_usd is approximate."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (pre-entry, transit over 3 hours / within 72 hours)",
+      "amount": 93.0,
+      "currency": "FJD",
+      "amount_usd": 41,
+      "validity": "single journey",
+      "applies": "nationals of non visa-exempt countries transiting Fiji",
+      "official": true,
+      "source_url": "https://www.immigration.gov.fj/fiji-visas/",
+      "notes": "Transit is one of the pre-entry visa purposes handled via the same Single Entry Visa application (FJD 93). No separately published transit fee line in the 2025 schedule."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Online pre-entry visa via IMMIHUB portal",
+      "amount": 93.0,
+      "currency": "FJD",
+      "amount_usd": 41,
+      "validity": "3 months (single entry) / 12 months (multiple entry at FJD 185)",
+      "applies": "nationals of non visa-exempt countries",
+      "official": true,
+      "source_url": "https://immihub.immigration.gov.fj/FIDPortal/welcome",
+      "notes": "Fiji's pre-entry visa is applied for online (IMMIHUB); same fee as SEV/MEV — this is the delivery channel, not a separate product. No separate eTA or visa-on-arrival fee regime exists."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.immigration.gov.fj/wp-content/uploads/2025/08/new-fees-for-2025.pdf",
+    "https://www.immigration.gov.fj/fiji-visas/",
+    "https://www.immigration.gov.fj/visit-transit-in-fiji/",
+    "https://immihub.immigration.gov.fj/FIDPortal/welcome"
+  ],
+  "free_visa_notes": "Nationals of Fiji's visa-exempt countries (a broad list including USA, GBR, IND, CHN, RUS, CAN, PHL, BGD and most Commonwealth/EU states) receive a free visitor permit on arrival for stays up to 4 months; extension of a visitor's permit costs FJD 93. No fee differentiation by nationality is published — all non-exempt nationals pay the same SEV/MEV fees. Fiji is not a Schengen member and does not use VFS/TLS/BLS outsourced centres; applications go directly to the Fiji Immigration Department online."
+}

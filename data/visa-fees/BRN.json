@@ -1,0 +1,114 @@
+{
+  "iso3": "BRN",
+  "name": "Brunei",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival - single entry (Category C nationalities)",
+      "amount": 20,
+      "currency": "BND",
+      "amount_usd": 15,
+      "validity": "typically up to 30 days stay",
+      "applies": "eligible nationalities (MFA Category C, e.g. CHN and others)",
+      "official": true,
+      "source_url": "https://www.mfa.gov.bn/pages/category-c.aspx",
+      "notes": "Obtainable at all immigration posts in Brunei; Form 19 distributed on arriving flights."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival - multiple entry (Category C nationalities)",
+      "amount": 30,
+      "currency": "BND",
+      "amount_usd": 22,
+      "validity": "typically up to 30 days stay",
+      "applies": "eligible nationalities (MFA Category C)",
+      "official": true,
+      "source_url": "https://www.mfa.gov.bn/pages/category-c.aspx",
+      "notes": ""
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued visit visa - single entry (Brunei Embassy, Washington DC)",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "valid for up to 3 months",
+      "applies": "applicants at Brunei Embassy Washington DC (Category A/B nationalities must apply via missions)",
+      "official": true,
+      "source_url": "https://www.mfa.gov.bn/usa-washington/SitePages/Visa%20Application.aspx",
+      "notes": "Embassy fees are set locally in local currency and vary by mission; payment cash/money order, non-refundable."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued visit visa - multiple entry (Brunei Embassy, Washington DC)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "valid for up to 3 months",
+      "applies": "applicants at Brunei Embassy Washington DC",
+      "official": true,
+      "source_url": "https://www.mfa.gov.bn/usa-washington/SitePages/Visa%20Application.aspx",
+      "notes": ""
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business/professional visit visa (Brunei High Commission, New Delhi)",
+      "amount": 1000,
+      "currency": "INR",
+      "amount_usd": 12,
+      "validity": null,
+      "applies": "Indian nationals applying in New Delhi",
+      "official": true,
+      "source_url": "https://www.mfa.gov.bn/india-newdelhi/SitePages/consularservices.aspx",
+      "notes": "Same fee as single-entry visit visa at the New Delhi mission."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (issued at Brunei International Airport only)",
+      "amount": null,
+      "currency": "BND",
+      "amount_usd": null,
+      "validity": "max 72 hours",
+      "applies": "eligible transit nationalities (incl. CHN, RUS, AUS per MFA list)",
+      "official": true,
+      "source_url": "https://www.mfa.gov.bn/Pages/transit-Visa.aspx",
+      "notes": "MFA page confirms the transit visa (72h, airport only) but does not publish the fee; third-party sources cite ~BND 5, unverified on an official source so amount left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 1000,
+      "currency": "INR",
+      "note": "Short visit visa single entry INR 1,000; multiple entry INR 2,500 at Brunei High Commission New Delhi (mfa.gov.bn/india-newdelhi). Diplomatic/official passports gratis."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CAN"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": null,
+      "note": "USA, UK, Canada and most Western nationalities are visa-exempt for short tourist stays (14-90 days depending on nationality, MFA Category D); no visa fee applies."
+    },
+    {
+      "nationalities": ["CHN", "RUS"],
+      "kind": "visa_on_arrival",
+      "amount": 20,
+      "currency": "BND",
+      "note": "Category C nationalities eligible for visa on arrival: BND 20 single / BND 30 multiple entry."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.mfa.gov.bn/pages/category-c.aspx",
+    "https://www.mfa.gov.bn/Pages/Visa-Information.aspx",
+    "https://www.mfa.gov.bn/usa-washington/SitePages/Visa%20Application.aspx",
+    "https://www.mfa.gov.bn/india-newdelhi/SitePages/consularservices.aspx",
+    "https://www.mfa.gov.bn/Pages/transit-Visa.aspx"
+  ],
+  "free_visa_notes": "Brunei is not a Schengen member and has no e-visa or eTA. Many nationalities (MFA Category D, incl. USA, UK, EU, most ASEAN) enter visa-free for 14-90 days at no cost. Category C nationalities get visa on arrival (BND 20/30); Categories A/B must apply at a Brunei mission where fees are set in local currency."
+}

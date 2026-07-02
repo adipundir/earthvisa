@@ -1,0 +1,60 @@
+{
+  "iso3": "CAN",
+  "name": "Canada",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa (Temporary Resident Visa), single or multiple entry",
+      "amount": 100,
+      "currency": "CAD",
+      "amount_usd": 73,
+      "validity": "Multiple-entry, up to 10 years or passport expiry; stays up to 6 months per entry",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://ircc.canada.ca/english/information/fees/fees.asp",
+      "notes": "Per person; family of 5+ applying together capped at CAD 500. Same fee for single and multiple entry. Biometrics fee of CAD 85 per person (CAD 170 family max) usually applies in addition. Also covers business visitors - Canada has no separate business visa; visa-required business travellers apply for the same visitor visa (CAD 100)."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic Travel Authorization (eTA)",
+      "amount": 7,
+      "currency": "CAD",
+      "amount_usd": 5,
+      "validity": "Up to 5 years or passport expiry",
+      "applies": "visa-exempt nationalities arriving by air (and eligible visa-required nationals from select countries who meet conditions)",
+      "official": true,
+      "source_url": "https://ircc.canada.ca/english/information/fees/fees.asp",
+      "notes": "Applied for online on the official IRCC eTA portal only."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 0,
+      "currency": "CAD",
+      "amount_usd": 0,
+      "validity": "Transit within 48 hours, no stopover",
+      "applies": "visa-required nationalities transiting through Canada",
+      "official": true,
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/transit/transit-visa/apply.html",
+      "notes": "No fee for the transit visa; biometrics (if required) are also free for transit visa applicants."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": null,
+    "currency": "CAD",
+    "note": "IRCC routes paper/biometrics submissions through VFS Global Visa Application Centres worldwide (find-a-VAC on canada.ca). Core VAC service charge varies by country/centre and could not be verified on an official page at time of writing; published optional-service charges (India schedule, effective 2024) include two-way courier CAD 22.90 / INR 1,365, photo CAD 3.26, premium lounge CAD 63.63. Biometrics fee (CAD 85) is paid to IRCC, not VFS.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/can/"
+  },
+  "sources": [
+    "https://ircc.canada.ca/english/information/fees/fees.asp",
+    "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/transit/transit-visa/apply.html",
+    "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/contact-ircc/offices/find-visa-application-centre.html",
+    "https://visa.vfsglobal.com/ind/en/can/"
+  ],
+  "free_visa_notes": "Canada charges the same flat visitor-visa fee (CAD 100) to all visa-required nationalities - no reciprocity schedule. Transit visas are free. No visa on arrival and no e-visa program; visa-exempt air travellers need only the CAD 7 eTA."
+}

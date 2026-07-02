@@ -1,0 +1,84 @@
+{
+  "iso3": "DOM",
+  "name": "Dominican Republic",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (single entry, consular)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "single entry, typically 60 days",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/dominicanrepublic/india/english/index.html",
+      "notes": "MIREX consular fee as published on the official VFS Global Dominican Republic page (India). Multiple-entry tourist visa is USD 150. Paid at the visa application centre (in India ~INR 8,400 single / 12,600 multiple)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (single entry, consular)",
+      "amount": 150,
+      "currency": "USD",
+      "amount_usd": 150,
+      "validity": "single entry",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/dominicanrepublic/india/english/index.html",
+      "notes": "Multiple-entry business visa is USD 200."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist card (entry tax, Law 199-67)",
+      "amount": 10,
+      "currency": "USD",
+      "amount_usd": 10,
+      "validity": "up to 30 days, extendable",
+      "applies": "visa-exempt visitors; included in airfare for arrivals by air, paid on arrival for land/sea entries",
+      "official": true,
+      "source_url": "https://www.godominicanrepublic.com/travel/entry-requirements",
+      "notes": "Since 2018 the USD 10 tourist card fee is bundled into airline tickets issued outside the DR; travellers arriving by land or sea pay USD 10 at entry."
+    },
+    {
+      "kind": "eta",
+      "name": "E-Ticket (electronic entry/exit form)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "per trip",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://eticket.migracion.gob.do/",
+      "notes": "Mandatory digital migration/customs/health form via the official DGM portal; free of charge. Not a visa or travel authorisation."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa",
+      "official": false,
+      "source_url": "https://mirex.gob.do/",
+      "notes": "MIREX lists transit as a visa category but no current fee could be verified on an official source; amount left null."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "500-1000",
+    "currency": "INR",
+    "note": "VFS logistic fee in India: INR 500 for tourist category, INR 1,000 for other categories (Delhi, Kolkata, Mumbai, Chennai, Bengaluru). Fees vary by country/centre; non-refundable.",
+    "source_url": "https://www.vfsglobal.com/one-pager/dominicanrepublic/india/english/index.html"
+  },
+  "sources": [
+    "https://www.vfsglobal.com/one-pager/dominicanrepublic/india/english/index.html",
+    "https://www.godominicanrepublic.com/travel/entry-requirements",
+    "https://eticket.migracion.gob.do/",
+    "https://mirex.gob.do/"
+  ],
+  "free_visa_notes": "Most visitors (USA, Canada, UK, EU, Russia, Japan, Israel, Mexico, most of the Americas, etc.) do not need a visa; they enter under the USD 10 tourist card (included in airfare for air arrivals) plus the free e-Ticket. No reciprocity-based fee differences found; MIREX consular fees appear uniform by visa category rather than nationality."
+}

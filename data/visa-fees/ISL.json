@@ -1,0 +1,92 @@
+{
+  "iso3": "ISL",
+  "name": "Iceland",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C), adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period, valid for the whole Schengen area",
+      "applies": "all visa-required nationalities (adults and children 12+)",
+      "official": true,
+      "source_url": "https://island.is/en/get-a-visa",
+      "notes": "Iceland is a Schengen member; the uniform Schengen visa fee applies. Confirmed on island.is and government.is: 'The fee for a visa application is EUR 90 (EUR 45 for six to twelve year olds).' Children under 6 are exempt under the EU Visa Code. Iceland issues visas directly only in London, New Delhi, Beijing and Washington D.C.; in ~120 other cities other Schengen states' embassies process applications on Iceland's behalf. Covers tourism, business and family visits (same C-visa fee)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C), child 6-12",
+      "amount": 45,
+      "currency": "EUR",
+      "amount_usd": 49,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "children aged 6-12 of visa-required nationalities",
+      "official": true,
+      "source_url": "https://island.is/en/get-a-visa",
+      "notes": "Reduced child fee per the EU Visa Code; children under 6 pay no fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C) for business",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.government.is/topics/foreign-affairs/visa-to-iceland/",
+      "notes": "No separate business-visa fee; business travel uses the same uniform Schengen C visa at EUR 90."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport transit only",
+      "applies": "nationalities subject to the Schengen airport transit visa requirement",
+      "official": true,
+      "source_url": "https://www.government.is/topics/foreign-affairs/visa-to-iceland/",
+      "notes": "Under the EU Visa Code the airport transit (A) visa carries the same fee as the C visa (EUR 90 adult / EUR 45 child 6-12). Iceland's official pages quote a single 'visa application fee' of EUR 90 without a separate transit schedule."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (visa-exempt travellers) - not yet in operation",
+      "amount": 20,
+      "currency": "EUR",
+      "amount_usd": 22,
+      "validity": "3 years or until passport expiry (planned)",
+      "applies": "visa-exempt nationalities (e.g. USA, GBR, CAN) once ETIAS launches",
+      "official": true,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "ETIAS is NOT yet in force as of July 2026; launch expected in late 2026/2027 after the EES rollout. The EU set the fee at EUR 20 (free for under-18s and over-70s). No fee is currently payable to enter Iceland visa-free."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALL"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "The Schengen visa fee is uniform - Iceland publishes no nationality-based reciprocity schedule. Reduced EUR 35 rates under EU visa-facilitation agreements no longer apply to Russia (suspended since 2022; RUS nationals pay EUR 90). IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, CAN all pay the standard EUR 90 where a visa is required (USA/GBR/CAN nationals are visa-exempt for short stays)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2900",
+    "currency": "INR",
+    "note": "India: VFS service charge INR 2,900 (approx EUR 29) per application, incl. 18% GST; optional extras (courier INR 518, SMS INR 345, etc.) on top. Service fees vary by centre/country - typically around EUR 29-40 equivalent (UK centres publish approx GBP/EUR 40). Iceland is represented via VFS in at least 14 source countries in our data (ARE, CAN, CHN, GBR, HKG, IDN, IND, IRL, JPN, MYS, PHL, SGP, THA, USA), usually operating for the Schengen state representing Iceland (often Denmark or Norway).",
+    "source_url": "https://visa.vfsglobal.com/ind/en/isl/"
+  },
+  "sources": [
+    "https://island.is/en/get-a-visa",
+    "https://www.government.is/topics/foreign-affairs/visa-to-iceland/",
+    "https://visa.vfsglobal.com/ind/en/isl/",
+    "https://travel-europe.europa.eu/etias_en"
+  ],
+  "free_visa_notes": "Nationals of EU/EEA countries and ~60 visa-exempt countries (incl. USA, GBR, CAN, JPN, AUS) need no visa and currently pay nothing for short stays; ETIAS (EUR 20) will apply to them once operational. Iceland has no e-visa or visa on arrival - all visas are issued in advance via embassies/VFS centres."
+}

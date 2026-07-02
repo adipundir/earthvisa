@@ -1,0 +1,76 @@
+{
+  "iso3": "HUN",
+  "name": "Hungary",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a Schengen visa",
+      "official": true,
+      "source_url": "https://istanbul.mfa.gov.hu/en/articles/tajekoztatas-a-vizumeljaras-dijarol",
+      "notes": "Standard Schengen visa fee, EUR 90 since 11 June 2024 (raised from EUR 80). Children 6-12: EUR 45; under 6: free. Fee is charged in local-currency equivalent at consulates/VFS centres. Covers tourism and business purposes alike."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C, business purpose)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a Schengen visa",
+      "official": true,
+      "source_url": "https://istanbul.mfa.gov.hu/en/articles/tajekoztatas-a-vizumeljaras-dijarol",
+      "notes": "Same C-type visa and fee as tourist; purpose of travel is business."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "airport transit only",
+      "applies": "nationalities on the Schengen airport-transit-visa list",
+      "official": true,
+      "source_url": "https://konzuliszolgalat.kormany.hu/how-to-apply-for-visa",
+      "notes": "Airport transit visas carry the same EUR 90 Schengen fee under the EU Visa Code."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "The EU-Russia visa facilitation agreement (EUR 35 fee) was fully suspended in September 2022; Russian citizens pay the standard EUR 90 fee (confirmed on VFS Hungary Russia one-pager)."
+    },
+    {
+      "nationalities": ["ARM", "AZE", "BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced EUR 35 fee under EU visa facilitation agreements (Armenia, Azerbaijan, Belarus). Verify per consulate; this is an EU-wide arrangement, not a Hungary-specific reciprocity fee."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2133 (with biometrics) / 1600 (without biometrics)",
+    "currency": "INR",
+    "note": "India figures incl. 18% GST, per VFS Global Hungary-India pages; service fee varies by country/centre (roughly EUR 15-40 equivalent). Hungary outsources short-stay visa intake to VFS Global in many source countries.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/hun/"
+  },
+  "sources": [
+    "https://istanbul.mfa.gov.hu/en/articles/tajekoztatas-a-vizumeljaras-dijarol",
+    "https://konzuliszolgalat.kormany.hu/how-to-apply-for-visa",
+    "https://washington.mfa.gov.hu/en/schengen-visas",
+    "https://visa.vfsglobal.com/ind/en/hun/",
+    "https://visa.vfsglobal.com/one-pager/hungary/russia/kazan/english/"
+  ],
+  "free_visa_notes": "Hungary is a Schengen member; citizens of visa-exempt countries (USA, GBR, CAN, most of Latin America, etc.) need no visa and pay no fee for short stays. Children under 6 are visa-fee exempt. Hungary has no e-visa, visa-on-arrival or own eTA; the EU ETIAS travel authorisation (EUR 20) for visa-exempt travellers is not yet in force as of this record's date."
+}

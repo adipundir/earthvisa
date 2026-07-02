@@ -1,0 +1,55 @@
+{
+  "iso3": "CHL",
+  "name": "Chile",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visa de Permanencia Transitoria Simple (single-entry consular tourist/business visa)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "single entry, stay up to 90 days (shorter for some nationalities)",
+      "applies": "visa-required nationalities only; fee varies by nationality per official reciprocity table (USD 0-200)",
+      "official": true,
+      "source_url": "https://www.consulado.gob.cl/cuadro-de-visas-y-aranceles-de-chile",
+      "notes": "Chile has no flat fee: the official 'Cuadro de Aranceles de Visas' sets a per-nationality USD amount (e.g. BGD $10, IND $42, PHL $40, PAK $122, NGA $200; $0 for China, Kazakhstan, Morocco, Tunisia, Palestine). Applied online via SAC (tramites.minrel.gov.cl) and issued by consulates; fee paid only if approved. Covers tourism and business visits. Official PDF: consulado.gob.cl/consulados/site/docs/20190220/20190220161313/cuadro_de_visas_corregido060326.pdf"
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visa de Permanencia Transitoria Múltiple (multiple-entry consular visa)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "multiple entries, stay up to 90 days per entry (shorter for some nationalities)",
+      "applies": "visa-required nationalities only; fee varies by nationality per official reciprocity table (USD 0-258)",
+      "official": true,
+      "source_url": "https://www.consulado.gob.cl/cuadro-de-visas-y-aranceles-de-chile",
+      "notes": "Multiple-entry fee per Art. 13 of Decreto Supremo N.296/2021 (Ministry of Interior). Examples: BGD $18, IND $76, PHL $88, PAK $202, NGA $208, Lesotho $258. Not available for some nationalities (e.g. Venezuela, Libya, Somalia only get single-entry)."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["IND"], "kind": "tourist_visa", "amount": 42, "currency": "USD", "note": "Single-entry USD 42 / multiple-entry USD 76, 90 days. EXEMPT from visa if holding a valid US visa (except C) or Green Card with 6+ months validity (since 01.04.2019)." },
+    { "nationalities": ["USA"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Visa-free, 90 days." },
+    { "nationalities": ["GBR"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Visa-free, 90 days (incl. British Overseas Territories listed in official table)." },
+    { "nationalities": ["CHN"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Visa required but fee USD 0 (gratis) for single and multiple entry, 90 days. Exempt from visa if holding a US/Canada visa (except transit) or Green Card with 6+ months validity." },
+    { "nationalities": ["NGA"], "kind": "tourist_visa", "amount": 200, "currency": "USD", "note": "Single-entry USD 200 (30-day stay) / multiple-entry USD 208 (60-day stay)." },
+    { "nationalities": ["PAK"], "kind": "tourist_visa", "amount": 122, "currency": "USD", "note": "Single-entry USD 122 (30-day stay) / multiple-entry USD 202 (90-day stay)." },
+    { "nationalities": ["PHL"], "kind": "tourist_visa", "amount": 40, "currency": "USD", "note": "Single-entry USD 40 (60-day stay) / multiple-entry USD 88 (90-day stay)." },
+    { "nationalities": ["BGD"], "kind": "tourist_visa", "amount": 10, "currency": "USD", "note": "Single-entry USD 10 / multiple-entry USD 18, 90 days." },
+    { "nationalities": ["RUS"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Visa-free, 90 days." },
+    { "nationalities": ["CAN"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Visa-free, 90 days." }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "Chile does not outsource inbound visa processing to VFS/TLS/BLS; applications go through the official SAC online system (tramites.minrel.gov.cl) and Chilean consulates."
+  },
+  "sources": [
+    "https://www.consulado.gob.cl/cuadro-de-visas-y-aranceles-de-chile",
+    "https://www.consulado.gob.cl/consulados/site/docs/20190220/20190220161313/cuadro_de_visas_corregido060326.pdf",
+    "https://www.consulado.gob.cl/autorizacion-previa-o-visa",
+    "https://tramites.minrel.gov.cl/"
+  ],
+  "free_visa_notes": "Most Western, Latin American and many Asian nationalities (~100 countries incl. USA, Canada, UK, EU, Australia, Japan, Russia) enter Chile visa-free for up to 90 days with no fee. The old airport 'reciprocity fee' (USD 117-160 for AUS/CAN/USA) was fully abolished (US 2014, Canada 2014, Australia Dec 2019). No e-visa product, no eTA, no visa on arrival; visa-required nationals must obtain the consular Permanencia Transitoria visa in advance. Chile is not a Schengen member."
+}

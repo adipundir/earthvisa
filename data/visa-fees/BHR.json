@@ -1,0 +1,137 @@
+{
+  "iso3": "BHR",
+  "name": "Bahrain",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist eVisa (2 weeks, single entry)",
+      "amount": 13,
+      "currency": "BHD",
+      "amount_usd": 34,
+      "validity": "2 weeks stay, single entry",
+      "applies": "eligible nationalities (nationals of ~212 countries eligible online)",
+      "official": true,
+      "source_url": "https://www.bahrain.bh/wps/portal/en/BNP/ServicesCatalogue/GSX-UI-PServiceDetails?psID=1871",
+      "notes": "Split payment on evisa.gov.bh: BD 4 non-refundable application fee paid first, BD 9 visa fee paid on approval (total BD 13). Proof of funds required (bank statement, ~BD 300-500/month income)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multiple-entry visitor eVisa (1 year)",
+      "amount": 44,
+      "currency": "BHD",
+      "amount_usd": 117,
+      "validity": "1 year, multiple entry (up to 90 days per stay)",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://services.bahrain.bh/wps/portal/en/BSP/GSX-UI-EServiceDetails?esID=117",
+      "notes": "Requires hotel reservation, return ticket, and bank statement."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multi-entry return visa (5 years)",
+      "amount": 50,
+      "currency": "BHD",
+      "amount_usd": 133,
+      "validity": "5 years, multiple entry",
+      "applies": "nationals of UK, Ireland, Canada, USA",
+      "official": true,
+      "source_url": "https://services.bahrain.bh/wps/portal/en/BSP/GSX-UI-EServiceDetails?esID=117",
+      "notes": "Available only to UK, Irish, Canadian and US nationals."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Family visit eVisa",
+      "amount": 39,
+      "currency": "BHD",
+      "amount_usd": 103,
+      "validity": "visit visa; per official schedule",
+      "applies": "applicants with kinship to a resident/citizen sponsor",
+      "official": true,
+      "source_url": "https://services.bahrain.bh/wps/portal/en/BSP/GSX-UI-EServiceDetails?esID=117",
+      "notes": "Requires kinship documentation, hotel reservation, return ticket, bank statement."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (2 weeks)",
+      "amount": 25,
+      "currency": "BHD",
+      "amount_usd": 66,
+      "validity": "2 weeks stay",
+      "applies": "eligible nationalities (~69 countries, list on evisa.gov.bh)",
+      "official": false,
+      "source_url": "https://www.evisa.gov.bh/list-of-onarrival-visa-country.html",
+      "notes": "BD 25 is widely published by airline/visa-industry sources for the 2-week VOA at Bahrain International Airport; exact amount could not be confirmed on the fee page of evisa.gov.bh (portal blocks automated access, fees shown at payment step). Eligibility list itself is official."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Visit eVisa extension (2 weeks, single entry)",
+      "amount": 25,
+      "currency": "BHD",
+      "amount_usd": 66,
+      "validity": "2-week extension",
+      "applies": "holders of an existing visit visa",
+      "official": true,
+      "source_url": "https://services.bahrain.bh/wps/portal/en/BSP/GSX-UI-EServiceDetails?esID=117",
+      "notes": "Extension processed within 1 working day."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visit visa",
+      "amount": null,
+      "currency": "BHD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "sponsored applicants",
+      "official": true,
+      "source_url": "https://www.evisa.gov.bh/",
+      "notes": "Business visits are generally covered by the same eVisa/visit-visa fee schedule or NPRA sponsored visas; no separate published business-visa fee was verifiable on official sources."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit",
+      "amount": null,
+      "currency": "BHD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.evisa.gov.bh/",
+      "notes": "No separate published transit-visa fee found on official sources; airside transit without entering Bahrain requires no visa. Travellers entering during layovers use the eVisa/VOA."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA", "GBR", "CAN"],
+      "kind": "e_visa",
+      "amount": 50,
+      "currency": "BHD",
+      "note": "Eligible for the special 5-year multi-entry return visa (BD 50) in addition to standard eVisa options (also Ireland)."
+    },
+    {
+      "nationalities": ["IND", "CHN", "PHL", "RUS"],
+      "kind": "e_visa",
+      "amount": 13,
+      "currency": "BHD",
+      "note": "eVisa-eligible online; standard fee (BD 4 application + BD 9 visa). Indians with valid US/UK/Schengen visas or GCC residence are also VOA-eligible."
+    },
+    {
+      "nationalities": ["NGA", "PAK", "BGD"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "BHD",
+      "note": "Generally not eligible for unsponsored eVisa/VOA; require a sponsored NPRA visit visa. Fee depends on visa type granted; not published as a flat schedule."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.bahrain.bh/wps/portal/en/BNP/ServicesCatalogue/GSX-UI-PServiceDetails?psID=1871",
+    "https://services.bahrain.bh/wps/portal/en/BSP/GSX-UI-EServiceDetails?esID=117",
+    "https://www.evisa.gov.bh/VisaBhr2En.html",
+    "https://www.evisa.gov.bh/list-of-onarrival-visa-country.html"
+  ],
+  "free_visa_notes": "GCC (Gulf Cooperation Council) nationals do not require a visa to enter Bahrain. All other nationalities need an eVisa, visa on arrival, or sponsored visa."
+}

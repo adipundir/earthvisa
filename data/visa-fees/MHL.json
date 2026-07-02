@@ -1,0 +1,83 @@
+{
+  "iso3": "MHL",
+  "name": "Marshall Islands",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor Visa (V-1)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "Typically up to 90 days stay; issued in advance via RMI Embassy / Division of Immigration",
+      "applies": "Nationalities not covered by visa exemption or visa-on-arrival (e.g. CHN, NGA, PAK, BGD)",
+      "official": true,
+      "source_url": "https://www.rmiembassyus.org/consular",
+      "notes": "Non-refundable application processing fee, per RMI Embassy Washington DC. Advance application required for nationals not on the exemption/VOA schedule."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (VOA) - fee waived",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "90 days from date of arrival",
+      "applies": "Nationals of ~80 countries with diplomatic relations / Pacific Islands Forum members (incl. Australia, New Zealand, Canada, India, Japan, South Korea, Philippines, Russia, Singapore, Thailand, Indonesia, Turkey, UAE)",
+      "official": true,
+      "source_url": "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
+      "notes": "RMI Division of Immigration schedule (as of March 2024) lists VOA fee as 'Waived'. Requires 6+ months passport validity and onward/return ticket. No extension, change of status, employment, study or research permitted."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa (B-1)",
+      "amount": 300,
+      "currency": "USD",
+      "amount_usd": 300,
+      "validity": null,
+      "applies": "Applicants with an approved Foreign Investment Business License (FIBL)",
+      "official": true,
+      "source_url": "https://www.rmiembassyus.org/consular",
+      "notes": "Non-refundable application processing fee."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Visa exempt under Compact of Free Association; no period restrictions, fee waived (also FSM and Palau)."
+    },
+    {
+      "nationalities": ["GBR"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "UK listed with EU member countries on RMI exemption schedule: visa waiver 90 days in any 180, fee waived (ordinary passports)."
+    },
+    {
+      "nationalities": ["IND", "CAN", "RUS", "PHL"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "USD",
+      "note": "On the VOA schedule: 90-day visa on arrival, fee waived."
+    },
+    {
+      "nationalities": ["CHN", "NGA", "PAK", "BGD"],
+      "kind": "tourist_visa",
+      "amount": 100,
+      "currency": "USD",
+      "note": "Not on the exemption/VOA schedule; must apply in advance for Visitor Visa (V-1) with USD 100 processing fee."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
+    "https://www.rmiembassyus.org/consular",
+    "https://rmiimmigration.org/applications/"
+  ],
+  "free_visa_notes": "Most visitors enter the Marshall Islands free of charge: US/FSM/Palau citizens are fully exempt (Compact of Free Association), EU + UK, Taiwan and Guatemala get a 90-day fee-waived visa waiver, and nationals of ~80 further countries get a fee-waived 90-day visa on arrival. Only nationalities outside these schedules pay the USD 100 V-1 visitor visa fee. A USD 20 departure fee applies to all travellers leaving RMI (embassy-published)."
+}

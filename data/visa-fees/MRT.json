@@ -1,0 +1,67 @@
+{
+  "iso3": "MRT",
+  "name": "Mauritania",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (30 days, single entry) - fee paid in cash on arrival",
+      "amount": 55,
+      "currency": "EUR",
+      "amount_usd": 60,
+      "validity": "30 days, single entry",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.aeroport-nouakchott.com/visa_on_arrival_mauritania.php",
+      "notes": "Since 5 January 2025 all visa-required travellers must obtain an e-visa via the official ANRPTS portal (anrpts.gov.mr) before boarding; visas on arrival are no longer issued. No payment is taken online - the fee (EUR 55 or USD 60) is collected in exact cash (EUR or USD) at the border/airport on arrival; no change or receipts given (UK FCDO). EUR 55 amount confirmed on the official Nouakchott airport site."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (90 days)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "90 days",
+      "applies": "all visa-required nationalities",
+      "official": false,
+      "source_url": "https://anrpts.gov.mr/visa/requestvisa",
+      "notes": "ANRPTS portal offers 30-day, 90-day and 360-day options. 90-day fee widely reported by unofficial sources as EUR 95 / USD 100 (EUR 70 / USD 75 for Arab/African nationals) but could not be verified on an official source (anrpts.gov.mr unreachable during research), so amount left null."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival - DISCONTINUED",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.gov.uk/foreign-travel-advice/mauritania/entry-requirements",
+      "notes": "From 5 January 2025 it is no longer possible to obtain a visa on arrival in Mauritania; an e-visa must be obtained in advance (fee still paid on arrival)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy sticker visa - phased out",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": false,
+      "source_url": "https://mauritaniaembassyus.org/visas/",
+      "notes": "Mauritanian embassies (e.g. Washington DC, historically USD 45 for up to 3 months) have stopped issuing visas since mid-2025 and direct applicants to the ANRPTS e-visa. Embassy site blocked during research (403), so no current fee recorded."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://anrpts.gov.mr/visa/requestvisa",
+    "https://www.gov.uk/foreign-travel-advice/mauritania/entry-requirements",
+    "https://www.aeroport-nouakchott.com/visa_on_arrival_mauritania.php",
+    "https://mauritaniaembassyus.org/visas/"
+  ],
+  "free_visa_notes": "Not free for most travellers. Nationals of ECOWAS/several African and Arab states are visa-exempt; all others need the ANRPTS e-visa. Unofficial sources report a lower fee tier for Arab/African nationals (approx EUR 40 / USD 45 for 30 days) but this could not be confirmed on an official source."
+}

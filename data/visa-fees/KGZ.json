@@ -1,0 +1,87 @@
+{
+  "iso3": "KGZ",
+  "name": "Kyrgyzstan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (TS), 1 month single entry (embassy)",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "1 month, single entry",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://mfa.gov.kg/en/dm/-Embassy-of-the-Kyrgyz-Republic-in-the-USA-and-Canada/Menu---Foreign-/Consular-issues/Visa-issues/isa-issues-5c3dfa333cdaf",
+      "notes": "Fee published by the Embassy of the Kyrgyz Republic in the USA and Canada; 2-month single entry is USD 50. Consular fees can differ by mission."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (tourist, official portal evisa.e-gov.kg)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "up to 30 days (tourist TS)",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "notes": "Official portal states 'visa fee depends on visa category, type and period' and shows the exact amount only at the payment step; it does not publish a public tariff table. Third-party guides cite roughly USD 41-52 for 30/60-day tourist e-visas incl. bank charges, but this is not verified on an official source. Fee is non-refundable if refused."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (B), 1 month single entry (embassy)",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "1 month, single entry",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://mfa.gov.kg/en/dm/-Embassy-of-the-Kyrgyz-Republic-in-the-USA-and-Canada/Menu---Foreign-/Consular-issues/Visa-issues/isa-issues-5c3dfa333cdaf",
+      "notes": "1 month multiple entry USD 70; 2 months single USD 70; 2 months multiple USD 90."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (TR), 5 days single entry (embassy)",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "up to 5 days, single entry",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://mfa.gov.kg/en/dm/-Embassy-of-the-Kyrgyz-Republic-in-the-USA-and-Canada/Menu---Foreign-/Consular-issues/Visa-issues/isa-issues-5c3dfa333cdaf",
+      "notes": ""
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (Manas International Airport, Bishkek)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "limited eligible nationalities / GCC residents in some cases",
+      "official": false,
+      "source_url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "notes": "VOA at Manas airport is reported by third-party sources at roughly USD 50-70 depending on type, but no official published fee schedule was found; the government primarily directs applicants to the e-visa portal. Amount left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 185,
+      "currency": "USD",
+      "note": "US citizens can obtain a 10-year multiple-entry tourist/business visa (up to 180 days per visit) for USD 185 under the bilateral agreement effective 4 March 2024. Note: US citizens are also visa-free for short stays (up to 60 days)."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "Kyrgyzstan does not outsource visa processing to VFS Global, TLScontact or BLS; applications go direct to embassies/consulates or via the official e-visa portal evisa.e-gov.kg."
+  },
+  "sources": [
+    "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+    "https://mfa.gov.kg/en/dm/-Embassy-of-the-Kyrgyz-Republic-in-the-USA-and-Canada/Menu---Foreign-/Consular-issues/Visa-issues/isa-issues-5c3dfa333cdaf",
+    "https://www.evisa.e-gov.kg/step_1.php"
+  ],
+  "free_visa_notes": "Kyrgyzstan is not a Schengen member. Citizens of ~60+ countries (incl. USA, GBR, CAN, RUS and other EAEU/CIS states, EU, GCC, Japan, Korea, etc.) enter visa-free for 30-90 days depending on nationality; Maldives citizens and Hong Kong/Macau SAR permanent residents get 30 days visa-free. Fees above apply only to nationalities that require a visa (e.g. IND, CHN, NGA, PAK, PHL, BGD are e-visa eligible)."
+}

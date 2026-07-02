@@ -1,0 +1,49 @@
+{
+  "iso3": "FSM",
+  "name": "Micronesia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor entry (30 days or less) - no visa/permit required",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "30 days on arrival",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://fsmembassy.fm/fsm-entry-permit-application/",
+      "notes": "Official FSM Embassy: 'A permit is not required for a person visiting the FSM for 30 days or less.' Valid passport (120+ days beyond entry) and onward/return ticket required. Extensions of up to an additional 60 days may be requested in person at an FSM Immigration Office."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "FSM Entry Permit (stays over 30 days)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "up to 90 days (up to 1 year for USA/Palau/Marshall Islands citizens)",
+      "applies": "all staying beyond 30 days",
+      "official": true,
+      "source_url": "https://fsmembassy.fm/wp-content/uploads/2021/04/FSM_Entry_Permit_Application.pdf",
+      "notes": "Fee not published on the official embassy application or FSM Immigration Regulations; the application form lists requirements only. Fees, where charged, are handled by FSM Immigration/state offices - contact FSM Embassy (202) 223-4343 for the current fee. Amount left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "USD",
+      "note": "US citizens (and Palau/Marshall Islands nationals) may be issued entry permits for the duration of visit up to one year under the Compact of Free Association, vs 90-day maximum for other nationals. This is a validity difference, not a published fee difference."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://fsmembassy.fm/fsm-entry-permit-application/",
+    "https://fsmembassy.fm/wp-content/uploads/2021/04/FSM_Entry_Permit_Application.pdf",
+    "https://fsmembassy.fm/wp-content/uploads/2022/05/RevFSMImmigrationReg.pdf",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/FederatedStatesOfMicronesia.html"
+  ],
+  "free_visa_notes": "The Federated States of Micronesia has no visa regime for short visits: all nationalities may enter without a visa or permit for up to 30 days (extendable by up to 60 days at an FSM Immigration Office). There is no e-visa, eTA, visa-on-arrival fee, or outsourced visa centre (no VFS/TLS/BLS). Only stays beyond 30 days require an FSM Entry Permit; no fee for it is published on official sources."
+}

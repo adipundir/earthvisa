@@ -1,0 +1,98 @@
+{
+  "iso3": "DEU",
+  "name": "Germany",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C), adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Fee raised to EUR 90 on 11 June 2024; confirmed current on Federal Foreign Office fee page. Children 6-11: EUR 45; under 6: free. Waivers for students on school trips, researchers, young NGO representatives under 25, and family members of EU/EEA citizens."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C) for business purposes",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Same Schengen type C fee regardless of purpose (tourism/business/visit). Foreign exhibitors with official trade fair passes may be fee-exempt."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport transit only",
+      "applies": "nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Airport transit visas fall under the uniform Schengen Visa Code fee (EUR 90 since 11 June 2024)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Germany does not issue e-visas; all visas are sticker visas issued via embassies/consulates (applications digitalised via the Consular Services Portal, but no separate e-visa product or fee). The EU ETIAS travel authorisation (EUR 20, visa-exempt nationals) was not yet in operation as of the update date."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+      "notes": "Germany does not offer visa on arrival; visas must be obtained in advance except at-border exceptional visas in emergency cases."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BLR", "BIH", "GEO", "MDA", "MNE", "MKD", "SRB", "UKR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced EUR 35 Schengen visa fee under EU visa facilitation agreements (per Federal Foreign Office fee page). Note most of these nationalities are visa-free for short stays with biometric passports; fee applies where a visa is still needed."
+    },
+    {
+      "nationalities": ["CPV"],
+      "kind": "tourist_visa",
+      "amount": 67.5,
+      "currency": "EUR",
+      "note": "Cabo Verde: reduced EUR 67.50 Schengen visa fee under visa facilitation agreement."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1806-1933",
+    "currency": "INR",
+    "note": "Germany routes Schengen/national visa applications through VFS Global in India and 30+ other countries. India service fee reported at approx INR 1,806-1,933 per applicant (pre-paid at appointment booking per German Consulate Mumbai); exact amount varies by centre and country and the VFS fee page returned 403 to automated fetch, so range is from recent secondary reporting - verify on visa.vfsglobal.com/ind/en/deu/ before relying on it. Optional courier return INR 733.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/deu/"
+  },
+  "sources": [
+    "https://www.auswaertiges-amt.de/en/visa-service/215870-215870",
+    "https://india.diplo.de/in-en/service/1984596-1984596",
+    "https://visa.vfsglobal.com/ind/en/deu/"
+  ],
+  "free_visa_notes": "Not free in general. Fee waivers: children under 6, school pupils on educational trips, researchers, young non-profit representatives under 25, family members of EU/EEA citizens, and holders of official trade fair exhibitor passes."
+}

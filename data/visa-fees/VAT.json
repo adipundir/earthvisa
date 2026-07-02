@@ -1,0 +1,59 @@
+{
+  "iso3": "VAT",
+  "name": "Holy See (Vatican City)",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C) via Italy",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "nationalities requiring a Schengen visa",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/news/schengen-visa-fee-increased-11-june-2024-2024-06-13_en",
+      "notes": "Vatican City issues no visas of its own and has an open border with Italy. Entry is only possible through Italian/Schengen territory, so Italy's Schengen short-stay visa applies de facto. Adult fee EUR 90; children 6 to under 12 pay EUR 45; under 6 free (Commission Delegated Regulation (EU) 2024/1415, in force since 11 June 2024)."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (for visa-exempt nationalities entering via Italy)",
+      "amount": 20,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "3 years or until passport expiry",
+      "applies": "visa-exempt nationalities once ETIAS becomes operational (expected late 2026)",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en",
+      "notes": "EUR 20 fee confirmed by the European Commission; applicants under 18 or over 70 exempt. Applies to entry into Italy/Schengen, through which Vatican City is reached. Not yet in force as of this record's date."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Schengen airport transit visa (type A) via Italy",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "airport transit only",
+      "applies": "nationalities on the Schengen airport-transit-visa list",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/news/schengen-visa-fee-increased-11-june-2024-2024-06-13_en",
+      "notes": "Same harmonised Schengen fee schedule as the short-stay visa."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global (Italy's outsourced visa network)",
+    "service_fee": null,
+    "currency": null,
+    "note": "The Holy See has no visa application system; travellers needing a visa apply for an Italian Schengen visa. Italy outsources visa intake to VFS Global in many countries (e.g. India, China, Philippines); the service fee is set per centre and varies by country - check the local VFS Italy page. No single published amount is recorded here to avoid guessing.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/ita/"
+  },
+  "sources": [
+    "https://home-affairs.ec.europa.eu/news/schengen-visa-fee-increased-11-june-2024-2024-06-13_en",
+    "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Vatican_City"
+  ],
+  "free_visa_notes": "Vatican City has no visa regime of its own: there are no border controls between Rome and the Vatican, and the Holy See issues no tourist visas. Entry requirements are those of Italy/the Schengen Area. Nationals who are Schengen visa-exempt pay nothing today (ETIAS EUR 20 once operational); others need an Italian Schengen visa (EUR 90 adult)."
+}

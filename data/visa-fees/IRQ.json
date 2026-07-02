@@ -1,0 +1,104 @@
+{
+  "iso3": "IRQ",
+  "name": "Iraq",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visit visa for tourism/religious purposes (embassy-issued)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "Valid 3 months from issue; stay up to 1 month",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://mofa.gov.iq/visa/",
+      "notes": "Fee published by Iraq Ministry of Foreign Affairs for tourist/religious visit visas (groups and individuals)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Normal (regular) visa",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "Valid 3 months; stay up to 3 months (residency registration within 10 days)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://mofa.gov.iq/visa/",
+      "notes": "MOFA 'regular visa' used for non-tourist purposes including business-type visits; companions exempt."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Multiple-entry visa",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "3, 6 or 12 months multiple entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://mofa.gov.iq/visa/",
+      "notes": "Fee published by Iraq MOFA for multi-entry visas."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Valid 3 months; stay up to 7 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://mofa.gov.iq/visa/",
+      "notes": "Transit visa type listed on official MOFA page but no fee published; amount unverified."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Federal Iraq e-visa (evisa.iq)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "90-day validity, stay up to 30 days (as commonly reported)",
+      "applies": "eligible nationalities (approx. 50+ countries; mandatory pre-arrival channel since VOA suspension of 1 Mar 2025)",
+      "official": true,
+      "source_url": "https://evisa.iq/en",
+      "notes": "Official portal evisa.iq does not publish the fee on public pages (fee shown only inside the application flow). Third-party sources consistently report ~USD 155-160 total including mandatory health insurance (~206,000 IQD); amount left null as it could not be verified on an official page."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Kurdistan Region e-visa (visit.gov.krd)",
+      "amount": 75,
+      "currency": "USD",
+      "amount_usd": 75,
+      "validity": "30 days",
+      "applies": "eligible nationalities (approx. 51 countries) entering via Kurdistan Region (Erbil/Sulaymaniyah); valid for KRI only, not federal Iraq",
+      "official": true,
+      "source_url": "https://visit.gov.krd/",
+      "notes": "USD 75 fee is the fee charged on the official KRG portal visit.gov.krd. Portal blocked automated fetch (Cloudflare); figure corroborated across multiple recent sources citing the portal - treat with medium confidence."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (federal Iraq) - suspended",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "suspended for previously eligible nationalities since 1 March 2025",
+      "official": true,
+      "source_url": "https://evisa.iq/en",
+      "notes": "Iraqi Ministry of Interior suspended VOA issuance from 1 March 2025; travellers must use the e-visa (evisa.iq). Limited VOA reportedly remains at Kurdistan Region airports for eligible nationals; no official fee published."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No evidence of VFS Global, TLScontact or BLS outsourcing for Iraq visas; applications go via the official e-visa portals (evisa.iq, visit.gov.krd) or Iraqi embassies directly."
+  },
+  "sources": [
+    "https://mofa.gov.iq/visa/",
+    "https://evisa.iq/en",
+    "https://visit.gov.krd/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Iraq"
+  ],
+  "free_visa_notes": ""
+}

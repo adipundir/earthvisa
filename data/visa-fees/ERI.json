@@ -1,0 +1,66 @@
+{
+  "iso3": "ERI",
+  "name": "Eritrea",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (embassy sticker visa)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Valid 3 months from issue; 30-day stay on arrival (extendable in Asmara)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Fee at the Eritrean Embassy in Washington DC via the CAPS online system. Plus $13 photo printing and $10 service fee. Fees at other Eritrean missions vary (e.g. Australian consulate charges AUD 90). No e-visa exists."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Valid 3 months from issue; 30-day stay on arrival",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Embassy publishes a USD 100-300 range depending on duration; no single fixed amount, so amount left null."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "Valid 3 months from issue",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://us.embassyeritrea.org/visa/",
+      "notes": "Plus $13 photo printing and $10 service fee at the Washington DC embassy."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (pre-arranged only)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "travellers with pre-arranged visa confirmation; sponsor must apply to Eritrean Immigration Authority at least 48h before arrival",
+      "official": false,
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Eritrea",
+      "notes": "No general visa on arrival. Fee for the pre-arranged VOA is not published on any official source; amount left null."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://us.embassyeritrea.org/visa/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Eritrea.html",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Eritrea"
+  ],
+  "free_visa_notes": "Visas are not free; official/diplomatic passport visas are gratis per the Washington DC embassy. No published nationality-based reciprocity schedule found; the same USD fee schedule applies to all nationalities applying at the US embassy, but amounts differ by mission/local currency."
+}

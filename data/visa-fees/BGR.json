@@ -1,0 +1,102 @@
+{
+  "iso3": "BGR",
+  "name": "Bulgaria",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay Schengen visa (Type C) - tourism/visit",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.mfa.bg/en/services-travel/consular-services/fees",
+      "notes": "Bulgaria is a full Schengen member; the standard Schengen short-stay fee of EUR 90 applies. Children 6-11 are exempt from the visa fee per the MFA fees page; children under 6 are visa-fee exempt. Fee is non-refundable if the visa is refused."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short-stay Schengen visa (Type C) - business",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.mfa.bg/en/services-travel/consular-services/fees",
+      "notes": "Same Type C fee as tourist; purpose is documented via business supporting documents."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport transit only",
+      "applies": "nationalities on the airport-transit-visa list",
+      "official": true,
+      "source_url": "https://www.mfa.bg/en/services-travel/consular-services/fees",
+      "notes": "MFA lists the airport transit fee at EUR 90, same as the short-stay fee."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria",
+      "notes": "Bulgaria does not operate an e-visa; applications are lodged at consulates or outsourced centres (VFS Global). ETIAS (EU-wide travel authorisation for visa-exempt travellers) is not yet in operation as of this record date."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria",
+      "notes": "Bulgaria does not issue visas on arrival except rare humanitarian border cases; visas must be obtained in advance."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "The EU-Russia visa facilitation agreement (reduced EUR 35 fee) is suspended for ordinary Russian passport holders; the standard EUR 90 Schengen fee applies. VFS Russia additionally charges a service fee of EUR 22.8 incl. VAT, payable in RUB (source: visa.vfsglobal.com/rus/ru/bgr via VFS Contentful data)."
+    },
+    {
+      "nationalities": ["IND", "USA", "GBR", "CHN", "NGA", "PAK", "PHL", "BGD", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "No reciprocity discount; standard Schengen Type C fee of EUR 90 applies (children 6-11 exempt per MFA). Visa facilitation agreements with reduced EUR 35 fees exist only for a limited set of countries (e.g. certain Eastern Partnership states) referenced on the MFA fees page."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "INR 3080 (India, incl. GST); varies by centre, e.g. THB 1,554 (~EUR 42) Thailand, IDR 615,000 Indonesia, EUR 22.8 Russia, EUR 25 Belarus, MVR 2,070 Maldives",
+    "currency": "varies",
+    "note": "Bulgaria outsources visa applications to VFS Global in 25+ source countries. The published VFS logistics/service fee varies by centre, roughly EUR 22-45 equivalent; India charges INR 3080 VFS Logistics per application plus optional add-ons (SMS INR 420, courier INR 735, lounge INR 3360).",
+    "source_url": "https://visa.vfsglobal.com/ind/en/bgr/"
+  },
+  "sources": [
+    "https://www.mfa.bg/en/services-travel/consular-services/fees",
+    "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria",
+    "https://visa.vfsglobal.com/ind/en/bgr/visa-type",
+    "https://visa.vfsglobal.com/rus/en/bgr/visa-type",
+    "https://visa.vfsglobal.com/tha/en/bgr/visa-type",
+    "https://visa.vfsglobal.com/idn/en/bgr/visa-type",
+    "https://visa.vfsglobal.com/blr/en/bgr/visa-type"
+  ],
+  "free_visa_notes": "EU/EEA/CH citizens and ~60 visa-exempt nationalities (USA, GBR, CAN, AUS, JPN, etc.) need no visa for stays up to 90/180 days; the EUR 90 fee applies only to visa-required nationalities. Children 6-11 are exempt from the visa fee; children under 6 pay nothing."
+}

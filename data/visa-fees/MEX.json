@@ -1,0 +1,67 @@
+{
+  "iso3": "MEX",
+  "name": "Mexico",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa without permission to engage in remunerated activities (consular sticker visa)",
+      "amount": 56,
+      "currency": "USD",
+      "amount_usd": 56,
+      "validity": "typically up to 180 days per stay; visa validity commonly 180 days single entry (up to 10 years multiple-entry in some cases)",
+      "applies": "all visa-required nationalities (flat worldwide consular tariff; payable in local currency equivalent, e.g. EUR 49 in the Netherlands)",
+      "official": true,
+      "source_url": "https://embamex.sre.gob.mx/paisesbajos/index.php/consulares/tarifas-consulares",
+      "notes": "Fee is for reception, review and, if applicable, authorization of the visa. Covers tourism, transit and unpaid business visits (same visa type). Confirmed on SRE/embassy consular tariff pages dated 2026."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Visitor visa with permission to engage in remunerated activities",
+      "amount": 321,
+      "currency": "USD",
+      "amount_usd": 321,
+      "validity": "up to 180 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://embamex.sre.gob.mx/paisesbajos/index.php/consulares/tarifas-consulares",
+      "notes": "USD 321 visa issuance fee plus the USD 56 reception/review fee (total USD 377). Ordinary unpaid business visits use the standard USD 56 visitor visa instead."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic Travel Authorization (SAE - Sistema de Autorizacion Electronica)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "30 days from issue, single entry, air travel only (participating airlines)",
+      "applies": "eligible visa-required nationalities (e.g. Brazil, Russia, Turkey, Ukraine) travelling by air",
+      "official": true,
+      "source_url": "https://www.inm.gob.mx/sae/publico/en/solicitud.html",
+      "notes": "Issued free of charge via the INM SAE portal (no payment step in the application). Not valid for land or sea entry; FMM still completed on arrival."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Multiple Migratory Form (FMM) / visitor fee (DNR - Derecho de No Residente)",
+      "amount": null,
+      "currency": "MXN",
+      "amount_usd": null,
+      "validity": "up to 180 days, single entry (days granted at officer's discretion)",
+      "applies": "all foreign visitors (not a visa - an entry permit/tax); included in airfare for air arrivals",
+      "official": true,
+      "source_url": "https://www.inm.gob.mx/fmme/publico/en/solicitud.html",
+      "notes": "Not a visa-on-arrival; Mexico has no VOA. The FMM/DNR is the non-resident entry fee under the Ley Federal de Derechos, updated annually. Third-party sources report approx MXN 983 (~USD 54) for 2026, but the INM portal does not publish the amount on a fetchable page, so amount left null. Free for land stays under 7 days; included in airline ticket for air arrivals."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Mexico does not outsource visa applications to VFS Global/TLScontact/BLS; applications are lodged directly at embassies/consulates with appointments via the MiConsulado (citas.sre.gob.mx) system."
+  },
+  "sources": [
+    "https://embamex.sre.gob.mx/paisesbajos/index.php/consulares/tarifas-consulares",
+    "https://www.inm.gob.mx/sae/publico/en/solicitud.html",
+    "https://www.inm.gob.mx/fmme/publico/en/solicitud.html"
+  ],
+  "free_visa_notes": "Many nationalities (USA, CAN, GBR, EU, JPN, etc.) and holders of valid US/UK/Canada/Japan/Schengen visas or permanent residence enter visa-free; they pay no visa fee, only the FMM/DNR non-resident fee where applicable. The SAE electronic authorization is free for eligible nationalities arriving by air. Consular visa fees are a flat worldwide tariff with no reciprocity-based variation."
+}

@@ -1,0 +1,68 @@
+{
+  "iso3": "GMB",
+  "name": "Gambia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry visa (embassy-issued, Gambia High Commission London)",
+      "amount": 40,
+      "currency": "GBP",
+      "amount_usd": 51,
+      "validity": "single journey; short visit up to 90 days",
+      "applies": "nationalities requiring a visa; fee as published by the London High Commission (embassy fees vary by mission)",
+      "official": true,
+      "source_url": "https://gambiahc.org.uk/consular-services/fees/",
+      "notes": "Fee schedules differ by Gambian mission; London charges GBP 40 single entry. The Washington DC embassy fee is widely reported around USD 100-139 but could not be verified on an official page, so it is not recorded as a separate amount."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry visa (embassy-issued, Gambia High Commission London)",
+      "amount": 60,
+      "currency": "GBP",
+      "amount_usd": 76,
+      "validity": "multiple journeys, validity up to 12 months",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://gambiahc.org.uk/consular-services/fees/",
+      "notes": "Multiple Journey Visa valid for stated number of journeys within up to 12 months per Gambia Immigration Department."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (Banjul International Airport and gazetted ports of entry)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "single entry, short visit",
+      "applies": "travellers from countries without a Gambian diplomatic mission / eligible nationalities; some nationalities also need prior entry clearance",
+      "official": true,
+      "source_url": "https://gid.gov.gm/entry-requirements/",
+      "notes": "Gambia Immigration Department confirms visa on arrival is available at gazetted ports of entry, but publishes no fee amount. Third-party sources report roughly USD 100-150; amount left null pending official confirmation. Payable in cash."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "GBP",
+      "amount_usd": null,
+      "validity": "transit en route to onward destination",
+      "applies": "visa-required nationalities transiting The Gambia",
+      "official": true,
+      "source_url": "https://gid.gov.gm/visa/",
+      "notes": "Transit visa category exists per Gambia Immigration Department; no separate fee published (London High Commission lists only single GBP 40 / multiple GBP 60)."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced visa centre (VFS/TLScontact/BLS) for travel TO The Gambia; applications go directly to Gambian embassies/high commissions or visa on arrival."
+  },
+  "sources": [
+    "https://gambiahc.org.uk/consular-services/fees/",
+    "https://gid.gov.gm/visa/",
+    "https://gid.gov.gm/entry-requirements/",
+    "https://gambia.gov.gm/immigration-and-visas/"
+  ],
+  "free_visa_notes": "Citizens of ECOWAS states, the UK, EU member states, Commonwealth countries and states with reciprocal visa-exemption agreements do not need a visa for stays up to 90 days. Separately, ALL passengers (except diplomats and children 2 and under) pay a Securiport airport security fee of D1000 (~USD 20) in cash on both arrival and departure - this is not a visa fee."
+}

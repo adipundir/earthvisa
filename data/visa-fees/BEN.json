@@ -1,0 +1,79 @@
+{
+  "iso3": "BEN",
+  "name": "Benin",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Visa, 30 days, single entry",
+      "amount": 50,
+      "currency": "EUR",
+      "amount_usd": 55,
+      "validity": "30 days, single entry",
+      "applies": "all nationalities not visa-exempt (all African nationals are visa-free)",
+      "official": true,
+      "source_url": "https://evisa.bj/",
+      "notes": "Official portal evisa.bj (redirects to evisa-ng.gouv.bj). Fee schedule from the portal's 'Les couts des visas d'entree au Benin' article: 50 EUR (approx 32,798 FCFA). Portal blocked direct fetch; amount corroborated by MFA honorary-consulate fiche (embassy-assisted rate 60 EUR = 50 + 10 EUR service surcharge)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa, 30 days, multiple entry",
+      "amount": 75,
+      "currency": "EUR",
+      "amount_usd": 82,
+      "validity": "30 days, multiple entry",
+      "applies": "all nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://evisa.bj/",
+      "notes": "Approx 49,197 FCFA. Embassy-assisted applications (no bank card) pay 85 EUR (10 EUR surcharge)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa, 90 days, multiple entry",
+      "amount": 100,
+      "currency": "EUR",
+      "amount_usd": 110,
+      "validity": "90 days, multiple entry",
+      "applies": "all nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://evisa.bj/",
+      "notes": "Approx 65,596 FCFA. Embassy-assisted applications pay 110 EUR (10 EUR surcharge)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-assisted e-visa (traveller without bank card)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 66,
+      "validity": "30 days single entry (85 EUR for 30-day multiple, 110 EUR for 90-day multiple)",
+      "applies": "travellers applying through a Benin embassy/consulate because they lack a bank card",
+      "official": true,
+      "source_url": "https://consulatdubenin.be/wp-content/uploads/2024/04/Fiche-Information-eVisa.pdf",
+      "notes": "Benin has abolished sticker visas: visa applications are exclusively electronic (per beninembassy.us). Embassies only assist with e-visa filing for a fixed 10 EUR service fee, bringing totals to 60/85/110 EUR."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "not offered",
+      "official": true,
+      "source_url": "https://beninembassy.us/visas/",
+      "notes": "No visa on arrival: the Benin visa application is done exclusively electronically via the official e-visa platform; visa must be obtained before travel."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://evisa.bj/",
+    "https://consulatdubenin.be/wp-content/uploads/2024/04/Fiche-Information-eVisa.pdf",
+    "https://beninembassy.us/visas/",
+    "https://www.service-public.bj/public/services/service/PS00005"
+  ],
+  "free_visa_notes": "Citizens of all African countries and territories are visa-exempt for stays up to 90 days (ECOWAS/UEMOA free movement extended to all of Africa), so IND/USA/GBR/CHN/RUS/etc. pay the flat EUR e-visa fees while NGA and other African nationals enter free. Fees are flat by visa type with no nationality-based reciprocity schedule. Confidence marked medium because the official portal (evisa-ng.gouv.bj) refused automated fetches; the 50/75/100 EUR schedule was confirmed via the portal's indexed fee article and the Benin MFA honorary-consulate information sheet (which documents the +10 EUR embassy-assisted totals of 60/85/110 EUR)."
+}

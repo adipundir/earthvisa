@@ -1,0 +1,55 @@
+{
+  "iso3": "MKD",
+  "name": "North Macedonia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa (type C, up to 90 days) - covers tourism and business visits",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "up to 90 days",
+      "applies": "all nationalities requiring a visa; EUR 35 for children aged 6-12",
+      "official": true,
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Fee per Law on Administrative Fees, Tariff No. 135. North Macedonia is not a Schengen member but follows the Schengen-style EUR 60 short-stay fee. Holders of valid multiple-entry Schengen (C) visas may enter without a Macedonian visa for short stays."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (type C, up to 5 days)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "up to 5 days transit",
+      "applies": "all nationalities requiring a visa; EUR 35 for children aged 6-12",
+      "official": true,
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "Transit is issued as a C visa at the same EUR 60 fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visit (issued as short-stay type C visa)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "up to 90 days",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+      "notes": "No separate business visa category; business visits use the C visa. Long-stay D visa (work/study/family) is EUR 70 but is out of scope as a residence-track visa."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Applications are lodged directly at diplomatic-consular missions of North Macedonia; no VFS Global/TLScontact/BLS outsourcing for inbound visas. (VFS centres in Skopje serve outbound applicants to Canada/UK etc., not visas TO North Macedonia.)"
+  },
+  "sources": [
+    "https://mfa.gov.mk/en-GB/konzularni-uslugi/vidovi-vizi-za-vlez-vo-rsm",
+    "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+    "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm"
+  ],
+  "free_visa_notes": "No e-visa, eTA, or visa-on-arrival regime. Many nationalities (EU, USA, GBR, CAN, and others) enter visa-free; holders of valid multiple-entry Schengen C visas may also enter visa-free for short stays. Reduced fee of EUR 35 applies to children aged 6-12; no published nationality-based reciprocity fee schedule."
+}

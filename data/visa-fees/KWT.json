@@ -1,0 +1,81 @@
+{
+  "iso3": "KWT",
+  "name": "Kuwait",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Kuwait Tourist e-Visa (MOI portal kuwaitvisa.moi.gov.kw)",
+      "amount": 10,
+      "currency": "KWD",
+      "amount_usd": 33,
+      "validity": "Typically issued for stays up to 3 months; visit visas priced KWD 10 per month under Ministerial Resolution 2249/2025 (in force 23 Dec 2025)",
+      "applies": "eligible nationalities (GCC residents and ~50+ visa-eligible countries)",
+      "official": false,
+      "source_url": "https://www.lexismiddleeast.com/news/2025-12-24_3/en",
+      "notes": "Historic e-visa fee was KWD 3; from 23 Dec 2025 all entry/visit visas (family, business, tourist, medical) cost KWD 10 per month under the new Executive Regulations of the Residence of Foreigners Law (Ministerial Resolution No. 2249 of 2025). Exact per-issuance amount on the MOI portal could not be scraped (JS-rendered); apply only via the official portal kuwaitvisa.moi.gov.kw."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival at Kuwait International Airport",
+      "amount": 10,
+      "currency": "KWD",
+      "amount_usd": 33,
+      "validity": "Stay up to 3 months",
+      "applies": "eligible nationalities (USA, UK, EU/Schengen, Canada, Australia, Japan and other visa-waiver-eligible countries)",
+      "official": true,
+      "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Kuwait.html",
+      "notes": "US State Dept confirms KWD 10 visa on arrival for US citizens allowing a stay of up to three months; consistent with the KWD 10/month fee set by Ministerial Resolution 2249/2025."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business/commercial visit visa",
+      "amount": 10,
+      "currency": "KWD",
+      "amount_usd": 33,
+      "validity": "KWD 10 per month; visit visas generally valid 3 months, renewable up to 1 year",
+      "applies": "all (sponsor/company invitation usually required for non-eligible nationalities)",
+      "official": false,
+      "source_url": "https://www.lexismiddleeast.com/news/2025-12-24_3/en",
+      "notes": "Under the Dec 2025 executive regulations all visit visa categories including business are priced at KWD 10 per month."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "KWD",
+      "amount_usd": null,
+      "validity": "Up to 7 days, historically arranged via carrier/shipping agent or Kuwaiti mission",
+      "applies": "travellers transiting with confirmed onward ticket",
+      "official": false,
+      "source_url": "https://kuwaitvisa.moi.gov.kw/",
+      "notes": "Historic transit visa fee was around KWD 2 but no current official published amount could be verified after the Dec 2025 fee overhaul; amount left null."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued entry (visit) visa",
+      "amount": 10,
+      "currency": "KWD",
+      "amount_usd": 33,
+      "validity": "KWD 10 per month of validity; visit visas generally 3 months, renewable to max 1 year",
+      "applies": "nationalities not eligible for e-visa/VOA (sponsor in Kuwait normally required)",
+      "official": false,
+      "source_url": "https://gulfnews.com/world/gulf/kuwait/kuwait-sets-entry-and-visit-visa-fees-at-kd10-a-month-under-new-regulations-1.500389708",
+      "notes": "All entry and visit visas set at KWD 10 per month by Ministerial Resolution No. 2249 of 2025 (effective 23 Dec 2025); embassies may collect equivalent in local currency."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Kuwait does not outsource inbound visa processing; tourist e-visas are issued directly via the MOI portal (kuwaitvisa.moi.gov.kw) and visas on arrival at the airport. VFS Global centres in Kuwait handle outbound visas to other countries only."
+  },
+  "sources": [
+    "https://kuwaitvisa.moi.gov.kw/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Kuwait.html",
+    "https://www.lexismiddleeast.com/news/2025-12-24_3/en",
+    "https://gulfnews.com/world/gulf/kuwait/kuwait-sets-entry-and-visit-visa-fees-at-kd10-a-month-under-new-regulations-1.500389708",
+    "https://research.hktdc.com/en/article/MjE5NTU2NzcxOQ"
+  ],
+  "free_visa_notes": ""
+}

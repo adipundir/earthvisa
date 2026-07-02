@@ -1,0 +1,117 @@
+{
+  "iso3": "BRA",
+  "name": "Brazil",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Electronic Visitor Visa (e-Visa, VIVIS) - USA/Canada/Australia citizens",
+      "amount": 80.9,
+      "currency": "USD",
+      "amount_usd": 80.9,
+      "validity": "Up to 10 years for US citizens (multi-year for Canadian/Australian citizens), stays up to 90 days",
+      "applies": "Nationals of the United States, Canada and Australia (visa requirement reinstated 10 April 2025)",
+      "official": true,
+      "source_url": "https://www.gov.br/mre/pt-br/consulado-miami/information-about-visas-in-english/electronic-visitor-visa-e-visa",
+      "notes": "Fee of US$80.90 confirmed on official gov.br consulate pages; applications only via the official portal https://brazil.vfsevisa.com (operated by VFS Global). gov.br pages are behind anti-bot protection, so the amount was captured from the official page snippet rather than a full page fetch."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor Visa (VIVIS) - tourism, embassy/consulate sticker visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Stays up to 90 days",
+      "applies": "Nationalities not covered by Brazil's visa-exemption list or the e-visa scheme",
+      "official": true,
+      "source_url": "https://visa.vfsglobal.com/lbn/en/bra/visa-type",
+      "notes": "Base VIVIS consular fee could not be verified verbatim on an accessible official page (gov.br is behind a CAPTCHA/WAF); fee is charged by reciprocity and varies by nationality - confirmed reciprocity exceptions listed in reciprocity_variations (Angola USD 180, Algeria USD 85, China USD 115) from the official VFS Global Brazil visa-application-centre pages."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Visitor Visa (VIVIS) - business",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Stays up to 90 days",
+      "applies": "Visa-required nationalities; same VIVIS fee schedule as tourism",
+      "official": true,
+      "source_url": "https://visa.vfsglobal.com/lbn/en/bra/visa-type",
+      "notes": "Business travel uses the same VIVIS visitor visa and the same reciprocity-based fee schedule as tourism. Base amount unverified on an accessible official page; see reciprocity_variations."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Visitor Visa (VIVIS) - transit",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "Visa-required nationalities; grouped with VIVIS 'Tourism and Transit' category",
+      "official": true,
+      "source_url": "https://visa.vfsglobal.com/lbn/en/bra/visa-type",
+      "notes": "Brazil has no separate transit-visa fee schedule; transit falls under the VIVIS visitor visa with the same reciprocity-based fees."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA", "CAN", "AUS"],
+      "kind": "e_visa",
+      "amount": 80.9,
+      "currency": "USD",
+      "note": "e-Visa fee of US$80.90 via the official brazil.vfsevisa.com portal; these are currently the only three nationalities under Brazil's e-visa scheme (reinstated April 2025 after suspension of the visa waiver)."
+    },
+    {
+      "nationalities": ["CHN"],
+      "kind": "tourist_visa",
+      "amount": 115,
+      "currency": "USD",
+      "note": "VIVIS reciprocity exception published on official VFS Global Brazil visa application centre page (Lebanon corridor): China USD 115."
+    },
+    {
+      "nationalities": ["AGO"],
+      "kind": "tourist_visa",
+      "amount": 180,
+      "currency": "USD",
+      "note": "VIVIS reciprocity exception: Angola USD 180 (official VFS Global Brazil page)."
+    },
+    {
+      "nationalities": ["DZA"],
+      "kind": "tourist_visa",
+      "amount": 85,
+      "currency": "USD",
+      "note": "VIVIS reciprocity exception: Algeria USD 85 (official VFS Global Brazil page)."
+    },
+    {
+      "nationalities": ["GBR", "RUS", "IND"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": null,
+      "note": "UK and Russian ordinary-passport holders are visa-exempt for short visits to Brazil (no fee). Indian nationals require a VIVIS; nationality-specific reciprocity amount not verified on an accessible official page - standard VIVIS schedule applies."
+    },
+    {
+      "nationalities": ["NGA", "PAK", "PHL", "BGD"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": null,
+      "note": "Visa-required nationalities on the standard VIVIS schedule; no published reciprocity exception found for them on accessible official pages, amounts not verified so left null (never guessed)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "13",
+    "currency": "USD",
+    "note": "VFS Global runs Brazil visa application centres in multiple source countries (e.g. Lebanon, China, Angola in our data) and also operates the official e-visa portal brazil.vfsevisa.com. Published service charge is USD 13 (incl. tax, cash) at the Lebanon centre; China page publishes 27.8 CNY per application; Angola collects in Kwanza at local exchange rate - service fees vary by centre.",
+    "source_url": "https://visa.vfsglobal.com/lbn/en/bra/visa-type"
+  },
+  "sources": [
+    "https://www.gov.br/mre/pt-br/consulado-miami/information-about-visas-in-english/electronic-visitor-visa-e-visa",
+    "https://brazil.vfsevisa.com/",
+    "https://visa.vfsglobal.com/lbn/en/bra/visa-type",
+    "https://visa.vfsglobal.com/chn/en/bra/visa-type",
+    "https://visa.vfsglobal.com/ago/en/bra/visa-type",
+    "https://www.gov.br/mre/pt-br/consulado-washington/consulate-general-of-brazil-in-washington-dc/visa-fees"
+  ],
+  "free_visa_notes": "Most nationalities (including the EU/Schengen states, UK, Japan, Russia and most of Latin America) enter Brazil visa-free for tourism/business stays of up to 90 days, so no visa fee applies to them. Brazil is NOT a Schengen member. There is no visa-on-arrival and no eTA scheme; visa-required nationals use an embassy VIVIS visa, except US/Canadian/Australian citizens who use the USD 80.90 e-visa."
+}

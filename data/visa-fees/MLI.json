@@ -1,0 +1,113 @@
+{
+  "iso3": "MLI",
+  "name": "Mali",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/regular visa - 3 months single entry",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "3 months, single entry",
+      "applies": "non-US nationals applying at the Embassy of Mali in Washington DC",
+      "official": true,
+      "source_url": "https://maliembassy.us/visas/",
+      "notes": "Embassy of Mali in the USA fee schedule. Fee applies to all regular visa types (tourist/business) at this mission; a December fee-schedule update was published as a PDF (Avis - Changement aux Frais Administratifs du Visa Regulier)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/regular visa - 3 months multiple entry",
+      "amount": 110,
+      "currency": "USD",
+      "amount_usd": 110,
+      "validity": "3 months, multiple entry",
+      "applies": "non-US nationals applying at the Embassy of Mali in Washington DC",
+      "official": true,
+      "source_url": "https://maliembassy.us/visas/",
+      "notes": ""
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/regular visa - 6 months multiple entry",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "6 months, multiple entry",
+      "applies": "non-US nationals applying at the Embassy of Mali in Washington DC",
+      "official": true,
+      "source_url": "https://maliembassy.us/visas/",
+      "notes": ""
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/regular visa - 1 year multiple entry",
+      "amount": 370,
+      "currency": "USD",
+      "amount_usd": 370,
+      "validity": "1 year, multiple entry",
+      "applies": "non-US nationals applying at the Embassy of Mali in Washington DC",
+      "official": true,
+      "source_url": "https://maliembassy.us/visas/",
+      "notes": "Rush processing adds USD 50 to any fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (regular visa, same schedule as tourist)",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "3 months single entry (longer/multiple-entry options per tourist schedule)",
+      "applies": "non-US nationals applying at the Embassy of Mali in Washington DC",
+      "official": true,
+      "source_url": "https://maliembassy.us/visas/",
+      "notes": "Embassy applies one regular-visa fee schedule regardless of purpose (tourist/business); no separate business rate published."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Online visa application via official MDC portal",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all - paper applications no longer accepted; applications routed to the competent embassy/consulate",
+      "official": true,
+      "source_url": "https://www.diplomatiemdc.gouv.ml/vitrine/",
+      "notes": "Mali's official portal (diplomatiemdc.gouv.ml) handles online applications and payment, but does not publish a fee table publicly; the fee charged is the embassy/consulate fee for the applicant's jurisdiction. Amount not verifiable on the portal, so left null."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (limited nationalities, e.g. Rwanda, Kenya)",
+      "amount": null,
+      "currency": "XOF",
+      "amount_usd": null,
+      "validity": "30-90 days",
+      "applies": "limited eligible nationalities at Bamako-Senou, Sikasso and Kayes airports",
+      "official": false,
+      "source_url": "https://maliembassy.us/visas/",
+      "notes": "Mali does not offer visa on arrival to most nationalities; only limited African nationalities reported eligible. No official published VOA fee found - amount left null rather than estimated."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 185,
+      "currency": "USD",
+      "note": "Reciprocal flat fee of USD 185 for US citizens for all visa types regardless of length of stay (visas up to 5 years multiple entry). NOTE: as of 1 January 2026 Mali suspended visa issuance to US citizens; Mali also announced retaliatory visa bond fees on US travellers in Oct 2025. Source: https://maliembassy.us/visas/"
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced visa centre (VFS Global/TLScontact/BLS) found for Mali; applications are made online via the official diplomatiemdc.gouv.ml portal and processed by Malian embassies/consulates."
+  },
+  "sources": [
+    "https://maliembassy.us/visas/",
+    "https://maliembassy.us/visa-fee-schedule-update/",
+    "https://www.diplomatiemdc.gouv.ml/vitrine/",
+    "https://maliembassy.co.in/visa-form",
+    "https://www.aljazeera.com/news/2025/10/12/mali-imposes-retaliatory-visa-bond-fees-on-us-travellers"
+  ],
+  "free_visa_notes": "Visa-free entry for ECOWAS nationals plus Algeria, Cameroon, Andorra, Monaco, Chad, Gambia, Morocco, Mauritania and Tunisia (per Embassy of Mali in the USA). Diplomatic/official visas are issued free."
+}

@@ -1,0 +1,120 @@
+{
+  "iso3": "MOZ",
+  "name": "Mozambique",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Visa single entry 30 days (evisa.gov.mz)",
+      "amount": 6250,
+      "currency": "MZN",
+      "amount_usd": 95,
+      "validity": "30 days",
+      "applies": "eligible nationalities",
+      "official": false,
+      "source_url": "https://evisa.gov.mz/",
+      "notes": "Fee set in Meticais, USD equivalent floats (~$95). Official portal evisa.gov.mz returned 403 to automated fetch; amount corroborated via secondary sources citing the portal after the Feb 2026 VFS-operated relaunch. 60-day: MZN 12,504 (~$190); 90-day: MZN 18,756 (~$290). VFS service fee added on top."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa 60 days",
+      "amount": 12504,
+      "currency": "MZN",
+      "amount_usd": 190,
+      "validity": "60 days",
+      "applies": "eligible nationalities",
+      "official": false,
+      "source_url": "https://evisa.gov.mz/",
+      "notes": "Corroborated via secondary sources; verify on evisa.gov.mz before paying."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa 90 days",
+      "amount": 18756,
+      "currency": "MZN",
+      "amount_usd": 290,
+      "validity": "90 days",
+      "applies": "eligible nationalities",
+      "official": false,
+      "source_url": "https://evisa.gov.mz/",
+      "notes": "Corroborated via secondary sources; verify on evisa.gov.mz before paying."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic Travel Authorisation (visa-exempt nationals, online)",
+      "amount": 48,
+      "currency": "USD",
+      "amount_usd": 48,
+      "validity": "single trip",
+      "applies": "visa-exempt nationalities (mandatory pre-registration since May 2025)",
+      "official": false,
+      "source_url": "https://evisa.gov.mz/",
+      "notes": "Approximate published online eTA fee (~USD 48) per secondary sources; portal blocked automated fetch. Applied on evisa.gov.mz."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Border registration / entry fee on arrival (visa-exempt travellers)",
+      "amount": 650,
+      "currency": "MZN",
+      "amount_usd": 10,
+      "validity": "single entry",
+      "applies": "visa-exempt nationalities registering at the border",
+      "official": false,
+      "source_url": "https://evisa.gov.mz/",
+      "notes": "MZN 650 (~USD 10 / EUR 10) SENAMI administrative fee payable on arrival, widely reported from official SENAMI notices; failure to register/pay may result in refused entry."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy sticker visa, single entry 30 days (Embassy of Mozambique, Washington DC)",
+      "amount": 220,
+      "currency": "USD",
+      "amount_usd": 220,
+      "validity": "30 days, single entry",
+      "applies": "applicants at the US embassy (fees vary by mission)",
+      "official": true,
+      "source_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Normal processing (10 days) USD 220; expedited (3 days) USD 280. Multiple entry 90 days: USD 240 normal / USD 310 expedited. Non-refundable."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa via embassy (same fee schedule as entry visas)",
+      "amount": 220,
+      "currency": "USD",
+      "amount_usd": 220,
+      "validity": "30 days single entry (90-day multiple entry USD 240)",
+      "applies": "applicants at the US embassy",
+      "official": true,
+      "source_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Embassy fee schedule is by entry type (single/multiple), not purpose; business visa requires company letters."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals requiring visas transiting Mozambique",
+      "official": true,
+      "source_url": "https://usa.embamoc.gov.mz/?page_id=99",
+      "notes": "Transit visa exists (required unless travelling to country of origin) but no distinct fee published on the embassy page; fee not verified."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": null,
+    "currency": "USD",
+    "note": "Since Feb 2026 the official e-visa/eTA portal evisa.gov.mz is operated by VFS Global; a service fee is added to each application but the exact published amount could not be verified (portal blocks automated access). Fee increase to ~USD 190 for 60-day e-visa attributed to VFS operation.",
+    "source_url": "https://evisa.gov.mz/"
+  },
+  "sources": [
+    "https://evisa.gov.mz/",
+    "https://usa.embamoc.gov.mz/?page_id=99",
+    "https://beyondekaya.com/travel-tips/visas-and-entry",
+    "https://visasnews.com/en/mozambique-eta-now-mandatory-for-travelers-from-29-visa-exempt-countries/"
+  ],
+  "free_visa_notes": ""
+}

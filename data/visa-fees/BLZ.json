@@ -1,0 +1,69 @@
+{
+  "iso3": "BLZ",
+  "name": "Belize",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Single entry visa (all other nationals)",
+      "amount": 200,
+      "currency": "BZD",
+      "amount_usd": 100,
+      "validity": "6 months",
+      "applies": "all nationalities requiring a visa, except China and India/Nepal/Thailand/Burma/Bangladesh/Pakistan/Sri Lanka schedules",
+      "official": true,
+      "source_url": "https://immigration.gov.bz/visa/visa-fees/",
+      "notes": "Fee schedule effective 1 May 2020. BZD pegged 2:1 to USD. Exemption: US permanent residents or holders of a valid US visitor visa do not need a Belize visa."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple entry visa (all other nationals)",
+      "amount": 300,
+      "currency": "BZD",
+      "amount_usd": 150,
+      "validity": "12 months",
+      "applies": "all nationalities requiring a visa, except China and India/Nepal/Thailand/Burma/Bangladesh/Pakistan/Sri Lanka schedules",
+      "official": true,
+      "source_url": "https://immigration.gov.bz/visa/visa-fees/",
+      "notes": "Fee schedule effective 1 May 2020."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Belize eVisa",
+      "amount": null,
+      "currency": "BZD",
+      "amount_usd": null,
+      "validity": "multiple-entry, up to 30 days stay (reported)",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://evisa.immigration.gov.bz/",
+      "notes": "Official eVisa portal exists (evisa.immigration.gov.bz) but was unreachable at research time and no fee is published on immigration.gov.bz; fee unverified, recorded as null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["CHN"],
+      "kind": "tourist_visa",
+      "amount": 3000,
+      "currency": "BZD",
+      "note": "Single entry BZD 3,000; multiple entry BZD 4,000 (People's Republic of China nationals)."
+    },
+    {
+      "nationalities": ["IND", "NPL", "THA", "MMR", "BGD", "PAK", "LKA"],
+      "kind": "tourist_visa",
+      "amount": 750,
+      "currency": "BZD",
+      "note": "Single entry BZD 750; multiple entry BZD 1,000 (India, Nepal, Thailand, Burma/Myanmar, Bangladesh, Pakistan, Sri Lanka)."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://immigration.gov.bz/visa/visa-fees/",
+    "https://immigration.gov.bz/visa/visa-requirements/",
+    "https://evisa.immigration.gov.bz/"
+  ],
+  "free_visa_notes": "Many nationalities (e.g. USA, GBR, CAN, EU, CARICOM) are visa-exempt for tourist stays. Holders of a valid US visitor visa or US permanent residence are exempt from Belize visa requirements. No visa-on-arrival or eTA regime found on official sources; no separate business or transit visa fee is published (the single/multiple entry visa schedule applies)."
+}

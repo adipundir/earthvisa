@@ -1,0 +1,80 @@
+{
+  "iso3": "CAF",
+  "name": "Central African Republic",
+  "updated": "2026-07-02",
+  "confidence": "low",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa, single entry (embassy-issued, 30 days)",
+      "amount": 75,
+      "currency": "EUR",
+      "amount_usd": 82,
+      "validity": "30 days, single entry",
+      "applies": "all (fee may vary by issuing embassy)",
+      "official": false,
+      "source_url": "https://www.aeroport-bangui.com/en/visa_on_arrival_centrafrique.php",
+      "notes": "The CAR embassy in Paris (paris.diplomatie.gouv.cf) publishes the application procedure but no tariff online. EUR 75 for a single-entry 30-day visa is reported by the Bangui M'Poko airport site and consistently by French visa agencies as the fee set by CAR authorities for applications in France. USD ~82 is quoted by US-based agencies. Confirm with the embassy where you apply."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa, multiple entry (embassy-issued, 90 days)",
+      "amount": 155,
+      "currency": "EUR",
+      "amount_usd": 168,
+      "validity": "90 days, multiple entry",
+      "applies": "all (fee may vary by issuing embassy)",
+      "official": false,
+      "source_url": "https://www.rapidevisa.fr/Visa/Centrafrique.html",
+      "notes": "EUR 155 multiple-entry 90-day fee widely reported for applications via the CAR Embassy in Paris; not published on an official CAR government page. US agencies quote ~USD 150. Verify with the embassy."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (embassy-issued)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "30-90 days depending on entry type",
+      "applies": "all",
+      "official": false,
+      "source_url": "https://paris.diplomatie.gouv.cf/services/24/visa-court-sejour",
+      "notes": "Business travel uses the same short-stay visa category; agencies report the same EUR 75/155 tariff as tourist, but no official published business-specific fee could be verified."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (pre-authorised only)",
+      "amount": null,
+      "currency": "XAF",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "travellers from countries with no CAR diplomatic representation, with express authorisation arranged in advance",
+      "official": false,
+      "source_url": "https://www.aeroport-bangui.com/en/visa_on_arrival_centrafrique.php",
+      "notes": "VOA at Bangui M'Poko is possible only if an express authorization was requested in advance via a CAR diplomatic mission; no published fee. Arriving without a valid visa incurs a 200,000 FCFA (~EUR 300) penalty."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa (no official system)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": false,
+      "source_url": "https://paris.diplomatie.gouv.cf/services/24/visa-court-sejour",
+      "notes": "CAR has no official government e-visa as of 2026-07. Sites such as evisa-centrafrique.com are third-party facilitators (operated by a private company), not the official portal, and publish no fee schedule. The embassy in Paris offers online submission of the standard visa application only."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://paris.diplomatie.gouv.cf/services/24/visa-court-sejour",
+    "https://www.aeroport-bangui.com/en/visa_on_arrival_centrafrique.php",
+    "https://www.rapidevisa.fr/Visa/Centrafrique.html",
+    "https://www.visahq.com/central-african-republic/",
+    "https://evisa-centrafrique.com/"
+  ],
+  "free_visa_notes": "Visa-free entry for nationals of several African states (e.g. Cameroon, Chad, Republic of the Congo, DRC, Benin, Burkina Faso, Burundi, Cote d'Ivoire, Liberia, Niger, Rwanda, Senegal) plus Israel and the United States, per the Bangui airport authority. All other nationalities need an embassy-issued visa; no reciprocity fee schedule by nationality is published."
+}

@@ -1,0 +1,96 @@
+{
+  "iso3": "BGD",
+  "name": "Bangladesh",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (embassy/consulate sticker visa, MRV)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Varies (typically 3-12 months, single or multiple entry)",
+      "applies": "all (fee set by strict reciprocity - varies widely by nationality)",
+      "official": true,
+      "source_url": "https://www.bdcgny.org/fees-and-processing-time",
+      "notes": "Bangladesh sets visa fees strictly by reciprocity, so there is no single tourist-visa fee; see reciprocity_variations. Examples from the Bangladesh Consulate General New York schedule: USA single USD 160, UK single USD 124, China single USD 35, Nigeria single USD 100, Pakistan single USD 4, Philippines single USD 60, Russia single USD 50, Canada single CAD 75, India free. Application form is completed online at the official MRV portal visa.gov.bd, then submitted to a mission; fee list subject to change without notice."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (30 days, single entry)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Max 30 days, single entry; extendable once by 30 days",
+      "applies": "eligible nationalities (incl. USA, Canada, Australia, NZ, Russia, China, Japan, Singapore, Malaysia, South Korea, GCC states, Turkey, European countries, and travellers from countries with no Bangladesh mission)",
+      "official": true,
+      "source_url": "https://voa.specialbranch.gov.bd/public/voa-instructions.html",
+      "notes": "Official Special Branch VOA instructions state USD 50 excluding processing fees (or as decided by the authority); payable in cash only at the Sonali Bank PLC counter at the port of entry. Third-party sources report USD/EUR 51 including tax. Issuance is at the discretion of the immigration officer."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "not offered",
+      "official": true,
+      "source_url": "https://visa.gov.bd/",
+      "notes": "Bangladesh does not offer a true e-visa or eTA. visa.gov.bd is the official Machine Readable Visa (MRV) online application portal: applicants complete the form online, print it, and submit it with fees to a Bangladesh mission or visa office."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (embassy sticker visa)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Varies by nationality and entries",
+      "applies": "all (reciprocity-based, generally same fee schedule as tourist visa)",
+      "official": true,
+      "source_url": "https://www.bdcgny.org/fees-and-processing-time",
+      "notes": "Business visas use the same nationality-based reciprocity fee schedule as tourist visas at most missions (e.g., USA: multiple-entry employment/long-validity USD 190 at the NY Consulate). No single universal fee exists."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all (reciprocity-based)",
+      "official": true,
+      "source_url": "https://visa.gov.bd/",
+      "notes": "Transit visa fees follow the same nationality-based reciprocity schedule; not verified as a distinct published amount on a central official source, so amount left null."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["IND"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Visa required but issued free of charge for Indian citizens ('VISA REQUIRED WITHOUT FEE'); only the application-centre service fee applies in India (approx INR 825 incl. tax)." },
+    { "nationalities": ["USA"], "kind": "tourist_visa", "amount": 160, "currency": "USD", "note": "Single entry USD 160; multiple-entry/employment USD 190 (Bangladesh Consulate General New York schedule)." },
+    { "nationalities": ["GBR"], "kind": "tourist_visa", "amount": 124, "currency": "USD", "note": "Single entry USD 124 (GBP 78); multiple entry USD 124-794 depending on validity." },
+    { "nationalities": ["CHN"], "kind": "tourist_visa", "amount": 35, "currency": "USD", "note": "Single entry USD 35 (approx RMB 200); multiple entry USD 100 (approx RMB 585)." },
+    { "nationalities": ["NGA"], "kind": "tourist_visa", "amount": 100, "currency": "USD", "note": "Single entry USD 100; double entry USD 250." },
+    { "nationalities": ["PAK"], "kind": "tourist_visa", "amount": 4, "currency": "USD", "note": "Single entry USD 4 (approx PKR 200); double USD 8; multiple USD 10." },
+    { "nationalities": ["PHL"], "kind": "tourist_visa", "amount": 60, "currency": "USD", "note": "Single entry USD 60; double USD 80; multiple USD 120." },
+    { "nationalities": ["RUS"], "kind": "tourist_visa", "amount": 50, "currency": "USD", "note": "Single or double entry USD 50; multiple entry USD 100. Russian citizens are also VOA-eligible (USD 50)." },
+    { "nationalities": ["CAN"], "kind": "tourist_visa", "amount": 75, "currency": "CAD", "note": "Single entry CAD 75; multiple entry CAD 150. Canadians are also VOA-eligible (USD 50)." },
+    { "nationalities": ["CHE"], "kind": "tourist_visa", "amount": 40, "currency": "CHF", "note": "CHF 40 single entry, CHF 80 double/multiple entry (Bangladesh Mission Geneva)." }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "DU Digital Global (Bangladesh Visa Application Centre, India); no VFS Global/TLScontact for most other countries - applications go direct to missions",
+    "service_fee": "825",
+    "currency": "INR",
+    "note": "In India, Bangladesh visa applications are submitted via Bangladesh Visa Application Centres run by DU Digital Global: service fee INR 699.5 plus taxes (approx INR 825 total). Elsewhere, applicants generally apply directly at Bangladesh embassies/consulates using the visa.gov.bd MRV form; service fees vary by centre.",
+    "source_url": "https://www.bdvisa.com/visa-service-fees.html"
+  },
+  "sources": [
+    "https://visa.gov.bd/",
+    "https://voa.specialbranch.gov.bd/public/voa-instructions.html",
+    "https://www.bdcgny.org/fees-and-processing-time",
+    "https://www.bdvisa.com/visa-service-fees.html",
+    "https://www.geneva.mofa.gov.bd/en/site/page/visa"
+  ],
+  "free_visa_notes": "Visas are not free in general, but Indian citizens receive Bangladesh visas free of charge (reciprocity), paying only the application-centre service fee. Some nationalities are visa-exempt or eligible for the USD 50 visa on arrival."
+}

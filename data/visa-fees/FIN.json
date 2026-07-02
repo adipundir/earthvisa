@@ -1,0 +1,125 @@
+{
+  "iso3": "FIN",
+  "name": "Finland",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C), adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities, 12 years and older",
+      "official": true,
+      "source_url": "https://um.fi/service-fees",
+      "notes": "Common Schengen fee, confirmed on the Finnish Ministry for Foreign Affairs 2026 fee decree page. Children 6-11 pay EUR 45; children under 6, EU-citizen family members (Directive 2004/38/EC) and certain students/researchers are exempt. Covers tourism and business purposes alike."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C) for business purposes",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://um.fi/service-fees",
+      "notes": "Same Schengen C visa and fee as tourist; purpose declared on application. No separate business visa fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "airport transit only",
+      "applies": "nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://um.fi/service-fees",
+      "notes": "Airport transit visas carry the same EUR 90 Schengen fee under the EU Visa Code."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://um.fi/visa-to-visit-finland",
+      "notes": "Finland does not issue short-stay e-visas. Applications are lodged at missions/VFS centres; the finlandvisa.fi portal is for forms and checklists only. (Finland's long-stay D visa has an electronic-application fee of EUR 95 vs EUR 120 on paper, but D visas are long-term and out of scope.)"
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://um.fi/visa-to-visit-finland",
+      "notes": "Finland does not offer visa on arrival; visas must be obtained in advance (exceptional border visas only in emergencies, per Schengen rules)."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (upcoming, for visa-exempt nationals)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "3 years or until passport expiry",
+      "applies": "visa-exempt nationalities (e.g. USA, GBR, CAN)",
+      "official": true,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "ETIAS is not yet in operation as of this record date; the EU has published a planned EUR 20 fee (free under 18 / over 70), but since it is not yet chargeable the amount is left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "GEO", "MKD", "MDA", "MNE", "SRB", "UKR", "BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under EU visa facilitation agreements (EUR 70 for accelerated processing for Ukraine/Belarus). Source: https://um.fi/service-fees"
+    },
+    {
+      "nationalities": ["CPV"],
+      "kind": "tourist_visa",
+      "amount": 67.5,
+      "currency": "EUR",
+      "note": "Cabo Verde facilitation-agreement rate per um.fi service fee list."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "EU-Russia visa facilitation is suspended; Russian nationals pay the standard EUR 90 fee (Finland also heavily restricts Russian tourist visa issuance)."
+    },
+    {
+      "nationalities": ["IND", "CHN", "NGA", "PAK", "PHL", "BGD"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "Standard Schengen fee; no facilitation agreement. USA, GBR and CAN nationals are visa-exempt for short stays."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "approx 1900-3100",
+    "currency": "INR",
+    "note": "Finland outsources visa intake to VFS Global in most non-EU countries (e.g. India, China, Nigeria, UK). VFS confirms a taxed service charge on its official Finland pages but publishes the exact amount only in the appointment/one-pager flow; third-party trackers put India centres at roughly INR 1,900-3,100 after the Nov 2025 increase. Amount varies by centre and country - verify on the local VFS Finland page before applying.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/fin/"
+  },
+  "sources": [
+    "https://um.fi/service-fees",
+    "https://um.fi/visa-to-visit-finland",
+    "https://visa.vfsglobal.com/ind/en/fin/",
+    "https://travel-europe.europa.eu/etias_en"
+  ],
+  "free_visa_notes": "Visa fee waived for children under 6, family members of EU/Finnish citizens under Directive 2004/38/EC, holders of diplomatic/service passports on official visits, and case-by-case for school/study trips, researchers and young non-profit event participants."
+}

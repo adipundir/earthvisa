@@ -1,0 +1,110 @@
+{
+  "iso3": "NRU",
+  "name": "Nauru",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa (up to 1 month)",
+      "amount": 50,
+      "currency": "AUD",
+      "amount_usd": null,
+      "validity": "up to 1 month",
+      "applies": "all nationalities not eligible for free visa on arrival",
+      "official": true,
+      "source_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Fee schedule on the Department of Justice & Border Control Immigration Division page lists $50; currency not explicitly stated on the page - Nauru's legal tender is the Australian dollar (AUD). Applications are made by email to Nauru Immigration; there is no e-visa portal."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa (up to 2 months)",
+      "amount": 150,
+      "currency": "AUD",
+      "amount_usd": null,
+      "validity": "up to 2 months",
+      "applies": "all nationalities not eligible for free visa on arrival",
+      "official": true,
+      "source_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Currency not explicitly stated on the page; assumed AUD (Nauru's legal tender)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa (up to 3 months)",
+      "amount": 250,
+      "currency": "AUD",
+      "amount_usd": null,
+      "validity": "up to 3 months",
+      "applies": "all nationalities not eligible for free visa on arrival",
+      "official": true,
+      "source_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Currency not explicitly stated on the page; assumed AUD (Nauru's legal tender)."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Free visa on arrival (eligible nationalities)",
+      "amount": 0,
+      "currency": "AUD",
+      "amount_usd": 0,
+      "validity": "short stay (typically up to 30 days)",
+      "applies": "eligible nationalities: Cook Islands, Fiji, Israel, Kiribati, Marshall Islands, Micronesia, Niue, Palau, Papua New Guinea, Russia, Samoa, Solomon Islands, Taiwan, Tonga, Tuvalu, Vanuatu",
+      "official": false,
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Nauru",
+      "notes": "Eligibility list corroborated by multiple secondary sources; the official Immigration Division fee schedule does not list a visa-on-arrival class. Verify with Nauru Immigration before travel."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa - general (multiple entry, up to 12 months)",
+      "amount": 6000,
+      "currency": "AUD",
+      "amount_usd": null,
+      "validity": "up to 12 months, multiple entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "Plus $50 processing fee. Business visitors require a local sponsor. Currency not explicitly stated; assumed AUD."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa - media (single entry, up to 3 months)",
+      "amount": 8000,
+      "currency": "AUD",
+      "amount_usd": null,
+      "validity": "single entry, up to 3 months",
+      "applies": "visiting media personnel",
+      "official": true,
+      "source_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "AUD 8,000 media visa application fee is confirmed as AUD on naurugov.nr media fact sheet; non-refundable if application is unsuccessful."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "AUD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://justice.gov.nr/immigration-division/",
+      "notes": "No transit visa class or fee is published on the official Immigration Division fee schedule; amount unverified."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["RUS"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "AUD",
+      "note": "Russian citizens are among nationalities eligible for a free visa on arrival in Nauru (secondary sources; not on the official fee schedule page)."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://justice.gov.nr/immigration-division/",
+    "http://naurugov.nr/about-nauru/visiting-nauru/visa-requirements.aspx",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Nauru"
+  ],
+  "free_visa_notes": "Nauru has no e-visa or eTA system; visas are arranged by emailing Nauru Immigration before travel. Citizens of 16 mostly Pacific states (plus Israel, Russia, Taiwan) receive a free visa on arrival. IND, USA, GBR, CHN, NGA, PAK, PHL, BGD and CAN nationals must obtain a visitor visa in advance ($50/$150/$250 for 1/2/3 months)."
+}

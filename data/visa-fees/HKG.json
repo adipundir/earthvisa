@@ -1,0 +1,79 @@
+{
+  "iso3": "HKG",
+  "name": "Hong Kong",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Ordinary visa / entry permit (visit, single entry)",
+      "amount": 330,
+      "currency": "HKD",
+      "amount_usd": 42,
+      "validity": "typically valid for a single visit within 3 months of issue",
+      "applies": "nationalities not eligible for visa-free entry (e.g. mainland CHN residents use separate schemes; visa required for ~20 nationalities)",
+      "official": true,
+      "source_url": "https://www.immd.gov.hk/eng/services/fee-tables/",
+      "notes": "Immigration Department fee table effective 08-04-2026. Same HK$330 fee applies to visit, business and student ordinary visas outside the specified talent/investment schemes."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Ordinary visa (business visit)",
+      "amount": 330,
+      "currency": "HKD",
+      "amount_usd": 42,
+      "validity": null,
+      "applies": "nationalities requiring a visa for business visits",
+      "official": true,
+      "source_url": "https://www.immd.gov.hk/eng/services/fee-tables/",
+      "notes": "Business visits use the same ordinary visa fee of HK$330; no separate business-visa category."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 170,
+      "currency": "HKD",
+      "amount_usd": 22,
+      "validity": "single transit",
+      "applies": "nationalities requiring a visa even for transit (most travellers transiting by air without leaving the airport need no visa)",
+      "official": true,
+      "source_url": "https://www.immd.gov.hk/eng/services/fee-tables/",
+      "notes": ""
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Entry permit, multiple entries (1 year)",
+      "amount": 670,
+      "currency": "HKD",
+      "amount_usd": 86,
+      "validity": "1 year, multiple entries",
+      "applies": "eligible applicants applying locally",
+      "official": true,
+      "source_url": "https://www.immd.gov.hk/eng/services/fee-tables/",
+      "notes": "3-year multiple-entry permit costs HK$1,350."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (electronic visa/entry permit)",
+      "amount": 330,
+      "currency": "HKD",
+      "amount_usd": 42,
+      "validity": null,
+      "applies": "applicants using ImmD online submission",
+      "official": true,
+      "source_url": "https://www.immd.gov.hk/eng/services/fee-tables/",
+      "notes": "Hong Kong issues visas electronically ('e-Visa') since 2021 for online applications; the fee is the same ordinary visa/entry permit fee, no separate e-visa surcharge."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced visa centre. Applications are lodged online with the Immigration Department, by post, or forwarded free of charge through Chinese embassies/consulates overseas."
+  },
+  "sources": [
+    "https://www.immd.gov.hk/eng/services/fee-tables/",
+    "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "https://www.immd.gov.hk/eng/press/press-releases/20250625a.html"
+  ],
+  "free_visa_notes": "Nationals of about 170 countries/territories may visit Hong Kong visa-free for 7 to 180 days (e.g. GBR 180 days; USA, CAN, RUS, PHL and most others 14-90 days). Visas are only required for a small set of nationalities (incl. IND pre-arrival registration - free; NGA, PAK, BGD require visas at HK$330). No visa-on-arrival or paid eTA regime exists; India nationals instead complete a free online Pre-arrival Registration."
+}

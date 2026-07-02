@@ -1,0 +1,58 @@
+{
+  "iso3": "CUB",
+  "name": "Cuba",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (eVisaCuba, replaces the paper tourist card)",
+      "amount": null,
+      "currency": "varies",
+      "amount_usd": null,
+      "validity": "Single entry, stay up to 90 days, extendable once by 90 days; valid for use within about 12 months of issue",
+      "applies": "all nationalities requiring a visa (i.e. most visitors); applied for at evisacuba.cu",
+      "official": true,
+      "source_url": "https://misiones.cubaminrex.cu/en/articulo/evisacuba-electronic-tourist-visa-system",
+      "notes": "Since mid-2025 Cuba requires the electronic tourist visa (eVisaCuba) instead of the paper tourist card for air arrivals. The fee is set by each Cuban consulate in local currency and is NOT published centrally, so no single global amount can be stated. Verified official example: TTD 108 at the Cuban Embassy in Trinidad and Tobago. Third-party/consular reports put typical amounts around GBP 22 (UK) and EUR 22 (Spain), but these were not verified on an official page and are therefore not recorded as amounts. Travellers departing the USA have historically bought the tourist card/e-visa via airlines or authorised agencies at USD ~50-100, but those are agency/airline prices, not an official government fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (D-7 / commercial)",
+      "amount": null,
+      "currency": "varies",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "business travellers; must be requested through the commercial office of the Cuban Embassy, then issued by the Consulate",
+      "official": true,
+      "source_url": "https://misiones.cubaminrex.cu/en/trinidad-and-tobago/consular-services",
+      "notes": "Fee is the 'consular fee stipulated for this service' at each consulate; no amount is published centrally. Payment at consulates is typically cash, certified bank payment, money order or bank transfer."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (A-6)",
+      "amount": null,
+      "currency": "varies",
+      "amount_usd": null,
+      "validity": "Short transit through Cuban territory",
+      "applies": "travellers transiting Cuba who are not visa-exempt",
+      "official": true,
+      "source_url": "https://cubaminrex.cu/en/consular-formality-procedures",
+      "notes": "Issued by Cuban consulates; fee set locally per consulate fee schedule and not published centrally."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Cuba does not outsource visa processing to VFS Global, TLScontact or BLS; applications go through the eVisaCuba portal and Cuban consulates (some consulates work with contracted local agencies, e.g. in the USA)."
+  },
+  "sources": [
+    "https://misiones.cubaminrex.cu/en/articulo/evisacuba-electronic-tourist-visa-system",
+    "https://misiones.cubaminrex.cu/en/trinidad-and-tobago/consular-services",
+    "https://misiones.cubaminrex.cu/en/united-kingdom/consular-services",
+    "https://misiones.cubaminrex.cu/en/usa/consular-services",
+    "https://evisacuba.cu/",
+    "https://cubaminrex.cu/en/consular-formality-procedures"
+  ],
+  "free_visa_notes": "Cuba is not visa-free for most visitors: nearly all tourists need the e-visa (former tourist card). Fees vary by the country/consulate where you apply (verified example: TTD 108 in Trinidad and Tobago), not by nationality. Separately, all travellers must complete the free D'Viajeros advance-information form (dviajeros.mitrans.gob.cu) before arrival."
+}

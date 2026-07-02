@@ -1,0 +1,104 @@
+{
+  "iso3": "MMR",
+  "name": "Myanmar",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (evisa.moip.gov.mm)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Approval letter valid 90 days from issue; 28-day stay, single entry",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://evisa.moip.gov.mm/",
+      "notes": "Official Ministry of Immigration and Population portal; fee confirmed via Consulate-General of Myanmar, Los Angeles e-visa page (myanmarcgla.org). Processing up to 3 working days; fee non-refundable. Payable by Visa/Mastercard/Amex/JCB/Alipay."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa Express (24-hour processing)",
+      "amount": 56,
+      "currency": "USD",
+      "amount_usd": 56,
+      "validity": "Approval letter valid 90 days; 28-day stay, single entry",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://myanmarcgla.org/index.php/visa/e-visa",
+      "notes": "Express service processed within up to 24 hours, available year-round, per Consulate-General of Myanmar Los Angeles."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business e-Visa (evisa.moip.gov.mm)",
+      "amount": 70,
+      "currency": "USD",
+      "amount_usd": 70,
+      "validity": "Approval letter valid 90 days; 70-day stay, single entry",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://evisa.moip.gov.mm/",
+      "notes": "Requires company invitation/registration documents. Fee confirmed via Consulate-General of Myanmar Los Angeles e-visa page."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30-day stay",
+      "applies": "eligible nationalities (incl. China, India, Russia, Australia, Germany, Italy, Spain, Switzerland, Austria, Hungary, New Zealand, Czech Republic, Luxembourg; Hong Kong residents)",
+      "official": true,
+      "source_url": "https://www.myanmarconsulatehk.org/index.php/visa/visa-on-arrival",
+      "notes": "Available at Yangon, Mandalay and Nay Pyi Taw international airports only. Per Myanmar Consulate-General Hong Kong."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Business visa on arrival",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "70-day stay",
+      "applies": "passport holders of ~50+ eligible countries (incl. USA, UK, Canada, France, Japan, Singapore, Thailand)",
+      "official": true,
+      "source_url": "https://www.myanmarconsulatehk.org/index.php/visa/visa-on-arrival",
+      "notes": "Requires company registration and invitation documents. Yangon, Mandalay, Nay Pyi Taw airports."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa on arrival",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "24 hours",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://www.myanmarconsulatehk.org/index.php/visa/visa-on-arrival",
+      "notes": "Per Myanmar Consulate-General Hong Kong visa-on-arrival schedule. Workshop/seminar/meeting/research VOA is USD 40 (28 days) and crew VOA USD 40 (28 days)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (embassy/consulate sticker visa)",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "3 months from issue; 28-day stay, single entry, not extendable",
+      "applies": "all (fee as published by Consulate-General of Myanmar, Los Angeles; embassy fees vary by mission)",
+      "official": true,
+      "source_url": "https://myanmarcgla.org/index.php/tourist-visa",
+      "notes": "USD 40 at the LA Consulate-General, payable by cashier's check/money order. Sticker-visa fees differ by embassy/consulate; the e-visa (USD 50) is the standard route for most travellers."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://evisa.moip.gov.mm/",
+    "https://evisa.moip.gov.mm/home/visaprocessfee",
+    "https://myanmarcgla.org/index.php/visa/e-visa",
+    "https://myanmarcgla.org/index.php/tourist-visa",
+    "https://www.myanmarconsulatehk.org/index.php/visa/visa-on-arrival"
+  ],
+  "free_visa_notes": "Myanmar grants visa-free entry to nationals of several ASEAN countries (e.g. Thailand, Singapore, Vietnam, Philippines, Cambodia, Laos, Brunei, Indonesia) for short stays; all other nationalities require a visa. No published nationality-based fee reciprocity schedule found — e-visa fees are flat by visa type."
+}

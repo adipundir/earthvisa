@@ -1,0 +1,126 @@
+{
+  "iso3": "LBN",
+  "name": "Lebanon",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival (eligible nationalities)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "1 month, extendable free of charge to 3 months",
+      "applies": "eligible nationalities (incl. USA, CAN, GBR, EU, AUS, JPN, CHN, RUS and others per General Security list)",
+      "official": true,
+      "source_url": "https://www.general-security.gov.lb/en/posts/38",
+      "notes": "Issued free at Beirut airport and land/sea border posts. Requires phone number, address in Lebanon, return ticket and no Israeli stamps. GCC (SAU, ARE, KWT, BHR, QAT, OMN) and Jordanian citizens get a free 3-6 month visa; Turkish citizens a free 3-month multiple-entry visa."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/visit visa - General Security domestic fee schedule",
+      "amount": 2000000,
+      "currency": "LBP",
+      "amount_usd": 22,
+      "validity": "single or double entry",
+      "applies": "nationalities requiring a pre-arranged visa",
+      "official": true,
+      "source_url": "https://www.general-security.gov.lb/en/posts/37",
+      "notes": "General Directorate of General Security fee schedule: tourist/visit, work/entry, converting and renewing visas each 2,000,000 LBP. USD approximation at prevailing market rate; LBP value fluctuates."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa - General Security fee schedule",
+      "amount": 2000000,
+      "currency": "LBP",
+      "amount_usd": 22,
+      "validity": "single or double entry",
+      "applies": "nationalities requiring a transit visa",
+      "official": true,
+      "source_url": "https://www.general-security.gov.lb/en/posts/37",
+      "notes": "Transit or residence visa (single or double entry) 2,000,000 LBP per GDGS schedule."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy sticker visa - Lebanese Embassy London",
+      "amount": 68,
+      "currency": "GBP",
+      "amount_usd": 86,
+      "validity": "single entry; GBP 97 two entries, GBP 135 multiple entries",
+      "applies": "applicants in the United Kingdom requiring a pre-arranged visa",
+      "official": true,
+      "source_url": "https://www.lebanon-embassy.org/visas",
+      "notes": "Same fee scale for all visa categories at the London embassy; paid in cash or postal order when the application is accepted."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa via VFS Global (India centres, Embassy of Lebanon New Delhi)",
+      "amount": 8250,
+      "currency": "INR",
+      "amount_usd": 96,
+      "validity": "single entry; INR 11,750 double, INR 16,450 multiple",
+      "applies": "Indian applicants (Indians require a pre-arranged visa)",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/lebanon/india/english/index.html",
+      "notes": "Embassy visa fee, excludes VFS service fee INR 1,920."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa via VFS Global (India centres)",
+      "amount": 8250,
+      "currency": "INR",
+      "amount_usd": 96,
+      "validity": "single entry; INR 11,750 double, INR 16,450 multiple",
+      "applies": "Indian applicants",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/lebanon/india/english/index.html",
+      "notes": "Same scale as tourist at India centres; official-passport holders GRATIS."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA", "GBR", "CAN", "RUS", "CHN"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Eligible for the free 1-month visa on arrival (extendable to 3 months) per General Security."
+    },
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 8250,
+      "currency": "INR",
+      "note": "Not VOA-eligible; must apply via Embassy of Lebanon (New Delhi) through VFS Global. Single entry INR 8,250."
+    },
+    {
+      "nationalities": ["NGA"],
+      "kind": "tourist_visa",
+      "amount": 2450000,
+      "currency": "LBP",
+      "note": "Collective/tourist-group visas for Nigeria, Ghana and Ivory Coast require prior approval; 2,450,000 LBP per person per GDGS schedule."
+    },
+    {
+      "nationalities": ["PAK", "PHL", "BGD"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "LBP",
+      "note": "Not VOA-eligible; pre-arranged visa with General Security approval required. No nationality-specific published fee found on an official source; domestic GDGS schedule fee is 2,000,000 LBP."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1920",
+    "currency": "INR",
+    "note": "India centres: INR 1,920 incl. GST plus INR 150 in-person convenience charge. Varies by centre - e.g. Nepal NPR 2,700 plus NPR 2,700 mandatory two-way courier. VFS handles Lebanon visas from at least IND, NPL, BTN, LKA, THA.",
+    "source_url": "https://www.vfsglobal.com/one-pager/lebanon/india/english/index.html"
+  },
+  "sources": [
+    "https://www.general-security.gov.lb/en/posts/37",
+    "https://www.general-security.gov.lb/en/posts/38",
+    "https://www.lebanon-embassy.org/visas",
+    "https://www.vfsglobal.com/one-pager/lebanon/india/english/index.html",
+    "https://www.vfsglobal.com/one-pager/lebanon/nepal/english/index.html"
+  ],
+  "free_visa_notes": "Most Western, GCC and many Asian nationalities receive a free 1-month visa on arrival (extendable to 3 months at no cost). GCC citizens and Jordanians get free 3-6 month visas; Turkish citizens free 3-month multiple entry. Lebanon has no e-visa or eTA system."
+}

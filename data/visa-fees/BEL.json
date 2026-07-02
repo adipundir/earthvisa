@@ -1,0 +1,111 @@
+{
+  "iso3": "BEL",
+  "name": "Belgium",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C), adults and children 12+",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://dofi.ibz.be/en/themes/faq/visa-fees",
+      "notes": "Children 6-12 pay EUR 45; children under 6 free. Fee waivers for pupils/students on study trips, researchers, non-profit event participants aged 25 or under, and certain diplomatic passport holders. Paid in EUR (or local-currency equivalent) at submission; non-refundable."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C) for business purposes",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://dofi.ibz.be/en/themes/faq/visa-fees",
+      "notes": "Same uniform Schengen C-visa fee; no separate business-visa category or price."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport transit only",
+      "applies": "nationalities requiring an airport transit visa",
+      "official": true,
+      "source_url": "https://dofi.ibz.be/en/themes/faq/visa-fees",
+      "notes": "Uniform Schengen Visa Code fee applies to type A airport transit visas."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (EU-wide, covers Belgium)",
+      "amount": 20,
+      "currency": "EUR",
+      "amount_usd": 22,
+      "validity": "3 years or until passport expiry",
+      "applies": "visa-exempt nationalities (e.g. USA, GBR, CAN) once ETIAS launches",
+      "official": true,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "Not yet in operation as of 2026-07-02; expected to start in late 2026 after the EU Entry/Exit System. Free for under-18s and over-70s."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://dofi.ibz.be/en/themes/faq/visa-fees",
+      "notes": "Belgium does not issue e-visas; Schengen visas are sticker visas applied for at embassies/consulates or outsourced centres."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://dofi.ibz.be/en/themes/faq/visa-fees",
+      "notes": "Belgium does not offer visa on arrival; visas must be obtained before travel (exceptional border visas aside)."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "EU-Russia visa facilitation agreement (EUR 35 fee) is suspended since 2022; Russian nationals pay the standard EUR 90 Schengen fee."
+    },
+    {
+      "nationalities": ["ARM", "AZE", "CPV"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under EU visa facilitation agreements (also covers e.g. Albania/Bosnia nationals not exempt). None of the key tracked nationalities (IND, CHN, NGA, PAK, PHL, BGD) benefit - they pay the standard EUR 90."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2700",
+    "currency": "INR",
+    "note": "India: INR 2,700 per application incl. 18% GST (Mumbai centre INR 2,750); optional courier ~INR 760. Service fees vary by country/centre - typically roughly EUR 25-35 equivalent. Belgium also uses TLScontact in some countries.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/bel"
+  },
+  "sources": [
+    "https://dofi.ibz.be/en/themes/faq/visa-fees",
+    "https://travel-europe.europa.eu/etias_en",
+    "https://visa.vfsglobal.com/ind/en/bel",
+    "https://india.diplomatie.belgium.be/en/travel-belgium/visa-belgium/visa-belgium-if-you-live-india"
+  ],
+  "free_visa_notes": "Visa-exempt nationalities (EU/EEA, USA, GBR, CAN, JPN and other Annex II countries) currently enter free for short stays; the EUR 20 ETIAS authorisation will apply once operational. Note: from 1 July 2026 the Belgian long-stay (type D) handling fee rises to EUR 250, but long-stay permits are out of scope for this record."
+}

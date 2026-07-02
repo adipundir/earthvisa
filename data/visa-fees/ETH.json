@@ -1,0 +1,92 @@
+{
+  "iso3": "ETH",
+  "name": "Ethiopia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (single entry, 30 days)",
+      "amount": 62,
+      "currency": "USD",
+      "amount_usd": 62,
+      "validity": "30 days, single entry",
+      "applies": "all (all nationalities may apply online)",
+      "official": true,
+      "source_url": "https://www.evisa.gov.et/information/tourist",
+      "notes": "Reduced from USD 82 in late 2025. Extension fee USD 102. Official portal fee table."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (single entry, 90 days)",
+      "amount": 152,
+      "currency": "USD",
+      "amount_usd": 152,
+      "validity": "90 days, single entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.evisa.gov.et/information/tourist",
+      "notes": "Still listed on the official portal fee table, but media reports (VisasNews) indicate the 90-day e-visa was suspended in Nov 2025; verify availability at application time. Extension fee USD 302."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist Visa on Arrival (Addis Ababa Bole airport)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "30 days (tourist categories)",
+      "applies": "eligible nationalities (list on official portal)",
+      "official": true,
+      "source_url": "https://www.evisa.gov.et/information/touristOnArrivalVisa",
+      "notes": "Official portal confirms VOA for eligible countries but does not publish a separate VOA fee; expected to match the tourist e-visa fee (USD 62 for 30 days), payable at the airport. Amount left null as not explicitly published."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy sticker tourist visa (Washington DC schedule)",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "single entry (multiple entry USD 150)",
+      "applies": "all (embassy applicants)",
+      "official": true,
+      "source_url": "https://consular.ethiopianembassy.org/service-details_visa.php",
+      "notes": "USD 60 single entry / USD 150 multiple entries at the Ethiopian Embassy in Washington DC; payable by money order only. Fees vary by mission."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business and Related Studies e-Visa (BRV, single entry 30 days)",
+      "amount": 152,
+      "currency": "USD",
+      "amount_usd": 152,
+      "validity": "30 days single entry (90 days single entry USD 202)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.evisa.gov.et/",
+      "notes": "Official portal fee table. Related categories: Conference visa (CV) USD 52/30 days; Investment visa (IV) USD 62/30 days single entry, USD 152/90 days multiple; Foreign Business Firm Employment (WV) USD 402/30 days; Journalist visa USD 152/30 days."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": true,
+      "source_url": "https://www.evisa.gov.et/",
+      "notes": "No transit e-visa category is published on the official e-visa portal; airside transit through Addis Ababa does not require a visa. No official transit visa fee found."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Ethiopia does not outsource visa applications to VFS/TLS/BLS; applications are via the official e-visa portal (evisa.gov.et), on arrival, or directly at embassies."
+  },
+  "sources": [
+    "https://www.evisa.gov.et/information/tourist",
+    "https://www.evisa.gov.et/information/touristOnArrivalVisa",
+    "https://consular.ethiopianembassy.org/service-details_visa.php",
+    "https://visasnews.com/en/ethiopia-lowers-the-price-of-its-tourist-visa/"
+  ],
+  "free_visa_notes": "Citizens of Kenya and Djibouti with a valid passport enter Ethiopia visa-free (per official e-visa portal). No nationality-based fee reciprocity schedule is published; e-visa fees are uniform for all nationalities."
+}

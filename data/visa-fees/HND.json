@@ -1,0 +1,84 @@
+{
+  "iso3": "HND",
+  "name": "Honduras",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Consular visa (visa no consultada) - single entry",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "Single entry; ~60 days validity per Embassy of Honduras in Canada (embassy pages vary: 30-60 days). Stay up to 90 days, extendable 90 more via INM.",
+      "applies": "nationalities whose visa can be issued directly by a Honduran consulate without prior INM authorization (covers tourism and business travel)",
+      "official": true,
+      "source_url": "https://embajadahondurasencanada.hn/en/visas-2/",
+      "notes": "Issued by Honduran diplomatic/consular officer without Foreign Ministry/INM authorization. Also confirmed at https://hondurasembassyuk.com/visa/ (single US$30 / multiple US$60). Honduras has no e-visa, no visa on arrival and no eTA; CA-4 nationals (GTM, SLV, NIC) enter freely."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Consular visa (visa no consultada) - multiple entry",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "Multiple entries, valid up to 1 year from issue (Embassy of Honduras in Canada)",
+      "applies": "same nationalities as single-entry consular visa; covers tourism and business",
+      "official": true,
+      "source_url": "https://embajadahondurasencanada.hn/en/visas-2/",
+      "notes": "Also listed by the Honduran Embassy in the UK as US$60 for multiple entry."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Consulted visa (visa consultada)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": null,
+      "applies": "nationalities requiring prior written authorization from the Instituto Nacional de Migracion (INM) before a consulate may issue the visa",
+      "official": true,
+      "source_url": "https://inm.gob.hn/visas.html",
+      "notes": "US$100 fee established by Art. 127 numeral 12 of the Migration and Foreign Nationality Law regulations (INM). Confirmed by the Honduran Embassy in the UK. Processing after INM authorization can take ~4-8 weeks. Exact nationality list (typically includes several Asian and African countries) is published by INM; not itemized on the fetched embassy pages."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business travel (same consular visa schedule)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "single US$30 / multiple US$60, same as tourist consular visa",
+      "applies": "visa-required nationalities travelling for business",
+      "official": true,
+      "source_url": "https://embajadahondurasencanada.hn/en/visas-2/",
+      "notes": "Honduras does not publish a separate business-visa fee; business purposes are handled under the same consular visa (tourist/business) at US$30 single / US$60 multiple, or US$100 if the nationality requires a consulted visa."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationalities in transit",
+      "official": true,
+      "source_url": "https://inm.gob.hn/visas.html",
+      "notes": "No separately published transit-visa fee found on official INM/embassy pages; visa-required nationals transiting would use the standard consular/consulted visa schedule. Amount left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA", "GBR_note", "CAN", "RUS"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Most Western nationalities (USA, Canada, EU, Russia and others) are visa-exempt for up to 90 days and pay no visa fee. Caveat: the Honduran Embassy in Canada page states British citizens require a visa prior to travel, which conflicts with common visa-exempt listings; treat GBR as verify-before-travel. Fee variation in Honduras is by visa category (consular US$30/60 vs consulted US$100), not by per-nationality price."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://inm.gob.hn/visas.html",
+    "https://hondurasembassyuk.com/visa/",
+    "https://embajadahondurasencanada.hn/en/visas-2/"
+  ],
+  "free_visa_notes": "Many nationalities (USA, Canada, EU/Schengen, and CA-4 neighbours Guatemala, El Salvador, Nicaragua under free movement) enter Honduras visa-free for up to 90 days at no cost. Diplomatic, official and courtesy visas are issued free of charge. Honduras is not a Schengen member and has no e-visa, visa-on-arrival or eTA programme."
+}

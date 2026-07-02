@@ -1,0 +1,95 @@
+{
+  "iso3": "BOL",
+  "name": "Bolivia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visa de Turismo (consulate-issued)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "up to 90 days per year",
+      "applies": "Group II/III nationalities requiring a visa (Group I is visa-exempt)",
+      "official": true,
+      "source_url": "https://consulados.cancilleria.gob.bo/base/arancel-consular/",
+      "notes": "Official consular tariff (Resolucion Ministerial 081, 13 Apr 2015): 'Visas de Turismo, conforme a normativa vigente y reciprocidad' USD 30. The former USD 160 sticker tourist visa for US/Puerto Rico citizens is obsolete: US citizens are visa-exempt since 1 Dec 2025 (Decreto Supremo 5497)."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival (border/airport, Group II)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "up to 90 days",
+      "applies": "Group II nationalities eligible for visa on arrival",
+      "official": false,
+      "source_url": "https://consulados.cancilleria.gob.bo/base/visas/",
+      "notes": "Third-party sources widely cite ~USD 95 (BOB 665) paid in cash at the border, vs USD 30 at a consulate, but no current official published amount could be verified; some reports say VOA availability changed in mid-2025. Amount left null per accuracy rules."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Visa Multiple (business and investment, multiple entry, 1 year)",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "1 year, multiple entry",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://consulados.cancilleria.gob.bo/base/arancel-consular/",
+      "notes": "Official consular tariff. Related 'Visa de Objeto Determinado' (work/health/family) is USD 85."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Visa en Transito",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "up to 15 days",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://consulados.cancilleria.gob.bo/base/arancel-consular/",
+      "notes": "Listed as gratuito (no charge) in the official consular tariff."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Visa-exempt (Group I) since 1 Dec 2025 under Decreto Supremo 5497; previously a USD 160 sticker visa applied. 90-day visa-free stay."
+    },
+    {
+      "nationalities": ["GBR", "CAN", "RUS"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Group I visa-exempt for tourism (up to 90 days per year); no fee."
+    },
+    {
+      "nationalities": ["IND", "CHN"],
+      "kind": "tourist_visa",
+      "amount": 30,
+      "currency": "USD",
+      "note": "Group II: tourist visa required, USD 30 at a consulate per official tariff; visa on arrival at higher unverified cost may be available."
+    },
+    {
+      "nationalities": ["NGA", "PAK", "PHL", "BGD"],
+      "kind": "tourist_visa",
+      "amount": 30,
+      "currency": "USD",
+      "note": "Visa required with prior authorisation for Group III nationalities; consular fee USD 30 per official tariff. Group assignment should be confirmed with the consulate."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://consulados.cancilleria.gob.bo/base/arancel-consular/",
+    "https://consulados.cancilleria.gob.bo/base/visas/",
+    "https://visas.cancilleria.gob.bo/",
+    "https://cancilleria.gob.bo/mre/2025/12/01/23577/",
+    "https://bo.usembassy.gov/message-to-u-s-citizens-visitor-visas-no-longer-required-december-3-2025/"
+  ],
+  "free_visa_notes": "Group I nationalities (incl. US, UK, EU, Canada, Australia, NZ, Russia; expanded 1 Dec 2025 by Decreto Supremo 5497 to add USA, South Korea, Israel, UAE and others) enter visa-free for tourism up to 90 days per year. Transit visa is free of charge for all."
+}

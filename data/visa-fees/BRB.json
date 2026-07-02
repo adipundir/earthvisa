@@ -1,0 +1,53 @@
+{
+  "iso3": "BRB",
+  "name": "Barbados",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Entry visa - single entry (online application)",
+      "amount": 107,
+      "currency": "USD",
+      "amount_usd": 107,
+      "validity": "One entry within a three-month period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://immigration.gov.bb/pages/visa_requirements.aspx",
+      "notes": "Also quoted as BDS$200.00. Applications are made online via the Immigration Department portal (apps.immigration.gov.bb); processing about three weeks. Fee payable by postal money order/bank draft for mail applications."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Entry visa - multiple entry (online application)",
+      "amount": 211,
+      "currency": "USD",
+      "amount_usd": 211,
+      "validity": "Numerous entries within a six-month period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://immigration.gov.bb/pages/visa_requirements.aspx",
+      "notes": "Also quoted as BDS$400.00. Same fee applies regardless of travel purpose (tourism/business); Barbados does not publish a separate business visa fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit (exemption)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "cruise passengers in transit and crew transiting within 12 hours",
+      "official": true,
+      "source_url": "https://immigration.gov.bb/pages/visa_requirements.aspx",
+      "notes": "No separate transit visa fee published; cruise ship passengers in transit and crew members transiting within 12 hours are exempt from visa requirements. Other transit travellers who need a visa pay the standard entry visa fee."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://immigration.gov.bb/pages/visa_requirements.aspx",
+    "https://www.foreign.gov.bb/visa-information/"
+  ],
+  "free_visa_notes": "Nationals of many countries (incl. USA, GBR, CAN, most of EU/Commonwealth Caribbean) do not require a visa for short stays. Members of the Diplomatic Corps of visa-required countries are exempt from the visa fee. No visa-on-arrival or eTA regime exists; visa-required nationals apply online in advance."
+}

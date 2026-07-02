@@ -1,0 +1,85 @@
+{
+  "iso3": "MNE",
+  "name": "Montenegro",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa C (tourism/visit, embassy/VAC sticker visa)",
+      "amount": 35,
+      "currency": "EUR",
+      "amount_usd": 38,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://visa.vfsglobal.com/rus/en/mne/",
+      "notes": "Consular fee published on official VFS Global Montenegro one-pagers (Contentful CDA, space xxg4p8gt3sg6): Short Term Visa EUR 35; minor children under 14 pay EUR 17.50. Montenegro is NOT a Schengen member, so the Schengen fee does not apply. Fee not itemised on gov.me (only 'proof of payment of consular fee' is required)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short-stay visa C (business)",
+      "amount": 35,
+      "currency": "EUR",
+      "amount_usd": 38,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://visa.vfsglobal.com/rus/en/mne/",
+      "notes": "Same C-category consular fee schedule as tourism per VFS Montenegro one-pager fee tables."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (B category)",
+      "amount": 35,
+      "currency": "EUR",
+      "amount_usd": 38,
+      "validity": "Transit through Montenegro",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://visa.vfsglobal.com/rus/en/mne/",
+      "notes": "VFS Montenegro one-pager lists an identical fee table (Short Term EUR 35 / Long Term EUR 35 / minors under 14 EUR 17.50) under the B Category - Transit Visa section."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": true,
+      "source_url": "https://www.gov.me/en/article/visas",
+      "notes": "Montenegro does not operate an e-visa or eTA programme; applications are lodged at embassies/consulates or VFS visa application centres. Holders of valid Schengen, US, UK or Irish visas/residence permits may enter visa-free for up to 30 days per government policy."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": true,
+      "source_url": "https://www.gov.me/en/article/visas",
+      "notes": "No visa-on-arrival regime; visas must be obtained in advance."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "30-35",
+    "currency": "EUR",
+    "note": "Published VFS Montenegro Visa Application Centre service charge varies by centre: EUR 30 online-payment (Uzbekistan), EUR 31-32 (Kazakhstan centres), EUR 35 incl. tax (other centres). Montenegro routes applications via VFS Global in 12+ source countries (RUS, UZB, KAZ, ARE, ARM, AZE, BHR, KGZ-region, NPL, PHL, QAT, SAU, TUR).",
+    "source_url": "https://visa.vfsglobal.com/uzb/en/mne/"
+  },
+  "sources": [
+    "https://www.gov.me/en/article/visas",
+    "https://visa.vfsglobal.com/rus/en/mne/",
+    "https://visa.vfsglobal.com/uzb/en/mne/",
+    "https://visa.vfsglobal.com/kaz/en/mne/",
+    "https://visa.vfsglobal.com/one-pager/montenegro/kyrgyzstan/english/index.html"
+  ],
+  "free_visa_notes": "Citizens of ~100 countries (EU, USA, GBR, CAN, RUS, and many others) enter Montenegro visa-free for up to 30 or 90 days. Additionally, foreigners holding a valid Schengen visa, US/UK/Irish visa, or residence permit of those areas may enter without a Montenegrin visa for up to 30 days. No fee schedule differences by nationality were found for those who do need a visa (flat EUR 35 consular fee on all inspected VFS corridors)."
+}

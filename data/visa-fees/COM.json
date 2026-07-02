@@ -1,0 +1,88 @@
+{
+  "iso3": "COM",
+  "name": "Comoros",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (45 days, single entry)",
+      "amount": 30,
+      "currency": "EUR",
+      "amount_usd": 33,
+      "validity": "45 days, single entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/comores/conseils-aux-voyageurs-entree-sejour",
+      "notes": "Issued at Moroni Prince Said Ibrahim airport (and Ouani, Anjouan) after biometric enrolment; cash only (EUR, USD or KMF). France Diplomatie and the Comoros Embassy in Paris state ~EUR 30, but the Comoros Permanent Mission to the UN lists EUR 60 for the 45-day visa - amount at the counter may vary; verify before travel."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival - 45 days (per Comoros UN Mission schedule)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 66,
+      "validity": "45 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.un.int/comoros/comoros/passport-and-visa-process",
+      "notes": "Comoros Permanent Mission to the UN publishes 45 days EUR 60; conflicts with EUR 30 published by France Diplomatie/Comoros Embassy Paris."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Long-validity visitor visa - 1 year",
+      "amount": 250,
+      "currency": "EUR",
+      "amount_usd": 275,
+      "validity": "1 year",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.un.int/comoros/comoros/passport-and-visa-process",
+      "notes": "Per Comoros Permanent Mission to the UN fee schedule, obtained on the spot."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Long-validity visitor visa - 10 years",
+      "amount": 500,
+      "currency": "EUR",
+      "amount_usd": 550,
+      "validity": "10 years",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.un.int/comoros/comoros/passport-and-visa-process",
+      "notes": "Per Comoros Permanent Mission to the UN fee schedule, obtained on the spot."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": true,
+      "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/comores/conseils-aux-voyageurs-entree-sejour",
+      "notes": "Comoros operates no official e-visa or eTA system; all travellers use the visa-on-arrival regime."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "unknown",
+      "official": false,
+      "source_url": "",
+      "notes": "No separate transit-visa fee published on official sources; short visits fall under the standard visa on arrival."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.diplomatie.gouv.fr/fr/information-par-pays/comores/conseils-aux-voyageurs-entree-sejour",
+    "https://www.un.int/comoros/comoros/passport-and-visa-process",
+    "https://km.ambafrance.org/Formalites-d-entree-Installation"
+  ],
+  "free_visa_notes": ""
+}

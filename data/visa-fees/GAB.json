@@ -1,0 +1,68 @@
+{
+  "iso3": "GAB",
+  "name": "Gabon",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Visa single entry (1-3 months)",
+      "amount": 70,
+      "currency": "EUR",
+      "amount_usd": 76,
+      "validity": "1-3 months, single entry",
+      "applies": "all (arrival via Libreville Leon Mba International Airport)",
+      "official": true,
+      "source_url": "https://evisa.dgdi.ga/",
+      "notes": "Official DGDI portal evisa.dgdi.ga. Fee EUR 70 (also quoted as XAF 45,000). Historically paid in cash on arrival; since Dec 2025 payable digitally via mobile money (MaDigiPaie). Portal was unreachable directly (TLS certificate issue); amount corroborated by multiple secondary reports of the official schedule."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa multiple entry (6 months)",
+      "amount": 185,
+      "currency": "EUR",
+      "amount_usd": 200,
+      "validity": "6 months, multiple entry",
+      "applies": "all (arrival via Libreville Leon Mba International Airport)",
+      "official": true,
+      "source_url": "https://evisa.dgdi.ga/",
+      "notes": "EUR 185 (also quoted as XAF 120,000). Same payment notes as single-entry e-visa."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy ordinary visa (sticker) - Embassy of Gabon, Washington DC",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": null,
+      "applies": "applicants via the Gabonese Embassy in the USA",
+      "official": true,
+      "source_url": "https://www.gabonembassyusa.org/en/visa-consular/visa",
+      "notes": "Embassy lists 'Ordinary Visas: $160' with 3-5 business day processing; validity not published. Fees at other Gabonese embassies may differ."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "up to 72 hours",
+      "applies": "nationalities requiring a visa transiting beyond airside/24h",
+      "official": false,
+      "source_url": "https://evisa.dgdi.ga/",
+      "notes": "No verified official published fee for a transit visa; airside transit under 24h generally does not require a visa. Amount set to null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced centre (VFS Global/TLScontact/BLS) handles visas TO Gabon; applications go through the official DGDI e-visa portal (evisa.dgdi.ga) or Gabonese embassies. TLScontact/VFS centres located in Libreville serve outbound visas (France, UK), not entry to Gabon."
+  },
+  "sources": [
+    "https://evisa.dgdi.ga/",
+    "https://www.gabonembassyusa.org/en/visa-consular/visa",
+    "https://visasnews.com/en/gabon-toward-a-fully-digital-e-visa-by-december-2025/",
+    "https://ga.usembassy.gov/tourism-visit-visas/"
+  ],
+  "free_visa_notes": "Gabon announced visa-free entry for many African nationalities and ran a temporary free tourist e-visa promotion (Jul-Sep 2025); standard e-visa fees above otherwise apply. No universal free-visa regime."
+}

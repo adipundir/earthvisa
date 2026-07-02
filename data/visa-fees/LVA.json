@@ -1,0 +1,75 @@
+{
+  "iso3": "LVA",
+  "name": "Latvia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities (children 6-12: EUR 45; under 6: free)",
+      "official": true,
+      "source_url": "https://www.mfa.gov.lv/en/visa-application-fees",
+      "notes": "Latvia is a Schengen member; the harmonised Schengen visa code fee of EUR 90 applies (raised from EUR 80 in June 2024). Fee exemptions for children under 6, pupils/students on study trips, researchers, and non-profit representatives aged 25 or under."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C) for business",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.mfa.gov.lv/en/visa-application-fees",
+      "notes": "Business travel uses the same Schengen C visa and fee; there is no separate business visa category or fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "Airport transit only",
+      "applies": "nationalities on the EU airport-transit-visa list",
+      "official": true,
+      "source_url": "https://www.mfa.gov.lv/en/visa-application-fees",
+      "notes": "Airport transit visas are charged at the standard Schengen visa fee under the EU Visa Code."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["UKR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "EU-Ukraine visa facilitation agreement: EUR 35 standard (10-day) processing, EUR 70 express (3-day). Most Ukrainian biometric-passport holders are visa-exempt for short stays."
+    },
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BLR", "BIH", "GEO", "SRB", "MNE", "MKD", "MDA"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced EUR 35 fee under EU visa facilitation agreements, per Latvian MFA fee page."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2999",
+    "currency": "INR",
+    "note": "Published VFS service charge at Latvian Visa Application Centres in India is INR 2999 incl. GST (student applicants INR 2434); service fees vary by country and centre - typically roughly EUR 20-40 equivalent. Latvia also uses VFS Global centres in many countries without a Latvian embassy.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/lva"
+  },
+  "sources": [
+    "https://www.mfa.gov.lv/en/visa-application-fees",
+    "https://www.pmlp.gov.lv/en/state-fees-issuance-visa-and-services-related-thereto-0",
+    "https://visa.vfsglobal.com/ind/en/lva",
+    "https://visa.vfsglobal.com/one-pager/latvia/india/english/index.html"
+  ],
+  "free_visa_notes": "No fee for EU/EEA/Swiss family members, children under 6, school pupils and students on organised study trips, researchers, and non-profit event participants aged 25 or under. Nationals of ~60 visa-exempt countries (USA, GBR, CAN, JPN, etc.) need no visa for short stays. Latvia offers no e-visa, no visa on arrival, and no national eTA; the EU-wide ETIAS travel authorisation (EUR 20) for visa-exempt travellers is expected to start in late 2026 but was not yet operational at the time of writing."
+}

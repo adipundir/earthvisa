@@ -1,0 +1,91 @@
+{
+  "iso3": "NER",
+  "name": "Niger",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy visa, all categories (Embassy of Niger, Washington DC)",
+      "amount": 155,
+      "currency": "USD",
+      "amount_usd": 155,
+      "validity": null,
+      "applies": "applicants via the US embassy; NOTE: visa issuance to US citizens suspended since 28 Aug 2025 until further notice",
+      "official": true,
+      "source_url": "https://embassyofniger-usa.org/visa-dentree/",
+      "notes": "Flat non-refundable USD 155 money-order fee applies uniformly across business, tourism, family, student, medical, journalist, transit and official categories at the Washington embassy."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry visa, tourism/business, 1 month (Embassy of Niger, Paris)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "1 month, single entry",
+      "applies": "applicants via the Paris embassy",
+      "official": true,
+      "source_url": "https://www.ambassadeniger-fr.org/version-wp-2019/?page_id=53",
+      "notes": "Cash only; non-refundable. EUR 50 surcharge possible for exceptional urgency."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry visa, tourism/business, 3 months (Embassy of Niger, Paris)",
+      "amount": 150,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "3 months, multiple entries",
+      "applies": "applicants via the Paris embassy",
+      "official": true,
+      "source_url": "https://www.ambassadeniger-fr.org/version-wp-2019/?page_id=53",
+      "notes": ""
+    },
+    {
+      "kind": "business_visa",
+      "name": "Multiple-entry visa, 6 months (Embassy of Niger, Paris)",
+      "amount": 200,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "6 months, multiple entries",
+      "applies": "applicants via the Paris embassy",
+      "official": true,
+      "source_url": "https://www.ambassadeniger-fr.org/version-wp-2019/?page_id=53",
+      "notes": ""
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (pre-approved 'flyer visa' at Niamey)",
+      "amount": null,
+      "currency": "XOF",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "travellers holding pre-approval from the Niger National Police / Direction de la Surveillance du Territoire",
+      "official": false,
+      "source_url": "https://niameyairport.com/en/visa-information/",
+      "notes": "A pre-approved on-arrival arrangement exists at Niamey, but no official fee schedule could be verified from a government source; amount left null. Third-party agencies quote widely varying totals that include service charges."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all requiring visas",
+      "official": true,
+      "source_url": "https://embassyofniger-usa.org/visa-dentree/",
+      "notes": "Transit is listed as a category at the Washington embassy under the same flat USD 155 fee; no separately published lower transit fee found on official sources."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://embassyofniger-usa.org/visa-dentree/",
+    "https://www.ambassadeniger-fr.org/version-wp-2019/?page_id=53",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Niger.html",
+    "https://niameyairport.com/en/visa-information/"
+  ],
+  "free_visa_notes": "Citizens of ECOWAS/CEDEAO member states are visa-exempt. Diplomatic/service passport holders of Tunisia, Morocco, Chad, Cuba, Algeria, Turkey and Indonesia are exempt under bilateral agreements. Niger has no official e-visa or eTA system; fees are set per embassy (e.g. USD 155 flat in Washington, EUR 90-200 in Paris) rather than by a global reciprocity schedule. US embassy note: visa issuance to US citizens suspended since 28 Aug 2025 until further notice."
+}

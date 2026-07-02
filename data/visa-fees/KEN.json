@@ -1,0 +1,57 @@
+{
+  "iso3": "KEN",
+  "name": "Kenya",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "eta",
+      "name": "Electronic Travel Authorisation (eTA) - standard processing",
+      "amount": 32.5,
+      "currency": "USD",
+      "amount_usd": 32.5,
+      "validity": "Valid for travel within 90 days of issuance; stay duration determined at port of entry (typically up to 90 days)",
+      "applies": "all non-exempt nationalities (Kenya abolished visas in Jan 2024; the eTA replaced tourist/business/transit visas)",
+      "official": true,
+      "source_url": "https://etakenya.go.ke/",
+      "notes": "Fee shown at checkout on the official portal is USD 32.50 standard processing plus ~USD 1.59 bank/payment fee (total ~USD 34.09). The portal does not publish the fee on static pages, so the exact split could not be re-verified on a static official page; base government figure sometimes cited as USD 30. EAC citizens (Burundi, DRC, Rwanda, South Sudan, Tanzania, Uganda) are exempt and may stay up to 180 days. Same-aircraft/airside airport transit passengers are exempt per Kenya Embassy Washington DC."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "East Africa Tourist Visa (Kenya, Uganda, Rwanda)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "90 days, multiple entry within Kenya/Uganda/Rwanda",
+      "applies": "travellers visiting Kenya, Uganda and Rwanda on one itinerary; apply via the country of first entry",
+      "official": true,
+      "source_url": "https://www.immigration.go.ug/services/east-african-tourist-visa",
+      "notes": "Joint EAC visa; flat USD 100 fee confirmed on Uganda NCIC official page. For Kenya as first entry, applied via etakenya.go.ke."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit (same aircraft / airside)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": null,
+      "applies": "passengers arriving and departing on the same aircraft or transferring airside without leaving the airport precincts",
+      "official": true,
+      "source_url": "https://kenyaembassydc.org/eta/",
+      "notes": "Exempt from eTA requirement. Travellers who leave the airport must obtain the standard eTA."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced visa centre; Kenya eTA is applied for directly online at etakenya.go.ke."
+  },
+  "sources": [
+    "https://etakenya.go.ke/",
+    "https://immigration.go.ke/eta/",
+    "https://kenyaembassydc.org/eta/",
+    "https://www.immigration.go.ug/services/east-african-tourist-visa",
+    "https://www.gov.uk/foreign-travel-advice/kenya/entry-requirements"
+  ],
+  "free_visa_notes": "Kenya abolished visas for all nationalities in January 2024; entry is visa-free but requires a paid eTA (~USD 32.50 + bank fee) except for EAC citizens, who enter free for up to 180 days."
+}

@@ -1,0 +1,69 @@
+{
+  "iso3": "MCO",
+  "name": "Monaco",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (issued by French authorities, valid for Monaco)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "Nationalities not visa-exempt for the Schengen area",
+      "official": true,
+      "source_url": "https://france-visas.gouv.fr/en/monaco",
+      "notes": "Monaco issues no visas of its own. It is not a Schengen member but applies Schengen rules via France: a Schengen visa valid for France also authorises entry to and stay in Monaco. Applications go through French consulates/France-Visas. EU Visa Code standard fee EUR 90 (adults), EUR 45 (children 6-12), free under 6. Visa-facilitation-agreement nationalities pay a reduced EUR 35 where agreements apply."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (business purpose, via France)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "Nationalities not visa-exempt for the Schengen area",
+      "official": true,
+      "source_url": "https://france-visas.gouv.fr/en/monaco",
+      "notes": "Same uniform Schengen fee; business and tourism use the same short-stay visa type C."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A, via France)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport transit only",
+      "applies": "Nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://france-visas.gouv.fr/en/web/france-visas/frais-de-visa",
+      "notes": "Uniform EU Visa Code fee applies to airport transit visas."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALL_CHILDREN_6_12"],
+      "kind": "tourist_visa",
+      "amount": 45,
+      "currency": "EUR",
+      "note": "EU Visa Code reduced rate for children aged 6-12; children under 6 free."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global / TLScontact (varies by country, contracted by France)",
+    "service_fee": "approx EUR 22 equivalent (e.g. ~INR 2,000-2,500 in India)",
+    "currency": "EUR",
+    "note": "France outsources visa intake in most countries to VFS Global or TLScontact; the published service fee is roughly EUR 22 plus taxes and varies by centre and local currency. Since Monaco entry uses French Schengen visas, this applies to Monaco-bound applicants.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/fra/fees"
+  },
+  "sources": [
+    "https://france-visas.gouv.fr/en/monaco",
+    "https://monservicepublic.gouv.mc/en/themes/transport-and-mobility/travelling-abroad/visit-monaco/staying-in-monaco",
+    "https://ambassade-en-france.gouv.mc/en/information-and-services/visiting-monaco",
+    "https://france-visas.gouv.fr/en/web/france-visas/frais-de-visa",
+    "https://visa.vfsglobal.com/ind/en/fra/fees"
+  ],
+  "free_visa_notes": "Monaco has no visa regime or fees of its own. EEA nationals and all Schengen visa-exempt nationalities (e.g. USA, GBR, CAN and other Annex II countries) enter Monaco free with a valid passport/ID. Nationalities requiring a visa must obtain a French/Schengen short-stay visa (EUR 90) which is also valid for Monaco. There is no Monaco e-visa, visa on arrival, or eTA; ETIAS (when applicable to Schengen-exempt travellers) is an EU system, EUR 20."
+}

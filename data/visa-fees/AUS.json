@@ -1,0 +1,107 @@
+{
+  "iso3": "AUS",
+  "name": "Australia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa (subclass 600) - Tourist stream, applied outside Australia",
+      "amount": 250,
+      "currency": "AUD",
+      "amount_usd": 165,
+      "validity": "Stays of up to 3, 6 or 12 months as granted",
+      "applies": "all nationalities not eligible for eVisitor/ETA (e.g. IND, CHN, NGA, PAK, PHL, BGD, RUS)",
+      "official": true,
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/fees-and-charges/current-visa-pricing",
+      "notes": "Base application charge from 1 July 2026 (was AUD 200). Verified via Home Affairs GetPriceList API (subclass 600-29B). Onshore (in-Australia) application is AUD 630. Frequent Traveller stream (eligible passports, e.g. CHN) is AUD 1,845; Sponsored Family and Approved Destination Status streams AUD 250. All subclass 600 applications are lodged online via ImmiAccount or on paper via an Australian Visa Application Centre."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Visitor visa (subclass 600) - Business Visitor stream",
+      "amount": 250,
+      "currency": "AUD",
+      "amount_usd": 165,
+      "validity": "Up to 3 months per stay",
+      "applies": "all nationalities not eligible for eVisitor/ETA",
+      "official": true,
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/fees-and-charges/current-visa-pricing",
+      "notes": "Base application charge from 1 July 2026 (subclass 600-31). ETA/eVisitor-eligible passports use those free/cheap options for business visitor activities instead."
+    },
+    {
+      "kind": "e_visa",
+      "name": "eVisitor (subclass 651)",
+      "amount": 0,
+      "currency": "AUD",
+      "amount_usd": 0,
+      "validity": "12 months, multiple entries, up to 3 months per stay",
+      "applies": "EU/EEA and certain other European passport holders (incl. GBR)",
+      "official": true,
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/evisitor-651",
+      "notes": "Free - AUD 0.00 confirmed via Home Affairs price list API. Tourism or business visitor purposes."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic Travel Authority (subclass 601)",
+      "amount": 20,
+      "currency": "AUD",
+      "amount_usd": 13,
+      "validity": "12 months (or until passport expiry), multiple entries, up to 3 months per stay",
+      "applies": "eligible nationalities (USA, CAN, GBR, JPN, KOR, SGP, MYS, HKG, BRN, and others)",
+      "official": true,
+      "source_url": "https://malaysia.highcommission.gov.au/klpr/ETA.html",
+      "notes": "No visa application charge (AUD 0.00 in Home Affairs price list); AUD 20 service fee payable in the Australian ETA app, confirmed on official Australian High Commission page. Apply only via the official Australian ETA mobile app."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (subclass 771)",
+      "amount": 0,
+      "currency": "AUD",
+      "amount_usd": 0,
+      "validity": "Transit up to 72 hours",
+      "applies": "nationalities not covered by transit-without-visa arrangements",
+      "official": true,
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/transit-771",
+      "notes": "Free - AUD 0.00 confirmed via Home Affairs price list API."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["GBR"],
+      "kind": "e_visa",
+      "amount": 0,
+      "currency": "AUD",
+      "note": "UK and European passport holders use the free eVisitor (651) instead of paying the AUD 250 subclass 600 charge."
+    },
+    {
+      "nationalities": ["USA", "CAN"],
+      "kind": "eta",
+      "amount": 20,
+      "currency": "AUD",
+      "note": "US and Canadian passport holders use the ETA (601): no visa charge, AUD 20 app service fee."
+    },
+    {
+      "nationalities": ["IND", "CHN", "NGA", "PAK", "PHL", "BGD", "RUS"],
+      "kind": "tourist_visa",
+      "amount": 250,
+      "currency": "AUD",
+      "note": "Not ETA/eVisitor-eligible; must apply for the Visitor visa (subclass 600) at AUD 250 offshore. This is nationality-based eligibility routing, not a reciprocity fee schedule - the subclass 600 charge itself is the same for all nationalities. China additionally has access to the Frequent Traveller stream (AUD 1,845, up to 10-year validity)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global (Australian Visa Application Centres; TT Services in some regions)",
+    "service_fee": null,
+    "currency": "INR",
+    "note": "Applications are normally lodged online via ImmiAccount, but biometrics collection and optional paper lodgement/assisted services go through Australian Visa Application Centres run by VFS Global (e.g. India) or TT Services. Service fees vary by centre and service; third-party sources cite roughly INR 2,000-2,500 for biometric collection in India, but no exact amount could be verified on an official VFS/government page, so amount left null.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/aus"
+  },
+  "sources": [
+    "https://immi.homeaffairs.gov.au/visas/getting-a-visa/fees-and-charges/current-visa-pricing",
+    "https://immi.homeaffairs.gov.au/_layouts/15/api/data.aspx/GetPriceList",
+    "https://malaysia.highcommission.gov.au/klpr/ETA.html",
+    "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600",
+    "https://visa.vfsglobal.com/ind/en/aus"
+  ],
+  "free_visa_notes": "Australia requires an authority to travel for all non-citizens, but eVisitor (651, European passports) and Transit visa (771) are free, and the ETA (601) costs only a AUD 20 app service fee. Everyone else pays AUD 250 for the offshore Visitor visa (600) from 1 July 2026."
+}

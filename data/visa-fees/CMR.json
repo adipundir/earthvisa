@@ -1,0 +1,91 @@
+{
+  "iso3": "CMR",
+  "name": "Cameroon",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Short-stay e-visa (standard processing)",
+      "amount": 100000,
+      "currency": "XAF",
+      "amount_usd": 170,
+      "validity": "up to 6 months, stay 1-180 days",
+      "applies": "all (all visas processed via evisacam.cm since 2023; tourist, business and transit fall under short-stay)",
+      "official": true,
+      "source_url": "https://www.evisacam.cm/",
+      "notes": "Official ministry fee schedule: 100,000 XAF standard short-stay. Embassies bill local-currency equivalents (e.g. EUR 153 at High Commission London, USD 93 at Embassy Washington). Fees non-refundable even if refused."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Short-stay e-visa (express processing)",
+      "amount": 150000,
+      "currency": "XAF",
+      "amount_usd": 255,
+      "validity": "up to 6 months, stay 1-180 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.evisacam.cm/",
+      "notes": "Express (approx. 24-72h) processing; EUR 229 equivalent published by High Commission London."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/short-stay visa via embassy (Washington DC published fee)",
+      "amount": 93,
+      "currency": "USD",
+      "amount_usd": 93,
+      "validity": "1 day to 3 months",
+      "applies": "applicants in the USA",
+      "official": true,
+      "source_url": "https://www.cameroonembassyusa.org/main23/Images/documents_folder/ConsularFees.pdf",
+      "notes": "Embassy of Cameroon in Washington DC consular fee schedule; application itself is submitted through the evisacam.cm portal. Long-stay (up to 6 months) USD 184."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (4-30 days)",
+      "amount": 153,
+      "currency": "EUR",
+      "amount_usd": 165,
+      "validity": "4 to 30 days",
+      "applies": "all (fee as published by High Commission London; same tariff as standard short-stay)",
+      "official": true,
+      "source_url": "https://cameroonhighcommission.co.uk/faq-e-visa-application-procedures/",
+      "notes": "Transit not required if continuing on same/next connecting flight with valid passport and onward ticket. XAF equivalent 100,000."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business (short-stay) visa",
+      "amount": 100000,
+      "currency": "XAF",
+      "amount_usd": 170,
+      "validity": "up to 6 months, stay 1-180 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.evisacam.cm/",
+      "notes": "Business travel uses the short-stay visa category; same tariff as tourist short-stay (100,000 XAF standard / 150,000 XAF express)."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "XAF",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "not generally available",
+      "official": true,
+      "source_url": "https://www.evisacam.cm/",
+      "notes": "No general visa-on-arrival regime since the 2023 e-visa rollout; pre-approval via evisacam.cm is required, with the visa sticker issued on arrival at Douala/Yaounde for approved e-visa holders. No separate on-arrival fee verified."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.evisacam.cm/",
+    "https://cameroonhighcommission.co.uk/faq-e-visa-application-procedures/",
+    "https://www.cameroonembassyusa.org/main23/Images/documents_folder/ConsularFees.pdf",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Cameroon.html"
+  ],
+  "free_visa_notes": "Nationals of CEMAC member states (Chad, CAR, Congo, Gabon, Equatorial Guinea) and Nigeria enter visa-free. No reciprocity-based fee schedule published for other nationalities; the flat XAF tariff applies to all, converted to local currency at each mission. High Commission London notes fee waivers exist for certain applicant categories."
+}

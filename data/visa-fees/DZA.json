@@ -1,0 +1,88 @@
+{
+  "iso3": "DZA",
+  "name": "Algeria",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist (Tourism) visa - embassy sticker visa",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "typically up to 90 days, single entry for tourist category",
+      "applies": "US citizens (chancery fee varies by nationality under reciprocity)",
+      "official": true,
+      "source_url": "https://embwashington.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "notes": "Embassy of Algeria in Washington: USPS money order US$160 for US citizens; 'for all other nationalities please contact us'. Chancery fee explicitly varies by country of nationality (reciprocity); some nationalities exempt. Family, medical, student and press visas also US$160 for US citizens; work and cultural visas US$190."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "single or multiple entry, at embassy discretion",
+      "applies": "US citizens (varies by nationality)",
+      "official": true,
+      "source_url": "https://embwashington.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "notes": "US$160 by USPS money order for US citizens at the Washington embassy; other nationalities pay reciprocity-based amounts."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (max 7 days)",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "up to 7 days",
+      "applies": "US citizens (varies by nationality)",
+      "official": true,
+      "source_url": "https://embwashington.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+      "notes": "US$160 for US citizens at the Washington embassy."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Regularization visa on arrival - Great South (Saharan) organized tours",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "up to 30 days",
+      "applies": "all foreign tourists on tours booked through approved Algerian travel agencies to the wilayas of Tamanrasset, Illizi, Tindouf, Adrar, Bechar, Timimoune, Djanet, Bordj Badji Mokhtar, Beni Abbes, Ain Salah, Touggourt",
+      "official": true,
+      "source_url": "https://embbrussels.mfa.gov.dz/announcements/algerian-great-south-tourist-destination-new-visa-issuance-measures",
+      "notes": "Official MFA source confirms visa-on-arrival scheme (30-day max, agency issues QR-coded boarding authorization, fee paid on arrival) but does not publish the amount. Third-party/tour-operator reports cite roughly EUR 75-90 (or ~DZD 10,000+, varying with length of stay), payable in EUR or USD cash on arrival - unverified on an official source, so amount left null. Rest of Algeria remains embassy-visa only; Algeria has NO e-visa or eTA as of mid-2026."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 160,
+      "currency": "USD",
+      "note": "US citizens pay US$160 for tourist/business/transit/family/student/press visas and US$190 for work/cultural visas (Embassy of Algeria, Washington). Fees for other nationalities differ under reciprocity and are quoted by each embassy."
+    },
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "INR",
+      "note": "Fee payable by bank demand draft to 'Embassy of Algeria in New Delhi' (per VFS Global India page); exact INR amount published only in a fee table not retrievable from official sources (third parties report ~INR 9,700 for a 90-day visa - unverified, so left null)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1600",
+    "currency": "INR",
+    "note": "VFS Global handles Algeria visa applications in India (Delhi, Mumbai, Chennai, Kolkata, Hyderabad; since Sept 2024), Nepal and Sri Lanka. VFS India service/logistic charge widely reported at ~INR 1,600, paid in cash/UPI/POS at submission, non-refundable, no exemptions (per VFS visa-type page). Exact amount sits in a fee table not machine-readable on the official page; service fees vary by centre and country.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/dza"
+  },
+  "sources": [
+    "https://embwashington.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria-1",
+    "https://embbrussels.mfa.gov.dz/announcements/algerian-great-south-tourist-destination-new-visa-issuance-measures",
+    "https://visa.vfsglobal.com/ind/en/dza",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Algeria.html",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Algeria"
+  ],
+  "free_visa_notes": "Algeria is not visa-free generally. Only nationals of Libya, Malaysia, Mali, Mauritania, Seychelles, Tunisia, Sahrawi ADR (90 days) and Hong Kong (14 days) enter visa-free. Everyone else needs an embassy visa, except Saharan Great-South organized-tour visitors who can use the visa-on-arrival regularization scheme. Nationals of certain countries are exempt from chancery fees under reciprocity."
+}

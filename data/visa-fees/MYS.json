@@ -1,0 +1,104 @@
+{
+  "iso3": "MYS",
+  "name": "Malaysia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visa Without Reference (embassy/consulate sticker visa, single/multiple entry)",
+      "amount": 20,
+      "currency": "MYR",
+      "amount_usd": 4,
+      "validity": "Typically 3 months to enter; stay per pass issued (usually 30 days)",
+      "applies": "nationalities not on the published country fee table (default rate); listed countries pay RM6-RM50 per reciprocity table",
+      "official": true,
+      "source_url": "https://www.imi.gov.my/index.php/en/main-services/visa/visa-fees/",
+      "notes": "Immigration Department publishes 'Visa Fee According To The Country' (~35 countries, RM6-RM50). Countries not listed pay RM20.00. Same schedule applies to business/social visit purposes."
+    },
+    {
+      "kind": "e_visa",
+      "name": "eVisa (MyVISA portal) processing charge",
+      "amount": 105,
+      "currency": "MYR",
+      "amount_usd": 24,
+      "validity": "eVisa valid 3 months, single entry, stay up to 30 days (typical tourist eVisa)",
+      "applies": "eligible nationalities (e.g., India, China, Bangladesh, Pakistan, Nepal, Sri Lanka, Myanmar)",
+      "official": true,
+      "source_url": "https://malaysiavisa.imi.gov.my/",
+      "notes": "RM105 processing charge plus the nationality-based visa fee (e.g., RM50 India, RM20 Bangladesh/Nepal) and a payment convenience fee of 0.8%-1.7%. Applied via official MyVISA portal or MVAC centres."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa On Arrival",
+      "amount": 200,
+      "currency": "MYR",
+      "amount_usd": 45,
+      "validity": "Stay up to 15 days, non-extendable",
+      "applies": "India and China nationals arriving from Singapore, Thailand, Indonesia or Brunei with a valid visa of that country",
+      "official": true,
+      "source_url": "https://www.imi.gov.my/index.php/en/main-services/visa/types-of-visas/",
+      "notes": "RM200 payable in cash; must show min USD500 funds and confirmed return ticket. Note: India and China citizens are visa-exempt for stays up to 30 days until 31 Dec 2026, so VOA is rarely needed currently."
+    },
+    {
+      "kind": "eta",
+      "name": "Malaysia Digital Arrival Card (MDAC)",
+      "amount": 0,
+      "currency": "MYR",
+      "amount_usd": 0,
+      "validity": "Single arrival; submit within 3 days before entry",
+      "applies": "all foreign nationals (with limited exemptions)",
+      "official": true,
+      "source_url": "https://imigresen-online.imi.gov.my/mdac/main",
+      "notes": "Free arrival registration, not a visa. Malaysia has no paid eTA."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visit visa (Visa Without/With Reference, business purpose)",
+      "amount": 20,
+      "currency": "MYR",
+      "amount_usd": 4,
+      "validity": "Per pass issued",
+      "applies": "visa-required nationalities; same nationality-based fee table as tourist visa (default RM20)",
+      "official": true,
+      "source_url": "https://www.imi.gov.my/index.php/en/main-services/visa/visa-fees/",
+      "notes": "Malaysia does not charge a separate business visa fee; the country fee table applies regardless of visit purpose."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 20,
+      "currency": "MYR",
+      "amount_usd": 4,
+      "validity": "Transit only",
+      "applies": "visa-required nationalities leaving the airport; default rate for unlisted countries (listed countries RM20-RM50, e.g., India RM50, China RM30)",
+      "official": true,
+      "source_url": "https://www.imi.gov.my/index.php/en/main-services/visa/visa-fees/",
+      "notes": "Airside transit without leaving the transit area does not require a visa."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["IND"], "kind": "tourist_visa", "amount": 50, "currency": "MYR", "note": "Single/multiple entry RM50; transit RM50 (imi.gov.my fee table). Visa-exempt for 30-day visits until 31 Dec 2026." },
+    { "nationalities": ["CHN"], "kind": "tourist_visa", "amount": 30, "currency": "MYR", "note": "Single/multiple entry RM30 (multiple entry RM30 per imi.gov.my). Visa-exempt for 30-day visits until 31 Dec 2026." },
+    { "nationalities": ["USA"], "kind": "tourist_visa", "amount": 6, "currency": "MYR", "note": "RM6 single/multiple entry, RM20 transit per imi.gov.my table; USA citizens are visa-free for up to 90 days, so rarely applicable." },
+    { "nationalities": ["PAK"], "kind": "tourist_visa", "amount": 20, "currency": "MYR", "note": "RM20 single/multiple entry and transit per imi.gov.my table." },
+    { "nationalities": ["BGD"], "kind": "tourist_visa", "amount": 20, "currency": "MYR", "note": "RM20 single/multiple entry and transit per imi.gov.my table; eVisa route adds RM105 processing charge." },
+    { "nationalities": ["GBR", "NGA", "PHL", "RUS", "CAN"], "kind": "tourist_visa", "amount": 20, "currency": "MYR", "note": "Not on the published country fee table; default RM20 applies. GBR/PHL/RUS/CAN are visa-exempt for tourism; NGA nationals require a visa (RM20 visa fee + RM105 eVisa processing if applying online)." }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "MVAC (Malaysia Visa Application Centre / One Stop Centre network)",
+    "service_fee": null,
+    "currency": "INR",
+    "note": "Since Aug 2022 eVisa applications from India must go via MVAC centres (New Delhi, Mumbai, Chennai); similar outsourced centres exist in several countries. Published centre service fee not verified on an official page; total eVisa cost = visa fee + RM105 processing + centre service charge, varies by centre.",
+    "source_url": "https://visaapplicationmalaysia.com/india/"
+  },
+  "sources": [
+    "https://www.imi.gov.my/index.php/en/main-services/visa/visa-fees/",
+    "https://www.imi.gov.my/index.php/en/main-services/visa/types-of-visas/",
+    "https://malaysiavisa.imi.gov.my/",
+    "https://visaapplicationmalaysia.com/india/",
+    "https://imigresen-online.imi.gov.my/mdac/main"
+  ],
+  "free_visa_notes": "Most Western, ASEAN and many other nationalities enter Malaysia visa-free (30-90 days). India and China nationals are visa-exempt for 30-day visits until 31 Dec 2026. The free MDAC digital arrival card is required for nearly all foreign visitors."
+}

@@ -1,0 +1,92 @@
+{
+  "iso3": "KAZ",
+  "name": "Kazakhstan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (B12), single entry",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "single entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://egov.kz/cms/en/articles/consular_fee",
+      "notes": "Official consular fee schedule levied at Kazakh missions abroad; equivalents published as 50 EUR / 50 GBP / 60 CHF / 6,000 RUB / 385 CNY. No nationality-based variation in the schedule."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa, multiple entry",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": "multiple entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://egov.kz/cms/en/articles/consular_fee",
+      "notes": "Equivalents: 80 EUR / 80 GBP / 90 CHF / 9,000 RUB / 580 CNY."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Electronic visa (tourist/business/medical) via vmp.gov.kz",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "single entry, up to 90 days (tourist)",
+      "applies": "eligible nationalities (109 countries incl. IND, CHN)",
+      "official": true,
+      "source_url": "https://egov.kz/cms/en/articles/rk_visa_obtaining",
+      "notes": "Applied for on the Visa and Migration Portal (vmp.gov.kz); requires invitation number. Consular fee for the corresponding visa category is charged (tourist single-entry USD 60; standard/business single-entry USD 80 per consular fee schedule). Exact category fee shown at payment on the portal."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business/standard visa, single entry",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "single entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://egov.kz/cms/en/articles/consular_fee",
+      "notes": "Single-entry non-tourist/non-transit visa: 80 USD / 75 EUR / 75 GBP / 80 CHF / 8,000 RUB / 515 CNY. Multi-entry visas by duration range from USD 200 (1 year) to USD 1000 (5 years)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa, single entry",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "single entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://egov.kz/cms/en/articles/consular_fee",
+      "notes": "Equivalents: 15 EUR / 15 GBP / 20 CHF / 2,000 RUB / 130 CNY. Multi-entry transit: USD 90."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (pre-arranged, at international airports)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals of countries with no Kazakh diplomatic mission, pre-approved invitation required",
+      "official": false,
+      "source_url": "https://egov.kz/cms/en/services/for_foreigners/pass540_mid",
+      "notes": "Available only as a pre-arranged visa issued at the airport; fee follows the standard consular fee schedule for the visa category. Exact published on-arrival amount not verified on an official page, so amount left null (third-party sources cite ~USD 80)."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Kazakhstan does not route inbound visa applications through VFS Global/TLScontact/BLS; applications are made directly at embassies/consulates or online via the official Visa and Migration Portal (vmp.gov.kz). VFS Global centres in Kazakhstan handle outbound visas for other countries only."
+  },
+  "sources": [
+    "https://egov.kz/cms/en/articles/consular_fee",
+    "https://egov.kz/cms/en/articles/rk_visa_obtaining",
+    "https://www.vmp.gov.kz/en/services/visa-service",
+    "https://egov.kz/cms/en/services/for_foreigners/pass540_mid"
+  ],
+  "free_visa_notes": "Kazakhstan grants visa-free entry (typically 14-90 days) to nationals of roughly 80 countries, including USA, UK, Canada, EU states, China and (14 days) India; EAEU/CIS nationals such as Russians enter visa-free. For these travellers no visa fee applies for short stays. E-visa/consular fees above apply only to nationalities outside the visa-free list or for longer/other-purpose stays."
+}

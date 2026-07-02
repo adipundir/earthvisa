@@ -1,0 +1,79 @@
+{
+  "iso3": "MWI",
+  "name": "Malawi",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Single Entry Visa (e-Visa)",
+      "amount": 75,
+      "currency": "USD",
+      "amount_usd": 75,
+      "validity": "3 months, single entry",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.immigration.gov.mw/visa/visa-fees/",
+      "notes": "Applied online via evisa.gov.mw. Covers tourist/visit/business purposes (Malawi's 'Tourist Visa' category is issued for visits or business). Payment by Visa/Mastercard only; fee non-refundable if rejected. A non-refundable online payment convenience fee is charged in addition."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple Entry Visa (6 months)",
+      "amount": 150,
+      "currency": "USD",
+      "amount_usd": 150,
+      "validity": "6 months, multiple entry",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.immigration.gov.mw/visa/visa-fees/",
+      "notes": "Issued via the e-visa portal; all visa applications must be submitted online."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple Entry Visa (12 months)",
+      "amount": 250,
+      "currency": "USD",
+      "amount_usd": 250,
+      "validity": "12 months, multiple entry",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.immigration.gov.mw/visa/visa-fees/",
+      "notes": ""
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "7 days, single use",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.immigration.gov.mw/visa/visa-fees/",
+      "notes": ""
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (Category Two countries)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals of Category Two countries at designated ports of entry",
+      "official": true,
+      "source_url": "https://www.evisa.gov.mw/",
+      "notes": "evisa.gov.mw states Category Two nationals may obtain a visa on arrival; the portal does not publish a distinct VOA fee (expected to match the standard single-entry USD 75 fee, but not verified on an official source, so amount left null). Category One nationals must obtain authorisation before departure. The government strongly encourages applying in advance via the e-visa portal."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.immigration.gov.mw/visa/visa-fees/",
+    "https://www.evisa.gov.mw/",
+    "https://www.immigration.gov.mw/visa/types-of-malawi-visa/",
+    "https://www.immigration.gov.mw/visa/"
+  ],
+  "free_visa_notes": "Malawi's broad 2024 visa waiver (which covered the US, UK, EU, Canada, etc.) was withdrawn effective January 2026: the Ministry of Homeland Security announced on 2 Jan 2026 that visas are again required for nationals of all countries except a set of exempt (mostly regional/reciprocal, e.g. SADC-area) nationalities. No published reciprocity fee schedule by nationality; the USD fee table applies uniformly to visa-required nationals. Diplomatic, official and courtesy visas are gratis categories. No outsourced visa centre (VFS/TLS/BLS) is used; all applications go through the government e-visa portal."
+}

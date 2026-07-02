@@ -1,0 +1,127 @@
+{
+  "iso3": "ARM",
+  "name": "Armenia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "E-Visa — Visitor visa (up to 21 days of stay)",
+      "amount": 8,
+      "currency": "USD",
+      "amount_usd": 8,
+      "validity": "Single entry, up to 21 days of stay",
+      "applies": "eligible nationalities (check evisa.mfa.am eligibility tool)",
+      "official": true,
+      "source_url": "https://evisa.mfa.am/",
+      "notes": "Non-refundable fee, published on the official MFA e-visa portal as USD 8 (equivalent to AMD 3,000 in the MFA consular fee table). Extension possible up to 60 extra days at the Migration and Citizenship Service."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-Visa — Visitor visa (up to 120 days of stay)",
+      "amount": 38,
+      "currency": "USD",
+      "amount_usd": 38,
+      "validity": "Single entry, up to 120 days of stay",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://evisa.mfa.am/",
+      "notes": "Non-refundable. Portal lists USD 38; MFA consular fee table lists AMD 15,000 / USD 39 for the same category at embassies."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa at embassy/consulate (up to 21 days of stay)",
+      "amount": 3000,
+      "currency": "AMD",
+      "amount_usd": 8,
+      "validity": "Single entry, up to 21 days",
+      "applies": "all nationalities that require a visa",
+      "official": true,
+      "source_url": "https://www.mfa.am/en/fees/",
+      "notes": "MFA consular fee table valid from 1 Jan 2026: AMD 3,000 / USD 8 / EUR 7 / RUB 700. Non-refundable."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa at embassy/consulate (up to 120 days of stay)",
+      "amount": 15000,
+      "currency": "AMD",
+      "amount_usd": 39,
+      "validity": "Single entry, up to 120 days",
+      "applies": "all nationalities that require a visa",
+      "official": true,
+      "source_url": "https://www.mfa.am/en/fees/",
+      "notes": "AMD 15,000 / USD 39 / EUR 34 / RUB 3,300. Non-refundable."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry visitor visa (up to 60 days of stay, 6-month validity)",
+      "amount": 20000,
+      "currency": "AMD",
+      "amount_usd": 52,
+      "validity": "Multiple entry, 6 months, up to 60 days of stay",
+      "applies": "all nationalities that require a visa",
+      "official": true,
+      "source_url": "https://www.mfa.am/en/fees/",
+      "notes": "AMD 20,000 / USD 52 / EUR 46 / RUB 4,500. Non-refundable."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry visitor visa (up to 120 days of stay, 1-year validity)",
+      "amount": 40000,
+      "currency": "AMD",
+      "amount_usd": 103,
+      "validity": "Multiple entry, 1 year, up to 120 days of stay",
+      "applies": "all nationalities that require a visa",
+      "official": true,
+      "source_url": "https://www.mfa.am/en/fees/",
+      "notes": "AMD 40,000 / USD 103 / EUR 91 / RUB 8,700. Non-refundable."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Single-entry transit visa",
+      "amount": 10000,
+      "currency": "AMD",
+      "amount_usd": 26,
+      "validity": "Single entry, transit (max 72 hours stay)",
+      "applies": "all nationalities that require a visa",
+      "official": true,
+      "source_url": "https://www.mfa.am/en/fees/",
+      "notes": "AMD 10,000 / USD 26 / EUR 23 / RUB 2,200. Non-refundable."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Multiple-entry transit visa (1-year validity)",
+      "amount": 18000,
+      "currency": "AMD",
+      "amount_usd": 47,
+      "validity": "Multiple entry, 1 year",
+      "applies": "all nationalities that require a visa",
+      "official": true,
+      "source_url": "https://www.mfa.am/en/fees/",
+      "notes": "AMD 18,000 / USD 47 / EUR 41 / RUB 4,000. Non-refundable."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visitor visa on arrival at border crossing points",
+      "amount": 3000,
+      "currency": "AMD",
+      "amount_usd": 8,
+      "validity": "Single entry, up to 21 days (AMD 3,000) or up to 120 days (AMD 15,000)",
+      "applies": "eligible nationalities at Zvartnots/Gyumri airports and land border points",
+      "official": false,
+      "source_url": "https://www.mfa.am/en/visa/",
+      "notes": "State-duty amounts mirror the visitor visa schedule (AMD 3,000 for 21 days, AMD 15,000 for 120 days). The current MFA visa page emphasizes the e-visa route and does not restate VOA amounts explicitly, so this row is corroborated by the MFA consular fee schedule plus secondary sources rather than a dedicated official VOA fee page."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Armenia does not route visa applications through VFS Global, TLScontact or BLS; applications go via the official e-visa portal (evisa.mfa.am), Armenian embassies/consulates, or on arrival."
+  },
+  "sources": [
+    "https://www.mfa.am/en/fees/",
+    "https://www.mfa.am/en/visa/",
+    "https://evisa.mfa.am/"
+  ],
+  "free_visa_notes": "Not free for everyone, but broad exemptions: nationals of many countries are visa-exempt unilaterally or by agreement (EU/EEA, CIS, and others; lists at mfa.am/en/visafreelist and mfa.am/en/whoneedvisa) and may stay up to 180 days per year. Temporary exemption 1 Jul 2026 – 1 Jul 2027 for nationals of 111 countries holding a residence permit (valid 6+ months from entry) issued by the USA, EU/Schengen states, UAE, Bahrain, Qatar, Saudi Arabia, Kuwait or Oman. Official and diplomatic visas are free. Some nationalities can apply only with an invitation at embassies (invitation state duty AMD 5,000, paid by the inviter)."
+}

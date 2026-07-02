@@ -1,0 +1,78 @@
+{
+  "iso3": "ECU",
+  "name": "Ecuador",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visa de Visitante Temporal - Turista (90 days)",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "90 days from entry, extendable once for 90 more days (with additional fee)",
+      "applies": "nationalities on Ecuador's visa-required list (~45 countries incl. IND, NGA, PAK, PHL, BGD, CHN, AFG, CUB, VEN, VNM); most other nationalities are visa-exempt",
+      "official": true,
+      "source_url": "https://www.gob.ec/mremh/tramites/concesion-visa-visitante-temporal-turista-90-dias",
+      "notes": "Split as USD 50 application (solicitud) + USD 30 visa issuance (otorgamiento). No IVA. Applied online via the official e-Visas portal (serviciosciudadanos.cancilleria.gob.ec)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visas portal application (electronic tourist/transit visa)",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "per visa category (tourist 90 days, transit up to 30 days)",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.cancilleria.gob.ec/2024/07/16/portal-evisas-visas-electronicas-para-ecuador/",
+      "notes": "The e-Visas portal is Ecuador's sole application channel since 2024; fees are the standard USD 50 application + USD 30 issuance, no extra e-visa surcharge published."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Visa de Visitante Temporal - Transeunte (transit)",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "up to 30 days, generally single entry (up to 2 entries within 30 days if transiting to/from a third country)",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.gob.ec/mremh/tramites/visa-visitante-temporal-transeunte",
+      "notes": "USD 50 application form + USD 30 visa fee per official tramite page."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.gob.ec/mremh/tramites/concesion-visa-visitante-temporal-turista-90-dias",
+      "notes": "Ecuador has no visa-on-arrival scheme; visa-required nationalities must obtain the visa in advance via the e-Visas portal, while visa-exempt visitors receive a free 90-day entry stamp."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business travel (short stay)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationalities",
+      "official": false,
+      "source_url": "https://www.gob.ec/mremh",
+      "notes": "Ecuador does not publish a separate short-stay business visa category; short business trips fall under the temporary visitor (tourist) visa regime (USD 50 + USD 30). No distinct official business-visa fee verified."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.gob.ec/mremh/tramites/concesion-visa-visitante-temporal-turista-90-dias",
+    "https://www.gob.ec/mremh/tramites/visa-visitante-temporal-transeunte",
+    "https://www.cancilleria.gob.ec/2024/07/16/portal-evisas-visas-electronicas-para-ecuador/"
+  ],
+  "free_visa_notes": "Most nationalities (incl. USA, GBR, CAN, RUS and most of the Americas/Europe) are visa-exempt for up to 90 days per year (extendable 90 more) and pay no visa fee on entry. Only ~45 listed nationalities (incl. IND, NGA, PAK, PHL, BGD, CHN, AFG, CUB, VEN) need a pre-arranged visa; fees are flat (USD 50 + USD 30) with no reciprocity-based variation."
+}

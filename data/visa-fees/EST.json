@@ -1,0 +1,124 @@
+{
+  "iso3": "EST",
+  "name": "Estonia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (C), adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 105,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities (standard rate)",
+      "official": true,
+      "source_url": "https://vm.ee/en/consular-visa-and-travel-information/visa-information/application-schengen-visa",
+      "notes": "Estonia is a Schengen member; common Schengen fee applies. Children 6-11: EUR 45; under 6: free. Fee waivers for students on study trips, researchers, representatives of non-profits aged 25 or under, and certain family members of EU citizens."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (C) for business purposes",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 105,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://vm.ee/en/consular-visa-and-travel-information/visa-information/application-schengen-visa",
+      "notes": "No separate business visa category; business travel uses the same Schengen C visa and fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 105,
+      "validity": "airport transit only",
+      "applies": "nationalities requiring an airport transit visa",
+      "official": true,
+      "source_url": "https://www.politsei.ee/en/instructions/state-fee-amounts/visa-application-and-extending-period-of-stay",
+      "notes": "Listed as 'airport transport visa' 90 EUR on the Police and Border Guard Board state-fee schedule."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Long-stay national visa (D)",
+      "amount": 120,
+      "currency": "EUR",
+      "amount_usd": 140,
+      "validity": "up to 12 months, stays over 90 days",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.politsei.ee/en/instructions/state-fee-amounts/visa-application-and-extending-period-of-stay",
+      "notes": "National D visa for stays beyond 90 days (not a residence permit). Children 6-11: EUR 60."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Short-term one-time visa issued at the border",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 105,
+      "validity": "single entry, short stay",
+      "applies": "exceptional cases only, at Estonian border crossing points",
+      "official": true,
+      "source_url": "https://www.politsei.ee/en/instructions/state-fee-amounts/visa-application-and-extending-period-of-stay",
+      "notes": "Estonia has no general visa-on-arrival regime; border visas are issued only in exceptional, justified cases under the Schengen Visa Code."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (visa-exempt travellers)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "3 years or until passport expiry",
+      "applies": "visa-exempt nationalities (e.g. USA, GBR, CAN) once ETIAS is operational",
+      "official": false,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "EU-wide ETIAS applies to Estonia as a Schengen state; fee published as EUR 20 by the EU, but launch date/fee not verified on an Estonian official source at time of writing, so amount left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BLR", "BIH", "GEO", "MDA", "MNE", "MKD", "SRB", "UKR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under EU visa facilitation agreements (per vm.ee)."
+    },
+    {
+      "nationalities": ["CPV"],
+      "kind": "tourist_visa",
+      "amount": 67.5,
+      "currency": "EUR",
+      "note": "Cabo Verde: adults EUR 67.50; children 12-18 EUR 35; under 12 free (per vm.ee)."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "EU-Russia visa facilitation agreement suspended since 2022; Russian citizens pay the standard EUR 90 fee (and Estonia heavily restricts issuance). Not listed among reduced-fee nationalities on vm.ee."
+    },
+    {
+      "nationalities": ["IND", "CHN", "NGA", "PAK", "PHL", "BGD"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "Standard Schengen fee; no facilitation agreement. USA, GBR and CAN citizens are visa-exempt for short stays."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "10.96 (short-stay) / 16.90 (long-stay D)",
+    "currency": "EUR",
+    "note": "Published on VFS Global Estonia-USA page as EUR 10.96 (USD 13) per short-term application and EUR 16.90 (USD 20) per D-visa application; service fees vary by centre/country.",
+    "source_url": "https://www.vfsglobal.com/one-pager/estonia/usa/english/index.html"
+  },
+  "sources": [
+    "https://vm.ee/en/consular-visa-and-travel-information/visa-information/application-schengen-visa",
+    "https://www.politsei.ee/en/instructions/state-fee-amounts/visa-application-and-extending-period-of-stay",
+    "https://www.vfsglobal.com/one-pager/estonia/usa/english/index.html"
+  ],
+  "free_visa_notes": "Visa-free for EU/EEA and Schengen visa-exempt nationalities. Fee waived for children under 6, students/pupils on study trips, researchers, non-profit representatives aged 25 or under at seminars/sports/cultural events, and certain family members of EU citizens."
+}

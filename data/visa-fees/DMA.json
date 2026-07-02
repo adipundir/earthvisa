@@ -1,0 +1,40 @@
+{
+  "iso3": "DMA",
+  "name": "Dominica",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor's visa (embassy/consulate application)",
+      "amount": 200,
+      "currency": "XCD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities not on Dominica's visa-exempt list",
+      "official": true,
+      "source_url": "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/how-do-i-apply-for-a-visitor-s-visa",
+      "notes": "Official portal states 'The application fee is $200.00 to be paid at the Treasury department' without specifying currency; payment at the Dominica Treasury implies Eastern Caribbean dollars (XCD), though some third-party sources describe it as USD. Currency unverified on an official source - treat amount as $200 with currency ambiguity."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "In-transit entry (no visa required)",
+      "amount": null,
+      "currency": "XCD",
+      "amount_usd": null,
+      "validity": "up to 21 days",
+      "applies": "all in-transit passengers and bona fide tourists holding a return ticket",
+      "official": true,
+      "source_url": "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/do-i-need-a-visa-to-enter-into-dominica",
+      "notes": "No separate transit visa or fee exists; any in-transit passenger or bona fide tourist with a return ticket may enter visa-free for up to 21 days."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/how-do-i-apply-for-a-visitor-s-visa",
+    "https://dominica.gov.dm/services/passports-and-travel-documents-non-nationals/do-i-need-a-visa-to-enter-into-dominica",
+    "https://nationalsecurity.gov.dm/forms/4-visas"
+  ],
+  "free_visa_notes": "Dominica has a very liberal visa regime: citizens of the Commonwealth (incl. GBR, CAN, IND-see note, NGA, PAK), CARICOM, USA and several EU states enter visa-free for up to 6 months; nationals of most other EU states, China, Japan, South Korea, Mexico, Venezuela etc. for up to 3 months; and any bona fide tourist or in-transit passenger with a return ticket for up to 21 days. There is no e-visa, eTA, or visa-on-arrival programme; the only travel formality is the free online ED card (edcard.dominica.gov.dm). Only a small set of nationalities need the embassy-issued visitor's visa. No separate business-visa fee schedule is published; the single visa application form and $200 fee apply."
+}

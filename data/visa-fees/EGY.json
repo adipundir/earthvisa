@@ -1,0 +1,124 @@
+{
+  "iso3": "EGY",
+  "name": "Egypt",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (single entry)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "3 months validity, stay up to 30 days",
+      "applies": "eligible nationalities (~60+ countries incl. USA, UK, Canada, Australia, most of Europe)",
+      "official": true,
+      "source_url": "https://visa2egypt.gov.eg/",
+      "notes": "Fee raised from USD 25 to USD 30 on the official portal effective late April 2026."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (multiple entry)",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": "6 months validity, each stay up to 30 days",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://visa2egypt.gov.eg/",
+      "notes": "Raised from USD 60 to USD 65 in April 2026."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (tourist, single entry)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "30-day stay",
+      "applies": "eligible nationalities (broadly same list as e-visa)",
+      "official": false,
+      "source_url": "https://visasnews.com/en/egypt-visa-on-arrival-fee-has-officially-increased/",
+      "notes": "Increased from USD 25 to USD 30 effective 1 March 2026 per Egyptian Travel Agents Association circular; no detailed public government announcement located, so amount not fully verified on an official portal. Payable in cash (USD/EUR/GBP) at bank kiosks before immigration."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy tourist visa - single entry (Washington DC schedule)",
+      "amount": 27,
+      "currency": "USD",
+      "amount_usd": 27,
+      "validity": null,
+      "applies": "applicants at Egyptian Embassy Washington DC (US and most other passports)",
+      "official": true,
+      "source_url": "https://egyptembassy.net/consular-services/visas-travel/6874-2/",
+      "notes": "Multiple entry USD 62. UK, Canadian, Zimbabwean and Nigerian passport holders have different (reciprocity) fee schedules per the embassy. Consular fees vary by mission."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Embassy business visa - single entry (Washington DC schedule)",
+      "amount": 62,
+      "currency": "USD",
+      "amount_usd": 62,
+      "validity": null,
+      "applies": "applicants at Egyptian Embassy Washington DC",
+      "official": true,
+      "source_url": "https://egyptembassy.net/consular-services/visas-travel/6874-2/",
+      "notes": "Multiple entry USD 87."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "transit passengers leaving the airport",
+      "official": true,
+      "source_url": "https://egyptembassy.net/consular-services/visas-travel/6874-2/",
+      "notes": "Transit visa category exists but no fee published on the embassy page; transit under 6 hours without leaving the airport generally requires no visa. Amount unverified, set to null."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa via VFS Global India - single entry",
+      "amount": 2700,
+      "currency": "INR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "applicants in India (Indian and resident nationals; India not on the standard e-visa list, so embassy/VFS route applies)",
+      "official": true,
+      "source_url": "https://visa.vfsglobal.com/one-pager/egypt/india/english/",
+      "notes": "Multiple entry INR 5,800. Fee includes INR 300 embassy processing fee; VFS logistic fee of INR 800 extra. Amounts corroborated via VFS one-pager references; page blocks automated fetch so treat as medium confidence."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["GBR", "CAN", "NGA"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "USD",
+      "note": "Egyptian Embassy Washington DC states UK, Canadian, Zimbabwean and Nigerian passport holders pay different consular fees than the standard USD 27/62 schedule; exact amounts not published on the page, so left null."
+    },
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 2700,
+      "currency": "INR",
+      "note": "Indian applicants apply via VFS Global (single entry INR 2,700, multiple INR 5,800 incl. INR 300 embassy processing fee) rather than the standard e-visa route."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "800",
+    "currency": "INR",
+    "note": "VFS logistic fee INR 800 incl. taxes for all Egypt visa application centres in India, paid cash/card at submission; fees vary by country/centre. BLS International also handles some Egypt visa categories in India.",
+    "source_url": "https://visa.vfsglobal.com/one-pager/egypt/india/english/"
+  },
+  "sources": [
+    "https://visa2egypt.gov.eg/",
+    "https://egyptembassy.net/consular-services/visas-travel/6874-2/",
+    "https://visa.vfsglobal.com/one-pager/egypt/india/english/",
+    "https://visa.vfsglobal.com/ind/en/egy/visa-type",
+    "https://visasnews.com/en/egypt-visa-on-arrival-fee-has-officially-increased/"
+  ],
+  "free_visa_notes": ""
+}

@@ -1,0 +1,113 @@
+{
+  "iso3": "BLR",
+  "name": "Belarus",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-term visa type C (embassy sticker, any number of entries)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "up to 90 days",
+      "applies": "all (standard consular rate)",
+      "official": true,
+      "source_url": "https://mfa.gov.by/en/visa/stavki/",
+      "notes": "Single consular fee of EUR 60 applies to all visa types (B transit, C short-term, D long-term) and all entry counts since 1 Jan 2017. Expedited processing (2 working days) doubles the fee to EUR 120. Children under 14 exempt."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa (single entry, e-Pasluga portal, launched 20 Mar 2025)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "single entry, stay up to 30 days",
+      "applies": "citizens of 67 eligible countries (incl. USA, CAN, GBR, EU, AUS, NZL, JPN)",
+      "official": true,
+      "source_url": "https://mfa.gov.by/en/visa/general/evisa/",
+      "notes": "Same consular fee as sticker visas (EUR 35 for EU citizens, EUR 60 others, free for Japanese citizens) plus a mandatory EUR 6 internet-acquiring/service fee. Processed within 7 calendar days, no visa support documents needed. Cannot be used to enter Belarus via Russia."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Airport visa at Minsk National Airport",
+      "amount": 120,
+      "currency": "EUR",
+      "amount_usd": 130,
+      "validity": "per visa type issued",
+      "applies": "applicants from countries with no Belarusian embassy (higher surcharge if an embassy exists)",
+      "official": true,
+      "source_url": "https://mfa.gov.by/en/visa/stavki/",
+      "notes": "Base EUR 60 fee increased by 100% (EUR 120 total) if no Belarusian embassy operates in the applicant's country, or by 200% (EUR 180 total) if one does. Prior arrangement via MFA visa support usually required."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short-term visa type C for business (same consular schedule)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "up to 90 days",
+      "applies": "all (standard consular rate)",
+      "official": true,
+      "source_url": "https://mfa.gov.by/en/visa/stavki/",
+      "notes": "Belarus charges one flat consular fee regardless of visa purpose or number of entries; EUR 120 for urgent processing."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa type B",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "transit, stay up to 2 days per transit",
+      "applies": "all (standard consular rate)",
+      "official": true,
+      "source_url": "https://india.mfa.gov.by/en/consular_issues/consulate/",
+      "notes": "Same flat EUR 60 fee (EUR 120 urgent) as other visa types, confirmed on the Belarus Embassy in India fee table."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["AUT", "BEL", "BGR", "HRV", "CZE", "CYP", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "ITA", "LVA", "LTU", "LUX", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced EUR 35 rate for all entry-visa types for EU citizens (and stateless persons permanently resident in EST/LVA/LTU) since 1 Jul 2020; children under 12 exempt. Source: https://mfa.gov.by/en/visa/stavki/"
+    },
+    {
+      "nationalities": ["JPN"],
+      "kind": "e_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Japanese citizens are exempt from the visa consular fee (e-visa page confirms free for Japanese citizens; the EUR 6 e-visa service fee still applies)."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Russian citizens do not need a visa for Belarus (Union State / EAEU visa-free regime)."
+    },
+    {
+      "nationalities": ["IND", "USA", "GBR", "CHN", "NGA", "PAK", "PHL", "BGD", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 60,
+      "currency": "EUR",
+      "note": "Standard EUR 60 consular rate applies; no reciprocity reduction published for these nationalities. Note: Chinese ordinary-passport holders are visa-exempt under the 2018 BLR-CHN mutual visa-waiver agreement for stays up to 30 days."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": null,
+    "currency": "INR",
+    "note": "Since 1 Oct 2019 Belarusian visa applications from India (Delhi, Mumbai, Bangalore, Kolkata, Chennai) and some other countries can be lodged via VFS Global; the VFS service fee is charged on top of the EUR 60 consular fee but the current published amount could not be verified (visa.vfsglobal.com/ind/en/blr returned 403). Most applicants elsewhere apply directly at Belarusian embassies.",
+    "source_url": "https://india.mfa.gov.by/en/embassy/news/c6743a137ae09fc6.html"
+  },
+  "sources": [
+    "https://mfa.gov.by/en/visa/stavki/",
+    "https://mfa.gov.by/en/visa/general/evisa/",
+    "https://india.mfa.gov.by/en/consular_issues/consulate/",
+    "https://india.mfa.gov.by/en/embassy/news/c6743a137ae09fc6.html"
+  ],
+  "free_visa_notes": "Belarus operates broad visa-free regimes alongside its visa system: citizens of ~80 states may enter visa-free for up to 30 days via Minsk National Airport, EU/Schengen-country citizens may enter visa-free at any border under a unilateral programme (periodically extended), and RUS/EAEU and Chinese ordinary-passport holders are visa-exempt under bilateral agreements. Fees above apply only to nationalities/routes that still require a visa."
+}

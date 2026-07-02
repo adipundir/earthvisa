@@ -1,0 +1,88 @@
+{
+  "iso3": "MDA",
+  "name": "Moldova",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa Type C (tourism C/T, visit C/V, sticker visa via embassy)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "nationalities requiring a visa (per Law no. 242/2010 consular fee schedule)",
+      "official": true,
+      "source_url": "https://www.evisa.gov.md/Info/TaxeViza?c=en-US",
+      "notes": "Official MFA/eVisa portal fee schedule: Type C = 60 EUR. Individual embassies publish the fee in local currency and amounts vary by mission (e.g. Embassy in Washington charges USD 45; Embassy in India via VFS charges EUR 70 / INR 8,095 for C/T). Free for children under 18, diplomatic passport holders, persons originating from Moldova, and other exempt categories."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (Type B transit or Type C short stay via evisa.gov.md)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "Type C: up to 90 days / 180; Type B: transit",
+      "applies": "eligible nationalities (only B and C visas can be obtained online)",
+      "official": true,
+      "source_url": "https://www.evisa.gov.md/Info/TaxeViza?c=en-US",
+      "notes": "Same consular fee as the regular visa: 40 EUR for Type B, 60 EUR for Type C, paid by bank card on approval via evisa.gov.md. No separate e-visa surcharge published."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa Type B",
+      "amount": 40,
+      "currency": "EUR",
+      "amount_usd": 43,
+      "validity": "transit, up to 5 days per transit",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.evisa.gov.md/Info/TaxeViza?c=en-US",
+      "notes": "Airport transit visa (Type A) is 20 EUR. India VFS schedule lists Type B at EUR 60 / INR 6,938 (mission-specific variation)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short-stay business visa (Type C/A)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.evisa.gov.md/Info/TaxeViza?c=en-US",
+      "notes": "Business (C/A) falls under the Type C short-stay fee of 60 EUR. Long-stay Type D visas (work, study, family) are 80 EUR."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 70,
+      "currency": "EUR",
+      "note": "Embassy of Moldova in New Delhi (via VFS Global) publishes the C/T tourist visa consular fee as EUR 70 / INR 8,095; Type B transit EUR 60 / INR 6,938. Fees vary by diplomatic mission rather than strictly by nationality."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CAN", "RUS", "CHN"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Citizens of the USA, UK, Canada, Russia, China (and EU/EEA and many others) are visa-exempt for stays up to 90 days in 180 - no visa fee applies."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1350",
+    "currency": "INR",
+    "note": "VFS Global operates Moldova visa submission in India (New Delhi centre plus walk-in/logistics points in Jalandhar, Mumbai, Kolkata, Chennai, Kochi since 2024). Published VFS Service Fee for India: INR 1,350 per application; logistics/courier charges extra and vary by centre. No exemption from the VFS service charge.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/mda/visa-type"
+  },
+  "sources": [
+    "https://www.evisa.gov.md/Info/TaxeViza?c=en-US",
+    "https://mfa.gov.md/en/content/types-visas-requirements",
+    "https://sua.mfa.gov.md/en/content/consular-fees-and-additional-fees",
+    "https://visa.vfsglobal.com/ind/en/mda/visa-type",
+    "https://www.vfsglobal.com/en/PDF/media-releases/2024/Media_Release_Maldova_2024.pdf"
+  ],
+  "free_visa_notes": "Moldova is not a Schengen member; its national fee schedule applies. Many nationalities (EU/EEA, USA, UK, Canada, Japan, Russia, China ordinary-passport agreements vary - check exemption list) can enter visa-free for up to 90 days in 180. Visas are free for children under 18, diplomatic passport holders, officials of international organisations Moldova has joined, and persons originating from the Republic of Moldova. No visa-on-arrival or eTA scheme exists."
+}

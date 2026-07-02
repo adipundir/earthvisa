@@ -1,0 +1,95 @@
+{
+  "iso3": "MAC",
+  "name": "Macau",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (Authorization to Enter and Stay) - individual, single entry",
+      "amount": 200,
+      "currency": "MOP",
+      "amount_usd": 25,
+      "validity": "stay up to 30 days",
+      "applies": "nationalities not visa-exempt (except BGD, NPL, NGA, PAK, LKA, VNM who must apply in advance)",
+      "official": true,
+      "source_url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+      "notes": "Issued at border checkpoints by the Public Security Police Force (CPSP) Immigration Department."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival - individual, multiple entry",
+      "amount": 300,
+      "currency": "MOP",
+      "amount_usd": 37,
+      "validity": "multiple entries within 30 days",
+      "applies": "same eligibility as single-entry VOA",
+      "official": true,
+      "source_url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+      "notes": ""
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival - family passport",
+      "amount": 400,
+      "currency": "MOP",
+      "amount_usd": 50,
+      "validity": "stay up to 30 days",
+      "applies": "family travelling on a single family passport",
+      "official": true,
+      "source_url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+      "notes": "MOP 600 for multiple entry."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival - child under 12 (individual passport)",
+      "amount": 100,
+      "currency": "MOP",
+      "amount_usd": 12,
+      "validity": "stay up to 30 days",
+      "applies": "children under 12 with individual passport",
+      "official": true,
+      "source_url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+      "notes": "MOP 150 for multiple entry."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival - group (10+ persons, collective travel document)",
+      "amount": 100,
+      "currency": "MOP",
+      "amount_usd": 12,
+      "validity": "stay up to 30 days",
+      "applies": "groups of at least 10 organized by a single travel manager, per person",
+      "official": true,
+      "source_url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+      "notes": "MOP 150 for multiple entry."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Advance Macau visa via Chinese embassy/consulate",
+      "amount": null,
+      "currency": "MOP",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals of BGD, NPL, NGA, PAK, LKA, VNM (must apply in advance) and anyone applying pre-travel",
+      "official": true,
+      "source_url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+      "notes": "Fee is set by the individual Chinese diplomatic mission and varies by mission and nationality; no single official published amount, so left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["BGD", "NPL", "NGA", "PAK", "LKA", "VNM"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "MOP",
+      "note": "Not eligible for visa on arrival; must obtain a Macau visa in advance through a Chinese embassy/consulate. Fee varies by mission."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+    "https://www.fsm.gov.mo/psp/eng/psp_top5_3m.html"
+  ],
+  "free_visa_notes": "Nationals of 88 countries/territories (incl. USA, GBR, CAN, AUS, JPN, SGP, EU states) are visa-exempt for stays of 14-180 days depending on nationality; Hong Kong and mainland Chinese residents use separate permit schemes. Visa-exempt entry has no fee."
+}

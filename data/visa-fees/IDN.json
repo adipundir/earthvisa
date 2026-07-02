@@ -1,0 +1,96 @@
+{
+  "iso3": "IDN",
+  "name": "Indonesia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival / e-VOA (B1) - tourism, business meeting, goods purchasing, transit",
+      "amount": 500000,
+      "currency": "IDR",
+      "amount_usd": 31,
+      "validity": "e-VOA valid 90 days from issuance; 30-day stay, extendable once for 30 days (extension also IDR 500,000)",
+      "applies": "eligible nationalities (~90+ countries incl. USA, GBR, IND, CHN, RUS, CAN)",
+      "official": true,
+      "source_url": "https://evisa.imigrasi.go.id/front/info/evoa",
+      "notes": "Fee is uniform for all eligible nationalities. Card payments incur bank processing surcharges. Same IDR 500,000 applies at the airport VOA counter and online e-VOA."
+    },
+    {
+      "kind": "e_visa",
+      "name": "C1 Tourist e-Visa (single entry, 60 days)",
+      "amount": 1500000,
+      "currency": "IDR",
+      "amount_usd": 92,
+      "validity": "60-day stay, extendable (up to 180 days total)",
+      "applies": "all nationalities not eligible for VOA, or those wanting 60 days",
+      "official": true,
+      "source_url": "https://evisa.imigrasi.go.id/front/faq/dd5c2220-28a7-4024-9a10-82f30a09e0d2",
+      "notes": "Fee per official evisa.imigrasi.go.id FAQ. Payment processing fees extra. Applied online at evisa.imigrasi.go.id."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "C1 visit visa via Indonesian Embassy (Washington DC consular tariff) - tourism/family visit/transit",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": "single entry, max 60-day stay",
+      "applies": "applicants using Embassy of Indonesia in Washington DC; tariffs vary by mission",
+      "official": true,
+      "source_url": "https://consular.embassyofindonesia.org/page/tariffconsularandvisa.html",
+      "notes": "Embassy consular tariffs are set locally in USD and differ from the domestic IDR e-visa tariff. Applications route through evisa.imigrasi.go.id."
+    },
+    {
+      "kind": "business_visa",
+      "name": "C2 single-entry business visa (Embassy Washington DC tariff)",
+      "amount": 125,
+      "currency": "USD",
+      "amount_usd": 125,
+      "validity": "single entry, max 60-day stay",
+      "applies": "business visitors; tariff shown is Washington DC embassy schedule, includes visa verification",
+      "official": true,
+      "source_url": "https://consular.embassyofindonesia.org/page/tariffconsularandvisa.html",
+      "notes": "Visas requiring pre-approval from the Directorate General of Immigration may be charged an additional telex fee. Domestic IDR tariff for C2 e-visa not verified on the official portal."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit",
+      "amount": 500000,
+      "currency": "IDR",
+      "amount_usd": 31,
+      "validity": "30 days",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://evisa.imigrasi.go.id/front/info/evoa",
+      "notes": "No separate transit visa fee: transit is a permitted purpose under the VOA/e-VOA (IDR 500,000) or the embassy C1 visa (USD 65 at Washington DC). Direct airside transit without entering does not require a visa."
+    },
+    {
+      "kind": "eta",
+      "name": "eTA / travel authorisation",
+      "amount": null,
+      "currency": "IDR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": true,
+      "source_url": "https://evisa.imigrasi.go.id/",
+      "notes": "Indonesia has no separate eTA scheme; the e-VOA fulfils this role. Note the previously broad visa-free ASEAN exemption remains for ASEAN nationals (no fee)."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": null,
+    "currency": null,
+    "note": "VFS Global operates an official alternative e-VOA channel (indonesiavoa.vfsevisa.id) and assists some embassy applications; a VFS service fee is charged on top of the IDR 500,000 government fee but the published amount could not be verified (site blocked automated access). Applying directly at evisa.imigrasi.go.id avoids any service fee.",
+    "source_url": "https://indonesiavoa.vfsevisa.id/"
+  },
+  "sources": [
+    "https://evisa.imigrasi.go.id/front/info/evoa",
+    "https://evisa.imigrasi.go.id/front/faq/dd5c2220-28a7-4024-9a10-82f30a09e0d2",
+    "https://consular.embassyofindonesia.org/page/tariffconsularandvisa.html",
+    "https://indonesiavoa.vfsevisa.id/"
+  ],
+  "free_visa_notes": "ASEAN member-state nationals (and a small list of other exempt countries) enter visa-free for short stays at no cost; most other nationalities pay the VOA/e-visa fees above. No reciprocity-based fee differentiation: VOA and e-visa fees are flat for all eligible nationalities."
+}

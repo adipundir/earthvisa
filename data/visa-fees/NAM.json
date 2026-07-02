@@ -1,0 +1,94 @@
+{
+  "iso3": "NAM",
+  "name": "Namibia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Visa on Entry / e-Visa (Holiday visa, non-AU nationals)",
+      "amount": 1600,
+      "currency": "NAD",
+      "amount_usd": 90,
+      "validity": "up to 90 days",
+      "applies": "nationals of ~33 previously visa-exempt non-African-Union countries (incl. USA, UK, Germany, Canada, Australia, most EU); effective 1 April 2025",
+      "official": true,
+      "source_url": "https://missionofnamibia.ch/index.php?option=com_content&view=article&id=31&Itemid=376",
+      "notes": "Apply online via official portal eservices.mhaiss.gov.na (portal is WAF-protected and could not be fetched directly; fee confirmed on official Namibian Mission page). Children 6-11: NAD 800; under 6 exempt. Fees reviewed annually."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (non-AU nationals)",
+      "amount": 1600,
+      "currency": "NAD",
+      "amount_usd": 90,
+      "validity": "up to 90 days",
+      "applies": "same eligible non-AU nationalities; available at Hosea Kutako Intl Airport, Walvis Bay Intl Airport and 8 land border posts",
+      "official": true,
+      "source_url": "https://missionofnamibia.ch/index.php?option=com_content&view=article&id=31&Itemid=376",
+      "notes": "African Union citizens pay NAD 1,200. Cruise passengers on day visits at Walvis Bay/Luderitz harbours pay NAD 300."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (African Union nationals)",
+      "amount": 1200,
+      "currency": "NAD",
+      "amount_usd": 67,
+      "validity": "up to 90 days",
+      "applies": "citizens of African Union member states requiring a visa",
+      "official": true,
+      "source_url": "https://missionofnamibia.ch/index.php?option=com_content&view=article&id=31&Itemid=376",
+      "notes": "Children 6-11: NAD 600; under 6 exempt."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa, single entry (embassy-issued, fee varies by mission)",
+      "amount": 80,
+      "currency": "CHF",
+      "amount_usd": 100,
+      "validity": null,
+      "applies": "applicants at Namibian Mission in Geneva; other missions charge local-currency equivalents (e.g. EUR 90 single / EUR 130 multiple at Helsinki, SEK 900 non-AU at Stockholm)",
+      "official": true,
+      "source_url": "https://missionofnamibia.ch/index.php?option=com_content&view=article&id=31&Itemid=376",
+      "notes": "Embassy sticker-visa fees are set per mission in local currency; multiple entry CHF 160 at Geneva. Minors 6-11 CHF 40, under 6 exempt. Some missions add a small handling fee (~EUR 10 / NAD 80)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (embassy-issued, fee varies by mission)",
+      "amount": 105,
+      "currency": "CHF",
+      "amount_usd": 132,
+      "validity": null,
+      "applies": "applicants at Namibian Mission in Geneva; EUR 125 at Helsinki embassy",
+      "official": true,
+      "source_url": "https://missionofnamibia.ch/index.php?option=com_content&view=article&id=31&Itemid=376",
+      "notes": "Per-mission local-currency pricing."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "NAD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals requiring a visa for transit",
+      "official": true,
+      "source_url": "https://mha.gov.na/all-visa-general-information",
+      "notes": "No separate published transit-visa fee found on official sources; transiting visa-required nationals generally use the standard visa-on-arrival/e-visa fee schedule. Amount left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["USA", "GBR", "CAN", "RUS"], "kind": "visa_on_arrival", "amount": 1600, "currency": "NAD", "note": "Non-AU, previously visa-exempt nationals: NAD 1,600 visa-on-entry fee introduced 1 April 2025 on reciprocity grounds." },
+    { "nationalities": ["IND", "CHN", "PAK", "PHL", "BGD"], "kind": "tourist_visa", "amount": 1600, "currency": "NAD", "note": "Non-AU visa-required nationals pay the standard non-AU fee (NAD 1,600) via e-visa/embassy; not eligible for the visa-exempt VOA list at all border posts - check portal eligibility." },
+    { "nationalities": ["NGA"], "kind": "visa_on_arrival", "amount": 1200, "currency": "NAD", "note": "African Union citizens pay the reduced NAD 1,200 fee." }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://missionofnamibia.ch/index.php?option=com_content&view=article&id=31&Itemid=376",
+    "https://eservices.mhaiss.gov.na/",
+    "https://mha.gov.na/all-visa-general-information",
+    "https://www.embassyofnamibia.fr/fees-and-requirements.php",
+    "https://www.namembassy.fi/index.php/consular-matters/tourism-business-visa"
+  ],
+  "free_visa_notes": "Namibia is not visa-free for all: since 1 April 2025 previously exempt nationals (USA, UK, most EU, Canada, Australia etc.) pay NAD 1,600 (AU citizens NAD 1,200) for visa on entry/e-visa. SADC and a shortlist of countries remain visa-exempt and pay nothing. VFS Global's Windhoek centre processes outbound visas (e.g. UK) from Namibia, not visas to Namibia."
+}

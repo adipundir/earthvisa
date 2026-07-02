@@ -1,0 +1,98 @@
+{
+  "iso3": "LBY",
+  "name": "Libya",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Libya e-Visa (tourist, single entry)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "90 days validity, stay up to 30 days (single entry)",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://evisa.gov.ly/",
+      "notes": "Official portal (evisa.gov.ly, launched 21 Mar 2024) is a JavaScript app that does not publish the fee on a static page; fee is shown at payment step. Third-party sources consistently report ~USD 63 but this could not be verified on the official portal, so amount is left null."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa, 30 days single entry (Embassy of Libya, Washington DC)",
+      "amount": 150,
+      "currency": "USD",
+      "amount_usd": 150,
+      "validity": "30 days, single entry",
+      "applies": "applicants with approval from Libyan Department of Passports, Citizenship and Foreigners",
+      "official": true,
+      "source_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": "Requires sponsorship by a company in Libya; pre-approval from Tripoli mandatory. Paid by money order to the Embassy of Libya."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa, 90 days multiple entry (Embassy of Libya, Washington DC)",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "90 days, multiple entry",
+      "applies": "approved applicants",
+      "official": true,
+      "source_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": ""
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa, 180 days multiple entry (Embassy of Libya, Washington DC)",
+      "amount": 350,
+      "currency": "USD",
+      "amount_usd": 350,
+      "validity": "180 days, multiple entry",
+      "applies": "approved applicants",
+      "official": true,
+      "source_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": ""
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy tourist visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": "Embassy of Libya in Washington DC states it currently does NOT issue tourist visas; tourists are directed to the e-visa route (typically via a Libyan tour operator invitation). No embassy tourist-visa fee is therefore published."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://www.embassyoflibyadc.org/visa",
+      "notes": "No current official fee schedule for a Libyan transit visa could be verified on government/embassy sources; amount left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "business_visa",
+      "amount": 160,
+      "currency": "USD",
+      "note": "US citizens: special 1-year multiple-entry visa fee of USD 160 per Embassy of Libya, Washington DC (reciprocity-based)."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "Libya does not route inbound visa applications through VFS Global, TLScontact or BLS International; applications go via Libyan embassies or the official e-visa portal (evisa.gov.ly)."
+  },
+  "sources": [
+    "https://evisa.gov.ly/",
+    "https://www.embassyoflibyadc.org/visa"
+  ],
+  "free_visa_notes": "Libya is not visa-free for most nationalities; nationals of a small number of Arab countries (e.g. Tunisia, Jordan, Algeria) may enter visa-free. No general visa-on-arrival regime; Libya is not a Schengen member."
+}

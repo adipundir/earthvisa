@@ -1,0 +1,77 @@
+{
+  "iso3": "HTI",
+  "name": "Haiti",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist fee on arrival (all non-Haitian passport holders)",
+      "amount": 10,
+      "currency": "USD",
+      "amount_usd": 10,
+      "validity": "90 days visa-free stay",
+      "applies": "all (most nationalities are visa-exempt; fee paid at airport on arrival)",
+      "official": true,
+      "source_url": "https://www.haiti.org/tourist-visa/",
+      "notes": "Not a visa: Haiti grants visa-free entry up to 3 months to most nationalities; a US$10 tourist fee is collected on arrival at the airport."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa, 3 months single entry (visa-required nationalities)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "3 months, single entry",
+      "applies": "nationals of Dominican Republic, Panama, Colombia, Cuba, Syria, Libya, Iran, Vietnam, Yemen",
+      "official": true,
+      "source_url": "https://www.haiti.org/fees/",
+      "notes": "Embassy-issued sticker visa; apply at least 1 month before departure. Payment by money order/certified/cashier's check to the Embassy of Haiti in Washington."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa, 6 months multiple entry (visa-required nationalities)",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "6 months, multiple entry",
+      "applies": "nationals of Dominican Republic, Panama, Colombia, Cuba, Syria, Libya, Iran, Vietnam, Yemen",
+      "official": true,
+      "source_url": "https://www.haiti.org/fees/",
+      "notes": "Per Embassy of Haiti (Washington DC) consular fee schedule."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.haiti.org/fees/",
+      "notes": "No separate business visa fee published on the embassy fee schedule; most business visitors enter visa-free. Amount unverified, set to null."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationalities",
+      "official": false,
+      "source_url": "https://www.haiti.org/fees/",
+      "notes": "No transit visa fee published on official sources; likely not a distinct category. Set to null rather than guessing."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.haiti.org/tourist-visa/",
+    "https://www.haiti.org/fees/"
+  ],
+  "free_visa_notes": "Haiti is visa-free for up to 3 months for citizens of most countries. Only nationals of the Dominican Republic, Panama, Colombia, Cuba, Syria, Libya, Iran, Vietnam and Yemen require a pre-arranged embassy visa. All arriving non-Haitian passport holders pay a US$10 tourist fee at the airport. Haiti has no e-visa, visa-on-arrival, or eTA scheme and does not use VFS/TLS/BLS outsourced centres. Key nationalities IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN are all visa-exempt."
+}

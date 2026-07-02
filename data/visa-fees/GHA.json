@@ -1,0 +1,133 @@
+{
+  "iso3": "GHA",
+  "name": "Ghana",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Single entry visa (embassy sticker, e.g. Embassy of Ghana Washington DC)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "Single entry, typically up to 3 months to enter; stay granted at border",
+      "applies": "all visa-required nationalities applying via US mission",
+      "official": true,
+      "source_url": "https://washington.mfa.gov.gh/consular-fees",
+      "notes": "Standard processing. Expedited: USD 140. Fees vary by mission; merchant fees added for card payment."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple entry visa (embassy sticker, Washington DC)",
+      "amount": 180,
+      "currency": "USD",
+      "amount_usd": 180,
+      "validity": "Multiple entry",
+      "applies": "all visa-required nationalities applying via US mission",
+      "official": true,
+      "source_url": "https://washington.mfa.gov.gh/consular-fees",
+      "notes": "Standard processing. Expedited: USD 250."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Ghana e-Visa single entry (evisa.immigration.gov.gh, launched 25 May 2026)",
+      "amount": 260,
+      "currency": "USD",
+      "amount_usd": 260,
+      "validity": "Single entry",
+      "applies": "eligible nationalities (190+ countries)",
+      "official": true,
+      "source_url": "https://evisa.immigration.gov.gh/",
+      "notes": "Standard processing 3-5 business days (portal says 72-96h). Priority 48h: USD 338; express 5h: USD 442. Fee shown inside application flow, not on the public landing page; amounts corroborated by press reports of the portal pricing - verify at checkout."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Ghana e-Visa multiple entry",
+      "amount": 468,
+      "currency": "USD",
+      "amount_usd": 468,
+      "validity": "Multiple entry",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://evisa.immigration.gov.gh/",
+      "notes": "Standard tier. Priority: USD 608; express: USD 796. Same caveat as single-entry e-visa fee."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival / Emergency Entry Visa (EEV)",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "Single entry",
+      "applies": "travellers unable to obtain a visa before departure; since April 2026 mandatory pre-approval before boarding",
+      "official": true,
+      "source_url": "https://gis.gov.gh/fees-and-charges/",
+      "notes": "GIS revised fee schedule effective 15 May 2025: USD 200 for other nationals and Ghanaians with foreign passports. EEV for returning residents: GHS 259 (other nationals)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://washington.mfa.gov.gh/consular-fees",
+      "notes": "No separate business-visa fee published; business travel uses the same single/multiple entry visa fees (USD 100/180 at Washington) or the e-visa (tourist or business purpose)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (single, Washington DC mission)",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": "Single transit",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://washington.mfa.gov.gh/consular-fees",
+      "notes": "Multiple transit: USD 130 (USD 150 expedited). GIS also lists a Transit Permit at USD 50 on its fees schedule."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic Travel Authorisation (ETA)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "certain nationalities per e-visa portal eligibility checker",
+      "official": true,
+      "source_url": "https://evisa.immigration.gov.gh/",
+      "notes": "The e-visa portal's eligibility checker distinguishes Visa Free / ETA / e-Visa by nationality, but no ETA fee is published; amount unverified."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["NGA"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "ECOWAS nationals (incl. Nigeria) are visa-free for 90 days - no visa or fee required."
+    },
+    {
+      "nationalities": ["ALL_AFRICAN_PASSPORTS"],
+      "kind": "e_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "From 25 May 2026 (Africa Day), holders of African passports pay no visa fees to travel to Ghana, per Ministry of Foreign Affairs announcement (https://mfa.gov.gh/index.php/ghana-launches-e-visa-portal/)."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "Ghana does not outsource inbound visa applications to VFS/TLS/BLS; applications go via Ghana missions or the official e-visa portal. (VFS centres in Accra serve outbound travel from Ghana only.)"
+  },
+  "sources": [
+    "https://washington.mfa.gov.gh/consular-fees",
+    "https://gis.gov.gh/fees-and-charges/",
+    "https://gis.gov.gh/visas/",
+    "https://evisa.immigration.gov.gh/",
+    "https://mfa.gov.gh/index.php/ghana-launches-e-visa-portal/",
+    "https://visasnews.com/en/ghana-officially-launches-new-e-visa-portal/"
+  ],
+  "free_visa_notes": "Visa-free: ECOWAS nationals (90 days); Kenya, Uganda, Tanzania, Zimbabwe, Botswana, Singapore, Mauritius, Trinidad & Tobago (60 days). From 25 May 2026 all African passport holders are exempt from Ghana visa fees."
+}

@@ -1,0 +1,67 @@
+{
+  "iso3": "BIH",
+  "name": "Bosnia and Herzegovina",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa (Type C), single entry",
+      "amount": 39,
+      "currency": "USD",
+      "amount_usd": 39,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "nationalities requiring a visa; fee as published by BiH Embassy in Washington DC",
+      "official": true,
+      "source_url": "https://www.bhembassy.org/visainfo.html",
+      "notes": "Fees are set centrally in EUR by BiH regulation but published by each embassy in local currency, so amounts vary by mission: BiH Embassy Washington DC lists USD 39 single / USD 70 multiple; BiH Embassy Amman lists USD 71 for Visa C. The central MFA (mfa.gov.ba) fee schedule was unreachable at time of research. Applicants must apply at a BiH diplomatic/consular mission - there is no e-visa."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa (Type C), multiple entry",
+      "amount": 70,
+      "currency": "USD",
+      "amount_usd": 70,
+      "validity": "up to 90 days in any 180-day period, multiple entries",
+      "applies": "nationalities requiring a visa; fee as published by BiH Embassy in Washington DC",
+      "official": true,
+      "source_url": "https://www.bhembassy.org/visainfo.html",
+      "notes": "BiH Embassy Amman also lists USD 71 for multiple-entry Visa C; amounts vary by embassy."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Long-stay visa (Type D)",
+      "amount": 113,
+      "currency": "USD",
+      "amount_usd": 113,
+      "validity": "long stay (over 90 days), typically up to 6 months",
+      "applies": "all applicants requiring a Type D visa; fee as published by BiH Embassy in Amman",
+      "official": true,
+      "source_url": "http://bhembassyjo.com/en/visas-and-consular-services",
+      "notes": "Type D covers long-stay purposes including business assignments; embassy-issued only. Amount varies by mission."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (Type B)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "transit through BiH territory",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "http://bhembassyjo.com/en/visas-and-consular-services",
+      "notes": "Transit visa exists but no fee amount was published on the official embassy pages consulted; amount not verified so left null."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Bosnia and Herzegovina does not outsource inbound visa applications to VFS Global/TLScontact/BLS; applications are lodged directly at BiH embassies and consulates. (VFS centres located inside BiH serve outbound travellers applying for UK/Canada/Schengen visas, not visas to BiH.)"
+  },
+  "sources": [
+    "https://www.bhembassy.org/visainfo.html",
+    "http://bhembassyjo.com/en/visas-and-consular-services",
+    "https://msb.gov.ba/inf_za_strance/default.aspx?id=3068&langTag=en-US"
+  ],
+  "free_visa_notes": "Bosnia and Herzegovina is NOT a Schengen member; Schengen fees do not apply. Citizens of the EU/EEA, USA, UK, and many other countries enter visa-free for up to 90 days. No e-visa or standard visa-on-arrival programme exists; visas are issued at BiH diplomatic missions (border issuance only in exceptional, justified humanitarian cases under BiH law). No published nationality-based reciprocity fee schedule was found; fee differences observed are per-embassy currency conversions rather than reciprocity."
+}

@@ -1,0 +1,72 @@
+{
+  "iso3": "LIE",
+  "name": "Liechtenstein",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C) - issued by Switzerland on behalf of Liechtenstein",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities; children 6-12 pay EUR 45, under 6 free; free for family members of EU/EFTA citizens",
+      "official": true,
+      "source_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Liechtenstein has no visa-issuing authorities of its own; Switzerland represents Liechtenstein for Schengen visa issuance. Common Schengen fee of EUR 90 confirmed (increased from EUR 80 on 11 June 2024). Expedited processing may add up to a 50% surcharge."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C) for business purposes",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+      "notes": "Same uniform Schengen type C fee; purpose of travel does not change the fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A) - Schengen",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport transit only",
+      "applies": "nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Uniform Schengen fee applies to type A visas. Liechtenstein has no international airport; transit visas are relevant only for Swiss airports en route."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (visa-exempt nationalities)",
+      "amount": 20,
+      "currency": "EUR",
+      "amount_usd": 22,
+      "validity": "3 years or until passport expiry",
+      "applies": "visa-exempt non-EU nationalities once ETIAS becomes operational; free for under 18 and over 70",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en",
+      "notes": "ETIAS fee set at EUR 20 (raised from EUR 7 in 2025). Not yet in operation as of mid-2026; will apply to visa-exempt travellers to Schengen countries including Liechtenstein."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2690",
+    "currency": "INR",
+    "note": "Switzerland (acting for Liechtenstein) outsources Schengen visa intake to VFS Global in many countries. Published service fee in India is approx INR 2,690 per application (raised in 2025); amounts vary by country/centre. Verify on the local VFS Switzerland page.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/che/"
+  },
+  "sources": [
+    "https://www.sem.admin.ch/sem/en/home/themen/einreise/faq.html",
+    "https://home-affairs.ec.europa.eu/news/schengen-visa-fee-increased-11-june-2024-2024-06-13_en",
+    "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en",
+    "https://visa.vfsglobal.com/ind/en/che/"
+  ],
+  "free_visa_notes": "Liechtenstein is a Schengen member with no visa regime of its own: EU/EEA/Swiss citizens and all Schengen visa-exempt nationalities (e.g., USA, GBR, CAN, JPN) enter free of visa charges. There is no e-visa, no visa on arrival, and no nationality-based reciprocity fee schedule; the uniform Schengen fee (EUR 90 adult / EUR 45 child 6-12 / free under 6) applies, with reduced or waived fees only per EU-wide visa facilitation rules."
+}

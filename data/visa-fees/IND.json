@@ -1,0 +1,146 @@
+{
+  "iso3": "IND",
+  "name": "India",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Tourist Visa (30 days, double entry)",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "30 days",
+      "applies": "most eligible nationalities (July-March rate; reduced to USD 10 April-June)",
+      "official": true,
+      "source_url": "https://indianvisaonline.gov.in/evisa/images/Etourist_fee_final.pdf",
+      "notes": "Country-specific fee schedule dated 20-Feb-2026. Some nationalities pay USD 0 (e.g. Argentina, Indonesia, Jamaica, Mauritius, Myanmar, Uruguay; Russia, Thailand, Malaysia, Philippines pay 0 for 30-day). Bank charge of 3% added to all e-visa fees."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Tourist Visa (1 year, multiple entry)",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "1 year, max 180 days stay per calendar year",
+      "applies": "most eligible nationalities",
+      "official": true,
+      "source_url": "https://indianvisaonline.gov.in/evisa/images/Etourist_fee_final.pdf",
+      "notes": "Japan, Singapore, Sri Lanka pay USD 25; South Africa USD 25; several nationalities USD 0. Plus 3% bank charge."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Tourist Visa (5 years, multiple entry)",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "5 years, max 180 days stay per calendar year",
+      "applies": "most eligible nationalities",
+      "official": true,
+      "source_url": "https://indianvisaonline.gov.in/evisa/images/Etourist_fee_final.pdf",
+      "notes": "USA USD 160; UK/Gibraltar/Jersey/Guernsey/Isle of Man USD 484; Russia USD 120; Japan/Sri Lanka/South Africa USD 25. Plus 3% bank charge."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Business Visa (1 year, multiple entry)",
+      "amount": 120,
+      "currency": "USD",
+      "amount_usd": 120,
+      "validity": "1 year, max 180 days continuous stay",
+      "applies": "most eligible nationalities",
+      "official": true,
+      "source_url": "https://indianvisaonline.gov.in/evisa/images/eTV_revised_fee_final.pdf",
+      "notes": "Fee schedule dated 15-Apr-2026. Notable variations: USA USD 140, UK USD 242, Australia/Saudi Arabia USD 215, UAE USD 415, Philippines USD 220, Thailand USD 200, Japan USD 25; several nationalities USD 0. Plus 3% bank charge."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Medical / e-Medical Attendant Visa",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "1 year (60-day triple-entry stays)",
+      "applies": "most eligible nationalities",
+      "official": true,
+      "source_url": "https://indianvisaonline.gov.in/evisa/images/eTV_revised_fee_final.pdf",
+      "notes": "USA USD 100, UK USD 129, Russia USD 120, Bangladesh USD 0. Plus 3% bank charge."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (Japan, South Korea, UAE nationals only)",
+      "amount": 2000,
+      "currency": "INR",
+      "amount_usd": null,
+      "validity": "60 days, double entry",
+      "applies": "Japanese, South Korean and UAE nationals only (UAE nationals must have held a prior Indian visa; Pakistan-origin UAE nationals excluded)",
+      "official": true,
+      "source_url": "https://indianvisaonline.gov.in/visa/visa-on-arrival.html",
+      "notes": "INR 2,000 or equivalent in foreign currency per passenger (including children). Available only at Bangalore, Chennai, Delhi, Hyderabad, Kolkata and Mumbai airports."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Regular (sticker) Tourist Visa - embassy issued",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "varies by nationality (up to 10 years for US nationals)",
+      "applies": "all (fee is reciprocity-based per nationality)",
+      "official": true,
+      "source_url": "https://www.indianembassyusa.gov.in/extra?id=90",
+      "notes": "Regular visa fees are set per nationality by reciprocity; no single global amount. Example (US nationals): Tourist 10-year USD 160. Plus ICWF USD 3 and outsourcing (VFS) service fee where applicable. See reciprocity_variations."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Regular Business Visa - embassy issued",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "varies by nationality (10 years for US nationals)",
+      "applies": "all (fee is reciprocity-based per nationality)",
+      "official": true,
+      "source_url": "https://www.indianembassyusa.gov.in/extra?id=90",
+      "notes": "Example (US nationals): Business 10-year USD 160. Reciprocity-based; verify at the Indian mission for each nationality."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "up to 15 days, single/double entry",
+      "applies": "all (fee is reciprocity-based per nationality)",
+      "official": true,
+      "source_url": "https://www.indianembassyusa.gov.in/extra?id=90",
+      "notes": "Example (US nationals): USD 40. Reciprocity-based per nationality."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["USA"], "kind": "tourist_visa", "amount": 160, "currency": "USD", "note": "Regular 10-year tourist visa; business 10-year also USD 160; transit USD 40; plus USD 3 ICWF + VFS service fee (Embassy of India Washington DC)." },
+    { "nationalities": ["USA"], "kind": "e_visa", "amount": 160, "currency": "USD", "note": "5-year e-Tourist USD 160 (vs standard 200); e-Business USD 140; e-Medical USD 100." },
+    { "nationalities": ["GBR"], "kind": "e_visa", "amount": 484, "currency": "USD", "note": "5-year e-Tourist USD 484; e-Business USD 242; e-Medical USD 129. 30-day/1-year e-Tourist standard (25/40)." },
+    { "nationalities": ["RUS"], "kind": "e_visa", "amount": 0, "currency": "USD", "note": "30-day e-Tourist free; 1-year USD 40; 5-year USD 120; e-Business/e-Medical USD 120." },
+    { "nationalities": ["PHL"], "kind": "e_visa", "amount": 0, "currency": "USD", "note": "30-day e-Tourist free; 1-year USD 40; 5-year USD 200; e-Business USD 220." },
+    { "nationalities": ["CAN"], "kind": "e_visa", "amount": 25, "currency": "USD", "note": "Standard schedule: 30-day USD 25 (USD 10 Apr-Jun), 1-year USD 40, 5-year USD 200, e-Business USD 120." },
+    { "nationalities": ["BGD"], "kind": "e_visa", "amount": 0, "currency": "USD", "note": "Bangladesh: e-Medical/e-Medical Attendant USD 0; not eligible for e-Tourist/e-Business (regular visa regime applies, generally gratis for Bangladeshis per Indian High Commission Dhaka)." },
+    { "nationalities": ["PAK"], "kind": "tourist_visa", "amount": null, "currency": "USD", "note": "Pakistani nationals are not eligible for India e-visa or visa on arrival; regular visas under a restrictive bilateral regime, fee not published centrally." },
+    { "nationalities": ["CHN"], "kind": "e_visa", "amount": null, "currency": "USD", "note": "China not listed on the Feb/Apr 2026 official e-visa fee schedules; Chinese nationals apply for regular visas via Indian missions (fee per mission schedule, not verified)." },
+    { "nationalities": ["NGA"], "kind": "e_visa", "amount": null, "currency": "USD", "note": "Nigeria not on the official e-Tourist fee schedule; Nigerian nationals use regular embassy visas (fee per Indian High Commission Abuja, not verified on an official page)." }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "19",
+    "currency": "USD",
+    "note": "USD 19 per application at VFS Global centres in the USA, plus USD 3 ICWF; optional courier USD 18 and emergency processing USD 100. Service fees vary by country/centre (e.g. GBP-denominated in the UK).",
+    "source_url": "https://services.vfsglobal.com/one-pager/india/united-states-of-america/visa-services/"
+  },
+  "sources": [
+    "https://indianvisaonline.gov.in/evisa/tvoa.html",
+    "https://indianvisaonline.gov.in/evisa/images/Etourist_fee_final.pdf",
+    "https://indianvisaonline.gov.in/evisa/images/eTV_revised_fee_final.pdf",
+    "https://indianvisaonline.gov.in/visa/visa-on-arrival.html",
+    "https://www.indianembassyusa.gov.in/extra?id=90",
+    "https://services.vfsglobal.com/one-pager/india/united-states-of-america/visa-services/",
+    "https://www.cgichicago.gov.in/page/apply-indian-visa/"
+  ],
+  "free_visa_notes": "Not free in general, but India grants gratis e-visas to a set of nationalities (Argentina, Cook Islands, Fiji, Indonesia, Jamaica, Kiribati, Marshall Is., Mauritius, Micronesia, Mongolia, Myanmar, Nauru, Niue, Palau, PNG, Samoa, Seychelles, Solomon Is., Tonga, Tuvalu, Uruguay, Vanuatu; and 30-day e-Tourist free for Russia, Thailand, Malaysia, Philippines). Nepal and Bhutan citizens need no visa for India."
+}

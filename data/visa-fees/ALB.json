@@ -1,0 +1,76 @@
+{
+  "iso3": "ALB",
+  "name": "Albania",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Type C short-stay visa (single entry) via e-visa.al",
+      "amount": 35,
+      "currency": "EUR",
+      "amount_usd": 38,
+      "validity": "90 days in any 180-day period",
+      "applies": "nationalities not listed in the reciprocity schedule (default 'other countries' rate)",
+      "official": true,
+      "source_url": "https://e-visa.al/documents/tarifat-e-vizes.docx",
+      "notes": "All Albanian visas are applied for online at e-visa.al; there is no separate e-visa vs sticker fee. Fees are set per nationality by Council of Ministers Decision (VKM) No. 329, dated 29.05.2024 - schedule ranges from gratis (e.g. Algeria, Palestine, China) to EUR 100 (e.g. Belarus, Kazakhstan). EUR 35 is the fallback rate where no reciprocity fee is set. Minors aged 6-12 pay half the adult fee."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Type C short-stay visa (two entries)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "90 days in any 180-day period",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://e-visa.al/documents/tarifat-e-vizes.docx",
+      "notes": "Two-entry and multiple-entry fees vary widely by nationality (e.g. Nigeria: EUR 25 single / EUR 40 two-entry / EUR 80 multiple). No single amount applies; see reciprocity_variations and the official VKM 329/2024 schedule."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Type A airport transit visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "airport transit only",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://e-visa.al/documents/tarifat-e-vizes.docx",
+      "notes": "The VKM 329/2024 schedule lists Type A airport-transit fees per nationality alongside Type C; default EUR 35 where no reciprocity rate exists. Applied via e-visa.al."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Type C short-stay visa for business purposes",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "90 days in any 180-day period",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://e-visa.al/documents/tarifat-e-vizes.docx",
+      "notes": "Albania has no separate business-visa fee; business travel uses the Type C visa at the same nationality-based tariff as tourism."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["IND"], "kind": "tourist_visa", "amount": 15, "currency": "EUR", "note": "Type C single/two/multiple entry all EUR 15 (apply at Beijing, Abu Dhabi or Istanbul missions via e-visa)." },
+    { "nationalities": ["CHN"], "kind": "tourist_visa", "amount": 0, "currency": "EUR", "note": "China: short-stay Type C not listed (visa-free for short stays); Type D long-stay visa is gratis." },
+    { "nationalities": ["NGA"], "kind": "tourist_visa", "amount": 25, "currency": "EUR", "note": "Single entry EUR 25; two entries EUR 40; multiple entries EUR 80." },
+    { "nationalities": ["PAK"], "kind": "tourist_visa", "amount": 20, "currency": "EUR", "note": "Single entry EUR 20; two/multiple entries EUR 35." },
+    { "nationalities": ["PHL"], "kind": "tourist_visa", "amount": 30, "currency": "EUR", "note": "Single, two and multiple entries all EUR 30." },
+    { "nationalities": ["BGD"], "kind": "tourist_visa", "amount": 25, "currency": "EUR", "note": "Single entry EUR 25; two entries EUR 40; multiple entries EUR 80." },
+    { "nationalities": ["RUS"], "kind": "tourist_visa", "amount": 30, "currency": "EUR", "note": "Single entry EUR 30; two/multiple entries EUR 50. (Russians are visa-free during the summer season under Albania's seasonal exemption when in force.)" },
+    { "nationalities": ["USA", "GBR", "CAN"], "kind": "tourist_visa", "amount": 0, "currency": "EUR", "note": "US, UK and Canadian citizens do not require a visa for short stays (not in the visa-required schedule); US citizens may stay up to one year." }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://e-visa.al/documents/tarifat-e-vizes.docx",
+    "https://e-visa.al/apply",
+    "https://punetejashtme.gov.al/en/regjimi-i-vizave-per-te-huajt/",
+    "https://punetejashtme.gov.al/en/tarifat-konsullore/"
+  ],
+  "free_visa_notes": "Most Western, EU, Gulf-resident and many other nationalities enter Albania visa-free for 90 days (US citizens up to 1 year). Holders of valid multiple-entry Schengen visas (previously used), or valid US/UK/EU residence permits, enter visa-free. Some visa-required nationalities pay no fee: Algeria and Palestine are gratis for all visa types; China's Type D is gratis. Saudi and Qatari citizens are visa-free for tourism 15 Apr-31 Dec 2026. Albania is NOT a Schengen member, so the Schengen fee does not apply."
+}

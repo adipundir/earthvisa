@@ -1,0 +1,92 @@
+{
+  "iso3": "CPV",
+  "name": "Cabo Verde",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa, single entry (Embassy of Cabo Verde, Washington DC)",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "Stay up to 90 days (extendable once); must be used within 180 days of issue",
+      "applies": "nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://www.embcv-usa.gov.cv/images/doc/Info_pedidos_vistos_eng.pdf",
+      "notes": "Embassy sticker-visa fee published by the Cabo Verde Embassy in the USA; fee is the same schedule used for tourist and temporary categories (money order, cash or bank check)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/temporary visa, multiple entry (Embassy of Cabo Verde, Washington DC)",
+      "amount": 114,
+      "currency": "USD",
+      "amount_usd": 114,
+      "validity": "Multiple entries; temporary multiple-entry allows total stay of 90 days within one year of issue",
+      "applies": "nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://www.embcv-usa.gov.cv/images/doc/Info_pedidos_vistos_eng.pdf",
+      "notes": "Multiple-entry rate from the same embassy fee schedule."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (border/SEF, added via EASE pre-registration)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "Up to 30 days",
+      "applies": "nationalities not visa-exempt",
+      "official": false,
+      "source_url": "https://www.ease.gov.cv/",
+      "notes": "A visa can be added during EASE pre-registration or obtained on arrival. Third-party sources report roughly EUR 25 (approx. 2,750 CVE), but no official published amount was verifiable, so amount is null. Note: from 1 January 2026 nationals of certain listed countries must obtain a visa BEFORE arrival (VOA no longer available to them), per notice on ease.gov.cv."
+    },
+    {
+      "kind": "eta",
+      "name": "EASE pre-registration + Airport Security Tax (TSA), international flights",
+      "amount": 3400,
+      "currency": "CVE",
+      "amount_usd": 35,
+      "validity": "Per entry",
+      "applies": "all foreign visitors (exemptions: children under 2, transit/transfer passengers, Cabo Verdean nationals, resident foreigners)",
+      "official": true,
+      "source_url": "https://portalconsular.mnec.gov.cv/en/perguntas-frequentes",
+      "notes": "Mandatory pre-registration on www.ease.gov.cv up to 5 days before travel and payment of the TSA of 3,400 CVE (approx. EUR 30.83 / USD 35). Not a visa, but required of visa-exempt travellers too; can also be paid on arrival. Domestic inter-island flights: 150 CVE."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "4 days, extendable once",
+      "applies": "nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://portalconsular.mnec.gov.cv/en/vistos",
+      "notes": "Transit visa category exists per the MFA consular portal, but no specific published fee was found; embassy fee schedule (USD 60 single / 114 multiple) likely applies but is not explicitly stated for transit."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Temporary visa (business, cultural, medical, family visit)",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "Single entry: stay up to 180 days; multiple entry (USD 114): 90 days total within one year",
+      "applies": "nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://www.embcv-usa.gov.cv/images/doc/Info_pedidos_vistos_eng.pdf",
+      "notes": "Business travel falls under the 'temporary' visa category; embassy schedule lists USD 60 single entry / USD 114 multiple entries."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced centre (VFS/TLS/BLS) for inbound Cabo Verde visas; applications go through the EASE portal, embassies/consulates, or on arrival. The VFS Global centre in Praia handles outbound Portugal/Schengen visas only."
+  },
+  "sources": [
+    "https://www.embcv-usa.gov.cv/images/doc/Info_pedidos_vistos_eng.pdf",
+    "https://portalconsular.mnec.gov.cv/en/vistos",
+    "https://portalconsular.mnec.gov.cv/en/perguntas-frequentes",
+    "https://www.ease.gov.cv/"
+  ],
+  "free_visa_notes": "Since 1 January 2019, nationals of the EU/EEA, UK, Switzerland and most African countries are visa-exempt for stays up to 30 days; they must still pre-register on EASE and pay the 3,400 CVE Airport Security Tax (TSA). From 1 January 2026, a list of nationalities announced on ease.gov.cv must obtain a visa prior to arrival."
+}

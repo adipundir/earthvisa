@@ -1,0 +1,67 @@
+{
+  "iso3": "CZE",
+  "name": "Czechia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C), adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities (unless facilitation agreement applies)",
+      "official": true,
+      "source_url": "https://mzv.gov.cz/jnp/en/information_for_aliens/visa_fee_schedule/index.html",
+      "notes": "Payable at application; not refunded on refusal. Children 6-11: EUR 45; children under 6 free. Payable in EUR or local-currency equivalent. Czechia is a Schengen member; this is the common Schengen fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "airport transit only",
+      "applies": "nationalities requiring airport transit visa",
+      "official": true,
+      "source_url": "https://mzv.gov.cz/jnp/en/information_for_aliens/visa_fee_schedule/index.html",
+      "notes": "Same fee schedule as Type C Schengen visa."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C) - business purpose",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://mzv.gov.cz/jnp/en/information_for_aliens/visa_fee_schedule/index.html",
+      "notes": "Business travel uses the same Schengen Type C visa and fee; there is no separate business visa category."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BLR", "BIH", "GEO", "MDA", "MNE", "MKD", "SRB", "UKR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under EU Visa Facilitation Agreements. Ukraine express processing option: EUR 70. (Most of these nationalities are in practice visa-exempt for short stays with biometric passports; the reduced fee applies where a visa is still required.)"
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2220",
+    "currency": "INR",
+    "note": "VFS Global service charge in India is INR 2,220 (incl. GST), non-refundable, paid at appointment booking. Service fees vary by country/centre; Czechia outsources short-stay visa intake to VFS Global in many countries.",
+    "source_url": "https://visa.vfsglobal.com/one-pager/czechrepublic/india/"
+  },
+  "sources": [
+    "https://mzv.gov.cz/jnp/en/information_for_aliens/visa_fee_schedule/index.html",
+    "https://visa.vfsglobal.com/one-pager/czechrepublic/india/",
+    "https://visa.vfsglobal.com/ind/en/cze/"
+  ],
+  "free_visa_notes": "No e-visa, visa on arrival, or eTA exists for Czechia. Schengen visa fee waived for: children under 6, family members of EU/EEA citizens, school pupils/students and accompanying teachers on study trips, researchers, and representatives of non-profit youth organisations (aged 25 or under) attending events. Certain long-term (Type D) visas are free for citizens of Japan, South Africa and Turkey. Note: from late 2026 the EU ETIAS travel authorisation (EUR 20) will apply to visa-exempt travellers across Schengen, but it is an EU-wide fee, not a Czech fee."
+}

@@ -1,0 +1,107 @@
+{
+  "iso3": "AZE",
+  "name": "Azerbaijan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "ASAN Visa e-visa (standard, 3 working days)",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "90 days validity, single entry, up to 30 days stay",
+      "applies": "eligible nationalities (ASAN Visa list)",
+      "official": true,
+      "source_url": "https://washington.mfa.gov.az/en/category/e-visa",
+      "notes": "USD 20 state fee + USD 5 mandatory service fee = USD 25 total on the official evisa.gov.az portal (portal itself is bot-protected; state-fee amount confirmed on Embassy of Azerbaijan Washington page)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "ASAN Visa e-visa (urgent, 3 hours)",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "90 days validity, single entry, up to 30 days stay",
+      "applies": "eligible nationalities (ASAN Visa list)",
+      "official": true,
+      "source_url": "https://washington.mfa.gov.az/en/category/e-visa",
+      "notes": "USD 50 state fee + USD 10 service fee = USD 60 total; urgent e-visa issued within 3 hours including holidays."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry visa (embassy sticker visa, incl. tourist)",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "typically up to 90 days, single entry",
+      "applies": "most nationalities (standard rate)",
+      "official": true,
+      "source_url": "https://washington.mfa.gov.az/en/category/single-entry-visas/turizm-vizasi",
+      "notes": "Standard state fee is USD 20 for nearly all nationalities per the MFA country fee schedule; EU-member-state citizens pay EUR 35 under the EU-Azerbaijan visa facilitation agreement (also 35 EUR for Switzerland and Norway); UK/Iceland/Ireland pay GBP 18 at the London embassy."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Multiple-entry visa (business, private visit, etc.)",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "multiple entry, duration per visa category",
+      "applies": "most nationalities (standard rate)",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/azerbaijan/iraq/english/index.html",
+      "notes": "Current schedule per Law on State Fee (arts 16.1.6-16.1.7) quoted on official VFS Azerbaijan pages: USD 160 general multiple-entry; USD 185 for US citizens (per LA Consulate General), USD 190 for US work visas, USD 150 for South Korea, USD 200 for Pakistan. Some older embassy PDFs (Washington) still list USD 350 for multiple-entry - the 160/185 figures are the more recent published schedule."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "transit",
+      "applies": "all requiring a visa",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/azerbaijan/egypt/english/index.html",
+      "notes": "USD 20 per the VFS Global Azerbaijan (Egypt) official fee table."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "previously limited nationalities at Baku airport",
+      "official": true,
+      "source_url": "https://washington.mfa.gov.az/en/category/visa-upon-arrival-to-azerbaijan",
+      "notes": "Visa issuance upon arrival is suspended until further notice (per Embassy of Azerbaijan in Washington); no current fee published. Travellers use the ASAN e-visa instead."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["USA"], "kind": "business_visa", "amount": 185, "currency": "USD", "note": "Multiple-entry visa fee for US citizens is USD 185 (USD 190 for multiple-entry work visa) per Consulate General in Los Angeles; single-entry USD 20." },
+    { "nationalities": ["PAK"], "kind": "business_visa", "amount": 200, "currency": "USD", "note": "Multiple-entry visa fee for Pakistani citizens is USD 200 per VFS/MFA published schedule; single-entry USD 20." },
+    { "nationalities": ["GBR"], "kind": "tourist_visa", "amount": 18, "currency": "GBP", "note": "London embassy charges GBP 18 single-entry (GBP 300 multiple-entry) for UK, Iceland and Ireland citizens." },
+    { "nationalities": ["IND", "CHN", "NGA", "PHL", "BGD", "CAN"], "kind": "tourist_visa", "amount": 20, "currency": "USD", "note": "Standard USD 20 single-entry state fee per MFA country fee schedule; all are also e-visa eligible (USD 25)." },
+    { "nationalities": ["RUS"], "kind": "tourist_visa", "amount": null, "currency": "USD", "note": "Russian citizens do not need a visa for Azerbaijan (bilateral visa-free regime), hence absent from the fee schedule." }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "25 USD (Iraq) / 1265 EGP incl. VAT (Egypt)",
+    "currency": "USD/EGP",
+    "note": "Azerbaijan routes embassy visa applications through VFS Global in at least Iraq (service charge USD 25 cash per application) and Egypt (EGP 1265 incl. VAT per application); service fees vary by centre. VFS Global is also the authorised partner for the Azerbaijan e-visa (azerbaijan.vfsevisa.com).",
+    "source_url": "https://www.vfsglobal.com/one-pager/azerbaijan/iraq/english/index.html"
+  },
+  "sources": [
+    "https://washington.mfa.gov.az/en/category/e-visa",
+    "https://washington.mfa.gov.az/en/category/single-entry-visas/turizm-vizasi",
+    "https://washington.mfa.gov.az/en/category/visa-upon-arrival-to-azerbaijan",
+    "https://washington.mfa.gov.az/files/3.%20%C3%96LK%C6%8FL%C6%8FR%20%C3%9CZR%C6%8F%20V%C4%B0ZA%20R%C3%9CSUMLARI.pdf",
+    "https://london.mfa.gov.az/en/category/visa-information/turizm-vizasi",
+    "https://losangeles.mfa.gov.az/en/category/multiple-entry-visa",
+    "https://www.vfsglobal.com/one-pager/azerbaijan/iraq/english/index.html",
+    "https://www.vfsglobal.com/one-pager/azerbaijan/egypt/english/index.html",
+    "https://evisa.gov.az/en/"
+  ],
+  "free_visa_notes": "Citizens of several countries (e.g. Russia, Turkey, Georgia, most CIS states) enter Azerbaijan visa-free under bilateral agreements and pay no fee."
+}

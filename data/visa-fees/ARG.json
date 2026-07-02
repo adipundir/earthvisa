@@ -1,0 +1,69 @@
+{
+  "iso3": "ARG",
+  "name": "Argentina",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (consular)",
+      "amount": 150,
+      "currency": "USD",
+      "amount_usd": 150,
+      "validity": "stay up to 90 days",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://cancilleria.gob.ar/en/services/visa/tourist-visa",
+      "notes": "Consular fee is USD 150 or EUR 150 depending on the consular office; payable in local currency of the post. Some embassy schedules (e.g. Embassy in Vietnam) still publish lower legacy amounts, so confirm at the specific consulate."
+    },
+    {
+      "kind": "eta",
+      "name": "AVE - Autorizacion de Viaje Electronica (electronic travel authorization)",
+      "amount": 400,
+      "currency": "USD",
+      "amount_usd": 400,
+      "validity": "3 months from issue; 90-day stay, multiple entry, one extension possible",
+      "applies": "eligible visa-required nationalities (90+ countries) holding a valid US visa (B2, J, B1, O, P, E, H-1B) or from US visa-exempt jurisdictions with ESTA/recent US entry; tourism only",
+      "official": true,
+      "source_url": "https://esing.cancilleria.gob.ar/en/electronic-travel-authorization-ave-4",
+      "notes": "Fee stated as USD 400 on the official Embassy of Argentina in Singapore page; applied for via migraciones.gob.ar/ave. Processing up to 20 business days. Chinese citizens with a valid US visa/green card and Indian/Dominican nationals with equivalent US visas are exempt from needing the AVE for tourism."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (consular, transitory)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "up to 2 months",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://eviet.cancilleria.gob.ar/userfiles/ENG-TransitoryVisa-Categories_0.pdf",
+      "notes": "Per Embassy of Argentina in Vietnam transitory-visa schedule: business USD 100; market survey / trade fair USD 50; technical/professional USD 100 (USD 50 for religious activity). Amounts may vary by consular post."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "up to 10 days",
+      "applies": "visa-required nationalities transiting Argentina",
+      "official": true,
+      "source_url": "https://eviet.cancilleria.gob.ar/userfiles/ENG-TransitoryVisa-Categories_0.pdf",
+      "notes": "No visa needed if departing within 12 hours of arrival with onward ticket and declared as a transit traveller (must remain in the airport/station). Fee per Embassy in Vietnam schedule; may vary by post."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Argentina does not outsource visa applications to VFS Global, TLScontact or BLS; applications are lodged directly with Argentine consulates or via the online AVE portal (migraciones.gob.ar/ave)."
+  },
+  "sources": [
+    "https://cancilleria.gob.ar/en/services/visa/tourist-visa",
+    "https://esing.cancilleria.gob.ar/en/electronic-travel-authorization-ave-4",
+    "https://www.migraciones.gob.ar/ave/",
+    "https://eviet.cancilleria.gob.ar/userfiles/ENG-TransitoryVisa-Categories_0.pdf",
+    "https://www.argentina.gob.ar/migraciones/cuadro-tasas-migratorias"
+  ],
+  "free_visa_notes": "Nationals of ~90 countries (US, EU, UK, Canada, most of Latin America, etc.) enter visa-free for up to 90 days. The former 'reciprocity fee' for US, Canadian and Australian citizens has been abolished. No fee for visa-exempt travellers."
+}

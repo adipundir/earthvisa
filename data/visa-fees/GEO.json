@@ -1,0 +1,73 @@
+{
+  "iso3": "GEO",
+  "name": "Georgia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Georgia e-Visa (short-term, C category)",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "typically 120 days, 30-day stay (single/multiple entry depends on nationality)",
+      "applies": "eligible nationalities not covered by Georgia's visa-free regime",
+      "official": true,
+      "source_url": "https://www.evisa.gov.ge/GeoVisa/en/Home/FAQ",
+      "notes": "USD 20 state fee + 2% service fee, paid by Visa/MasterCard on the official evisa.gov.ge portal. Non-refundable even if refused."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Ordinary short-term visa (C1 tourism, embassy-issued)",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "up to 90 days",
+      "applies": "nationalities requiring a consular visa",
+      "official": true,
+      "source_url": "https://uae.mfa.gov.ge/en/visa-information",
+      "notes": "Consular service tariff USD 20 (charged in local currency equivalent at some missions, e.g. 75 AED in the UAE). Applies to ordinary C1-C4 visas (tourism, family visit, business meetings, culture/sport, journalism, medical, humanitarian)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Ordinary short-term visa (C2/C4 business purposes)",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "up to 90 days",
+      "applies": "nationalities requiring a consular visa",
+      "official": true,
+      "source_url": "https://uae.mfa.gov.ge/en/visa-information",
+      "notes": "Business meetings and negotiations fall under the ordinary C-category visa; same USD 20 consular tariff."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://geoconsul.gov.ge/en/entering-georgia",
+      "notes": "Georgia issues transit visas but a distinct published transit fee could not be verified on an official page; consular tariffs for short-term categories are generally USD 20. Confirm via geoconsul.gov.ge tariffs section."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2435",
+    "currency": "INR",
+    "note": "VFS Global runs Georgia visa application centres in India (and several other countries). Published service fee approx. INR 2,435 per application; mandatory courier fee of INR 846 at satellite locations (not New Delhi). Fees vary by centre and country.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/geo/"
+  },
+  "sources": [
+    "https://www.evisa.gov.ge/GeoVisa/en/Home/FAQ",
+    "https://uae.mfa.gov.ge/en/visa-information",
+    "https://geoconsul.gov.ge/en/entering-georgia",
+    "https://visa.vfsglobal.com/ind/en/geo/",
+    "https://mfa.gov.ge/pfiles/files/D1-labour-visa-requirements.pdf"
+  ],
+  "free_visa_notes": "Georgia is not a Schengen member and has one of the world's most liberal visa regimes: citizens of ~95+ countries/territories (incl. EU, USA, GBR, CAN, RUS, and all GCC states) may enter visa-free for up to 1 year. Fees above apply only to nationalities outside the visa-free list (e.g. IND, NGA, PAK, PHL, BGD, most of Africa/South Asia). There is no visa on arrival and no eTA. The flat USD 20 tariff applies uniformly; no nationality-based reciprocity fee schedule was found. Immigration D-category visas also carry a USD 20 fee (per embassy pages) but are out of scope here."
+}

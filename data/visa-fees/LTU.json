@@ -1,0 +1,103 @@
+{
+  "iso3": "LTU",
+  "name": "Lithuania",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities (children 6-12: EUR 45; under 6: free)",
+      "official": true,
+      "source_url": "https://keliauk.urm.lt/en/entry-to-lithuania/visas/visa-and-service-fee",
+      "notes": "Lithuania is a Schengen member; the harmonised EU Visa Code fee of EUR 90 applies (raised from EUR 80 on 11 June 2024). Children 6-12 pay EUR 45 per the Lithuanian MFA (keliauk.urm.lt); children under 6, pupils/students on study trips, researchers, and representatives of non-profit organisations aged 25 or under are exempt. The MFA fee page is Cloudflare-protected; amounts were confirmed via its indexed content and the EU Commission visa-policy page."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C) for business",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://keliauk.urm.lt/en/entry-to-lithuania/visas/visa-and-service-fee",
+      "notes": "Business travel uses the same Schengen C visa; there is no separate business visa category or fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "Airport transit only",
+      "applies": "nationalities on the EU airport-transit-visa list",
+      "official": true,
+      "source_url": "https://keliauk.urm.lt/en/entry-to-lithuania/visas/types-of-visa",
+      "notes": "Airport transit visas are charged at the standard Schengen visa fee under the EU Visa Code."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa / ETIAS",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": true,
+      "source_url": "https://keliauk.urm.lt/en/entry-to-lithuania/visas",
+      "notes": "Lithuania has no standalone tourist e-visa; Schengen visa applications are lodged via MIGRIS online but issued as sticker visas at consulates/VFS. Visa-exempt nationals will need the EU-wide ETIAS travel authorisation (EUR 20, valid 3 years) once ETIAS becomes operational; it is not Lithuania-specific and not yet in force as of this record."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "EU-Belarus visa facilitation agreement (in force since July 2020): reduced EUR 35 Schengen visa fee for all Belarusian citizens, confirmed on keliauk.urm.lt and EEAS."
+    },
+    {
+      "nationalities": ["ARM", "AZE"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced EUR 35 fee under EU visa facilitation agreements with Armenia and Azerbaijan (EU-wide, applies to Lithuania as a Schengen member)."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "EU-Russia visa facilitation agreement fully suspended since September 2022 - Russian citizens pay the full EUR 90 fee; note Lithuania also restricts entry of Russian citizens for tourism."
+    },
+    {
+      "nationalities": ["IND", "USA", "GBR", "CHN", "NGA", "PAK", "PHL", "BGD", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "No facilitation agreement - standard EUR 90 Schengen fee (USA, GBR, CAN nationals are visa-exempt for short stays and normally pay nothing)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "5654",
+    "currency": "NPR",
+    "note": "Lithuania outsources visa intake to VFS Global in many countries (incl. India - New Delhi, Mumbai, Bangalore - Nepal, China, etc.). Published service charge varies by centre; e.g. NPR 5,654 incl. VAT in Nepal per the official VFS one-pager (roughly EUR 20-40 equivalent typical range). Indian-centre INR amount not verifiable on an accessible official page at record time (VFS India pages are bot-protected); third-party sources cite ~INR 1,788 incl. GST - treat as unverified.",
+    "source_url": "https://www.vfsglobal.com/one-pager/lithuania/nepal/english/"
+  },
+  "sources": [
+    "https://keliauk.urm.lt/en/entry-to-lithuania/visas/visa-and-service-fee",
+    "https://keliauk.urm.lt/en/entry-to-lithuania/visas/types-of-visa",
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
+    "https://www.vfsglobal.com/one-pager/lithuania/nepal/english/",
+    "https://visa.vfsglobal.com/ind/en/ltu",
+    "https://www.mfa.lt/en/news/928/vfs-visa-application-centers-for-lithuania-launched-in-india:34015"
+  ],
+  "free_visa_notes": "No visa-on-arrival or Lithuania-specific eTA exists. Nationals of the EU/EEA and the ~60 Schengen visa-waiver countries (incl. USA, GBR, CAN, JPN, AUS) enter visa-free for 90/180 days. Visa fee waived for children under 6, school pupils/students on organised study trips, researchers, and non-profit event participants aged 25 or under. National (D) visa for long stays costs EUR 140 (out of scope for short-term travel)."
+}

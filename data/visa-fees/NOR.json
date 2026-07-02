@@ -1,0 +1,74 @@
+{
+  "iso3": "NOR",
+  "name": "Norway",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visitor visa (type C), adults and children over 12",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.udi.no/en/word-definitions/fees/",
+      "notes": "Norway is a Schengen member; the common Schengen fee applies. Children 6-12: EUR 45; children under 6: free. Fee exemptions for close family of EU/EEA nationals, pupils/teachers on school trips, researchers, and applications via the Governor of Svalbard. Visa extension after arrival in Norway: EUR 30."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa for business purposes (same type C visa and fee)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.udi.no/en/word-definitions/fees/",
+      "notes": "Norway has no separate business visa category; business travellers apply for the same Schengen C visa at the standard EUR 90 fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "transit only",
+      "applies": "nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://www.udi.no/en/word-definitions/fees/",
+      "notes": "Standard Schengen visa fee applies to airport transit visas; UDI fee page does not list a separate reduced transit amount."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["AZE"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under the EU-Azerbaijan visa facilitation agreement, applied by Norway per UDI fee page (all applicants over 6 years)."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "The EU-Russia visa facilitation agreement is suspended; Russian citizens pay the full standard Schengen fee of EUR 90."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "approx. 1750-2200",
+    "currency": "INR",
+    "note": "Norway outsources visa application intake to VFS Global in many countries. Service fee varies by centre and country; the India range shown (INR ~1,750-2,200) is from third-party guides because the official VFS fee page could not be fetched (HTTP 403). Verify the exact amount on the VFS country page before use.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/nor/"
+  },
+  "sources": [
+    "https://www.udi.no/en/word-definitions/fees/",
+    "https://www.udi.no/en/want-to-apply/visit-and-holiday/visitors-visa-to-norway/",
+    "https://visa.vfsglobal.com/ind/en/nor/"
+  ],
+  "free_visa_notes": "Norway has no e-visa, no visa on arrival, and no national eTA. Visa-exempt nationals currently enter free; the EU/Schengen ETIAS travel authorisation (expected fee EUR 20) will apply to visa-exempt travellers once operational, but it was not yet in force at the time of this record."
+}

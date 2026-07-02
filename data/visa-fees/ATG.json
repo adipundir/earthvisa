@@ -1,0 +1,69 @@
+{
+  "iso3": "ATG",
+  "name": "Antigua and Barbuda",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist Visa on Arrival",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "30 days (single entry)",
+      "applies": "nationals requiring a visa who arrive by scheduled flight or cruise; not available to diplomatic/official passport holders",
+      "official": true,
+      "source_url": "https://immigration.gov.ag/visa-services/visa-on-arrival/",
+      "notes": "US$100.00 or equivalent Eastern Caribbean Currency per passenger, including children. Confirmed on the official Department of Immigration site and by the Antigua and Barbuda Consulate General in New York (abconsulate.nyc)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Electronic Entry Visa (EEV) - single entry",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "6 months, single entry",
+      "applies": "nationalities requiring a visa; apply via official eVisa portal antiguavisa.com / evisa.immigration.gov.ag",
+      "official": true,
+      "source_url": "https://antiguavisa.com/",
+      "notes": "The official portal displays the exact fee only inside the application flow (official FAQ: 'click Apply... to find out the e-Visa fee'). USD 100 single-entry is consistently corroborated by multiple secondary sources; treat as indicative until confirmed in the portal. Fee is a non-refundable processing fee; expedited processing costs extra."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Electronic Entry Visa (EEV) - multiple entry",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "1 year, multiple entry",
+      "applies": "nationalities requiring a visa; apply via official eVisa portal antiguavisa.com / evisa.immigration.gov.ag",
+      "official": true,
+      "source_url": "https://antiguavisa.com/",
+      "notes": "USD 200 for 1-year multiple-entry EEV, corroborated by multiple secondary sources; official portal shows the fee inside the application flow. Non-refundable processing fee."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Consular/sticker visa (legacy paper process)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals requiring a visa applying via embassy/consulate",
+      "official": true,
+      "source_url": "https://immigration.gov.ag/fees/visa-fees/",
+      "notes": "The official Visa Fees page (immigration.gov.ag/fees/visa-fees/) currently publishes no fee table; visa issuance has largely moved to the eVisa system and visa-on-arrival. No verifiable consular fee amount found on an official source."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Antigua and Barbuda does not route visa applications through VFS Global, TLScontact or BLS; applications are via the official eVisa portal, on arrival, or embassies/consulates."
+  },
+  "sources": [
+    "https://immigration.gov.ag/visa-services/visa-on-arrival/",
+    "https://immigration.gov.ag/frequently-asked-questions/visa-faqs/",
+    "https://immigration.gov.ag/fees/visa-fees/",
+    "https://antiguavisa.com/",
+    "https://www.abconsulate.nyc/applying-for-a-visa"
+  ],
+  "free_visa_notes": "Most nationalities (including USA, GBR, CAN, EU, IND per official exempt list) do not need a visa for short tourist stays. Fees above apply only to the relatively small set of visa-required nationalities. No nationality-based reciprocity fee schedule is published; VOA and e-visa fees are flat for all visa-required nationals."
+}

@@ -1,0 +1,78 @@
+{
+  "iso3": "MUS",
+  "name": "Mauritius",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (applied in advance where required)",
+      "amount": 0,
+      "currency": "MUR",
+      "amount_usd": 0,
+      "validity": "stays up to 6 months",
+      "applies": "nationalities requiring a visa prior to travel",
+      "official": true,
+      "source_url": "https://passport.govmu.org/passport/?page_id=605",
+      "notes": "Official Passport and Immigration Office: 'Visas and Extensions of stay are issued free of charge.'"
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (incl. medical visa on arrival)",
+      "amount": 0,
+      "currency": "MUR",
+      "amount_usd": 0,
+      "validity": "medical visa granted on arrival for duration of treatment, max 6 months",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://passport.govmu.org/passport/?page_id=605",
+      "notes": "No fee; all visas issued free of charge."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": 0,
+      "currency": "MUR",
+      "amount_usd": 0,
+      "validity": null,
+      "applies": "nationalities requiring a visa prior to travel",
+      "official": true,
+      "source_url": "https://passport.govmu.org/passport/?page_id=620",
+      "notes": "Application page states 'Visa is free of cost'."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 0,
+      "currency": "MUR",
+      "amount_usd": 0,
+      "validity": "up to 24 hours transit stay",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://passport.govmu.org/passport/?page_id=605",
+      "notes": "Issued free of charge."
+    },
+    {
+      "kind": "eta",
+      "name": "All-in-One Travel Digital Form (pre-arrival travel form)",
+      "amount": 0,
+      "currency": "MUR",
+      "amount_usd": 0,
+      "validity": null,
+      "applies": "all travellers",
+      "official": true,
+      "source_url": "https://passport.govmu.org/passport/",
+      "notes": "Mandatory pre-arrival digital form (not a visa); free of charge, QR code issued after submission."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://passport.govmu.org/passport/?page_id=605",
+    "https://passport.govmu.org/passport/?page_id=620",
+    "https://passport.govmu.org/passport/"
+  ],
+  "free_visa_notes": "Mauritius issues ALL visas and extensions of stay free of charge (official Passport and Immigration Office: 'Visas and Extensions of stay are issued free of charge'). Most nationalities (incl. USA, GBR, CAN, RUS, IND, CHN, EU) are visa-free or get a free entry stamp on arrival; a smaller set of nationalities must obtain a free visa in advance (processing up to 12 working days). No e-visa fee, no VFS/outsourced centres, no reciprocity fee schedule."
+}

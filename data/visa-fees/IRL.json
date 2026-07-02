@@ -1,0 +1,87 @@
+{
+  "iso3": "IRL",
+  "name": "Ireland",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short stay 'C' visa - single journey (tourist/visit)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "Single entry, stay up to 90 days",
+      "applies": "all visa-required nationalities (see exemptions)",
+      "official": true,
+      "source_url": "https://www.irishimmigration.ie/preclearance-and-entry-visas-fees/",
+      "notes": "Administration fee; non-refundable if refused or withdrawn. Ireland is NOT in the Schengen Area, so the Schengen fee does not apply."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Short stay 'C' visa - multi journey",
+      "amount": 100,
+      "currency": "EUR",
+      "amount_usd": 108,
+      "validity": "Multiple entries, valid up to 5 years",
+      "applies": "all visa-required nationalities (see exemptions)",
+      "official": true,
+      "source_url": "https://www.irishimmigration.ie/preclearance-and-entry-visas-fees/",
+      "notes": "Non-refundable administration fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short stay 'C' business visa (single journey)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 65,
+      "validity": "Single entry, stay up to 90 days",
+      "applies": "all visa-required nationalities (see exemptions)",
+      "official": true,
+      "source_url": "https://www.irishimmigration.ie/preclearance-and-entry-visas-fees/",
+      "notes": "Same fee schedule as visit visa: EUR 60 single / EUR 100 multi journey."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 25,
+      "currency": "EUR",
+      "amount_usd": 27,
+      "validity": "Airside/short transit only",
+      "applies": "transit-visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.irishimmigration.ie/preclearance-and-entry-visas-fees/",
+      "notes": ""
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARG", "BOL", "BIH", "BRA", "CHL", "CIV", "ECU", "GUY", "IDN", "JAM", "XKX", "KGZ", "MNE", "MAR", "PRY", "PER", "SRB", "MKD", "ZAF", "LKA", "TUN", "UGA", "URY", "ZMB"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Nationals of these countries are exempt from the visa application fee (fee waiver agreements). Note some (e.g. Brazil, Argentina, Chile) are visa-exempt for short stays anyway; the waiver matters for long-stay/D visas. Qualifying family members of EU/EEA/Swiss citizens under Directive 2004/38/EC are also fee-exempt."
+    },
+    {
+      "nationalities": ["IND", "USA", "GBR", "CHN", "NGA", "PAK", "PHL", "BGD", "RUS", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 60,
+      "currency": "EUR",
+      "note": "Standard fee applies where a visa is required (EUR 60 single / EUR 100 multi). USA, GBR and CAN nationals do not need a visa for short stays."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "3380",
+    "currency": "INR",
+    "note": "VFS Global service charge in India is INR 3,380 incl. taxes (effective 1 Jun 2021, still published); fees vary by country/centre. Optional extras: premium lounge INR 2,625, courier INR 500. Ireland routes visa applications through VFS Global in many countries.",
+    "source_url": "https://www.vfsglobalirelandvisa.com/india/visa_fees_at_glance.html"
+  },
+  "sources": [
+    "https://www.irishimmigration.ie/preclearance-and-entry-visas-fees/",
+    "https://www.irishimmigration.ie/single-multiple-visas/",
+    "https://www.vfsglobalirelandvisa.com/india/visa_fees_at_glance.html",
+    "https://www.ireland.ie/en/dfa/visas-for-ireland/"
+  ],
+  "free_visa_notes": "Ireland has no e-visa, visa on arrival, or eTA scheme (not in Schengen; ETIAS does not apply). Nationals of the EU/EEA, UK, USA, Canada and many other countries enter visa-free for short stays. 24 nationalities plus EU-family beneficiaries are exempt from the application fee."
+}

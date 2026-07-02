@@ -1,0 +1,113 @@
+{
+  "iso3": "FRA",
+  "name": "France",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C, tourism/visit, up to 90 days)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities (adults and children 12+)",
+      "official": true,
+      "source_url": "https://france-visas.gouv.fr/documents/d/france-visas/frais-de-visa-anglais",
+      "notes": "Standard EU-wide Schengen fee (raised from EUR 80 to EUR 90 on 11 June 2024). Children 6-12: EUR 45; children under 6: free. Fee is non-refundable if refused. Many nationalities (USA, GBR, CAN, and other visa-exempt countries) do not need a visa for short stays."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C, business)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://france-visas.gouv.fr/documents/d/france-visas/frais-de-visa-anglais",
+      "notes": "Same uniform Schengen fee as tourism; there is no separate business-visa tariff."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport international transit only",
+      "applies": "nationalities on France's airport-transit-visa list",
+      "official": true,
+      "source_url": "https://france-visas.gouv.fr/en/visa-de-transit-aeroportuaire",
+      "notes": "Same EUR 90 rate as the short-stay visa; EUR 35 for biometric-passport holders of EU visa-facilitation-agreement countries."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://france-visas.gouv.fr/en/",
+      "notes": "France does not issue e-visas; applications go through France-Visas online but result in a sticker visa issued via consulates/external providers."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://france-visas.gouv.fr/en/",
+      "notes": "France/Schengen does not offer visa on arrival; visas must be obtained in advance."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (upcoming, EU-wide)",
+      "amount": 20,
+      "currency": "EUR",
+      "amount_usd": 22,
+      "validity": "3 years or until passport expiry",
+      "applies": "visa-exempt nationalities (e.g. USA, GBR, CAN) aged 18-70, once ETIAS becomes operational",
+      "official": true,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "Not yet in force as of 2026-07-02; the EU has set the ETIAS fee at EUR 20 (raised from EUR 10). Free for under-18s and over-70s. Recorded for forward reference only."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BIH", "GEO", "MKD", "MDA", "MNE", "UKR", "CPV"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under EU visa facilitation agreements (Ukrainians are additionally visa-exempt with biometric passports)."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "EU-Russia visa facilitation agreement suspended since September 2022; Russian nationals pay the full EUR 90 fee."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global (TLScontact/Capago in some countries)",
+    "service_fee": "approx. 2000-2500 (EUR 22 equivalent)",
+    "currency": "INR",
+    "note": "France outsources visa intake to external providers (VFS Global in India and many other countries; TLScontact/Capago elsewhere). In India the service fee is about EUR 22 per applicant charged in INR (roughly INR 2,000-2,500 depending on exchange rate and centre). EU rules cap service fees at half the visa fee (max EUR 45). Optional extras (courier, SMS, premium lounge) cost more.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/fra/fees"
+  },
+  "sources": [
+    "https://france-visas.gouv.fr/documents/d/france-visas/frais-de-visa-anglais",
+    "https://www.france-visas.gouv.fr/en/faq",
+    "https://france-visas.gouv.fr/en/visa-de-transit-aeroportuaire",
+    "https://www.service-public.gouv.fr/particuliers/vosdroits/F16146?lang=en",
+    "https://visa.vfsglobal.com/ind/en/fra/fees",
+    "https://travel-europe.europa.eu/etias_en"
+  ],
+  "free_visa_notes": "Visa-free for many nationalities (USA, GBR, CAN, JPN, and all visa-exempt Schengen list countries) for stays up to 90/180 days. For visa-required nationals, the visa is free for children under 6, family members of EU/EEA citizens, students on school trips, researchers, and representatives of non-profits aged 25 or under attending events."
+}

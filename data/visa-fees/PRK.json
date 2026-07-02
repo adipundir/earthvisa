@@ -1,0 +1,54 @@
+{
+  "iso3": "PRK",
+  "name": "North Korea",
+  "updated": "2026-07-02",
+  "confidence": "low",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (tourist card issued via DPRK embassy, arranged through an authorised tour operator)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": "duration of the approved tour",
+      "applies": "all (tour-operator sponsorship mandatory; visa issued as a tourist card, not stamped in passport)",
+      "official": false,
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Korea",
+      "notes": "The DPRK government publishes no official online fee schedule. Fees are paid in cash at the issuing embassy and vary by mission (tour operators commonly cite roughly EUR 50-60 at European embassies), but no official government source confirms an amount, so it is left null. Independent travel is prohibited; visas require prior authorisation from a registered DPRK travel agency."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business/official visit visa (invitation-based, embassy-issued)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "invited business/delegation travellers",
+      "official": false,
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Korea",
+      "notes": "Requires an invitation from a DPRK host organisation approved by the Ministry of Foreign Affairs. No official fee schedule is published online; amount unverifiable."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "travellers transiting via DPRK (rare; mainly Pyongyang air/rail transit)",
+      "official": false,
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_North_Korea",
+      "notes": "Transit visas exist but no official published fee; amount unverifiable from official sources."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://en.wikipedia.org/wiki/Visa_policy_of_North_Korea",
+    "https://www.youngpioneertours.com/get-north-korean-visa/",
+    "https://www.koreakonsult.com/visa_eng.html"
+  ],
+  "free_visa_notes": "No general free-visa regime. Limited visa-free entry exists for holders of diplomatic/service (non-ordinary) passports from certain countries (e.g. Russia, Belarus, Mongolia, Serbia 90 days; China, Cuba, Iran, Laos, Vietnam and others 30 days) and for Chinese ordinary-passport holders on short local trips to Tongrim/Sinuiju. South Korean citizens cannot enter on their passports and need special inter-Korean authorisation. There is no e-visa, no eTA, and no general visa on arrival; DPRK does not use VFS/TLS/BLS outsourced centres. Tourism remains heavily restricted as of 2026, with access largely limited to organised tours (e.g. Rason region)."
+}

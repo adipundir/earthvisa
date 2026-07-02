@@ -1,0 +1,131 @@
+{
+  "iso3": "IRN",
+  "name": "Iran",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (Type B) - embassy-issued after e-visa application",
+      "amount": 50,
+      "currency": "EUR",
+      "amount_usd": 55,
+      "validity": "Enter within 3 months of issue; stay typically 30 days",
+      "applies": "Dutch/EU passport holders (fee varies by nationality and embassy)",
+      "official": true,
+      "source_url": "https://thehague.mfa.gov.ir/en/generalcategoryservices/9639/visa-application",
+      "notes": "Iran has no single published global fee table; fees are set by reciprocity per nationality and collected at the embassy when the e-visa (evisa.mfa.ir) application is approved. Example official schedule from the Iranian Embassy in The Hague: EU passports EUR 50 tourist / EUR 60 entry; Afghan passports EUR 80 tourist / EUR 100 entry; Iraqi nationals free by bilateral agreement."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Electronic visa via evisa.mfa.ir",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "Typically 90-day validity, ~30-day stay (varies by type)",
+      "applies": "all nationalities not visa-exempt; USA/GBR/CAN require approved guided tour and Visa Grant Notice",
+      "official": true,
+      "source_url": "https://evisa.mfa.ir/en/",
+      "notes": "The official portal does not publish a universal fee table; the fee depends on nationality and is paid at the chosen collection point (embassy or airport), not online at submission. Amount left null per accuracy rules. Separate mandatory health-insurance charge applies via the e-visa system: EUR 10 (single/double entry or 90-day multiple) to EUR 15 (6-month or 1-year multiple), per the Iranian Embassy in India (https://india.mfa.gov.ir/en/generalcategoryservices/9588/visa-fees)."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival at Iranian international airports",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "Typically up to 30 days",
+      "applies": "eligible nationalities only; NOT available to citizens of USA, UK, Canada, Colombia, Jordan, Iraq, Afghanistan, Bangladesh, Pakistan, Sri Lanka, Somalia",
+      "official": true,
+      "source_url": "https://evisa.mfa.ir/en/visa-arrival/",
+      "notes": "Official MFA page confirms VOA fee must be paid in euros through banking terminals at the airport but does not publish amounts; the fee varies by nationality (third-party sources report roughly EUR 75-150, unverified). Travellers should pre-apply on evisa.mfa.ir at least two days before travel and bring the printed Grant Notice."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Entry/business visa (Type A)",
+      "amount": 60,
+      "currency": "EUR",
+      "amount_usd": 66,
+      "validity": "Enter within 3 months of issue",
+      "applies": "Dutch/EU passport holders (fee varies by nationality); nationals of BGD, CAN, COL, IND, JOR, PAK, GBR, USA need a Visa Grant Notice approval first",
+      "official": true,
+      "source_url": "https://thehague.mfa.gov.ir/en/generalcategoryservices/9639/visa-application",
+      "notes": "Example official fee from the Iranian Embassy in The Hague; other embassies charge different reciprocity-based amounts."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://evisa.mfa.ir/en/",
+      "notes": "Transit visas are applied for through the same e-visa portal; no official public fee table found, amount varies by nationality. Not verified - left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Visa-free for ordinary Indian passport holders entering by air for tourism, 15-day stay, max twice per 6 months (2024 unilateral waiver programme, see https://brussels.mfa.gov.ir/en/NewsView/740375). Longer stays or land entry require a visa via evisa.mfa.ir; fee not centrally published."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Visa-free only for organised tourist groups under the Iran-Russia group visa-waiver agreement; individual travellers need a visa."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CAN"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "EUR",
+      "note": "Not VOA-eligible; must join an authorised guided tour, obtain a Visa Grant Notice via the MFA/travel agency, and apply at an embassy or interests section. Fees are reciprocity-based and not published centrally (UK applicants have reported roughly GBP 165 via third-party sources - unverified)."
+    },
+    {
+      "nationalities": ["PAK", "BGD"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "EUR",
+      "note": "Not VOA-eligible; embassy application with prior approval (Visa Grant Notice) required. Fee not published on official sources found."
+    },
+    {
+      "nationalities": ["AFG"],
+      "kind": "tourist_visa",
+      "amount": 80,
+      "currency": "EUR",
+      "note": "Afghan passport/travel-document holders: EUR 80 tourist / EUR 100 entry visa per Iranian Embassy in The Hague official schedule."
+    },
+    {
+      "nationalities": ["IRQ"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Free of charge under the Iran-Iraq bilateral agreement (per Iranian Embassy in The Hague)."
+    },
+    {
+      "nationalities": ["CHN"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Chinese ordinary passport holders are visa-exempt for tourism under Iran's unilateral visa-waiver programme (21-day stays under the 2019 waiver, extended under the 2024 programme)."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://evisa.mfa.ir/en/",
+    "https://evisa.mfa.ir/en/visa-arrival/",
+    "https://thehague.mfa.gov.ir/en/generalcategoryservices/9639/visa-application",
+    "https://india.mfa.gov.ir/en/generalcategoryservices/9588/visa-fees",
+    "https://brussels.mfa.gov.ir/en/NewsView/740375",
+    "https://oslo.mfa.gov.ir/en/viewpage/17049/visa"
+  ],
+  "free_visa_notes": "Iran waives visas for citizens of ~33 countries under its 2024 unilateral tourist visa-waiver programme (including India (air only), UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Indonesia, Malaysia, Japan, Singapore, Vietnam, Brazil, Mexico, Serbia, Croatia, Belarus, Uzbekistan, Tajikistan, Tunisia, Tanzania, Zimbabwe, Mauritius, Seychelles and others): 15-day non-extendable stays, tourism only, max twice per 6 months. Russians are visa-free in organised groups only. All other travellers pay reciprocity-based fees that Iran does not publish in a single central table."
+  }

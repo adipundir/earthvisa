@@ -8,6 +8,7 @@ import { compute, LEVEL_LABEL } from "@/lib/compute";
 import type { AccessLevel } from "@/lib/types";
 import { TOP_NATIONALITIES, TOP_DESTINATIONS, corridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
+import { feesFor, relevantFees, variationFor, fmtFee } from "@/lib/fees";
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
@@ -175,6 +176,12 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     } catch { /* fall back to the interactive link */ }
   }
 
+  // Official visa fees for this corridor (crawled from government sources).
+  const destFees = feesFor(d.iso3);
+  const feeList = relevantFees(d.iso3, s.kind);
+  const feeVariation = variationFor(d.iso3, n.iso3);
+  const headlineFee = feeVariation?.amount != null ? feeVariation : feeList.find((f) => f.amount != null) ?? null;
+
   // Related corridors for internal linking (crawl mesh).
   const sameNat = TOP_DESTINATIONS.filter((x) => x !== d.iso3 && x !== n.iso3 && isUsefulCorridor(n.iso3, x)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
   const sameDest = TOP_NATIONALITIES.filter((x) => x !== n.iso3 && x !== d.iso3 && isUsefulCorridor(x, d.iso3)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
@@ -190,6 +197,12 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       : null,
     umrah
       ? { q: `Can ${nd} citizens perform Umrah - do they need a separate Umrah visa?`, a: `Saudi Arabia permits Umrah (not Hajj) on a tourist visa, and also issues dedicated Umrah visas processed through the official Nusuk platform. ${nd} pilgrims should apply via Nusuk or an authorised Umrah operator, and always confirm current rules on the official Saudi government portals before booking.` }
+      : null,
+    headlineFee
+      ? {
+          q: `How much does the ${d.name} visa cost for ${nd} citizens?`,
+          a: `The ${d.name} ${"name" in headlineFee && headlineFee.name ? headlineFee.name.toLowerCase() : "visa"} fee is ${fmtFee(headlineFee)}${feeVariation?.amount != null ? ` for ${nd} citizens under ${d.name}'s nationality-based fee schedule` : ""}.${destFees?.vfs.used && destFees.vfs.service_fee ? ` Applications through ${destFees.vfs.operator} carry an additional service fee of about ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee}.` : ""} Fees change - confirm on the official source before applying.`,
+        }
       : null,
   ].filter(Boolean) as { q: string; a: string }[];
 
@@ -270,6 +283,46 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               <li>→ Confirm the latest rules on the destination&apos;s official government page before you book.</li>
             </ul>
           </section>
+
+          {/* Official visa fees (crawled from government sources) */}
+          {feeList.length > 0 && (
+            <section className="mb-10 border-t border-line pt-8">
+              <h2 className="font-display text-xl font-semibold text-ink">
+                {d.name} visa cost for {nd} citizens
+              </h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {feeList.slice(0, 4).map((f, i) => (
+                  <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+                    <p className="font-display text-[14px] font-semibold text-ink">{f.name}</p>
+                    <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">
+                      {feeVariation?.amount != null && feeVariation.kind === f.kind ? fmtFee(feeVariation) : fmtFee(f)}
+                    </p>
+                    <div className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
+                      {f.validity && <span>{f.validity}</span>}
+                      {f.official && <span className="text-vfree">official source</span>}
+                    </div>
+                    {f.source_url && (
+                      <a href={f.source_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-block text-[10px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
+                        {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+              {feeVariation?.note && (
+                <p className="mt-3 max-w-2xl text-[12px] leading-relaxed text-ink-soft">{feeVariation.note}</p>
+              )}
+              {destFees?.vfs.used && (
+                <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                  Applications are handled via {destFees.vfs.operator}
+                  {destFees.vfs.service_fee ? ` - service fee approx. ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee}, varies by centre` : " - a service fee applies on top of the visa fee"}.
+                </p>
+              )}
+              <p className="mono mt-3 text-[10px] uppercase tracking-[0.12em] text-ink-mute">
+                Fees checked {destFees?.updated ?? "recently"} · always confirm on the official source
+              </p>
+            </section>
+          )}
 
           {/* VFS document checklist — genuinely per-corridor content */}
           {vfsDocs.length > 0 && (

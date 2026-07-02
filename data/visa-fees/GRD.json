@@ -1,0 +1,77 @@
+{
+  "iso3": "GRD",
+  "name": "Grenada",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry visa (applied prior to arrival, embassy-issued)",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "single entry, valid only for the period specified",
+      "applies": "nationalities requiring a visa prior to arrival",
+      "official": true,
+      "source_url": "https://grenadiandiaspora.gd/pdf/Grenada-Visa-Requirements-for-Applicants-of-Visas-Prior-to-Arrival-in-Grenada-as-of-Mar-2018.pdf",
+      "notes": "Embassy of Grenada (Washington DC) schedule dated Mar 2018, still published. Payable by certified cheque/money order or online at pay.gov.gd. Multiple-entry visa is US$375."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry visa (applied prior to arrival, embassy-issued)",
+      "amount": 375,
+      "currency": "USD",
+      "amount_usd": 375,
+      "validity": "multiple entry, valid only for the period specified",
+      "applies": "nationalities requiring a visa prior to arrival",
+      "official": true,
+      "source_url": "https://grenadiandiaspora.gd/pdf/Grenada-Visa-Requirements-for-Applicants-of-Visas-Prior-to-Arrival-in-Grenada-as-of-Mar-2018.pdf",
+      "notes": ""
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Single-entry visa at port of entry (with pre-clearance letter)",
+      "amount": 200,
+      "currency": "XCD",
+      "amount_usd": 74,
+      "validity": "single entry",
+      "applies": "nationalities eligible for visa at port of entry, after obtaining a US$10 pre-clearance letter from the Immigration and Passport Office",
+      "official": true,
+      "source_url": "https://grenadiandiaspora.gd/pdf/Grenada-Visa-Requirements-for-Applicants-of-Visas-at-Port-of-Entry-in-Grenada-as-of-Mar-2018.pdf",
+      "notes": "EC$200 paid on arrival; pre-clearance letter fee US$10 payable to the Embassy of Grenada in advance. XCD pegged at 2.70 per USD (approx USD conversion)."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Multiple-entry visa at port of entry (with pre-clearance letter)",
+      "amount": 375,
+      "currency": "XCD",
+      "amount_usd": 139,
+      "validity": "multiple entry",
+      "applies": "nationalities eligible for visa at port of entry, after obtaining a US$10 pre-clearance letter",
+      "official": true,
+      "source_url": "https://grenadiandiaspora.gd/pdf/Grenada-Visa-Requirements-for-Applicants-of-Visas-at-Port-of-Entry-in-Grenada-as-of-Mar-2018.pdf",
+      "notes": "EC$375 paid on arrival."
+    },
+    {
+      "kind": "eta",
+      "name": "Online Immigration & Customs eD-card (edcard.gov.gd)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "per trip",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://edcard.gov.gd/en",
+      "notes": "Digital embarkation/disembarkation card, not a visa; no published fee."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://grenadiandiaspora.gd/pdf/Grenada-Visa-Requirements-for-Applicants-of-Visas-Prior-to-Arrival-in-Grenada-as-of-Mar-2018.pdf",
+    "https://grenadiandiaspora.gd/pdf/Grenada-Visa-Requirements-for-Applicants-of-Visas-at-Port-of-Entry-in-Grenada-as-of-Mar-2018.pdf",
+    "https://edcard.gov.gd/en",
+    "https://grenadaembassyusa.org/consulate/consular-nationals/"
+  ],
+  "free_visa_notes": "Most nationalities (US, Canada, UK, EU, CARICOM and many others) do not require a visa to visit Grenada. No published reciprocity fee schedule by nationality; the same USD/XCD fees apply to all visa-required nationalities. Grenada is not a Schengen member and has no e-visa portal or outsourced (VFS/TLS/BLS) visa centres. Fee schedule dated Mar 2018 but remains the currently published official schedule; confidence set to medium due to document age."
+}

@@ -1,0 +1,80 @@
+{
+  "iso3": "ITA",
+  "name": "Italy",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C, tourism, up to 90 days)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 106,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/italy/india/bangalore/english/index.html",
+      "notes": "Uniform Schengen fee per Regulation (EC) 810/2009, raised from EUR 80 to EUR 90 on 11 June 2024. Children 6-12: EUR 45; under 6: free; study/research (C) visas: free; EU-citizen family members: free. Consulates collect the local-currency equivalent, adjusted quarterly (e.g. USD 105.50 at Embassy Washington, Apr-Jun 2026)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C, business)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 106,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tariffe-visti-e-domande-frequenti/",
+      "notes": "Same uniform Schengen C fee as tourism; no separate business tariff."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 106,
+      "validity": "airport transit only",
+      "applies": "nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/one-pager/italy/india/bangalore/english/index.html",
+      "notes": "VFS/consular fee schedules list Categories A, B or C at the same EUR 90 uniform fee."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (EU-wide, for visa-exempt nationals)",
+      "amount": 20,
+      "currency": "EUR",
+      "amount_usd": 24,
+      "validity": "3 years or until passport expiry",
+      "applies": "visa-exempt non-EU nationalities (once ETIAS becomes operational)",
+      "official": true,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "EU-level authorisation, not Italy-specific. Fee set at EUR 20 (raised from the originally legislated EUR 7); free for under-18s and over-70s. Not yet in operation as of the record date - verify launch status before relying on it."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BIH", "GEO", "MKD", "MNE", "MDA", "SRB", "BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced Schengen fee under EU visa facilitation agreements (Embassy Washington lists USD 41.10 equivalent, Apr-Jun 2026). The EU-Russia facilitation agreement is suspended, so Russian nationals pay the full EUR 90. No special rates for IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, CAN (USA/GBR/CAN are visa-exempt for short stays)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "631",
+    "currency": "INR",
+    "note": "Published VFS Global service charge per application in India (Bengaluru/Chennai/Hyderabad/Mumbai, effective Apr 2026), incl. taxes. Service fees vary by country and centre; optional premium-lounge/courier services cost extra. Italy also uses other outsourcers in some countries.",
+    "source_url": "https://www.vfsglobal.com/one-pager/italy/india/bangalore/english/index.html"
+  },
+  "sources": [
+    "https://ambwashingtondc.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/tariffe-visti-e-domande-frequenti/",
+    "https://www.vfsglobal.com/one-pager/italy/india/bangalore/english/index.html",
+    "https://consdetroit.esteri.it/wp-content/uploads/2026/01/Visa-fees-2026.pdf",
+    "https://travel-europe.europa.eu/etias_en"
+  ],
+  "free_visa_notes": "No e-visa or visa on arrival exists for Italy; all visas are embassy/consulate-issued Schengen or national visas. Schengen C visas are free for children under 6, study (C) and research (C) applicants, and family members of EU citizens. Italy also charges a national long-stay (Type D) visa fee (approx. EUR 116; Embassy Washington lists USD 136 for Apr-Jun 2026), outside the scope of this short-stay record."
+}

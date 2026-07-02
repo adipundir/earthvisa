@@ -1,0 +1,117 @@
+{
+  "iso3": "LUX",
+  "name": "Luxembourg",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C) - adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://newdelhi.mae.lu/en/service_citoyens/visa-immigration/short-term-schengen-visa.html",
+      "notes": "Standard EU-wide Schengen visa fee. Children 6-11: EUR 45; under 6 free. Fee waived for students on educational trips, researchers (EU Directive 2016/801), family members of EU/EEA/Swiss citizens, and non-profit event participants aged 25 and under. Covers tourism, family visits and business travel (same type C visa)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C) - business purpose",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://newdelhi.mae.lu/en/service_citoyens/visa-immigration/short-term-schengen-visa.html",
+      "notes": "Business travel uses the same Schengen type C visa and fee as tourism; there is no separate business visa category or fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport transit only",
+      "applies": "nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://newdelhi.mae.lu/en/service_citoyens/visa-immigration/short-term-schengen-visa.html",
+      "notes": "Same EUR 90 fee as the type C visa under the EU Visa Code."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://newdelhi.mae.lu/en/service_citoyens/visa-immigration/short-term-schengen-visa.html",
+      "notes": "Luxembourg does not issue e-visas; Schengen visas are sticker visas applied for at embassies/consulates or outsourced centres."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://newdelhi.mae.lu/en/service_citoyens/visa-immigration/short-term-schengen-visa.html",
+      "notes": "No visa-on-arrival regime; visas must be obtained in advance."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (EU-wide, for visa-exempt travellers)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "3 years or until passport expiry (planned)",
+      "applies": "visa-exempt nationalities (once ETIAS is operational)",
+      "official": false,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "ETIAS is an EU-wide system, not a Luxembourg-specific fee; not yet in force at time of writing, so amount left null rather than assumed."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARM", "AZE"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced EUR 35 fee under EU visa facilitation agreements (per Luxembourg Embassy New Delhi fee schedule)."
+    },
+    {
+      "nationalities": ["ALB", "BIH", "GEO", "MKD", "MDA", "MNE", "SRB", "UKR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "EUR 35 for non-biometric passport holders under visa facilitation agreements; biometric passport holders of most of these countries are visa-exempt."
+    },
+    {
+      "nationalities": ["IND", "USA", "GBR", "CHN", "NGA", "PAK", "PHL", "BGD", "CAN", "RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "Standard EUR 90 Schengen fee applies (no reciprocity reduction). USA, GBR and CAN nationals are visa-exempt for short stays. EU-Russia visa facilitation is suspended, so Russian nationals pay the full EUR 90."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2281",
+    "currency": "INR",
+    "note": "Published VFS Global service charge for Luxembourg visa applications in India is INR 2281 per application (short- and long-term). Service fees vary by country/centre; Luxembourg outsources to VFS Global in several source countries.",
+    "source_url": "https://www.vfsglobal.com/one-pager/luxembourg/india/english/index.html"
+  },
+  "sources": [
+    "https://newdelhi.mae.lu/en/service_citoyens/visa-immigration/short-term-schengen-visa.html",
+    "https://www.vfsglobal.com/one-pager/luxembourg/india/english/index.html",
+    "https://visa.vfsglobal.com/ind/en/lux"
+  ],
+  "free_visa_notes": "Visa-exempt nationalities (EU/EEA/CH, USA, UK, Canada, Japan and other Schengen Annex II countries) pay no visa fee for short stays. Fee waivers apply to children under 6, students on school trips, researchers, family members of EU citizens, and youth non-profit event participants."
+}

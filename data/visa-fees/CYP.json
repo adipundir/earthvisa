@@ -1,0 +1,93 @@
+{
+  "iso3": "CYP",
+  "name": "Cyprus",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa (Category C, single/multiple entry, 1-90 days)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "up to 90 days in any 180-day period; MEV validity 6 months to 5 years",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.gov.cy/en/information/visas/",
+      "notes": "Cyprus has fully harmonised fees with the Schengen Visa Code (EUR 90 since 01/12/2022 alignment, current as of 2026). Children 6-12: EUR 45; children under 6: free. Free for pupils/students on study trips, researchers, diplomatic/service passport holders, and under-25s attending non-profit seminars/sport/cultural events. Cyprus visas are national (not yet full Schengen), but holders of valid multi-entry Schengen visas or Schengen residence permits may enter Cyprus visa-free (except Turkish and Azerbaijani citizens)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short-stay visa (Category C) for business purposes",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.gov.cy/en/information/visas/",
+      "notes": "No separate business visa category; business travel uses the same Category C short-stay visa. Multiple-entry cascade rules apply for applicants in Qatar, Kuwait, Oman, Bahrain, Saudi Arabia, Ghana and the USA."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport Transit Visa (Category A, ATV)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "transit through international transit zone only",
+      "applies": "nationalities on the EU common ATV list plus Cyprus additions",
+      "official": true,
+      "source_url": "https://www.gov.cy/en/information/visas/",
+      "notes": "Exemptions include holders of valid Schengen uniform visas/residence permits, valid US/Canada/Japan visas or residence permits, and family members of EU citizens."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa issued at the border (Category C, LTV, up to 15 days)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 98,
+      "validity": "up to 15 days (transit: time necessary for transit)",
+      "applies": "emergency/exceptional cases only, with approval of the Director of the Department of Migration (incl. seafarers in transit)",
+      "official": true,
+      "source_url": "https://www.gov.cy/en/information/visas/",
+      "notes": "Not a routine visa-on-arrival regime; granted only by derogation for unforeseeable and compelling reasons. Visa extension in-country costs EUR 30 (free if force majeure/humanitarian)."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BLR", "BIH", "GEO", "MDA", "MNE", "MKD", "SRB", "UKR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under EU Visa Facilitation Agreements. For Albania, Georgia, Moldova, Montenegro, North Macedonia, Serbia and Ukraine this applies only to non-biometric passport holders; biometric passport holders are visa-exempt. Source: https://www.gov.cy/en/information/visas/"
+    },
+    {
+      "nationalities": ["CPV"],
+      "kind": "tourist_visa",
+      "amount": 67.5,
+      "currency": "EUR",
+      "note": "Cape Verde nationals: EUR 67.50 (children 6-12: EUR 33.75) under the EU-Cape Verde visa facilitation agreement. Source: https://www.gov.cy/en/information/visas/"
+    },
+    {
+      "nationalities": ["IND", "USA", "GBR", "CHN", "NGA", "PAK", "PHL", "BGD", "RUS", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "Standard EUR 90 fee; no reciprocity reduction listed for these nationalities. USA, GBR and CAN passport holders are visa-exempt for short stays (fee applies only if a visa is otherwise required, e.g. other travel documents)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": null,
+    "currency": "INR",
+    "note": "Cyprus outsources visa application intake to VFS Global centres (e.g. India, UAE, UK and others; gov.cy refers applicants to the 'Visa Centre (External Service Provider)'). VFS India confirms a service charge is payable inclusive of 18% GST, but the exact published amount could not be verified on an official page at time of writing (VFS one-pager blocked; third-party sources cite around INR 541 excl. tax, unverified). Fee varies by centre/country.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/cyp"
+  },
+  "sources": [
+    "https://www.gov.cy/en/information/visas/",
+    "https://visa.vfsglobal.com/ind/en/cyp",
+    "https://visa.vfsglobal.com/one-pager/cyprus/india/english/index.html"
+  ],
+  "free_visa_notes": "Visa-free entry for EU/EEA/Swiss citizens, Annex II visa-exempt nationalities, holders of multi-entry Schengen visas or Schengen residence permits (except Turkish and Azerbaijani citizens), and refugees with Schengen-issued 1951 Convention travel documents. Visa is free of charge for children under 6, pupils/students/researchers travelling for study or research, diplomatic/service passport holders, and under-25 participants in non-profit seminars, conferences, sports, cultural or educational events."
+}

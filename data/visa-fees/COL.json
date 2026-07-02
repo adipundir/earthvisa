@@ -1,0 +1,115 @@
+{
+  "iso3": "COL",
+  "name": "Colombia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Visitor Visa Type V - Tourism (study USD 56 + issuance USD 52)",
+      "amount": 108,
+      "currency": "USD",
+      "amount_usd": 108,
+      "validity": "up to 2 years, stays up to 180 days per year",
+      "applies": "visa-required nationalities (all Colombian visas applied online via Cancillería portal)",
+      "official": true,
+      "source_url": "https://www.cancilleria.gov.co/normograma/compilacion/docs/resolucion_minrelaciones_3969_2026.htm",
+      "notes": "Two-stage fee: non-refundable study fee USD 56 paid at application; reduced tourist/airport-transit issuance fee USD 52 paid only if approved (Res. 3969/2026 art. 4.1.h). If applied in the Euro zone or Cuba: EUR 44 study + EUR 40 issuance = EUR 84. Stamp tax (impuesto de timbre) not included."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor Visa Type V - general categories (business meetings, events, medical, etc.)",
+      "amount": 194,
+      "currency": "USD",
+      "amount_usd": 194,
+      "validity": "up to 2 years depending on category",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.cancilleria.gov.co/normograma/compilacion/docs/resolucion_minrelaciones_3969_2026.htm",
+      "notes": "Standard Type V fee: USD 56 study + USD 138 issuance = USD 194 (EUR 44 + EUR 106 = EUR 150 in Euro zone/Cuba). Applies to non-tourist V categories; tourist and airport-transit categories get the reduced USD 52 issuance fee instead."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Visitor Visa Type V - business",
+      "amount": 194,
+      "currency": "USD",
+      "amount_usd": 194,
+      "validity": "up to 2 years, multiple entry",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.cancilleria.gov.co/normograma/compilacion/docs/resolucion_minrelaciones_3969_2026.htm",
+      "notes": "Business travel falls under Visitor Type V standard tariff: USD 56 study + USD 138 issuance (EUR 44 + EUR 106 in Euro zone/Cuba)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Visitor Visa Type V - airport transit",
+      "amount": 108,
+      "currency": "USD",
+      "amount_usd": 108,
+      "validity": "single transit",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.cancilleria.gov.co/normograma/compilacion/docs/resolucion_minrelaciones_3969_2026.htm",
+      "notes": "Airport transit shares the reduced issuance fee with tourism: USD 56 study + USD 52 issuance (EUR 44 + EUR 40 in Euro zone/Cuba), per Res. 3969/2026 art. 4.1.h."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Visitor Visa Type V - academic program (student)",
+      "amount": 37,
+      "currency": "USD",
+      "amount_usd": 37,
+      "validity": "duration of academic program",
+      "applies": "visa-required nationalities enrolling in academic programs",
+      "official": true,
+      "source_url": "https://www.cancilleria.gov.co/normograma/compilacion/docs/resolucion_minrelaciones_3969_2026.htm",
+      "notes": "Reduced academic tariff: USD 16 study + USD 21 issuance = USD 37 (EUR 12 + EUR 17 = EUR 29 in Euro zone/Cuba), per Res. 3969/2026 art. 4.1.g."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ESP"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Spanish nationals: study and issuance both free (Res. 3969/2026 art. 4.1.j)."
+    },
+    {
+      "nationalities": ["ECU"],
+      "kind": "tourist_visa",
+      "amount": 31,
+      "currency": "USD",
+      "note": "Ecuadorian nationals: issuance free; study fee USD 31 (EUR 24 in Euro zone/Cuba), per Ley 1203/2008 and Res. 3969/2026 art. 4.1.c."
+    },
+    {
+      "nationalities": ["JPN", "KOR"],
+      "kind": "tourist_visa",
+      "amount": 56,
+      "currency": "USD",
+      "note": "Japan and South Korea nationals pay only the study-stage fee (USD 56 / EUR 44); issuance free (art. 4.1.d)."
+    },
+    {
+      "nationalities": ["PER"],
+      "kind": "tourist_visa",
+      "amount": 56,
+      "currency": "USD",
+      "note": "Peruvian nationals settling in the Amazonas/Putumayo river basins pay only the study fee (art. 4.1.e)."
+    },
+    {
+      "nationalities": ["BOL"],
+      "kind": "e_visa",
+      "amount": 17,
+      "currency": "USD",
+      "note": "Bolivian nationals on academic-program visitor visas pay only a study fee of USD 17 (EUR 13); issuance free (art. 4.1.f)."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "Colombia does not outsource visa processing; all applications are submitted online via the Cancillería SITAC/visa portal, with payment online or at consulates."
+  },
+  "sources": [
+    "https://www.cancilleria.gov.co/normograma/compilacion/docs/resolucion_minrelaciones_3969_2026.htm",
+    "https://www.cancilleria.gov.co/tramites_servicios/visa/costos-medios-pago-oficinas-atencion",
+    "https://www.cancilleria.gov.co/en/procedures_services/visa/costs-means-payment-service-offices"
+  ],
+  "free_visa_notes": "Nationals of ~100 countries (incl. USA, GBR, CAN, RUS, PHL and most of the Americas/Europe) are visa-exempt for short stays up to 90 days (extendable to 180/year). Visa-required nationalities among the key set include IND, CHN, NGA, PAK, BGD. No visa on arrival or eTA; fees are set in USD (or EUR for applications lodged in the Euro zone and Cuba) by Resolución 3969 de 2026 and paid in local currency. No reciprocity fees for IND/USA/GBR/CHN/NGA/PAK/PHL/BGD/RUS/CAN beyond the standard schedule."
+}

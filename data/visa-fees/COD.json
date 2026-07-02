@@ -1,0 +1,100 @@
+{
+  "iso3": "COD",
+  "name": "Democratic Republic of the Congo",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Ordinary visa, single entry, 1 month (embassy-issued)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "1 month",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "Embassy of the DRC (Washington DC) fee schedule. Single entry: 1 month $100, 2 months $135, 6 months $400. Fees non-refundable."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Ordinary visa, multiple entry (embassy-issued)",
+      "amount": 120,
+      "currency": "USD",
+      "amount_usd": 120,
+      "validity": "1 month (tiers up to 6 months)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "Multiple entry: 1 month $120, 2 months $150, 3 months $160, 6 months $450."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (embassy-issued, same ordinary-visa fee schedule)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "1-6 months per tier",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "Business travel uses the ordinary visa fee tiers (single entry from $100, multiple entry from $120). US citizens instead pay $185 for a 2-year visa under the US-DRC reciprocity agreement."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa",
+      "amount": 45,
+      "currency": "USD",
+      "amount_usd": 45,
+      "validity": "transit",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+      "notes": "One-way transit $45; round-trip transit $75."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (evisa.gouv.cd, DGM)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://evisa.gouv.cd/",
+      "notes": "DRC operates an official e-visa portal run by the Direction Generale de Migration (DGM), but the fee schedule is only shown inside the JavaScript application and could not be verified directly; third-party sources cite around $300 online plus the $90 border entry fee (VAP). Amount left null rather than guessed. Related DGM 'visa volant' authorization fees are reported at $250 (ordinary) / $800 (specific) plus $50 file fees."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Border entry fee / visa on arrival (VAP - visa aeroportuaire/portuaire)",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": "on entry",
+      "applies": "travellers arriving with e-visa or visa volant authorization",
+      "official": true,
+      "source_url": "https://evisa.gouv.cd/helps/faqs",
+      "notes": "USD 90 payable in cash at the point of entry (e.g. N'djili International Airport, land/sea borders); mandatory for holders of e-visa/visa volant pre-authorizations. Widely corroborated; official portal FAQ could not be scraped directly (JS-rendered)."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 185,
+      "currency": "USD",
+      "note": "US-DRC reciprocity agreement: 2-year visa for tourism, study and business at $185 (Embassy of the DRC in Washington DC)."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced visa application centre (VFS Global/TLScontact/BLS) found for DRC visas; applications go through DRC embassies/consulates or the official DGM e-visa portal."
+  },
+  "sources": [
+    "https://www.ambadrcusa.org/consular-affairs/passport-visa-tenant-lieu/",
+    "https://evisa.gouv.cd/",
+    "https://evisa.gouv.cd/helps/faqs",
+    "https://dgm.cd/"
+  ],
+  "free_visa_notes": ""
+}

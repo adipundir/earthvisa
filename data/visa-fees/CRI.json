@@ -1,0 +1,65 @@
+{
+  "iso3": "CRI",
+  "name": "Costa Rica",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Consular visa (visa consular)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "single entry; typically up to 30-day initial stay, extendable to 90/180 days by DGME",
+      "applies": "nationalities in the third entry group (visa required, consul may issue directly)",
+      "official": true,
+      "source_url": "https://rree.go.cr/?cat=consulares&cont=612&sec=servicios",
+      "notes": "Fee from the official Arancel Consular of the Ministry of Foreign Affairs (rree.go.cr): 'Por el otorgamiento de visas consulares' USD 30. Costa Rica has no e-visa, eTA, or visa on arrival; all visas are issued at consulates."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Consulted/restricted visa (visa consultada, authorized by DGME)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "single entry",
+      "applies": "nationalities in the fourth entry group (restricted visa, requires prior DGME authorization)",
+      "official": true,
+      "source_url": "https://rree.go.cr/?cat=consulares&cont=612&sec=servicios",
+      "notes": "Arancel Consular: 'visas consultadas y autorizadas por la Dirección General de Migración y Extranjería' USD 50."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry visa (visa múltiple, authorized by DGME)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "multiple entry",
+      "applies": "eligible applicants when authorized by DGME",
+      "official": true,
+      "source_url": "https://rree.go.cr/?cat=consulares&cont=612&sec=servicios",
+      "notes": "Arancel Consular: multiple visas when authorized by DGME, USD 100."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Land transit visa to Panama (VT1 single / VT2 double)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "transit only",
+      "applies": "visa-required nationalities transiting by land to Panama",
+      "official": true,
+      "source_url": "https://rree.go.cr/?cat=consulares&cont=612&sec=servicios",
+      "notes": "Search snippets of the rree.go.cr tariff reference VT1 USD 30 (single) and VT2 USD 60 (double land transit to Panama), but the amounts could not be confirmed on the fetched tariff page, so left null. Business travel uses the same consular tourist/visitor visa; there is no separate business visa fee category."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://rree.go.cr/?cat=consulares&cont=612&sec=servicios",
+    "https://migracion.go.cr/visas/"
+  ],
+  "free_visa_notes": "Citizens of first- and second-group countries (e.g. USA, Canada, UK, EU, Japan) enter Costa Rica visa-free for up to 180 days; no eTA or entry fee applies. Diplomatic and official visas are issued free of charge."
+}

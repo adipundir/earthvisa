@@ -1,0 +1,80 @@
+{
+  "iso3": "JOR",
+  "name": "Jordan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Single-entry visa on arrival",
+      "amount": 40,
+      "currency": "JOD",
+      "amount_usd": 56,
+      "validity": "1 month stay, extendable",
+      "applies": "eligible nationalities (available at Queen Alia Airport, Aqaba and most land borders)",
+      "official": true,
+      "source_url": "https://www.jordanpass.jo/contents/FAQs.aspx",
+      "notes": "Fee waived if arriving via Aqaba (ASEZA) or if holding a Jordan Pass and staying at least 2 nights (3 days); otherwise the fee is charged on departure."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Single-entry e-visa (Ministry of Interior eservices portal)",
+      "amount": 40,
+      "currency": "JOD",
+      "amount_usd": 56,
+      "validity": "typically valid ~60 days from issue, 1 month stay",
+      "applies": "all nationalities may apply online; nationalities requiring prior approval must use this channel",
+      "official": true,
+      "source_url": "https://moi.gov.jo/EN/Pages/Visa_E_Applications",
+      "notes": "Same government fee schedule as visa on arrival; apply via https://eservices.moi.gov.jo (confirmed as official portal by Royal Jordanian, https://www.rj.com/en/jordan-e-visa)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Double-entry entry visa",
+      "amount": 60,
+      "currency": "JOD",
+      "amount_usd": 85,
+      "validity": "typically 3 months from issue",
+      "applies": "all",
+      "official": false,
+      "source_url": "https://jo.usembassy.gov/travel-to-jordan-and-the-region/",
+      "notes": "JOD 60 double-entry is the consistently published rate (US Embassy Amman and multiple visa guides) but could not be re-verified directly on a Jordanian government page during this crawl; Jordan Pass does not waive multi-entry fees."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry entry visa",
+      "amount": 120,
+      "currency": "JOD",
+      "amount_usd": 170,
+      "validity": "typically 6 months from issue",
+      "applies": "all",
+      "official": false,
+      "source_url": "https://jo.usembassy.gov/travel-to-jordan-and-the-region/",
+      "notes": "JOD 120 multiple-entry is the consistently published rate; not re-verified directly on a Jordanian government page during this crawl."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa/permit",
+      "amount": null,
+      "currency": "JOD",
+      "amount_usd": null,
+      "validity": "max 72 hours",
+      "applies": "only travellers leaving the transit area or restricted nationalities",
+      "official": false,
+      "source_url": "https://moi.gov.jo/EN/Pages/Visa_E_Applications",
+      "notes": "No transit visa needed for airside transit at Queen Alia Airport. A published transit fee could not be verified on an official source; amount left null."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Jordan does not outsource inbound visa issuance to VFS/TLS/BLS; visas are issued on arrival, via the MOI e-services portal, or directly by Jordanian embassies. (VFS Global centres in Amman handle outbound Schengen/other visas, not visas to Jordan.)"
+  },
+  "sources": [
+    "https://www.jordanpass.jo/contents/FAQs.aspx",
+    "https://moi.gov.jo/EN/Pages/Visa_E_Applications",
+    "https://www.rj.com/en/jordan-e-visa",
+    "https://jo.usembassy.gov/travel-to-jordan-and-the-region/"
+  ],
+  "free_visa_notes": "Visa fee (single entry) is waived for Jordan Pass holders staying at least 2 nights, and for travellers entering via the Aqaba Special Economic Zone. Nationals of most Arab League states enter visa-free."
+}

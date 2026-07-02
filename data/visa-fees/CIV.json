@@ -1,0 +1,68 @@
+{
+  "iso3": "CIV",
+  "name": "Côte d'Ivoire",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (pre-enrolled biometric visa, collected at Abidjan airport)",
+      "amount": 73,
+      "currency": "EUR",
+      "amount_usd": 79,
+      "validity": "3 months, multiple entry",
+      "applies": "all (entry via Félix Houphouët-Boigny International Airport, Abidjan only)",
+      "official": true,
+      "source_url": "https://snedai.com/e-visa/",
+      "notes": "EUR 70 dossier fee + EUR 3 online payment commission. SNEDAI is the official government-mandated operator; snedai.com/e-visa is the only official portal. Pre-authorisation emailed, biometric visa issued on arrival at Abidjan airport."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Biometric sticker visa (embassy-issued, short stay 1-3 months)",
+      "amount": 50,
+      "currency": "EUR",
+      "amount_usd": 54,
+      "validity": "1 to 3 months",
+      "applies": "all (fee varies by embassy: EUR 50 excl. bank fees in France, EUR 58 in the UK, CAD 100 in Canada)",
+      "official": true,
+      "source_url": "https://france.diplomatie.gouv.ci/visa.php?num=1",
+      "notes": "Fee paid online (snedai.com or ci-embassyepay.org depending on mission) before the enrollment appointment. Amount is set per embassy/currency rather than by nationality. Diplomatic and service passport holders are exempt."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Biometric sticker visa - business (same fee schedule as short-stay)",
+      "amount": 50,
+      "currency": "EUR",
+      "amount_usd": 54,
+      "validity": "1 to 3 months",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://royaumeuni.diplomatie.gouv.ci/visa.php?lang=en&num=1",
+      "notes": "Embassies list business, tourism, family visit and study under the same biometric visa fee (EUR 58 at London embassy, EUR 50 at Paris embassy). Long-stay visa at the Canada embassy is CAD 200."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://snedai.com/e-visa/",
+      "notes": "No separately published transit visa fee found on official sources; transit travellers use the standard e-visa (EUR 73) or embassy biometric visa. Airside transit without entry does not require a visa."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Côte d'Ivoire does not use VFS Global/TLScontact/BLS. Visa processing is outsourced to SNEDAI (official government partner); its handling fee is bundled into the published visa fee (e.g. EUR 70 + EUR 3 payment fee for the e-visa)."
+  },
+  "sources": [
+    "https://snedai.com/e-visa/",
+    "https://france.diplomatie.gouv.ci/visa.php?num=1",
+    "https://royaumeuni.diplomatie.gouv.ci/visa.php?lang=en&num=1",
+    "https://canada.diplomatie.gouv.ci/visa.php?lang=&num=47"
+  ],
+  "free_visa_notes": "Not free in general. Nationals of ECOWAS member states (and some bilateral-agreement countries) enter visa-free. Diplomatic/service passport holders are exempt from the visa fee."
+}

@@ -1,0 +1,89 @@
+{
+  "iso3": "MDV",
+  "name": "Maldives",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival (30 days)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "30 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.immigration.gov.mv/visa/tourist-visa",
+      "notes": "Free of charge for all nationalities; granted on arrival, no pre-approval required. Traveller Declaration (IMUGA) must be submitted online within 96 hours before travel and is also free of charge."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa extension (up to 90 days total)",
+      "amount": 750,
+      "currency": "MVR",
+      "amount_usd": 49,
+      "validity": "up to 60 additional days (90 days total)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.maldivesmission.ch/index.php/our-services/passport-services/visa-and-passport-information",
+      "notes": "First 30 days free on arrival; extension of up to 60 further days costs MVR 750, applied for in Male' with a local sponsor. Fee per Maldives Immigration / Maldives Permanent Mission (Geneva)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (multiple entry, 30-90 days)",
+      "amount": 750,
+      "currency": "MVR",
+      "amount_usd": 49,
+      "validity": "30-90 days per grant, max 180 days per calendar year",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.immigration.gov.mv/visa/business",
+      "notes": "Applied via Ministry of Economic Development & Trade Business Portal (business.egov.mv). MVR 750 application fee widely published for the Business Visa Regulation (2021); amount not shown on the immigration page itself, so verify on the Business Portal at application time."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.immigration.gov.mv/",
+      "notes": "Maldives does not operate a tourist e-visa; entry is via free visa on arrival plus the mandatory free IMUGA Traveller Declaration."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "short transit stay",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.immigration.gov.mv/faqs",
+      "notes": "No separate paid transit visa; transiting passengers who enter are covered by the free visa on arrival regime."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Under the India-Maldives bilateral agreement, Indian nationals visiting for tourism may be granted up to 90 days free on arrival (vs the standard 30 days). Still free of charge."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.immigration.gov.mv/visa/tourist-visa",
+    "https://www.immigration.gov.mv/visa/business",
+    "https://www.immigration.gov.mv/faqs",
+    "https://imuga.immigration.gov.mv/",
+    "https://www.maldivesmission.ch/index.php/our-services/passport-services/visa-and-passport-information",
+    "https://foreign.gov.mv/index.php/en/consular/for-foreigners-visiting-maldives/maldives-visa"
+  ],
+  "free_visa_notes": "Maldives grants a free 30-day tourist visa on arrival to all nationalities (90 days for Indian nationals under a bilateral agreement). No pre-arrival visa or fee for tourists; only the free IMUGA Traveller Declaration is required. Paid items are the optional MVR 750 in-country extension and the MVR 750 business visa."
+}

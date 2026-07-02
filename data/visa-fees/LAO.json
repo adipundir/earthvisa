@@ -1,0 +1,106 @@
+{
+  "iso3": "LAO",
+  "name": "Laos",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Laos eVisa (Tourist, single entry)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Enter within 60 days of approval; stay up to 30 days",
+      "applies": "eligible nationalities (standard rate)",
+      "official": true,
+      "source_url": "https://laoevisa.gov.la/fee-calculator",
+      "notes": "USD 50 total (visa fee USD 35 + USD 15 processing/service charge), plus bank charge. Reduced rate USD 35 for Chinese and Vietnamese nationals. Apply only via the official portal laoevisa.gov.la."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (Tourist, 30 days)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "30 days stay, extendable",
+      "applies": "eligible nationalities (many African/Middle-East nationalities excluded)",
+      "official": false,
+      "source_url": "https://immigration.gov.la/en/visas",
+      "notes": "Fee varies by nationality, roughly USD 30-45 (commonly cited: USA/UK/EU USD 35, Canada USD 42, India ~USD 40). The Department of Immigration does not publish a machine-readable schedule online, so no single amount is verified; a USD 1-2 overtime surcharge applies outside office hours, weekends and holidays. Payable in cash USD at the border."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued Tourist Visa (T-B3, single entry)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Use within 2 months of issue; 30 days stay, extendable",
+      "applies": "US and Canadian citizens at the Lao Embassy in Washington DC; fee varies by nationality and embassy",
+      "official": true,
+      "source_url": "https://laoembassy.com/visa/",
+      "notes": "USD 50 for US/Canadian citizens; USD 10 for persons of Lao origin (service only); +USD 20 expedited. Fees at other Lao embassies differ by nationality (reciprocity)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa (NI-B2)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Typically 30 days, extendable",
+      "applies": "all (requires sponsor/approval from Lao authorities)",
+      "official": false,
+      "source_url": "https://laoembassy.com/visa/",
+      "notes": "Embassy of Laos in Washington DC lists a flat visa fee schedule without a separate published business-visa amount; fee not independently verified, generally similar to the USD 50 embassy fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa (TR-B3)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Short transit stay",
+      "applies": "all",
+      "official": false,
+      "source_url": "https://immigration.gov.la/en/visas",
+      "notes": "Transit visa exists in Lao visa classification but no fee is published online by the Department of Immigration or the Washington embassy; amount unverified."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["CHN"],
+      "kind": "e_visa",
+      "amount": 35,
+      "currency": "USD",
+      "note": "Reduced eVisa rate for Chinese nationals per official eVisa fee calculator."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Russian citizens are visa-exempt for stays up to 30 days under bilateral agreement; no visa fee."
+    },
+    {
+      "nationalities": ["USA", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 50,
+      "currency": "USD",
+      "note": "Embassy of Lao PDR in Washington DC fee for US/Canadian citizens."
+    },
+    {
+      "nationalities": ["NGA", "PAK", "BGD"],
+      "kind": "visa_on_arrival",
+      "amount": null,
+      "currency": "USD",
+      "note": "Nigerian, Pakistani and Bangladeshi nationals are NOT eligible for visa on arrival and must obtain a visa in advance from an embassy."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://laoevisa.gov.la/fee-calculator",
+    "https://laoevisa.gov.la/faq",
+    "https://immigration.gov.la/en/visas",
+    "https://laoembassy.com/visa/"
+  ],
+  "free_visa_notes": "Laos is not visa-free for everyone, but ASEAN nationals (and some others e.g. Russia, Japan, South Korea, Switzerland, Luxembourg, Mongolia) enter visa-free for 14-30 days depending on nationality."
+}

@@ -1,0 +1,54 @@
+{
+  "iso3": "GTM",
+  "name": "Guatemala",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/Traveler visa (visa de turista o viajero) - single entry, embassy-issued",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "single entry, stay up to 90 days",
+      "applies": "nationalities requiring a visa (Category B applies at embassy; Category C requires prior IGM consultation)",
+      "official": true,
+      "source_url": "https://www.consuladoguatemalanuevayork.org/visa.html",
+      "notes": "Confirmed on the official Consulate General of Guatemala in New York page and consistent with MINEX/IGM tariff (visa simple/turista US$50). Same fee schedule covers tourism and business travel; Guatemala has no separate business-visa tariff published."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist/Traveler visa - multiple entry",
+      "amount": 150,
+      "currency": "USD",
+      "amount_usd": 150,
+      "validity": "multiple entries",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.consuladoguatemalanuevayork.org/visa.html",
+      "notes": "US$150 for multiple entries per official consulate fee schedule; MINEX tariff also lists multiple-entry tourist visa at US$150."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.minex.gob.gt/din/26-visas-para-extranjeros",
+      "notes": "MINEX lists visa categories for foreigners but a distinct transit-visa fee could not be verified (minex.gob.gt returned 403 on direct fetch); embassy schedules only publish single-entry US$50 / multiple-entry US$150."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.consuladoguatemalanuevayork.org/visa.html",
+    "https://www.minex.gob.gt/din/26-visas-para-extranjeros",
+    "https://igm.gob.gt/wp-content/uploads/2024/01/Visa-de-Turista-o-Viajero-para-paises-Categoria-C-VTV-IGM-01-2024.pdf"
+  ],
+  "free_visa_notes": "Nationals of Category A countries (incl. USA, GBR, CAN, most of EU, RUS, and CA-4 members SLV/HND/NIC) enter Guatemala visa-free for up to 90 days; no fee applies. No e-visa, visa-on-arrival, or eTA scheme exists - visas are issued only at Guatemalan embassies/consulates. In-country extension of stay costs US$25 (paid in quetzales to IGM). No reciprocity-based fee differentiation found: the US$50/US$150 tariff applies uniformly to all visa-required nationalities (incl. IND, CHN, NGA, PAK, PHL, BGD); Category C nationals need prior IGM approval but pay the same consular fee."
+}

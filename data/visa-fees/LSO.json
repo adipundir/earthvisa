@@ -1,0 +1,61 @@
+{
+  "iso3": "LSO",
+  "name": "Lesotho",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa - single entry",
+      "amount": 1000,
+      "currency": "LSL",
+      "amount_usd": 55,
+      "validity": "Single entry; approval letter issued as a 72-hour visa-on-arrival letter, visa endorsed at Maseru Port of Entry or Moshoeshoe I International Airport",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.lesothoemb-usa.gov.ls/visa/",
+      "notes": "M1000 (Maloti, pegged 1:1 to ZAR). Applications processed manually by Ministry of Home Affairs in Maseru via visa-applications.immigration@gov.ls; embassies do not issue visas. Diplomatic/official/UN passport and laissez-passer holders exempt from fees. amount_usd approximate."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa - multiple entry",
+      "amount": 2000,
+      "currency": "LSL",
+      "amount_usd": 110,
+      "validity": "Multiple entry",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.lesothoemb-usa.gov.ls/visa/",
+      "notes": "M2000 (Maloti). Same email-based process via Ministry of Home Affairs. amount_usd approximate."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (SUSPENDED)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.homeaffairs.gov.ls/e-visa/",
+      "notes": "Ministry of Home Affairs states the eVisa application system (evisalesotho.com) is suspended; applicants must email VISA-Applications.Immigration@gov.ls. Historical e-visa fees were USD 150 single-entry / USD 250 multiple-entry per the 2017 government launch announcement (secondary confirmation via Fragomen), but no current official fee schedule is published, so amount is null."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1550",
+    "currency": "ZAR",
+    "note": "VFS Global operates a Lesotho corridor from South Africa (visa.vfsglobal.com/zaf/en/lso). The published fixed VFS service fee at the Lesotho facilitation centres in South Africa is R1550 per applicant plus R185 biometric clearance fee (18+); this published figure relates to the Lesotho Exemption Permit programme and the visitor-visa service fee page was not directly retrievable (HTTP 403), so treat as indicative. Fees non-refundable.",
+    "source_url": "https://www.vfsglobal.com/one-pager/lesotho/southafrica/english/"
+  },
+  "sources": [
+    "https://www.lesothoemb-usa.gov.ls/visa/",
+    "https://www.homeaffairs.gov.ls/e-visa/",
+    "https://www.vfsglobal.com/one-pager/lesotho/southafrica/english/",
+    "https://visa.vfsglobal.com/zaf/en/lso",
+    "https://www.fragomen.com/insights/online-visa-application-system-introduced-s9iMWf7gCjveUDS2zhNRLN.html"
+  ],
+  "free_visa_notes": "Lesotho is visa-free for many nationalities (e.g. USA and GBR passport holders do not need a visa for short visits; SADC nationals visa-free). Fees above apply only to visa-required nationalities. No published reciprocity fee schedule by nationality was found; the flat M1000/M2000 fees apply to all standard passports, with fee exemptions for diplomatic/official/UN passports."
+}

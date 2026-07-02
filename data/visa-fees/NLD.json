@@ -1,0 +1,93 @@
+{
+  "iso3": "NLD",
+  "name": "Netherlands",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "visa-required nationalities, adults and children 12+",
+      "official": true,
+      "source_url": "https://www.netherlandsworldwide.nl/consular-fees/india",
+      "notes": "Children 6-11 pay EUR 45; children under 6 free. Fee waived for students/teachers on school trips, academic researchers, and non-profit youth (25 and under) per netherlandsworldwide.nl visa-costs page. Non-refundable."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C) - business purpose",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.netherlandsworldwide.nl/consular-fees/india",
+      "notes": "Same type C visa and fee as tourist; purpose is stated on the application."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "airport transit only",
+      "applies": "nationalities requiring airport transit visa",
+      "official": true,
+      "source_url": "https://www.netherlandsworldwide.nl/consular-fees/india",
+      "notes": "Children 6-11 EUR 45; under 6 free."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Caribbean visa (Aruba, Bonaire, Curacao, Saba, St Eustatius, St Maarten)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "short stay in the Caribbean parts of the Kingdom",
+      "applies": "visa-required nationalities travelling to the Dutch Caribbean",
+      "official": true,
+      "source_url": "https://www.netherlandsworldwide.nl/caribbean-visa",
+      "notes": "Separate visa regime from Schengen; applied for via Dutch missions/VFS. VFS service charge of approx EUR 35 applies where outsourced."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (EU-wide, not yet in force)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "3 years (planned)",
+      "applies": "visa-exempt nationalities",
+      "official": true,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "ETIAS is not yet operational as of 2026-07-02; published fee is EUR 20 once launched, free for under-18s and over-70s. Amount set to null because it is not yet chargeable."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARM", "AZE", "BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under EU visa facilitation agreements with Armenia, Azerbaijan and Belarus (listed as 'Low fee' on Netherlands consular fees schedule). EU-Russia facilitation is suspended, so RUS nationals pay the standard EUR 90."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global (TLScontact in some countries)",
+    "service_fee": "1577 + 160 convenience fee (India, incl. GST); some categories 1855",
+    "currency": "INR",
+    "note": "Netherlands outsources short-stay visa intake to VFS Global (and TLScontact in a few countries). Service fee varies by centre/country; India-published amounts shown. Non-refundable and payable even if visa fee is waived.",
+    "source_url": "https://www.vfsglobal.com/india/netherlands/pdf/f-ops-fees-brochurevisanl-en-n.pdf"
+  },
+  "sources": [
+    "https://www.netherlandsworldwide.nl/visa-the-netherlands/visa-costs",
+    "https://www.netherlandsworldwide.nl/consular-fees/india",
+    "https://www.netherlandsworldwide.nl/caribbean-visa",
+    "https://www.vfsglobal.com/india/netherlands/pdf/f-ops-fees-brochurevisanl-en-n.pdf",
+    "https://travel-europe.europa.eu/etias_en"
+  ],
+  "free_visa_notes": "No e-visa or visa on arrival exists for the Netherlands. Visa-exempt nationalities (e.g. USA, GBR, CAN and other Annex II countries) currently enter free; the EUR 20 ETIAS authorisation will apply to them once ETIAS launches. Children under 6 and certain student/researcher/youth categories are exempt from the Schengen visa fee."
+}

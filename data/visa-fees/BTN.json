@@ -1,0 +1,62 @@
+{
+  "iso3": "BTN",
+  "name": "Bhutan",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist visa (online application via Department of Immigration portal)",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "Single visa covering approved stay; processed within 5 working days",
+      "applies": "all nationalities except India, Bangladesh and Maldives",
+      "official": true,
+      "source_url": "https://bhutan.travel/visa",
+      "notes": "One-time, non-refundable USD 40 application fee. Applied online at https://immi.gov.bt/ or via a licensed tour operator. Separate from the mandatory Sustainable Development Fee (SDF) of USD 100 per adult per night (USD 50 for children 6-11, free under 6), payable with the visa application. Bhutan issues no embassy sticker visas for tourism; all tourist visas are processed online. Bhutan is not a Schengen member."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Entry permit for Indian nationals (visa-free, permit at entry or online)",
+      "amount": 0,
+      "currency": "INR",
+      "amount_usd": 0,
+      "validity": "Duration of approved stay",
+      "applies": "IND",
+      "official": true,
+      "source_url": "https://www.cgiphuentsholing.gov.in/page/guidelines-for-indians-visiting-bhutan/",
+      "notes": "Indian nationals need no visa; an entry permit is issued with no advance fee (passport with 6 months validity or voter ID). They must pay SDF of INR 1,200 per person per night (children 5 and under exempt; 6-12 pay 50%). Day visits (under 24h) to border towns Phuentsholing, Samtse, Gelephu and Samdrup Jongkhar are SDF-exempt."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Entry arrangements for Bangladesh and Maldives nationals",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "BGD, MDV",
+      "official": true,
+      "source_url": "https://bhutan.travel/visa",
+      "notes": "Nationals of Bangladesh and the Maldives are exempt from the standard USD 40 visa fee regime under bilateral arrangements; exact permit/visa fee (if any) not published with a specific amount on the official portal, so amount left null rather than estimated. SDF rules for these nationalities are set by government notification."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "INR",
+      "note": "Visa-free; entry permit with no advance fee, but SDF of INR 1,200 per night applies instead of the USD 100 SDF charged to other nationalities."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://bhutan.travel/visa",
+    "https://immi.gov.bt/home/",
+    "https://www.cgiphuentsholing.gov.in/page/guidelines-for-indians-visiting-bhutan/"
+  ],
+  "free_visa_notes": "Not free for most nationalities: USD 40 online visa fee plus mandatory SDF of USD 100/adult/night. Indian nationals enter visa-free on a no-fee permit but pay SDF of INR 1,200/night. There is no separate embassy sticker visa, visa-on-arrival fee (for the general public), eTA, business or transit visa fee schedule published; all entries go through the Department of Immigration online system (immi.gov.bt)."
+}

@@ -1,0 +1,91 @@
+{
+  "iso3": "BHS",
+  "name": "Bahamas",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Visitor's Visa (eVisa, single entry)",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "One entry within 3 months",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://mofa.gov.bs/evisa-online-services/",
+      "notes": "Applied via official MOFA eVisa portal (evisa.mofa.gov.bs); non-refundable. Seaman's visa also USD 160."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multiple entry visa (3 months / 6 months / 1 year)",
+      "amount": 250,
+      "currency": "USD",
+      "amount_usd": 250,
+      "validity": "3 months, 6 months or 1 year (same fee)",
+      "applies": "all nationalities requiring a visa; requires copies of 3 previous successful visas",
+      "official": true,
+      "source_url": "https://mofa.gov.bs/evisa-online-services/",
+      "notes": "Non-refundable."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multiple entry visa (3 years)",
+      "amount": 500,
+      "currency": "USD",
+      "amount_usd": 500,
+      "validity": "3 years",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://mofa.gov.bs/evisa-online-services/",
+      "notes": "Not available via the online portal; apply through a mission."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Sponsored Visitor Visa facilitation fee",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": null,
+      "applies": "sponsored visitor applications",
+      "official": true,
+      "source_url": "https://mofa.gov.bs/evisa-online-services/",
+      "notes": "Facilitation fee in addition to applicable visa fee."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa via consulate (single entry)",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "One entry within 3 months",
+      "applies": "all nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.bahamasny.com/visas/",
+      "notes": "Consulates route applicants to the MOFA eVisa system; same fee schedule. Prices may vary for Bahamian visas issued at British Embassies where the UK represents the Bahamas."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals requiring a visa to transit",
+      "official": true,
+      "source_url": "https://mofa.gov.bs/evisa-online-services/",
+      "notes": "No transit visa fee is published on the MOFA eVisa fee schedule; category not listed separately, so amount left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced centre (VFS/TLS/BLS); applications go through the official MOFA eVisa portal or Bahamian missions. Some countries are served by British Embassies, where fees may vary."
+  },
+  "sources": [
+    "https://mofa.gov.bs/evisa-online-services/",
+    "https://evisa.mofa.gov.bs/",
+    "https://www.bahamasny.com/visas/"
+  ],
+  "free_visa_notes": "Many nationalities (e.g. USA, GBR, CAN, EU) are visa-exempt for tourist stays in the Bahamas; fees above apply only to visa-required nationalities. No fee differences by nationality were found on official sources."
+}

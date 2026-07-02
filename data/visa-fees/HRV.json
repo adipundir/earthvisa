@@ -1,0 +1,69 @@
+{
+  "iso3": "HRV",
+  "name": "Croatia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C, single/multiple entry)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Stays up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://mvep.gov.hr/consular-information-107317/visa-information/180041",
+      "notes": "Croatia is a full Schengen member (since Jan 2023). Standard Schengen fee EUR 90; children 6-11 pay EUR 45, under 6 free. Fee waived for family of EU/Croatian citizens, students on school trips, researchers, and other Visa Code categories. Fee is non-refundable if the visa is refused."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C) for business purposes",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Stays up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://mvep.gov.hr/consular-information-107317/visa-information/180041",
+      "notes": "Business travel uses the same Schengen C visa and fee as tourism; only the purpose/supporting documents differ."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Airport transit only",
+      "applies": "nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://mvep.gov.hr/consular-informaton/visas-86726/86726",
+      "notes": "Same EUR 90 Schengen Visa Code fee applies to airport transit (A) visas."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARM", "AZE", "CPV"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced EUR 35 fee under EU visa facilitation agreements still in force. The former EUR 35 facilitation fee for Russia (and Belarus in part) was suspended by the EU; Russian nationals now pay the standard EUR 90. None of the key nationalities IND/USA/GBR/CHN/NGA/PAK/PHL/BGD/CAN have a differing fee - all pay EUR 90."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2553",
+    "currency": "INR",
+    "note": "Published VFS logistics fee in India is INR 2553 incl. GST (visa fee quoted as INR 10,200 / EUR 90). Service fees vary by country/centre; mandatory two-way courier INR 1332 applies outside New Delhi. Croatia uses VFS Global visa application centres in many countries per MFA notice.",
+    "source_url": "https://www.vfsglobal.com/one-pager/croatia/india/english/"
+  },
+  "sources": [
+    "https://mvep.gov.hr/consular-information-107317/visa-information/180041",
+    "https://mvep.gov.hr/consular-informaton/visas-86726/86726",
+    "https://mvep.gov.hr/page/161364",
+    "https://www.vfsglobal.com/one-pager/croatia/india/english/",
+    "https://mvep.gov.hr/UserDocsImages/2023/datoteke/2023%2001%2009%20HR%20Vizni%20centri%20VFS%20Globala_linkovi_EN.pdf"
+  ],
+  "free_visa_notes": "Not free in general, but EU/EEA/Swiss citizens and ~90 visa-waiver nationalities enter visa-free. Visa fee waived for children under 6 and Visa Code exemption categories. Croatia has no e-visa, no visa on arrival, and no eTA; ETIAS is not yet operational as of this record date."
+}

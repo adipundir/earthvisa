@@ -1,0 +1,103 @@
+{
+  "iso3": "MDG",
+  "name": "Madagascar",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist eVisa - up to 15 days",
+      "amount": 30,
+      "currency": "EUR",
+      "amount_usd": 35,
+      "validity": "1-15 days stay",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://evisamada-mg.com/en/home",
+      "notes": "Fee increased from EUR 10 to EUR 30 effective 16 Feb 2026. Official portal (evisamada-mg.com) loads the fee table dynamically; amounts corroborated via reporting citing the portal."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist eVisa - 16 to 30 days",
+      "amount": 35,
+      "currency": "EUR",
+      "amount_usd": 41,
+      "validity": "16-30 days stay",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://evisamada-mg.com/en/home",
+      "notes": ""
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist eVisa - 31 to 60 days",
+      "amount": 40,
+      "currency": "EUR",
+      "amount_usd": 47,
+      "validity": "31-60 days stay",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://evisamada-mg.com/en/home",
+      "notes": ""
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist eVisa - 61 to 90 days",
+      "amount": 50,
+      "currency": "EUR",
+      "amount_usd": 59,
+      "validity": "61-90 days stay",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://evisamada-mg.com/en/home",
+      "notes": ""
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival",
+      "amount": 30,
+      "currency": "EUR",
+      "amount_usd": 35,
+      "validity": "same tiers as eVisa (15/30/60/90 days)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://evisamada-mg.com/en/home",
+      "notes": "Official portal states 'The prices of the online visa are the same as those paid on arrival' - VOA available at eVisa counters at ports of entry; pay per stay tier (EUR 30/35/40/50)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued non-immigrant (tourist) visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "up to 90 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.mdg-london.org/visas",
+      "notes": "Madagascar Embassy in London publishes fees only via downloadable PDFs; amount not verifiable online. In practice most travellers use eVisa or visa on arrival."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (embassy, >90 days = immigrant/long-stay category)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.mdg-london.org/visas",
+      "notes": "eVisa system currently supports tourist visas only. Business/long-stay visas are handled by embassies; fee schedule not published online, so amount left null rather than estimated."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Madagascar does not outsource inbound visa processing to VFS Global/TLScontact/BLS; applications are via the official eVisa portal (evisamada-mg.com), on arrival, or directly at embassies."
+  },
+  "sources": [
+    "https://evisamada-mg.com/en/home",
+    "https://www.mdg-london.org/visas",
+    "https://visasnews.com/en/madagascar-triples-its-15-day-e-visa-fee/"
+  ],
+  "free_visa_notes": "Visa fees apply to all nationalities; only diplomats and employees of certain organizations are exempt per the official eVisa portal. No nationality-based reciprocity fee schedule is published - all nationalities pay the same tiered fees."
+}

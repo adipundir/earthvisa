@@ -4,6 +4,7 @@ import Link from "next/link";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { corridorsForDestination, DEMONYM } from "@/lib/corridors";
 import { aliasBySlug, SHORT_NAME, type ColloquialAlias } from "@/lib/colloquial";
+import { feesFor, fmtFee } from "@/lib/fees";
 import CorridorLinks from "@/components/CorridorLinks";
 import type { AccessLevel } from "@/lib/types";
 
@@ -449,6 +450,46 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               )}
             </section>
           )}
+
+          {/* Official visa fees */}
+          {(() => {
+            const df = feesFor(destIso3);
+            const paid = df?.fees.filter((f) => f.amount != null) ?? [];
+            if (!df || paid.length === 0) return null;
+            return (
+              <section className="mt-12">
+                <h2 className="font-display text-2xl font-semibold text-ink">
+                  {display} Visa Fees ({df.updated ?? "2026"})
+                </h2>
+                <p className="mt-2 text-sm text-ink-soft">
+                  Official visa costs for {display}, from government fee schedules. Fees change - always confirm on the linked source.
+                </p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {paid.slice(0, 6).map((f, i) => (
+                    <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+                      <p className="font-display text-[14px] font-semibold text-ink">{f.name}</p>
+                      <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
+                      <div className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
+                        {f.validity && <span>{f.validity}</span>}
+                        {f.official && <span className="text-vfree">official source</span>}
+                      </div>
+                      {f.source_url && (
+                        <a href={f.source_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-block text-[10px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
+                          {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                {df.vfs.used && (
+                  <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                    Applications are handled via {df.vfs.operator}
+                    {df.vfs.service_fee ? ` - service fee approx. ${df.vfs.currency ?? ""} ${df.vfs.service_fee}, varies by centre` : " - a service fee applies on top of the visa fee"}.
+                  </p>
+                )}
+              </section>
+            );
+          })()}
 
           {/* FAQ */}
           <section className="mt-14">

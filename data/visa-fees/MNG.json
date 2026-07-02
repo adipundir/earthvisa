@@ -1,0 +1,134 @@
+{
+  "iso3": "MNG",
+  "name": "Mongolia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (K2), single entry - embassy sticker visa",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Valid for entry within 90 days of issue; stay per visa (typically 30 days)",
+      "applies": "all (fee schedule published by Embassy of Mongolia in Washington DC; consular fees vary by mission/reciprocity)",
+      "official": true,
+      "source_url": "https://mongolianembassy.us/mongolian-visa-information/",
+      "notes": "Double entry USD 65; fees payable in USD by money order/cashier's check at the US embassy. Other missions publish local-currency schedules that differ by reciprocity."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry visa, up to 6 months",
+      "amount": 105,
+      "currency": "USD",
+      "amount_usd": 105,
+      "validity": "Up to 6 months multiple entry",
+      "applies": "all (per Embassy of Mongolia, Washington DC)",
+      "official": true,
+      "source_url": "https://mongolianembassy.us/mongolian-visa-information/",
+      "notes": "Multiple entry 6-12 months: USD 205."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa - Tourist (K2), single entry, 30-day stay",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Valid 150 days from issue; 30-day stay; processed within 72 hours",
+      "applies": "eligible nationalities (list on evisa.mn); many Western/East Asian nationals are visa-exempt ≤ 30-90 days",
+      "official": true,
+      "source_url": "https://evisa.mn/en/apply",
+      "notes": "Fee is paid online but the official portal only displays the amount at the payment step of an application; no public fee schedule page. Third-party sources cite ~USD 50-53 but this is unverified on an official source, so amount is left null. E-visa also issued for cultural/sports events (K4) and transit (K6)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (K6), single transit - embassy issued",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "Single transit (typically up to 10 days)",
+      "applies": "all (per Embassy of Mongolia, Washington DC)",
+      "official": true,
+      "source_url": "https://mongolianembassy.us/mongolian-visa-information/",
+      "notes": "Double transit USD 50; multiple transit USD 75. Also available as e-visa via evisa.mn."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (B category), single entry",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Entry within 90 days of issue",
+      "applies": "all (embassy fee schedule does not distinguish tourist/business for standard entries)",
+      "official": true,
+      "source_url": "https://mongolianembassy.us/mongolian-visa-information/",
+      "notes": "Same standard fee tier as tourist: single 50 / double 65 / multiple 6mo 105 / multiple 12mo 205 USD."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (border-port visa, Chinggis Khaan Intl Airport and select land ports)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Typically single entry, 30 days",
+      "applies": "limited cases (usually with prior Immigration Agency approval/invitation)",
+      "official": false,
+      "source_url": "https://immigration.gov.mn/en/",
+      "notes": "No official published fee found; third-party reports range ~USD 32-70 (payable in USD or MNT cash). Amount left null pending official confirmation."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "KRW",
+      "note": "Per the official VFS Mongolia visa centre (Seoul) fee table (updated Oct 2019), Indian nationals pay no visa fee for tourist/business/transit visas (India-Mongolia reciprocal arrangement)."
+    },
+    {
+      "nationalities": ["CHN"],
+      "kind": "tourist_visa",
+      "amount": 116000,
+      "currency": "KRW",
+      "note": "Chinese nationals applying at the VFS Mongolia centre in Seoul: KRW 116,000 regular (30-day tourist/business); transit KRW 31,000. Reciprocity-based; local-currency equivalents differ by mission."
+    },
+    {
+      "nationalities": ["GBR"],
+      "kind": "tourist_visa",
+      "amount": 137000,
+      "currency": "KRW",
+      "note": "UK nationals at the Seoul VFS centre: KRW 137,000 regular tourist/business, transit KRW 45,000 - higher reciprocity tier than the default (KRW 57,000). NB: most GBR passport holders are visa-exempt for short tourist stays."
+    },
+    {
+      "nationalities": ["BGD", "PHL"],
+      "kind": "tourist_visa",
+      "amount": 35000,
+      "currency": "KRW",
+      "note": "Southeast/South Asian tier (Myanmar, Indonesia, Bangladesh, Bhutan, Nepal, etc.) at Seoul VFS centre: KRW 35,000 tourist/business, KRW 23,000 transit."
+    },
+    {
+      "nationalities": ["USA", "CAN", "RUS"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "USD",
+      "note": "USA/CAN nationals are visa-exempt for tourist stays (USA up to 90 days). RUS nationals are visa-exempt up to 30 days under bilateral agreement; no fee applies for those stays."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "KRW 5,000 (regular) / KRW 20,000 (express)",
+    "currency": "KRW",
+    "note": "Mongolia outsources visa intake to VFS Global in at least South Korea (Seoul Mongolia Visa Application Centre). Service fee at the Seoul centre: KRW 5,000 regular, KRW 20,000 express, paid on top of the visa fee. Fees vary by centre.",
+    "source_url": "https://visa.vfsglobal.com/kor/en/mng/visa-type"
+  },
+  "sources": [
+    "https://mongolianembassy.us/mongolian-visa-information/",
+    "https://evisa.mn/en/apply",
+    "https://immigration.gov.mn/en/articles/124/",
+    "https://visa.vfsglobal.com/kor/en/mng/visa-type",
+    "https://assets.ctfassets.net/xxg4p8gt3sg6/1k2DQbBIz0hQtmvQ24etR1/06bcd82a36ac2e49233b6607712575ad/visa-fee-table.pdf",
+    "https://en.consul.mn/visa/c/82"
+  ],
+  "free_visa_notes": "Mongolia is not a Schengen member. Nationals of ~60+ countries (incl. USA up to 90 days, most of EU, UK, JPN, KOR, CAN, AUS under temporary/permanent exemptions, RUS 30 days) enter visa-free for short stays; for them no fee applies. Others use the e-visa (K2/K4/K6) or embassy visas."
+}

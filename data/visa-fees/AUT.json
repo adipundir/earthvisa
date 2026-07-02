@@ -1,0 +1,104 @@
+{
+  "iso3": "AUT",
+  "name": "Austria",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 103,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities aged 12+",
+      "official": true,
+      "source_url": "https://www.bmeia.gv.at/en/austrian-consulate-general-new-york/service-for-citizens/consular-fees",
+      "notes": "Standard EU-wide Schengen visa fee (EUR 90 since 11 June 2024). Children 6-12: EUR 45; under 6: free. Austrian Consulate General New York lists USD 103 (adult) / USD 52 (child 6-12), collected in local currency at consulates/VFS."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C) - business purpose",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 103,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.bmeia.gv.at/en/austrian-consulate-general-new-york/service-for-citizens/consular-fees",
+      "notes": "Business travel uses the same Type C Schengen visa and fee as tourism; there is no separate business visa fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 103,
+      "validity": "airport transit only",
+      "applies": "nationalities requiring an airport transit visa",
+      "official": true,
+      "source_url": "https://www.bmeia.gv.at/en/austrian-consulate-general-new-york/service-for-citizens/consular-fees",
+      "notes": "Type A airport transit visa carries the same fee as Type C under the EU Visa Code."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "National visa (Type D, 91 days - 6 months) - adult",
+      "amount": 195,
+      "currency": "EUR",
+      "amount_usd": 223,
+      "validity": "91 days to 6 months (longer stays not covered by Schengen C)",
+      "applies": "all visa-required nationalities aged 6+",
+      "official": true,
+      "source_url": "https://www.bmeia.gv.at/en/austrian-embassy-london/travelling-to-austria/entry-requirements-visa-and-immigration/visa-d",
+      "notes": "Austrian national Visa D fee raised from EUR 150 to EUR 195 (adults) / EUR 97 (children under 6) effective 1 July 2025, per Austrian Embassy London. NY consulate lists USD 223 / USD 111. Included because tourists staying >90 days use Visa D; long-term residence/work permits excluded."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.bmeia.gv.at/en/travel-stay/entrance-and-residence-in-austria/visa/",
+      "notes": "Austria has no e-visa; applications are lodged in person at embassies/consulates or VFS Global centres. From late 2026/2027 the EU ETIAS authorisation (EUR 20, ages 18-70) will apply to visa-exempt travellers, but it was not yet in force as of this record date."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.bmeia.gv.at/en/travel-stay/entrance-and-residence-in-austria/visa/",
+      "notes": "Austria does not issue visas on arrival; a Schengen visa must be obtained before travel."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "EU visa facilitation agreement rate (~EUR 35; NY consulate lists USD 40). The EU-Russia facilitation agreement is fully suspended since Sep 2022, so Russian citizens now pay the standard EUR 90; the reduced rate still applies to other facilitation-agreement countries (e.g. Armenia, Azerbaijan, Albania non-biometric). IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, CAN all pay the standard EUR 90 - no reciprocity discounts."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2479",
+    "currency": "INR",
+    "note": "Typical published VFS Global service charge for Austria in India is around INR 2,479 (~EUR 27); service fees vary by country/centre, generally in the EUR 25-45 range, plus optional add-ons (courier, premium lounge). Payable in local currency at the centre.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/aut/"
+  },
+  "sources": [
+    "https://www.bmeia.gv.at/en/austrian-consulate-general-new-york/service-for-citizens/consular-fees",
+    "https://www.bmeia.gv.at/en/austrian-embassy-london/travelling-to-austria/entry-requirements-visa-and-immigration/visa-d",
+    "https://www.bmeia.gv.at/en/travel-stay/entrance-and-residence-in-austria/visa/",
+    "https://visa.vfsglobal.com/ind/en/aut/"
+  ],
+  "free_visa_notes": "Austria is a Schengen member; citizens of EU/EEA, Switzerland and ~60 visa-exempt countries (USA, GBR, CAN, JPN, etc.) enter visa-free for 90/180 days at no cost (until ETIAS EUR 20 comes into force). Visa fee waived for children under 6, and under the EU Visa Code for certain categories (researchers, some students on trips, representatives of non-profits aged <=25 attending events)."
+}

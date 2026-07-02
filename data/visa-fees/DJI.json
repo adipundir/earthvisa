@@ -1,0 +1,67 @@
+{
+  "iso3": "DJI",
+  "name": "Djibouti",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Short-stay e-Visa (15-90 days)",
+      "amount": 23,
+      "currency": "USD",
+      "amount_usd": 23,
+      "validity": "15-90 days stay, single entry",
+      "applies": "all (e-visa required for most nationalities)",
+      "official": true,
+      "source_url": "https://www.evisa.gouv.dj/",
+      "notes": "Fee published on the official Djibouti e-visa portal evisa.gouv.dj. The portal is a JavaScript app so the amount was cross-checked against multiple sources citing the portal; verify at application time."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit e-Visa (1-14 days)",
+      "amount": 12,
+      "currency": "USD",
+      "amount_usd": 12,
+      "validity": "1-14 days, single entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.evisa.gouv.dj/",
+      "notes": "Issued via the official e-visa portal for short transits up to 14 days."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "limited cases only",
+      "official": false,
+      "source_url": "https://www.evisa.gouv.dj/",
+      "notes": "Djibouti has largely replaced visa on arrival with the mandatory e-visa; arrival issuance is reported only in exceptional cases and no official current VOA fee schedule could be verified. Amount left null rather than guessed."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business travel (covered by e-visa) / embassy sticker visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://djiboutiembassyus.org/page/visa",
+      "notes": "Business trips up to 90 days use the same short-stay e-visa (USD 23). The Washington DC embassy accepts paper applications but does not publish a fee schedule online; contact the embassy for sticker-visa fees. Amount left null."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced visa centre (VFS Global/TLScontact/BLS) found for Djibouti; applications go through the official e-visa portal evisa.gouv.dj or Djiboutian embassies directly."
+  },
+  "sources": [
+    "https://www.evisa.gouv.dj/",
+    "https://djiboutiembassyus.org/page/visa",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Djibouti.html"
+  ],
+  "free_visa_notes": ""
+}

@@ -1,0 +1,84 @@
+{
+  "iso3": "AFG",
+  "name": "Afghanistan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (embassy/consulate sticker visa)",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "3 months validity, 1 month stay, single entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://mfa.gov.af/en/page/38999",
+      "notes": "Fee published by Afghanistan Ministry of Foreign Affairs. Applications go through the e-consulate portal (econsulate.mfa.gov.af) and are collected at Afghan embassies/consulates. Fees can vary slightly by mission."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-visa (E-Afghans portal, launched March 2026)",
+      "amount": 120,
+      "currency": "USD",
+      "amount_usd": 128,
+      "validity": "90 days validity from issue, 30 days stay, single entry, Kabul International Airport entry only",
+      "applies": "eligible nationalities",
+      "official": false,
+      "source_url": "https://eafghans.com/e-visa/",
+      "notes": "USD 8 non-refundable application fee paid upfront, then USD 120 visa fee plus ~3% payment processing charge (~USD 3.71) after approval; total ~USD 128-132. E-Afghans portal (eafghans.com) is the official application site but was not directly fetchable at time of research; fee figures corroborated by multiple independent reports of the portal's published schedule, so marked official:false pending direct verification."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (multiple entry)",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "3 months multiple entry at USD 40; 6 months USD 80; 1 year USD 160; 2 years USD 250; 3 years USD 300",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://mfa.gov.af/en/page/38994",
+      "notes": "Tiered by validity: USD 40 (3-month) to USD 300 (3-year), payable in USD or Afghani equivalent. Extension: USD 15 per month up to one year. Requires business licence, passport copy, bank statements."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Arrival visa (Kabul International Airport, invitation-based)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "holders of official letter from a domestic organization or invitation from an international organization operating in Afghanistan; also business people/investors",
+      "official": true,
+      "source_url": "https://mfa.gov.af/en/page/38942",
+      "notes": "Arrival visas exist but require prior MFA approval and an official invitation; they are not a walk-up tourist VOA. MFA page cites fees per Article 27 of the Travel and Residence Law without publishing an amount, so amount left null."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "up to 72 hours (per general visa-type descriptions)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://mfa.gov.af/en/types-of-visa",
+      "notes": "Transit visa is listed among official visa categories, but no fee amount is published on the MFA type page; amount left null rather than estimated."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "Afghanistan does not route visa applications through VFS Global, TLScontact or BLS; applications are made via the MFA e-consulate portal / embassies or the E-Afghans e-visa portal."
+  },
+  "sources": [
+    "https://mfa.gov.af/en/page/38999",
+    "https://mfa.gov.af/en/page/38994",
+    "https://mfa.gov.af/en/page/39001",
+    "https://mfa.gov.af/en/page/38942",
+    "https://mfa.gov.af/en/types-of-visa",
+    "https://islamabad.mfa.gov.af/visa/",
+    "https://eafghans.com/e-visa/",
+    "https://www.visaverge.com/travel/afghanistan-launches-e-visa-system-for-tourists-with-8-application-fee-and-12371-visa-fee/"
+  ],
+  "free_visa_notes": "Visas are not free in general. Some third-party sources report gratis visas for Indian nationals under reciprocity, but this could not be verified on an official Afghan government source, so it is not recorded as a reciprocity variation. Visit visa (relatives/sports/exhibitions) is USD 80-240 depending on duration per MFA (https://mfa.gov.af/en/page/39001)."
+}

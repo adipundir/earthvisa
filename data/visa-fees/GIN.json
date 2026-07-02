@@ -1,0 +1,78 @@
+{
+  "iso3": "GIN",
+  "name": "Guinea",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (single entry, <90 days)",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "up to 90 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.paf.gov.gn/visa",
+      "notes": "Issued via official PAF (Police de l'Air et des Frontieres) portal paf.gov.gn. Non-refundable even if refused. Yellow fever certificate required. Processing about 3 business days."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business travel via e-Visa",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "up to 90 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.paf.gov.gn/visa",
+      "notes": "Guinea's e-visa on the official PAF portal covers tourism, business and transit purposes at the same short-stay rate. A separate long-stay visa (VLS, 1 year) costs USD 150 but is a long-term category."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (max 3 days)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "up to 3 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.paf.gov.gn/visa",
+      "notes": "Applied for on the official PAF e-visa portal."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued sticker visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.consulateofguinea.com/visa",
+      "notes": "Guinean consulates (e.g. Consulate of Guinea) now redirect applicants to the official e-visa portal paf.gov.gn; no separate embassy sticker-visa fee schedule is published. Amount unverified, so left null."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "eligible nationalities",
+      "official": false,
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Guinea",
+      "notes": "Entry at Conakry airport is possible with the e-visa pre-approval issued online; no separately published official on-arrival cash fee schedule was found, so amount is left null."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.paf.gov.gn/visa",
+    "https://www.consulateofguinea.com/visa",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Guinea"
+  ],
+  "free_visa_notes": "Visa-free entry applies only to ECOWAS member-state nationals and a few others; most travellers must obtain the paid e-visa."
+}

@@ -1,0 +1,106 @@
+{
+  "iso3": "LBR",
+  "name": "Liberia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (online pre-approval, Liberia Immigration Service)",
+      "amount": 102.5,
+      "currency": "USD",
+      "amount_usd": 102.5,
+      "validity": "Approval valid for entry within 3 months; sticker issued on arrival for 30 or 90 days, single entry",
+      "applies": "travellers from countries without a Liberian embassy (must apply at embassy if one exists in your country)",
+      "official": true,
+      "source_url": "https://visaonarrival.lis.gov.lr/",
+      "notes": "Non-refundable; paid online by Visa/Mastercard via the official LIS portal. This is Liberia's official e-visa-on-arrival channel; third-party sites (e.g. evisaliberia.com) charge more and are not official."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy visa, single entry (1-3 months)",
+      "amount": 70,
+      "currency": "USD",
+      "amount_usd": 70,
+      "validity": "1-3 months, single entry",
+      "applies": "non-US nationals applying at Liberian missions (US schedule)",
+      "official": true,
+      "source_url": "https://liberiaconsulate-ny.com/consulate-services/visa/",
+      "notes": "Fee schedule of Liberian Consulate General New York. Rush service: +USD 75 same day, +USD 50 next day/under 5 days. Fees non-refundable."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy visa, 1 year multiple entry",
+      "amount": 150,
+      "currency": "USD",
+      "amount_usd": 150,
+      "validity": "1 year, multiple entry",
+      "applies": "non-US nationals applying at Liberian missions (US schedule)",
+      "official": true,
+      "source_url": "https://liberiaconsulate-ny.com/consulate-services/visa/",
+      "notes": "Same fee applies for tourist or business purpose; Liberia issues a single 'Regular' visa category."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy visa, 2 years multiple entry",
+      "amount": 250,
+      "currency": "USD",
+      "amount_usd": 250,
+      "validity": "2 years, multiple entry",
+      "applies": "non-US nationals applying at Liberian missions (US schedule)",
+      "official": true,
+      "source_url": "https://liberiaconsulate-ny.com/consulate-services/visa/",
+      "notes": ""
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (Regular visa, same schedule as tourist)",
+      "amount": 70,
+      "currency": "USD",
+      "amount_usd": 70,
+      "validity": "1-3 months single entry (multiple-entry options 150/250 USD as above)",
+      "applies": "non-US nationals",
+      "official": true,
+      "source_url": "https://liberiaconsulate-ny.com/consulate-services/visa/",
+      "notes": "Liberia does not publish a separate business-visa fee; tourist and business use the same Regular visa fee schedule."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://liberiaconsulate-ny.com/consulate-services/visa/",
+      "notes": "No separate transit visa fee published on official Liberian embassy/consulate or LIS sources; transit travellers appear to use the regular visa or visa on arrival (USD 102.50 covers tourism, business or transit)."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 180,
+      "currency": "USD",
+      "note": "US citizens pay USD 180 for a 3-year multiple-entry tourist/business visa (reciprocity adjustment effective 21 Oct 2024)."
+    },
+    {
+      "nationalities": ["NGA"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "ECOWAS citizens (incl. Nigeria, Ghana, Senegal etc.) enter Liberia visa-free with an ECOWAS passport valid at least 6 months."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "VFS Global operates Liberia Passport Application Centres (LPAC) for Liberian citizens abroad (passport fee USD 160 + USD 5 convenience), not visa application centres for travellers to Liberia. Inbound visas are issued by embassies or via the official visa-on-arrival portal."
+  },
+  "sources": [
+    "https://visaonarrival.lis.gov.lr/",
+    "https://liberiaconsulate-ny.com/consulate-services/visa/",
+    "https://www.liberianembassyus.org/page/visa"
+  ],
+  "free_visa_notes": "ECOWAS-member nationals are visa-free with a valid ECOWAS passport (6+ months validity)."
+}

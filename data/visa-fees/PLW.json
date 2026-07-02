@@ -1,0 +1,84 @@
+{
+  "iso3": "PLW",
+  "name": "Palau",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist visa on arrival (30 days)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "30 days, extendable twice for 30 days each",
+      "applies": "all nationalities except Bangladesh and Myanmar (who must apply in advance); US/FSM/RMI citizens are visa-exempt",
+      "official": true,
+      "source_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Issued free at entry; official Bureau of Customs and Border Protection page lists a fee only for renewal (USD 50 per 30-day extension). Requires valid passport (6+ months), return ticket, proof of funds (~USD 200/week), Palau Entry Form QR code (palautravel.pw) and signing the Palau Pledge."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa extension/renewal",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30 days per extension, maximum two extensions",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://bcbp.pw/?page_id=165",
+      "notes": "USD 50 per 30-day renewal; apply at Division of Immigration at least 7 days before expiry."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa on arrival (30 days)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "30 days, extendable twice for 30 days each (USD 50 per renewal)",
+      "applies": "all nationalities except Bangladesh and Myanmar",
+      "official": true,
+      "source_url": "https://bcbp.pw/?page_id=165",
+      "notes": "For meetings/conferences/negotiations; no employment permitted. Renewal fee USD 50."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit (under 24 hours)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "up to 24 hours",
+      "applies": "transit passengers staying under 24 hours",
+      "official": true,
+      "source_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Transit passengers staying under 24 hours are exempt from visa requirements."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Advance visa for Bangladesh and Myanmar nationals",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "BGD, MMR nationals only",
+      "official": true,
+      "source_url": "https://bcbp.pw/?page_id=165",
+      "notes": "Must apply before arrival from country of residence; fee not published on the official BCBP page, so amount left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["BGD"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "USD",
+      "note": "No visa on arrival; must obtain a visa in advance. Fee not published on official sources."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://bcbp.pw/?page_id=165",
+    "https://palautravel.pw/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Palau.html"
+  ],
+  "free_visa_notes": "Palau grants a free 30-day visa on arrival to virtually all nationalities (except Bangladesh and Myanmar, who need advance visas); US, FSM and RMI citizens are visa-exempt. The only published visa fee is USD 50 per 30-day extension. Separately, all visitors pay the USD 100 Pristine Paradise Environmental Fee, included in the airline ticket (not a visa fee)."
+}

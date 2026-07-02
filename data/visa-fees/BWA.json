@@ -1,0 +1,68 @@
+{
+  "iso3": "BWA",
+  "name": "Botswana",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist Visa (TV) - embassy sticker visa",
+      "amount": 500,
+      "currency": "BWP",
+      "amount_usd": 37,
+      "validity": "typically single entry, up to 3 months",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://botswana-brussels.com/wp-content/uploads/2017/03/Schedule-of-Visa-Fees.pdf",
+      "notes": "Official Department of Immigration and Citizenship schedule (effective 1 April 2015) published by the Botswana Embassy in Brussels: Tourist Visa BWP 500 (EUR 50). Fees charged in local currency vary by mission; e.g. the Botswana Embassy in Washington DC publishes USD 30 (single entry, up to 1 month) / USD 50 (multiple entry, up to 3 months)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (evisa.gov.bw)",
+      "amount": null,
+      "currency": "BWP",
+      "amount_usd": null,
+      "validity": "single entry ~1 month or multiple entry ~3 months",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.gov.bw/visa-applications/visa-application-tourism-visa",
+      "notes": "Official portal is https://evisa.gov.bw. The gov.bw tourism-visa page confirms online application (7-14 working days processing) but does not publish the fee; the fee is shown inside the portal at payment. Third-party sources report BWP 300 single-entry / BWP 500 multiple-entry, but this could not be verified on an official page, so amount is left null."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa (BV)",
+      "amount": 1500,
+      "currency": "BWP",
+      "amount_usd": 110,
+      "validity": null,
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://botswana-brussels.com/wp-content/uploads/2017/03/Schedule-of-Visa-Fees.pdf",
+      "notes": "BWP 1500 (EUR 140) per the official 2015 schedule. The Washington DC embassy lists Business Visa at USD 50 (single entry); amounts vary by mission."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa (TRV)",
+      "amount": 500,
+      "currency": "BWP",
+      "amount_usd": 37,
+      "validity": "per travel; gov.bw also lists multiple-entry transit up to 3 months BWP 500 (~USD 50) and beyond 3 months up to 3 years BWP 1000 (~USD 100)",
+      "applies": "all visa-required nationalities transiting Botswana",
+      "official": true,
+      "source_url": "https://www.gov.bw/visa-applications/visa-application-transit-visa",
+      "notes": "BWP 500 per travel per the official 2015 embassy schedule; gov.bw transit visa page lists BWP 500 (multiple entry up to 3 months), BWP 1000 (up to 3 years), and BWP 1500 (up to 3 years for tour operators/transporters)."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced centre (VFS/TLS/BLS) is used for visas TO Botswana; applications go via evisa.gov.bw, Botswana immigration offices, or Botswana embassies/high commissions directly. (VFS Global centres in Gaborone handle outbound visas, e.g. to South Africa, not Botswana visas.)"
+  },
+  "sources": [
+    "https://botswana-brussels.com/wp-content/uploads/2017/03/Schedule-of-Visa-Fees.pdf",
+    "https://www.gov.bw/visa-applications/visa-application-tourism-visa",
+    "https://www.gov.bw/visa-applications/visa-application-transit-visa",
+    "https://www.botswanaembassy.org/page/fees-for-consular-and-immigration-services"
+  ],
+  "free_visa_notes": "Nationals of ~100 countries (incl. USA, UK, EU, most Commonwealth and SADC) enter Botswana visa-free for up to 90 days, so most tourists pay no visa fee. Diplomatic and Official visas are gratis. No visa-on-arrival or eTA regime exists; visa-required nationals must obtain an e-visa or embassy visa in advance."
+}

@@ -1,0 +1,120 @@
+{
+  "iso3": "ISR",
+  "name": "Israel",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "eta",
+      "name": "ETA-IL (Electronic Travel Authorization)",
+      "amount": 25,
+      "currency": "ILS",
+      "amount_usd": 7,
+      "validity": "Up to 2 years, multiple entries, max 90 days per visit",
+      "applies": "visa-exempt nationalities (e.g. USA, GBR, CAN, EU) - mandatory since Jan 2025",
+      "official": true,
+      "source_url": "https://israel-entry.piba.gov.il/",
+      "notes": "NIS 25, paid by credit card, non-refundable. Official portal of the Population and Immigration Authority (PIBA)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "eVisa-B2 (electronic visitor visa)",
+      "amount": 100,
+      "currency": "ILS",
+      "amount_usd": 28,
+      "validity": "90 days validity, max stay 90 days",
+      "applies": "visa-required nationalities eligible for the eVisa-B2 online channel (incl. IND)",
+      "official": true,
+      "source_url": "https://israel-entry.piba.gov.il/learn-about-evisa-b2",
+      "notes": "Applied online via PIBA portal; processing about 10 business days. Fee NIS 100."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "B/2 visitor visa (embassy/consulate sticker visa)",
+      "amount": null,
+      "currency": "ILS",
+      "amount_usd": null,
+      "validity": "typically up to 90 days stay",
+      "applies": "visa-required nationalities applying at Israeli missions",
+      "official": true,
+      "source_url": "https://www.gov.il/en/departments/dynamiccollectors/tarifimconsularim",
+      "notes": "MFA publishes consular tariffs on a dynamic fee collector page (blocked to automated fetch); fee is charged in local currency and adjusted with exchange rates. In India it is currently INR 2,350 (see reciprocity_variations). No global USD amount could be verified, so amount left null."
+    },
+    {
+      "kind": "business_visa",
+      "name": "B/2 business visa (same B/2 category covers business visits)",
+      "amount": null,
+      "currency": "ILS",
+      "amount_usd": null,
+      "validity": "typically up to 90 days stay",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.gov.il/en/departments/dynamiccollectors/tarifimconsularim",
+      "notes": "Israel does not have a separate short-stay business visa; business visitors use the B/2 (or eVisa-B2 at NIS 100 where eligible). Consular fee same as tourist B/2."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "ILS",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "not offered",
+      "official": true,
+      "source_url": "https://israel-entry.piba.gov.il/",
+      "notes": "Israel has no general visa-on-arrival regime; travellers need an ETA-IL, eVisa-B2 or consular visa before travel."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "B/3 transit visa",
+      "amount": null,
+      "currency": "ILS",
+      "amount_usd": null,
+      "validity": "short transit (up to 5 days typical)",
+      "applies": "visa-required nationalities transiting Israel",
+      "official": true,
+      "source_url": "https://www.gov.il/en/departments/dynamiccollectors/tarifimconsularim",
+      "notes": "Fee published only on the MFA consular tariff collector (not fetchable programmatically); amount unverified so left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 2350,
+      "currency": "INR",
+      "note": "B/2 Business & Tourist embassy fee in India (effective 2 Jan 2025), plus INR 1,805 service/logistics fee at the application centre; fastrack option adds INR 5,942. Fees track the USD/INR rate."
+    },
+    {
+      "nationalities": ["IND"],
+      "kind": "e_visa",
+      "amount": 100,
+      "currency": "ILS",
+      "note": "Indian citizens resident in India are eligible for the eVisa-B2 online channel at NIS 100."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CAN"],
+      "kind": "eta",
+      "amount": 25,
+      "currency": "ILS",
+      "note": "Visa-exempt nationalities pay only the NIS 25 ETA-IL; no visa fee."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1805",
+    "currency": "INR",
+    "note": "Israel Visa Application Centres (VFS Global) in Delhi, Mumbai and Bengaluru charge INR 1,805 service/logistics fee per application (Jan 2025 schedule); VFS also runs Israel visa centres in other countries (e.g. UAE) where a service fee of about ILS 143 equivalent applies - varies by centre.",
+    "source_url": "https://www.israelvisaglobal.com/general-information/visa-fee-and-service-charge-india"
+  },
+  "sources": [
+    "https://israel-entry.piba.gov.il/",
+    "https://israel-entry.piba.gov.il/learn-about-evisa-b2",
+    "https://www.gov.il/en/departments/dynamiccollectors/tarifimconsularim",
+    "https://www.israelvisaglobal.com/general-information/visa-fee-and-service-charge-india",
+    "https://visa.vfsglobal.com/are/en/isr",
+    "https://embassies.gov.il/singapore/en/announcements/digital-entry-visa-tourists-electronic-travel-authorization-eta-il"
+  ],
+  "free_visa_notes": ""
+}

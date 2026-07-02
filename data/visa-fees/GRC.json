@@ -1,0 +1,135 @@
+{
+  "iso3": "GRC",
+  "name": "Greece",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (type C) - tourism",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 105,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Greece is a Schengen member; the common Schengen fee applies (EUR 90 since 11 June 2024, confirmed by EC Home Affairs and Greek MFA mission pages). Children 6-12 pay EUR 45; under 6 free. Waivers for school pupils, students, researchers and certain other categories."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (type C) - business",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 105,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Same uniform Schengen type C fee; no separate business-visa tariff."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 105,
+      "validity": "airport transit only",
+      "applies": "nationalities subject to airport transit visa requirement",
+      "official": true,
+      "source_url": "https://www.mfa.gr/missionsabroad/images/visas/missions/Russia/H_VisaFees_en.pdf",
+      "notes": "Same uniform fee as type C under the EU Visa Code."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (visa-exempt travellers)",
+      "amount": 20,
+      "currency": "EUR",
+      "amount_usd": 23,
+      "validity": "3 years or until passport expiry",
+      "applies": "visa-exempt nationalities (once ETIAS becomes operational, expected late 2026)",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en",
+      "notes": "EU-wide, not Greece-specific; fee set at EUR 20 (raised from the originally planned EUR 7). Free for under-18s and over-70s. Not yet in force as of the update date."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.mfa.gr/en/services/schengen-visas/",
+      "notes": "Greece does not operate an e-visa; applications are lodged at consulates or outsourced visa centres."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.mfa.gr/en/services/schengen-visas/",
+      "notes": "No visa-on-arrival regime; visas must be obtained in advance."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARM", "AZE", "BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee under EU visa facilitation agreements (EC Home Affairs)."
+    },
+    {
+      "nationalities": ["CPV"],
+      "kind": "tourist_visa",
+      "amount": 67.5,
+      "currency": "EUR",
+      "note": "Reduced fee under EU-Cabo Verde visa facilitation agreement."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "EU-Russia visa facilitation agreement suspended since September 2022; standard EUR 90 fee applies."
+    },
+    {
+      "nationalities": ["IND", "CHN", "NGA", "PAK", "PHL", "BGD"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "Standard uniform Schengen fee; no reciprocity reduction or surcharge for these nationalities."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Visa-exempt for short stays; will require ETIAS (EUR 20) once operational."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global (many corridors); Global Visa Center World (GVCW) handles Greece in India and some other countries",
+    "service_fee": "approx USD 22-45 equivalent (e.g. AED 88 in UAE, USD 22 in Lebanon, USD 32-45 in USA)",
+    "currency": "varies",
+    "note": "Service/logistics fee varies by centre and country and is charged on top of the EUR 90 visa fee; verify on the local visa.vfsglobal.com Greece page. In India Greece uses GVCW, not VFS.",
+    "source_url": "https://visa.vfsglobal.com/jor/en/grc/news/schengen-visa-fees"
+  },
+  "sources": [
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+    "https://home-affairs.ec.europa.eu/news/schengen-visa-fee-increased-11-june-2024-2024-06-13_en",
+    "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en",
+    "https://www.mfa.gr/en/services/schengen-visas/",
+    "https://www.mfa.gr/missionsabroad/images/visas/missions/Russia/H_VisaFees_en.pdf",
+    "https://visa.vfsglobal.com/jor/en/grc/news/schengen-visa-fees",
+    "https://visa.vfsglobal.com/one-pager/greece/uae/english/"
+  ],
+  "free_visa_notes": "Visa fee waived for children under 6, school pupils/students/postgraduates and accompanying teachers on study trips, researchers, and representatives of non-profit organisations aged 25 or under attending events (EU Visa Code categories)."
+}

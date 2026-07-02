@@ -1,0 +1,89 @@
+{
+  "iso3": "JAM",
+  "name": "Jamaica",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Entry visa (consular, issued at Jamaican mission prior to arrival)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationalities; fee is reciprocity-based, ranging from gratis to US$160 depending on nationality",
+      "official": true,
+      "source_url": "https://www.embassyofjamaica.org/visitors/visafees.pdf",
+      "notes": "No single flat fee: Jamaica charges strictly reciprocal consular visa fees per nationality (e.g. CHN US$60, PAK US$80, PHL US$25, RUS US$100, NGA US$20, USA US$160 for non-tourist purposes; Sri Lanka gratis). An additional US$15 consular fee is payable with every application (some missions quote US$20 administrative fee, e.g. Embassy Tokyo). Commonwealth/CARICOM nationals are visa-free."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Port of Entry (POE) visa",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "single entry; length of stay as granted by immigration officer",
+      "applies": "eligible nationalities only (marked POE in the official schedule, e.g. Georgia, Kyrgyzstan, Russia, Ukraine, UAE, Taiwan, Kosovo, Poland, Slovak Rep., Tajikistan, Turkmenistan, Uzbekistan, Andorra, Armenia, Azerbaijan)",
+      "official": true,
+      "source_url": "https://www.pica.gov.jm/immigration/fees",
+      "notes": "PICA lists 'Port of Entry Visa: US$100.00'. Persons landing without a required prior visa who are not POE-eligible face a US$350.00 fee. PICA advises obtaining visas prior to arrival where possible."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic C5 immigration/customs declaration (enterjamaica.gov.jm)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "single trip",
+      "applies": "all travellers",
+      "official": true,
+      "source_url": "https://www.enterjamaica.gov.jm/",
+      "notes": "Not a visa or paid eTA - a free online C5 arrival declaration operated by PICA. Jamaica has no paid eTA or e-visa system."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (consular)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.embassyofjamaica.org/visitors/visafees.pdf",
+      "notes": "Same reciprocity-based fee schedule as the tourist/entry visa; several tourist-exemption nationalities (e.g. USA beyond tourism, Colombia, Panama, Venezuela for business) still need a visa at their nationality's reciprocal rate plus US$15 consular fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit through Jamaica",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.pica.gov.jm/immigration/entry-visa-requirements",
+      "notes": "No separately published transit visa fee; visa-required nationals transiting landside follow the standard entry-visa schedule. Cruise passengers do not require a visa per MFAFT. Amount set to null as no official transit-specific fee is published."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["IND"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Commonwealth - no visa required for India" },
+    { "nationalities": ["USA"], "kind": "tourist_visa", "amount": 160, "currency": "USD", "note": "US citizens visa-free for tourism up to 180 days; visa required for all other purposes at US$160 (reciprocal), obtained prior to arrival" },
+    { "nationalities": ["GBR"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Commonwealth - no visa required for UK" },
+    { "nationalities": ["CHN"], "kind": "tourist_visa", "amount": 60, "currency": "USD", "note": "Visa-free up to 30 days for tourism; US$60 visa for other purposes" },
+    { "nationalities": ["NGA"], "kind": "tourist_visa", "amount": 20, "currency": "USD", "note": "Commonwealth but visa required; US$20, obtained prior to arrival" },
+    { "nationalities": ["PAK"], "kind": "tourist_visa", "amount": 80, "currency": "USD", "note": "Commonwealth but visa required; US$80, obtained prior to arrival" },
+    { "nationalities": ["PHL"], "kind": "tourist_visa", "amount": 25, "currency": "USD", "note": "Visa required prior to arrival; US$25" },
+    { "nationalities": ["BGD"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Commonwealth - no visa required for Bangladesh" },
+    { "nationalities": ["RUS"], "kind": "tourist_visa", "amount": 100, "currency": "USD", "note": "US$100; visa also obtainable at port of entry" },
+    { "nationalities": ["CAN"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "Commonwealth - no visa required for Canada" }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.pica.gov.jm/immigration/fees",
+    "https://www.embassyofjamaica.org/visitors/visafees.pdf",
+    "https://mfaft.gov.jm/site/visa-information/",
+    "https://www.enterjamaica.gov.jm/",
+    "https://missions.mfaft.gov.jm/embtokyo/tourist-visa/"
+  ],
+  "free_visa_notes": "Jamaica is visa-free for all Commonwealth and CARICOM nationals (incl. IND, GBR, CAN, AUS, BGD, ZAF) and for most of the Americas, EU/EEA and East Asia for tourism (30-180 days depending on nationality). Consular visa fees, where required, are strictly reciprocal per nationality (gratis to US$160) plus a US$15 consular fee. All visitors must complete the free online C5 declaration at enterjamaica.gov.jm."
+}
