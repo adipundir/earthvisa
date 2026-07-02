@@ -120,6 +120,7 @@ export default function PassportExplorer() {
   const [open, setOpen] = useState(false);
   const [credQuery, setCredQuery] = useState("");
   const [credOpen, setCredOpen] = useState(false);
+  const [showCreds, setShowCreds] = useState(false); // advanced "visas you hold" section, collapsed by default
   const [typeOpen, setTypeOpen] = useState<string | null>(null);
   const [tab, setTab] = useState<TabKey>("visa_free");
   const [reachFilter, setReachFilter] = useState("");
@@ -380,17 +381,22 @@ export default function PassportExplorer() {
 
       </div>
 
-      {/* ── Visas & permits - search-based selector ── */}
-      <div className="mt-8">
-        <div className="mb-3">
-          <p className="font-display text-[17px] font-semibold text-ink">
-            Visas &amp; Permits You Hold
-            <span className="ml-2 font-display text-[13px] font-normal italic text-ink-soft">optional</span>
-          </p>
-          <p className="mt-0.5 text-sm text-ink-soft">Holding a US visa, Schengen visa, or Japan residence permit unlocks extra destinations beyond your passport alone</p>
-        </div>
+      {/* ── Visas & permits - collapsed by default so the entry stays simple ── */}
+      <details
+        className="group mt-6"
+        open={showCreds || creds.length > 0}
+        onToggle={(e) => setShowCreds(e.currentTarget.open)}
+      >
+        <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[12px] uppercase tracking-[0.14em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
+          <span aria-hidden className="text-[16px] font-normal leading-none transition group-open:rotate-45">+</span>
+          <span className="group-open:hidden">Add a visa or permit you hold — optional</span>
+          <span className="hidden group-open:inline">Visas &amp; permits you hold</span>
+        </summary>
+        <p className="mt-3 max-w-2xl text-sm text-ink-soft">
+          Holding a US visa, Schengen visa, or Japan residence permit unlocks extra destinations beyond your passport alone.
+        </p>
 
-        <div ref={credBoxRef} className="relative z-20 w-full">
+        <div ref={credBoxRef} className="relative z-20 mt-3 w-full">
           <div className={`flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2.5 transition-all ${credOpen ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]" : "border-line-strong"}`}>
             {/* Selected credential chips */}
             {creds.map((credId) => {
@@ -460,7 +466,7 @@ export default function PassportExplorer() {
             </div>
           )}
         </div>
-      </div>
+      </details>
 
 
       {/* ── Results ── */}

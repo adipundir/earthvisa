@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const { meta } = dataset;
-  const issued = new Date().toISOString().slice(0, 10);
 
   return (
     <main className="min-h-screen">
@@ -39,9 +38,8 @@ export default function Home() {
                 <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
                   What can your passport <span className="italic text-stamp">actually</span> do?
                 </h1>
-                <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
-                  Enter your passport below to instantly see visa-free travel, freedom-of-movement rights,
-                  citizenship-by-investment, golden visas, and fast-track immigration - all from official government sources.
+                <p className="mt-3 max-w-xl text-base leading-relaxed text-ink-soft">
+                  Enter your passport to see visa-free countries, fees and entry rules - all from official government sources.
                 </p>
               </div>
 
@@ -152,38 +150,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── Footer / methodology with machine-readable zone ── */}
-      <footer className="mt-auto border-t border-line bg-paper-2">
-        <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
-          <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink-mute">
-            Methodology &amp; caveats
-          </p>
-          <p className="mt-3 max-w-3xl leading-relaxed text-ink-soft">
-            {meta.note} Each visa-free destination links to the official source that
-            lists it - a{" "}
-            <span className="font-medium text-vfree">green seal</span> marks a
-            government domain, <span className="font-medium text-eta">amber</span>{" "}
-            a non-official one. This ledger is informational only and not legal or
-            immigration advice - always confirm requirements with the destination&apos;s
-            authorities before travelling or applying.
-          </p>
-
-          <p className="mono mt-5 text-[11px] uppercase tracking-[0.18em] text-ink-mute">
-            Data last updated{" "}
-            <span className="font-semibold text-ink-soft">{meta.lastUpdated}</span>
-          </p>
-
-          <div className="mrz mt-8 select-none overflow-hidden rounded-sm border border-line bg-paper-2/70 px-4 py-3 text-xs text-ink-soft">
-            <div>P&lt;EARTHVISA&lt;PASSPORT&lt;&lt;WHAT&lt;CAN&lt;YOURS&lt;DO&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
-            <div>
-              EVH{meta.totalCountries}
-              {String(dataset.cbi.length).padStart(2, "0")}
-              {String(dataset.rbi.length).padStart(3, "0")}&lt;OFFICIAL&lt;SOURCE&lt;FIRST&lt;&lt;&lt;&lt;{issued.replace(/-/g, "")}&lt;&lt;
-            </div>
-          </div>
-        </div>
-      </footer>
 
     </main>
   );

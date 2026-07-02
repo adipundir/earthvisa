@@ -5,16 +5,16 @@
   --font-body: var(--font-plex-sans);
   --font-mono: var(--font-plex-mono);
 
-  /* bright warm canvas (unified, brightened) */
-  --color-paper:   #fbf9f4;
-  --color-paper-2: #ffffff;
-  --color-paper-3: #f3eee4;
+  /* warm creme canvas (matches brand cards) */
+  --color-paper:   #efe9dc;
+  --color-paper-2: #f8f3e9;
+  --color-paper-3: #e6ddca;
   /* ink - higher contrast for readability */
   --color-ink:       #11203a;
-  --color-ink-soft:  #33425c;
-  --color-ink-mute:  #6f6a5c;
-  --color-line:       #e8e1d3;
-  --color-line-strong: #d9cfb9;
+  --color-ink-soft:  #3b4a63;
+  --color-ink-mute:  #7a7263;
+  --color-line:       #e2d9c5;
+  --color-line-strong: #d3c7ac;
   /* stamps / accents */
   --color-stamp:      #b23528;
   --color-stamp-deep: #7c241d;
@@ -27,7 +27,7 @@
 }
 
 :root {
-  --paper: #fbf9f4;
+  --paper: #efe9dc;
   --ink:   #11203a;
 }
 
