@@ -1,0 +1,108 @@
+{
+  "iso3": "PHL",
+  "name": "Philippines",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "9(a) Temporary Visitor's Visa - single entry (consular)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "3 months validity, stay up to 59 days",
+      "applies": "visa-free (E.O. 408) nationals applying at a Philippine embassy/consulate",
+      "official": true,
+      "source_url": "https://philippineembassy-dc.org/visa/",
+      "notes": "USD 40 for non-visa-free nationals; USD 25 for Chinese nationals (see reciprocity_variations). Fees are set in USD by DFA but posts publish local-currency equivalents (e.g. Oslo NOK 360 single / NOK 720 multiple; China CNY 190/228/304 single entry)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "9(a) Temporary Visitor's Visa - multiple entry (consular)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "6 or 12 months",
+      "applies": "all visa-required applicants; availability varies by nationality",
+      "official": true,
+      "source_url": "https://services.vfsglobal.com/one-pager/philippines/china/english/",
+      "notes": "No single USD schedule published; local-currency examples (China): 6-month CNY 456 (E.O. 408 nationals) / CNY 608 (others) / CNY 760 (Chinese); 12-month CNY 684 / CNY 912. Norway: NOK 720 multiple 6-month."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Philippine e-Visa (9(a) Temporary Visitor, evisa.gov.ph)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "single entry (7-12 working days processing) or multiple entry (15-21 working days)",
+      "applies": "eligible nationalities (rollout includes China, India, Taiwan and others)",
+      "official": true,
+      "source_url": "https://evisa.gov.ph/",
+      "notes": "Fee is displayed dynamically per nationality during application on evisa.gov.ph and is not published as a static schedule; could not verify a universal amount on an official source. Reports indicate USD 25 for Chinese nationals, consistent with the consular reciprocity rate."
+    },
+    {
+      "kind": "business_visa",
+      "name": "9(a) Temporary Visitor's Visa - business",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "3 months validity, stay up to 59 days",
+      "applies": "visa-free nationals (same 9(a) category and fee as tourism)",
+      "official": true,
+      "source_url": "https://philippineembassy-dc.org/visa/",
+      "notes": "The Philippines uses the same 9(a) visa for pleasure and business; same fee schedule (USD 30/40/25)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://immigration.gov.ph/",
+      "notes": "The Philippines has no separate transit visa category; transiting passengers who leave the airport need a 9(a) visa if visa-required. No visa-on-arrival or eTA regime exists; visa-required nationals must obtain a visa (consular or e-visa) before travel."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["CHN"],
+      "kind": "tourist_visa",
+      "amount": 25,
+      "currency": "USD",
+      "note": "Reduced 9(a) single-entry fee for Chinese nationals (USD 25 vs USD 30/40); in China: CNY 190 single, CNY 380 3-month multiple, CNY 760 6-month multiple. Since June 2025 Chinese (and Indian) nationals also get 14-day visa-free entry for tourism/business."
+    },
+    {
+      "nationalities": ["IND", "PAK", "NGA", "BGD"],
+      "kind": "tourist_visa",
+      "amount": 40,
+      "currency": "USD",
+      "note": "Non-visa-free (non-E.O. 408) nationals pay USD 40 single entry. India additionally received 14-day visa-free entry (non-extendible) from 8 June 2025 and is e-visa eligible."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CAN", "RUS"],
+      "kind": "tourist_visa",
+      "amount": 30,
+      "currency": "USD",
+      "note": "E.O. 408 visa-free nationals: 30 days visa-free on arrival at no cost; USD 30 if a 9(a) visa for longer stay is applied for at a consulate."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "138",
+    "currency": "CNY",
+    "note": "VFS Global runs Philippine visa application centres in China (service fee CNY 138 per application) and Philippine e-visa/consular service centres in several other countries (e.g. Hong Kong); many VFS 'Philippines' centres elsewhere handle passport renewal only. Service fees vary by centre.",
+    "source_url": "https://services.vfsglobal.com/one-pager/philippines/china/english/"
+  },
+  "sources": [
+    "https://philippineembassy-dc.org/visa/",
+    "https://evisa.gov.ph/",
+    "https://evisa.gov.ph/frequently-ask-questions",
+    "https://services.vfsglobal.com/one-pager/philippines/china/english/",
+    "https://oslope.dfa.gov.ph/temporary-visitors-visa/",
+    "https://immigration.gov.ph/visas/visa-waiver/"
+  ],
+  "free_visa_notes": "Nationals of 157 countries (E.O. 408 list, incl. USA, GBR, CAN, RUS and most of Europe/ASEAN) enter visa-free for 30 days with no fee. China and India nationals get 14-day visa-free entry (from 2025). Visa fees above apply only to visa-required nationals or those needing longer stays."
+}

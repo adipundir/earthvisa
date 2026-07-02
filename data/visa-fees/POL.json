@@ -1,0 +1,112 @@
+{
+  "iso3": "POL",
+  "name": "Poland",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 106,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a Schengen visa",
+      "official": true,
+      "source_url": "https://www.gov.pl/web/ireland/c-type-schengen-visa",
+      "notes": "Standard Schengen fee. Children 6-12 pay EUR 45; children under 6, spouses/dependants of EU citizens, students on educational trips, researchers and diplomatic passport holders are exempt. USD 106 is the published equivalent at Poland's US consulates. Appeal against refusal: EUR 80 (Ireland post)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C) - business purpose",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 106,
+      "validity": "up to 90 days in any 180-day period",
+      "applies": "all nationalities requiring a Schengen visa",
+      "official": true,
+      "source_url": "https://www.gov.pl/web/usa-en/c-type-schengen-visa",
+      "notes": "Same C-visa fee regardless of purpose (tourism, business, visit)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 106,
+      "validity": "airport transit only",
+      "applies": "nationalities on the Schengen airport-transit-visa list",
+      "official": true,
+      "source_url": "https://www.gov.pl/web/ireland/c-type-schengen-visa",
+      "notes": "Airport transit visas carry the same fee schedule as C visas; reduced EUR 35 rate applies to visa-facilitation nationalities."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.gov.pl/web/diplomacy/visas",
+      "notes": "Poland does not issue e-visas. Applications are lodged at consulates via the e-Konsulat registration system or through outsourced VFS centres; the sticker visa itself is not electronic."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.gov.pl/web/diplomacy/visas",
+      "notes": "No visa-on-arrival regime; Schengen rules require visas to be obtained in advance (border visas only in exceptional humanitarian cases)."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (EU-wide, not yet in force)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-exempt nationalities (future)",
+      "official": true,
+      "source_url": "https://travel-europe.europa.eu/etias_en",
+      "notes": "ETIAS will apply to visa-exempt travellers to Poland once operational (announced fee EUR 20); not yet in force as of 2026-07-02, so no fee is currently charged."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["UKR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "EU visa-facilitation rate for Ukrainian nationals (Schengen C and airport transit); Polish national D visa free for Ukrainians."
+    },
+    {
+      "nationalities": ["ALB", "BIH", "MNE", "MDA", "MKD", "SRB"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "EU visa-facilitation rate for holders of non-biometric passports of these countries (biometric passport holders are visa-exempt for short stays)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1026",
+    "currency": "INR",
+    "note": "Published India service fee INR 1,026 incl. GST, paid online at appointment booking; optional courier INR 960. Service fees vary by country/centre - VFS Global operates Poland visa centres in India, China, Nigeria, Philippines, Bangladesh, Canada, UK and others with locally published fees.",
+    "source_url": "https://www.vfsglobal.com/one-pager/poland/india/english/index.html"
+  },
+  "sources": [
+    "https://www.gov.pl/web/ireland/c-type-schengen-visa",
+    "https://www.gov.pl/web/usa-en/c-type-schengen-visa",
+    "https://www.gov.pl/web/diplomacy/visas",
+    "https://www.vfsglobal.com/one-pager/poland/india/english/index.html",
+    "https://travel-europe.europa.eu/etias_en"
+  ],
+  "free_visa_notes": "Not free in general, but EU/EEA/Swiss citizens and ~60 visa-waiver nationalities (USA, GBR, CAN, JPN, etc.) enter Poland visa-free for short stays. Fee exemptions: children under 6, family members of EU citizens, students/researchers on qualifying trips, diplomatic passports; Polish national D visa is free for Ukrainian nationals. Note: from India the national (D) visa fee is published as EUR 200 / INR 21,120 (long-term category, outside this record's scope)."
+}

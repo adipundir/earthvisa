@@ -1,0 +1,99 @@
+{
+  "iso3": "NGA",
+  "name": "Nigeria",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (Short Visit, single entry - tourism/business/visiting, F4A/F5A/F6A)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "90 days from issuance; stay up to 30 days (tourism) / 90 days, single entry",
+      "applies": "eligible nationalities (177 countries; ECOWAS citizens visa-free)",
+      "official": true,
+      "source_url": "https://evisa.immigration.gov.ng/",
+      "notes": "Launched 1 May 2025 under Nigeria Visa Policy 2025, replacing visa on arrival. Fee is reciprocity-based and varies by nationality; the exact amount is computed and paid online on the NIS portal during application. See reciprocity_variations for the published per-country schedule (NIS reciprocity table). Third-party guides report e.g. USD 160 for US nationals, consistent with the NIS table."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy short-visit visa (single entry) - reciprocity schedule",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "typically 90 days validity, single entry",
+      "applies": "nationals of ~25 countries not eligible for e-visa; fee varies by nationality",
+      "official": true,
+      "source_url": "https://immigration.gov.ng/visa-fees/",
+      "notes": "Nigeria publishes a per-country reciprocity fee table (Embassy VISA Fees, immigration.gov.ng/visa-fees; archived copy via cscs.ng dated 19/06/2019, still the last published schedule). Single-entry fees range from gratis (e.g. ECOWAS, Singapore, Barbados) to USD 253 (India, Bangladesh). No single flat fee exists; see reciprocity_variations."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (single entry F4A / multiple entry F4B)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "single entry 90 days; multiple-entry 1/2/5-year options for some nationalities",
+      "applies": "all non-exempt nationalities; fee varies by nationality (reciprocity)",
+      "official": true,
+      "source_url": "https://immigration.gov.ng/info-center/business-single-entry-visa-f4a/",
+      "notes": "Same reciprocity schedule as short-visit visas; multiple-entry fees are higher (e.g. UK: USD 472/1yr, USD 944/2yr, USD 2360/5yr; Canada USD 150; Russia USD 200 per the NIS table)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (F3B)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "short transit stay",
+      "applies": "all non-exempt nationalities",
+      "official": true,
+      "source_url": "https://immigration.gov.ng/info-center/",
+      "notes": "Applied for via the e-visa portal; fee is nationality-dependent and shown at payment on the NIS portal. No flat published amount on an official static page; third-party sources cite ~USD 80 but this is unverified."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (discontinued)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none - discontinued",
+      "official": true,
+      "source_url": "https://evisa.immigration.gov.ng/",
+      "notes": "VoA was phased out from 1 May 2025 and replaced by the e-Visa under Nigeria Visa Policy 2025. Before discontinuation the VoA biometric fee was USD 170 (waived for US nationals from March 2023, per Fragomen)."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["IND"], "kind": "tourist_visa", "amount": 253, "currency": "USD", "note": "single AND multiple entry USD 253 (NIS Embassy Visa Fees reciprocity table)" },
+    { "nationalities": ["USA"], "kind": "tourist_visa", "amount": 160, "currency": "USD", "note": "single entry and multiple entry (1-2 yr) all USD 160; no 5-year option" },
+    { "nationalities": ["GBR"], "kind": "tourist_visa", "amount": 144, "currency": "USD", "note": "single entry USD 144; multiple entry USD 472 (1yr) / 944 (2yr) / 2360 (5yr)" },
+    { "nationalities": ["CHN"], "kind": "tourist_visa", "amount": 64, "currency": "USD", "note": "single and multiple entry USD 64" },
+    { "nationalities": ["NGA"], "kind": "tourist_visa", "amount": 0, "currency": "USD", "note": "not applicable - Nigerian citizens" },
+    { "nationalities": ["PAK"], "kind": "tourist_visa", "amount": 68, "currency": "USD", "note": "single entry USD 68; no multiple entry" },
+    { "nationalities": ["PHL"], "kind": "tourist_visa", "amount": 39, "currency": "USD", "note": "single entry USD 39; multiple entry USD 78" },
+    { "nationalities": ["BGD"], "kind": "tourist_visa", "amount": 253, "currency": "USD", "note": "single and multiple entry USD 253" },
+    { "nationalities": ["RUS"], "kind": "tourist_visa", "amount": 84, "currency": "USD", "note": "single entry USD 84; multiple entry USD 200" },
+    { "nationalities": ["CAN"], "kind": "tourist_visa", "amount": 75, "currency": "USD", "note": "single entry USD 75; multiple entry USD 150" }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "USD 96.30 (USA centres; USD 60 for US citizens); CAD 139 (Canada; CAD 79.50 for US citizens); EUR 91.45 (Germany)",
+    "currency": "varies",
+    "note": "Nigeria visa applications route through VFS Global in at least USA, Canada, Germany and the Philippines (per our data/vfs corridors). Mandatory service fee paid at the centre, on top of the visa fee paid online on the NIS portal; amounts vary by centre. In the UK/US some routes use OIS Services instead.",
+    "source_url": "https://visa.vfsglobal.com/usa/en/nga/"
+  },
+  "sources": [
+    "https://immigration.gov.ng/visa-fees/",
+    "https://www.cscs.ng/wp-content/uploads/2025/04/Visa-Fees-%E2%80%93-Nigeria-Immigration-Service.pdf",
+    "https://evisa.immigration.gov.ng/",
+    "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+    "https://immigration.gov.ng/info-center/business-single-entry-visa-f4a/",
+    "https://www.ibanet.org/nigeria-visa-policy-2025",
+    "https://visa.vfsglobal.com/usa/en/nga/",
+    "https://visa.vfsglobal.com/can/en/nga/apply-visa"
+  ],
+  "free_visa_notes": "ECOWAS citizens (15 West African states) are visa-free. Several other nationalities are gratis on the reciprocity table (e.g. Afghanistan, Barbados, Liberia, Macedonia, Sierra Leone, Singapore, Trinidad and Tobago)."
+}

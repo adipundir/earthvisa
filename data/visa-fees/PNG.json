@@ -1,0 +1,94 @@
+{
+  "iso3": "PNG",
+  "name": "Papua New Guinea",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "eVisa - Visitor (Tourist, Own Itinerary or Tour Package)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Single entry, stay of up to 60 days from date of arrival; must enter within 60 days of issue",
+      "applies": "all (all foreign visitors except AUS-style visa-free do not exist; visa mandatory for all nationalities)",
+      "official": true,
+      "source_url": "https://ica.gov.pg/uploads/media/post_file_3195072-visa-information-booklet-2025.pdf",
+      "notes": "Base visa fee for the Tourist visitor classes is Nil; the USD 50 charge is the eVisa processing fee for applications lodged via evisa.ica.gov.pg. All migration fees are charged in USD per National Gazette No.231 (Migration Fees Amendment 2019)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa (paper application at PNG mission)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "Single entry, up to 60 days from date of arrival",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://ica.gov.pg/uploads/media/post_file_3028961-new-msf-fees-rev6.pdf",
+      "notes": "ICA Migration Service Fee schedule lists the base fee for Tourist (Tour Package), Tourist (Own Itinerary) and Visiting Relative classes as Nil. Extension fee USD 150; late extension USD 700. Paper applications lodged with payment receipt from ICA online gateway."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Easy Visitor Permit (EVP) 30/60 days - visa on arrival",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "Single entry; 30 days (EVP30) or 60 days (EVP60) from date of arrival",
+      "applies": "eligible nationalities only: incl. Canada, UK, Japan, Singapore, Indonesia, Israel, UAE, Fiji, Solomon Islands, Vanuatu, other Pacific states, China (diplomatic/official/service passports, plus ordinary-passport tourists in registered tour groups). Mainland New Zealand, France and USA are NOT eligible for VOA.",
+      "official": true,
+      "source_url": "https://ica.gov.pg/visa-information/visa-on-arrival",
+      "notes": "Base fee Nil on the ICA fee schedule. If the EVP is lodged online in advance via the eVisa portal, the USD 50 eVisa processing fee applies."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Short Term Single Entry",
+      "amount": 190,
+      "currency": "USD",
+      "amount_usd": 190,
+      "validity": "Single entry, stay up to 30 days; not extendable",
+      "applies": "all (eVisa available to eligible nationalities; +USD 50 eVisa fee online)",
+      "official": true,
+      "source_url": "https://ica.gov.pg/uploads/media/post_file_3195072-visa-information-booklet-2025.pdf",
+      "notes": "Amount read from ICA's official fee PDF whose table extraction is partially garbled; row alignment strongly indicates USD 190 for single entry. Verify at https://ica.gov.pg/visa-information/migration-service-fees before relying on it."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Short Term Multiple Entry",
+      "amount": 350,
+      "currency": "USD",
+      "amount_usd": 350,
+      "validity": "Multiple entries within a 12-month period",
+      "applies": "all nationalities (available online; +USD 50 eVisa fee)",
+      "official": true,
+      "source_url": "https://ica.gov.pg/uploads/media/post_file_3195072-visa-information-booklet-2025.pdf",
+      "notes": "Amount read from ICA's official fee PDF (table extraction partially garbled; USD 350 aligns with the multiple-entry row). Verify against the Migration Service Fee schedule."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://ica.gov.pg/uploads/media/post_file_3195072-visa-information-booklet-2025.pdf",
+      "notes": "PNG has no separate transit visa. Transit under 7 hours requires no visa (fee not applicable). Transit over 7 hours requires a visitor visa (USD 50 eVisa fee applies)."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced visa centre (VFS Global/TLScontact/BLS). Applications go direct via the official eVisa portal evisa.ica.gov.pg or paper lodgement at PNG missions with ICA online-gateway payment receipt."
+  },
+  "sources": [
+    "https://ica.gov.pg/uploads/media/post_file_3195072-visa-information-booklet-2025.pdf",
+    "https://ica.gov.pg/uploads/media/post_file_3028961-new-msf-fees-rev6.pdf",
+    "https://ica.gov.pg/visa-information/visa-on-arrival",
+    "https://ica.gov.pg/visa/visit/visitor",
+    "https://ica.gov.pg/visa-information/migration-service-fees",
+    "https://evisa.ica.gov.pg/evisa/account/Apply"
+  ],
+  "free_visa_notes": "All foreign visitors need a visa (no general visa-free regime), but the base fee for tourist visitor classes and the visa-on-arrival Easy Visitor Permit is Nil - the only tourist cost is the USD 50 eVisa processing fee when applying online. Fees are set in USD per National Gazette No.231 (2019 amendment). No fee reciprocity schedule by nationality exists; nationality differences affect VOA eligibility only."
+}

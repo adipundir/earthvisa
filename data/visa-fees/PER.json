@@ -1,0 +1,57 @@
+{
+  "iso3": "PER",
+  "name": "Peru",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa (Visa de Turista, consulate-issued)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "Up to 183 days total stay within 12 months of issue; no extension",
+      "applies": "nationalities requiring a visa (most Americas/Europe/many Asian nationals are visa-exempt)",
+      "official": true,
+      "source_url": "https://www.gob.pe/36240-solicitar-visa-de-turista-para-ingresar-al-peru",
+      "notes": "Published as S/ 30.00 'soles consulares'; 1 sol consular ~ USD 1 (paid in local currency per each consulate's tarifario). Paid in cash at the consulate only if the visa is approved. Application can be started online via visasonline.rree.gob.pe but issuance and payment are at the consulate."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (Visa de Negocios)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "Up to 183 days total stay within 12 months of issue; no extension",
+      "applies": "nationalities requiring a visa; mandatory for anyone signing a contract in Peru regardless of visa exemption",
+      "official": true,
+      "source_url": "https://www.gob.pe/36239-solicitar-visa-de-negocio-para-ingresar-al-peru?child=45639",
+      "notes": "S/ 30.00 soles consulares (~USD 30) per the gob.pe tramite page (Buenos Aires consulate procedure). Note: the older consular tariff PDF (consulado.pe Tarifa_Consular.pdf, item 67) lists temporary categories (negocios, artista, estudiante, transeunte, trabajador) at S/C 50.00, so some posts may charge up to ~USD 50; the current gob.pe pages state 30."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (Visa de Transeunte)",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "2 calendar days from entry, extendable up to 15 days",
+      "applies": "nationalities not exempt under Decreto Supremo No 004-2025-RE (mandatory since 1 Feb 2025)",
+      "official": true,
+      "source_url": "https://www.gob.pe/86323-solicitar-visa-de-transito-para-ingresar-al-peru?child=114569",
+      "notes": "25.00 soles consulares (EUR 25.00 at the Havana consulate's tarifario shown on the gob.pe procedure page). Charged in local-currency equivalent per each consulate's tarifario. Apply at least 30 days before travel."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No outsourced visa centre (VFS/TLS/BLS); applications go directly to Peruvian consulates, with an online pre-application at visasonline.rree.gob.pe."
+  },
+  "sources": [
+    "https://www.gob.pe/36240-solicitar-visa-de-turista-para-ingresar-al-peru",
+    "https://www.gob.pe/36239-solicitar-visa-de-negocio-para-ingresar-al-peru?child=45639",
+    "https://www.gob.pe/86323-solicitar-visa-de-transito-para-ingresar-al-peru?child=114569",
+    "https://www.consulado.pe/Documents/Tarifa_Consular.pdf",
+    "https://visasonline.rree.gob.pe/"
+  ],
+  "free_visa_notes": "Most nationalities (Americas, EU/Schengen, UK, USA, Canada, Australia, Japan, South Korea, and many others) enter Peru visa-free for tourism up to 183 days. No e-visa fee, no visa on arrival, and no eTA exist; visas for non-exempt nationalities are issued by consulates. Fees are quoted in 'soles consulares' where 1 sol consular is approximately USD 1, collected in local currency per each consulate's tarifario. No nationality-based reciprocity fee schedule is published."
+}

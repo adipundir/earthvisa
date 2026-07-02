@@ -1,0 +1,44 @@
+{
+  "iso3": "PSE",
+  "name": "Palestine",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "eta",
+      "name": "ETA-IL (Israel Electronic Travel Authorization, required to reach the West Bank via Israeli-controlled borders)",
+      "amount": 25,
+      "currency": "ILS",
+      "amount_usd": 7,
+      "validity": "Up to 2 years or passport expiry; stays up to 90 days per entry",
+      "applies": "Nationals of Israel's visa-exempt countries (USA, GBR, CAN, EU, etc.)",
+      "official": true,
+      "source_url": "https://israel-entry.piba.gov.il/",
+      "notes": "Palestine issues no entry visas of its own; all access to the West Bank (Ben Gurion Airport, Allenby/King Hussein Bridge) is controlled by Israel. Mandatory since 1 Jan 2025; fee non-refundable, paid online by card."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Israel B/2 visitor visa (consular sticker visa, required for non-visa-exempt nationalities to transit Israel into the West Bank)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": "Up to 3 months from date of issue",
+      "applies": "Nationalities not visa-exempt for Israel (incl. IND, CHN, NGA, PAK, PHL, BGD, RUS)",
+      "official": true,
+      "source_url": "https://embassies.gov.il/newyork/en/services/foreign-citizens/entry-visa-visiting-or-touring-israel",
+      "notes": "Fee is set per Israeli mission in local currency (e.g. CAD 33 at the Montreal consulate); no single global amount published, so amount left null. Verify with the local Israeli embassy fee chart."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "The Palestinian Authority operates no visa system or outsourced application centres. Israeli B/2 visas are lodged directly with Israeli embassies/consulates (some missions use local appointment providers, but no published VFS/TLS/BLS fee applies to Palestine)."
+  },
+  "sources": [
+    "https://israel-entry.piba.gov.il/",
+    "https://embassies.gov.il/singapore/en/announcements/digital-entry-visa-tourists-electronic-travel-authorization-eta-il",
+    "https://embassies.gov.il/newyork/en/services/foreign-citizens/entry-visa-visiting-or-touring-israel",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/IsraeltheWestBankandGaza.html"
+  ],
+  "free_visa_notes": "Palestine itself charges no visa fee and issues no entry visas: border control for the West Bank is exercised by Israel (Gaza access is separately controlled and currently closed to tourism). Travellers pay Israel's fees instead - ETA-IL NIS 25 for visa-exempt nationals, or an Israeli B/2 consular visa (fee varies by mission) for others. Entry via Allenby Bridge from Jordan also runs under Israeli control."
+}

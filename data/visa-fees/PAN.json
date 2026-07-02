@@ -1,0 +1,55 @@
+{
+  "iso3": "PAN",
+  "name": "Panama",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Stamped tourist visa (visa estampada de turista)",
+      "amount": 50,
+      "currency": "PAB",
+      "amount_usd": 50,
+      "validity": "Up to 90 days stay; issued for a term no greater than 90 days",
+      "applies": "Nationalities requiring a stamped visa",
+      "official": true,
+      "source_url": "https://www.panamadigital.gob.pa/InformacionTramite/solicitud-de-visa-de-turista",
+      "notes": "B/.50.00 migration-services fee paid at presentation to the Servicio Nacional de Migracion (balboa pegged 1:1 to USD). Applicant must also show economic solvency of at least B/.500.00. Applications now routed via the 'Migracion en linea' portal on migracion.gob.pa."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Authorized visa (visa autorizada) via consulate",
+      "amount": 140,
+      "currency": "USD",
+      "amount_usd": 140,
+      "validity": null,
+      "applies": "Nationalities on Panama's authorized-visa (restricted) list",
+      "official": true,
+      "source_url": "https://www.embassyofpanama.org/visas-1",
+      "notes": "Embassy of Panama in Washington DC requires two money orders: USD 50.00 plus USD 90.00 payable to the Consulate of Panama. Processing up to 60 business days (stamped visa up to 30 business days). Amounts may vary by consulate."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "PAB",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "Nationalities requiring a visa who transit through Panama",
+      "official": true,
+      "source_url": "https://www.migracion.gob.pa/wp-content/uploads/15-FORMULARIO_DE_VISA_DE_TRANSITO.pdf",
+      "notes": "Transit visa application form exists on migracion.gob.pa, but no fee amount could be verified on an official source; commonly processed with the same B/.50.00 migration-services fee, unverified."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.panamadigital.gob.pa/InformacionTramite/solicitud-de-visa-de-turista",
+    "https://www.migracion.gob.pa/wp-content/uploads/01.REQUISITOS-PARA-SOLICITAR-VISA-TURISTA.pdf",
+    "https://www.embassyofpanama.org/visas-1",
+    "https://www.migracion.gob.pa/wp-content/uploads/15-FORMULARIO_DE_VISA_DE_TRANSITO.pdf"
+  ],
+  "free_visa_notes": "Most nationalities (including USA, GBR, CAN, EU and many others) enter Panama visa-free for up to 90 or 180 days with no fee. No visa on arrival and no eTA scheme exists. Panama is not a Schengen member. Visa applications are handled directly by consulates and the Servicio Nacional de Migracion online portal; no outsourced centre (VFS/TLS/BLS) is used."
+}

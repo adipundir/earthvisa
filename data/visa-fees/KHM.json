@@ -1,0 +1,92 @@
+{
+  "iso3": "KHM",
+  "name": "Cambodia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Visa Tourist (Type T)",
+      "amount": 36,
+      "currency": "USD",
+      "amount_usd": 36,
+      "validity": "Valid 3 months from issue; single entry, stay up to 30 days",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://www.evisa.gov.kh/",
+      "notes": "USD 30 visa fee + USD 6 processing fee, per the official evisa.gov.kh portal FAQ. Apply only via evisa.gov.kh; many copycat sites charge more."
+    },
+    {
+      "kind": "business_visa",
+      "name": "e-Visa Business/Ordinary (Type E)",
+      "amount": 35,
+      "currency": "USD",
+      "amount_usd": 35,
+      "validity": "Valid 3 months from issue; single entry, stay up to 30 days (extendable in-country)",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://www.evisa.gov.kh/information/visa_type/4",
+      "notes": "USD 35 visa fee per official portal; the USD 6 e-visa processing fee applies when issued online."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival - Tourist (T)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "Single entry, 30-day stay",
+      "applies": "most nationalities (ASEAN nationals largely visa-exempt)",
+      "official": true,
+      "source_url": "https://www.evisa.gov.kh/information/visa_type/4",
+      "notes": "Official published Type T visa fee is USD 30; visa on arrival is paid in cash (USD) at international airports and major land borders without the online processing fee."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival - Business/Ordinary (E)",
+      "amount": 35,
+      "currency": "USD",
+      "amount_usd": 35,
+      "validity": "Single entry, 30-day stay (extendable in-country)",
+      "applies": "most nationalities",
+      "official": true,
+      "source_url": "https://www.evisa.gov.kh/information/visa_type/4",
+      "notes": "Official published Type E visa fee is USD 35, paid in cash at the port of entry."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy tourist visa (Type T) - Berlin embassy example",
+      "amount": 40,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "Single entry, 30-day stay",
+      "applies": "all (applying via Royal Embassy in Berlin)",
+      "official": true,
+      "source_url": "https://recberlin.mfaic.gov.kh/en-us/how-to-get-a-cambodian-visa",
+      "notes": "Embassy-issued sticker visa fees are set in local currency and vary by mission; Berlin charges EUR 40 tourist / EUR 45 business."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "rarely used; most transit travellers use tourist visa or airside transit",
+      "official": false,
+      "source_url": "https://www.evisa.gov.kh/",
+      "notes": "No transit-visa fee is published on the official e-visa portal; Cambodia does not operate a distinct transit-visa scheme in practice. Amount left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.evisa.gov.kh/",
+    "https://www.evisa.gov.kh/information/visa_type/4",
+    "https://www.evisa.gov.kh/faq",
+    "https://recberlin.mfaic.gov.kh/en-us/how-to-get-a-cambodian-visa",
+    "https://www.mfaic.gov.kh/Page/2025-03-26-Visa-Exemption-List-of-Visa-Exemption-between-Cambodia-and-other-Countries-15-22-56"
+  ],
+  "free_visa_notes": "Cambodia charges flat USD fees regardless of nationality (no reciprocity schedule). Nationals of ASEAN member states (and a few bilateral-agreement countries) are visa-exempt for short stays per the MFAIC visa-exemption list; everyone else pays the fees above. No eTA scheme and no outsourced visa centre (VFS/TLS/BLS) - applications go direct via evisa.gov.kh, on arrival, or at embassies."
+}

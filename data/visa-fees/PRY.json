@@ -1,0 +1,74 @@
+{
+  "iso3": "PRY",
+  "name": "Paraguay",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Consular visa (non-resident), single entry",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": "single entry, stay up to 90 days",
+      "applies": "all nationalities requiring a visa (except reciprocity-schedule countries)",
+      "official": true,
+      "source_url": "https://www2.mre.gov.py/congralpar-buenos-aires/index.php/tramites-y-servicios/visas",
+      "notes": "Payable in USD or local-currency equivalent at the consular rate. Applications for the non-resident category (tourist/technical) are initiated via the MRE online portal (visasenlinea); nationals of certain African/Asian countries need prior ministerial authorisation (~1 month processing)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Consular visa (non-resident), multiple entry",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "multiple entries",
+      "applies": "all nationalities requiring a visa (except reciprocity-schedule countries)",
+      "official": true,
+      "source_url": "https://www2.mre.gov.py/congralpar-buenos-aires/index.php/tramites-y-servicios/visas",
+      "notes": "Same fee applies to business travellers under the non-resident category; Paraguay has no separately priced business visa on published consular schedules."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Visa en Línea (MRE online visa application)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "non-resident category, stay up to 90 days",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://www.mre.gov.py/visasenlinea/",
+      "notes": "The online portal is the digital channel for the standard non-resident consular visa, not a separately priced e-visa product; the fee shown at payment matches the consular schedule (USD 65 single / USD 100 multiple). Portal itself does not publish a fee table."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa de arribo (Silvio Pettirossi Airport, Asunción)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "multiple entries (validity varies by nationality)",
+      "applies": "AUS, CAN, USA, NZL, TWN (also QAT, ARE, OMN at USD 100 per Washington consulate)",
+      "official": true,
+      "source_url": "https://www2.mre.gov.py/consulpar-washington/index.php/en/consular-services/visas",
+      "notes": "Fee depends on nationality (see reciprocity_variations): AUS 135, CAN 150, USA 160, NZL 140, TWN 100, QAT/ARE/OMN 100 USD. Cash USD only at the airport. Note: US, Canadian, Australian and NZ citizens are visa-exempt for tourism (up to 90 days) until 13 Aug 2027 under Law 7314/2024, so the fee applies only to non-tourism purposes for them during the waiver."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["USA"], "kind": "visa_on_arrival", "amount": 160, "currency": "USD", "note": "Multiple entries, valid 10 years; same fee at consulates. Visa-exempt for tourism until 13 Aug 2027 (Law 7314/2024)." },
+    { "nationalities": ["CAN"], "kind": "visa_on_arrival", "amount": 150, "currency": "USD", "note": "Multiple entries until passport expiry; visa-exempt for tourism until 13 Aug 2027." },
+    { "nationalities": ["AUS"], "kind": "visa_on_arrival", "amount": 135, "currency": "USD", "note": "Multiple entries until passport expiry; visa-exempt for tourism until 13 Aug 2027." },
+    { "nationalities": ["NZL"], "kind": "visa_on_arrival", "amount": 140, "currency": "USD", "note": "Multiple entries until passport expiry; visa-exempt for tourism until 13 Aug 2027." },
+    { "nationalities": ["TWN"], "kind": "visa_on_arrival", "amount": 100, "currency": "USD", "note": "Multiple entries until passport expiry." },
+    { "nationalities": ["QAT", "ARE", "OMN"], "kind": "visa_on_arrival", "amount": 100, "currency": "USD", "note": "Listed by Paraguay Consulate in Washington DC." },
+    { "nationalities": ["IND", "CHN", "NGA", "PAK", "PHL", "BGD", "RUS"], "kind": "tourist_visa", "amount": 65, "currency": "USD", "note": "Standard consular schedule applies (USD 65 single / USD 100 multiple). Nationals of certain African and Asian countries require prior ministerial authorisation, extending processing to ~1 month. RUS is visa-free for short tourist stays under bilateral agreement (verify per corridor data)." }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www2.mre.gov.py/congralpar-buenos-aires/index.php/tramites-y-servicios/visas",
+    "https://www2.mre.gov.py/consulpar-washington/index.php/en/consular-services/visas",
+    "https://www2.mre.gov.py/ny/index.php/tramites-y-servicios/visas",
+    "https://www.mre.gov.py/visasenlinea/",
+    "https://www.mre.gov.py/index.php/tramites/visas"
+  ],
+  "free_visa_notes": "Most of the Americas, the EU/Schengen area, and MERCOSUR nationals enter Paraguay visa-free. US, Canadian, Australian and New Zealand citizens are temporarily visa-exempt for tourism stays up to 90 days until 13 August 2027 (Law 7314/2024); outside that waiver they fall under the reciprocity fee schedule."
+}

@@ -1,0 +1,41 @@
+{
+  "iso3": "NIC",
+  "name": "Nicaragua",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Tourist card (INTUR entry fee, paid on arrival)",
+      "amount": 10,
+      "currency": "USD",
+      "amount_usd": 10,
+      "validity": "Up to 90 days stay",
+      "applies": "all (visa-exempt Category A nationals and visa holders; ESA/GTM/HND CA-4 citizens exempt)",
+      "official": true,
+      "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Nicaragua.html",
+      "notes": "USD 10 cash collected by Migracion on behalf of INTUR at all air/land/sea entry points; exact change recommended. Land borders may add a ~USD 3 municipal/border services fee (not verified on an official source)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visa consultada (Category C consulted entry visa)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "Must be used within 6 months of authorisation; stay up to 90 days",
+      "applies": "visa-required (Category C) nationalities; list expanded substantially from 16 Feb 2026",
+      "official": true,
+      "source_url": "https://embamex.sre.gob.mx/nicaragua/index.php/comunicadosnic/274-visamexicanos2026",
+      "notes": "Nicaragua's DGME page (mint.gob.ni) lists requirements but no fee. Per the Mexican embassy's official communique on Nicaragua's Feb 2026 rules, the consulted visa 'no tendra costo alguno' (free). Applied via solicitudes@mint.gob.ni or the online portal tramitesconsulares.mint.gob.ni (live 21 Feb 2026); visa stamped at a Nicaraguan embassy/consulate. Nicaragua has no e-visa, eTA, or standalone business/transit visa fee schedule; the former Category B (visa on arrival without consultation) was eliminated in the Feb 2026 reform."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.mint.gob.ni/migracion/tramites/visa-de-ingreso-al-pais/",
+    "https://embamex.sre.gob.mx/nicaragua/index.php/comunicadosnic/274-visamexicanos2026",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Nicaragua.html",
+    "https://ni.usembassy.gov/immigration-laws/"
+  ],
+  "free_visa_notes": "Most nationalities (Category A) need no visa: only the USD 10 tourist card on arrival. Visa-required (Category C) nationals need a pre-authorised 'visa consultada', which is issued free of charge since the Feb 2026 reform. No visa application is routed through VFS/TLScontact/BLS."
+}

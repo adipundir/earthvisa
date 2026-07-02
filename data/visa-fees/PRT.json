@@ -1,0 +1,105 @@
+{
+  "iso3": "PRT",
+  "name": "Portugal",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 104,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/visa-fees",
+      "notes": "Common Schengen fee. Children 6-12 pay EUR 45; under 6 free. Payable in EUR or local currency at ECB rates. VFS USA lists USD 104 effective Apr 2026. Fee waived for students/teachers on study trips, researchers, non-profit reps under 25, and family members of EU/EEA/CH/UK nationals."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (Type C) - business purpose",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 104,
+      "validity": "Up to 90 days in any 180-day period",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/visa-fees",
+      "notes": "Same Type C visa and fee as tourism; purpose is stated at application."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 104,
+      "validity": "Airport transit only",
+      "applies": "nationalities on the airport-transit-visa list",
+      "official": true,
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/visa-fees",
+      "notes": "Standard Schengen visa fee applies to airport transit visas."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen",
+      "notes": "Portugal does not operate a tourist e-visa; applications are lodged at consulates/VFS. (EU ETIAS, EUR 20, is planned for visa-exempt travellers but not yet in force as of 2026-07-02.)"
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen",
+      "notes": "Portugal does not issue visas on arrival except rare border visas in exceptional circumstances under the Schengen Visa Code."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BIH", "GEO", "MKD", "MDA", "MNE", "SRB", "UKR", "BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "EU visa facilitation agreement rate (Belarus partial). Per Portuguese MFA visa-fees page."
+    },
+    {
+      "nationalities": ["CPV"],
+      "kind": "tourist_visa",
+      "amount": 67.75,
+      "currency": "EUR",
+      "note": "Cabo Verde facilitation agreement: adults EUR 67.75, children 12-18 EUR 33.75, under 12 free."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 90,
+      "currency": "EUR",
+      "note": "EU-Russia visa facilitation agreement suspended since 2022; standard EUR 90 fee applies."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "USD 43.91 (USA centres); MFA caps external-provider service fee at EUR 45, up to EUR 80-120 where Portugal has no consulate",
+    "currency": "varies",
+    "note": "Service fee varies by centre/country. Verified published figure: US $43.91 incl. VAT per application (VFS Portugal-USA one-pager). India and other centres publish fees dynamically on booking portals.",
+    "source_url": "https://www.vfsglobal.com/one-pager/portugal/usa/english/"
+  },
+  "sources": [
+    "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/visa-fees",
+    "https://www.vfsglobal.com/one-pager/portugal/usa/english/",
+    "https://www2.gov.pt/en/servicos/pedir-um-visto-schengen-de-curta-duracao"
+  ],
+  "free_visa_notes": "Visa-free for EU/EEA/Schengen nationals and ~60 visa-exempt nationalities (USA, GBR, CAN, JPN, etc.) for stays up to 90/180 days. Visa fee waived for children under 6, students/teachers on study trips, researchers, and family members of EU/EEA/CH/UK citizens."
+}

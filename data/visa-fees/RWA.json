@@ -1,0 +1,118 @@
+{
+  "iso3": "RWA",
+  "name": "Rwanda",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "V-1 Visitor's visa (holiday), single entry",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30 days",
+      "applies": "all (free for nationals of AU, Commonwealth and La Francophonie member states)",
+      "official": true,
+      "source_url": "https://www.migration.gov.rw/visa/visitors-visa",
+      "notes": "Same fee whether obtained as e-visa (Irembo), on arrival, or at a mission."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "V-1 Visitor's visa, multiple entry",
+      "amount": 70,
+      "currency": "USD",
+      "amount_usd": 70,
+      "validity": "90 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.migration.gov.rw/visa/visitors-visa",
+      "notes": ""
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (all nationalities since 1 Jan 2018)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30 days (single entry); USD 70 multiple entry",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+      "notes": "Payable in USD or by card at Kigali airport; AU/Commonwealth/Francophonie nationals free 30 days; EAC citizens get a free 6-month entry pass."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa via Irembo portal (V-1)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30 days single / 90 days multiple (USD 70)",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://irembo.gov.rw",
+      "notes": "Optional pre-arrival application; same fee schedule as visa on arrival."
+    },
+    {
+      "kind": "e_visa",
+      "name": "V-11 East African Tourist Visa (Rwanda, Kenya, Uganda)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "90 days, multiple entry within the three countries",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.migration.gov.rw/visa/visitors-visa",
+      "notes": ""
+    },
+    {
+      "kind": "business_visa",
+      "name": "V-5 Conference/meetings visa, single entry",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30 days",
+      "applies": "all (free for visa-waiver nationals)",
+      "official": true,
+      "source_url": "https://www.migration.gov.rw/visa/visitors-visa",
+      "notes": "V-6 business survey: USD 50 single / USD 70 multiple (90 days); V-9 itinerant business: USD 200, multiple entry, 2-10 years."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.migration.gov.rw/visa/visitors-visa",
+      "notes": "No dedicated transit visa category is published on the DGIE visitor-visa schedule; short transits are covered by the universal visa on arrival. Fee not separately verified."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND", "USA", "GBR", "CHN", "NGA", "PAK", "BGD", "CAN", "RUS"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Nationals of African Union, Commonwealth and La Francophonie member states (incl. India, UK, Nigeria, Pakistan, Bangladesh, Canada) receive a free 30-day visa on arrival. USA, China and Russia are not in these blocs and pay the standard USD 50/70; verify current waiver list on migration.gov.rw."
+    },
+    {
+      "nationalities": ["PHL"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Philippines is on Rwanda's bilateral visa-free list: free entry visa for 90 days (also Qatar, Singapore, Indonesia, Ghana, Senegal, etc.)."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "Rwanda does not outsource to VFS/TLS/BLS; applications are via the Irembo e-visa portal, on arrival, or at Rwandan missions."
+  },
+  "sources": [
+    "https://www.migration.gov.rw/visa/visitors-visa",
+    "https://www.migration.gov.rw/visa-on-arrival",
+    "https://irembo.gov.rw"
+  ],
+  "free_visa_notes": "Visa on arrival available to all nationalities since 1 Jan 2018. Free 30-day visa for nationals of African Union, Commonwealth and La Francophonie member states; free 90-day visa for a bilateral list (Philippines, Qatar, Singapore, Indonesia, Ghana, Senegal, Mauritius, Seychelles, etc.); EAC citizens get a free 6-month entry pass."
+}

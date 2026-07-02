@@ -1,0 +1,96 @@
+{
+  "iso3": "NZL",
+  "name": "New Zealand",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "eta",
+      "name": "NZeTA (New Zealand Electronic Travel Authority) - mobile app",
+      "amount": 17,
+      "currency": "NZD",
+      "amount_usd": 10,
+      "validity": "2 years (5 years for crew); stays up to 6 months in any 12-month period",
+      "applies": "visa-waiver country citizens, Australian permanent residents, cruise passengers, transit passengers from visa-waiver countries",
+      "official": true,
+      "source_url": "https://nzeta.immigration.govt.nz/",
+      "notes": "NZD 17 via the official mobile app, NZD 23 via the website. Most travellers also pay the IVL of NZD 100 at the same time (Australian citizens/PRs and transit-only passengers are exempt from the IVL)."
+    },
+    {
+      "kind": "eta",
+      "name": "NZeTA - website application",
+      "amount": 23,
+      "currency": "NZD",
+      "amount_usd": 14,
+      "validity": "2 years (5 years for crew)",
+      "applies": "same as app-based NZeTA",
+      "official": true,
+      "source_url": "https://nzeta.immigration.govt.nz/",
+      "notes": "Plus IVL NZD 100 where applicable."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Visitor Visa (tourist, applied online)",
+      "amount": 441,
+      "currency": "NZD",
+      "amount_usd": 265,
+      "validity": "Multiple entry up to 6 months, or single entry up to 9 months in 18 months",
+      "applies": "nationalities not eligible for visa waiver/NZeTA",
+      "official": true,
+      "source_url": "https://www.immigration.govt.nz/visas/visitor-visa/",
+      "notes": "Listed as 'From NZD $441'; exact total varies by citizenship and where you apply (use INZ fee tool). New Zealand issues visitor visas via online application, not embassy sticker visas for most applicants. No visa on arrival exists."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visitor Visa",
+      "amount": 341,
+      "currency": "NZD",
+      "amount_usd": 205,
+      "validity": "Up to 3 months in 1 year",
+      "applies": "nationalities requiring a visa for business visits",
+      "official": true,
+      "source_url": "https://www.immigration.govt.nz/visas/business-visitor-visa/",
+      "notes": "Listed as 'From NZD $341'; varies by citizenship/location. IVL of NZD 100 may apply."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 235,
+      "currency": "NZD",
+      "amount_usd": 141,
+      "validity": "Transit through Auckland International Airport, up to 24 hours",
+      "applies": "nationalities not transit-visa-waived",
+      "official": true,
+      "source_url": "https://www.immigration.govt.nz/visas/transit-visa/",
+      "notes": "Listed as 'From NZD $235'. Transit passengers do not pay the IVL."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["FJI", "WSM", "TON", "VUT", "SLB", "KIR", "TUV", "FSM", "MHL", "NRU", "PLW", "PNG"],
+      "kind": "tourist_visa",
+      "amount": 161,
+      "currency": "NZD",
+      "note": "Temporarily reduced visitor visa total for Pacific nationals (from NZD 216) effective 1 June 2026 for 12 months; includes NZD 41 immigration levy. Source: https://www.immigration.govt.nz/about-us/news-centre/visitor-visa-fees-temporarily-reduced-for-pacific-nationals/"
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": null,
+    "currency": null,
+    "note": "INZ routes paper/biometric applications in many countries through VFS Global Visa Application Centres. VAC service fees vary by centre and increased in ~25 countries (incl. India, UK, US, Japan, Australia) from 1 January 2026; published amount not centrally listed - check the local VFS NZ page or INZ fee tool.",
+    "source_url": "https://www.immigration.govt.nz/about-us/news-centre/vac-service-fee-increase-3/"
+  },
+  "sources": [
+    "https://nzeta.immigration.govt.nz/",
+    "https://www.immigration.govt.nz/visas/new-zealand-electronic-travel-authority-nzeta/",
+    "https://www.immigration.govt.nz/visas/visitor-visa/",
+    "https://www.immigration.govt.nz/visas/business-visitor-visa/",
+    "https://www.immigration.govt.nz/visas/transit-visa/",
+    "https://www.immigration.govt.nz/process-to-apply/applying-for-a-visa/fees-processing-times-and-refunds/how-much-visa-applications-cost-and-when-to-pay/",
+    "https://www.immigration.govt.nz/about-us/news-centre/vac-service-fee-increase-3/",
+    "https://www.immigration.govt.nz/about-us/news-centre/visitor-visa-fees-temporarily-reduced-for-pacific-nationals/"
+  ],
+  "free_visa_notes": "Visa-waiver nationals (approx. 60 countries incl. USA, GBR, most EU) do not need a visa but must obtain an NZeTA (NZD 17-23) plus IVL (NZD 100). Australian citizens are visa-free and IVL-exempt; Australian permanent residents need an NZeTA but no IVL. New Zealand has no visa-on-arrival."
+}

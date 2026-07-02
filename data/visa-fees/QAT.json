@@ -1,0 +1,107 @@
+{
+  "iso3": "QAT",
+  "name": "Qatar",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Hayya Tourist Visa (A1) e-visa",
+      "amount": 100,
+      "currency": "QAR",
+      "amount_usd": 27,
+      "validity": "30 days stay (extendable); enter within validity shown on approval",
+      "applies": "all nationalities except GCC citizens and visa-exempt travellers",
+      "official": true,
+      "source_url": "https://visitqatar.com/intl-en/practical-info/visas",
+      "notes": "QAR 100 paid upon final approval via the official Hayya portal (hayya.qa); fee can be exempted under certain conditions (e.g. Discover Qatar hotel booking promotions)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Hayya GCC Resident Visa (A2)",
+      "amount": 100,
+      "currency": "QAR",
+      "amount_usd": 27,
+      "validity": "30 days",
+      "applies": "residents of GCC countries (any nationality) holding valid GCC residence permits",
+      "official": true,
+      "source_url": "https://visitqatar.com/intl-en/practical-info/visas",
+      "notes": "Applied online via Hayya portal before travel."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": 100,
+      "currency": "QAR",
+      "amount_usd": 27,
+      "validity": "30 or 90 days depending on nationality (waiver tiers)",
+      "applies": "citizens of 95-102+ eligible countries",
+      "official": true,
+      "source_url": "https://visitqatar.com/intl-en/practical-info/visas",
+      "notes": "Many eligible nationalities (incl. Schengen, UK, US, Canada, Australia, NZ) enter under the visa-waiver programme at no charge; the QAR 100 on-arrival fee applies where charged, and can be waived with a hotel booking through Discover Qatar."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic Travel Authorization (ETA)",
+      "amount": null,
+      "currency": "QAR",
+      "amount_usd": null,
+      "validity": "30 days",
+      "applies": "travellers holding valid residence permits/visas of certain countries (e.g. GCC, Schengen, UK, US)",
+      "official": true,
+      "source_url": "https://portal.moi.gov.qa/qatarvisas/",
+      "notes": "ETA listed on MOI Qatar Visas portal (issued via Hayya); no fee published on the official page — MOI/Hayya do not state a charge, widely reported as free but not verified on an official source, so amount left null."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Qatar transit visa (96 hours, Qatar Airways passengers)",
+      "amount": 0,
+      "currency": "QAR",
+      "amount_usd": 0,
+      "validity": "up to 96 hours (4 days)",
+      "applies": "Qatar Airways passengers with 5-96 hour layovers, 100+ eligible nationalities",
+      "official": true,
+      "source_url": "https://transitvisa.qatarairways.com/transitvisa/online/qrvisa/applyVisa/search",
+      "notes": "Free of charge; both flight legs must be on Qatar Airways. Standalone application reportedly routed through Manage Booking / Discover Qatar stopover packages."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visit visa (sponsor-arranged)",
+      "amount": null,
+      "currency": "QAR",
+      "amount_usd": null,
+      "validity": "typically 30 days per entry",
+      "applies": "business visitors sponsored by a Qatari company",
+      "official": false,
+      "source_url": "https://portal.moi.gov.qa/qatarvisas/",
+      "notes": "Arranged by the Qatari host company via MOI; MOI does not publish a public fee schedule for business visit visas online, so amount left null rather than estimated (unofficial sources cite roughly QAR 200 single-entry)."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA", "GBR", "CAN", "RUS", "CHN", "IND", "PHL"],
+      "kind": "visa_on_arrival",
+      "amount": 0,
+      "currency": "QAR",
+      "note": "Covered by Qatar's visa-waiver programme (102+ nationalities): free entry on arrival, no visa fee. IND/PHL/RUS/CHN are on the 30-day waiver tier; Schengen nationals get 90 days."
+    },
+    {
+      "nationalities": ["PAK", "NGA", "BGD"],
+      "kind": "e_visa",
+      "amount": 100,
+      "currency": "QAR",
+      "note": "Not on the visa-waiver list; must obtain the Hayya Tourist Visa (A1) for QAR 100 before travel."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "Tourist/visit visas are issued directly online via the official Hayya portal (hayya.qa) with no outsourced service centre. Qatar Visa Centres (QVC) abroad handle work-visa biometrics only, which is outside this record's scope."
+  },
+  "sources": [
+    "https://visitqatar.com/intl-en/practical-info/visas",
+    "https://hayya.qa/en/web/hayya/faq",
+    "https://portal.moi.gov.qa/qatarvisas/",
+    "https://transitvisa.qatarairways.com/transitvisa/online/qrvisa/applyVisa/search"
+  ],
+  "free_visa_notes": "Citizens of 102+ countries (Schengen, UK, US, Canada, Australia, NZ, India, and others) enter Qatar visa-free / free-on-arrival under the visa-waiver programme; GCC nationals need no visa at all."
+}
