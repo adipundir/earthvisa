@@ -29,7 +29,7 @@ export default function Image() {
           border: `10px solid ${INK}`,
         }}
       >
-        {/* Brand lockup: globe mark + wordmark */}
+        {/* Brand lockup: Orbit mark + wordmark */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <div
             style={{

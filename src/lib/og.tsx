@@ -29,12 +29,13 @@ async function fetchFlag(iso2: string): Promise<string | null> {
 }
 
 function GlobeMark({ size = 64 }: { size?: number }) {
+  // Orbit brand mark on a rust tile: cream planet + orbit, ink accent node.
   return (
-    <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
-      <g stroke="#fffdf8" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <circle cx="24" cy="24" r="19.5" strokeWidth={2.6} />
-        <circle cx="24" cy="24" r="15" strokeWidth={1.4} />
-        <path d="M16.5 18L24 31.5 31.5 18" strokeWidth={4} />
+    <svg width={size} height={size} viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="8.5" fill="#fffdf8" />
+      <g transform="rotate(-26 24 24)">
+        <ellipse cx="24" cy="24" rx="16" ry="6.1" fill="none" stroke="#fffdf8" strokeWidth={2.4} />
+        <circle cx="40" cy="24" r="3.1" fill="#11203a" />
       </g>
     </svg>
   );
