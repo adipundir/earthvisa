@@ -1,0 +1,65 @@
+{
+  "iso3": "URY", "name": "Uruguay", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Uruguay Consular Visa (tourist)",
+      "amount": 84,
+      "currency": "AUD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals requiring a visa (Uruguay is visa-free for most nationalities for stays up to 90 days; a minority of nationalities require a consular visa)",
+      "official": true,
+      "source_url": "https://www.gub.uy/ministerio-relaciones-exteriores/en/consulate-general-of-the-oriental-republic-of-uruguay-in-sydney/tramites-servicios/visas",
+      "notes": "Fee published by the Uruguayan Consulate General in Sydney; same amount stated for tourist, work, business, student, and congress/convention/seminar visas. Fee is charged in local currency at each consulate and 'subject to minor variation depending on the exchange rate between the Australian and US dollars', so amounts differ by issuing post. No single global flat-rate fee schedule was found on an official portal."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Uruguay Consular Visa (business)",
+      "amount": 84,
+      "currency": "AUD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals requiring a visa",
+      "official": true,
+      "source_url": "https://www.gub.uy/ministerio-relaciones-exteriores/en/consulate-general-of-the-oriental-republic-of-uruguay-in-sydney/tramites-servicios/visas",
+      "notes": "Same fee schedule as tourist visa at the Sydney consulate; amounts vary by issuing consulate/currency."
+    },
+    {
+      "kind": "e_visa",
+      "name": "No e-visa system",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": false,
+      "source_url": "",
+      "notes": "Uruguay does not operate an e-visa or electronic travel authorization (ETA) platform as of 2026. Travelers either enter visa-free or must obtain a conventional consular visa in advance. Could not verify this negative claim on an official gub.uy page directly (page fetch attempts on official consular sites returned errors); based on consistent secondary-source reporting only, so not marked official."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": null,
+      "note": "Secondary sources (Embassy of Uruguay in India contact listings via search aggregators) report no visa fee is currently charged to Indian citizens for a Uruguay tourist visa, but this could not be independently confirmed by directly fetching the embassy's own page (page returned empty content). Treat as unverified."
+    },
+    {
+      "nationalities": ["NPL", "MDV", "BGD", "LKA", "BTN"],
+      "kind": "tourist_visa",
+      "amount": 54,
+      "currency": "USD",
+      "note": "Reported by secondary sources referencing the Embassy of Uruguay in New Delhi as the fee for citizens of Nepal, Maldives, Bangladesh, Sri Lanka and Bhutan. Could not be directly verified on an official embassy page (page fetch returned no content), so this figure is unverified and excluded from the official fees array."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.gub.uy/ministerio-relaciones-exteriores/en/consulate-general-of-the-oriental-republic-of-uruguay-in-sydney/tramites-servicios/visas",
+    "https://embassyofuruguayinindia.in/visa-services/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Uruguay"
+  ],
+  "free_visa_notes": "Uruguay operates a broad visa-free policy: the large majority of nationalities (around 80+ countries/jurisdictions) may enter visa-free for tourism for up to 90 days. Only a limited set of nationalities require a consular (sticker) visa obtained in advance from a Uruguayan embassy/consulate; no visa-on-arrival, eTA, or e-visa option exists. Fee amounts for the nationalities that do require a visa are set per-consulate in local currency and were not found published in one authoritative global schedule; the Sydney consulate's AUD 84 figure is the only fee amount independently confirmed on an official gub.uy page during this research."
+}

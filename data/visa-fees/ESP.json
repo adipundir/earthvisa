@@ -1,0 +1,92 @@
+{
+  "iso3": "ESP",
+  "name": "Spain",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - standard fee",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 106,
+      "validity": "Short stay, up to 90 days in 180-day period",
+      "applies": "all (standard EU Visa Code fee, effective from 11 June 2024)",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/news/schengen-visa-fee-increased-11-june-2024-2024-06-13_en",
+      "notes": "EU-wide Schengen visa fee increased from EUR 80 to EUR 90 effective 11 June 2024 per EU Visa Code revision (Commission review of visa fees, triggered by Euro area inflation and EU civil servant salary criteria); uniform across all 29 Schengen states. Verified against the European Commission's official Migration and Home Affairs announcement, which states the fee remains EUR 90 as of the most recent triennial review; the amount EUR 90 is correct but the file's prior note incorrectly dated the change to 2026 instead of 2024."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - children 6-11",
+      "amount": 45,
+      "currency": "EUR",
+      "amount_usd": 53,
+      "validity": "Short stay, up to 90 days in 180-day period",
+      "applies": "children aged 6-11",
+      "official": true,
+      "source_url": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Visados-Schengen.aspx",
+      "notes": "Reduced fee for children aged 6 to 11 inclusive."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - children under 6",
+      "amount": 0,
+      "currency": "EUR",
+      "amount_usd": 0,
+      "validity": "Short stay, up to 90 days in 180-day period",
+      "applies": "children under 6",
+      "official": true,
+      "source_url": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Visados-Schengen.aspx",
+      "notes": "Fee exempt for children under 6 years old."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Schengen airport transit visa (Type A)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 106,
+      "validity": "Single/double airport transit",
+      "applies": "nationals requiring airport transit visa",
+      "official": true,
+      "source_url": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Visados-Schengen.aspx",
+      "notes": "Same standard Schengen visa fee structure applies to airport transit visas; reduced/exempt categories for children also apply."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARM", "AZE", "BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced fee (~EUR 35, listed as $41 on the US consular page) for nationals of Azerbaijan, Armenia and Belarus aged 12+ under EU visa-facilitation agreements; exempt for those 11 and under."
+    },
+    {
+      "nationalities": ["CPV"],
+      "kind": "tourist_visa",
+      "amount": 67.5,
+      "currency": "EUR",
+      "note": "Cabo Verde nationals: reduced fee under EU-Cabo Verde visa facilitation agreement, increased from EUR 60 to EUR 67.50 effective 11 June 2024 per the same EU Visa Code fee revision (confirmed on the European Commission's official Migration and Home Affairs site). Reduced rate for ages 12-17 and exemption under 12 not independently re-verified in this pass."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "EUR",
+      "note": "The EU suspended the EU-Russia visa facilitation agreement in 2022; Russian nationals are generally charged the standard/higher Schengen fee and face additional processing scrutiny. Exact current fee not independently verified on an official Spanish source in this research pass."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "Spain does NOT route visa applications through VFS Global for most source countries. Spain uses BLS International as its outsourced visa application partner in India and many other countries (e.g., india.blsspainvisa.com). BLS International service charge for India was reported around INR 1,487-2,200 (varies by source/date) on top of the EUR visa fee, plus optional add-ons (courier, SMS tracking, premium lounge). Could not independently confirm an exact current BLS fee on an official BLS PDF in this research pass (fee table document was not machine-readable). Set used:false because the outsourcing partner is BLS International, not VFS Global, for the corridors checked.",
+    "source_url": "https://india.blsspainvisa.com/"
+  },
+  "sources": [
+    "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Visados-Schengen.aspx",
+    "https://www.exteriores.gob.es/Embajadas/yaunde/en/ServiciosConsulares/Paginas/Consular/Visados-Schengen.aspx",
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+    "https://india.blsspainvisa.com/",
+    "https://home-affairs.ec.europa.eu/news/schengen-visa-fee-increased-11-june-2024-2024-06-13_en"
+  ],
+  "free_visa_notes": ""
+}

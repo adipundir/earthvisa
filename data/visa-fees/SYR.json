@@ -1,0 +1,108 @@
+{
+  "iso3": "SYR",
+  "name": "Syria",
+  "updated": "2026-07-02",
+  "confidence": "low",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Entry visa (single-entry, up to 15 days) - Group 8 (e.g. USA)",
+      "amount": 300,
+      "currency": "USD",
+      "amount_usd": 300,
+      "validity": "15 days",
+      "applies": "USA, Gabon, Kyrgyzstan and other Group 8 nationalities",
+      "official": false,
+      "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
+      "notes": "Reported by travel-agency and news sites as issued under Syrian Ministry of Interior Decree No. 148/8 (effective July 6, 2025), applying entry visa fees at all airports and land borders by nationality-based reciprocity tiers. Could not independently verify on an official Syrian government portal - evisa.sy shows 'Coming Soon' and returned a certificate error; mofaex.gov.sy (Ministry of Foreign Affairs eServices) had no fee schedule; the U.S. Embassy Damascus visas page returned an error page. Amount unverified against a primary source; treat as indicative only."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Entry visa (single-entry, up to 15 days) - unlisted nationalities",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "15 days",
+      "applies": "nationalities not otherwise listed in the reciprocity table",
+      "official": false,
+      "source_url": "https://syrianguides.com/syria-visa-fees-2025/",
+      "notes": "Same caveat as above - secondary-source reporting only, not confirmed on an official Syrian government page."
+    },
+    {
+      "kind": "e_visa",
+      "name": "eVisa (Syria eVisa platform)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all except Israeli nationals",
+      "official": true,
+      "source_url": "https://evisa.sy/",
+      "notes": "Official Syria eVisa portal (evisa.sy) currently displays 'eVisa Coming Soon' - the platform is not operational as of 2026-07-02, so no current official e-visa fee can be confirmed. A prior version of the platform (from May 2024) existed but appears to have been taken down/relaunched under the transitional government."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 75,
+      "currency": "USD",
+      "note": "Reported under Group 4 ($75, 15 days) in secondary reporting of Decree No. 148/8; not verified on an official source."
+    },
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 300,
+      "currency": "USD",
+      "note": "Reported under Group 8 ($300, 15 days) in some secondary sources; other secondary sources cite $200 single-entry / $400 multiple-entry for US citizens. Figures are inconsistent across non-official sources and unverified officially."
+    },
+    {
+      "nationalities": ["GBR"],
+      "kind": "tourist_visa",
+      "amount": 250,
+      "currency": "USD",
+      "note": "Reported under Group 7 ($250, 15 days) in secondary reporting; not verified on an official source."
+    },
+    {
+      "nationalities": ["CHN"],
+      "kind": "tourist_visa",
+      "amount": 40,
+      "currency": "USD",
+      "note": "Reported under Group 3 ($40, 15 days) in secondary reporting; not verified on an official source."
+    },
+    {
+      "nationalities": ["CAN"],
+      "kind": "tourist_visa",
+      "amount": 150,
+      "currency": "USD",
+      "note": "Reported under Group 6 ($150, 15 days) in secondary reporting; not verified on an official source."
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": 75,
+      "currency": "USD",
+      "note": "Reported under Group 4 ($75, 15 days) in secondary reporting; not verified on an official source."
+    },
+    {
+      "nationalities": ["PHL"],
+      "kind": "tourist_visa",
+      "amount": 150,
+      "currency": "USD",
+      "note": "Reported under Group 6 ($150, 15 days) in secondary reporting; not verified on an official source."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://evisa.sy/",
+    "https://mofaex.gov.sy/en/eservices-app",
+    "https://sy.usembassy.gov/visas/",
+    "https://syrianguides.com/syria-visa-fees-2025/",
+    "https://www.youngpioneertours.com/syria-visa-cost/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Syria",
+    "https://www.saigatours.com/article/syria-new-visa-fees-july-2025",
+    "https://www.visaverge.com/visa/syria-revises-visa-fees-for-foreign-visitors-by-nationality/",
+    "https://shafaq.com/en/Middle-East/Syria-adjusts-Visa-fees-for-visitors"
+  ],
+  "free_visa_notes": "Some nationalities (e.g. Jordan, Lebanon, Malaysia, Mauritania per secondary reporting - 'Group 1') are reported as visa-fee-exempt for stays up to 6 months, but this has not been confirmed on an official Syrian government source. No official confirmation exists that Syria has a general visa-free regime; a visa (paid, reciprocity-tiered) is understood to be required for most nationalities under Ministry of Interior Decree No. 148/8 (reported effective 2025-07-06), pending official verification. IMPORTANT: This entire fee schedule is sourced from post-2024-transition secondary/travel-industry reporting because Syria's official e-visa portal (evisa.sy) is not operational and no other official fee schedule could be located as of 2026-07-02. Confidence is set to low; this record should be re-verified once evisa.sy or another official Syrian government page publishes a fee table."
+}

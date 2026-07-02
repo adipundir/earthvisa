@@ -1,0 +1,102 @@
+{
+  "iso3": "RUS",
+  "name": "Russia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Unified Electronic Visa",
+      "amount": 52,
+      "currency": "USD",
+      "amount_usd": 52,
+      "validity": "60 days from issue, up to 16 days stay",
+      "applies": "eligible nationalities (~50 countries; excludes USA, UK, Canada, Australia)",
+      "official": true,
+      "source_url": "https://evisa.kdmid.ru/",
+      "notes": "Consular fee widely reported at 52 USD (payment platform accepts CNY or AED equivalents); children under 6 exempt. Official evisa.kdmid.ru portal states a fee applies but does not itself publish the numeric amount on the fetched page, so this figure is corroborated by MFA consular department pages (e.g. washington.mid.ru, houston.mid.ru) and third-party guides rather than a single definitive number on evisa.kdmid.ru."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Single/double-entry ordinary (sticker) visa - consular fee, US applicants",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "up to 30 days per entry (varies by visa)",
+      "applies": "USA",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/russia/usa/visa-fees-at-a-glance.html",
+      "notes": "Consular fee for US citizens is a reciprocity-based flat rate; other nationalities' consular fees are set separately by the relevant Russian consulate and were not individually verified here."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "3-year multiple-entry visa - consular fee, US applicants",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "3 years multiple entry",
+      "applies": "USA",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/russia/usa/visa-fees-at-a-glance.html",
+      "notes": "Corrected 2026-07-02: official VFS Global Russia USA fee table lists $160 for Single Entry, Double Entry, and 3-Year Multiple Entry alike (regular and expedited). The previously recorded $185 figure from a third-party guide is stale/incorrect and has been replaced with the confirmed official amount."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa - consular fee (general)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "varies by nationality",
+      "official": false,
+      "source_url": "https://newyork.mid.ru/en/visas/visa_processing_fees/",
+      "notes": "Official consulate fee-schedule page (newyork.mid.ru) could not be fetched successfully in this research pass (connection reset). Business visa consular fees are known to exist and are typically similar in range to tourist visa fees for the same nationality, but the exact amount was not verified from an official source, so amount is left null."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa - consular fee (general)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "varies by nationality",
+      "official": false,
+      "source_url": "https://newyork.mid.ru/en/visas/visa_processing_fees/",
+      "notes": "Could not verify exact transit visa fee from an official source in this research pass; official consulate fee schedule page did not load successfully."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 160,
+      "currency": "USD",
+      "note": "Reciprocity-based consular fee for US citizens; per official VFS Global Russia USA fee page, $160 applies uniformly to single entry, double entry, and 3-year multiple entry (regular and expedited)."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CAN", "AUS"],
+      "kind": "e_visa",
+      "amount": null,
+      "currency": "USD",
+      "note": "Citizens of the USA, UK, Canada, and Australia are NOT eligible for the unified e-visa and must apply for an ordinary consular visa instead."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "38",
+    "currency": "USD",
+    "note": "VFS Global operates the Russia Visa Application Centre for US applicants; published service charge is 38 USD (incl. VAT) per application on top of the consular fee. Reports of a much higher commission (up to 365 USD) circulate in third-party sources following disruptions to Russian visa center operations in the US (only the New York center currently accepting mail-in applications); this higher figure was not confirmed on the official VFS Global page and is noted here for awareness only, not recorded as the fee.",
+    "source_url": "https://www.vfsglobal.com/russia/usa/visa-fees-at-a-glance.html"
+  },
+  "sources": [
+    "https://evisa.kdmid.ru/",
+    "https://washington.mid.ru/en/consular-services/citizens-usa/visa-to-russia/e_visas/",
+    "https://houston.mid.ru/en/visa-block/e-visas/",
+    "https://www.vfsglobal.com/russia/usa/visa-fees-at-a-glance.html",
+    "https://newyork.mid.ru/en/visas/visa_processing_fees/",
+    "https://russiable.com/e-visa-russian-electronic-visa/",
+    "https://russiable.com/three-year-tourist-russian-visa-americans/"
+  ],
+  "free_visa_notes": ""
+}

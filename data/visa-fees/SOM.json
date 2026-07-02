@@ -1,0 +1,44 @@
+{
+  "iso3": "SOM",
+  "name": "Somalia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Somalia eVisa / eTAS (federal, mandatory since 1 Sep 2025)",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": "single entry, apply before departure",
+      "applies": "most nationalities requiring a visa to enter federal Somalia (Mogadishu and other federal entry points)",
+      "official": false,
+      "source_url": "https://etas.gov.so/",
+      "notes": "Official federal eVisa/eTAS portal (etas.gov.so, linked from evisa.gov.so and visa.gov.so) is JavaScript-rendered and blocks automated fetch, so the exact fee could not be read directly off the government page. Secondary sources (embassy-adjacent travel guides, visa agencies) consistently report the official portal fee as $64-$65 USD. Treat amount as best-available-evidence, not confirmed on-page by this crawl."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Somaliland Visa on Arrival (Hargeisa and other Somaliland-controlled airports)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "travelers entering via Somaliland-controlled checkpoints only; not honored for/by federal Somalia eVisa and vice versa",
+      "official": false,
+      "source_url": "https://travel-buddy.ai/somalia-evisa-and-somaliland-visa-on-arrival-explained/",
+      "notes": "Somaliland (self-declared, not internationally recognized as separate from Somalia) continues to issue its own visa on arrival, distinct from the federal eVisa. No official Somaliland government fee schedule could be located/verified; amount left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://etas.gov.so/",
+    "https://evisa.gov.so",
+    "https://visa.gov.so/",
+    "https://immigration.gov.so/en/visa/",
+    "https://usa.mfa.gov.so/how-to-apply-somali-evisa-online/",
+    "https://travel-buddy.ai/somalia-evisa-and-somaliland-visa-on-arrival-explained/",
+    "https://www.evisasomali.com/"
+  ],
+  "free_visa_notes": "Somalia has no general visa-free regime; nearly all foreign nationals require a visa, now issued as a mandatory federal eVisa/eTAS (effective 1 September 2025) applied for online before travel via etas.gov.so / evisa.gov.so. No reciprocity/nationality-tiered fee schedule was found published on the official portal. Third-party agents (e.g. evisasomali.com) charge an all-inclusive $94 USD service fee, which is NOT the official government fee and is excluded from the fees array above."
+}

@@ -1,0 +1,70 @@
+{
+  "iso3": "TUR",
+  "name": "Turkey",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Turkey e-Visa (evisa.gov.tr)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Typically 180 days from issue, single or multiple entry depending on nationality; stay length varies by nationality (commonly up to 30 or 90 days)",
+      "applies": "eligible nationalities (varies by country of travel document)",
+      "official": true,
+      "source_url": "https://www.evisa.gov.tr/en/info/26ac5854-8216-4bb0-89fa-ce11017be1c3/",
+      "notes": "Official portal states the fee 'varies according to country of travel document and type of travel document' and is only revealed after selecting nationality in the application form - no published flat rate or public price list exists. Third-party sources report a wide range (approx. USD 20-96 depending on nationality; e.g. ~USD 43 commonly cited for Indian passport holders) but these are NOT confirmed on an official government page, so amount is left null. Do not treat third-party figures as authoritative."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Sticker (consular) tourist visa - non-e-visa eligible nationalities",
+      "amount": 80,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "Varies by nationality",
+      "applies": "nationalities not eligible for e-visa or visa-free entry, applying via consulate/VFS (example schedule shown was for Czech Republic applicants)",
+      "official": true,
+      "source_url": "https://www.vfsglobal.com/czechrepublic/turkey/english/visa_fees_at_glance.html",
+      "notes": "Base adult visa fee shown on a VFS Global country-specific 'visa fees at a glance' page (Czech Republic applicants): EUR 80 for adults, EUR 40 for children aged 6-12, free under 6, EUR 35 for certain reduced-fee nationalities (e.g. Albania, Bosnia-Herzegovina, North Macedonia). Consular visa fees are reciprocity-based and vary by applicant nationality and VFS jurisdiction - this is an illustrative example, not a universal rate. No single global official price list was found; the Turkish MFA directs applicants to a fee PDF that could not be verified as current (the fetched copy was dated 2014 and is outdated)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring transit visa",
+      "official": true,
+      "source_url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "notes": "MFA confirms transit visa requirements exist for certain nationalities but does not publish a specific fee amount on the general information page; no current official fee schedule could be located."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "e_visa",
+      "amount": null,
+      "currency": "USD",
+      "note": "Multiple third-party visa-agency sites (not official sources) commonly cite approx. USD 43 for Indian e-visa applicants in 2026, but this could not be confirmed on an official government page - amount left null per accuracy rules."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "20-26",
+    "currency": "EUR",
+    "note": "VFS Global operates Turkish visa application centres for many source countries. Published service/logistics fee is typically EUR 20-26 (inclusive of VAT) per application on top of the consular visa fee, but varies by centre/country - e.g. EUR 20 shown on the Czech Republic VFS page, EUR 26 cited in general search summaries. India-specific VFS fee (visa.vfsglobal.com/ind/en/tur) could not be retrieved (403 Forbidden) and was not confirmed.",
+    "source_url": "https://www.vfsglobal.com/czechrepublic/turkey/english/visa_fees_at_glance.html"
+  },
+  "sources": [
+    "https://www.evisa.gov.tr/en/info/26ac5854-8216-4bb0-89fa-ce11017be1c3/",
+    "https://www.evisa.gov.tr/en/",
+    "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    "https://www.mfa.gov.tr/data/KONSOLOSLUK/vize-harc-miktarlari-en.pdf",
+    "https://www.vfsglobal.com/czechrepublic/turkey/english/visa_fees_at_glance.html",
+    "https://visa.vfsglobal.com/tur/en/are/"
+  ],
+  "free_visa_notes": "Turkey is not visa-free for most nationalities but offers e-visa or visa-free entry to many countries depending on reciprocal agreements; this record does not cover visa-free eligibility, only fee schedules where a visa/e-visa is required."
+}

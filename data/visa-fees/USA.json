@@ -1,0 +1,66 @@
+{
+  "iso3": "USA",
+  "name": "United States",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "B1/B2 Nonimmigrant Visa (Machine Readable Visa / MRV application fee)",
+      "amount": 185,
+      "currency": "USD",
+      "amount_usd": 185,
+      "validity": "Varies by nationality (typically up to 10 years multiple entry for many countries)",
+      "applies": "all nationalities not eligible for Visa Waiver Program (ESTA)",
+      "official": true,
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html",
+      "notes": "Base MRV application fee is non-refundable and must be paid regardless of visa outcome. Some nationalities additionally pay a reciprocity issuance fee on top of this (see reciprocity_variations)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "C-1 Transit Visa (MRV application fee)",
+      "amount": 185,
+      "currency": "USD",
+      "amount_usd": 185,
+      "validity": null,
+      "applies": "all nationalities not eligible for ESTA transiting through the US",
+      "official": true,
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html",
+      "notes": "Same base non-petition MRV fee schedule as B1/B2."
+    },
+    {
+      "kind": "business_visa",
+      "name": "B1 Business Visa (MRV application fee)",
+      "amount": 185,
+      "currency": "USD",
+      "amount_usd": 185,
+      "validity": null,
+      "applies": "all nationalities not eligible for ESTA",
+      "official": true,
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html",
+      "notes": "B1 is combined with B2 on the same MRV fee schedule ($185)."
+    },
+    {
+      "kind": "eta",
+      "name": "ESTA (Electronic System for Travel Authorization) - Visa Waiver Program",
+      "amount": 40.27,
+      "currency": "USD",
+      "amount_usd": 40.27,
+      "validity": "2 years or until passport expiry, multiple entries, stays up to 90 days",
+      "applies": "nationals of Visa Waiver Program (VWP) countries only",
+      "official": true,
+      "source_url": "https://esta.cbp.dhs.gov/esta/",
+      "notes": "ESTA fee increased from $21 to $40 (base) effective September 30, 2025 under recent budget/appropriations legislation. Independently reconfirmed directly on the official ESTA application portal (esta.cbp.dhs.gov), which currently states the total application fee is $40.27 USD. Corrected from a prior recorded value of $40 (which understated the confirmed current official amount)."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html",
+    "https://esta.cbp.dhs.gov/",
+    "https://www.cbp.gov/newsroom/national-media-release/cbp-announces-esta-fee-change"
+  ],
+  "free_visa_notes": "US visas are not free; MRV application fee ($185) applies to all nonimmigrant visa categories not covered by ESTA. Visa Waiver Program nationals traveling for tourism/business up to 90 days can instead use ESTA ($40) in lieu of a visa. Reciprocity issuance fees (charged after visa approval, varies by nationality per the DOS Visa Reciprocity Tables) were not itemized here for the specified key nationalities (IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN) because official per-country reciprocity tables require individual lookups beyond this research pass; amounts range from $0 to over $200 depending on nationality and visa class. US visa applications are processed directly via US embassies/consulates and travel.state.gov appointment system, not through a third-party VFS/TLScontact/BLS outsourced centre."
+}

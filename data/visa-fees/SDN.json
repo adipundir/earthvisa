@@ -1,0 +1,53 @@
+{
+  "iso3": "SDN",
+  "name": "Sudan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Entry Visa (business/tourist/other, non-Sudanese applicants) - Embassy of Sudan, Washington DC",
+      "amount": 154,
+      "currency": "USD",
+      "amount_usd": 154,
+      "validity": null,
+      "applies": "all non-Sudanese applicants",
+      "official": true,
+      "source_url": "https://sudanembassy.org/entry-visa/",
+      "notes": "Embassy of Sudan in Washington DC lists a flat $154 processing fee covering business, work, humanitarian and other entry-visa categories; no separate 'tourist' visa category is listed on this page. Requires an entry permit from the Sudan Ministry of Interior prior to application. Processing time up to 10 working days."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Entry Visa (non-Sudanese applicants) - Embassy of Sudan, London",
+      "amount": 100,
+      "currency": "GBP",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all non-Sudanese applicants",
+      "official": true,
+      "source_url": "https://www.sudanembassy.org.uk/visa-service/",
+      "notes": "Embassy of Sudan in London charges GBP 100 (cash or postal order) for non-Sudanese applicants; requires an entry permit from the Ministry of Interior in Khartoum first. Fee for Sudanese nationals holding foreign passports is GBP 50 (not a foreign-traveller fee, excluded here)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Sudan Ministry of Interior e-service entry permit",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "unclear - varies by nationality/purpose",
+      "official": false,
+      "source_url": "https://eservice.passport.gov.sd/aliens/home",
+      "notes": "Sudan requires applicants to first obtain an entry permit via the Ministry of Interior e-service portal (eservice.passport.gov.sd) before applying for a visa at an embassy. Could not verify an official published fee amount for this online step from an accessible official source; do not guess. Third-party sites cite ~$100 for visa-on-arrival with a letter of invitation, but this was not confirmed on an official government page and is therefore omitted as a priced entry."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://sudanembassy.org/entry-visa/",
+    "https://www.sudanembassy.org.uk/visa-service/",
+    "https://eservice.passport.gov.sd/aliens/home",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Sudan.html"
+  ],
+  "free_visa_notes": "Sudan does not offer visa-free entry to most foreign nationals; almost all travellers require a visa, generally preceded by an entry permit from the Ministry of Interior. No reciprocity fee schedule by nationality was found on official Sudanese sources; fees appear to be a flat rate per issuing embassy rather than nationality-based. No VFS/TLS/BLS outsourced visa centre found for Sudan - applications are handled directly by Sudanese embassies/consulates."
+}

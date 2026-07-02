@@ -1,0 +1,73 @@
+{
+  "iso3": "TUN", "name": "Tunisia", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tunisia sticker visa - single entry",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": null,
+      "applies": "nationalities requiring a visa, applying via Tunisian Embassy (Washington DC)",
+      "official": true,
+      "source_url": "https://www.tunisianembassy.org/visa-services",
+      "notes": "Fee published by the Tunisian Embassy in the United States; fee applies to tourist, business, and transit visa types per the embassy page. Fees may differ at other Tunisian embassies/consulates worldwide - this is not a universal fee schedule. Payment by money order only; fees non-refundable."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tunisia sticker visa - multiple entry",
+      "amount": 180,
+      "currency": "USD",
+      "amount_usd": 180,
+      "validity": null,
+      "applies": "nationalities requiring a visa, applying via Tunisian Embassy (Washington DC)",
+      "official": true,
+      "source_url": "https://www.tunisianembassy.org/visa-services",
+      "notes": "Fee published by the Tunisian Embassy in the United States. Fees may differ at other Tunisian embassies/consulates worldwide."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Tunisia business visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.tunisianembassy.org/visa-services",
+      "notes": "Embassy page states current visa fees ($90 single entry / $180 multiple entries) apply to all visa types including business, but does not itemize a separate business-visa fee. Could not verify a distinct official amount."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Tunisia transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa for transit",
+      "official": true,
+      "source_url": "https://www.tunisianembassy.org/visa-services",
+      "notes": "Embassy page states fees apply for all visa types (tourist/business/transit) at $90/$180, but does not itemize transit separately. Amount not independently verified from an official transit-specific schedule."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tunisia e-Visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "eligible nationalities not on Tunisia's visa-exempt list",
+      "official": false,
+      "source_url": "https://evisa.tn",
+      "notes": "Tunisia launched an e-visa platform (evisa.tn) following a 2024 international tender for a short-stay single-entry tourism e-visa (processed in ~3 working days). Could not verify the official fee amount: evisa.tn returned HTTP 403 to automated fetch and no independent official source confirmed a specific fee figure as of 2026-07-02. Do not treat as free - amount is unverified, not zero."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.tunisianembassy.org/visa-services",
+    "https://evisa.tn"
+  ],
+  "free_visa_notes": "Tunisia has a visa-exempt list for many nationalities (e.g. most EU, US territories arrangements vary); this record covers fees only for nationalities that require a visa. No universal free-visa regime exists for all travellers."
+}

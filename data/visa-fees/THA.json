@@ -1,0 +1,105 @@
+{
+  "iso3": "THA",
+  "name": "Thailand",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist Visa (embassy/consulate-issued, single entry, incl. e-Visa applications submitted via thaievisa.go.th)",
+      "amount": 1000,
+      "currency": "THB",
+      "amount_usd": 29,
+      "validity": "3 months (single entry)",
+      "applies": "eligible nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://bangkok.immigration.go.th/en/fee_en/",
+      "notes": "Government fee schedule from Bangkok Immigration Division 1 lists Tourist Visa issuance at 1,000 THB per entry. This is the domestic issuing/changing-type-of-visa fee; consular tourist visa fees charged abroad may differ by embassy/consulate and were not separately confirmed on an official page during this check."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Thailand e-Visa (Ministry of Foreign Affairs online application, thaievisa.go.th)",
+      "amount": null,
+      "currency": "THB",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "eligible nationalities requiring a visa, varies by visa category (tourist, transit, non-immigrant, etc.)",
+      "official": true,
+      "source_url": "https://thaievisa.go.th/",
+      "notes": "The official MFA e-Visa portal (thaievisa.go.th) requires selecting nationality and visa category before a fee is shown; no fixed published fee table found on the public pages during this check. Third-party sources cite figures around USD 40-99 depending on nationality/processing speed, but these are NOT official and were not used. Treat the underlying visa-category fee (e.g. Tourist Visa 1,000 THB per the Immigration Bureau fee schedule) as the closest official reference."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival",
+      "amount": 2000,
+      "currency": "THB",
+      "amount_usd": 58,
+      "validity": "15 days, single entry, cannot be extended",
+      "applies": "nationals of ~19-31 eligible countries not on the visa-exemption list (varies by current government notification)",
+      "official": true,
+      "source_url": "https://www.thaiembassy.com/thailand-visa/visa-on-arrival",
+      "notes": "2,000 THB, payable in cash (THB only) at the immigration counter on arrival; non-refundable even if refused. Fee has been periodically waived for specific periods/nationalities by Thai government notification - travellers should check current waiver status before travel."
+    },
+    {
+      "kind": "eta",
+      "name": "eTA / electronic travel authorisation",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": false,
+      "source_url": "",
+      "notes": "Thailand does not operate a separate eTA scheme distinct from its e-Visa system as of this check. Visa-exempt travellers instead complete the free Thailand Digital Arrival Card (TDAC) online, which carries no fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Non-Immigrant Visa (Business/B category), single entry",
+      "amount": 2000,
+      "currency": "THB",
+      "amount_usd": 58,
+      "validity": "single entry",
+      "official": true,
+      "applies": "eligible nationalities requiring a visa for business purposes",
+      "source_url": "https://bangkok.immigration.go.th/en/fee_en/",
+      "notes": "Multiple entry: 5,000 THB per year (or 5,000 THB per 3 years for APEC-member nationals)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 800,
+      "currency": "THB",
+      "amount_usd": 23,
+      "validity": "90 days from issue date, max 30 days per stay",
+      "applies": "transit passengers requiring a visa staying >12 hours",
+      "official": true,
+      "source_url": "https://bangkok.immigration.go.th/en/fee_en/",
+      "notes": "800 THB per entry."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 2500,
+      "currency": "INR",
+      "note": "VFS Global India cites Thailand Tourist Visa (single entry) fee of INR 2,500 (multiple entry INR 12,000), separate from the VFS logistics/service charge. Indian ordinary-passport holders also benefit from a visa-exemption arrangement for short tourist stays under current Thai government notifications, effective from mid-2024; verify current exemption status before assuming a visa is required."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "250-500",
+    "currency": "INR",
+    "note": "VFS Global is the official visa outsourcing partner for the Royal Thai Embassy in India. Service/logistics fee varies by centre: approx. INR 250 at Mumbai/Pune/Goa/Ahmedabad centres, INR 500 at Chennai/Cochin/Bengaluru/Hyderabad centres, charged in addition to the government visa fee (e.g. INR 2,500 for single-entry tourist visa). Fee levels are third-party-reported based on a VFS notice; confirm current amount on the VFS India-Thailand portal before relying on it.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/tha"
+  },
+  "sources": [
+    "https://bangkok.immigration.go.th/en/fee_en/",
+    "https://thaievisa.go.th/",
+    "https://thaievisa.go.th/visa/tourist-visa",
+    "https://www.thaiembassy.com/thailand-visa/visa-on-arrival",
+    "https://visa.vfsglobal.com/ind/en/tha"
+  ],
+  "free_visa_notes": "Thailand is visa-free/visa-exempt on arrival for many nationalities (durations vary, commonly 30-60 days) under bilateral agreements; visa-exempt travellers must instead complete the free online Thailand Digital Arrival Card (TDAC) before arrival, which carries no fee. This record covers only fees for travellers who DO require a visa or VOA."
+}

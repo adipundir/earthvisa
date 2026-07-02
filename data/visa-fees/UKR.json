@@ -1,0 +1,118 @@
+{
+  "iso3": "UKR",
+  "name": "Ukraine",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (single entry, 30-day validity)",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "30 days, single entry",
+      "applies": "eligible nationalities (45 specified countries)",
+      "official": true,
+      "source_url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/e-visa",
+      "notes": "Consular fee doubles to $40 for urgent (1 working day) processing; non-urgent takes 3 working days."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa (double entry, 30-day validity)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "30 days, double entry",
+      "applies": "eligible nationalities (45 specified countries)",
+      "official": true,
+      "source_url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/e-visa",
+      "notes": "Consular fee doubles to $60 for urgent processing."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Short-term (type C) visa - basic fee, regular service",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": "up to 90 days within 180 days; issued for up to 6 months or longer per supporting docs",
+      "applies": "all nationalities requiring a visa (basic fee; reciprocity variations apply - see reciprocity_variations)",
+      "official": true,
+      "source_url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/visa-information",
+      "notes": "Fee doubles for expedited service (processed in up to 5 working days vs 10 for regular). Applied for at Ukrainian embassies/consulates or VFS-run Visa Application Centres."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit (type B) visa - basic fee",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": "each transit period max 5 days; visa itself valid up to 1 year",
+      "applies": "all nationalities requiring a visa (basic fee; reciprocity variations apply)",
+      "official": true,
+      "source_url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/visa-information",
+      "notes": "Single/double/multiple entry all charged the same basic $65 rate before reciprocity adjustment; fee doubles for expedited service."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short-term (type C) visa - business purpose, basic fee",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": "up to 90 days within 180 days",
+      "applies": "all nationalities requiring a visa (basic fee; reciprocity variations apply)",
+      "official": true,
+      "source_url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/visa-information",
+      "notes": "Business is one of the C-type visa purpose categories; same basic fee schedule as tourist/short-term visas, subject to reciprocity."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Emergency visa on arrival at Boryspil/Odesa international airports",
+      "amount": 2550,
+      "currency": "UAH",
+      "amount_usd": null,
+      "validity": "issued by MFA visa divisions at the airport border checkpoints",
+      "applies": "limited emergency cases only, unless a Ukrainian international treaty stipulates otherwise",
+      "official": true,
+      "source_url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/visa-information",
+      "notes": "This is not a general visa-on-arrival regime; it applies only in specific emergency circumstances at these two airports. amount_usd not set because official fee is published in UAH and rates fluctuate."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 85,
+      "currency": "USD",
+      "note": "Short-term (C) visa single entry $85; double entry $130 (per official reciprocal fee schedule via VFS-published Ukraine visa fee sheet)."
+    },
+    {
+      "nationalities": ["PAK"],
+      "kind": "tourist_visa",
+      "amount": 165,
+      "currency": "USD",
+      "note": "Short-term (C) visa single entry $165; double entry $255."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Listed as 'no visa needed' in the official reciprocal fee schedule for short stays (visa-free/visa-waiver arrangement); not a paid visa fee."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2970",
+    "currency": "INR",
+    "note": "Published VFS Global service fee for Ukraine visa applications in India is INR 2,970 per applicant (inclusive of INR 650 convenience charge), payable in addition to the consular visa fee. Service fees vary by country/centre; Ukraine visa applications are processed through VFS Global Visa Application Centres in 48 countries per the MFA's published VAC list.",
+    "source_url": "https://visa.vfsglobal.com/one-pager/Ukraine/India/english/"
+  },
+  "sources": [
+    "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/e-visa",
+    "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/visa-information",
+    "https://www.vfsglobal.com/Ukraine/France/pdf/Ukraine-Visa-fees.pdf",
+    "https://visa.vfsglobal.com/one-pager/Ukraine/India/english/"
+  ],
+  "free_visa_notes": "Ukraine is not a Schengen member and has no visa-free regime for everyone; many nationalities (e.g. US, UK, Canada, EU/Schengen states) are visa-exempt for short stays per the reciprocal fee schedule, while others require a visa (embassy/VFS/e-visa) with fees as listed above. China, Nigeria, Philippines, Bangladesh, and Russia were not found within the retrieved portion of the official reciprocal fee PDF (a multi-page document); their reciprocity status/fee could not be confirmed from available official sources and is left unset rather than guessed."
+}

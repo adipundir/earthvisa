@@ -1,0 +1,93 @@
+{
+  "iso3": "OMN",
+  "name": "Oman",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist eVisa (Unsponsored) - 10 Day",
+      "amount": 5,
+      "currency": "OMR",
+      "amount_usd": 13,
+      "validity": "10 days, single entry",
+      "applies": "eligible nationalities (per ROP visa-eligibility list)",
+      "official": true,
+      "source_url": "https://evisa.rop.gov.om/types-of-visa",
+      "notes": "Amount corroborated via secondary travel-industry sources citing the Royal Oman Police eVisa portal; the ROP portal itself is JS-rendered and its fee table could not be directly extracted by automated fetch, so this is not independently confirmed on-page."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist eVisa (Unsponsored) - 30 Day Single Entry",
+      "amount": 20,
+      "currency": "OMR",
+      "amount_usd": 52,
+      "validity": "30 days, single entry",
+      "applies": "eligible nationalities (per ROP visa-eligibility list)",
+      "official": true,
+      "source_url": "https://evisa.rop.gov.om/types-of-visa",
+      "notes": "Amount corroborated via secondary travel-industry sources citing the Royal Oman Police eVisa portal; not independently confirmed on-page due to JS rendering."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist eVisa (Unsponsored) - 1 Year Multiple Entry",
+      "amount": 50,
+      "currency": "OMR",
+      "amount_usd": 130,
+      "validity": "1 year, multiple entry, 30 days per visit",
+      "applies": "eligible nationalities (per ROP visa-eligibility list)",
+      "official": true,
+      "source_url": "https://evisa.rop.gov.om/types-of-visa",
+      "notes": "Amount corroborated via secondary travel-industry sources citing the Royal Oman Police eVisa portal; not independently confirmed on-page due to JS rendering."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 5,
+      "currency": "OMR",
+      "amount_usd": 13,
+      "validity": "short transit stay",
+      "applies": "eligible nationalities transiting via Oman",
+      "official": true,
+      "source_url": "https://evisa.rop.gov.om/types-of-visa",
+      "notes": "Amount corroborated via secondary travel-industry sources; not independently confirmed on-page due to JS rendering."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (holders of qualifying AUS/CAN/JPN/USA/GBR/Schengen visa)",
+      "amount": null,
+      "currency": "OMR",
+      "amount_usd": null,
+      "validity": "up to 14 days",
+      "applies": "nationals of countries whose citizens hold a valid visa from Australia, Canada, Japan, USA, UK, or a Schengen member state",
+      "official": true,
+      "source_url": "https://evisa.rop.gov.om/visa-eligibility",
+      "notes": "Availability confirmed (e.g. for Indian passport holders per the Embassy of India, Muscat guidance) but the exact fee amount could not be verified on an official source; not guessed."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business/Work-related Visit Visa (Sponsored)",
+      "amount": 20,
+      "currency": "OMR",
+      "amount_usd": 52,
+      "validity": "varies by sponsor type",
+      "applies": "sponsored business visitors",
+      "official": false,
+      "source_url": "https://evisa.rop.gov.om/types-of-visa",
+      "notes": "Figure reported by secondary sources as of 2025/2026; could not be independently confirmed on the official ROP portal due to JS rendering, so official flag set to false pending verification."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://evisa.rop.gov.om/",
+    "https://evisa.rop.gov.om/types-of-visa",
+    "https://evisa.rop.gov.om/visa-eligibility",
+    "https://evisa.rop.gov.om/en/frequently-asked-questions",
+    "https://www.fm.gov.om/en/visitors/entry-visas/",
+    "https://www.indemb-oman.gov.in/eoi.php?id=tourist-visa"
+  ],
+  "free_visa_notes": "Oman grants visa-free entry (up to 14 days) to nationals of over 100 countries per the Ministry of Foreign Affairs (fm.gov.om); this record covers the fees for nationalities that DO require a visa. No reciprocity-based fee schedule by specific nationality was found on official sources; the eVisa fee appears to be a flat structure by visa duration/type rather than by nationality. Oman's inbound eVisa process is handled directly via the Royal Oman Police portal (evisa.rop.gov.om), not through an outsourced VFS/TLS/BLS centre."
+}

@@ -1,0 +1,115 @@
+{
+  "iso3": "VNM",
+  "name": "Vietnam",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Vietnam e-Visa - single entry",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "up to 90 days, single entry",
+      "applies": "eligible nationalities (per official evisa.gov.vn list)",
+      "official": true,
+      "source_url": "https://evisa.gov.vn/faq",
+      "notes": "Fee set by Ministry of Finance Circular No. 28/2026/TT-BTC (effective 1 Apr 2026), which replaced Circular 25/2021/TT-BTC and Circular 62/2023/TT-BTC. Paid online in USD at application on the official portal."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Vietnam e-Visa - multiple entry",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "up to 90 days, multiple entry",
+      "applies": "eligible nationalities (per official evisa.gov.vn list)",
+      "official": true,
+      "source_url": "https://evisa.gov.vn/faq",
+      "notes": "Fee set by Ministry of Finance Circular No. 28/2026/TT-BTC (effective 1 Apr 2026)."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa-on-arrival stamping fee - single entry",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "per approval letter validity",
+      "applies": "nationalities eligible for VOA with a pre-approved visa letter",
+      "official": true,
+      "source_url": "https://evisa.gov.vn/faq",
+      "notes": "Stamping fee payable in cash (USD or VND) at the airport on arrival, separate from a private visa-letter service fee charged by travel/visa agents (not an official government fee, varies by agent). Same rate as the e-visa stamping fee under Circular 28/2026/TT-BTC."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa-on-arrival stamping fee - multiple entry",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "per approval letter validity",
+      "applies": "nationalities eligible for VOA with a pre-approved visa letter",
+      "official": true,
+      "source_url": "https://evisa.gov.vn/faq",
+      "notes": "Stamping fee payable in cash (USD or VND) at the airport on arrival."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy/consulate sticker visa (tourist) - single entry",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": "varies by grant",
+      "applies": "all (embassy-issued sticker visa)",
+      "official": true,
+      "source_url": "https://vietnamembassy-usa.org/page/apply-visa-person-or-mail",
+      "notes": "Vietnamese embassies/consulates confirm fees follow the national stamping-fee schedule (Circular 28/2026/TT-BTC): USD 25 single-entry / USD 50 multiple-entry for standard processing; embassy pages do not publish a separate line-item fee table and direct applicants to the consular division. Expedited service may cost more."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy/consulate sticker visa (tourist) - multiple entry",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "varies by grant",
+      "applies": "all (embassy-issued sticker visa)",
+      "official": true,
+      "source_url": "https://vietnamembassy-usa.org/page/apply-visa-person-or-mail",
+      "notes": "Follows the national Circular 28/2026/TT-BTC stamping-fee schedule."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa (DN1/DN2) - embassy/e-visa route",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "business travellers with sponsoring organisation",
+      "official": false,
+      "source_url": "https://evisa.gov.vn/faq",
+      "notes": "Business visa stamping fee generally follows the same single/multiple-entry schedule (USD 25/50) under Circular 28/2026/TT-BTC, but an official line-item confirming this specific category was not located; set to null rather than guessed. Verify directly with the immigration department before publishing a firm number."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "transit passengers requiring a visa",
+      "official": false,
+      "source_url": "https://evisa.gov.vn/faq",
+      "notes": "Most nationalities transiting Vietnam without leaving the international zone, or staying under visa-exempt transit rules, do not need a visa. No official fee schedule for a standalone transit visa was found on evisa.gov.vn; left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://evisa.gov.vn/faq",
+    "https://evisa.gov.vn/",
+    "https://vietnamembassy-usa.org/page/apply-visa-person-or-mail",
+    "https://vnmission-newyork.mofa.gov.vn/en-us/Consular%20Services/Consular%20Fees%20and%20Charges/Pages/default.aspx"
+  ],
+  "free_visa_notes": "Vietnam unilaterally exempts a list of nationalities (e.g. many ASEAN countries, and since 2023 an extended list including most Western Europe, Japan, South Korea) from a visa for short stays (typically 45 days); those travellers pay no visa fee. All other nationalities must obtain an e-visa, embassy sticker visa, or (where eligible) visa-on-arrival, at the USD 25 (single-entry) / USD 50 (multiple-entry) government fee described above. No official, publicly documented nationality-specific fee variations (e.g. for IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN) were found beyond this single/multiple-entry structure that applies uniformly to all fee-paying nationalities; Vietnam does not appear to operate a reciprocity-based differential fee schedule like some other countries."
+}

@@ -1,0 +1,109 @@
+{
+  "iso3": "LKA",
+  "name": "Sri Lanka",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "eta",
+      "name": "ETA / Tourist Visa (free-of-charge nationalities)",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "30 days (90 days for Maldives)",
+      "applies": "Nationals of 40+ designated countries (incl. USA, GBR, CAN, CHN, IND, RUS, AUS, PAK, and EU/Gulf states) plus Singapore, Seychelles, Maldives - effective 25 May 2026",
+      "official": true,
+      "source_url": "https://www.eta.gov.lk/slvisa/",
+      "notes": "Fees paid prior to 25.05.2026 are non-refundable. Full designated list should be checked on eta.gov.lk before travel as it can change."
+    },
+    {
+      "kind": "eta",
+      "name": "ETA Tourist Visa - online application (non-exempt, non-SAARC nationalities)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30 days",
+      "applies": "Nationalities not on the free-visa list and not SAARC members",
+      "official": true,
+      "source_url": "https://www.eta.gov.lk/slvisa/visainfo/fees.jsp?locale=en_US",
+      "notes": "On-arrival application fee is higher (USD 60) per official fee chart."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "ETA Tourist Visa - on-arrival application (non-SAARC)",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "30 days",
+      "applies": "Nationalities not on the free-visa list and not SAARC members, applying on arrival instead of online",
+      "official": true,
+      "source_url": "https://www.eta.gov.lk/slvisa/images/Chart%2001.pdf",
+      "notes": "On-arrival option costs more than pre-arrival online application; not guaranteed to be available to all travellers."
+    },
+    {
+      "kind": "business_visa",
+      "name": "ETA Business Visa (non-SAARC)",
+      "amount": 55,
+      "currency": "USD",
+      "amount_usd": 55,
+      "validity": "30 days (single entry); extended options up to 90 days available",
+      "applies": "Non-SAARC nationalities not covered by the free-visa list",
+      "official": true,
+      "source_url": "https://www.eta.gov.lk/slvisa/visainfo/fees.jsp?locale=en_US",
+      "notes": "Longer-validity/multiple-entry business ETAs cost the base fee plus additional per-country charges per the official fee chart."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 0,
+      "currency": "USD",
+      "amount_usd": 0,
+      "validity": "up to 2 days",
+      "applies": "all eligible transit passengers",
+      "official": true,
+      "source_url": "https://www.eta.gov.lk/slvisa/images/Chart%2001.pdf",
+      "notes": "Free of charge for both SAARC and non-SAARC nationalities per official fee chart."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND", "PAK"],
+      "kind": "e_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "India and Pakistan are on the 40-country free-tourist-ETA list effective 25 May 2026 (30-day validity); confirm current status on eta.gov.lk as free-visa lists have changed multiple times historically."
+    },
+    {
+      "nationalities": ["IND", "PAK", "BGD"],
+      "kind": "e_visa",
+      "amount": 20,
+      "currency": "USD",
+      "note": "If applying under the standard SAARC fee schedule (applicable when not covered by a free-visa promotion): SAARC tourist visa online fee is USD 20 (USD 25 on arrival), business visa USD 30."
+    },
+    {
+      "nationalities": ["USA", "GBR", "CHN", "RUS", "CAN"],
+      "kind": "e_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "USA, UK, China, Russia and Canada are on the 40-country free-tourist-ETA list effective 25 May 2026 (30-day validity)."
+    },
+    {
+      "nationalities": ["NGA", "PHL"],
+      "kind": "e_visa",
+      "amount": 50,
+      "currency": "USD",
+      "note": "Nigeria and Philippines are not on the published free-visa list; standard non-SAARC tourist ETA fee of USD 50 (online) applies. Could not verify any country-specific surcharge for these nationalities on official sources."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.eta.gov.lk/slvisa/",
+    "https://www.eta.gov.lk/slvisa/visainfo/fees.jsp?locale=en_US",
+    "https://www.eta.gov.lk/slvisa/images/Chart%2001.pdf",
+    "https://www.immigration.gov.lk/pages_e.php?id=45",
+    "https://www.immigration.gov.lk/pages_e.php?id=60"
+  ],
+  "free_visa_notes": "Effective 25 May 2026, Sri Lanka grants a free 30-day tourist ETA to nationals of 40 designated countries (incl. USA, UK, Canada, China, India, Russia, Pakistan, EU and Gulf states) plus Singapore, Seychelles (30 days) and Maldives (90 days); children under 12 also receive free 30-day tourist ETAs regardless of nationality. All other nationalities pay the standard paid ETA/visa fees listed above. In 2024 Sri Lanka briefly routed some free-visa-eligible nationalities (incl. India, China, Russia) through a paid VFS Global processing arrangement (~USD 25.77 fee added to visa cost), which drew public controversy; official sources now indicate the government reverted to direct online ETA issuance, so VFS Global involvement in the Sri Lanka ETA process is NOT confirmed as currently active and is recorded here as used:false pending clearer official confirmation."
+}

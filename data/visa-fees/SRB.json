@@ -1,0 +1,63 @@
+{
+  "iso3": "SRB",
+  "name": "Serbia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa (Visa C)",
+      "amount": 92,
+      "currency": "EUR",
+      "amount_usd": 99,
+      "validity": "Up to 90 days stay",
+      "applies": "nationalities requiring a visa (fee example published by Serbian Embassy in India; paid in local currency equivalent at country of application)",
+      "official": true,
+      "source_url": "https://newdelhi.mfa.gov.rs/en/citizens/frequently-asked-questions",
+      "notes": "Consular fee stated by Embassy of Serbia in New Delhi as 92 EUR / 9,240 INR. Children under 12: 47 EUR / 4,722 INR. Fee is paid in local currency at the mission where applied; amount may vary slightly by country/exchange rate. General MFA visa-requirements page confirms a visa fee applies but does not itself publish the amount."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Long-stay visa (Visa D)",
+      "amount": 52,
+      "currency": "EUR",
+      "amount_usd": 56,
+      "validity": "Up to 180 days stay",
+      "applies": "nationalities requiring a visa, long-stay/multiple entry purposes",
+      "official": true,
+      "source_url": "https://newdelhi.mfa.gov.rs/en/citizens/frequently-asked-questions",
+      "notes": "Consular fee stated by Embassy of Serbia in New Delhi as 52 EUR / 5,222 INR. Not a tourist-specific product but the general long-stay visa category; included for completeness."
+    },
+    {
+      "kind": "e_visa",
+      "name": "eVisa (Visa C, submitted via Welcome to Serbia portal)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals of select countries eligible for the electronic visa C application track",
+      "official": true,
+      "source_url": "https://evisa.welcometoserbia.gov.rs/",
+      "notes": "The e-visa portal (evisa.welcometoserbia.gov.rs) lets eligible applicants submit a Visa C or Visa D application online instead of visiting a mission in person, but the portal itself does not publish a distinct fee schedule -- the same consular visa-C/visa-D fees apply. Could not verify a separate published e-visa amount, so left null rather than guessing."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 92,
+      "currency": "EUR",
+      "note": "92 EUR (~9,240 INR) for Visa C up to 90 days; 47 EUR (~4,722 INR) for children under 12. Source: Embassy of Serbia in New Delhi."
+    }
+  ],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.mfa.gov.rs/en/citizens/travel-serbia/visa-requirements",
+    "https://mfa.gov.rs/en/citizens/travel-serbia/visa-regime",
+    "https://newdelhi.mfa.gov.rs/en/citizens/frequently-asked-questions",
+    "https://evisa.welcometoserbia.gov.rs/"
+  ],
+  "free_visa_notes": "Serbia maintains an extensive visa-free regime: nationals of most EU/Schengen countries, the US, UK, Canada, and many other countries can enter visa-free for short tourist stays (typically up to 90 days). Nationals of China, Armenia, Mali and Syria are exempt from paying the visa fee even when a visa is required, per bilateral agreements (per general search of MFA-linked sources; verify per-nationality exemption on the country-specific 'Visa regime for entering Serbia' pages at mfa.gov.rs before publishing per-country claims). Serbia does not use VFS Global or another outsourced centre for its own outbound visa issuance -- applications are handled directly by Serbian diplomatic-consular missions or via the Welcome to Serbia e-visa/e-services portal; VFS Global centres in Belgrade found in search results serve applications INTO other countries (e.g., Canada, UK), not into Serbia."
+}

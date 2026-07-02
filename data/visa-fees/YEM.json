@@ -1,0 +1,69 @@
+{
+  "iso3": "YEM",
+  "name": "Yemen",
+  "updated": "2026-07-02",
+  "confidence": "low",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued single entry visa (USA - Washington DC)",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": null,
+      "applies": "all (embassy currently not issuing tourist visas; other categories may apply)",
+      "official": true,
+      "source_url": "https://www.yemenembassy.org/consuloraffairs/visa-services/",
+      "notes": "Yemen Embassy in Washington DC states visa fee is $65 (money order), but the embassy is NOT currently issuing tourist visas due to the ongoing conflict/political situation; visas are largely restricted to persons of Yemeni origin, international-organization staff, journalists/media, and diplomats."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Single entry visa - Embassy of Yemen in Poland",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "3 months",
+      "applies": "eligible applicants only",
+      "official": true,
+      "source_url": "https://embassy-of-yemen.pl/en/visas/",
+      "notes": "Fee reported via search snippet from official embassy site; not independently re-verified with a direct fetch."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Single entry visa - Consulate General Frankfurt, Germany",
+      "amount": 40,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "3 months",
+      "applies": "eligible applicants only",
+      "official": true,
+      "source_url": "https://yemenconsulate.de/en/visa-information",
+      "notes": "Fee reported via search snippet from official consulate site; not independently re-verified with a direct fetch."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Yemen e-Visa (yemenevisa.org)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "unclear",
+      "official": true,
+      "source_url": "https://yemenevisa.org/visas",
+      "notes": "Yemen's Immigration, Passports and Nationality Authority launched an e-visa portal (yemenevisa.org) around June 2025, but no fee schedule or online payment is currently published on the portal's visas/FAQ pages. Amount left null - could not verify."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.yemenembassy.org/consuloraffairs/visa-services/",
+    "https://embassy-of-yemen.pl/en/visas/",
+    "https://yemenconsulate.de/en/visa-information",
+    "https://yemenevisa.org/visas",
+    "https://yemenevisa.org/FAQ",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Yemen.html"
+  ],
+  "free_visa_notes": "Yemen is not visa-free for any major nationality. Due to the ongoing internal conflict, most Yemeni diplomatic missions (including the Washington DC embassy) have suspended issuance of tourist visas; visas are largely restricted to persons of Yemeni origin, international-organization staff, journalists/media delegates, and diplomats. No reciprocity-based fee schedule could be verified for IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, or CAN nationals; no VFS/outsourced visa centre was found for Yemen. A new e-visa portal (yemenevisa.org) exists but does not publish a verifiable fee schedule as of this record's date."
+}

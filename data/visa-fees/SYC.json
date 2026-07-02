@@ -1,0 +1,54 @@
+{
+  "iso3": "SYC",
+  "name": "Seychelles",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "eta",
+      "name": "Travel Authorisation (Tourist Visa Exempt Entry)",
+      "amount": 10.90,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": "Single entry; visitor's permit initially valid up to 3 months on arrival",
+      "applies": "all nationalities except Kosovo (which requires prior visa)",
+      "official": true,
+      "source_url": "https://mfa.gov.sc/travelling-to-seychelles/",
+      "notes": "Seychelles is visa-free for virtually all nationalities. Every traveller must instead obtain an online Travel Authorisation before departure via the official Seychelles Electronic Border System (SEBS, govtas.com) or the Seychelles E-Border app. Standard application fee is EUR 10.90 per person; some third-party trackers report total charges up to ~EUR 12.06 after processing add-ons, but the official government-stated standard fee is EUR 10.90."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visitor's Permit (issued on arrival)",
+      "amount": 0,
+      "currency": "SCR",
+      "amount_usd": 0,
+      "validity": "Up to 3 months, extendable to a total of 12 months (extension incurs a fee)",
+      "applies": "all nationalities with valid Travel Authorisation",
+      "official": true,
+      "source_url": "https://www.ics.gov.sc/permits/visitors-permit",
+      "notes": "Free of charge on first issuance. Extensions beyond the initial period are charged; exact extension fee not confirmed from an accessible official source (fee schedule PDF at ics.gov.sc/downloads/service-fees could not be parsed as text)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visa (Kosovo passport holders only)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "Kosovo nationals",
+      "official": true,
+      "source_url": "https://www.ics.gov.sc/visa-and-travel/visiting-seychelles",
+      "notes": "Seychelles is visa-free for all nationalities except passport holders from Kosovo, who require a visa. Official source states this exception but does not publish the fee amount online; could not verify a specific figure from an official source, so amount left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://mfa.gov.sc/travelling-to-seychelles/",
+    "https://www.ics.gov.sc/visa-and-travel/visiting-seychelles",
+    "https://www.ics.gov.sc/permits/visitors-permit",
+    "https://seychelles.govtas.com/en/FAQ/dc3d5be6-d29e-4881-84f8-ad93a2759682",
+    "https://www.ics.gov.sc/downloads/service-fees"
+  ],
+  "free_visa_notes": "Seychelles operates a visa-free entry policy for all nationalities except Kosovo. In place of a visa, all travellers must obtain an online Travel Authorisation (EUR 10.90, official standard fee per the Ministry of Foreign Affairs) before departure, after which a free Visitor's Permit is issued on arrival. No reciprocity-based fee variations by nationality were found on official sources — the EUR 10.90 Travel Authorisation fee applies uniformly."
+}

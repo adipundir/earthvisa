@@ -1,0 +1,64 @@
+{
+  "iso3": "SLB",
+  "name": "Solomon Islands",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor Visa - Tourist (e-visa)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "30 days on arrival, single entry, max stay up to 150 days",
+      "applies": "nationalities requiring a visa (not covered by visa-free/visitor-permit arrangements)",
+      "official": true,
+      "source_url": "https://immigration.gov.sb/visitor-visa-tourist/",
+      "notes": "Standard visa fee is USD 100, plus a USD 50 online application/administration fee (total commonly cited as USD 150 for the e-visa). Fees are levied in USD and converted to Solomon Islands Dollars (SBD) at time of payment. Extension fee is also USD 100."
+    },
+    {
+      "kind": "e_visa",
+      "name": "e-Visa online application fee (surcharge added to visa fee)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": null,
+      "applies": "all e-visa applicants",
+      "official": true,
+      "source_url": "https://immigration.gov.sb/visitor-visa-tourist/",
+      "notes": "Non-refundable online application/administration fee charged in addition to the underlying visa fee (e.g. USD 50 + USD 100 tourist visa = USD 150 total). Site notes online payment 'will be operational soon'; applications currently also accepted in person in Honiara."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa (Short-Term)",
+      "amount": 450,
+      "currency": "USD",
+      "amount_usd": 450,
+      "validity": "90 days, multiple entry, non-extendable",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://immigration.gov.sb/visas/",
+      "notes": "Short-term business visa fee as published on the Immigration Division visa types page."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa (Commercial Maritime)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": "issued on arrival, 7 days (max stay up to 14 days)",
+      "applies": "commercial maritime transit passengers",
+      "official": true,
+      "source_url": "https://immigration.gov.sb/visas/",
+      "notes": "Listed as a visa-on-arrival category for commercial maritime transit; no fee amount published on the official site, so left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://immigration.gov.sb/visitor-visa-tourist/",
+    "https://immigration.gov.sb/visas/",
+    "https://immigration.gov.sb/"
+  ],
+  "free_visa_notes": "Citizens of the US and most Commonwealth/EU/MSG (Melanesian Spearhead Group) countries can enter visa-free or receive a free visitor permit on arrival for up to 3 months within any 1-year period; the MSG visitor visa category is also listed as free (60 days, single entry). No official reciprocity fee schedule by nationality was found on immigration.gov.sb, so no per-nationality variations are recorded; only the general 'not required for many nationalities' vs 'visa required' distinction applies."
+}

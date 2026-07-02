@@ -1,0 +1,75 @@
+{
+  "iso3": "TLS", "name": "Timor-Leste", "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist Visa (visa on arrival / issuance)",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "Single entry, 30 days stay",
+      "applies": "most nationalities not exempt (Portugal, USA and Timorese nationals on Portuguese passports are visa-exempt for tourism)",
+      "official": true,
+      "source_url": "https://www.migracao.gov.tl/html/sub0301.php",
+      "notes": "Fee is USD $30, payable in cash, usually collected on arrival at Presidente Nicolau Lobato International Airport or Dili Sea Port. No e-visa system exists as of 2026-07-02; land border entrants for most nationalities must obtain a Visa Application Authorization in advance but pay the same fee on arrival."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist Visa Extension",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "One extension of 30 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.migracao.gov.tl/html/sub0301.php",
+      "notes": "May be extended once for a further 30 days at USD $40."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa Class I (VNG1)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "60 days, multiple entries, not extendable",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.migracao.gov.tl/html/sub0306.php",
+      "notes": "For short-term business/prospecting visits."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa Class II (VNG2)",
+      "amount": 150,
+      "currency": "USD",
+      "amount_usd": 150,
+      "validity": "6 months initial, extendable up to 2 years, multiple entries",
+      "applies": "foreigners intending to establish/operate a business",
+      "official": true,
+      "source_url": "https://www.migracao.gov.tl/html/sub0306.php",
+      "notes": "Extension fee also USD $150."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "Max 72 hours, up to two entries",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.migracao.gov.tl/html/sub0302.php",
+      "notes": "Extension fee also USD $20, generally not permitted except under article 51 exceptions."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.migracao.gov.tl/html/sub0301.php",
+    "https://www.migracao.gov.tl/html/sub0306.php",
+    "https://www.migracao.gov.tl/html/sub0302.php",
+    "https://customs.gov.tl/travelers/obtaining-a-visa/"
+  ],
+  "free_visa_notes": "Portuguese and United States nationals, and Timorese nationals holding Portuguese passports, are exempt from visa requirements for tourism. No reciprocity-based fee schedule (e.g. differing amounts for IND, GBR, CHN, etc.) was found on official sources; the flat USD fee schedule above applies uniformly to non-exempt nationalities. No official e-visa or eTA system exists as of 2026-07-02; all listed fees are collected via on-arrival/embassy processing by the Immigration Service of Timor-Leste. No VFS/TLScontact/BLS outsourced visa centre found for Timor-Leste."
+}

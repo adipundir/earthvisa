@@ -1,0 +1,80 @@
+{
+  "iso3": "SSD",
+  "name": "South Sudan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "South Sudan Visa (Embassy-issued, single entry, standard nationalities)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "Single entry",
+      "applies": "Rest of Africa, Asia, Gulf countries, Canadian, European nationals",
+      "official": true,
+      "source_url": "https://www.ssembassydc.org/visa-services/",
+      "notes": "Fee schedule published by the Embassy of South Sudan in Washington DC; issued within ten business days (stated as a temporary measure). Fees may vary slightly by issuing embassy/consulate."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "South Sudan Visa - bordering African countries",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Single entry",
+      "applies": "Nationals of African countries bordering South Sudan",
+      "official": true,
+      "source_url": "https://www.ssembassydc.org/visa-services/",
+      "notes": "Published embassy fee schedule."
+    },
+    {
+      "kind": "e_visa",
+      "name": "South Sudan e-Visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "eligible nationalities (search by country on official portal)",
+      "official": true,
+      "source_url": "https://www.evisa.gov.ss/eligibility",
+      "notes": "Official e-visa portal (evisa.gov.ss) charges fees that vary by nationality and visa type (single entry / 3-month multiple entry / 6-month multiple entry). The exact amounts are not published in static page content and require searching by country on the portal; could not verify a specific figure from an official source, so amount is left null rather than guessed."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival at Juba International Airport",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Single entry",
+      "applies": "Nationals of Rwanda and Burundi (limited eligibility); reported informally as similar in range to embassy visa fees for other eligible nationals",
+      "official": false,
+      "source_url": "https://visa-to-travel.com/south-sudan/south-sudan-visa-on-arrival/",
+      "notes": "No official government source with a confirmed VOA fee amount was found; third-party sources cite figures around USD 100 (USD 160 for US passport holders) but these are not confirmed on an official government page, so amount is left null. Payable in cash USD at the airport per third-party reporting."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 160,
+      "currency": "USD",
+      "note": "US passport holders charged USD 160 per Embassy of South Sudan (Washington DC) published fee schedule."
+    },
+    {
+      "nationalities": ["NGA", "CHN", "GBR", "IND", "PAK", "PHL", "BGD", "RUS", "CAN"],
+      "kind": "tourist_visa",
+      "amount": 100,
+      "currency": "USD",
+      "note": "Rest of Africa, Asia, Gulf countries, Canadian, and European nationals charged USD 100 per Embassy of South Sudan published fee schedule. NGA falls under 'rest of Africa' (non-bordering)."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.ssembassydc.org/visa-services/",
+    "https://www.evisa.gov.ss/",
+    "https://www.evisa.gov.ss/eligibility",
+    "https://mofaic.gov.ss/visas/"
+  ],
+  "free_visa_notes": "East African Community (EAC) member state nationals and Egyptian nationals travel visa-free per the Embassy of South Sudan's published schedule. Diplomatic/official passport holders are exempt (gratis)."
+}

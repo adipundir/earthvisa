@@ -1,0 +1,102 @@
+{
+  "iso3": "ZWE", "name": "Zimbabwe", "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Ordinary single-entry eVisa",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": null,
+      "applies": "most nationalities (standard rate)",
+      "official": true,
+      "source_url": "https://www.zimimmigration.gov.zw/?page_id=6958",
+      "notes": "Also issued as visa on arrival at port of entry for the same fee for eligible nationalities."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Ordinary single-entry visa on arrival",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": null,
+      "applies": "eligible nationalities at port of entry",
+      "official": true,
+      "source_url": "https://www.zimimmigration.gov.zw/?page_id=6958",
+      "notes": "Same rate as the standard online eVisa; issued directly at ports of entry."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multiple-entry eVisa",
+      "amount": 55,
+      "currency": "USD",
+      "amount_usd": 55,
+      "validity": null,
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://www.zimimmigration.gov.zw/?page_id=6958",
+      "notes": ""
+    },
+    {
+      "kind": "e_visa",
+      "name": "KAZA UniVisa (Zimbabwe + Zambia, incl. Victoria Falls/Botswana day trips)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "30 days, multiple crossings between Zimbabwe and Zambia",
+      "applies": "eligible nationalities",
+      "official": false,
+      "source_url": "https://www.evisa.gov.zw/",
+      "notes": "Widely reported at USD 50 by the official eVisa platform and secondary sources; the official FAQ page did not itself display a numeric fee table at fetch time, so this is marked non-official pending direct confirmation on the live application screen. Fee is stated on the application platform at time of applying."
+    },
+    {
+      "kind": "emergency_visa",
+      "name": "Emergency visa (online)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.zimimmigration.gov.zw/?page_id=6958",
+      "notes": "Expedited/emergency processing category."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "unknown",
+      "official": false,
+      "source_url": "https://www.zimimmigration.gov.zw/?page_id=6958",
+      "notes": "No transit-visa-specific fee line was found on the official Department of Immigration fees page or the eVisa portal at time of research; not verified, left null rather than guessed."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "unknown",
+      "official": false,
+      "source_url": "https://www.zimimmigration.gov.zw/?page_id=6958",
+      "notes": "Zimbabwe does not publish a distinct 'business visa' fee line separate from ordinary single/multiple-entry visas; business travellers appear to use the ordinary or multiple-entry visa categories. Not verified as a separate product, left null."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["GBR"], "kind": "tourist_visa", "amount": 55, "currency": "USD", "note": "British single-entry visa (online): USD 55, vs USD 30 standard rate." },
+    { "nationalities": ["GBR"], "kind": "tourist_visa", "amount": 70, "currency": "USD", "note": "British double-entry visa (online): USD 70." },
+    { "nationalities": ["CHN"], "kind": "tourist_visa", "amount": 60, "currency": "USD", "note": "Chinese single-entry visa (online): USD 60, vs USD 30 standard rate." }
+  ],
+  "vfs": { "used": false, "note": "Applications for entry into Zimbabwe are processed directly via the official eVisa portal (evisa.gov.zw) and the Department of Immigration, not through VFS Global. VFS Global centres in Harare instead handle outbound Zimbabwean applications to third countries (e.g. South Africa, UK, Schengen states, Canada), which is a different corridor." },
+  "sources": [
+    "https://www.zimimmigration.gov.zw/?page_id=6958",
+    "https://www.evisa.gov.zw/",
+    "https://www.evisa.gov.zw/faq.html"
+  ],
+  "free_visa_notes": "Zimbabwe operates a visa regime for most nationalities; it is not visa-free for the general population. Some nationalities (mostly African/COMESA/SADC states and a handful of others) are visa-exempt or visa-on-arrival eligible per the Department of Immigration's country list, but a paid visa/eVisa is required for the majority of travelers, including the key reciprocity nationalities checked in this record (IND, USA, NGA, PAK, PHL, BGD, RUS, CAN — all pay the standard USD 30 single-entry rate unless a higher category is chosen; only GBR and CHN have documented higher fixed rates)."
+}

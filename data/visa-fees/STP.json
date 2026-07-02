@@ -1,0 +1,67 @@
+{
+  "iso3": "STP",
+  "name": "São Tomé and Príncipe",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "eVisaST (online pre-visa application)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": "Single entry, valid 90 days from issue, stay up to 30 days",
+      "applies": "nationalities requiring a visa, applied online in advance",
+      "official": true,
+      "source_url": "https://www.smf.st/evisa/",
+      "notes": "Official Serviço de Migração e Fronteiras (SMF) e-visa portal (smf.st) does not publish an online application fee; it states payment is made at the border ('O pagamento será feito na fronteira!'). No fee amount is disclosed on the official site or its Taxas (fees) page (smf.st/taxas.php), which lists only passport-issuance fees in STD, not visa fees."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist visa stamping fee (paid on arrival at airport)",
+      "amount": 20,
+      "currency": "EUR",
+      "amount_usd": 22,
+      "validity": "Single entry, 30 days",
+      "applies": "nationalities requiring a visa (after online e-visa pre-approval)",
+      "official": false,
+      "source_url": "http://saotomeislands.com/evisa/faq.html",
+      "notes": "Not confirmed on an official government page with an explicit amount; multiple third-party visa-guide sites (unofficial FAQ hosted alongside the e-visa guide, VisaHQ, iVisa) consistently cite a 20 EUR cash stamping fee collected by Immigration at São Tomé International Airport, payable in EUR, USD, or local Dobra. Children under 18 reportedly pay half. Treat as indicative, not officially verified, until confirmed directly on smf.st."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa stamping fee (paid on arrival at airport)",
+      "amount": 30,
+      "currency": "EUR",
+      "amount_usd": 33,
+      "validity": "Single entry, 30 days",
+      "applies": "nationalities requiring a visa (after online e-visa pre-approval)",
+      "official": false,
+      "source_url": "http://saotomeislands.com/evisa/faq.html",
+      "notes": "Same caveat as tourist visa: figure comes from an unofficial visa-guide FAQ, not directly confirmed with an amount on the official smf.st site."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (limited nationalities, e.g. Chinese ordinary passport holders)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": "15 days",
+      "applies": "select nationalities eligible for visa-free/visa-on-arrival entry",
+      "official": false,
+      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+      "notes": "Sources indicate holders of ordinary Chinese passports (and some other nationalities) may obtain a visa on arrival for up to 15 days, but no official fee schedule was found; amount left unverified."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.smf.st/evisa/",
+    "https://www.smf.st/taxas.php",
+    "http://saotomeislands.com/evisa/faq.html",
+    "https://saotomeislands.com/evisa/visa-policy.html",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+    "https://www.visahq.com/sao-tome-principe/"
+  ],
+  "free_visa_notes": "EU, CPLP (Community of Portuguese Language Countries), and reportedly US/Canadian passport holders can enter visa-free for stays up to 15 days per some sources, though this is not confirmed with a fee amount on an official page since no fee applies to visa-exempt entrants. No reciprocity fee schedule by nationality was found on any official source; the official SMF e-visa portal (smf.st) does not publish itemized visa fees online, stating only that payment occurs at the border."
+}

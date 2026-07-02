@@ -1,0 +1,85 @@
+{
+  "iso3": "MAR",
+  "name": "Morocco",
+  "updated": "2026-07-02",
+  "confidence": "low",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Ordinary tourist visa (single entry, up to 90 days)",
+      "amount": 220,
+      "currency": "MAD",
+      "amount_usd": 22,
+      "validity": "up to 90 days, single entry",
+      "applies": "nationalities requiring a visa to enter Morocco (visa exempt for most EU/North American/many Asian passports)",
+      "official": false,
+      "source_url": "https://www.consulat.ma/en/ordinary-visas",
+      "notes": "Official Moroccan consular portal (consulat.ma) publishes the fee schedule but the page returned a WAF/'Request Rejected' block on direct fetch, so the amount could not be confirmed by direct read of the primary source. Figure of 220 MAD single-entry / 330 MAD multiple-entry is corroborated by several secondary sources referencing the official consular tariff; treat as indicative pending direct verification."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Ordinary visa, multiple entries (up to 90 days per stay)",
+      "amount": 330,
+      "currency": "MAD",
+      "amount_usd": 33,
+      "validity": "multiple entries, up to 90 days per stay",
+      "applies": "nationalities requiring a visa",
+      "official": false,
+      "source_url": "https://www.consulat.ma/en/ordinary-visas",
+      "notes": "Same sourcing caveat as single-entry tourist visa fee above - could not directly verify on consulat.ma due to site blocking automated access."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": 330,
+      "currency": "MAD",
+      "amount_usd": 33,
+      "validity": null,
+      "applies": "nationalities requiring a visa, business travel",
+      "official": false,
+      "source_url": "https://www.consulat.ma/en/ordinary-visas",
+      "notes": "Not independently verified on the official consular site; corroborated by secondary sources citing the same consular tariff table. Express processing may carry an additional (unpublished) fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa (max 72 hours)",
+      "amount": 170,
+      "currency": "MAD",
+      "amount_usd": 17,
+      "validity": "max 72 hours",
+      "applies": "nationalities requiring a visa transiting Morocco",
+      "official": false,
+      "source_url": "https://www.consulat.ma/en/ordinary-visas",
+      "notes": "Not independently verified on the official consular site; corroborated by secondary sources citing the same consular tariff table."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Morocco eVisa (Acces Maroc / acces-maroc.ma)",
+      "amount": null,
+      "currency": "MAD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals of countries designated eligible for eVisa (e.g. India, and others per official eligibility checker), express (24h) or standard (72h) processing",
+      "official": true,
+      "source_url": "https://www.acces-maroc.ma/",
+      "notes": "acces-maroc.ma is the official Kingdom of Morocco eVisa portal (launched 10 July 2022, announced via diplomatie.ma). The exact government eVisa fee could not be confirmed on the official portal itself (page is a dynamic eligibility-checker app with no visible pricing in fetched content). Secondary sources mention a non-refundable service fee 'of approximately 258 MAD per file' but this was not confirmed on an official page, so amount is left null rather than guessed. Do not trust third-party reseller sites (e.g. moroccan-visa.com quoting $90+$69) as these are not official and appear inflated with markup."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "590",
+    "currency": "INR",
+    "note": "VFS Global operates the Morocco visa application centre for Indian applicants. Per VFS's own India-Morocco portal, service fee is INR 590 per applicant plus a mandatory tourism promotional charge of INR 140 per applicant (both inclusive of taxes), in addition to the consular visa fee. Direct WebFetch of the official VFS page (visa.vfsglobal.com) returned HTTP 403 during this research session, so this figure is from search-engine summarization of that official VFS page rather than a direct read; treat as indicative and re-verify before quoting to users.",
+    "source_url": "https://visa.vfsglobal.com/one-pager/morocco/india/english/"
+  },
+  "sources": [
+    "https://www.consulat.ma/en/ordinary-visas",
+    "https://www.acces-maroc.ma/",
+    "https://diplomatie.ma/en/launch-electronic-visa-evisa",
+    "https://visa.vfsglobal.com/one-pager/morocco/india/english/",
+    "https://ma.usembassy.gov/u-s-consulate-general-casablanca/fee-information/"
+  ],
+  "free_visa_notes": "Morocco is not a Schengen member (common Schengen fee does not apply). Citizens of a large number of countries (most EU/EEA states, UK, USA, Canada, and many others) do not need a visa for short tourist stays (typically up to 90 days) and pay no visa fee at all. This record covers fees applicable only to nationalities that DO require a visa; the specific reciprocity-based fee table by nationality (e.g. differing rates for IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN applicants who are not already visa-exempt) could not be located on an official source during this research pass, so no reciprocity_variations entries are recorded - most of the listed key nationalities (USA, GBR, CAN and many EU citizens) are in fact visa-exempt for tourism, while others (e.g. IND, CHN, NGA, PAK, BGD) generally require a visa/eVisa at the standard consular tariff above."
+}

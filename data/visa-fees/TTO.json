@@ -1,0 +1,76 @@
+{
+  "iso3": "TTO", "name": "Trinidad and Tobago", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "eVisa (Multiple Entry) Application Fee",
+      "amount": 400,
+      "currency": "TTD",
+      "amount_usd": 59,
+      "validity": "Duration of approved stay; multiple entry",
+      "applies": "eligible nationals from visa-required countries",
+      "official": true,
+      "source_url": "https://ttconnect.gov.tt/visa-student-permit/",
+      "notes": "ttconnect.gov.tt (official government portal) publishes TTD 400 non-refundable for the Multiple Entry eVisa. However, the Ministry of National Security's Immigration Division eVisa page states TTD 800 for the same Multiple Entry eVisa - the two official sources disagree, possibly reflecting a fee revision effective Jan 1, 2026 (first major revision since 2007) that has not been uniformly updated across government sites. Recorded here is the ttconnect figure; verify directly with immigration.visas@gov.tt before relying on this amount."
+    },
+    {
+      "kind": "e_visa",
+      "name": "eVisa (Multiple Entry) Application Fee - Ministry of National Security figure",
+      "amount": 800,
+      "currency": "TTD",
+      "amount_usd": 118,
+      "validity": "Duration of approved stay; multiple entry",
+      "applies": "eligible nationals from visa-required countries",
+      "official": true,
+      "source_url": "https://nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/",
+      "notes": "Ministry of National Security Immigration Division eVisa page states TTD 800 non-refundable, payable by Visa/Mastercard only. Conflicts with ttconnect.gov.tt's published TTD 400. Both are official .gov.tt sources; discrepancy unresolved as of this record's date."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist Visa - Single Entry (sticker/embassy-issued, third-party reported)",
+      "amount": null,
+      "currency": "TTD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationals",
+      "official": false,
+      "source_url": "https://www.visahq.com/trinidad-tobago/",
+      "notes": "Third-party visa agency (VisaHQ) cites TTD 216.76 (~USD 32) single entry and TTD 433.53 (~USD 64) multi-entry, but this could not be confirmed on any official Trinidad and Tobago government source (nationalsecurity.gov.tt, ttconnect.gov.tt, foreign.gov.tt all lack a published sticker-visa fee schedule). Amount set to null per accuracy rules pending official confirmation."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationals traveling for business",
+      "official": false,
+      "source_url": "https://visarun.ai/knowledge-base/trinidad-and-tobago",
+      "notes": "Third-party aggregator (visarun.ai) cites a USD 60-120 range for business visas, but no official Trinidad and Tobago government source publishes a separate business visa fee schedule; the eVisa system does not appear to break out a distinct business-visa fee from the standard multiple-entry eVisa fee. Amount set to null pending official confirmation."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-required nationals transiting",
+      "official": false,
+      "source_url": "",
+      "notes": "No official source found publishing a distinct transit visa fee for Trinidad and Tobago. Not confirmed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://nationalsecurity.gov.tt/divisions/immigrationdivision/evisa-online/",
+    "https://ttconnect.gov.tt/visa-student-permit/",
+    "https://foreign.gov.tt/services/visas/",
+    "https://nationalsecurity.gov.tt/divisions/immigrationdivision/",
+    "https://evisa.ttservices.online/"
+  ],
+  "free_visa_notes": "Trinidad and Tobago operates a nationality-based visa-required/visa-free list; CARICOM nationals and many Commonwealth, EU and other listed countries' nationals do not require a visa for short tourist stays. Visa-required nationals must apply via the eVisa system (evisa.ttservices.online, linked from nationalsecurity.gov.tt and ttconnect.gov.tt). No VFS Global, TLScontact, or BLS International outsourced visa centre was found for Trinidad and Tobago - applications are processed directly online through the government eVisa portal or through Trinidad and Tobago diplomatic missions abroad. No official reciprocity fee schedule by nationality (e.g. differing fees for IND, USA, GBR, CHN, etc.) was located on any government source; if one exists it was not published on nationalsecurity.gov.tt, ttconnect.gov.tt, or foreign.gov.tt at the time of this record."
+}

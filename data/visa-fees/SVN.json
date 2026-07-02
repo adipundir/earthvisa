@@ -1,0 +1,60 @@
+{
+  "iso3": "SVN", "name": "Slovenia", "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days within any 180-day period",
+      "applies": "all nationalities requiring a Schengen visa (adults)",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Uniform Schengen visa fee, applies to Slovenia as a Schengen member state. Confirmed on Slovenia's official government portal (gov.si) as well."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - child 6-12",
+      "amount": 45,
+      "currency": "EUR",
+      "amount_usd": 48,
+      "validity": "up to 90 days within any 180-day period",
+      "applies": "children aged 6-12",
+      "official": true,
+      "source_url": "https://www.gov.si/en/topics/entry-and-residence/",
+      "notes": "Children under 6 are exempt from the fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (Type A)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals of countries requiring airport transit visa",
+      "official": true,
+      "source_url": "https://www.gov.si/en/topics/entry-and-residence/",
+      "notes": "Official source confirms airport transit visas exist and are exempt from prior consultation requirements, but does not publish a distinct fee; in practice the standard EUR 90 Schengen visa fee schedule applies to transit visas issued under the common Schengen rules. Left null pending a source that states the transit-specific figure explicitly."
+    }
+  ],
+  "reciprocity_variations": [
+    { "nationalities": ["ARM", "AZE", "BLR"], "kind": "tourist_visa", "amount": 35, "currency": "EUR", "note": "Reduced Schengen visa fee under EU visa facilitation agreements, per European Commission Migration and Home Affairs and gov.si." },
+    { "nationalities": ["CPV"], "kind": "tourist_visa", "amount": 67.5, "currency": "EUR", "note": "Reduced Schengen visa fee under EU-Cabo Verde visa facilitation agreement." }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "~90-110 (varies by country, e.g. approx USD 105 in the USA)",
+    "currency": "local currency of centre (e.g. USD in USA)",
+    "note": "VFS Global operates outsourced visa application centres for Slovenia in many countries. Service fee is charged in addition to the EUR 90 official visa fee and varies by country/centre; could not confirm an authoritative published figure via a directly-fetchable official VFS page (visa.vfsglobal.com returned 403 to automated fetch), so this figure is drawn from a secondary aggregator summarizing VFS USA pricing and should be treated as indicative only.",
+    "source_url": "https://visa.vfsglobal.com/usa/en/svn/"
+  },
+  "sources": [
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+    "https://www.gov.si/en/topics/entry-and-residence/",
+    "https://visa.vfsglobal.com/usa/en/svn/"
+  ],
+  "free_visa_notes": ""
+}

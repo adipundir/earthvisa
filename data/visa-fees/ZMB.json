@@ -1,0 +1,90 @@
+{
+  "iso3": "ZMB",
+  "name": "Zambia",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Single Entry e-Visa",
+      "amount": 50.50,
+      "currency": "USD",
+      "amount_usd": 50.50,
+      "validity": "90 days",
+      "applies": "all eligible nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/",
+      "notes": "Statutory fee $25 plus card-payment administrative fee; total shown ($50.50) is the card-payment total on the official pricing page. Mobile money payment total may be slightly lower. Applied for online via eservices.zambiaimmigration.gov.zm or on arrival."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Double Entry Visa",
+      "amount": 80.80,
+      "currency": "USD",
+      "amount_usd": 80.80,
+      "validity": "90 days",
+      "applies": "all eligible nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/",
+      "notes": "Statutory fee $40 plus card-payment administrative fee; total shown is the card-payment total."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multiple Entry Visa",
+      "amount": 80.80,
+      "currency": "USD",
+      "amount_usd": 80.80,
+      "validity": "90 days",
+      "applies": "all eligible nationalities not visa-exempt",
+      "official": true,
+      "source_url": "https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/",
+      "notes": "Statutory fee $75 plus card-payment administrative fee; total shown is the card-payment total. Two separate listings (single-entry $25 base and multiple-entry $75 base) both appear on the official fee schedule; card-payment totals for double and multiple entry converge at $80.80 per the pricing page."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 25.28,
+      "currency": "USD",
+      "amount_usd": 25.28,
+      "validity": "up to 7 days",
+      "applies": "all eligible nationalities requiring transit visa",
+      "official": true,
+      "source_url": "https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/",
+      "notes": "Statutory fee $25 plus card-payment administrative fee."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "KAZA UniVisa (Zambia-Zimbabwe regional visa)",
+      "amount": 50.50,
+      "currency": "USD",
+      "amount_usd": 50.50,
+      "validity": "up to 30 days",
+      "applies": "eligible nationalities, issued at designated ports of entry (incl. Victoria Falls, Kazungula) or online",
+      "official": true,
+      "source_url": "https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/",
+      "notes": "Statutory fee $50 plus card-payment administrative fee. Covers multiple entries between Zambia and Zimbabwe within validity."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Day Tripper Visa",
+      "amount": 10.10,
+      "currency": "USD",
+      "amount_usd": 10.10,
+      "validity": "under 24 hours",
+      "applies": "day visitors at Victoria Falls and Kazungula border only",
+      "official": true,
+      "source_url": "https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/",
+      "notes": "Statutory fee $10 plus card-payment administrative fee."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/",
+    "https://www.zambiaimmigration.gov.zm/for-visitors/",
+    "https://eservices.zambiaimmigration.gov.zm/"
+  ],
+  "free_visa_notes": "Nationals of 53 countries are visa-exempt for stays up to 90 days per 12-month period per the official Zambia Department of Immigration visitor page. The official pricing page does not publish nationality-specific fee variations (e.g. no distinct IND/USA/GBR/CHN/NGA/PAK/PHL/BGD/RUS/CAN rates were found) - all listed fees appear to be flat rates for non-exempt nationalities requiring a visa. Zambia visa applications are processed directly through the government's own e-Services portal (eservices.zambiaimmigration.gov.zm); no outsourced visa application centre (VFS/TLScontact/BLS) is used."
+}

@@ -1,0 +1,55 @@
+{
+  "iso3": "PAK",
+  "name": "Pakistan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Pakistan e-Visa (Tourist/Visit)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "Typically 3 months from issuance (single or multiple entry options exist)",
+      "applies": "Nationals of 191 eligible countries applying from their country of residence",
+      "official": true,
+      "source_url": "https://visa.nadra.gov.pk/fee-structure/",
+      "notes": "The official Pakistan Online Visa System (NADRA) fee-structure page is an interactive JavaScript fee calculator that requires selecting visa category, sub-category, entry type, and applicant country to display an exact amount - it does not publish a static fee table, so an exact official figure could not be captured programmatically. Secondary sources (travel blogs citing the calculator) report single-entry tourist e-visa fees ranging roughly USD 20-75 depending on nationality, with EU citizens around USD 35 and US/Canada/UK around USD 60; nine nationalities (Afghanistan, China, Japan, Iceland, North Korea, Slovakia, Malaysia, UAE, Saudi Arabia) reportedly pay no visa fee (except work visas). These secondary figures are NOT verified against the official calculator and amount is left null pending direct verification."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a - suspended",
+      "official": true,
+      "source_url": "https://visa.nadra.gov.pk/",
+      "notes": "Per secondary reporting, Pakistan's Visa on Arrival and Visa Prior to Arrival programs were suspended effective 1 January 2026; all eligible travellers must now apply for an e-Visa in advance via visa.nadra.gov.pk. This could not be independently confirmed against an official NADRA/MOFA announcement page during this research pass."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Pakistan e-Visa (Business)",
+      "amount": null,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "Nationals of eligible countries",
+      "official": true,
+      "source_url": "https://visa.nadra.gov.pk/fee-structure/",
+      "notes": "Business is a selectable category on the official fee calculator; exact amount depends on applicant nationality, entry type, and sub-category and could not be captured statically."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://visa.nadra.gov.pk/",
+    "https://visa.nadra.gov.pk/fee-structure/",
+    "https://visa.nadra.gov.pk/faqs/",
+    "https://visa.nadra.gov.pk/how-to-apply/",
+    "https://mofa.gov.pk/faqs-regarding-e-visas",
+    "https://blog.wego.com/pakistan-evisa/"
+  ],
+  "free_visa_notes": "Not free for all - Pakistan operates a reciprocity-based e-visa fee system covering 191 eligible nationalities, with fees varying by nationality, visa category, and entry type. Secondary sources indicate roughly nine nationalities (Afghanistan, China, Japan, Iceland, North Korea, Slovakia, Malaysia, UAE, Saudi Arabia) are exempt from the visa fee, but this was not verified against an official published list in this pass. The official NADRA fee calculator (https://visa.nadra.gov.pk/fee-structure/) must be queried per-nationality/category to obtain exact authoritative amounts; no VFS/outsourced visa centre is used - applications are submitted directly via the government portal."
+}

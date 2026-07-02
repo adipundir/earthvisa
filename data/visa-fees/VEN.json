@@ -1,0 +1,66 @@
+{
+  "iso3": "VEN",
+  "name": "Venezuela",
+  "updated": "2026-07-02",
+  "confidence": "low",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (TR-V) via Cancillería Digital",
+      "amount": 180,
+      "currency": "USD",
+      "amount_usd": 180,
+      "validity": "Single-entry typically 30-90 days; multi-entry options available up to 1 year with 90-day-per-visit limits",
+      "applies": "eligible nationalities required to obtain a visa",
+      "official": false,
+      "source_url": "https://www.fragomen.com/insights/venezuela-introduction-of-electronic-visa-system-for-tourist-and-business-travelers.html",
+      "notes": "Venezuela's Ministry of Foreign Affairs (MPPRE) launched a new online e-visa system (Cancillería Digital, cancilleriadigital.mppre.gob.ve) in April 2026, replacing the prior paper process. Immigration-law sources (Fragomen) and the U.S. Embassy in Caracas report the fee rose from USD 60 to USD 180, but this could not be independently confirmed on the official Cancillería Digital portal itself (the site did not return a public fee schedule via automated fetch). Treat this figure as provisional pending direct portal confirmation."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business e-Visa (TR-N) via Cancillería Digital",
+      "amount": 180,
+      "currency": "USD",
+      "amount_usd": 180,
+      "validity": "Similar to tourist e-visa; single or multi-entry options",
+      "applies": "eligible nationalities required to obtain a visa",
+      "official": false,
+      "source_url": "https://www.fragomen.com/insights/venezuela-introduction-of-electronic-visa-system-for-tourist-and-business-travelers.html",
+      "notes": "Same online system and fee as the tourist e-visa per secondary immigration-law reporting; not independently verified on an official .gob.ve fee schedule."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "not offered",
+      "official": false,
+      "source_url": "",
+      "notes": "No evidence found of a visa-on-arrival option for Venezuela; visas must be obtained in advance via the Cancillería Digital e-visa portal or an embassy/consulate."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "unknown",
+      "official": false,
+      "source_url": "",
+      "notes": "No official fee schedule for a Venezuelan transit visa could be located; could not verify whether a distinct transit visa category and fee currently exist."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.fragomen.com/insights/venezuela-introduction-of-electronic-visa-system-for-tourist-and-business-travelers.html",
+    "https://ve.usembassy.gov/venezuela-electronic-visa-application-process-update/",
+    "https://cancilleriadigital.mppre.gob.ve/login",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Venezuela.html",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Venezuela"
+  ],
+  "free_visa_notes": "Venezuela is not visa-free for most nationalities requiring advance visas; a subset of nationalities (largely regional/Latin American and some others) are visa-exempt for short tourist stays per Venezuela's visa policy, but this varies by nationality and was not exhaustively verified against an official government list for this record. No reciprocity-specific fee schedule (e.g., differing amounts for IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN) could be located on official sources; the Cancillería Digital portal appears to charge a flat USD 180 fee regardless of nationality per secondary reporting, but this is unconfirmed directly."
+}

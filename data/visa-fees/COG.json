@@ -1,0 +1,55 @@
+{
+  "iso3": "COG",
+  "name": "Republic of the Congo",
+  "updated": "2026-07-02",
+  "confidence": "low",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-stay visa (30 days, normal processing)",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "30 days",
+      "applies": "all (South Africa-issued schedule)",
+      "official": true,
+      "source_url": "https://www.embassyofcongo.co.za/requirements/index.html",
+      "notes": "Embassy of the Republic of Congo in South Africa publishes a duration-based fee schedule (also payable in ZAR: R1,200). Express service costs $70. Longer validities: 60 days $85, 90 days $110, 365 days $350 (normal); fees are VAT inclusive. Fee schedules vary by issuing embassy/consulate."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visa (Embassy of the Republic of Congo, Washington DC)",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": null,
+      "applies": "applicants processed via the DC embassy",
+      "official": true,
+      "source_url": "http://www.ambacongo-us.org/en/consular-services/visa",
+      "notes": "Search-engine snippet of the official DC embassy consular fee page cites a $200 visa fee; direct WebFetch of this page failed with an expired TLS certificate so the amount could not be independently re-verified on this run. Diplomatic visas are fee-exempt. Cash or money order only."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Republic of Congo e-visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://republic-congo.com/en/apply-for-a-visa/application/",
+      "notes": "republic-congo.com appears to be the online visa application portal referenced by third-party visa guides, but the site returned HTTP 403 (CloudFront block) on every fetch attempt during this research session, so its fee amount could not be verified on an official source. Do not treat this domain's ownership/officialness as confirmed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "No evidence found that Republic of the Congo (Brazzaville) outsources visa applications to VFS Global, TLScontact, or BLS International. VFS Global Kinshasa results found in search relate to the Democratic Republic of the Congo (a different country), not the Republic of the Congo."
+  },
+  "sources": [
+    "https://www.embassyofcongo.co.za/requirements/index.html",
+    "http://www.ambacongo-us.org/en/consular-services/visa",
+    "https://republic-congo.com/en/apply-for-a-visa/application/"
+  ],
+  "free_visa_notes": "No general visa-free or visa-on-arrival regime identified for entry into the Republic of the Congo; most nationalities require an advance visa. Could not verify a reciprocity fee schedule (by nationality) on an official source in this session."
+}

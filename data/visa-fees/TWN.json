@@ -1,0 +1,64 @@
+{
+  "iso3": "TWN",
+  "name": "Taiwan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor Visa - Single Entry (overseas application)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "3 months from issue, stay up to 90 days depending on nationality",
+      "applies": "nationals requiring a visa, applying at a Taiwan overseas mission",
+      "official": true,
+      "source_url": "https://www.boca.gov.tw/cp-160-7204-78395-2.html",
+      "notes": "Fee is NT$1,600 if applied for inside Taiwan; US$50 if applied for overseas. Official currency for overseas applications is USD per BOCA fee schedule."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor Visa - Multiple Entry (overseas application)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "up to 3 years depending on nationality, stay up to 90 days per entry",
+      "applies": "nationals requiring a visa, applying at a Taiwan overseas mission",
+      "official": true,
+      "source_url": "https://www.boca.gov.tw/cp-160-7204-78395-2.html",
+      "notes": "Fee is NT$3,200 if applied for inside Taiwan; US$100 if applied for overseas."
+    },
+    {
+      "kind": "e_visa",
+      "name": "eVisa (online visitor visa)",
+      "amount": 1646,
+      "currency": "TWD",
+      "amount_usd": null,
+      "validity": "typically 3 months from issue, stay per visa type",
+      "applies": "eligible nationalities per BOCA eVisa program",
+      "official": true,
+      "source_url": "https://www.boca.gov.tw/cp-181-4492-0447f-2.html",
+      "notes": "NT$1,600 base fee plus NT$46 online credit-card processing fee = NT$1,646 total. Citizens of Bosnia and Herzegovina, Colombia, Haiti, Mauritius, Montenegro, Panama, Peru, and Turkiye receive eVisas free of charge."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa-on-arrival surcharge",
+      "amount": 24,
+      "currency": "USD",
+      "amount_usd": 24,
+      "validity": null,
+      "applies": "eligible nationalities applying for a visa on arrival at a Taiwan port of entry",
+      "official": true,
+      "source_url": "https://www.boca.gov.tw/cp-160-7204-78395-2.html",
+      "notes": "Additional charge of NT$800 or US$24 on top of the applicable visa-type fee, per Article 4 of the BOCA visa fee schedule."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.boca.gov.tw/cp-160-7204-78395-2.html",
+    "https://www.boca.gov.tw/cp-181-4492-0447f-2.html",
+    "https://www.boca.gov.tw/cp-158-250-a5a40-2.html"
+  ],
+  "free_visa_notes": "Taiwan operates a broad visa-exemption program (visa-free entry, typically 14-90 days depending on nationality) for many countries including most of the EU, USA, UK, Canada, Japan, Korea, Australia, and others; those travellers pay no visa fee. Fees above apply only to nationals who require a visa. BOCA's fee schedule references a general reciprocity clause (extra charge equal to what a country charges Taiwanese passport holders) but does not publish a country-by-country reciprocity fee table, so no verified per-nationality amounts (e.g. for IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN) could be confirmed from an official source; reciprocity_variations left empty rather than guessed. Taiwan is not a Schengen member. No VFS/outsourced visa centre network was found for Taiwan visa applications; visas are processed directly by Taiwan's overseas missions (Taipei Economic and Cultural Offices) or via the official eVisa portal."
+}

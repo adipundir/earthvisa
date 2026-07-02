@@ -1,0 +1,40 @@
+{
+  "iso3": "WSM", "name": "Samoa", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visitor's Permit (issued free on arrival)",
+      "amount": 0,
+      "currency": "WST",
+      "amount_usd": 0,
+      "validity": "90 days",
+      "applies": "most nationalities (visa-exempt/visa-waiver eligible)",
+      "official": false,
+      "source_url": "https://samoapocketguide.com/how-much-does-a-visa-cost-for-samoa/",
+      "notes": "Multiple secondary sources (Samoa Pocket Guide, thingstodoinsamoa.com, AE-SQUARE) consistently state Samoa issues a free 90-day Visitor's Permit on arrival for eligible nationalities, with no visa fee charged. Could not retrieve a readable official fee schedule from mpmc.gov.ws (Immigration Division, 403 on fetch) or a Contentful/PDF fee sheet to independently confirm the exact figure of 0, so official flag is left false pending direct confirmation."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor Permit extension",
+      "amount": 100,
+      "currency": "WST",
+      "amount_usd": null,
+      "validity": "extension beyond initial 90 days",
+      "applies": "all nationalities already in Samoa on a Visitor's Permit",
+      "official": false,
+      "source_url": "https://samoapocketguide.com/how-much-does-a-visa-cost-for-samoa/",
+      "notes": "Reported extension fee of ST$100 (Samoan Tala) for extending a visitor permit beyond the initial free 90-day stay. Sourced from secondary travel-guide sites citing the Ministry of the Prime Minister and Cabinet (MPMC) Immigration Division; the MPMC official page (mpmc.gov.ws/divisions/immigration/) returned HTTP 403 on direct fetch so this could not be verified against the primary source in this session."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.mfat.gov.ws/visas/",
+    "https://mpmc.gov.ws/divisions/immigration/",
+    "https://samoapocketguide.com/how-much-does-a-visa-cost-for-samoa/",
+    "https://thingstodoinsamoa.com/entry-requirements/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Samoa.html"
+  ],
+  "free_visa_notes": "Samoa issues a free 90-day Visitor's Permit on arrival to most eligible nationalities (no visa application fee). No evidence found of a paid e-visa, eTA, or VFS-outsourced visa process for Samoa. Long-stay/work permits and visitor-permit extensions (reported ST$100) are outside the free entry-permit scope. Government primary source (mpmc.gov.ws Immigration Division) could not be fetched directly (403) to confirm exact figures, hence confidence is medium rather than high."
+}

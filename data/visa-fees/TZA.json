@@ -1,0 +1,83 @@
+{
+  "iso3": "TZA", "name": "Tanzania", "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Ordinary (Single Entry) e-Visa",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Up to 90 days",
+      "applies": "most nationalities, tourism purpose",
+      "official": true,
+      "source_url": "https://www.immigration.go.tz/index.php/fees/visa-fees",
+      "notes": "As of Jan 2025, visa on arrival was abolished; all visitors must apply via the official e-visa portal visa.immigration.go.tz before arrival. Official notice warns any invoice above 50 USD for the Ordinary Visa indicates use of an unauthorised agent."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multiple Entry Visa",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "1 year",
+      "applies": "eligible nationalities (also standard tourism visa for US citizens)",
+      "official": true,
+      "source_url": "https://www.immigration.go.tz/index.php/fees/visa-fees",
+      "notes": ""
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa",
+      "amount": 250,
+      "currency": "USD",
+      "amount_usd": 250,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.immigration.go.tz/index.php/fees/visa-fees",
+      "notes": ""
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://www.immigration.go.tz/index.php/fees/visa-fees",
+      "notes": ""
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "none",
+      "official": true,
+      "source_url": "https://www.immigration.go.tz/index.php/fees/visa-fees",
+      "notes": "Visa on arrival was abolished as of January 2025; all applicants must now obtain an e-visa online prior to travel."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "e_visa",
+      "amount": 100,
+      "currency": "USD",
+      "note": "US citizens are required to apply for the Multiple Entry Visa (100 USD, valid 12 months) for holiday/tourism purposes rather than the 50 USD single-entry Ordinary Visa, per the Tanzania Embassy in Washington D.C."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.immigration.go.tz/index.php/fees/visa-fees",
+    "https://www.immigration.go.tz/index.php/fees-for-visa",
+    "https://www.us.tzembassy.go.tz/services/visa-and-permits-fees",
+    "https://visa.immigration.go.tz/"
+  ],
+  "free_visa_notes": "A 'Gratis Visa' (free) category exists on the official fee schedule for specific exempted cases (e.g. diplomatic/reciprocal arrangements), but standard tourist/business travel requires a paid e-visa for virtually all nationalities. No official reciprocity fee breakdown by nationality (India, UK, China, Nigeria, Pakistan, Philippines, Bangladesh, Russia, Canada) was found beyond the US-specific rate; these likely pay the standard 50 USD Ordinary Visa fee, but this was not independently confirmed on an official nationality-by-nationality schedule, hence amounts for those nationalities are not separately listed."
+}

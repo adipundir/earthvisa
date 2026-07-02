@@ -1,0 +1,104 @@
+{
+  "iso3": "ZAF", "name": "South Africa", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Port of Entry / Visitor's Visa (short-term visitor visa, sticker/embassy-issued)",
+      "amount": 36,
+      "currency": "USD",
+      "amount_usd": 36,
+      "validity": "up to 90 days",
+      "applies": "nationalities requiring a visa to enter South Africa (fee as published by SA Embassy Washington; other missions may charge local-currency equivalent)",
+      "official": true,
+      "source_url": "https://www.saembassy.org/visas/civic_immigration/consularfees/",
+      "notes": "Base consular fee schedule published by the South African Embassy in Washington DC. Amounts are often waived (gratis) for specific nationalities under bilateral agreements (e.g. India) - see reciprocity_variations."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Visa to Attend Business Meetings (90 days or less)",
+      "amount": 36,
+      "currency": "USD",
+      "amount_usd": 36,
+      "validity": "up to 90 days",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.saembassy.org/visas/civic_immigration/consularfees/",
+      "notes": ""
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa (more than 90 days)",
+      "amount": 127,
+      "currency": "USD",
+      "amount_usd": 127,
+      "validity": "more than 90 days",
+      "applies": "nationalities requiring a visa",
+      "official": true,
+      "source_url": "https://www.saembassy.org/visas/civic_immigration/consularfees/",
+      "notes": "Long-stay business visa fee; general work/residence permits excluded from this record."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 36,
+      "currency": "USD",
+      "amount_usd": 36,
+      "validity": "short transit stay",
+      "applies": "nationalities requiring a transit visa",
+      "official": true,
+      "source_url": "https://www.saembassy.org/visas/civic_immigration/consularfees/",
+      "notes": ""
+    },
+    {
+      "kind": "e_visa",
+      "name": "South Africa eVisa (ePermits online visa application)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "eligible nationalities per DHA eVisa pilot country list",
+      "official": true,
+      "source_url": "https://ehome.dha.gov.za/epermit/questions",
+      "notes": "Official DHA eVisa portal does not publish a fixed fee schedule; the underlying visa-category fee (equivalent to the sticker-visa fee for the visa type applied for) applies but was not independently confirmed on the portal at time of writing. Set to null rather than guessed."
+    },
+    {
+      "kind": "eta",
+      "name": "South African Electronic Travel Authorisation (ETA)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "eligible nationalities per DHA ETA rollout (reported free for some nationalities, e.g. India, at launch Oct 2025)",
+      "official": true,
+      "source_url": "https://eta.dha.gov.za/",
+      "notes": "DHA has not published a fixed public ETA fee schedule as of 2026-07-02; fee is reportedly based on reciprocal visa-fee arrangements with each applicant's country and is only shown inside the application portal at payment step. Reported as free/gratis for Indian nationals at the Oct 2025 ETA launch, per secondary reporting - not independently confirmed on an official page with a fee figure, so amount left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Visa fee is gratis (waived) for Indian nationals per VFS Global South Africa India visa-fees-at-glance page; applicant still pays the non-waivable VFS service/logistics fee (see vfs block)."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "2040-2301",
+    "currency": "INR",
+    "note": "Published VFS Global India logistics/service fee for South Africa visa applications: INR 2,040 (inclusive of taxes) at Delhi and Mumbai centres; INR 2,301 (inclusive of taxes) at other Indian centres (Gurgaon, Jaipur, Kolkata, Ahmedabad, Pune, Goa, Bangalore). This service fee is separate from and additional to any government visa fee, is non-refundable, and is charged regardless of visa-fee waivers. South Africa also routes visa applications through VFS Global in numerous other source countries beyond India; fee schedules there were not individually re-verified in this pass.",
+    "source_url": "https://www.vfsglobal.com/southafrica/india/visa-fees-at-glance.html"
+  },
+  "sources": [
+    "https://www.saembassy.org/visas/civic_immigration/consularfees/",
+    "https://www.vfsglobal.com/southafrica/india/visa-fees-at-glance.html",
+    "https://ehome.dha.gov.za/epermit/questions",
+    "https://ehome.dha.gov.za/epermit/home",
+    "https://eta.dha.gov.za/",
+    "https://www.gov.za/services/temporary-residence/visa"
+  ],
+  "free_visa_notes": "South Africa is not visa-free for most travellers requiring a visa/ETA; many nationalities (e.g. most EU, UK, USA, several SADC states) are visa-exempt for short tourist stays under separate visa-exemption rules and pay no visa fee at all (not applicable to this fee record). For nationalities that DO require a visa, the government sticker-visa fee schedule is USD 36 (short-stay) / USD 127 (long business) per the SA Embassy Washington schedule, with fee waivers (gratis) negotiated bilaterally for specific countries such as India."
+}

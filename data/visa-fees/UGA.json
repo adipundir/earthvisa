@@ -1,0 +1,79 @@
+{
+  "iso3": "UGA",
+  "name": "Uganda",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Uganda Tourist Visa (single entry, e-visa)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Approval valid 90 days from approval; grants up to 3 months stay",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://immigration.go.ug/services/tourist-visa",
+      "notes": "Applied for online via visas.immigration.go.ug. Non-refundable; online payments subject to a bank/card surcharge."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "Max 7 days, not extendable",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://immigration.go.ug/services/transit-visas",
+      "notes": "Non-refundable; payments subject to a bank charge."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "East African Tourist Visa (Uganda/Kenya/Rwanda joint visa)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "90 days from date of issue, multiple entry within the 3-country bloc, not renewable",
+      "applies": "all (issuing country must be first entry point)",
+      "official": true,
+      "source_url": "https://immigration.go.ug/services/east-african-tourist-visa",
+      "notes": "Covers Uganda, Kenya and Rwanda only; for tourism purposes, employment prohibited."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Multiple-Entry Visa (6-12 months)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "6 to 12 months, multiple entry",
+      "applies": "frequent travelers (business/family), employment prohibited",
+      "official": true,
+      "source_url": "https://immigration.go.ug/services/multiple-entry-visa",
+      "notes": "Also offered at 24 months for USD 200. Not a work permit."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Multiple-Entry Visa (24 months)",
+      "amount": 200,
+      "currency": "USD",
+      "amount_usd": 200,
+      "validity": "24 months, multiple entry",
+      "applies": "frequent travelers (business/family), employment prohibited",
+      "official": true,
+      "source_url": "https://immigration.go.ug/services/multiple-entry-visa",
+      "notes": "Longer-validity tier of the multiple-entry visa."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://immigration.go.ug/services/visa-passes",
+    "https://immigration.go.ug/services/tourist-visa",
+    "https://immigration.go.ug/services/transit-visas",
+    "https://immigration.go.ug/services/east-african-tourist-visa",
+    "https://immigration.go.ug/services/multiple-entry-visa",
+    "https://visas.immigration.go.ug/"
+  ],
+  "free_visa_notes": "Uganda operates a flat-fee e-visa system published by the National Citizenship and Immigration Control (NCIC) portal; no nationality-based reciprocity fee schedule was found on official sources for the tracked nationalities (IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN) as of this record's date - all pay the same standard fees listed above. All applications are processed directly through the government e-visa portal (visas.immigration.go.ug); no VFS Global/TLScontact/BLS outsourced centre is used for Uganda visas."
+}

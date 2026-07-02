@@ -1,0 +1,78 @@
+{
+  "iso3": "TGO",
+  "name": "Togo",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (single entry, 15 days)",
+      "amount": 25000,
+      "currency": "XOF",
+      "amount_usd": 40,
+      "validity": "15 days, single entry",
+      "applies": "all nationalities requiring a visa",
+      "official": false,
+      "source_url": "https://www.jsdbiz.com/togo-visa/visa-fees/",
+      "notes": "Togo's official e-visa portal (voyage.gouv.tg / dgdn.gouv.tg) confirms all foreign nationals must obtain an e-visa and that fees apply, but its published pages are JavaScript-rendered and did not expose exact fee figures to automated fetch. This amount (25,000 XOF, ~USD 40) is corroborated by multiple third-party visa-service aggregators citing the government eVisa fee schedule; treat as indicative pending direct confirmation on voyage.gouv.tg."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (multiple entry, 30 days)",
+      "amount": 45000,
+      "currency": "XOF",
+      "amount_usd": 80,
+      "validity": "30 days, multiple entry",
+      "applies": "all nationalities requiring a visa",
+      "official": false,
+      "source_url": "https://www.jsdbiz.com/togo-visa/visa-fees/",
+      "notes": "Reported as USD 80 by aggregator sources; some list 45,000 XOF for this tier and others cite differing XOF/USD splits. Not independently confirmed on the official government portal - verify directly at voyage.gouv.tg before relying on this figure."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Tourist e-Visa (multiple entry, 90 days)",
+      "amount": 65000,
+      "currency": "XOF",
+      "amount_usd": 115,
+      "validity": "90 days, multiple entry",
+      "applies": "all nationalities requiring a visa",
+      "official": false,
+      "source_url": "https://www.jsdbiz.com/togo-visa/visa-fees/",
+      "notes": "Reported as USD 115 by aggregator sources; XOF figure (65,000) reported by another aggregator for the same tier. Not independently confirmed on the official government portal - verify directly at voyage.gouv.tg before relying on this figure."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://dgdn.gouv.tg/en/title-and-documents/visa",
+      "notes": "Official DGDN (Direction Générale de la Documentation Nationale) page confirms a business visa category exists and is subject to fees, but does not publish an amount. No verified figure found."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://dgdn.gouv.tg/en/title-and-documents/visa",
+      "notes": "No official published fee amount found for a transit visa category."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://dgdn.gouv.tg/en/title-and-documents/visa",
+    "https://beta.voyage.gouv.tg/",
+    "https://beta.voyage.gouv.tg/about/e-visa",
+    "https://www.jsdbiz.com/togo-visa/visa-fees/",
+    "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Togo.html"
+  ],
+  "free_visa_notes": "Togo operates ECOWAS free movement for other ECOWAS member-state nationals (no visa required). All other nationalities generally require a visa, obtainable via the official e-visa portal (voyage.gouv.tg) administered by DGDN; no reciprocity/nationality-based fee schedule was found on official sources. No VFS or other outsourced visa application centre was identified for Togo - applications are processed directly online or via the DGDN office/embassies."
+}

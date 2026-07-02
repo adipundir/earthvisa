@@ -1,0 +1,87 @@
+{
+  "iso3": "SVK",
+  "name": "Slovakia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen Short-Stay Visa (Type C) - standard fee",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Short-stay, up to 90 days in any 180-day period",
+      "applies": "all adult applicants (non-EU/EEA, visa-required nationalities)",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Slovakia is a Schengen member and applies the common EU short-stay visa fee. Fee confirmed via European Commission Migration and Home Affairs official page; could not independently confirm on mzv.sk (Slovak MFA site returned 403 to automated fetch)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen Short-Stay Visa (Type C) - child fee (6-12 years)",
+      "amount": 45,
+      "currency": "EUR",
+      "amount_usd": 48,
+      "validity": "Short-stay, up to 90 days in any 180-day period",
+      "applies": "children aged 6-12",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Children under 6 are generally exempt from the fee under EU visa code, but this was not independently verified on a Slovak-specific source."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Schengen Airport Transit Visa (Type A)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals subject to airport transit visa requirement",
+      "official": false,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Airport transit visas typically fall under the same €90 standard Schengen fee schedule, but a Slovakia/EU-specific amount could not be independently confirmed on an official source in this research pass. Left null rather than guessed."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen Short-Stay Visa (business purpose)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Short-stay, up to 90 days in any 180-day period",
+      "applies": "all adult applicants (non-EU/EEA, visa-required nationalities)",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Business travel uses the same Schengen Type C visa category and standard fee; no separate business-visa fee schedule found."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARM", "AZE", "BLR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced Schengen visa fee under EU visa facilitation agreements, per European Commission Migration and Home Affairs page."
+    },
+    {
+      "nationalities": ["CPV"],
+      "kind": "tourist_visa",
+      "amount": 67.5,
+      "currency": "EUR",
+      "note": "Reduced Schengen visa fee under EU-Cabo Verde visa facilitation agreement."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "30 EUR (destination-country base) plus local service charge that varies by centre, e.g. approx INR 1750-2200 for applicants filing in India",
+    "currency": "EUR",
+    "note": "VFS Global operates Slovakia's outsourced visa application centres in numerous countries. The service fee is charged in addition to the €90/€45 Schengen visa fee and varies by application centre/country; amounts above are indicative figures found via web search, not independently verified against a live official VFS Slovakia fee page (vfsglobal.com pages returned 403 to automated fetch in this research pass).",
+    "source_url": "https://visa.vfsglobal.com/one-pager/slovakia/india/english/"
+  },
+  "sources": [
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+    "https://visa.vfsglobal.com/one-pager/slovakia/india/english/",
+    "https://www.mzv.sk/en/sluzby/poplatky",
+    "https://www.mzv.sk/en/services/information-for-foreigners/visas-for-foreigners-to-enter-sr"
+  ],
+  "free_visa_notes": "Not applicable — Slovakia requires a Schengen short-stay visa for non-exempt nationalities. Many nationalities are visa-exempt for short stays under the EU visa-exemption list and pay no fee at all in that case; this record covers the fee schedule for nationalities that DO require a visa."
+}

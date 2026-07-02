@@ -1,0 +1,92 @@
+{
+  "iso3": "CHE",
+  "name": "Switzerland",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 103,
+      "validity": "Up to 90 days within a 180-day period",
+      "applies": "adults (12 years and older), standard Schengen visa fee",
+      "official": true,
+      "source_url": "https://www.eda.admin.ch/countries/usa/en/home/visa/entry-ch/up-90-days/fees-schengen.html",
+      "notes": "Base EUR fee set by Visa Code; local representations bill in local currency (e.g. USD 103 at the US-facing Swiss embassy page, CHF 82 via the Canada fee schedule). Amount adjusted periodically for exchange-rate movement - last Swiss update 31.03.2026 / 01.04.2026."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - child 6-11 years",
+      "amount": 45,
+      "currency": "EUR",
+      "amount_usd": 52,
+      "validity": "Up to 90 days within a 180-day period",
+      "applies": "children aged 6-11",
+      "official": true,
+      "source_url": "https://www.eda.admin.ch/countries/usa/en/home/visa/entry-ch/up-90-days/fees-schengen.html",
+      "notes": "Half of the adult Schengen fee, per EU Visa Code."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (Type C) - child under 6",
+      "amount": 0,
+      "currency": "EUR",
+      "amount_usd": 0,
+      "validity": "Up to 90 days within a 180-day period",
+      "applies": "children under 6 years",
+      "official": true,
+      "source_url": "https://www.eda.admin.ch/countries/usa/en/home/visa/entry-ch/up-90-days/fees-schengen.html",
+      "notes": "Free of charge."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Schengen airport/short-stay transit visa",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 103,
+      "validity": "Single/multiple transit, per Schengen rules",
+      "applies": "nationalities requiring an airport transit visa",
+      "official": true,
+      "source_url": "https://www.eda.admin.ch/countries/usa/en/home/visa/entry-ch/up-90-days/fees-schengen.html",
+      "notes": "Switzerland does not publish a separate transit-visa fee; airport/short-stay transit visas are charged at the same standard Schengen visa fee as the short-stay (Type C) visa."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa (business purpose)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 103,
+      "validity": "Up to 90 days within a 180-day period",
+      "applies": "all business travellers, same fee as tourist Type C visa",
+      "official": true,
+      "source_url": "https://www.eda.admin.ch/countries/usa/en/home/visa/entry-ch/up-90-days/fees-schengen.html",
+      "notes": "No separate business-visa fee category; business purpose uses the standard Schengen short-stay fee schedule."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ARM", "AZE", "BIH", "GEO", "MDA", "SRB", "UKR"],
+      "kind": "tourist_visa",
+      "amount": 35,
+      "currency": "EUR",
+      "note": "Reduced Schengen visa fee (EUR 35, listed as USD 40 on the Swiss US-facing fee page) applies under EU visa-facilitation agreements for citizens of Armenia, Azerbaijan, Bosnia and Herzegovina, Georgia, Moldova, Serbia and Ukraine."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": null,
+    "currency": "INR",
+    "note": "UNVERIFIED as of 2026-07-02 re-audit: independent checks returned conflicting figures - VFS's own visa-type page for India (visa.vfsglobal.com/ind/en/che/visa-type) returned INR 2,000 via structured extraction, while a July 2025 NDTV report cited a post-hike VFS service charge of INR 2,680 for Switzerland in India; neither matches the previously-recorded INR 2,690, and the one-pager URL previously cited as the source does not reliably render Swiss-visa fee content (it served India-inbound tourist-visa content instead). Set to null pending confirmation directly on VFS Global's live fee calculator for the Switzerland (CHE) India centre. Regardless of exact amount, this VFS logistics/service fee is additional to the Schengen visa fee and varies by country/application centre.",
+    "source_url": "https://visa.vfsglobal.com/ind/en/che/visa-type"
+  },
+  "sources": [
+    "https://www.eda.admin.ch/countries/usa/en/home/visa/entry-ch/up-90-days/fees-schengen.html",
+    "https://www.schweiz-kanada.eda.admin.ch/en/schengen-visa-fees",
+    "https://www.schweiz-kanada.eda.admin.ch/dam/en/eda-cms/ZsbE3RUGVIha/Finaliziertes-E-CANADA%20Anpassung%20Visa%20Preise%201.04.2026.pdf",
+    "https://visa.vfsglobal.com/ind/en/che/visa-type"
+  ],
+  "free_visa_notes": "Not applicable generally - Switzerland (as a Schengen member) requires a visa for many nationalities for stays over the visa-free allowance. Visas are issued free of charge for spouses/children of Swiss and EU/EFTA nationals, CERN and UN personnel on official trips, and students on short study stays up to 90 days. Many nationalities (e.g. most of the EU/EFTA, UK, US, Canada, Japan, South Korea, Australia, etc.) do not need any visa at all for short tourist/business stays up to 90 days and pay no fee."
+}

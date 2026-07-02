@@ -1,0 +1,77 @@
+{
+  "iso3": "SEN",
+  "name": "Senegal",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Senegal biometric e-Visa (pre-enrolment via visasenegal.sn)",
+      "amount": 50,
+      "currency": "EUR",
+      "amount_usd": 54,
+      "validity": "Short-stay, single entry (varies by nationality/purpose)",
+      "applies": "nationalities not visa-exempt and without a reciprocity waiver",
+      "official": true,
+      "source_url": "https://www.visasenegal.sn",
+      "notes": "Official Senegal e-visa/pre-enrolment portal. Base fee of EUR 50 plus a card-processing fee of EUR 2.50-5.00 depending on payment method, non-refundable if refused. WebFetch of visasenegal.sn returned only header content (JS-rendered site); amount corroborated via secondary aggregator sources citing the official portal, not independently confirmed on-page by this session. Senegal announced in 2025 a move to a broader reciprocity-based e-visa policy; exact country-by-country fee schedule under that new system was not found on an official source as of this record's date."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Consular sticker visa (embassy/consulate-issued)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://consulsen-paris.gouv.sn/demande-de-visa/",
+      "notes": "Senegal consulate (Paris) visa application page lists required documents for visa categories A/B/C but does not publish fee amounts on-page; page directs applicants to contact infovisa-paris@diplomatie.gouv.sn for current fees. Not verified numerically from an official source."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://diplomatie.gouv.sn/index.php/demande-de-visa",
+      "notes": "No official fee schedule found for a distinct transit visa category."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": false,
+      "source_url": "https://diplomatie.gouv.sn/index.php/demande-de-visa",
+      "notes": "Business visa follows the same e-visa/consular sticker process as tourist visa; no distinct official fee found beyond the general EUR 50 e-visa base fee."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "USD",
+      "note": "Official U.S. State Department reciprocity schedule states Senegal charges NO visa issuance fee ('None') to U.S. citizens across all nonimmigrant visa categories (tourist, business, student, work, etc.), though standard e-visa/administrative enrolment steps may still apply. Source: travel.state.gov Senegal reciprocity page."
+    }
+  ],
+  "vfs": {
+    "used": false,
+    "note": "VFS Global operates a centre in Dakar, Senegal, but it processes OUTBOUND visa applications by residents of Senegal applying to other countries (France, UK, Netherlands, South Africa, Canada, etc.), not inbound applications for a Senegal visa. No evidence found that Senegal itself outsources its own visa issuance to VFS Global, TLScontact, or BLS International; Senegal's own inbound process runs through the official visasenegal.sn e-visa portal and consulates/embassies directly."
+  },
+  "sources": [
+    "https://www.visasenegal.sn",
+    "https://diplomatie.gouv.sn/index.php/demande-de-visa",
+    "https://consulsen-paris.gouv.sn/demande-de-visa/",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Senegal.html",
+    "https://visa.vfsglobal.com/sen/en/fra"
+  ],
+  "free_visa_notes": "Senegal is not visa-free for all nationalities; many nationalities require the online e-visa/pre-enrolment (visasenegal.sn) plus consular issuance, though a number of nationalities benefit from visa exemptions or reciprocity waivers (e.g., U.S. citizens pay no fee per State Department reciprocity data). A 2025 government announcement indicated a broader reciprocity-based e-visa policy was being rolled out; a detailed, current official fee table by nationality was not locatable on an official Senegalese government source as of 2026-07-02."
+}

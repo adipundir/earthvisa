@@ -1,0 +1,140 @@
+{
+  "iso3": "KOR",
+  "name": "South Korea",
+  "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry visa (stay 90 days or less)",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "90 days or less, single entry",
+      "applies": "standard/default nationality rate (varies by nationality - see reciprocity_variations)",
+      "official": true,
+      "source_url": "https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889&page=1",
+      "notes": "Standard fee published by Korean embassies effective from 1 Jan 2026; actual fee charged depends on applicant's nationality due to reciprocity-based adjustments. Fee shown here is the general/default rate quoted on the US embassy fee schedule; amount may be denominated in local currency at other missions (e.g. SGD, INR)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry visa (stay more than 90 days)",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "over 90 days, single entry",
+      "applies": "standard/default nationality rate",
+      "official": true,
+      "source_url": "https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889&page=1",
+      "notes": "Standard default rate; varies by nationality."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Double-entry visa",
+      "amount": 70,
+      "currency": "USD",
+      "amount_usd": 70,
+      "validity": "usable up to 2 times",
+      "applies": "standard/default nationality rate",
+      "official": true,
+      "source_url": "https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889&page=1",
+      "notes": "Standard default rate; varies by nationality."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Multiple-entry visa",
+      "amount": 90,
+      "currency": "USD",
+      "amount_usd": 90,
+      "validity": "multiple entries",
+      "applies": "standard/default nationality rate",
+      "official": true,
+      "source_url": "https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889&page=1",
+      "notes": "Standard default rate; varies by nationality."
+    },
+    {
+      "kind": "eta",
+      "name": "K-ETA (Korea Electronic Travel Authorization)",
+      "amount": 10000,
+      "currency": "KRW",
+      "amount_usd": 7.5,
+      "validity": "up to 2 years or until passport expiry; multiple entries for stays up to 90 days (or per exemption rules)",
+      "applies": "nationals of countries otherwise visa-exempt for short stays, when K-ETA is required (currently temporarily waived for many nationalities through 31 Dec 2026)",
+      "official": true,
+      "source_url": "https://www.k-eta.go.kr/",
+      "notes": "K-ETA fee is 10,000 KRW (approx USD 7-8, exact USD varies with exchange rate), non-refundable even if denied; online card processing fee charged separately. Korea's Ministry of Justice has extended a temporary K-ETA exemption for ~67 eligible nationalities through 31 Dec 2026, during which no K-ETA (and no fee) is required for those nationals for short-term visits."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short-term business visa (C-3)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889&page=1",
+      "notes": "Short-term business visa follows the same single/double/multiple-entry fee bands as the standard short-term (C-3) visa fee schedule above (i.e. USD 40/60/70/90 standard rate, subject to nationality adjustment); no separate published business-specific fee line was found on official sources, so left null here to avoid guessing an exact figure distinct from the general schedule."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "all",
+      "official": true,
+      "source_url": "https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889&page=1",
+      "notes": "Korea generally allows visa-free transit (up to 30 days at certain airports, e.g. Jeju, or short airside transit) for many nationalities without a transit visa fee; no distinct official transit visa fee figure was found, so left null to avoid guessing. Travelers requiring a transit visa would pay under the standard single-entry visa fee schedule."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 45,
+      "currency": "USD",
+      "note": "US citizens pay a flat USD 45 for all visa types (single, double, multiple entry) rather than the tiered standard rate, per US embassy schedule effective 1 Jan 2026. Source: https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889"
+    },
+    {
+      "nationalities": ["GBR"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "USD",
+      "note": "UK nationals are charged a higher adjusted rate (roughly USD 130-250 equivalent depending on visa type per US-embassy-published comparison, and SGD 26-326 range per Singapore embassy schedule) due to reciprocity; exact tiered figures were not independently confirmed per visa type on this pass, so left as range/null - see source pages for the applicable mission's exact table. Sources: https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889 and https://overseas.mofa.go.kr/sg-en/brd/m_2444/view.do?seq=761414"
+    },
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "USD",
+      "note": "Russia is listed among nationalities with adjusted (higher) visa fees (roughly USD 50-120 range per visa type cited on US embassy comparison); precise official tiered figures not independently verified line-by-line in this pass. Source: https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889"
+    },
+    {
+      "nationalities": ["IND"],
+      "kind": "tourist_visa",
+      "amount": 3400,
+      "currency": "INR",
+      "note": "Single-entry visa up to 90 days: INR 3,400; visa valid more than 90 days: INR 5,100 (revised fees effective 1 June 2025, per VFS Global Korea-India visa fee table). This is the government visa fee only, separate from the VFS service fee. Source: https://www.vfsglobal.com/india/southkorea/pdf/Visa-fees.pdf"
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1380",
+    "currency": "INR",
+    "note": "VFS Global operates the Korea Visa Application Centres in India (New Delhi, Bengaluru, and other cities) on behalf of the Korean government/embassy. Published additional/service fee is approx INR 1,380 per application; this is charged on top of the government visa fee (e.g. INR 3,400 for a standard single-entry ≤90-day visa) and can vary by service tier or centre. VFS also operates Korea visa centres for other countries (e.g. Indonesia, per visaforkorea-id.com), but detailed fee figures for those were not captured in this pass.",
+    "source_url": "https://visa.vfsglobal.com/kor/en/ind/additional-services"
+  },
+  "sources": [
+    "https://overseas.mofa.go.kr/us-en/brd/m_4502/view.do?seq=715889&page=1",
+    "https://overseas.mofa.go.kr/sg-en/brd/m_2444/view.do?seq=761414&page=1",
+    "https://www.k-eta.go.kr/",
+    "https://www.vfsglobal.com/india/southkorea/pdf/Visa-fees.pdf",
+    "https://visa.vfsglobal.com/kor/en/ind/additional-services",
+    "https://overseas.mofa.go.kr/np-en/brd/m_25533/view.do?seq=107",
+    "https://overseas.mofa.go.kr/my-en/brd/m_1914/view.do?seq=761533&multi_itm_seq=0&itm_seq_1=0&itm_seq_2=0&page=1"
+  ],
+  "free_visa_notes": "South Korea is not a Schengen member. Many nationalities (currently ~67 countries including most of Western Europe, US, UK, Canada, Australia, Japan, etc.) can enter visa-free for short stays (typically 30-90 days depending on bilateral agreement), and K-ETA is temporarily waived for those nationalities through 31 Dec 2026 (Visit Korea Year exemption). Outside that exemption window, eligible visa-exempt nationals would normally need to pay the K-ETA fee (10,000 KRW) instead of a full visa fee. Nationalities not covered by visa-free/K-ETA-exempt arrangements require a paid visa per the fee schedule above."
+}

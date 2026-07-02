@@ -1,0 +1,52 @@
+{
+  "iso3": "TON",
+  "name": "Tonga",
+  "updated": "2026-07-02",
+  "confidence": "low",
+  "fees": [
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visitor visa on arrival (eligible nationalities)",
+      "amount": null,
+      "currency": "TOP",
+      "amount_usd": null,
+      "validity": "30 days",
+      "applies": "Citizens of listed visa-exempt/VOA countries (e.g. AUS, NZL, USA, GBR, CAN, JPN, most EU states, Pacific island states, RUS, and others per official list)",
+      "official": true,
+      "source_url": "https://www.revenue.gov.to/immigration-and-general-services",
+      "notes": "Official Ministry of Revenue & Customs page lists eligible nationalities for a free 30-day visitor visa on arrival and does not state a fee amount, implying no charge for this category. Unofficial travel-agency sources cite a fee of approximately TOP$69, but this could not be verified on any official government page, so amount is left null pending confirmation."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Entry permit (visa) for non-exempt nationalities",
+      "amount": null,
+      "currency": "TOP",
+      "amount_usd": null,
+      "validity": "30 days",
+      "applies": "Citizens of countries not on the visa-exempt/VOA list, applied for prior to arrival via the Immigration Department, Ministry of Foreign Affairs",
+      "official": true,
+      "source_url": "https://www.revenue.gov.to/immigration-and-general-services",
+      "notes": "Official source states an entry permit must be obtained in advance from the Immigration Department (contact: tongapermit@gmail.com) but does not publish a fee schedule online. No official fee amount could be verified."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visa/stay extension",
+      "amount": null,
+      "currency": "TOP",
+      "amount_usd": null,
+      "validity": "up to 30 additional days",
+      "applies": "all",
+      "official": false,
+      "source_url": "https://www.revenue.gov.to/immigration-and-general-services",
+      "notes": "Official page describes the extension process (apply at Immigration Office, Nuku'alofa or Neiafu) but does not publish an extension fee. Third-party sources cite approximately TOP 50, unverified on an official page, so left null."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.revenue.gov.to/immigration-and-general-services",
+    "https://to.usembassy.gov/visas/",
+    "https://www.tongaconsul.com/visa.html"
+  ],
+  "free_visa_notes": "Tonga's Ministry of Revenue & Customs page lists a large set of nationalities (including AUS, NZL, USA, GBR, CAN, JPN, most EU states, RUS, and Pacific island states) that receive a 30-day visitor visa on arrival with no fee stated, suggesting it is issued free of charge for these nationalities. Citizens of all other countries must obtain an entry permit in advance from the Immigration Department; no official published fee schedule for this permit or for visa extensions could be located, so those amounts are recorded as null rather than guessed. No VFS/outsourced visa centre is used by Tonga."
+}

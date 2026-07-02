@@ -1,0 +1,77 @@
+{
+  "iso3": "KNA", "name": "Saint Kitts and Nevis", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Visitor e-Visa (visa on arrival issued after online approval)",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "Single entry, up to 30 days stay",
+      "applies": "nationalities requiring a visa (non visa-exempt)",
+      "official": true,
+      "source_url": "https://www.embassydc.gov.kn/faqs/",
+      "notes": "Applicants apply online at evisa.gov.kn; confirmation presented at passport control where visa is issued on arrival by an immigration officer. Fee corroborated on Embassy of St. Kitts and Nevis to the USA FAQ page."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic Travel Authorization (eTA) - Electronic Border Management System",
+      "amount": 17,
+      "currency": "USD",
+      "amount_usd": 17,
+      "validity": "Single entry, submit up to 90 days before travel",
+      "applies": "all travellers (including visa-exempt nationalities)",
+      "official": true,
+      "source_url": "https://www.knatravelform.kn/en/FAQ/82b47bdd-bf24-4167-a80d-ce5080b50ec2",
+      "notes": "Mandatory for all visitors regardless of visa requirement, separate from the visa fee. An introductory rate of USD 8.50 applied until 1 September 2025; standard rate of USD 17 has applied since. Exact current figure not independently re-confirmed by direct fetch of the FAQ page content (search-engine cache used) - review before relying on it for payment purposes."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Visitor visa (embassy/high commission issued, non-e-visa route)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa applying via embassy/high commission",
+      "official": false,
+      "source_url": "https://stkittsnevishcuk.gov.kn/visa-immigration/",
+      "notes": "St Kitts and Nevis has largely moved to the online e-Visa system (USD 100) issued on arrival; no separate confirmed official fee schedule found for a distinct paper/sticker embassy visa. Treat the e-visa fee above as the current tourist visa fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "business travellers requiring a visa",
+      "official": false,
+      "source_url": "https://www.embassydc.gov.kn/faqs/",
+      "notes": "No distinct official business-visa fee schedule located; business travel likely uses the same e-Visa (USD 100) process as tourist visas. Not confirmed on an official source, so left null rather than assumed."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationalities requiring a visa for transit",
+      "official": false,
+      "source_url": "https://www.embassydc.gov.kn/faqs/",
+      "notes": "No official transit-visa fee schedule located."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.embassydc.gov.kn/faqs/",
+    "https://www.knatravelform.kn/en",
+    "https://www.knatravelform.kn/en/FAQ/82b47bdd-bf24-4167-a80d-ce5080b50ec2",
+    "https://evisa.stkittsnevisonline.com/kn-evics-entitlement-online-ui/",
+    "https://stkittsnevishcuk.gov.kn/visa-immigration/",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/SaintKittsandNevis.html"
+  ],
+  "free_visa_notes": "Many nationalities (including EU, UK, US, Canada, most Commonwealth and CARICOM countries) are visa-exempt for short stays but ALL travellers, including visa-exempt nationalities, must obtain the Electronic Travel Authorization (eTA, USD 17) via the Electronic Border Management System before arrival. Nationalities that are not visa-exempt must additionally obtain the e-Visa (USD 100), which functions as a visa-on-arrival after online pre-approval. No official nationality-specific reciprocity fee schedule (e.g. differing rates for IND/USA/GBR/CHN/etc.) was found on government or embassy sources; VisaHQ and similar third-party visa agencies show varying service fees but these are not official government fees and were excluded per sourcing rules."
+}

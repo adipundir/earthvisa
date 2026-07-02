@@ -1,0 +1,92 @@
+{
+  "iso3": "ARE",
+  "name": "United Arab Emirates",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry tourist (visit) visa - 30 days",
+      "amount": 252,
+      "currency": "AED",
+      "amount_usd": 69,
+      "validity": "30 days",
+      "applies": "eligible nationalities requiring a visa / sponsored entry permit",
+      "official": true,
+      "source_url": "https://www.gdrfad.gov.ae/en/services/f9e586fe-0642-11ec-0320-0050569629e8",
+      "notes": "Base government fee AED 252, plus 5% VAT. GDRFA-Dubai published rate; fees are consistent across UAE federal ICP system but sponsor/typing-centre service charges add to the total actually paid by applicants."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry tourist (visit) visa - 60 days",
+      "amount": 352,
+      "currency": "AED",
+      "amount_usd": 96,
+      "validity": "60 days",
+      "applies": "eligible nationalities requiring a visa / sponsored entry permit",
+      "official": true,
+      "source_url": "https://www.gdrfad.gov.ae/en/services/f9e586fe-0642-11ec-0320-0050569629e8",
+      "notes": "Base government fee AED 352, plus 5% VAT. Additional charges of AED 10 Knowledge Dirham + AED 10 Innovation Dirham apply, and AED 500 extra if applicant is already inside the UAE."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "96-hour transit visa",
+      "amount": 50,
+      "currency": "AED",
+      "amount_usd": 14,
+      "validity": "96 hours",
+      "applies": "passengers transiting UAE airports needing a visa",
+      "official": true,
+      "source_url": "https://gdrfad.gov.ae/en/services/ee043e3c-5c61-11ea-0320-0050569629e8",
+      "notes": "48-hour transit visa is issued free of charge for eligible transit passengers; the 96-hour transit visa carries the AED 50 government fee. Airline/agent service charges may apply on top."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "passport holders of countries on the UAE's visa-on-arrival list",
+      "official": false,
+      "source_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/visa-fees",
+      "notes": "UAE grants many nationalities free entry permits/visa-on-arrival (e.g. most GCC-adjacent and many eligible passport holders receive a free 30/90-day stamp). No separate official fee schedule for a distinct 'visa on arrival' product was found beyond the standard tourist visa fees above; could not verify a specific paid VOA amount on an official source."
+    },
+    {
+      "kind": "eta",
+      "name": "Electronic travel authorisation",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "n/a",
+      "official": false,
+      "source_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/visa-fees",
+      "notes": "UAE does not operate a separate eTA scheme distinct from its e-visa/entry-permit system; no official eTA fee found."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business/multi-entry visit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "business travellers, sponsored by company/hotel",
+      "official": false,
+      "source_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/visa-fees",
+      "notes": "ICP/GDRFA publish per-service fee cards for multiple-entry and business visit visas but the exact current AED amount could not be independently verified on an official page in this session; left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false,
+    "note": "VFS Global operates centres inside the UAE, but these serve UAE residents/citizens applying for OTHER countries' visas (e.g. Schengen, UK) outbound from the UAE. Inbound visas to enter the UAE are issued directly via the Federal Authority for Identity, Citizenship, Customs & Port Security (ICP), GDRFA-Dubai, airlines, hotels, or licensed typing/travel agency sponsors - not through VFS Global. No evidence of VFS Global processing UAE-entry visa applications on behalf of foreign nationals was found."
+  },
+  "sources": [
+    "https://u.ae/en/information-and-services/visa-and-emirates-id/visa-fees",
+    "https://www.gdrfad.gov.ae/en/services/f9e586fe-0642-11ec-0320-0050569629e8",
+    "https://gdrfad.gov.ae/en/services/ee043e3c-5c61-11ea-0320-0050569629e8",
+    "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e60"
+  ],
+  "free_visa_notes": "UAE grants visa-free or free-of-charge visa-on-arrival entry to a large number of nationalities (varies by passport, typically 30-90 days). For nationalities that do require a paid visa, the standard tourist visa fees above (AED 252 for 30 days / AED 352 for 60 days, plus 5% VAT) apply via GDRFA/ICP sponsorship, most commonly arranged through airlines, hotels, or UAE-based sponsors rather than a self-service consumer e-visa portal."
+}

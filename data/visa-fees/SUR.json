@@ -1,0 +1,137 @@
+{
+  "iso3": "SUR", "name": "Suriname", "updated": "2026-07-02",
+  "confidence": "high",
+  "fees": [
+    {
+      "kind": "eta",
+      "name": "Entry Fee (formerly E-Tourist Card)",
+      "amount": 40,
+      "currency": "USD",
+      "amount_usd": 40,
+      "validity": "None (single entry, max stay 90 days)",
+      "applies": "eligible nationalities (list of ~52 countries published on official portal, e.g. many EU states, Bolivia, etc.)",
+      "official": true,
+      "source_url": "https://suriname.vfsevisa.com/suriname/online/home/e-tourist-card",
+      "notes": "Plus a non-refundable online processing/service fee of USD 14 (or USD 18 per the fee-schedule page, which appears to be the standardized service fee for all application types). Payable in USD or EUR (EUR 35 for the entry fee itself)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Entry Fee (single entry, general)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "None (single entry, max stay 90 days)",
+      "applies": "nationalities requiring a full visa/entry fee (not on the 52-country tourist-card list)",
+      "official": true,
+      "source_url": "https://suriname.vfsevisa.com/suriname/online/home/visa-fees",
+      "notes": "Also payable as EUR 50. Plus service fee (see vfs.service_fee)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multiple Entry Fee (5 Entries)",
+      "amount": 75,
+      "currency": "USD",
+      "amount_usd": 75,
+      "validity": "None (multiple entry, max stay 90 days)",
+      "applies": "all eligible applicants",
+      "official": true,
+      "source_url": "https://suriname.vfsevisa.com/suriname/online/home/visa-fees",
+      "notes": "Also payable as EUR 75. Plus service fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa - 3 months validity",
+      "amount": 100,
+      "currency": "USD",
+      "amount_usd": 100,
+      "validity": "3 months",
+      "applies": "all (general rate)",
+      "official": true,
+      "source_url": "https://suriname.vfsevisa.com/suriname/online/home/visa-fees",
+      "notes": "Also payable as EUR 85. Plus service fee."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business Visa - 5 years validity",
+      "amount": 360,
+      "currency": "USD",
+      "amount_usd": 360,
+      "validity": "5 years",
+      "applies": "general rate (USA passport holders pay USD 160 instead, see reciprocity_variations)",
+      "official": true,
+      "source_url": "https://suriname.vfsevisa.com/suriname/online/home/visa-fees",
+      "notes": "Also payable as EUR 305. Plus service fee."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist Visa - 3 months",
+      "amount": 60,
+      "currency": "USD",
+      "amount_usd": 60,
+      "validity": "3 months",
+      "applies": "nationalities requiring a traditional tourist visa (not eligible for Entry Fee/tourist card)",
+      "official": true,
+      "source_url": "https://suriname.vfsevisa.com/suriname/online/home/visa-fees",
+      "notes": "Also payable as EUR 50. Multiple entry, max stay 90 days. Plus service fee."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Tourist Visa - 1 Year",
+      "amount": 210,
+      "currency": "USD",
+      "amount_usd": 210,
+      "validity": "1 year",
+      "applies": "nationalities requiring a traditional tourist visa",
+      "official": true,
+      "source_url": "https://suriname.vfsevisa.com/suriname/online/home/visa-fees",
+      "notes": "Also payable as EUR 175. Multiple entry, max stay 90 days. Plus service fee."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit Visa",
+      "amount": 15,
+      "currency": "USD",
+      "amount_usd": 15,
+      "validity": "3 days",
+      "applies": "nationalities requiring a transit visa",
+      "official": true,
+      "source_url": "https://suriname.vfsevisa.com/suriname/online/home/visa-fees",
+      "notes": "Also payable as EUR 10. Single entry. Plus service fee."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival (diplomatic/service/official/Interpol passport holders only)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": "2 months",
+      "applies": "diplomatic, service, or official passport holders, or Interpol passport/ID holders with an official invitation traveling on duty",
+      "official": false,
+      "source_url": "https://www.visaverge.com/guides/suriname-visa-guide-tourist-card-visa-on-arrival-steps/",
+      "notes": "Standard tourist visa-on-arrival was discontinued in October 2019; only this narrow diplomatic/official category remains eligible at the airport. No official fee amount was found published by an official source, so amount is left null."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "business_visa",
+      "amount": 160,
+      "currency": "USD",
+      "note": "5-year multiple-entry Business Visa for USA passport holders costs USD 160 versus the general rate of USD 360, per the official VFS Global Suriname e-Visa fee schedule."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "14-18",
+    "currency": "USD",
+    "note": "VFS Global is the official government-authorized partner operating Suriname's e-Visa/Entry Fee portal. A non-refundable online processing/service fee applies to all application types: the Entry Fee (tourist card) page states USD 14 (EUR equivalent not separately listed), while the general fee-schedule page lists a flat service fee of USD 18 or EUR 17 for all application types. This is charged in addition to the visa/entry fee itself.",
+    "source_url": "https://suriname.vfsevisa.com/suriname/online/home/visa-fees"
+  },
+  "sources": [
+    "https://suriname.vfsevisa.com/suriname/online/home/visa-fees",
+    "https://suriname.vfsevisa.com/suriname/online/home/e-tourist-card",
+    "https://suriname.vfsevisa.com/suriname/online/home/information"
+  ],
+  "free_visa_notes": "Suriname is not visa-free for most nationalities; most travelers require either an Entry Fee (tourist card, for ~52 eligible nationalities) or a full e-Visa/tourist visa. Nationals of some countries (e.g., other CARICOM/regional states) may be visa-exempt per Suriname's visa policy, but no official fee-schedule source enumerating a visa-free list was captured in this research; consult the official portal's nationality list for exemptions."
+}

@@ -1,0 +1,67 @@
+{
+  "iso3": "SAU",
+  "name": "Saudi Arabia",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Saudi eVisa (Tourist)",
+      "amount": 535,
+      "currency": "SAR",
+      "amount_usd": 142,
+      "validity": "1 year multiple entry, up to 90 days per visit",
+      "applies": "eligible nationalities (~66 countries)",
+      "official": true,
+      "source_url": "https://visa.visitsaudi.com/",
+      "notes": "Total of government visa fee (SAR 300) + mandatory medical insurance (SAR 180) + online platform processing fee (SAR 55), per secondary sources citing the official portal visa.visitsaudi.com (which returned HTTP 403 on direct fetch during this research). Uniform fee across all eligible nationalities; no nationality-based surcharge reported."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Saudi Visa on Arrival (Tourist)",
+      "amount": 480,
+      "currency": "SAR",
+      "amount_usd": 128,
+      "validity": "1 year multiple entry, up to 90 days per visit",
+      "applies": "eligible nationalities (same list as eVisa, obtained at airport kiosk)",
+      "official": true,
+      "source_url": "https://visa.visitsaudi.com/",
+      "notes": "Same components as eVisa minus the SAR 55 online platform processing fee. Payable by card only at airport kiosks (Visa/Mastercard/Mada); cash not accepted. Official portal page returned HTTP 403 during direct fetch; figure corroborated by multiple secondary sources referencing the official portal/MOFA."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Saudi Business Visa",
+      "amount": null,
+      "currency": "SAR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "business travellers not eligible for eVisa, or requiring embassy-issued business visa",
+      "official": false,
+      "source_url": "https://www.mofa.gov.sa/en/eservices/Pages/svc78.aspx",
+      "notes": "No single official fee amount could be verified. Secondary sources report a wide range (SAR 800-2,000 / roughly USD 210-530 depending on single vs multiple entry and processing), but MOFA's official 'Visa Fees payment' e-service page (svc78.aspx) could not be fetched directly to confirm exact current figures. Amount left null per accuracy rules; treat range in notes as indicative only, not verified."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Saudi Transit Visa",
+      "amount": null,
+      "currency": "SAR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "eligible transiting nationalities",
+      "official": false,
+      "source_url": "https://visa.visitsaudi.com/",
+      "notes": "Secondary sources indicate transit visas are often free or discounted versus the full tourist visa, but no verified official fee amount was found. Amount left null per accuracy rules."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": {
+    "used": false
+  },
+  "sources": [
+    "https://visa.visitsaudi.com/",
+    "https://www.visitsaudi.com/en/plan-your-trip/visa-regulations",
+    "https://www.mofa.gov.sa/en/eservices/Pages/svc78.aspx",
+    "https://houseofsaud.com/travel/saudi-tourist-visa-cost/"
+  ],
+  "free_visa_notes": "No nationality-based fee variation was found for the tourist eVisa/visa-on-arrival - the SAR 535/480 fees are reported as uniform across all ~66 eligible nationalities (including IND, USA, GBR, CHN listed among eligible countries; no reciprocity schedule identified). VFS Global's presence in Saudi Arabia (Jeddah/Riyadh/Khobar/Jubail centres) serves Saudi residents applying for visas to OTHER countries (Schengen, UK, US, Canada, etc.) - it is not used as an outsourced intake channel for inbound visas to Saudi Arabia itself, which are processed via the official eVisa portal or airport VOA kiosks. Direct WebFetch of visa.visitsaudi.com and visitsaudi.com returned HTTP 403 (bot-blocked) during this research; fee figures rely on consistent secondary reporting attributed to those official sources rather than a first-hand fetch, hence confidence is set to medium rather than high."
+}

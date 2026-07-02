@@ -1,0 +1,78 @@
+{
+  "iso3": "SLE",
+  "name": "Sierra Leone",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Sierra Leone eVisa",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": "30 days, single entry",
+      "applies": "eligible nationalities applying online",
+      "official": true,
+      "source_url": "https://www.evisa.sl/",
+      "notes": "Fee reported by third-party evisa guide sites referencing the official evisa.sl portal; the portal itself (evisa.sl) did not expose fee text to automated fetch, so this figure should be re-verified against the live application flow at evisa.sl before quoting to travellers."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival - non-AU nationals",
+      "amount": 80,
+      "currency": "USD",
+      "amount_usd": 80,
+      "validity": null,
+      "applies": "non-African Union nationals",
+      "official": true,
+      "source_url": "https://slid.gov.sl/visa-on-arrival/",
+      "notes": "From Sierra Leone Immigration Department (slid.gov.sl) search-indexed content; page returned 404 on direct fetch at time of research, so figure is taken from Google-cached snippet of the official domain, not a live page render."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on Arrival - African Union nationals",
+      "amount": 25,
+      "currency": "USD",
+      "amount_usd": 25,
+      "validity": null,
+      "applies": "African Union member-state nationals",
+      "official": true,
+      "source_url": "https://slid.gov.sl/visa-on-arrival/",
+      "notes": "Free for ECOWAS member states, diplomats, UNLP holders, and nationals of countries with reciprocal fee-waiver agreements. Same sourcing caveat as above (indexed snippet, not direct page fetch)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Landing Visa - non-ECOWAS African Union citizens (single entry)",
+      "amount": 250000,
+      "currency": "SLE",
+      "amount_usd": null,
+      "validity": "single entry",
+      "applies": "non-ECOWAS African Union nationals",
+      "official": true,
+      "source_url": "https://slid.gov.sl/landing-visa/",
+      "notes": "Le250,000 single entry / Le375,000 multiple re-entry. Amount in Leones (new currency, SLE code post-2022 redenomination). USD conversion not calculated to avoid a false-precision estimate; direct page fetch returned 404, sourced from indexed snippet of the official domain."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Landing Visa - other nationalities (single entry)",
+      "amount": 800000,
+      "currency": "SLE",
+      "amount_usd": null,
+      "validity": "single entry",
+      "applies": "non-African, non-AU nationalities",
+      "official": true,
+      "source_url": "https://slid.gov.sl/landing-visa/",
+      "notes": "Le800,000 single entry / Le1,200,000 multiple re-entry. Free for ECOWAS, diplomats, UNLP holders. Same sourcing caveat: indexed snippet of official domain, page 404'd on direct fetch."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://slid.gov.sl/",
+    "https://slid.gov.sl/visa-on-arrival/",
+    "https://slid.gov.sl/landing-visa/",
+    "https://www.evisa.sl/",
+    "https://slid.gov.sl/fees"
+  ],
+  "free_visa_notes": "Visa on arrival and landing visa are free for ECOWAS member-state nationals, diplomats, UN Laissez-Passer holders, and nationals of countries with reciprocal fee-waiver agreements with Sierra Leone, per slid.gov.sl. No reciprocity schedule for the specific key nationalities (IND, USA, GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN) was found on official sources beyond the AU/non-AU and ECOWAS/non-ECOWAS categories above; NGA as an ECOWAS member would fall under the free-visa category. No VFS/TLScontact/BLS outsourced visa centre was found for Sierra Leone; applications route through the official evisa.sl portal or on-arrival/immigration department channels. Direct fetches of slid.gov.sl visa-on-arrival and landing-visa pages returned HTTP 404 at research time (2026-07-02); figures come from search-engine indexed snippets of the same official domain and should be re-confirmed via a live browser session before publishing as authoritative."
+}

@@ -1,0 +1,65 @@
+{
+  "iso3": "TKM",
+  "name": "Turkmenistan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry visa, 10-day validity (normal processing)",
+      "amount": 35,
+      "currency": "USD",
+      "amount_usd": 35,
+      "validity": "10 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://india.tmembassy.gov.tm/en/consular-services/viza-application-of-turkmenistan",
+      "notes": "Embassy sticker visa priced by validity/entry type rather than by 'tourist' category; requires a Letter of Invitation from a registered Turkmen travel agency. Same schedule published on US embassy site (usa.tmembassy.gov.tm). Longer validities and multiple-entry cost more (up to $385 single-entry / $515 multiple-entry for 12 months); expedited (1-3 day) processing costs an additional 100% surcharge. Children 7-16 pay 50%, under 7 free."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Single-entry visa, 1-year validity (normal processing)",
+      "amount": 385,
+      "currency": "USD",
+      "amount_usd": 385,
+      "validity": "12 months",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://usa.tmembassy.gov.tm/en/consular-services/visa",
+      "notes": "Top end of single-entry fee range; see full table on source for all validity tiers (10 days to 12 months)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa, up to 5 days, one-time (normal processing)",
+      "amount": 35,
+      "currency": "USD",
+      "amount_usd": 35,
+      "validity": "up to 5 days",
+      "applies": "all",
+      "official": true,
+      "source_url": "https://india.tmembassy.gov.tm/en/consular-services/viza-application-of-turkmenistan",
+      "notes": "Urgent/expedited processing costs $55 instead."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-visa (planned, not yet operational)",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "not yet determined",
+      "official": true,
+      "source_url": "https://discover.passportindex.org/policy-and-regulations/turkmenistan-e-visa/",
+      "notes": "Turkmenistan's April 2025 visa-reform law authorizes creation of an e-visa system, but as of mid-2026 the platform (evisa.gov.tm or similar) has not launched and no Presidential decree setting e-visa fees, categories, or validity has been published. Do not treat as available; amount left null pending official launch."
+    }
+  ],
+  "reciprocity_variations": [],
+  "vfs": { "used": false },
+  "sources": [
+    "https://usa.tmembassy.gov.tm/en/consular-services/visa",
+    "https://india.tmembassy.gov.tm/en/consular-services/viza-application-of-turkmenistan",
+    "https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Turkmenistan.html",
+    "https://discover.passportindex.org/policy-and-regulations/turkmenistan-e-visa/"
+  ],
+  "free_visa_notes": "No researched official source indicates any nationality travels visa-free to Turkmenistan; all foreign visitors require a visa (sticker visa via embassy, requiring a Letter of Invitation from a registered local travel agency) or, in future, an e-visa once the pending system launches. No nationality-differentiated (reciprocity) fee schedule was found on official Turkmen embassy pages checked (US, India) - both list the identical validity-based fee table, suggesting fees are uniform across nationalities rather than reciprocity-based. This could not be independently confirmed for all key nationalities (GBR, CHN, NGA, PAK, PHL, BGD, RUS, CAN) via official sources within this research pass."
+}

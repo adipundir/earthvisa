@@ -1,0 +1,101 @@
+{
+  "iso3": "SWE", "name": "Sweden", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa (up to 90 days) - adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days within a 180-day period",
+      "applies": "all nationalities requiring a Schengen visa (age 12+)",
+      "official": true,
+      "source_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Common EU Schengen short-stay visa fee, raised to EUR 90 for adults effective June 2024. Sweden is a full Schengen member and applies the common EU fee schedule; fee is non-refundable if rejected."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa - child 6-11 years",
+      "amount": 45,
+      "currency": "EUR",
+      "amount_usd": 49,
+      "validity": "Up to 90 days within a 180-day period",
+      "applies": "children aged 6-11",
+      "official": true,
+      "source_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Half the adult common Schengen fee."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen short-stay visa - child 0-5 years",
+      "amount": 0,
+      "currency": "EUR",
+      "amount_usd": 0,
+      "validity": "Up to 90 days within a 180-day period",
+      "applies": "children aged 0-5",
+      "official": true,
+      "source_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Fee waived for young children."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen short-stay visa - business purpose",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Up to 90 days within a 180-day period",
+      "applies": "all nationalities requiring a Schengen visa",
+      "official": true,
+      "source_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Same fee schedule and application type as the tourist Schengen visa; category is set by purpose of travel, not a separate fee tier."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport transit visa (ATV)",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "Single or multiple airport transit",
+      "applies": "nationals of countries requiring an airport transit visa for Sweden/Schengen",
+      "official": true,
+      "source_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+      "notes": "Standard Schengen visa fee applies to airport transit visas as well; exact amount not separately itemised on the source page, recorded at common Schengen rate pending direct confirmation."
+    },
+    {
+      "kind": "eta",
+      "name": "ETIAS travel authorisation (future requirement for visa-exempt travellers)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "visa-exempt nationalities once ETIAS is enforced",
+      "official": false,
+      "source_url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden.html",
+      "notes": "ETIAS is an EU-wide (not Sweden-specific) pre-travel authorisation for visa-exempt nationals, not yet enforced as of 2026-07-02 per official rollout guidance; fee amount left null pending an official EU/ETIAS launch confirmation. Do not confuse with the Schengen visa fee above."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["ALB", "ARM", "AZE", "BLR", "BIH", "GEO", "CPV", "MKD", "MDA", "MNE", "SRB", "UKR"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "EUR",
+      "note": "Citizens of countries with an EU Visa Facilitation Agreement (Albania, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Cape Verde, North Macedonia, Moldova, Montenegro, Serbia, Ukraine) pay a reduced Schengen visa fee; exact reduced amount not published on the Migrationsverket summary page - applicants directed to contact the relevant Swedish embassy/consulate for the specific figure."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "21",
+    "currency": "EUR",
+    "note": "VFS Global operates Swedish visa application centres in many source countries (including India, Nigeria, Bangladesh, Philippines, and others). Published one-pager quotes a service fee of approx EUR 21 / USD 24.44 in addition to the Migrationsverket visa fee; the exact amount varies by country/centre and is typically charged in local currency at the centre's rate.",
+    "source_url": "https://www.vfsglobal.com/one-pager/sweden/usa/english/"
+  },
+  "sources": [
+    "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+    "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden.html",
+    "https://www.vfsglobal.com/one-pager/sweden/usa/english/"
+  ],
+  "free_visa_notes": "Sweden is a full Schengen Area member; nationals of many countries (EU/EEA, and a long visa-waiver list including USA, CAN, GBR, NZL, JPN, KOR and others) do not need a visa for short stays up to 90/180 days and pay no fee, though ETIAS authorisation will eventually apply to those visa-exempt travellers once enforced EU-wide."
+}

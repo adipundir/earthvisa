@@ -1,0 +1,97 @@
+{
+  "iso3": "TJK", "name": "Tajikistan", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "Single-entry e-visa",
+      "amount": 30,
+      "currency": "USD",
+      "amount_usd": 30,
+      "validity": "up to 45 days, single entry",
+      "applies": "eligible nationalities",
+      "official": false,
+      "source_url": "https://www.evisa.tj/",
+      "notes": "Amount consistently reported by third-party visa-guide sources (evisaguides.com, tajikistan-evisa.com, traveldoc.aero). Could not independently confirm the fee schedule text on evisa.tj because the official site loads its content via client-side JavaScript that could not be rendered by automated fetch. Treat as high-likelihood but unverified-official; re-check directly on evisa.tj before relying on it."
+    },
+    {
+      "kind": "e_visa",
+      "name": "Multiple-entry e-visa",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "up to 45 days per entry",
+      "applies": "eligible nationalities",
+      "official": false,
+      "source_url": "https://www.evisa.tj/",
+      "notes": "Reported by third-party sources; same rendering limitation as single-entry e-visa above. Not independently confirmed on the official portal text."
+    },
+    {
+      "kind": "e_visa",
+      "name": "GBAO (Gorno-Badakhshan Autonomous Region) permit add-on",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": null,
+      "applies": "travellers visiting GBAO/Pamir Highway region",
+      "official": false,
+      "source_url": "https://www.evisa.tj/",
+      "notes": "Add-on permit fee on top of the e-visa fee, reported by third-party sources ($20-30 range cited); could not confirm exact current amount on the official portal directly."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Standard consular visa (embassy-issued), USA nationals",
+      "amount": 160,
+      "currency": "USD",
+      "amount_usd": 160,
+      "validity": "up to 1 year (visa types K, KhS1, O1, O2)",
+      "applies": "USA",
+      "official": true,
+      "source_url": "https://mfa.tj/en/washington/view/5287/hajmi-khiroji-konsuli",
+      "notes": "Official published consular fee schedule at the Embassy of Tajikistan to the USA, dated 25.11.2019 (still live on the embassy site as of 2026-07-02, not confirmed re-dated). Fee is set per bilateral reciprocity with the USA and is notably higher than for most other nationalities. Visa type 'M'/'TB' (business/work-related) is 190 USD; minor-citizen visas of any type are 160 USD."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Standard consular visa (embassy-issued), USA nationals - business/work type (M, TB)",
+      "amount": 190,
+      "currency": "USD",
+      "amount_usd": 190,
+      "validity": "up to 1 year",
+      "applies": "USA",
+      "official": true,
+      "source_url": "https://mfa.tj/en/washington/view/5287/hajmi-khiroji-konsuli",
+      "notes": "Official embassy-published fee for visa types 'M' and 'TB' issued to US citizens."
+    },
+    {
+      "kind": "visa_on_arrival",
+      "name": "Visa on arrival (airport)",
+      "amount": 35,
+      "currency": "USD",
+      "amount_usd": 35,
+      "validity": null,
+      "applies": "eligible nationalities where VOA is permitted",
+      "official": false,
+      "source_url": "https://www.dcpassportsandvisas.com/country/tajikistan/",
+      "notes": "Reported by a visa-service intermediary, not confirmed on a government source. Tajikistan's visa-on-arrival availability is limited and nationality-dependent; verify eligibility and current fee directly with the airport immigration authority or MFA before travel."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 160,
+      "currency": "USD",
+      "note": "Official embassy-published reciprocity fee for US citizens (visa types K/KhS1/O1/O2, up to 1 year) is markedly higher than the general e-visa fee; business/work types (M/TB) are 190 USD. Source: mfa.tj Washington consular fees page."
+    }
+  ],
+  "vfs": { "used": false },
+  "sources": [
+    "https://www.evisa.tj/",
+    "https://mfa.tj/en/washington/view/5287/hajmi-khiroji-konsuli",
+    "https://www.dcpassportsandvisas.com/country/tajikistan/",
+    "https://evisaguides.com/en/destination/tajikistan/",
+    "https://www.tajikistan-evisa.com/",
+    "https://www.traveldoc.aero/en/news-travel-guides/travel-guides/things-you-should-know-when-applying-for-a-tajikistan-e-visa/"
+  ],
+  "free_visa_notes": ""
+}

@@ -1,0 +1,78 @@
+{
+  "iso3": "ROU", "name": "Romania", "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen Short-Stay Visa (Type C) - adult",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days within 180 days",
+      "applies": "adults from visa-required nationalities",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Romania applies the common EU/Schengen-associated short-stay visa fee (raised to EUR 90 in June 2024, confirmed current on EU Commission migration/home-affairs page). Romania is an EU member applying the common visa policy for non-Schengen-area short stays; national embassies issue the visa under this standard fee schedule. Could not reach mae.ro (Ministry of Foreign Affairs) directly - site returned a bot-verification/503 response during this check, so this figure is corroborated via the EU Commission official source and cross-checked against secondary aggregator sites rather than a direct MFA fee-schedule page."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Schengen Short-Stay Visa (Type C) - child aged 6-12",
+      "amount": 45,
+      "currency": "EUR",
+      "amount_usd": 49,
+      "validity": "up to 90 days within 180 days",
+      "applies": "children aged 6-12",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Reduced fee per common EU rules; children under 6 typically exempt."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Airport/Transit Visa (Type A/B)",
+      "amount": null,
+      "currency": "EUR",
+      "amount_usd": null,
+      "validity": null,
+      "applies": "nationals requiring airport transit visa",
+      "official": false,
+      "source_url": "https://www.evisa-card.com/en/romania-visa-fees.html",
+      "notes": "Secondary sources report transit visa fees are typically the same as the short-stay visa fee, but this was not confirmed on an official government page; amount withheld pending direct MFA verification."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Schengen Short-Stay Visa (Type C) - business purpose",
+      "amount": 90,
+      "currency": "EUR",
+      "amount_usd": 97,
+      "validity": "up to 90 days within 180 days",
+      "applies": "adults from visa-required nationalities, business purpose",
+      "official": true,
+      "source_url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+      "notes": "Business short-stay visas fall under the same Type C fee schedule as tourist visas."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["RUS"],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "EUR",
+      "note": "EU suspended the EU-Russia visa facilitation agreement in 2022; Russian nationals may face higher fees and no facilitation benefits, but an exact current figure was not confirmed on an official Romanian source during this check."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "1500-2500",
+    "currency": "INR",
+    "note": "VFS Global operates Romania visa application centres in several countries including India. Published/aggregator estimates place the India service fee around INR 1,500-2,500 per applicant in addition to the consular visa fee, but this was not verified on VFS Global's own fee page during this check (only secondary aggregator sources were accessible) - treat as indicative, not authoritative.",
+    "source_url": "https://services.vfsglobal.com/india/Romania-index.html"
+  },
+  "sources": [
+    "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+    "https://www.mae.ro/en/node/2061",
+    "https://www.evisa-card.com/en/romania-visa-fees.html",
+    "https://services.vfsglobal.com/india/Romania-index.html"
+  ],
+  "free_visa_notes": "EU/EEA/Swiss citizens and holders of certain valid Schengen visas do not need a separate Romanian visa for short stays. Romania is progressively integrating into the Schengen area (air/sea borders from 2024, land borders joining in 2025-2026); short-stay visa policy already follows the common Schengen fee schedule for non-exempt nationalities."
+}

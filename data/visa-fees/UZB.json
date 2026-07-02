@@ -1,0 +1,131 @@
+{
+  "iso3": "UZB",
+  "name": "Uzbekistan",
+  "updated": "2026-07-02",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "e_visa",
+      "name": "E-Visa - Single entry",
+      "amount": 20,
+      "currency": "USD",
+      "amount_usd": 20,
+      "validity": "90 days to use, 30 days stay",
+      "applies": "eligible nationalities (80+ countries) not covered by visa-free regime",
+      "official": true,
+      "source_url": "https://e-visa.gov.uz/",
+      "notes": "Official portal is JS-rendered and could not be scraped directly; amount corroborated by multiple secondary sources (Advantour, TourFixer) citing the official e-visa.gov.uz fee schedule. Same fee regardless of nationality."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-Visa - Double entry",
+      "amount": 35,
+      "currency": "USD",
+      "amount_usd": 35,
+      "validity": "90 days to use, 30 days stay per entry",
+      "applies": "eligible nationalities (80+ countries) not covered by visa-free regime",
+      "official": true,
+      "source_url": "https://e-visa.gov.uz/",
+      "notes": "Amount corroborated via secondary sources citing official portal; could not directly render e-visa.gov.uz fee page (JS app)."
+    },
+    {
+      "kind": "e_visa",
+      "name": "E-Visa - Multiple entry",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": 50,
+      "validity": "90 days to use, 30 days stay per entry",
+      "applies": "eligible nationalities (80+ countries) not covered by visa-free regime",
+      "official": true,
+      "source_url": "https://e-visa.gov.uz/",
+      "notes": "Amount corroborated via secondary sources citing official portal; could not directly render e-visa.gov.uz fee page (JS app)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued tourist visa - single entry (30 days)",
+      "amount": 65,
+      "currency": "USD",
+      "amount_usd": 65,
+      "validity": "30 days, single entry",
+      "applies": "non-US nationalities requiring sticker visa via embassy",
+      "official": false,
+      "source_url": "https://uzbekistan.org/visa/",
+      "notes": "Sourced from Embassy of Uzbekistan in the United States public visa page; treated as official-embassy but not independently re-verified line by line this session. Fee schedule varies by embassy/consulate."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued tourist visa - double entry (30 days)",
+      "amount": 75,
+      "currency": "USD",
+      "amount_usd": 75,
+      "validity": "30 days, two entries",
+      "applies": "non-US nationalities requiring sticker visa via embassy",
+      "official": false,
+      "source_url": "https://uzbekistan.org/visa/",
+      "notes": "Embassy of Uzbekistan in the United States fee schedule."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Embassy-issued tourist visa - triple entry (30 days)",
+      "amount": 85,
+      "currency": "USD",
+      "amount_usd": 85,
+      "validity": "30 days, three entries",
+      "applies": "non-US nationalities requiring sticker visa via embassy",
+      "official": false,
+      "source_url": "https://uzbekistan.org/visa/",
+      "notes": "Embassy of Uzbekistan in the United States fee schedule."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "travellers transiting Uzbekistan requiring a visa",
+      "official": false,
+      "source_url": "https://e-visa.gov.uz/",
+      "notes": "Could not verify a specific official transit-visa fee on official sources this session; amount left null rather than guessed."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Business visa",
+      "amount": null,
+      "currency": null,
+      "amount_usd": null,
+      "validity": null,
+      "applies": "business travellers",
+      "official": false,
+      "source_url": "https://e-visa.gov.uz/",
+      "notes": "Business e-visa exists on the official portal but specific fee could not be confirmed distinct from standard e-visa tiers this session; left null rather than guessed."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": ["USA"],
+      "kind": "tourist_visa",
+      "amount": 185,
+      "currency": "USD",
+      "note": "Historical embassy fee for US citizens was $185 (higher due to reciprocity with US visa fees for Uzbek citizens). NOTE: Uzbekistan announced a visa abolition for US citizens for tourist visits up to 30 days, effective 1 January 2026 - US travellers should now be visa-free for short tourist stays; this reciprocity fee entry is retained for historical/edge-case reference only and should be re-verified."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "20",
+    "currency": "EUR",
+    "note": "VFS Global operates visa application centres for Uzbekistan for several countries (e.g. Ireland, Czech Republic, Hungary, UK, Finland application pages seen). Published service fee example: EUR 20 inclusive of VAT per application for Ireland-processed applications; fee varies by centre/country (Czech Republic example cites EUR 17). Not all Uzbekistan visa routes use VFS - e-visa applicants apply directly via e-visa.gov.uz.",
+    "source_url": "https://visa.vfsglobal.com/uzb/en/gbr"
+  },
+  "sources": [
+    "https://e-visa.gov.uz/",
+    "https://www.advantour.com/uzbekistan/visa/e-visa.htm",
+    "https://tourfixer.uz/en/blog/uzbekistan-evisa-2026-complete-application-guide",
+    "https://uzbekistan.org/visa/",
+    "https://visa.vfsglobal.com/uzb/en/gbr",
+    "https://www.vfsglobal.com/one-pager/czechrepublic/uzbekistan/english/",
+    "https://en.wikipedia.org/wiki/Visa_policy_of_Uzbekistan"
+  ],
+  "free_visa_notes": "Uzbekistan operates a broad visa-free regime for roughly 90 countries (durations 10-90+ days depending on nationality/bilateral agreement, commonly 30 days for USA/UK/EU/Japan/Australia/South Korea/GCC). Effective 1 January 2026, Uzbekistan abolished visa requirements for US citizens for tourist stays up to 30 days per a November 2025 presidential order. Citizens of ~80+ other countries not covered by the visa-free list can use the e-visa system; the remainder require an embassy-issued sticker visa."
+}
