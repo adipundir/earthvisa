@@ -42,18 +42,11 @@ export default function Image() {
               justifyContent: "center",
             }}
           >
-            <svg width="64" height="64" viewBox="0 0 32 32" fill="none">
-              <g
-                stroke="#fffdf8"
-                strokeWidth={2}
-                strokeLinecap="round"
-                fill="none"
-              >
-                <circle cx="16" cy="16" r="9.5" />
-                <ellipse cx="16" cy="16" rx="4.2" ry="9.5" />
-                <path d="M6.5 16h19" />
-                <path d="M8.8 10.6h14.4" />
-                <path d="M8.8 21.4h14.4" />
+            <svg width="66" height="66" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="8.5" fill="#fffdf8" />
+              <g transform="rotate(-26 24 24)">
+                <ellipse cx="24" cy="24" rx="16" ry="6.1" fill="none" stroke="#fffdf8" strokeWidth={2.4} />
+                <circle cx="40" cy="24" r="3.1" fill="#11203a" />
               </g>
             </svg>
           </div>

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { dataset } from "@/lib/dataset";
+import BrandMark from "@/components/BrandMark";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 function fmtDate(iso: string): string {
@@ -26,8 +27,9 @@ export default function Navbar() {
           href="/"
           aria-label="Earth Visa - home"
           aria-current={path === "/" ? "page" : undefined}
-          className="flex items-center text-stamp transition hover:opacity-75"
+          className="flex items-center gap-2 text-stamp transition hover:opacity-75"
         >
+          <BrandMark size={22} className="shrink-0" />
           <span className="font-display text-[16px] font-semibold tracking-tight">Earth Visa</span>
         </Link>
 
