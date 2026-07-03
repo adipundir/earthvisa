@@ -12,6 +12,14 @@
         "notes": "Bilateral Agreement on the Mutual Exemption of Visa Requirements for holders of Ordinary Passports signed 25 September 2025 on the sidelines of the 80th UN General Assembly in New York. Grants 90 days visa-free entry - a more favourable arrangement than the 30-day universal tourist visa on arrival. Builds on an earlier Visa Agreement (2024) exempting diplomatic and official passport holders from visa requirements for up to 90 days.",
         "source_url": "https://foreign.gov.mv/index.php/en/media-center/news/the-maldives-and-azerbaijan-sign-visa-exemption-agreement",
         "source_official": true
+      },
+      {
+        "nationality": "Russia",
+        "iso3": "RUS",
+        "max_stay_days": 90,
+        "notes": "Agreement between the Government of the Maldives and the Government of the Russian Federation on mutual exemption of visa requirements for nationals of both countries; entered into force 25 July 2019. Russian nationals may stay visa-free for up to 90 days - more favourable than the 30-day universal tourist visa on arrival. The mutual (reciprocal) nature is confirmed by the treaty title on the Maldives MFA page (foreign.gov.mv), which covers 'nationals of the Republic of Maldives and for nationals of the Russian Federation'; the Maldives Foreign Ministry stated 'Russian tourists can also stay in the Maldives for 90 days without a visa' (reported by Maldives Independent, 27 July 2019). Still displayed as in force on foreign.gov.mv as of July 2026. Source: https://foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa/russia (verified 2026-07)",
+        "source_url": "https://foreign.gov.mv/index.php/en/consular/for-maldivian/visa-information/visa/russia",
+        "source_official": true
       }
     ],
     "visa_on_arrival": [
@@ -144,7 +152,8 @@
     "Bilateral Visa Waiver Agreement with Togo for all passport types (signed 19 September 2023, 30 days)",
     "Bilateral Visa Waiver Agreement with The Gambia for all passport types (signed 11 June 2023, 30 days)",
     "Bilateral Visa Waiver Agreement with Andorra for all passport types (signed 20 September 2023, 90 days)",
-    "Bilateral Visa Waiver Agreement with Dominica for all passport types (signed 9 July 2025, 30 days)"
+    "Bilateral Visa Waiver Agreement with Dominica for all passport types (signed 9 July 2025, 30 days)",
+    "Agreement on Short Stay Visa Waiver with Seychelles for nationals of both countries (entered into force 15 May 2026, 30 days - confirmed by Maldives MFA foreign.gov.mv and Seychelles News Agency; same duration as the universal VoA, so recorded here rather than in visa_free; verified 2026-07)"
   ],
   "official_domains": [
     "immigration.gov.mv",
@@ -158,6 +167,7 @@
   "data_quality": {
     "completeness": "medium",
     "validation_notes": [
+      "AUDIT 2026-07 (inbound visa policy): ADDED Russia (RUS) to visa_policy.visa_free at 90 days. Official Maldives MFA page (foreign.gov.mv/en/consular/for-maldivian/visa-information/visa/russia) confirms the 'Agreement ... on mutual exemption of visa requirements for nationals of the Republic of Maldives and for nationals of the Russian Federation' in force since 25 July 2019; the Maldives Foreign Ministry confirmed 'Russian tourists can also stay in the Maldives for 90 days without a visa' (Maldives Independent, 27 July 2019; corroborated by embassies.net). Russia's 90-day visa-free access exceeds the 30-day universal VoA, so it is surfaced in visa_free (parallel to Azerbaijan). REJECTED candidate flips of China (CHN) and Seychelles (SYC) to visa_free: both are genuine bilateral visa exemptions but grant only 30 days = identical to the universal VoA (China per foreign.gov.mv/.../visa/china; Seychelles per foreign.gov.mv MFA + Seychelles News Agency), so per this file's convention they remain in agreements[] (as with Togo, Gambia, Dominica, Tajikistan) rather than visa_free. ADDED the Maldives-Seychelles Short Stay Visa Waiver (in force 15 May 2026, 30 days) to agreements[].",
       "VALIDATION 2026-06-29: Re-verified core tourist VoA policy against immigration.gov.mv/visa/tourist-visa (loaded successfully). Policy CONFIRMED: tourist visa granted on arrival to all foreign nationals without pre-approval; Israeli passport holders explicitly banned effective 15 April 2025. Page does not state the 30-day duration explicitly.",
       "VALIDATION 2026-06-29: Israeli passport ban CONFIRMED still in force as of June 2026. presidency.gov.mv/Press/Article/33500 loaded and confirmed Third Amendment to Immigration Act 1/2007 ratified 15 April 2025 expressly prohibiting Israeli passport holder entry. Ban described as conditional ('until inhumane actions stop') but remains active. Source URL immigration.gov.mv/entry-into-the-maldives-is-prohibited-on-israeli-passports/ now returns HTTP 404 - removed from source_urls; ban remains confirmed by presidency.gov.mv Article 33500.",
       "VALIDATION 2026-06-29: 30-day max stay CONFIRMED by Maldives High Commission London (maldiveshighcommission.uk): 'All tourists, of all nationalities, can receive a 30 day visa free of charge on arrival in the Maldives.' Also confirmed extension up to 60 additional days (total 90 days). No change required.",

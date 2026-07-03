@@ -10,6 +10,14 @@
   "visa_policy": {
     "visa_free": [
       {
+        "nationality": "All nationalities except those in the visa_required list",
+        "iso3": null,
+        "max_stay_days": 90,
+        "notes": "Haiti applies a default visa-free policy: every nationality enters for up to 90 days except the nine countries in the visa_required list (Dominican Republic, Panama, Colombia, Cuba, Syria, Libya, Iran, Vietnam, Yemen). A tourist fee of USD 10 is collected on arrival; passports must remain current for at least six months. The build expands this negation entry against visa_required.nationalities_iso3, so it excludes only Haiti and those nine. Source: https://www.haiti.org/tourist-visa/ (verified 2026-07)",
+        "source_url": "https://www.haiti.org/tourist-visa/",
+        "source_official": true
+      },
+      {
         "nationality": "India",
         "iso3": "IND",
         "max_stay_days": 90,

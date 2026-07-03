@@ -316,6 +316,22 @@
         "notes": "Visa-free per UAE MOFA official visa-exemptions list; previously omitted from all grant lists and wrongly defaulted to visa-required. Corrected per official source.",
         "source_url": "https://www.mofa.gov.ae/en/visa-exemptions-for-non-citizen",
         "source_official": true
+      },
+      {
+        "nationality": "China",
+        "iso3": "CHN",
+        "max_stay_days": 30,
+        "notes": "Visa exemption (visa-free entry, not a visa-on-arrival stamp) under the UAE-China mutual visa exemption agreement; the UAE Embassy Beijing official page states citizens holding normal, special, official, and diplomatic passports may enter without a visa (exemption of visa) for up to 30 days. Reclassified from visa_on_arrival to visa_free to match the official exemption wording (verified 2026-07).",
+        "source_url": "https://www.mofa.gov.ae/en/missions/beijing/services/visas",
+        "source_official": true
+      },
+      {
+        "nationality": "Russia",
+        "iso3": "RUS",
+        "max_stay_days": 90,
+        "notes": "Visa exemption (visa-free entry, not a visa-on-arrival stamp) under the UAE-Russia reciprocal visa-free agreement in force since 17 February 2019; the UAE Embassy Moscow official page states holders of any passport category (diplomatic, special, ordinary) are relieved from visa requirements for up to 90 days within any 180-day period. Reclassified from visa_on_arrival to visa_free to match the official exemption wording (verified 2026-07).",
+        "source_url": "https://www.mofa.gov.ae/en/Missions/Moscow/Services/Visas",
+        "source_official": true
       }
     ],
     "visa_on_arrival": [
@@ -365,14 +381,6 @@
         "max_stay_days": 90,
         "notes": "Visa on arrival; 90-day stay within 180-day period.",
         "source_url": "https://www.gdrfad.gov.ae/en/node/2086",
-        "source_official": true
-      },
-      {
-        "nationality": "China",
-        "iso3": "CHN",
-        "max_stay_days": 30,
-        "notes": "Visa-free entry by mutual agreement (not visa on arrival stamp); ordinary, special, official, and diplomatic passports all included. Maximum 30 days per visit per UAE Embassy Beijing. The prior record erroneously stated 90 days - corrected to 30 days per official MOFA Beijing source.",
-        "source_url": "https://www.mofa.gov.ae/en/missions/beijing/services/visas",
         "source_official": true
       },
       {
@@ -594,14 +602,6 @@
       {
         "nationality": "Romania",
         "iso3": "ROU",
-        "max_stay_days": 90,
-        "notes": "Visa on arrival; 90-day stay within 180-day period.",
-        "source_url": "https://www.gdrfad.gov.ae/en/node/2086",
-        "source_official": true
-      },
-      {
-        "nationality": "Russia",
-        "iso3": "RUS",
         "max_stay_days": 90,
         "notes": "Visa on arrival; 90-day stay within 180-day period.",
         "source_url": "https://www.gdrfad.gov.ae/en/node/2086",

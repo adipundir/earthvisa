@@ -478,17 +478,17 @@
         "source_official": true
       }
     ],
-    "visa_on_arrival": [],
-    "e_visa": [
+    "visa_on_arrival": [
       {
         "nationality": "All eligible nationalities",
         "iso3": null,
         "max_stay_days": null,
-        "notes": "Online visitor visa applications can be submitted through the official ISS eServices portal at eservices.iss.gov.gy. Visa types include Visitor, Business, Employment, and Student. This is an online pre-approval system rather than a traditional e-visa; applicants receive a reference number to check status. The portal returned HTTP 403 on re-fetch June 2026 - the URL is known from prior validated data.",
-        "source_url": "https://eservices.iss.gov.gy/visitor-visa",
+        "notes": "Visa-required nationals who cannot apply at a Guyana embassy/consulate apply online via the ISS eServices portal (eservices.iss.gov.gy) for an approval letter; the approval letter is mandatory to board the flight and the visa is added to the passport on arrival at the airport in Guyana. Official Guyana government missions title this 'Visa on Arrival' (Embassy of Guyana Belgium: embassyofguyana.be/services.php?sid=34; High Commission New Delhi: newdelhihc.mission.gov.gy/consular-services/visas-arrival) and the ISS visitor-visa page requires a 'Letter requesting visa on arrival'. Wikipedia/Timatic cite up to 30 days. Reclassified from e_visa: the online step yields an approval letter, not the visa itself, which is issued at the port of entry. (verified 2026-07)",
+        "source_url": "https://www.embassyofguyana.be/services.php?sid=34",
         "source_official": true
       }
     ],
+    "e_visa": [],
     "eta": [],
     "source_urls": [
       "https://minfor.gov.gy/visa-information",

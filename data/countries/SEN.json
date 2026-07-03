@@ -524,6 +524,14 @@
         "notes": "Visa exempt; official Senegal MFA (diplomatie.gouv.sn) lists Kenya among African nationals not needing a visa for stays under 3 months. Corrected from visa_on_arrival to visa_free; corroborated by the 21 Oct 2025 Kenya-Senegal bilateral visa-waiver. The 2026-06-27 senegal-embassy.uk Category B classification was superseded.",
         "source_url": "https://diplomatie.gouv.sn/index.php/demande-de-visa",
         "source_official": true
+      },
+      {
+        "nationality": "Chad",
+        "iso3": "TCD",
+        "max_stay_days": 90,
+        "notes": "Category A - visa exempt (no visa needed for entry and stay up to 90 days) per the official Senegal embassy country list, which lists Chad in Category A; Wikipedia 'Visa policy of Senegal' corroborates Chad under visa exemption. Chad also appears in Category B (visa on arrival) on the embassy page - an apparent page inconsistency; the higher/primary Category A listing is retained, consistent with the treatment of UAE and Vanuatu. CORRECTION: Chad was previously absent from all arrays and therefore incorrectly built as visa_required, despite notes claiming a visa_on_arrival entry that did not exist. (verified 2026-07)",
+        "source_url": "https://senegal-embassy.uk/list-of-countries-and-categories/",
+        "source_official": true
       }
     ],
     "visa_on_arrival": [
@@ -1265,7 +1273,7 @@
     "gaps": [
       "UAE appears in both Category A and Category B on the embassy page (senegal-embassy.uk); the correct tier for UAE ordinary passport is ambiguous. UAE retained in visa_free (Category A) based on Wikipedia corroboration but should be re-verified against a .gouv.sn source.",
       "Vanuatu appears in both Category A and Category B on the embassy page without a passport-type qualifier. Current record retains Vanuatu in visa_free (Category A) but Wikipedia lists Vanuatu under visa on arrival. Requires confirmation against a .gouv.sn source.",
-      "Chad appears in both Category A and Category B on the embassy page without a passport-type qualifier for the Category A listing. Chad's ordinary passport treatment is unconfirmed. Chad retained in visa_on_arrival (Category B) pending clarification.",
+      "Chad appears in both Category A and Category B on the embassy page without a passport-type qualifier. As of 2026-07, Chad had been erroneously absent from all four visa arrays (building as visa_required) even though the record's prose claimed a visa_on_arrival entry. Corrected: Chad added to visa_free (Category A), matching the embassy Category A listing and Wikipedia's visa-exemption listing, and consistent with the UAE/Vanuatu treatment. The Category B listing on the embassy page remains an unresolved page inconsistency.",
       "Solomon Islands: embassy page lists it in Category C ('Solomon Islands') and also has a misspelling 'Salamon Islands' in Category B. Wikipedia says visa on arrival. The conflict is unresolved; Solomon Islands retained in visa_on_arrival but Category C listing on the official embassy page is a risk flag.",
       "Republic of the Congo (COG) was not individually identifiable on the embassy page during the 2026-06-27 and 2026-06-29 re-checks. Entry preserved from prior run per safety rules; requires independent verification.",
       "Democratic Republic of the Congo (COD) appears in both Category A and B on the embassy page without passport-type distinction. The Category A listing may refer to diplomatic/service passports. No split conditional_access entry has been added pending confirmation; COD ordinary passport currently sits in visa_on_arrival.",
