@@ -681,42 +681,10 @@
         "source_official": true
       },
       {
-        "nationality": "China",
-        "iso3": "CHN",
-        "max_stay_days": 30,
-        "notes": "eVISA via accredited agency only. Nationals of China residing in China. Period of stay is '15 days' or '30 days'. Must apply through a travel agency accredited by the Japanese overseas establishment. Ordinary passport holders only.",
-        "source_url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
-        "source_official": true
-      },
-      {
-        "nationality": "Philippines",
-        "iso3": "PHL",
-        "max_stay_days": 15,
-        "notes": "eVISA via accredited agency only. Nationals of the Philippines residing in the Philippines who participate in a packaged tour organized by designated travel agencies. Period of stay is '15 days'. Ordinary passport holders only.",
-        "source_url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
-        "source_official": true
-      },
-      {
-        "nationality": "Vietnam",
-        "iso3": "VNM",
-        "max_stay_days": 15,
-        "notes": "eVISA via accredited agency only. Nationals of Vietnam residing in Vietnam who participate in a packaged tour organized by designated travel agencies. Period of stay is '15 days'. Ordinary passport holders only.",
-        "source_url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
-        "source_official": true
-      },
-      {
         "nationality": "Hong Kong",
         "iso3": null,
         "max_stay_days": 90,
         "notes": "eVISA via accredited agency. All foreign nationals/people residing in Hong Kong who are not exempt from short-term visa. Applies to SAR passport holders who do not qualify for the ordinary visa exemption. Ordinary passport holders only.",
-        "source_url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
-        "source_official": true
-      },
-      {
-        "nationality": "India",
-        "iso3": "IND",
-        "max_stay_days": 90,
-        "notes": "eVISA via accredited agency. All foreign nationals/people residing in India who are not exempt from short-term visa. Ordinary passport holders only.",
         "source_url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
         "source_official": true
       },
@@ -733,14 +701,6 @@
         "iso3": null,
         "max_stay_days": 90,
         "notes": "eVISA via accredited agency. All foreign nationals/people residing in Macao who are not exempt from short-term visa. Ordinary passport holders only.",
-        "source_url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
-        "source_official": true
-      },
-      {
-        "nationality": "Mongolia",
-        "iso3": "MNG",
-        "max_stay_days": 90,
-        "notes": "eVISA via accredited agency. All foreign nationals/people residing in Mongolia who are not exempt from short-term visa. Ordinary passport holders only.",
         "source_url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
         "source_official": true
       },
@@ -776,13 +736,17 @@
       "https://www.evisa.mofa.go.jp/",
       "https://www.mofa.go.jp/ca/fna/page22e_000692.html"
     ],
-    "notes": "Japan has 74 visa-exempt countries/regions as of September 1, 2025 per MOFA. Stay limits: 15 days (Indonesia, Thailand), 30 days (Brunei, Qatar), 90 days for all others. Several countries require ICAO-compliant ePassport (Note 2: Montenegro, Peru, Paraguay, Panama, Brazil, UAE, Thailand, Serbia) or registered ePassport (Indonesia, Qatar) or MRP (Barbados, Turkey, Lesotho). Malaysia requires ePassport (advised). Uruguay ordinary visa exemption does NOT apply to new passports issued after April 16, 2025 that omit 'place of birth'. JAPAN eVISA system (as of May 15, 2026): expanded to 19 eligible countries/regions. Group 1 (direct online apply): Australia, Brazil, Cambodia, Canada, Saudi Arabia, South Africa, Taiwan, UK, USA. Group 2 (via accredited agency only): China (15/30-day stay), Philippines (15 days, packaged tour), Vietnam (15 days, packaged tour), Hong Kong, India, Indonesia, Macao, Mongolia, Republic of Korea (excl. Jeju jurisdiction), Singapore, UAE. Japan does not offer visa-on-arrival or ETA programs."
+    "notes": "Japan has 74 visa-exempt countries/regions as of September 1, 2025 per MOFA. Stay limits: 15 days (Indonesia, Thailand), 30 days (Brunei, Qatar), 90 days for all others. Several countries require ICAO-compliant ePassport (Note 2: Montenegro, Peru, Paraguay, Panama, Brazil, UAE, Thailand, Serbia) or registered ePassport (Indonesia, Qatar) or MRP (Barbados, Turkey, Lesotho). Malaysia requires ePassport (advised). Uruguay ordinary visa exemption does NOT apply to new passports issued after April 16, 2025 that omit 'place of birth'. JAPAN eVISA system (as of May 15, 2026): expanded to 19 eligible countries/regions. Group 1 (direct online apply): Australia, Brazil, Cambodia, Canada, Saudi Arabia, South Africa, Taiwan, UK, USA. Group 2 (via accredited agency only): China (15/30-day stay), Philippines (15 days, packaged tour), Vietnam (15 days, packaged tour), Hong Kong, India, Indonesia, Macao, Mongolia, Republic of Korea (excl. Jeju jurisdiction), Singapore, UAE. Japan does not offer visa-on-arrival or ETA programs. CORRECTION: Group 2 eVISA (China, Philippines, Vietnam, India, Mongolia + visa-exempt HK/Macao/Korea/Singapore/UAE/Indonesia) is only obtainable through a Japanese-government-accredited travel agency, not direct self-service online; non-visa-exempt Group 2 nationalities (IND, CHN, PHL, VNM, MNG) are classified visa-required, with most applicants applying in person via VFS Global."
   },
   "conditional_access": [
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Bangladesh"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Bangladesh"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -792,8 +756,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Mongolia"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Mongolia"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 30,
@@ -803,8 +771,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["India"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "India"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -814,8 +786,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Philippines"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Philippines"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -825,8 +801,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Myanmar"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Myanmar"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -836,8 +816,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Albania"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Albania"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -847,8 +831,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Azerbaijan"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Azerbaijan"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -858,8 +846,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Georgia"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Georgia"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -869,8 +861,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Moldova"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Moldova"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -880,8 +877,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Turkmenistan"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Turkmenistan"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -891,8 +893,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Ukraine"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Ukraine"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -902,8 +908,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Uzbekistan"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Uzbekistan"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -913,8 +923,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Kosovo"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Kosovo"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -924,8 +939,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Kyrgyz Republic"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Kyrgyz Republic"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -935,8 +955,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Kazakhstan"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Kazakhstan"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -946,8 +971,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Vatican City"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Vatican City"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -957,8 +986,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Ecuador"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Ecuador"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -968,8 +1001,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Bolivia"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Bolivia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -979,8 +1017,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Colombia"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Colombia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -990,8 +1033,12 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Angola"],
-      "passport_types": ["diplomatic"],
+      "eligible_nationalities": [
+        "Angola"
+      ],
+      "passport_types": [
+        "diplomatic"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1001,8 +1048,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Bahrain"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Bahrain"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1012,8 +1064,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Kuwait"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Kuwait"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1023,8 +1080,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Morocco"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Morocco"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1034,8 +1096,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Oman"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Oman"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1045,8 +1112,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Saudi Arabia"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Saudi Arabia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1056,8 +1128,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Iran"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Iran"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1067,8 +1144,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Indonesia"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Indonesia"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 30,
@@ -1078,8 +1160,13 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Bosnia and Herzegovina"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Bosnia and Herzegovina"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1089,8 +1176,18 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": ["Marshall Islands", "Nauru", "Palau", "Papua New Guinea", "Samoa", "Solomon Islands"],
-      "passport_types": ["diplomatic", "official"],
+      "eligible_nationalities": [
+        "Marshall Islands",
+        "Nauru",
+        "Palau",
+        "Papua New Guinea",
+        "Samoa",
+        "Solomon Islands"
+      ],
+      "passport_types": [
+        "diplomatic",
+        "official"
+      ],
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
@@ -1208,196 +1305,748 @@
     "source_official": true,
     "asof": "2026-03-12",
     "visa_free": [
-      {"name": "Andorra", "iso3": "AND"},
-      {"name": "Antigua and Barbuda", "iso3": "ATG"},
-      {"name": "Argentina", "iso3": "ARG"},
-      {"name": "Australia", "iso3": "AUS"},
-      {"name": "Austria", "iso3": "AUT"},
-      {"name": "Bahamas", "iso3": "BHS"},
-      {"name": "Bahrain", "iso3": "BHR"},
-      {"name": "Barbados", "iso3": "BRB"},
-      {"name": "Belgium", "iso3": "BEL"},
-      {"name": "Belize", "iso3": "BLZ"},
-      {"name": "Bolivia", "iso3": "BOL"},
-      {"name": "Bosnia and Herzegovina", "iso3": "BIH"},
-      {"name": "Botswana", "iso3": "BWA"},
-      {"name": "Brazil", "iso3": "BRA"},
-      {"name": "Brunei", "iso3": "BRN"},
-      {"name": "Bulgaria", "iso3": "BGR"},
-      {"name": "Cambodia", "iso3": "KHM"},
-      {"name": "Canada", "iso3": "CAN"},
-      {"name": "Cape Verde", "iso3": "CPV"},
-      {"name": "Chile", "iso3": "CHL"},
-      {"name": "Colombia", "iso3": "COL"},
-      {"name": "Costa Rica", "iso3": "CRI"},
-      {"name": "Croatia", "iso3": "HRV"},
-      {"name": "Cyprus", "iso3": "CYP"},
-      {"name": "Czech Republic", "iso3": "CZE"},
-      {"name": "Denmark", "iso3": "DNK"},
-      {"name": "Dominica", "iso3": "DMA"},
-      {"name": "Dominican Republic", "iso3": "DOM"},
-      {"name": "Ecuador", "iso3": "ECU"},
-      {"name": "El Salvador", "iso3": "SLV"},
-      {"name": "Estonia", "iso3": "EST"},
-      {"name": "Eswatini", "iso3": "SWZ"},
-      {"name": "Fiji", "iso3": "FJI"},
-      {"name": "Finland", "iso3": "FIN"},
-      {"name": "France", "iso3": "FRA"},
-      {"name": "Gambia", "iso3": "GMB"},
-      {"name": "Germany", "iso3": "DEU"},
-      {"name": "Ghana", "iso3": "GHA"},
-      {"name": "Greece", "iso3": "GRC"},
-      {"name": "Grenada", "iso3": "GRD"},
-      {"name": "Guatemala", "iso3": "GTM"},
-      {"name": "Guyana", "iso3": "GUY"},
-      {"name": "Haiti", "iso3": "HTI"},
-      {"name": "Honduras", "iso3": "HND"},
-      {"name": "Hong Kong (SAR)", "iso3": null},
-      {"name": "Hungary", "iso3": "HUN"},
-      {"name": "Iceland", "iso3": "ISL"},
-      {"name": "Indonesia", "iso3": "IDN"},
-      {"name": "Ireland", "iso3": "IRL"},
-      {"name": "Israel", "iso3": "ISR"},
-      {"name": "Italy", "iso3": "ITA"},
-      {"name": "Jamaica", "iso3": "JAM"},
-      {"name": "Jordan", "iso3": "JOR"},
-      {"name": "Kazakhstan", "iso3": "KAZ"},
-      {"name": "Kosovo", "iso3": "XKX"},
-      {"name": "Kuwait", "iso3": "KWT"},
-      {"name": "Laos", "iso3": "LAO"},
-      {"name": "Latvia", "iso3": "LVA"},
-      {"name": "Lebanon", "iso3": "LBN"},
-      {"name": "Lesotho", "iso3": "LSO"},
-      {"name": "Liechtenstein", "iso3": "LIE"},
-      {"name": "Lithuania", "iso3": "LTU"},
-      {"name": "Luxembourg", "iso3": "LUX"},
-      {"name": "Macao (SAR)", "iso3": null},
-      {"name": "Madagascar", "iso3": "MDG"},
-      {"name": "Malawi", "iso3": "MWI"},
-      {"name": "Malaysia", "iso3": "MYS"},
-      {"name": "Maldives", "iso3": "MDV"},
-      {"name": "Malta", "iso3": "MLT"},
-      {"name": "Marshall Islands", "iso3": "MHL"},
-      {"name": "Mauritius", "iso3": "MUS"},
-      {"name": "Mexico", "iso3": "MEX"},
-      {"name": "Micronesia (Federated States)", "iso3": "FSM"},
-      {"name": "Moldova", "iso3": "MDA"},
-      {"name": "Monaco", "iso3": "MCO"},
-      {"name": "Montenegro", "iso3": "MNE"},
-      {"name": "Morocco", "iso3": "MAR"},
-      {"name": "Mozambique", "iso3": "MOZ"},
-      {"name": "Myanmar", "iso3": "MMR"},
-      {"name": "Namibia", "iso3": "NAM"},
-      {"name": "Nauru", "iso3": "NRU"},
-      {"name": "Nepal", "iso3": "NPL"},
-      {"name": "Netherlands", "iso3": "NLD"},
-      {"name": "New Zealand", "iso3": "NZL"},
-      {"name": "Nicaragua", "iso3": "NIC"},
-      {"name": "Niger", "iso3": "NER"},
-      {"name": "North Macedonia", "iso3": "MKD"},
-      {"name": "Norway", "iso3": "NOR"},
-      {"name": "Oman", "iso3": "OMN"},
-      {"name": "Palau", "iso3": "PLW"},
-      {"name": "Panama", "iso3": "PAN"},
-      {"name": "Papua New Guinea", "iso3": "PNG"},
-      {"name": "Paraguay", "iso3": "PRY"},
-      {"name": "Peru", "iso3": "PER"},
-      {"name": "Philippines", "iso3": "PHL"},
-      {"name": "Poland", "iso3": "POL"},
-      {"name": "Portugal", "iso3": "PRT"},
-      {"name": "Qatar", "iso3": "QAT"},
-      {"name": "Republic of Korea", "iso3": "KOR"},
-      {"name": "Romania", "iso3": "ROU"},
-      {"name": "Rwanda", "iso3": "RWA"},
-      {"name": "Saint Kitts and Nevis", "iso3": "KNA"},
-      {"name": "Saint Lucia", "iso3": "LCA"},
-      {"name": "Saint Vincent and the Grenadines", "iso3": "VCT"},
-      {"name": "Samoa", "iso3": "WSM"},
-      {"name": "San Marino", "iso3": "SMR"},
-      {"name": "Senegal", "iso3": "SEN"},
-      {"name": "Serbia", "iso3": "SRB"},
-      {"name": "Seychelles", "iso3": "SYC"},
-      {"name": "Sierra Leone", "iso3": "SLE"},
-      {"name": "Singapore", "iso3": "SGP"},
-      {"name": "Slovakia", "iso3": "SVK"},
-      {"name": "Slovenia", "iso3": "SVN"},
-      {"name": "Solomon Islands", "iso3": "SLB"},
-      {"name": "Spain", "iso3": "ESP"},
-      {"name": "Suriname", "iso3": "SUR"},
-      {"name": "Sweden", "iso3": "SWE"},
-      {"name": "Switzerland", "iso3": "CHE"},
-      {"name": "Taiwan", "iso3": null},
-      {"name": "Tanzania", "iso3": "TZA"},
-      {"name": "Thailand", "iso3": "THA"},
-      {"name": "Timor-Leste", "iso3": "TLS"},
-      {"name": "Tonga", "iso3": "TON"},
-      {"name": "Trinidad and Tobago", "iso3": "TTO"},
-      {"name": "Tunisia", "iso3": "TUN"},
-      {"name": "Türkiye", "iso3": "TUR"},
-      {"name": "Tuvalu", "iso3": "TUV"},
-      {"name": "Uganda", "iso3": "UGA"},
-      {"name": "United Arab Emirates", "iso3": "ARE"},
-      {"name": "United Kingdom", "iso3": "GBR"},
-      {"name": "United States", "iso3": "USA"},
-      {"name": "Uruguay", "iso3": "URY"},
-      {"name": "Vanuatu", "iso3": "VUT"},
-      {"name": "Vatican City", "iso3": "VAT"},
-      {"name": "Vietnam", "iso3": "VNM"},
-      {"name": "Zambia", "iso3": "ZMB"},
-      {"name": "Zimbabwe", "iso3": "ZWE"}
+      {
+        "name": "Andorra",
+        "iso3": "AND"
+      },
+      {
+        "name": "Antigua and Barbuda",
+        "iso3": "ATG"
+      },
+      {
+        "name": "Argentina",
+        "iso3": "ARG"
+      },
+      {
+        "name": "Australia",
+        "iso3": "AUS"
+      },
+      {
+        "name": "Austria",
+        "iso3": "AUT"
+      },
+      {
+        "name": "Bahamas",
+        "iso3": "BHS"
+      },
+      {
+        "name": "Bahrain",
+        "iso3": "BHR"
+      },
+      {
+        "name": "Barbados",
+        "iso3": "BRB"
+      },
+      {
+        "name": "Belgium",
+        "iso3": "BEL"
+      },
+      {
+        "name": "Belize",
+        "iso3": "BLZ"
+      },
+      {
+        "name": "Bolivia",
+        "iso3": "BOL"
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "iso3": "BIH"
+      },
+      {
+        "name": "Botswana",
+        "iso3": "BWA"
+      },
+      {
+        "name": "Brazil",
+        "iso3": "BRA"
+      },
+      {
+        "name": "Brunei",
+        "iso3": "BRN"
+      },
+      {
+        "name": "Bulgaria",
+        "iso3": "BGR"
+      },
+      {
+        "name": "Cambodia",
+        "iso3": "KHM"
+      },
+      {
+        "name": "Canada",
+        "iso3": "CAN"
+      },
+      {
+        "name": "Cape Verde",
+        "iso3": "CPV"
+      },
+      {
+        "name": "Chile",
+        "iso3": "CHL"
+      },
+      {
+        "name": "Colombia",
+        "iso3": "COL"
+      },
+      {
+        "name": "Costa Rica",
+        "iso3": "CRI"
+      },
+      {
+        "name": "Croatia",
+        "iso3": "HRV"
+      },
+      {
+        "name": "Cyprus",
+        "iso3": "CYP"
+      },
+      {
+        "name": "Czech Republic",
+        "iso3": "CZE"
+      },
+      {
+        "name": "Denmark",
+        "iso3": "DNK"
+      },
+      {
+        "name": "Dominica",
+        "iso3": "DMA"
+      },
+      {
+        "name": "Dominican Republic",
+        "iso3": "DOM"
+      },
+      {
+        "name": "Ecuador",
+        "iso3": "ECU"
+      },
+      {
+        "name": "El Salvador",
+        "iso3": "SLV"
+      },
+      {
+        "name": "Estonia",
+        "iso3": "EST"
+      },
+      {
+        "name": "Eswatini",
+        "iso3": "SWZ"
+      },
+      {
+        "name": "Fiji",
+        "iso3": "FJI"
+      },
+      {
+        "name": "Finland",
+        "iso3": "FIN"
+      },
+      {
+        "name": "France",
+        "iso3": "FRA"
+      },
+      {
+        "name": "Gambia",
+        "iso3": "GMB"
+      },
+      {
+        "name": "Germany",
+        "iso3": "DEU"
+      },
+      {
+        "name": "Ghana",
+        "iso3": "GHA"
+      },
+      {
+        "name": "Greece",
+        "iso3": "GRC"
+      },
+      {
+        "name": "Grenada",
+        "iso3": "GRD"
+      },
+      {
+        "name": "Guatemala",
+        "iso3": "GTM"
+      },
+      {
+        "name": "Guyana",
+        "iso3": "GUY"
+      },
+      {
+        "name": "Haiti",
+        "iso3": "HTI"
+      },
+      {
+        "name": "Honduras",
+        "iso3": "HND"
+      },
+      {
+        "name": "Hong Kong (SAR)",
+        "iso3": null
+      },
+      {
+        "name": "Hungary",
+        "iso3": "HUN"
+      },
+      {
+        "name": "Iceland",
+        "iso3": "ISL"
+      },
+      {
+        "name": "Indonesia",
+        "iso3": "IDN"
+      },
+      {
+        "name": "Ireland",
+        "iso3": "IRL"
+      },
+      {
+        "name": "Israel",
+        "iso3": "ISR"
+      },
+      {
+        "name": "Italy",
+        "iso3": "ITA"
+      },
+      {
+        "name": "Jamaica",
+        "iso3": "JAM"
+      },
+      {
+        "name": "Jordan",
+        "iso3": "JOR"
+      },
+      {
+        "name": "Kazakhstan",
+        "iso3": "KAZ"
+      },
+      {
+        "name": "Kosovo",
+        "iso3": "XKX"
+      },
+      {
+        "name": "Kuwait",
+        "iso3": "KWT"
+      },
+      {
+        "name": "Laos",
+        "iso3": "LAO"
+      },
+      {
+        "name": "Latvia",
+        "iso3": "LVA"
+      },
+      {
+        "name": "Lebanon",
+        "iso3": "LBN"
+      },
+      {
+        "name": "Lesotho",
+        "iso3": "LSO"
+      },
+      {
+        "name": "Liechtenstein",
+        "iso3": "LIE"
+      },
+      {
+        "name": "Lithuania",
+        "iso3": "LTU"
+      },
+      {
+        "name": "Luxembourg",
+        "iso3": "LUX"
+      },
+      {
+        "name": "Macao (SAR)",
+        "iso3": null
+      },
+      {
+        "name": "Madagascar",
+        "iso3": "MDG"
+      },
+      {
+        "name": "Malawi",
+        "iso3": "MWI"
+      },
+      {
+        "name": "Malaysia",
+        "iso3": "MYS"
+      },
+      {
+        "name": "Maldives",
+        "iso3": "MDV"
+      },
+      {
+        "name": "Malta",
+        "iso3": "MLT"
+      },
+      {
+        "name": "Marshall Islands",
+        "iso3": "MHL"
+      },
+      {
+        "name": "Mauritius",
+        "iso3": "MUS"
+      },
+      {
+        "name": "Mexico",
+        "iso3": "MEX"
+      },
+      {
+        "name": "Micronesia (Federated States)",
+        "iso3": "FSM"
+      },
+      {
+        "name": "Moldova",
+        "iso3": "MDA"
+      },
+      {
+        "name": "Monaco",
+        "iso3": "MCO"
+      },
+      {
+        "name": "Montenegro",
+        "iso3": "MNE"
+      },
+      {
+        "name": "Morocco",
+        "iso3": "MAR"
+      },
+      {
+        "name": "Mozambique",
+        "iso3": "MOZ"
+      },
+      {
+        "name": "Myanmar",
+        "iso3": "MMR"
+      },
+      {
+        "name": "Namibia",
+        "iso3": "NAM"
+      },
+      {
+        "name": "Nauru",
+        "iso3": "NRU"
+      },
+      {
+        "name": "Nepal",
+        "iso3": "NPL"
+      },
+      {
+        "name": "Netherlands",
+        "iso3": "NLD"
+      },
+      {
+        "name": "New Zealand",
+        "iso3": "NZL"
+      },
+      {
+        "name": "Nicaragua",
+        "iso3": "NIC"
+      },
+      {
+        "name": "Niger",
+        "iso3": "NER"
+      },
+      {
+        "name": "North Macedonia",
+        "iso3": "MKD"
+      },
+      {
+        "name": "Norway",
+        "iso3": "NOR"
+      },
+      {
+        "name": "Oman",
+        "iso3": "OMN"
+      },
+      {
+        "name": "Palau",
+        "iso3": "PLW"
+      },
+      {
+        "name": "Panama",
+        "iso3": "PAN"
+      },
+      {
+        "name": "Papua New Guinea",
+        "iso3": "PNG"
+      },
+      {
+        "name": "Paraguay",
+        "iso3": "PRY"
+      },
+      {
+        "name": "Peru",
+        "iso3": "PER"
+      },
+      {
+        "name": "Philippines",
+        "iso3": "PHL"
+      },
+      {
+        "name": "Poland",
+        "iso3": "POL"
+      },
+      {
+        "name": "Portugal",
+        "iso3": "PRT"
+      },
+      {
+        "name": "Qatar",
+        "iso3": "QAT"
+      },
+      {
+        "name": "Republic of Korea",
+        "iso3": "KOR"
+      },
+      {
+        "name": "Romania",
+        "iso3": "ROU"
+      },
+      {
+        "name": "Rwanda",
+        "iso3": "RWA"
+      },
+      {
+        "name": "Saint Kitts and Nevis",
+        "iso3": "KNA"
+      },
+      {
+        "name": "Saint Lucia",
+        "iso3": "LCA"
+      },
+      {
+        "name": "Saint Vincent and the Grenadines",
+        "iso3": "VCT"
+      },
+      {
+        "name": "Samoa",
+        "iso3": "WSM"
+      },
+      {
+        "name": "San Marino",
+        "iso3": "SMR"
+      },
+      {
+        "name": "Senegal",
+        "iso3": "SEN"
+      },
+      {
+        "name": "Serbia",
+        "iso3": "SRB"
+      },
+      {
+        "name": "Seychelles",
+        "iso3": "SYC"
+      },
+      {
+        "name": "Sierra Leone",
+        "iso3": "SLE"
+      },
+      {
+        "name": "Singapore",
+        "iso3": "SGP"
+      },
+      {
+        "name": "Slovakia",
+        "iso3": "SVK"
+      },
+      {
+        "name": "Slovenia",
+        "iso3": "SVN"
+      },
+      {
+        "name": "Solomon Islands",
+        "iso3": "SLB"
+      },
+      {
+        "name": "Spain",
+        "iso3": "ESP"
+      },
+      {
+        "name": "Suriname",
+        "iso3": "SUR"
+      },
+      {
+        "name": "Sweden",
+        "iso3": "SWE"
+      },
+      {
+        "name": "Switzerland",
+        "iso3": "CHE"
+      },
+      {
+        "name": "Taiwan",
+        "iso3": null
+      },
+      {
+        "name": "Tanzania",
+        "iso3": "TZA"
+      },
+      {
+        "name": "Thailand",
+        "iso3": "THA"
+      },
+      {
+        "name": "Timor-Leste",
+        "iso3": "TLS"
+      },
+      {
+        "name": "Tonga",
+        "iso3": "TON"
+      },
+      {
+        "name": "Trinidad and Tobago",
+        "iso3": "TTO"
+      },
+      {
+        "name": "Tunisia",
+        "iso3": "TUN"
+      },
+      {
+        "name": "Türkiye",
+        "iso3": "TUR"
+      },
+      {
+        "name": "Tuvalu",
+        "iso3": "TUV"
+      },
+      {
+        "name": "Uganda",
+        "iso3": "UGA"
+      },
+      {
+        "name": "United Arab Emirates",
+        "iso3": "ARE"
+      },
+      {
+        "name": "United Kingdom",
+        "iso3": "GBR"
+      },
+      {
+        "name": "United States",
+        "iso3": "USA"
+      },
+      {
+        "name": "Uruguay",
+        "iso3": "URY"
+      },
+      {
+        "name": "Vanuatu",
+        "iso3": "VUT"
+      },
+      {
+        "name": "Vatican City",
+        "iso3": "VAT"
+      },
+      {
+        "name": "Vietnam",
+        "iso3": "VNM"
+      },
+      {
+        "name": "Zambia",
+        "iso3": "ZMB"
+      },
+      {
+        "name": "Zimbabwe",
+        "iso3": "ZWE"
+      }
     ],
     "visa_on_arrival": [
-      {"name": "Bangladesh", "iso3": "BGD"},
-      {"name": "Comoros", "iso3": "COM"},
-      {"name": "Djibouti", "iso3": "DJI"},
-      {"name": "Ethiopia", "iso3": "ETH"},
-      {"name": "Guinea-Bissau", "iso3": "GNB"},
-      {"name": "Iran", "iso3": "IRN"},
-      {"name": "Kiribati", "iso3": "KIR"},
-      {"name": "Liberia", "iso3": "LBR"},
-      {"name": "Maldives", "iso3": "MDV"},
-      {"name": "Mauritania", "iso3": "MRT"},
-      {"name": "Mozambique", "iso3": "MOZ"},
-      {"name": "Palau", "iso3": "PLW"},
-      {"name": "Somalia", "iso3": "SOM"},
-      {"name": "Timor-Leste", "iso3": "TLS"},
-      {"name": "Togo", "iso3": "TGO"},
-      {"name": "Tuvalu", "iso3": "TUV"},
-      {"name": "Uganda", "iso3": "UGA"},
-      {"name": "Zimbabwe", "iso3": "ZWE"}
+      {
+        "name": "Bangladesh",
+        "iso3": "BGD"
+      },
+      {
+        "name": "Comoros",
+        "iso3": "COM"
+      },
+      {
+        "name": "Djibouti",
+        "iso3": "DJI"
+      },
+      {
+        "name": "Ethiopia",
+        "iso3": "ETH"
+      },
+      {
+        "name": "Guinea-Bissau",
+        "iso3": "GNB"
+      },
+      {
+        "name": "Iran",
+        "iso3": "IRN"
+      },
+      {
+        "name": "Kiribati",
+        "iso3": "KIR"
+      },
+      {
+        "name": "Liberia",
+        "iso3": "LBR"
+      },
+      {
+        "name": "Maldives",
+        "iso3": "MDV"
+      },
+      {
+        "name": "Mauritania",
+        "iso3": "MRT"
+      },
+      {
+        "name": "Mozambique",
+        "iso3": "MOZ"
+      },
+      {
+        "name": "Palau",
+        "iso3": "PLW"
+      },
+      {
+        "name": "Somalia",
+        "iso3": "SOM"
+      },
+      {
+        "name": "Timor-Leste",
+        "iso3": "TLS"
+      },
+      {
+        "name": "Togo",
+        "iso3": "TGO"
+      },
+      {
+        "name": "Tuvalu",
+        "iso3": "TUV"
+      },
+      {
+        "name": "Uganda",
+        "iso3": "UGA"
+      },
+      {
+        "name": "Zimbabwe",
+        "iso3": "ZWE"
+      }
     ],
     "e_visa": [
-      {"name": "Armenia", "iso3": "ARM"},
-      {"name": "Azerbaijan", "iso3": "AZE"},
-      {"name": "Bahrain", "iso3": "BHR"},
-      {"name": "Cuba", "iso3": "CUB"},
-      {"name": "Egypt", "iso3": "EGY"},
-      {"name": "Georgia", "iso3": "GEO"},
-      {"name": "India", "iso3": "IND"},
-      {"name": "Kenya", "iso3": "KEN"},
-      {"name": "Kuwait", "iso3": "KWT"},
-      {"name": "Kyrgyzstan", "iso3": "KGZ"},
-      {"name": "Myanmar", "iso3": "MMR"},
-      {"name": "Pakistan", "iso3": "PAK"},
-      {"name": "Papua New Guinea", "iso3": "PNG"},
-      {"name": "Russia", "iso3": "RUS"},
-      {"name": "Rwanda", "iso3": "RWA"},
-      {"name": "Saudi Arabia", "iso3": "SAU"},
-      {"name": "Sri Lanka", "iso3": "LKA"},
-      {"name": "Tanzania", "iso3": "TZA"},
-      {"name": "Uganda", "iso3": "UGA"},
-      {"name": "Zambia", "iso3": "ZMB"},
-      {"name": "Zimbabwe", "iso3": "ZWE"}
+      {
+        "name": "Armenia",
+        "iso3": "ARM"
+      },
+      {
+        "name": "Azerbaijan",
+        "iso3": "AZE"
+      },
+      {
+        "name": "Bahrain",
+        "iso3": "BHR"
+      },
+      {
+        "name": "Cuba",
+        "iso3": "CUB"
+      },
+      {
+        "name": "Egypt",
+        "iso3": "EGY"
+      },
+      {
+        "name": "Georgia",
+        "iso3": "GEO"
+      },
+      {
+        "name": "India",
+        "iso3": "IND"
+      },
+      {
+        "name": "Kenya",
+        "iso3": "KEN"
+      },
+      {
+        "name": "Kuwait",
+        "iso3": "KWT"
+      },
+      {
+        "name": "Kyrgyzstan",
+        "iso3": "KGZ"
+      },
+      {
+        "name": "Myanmar",
+        "iso3": "MMR"
+      },
+      {
+        "name": "Pakistan",
+        "iso3": "PAK"
+      },
+      {
+        "name": "Papua New Guinea",
+        "iso3": "PNG"
+      },
+      {
+        "name": "Russia",
+        "iso3": "RUS"
+      },
+      {
+        "name": "Rwanda",
+        "iso3": "RWA"
+      },
+      {
+        "name": "Saudi Arabia",
+        "iso3": "SAU"
+      },
+      {
+        "name": "Sri Lanka",
+        "iso3": "LKA"
+      },
+      {
+        "name": "Tanzania",
+        "iso3": "TZA"
+      },
+      {
+        "name": "Uganda",
+        "iso3": "UGA"
+      },
+      {
+        "name": "Zambia",
+        "iso3": "ZMB"
+      },
+      {
+        "name": "Zimbabwe",
+        "iso3": "ZWE"
+      }
     ],
     "eta": [
-      {"name": "Australia", "iso3": "AUS"},
-      {"name": "Canada", "iso3": "CAN"},
-      {"name": "Israel", "iso3": "ISR"},
-      {"name": "Kenya", "iso3": "KEN"},
-      {"name": "New Zealand", "iso3": "NZL"},
-      {"name": "Sri Lanka", "iso3": "LKA"},
-      {"name": "United Kingdom", "iso3": "GBR"},
-      {"name": "United States", "iso3": "USA"}
+      {
+        "name": "Australia",
+        "iso3": "AUS"
+      },
+      {
+        "name": "Canada",
+        "iso3": "CAN"
+      },
+      {
+        "name": "Israel",
+        "iso3": "ISR"
+      },
+      {
+        "name": "Kenya",
+        "iso3": "KEN"
+      },
+      {
+        "name": "New Zealand",
+        "iso3": "NZL"
+      },
+      {
+        "name": "Sri Lanka",
+        "iso3": "LKA"
+      },
+      {
+        "name": "United Kingdom",
+        "iso3": "GBR"
+      },
+      {
+        "name": "United States",
+        "iso3": "USA"
+      }
     ],
     "notes": "Official MOFA outbound visa list for Japanese ordinary passport holders (普通旅券). Primary source is the PDF at https://www.mofa.go.jp/mofaj/files/100804073.pdf (current as of March 12, 2026; 令和８年３月１２日現在). The HTML page is https://www.mofa.go.jp/mofaj/toko/visa/tanki/novisa.html. Note: Emergency passports (緊急旅券) do not include IC chips and may face additional travel restrictions. The visa-free list represents countries/territories where Japanese ordinary passport holders can enter without obtaining a prior consular visa (may still require eTA/ESTA pre-travel authorization which is obtained online without visiting a consulate). Some destinations listed under both visa_free and e_visa/eta indicate that the entry mode is eTA/e-visa (electronic, no consulate visit required). Countries with VOA also allow entry without prior consular visa. This list is approximate; the definitive authoritative list is in the MOFA PDF. Japan passport holders have access to 190+ destinations without a prior consular visa appointment."
   },
