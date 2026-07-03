@@ -1004,7 +1004,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
         onKeyDown={(e) => { if (e.key === "Escape") setFilter(""); }}
         aria-label="Filter destinations by name"
         placeholder="Filter destinations…"
-        className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-paper-2/80 px-3 py-2 text-sm text-ink outline-none transition focus:border-ink/40 placeholder:text-ink-mute/70"
+        className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-white px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute/70"
       />
       {rows.length === 0 && (
         <p className="rounded-lg border border-dashed border-line bg-paper-2/40 px-4 py-6 text-center text-sm text-ink-soft">
