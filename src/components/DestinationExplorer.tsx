@@ -294,15 +294,15 @@ export default function DestinationExplorer() {
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
 
-      {/* ── DESTINATION - primary, big ── */}
+      {/* ── DESTINATION - primary ── */}
       <div className="mt-8">
-        <div className="mb-3">
-          <p className="font-display text-[17px] font-semibold text-ink">Destination</p>
-          <p className="mt-0.5 text-sm text-ink-soft">Where do you want to go? Start here - enter your destination first</p>
+        <div className="mb-2">
+          <p className="font-display text-lg font-bold text-ink">Destination</p>
+          <p className="mt-0.5 text-[13px] text-ink-soft">Where do you want to go? Start here - enter your destination first</p>
         </div>
 
         <div ref={destBoxRef} className="relative z-30 w-full">
-          <div className={`flex min-h-[4.5rem] w-full items-center gap-3 rounded-xl border bg-white px-5 py-4 transition-all ${
+          <div className={`flex min-h-[3.5rem] w-full items-center gap-3 rounded-lg border bg-white px-4 py-2.5 transition-all ${
             destIso3
               ? "border-line-strong"
               : destOpen
@@ -311,8 +311,8 @@ export default function DestinationExplorer() {
           }`}>
             {destIso3 ? (
               <span className="inline-flex items-center gap-2">
-                <span className="text-3xl leading-none">{flagFor(destIso3)}</span>
-                <span className="font-display text-xl font-semibold text-ink">{nameFor(destIso3)}</span>
+                <span className="text-2xl leading-none">{flagFor(destIso3)}</span>
+                <span className="font-display text-lg font-semibold text-ink">{nameFor(destIso3)}</span>
                 <button
                   onClick={clearDest}
                   className="grid h-6 w-6 place-items-center rounded-full text-[13px] text-ink-mute transition hover:bg-stamp/20 hover:text-stamp"
@@ -321,7 +321,7 @@ export default function DestinationExplorer() {
               </span>
             ) : (
               <>
-                <span className="text-2xl text-ink-mute/40">🌍</span>
+                <span className="text-lg text-ink-mute/40">🌍</span>
                 <input
                   value={destQuery}
                   onChange={(e) => { setDestQuery(e.target.value); setDestOpen(true); setDestHi(-1); }}
@@ -369,14 +369,14 @@ export default function DestinationExplorer() {
       </div>
 
       {/* ── PASSPORT(S) ── */}
-      <div className="mt-7">
-        <div className="mb-3">
-          <p className="font-display text-[17px] font-semibold text-ink">Your Passport(s)</p>
-          <p className="mt-0.5 text-sm text-ink-soft">Add one or more - dual citizens get the best access from either</p>
+      <div className="mt-6">
+        <div className="mb-2">
+          <p className="font-display text-lg font-bold text-ink">Your Passport(s)</p>
+          <p className="mt-0.5 text-[13px] text-ink-soft">Add one or more - dual citizens get the best access from either</p>
         </div>
 
         <div ref={passBoxRef} className="relative z-20 w-full">
-          <div className="flex min-h-[3.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-3 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
+          <div className="flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2.5 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
@@ -511,13 +511,13 @@ export default function DestinationExplorer() {
       </div>
 
       {/* ── CREDENTIALS ── */}
-      <div className="mt-7">
-        <div className="mb-3">
-          <p className="font-display text-[17px] font-semibold text-ink">
+      <div className="mt-6">
+        <div className="mb-2">
+          <p className="font-display text-lg font-bold text-ink">
             Visas &amp; Permits
             <span className="ml-2 font-display text-[13px] font-normal italic text-ink-soft">optional</span>
           </p>
-          <p className="mt-0.5 text-sm text-ink-soft">A US visa, Schengen visa, or Japan residence permit can unlock extra access</p>
+          <p className="mt-0.5 text-[13px] text-ink-soft">A US visa, Schengen visa, or Japan residence permit can unlock extra access</p>
         </div>
 
         <div ref={credBoxRef} className="relative z-10 w-full">
