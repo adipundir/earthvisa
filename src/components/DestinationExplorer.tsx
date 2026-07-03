@@ -302,7 +302,7 @@ export default function DestinationExplorer() {
         </div>
 
         <div ref={destBoxRef} className="relative z-30 w-full">
-          <div className={`flex min-h-[3.5rem] w-full items-center gap-3 rounded-lg border bg-white px-4 py-2.5 transition-all ${
+          <div className={`flex min-h-[2.75rem] w-full items-center gap-3 rounded-lg border bg-white px-4 py-2 transition-all ${
             destIso3
               ? "border-line-strong"
               : destOpen
@@ -339,7 +339,7 @@ export default function DestinationExplorer() {
                   aria-activedescendant={destHi >= 0 ? `dest-opt-${destHi}` : undefined}
                   aria-label="Search for a destination country"
                   placeholder="Type a destination - France, Japan, UAE, Brazil…"
-                  className="flex-1 bg-transparent py-1 font-display text-[16px] text-ink outline-none placeholder:text-ink-mute/50"
+                  className="flex-1 bg-transparent py-1 font-display text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
                   autoComplete="off"
                 />
               </>
@@ -376,7 +376,7 @@ export default function DestinationExplorer() {
         </div>
 
         <div ref={passBoxRef} className="relative z-20 w-full">
-          <div className="flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2.5 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
+          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
@@ -468,7 +468,7 @@ export default function DestinationExplorer() {
               aria-activedescendant={passHi >= 0 ? `dest-pass-opt-${passHi}` : undefined}
               aria-label="Search for a passport country"
               placeholder={selected.length ? "Add another country…" : "Type a country - India, Germany, USA…"}
-              className="min-w-[200px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/55"
+              className="min-w-[200px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
             />
           </div>
 
@@ -521,7 +521,7 @@ export default function DestinationExplorer() {
         </div>
 
         <div ref={credBoxRef} className="relative z-10 w-full">
-          <div className={`flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2.5 transition-all ${
+          <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2 transition-all ${
             credOpen ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]" : "border-line-strong"
           }`}>
             {creds.map((credId) => {
@@ -546,7 +546,7 @@ export default function DestinationExplorer() {
               onKeyDown={(e) => { if (e.key === "Escape") setCredOpen(false); }}
               aria-label="Search visas and permits you hold"
               placeholder={creds.length ? "Add another visa or permit…" : "Search - US Green Card, Schengen visa, Japan residence…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/55"
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
             />
             {creds.length > 0 && (
               <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono shrink-0 text-[10px] uppercase tracking-[0.1em] text-ink-mute/60 hover:text-stamp">

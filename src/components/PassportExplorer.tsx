@@ -252,7 +252,7 @@ export default function PassportExplorer() {
 
         <div ref={boxRef} className="relative z-30 w-full">
           {/* Full-width search box */}
-          <div className="flex min-h-[3.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-3 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
+          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
@@ -346,7 +346,7 @@ export default function PassportExplorer() {
               aria-activedescendant={hi >= 0 ? `passport-opt-${hi}` : undefined}
               aria-label="Search for a passport country"
               placeholder={selected.length ? "Add another country…" : "Search for a country…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/55"
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
             />
           </div>
 
@@ -397,7 +397,7 @@ export default function PassportExplorer() {
         </p>
 
         <div ref={credBoxRef} className="relative z-20 mt-3 w-full">
-          <div className={`flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2.5 transition-all ${credOpen ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]" : "border-line-strong"}`}>
+          <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2 transition-all ${credOpen ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]" : "border-line-strong"}`}>
             {/* Selected credential chips */}
             {creds.map((credId) => {
               const c = dataset.credentials.find((x) => x.id === credId);
@@ -421,7 +421,7 @@ export default function PassportExplorer() {
               onKeyDown={(e) => { if (e.key === "Escape") setCredOpen(false); }}
               aria-label="Search visas and permits you hold"
               placeholder={creds.length ? "Add another visa or permit…" : "Search by country - e.g. Japan visa, US Green Card, Schengen…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/55"
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
             />
             {creds.length > 0 && (
               <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono shrink-0 text-[10px] uppercase tracking-[0.1em] text-ink-mute/60 hover:text-stamp">
