@@ -5,6 +5,7 @@ import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { compute } from "@/lib/compute";
 import { corridorsForNationality, isUsefulCorridor, DEMONYM } from "@/lib/corridors";
 import CorridorLinks from "@/components/CorridorLinks";
+import PassportDestinationSearch from "@/components/PassportDestinationSearch";
 import type { AccessLevel } from "@/lib/types";
 
 function nameToSlug(name: string): string {
@@ -140,11 +141,17 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
 
   // Corridor guides where this passport is the traveller (internal link mesh).
   const demonym = DEMONYM[country.iso3] ?? country.name;
-  const corridorLinks = corridorsForNationality(country.iso3).map((c) => ({
+  const natCorridors = corridorsForNationality(country.iso3);
+  const corridorLinks = natCorridors.map((c) => ({
     href: `/passport/${c.natSlug}/${c.destSlug}`,
     label: nameFor(c.dest),
     iso3: c.dest,
   }));
+  // Header search: jump to a destination's visa guide for this nationality.
+  const searchOptions = dataset.allCountries
+    .filter((c) => c.iso3 !== country.iso3)
+    .map((c) => ({ slug: nameToSlug(c.name), name: c.name, iso2: c.iso2 }));
+  const corridorDestSlugs = natCorridors.map((c) => c.destSlug);
 
   // JSON-LD
   const jsonLd = {
@@ -249,6 +256,13 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 </div>
               ))}
             </dl>
+
+            <PassportDestinationSearch
+              natSlug={slug}
+              demonym={demonym}
+              options={searchOptions}
+              corridorSlugs={corridorDestSlugs}
+            />
           </div>
         </header>
 

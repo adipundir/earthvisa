@@ -224,7 +224,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="min-h-screen">
         <header className="border-b border-line bg-paper-2/50">
-          <div className="mx-auto w-full max-w-4xl px-5 pt-6 pb-8 sm:px-8">
+          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
               <span>/</span>
@@ -265,7 +265,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           </div>
         </header>
 
-        <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8">
+        <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
           {/* What you need to do */}
           <section className="mb-10">
             <h2 className="font-display text-xl font-semibold text-ink">
