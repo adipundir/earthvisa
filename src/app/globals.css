@@ -5,10 +5,10 @@
   --font-body: var(--font-plex-sans);
   --font-mono: var(--font-plex-mono);
 
-  /* warm creme canvas (matches brand cards) */
-  --color-paper:   #efe9dc;
-  --color-paper-2: #f8f3e9;
-  --color-paper-3: #e6ddca;
+  /* warm creme canvas - deepened so white cards read as cards-on-creme */
+  --color-paper:   #eae1cd;
+  --color-paper-2: #f4eee1;
+  --color-paper-3: #e2d8c2;
   /* ink - higher contrast for readability */
   --color-ink:       #11203a;
   --color-ink-soft:  #3b4a63;
@@ -27,7 +27,7 @@
 }
 
 :root {
-  --paper: #efe9dc;
+  --paper: #eae1cd;
   --ink:   #11203a;
 }
 
