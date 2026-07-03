@@ -87,7 +87,7 @@ function answerSentence(nat: string, dest: string, s: Status): string {
     case "visa_free": return `Yes — ${nat} passport holders can enter ${dest} visa-free${s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""} as of 2026.`;
     case "visa_on_arrival": return `${nat} passport holders can get a visa on arrival for ${dest}${s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}, so no visa is needed before travelling.`;
     case "eta": return `${nat} passport holders need an approved eTA (electronic travel authorisation) before travelling to ${dest}, but not a full visa.`;
-    case "e_visa": return `${nat} passport holders need an e-Visa for ${dest} — applied for online before travel.`;
+    case "e_visa": return `${nat} passport holders can apply online for a ${dest} e-Visa before travel — no embassy visit for eligible short-term visits. Eligibility and covered purposes vary, so check the conditions below.`;
     default: return `${nat} passport holders need a visa to enter ${dest}. Apply at a ${dest} embassy or consulate, or the official visa portal, before travelling.`;
   }
 }
@@ -290,6 +290,21 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               <h2 className="font-display text-xl font-semibold text-ink">
                 {d.name} visa cost for {nd} citizens
               </h2>
+
+              {/* Nationality-specific fee (reciprocity) - highlighted, since it's the
+                  single most useful number for this corridor. */}
+              {feeVariation?.amount != null && (
+                <div className="mt-4 flex flex-col gap-2 rounded-lg border border-stamp/30 bg-stamp/[0.06] px-5 py-4 sm:flex-row sm:items-center sm:gap-6">
+                  <div className="shrink-0">
+                    <p className="mono text-[10px] uppercase tracking-[0.16em] text-stamp">Fee for {nd} citizens</p>
+                    <p className="mono mt-0.5 text-2xl font-bold tabular-nums text-stamp">{fmtFee(feeVariation)}</p>
+                  </div>
+                  {feeVariation.note && (
+                    <p className="text-[13px] leading-relaxed text-ink-soft">{feeVariation.note}</p>
+                  )}
+                </div>
+              )}
+
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {feeList.slice(0, 4).map((f, i) => (
                   <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
@@ -309,9 +324,6 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   </div>
                 ))}
               </div>
-              {feeVariation?.note && (
-                <p className="mt-3 max-w-2xl text-[12px] leading-relaxed text-ink-soft">{feeVariation.note}</p>
-              )}
               {destFees?.vfs.used && (
                 <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
                   Applications are handled via {destFees.vfs.operator}
