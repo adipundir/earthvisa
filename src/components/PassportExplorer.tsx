@@ -252,7 +252,7 @@ export default function PassportExplorer() {
 
         <div ref={boxRef} className="relative z-30 w-full">
           {/* Full-width search box */}
-          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
+          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2 transition-all focus-within:border-stamp">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
@@ -397,7 +397,7 @@ export default function PassportExplorer() {
         </p>
 
         <div ref={credBoxRef} className="relative z-20 mt-3 w-full">
-          <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2 transition-all ${credOpen ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]" : "border-line-strong"}`}>
+          <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2 transition-all ${credOpen ? "border-stamp" : "border-line-strong"}`}>
             {/* Selected credential chips */}
             {creds.map((credId) => {
               const c = dataset.credentials.find((x) => x.id === credId);

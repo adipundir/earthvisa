@@ -303,7 +303,7 @@ export default function DestinationExplorer() {
             destIso3
               ? "border-line-strong"
               : destOpen
-              ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]"
+              ? "border-stamp"
               : "border-line-strong hover:border-ink-mute"
           }`}>
             {destIso3 ? (
@@ -372,7 +372,7 @@ export default function DestinationExplorer() {
         </div>
 
         <div ref={passBoxRef} className="relative z-20 w-full">
-          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2 transition-all focus-within:border-stamp focus-within:shadow-[0_0_0_3px_rgba(30,58,95,0.08)]">
+          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2 transition-all focus-within:border-stamp">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
@@ -511,7 +511,7 @@ export default function DestinationExplorer() {
 
         <div ref={credBoxRef} className="relative z-10 w-full">
           <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2 transition-all ${
-            credOpen ? "border-stamp shadow-[0_0_0_3px_rgba(30,58,95,0.08)]" : "border-line-strong"
+            credOpen ? "border-stamp" : "border-line-strong"
           }`}>
             {creds.map((credId) => {
               const c = dataset.credentials.find((x) => x.id === credId);
