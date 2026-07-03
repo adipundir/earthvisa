@@ -62,15 +62,15 @@ const CRED_SHORT: Record<string, string> = Object.fromEntries(
 
 // Short label shown on the chip inside a grouped row (country already visible from the row header)
 const CRED_CHIP_LABEL: Record<string, string> = {
-  US_VISA: "Visa",
+  US_VISA: "Any visa",
   US_GREEN_CARD: "Green Card",
-  CA_VISA: "Visa",
+  CA_VISA: "Any visa",
   CA_PR: "Permanent resident",
-  UK_VISA: "Visa",
+  UK_VISA: "Any visa",
   UK_PR: "ILR / settled status",
   SCHENGEN_VISA: "Schengen visa",
   EU_RESIDENCE: "Residence / PR",
-  AU_VISA: "Visa",
+  AU_VISA: "Any visa",
   AU_PR: "Permanent resident",
   NZ_VISA: "Visa or residence",
   JP_VISA: "Visa or residence",
@@ -78,7 +78,7 @@ const CRED_CHIP_LABEL: Record<string, string> = {
   SGP_VISA: "Visa or residence",
   GCC_RESIDENCE: "Residence permit",
   OCI: "OCI card",
-  MX_VISA: "Visa",
+  MX_VISA: "Any visa",
   MX_PR: "Permanent resident",
   CHL_PR: "Permanent resident",
   COL_PR: "Permanent resident",
@@ -346,7 +346,7 @@ export default function PassportExplorer() {
               aria-activedescendant={hi >= 0 ? `passport-opt-${hi}` : undefined}
               aria-label="Search for a passport country"
               placeholder={selected.length ? "Add another country…" : "Search for a country…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute/70"
             />
           </div>
 
@@ -393,7 +393,7 @@ export default function PassportExplorer() {
           <span className="hidden group-open:inline">Visas &amp; permits you hold</span>
         </summary>
         <p className="mt-3 max-w-2xl text-sm text-ink-soft">
-          Holding a US visa, Schengen visa, or Japan residence permit unlocks extra destinations beyond your passport alone.
+          Holding a valid US, UK, Schengen or Japan visa - any type (tourist, work, student) - or residency unlocks extra countries beyond your passport alone.
         </p>
 
         <div ref={credBoxRef} className="relative z-20 mt-3 w-full">
@@ -421,7 +421,7 @@ export default function PassportExplorer() {
               onKeyDown={(e) => { if (e.key === "Escape") setCredOpen(false); }}
               aria-label="Search visas and permits you hold"
               placeholder={creds.length ? "Add another visa or permit…" : "Search by country - e.g. Japan visa, US Green Card, Schengen…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute/70"
             />
             {creds.length > 0 && (
               <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono shrink-0 text-[10px] uppercase tracking-[0.1em] text-ink-mute/60 hover:text-stamp">

@@ -47,15 +47,15 @@ const CRED_SHORT: Record<string, string> = Object.fromEntries(
 );
 
 const CRED_CHIP_LABEL: Record<string, string> = {
-  US_VISA: "Visa",
+  US_VISA: "Any visa",
   US_GREEN_CARD: "Green Card",
-  CA_VISA: "Visa",
+  CA_VISA: "Any visa",
   CA_PR: "Permanent resident",
-  UK_VISA: "Visa",
+  UK_VISA: "Any visa",
   UK_PR: "ILR / settled status",
   SCHENGEN_VISA: "Schengen visa",
   EU_RESIDENCE: "Residence / PR",
-  AU_VISA: "Visa",
+  AU_VISA: "Any visa",
   AU_PR: "Permanent resident",
   NZ_VISA: "Visa or residence",
   JP_VISA: "Visa or residence",
@@ -63,7 +63,7 @@ const CRED_CHIP_LABEL: Record<string, string> = {
   SGP_VISA: "Visa or residence",
   GCC_RESIDENCE: "Residence permit",
   OCI: "OCI card",
-  MX_VISA: "Visa",
+  MX_VISA: "Any visa",
   MX_PR: "Permanent resident",
   CHL_PR: "Permanent resident",
   COL_PR: "Permanent resident",
@@ -321,7 +321,6 @@ export default function DestinationExplorer() {
               </span>
             ) : (
               <>
-                <span className="text-lg text-ink-mute/40">🌍</span>
                 <input
                   value={destQuery}
                   onChange={(e) => { setDestQuery(e.target.value); setDestOpen(true); setDestHi(-1); }}
@@ -339,7 +338,7 @@ export default function DestinationExplorer() {
                   aria-activedescendant={destHi >= 0 ? `dest-opt-${destHi}` : undefined}
                   aria-label="Search for a destination country"
                   placeholder="Type a destination - France, Japan, UAE, Brazil…"
-                  className="flex-1 bg-transparent py-1 font-display text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
+                  className="flex-1 bg-transparent py-1 font-display text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute/70"
                   autoComplete="off"
                 />
               </>
@@ -468,7 +467,7 @@ export default function DestinationExplorer() {
               aria-activedescendant={passHi >= 0 ? `dest-pass-opt-${passHi}` : undefined}
               aria-label="Search for a passport country"
               placeholder={selected.length ? "Add another country…" : "Type a country - India, Germany, USA…"}
-              className="min-w-[200px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
+              className="min-w-[200px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute/70"
             />
           </div>
 
@@ -517,7 +516,7 @@ export default function DestinationExplorer() {
             Visas &amp; Permits
             <span className="ml-2 font-display text-[13px] font-normal italic text-ink-soft">optional</span>
           </p>
-          <p className="mt-0.5 text-[13px] text-ink-soft">A US visa, Schengen visa, or Japan residence permit can unlock extra access</p>
+          <p className="mt-0.5 text-[13px] text-ink-soft">A valid US, UK, Schengen or Japan visa - any type (tourist, work, student) - or residency can unlock extra countries</p>
         </div>
 
         <div ref={credBoxRef} className="relative z-10 w-full">
@@ -546,7 +545,7 @@ export default function DestinationExplorer() {
               onKeyDown={(e) => { if (e.key === "Escape") setCredOpen(false); }}
               aria-label="Search visas and permits you hold"
               placeholder={creds.length ? "Add another visa or permit…" : "Search - US Green Card, Schengen visa, Japan residence…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute/70"
             />
             {creds.length > 0 && (
               <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono shrink-0 text-[10px] uppercase tracking-[0.1em] text-ink-mute/60 hover:text-stamp">
