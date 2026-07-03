@@ -26,7 +26,7 @@ const FORCE_CORRIDORS = new Set([
   "IND|IRL", "PAK|IRL",
   "NGA|CAN",
   "IND|GBR", "PAK|GBR", "NGA|GBR",
-  "CHN|JPN", // reclassified visa-required (Japan Group-2 agency-only eVISA); keep - high demand + fee data
+  "CHN|JPN", "SAU|JPN", "ZAF|JPN", // reclassified visa-required (Japan eVISA is residence-based, not a nationality grant); keep - fee data + application note
 ]);
 
 /** Adjectival demonym for the top nationalities, e.g. "Thailand Visa for Indian citizens". */

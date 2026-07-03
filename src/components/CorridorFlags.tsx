@@ -17,8 +17,8 @@ export default function CorridorFlags({
 }) {
   const flag = (iso2: string) => `https://flagcdn.com/w320/${iso2.toLowerCase()}.png`;
   // Curved journey path: source corner (lower-right) -> destination corner (upper-left).
-  const ARC = "M98 98 C 92 54, 74 38, 39 35";
-  const HEAD = "M49 28 L39 35 L48 45";
+  const ARC = "M93 93 C 89 60, 74 44, 46 41";
+  const HEAD = "M54 35 L46 41 L53 50";
   return (
     <div
       className={`relative h-44 w-44 shrink-0 overflow-hidden rounded-2xl border border-line-strong shadow-sm ${className}`}
@@ -52,13 +52,13 @@ export default function CorridorFlags({
           then the ink line on top. */}
       <svg viewBox="0 0 128 128" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
         <g fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <path d={ARC} stroke="var(--paper)" strokeWidth="7.5" />
-          <path d={HEAD} stroke="var(--paper)" strokeWidth="7.5" />
-          <path d={ARC} stroke="#11203a" strokeWidth="3.4" />
-          <path d={HEAD} stroke="#11203a" strokeWidth="3.4" />
+          <path d={ARC} stroke="var(--paper)" strokeWidth="4.5" />
+          <path d={HEAD} stroke="var(--paper)" strokeWidth="4.5" />
+          <path d={ARC} stroke="#11203a" strokeWidth="2" />
+          <path d={HEAD} stroke="#11203a" strokeWidth="2" />
         </g>
-        <circle cx="98" cy="98" r="5.6" fill="var(--paper)" />
-        <circle cx="98" cy="98" r="3.2" fill="#11203a" />
+        <circle cx="93" cy="93" r="4.2" fill="var(--paper)" />
+        <circle cx="93" cy="93" r="2.3" fill="#11203a" />
       </svg>
     </div>
   );
