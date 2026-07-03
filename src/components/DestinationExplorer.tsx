@@ -288,9 +288,6 @@ export default function DestinationExplorer() {
   );
   const isOwnCountry = destIso3 != null && selected.includes(destIso3);
 
-  // Stat: total visa-free for passport combination
-  const vfreeCount = result?.reachByLevel.visa_free.length ?? 0;
-
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
 
@@ -500,13 +497,6 @@ export default function DestinationExplorer() {
           </p>
         )}
 
-        {/* Stat: visa-free count */}
-        {result && selected.length > 0 && (
-          <p className="mt-3 text-sm text-ink-soft">
-            <span className="font-semibold tabular-nums text-vfree">{vfreeCount}</span>
-            {" "}visa-free destinations with your passport{selected.length > 1 ? "s" : ""}.
-          </p>
-        )}
       </div>
 
       {/* ── CREDENTIALS ── */}
