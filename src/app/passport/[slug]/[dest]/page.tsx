@@ -9,6 +9,7 @@ import type { AccessLevel } from "@/lib/types";
 import { TOP_NATIONALITIES, TOP_DESTINATIONS, corridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
 import { feesFor, relevantFees, variationFor, fmtFee } from "@/lib/fees";
+import CorridorFlags from "@/components/CorridorFlags";
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
@@ -232,14 +233,20 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               <span>/</span>
               <span className="text-ink-soft">{d.name}</span>
             </nav>
-            <div className="flex items-center gap-3">
-              <span className="text-4xl leading-none">{flagFor(d.iso3)}</span>
+            <div className="flex items-start justify-between gap-6">
               <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
                 {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
                 <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
                   {umrah ? "Tourist & Umrah - 2026 Requirements" : "2026 Requirements, Fees & Documents"}
                 </span>
               </h1>
+              <CorridorFlags
+                sourceIso2={n.iso2}
+                destIso2={d.iso2}
+                sourceName={n.name}
+                destName={d.name}
+                className="hidden shrink-0 sm:block"
+              />
             </div>
             {aliasNote && (
               <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
