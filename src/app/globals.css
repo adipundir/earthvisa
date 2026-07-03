@@ -86,10 +86,14 @@ body {
 }
 .skip-link:focus { transform: translateY(0); outline: 2px solid #fffdf8; outline-offset: 2px; }
 
-/* Visible focus ring for keyboard users across interactive elements */
+/* Visible focus ring for keyboard users across interactive elements.
+   NOTE: text inputs are intentionally excluded. Every search input in the app
+   shows focus via its own border (focus:border-*) or a focus-within wrapper;
+   adding an offset outline here stacks on top of that border and reads as a
+   double border. This rule is unlayered, so it would win over any Tailwind
+   focus-visible:outline-none utility on the input — hence the exclusion here. */
 a:focus-visible,
 button:focus-visible,
-input:focus-visible,
 summary:focus-visible,
 [role="option"]:focus-visible,
 [tabindex]:focus-visible {
