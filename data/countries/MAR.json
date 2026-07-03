@@ -158,14 +158,6 @@
         "source_official": true
       },
       {
-        "nationality": "Congo (Brazzaville)",
-        "iso3": "COG",
-        "max_stay_days": null,
-        "notes": "Visa-free but requires AEVM (Electronic Travel Authorization) via acces-maroc.ma. AEVM requirement is permanent (not temporary AFCON measure); Congo remains on AEVM list as of June 2026.",
-        "source_url": "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc",
-        "source_official": true
-      },
-      {
         "nationality": "South Korea",
         "iso3": "KOR",
         "max_stay_days": null,
@@ -196,14 +188,6 @@
         "notes": "Stay of 60 days, renewable for the same period during one year, per official source verbatim",
         "source_url": "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc",
         "source_official": true
-      },
-      {
-        "nationality": "Ecuador",
-        "iso3": "ECU",
-        "max_stay_days": null,
-        "notes": "Visa-free for ordinary passport holders as of 1 August 2025 (resumed after suspension). AEVM (Electronic Travel Authorization) via acces-maroc.ma is required prior to arrival. Permanent AEVM requirement; Ecuador remains on AEVM list as of June 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Morocco",
-        "source_official": false
       },
       {
         "nationality": "United Arab Emirates",
@@ -262,14 +246,6 @@
         "source_official": true
       },
       {
-        "nationality": "Ghana",
-        "iso3": "GHA",
-        "max_stay_days": 90,
-        "notes": "Visa-free for ordinary passport holders as of 6 June 2025 per bilateral visa waiver agreement. AEVM (Electronic Travel Authorization) via acces-maroc.ma is required prior to arrival. Permanent AEVM requirement; Ghana remains on AEVM list as of June 2026.",
-        "source_url": "https://en.hespress.com/113109-ghanaians-can-now-enter-morocco-visa-free.html",
-        "source_official": false
-      },
-      {
         "nationality": "United Kingdom",
         "iso3": "GBR",
         "max_stay_days": null,
@@ -282,14 +258,6 @@
         "iso3": "GRC",
         "max_stay_days": null,
         "notes": "No stay duration specified on official list",
-        "source_url": "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc",
-        "source_official": true
-      },
-      {
-        "nationality": "Guinea (Conakry)",
-        "iso3": "GIN",
-        "max_stay_days": null,
-        "notes": "Visa-free but requires AEVM (Electronic Travel Authorization) via acces-maroc.ma. Permanent AEVM requirement; Guinea remains on AEVM list as of June 2026.",
         "source_url": "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc",
         "source_official": true
       },
@@ -721,7 +689,40 @@
         "source_official": false
       }
     ],
-    "eta": [],
+    "eta": [
+      {
+        "nationality": "Congo (Brazzaville)",
+        "iso3": "COG",
+        "max_stay_days": null,
+        "notes": "Visa-exempt but requires a mandatory pre-departure AEVM (Autorisation Electronique de Voyage au Maroc) obtained online via the official government portal acces-maroc.ma before travel; the Moroccan government treats AEVM as a separate travel formality distinct from plain visa-free, matching the ETA definition. Corrected from visa_free. Permanent AEVM requirement; Congo remains on AEVM list as of June 2026.",
+        "source_url": "https://www.acces-maroc.ma/assets/docs/Guide%20AEVM.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Ecuador",
+        "iso3": "ECU",
+        "max_stay_days": null,
+        "notes": "Visa-exempt for ordinary passport holders as of 1 August 2025 but requires a mandatory pre-departure AEVM (Autorisation Electronique de Voyage au Maroc) obtained online via the official government portal acces-maroc.ma before travel; AEVM is a separate travel formality distinct from plain visa-free, matching the ETA definition. Corrected from visa_free. Permanent AEVM requirement as of June 2026.",
+        "source_url": "https://www.acces-maroc.ma/assets/docs/Guide%20AEVM.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Ghana",
+        "iso3": "GHA",
+        "max_stay_days": 90,
+        "notes": "Visa-exempt for ordinary passport holders as of 6 June 2025 but requires a mandatory pre-departure AEVM (Autorisation Electronique de Voyage au Maroc) obtained online via the official government portal acces-maroc.ma before travel; AEVM is a separate travel formality distinct from plain visa-free, matching the ETA definition. Corrected from visa_free. Permanent AEVM requirement as of June 2026.",
+        "source_url": "https://www.acces-maroc.ma/assets/docs/Guide%20AEVM.pdf",
+        "source_official": true
+      },
+      {
+        "nationality": "Guinea (Conakry)",
+        "iso3": "GIN",
+        "max_stay_days": null,
+        "notes": "Visa-exempt but requires a mandatory pre-departure AEVM (Autorisation Electronique de Voyage au Maroc) obtained online via the official government portal acces-maroc.ma before travel; AEVM is a separate travel formality distinct from plain visa-free, matching the ETA definition. Corrected from visa_free. Permanent AEVM requirement; Guinea remains on AEVM list as of June 2026.",
+        "source_url": "https://www.acces-maroc.ma/assets/docs/Guide%20AEVM.pdf",
+        "source_official": true
+      }
+    ],
     "source_urls": [
       "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc",
       "https://diplomatie.ma/en/launch-electronic-visa-evisa",
