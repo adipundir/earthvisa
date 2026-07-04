@@ -1913,13 +1913,13 @@
       "max_stay_days": 240,
       "validity_days": null,
       "entries": null,
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
+      "fee_usd": 160,
+      "processing_days_min": 7,
+      "processing_days_max": 10,
+      "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.bs/entry-requirements/before-your-arrival/",
-      "notes": "Issued through Bahamas embassies and consulates abroad, or via 40+ consular offices of the Ministry of Foreign Affairs worldwide. Applicants from visa-required countries include Afghanistan, Algeria, Cuba, Egypt, Haiti, India (without qualifying credentials), Iran, Nigeria, Pakistan, Philippines, Russia, Syria, Ukraine, Vietnam and others. Visitors must hold a valid return/onward ticket and proof of sufficient funds. Standard max stay up to 8 months subject to immigration officer discretion. Work is strictly prohibited on a visitor visa."
+      "official_url": "https://mofa.gov.bs/evisa-online-services/",
+      "notes": "Now issued via the Ministry of Foreign Affairs eVISA portal (evisa.mofa.gov.bs) or through Bahamas embassies/consulates. Official eVISA fees: single-entry visitor visa USD $160; multiple-entry visa USD $250 (valid for 3, 6, or 12 months); 3-year multiple-entry visa USD $500 (not available online). A sponsored visitor visa adds a USD $20 facilitation fee. Standard eVISA processing 7-10 business days. Applicants from visa-required countries include Afghanistan, Algeria, Cuba, Egypt, Haiti, India (without qualifying credentials), Iran, Nigeria, Pakistan, Philippines, Russia, Syria, Ukraine, Vietnam and others. Visitors must hold a valid return/onward ticket and proof of sufficient funds. Standard max stay up to 8 months subject to immigration officer discretion. Work is strictly prohibited on a visitor visa."
     },
     {
       "category": "business",
@@ -2145,6 +2145,51 @@
       "on_arrival": false,
       "official_url": "https://www.immigration.gov.bs/permits/",
       "notes": "Specific fees and requirements not published on the immigration website. Applications via online portal at epermits.immigration.gov.bs. Contact: (242) 225-5337 or (242) 322-7530-5."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Bahamas Extended Access Travel Stay (BEATS)",
+      "purpose": "Annual residence permit allowing remote-working professionals employed or contracted by companies/clients outside the Bahamas, and students enrolled at overseas institutions, to live in the Bahamas while working or studying remotely.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 1025,
+      "processing_days_min": 5,
+      "processing_days_max": 5,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.bahamasbeats.com/",
+      "notes": "Official Government of the Bahamas remote-work programme launched October 2020 and administered by the Ministry responsible for Immigration. Total cost for a professional is USD $1,025 (USD $25 application fee + USD $1,000 permit fee); for a college student USD $525 (USD $25 + USD $500); each accompanying dependent USD $500. Permit is valid up to 12 months and renewals are considered for a maximum period of up to three years. Estimated 5 business days processing. Fully online application via the immigration portal at portal.immigration.gov.bs. Applicants must earn their income from employers or clients based outside the Bahamas; local employment is not permitted. Enquiries: immigrationbeats@bahamas.gov.bs."
+    },
+    {
+      "category": "transit",
+      "name": "Seaman's Visa",
+      "purpose": "Entry visa for merchant seafarers and vessel crew members who need to enter the Bahamas to join, sign off, or otherwise attend a vessel.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 160,
+      "processing_days_min": 7,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://mofa.gov.bs/evisa-online-services/",
+      "notes": "Listed as a distinct visa category on the Ministry of Foreign Affairs eVISA portal (evisa.mofa.gov.bs) alongside self-sponsored and sponsored visitor visas. Official fee USD $160.00 (single journey). Standard eVISA processing 7-10 business days. Applicable to seafarers/crew of visa-required nationalities; issued for the purpose of joining or leaving a vessel rather than tourism or residence."
+    },
+    {
+      "category": "business",
+      "name": "Trusted Traveller Programme",
+      "purpose": "Allows senior management and professional personnel of companies operating in the Bahamas (or their affiliates) to visit for business meetings, research, audits, trade shows, conferences and seminars for under 14 days without obtaining a Work Permit.",
+      "max_stay_days": 14,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 200,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.bs/about-us/trusted-traveller-programme/",
+      "notes": "Non-refundable processing fee USD $200.00 (payable by credit/debit card, postal money order, or bank certified cheque). Permits visits of under fourteen (14) days without a Work Permit provided no gainful employment occurs. Eligible roles include Chairman, Director, CEO, CFO, COO, consultants, legal counsel, compliance officers, accountants, auditors, actuaries, medical professionals, analysts and other managerial titles of an organisation operating in the Bahamas or its affiliates. Does NOT cover persons organising such events for profit, who must obtain a Work Permit. Apply by submitting a letter of request, the fee, a passport bio-page copy, passport photos, and the completed application form to the Director of Immigration."
     }
   ],
   "sources_checked": [

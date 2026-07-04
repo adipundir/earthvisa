@@ -332,7 +332,7 @@
     },
     {
       "category": "tourist",
-      "name": "Embassy/Consulate Sticker Visa (Tourist - Type TR)",
+      "name": "Embassy/Consulate Sticker Visa (Tourist - Type T-B3)",
       "purpose": "Traditional sticker visa for tourism obtained from a Lao embassy or consulate before travel, used by nationalities ineligible for e-visa or VOA.",
       "max_stay_days": 30,
       "validity_days": 90,
@@ -343,11 +343,11 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://immigration.gov.la/en/visas",
-      "notes": "Required for the 32 VOA-restricted nationalities (e.g., Afghanistan, Bangladesh, Iran, Iraq, Nigeria, Pakistan, Syria, Sudan, Zimbabwe, and others). Also an option for any nationality preferring an embassy visa. Multiple-entry variants may be available at embassies. Fees and processing times vary by embassy/consulate."
+      "notes": "Official tourist category is T-B3 per the Department of Immigration of Lao PDR (an earlier entry mislabelled this as 'TR', which is the transit code). Required for the 32 VOA-restricted nationalities (e.g., Afghanistan, Bangladesh, Iran, Iraq, Nigeria, Pakistan, Syria, Sudan, Zimbabwe, and others). Also an option for any nationality preferring an embassy visa. Multiple-entry variants may be available at embassies. Fees and processing times vary by embassy/consulate."
     },
     {
       "category": "business",
-      "name": "Business Visa (Type B)",
+      "name": "Business Visa (Type NI-B2)",
       "purpose": "Visa for foreign nationals conducting business activities, attending meetings, or engaging in commercial activities in Laos.",
       "max_stay_days": 30,
       "validity_days": null,
@@ -358,11 +358,11 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://immigration.gov.la/en/visas",
-      "notes": "Issued at Lao embassies and consulates abroad. Extension and conversion to longer-term stay permit may be available through the Department of Immigration in Laos. Exact fee and validity vary by embassy. VOA can sometimes be used for initial business visits followed by status adjustment in-country."
+      "notes": "Official category NI-B2 (Business Visa) per the Department of Immigration of Lao PDR, issued to foreign business people (including family members) coming for investment or economic data collection. Issued at Lao embassies and consulates abroad. Extension and conversion to longer-term stay permit may be available through the Department of Immigration in Laos. Exact fee and validity vary by embassy. VOA can sometimes be used for initial business visits followed by status adjustment in-country."
     },
     {
       "category": "work",
-      "name": "Work Visa / Non-Immigrant Visa (Type NI)",
+      "name": "Labour Visa (Type LA-B2)",
       "purpose": "Visa for foreign nationals employed by companies or organizations registered in Laos, allowing residence and employment.",
       "max_stay_days": null,
       "validity_days": null,
@@ -373,7 +373,7 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://immigration.gov.la/en/visas",
-      "notes": "Requires sponsorship from a Laos-registered employer. Work permits (bai anuyat tham ngan) issued separately by the Ministry of Labour and Social Welfare. Stay permit cards issued by Department of Immigration in 3-month, 6-month, or 12-month increments (fees: 300,000 / 600,000 / 1,200,000 LAK respectively). Managed through the One Stop Service for investors/companies via investlaos.gov.la."
+      "notes": "Official category LA-B2 (Labour Visa) per the Department of Immigration of Lao PDR, issued to foreigners and stateless persons who come to work as laborers in Laos, including their family members. Requires sponsorship from a Laos-registered employer. Work permits (bai anuyat tham ngan) issued separately by the Ministry of Labour and Social Welfare. Stay permit cards issued by Department of Immigration in 3-month, 6-month, or 12-month increments (fees: 300,000 / 600,000 / 1,200,000 LAK respectively). Managed through the One Stop Service for investors/companies via investlaos.gov.la."
     },
     {
       "category": "investment",
@@ -392,7 +392,7 @@
     },
     {
       "category": "student",
-      "name": "Student Visa (Type ED)",
+      "name": "Student Visa (Type ST-B2)",
       "purpose": "Visa for foreign nationals enrolled in educational institutions in Laos for study purposes.",
       "max_stay_days": null,
       "validity_days": null,
@@ -403,7 +403,7 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://immigration.gov.la/en/visas",
-      "notes": "Requires acceptance letter from a recognized Lao educational institution. Renewable annually through the Department of Immigration. Specific fee and processing details not confirmed from accessible official sources."
+      "notes": "Official category ST-B2 (Student Visa) per the Department of Immigration of Lao PDR, issued to students who come to study, research, collect data or undertake a technical internship in Laos. Requires acceptance letter from a recognized Lao educational institution. Renewable annually through the Department of Immigration. Specific fee and processing details not confirmed from accessible official sources."
     },
     {
       "category": "diplomatic",
@@ -422,7 +422,7 @@
     },
     {
       "category": "transit",
-      "name": "Transit Visa",
+      "name": "Transit Visa (Type TR-B3)",
       "purpose": "Short-stay visa for foreign nationals transiting through Laos en route to a third country.",
       "max_stay_days": null,
       "validity_days": null,
@@ -433,7 +433,142 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://immigration.gov.la/en/visas",
-      "notes": "Transit visa category exists under Lao immigration framework. Specific conditions, stay limits, and fees not confirmed from directly accessible official sources. Contact nearest Lao embassy for current requirements."
+      "notes": "Official category TR-B3 (Transit Visa) per the Department of Immigration of Lao PDR, issued to foreigners and stateless persons whose travel is to transit through Laos to another country. Specific stay limit and fee are not published on the official page; contact the nearest Lao embassy for current requirements."
+    },
+    {
+      "category": "family",
+      "name": "Spouse Visa (Type SP-B3)",
+      "purpose": "Long-stay visa for foreigners and stateless persons who have legally registered their marriage with a Lao citizen.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Official category SP-B3 (Spouse Visa) listed by the Department of Immigration of Lao PDR, issued to foreigners and stateless persons who have legally registered their marriage with a Lao citizen under Lao law. Applied for and renewed in-country through the Department of Immigration; a stay permit card is issued in 3-, 6-, or 12-month increments (300,000 / 600,000 / 1,200,000 LAK). Exact fee and validity are not published on the official page."
+    },
+    {
+      "category": "business",
+      "name": "Short-Term Visa (Type NI-B3)",
+      "purpose": "Short-stay non-immigrant visa for foreign technical officers attending meetings, trainings or study tours, and for visiting relatives/friends, collecting investment information or coordinating commerce.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Official category NI-B3 (Short-Term Visa) listed by the Department of Immigration of Lao PDR. Issued to foreign technical officers approved to temporarily come for meetings, trainings or study tours, and to foreigners/stateless persons visiting parents, relatives or friends, collecting investment information, coordinating commerce or other lawful short-stay purposes. The e-Visa 'Visit Visa' is the online equivalent for eligible nationalities. Fee, validity and stay length are not published on the official page."
+    },
+    {
+      "category": "work",
+      "name": "Expert Visa (Type E-B2)",
+      "purpose": "Visa for foreign experts, technicians and NGO staff employed or contracted by government, private or international organizations, including their family members.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Official category E-B2 (Expert Visa) listed by the Department of Immigration of Lao PDR. Issued to experts and staff of Non-Governmental Organizations (NGOs) approved to perform their duties in Laos, and to experts and technicians employed or contracted by government, private or other international organizations, including their family members. Requires a work permit from the Ministry of Labour and Social Welfare and a stay permit card from the Department of Immigration (300,000 / 600,000 / 1,200,000 LAK for 3/6/12 months). Distinct from the LA-B2 Labour Visa used for general laborers."
+    },
+    {
+      "category": "work",
+      "name": "Long-Term Visa (Type I-B3)",
+      "purpose": "Long-stay visa for foreign laborers and their family members, and for long-stay foreigners contributing to national development or with sufficient financial means.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Official category I-B3 (Long-Term Visa) listed by the Department of Immigration of Lao PDR. Issued to foreigners/stateless persons working as laborers (with family members), those whose contributions benefit national protection and development, and general long-stay foreigners. General long-stay applicants must hold at least USD 20,000 in a Lao bank account for a six-month stay, or USD 40,000 for a one-year stay (a bank-balance requirement, not a visa fee). Stay permit card fees are 300,000 / 600,000 / 1,200,000 LAK for 3/6/12 months."
+    },
+    {
+      "category": "other",
+      "name": "Courtesy Visa (Type C-B1)",
+      "purpose": "Visa for staff of bilateral cooperation offices, UN/international organization personnel, foreign experts on inter-government cooperation or grant-aid projects, invited seminar/training speakers, and certain embassy household staff and VIPs.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Official category C-B1 (Courtesy Visa) listed by the Department of Immigration of Lao PDR. Covers staff of bilateral cooperation offices and of UN/international organizations posted in Laos, foreign experts/technical officers on inter-governmental cooperation or foreign voluntary grant-assistance projects, loan-collection/monitoring officers, foreign experts invited to run seminars or trainings, non-Lao household staff of embassies/consulates/diplomats' residences, honorary VIPs on movement plans, and the family members of these persons. Requires a letter of proposal from the relevant organization."
+    },
+    {
+      "category": "other",
+      "name": "Media Visa (Type M-B2)",
+      "purpose": "Visa for foreign journalists who come to collect news in the Lao PDR.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Official category M-B2 (Media Visa) listed by the Department of Immigration of Lao PDR, issued to foreign journalists and media personnel who come to collect news in Laos. Typically requires prior approval/accreditation from the Ministry of Information, Culture and Tourism and/or Ministry of Foreign Affairs. Fee and validity are not published on the official page."
+    },
+    {
+      "category": "other",
+      "name": "Permanent Visa (Type P-B3)",
+      "purpose": "Long-term visa for foreigners and stateless persons approved to reside permanently in the Lao PDR.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/en/visas",
+      "notes": "Official category P-B3 (Permanent Visa) listed by the Department of Immigration of Lao PDR, issued to foreigners and stateless persons who are approved to permanently reside in Laos. Subject to government approval; conditions, validity and fees are not published on the official page."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic Visa (Type D-A1)",
+      "purpose": "Visa for foreign diplomats, consular officers, high-level government delegations and representatives of the United Nations and international organizations, and their dependents, on official duty in the Lao PDR.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/visa-categories/",
+      "notes": "Class 'A' visa category (D-A1, Diplomatic Visa) listed by the Department of Immigration of Lao PDR. Issued to diplomats, consuls and representatives of international organizations and their dependents authorized for short- or long-term duty in Laos, and to high-level government delegations. Distinct from the separate visa-exemption agreements that already cover many diplomatic/service passport holders. Applied for through Lao embassies/consulates and the Ministry of Foreign Affairs; normally fee-exempt on a reciprocal basis. Stay length and validity are set per posting and are not published on the official page."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Official Visa (Type S-A2)",
+      "purpose": "Visa for administrative and technical staff of foreign embassies, consulates and governmental/international organizations, members of official delegations, and their dependents.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.la/visa-categories/",
+      "notes": "Class 'A' visa category (S-A2, Official/Service Visa) listed by the Department of Immigration of Lao PDR. Issued to international diplomats and members of governmental organizations, and to administrative/technical staff of embassies and consulates and their dependents. Distinct from the separate visa-exemption agreements that already cover many service passport holders. Applied for through Lao embassies/consulates and the Ministry of Foreign Affairs. Stay length, validity and fee are set per posting and are not published on the official page."
     }
   ],
   "conditional_access": [

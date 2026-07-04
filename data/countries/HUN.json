@@ -1189,13 +1189,13 @@
       "max_stay_days": 90,
       "validity_days": 180,
       "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "fee_usd": 97,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
-      "notes": "Hungary is a Schengen member. Type C visas are issued by Hungarian consulates abroad. Allows up to 90 days in any 180-day period across the entire Schengen Area. Visa-free nationals do not need this visa. Applied for at the Hungarian embassy/consulate in the applicant's country of residence."
+      "official_url": "https://konzinfo.mfa.gov.hu/en/short-term-stay",
+      "notes": "Hungary is a Schengen member. Type C visas are issued by Hungarian consulates abroad. Allows up to 90 days in any 180-day period across the entire Schengen Area. Visa-free nationals do not need this visa. Fee: EUR 90 for adults (EUR 45 for children 6-12; under 6 free), per the official MFA consular page. Decision normally within 15 calendar days, extendable up to 45. Applied for at the Hungarian embassy/consulate in the applicant's country of residence."
     },
     {
       "category": "business",
@@ -1204,13 +1204,13 @@
       "max_stay_days": 90,
       "validity_days": 180,
       "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "fee_usd": 97,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
-      "notes": "Business is a permitted purpose under the Schengen short-stay visa. For longer-term employment or self-employment a national long-stay (Type D) visa is required. Applied for at the Hungarian embassy/consulate."
+      "official_url": "https://konzinfo.mfa.gov.hu/en/short-term-stay",
+      "notes": "Business is a permitted purpose under the Schengen short-stay visa. Fee: EUR 90 for adults, per the official MFA consular page; decision normally within 15 calendar days (extendable up to 45). For longer-term employment or self-employment a national long-stay (Type D) visa is required. Applied for at the Hungarian embassy/consulate."
     },
     {
       "category": "transit",
@@ -1219,13 +1219,13 @@
       "max_stay_days": 1,
       "validity_days": null,
       "entries": "single",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "fee_usd": 97,
+      "processing_days_min": 15,
+      "processing_days_max": 45,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
-      "notes": "Required only for nationals of countries listed on the EU airport transit visa list. Does not permit entry into Hungary or other Schengen states. Applied for at the Hungarian consulate."
+      "official_url": "https://konzinfo.mfa.gov.hu/en/short-term-stay",
+      "notes": "Required only for nationals of countries listed on the EU airport transit visa list. Fee: EUR 90 (standard Schengen visa fee). Does not permit entry into Hungary or other Schengen states. Applied for at the Hungarian consulate."
     },
     {
       "category": "work",
@@ -1299,8 +1299,8 @@
       "processing_days_max": 70,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://oif.gov.hu/factsheets/visa-free-citizens",
-      "notes": "Referenced in official OIF factsheets as an employment-based permit. Standard employment category; distinct from EU Blue Card. Applied for via Enter Hungary platform or Hungarian consulate."
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-hungarian-card",
+      "notes": "Standard employment-based residence permit; distinct from the EU Blue Card. Valid up to 3 years, extendable for a further 3 years. Covers employees, business owners performing actual work, professional athletes/coaches, performers, and film-industry workers. Standard examination 21 days; final decision within 70 days. Applied for via the Enter Hungary platform or a Hungarian consulate."
     },
     {
       "category": "digital_nomad",
@@ -1496,6 +1496,81 @@
       "on_arrival": false,
       "official_url": "https://oif.gov.hu/factsheets/permanent-residence-card",
       "notes": "Available to EEA nationals who have resided continuously and legally in Hungary for 5 years, with accelerated pathways for workers reaching retirement age (3+ years residence), those forced to stop work due to illness (2+ years residence), accident-related incapacity, or workers commuting to another EEA state. Administrative fee: HUF 1,500 (paid electronically). Processing time: 70 days. Card remains valid indefinitely when paired with a valid travel/ID document. Application requires both in-person and electronic submission."
+    },
+    {
+      "category": "student",
+      "name": "Residence Permit for the Purpose of Studies (Student/Pupil)",
+      "purpose": "Allows third-country nationals to reside in Hungary to pursue full-time studies at an accredited Hungarian higher education institution, public education institution, or preparatory course.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+      "notes": "Issued for the duration of studies: minimum 1 year (or shorter if the training lasts under 1 year), maximum 3 years; extendable for a further 1-3 years. First entry uses a single-entry Type D visa (valid 3 months, up to 30-day stay) to collect the permit. Students may undertake limited employment. Initial assessment 15 days; final decision within 60 days. Applied for via the Enter Hungary platform or a Hungarian consulate."
+    },
+    {
+      "category": "working_holiday",
+      "name": "Working Holiday Residence Permit",
+      "purpose": "Allows young nationals of partner countries with a working holiday agreement with Hungary to stay primarily for tourism while working temporarily to help fund their trip.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/list-of-agreements-concluded-on-working-holiday-scheme",
+      "notes": "Available only to nationals of the 10 partner countries with bilateral working holiday agreements: Australia (annual quota 500), Argentina (200), Chile (200), Hong Kong (200), Japan (200), South Korea (100), Ecuador (100), Colombia (100), Taiwan (100), and New Zealand (100). The number of permits issued per year cannot exceed the treaty quota; once exhausted, further applications are rejected. Exact age limits and stay duration are set by each individual bilateral agreement (typically for young adults, up to about 1 year)."
+    },
+    {
+      "category": "work",
+      "name": "National Card (Nemzeti Kártya)",
+      "purpose": "Preferential work-and-residence permit for citizens of Serbia and Ukraine (and other nationals designated by government decree) employed by, or running a business in, Hungary.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 70,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/national-card",
+      "notes": "Introduced in 2024 for Serbian and Ukrainian citizens; scope later extended by government decree to certain additional third-country nationals. Valid up to 2 years, extendable for the same purpose up to 3 years at a time. Covers employees (including temporary-agency workers) and owners/chief executives performing actual work; permits family reunification. Standard examination 21 days; final decision within 70 days. Applied for via the Enter Hungary platform or a regional directorate; approval authorises a single-entry D visa to enter and collect the card."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit for Official Purposes",
+      "purpose": "For third-country nationals residing in Hungary for official functions: diplomats and their family members, members of official state delegations, foreign press correspondents, and participants or staff of international educational, scientific, or cultural programs.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-official-purposes",
+      "notes": "Valid up to 3 years, extendable for a further period not exceeding 3 years. Covers persons enjoying diplomatic or other privileges/immunities under international law and their family members, official delegation members, accredited press correspondents, and participants in international educational/scientific/cultural cooperation. Standard processing 21 days. Applied for via the Enter Hungary platform or a Hungarian consulate."
+    },
+    {
+      "category": "other",
+      "name": "Residence Permit for Reasons of Hungarian National Interest",
+      "purpose": "Discretionary residence permit granted by the minister responsible for immigration when a third-country national's stay serves Hungary's economic, national-policy, scientific, cultural, or sporting interests.",
+      "max_stay_days": null,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://oif.gov.hu/factsheets/residence-permit-for-reasons-of-hungarian-national-interest",
+      "notes": "Discretionary permit with no fixed nationality list. Valid up to 3 years, renewable for additional 3-year periods. Applicant must generally perform actual work in Hungary or demonstrate an economic, national-policy, scientific, cultural, or sporting interest to Hungary. Standard processing 21 days. Extension requires having resided in Hungary at least 90 days in any 180-day period. Applied for via the Enter Hungary platform (for visa-free nationals already in Hungary) or a Hungarian consulate."
     }
   ],
   "cbi": {

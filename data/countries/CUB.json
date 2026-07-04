@@ -524,11 +524,11 @@
       "entries": "single",
       "fee_usd": null,
       "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_max": 3,
       "online": true,
       "on_arrival": false,
       "official_url": "https://evisacuba.cu/en/inicio",
-      "notes": "Obtained via evisacuba.cu; applicant receives an alphanumeric code by email. Passport must be valid for at least 6 months from arrival. Visitors must also complete the D'Viajeros digital declaration form (dviajeros.mitrans.gob.cu) no later than 3 days before departure, carry proof of medical insurance covering Cuba, a valid return ticket, and demonstrate financial solvency of at least USD 50 per day. Extension for an additional 90 days (180 days total) can be requested inside Cuba. Certain nationalities (Afghanistan, Bangladesh, Cameroon, Eritrea, Ethiopia, Ghana, Guinea, Haiti, India, Iraq, Iran, Kenya, Nepal, Nigeria, Pakistan, Philippines, Sierra Leone, Somalia, Sri Lanka, Syria, Uzbekistan, Yemen) cannot use the online portal and must apply for the Tourist Visa A1 directly from a Cuban consulate."
+      "notes": "Obtained via evisacuba.cu; applicant receives an alphanumeric code by email. The official e-Visa portal states applicants receive a response within 72 business hours (approx. 3 business days) of applying. The tourist visa is single entry for a 90-day stay, extendable for a further 90 days (180 days total) inside Cuba. Passport must be valid for at least 6 months from arrival. Visitors must also complete the D'Viajeros digital declaration form (dviajeros.mitrans.gob.cu) no later than 3 days before departure, carry proof of medical insurance covering Cuba, a valid return ticket, and demonstrate financial solvency of at least USD 50 per day. Certain nationalities (Afghanistan, Bangladesh, Cameroon, Eritrea, Ethiopia, Ghana, Guinea, Haiti, India, Iraq, Iran, Kenya, Nepal, Nigeria, Pakistan, Philippines, Sierra Leone, Somalia, Sri Lanka, Syria, Uzbekistan, Yemen) cannot use the online portal and must apply for the Tourist Visa A1 directly from a Cuban consulate."
     },
     {
       "category": "tourist",
@@ -591,6 +591,21 @@
       "notes": "Requires an official enrollment letter from an accredited Cuban educational institution. Cuba historically accepts international students on scholarship programs (Latin American School of Medicine - ELAM is a well-known example). Visa validity generally aligns with the duration of the academic program. Holders of student visas must register with immigration authorities upon arrival."
     },
     {
+      "category": "work",
+      "name": "Journalist Visa (D-6)",
+      "purpose": "For foreign press professionals (journalists, correspondents, camera crews) travelling to Cuba to carry out journalistic work for a foreign or Cuban media outlet.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cpi.cubaminrex.cu/es/requisitosacreditacion",
+      "notes": "The D-6 visa is mandatory for any foreign journalist entering Cuba to work. It is authorized by the International Press Center (Centro de Prensa Internacional, CPI), a body of MINREX, through Cuban embassies and consulates: the media outlet submits the request to the Cuban diplomatic mission, which forwards it to the CPI, which issues the final decision. Granted for temporary assignments (from several days up to 3 months) or for permanent accreditation (periods of one year or more). Applicants should apply at least 30 business days before travel. Holders must carry a valid D-6 visa to be accredited by the CPI to work in Cuban territory."
+    },
+    {
       "category": "diplomatic",
       "name": "Diplomatic / Official Visa",
       "purpose": "For accredited diplomats, government officials, and staff of international organizations with official missions in Cuba.",
@@ -619,6 +634,21 @@
       "on_arrival": false,
       "official_url": "https://cubaminrex.cu/en/consular-formality-procedures",
       "notes": "Required for nationals who do not benefit from visa-free transit. Passengers remaining airside (not clearing immigration) generally do not require a transit visa, but this depends on nationality and airline policy. Passengers who must clear Cuban immigration (e.g., due to a flight connection requiring terminal change) need a transit visa issued by a Cuban consulate. Kosovo nationals are refused transit."
+    },
+    {
+      "category": "family",
+      "name": "Family Visa (A-2)",
+      "purpose": "For foreign nationals travelling to Cuba to join or visit an immediate family member (spouse or minor child) who is a Cuban citizen.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cubaminrex.cu/en/consular-formality-procedures",
+      "notes": "Consular entry visa issued by Cuban embassies and consulates to immediate family members (spouse or minor children) of Cuban citizens who wish to enter Cuba to be with their relative. Distinct from the permanent-residency family-reunification pathway created under Law 172 (Aliens Act). Applicants typically must document the family relationship. Specific stay length and fee are not published on the currently accessible official pages."
     },
     {
       "category": "family",

@@ -11,13 +11,13 @@
       "max_stay_days": 90,
       "validity_days": 90,
       "entries": "multiple",
-      "fee_usd": null,
+      "fee_usd": 50,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
       "official_url": "https://ctoro.cancilleria.gob.ar/en/consular-services",
-      "notes": "Required only for nationalities not covered by Argentina's visa exemption list. Many nationalities (Canada, USA, EU, Australia, etc.) enter visa-free for up to 90 days. Fee varies by consulate and reciprocity agreements. Application submitted to Argentine consulate or embassy in country of residence."
+      "notes": "Required only for nationalities not covered by Argentina's visa exemption list. Many nationalities (Canada, USA, EU, Australia, etc.) enter visa-free for up to 90 days. Fee approximately USD 50 per the national consular transitory-visa fee schedule; exact amount may vary by nationality and reciprocity. Application submitted to Argentine consulate or embassy in country of residence."
     },
     {
       "category": "business",
@@ -26,13 +26,13 @@
       "max_stay_days": 60,
       "validity_days": 60,
       "entries": "multiple",
-      "fee_usd": null,
+      "fee_usd": 100,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
       "official_url": "https://ctoro.cancilleria.gob.ar/en/consular-services",
-      "notes": "Permits business activities but not paid employment in Argentina. Separate from the temporary work visa categories. Applicable to nationals requiring a visa. Fee varies by consulate."
+      "notes": "Permits business activities but not paid employment in Argentina. Separate from the temporary work visa categories. Applicable to nationals requiring a visa. Fee approximately USD 100 per the national consular transitory-visa fee schedule."
     },
     {
       "category": "work",
@@ -41,13 +41,13 @@
       "max_stay_days": 30,
       "validity_days": 30,
       "entries": null,
-      "fee_usd": null,
+      "fee_usd": 100,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
       "official_url": "https://ctoro.cancilleria.gob.ar/en/consular-services",
-      "notes": "Short-term work authorization for technicians, professionals, and performing artists. For longer-term work, the Temporary Work Visa (23E or 23A) applies."
+      "notes": "Short-term work authorization for technicians, professionals, and performing artists (up to 1 month). Fee approximately USD 100 per the national consular transitory-visa fee schedule (USD 50 where the activity is religious). For longer-term work, the Temporary Work Visa (23E or 23A) applies."
     },
     {
       "category": "work",
@@ -258,6 +258,81 @@
       "on_arrival": false,
       "official_url": "https://cancilleria.gob.ar/en/services/visas/visa-nationality",
       "notes": "Available to nationals of MERCOSUR member or associate states: Brazil, Paraguay, Uruguay, Bolivia, Chile, Colombia, Ecuador, Guyana, Peru, and Suriname. Provides temporary establishment for up to 2 years. Requires valid passport (6+ months validity, 2 blank pages), photographs, application form, proof of address, certificate of good conduct (age 16+), and consular fee (USD/EUR 200 equivalent). Consular interview required."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa (Visa de Tránsito / Pasajero en Tránsito)",
+      "purpose": "For visa-required foreign nationals passing through Argentine territory with the sole purpose of continuing their journey to another country.",
+      "max_stay_days": 10,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 20,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://csigo.cancilleria.gob.ar/es/content/residencias-categorias-de-visados",
+      "notes": "Transitory visa for passengers travelling through Argentina en route to another State. Maximum stay up to 10 days; the National Directorate of Migration may grant one extension of up to 10 additional days. Fee approximately USD 20 per the national consular transitory-visa fee schedule. No visa is required if the traveller departs within 12 hours of arrival, holds an onward ticket, is declared a transit passenger by the carrier, and remains airside."
+    },
+    {
+      "category": "work",
+      "name": "Transitory Seasonal Worker Visa (Trabajador Migrante Estacional)",
+      "purpose": "For foreign nationals entering Argentina to perform work that by its nature depends on seasonal conditions and is carried out only during part of the year (e.g. harvests).",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://csigo.cancilleria.gob.ar/es/content/residencias-categorias-de-visados",
+      "notes": "Transitory work category for seasonal activities. Duration up to 3 months. Requires an original labour agreement signed with an Argentine employer, notarized and legalized, stating the employer's valid RENURE registration number with the National Directorate of Migration. Fee approximately USD 50 per the national consular transitory-visa fee schedule."
+    },
+    {
+      "category": "family",
+      "name": "Temporary Residence by Family Reunification (Residencia Temporaria por Reunificación Familiar)",
+      "purpose": "For foreign nationals who are the spouse, parent, or child of an Argentine citizen or of a person holding permanent or temporary residence in Argentina.",
+      "max_stay_days": 1095,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.argentina.gob.ar/servicio/obtener-una-residencia-temporaria-por-reunificacion-familiar",
+      "notes": "Granted for up to 3 years (matching the sponsor's authorized period if the sponsor holds temporary residence), with multiple entries and exits. Applicant must be within Argentine territory and apply online through the National Directorate of Migration's RaDEX system. Requires a legalized or apostilled birth/marriage certificate proving the family bond plus the sponsoring relative's identity documents. Leads toward permanent residence."
+    },
+    {
+      "category": "medical",
+      "name": "Temporary Residence as a Patient Under Medical Treatment (Residencia por Tratamiento Médico)",
+      "purpose": "For foreign nationals who must remain in Argentina to undergo medical treatment at a public or private health facility, and for an accompanying relative or guardian where required.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.argentina.gob.ar/servicio/obtener-una-residencia-temporaria-como-paciente-bajo-tratamiento-medico",
+      "notes": "Granted for 1 year, renewable for the duration of the treatment. Requires a clinical history documenting the pathology and treatment plan, signed by the public hospital director or, for a private institution, with the treating professional's signature certified by the Ministry of Health. For minors, disabled, or seriously ill patients, an accompanying immediate family member, legal representative, or guardian may also be authorized. Applied online via the RaDEX system."
+    },
+    {
+      "category": "working_holiday",
+      "name": "Work and Holiday Visa (Programa Work and Holiday)",
+      "purpose": "For young citizens of partner countries to holiday in Argentina for up to about a year, with employment being incidental to the trip and short study permitted.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://cancilleria.gob.ar/en/service/services/work-holiday-programme",
+      "notes": "Bilateral Work & Holiday agreements are in force with Australia, Denmark, France, Germany, Ireland, Netherlands, New Zealand, Poland, Portugal, Republic of Korea, and Sweden; annual quotas vary by country and several (Denmark, Germany, Sweden) are uncapped. Generally for applicants aged 18-30 (extended to 35 for Ireland). Multiple entries permitted. Exact terms vary by agreement (e.g. Ireland: up to 9 months' stay, work up to 6 months renewable a further 3 months, study up to 3 months). Applied in person at the Argentine consulate with a compulsory interview; one-time participation only. Not available through the online RADEX system."
     }
   ],
   "visa_policy": {

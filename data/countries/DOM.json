@@ -81,7 +81,7 @@
     },
     {
       "category": "work",
-      "name": "Temporary Worker Visa",
+      "name": "Temporary Worker Visa (VTT)",
       "purpose": "Visa for temporary foreign workers performing short-term labor in the Dominican Republic.",
       "max_stay_days": null,
       "validity_days": null,
@@ -91,8 +91,23 @@
       "processing_days_max": 20,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://servicios360.mirex.gob.do/tasas-consulares/",
-      "notes": "Lower-cost work visa category for temporary labor. Distinct from the NM1 business-with-labor-purposes visa. Applications via Dominican consulates."
+      "official_url": "https://servicios360.mirex.gob.do/visas/",
+      "notes": "Temporary Worker Visa (código VTT), US$95 per the MIREX consular fee schedule (tasas consulares). Lower-cost work visa category for temporary/short-term labor, distinct from the NM1 business-with-labor-purposes visa. Applications via Dominican consulates."
+    },
+    {
+      "category": "work",
+      "name": "Artists, Athletes & Exchange Students Permit (PADEI)",
+      "purpose": "Non-resident permit for foreigners entering the Dominican Republic to temporarily perform an artistic or sporting activity, undertake an exchange study, or provide voluntary service.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migracion.gob.do/servicio/permiso-para-artistas-deportistas-y-estudiantes-de-intercambio-padei/",
+      "notes": "Permiso para Artistas, Deportistas y Estudiantes de Intercambio (PADEI), issued by the Dirección General de Migración (DGM) rather than as a consular visa. Valid 1 year, renewable annually up to a maximum of 4 years. Requires the applicant to already hold a valid Multiple Business (NM) or Student (E) visa, plus a sponsoring institution/company certification (notarized and legalized), a medical certificate, and DGM-approved medical insurance. Covers performing artists, athletes, exchange students, and volunteers."
     },
     {
       "category": "student",
@@ -168,6 +183,21 @@
       "on_arrival": false,
       "official_url": "https://servicios360.mirex.gob.do/visas/",
       "notes": "Minimum capital contribution of US$200,000 in a Dominican company registered with ProDominicana. Investment may be in currency, in-kind, financial instruments, or technology. Grants immediate permanent residency (no prior temporary residency required). After 2 years of permanent residence, eligible for naturalisation. Under Law 285-04 / Regulation 631-11."
+    },
+    {
+      "category": "other",
+      "name": "Residence Visa (RS – Residencia)",
+      "purpose": "General residence entry visa for foreign nationals approved to establish residence in the Dominican Republic (outside the pensioner, rentista, and investor tracks), leading to Temporary Residence (Residencia Temporal RT-9).",
+      "max_stay_days": 60,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": 200,
+      "processing_days_min": 10,
+      "processing_days_max": 20,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://servicios360.mirex.gob.do/visas/",
+      "notes": "Base residence visa (US$200 per the MIREX consular fee schedule), issued by a Dominican consulate to foreigners approved to reside in the country - e.g. for employment, marriage to a Dominican, or general settlement. After arrival the holder applies at the Dirección General de Migración (migracion.gob.do) for Residencia Temporal (RT-9), valid 1 year and renewable, which is the pathway to permanent residence and the cédula. Requires an apostilled birth certificate translated to Spanish, a police clearance certificate, a medical certificate, and proof of financial solvency (minimum RD$300,000)."
     },
     {
       "category": "family",

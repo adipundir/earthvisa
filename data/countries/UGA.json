@@ -72,16 +72,16 @@
       "category": "transit",
       "name": "Transit Visa",
       "purpose": "For travelers passing through Uganda to a third country who require a visa and will remain in Uganda for a short transit period.",
-      "max_stay_days": null,
-      "validity_days": null,
+      "max_stay_days": 7,
+      "validity_days": 7,
       "entries": "single",
       "fee_usd": 50,
       "processing_days_min": 2,
       "processing_days_max": 3,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.go.ug/services/visa-passes",
-      "notes": "Applied online via visas.immigration.go.ug before travel. Fee USD 50. Exact max transit stay not specified on official pages reviewed."
+      "official_url": "https://www.immigration.go.ug/services/transit-visas",
+      "notes": "Applied online via visas.immigration.go.ug before travel. Fee USD 50. Granted for a maximum of 7 days and is NOT extendable (per the official immigration.go.ug transit visa page). Fees are non-refundable and payments are subject to a bank charge."
     },
     {
       "category": "business",
@@ -146,22 +146,22 @@
     {
       "category": "student",
       "name": "Student Pass",
-      "purpose": "For foreign nationals enrolled as full-time students at a recognized educational institution in Uganda.",
+      "purpose": "For foreign nationals above the age of 4 years enrolled in a recognized learning institution in Uganda.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": "multiple",
-      "fee_usd": null,
+      "fee_usd": 100,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.go.ug/permit/entry-permit",
-      "notes": "Student Pass is referenced as a valid Uganda residence document on official immigration pages. Holders of a valid Student Pass do not require a visa to re-enter Uganda. Specific fee and validity terms not published on accessible official pages."
+      "official_url": "https://www.immigration.go.ug/services/student-pass",
+      "notes": "Granted for 3, 6, or 12 months (validity varies by tier selected). Flat fee of USD 100 payable at the point of application regardless of the period granted; East African Community nationals are exempted from this fee. Holders of a valid Student Pass do not require a visa to re-enter Uganda while the pass is valid."
     },
     {
       "category": "family",
       "name": "Dependant's Pass",
-      "purpose": "For dependants (spouse, children) of foreign nationals holding a valid Entry Permit, Student Pass, or other Uganda residence authorization.",
+      "purpose": "For children (under 18 years), the spouse, and other relatives of a foreign resident who holds proof of legal stay in Uganda (Student Pass, Work Permit/Entry Permit, or Certificate of Residence).",
       "max_stay_days": null,
       "validity_days": null,
       "entries": "multiple",
@@ -170,23 +170,23 @@
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.go.ug/permit/entry-permit",
-      "notes": "Dependant's Pass is listed as a valid Uganda residence document on official immigration pages. Holders do not require a visa to re-enter Uganda while their pass is valid. Specific fee and validity details not published on accessible official pages."
+      "official_url": "https://www.immigration.go.ug/services/dependant-pass",
+      "notes": "Granted to dependants of a foreign national who has a valid Uganda residence document. Holders do not require a visa to re-enter Uganda while their pass is valid. Specific fee not published on the official page."
     },
     {
       "category": "other",
       "name": "Special Pass",
-      "purpose": "A short-term authorization issued to foreign nationals awaiting processing of an Entry Permit or for other special circumstances requiring temporary residence status.",
-      "max_stay_days": null,
-      "validity_days": null,
+      "purpose": "A short-term pass for foreign nationals coming for short contract/temporary work assignments, medical treatment, tourism, or business opportunities, or awaiting processing of an Entry Permit.",
+      "max_stay_days": 90,
+      "validity_days": 90,
       "entries": null,
       "fee_usd": null,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.go.ug/permit/entry-permit",
-      "notes": "Special Pass is listed as a valid Uganda residence document on official immigration pages. Holders do not require a visa to re-enter Uganda while their pass is valid. Commonly issued as a bridge document while an Entry Permit application is being processed."
+      "official_url": "https://www.immigration.go.ug/services/special-pass",
+      "notes": "Issued for short-term work assignments and other temporary activities, typically for up to 90 days with the possibility of a limited extension. Also commonly used as a bridge document while an Entry Permit application is being processed. Holders do not require a visa to re-enter Uganda while the pass is valid."
     },
     {
       "category": "diplomatic",
@@ -202,6 +202,51 @@
       "on_arrival": true,
       "official_url": "https://www.immigration.go.ug/services/visa-exempt-countries",
       "notes": "Countries whose diplomatic and official passport holders are exempt: Algeria, Cuba, Egypt, Ethiopia, India, Iran, Russia, Senegal, South Africa, Venezuela, Vietnam. Turkey: diplomatic passport only (not official). These exemptions are based on bilateral visa abolition agreements. Ordinary passport holders from these countries still require an e-visa."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Diplomatic and Official Visa",
+      "purpose": "For holders of diplomatic, official, and service passports entering Uganda on official business or duties, and for ordinary passport holders who are exempted from immigration fees.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.go.ug/services/diplomatic-official-visa",
+      "notes": "Gratis visa: fee is Nil and there is no processing fee. Requires a copy of the diplomatic/official/service passport (bio-data and cover page, valid at least 6 months), a recent passport photo, and a Diplomatic Note (Note Verbale) or supporting document for the official visit. Applied online at visas.immigration.go.ug, with biometric capture at an immigration office after approval. Distinct from the nationality-based diplomatic/official passport visa EXEMPTION granted to citizens of specific treaty countries."
+    },
+    {
+      "category": "other",
+      "name": "Certificate of Residence",
+      "purpose": "Long-term / permanent residence document for foreign nationals qualifying by marriage to a Ugandan (married at least 3 years), by continuous long stay (10 years contributing to Uganda's socio-economic development), or as a former Ugandan who acquired another citizenship.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.go.ug/services/certificate-residence",
+      "notes": "Issued in durations of 5 years, 10 years, or Life. For the 'due to long stay' category the fees are USD 4,000 (5 years), USD 3,500 (10 years), and USD 3,000 (Life), each including a USD 200 processing fee. Other categories: 'due to marriage' (legally married to a Ugandan for at least 3 years) and former Ugandans. This is Uganda's closest equivalent to permanent-residence status. Applied online at visas.immigration.go.ug."
+    },
+    {
+      "category": "other",
+      "name": "Inter-State Pass",
+      "purpose": "Regional free-movement travel document allowing nationals (and lawful residents) of Uganda, Kenya, and Rwanda to travel between the three countries using only a National Identity Card instead of a passport.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.immigration.go.ug/services/interstate-pass",
+      "notes": "Issued FREE at the border at the point of exit; no visa required and no charge. Citizens of Kenya and Rwanda may enter Uganda using a valid National ID card or e-Passport. Foreign nationals holding valid resident permits issued by Kenya, Rwanda, or Uganda may also use the Inter-State Pass to move within the region without a visa."
     }
   ],
   "visa_policy": {

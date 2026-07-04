@@ -786,6 +786,21 @@
       "notes": "Processing: 3 working days at HQ/Kuala Belait, 5 working days at Temburong. Must be sponsored by a government agency or registered company in Brunei. Even nationals qualifying for visa-free/VoA general entry must apply separately for Professional Visit status."
     },
     {
+      "category": "work",
+      "name": "Work Pass (Pas Kerja)",
+      "purpose": "Mandatory work authorization issued by the Department of Immigration and National Registration to foreign nationals taking up employment in Brunei. Must be held in addition to a valid Employment Visa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.bn/en/bahagian-pas-kerja/",
+      "notes": "Official requirement per the Work Pass Division: foreign nationals working in Brunei must hold BOTH a valid visa AND a valid work pass. The employer's representative first obtains a work visa approval letter; the employee then attends a Brunei mission abroad for the work visa endorsement (with medical check and travel document) before the work pass is issued. Companion document to the Employment Visa, not a substitute for it."
+    },
+    {
       "category": "student",
       "name": "Student Visa",
       "purpose": "Issued for the purpose of studying in Brunei Darussalam at a recognized institution.",
@@ -804,16 +819,16 @@
       "category": "transit",
       "name": "Transit Visa",
       "purpose": "Issued to any person who is in transit and en route to a third country via Brunei Darussalam.",
-      "max_stay_days": null,
+      "max_stay_days": 3,
       "validity_days": null,
       "entries": null,
       "fee_usd": null,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
-      "on_arrival": false,
+      "on_arrival": true,
       "official_url": "https://www.mfa.gov.bn/Pages/Types-of-Visa.aspx",
-      "notes": "Transit visas are only issued at Brunei International Airport. Terms and conditions apply."
+      "notes": "Maximum stay 72 hours (3 days), per the official MFA Types of Visa page. Transit visas are only issued at Brunei International Airport (granted at the point of transit). Terms and conditions apply."
     },
     {
       "category": "family",

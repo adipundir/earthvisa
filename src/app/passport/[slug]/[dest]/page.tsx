@@ -9,7 +9,6 @@ import type { AccessLevel } from "@/lib/types";
 import { TOP_NATIONALITIES, TOP_DESTINATIONS, corridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
 import { feesFor, relevantFees, variationFor, fmtFee } from "@/lib/fees";
-import CorridorFlags from "@/components/CorridorFlags";
 import { applicationNoteFor } from "@/lib/applicationNotes";
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
@@ -320,8 +319,8 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="min-h-screen">
         <header className="border-b border-line bg-paper-2/50">
-          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8 lg:flex lg:items-start lg:gap-10">
-            <div className="min-w-0 flex-1">
+          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
+            <div className="min-w-0">
               <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[11px] uppercase tracking-[0.18em] text-ink-mute">
                 <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
                 <span>/</span>
@@ -329,15 +328,6 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 <span>/</span>
                 <span className="text-ink-soft">{d.name}</span>
               </nav>
-              {/* Compact flag pair for mobile, where the tall badge is hidden */}
-              <CorridorFlags
-                sourceIso2={n.iso2}
-                destIso2={d.iso2}
-                sourceName={n.name}
-                destName={d.name}
-                row
-                className="mb-3 h-8 lg:hidden"
-              />
               <h1 className="flex items-center gap-3 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
                 <span className="text-4xl leading-none">{flagFor(d.iso3)}</span>
                 <span>
@@ -374,18 +364,6 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   {(() => { try { return new URL(s.sourceUrl).hostname.replace(/^www\./, ""); } catch { return "official source"; } })()} ↗
                 </a>
               ) : null}
-            </div>
-
-            {/* Flag badge, sized to actually fill the header's right column
-                instead of floating small in empty space. */}
-            <div className="mt-8 hidden shrink-0 lg:mt-0 lg:block">
-              <CorridorFlags
-                sourceIso2={n.iso2}
-                destIso2={d.iso2}
-                sourceName={n.name}
-                destName={d.name}
-                className="w-64 xl:w-72"
-              />
             </div>
           </div>
         </header>

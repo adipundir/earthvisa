@@ -871,7 +871,7 @@
   "visa_types": [
     {
       "category": "tourist",
-      "name": "e-Visa (VITEM II - Visitor Visa)",
+      "name": "e-Visa / Visitor Visa (VIVIS)",
       "purpose": "Tourism, business meetings, transit",
       "max_stay_days": 90,
       "validity_days": 3650,
@@ -882,7 +882,7 @@
       "online": true,
       "on_arrival": false,
       "official_url": "https://www.gov.br/mre/pt-br/consulado-miami/information-about-visas-in-english/electronic-visitor-visa-e-visa",
-      "notes": "Available to nationals of USA, Canada, and Australia under permanent e-visa regime (effective April 10, 2025 for US/Canada/Australia; permanent from January 1, 2026). Multiple-entry, up to 90 days per visit within 10-year validity (5-year for Australia/Canada). Fee approximately BRL 257 / USD 80.90. Applied via VFS Global portal. VITEM II visa code (visitor visa for tourism/business). France was briefly on e-visa then restored to visa-free (Feb 24, 2026). Argentina and Mexico remain visa-free as of June 2026 - not currently in e-visa regime."
+      "notes": "Available to nationals of USA, Canada, and Australia under permanent e-visa regime (effective April 10, 2025 for US/Canada/Australia; permanent from January 1, 2026). Multiple-entry, up to 90 days per visit within 10-year validity (5-year for Australia/Canada). Fee approximately BRL 257 / USD 80.90. Applied via VFS Global portal. This is the Visitor Visa (VIVIS), the visit visa for tourism, business and transit (note: VITEM II is a separate health-treatment visa, not the visitor visa). France was briefly on e-visa then restored to visa-free (Feb 24, 2026). Argentina and Mexico remain visa-free as of June 2026 - not currently in e-visa regime."
     },
     {
       "category": "work",
@@ -896,8 +896,8 @@
       "processing_days_max": 60,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://portaldeimigracao.mj.gov.br/pt/",
-      "notes": "Employer-sponsored. Brazilian employer must obtain prior work authorization from Ministry of Justice (via MigranteWeb). Valid up to 2 years, renewable. VITEM V code. Holders may apply for permanent residence after meeting residence requirements. After 4 years residence, may naturalize."
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem5",
+      "notes": "Employer-sponsored. Brazilian employer must obtain prior work authorization from Ministry of Justice (via MigranteWeb / temporary-residence authorization) before the visa is issued at a consulate. Valid up to 2 years, renewable. VITEM V code. Holders may apply for permanent residence after meeting residence requirements. After 4 years residence, may naturalize."
     },
     {
       "category": "student",
@@ -911,8 +911,8 @@
       "processing_days_max": 30,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://portaldeimigracao.mj.gov.br/pt/",
-      "notes": "For enrollment in Brazilian public or private educational institution. Valid for course duration. Requires enrollment confirmation letter. VITEM IV code. Applied at Brazilian embassy/consulate. After completing study, must leave or obtain different authorization to remain."
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem4",
+      "notes": "For enrollment in Brazilian public or private educational institution (courses lasting more than 90 days; shorter study uses the VIVIS visitor visa). Valid for course duration. Requires enrollment confirmation letter. VITEM IV code. Applied at Brazilian embassy/consulate. After completing study, must leave or obtain different authorization to remain."
     },
     {
       "category": "digital_nomad",
@@ -928,6 +928,126 @@
       "on_arrival": false,
       "official_url": "https://portaldeimigracao.mj.gov.br/pt/",
       "notes": "For remote workers employed by or providing services to foreign companies/clients outside Brazil. Minimum income: USD 1,500/month or savings of USD 18,000. Requires health insurance (min USD 30,000 coverage), criminal background check (apostilled), employment contract or proof of freelance income from foreign sources. Initial 1-year validity, extendable 1 year (max 2 years). VITEM XIV code. Based on Normative Resolution RN 45/2021. In-country extension via MigranteWeb (BRL 168 fee). Also covers retirees and pensioners."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa (VIVIS - Visitor Visa)",
+      "purpose": "Business meetings, events, fairs, contract signing, audit and consulting (no paid employment in Brazil)",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vivis",
+      "notes": "Brazil has no separate business visa: business travel uses the Visitor Visa (VIVIS), the same category as tourism, for stays up to 90 days. Paid employment in Brazil is prohibited, though reimbursement of expenses and allowances are permitted. Nationals of the US, Canada and Australia must instead obtain the electronic Visitor Visa (e-Visa) via VFS Global; most other nationals who require a visa apply at a Brazilian consulate. Consular fee varies by nationality (reciprocity). Usually multiple-entry, at the discretion of the Brazilian government."
+    },
+    {
+      "category": "medical",
+      "name": "Medical Treatment Visa (VITEM II)",
+      "purpose": "Foreigners undergoing health/medical treatment in Brazil expected to last more than 90 days",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem2",
+      "notes": "Temporary visa for foreigners travelling to Brazil for health treatment expected to exceed 90 days (for treatment under 90 days the Visitor Visa/VIVIS is used). May be extended to an accompanying companion. Organ-transplant cases require a specific medical report accepted by the Brazilian Ministry of Health. Applied at a Brazilian consulate; consular fee varies by nationality (reciprocity)."
+    },
+    {
+      "category": "work",
+      "name": "Research, Teaching & Academic Extension Visa (VITEM I)",
+      "purpose": "Scientists, professors and researchers without a Brazilian employment contract staying over 90 days",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem1",
+      "notes": "For scientists, professors, researchers or other professionals with no employment contract with a Brazilian institution who will stay more than 90 days - e.g. holders of research scholarships/grants or those working under an international cooperation agreement recognised by the Brazilian MFA. Distinct from the VITEM V employment work visa. Applied at a Brazilian consulate; consular fee varies by nationality (reciprocity)."
+    },
+    {
+      "category": "work",
+      "name": "Artistic or Sports Activity Visa (VITEM XII)",
+      "purpose": "Artists, performers and athletes coming to Brazil under contract for paid activity over 90 days",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem12",
+      "notes": "For professional artists (musicians, performers, fashion models and their crew) and athletes coming to Brazil under contract to carry out paid artistic or sporting activity for more than 90 days. The Brazilian contractor must first obtain temporary-residence authorisation from the Ministry of Justice before the visa is issued at a consulate (exception: amateur athletes aged 14-18). Consular fee varies by nationality (reciprocity)."
+    },
+    {
+      "category": "investment",
+      "name": "Investor Visa (VITEM IX)",
+      "purpose": "Foreign investors and company executives investing in a Brazilian company, startup or real estate",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem9",
+      "notes": "Temporary-residence visa for investors. Official minimum investment thresholds: R$500,000 in a Brazilian company; R$150,000 in a Brazilian startup; or R$700,000 in real estate in the North/Northeast regions of Brazil. Also covers administrators/managers/directors of a foreign corporation supervising investment in a Brazilian counterpart. Process starts in Brazil: the Brazilian company must obtain temporary-residence authorisation from the Ministry of Justice before the visa is issued at a consulate. Consular fee varies by nationality (reciprocity)."
+    },
+    {
+      "category": "working_holiday",
+      "name": "Working Holiday Visa (VITEM VI - Ferias-Trabalho)",
+      "purpose": "Young travellers from partner countries working during a holiday in Brazil",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem6",
+      "notes": "Vacation-work (ferias-trabalho) visa granted under bilateral working-holiday agreements. As of this update, only citizens of France and New Zealand may apply. Typically valid for 12 months. Applied at a Brazilian consulate; consular fee varies by nationality (reciprocity)."
+    },
+    {
+      "category": "family",
+      "name": "Family Reunion Visa (VITEM XI)",
+      "purpose": "Family members of Brazilian nationals or of foreigners legally resident in Brazil",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem11",
+      "notes": "Allows family members (spouse/partner, children, parents, siblings, grandparents or grandchildren) of Brazilian nationals or of foreigners with legal residency in Brazil (RNM/RNE card or temporary-visa holders) to establish residence. May be requested concurrently with the sponsoring family member's own temporary visa, its issuance conditioned on the sponsor's temporary visa being granted first. Applied at a Brazilian consulate; consular fee varies by nationality (reciprocity)."
+    },
+    {
+      "category": "retirement",
+      "name": "Retirement Visa (VITEM XIV - Aposentado)",
+      "purpose": "Retirees and pensioners with stable income wishing to reside in Brazil",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.br/mre/pt-br/consulado-los-angeles/english/visas/types-of-visa#vitem14",
+      "notes": "Temporary-residence visa (VITEM XIV) for retirees/pensioners who can demonstrate stable, regular retirement or pension income transferred to Brazil. VITEM XIV is the same visa category that also covers digital nomads (tracked as a separate entry above). Applied at a Brazilian consulate; consular fee varies by nationality (reciprocity). Detailed income requirements are set by Brazilian immigration (CNIg) normative resolutions."
     }
   ],
   "outbound_official": {

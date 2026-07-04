@@ -216,7 +216,7 @@
       "name": "Visa de Turismo / Tourist and Business Visa (Multiple Entry)",
       "purpose": "Issued to foreigners for recurring tourism, business, or family visits to Honduras over a one-year period.",
       "max_stay_days": null,
-      "validity_days": 365,
+      "validity_days": 360,
       "entries": "multiple",
       "fee_usd": 60,
       "processing_days_min": 28,
@@ -224,7 +224,7 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://embajadahondurasencanada.hn/en/visas-2/",
-      "notes": "Multiple-entry version of the tourist/business visa. Valid for 1 year from issuance. Individual stays subject to standard immigration discretion at point of entry. Payment via money order in USD only. Processing may take approximately 4–8 weeks when prior authorization is required."
+      "notes": "Multiple-entry version of the tourist/business (consular) visa, valid 360 days (USD $60). Per the official Honduran consulate, the multiple-entry visa can only be obtained after the applicant has previously held a simple (single-entry) visa. Individual stays subject to standard immigration discretion at point of entry. Payment via money order in USD only. Processing may take approximately 4–8 weeks when prior authorization is required."
     },
     {
       "category": "business",
@@ -283,8 +283,8 @@
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://travel.gc.ca/destinations/honduras",
-      "notes": "Student permits are required for any foreign national studying in Honduras. Per the Canadian government's travel advice, students must obtain the permit from immigration authorities upon arrival in Honduras. Per the Colombia embassy page, student visa (visa de estudios) applications must be processed directly in Honduras through the Instituto Nacional de Migración (INM). Specific fees and required documents must be confirmed with INM directly (inm.gob.hn, callcenter@inm.gob.hn)."
+      "official_url": "https://inm.gob.hn/residencias.html",
+      "notes": "Issued as an INM 'Permiso Especial de Permanencia' under the category 'Extranjeros Estudiantes' (foreign students). Required for any foreign national studying at an accredited institution in Honduras. Per the Colombia embassy page, student permit (visa de estudios) applications must be processed directly in Honduras through the Instituto Nacional de Migración (INM). General requirements include a legal representative/power of attorney, migratory-movement certification, criminal-record and medical certificates. Specific fees must be confirmed with INM directly (inm.gob.hn, callcenter@inm.gob.hn)."
     },
     {
       "category": "retirement",
@@ -390,6 +390,96 @@
       "on_arrival": false,
       "official_url": "https://embajadahondurasencanada.hn/en/visas-2/",
       "notes": "Issued free of charge to consular officials and international organization representatives with official documents (official passports, UN Laissez-passer, or OAS passports). Distinct from the diplomatic visa category."
+    },
+    {
+      "category": "tourist",
+      "name": "Visa Consultada (Consulted Visa – Category C)",
+      "purpose": "Entry visa for nationals classified as 'consulted' (Category C) who must obtain prior authorization from the Instituto Nacional de Migración (INM) before a Honduran consulate can issue the visa.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 100,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.consuladohondurasmadrid.es/visa-consultada/",
+      "notes": "Required for nationalities in Honduras's Category C (visa consultada) classification. The INM Secretaría General must first validate the request and issue written authorization; only then may the applicant apply at any Honduran consulate. Fee USD $100 per Article 127 numeral 12 of the Reglamento de la Ley de Migración y Extranjería. Requires a responsible sponsor in Honduras (with power of attorney and letter of responsibility), apostilled/authenticated passport copies, medical certificate and police/criminal-record certificate from the country of origin, and supporting family or employment documents as applicable. Tourist stay up to 90 days, extendable at INM. Distinct from the Category B 'Visa Consular' (single USD $30 / multiple USD $60) which consulates issue without prior INM authorization."
+    },
+    {
+      "category": "work",
+      "name": "Permiso Especial de Permanencia – Servicios Religiosos (Religious Worker / Missionary Permit)",
+      "purpose": "Special stay permit for foreign clergy, missionaries, and religious workers serving with a church or religious organization in Honduras.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://inm.gob.hn/residencias.html",
+      "notes": "Issued by the INM as a 'Permiso Especial de Permanencia' under the category 'Extranjeros en servicios religiosos'. General requirements include a legal representative/power of attorney, migratory-movement certification from INM, criminal-record and medical certificates, and authenticated/apostilled passport copies. Requirement checklist published on the INM residencias/permits page."
+    },
+    {
+      "category": "work",
+      "name": "Permiso Especial de Permanencia – Empresarios (Entrepreneur / Self-Employed Permit)",
+      "purpose": "Special stay permit for foreign nationals establishing or operating their own business or enterprise in Honduras (distinct from the USD $50,000 investor residency).",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://inm.gob.hn/residencias.html",
+      "notes": "Issued by the INM as a 'Permiso Especial de Permanencia' under the category 'Extranjeros Empresarios'. For foreign business owners/entrepreneurs. General requirements include a legal representative/power of attorney, migratory-movement certification, criminal-record and medical certificates, plus company/business documentation. Requirement checklist published on the INM residencias/permits page."
+    },
+    {
+      "category": "work",
+      "name": "Permiso Especial de Permanencia – Ejercicio de una Profesión Universitaria (Independent Professional Permit)",
+      "purpose": "Special stay permit for foreign nationals authorized to independently practice a university-level profession (e.g., medicine, engineering, law) in Honduras.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://inm.gob.hn/residencias.html",
+      "notes": "Issued by the INM as a 'Permiso Especial de Permanencia' under the category 'Ejercicio de una profesión universitaria'. For foreign professionals practising a regulated university profession. Requires authenticated/apostilled academic titles in addition to the general permit requirements (legal representative, migratory-movement certification, criminal-record and medical certificates). Requirement checklist published on the INM residencias/permits page."
+    },
+    {
+      "category": "other",
+      "name": "Permiso Especial de Permanencia – Voluntarios (Volunteer Permit)",
+      "purpose": "Special stay permit for foreign volunteers serving with NGOs, humanitarian, development, or faith-based organizations in Honduras.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://inm.gob.hn/residencias.html",
+      "notes": "Issued by the INM as a 'Permiso Especial de Permanencia' under the category 'Extranjeros Voluntarios'. A related 'Servicio Social' permit covers foreign nationals performing social service. General requirements include a legal representative/power of attorney, migratory-movement certification, criminal-record and medical certificates. Requirement checklist published on the INM residencias/permits page."
+    },
+    {
+      "category": "other",
+      "name": "Permiso Especial de Permanencia – Razones Humanitarias (Humanitarian Stay Permit)",
+      "purpose": "Special stay permit granted on humanitarian grounds to foreign nationals who do not qualify for another migratory status.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://inm.gob.hn/residencias.html",
+      "notes": "Issued by the INM as a 'Permiso Especial de Permanencia' under the category 'Razones Humanitarias'. Discretionary permit for foreign nationals in humanitarian situations. General requirements include a legal representative/power of attorney, migratory-movement certification, criminal-record and medical certificates. Requirement checklist published on the INM residencias/permits page."
     }
   ],
   "cbi": {

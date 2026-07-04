@@ -1062,9 +1062,9 @@
     },
     {
       "category": "business",
-      "name": "Business Visitor Permit",
-      "purpose": "Allows foreign nationals to visit Fiji for short-term business activities such as meetings, conferences, and negotiations without engaging in local employment.",
-      "max_stay_days": 30,
+      "name": "Business Visitors Permit",
+      "purpose": "Allows foreign nationals to undertake short-term business, consultancy, research or work-related activities in Fiji such as meetings, conferences and negotiations, without taking up local employment.",
+      "max_stay_days": 21,
       "validity_days": null,
       "entries": "single",
       "fee_usd": null,
@@ -1072,8 +1072,8 @@
       "processing_days_max": null,
       "online": false,
       "on_arrival": true,
-      "official_url": "https://www.immigration.gov.fj/visitors-permit/",
-      "notes": "Issued for 30-day periods. Cannot be extended. Available to visa-exempt nationals on arrival; visa-required nationals must obtain a SEV or MEV first. No paid employment permitted."
+      "official_url": "https://www.immigration.gov.fj/business-visitors-permit/",
+      "notes": "Granted on arrival for up to 21 days to nationals of Australia, New Zealand, Singapore and the USA; up to 14 days for other visa-exempt nationals. Nationals of visa-required countries must arrange it through a Fiji mission before travel. Cannot be extended and no paid local employment is permitted. Corrected 2026-07: the dedicated business-visitors-permit page specifies 21/14 days (previously recorded as a flat 30 days); URL updated from the generic visitors-permit page."
     },
     {
       "category": "work",
@@ -1117,38 +1117,38 @@
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/work-permit/",
-      "notes": "Fee is FJD 650.05 for new and extension applications; FJD 664.50 for processing/renewal. Applicants must be over 18. A Contract of Employment is mandatory. Extension applications must be lodged 1 month prior to expiry. Contact: fidpermits@gmail.com."
+      "official_url": "https://www.immigration.gov.fj/work-permit-application-for-maritime-crew-fishing-vessels/",
+      "notes": "Fee is FJD 650.05 for new and extension applications; FJD 664.50 for processing/renewal. Applicants must be over 18. A Contract of Employment is mandatory. Extension applications must be lodged 1 month prior to expiry. Contact: fidpermits@gmail.com. URL updated 2026-07 to the dedicated maritime/fishing crew work-permit page."
     },
     {
       "category": "work",
       "name": "NGO Work Permit",
-      "purpose": "Allows non-citizens to work in Fiji for registered non-governmental organisations.",
+      "purpose": "Allows non-citizens to work in Fiji for registered international or regional non-governmental organisations.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": "multiple",
       "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/",
-      "notes": "Specific fee, validity, and processing details not published on the main immigration site. Apply via ImmiHub portal or contact fidpermits@gmail.com."
+      "official_url": "https://www.immigration.gov.fj/work-permit-application-for-non-government-organisations-international-regional/",
+      "notes": "Fee is FJD 650.05 for new and extension applications. Applicants must be over 18 and hold a signed Contract of Employment with the NGO. Standard processing 21 working days. Apply via ImmiHub portal or contact fidpermits@gmail.com. URL and fee updated 2026-07 from the dedicated NGO work-permit page (previously pointed to the site homepage)."
     },
     {
       "category": "work",
-      "name": "Secondment Permit",
-      "purpose": "Allows employees of overseas companies to be seconded to a Fijian company or organisation for a defined period.",
+      "name": "Secondment Work Permit",
+      "purpose": "Allows employees of overseas-based employers to be seconded to a Fijian company or organisation for a defined period.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": "multiple",
       "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/",
-      "notes": "Specific fee, validity, and processing details not published on the main immigration site. Apply via ImmiHub portal."
+      "official_url": "https://www.immigration.gov.fj/work-permit-application-for-overseas-employers-secondments/",
+      "notes": "Fee is FJD 650.05 for new and extension applications. Applicant must be over 18, hold a passport valid for 3+ years, and provide a secondment letter from the parent company. Standard processing 21 working days. Apply via ImmiHub portal. URL and fee updated 2026-07 from the dedicated secondments work-permit page (previously pointed to the site homepage)."
     },
     {
       "category": "student",
@@ -1162,23 +1162,23 @@
       "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/student-permit/",
-      "notes": "Fee is FJD 321.00; additional bond fees apply after approval. Standard processing is 21 working days. Requires acceptance letter for current academic year, proof of financial support or scholarship documentation, medical report (under 3 months old), and local guardian/sponsor letter. Local police report required if applicant is over 18 and has studied 12+ months in Fiji. Extensions must be lodged 1 month before expiry. Apply via ImmiHub portal."
+      "official_url": "https://www.immigration.gov.fj/student-permit-application/",
+      "notes": "Fee is FJD 321.00 for both new and extension applications; additional bond fees apply after approval. Standard processing is 21 working days. Requires acceptance letter for current academic year, proof of financial support or scholarship documentation, medical report (under 3 months old), and local guardian/sponsor letter. Local police report required if applicant is over 18 and has studied 12+ months in Fiji. Extensions must be lodged 1 month before expiry. Apply via ImmiHub portal. URL updated 2026-07 to the dedicated student-permit-application page."
     },
     {
       "category": "student",
-      "name": "Internship/Training Attachment Permit",
+      "name": "Internship or Training Attachment Permit",
       "purpose": "Allows non-citizens to undertake internships or training attachments at Fijian organisations or institutions.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": "multiple",
       "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/",
-      "notes": "Specific fee, validity, and processing details not published on the main immigration site. Apply via ImmiHub portal."
+      "official_url": "https://www.immigration.gov.fj/internship/",
+      "notes": "Fee is FJD 321.00 for both new and extension applications. Standard processing 21 working days. Apply via ImmiHub portal. URL and fee updated 2026-07 from the dedicated internship/training-attachment page (previously pointed to the site homepage)."
     },
     {
       "category": "other",
@@ -1188,12 +1188,12 @@
       "validity_days": null,
       "entries": "multiple",
       "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/",
-      "notes": "Specific fee, validity, and processing details not published on the main immigration site. Apply via ImmiHub portal."
+      "official_url": "https://www.immigration.gov.fj/research-permit/",
+      "notes": "Fee is FJD 650.05 for both new and extension applications. Standard processing 21 working days. Apply via ImmiHub portal. URL and fee updated 2026-07 from the dedicated research-permit page (previously pointed to the site homepage)."
     },
     {
       "category": "investment",
@@ -1207,8 +1207,8 @@
       "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/investor-permit-for-non-citizen-investors/",
-      "notes": "Fee is FJD 650.05 for new and extension applications. Valid for 3 years. Requires Foreign Investment Certificate (FIC) from FTIB, company registration, tax ID, proof of funds, police report, and medical report. Spouse and dependent children can be included. Path to citizenship only through naturalisation. Exact minimum investment threshold not stated on official site; FTIB approval required."
+      "official_url": "https://www.immigration.gov.fj/investor-permit-application/",
+      "notes": "Fee is FJD 650.05 for new and extension applications. Valid for 3 years. Requires Foreign Investment Certificate (FIC) from FTIB, company registration, tax ID, proof of funds, police report, and medical report. Spouse and dependent children can be included. Path to citizenship only through naturalisation. Exact minimum investment threshold not stated on official site; FTIB approval required. URL updated 2026-07 to the current investor-permit-application page, which processes all investor permits (the page no longer separates 3-year and 7-year tiers by name)."
     },
     {
       "category": "investment",
@@ -1222,38 +1222,38 @@
       "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/investor-permit-for-non-citizen-investors/",
-      "notes": "For investments of FJD 500,000 or more. Investor must introduce and maintain capital/assets of at least FJD 500,000 as personal capital (not unsecured loans), own or hold a lease/purchase option on required land or buildings, and demonstrate funds transferred from overseas. Valid for 7 years. Path to citizenship through naturalisation only."
+      "official_url": "https://www.immigration.gov.fj/investor-permit-application/",
+      "notes": "For investments of FJD 500,000 or more. Investor must introduce and maintain capital/assets of at least FJD 500,000 as personal capital (not unsecured loans), own or hold a lease/purchase option on required land or buildings, and demonstrate funds transferred from overseas. Valid for 7 years. Application fee FJD 650.05. Path to citizenship through naturalisation only. URL updated 2026-07 to the current investor-permit-application page (the FJD 500,000 threshold derives from FTIB/embassy guidance and is not stated verbatim on the current immigration page)."
     },
     {
       "category": "retirement",
-      "name": "Permit on Assured Income",
-      "purpose": "Allows foreign retirees with a guaranteed foreign income or sufficient overseas assets to reside in Fiji on a long-term basis.",
+      "name": "Residence Permit on Assured Income",
+      "purpose": "Allows non-citizens aged 45 and over with a guaranteed foreign income or sufficient offshore assets to reside in Fiji long-term without taking up local employment (Fiji's de facto retirement permit).",
       "max_stay_days": null,
       "validity_days": null,
       "entries": "multiple",
       "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/",
-      "notes": "Specific fee, minimum income threshold, validity period, and detailed processing information were not available on the official immigration.gov.fj website at time of research. Apply via ImmiHub portal or contact fidpermits@gmail.com for details."
+      "official_url": "https://www.immigration.gov.fj/residence-on-assured-income-permit-application/",
+      "notes": "Fee is FJD 650.05 for new and extension applications. For non-citizens aged 45+ with offshore assets sufficient to avoid becoming a public charge; the principal applicant may not seek local employment. Ministry of Foreign Affairs guidance describes a bank-deposit requirement (historically F$100,000, waivable if Fiji property is purchased, plus roughly F$30,000-F$40,000 per year for accompanying family), but the current immigration application page states only the offshore-asset requirement, not a fixed amount. Spouse and dependent children may be included. Standard processing 21 working days. URL, fee and age requirement updated 2026-07 from the dedicated assured-income page (previously pointed to the site homepage)."
     },
     {
       "category": "family",
       "name": "Co-Extensive Residence Permit",
-      "purpose": "Allows dependents (spouse and children) of permit holders to reside in Fiji for the same duration as the primary permit holder.",
+      "purpose": "Allows dependents (spouse and children) of a principal permit holder to enter and reside in Fiji for the same duration as the primary permit holder.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": "multiple",
       "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.fj/",
-      "notes": "Issued to dependents co-extensive with the primary permit holder's permit (work, investor, student, etc.). Validity mirrors the primary permit. Specific fee details not listed separately on official site."
+      "official_url": "https://www.immigration.gov.fj/co-extensive-residence-permit-application/",
+      "notes": "Issued to dependents co-extensive with the primary permit holder's permit (work, investor, student, etc.); validity mirrors the primary permit. Fee is FJD 650.05 (international) or FJD 185.00 (regional). Standard processing 21 working days. URL and fee updated 2026-07 from the dedicated co-extensive residence-permit page (previously pointed to the site homepage)."
     },
     {
       "category": "other",
@@ -1284,6 +1284,36 @@
       "on_arrival": true,
       "official_url": "https://www.immigration.gov.fj/visitors-permit/",
       "notes": "Transit exceeding three hours requires a visitors permit. For visa-exempt nationals this is granted on arrival. Non-visa-exempt nationals transiting must hold a valid SEV or MEV. Specific transit-only visa category is not separately defined; transit is listed as one of the eligible purposes under the standard visitors permit/visa framework."
+    },
+    {
+      "category": "family",
+      "name": "Exemption Status for Spouse of a Fiji Citizen",
+      "purpose": "Allows a foreign national legally married to a Fiji citizen to enter, reside and study in Fiji without a separate visitor, student or residence permit.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.fj/exemption-status-for-spouse-of-a-fiji-citizen-application/",
+      "notes": "Granted to foreign spouses of Fiji citizens. Initially valid for one year (or the passport's remaining validity if shorter), extendable at the Director of Immigration's discretion, and remains valid only while the marriage subsists. Permits residence and tertiary study, but a work permit is still required to take up employment. Requires marriage certificate, police clearance, medical report and a request letter from the Fiji-citizen spouse. Apply via the ImmiHub portal."
+    },
+    {
+      "category": "medical",
+      "name": "Residence Permit on Special Purpose",
+      "purpose": "Issued to non-citizens who need to reside in Fiji for a specific limited purpose not covered by work or study - most commonly medical treatment, but also residing with family and other special circumstances.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 21,
+      "processing_days_max": 21,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.fj/residence-permit-on-special-purpose/",
+      "notes": "Broad special-purpose residence permit covering medical grounds, residing with family, and similar unique circumstances (the yacht owners/crew special-purpose permit is tracked as a separate category). Fee is FJD 650.05. Standard processing 21 working days. Apply via the ImmiHub portal."
     }
   ],
   "sources_checked": [

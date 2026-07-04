@@ -1064,6 +1064,21 @@
       "notes": "Initial grant up to 60 days, extendable up to 1 year. SW1 and SW2 are sub-categories for different work profiles. Separate from the general work permit system."
     },
     {
+      "category": "work",
+      "name": "Unified Permit for Foreign Workers (Employment Visa, formerly W1/W2)",
+      "purpose": "Single digital document combining an entry visa and work authorization for foreign nationals taking up employment or individual entrepreneurship in Kyrgyzstan.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 7,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.e-gov.kg/",
+      "notes": "Since 1 July 2025 (Cabinet of Ministers Resolution No. 367) the former Employment Visa W1 (issued to work-permit or individual-entrepreneur applicants; initial 60 days without a permit, then multiple-entry for the work-permit validity) and Employment Visa W2 (up to 90 days, renewable annually, for categories exempt from a work permit under the Law on External Labor Migration) were consolidated into a single electronic 'Unified Permit' (Single Permit) covering both entry and legal employment. Employers or workers apply via the e-visa portal; processing about 7 working days; stay/validity is tied to the employment term and renewable. Issuance is administered by the MFA through the end of 2026. Distinct from the Special Work SW1/SW2 visa (short-term technicians, journalists, charity staff). Former consular W1/W2 fee was approximately USD 60-90. Official MFA work-permit page: https://mfa.gov.kg/en/dks-mid-kr-en/Consular-Services/Visa-issues/Issues-of-extending-visas-to-foreign-nationals/Obtaining-a-work-permit-in-the-territory-of-the-Kyrgyz-Republic"
+    },
+    {
       "category": "student",
       "name": "Student Visa (Type S)",
       "purpose": "Entry for academic study at accredited educational institutions in Kyrgyzstan.",
@@ -1152,6 +1167,21 @@
       "on_arrival": false,
       "official_url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
       "notes": "Tied to the primary visa holder's status (e.g., Investment Visa, DN Visa). Validity mirrors the primary holder's visa."
+    },
+    {
+      "category": "medical",
+      "name": "Guest Visa (Type G)",
+      "purpose": "Entry for private-nature visits - to visit friends and acquaintances or to receive medical treatment/services in Kyrgyzstan.",
+      "max_stay_days": 60,
+      "validity_days": 60,
+      "entries": null,
+      "fee_usd": 60,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mfa.gov.kg/en/dm/-Embassy-of-the-Kyrgyz-Republic-in-the-USA-and-Canada/Menu---Foreign-/Consular-issues/Visa-issues/isa-issues-5c3dfa333cdaf",
+      "notes": "Official MFA category 'G' (guest). Covers short private visits and is the visa foreigners use when travelling to Kyrgyzstan specifically for medical treatment. Issued for up to 60 days. Consular fee approximately USD 60-90 depending on duration and single/multiple entry. Obtained through Kyrgyz embassies/consulates; the current e-visa portal instead offers Relatives (RL) and Family Member (FF) categories, so a Guest visa is typically issued consularly rather than online."
     },
     {
       "category": "diplomatic",

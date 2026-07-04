@@ -907,6 +907,21 @@
       "notes": "Single entry only. Requires authorization from Ministry of Labor, health certificate, work contract, authenticated police clearance, business letter, and business permit (ALVARA)."
     },
     {
+      "category": "student",
+      "name": "Student Visa (Consular)",
+      "purpose": "Foreign nationals admitted to study at a Mozambican school or university; single-entry visa obtained at a Mozambican embassy or consulate.",
+      "max_stay_days": 30,
+      "validity_days": 60,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://embamoc.jp/visas",
+      "notes": "Single entry only; issued at a Mozambican embassy/consulate - Student is not offered as an eVisa category on the evisa.gov.mz portal. Requirements: letter of acceptance from the Mozambican school/university certified by the Ministry of Education, medical certificate, police clearance record, and proof of funds and accommodation. Entry visa is intended to be converted to a longer study/residence authorization after arrival for the course duration. Fee varies by mission (Embassy of Mozambique in Japan lists JPY 10,420, approximately USD 70, for single entry); other missions charge from approximately USD 220 for single-entry consular visas. Urgent processing available at higher fees."
+    },
+    {
       "category": "work",
       "name": "Work eVisa (Oil & Gas Business/Work)",
       "purpose": "Work or business activities in Mozambique's oil and gas sector via the official eVisa portal.",
@@ -1040,6 +1055,66 @@
       "on_arrival": false,
       "official_url": "https://evisa.gov.mz/",
       "notes": "Available to exactly 29 nationalities (Belgium, Canada, China, Côte d'Ivoire, Denmark, Finland, France, Germany, Ghana, Indonesia, Ireland, Israel, Italy, Japan, Netherlands, Norway, Portugal, Russia, Saudi Arabia, Senegal, Singapore, South Korea, Spain, Sweden, Switzerland, Ukraine, UAE, UK, USA) via the evisa.gov.mz portal (relaunched February 11, 2026 with VFS Global). Processing: at least 48 hours before departure. Permits stay up to 30 days for tourist/business purposes. Fee: approximately USD 48 (increased from approximately USD 10/650 MZN under the previous portal). ETA was briefly suspended May 16–early 2026 due to technical issues; fully reinstated on the new portal."
+    },
+    {
+      "category": "tourist",
+      "name": "Border Visa (Visa on Arrival)",
+      "purpose": "Short tourist visits for nationals of countries that have no Mozambican embassy or consulate, issued on arrival at designated border posts and international airports.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 50,
+      "processing_days_min": 0,
+      "processing_days_max": 0,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://embamoc.jp/visas",
+      "notes": "Officially confirmed by the Embassy of Mozambique in Japan: 'Arrival tourist visas are now available at border posts, including international airports in Mozambique, for those who originate from countries where there is no Embassy/Consulate of Mozambique.' Eligibility is limited to nationals of countries lacking a Mozambican diplomatic mission; travellers from countries that have a mission must obtain a visa in advance. Widely reported as an approximately USD 50, 30-day, dual-entry visa (not extendable). Availability at the border can be unreliable, so the ETA or eVisa is recommended for travellers who are eligible for those."
+    },
+    {
+      "category": "other",
+      "name": "Journalist / Press Visa (Consular)",
+      "purpose": "Foreign journalists and press or media personnel travelling to Mozambique to report on or cover events.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 70,
+      "processing_days_min": 4,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://embamoc.jp/visas",
+      "notes": "Visto de Jornalista - a distinct consular visa category listed by Mozambican embassies. Single entry; issued at a Mozambican embassy/consulate and not offered on the evisa.gov.mz portal. Fee varies by mission (Embassy of Mozambique in Japan lists JPY 10,420, approximately USD 70, single entry, ordinary processing 4-5 business days). Press accreditation and supporting documentation from the sponsoring media organisation are generally required."
+    },
+    {
+      "category": "family",
+      "name": "Temporary Permanence Visa (Consular)",
+      "purpose": "Foreign spouse and minor or incapacitated children of a foreign national holding a Mozambican work visa, allowing them to accompany and reside with the work-visa holder.",
+      "max_stay_days": 30,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://embamoc.jp/visas",
+      "notes": "Visto de Permanência Temporária. Granted to the spouse and minor/incapacitated children of a foreign citizen who holds a Mozambican work visa. Multiple-entry and renewable in step with the sponsor's work visa/employment contract. Requires a term of responsibility from the work-visa holder, criminal record certificate, round-trip ticket and a passport valid for at least 6 months. The initial 30-day entry is extended/renewed after arrival. Processing minimum approximately 15 days. Confirmed by the Embassy of Mozambique in Japan and the Mozambique High Commission (Rwanda)."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Courtesy Visa (Consular)",
+      "purpose": "Persons deserving special consideration - such as guests of the Mozambican government and family members of diplomatic or official visa holders - who do not qualify for a diplomatic or official visa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 0,
+      "processing_days_min": 4,
+      "processing_days_max": 5,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://embamoc.jp/visas",
+      "notes": "Visto de Cortesia. Issued free of charge, single or multiple entry with 30- or 90-day validity. Ordinary processing 4-5 business days; urgent 2-3 business days. Reserved for persons granted courtesy status by the Mozambican authorities and is not a general-purpose travel visa."
     }
   ],
   "cbi": {

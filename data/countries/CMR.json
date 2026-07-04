@@ -299,8 +299,8 @@
     },
     {
       "category": "work",
-      "name": "Long-Stay Visa (Contract Worker / Independent Worker)",
-      "purpose": "For foreign nationals intending to reside and work in Cameroon under employment contract or as independent workers, valid 6-12 months.",
+      "name": "Long-Stay Visa (Contract Worker)",
+      "purpose": "For foreign nationals coming to Cameroon to take up salaried employment under a contract of employment, valid 6-12 months.",
       "max_stay_days": 360,
       "validity_days": 365,
       "entries": "multiple",
@@ -310,7 +310,7 @@
       "online": true,
       "on_arrival": false,
       "official_url": "https://www.diplocam.cm/e-visa/",
-      "notes": "Applied online via evisacam.cm portal (MINREX). Fee XAF 150,000 normal / XAF 200,000 express per diplocam.cm (confirmed 2026-06-29). Cameroon High Commission UK cites EUR 305 for long-stay normal which does not match diplocam.cm; diplocam.cm is the MINREX primary source. Categories include: contract workers, independent workers, and long-term trainees. Issued under Law No. 97/012 of 10 January 1997 and Decree No. 2023/147 of 02 March 2023."
+      "notes": "Applied online via evisacam.cm portal (MINREX). Salaried/contract workers must present a contract of employment signed by the Minister in charge of employment, per Decree No. 2023/147 of 02 March 2023 implementing Law No. 97/012 of 10 January 1997. Fee XAF 150,000 normal / XAF 200,000 express per diplocam.cm (confirmed 2026-06-29). Cameroon High Commission UK cites EUR 305 for long-stay normal which does not match diplocam.cm; diplocam.cm is the MINREX primary source. Independent/self-employed workers and trainees/interns are covered by separate long-stay entries."
     },
     {
       "category": "student",
@@ -341,6 +341,36 @@
       "on_arrival": false,
       "official_url": "https://www.diplocam.cm/e-visa/",
       "notes": "Applied online via evisacam.cm portal (MINREX). Family members of aliens staying in Cameroon are an explicit long-stay visa sub-category per Decree No. 2023/147 of 02 March 2023. Fee XAF 150,000 normal per diplocam.cm (confirmed 2026-06-29)."
+    },
+    {
+      "category": "investment",
+      "name": "Long-Stay Visa (Independent Worker / Self-Employed)",
+      "purpose": "For foreign nationals establishing in Cameroon to pursue a liberal profession or to run an agricultural, pastoral, industrial, commercial, artistic or similar activity, valid 6-12 months.",
+      "max_stay_days": 360,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 229,
+      "processing_days_min": 3,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplocam.cm/e-visa/",
+      "notes": "Applied online via evisacam.cm portal (MINREX). Distinct long-stay category under Decree No. 2023/147 of 02 March 2023: independent/self-employed workers must present an authorization to carry out a liberal profession or to promote an agricultural, pastoral, industrial, commercial, artistic or other activity, issued by the relevant authority. Confirmed on the official Cameroon Embassy Japan page (cameroonemb-jp.org). This is the closest Cameroon equivalent to a self-employed/investor residence pathway; no separate investor 'golden visa' with a defined investment threshold exists on official sources. Fee XAF 150,000 normal / XAF 200,000 express per diplocam.cm."
+    },
+    {
+      "category": "student",
+      "name": "Long-Stay Visa (Trainee / Internship)",
+      "purpose": "For foreign nationals coming to Cameroon for a training programme or internship (stage) lasting more than 6 months.",
+      "max_stay_days": 360,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 229,
+      "processing_days_min": 3,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.diplocam.cm/e-visa/",
+      "notes": "Applied online via evisacam.cm portal (MINREX). Long-term trainees/interns are an explicit long-stay category under Decree No. 2023/147 of 02 March 2023, requiring an internship certificate signed by the relevant authority (confirmed on the official Cameroon Embassy Japan page, cameroonemb-jp.org). 'Internship' and 'Training' are listed among the recognized long-stay purposes on the evisacam.cm portal. Fee XAF 150,000 normal / XAF 200,000 express per diplocam.cm."
     },
     {
       "category": "transit",

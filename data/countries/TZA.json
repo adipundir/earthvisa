@@ -1723,6 +1723,21 @@
       "notes": "PhD-level student visa, up to 2 years. Highest fee tier in the student visa category. Fee confirmed from official immigration fee page."
     },
     {
+      "category": "tourist",
+      "name": "Referral Visa",
+      "purpose": "Entry visa for nationals of specified countries (and stateless persons/refugees holding Vienna Convention travel documents) whose applications require prior special clearance from the Commissioner General of Immigration before a visa is issued.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 60,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.go.tz/index.php/referral-visa-cases",
+      "notes": "Required for nationals of approximately 25 countries (e.g. Afghanistan, Bangladesh, Burkina Faso, Chad, Eritrea, Guinea Bissau, Guinea Conakry, Iran, Iraq, Kyrgyzstan, Lebanon, Mali, Mauritania, Niger, Nigeria, Pakistan, Palestine, Somalia, Sierra Leone, Syria, Tajikistan, Turkmenistan, Uzbekistan, Yemen) plus stateless persons and refugees. NOT eligible for visa on arrival - must apply online via the e-visa portal (visa.immigration.go.tz) at least 2 months before travel and should not book flights until approved. Requires a covering letter from a registered institution/company (official visits) or a host individual (personal visits), host's ID/permit, and a completed Security Bond form (T.I.F 12). Fee is the respective standard visa fee, which varies by nationality (e.g. Pakistan USD 200; USA and Ireland USD 100; most others USD 50) - no separate referral surcharge, hence fee_usd left null."
+    },
+    {
       "category": "diplomatic",
       "name": "Gratis Visa",
       "purpose": "Complimentary visa issued to holders of diplomatic or official passports and representatives of international organizations.",

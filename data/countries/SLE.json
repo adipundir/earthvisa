@@ -33,16 +33,31 @@
       "category": "tourist",
       "name": "E-Visa (Tourist/Visitor)",
       "purpose": "Advance online visa for tourism, family visits, or short-stay purposes for nationals not eligible for visa on arrival or ECOWAS free movement.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": null,
+      "max_stay_days": 30,
+      "validity_days": 90,
+      "entries": "single",
       "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_min": 1,
+      "processing_days_max": 3,
       "online": true,
       "on_arrival": false,
       "official_url": "https://www.evisa.sl/",
-      "notes": "Applied for through the official Sierra Leone eVisa portal (evisa.sl), operated by the Government of Sierra Leone. Required for nationals not covered by ECOWAS free movement or the Landing Visa (VoA) policy. Specific fee, validity, and max-stay details are not published on a publicly accessible page of evisa.sl without beginning an application. Can also be obtained through Sierra Leone embassies and consulates abroad."
+      "notes": "Applied for through the official Sierra Leone eVisa portal (evisa.sl), operated by the Government of Sierra Leone, or at Sierra Leone embassies/high commissions. Required for nationals not covered by ECOWAS free movement or the Landing Visa (VoA) policy. Per official Sierra Leone diplomatic-mission fee schedules (kw.slembassy.gov.sl/visas, sa.slembassy.gov.sl/visa-services), the single-entry visa is valid 3 months (90 days) from issue for a stay not exceeding 30 days; multiple-entry variants (6-month and 1-year validity) are also offered (see separate multiple-entry entry). The exact fee is set per mission/nationality and is not published on evisa.sl without beginning an application. Missions state applications are usually processed within about 24 hours."
+    },
+    {
+      "category": "tourist",
+      "name": "Multiple-Entry Visa (Tourist/Business)",
+      "purpose": "Pre-arrival visa for travellers making repeat tourism or business trips to Sierra Leone.",
+      "max_stay_days": 30,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 1,
+      "processing_days_max": 3,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.evisa.sl/",
+      "notes": "Advance multiple-entry visa issued through the official eVisa portal (evisa.sl) or at Sierra Leone embassies/high commissions. Per official Sierra Leone diplomatic-mission fee schedules (kw.slembassy.gov.sl/visas, sa.slembassy.gov.sl/visa-services), it is offered in a 6-month (180-day) and a 1-year (365-day) variant, each allowing a maximum stay of 30 days per entry, valid for tourism or business. Fees are set per mission/nationality and payable in the mission's local currency (for reference, the Kuwait mission lists KD 50 for the 6-month and KD 100 for the 1-year variant). The single-entry alternative is the Landing Visa/VoA or single-entry e-visa. Embassies state applications are usually processed within about 24 hours."
     },
     {
       "category": "business",
@@ -94,6 +109,21 @@
       "on_arrival": false,
       "official_url": "https://unifiedpermit.gov.sl/",
       "notes": "One of the named categories under the Unified Permit system (unifiedpermit.gov.sl). BIQ allows companies to bring foreign workers up to a quota. Alongside this is the Company Quota (CQ) permit. Specific fees and validity periods are not published on the public-facing pages of unifiedpermit.gov.sl."
+    },
+    {
+      "category": "work",
+      "name": "Company Quota (CQ) Permit",
+      "purpose": "Allows an established company registered in Sierra Leone to employ foreign nationals against an approved quota of expatriate positions.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://unifiedpermit.gov.sl/",
+      "notes": "One of the named resident-permit categories in Sierra Leone's Unified Permit system, alongside the Business Immigration Quota (BIQ), Employment, Student, and Dependant categories (per the SLIEPA immigration FAQ and unifiedpermit.gov.sl). CQ authorises a registered company to bring in expatriate staff up to an allocated immigration quota, whereas the separate work/employment permit covers an individual employee. Specific fee amounts and validity are not published on the public-facing pages of unifiedpermit.gov.sl. Applications and renewals are online-only as of 1 January 2026."
     },
     {
       "category": "student",
@@ -169,6 +199,21 @@
       "on_arrival": false,
       "official_url": "https://mofaic.gov.sl/sierra-leone-and-south-africa-agree-on-visa-waiver-for-holders-of-a-diplomatic-service-passport-mofaic-building-tower-hill-freetown-2nd-november-2023/",
       "notes": "Agreed effective November 30, 2023, announced during a courtesy call by South African High Commissioner H.E. Grace Jeanet Mason at MoFAIC Building, Freetown on November 2, 2023. Ordinary South African passport holders qualify for landing visa under the BRICS/AU category. Max stay duration for diplomatic/service/official holders not confirmed - mofaic.gov.sl was inaccessible (ECONNREFUSED) during June 2026 re-validation."
+    },
+    {
+      "category": "transit",
+      "name": "Transit (Visa-Free Airside Transit)",
+      "purpose": "Short airport transit for passengers continuing to a third country without formally entering Sierra Leone.",
+      "max_stay_days": 1,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://kw.slembassy.gov.sl/visas/",
+      "notes": "Per official Sierra Leone diplomatic-mission guidance (kw.slembassy.gov.sl/visas, sa.slembassy.gov.sl/visa-services), no transit visa is required for passengers holding a confirmed onward ticket to a third country within 24 hours who remain in the international transit area of Freetown (Lungi) International Airport and hold the documents required for their onward destination. Travellers who need to leave the transit area, or non-ECOWAS travellers transiting overland, require a standard landing visa or entry visa instead. There is no separate paid transit-visa product."
     },
     {
       "category": "other",

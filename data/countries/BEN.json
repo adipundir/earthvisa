@@ -642,7 +642,7 @@
     {
       "category": "tourist",
       "name": "Visa Touristique / E-Visa (Short Stay - 1 month, single entry)",
-      "purpose": "Tourism, leisure, or short personal visits to Benin for foreign nationals not covered by a visa waiver agreement.",
+      "purpose": "Short-stay e-visa for tourism, family, business/professional or medical visits by foreign nationals not covered by a visa waiver agreement.",
       "max_stay_days": 30,
       "validity_days": 30,
       "entries": "single",
@@ -652,7 +652,7 @@
       "online": true,
       "on_arrival": false,
       "official_url": "https://evisa.bj/",
-      "notes": "Fee is approximately €50 self-applied online (≈$54 USD). Also available via embassy at €60. Must be obtained before arrival - no visa on arrival. Available to nationals of countries outside ECOWAS and without a bilateral visa exemption agreement with Benin. Issued by evisa.bj online portal."
+      "notes": "Fee is €50 self-applied online (≈$54 USD). Also available via embassy at €60. Must be obtained before arrival - no visa on arrival. Available to nationals of countries outside ECOWAS and without a bilateral visa exemption agreement with Benin. Per the official DEI text the 'visa touristique ou de visite' covers family, professional, health/medical (sanitaire) and tourism purposes and is renewable for the same duration - Benin issues no separate medical or family-visit visa. Issued via the evisa.bj online portal."
     },
     {
       "category": "tourist",
@@ -667,7 +667,7 @@
       "online": true,
       "on_arrival": false,
       "official_url": "https://evisa.bj/",
-      "notes": "Fee is approximately €75 self-applied online (≈$81 USD). Also available via embassy at €85. Must be obtained before arrival via evisa.bj."
+      "notes": "Fee is €75 self-applied online (≈$81 USD). Also available via embassy at €85. Must be obtained before arrival via evisa.bj. Same 'visa touristique ou de visite' category, which officially covers family, professional, medical (sanitaire) and tourism purposes and is renewable for the same duration."
     },
     {
       "category": "tourist",
@@ -682,7 +682,7 @@
       "online": true,
       "on_arrival": false,
       "official_url": "https://evisa.bj/",
-      "notes": "Fee is approximately €100 self-applied online (≈$108 USD). Also available via embassy at €110. Must be obtained before arrival via evisa.bj."
+      "notes": "Fee is €100 self-applied online (≈$108 USD). Also available via embassy at €110. Must be obtained before arrival via evisa.bj. Longest tourist/visit e-visa tier; a stay may be renewed for the same duration, and CIPE registration is required for continuous stays beyond 90 days."
     },
     {
       "category": "business",
@@ -693,11 +693,11 @@
       "entries": "multiple",
       "fee_usd": null,
       "processing_days_min": 3,
-      "processing_days_max": 3,
+      "processing_days_max": 7,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://dei.gouv.bj/services/",
-      "notes": "Validity: up to 90 days of stay within a 2-year validity period per the DEI services page. Applied for in-person at DEI offices. Fees listed in EUR on official page: 1 month (€70), 3 months (€90), 6 months (€120), 1 year (€180) - discounted bi-national rates also available. Processing: 3 business days. Separate from the e-visa category (this is a DEI-issued domestic visa type)."
+      "official_url": "https://service-public.bj/public/services/service/PS00407",
+      "notes": "Up to 90 days of stay per entry within a 2-year validity period; renewable. Fees in EUR: 1 month (€70 / 45,916 FCFA), 3 months (€90 / 59,036 FCFA), 6 months (€120 / 78,715 FCFA), 1 year (€180 / 118,072 FCFA); bi-national rates 3 months €20, 6 months €45, 1 year €75. DEI-issued visa (service PS00407 'Visa résident'); apply and pay online at service-public.bj, then complete enrolment in person at DEI Cotonou. Estimated processing 3-7 days. Legal basis: Loi N° 2025-15 of 2 July 2025 and Décret N° 2026-049 of 4 March 2026."
     },
     {
       "category": "work",
@@ -708,11 +708,11 @@
       "entries": "multiple",
       "fee_usd": null,
       "processing_days_min": 3,
-      "processing_days_max": 3,
+      "processing_days_max": 7,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://dei.gouv.bj/services/",
-      "notes": "Available for 1-month, 3-month, 6-month, or 12-month durations; renewable. Fees in EUR: 1 month (€70 / 45,916 FCFA), 3 months (€90 / 59,036 FCFA), 6 months (€120 / 78,715 FCFA), 1 year (€180 / 118,072 FCFA). Bi-national discounted rates available. Processing: 3 business days at DEI office. This falls under the long-stay visa category (Visa Séjour Longue Durée)."
+      "official_url": "https://service-public.bj/public/services/service/PS00407",
+      "notes": "For professional activity; stay up to 12 months, renewable for the same duration. Fees in EUR: 1 month (€70 / 45,916 FCFA), 3 months (€90 / 59,036 FCFA), 6 months (€120 / 78,715 FCFA), 1 year (€180 / 118,072 FCFA); bi-national rates 3 months €20, 6 months €45, 1 year €75. DEI-issued long-stay visa (service PS00407 'Visa résident long séjour'); a written request to the DEI director is required first, then apply and pay online at service-public.bj and complete enrolment in person at DEI Cotonou. Estimated processing 3-7 days. Legal basis: Loi N° 2025-15 of 2 July 2025 and Décret N° 2026-049 of 4 March 2026."
     },
     {
       "category": "student",
@@ -723,11 +723,11 @@
       "entries": "multiple",
       "fee_usd": null,
       "processing_days_min": 3,
-      "processing_days_max": 3,
+      "processing_days_max": 7,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://dei.gouv.bj/services/",
-      "notes": "Available for durations up to 12 months, renewable. Same fee structure as professional visa: 1 month (€70), 3 months (€90), 6 months (€120), 1 year (€180). Processing: 3 business days at DEI office. Falls under the long-stay visa category (Visa Séjour Longue Durée)."
+      "official_url": "https://service-public.bj/public/services/service/PS00407",
+      "notes": "For study or training; stay up to 12 months, renewable for the same duration. Fees in EUR: 1 month (€70 / 45,916 FCFA), 3 months (€90 / 59,036 FCFA), 6 months (€120 / 78,715 FCFA), 1 year (€180 / 118,072 FCFA); bi-national rates 3 months €20, 6 months €45, 1 year €75. DEI-issued long-stay visa (service PS00407 'Visa résident long séjour'); a written request to the DEI director is required first, then apply and pay online at service-public.bj and complete enrolment in person at DEI Cotonou. Estimated processing 3-7 days. Legal basis: Loi N° 2025-15 of 2 July 2025 and Décret N° 2026-049 of 4 March 2026."
     },
     {
       "category": "transit",

@@ -374,22 +374,37 @@
     {
       "category": "business",
       "name": "Business Visa",
-      "purpose": "For foreign nationals visiting the Maldives for business-related purposes.",
-      "max_stay_days": null,
+      "purpose": "Temporary multiple-entry visa for foreign nationals visiting the Maldives for business-related purposes.",
+      "max_stay_days": 90,
       "validity_days": null,
-      "entries": null,
+      "entries": "multiple",
       "fee_usd": null,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.mv/",
-      "notes": "Listed as a distinct category on immigration.gov.mv. Specific fees, duration, and processing times not published on official pages. Applied through Maldives Immigration e-Visa portal. Distinct from the tourist visa which prohibits business engagements."
+      "official_url": "https://www.immigration.gov.mv/visa/business",
+      "notes": "Temporary multiple-entry visa granted for 30 to 90 days at a time, not to exceed a total of 180 days per calendar year. Applied online only via the Business Portal (business.egov.mv); not issued on arrival. Applications are first reviewed by the Ministry of Economic Development, then verified and processed by Maldives Immigration. Requires a passport with minimum 6 months validity and a recent photograph (within 3 months); applicant must not hold a visa type under Article 9 of Law No. 1/2007 nor fall under the entry prohibitions in Article 8. Fees and processing times not published on the official page. Distinct from the tourist visa, which prohibits business engagements."
     },
     {
       "category": "family",
       "name": "Dependent Visa",
-      "purpose": "For dependents (family members) of foreign nationals holding a valid visa or permit in the Maldives.",
+      "purpose": "For immediate family members (dependents) of expatriates in professional categories working in the Maldives.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": 52,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.immigration.gov.mv/visa/dependent",
+      "notes": "Issued to immediate family members of expatriates employed in professional categories in the Maldives. Fee MVR 750 plus MVR 50 card fee (approx. USD 52 total). Applied online via the IMUGA portal. First-time entrants must arrive under a Sponsorship Declaration (filed at least 5 working days before arrival), then apply for the Dependent Visa after arrival. Requires application form IM23, passport copy and photo, proof of relationship, a medical report, health insurance, and the sponsorship declaration. Duration, entries, and processing times not published on the official page."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa",
+      "purpose": "For foreign nationals enrolled at a recognised educational institution in the Maldives.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": null,
@@ -398,8 +413,8 @@
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.mv/",
-      "notes": "Listed as a distinct visa category on immigration.gov.mv. Specific fees, duration, and processing times not published on official English-language pages. Applies to dependents of work permit or resident visa holders."
+      "official_url": "https://imuga.immigration.gov.mv/",
+      "notes": "Issued by Maldives Immigration to enrolled international students. Two-stage process: (1) before travel, the sponsoring institution files a Sponsorship Declaration (form IM21) that must be approved before entry; (2) after arrival, the student applies for the Student Visa (form IM23) within 30 days. Approved health and travel insurance (e.g., MVR 800 / approx. USD 52 annually) is mandatory for the visa duration. Applied via the IMUGA portal (imuga.immigration.gov.mv). There is no dedicated public Student Visa page on immigration.gov.mv; the process is documented by The Maldives National University (public university, mnu.edu.mv/international-students). Application fee not published on official pages."
     },
     {
       "category": "family",
@@ -408,18 +423,18 @@
       "max_stay_days": null,
       "validity_days": 365,
       "entries": "multiple",
-      "fee_usd": null,
+      "fee_usd": 3,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://foreign.gov.mv/index.php/en/consular/for-foreigners-visiting-maldives/maldives-visa",
-      "notes": "Must apply within 30 days of arrival. Initial validity 1 year; renewable with extensions issued for 5 years per renewal. MVR 50 card fee (approx. USD 3). Applications submitted via IMUGA portal. Confirmed on Maldives Ministry of Foreign Affairs official page."
+      "official_url": "https://www.immigration.gov.mv/visa/marriage",
+      "notes": "Issued for 1 year on a new application; extensions issued for up to 5 years per renewal (extension requires a minimum of 3 months remaining before expiry). MVR 50 card fee (approx. USD 3). Applied exclusively online via the IMUGA portal (imuga.immigration.gov.mv). Those marrying in the Maldives must first obtain Sponsorship Declaration approval before arrival, then register the marriage legally, then apply for the visa. Requires passport copy, marriage certificate, a Family Court-stamped form, and (first-time only) medical screening and health insurance. Confirmed on the official Maldives Immigration Marriage Visa page (re-verified 2026-07)."
     },
     {
       "category": "other",
-      "name": "Sponsorship Visa",
-      "purpose": "For foreign nationals entering the Maldives under sponsorship by an approved Maldivian entity or individual.",
+      "name": "Sponsorship (Sponsorship Declaration)",
+      "purpose": "Pre-arrival permit requested by a Maldivian citizen or a professional-category visa holder to bring a foreign national into the Maldives (for visiting, dependency, or other approved purposes); prerequisite step for Dependent, Student and Marriage visas.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": null,
@@ -428,38 +443,38 @@
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.mv/",
-      "notes": "Listed as a distinct category on immigration.gov.mv. Sponsor must provide a formal sponsorship declaration. Specific fees, duration, and processing times not published on official English-language pages."
+      "official_url": "https://www.immigration.gov.mv/visa/sponsorship-declaration",
+      "notes": "Not a stay-granting visa itself but the pre-arrival sponsorship approval required before a foreign national travels under a non-tourist category. Applied online via the IMUGA portal (form IM21); the applicant must not be in the Maldives when applying. The sponsored person must arrive within 30 days of approval; a pre-arrival sponsorship approval slip is issued on the portal. A company seal is required if the sponsor is an employer. Fees, duration, and processing times not published on the official page. Verified on the official Maldives Immigration Sponsorship Declaration page (2026-07)."
     },
     {
-      "category": "other",
+      "category": "business",
       "name": "Meeting Visa",
-      "purpose": "For foreign nationals attending conferences, meetings, or official events in the Maldives.",
-      "max_stay_days": null,
+      "purpose": "On-arrival short-stay visa for foreign nationals whose primary purpose is attending a meeting, conference or convention held in the Maldives.",
+      "max_stay_days": 14,
       "validity_days": null,
-      "entries": null,
+      "entries": "single",
       "fee_usd": null,
       "processing_days_min": null,
       "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immigration.gov.mv/",
-      "notes": "Listed as a distinct visa category on immigration.gov.mv for conference and meeting attendees. Specific fees, duration, and processing times not published on official English-language pages."
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.immigration.gov.mv/visa/meeting",
+      "notes": "Effective 14 May 2023: a 14-day on-arrival short-stay visa granted to foreign nationals attending a meeting, conference or convention in the Maldives, provided general entry requirements are met. Non-extendable; the holder cannot obtain a Business Visa while in the country. A Traveller Declaration must be submitted electronically via IMUGA (imuga.immigration.gov.mv) within 96 hours before flight departure. Fee not published on the official page. Verified on the official Maldives Immigration Meeting Visa page (2026-07)."
     },
     {
       "category": "other",
       "name": "Resident Visa",
-      "purpose": "For foreign nationals seeking long-term residence in the Maldives beyond short-term categories.",
+      "purpose": "Long-term residence in the Maldives; per the official Resident Visa page, granted to a foreign national married to a Maldivian citizen.",
       "max_stay_days": null,
-      "validity_days": null,
-      "entries": null,
-      "fee_usd": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 3,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.immigration.gov.mv/",
-      "notes": "Listed as a distinct category on immigration.gov.mv. Covers long-term residence cases. Sub-types include marriage-based residence (see Marriage Visa entry). Corporate Resident Maldives program offers permanent residency card for qualifying foreign investors. Specific standard fees and processing times not published on official English-language pages."
+      "official_url": "https://www.immigration.gov.mv/visa/resident",
+      "notes": "The official immigration.gov.mv/visa/resident page describes the Resident Visa as granted to a foreign national married to a Maldivian citizen: initial validity 1 year, renewable up to 5 years, MVR 50 (approx. USD 3) card fee, applied online via the IMUGA portal, requiring pre-arrival sponsorship and completed legal marriage registration before applying. This is the same marriage-to-Maldivian residence route also captured in the Marriage Visa entry. The Corporate Resident Maldives program (permanent-residency card for qualifying foreign investors) and the Pearl Residence by-investment program are tracked separately under rbi. Verified on the official Maldives Immigration Resident Visa page (2026-07)."
     }
   ],
   "sources_checked": [

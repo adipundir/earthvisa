@@ -417,7 +417,7 @@
       "name": "Tourist Visa (Multiple Entry)",
       "purpose": "Multiple-entry leisure or holiday visits to The Gambia, valid for repeated entry over a longer period.",
       "max_stay_days": 90,
-      "validity_days": 1825,
+      "validity_days": 365,
       "entries": "multiple",
       "fee_usd": 139,
       "processing_days_min": 4,
@@ -425,14 +425,14 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://gid.gov.gm/visa/",
-      "notes": "Multiple-entry tourist visa valid up to 5 years; must be applied for at a Gambian embassy or consulate abroad. Embassy fee approximately $139 USD. Processing 4–10 business days. Maximum single stay 90 days per entry. Airport security fee of $20 USD required on each entry and departure."
+      "notes": "Per gid.gov.gm/visa/, a Multiple Journey Visa is valid for any number of journeys for a validity period NOT exceeding 12 months (corrected from a previously recorded 5-year/1825-day figure that the official page contradicts). Applied for at a Gambian embassy or consulate abroad. Maximum single stay 90 days per entry. A Securiport airport fee of D1000 (~$20 USD) applies on both entry and departure, except diplomats and minors under 2. The ~$139 fee is an approximate agency figure; GID does not publish visa fees on its official site."
     },
     {
       "category": "business",
       "name": "Business Visa",
       "purpose": "Visits for business meetings, conferences, trade, and exploration of business opportunities in The Gambia.",
-      "max_stay_days": 30,
-      "validity_days": 90,
+      "max_stay_days": 90,
+      "validity_days": 365,
       "entries": "multiple",
       "fee_usd": 139,
       "processing_days_min": 4,
@@ -440,7 +440,7 @@
       "online": false,
       "on_arrival": true,
       "official_url": "https://gid.gov.gm/visa/",
-      "notes": "Business visa issued for a maximum stay of 30 days; validity period up to 5 years (multiple entry). Embassy fee approximately $139 USD. Also obtainable on arrival at Banjul International Airport per gid.gov.gm (same on-arrival window as tourist). Applicants must present business documentation and a valid passport with at least 6 months remaining validity. gambia.gov.gm confirms business visits up to 90 days are also covered under the general visa-exemption framework for exempt nationalities."
+      "notes": "Business travellers use the Short Visit Visa (bona-fide businessman, up to 90 days, subject to local security clearance) or a Multiple Journey Visa. Per gid.gov.gm/visa/, a Multiple Journey Visa's validity does NOT exceed 12 months (corrected from a previously recorded 5-year figure). Also obtainable on arrival at Banjul International Airport. Applicants must present business documentation and a passport valid 6+ months. gambia.gov.gm confirms business visits up to 90 days are covered under the visa-exemption framework for exempt nationalities. The ~$139 fee is an approximate agency figure; GID does not publish visa fees officially."
     },
     {
       "category": "transit",
@@ -462,7 +462,7 @@
       "name": "Missionary Visa",
       "purpose": "Visits for religious or faith-based missionary work in The Gambia.",
       "max_stay_days": null,
-      "validity_days": 1825,
+      "validity_days": 365,
       "entries": "multiple",
       "fee_usd": 139,
       "processing_days_min": 4,
@@ -470,7 +470,7 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://gid.gov.gm/visa/",
-      "notes": "Must be applied for at a Gambian embassy or consulate abroad. Embassy fee approximately $139 USD; valid up to 5 years, multiple entry. Applicants must submit a letter of invitation from their sponsor or host organisation in Gambia detailing purpose, length of stay, accommodation, and contact information."
+      "notes": "gid.gov.gm/visa/ does not enumerate a distinct 'missionary visa'; religious/mission visits are handled as a Multiple Journey Visa (validity NOT exceeding 12 months - corrected from a previously recorded 5-year figure) or, for longer stays, a Resident Permit A (issued to those on mission). Applied for at a Gambian embassy or consulate abroad. Applicants must submit a letter of invitation from their Gambian sponsor or host organisation detailing purpose, length of stay, accommodation, and contact information."
     },
     {
       "category": "diplomatic",
@@ -479,13 +479,73 @@
       "max_stay_days": 90,
       "validity_days": null,
       "entries": null,
-      "fee_usd": null,
+      "fee_usd": 0,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://gambiahcsenegal.com/wp-content/uploads/2026/02/ENTRY-REQUIREMENTS-TO-THE-GAMBIA-NEW-VISA-POLICY-3.pdf",
-      "notes": "The Feb 2026 New Visa Policy document lists 'Diplomats and Consular Corps' as a visa-exempt category. Holders of diplomatic, official/service, or ordinary passports from EU states including UK and Switzerland are visa-free per Section IV. Countries with diplomatic visa-waiver agreements are handled bilaterally. Specific fee and processing information not published on accessible official sources."
+      "official_url": "https://gid.gov.gm/visa/",
+      "notes": "Per gid.gov.gm/visa/, the Diplomatic Visa is issued only to Heads of Missions, is granted only by Gambian Missions abroad, and NO fee is charged for its issuance. Separately, the Feb 2026 New Visa Policy (HC Senegal) lists 'Diplomats and Consular Corps' as visa-exempt; holders of diplomatic, official/service, or ordinary passports from EU states (incl. UK and Switzerland) are visa-free per Section IV. The Securiport airport fee is waived for diplomats."
+    },
+    {
+      "category": "work",
+      "name": "Resident Permit B (Work & Residence Permit)",
+      "purpose": "For non-Gambians taking up gainful employment or self-employment in The Gambia - expatriates, businesspersons, professionals, and unskilled workers who earn a livelihood. This is the country's combined work-and-residence permit.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 105,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gid.gov.gm/residential-permit/",
+      "notes": "gid.gov.gm/residential-permit/: Resident Permit B is issued to those who intend to live, reside AND work in The Gambia. It is an offence for a non-citizen to take up gainful employment without it. Official fee: D7,700 for non-ECOWAS nationals (~$105 USD, includes the D2,500 Alien Card) or D3,600 for ECOWAS nationals (~$49). Non-ECOWAS applicants must reside 56 days after admission before issuance; Permit B requires a GRA payroll tax receipt. Biometric card, renewed annually. Valid holders may re-enter The Gambia without a fresh visa; children/dependents are covered under the holder's permit."
+    },
+    {
+      "category": "student",
+      "name": "Resident Permit A (Student Residence)",
+      "purpose": "For foreign students residing in The Gambia to study, without engaging in gainful employment. Resident Permit A is the non-working residence permit the GID issues to foreign students.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 78,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gid.gov.gm/residential-permit/",
+      "notes": "gid.gov.gm/residential-permit/ states Resident Permit A is issued to applicants who intend to reside without gainful employment, 'usually issued to foreign student residing in the Gambia, retirees, individuals on short business visit or mission.' The Gambia has no separate 'student visa' - foreign students reside under Permit A. Official fee: D5,700 for non-ECOWAS (~$78 USD, includes the D2,500 Alien Card) or D3,100 for ECOWAS (~$42). Non-ECOWAS applicants must reside 56 days after admission before issuance. Biometric card, renewed annually."
+    },
+    {
+      "category": "retirement",
+      "name": "Resident Permit A (Retiree Residence)",
+      "purpose": "For foreign retirees residing in The Gambia without engaging in gainful employment.",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 78,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gid.gov.gm/residential-permit/",
+      "notes": "gid.gov.gm/residential-permit/ explicitly lists retirees among those issued Resident Permit A (the non-working residence permit). The Gambia has no dedicated 'retirement visa' scheme; retirees reside under Permit A. Official fee: D5,700 for non-ECOWAS (~$78 USD, includes the D2,500 Alien Card) or D3,100 for ECOWAS (~$42). Non-ECOWAS applicants must reside 56 days after admission before issuance. Biometric card, renewed annually."
+    },
+    {
+      "category": "other",
+      "name": "Non-Gambian ID Card",
+      "purpose": "A residence-and-work identity document issued under bilateral agreements to nationals of Senegal, Guinea-Bissau, Sierra Leone, and Ivory Coast, allowing them to legally reside and work in The Gambia.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 10,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://gid.gov.gm/residential-permit/",
+      "notes": "Per gid.gov.gm/residential-permit/, the Non-Gambian ID Card is issued to nationals of Senegal, Guinea-Bissau, Sierra Leone and Ivory Coast under bilateral cooperation, letting them legally reside and work in The Gambia on payment of prescribed fees. Official fee: D750 (~$10 USD). Issued to holders aged 18 and above."
     }
   ],
   "cbi": {

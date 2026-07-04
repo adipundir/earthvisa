@@ -1063,8 +1063,8 @@
       "processing_days_max": 15,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://www.konsolosluk.gov.tr/",
-      "notes": "Physical sticker visa issued by Turkish consulates/embassies. Applied in person or through authorized VFS centers. Required for nationalities not eligible for e-Visa. Processing time and fee vary by nationality and consulate. Multiple-entry and longer validity available."
+      "official_url": "https://www.visa.gov.tr/",
+      "notes": "Physical sticker visa issued by Turkish consulates/embassies. Applied online via the official visa pre-application system (visa.gov.tr, redirects to konsolosluk.gov.tr) then in person or through authorized centers. Required for nationalities not eligible for e-Visa. Processing time and fee vary by nationality and consulate. Multiple-entry and longer validity available."
     },
     {
       "category": "work",
@@ -1093,8 +1093,8 @@
       "processing_days_max": 30,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://www.konsolosluk.gov.tr/",
-      "notes": "For study programs at Turkish universities and language schools. Requires official acceptance letter from a registered Turkish educational institution. Applied at Turkish embassy/consulate. Upon arrival, student must register with authorities and obtain student residence permit."
+      "official_url": "https://www.visa.gov.tr/",
+      "notes": "For study programs at Turkish universities and language schools. Requires official acceptance letter from a registered Turkish educational institution. Applied via the official visa pre-application system (visa.gov.tr) and Turkish embassy/consulate. Upon arrival, student must register with authorities and obtain student residence permit."
     },
     {
       "category": "investment",
@@ -1110,6 +1110,96 @@
       "on_arrival": false,
       "official_url": "https://www.goc.gov.tr/citizenship-by-investment",
       "notes": "Routes: (1) Real estate investment USD 400,000+ (held 3 years); (2) Capital investment USD 500,000+ in Turkish company or government bonds; (3) Employment creation (50+ employees). Citizenship granted directly - no residency period required. Application filed with General Directorate of Migration Management. Citizenship confers Turkish passport and full rights. Dual citizenship permitted."
+    },
+    {
+      "category": "business",
+      "name": "Business Meeting/Commerce Visa",
+      "purpose": "Business meetings, commerce, conferences, seminars, trade fairs and exhibitions",
+      "max_stay_days": 90,
+      "validity_days": 180,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visa.gov.tr/",
+      "notes": "One of the 'Tourist/Businessperson' visa purposes issued by Turkish missions (business meeting, commerce, conference/seminar, festival/fair/exhibition). Nationals eligible for the e-Visa can travel for business on an e-Visa; others apply for a sticker visa via the official visa pre-application system. Fee and number of entries vary by nationality."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa (Single/Double Transit)",
+      "purpose": "Travellers passing through Türkiye en route to a third country",
+      "max_stay_days": null,
+      "validity_days": 180,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visa.gov.tr/",
+      "notes": "Single- and double-transit visas listed under Türkiye's Tourist/Businessperson visa category. Some nationalities can obtain single/double transit through the e-Visa portal; others apply for a sticker visa. Passengers remaining airside during a connection generally do not need a transit visa."
+    },
+    {
+      "category": "medical",
+      "name": "Medical Treatment Visa",
+      "purpose": "Foreign nationals seeking medical treatment at Turkish healthcare facilities, plus accompanying persons",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 5,
+      "processing_days_max": 15,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visa.gov.tr/",
+      "notes": "Issued for medical treatment in Türkiye; a separate 'Accompaniment' visa is available for a companion of the patient. Applied at Turkish missions via the official visa pre-application system. For extended treatment the stay can be continued on a short-term residence permit from the Presidency of Migration Management. Fee varies by nationality."
+    },
+    {
+      "category": "family",
+      "name": "Family Unification Visa",
+      "purpose": "Spouse, children or dependants joining a family member who is a Turkish citizen or legal resident",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 15,
+      "processing_days_max": 60,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.visa.gov.tr/",
+      "notes": "Listed under Türkiye's 'Other' visa category as Family Unification. Applied at a Turkish mission via the official visa pre-application system; on arrival the holder obtains a family residence permit from the Presidency of Migration Management. Fee and requirements vary by nationality and sponsor status."
+    },
+    {
+      "category": "digital_nomad",
+      "name": "Digital Nomad Visa",
+      "purpose": "Remote workers and freelancers employed by or contracting with companies based outside Türkiye",
+      "max_stay_days": null,
+      "validity_days": 365,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://goturkiye.com/digitalnomads",
+      "notes": "Launched 2024 via the official GoTürkiye platform. Requirements: aged 21-55, a university degree, and minimum income of USD 3,000/month (USD 36,000/year); work must be for companies outside Türkiye. Two steps: obtain a Digital Nomad Identification Certificate online, then apply for the visa at a Turkish consulate. Grants a short-term residence permit up to 1 year, renewable. Open to nationals of 34 eligible countries (EU/EEA, UK, USA, Canada, Russia, Ukraine, Belarus, etc.)."
+    },
+    {
+      "category": "work",
+      "name": "Turquoise Card (Turkuaz Kart)",
+      "purpose": "Highly qualified professionals, scientists, investors, and prominent cultural/sports figures - grants indefinite work rights",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": 30,
+      "processing_days_max": 90,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.csgb.gov.tr/uigm/en/turquoise-card/",
+      "notes": "Issued by the Ministry of Labour and Social Security (International Labour Force Directorate) to qualified foreigners, investors, scientists, and cultural figures. Confers rights equivalent to an indefinite (permanent) work permit. Issued with a 3-year transition period that becomes indefinite on application before expiry (extension requests within 180 days of expiry). Spouse and dependent children receive documents serving as residence permits. Distinct from the standard employer-tied work permit."
     }
   ],
   "conditional_access": [

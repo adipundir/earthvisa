@@ -141,33 +141,33 @@
   "visa_types": [
     {
       "category": "tourist",
-      "name": "Mali Entry Visa (Ordinary Passport)",
-      "purpose": "General entry visa for tourism, business, and other purposes for foreign nationals holding ordinary passports who are not visa-exempt.",
-      "max_stay_days": null,
-      "validity_days": 1825,
-      "entries": "multiple",
-      "fee_usd": 185,
+      "name": "Mali Short-Stay Entry Visa (Tourism)",
+      "purpose": "General short-stay entry visa for tourism, family visits, and leisure travel for foreign nationals holding ordinary passports who are not visa-exempt.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": 80,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
       "official_url": "https://maliembassy.us/visas/",
-      "notes": "Fee of $185 USD applies to all visa types except diplomatic/official, per the Mali Embassy in Washington DC. Validity up to 5 years, multiple entry. Applications submitted online via the Ministry of Foreign Affairs portal at diplomatiemdc.gouv.ml/vitrine/ - no physical embassy submission required for most applicants. Visas are NOT issued on arrival at Malian airports. Yellow fever vaccination certificate mandatory. US citizens are currently subject to a reciprocal entry ban effective January 1, 2026 (with limited exceptions)."
+      "notes": "Mali issues a single general entry visa for all short-stay purposes (tourism, business, family), priced by duration and number of entries rather than by purpose. Official tariff per the Permanent Mission of Mali to the UN (un.int/mali): 3-month single entry USD 80, 3-month multiple entry USD 110, 6-month multiple entry USD 200, 1-year multiple entry USD 370. Separately, the Mali Embassy in Washington DC charges US citizens a flat USD 185 for a visa valid up to 5 years, multiple entry. Applications are submitted online via the Ministry of Foreign Affairs portal at diplomatiemdc.gouv.ml/vitrine/. Visas are NOT issued on arrival at Malian airports. Yellow fever vaccination certificate mandatory. US citizens are currently subject to a reciprocal entry ban effective January 1, 2026 (with limited exceptions)."
     },
     {
       "category": "business",
-      "name": "Mali Entry Visa (Business - Ordinary Passport)",
-      "purpose": "Entry visa for foreign nationals travelling to Mali for business activities, meetings, or commercial purposes.",
-      "max_stay_days": null,
-      "validity_days": 1825,
+      "name": "Mali Entry Visa (Business)",
+      "purpose": "Entry visa for foreign nationals travelling to Mali for meetings, conferences, commercial negotiations, or other professional activities.",
+      "max_stay_days": 90,
+      "validity_days": 90,
       "entries": "multiple",
-      "fee_usd": 185,
+      "fee_usd": 110,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
       "official_url": "https://maliembassy.us/visas/",
-      "notes": "Mali does not publish a separately named business visa category on official embassy pages. Business travel uses the same general entry visa as tourist travel. Fee $185 USD; up to 5-year validity, multiple entry confirmed by maliembassy.us. Online application via diplomatiemdc.gouv.ml/vitrine/."
+      "notes": "Mali does not publish a separately named business visa instrument; business travel uses the same general entry visa as tourism, priced by duration and number of entries. Business trips are commonly issued a 3-to-6-month multiple-entry visa. Official tariff (Permanent Mission of Mali to the UN, un.int/mali): 3-month multiple entry USD 110, 6-month multiple entry USD 200, 1-year multiple entry USD 370. US citizens are charged a flat USD 185 (up to 5 years, multiple entry) by the Mali Embassy in Washington DC. Apply online via diplomatiemdc.gouv.ml/vitrine/. Yellow fever certificate mandatory. US citizens currently subject to a reciprocal entry ban (effective January 1, 2026)."
     },
     {
       "category": "diplomatic",
@@ -183,6 +183,36 @@
       "on_arrival": false,
       "official_url": "https://maliembassy.us/visas/",
       "notes": "Free of charge; 3-year validity, multiple entry per maliembassy.us. Covers diplomatic passport holders and holders of laissez-passer for international organizations. A note verbale from the sending government may be required (noted by ambamali.ca). Some nationalities holding diplomatic/service passports are exempt from visa requirements entirely."
+    },
+    {
+      "category": "work",
+      "name": "Mali Long-Stay Visa (Visa de Long Sejour - Employment)",
+      "purpose": "Long-stay entry visa for foreign nationals taking up employment or residing in Mali for more than six months; followed by an in-country residence card and work permit.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 370,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://diplomatiemdc.gouv.ml/vitrine/",
+      "notes": "Mali issues a long-stay visa (visa de long sejour) for stays over six months, used by expatriate workers, employees, and long-term residents. The official 1-year multiple-entry entry-visa fee is USD 370 (Permanent Mission of Mali to the UN, un.int/mali). After arrival, foreign employees must obtain a residence card (carte de sejour) from the Direction Nationale de la Police and a work permit (permis de travail) from the Ministere du Travail; the employer initiates the work-permit application. The carte de sejour is valid up to one year, renewable, and costs roughly 50,000-100,000 XOF locally. There is no separately named work visa instrument - this is the general long-stay entry visa. Apply online via the Ministry of Foreign Affairs portal."
+    },
+    {
+      "category": "student",
+      "name": "Mali Long-Stay Visa (Visa de Long Sejour - Studies)",
+      "purpose": "Long-stay entry visa for foreign nationals enrolling at an accredited Malian university or training institution for a course of study exceeding six months.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://diplomatiemdc.gouv.ml/vitrine/",
+      "notes": "Foreign students are admitted on the general long-stay visa (visa de long sejour); Mali does not publish a separately named student visa instrument. An admission/enrolment letter from an accredited Malian institution (e.g. University of Bamako, Ecole Polytechnique) is the central supporting document. The long-stay visa tariff applies (see un.int/mali: up to USD 370 for a 1-year multiple-entry visa); a distinct student fee is not separately published. After arrival, students obtain a residence card (carte de sejour) from the Direction Nationale de la Police. Apply online via the Ministry of Foreign Affairs portal."
     },
     {
       "category": "transit",

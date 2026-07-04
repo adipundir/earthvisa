@@ -357,18 +357,33 @@
   "visa_types": [
     {
       "category": "tourist",
-      "name": "Entry Visa (Visa d'entrée)",
+      "name": "Tourist Visa / Entry Visa (Visa d'entrée)",
       "purpose": "Authorizes a foreign national to enter and stay in Tunisia for tourism or short-term visits. Required for nationals of countries without a bilateral exemption agreement.",
       "max_stay_days": 90,
       "validity_days": 90,
       "entries": "single",
-      "fee_usd": null,
+      "fee_usd": 90,
       "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_max": 21,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/",
-      "notes": "Established under Décret n° 68-198 du 22 juin 1968. Validity not exceeding three months. Nationals of countries with bilateral exemption treaties do not need this visa. Applied for at a Tunisian embassy or consulate abroad. No operational e-visa system exists as of mid-2026."
+      "official_url": "https://www.tunisianembassy.org/visa-services",
+      "notes": "Legal basis: Décret n° 68-198 du 22 juin 1968 (validity not exceeding three months). Fee per the official Tunisian Embassy (Washington DC) visa-services schedule: USD 90 single-entry / USD 180 multiple-entry, applicable to all visa types. Processing up to 21 business days; application requires the Minister of Interior's approval. Nationals of countries with bilateral exemption treaties do not need this visa. Applied for in person at a Tunisian embassy or consulate abroad; no operational e-visa system exists as of mid-2026."
+    },
+    {
+      "category": "business",
+      "name": "Business Visa (Visa d'affaires)",
+      "purpose": "For foreign nationals travelling to Tunisia for business, trade, meetings, or professional activities on a short-term basis.",
+      "max_stay_days": 90,
+      "validity_days": 90,
+      "entries": null,
+      "fee_usd": 90,
+      "processing_days_min": null,
+      "processing_days_max": 21,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.tunisianembassy.org/visa-services",
+      "notes": "Listed as a distinct visa category on the official Tunisian Embassy (Washington DC) visa-services page. Requires an official business invitation letter from the Tunisian host company in addition to a passport valid 6+ months. Fee USD 90 single-entry / USD 180 multiple-entry; processing up to 21 business days. Issued as a short-stay entry visa under the Décret n° 68-198 framework (stay up to three months). Applied for in person at a Tunisian embassy or consulate; nationals of countries with a bilateral exemption may not need it for short business visits."
     },
     {
       "category": "transit",
@@ -377,13 +392,13 @@
       "max_stay_days": 7,
       "validity_days": null,
       "entries": "single",
-      "fee_usd": null,
+      "fee_usd": 90,
       "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_max": 21,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://legislation-securite.tn/latest-laws/decret-n-68-198-du-22-juin-1968-reglementant-lentree-et-le-sejour-des-etrangers-en-tunisie/",
-      "notes": "Defined under Décret n° 68-198 du 22 juin 1968. Permits transit through Tunisian territory with a stay of up to 7 days. Applied for at a Tunisian embassy or consulate abroad."
+      "official_url": "https://www.tunisianembassy.org/visa-services",
+      "notes": "Defined under Décret n° 68-198 du 22 juin 1968 (stay of up to 7 days). Listed as a distinct category on the official Tunisian Embassy (Washington DC) visa-services page; requires proof of onward travel (airline ticket or cruise confirmation). Fee USD 90 single-entry / USD 180 multiple-entry; processing up to 21 business days. Applied for in person at a Tunisian embassy or consulate abroad."
     },
     {
       "category": "other",

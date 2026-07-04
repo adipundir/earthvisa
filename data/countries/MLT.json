@@ -894,13 +894,13 @@
       "max_stay_days": 90,
       "validity_days": null,
       "entries": "multiple",
-      "fee_usd": 90,
+      "fee_usd": 100,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
       "official_url": "https://identita.gov.mt/central-visa-unit-services-short-stay-visits/",
-      "notes": "Valid for up to 90 days within any 180-day period. Covers travel throughout the entire Schengen Zone. Standard Schengen visa fee is €80 (approx. USD 90 at time of research); reduced or waived for certain categories (children 6-12: €40; children under 6: free; students and researchers: €40 in some cases). Single-entry or multiple-entry issued based on applicant's travel history and need. Applications submitted through External Service Provider (VFS) or at a Maltese diplomatic mission. Fee Ordinance L.N.287 of 2020 applies. Malta is a full Schengen member state."
+      "notes": "Valid for up to 90 days within any 180-day period. Covers travel throughout the entire Schengen Zone. Standard Schengen visa fee is €90 for adults (approx. USD 100), increased from €80 effective 11 June 2024; reduced or waived for certain categories (children 6-11: €45; children under 6: free). Single-entry or multiple-entry issued based on applicant's travel history and need. Applications submitted through External Service Provider (VFS) or at a Maltese diplomatic mission. Fee Ordinance L.N.287 of 2020 applies. Malta is a full Schengen member state."
     },
     {
       "category": "business",
@@ -909,13 +909,13 @@
       "max_stay_days": 90,
       "validity_days": null,
       "entries": "multiple",
-      "fee_usd": 90,
+      "fee_usd": 100,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
       "official_url": "https://identita.gov.mt/central-visa-unit-services-short-stay-visits/",
-      "notes": "Same Schengen Type C visa as the tourist visa; purpose declared at application as 'business'. Standard fee €80 (~USD 90). Applications via VFS or Maltese diplomatic mission. Must demonstrate ties to home country and intention to leave within 90 days."
+      "notes": "Same Schengen Type C visa as the tourist visa; purpose declared at application as 'business'. Standard fee €90 for adults (~USD 100), increased from €80 effective 11 June 2024. Applications via VFS or Maltese diplomatic mission. Must demonstrate ties to home country and intention to leave within 90 days."
     },
     {
       "category": "student",
@@ -1008,6 +1008,21 @@
       "notes": "Administrative fee: €5,500 if qualifying property is in South Malta; €6,000 otherwise. Flat 15% tax on foreign-sourced income remitted to Malta; 35% on locally-sourced income. Applicants must purchase or lease qualifying property in Malta. Not available to those already long-term residents. Regulated by Malta Tax & Customs Administration (MTCA, formerly CFR). Commonly used as a retirement/passive-income residency route."
     },
     {
+      "category": "retirement",
+      "name": "Malta Retirement Programme (MRP)",
+      "purpose": "Special tax-residency status for EU/EEA/Swiss and non-EU nationals who are not in employment and receive a pension as their regular source of income, wishing to retire in Malta.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 2700,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://mtca.gov.mt/personal-tax/individual/special-schemes/malta-retirement-programme",
+      "notes": "Distinct from the Global Residence Programme (GRP): the MRP is specifically for pensioners. Grants a flat 15% tax rate on foreign pension income remitted to Malta, with a minimum annual tax of €7,500 plus €500 per dependant/household staff member. The pension must be remitted to Malta and represent at least 75% of the beneficiary's chargeable income; the applicant must not be in an employment relationship. Property requirement: purchase a qualifying property of at least €275,000 (€220,000 in Gozo or South Malta), OR rent at least €9,600/year (€8,750 in Gozo or South Malta). Beneficiary must reside in Malta for an average of at least 90 days per calendar year over any 5-year period and not reside in any other single jurisdiction for more than 183 days in a year. Non-refundable administrative fee: €2,500 (approx. USD 2,700). Applications must be submitted through an Authorised Registered Mandatary. Administered by the Malta Tax & Customs Administration (MTCA, formerly CFR). Open to both EU/EEA/Swiss and third-country national pensioners."
+    },
+    {
       "category": "working_holiday",
       "name": "Working Holiday Visa - Australia",
       "purpose": "Allows Australian citizens aged 18–30 to live and work in Malta on a working holiday basis for up to one year.",
@@ -1068,19 +1083,34 @@
       "notes": "Exclusively for New Zealand biometric passport holders. Age: 18–30. Visa issued free of charge by Maltese authorities; applicant pays VFS service fee. Requires: valid biometric passport (90+ days beyond stay), comprehensive medical insurance (hospitalisation, liability, medical repatriation), proof of funds, return ticket or funds, no criminal record, no dependents, no prior Malta working holiday visa. Applications via VFS."
     },
     {
+      "category": "working_holiday",
+      "name": "Working Holiday Visa - Youth of Maltese Descent",
+      "purpose": "Allows young people aged 18–30 who can demonstrate Maltese descent to live and work in Malta on a working holiday basis for up to one year.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": 42,
+      "processing_days_max": 56,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://identita.gov.mt/central-visa-unit-working-holiday-visa-youth-of-maltese-descent/",
+      "notes": "For applicants aged 18–30 who can demonstrate Maltese descent through documentation (ancestor birth certificates, passports or citizenship certificates), regardless of current nationality. Visa issued free of charge by Maltese authorities; applicant pays VFS service fee. Single entry, with the arrival date specified in the application (flight itinerary must show arrival 3+ months after the expression of interest). Processing approximately 6–8 weeks. Requires: valid passport (12+ months validity), police clearance (issued within 6 months), proof of funds equal to the Median National Equivalised Income OR a hosting letter from a Maltese citizen, private health insurance. Cannot be accompanied by dependents. Extensions require applying for a residence permit in-country. Applications via VFS (Identità's External Service Provider)."
+    },
+    {
       "category": "transit",
       "name": "Airport Transit Visa (ATV)",
       "purpose": "Required for nationals of certain third countries to transit through the international zone of a Schengen airport without entering Schengen territory.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": null,
-      "fee_usd": 90,
+      "fee_usd": 100,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
       "official_url": "https://identita.gov.mt/central-visa-unit-main-page/",
-      "notes": "Airport Transit Visa (ATV) is a Schengen category for transit through the international transit area only (does not permit entry into Schengen territory). Required for nationals listed in Annex IV of EU Regulation 2018/1806 and national lists. Standard fee same as Schengen short-stay visa (€80 / ~USD 90). Not applicable to Schengen-area connecting flights without exit from international zone. Applications via VFS or Maltese diplomatic mission."
+      "notes": "Airport Transit Visa (ATV) is a Schengen category for transit through the international transit area only (does not permit entry into Schengen territory). Required for nationals listed in Annex IV of EU Regulation 2018/1806 and national lists. Standard fee same as Schengen short-stay visa (€90 / ~USD 100 for adults, increased from €80 effective 11 June 2024). Not applicable to Schengen-area connecting flights without exit from international zone. Applications via VFS or Maltese diplomatic mission."
     },
     {
       "category": "other",
@@ -1096,6 +1126,21 @@
       "on_arrival": false,
       "official_url": "https://startup.residencymalta.gov.mt/",
       "notes": "Founders/co-founders: 3-year permit renewable for up to 5 further years. Core employees: 3-year permit renewable for 3 further years. Startup must be registered no longer than 7 years globally and operate in eligible sectors (manufacturing, software, health/biotech, eco, or other innovative activities). Minimum paid-up share capital: €25,000 (plus €10,000 per additional co-founder beyond 4; max 6 co-founders). Core employees must earn min €30,000 gross annually. Business plan must be approved by Malta Enterprise. Application fee: €750/adult applicant for 3-year permit + €300 residence card issuance + €690 Jobsplus employment licence. Jointly administered by Residency Malta Agency and Malta Enterprise. Certain nationalities ineligible."
+    },
+    {
+      "category": "work",
+      "name": "Single Permit (Residence and Employment)",
+      "purpose": "The primary combined residence-and-work permit authorising a third-country national to legally reside and take up employment in Malta for a period exceeding six months.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://identita.gov.mt/expatriates-unit-main-page/noneu-nationals/employment-related-permits/single-permit/",
+      "notes": "Regulated by Subsidiary Legislation 217.17. A single application procedure combining an employment licence and a residence permit for third-country nationals employed in Malta for over 6 months; renewable. Applications must be submitted by the employer through the Single Permit Online Portal (live-in carers may apply directly if endorsed by the employer). Requires health insurance with minimum €100,000 coverage for the entire period of stay. On approval an Approval in Principle letter is issued; the applicant then applies for an entry visa (National Type D) as applicable and attends the Expatriates Unit in Msida for biometric capture. The Key Employee Initiative, Specialist Employee Initiative and EU Blue Card are fast-track or specialised variants of this permit. Managed by Identità's Expatriates Unit."
     },
     {
       "category": "work",
@@ -1141,6 +1186,21 @@
       "on_arrival": false,
       "official_url": "https://identita.gov.mt/expatriates-unit-main-page/noneu-nationals/employment-related-permits/highly-qualified-individuals/blue-card/",
       "notes": "Issued under the EU Blue Card Directive. Holders may move between EU member states after 18 months of legal residence. Managed by Identità's Expatriates Unit. Full eligibility requirements and fee schedule available from Identità."
+    },
+    {
+      "category": "family",
+      "name": "Family Reunification Residence Permit (Family Member)",
+      "purpose": "Allows a third-country national legally residing in Malta (the sponsor) to be joined by eligible family members - spouse and minor children - from abroad.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://identita.gov.mt/expatriates-unit-main-page/noneu-nationals/non-employment-permits/family-member/",
+      "notes": "Regulated by Subsidiary Legislation 217.06 (Family Reunification Regulations). The sponsor must hold a valid Malta residence permit and have resided legally and continuously in Malta; an application may be submitted only after a minimum of 12 months from issuance of the sponsor's initial residence permit. Eligible family members: spouse (minimum age 21, monogamous marriage) and unmarried minor children under 18 (including legally adopted children). The sponsor must show stable and regular income (at least the national median annual wage plus 20% for each dependent), adequate accommodation, and health insurance with minimum €100,000 coverage per family member. Travel document must have at least 8 months' validity at submission. Applicants who do not meet the SL 217.06 criteria may still qualify under a separate Family Members Policy. Applications submitted online through the Expatriates Unit Portal. Managed by Identità's Expatriates Unit."
     },
     {
       "category": "diplomatic",

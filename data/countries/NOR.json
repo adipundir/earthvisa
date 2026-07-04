@@ -1086,13 +1086,13 @@
       "max_stay_days": 90,
       "validity_days": 180,
       "entries": "multiple",
-      "fee_usd": 90,
+      "fee_usd": 97,
       "processing_days_min": 15,
       "processing_days_max": 30,
       "online": false,
       "on_arrival": false,
       "official_url": "https://www.udi.no/en/want-to-apply/visit-and-holiday/",
-      "notes": "Norway processes Schengen visas through Norwegian embassies and consulates abroad. Fee is the standard Schengen fee (€80 / approx. USD 90). Must apply at Norwegian embassy/consulate or VFS Global service centres. Applicants must have valid travel insurance for minimum €30,000 cover. Must show proof of accommodation, sufficient funds, and intent to leave before visa expiry. 90 days is within any 180-day period. Citizens of visa-exempt countries do not need this visa."
+      "notes": "Norway processes Schengen visas through Norwegian embassies and consulates abroad. Fee is the standard Schengen short-stay fee (€90 / approx. USD 97), raised from €80 to €90 on 11 June 2024; children aged 6–11 pay €45. Must apply at Norwegian embassy/consulate or VFS Global service centres. Applicants must have valid travel insurance for minimum €30,000 cover. Must show proof of accommodation, sufficient funds, and intent to leave before visa expiry. 90 days is within any 180-day period. Citizens of visa-exempt countries do not need this visa."
     },
     {
       "category": "business",
@@ -1101,13 +1101,13 @@
       "max_stay_days": 90,
       "validity_days": 180,
       "entries": "multiple",
-      "fee_usd": 90,
+      "fee_usd": 97,
       "processing_days_min": 15,
       "processing_days_max": 30,
       "online": false,
       "on_arrival": false,
       "official_url": "https://www.udi.no/en/want-to-apply/visit-and-holiday/",
-      "notes": "Same Schengen C visa category as tourist. Applicant must provide an invitation letter from a Norwegian company, proof of business purpose, and sufficient financial means. Does not permit gainful employment in Norway."
+      "notes": "Same Schengen C visa category as tourist; standard short-stay fee €90 / approx. USD 97 (raised from €80 on 11 June 2024). Applicant must provide an invitation letter from a Norwegian company, proof of business purpose, and sufficient financial means. Does not permit gainful employment in Norway."
     },
     {
       "category": "work",
@@ -1303,6 +1303,66 @@
       "on_arrival": true,
       "official_url": "https://www.udi.no/en/word-definitions/persons-who-do-not-need-a-visa-to-visit-norway-/",
       "notes": "Countries whose diplomatic/service/official/special passport holders are visa-exempt include: Albania (diplomatic – accredited ambassadors only), Armenia (diplomatic), Azerbaijan (diplomatic), Bolivia (diplomatic + service), China (diplomatic), India (diplomatic), Indonesia (diplomatic + service), Jordan (diplomatic), Kazakhstan (diplomatic), Laos (diplomatic), Moldova (diplomatic), Morocco (diplomatic + service + special), North Macedonia (diplomatic + service), Pakistan (diplomatic + official), Philippines (diplomatic + service + special), South Africa (diplomatic + official), Thailand (diplomatic + official), Tunisia (diplomatic), Turkey (diplomatic + service + special), Ukraine (diplomatic), UAE (diplomatic + special). Conditions vary by country. Diplomatic passport holder must usually not be working at an embassy in Norway."
+    },
+    {
+      "category": "transit",
+      "name": "Airport Transit Visa (Schengen Visa Type A)",
+      "purpose": "Required for certain nationals changing planes at a Norwegian airport (e.g. Oslo Gardermoen) when travelling from one non-Schengen country to another non-Schengen country, without entering the Schengen area.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 97,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.udi.no/en/word-definitions/airport-transit-visa/",
+      "notes": "Only nationals of specified countries need an Airport Transit Visa (Type A); most transit passengers who remain airside do not need a visa. UDI instructs applicants to submit the application through the visa portal as a Schengen Type C application with an attached explanation letter stating it is for a Type A airport transit visa. Fee is the standard Schengen short-stay fee (€90 / approx. USD 97). Does not permit leaving the international transit zone or entering Norway."
+    },
+    {
+      "category": "working_holiday",
+      "name": "Working Holiday Residence Permit (Young Adults)",
+      "purpose": "Lets young adults from partner countries take an extended holiday in Norway and work part-time to help fund their stay.",
+      "max_stay_days": 730,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.udi.no/en/want-to-apply/work-immigration/exchange-programmes-culture-and-organisational-work/",
+      "notes": "Available to citizens of Argentina, Australia, Canada, Japan and New Zealand; Norway maintains separate per-nationality working-holiday pages under the Exchange Programmes section (Andorra also listed). Applicants must generally be aged 18 and not yet have turned 31 at the time of application (Canadians up to age 35). Granted for one year at a time, for a maximum of two years in total. Work is permitted but not for more than six months with the same employer. Must document at least NOK 15,488 per month (NOK 46,464 for the first three months) and take out medical/hospital insurance before entry."
+    },
+    {
+      "category": "work",
+      "name": "Residence Permit for Researchers with Own Funds",
+      "purpose": "For researchers holding a master's degree who will carry out PhD-level research at a Norwegian university, college or institute without being employed by a Norwegian employer.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": 120,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.udi.no/en/want-to-apply/work-immigration/vocational-training-and-research/researcher-with-own-funds/",
+      "notes": "Funding may come from a foreign employer, a grant (from Norway or abroad) or own funds; requires at least NOK 15,488 per month (NOK 170,368 per year). The permit also allows part-time work of up to 20 hours per week (including remote work) plus full-time during holidays. Time on this permit does NOT count toward permanent residence. UDI lists case processing as up to about 4 months (as of 2026). Researchers who are employed by a Norwegian institution instead apply under the skilled worker route."
+    },
+    {
+      "category": "work",
+      "name": "Residence Permit for Artists, Musicians and Performers",
+      "purpose": "For performers, artists, musicians and their support staff who have a concrete engagement to work in Norway for more than 14 days.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.udi.no/en/want-to-apply/work-immigration/exchange-programmes-culture-and-organisational-work/artist-musician-or-performer/",
+      "notes": "Engagements of up to 14 days do not require a permit (only notification to the police). For longer engagements a permit is granted for a maximum of one year at a time. Requires a concrete offer of employment for a specific, continuous period, with pay meeting the collective agreement/minimum for the industry. After a permit, the holder must generally stay outside Norway for three months before a new permit can be granted."
     }
   ],
   "sources_checked": [

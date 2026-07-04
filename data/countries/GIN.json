@@ -39,19 +39,19 @@
       "notes": "Applied online via paf.gov.gn; collected at border arrival counter with biometric registration. Requires valid passport, onward ticket, and Yellow Fever certificate."
     },
     {
-      "category": "other",
-      "name": "Transborderment Visa (Visa de Transbordement)",
-      "purpose": "Long-validity cross-border movement visa, likely for frequent cross-border travelers or regional transit. Valid for up to five years.",
-      "max_stay_days": null,
-      "validity_days": 1825,
-      "entries": "multiple",
-      "fee_usd": 150,
+      "category": "transit",
+      "name": "Transbordement Visa (Visa de Transbordement / VTB)",
+      "purpose": "For travelers transiting or transshipping through Guinea to a third country; issued on presentation of an onward ticket and, where applicable, a visa for the country of final destination.",
+      "max_stay_days": 3,
+      "validity_days": 5,
+      "entries": "single",
+      "fee_usd": 50,
       "processing_days_min": null,
       "processing_days_max": 3,
       "online": true,
       "on_arrival": true,
       "official_url": "https://www.paf.gov.gn/visa",
-      "notes": "Applied online via paf.gov.gn; collected at border arrival counter. Validity up to 5 years. Requires valid passport, return ticket, and Yellow Fever certificate. Individual stay duration per entry not specified on official portal."
+      "notes": "Corrected 2026-07-04: the prior record incorrectly listed this as a 5-year, USD 150 multiple-entry visa (it had been conflated with the VESRM Multiple Entry Visa). Per the official paf.gov.gn e-visa portal, the Transbordement/Transit visa (VTB) fee is USD 50 with a maximum stay not exceeding three days (DCPAF states validity of 3 to 5 days, beyond which a short-stay visa is required). Distinct from the general Transit Visa, this is the transshipment visa for travelers transferring between carriers/vessels; both are USD 50 for a maximum 3-day stay on the official portal. Requires valid passport, onward ticket, and Yellow Fever certificate. Applied online via paf.gov.gn; collected at border arrival counter."
     },
     {
       "category": "work",
@@ -66,7 +66,22 @@
       "online": true,
       "on_arrival": true,
       "official_url": "https://www.paf.gov.gn/visa",
-      "notes": "Applied online via paf.gov.gn; collected at border arrival counter. Requires valid passport, copy of any prior visa, employment contract or equivalent supporting documentation, and Yellow Fever certificate. Non-ECOWAS foreign employers hiring foreign nationals must also obtain prior authorization from AGUIPE (Guinea's Employment Promotion Agency)."
+      "notes": "Applied online via paf.gov.gn; collected at border arrival counter. Requires valid passport, copy of any prior visa, employment contract or equivalent supporting documentation, and Yellow Fever certificate. Non-ECOWAS foreign employers hiring foreign nationals must also obtain prior authorization from AGUIPE (Guinea's Employment Promotion Agency). Per the official PAF/DCPAF visa framework, the VLS is the long-stay category used to settle in Guinea for employment, business, family reunion, or study - Guinea does not issue separate business, student, or family visas; those purposes are documented within the VLS (employment contract, professional authorization, marriage deed, or student certificate of registration)."
+    },
+    {
+      "category": "other",
+      "name": "Multiple Entry Visa (Visa de Séjour à Entrées Multiples / VESRM)",
+      "purpose": "For nationals of special treaty countries holding a bilateral visa agreement with Guinea; permits repeated entries over a multi-year period.",
+      "max_stay_days": null,
+      "validity_days": 1825,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.paf.gov.gn/visa",
+      "notes": "Per Guinea's Police aux Frontières / DCPAF official visa framework (paf.gov.gn DNPAF visa page), the VESRM is issued only to nationals of countries holding a special bilateral treaty with Guinea; its validity varies between 3 and 5 years depending on the specific agreement (validity_days shown is the 5-year upper bound). Not a standard selectable option on the e-visa application form; arranged under the terms of the bilateral commitment. Fee not published on the official portal."
     },
     {
       "category": "diplomatic",

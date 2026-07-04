@@ -1002,15 +1002,15 @@
       "name": "Residencia Temporaria (Temporary Residency)",
       "purpose": "For foreign nationals who intend to reside and work in Paraguay temporarily, under an employment contract or similar arrangement.",
       "max_stay_days": null,
-      "validity_days": null,
+      "validity_days": 730,
       "entries": "multiple",
       "fee_usd": null,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://www2.mre.gov.py/index.php/tramites/residencia-en-paraguay",
-      "notes": "Requires employment promise with salary details, employer credentials, and technical/educational certification. After obtaining temporary residency, holders may progress to permanent residency. Processed through Paraguayan consulates or immigration authority (migraciones.gov.py)."
+      "official_url": "https://migraciones.gov.py/residencia-temporal/",
+      "notes": "Governed by Migration Law N°6984/2022. Valid for up to 2 years (730 days), renewable for equal periods, and is a prerequisite for later permanent residency. Requires employment promise with salary details, employer credentials, and technical/educational certification (or other proof of lawful activity/solvency). Processed through the immigration authority (migraciones.gov.py); the MRE consular residency page (www2.mre.gov.py/index.php/tramites/residencia-en-paraguay) describes the same category."
     },
     {
       "category": "retirement",
@@ -1131,6 +1131,51 @@
       "on_arrival": true,
       "official_url": "https://www.mre.gov.py/visasenlinea/tipo-visa",
       "notes": "Listed as 'excepcional' (exceptional) in the MRE online visa portal under arrival visas. Available exclusively at Asunción's Silvio Pettirossi International Airport. Only applicable to certain nationalities; the January 2026 official migraciones.gov.py document does not confirm specific countries for visa-on-arrival - previously cited countries (Qatar, Vietnam, Thailand, Indonesia) are not confirmed by the 2026 official PDF. MRE consulate sub-pages list Qatar and Oman as VOA - this discrepancy is tracked in data_quality.gaps."
+    },
+    {
+      "category": "student",
+      "name": "Residencia Temporal – Estudiante",
+      "purpose": "Temporary-residence pathway for foreign nationals who come to Paraguay to study (university or other regular studies).",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migraciones.gov.py/residencia-temporal/",
+      "notes": "Paraguay has no separate stand-alone 'student visa'; students regularise their stay through Temporary Residency under Migration Law N°6984/2022, valid up to 2 years and renewable. Students demonstrate their basis by presenting a study certificate stating they are a regular student, issued by the faculty, plus proof of payment of tuition/monthly fees (per official migraciones.gov.py requirements). Documents in foreign languages must be translated to Spanish by a certified public translator."
+    },
+    {
+      "category": "other",
+      "name": "Residencia Temporaria MERCOSUR",
+      "purpose": "Temporary residency for nationals of MERCOSUR member and associate states wishing to settle in Paraguay to carry out lawful activities.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migraciones.gov.py/residencia-temporaria-mercosur/",
+      "notes": "Under the MERCOSUR Residence Agreement (implemented via Migration Law N°6984/2022), citizens of Argentina, Brazil, Uruguay, Bolivia, Chile, Peru, Colombia and Ecuador may obtain temporary residency valid for 2 years (not renewable), which can then be converted to MERCOSUR permanent residency. Nationality-based category requiring proof of nationality, criminal-record clearances and the standard documentary set; no employment contract required."
+    },
+    {
+      "category": "other",
+      "name": "Residencia Permanente MERCOSUR",
+      "purpose": "Permanent residency for nationals of MERCOSUR member and associate states who wish to establish themselves permanently in Paraguay.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://migraciones.gov.py/residencia-permanente-mercosur/",
+      "notes": "Authorization granted to citizens of countries subscribed to the MERCOSUR Residence Agreement (Argentina, Brazil, Uruguay, Bolivia, Chile, Peru, Colombia, Ecuador) who wish to reside permanently in Paraguay to carry out lawful activities. The applicant submits the permanent-residency application starting 90 days before the expiration of their MERCOSUR Temporary Admission card. Governed by Migration Law N°6984/2022; path to naturalization after 3 years of permanent residency."
     }
   ],
   "sources_checked": [

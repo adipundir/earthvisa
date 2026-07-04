@@ -1375,16 +1375,16 @@
       "category": "business",
       "name": "Entry Visa (Business)",
       "purpose": "Permits foreign nationals from visa-required countries to enter Jamaica for business meetings, conferences, or commercial activities. Issued by Jamaican consular posts abroad.",
-      "max_stay_days": null,
+      "max_stay_days": 30,
       "validity_days": null,
       "entries": null,
       "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
+      "processing_days_min": 7,
+      "processing_days_max": 10,
       "online": false,
       "on_arrival": false,
       "official_url": "https://www.pica.gov.jm/immigration/entry-visa-requirements",
-      "notes": "Jamaica does not publish a separately named business visa distinct from the general entry visa. Business visitors from visa-exempt countries do not require a visa. Multiple-entry visa fees vary by nationality (e.g. USA: JMD 2,000; France: JMD 1,600; Mexico: JMD 1,500)."
+      "notes": "Jamaica does not publish a separately named business visa distinct from the general entry visa. Business visitors from visa-exempt countries do not require a visa. Per the Consulate General of Jamaica (Seattle), each business visit should not exceed 30 days, and cumulative business stays should not exceed 180 days within a calendar year. Consular processing at a Jamaican embassy/consulate is typically 7-10 business days. Multiple-entry visa fees vary by nationality (e.g. USA: JMD 2,000; France: JMD 1,600; Mexico: JMD 1,500)."
     },
     {
       "category": "business",
@@ -1565,6 +1565,51 @@
       "on_arrival": false,
       "official_url": "https://www.pica.gov.jm/immigration/fees",
       "notes": "Fee is JMD 500–JMD 2,000 depending on circumstances. Applies specifically to non-Commonwealth nationals who hold permanent residence or long-term status in Jamaica."
+    },
+    {
+      "category": "student",
+      "name": "Student Visa (Student Entry Visa)",
+      "purpose": "Entry visa for foreign nationals from visa-required countries admitted to study at a Jamaican educational institution; grants entry to attend school. Distinct from the in-country Extension of Stay (Student).",
+      "max_stay_days": 365,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://congenjamaica-ny.org/student-visa/",
+      "notes": "Applied for at a Jamaican embassy/consulate using Visa Application Form J before travel; not available online or on arrival. Students with a confirmed acceptance letter are landed for one (1) year on each entry; those whose enrolment is still being processed initially receive a two-month landing, extendable to 12 months once the acceptance letter is provided. Requires a return ticket valid for one year and proof of adequate funds. Consular/administrative fee US$20 plus the nationality-based visa fee at the NY consulate. Students over 16 staying 6+ months must register with PICA."
+    },
+    {
+      "category": "work",
+      "name": "Work Visa (Entry Visa for Employment)",
+      "purpose": "Entry visa for foreign nationals from visa-required countries who have been approved to work in Jamaica; grants entry to take up employment. Distinct from the work permit itself.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://congenjamaica-ny.org/work-visa/",
+      "notes": "The visa grants entry; a separate work permit (or work permit exemption) issued by the Ministry of Labour and Social Security authorizes the employment and must be approved first. Applied for at a Jamaican embassy/consulate using Visa Application Form J; requires the Ministry of Labour work-permit approval letter. Processing 7-10 business days. Consular/administrative fee US$20 plus the nationality-based visa fee at the NY consulate. No e-visa; not available on arrival."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For visa-required nationals passing through Jamaica en route to another destination, and for seamen travelling to join or leave a ship.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 10,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://congenjamaica-ny.org/foreign-seamen/",
+      "notes": "Nationals of visa-exempt countries do not need a transit visa. Seamen who remain with their ship while it is in port do not require a visa, but seamen travelling to Jamaica to join a ship, or passing through Jamaica to join a ship abroad, require a transit visa unless visa-exempt (per the Consulate General of Jamaica). Applied for at a Jamaican embassy/consulate using Visa Application Form J. No e-visa; not available on arrival."
     }
   ],
   "outbound_official": {

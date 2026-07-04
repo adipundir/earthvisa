@@ -348,8 +348,8 @@
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/",
-      "notes": "Specific minimum income thresholds are not published on the official SERMIG site; third-party sources cite approximately USD 1,500-2,000/month but this could not be verified from official sources. Valid for up to 2 years, renewable. Path to permanent residency (Residencia Definitiva) after 24 months."
+      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/retired-and-leasers/",
+      "notes": "Official SERMIG page states income sufficiency is assessed 'according to the parameters estimated by the Ministry of Social Development and Family' rather than a fixed published figure; third-party sources cite approximately USD 1,500-2,000/month but this exact amount is not published officially. Retirees submit a recent pension receipt; leasers (rentistas) submit lease contracts or asset-ownership certificates with income verification. Valid for up to 2 years, renewable. Path to permanent residency (Residencia Definitiva) after 24 months."
     },
     {
       "category": "family",
@@ -438,8 +438,8 @@
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/",
-      "notes": "Valid for up to 2 years, renewable. Must be members of recognized faiths and denominations. Part of the 15 Residencia Temporal subcategories under Ley N°21.325."
+      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/religious/",
+      "notes": "Valid for up to 2 years, renewable. Applicant must belong to a religious entity legally constituted in Chile under Law N°19.638. Requires an approval report from the National Office of Religious Affairs and a legal-personality certificate. Apply from outside Chile via SERMIG digital portal. One of the 15 Residencia Temporal subcategories under Ley N°21.325."
     },
     {
       "category": "other",
@@ -458,8 +458,23 @@
     },
     {
       "category": "other",
-      "name": "Residencia Temporal - Gestión de Negocios (Business Management)",
-      "purpose": "Permits foreign nationals conducting multi-entry commercial operations and business management activities in Chile to obtain temporary residence.",
+      "name": "Residencia Temporal - Gestión de Negocios (Multi-Entry Business Management)",
+      "purpose": "For foreign business executives and managers who must regularly enter Chile to handle management or executive duties for companies and investments operating in the country.",
+      "max_stay_days": 180,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/businesses/",
+      "notes": "Distinct from the investor subcategory; covers executives conducting commercial operations that require regular multi-entry presence. Presence in Chile may not exceed six months per calendar year (Art. 72 of Ley N°21.325); permit term set by supreme decree. Requires an employer letter specifying role and income (apostilled/legalized) plus documentation of business interests. Apply from outside Chile via SERMIG digital portal."
+    },
+    {
+      "category": "other",
+      "name": "Residencia Temporal - Personas Amparadas por Acuerdos Internacionales (Persons Covered by International Agreements)",
+      "purpose": "Temporary residence for foreign nationals covered by a bilateral or multilateral treaty in force with Chile, including Working Holiday participants and Free Trade Agreement business persons.",
       "max_stay_days": null,
       "validity_days": 730,
       "entries": "multiple",
@@ -468,8 +483,53 @@
       "processing_days_max": null,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/",
-      "notes": "Distinct from the investor subcategory; covers those conducting commercial operations that require regular multi-entry presence. Valid for up to 2 years. Part of the 15 Residencia Temporal subcategories under Ley N°21.325."
+      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/international-agreements/",
+      "notes": "Umbrella subcategory distinct from the Mercosur international-reciprocity route. Covers Working Holiday agreements (~20 partner countries incl. Australia, Canada, Japan, New Zealand) and the temporary-entry-for-business-persons chapters of Free Trade Agreements (Australia, Brazil, Canada, Central America, Colombia, South Korea, USA, Japan, Mexico, Peru, CPTPP). Validity, stay length, and fees are those established in the specific agreement/treaty. Working Holiday details at consulado.gob.cl/workingholiday. Apply from outside Chile via SERMIG digital portal."
+    },
+    {
+      "category": "other",
+      "name": "Residencia Temporal - Ex Titulares de Residencia Definitiva (Former Holders of Permanent Residency)",
+      "purpose": "Allows foreign nationals whose Residencia Definitiva (or former Permanencia Definitiva) was revoked to regain temporary residence status.",
+      "max_stay_days": null,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/former-holders-of-residencia-definitiva/",
+      "notes": "For those whose permanent residency was tacitly revoked under Art. 43 of Decreto Ley N°1.094 (1975) or Art. 83 of Ley N°21.325 (e.g. prolonged absence from Chile). Requires passport valid at least 1 year, criminal-record certificate, and proof of sufficient economic means. Family members may apply as dependents (Art. 74). Apply from outside Chile via SERMIG digital portal using ClaveÚnica."
+    },
+    {
+      "category": "other",
+      "name": "Residencia Temporal - Personas bajo Custodia de Gendarmería de Chile (Persons under Custody of Gendarmería)",
+      "purpose": "Regularizes the residence status of foreign nationals under the authority and control of Chile's prison service.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/gendarmeria-custody/",
+      "notes": "Covers foreigners serving a custodial sentence (including prison furlough), under pretrial detention, on probation, or serving alternative sentences under Law N°18.216. Applications for detained/sentenced persons are filed by Gendarmería de Chile; those on parole or alternative sentences apply via SERMIG's portal with prison-official guidance. Not a traveler-facing visa - included for completeness of the statutory subcategory list."
+    },
+    {
+      "category": "other",
+      "name": "Residencia Temporal - Extranjeros por Orden de Tribunales de Justicia (Persons Required by Order of Courts)",
+      "purpose": "Permits a foreign national to remain in Chile when a Chilean court orders their presence for the proper development of judicial proceedings in which they are a party.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://serviciomigraciones.cl/en/residencia-temporal-permit/subcategories/courts-of-justice/",
+      "notes": "Granted for as long as the court deems necessary for the judicial process (e.g. under a travel ban or transfer order). The application is filed by the court official issuing the order through SERMIG's digital platform, accompanied by a court certificate of proceedings. Not a traveler-facing visa - included for completeness of the statutory subcategory list."
     },
     {
       "category": "diplomatic",

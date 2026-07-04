@@ -384,17 +384,17 @@
     {
       "category": "work",
       "name": "Employment Visa",
-      "purpose": "Authorizes foreign nationals to work in Botswana under an employment contract. Requires a labour department waiver, employment contract, and relevant qualifications.",
+      "purpose": "Authorizes non-citizens to travel to Botswana for employment, internship, research, work, or voluntary services. A valid work permit and residence permit must already be held.",
       "max_stay_days": null,
       "validity_days": null,
       "entries": null,
       "fee_usd": null,
-      "processing_days_min": 21,
-      "processing_days_max": 21,
+      "processing_days_min": 7,
+      "processing_days_max": 14,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://www.botswanaembassy.org/page/guidelines-for-completing-a-visa-application",
-      "notes": "Fee not separately listed in the standard visa fee schedule on the Embassy page. A separate Work Permit is also required from the Department of Labour and Social Security (gov.bw). Processing is stated as 21 working days for the visa stage."
+      "official_url": "https://www.gov.bw/visa-applications/visa-application-employment-visa",
+      "notes": "The Employment Visa is the entry visa; a separate Work Permit and Residence Permit are prerequisites. The dedicated gov.bw Employment Visa page states processing of 7-14 working days and does not publish a fee. (official_url updated July 2026 from the generic Embassy guidelines page to the dedicated gov.bw Employment Visa application page; the Embassy fee schedule does not list a separate employment-visa fee.)"
     },
     {
       "category": "investment",
@@ -425,6 +425,36 @@
       "on_arrival": false,
       "official_url": "https://www.botswanaembassy.org/page/guidelines-for-completing-a-visa-application",
       "notes": "Processing is stated as 21 working days. The 5-year investor visa is the longest validity category listed on the Embassy fee schedule."
+    },
+    {
+      "category": "transit",
+      "name": "Transit Visa",
+      "purpose": "For travellers passing through Botswana to reach an onward destination, permitting a short stay while in transit.",
+      "max_stay_days": 7,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gov.bw/visa-applications/visa-application-transit-visa",
+      "notes": "No visa is required if departing on the same aircraft from the same airport. Maximum stay is 7 days; the visa does not permit work or formal study/training and cannot be extended. Transporters and tour operators (holding a cross-border tour operating licence) may transit for up to 7 days per entry. Requires proof of a confirmed onward booking / continuing journey within 3 days (14 days for transporters). Fee not published on the gov.bw page; processing 7-14 working days."
+    },
+    {
+      "category": "student",
+      "name": "Study Visa",
+      "purpose": "For non-citizens who have been accepted by an educational institution in Botswana and require a visa to enter to study.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": 7,
+      "processing_days_max": 14,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.gov.bw/visa-applications/visa-application-study-visa",
+      "notes": "The Study Visa is the entry visa; a separate Study/Research Permit is a prerequisite to study. Required documents include a letter of acceptance from the educational institution, the study/research permit, and proof of sponsorship. Fee not published on the gov.bw page; processing 7-14 working days."
     },
     {
       "category": "other",

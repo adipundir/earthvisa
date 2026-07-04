@@ -821,9 +821,9 @@
     },
     {
       "category": "medical",
-      "name": "Medical / Study Visa",
-      "purpose": "Entry for foreign nationals seeking medical treatment or pursuing academic studies in Algeria.",
-      "max_stay_days": null,
+      "name": "Medical Visa",
+      "purpose": "Entry for foreign nationals seeking medical treatment in Algeria.",
+      "max_stay_days": 90,
       "validity_days": null,
       "entries": "multiple",
       "fee_usd": null,
@@ -833,7 +833,37 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
-      "notes": "Covers both medical treatment and student study purposes. Requires supporting documentation (hospital/clinic invitation or university admission letter). The consulate groups 'medical' and 'study' into the same visa category."
+      "notes": "Distinct official category - the Algerian Ministry of Foreign Affairs lists 'medical' and 'study' as separate visa types. Requires supporting documentation such as a hospital/clinic admission or invitation. Must apply at an Algerian embassy/consulate before travel; no e-visa. Chancery fee varies by nationality under the principle of reciprocity; the £85 shown is the UK consulate rate. Max stay 90 days per entry."
+    },
+    {
+      "category": "student",
+      "name": "Study Visa",
+      "purpose": "Entry for foreign nationals enrolled at an Algerian-approved educational establishment or holding a scholarship, to pursue studies in Algeria.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria",
+      "notes": "Distinct official category per the Algerian MFA (previously merged with 'medical' in this dataset). Requires a certificate of registration in a public or private educational establishment approved by the Algerian State, a scholarship certificate issued by Algerian or home-country authorities, or proof of the means to pay for studies and stay. Must apply at an Algerian embassy/consulate before travel; no e-visa. Chancery fee varies by nationality under the principle of reciprocity. General framework: validity 90/180 days, 1 year or 2 years; max stay 90 days per entry; longer study stays are continued in-country via a residence permit."
+    },
+    {
+      "category": "other",
+      "name": "Press Visa",
+      "purpose": "Entry for journalists and media professionals traveling to Algeria for professional reporting or to cover events.",
+      "max_stay_days": 90,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria",
+      "notes": "Distinct official category for members of the media. Applicants must submit a letter from their employer requesting a press visa (accreditation) on their behalf; foreign-press accreditation is coordinated by the Ministry of Foreign Affairs (mfa.gov.dz/services-for-foreigners/accreditation-of-journalists). Must apply at an Algerian embassy/consulate before travel; no e-visa. Chancery fee varies by nationality under the principle of reciprocity."
     },
     {
       "category": "transit",

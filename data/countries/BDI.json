@@ -116,7 +116,7 @@
     {
       "category": "other",
       "name": "Visa d'Établissement (Establishment Visa / Long-Stay Residence Permit)",
-      "purpose": "For foreign nationals and their dependents who wish to reside and establish themselves in Burundi for an extended period of up to 2 years.",
+      "purpose": "For foreign nationals and their dependents who wish to reside and establish themselves in Burundi for an extended period of up to 2 years. This is the residence pathway used by employed foreigners after their initial entry visa.",
       "max_stay_days": 730,
       "validity_days": 730,
       "entries": "multiple",
@@ -125,8 +125,8 @@
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://migration.gov.bi/Apply/step1/1",
-      "notes": "Fee: $500 USD. Valid 2 years. Issued at CGM only. A courtesy establishment visa (free, 2 years) and diplomatic establishment visa (free, 3 years) also exist for qualifying holders of diplomatic/official status - these require a note verbale from the relevant organization and a letter from the Ministry of Home Affairs."
+      "official_url": "https://www.mae.gov.bi/visa-detablissement/",
+      "notes": "Fee: $500 USD. Valid 2 years. Issued at CGM only. Requires at least 6 months of prior residence in Burundi, a request letter approved by the Commissioner General of Migrations, passport copy, current visa copy, and passport photo. For employed foreigners (the work-residence pathway) additional documents are required per the official MAE page: a work contract (contrat de travail), service certificate (attestation de service) and engagement deed (acte d'engagement) for company employees, plus a tax identification number (NIF) and business registration (registre du commerce) for any profit-generating activity. A separate free courtesy establishment visa (2 years) and diplomatic establishment visa (3 years) also exist - see their dedicated entries."
     },
     {
       "category": "other",
@@ -172,6 +172,51 @@
       "on_arrival": false,
       "official_url": "https://migration.gov.bi/Apply/step1/1",
       "notes": "Free of charge. Valid 1 week. Issued at CGM or entry points. Intended for lost passport holders and Burundian citizens in exceptional circumstances."
+    },
+    {
+      "category": "work",
+      "name": "Permis de Travail (Work Permit)",
+      "purpose": "Work authorization for foreign nationals taking up employment with a registered employer in Burundi.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": null,
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mae.gov.bi/en/work-permit/",
+      "notes": "The Ministry of Foreign Affairs maintains a dedicated official 'Work Permit' page, confirming a distinct labour-authorization category for foreign workers separate from the residence (establishment) visa. Employment-linked foreigners also obtain a Visa d'etablissement (residence, $500, 2 years) which for employees requires a work contract, service certificate, engagement deed, tax ID (NIF) and business registration. Fee, exact validity, and number of entries are not published on the official page and are left null rather than guessed."
+    },
+    {
+      "category": "student",
+      "name": "Visa Etudiant RDC (DRC Student Visa)",
+      "purpose": "For students from the Democratic Republic of Congo enrolled at schools or institutions in Burundi.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 25,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://migration.gov.bi/Apply/step1/1",
+      "notes": "Listed as a distinct category on the official CGM application portal: $25 USD, annual, multiple entry. DRC is a CEPGL (Great Lakes) member; unlike the free EAC study visa, DRC students pay $25 and the visa expires on December 31st of the year of issue."
+    },
+    {
+      "category": "other",
+      "name": "Visa d'Etablissement de Courtoisie (Courtesy Establishment Visa)",
+      "purpose": "For staff of organizations (e.g. international organizations / NGOs) granted courtesy status to reside in Burundi, and their minor children.",
+      "max_stay_days": 730,
+      "validity_days": 730,
+      "entries": "multiple",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.mae.gov.bi/en/free-visa/",
+      "notes": "Free of charge, valid 2 years, per the official MAE free-visa page. Requires a note verbale from the organization addressed to the Ministry of Foreign Affairs, a letter from the Ministry of Interior/Home Affairs, passport copy, current visa copy, and passport photo. The MAE free-visa page also lists free transfer and certified-copy (for minor children) variants of this visa. Distinct from the Diplomatic Establishment Visa, which is reserved for diplomatic passport holders (3 years)."
     }
   ],
   "visa_policy": {
