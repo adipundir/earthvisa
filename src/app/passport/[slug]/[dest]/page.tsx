@@ -3,7 +3,7 @@ import { join } from "node:path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { dataset, nameFor } from "@/lib/dataset";
+import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { compute, LEVEL_LABEL } from "@/lib/compute";
 import type { AccessLevel } from "@/lib/types";
 import { TOP_NATIONALITIES, TOP_DESTINATIONS, corridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
@@ -338,10 +338,13 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 row
                 className="mb-3 h-8 lg:hidden"
               />
-              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
-                {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
-                <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
-                  {umrah ? "Tourist & Umrah — 2026 Requirements" : "2026 Requirements, Fees & Documents"}
+              <h1 className="flex items-center gap-3 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+                <span className="text-4xl leading-none">{flagFor(d.iso3)}</span>
+                <span>
+                  {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
+                  <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
+                    {umrah ? "Tourist & Umrah — 2026 Requirements" : "2026 Requirements, Fees & Documents"}
+                  </span>
                 </span>
               </h1>
               {aliasNote && (
