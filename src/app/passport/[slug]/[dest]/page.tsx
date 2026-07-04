@@ -206,6 +206,17 @@ function Badge({ cls, children }: { cls: string; children: React.ReactNode }) {
   return <span className={`mono inline-flex items-center rounded px-2.5 py-1 text-[12px] font-semibold uppercase tracking-[0.12em] ring-1 ${cls}`}>{children}</span>;
 }
 
+// A real link to the actual application portal, not just a citation - this is
+// the "go do the thing" action, distinct from the small source-citation links
+// shown elsewhere on the page.
+function ApplyLink({ href, label = "Apply here" }: { href: string; label?: string }) {
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className="font-medium text-stamp underline-offset-2 hover:underline">
+      {label} ↗
+    </a>
+  );
+}
+
 export default async function CorridorPage({ params }: { params: Promise<{ slug: string; dest: string }> }) {
   const { slug, dest } = await params;
   const n = slugToCountry(slug);
@@ -378,21 +389,46 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
         <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
           {/* What you need to do */}
+          {(() => {
+            const fallbackApplyUrl = visaTypes.find((v) => v.official_url)?.official_url;
+            return (
           <section className="mb-10">
             <h2 className="font-display text-xl font-semibold text-ink">
               {need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
             </h2>
             <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-soft">
               {s.kind === "visa_free" && <li>→ Travel with just your valid {nd} passport. No visa or prior application needed.</li>}
-              {s.kind === "visa_on_arrival" && <li>→ Obtain your visa at the {d.name} border/airport on arrival; carry the required fee and documents.</li>}
-              {s.kind === "eta" && <li>→ Apply online for the eTA before you travel; approval is usually quick.</li>}
-              {s.kind === "e_visa" && <li>→ Apply for the e-Visa online before travel and carry the approval.</li>}
-              {s.kind === "visa_required" && <li>→ Apply for a visa at the {d.name} embassy/consulate or official visa application centre before travelling.</li>}
+              {s.kind === "visa_on_arrival" && (
+                <li>
+                  → Obtain your visa at the {d.name} border/airport on arrival; carry the required fee and documents.
+                  {"sourceUrl" in s && s.sourceUrl && <>{" "}<ApplyLink href={s.sourceUrl} /></>}
+                </li>
+              )}
+              {s.kind === "eta" && (
+                <li>
+                  → Apply online for the eTA before you travel; approval is usually quick.
+                  {"sourceUrl" in s && s.sourceUrl && <>{" "}<ApplyLink href={s.sourceUrl} /></>}
+                </li>
+              )}
+              {s.kind === "e_visa" && (
+                <li>
+                  → Apply for the e-Visa online before travel and carry the approval.
+                  {"sourceUrl" in s && s.sourceUrl && <>{" "}<ApplyLink href={s.sourceUrl} /></>}
+                </li>
+              )}
+              {s.kind === "visa_required" && (
+                <li>
+                  → Apply for a visa at the {d.name} embassy/consulate or official visa application centre before travelling.
+                  {fallbackApplyUrl && <>{" "}<ApplyLink href={fallbackApplyUrl} /></>}
+                </li>
+              )}
               {hasVfs && (
                 <li>→ <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " — only needed if you apply for a longer-stay visa" : ", by visa type"}.</li>
               )}
             </ul>
           </section>
+            );
+          })()}
 
           {/* Official visa fees (crawled from government sources) */}
           {feeList.length > 0 && (
@@ -486,7 +522,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             <section className="mb-10 border-t border-line pt-8">
               <h2 className="font-display text-xl font-semibold text-ink">{d.name} visa types</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {visaTypes.slice(0, 6).map((v, i) => (
+                {visaTypes.map((v, i) => (
                   <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
                     <p className="font-display text-[14px] font-semibold text-ink">{v.name}</p>
                     {v.purpose && <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
@@ -497,6 +533,11 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                       {v.fee_usd != null && feeList.length === 0 && <span>~${v.fee_usd}</span>}
                       {v.online && <span className="text-vfree">online</span>}
                     </div>
+                    {v.official_url && (
+                      <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
+                        Apply here ↗
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
