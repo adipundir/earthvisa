@@ -175,6 +175,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
   const voaCount = accessByLevel.visa_on_arrival.length;
   const etaCount = accessByLevel.eta.length + accessByLevel.e_visa.length;
   const totalWithAccess = vfCount + voaCount + etaCount;
+  // Everyone else needs a visa in advance. This is a complement of the same
+  // official per-destination data behind every other stat on this page (each
+  // destination's own visa_free/VoA/eTA/e-Visa lists already fold in bloc and
+  // freedom-of-movement grants), not a separate inferred figure.
+  const visaRequiredCount = Math.max(0, dataset.allCountries.length - 1 - totalWithAccess);
 
   const openness =
     vfCount >= 100
@@ -241,7 +246,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             name: `How many countries can visit ${country.name} without a visa?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `${vfCount} nationalities can visit ${country.name} completely visa-free in 2026. Additionally, ${voaCount} countries can obtain a visa on arrival${etaCount > 0 ? `, and ${etaCount} can enter via eTA or e-Visa` : ""} - bringing the total to ${totalWithAccess} nationalities with streamlined entry to ${country.name}.`,
+              text: `${vfCount} nationalities can visit ${country.name} completely visa-free in 2026. Additionally, ${voaCount} countries can obtain a visa on arrival${etaCount > 0 ? `, and ${etaCount} can enter via eTA or e-Visa` : ""} - bringing the total to ${totalWithAccess} nationalities with streamlined entry to ${country.name}. The remaining ${visaRequiredCount} nationalities must apply for a visa in advance at an embassy, consulate, or official visa application centre before travelling.`,
             },
           },
           {
@@ -315,12 +320,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             )}
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-5">
               {[
                 { k: "Visa-free nationalities", v: vfCount },
                 { k: "Visa on arrival", v: voaCount },
                 { k: "eTA / e-Visa", v: etaCount },
                 { k: "Total streamlined", v: totalWithAccess },
+                { k: "Visa required in advance", v: visaRequiredCount },
               ].map(({ k, v }) => (
                 <div key={k}>
                   <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
@@ -349,7 +355,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </>
               )}
               {country.name}&apos;s visa policy is{" "}
-              <strong className="text-ink">{openness}</strong> relative to other destinations worldwide.
+              <strong className="text-ink">{openness}</strong> relative to other destinations worldwide.{" "}
+              {visaRequiredCount > 0 && (
+                <>
+                  Citizens of the remaining <strong className="text-ink">{visaRequiredCount} countries</strong> need to apply for a visa in advance before visiting {country.name}.
+                </>
+              )}
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               If your nationality is not listed as visa-free or visa on arrival, you will need to apply for a{" "}
@@ -508,7 +519,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 },
                 {
                   q: `How many countries can visit ${country.name} without a visa?`,
-                  a: `${vfCount} nationalities can visit ${country.name} completely visa-free in 2026. Additionally, ${voaCount} countries can obtain a visa on arrival${etaCount > 0 ? `, and ${etaCount} can enter via eTA or e-Visa` : ""} - bringing the total to ${totalWithAccess} nationalities with streamlined entry to ${country.name}.`,
+                  a: `${vfCount} nationalities can visit ${country.name} completely visa-free in 2026. Additionally, ${voaCount} countries can obtain a visa on arrival${etaCount > 0 ? `, and ${etaCount} can enter via eTA or e-Visa` : ""} - bringing the total to ${totalWithAccess} nationalities with streamlined entry to ${country.name}. The remaining ${visaRequiredCount} nationalities must apply for a visa in advance at an embassy, consulate, or official visa application centre before travelling.`,
                 },
                 {
                   q: `How do I apply for a ${country.name} tourist visa?`,
