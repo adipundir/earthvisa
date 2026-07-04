@@ -226,55 +226,61 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="min-h-screen">
         <header className="border-b border-line bg-paper-2/50">
-          <div className="relative mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
-              <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
-              <span>/</span>
-              <Link href={`/passport/${slug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">{n.name}</Link>
-              <span>/</span>
-              <span className="text-ink-soft">{d.name}</span>
-            </nav>
-            <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl lg:pr-52">
-              {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
-              <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
-                {umrah ? "Tourist & Umrah - 2026 Requirements" : "2026 Requirements, Fees & Documents"}
-              </span>
-            </h1>
-            <div className="absolute right-5 top-8 hidden sm:right-8 lg:block">
+          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8 lg:flex lg:items-start lg:gap-10">
+            <div className="min-w-0 flex-1">
+              <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+                <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
+                <span>/</span>
+                <Link href={`/passport/${slug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">{n.name}</Link>
+                <span>/</span>
+                <span className="text-ink-soft">{d.name}</span>
+              </nav>
+              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+                {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
+                <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
+                  {umrah ? "Tourist & Umrah - 2026 Requirements" : "2026 Requirements, Fees & Documents"}
+                </span>
+              </h1>
+              {aliasNote && (
+                <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                  {aliasNote}
+                </p>
+              )}
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <StatusBadge s={s} />
+                {"maxStayDays" in s && s.maxStayDays ? (
+                  <span className="text-sm text-ink-soft"><span className="font-semibold text-ink">{s.maxStayDays}</span> days max stay</span>
+                ) : null}
+              </div>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">{answerSentence(nd, d.name, s)}</p>
+              {"notes" in s && s.notes ? (
+                <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">{s.notes}</p>
+              ) : null}
+              {applicationNoteFor(d.iso3) ? (
+                <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">
+                  <span className="mono mr-2 text-[10px] uppercase tracking-[0.14em] text-stamp">How it works</span>
+                  {applicationNoteFor(d.iso3)}
+                </p>
+              ) : null}
+              {"sourceUrl" in s && s.sourceUrl ? (
+                <a href={s.sourceUrl} target="_blank" rel="noreferrer" className="mono mt-3 inline-flex items-center gap-1.5 text-[11px] text-ink-mute transition hover:text-ink">
+                  <span className={`inline-block h-2 w-2 rounded-full ${s.sourceOfficial ? "bg-vfree" : "bg-eta"}`} />
+                  {(() => { try { return new URL(s.sourceUrl).hostname.replace(/^www\./, ""); } catch { return "official source"; } })()} ↗
+                </a>
+              ) : null}
+            </div>
+
+            {/* Flag badge, sized to actually fill the header's right column
+                instead of floating small in empty space. */}
+            <div className="mt-8 hidden shrink-0 lg:mt-0 lg:block">
               <CorridorFlags
                 sourceIso2={n.iso2}
                 destIso2={d.iso2}
                 sourceName={n.name}
                 destName={d.name}
+                className="h-72 w-52"
               />
             </div>
-            {aliasNote && (
-              <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-                {aliasNote}
-              </p>
-            )}
-            <div className="mt-4 flex flex-wrap items-center gap-3">
-              <StatusBadge s={s} />
-              {"maxStayDays" in s && s.maxStayDays ? (
-                <span className="text-sm text-ink-soft"><span className="font-semibold text-ink">{s.maxStayDays}</span> days max stay</span>
-              ) : null}
-            </div>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">{answerSentence(nd, d.name, s)}</p>
-            {"notes" in s && s.notes ? (
-              <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">{s.notes}</p>
-            ) : null}
-            {applicationNoteFor(d.iso3) ? (
-              <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">
-                <span className="mono mr-2 text-[10px] uppercase tracking-[0.14em] text-stamp">How it works</span>
-                {applicationNoteFor(d.iso3)}
-              </p>
-            ) : null}
-            {"sourceUrl" in s && s.sourceUrl ? (
-              <a href={s.sourceUrl} target="_blank" rel="noreferrer" className="mono mt-3 inline-flex items-center gap-1.5 text-[11px] text-ink-mute transition hover:text-ink">
-                <span className={`inline-block h-2 w-2 rounded-full ${s.sourceOfficial ? "bg-vfree" : "bg-eta"}`} />
-                {(() => { try { return new URL(s.sourceUrl).hostname.replace(/^www\./, ""); } catch { return "official source"; } })()} ↗
-              </a>
-            ) : null}
           </div>
         </header>
 
