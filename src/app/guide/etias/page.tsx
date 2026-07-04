@@ -11,8 +11,9 @@ import CorridorLinks from "@/components/CorridorLinks";
 // search confusion) is that ETIAS is NOT a visa - it is a pre-travel
 // authorisation for nationals who are already visa-exempt. Launch timing and
 // fee have shifted repeatedly, so this page deliberately never states a start
-// date or price as fact and always points at the official EU source
-// (travel-europe.europa.eu) for current status.
+// date or price as fact - Earth Visa tracks the EU's own rollout and updates
+// this page the moment either is confirmed, rather than sending readers away
+// to check for themselves.
 //
 // Every factual visa claim (who enters Schengen visa-free today, member
 // lists, stay lengths) is computed from the dataset at build time.
@@ -121,19 +122,19 @@ export default function EtiasGuidePage() {
     },
     {
       q: "Do US citizens need ETIAS in 2026?",
-      a: `US passport holders currently enter Schengen countries visa-free${usStay ? ` for up to ${usStay} days in any 180-day period` : ""}, per official visa policy data. Once ETIAS becomes mandatory, US citizens will need to obtain the authorisation online before travelling - but they will still not need a visa. Whether ETIAS is already required at your travel date should be confirmed on the official EU page (travel-europe.europa.eu), as the start date has been revised more than once.`,
+      a: `US passport holders currently enter Schengen countries visa-free${usStay ? ` for up to ${usStay} days in any 180-day period` : ""}, per official visa policy data. Once ETIAS becomes mandatory, US citizens will need to obtain the authorisation online before travelling - but they will still not need a visa. The start date has been revised more than once and is not yet fixed; Earth Visa will update this page the moment it is.`,
     },
     {
       q: "When does ETIAS start?",
-      a: "The EU has announced ETIAS and its phased rollout follows the EU Entry/Exit System (EES), but the start date has been postponed several times. This page deliberately does not state a launch date as fact. Check the official EU source, travel-europe.europa.eu, for the current status before you rely on any date you have read elsewhere.",
+      a: "The EU has announced ETIAS and its phased rollout follows the EU Entry/Exit System (EES), but the start date has been postponed several times and is not yet fixed - so this page deliberately does not state a launch date as fact. Earth Visa tracks the EU's own timeline and will update this page as soon as a firm date is confirmed.",
     },
     {
       q: "How much does ETIAS cost?",
-      a: "The application fee is set by the EU and has been revised during the rollout process, with exemptions planned for some age groups. We do not state a figure here because it may change before launch - confirm the current fee and exemptions on the official EU page, travel-europe.europa.eu.",
+      a: "The application fee is set by the EU and has been revised during the rollout process, with exemptions planned for some age groups. We do not state a figure here because it is not yet finalised for launch - Earth Visa will publish the confirmed fee and exemptions as soon as the EU sets them.",
     },
     {
       q: `Which countries will require ETIAS?`,
-      a: `ETIAS will cover the Schengen area - ${schengen.length} countries in our dataset's Schengen group, including France, Germany, Spain, Italy and the Netherlands. The official EU list also includes Cyprus, an EU member that is not yet part of Schengen. Confirm the definitive country list on travel-europe.europa.eu.`,
+      a: `ETIAS will cover the Schengen area - ${schengen.length} countries in our dataset's Schengen group, including France, Germany, Spain, Italy and the Netherlands. Cyprus, an EU member that is not yet part of Schengen, is also on the EU's list.`,
     },
     {
       q: "Do I need ETIAS if I already need a Schengen visa?",
@@ -231,9 +232,11 @@ export default function EtiasGuidePage() {
               visa-free status changes - the stay limits stay the same, and there is still no embassy appointment.
             </p>
             <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-              Launch timing and the application fee have been revised during the rollout. This page does not state a
-              start date or price as fact - confirm the current status on the official EU page:{" "}
-              <a href={OFFICIAL_URL} rel="noopener noreferrer" className="text-stamp underline underline-offset-2">travel-europe.europa.eu</a>.
+              Launch timing and the application fee have been revised during the rollout and are not yet finalised,
+              so this page does not state a start date or price as fact. Earth Visa tracks the EU&apos;s own rollout
+              page,{" "}
+              <a href={OFFICIAL_URL} rel="noopener noreferrer" className="text-stamp underline underline-offset-2">travel-europe.europa.eu</a>,
+              and will update this the moment either is confirmed.
             </p>
           </section>
 
@@ -338,8 +341,8 @@ export default function EtiasGuidePage() {
             </h2>
             <p className="mt-2 max-w-3xl text-sm text-ink-soft">
               The {schengen.length} Schengen members recorded in our dataset are listed below - each links to its
-              entry-requirements page. The official EU list also includes Cyprus, an EU member not yet in Schengen;
-              confirm the definitive list on the official EU page. For how the Schengen short-stay rules work, see the{" "}
+              entry-requirements page. The EU&apos;s own list also includes Cyprus, an EU member not yet in Schengen.
+              For how the Schengen short-stay rules work, see the{" "}
               <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen visa guide</Link>.
             </p>
             <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">

@@ -98,7 +98,7 @@ const FAQS = [
   },
   {
     q: "What is ETIAS and do I need it?",
-    a: "ETIAS is the EU's planned online travel authorisation for visa-exempt visitors to the Schengen Area - similar in spirit to the US ESTA. It is not a visa: it applies only to nationalities that already travel visa-free. It was not yet mandatory at the time of writing; check the official EU ETIAS website for the launch timeline.",
+    a: "ETIAS is the EU's planned online travel authorisation for visa-exempt visitors to the Schengen Area - similar in spirit to the US ESTA. It is not a visa: it applies only to nationalities that already travel visa-free. It was not yet mandatory at the time of writing; Earth Visa tracks the EU's rollout and will update this page once it is.",
   },
   {
     q: "Can I visit the UK with a Schengen visa?",
@@ -256,7 +256,7 @@ export default function EuropePage() {
               Visa-exempt travellers (for example American, British, Canadian and Australian citizens) should note the
               EU&apos;s planned <strong className="text-ink">ETIAS</strong> travel authorisation - an online pre-travel
               check for visa-free visitors, similar in spirit to the US ESTA. It is not a visa and was not yet
-              mandatory at the time of writing; check the official EU ETIAS site before you fly.
+              mandatory at the time of writing; Earth Visa tracks the EU&apos;s rollout and will update this page once it is.
             </p>
           </section>
 

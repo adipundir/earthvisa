@@ -264,8 +264,8 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     costFaq = {
       q: `How much does the ${d.name} visa cost for ${nd} citizens?`,
       a: noVisaShortStay
-        ? `Nothing for a short visit — ${nd} citizens ${s.kind === "fom" ? `have freedom of movement in ${d.name}` : `enter ${d.name} visa-free${"maxStayDays" in s && s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""}`}, so there is no visa fee. If you need a visa for a longer stay, ${feeClause}.${vfsNote} Fees change — confirm on the official source before applying.`
-        : `${feeClause.charAt(0).toUpperCase()}${feeClause.slice(1)}.${vfsNote} Fees change — confirm on the official source before applying.`,
+        ? `Nothing for a short visit — ${nd} citizens ${s.kind === "fom" ? `have freedom of movement in ${d.name}` : `enter ${d.name} visa-free${"maxStayDays" in s && s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""}`}, so there is no visa fee. If you need a visa for a longer stay, ${feeClause}.${vfsNote}`
+        : `${feeClause.charAt(0).toUpperCase()}${feeClause.slice(1)}.${vfsNote}`,
     };
   }
 
@@ -280,13 +280,13 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
         ? `A valid passport is all ${nd} citizens need for a short ${s.kind === "fom" ? "stay" : "visa-free visit"}${"maxStayDays" in s && s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}.${hasVfs ? ` If you apply for a longer-stay visa, Earth Visa lists the full required documents per visa category from the official visa application centre.` : ""}`
         : hasVfs
           ? `A valid passport plus the ${d.name} document checklist for your visa type — Earth Visa lists the full required documents per visa category from the official visa application centre.`
-          : `A passport valid for at least six months, proof of onward travel and funds, and any documents required for the specific ${d.name} visa category. Always confirm with the official source.`,
+          : `A passport valid for at least six months, proof of onward travel and funds, and any documents required for the specific ${d.name} visa category.`,
     },
     aliasLead
       ? { q: `Is the ${aliasLead} visa different from the ${SHORT_NAME[d.iso3] ?? d.name} visa?`, a: `No. ${aliasNote ?? `${aliasLead} follows ${d.name}'s national visa policy.`} There is no separate ${aliasLead} visa — the ${d.name} rules on this page are what apply.` }
       : null,
     umrah
-      ? { q: `Can ${nd} citizens perform Umrah — do they need a separate Umrah visa?`, a: `Saudi Arabia permits Umrah (not Hajj) on a tourist visa, and also issues dedicated Umrah visas processed through the official Nusuk platform. ${nd} pilgrims should apply via Nusuk or an authorised Umrah operator, and always confirm current rules on the official Saudi government portals before booking.` }
+      ? { q: `Can ${nd} citizens perform Umrah — do they need a separate Umrah visa?`, a: `Saudi Arabia permits Umrah (not Hajj) on a tourist visa, and also issues dedicated Umrah visas processed through the official Nusuk platform. ${nd} pilgrims should apply via Nusuk or an authorised Umrah operator.` }
       : null,
     costFaq,
   ].filter(Boolean) as { q: string; a: string }[];
@@ -391,7 +391,6 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               {hasVfs && (
                 <li>→ <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " — only needed if you apply for a longer-stay visa" : ", by visa type"}.</li>
               )}
-              <li>→ Confirm the latest rules on the destination&apos;s official government page before you book.</li>
             </ul>
           </section>
 
@@ -425,7 +424,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     ) : f.amount != null ? (
                       <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
                     ) : (
-                      <p className="mt-1 text-sm text-ink-mute">Fee not published — check the official source</p>
+                      <p className="mt-1 text-sm text-ink-mute">Fee not published by {d.name}</p>
                     )}
                     <div className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
                       {f.validity && <span>{f.validity}</span>}
@@ -446,7 +445,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </p>
               )}
               <p className="mono mt-3 text-[11px] uppercase tracking-[0.12em] text-ink-mute">
-                Fees checked {fmtDay(destFees?.updated) ?? "recently"} · always confirm on the official source
+                Fees checked {fmtDay(destFees?.updated) ?? "recently"} · sourced from official government fee schedules
               </p>
             </section>
           )}

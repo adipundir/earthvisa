@@ -289,8 +289,8 @@ function buildListData(cfg: ListConfig): ListData | null {
       {
         q: `Which visa free country gives ${cfg.people} the longest stay?`,
         a: longest.length
-          ? `${nameFor(longest[0].dest)} allows the longest visa-free stay for ${adj} passport holders at up to ${longest[0].maxStayDays} days${longest[1] ? `, followed by ${nameFor(longest[1].dest)} (${longest[1].maxStayDays} days)` : ""}${longest[2] ? ` and ${nameFor(longest[2].dest)} (${longest[2].maxStayDays} days)` : ""}. Some destinations do not publish a fixed limit - always confirm with the official border authority.`
-          : `Stay limits vary by destination - check each country's official border authority for the current allowance.`,
+          ? `${nameFor(longest[0].dest)} allows the longest visa-free stay for ${adj} passport holders at up to ${longest[0].maxStayDays} days${longest[1] ? `, followed by ${nameFor(longest[1].dest)} (${longest[1].maxStayDays} days)` : ""}${longest[2] ? ` and ${nameFor(longest[2].dest)} (${longest[2].maxStayDays} days)` : ""}. Some destinations do not publish a fixed limit.`
+          : `Stay limits vary by destination - see the list above for each country's allowance.`,
       },
       {
         q: `What is the difference between visa free and visa on arrival?`,

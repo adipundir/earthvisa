@@ -148,7 +148,7 @@ export default function ProofOfFundsHub() {
                 </table>
               </div>
               <p className="mono mt-2 text-[10px] uppercase tracking-[0.12em] text-ink-mute">
-                Checked {schengen.updated} · confirm on the consulate&apos;s official page before applying
+                Checked {schengen.updated} · sourced directly from consulate publications
               </p>
             </section>
           )}

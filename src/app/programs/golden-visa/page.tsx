@@ -116,7 +116,7 @@ const faqs = [
     ? [
         {
           q: "What is the cheapest golden visa in Europe?",
-          a: `Among EUR-denominated programs actually named "golden visa" in our data, the lowest published minimum is ${fmtMoney(euGoldenOpen[0].min_amount, euGoldenOpen[0].currency)} (${euGoldenOpen[0].name} - ${euGoldenOpen[0].program_name}). Other investment-linked residence permits in the Europe list publish lower minimums - check each route's type and conditions above, and always verify the current figure on the official source.`,
+          a: `Among EUR-denominated programs actually named "golden visa" in our data, the lowest published minimum is ${fmtMoney(euGoldenOpen[0].min_amount, euGoldenOpen[0].currency)} (${euGoldenOpen[0].name} - ${euGoldenOpen[0].program_name}). Other investment-linked residence permits in the Europe list publish lower minimums - see each route's type and conditions above.`,
         },
       ]
     : []),
@@ -309,8 +309,8 @@ export default function GoldenVisaPage() {
               so you do not plan around a route that no longer exists.
             </p>
             <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-              Thresholds and routes change frequently. Figures compiled from official government publications, last
-              refreshed {lastUpdated}. Verify on the official program page before committing funds.
+              Thresholds and routes change frequently. Figures compiled directly from official government
+              publications, last refreshed {lastUpdated}.
             </p>
           </section>
 

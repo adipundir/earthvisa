@@ -289,15 +289,15 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       q: `How do I apply for ${withArticle(country.name)} tourist visa?`,
       a:
         visaRequiredCount === 0 && etaCount > 0
-          ? `If your nationality is not eligible for visa-free entry${voaCount > 0 ? " or visa on arrival" : ""} to ${country.name}, you can apply online for an eTA or e-Visa - no embassy visit required. You will generally need a valid passport, a completed online application, a digital photo, and proof of accommodation and onward travel. Processing times and fees vary - check the official ${country.name} immigration authority website for current requirements.`
-          : `If your nationality is not eligible for visa-free entry${voaCount > 0 ? " or visa on arrival" : ""} to ${country.name}, you typically need to apply at ${withArticle(country.name)} embassy or consulate in your home country. Requirements generally include a valid passport, completed application form, passport-sized photos, proof of accommodation and onward travel, travel insurance, and proof of sufficient funds. Processing times and fees vary - check the official ${country.name} immigration authority website for current requirements.`,
+          ? `If your nationality is not eligible for visa-free entry${voaCount > 0 ? " or visa on arrival" : ""} to ${country.name}, you can apply online for an eTA or e-Visa - no embassy visit required. You will generally need a valid passport, a completed online application, a digital photo, and proof of accommodation and onward travel. Processing times and fees vary by nationality and visa category - see the visa types and fees on this page for the exact figures.`
+          : `If your nationality is not eligible for visa-free entry${voaCount > 0 ? " or visa on arrival" : ""} to ${country.name}, you typically need to apply at ${withArticle(country.name)} embassy or consulate in your home country. Requirements generally include a valid passport, completed application form, passport-sized photos, proof of accommodation and onward travel, travel insurance, and proof of sufficient funds. Processing times and fees vary by nationality and visa category - see the visa types and fees on this page for the exact figures.`,
     },
     {
       q: `How long can I stay in ${country.name} without a visa?`,
       a:
         vfCount > 0
-          ? `The maximum visa-free stay duration in ${country.name} varies by nationality. Common allowances are 30, 60, or 90 days. See the visa-free country list above for specific stay durations per nationality. Always verify with the official ${country.name} border authority before travelling.`
-          : `${country.name} does not offer visa-free entry to any nationality in 2026, so your permitted stay is set by the visa or travel authorisation you obtain. Always verify with the official ${country.name} border authority before travelling.`,
+          ? `The maximum visa-free stay duration in ${country.name} varies by nationality. Common allowances are 30, 60, or 90 days. See the visa-free country list above for specific stay durations per nationality.`
+          : `${country.name} does not offer visa-free entry to any nationality in 2026, so your permitted stay is set by the visa or travel authorisation you obtain.`,
     },
   ];
 
@@ -573,7 +573,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   {display} Visa Fees ({df.updated ? `updated ${fmtUpdated(df.updated)}` : "2026"})
                 </h2>
                 <p className="mt-2 text-sm text-ink-soft">
-                  Official visa costs for {display}, from government fee schedules. Fees change - always confirm on the linked source.
+                  Official visa costs for {display}, sourced directly from government fee schedules and kept current.
                 </p>
                 <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {paid.slice(0, 6).map((f, i) => (

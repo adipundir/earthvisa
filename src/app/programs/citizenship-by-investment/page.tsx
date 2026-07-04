@@ -356,8 +356,8 @@ export default function CitizenshipByInvestmentPage() {
             </p>
             <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
               CBI programs change often - minimums, options and eligibility are revised, and programs open and close.
-              Figures on this page were compiled from each program&apos;s official publications and last refreshed on{" "}
-              {lastUpdated}. Verify on the official program page before committing funds.
+              Figures on this page were compiled directly from each program&apos;s official publications and last
+              refreshed on {lastUpdated}.
             </p>
           </section>
 

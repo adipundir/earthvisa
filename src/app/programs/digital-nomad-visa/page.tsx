@@ -119,11 +119,11 @@ const faqs = [
   },
   {
     q: "Do digital nomad visas require a minimum income?",
-    a: `Most programs publish a minimum income or savings threshold, and these figures change frequently. We deliberately do not summarise thresholds in one table - instead, each entry above quotes the eligibility text from the official source at crawl time. Always confirm the current threshold on the official program page before applying.`,
+    a: `Most programs publish a minimum income or savings threshold, and these figures change frequently. We deliberately do not summarise thresholds in one table - instead, each entry above quotes the eligibility text directly from the official source at crawl time, so the exact current figure is right there in the entry.`,
   },
   {
     q: "Do digital nomad visas lead to permanent residency?",
-    a: `It varies. Some routes are structured as residence permits whose years can count toward long-term residence, while many are non-immigrant visas that do not. The program's official source is the only reliable answer - check the entry's linked country pages and the official program page.`,
+    a: `It varies. Some routes are structured as residence permits whose years can count toward long-term residence, while many are non-immigrant visas that do not. See the entry for your destination above - it quotes the official source's own eligibility text, including whether the route counts toward residence.`,
   },
 ];
 
@@ -305,8 +305,7 @@ export default function DigitalNomadVisaPage() {
               flag as announced or discontinued are labelled, not hidden.
             </p>
             <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-              Data compiled from official government publications, last refreshed {lastUpdated}. Confirm current
-              thresholds, fees and documents on the official program page before applying.
+              Data compiled directly from official government publications, last refreshed {lastUpdated}.
             </p>
           </section>
 

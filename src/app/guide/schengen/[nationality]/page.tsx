@@ -181,7 +181,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
             a:
               status === "member"
                 ? `No. ETIAS is the EU's planned travel authorisation for visa-exempt non-EU visitors; citizens of Schengen and EU member states are not in its scope.`
-                : `Not yet, but eventually. ETIAS is the EU's planned online travel authorisation for visa-exempt visitors - similar to the US ESTA. It is not a visa. It was not yet mandatory at the time of writing; check the official EU ETIAS website for the launch timeline before travelling.`,
+                : `Not yet, but eventually. ETIAS is the EU's planned online travel authorisation for visa-exempt visitors - similar to the US ESTA. It is not a visa. It was not yet mandatory at the time of writing; Earth Visa tracks the EU's rollout and will update this page once it is.`,
           },
         ]),
     {
