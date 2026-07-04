@@ -278,7 +278,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 destIso2={d.iso2}
                 sourceName={n.name}
                 destName={d.name}
-                className="h-72 w-52"
+                className="h-[26rem] w-80 xl:w-96"
               />
             </div>
           </div>

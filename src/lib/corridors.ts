@@ -9,6 +9,7 @@ export const TOP_NATIONALITIES = [
   "THA", "NGA", "EGY", "KEN", "GHA", "ZAF", "MAR", "DZA", "ETH", "USA",
   "CAN", "MEX", "BRA", "GBR", "DEU", "FRA", "ITA", "ESP", "NLD", "RUS",
   "TUR", "UKR", "POL", "SAU", "ARE", "QAT", "IRN", "JOR", "AUS", "KAZ",
+  "BEL",
 ];
 export const TOP_DESTINATIONS = [
   "ARE", "THA", "USA", "GBR", "DEU", "FRA", "ITA", "ESP", "NLD", "GRC",
@@ -39,6 +40,7 @@ export const DEMONYM: Record<string, string> = {
   FRA: "French", ITA: "Italian", ESP: "Spanish", NLD: "Dutch", RUS: "Russian",
   TUR: "Turkish", UKR: "Ukrainian", POL: "Polish", SAU: "Saudi", ARE: "Emirati",
   QAT: "Qatari", IRN: "Iranian", JOR: "Jordanian", AUS: "Australian", KAZ: "Kazakh",
+  BEL: "Belgian",
 };
 
 export function nameToSlug(name: string): string {
