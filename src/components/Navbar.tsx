@@ -27,7 +27,18 @@ export default function Navbar() {
           <span className="font-display text-[16px] font-semibold tracking-tight">Earth Visa</span>
         </Link>
 
-        <div className="flex items-center gap-0.5 sm:gap-1">
+        {/* Mobile-only: shares the logo's row, pinned to the right. Hidden from
+            sm upward, where the full meta cluster below covers it instead. */}
+        <span
+          className="mono ml-auto text-[10px] uppercase tracking-[0.14em] text-ink-mute sm:hidden"
+          title={`Data last updated ${dataset.meta.lastUpdated}`}
+        >
+          Updated {fmtDate(dataset.meta.lastUpdated)}
+        </span>
+
+        {/* w-full forces this onto its own line on mobile (flex-wrap trick);
+            sm:w-auto rejoins the logo's row once the meta cluster below fits. */}
+        <div className="flex w-full items-center gap-0.5 sm:w-auto sm:gap-1">
           {LINKS.map(({ href, label }) => {
             const active = path === href || path.startsWith(href + "/");
             return (
