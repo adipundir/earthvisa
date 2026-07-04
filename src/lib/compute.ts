@@ -1,4 +1,4 @@
-import { dataset } from "./dataset";
+import { dataset, nameFor } from "./dataset";
 import type { AccessEdge, AccessLevel, CbiProgram, RbiProgram, FastTrackProgram, PassportType } from "./types";
 
 const LEVEL_RANK: Record<AccessLevel, number> = {
@@ -37,6 +37,8 @@ export interface PassportResult {
   reachByLevel: Record<AccessLevel, CombinedEdge[]>;
   /** destinations whose best access is unlocked by a held credential */
   viaCredentialCount: number;
+  /** destinations NOT reachable on the passports alone - genuinely added by held credentials */
+  viaCredentialNewCount: number;
   /** destinations whose access depends on the (non-ordinary) passport type */
   viaPassportTypeCount: number;
   /** destinations reachable for airside/landside transit only (not tourist entry) */
@@ -90,6 +92,10 @@ export function compute(
     for (const e of dataset.diplomaticAccess[iso3] ?? []) addDiplo(e, iso3);
   }
 
+  // Snapshot of destinations reachable on the passports alone, so we can tell
+  // "genuinely new via credential" apart from "already reachable, credential upgraded it".
+  const passportOnlyDests = new Set(best.keys());
+
   // --- add reach unlocked by held credentials (e.g. "visa-free if you hold a US visa") ---
   // Transit-only entries (ATV exemptions, TWOV) are kept separate - they are NOT tourist access.
   const transitBest = new Map<string, CombinedEdge>();
@@ -111,15 +117,18 @@ export function compute(
       }
     }
   }
-  const transitReach = [...transitBest.values()].sort((a, b) => a.dest.localeCompare(b.dest));
+  // Sort by display name (not ISO3 code) so rendered lists scan alphabetically.
+  const byName = (a: { dest: string }, b: { dest: string }) => nameFor(a.dest).localeCompare(nameFor(b.dest));
+  const transitReach = [...transitBest.values()].sort(byName);
   const reach = [...best.values()].sort(
-    (a, b) => LEVEL_RANK[b.level] - LEVEL_RANK[a.level] || a.dest.localeCompare(b.dest),
+    (a, b) => LEVEL_RANK[b.level] - LEVEL_RANK[a.level] || byName(a, b),
   );
   const reachByLevel: Record<AccessLevel, CombinedEdge[]> = {
     visa_free: [], visa_on_arrival: [], eta: [], e_visa: [],
   };
   for (const e of reach) reachByLevel[e.level].push(e);
   const viaCredentialCount = reach.filter((e) => e.viaCredential).length;
+  const viaCredentialNewCount = reach.filter((e) => e.viaCredential && !passportOnlyDests.has(e.dest)).length;
   const viaPassportTypeCount = reach.filter((e) => e.viaPassportType).length;
 
   // --- freedom of movement via shared regional groups ---
@@ -138,7 +147,7 @@ export function compute(
   }
   const freedomOfMovement: FomEdge[] = [...fom.entries()]
     .map(([dest, groups]) => ({ dest, groups: [...groups] }))
-    .sort((a, b) => a.dest.localeCompare(b.dest));
+    .sort((a, b) => nameFor(a.dest).localeCompare(nameFor(b.dest)));
 
   // --- investment / migration programs (opportunities, exclude your own country) ---
   const cbi = dataset.cbi.filter((p) => !selSet.has(p.iso3));
@@ -152,6 +161,7 @@ export function compute(
     reach,
     reachByLevel,
     viaCredentialCount,
+    viaCredentialNewCount,
     viaPassportTypeCount,
     transitReach,
     freedomOfMovement,

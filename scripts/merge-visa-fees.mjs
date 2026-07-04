@@ -8,7 +8,15 @@ import { join } from "node:path";
 
 const SRC = join(process.cwd(), "data", "visa-fees");
 const OUT = join(process.cwd(), "src", "data", "visa-fees.json");
-const trim = (s, n = 280) => (typeof s === "string" && s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s ?? "");
+// Trim overlong prose at the last sentence boundary before the cap - never mid-word/mid-clause,
+// which used to leave dangling "…" fragments (and drop caveats) in rendered fee callouts.
+const trim = (s, n = 900) => {
+  if (typeof s !== "string") return s ?? "";
+  if (s.length <= n) return s;
+  const cut = s.slice(0, n);
+  const at = cut.lastIndexOf(". ");
+  return at > n * 0.4 ? cut.slice(0, at + 1) : cut.slice(0, n - 1).trimEnd() + "…";
+};
 
 const out = {};
 let files = 0, fees = 0, vfsCount = 0;
@@ -23,11 +31,11 @@ for (const f of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
       .filter((x) => x && x.kind)
       .map((x) => ({
         kind: x.kind,
-        name: trim(x.name, 90),
+        name: typeof x.name === "string" ? x.name : "",
         amount: typeof x.amount === "number" ? x.amount : null,
         currency: x.currency ?? null,
         amount_usd: typeof x.amount_usd === "number" ? x.amount_usd : null,
-        validity: trim(x.validity, 120) || null,
+        validity: trim(x.validity, 200) || null,
         official: !!x.official,
         source_url: x.source_url ?? null,
         notes: trim(x.notes),
@@ -51,7 +59,7 @@ for (const f of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
           source_url: d.vfs.source_url ?? null,
         }
       : { used: false },
-    free_visa_notes: trim(d.free_visa_notes),
+    free_visa_notes: trim(d.free_visa_notes, 1500),
   };
   out[d.iso3] = entry;
   files++; fees += entry.fees.length; if (entry.vfs.used) vfsCount++;

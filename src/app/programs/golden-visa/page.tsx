@@ -227,7 +227,12 @@ function CountryBlock({ name, list }: { name: string; list: RbiProgram[] }) {
                 ) : (
                   <>minimum not published</>
                 )}
-                {p.path_to_pr_years != null && <> · PR path: {p.path_to_pr_years} yrs</>}
+                {p.path_to_pr_years === 0 && <> · immediate permanent residency</>}
+                {p.path_to_pr_years != null &&
+                  p.path_to_pr_years > 0 &&
+                  (p.path_to_citizenship_years == null || p.path_to_pr_years <= p.path_to_citizenship_years) && (
+                    <> · PR path: {p.path_to_pr_years} yrs</>
+                  )}
                 {p.path_to_citizenship_years != null && <> · citizenship path: {p.path_to_citizenship_years} yrs</>}
               </p>
             </li>

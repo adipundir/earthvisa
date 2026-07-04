@@ -6,7 +6,7 @@ import { compute } from "@/lib/compute";
 import { corridorsForNationality, isUsefulCorridor, DEMONYM } from "@/lib/corridors";
 import CorridorLinks from "@/components/CorridorLinks";
 import PassportDestinationSearch from "@/components/PassportDestinationSearch";
-import type { AccessLevel } from "@/lib/types";
+import type { AccessLevel, CbiProgram } from "@/lib/types";
 
 function nameToSlug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -14,6 +14,31 @@ function nameToSlug(name: string): string {
 
 function slugToCountry(slug: string) {
   return dataset.allCountries.find((c) => nameToSlug(c.name) === slug) ?? null;
+}
+
+// "1st" / "2nd" / "21st" / "112th" - handles the 11-13 exception.
+function ordinal(n: number): string {
+  const mod100 = n % 100;
+  if (mod100 >= 11 && mod100 <= 13) return `${n}th`;
+  const mod10 = n % 10;
+  return `${n}${mod10 === 1 ? "st" : mod10 === 2 ? "nd" : mod10 === 3 ? "rd" : "th"}`;
+}
+
+// Grammar-safe nationality phrasings. DEMONYM covers the big passports
+// ("Indian", "German"); for the rest we use phrasings that read correctly with
+// the bare country name ("Palau passport holders", "citizens of Palau").
+function nationalityPhrases(iso3: string, name: string) {
+  const adj = DEMONYM[iso3];
+  return {
+    /** attributive form: "Indian passport holders" / "Palau passport holders" */
+    adj: adj ?? name,
+    /** subject phrase mid-sentence: "Indian citizens" / "citizens of Palau" */
+    citizens: adj ? `${adj} citizens` : `citizens of ${name}`,
+    /** subject phrase at sentence start: "Indian citizens" / "Citizens of Palau" */
+    citizensCap: adj ? `${adj} citizens` : `Citizens of ${name}`,
+    /** title case for headings: "Indian Citizens" / "Citizens of Palau" */
+    citizensTitle: adj ? `${adj} Citizens` : `Citizens of ${name}`,
+  };
 }
 
 export async function generateStaticParams() {
@@ -52,7 +77,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const rank = rankOf.get(country.iso3);
   const title = passportTitle(country.iso3, country.name, rank, vfCount);
-  const description = `Visa-free countries for the ${country.name} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} e-visa${rank ? `. Ranked #${rank} of 199 passports` : ""}. Full list from official government sources.`;
+  const { adj } = nationalityPhrases(country.iso3, country.name);
+  const description = `Visa-free countries for the ${adj} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} e-visa${rank ? `. Ranked #${rank} of 199 passports` : ""}. Full list from official government sources.`;
 
   return {
     title,
@@ -97,10 +123,13 @@ const LEVEL_LABEL_SHORT: Record<AccessLevel, string> = {
 // A tappable destination card. Links to the nationality-specific corridor page
 // when one exists (e.g. India -> Thailand), otherwise the destination's page -
 // so every destination in the reach lists leads somewhere with more detail.
-function DestCard({ natName, natIso3, edge }: {
+// `fom` marks destinations covered by freedom of movement, where a tourist-stay
+// cap would contradict the right to live and work there.
+function DestCard({ natName, natIso3, edge, fom = false }: {
   natName: string;
   natIso3: string;
   edge: { dest: string; maxStayDays: number | null; level: AccessLevel };
+  fom?: boolean;
 }) {
   const destSlug = nameToSlug(nameFor(edge.dest));
   const href = isUsefulCorridor(natIso3, edge.dest)
@@ -111,10 +140,48 @@ function DestCard({ natName, natIso3, edge }: {
       <span className="text-xl">{flagFor(edge.dest)}</span>
       <div className="min-w-0">
         <div className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{nameFor(edge.dest)}</div>
-        {edge.maxStayDays != null && <div className="mono text-[10px] text-ink-mute">≤ {edge.maxStayDays} days</div>}
+        {fom ? (
+          <div className="mono text-[11px] text-ink-mute">Freedom of movement</div>
+        ) : (
+          edge.maxStayDays != null && <div className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days</div>
+        )}
       </div>
-      <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>{LEVEL_LABEL_SHORT[edge.level]}</span>
+      <span className={`mono ml-auto shrink-0 whitespace-nowrap rounded-[3px] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>{LEVEL_LABEL_SHORT[edge.level]}</span>
     </Link>
+  );
+}
+
+// processing_time in the CBI dataset occasionally carries crawler annotations
+// ("Not stated verbatim on cip.gov.ag fetched pages") or long multi-clause
+// caveats. Keep only short, human-readable durations so internal notes never
+// reach the UI.
+function cleanProcessingTime(raw: string | null | undefined): string | null {
+  if (!raw) return null;
+  if (/not (stated|specified|published)|fetched page|verbatim|official (page|source)/i.test(raw)) return null;
+  const s = raw.replace(/\s*\([^)]*\)/g, "").split(";")[0].trim().replace(/[.,:]+$/, "");
+  if (!s || s.length > 80) return null;
+  return s;
+}
+
+// Citizenship-by-investment program card. The fee / processing meta line only
+// renders when the dataset has a real amount and a clean duration.
+function CbiCard({ p }: { p: CbiProgram }) {
+  const opt = p.options[0];
+  const fee = opt && opt.currency && opt.min_amount != null
+    ? `From ${opt.currency} ${opt.min_amount.toLocaleString()}`
+    : null;
+  const meta = [fee, cleanProcessingTime(p.processing_time)].filter(Boolean).join(" · ");
+  return (
+    <div className="rounded-sm border border-line bg-paper-2/70 p-4">
+      <div className="flex items-center gap-3">
+        <span className="text-2xl">{flagFor(p.iso3)}</span>
+        <div>
+          <div className="font-display font-semibold text-ink">{p.name}</div>
+          <div className="text-sm italic text-ink-soft">{p.program_name}</div>
+        </div>
+      </div>
+      {meta && <p className="mono mt-3 text-[11px] text-ink-mute">{meta}</p>}
+    </div>
   );
 }
 
@@ -127,20 +194,29 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
   const flag = flagFor(country.iso3);
   const vfCount = result.reachByLevel.visa_free.length;
   const voaCount = result.reachByLevel.visa_on_arrival.length;
-  // eTA + e-Visa share one stat tile and one section (sorted by destination name)
-  const etaEdges = [...result.reachByLevel.eta, ...result.reachByLevel.e_visa].sort(
-    (a, b) => nameFor(a.dest).localeCompare(nameFor(b.dest)),
-  );
+  // Reach lists render alphabetically by display name (compute returns ISO3 order).
+  const byDestName = (a: { dest: string }, b: { dest: string }) =>
+    nameFor(a.dest).localeCompare(nameFor(b.dest));
+  const vfEdges = [...result.reachByLevel.visa_free].sort(byDestName);
+  const voaEdges = [...result.reachByLevel.visa_on_arrival].sort(byDestName);
+  const fomEdges = [...result.freedomOfMovement].sort(byDestName);
+  // eTA + e-Visa share one stat tile and one section
+  const etaEdges = [...result.reachByLevel.eta, ...result.reachByLevel.e_visa].sort(byDestName);
   const etaCount = etaEdges.length;
   const total = result.reach.length;
   const fomCount = result.freedomOfMovement.length;
+  // Destinations with freedom of movement: their visa-free cards must not show
+  // a tourist-stay cap that contradicts the right to live and work there.
+  const fomSet = new Set(result.freedomOfMovement.map((e) => e.dest));
   const cbiCount = result.cbi.length;
-  const rbiCount = result.rbi.length;
+  // RBI rows are option-level (a country can contribute several); the honest
+  // headline number is how many countries offer a program.
+  const rbiCountries = new Set(result.rbi.map((p) => p.iso3)).size;
 
   const rank = rankOf.get(country.iso3) ?? null;
 
   // Corridor guides where this passport is the traveller (internal link mesh).
-  const demonym = DEMONYM[country.iso3] ?? country.name;
+  const { adj: demonym, citizens, citizensCap, citizensTitle } = nationalityPhrases(country.iso3, country.name);
   const natCorridors = corridorsForNationality(country.iso3);
   const corridorLinks = natCorridors.map((c) => ({
     href: `/passport/${c.natSlug}/${c.destSlug}`,
@@ -170,30 +246,30 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
         "mainEntity": [
           {
             "@type": "Question",
-            "name": `How many countries can ${country.name} passport holders visit without a visa in 2026?`,
-            "acceptedAnswer": { "@type": "Answer", "text": `${country.name} passport holders can visit ${vfCount} countries completely visa-free in 2026. Additionally, ${voaCount} countries offer visa on arrival and ${etaCount} countries offer eTA or e-Visa - bringing the total to ${total} destinations accessible without a pre-arranged embassy visa.` }
+            "name": `How many countries can ${demonym} passport holders visit without a visa in 2026?`,
+            "acceptedAnswer": { "@type": "Answer", "text": `${demonym} passport holders can visit ${vfCount} countries completely visa-free in 2026. Additionally, ${voaCount} countries offer visa on arrival and ${etaCount} countries offer eTA or e-Visa - bringing the total to ${total} destinations accessible without a pre-arranged embassy visa.` }
           },
           {
             "@type": "Question",
-            "name": `What is the ${country.name} passport ranking in 2026?`,
-            "acceptedAnswer": { "@type": "Answer", "text": rank ? `The ${country.name} passport ranks approximately ${rank}${rank === 1 ? "st" : rank === 2 ? "nd" : rank === 3 ? "rd" : "th"} out of 199 passports in 2026, based on the number of visa-free destinations (${total} total accessible countries).` : `The ${country.name} passport provides access to ${total} destinations in 2026.` }
+            "name": `What is the ${demonym} passport ranking in 2026?`,
+            "acceptedAnswer": { "@type": "Answer", "text": rank ? `The ${demonym} passport ranks approximately ${ordinal(rank)} out of 199 passports in 2026, based on the number of visa-free destinations (${total} total accessible countries).` : `The ${demonym} passport provides access to ${total} destinations in 2026.` }
           },
           {
             "@type": "Question",
-            "name": `Which countries offer visa on arrival to ${country.name} passport holders?`,
-            "acceptedAnswer": { "@type": "Answer", "text": `${voaCount} countries offer visa on arrival to ${country.name} passport holders. Top destinations include: ${result.reachByLevel.visa_on_arrival.slice(0, 5).map(e => nameFor(e.dest)).join(", ")}${voaCount > 5 ? `, and ${voaCount - 5} more` : ""}.` }
+            "name": `Which countries offer visa on arrival to ${demonym} passport holders?`,
+            "acceptedAnswer": { "@type": "Answer", "text": `${voaCount} countries offer visa on arrival to ${demonym} passport holders. These include: ${voaEdges.slice(0, 5).map(e => nameFor(e.dest)).join(", ")}${voaCount > 5 ? `, and ${voaCount - 5} more` : ""}.` }
           },
           ...(cbiCount > 0 ? [{
             "@type": "Question",
-            "name": `Can ${country.name} citizens obtain a second citizenship through investment?`,
-            "acceptedAnswer": { "@type": "Answer", "text": `Yes. ${country.name} citizens can apply for ${cbiCount} citizenship by investment (CBI) programs worldwide. These programs grant citizenship in exchange for qualifying investments including real estate, government donations, or bond purchases.` }
+            "name": `Can ${citizens} obtain a second citizenship through investment?`,
+            "acceptedAnswer": { "@type": "Answer", "text": `Yes. ${citizensCap} can apply for ${cbiCount} citizenship by investment (CBI) programs worldwide. These programs grant citizenship in exchange for qualifying investments including real estate, government donations, or bond purchases.` }
           }] : []),
         ],
       },
       {
         "@type": "Dataset",
         "name": `${country.name} Passport Visa-Free Access Data 2026`,
-        "description": `Official-source visa-free access data for ${country.name} passport holders covering ${total} destinations`,
+        "description": `Official-source visa-free access data for ${demonym} passport holders covering ${total} destinations`,
         "url": `https://earthvisa.in/passport/${slug}`,
         "creator": { "@type": "Organization", "name": "Earth Visa" },
         "temporalCoverage": "2026",
@@ -259,7 +335,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
 
             <PassportDestinationSearch
               natSlug={slug}
-              demonym={demonym}
+              citizens={citizens}
               options={searchOptions}
               corridorSlugs={corridorDestSlugs}
             />
@@ -271,44 +347,44 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
           {/* Intro paragraph - keyword-rich */}
           <section className="mt-10 max-w-3xl">
             <p className="text-base leading-relaxed text-ink-soft">
-              The <strong className="text-ink">{country.name} passport</strong> provides visa-free or visa-on-arrival access to{" "}
+              The <strong className="text-ink">{demonym} passport</strong> provides visa-free or visa-on-arrival access to{" "}
               <strong className="text-ink">{total} countries</strong> as of 2026, making it{" "}
               {rank && rank <= 20 ? "one of the most powerful passports in the world" : rank && rank <= 50 ? "a strong mid-tier passport" : rank && rank <= 100 ? "a passport with moderate global reach" : "a passport with growing international access"}.
-              {" "}{country.name} passport holders can enter <strong className="text-ink">{vfCount} destinations completely visa-free</strong>,{" "}
+              {" "}{demonym} passport holders can enter <strong className="text-ink">{vfCount} destinations completely visa-free</strong>,{" "}
               {voaCount > 0 && <>{voaCount} countries offer <strong className="text-ink">visa on arrival</strong>, and </>}
               {etaCount > 0 && <>{etaCount} destinations are accessible via <strong className="text-ink">electronic travel authorisation (eTA or e-Visa)</strong>.</>}
-              {fomCount > 0 && <> Additionally, {country.name} passport holders benefit from <strong className="text-ink">freedom of movement rights</strong> across {fomCount} countries through regional bloc membership.</>}
+              {fomCount > 0 && <> Additionally, {demonym} passport holders benefit from <strong className="text-ink">freedom of movement rights</strong> across {fomCount} countries through regional bloc membership.</>}
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               All data is sourced directly from official government publications - foreign ministry visa policy pages, border authority portals, and published bilateral agreements.
-              {cbiCount > 0 && <> {country.name} citizens can also explore <strong className="text-ink">{cbiCount} citizenship by investment programs</strong> and <strong className="text-ink">{rbiCount} golden visa / residency by investment programs</strong> to obtain a second passport or residence permit.</>}
+              {cbiCount > 0 && <> {citizensCap} can also explore <strong className="text-ink">{cbiCount} citizenship by investment programs</strong> and <strong className="text-ink">golden visa / residency by investment programs in {rbiCountries} countries</strong> to obtain a second passport or residence permit.</>}
             </p>
           </section>
 
           {/* Visa-free destinations */}
-          {result.reachByLevel.visa_free.length > 0 && (
+          {vfEdges.length > 0 && (
             <section className="mt-12">
               <h2 className="font-display text-2xl font-semibold text-ink">
-                Visa-Free Destinations for {country.name} Passport Holders ({vfCount})
+                Visa-Free Destinations for {demonym} Passport Holders ({vfCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                Enter with just your {country.name} passport - no visa application, no fee, no advance paperwork required.
+                Enter with just your {demonym} passport - no visa application, no fee, no advance paperwork required.
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                {result.reachByLevel.visa_free.slice(0, 30).map((e) => (
-                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                {vfEdges.slice(0, 30).map((e) => (
+                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} fom={fomSet.has(e.dest)} />
                 ))}
               </div>
-              {result.reachByLevel.visa_free.length > 30 && (
+              {vfEdges.length > 30 && (
                 <details className="group mt-3">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                    <span className="group-open:hidden">Show all {result.reachByLevel.visa_free.length} visa-free destinations</span>
+                    <span className="group-open:hidden">Show all {vfEdges.length} visa-free destinations</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
                   <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                    {result.reachByLevel.visa_free.slice(30).map((e) => (
-                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                    {vfEdges.slice(30).map((e) => (
+                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} fom={fomSet.has(e.dest)} />
                     ))}
                   </div>
                 </details>
@@ -317,28 +393,28 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
           )}
 
           {/* Visa on arrival */}
-          {result.reachByLevel.visa_on_arrival.length > 0 && (
+          {voaEdges.length > 0 && (
             <section className="mt-12">
               <h2 className="font-display text-2xl font-semibold text-ink">
-                Visa on Arrival Countries for {country.name} Passport ({voaCount})
+                Visa on Arrival Countries for {demonym} Passport Holders ({voaCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
                 Receive your visa stamp at the airport on arrival - no embassy visit required.
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                {result.reachByLevel.visa_on_arrival.slice(0, 18).map((e) => (
+                {voaEdges.slice(0, 18).map((e) => (
                   <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                 ))}
               </div>
-              {result.reachByLevel.visa_on_arrival.length > 18 && (
+              {voaEdges.length > 18 && (
                 <details className="group mt-3">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                    <span className="group-open:hidden">Show all {result.reachByLevel.visa_on_arrival.length} visa-on-arrival countries</span>
+                    <span className="group-open:hidden">Show all {voaEdges.length} visa-on-arrival countries</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
                   <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                    {result.reachByLevel.visa_on_arrival.slice(18).map((e) => (
+                    {voaEdges.slice(18).map((e) => (
                       <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                     ))}
                   </div>
@@ -351,7 +427,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
           {etaEdges.length > 0 && (
             <section className="mt-12">
               <h2 className="font-display text-2xl font-semibold text-ink">
-                eTA &amp; e-Visa Destinations for {country.name} Passport Holders ({etaCount})
+                eTA &amp; e-Visa Destinations for {demonym} Passport Holders ({etaCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
                 Apply online before you travel - an electronic travel authorisation (eTA) or e-Visa is granted digitally, with no embassy visit required.
@@ -385,10 +461,10 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Freedom of Movement Countries ({fomCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                As a {country.name} citizen you have the right to live and work in these countries through regional bloc membership - no visa required.
+                {citizensCap} have the right to live and work in these countries through regional bloc membership - no visa required.
               </p>
               <div className="mt-5 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
-                {result.freedomOfMovement.map((e) => {
+                {fomEdges.map((e) => {
                   const destSlug = nameToSlug(nameFor(e.dest));
                   const href = isUsefulCorridor(country.iso3, e.dest)
                     ? `/passport/${slug}/${destSlug}`
@@ -396,7 +472,8 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   return (
                     <Link key={e.dest} href={href} className="group flex min-h-[40px] items-center gap-2.5 text-[15px] text-ink-soft transition hover:text-stamp">
                       <span className="text-lg">{flagFor(e.dest)}</span>
-                      <span className="font-display">{nameFor(e.dest)}</span>
+                      <span className="font-display underline decoration-line underline-offset-4 transition group-hover:decoration-stamp">{nameFor(e.dest)}</span>
+                      <span aria-hidden className="mono text-ink-mute transition group-hover:text-stamp">→</span>
                     </Link>
                   );
                 })}
@@ -408,27 +485,14 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
           {cbiCount > 0 && (
             <section className="mt-12">
               <h2 className="font-display text-2xl font-semibold text-ink">
-                Citizenship by Investment Programs Available to {country.name} Citizens ({cbiCount})
+                Citizenship by Investment Programs Available to {citizensTitle} ({cbiCount})
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                As a {country.name} passport holder you can apply for citizenship by investment in {cbiCount} countries - gaining a second passport that may significantly increase your global travel access and provide additional rights to live, work, and do business abroad.
+                {demonym} passport holders can apply for citizenship by investment in {cbiCount} countries - gaining a second passport that can significantly increase global travel access and add rights to live, work, and do business abroad.
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {result.cbi.slice(0, 6).map((p) => (
-                  <div key={p.iso3} className="rounded-sm border border-line bg-paper-2/70 p-4">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">{flagFor(p.iso3)}</span>
-                      <div>
-                        <div className="font-display font-semibold text-ink">{p.name}</div>
-                        <div className="text-sm italic text-ink-soft">{p.program_name}</div>
-                      </div>
-                    </div>
-                    {p.options[0] && (
-                      <p className="mono mt-3 text-[11px] text-ink-mute">
-                        From {p.options[0].currency} {p.options[0].min_amount?.toLocaleString() ?? "-"} · {p.processing_time || "varies"}
-                      </p>
-                    )}
-                  </div>
+                  <CbiCard key={p.iso3} p={p} />
                 ))}
               </div>
               {result.cbi.length > 6 && (
@@ -440,20 +504,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   </summary>
                   <div className="mt-3 grid gap-3 sm:grid-cols-2">
                     {result.cbi.slice(6).map((p) => (
-                      <div key={p.iso3} className="rounded-sm border border-line bg-paper-2/70 p-4">
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl">{flagFor(p.iso3)}</span>
-                          <div>
-                            <div className="font-display font-semibold text-ink">{p.name}</div>
-                            <div className="text-sm italic text-ink-soft">{p.program_name}</div>
-                          </div>
-                        </div>
-                        {p.options[0] && (
-                          <p className="mono mt-3 text-[11px] text-ink-mute">
-                            From {p.options[0].currency} {p.options[0].min_amount?.toLocaleString() ?? "-"} · {p.processing_time || "varies"}
-                          </p>
-                        )}
-                      </div>
+                      <CbiCard key={p.iso3} p={p} />
                     ))}
                   </div>
                 </details>
@@ -476,26 +527,26 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
             <div className="mt-5 divide-y divide-line">
               {[
                 {
-                  q: `How many countries can ${country.name} passport holders visit without a visa in 2026?`,
-                  a: `${country.name} passport holders can visit ${vfCount} countries completely visa-free in 2026. An additional ${voaCount} countries offer visa on arrival and ${etaCount} destinations are accessible with an eTA or e-Visa - bringing the total to ${total} destinations accessible without a pre-arranged embassy visa.`,
+                  q: `How many countries can ${demonym} passport holders visit without a visa in 2026?`,
+                  a: `${demonym} passport holders can visit ${vfCount} countries completely visa-free in 2026. An additional ${voaCount} countries offer visa on arrival and ${etaCount} destinations are accessible with an eTA or e-Visa - bringing the total to ${total} destinations accessible without a pre-arranged embassy visa.`,
                 },
                 {
-                  q: `What is the ${country.name} passport ranking in 2026?`,
-                  a: rank ? `The ${country.name} passport ranks #${rank} out of 199 passports globally in 2026, based on the number of accessible destinations (${total} countries).` : `The ${country.name} passport provides access to ${total} countries in 2026.`,
+                  q: `What is the ${demonym} passport ranking in 2026?`,
+                  a: rank ? `The ${demonym} passport ranks #${rank} out of 199 passports globally in 2026, based on the number of accessible destinations (${total} countries).` : `The ${demonym} passport provides access to ${total} countries in 2026.`,
                 },
                 {
-                  q: `Do ${country.name} passport holders need a visa to travel to Europe?`,
-                  a: result.reachByLevel.visa_free.some(e => ["DEU","FRA","ESP","ITA","GRC","PRT"].includes(e.dest))
-                    ? `${country.name} passport holders can travel to many EU/Schengen countries visa-free. Check the full list above for specific destinations and maximum stay durations.`
-                    : `${country.name} passport holders typically require a Schengen visa to enter EU countries. However, holding a valid US visa, UK visa, or Schengen visa may unlock additional travel options. Use Earth Visa to explore your full options.`,
+                  q: `Do ${demonym} passport holders need a visa to travel to Europe?`,
+                  a: vfEdges.some(e => ["DEU","FRA","ESP","ITA","GRC","PRT"].includes(e.dest))
+                    ? `${demonym} passport holders can travel to many EU/Schengen countries visa-free. Check the full list above for specific destinations and maximum stay durations.`
+                    : `${demonym} passport holders typically require a Schengen visa to enter EU countries. However, holding a valid US visa, UK visa, or Schengen visa may unlock additional travel options. Use Earth Visa to explore your full options.`,
                 },
                 ...(cbiCount > 0 ? [{
-                  q: `Can ${country.name} citizens get a second citizenship through investment?`,
-                  a: `Yes. ${country.name} citizens can apply for ${cbiCount} citizenship by investment (CBI) programs including those in the Caribbean (St Kitts, Dominica, Grenada), Malta, Turkey, and others. These programs grant a second passport in exchange for a qualifying investment, typically starting from $100,000–$200,000.`,
+                  q: `Can ${citizens} get a second citizenship through investment?`,
+                  a: `Yes. ${citizensCap} can apply for ${cbiCount} citizenship by investment (CBI) programs including those in the Caribbean (St Kitts, Dominica, Grenada), Malta, Turkey, and others. These programs grant a second passport in exchange for a qualifying investment, typically starting from $100,000–$200,000.`,
                 }] : []),
                 {
-                  q: `Which countries can ${country.name} passport holders visit on arrival?`,
-                  a: voaCount > 0 ? `${voaCount} countries offer visa on arrival to ${country.name} passport holders. Top destinations include: ${result.reachByLevel.visa_on_arrival.slice(0, 5).map(e => nameFor(e.dest)).join(", ")}${voaCount > 5 ? `, and ${voaCount - 5} more` : ""}.` : `${country.name} passport holders have limited visa on arrival access. Consider using the full Earth Visa tool to explore credential-based access unlocked by holding a US visa, Schengen visa, or other documents.`,
+                  q: `Which countries can ${demonym} passport holders visit on arrival?`,
+                  a: voaCount > 0 ? `${voaCount} countries offer visa on arrival to ${demonym} passport holders. These include: ${voaEdges.slice(0, 5).map(e => nameFor(e.dest)).join(", ")}${voaCount > 5 ? `, and ${voaCount - 5} more` : ""}.` : `${demonym} passport holders have limited visa on arrival access. Consider using the full Earth Visa tool to explore credential-based access unlocked by holding a US visa, Schengen visa, or other documents.`,
                 },
               ].map(({ q, a }) => (
                 <details key={q} className="group py-1">

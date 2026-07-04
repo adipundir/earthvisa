@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
-import { dataset } from "@/lib/dataset";
 import CountryIndex from "@/components/CountryIndex";
 import { buildRegions } from "@/lib/regions";
+import { visaFreeAdmitCounts } from "./reverse-index";
 
 export const metadata: Metadata = {
   title: "Destination Index - Visa Requirements by Country",
@@ -21,16 +21,14 @@ export const metadata: Metadata = {
   },
 };
 
-// Inbound openness per destination — how many nationalities it admits visa-free.
-const admitsVisaFree = new Map(
-  dataset.countries.map((c) => [c.iso3, c.visaPolicyCounts?.visa_free ?? 0]),
-);
+// Inbound openness per destination — how many nationalities it admits
+// visa-free. Reverse-indexed from the same passportAccess data the destination
+// pages count (folding in bloc grants), so index and detail figures agree.
+// Genuine zero-count destinations show "0 visa-free" rather than no stat.
+const admitsVisaFree = visaFreeAdmitCounts();
 
 export default function DestinationIndex() {
-  const regions = buildRegions((iso3) => {
-    const n = admitsVisaFree.get(iso3) ?? 0;
-    return n ? `${n} admitted` : undefined;
-  });
+  const regions = buildRegions((iso3) => `${admitsVisaFree.get(iso3) ?? 0} visa-free`);
 
   return (
     <main className="min-h-screen">

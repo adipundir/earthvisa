@@ -230,7 +230,7 @@ function NomadCard({ e }: { e: NomadEntry }) {
           {w && (
             <Link
               href={`/passport/${slug}`}
-              className="inline-flex min-h-[44px] items-center uppercase tracking-[0.12em] text-ink-mute transition hover:text-ink"
+              className="inline-flex min-h-[44px] items-center uppercase tracking-[0.12em] text-ink-soft transition hover:text-ink"
             >
               Passport ({w.visaFree} visa-free) →
             </Link>

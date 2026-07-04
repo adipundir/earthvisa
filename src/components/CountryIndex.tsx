@@ -4,6 +4,13 @@ import { useMemo, useState, useId } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { isoToFlag, nameToSlug } from "@/lib/dataset";
+import { ALIASES, SHORT_NAME } from "@/lib/colloquial";
+
+// Searchable synonyms per ISO3, built from the site's own colloquial alias map:
+// "dubai" and "uae" should find the United Arab Emirates row, "uk" Great Britain, etc.
+const SYNONYMS: Record<string, string[]> = {};
+for (const a of ALIASES) (SYNONYMS[a.iso3] ??= []).push(a.alias.toLowerCase());
+for (const [iso3, short] of Object.entries(SHORT_NAME)) (SYNONYMS[iso3] ??= []).push(short.toLowerCase());
 
 export interface CountryRow {
   iso2: string;
@@ -45,7 +52,14 @@ export default function CountryIndex({
   );
 
   const rows = useMemo(
-    () => (normalized ? all.filter((c) => c.name.toLowerCase().includes(normalized)) : all),
+    () =>
+      normalized
+        ? all.filter(
+            (c) =>
+              c.name.toLowerCase().includes(normalized) ||
+              (SYNONYMS[c.iso3] ?? []).some((s) => s.includes(normalized))
+          )
+        : all,
     [all, normalized]
   );
 
@@ -104,8 +118,8 @@ export default function CountryIndex({
               className="flex min-h-[44px] items-center gap-2.5 rounded-md px-2 py-2 text-[15px] text-ink-soft transition hover:bg-paper-2 hover:text-ink"
             >
               <span className="text-lg">{isoToFlag(c.iso2)}</span>
-              <span className="font-display">{c.name}</span>
-              {c.stat && <span className="mono ml-auto pl-2 text-[11px] tabular-nums text-ink-mute">{c.stat}</span>}
+              <span className="min-w-0 font-display">{c.name}</span>
+              {c.stat && <span className="mono ml-auto shrink-0 whitespace-nowrap pl-2 text-[11px] tabular-nums text-ink-mute">{c.stat}</span>}
             </Link>
           </li>
         ))}
@@ -116,6 +130,16 @@ export default function CountryIndex({
         <p className="text-base leading-relaxed text-ink-soft">
           No countries match{" "}
           <span className="font-display text-ink">“{query.trim()}”</span>. Try a different spelling.
+          {kind === "destination" && /europ|schengen/.test(normalized) && (
+            <>
+              {" "}
+              Looking for Europe? See{" "}
+              <Link href="/destination/europe" className="text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">
+                visa requirements for Europe
+              </Link>
+              .
+            </>
+          )}
         </p>
       )}
     </div>

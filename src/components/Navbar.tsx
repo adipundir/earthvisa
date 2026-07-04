@@ -2,14 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { dataset } from "@/lib/dataset";
+import { fmtDate } from "@/lib/format";
 import BrandMark from "@/components/BrandMark";
-
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-function fmtDate(iso: string): string {
-  const [y, m, d] = (iso || "").split("-");
-  if (!y || !m || !d) return iso || "";
-  return `${Number(d)} ${MONTHS[Number(m) - 1] ?? m} ${y}`;
-}
 
 const LINKS = [
   { href: "/visit", label: "Entry Check" },
@@ -53,9 +47,11 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className="mono ml-auto flex items-center gap-2.5 text-[10px] uppercase tracking-[0.18em]">
-          <span className="hidden text-vfree sm:inline">Official sources only</span>
-          <span className="hidden h-3 w-px bg-line-strong sm:inline" aria-hidden="true" />
+        {/* Meta cluster is desktop-only chrome: on mobile it wrapped to a third
+            row, pushing the sticky nav to ~120px and burying anchor targets. */}
+        <div className="mono ml-auto hidden items-center gap-2.5 text-[10px] uppercase tracking-[0.18em] sm:flex">
+          <span className="text-vfree">Official sources only</span>
+          <span className="h-3 w-px bg-line-strong" aria-hidden="true" />
           <span className="text-ink-mute" title={`Data last updated ${dataset.meta.lastUpdated}`}>
             Updated {fmtDate(dataset.meta.lastUpdated)}
           </span>

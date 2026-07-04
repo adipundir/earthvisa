@@ -60,6 +60,19 @@ const CRED_SHORT: Record<string, string> = Object.fromEntries(
   dataset.credentials.map((c) => [c.id, c.short]),
 );
 
+// Crawler annotations occasionally leak schema vocabulary ("min_amount",
+// "source_official=false") into program notes. Drop those sentences at render
+// time so internal field names never reach user-facing copy.
+function cleanProgramNote(note: string | null | undefined): string | null {
+  if (!note) return null;
+  const cleaned = note
+    .split(/(?<=[.!?])\s+/)
+    .filter((s) => !/\b(min_amount|max_amount|source_official|total_example)\b/i.test(s))
+    .join(" ")
+    .trim();
+  return cleaned || null;
+}
+
 // Short label shown on the chip inside a grouped row (country already visible from the row header)
 const CRED_CHIP_LABEL: Record<string, string> = {
   US_VISA: "Any visa",
@@ -290,7 +303,7 @@ export default function PassportExplorer() {
                         aria-label="Passport type"
                         className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-ink/25"
                       >
-                        <p className="mono border-b border-line px-3 pb-2 pt-2 text-[9px] uppercase tracking-[0.18em] text-ink-mute/60">
+                        <p className="mono border-b border-line px-3 pb-2 pt-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
                           Passport type
                         </p>
                         {PASSPORT_TYPES.map((t) => {
@@ -424,7 +437,7 @@ export default function PassportExplorer() {
               className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute/70"
             />
             {creds.length > 0 && (
-              <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono shrink-0 text-[10px] uppercase tracking-[0.1em] text-ink-mute/60 hover:text-stamp">
+              <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono shrink-0 text-[11px] uppercase tracking-[0.1em] text-ink-soft hover:text-stamp">
                 Clear
               </button>
             )}
@@ -605,6 +618,7 @@ function StatBand({ result, activeTab, setTab }: {
             <button
               onClick={() => setTab(c.tab)}
               aria-pressed={activeTab === c.tab}
+              aria-describedby={`stat-tip-${c.tab}`}
               className={`flex h-[4.5rem] w-full flex-col justify-center rounded-lg border px-4 text-left transition ${
                 activeTab === c.tab
                   ? `border-t-[3px] ${c.activeBar} border-x-line-strong border-b-line-strong bg-paper-2 shadow-sm ring-1 ring-inset ring-stamp/15`
@@ -617,9 +631,15 @@ function StatBand({ result, activeTab, setTab }: {
                 <span className="ml-0.5 inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-line-strong text-[8px] font-bold leading-none text-ink-mute">?</span>
               </div>
             </button>
-            <div className="pointer-events-none absolute bottom-full left-0 z-40 mb-2 w-56 rounded-md border border-line-strong bg-white p-3 text-[12px] leading-relaxed text-ink-soft shadow-lg opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+            {/* display:none at rest (not opacity-0) so the 224px tooltip never widens the page on mobile;
+                shown on hover and on keyboard focus, right-aligned for even (right-column) cards */}
+            <div
+              id={`stat-tip-${c.tab}`}
+              role="tooltip"
+              className="pointer-events-none absolute bottom-full left-0 z-40 mb-2 hidden w-56 max-w-[calc(100vw-2.5rem)] rounded-md border border-line-strong bg-white p-3 text-[12px] leading-relaxed text-ink-soft shadow-lg group-hover:block group-focus-within:block group-even:left-auto group-even:right-0"
+            >
               {c.tooltip}
-              <div className="absolute left-4 top-full h-0 w-0 border-x-4 border-t-4 border-x-transparent border-t-line-strong" />
+              <div className="absolute left-4 top-full h-0 w-0 border-x-4 border-t-4 border-x-transparent border-t-line-strong group-even:left-auto group-even:right-4" />
             </div>
           </div>
         ))}
@@ -627,12 +647,25 @@ function StatBand({ result, activeTab, setTab }: {
 
       {/* Secondary navigation row */}
       <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
-        {result.viaCredentialCount > 0 && (
-          <p className="text-sm text-ink-soft">
-            <span className="stamp mr-1.5 bg-stamp/[0.06] px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-stamp">+{result.viaCredentialCount}</span>
-            extra destination{result.viaCredentialCount === 1 ? "" : "s"} unlocked by visas you hold.
-          </p>
-        )}
+        {result.viaCredentialCount > 0 && (() => {
+          const fresh = result.viaCredentialNewCount;
+          const upgraded = result.viaCredentialCount - fresh;
+          return (
+            <p className="text-sm text-ink-soft">
+              {fresh > 0 ? (
+                <>
+                  <span className="stamp mr-1.5 bg-stamp/[0.06] px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-stamp">+{fresh}</span>
+                  extra destination{fresh === 1 ? "" : "s"} unlocked by visas you hold
+                  {upgraded > 0 && <>, plus {upgraded} upgraded to easier access</>}.
+                </>
+              ) : (
+                <>
+                  {upgraded} destination{upgraded === 1 ? " gets" : "s get"} easier access with visas you hold.
+                </>
+              )}
+            </p>
+          );
+        })()}
         <div className="ml-auto flex flex-wrap gap-2">
           <button
             onClick={() => setTab("transit")}
@@ -937,7 +970,7 @@ function DestinationResult({
 
 function AccessPill({ level }: { level: AccessLevel }) {
   return (
-    <span className={`mono inline-flex items-center rounded px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] ${LEVEL_STYLE[level]}`}>
+    <span className={`mono inline-flex shrink-0 items-center whitespace-nowrap rounded px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] ${LEVEL_STYLE[level]}`}>
       {LEVEL_LABEL[level]}
     </span>
   );
@@ -1012,13 +1045,13 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
           <button onClick={() => setFilter("")} className="font-medium text-stamp underline-offset-2 hover:underline">Clear filter</button>
         </p>
       )}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {rows.map((e) => (
           <ClickCard key={e.dest} onOpen={() => onOpen(reachDetail(e))} className={`group flex items-start gap-3 p-3.5 ${CARD}`}>
             <span className="text-2xl leading-none">{flagFor(e.dest)}</span>
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between gap-2">
-                <span className="font-display truncate font-medium text-ink">{nameFor(e.dest)}</span>
+                <span className="font-display min-w-0 truncate font-medium text-ink">{nameFor(e.dest)}</span>
                 <AccessPill level={e.level} />
               </div>
               <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -1036,7 +1069,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
                 {e.sourceUrl && <span className="mono inline-flex items-center gap-1.5 text-[11px] text-ink-mute"><SourceDot official={e.sourceOfficial} />{hostOf(e.sourceUrl)}</span>}
               </div>
               {e.notes && <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink-mute">{e.notes}</p>}
-              <span className="mono mt-1.5 block text-[10px] uppercase tracking-[0.1em] text-stamp/50 transition group-hover:text-stamp">Details ›</span>
+              <span className="mono mt-1.5 block text-[10px] uppercase tracking-[0.1em] text-stamp/80 transition group-hover:text-stamp">Details ›</span>
             </div>
           </ClickCard>
         ))}
@@ -1055,14 +1088,14 @@ function TransitPanel({ result, onOpen }: { result: ReturnType<typeof compute>; 
         These destinations allow you to change planes or transit the country without a visa - but{" "}
         <strong className="font-semibold text-ink">not for tourism or extended stays</strong>. They appear here separately so they aren't confused with regular visa-free access.
       </div>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {result.transitReach.map((e) => (
           <ClickCard key={e.dest} onOpen={() => onOpen(reachDetail(e))} className={`group flex items-start gap-3 p-3.5 ${CARD}`}>
             <span className="text-2xl leading-none">{flagFor(e.dest)}</span>
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between gap-2">
-                <span className="font-display truncate font-medium text-ink">{nameFor(e.dest)}</span>
-                <span className="mono rounded-[3px] bg-eta/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">Transit</span>
+                <span className="font-display min-w-0 truncate font-medium text-ink">{nameFor(e.dest)}</span>
+                <span className="mono shrink-0 whitespace-nowrap rounded-[3px] bg-eta/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">Transit</span>
               </div>
               <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
                 {e.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {e.maxStayDays}h transit</span>}
@@ -1093,7 +1126,7 @@ function FomPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
         <span className="font-medium text-bloc">live and work</span> (e.g. EU/EEA, GCC, ECOWAS,
         Mercosur). Confirm the specific rights per bloc.
       </p>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {result.freedomOfMovement.map((e, i) => (
           <ClickCard
             key={e.dest}
@@ -1123,22 +1156,91 @@ function FomPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
   );
 }
 
+// ── Program panels (CBI / golden visas / fast-track) ─────────────────────────
+
+// Human labels for program type / category values whose raw form reads badly even
+// after underscores become spaces. Everything else falls through to the humaniser.
+const PROGRAM_TYPE_LABEL: Record<string, string> = {
+  real_estate: "Real estate",
+  digital_nomad: "Digital nomad",
+  "digital-nomad": "Digital nomad",
+  "digital nomad": "Digital nomad",
+  remote_work_residence: "Remote-work residence",
+  remote_worker_residence: "Remote-worker residence",
+  digital_nomad_remote_worker: "Digital nomad / remote worker",
+  job_seeker_startup: "Job seeker / startup",
+  job_search_startup: "Job search / startup",
+  job_search_points_based: "Job search (points-based)",
+  points_based_skilled_migration: "Points-based skilled migration",
+  intra_company_transfer: "Intra-company transfer",
+  "intra-company_transfer": "Intra-company transfer",
+  intra_corporate_transfer: "Intra-corporate transfer",
+  startup_entrepreneur: "Startup / entrepreneur",
+  "highly-skilled": "Highly skilled",
+  "skilled-worker": "Skilled worker",
+  fee_based_residency: "Fee-based residency",
+  express_evisa: "Express e-Visa",
+  "e-visa fast track": "e-Visa fast track",
+  passive_income: "Passive income",
+};
+
+/** Turn a raw program type/category value into readable copy - no underscores, sensible casing. */
+function programTypeLabel(raw: string): string {
+  if (!raw) return "";
+  const mapped = PROGRAM_TYPE_LABEL[raw];
+  if (mapped) return mapped;
+  const s = raw.replace(/_+/g, " ").replace(/\s*\/\s*/g, " / ").replace(/\s+/g, " ").trim();
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+/** Prefix "~" only when the processing time is an actual duration ("4-6 months"), not prose. */
+function fmtProcessing(t: string): string {
+  const s = t.trim();
+  return /^\d/.test(s) ? `~${s}` : s;
+}
+
+function PanelFilter({ value, onChange, placeholder }: { value: string; onChange: (s: string) => void; placeholder: string }) {
+  return (
+    <input
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      onKeyDown={(e) => { if (e.key === "Escape") onChange(""); }}
+      aria-label={placeholder}
+      placeholder={placeholder}
+      className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-white px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute/70"
+    />
+  );
+}
+
+function NoMatch({ filter, onClear }: { filter: string; onClear: () => void }) {
+  return (
+    <p className="rounded-lg border border-dashed border-line bg-paper-2/40 px-4 py-6 text-center text-sm text-ink-soft">
+      No programs match &ldquo;{filter}&rdquo;.{" "}
+      <button onClick={onClear} className="font-medium text-stamp underline-offset-2 hover:underline">Clear filter</button>
+    </p>
+  );
+}
+
 function CbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOpen: (d: Detail) => void }) {
   if (result.cbi.length === 0) return <Note>No citizenship-by-investment programs found on official sources yet.</Note>;
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {result.cbi.map((p, i) => {
+        // Collapse option rows that would render identically (same type + amount) -
+        // some sources list several routes under one type at the same minimum.
+        const options = p.options.filter((o, idx, arr) =>
+          arr.findIndex((x) => x.type === o.type && x.min_amount === o.min_amount && x.currency === o.currency) === idx);
         const rows: Detail["rows"] = [];
         if (p.dual_citizenship_allowed != null) rows.push({ label: "Dual citizenship", value: p.dual_citizenship_allowed ? "Allowed" : "Not allowed" });
         if (p.residency_required != null) rows.push({ label: "Residency required", value: p.residency_required ? "Yes" : "No" });
-        if (p.processing_time) rows.push({ label: "Processing time", value: `~${p.processing_time}` });
+        if (p.processing_time) rows.push({ label: "Processing time", value: fmtProcessing(p.processing_time) });
         return (
         <ClickCard
           key={p.iso3}
           onOpen={() => onOpen({
             iso3: p.iso3, title: nameFor(p.iso3), subtitle: p.program_name,
             badges: p.verified ? [{ text: "verified", tone: "vfree" }] : [],
-            options: p.options.map((o) => ({ label: o.type.replace(/_/g, " "), value: fmtMoney(o.min_amount, o.currency) })),
+            options: options.map((o) => ({ label: o.type.replace(/_/g, " "), value: o.min_amount != null ? fmtMoney(o.min_amount, o.currency) : "not specified" })),
             rows, notes: p.notes, sourceUrl: p.official_url, sourceOfficial: p.source_official,
           })}
           className={`reveal p-5 ${CARD}`}
@@ -1154,12 +1256,16 @@ function CbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
               <div className="text-sm italic text-ink-soft">{p.program_name}</div>
             </div>
           </div>
-          {p.options.length > 0 && (
+          {options.length > 0 && (
             <ul className="mt-4 divide-y divide-line/70 border-y border-line/70">
-              {p.options.map((o, j) => (
+              {options.map((o, j) => (
                 <li key={j} className="flex items-baseline justify-between gap-3 py-2">
                   <span className="text-sm capitalize text-ink-soft">{o.type.replace(/_/g, " ")}</span>
-                  <span className="mono text-sm font-semibold tabular-nums text-stamp">{fmtMoney(o.min_amount, o.currency)}</span>
+                  {o.min_amount != null ? (
+                    <span className="mono text-sm font-semibold tabular-nums text-stamp">{fmtMoney(o.min_amount, o.currency)}</span>
+                  ) : (
+                    <span className="mono text-[11px] text-ink-mute">not specified</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -1167,7 +1273,7 @@ function CbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
           <div className="mono mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-mute">
             {p.dual_citizenship_allowed != null && <span>Dual: {p.dual_citizenship_allowed ? "allowed" : "no"}</span>}
             {p.residency_required != null && <span>Residency: {p.residency_required ? "required" : "no"}</span>}
-            {p.processing_time && <span>~{p.processing_time}</span>}
+            {p.processing_time && <span>{fmtProcessing(p.processing_time)}</span>}
             {p.official_url && <span className="inline-flex items-center gap-1.5"><SourceDot official={p.source_official} />{hostOf(p.official_url)}</span>}
           </div>
         </ClickCard>
@@ -1178,71 +1284,105 @@ function CbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
 }
 
 function RbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOpen: (d: Detail) => void }) {
+  const [filter, setFilter] = useState("");
   if (result.rbi.length === 0) return <Note>No residence-by-investment / golden-visa programs found on official sources yet.</Note>;
+  // Drop entries that would render identically (same country, program name and amount).
+  const programs = result.rbi.filter((p, idx, arr) =>
+    arr.findIndex((x) => x.iso3 === p.iso3 && x.program_name === p.program_name && x.min_amount === p.min_amount) === idx);
+  const q = filter.trim().toLowerCase();
+  const rows = q
+    ? programs.filter((p) =>
+        nameFor(p.iso3).toLowerCase().includes(q) ||
+        p.program_name.toLowerCase().includes(q) ||
+        programTypeLabel(p.type).toLowerCase().includes(q))
+    : programs;
   return (
-    <div className="grid gap-3 lg:grid-cols-2">
-      {result.rbi.map((p, i) => {
-        const rows: Detail["rows"] = [{ label: "Minimum investment", value: fmtMoney(p.min_amount, p.currency) }];
-        if (p.path_to_pr_years != null) rows.push({ label: "Path to PR", value: `${p.path_to_pr_years} years` });
-        if (p.path_to_citizenship_years != null) rows.push({ label: "Path to citizenship", value: `${p.path_to_citizenship_years} years` });
-        return (
-        <ClickCard
-          key={p.iso3 + i}
-          onOpen={() => onOpen({ iso3: p.iso3, title: p.program_name, subtitle: `${nameFor(p.iso3)}${p.type ? ` · ${p.type}` : ""}`, rows, notes: p.notes, sourceUrl: p.official_url, sourceOfficial: p.source_official })}
-          className={`reveal p-4 ${CARD}`}
-          style={{ animationDelay: `${(i % 10) * 30}ms` }}
-        >
-          <div className="flex items-center gap-2.5">
-            <span className="text-2xl">{flagFor(p.iso3)}</span>
-            <div className="min-w-0">
-              <div className="font-display truncate font-medium text-ink">{p.program_name}</div>
-              <div className="mono text-[11px] uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.type ? ` · ${p.type}` : ""}</div>
+    <div className="reveal">
+      <PanelFilter value={filter} onChange={setFilter} placeholder="Filter by country or program…" />
+      {rows.length === 0 && <NoMatch filter={filter} onClear={() => setFilter("")} />}
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
+        {rows.map((p, i) => {
+          const detailRows: Detail["rows"] = [{ label: "Minimum investment", value: p.min_amount != null ? fmtMoney(p.min_amount, p.currency) : "Not specified" }];
+          if (p.path_to_pr_years != null) detailRows.push({ label: "Path to PR", value: `${p.path_to_pr_years} years` });
+          if (p.path_to_citizenship_years != null) detailRows.push({ label: "Path to citizenship", value: `${p.path_to_citizenship_years} years` });
+          return (
+          <ClickCard
+            key={p.iso3 + i}
+            onOpen={() => onOpen({ iso3: p.iso3, title: p.program_name, subtitle: `${nameFor(p.iso3)}${p.type ? ` · ${programTypeLabel(p.type)}` : ""}`, rows: detailRows, notes: p.notes, sourceUrl: p.official_url, sourceOfficial: p.source_official })}
+            className={`reveal p-4 ${CARD}`}
+            style={{ animationDelay: `${(i % 10) * 30}ms` }}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="text-2xl">{flagFor(p.iso3)}</span>
+              <div className="min-w-0">
+                <div className="font-display truncate font-medium text-ink">{p.program_name}</div>
+                <div className="mono text-[11px] uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.type ? ` · ${programTypeLabel(p.type)}` : ""}</div>
+              </div>
+              {p.min_amount != null ? (
+                <span className="mono ml-auto shrink-0 text-sm font-semibold tabular-nums text-voa">{fmtMoney(p.min_amount, p.currency)}</span>
+              ) : (
+                <span className="mono ml-auto shrink-0 text-[11px] text-ink-mute">not specified</span>
+              )}
             </div>
-            <span className="mono ml-auto text-sm font-semibold tabular-nums text-voa">{fmtMoney(p.min_amount, p.currency)}</span>
-          </div>
-          <div className="mono mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-mute">
-            {p.path_to_pr_years != null && <span>PR in {p.path_to_pr_years}y</span>}
-            {p.path_to_citizenship_years != null && <span>Citizenship in {p.path_to_citizenship_years}y</span>}
-            {p.official_url && <span className="inline-flex items-center gap-1.5"><SourceDot official={p.source_official} />{hostOf(p.official_url)}</span>}
-          </div>
-          {p.notes && <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink-mute">{p.notes}</p>}
-        </ClickCard>
-        );
-      })}
+            <div className="mono mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-mute">
+              {p.path_to_pr_years != null && <span>PR in {p.path_to_pr_years}y</span>}
+              {p.path_to_citizenship_years != null && <span>Citizenship in {p.path_to_citizenship_years}y</span>}
+              {p.official_url && <span className="inline-flex items-center gap-1.5"><SourceDot official={p.source_official} />{hostOf(p.official_url)}</span>}
+            </div>
+            {cleanProgramNote(p.notes) && <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink-mute">{cleanProgramNote(p.notes)}</p>}
+          </ClickCard>
+          );
+        })}
+      </div>
     </div>
   );
 }
 
 function FastPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOpen: (d: Detail) => void }) {
+  const [filter, setFilter] = useState("");
   if (result.fastTrack.length === 0) return <Note>No fast-track / skilled / talent / digital-nomad programs found on official sources yet.</Note>;
+  // Drop entries that would render identically (same country, program name and category).
+  const programs = result.fastTrack.filter((p, idx, arr) =>
+    arr.findIndex((x) => x.iso3 === p.iso3 && x.program_name === p.program_name && x.category === p.category) === idx);
+  const q = filter.trim().toLowerCase();
+  const rows = q
+    ? programs.filter((p) =>
+        nameFor(p.iso3).toLowerCase().includes(q) ||
+        p.program_name.toLowerCase().includes(q) ||
+        programTypeLabel(p.category).toLowerCase().includes(q))
+    : programs;
   return (
-    <div className="grid gap-3 lg:grid-cols-2">
-      {result.fastTrack.map((p, i) => {
-        const rows: Detail["rows"] = [];
-        if (p.processing_time) rows.push({ label: "Processing time", value: `~${p.processing_time}` });
-        const notes = [p.eligibility, p.notes].filter(Boolean).join("\n\n");
-        return (
-        <ClickCard
-          key={p.iso3 + i}
-          onOpen={() => onOpen({ iso3: p.iso3, title: p.program_name, subtitle: `${nameFor(p.iso3)}${p.category ? ` · ${p.category}` : ""}`, rows, notes, sourceUrl: p.official_url, sourceOfficial: p.source_official })}
-          className={`reveal p-4 ${CARD}`}
-          style={{ animationDelay: `${(i % 10) * 30}ms` }}
-        >
-          <div className="flex items-center gap-2.5">
-            <span className="text-2xl">{flagFor(p.iso3)}</span>
-            <div className="min-w-0">
-              <div className="font-display truncate font-medium text-ink">{p.program_name}</div>
-              <div className="mono text-[11px] uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.category ? ` · ${p.category}` : ""}</div>
+    <div className="reveal">
+      <PanelFilter value={filter} onChange={setFilter} placeholder="Filter by country or program…" />
+      {rows.length === 0 && <NoMatch filter={filter} onClear={() => setFilter("")} />}
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
+        {rows.map((p, i) => {
+          const detailRows: Detail["rows"] = [];
+          if (p.processing_time) detailRows.push({ label: "Processing time", value: fmtProcessing(p.processing_time) });
+          const notes = [p.eligibility, p.notes].filter(Boolean).join("\n\n");
+          return (
+          <ClickCard
+            key={p.iso3 + i}
+            onOpen={() => onOpen({ iso3: p.iso3, title: p.program_name, subtitle: `${nameFor(p.iso3)}${p.category ? ` · ${programTypeLabel(p.category)}` : ""}`, rows: detailRows, notes, sourceUrl: p.official_url, sourceOfficial: p.source_official })}
+            className={`reveal p-4 ${CARD}`}
+            style={{ animationDelay: `${(i % 10) * 30}ms` }}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="text-2xl">{flagFor(p.iso3)}</span>
+              <div className="min-w-0">
+                <div className="font-display truncate font-medium text-ink">{p.program_name}</div>
+                <div className="mono text-[11px] uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.category ? ` · ${programTypeLabel(p.category)}` : ""}</div>
+              </div>
             </div>
-          </div>
-          {p.eligibility && <p className="mt-2 line-clamp-3 text-sm leading-snug text-ink-soft">{p.eligibility}</p>}
-          <div className="mono mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-mute">
-            {p.processing_time && <span>~{p.processing_time}</span>}
-            {p.official_url && <span className="inline-flex items-center gap-1.5"><SourceDot official={p.source_official} />{hostOf(p.official_url)}</span>}
-          </div>
-        </ClickCard>
-        );
-      })}
+            {p.eligibility && <p className="mt-2 line-clamp-3 text-sm leading-snug text-ink-soft">{p.eligibility}</p>}
+            <div className="mono mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-mute">
+              {p.processing_time && <span>{fmtProcessing(p.processing_time)}</span>}
+              {p.official_url && <span className="inline-flex items-center gap-1.5"><SourceDot official={p.source_official} />{hostOf(p.official_url)}</span>}
+            </div>
+          </ClickCard>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -1298,7 +1438,7 @@ function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void 
               ))}
             </dl>
           )}
-          {detail.notes && <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ink-soft">{detail.notes}</p>}
+          {cleanProgramNote(detail.notes) && <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ink-soft">{cleanProgramNote(detail.notes)}</p>}
           {detail.sourceUrl && (
             <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-line pt-4">
               <SourceLink url={detail.sourceUrl} official={!!detail.sourceOfficial} />

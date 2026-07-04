@@ -17,16 +17,17 @@ export default function NotFound() {
         <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-ink-soft">
           We couldn&apos;t find that page. It may have moved, or the address may be mistyped.
         </p>
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-7 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/"
             className="mono rounded border border-stamp/30 bg-white px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
           >
-            Earth Visa →
+            Back to home →
           </Link>
           <Link href="/passport" className="mono text-[12px] uppercase tracking-[0.12em] text-ink-mute transition hover:text-ink">
             All passports
           </Link>
+          <span className="hidden h-3 w-px bg-line-strong sm:inline" aria-hidden="true" />
           <Link href="/destination" className="mono text-[12px] uppercase tracking-[0.12em] text-ink-mute transition hover:text-ink">
             All destinations
           </Link>

@@ -2,16 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { dataset, flagFor, nameFor, nameToSlug } from "@/lib/dataset";
 import { corridorsForDestination, DEMONYM, TOP_NATIONALITIES } from "@/lib/corridors";
-import { SCHENGEN_MEMBERS, SCHENGEN_REPRESENTATIVE, schengenCounts, schengenStatus } from "@/lib/schengen";
+import { SCHENGEN_MEMBERS, SCHENGEN_REPRESENTATIVE, schengenCounts, schengenSet, schengenStatus } from "@/lib/schengen";
 
 // The six highest-demand Schengen destinations we hold corridor guides for.
 const CORRIDOR_DESTS = ["FRA", "DEU", "ITA", "ESP", "NLD", "GRC"];
 
-// Nationalities visa-free to the representative Schengen member (France),
-// straight from the reverse index over dataset.passportAccess.
+// Non-Schengen nationalities visa-free to the representative Schengen member
+// (France), straight from the reverse index over dataset.passportAccess.
+// Schengen members are excluded: their citizens travel on freedom of movement,
+// not the visa-exemption list, so exempt = this list + the members themselves.
 function visaFreeToRepresentative(): { iso3: string; maxStayDays: number | null }[] {
   const out: { iso3: string; maxStayDays: number | null }[] = [];
   for (const [passportIso3, edges] of Object.entries(dataset.passportAccess)) {
+    if (schengenSet.has(passportIso3)) continue;
     const edge = edges.find((e) => e.dest === SCHENGEN_REPRESENTATIVE);
     if (edge && edge.level === "visa_free") out.push({ iso3: passportIso3, maxStayDays: edge.maxStayDays });
   }
@@ -58,12 +61,17 @@ export const metadata: Metadata = {
   },
 };
 
-function Chevron() {
+// `toggle` targets the named group/toggle <details> wrappers: those are named
+// so hovering them does not trigger the unnamed group-hover styles of every
+// country tile inside at once.
+function Chevron({ toggle = false }: { toggle?: boolean }) {
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className="size-3.5 shrink-0 text-ink-mute transition-transform duration-200 group-open:rotate-180"
+      className={`size-3.5 shrink-0 text-ink-mute transition-transform duration-200 ${
+        toggle ? "group-open/toggle:rotate-180" : "group-open:rotate-180"
+      }`}
       fill="none"
       stroke="currentColor"
       strokeWidth="2.5"
@@ -220,13 +228,15 @@ export default function SchengenGuidePage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-base leading-relaxed text-ink-soft">
-              The <strong className="text-ink">Schengen visa</strong> is Europe&apos;s common short-stay visa:
+              The <strong className="text-ink">Schengen visa</strong>{" "}
+              is Europe&apos;s common short-stay visa:
               one application, one sticker, and access to all <strong className="text-ink">{memberCount} Schengen
               countries</strong> for up to <strong className="text-ink">90 days in any 180-day period</strong>.
               Citizens of <strong className="text-ink">{counts.exempt} of the 199 nationalities</strong> Earth Visa
-              tracks do not need one for short stays - {vfToFrance.length} nationalities are admitted visa-free under
-              the EU&apos;s harmonised exemption list (verified against France&apos;s published visa policy), and the
-              Schengen members themselves enjoy freedom of movement. The remaining{" "}
+              tracks do not need one for short stays - {vfToFrance.length}{" "}
+              non-Schengen nationalities are admitted visa-free under the EU&apos;s harmonised exemption list
+              (verified against France&apos;s published visa policy), and citizens of the {memberCount} Schengen
+              members enjoy freedom of movement. The remaining{" "}
               <strong className="text-ink">{counts.required} nationalities</strong> must apply for a Schengen
               short-stay visa (Type C) before travelling.
             </p>
@@ -297,17 +307,18 @@ export default function SchengenGuidePage() {
               The EU keeps a single, harmonised list of visa-exempt nationalities, so one member&apos;s published
               policy answers the question for the whole area. Verified against France&apos;s official visa policy:
               citizens of <strong className="text-ink">{counts.exempt} countries do not need a Schengen visa</strong>{" "}
-              for short stays ({vfToFrance.length} visa-exempt nationalities plus the Schengen members themselves),
-              while citizens of <strong className="text-ink">{counts.required} countries</strong> must apply for a
-              Type C visa before travelling.
+              for short stays ({vfToFrance.length} visa-exempt nationalities plus the {memberCount} Schengen members
+              themselves), while citizens of <strong className="text-ink">{counts.required} countries</strong> must
+              apply for a Type C visa before travelling.
             </p>
 
             <h3 className="mt-6 font-display text-lg font-semibold text-ink">
               Nationalities That Do Not Need a Schengen Visa ({vfToFrance.length} visa-exempt)
             </h3>
             <p className="mt-1 text-sm text-ink-soft">
-              These passports are admitted visa-free for up to 90 days in any 180. Tap a passport for its full
-              visa-free list.
+              These passports are admitted visa-free for up to 90 days in any 180. Citizens of the {memberCount}{" "}
+              Schengen member states are not listed here - they have freedom of movement, with no visa and no stay
+              limit. Tap a passport for its full visa-free list.
             </p>
             <div className="mt-4 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {vfToFrance.slice(0, 15).map((e) => (
@@ -319,11 +330,11 @@ export default function SchengenGuidePage() {
                 />
               ))}
             </div>
-            <details className="group mt-2.5">
+            <details className="group/toggle mt-2.5">
               <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                <span className="group-open:hidden">Show all {vfToFrance.length}</span>
-                <span className="hidden group-open:inline">Show fewer</span>
-                <Chevron />
+                <span className="group-open/toggle:hidden">Show all {vfToFrance.length}</span>
+                <span className="hidden group-open/toggle:inline">Show fewer</span>
+                <Chevron toggle />
               </summary>
               <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {vfToFrance.slice(15).map((e) => (
@@ -348,11 +359,11 @@ export default function SchengenGuidePage() {
                 <CountryTile key={iso3} iso3={iso3} href={`/passport/${nameToSlug(nameFor(iso3))}`} sub="Schengen visa required" />
               ))}
             </div>
-            <details className="group mt-2.5">
+            <details className="group/toggle mt-2.5">
               <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                <span className="group-open:hidden">Show all {counts.required}</span>
-                <span className="hidden group-open:inline">Show fewer</span>
-                <Chevron />
+                <span className="group-open/toggle:hidden">Show all {counts.required}</span>
+                <span className="hidden group-open/toggle:inline">Show fewer</span>
+                <Chevron toggle />
               </summary>
               <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {counts.requiredIso3.slice(15).map((iso3) => (

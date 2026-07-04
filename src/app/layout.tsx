@@ -133,47 +133,6 @@ export default function RootLayout({
                   "Freedom of movement rights by regional bloc"
                 ],
                 "provider": { "@id": "https://earthvisa.in/#organization" }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": [
-                  {
-                    "@type": "Question",
-                    "name": "Which passport has the most visa-free countries in 2026?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "As of 2026, Singapore, Japan, and several European passports (France, Germany, Italy, Spain) consistently rank among the most powerful, offering visa-free or visa-on-arrival access to 190+ destinations. Earth Visa tracks live rankings for all 199 passports based on official government data." }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "How many countries can I visit without a visa?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "It depends on your passport. Top-ranked passports access 190+ countries visa-free or on arrival. Search your nationality on Earth Visa to see the exact list of visa-free countries, visa-on-arrival destinations, and e-visa options for your specific passport." }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What is the difference between visa on arrival and e-visa?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Visa on arrival (VoA) means you obtain your visa at the airport or border upon arrival - no advance application required. An e-visa (electronic visa) requires you to apply and receive approval online before you travel. Both allow entry but e-visas must be secured in advance." }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What is citizenship by investment?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Citizenship by investment (CBI) allows foreign nationals to obtain a second passport by making a qualifying investment - typically a donation to a national development fund or real estate purchase. Popular programs include those in the Caribbean (St Kitts, Grenada, Dominica) and Europe (Malta, Vanuatu). Costs typically range from $100,000 to $1,000,000+." }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What is a golden visa?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A golden visa is a residency-by-investment program that grants long-term residency (and sometimes a path to citizenship) in exchange for a qualifying investment such as real estate, business creation, or government bonds. Popular golden visa countries include Portugal, Spain, Greece, UAE, and Malta." }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What is a passport strength index?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A passport strength index ranks passports by the number of countries their holders can visit without obtaining a visa in advance. Earth Visa ranks all 199 passports using official government data, covering visa-free, visa on arrival, eTA, and e-visa access across 227 destinations." }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What is an eTA (Electronic Travel Authorization)?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "An eTA (Electronic Travel Authorization) is a lightweight pre-travel permission required by some countries - such as Canada, Australia (ETA), and the UK (ETA) - for nationalities that are otherwise visa-exempt. It is applied for online, costs a small fee, and is typically approved within minutes to hours. An eTA does not require a visa appointment." }
-                  }
-                ]
               }
             ])
           }}

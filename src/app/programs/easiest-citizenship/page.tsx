@@ -5,6 +5,7 @@ import { fmtMoney } from "@/lib/compute";
 import {
   cbiMinUsd,
   isAnnouncedOnly,
+  isClosedProgram,
   passportWorth,
   TOTAL_RANKED_PASSPORTS,
 } from "@/lib/programs";
@@ -27,9 +28,10 @@ const cbiUnpriced = dataset.cbi
   .sort((a, b) => a.name.localeCompare(b.name));
 
 // Route 2: shortest published residence-to-citizenship path per country, from rbi.
+// Programs the dataset itself marks as closed or abolished are not live paths - skip them.
 const shortestPathByCountry = new Map<string, RbiProgram>();
 for (const r of dataset.rbi) {
-  if (r.path_to_citizenship_years == null) continue;
+  if (r.path_to_citizenship_years == null || isClosedProgram(r)) continue;
   const cur = shortestPathByCountry.get(r.iso3);
   if (!cur || r.path_to_citizenship_years < (cur.path_to_citizenship_years as number)) {
     shortestPathByCountry.set(r.iso3, r);
@@ -176,6 +178,18 @@ function Chevron() {
   );
 }
 
+/** shared column widths so the preview table and the expanded continuation table stay aligned */
+function PathCols() {
+  return (
+    <colgroup>
+      <col className="w-[72px]" />
+      <col className="w-[200px]" />
+      <col />
+      <col className="w-[140px]" />
+    </colgroup>
+  );
+}
+
 function PathRow({ r }: { r: RbiProgram }) {
   const w = passportWorth(r.iso3);
   return (
@@ -232,7 +246,10 @@ export default function EasiestCitizenshipPage() {
                 { k: "CBI programs (months)", v: String(dataset.cbi.length) },
                 { k: "Shortest residence path", v: `${fastestPathYears} yrs` },
                 { k: "Countries with path data", v: String(pathRows.length) },
-                { k: "Cheapest CBI minimum", v: fmtMoney(cbiPriced[0].min, "USD") },
+                {
+                  k: "Cheapest CBI minimum",
+                  v: `${fmtMoney(cbiPriced[0].min, "USD")}${isAnnouncedOnly(cbiPriced[0].p) ? " (announced)" : ""}`,
+                },
               ].map(({ k, v }) => (
                 <div key={k}>
                   <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
@@ -325,8 +342,12 @@ export default function EasiestCitizenshipPage() {
               {pathRows.length} countries in our residency dataset publish a residence-to-citizenship timeline for at
               least one program. The shortest per country, ranked:
             </p>
-            <div className="mt-5 overflow-x-auto">
-              <table className="w-full min-w-[560px] border-collapse text-sm">
+            <p className="mono mt-5 text-[10px] uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+              Scroll sideways for all columns →
+            </p>
+            <div className="mt-1.5 overflow-x-auto sm:mt-5">
+              <table className="w-full min-w-[560px] table-fixed border-collapse text-sm">
+                <PathCols />
                 <thead>
                   <tr className="mono border-b border-line-strong text-left text-[10px] uppercase tracking-[0.15em] text-ink-mute">
                     <th className="py-2.5 pr-4 text-right font-medium">Path</th>
@@ -350,7 +371,8 @@ export default function EasiestCitizenshipPage() {
                   <Chevron />
                 </summary>
                 <div className="mt-2.5 overflow-x-auto">
-                  <table className="w-full min-w-[560px] border-collapse text-sm">
+                  <table className="w-full min-w-[560px] table-fixed border-collapse text-sm">
+                    <PathCols />
                     <tbody>
                       {pathRows.slice(PATH_PREVIEW).map((r) => (
                         <PathRow key={r.iso3} r={r} />
@@ -362,8 +384,8 @@ export default function EasiestCitizenshipPage() {
             )}
             <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
               Years shown are the published minimum residence before naturalisation eligibility for that program, per
-              the official sources in our dataset. Language, physical-presence and character requirements apply on
-              top, and approval is discretionary.
+              the official sources in our dataset. Programs our sources record as closed or abolished are excluded.
+              Language, physical-presence and character requirements apply on top, and approval is discretionary.
             </p>
           </section>
 
@@ -374,10 +396,11 @@ export default function EasiestCitizenshipPage() {
                 Route 3 - Fast-Track Naturalisation for Skills &amp; Contributions
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                A small number of countries run accelerated naturalisation for specific profiles. From our fast-track
-                dataset:
+                {ftCitizenship.length === 1
+                  ? "Accelerated naturalisation for specific profiles is rare - one route in our fast-track dataset currently qualifies:"
+                  : "A small number of countries run accelerated naturalisation for specific profiles. From our fast-track dataset:"}
               </p>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className={ftCitizenship.length === 1 ? "mt-5 max-w-xl" : "mt-5 grid gap-3 sm:grid-cols-2"}>
                 {ftCitizenship.map((f) => (
                   <article key={`${f.iso3}-${f.program_name}`} className="rounded-sm border border-line bg-paper-2/70 p-4">
                     <div className="flex items-center gap-3">

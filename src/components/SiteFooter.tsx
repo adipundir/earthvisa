@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { dataset } from "@/lib/dataset";
+import { fmtDate } from "@/lib/format";
 import BrandMark from "@/components/BrandMark";
 
 // Sitewide footer. Its main job beyond branding is reachability: it links every
@@ -62,8 +63,11 @@ export default function SiteFooter() {
               Visa rules, fees and entry requirements for 199 passports - sourced only from official
               government publications, never third-party aggregators.
             </p>
-            <p className="mono mt-4 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
-              Updated {dataset.meta.lastUpdated}
+            <p
+              className="mono mt-4 text-[10px] uppercase tracking-[0.18em] text-ink-mute"
+              title={`Data last updated ${dataset.meta.lastUpdated}`}
+            >
+              Updated {fmtDate(dataset.meta.lastUpdated)}
             </p>
           </div>
 

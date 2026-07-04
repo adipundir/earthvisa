@@ -96,9 +96,11 @@ export default function EtiasGuidePage() {
     .map((iso3) => ({ iso3, edge: accessTo(iso3, "FRA") }))
     .filter((x) => x.edge?.level === "visa_free");
 
-  // Total count of passports our dataset records as visa-free to France.
-  const vfToFranceCount = Object.entries(dataset.passportAccess).filter(([, edges]) =>
-    edges.some((e) => e.dest === "FRA" && e.level === "visa_free"),
+  // Passports our dataset records as visa-free to France, excluding EU and
+  // Schengen member passports - their citizens are outside the ETIAS scope.
+  const memberSet = new Set([...schengen, ...(dataset.groups.EU ?? [])]);
+  const vfToFranceCount = Object.entries(dataset.passportAccess).filter(([nat, edges]) =>
+    !memberSet.has(nat) && edges.some((e) => e.dest === "FRA" && e.level === "visa_free"),
   ).length;
 
   const usEdge = accessTo("USA", "FRA");
@@ -195,7 +197,7 @@ export default function EtiasGuidePage() {
               {[
                 { k: "Schengen states", v: String(schengen.length) },
                 { k: "EU members", v: String(euCount) },
-                { k: "Passports visa-free to France", v: String(vfToFranceCount) },
+                { k: "Passports in the ETIAS group", v: String(vfToFranceCount) },
                 { k: "Typical visa-free stay", v: usStay ? `${usStay} days` : "varies" },
               ].map(({ k, v }) => (
                 <div key={k}>
@@ -213,7 +215,8 @@ export default function EtiasGuidePage() {
           <section className="mt-10 max-w-3xl">
             <h2 className="font-display text-2xl font-semibold text-ink">ETIAS Is Not a Visa</h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              <strong className="text-ink">ETIAS</strong> (European Travel Information and Authorisation System) is the
+              <strong className="text-ink">ETIAS</strong>{" "}
+              (European Travel Information and Authorisation System) is the
               EU&apos;s upcoming <strong className="text-ink">travel authorisation for visa-exempt travellers</strong> -
               and it is <strong className="text-ink">not a visa</strong>. That distinction is the single most common
               point of confusion. A visa is an entry permission you apply for because your passport does not qualify for
@@ -240,8 +243,9 @@ export default function EtiasGuidePage() {
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
               ETIAS will apply to <strong className="text-ink">visa-exempt, non-EU nationals</strong> making short
               visits to the Schengen area - the same travellers who today simply board a plane with their passport.
-              Per our dataset, <strong className="text-ink">{vfToFranceCount} passports</strong> currently enter France
-              (used here as the Schengen reference destination) visa-free, including travellers from the{" "}
+              Per our dataset, <strong className="text-ink">{vfToFranceCount} passports</strong> from outside the EU
+              and the Schengen area currently enter France (used here as the Schengen reference destination)
+              visa-free, including travellers from the{" "}
               <Link href={`/passport/${nameToSlug(nameFor("USA"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">United States</Link>,{" "}
               <Link href={`/passport/${nameToSlug(nameFor("GBR"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">United Kingdom</Link>,{" "}
               <Link href={`/passport/${nameToSlug(nameFor("CAN"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Canada</Link> and{" "}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { dataset, flagFor, nameFor, nameToSlug } from "@/lib/dataset";
+import { fmtDate } from "@/lib/format";
 import RankingsTable, { type RankingRow } from "@/components/RankingsTable";
 import type { AccessLevel } from "@/lib/types";
 
@@ -37,6 +38,17 @@ const bottom10 = rows.slice(-10);
 const top1 = rows[0];
 // Passports tied with the runner-up total (the "closely followed by" group).
 const runnersUp = rows.filter((r) => r.rank > 1 && r.total === rows[1].total);
+// Passports sharing the #1 total - when non-empty, the top spot is a tie and
+// the copy must say so rather than crown top1 alone (rank order within a tie
+// is dataset order, not a real distinction).
+const tiedWithTop = rows.filter((r) => r.rank > 1 && r.total === top1.total);
+
+/** "A", "A and B", or "A, B and C" - name lists for FAQ and intro sentences. */
+function listNames(rs: RankingRow[]): string {
+  const names = rs.map((r) => r.name);
+  if (names.length <= 1) return names.join("");
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
 
 // Distinct destinations covered by the access data - computed, never assumed.
 const destCount = new Set(
@@ -93,11 +105,15 @@ const FAQS = [
   },
   {
     q: "Which is the strongest visa in the world?",
-    a: `People often say "strongest visa" when they mean the strongest passport - the document that grants the most visa-free travel. By that measure, the ${top1.name} passport is the strongest in the world in 2026, reaching ${top1.total} destinations without a pre-arranged embassy visa. (A "visa" itself is a permit to enter one country; a passport's strength is what determines how many countries you can enter visa-free.)`,
+    a: `People often say "strongest visa" when they mean the strongest passport - the document that grants the most visa-free travel. By that measure, the ${top1.name} passport${tiedWithTop.length > 0 ? ` (tied with ${listNames(tiedWithTop)})` : ""} is the strongest in the world in 2026, reaching ${top1.total} destinations without a pre-arranged embassy visa. (A "visa" itself is a permit to enter one country; a passport's strength is what determines how many countries you can enter visa-free.)`,
   },
   {
     q: "Which passport is the strongest in the world in 2026?",
-    a: `The ${top1.name} passport ranks #1 in our 2026 passport index with a total reach of ${top1.total} destinations: ${top1.visaFree} visa-free, ${top1.visaOnArrival} visa on arrival, and ${top1.eta} via eTA or e-visa. It is closely followed by ${runnersUp.map((r) => r.name).join(", ")}, each with a total reach of ${rows[1].total} destinations.`,
+    a: `The ${top1.name} passport ranks #1 in our 2026 passport index with a total reach of ${top1.total} destinations: ${top1.visaFree} visa-free, ${top1.visaOnArrival} visa on arrival, and ${top1.eta} via eTA or e-visa. ${
+      tiedWithTop.length > 0
+        ? `It shares the top spot with ${listNames(tiedWithTop)}, whose passport${tiedWithTop.length > 1 ? "s" : ""} also reach${tiedWithTop.length > 1 ? "" : "es"} ${top1.total} destinations.`
+        : `It is closely followed by ${listNames(runnersUp)}, ${runnersUp.length > 1 ? "each " : ""}with a total reach of ${rows[1].total} destinations.`
+    }`,
   },
   {
     q: "How is the passport ranking calculated?",
@@ -196,7 +212,7 @@ export default function RankingsPage() {
                 { k: "Passports ranked", v: String(rows.length) },
                 { k: "Destinations tracked", v: String(destCount) },
                 { k: "#1 total reach", v: String(top1.total) },
-                { k: "Data updated", v: dataset.meta.lastUpdated },
+                { k: "Data updated", v: fmtDate(dataset.meta.lastUpdated) },
               ].map(({ k, v }) => (
                 <div key={k}>
                   <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
@@ -216,6 +232,7 @@ export default function RankingsPage() {
               <Link href={`/passport/${top1.slug}`} className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">
                 {top1.name} passport
               </Link>
+              {tiedWithTop.length > 0 && <> (tied with {listNames(tiedWithTop)})</>}
               , with a total reach of <strong className="text-ink">{top1.total} destinations</strong> -{" "}
               {top1.visaFree} visa-free, {top1.visaOnArrival} visa on arrival, and {top1.eta} via eTA or e-visa.
               This passport index 2026 ranks all <strong className="text-ink">{rows.length} passports</strong> in the world by how far
@@ -246,7 +263,7 @@ export default function RankingsPage() {
                     href={`/passport/${r.slug}`}
                     className="group flex min-h-[44px] flex-col rounded-sm border border-line bg-paper-2/70 px-3.5 py-3 transition hover:border-line-strong"
                   >
-                    <span className="mono text-[10px] uppercase tracking-[0.18em] text-stamp">#{r.rank}</span>
+                    <span className="mono text-[11px] uppercase tracking-[0.18em] text-stamp">#{r.rank}</span>
                     <span className="mt-1.5 flex items-center gap-2">
                       <span className="text-2xl">{r.flag}</span>
                       <span className="font-display text-sm font-semibold text-ink transition group-hover:text-stamp">{r.name}</span>
@@ -255,7 +272,7 @@ export default function RankingsPage() {
                       {r.total}
                       <span className="ml-1 text-[10px] font-normal uppercase tracking-[0.1em] text-ink-mute">reach</span>
                     </span>
-                    <span className="mono mt-1 text-[10px] text-ink-mute">
+                    <span className="mono mt-1 text-[11px] text-ink-mute">
                       {r.visaFree} visa-free · {r.visaOnArrival} VoA · {r.eta} eTA/e-visa
                     </span>
                   </Link>
@@ -308,7 +325,7 @@ export default function RankingsPage() {
           </section>
 
           {/* Methodology */}
-          <section id="methodology" className="mt-14 max-w-3xl scroll-mt-6">
+          <section id="methodology" className="mt-14 max-w-3xl scroll-mt-24">
             <h2 className="font-display text-2xl font-semibold text-ink">
               How This Passport Ranking Is Calculated
             </h2>
@@ -330,7 +347,7 @@ export default function RankingsPage() {
               totals are listed in sequence, so adjacent ranks can share the same reach. Other indexes (Henley Passport Index,
               Passport Index by Arton, and others) use different methodologies - some merge access levels into one score or rely
               on airline industry data - which is why the same passport can sit a few places apart across indexes. Data last
-              updated {dataset.meta.lastUpdated}.
+              updated {fmtDate(dataset.meta.lastUpdated)}.
             </p>
           </section>
 

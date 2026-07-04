@@ -215,7 +215,7 @@ export default function GccVisaGuidePage() {
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
               {[
                 { k: "Member states", v: members.length },
-                { k: "Visa-free grants (all 6)", v: totalVf },
+                { k: "Visa-free grants (sum of 6 states)", v: totalVf },
                 { k: "Visa on arrival grants", v: totalVoa },
                 { k: "eTA / e-Visa grants", v: totalE },
               ].map(({ k, v }) => (
@@ -289,7 +289,10 @@ export default function GccVisaGuidePage() {
               grants to popular passports, computed from our official-source dataset. &quot;Visa required&quot; means no
               visa-free, on-arrival, eTA or e-visa grant is recorded - apply in advance.
             </p>
-            <div className="mt-5 overflow-x-auto">
+            <p className="mono mt-4 text-[10px] uppercase tracking-[0.15em] text-ink-mute sm:hidden">
+              Swipe sideways for all six states <span aria-hidden>→</span>
+            </p>
+            <div className="mt-2 overflow-x-auto sm:mt-5">
               <table className="w-full min-w-[720px] border-collapse text-left">
                 <thead>
                   <tr className="border-b border-line-strong">

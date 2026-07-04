@@ -121,7 +121,10 @@ export default function ProofOfFundsHub() {
                 Multiply the daily rate by your number of days for the official minimum. Figures from official government
                 sources.
               </p>
-              <div className="mt-5 overflow-x-auto rounded-lg border border-line-strong">
+              <p className="mono mt-4 text-[10px] uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+                Swipe sideways for the notes column <span aria-hidden>→</span>
+              </p>
+              <div className="mt-2 overflow-x-auto rounded-lg border border-line-strong sm:mt-5">
                 <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
                   <thead>
                     <tr className="bg-paper-2/70 text-[11px] uppercase tracking-[0.1em] text-ink-mute">

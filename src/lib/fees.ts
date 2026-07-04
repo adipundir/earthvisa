@@ -56,16 +56,33 @@ const KIND_FOR_LEVEL: Record<string, string[]> = {
   visa_required: ["tourist_visa", "e_visa"],
 };
 
+/**
+ * Placeholder rows record that a product does NOT exist ("No e-visa system",
+ * "not offered") or carry neither an amount nor a source URL — they are data
+ * notes, not renderable fees, and must never surface as a fee card.
+ */
+function isRenderableFee(f: FeeEntry): boolean {
+  if (/^not?\s/i.test(f.name)) return false;
+  return f.amount != null || !!f.source_url;
+}
+
 /** The fee entries relevant to one nationality's access status at a destination. */
 export function relevantFees(destIso3: string, statusKind: string): FeeEntry[] {
   const d = feesByIso3[destIso3];
   if (!d) return [];
   const kinds = KIND_FOR_LEVEL[statusKind];
   if (!kinds) return [];
-  const hits = d.fees.filter((f) => kinds.includes(f.kind));
+  const hits = d.fees.filter((f) => kinds.includes(f.kind) && isRenderableFee(f));
   // visa_required fallback: if no tourist/e-visa recorded, show whatever paid entry kinds exist
   if (hits.length === 0 && statusKind === "visa_required") {
-    return d.fees.filter((f) => f.kind !== "transit_visa").slice(0, 2);
+    return d.fees.filter((f) => f.kind !== "transit_visa" && isRenderableFee(f)).slice(0, 2);
+  }
+  // e-visa / eTA fallback: when the matching kind has no published amount, the
+  // destination's tourist-visa fee is what the online applicant actually pays
+  // (e.g. UAE records its AED tourist-visa fees with no separate e_visa row).
+  if ((statusKind === "e_visa" || statusKind === "eta") && !hits.some((f) => f.amount != null)) {
+    const tourist = d.fees.filter((f) => f.kind === "tourist_visa" && f.amount != null);
+    if (tourist.length > 0) return [...hits, ...tourist];
   }
   return hits;
 }
@@ -78,6 +95,7 @@ export function variationFor(destIso3: string, natIso3: string): FeeVariation | 
 }
 
 export function fmtFee(f: { amount: number | null; currency: string | null; amount_usd?: number | null }): string {
+  if (f.amount === 0) return "Free"; // genuinely free products, not "AUD 0 (~$0)"
   if (f.amount == null) return "see official source";
   const base = `${f.currency ?? ""} ${f.amount.toLocaleString()}`.trim();
   return f.amount_usd != null && f.currency !== "USD" ? `${base} (~$${f.amount_usd.toLocaleString()})` : base;

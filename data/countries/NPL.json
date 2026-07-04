@@ -3,6 +3,11 @@
   "iso3": "NPL",
   "name": "Nepal",
   "region": "Asia",
+  "visa_required": {
+    "description": "Restricted list: nationalities NOT eligible for visa on arrival or the online pre-arrival application; they must obtain a visa from a Nepalese diplomatic mission in advance. 13 countries (incl. Iran, added 13 March 2026 per Ministry of Home Affairs decision) plus refugees holding travel documents (not representable here). Structured here so the 'all nationalities except restricted list' visa-on-arrival entry is never expanded to these passports.",
+    "source_url": "https://ntb.gov.np/plan-your-trip/before-you-come/tourist-visa",
+    "nationalities_iso3": ["NGA", "GHA", "ZWE", "SWZ", "CMR", "SOM", "LBR", "ETH", "IRQ", "PSE", "AFG", "SYR", "IRN"]
+  },
   "visa_policy": {
     "visa_free": [
       {

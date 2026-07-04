@@ -25,6 +25,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const { meta } = dataset;
+  // Year for dated FAQ copy/JSON-LD - derived from the dataset so it can't go stale.
+  const dataYear = meta.lastUpdated.slice(0, 4);
 
   return (
     <main className="min-h-screen">
@@ -36,7 +38,7 @@ export default function Home() {
             <div>
               <div className="mt-6">
                 <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
-                  What can your passport <span className="italic text-stamp">actually</span> do?
+                  What can your passport <span className="italic text-stamp">actually</span>&nbsp;do?
                 </h1>
                 <p className="mt-3 max-w-xl text-base leading-relaxed text-ink-soft">
                   Enter your passport to see visa-free countries, fees and entry rules - all from official government sources.
@@ -66,7 +68,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
-              { "@type": "Question", "name": "Which passport gives the most visa-free countries in 2025?", "acceptedAnswer": { "@type": "Answer", "text": "European passports (Luxembourg, Germany, France, Italy, Spain, Denmark, Finland, Netherlands) and Japan consistently top the passport index, offering visa-free or visa-on-arrival access to 170+ destinations in 2025." } },
+              { "@type": "Question", "name": `Which passport gives the most visa-free countries in ${dataYear}?`, "acceptedAnswer": { "@type": "Answer", "text": `European passports (Luxembourg, Germany, France, Italy, Spain, Denmark, Finland, Netherlands) and Japan consistently top the passport index, offering visa-free or visa-on-arrival access to 170+ destinations in ${dataYear}.` } },
               { "@type": "Question", "name": "Can holding a US visa increase my travel options?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A valid US B1/B2 visa or Green Card unlocks visa-free or visa-on-arrival access to dozens of additional countries including Mexico, Costa Rica, Guatemala, Albania, Kosovo and more." } },
               { "@type": "Question", "name": "What is citizenship by investment?", "acceptedAnswer": { "@type": "Answer", "text": "Citizenship by investment (CBI) grants citizenship to foreign nationals who make a qualifying economic contribution - donations, real estate, or bond investments - in Caribbean nations, Malta, Turkey, and others." } },
               { "@type": "Question", "name": "What is a golden visa?", "acceptedAnswer": { "@type": "Answer", "text": "A golden visa grants residency rights (not citizenship) in exchange for a qualifying investment. Popular programs include Portugal, Greece, Spain, UAE, and Malta, with pathways to citizenship after residency." } },
@@ -110,8 +112,8 @@ export default function Home() {
                   a: "Passport strength refers to how many countries a passport holder can visit without obtaining a visa in advance. It is measured by counting the number of destinations offering visa-free access, visa on arrival, or electronic travel authorisation (eTA) to holders of a given passport. Stronger passports - typically those from the EU, US, Japan, UK, Australia, and Canada - can access 170+ destinations without prior visa arrangements."
                 },
                 {
-                  q: "Which passport gives the most visa-free countries in 2025?",
-                  a: "As of 2025, European passports from Luxembourg, Germany, France, Italy, Spain, Denmark, Finland, Netherlands, and several others consistently rank at the top, offering visa-free or visa-on-arrival access to 170+ destinations. Japanese and Singaporean passports are also among the world's strongest."
+                  q: `Which passport gives the most visa-free countries in ${dataYear}?`,
+                  a: `As of ${dataYear}, European passports from Luxembourg, Germany, France, Italy, Spain, Denmark, Finland, Netherlands, and several others consistently rank at the top, offering visa-free or visa-on-arrival access to 170+ destinations. Japanese and Singaporean passports are also among the world's strongest.`
                 },
                 {
                   q: "Can holding a US visa increase my travel options?",
@@ -256,7 +258,7 @@ function PassportIllustration() {
           <path d="M-25 0 A25 25 0 0 1 25 0" fill="none" stroke="#2a7a4a" strokeWidth="0.8" opacity="0.4" />
           <text x="0" y="-10" textAnchor="middle" fontFamily="monospace" fontSize="6" fill="#2a7a4a" fontWeight="bold" letterSpacing="2">ADMITTED</text>
           <text x="0" y="2" textAnchor="middle" fontFamily="monospace" fontSize="9" fill="#2a7a4a" fontWeight="bold">ENTRY</text>
-          <text x="0" y="14" textAnchor="middle" fontFamily="monospace" fontSize="5.5" fill="#2a7a4a" opacity="0.7" letterSpacing="1">25 JAN 2025</text>
+          <text x="0" y="14" textAnchor="middle" fontFamily="monospace" fontSize="5.5" fill="#2a7a4a" opacity="0.7" letterSpacing="1">25 JAN 2026</text>
           <text x="0" y="24" textAnchor="middle" fontFamily="monospace" fontSize="5" fill="#2a7a4a" opacity="0.5">PORT: INTL-A</text>
         </g>
 
@@ -266,7 +268,7 @@ function PassportIllustration() {
           <line x1="-28" y1="-12" x2="28" y2="-12" stroke="#b23528" strokeWidth="0.5" opacity="0.4" />
           <line x1="-28" y1="12" x2="28" y2="12" stroke="#b23528" strokeWidth="0.5" opacity="0.4" />
           <text x="0" y="-4" textAnchor="middle" fontFamily="monospace" fontSize="6.5" fill="#b23528" fontWeight="bold" letterSpacing="1.5">DEPARTURE</text>
-          <text x="0" y="8" textAnchor="middle" fontFamily="monospace" fontSize="5.5" fill="#b23528" opacity="0.75" letterSpacing="0.5">14 MAR 2025</text>
+          <text x="0" y="8" textAnchor="middle" fontFamily="monospace" fontSize="5.5" fill="#b23528" opacity="0.75" letterSpacing="0.5">14 MAR 2026</text>
         </g>
 
         {/* ── VISA STAMP 3 - Transit (blue), lower left of bio page ── */}
@@ -275,7 +277,7 @@ function PassportIllustration() {
           <circle cx="0" cy="0" r="22" fill="none" stroke="#3b5bdb" strokeWidth="0.5" opacity="0.45" />
           <text x="0" y="-5" textAnchor="middle" fontFamily="monospace" fontSize="6" fill="#3b5bdb" fontWeight="bold" letterSpacing="1">TRANSIT</text>
           <text x="0" y="7" textAnchor="middle" fontFamily="monospace" fontSize="5" fill="#3b5bdb" opacity="0.7">48 HRS</text>
-          <text x="0" y="17" textAnchor="middle" fontFamily="monospace" fontSize="4.5" fill="#3b5bdb" opacity="0.5">08 FEB 2025</text>
+          <text x="0" y="17" textAnchor="middle" fontFamily="monospace" fontSize="4.5" fill="#3b5bdb" opacity="0.5">08 FEB 2026</text>
         </g>
       </svg>
     </div>

@@ -217,9 +217,10 @@ export default function EuropePage() {
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               For the Schengen zone the answer is data-driven: citizens of{" "}
-              <strong className="text-ink">{counts.exempt} of the 199 nationalities</strong> we track do not need a
-              visa for short stays, while <strong className="text-ink">{counts.required} nationalities</strong> must
-              apply for a Schengen visa first - verified against France&apos;s official published visa policy, since
+              <strong className="text-ink">{counts.exempt} of the 199 nationalities</strong>{" "}
+              we track do not need a visa for short stays, while{" "}
+              <strong className="text-ink">{counts.required} nationalities</strong>{" "}
+              must apply for a Schengen visa first - verified against France&apos;s official published visa policy, since
               the EU exemption list is harmonised across all members.
             </p>
           </section>

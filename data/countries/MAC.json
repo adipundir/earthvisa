@@ -3,6 +3,11 @@
   "iso3": "MAC",
   "name": "Macau",
   "region": "Asia",
+  "visa_required": {
+    "description": "The six advance-visa-required nationalities per Chief Executive Written Instruction No. 165/2010 (effective 1 July 2010): must obtain a Macau visa in advance through a PRC diplomatic mission. Excluded from both the visa-free exemption list and the on-arrival Entry Permit. Structured here so the 'all nationalities not on the 88-country exemption list' visa-on-arrival entry is never expanded to these passports.",
+    "source_url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+    "nationalities_iso3": ["BGD", "NPL", "NGA", "PAK", "LKA", "VNM"]
+  },
   "visa_policy": {
     "visa_free": [
       {

@@ -127,7 +127,11 @@
       "source_official": false
     }
   ],
-  "visa_required": null,
+  "visa_required": {
+    "description": "Nationalities requiring PRIOR APPROVAL from the Director of Immigration before arrival (UN Mission / immigration.gov.sb prior-approval list; enumerated in visa_policy.notes). Structured here so the 'all nationalities not on the prior-approval list' visa_free entry is never expanded to these passports. China, India, UAE and Indonesia keep their own dedicated visa_policy entries (bilateral agreements) which take precedence.",
+    "source_url": "https://www.un.int/solomonislands/solomonislands/visa-information",
+    "nationalities_iso3": ["DZA", "AGO", "BEN", "BWA", "BFA", "CMR", "CPV", "CAF", "TCD", "COG", "COD", "COM", "CIV", "DJI", "EGY", "GNQ", "ERI", "ETH", "GAB", "GMB", "GHA", "GIN", "GNB", "KEN", "LSO", "LBR", "LBY", "MDG", "MWI", "MLI", "MRT", "MUS", "MOZ", "MAR", "NAM", "NER", "NGA", "RWA", "STP", "SEN", "SYC", "SLE", "SOM", "ZAF", "SDN", "SWZ", "TZA", "TGO", "TUN", "UGA", "ZWE", "AFG", "BHR", "BGD", "BTN", "MMR", "KHM", "CHN", "HKG", "IND", "IDN", "IRN", "IRQ", "JOR", "KAZ", "PRK", "LAO", "LBN", "MNG", "NPL", "OMN", "PAK", "PHL", "QAT", "SAU", "LKA", "SYR", "TJK", "TUR", "TKM", "VNM", "YEM", "ARE", "UZB", "ALB", "AZE", "BIH", "BGR", "HRV", "CYP", "ARM", "EST", "GEO", "XKX", "LVA", "LTU", "MDA", "ROU", "RUS", "UKR", "MKD", "CUB", "HTI", "JAM", "KIR", "TUV", "CRI", "SLV", "GTM", "HND", "MEX", "NIC", "PAN", "BOL", "COL", "ECU", "VEN"]
+  },
   "visa_types": [
     {
       "category": "tourist",

@@ -303,21 +303,24 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
               )}
               {status === "exempt" && (
                 <>
-                  {country.name} is on the EU&apos;s harmonised visa-exemption list, which we verify against
+                  {country.name}{" "}
+                  is on the EU&apos;s harmonised visa-exemption list, which we verify against
                   France&apos;s published visa policy. That exemption applies identically in every Schengen country -
                   there is no member state where {plural} would suddenly need a short-stay visa. The trade-off is the
                   strict{" "}
                   <Link href="/guide/schengen#rule" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                     90/180 rule
                   </Link>
-                  : {stayDays ?? 90} days in any rolling 180-day window across the whole area. Note that the EU&apos;s
+                  : {stayDays ?? 90}{" "}
+                  days in any rolling 180-day window across the whole area. Note that the EU&apos;s
                   planned ETIAS travel authorisation will eventually apply to visa-exempt visitors - it is not a visa,
                   and was not yet mandatory at the time of writing.
                 </>
               )}
               {status === "visa_required" && (
                 <>
-                  {country.name} is not on the EU&apos;s visa-exemption list (verified against France&apos;s published
+                  {country.name}{" "}
+                  is not on the EU&apos;s visa-exemption list (verified against France&apos;s published
                   visa policy), so a <strong className="text-ink">Schengen short-stay visa (Type C)</strong> is
                   required before travel. The good news: the process is harmonised. One application at the consulate
                   of your main destination gives you a visa valid across all {memberCount} member countries, and{" "}

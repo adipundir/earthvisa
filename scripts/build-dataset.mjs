@@ -45,7 +45,8 @@ const ALIASES = {
   palestinian: "PSE", "palestinian territories": "PSE", "state of palestine": "PSE",
   "hong kong sar": "HKG", "hong kong sar china": "HKG", hongkong: "HKG",
   macao: "MAC", "chinese taipei": "TWN",
-  swaziland: "SWZ", "east timor": "TLS",
+  swaziland: "SWZ", "kingdom of eswatini": "SWZ", "east timor": "TLS",
+  "st kitts and nevis": "KNA", "st lucia": "LCA", "st vincent and the grenadines": "VCT",
   "republic of the congo": "COG", "congo brazzaville": "COG", congo: "COG",
   "democratic republic of the congo": "COD", "congo kinshasa": "COD", "dr congo": "COD", drc: "COD",
   "lao pdr": "LAO", "lao people s democratic republic": "LAO",
@@ -316,7 +317,12 @@ function resolveNatList(val) {
     const direct = nameToIso3.get(strip(it));
     if (direct) { out.add(direct); continue; }
     const trimmed = strip(it).replace(/\b(citizens?|nationals?|passport holders?|residents?)\b/g, "").trim();
-    if (trimmed && nameToIso3.get(trimmed)) out.add(nameToIso3.get(trimmed));
+    if (trimmed && nameToIso3.get(trimmed)) { out.add(nameToIso3.get(trimmed)); continue; }
+    // drop parentheticals ("China (People's Republic of)", "US citizens (see note)") and retry
+    const noParens = strip(String(it).replace(/\([^)]*\)/g, " "));
+    if (noParens && nameToIso3.get(noParens)) { out.add(nameToIso3.get(noParens)); continue; }
+    const noParensTrimmed = noParens.replace(/\b(citizens?|nationals?|passport holders?|residents?)\b/g, "").trim();
+    if (noParensTrimmed && nameToIso3.get(noParensTrimmed)) out.add(nameToIso3.get(noParensTrimmed));
   }
   return out.size ? [...out] : null;
 }
@@ -336,23 +342,40 @@ function nationalityScope(natRaw) {
 // Detect "all nationalities EXCEPT …" style entries. Expanding these to ALL passports is the
 // classic false-positive (e.g. India shown visa-free to Chile though India is on Chile's
 // visa-REQUIRED list). Returns { excepts: string[], externalList: bool } or null.
+// The negation cue and the start of the excluded-set clause share one pattern so
+// "not on/in/from … the X list" phrasings are caught the same way as "except …".
+const NEG_CUE_RE = /(not listed|not included|not enumerated|no listad|not (?:on|in|from|among|part of)\b|except|excluding|excepto|other than|salvo|unless)/;
+const NEG_CLAUSE_RE = /(?:except|excluding|excepto|other than|salvo|unless|not\s+(?:listed|included|enumerated|on|in|from|among|part of))\s*:?\s*(.+)$/;
 function negationInfo(label) {
   const s = (label || "").toLowerCase();
   const isAll = /\b(all|any|every|todos|todas)\b/.test(s);
-  const isNeg = /(not listed|not included|not enumerated|no listad|except|excluding|excepto|other than|salvo)/.test(s);
+  const isNeg = NEG_CUE_RE.test(s);
   if (!isAll || !isNeg) return null;
   let excepts = [];
-  const m = s.match(/(?:except|excluding|excepto|other than|salvo)\s*:?\s*(.+)$/);
+  const m = s.match(NEG_CLAUSE_RE);
   if (m) {
+    // split into candidate names FIRST ("Burundi and Palestine" must yield two items),
+    // then strip filler words from each
     excepts = m[1]
-      .replace(/\b(passport holders?|nationals?|citizens?|countries|nationalities|and|y)\b/g, " ")
-      .split(/[,;/&]|\band\b/)
-      .map((x) => x.trim())
+      .split(/[,;/&]|\band\b|\by\b/)
+      .map((x) => x.replace(/\b(passport holders?|nationals?|citizens?|countries|nationalities)\b/g, " ").trim())
       .filter((x) => x && x.length > 2);
   }
   // references an external list/decree/annex with no inline names we can resolve
   const externalList = excepts.length === 0 && /\b(list|listad|decreto|decree|annex|regulation|ica|restricted|visa-required)\b/.test(s);
   return { excepts, externalList };
+}
+
+// Structured visa-required list for a country file, in either recorded shape:
+// visa_required.nationalities_iso3 (string[]) or visa_required.advance_visa_required ({iso3}[]).
+function visaRequiredIso3(d) {
+  const vr = d && d.visa_required;
+  if (!vr || typeof vr !== "object") return [];
+  if (Array.isArray(vr.nationalities_iso3)) return vr.nationalities_iso3.map((c) => String(c).toUpperCase());
+  if (Array.isArray(vr.advance_visa_required)) {
+    return vr.advance_visa_required.map((e) => (e && e.iso3 ? String(e.iso3).toUpperCase() : null)).filter(Boolean);
+  }
+  return [];
 }
 
 const unresolved = new Map(); // label -> count
@@ -361,6 +384,15 @@ const negationGaps = []; // entries we could not safely expand
 function resolveOrigins(entry) {
   // returns array of iso3
   if (entry.iso3 && byIso3.has(String(entry.iso3).toUpperCase())) return [String(entry.iso3).toUpperCase()];
+  // enumerated exemption lists (e.g. Kiribati's Visa Exemption Order 2023) store the grant
+  // as an exempt_countries name array instead of a per-nationality label
+  if (Array.isArray(entry.exempt_countries) && entry.exempt_countries.length) {
+    const resolved = resolveNatList(entry.exempt_countries) || [];
+    for (const nm of entry.exempt_countries) {
+      if (!(resolveNatList([nm]) || []).length) unresolved.set(String(nm), (unresolved.get(String(nm)) || 0) + 1);
+    }
+    return resolved;
+  }
   const label = entry.nationality || "";
   const grp = labelToGroup(label);
   if (grp) return grp;
@@ -460,6 +492,10 @@ for (const f of files) {
   // the structured conditional_access is authoritative for credential / passport-type rules,
   // so we don't also derive them heuristically from the visa_policy labels.
   const hasStructured = Array.isArray(d.conditional_access);
+  // This country's own structured visa-required list - these passports must NEVER receive an
+  // edge from a catch-all "all nationalities" expansion (dedicated per-country entries still win).
+  const vrList = visaRequiredIso3(d);
+  const vrSet = new Set(vrList);
 
   for (const level of ["visa_free", "visa_on_arrival", "eta", "e_visa"]) {
     const arr = Array.isArray(vp[level]) ? vp[level] : [];
@@ -505,18 +541,32 @@ for (const f of files) {
       const neg = negationInfo(entry.nationality);
       if (neg) {
         const exclude = new Set([iso3]);
-        (resolveNatList(neg.excepts) || []).forEach((c) => exclude.add(c));
-        const vr = d.visa_required && Array.isArray(d.visa_required.nationalities_iso3) ? d.visa_required.nationalities_iso3 : null;
-        if (vr) vr.forEach((c) => exclude.add(String(c).toUpperCase()));
-        if (neg.externalList && !vr) {
-          // references an external visa-required list we don't have structured → cannot expand
+        const resolvedExcepts = resolveNatList(neg.excepts) || [];
+        resolvedExcepts.forEach((c) => exclude.add(c));
+        const vr = vrList.length ? vrList : null;
+        if (vr) vr.forEach((c) => exclude.add(c));
+        if (!vr && resolvedExcepts.length === 0) {
+          // The excluded set is unknown (external restricted/exemption list, or except-names we
+          // could not resolve) → expanding would grant entry to the very nationalities that need
+          // a visa. A false "easier access" claim is the worst error class, so skip instead.
           negationGaps.push(`${iso3} [${level}] "${(entry.nationality || "").slice(0, 50)}" - needs structured visa_required list`);
           continue;
         }
-        for (const o of ALL_ISO3) if (!exclude.has(o)) addEdge(o, iso3, level, edge);
+        // scope the grant to the named bloc when the label is group-bound
+        // ("EU member states (all except Ireland …)") instead of every passport
+        const baseLabel = (entry.nationality || "").replace(new RegExp(`\\b${NEG_CLAUSE_RE.source}`, "i"), "");
+        const base = labelToGroup(baseLabel) || ALL_ISO3;
+        for (const o of base) if (!exclude.has(o)) addEdge(o, iso3, level, edge);
         continue;
       }
-      for (const o of resolveOrigins(entry)) addEdge(o, iso3, level, edge);
+      // plain expansion; a catch-all that reaches (nearly) every passport must still respect the
+      // country's own structured visa-required list (e.g. Palau's "All other nationalities" VoA
+      // must not cover Bangladesh/Myanmar, who need an advance visa per bcbp.pw)
+      let origins = resolveOrigins(entry);
+      if (vrSet.size && !entry.iso3 && origins.length >= ALL_ISO3.length - 5) {
+        origins = origins.filter((o) => !vrSet.has(o));
+      }
+      for (const o of origins) addEdge(o, iso3, level, edge);
     }
   }
   if (anyVp) destinationsWithVisaPolicy += 1;
@@ -569,11 +619,14 @@ for (const f of files) {
   }
   // fast track
   for (const p of (d.fast_track && Array.isArray(d.fast_track.programs) ? d.fast_track.programs : [])) {
+    // surface closures so the UI can badge/exclude discontinued programs
+    const closed = /discontinu|closed to new applications|no longer accept/i.test(`${p.status || ""} ${p.eligibility || ""}`);
     fastTrack.push({
       iso3, name: meta.name, region: meta.region,
       program_name: p.name || "Program", category: p.category || "", eligibility: p.eligibility || "",
       processing_time: p.processing_time || "", official_url: p.official_url || "",
       source_official: p.source_official !== false, notes: p.notes || "",
+      status: p.status || "", discontinued: closed,
     });
   }
 
@@ -592,6 +645,21 @@ for (const f of files) {
 
 const passportAccess = {};
 for (const [origin, m] of access) passportAccess[origin] = [...m.values()].sort((a, b) => LEVEL_RANK[b.level] - LEVEL_RANK[a.level] || a.dest.localeCompare(b.dest));
+
+// True inbound reach per destination: distinct origin passports at their best access level.
+// visaPolicyCounts counts raw policy ENTRIES ("All EU member states" = 1), so any "N admitted"
+// figure must come from this inversion - the same computation the destination detail page uses.
+const admittedByDest = new Map();
+for (const edges of Object.values(passportAccess)) {
+  for (const e of edges) {
+    const rec = admittedByDest.get(e.dest) || { visa_free: 0, visa_on_arrival: 0, eta: 0, e_visa: 0 };
+    rec[e.level] += 1;
+    admittedByDest.set(e.dest, rec);
+  }
+}
+for (const c of countries) {
+  c.admittedCounts = admittedByDest.get(c.iso3) || { visa_free: 0, visa_on_arrival: 0, eta: 0, e_visa: 0 };
+}
 
 const credentialAccess = {};
 for (const [cred, list] of credAccess) credentialAccess[cred] = list.sort((a, b) => LEVEL_RANK[b.level] - LEVEL_RANK[a.level] || a.dest.localeCompare(b.dest));

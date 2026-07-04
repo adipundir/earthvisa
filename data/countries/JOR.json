@@ -1,6 +1,11 @@
 {
   "iso2": "JO",
   "iso3": "JOR",
+  "visa_required": {
+    "description": "MoI restricted countries (prior approval required; NOT eligible for the general visa-on-arrival rule). Enumerated by continent in visa_policy.notes from the moi.gov.jo scrape (Asia 14, Africa 37, plus Belize and Cuba), plus Syria which the notes confirm is on the restricted/VoA-excluded list. Structured here so 'all nationalities not on the MoI restricted list' entries are never expanded to these passports. Restricted nationals with dedicated e_visa entries (e.g. Pakistan, Philippines) keep those entries.",
+    "source_url": "https://moi.gov.jo/EN/Pages/Restricted_and_Non_Restricted_Countries_Nationalities",
+    "nationalities_iso3": ["AFG", "IRN", "PNG", "PAK", "LKA", "PHL", "KHM", "LAO", "MNG", "MMR", "NPL", "IRQ", "YEM", "BGD", "ETH", "ERI", "CAF", "AGO", "UGA", "BWA", "BEN", "BFA", "BDI", "TCD", "TZA", "TGO", "DJI", "COD", "ZMB", "CIV", "SEN", "SLE", "SOM", "GAB", "GMB", "GHA", "GIN", "GNQ", "GNB", "CMR", "COG", "LBR", "MLI", "MDG", "COM", "MRT", "MOZ", "NAM", "NER", "NGA", "SDN", "BLZ", "CUB", "SYR"]
+  },
   "outbound_official": {
     "found": false,
     "note": "No official Jordan government outbound visa-list page located. Jordan's Ministry of Foreign Affairs (mfa.gov.jo) returns HTTP 403 on all pages and does not publish a citizen-facing page enumerating countries where Jordanian ordinary-passport holders may travel without a prior consular visa (no analog to India's mea.gov.in/vffin). The Ministry of Interior (moi.gov.jo) restricted/non-restricted list covers inbound visitors to Jordan, not outbound Jordanian travelers. Rely on destination-side data."

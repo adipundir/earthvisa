@@ -25,6 +25,9 @@ const cheapest = programs
   .filter((x): x is { p: CbiProgram; min: number } => x.min != null)
   .sort((a, b) => a.min - b.min);
 
+// Cheapest program that is actually enacted (not merely announced), for headline claims.
+const cheapestEnacted = cheapest.find((x) => !isAnnouncedOnly(x.p)) ?? cheapest[0];
+
 const worth = programs
   .map((p) => ({ p, w: passportWorth(p.iso3) }))
   .filter((x): x is { p: CbiProgram; w: NonNullable<ReturnType<typeof passportWorth>> } => x.w != null)
@@ -56,6 +59,12 @@ function optionLabel(type: string): string {
   return OPTION_LABEL[type] ?? typeLabel(type);
 }
 
+/** rewrites crawl-pipeline provenance phrasing in source rows into reader-facing copy */
+function processingLabel(t: string): string {
+  const m = t.match(/^Not stated verbatim on ([\w.-]+) fetched pages$/i);
+  return m ? `Not published on the official programme site (${m[1]})` : t;
+}
+
 const announcedCaveat = isAnnouncedOnly(cheapest[0].p)
   ? ` Per our source notes, ${cheapest[0].p.name}'s figure is an announced amount that had not been formally enacted at our last data refresh.`
   : "";
@@ -69,7 +78,7 @@ const strongestCaveat = worth[0].p.options.every((o) => o.min_amount == null)
 // ---------------------------------------------------------------------------
 
 const title = `Citizenship by Investment 2026: ${programs.length} Countries Compared by Cost & Passport Power`;
-const description = `Full citizenship by investment countries list for 2026: all ${programs.length} CBI programs with minimum investment, processing time, and how many visa-free countries each passport unlocks. Published minimums from ${fmtMoney(cheapest[0].min, "USD")}. Compiled from official publications.`;
+const description = `Full citizenship by investment countries list for 2026: all ${programs.length} CBI programs with minimum investment, processing time, and how many visa-free countries each passport unlocks. Published minimums from ${fmtMoney(cheapestEnacted.min, "USD")}. Compiled from official publications.`;
 
 export const metadata: Metadata = {
   title,
@@ -186,6 +195,15 @@ function Chevron() {
 function ProgramCard({ p }: { p: CbiProgram }) {
   const w = passportWorth(p.iso3);
   const slug = nameToSlug(p.name);
+  // Some source rows repeat an option that renders to the same label + amount; collapse them for display.
+  const options = p.options.filter(
+    (o, i, arr) =>
+      i ===
+      arr.findIndex(
+        (x) =>
+          optionLabel(x.type) === optionLabel(o.type) && x.min_amount === o.min_amount && x.currency === o.currency,
+      ),
+  );
   return (
     <article className="flex flex-col rounded-sm border border-line bg-paper-2/70 p-4">
       <div className="flex items-center gap-3">
@@ -203,7 +221,7 @@ function ProgramCard({ p }: { p: CbiProgram }) {
       <p className="mt-1 text-sm italic leading-snug text-ink-soft">{p.program_name}</p>
 
       <ul className="mono mt-3 space-y-1 text-[11px] text-ink-soft">
-        {p.options.map((o, i) => (
+        {options.map((o, i) => (
           <li key={`${o.type}-${i}`}>
             {optionLabel(o.type)} ·{" "}
             {o.min_amount != null ? <>from {fmtMoney(o.min_amount, o.currency)}</> : <>minimum not published</>}
@@ -212,7 +230,7 @@ function ProgramCard({ p }: { p: CbiProgram }) {
       </ul>
 
       {p.processing_time && (
-        <p className="mono mt-2 text-[11px] text-ink-mute">Processing: {p.processing_time}</p>
+        <p className="mono mt-2 text-[11px] text-ink-mute">Processing: {processingLabel(p.processing_time)}</p>
       )}
 
       <div className="mono mt-3 flex flex-wrap gap-1.5 text-[9px] uppercase tracking-[0.1em]">
@@ -286,7 +304,7 @@ export default function CitizenshipByInvestmentPage() {
             <h1 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
               Citizenship by Investment 2026
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
-                All {programs.length} Programs Compared by Cost &amp; Passport Power
+                {`All ${programs.length} Programs Compared by Cost & Passport Power`}
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
@@ -296,7 +314,10 @@ export default function CitizenshipByInvestmentPage() {
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
               {[
                 { k: "Programs tracked", v: String(programs.length) },
-                { k: "Lowest published minimum", v: fmtMoney(cheapest[0].min, "USD") },
+                {
+                  k: "Lowest published minimum",
+                  v: `${fmtMoney(cheapest[0].min, "USD")}${isAnnouncedOnly(cheapest[0].p) ? " (announced)" : ""}`,
+                },
                 { k: "Strongest CBI passport", v: `${worth[0].w.visaFree} visa-free` },
                 { k: "Allow dual citizenship", v: String(dualAllowedCount) },
               ].map(({ k, v }) => (
@@ -317,7 +338,15 @@ export default function CitizenshipByInvestmentPage() {
               exchange for a qualifying investment - most commonly a donation to a national development fund, an
               approved real estate purchase, or a business investment. Our dataset tracks{" "}
               <strong className="text-ink">{programs.length} programs</strong> in 2026, with published minimums
-              starting from <strong className="text-ink">{fmtMoney(cheapest[0].min, "USD")}</strong>.
+              starting from <strong className="text-ink">{fmtMoney(cheapest[0].min, "USD")}</strong>
+              {isAnnouncedOnly(cheapest[0].p) && (
+                <>
+                  {" "}
+                  (announced, not yet enacted - the lowest enacted minimum is{" "}
+                  <strong className="text-ink">{fmtMoney(cheapestEnacted.min, "USD")}</strong>)
+                </>
+              )}
+              .
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               What most comparison lists skip: <strong className="text-ink">what the passport you would get is
@@ -412,7 +441,10 @@ export default function CitizenshipByInvestmentPage() {
               The point of a second passport is access. Here is every CBI passport ranked by visa-free destinations,
               alongside its lowest published USD minimum - the price-to-power view.
             </p>
-            <div className="mt-5 overflow-x-auto">
+            <p className="mono mt-5 text-[10px] uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+              Scroll sideways for all columns →
+            </p>
+            <div className="mt-1.5 overflow-x-auto sm:mt-5">
               <table className="w-full min-w-[560px] border-collapse text-sm">
                 <thead>
                   <tr className="mono border-b border-line-strong text-left text-[10px] uppercase tracking-[0.15em] text-ink-mute">
@@ -449,6 +481,10 @@ export default function CitizenshipByInvestmentPage() {
                 </tbody>
               </table>
             </div>
+            <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
+              Global rank is by total destinations reachable without a pre-arranged visa (visa-free + visa on arrival
+              + eTA), so a passport can rank above another that has more strictly visa-free destinations.
+            </p>
             <p className="mt-3 text-sm text-ink-soft">
               Compare these against all {TOTAL_RANKED_PASSPORTS} passports on the{" "}
               <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">

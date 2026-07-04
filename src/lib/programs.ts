@@ -67,10 +67,23 @@ export function isAnnouncedOnly(p: { notes?: string }): boolean {
 const INVEST_TYPE =
   /invest|real_estate|golden|passive|bond|fund|donation|deposit|economic|solvency|financially_independent|self_funded|capital|wealth|business/i;
 const NON_INVEST_TYPE =
-  /nomad|remote|freelanc|skilled|employment|family|ancestry|retire|pension|working_holiday|youth|talent|study|regional|work\/|\/work|residence_to_pr|general|social|long_stay|long-stay/i;
+  /nomad|remote|freelanc|skilled|employment|family|ancestry|retire|pension|working_holiday|youth|talent|study|regional|work\/|\/work|residence_to_pr|general|social|long_stay|long-stay|self_?employ/i;
+// Business-flavoured types mix true investor routes with plain self-employment / start-up /
+// entrepreneur work permits. Only the investor routes belong on a golden-visa page, so drop
+// business-type rows whose own program name says work permit - unless the name itself says
+// golden or investor/investment.
+const BUSINESS_TYPE = /business|entrepreneur|start_?up/i;
+const WORK_PERMIT_NAME = /self.?employ|sole proprietor|professional card|start.?up|entrepreneur/i;
+const INVESTOR_NAME = /golden|invest/i;
 
 export function goldenVisaPrograms(): RbiProgram[] {
-  return dataset.rbi.filter((r) => INVEST_TYPE.test(r.type) && !NON_INVEST_TYPE.test(r.type));
+  return dataset.rbi.filter((r) => {
+    if (!INVEST_TYPE.test(r.type) || NON_INVEST_TYPE.test(r.type)) return false;
+    if (BUSINESS_TYPE.test(r.type) && WORK_PERMIT_NAME.test(r.program_name) && !INVESTOR_NAME.test(r.program_name)) {
+      return false;
+    }
+    return true;
+  });
 }
 
 // --- digital nomad / remote-work routes ---

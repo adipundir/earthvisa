@@ -25,6 +25,9 @@ interface ListConfig {
 
 const LISTS: ListConfig[] = [
   { slug: "visa-free-countries-for-indians", kind: "visa_free", nat: "IND", people: "Indians", peopleTitle: "Indians" },
+  { slug: "visa-free-countries-for-pakistanis", kind: "visa_free", nat: "PAK", people: "Pakistanis", peopleTitle: "Pakistanis" },
+  { slug: "visa-free-countries-for-filipinos", kind: "visa_free", nat: "PHL", people: "Filipinos", peopleTitle: "Filipinos" },
+  { slug: "visa-free-countries-for-nigerians", kind: "visa_free", nat: "NGA", people: "Nigerians", peopleTitle: "Nigerians" },
   { slug: "visa-on-arrival-countries-for-indians", kind: "voa", nat: "IND", people: "Indians", peopleTitle: "Indians" },
   { slug: "visa-on-arrival-countries-for-pakistanis", kind: "voa", nat: "PAK", people: "Pakistanis", peopleTitle: "Pakistanis" },
   { slug: "visa-on-arrival-countries-for-filipinos", kind: "voa", nat: "PHL", people: "Filipinos", peopleTitle: "Filipinos" },
@@ -92,8 +95,23 @@ function usVisaCondition(e: CombinedEdge): string | null {
 /** First sentence of the official-source note, when short enough to be useful. */
 function firstSentence(notes: string): string | null {
   if (!notes) return null;
-  const idx = notes.indexOf(". ");
-  const s = (idx === -1 ? notes : notes.slice(0, idx + 1)).trim();
+  // Find a sentence boundary that is not inside a legal citation: skip any
+  // ". " that leaves parentheses unbalanced or follows an abbreviation, so
+  // "Comoros law (Loi n°88-025, Art. 2) requires..." is never cut at "Art.".
+  let end = -1;
+  for (let from = 0; ; ) {
+    const idx = notes.indexOf(". ", from);
+    if (idx === -1) break;
+    const frag = notes.slice(0, idx + 1);
+    const balanced = (frag.match(/\(/g)?.length ?? 0) === (frag.match(/\)/g)?.length ?? 0);
+    const abbrev = /\b(?:Art|No|Nos|St|Approx|Vol|Cap|Para|Sec|Reg|Fig)\.$/i.test(frag);
+    if (balanced && !abbrev) {
+      end = idx;
+      break;
+    }
+    from = idx + 1;
+  }
+  const s = (end === -1 ? notes : notes.slice(0, end + 1)).trim();
   if (!s || s.length > 150) return null;
   return s;
 }
@@ -242,7 +260,7 @@ function buildListData(cfg: ListConfig): ListData | null {
   // visa_free
   const main = [...base.reachByLevel.visa_free].sort(byName);
   const n = main.length;
-  const notable = pickNotable(main, ["THA", "MYS", "NPL", "MUS", "KAZ", "PHL"]);
+  const notable = pickNotable(main, ["THA", "MYS", "NPL", "MUS", "KAZ", "PHL", "SGP", "IDN", "BRA", "KEN", "SYC", "BRB", "FJI"]);
   const longest = [...main].filter((e) => e.maxStayDays != null).sort((a, b) => (b.maxStayDays ?? 0) - (a.maxStayDays ?? 0));
   const usVf = usDelta.filter((e) => e.level === "visa_free");
   const title = `List of Visa Free Countries for ${cfg.peopleTitle} 2026 - All ${n} + ${voaCount} on Arrival`;
@@ -341,11 +359,11 @@ function DestCard({ edge, condition }: { edge: CombinedEdge; condition: string |
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-baseline gap-x-2">
           <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{name}</span>
-          {edge.maxStayDays != null && <span className="mono text-[10px] text-ink-mute">≤ {edge.maxStayDays} days</span>}
+          {edge.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days</span>}
         </div>
-        {condition && <p className="mono mt-1 text-[10px] leading-relaxed text-ink-mute">{condition}</p>}
+        {condition && <p className="mono mt-1 text-[11px] leading-relaxed text-ink-mute">{condition}</p>}
       </div>
-      <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
+      <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
         {SHORT_LEVEL[edge.level]}
       </span>
     </Link>
@@ -574,7 +592,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   <p className="mt-2 text-sm text-ink-soft">
                     These countries waive their visa entirely for {cfg.people} who hold a valid US visa - check the condition on each row.
                   </p>
-                  <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {dVf.map((e) => (
                       <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} />
                     ))}
@@ -589,7 +607,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   <p className="mt-2 text-sm text-ink-soft">
                     With a valid US visa, {cfg.people} can get a visa stamped at the border in these countries instead of applying at an embassy.
                   </p>
-                  <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {dVoa.map((e) => (
                       <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} />
                     ))}
@@ -604,7 +622,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   <p className="mt-2 text-sm text-ink-soft">
                     These destinations let US-visa holders apply through a simplified online e-visa or eTA instead of a full embassy process.
                   </p>
-                  <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {dE.map((e) => (
                       <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} />
                     ))}
@@ -624,7 +642,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   ? `Alphabetical list of every country issuing ${cfg.people} a visa on arrival in 2026, with the maximum stay where officially published.`
                   : `Alphabetical list of every country ${cfg.people} can enter with just a passport in 2026, with the maximum stay where officially published.`}
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {main.map((e) => (
                   <DestCard key={e.dest} edge={e} condition={firstSentence(e.notes ?? "")} />
                 ))}

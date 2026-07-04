@@ -30,8 +30,11 @@ const FORCE_CORRIDORS = new Set([
   "CHN|JPN", "SAU|JPN", "ZAF|JPN", // reclassified visa-required (Japan eVISA is residence-based, not a nationality grant); keep - fee data + application note
 ]);
 
-/** Adjectival demonym for the top nationalities, e.g. "Thailand Visa for Indian citizens". */
+/** Adjectival demonym, e.g. "Thailand Visa for Indian citizens". Copy that uses
+ * this map must fall back to a phrasing that reads correctly with the bare
+ * country name (e.g. "Palau passport holders", "citizens of Palau"). */
 export const DEMONYM: Record<string, string> = {
+  // Top corridor nationalities
   IND: "Indian", PAK: "Pakistani", BGD: "Bangladeshi", NPL: "Nepali", LKA: "Sri Lankan",
   CHN: "Chinese", PHL: "Filipino", IDN: "Indonesian", VNM: "Vietnamese", MYS: "Malaysian",
   THA: "Thai", NGA: "Nigerian", EGY: "Egyptian", KEN: "Kenyan", GHA: "Ghanaian",
@@ -41,6 +44,28 @@ export const DEMONYM: Record<string, string> = {
   TUR: "Turkish", UKR: "Ukrainian", POL: "Polish", SAU: "Saudi", ARE: "Emirati",
   QAT: "Qatari", IRN: "Iranian", JOR: "Jordanian", AUS: "Australian", KAZ: "Kazakh",
   BEL: "Belgian",
+  // Broader coverage for passport-page and guide copy
+  JPN: "Japanese", KOR: "South Korean", TWN: "Taiwanese", SGP: "Singaporean",
+  CHE: "Swiss", IRL: "Irish", PRT: "Portuguese", GRC: "Greek", AUT: "Austrian",
+  NOR: "Norwegian", SWE: "Swedish", DNK: "Danish", FIN: "Finnish", ISL: "Icelandic",
+  CZE: "Czech", HUN: "Hungarian", ROU: "Romanian", BGR: "Bulgarian", HRV: "Croatian",
+  SVK: "Slovak", SVN: "Slovenian", EST: "Estonian", LVA: "Latvian", LTU: "Lithuanian",
+  LUX: "Luxembourgish", MLT: "Maltese", CYP: "Cypriot", ALB: "Albanian", SRB: "Serbian",
+  MNE: "Montenegrin", MKD: "Macedonian", BIH: "Bosnian", MDA: "Moldovan", BLR: "Belarusian",
+  GEO: "Georgian", ARM: "Armenian", AZE: "Azerbaijani",
+  ARG: "Argentine", CHL: "Chilean", COL: "Colombian", PER: "Peruvian", VEN: "Venezuelan",
+  ECU: "Ecuadorian", URY: "Uruguayan", PRY: "Paraguayan", BOL: "Bolivian", CRI: "Costa Rican",
+  PAN: "Panamanian", GTM: "Guatemalan", HND: "Honduran", SLV: "Salvadoran", NIC: "Nicaraguan",
+  CUB: "Cuban", DOM: "Dominican", JAM: "Jamaican", HTI: "Haitian",
+  ISR: "Israeli", LBN: "Lebanese", SYR: "Syrian", IRQ: "Iraqi", KWT: "Kuwaiti",
+  OMN: "Omani", BHR: "Bahraini", YEM: "Yemeni", LBY: "Libyan", TUN: "Tunisian",
+  SDN: "Sudanese", PSE: "Palestinian", AFG: "Afghan",
+  TZA: "Tanzanian", UGA: "Ugandan", RWA: "Rwandan", ZMB: "Zambian", ZWE: "Zimbabwean",
+  SEN: "Senegalese", CMR: "Cameroonian", CIV: "Ivorian", AGO: "Angolan", MOZ: "Mozambican",
+  NAM: "Namibian", SOM: "Somali", ERI: "Eritrean",
+  KHM: "Cambodian", LAO: "Lao", MNG: "Mongolian", UZB: "Uzbek", TJK: "Tajik",
+  KGZ: "Kyrgyz", TKM: "Turkmen", BTN: "Bhutanese", MDV: "Maldivian", BRN: "Bruneian",
+  PNG: "Papua New Guinean", FJI: "Fijian",
 };
 
 export function nameToSlug(name: string): string {
