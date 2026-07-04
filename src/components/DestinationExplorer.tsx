@@ -749,18 +749,21 @@ const CATEGORY_LABEL: Record<string, string> = {
   investment: "Investment",
 };
 
+// The four categories that show up together most often (tourist/business/
+// work/student) each get a fully distinct hue so the eye can tell them apart
+// at a glance; rarer categories double up on a hue since they seldom co-occur.
 const CATEGORY_COLOR: Record<string, string> = {
   tourist: "text-vfree bg-vfree/10 ring-vfree/30",
-  business: "text-bloc bg-bloc/10 ring-bloc/30",
+  business: "text-voa bg-voa/10 ring-voa/30",
   student: "text-eta bg-eta/10 ring-eta/30",
-  work: "text-stamp bg-stamp/10 ring-stamp/30",
+  work: "text-evisa bg-evisa/10 ring-evisa/30",
   transit: "text-ink-soft bg-paper-3/60 ring-line-strong",
   medical: "text-voa bg-voa/10 ring-voa/30",
-  retirement: "text-voa bg-voa/10 ring-voa/30",
+  retirement: "text-evisa bg-evisa/10 ring-evisa/30",
   working_holiday: "text-vfree bg-vfree/10 ring-vfree/30",
-  digital_nomad: "text-bloc bg-bloc/10 ring-bloc/30",
+  digital_nomad: "text-eta bg-eta/10 ring-eta/30",
   family: "text-stamp bg-stamp/10 ring-stamp/30",
-  investment: "text-voa bg-voa/10 ring-voa/30",
+  investment: "text-bloc bg-bloc/10 ring-bloc/30",
 };
 
 function NotesField({ notes }: { notes: string }) {
@@ -802,66 +805,53 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
         </div>
       )}
       <div className="space-y-3">
-        {filtered.map((v, i) => (
-          <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-            <div className="flex flex-wrap items-start gap-2">
-              <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_COLOR[v.category] ?? "text-ink-soft bg-paper-3 ring-line"}`}>
-                {CATEGORY_LABEL[v.category] ?? v.category}
-              </span>
-              <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
-            </div>
-            {v.purpose && (
-              <p className="mt-1.5 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>
-            )}
-            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
-              {v.max_stay_days != null && (
-                <span className="mono text-[11px] text-ink-mute">
-                  <span className="font-semibold text-ink">{v.max_stay_days}</span> days max stay
+        {filtered.map((v, i) => {
+          const stats: { label: string; value: string; accent?: string }[] = [];
+          if (v.max_stay_days != null) stats.push({ label: "Max stay", value: `${v.max_stay_days} days` });
+          if (v.validity_days != null) stats.push({ label: "Validity", value: `${v.validity_days} days` });
+          if (v.entries) stats.push({ label: "Entries", value: v.entries.charAt(0).toUpperCase() + v.entries.slice(1) });
+          if (v.fee_usd != null) stats.push({ label: "Fee", value: v.fee_usd === 0 ? "Free" : `~$${v.fee_usd}`, accent: "text-stamp" });
+          if (v.processing_days_min != null || v.processing_days_max != null) {
+            const { processing_days_min: min, processing_days_max: max } = v;
+            const value = min != null && max != null && min !== max
+              ? `${min}–${max} days`
+              : (() => { const d = (min ?? max)!; return d === 0 ? "Immediate" : `${d} day${d === 1 ? "" : "s"}`; })();
+            stats.push({ label: "Processing", value });
+          }
+          stats.push({
+            label: "Apply",
+            value: v.on_arrival ? "On arrival" : v.online ? "Online" : "In advance",
+            accent: v.on_arrival ? "text-voa" : v.online ? "text-vfree" : undefined,
+          });
+          return (
+            <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3.5">
+              <div className="flex flex-wrap items-start gap-2">
+                <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_COLOR[v.category] ?? "text-ink-soft bg-paper-3 ring-line"}`}>
+                  {CATEGORY_LABEL[v.category] ?? v.category}
                 </span>
+                <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
+              </div>
+              {v.purpose && (
+                <p className="mt-1.5 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>
               )}
-              {v.validity_days != null && (
-                <span className="mono text-[11px] text-ink-mute">
-                  valid <span className="font-semibold text-ink">{v.validity_days}</span> days
-                </span>
-              )}
-              {v.entries && (
-                <span className="mono text-[11px] text-ink-mute">
-                  <span className="font-semibold text-ink capitalize">{v.entries}</span> entry
-                </span>
-              )}
-              {v.fee_usd != null && (
-                <span className="mono text-[11px] text-ink-mute">
-                  fee: <span className="font-semibold text-stamp">{v.fee_usd === 0 ? "free" : `~$${v.fee_usd}`}</span>
-                </span>
-              )}
-              {(v.processing_days_min != null || v.processing_days_max != null) && (
-                <span className="mono text-[11px] text-ink-mute">
-                  processing: <span className="font-semibold text-ink">
-                    {(() => {
-                      const { processing_days_min: min, processing_days_max: max } = v;
-                      if (min != null && max != null && min !== max) return `${min}–${max} days`;
-                      const d = (min ?? max)!;
-                      return d === 0 ? "immediate" : `${d} day${d === 1 ? "" : "s"}`;
-                    })()}
-                  </span>
-                </span>
-              )}
-              {v.on_arrival && (
-                <span className="mono text-[11px] font-semibold text-voa">on arrival</span>
-              )}
-              {v.online && !v.on_arrival && (
-                <span className="mono text-[11px] font-semibold text-vfree">apply online</span>
+              <dl className="mono mt-3 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-line pt-3 sm:grid-cols-3 lg:grid-cols-6">
+                {stats.map((s) => (
+                  <div key={s.label}>
+                    <dt className="text-[9px] uppercase tracking-[0.14em] text-ink-mute">{s.label}</dt>
+                    <dd className={`mt-0.5 text-[13px] font-semibold ${s.accent ?? "text-ink"}`}>{s.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              {v.notes && <NotesField notes={v.notes} />}
+              {v.official_url && (
+                <a href={v.official_url} target="_blank" rel="noreferrer"
+                  className="mono mt-2 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">
+                  {hostOf(v.official_url)} ↗
+                </a>
               )}
             </div>
-            {v.notes && <NotesField notes={v.notes} />}
-            {v.official_url && (
-              <a href={v.official_url} target="_blank" rel="noreferrer"
-                className="mono mt-2 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">
-                {hostOf(v.official_url)} ↗
-              </a>
-            )}
-          </div>
-        ))}
+          );
+        })}
         {filtered.length === 0 && (
           <p className="text-sm text-ink-mute">No visa types match this filter.</p>
         )}
