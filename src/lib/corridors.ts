@@ -91,18 +91,29 @@ export function corridorPairs(): CorridorPair[] {
   if (_pairs) return _pairs;
   const vfs = dataset.vfsCorridors ?? {};
   const out: CorridorPair[] = [];
-  for (const nat of TOP_NATIONALITIES) {
-    const n = byIso3.get(nat);
-    if (!n) continue;
+  // Every passport (not just the curated top nationalities) gets a corridor
+  // page for every destination where IT has genuine content: an access grant,
+  // freedom of movement, a VFS document checklist, or an explicit force-include.
+  // Same thin-content bar as before - just no longer capped to a curated
+  // nationality x destination grid, so "click any destination card" always
+  // lands on a real per-passport page when one exists.
+  for (const n of dataset.allCountries) {
+    const nat = n.iso3;
     const r = compute([nat], [], {});
-    const reach = new Set(r.reach.map((e) => e.dest));
-    const fom = new Set(r.freedomOfMovement.map((e) => e.dest));
-    for (const dst of TOP_DESTINATIONS) {
+    const candidates = new Set<string>();
+    for (const e of r.reach) candidates.add(e.dest);
+    for (const e of r.freedomOfMovement) candidates.add(e.dest);
+    for (const [dst, corrs] of Object.entries(vfs)) {
+      if (corrs.some((c) => c.sourceIso3 === nat)) candidates.add(dst);
+    }
+    for (const key of FORCE_CORRIDORS) {
+      const [fn, fd] = key.split("|");
+      if (fn === nat) candidates.add(fd);
+    }
+    for (const dst of candidates) {
       if (dst === nat) continue;
       const d = byIso3.get(dst);
       if (!d) continue;
-      const hasVfs = (vfs[dst] ?? []).some((c) => c.sourceIso3 === nat);
-      if (!reach.has(dst) && !fom.has(dst) && !hasVfs && !FORCE_CORRIDORS.has(`${nat}|${dst}`)) continue; // skip thin/generic
       out.push({ nat, dest: dst, natSlug: nameToSlug(n.name), destSlug: nameToSlug(d.name) });
     }
   }
