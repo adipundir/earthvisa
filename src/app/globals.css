@@ -8,13 +8,14 @@
   /* bright warm creme canvas - lifted to the light footer tone (was too dull) */
   --color-paper:   #fbf8f2;
   --color-paper-2: #fefcf8;
-  --color-paper-3: #f1ebde;
+  --color-paper-3: #f3efe8;
   /* ink - higher contrast for readability */
   --color-ink:       #11203a;
   --color-ink-soft:  #3b4a63;
-  --color-ink-mute:  #6f6758; /* darkest warm mute that clears 4.5:1 AA on all three paper tones */
-  --color-line:       #e2d9c5;
-  --color-line-strong: #d3c7ac;
+  --color-ink-mute:  #6f6758; /* darkest warm mute that clears 4.5:1 AA on all three paper tones - do not lighten, a11y-critical */
+  /* softened/lightened so borders read as gentle dividers, not heavy khaki outlines */
+  --color-line:       #e8e3d9;
+  --color-line-strong: #d9d3c4;
   /* stamps / accents */
   --color-stamp:      #b23528;
   --color-stamp-deep: #7c241d;
