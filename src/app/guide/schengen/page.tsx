@@ -469,8 +469,8 @@ export default function SchengenGuidePage() {
               <table className="w-full min-w-[420px] border-collapse text-sm">
                 <thead>
                   <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
-                    <th className="py-2.5 pr-4 font-medium">Applicant</th>
-                    <th className="py-2.5 font-medium">Fee</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Applicant</th>
+                    <th scope="col" className="py-2.5 font-medium">Fee</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-line text-ink-soft">

@@ -448,10 +448,10 @@ export default function CitizenshipByInvestmentPage() {
               <table className="w-full min-w-[560px] border-collapse text-sm">
                 <thead>
                   <tr className="mono border-b border-line-strong text-left text-[10px] uppercase tracking-[0.15em] text-ink-mute">
-                    <th className="py-2.5 pr-4 font-medium">Passport</th>
-                    <th className="py-2.5 pr-4 text-right font-medium">Visa-free</th>
-                    <th className="py-2.5 pr-4 text-right font-medium">Global rank</th>
-                    <th className="py-2.5 text-right font-medium">Min. investment (USD)</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Passport</th>
+                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">Visa-free</th>
+                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">Global rank</th>
+                    <th scope="col" className="py-2.5 text-right font-medium">Min. investment (USD)</th>
                   </tr>
                 </thead>
                 <tbody>

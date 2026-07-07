@@ -128,9 +128,9 @@ export default function ProofOfFundsHub() {
                 <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
                   <thead>
                     <tr className="bg-paper-2/70 text-[11px] uppercase tracking-[0.1em] text-ink-mute">
-                      <th className="px-4 py-2.5 font-medium">Country</th>
-                      <th className="px-4 py-2.5 font-medium">Daily amount</th>
-                      <th className="px-4 py-2.5 font-medium">Notes</th>
+                      <th scope="col" className="px-4 py-2.5 font-medium">Country</th>
+                      <th scope="col" className="px-4 py-2.5 font-medium">Daily amount</th>
+                      <th scope="col" className="px-4 py-2.5 font-medium">Notes</th>
                     </tr>
                   </thead>
                   <tbody>

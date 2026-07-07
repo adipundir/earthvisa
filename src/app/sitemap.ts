@@ -18,6 +18,9 @@ const PROGRAM_PAGES = [
 // Must mirror LISTS in src/app/list/[slug]/page.tsx.
 const LIST_PAGES = [
   "/list/visa-free-countries-for-indians",
+  "/list/visa-free-countries-for-pakistanis",
+  "/list/visa-free-countries-for-filipinos",
+  "/list/visa-free-countries-for-nigerians",
   "/list/visa-on-arrival-countries-for-indians",
   "/list/visa-on-arrival-countries-for-pakistanis",
   "/list/visa-on-arrival-countries-for-filipinos",

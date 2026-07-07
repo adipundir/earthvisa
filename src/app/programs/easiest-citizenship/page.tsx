@@ -350,10 +350,10 @@ export default function EasiestCitizenshipPage() {
                 <PathCols />
                 <thead>
                   <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">
-                    <th className="py-2.5 pr-4 text-right font-medium">Path</th>
-                    <th className="py-2.5 pr-4 font-medium">Country</th>
-                    <th className="py-2.5 pr-4 font-medium">Program (shortest route)</th>
-                    <th className="py-2.5 text-right font-medium">Passport worth</th>
+                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">Path</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Country</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Program (shortest route)</th>
+                    <th scope="col" className="py-2.5 text-right font-medium">Passport worth</th>
                   </tr>
                 </thead>
                 <tbody>

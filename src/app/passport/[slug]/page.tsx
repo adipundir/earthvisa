@@ -93,7 +93,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       `${country.name.toLowerCase()} visa on arrival countries`,
       `visa on arrival countries for ${country.name.toLowerCase()} passport`,
       `countries ${country.name.toLowerCase()} can visit without visa`,
-      `${country.name.toLowerCase()} passport strength`,
       `most powerful passport ${country.name.toLowerCase()}`,
     ],
     openGraph: {
