@@ -1388,10 +1388,42 @@ function FastPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onO
 }
 
 function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void }) {
+  const panelRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = prev; };
+  }, []);
+  // Focus management: role="dialog" aria-modal="true" tells assistive tech the
+  // rest of the page is inert, so this has to actually be true - move focus in
+  // on open, trap Tab within the panel while open, restore it to the trigger
+  // (e.g. the ClickCard that opened this) on close.
+  useEffect(() => {
+    const trigger = document.activeElement as HTMLElement | null;
+    panelRef.current?.focus();
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusables = panel.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      trigger?.focus();
+    };
   }, []);
   const toneCls = (tone: string) =>
     tone === "bloc" ? "bg-bloc/10 text-bloc ring-bloc/30"
@@ -1400,7 +1432,7 @@ function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={detail.title}>
       <div className="reveal absolute inset-0 bg-ink/30 backdrop-blur-[2px]" style={{ animationDuration: "0.25s" }} onClick={onClose} />
-      <div className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-xl border border-line-strong bg-white shadow-2xl shadow-ink/20" style={{ animationDuration: "0.3s" }}>
+      <div ref={panelRef} tabIndex={-1} className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-xl border border-line-strong bg-white shadow-2xl shadow-ink/20 outline-none" style={{ animationDuration: "0.3s" }}>
         <div className="rule-double flex items-start gap-3 px-6 pb-4 pt-6">
           <span className="text-4xl leading-none">{flagFor(detail.iso3)}</span>
           <div className="min-w-0 flex-1">
