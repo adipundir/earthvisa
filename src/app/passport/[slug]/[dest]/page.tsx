@@ -274,7 +274,13 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     const feeClause = headlineFee.amount === 0
       ? `the ${d.name} ${feeName} is free of charge${schedule}`
       : `the ${d.name} ${feeName} fee is ${fmtFee(headlineFee)}${schedule}`;
-    const vfsNote = destFees?.vfs.used && destFees.vfs.service_fee ? ` Applications through ${destFees.vfs.operator} carry an additional service fee of about ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee}.` : "";
+    // Never assert a specific VFS service-fee amount/currency here: the crawled
+    // figure is whichever source-country VAC schedule happened to be available
+    // (often India's, sometimes Nigeria's/Iraq's/USA's/etc.) and there is no
+    // reliable signal for which nationality it actually belongs to - showing it
+    // as if universal is wrong for every other nationality. Same nationality-
+    // agnostic wording as the destination page.
+    const vfsNote = destFees?.vfs.used ? ` Applications through ${destFees.vfs.operator} carry an additional service fee that varies by country and application centre.` : "";
     costFaq = {
       q: `How much does the ${d.name} visa cost for ${nd} citizens?`,
       a: noVisaShortStay
@@ -461,8 +467,11 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               </div>
               {destFees?.vfs.used && (
                 <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-                  Applications are handled via {destFees.vfs.operator}
-                  {destFees.vfs.service_fee ? ` — service fee approx. ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee}, varies by centre` : " — a service fee applies on top of the visa fee"}.
+                  {/* No amount here: the crawled service fee is per source-country
+                      (often an India-centre figure) and this can't be reliably
+                      attributed to this specific nationality. Same rule as the
+                      destination page. */}
+                  Applications are handled via {destFees.vfs.operator} — a service fee applies on top of the visa fee and varies by country and centre.
                 </p>
               )}
               <p className="mono mt-3 text-[11px] uppercase tracking-[0.12em] text-ink-mute">
