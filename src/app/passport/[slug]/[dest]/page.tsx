@@ -331,7 +331,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
         <header className="border-b border-line bg-paper-2/50">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             <div className="min-w-0">
-              <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[11px] uppercase tracking-[0.18em] text-ink-mute">
+              <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[11px] font-medium uppercase tracking-[0.18em] text-ink-mute">
                 <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
                 <span>/</span>
                 <Link href={`/passport/${slug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">{n.name}</Link>
@@ -364,7 +364,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               ) : null}
               {applicationNoteFor(d.iso3) ? (
                 <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">
-                  <span className="mono mr-2 text-[10px] uppercase tracking-[0.14em] text-stamp">How it works</span>
+                  <span className="mono mr-2 text-[10px] font-medium uppercase tracking-[0.14em] text-stamp">How it works</span>
                   {applicationNoteFor(d.iso3)}
                 </p>
               ) : null}
@@ -433,7 +433,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               {feeVariation?.amount != null && (
                 <div className="mt-4 flex flex-col gap-2 rounded-lg border border-stamp/30 bg-stamp/[0.06] px-5 py-4 sm:flex-row sm:items-center sm:gap-6">
                   <div className="shrink-0">
-                    <p className="mono text-[10px] uppercase tracking-[0.16em] text-stamp">Fee for {nd} citizens</p>
+                    <p className="mono text-[10px] font-medium uppercase tracking-[0.16em] text-stamp">Fee for {nd} citizens</p>
                     <p className="mono mt-0.5 text-2xl font-bold tabular-nums text-stamp">{fmtFee(feeVariation)}</p>
                   </div>
                   {feeVariation.note && (
@@ -474,7 +474,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   Applications are handled via {destFees.vfs.operator} — a service fee applies on top of the visa fee and varies by country and centre.
                 </p>
               )}
-              <p className="mono mt-3 text-[11px] uppercase tracking-[0.12em] text-ink-mute">
+              <p className="mono mt-3 text-[11px] font-medium uppercase tracking-[0.12em] text-ink-mute">
                 Fees checked {fmtDay(destFees?.updated) ?? "recently"} · sourced from official government fee schedules
               </p>
             </section>
@@ -561,7 +561,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             <h2 className="font-display text-xl font-semibold text-ink">Related visa requirements</h2>
             <div className="mt-4 grid gap-8 sm:grid-cols-2">
               <div>
-                <p className="mono mb-2 text-[10px] uppercase tracking-[0.2em] text-stamp">For {nd} citizens</p>
+                <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">For {nd} citizens</p>
                 <ul className="space-y-1">
                   {sameNat.map((c) => (
                     <li key={c!.iso3}>
@@ -573,7 +573,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </ul>
               </div>
               <div>
-                <p className="mono mb-2 text-[10px] uppercase tracking-[0.2em] text-stamp">Visa for {d.name}</p>
+                <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">Visa for {d.name}</p>
                 <ul className="space-y-1">
                   {sameDest.map((c) => (
                     <li key={c!.iso3}>

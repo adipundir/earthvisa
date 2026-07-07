@@ -363,7 +363,7 @@ function DestCard({ edge, condition }: { edge: CombinedEdge; condition: string |
         </div>
         {condition && <p className="mono mt-1 text-[11px] leading-relaxed text-ink-mute">{condition}</p>}
       </div>
-      <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
+      <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
         {SHORT_LEVEL[edge.level]}
       </span>
     </Link>
@@ -493,7 +493,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href={`/passport/${natSlug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">
@@ -514,7 +514,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   {h1}
                   <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">{h1Sub}</span>
                 </h1>
-                <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">{stampLine}</p>
+                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">{stampLine}</p>
               </div>
             </div>
 
@@ -522,7 +522,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
               {stats.map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}

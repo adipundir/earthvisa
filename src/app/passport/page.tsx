@@ -39,7 +39,7 @@ export default function PassportIndex() {
     <main className="min-h-screen">
       <header className="border-b border-line-strong bg-paper-2/60">
         <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-10 sm:px-8">
-          <nav className="mono mb-4 text-[11px] uppercase tracking-[0.15em] text-ink-mute">
+          <nav className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.15em] text-ink-mute">
             <Link href="/" className="transition hover:text-ink">Earth Visa</Link> / Passports
           </nav>
           <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">

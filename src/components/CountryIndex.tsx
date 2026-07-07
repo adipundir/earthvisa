@@ -71,7 +71,7 @@ export default function CountryIndex({
       <div className="mb-8">
         <label
           htmlFor={inputId}
-          className="mono mb-2 block text-[11px] uppercase tracking-[0.2em] text-ink-mute"
+          className="mono mb-2 block text-[11px] font-medium uppercase tracking-[0.2em] text-ink-mute"
         >
           Search countries
         </label>
@@ -100,7 +100,7 @@ export default function CountryIndex({
           />
         </div>
         <p
-          className="mono mt-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-mute"
+          className="mono mt-2.5 text-[11px] font-medium uppercase tracking-[0.15em] text-ink-mute"
           aria-live="polite"
         >
           {normalized

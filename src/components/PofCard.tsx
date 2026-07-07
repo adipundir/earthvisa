@@ -23,7 +23,7 @@ export default function PofCard({ p, iso3 }: { p: ProofOfFunds; iso3?: string })
 
       {/* Official */}
       <div className="mt-4 rounded-md border border-line bg-white/60 p-4">
-        <p className="mono text-[10px] uppercase tracking-[0.15em] text-vfree">Official requirement</p>
+        <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-vfree">Official requirement</p>
         {hasFigure ? (
           <>
             <p className="mono mt-1 text-2xl font-semibold tabular-nums text-ink">
@@ -47,7 +47,7 @@ export default function PofCard({ p, iso3 }: { p: ProofOfFunds; iso3?: string })
       {/* Community */}
       {p.community.typical_approved && (
         <div className="mt-3 rounded-md border border-dashed border-line-strong bg-paper-3/40 p-4">
-          <p className="mono text-[10px] uppercase tracking-[0.15em] text-eta">What applicants report · anecdotal</p>
+          <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-eta">What applicants report · anecdotal</p>
           <p className="mt-1.5 text-[13px] leading-relaxed text-ink-soft">{p.community.typical_approved}</p>
           <p className="mt-2 text-[11px] italic leading-relaxed text-ink-mute">
             Community reports from Reddit and visa forums, not an official threshold or a guarantee of approval.
@@ -59,7 +59,7 @@ export default function PofCard({ p, iso3 }: { p: ProofOfFunds; iso3?: string })
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         {p.documents.length > 0 && (
           <div>
-            <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Financial documents</p>
+            <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Financial documents</p>
             <ul className="mt-2 space-y-1 text-[13px] leading-relaxed text-ink-soft">
               {p.documents.slice(0, 5).map((d, i) => <li key={i}>· {d}</li>)}
             </ul>
@@ -67,7 +67,7 @@ export default function PofCard({ p, iso3 }: { p: ProofOfFunds; iso3?: string })
         )}
         {p.red_flags.length > 0 && (
           <div>
-            <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Rejection red flags</p>
+            <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Rejection red flags</p>
             <ul className="mt-2 space-y-1 text-[13px] leading-relaxed text-ink-soft">
               {p.red_flags.slice(0, 4).map((d, i) => <li key={i}>· {d}</li>)}
             </ul>

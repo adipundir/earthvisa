@@ -146,7 +146,7 @@ function DestCard({ natName, natIso3, edge, fom = false }: {
           edge.maxStayDays != null && <div className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days</div>
         )}
       </div>
-      <span className={`mono ml-auto shrink-0 whitespace-nowrap rounded-[3px] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>{LEVEL_LABEL_SHORT[edge.level]}</span>
+      <span className={`mono ml-auto shrink-0 whitespace-nowrap rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>{LEVEL_LABEL_SHORT[edge.level]}</span>
     </Link>
   );
 }
@@ -288,7 +288,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
@@ -308,7 +308,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   </span>
                 </h1>
                 {rank && (
-                  <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+                  <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                     Ranked #{rank} of 199 passports worldwide ·{" "}
                     <Link href="/rankings" className="underline decoration-line underline-offset-4 transition hover:text-ink">
                       Full 2026 passport index
@@ -327,7 +327,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 { k: "Total reach", v: total },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -377,7 +377,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </div>
               {vfEdges.length > 30 && (
                 <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
                     <span className="group-open:hidden">Show all {vfEdges.length} visa-free destinations</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
@@ -408,7 +408,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </div>
               {voaEdges.length > 18 && (
                 <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
                     <span className="group-open:hidden">Show all {voaEdges.length} visa-on-arrival countries</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
@@ -439,7 +439,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </div>
               {etaEdges.length > 30 && (
                 <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
                     <span className="group-open:hidden">Show all {etaEdges.length} eTA / e-Visa destinations</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
@@ -497,7 +497,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </div>
               {result.cbi.length > 6 && (
                 <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
                     <span className="group-open:hidden">Show all {result.cbi.length} citizenship by investment programs</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>

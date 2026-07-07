@@ -30,7 +30,7 @@ export default function Navbar() {
         {/* Mobile-only: shares the logo's row, pinned to the right. Hidden from
             sm upward, where the full meta cluster below covers it instead. */}
         <span
-          className="mono ml-auto text-[10px] uppercase tracking-[0.14em] text-ink-mute sm:hidden"
+          className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute sm:hidden"
           title={`Data last updated ${dataset.meta.lastUpdated}`}
         >
           Updated {fmtDate(dataset.meta.lastUpdated)}
@@ -60,7 +60,7 @@ export default function Navbar() {
 
         {/* Meta cluster is desktop-only chrome: on mobile it wrapped to a third
             row, pushing the sticky nav to ~120px and burying anchor targets. */}
-        <div className="mono ml-auto hidden items-center gap-2.5 text-[10px] uppercase tracking-[0.18em] sm:flex">
+        <div className="mono ml-auto hidden items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.18em] sm:flex">
           <span className="text-vfree">Official sources only</span>
           <span className="h-3 w-px bg-line-strong" aria-hidden="true" />
           <span className="text-ink-mute" title={`Data last updated ${dataset.meta.lastUpdated}`}>

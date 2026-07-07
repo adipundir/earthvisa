@@ -64,7 +64,7 @@ export default function SiteFooter() {
               government publications, never third-party aggregators.
             </p>
             <p
-              className="mono mt-4 text-[10px] uppercase tracking-[0.18em] text-ink-mute"
+              className="mono mt-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute"
               title={`Data last updated ${dataset.meta.lastUpdated}`}
             >
               Updated {fmtDate(dataset.meta.lastUpdated)}
@@ -73,7 +73,7 @@ export default function SiteFooter() {
 
           {COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
-              <p className="mono text-[10px] uppercase tracking-[0.2em] text-ink-mute">{col.title}</p>
+              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-ink-mute">{col.title}</p>
               <ul className="mt-3 space-y-2">
                 {col.links.map((l) => (
                   <li key={l.href}>
@@ -86,11 +86,6 @@ export default function SiteFooter() {
             </nav>
           ))}
         </div>
-
-        <p className="mt-10 border-t border-line pt-6 text-[12px] leading-relaxed text-ink-mute">
-          Informational only, not legal or immigration advice - always confirm requirements with the
-          destination&apos;s official authorities before travelling or applying.
-        </p>
       </div>
     </footer>
   );

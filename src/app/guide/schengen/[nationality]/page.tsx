@@ -229,7 +229,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/guide/schengen" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Schengen Visa</Link>
@@ -250,7 +250,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
                       : "Visa-Free Entry Rules & the 90/180 Limit"}
                   </span>
                 </h1>
-                <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">{stampText}</p>
+                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">{stampText}</p>
               </div>
             </div>
 
@@ -272,7 +272,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
                 },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -285,7 +285,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
           {/* Verdict */}
           <section className="mt-10 max-w-3xl">
             <div className="rounded-sm border border-line-strong bg-paper-2/70 p-5">
-              <h2 className="mono text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+              <h2 className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
                 Do {plural} need a Schengen visa?
               </h2>
               <p className="mt-2 text-base leading-relaxed text-ink">{verdict}</p>

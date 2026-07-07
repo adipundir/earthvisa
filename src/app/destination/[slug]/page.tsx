@@ -112,7 +112,7 @@ function NationalityRow({
           <div className="mono text-[11px] text-ink-mute">≤ {maxStayDays} days</div>
         )}
       </div>
-      <span className={`mono ml-auto whitespace-nowrap rounded-[3px] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] ring-1 ${levelClass}`}>
+      <span className={`mono ml-auto whitespace-nowrap rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${levelClass}`}>
         {label}
       </span>
     </Link>
@@ -354,7 +354,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span>/</span>
               <Link href="/destination" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Destinations</Link>
@@ -373,7 +373,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     {alias ? <>Entry Rules Under {country.name} Visa Policy</> : <>Entry Rules &amp; Visa-Free Access by Passport</>}
                   </span>
                 </h1>
-                <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                   {plural(vfCount, "nationality", "nationalities")} admitted visa-free · {openness} visa policy
                 </p>
               </div>
@@ -396,7 +396,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 // The odd fifth stat spans the full width on the 2-col mobile
                 // grid instead of dangling beside an empty cell.
                 <div key={k} className={i === arr.length - 1 ? "col-span-2 sm:col-span-1" : undefined}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}

@@ -186,7 +186,7 @@ export default function RankingsPage() {
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <span className="inline-flex min-h-[44px] items-center text-ink">Rankings</span>
@@ -201,7 +201,7 @@ export default function RankingsPage() {
                   The Most Powerful Passports in the World
                 </span>
               </h1>
-              <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+              <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                 All {rows.length} passports ranked · official sources only
               </p>
             </div>
@@ -215,7 +215,7 @@ export default function RankingsPage() {
                 { k: "Data updated", v: fmtDate(dataset.meta.lastUpdated) },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -263,7 +263,7 @@ export default function RankingsPage() {
                     href={`/passport/${r.slug}`}
                     className="group flex min-h-[44px] flex-col rounded-sm border border-line bg-paper-2/70 px-3.5 py-3 transition hover:border-line-strong"
                   >
-                    <span className="mono text-[11px] uppercase tracking-[0.18em] text-stamp">#{r.rank}</span>
+                    <span className="mono text-[11px] font-medium uppercase tracking-[0.18em] text-stamp">#{r.rank}</span>
                     <span className="mt-1.5 flex items-center gap-2">
                       <span className="text-2xl">{r.flag}</span>
                       <span className="font-display text-sm font-semibold text-ink transition group-hover:text-stamp">{r.name}</span>
@@ -316,7 +316,7 @@ export default function RankingsPage() {
                     <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{r.name}</span>
                     <span className="mono ml-auto text-sm tabular-nums text-ink-soft">
                       {r.total}
-                      <span className="ml-1 text-[10px] uppercase tracking-[0.1em] text-ink-mute">reach</span>
+                      <span className="ml-1 text-[10px] font-medium uppercase tracking-[0.1em] text-ink-mute">reach</span>
                     </span>
                   </Link>
                 </li>

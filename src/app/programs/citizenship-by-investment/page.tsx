@@ -215,7 +215,7 @@ function ProgramCard({ p }: { p: CbiProgram }) {
           >
             {p.name}
           </Link>
-          <div className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">{p.region}</div>
+          <div className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">{p.region}</div>
         </div>
       </div>
       <p className="mt-1 text-sm italic leading-snug text-ink-soft">{p.program_name}</p>
@@ -289,7 +289,7 @@ export default function CitizenshipByInvestmentPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -307,7 +307,7 @@ export default function CitizenshipByInvestmentPage() {
                 {`All ${programs.length} Programs Compared by Cost & Passport Power`}
               </span>
             </h1>
-            <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+            <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
               {programs.length} programs tracked · official publications · data refreshed {lastUpdated}
             </p>
 
@@ -322,7 +322,7 @@ export default function CitizenshipByInvestmentPage() {
                 { k: "Allow dual citizenship", v: String(dualAllowedCount) },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -441,7 +441,7 @@ export default function CitizenshipByInvestmentPage() {
               The point of a second passport is access. Here is every CBI passport ranked by visa-free destinations,
               alongside its lowest published USD minimum - the price-to-power view.
             </p>
-            <p className="mono mt-5 text-[10px] uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+            <p className="mono mt-5 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute sm:hidden">
               Scroll sideways for all columns →
             </p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">

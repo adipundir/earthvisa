@@ -90,7 +90,7 @@ export default function ProofOfFundsHub() {
       <main className="min-h-screen">
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-5xl px-5 pt-8 pb-10 sm:px-8">
-            <nav className="mono mb-4 text-[11px] uppercase tracking-[0.15em] text-ink-mute">
+            <nav className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.15em] text-ink-mute">
               <Link href="/" className="transition hover:text-ink">Earth Visa</Link> / Proof of Funds
             </nav>
             <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
@@ -121,7 +121,7 @@ export default function ProofOfFundsHub() {
                 Multiply the daily rate by your number of days for the official minimum. Figures from official government
                 sources.
               </p>
-              <p className="mono mt-4 text-[10px] uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+              <p className="mono mt-4 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute sm:hidden">
                 Swipe sideways for the notes column <span aria-hidden>→</span>
               </p>
               <div className="mt-2 overflow-x-auto rounded-lg border border-line-strong sm:mt-5">
@@ -147,7 +147,7 @@ export default function ProofOfFundsHub() {
                   </tbody>
                 </table>
               </div>
-              <p className="mono mt-2 text-[10px] uppercase tracking-[0.12em] text-ink-mute">
+              <p className="mono mt-2 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute">
                 Checked {schengen.updated} · sourced directly from consulate publications
               </p>
             </section>

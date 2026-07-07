@@ -86,17 +86,17 @@ export default function Home() {
           <h2 className="font-display text-2xl font-semibold text-ink">How Earth Visa works</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             <div>
-              <p className="mono text-[10px] uppercase tracking-[0.2em] text-stamp">01</p>
+              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">01</p>
               <h3 className="mt-2 font-display text-lg font-semibold text-ink">Select your passport</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">Enter the country you hold citizenship in. Add multiple passports if you hold dual or multiple citizenships to see the combined reach.</p>
             </div>
             <div>
-              <p className="mono text-[10px] uppercase tracking-[0.2em] text-stamp">02</p>
+              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">02</p>
               <h3 className="mt-2 font-display text-lg font-semibold text-ink">Add any visas you hold</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">Holding a US visa, Schengen visa, or Japanese residence permit unlocks dozens of additional visa-free destinations beyond your passport alone.</p>
             </div>
             <div>
-              <p className="mono text-[10px] uppercase tracking-[0.2em] text-stamp">03</p>
+              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">03</p>
               <h3 className="mt-2 font-display text-lg font-semibold text-ink">Explore your options</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">See every destination you can reach visa-free, on arrival, or with an eTA - plus citizenship by investment, golden visas, and fast-track immigration programs.</p>
             </div>
@@ -160,7 +160,7 @@ export default function Home() {
 function Field({ k, v }: { k: string; v: React.ReactNode }) {
   return (
     <div>
-      <dt className="whitespace-nowrap text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+      <dt className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
       <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
     </div>
   );

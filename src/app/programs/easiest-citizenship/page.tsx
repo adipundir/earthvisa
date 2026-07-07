@@ -219,7 +219,7 @@ export default function EasiestCitizenshipPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -237,7 +237,7 @@ export default function EasiestCitizenshipPage() {
                 The Fastest Legal Routes, Ranked from the Data
               </span>
             </h1>
-            <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+            <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
               3 legal routes compared · official publications · data refreshed {lastUpdated}
             </p>
 
@@ -252,7 +252,7 @@ export default function EasiestCitizenshipPage() {
                 },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -342,14 +342,14 @@ export default function EasiestCitizenshipPage() {
               {pathRows.length} countries in our residency dataset publish a residence-to-citizenship timeline for at
               least one program. The shortest per country, ranked:
             </p>
-            <p className="mono mt-5 text-[10px] uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+            <p className="mono mt-5 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute sm:hidden">
               Scroll sideways for all columns →
             </p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">
               <table className="w-full min-w-[560px] table-fixed border-collapse text-sm">
                 <PathCols />
                 <thead>
-                  <tr className="mono border-b border-line-strong text-left text-[10px] uppercase tracking-[0.15em] text-ink-mute">
+                  <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">
                     <th className="py-2.5 pr-4 text-right font-medium">Path</th>
                     <th className="py-2.5 pr-4 font-medium">Country</th>
                     <th className="py-2.5 pr-4 font-medium">Program (shortest route)</th>

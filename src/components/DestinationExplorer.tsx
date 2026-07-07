@@ -425,7 +425,7 @@ export default function DestinationExplorer() {
                   >
                     <span className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
-                    <span className="mono ml-auto text-[10px] uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
+                    <span className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
                   </button>
                 </li>
               ))}
@@ -465,7 +465,7 @@ export default function DestinationExplorer() {
                       aria-expanded={isOpen}
                       aria-haspopup="listbox"
                       aria-label={`Passport type: ${currentType}`}
-                      className={`mono inline-flex items-center gap-1 rounded px-2 py-1 text-[10px] uppercase tracking-[0.1em] transition ${
+                      className={`mono inline-flex items-center gap-1 rounded px-2 py-1 text-[10px] font-medium uppercase tracking-[0.1em] transition ${
                         isNonOrdinary
                           ? "border border-stamp/40 bg-stamp/10 text-stamp"
                           : "border border-line-strong bg-paper-2 text-ink-mute hover:border-stamp/40 hover:bg-stamp/[0.05] hover:text-stamp"
@@ -555,7 +555,7 @@ export default function DestinationExplorer() {
                   >
                     <span className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
-                    <span className="mono ml-auto text-[10px] uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
+                    <span className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
                   </button>
                 </li>
               ))}
@@ -786,20 +786,20 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
   const filtered = categoryFilter ? visaTypes.filter(v => v.category === categoryFilter) : visaTypes;
   return (
     <div className="mt-6 border-t border-line pt-6">
-      <p className="mono mb-3 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+      <p className="mono mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
         {visaTypes.length} visa type{visaTypes.length !== 1 ? "s" : ""} available
       </p>
       {cats.length > 1 && (
         <div className="mb-4 flex flex-wrap gap-1.5">
           <button
             onClick={() => setCategoryFilter(null)}
-            className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+            className={`mono rounded px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
           >All</button>
           {cats.map(cat => (
             <button
               key={cat}
               onClick={() => setCategoryFilter(cat === categoryFilter ? null : cat)}
-              className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+              className={`mono rounded px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
             >{CATEGORY_LABEL[cat] ?? cat}</button>
           ))}
         </div>
@@ -898,7 +898,7 @@ function VfsTypeRow({ v }: { v: VfsVisaType }) {
         <div className="border-t border-line px-4 py-3">
           {docs ? (
             <div>
-              <p className="mono mb-1.5 text-[10px] uppercase tracking-[0.15em] text-ink-mute">Documents required</p>
+              <p className="mono mb-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Documents required</p>
               <LinkifiedText text={docs} className="whitespace-pre-wrap text-[12px] leading-relaxed text-ink-soft" />
             </div>
           ) : (
@@ -948,7 +948,7 @@ function VfsDocuments({ destIso3, selected }: { destIso3: string; selected: stri
   return (
     <div className="mt-6 border-t border-line pt-6">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <p className="mono text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+        <p className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
           Document checklists - applying from {srcName}
         </p>
         <span className="mono text-[10px] text-ink-mute">via VFS Global</span>
@@ -970,13 +970,13 @@ function VfsDocuments({ destIso3, selected }: { destIso3: string; selected: stri
             <div className="mt-4 mb-3 flex flex-wrap gap-1.5">
               <button
                 onClick={() => setCatFilter(null)}
-                className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${!catFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+                className={`mono rounded px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${!catFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
               >All</button>
               {cats.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setCatFilter(cat === catFilter ? null : cat)}
-                  className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${catFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+                  className={`mono rounded px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${catFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
                 >{CATEGORY_LABEL[cat] ?? cat}</button>
               ))}
             </div>
@@ -1054,7 +1054,7 @@ function ResultCard({
       <div className="flex items-center gap-4 border-b border-line px-6 py-5">
         <span className="text-4xl leading-none">{flag}</span>
         <div>
-          <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Entry requirements for</p>
+          <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Entry requirements for</p>
           <h2 className="font-display text-[22px] font-semibold text-ink">{name}</h2>
         </div>
       </div>
@@ -1102,7 +1102,7 @@ function ResultCard({
                 </span>
               )}
               {accessEdge.viaCredential && (
-                <span className="mono rounded border border-stamp/30 bg-stamp/[0.05] px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-stamp">
+                <span className="mono rounded border border-stamp/30 bg-stamp/[0.05] px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-stamp">
                   via {CRED_SHORT[accessEdge.viaCredential] ?? "held visa"}
                 </span>
               )}
@@ -1117,7 +1117,7 @@ function ResultCard({
 
             {(accessEdge.conditions || accessEdge.notes) && (
               <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                <p className="mono mb-1.5 text-[10px] uppercase tracking-[0.15em] text-ink-mute">Conditions &amp; notes</p>
+                <p className="mono mb-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Conditions &amp; notes</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
                   {accessEdge.conditions && accessEdge.notes
                     ? `${accessEdge.conditions} - ${accessEdge.notes}`
@@ -1166,7 +1166,7 @@ function ResultCard({
             </p>
 
             <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-              <p className="mono mb-2 text-[10px] uppercase tracking-[0.15em] text-ink-mute">What you can do</p>
+              <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">What you can do</p>
               <ul className="space-y-1.5 text-sm text-ink-soft">
                 <li>→ Apply for a tourist/visitor visa at an embassy or consulate of {withArticle(name)}</li>
                 {credHintLabels.length > 0 && (

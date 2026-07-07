@@ -83,7 +83,7 @@ export default function PassportDestinationSearch({
 
   return (
     <div className="relative mt-6 max-w-xl">
-      <label className="mono mb-1.5 block text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+      <label className="mono mb-1.5 block text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
         Do {citizens} need a visa for…?
       </label>
       <div className="relative">
@@ -135,7 +135,7 @@ export default function PassportDestinationSearch({
               >
                 <span className="text-xl">{isoToFlag(o.iso2)}</span>
                 <span className="font-display text-[15px] text-ink">{o.name}</span>
-                <span className="mono ml-auto text-[10px] uppercase tracking-[0.15em] text-ink-mute">
+                <span className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">
                   {corridor.has(o.slug) ? "visa guide →" : "entry rules →"}
                 </span>
               </button>

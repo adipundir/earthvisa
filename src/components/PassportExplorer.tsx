@@ -285,7 +285,7 @@ export default function PassportExplorer() {
                       aria-expanded={isOpen}
                       aria-haspopup="listbox"
                       aria-label={`Passport type: ${currentType}`}
-                      className={`mono inline-flex items-center gap-1 rounded px-2 py-1 text-[10px] uppercase tracking-[0.1em] transition ${
+                      className={`mono inline-flex items-center gap-1 rounded px-2 py-1 text-[10px] font-medium uppercase tracking-[0.1em] transition ${
                         isNonOrdinary
                           ? "border border-stamp/40 bg-stamp/10 text-stamp"
                           : "border border-line-strong bg-paper-2 text-ink-mute hover:border-stamp/40 hover:bg-stamp/[0.05] hover:text-stamp"
@@ -303,7 +303,7 @@ export default function PassportExplorer() {
                         aria-label="Passport type"
                         className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-ink/25"
                       >
-                        <p className="mono border-b border-line px-3 pb-2 pt-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+                        <p className="mono border-b border-line px-3 pb-2 pt-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
                           Passport type
                         </p>
                         {PASSPORT_TYPES.map((t) => {
@@ -376,7 +376,7 @@ export default function PassportExplorer() {
                   >
                     <span className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
-                    <span className="mono ml-auto text-[10px] uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
+                    <span className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
                   </button>
                 </li>
               ))}
@@ -626,7 +626,7 @@ function StatBand({ result, activeTab, setTab }: {
               }`}
             >
               <div className={`font-display text-[28px] font-semibold tabular-nums leading-none ${c.accent}`}>{c.count}</div>
-              <div className="mono mt-1.5 flex items-center gap-1 text-[10px] uppercase tracking-[0.1em] text-ink-mute">
+              <div className="mono mt-1.5 flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.1em] text-ink-mute">
                 <span className="whitespace-nowrap">{c.label}</span>
                 <span className="ml-0.5 inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-line-strong text-[8px] font-bold leading-none text-ink-mute">?</span>
               </div>
@@ -671,7 +671,7 @@ function StatBand({ result, activeTab, setTab }: {
             onClick={() => setTab("transit")}
             aria-pressed={activeTab === "transit"}
             title="Destinations you can transit (change planes) without a visa. Some appear only once a held visa unlocks them."
-            className={`mono inline-flex min-h-[36px] items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] uppercase tracking-[0.12em] transition ${
+            className={`mono inline-flex min-h-[36px] items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
               activeTab === "transit"
                 ? "border-eta/40 bg-eta/[0.07] text-eta"
                 : "border-line-strong bg-paper-2/60 text-ink-mute hover:border-eta/40 hover:text-ink"
@@ -682,7 +682,7 @@ function StatBand({ result, activeTab, setTab }: {
           </button>
           <button
             onClick={() => setTab("fast")}
-            className={`mono inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] uppercase tracking-[0.12em] transition ${
+            className={`mono inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
               activeTab === "fast"
                 ? "border-stamp/30 bg-stamp/[0.06] text-stamp"
                 : "border-line-strong bg-paper-2/60 text-ink-mute hover:border-stamp/30 hover:text-ink"
@@ -734,20 +734,20 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
   const filtered = categoryFilter ? visaTypes.filter(v => v.category === categoryFilter) : visaTypes;
   return (
     <div className="mt-6 border-t border-line pt-6">
-      <p className="mono mb-3 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+      <p className="mono mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
         {visaTypes.length} visa type{visaTypes.length !== 1 ? "s" : ""} available
       </p>
       {cats.length > 1 && (
         <div className="mb-4 flex flex-wrap gap-1.5">
           <button
             onClick={() => setCategoryFilter(null)}
-            className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+            className={`mono rounded px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
           >All</button>
           {cats.map(cat => (
             <button
               key={cat}
               onClick={() => setCategoryFilter(cat === categoryFilter ? null : cat)}
-              className={`mono rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+              className={`mono rounded px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
             >{CATEGORY_LABEL[cat] ?? cat}</button>
           ))}
         </div>
@@ -830,11 +830,11 @@ function DestinationResult({
         <div className="flex items-center gap-3">
           <span className="text-3xl leading-none">{flag}</span>
           <div>
-            <p className="mono text-[10px] uppercase tracking-[0.15em] text-ink-mute">Your access to</p>
+            <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Your access to</p>
             <h3 className="font-display text-xl font-semibold text-ink">{name}</h3>
           </div>
         </div>
-        <button onClick={onClear} className="mono text-[10px] uppercase tracking-[0.12em] text-ink-mute transition hover:text-ink">
+        <button onClick={onClear} className="mono text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute transition hover:text-ink">
           Clear ×
         </button>
       </div>
@@ -863,7 +863,7 @@ function DestinationResult({
                 </span>
               )}
               {reach.viaCredential && (
-                <span className="mono rounded border border-stamp/30 bg-stamp/[0.05] px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-stamp">
+                <span className="mono rounded border border-stamp/30 bg-stamp/[0.05] px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-stamp">
                   via {CRED_SHORT[reach.viaCredential] ?? "held visa"}
                 </span>
               )}
@@ -878,7 +878,7 @@ function DestinationResult({
 
             {(reach.conditions || reach.notes) && (
               <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                <p className="mono mb-1.5 text-[10px] uppercase tracking-[0.15em] text-ink-mute">Conditions &amp; notes</p>
+                <p className="mono mb-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Conditions &amp; notes</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
                   {reach.conditions && reach.notes ? `${reach.conditions} - ${reach.notes}` : reach.conditions ?? reach.notes}
                 </p>
@@ -889,7 +889,7 @@ function DestinationResult({
               {reach.sourceUrl && <SourceLink url={reach.sourceUrl} official={reach.sourceOfficial} />}
               <button
                 onClick={() => onOpen(reachDetail(reach))}
-                className="mono text-[10px] uppercase tracking-[0.12em] text-stamp transition hover:underline"
+                className="mono text-[10px] font-medium uppercase tracking-[0.12em] text-stamp transition hover:underline"
               >
                 Full details →
               </button>
@@ -940,7 +940,7 @@ function DestinationResult({
             </p>
             {result.selected.length > 0 && (
               <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                <p className="mono mb-2 text-[10px] uppercase tracking-[0.15em] text-ink-mute">What you can do</p>
+                <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">What you can do</p>
                 <ul className="space-y-1.5 text-sm text-ink-soft">
                   <li>→ Apply for a tourist/visitor visa at {name}&apos;s embassy or consulate</li>
                   {creds.length === 0 && (
@@ -1057,19 +1057,19 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
               <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
                 {e.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {e.maxStayDays} days</span>}
                 {e.viaCredential && (
-                  <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-stamp ring-1 ring-stamp/30">
+                  <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-stamp ring-1 ring-stamp/30">
                     via {CRED_SHORT[e.viaCredential] ?? "held visa"}
                   </span>
                 )}
                 {e.viaPassportType && (
-                  <span className="mono rounded-[3px] bg-bloc/10 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-bloc ring-1 ring-bloc/30">
+                  <span className="mono rounded-[3px] bg-bloc/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-bloc ring-1 ring-bloc/30">
                     {e.viaPassportType} passport
                   </span>
                 )}
                 {e.sourceUrl && <span className="mono inline-flex items-center gap-1.5 text-[11px] text-ink-mute"><SourceDot official={e.sourceOfficial} />{hostOf(e.sourceUrl)}</span>}
               </div>
               {e.notes && <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink-mute">{e.notes}</p>}
-              <span className="mono mt-1.5 block text-[10px] uppercase tracking-[0.1em] text-stamp/80 transition group-hover:text-stamp">Details ›</span>
+              <span className="mono mt-1.5 block text-[10px] font-medium uppercase tracking-[0.1em] text-stamp/80 transition group-hover:text-stamp">Details ›</span>
             </div>
           </ClickCard>
         ))}
@@ -1095,12 +1095,12 @@ function TransitPanel({ result, onOpen }: { result: ReturnType<typeof compute>; 
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between gap-2">
                 <span className="font-display min-w-0 truncate font-medium text-ink">{nameFor(e.dest)}</span>
-                <span className="mono shrink-0 whitespace-nowrap rounded-[3px] bg-eta/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">Transit</span>
+                <span className="mono shrink-0 whitespace-nowrap rounded-[3px] bg-eta/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">Transit</span>
               </div>
               <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
                 {e.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {e.maxStayDays}h transit</span>}
                 {e.viaCredential && (
-                  <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-stamp ring-1 ring-stamp/30">
+                  <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-stamp ring-1 ring-stamp/30">
                     via {CRED_SHORT[e.viaCredential] ?? "held visa"}
                   </span>
                 )}
@@ -1316,7 +1316,7 @@ function RbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
               <span className="text-2xl">{flagFor(p.iso3)}</span>
               <div className="min-w-0">
                 <div className="font-display truncate font-medium text-ink">{p.program_name}</div>
-                <div className="mono text-[11px] uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.type ? ` · ${programTypeLabel(p.type)}` : ""}</div>
+                <div className="mono text-[11px] font-medium uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.type ? ` · ${programTypeLabel(p.type)}` : ""}</div>
               </div>
               {p.min_amount != null ? (
                 <span className="mono ml-auto shrink-0 text-sm font-semibold tabular-nums text-voa">{fmtMoney(p.min_amount, p.currency)}</span>
@@ -1371,7 +1371,7 @@ function FastPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onO
               <span className="text-2xl">{flagFor(p.iso3)}</span>
               <div className="min-w-0">
                 <div className="font-display truncate font-medium text-ink">{p.program_name}</div>
-                <div className="mono text-[11px] uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.category ? ` · ${programTypeLabel(p.category)}` : ""}</div>
+                <div className="mono text-[11px] font-medium uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.category ? ` · ${programTypeLabel(p.category)}` : ""}</div>
               </div>
             </div>
             {p.eligibility && <p className="mt-2 line-clamp-3 text-sm leading-snug text-ink-soft">{p.eligibility}</p>}
@@ -1414,7 +1414,7 @@ function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void 
             <div className="flex flex-wrap items-center gap-2">
               {detail.level && <AccessPill level={detail.level} />}
               {detail.badges?.map((b, i) => (
-                <span key={i} className={`mono rounded-[3px] px-2 py-0.5 text-[10px] uppercase tracking-[0.08em] ring-1 ${toneCls(b.tone)}`}>{b.text}</span>
+                <span key={i} className={`mono rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] ring-1 ${toneCls(b.tone)}`}>{b.text}</span>
               ))}
             </div>
           )}
@@ -1432,7 +1432,7 @@ function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void 
             <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-6 gap-y-2.5">
               {detail.rows.map((r, i) => (
                 <div key={i} className="contents">
-                  <dt className="mono self-center text-[10px] uppercase tracking-[0.12em] text-ink-mute">{r.label}</dt>
+                  <dt className="mono self-center text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute">{r.label}</dt>
                   <dd className="text-sm text-ink">{r.value}</dd>
                 </div>
               ))}
@@ -1442,7 +1442,7 @@ function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void 
           {detail.sourceUrl && (
             <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-line pt-4">
               <SourceLink url={detail.sourceUrl} official={!!detail.sourceOfficial} />
-              <span className="mono text-[10px] uppercase tracking-[0.1em] text-ink-mute">· {detail.sourceOfficial ? "official source" : "non-official source"}</span>
+              <span className="mono text-[10px] font-medium uppercase tracking-[0.1em] text-ink-mute">· {detail.sourceOfficial ? "official source" : "non-official source"}</span>
             </div>
           )}
         </div>

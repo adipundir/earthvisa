@@ -152,7 +152,7 @@ export default function EuropePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/destination" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Destinations</Link>
@@ -171,7 +171,7 @@ export default function EuropePage() {
                     Entry Rules by Nationality 2026
                   </span>
                 </h1>
-                <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                   Europe is not one visa zone - most of it is Schengen
                 </p>
               </div>
@@ -186,7 +186,7 @@ export default function EuropePage() {
                 { k: "Max short stay", v: "90/180" },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}

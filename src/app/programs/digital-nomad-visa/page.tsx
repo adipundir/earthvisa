@@ -207,11 +207,11 @@ function NomadCard({ e }: { e: NomadEntry }) {
         )}
       </div>
       <p className="mt-1 text-sm italic leading-snug text-ink-soft">{e.program}</p>
-      <p className="mono mt-2 text-[10px] uppercase tracking-[0.12em] text-ink-mute">{typeLabel(e.category)}</p>
+      <p className="mono mt-2 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute">{typeLabel(e.category)}</p>
       {e.processing && <p className="mono mt-1.5 text-[11px] text-ink-mute">Processing: {e.processing}</p>}
       {e.detail && (
         <details className="group mt-2">
-          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] uppercase tracking-[0.12em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
+          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
             <span className="group-open:hidden">Eligibility per official source</span>
             <span className="hidden group-open:inline">Hide eligibility</span>
             <Chevron />
@@ -250,7 +250,7 @@ export default function DigitalNomadVisaPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -268,7 +268,7 @@ export default function DigitalNomadVisaPage() {
                 {countryCount} Countries with Remote Work Visas &amp; Residence Routes
               </span>
             </h1>
-            <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+            <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
               {entries.length} programs · official publications · data refreshed {lastUpdated}
             </p>
 
@@ -280,7 +280,7 @@ export default function DigitalNomadVisaPage() {
                 { k: "Announced / closed", v: notOpenCount },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}

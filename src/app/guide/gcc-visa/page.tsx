@@ -189,7 +189,7 @@ export default function GccVisaGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <span className="inline-flex min-h-[44px] items-center">Guides</span>
@@ -206,7 +206,7 @@ export default function GccVisaGuidePage() {
                   The &quot;Grand Tours&quot; Visa - Status &amp; Today&apos;s Gulf Entry Rules
                 </span>
               </h1>
-              <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+              <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                 Approved &amp; announced · not yet live per our dataset
               </p>
             </div>
@@ -220,7 +220,7 @@ export default function GccVisaGuidePage() {
                 { k: "eTA / e-Visa grants", v: totalE },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -289,7 +289,7 @@ export default function GccVisaGuidePage() {
               grants to popular passports, computed from our official-source dataset. &quot;Visa required&quot; means no
               visa-free, on-arrival, eTA or e-visa grant is recorded - apply in advance.
             </p>
-            <p className="mono mt-4 text-[10px] uppercase tracking-[0.15em] text-ink-mute sm:hidden">
+            <p className="mono mt-4 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute sm:hidden">
               Swipe sideways for all six states <span aria-hidden>→</span>
             </p>
             <div className="mt-2 overflow-x-auto sm:mt-5">

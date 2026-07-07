@@ -181,7 +181,7 @@ export default function SchengenGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <span className="inline-flex min-h-[44px] items-center">Guide</span>
@@ -200,7 +200,7 @@ export default function SchengenGuidePage() {
                     Requirements, Countries List, Fees &amp; the 90/180 Rule
                   </span>
                 </h1>
-                <p className="mono mt-2 text-[11px] uppercase tracking-[0.15em] text-stamp">
+                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                   One short-stay visa · {memberCount} countries · 90 days in any 180
                 </p>
               </div>
@@ -215,7 +215,7 @@ export default function SchengenGuidePage() {
                 { k: "Max short stay", v: "90/180" },
               ].map(({ k, v }) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -468,7 +468,7 @@ export default function SchengenGuidePage() {
             <div className="mt-5 overflow-x-auto">
               <table className="w-full min-w-[420px] border-collapse text-sm">
                 <thead>
-                  <tr className="mono border-b border-line-strong text-left text-[10px] uppercase tracking-[0.18em] text-ink-mute">
+                  <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
                     <th className="py-2.5 pr-4 font-medium">Applicant</th>
                     <th className="py-2.5 font-medium">Fee</th>
                   </tr>
