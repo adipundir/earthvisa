@@ -348,9 +348,16 @@ const NEG_CUE_RE = /(not listed|not included|not enumerated|no listad|not (?:on|
 const NEG_CLAUSE_RE = /(?:except|excluding|excepto|other than|salvo|unless|not\s+(?:listed|included|enumerated|on|in|from|among|part of))\s*:?\s*(.+)$/;
 function negationInfo(label) {
   const s = (label || "").toLowerCase();
+  // Gate on the negation cue alone. Requiring an all/any/every token too used to
+  // miss named-group exclusions like "SADC member countries except Comoros" or
+  // "EU member states (except Ireland)" - no all/any/every word, but still a real
+  // exclusion that plain expansion (labelToGroup substring match) would ignore,
+  // silently granting the excluded country false visa-free access. isAll is still
+  // returned below - the call site only falls back to ALL_ISO3 when the label
+  // truly says all/any/every; an unrecognized named group ("Commonwealth countries
+  // except ...", no group defined for it) must NOT silently expand to everyone.
+  if (!NEG_CUE_RE.test(s)) return null;
   const isAll = /\b(all|any|every|todos|todas)\b/.test(s);
-  const isNeg = NEG_CUE_RE.test(s);
-  if (!isAll || !isNeg) return null;
   let excepts = [];
   const m = s.match(NEG_CLAUSE_RE);
   if (m) {
@@ -363,7 +370,7 @@ function negationInfo(label) {
   }
   // references an external list/decree/annex with no inline names we can resolve
   const externalList = excepts.length === 0 && /\b(list|listad|decreto|decree|annex|regulation|ica|restricted|visa-required)\b/.test(s);
-  return { excepts, externalList };
+  return { excepts, externalList, isAll };
 }
 
 // Structured visa-required list for a country file, in either recorded shape:
@@ -537,8 +544,13 @@ for (const f of files) {
         continue;
       }
       // "all nationalities EXCEPT …" - expand only when the excluded set is KNOWN, otherwise
-      // we'd wrongly grant entry to the very nationalities that actually need a visa.
-      const neg = negationInfo(entry.nationality);
+      // we'd wrongly grant entry to the very nationalities that actually need a visa. Entries
+      // that already carry a structured entry.iso3 name ONE specific nationality no matter what
+      // parenthetical caveat is in the free-text label ("Serbia (biometric passports, excluding
+      // passports issued by …)" - not a nationality exclusion at all, a passport-subtype one) -
+      // let those fall through to resolveOrigins(), which honours entry.iso3 directly.
+      const hasDirectIso3 = entry.iso3 && byIso3.has(String(entry.iso3).toUpperCase());
+      const neg = hasDirectIso3 ? null : negationInfo(entry.nationality);
       if (neg) {
         const exclude = new Set([iso3]);
         const resolvedExcepts = resolveNatList(neg.excepts) || [];
@@ -555,7 +567,17 @@ for (const f of files) {
         // scope the grant to the named bloc when the label is group-bound
         // ("EU member states (all except Ireland …)") instead of every passport
         const baseLabel = (entry.nationality || "").replace(new RegExp(`\\b${NEG_CLAUSE_RE.source}`, "i"), "");
-        const base = labelToGroup(baseLabel) || ALL_ISO3;
+        const knownGroup = labelToGroup(baseLabel);
+        if (!knownGroup && !neg.isAll) {
+          // The base isn't a recognized bloc ("Commonwealth countries except …" - no
+          // COMMONWEALTH group defined) and the label doesn't literally say all/any/
+          // every, so it's NOT safe to assume "every passport" here - that would be a
+          // much bigger false grant than the omission it replaces. Needs the bloc
+          // added to labelToGroup() or a structured nationalities list; skip for now.
+          negationGaps.push(`${iso3} [${level}] "${(entry.nationality || "").slice(0, 50)}" - unrecognized group, needs group definition or structured list`);
+          continue;
+        }
+        const base = knownGroup || ALL_ISO3;
         for (const o of base) if (!exclude.has(o)) addEdge(o, iso3, level, edge);
         continue;
       }
