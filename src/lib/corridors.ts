@@ -121,6 +121,20 @@ export function corridorPairs(): CorridorPair[] {
   return out;
 }
 
+/**
+ * Small curated subset actually pre-rendered at build time - top nationality x
+ * top destination, same quality bar as corridorPairs(). The full corridorPairs()
+ * set (~23k) is still valid and reachable: the corridor page sets
+ * dynamicParams=true, so any other real corridor renders on first visit and is
+ * cached from then on, instead of every single one being built upfront (which
+ * is what made builds take ~9 minutes and deploys fail on output size).
+ */
+export function preWarmCorridorPairs(): CorridorPair[] {
+  const topNat = new Set(TOP_NATIONALITIES);
+  const topDest = new Set(TOP_DESTINATIONS);
+  return corridorPairs().filter((c) => topNat.has(c.nat) && topDest.has(c.dest));
+}
+
 /** Fast membership check for the internal link mesh (so we never link to a pruned page). */
 export function isUsefulCorridor(nat: string, dest: string): boolean {
   if (!_useful) _useful = new Set(corridorPairs().map((c) => `${c.nat}|${c.dest}`));

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { compute, LEVEL_LABEL } from "@/lib/compute";
 import type { AccessLevel } from "@/lib/types";
-import { TOP_NATIONALITIES, TOP_DESTINATIONS, corridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
+import { TOP_NATIONALITIES, TOP_DESTINATIONS, preWarmCorridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
 import { feesFor, relevantFees, variationFor, fmtFee } from "@/lib/fees";
 import { applicationNoteFor } from "@/lib/applicationNotes";
@@ -16,11 +16,13 @@ const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]))
 const slugToCountry = (slug: string) => bySlug.get(slug) ?? null;
 
 // Only the curated, genuinely-useful corridors exist; anything else 404s rather
-// than rendering a thin "visa required" page.
-export const dynamicParams = false;
+// than rendering a thin "visa required" page (isUsefulCorridor() enforces this
+// below, since dynamicParams=true no longer gates it for us at the framework
+// level - see preWarmCorridorPairs()).
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return corridorPairs().map((c) => ({ slug: c.natSlug, dest: c.destSlug }));
+  return preWarmCorridorPairs().map((c) => ({ slug: c.natSlug, dest: c.destSlug }));
 }
 
 // ── Access resolution ─────────────────────────────────────────────────────────
@@ -154,6 +156,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const n = slugToCountry(slug);
   const d = slugToCountry(dest);
   if (!n || !d) return { title: "Not Found" };
+  if (!isUsefulCorridor(n.iso3, d.iso3)) return { title: "Not Found" };
   const s = resolve(n.iso3, d.iso3);
   const nd = DEMONYM[n.iso3] ?? n.name;
   const title = corridorTitle(n.iso3, d.iso3, d.name, nd, s);
@@ -221,6 +224,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const n = slugToCountry(slug);
   const d = slugToCountry(dest);
   if (!n || !d) notFound();
+  if (!isUsefulCorridor(n.iso3, d.iso3)) notFound();
 
   const s = resolve(n.iso3, d.iso3);
   const nd = DEMONYM[n.iso3] ?? n.name;
