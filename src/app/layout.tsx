@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import { Analytics } from "@vercel/analytics/next";
+import { dataset } from "@/lib/dataset";
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -138,7 +139,7 @@ export default function RootLayout({
           }}
         />
         <a href="#main" className="skip-link">Skip to main content</a>
-        <Navbar />
+        <Navbar lastUpdated={dataset.meta.lastUpdated} />
         <div id="main" tabIndex={-1} className="flex flex-1 flex-col outline-none">
           {children}
         </div>

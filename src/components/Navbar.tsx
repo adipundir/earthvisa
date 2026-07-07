@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { dataset } from "@/lib/dataset";
 import { fmtDate } from "@/lib/format";
 import BrandMark from "@/components/BrandMark";
 
@@ -12,7 +11,12 @@ const LINKS = [
   { href: "/rankings", label: "Rankings" },
 ];
 
-export default function Navbar() {
+// lastUpdated is passed from the (server) root layout instead of importing
+// @/lib/dataset here - that module eagerly evaluates the full ~18MB
+// dataset.json at module scope, and importing it from a "use client"
+// component was forcing that entire dataset into a client JS chunk shipped
+// on every route just to print one date string.
+export default function Navbar({ lastUpdated }: { lastUpdated: string }) {
   const path = usePathname();
   return (
     <nav className="sticky top-0 z-50 border-b border-line bg-paper/80 backdrop-blur-md">
@@ -31,9 +35,9 @@ export default function Navbar() {
             sm upward, where the full meta cluster below covers it instead. */}
         <span
           className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute sm:hidden"
-          title={`Data last updated ${dataset.meta.lastUpdated}`}
+          title={`Data last updated ${lastUpdated}`}
         >
-          Updated {fmtDate(dataset.meta.lastUpdated)}
+          Updated {fmtDate(lastUpdated)}
         </span>
 
         {/* w-full forces this onto its own line on mobile (flex-wrap trick);
@@ -63,8 +67,8 @@ export default function Navbar() {
         <div className="mono ml-auto hidden items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.18em] sm:flex">
           <span className="text-vfree">Official sources only</span>
           <span className="h-3 w-px bg-line-strong" aria-hidden="true" />
-          <span className="text-ink-mute" title={`Data last updated ${dataset.meta.lastUpdated}`}>
-            Updated {fmtDate(dataset.meta.lastUpdated)}
+          <span className="text-ink-mute" title={`Data last updated ${lastUpdated}`}>
+            Updated {fmtDate(lastUpdated)}
           </span>
         </div>
       </div>
