@@ -23,6 +23,7 @@ const LIST_PAGES = [
   "/list/visa-free-countries-for-pakistanis",
   "/list/visa-free-countries-for-filipinos",
   "/list/visa-free-countries-for-nigerians",
+  "/list/e-visa-countries-for-indians",
   "/list/visa-on-arrival-countries-for-indians",
   "/list/visa-on-arrival-countries-for-pakistanis",
   "/list/visa-on-arrival-countries-for-filipinos",
@@ -34,28 +35,32 @@ const LIST_PAGES = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://earthvisa.in";
+  // Stamp entries with the dataset's update date, NOT the build time - every
+  // deploy otherwise tells crawlers all ~24k URLs just changed, triggering
+  // full-site recrawl waves after each push.
+  const lastModified = new Date(dataset.meta.lastUpdated);
   const passportPages = dataset.allCountries.map((c) => ({
     url: `${base}/passport/${nameToSlug(c.name)}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
   const destinationPages = dataset.allCountries.map((c) => ({
     url: `${base}/destination/${nameToSlug(c.name)}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
   const corridorPages = corridorPairs().map((c) => ({
     url: `${base}/passport/${c.natSlug}/${c.destSlug}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
   // Colloquial alias destinations (dubai, bali, ...) - high-volume query tokens.
   const aliasPages = [...aliasBySlug.keys()].map((slug) => ({
     url: `${base}/destination/${slug}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -64,24 +69,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const c = dataset.allCountries.find((x) => x.iso3 === iso3);
     return c ? [{
       url: `${base}/guide/schengen/${nameToSlug(c.name)}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }] : [];
   });
   const staticSeoPages = [...GUIDE_PAGES, ...PROGRAM_PAGES, ...LIST_PAGES].map((path) => ({
     url: `${base}${path}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
   return [
-    { url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
-    { url: `${base}/visit`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${base}/rankings`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${base}/passport`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/destination`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/destination/europe`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: base, lastModified, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${base}/visit`, lastModified, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/rankings`, lastModified, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/passport`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/destination`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/destination/europe`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     ...staticSeoPages,
     ...schengenNationalityPages,
     ...aliasPages,

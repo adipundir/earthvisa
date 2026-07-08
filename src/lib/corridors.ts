@@ -28,6 +28,12 @@ const FORCE_CORRIDORS = new Set([
   "NGA|CAN",
   "IND|GBR", "PAK|GBR", "NGA|GBR",
   "CHN|JPN", "SAU|JPN", "ZAF|JPN", // reclassified visa-required (Japan eVISA is residence-based, not a nationality grant); keep - fee data + application note
+  // Top Indian outbound destinations that are visa-required with no VFS
+  // checklist - previously 404ed while Tuvalu got a page. All carry rich fee
+  // + visa-type data (audit-verified); FRA/GRC also close the two holes in
+  // /guide/schengen/india's destination links.
+  "IND|USA", "IND|CAN", "IND|AUS", "IND|SAU", "IND|KWT", "IND|FRA", "IND|GRC",
+  "IND|ESP", // previously existed only via the mis-mapped Malta VFS file; Spain is a top Indian destination with full fee + visa-type data
 ]);
 
 /** Adjectival demonym, e.g. "Thailand Visa for Indian citizens". Copy that uses

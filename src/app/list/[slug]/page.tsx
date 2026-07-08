@@ -10,7 +10,7 @@ import type { AccessLevel } from "@/lib/types";
 // Only the slugs below are served; anything else 404s at build time.
 export const dynamicParams = false;
 
-type ListKind = "us_visa" | "voa" | "visa_free";
+type ListKind = "us_visa" | "voa" | "visa_free" | "e_visa";
 
 interface ListConfig {
   slug: string;
@@ -32,6 +32,7 @@ const LISTS: ListConfig[] = [
   { slug: "visa-on-arrival-countries-for-pakistanis", kind: "voa", nat: "PAK", people: "Pakistanis", peopleTitle: "Pakistanis" },
   { slug: "visa-on-arrival-countries-for-filipinos", kind: "voa", nat: "PHL", people: "Filipinos", peopleTitle: "Filipinos" },
   { slug: "visa-on-arrival-countries-for-nigerians", kind: "voa", nat: "NGA", people: "Nigerians", peopleTitle: "Nigerians" },
+  { slug: "e-visa-countries-for-indians", kind: "e_visa", nat: "IND", people: "Indians", peopleTitle: "Indians" },
   { slug: "countries-with-us-visa-for-indians", kind: "us_visa", nat: "IND", people: "Indians", peopleTitle: "Indians" },
   { slug: "countries-with-us-visa-for-pakistani-citizens", kind: "us_visa", nat: "PAK", people: "Pakistani citizens", peopleTitle: "Pakistani Citizens" },
   { slug: "countries-with-us-visa-for-filipino-citizens", kind: "us_visa", nat: "PHL", people: "Filipino citizens", peopleTitle: "Filipino Citizens" },
@@ -84,12 +85,17 @@ function usVisaUnlocks(nat: string): CombinedEdge[] {
     });
 }
 
-/** "US: any valid multiple-entry visa - ..." -> "any valid multiple-entry visa" */
+/** "US: any valid multiple-entry visa - ..." -> "any valid multiple-entry visa".
+ * Mandatory prior-use clauses ("visa shall have been used at least once") live
+ * past the " - " separator the head drops - without them the condition is
+ * materially wrong (e.g. Saudi rejects never-used visas), so pull them back in. */
 function usVisaCondition(e: CombinedEdge): string | null {
-  const head = (e.notes ?? "").split(" - ")[0]?.replace(/^US:\s*/, "").trim();
+  const notes = e.notes ?? "";
+  const head = notes.split(" - ")[0]?.replace(/^US:\s*/, "").trim();
   if (!head) return null;
-  const t = `US visa condition: ${head}`;
-  return t.length > 130 ? `${t.slice(0, 127)}...` : t;
+  const priorUse = /[^.]*\bused at least once\b[^.]*\./i.exec(notes)?.[0]?.trim();
+  const t = `US visa condition: ${head}${priorUse ? `. ${priorUse}` : ""}`;
+  return t.length > 220 ? `${t.slice(0, 217)}...` : t;
 }
 
 /** First sentence of the official-source note, when short enough to be useful. */
@@ -206,7 +212,7 @@ function buildListData(cfg: ListConfig): ListData | null {
         },
         {
           q: `Do I need to have used my US visa before it unlocks these countries?`,
-          a: `Some destinations require it. Albania requires a multiple-entry US visa that has previously been used in the United States, and Egypt requires a valid and used visa. The exact condition for each destination is shown in the list above, taken from official sources.`,
+          a: `Several destinations require it. Albania requires a multiple-entry US visa that has previously been used in the United States, Egypt requires a valid and used visa, and Saudi Arabia's tourist visa-on-arrival requires the US visa to have been used at least once to enter the US. The exact condition for each destination is shown in the list above, taken from official sources.`,
         },
       ],
     };
@@ -252,6 +258,44 @@ function buildListData(cfg: ListConfig): ListData | null {
           a: usVoaNames.length
             ? `Yes. With a valid US visa, ${adj} passport holders also get a visa on arrival in ${joinNames(usVoaNames)}, and ${usDelta.filter((e) => e.level === "visa_free").length} further destinations become fully visa-free. Conditions apply per destination - typically a valid multiple-entry US visa.`
             : `Holding a valid US visa can improve access to some destinations. Use the Earth Visa checker to see exactly what your documents unlock.`,
+        },
+      ],
+    };
+  }
+
+  if (cfg.kind === "e_visa") {
+    const main = [...base.reachByLevel.e_visa].sort(byName);
+    const n = main.length;
+    const notable = pickNotable(main, ["VNM", "EGY", "GEO", "RUS", "AZE", "KEN", "TZA", "UZB"]);
+    const etaCount = base.reachByLevel.eta.length;
+    const title = `e-Visa Countries for ${cfg.peopleTitle} 2026 - Full List (${n})`;
+    const description = `${n} countries let ${cfg.people} apply for a visa entirely online in 2026, including ${joinNames(notable)} - no embassy visit. The full e-visa list with stay limits from official government sources.`;
+    return {
+      cfg, country, natSlug, adj, base, main, usDelta, title, description,
+      keywords: [
+        `e visa countries for ${cfg.people.toLowerCase()}`,
+        `evisa countries for ${cfg.people.toLowerCase()} 2026`,
+        `e-visa for ${adj.toLowerCase()} passport`,
+        `online visa countries for ${cfg.people.toLowerCase()}`,
+        `countries with e visa for ${cfg.people.toLowerCase()}`,
+        `${adj.toLowerCase()} passport e visa list 2026`,
+      ],
+      faqs: [
+        {
+          q: `How many countries offer an e-visa to ${cfg.people} in 2026?`,
+          a: `${n} countries let ${adj} passport holders apply for a visa entirely online in 2026, including ${joinNames(pickNotable(main, ["VNM", "EGY", "GEO", "RUS", "AZE"], 5))}. On top of that, ${vfCount} countries are fully visa-free, ${voaCount} offer a visa on arrival, and ${etaCount} need only an eTA - a total reach of ${total} destinations.`,
+        },
+        {
+          q: `What is an e-visa and how is it different from an eTA?`,
+          a: `An e-visa is an actual visa - a real entry permit - issued digitally: you apply online, upload documents, pay the fee, and receive an electronic approval instead of an embassy sticker. An eTA is lighter: a quick security pre-screening, not a visa. Both mean no embassy visit for eligible trips.`,
+        },
+        {
+          q: `What do ${cfg.people} need to apply for an e-visa?`,
+          a: `Typically a passport scan (usually with six months validity), a digital photo, an online form, and card payment of the fee. Some destinations also ask for onward tickets, accommodation proof, or bank statements. Each country's exact requirements and fees are on its Earth Visa guide page, linked below, with the official application portal.`,
+        },
+        {
+          q: `How long does an e-visa take to be approved?`,
+          a: `Most e-visas are processed in a few working days, though times vary by destination and season. Apply at least one to two weeks before travelling, and always use the official government portal - third-party sites charge markups for the same visa.`,
         },
       ],
     };
@@ -309,6 +353,7 @@ function buildListData(cfg: ListConfig): ListData | null {
 function listShortLabel(l: ListConfig): string {
   if (l.kind === "visa_free") return `Visa free countries for ${l.people}`;
   if (l.kind === "voa") return `Visa on arrival countries for ${l.people}`;
+  if (l.kind === "e_visa") return `e-Visa countries for ${l.people}`;
   return `Countries ${l.people} can visit with a US visa`;
 }
 
@@ -405,6 +450,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
           { k: "e-Visa / eTA", v: eCount },
           { k: "Total reach", v: total },
         ]
+      : cfg.kind === "e_visa"
+      ? [
+          { k: "e-Visa", v: main.length },
+          { k: "Visa-free", v: vfCount },
+          { k: "Visa on arrival", v: voaCount },
+          { k: "Total reach", v: total },
+        ]
       : [
           { k: "Visa-free", v: main.length },
           { k: "Visa on arrival", v: voaCount },
@@ -417,18 +469,24 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
       ? `Countries ${cfg.peopleTitle} Can Visit with a US Visa`
       : cfg.kind === "voa"
       ? `Visa on Arrival Countries for ${cfg.peopleTitle}`
+      : cfg.kind === "e_visa"
+      ? `e-Visa Countries for ${cfg.peopleTitle}`
       : `Visa Free Countries for ${cfg.peopleTitle}`;
   const h1Sub =
     cfg.kind === "us_visa"
       ? `${main.length} Extra Destinations Unlocked in 2026`
       : cfg.kind === "voa"
       ? `Get Stamped at the Border - the Full 2026 List (${main.length})`
+      : cfg.kind === "e_visa"
+      ? `Apply Online, Skip the Embassy - the Full 2026 List (${main.length})`
       : `The Complete ${adj} Passport List for 2026 (${main.length})`;
   const stampLine =
     cfg.kind === "us_visa"
       ? `${main.length} extra destinations with a valid US visa · official sources`
       : cfg.kind === "voa"
       ? `${main.length} countries stamp your visa at the border · official sources`
+      : cfg.kind === "e_visa"
+      ? `${main.length} visas issued fully online · official sources`
       : `${main.length} countries, zero paperwork · official sources`;
 
   // Corridor guides for destinations on this list (only pages that exist).
