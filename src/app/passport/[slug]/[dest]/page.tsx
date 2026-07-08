@@ -162,7 +162,7 @@ function answerSentence(nat: string, dest: string, s: Status): string {
     case "fom": return `${nat} citizens have freedom of movement in ${dest} — they can live, work and travel there with no visa.`;
     case "visa_free": return `No — ${nat} passport holders do not need a visa for ${dest}. Entry is visa-free${s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""} as of 2026.`;
     case "visa_on_arrival": return `${nat} passport holders can get a visa on arrival for ${dest}${s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}, so no visa is needed before travelling.`;
-    case "eta": return `${nat} passport holders need an approved eTA (electronic travel authorisation) before travelling to ${dest} — a quick online pre-screening layered on top of existing visa-free entry, not a full visa.`;
+    case "eta": return `${nat} passport holders need an approved eTA (electronic travel authorisation) before travelling to ${dest} — a quick online pre-screening completed before departure, not a full visa.`;
     case "e_visa": return `${nat} passport holders can apply online for a ${dest} e-Visa before travel. Unlike an eTA, this is an actual visa — just issued digitally — so no embassy visit is needed for eligible short-term visits. Eligibility and covered purposes vary, so check the conditions below.`;
     default: return `${nat} passport holders need a visa to enter ${dest}. Apply at a ${dest} embassy or consulate, or the official visa portal, before travelling.`;
   }
@@ -177,7 +177,7 @@ function faqAnswerSentence(nat: string, dest: string, s: Status): string {
     case "fom": return `No — ${nat} citizens have freedom of movement in ${dest} under their bloc membership, which includes the right to live and work there, not just visit.`;
     case "visa_free": return `No visa is required${s.maxStayDays ? ` for stays of up to ${s.maxStayDays} days` : ""}.`;
     case "visa_on_arrival": return `No advance visa is required — ${nat} citizens get a visa on arrival at the border${s.maxStayDays ? ` for stays of up to ${s.maxStayDays} days` : ""}.`;
-    case "eta": return `Not a visa, but yes — an eTA (a quick online pre-screening on top of existing visa-free entry) is required before travelling.`;
+    case "eta": return `Not a visa, but yes — an approved eTA (a quick online pre-screening) is required before travelling.`;
     case "e_visa": return `Yes, but it can be completed entirely online — no embassy visit is required for eligible short-term visits.`;
     default: return `Yes — ${nat} citizens must apply for a visa in advance at a ${dest} embassy, consulate, or official visa portal before travelling.`;
   }
@@ -314,17 +314,28 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const aliasNote = aliasLead ? ALIASES.find((a) => a.alias === aliasLead)?.note : undefined;
   const umrah = d.iso3 === "SAU" && UMRAH_NATIONALITIES.has(n.iso3);
   const visaTypes = dataset.destinationVisaTypes?.[d.iso3] ?? [];
-  const vfsCorr = (dataset.vfsCorridors?.[d.iso3] ?? []).find((c) => c.sourceIso3 === n.iso3);
-  const hasVfs = !!vfsCorr;
+  // A destination can have several VFS corridor files for one nationality
+  // (e.g. Malta: "mlt" short-stay Schengen visas + "mes" employment/study
+  // national services) - merge them all rather than picking whichever file
+  // sorts first, so the tourist checklist is never hidden by a sibling file.
+  const vfsCorrs = (dataset.vfsCorridors?.[d.iso3] ?? []).filter((c) => c.sourceIso3 === n.iso3);
+  const vfsCorr = vfsCorrs[0];
+  const hasVfs = vfsCorrs.length > 0;
+  // hasVfs = a corridor file exists; hasVfsDocs (set below) = documents actually render.
   // Inline the real corridor document checklist (unique per nationality→destination)
   // instead of a destination-generic visa-types block. Read at build time.
   let vfsDocs: { name: string; category: string; documents_required: string }[] = [];
   let vfsCommonLines: string[] = [];
   const VFS_PREVIEW = 6;
-  if (vfsCorr) {
+  if (vfsCorrs.length > 0) {
     try {
-      const data = JSON.parse(readFileSync(join(process.cwd(), "data", vfsCorr.detailFile), "utf8"));
-      const all = (data.visa_types ?? [])
+      const merged = vfsCorrs.flatMap((c) => {
+        try {
+          const data = JSON.parse(readFileSync(join(process.cwd(), "data", c.detailFile), "utf8"));
+          return data.visa_types ?? [];
+        } catch { return []; }
+      });
+      const all = merged
         .filter((v: { documents_required?: string | null }) => v.documents_required)
         .map((v: { name: string; category: string; documents_required: string }) => ({ ...v, documents_required: stripVfsBoilerplate(v.documents_required) }))
         .filter((v: { documents_required: string }) => v.documents_required)
@@ -345,6 +356,38 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const feeList = relevantFees(d.iso3, s.kind);
   const feeVariation = variationFor(d.iso3, n.iso3);
   const headlineFee = feeVariation?.amount != null ? feeVariation : feeList.find((f) => f.amount != null) ?? null;
+
+  // Held-credential unlocks: destinations like the UAE admit otherwise
+  // visa-required nationals on arrival when they hold a major third-country
+  // visa or residence permit. These officially published rules already live in
+  // dataset.credentialAccess - without this section the hero says only "visa
+  // required", hiding the most-searched fact on corridors like India -> UAE.
+  // Transit-only and refugee-document edges are excluded (not tourist entry).
+  const credLabelById = new Map(dataset.credentials.map((c) => [c.id, c.label]));
+  const credUnlocks = s.kind === "visa_required"
+    ? Object.entries(dataset.credentialAccess ?? {}).flatMap(([cred, edges]) =>
+        edges
+          .filter((e) =>
+            e.dest === d.iso3 &&
+            !e.transit &&
+            (e.nationalityScope == null || e.nationalityScope.includes(n.iso3)) &&
+            !/refugee|airport transit/i.test(`${e.notes ?? ""} ${e.conditions ?? ""}`))
+          .map((e) => ({
+            cred,
+            label: credLabelById.get(cred) ?? cred,
+            level: e.level,
+            maxStayDays: e.maxStayDays,
+            conditions: (e.conditions || e.notes || "").split(". ")[0],
+            sourceUrl: e.sourceUrl,
+          })))
+    : [];
+  // Group identical outcomes ("visa on arrival, 14 days") so ten credentials
+  // render as one row with chips, not ten near-identical cards.
+  const credGroups = [...credUnlocks.reduce((m, u) => {
+    const key = `${u.level}|${u.maxStayDays ?? ""}`;
+    (m.get(key) ?? m.set(key, []).get(key)!).push(u);
+    return m;
+  }, new Map<string, typeof credUnlocks>()).values()];
 
   // Related corridors for internal linking (crawl mesh).
   const sameNat = TOP_DESTINATIONS.filter((x) => x !== d.iso3 && x !== n.iso3 && isUsefulCorridor(n.iso3, x)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
@@ -386,8 +429,8 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     {
       q: `What documents do ${nd} citizens need for ${d.name}?`,
       a: noVisaShortStay
-        ? `A valid passport is all ${nd} citizens need for a short ${s.kind === "fom" ? "stay" : "visa-free visit"}${"maxStayDays" in s && s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}.${hasVfs ? ` If you apply for a longer-stay visa, Earth Visa lists the full required documents per visa category from the official visa application centre.` : ""}`
-        : hasVfs
+        ? `A valid passport is all ${nd} citizens need for a short ${s.kind === "fom" ? "stay" : "visa-free visit"}${"maxStayDays" in s && s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}.${vfsDocs.length > 0 ? ` If you apply for a longer-stay visa, Earth Visa lists the full required documents per visa category from the official visa application centre.` : ""}`
+        : vfsDocs.length > 0
           ? `A valid passport plus the ${d.name} document checklist for your visa type — Earth Visa lists the full required documents per visa category from the official visa application centre.`
           : `A passport valid well beyond your planned stay (commonly three to six months, depending on the destination), proof of onward travel and funds, and any documents required for the specific ${d.name} visa category — check the official portal for the exact passport-validity rule.`,
     },
@@ -502,13 +545,52 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   {fallbackApplyUrl && <>{" "}<ApplyLink href={fallbackApplyUrl} /></>}
                 </li>
               )}
-              {hasVfs && (
+              {vfsDocs.length > 0 && (
                 <li>→ <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " — only needed if you apply for a longer-stay visa" : ", by visa type"}.</li>
               )}
             </ul>
           </section>
             );
           })()}
+
+          {/* Held-credential exceptions - officially published no-advance-visa routes */}
+          {credGroups.length > 0 && (
+            <section className="mb-10 border-t border-line pt-8">
+              <h2 className="font-display text-xl font-semibold text-ink">
+                No advance visa with these documents
+              </h2>
+              <p className="mt-1 max-w-2xl text-sm text-ink-soft">
+                {d.name} officially admits {nd} citizens without a pre-arranged visa when they hold certain third-country visas or residence permits.
+              </p>
+              <div className="mt-4 space-y-3">
+                {credGroups.map((group, gi) => (
+                  <div key={gi} className="rounded-lg border border-vfree/30 bg-vfree/[0.05] px-4 py-3">
+                    <p className="mono text-[11px] font-semibold uppercase tracking-[0.12em] text-vfree">
+                      {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {group.map((u) => (
+                        <span key={u.cred} className="mono rounded-[3px] bg-white px-2 py-0.5 text-[11px] text-ink ring-1 ring-line-strong">{u.label}</span>
+                      ))}
+                    </div>
+                    {group[0].conditions && (
+                      <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{group[0].conditions}. Conditions vary slightly per document — check each rule via the official source{group[0].sourceUrl ? "" : ""}.</p>
+                    )}
+                    {group[0].sourceUrl && (
+                      <a href={group[0].sourceUrl} target="_blank" rel="noreferrer" className="mono mt-1.5 inline-block text-[11px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
+                        {(() => { try { return new URL(group[0].sourceUrl).hostname.replace(/^www\./, ""); } catch { return "official source"; } })()} ↗
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <p className="mt-3 text-sm text-ink-soft">
+                <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">
+                  Check what all your documents unlock at once →
+                </Link>
+              </p>
+            </section>
+          )}
 
           {/* Official visa fees (crawled from government sources) */}
           {feeList.length > 0 && (
@@ -532,10 +614,18 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               )}
 
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {feeList.slice(0, 4).map((f, i) => (
+                {(() => {
+                  // The nationality-specific variation overrides ONE row - the first
+                  // of its kind (the primary product). Overriding every same-kind row
+                  // clobbered e.g. Maldives' MVR 750 extension fee with India's free
+                  // VoA, mislabelling a real fee as "Free".
+                  const variationRowIdx = feeVariation?.amount != null
+                    ? feeList.slice(0, 4).findIndex((f) => f.kind === feeVariation.kind)
+                    : -1;
+                  return feeList.slice(0, 4).map((f, i) => (
                   <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
                     <p className="font-display text-[14px] font-semibold text-ink">{f.name}</p>
-                    {feeVariation?.amount != null && feeVariation.kind === f.kind ? (
+                    {feeVariation?.amount != null && i === variationRowIdx ? (
                       <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(feeVariation)}</p>
                     ) : f.amount != null ? (
                       <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
@@ -552,17 +642,30 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                       </a>
                     )}
                   </div>
-                ))}
+                  ));
+                })()}
               </div>
-              {destFees?.vfs.used && (
-                <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-                  {/* No amount here: the crawled service fee is per source-country
-                      (often an India-centre figure) and this can't be reliably
-                      attributed to this specific nationality. Same rule as the
-                      destination page. */}
-                  Applications are handled via {destFees.vfs.operator} — a service fee applies on top of the visa fee and varies by country and centre.
-                </p>
-              )}
+              {/* Only visa_required corridors route through a VFS/VAC centre -
+                  on VoA/eTA/e-visa corridors the application never touches VFS,
+                  so the note would contradict the page's own apply steps. */}
+              {destFees?.vfs.used && s.kind === "visa_required" && (() => {
+                // The crawled service fee is a source-country figure (usually one
+                // centre's schedule). Show the amount ONLY when its source URL is
+                // attributable to this corridor's nationality (e.g. .../ind/en/...
+                // on an India corridor); for everyone else keep the
+                // nationality-agnostic wording - same rule as the destination page.
+                const src = (destFees.vfs.source_url ?? "").toLowerCase();
+                const natSlugLower = nameToSlug(n.name);
+                const natMatch = !!destFees.vfs.service_fee &&
+                  (src.includes(`/${n.iso3.toLowerCase()}/`) || src.includes(`/${natSlugLower}/`) || src.includes(`/${n.name.toLowerCase()}/`));
+                return (
+                  <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                    Applications are handled via {destFees.vfs.operator} — {natMatch
+                      ? `the service fee for ${nd} applicants is about ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee} on top of the visa fee (varies by centre).`
+                      : `a service fee applies on top of the visa fee and varies by country and centre.`}
+                  </p>
+                );
+              })()}
               <p className="mono mt-3 text-[11px] font-medium uppercase tracking-[0.12em] text-ink-mute">
                 Fees checked {fmtDay(destFees?.updated) ?? "recently"} · sourced from official government fee schedules
               </p>
@@ -654,7 +757,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                       <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </summary>
                     <p className="mt-3 text-sm text-ink-soft">
-                      These don&apos;t apply to a typical short visit, but cover other reasons {nd} citizens travel to {d.name}.
+                      These don&apos;t apply to a typical short visit, but cover other reasons people travel to {d.name}. Eligibility varies by visa type — some are limited to specific nationalities, so check each one&apos;s conditions.
                     </p>
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
                       {otherTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}

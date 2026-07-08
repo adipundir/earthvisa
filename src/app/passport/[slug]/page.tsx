@@ -45,6 +45,32 @@ export async function generateStaticParams() {
   return dataset.allCountries.map((c) => ({ slug: nameToSlug(c.name) }));
 }
 
+
+// Curated /list pages that exist for this nationality (must mirror LISTS in
+// src/app/list/[slug]/page.tsx) - linked from the matching reach sections.
+const LIST_LINKS: Record<string, { vf?: string; voa?: string; evisa?: string; us?: string }> = {
+  IND: {
+    vf: "/list/visa-free-countries-for-indians",
+    voa: "/list/visa-on-arrival-countries-for-indians",
+    evisa: "/list/e-visa-countries-for-indians",
+    us: "/list/countries-with-us-visa-for-indians",
+  },
+  PAK: {
+    vf: "/list/visa-free-countries-for-pakistanis",
+    voa: "/list/visa-on-arrival-countries-for-pakistanis",
+    us: "/list/countries-with-us-visa-for-pakistani-citizens",
+  },
+  PHL: {
+    vf: "/list/visa-free-countries-for-filipinos",
+    voa: "/list/visa-on-arrival-countries-for-filipinos",
+    us: "/list/countries-with-us-visa-for-filipino-citizens",
+  },
+  NGA: {
+    vf: "/list/visa-free-countries-for-nigerians",
+    voa: "/list/visa-on-arrival-countries-for-nigerians",
+  },
+};
+
 // Global rank by total reach - shared by metadata and the page body.
 const rankOf = new Map(
   Object.entries(dataset.passportAccess)
@@ -78,7 +104,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const rank = rankOf.get(country.iso3);
   const title = passportTitle(country.iso3, country.name, rank, vfCount);
   const { adj } = nationalityPhrases(country.iso3, country.name);
-  const description = `Visa-free countries for the ${adj} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} e-visa${rank ? `. Ranked #${rank} of 199 passports` : ""}. Full list from official government sources.`;
+  const description = `Visa-free countries for the ${adj} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} via eTA or e-visa${rank ? `. Ranked #${rank} of 199 passports` : ""}. Full list from official government sources.`;
 
   return {
     title,
@@ -244,6 +270,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
   const rbiCountries = new Set(result.rbi.map((p) => p.iso3)).size;
 
   const rank = rankOf.get(country.iso3) ?? null;
+  const listLinks = LIST_LINKS[country.iso3] ?? {};
 
   // Corridor guides where this passport is the traveller (internal link mesh).
   const { adj: demonym, citizens, citizensCap, citizensTitle } = nationalityPhrases(country.iso3, country.name);
@@ -277,7 +304,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
           {
             "@type": "Question",
             "name": `What is the ${demonym} passport ranking in 2026?`,
-            "acceptedAnswer": { "@type": "Answer", "text": rank ? `The ${demonym} passport ranks approximately ${ordinal(rank)} out of 199 passports in 2026, based on the number of visa-free destinations (${total} total accessible countries).` : `The ${demonym} passport provides access to ${total} destinations in 2026.` }
+            "acceptedAnswer": { "@type": "Answer", "text": rank ? `The ${demonym} passport ranks approximately ${ordinal(rank)} out of 199 passports in 2026, based on the number of accessible destinations (${total} countries reachable visa-free, on arrival, or with an eTA/e-visa).` : `The ${demonym} passport provides access to ${total} destinations in 2026.` }
           },
           {
             "@type": "Question",
@@ -298,7 +325,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
         "url": `https://earthvisa.in/passport/${slug}`,
         "creator": { "@type": "Organization", "name": "Earth Visa" },
         "temporalCoverage": "2026",
-        "variableMeasured": "Visa-free destination count",
+        "variableMeasured": "Accessible destination count (visa-free, visa on arrival, eTA, e-visa)",
         "measurementTechnique": "Official government visa policy publications",
       },
     ],
@@ -372,7 +399,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
           {/* Intro paragraph - keyword-rich */}
           <section className="mt-10 max-w-3xl">
             <p className="text-base leading-relaxed text-ink-soft">
-              The <strong className="text-ink">{demonym} passport</strong> provides visa-free or visa-on-arrival access to{" "}
+              The <strong className="text-ink">{demonym} passport</strong> provides visa-free, visa-on-arrival or online-authorisation access to{" "}
               <strong className="text-ink">{total} countries</strong> as of 2026, making it{" "}
               {rank && rank <= 20 ? "one of the most powerful passports in the world" : rank && rank <= 50 ? "a strong mid-tier passport" : rank && rank <= 100 ? "a passport with moderate global reach" : "a passport with growing international access"}.
               {" "}{demonym} passport holders can enter <strong className="text-ink">{vfCount} destinations completely visa-free</strong>,{" "}
@@ -394,6 +421,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
                 Enter with just your {demonym} passport - no visa application, no fee, no advance paperwork required.
+                {listLinks.vf && <> <Link href={listLinks.vf} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full visa-free guide →</Link></>}
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {vfEdges.slice(0, 30).map((e) => (
@@ -425,6 +453,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
                 Receive your visa stamp at the airport on arrival - no embassy visit required.
+                {listLinks.voa && <> <Link href={listLinks.voa} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full visa-on-arrival guide →</Link></>}
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {voaEdges.slice(0, 18).map((e) => (
@@ -488,6 +517,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
                 Apply online before you travel - this is an actual visa, just granted digitally instead of via an embassy stamp, so no embassy visit is required for eligible short-term visits.
+                {listLinks.evisa && <> <Link href={listLinks.evisa} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full e-visa guide →</Link></>}
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {evisaOnlyEdges.slice(0, 30).map((e) => (
@@ -566,6 +596,22 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   </div>
                 </details>
               )}
+            </section>
+          )}
+
+          {/* Held-credential unlocks - the site's most differentiating data for
+              this audience; previously reachable only via footer/sitemap. */}
+          {listLinks.us && (
+            <section className="mt-12 rounded-lg border border-stamp/25 bg-stamp/[0.04] px-6 py-5">
+              <h2 className="font-display text-xl font-semibold text-ink">
+                Already hold a US visa?
+              </h2>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+                A valid US visa unlocks additional destinations for {citizens} beyond this passport alone — several countries admit US-visa holders visa-free or on arrival under official published rules.{" "}
+                <Link href={listLinks.us} className="font-medium text-stamp underline-offset-2 hover:underline">
+                  See every country a US visa unlocks →
+                </Link>
+              </p>
             </section>
           )}
 
