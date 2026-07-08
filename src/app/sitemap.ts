@@ -8,12 +8,14 @@ function nameToSlug(name: string): string {
 }
 
 // Static SEO routes built outside the country/corridor graph.
-const GUIDE_PAGES = ["/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds"];
+const GUIDE_PAGES = ["/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa"];
 const PROGRAM_PAGES = [
   "/programs/citizenship-by-investment",
   "/programs/golden-visa",
   "/programs/digital-nomad-visa",
   "/programs/easiest-citizenship",
+  "/programs/work-visa",
+  "/programs/student-visa",
 ];
 // Must mirror LISTS in src/app/list/[slug]/page.tsx.
 const LIST_PAGES = [
