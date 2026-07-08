@@ -53,7 +53,7 @@ const CODE_TO_ISO3 = {
   dxb: "ARE", apt: "ARE", upt: "ARE", // UAE jurisdictions (Dubai / Abu Dhabi / N. Emirates)
   cpt: "ZAF", jhn: "ZAF", zap: "ZAF", cpv: "CPV", // (cpv is real ISO3: Cabo Verde)
   gpt: "GBR", // GB jurisdiction
-  frp: "FRA", inr: "IND", mes: "ESP", nlp: "NLD", nlr: "NLD",
+  frp: "FIN", inr: "IND", mes: "ESP", nlp: "NLD", nlr: "NLD", // frp = Finland document-verification/legalisation service, not France
   uk: "GBR", gb: "GBR", xkx: "XKX",
 };
 const toIso3 = (code) => {
