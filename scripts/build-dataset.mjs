@@ -515,16 +515,18 @@ for (const f of files) {
         sourceOfficial: entry.source_official !== false,
         notes: entry.notes || "",
       };
-      // ETIAS-style entries ("All Annex II / visa-exempt third-country
-      // nationals") describe a pre-screening for nationals who ALREADY enter
-      // visa-free - a scope qualifier, not a nationality grant. Expanding them
-      // like "all except X" told visa-REQUIRED nationals they only need an eTA
-      // (e.g. India -> Italy titled "eTA Required" when a full Schengen visa is
-      // needed) - the false-easier-access error class. The exempt nationals'
-      // real level already comes from the destination's own visa_free entries,
-      // so skip these instead of expanding.
-      if (level === "eta" && !entry.iso3 && /(annex ii|visa[- ]exempt|visa[- ]free national)/i.test(entry.nationality || "")) {
-        negationGaps.push(`${iso3} [eta] "${(entry.nationality || "").slice(0, 50)}" - ETIAS pre-screening scoped to already-exempt nationals, not expanded`);
+      // ETIAS/ETD-style entries whose scope is defined by REFERENCE to the
+      // visa-free list - either "all Annex II / visa-exempt nationals" (ETIAS)
+      // or "all nationals NOT on the visa-free list" (Latvia's Electronic
+      // Travel Declaration) - describe a pre-screening/declaration layered on
+      // top of the traveller's existing status, not a nationality grant.
+      // Expanding them like "all except X" told visa-REQUIRED nationals they
+      // only need an eTA (India -> Italy "eTA Required" when a full Schengen
+      // visa is needed; same for Latvia's ETD) - the false-easier-access error
+      // class. Each nationality's real level already comes from the
+      // destination's other entries, so skip these instead of expanding.
+      if (level === "eta" && !entry.iso3 && /(annex ii|visa[- ]exempt|visa[- ]free (national|list)|travel declaration)/i.test(entry.nationality || "")) {
+        negationGaps.push(`${iso3} [eta] "${(entry.nationality || "").slice(0, 50)}" - pre-screening/declaration scoped by visa-free list, not expanded`);
         continue;
       }
       // Conditional entries (held-credential or diplomatic/service-only) must NOT be inverted

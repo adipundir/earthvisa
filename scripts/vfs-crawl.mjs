@@ -53,7 +53,10 @@ const CODE_TO_ISO3 = {
   dxb: "ARE", apt: "ARE", upt: "ARE", // UAE jurisdictions (Dubai / Abu Dhabi / N. Emirates)
   cpt: "ZAF", jhn: "ZAF", zap: "ZAF", cpv: "CPV", // (cpv is real ISO3: Cabo Verde)
   gpt: "GBR", // GB jurisdiction
-  frp: "FIN", inr: "IND", mes: "ESP", nlp: "NLD", nlr: "NLD", // frp = Finland document-verification/legalisation service, not France
+  // frp = Finland document-verification/legalisation service (not France);
+  // mes = Malta employment/study/family national services (not Spain - Spain
+  // uses BLS International, not VFS; "mlt" is Malta's separate short-stay code)
+  frp: "FIN", inr: "IND", mes: "MLT", nlp: "NLD", nlr: "NLD",
   uk: "GBR", gb: "GBR", xkx: "XKX",
 };
 const toIso3 = (code) => {
