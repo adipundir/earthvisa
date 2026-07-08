@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { compute, LEVEL_LABEL } from "@/lib/compute";
-import type { AccessLevel } from "@/lib/types";
+import type { AccessLevel, VisaType } from "@/lib/types";
 import { TOP_NATIONALITIES, TOP_DESTINATIONS, preWarmCorridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
 import { feesFor, relevantFees, variationFor, fmtFee } from "@/lib/fees";
@@ -108,6 +108,23 @@ function stripVfsBoilerplate(text: string): string {
   return out.join("\n").replace(/\n{3,}/g, "\n\n").trim();
 }
 
+// Requirement lines (each "- ..." bullet) that are byte-identical across every
+// visa type in a corridor (photo spec, passport-copy clause, etc.) are true
+// boilerplate, not per-type content - hoist them into one shared block instead
+// of repeating the same ~100-word paragraph inside every accordion.
+function splitLines(text: string): string[] {
+  return text.split("\n").map((l) => l.trim()).filter(Boolean);
+}
+function extractCommonLines<T extends { documents_required: string }>(entries: T[]): { common: string[]; perEntry: string[][] } {
+  const lineSets = entries.map((e) => splitLines(e.documents_required));
+  if (entries.length < 2) return { common: [], perEntry: lineSets };
+  const counts = new Map<string, number>();
+  for (const lines of lineSets) for (const line of new Set(lines)) counts.set(line, (counts.get(line) ?? 0) + 1);
+  const common = [...counts.entries()].filter(([, c]) => c === entries.length).map(([line]) => line);
+  const commonSet = new Set(common);
+  return { common, perEntry: lineSets.map((lines) => lines.filter((l) => !commonSet.has(l))) };
+}
+
 // Bare URLs in checklist text (100+ character asset links) become real anchors
 // with a short label — otherwise they are unclickable and, being unbreakable
 // strings, force horizontal overflow on mobile.
@@ -145,9 +162,24 @@ function answerSentence(nat: string, dest: string, s: Status): string {
     case "fom": return `${nat} citizens have freedom of movement in ${dest} — they can live, work and travel there with no visa.`;
     case "visa_free": return `No — ${nat} passport holders do not need a visa for ${dest}. Entry is visa-free${s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""} as of 2026.`;
     case "visa_on_arrival": return `${nat} passport holders can get a visa on arrival for ${dest}${s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}, so no visa is needed before travelling.`;
-    case "eta": return `${nat} passport holders need an approved eTA (electronic travel authorisation) before travelling to ${dest}, but not a full visa.`;
-    case "e_visa": return `${nat} passport holders can apply online for a ${dest} e-Visa before travel — no embassy visit for eligible short-term visits. Eligibility and covered purposes vary, so check the conditions below.`;
+    case "eta": return `${nat} passport holders need an approved eTA (electronic travel authorisation) before travelling to ${dest} — a quick online pre-screening layered on top of existing visa-free entry, not a full visa.`;
+    case "e_visa": return `${nat} passport holders can apply online for a ${dest} e-Visa before travel. Unlike an eTA, this is an actual visa — just issued digitally — so no embassy visit is needed for eligible short-term visits. Eligibility and covered purposes vary, so check the conditions below.`;
     default: return `${nat} passport holders need a visa to enter ${dest}. Apply at a ${dest} embassy or consulate, or the official visa portal, before travelling.`;
+  }
+}
+
+// Shorter, differently-framed answer for the FAQ - the hero paragraph above
+// already gives the full sentence, so the FAQ leads with a direct yes/no
+// instead of repeating it verbatim.
+function faqAnswerSentence(nat: string, dest: string, s: Status): string {
+  switch (s.kind) {
+    case "own": return `No — ${dest} is ${nat}'s own country.`;
+    case "fom": return `No — ${nat} citizens have freedom of movement in ${dest} under their bloc membership, which includes the right to live and work there, not just visit.`;
+    case "visa_free": return `No visa is required${s.maxStayDays ? ` for stays of up to ${s.maxStayDays} days` : ""}.`;
+    case "visa_on_arrival": return `No advance visa is required — ${nat} citizens get a visa on arrival at the border${s.maxStayDays ? ` for stays of up to ${s.maxStayDays} days` : ""}.`;
+    case "eta": return `Not a visa, but yes — an eTA (a quick online pre-screening on top of existing visa-free entry) is required before travelling.`;
+    case "e_visa": return `Yes, but it can be completed entirely online — no embassy visit is required for eligible short-term visits.`;
+    default: return `Yes — ${nat} citizens must apply for a visa in advance at a ${dest} embassy, consulate, or official visa portal before travelling.`;
   }
 }
 
@@ -198,14 +230,28 @@ const LEVEL_COLORS: Record<AccessLevel, string> = {
   e_visa: "text-evisa bg-evisa/10 ring-evisa/30",
 };
 
+// Anchors on the /guide/visa-types glossary - lets a reader who lands on any
+// corridor page click through to what the access level generically means,
+// instead of only ever seeing a corridor-specific sentence.
+const GLOSSARY_ANCHOR: Record<string, string> = {
+  visa_free: "visa-free",
+  visa_on_arrival: "visa-on-arrival",
+  eta: "eta",
+  e_visa: "e-visa",
+  visa_required: "visa-required",
+  fom: "freedom-of-movement",
+};
+
 function StatusBadge({ s }: { s: Status }) {
   if (s.kind === "own") return <Badge cls="text-bloc bg-bloc/10 ring-bloc/30">Home country</Badge>;
-  if (s.kind === "fom") return <Badge cls="text-bloc bg-bloc/10 ring-bloc/30">Freedom of movement</Badge>;
-  if (s.kind === "visa_required") return <Badge cls="text-ink-soft bg-paper-3 ring-line-strong">Visa required</Badge>;
-  return <Badge cls={LEVEL_COLORS[s.kind]}>{LEVEL_LABEL[s.kind]}</Badge>;
+  if (s.kind === "fom") return <Badge cls="text-bloc bg-bloc/10 ring-bloc/30" href={`/guide/visa-types#${GLOSSARY_ANCHOR.fom}`}>Freedom of movement</Badge>;
+  if (s.kind === "visa_required") return <Badge cls="text-ink-soft bg-paper-3 ring-line-strong" href={`/guide/visa-types#${GLOSSARY_ANCHOR.visa_required}`}>Visa required</Badge>;
+  return <Badge cls={LEVEL_COLORS[s.kind]} href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind]}`}>{LEVEL_LABEL[s.kind]}</Badge>;
 }
-function Badge({ cls, children }: { cls: string; children: React.ReactNode }) {
-  return <span className={`mono inline-flex items-center rounded px-2.5 py-1 text-[12px] font-semibold uppercase tracking-[0.12em] ring-1 ${cls}`}>{children}</span>;
+function Badge({ cls, href, children }: { cls: string; href?: string; children: React.ReactNode }) {
+  const className = `mono inline-flex items-center rounded px-2.5 py-1 text-[12px] font-semibold uppercase tracking-[0.12em] ring-1 ${cls}`;
+  if (href) return <Link href={href} className={`${className} transition hover:opacity-80`} title="What does this mean?">{children}</Link>;
+  return <span className={className}>{children}</span>;
 }
 
 // A real link to the actual application portal, not just a citation - this is
@@ -216,6 +262,37 @@ function ApplyLink({ href, label = "Apply here" }: { href: string; label?: strin
     <a href={href} target="_blank" rel="noreferrer" className="font-medium text-stamp underline-offset-2 hover:underline">
       {label} ↗
     </a>
+  );
+}
+
+// One destination visa-type card - shows processing time and entry count
+// (already collected per visa type, previously never rendered) plus any notes
+// the source publishes (insurance/minors/entry-point clauses etc.), alongside
+// the existing name/purpose/stay/fee/apply-link fields.
+function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean }) {
+  const processing = v.processing_days_min != null
+    ? `${v.processing_days_min}${v.processing_days_max != null && v.processing_days_max !== v.processing_days_min ? `-${v.processing_days_max}` : ""}d processing`
+    : null;
+  return (
+    <div className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+      <p className="font-display text-[14px] font-semibold text-ink">{v.name}</p>
+      {v.purpose && <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
+      <div className="mono mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
+        {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
+        {v.entries && <span>{v.entries} entry</span>}
+        {processing && <span>{processing}</span>}
+        {/* Suppress the rough USD figure when the official fee section above
+            already quotes the same fee — two conversions of one fee reads as an error. */}
+        {v.fee_usd != null && !suppressFee && <span>~${v.fee_usd}</span>}
+        {v.online && <span className="text-vfree">online</span>}
+      </div>
+      {v.notes && <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>}
+      {v.official_url && (
+        <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
+          Apply here ↗
+        </a>
+      )}
+    </div>
   );
 }
 
@@ -242,14 +319,24 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   // Inline the real corridor document checklist (unique per nationality→destination)
   // instead of a destination-generic visa-types block. Read at build time.
   let vfsDocs: { name: string; category: string; documents_required: string }[] = [];
+  let vfsCommonLines: string[] = [];
+  const VFS_PREVIEW = 6;
   if (vfsCorr) {
     try {
       const data = JSON.parse(readFileSync(join(process.cwd(), "data", vfsCorr.detailFile), "utf8"));
-      vfsDocs = (data.visa_types ?? [])
+      const all = (data.visa_types ?? [])
         .filter((v: { documents_required?: string | null }) => v.documents_required)
         .map((v: { name: string; category: string; documents_required: string }) => ({ ...v, documents_required: stripVfsBoilerplate(v.documents_required) }))
         .filter((v: { documents_required: string }) => v.documents_required)
-        .slice(0, 6);
+        // Tourist first: it's what the vast majority of readers actually need,
+        // and a hard positional cutoff below must not bury it under niche types.
+        .sort((a: { category: string }, b: { category: string }) => (a.category === "tourist" ? -1 : b.category === "tourist" ? 1 : 0));
+      const { common, perEntry } = extractCommonLines(all);
+      vfsCommonLines = common;
+      vfsDocs = all.map((v: { name: string; category: string; documents_required: string }, i: number) => ({
+        ...v,
+        documents_required: perEntry[i].join("\n"),
+      }));
     } catch { /* fall back to the interactive link */ }
   }
 
@@ -266,9 +353,11 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   // Cost FAQ: never assert a visa fee for a corridor where no visa is needed —
   // on visa-free / freedom-of-movement corridors the answer leads with "no
   // fee" and frames any published fee as the longer-stay visa option. This
-  // text is also emitted into FAQPage JSON-LD, so it must stand alone.
+  // text is also emitted into FAQPage JSON-LD, so it must stand alone. Skipped
+  // entirely when the fee table below already shows this exact figure -
+  // reformatting the same number as a sentence adds nothing.
   let costFaq: { q: string; a: string } | null = null;
-  if (headlineFee && s.kind !== "own") {
+  if (headlineFee && s.kind !== "own" && feeList.length === 0) {
     const feeName = "name" in headlineFee && headlineFee.name ? headlineFee.name.toLowerCase() : "visa";
     const schedule = feeVariation?.amount != null ? ` for ${nd} citizens under ${d.name}'s nationality-based fee schedule` : "";
     const feeClause = headlineFee.amount === 0
@@ -290,7 +379,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   }
 
   const faq = [
-    { q: `Do ${nd} citizens need a visa for ${d.name}?`, a: answerSentence(nd, d.name, s) },
+    { q: `Do ${nd} citizens need a visa for ${d.name}?`, a: faqAnswerSentence(nd, d.name, s) },
     (s.kind === "visa_free" || s.kind === "visa_on_arrival") && "maxStayDays" in s && s.maxStayDays
       ? { q: `How long can ${nd} citizens stay in ${d.name}?`, a: `${nd} passport holders can stay in ${d.name} for up to ${s.maxStayDays} days per entry under the current ${LEVEL_LABEL[s.kind].toLowerCase()} arrangement.` }
       : null,
@@ -300,7 +389,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
         ? `A valid passport is all ${nd} citizens need for a short ${s.kind === "fom" ? "stay" : "visa-free visit"}${"maxStayDays" in s && s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}.${hasVfs ? ` If you apply for a longer-stay visa, Earth Visa lists the full required documents per visa category from the official visa application centre.` : ""}`
         : hasVfs
           ? `A valid passport plus the ${d.name} document checklist for your visa type — Earth Visa lists the full required documents per visa category from the official visa application centre.`
-          : `A passport valid for at least six months, proof of onward travel and funds, and any documents required for the specific ${d.name} visa category.`,
+          : `A passport valid well beyond your planned stay (commonly three to six months, depending on the destination), proof of onward travel and funds, and any documents required for the specific ${d.name} visa category — check the official portal for the exact passport-validity rule.`,
     },
     aliasLead
       ? { q: `Is the ${aliasLead} visa different from the ${SHORT_NAME[d.iso3] ?? d.name} visa?`, a: `No. ${aliasNote ?? `${aliasLead} follows ${d.name}'s national visa policy.`} There is no separate ${aliasLead} visa — the ${d.name} rules on this page are what apply.` }
@@ -481,7 +570,26 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           )}
 
           {/* VFS document checklist — genuinely per-corridor content */}
-          {vfsDocs.length > 0 && (
+          {vfsDocs.length > 0 && (() => {
+            const visible = vfsDocs.slice(0, VFS_PREVIEW);
+            const hidden = vfsDocs.slice(VFS_PREVIEW);
+            const renderDoc = (v: typeof vfsDocs[number], i: number) => (
+              <details key={i} className="group rounded-lg border border-line-strong bg-white">
+                <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 px-4 py-2.5">
+                  <span className="mono shrink-0 rounded-[3px] bg-paper-3 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-ink-soft">{v.category}</span>
+                  <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
+                  <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-auto h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </summary>
+                <div className="border-t border-line px-4 py-3">
+                  {v.documents_required ? (
+                    <p className="whitespace-pre-wrap break-words text-[12px] leading-relaxed text-ink-soft">{linkifyDocs(v.documents_required)}</p>
+                  ) : (
+                    <p className="text-[12px] italic leading-relaxed text-ink-mute">Same requirements as above, plus this visa type&apos;s stated stay/fee terms.</p>
+                  )}
+                </div>
+              </details>
+            );
+            return (
             <section className="mb-10 border-t border-line pt-8">
               <h2 className="font-display text-xl font-semibold text-ink">
                 {noVisaShortStay ? `${d.name} visa documents for ${nd} applicants` : `Documents required for ${nd} applicants`}
@@ -491,52 +599,71 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   ? `No visa documents are needed for a short visit — ${nd} citizens enter ${d.name} with just a valid passport. If you apply for a longer-stay visa, these are the exact documents required, by visa type, from the official visa application centre.`
                   : `The exact documents ${nd} citizens must submit for ${d.name}, by visa type, from the official visa application centre.`}
               </p>
+              {vfsCommonLines.length > 0 && (
+                <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+                  <p className="mono mb-1.5 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">Required for every visa type below</p>
+                  <p className="whitespace-pre-wrap break-words text-[12px] leading-relaxed text-ink-soft">{linkifyDocs(vfsCommonLines.join("\n"))}</p>
+                </div>
+              )}
               <div className="mt-4 space-y-2">
-                {vfsDocs.map((v, i) => (
-                  <details key={i} className="group rounded-lg border border-line-strong bg-white">
-                    <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 px-4 py-2.5">
-                      <span className="mono shrink-0 rounded-[3px] bg-paper-3 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-ink-soft">{v.category}</span>
-                      <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
-                      <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-auto h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    </summary>
-                    <div className="border-t border-line px-4 py-3">
-                      <p className="whitespace-pre-wrap break-words text-[12px] leading-relaxed text-ink-soft">{linkifyDocs(v.documents_required)}</p>
-                    </div>
-                  </details>
-                ))}
+                {visible.map(renderDoc)}
               </div>
+              {hidden.length > 0 && (
+                <details className="group mt-2">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                    <span className="group-open:hidden">Show all {vfsDocs.length} visa-type document checklists</span>
+                    <span className="hidden group-open:inline">Hide the rest</span>
+                    <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </summary>
+                  <div className="mt-2 space-y-2">{hidden.map((v, i) => renderDoc(v, VFS_PREVIEW + i))}</div>
+                </details>
+              )}
               {vfsCorr?.sourceUrl && (
                 <a href={vfsCorr.sourceUrl} target="_blank" rel="noreferrer" className="mono mt-3 inline-flex items-center gap-1 text-[11px] text-ink-mute transition hover:text-ink">via VFS Global ↗</a>
               )}
             </section>
-          )}
+            );
+          })()}
 
-          {/* Destination visa types — only when a visa is actually needed and we have no richer per-corridor docs */}
-          {!hasVfs && need && visaTypes.length > 0 && (
-            <section className="mb-10 border-t border-line pt-8">
-              <h2 className="font-display text-xl font-semibold text-ink">{d.name} visa types</h2>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {visaTypes.map((v, i) => (
-                  <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                    <p className="font-display text-[14px] font-semibold text-ink">{v.name}</p>
-                    {v.purpose && <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
-                    <div className="mono mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
-                      {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
-                      {/* Suppress the rough USD figure when the official fee section above
-                          already quotes the same fee — two conversions of one fee reads as an error. */}
-                      {v.fee_usd != null && feeList.length === 0 && <span>~${v.fee_usd}</span>}
-                      {v.online && <span className="text-vfree">online</span>}
+          {/* Destination visa types: tourist/business/transit shown directly when
+              relevant to the resolved status; every other category (work, student,
+              digital nomad, retirement, investment, family, medical) surfaces
+              regardless, since e.g. a destination's work or retirement visa is
+              useful to know about even on an easy tourist-entry corridor. */}
+          {visaTypes.length > 0 && (() => {
+            const TRAVELER_CATEGORIES = new Set(["tourist", "business", "transit"]);
+            const touristTypes = visaTypes.filter((v) => TRAVELER_CATEGORIES.has(v.category));
+            const otherTypes = visaTypes.filter((v) => !TRAVELER_CATEGORIES.has(v.category));
+            const showTourist = !hasVfs && need && touristTypes.length > 0;
+            if (!showTourist && otherTypes.length === 0) return null;
+            return (
+              <section className="mb-10 border-t border-line pt-8">
+                {showTourist && (
+                  <>
+                    <h2 className="font-display text-xl font-semibold text-ink">{d.name} visa types</h2>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                      {touristTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
                     </div>
-                    {v.official_url && (
-                      <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
-                        Apply here ↗
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
+                  </>
+                )}
+                {otherTypes.length > 0 && (
+                  <details className={`group ${showTourist ? "mt-8" : ""}`}>
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                      <span className="group-open:hidden">Other {d.name} visa categories ({otherTypes.length})</span>
+                      <span className="hidden group-open:inline">Hide other visa categories</span>
+                      <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </summary>
+                    <p className="mt-3 text-sm text-ink-soft">
+                      These don&apos;t apply to a typical short visit, but cover other reasons {nd} citizens travel to {d.name}.
+                    </p>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                      {otherTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
+                    </div>
+                  </details>
+                )}
+              </section>
+            );
+          })()}
 
           {/* FAQ */}
           <section className="mb-10 border-t border-line pt-8">
