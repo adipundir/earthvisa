@@ -515,6 +515,18 @@ for (const f of files) {
         sourceOfficial: entry.source_official !== false,
         notes: entry.notes || "",
       };
+      // ETIAS-style entries ("All Annex II / visa-exempt third-country
+      // nationals") describe a pre-screening for nationals who ALREADY enter
+      // visa-free - a scope qualifier, not a nationality grant. Expanding them
+      // like "all except X" told visa-REQUIRED nationals they only need an eTA
+      // (e.g. India -> Italy titled "eTA Required" when a full Schengen visa is
+      // needed) - the false-easier-access error class. The exempt nationals'
+      // real level already comes from the destination's own visa_free entries,
+      // so skip these instead of expanding.
+      if (level === "eta" && !entry.iso3 && /(annex ii|visa[- ]exempt|visa[- ]free national)/i.test(entry.nationality || "")) {
+        negationGaps.push(`${iso3} [eta] "${(entry.nationality || "").slice(0, 50)}" - ETIAS pre-screening scoped to already-exempt nationals, not expanded`);
+        continue;
+      }
       // Conditional entries (held-credential or diplomatic/service-only) must NOT be inverted
       // as ordinary nationality reach - that mis-maps "valid Schengen visa" onto Schengen
       // passports and counts diplomatic-only waivers for ordinary travellers.
