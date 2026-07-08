@@ -252,29 +252,6 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       : `All visitors must arrange ${withArticle(country.name)} visa in advance through an embassy or consulate.`,
   );
 
-  const streamlinedBits: string[] = [];
-  if (voaCount > 0) {
-    streamlinedBits.push(`${plural(voaCount, "country", "countries")} can obtain a visa on arrival`);
-  }
-  if (etaCount > 0) {
-    streamlinedBits.push(`${voaCount > 0 ? etaCount : plural(etaCount, "country", "countries")} can enter via eTA or e-Visa`);
-  }
-  const faq3Sentences = [
-    vfCount > 0
-      ? `${plural(vfCount, "nationality", "nationalities")} can visit ${country.name} completely visa-free in 2026.`
-      : `No nationality can visit ${country.name} completely visa-free in 2026.`,
-  ];
-  if (streamlinedBits.length > 0) {
-    faq3Sentences.push(
-      `${vfCount > 0 ? "Additionally" : "However"}, ${streamlinedBits.join(", and ")} - bringing the total to ${plural(totalWithAccess, "nationality", "nationalities")} with streamlined entry to ${country.name}.`,
-    );
-  }
-  if (visaRequiredCount > 0) {
-    faq3Sentences.push(
-      `The remaining ${plural(visaRequiredCount, "nationality", "nationalities")} must apply for a visa in advance at an embassy, consulate, or official visa application centre before travelling.`,
-    );
-  }
-
   const faqs = [
     { q: `Do I need a visa to visit ${display}?`, a: faq1Sentences.join(" ") },
     {
@@ -284,7 +261,6 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           ? `${plural(vfCount, "country", "countries")} can visit ${country.name} without a visa in 2026${topVfNames ? `, including: ${topVfNames}` : ""}. Use Earth Visa to check whether your specific passport grants visa-free access to ${country.name}.`
           : `No country's citizens can visit ${country.name} entirely visa-free in 2026 - every nationality needs a visa or travel authorisation. Use Earth Visa to check what your specific passport needs to enter ${country.name}.`,
     },
-    { q: `How many countries can visit ${country.name} without a visa?`, a: faq3Sentences.join(" ") },
     {
       q: `How do I apply for ${withArticle(country.name)} tourist visa?`,
       a:

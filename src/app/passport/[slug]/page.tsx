@@ -150,6 +150,23 @@ function DestCard({ natName, natIso3, edge, fom = false }: {
   );
 }
 
+// A visa-required destination card - always links to the corridor page when
+// one exists (VFS document checklist, fees, etc.), since "visa required"
+// destinations are exactly where that per-corridor detail matters most.
+function VrCard({ natName, natIso3, dest }: { natName: string; natIso3: string; dest: { iso3: string; name: string } }) {
+  const destSlug = nameToSlug(dest.name);
+  const href = isUsefulCorridor(natIso3, dest.iso3)
+    ? `/passport/${nameToSlug(natName)}/${destSlug}`
+    : `/destination/${destSlug}`;
+  return (
+    <Link href={href} className="group flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong hover:bg-paper-2">
+      <span className="text-xl">{flagFor(dest.iso3)}</span>
+      <div className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{dest.name}</div>
+      <span className="mono ml-auto shrink-0 whitespace-nowrap rounded-[3px] bg-paper-3 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] text-ink-soft ring-1 ring-line-strong">Visa required</span>
+    </Link>
+  );
+}
+
 // processing_time in the CBI dataset occasionally carries crawler annotations
 // ("Not stated verbatim on cip.gov.ag fetched pages") or long multi-clause
 // caveats. Keep only short, human-readable durations so internal notes never
@@ -199,14 +216,28 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
   const vfEdges = [...result.reachByLevel.visa_free].sort(byDestName);
   const voaEdges = [...result.reachByLevel.visa_on_arrival].sort(byDestName);
   const fomEdges = [...result.freedomOfMovement].sort(byDestName);
-  // eTA + e-Visa share one stat tile and one section
-  const etaEdges = [...result.reachByLevel.eta, ...result.reachByLevel.e_visa].sort(byDestName);
+  // eTA and e-Visa share one stat tile (a legitimate compact summary), but get
+  // their own sections below - they're different products (eTA is a
+  // pre-screening layered on existing visa-free entry; e-Visa is an actual
+  // visa, just issued online) and badging them separately while describing
+  // them identically was confusing.
+  const etaOnlyEdges = [...result.reachByLevel.eta].sort(byDestName);
+  const evisaOnlyEdges = [...result.reachByLevel.e_visa].sort(byDestName);
+  const etaEdges = [...etaOnlyEdges, ...evisaOnlyEdges];
   const etaCount = etaEdges.length;
   const total = result.reach.length;
   const fomCount = result.freedomOfMovement.length;
   // Destinations with freedom of movement: their visa-free cards must not show
   // a tourist-stay cap that contradicts the right to live and work there.
   const fomSet = new Set(result.freedomOfMovement.map((e) => e.dest));
+  // The majority category (no special access - a visa must be arranged in
+  // advance) gets no section/count/definition anywhere else on this page,
+  // unlike the other three access levels.
+  const reachSet = new Set(result.reach.map((e) => e.dest));
+  const vrEdges = dataset.allCountries
+    .filter((c) => c.iso3 !== country.iso3 && !reachSet.has(c.iso3) && !fomSet.has(c.iso3))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const vrCount = vrEdges.length;
   const cbiCount = result.cbi.length;
   // RBI rows are option-level (a country can contribute several); the honest
   // headline number is how many countries offer a program.
@@ -243,11 +274,6 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {
-            "@type": "Question",
-            "name": `How many countries can ${demonym} passport holders visit without a visa in 2026?`,
-            "acceptedAnswer": { "@type": "Answer", "text": `${demonym} passport holders can visit ${vfCount} countries completely visa-free in 2026. Additionally, ${voaCount} countries offer visa on arrival and ${etaCount} countries offer eTA or e-Visa - bringing the total to ${total} destinations accessible without a pre-arranged embassy visa.` }
-          },
           {
             "@type": "Question",
             "name": `What is the ${demonym} passport ranking in 2026?`,
@@ -422,29 +448,61 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
             </section>
           )}
 
-          {/* eTA / e-Visa destinations */}
-          {etaEdges.length > 0 && (
+          {/* eTA destinations - a pre-screening layered on top of existing
+              visa-free entry, distinct from an e-Visa below */}
+          {etaOnlyEdges.length > 0 && (
             <section className="mt-12">
               <h2 className="font-display text-2xl font-semibold text-ink">
-                eTA &amp; e-Visa Destinations for {demonym} Passport Holders ({etaCount})
+                eTA Destinations for {demonym} Passport Holders ({etaOnlyEdges.length})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                Apply online before you travel - an electronic travel authorisation (eTA) or e-Visa is granted digitally, with no embassy visit required.
+                Apply online before you travel for a quick, usually automated pre-screening - not a visa, and layered on top of entry you already qualify for. No embassy visit required.
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                {etaEdges.slice(0, 30).map((e) => (
+                {etaOnlyEdges.slice(0, 30).map((e) => (
                   <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                 ))}
               </div>
-              {etaEdges.length > 30 && (
+              {etaOnlyEdges.length > 30 && (
                 <details className="group mt-3">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                    <span className="group-open:hidden">Show all {etaEdges.length} eTA / e-Visa destinations</span>
+                    <span className="group-open:hidden">Show all {etaOnlyEdges.length} eTA destinations</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
                   <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                    {etaEdges.slice(30).map((e) => (
+                    {etaOnlyEdges.slice(30).map((e) => (
+                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                    ))}
+                  </div>
+                </details>
+              )}
+            </section>
+          )}
+
+          {/* e-Visa destinations - an actual visa, just issued digitally */}
+          {evisaOnlyEdges.length > 0 && (
+            <section className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">
+                e-Visa Destinations for {demonym} Passport Holders ({evisaOnlyEdges.length})
+              </h2>
+              <p className="mt-2 text-sm text-ink-soft">
+                Apply online before you travel - this is an actual visa, just granted digitally instead of via an embassy stamp, so no embassy visit is required for eligible short-term visits.
+              </p>
+              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                {evisaOnlyEdges.slice(0, 30).map((e) => (
+                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                ))}
+              </div>
+              {evisaOnlyEdges.length > 30 && (
+                <details className="group mt-3">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                    <span className="group-open:hidden">Show all {evisaOnlyEdges.length} e-Visa destinations</span>
+                    <span className="hidden group-open:inline">Show fewer</span>
+                    <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+                  </summary>
+                  <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                    {evisaOnlyEdges.slice(30).map((e) => (
                       <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                     ))}
                   </div>
@@ -511,9 +569,43 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
             </section>
           )}
 
-          {/* Corridor guides (internal link mesh to detailed per-destination pages) */}
+          {/* Visa required - the majority category for most passports, but
+              previously the only one of the four with no count or definition. */}
+          {vrCount > 0 && (
+            <section className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">
+                Visa Required for {demonym} Passport Holders ({vrCount})
+              </h2>
+              <p className="mt-2 text-sm text-ink-soft">
+                {demonym} citizens must apply in advance at an embassy, consulate, or official visa portal before travelling — no on-arrival or online-only option exists for these destinations.
+              </p>
+              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                {vrEdges.slice(0, 30).map((c) => (
+                  <VrCard key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
+                ))}
+              </div>
+              {vrEdges.length > 30 && (
+                <details className="group mt-3">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                    <span className="group-open:hidden">Show all {vrEdges.length} visa-required destinations</span>
+                    <span className="hidden group-open:inline">Show fewer</span>
+                    <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+                  </summary>
+                  <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                    {vrEdges.slice(30).map((c) => (
+                      <VrCard key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
+                    ))}
+                  </div>
+                </details>
+              )}
+            </section>
+          )}
+
+          {/* Corridor guides (internal link mesh to detailed per-destination pages -
+              spans every access level, not just visa-required, so titled distinctly
+              from the section above). */}
           <CorridorLinks
-            title={`${country.name} Visa Requirements by Destination`}
+            title={`${country.name} Visa Guides by Destination`}
             description={`Step-by-step visa guides, fees and document checklists for ${demonym} passport holders visiting popular destinations.`}
             links={corridorLinks}
           />
@@ -525,10 +617,6 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
             </h2>
             <div className="mt-5 divide-y divide-line">
               {[
-                {
-                  q: `How many countries can ${demonym} passport holders visit without a visa in 2026?`,
-                  a: `${demonym} passport holders can visit ${vfCount} countries completely visa-free in 2026. An additional ${voaCount} countries offer visa on arrival and ${etaCount} destinations are accessible with an eTA or e-Visa - bringing the total to ${total} destinations accessible without a pre-arranged embassy visa.`,
-                },
                 {
                   q: `What is the ${demonym} passport ranking in 2026?`,
                   a: rank ? `The ${demonym} passport ranks #${rank} out of 199 passports globally in 2026, based on the number of accessible destinations (${total} countries).` : `The ${demonym} passport provides access to ${total} countries in 2026.`,
