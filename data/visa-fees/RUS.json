@@ -10,11 +10,11 @@
       "amount": 52,
       "currency": "USD",
       "amount_usd": 52,
-      "validity": "60 days from issue, up to 16 days stay",
+      "validity": null,
       "applies": "eligible nationalities (~50 countries; excludes USA, UK, Canada, Australia)",
       "official": true,
       "source_url": "https://evisa.kdmid.ru/",
-      "notes": "Consular fee widely reported at 52 USD (payment platform accepts CNY or AED equivalents); children under 6 exempt. Official evisa.kdmid.ru portal states a fee applies but does not itself publish the numeric amount on the fetched page, so this figure is corroborated by MFA consular department pages (e.g. washington.mid.ru, houston.mid.ru) and third-party guides rather than a single definitive number on evisa.kdmid.ru."
+      "notes": "Consular fee widely reported at 52 USD (payment platform accepts CNY or AED equivalents); children under 6 exempt. Official evisa.kdmid.ru portal states a fee applies but does not itself publish the numeric amount on the fetched page, so this figure is corroborated by MFA consular department pages (e.g. washington.mid.ru, houston.mid.ru) and third-party guides rather than a single definitive number on evisa.kdmid.ru. CORRECTION (2026-07-08): validity was previously recorded here as \"60 days from issue, up to 16 days stay\", which directly conflicts with data/countries/RUS.json's own visa_policy record (\"valid 120 days from issue; single entry\", max_stay_days: 30) - both cite kdmid.ru sources. Cleared pending manual re-verification against the official portal rather than showing a third, unreconciled figure alongside the other two."
     },
     {
       "kind": "tourist_visa",
