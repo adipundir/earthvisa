@@ -48,7 +48,7 @@ export default function Home() {
               <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-line pt-4 text-ink sm:flex sm:flex-wrap sm:items-start sm:justify-between">
                 <Field k="Countries" v={meta.countriesWithData} />
                 <Field k="Visa policies" v={meta.destinationsWithVisaPolicy} />
-                <Field k="CBI · Golden-visa" v={`${dataset.cbi.length} · ${dataset.rbi.length}`} />
+                <Field k="CBI · Residency routes" v={`${dataset.cbi.length} · ${dataset.rbi.length}`} />
                 <Field k="Fast-track programs" v={dataset.fastTrack.length} />
               </dl>
             </div>

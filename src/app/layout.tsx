@@ -90,7 +90,7 @@ export default function RootLayout({
                 "name": "Earth Visa",
                 "alternateName": "Earth Visa - passport & visa tool",
                 "url": "https://earthvisa.in",
-                "description": "Check what your passport can do and whether you need a visa, covering 199 passports and 227 destinations from official government sources.",
+                "description": `Check what your passport can do and whether you need a visa, covering ${dataset.meta.totalCountries} passports and ${dataset.meta.destinationsWithVisaPolicy} destinations with enumerated visa policies, from official government sources.`,
                 "inLanguage": "en",
                 "publisher": { "@id": "https://earthvisa.in/#organization" },
                 "potentialAction": {

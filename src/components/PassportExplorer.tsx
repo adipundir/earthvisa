@@ -592,7 +592,7 @@ function StatBand({ result, activeTab, setTab }: {
     {
       tab: "rbi",
       count: result.rbi.length,
-      label: "Golden visas",
+      label: "Residency routes",
       accent: "text-voa",
       activeBar: "border-t-voa",
       tooltip: "Residency-by-investment programs: make a qualifying investment and receive the right to live in that country, often with a path to citizenship later.",
