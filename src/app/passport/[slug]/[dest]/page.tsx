@@ -283,7 +283,7 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
         {processing && <span>{processing}</span>}
         {/* Suppress the rough USD figure when the official fee section above
             already quotes the same fee — two conversions of one fee reads as an error. */}
-        {v.fee_usd != null && !suppressFee && <span>~${v.fee_usd}</span>}
+        {v.fee_usd != null && !suppressFee && (v.fee_usd === 0 ? <span className="text-vfree">free</span> : <span>~${v.fee_usd}</span>)}
         {v.online && <span className="text-vfree">online</span>}
       </div>
       {v.notes && <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>}
@@ -494,7 +494,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               {"notes" in s && s.notes ? (
                 <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">{s.notes}</p>
               ) : null}
-              {applicationNoteFor(d.iso3) ? (
+              {need && applicationNoteFor(d.iso3) ? (
                 <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">
                   <span className="mono mr-2 text-[10px] font-medium uppercase tracking-[0.14em] text-stamp">How it works</span>
                   {applicationNoteFor(d.iso3)}
