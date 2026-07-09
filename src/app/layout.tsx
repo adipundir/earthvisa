@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import { Analytics } from "@vercel/analytics/next";
 import { dataset } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -21,10 +22,10 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://earthvisa.in"),
   title: {
-    default: "Earth Visa - Visa-Free Countries for 199 Passports",
+    default: `Earth Visa - Visa-Free Countries for ${TOTAL_PASSPORTS} Passports`,
     template: "%s | Earth Visa",
   },
-  description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment programs worldwide. Official government sources only.",
+  description: `Compare visa-free access for all ${TOTAL_PASSPORTS} passports. Check visa on arrival, e-visa, golden visas & citizenship by investment programs worldwide. Official government sources only.`,
   keywords: [
     "passport strength", "passport index", "passport ranking", "most powerful passport",
     "strongest passport in the world", "passport strength index", "visa free countries",
@@ -44,14 +45,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://earthvisa.in",
     siteName: "Earth Visa",
-    title: "Earth Visa - Visa-Free Countries for 199 Passports",
-    description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.",
+    title: `Earth Visa - Visa-Free Countries for ${TOTAL_PASSPORTS} Passports`,
+    description: `Compare visa-free access for all ${TOTAL_PASSPORTS} passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.`,
     // OG image is supplied by app/opengraph-image.tsx (file-based Metadata API).
   },
   twitter: {
     card: "summary_large_image",
-    title: "Earth Visa - Visa-Free Countries for 199 Passports",
-    description: "Compare visa-free access for all 199 passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.",
+    title: `Earth Visa - Visa-Free Countries for ${TOTAL_PASSPORTS} Passports`,
+    description: `Compare visa-free access for all ${TOTAL_PASSPORTS} passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.`,
     // Twitter image is supplied by app/twitter-image.tsx (file-based Metadata API).
   },
   alternates: { canonical: "https://earthvisa.in" },
@@ -114,19 +115,19 @@ export default function RootLayout({
                   "width": 32,
                   "height": 32
                 },
-                "description": "Earth Visa tracks visa-free travel, visa on arrival, eTA, e-visa, golden visas, citizenship by investment and fast-track immigration for 199 passports, sourced exclusively from official government publications."
+                "description": `Earth Visa tracks visa-free travel, visa on arrival, eTA, e-visa, golden visas, citizenship by investment and fast-track immigration for ${TOTAL_PASSPORTS} passports, sourced exclusively from official government publications.`
               },
               {
                 "@context": "https://schema.org",
                 "@type": "WebApplication",
                 "name": "Earth Visa",
-                "description": "Earth Visa shows visa-free countries, visa on arrival, citizenship by investment, golden visas and fast-track immigration programs for 199 passports, sourced exclusively from official government publications.",
+                "description": `Earth Visa shows visa-free countries, visa on arrival, citizenship by investment, golden visas and fast-track immigration programs for ${TOTAL_PASSPORTS} passports, sourced exclusively from official government publications.`,
                 "url": "https://earthvisa.in",
                 "applicationCategory": "TravelApplication",
                 "operatingSystem": "Any",
                 "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
                 "featureList": [
-                  "Visa-free country lookup for 199 passports",
+                  `Visa-free country lookup for ${TOTAL_PASSPORTS} passports`,
                   "Visa on arrival destination finder",
                   "Citizenship by investment program comparison",
                   "Golden visa / residency by investment directory",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { dataset, flagFor, nameFor, nameToSlug } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { fmtDate } from "@/lib/format";
 import RankingsTable, { type RankingRow } from "@/components/RankingsTable";
 import type { AccessLevel } from "@/lib/types";
@@ -62,7 +63,7 @@ const popular = POPULAR_ISO3.map((iso3) => rows.find((r) => r.iso3 === iso3)).fi
 );
 
 const TITLE = "Passport Ranking 2026: The Most Powerful Passports in the World | Earth Visa";
-const DESCRIPTION = `Passport index 2026: all 199 passports ranked by visa-free access. The strongest passport (${top1.name}) reaches ${top1.total} destinations. Full sortable ranking from official government sources.`;
+const DESCRIPTION = `Passport index 2026: all ${TOTAL_PASSPORTS} passports ranked by visa-free access. The strongest passport (${top1.name}) reaches ${top1.total} destinations. Full sortable ranking from official government sources.`;
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -101,7 +102,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What is a passport index?",
-    a: `A passport index is a ranking of the world's passports by how much visa-free travel each one allows. Each passport is scored by counting the destinations its holders can enter without arranging a visa at an embassy first - whether fully visa-free, with a visa on arrival, or with an electronic authorisation (eTA or e-visa). The Earth Visa passport index 2026 ranks all 199 passports by total reach across ${destCount} destinations, using official government sources only.`,
+    a: `A passport index is a ranking of the world's passports by how much visa-free travel each one allows. Each passport is scored by counting the destinations its holders can enter without arranging a visa at an embassy first - whether fully visa-free, with a visa on arrival, or with an electronic authorisation (eTA or e-visa). The Earth Visa passport index 2026 ranks all ${TOTAL_PASSPORTS} passports by total reach across ${destCount} destinations, using official government sources only.`,
   },
   {
     q: "Which is the strongest visa in the world?",

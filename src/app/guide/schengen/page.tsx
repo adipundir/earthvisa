@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { dataset, flagFor, nameFor, nameToSlug } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { corridorsForDestination, DEMONYM, TOP_NATIONALITIES } from "@/lib/corridors";
 import { SCHENGEN_MEMBERS, SCHENGEN_REPRESENTATIVE, schengenCounts, schengenSet, schengenStatus } from "@/lib/schengen";
 
@@ -26,7 +27,7 @@ const vfToFrance = visaFreeToRepresentative();
 const memberCount = SCHENGEN_MEMBERS.length;
 
 const TITLE = `Schengen Visa 2026: Requirements, Countries List, Fee & 90/180 Rule`;
-const DESCRIPTION = `Schengen visa guide 2026: one short-stay visa covers all ${memberCount} Schengen countries. Citizens of ${counts.exempt} of 199 nationalities do not need one; ${counts.required} do. Fee, documents, 90/180 rule and the full Schengen countries list, from official sources.`;
+const DESCRIPTION = `Schengen visa guide 2026: one short-stay visa covers all ${memberCount} Schengen countries. Citizens of ${counts.exempt} of ${TOTAL_PASSPORTS} nationalities do not need one; ${counts.required} do. Fee, documents, 90/180 rule and the full Schengen countries list, from official sources.`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -113,7 +114,7 @@ const FAQS = [
   },
   {
     q: "Do I need a Schengen visa?",
-    a: `It depends on your nationality. Citizens of ${counts.exempt} of the 199 nationalities Earth Visa tracks do not need a Schengen visa for short stays - either because their country is a Schengen member or because they are on the EU's visa-exempt list (verified against France's published visa policy). The remaining ${counts.required} nationalities must apply for a Schengen short-stay visa before travelling.`,
+    a: `It depends on your nationality. Citizens of ${counts.exempt} of the ${TOTAL_PASSPORTS} nationalities Earth Visa tracks do not need a Schengen visa for short stays - either because their country is a Schengen member or because they are on the EU's visa-exempt list (verified against France's published visa policy). The remaining ${counts.required} nationalities must apply for a Schengen short-stay visa before travelling.`,
   },
   {
     q: "How much does a Schengen visa cost?",
@@ -232,7 +233,7 @@ export default function SchengenGuidePage() {
               is Europe&apos;s common short-stay visa:
               one application, one sticker, and access to all <strong className="text-ink">{memberCount} Schengen
               countries</strong> for up to <strong className="text-ink">90 days in any 180-day period</strong>.
-              Citizens of <strong className="text-ink">{counts.exempt} of the 199 nationalities</strong> Earth Visa
+              Citizens of <strong className="text-ink">{counts.exempt} of the {TOTAL_PASSPORTS} nationalities</strong> Earth Visa
               tracks do not need one for short stays - {vfToFrance.length}{" "}
               non-Schengen nationalities are admitted visa-free under the EU&apos;s harmonised exemption list
               (verified against France&apos;s published visa policy), and citizens of the {memberCount} Schengen

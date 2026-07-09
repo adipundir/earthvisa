@@ -38,7 +38,7 @@ export default async function Image({
     return countryOgImage({
       iso2: "",
       name: "Earth Visa",
-      subtitle: "Visa-free travel and entry rules for 199 passports",
+      subtitle: `Visa-free travel and entry rules for ${dataset.allCountries.length} passports`,
       stats: [],
     });
   }

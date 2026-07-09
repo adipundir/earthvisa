@@ -1,8 +1,10 @@
+import { dataset } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { ImageResponse } from "next/og";
 
 // Branded 1200x630 Open Graph card for Earth Visa.
 export const alt =
-  "Earth Visa - Visa-free travel and entry rules for 199 passports";
+  `Earth Visa - Visa-free travel and entry rules for ${TOTAL_PASSPORTS} passports`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -75,7 +77,7 @@ export default function Image() {
               maxWidth: 1000,
             }}
           >
-            Visa-free travel and entry rules for 199 passports
+            {`Visa-free travel and entry rules for ${TOTAL_PASSPORTS} passports`}
           </div>
           <div
             style={{

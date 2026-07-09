@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { dataset } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 
 // Cross-link mesh between the /programs/* guides and the rankings page.
 const GUIDES = [
@@ -25,7 +27,7 @@ const GUIDES = [
   {
     href: "/rankings",
     title: "Passport Rankings 2026",
-    desc: "All 199 passports ranked by visa-free access, from official sources.",
+    desc: `All ${TOTAL_PASSPORTS} passports ranked by visa-free access, from official sources.`,
   },
 ];
 

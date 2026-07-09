@@ -206,6 +206,17 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
   // freedom-of-movement grants), not a separate inferred figure.
   const visaRequiredCount = Math.max(0, dataset.allCountries.length - 1 - totalWithAccess);
 
+  // Destinations whose official visa policy isn't published as an enumerated
+  // list (North Korea, Palestine, Turkmenistan, Yemen) have an EMPTY reverse
+  // index - rendering "0 admitted visa-free / restrictive / 198 visa required"
+  // would fabricate a policy nobody verified. visaPolicyCounts distinguishes
+  // "tracked, admits nobody via streamlined routes" from "not tracked at all".
+  const record = dataset.countries.find((c) => c.iso3 === destIso3);
+  const policyTracked = Object.values(record?.visaPolicyCounts ?? {}).some((n) => n > 0);
+  // Transit visa products the destination itself publishes (category "transit"
+  // in its official visa-type catalogue).
+  const transitTypes = (dataset.destinationVisaTypes?.[destIso3] ?? []).filter((v) => v.category === "transit");
+
   const openness =
     vfCount >= 100
       ? "very open"
@@ -252,7 +263,16 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       : `All visitors must arrange ${withArticle(country.name)} visa in advance through an embassy or consulate.`,
   );
 
-  const faqs = [
+  const faqs = !policyTracked ? [
+    {
+      q: `Do I need a visa to visit ${display}?`,
+      a: `${country.name} does not publish its visa policy as an enumerated per-nationality list on an official source Earth Visa can verify, so we do not yet track entry rules for ${country.name}. Consult ${possessive(country.name)} official government or embassy channels before planning travel.`,
+    },
+    {
+      q: `Which countries can visit ${country.name} without a visa?`,
+      a: `We do not yet have verified per-nationality data for ${country.name}. Rather than estimate, Earth Visa only publishes entry rules confirmed against official government sources.`,
+    },
+  ] : [
     { q: `Do I need a visa to visit ${display}?`, a: faq1Sentences.join(" ") },
     {
       q: `Which countries can visit ${country.name} without a visa?`,
@@ -308,7 +328,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           acceptedAnswer: { "@type": "Answer", text: a },
         })),
       },
-      {
+      ...(policyTracked ? [{
         "@type": "Dataset",
         name: `${country.name} Visa Requirements by Nationality 2026`,
         description: `Official-source visa policy data for ${country.name} showing which nationalities can visit visa-free, on arrival, or require a visa`,
@@ -317,7 +337,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         temporalCoverage: "2026",
         variableMeasured: "Visa-free nationalities admitted",
         measurementTechnique: "Official government visa policy publications",
-      },
+      }] : []),
     ],
   };
 
@@ -350,7 +370,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   </span>
                 </h1>
                 <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-                  {plural(vfCount, "nationality", "nationalities")} admitted visa-free · {openness} visa policy
+                  {policyTracked
+                    ? <>{plural(vfCount, "nationality", "nationalities")} admitted visa-free · {openness} visa policy</>
+                    : <>visa policy not published as an enumerated list · not yet tracked</>}
                 </p>
               </div>
             </div>
@@ -360,7 +382,8 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               </p>
             )}
 
-            {/* Stats */}
+            {/* Stats - only when the destination's policy is actually tracked */}
+            {policyTracked && (
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-5">
               {[
                 { k: "Visa-free nationalities", v: vfCount },
@@ -377,6 +400,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 </div>
               ))}
             </dl>
+            )}
           </div>
         </header>
 
@@ -384,6 +408,15 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
           {/* Intro paragraph - keyword-rich */}
           <section className="mt-10 max-w-3xl">
+            {!policyTracked && (
+              <p className="rounded-lg border border-eta/30 bg-eta/[0.06] px-5 py-4 text-base leading-relaxed text-ink-soft">
+                <strong className="text-ink">{country.name} does not publish its visa policy as an enumerated per-nationality list</strong>{" "}
+                on an official source Earth Visa can verify, so we do not yet track which nationalities can enter and how.
+                Rather than estimate, we only publish entry rules confirmed against official government publications —
+                consult {possessive(country.name)} official government or embassy channels before planning travel.
+              </p>
+            )}
+            {policyTracked && (<>
             <p className="text-base leading-relaxed text-ink-soft">
               {vfCount > 0 ? (
                 <>
@@ -443,6 +476,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               )}
               All data is sourced from official government publications and border authority portals.
             </p>
+            </>)}
           </section>
 
           {/* Visa-free nationalities */}
@@ -580,6 +614,45 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               </section>
             );
           })()}
+
+          {/* Transit visa - the destination's own published transit products.
+              Absence of a product here means none is recorded, NOT that transit
+              is visa-free - so nothing is asserted when the list is empty. */}
+          {transitTypes.length > 0 && (
+            <section className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">
+                {display} Transit Visa
+              </h2>
+              <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+                {country.name} publishes {transitTypes.length === 1 ? "a transit visa product" : `${transitTypes.length} transit visa products`} for
+                travellers passing through to another destination. Whether you need one depends on your nationality and
+                whether you stay airside —{" "}
+                <Link href="/guide/transit-visa" className="font-medium text-stamp underline-offset-2 hover:underline">
+                  see how transit visas work
+                </Link>.
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {transitTypes.map((v, i) => (
+                  <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+                    <p className="font-display text-[14px] font-semibold text-ink">{v.name}</p>
+                    {v.purpose && <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
+                    <div className="mono mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
+                      {v.max_stay_days != null && <span>up to {v.max_stay_days} day{v.max_stay_days === 1 ? "" : "s"}</span>}
+                      {v.fee_usd != null && (v.fee_usd === 0 ? <span className="text-vfree">free</span> : <span>~${v.fee_usd}</span>)}
+                      {v.online && <span className="text-vfree">apply online</span>}
+                      {v.on_arrival && <span className="text-voa">on arrival</span>}
+                    </div>
+                    {v.notes && <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>}
+                    {v.official_url && (
+                      <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
+                        Apply here ↗
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* FAQ */}
           <section className="mt-14">

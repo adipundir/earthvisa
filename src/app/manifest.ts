@@ -1,11 +1,13 @@
+import { dataset } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Earth Visa - Visa-Free Travel & Entry Rules for 199 Passports",
+    name: `Earth Visa - Visa-Free Travel & Entry Rules for ${TOTAL_PASSPORTS} Passports`,
     short_name: "Earth Visa",
     description:
-      "Check what your passport can do and whether you need a visa - visa-free travel, visa on arrival, eTA, golden visas and citizenship by investment for 199 passports, from official government sources.",
+      `Check what your passport can do and whether you need a visa - visa-free travel, visa on arrival, eTA, golden visas and citizenship by investment for ${TOTAL_PASSPORTS} passports, from official government sources.`,
     start_url: "/",
     display: "standalone",
     background_color: "#f6f2e9",

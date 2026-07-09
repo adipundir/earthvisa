@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { compute } from "@/lib/compute";
 import { corridorsForNationality, isUsefulCorridor, DEMONYM } from "@/lib/corridors";
 import CorridorLinks from "@/components/CorridorLinks";
@@ -85,7 +86,7 @@ const rankOf = new Map(
 function passportTitle(iso3: string, name: string, rank: number | undefined, vfCount: number): string {
   if (iso3 === "IND") return `Visa-Free Countries for Indians 2026 - Full List (${vfCount}) & Passport Rank`;
   return rank
-    ? `${name} Passport Ranking 2026: #${rank} of 199 - ${vfCount} Visa-Free Countries`
+    ? `${name} Passport Ranking 2026: #${rank} of ${TOTAL_PASSPORTS} - ${vfCount} Visa-Free Countries`
     : `${name} Passport Ranking 2026 - ${vfCount} Visa-Free Countries`;
 }
 
@@ -104,7 +105,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const rank = rankOf.get(country.iso3);
   const title = passportTitle(country.iso3, country.name, rank, vfCount);
   const { adj } = nationalityPhrases(country.iso3, country.name);
-  const description = `Visa-free countries for the ${adj} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} via eTA or e-visa${rank ? `. Ranked #${rank} of 199 passports` : ""}. Full list from official government sources.`;
+  const description = `Visa-free countries for the ${adj} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} via eTA or e-visa${rank ? `. Ranked #${rank} of ${TOTAL_PASSPORTS} passports` : ""}. Full list from official government sources.`;
 
   return {
     title,
@@ -304,7 +305,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
           {
             "@type": "Question",
             "name": `What is the ${demonym} passport ranking in 2026?`,
-            "acceptedAnswer": { "@type": "Answer", "text": rank ? `The ${demonym} passport ranks approximately ${ordinal(rank)} out of 199 passports in 2026, based on the number of accessible destinations (${total} countries reachable visa-free, on arrival, or with an eTA/e-visa).` : `The ${demonym} passport provides access to ${total} destinations in 2026.` }
+            "acceptedAnswer": { "@type": "Answer", "text": rank ? `The ${demonym} passport ranks approximately ${ordinal(rank)} out of ${TOTAL_PASSPORTS} passports in 2026, based on the number of accessible destinations (${total} countries reachable visa-free, on arrival, or with an eTA/e-visa).` : `The ${demonym} passport provides access to ${total} destinations in 2026.` }
           },
           {
             "@type": "Question",
@@ -361,7 +362,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 </h1>
                 {rank && (
                   <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-                    Ranked #{rank} of 199 passports worldwide ·{" "}
+                    Ranked #{rank} of {TOTAL_PASSPORTS} passports worldwide ·{" "}
                     <Link href="/rankings" className="underline decoration-line underline-offset-4 transition hover:text-ink">
                       Full 2026 passport index
                     </Link>
@@ -665,7 +666,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               {[
                 {
                   q: `What is the ${demonym} passport ranking in 2026?`,
-                  a: rank ? `The ${demonym} passport ranks #${rank} out of 199 passports globally in 2026, based on the number of accessible destinations (${total} countries).` : `The ${demonym} passport provides access to ${total} countries in 2026.`,
+                  a: rank ? `The ${demonym} passport ranks #${rank} out of ${TOTAL_PASSPORTS} passports globally in 2026, based on the number of accessible destinations (${total} countries).` : `The ${demonym} passport provides access to ${total} countries in 2026.`,
                 },
                 {
                   q: `Do ${demonym} passport holders need a visa to travel to Europe?`,

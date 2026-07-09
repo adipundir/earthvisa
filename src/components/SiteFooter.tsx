@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { dataset } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { fmtDate } from "@/lib/format";
 import BrandMark from "@/components/BrandMark";
 
@@ -60,7 +61,7 @@ export default function SiteFooter() {
               <span className="font-display text-[16px] font-semibold tracking-tight">Earth Visa</span>
             </div>
             <p className="mt-3 text-[13px] leading-relaxed text-ink-soft">
-              Visa rules, fees and entry requirements for 199 passports - sourced only from official
+              Visa rules, fees and entry requirements for {TOTAL_PASSPORTS} passports - sourced only from official
               government publications, never third-party aggregators.
             </p>
             <p

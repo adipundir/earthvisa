@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { dataset, flagFor, nameFor, nameToSlug } from "@/lib/dataset";
+const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { DEMONYM, TOP_NATIONALITIES } from "@/lib/corridors";
 import { SCHENGEN_MEMBERS, schengenCounts, schengenStatus, type SchengenStatus } from "@/lib/schengen";
 
@@ -15,7 +16,7 @@ const FEATURED_NATIONALITIES = [
 ];
 
 const TITLE = "Do I Need a Visa for Europe? Schengen & Europe Entry Rules 2026";
-const DESCRIPTION = `Europe is not one visa zone: ${memberCount} countries share the Schengen short-stay policy, while the UK and Ireland run their own. Citizens of ${counts.exempt} of 199 nationalities enter Schengen visa-free; ${counts.required} need a visa. Check your passport, from official sources.`;
+const DESCRIPTION = `Europe is not one visa zone: ${memberCount} countries share the Schengen short-stay policy, while the UK and Ireland run their own. Citizens of ${counts.exempt} of ${TOTAL_PASSPORTS} nationalities enter Schengen visa-free; ${counts.required} need a visa. Check your passport, from official sources.`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -78,7 +79,7 @@ function Chevron() {
 const FAQS = [
   {
     q: "Do I need a visa for Europe?",
-    a: `It depends on your nationality and which part of Europe you are visiting. Most of Europe (${memberCount} countries) shares the Schengen short-stay policy: citizens of ${counts.exempt} of the 199 nationalities Earth Visa tracks can visit visa-free for up to 90 days in any 180-day period, while ${counts.required} nationalities need a Schengen visa. The United Kingdom and Ireland are not in Schengen and apply their own separate visa rules.`,
+    a: `It depends on your nationality and which part of Europe you are visiting. Most of Europe (${memberCount} countries) shares the Schengen short-stay policy: citizens of ${counts.exempt} of the ${TOTAL_PASSPORTS} nationalities Earth Visa tracks can visit visa-free for up to 90 days in any 180-day period, while ${counts.required} nationalities need a Schengen visa. The United Kingdom and Ireland are not in Schengen and apply their own separate visa rules.`,
   },
   {
     q: "Is Europe one visa zone?",
@@ -217,7 +218,7 @@ export default function EuropePage() {
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               For the Schengen zone the answer is data-driven: citizens of{" "}
-              <strong className="text-ink">{counts.exempt} of the 199 nationalities</strong>{" "}
+              <strong className="text-ink">{counts.exempt} of the {TOTAL_PASSPORTS} nationalities</strong>{" "}
               we track do not need a visa for short stays, while{" "}
               <strong className="text-ink">{counts.required} nationalities</strong>{" "}
               must apply for a Schengen visa first - verified against France&apos;s official published visa policy, since
