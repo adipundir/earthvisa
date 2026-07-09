@@ -3,7 +3,7 @@
 import { useMemo, useState, useId } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { isoToFlag, nameToSlug } from "@/lib/dataset";
+import { isoToFlag, nameToSlug } from "@/lib/format";
 import { ALIASES, SHORT_NAME } from "@/lib/colloquial";
 
 // Searchable synonyms per ISO3, built from the site's own colloquial alias map:

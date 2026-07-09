@@ -2,7 +2,7 @@
 
 import { useId, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { isoToFlag } from "@/lib/dataset";
+import { isoToFlag } from "@/lib/format";
 
 interface Opt { slug: string; name: string; iso2: string }
 

@@ -4,13 +4,11 @@ export type { VisaType };
 
 export const dataset = raw as unknown as Dataset;
 
-/** ISO-3166 alpha-2 -> flag emoji */
-export function isoToFlag(iso2: string): string {
-  if (!iso2 || iso2.length !== 2) return "🏳️";
-  const A = 0x1f1e6;
-  const cc = iso2.toUpperCase();
-  return String.fromCodePoint(A + (cc.charCodeAt(0) - 65), A + (cc.charCodeAt(1) - 65));
-}
+// isoToFlag/nameToSlug live in @/lib/format (pure, no dataset) so client
+// components can use them without dragging the full dataset into their bundle;
+// re-exported here for the many server-side callers.
+export { isoToFlag, nameToSlug } from "./format";
+import { isoToFlag } from "./format";
 
 const iso3ToCountry = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 export function country(iso3: string) {
@@ -24,7 +22,4 @@ export function nameFor(iso3: string): string {
   return iso3ToCountry.get(iso3)?.name ?? iso3;
 }
 
-/** country name -> URL slug (must match the route generators in app/) */
-export function nameToSlug(name: string): string {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
+
