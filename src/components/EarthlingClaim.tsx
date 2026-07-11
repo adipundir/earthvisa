@@ -291,7 +291,7 @@ export default function EarthlingClaim({ countries, credentials }: {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@email.com"
               type="email"
-              className="min-h-[48px] rounded-lg border border-line-strong bg-card px-3 text-[15px] text-ink outline-none placeholder:text-ink-mute/70 focus:border-stamp"
+              className="min-h-[48px] self-start rounded-lg border border-line-strong bg-card px-3 py-[11px] text-[15px] text-ink outline-none placeholder:text-ink-mute/70 focus:border-stamp"
             />
           </div>
           <p className="mono mt-2 text-[11px] leading-relaxed text-ink-mute">
