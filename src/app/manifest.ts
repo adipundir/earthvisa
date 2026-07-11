@@ -10,7 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
       `Check what your passport can do and whether you need a visa - visa-free travel, visa on arrival, eTA, golden visas and citizenship by investment for ${TOTAL_PASSPORTS} passports, from official government sources.`,
     start_url: "/",
     display: "standalone",
-    background_color: "#f6f2e9",
+    background_color: "#ffffff",
     theme_color: "#b23528",
     lang: "en",
     categories: ["travel", "reference", "utilities"],

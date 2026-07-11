@@ -1,35 +1,81 @@
 @import "tailwindcss";
 
+/* Class-strategy dark mode: `.dark` on <html> (set pre-paint by the inline
+   script in layout.tsx, persisted in localStorage, defaults to system). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* All color tokens resolve through runtime CSS variables so the entire
+   palette swaps with the .dark class - utilities compile to var() references,
+   never baked-in hex. Add new colors here AND in both palettes below. */
 @theme inline {
   --font-display: var(--font-plex-sans);
   --font-body: var(--font-plex-sans);
   --font-mono: var(--font-plex-mono);
 
-  /* bright warm creme canvas - lifted to the light footer tone (was too dull) */
-  --color-paper:   #fbf8f2;
-  --color-paper-2: #fefcf8;
-  --color-paper-3: #f3efe8;
-  /* ink - higher contrast for readability */
-  --color-ink:       #11203a;
-  --color-ink-soft:  #3b4a63;
-  --color-ink-mute:  #6f6758; /* darkest warm mute that clears 4.5:1 AA on all three paper tones - do not lighten, a11y-critical */
-  /* softened/lightened so borders read as gentle dividers, not heavy khaki outlines */
-  --color-line:       #e8e3d9;
-  --color-line-strong: #d9d3c4;
-  /* stamps / accents */
-  --color-stamp:      #b23528;
-  --color-stamp-deep: #7c241d;
-  /* access status */
-  --color-vfree: #2c6b3f;
-  --color-voa:   #275a86;
-  --color-eta:   #8a5a12;
-  --color-evisa: #5f4a78;
-  --color-bloc:  #8a2b22;
+  --color-paper:   var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  /* elevated surfaces (cards, inputs, modals) - white in light, raised near-black in dark */
+  --color-card:    var(--card);
+  --color-ink:       var(--ink);
+  --color-ink-soft:  var(--ink-soft);
+  --color-ink-mute:  var(--ink-mute);
+  --color-line:        var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-stamp:      var(--stamp);
+  --color-stamp-deep: var(--stamp-deep);
+  --color-vfree: var(--vfree);
+  --color-voa:   var(--voa);
+  --color-eta:   var(--eta);
+  --color-evisa: var(--evisa);
+  --color-bloc:  var(--bloc);
 }
 
+/* ── Light: clean white, neutral grays, two chromatic accents only ────────
+   Color discipline: the UI is neutrals + TWO accents.
+     stamp (brand red)  = actions, links, "visa required"
+     vfree (green)      = the single positive signal: "you can just go"
+   All intermediate process states (voa / eta / evisa) share ONE neutral
+   slate - the label text differentiates them, not a rainbow. */
 :root {
-  --paper: #fbf8f2;
-  --ink:   #11203a;
+  color-scheme: light;
+  --paper:   #ffffff;
+  --paper-2: #f7f7f8;
+  --paper-3: #efeff1;
+  --card:    #ffffff;
+  --ink:       #171d2b;
+  --ink-soft:  #434a59;
+  --ink-mute:  #5e6573; /* must clear 4.5:1 AA on all three paper tones - a11y-critical */
+  --line:        #e4e5e8;
+  --line-strong: #cfd1d6;
+  --stamp:      #b23528;
+  --stamp-deep: #7c241d;
+  --vfree: #2e6b44;
+  --voa:   #4a5160;
+  --eta:   #4a5160;
+  --evisa: #4a5160;
+  --bloc:  #b23528;
+}
+
+/* ── Dark: neutral black surfaces (no blue cast), lifted accents for AA ──── */
+.dark {
+  color-scheme: dark;
+  --paper:   #0b0c0e;
+  --paper-2: #141517;
+  --paper-3: #1d1e22;
+  --card:    #17181c;
+  --ink:       #eaebed;
+  --ink-soft:  #b4b7bd;
+  --ink-mute:  #8b8f97;
+  --line:        #26272c;
+  --line-strong: #3a3c42;
+  --stamp:      #d15b4c;
+  --stamp-deep: #b23528;
+  --vfree: #58b17f;
+  --voa:   #a3a7b0;
+  --eta:   #a3a7b0;
+  --evisa: #a3a7b0;
+  --bloc:  #d15b4c;
 }
 
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -41,15 +87,15 @@ body {
   background: var(--paper);
 }
 
-::selection { background: var(--color-stamp); color: #fffdf8; }
+::selection { background: var(--stamp); color: #ffffff; }
 
 .font-display { font-family: var(--font-display), system-ui, sans-serif; }
 .font-mono    { font-family: var(--font-mono), ui-monospace, monospace; }
 .mono         { font-family: var(--font-mono), ui-monospace, monospace; }
 
 .rule-double {
-  border-bottom: 1px solid var(--color-line-strong);
-  box-shadow: 0 3px 0 -2px var(--color-line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  box-shadow: 0 3px 0 -2px var(--line-strong);
 }
 
 .mrz {
@@ -60,8 +106,8 @@ body {
 }
 
 .stamp {
-  border: 2px solid var(--color-stamp);
-  color: var(--color-stamp);
+  border: 2px solid var(--stamp);
+  color: var(--stamp);
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -77,32 +123,43 @@ body {
   left: 0.5rem;
   z-index: 100;
   transform: translateY(-150%);
-  background: var(--color-stamp);
-  color: #fffdf8;
+  background: var(--stamp);
+  color: #ffffff;
   padding: 0.6rem 1rem;
   border-radius: 6px;
   font-size: 13px;
   font-weight: 600;
   transition: transform 0.15s ease;
 }
-.skip-link:focus { transform: translateY(0); outline: 2px solid #fffdf8; outline-offset: 2px; }
+.skip-link:focus { transform: translateY(0); outline: 2px solid #ffffff; outline-offset: 2px; }
 
 /* Visible focus ring for keyboard users across interactive elements.
    NOTE: text inputs are intentionally excluded. Every search input in the app
    shows focus via its own border (focus:border-*) or a focus-within wrapper;
    adding an offset outline here stacks on top of that border and reads as a
    double border. This rule is unlayered, so it would win over any Tailwind
-   focus-visible:outline-none utility on the input — hence the exclusion here. */
+   focus-visible:outline-none utility on the input - hence the exclusion here. */
 a:focus-visible,
 button:focus-visible,
-summary:focus-visible,
 [role="option"]:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--color-stamp);
+  outline: 2px solid var(--stamp);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-* { scrollbar-color: var(--color-line-strong) transparent; }
+/* Summaries get a quieter focus treatment: Chromium flags <summary> as
+   :focus-visible even on mouse click, so the red ring above would wrap every
+   accordion row the user opens. The surface tint alone fails WCAG non-text
+   contrast (~1.1:1), so an inset stamp bar provides the >=3:1 indicator while
+   staying calm for mouse users. */
+summary:focus-visible {
+  outline: none;
+  background: var(--paper-3);
+  box-shadow: inset 3px 0 0 var(--stamp);
+  border-radius: 6px;
+}
+
+* { scrollbar-color: var(--line-strong) transparent; }
 ::-webkit-scrollbar { width: 11px; height: 11px; }
-::-webkit-scrollbar-thumb { background: var(--color-line-strong); border: 3px solid var(--paper); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: var(--line-strong); border: 3px solid var(--paper); border-radius: 10px; }

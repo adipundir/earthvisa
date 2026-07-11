@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Agent scratch worktrees - stale copies of src/, not part of the app.
+    ".claude/**",
+    ".data/**",
   ]),
 ]);
 

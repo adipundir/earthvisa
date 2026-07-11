@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Inbound openness per destination — how many nationalities it admits
+// Inbound openness per destination - how many nationalities it admits
 // visa-free. Reverse-indexed from the same passportAccess data the destination
 // pages count (folding in bloc grants), so index and detail figures agree.
 // Genuine zero-count destinations show "0 visa-free" rather than no stat.

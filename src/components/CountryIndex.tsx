@@ -96,7 +96,7 @@ export default function CountryIndex({
             placeholder="Type a country name…"
             aria-label="Search countries by name"
             autoComplete="off"
-            className="w-full rounded-lg border border-line-strong bg-white py-2.5 pl-10 pr-4 text-[15px] text-ink outline-none transition placeholder:text-ink-mute/70 focus:border-stamp"
+            className="w-full rounded-lg border border-line-strong bg-card py-2.5 pl-10 pr-4 text-[15px] text-ink outline-none transition placeholder:text-ink-mute/70 focus:border-stamp"
           />
         </div>
         <p

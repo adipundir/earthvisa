@@ -58,10 +58,10 @@ const KIND_FOR_LEVEL: Record<string, string[]> = {
 
 /**
  * Placeholder rows record that a product does NOT exist ("No e-visa system",
- * "not offered", applies: "none") or carry neither an amount nor a source URL —
+ * "not offered", applies: "none") or carry neither an amount nor a source URL  - 
  * they are data notes, not renderable fees, and must never surface as a fee
  * card (e.g. Germany/Portugal carried an applies:"none" e-visa stub whose own
- * notes say no e-visa exists, yet it rendered as "E-visa — Fee not published").
+ * notes say no e-visa exists, yet it rendered as "E-visa - Fee not published").
  */
 function isRenderableFee(f: FeeEntry & { applies?: string | null }): boolean {
   if (/^not?\s/i.test(f.name)) return false;

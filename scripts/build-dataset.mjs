@@ -90,6 +90,13 @@ const GROUP_LABELS = {
 // Extra regional blocs used ONLY to expand visa-policy nationality labels (not shipped as
 // "freedom of movement", since most are trade blocs without settlement rights).
 const EXPANSION_ONLY = {
+  // Commonwealth of Nations (56 members, 2026) and the Organisation of American
+  // States - both appear as nationality labels in Caribbean visa policies
+  // (KNA, TZA). NOT the Commonwealth of Independent States (CIS above), whose
+  // matcher runs first in labelToGroup.
+  COMMONWEALTH: ["ATG","AUS","BHS","BGD","BRB","BLZ","BWA","BRN","CMR","CAN","CYP","DMA","SWZ","FJI","GAB","GMB","GHA","GRD","GUY","IND","JAM","KEN","KIR","LSO","MWI","MYS","MDV","MLT","MUS","MOZ","NAM","NRU","NZL","NGA","PAK","PNG","RWA","WSM","SYC","SLE","SGP","SLB","ZAF","LKA","KNA","LCA","VCT","TZA","TGO","TON","TTO","TUV","UGA","GBR","VUT","ZMB"],
+  OAS: ["ATG","ARG","BHS","BRB","BLZ","BOL","BRA","CAN","CHL","COL","CRI","CUB","DMA","DOM","ECU","SLV","GRD","GTM","GUY","HTI","HND","JAM","MEX","NIC","PAN","PRY","PER","KNA","LCA","VCT","SUR","TTO","USA","URY","VEN"],
+  SAARC: ["AFG","BGD","BTN","IND","MDV","NPL","PAK","LKA"],
   COMESA: ["BDI","COM","COD","DJI","EGY","ERI","SWZ","ETH","KEN","LBY","MDG","MWI","MUS","RWA","SYC","SOM","SDN","TUN","UGA","ZMB","ZWE"],
   SADC: ["AGO","BWA","COD","SWZ","LSO","MWI","MOZ","MUS","NAM","ZAF","SYC","TZA","ZMB","ZWE","MDG","COM"],
   ECCAS: ["AGO","BDI","CMR","CAF","TCD","COD","COG","GNQ","GAB","RWA","STP"],
@@ -127,6 +134,10 @@ function labelToGroup(label) {
   if (has("andean")) return GROUPS.ANDEAN;
   if (has("cis countries", "commonwealth of independent")) return GROUPS.CIS;
   if (has("east african community", "eac member", "eac partner")) return GROUPS.EAC;
+  // after the CIS check so "Commonwealth of Independent States" never lands here
+  if (has("commonwealth")) return EXPANSION_ONLY.COMMONWEALTH;
+  if (has("organisation of american states", "organization of american states", "oas member")) return EXPANSION_ONLY.OAS;
+  if (has("saarc")) return EXPANSION_ONLY.SAARC;
   if (has("comesa")) return EXPANSION_ONLY.COMESA;
   if (has("sadc", "southern african development")) return EXPANSION_ONLY.SADC;
   if (has("cemac")) return EXPANSION_ONLY.CEMAC;
@@ -794,6 +805,25 @@ const dataset = {
   destinationVisaTypes,
   vfsCorridors,
 };
+
+// ---- coverage invariants -----------------------------------------------------
+// Destinations whose universal-eTA policies were hand-corrected (SYC 2026-07,
+// KEN 2026-07, KNA 2026-07) previously regressed silently when a blanket label
+// tripped the negation gate and inbound coverage collapsed. If a re-crawl
+// reintroduces an unexpandable label, fail LOUDLY here instead.
+const MIN_INBOUND = { SYC: 190, KEN: 190, KNA: 190 };
+const inboundCount = {};
+for (const edges of Object.values(passportAccess)) {
+  for (const e of edges) inboundCount[e.dest] = (inboundCount[e.dest] ?? 0) + 1;
+}
+for (const [dest, min] of Object.entries(MIN_INBOUND)) {
+  const got = inboundCount[dest] ?? 0;
+  if (got < min) {
+    console.error(`\n  ✗ COVERAGE INVARIANT VIOLATED: ${dest} has ${got} inbound edges (expected >= ${min}).`);
+    console.error(`    A re-crawl likely reintroduced an unexpandable blanket label - see data/countries/${dest}.json validation_notes.`);
+    process.exit(1);
+  }
+}
 
 mkdirSync(OUT_DIR, { recursive: true });
 writeFileSync(OUT_PATH, JSON.stringify(dataset) + "\n");

@@ -351,24 +351,22 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
 
             <div className="rule-double" />
 
-            <div className="mt-6 flex items-start gap-5">
-              <span className="text-6xl leading-none">{flag}</span>
-              <div>
-                <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
-                  {country.name} Passport
-                  <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
-                    Visa-Free Countries &amp; Travel Power 2026
-                  </span>
-                </h1>
-                {rank && (
-                  <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-                    Ranked #{rank} of {TOTAL_PASSPORTS} passports worldwide ·{" "}
-                    <Link href="/rankings" className="underline decoration-line underline-offset-4 transition hover:text-ink">
-                      Full 2026 passport index
-                    </Link>
-                  </p>
-                )}
-              </div>
+            <div className="mt-6">
+              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+                <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">{flag}</span>
+                {country.name} Passport
+                <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
+                  Visa-Free Countries &amp; Travel Power 2026
+                </span>
+              </h1>
+              {rank && (
+                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
+                  Ranked #{rank} of {TOTAL_PASSPORTS} passports worldwide ·{" "}
+                  <Link href="/rankings" className="underline decoration-line underline-offset-4 transition hover:text-ink">
+                    Full 2026 passport index
+                  </Link>
+                </p>
+              )}
             </div>
 
             {/* Stats */}
@@ -608,7 +606,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Already hold a US visa?
               </h2>
               <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
-                A valid US visa unlocks additional destinations for {citizens} beyond this passport alone — several countries admit US-visa holders visa-free or on arrival under official published rules.{" "}
+                A valid US visa unlocks additional destinations for {citizens} beyond this passport alone - several countries admit US-visa holders visa-free or on arrival under official published rules.{" "}
                 <Link href={listLinks.us} className="font-medium text-stamp underline-offset-2 hover:underline">
                   See every country a US visa unlocks →
                 </Link>
@@ -624,7 +622,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Visa Required for {demonym} Passport Holders ({vrCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                {demonym} citizens must apply in advance at an embassy, consulate, or official visa portal before travelling — no on-arrival or online-only option exists for these destinations.
+                {demonym} citizens must apply in advance at an embassy, consulate, or official visa portal before travelling - no on-arrival or online-only option exists for these destinations.
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {vrEdges.slice(0, 30).map((c) => (

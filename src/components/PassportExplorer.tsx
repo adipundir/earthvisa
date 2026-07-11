@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { dataset, flagFor, nameFor, isoToFlag } from "@/lib/dataset";
 import { useDetectedPassport } from "@/lib/geo";
 import { compute, fmtMoney, LEVEL_LABEL, type CombinedEdge } from "@/lib/compute";
@@ -149,29 +150,37 @@ export default function PassportExplorer() {
   // Seed selection from deep-link query params (e.g. /?passport=IND,DEU&cred=US_VISA)
   // so links from the static passport/destination pages land pre-filled.
   useEffect(() => {
-    const sp = new URLSearchParams(window.location.search);
-    const valid = new Set(dataset.allCountries.map((c) => c.iso3));
-    const passports = (sp.get("passport") ?? "")
-      .split(",").map((s) => s.trim().toUpperCase()).filter((s) => valid.has(s));
-    if (passports.length) {
-      setSelected(passports);
-      setPtypes(Object.fromEntries(passports.map((p) => [p, "ordinary" as PassportType])));
-    }
-    const credParam = (sp.get("cred") ?? "")
-      .split(",").map((s) => s.trim()).filter((id) => dataset.credentials.some((c) => c.id === id));
-    if (credParam.length) setCreds(credParam);
+    // Deferred a tick so state updates never run synchronously in the effect
+    // flush (react-hooks/set-state-in-effect); behavior is unchanged.
+    const t = setTimeout(() => {
+      const sp = new URLSearchParams(window.location.search);
+      const valid = new Set(dataset.allCountries.map((c) => c.iso3));
+      const passports = (sp.get("passport") ?? "")
+        .split(",").map((s) => s.trim().toUpperCase()).filter((s) => valid.has(s));
+      if (passports.length) {
+        setSelected(passports);
+        setPtypes(Object.fromEntries(passports.map((p) => [p, "ordinary" as PassportType])));
+      }
+      const credParam = (sp.get("cred") ?? "")
+        .split(",").map((s) => s.trim()).filter((id) => dataset.credentials.some((c) => c.id === id));
+      if (credParam.length) setCreds(credParam);
+    }, 0);
+    return () => clearTimeout(t);
   }, []);
 
-  // Auto-fill the passport from the visitor's detected country — but only on a
+  // Auto-fill the passport from the visitor's detected country - but only on a
   // truly empty field, and never over a deep-link or a manual choice. The chip
   // is removable like any other; we surface a hint so it isn't a surprise.
   useEffect(() => {
     if (!detectedPassport || autoSeededRef.current) return;
     if (new URLSearchParams(window.location.search).get("passport")) return;
-    autoSeededRef.current = true;
-    setSelected((prev) => (prev.length ? prev : [detectedPassport]));
-    setPtypes((prev) => (detectedPassport in prev ? prev : { ...prev, [detectedPassport]: "ordinary" }));
-    setAutoDetected(detectedPassport);
+    const t = setTimeout(() => {
+      autoSeededRef.current = true;
+      setSelected((prev) => (prev.length ? prev : [detectedPassport]));
+      setPtypes((prev) => (detectedPassport in prev ? prev : { ...prev, [detectedPassport]: "ordinary" }));
+      setAutoDetected(detectedPassport);
+    }, 0);
+    return () => clearTimeout(t);
   }, [detectedPassport]);
 
   useEffect(() => {
@@ -265,7 +274,7 @@ export default function PassportExplorer() {
 
         <div ref={boxRef} className="relative z-30 w-full">
           {/* Full-width search box */}
-          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2 transition-all focus-within:border-stamp">
+          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-card px-4 py-2 transition-all focus-within:border-stamp">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
@@ -301,7 +310,7 @@ export default function PassportExplorer() {
                       <div
                         role="listbox"
                         aria-label="Passport type"
-                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-ink/25"
+                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-black/25"
                       >
                         <p className="mono border-b border-line px-3 pb-2 pt-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
                           Passport type
@@ -364,7 +373,7 @@ export default function PassportExplorer() {
           </div>
 
           {open && options.length > 0 && (
-            <ul id="passport-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-white py-1 shadow-xl shadow-ink/10">
+            <ul id="passport-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
               {options.map((c, i) => (
                 <li key={c.iso3} role="option" id={`passport-opt-${i}`} aria-selected={hi === i}>
                   <button
@@ -402,7 +411,7 @@ export default function PassportExplorer() {
       >
         <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[12px] uppercase tracking-[0.14em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
           <span aria-hidden className="text-[16px] font-normal leading-none transition group-open:rotate-45">+</span>
-          <span className="group-open:hidden">Add a visa or permit you hold — optional</span>
+          <span className="group-open:hidden">Add a visa or permit you hold - optional</span>
           <span className="hidden group-open:inline">Visas &amp; permits you hold</span>
         </summary>
         <p className="mt-3 max-w-2xl text-sm text-ink-soft">
@@ -410,7 +419,7 @@ export default function PassportExplorer() {
         </p>
 
         <div ref={credBoxRef} className="relative z-20 mt-3 w-full">
-          <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2 transition-all ${credOpen ? "border-stamp" : "border-line-strong"}`}>
+          <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-card px-4 py-2 transition-all ${credOpen ? "border-stamp" : "border-line-strong"}`}>
             {/* Selected credential chips */}
             {creds.map((credId) => {
               const c = dataset.credentials.find((x) => x.id === credId);
@@ -444,7 +453,7 @@ export default function PassportExplorer() {
           </div>
 
           {credOpen && (
-            <div className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-white shadow-xl shadow-ink/10">
+            <div className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-card shadow-xl shadow-black/10">
               {credGroupOptions.map(({ name, items }) => (
                 <div key={name} className="border-b border-line last:border-0">
                   <div className="flex items-center gap-2.5 px-4 pt-3 pb-2">
@@ -462,7 +471,7 @@ export default function PassportExplorer() {
                           className={`inline-flex items-center gap-1.5 rounded border px-3 py-1.5 text-[12px] transition ${
                             on
                               ? "border-stamp/40 bg-stamp/[0.06] font-semibold text-stamp"
-                              : "border-line-strong bg-white text-ink-soft hover:border-ink-mute hover:text-ink"
+                              : "border-line-strong bg-card text-ink-soft hover:border-ink-mute hover:text-ink"
                           }`}
                         >
                           {on && <span className="text-[10px] font-bold">✓</span>}
@@ -474,7 +483,7 @@ export default function PassportExplorer() {
                 </div>
               ))}
               {credGroupOptions.length === 0 && (
-                <p className="px-4 py-6 text-center text-sm text-ink-mute">No credentials found for "{credQuery}"</p>
+                <p className="px-4 py-6 text-center text-sm text-ink-mute">No credentials found for &ldquo;{credQuery}&rdquo;</p>
               )}
             </div>
           )}
@@ -516,7 +525,7 @@ export default function PassportExplorer() {
 
 function EmptyState({ onAdd }: { onAdd: (iso3: string) => void }) {
   return (
-    <div className="reveal mt-14 overflow-hidden rounded-xl border border-line bg-white px-6 py-16 text-center">
+    <div className="reveal mt-14 overflow-hidden rounded-xl border border-line bg-card px-6 py-16 text-center">
       <PassportBook className="mx-auto h-14 w-14 text-ink/75" />
       <h2 className="font-display mt-5 text-2xl font-semibold text-ink">Add your passport above to get started</h2>
       <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
@@ -527,7 +536,7 @@ function EmptyState({ onAdd }: { onAdd: (iso3: string) => void }) {
           <button
             key={iso3}
             onClick={() => onAdd(iso3)}
-            className="mono inline-flex items-center gap-2 rounded border border-line-strong bg-white px-3 py-2 text-[12px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
+            className="mono inline-flex items-center gap-2 rounded border border-line-strong bg-card px-3 py-2 text-[12px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
           >
             <span className="text-base">{flagFor(iso3)}</span>
             {nameFor(iso3)}
@@ -612,6 +621,15 @@ function StatBand({ result, activeTab, setTab }: {
         )}
       </div>
 
+      {/* Claim teaser: the moment the user has a number is the moment it can
+          become an identity - route them to the Earthling claim flow. */}
+      <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-stamp/25 bg-stamp/[0.04] px-4 py-2.5">
+        <span className="text-sm text-ink-soft">That number is your <strong className="text-ink">reach</strong>. Lock it in on the leaderboard:</span>
+        <Link href="/earthling" className="mono min-h-[32px] inline-flex items-center text-[12px] font-medium uppercase tracking-[0.12em] text-stamp underline-offset-2 hover:underline">
+          Claim your Earthling ID →
+        </Link>
+      </div>
+
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
         {cards.map((c, i) => (
           <div key={i} className="group relative">
@@ -622,7 +640,7 @@ function StatBand({ result, activeTab, setTab }: {
               className={`flex h-[4.5rem] w-full flex-col justify-center rounded-lg border px-4 text-left transition ${
                 activeTab === c.tab
                   ? `border-t-[3px] ${c.activeBar} border-x-line-strong border-b-line-strong bg-paper-2 shadow-sm ring-1 ring-inset ring-stamp/15`
-                  : "border-line-strong bg-white hover:bg-paper-2"
+                  : "border-line-strong bg-card hover:bg-paper-2"
               }`}
             >
               <div className={`font-display text-[28px] font-semibold tabular-nums leading-none ${c.accent}`}>{c.count}</div>
@@ -636,7 +654,7 @@ function StatBand({ result, activeTab, setTab }: {
             <div
               id={`stat-tip-${c.tab}`}
               role="tooltip"
-              className="pointer-events-none absolute bottom-full left-0 z-40 mb-2 hidden w-56 max-w-[calc(100vw-2.5rem)] rounded-md border border-line-strong bg-white p-3 text-[12px] leading-relaxed text-ink-soft shadow-lg group-hover:block group-focus-within:block group-even:left-auto group-even:right-0"
+              className="pointer-events-none absolute bottom-full left-0 z-40 mb-2 hidden w-56 max-w-[calc(100vw-2.5rem)] rounded-md border border-line-strong bg-card p-3 text-[12px] leading-relaxed text-ink-soft shadow-lg group-hover:block group-focus-within:block group-even:left-auto group-even:right-0"
             >
               {c.tooltip}
               <div className="absolute left-4 top-full h-0 w-0 border-x-4 border-t-4 border-x-transparent border-t-line-strong group-even:left-auto group-even:right-4" />
@@ -825,7 +843,7 @@ function DestinationResult({
     : "border-l-ink-mute/40";
 
   return (
-    <div className={`reveal mt-8 overflow-hidden rounded-xl border border-line-strong bg-white shadow-sm border-l-4 ${leftBorder}`}>
+    <div className={`reveal mt-8 overflow-hidden rounded-xl border border-line-strong bg-card shadow-sm border-l-4 ${leftBorder}`}>
       <div className="flex items-center justify-between border-b border-line px-6 py-4">
         <div className="flex items-center gap-3">
           <span className="text-3xl leading-none">{flag}</span>
@@ -995,7 +1013,7 @@ function SourceDot({ official }: { official: boolean }) {
   return <span role="img" aria-label={label} className={`inline-block h-2 w-2 rounded-full ${official ? "bg-vfree" : "bg-eta"}`} title={label} />;
 }
 
-const CARD = "cursor-pointer rounded-lg border border-line bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition hover:border-line-strong hover:shadow-[0_4px_12px_-4px_rgba(15,23,42,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-stamp/30";
+const CARD = "cursor-pointer rounded-lg border border-line bg-card shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition hover:border-line-strong hover:shadow-[0_4px_12px_-4px_rgba(0,0,0,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-stamp/30";
 
 function ClickCard({ onOpen, className, style, children }: { onOpen: () => void; className?: string; style?: React.CSSProperties; children: React.ReactNode }) {
   return (
@@ -1037,7 +1055,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
         onKeyDown={(e) => { if (e.key === "Escape") setFilter(""); }}
         aria-label="Filter destinations by name"
         placeholder="Filter destinations…"
-        className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-white px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute/70"
+        className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-card px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute/70"
       />
       {rows.length === 0 && (
         <p className="rounded-lg border border-dashed border-line bg-paper-2/40 px-4 py-6 text-center text-sm text-ink-soft">
@@ -1086,7 +1104,7 @@ function TransitPanel({ result, onOpen }: { result: ReturnType<typeof compute>; 
       <div className="mb-5 rounded-md border border-eta/25 bg-eta/[0.05] px-4 py-3 text-sm leading-relaxed text-ink-soft">
         <span className="mono mr-2 font-semibold uppercase tracking-[0.1em] text-eta">Transit only</span>
         These destinations allow you to change planes or transit the country without a visa - but{" "}
-        <strong className="font-semibold text-ink">not for tourism or extended stays</strong>. They appear here separately so they aren't confused with regular visa-free access.
+        <strong className="font-semibold text-ink">not for tourism or extended stays</strong>. They appear here separately so they aren&apos;t confused with regular visa-free access.
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {result.transitReach.map((e) => (
@@ -1207,7 +1225,7 @@ function PanelFilter({ value, onChange, placeholder }: { value: string; onChange
       onKeyDown={(e) => { if (e.key === "Escape") onChange(""); }}
       aria-label={placeholder}
       placeholder={placeholder}
-      className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-white px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute/70"
+      className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-card px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute/70"
     />
   );
 }
@@ -1431,15 +1449,15 @@ function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void 
       : "bg-stamp/10 text-stamp ring-stamp/30";
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={detail.title}>
-      <div className="reveal absolute inset-0 bg-ink/30 backdrop-blur-[2px]" style={{ animationDuration: "0.25s" }} onClick={onClose} />
-      <div ref={panelRef} tabIndex={-1} className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-xl border border-line-strong bg-white shadow-2xl shadow-ink/20 outline-none" style={{ animationDuration: "0.3s" }}>
+      <div className="reveal absolute inset-0 bg-black/40 backdrop-blur-[2px]" style={{ animationDuration: "0.25s" }} onClick={onClose} />
+      <div ref={panelRef} tabIndex={-1} className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-xl border border-line-strong bg-card shadow-2xl shadow-black/20 outline-none" style={{ animationDuration: "0.3s" }}>
         <div className="rule-double flex items-start gap-3 px-6 pb-4 pt-6">
           <span className="text-4xl leading-none">{flagFor(detail.iso3)}</span>
           <div className="min-w-0 flex-1">
             <h3 className="font-display text-2xl font-semibold leading-tight text-ink">{detail.title}</h3>
             {detail.subtitle && <div className="mt-0.5 text-sm italic text-ink-soft">{detail.subtitle}</div>}
           </div>
-          <button onClick={onClose} aria-label="Close" className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-lg text-ink-mute transition hover:bg-stamp hover:text-paper-2">×</button>
+          <button onClick={onClose} aria-label="Close" className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-lg text-ink-mute transition hover:bg-stamp hover:text-white">×</button>
         </div>
         <div className="max-h-[70vh] overflow-auto px-6 py-5">
           {(detail.level || (detail.badges && detail.badges.length > 0)) && (

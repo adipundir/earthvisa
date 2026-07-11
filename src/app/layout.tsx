@@ -78,15 +78,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Theme init BEFORE paint: .dark from localStorage, else system. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
+            // Single object root with @graph - never an array root. Array-root
+            // JSON-LD is technically legal but breaks naive consumers that do
+            // JSON.parse(text)["@context"] (Safari extensions etc.), and the
+            // @graph form is what Google's own examples use for multiple nodes.
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
               {
-                "@context": "https://schema.org",
                 "@type": "WebSite",
                 "@id": "https://earthvisa.in/#website",
                 "name": "Earth Visa",
@@ -105,7 +117,6 @@ export default function RootLayout({
                 }
               },
               {
-                "@context": "https://schema.org",
                 "@type": "Organization",
                 "@id": "https://earthvisa.in/#organization",
                 "name": "Earth Visa",
@@ -119,7 +130,6 @@ export default function RootLayout({
                 "description": `Earth Visa tracks visa-free travel, visa on arrival, eTA, e-visa, golden visas, citizenship by investment and fast-track immigration for ${TOTAL_PASSPORTS} passports, sourced exclusively from official government publications.`
               },
               {
-                "@context": "https://schema.org",
                 "@type": "WebApplication",
                 "name": "Earth Visa",
                 "description": `Earth Visa shows visa-free countries, visa on arrival, citizenship by investment, golden visas and fast-track immigration programs for ${TOTAL_PASSPORTS} passports, sourced exclusively from official government publications.`,
@@ -137,7 +147,8 @@ export default function RootLayout({
                 ],
                 "provider": { "@id": "https://earthvisa.in/#organization" }
               }
-            ])
+              ]
+            })
           }}
         />
         <a href="#main" className="skip-link">Skip to main content</a>

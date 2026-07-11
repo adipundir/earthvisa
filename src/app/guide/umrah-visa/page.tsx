@@ -203,19 +203,17 @@ export default function UmrahVisaGuidePage() {
 
             <div className="rule-double" />
 
-            <div className="mt-6 flex items-start gap-5">
-              <span className="text-6xl leading-none">{flagFor("SAU")}</span>
-              <div>
-                <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
-                  Umrah Visa 2026
-                  <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
-                    Nusuk, Tourist Visa Rules &amp; Routes by Nationality
-                  </span>
-                </h1>
-                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-                  Umrah allowed on a tourist visa · Hajj is not
-                </p>
-              </div>
+            <div className="mt-6">
+              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+                <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">{flagFor("SAU")}</span>
+                Umrah Visa 2026
+                <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
+                  Nusuk, Tourist Visa Rules &amp; Routes by Nationality
+                </span>
+              </h1>
+              <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
+                Umrah allowed on a tourist visa · Hajj is not
+              </p>
             </div>
 
             {/* Stats */}
@@ -445,7 +443,7 @@ export default function UmrahVisaGuidePage() {
             </p>
             <Link
               href="/visit?dest=SAU"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-paper-2"
+              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
             >
               Check visa requirements on Earth Visa →
             </Link>

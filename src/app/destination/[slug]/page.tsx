@@ -18,7 +18,7 @@ function possessive(name: string): string {
   return name.endsWith("s") ? `${name}'` : `${name}'s`;
 }
 
-// "1 nationality" / "67 nationalities" — counts never render a mismatched plural.
+// "1 nationality" / "67 nationalities" - counts never render a mismatched plural.
 function plural(n: number, singular: string, pluralForm: string): string {
   return `${n} ${n === 1 ? singular : pluralForm}`;
 }
@@ -360,21 +360,19 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
             <div className="rule-double" />
 
-            <div className="mt-6 flex items-start gap-5">
-              <span className="text-6xl leading-none">{flag}</span>
-              <div>
-                <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
-                  {display} Visa Requirements 2026
-                  <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
-                    {alias ? <>Entry Rules Under {country.name} Visa Policy</> : <>Entry Rules &amp; Visa-Free Access by Passport</>}
-                  </span>
-                </h1>
-                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-                  {policyTracked
-                    ? <>{plural(vfCount, "nationality", "nationalities")} admitted visa-free · {openness} visa policy</>
-                    : <>visa policy not published as an enumerated list · not yet tracked</>}
-                </p>
-              </div>
+            <div className="mt-6">
+              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+                <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">{flag}</span>
+                {display} Visa Requirements 2026
+                <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
+                  {alias ? <>Entry Rules Under {country.name} Visa Policy</> : <>Entry Rules &amp; Visa-Free Access by Passport</>}
+                </span>
+              </h1>
+              <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
+                {policyTracked
+                  ? <>{plural(vfCount, "nationality", "nationalities")} admitted visa-free · {openness} visa policy</>
+                  : <>visa policy not published as an enumerated list · not yet tracked</>}
+              </p>
             </div>
             {alias && (
               <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
@@ -412,7 +410,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="rounded-lg border border-eta/30 bg-eta/[0.06] px-5 py-4 text-base leading-relaxed text-ink-soft">
                 <strong className="text-ink">{country.name} does not publish its visa policy as an enumerated per-nationality list</strong>{" "}
                 on an official source Earth Visa can verify, so we do not yet track which nationalities can enter and how.
-                Rather than estimate, we only publish entry rules confirmed against official government publications —
+                Rather than estimate, we only publish entry rules confirmed against official government publications  - 
                 consult {possessive(country.name)} official government or embassy channels before planning travel.
               </p>
             )}
@@ -626,7 +624,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="mt-2 max-w-3xl text-sm text-ink-soft">
                 {country.name} publishes {transitTypes.length === 1 ? "a transit visa product" : `${transitTypes.length} transit visa products`} for
                 travellers passing through to another destination. Whether you need one depends on your nationality and
-                whether you stay airside —{" "}
+                whether you stay airside  - {" "}
                 <Link href="/guide/transit-visa" className="font-medium text-stamp underline-offset-2 hover:underline">
                   see how transit visas work
                 </Link>.
@@ -689,7 +687,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             </p>
             <Link
               href={`/visit?dest=${destIso3}`}
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-paper-2"
+              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
             >
               Check visa requirements on Earth Visa →
             </Link>

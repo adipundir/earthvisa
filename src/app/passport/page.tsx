@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Outbound visa-free reach per passport — the "passport power" figure.
+// Outbound visa-free reach per passport - the "passport power" figure.
 const visaFreeReach = new Map(
   Object.entries(dataset.passportAccess).map(([iso3, edges]) => [
     iso3,

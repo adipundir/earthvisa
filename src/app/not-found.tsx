@@ -20,7 +20,7 @@ export default function NotFound() {
         <div className="mt-7 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/"
-            className="mono rounded border border-stamp/30 bg-white px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
+            className="mono rounded border border-stamp/30 bg-card px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
           >
             Back to home →
           </Link>

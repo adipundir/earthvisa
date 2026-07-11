@@ -87,6 +87,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/passport`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/destination`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/destination/europe`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    // Earthling hub + leaderboard (individual profiles stay out: user-generated,
+    // unbounded, and each page carries its own canonical).
+    { url: `${base}/earthling`, lastModified, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/earthling/leaderboard`, lastModified, changeFrequency: "weekly", priority: 0.7 },
     ...staticSeoPages,
     ...schengenNationalityPages,
     ...aliasPages,

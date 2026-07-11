@@ -278,7 +278,7 @@
         "nationality": "Vietnam",
         "iso3": "VNM",
         "max_stay_days": 14,
-        "notes": "Ordinary passport holders: 14 days. Diplomatic/Official: 30 days. ASEAN member. Confirmed at 14 days per Embassy of Myanmar Riyadh bilateral table (June 2026 re-fetch). Note: the outbound_official section (Myanmar citizens to Vietnam) shows 30 days per the MFA October 2025 PDF — that reflects Vietnamese policy toward Myanmar passports, not Myanmar policy toward Vietnamese passports.",
+        "notes": "Ordinary passport holders: 14 days. Diplomatic/Official: 30 days. ASEAN member. Confirmed at 14 days per Embassy of Myanmar Riyadh bilateral table (June 2026 re-fetch). Note: the outbound_official section (Myanmar citizens to Vietnam) shows 30 days per the MFA October 2025 PDF - that reflects Vietnamese policy toward Myanmar passports, not Myanmar policy toward Vietnamese passports.",
         "source_url": "https://meriyadh.org/list-of-visa-exemption-countries-with-myanmar/",
         "source_official": true
       }
@@ -304,7 +304,7 @@
         "nationality": "Hong Kong SAR",
         "iso3": null,
         "max_stay_days": 30,
-        "notes": "Tourist Visa on Arrival. Fee: USD 50. Originally launched 11 March 2024 (first one-year pilot). Extended for a second one-year period from 11 March 2025 through 10 March 2026. PILOT EXPIRED 10 MARCH 2026. No renewal confirmed as of June 2026 — Myanmar Consulate HK announcement page and web search show no extension announced. Entry retained in record per preservation rule; must be re-checked for renewal announcement.",
+        "notes": "Tourist Visa on Arrival. Fee: USD 50. Originally launched 11 March 2024 (first one-year pilot). Extended for a second one-year period from 11 March 2025 through 10 March 2026. PILOT EXPIRED 10 MARCH 2026. No renewal confirmed as of June 2026 - Myanmar Consulate HK announcement page and web search show no extension announced. Entry retained in record per preservation rule; must be re-checked for renewal announcement.",
         "source_url": "https://www.myanmarconsulatehk.org/index.php/visa/visa-on-arrival",
         "source_official": true
       },
@@ -525,7 +525,7 @@
       "credential": null,
       "level": "visa_free",
       "max_stay_days": 90,
-      "conditions": "Diplomatic and Official/Service passport holders only; 90 days each. Ordinary passport holders not covered by this bilateral agreement. NOTE: Serbia not found in Embassy of Myanmar Riyadh bilateral table on June 2026 re-fetch; entry retained from October 2025 MFA PDF per preservation rule — see data_quality.gaps.",
+      "conditions": "Diplomatic and Official/Service passport holders only; 90 days each. Ordinary passport holders not covered by this bilateral agreement. NOTE: Serbia not found in Embassy of Myanmar Riyadh bilateral table on June 2026 re-fetch; entry retained from October 2025 MFA PDF per preservation rule - see data_quality.gaps.",
       "source_url": "https://www.mofa.gov.mm/wp-content/uploads/2025/10/visa-update.pdf",
       "source_official": true
     },
@@ -572,39 +572,39 @@
   "data_quality": {
     "completeness": "medium",
     "gaps": [
-      "The evisa.moip.gov.mm portal pages rendered blank (likely JavaScript-heavy SPA) — e-visa country list was sourced from official Myanmar Consulate Hong Kong (myanmarconsulatehk.org) which mirrors the official evisa.moip.gov.mm notice.",
-      "The exact current e-visa tourist and business eligible countries may have changed since the consulate page data was last updated — the official portal evisa.moip.gov.mm could not be read directly.",
-      "No official page was found for RBI (residency by investment) or fast-track/skilled worker/digital nomad visa scheme — absence is consistent with Myanmar's current political and regulatory environment.",
-      "Japan/Korea/Macau VOA: The second pilot is confirmed as starting 21 October 2025 via tourism.gov.mm/en/information-pages/visa-on-arrival; end date of 20 October 2026 is inferred as one-year from start — a dedicated renewal announcement page was not found.",
+      "The evisa.moip.gov.mm portal pages rendered blank (likely JavaScript-heavy SPA) - e-visa country list was sourced from official Myanmar Consulate Hong Kong (myanmarconsulatehk.org) which mirrors the official evisa.moip.gov.mm notice.",
+      "The exact current e-visa tourist and business eligible countries may have changed since the consulate page data was last updated - the official portal evisa.moip.gov.mm could not be read directly.",
+      "No official page was found for RBI (residency by investment) or fast-track/skilled worker/digital nomad visa scheme - absence is consistent with Myanmar's current political and regulatory environment.",
+      "Japan/Korea/Macau VOA: The second pilot is confirmed as starting 21 October 2025 via tourism.gov.mm/en/information-pages/visa-on-arrival; end date of 20 October 2026 is inferred as one-year from start - a dedicated renewal announcement page was not found.",
       "Hong Kong VOA pilot expired 10 March 2026. No renewal announcement found as of June 2026 via Myanmar Consulate HK website or web search. Entry retained in visa_on_arrival with expiry flag per preservation rule. Must be re-checked when official renewal is announced.",
       "Serbia conditional_access entry retained from prior record (mofa.gov.mm October 2025 PDF) but not found in Embassy of Myanmar Riyadh bilateral table on June 2026 re-fetch (table lists 23 countries without Serbia). Serbia may have been omitted from the Riyadh table, or the bilateral agreement may have lapsed; kept pending direct MFA confirmation.",
-      "No official Myanmar government source was found establishing conditional entry rules based on holding a third-country visa, residence permit, or permanent residence — Myanmar's entry system is based solely on nationality and passport type.",
+      "No official Myanmar government source was found establishing conditional entry rules based on holding a third-country visa, residence permit, or permanent residence - Myanmar's entry system is based solely on nationality and passport type.",
       "Taiwan/Chinese Taipei is listed as eligible for Business/Workshop/Transit VOA; its status as a separate non-state entity means it has no bilateral treaty but is treated administratively.",
       "Colombia and Sri Lanka bilateral exemption effective dates not available; only stay durations sourced from Embassy of Myanmar Riyadh bilateral table.",
-      "Myanmar does not offer digital nomad, retirement, investment, working holiday, or medical visa categories — these are absent from all official sources reviewed.",
+      "Myanmar does not offer digital nomad, retirement, investment, working holiday, or medical visa categories - these are absent from all official sources reviewed.",
       "Malaysia ordinary passport visa-free pilot: exact end date not confirmed from official Myanmar source (Myanmar Consulate HK announcement references start from October 2025 as one-year pilot; approximate end approximately September/October 2026).",
       "Russia ordinary passport: Riyadh embassy table (June 2026) lists Russia bilateral agreement with 90 days for both passport types, but no ordinary passport column value was explicitly confirmed. Russia listed in Riyadh table; kept at diplomatic/service only per prior record until direct confirmation of ordinary passport terms is available."
     ],
     "validation_notes": [
       "CORRECTED (prior run): Vietnam ordinary passport max_stay_days changed from 30 to 14 days. The 30-day duration applies to Diplomatic/Official passport holders only; the Riyadh embassy bilateral table shows 14 days in the Ordinary Passport column for Vietnam.",
-      "CORRECTED (prior run): China VOA notes updated — original pilot started 30 August 2023; current active period is second pilot from 30 August 2025 through 29 August 2026 per official tourism.gov.mm announcement.",
-      "CORRECTED (prior run): India VOA notes updated — same as China (second pilot 30 Aug 2025 through 29 Aug 2026).",
-      "CORRECTED (prior run): Japan VOA notes updated — original pilot started 21 October 2024; second pilot from 21 October 2025 through 20 October 2026 per tourism.gov.mm.",
-      "CORRECTED (prior run): South Korea VOA notes updated — same as Japan (second pilot 21 October 2025 through 20 October 2026).",
-      "CORRECTED (prior run): Macau SAR VOA notes updated — same as Japan (second pilot 21 October 2025 through 20 October 2026).",
+      "CORRECTED (prior run): China VOA notes updated - original pilot started 30 August 2023; current active period is second pilot from 30 August 2025 through 29 August 2026 per official tourism.gov.mm announcement.",
+      "CORRECTED (prior run): India VOA notes updated - same as China (second pilot 30 Aug 2025 through 29 Aug 2026).",
+      "CORRECTED (prior run): Japan VOA notes updated - original pilot started 21 October 2024; second pilot from 21 October 2025 through 20 October 2026 per tourism.gov.mm.",
+      "CORRECTED (prior run): South Korea VOA notes updated - same as Japan (second pilot 21 October 2025 through 20 October 2026).",
+      "CORRECTED (prior run): Macau SAR VOA notes updated - same as Japan (second pilot 21 October 2025 through 20 October 2026).",
       "FLAGGED (prior run): Hong Kong SAR VOA pilot EXPIRED 10 March 2026. No renewal confirmed. Notes updated to reflect expiry; entry retained per preservation rule.",
-      "ADDED (prior run): Colombia to conditional_access — Diplomatic/Official only, 30 days. Confirmed via Embassy of Myanmar Riyadh bilateral table.",
-      "ADDED (prior run): Sri Lanka to conditional_access — Diplomatic/Official only, 90 days. Confirmed via Embassy of Myanmar Riyadh bilateral table.",
+      "ADDED (prior run): Colombia to conditional_access - Diplomatic/Official only, 30 days. Confirmed via Embassy of Myanmar Riyadh bilateral table.",
+      "ADDED (prior run): Sri Lanka to conditional_access - Diplomatic/Official only, 90 days. Confirmed via Embassy of Myanmar Riyadh bilateral table.",
       "RETAINED (prior run): Serbia in conditional_access from prior record (MFA October 2025 PDF); not found in Riyadh embassy table on June 2026 re-fetch. Kept pending direct MFA confirmation.",
-      "CONFIRMED (2026-06-29): tourism.gov.mm/en/information-pages/visa-on-arrival loaded — confirms Japan/Korea/Macau second pilot active (21 Oct 2025 to 20 Oct 2026); Hong Kong original pilot shown starting 11 March 2024 (1 year), no renewal info on that page.",
-      "CONFIRMED (2026-06-29): tourism.gov.mm China/India announcement loaded — second pilot 30 Aug 2025 through 29 Aug 2026 confirmed.",
-      "CONFIRMED (2026-06-29): myanmarconsulatehk.org/visa/visa-on-arrival loaded — Hong Kong pilot period confirmed as 11 March 2025 to 10 March 2026 (EXPIRED). No renewal text found on the page.",
-      "CONFIRMED (2026-06-29): myanmarconsulatehk.org/visa/e-visa loaded — 100 tourist and 54 business e-visa eligible countries list confirmed unchanged.",
-      "CONFIRMED (2026-06-29): myanmarconsulatehk.org/visa/announcement loaded — Malaysia ordinary passport 14-day visa exemption re-confirmed. Japan/Korea/Macau VOA started 21 Oct 2025 confirmed.",
-      "CONFIRMED (2026-06-29): meriyadh.org bilateral table loaded — 23 bilateral agreement countries listed. Vietnam ordinary passport 14 days re-confirmed. Malaysia shown with 30 days in table (likely diplomatic column); consulate HK announcement confirms 14 days for ordinary passport holders.",
-      "NOTE (2026-06-29): londonmyanmarembassy.com returned HTTP 403 Forbidden — not accessible.",
+      "CONFIRMED (2026-06-29): tourism.gov.mm/en/information-pages/visa-on-arrival loaded - confirms Japan/Korea/Macau second pilot active (21 Oct 2025 to 20 Oct 2026); Hong Kong original pilot shown starting 11 March 2024 (1 year), no renewal info on that page.",
+      "CONFIRMED (2026-06-29): tourism.gov.mm China/India announcement loaded - second pilot 30 Aug 2025 through 29 Aug 2026 confirmed.",
+      "CONFIRMED (2026-06-29): myanmarconsulatehk.org/visa/visa-on-arrival loaded - Hong Kong pilot period confirmed as 11 March 2025 to 10 March 2026 (EXPIRED). No renewal text found on the page.",
+      "CONFIRMED (2026-06-29): myanmarconsulatehk.org/visa/e-visa loaded - 100 tourist and 54 business e-visa eligible countries list confirmed unchanged.",
+      "CONFIRMED (2026-06-29): myanmarconsulatehk.org/visa/announcement loaded - Malaysia ordinary passport 14-day visa exemption re-confirmed. Japan/Korea/Macau VOA started 21 Oct 2025 confirmed.",
+      "CONFIRMED (2026-06-29): meriyadh.org bilateral table loaded - 23 bilateral agreement countries listed. Vietnam ordinary passport 14 days re-confirmed. Malaysia shown with 30 days in table (likely diplomatic column); consulate HK announcement confirms 14 days for ordinary passport holders.",
+      "NOTE (2026-06-29): londonmyanmarembassy.com returned HTTP 403 Forbidden - not accessible.",
       "NOTE (2026-06-29): myanmarcgla.org/visa/visa-exemption shows country list as image (not readable as text); confirmed list exists as of October 2025 but cannot extract details.",
-      "NO CHANGES to visa_free or visa_on_arrival lists on this 2026-06-29 pass — all entries verified as consistent with live official sources. Record is stable."
+      "NO CHANGES to visa_free or visa_on_arrival lists on this 2026-06-29 pass - all entries verified as consistent with live official sources. Record is stable."
     ]
   },
   "outbound_official": {
@@ -626,26 +626,26 @@
     "visa_on_arrival": [],
     "e_visa": [],
     "eta": [],
-    "notes": "Source is the official Myanmar Ministry of Foreign Affairs PDF 'List of Countries Having Bilateral Visa Exemption Agreements with Myanmar (As of 9 October 2025)', linked from mofa.gov.mm/consular-information/visa-free-travel/. This PDF lists 22 bilateral agreements total; only 9 ASEAN states extend visa-free access to Myanmar ORDINARY passport holders. All other bilateral agreements (Bangladesh, Belarus, Brazil, China, India, Japan, Korea ROK, Korea DPRK, Mongolia, Morocco, Nepal, Russia, Serbia) cover Diplomatic and/or Official/Service passport holders only — ordinary passport holders are not covered. Vietnam outbound shown as 30 days in this MFA PDF (this reflects Vietnamese policy toward Myanmar ordinary passports); inbound to Myanmar from Vietnam is 14 days per bilateral table."
+    "notes": "Source is the official Myanmar Ministry of Foreign Affairs PDF 'List of Countries Having Bilateral Visa Exemption Agreements with Myanmar (As of 9 October 2025)', linked from mofa.gov.mm/consular-information/visa-free-travel/. This PDF lists 22 bilateral agreements total; only 9 ASEAN states extend visa-free access to Myanmar ORDINARY passport holders. All other bilateral agreements (Bangladesh, Belarus, Brazil, China, India, Japan, Korea ROK, Korea DPRK, Mongolia, Morocco, Nepal, Russia, Serbia) cover Diplomatic and/or Official/Service passport holders only - ordinary passport holders are not covered. Vietnam outbound shown as 30 days in this MFA PDF (this reflects Vietnamese policy toward Myanmar ordinary passports); inbound to Myanmar from Vietnam is 14 days per bilateral table."
   },
   "sources_checked": [
     {
       "url": "https://www.mofa.gov.mm/wp-content/uploads/2025/10/visa-update.pdf",
-      "description": "Myanmar MFA PDF: List of Countries Having Bilateral Visa Exemption Agreements with Myanmar (As of 9 October 2025) — binary/compressed, not directly readable",
+      "description": "Myanmar MFA PDF: List of Countries Having Bilateral Visa Exemption Agreements with Myanmar (As of 9 October 2025) - binary/compressed, not directly readable",
       "official": true,
       "loaded_june_2026": false,
       "load_error": "PDF binary; not re-fetched June 2026"
     },
     {
       "url": "https://www.mofa.gov.mm/consular-information/visa-free-travel/",
-      "description": "Myanmar MFA: Visa-Free Travel page — unreachable on prior and current June 2026 validation pass",
+      "description": "Myanmar MFA: Visa-Free Travel page - unreachable on prior and current June 2026 validation pass",
       "official": true,
       "loaded_june_2026": false,
       "load_error": "socket connection closed unexpectedly / timeout"
     },
     {
       "url": "https://www.mofa.gov.mm/consular-information/on-arrival-visa-information/",
-      "description": "Myanmar MFA: On-Arrival Visa Information — not re-fetched June 2026",
+      "description": "Myanmar MFA: On-Arrival Visa Information - not re-fetched June 2026",
       "official": true,
       "loaded_june_2026": false,
       "load_error": "not re-fetched (mofa.gov.mm unreachable)"
@@ -659,57 +659,57 @@
     },
     {
       "url": "https://tourism.gov.mm/en/information-pages/visa-on-arrival",
-      "description": "Myanmar Ministry of Hotels and Tourism: Visa on Arrival page — confirmed Japan/Korea/Macau pilot second year (21-10-2025 active); Hong Kong original pilot 11-3-2024. LOADED June 2026 (2026-06-29).",
+      "description": "Myanmar Ministry of Hotels and Tourism: Visa on Arrival page - confirmed Japan/Korea/Macau pilot second year (21-10-2025 active); Hong Kong original pilot 11-3-2024. LOADED June 2026 (2026-06-29).",
       "official": true,
       "loaded_june_2026": true
     },
     {
       "url": "https://tourism.gov.mm/en/announcements/visa-on-arrival-for-china-india-nationals-effective-30-08-2025",
-      "description": "Myanmar Ministry of Hotels and Tourism: Confirmed second pilot for China and India VOA — 30 Aug 2025 through 29 Aug 2026. LOADED June 2026 (2026-06-29).",
+      "description": "Myanmar Ministry of Hotels and Tourism: Confirmed second pilot for China and India VOA - 30 Aug 2025 through 29 Aug 2026. LOADED June 2026 (2026-06-29).",
       "official": true,
       "loaded_june_2026": true
     },
     {
       "url": "https://evisa.moip.gov.mm/",
-      "description": "Myanmar Ministry of Immigration and Population official e-visa portal (pages rendered blank — SPA not accessible via WebFetch)",
+      "description": "Myanmar Ministry of Immigration and Population official e-visa portal (pages rendered blank - SPA not accessible via WebFetch)",
       "official": true,
       "loaded_june_2026": false,
-      "load_error": "SPA/JavaScript rendered — blank content"
+      "load_error": "SPA/JavaScript rendered - blank content"
     },
     {
       "url": "https://www.myanmarconsulatehk.org/index.php/visa/e-visa",
-      "description": "Myanmar Consulate Hong Kong: E-Visa page — 100 tourist and 54 business e-visa eligible countries confirmed. LOADED June 2026 (2026-06-29).",
+      "description": "Myanmar Consulate Hong Kong: E-Visa page - 100 tourist and 54 business e-visa eligible countries confirmed. LOADED June 2026 (2026-06-29).",
       "official": true,
       "loaded_june_2026": true
     },
     {
       "url": "https://www.myanmarconsulatehk.org/index.php/visa/visa-on-arrival",
-      "description": "Myanmar Consulate Hong Kong: VOA page — Hong Kong pilot confirmed 11 March 2025 through 10 March 2026 (EXPIRED). No renewal text found. LOADED June 2026 (2026-06-29).",
+      "description": "Myanmar Consulate Hong Kong: VOA page - Hong Kong pilot confirmed 11 March 2025 through 10 March 2026 (EXPIRED). No renewal text found. LOADED June 2026 (2026-06-29).",
       "official": true,
       "loaded_june_2026": true
     },
     {
       "url": "https://www.myanmarconsulatehk.org/index.php/visa/announcement",
-      "description": "Myanmar Consulate Hong Kong: Announcement page — confirmed Malaysia ordinary passport 14-day exemption; Japan/Korea/Macau VOA 21-10-2025. LOADED June 2026 (2026-06-29).",
+      "description": "Myanmar Consulate Hong Kong: Announcement page - confirmed Malaysia ordinary passport 14-day exemption; Japan/Korea/Macau VOA 21-10-2025. LOADED June 2026 (2026-06-29).",
       "official": true,
       "loaded_june_2026": true
     },
     {
       "url": "https://meriyadh.org/list-of-visa-exemption-countries-with-myanmar/",
-      "description": "Embassy of Myanmar in Riyadh: Bilateral visa exemption table — 23 countries listed; Serbia absent; Vietnam ordinary 14 days confirmed; Malaysia 30 days (diplomatic column); Russia listed. LOADED June 2026 (2026-06-29).",
+      "description": "Embassy of Myanmar in Riyadh: Bilateral visa exemption table - 23 countries listed; Serbia absent; Vietnam ordinary 14 days confirmed; Malaysia 30 days (diplomatic column); Russia listed. LOADED June 2026 (2026-06-29).",
       "official": true,
       "loaded_june_2026": true
     },
     {
       "url": "https://www.londonmyanmarembassy.com/index.php/visa-section/visa-types/89-lists-of-visa-exemption-countries",
-      "description": "Embassy of Myanmar in London: Visa exemption list page — HTTP 403 Forbidden; not accessible.",
+      "description": "Embassy of Myanmar in London: Visa exemption list page - HTTP 403 Forbidden; not accessible.",
       "official": true,
       "loaded_june_2026": false,
       "load_error": "HTTP 403 Forbidden"
     },
     {
       "url": "https://yangonairport.aero/index.php/en/media-ygn-airport/news/444-tourist-visa-on-arrival-for-japan-republic-of-korea-and-macao-sar",
-      "description": "Yangon International Airport: Announcement of Tourist VOA for Japan, Korea, Macau (November 2024 — confirmed original pilot launch)",
+      "description": "Yangon International Airport: Announcement of Tourist VOA for Japan, Korea, Macau (November 2024 - confirmed original pilot launch)",
       "official": false,
       "loaded_june_2026": false
     }

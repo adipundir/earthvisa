@@ -228,27 +228,35 @@ export default function DestinationExplorer() {
   // Seed from deep-link query params (e.g. /visit?dest=PRT&passport=IND) so links
   // from the static destination pages land pre-filled on the right destination.
   useEffect(() => {
-    const sp = new URLSearchParams(window.location.search);
-    const valid = new Set(dataset.allCountries.map((c) => c.iso3));
-    const dest = (sp.get("dest") ?? "").trim().toUpperCase();
-    if (valid.has(dest)) setDestIso3(dest);
-    const passports = (sp.get("passport") ?? "")
-      .split(",").map((s) => s.trim().toUpperCase()).filter((s) => valid.has(s));
-    if (passports.length) {
-      setSelected(passports);
-      setPtypes(Object.fromEntries(passports.map((p) => [p, "ordinary" as PassportType])));
-    }
+    // Deferred a tick so state updates never run synchronously in the effect
+    // flush (react-hooks/set-state-in-effect); behavior is unchanged.
+    const t = setTimeout(() => {
+      const sp = new URLSearchParams(window.location.search);
+      const valid = new Set(dataset.allCountries.map((c) => c.iso3));
+      const dest = (sp.get("dest") ?? "").trim().toUpperCase();
+      if (valid.has(dest)) setDestIso3(dest);
+      const passports = (sp.get("passport") ?? "")
+        .split(",").map((s) => s.trim().toUpperCase()).filter((s) => valid.has(s));
+      if (passports.length) {
+        setSelected(passports);
+        setPtypes(Object.fromEntries(passports.map((p) => [p, "ordinary" as PassportType])));
+      }
+    }, 0);
+    return () => clearTimeout(t);
   }, []);
 
-  // Auto-fill the passport from the visitor's detected country — only on an empty
+  // Auto-fill the passport from the visitor's detected country - only on an empty
   // field, never over a deep-link or manual choice. Removable like any chip.
   useEffect(() => {
     if (!detectedPassport || autoSeededRef.current) return;
     if (new URLSearchParams(window.location.search).get("passport")) return;
-    autoSeededRef.current = true;
-    setSelected((prev) => (prev.length ? prev : [detectedPassport]));
-    setPtypes((prev) => (detectedPassport in prev ? prev : { ...prev, [detectedPassport]: "ordinary" }));
-    setAutoDetected(detectedPassport);
+    const t = setTimeout(() => {
+      autoSeededRef.current = true;
+      setSelected((prev) => (prev.length ? prev : [detectedPassport]));
+      setPtypes((prev) => (detectedPassport in prev ? prev : { ...prev, [detectedPassport]: "ordinary" }));
+      setAutoDetected(detectedPassport);
+    }, 0);
+    return () => clearTimeout(t);
   }, [detectedPassport]);
 
   // ── Click-outside handlers ───────────────────────────────────────────────────
@@ -367,7 +375,7 @@ export default function DestinationExplorer() {
         <div ref={destBoxRef} className="relative z-30 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) destInputRef.current?.focus(); }}
-            className={`flex min-h-[2.75rem] w-full items-center gap-3 rounded-lg border bg-white px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
+            className={`flex min-h-[2.75rem] w-full items-center gap-3 rounded-lg border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
               destIso3
                 ? "border-line-strong"
                 : destOpen
@@ -413,7 +421,7 @@ export default function DestinationExplorer() {
           </div>
 
           {destOpen && !destIso3 && destOptions.length > 0 && (
-            <ul id="dest-listbox" role="listbox" aria-label="Matching destinations" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-white py-1 shadow-xl shadow-ink/10">
+            <ul id="dest-listbox" role="listbox" aria-label="Matching destinations" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
               {destOptions.map((c, i) => (
                 <li key={c.iso3} role="option" id={`dest-opt-${i}`} aria-selected={destHi === i}>
                   <button
@@ -444,7 +452,7 @@ export default function DestinationExplorer() {
         <div ref={passBoxRef} className="relative z-20 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) passInputRef.current?.focus(); }}
-            className="flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-white px-4 py-2 transition-colors focus-within:border-stamp focus-within:ring-1 focus-within:ring-stamp"
+            className="flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-card px-4 py-2 transition-colors focus-within:border-stamp focus-within:ring-1 focus-within:ring-stamp"
           >
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
@@ -481,7 +489,7 @@ export default function DestinationExplorer() {
                       <div
                         role="listbox"
                         aria-label="Passport type"
-                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-ink/25"
+                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-black/25"
                       >
                         <p className="mono border-b border-line px-3 pb-2 pt-2 text-[9px] uppercase tracking-[0.18em] text-ink-mute">
                           Passport type
@@ -543,7 +551,7 @@ export default function DestinationExplorer() {
           </div>
 
           {passOpen && passOptions.length > 0 && (
-            <ul id="dest-pass-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-white py-1 shadow-xl shadow-ink/10">
+            <ul id="dest-pass-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
               {passOptions.map((c, i) => (
                 <li key={c.iso3} role="option" id={`dest-pass-opt-${i}`} aria-selected={passHi === i}>
                   <button
@@ -586,7 +594,7 @@ export default function DestinationExplorer() {
         <div ref={credBoxRef} className="relative z-10 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) credInputRef.current?.focus(); }}
-            className={`flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-lg border bg-white px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
+            className={`flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-lg border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
               credOpen ? "border-stamp" : "border-line-strong"
             }`}
           >
@@ -634,7 +642,7 @@ export default function DestinationExplorer() {
           </div>
 
           {credOpen && (
-            <div id="cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-white shadow-xl shadow-ink/10">
+            <div id="cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-card shadow-xl shadow-black/10">
               {credGroupOptions.length === 0 && (
                 <p className="px-4 py-6 text-center text-sm text-ink-mute">No visas or permits found for &ldquo;{credQuery}&rdquo;</p>
               )}
@@ -660,7 +668,7 @@ export default function DestinationExplorer() {
                           className={`inline-flex items-center gap-1.5 rounded border px-3 py-1.5 text-[12px] transition ${
                             on
                               ? "border-stamp/40 bg-stamp/[0.06] font-semibold text-stamp"
-                              : "border-line-strong bg-white text-ink-soft hover:border-ink-mute hover:text-ink"
+                              : "border-line-strong bg-card text-ink-soft hover:border-ink-mute hover:text-ink"
                           } ${credHi === idx ? "ring-1 ring-stamp/60" : ""}`}
                         >
                           {on && <span className="text-[10px] font-bold">✓</span>}
@@ -686,7 +694,7 @@ export default function DestinationExplorer() {
           </div>
           <Link
             href={`/?passport=${selected.join(",")}${creds.length ? `&cred=${creds.join(",")}` : ""}`}
-            className="mono shrink-0 rounded border border-stamp/30 bg-white px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
+            className="mono shrink-0 rounded border border-stamp/30 bg-card px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
           >
             Explore your passport →
           </Link>
@@ -882,7 +890,7 @@ function VfsTypeRow({ v }: { v: VfsVisaType }) {
   const [open, setOpen] = useState(false);
   const docs = v.documents_required?.trim();
   return (
-    <div className="rounded-lg border border-line-strong bg-white">
+    <div className="rounded-lg border border-line-strong bg-card">
       <button
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
@@ -927,15 +935,18 @@ function VfsDocuments({ destIso3, selected }: { destIso3: string; selected: stri
   const [catFilter, setCatFilter] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!corridor) { setDetail(null); return; }
+    // State updates deferred a tick (react-hooks/set-state-in-effect).
     let cancelled = false;
-    setLoading(true); setFailed(false); setDetail(null); setCatFilter(null);
-    fetch(`/api/vfs?src=${corridor.sourceCode}&dest=${corridor.destCode}`)
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((d: VfsCorridorDetail) => { if (!cancelled) setDetail(d); })
-      .catch(() => { if (!cancelled) setFailed(true); })
-      .finally(() => { if (!cancelled) setLoading(false); });
-    return () => { cancelled = true; };
+    const t = setTimeout(() => {
+      if (!corridor) { setDetail(null); return; }
+      setLoading(true); setFailed(false); setDetail(null); setCatFilter(null);
+      fetch(`/api/vfs?src=${corridor.sourceCode}&dest=${corridor.destCode}`)
+        .then((r) => (r.ok ? r.json() : Promise.reject()))
+        .then((d: VfsCorridorDetail) => { if (!cancelled) setDetail(d); })
+        .catch(() => { if (!cancelled) setFailed(true); })
+        .finally(() => { if (!cancelled) setLoading(false); });
+    }, 0);
+    return () => { cancelled = true; clearTimeout(t); };
   }, [corridor]);
 
   if (!corridor) return null;
@@ -1049,7 +1060,7 @@ function ResultCard({
   })();
 
   return (
-    <div className={`overflow-hidden rounded-xl border border-line-strong bg-white shadow-sm border-l-4 ${leftBorder}`}>
+    <div className={`overflow-hidden rounded-xl border border-line-strong bg-card shadow-sm border-l-4 ${leftBorder}`}>
       {/* Header */}
       <div className="flex items-center gap-4 border-b border-line px-6 py-5">
         <span className="text-4xl leading-none">{flag}</span>

@@ -22,7 +22,7 @@ export default function PofCard({ p, iso3 }: { p: ProofOfFunds; iso3?: string })
       </div>
 
       {/* Official */}
-      <div className="mt-4 rounded-md border border-line bg-white/60 p-4">
+      <div className="mt-4 rounded-md border border-line bg-card/60 p-4">
         <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-vfree">Official requirement</p>
         {hasFigure ? (
           <>

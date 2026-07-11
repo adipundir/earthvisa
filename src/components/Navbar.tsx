@@ -3,12 +3,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { fmtDate } from "@/lib/format";
 import BrandMark from "@/components/BrandMark";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const LINKS = [
   { href: "/visit", label: "Entry Check" },
   { href: "/passport", label: "Passports" },
   { href: "/destination", label: "Destinations" },
   { href: "/rankings", label: "Rankings" },
+  { href: "/earthling", label: "Earthling" },
 ];
 
 // lastUpdated is passed from the (server) root layout instead of importing
@@ -27,17 +29,20 @@ export default function Navbar({ lastUpdated }: { lastUpdated: string }) {
           aria-current={path === "/" ? "page" : undefined}
           className="flex items-center gap-2 text-stamp transition hover:opacity-75"
         >
-          <BrandMark size={22} className="shrink-0" />
-          <span className="font-display text-[16px] font-semibold tracking-tight">Earth Visa</span>
+          <BrandMark size={28} className="shrink-0" />
+          <span className="font-display text-[19px] font-semibold tracking-tight">Earth Visa</span>
         </Link>
 
         {/* Mobile-only: shares the logo's row, pinned to the right. Hidden from
             sm upward, where the full meta cluster below covers it instead. */}
-        <span
-          className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute sm:hidden"
-          title={`Data last updated ${lastUpdated}`}
-        >
-          Updated {fmtDate(lastUpdated)}
+        <span className="ml-auto flex items-center gap-1 sm:hidden">
+          <span
+            className="mono text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute"
+            title={`Data last updated ${lastUpdated}`}
+          >
+            Updated {fmtDate(lastUpdated)}
+          </span>
+          <ThemeToggle />
         </span>
 
         {/* w-full forces this onto its own line on mobile (flex-wrap trick);
@@ -65,11 +70,12 @@ export default function Navbar({ lastUpdated }: { lastUpdated: string }) {
         {/* Meta cluster is desktop-only chrome: on mobile it wrapped to a third
             row, pushing the sticky nav to ~120px and burying anchor targets. */}
         <div className="mono ml-auto hidden items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.18em] sm:flex">
-          <span className="text-vfree">Official sources only</span>
+          <span className="text-ink-mute">Official sources only</span>
           <span className="h-3 w-px bg-line-strong" aria-hidden="true" />
           <span className="text-ink-mute" title={`Data last updated ${lastUpdated}`}>
             Updated {fmtDate(lastUpdated)}
           </span>
+          <ThemeToggle />
         </div>
       </div>
     </nav>

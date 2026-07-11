@@ -170,7 +170,7 @@ function PassportIllustration() {
   return (
     <div className="relative select-none" aria-hidden="true">
       {/* Drop shadow layer */}
-      <div className="absolute inset-0 translate-x-2 translate-y-3 rounded-lg bg-ink/20 blur-2xl" />
+      <div className="absolute inset-0 translate-x-2 translate-y-3 rounded-lg bg-black/25 blur-2xl dark:bg-white/10" />
 
       {/* Passport open spread */}
       <svg
@@ -273,11 +273,11 @@ function PassportIllustration() {
 
         {/* ── VISA STAMP 3 - Transit (blue), lower left of bio page ── */}
         <g transform="translate(138, 152) rotate(-12)">
-          <circle cx="0" cy="0" r="28" fill="#f0f4ff" fillOpacity="0.8" stroke="#3b5bdb" strokeWidth="1.4" />
-          <circle cx="0" cy="0" r="22" fill="none" stroke="#3b5bdb" strokeWidth="0.5" opacity="0.45" />
-          <text x="0" y="-5" textAnchor="middle" fontFamily="monospace" fontSize="6" fill="#3b5bdb" fontWeight="bold" letterSpacing="1">TRANSIT</text>
-          <text x="0" y="7" textAnchor="middle" fontFamily="monospace" fontSize="5" fill="#3b5bdb" opacity="0.7">48 HRS</text>
-          <text x="0" y="17" textAnchor="middle" fontFamily="monospace" fontSize="4.5" fill="#3b5bdb" opacity="0.5">08 FEB 2026</text>
+          <circle cx="0" cy="0" r="28" fill="#f0f4ff" fillOpacity="0.8" stroke="#59647d" strokeWidth="1.4" />
+          <circle cx="0" cy="0" r="22" fill="none" stroke="#59647d" strokeWidth="0.5" opacity="0.45" />
+          <text x="0" y="-5" textAnchor="middle" fontFamily="monospace" fontSize="6" fill="#59647d" fontWeight="bold" letterSpacing="1">TRANSIT</text>
+          <text x="0" y="7" textAnchor="middle" fontFamily="monospace" fontSize="5" fill="#59647d" opacity="0.7">48 HRS</text>
+          <text x="0" y="17" textAnchor="middle" fontFamily="monospace" fontSize="4.5" fill="#59647d" opacity="0.5">08 FEB 2026</text>
         </g>
       </svg>
     </div>

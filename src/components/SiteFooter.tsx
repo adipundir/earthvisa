@@ -16,6 +16,7 @@ const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/passport", label: "All passports" },
       { href: "/destination", label: "All destinations" },
       { href: "/rankings", label: "Passport ranking 2026" },
+      { href: "/earthling", label: "Claim your Earthling ID" },
     ],
   },
   {
@@ -57,8 +58,8 @@ export default function SiteFooter() {
           {/* Brand + methodology */}
           <div className="max-w-xs">
             <div className="flex items-center gap-2 text-stamp">
-              <BrandMark size={22} className="shrink-0" />
-              <span className="font-display text-[16px] font-semibold tracking-tight">Earth Visa</span>
+              <BrandMark size={28} className="shrink-0" />
+              <span className="font-display text-[19px] font-semibold tracking-tight">Earth Visa</span>
             </div>
             <p className="mt-3 text-[13px] leading-relaxed text-ink-soft">
               Visa rules, fees and entry requirements for {TOTAL_PASSPORTS} passports - sourced only from official

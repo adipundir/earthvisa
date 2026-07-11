@@ -90,7 +90,7 @@ function fmtDay(iso: string | null | undefined): string | null {
 
 // VFS checklist bodies embed an insurance upsell ("Get the peace of mind you
 // need on your travels, with insurance made simple…") that is marketing, not a
-// document requirement. Strip it at render time — genuine insurance
+// document requirement. Strip it at render time - genuine insurance
 // requirements ("Travel insurance is mandatory for all Schengen countries…")
 // stay untouched, and the underlying data files are never mutated.
 function stripVfsBoilerplate(text: string): string {
@@ -106,6 +106,123 @@ function stripVfsBoilerplate(text: string): string {
     out.push(line);
   }
   return out.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+
+// VFS checklists occasionally embed advisories aimed at OTHER nationalities
+// ("Nepal passport holders should provide NOC…" inside the India→Thailand
+// file) plus meta-instructions about the checklist form itself ("the
+// application form will not be accepted without the relevant check list").
+// Both are noise on a corridor page: the former is wrong-audience, the latter
+// is restated once, cleanly, under the PDF checklist links.
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function cleanChecklistLines(text: string, keepNames: string[], foreignNames: string[]): string {
+  const keep = keepNames.map((s) => s.toLowerCase());
+  const foreign = foreignNames.map((name) => new RegExp(`\\b${esc(name.toLowerCase())}\\b`));
+  return text
+    .split("\n")
+    .filter((raw) => {
+      const line = raw.trim();
+      if (/^important notes?:?$/i.test(line)) return false;
+      if (/^documents? required:?$/i.test(line)) return false;
+      if (/mandatory documents.*mentioned in the checklist/i.test(line)) return false;
+      if (/checklist needs to be filled for each application/i.test(line)) return false;
+      if (/application form will not be accepted without the relevant check ?list/i.test(line)) return false;
+      // "click here" references whose hyperlink didn't survive the crawl point nowhere.
+      if (/click here/i.test(line) && !/https?:\/\//i.test(line)) return false;
+      if (/passport holders?/i.test(line)) {
+        const l = line.toLowerCase();
+        // Only drop when a foreign country name DIRECTLY modifies the audience
+        // phrase ("Nepal passport holders", "Pakistan passport holders") - a
+        // name merely appearing elsewhere in the line must not trigger the
+        // drop (real case: "...(EEA: Norway, Iceland...) ... passport holders
+        // of these countries are exempt" is FOR this page's reader).
+        const prefix = (i: number) => l.slice(Math.max(0, i - 40), i);
+        const idx = l.search(/passport holders?/);
+        if (!keep.some((k) => l.includes(k)) && foreign.some((rx) => rx.test(prefix(idx)))) return false;
+      }
+      return true;
+    })
+    // Dead anchor text: a trailing bare "Link" with no URL on the line is the
+    // residue of a hyperlink the crawl flattened - drop the token, keep the sentence.
+    .map((raw) => (!/https?:\/\//i.test(raw) && /\bLink\b[\s.]*$/.test(raw.trim())
+      ? raw.replace(/\s*[:,-]?\s*\bLink\b[\s.]*$/, ".")
+      : raw))
+    .filter((raw) => raw.trim() !== "." && raw.trim() !== "")
+    .join("\n");
+}
+
+// Checklist bodies arrive as undifferentiated text. Classify each line so the
+// UI can render real structure instead of a wall of prose: PDF checklist
+// links ("Tourist - Single (https://…/x.pdf)"), "- " requirement bullets, and
+// anything else as a plain note paragraph.
+function parseDocBlocks(text: string): { pdfs: { label: string; url: string }[]; bullets: string[]; notes: string[] } {
+  const pdfs: { label: string; url: string }[] = [];
+  const bullets: string[] = [];
+  const notes: string[] = [];
+  for (const raw of text.split("\n")) {
+    const line = raw.trim();
+    if (!line) continue;
+    const pdf = /^(.{2,120}?)\s*\(\s*(https?:\/\/\S+?\.pdf[^\s)]*)\s*\)[\s.]*$/i.exec(line);
+    if (pdf) {
+      let label = pdf[1].replace(/[-–—:\s]+$/, "").trim();
+      // Some crawled lines are "url (url)" duplicates - a raw URL is useless
+      // as a pill label, so fall back to the PDF's decoded filename.
+      if (/https?:\/\//i.test(label)) {
+        try {
+          const fname = decodeURIComponent(new URL(pdf[2]).pathname.split("/").pop() ?? "");
+          label = fname.replace(/\.pdf$/i, "").replace(/[-_]+/g, " ").trim() || "Checklist";
+        } catch { label = "Checklist"; }
+      }
+      pdfs.push({ label, url: pdf[2] });
+      continue;
+    }
+    if (/^[-•*]\s+/.test(line)) { bullets.push(line.replace(/^[-•*]\s+/, "")); continue; }
+    notes.push(line);
+  }
+  return { pdfs, bullets, notes };
+}
+
+function DocBlocks({ text }: { text: string }) {
+  const { pdfs, bullets, notes } = parseDocBlocks(text);
+  return (
+    <div className="space-y-3">
+      {pdfs.length > 0 && (
+        <div>
+          <div className="flex flex-wrap gap-2">
+            {pdfs.map((p, i) => (
+              <a
+                key={i}
+                href={p.url}
+                target="_blank"
+                rel="noreferrer"
+                className="mono inline-flex min-h-[32px] items-center gap-1.5 rounded-md border border-line-strong bg-card px-2.5 py-1 text-[11px] text-ink-soft transition hover:border-stamp hover:text-stamp"
+              >
+                <svg viewBox="0 0 12 14" aria-hidden="true" className="h-3 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M2 1h5l3 3v9H2z" strokeLinejoin="round" /><path d="M7 1v3h3" strokeLinejoin="round" /></svg>
+                {p.label}
+                <span className="text-ink-mute">PDF ↗</span>
+              </a>
+            ))}
+          </div>
+          <p className="mt-1.5 text-[11px] leading-relaxed text-ink-mute">
+            Official checklist{pdfs.length > 1 ? "s" : ""} - fill in the one for your visa type and submit it with the application form.
+          </p>
+        </div>
+      )}
+      {bullets.length > 0 && (
+        <ul className="space-y-1.5">
+          {bullets.map((b, i) => (
+            <li key={i} className="flex gap-2.5 text-[12.5px] leading-relaxed text-ink-soft">
+              <span aria-hidden="true" className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+              <span className="min-w-0 break-words">{linkifyDocs(b)}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      {notes.map((t, i) => (
+        <p key={i} className="break-words text-[12.5px] leading-relaxed text-ink-soft">{linkifyDocs(t)}</p>
+      ))}
+    </div>
+  );
 }
 
 // Requirement lines (each "- ..." bullet) that are byte-identical across every
@@ -126,7 +243,7 @@ function extractCommonLines<T extends { documents_required: string }>(entries: T
 }
 
 // Bare URLs in checklist text (100+ character asset links) become real anchors
-// with a short label — otherwise they are unclickable and, being unbreakable
+// with a short label - otherwise they are unclickable and, being unbreakable
 // strings, force horizontal overflow on mobile.
 const URL_RE = /https?:\/\/[^\s)\]>]+/g;
 function linkifyDocs(text: string): React.ReactNode[] {
@@ -158,12 +275,12 @@ const VERB: Record<string, string> = {
 
 function answerSentence(nat: string, dest: string, s: Status): string {
   switch (s.kind) {
-    case "own": return `${nat} citizens do not need a visa for ${dest} — it is their own country.`;
-    case "fom": return `${nat} citizens have freedom of movement in ${dest} — they can live, work and travel there with no visa.`;
-    case "visa_free": return `No — ${nat} passport holders do not need a visa for ${dest}. Entry is visa-free${s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""} as of 2026.`;
+    case "own": return `${nat} citizens do not need a visa for ${dest} - it is their own country.`;
+    case "fom": return `${nat} citizens have freedom of movement in ${dest} - they can live, work and travel there with no visa.`;
+    case "visa_free": return `No - ${nat} passport holders do not need a visa for ${dest}. Entry is visa-free${s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""} as of 2026.`;
     case "visa_on_arrival": return `${nat} passport holders can get a visa on arrival for ${dest}${s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}, so no visa is needed before travelling.`;
-    case "eta": return `${nat} passport holders need an approved eTA (electronic travel authorisation) before travelling to ${dest} — a quick online pre-screening completed before departure, not a full visa.`;
-    case "e_visa": return `${nat} passport holders can apply online for a ${dest} e-Visa before travel. Unlike an eTA, this is an actual visa — just issued digitally — so no embassy visit is needed for eligible short-term visits. Eligibility and covered purposes vary, so check the conditions below.`;
+    case "eta": return `${nat} passport holders need an approved eTA (electronic travel authorisation) before travelling to ${dest} - a quick online pre-screening completed before departure, not a full visa.`;
+    case "e_visa": return `${nat} passport holders can apply online for a ${dest} e-Visa before travel. Unlike an eTA, this is an actual visa - just issued digitally - so no embassy visit is needed for eligible short-term visits. Eligibility and covered purposes vary, so check the conditions below.`;
     default: return `${nat} passport holders need a visa to enter ${dest}. Apply at a ${dest} embassy or consulate, or the official visa portal, before travelling.`;
   }
 }
@@ -173,13 +290,13 @@ function answerSentence(nat: string, dest: string, s: Status): string {
 // instead of repeating it verbatim.
 function faqAnswerSentence(nat: string, dest: string, s: Status): string {
   switch (s.kind) {
-    case "own": return `No — ${dest} is ${nat}'s own country.`;
-    case "fom": return `No — ${nat} citizens have freedom of movement in ${dest} under their bloc membership, which includes the right to live and work there, not just visit.`;
+    case "own": return `No - ${dest} is ${nat}'s own country.`;
+    case "fom": return `No - ${nat} citizens have freedom of movement in ${dest} under their bloc membership, which includes the right to live and work there, not just visit.`;
     case "visa_free": return `No visa is required${s.maxStayDays ? ` for stays of up to ${s.maxStayDays} days` : ""}.`;
-    case "visa_on_arrival": return `No advance visa is required — ${nat} citizens get a visa on arrival at the border${s.maxStayDays ? ` for stays of up to ${s.maxStayDays} days` : ""}.`;
-    case "eta": return `Not a visa, but yes — an approved eTA (a quick online pre-screening) is required before travelling.`;
-    case "e_visa": return `Yes, but it can be completed entirely online — no embassy visit is required for eligible short-term visits.`;
-    default: return `Yes — ${nat} citizens must apply for a visa in advance at a ${dest} embassy, consulate, or official visa portal before travelling.`;
+    case "visa_on_arrival": return `No advance visa is required - ${nat} citizens get a visa on arrival at the border${s.maxStayDays ? ` for stays of up to ${s.maxStayDays} days` : ""}.`;
+    case "eta": return `Not a visa, but yes - an approved eTA (a quick online pre-screening) is required before travelling.`;
+    case "e_visa": return `Yes, but it can be completed entirely online - no embassy visit is required for eligible short-term visits.`;
+    default: return `Yes - ${nat} citizens must apply for a visa in advance at a ${dest} embassy, consulate, or official visa portal before travelling.`;
   }
 }
 
@@ -270,9 +387,14 @@ function ApplyLink({ href, label = "Apply here" }: { href: string; label?: strin
 // the source publishes (insurance/minors/entry-point clauses etc.), alongside
 // the existing name/purpose/stay/fee/apply-link fields.
 function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean }) {
-  const processing = v.processing_days_min != null
-    ? `${v.processing_days_min}${v.processing_days_max != null && v.processing_days_max !== v.processing_days_min ? `-${v.processing_days_max}` : ""}d processing`
-    : null;
+  // A 0-day minimum means sub-24h turnaround - never print "0d processing".
+  // Types that publish only a max still get "up to Nd processing".
+  const pMin = v.processing_days_min, pMax = v.processing_days_max;
+  const processing = pMin == null && pMax == null
+    ? null
+    : pMin == null || pMin === 0
+      ? (pMax != null && pMax > 0 ? `up to ${pMax}d processing` : pMin === 0 ? "under 24h processing" : null)
+      : `${pMin}${pMax != null && pMax !== pMin ? `-${pMax}` : ""}d processing`;
   return (
     <div className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
       <p className="font-display text-[14px] font-semibold text-ink">{v.name}</p>
@@ -282,7 +404,7 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
         {v.entries && <span>{v.entries} entry</span>}
         {processing && <span>{processing}</span>}
         {/* Suppress the rough USD figure when the official fee section above
-            already quotes the same fee — two conversions of one fee reads as an error. */}
+            already quotes the same fee - two conversions of one fee reads as an error. */}
         {v.fee_usd != null && !suppressFee && (v.fee_usd === 0 ? <span className="text-vfree">free</span> : <span>~${v.fee_usd}</span>)}
         {v.online && <span className="text-vfree">online</span>}
       </div>
@@ -306,7 +428,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const s = resolve(n.iso3, d.iso3);
   const nd = DEMONYM[n.iso3] ?? n.name;
   const need = s.kind === "visa_required" || s.kind === "e_visa" || s.kind === "eta";
-  // No visa (and no visa fee) is needed for a short stay — every fee/document
+  // No visa (and no visa fee) is needed for a short stay - every fee/document
   // mention must carry that context or the page contradicts its own headline.
   const noVisaShortStay = s.kind === "visa_free" || s.kind === "fom" || s.kind === "own";
   // Colloquial phrasing (Dubai/Bali/Umrah) - content stays official-jurisdiction accurate.
@@ -335,9 +457,18 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           return data.visa_types ?? [];
         } catch { return []; }
       });
+      // Names this page's audience answers to (nationality country + demonym;
+      // NOT the destination - "for applying Thailand Visa" appears in nearly
+      // every advisory). "Passport holder" advisories naming a different
+      // country are wrong-audience noise and get dropped by cleanChecklistLines.
+      const keepNames = [n.name, nd];
+      const foreignNames = dataset.allCountries.filter((c) => c.iso3 !== n.iso3 && c.iso3 !== d.iso3).map((c) => c.name);
       const all = merged
         .filter((v: { documents_required?: string | null }) => v.documents_required)
-        .map((v: { name: string; category: string; documents_required: string }) => ({ ...v, documents_required: stripVfsBoilerplate(v.documents_required) }))
+        .map((v: { name: string; category: string; documents_required: string }) => ({
+          ...v,
+          documents_required: cleanChecklistLines(stripVfsBoilerplate(v.documents_required), keepNames, foreignNames),
+        }))
         .filter((v: { documents_required: string }) => v.documents_required)
         // Tourist first: it's what the vast majority of readers actually need,
         // and a hard positional cutoff below must not bury it under niche types.
@@ -393,7 +524,62 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const sameNat = TOP_DESTINATIONS.filter((x) => x !== d.iso3 && x !== n.iso3 && isUsefulCorridor(n.iso3, x)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
   const sameDest = TOP_NATIONALITIES.filter((x) => x !== n.iso3 && x !== d.iso3 && isUsefulCorridor(x, d.iso3)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
 
-  // Cost FAQ: never assert a visa fee for a corridor where no visa is needed —
+  // ── Verdict-card facts: the numbers a traveler actually came for, pulled out
+  // of the prose and into one scannable strip at the top of the page. ─────────
+  const stayFact = s.kind === "fom" ? "Unlimited" : "maxStayDays" in s && s.maxStayDays ? `${s.maxStayDays} days` : "Varies";
+  const costFact =
+    s.kind === "own" ? null
+    : noVisaShortStay ? "Free"
+    : headlineFee
+      ? (headlineFee.amount === 0 ? "Free" : headlineFee.amount != null ? `${headlineFee.currency ?? ""} ${headlineFee.amount.toLocaleString()}`.trim() : "See source")
+      : "Not published";
+  const applyFact =
+    s.kind === "own" ? "Home country"
+    : s.kind === "fom" || s.kind === "visa_free" ? "Nothing to arrange"
+    : s.kind === "visa_on_arrival" ? "At the border"
+    : s.kind === "eta" || s.kind === "e_visa" ? "Online, before travel"
+    : "Embassy / visa centre";
+  const hasProcessing = (v: VisaType) => v.processing_days_min != null || v.processing_days_max != null;
+  const processingType = need
+    ? visaTypes.find((v) => v.category === "tourist" && hasProcessing(v)) ?? visaTypes.find(hasProcessing)
+    : undefined;
+  // min of 0 days = sub-24-hour turnaround (e.g. Seychelles TA standard
+  // processing) - "0 days" reads as broken data, so speak human instead.
+  // 124 visa types publish only a max - "Up to N days" covers those too.
+  const processingFact = (() => {
+    const min = processingType?.processing_days_min;
+    const max = processingType?.processing_days_max;
+    if (min == null && max == null) return null;
+    if (min == null || min === 0) return max != null && max > 0 ? `Up to ${max} day${max === 1 ? "" : "s"}` : min === 0 ? "Under 24 hours" : null;
+    if (max != null && max !== min) return `${min}-${max} days`;
+    return `${min} day${min === 1 ? "" : "s"}`;
+  })();
+  const facts = [
+    { k: "Max stay", v: stayFact },
+    costFact ? { k: "Visa cost", v: costFact } : null,
+    { k: "How to apply", v: applyFact },
+    processingFact ? { k: "Processing", v: processingFact } : null,
+  ].filter(Boolean) as { k: string; v: string }[];
+
+  // Rail plumbing: which sections exist (jump links) + the primary apply URL.
+  const TRAVELER_CATS = new Set(["tourist", "business", "transit"]);
+  const hasTypesSection =
+    visaTypes.length > 0 &&
+    ((!hasVfs && need && visaTypes.some((v) => TRAVELER_CATS.has(v.category))) ||
+      visaTypes.some((v) => !TRAVELER_CATS.has(v.category)));
+  const applyUrl = need
+    ? (("sourceUrl" in s && s.sourceUrl) || visaTypes.find((v) => v.official_url)?.official_url || null)
+    : null;
+  const jumpLinks = [
+    { href: "#apply", label: need ? "How to apply" : "How to enter" },
+    credGroups.length > 0 ? { href: "#no-advance-visa", label: "No-visa exceptions" } : null,
+    feeList.length > 0 ? { href: "#fees", label: "Fees" } : null,
+    vfsDocs.length > 0 ? { href: "#documents", label: "Documents" } : null,
+    hasTypesSection ? { href: "#visa-types", label: "Visa types" } : null,
+    { href: "#faq", label: "FAQ" },
+  ].filter(Boolean) as { href: string; label: string }[];
+
+  // Cost FAQ: never assert a visa fee for a corridor where no visa is needed  - 
   // on visa-free / freedom-of-movement corridors the answer leads with "no
   // fee" and frames any published fee as the longer-stay visa option. This
   // text is also emitted into FAQPage JSON-LD, so it must stand alone. Skipped
@@ -416,7 +602,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     costFaq = {
       q: `How much does the ${d.name} visa cost for ${nd} citizens?`,
       a: noVisaShortStay
-        ? `Nothing for a short visit — ${nd} citizens ${s.kind === "fom" ? `have freedom of movement in ${d.name}` : `enter ${d.name} visa-free${"maxStayDays" in s && s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""}`}, so there is no visa fee. If you need a visa for a longer stay, ${feeClause}.${vfsNote}`
+        ? `Nothing for a short visit - ${nd} citizens ${s.kind === "fom" ? `have freedom of movement in ${d.name}` : `enter ${d.name} visa-free${"maxStayDays" in s && s.maxStayDays ? ` for up to ${s.maxStayDays} days` : ""}`}, so there is no visa fee. If you need a visa for a longer stay, ${feeClause}.${vfsNote}`
         : `${feeClause.charAt(0).toUpperCase()}${feeClause.slice(1)}.${vfsNote}`,
     };
   }
@@ -431,14 +617,14 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       a: noVisaShortStay
         ? `A valid passport is all ${nd} citizens need for a short ${s.kind === "fom" ? "stay" : "visa-free visit"}${"maxStayDays" in s && s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}.${vfsDocs.length > 0 ? ` If you apply for a longer-stay visa, Earth Visa lists the full required documents per visa category from the official visa application centre.` : ""}`
         : vfsDocs.length > 0
-          ? `A valid passport plus the ${d.name} document checklist for your visa type — Earth Visa lists the full required documents per visa category from the official visa application centre.`
-          : `A passport valid well beyond your planned stay (commonly three to six months, depending on the destination), proof of onward travel and funds, and any documents required for the specific ${d.name} visa category — check the official portal for the exact passport-validity rule.`,
+          ? `A valid passport plus the ${d.name} document checklist for your visa type - Earth Visa lists the full required documents per visa category from the official visa application centre.`
+          : `A passport valid well beyond your planned stay (commonly three to six months, depending on the destination), proof of onward travel and funds, and any documents required for the specific ${d.name} visa category - check the official portal for the exact passport-validity rule.`,
     },
     aliasLead
-      ? { q: `Is the ${aliasLead} visa different from the ${SHORT_NAME[d.iso3] ?? d.name} visa?`, a: `No. ${aliasNote ?? `${aliasLead} follows ${d.name}'s national visa policy.`} There is no separate ${aliasLead} visa — the ${d.name} rules on this page are what apply.` }
+      ? { q: `Is the ${aliasLead} visa different from the ${SHORT_NAME[d.iso3] ?? d.name} visa?`, a: `No. ${aliasNote ?? `${aliasLead} follows ${d.name}'s national visa policy.`} There is no separate ${aliasLead} visa - the ${d.name} rules on this page are what apply.` }
       : null,
     umrah
-      ? { q: `Can ${nd} citizens perform Umrah — do they need a separate Umrah visa?`, a: `Saudi Arabia permits Umrah (not Hajj) on a tourist visa, and also issues dedicated Umrah visas processed through the official Nusuk platform. ${nd} pilgrims should apply via Nusuk or an authorised Umrah operator.` }
+      ? { q: `Can ${nd} citizens perform Umrah - do they need a separate Umrah visa?`, a: `Saudi Arabia permits Umrah (not Hajj) on a tourist visa, and also issues dedicated Umrah visas processed through the official Nusuk platform. ${nd} pilgrims should apply via Nusuk or an authorised Umrah operator.` }
       : null,
     costFaq,
   ].filter(Boolean) as { q: string; a: string }[];
@@ -470,13 +656,11 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 <span>/</span>
                 <span className="text-ink-soft">{d.name}</span>
               </nav>
-              <h1 className="flex items-center gap-3 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
-                <span className="text-4xl leading-none">{flagFor(d.iso3)}</span>
-                <span>
-                  {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
-                  <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
-                    {umrah ? "Tourist & Umrah — 2026 Requirements" : "2026 Requirements, Fees & Documents"}
-                  </span>
+              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+                <span className="mr-2.5 align-baseline text-[0.9em] leading-none" aria-hidden="true">{flagFor(d.iso3)}</span>
+                {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
+                <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
+                  {umrah ? "Tourist & Umrah - 2026 Requirements" : "2026 Requirements, Fees & Documents"}
                 </span>
               </h1>
               {aliasNote && (
@@ -484,38 +668,59 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   {aliasNote}
                 </p>
               )}
-              <div className="mt-4 flex flex-wrap items-center gap-3">
-                <StatusBadge s={s} />
-                {"maxStayDays" in s && s.maxStayDays ? (
-                  <span className="text-sm text-ink-soft"><span className="font-semibold text-ink">{s.maxStayDays}</span> days max stay</span>
+              {/* Verdict card: the whole answer, scannable in one glance -
+                  status, one-line verdict, and the facts a traveler actually
+                  came for pulled out of the prose into a strip. */}
+              <div className="mt-6">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
+                  <StatusBadge s={s} />
+                  <p className="min-w-0 flex-1 text-[15px] leading-relaxed text-ink-soft">{answerSentence(nd, d.name, s)}</p>
+                </div>
+                <dl className={`mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line ${facts.length >= 4 ? "sm:grid-cols-4" : "sm:grid-cols-3"}`}>
+                  {facts.map((f, i) => (
+                    <div key={f.k} className={`bg-card px-4 py-3 ${facts.length % 2 === 1 && i === facts.length - 1 ? "col-span-2 sm:col-span-1" : ""}`}>
+                      <dt className="mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink-mute">{f.k}</dt>
+                      <dd className="mt-1 font-display text-[17px] font-semibold leading-snug text-ink">{f.v}</dd>
+                    </div>
+                  ))}
+                </dl>
+                {"notes" in s && s.notes ? (
+                  <p className="mt-4 rounded-lg border border-eta/25 bg-eta/[0.05] px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
+                    <span className="mono mr-2 text-[10px] font-medium uppercase tracking-[0.14em] text-eta">Policy note</span>
+                    {s.notes}
+                  </p>
                 ) : null}
+                <div className="mono mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-line pt-3.5 text-[11px] text-ink-mute">
+                  {"sourceUrl" in s && s.sourceUrl ? (
+                    <a href={s.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-ink">
+                      <span className={`inline-block h-2 w-2 rounded-full ${s.sourceOfficial ? "bg-vfree" : "bg-eta"}`} />
+                      {(() => { try { return new URL(s.sourceUrl).hostname.replace(/^www\./, ""); } catch { return "official source"; } })()} ↗
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full bg-vfree" />official government sources</span>
+                  )}
+                  <Link href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind] ?? "visa-required"}`} className="transition hover:text-ink">
+                    What does &ldquo;{s.kind === "own" ? "home country" : s.kind === "fom" ? "freedom of movement" : s.kind === "visa_required" ? "visa required" : LEVEL_LABEL[s.kind].toLowerCase()}&rdquo; mean? →
+                  </Link>
+                </div>
               </div>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">{answerSentence(nd, d.name, s)}</p>
-              {"notes" in s && s.notes ? (
-                <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">{s.notes}</p>
-              ) : null}
               {need && applicationNoteFor(d.iso3) ? (
-                <p className="mt-3 max-w-2xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">
+                <p className="mt-4 max-w-3xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">
                   <span className="mono mr-2 text-[10px] font-medium uppercase tracking-[0.14em] text-stamp">How it works</span>
                   {applicationNoteFor(d.iso3)}
                 </p>
-              ) : null}
-              {"sourceUrl" in s && s.sourceUrl ? (
-                <a href={s.sourceUrl} target="_blank" rel="noreferrer" className="mono mt-3 inline-flex items-center gap-1.5 text-[11px] text-ink-mute transition hover:text-ink">
-                  <span className={`inline-block h-2 w-2 rounded-full ${s.sourceOfficial ? "bg-vfree" : "bg-eta"}`} />
-                  {(() => { try { return new URL(s.sourceUrl).hostname.replace(/^www\./, ""); } catch { return "official source"; } })()} ↗
-                </a>
               ) : null}
             </div>
           </div>
         </header>
 
-        <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
+        <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 lg:grid lg:grid-cols-[minmax(0,1fr)_290px] lg:items-start lg:gap-12">
+          <div className="min-w-0">
           {/* What you need to do */}
           {(() => {
             const fallbackApplyUrl = visaTypes.find((v) => v.official_url)?.official_url;
             return (
-          <section className="mb-10">
+          <section id="apply" className="mb-10 scroll-mt-24">
             <h2 className="font-display text-xl font-semibold text-ink">
               {need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
             </h2>
@@ -546,7 +751,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </li>
               )}
               {vfsDocs.length > 0 && (
-                <li>→ <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " — only needed if you apply for a longer-stay visa" : ", by visa type"}.</li>
+                <li>→ <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " - only needed if you apply for a longer-stay visa" : ", by visa type"}.</li>
               )}
             </ul>
           </section>
@@ -555,7 +760,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
           {/* Held-credential exceptions - officially published no-advance-visa routes */}
           {credGroups.length > 0 && (
-            <section className="mb-10 border-t border-line pt-8">
+            <section id="no-advance-visa" className="mb-10 scroll-mt-24 border-t border-line pt-8">
               <h2 className="font-display text-xl font-semibold text-ink">
                 No advance visa with these documents
               </h2>
@@ -570,11 +775,11 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     </p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {group.map((u) => (
-                        <span key={u.cred} className="mono rounded-[3px] bg-white px-2 py-0.5 text-[11px] text-ink ring-1 ring-line-strong">{u.label}</span>
+                        <span key={u.cred} className="mono rounded-[3px] bg-card px-2 py-0.5 text-[11px] text-ink ring-1 ring-line-strong">{u.label}</span>
                       ))}
                     </div>
                     {group[0].conditions && (
-                      <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{group[0].conditions}. Conditions vary slightly per document — check each rule via the official source{group[0].sourceUrl ? "" : ""}.</p>
+                      <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{group[0].conditions}. Conditions vary slightly per document - check each rule via the official source{group[0].sourceUrl ? "" : ""}.</p>
                     )}
                     {group[0].sourceUrl && (
                       <a href={group[0].sourceUrl} target="_blank" rel="noreferrer" className="mono mt-1.5 inline-block text-[11px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
@@ -594,7 +799,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
           {/* Official visa fees (crawled from government sources) */}
           {feeList.length > 0 && (
-            <section className="mb-10 border-t border-line pt-8">
+            <section id="fees" className="mb-10 scroll-mt-24 border-t border-line pt-8">
               <h2 className="font-display text-xl font-semibold text-ink">
                 {d.name} visa cost for {nd} citizens
               </h2>
@@ -660,7 +865,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   (src.includes(`/${n.iso3.toLowerCase()}/`) || src.includes(`/${natSlugLower}/`) || src.includes(`/${n.name.toLowerCase()}/`));
                 return (
                   <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-                    Applications are handled via {destFees.vfs.operator} — {natMatch
+                    Applications are handled via {destFees.vfs.operator} - {natMatch
                       ? `the service fee for ${nd} applicants is about ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee} on top of the visa fee (varies by centre).`
                       : `a service fee applies on top of the visa fee and varies by country and centre.`}
                   </p>
@@ -672,43 +877,54 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             </section>
           )}
 
-          {/* VFS document checklist — genuinely per-corridor content */}
+          {/* VFS document checklist - genuinely per-corridor content */}
           {vfsDocs.length > 0 && (() => {
             const visible = vfsDocs.slice(0, VFS_PREVIEW);
             const hidden = vfsDocs.slice(VFS_PREVIEW);
+            // Raw VFS names are often ALL CAPS ("TOURIST") and the category chip
+            // duplicated them ("TOURIST TOURIST") - title-case shouty names and
+            // only show the chip when it adds information.
+            const prettyName = (raw: string) => {
+              const t = raw.trim();
+              return t === t.toUpperCase() && /[A-Z]{3}/.test(t)
+                ? t.toLowerCase().replace(/(^|[\s(/:-])([a-z])/g, (m, pre, ch) => pre + ch.toUpperCase())
+                : t;
+            };
             const renderDoc = (v: typeof vfsDocs[number], i: number) => (
-              <details key={i} className="group rounded-lg border border-line-strong bg-white">
-                <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 px-4 py-2.5">
-                  <span className="mono shrink-0 rounded-[3px] bg-paper-3 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-ink-soft">{v.category}</span>
-                  <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
+              <details key={i} className="group">
+                <summary className="flex min-h-[48px] cursor-pointer list-none items-center gap-3 py-3 [&::-webkit-details-marker]:hidden">
+                  <span className="font-display text-[14px] font-medium text-ink transition group-open:text-stamp">{prettyName(v.name)}</span>
+                  {v.category.toLowerCase() !== v.name.trim().toLowerCase() && (
+                    <span className="mono shrink-0 rounded-[3px] bg-paper-3 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-ink-mute">{v.category}</span>
+                  )}
                   <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-auto h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </summary>
-                <div className="border-t border-line px-4 py-3">
+                <div className="pb-5 pr-6 pt-1">
                   {v.documents_required ? (
-                    <p className="whitespace-pre-wrap break-words text-[12px] leading-relaxed text-ink-soft">{linkifyDocs(v.documents_required)}</p>
+                    <DocBlocks text={v.documents_required} />
                   ) : (
-                    <p className="text-[12px] italic leading-relaxed text-ink-mute">Same requirements as above, plus this visa type&apos;s stated stay/fee terms.</p>
+                    <p className="text-[12.5px] italic leading-relaxed text-ink-mute">Same requirements as above, plus this visa type&apos;s stated stay/fee terms.</p>
                   )}
                 </div>
               </details>
             );
             return (
-            <section className="mb-10 border-t border-line pt-8">
+            <section id="documents" className="mb-10 scroll-mt-24 border-t border-line pt-8">
               <h2 className="font-display text-xl font-semibold text-ink">
                 {noVisaShortStay ? `${d.name} visa documents for ${nd} applicants` : `Documents required for ${nd} applicants`}
               </h2>
               <p className="mt-1 text-sm text-ink-soft">
                 {noVisaShortStay
-                  ? `No visa documents are needed for a short visit — ${nd} citizens enter ${d.name} with just a valid passport. If you apply for a longer-stay visa, these are the exact documents required, by visa type, from the official visa application centre.`
+                  ? `No visa documents are needed for a short visit - ${nd} citizens enter ${d.name} with just a valid passport. If you apply for a longer-stay visa, these are the exact documents required, by visa type, from the official visa application centre.`
                   : `The exact documents ${nd} citizens must submit for ${d.name}, by visa type, from the official visa application centre.`}
               </p>
               {vfsCommonLines.length > 0 && (
-                <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                  <p className="mono mb-1.5 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">Required for every visa type below</p>
-                  <p className="whitespace-pre-wrap break-words text-[12px] leading-relaxed text-ink-soft">{linkifyDocs(vfsCommonLines.join("\n"))}</p>
+                <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3.5">
+                  <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">Required for every visa type below</p>
+                  <DocBlocks text={vfsCommonLines.join("\n")} />
                 </div>
               )}
-              <div className="mt-4 space-y-2">
+              <div className="mt-4 divide-y divide-line border-y border-line">
                 {visible.map(renderDoc)}
               </div>
               {hidden.length > 0 && (
@@ -718,7 +934,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     <span className="hidden group-open:inline">Hide the rest</span>
                     <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </summary>
-                  <div className="mt-2 space-y-2">{hidden.map((v, i) => renderDoc(v, VFS_PREVIEW + i))}</div>
+                  <div className="mt-3 divide-y divide-line border-y border-line">{hidden.map((v, i) => renderDoc(v, VFS_PREVIEW + i))}</div>
                 </details>
               )}
               {vfsCorr?.sourceUrl && (
@@ -740,7 +956,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             const showTourist = !hasVfs && need && touristTypes.length > 0;
             if (!showTourist && otherTypes.length === 0) return null;
             return (
-              <section className="mb-10 border-t border-line pt-8">
+              <section id="visa-types" className="mb-10 scroll-mt-24 border-t border-line pt-8">
                 {showTourist && (
                   <>
                     <h2 className="font-display text-xl font-semibold text-ink">{d.name} visa types</h2>
@@ -757,7 +973,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                       <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </summary>
                     <p className="mt-3 text-sm text-ink-soft">
-                      These don&apos;t apply to a typical short visit, but cover other reasons people travel to {d.name}. Eligibility varies by visa type — some are limited to specific nationalities, so check each one&apos;s conditions.
+                      These don&apos;t apply to a typical short visit, but cover other reasons people travel to {d.name}. Eligibility varies by visa type - some are limited to specific nationalities, so check each one&apos;s conditions.
                     </p>
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
                       {otherTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
@@ -769,9 +985,9 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           })()}
 
           {/* FAQ */}
-          <section className="mb-10 border-t border-line pt-8">
+          <section id="faq" className="scroll-mt-24 border-t border-line pt-8">
             <h2 className="font-display text-xl font-semibold text-ink">
-              {d.name} visa for {nd} citizens — FAQ
+              {d.name} visa for {nd} citizens - FAQ
             </h2>
             <div className="mt-4 divide-y divide-line">
               {faq.map(({ q, a }) => (
@@ -786,36 +1002,71 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             </div>
           </section>
 
-          {/* Related corridors — internal link mesh */}
-          <section className="border-t border-line pt-8">
-            <h2 className="font-display text-xl font-semibold text-ink">Related visa requirements</h2>
-            <div className="mt-4 grid gap-8 sm:grid-cols-2">
-              <div>
-                <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">For {nd} citizens</p>
-                <ul className="space-y-1">
-                  {sameNat.map((c) => (
-                    <li key={c!.iso3}>
-                      <Link href={`/passport/${slug}/${nameToSlug(c!.name)}`} className="flex min-h-[40px] items-center gap-2 text-[14px] text-ink-soft transition hover:text-ink">
-                        <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3.5 w-[21px] shrink-0 rounded-[2px] border border-line object-cover" /> {c!.name} visa
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">Visa for {d.name}</p>
-                <ul className="space-y-1">
-                  {sameDest.map((c) => (
-                    <li key={c!.iso3}>
-                      <Link href={`/passport/${nameToSlug(c!.name)}/${dest}`} className="flex min-h-[40px] items-center gap-2 text-[14px] text-ink-soft transition hover:text-ink">
-                        <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3.5 w-[21px] shrink-0 rounded-[2px] border border-line object-cover" /> {d.name} visa for {c!.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          </div>
+
+          {/* Sticky rail: orientation + action + the related-corridor mesh
+              (which previously sat as a full-width farm at the page bottom).
+              On mobile this stacks after the FAQ, same reading order as before. */}
+          <aside className="mt-12 border-t border-line pt-8 lg:sticky lg:top-24 lg:mt-0 lg:border-t-0 lg:pt-0">
+            {/* Jump nav - desktop only; pointless when the rail is at the bottom */}
+            <nav aria-label="On this page" className="hidden lg:block">
+              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-ink-mute">On this page</p>
+              <ul className="mt-2.5 space-y-0.5 border-l border-line">
+                {jumpLinks.map((j) => (
+                  <li key={j.href}>
+                    <a href={j.href} className="block border-l-2 border-transparent py-1 pl-3 text-[13px] text-ink-soft transition hover:border-stamp hover:text-ink">
+                      {j.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Primary action */}
+            {applyUrl ? (
+              <a
+                href={applyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mono mt-6 flex min-h-[48px] items-center justify-center rounded-lg border border-stamp bg-stamp px-4 text-[12px] font-medium uppercase tracking-[0.14em] text-white transition hover:bg-stamp-deep lg:mt-7"
+              >
+                Apply on the official portal ↗
+              </a>
+            ) : (
+              <Link
+                href={`/visit?dest=${d.iso3}&passport=${n.iso3}`}
+                className="mono mt-6 flex min-h-[48px] items-center justify-center rounded-lg border border-stamp bg-stamp/[0.07] px-4 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white lg:mt-7"
+              >
+                Check your full options →
+              </Link>
+            )}
+
+            {/* Related corridors */}
+            <div className="mt-8">
+              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">For {nd} citizens</p>
+              <ul className="mt-2 space-y-0.5">
+                {sameNat.slice(0, 6).map((c) => (
+                  <li key={c!.iso3}>
+                    <Link href={`/passport/${slug}/${nameToSlug(c!.name)}`} className="flex min-h-[36px] items-center gap-2.5 text-[13.5px] text-ink-soft transition hover:text-ink">
+                      <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3 w-[18px] shrink-0 rounded-[2px] border border-line object-cover" /> {c!.name} visa
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </section>
+            <div className="mt-6">
+              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">{d.name} visa for</p>
+              <ul className="mt-2 space-y-0.5">
+                {sameDest.slice(0, 6).map((c) => (
+                  <li key={c!.iso3}>
+                    <Link href={`/passport/${nameToSlug(c!.name)}/${dest}`} className="flex min-h-[36px] items-center gap-2.5 text-[13.5px] text-ink-soft transition hover:text-ink">
+                      <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3 w-[18px] shrink-0 rounded-[2px] border border-line object-cover" /> {DEMONYM[c!.iso3] ?? c!.name} citizens
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
         </div>
       </main>
     </>

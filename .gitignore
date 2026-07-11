@@ -43,3 +43,12 @@ next-env.d.ts
 # Claude Code session data
 .claude/
 brand-assets/
+
+# Earthling dev store (JSON-file storage, dev only)
+.data/
+
+# HyperFrames video projects (contain licensed audio + heavy captures)
+videos/
+# agent skills tooling (installed per-machine via npx skills add)
+.agents/
+skills-lock.json

@@ -86,7 +86,7 @@ let _pairs: CorridorPair[] | null = null;
 let _useful: Set<string> | null = null;
 
 /**
- * Curated (nationality, destination) corridors — but ONLY the ones that carry
+ * Curated (nationality, destination) corridors - but ONLY the ones that carry
  * genuinely differentiated content: an access grant (visa-free / VoA / eTA /
  * e-visa), freedom of movement, OR a VFS document checklist. Corridors that
  * would only say a generic "visa required, apply at an embassy" (no grant, no

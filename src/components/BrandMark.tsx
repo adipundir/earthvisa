@@ -10,10 +10,10 @@ export default function BrandMark({ size = 22, className }: { size?: number; cla
       role="img"
       aria-label="Earth Visa"
     >
-      <circle cx="24" cy="24" r="8.5" fill="#11203a" />
+      <circle cx="24" cy="24" r="8.5" fill="var(--ink)" />
       <g transform="rotate(-26 24 24)">
-        <ellipse cx="24" cy="24" rx="16" ry="6.1" fill="none" stroke="#11203a" strokeWidth="2.4" />
-        <circle cx="40" cy="24" r="3.1" fill="#b23528" />
+        <ellipse cx="24" cy="24" rx="16" ry="6.1" fill="none" stroke="var(--ink)" strokeWidth="2.4" />
+        <circle cx="40" cy="24" r="3.1" fill="var(--stamp)" />
       </g>
     </svg>
   );

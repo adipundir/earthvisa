@@ -105,7 +105,7 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Filter by country..."
-          className="mono min-h-[44px] w-full rounded-sm border border-line bg-white px-3.5 py-2 text-sm text-ink placeholder:text-ink-mute outline-none focus:border-stamp"
+          className="mono min-h-[44px] w-full rounded-sm border border-line bg-card px-3.5 py-2 text-sm text-ink placeholder:text-ink-mute outline-none focus:border-stamp"
         />
       </label>
 
