@@ -13,6 +13,9 @@ interface CredOpt { id: string; label: string }
 
 const MAX_PASSPORTS = 3;
 
+// Shown as instant suggestions when the search field is focused empty.
+const POPULAR_PASSPORTS = ["IND", "USA", "GBR", "DEU", "PHL", "PAK", "NGA", "BRA"];
+
 export default function EarthlingClaim({ countries, credentials }: {
   countries: CountryOpt[];
   credentials: CredOpt[];
@@ -40,10 +43,14 @@ export default function EarthlingClaim({ countries, credentials }: {
 
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return [];
-    return countries
-      .filter((c) => c.name.toLowerCase().includes(q) && !passports.some((p) => p.iso3 === c.iso3))
-      .slice(0, 8);
+    const available = countries.filter((c) => !passports.some((p) => p.iso3 === c.iso3));
+    if (!q) {
+      // Empty query: clicking the field should immediately offer something -
+      // the highest-traffic passports, in demand order.
+      const byIso3 = new Map(available.map((c) => [c.iso3, c]));
+      return POPULAR_PASSPORTS.map((iso3) => byIso3.get(iso3)).filter((c): c is CountryOpt => !!c).slice(0, 8);
+    }
+    return available.filter((c) => c.name.toLowerCase().includes(q)).slice(0, 8);
   }, [query, countries, passports]);
 
   // Live reach preview - debounced, server-computed. All state updates happen
@@ -194,8 +201,11 @@ export default function EarthlingClaim({ countries, credentials }: {
               />
             )}
           </div>
-          {open && query.trim() && (
+          {open && (query.trim() || matches.length > 0) && (
             <ul role="listbox" className="absolute z-20 mt-1.5 w-full overflow-hidden rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/15">
+              {!query.trim() && matches.length > 0 && (
+                <li aria-hidden="true" className="mono px-4 pb-1 pt-2 text-[10px] font-medium uppercase tracking-[0.16em] text-ink-mute">Popular passports - or type to search</li>
+              )}
               {matches.length === 0 && (
                 <li className="px-4 py-2.5 text-sm text-ink-mute">No country matches - check the spelling.</li>
               )}
