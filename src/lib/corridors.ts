@@ -88,21 +88,39 @@ let _useful: Set<string> | null = null;
 /**
  * Curated (nationality, destination) corridors - but ONLY the ones that carry
  * genuinely differentiated content: an access grant (visa-free / VoA / eTA /
- * e-visa), freedom of movement, OR a VFS document checklist. Corridors that
- * would only say a generic "visa required, apply at an embassy" (no grant, no
- * documents) are skipped so we never publish thin, near-duplicate pages.
+ * e-visa), freedom of movement, a VFS document checklist, OR a held-credential
+ * unlock (e.g. India -> Argentina: visa required, but a valid US visa unlocks
+ * entry - the page renders that whole section). Corridors that would only say
+ * a generic "visa required, apply at an embassy" (no grant, no documents, no
+ * unlock) are skipped so we never publish thin, near-duplicate pages.
  * Memoized so the build computes it once per worker.
  */
 export function corridorPairs(): CorridorPair[] {
   if (_pairs) return _pairs;
   const vfs = dataset.vfsCorridors ?? {};
   const out: CorridorPair[] = [];
+  // Held-credential unlock destinations, mirroring the corridor page's own
+  // credGroups filter (non-transit, tourist entry, no refugee documents).
+  // "*" collects edges with no nationality scope (any passport qualifies).
+  const credDests = new Map<string, Set<string>>();
+  for (const edges of Object.values(dataset.credentialAccess ?? {})) {
+    for (const e of edges) {
+      if (e.transit) continue;
+      if (/refugee|airport transit/i.test(`${e.notes ?? ""} ${e.conditions ?? ""}`)) continue;
+      const scopes = e.nationalityScope == null ? ["*"] : e.nationalityScope;
+      for (const s of scopes) {
+        if (!credDests.has(s)) credDests.set(s, new Set());
+        credDests.get(s)!.add(e.dest);
+      }
+    }
+  }
+  const anyNatCredDests = credDests.get("*") ?? new Set<string>();
   // Every passport (not just the curated top nationalities) gets a corridor
   // page for every destination where IT has genuine content: an access grant,
-  // freedom of movement, a VFS document checklist, or an explicit force-include.
-  // Same thin-content bar as before - just no longer capped to a curated
-  // nationality x destination grid, so "click any destination card" always
-  // lands on a real per-passport page when one exists.
+  // freedom of movement, a VFS document checklist, a credential unlock, or an
+  // explicit force-include. Same thin-content bar as before - just no longer
+  // capped to a curated nationality x destination grid, so "click any
+  // destination card" always lands on a real per-passport page when one exists.
   for (const n of dataset.allCountries) {
     const nat = n.iso3;
     const r = compute([nat], [], {});
@@ -112,6 +130,8 @@ export function corridorPairs(): CorridorPair[] {
     for (const [dst, corrs] of Object.entries(vfs)) {
       if (corrs.some((c) => c.sourceIso3 === nat)) candidates.add(dst);
     }
+    for (const dst of anyNatCredDests) candidates.add(dst);
+    for (const dst of credDests.get(nat) ?? []) candidates.add(dst);
     for (const key of FORCE_CORRIDORS) {
       const [fn, fd] = key.split("|");
       if (fn === nat) candidates.add(fd);
