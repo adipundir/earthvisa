@@ -90,13 +90,11 @@ export default async function EarthlingPage({ searchParams }: { searchParams: Pr
 
         <section className="mt-14 max-w-3xl border-t border-line pt-8">
           <h2 className="font-display text-xl font-semibold text-ink">How reach works</h2>
-          <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-            Your reach is the number of destinations you can enter without arranging an embassy visa - visa-free, visa on
-            arrival, or with an eTA/e-visa - computed by the same official-source engine behind every page on Earth Visa.
-            Holding a strong third-country visa genuinely changes it: a US or Schengen visa unlocks dozens of extra
-            destinations for many passports. Everything is self-declared; the leaderboard is a game, your{" "}
-            <Link href="/passport" className="text-stamp underline-offset-2 hover:underline">passport&apos;s official rules</Link> are not.
-          </p>
+          <ul className="mt-3 max-w-3xl space-y-2 text-sm leading-relaxed text-ink-soft">
+            <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>Reach counts every destination you can enter without arranging an embassy visa - visa-free, visa on arrival, or with an eTA/e-visa.</span></li>
+            <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>Holding a strong third-country visa genuinely changes it: a US or Schengen visa unlocks dozens of extra destinations for many passports.</span></li>
+            <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>The leaderboard is a game - your <Link href="/passport" className="text-stamp underline-offset-2 hover:underline">passport&apos;s official rules</Link> are not.</span></li>
+          </ul>
         </section>
       </div>
     </main>

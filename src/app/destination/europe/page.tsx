@@ -79,7 +79,7 @@ function Chevron() {
 const FAQS = [
   {
     q: "Do I need a visa for Europe?",
-    a: `It depends on your nationality and which part of Europe you are visiting. Most of Europe (${memberCount} countries) shares the Schengen short-stay policy: citizens of ${counts.exempt} of the ${TOTAL_PASSPORTS} nationalities Earth Visa tracks can visit visa-free for up to 90 days in any 180-day period, while ${counts.required} nationalities need a Schengen visa. The United Kingdom and Ireland are not in Schengen and apply their own separate visa rules.`,
+    a: `It depends on your nationality and which part of Europe you are visiting. For the Schengen zone, citizens of ${counts.exempt} of the ${TOTAL_PASSPORTS} nationalities Earth Visa tracks enter visa-free for up to 90 days in any 180-day period, while ${counts.required} need a Schengen visa first.`,
   },
   {
     q: "Is Europe one visa zone?",
@@ -87,11 +87,11 @@ const FAQS = [
   },
   {
     q: "Do US citizens need a visa for Europe?",
-    a: "US citizens do not need a visa for short stays in the Schengen Area - our data shows visa-free entry for up to 90 days in any 180-day period. The EU's planned ETIAS travel authorisation will eventually apply to visa-exempt visitors like US citizens; it is not a visa and was not yet mandatory at the time of writing.",
+    a: "US citizens do not need a visa for short stays in the Schengen Area - visa-free entry for up to 90 days in any 180-day period. The EU's planned ETIAS travel authorisation will eventually apply to visa-exempt visitors like US citizens; it is not a visa and was not yet mandatory at the time of writing.",
   },
   {
     q: "Do UK citizens need a visa for Europe after Brexit?",
-    a: "For short stays, no. British citizens can visit the Schengen Area visa-free for up to 90 days in any 180-day period, per the official visa policy data we track. The 90/180 limit is counted across all Schengen countries combined. Longer stays (work, study, residence) need a national visa from the specific country.",
+    a: "For short stays, no. British citizens can visit the Schengen Area visa-free for up to 90 days in any 180-day period. The 90/180 limit is counted across all Schengen countries combined. Longer stays (work, study, residence) need a national visa from the specific country.",
   },
   {
     q: "Do Indian citizens need a visa for Europe?",
@@ -198,7 +198,7 @@ export default function EuropePage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-base leading-relaxed text-ink-soft">
-              There is no single &quot;Europe visa&quot;. Most of the continent - {memberCount} countries - shares the{" "}
+              There is no single &quot;Europe visa&quot;. Most of the continent shares the{" "}
               <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 Schengen short-stay policy
               </Link>
@@ -215,12 +215,9 @@ export default function EuropePage() {
               states set their own rules too.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              For the Schengen zone the answer is data-driven: citizens of{" "}
-              <strong className="text-ink">{counts.exempt} of the {TOTAL_PASSPORTS} nationalities</strong>{" "}
-              we track do not need a visa for short stays, while{" "}
-              <strong className="text-ink">{counts.required} nationalities</strong>{" "}
-              must apply for a Schengen visa first - verified against France&apos;s official published visa policy, since
-              the EU exemption list is harmonised across all members.
+              For the Schengen zone the answer is data-driven: the exempt and visa-required counts above are verified
+              against France&apos;s official published visa policy, since the EU exemption list is harmonised across
+              all members.
             </p>
           </section>
 
@@ -230,8 +227,7 @@ export default function EuropePage() {
               Quick Answer by Nationality
             </h2>
             <p className="mt-2 max-w-3xl text-sm text-ink-soft">
-              Schengen-zone status for the most-searched passports, straight from official visa policy data. Tap a
-              nationality for its full Schengen guide.
+              Schengen-zone status for the most-searched passports. Tap a nationality for its full Schengen guide.
             </p>
             <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((n) => (

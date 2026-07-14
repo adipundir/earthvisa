@@ -415,7 +415,7 @@ export default function PassportExplorer() {
           <span className="hidden group-open:inline">Visas &amp; permits you hold</span>
         </summary>
         <p className="mt-3 max-w-2xl text-sm text-ink-soft">
-          Holding a valid US, UK, Schengen or Japan visa - any type (tourist, work, student) - or residency unlocks extra countries beyond your passport alone.
+          Any valid US, UK, Schengen or Japan visa or residency unlocks extra countries.
         </p>
 
         <div ref={credBoxRef} className="relative z-20 mt-3 w-full">
@@ -529,7 +529,7 @@ function EmptyState({ onAdd }: { onAdd: (iso3: string) => void }) {
       <PassportBook className="mx-auto h-14 w-14 text-ink/75" />
       <h2 className="font-display mt-5 text-2xl font-semibold text-ink">Add your passport above to get started</h2>
       <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
-        See visa-free destinations, freedom-of-movement rights, golden visas, citizenship programs, and fast-track immigration open to you - all from official government sources.
+        See visa-free destinations, golden visas, citizenship programs and fast-track routes open to you.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-2">
         {EXAMPLE_PASSPORTS.slice(0, 6).map((iso3) => (

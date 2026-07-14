@@ -47,7 +47,7 @@ export default function PassportIndex() {
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
             Choose a passport to see its visa-free destinations, visa-on-arrival access, freedom-of-movement
-            rights, golden visas and citizenship-by-investment options - all from official sources.
+            rights, golden visas and citizenship-by-investment options.
           </p>
           <p className="mt-4 text-[15px] text-ink-mute">
             Looking for entry rules into a country?{" "}

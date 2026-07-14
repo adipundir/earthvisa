@@ -227,24 +227,17 @@ export default function SchengenGuidePage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-base leading-relaxed text-ink-soft">
-              The <strong className="text-ink">Schengen visa</strong>{" "}
-              is Europe&apos;s common short-stay visa:
-              one application, one sticker, and access to all <strong className="text-ink">{memberCount} Schengen
-              countries</strong> for up to <strong className="text-ink">90 days in any 180-day period</strong>.
-              Citizens of <strong className="text-ink">{counts.exempt} of the {TOTAL_PASSPORTS} nationalities</strong> Earth Visa
-              tracks do not need one for short stays - {vfToFrance.length}{" "}
-              non-Schengen nationalities are admitted visa-free under the EU&apos;s harmonised exemption list
-              (verified against France&apos;s published visa policy), and citizens of the {memberCount} Schengen
-              members enjoy freedom of movement. The remaining{" "}
-              <strong className="text-ink">{counts.required} nationalities</strong> must apply for a Schengen
-              short-stay visa (Type C) before travelling.
+              The <strong className="text-ink">Schengen visa</strong> is Europe&apos;s common short-stay visa
+              (Type C): one application, one sticker, and free movement across the whole area. Whether you need
+              one depends on your passport - see{" "}
+              <Link href="#who-needs" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">who needs a Schengen visa</Link>.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               This guide covers the <Link href="#countries" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen countries list</Link>,{" "}
               <Link href="#who-needs" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">who needs a visa</Link>,{" "}
               <Link href="#apply" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">how to apply</Link>, the{" "}
               <Link href="#fee" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen visa fee</Link> and the{" "}
-              <Link href="#rule" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">90/180 rule</Link> - all sourced from official government publications.
+              <Link href="#rule" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">90/180 rule</Link>.
             </p>
           </section>
 
@@ -303,12 +296,8 @@ export default function SchengenGuidePage() {
               Who Needs a Schengen Visa in 2026?
             </h2>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
-              The EU keeps a single, harmonised list of visa-exempt nationalities, so one member&apos;s published
-              policy answers the question for the whole area. Verified against France&apos;s official visa policy:
-              citizens of <strong className="text-ink">{counts.exempt} countries do not need a Schengen visa</strong>{" "}
-              for short stays ({vfToFrance.length} visa-exempt nationalities plus the {memberCount} Schengen members
-              themselves), while citizens of <strong className="text-ink">{counts.required} countries</strong> must
-              apply for a Type C visa before travelling.
+              The EU keeps one harmonised exemption list, so a single member&apos;s published policy answers the
+              question for the whole area - verified here against France&apos;s official visa policy.
             </p>
 
             <h3 className="mt-6 font-display text-lg font-semibold text-ink">
@@ -461,8 +450,7 @@ export default function SchengenGuidePage() {
           <section id="fee" className="mt-12 max-w-3xl scroll-mt-24">
             <h2 className="font-display text-2xl font-semibold text-ink">Schengen Visa Fee 2026</h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              The short-stay visa fee is set EU-wide, so it is the same whichever member state you apply to. From the
-              official fee schedules in our dataset:
+              The short-stay visa fee is set EU-wide, so it is the same whichever member state you apply to:
             </p>
             <div className="mt-5 overflow-x-auto">
               <table className="w-full min-w-[420px] border-collapse text-sm">
@@ -486,18 +474,22 @@ export default function SchengenGuidePage() {
                     <td className="mono py-2.5 tabular-nums">Free</td>
                   </tr>
                   <tr>
-                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Visa-facilitation nationals</td>
+                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Visa-facilitation nationals (e.g. Armenia, Azerbaijan)</td>
                     <td className="mono py-2.5 tabular-nums">EUR 35</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              The reduced EUR 35 rate applies to nationals of countries with an EU visa-facilitation agreement (our
-              sources list several Eastern European and Caucasus states, for example Armenia and Azerbaijan). Where a
-              consulate outsources intake to VFS Global or TLScontact, a separate service fee is charged on top. The
-              visa fee is not refunded if the application is refused.
-            </p>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-soft">
+              <li className="flex gap-3">
+                <span aria-hidden className="mono text-stamp">■</span>
+                <span>A separate VFS Global or TLScontact service fee is charged on top where the consulate outsources intake.</span>
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden className="mono text-stamp">■</span>
+                <span>The visa fee is not refunded if the application is refused.</span>
+              </li>
+            </ul>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
               Wondering how much money to show in your bank statement? See our{" "}
               <Link href="/guide/proof-of-funds#schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">

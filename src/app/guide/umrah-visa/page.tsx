@@ -91,8 +91,12 @@ function Chevron() {
 }
 
 export default function UmrahVisaGuidePage() {
-  // Saudi tourist visa products recorded in our dataset (fees included there).
-  const sauTourist = (dataset.destinationVisaTypes.SAU ?? []).filter((vt) => vt.category === "tourist");
+  // General tourist products only (fees included in the dataset). The dataset's
+  // Umrah and Hajj entries are pilgrimage visas - covered by Route 2 and the
+  // Hajj callout, not the tourist-visa card grid.
+  const sauTourist = (dataset.destinationVisaTypes.SAU ?? []).filter(
+    (vt) => vt.category === "tourist" && vt.name !== "Umrah Visa" && vt.name !== "Hajj Visa",
+  );
   const eVisaType = sauTourist.find((vt) => vt.online);
 
   // How many nationalities our dataset records with each access level to SAU.
@@ -138,7 +142,7 @@ export default function UmrahVisaGuidePage() {
   const faqs = [
     {
       q: "Can I perform Umrah on a Saudi tourist visa?",
-      a: `Yes. Per official Saudi guidance, tourist visa holders may perform Umrah (though not Hajj). Our dataset records ${sauEvisaCount} nationalities as eligible for the Saudi tourist e-Visa${eVisaType?.fee_usd ? `, priced at about USD ${eVisaType.fee_usd}` : ""}${eVisaType?.max_stay_days ? ` with stays up to ${eVisaType.max_stay_days} days` : ""}. If your nationality is not eligible for the tourist e-visa, the dedicated Umrah visa through the official Nusuk platform is the standard route.`,
+      a: `Yes - tourist visa holders may perform Umrah, though not Hajj. ${sauEvisaCount} nationalities are eligible for the Saudi tourist e-Visa${eVisaType?.fee_usd ? `, priced at about USD ${eVisaType.fee_usd}` : ""}${eVisaType?.max_stay_days ? ` with stays up to ${eVisaType.max_stay_days} days` : ""}. If your nationality is not eligible for the tourist e-visa, the dedicated Umrah visa through the official Nusuk platform is the standard route.`,
     },
     {
       q: "What is Nusuk?",
@@ -147,8 +151,8 @@ export default function UmrahVisaGuidePage() {
     {
       q: "Do Indian citizens need a visa for Umrah?",
       a: indEdge
-        ? `Per our dataset, Indian passport holders qualify for ${LEVEL_LABEL[indEdge.level].toLowerCase()} access to Saudi Arabia. Dedicated Umrah visas also remain available through the official Nusuk platform. Verify current conditions on official Saudi sources before booking.`
-        : "Yes. Our dataset records no visa-free, visa-on-arrival or tourist e-visa eligibility for Indian passport holders to Saudi Arabia, so Indian pilgrims apply in advance - typically for a dedicated Umrah visa processed through the official Nusuk platform or its authorised agents. Separately, per Saudi tourist visa regulations recorded in our data, travellers of any nationality holding a valid, previously used US, UK or Schengen visa can obtain a visa on arrival - a route many Indian travellers qualify for.",
+        ? `Indian passport holders qualify for ${LEVEL_LABEL[indEdge.level].toLowerCase()} access to Saudi Arabia. Dedicated Umrah visas also remain available through the official Nusuk platform. Verify current conditions on official Saudi sources before booking.`
+        : "Yes. Our dataset records no visa-free, visa-on-arrival or tourist e-visa eligibility for Indian passport holders to Saudi Arabia, so Indian pilgrims apply in advance - typically for a dedicated Umrah visa processed through the official Nusuk platform or its authorised agents. Separately, under Saudi tourist visa regulations, travellers of any nationality holding a valid, previously used US, UK or Schengen visa can obtain a visa on arrival - a route many Indian travellers qualify for.",
     },
     {
       q: "Can women perform Umrah without a mahram?",
@@ -240,7 +244,7 @@ export default function UmrahVisaGuidePage() {
             <p className="text-base leading-relaxed text-ink-soft">
               There are three main ways to enter <Link href={`/destination/${nameToSlug(nameFor("SAU"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Saudi Arabia</Link>{" "}
               for <strong className="text-ink">Umrah</strong>: the <strong className="text-ink">Saudi tourist visa</strong>{" "}
-              (which, per official Saudi guidance, allows Umrah but not Hajj), the{" "}
+              (which allows Umrah but not Hajj), the{" "}
               <strong className="text-ink">dedicated Umrah visa</strong> processed through the official{" "}
               <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>{" "}
               platform, and - for travellers who hold a valid, previously used US, UK or Schengen visa - a{" "}
@@ -248,25 +252,21 @@ export default function UmrahVisaGuidePage() {
               Which route applies depends on your passport, and every eligibility claim on this page comes from our
               official-source dataset.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              Our dataset records <strong className="text-ink">{sauEvisaCount} nationalities</strong> as eligible for the
-              Saudi tourist e-Visa.
-              {notEligibleNames.length > 0 && (
-                <>
-                  {" "}Major Umrah-origin nationalities - {notEligibleNames.join(", ")} - are{" "}
-                  <strong className="text-ink">not</strong> on that list per our data, so for them the Nusuk Umrah visa
-                  (or the US/UK/Schengen visa-holder route) is the practical path.
-                </>
-              )}
-            </p>
+            {notEligibleNames.length > 0 && (
+              <p className="mt-4 text-base leading-relaxed text-ink-soft">
+                Major Umrah-origin nationalities - {notEligibleNames.join(", ")} - are{" "}
+                <strong className="text-ink">not</strong> eligible for the tourist e-Visa per our data, so for them the
+                Nusuk Umrah visa (or the US/UK/Schengen visa-holder route) is the practical path.
+              </p>
+            )}
           </section>
 
           {/* Route 1: tourist visa */}
           <section className="mt-12 max-w-3xl">
             <h2 className="font-display text-2xl font-semibold text-ink">Route 1: Umrah on a Saudi Tourist Visa</h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Per official Saudi guidance, tourist visa holders may perform Umrah at any time of year outside the Hajj
-              season. The tourist visa products recorded in our dataset:
+              Tourist visa holders may perform Umrah at any time of year outside the Hajj season. Two tourist
+              products exist:
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {sauTourist.map((vt) => (
@@ -275,7 +275,8 @@ export default function UmrahVisaGuidePage() {
                   <p className="mono mt-2 text-[11px] leading-relaxed text-ink-mute">
                     {vt.fee_usd != null && <>~USD {vt.fee_usd} · </>}
                     {vt.max_stay_days != null && <>up to {vt.max_stay_days} days per visit · </>}
-                    {vt.entries} entry · {vt.online ? "apply online" : "issued at the border"}
+                    {vt.entries && <>{vt.entries} entry · </>}
+                    {vt.online ? "apply online" : "issued at the border"}
                   </p>
                   {vt.notes && <p className="mt-2 text-sm leading-relaxed text-ink-soft">{vt.notes}</p>}
                 </div>
@@ -284,7 +285,8 @@ export default function UmrahVisaGuidePage() {
             <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
               Eligibility is limited - check whether your passport qualifies on the official portal (visitsaudi.com) or
               via your <Link href="/visit?dest=SAU" className="text-stamp underline underline-offset-2">Earth Visa check</Link>.
-              A tourist visa never permits Hajj.
+              A tourist visa never permits Hajj - the dedicated Hajj visa is issued only via{" "}
+              <a href="https://hajj.nusuk.sa/" rel="noopener noreferrer" className="text-stamp underline underline-offset-2">Nusuk Hajj</a>.
             </p>
           </section>
 
@@ -292,11 +294,10 @@ export default function UmrahVisaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="font-display text-2xl font-semibold text-ink">Route 2: The Dedicated Umrah Visa via Nusuk</h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              For nationalities without tourist visa access - which, per our data, includes the largest pilgrimage
-              origins - the dedicated <strong className="text-ink">Umrah visa</strong> is the standard route. It is
+              For nationalities without tourist visa access - which includes the largest pilgrimage origins - the
+              dedicated <strong className="text-ink">Umrah visa</strong> is the standard route. It is
               processed through <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>,
-              Saudi Arabia&apos;s official Umrah and Hajj platform, and its authorised travel providers. Typical flow,
-              per official guidance:
+              Saudi Arabia&apos;s official Umrah and Hajj platform, and its authorised travel providers. Typical flow:
             </p>
             <ol className="mt-4 space-y-4">
               {[
@@ -322,6 +323,19 @@ export default function UmrahVisaGuidePage() {
                 </li>
               ))}
             </ol>
+            <dl className="mt-5 grid gap-2.5 sm:grid-cols-2">
+              {[
+                { k: "Entry window", v: "Enter within 30 days of issuance (2026 rules)" },
+                { k: "Max stay", v: "Up to 90 days" },
+                { k: "Bookings", v: "Must be linked to confirmed Nusuk accommodation and transport" },
+                { k: "Hajj season", v: "Not issued during the Hajj blackout" },
+              ].map(({ k, v }) => (
+                <div key={k} className="rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
+                  <dt className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <dd className="mt-1 text-sm leading-snug text-ink">{v}</dd>
+                </div>
+              ))}
+            </dl>
             <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
               Umrah visa fees and validity are set by Saudi authorities and are not recorded in our dataset - confirm
               them on the official Nusuk platform, not third-party agents&apos; ads. Women&apos;s mahram (male guardian)
@@ -336,12 +350,9 @@ export default function UmrahVisaGuidePage() {
                 Route 3: Visa on Arrival with a US, UK or Schengen Visa
               </h2>
               <p className="mt-3 text-base leading-relaxed text-ink-soft">
-                Saudi tourist visa regulations recorded in our dataset grant a{" "}
-                <strong className="text-ink">visa on arrival (up to 90 days)</strong> to travellers of{" "}
-                <strong className="text-ink">any nationality</strong> who hold one of the credentials below. The
-                foreign visa must have been used at least once, the recorded fee is SAR 300 (SAR 480 including
-                mandatory insurance in practice), and a passport valid 6+ months is required. First-degree relatives
-                travelling together are included.
+                Saudi tourist visa regulations grant a <strong className="text-ink">visa on arrival</strong> to
+                travellers of <strong className="text-ink">any nationality</strong> who hold one of the credentials
+                below.
               </p>
               <ul className="mt-4 space-y-2.5">
                 {credentialVoA.map(({ id, edge }) => (
@@ -353,9 +364,22 @@ export default function UmrahVisaGuidePage() {
                   </li>
                 ))}
               </ul>
+              <dl className="mt-4 grid gap-2.5 sm:grid-cols-2">
+                {[
+                  { k: "Prior visa", v: "Must have been used at least once" },
+                  { k: "Fee", v: "SAR 300 + mandatory insurance (~USD 134 all-in)" },
+                  { k: "Passport", v: "Valid 6+ months" },
+                  { k: "Family", v: "First-degree relatives travelling together included" },
+                ].map(({ k, v }) => (
+                  <div key={k} className="rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
+                    <dt className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                    <dd className="mt-1 text-sm leading-snug text-ink">{v}</dd>
+                  </div>
+                ))}
+              </dl>
               <p className="mt-4 text-sm leading-relaxed text-ink-soft">
                 This is the fastest legal route for many Indian, Pakistani and Bangladeshi travellers who already hold
-                a used US, UK or Schengen visa - and per official guidance the resulting tourist visa allows Umrah.
+                a used US, UK or Schengen visa - and the resulting tourist visa allows Umrah.
               </p>
             </section>
           )}
@@ -364,7 +388,7 @@ export default function UmrahVisaGuidePage() {
           <section className="mt-12">
             <h2 className="font-display text-2xl font-semibold text-ink">Umrah Visa by Nationality</h2>
             <p className="mt-2 max-w-3xl text-sm text-ink-soft">
-              Saudi entry status per passport, straight from our dataset. &quot;Visa required in advance&quot; means the
+              Saudi entry status per passport. &quot;Visa required in advance&quot; means the
               Nusuk Umrah visa (or the US/UK/Schengen visa-holder route above) is your path.
             </p>
             <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">

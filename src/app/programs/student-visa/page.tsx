@@ -182,8 +182,53 @@ function processingLabel(v: VisaType): string | null {
   return `${min ?? max}d processing`;
 }
 
+function RouteRow({ v }: { v: VisaType }) {
+  const stay = v.max_stay_days != null ? `stay up to ${v.max_stay_days}d` : null;
+  const validity =
+    v.validity_days != null && v.validity_days !== v.max_stay_days ? `valid ${v.validity_days}d` : null;
+  const entryTag = entryLabel(v.entries);
+  const processing = processingLabel(v);
+  return (
+    <li className="py-2.5">
+      <p className="font-display text-sm font-medium text-ink">{v.name}</p>
+      {v.purpose && <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
+      <p className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
+        {stay && <span>{stay}</span>}
+        {validity && <span>{validity}</span>}
+        {entryTag && <span>{entryTag}</span>}
+        {processing && <span>{processing}</span>}
+        {v.fee_usd != null && <span>~${v.fee_usd}</span>}
+        {v.online && <span className="text-vfree">online application</span>}
+      </p>
+      {v.notes && (
+        <details className="group mt-1.5">
+          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.1em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
+            <span className="group-open:hidden">Details from official source</span>
+            <span className="hidden group-open:inline">Hide details</span>
+            <Chevron />
+          </summary>
+          <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>
+        </details>
+      )}
+      {v.official_url && (
+        <a
+          href={v.official_url}
+          target="_blank"
+          rel="noreferrer"
+          className="mono mt-1.5 inline-flex min-h-[44px] items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline"
+        >
+          Official source ↗
+        </a>
+      )}
+    </li>
+  );
+}
+
 function CountryCard({ e }: { e: StudentEntry }) {
   const slug = nameToSlug(e.name);
+  const VISIBLE = 1;
+  const visible = e.visaTypes.slice(0, VISIBLE);
+  const hidden = e.visaTypes.slice(VISIBLE);
   return (
     <div className="rounded-sm border border-line bg-paper-2/70 p-4">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -199,48 +244,26 @@ function CountryCard({ e }: { e: StudentEntry }) {
         )}
       </div>
       <ul className="mt-2 divide-y divide-line">
-        {e.visaTypes.map((v, i) => {
-          const stay = v.max_stay_days != null ? `stay up to ${v.max_stay_days}d` : null;
-          const validity =
-            v.validity_days != null && v.validity_days !== v.max_stay_days ? `valid ${v.validity_days}d` : null;
-          const entryTag = entryLabel(v.entries);
-          const processing = processingLabel(v);
-          return (
-            <li key={`${v.name}-${i}`} className="py-2.5">
-              <p className="font-display text-sm font-medium text-ink">{v.name}</p>
-              {v.purpose && <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
-              <p className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
-                {stay && <span>{stay}</span>}
-                {validity && <span>{validity}</span>}
-                {entryTag && <span>{entryTag}</span>}
-                {processing && <span>{processing}</span>}
-                {v.fee_usd != null && <span>~${v.fee_usd}</span>}
-                {v.online && <span className="text-vfree">online application</span>}
-              </p>
-              {v.notes && (
-                <details className="group mt-1.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.1em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
-                    <span className="group-open:hidden">Details from official source</span>
-                    <span className="hidden group-open:inline">Hide details</span>
-                    <Chevron />
-                  </summary>
-                  <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>
-                </details>
-              )}
-              {v.official_url && (
-                <a
-                  href={v.official_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mono mt-1.5 inline-flex min-h-[44px] items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline"
-                >
-                  Official source ↗
-                </a>
-              )}
-            </li>
-          );
-        })}
+        {visible.map((v, i) => (
+          <RouteRow key={`${v.name}-${i}`} v={v} />
+        ))}
       </ul>
+      {hidden.length > 0 && (
+        <details className="group mt-1">
+          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
+            <span className="group-open:hidden">
+              Show {hidden.length} more {e.name} student visa {hidden.length === 1 ? "route" : "routes"}
+            </span>
+            <span className="hidden group-open:inline">Hide extra {e.name} student visa routes</span>
+            <Chevron />
+          </summary>
+          <ul className="divide-y divide-line">
+            {hidden.map((v, i) => (
+              <RouteRow key={`${v.name}-${i}`} v={v} />
+            ))}
+          </ul>
+        </details>
+      )}
     </div>
   );
 }
@@ -276,12 +299,13 @@ export default function StudentVisaPage() {
               {countryCount} countries · {totalRoutes} student visa routes · data refreshed {lastUpdated}
             </p>
 
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-5">
               {[
                 { k: "Countries", v: countryCount },
                 { k: "Visa routes tracked", v: totalRoutes },
                 { k: "Online application", v: onlineCountries },
                 { k: "Publish part-time work rights", v: partTimeCountries },
+                { k: "Routes with processing times", v: routesWithProcessingTime },
               ].map(({ k, v }) => (
                 <div key={k}>
                   <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
@@ -289,6 +313,22 @@ export default function StudentVisaPage() {
                 </div>
               ))}
             </dl>
+
+            <nav aria-label="Jump to a region" className="mono mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] uppercase tracking-[0.15em]">
+              <span className="text-[10px] text-ink-mute">Jump to</span>
+              {REGION_ORDER.filter((r) => (byRegion.get(r) ?? []).length > 0).map((r) => (
+                <a
+                  key={r}
+                  href={`#${r.toLowerCase()}`}
+                  className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink"
+                >
+                  {r}
+                </a>
+              ))}
+              <a href="#faq" className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink">
+                FAQ
+              </a>
+            </nav>
           </div>
         </header>
 
@@ -306,13 +346,8 @@ export default function StudentVisaPage() {
               fees - vary a great deal by destination, which is why we list them individually below.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              Our dataset tracks <strong className="text-ink">{totalRoutes} student visa routes</strong> across{" "}
-              <strong className="text-ink">{countryCount} countries</strong> - some destinations publish a single
-              general student visa, others run several categories for different levels or lengths of study.{" "}
-              {onlineCountries} of these countries offer at least one route with an online application, {routesWithProcessingTime}{" "}
-              of the {totalRoutes} routes publish an official processing-time range, and {partTimeCountries} publish an
-              explicit part-time work-hour limit for enrolled students. Grouped by region below, with a link to the
-              official source for every route.
+              Some destinations publish a single general student visa, others run several categories for different
+              levels or lengths of study. Grouped by region below, with a link to the official source for every route.
             </p>
             <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
               Every route on this page requires proof you can pay for tuition and living costs - see our{" "}
@@ -330,7 +365,7 @@ export default function StudentVisaPage() {
             if (countries.length === 0) return null;
             const total = countries.reduce((n, e) => n + e.visaTypes.length, 0);
             return (
-              <section key={region} className="mt-12">
+              <section key={region} id={region.toLowerCase()} className="mt-12 scroll-mt-24">
                 <h2 className="font-display text-2xl font-semibold text-ink">
                   Student Visas {region === "Europe" ? "in Europe" : `in ${region}`} ({total} Routes, {countries.length}{" "}
                   Countries)
@@ -368,7 +403,7 @@ export default function StudentVisaPage() {
           })}
 
           {/* FAQ */}
-          <section className="mt-14">
+          <section id="faq" className="mt-14 scroll-mt-24">
             <h2 className="font-display text-2xl font-semibold text-ink">Student Visa FAQ</h2>
             <div className="mt-5 divide-y divide-line">
               {faqs.map(({ q, a }) => (

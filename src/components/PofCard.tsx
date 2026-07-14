@@ -6,6 +6,17 @@ function host(url: string | null | undefined): string {
   try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "source"; }
 }
 
+// Data convention (data/proof-of-funds/*.json): the first line of
+// community.typical_approved is the reported currency range, rendered as a
+// labelled stat headline mirroring the official block; the text after the
+// first newline is its single supporting sentence. Records without a newline
+// render as a plain paragraph.
+function splitCommunity(s: string): { range: string | null; support: string } {
+  const i = s.indexOf("\n");
+  if (i === -1) return { range: null, support: s };
+  return { range: s.slice(0, i).trim(), support: s.slice(i + 1).trim() };
+}
+
 // One visa's proof-of-funds record. Official (government) figures are shown in a
 // bordered block; community (anecdotal) reports are visually separated and
 // always labelled, so the two are never confused.
@@ -13,6 +24,7 @@ export default function PofCard({ p, iso3 }: { p: ProofOfFunds; iso3?: string })
   const off = p.official;
   const headline = off.daily_minimum ?? off.total_example;
   const hasFigure = off.published && headline?.amount != null;
+  const community = p.community.typical_approved ? splitCommunity(p.community.typical_approved) : null;
 
   return (
     <section id={p.key.toLowerCase()} className="scroll-mt-24 rounded-lg border border-line-strong bg-paper-2/40 p-5 sm:p-6">
@@ -45,13 +57,13 @@ export default function PofCard({ p, iso3 }: { p: ProofOfFunds; iso3?: string })
       </div>
 
       {/* Community */}
-      {p.community.typical_approved && (
+      {community && (
         <div className="mt-3 rounded-md border border-dashed border-line-strong bg-paper-3/40 p-4">
           <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-eta">What applicants report · anecdotal</p>
-          <p className="mt-1.5 text-[13px] leading-relaxed text-ink-soft">{p.community.typical_approved}</p>
-          <p className="mt-2 text-[11px] italic leading-relaxed text-ink-mute">
-            Community reports from Reddit and visa forums, not an official threshold or a guarantee of approval.
-          </p>
+          {community.range && (
+            <p className="mono mt-1 text-2xl font-semibold tabular-nums text-ink">{community.range}</p>
+          )}
+          <p className="mt-1.5 text-[13px] leading-relaxed text-ink-soft">{community.support}</p>
         </div>
       )}
 

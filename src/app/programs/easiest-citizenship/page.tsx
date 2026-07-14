@@ -266,16 +266,14 @@ export default function EasiestCitizenshipPage() {
             <p className="text-base leading-relaxed text-ink-soft">
               &quot;Easiest&quot; means different things depending on what you are spending.{" "}
               <strong className="text-ink">Money:</strong> citizenship by investment grants a passport in months.{" "}
-              <strong className="text-ink">Time:</strong> some countries publish residence-to-citizenship paths as
-              short as <strong className="text-ink">{fastestPathYears} years</strong>.{" "}
-              <strong className="text-ink">Merit:</strong> a handful of fast-track naturalisation routes reward
-              specific skills or contributions. This page ranks all three routes using only figures published in
-              official sources - where a number is not published, we say so instead of inventing one.
+              <strong className="text-ink">Time:</strong> some countries publish residence-to-citizenship paths short
+              enough to plan around. <strong className="text-ink">Merit:</strong> a handful of fast-track
+              naturalisation routes reward specific skills or contributions. Where a number is not published, we say
+              so instead of inventing one.
             </p>
             <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
               Published timelines are eligibility minimums, not guarantees. Naturalisation everywhere adds language,
-              physical presence and good-character conditions, and grants remain discretionary. Data last refreshed{" "}
-              {lastUpdated}.
+              physical presence and good-character conditions, and grants remain discretionary.
             </p>
           </section>
 
@@ -285,9 +283,23 @@ export default function EasiestCitizenshipPage() {
               Route 1 - Citizenship by Investment: Months, Not Years
             </h2>
             <p className="mt-2 text-sm text-ink-soft">
-              The fastest legal route to a second passport. Published processing times in our data include{" "}
-              {timedCbiText}. Sorted by lowest published USD minimum; each entry shows what the passport is worth.
+              The fastest legal route to a second passport, sorted by lowest published USD minimum; each entry shows
+              what the passport is worth.
             </p>
+            <div className="mono mt-3 flex flex-wrap items-center gap-2 text-[11px] text-ink-soft">
+              <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">
+                Fastest published processing
+              </span>
+              {timedCbi.map((p) => (
+                <span
+                  key={p.iso3}
+                  className="inline-flex items-center gap-1.5 rounded-sm border border-line bg-paper-2/70 px-2.5 py-1"
+                >
+                  <span className="text-sm">{flagFor(p.iso3)}</span>
+                  {p.name} · <strong className="text-ink">{p.processing_time}</strong>
+                </span>
+              ))}
+            </div>
             <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {cbiPriced.map(({ p, min }) => {
                 const w = passportWorth(p.iso3);

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { allPof, pofFor, fmtMoney } from "@/lib/pof";
+import { flagFor } from "@/lib/dataset";
 import PofCard from "@/components/PofCard";
 
 const TITLE = "Proof of Funds for Visa 2026: How Much Bank Balance to Show";
@@ -65,6 +66,7 @@ const FAQS = [
 ];
 
 const records = allPof();
+const noFigureCount = records.filter((r) => !r.official.published).length;
 
 export default function ProofOfFundsHub() {
   const jsonLd = {
@@ -102,10 +104,22 @@ export default function ProofOfFundsHub() {
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
               How much money you should have in your bank statement to get a visa approved - the{" "}
               <strong className="text-ink">official minimum where one exists</strong>, and{" "}
-              <strong className="text-ink">what applicants actually report</strong> getting approved with. We keep the
-              two strictly separate: an official figure is a published government requirement; a community figure is
-              anecdotal experience, never a guarantee.
+              <strong className="text-ink">what applicants actually report</strong> getting approved with.
             </p>
+
+            {/* Jump nav - one chip per visa card below */}
+            <nav aria-label="Jump to a visa" className="mt-6 flex flex-wrap gap-2">
+              {records.map((p) => (
+                <a
+                  key={p.key}
+                  href={`#${p.key.toLowerCase()}`}
+                  className="mono inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2 text-[11px] uppercase tracking-[0.12em] text-ink-soft transition hover:border-line-strong hover:text-ink"
+                >
+                  <span aria-hidden className="text-sm leading-none">{p.key === "schengen" ? "🇪🇺" : flagFor(p.key)}</span>
+                  {p.name}
+                </a>
+              ))}
+            </nav>
           </div>
         </header>
 
@@ -118,8 +132,7 @@ export default function ProofOfFundsHub() {
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">
                 Each Schengen country sets its own official daily amount you must prove for the length of your stay.
-                Multiply the daily rate by your number of days for the official minimum. Figures from official government
-                sources.
+                Multiply the daily rate by your number of days for the official minimum.
               </p>
               <p className="mono mt-4 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute sm:hidden">
                 Swipe sideways for the notes column <span aria-hidden>→</span>
@@ -156,7 +169,13 @@ export default function ProofOfFundsHub() {
           {/* Per-visa cards */}
           <h2 className="font-display text-2xl font-semibold text-ink">Proof of funds by visa</h2>
           <p className="mt-2 max-w-2xl text-sm text-ink-soft">
-            {records.length} major visas, each with the official rule and what applicants report.
+            {records.length} major visas, each with the official rule and what applicants report.{" "}
+            {noFigureCount} of the {records.length} publish no fixed figure at all - for those, officers assess your
+            whole financial profile against the trip, and the community-reported range is the only number available.
+          </p>
+          <p className="mt-3 max-w-2xl text-[12px] italic leading-relaxed text-ink-mute">
+            Official figures are published government requirements. Community figures are compiled from Reddit and
+            visa-forum reports - anecdotal experience, not an official threshold or a guarantee of approval.
           </p>
           <div className="mt-6 grid gap-5">
             {records.map((p) => <PofCard key={p.key} p={p} iso3={flagIso(p.key)} />)}

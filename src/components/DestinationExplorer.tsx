@@ -730,10 +730,7 @@ export default function DestinationExplorer() {
 
       {!destIso3 && (
         <div className="mt-14 rounded-xl border border-dashed border-line px-8 py-16 text-center">
-          <p className="font-display text-2xl font-semibold text-ink">Enter your destination above</p>
-          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
-            Type the country you want to visit. Then add your passport - we&apos;ll tell you exactly what access you have with conditions and official source links.
-          </p>
+          <p className="font-display text-2xl font-semibold text-ink">Enter your destination above to begin</p>
         </div>
       )}
     </div>

@@ -98,28 +98,62 @@ function usVisaCondition(e: CombinedEdge): string | null {
   return t.length > 220 ? `${t.slice(0, 217)}...` : t;
 }
 
-/** First sentence of the official-source note, when short enough to be useful. */
-function firstSentence(notes: string): string | null {
-  if (!notes) return null;
-  // Find a sentence boundary that is not inside a legal citation: skip any
-  // ". " that leaves parentheses unbalanced or follows an abbreviation, so
-  // "Comoros law (Loi n°88-025, Art. 2) requires..." is never cut at "Art.".
-  let end = -1;
-  for (let from = 0; ; ) {
-    const idx = notes.indexOf(". ", from);
-    if (idx === -1) break;
-    const frag = notes.slice(0, idx + 1);
-    const balanced = (frag.match(/\(/g)?.length ?? 0) === (frag.match(/\)/g)?.length ?? 0);
-    const abbrev = /\b(?:Art|No|Nos|St|Approx|Vol|Cap|Para|Sec|Reg|Fig)\.$/i.test(frag);
-    if (balanced && !abbrev) {
-      end = idx;
+/** Split a note into sentences without cutting inside a legal citation: skip
+ * any ". " that leaves parentheses unbalanced or follows an abbreviation, so
+ * "Comoros law (Loi n°88-025, Art. 2) requires..." is never cut at "Art.". */
+function splitSentences(notes: string): string[] {
+  const out: string[] = [];
+  let rest = notes.trim();
+  while (rest) {
+    let end = -1;
+    for (let from = 0; ; ) {
+      const idx = rest.indexOf(". ", from);
+      if (idx === -1) break;
+      const frag = rest.slice(0, idx + 1);
+      const balanced = (frag.match(/\(/g)?.length ?? 0) === (frag.match(/\)/g)?.length ?? 0);
+      const abbrev = /\b(?:Art|No|Nos|St|Approx|Vol|Cap|Para|Sec|Reg|Fig)\.$/i.test(frag);
+      if (balanced && !abbrev) {
+        end = idx;
+        break;
+      }
+      from = idx + 1;
+    }
+    if (end === -1) {
+      out.push(rest);
       break;
     }
-    from = idx + 1;
+    out.push(rest.slice(0, end + 1).trim());
+    rest = rest.slice(end + 1).trim();
   }
-  const s = (end === -1 ? notes : notes.slice(0, end + 1)).trim();
+  return out.filter(Boolean);
+}
+
+/** First sentence of the official-source note, when short enough to be useful. */
+function firstSentence(notes: string): string | null {
+  const s = splitSentences(notes)[0] ?? "";
   if (!s || s.length > 150) return null;
   return s;
+}
+
+/** A visa-on-arrival card should answer "what do I get at the border?" - prefer
+ * the sentence describing the arrival visa (where issued, fee, permit) over a
+ * statute citation like "Loi n°88-025, Art. 2 requires ... a Comorian visa",
+ * which belongs on the destination page, not a VOA list. */
+const ARRIVAL_RE = /\b(?:on arrival|upon arrival|landing visa|at the (?:airport|border|port)|port of entry|border crossing|visitor'?s permit|free of charge|gratis|fee|EUR|USD)\b/i;
+const STATUTE_RE = /\b(?:law|loi|act|decree|ordinance|regulation|art\.|article)\b/i;
+
+function voaCondition(notes: string): string | null {
+  const sentences = splitSentences(notes);
+  // Only the note's lead sentences qualify: a sentence plucked from deep in a
+  // note loses its antecedent ("Children under 10 also receive gratis visas"),
+  // as does anything hinging on "also".
+  const arrival = sentences
+    .slice(0, 3)
+    .find((s) => s.length <= 150 && ARRIVAL_RE.test(s) && !/\balso\b/i.test(s));
+  if (arrival) return arrival;
+  const first = sentences[0];
+  if (!first || first.length > 150 || STATUTE_RE.test(first)) return null;
+  return first;
 }
 
 /** Pick up to n recognisable destinations for copy, preferring well-known ones. */
@@ -169,7 +203,6 @@ function buildListData(cfg: ListConfig): ListData | null {
   const vfCount = base.reachByLevel.visa_free.length;
   const voaCount = base.reachByLevel.visa_on_arrival.length;
   const eCount = base.reachByLevel.eta.length + base.reachByLevel.e_visa.length;
-  const total = base.reach.length;
 
   if (cfg.kind === "us_visa") {
     const dVf = usDelta.filter((e) => e.level === "visa_free").sort(byName);
@@ -239,7 +272,7 @@ function buildListData(cfg: ListConfig): ListData | null {
       faqs: [
         {
           q: `How many countries offer visa on arrival to ${cfg.people} in 2026?`,
-          a: `${n} countries offer a visa on arrival to ${adj} passport holders in 2026, including ${joinNames(pickNotable(main, ["MDV", "IDN", "JOR", "BHR", "ETH"], 5))}. On top of that, ${vfCount} countries are fully visa-free and ${eCount} accept an e-visa or eTA - a total reach of ${total} destinations.`,
+          a: `${n} countries offer a visa on arrival to ${adj} passport holders in 2026, including ${joinNames(pickNotable(main, ["MDV", "IDN", "JOR", "BHR", "ETH"], 5))}.`,
         },
         {
           q: `What is a visa on arrival?`,
@@ -267,7 +300,6 @@ function buildListData(cfg: ListConfig): ListData | null {
     const main = [...base.reachByLevel.e_visa].sort(byName);
     const n = main.length;
     const notable = pickNotable(main, ["VNM", "EGY", "GEO", "RUS", "AZE", "KEN", "TZA", "UZB"]);
-    const etaCount = base.reachByLevel.eta.length;
     const title = `e-Visa Countries for ${cfg.peopleTitle} 2026 - Full List (${n})`;
     const description = `${n} countries let ${cfg.people} apply for a visa entirely online in 2026, including ${joinNames(notable)} - no embassy visit. The full e-visa list with stay limits from official government sources.`;
     return {
@@ -283,7 +315,7 @@ function buildListData(cfg: ListConfig): ListData | null {
       faqs: [
         {
           q: `How many countries offer an e-visa to ${cfg.people} in 2026?`,
-          a: `${n} countries let ${adj} passport holders apply for a visa entirely online in 2026, including ${joinNames(pickNotable(main, ["VNM", "EGY", "GEO", "RUS", "AZE"], 5))}. On top of that, ${vfCount} countries are fully visa-free, ${voaCount} offer a visa on arrival, and ${etaCount} need only an eTA - a total reach of ${total} destinations.`,
+          a: `${n} countries let ${adj} passport holders apply for a visa entirely online in 2026, including ${joinNames(pickNotable(main, ["VNM", "EGY", "GEO", "RUS", "AZE"], 5))}.`,
         },
         {
           q: `What is an e-visa and how is it different from an eTA?`,
@@ -324,7 +356,7 @@ function buildListData(cfg: ListConfig): ListData | null {
     faqs: [
       {
         q: `How many visa free countries are there for ${cfg.people} in 2026?`,
-        a: `${adj} passport holders can travel to ${n} countries completely visa-free in 2026. Adding ${voaCount} visa on arrival and ${eCount} e-visa or eTA destinations brings the total reach of the ${country.name} passport to ${total} destinations.`,
+        a: `${adj} passport holders can travel to ${n} countries completely visa-free in 2026${longest.length ? ` - the longest stay is ${nameFor(longest[0].dest)} at up to ${longest[0].maxStayDays} days` : ""}.`,
       },
       {
         q: `Which countries can ${cfg.people} visit without a visa?`,
@@ -505,7 +537,6 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
   }));
 
   // Sibling lists for the same nationality (looked up, never hand-built).
-  const voaList = LISTS.find((l) => l.kind === "voa" && l.nat === cfg.nat);
   const usList = LISTS.find((l) => l.kind === "us_visa" && l.nat === cfg.nat);
   const vfList = LISTS.find((l) => l.kind === "visa_free" && l.nat === cfg.nat);
 
@@ -594,16 +625,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               <>
                 <p className="text-base leading-relaxed text-ink-soft">
                   A valid US visa in a <Link href={`/passport/${natSlug}`} className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">{country.name} passport</Link>{" "}
-                  unlocks <strong className="text-ink">{main.length} extra destinations</strong> in 2026 that would otherwise require a full embassy visa:{" "}
-                  <strong className="text-ink">{dVf.length} become visa-free</strong>,{" "}
-                  <strong className="text-ink">{dVoa.length} grant a visa on arrival</strong>, and{" "}
-                  <strong className="text-ink">{dE.length} switch to an easy e-visa or eTA</strong>.
+                  unlocks <strong className="text-ink">extra destinations</strong> in 2026 that would otherwise require a full embassy visa - some waive it entirely, others switch to a visa on arrival or an easy e-visa.
                   On its own, the {country.name} passport reaches {total} destinations - see the{" "}
                   <Link href="/rankings" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">2026 passport rankings</Link> for how that compares.
                 </p>
                 <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
                   Every entry below requires a valid US visa - typically a multiple-entry B1/B2 visitor visa physically affixed in your passport. An ESTA is not a visa.
-                  Each destination sets its own conditions (visa type, remaining validity, prior use); the exact condition is shown on each row, taken from official sources.
+                  Each destination sets its own conditions (visa type, remaining validity, prior use); the exact condition is shown on each row.
                   Verify with the destination&apos;s border authority before booking.
                 </p>
               </>
@@ -612,27 +640,19 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               <p className="text-base leading-relaxed text-ink-soft">
                 <strong className="text-ink">{main.length} countries</strong> issue {cfg.people} a{" "}
                 <strong className="text-ink">visa on arrival</strong> in 2026 - you land, pay the fee at the border counter, and get stamped in without an embassy appointment.
-                Combined with <strong className="text-ink">{vfCount} visa-free</strong> and {eCount} e-visa or eTA destinations, the{" "}
+                Fees, stay limits and documents vary per country. See how the{" "}
                 <Link href={`/passport/${natSlug}`} className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">{country.name} passport</Link>{" "}
-                reaches {total} destinations without a pre-arranged embassy visa - see the{" "}
+                compares in the{" "}
                 <Link href="/rankings" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">2026 passport rankings</Link>.
-                Fees, stay limits and documents vary per country; every rule below comes from official government sources.
               </p>
             )}
             {cfg.kind === "visa_free" && (
               <p className="text-base leading-relaxed text-ink-soft">
                 {adj} passport holders can visit <strong className="text-ink">{main.length} countries without any visa</strong> in 2026 - no application, no fee, no embassy queue.
-                Beyond these, <strong className="text-ink">{voaCount} countries</strong> offer a{" "}
-                {voaList ? (
-                  <Link href={`/list/${voaList.slug}`} className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">visa on arrival</Link>
-                ) : (
-                  <>visa on arrival</>
-                )}{" "}
-                and {eCount} accept an e-visa or eTA, giving the{" "}
+                See how the{" "}
                 <Link href={`/passport/${natSlug}`} className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">{country.name} passport</Link>{" "}
-                a total reach of {total} destinations - see the{" "}
+                compares in the{" "}
                 <Link href="/rankings" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">2026 passport rankings</Link>.
-                Every entry below is sourced from official government publications, with the maximum stay shown where published.
               </p>
             )}
           </section>
@@ -700,7 +720,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               </p>
               <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {main.map((e) => (
-                  <DestCard key={e.dest} edge={e} condition={firstSentence(e.notes ?? "")} />
+                  <DestCard key={e.dest} edge={e} condition={cfg.kind === "voa" ? voaCondition(e.notes ?? "") : firstSentence(e.notes ?? "")} />
                 ))}
               </div>
             </section>
@@ -782,7 +802,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
           {/* Sibling listicles */}
           <CorridorLinks
             title="More Earth Visa Lists"
-            description="Hand-checked lists built from the same official-source dataset."
+            description="Hand-checked lists."
             links={siblingLinks}
           />
 

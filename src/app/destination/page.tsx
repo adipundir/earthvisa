@@ -42,7 +42,7 @@ export default function DestinationIndex() {
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
             Choose a destination to see which nationalities can enter visa-free, on arrival or with an eTA,
-            its visa types, fees and document requirements - all from official sources.
+            its visa types, fees and document requirements.
           </p>
           <p className="mt-4 text-[15px] text-ink-mute">
             Want to know where your passport can take you?{" "}

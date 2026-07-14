@@ -102,7 +102,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What is a passport index?",
-    a: `A passport index is a ranking of the world's passports by how much visa-free travel each one allows. Each passport is scored by counting the destinations its holders can enter without arranging a visa at an embassy first - whether fully visa-free, with a visa on arrival, or with an electronic authorisation (eTA or e-visa). The Earth Visa passport index 2026 ranks all ${TOTAL_PASSPORTS} passports by total reach across ${destCount} destinations, using official government sources only.`,
+    a: `A passport index is a ranking of the world's passports by how much visa-free travel each one allows. Each passport is scored by counting the destinations its holders can enter without arranging a visa at an embassy first - whether fully visa-free, with a visa on arrival, or with an electronic authorisation (eTA or e-visa). The Earth Visa passport index 2026 ranks all ${TOTAL_PASSPORTS} passports by total reach across ${destCount} destinations.`,
   },
   {
     q: "Which is the strongest visa in the world?",
@@ -110,7 +110,7 @@ const FAQS = [
   },
   {
     q: "Which passport is the strongest in the world in 2026?",
-    a: `The ${top1.name} passport ranks #1 in our 2026 passport index with a total reach of ${top1.total} destinations: ${top1.visaFree} visa-free, ${top1.visaOnArrival} visa on arrival, and ${top1.eta} via eTA or e-visa. ${
+    a: `The ${top1.name} passport ranks #1 in our 2026 passport index, able to access ${top1.total} destinations without a pre-arranged embassy visa: ${top1.visaFree} completely visa-free, ${top1.visaOnArrival} with a visa on arrival, and ${top1.eta} with an eTA or e-visa obtained online before travel. ${
       tiedWithTop.length > 0
         ? `It shares the top spot with ${listNames(tiedWithTop)}, whose passport${tiedWithTop.length > 1 ? "s" : ""} also reach${tiedWithTop.length > 1 ? "" : "es"} ${top1.total} destinations.`
         : `It is closely followed by ${listNames(runnersUp)}, ${runnersUp.length > 1 ? "each " : ""}with a total reach of ${rows[1].total} destinations.`
@@ -121,16 +121,12 @@ const FAQS = [
     a: `Earth Visa counts four access levels for every passport: visa-free entry, visa on arrival, eTA (electronic travel authorisation), and e-visa. A passport's total reach is the number of distinct destinations it can access through any of these levels, measured across ${destCount} destinations. Every access grant is sourced from official government publications - foreign ministry visa policy pages, immigration portals, and published bilateral agreements - rather than third-party aggregators. Passports with equal totals are listed in sequence, so adjacent ranks can share the same reach.`,
   },
   {
-    q: `How many countries can the #1 passport visit?`,
-    a: `The #1 ranked ${top1.name} passport can access ${top1.total} destinations in 2026 without a pre-arranged embassy visa: ${top1.visaFree} countries completely visa-free, ${top1.visaOnArrival} with a visa on arrival, and ${top1.eta} with an eTA or e-visa obtained online before travel.`,
-  },
-  {
     q: "What is the weakest passport in the world in 2026?",
     a: `The ${bottom10[9].name} passport ranks last (#${bottom10[9].rank} of ${rows.length}) in our 2026 index, with a total reach of ${bottom10[9].total} destinations, of which ${bottom10[9].visaFree} are visa-free. The bottom of the ranking also includes ${bottom10.slice(0, 4).map((r) => r.name).join(", ")} - passports whose holders need an embassy visa for most international trips.`,
   },
   {
     q: "Why do passport rankings differ between indexes?",
-    a: `Different passport indexes use different methodologies. Some, like the Henley Passport Index, group visa-free and visa-on-arrival access into a single score; others weight e-visas differently or draw on airline industry databases rather than government sources. Earth Visa counts visa-free, visa on arrival, eTA, and e-visa access separately, across ${destCount} destinations, and takes every grant from official government publications. The exact rank of a passport can therefore differ by a few places between indexes, but the overall picture - which passports are strongest and weakest - is broadly consistent.`,
+    a: `Different passport indexes use different methodologies. Some, like the Henley Passport Index, group visa-free and visa-on-arrival access into a single score; others weight e-visas differently or draw on airline industry databases rather than government sources. Earth Visa counts visa-free, visa on arrival, eTA, and e-visa access separately, across ${destCount} destinations. The exact rank of a passport can therefore differ by a few places between indexes, but the overall picture - which passports are strongest and weakest - is broadly consistent.`,
   },
 ];
 
@@ -236,16 +232,10 @@ export default function RankingsPage() {
               {tiedWithTop.length > 0 && <> (tied with {listNames(tiedWithTop)})</>}
               , with a total reach of <strong className="text-ink">{top1.total} destinations</strong> -{" "}
               {top1.visaFree} visa-free, {top1.visaOnArrival} visa on arrival, and {top1.eta} via eTA or e-visa.
-              This passport index 2026 ranks all <strong className="text-ink">{rows.length} passports</strong> in the world by how far
-              they travel without a pre-arranged embassy visa, across {destCount} destinations.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              What makes the <strong className="text-ink">strongest passport in the world</strong> strong is simple: the number of
-              countries its holders can enter visa-free, with a visa stamped on arrival, or with an electronic authorisation
-              applied for online. Our passport ranking 2026 counts each of those access levels separately, and every grant comes
-              from <strong className="text-ink">official government sources</strong> - foreign ministry visa policy pages, immigration
-              portals, and published bilateral agreements. Rankings differ slightly between indexes (Henley and others) because
-              methodologies differ; ours is explained in the <a href="#methodology" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">methodology</a> below.
+              We count visa-free, visa-on-arrival, eTA and e-visa access separately, from official government sources - see
+              the <a href="#methodology" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">methodology</a> below.
             </p>
           </section>
 
@@ -344,11 +334,8 @@ export default function RankingsPage() {
             </ul>
             <p className="mt-4 text-sm leading-relaxed text-ink-soft">
               A passport&apos;s <strong className="text-ink">total reach</strong> is the number of distinct destinations accessible
-              through any of these levels, and the ranking sorts all {rows.length} passports by that total. Passports with equal
-              totals are listed in sequence, so adjacent ranks can share the same reach. Other indexes (Henley Passport Index,
-              Passport Index by Arton, and others) use different methodologies - some merge access levels into one score or rely
-              on airline industry data - which is why the same passport can sit a few places apart across indexes. Data last
-              updated {fmtDate(dataset.meta.lastUpdated)}.
+              through any of these levels, and the ranking sorts by that total. Passports with equal totals are listed in
+              sequence, so adjacent ranks can share the same reach.
             </p>
           </section>
 

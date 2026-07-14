@@ -109,7 +109,7 @@ export default function Home() {
               {[
                 {
                   q: "What is passport strength and how is it measured?",
-                  a: "Passport strength refers to how many countries a passport holder can visit without obtaining a visa in advance. It is measured by counting the number of destinations offering visa-free access, visa on arrival, or electronic travel authorisation (eTA) to holders of a given passport. Stronger passports - typically those from the EU, US, Japan, UK, Australia, and Canada - can access 170+ destinations without prior visa arrangements."
+                  a: "Passport strength refers to how many countries a passport holder can visit without obtaining a visa in advance. It is measured by counting the number of destinations offering visa-free access, visa on arrival, or electronic travel authorisation (eTA) to holders of a given passport."
                 },
                 {
                   q: `Which passport gives the most visa-free countries in ${dataYear}?`,

@@ -258,9 +258,9 @@ function VisaTypeRow({ v }: { v: VisaType }) {
 function CountryBlock({ e }: { e: WorkEntry }) {
   const slug = nameToSlug(e.name);
   const w = passportWorth(e.iso3);
-  const VISIBLE = 4;
-  const visible = e.visaTypes.length > VISIBLE ? e.visaTypes.slice(0, 3) : e.visaTypes;
-  const hidden = e.visaTypes.length > VISIBLE ? e.visaTypes.slice(3) : [];
+  const VISIBLE = 1;
+  const visible = e.visaTypes.slice(0, VISIBLE);
+  const hidden = e.visaTypes.slice(VISIBLE);
   return (
     <div className="rounded-sm border border-line bg-paper-2/70 p-4">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -283,7 +283,9 @@ function CountryBlock({ e }: { e: WorkEntry }) {
       {hidden.length > 0 && (
         <details className="group mt-1">
           <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
-            <span className="group-open:hidden">Show {hidden.length} more {e.name} work visa types</span>
+            <span className="group-open:hidden">
+              Show {hidden.length} more {e.name} work visa {hidden.length === 1 ? "type" : "types"}
+            </span>
             <span className="hidden group-open:inline">Hide extra {e.name} work visa types</span>
             <Chevron />
           </summary>
@@ -344,7 +346,7 @@ export default function WorkVisaPage() {
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {totalPrograms} programs tracked · official publications · data refreshed {lastUpdated}
+              {totalPrograms} programs tracked · data refreshed {lastUpdated}
             </p>
 
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
@@ -360,6 +362,22 @@ export default function WorkVisaPage() {
                 </div>
               ))}
             </dl>
+
+            <nav aria-label="Jump to a region" className="mono mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] uppercase tracking-[0.15em]">
+              <span className="text-[10px] text-ink-mute">Jump to</span>
+              {REGION_ORDER.filter((r) => (byRegion.get(r) ?? []).length > 0).map((r) => (
+                <a
+                  key={r}
+                  href={`#${r.toLowerCase()}`}
+                  className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink"
+                >
+                  {r}
+                </a>
+              ))}
+              <a href="#faq" className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink">
+                FAQ
+              </a>
+            </nav>
           </div>
         </header>
 
@@ -370,12 +388,23 @@ export default function WorkVisaPage() {
               A <strong className="text-ink">work visa</strong> authorises paid employment in the issuing country -
               distinct from a tourist or business visa, which generally does not. Most work visas require an{" "}
               <strong className="text-ink">employer sponsor and a job offer</strong> before you can apply, and some
-              countries also run a <strong className="text-ink">labor market test</strong> - proof that no local or
-              resident candidate is available - before approving a foreign hire. Permit categories vary: skilled
-              worker visas, intra-company transfer visas for staff relocated within the same employer, seasonal or
-              temporary work visas, working holiday visas for youth exchange schemes, and self-employed or freelance
-              permits. Our dataset tracks <strong className="text-ink">{totalPrograms} work visa programs</strong>{" "}
-              across <strong className="text-ink">{countryCount} countries</strong>, grouped by region below.
+              countries also run a <strong className="text-ink">labor market test</strong> before approving a foreign
+              hire. Every program is grouped by region below.
+            </p>
+            <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5">
+              <span className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">
+                Common permit types
+              </span>
+              {["Skilled worker", "Intra-company transfer", "Seasonal", "Working holiday", "Self-employed"].map(
+                (t) => (
+                  <span
+                    key={t}
+                    className="mono rounded-sm border border-line bg-paper-2/70 px-2 py-1 text-[11px] text-ink-soft"
+                  >
+                    {t}
+                  </span>
+                ),
+              )}
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               For every country we also show <strong className="text-ink">what its passport is worth</strong>: the
@@ -400,7 +429,7 @@ export default function WorkVisaPage() {
             if (countries.length === 0) return null;
             const total = countries.reduce((n, e) => n + e.visaTypes.length, 0);
             return (
-              <section key={region} className="mt-12">
+              <section key={region} id={region.toLowerCase()} className="mt-12 scroll-mt-24">
                 <h2 className="font-display text-2xl font-semibold text-ink">
                   Work Visas in {region} ({total} Programs, {countries.length} Countries)
                 </h2>
@@ -431,7 +460,7 @@ export default function WorkVisaPage() {
           })}
 
           {/* FAQ */}
-          <section className="mt-14">
+          <section id="faq" className="mt-14 scroll-mt-24">
             <h2 className="font-display text-2xl font-semibold text-ink">Work Visa FAQ</h2>
             <div className="mt-5 divide-y divide-line">
               {faqs.map(({ q, a }) => (

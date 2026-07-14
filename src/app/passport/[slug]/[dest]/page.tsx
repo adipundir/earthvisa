@@ -242,6 +242,49 @@ function extractCommonLines<T extends { documents_required: string }>(entries: T
   return { common, perEntry: lineSets.map((lines) => lines.filter((l) => !commonSet.has(l))) };
 }
 
+// Visa-type notes arrive as flowing prose. Sentences repeated verbatim across
+// 3+ cards ("National visa fee €75 (approx. USD 81).", "Online application
+// through Consular Services Portal available as of January 2025.") are
+// destination boilerplate, not per-type content - hoist them into one shared
+// block above the cards, the same treatment extractCommonLines() gives VFS
+// checklist lines. Sentence splitting guards abbreviations ("approx.", "e.g.")
+// and unbalanced parentheses so prose is never cut mid-thought.
+const NOTE_MIN_REPEATS = 3;
+function splitSentences(text: string): string[] {
+  const parts: string[] = [];
+  let buf = "";
+  let depth = 0;
+  for (const chunk of text.split(/(?<=[.!?])\s+/)) {
+    buf = buf ? `${buf} ${chunk}` : chunk;
+    depth += (chunk.match(/\(/g)?.length ?? 0) - (chunk.match(/\)/g)?.length ?? 0);
+    if (depth > 0 || /(?:\b[A-Z]|\b(?:approx|etc|e\.g|i\.e|vs|incl|excl|min|max|no|sec|st))\.$/i.test(chunk)) continue;
+    parts.push(buf);
+    buf = "";
+    depth = 0;
+  }
+  if (buf) parts.push(buf);
+  return parts;
+}
+function extractCommonSentences(notes: (string | null)[]): { common: string[]; perEntry: string[] } {
+  const sets = notes.map((t) => (t ? splitSentences(t) : []));
+  // Parentheticals are clarification, not distinct facts - "fee €75 (approx.
+  // USD 81)." and "fee €75." are the same boilerplate line, so strip them
+  // before matching (the first occurrence, parenthetical intact, is displayed).
+  const norm = (s: string) => s.toLowerCase().replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").replace(/[.;]+$/, "").trim();
+  const counts = new Map<string, number>();
+  for (const sents of sets) for (const k of new Set(sents.map(norm))) counts.set(k, (counts.get(k) ?? 0) + 1);
+  const commonKeys = new Set([...counts].filter(([, c]) => c >= NOTE_MIN_REPEATS).map(([k]) => k));
+  const common: string[] = [];
+  const seen = new Set<string>();
+  for (const sents of sets) {
+    for (const s of sents) {
+      const k = norm(s);
+      if (commonKeys.has(k) && !seen.has(k)) { seen.add(k); common.push(s); }
+    }
+  }
+  return { common, perEntry: sets.map((sents) => sents.filter((s) => !commonKeys.has(norm(s))).join(" ")) };
+}
+
 // Bare URLs in checklist text (100+ character asset links) become real anchors
 // with a short label - otherwise they are unclickable and, being unbreakable
 // strings, force horizontal overflow on mobile.
@@ -408,7 +451,23 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
         {v.fee_usd != null && !suppressFee && (v.fee_usd === 0 ? <span className="text-vfree">free</span> : <span>~${v.fee_usd}</span>)}
         {v.online && <span className="text-vfree">online</span>}
       </div>
-      {v.notes && <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>}
+      {/* Notes holding 3+ discrete facts render as scannable bullets, not a
+          run-on paragraph; one- or two-sentence notes stay as prose. */}
+      {v.notes && (() => {
+        const sentences = splitSentences(v.notes);
+        return sentences.length >= 3 ? (
+          <ul className="mt-2 space-y-1">
+            {sentences.map((t, i) => (
+              <li key={i} className="flex gap-2 text-[12px] leading-relaxed text-ink-soft">
+                <span aria-hidden="true" className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+                <span className="min-w-0 break-words">{t}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>
+        );
+      })()}
       {v.official_url && (
         <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
           Apply here ↗
@@ -684,12 +743,45 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     </div>
                   ))}
                 </dl>
-                {"notes" in s && s.notes ? (
-                  <p className="mt-4 rounded-lg border border-eta/25 bg-eta/[0.05] px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-                    <span className="mono mr-2 text-[10px] font-medium uppercase tracking-[0.14em] text-eta">Policy note</span>
-                    {s.notes}
-                  </p>
-                ) : null}
+                {/* Policy note: a plain string renders as one paragraph, as
+                    before. Structured notes (newline "- " bullet lines, with an
+                    optional short "Label:" line introducing them) render as a
+                    short lead plus a labeled bullet list - discrete facts like
+                    entry requirements stay scannable rows, never a prose wall. */}
+                {"notes" in s && s.notes ? (() => {
+                  const lines = s.notes.split("\n").map((l) => l.trim()).filter(Boolean);
+                  const lead: string[] = [];
+                  const bullets: string[] = [];
+                  let listLabel: string | null = null;
+                  for (const line of lines) {
+                    if (/^[-•]\s+/.test(line)) bullets.push(line.replace(/^[-•]\s+/, ""));
+                    else if (/:$/.test(line) && line.length <= 40) listLabel = line.replace(/:$/, "");
+                    else lead.push(line);
+                  }
+                  return (
+                    <div className="mt-4 rounded-lg border border-eta/25 bg-eta/[0.05] px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
+                      <p>
+                        <span className="mono mr-2 text-[10px] font-medium uppercase tracking-[0.14em] text-eta">Policy note</span>
+                        {lead.join(" ")}
+                      </p>
+                      {bullets.length > 0 && (
+                        <>
+                          {listLabel && (
+                            <p className="mono mt-2.5 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">{listLabel}</p>
+                          )}
+                          <ul className={`${listLabel ? "mt-1.5" : "mt-2.5"} space-y-1`}>
+                            {bullets.map((b, i) => (
+                              <li key={i} className="flex gap-2.5">
+                                <span aria-hidden="true" className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+                                <span className="min-w-0 break-words">{b}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+                    </div>
+                  );
+                })() : null}
                 <div className="mono mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-line pt-3.5 text-[11px] text-ink-mute">
                   {"sourceUrl" in s && s.sourceUrl ? (
                     <a href={s.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-ink">
@@ -871,8 +963,10 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   </p>
                 );
               })()}
+              {/* Provenance lives on each fee card's source link - the stamp
+                  only needs to carry freshness. */}
               <p className="mono mt-3 text-[11px] font-medium uppercase tracking-[0.12em] text-ink-mute">
-                Fees checked {fmtDay(destFees?.updated) ?? "recently"} · sourced from official government fee schedules
+                Fees checked {fmtDay(destFees?.updated) ?? "recently"}
               </p>
             </section>
           )}
@@ -955,18 +1049,21 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             const otherTypes = visaTypes.filter((v) => !TRAVELER_CATEGORIES.has(v.category));
             const showTourist = !hasVfs && need && touristTypes.length > 0;
             if (!showTourist && otherTypes.length === 0) return null;
+            // Notes sentences repeated across 3+ "other category" cards are
+            // destination-wide boilerplate - hoist them once above the grid.
+            const { common: sharedNotes, perEntry: dedupedNotes } = extractCommonSentences(otherTypes.map((v) => v.notes));
             return (
               <section id="visa-types" className="mb-10 scroll-mt-24 border-t border-line pt-8">
+                {/* The h2 renders whenever the section exists - otherwise the
+                    rail's "Visa types" jump link lands on an unlabeled button. */}
+                <h2 className="font-display text-xl font-semibold text-ink">{d.name} visa types</h2>
                 {showTourist && (
-                  <>
-                    <h2 className="font-display text-xl font-semibold text-ink">{d.name} visa types</h2>
-                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                      {touristTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
-                    </div>
-                  </>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {touristTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
+                  </div>
                 )}
                 {otherTypes.length > 0 && (
-                  <details className={`group ${showTourist ? "mt-8" : ""}`}>
+                  <details className={`group ${showTourist ? "mt-8" : "mt-4"}`}>
                     <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                       <span className="group-open:hidden">Other {d.name} visa categories ({otherTypes.length})</span>
                       <span className="hidden group-open:inline">Hide other visa categories</span>
@@ -975,8 +1072,21 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     <p className="mt-3 text-sm text-ink-soft">
                       These don&apos;t apply to a typical short visit, but cover other reasons people travel to {d.name}. Eligibility varies by visa type - some are limited to specific nationalities, so check each one&apos;s conditions.
                     </p>
+                    {sharedNotes.length > 0 && (
+                      <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3.5">
+                        <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">Common to several visa categories below</p>
+                        <ul className="space-y-1.5">
+                          {sharedNotes.map((line, i) => (
+                            <li key={i} className="flex gap-2.5 text-[12.5px] leading-relaxed text-ink-soft">
+                              <span aria-hidden="true" className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+                              <span className="min-w-0 break-words">{line}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                      {otherTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
+                      {otherTypes.map((v, i) => <VisaTypeCard key={i} v={{ ...v, notes: dedupedNotes[i] || null }} suppressFee={feeList.length > 0} />)}
                     </div>
                   </details>
                 )}

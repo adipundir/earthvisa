@@ -42,6 +42,10 @@ for (const region of REGION_ORDER) {
   );
 }
 
+// Europe is the busiest region; show the first N countries expanded and collapse the rest
+// behind the same <details> pattern the other regions use (content stays in HTML for crawlers).
+const EUROPE_PREVIEW = 12;
+
 // Programs literally named "golden" (one representative per country, closed ones kept and badged).
 const namedGolden = [
   ...new Map(programs.filter((p) => /golden/i.test(p.program_name)).map((p) => [p.iso3, p])).values(),
@@ -271,7 +275,8 @@ export default function GoldenVisaPage() {
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {openPrograms.length} open routes · {closedPrograms.length} recorded closed · data refreshed {lastUpdated}
+              {openPrograms.length} open routes · {closedPrograms.length} recorded closed · data refreshed {lastUpdated}{" "}
+              · thresholds change frequently
             </p>
 
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
@@ -295,22 +300,14 @@ export default function GoldenVisaPage() {
           <section className="mt-10 max-w-3xl">
             <p className="text-base leading-relaxed text-ink-soft">
               A <strong className="text-ink">golden visa</strong> grants long-term residency in exchange for a
-              qualifying investment - real estate, fund units, bonds, a deposit, or a business. Our dataset tracks{" "}
-              <strong className="text-ink">{programs.length} investment-linked residence routes</strong> across{" "}
-              <strong className="text-ink">{countryCount} countries</strong>, grouped by region below.{" "}
-              {withCitizenshipPath.length} of them publish a residence-to-citizenship timeline, so for every country we
-              also show <strong className="text-ink">what its passport is worth</strong>: the visa-free destination
-              count and global rank from our <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">passport rankings</Link>.
+              qualifying investment - real estate, fund units, bonds, a deposit, or a business. For every country
+              below we also show <strong className="text-ink">what its passport is worth</strong>: the visa-free
+              destination count and global rank from our <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">passport rankings</Link>.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              Golden visas have been retreating in Europe: our data records Spain&apos;s program as{" "}
+              Golden visas have been retreating in Europe: Spain&apos;s program is recorded as{" "}
               <strong className="text-ink">abolished</strong> and the Irish, UK and Australian investor routes as{" "}
-              <strong className="text-ink">closed</strong>. Closed programs are kept in the list and clearly flagged,
-              so you do not plan around a route that no longer exists.
-            </p>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-              Thresholds and routes change frequently. Figures compiled directly from official government
-              publications, last refreshed {lastUpdated}.
+              <strong className="text-ink">closed</strong>. Closed routes stay listed and clearly flagged.
             </p>
           </section>
 
@@ -360,10 +357,26 @@ export default function GoldenVisaPage() {
                       across the Schengen area, but the permit itself is national - conditions vary by country.
                     </p>
                     <div className="mt-5 grid gap-3 lg:grid-cols-2">
-                      {countries.map(([name, list]) => (
+                      {countries.slice(0, EUROPE_PREVIEW).map(([name, list]) => (
                         <CountryBlock key={name} name={name} list={list} />
                       ))}
                     </div>
+                    {countries.length > EUROPE_PREVIEW && (
+                      <details className="group mt-3">
+                        <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                          <span className="group-open:hidden">
+                            Show all {total} routes in {countries.length} Europe countries
+                          </span>
+                          <span className="hidden group-open:inline">Show fewer Europe countries</span>
+                          <Chevron />
+                        </summary>
+                        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+                          {countries.slice(EUROPE_PREVIEW).map(([name, list]) => (
+                            <CountryBlock key={name} name={name} list={list} />
+                          ))}
+                        </div>
+                      </details>
+                    )}
                   </>
                 ) : (
                   <details className="group mt-3">

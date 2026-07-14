@@ -38,6 +38,22 @@ const nonUsdPriced = programs.filter((p) => cbiMinUsd(p) == null && p.options.so
 // Programs with no published minimum at all (discretionary / not yet regulated).
 const noPublishedMin = programs.filter((p) => p.options.every((o) => o.min_amount == null));
 
+// One price-to-power table serves both the "cheapest ranked" and "what each passport is worth"
+// views: USD-ranked programs first, then non-USD-priced (shown as published, never converted),
+// then programs with no published minimum.
+const priceRows = [
+  ...cheapest.map(({ p }, i) => ({ p, rank: i + 1 as number | null, option: cheapestUsdOption(p) })),
+  ...nonUsdPriced.map((p) => ({
+    p,
+    rank: null,
+    option:
+      [...p.options]
+        .filter((o) => o.min_amount != null)
+        .sort((a, b) => (a.min_amount as number) - (b.min_amount as number))[0] ?? null,
+  })),
+  ...noPublishedMin.map((p) => ({ p, rank: null, option: null })),
+];
+
 const dualAllowedCount = programs.filter((p) => p.dual_citizenship_allowed === true).length;
 
 // Programs whose official source states a concrete timeline, for the FAQ.
@@ -308,7 +324,8 @@ export default function CitizenshipByInvestmentPage() {
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {programs.length} programs tracked · official publications · data refreshed {lastUpdated}
+              {programs.length} programs tracked · official publications · data refreshed {lastUpdated} · minimums
+              change often
             </p>
 
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
@@ -336,129 +353,51 @@ export default function CitizenshipByInvestmentPage() {
             <p className="text-base leading-relaxed text-ink-soft">
               <strong className="text-ink">Citizenship by investment (CBI)</strong> grants a full second passport in
               exchange for a qualifying investment - most commonly a donation to a national development fund, an
-              approved real estate purchase, or a business investment. Our dataset tracks{" "}
-              <strong className="text-ink">{programs.length} programs</strong> in 2026, with published minimums
-              starting from <strong className="text-ink">{fmtMoney(cheapest[0].min, "USD")}</strong>
+              approved real estate purchase, or a business investment.
               {isAnnouncedOnly(cheapest[0].p) && (
                 <>
                   {" "}
-                  (announced, not yet enacted - the lowest enacted minimum is{" "}
-                  <strong className="text-ink">{fmtMoney(cheapestEnacted.min, "USD")}</strong>)
+                  The lowest published minimum is announced, not yet enacted - the lowest enacted minimum is{" "}
+                  <strong className="text-ink">{fmtMoney(cheapestEnacted.min, "USD")}</strong>.
                 </>
-              )}
-              .
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              What most comparison lists skip: <strong className="text-ink">what the passport you would get is
-              actually worth</strong>. For every program below we show the passport&apos;s visa-free destination count
-              and its global rank out of {TOTAL_RANKED_PASSPORTS} passports, computed from the same official-source
-              visa data that powers our <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">passport rankings</Link>.
-            </p>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-              CBI programs change often - minimums, options and eligibility are revised, and programs open and close.
-              Figures on this page were compiled directly from each program&apos;s official publications and last
-              refreshed on {lastUpdated}.
+              )}{" "}
+              For every program below we also show{" "}
+              <strong className="text-ink">what the passport is actually worth</strong>: its visa-free destination
+              count and global rank from our <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">passport rankings</Link>.
             </p>
           </section>
 
-          {/* Cheapest ranking */}
+          {/* Cheapest ranking + passport worth: one price-to-power table */}
           <section className="mt-12">
             <h2 className="font-display text-2xl font-semibold text-ink">
-              Cheapest Citizenship by Investment in 2026 (Ranked)
+              Cheapest Citizenship by Investment in 2026 (Ranked) - and What Each CBI Passport Is Worth
             </h2>
             <p className="mt-2 text-sm text-ink-soft">
-              Ranked by the lowest USD-denominated published minimum per program. Headline minimums exclude
-              government processing, due diligence and dependant fees.
-            </p>
-            <ol className="mt-5 space-y-2">
-              {cheapest.map(({ p, min }, i) => {
-                const opt = cheapestUsdOption(p);
-                const w = passportWorth(p.iso3);
-                return (
-                  <li
-                    key={p.iso3}
-                    className="flex min-h-[44px] flex-wrap items-center gap-x-3 gap-y-1 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5"
-                  >
-                    <span className="mono w-6 text-right text-[11px] text-ink-mute">{i + 1}.</span>
-                    <span className="text-xl">{flagFor(p.iso3)}</span>
-                    <Link
-                      href={`/passport/${nameToSlug(p.name)}`}
-                      className="font-display text-sm font-medium text-ink transition hover:text-stamp"
-                    >
-                      {p.name}
-                    </Link>
-                    {isAnnouncedOnly(p) && (
-                      <span className="mono rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
-                        announced
-                      </span>
-                    )}
-                    <span className="mono ml-auto text-[11px] text-ink-soft">
-                      {opt ? `${optionLabel(opt.type)} · ` : ""}
-                      <strong className="text-ink">{fmtMoney(min, "USD")}</strong>
-                      {w ? ` · ${w.visaFree} visa-free` : ""}
-                    </span>
-                  </li>
-                );
-              })}
-            </ol>
-            {(nonUsdPriced.length > 0 || noPublishedMin.length > 0) && (
-              <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
-                {nonUsdPriced.length > 0 && (
-                  <>
-                    Not ranked above (priced in other currencies, shown as published, never converted):{" "}
-                    {nonUsdPriced.map((p) => p.name).join(", ")}.{" "}
-                  </>
-                )}
-                {noPublishedMin.length > 0 && (
-                  <>No published minimum in official sources: {noPublishedMin.map((p) => p.name).join(", ")}.</>
-                )}
-              </p>
-            )}
-          </section>
-
-          {/* Full list */}
-          <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
-              Citizenship by Investment Countries List 2026 ({programs.length} Programs)
-            </h2>
-            <p className="mt-2 text-sm text-ink-soft">
-              Every CBI route in our dataset, with investment options, processing time and program conditions from
-              official publications.
-            </p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {programs.map((p) => (
-                <ProgramCard key={p.iso3} p={p} />
-              ))}
-            </div>
-          </section>
-
-          {/* Passport worth table */}
-          <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
-              What Each CBI Passport Is Worth in 2026
-            </h2>
-            <p className="mt-2 text-sm text-ink-soft">
-              The point of a second passport is access. Here is every CBI passport ranked by visa-free destinations,
-              alongside its lowest published USD minimum - the price-to-power view.
+              Every program ranked by its lowest USD-denominated published minimum, next to the passport&apos;s
+              visa-free destinations and global rank - the price-to-power view. Headline minimums exclude government
+              processing, due diligence and dependant fees.
             </p>
             <p className="mono mt-5 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute sm:hidden">
               Scroll sideways for all columns →
             </p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">
-              <table className="w-full min-w-[560px] border-collapse text-sm">
+              <table className="w-full min-w-[640px] border-collapse text-sm">
                 <thead>
                   <tr className="mono border-b border-line-strong text-left text-[10px] uppercase tracking-[0.15em] text-ink-mute">
+                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">#</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Passport</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Cheapest option</th>
+                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">Min. investment</th>
                     <th scope="col" className="py-2.5 pr-4 text-right font-medium">Visa-free</th>
-                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">Global rank</th>
-                    <th scope="col" className="py-2.5 text-right font-medium">Min. investment (USD)</th>
+                    <th scope="col" className="py-2.5 text-right font-medium">Global rank</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {worth.map(({ p, w }) => {
-                    const min = cbiMinUsd(p);
+                  {priceRows.map(({ p, rank, option }) => {
+                    const w = passportWorth(p.iso3);
                     return (
                       <tr key={p.iso3} className="border-b border-line">
+                        <td className="mono py-2 pr-4 text-right tabular-nums text-ink-mute">{rank ?? "-"}</td>
                         <td className="py-2 pr-4">
                           <Link
                             href={`/passport/${nameToSlug(p.name)}`}
@@ -467,13 +406,25 @@ export default function CitizenshipByInvestmentPage() {
                             <span className="text-lg">{flagFor(p.iso3)}</span>
                             {p.name}
                           </Link>
+                          {isAnnouncedOnly(p) && (
+                            <span className="mono ml-2 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                              announced
+                            </span>
+                          )}
                         </td>
-                        <td className="mono py-2 pr-4 text-right tabular-nums text-ink">{w.visaFree}</td>
-                        <td className="mono py-2 pr-4 text-right tabular-nums text-ink-soft">
-                          #{w.rank} of {TOTAL_RANKED_PASSPORTS}
+                        <td className="mono py-2 pr-4 text-[11px] text-ink-soft">
+                          {option ? optionLabel(option.type) : "-"}
                         </td>
+                        <td className="mono py-2 pr-4 text-right tabular-nums">
+                          {option && option.min_amount != null ? (
+                            <strong className="text-ink">{fmtMoney(option.min_amount, option.currency)}</strong>
+                          ) : (
+                            <span className="text-ink-soft">not published</span>
+                          )}
+                        </td>
+                        <td className="mono py-2 pr-4 text-right tabular-nums text-ink">{w ? w.visaFree : "-"}</td>
                         <td className="mono py-2 text-right tabular-nums text-ink-soft">
-                          {min != null ? fmtMoney(min, "USD") : "not published"}
+                          {w ? `#${w.rank} of ${TOTAL_RANKED_PASSPORTS}` : "-"}
                         </td>
                       </tr>
                     );
@@ -481,6 +432,10 @@ export default function CitizenshipByInvestmentPage() {
                 </tbody>
               </table>
             </div>
+            <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
+              Rank covers USD-denominated published minimums only; amounts published in other currencies are shown as
+              published, never converted, and sit unranked at the bottom with the no-published-minimum programs.
+            </p>
             <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
               Global rank is by total destinations reachable without a pre-arranged visa (visa-free + visa on arrival
               + eTA), so a passport can rank above another that has more strictly visa-free destinations.
@@ -492,6 +447,21 @@ export default function CitizenshipByInvestmentPage() {
               </Link>
               .
             </p>
+          </section>
+
+          {/* Full list */}
+          <section className="mt-12">
+            <h2 className="font-display text-2xl font-semibold text-ink">
+              Citizenship by Investment Countries List 2026 ({programs.length} Programs)
+            </h2>
+            <p className="mt-2 text-sm text-ink-soft">
+              Every CBI route in our dataset, with investment options, processing time and program conditions.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {programs.map((p) => (
+                <ProgramCard key={p.iso3} p={p} />
+              ))}
+            </div>
           </section>
 
           {/* FAQ */}

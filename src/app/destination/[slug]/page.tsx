@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
 import { corridorsForDestination, DEMONYM } from "@/lib/corridors";
 import { aliasBySlug, SHORT_NAME, type ColloquialAlias } from "@/lib/colloquial";
 import { feesFor, fmtFee } from "@/lib/fees";
-import CorridorLinks from "@/components/CorridorLinks";
 import { buildReverseIndex } from "../reverse-index";
 import type { AccessLevel } from "@/lib/types";
 
@@ -67,6 +67,7 @@ const LEVEL_COLORS: Record<AccessLevel, string> = {
 const PREVIEW_VF = 30;
 const PREVIEW_VOA = 20;
 const PREVIEW_ETA = 15;
+const PREVIEW_CORRIDORS = 24;
 
 // aria-hidden chevron that rotates when its parent <details> is open.
 function Chevron() {
@@ -116,6 +117,28 @@ function NationalityRow({
         {label}
       </span>
     </Link>
+  );
+}
+
+// A single corridor-guide link row - same markup as components/CorridorLinks,
+// rendered locally so the destination page can cap the list behind the same
+// preview + <details> "Show all" pattern the nationality lists use.
+function CorridorLinkRow({ href, label, iso3 }: { href: string; label: string; iso3: string }) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+      >
+        <span className="text-xl">{flagFor(iso3)}</span>
+        <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+          {label}
+        </span>
+        <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">
+          →
+        </span>
+      </Link>
+    </li>
   );
 }
 
@@ -243,27 +266,37 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
   // FAQ copy is data-aware: zero-count clauses are dropped instead of reading
   // "0 nationalities can obtain a visa on arrival". One array feeds both the
   // visible FAQ and the JSON-LD FAQPage so the two can never drift apart.
-  const faq1Sentences = ["It depends on your nationality."];
-  faq1Sentences.push(
-    vfCount > 0
-      ? `Citizens of ${plural(vfCount, "country", "countries")} can visit ${country.name} without a visa in 2026.`
-      : `No nationality qualifies for fully visa-free entry to ${country.name} in 2026.`,
-  );
-  if (voaCount > 0) {
-    faq1Sentences.push(`An additional ${plural(voaCount, "nationality", "nationalities")} can obtain a visa on arrival.`);
-  }
-  if (etaCount > 0) {
-    faq1Sentences.push(`${plural(etaCount, "nationality", "nationalities")} can apply online for an eTA or e-Visa.`);
-  }
-  faq1Sentences.push(
-    visaRequiredCount > 0
-      ? `If your country is not among these, you will likely need to apply for ${withArticle(country.name)} tourist visa in advance at an embassy or consulate.`
-      : totalWithAccess > 0
-      ? "Every nationality we track qualifies for one of these streamlined routes."
-      : `All visitors must arrange ${withArticle(country.name)} visa in advance through an embassy or consulate.`,
-  );
+  // FAQ #1 deliberately carries no counts - the stat strip and the section
+  // headings above own those numbers; the answer just routes the reader.
+  const faq1Routes: string[] = [];
+  if (vfCount > 0) faq1Routes.push("visa-free");
+  if (voaCount > 0) faq1Routes.push("with a visa on arrival");
+  if (etaCount > 0) faq1Routes.push("with an eTA or e-Visa");
+  const faq1Answer =
+    faq1Routes.length > 0
+      ? `It depends on your nationality - the lists above show every nationality that can enter ${country.name} ${
+          faq1Routes.length > 1
+            ? `${faq1Routes.slice(0, -1).join(", ")} or ${faq1Routes[faq1Routes.length - 1]}`
+            : faq1Routes[0]
+        }. ${
+          visaRequiredCount > 0
+            ? `If your country is not listed, you will likely need to apply for ${withArticle(country.name)} tourist visa in advance at an embassy or consulate.`
+            : "Every nationality we track qualifies for one of these streamlined routes."
+        }`
+      : `All visitors must arrange ${withArticle(country.name)} visa in advance through an embassy or consulate - no nationality qualifies for visa-free, on-arrival, or online-authorisation entry in 2026.`;
 
-  const faqs = !policyTracked ? [
+  // FAQ #3: the lead, document list, and closing line are shared between the
+  // visible bullet rendering and the prose JSON-LD answer so they never drift.
+  const faq3Online = visaRequiredCount === 0 && etaCount > 0;
+  const faq3Lead = faq3Online
+    ? `If your nationality is not eligible for visa-free entry${voaCount > 0 ? " or visa on arrival" : ""} to ${country.name}, you can apply online for an eTA or e-Visa - no embassy visit required. You will generally need:`
+    : `If your nationality is not eligible for visa-free entry${voaCount > 0 ? " or visa on arrival" : ""} to ${country.name}, you typically need to apply at ${withArticle(country.name)} embassy or consulate in your home country. Requirements generally include:`;
+  const faq3Docs = faq3Online
+    ? ["Valid passport", "Completed online application", "Digital photo", "Proof of accommodation", "Proof of onward travel"]
+    : ["Valid passport", "Completed application form", "Passport-sized photos", "Proof of accommodation", "Proof of onward travel", "Travel insurance", "Proof of sufficient funds"];
+  const faq3Close = "Processing times and fees vary by nationality and visa category - see the visa types and fees on this page for the exact figures.";
+
+  const faqs: { q: string; a: string; render?: ReactNode }[] = !policyTracked ? [
     {
       q: `Do I need a visa to visit ${display}?`,
       a: `${country.name} does not publish its visa policy as an enumerated per-nationality list on an official source Earth Visa can verify, so we do not yet track entry rules for ${country.name}. Consult ${possessive(country.name)} official government or embassy channels before planning travel.`,
@@ -273,7 +306,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       a: `We do not yet have verified per-nationality data for ${country.name}. Rather than estimate, Earth Visa only publishes entry rules confirmed against official government sources.`,
     },
   ] : [
-    { q: `Do I need a visa to visit ${display}?`, a: faq1Sentences.join(" ") },
+    { q: `Do I need a visa to visit ${display}?`, a: faq1Answer },
     {
       q: `Which countries can visit ${country.name} without a visa?`,
       a:
@@ -283,10 +316,23 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
     },
     {
       q: `How do I apply for ${withArticle(country.name)} tourist visa?`,
-      a:
-        visaRequiredCount === 0 && etaCount > 0
-          ? `If your nationality is not eligible for visa-free entry${voaCount > 0 ? " or visa on arrival" : ""} to ${country.name}, you can apply online for an eTA or e-Visa - no embassy visit required. You will generally need a valid passport, a completed online application, a digital photo, and proof of accommodation and onward travel. Processing times and fees vary by nationality and visa category - see the visa types and fees on this page for the exact figures.`
-          : `If your nationality is not eligible for visa-free entry${voaCount > 0 ? " or visa on arrival" : ""} to ${country.name}, you typically need to apply at ${withArticle(country.name)} embassy or consulate in your home country. Requirements generally include a valid passport, completed application form, passport-sized photos, proof of accommodation and onward travel, travel insurance, and proof of sufficient funds. Processing times and fees vary by nationality and visa category - see the visa types and fees on this page for the exact figures.`,
+      // Prose form for JSON-LD; the visible accordion renders the same list
+      // as bullets via `render` below.
+      a: `${faq3Lead} ${faq3Docs.map((d) => d.toLowerCase()).join(", ")}. ${faq3Close}`,
+      render: (
+        <div className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">
+          <p>{faq3Lead}</p>
+          <ul className="mt-2 space-y-1.5">
+            {faq3Docs.map((d) => (
+              <li key={d} className="flex gap-3">
+                <span aria-hidden className="mono text-stamp">■</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2">{faq3Close}</p>
+        </div>
+      ),
     },
     {
       q: `How long can I stay in ${country.name} without a visa?`,
@@ -368,9 +414,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   {alias ? <>Entry Rules Under {country.name} Visa Policy</> : <>Entry Rules &amp; Visa-Free Access by Passport</>}
                 </span>
               </h1>
+              {/* The openness judgment lives in the intro paragraph below;
+                  stating it here too would say the same thing twice. */}
               <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                 {policyTracked
-                  ? <>{plural(vfCount, "nationality", "nationalities")} admitted visa-free · {openness} visa policy</>
+                  ? <>{plural(vfCount, "nationality", "nationalities")} admitted visa-free</>
                   : <>visa policy not published as an enumerated list · not yet tracked</>}
               </p>
             </div>
@@ -414,67 +462,40 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 consult {possessive(country.name)} official government or embassy channels before planning travel.
               </p>
             )}
-            {policyTracked && (<>
+            {/* No count recap here - the stat strip above and the section
+                headings below own the numbers. One openness judgment, one
+                actionable routing sentence. */}
+            {policyTracked && (
             <p className="text-base leading-relaxed text-ink-soft">
-              {vfCount > 0 ? (
-                <>
-                  Citizens of <strong className="text-ink">{plural(vfCount, "country", "countries")}</strong> can visit{" "}
-                  <strong className="text-ink">{country.name}</strong> without a visa in 2026.{" "}
-                </>
-              ) : (
-                <>
-                  No nationality qualifies for fully visa-free entry to{" "}
-                  <strong className="text-ink">{country.name}</strong> in 2026.{" "}
-                </>
-              )}
-              {voaCount > 0 && (
-                <>
-                  <strong className="text-ink">{plural(voaCount, "nationality", "nationalities")}</strong> can obtain a visa on arrival.{" "}
-                </>
-              )}
-              {etaCount > 0 && (
-                <>
-                  An additional <strong className="text-ink">{plural(etaCount, "country", "countries")}</strong>{" "}
-                  {etaCount === 1 ? "is" : "are"} eligible for an eTA or e-Visa.{" "}
-                </>
-              )}
               {possessive(country.name)} visa policy is{" "}
               <strong className="text-ink">{openness}</strong> relative to other destinations worldwide.{" "}
-              {visaRequiredCount > 0 && (
-                <>
-                  Citizens of the remaining <strong className="text-ink">{plural(visaRequiredCount, "country", "countries")}</strong> need to apply for a visa in advance before visiting {country.name}.
-                </>
-              )}
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
               {visaRequiredCount === 0 && totalWithAccess > 0 ? (
                 etaCount > 0 ? (
                   <>
                     Every nationality not covered by visa-free{voaCount > 0 ? " or visa-on-arrival" : ""} entry can
                     apply online for an <strong className="text-ink">eTA or e-Visa</strong> - no embassy visit
-                    required.{" "}
+                    required.
                   </>
                 ) : (
                   <>
-                    Every nationality we track can enter {country.name} without arranging a visa in advance.{" "}
+                    Every nationality we track can enter {country.name} without arranging a visa in advance.
                   </>
                 )
               ) : etaCount > 0 ? (
                 <>
                   If your nationality is not listed as visa-free, visa on arrival, or eTA/e-Visa eligible, you will
                   need to apply for <strong className="text-ink">{withArticle(`${country.name} tourist visa`)}</strong>{" "}
-                  in advance at an embassy or consulate.{" "}
+                  in advance at an embassy or consulate.
                 </>
               ) : (
                 <>
-                  If your nationality is not listed as visa-free or visa on arrival, you will need to apply for{" "}
-                  <strong className="text-ink">{withArticle(`${country.name} tourist visa`)}</strong> in advance at an
-                  embassy or consulate.{" "}
+                  If your nationality is not listed as visa-free{voaCount > 0 ? " or visa on arrival" : ""}, you will
+                  need to apply for <strong className="text-ink">{withArticle(`${country.name} tourist visa`)}</strong>{" "}
+                  in advance at an embassy or consulate.
                 </>
               )}
-              All data is sourced from official government publications and border authority portals.
             </p>
-            </>)}
+            )}
           </section>
 
           {/* Visa-free nationalities */}
@@ -580,9 +601,8 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 <h2 className="font-display text-2xl font-semibold text-ink">
                   {display} Visa Fees ({df.updated ? `updated ${fmtUpdated(df.updated)}` : "2026"})
                 </h2>
-                <p className="mt-2 text-sm text-ink-soft">
-                  Official visa costs for {display}, sourced directly from government fee schedules and kept current.
-                </p>
+                {/* No lead paragraph: each card carries its own "official
+                    source" chip and source-domain link. */}
                 <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {paid.slice(0, 6).map((f, i) => (
                     <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
@@ -658,24 +678,51 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               {country.name} Visa Requirements FAQ
             </h2>
             <div className="mt-5 divide-y divide-line">
-              {faqs.map(({ q, a }) => (
+              {faqs.map(({ q, a, render }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  {render ?? <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>}
                 </details>
               ))}
             </div>
           </section>
 
-          {/* Corridor guides (internal link mesh to detailed per-nationality pages) */}
-          <CorridorLinks
-            title={`${country.name} Visa Guides by Nationality`}
-            description={`Step-by-step ${country.name} visa requirements, fees and document checklists for travellers from these countries.`}
-            links={corridorLinks}
-          />
+          {/* Corridor guides (internal link mesh to detailed per-nationality
+              pages). Capped behind the same preview + <details> "Show all"
+              pattern as the nationality lists - big destinations have ~200
+              corridors, and every link stays in the HTML for crawlers. */}
+          {corridorLinks.length > 0 && (
+            <section className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">
+                {country.name} Visa Guides by Nationality
+              </h2>
+              <p className="mt-2 text-sm text-ink-soft">
+                Step-by-step {country.name} visa requirements, fees and document checklists for travellers from these countries.
+              </p>
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                {corridorLinks.slice(0, PREVIEW_CORRIDORS).map((l) => (
+                  <CorridorLinkRow key={l.href} href={l.href} label={l.label} iso3={l.iso3} />
+                ))}
+              </ul>
+              {corridorLinks.length > PREVIEW_CORRIDORS && (
+                <details className="group mt-2.5">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                    <span className="group-open:hidden">Show all {corridorLinks.length}</span>
+                    <span className="hidden group-open:inline">Show fewer</span>
+                    <Chevron />
+                  </summary>
+                  <ul className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                    {corridorLinks.slice(PREVIEW_CORRIDORS).map((l) => (
+                      <CorridorLinkRow key={l.href} href={l.href} label={l.label} iso3={l.iso3} />
+                    ))}
+                  </ul>
+                </details>
+              )}
+            </section>
+          )}
 
           {/* CTA */}
           <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">

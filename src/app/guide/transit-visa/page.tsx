@@ -53,7 +53,6 @@ const transitEntries: TransitEntry[] = Object.entries(dataset.destinationVisaTyp
 
 const destinationCount = transitEntries.length;
 const withFee = transitEntries.filter((e) => e.feeUsd != null).length;
-const freeCount = transitEntries.filter((e) => e.feeUsd === 0).length;
 const withOnline = transitEntries.filter((e) => e.online).length;
 const withOnArrival = transitEntries.filter((e) => e.onArrival).length;
 const lastUpdated = dataset.meta.lastUpdated;
@@ -115,7 +114,7 @@ const FAQS = [
   },
   {
     q: "Can transit visa rules differ from that country's regular tourist visa rules for the same passport?",
-    a: "Yes, and this is one of the most common points of confusion. A country's transit-visa-exempt nationality list is often broader than its list of nationalities exempt from a full entry visa - some countries let far more nationalities pass through airside without a visa than they let in as tourists without one. The reverse can also be true. Transit and entry are governed by separate rules, so never assume that being visa-exempt for tourism automatically means visa-exempt for transit, or vice versa.",
+    a: "Yes - transit and entry are governed by separate rules, and a country's transit-visa-exempt nationality list is often broader (or narrower) than its tourist-visa-exempt list. Never assume that being visa-exempt for tourism automatically means visa-exempt for transit, or vice versa.",
   },
   {
     q: "How do I check if I need a transit visa for a specific layover?",
@@ -123,7 +122,7 @@ const FAQS = [
   },
   {
     q: "Is a transit visa the same as a visa on arrival?",
-    a: `No. A visa on arrival is issued at the border for people who are actually entering and staying in the country. A transit visa is issued (sometimes also on arrival, sometimes only in advance) specifically for passengers continuing to another destination, and usually carries a shorter permitted stay and narrower conditions than a visa on arrival for tourism. In our dataset, ${withOnArrival} of the ${destinationCount} destinations that publish a transit visa product issue it on arrival, while ${withOnline} offer it as an online application submitted in advance.`,
+    a: "No. A visa on arrival is issued at the border for people who are actually entering and staying in the country. A transit visa is issued (sometimes also on arrival, sometimes only in advance) specifically for passengers continuing to another destination, and usually carries a shorter permitted stay and narrower conditions than a visa on arrival for tourism.",
   },
 ];
 
@@ -335,15 +334,19 @@ export default function TransitVisaGuidePage() {
               It Depends on Your Passport AND the Transit Country
             </h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              There is no universal transit-visa rule. Requirements are set per destination and applied per
-              nationality, and the two lists a country publishes - who needs a visa to{" "}
-              <em>transit</em> and who needs a visa to <em>enter</em> - are not always the same list. Some countries
-              exempt a broad set of nationalities from a transit visa even though those same nationalities would need
-              a full visa to actually enter and visit. The reverse also happens. Because of this, transit visa
-              status has to be checked for the specific passport and specific transit country in question - it is
-              not something that can be inferred from a country&apos;s tourist visa policy, or from what another
-              country requires for the same route.
+              There is no universal transit-visa rule:
             </p>
+            <ul className="mt-3 space-y-2 text-base leading-relaxed text-ink-soft">
+              <li>· Rules are set per destination and applied per nationality.</li>
+              <li>
+                · The transit-exempt list and the entry-exempt list are different lists - either one can be broader
+                than the other.
+              </li>
+              <li>
+                · So check your exact passport and transit country - never infer from tourist-visa status, or from
+                what another country requires on the same route.
+              </li>
+            </ul>
           </section>
 
           {/* By destination - dataset derived */}
@@ -352,11 +355,8 @@ export default function TransitVisaGuidePage() {
               Transit Visa Products by Destination ({destinationCount})
             </h2>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
-              {destinationCount} destinations in our dataset publish a dedicated transit visa product - {withFee} of
-              them with a published fee ({freeCount} of those free), {withOnline} available to apply for online, and{" "}
-              {withOnArrival} issued on arrival. This shows what each destination publishes for travellers who do
-              need a transit visa; it does not mean every nationality needs one there - tap a destination for its
-              full passport-by-passport entry requirements.
+              This shows what each destination publishes for travellers who do need a transit visa - not who is
+              exempt from one; tap a destination for its full passport-by-passport entry requirements.
             </p>
             <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {shown.map((e) => (

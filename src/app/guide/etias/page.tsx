@@ -122,15 +122,15 @@ export default function EtiasGuidePage() {
     },
     {
       q: "Do US citizens need ETIAS in 2026?",
-      a: `US passport holders currently enter Schengen countries visa-free${usStay ? ` for up to ${usStay} days in any 180-day period` : ""}, per official visa policy data. Once ETIAS becomes mandatory, US citizens will need to obtain the authorisation online before travelling - but they will still not need a visa. The start date has been revised more than once and is not yet fixed; Earth Visa will update this page the moment it is.`,
+      a: `US passport holders currently enter Schengen countries visa-free${usStay ? ` for up to ${usStay} days in any 180-day period` : ""}. Once ETIAS becomes mandatory, US citizens will complete the online authorisation before travelling - but they will still not need a visa. The start date is not yet fixed; see the status note above and travel-europe.europa.eu.`,
     },
     {
       q: "When does ETIAS start?",
-      a: "The EU has announced ETIAS and its phased rollout follows the EU Entry/Exit System (EES), but the start date has been postponed several times and is not yet fixed - so this page deliberately does not state a launch date as fact. Earth Visa tracks the EU's own timeline and will update this page as soon as a firm date is confirmed.",
+      a: "No fixed date yet - the rollout follows the EU Entry/Exit System (EES) and has been postponed several times; see the status note above and the EU's tracker at travel-europe.europa.eu for the current timeline.",
     },
     {
       q: "How much does ETIAS cost?",
-      a: "The application fee is set by the EU and has been revised during the rollout process, with exemptions planned for some age groups. We do not state a figure here because it is not yet finalised for launch - Earth Visa will publish the confirmed fee and exemptions as soon as the EU sets them.",
+      a: "The fee is not yet finalised - the EU has revised it during rollout planning, with exemptions planned for some age groups; see the status note above for where the confirmed figure will appear first.",
     },
     {
       q: `Which countries will require ETIAS?`,
@@ -219,24 +219,32 @@ export default function EtiasGuidePage() {
               <strong className="text-ink">ETIAS</strong>{" "}
               (European Travel Information and Authorisation System) is the
               EU&apos;s upcoming <strong className="text-ink">travel authorisation for visa-exempt travellers</strong> -
-              and it is <strong className="text-ink">not a visa</strong>. That distinction is the single most common
-              point of confusion. A visa is an entry permission you apply for because your passport does not qualify for
-              visa-free entry. ETIAS is the opposite: it applies <em>only</em> to travellers whose passports already
-              enter the <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen area</Link>{" "}
-              without a visa, adding a short online security pre-screening before the trip.
+              and that distinction is the single most common point of confusion. A visa is entry permission you apply
+              for because your passport does not qualify for visa-free entry; ETIAS is the opposite.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              If you have used the US <strong className="text-ink">ESTA</strong> or the Canadian and UK{" "}
-              <strong className="text-ink">eTA</strong> systems, ETIAS follows the same concept: apply online, get an
-              electronic authorisation linked to your passport, and travel visa-free as before. Nothing about your
-              visa-free status changes - the stay limits stay the same, and there is still no embassy appointment.
-            </p>
+            <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+              <div className="rounded-sm border border-line bg-paper-2/70 p-4">
+                <h3 className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">ETIAS is</h3>
+                <ul className="mt-2.5 space-y-2 text-sm leading-relaxed text-ink-soft">
+                  <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>A short online security pre-screening before travel</span></li>
+                  <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>Only for passports that already enter the <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen area</Link> without a visa</span></li>
+                  <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>The same concept as the US ESTA and the Canadian and UK eTA</span></li>
+                </ul>
+              </div>
+              <div className="rounded-sm border border-line bg-paper-2/70 p-4">
+                <h3 className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">ETIAS is not</h3>
+                <ul className="mt-2.5 space-y-2 text-sm leading-relaxed text-ink-soft">
+                  <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>A visa, or a change to your visa-free status</span></li>
+                  <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>A change to stay limits - the 90/180 rule still applies</span></li>
+                  <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>An embassy process - there is no appointment</span></li>
+                </ul>
+              </div>
+            </div>
             <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-              Launch timing and the application fee have been revised during the rollout and are not yet finalised,
-              so this page does not state a start date or price as fact. Earth Visa tracks the EU&apos;s own rollout
-              page,{" "}
-              <a href={OFFICIAL_URL} rel="noopener noreferrer" className="text-stamp underline underline-offset-2">travel-europe.europa.eu</a>,
-              and will update this the moment either is confirmed.
+              <strong className="font-semibold text-ink">Status:</strong> launch date &amp; fee not yet fixed -
+              official tracker:{" "}
+              <a href={OFFICIAL_URL} rel="noopener noreferrer" className="text-stamp underline underline-offset-2">travel-europe.europa.eu</a>.
+              Earth Visa will update this page the moment either is confirmed.
             </p>
           </section>
 
@@ -245,10 +253,8 @@ export default function EtiasGuidePage() {
             <h2 className="font-display text-2xl font-semibold text-ink">Who Will Need ETIAS</h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
               ETIAS will apply to <strong className="text-ink">visa-exempt, non-EU nationals</strong> making short
-              visits to the Schengen area - the same travellers who today simply board a plane with their passport.
-              Per our dataset, <strong className="text-ink">{vfToFranceCount} passports</strong> from outside the EU
-              and the Schengen area currently enter France (used here as the Schengen reference destination)
-              visa-free, including travellers from the{" "}
+              visits to the Schengen area - the same travellers who today simply board a plane with their passport,
+              including those from the{" "}
               <Link href={`/passport/${nameToSlug(nameFor("USA"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">United States</Link>,{" "}
               <Link href={`/passport/${nameToSlug(nameFor("GBR"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">United Kingdom</Link>,{" "}
               <Link href={`/passport/${nameToSlug(nameFor("CAN"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Canada</Link> and{" "}
@@ -326,12 +332,6 @@ export default function EtiasGuidePage() {
                 </li>
               ))}
             </ol>
-            <p className="mono mt-6 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-              Validity period, fee, age exemptions and the exact start date are set by the EU and have shifted during
-              rollout planning - check{" "}
-              <a href={OFFICIAL_URL} rel="noopener noreferrer" className="text-stamp underline underline-offset-2">travel-europe.europa.eu</a>{" "}
-              for the current rules before you travel.
-            </p>
           </section>
 
           {/* Where ETIAS applies - dataset Schengen list */}

@@ -332,13 +332,10 @@ export default function VisaTypesGlossaryPage() {
               visa - simply a digital one.
             </p>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              This is the key distinction from an eTA: an eTA is a pre-screening step on top of entry you already had
+              The key distinction from an eTA: an eTA is a pre-screening step on top of entry you already had
               visa-free; an e-visa is the actual visa, for travellers who would need one anyway, delivered without a
-              passport-stamp appointment. In Earth Visa&apos;s data, destinations issuing e-visas include
-              India&apos;s e-Tourist Visa (eTV), Turkey&apos;s e-Visa and Vietnam&apos;s E-Visa. Australia is a useful
-              illustration that the two tracks are genuinely different even within one country: some nationalities
-              travelling there use its ETA (a pre-screening waiver), while others must obtain its eVisitor or general
-              e-Visa (an actual visa) - same destination, two different mechanisms, depending on passport.
+              passport-stamp appointment. Australia runs both tracks - its ETA for visa-exempt passports and its
+              eVisitor / e-Visa for the rest - same destination, two different mechanisms, depending on passport.
             </p>
 
             <h3 className="mt-6 font-display text-lg font-semibold text-ink">eTA vs e-Visa, at a Glance</h3>

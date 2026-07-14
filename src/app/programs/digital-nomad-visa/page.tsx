@@ -269,7 +269,7 @@ export default function DigitalNomadVisaPage() {
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {entries.length} programs · official publications · data refreshed {lastUpdated}
+              {entries.length} programs · data refreshed {lastUpdated}
             </p>
 
             <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
@@ -295,14 +295,14 @@ export default function DigitalNomadVisaPage() {
               A <strong className="text-ink">digital nomad visa</strong> lets you live in a country while working
               remotely for employers or clients based abroad - legally, without pretending to be a tourist. Our
               dataset tracks <strong className="text-ink">{entries.length} remote-work routes</strong> across{" "}
-              <strong className="text-ink">{countryCount} countries</strong>, each compiled from the program&apos;s
-              official publication and grouped by region below.
+              <strong className="text-ink">{countryCount} countries</strong>, grouped by region below.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               Two honest caveats. First, income thresholds change so often that summarising them in one table would age
-              badly - so each entry instead quotes the <strong className="text-ink">eligibility text from the
-              official source</strong> at crawl time. Second, not every announced program is open: entries our sources
-              flag as announced or discontinued are labelled, not hidden.
+              badly - so each entry instead quotes the{" "}
+              <strong className="text-ink">program&apos;s eligibility text verbatim</strong> as of crawl time. Second,
+              not every announced program is open: entries recorded as announced or discontinued are labelled, not
+              hidden.
             </p>
             <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
               Data compiled directly from official government publications, last refreshed {lastUpdated}.

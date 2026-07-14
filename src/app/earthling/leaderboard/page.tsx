@@ -98,8 +98,7 @@ export default async function LeaderboardPage({ searchParams }: { searchParams: 
         )}
 
         <p className="mono mt-10 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
-          Holdings are self-declared - the leaderboard is a game, not a certification. Reach numbers are computed by the
-          same official-source engine behind every Earth Visa page.
+          Self-declared - a game, not a certification.
         </p>
       </div>
     </main>

@@ -138,11 +138,11 @@ export default function GccVisaGuidePage() {
   const faqs = [
     {
       q: "What is the GCC unified visa (Grand Tours visa)?",
-      a: `It is a planned Schengen-style joint tourist visa approved by the six Gulf Cooperation Council states - ${memberNames} - announced under the "GCC Grand Tours" name. One application would allow travel across all six countries, instead of today's separate per-state visas. It has been approved at GCC level, but this page treats it strictly as announced/upcoming: confirm rollout status on official GCC or member-state channels before planning around it.`,
+      a: `It is a planned Schengen-style joint tourist visa approved by the six Gulf Cooperation Council states - ${memberNames} - announced under the "GCC Grand Tours" name. One application would allow travel across all six countries, instead of today's separate per-state visas. It is approved but not yet live.`,
     },
     {
       q: "Is the GCC unified visa available now?",
-      a: "Not per our dataset. Every Gulf entry rule we record is still issued by an individual state - a UAE visa does not admit you to Saudi Arabia, and so on. No launch date or fee is stated here because none has been confirmed in our official-source data; check official announcements for current status.",
+      a: "Not yet, per our dataset - every Gulf entry rule we record is still issued by an individual state, so a UAE visa does not admit you to Saudi Arabia, and so on. See the status box above.",
     },
     {
       q: "Which countries will the GCC unified visa cover?",
@@ -150,12 +150,12 @@ export default function GccVisaGuidePage() {
     },
     {
       q: "Do I need separate visas for each Gulf country today?",
-      a: `Yes - each state decides its own policy, and access differs sharply by passport. For example, per our dataset, ${stateStats.find((s) => s.iso3 === "BHR")?.counts.visa_on_arrival ?? 0} nationalities get visa on arrival in Bahrain while Saudi Arabia offers its tourist e-visa to ${(stateStats.find((s) => s.iso3 === "SAU")?.counts.e_visa ?? 0)} nationalities. Check each destination page, or the matrix on this page, for your passport.`,
+      a: `Yes - each state decides its own policy, and access differs sharply by passport. For example, ${stateStats.find((s) => s.iso3 === "BHR")?.counts.visa_on_arrival ?? 0} nationalities get visa on arrival in Bahrain while Saudi Arabia offers its tourist e-visa to ${(stateStats.find((s) => s.iso3 === "SAU")?.counts.e_visa ?? 0)} nationalities. Check each destination page, or the matrix on this page, for your passport.`,
     },
     {
       q: "Does a GCC residence permit already unlock travel between Gulf states?",
       a: gccResidenceEdges.length > 0
-        ? `Partially, yes. Our dataset records credential-based access for GCC residence-permit holders to ${[...new Set(gccResidenceEdges.map((e) => nameFor(e.dest)))].join(", ")} - typically visa on arrival or e-visa, often limited to eligible professions and permits valid 3+ months. Conditions vary per state; verify on each state's official portal.`
+        ? `Partially, yes. GCC residence-permit holders get credential-based access to ${[...new Set(gccResidenceEdges.map((e) => nameFor(e.dest)))].join(", ")} - typically visa on arrival or e-visa, often limited to eligible professions and permits valid 3+ months. Conditions vary per state; verify on each state's official portal.`
         : "Some Gulf states offer easier entry to residents of fellow GCC countries. Conditions vary per state; verify on each state's official portal.",
     },
   ];
@@ -257,7 +257,7 @@ export default function GccVisaGuidePage() {
           <section className="mt-12">
             <h2 className="font-display text-2xl font-semibold text-ink">The Six GCC Member States</h2>
             <p className="mt-2 max-w-3xl text-sm text-ink-soft">
-              How open each member is today, from our dataset - counts are nationalities admitted at each level.
+              How open each member is today - counts are nationalities admitted at each level.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {stateStats.map(({ iso3, name, counts }) => (
@@ -286,8 +286,8 @@ export default function GccVisaGuidePage() {
             </h2>
             <p className="mt-2 max-w-3xl text-sm text-ink-soft">
               Today you still deal with six separate visa systems. The matrix below shows the entry level each state
-              grants to popular passports, computed from our official-source dataset. &quot;Visa required&quot; means no
-              visa-free, on-arrival, eTA or e-visa grant is recorded - apply in advance.
+              grants to popular passports. &quot;Visa required&quot; means no visa-free, on-arrival, eTA or e-visa
+              grant is recorded - apply in advance.
             </p>
             <p className="mono mt-4 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute sm:hidden">
               Swipe sideways for all six states <span aria-hidden>→</span>
@@ -345,7 +345,7 @@ export default function GccVisaGuidePage() {
                 Already a GCC Resident? Your Permit Unlocks Neighbours
               </h2>
               <p className="mt-3 text-base leading-relaxed text-ink-soft">
-                The closest live thing to a unified Gulf visa: our dataset records{" "}
+                The closest live thing to a unified Gulf visa:{" "}
                 <strong className="text-ink">credential-based access for GCC residence-permit holders</strong> into
                 other member states, regardless of nationality - commonly limited to permits valid 3+ months and, in
                 some states, to eligible professions.

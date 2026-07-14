@@ -397,12 +397,45 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
                   Schengen Visa Fee for {plural}
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-ink-soft">
-                  The fee is set EU-wide, so it is identical whichever member state you apply to: in the official fee
-                  schedules we track, <strong className="text-ink">EUR 90 for adults</strong>,{" "}
-                  <strong className="text-ink">EUR 45 for children aged 6 to 12</strong>, and free for children under
-                  6. There is no special per-nationality surcharge for {demonym} applicants, but VFS Global or
-                  TLScontact service fees apply where the consulate outsources intake, and the visa fee is not
-                  refunded on refusal. Full details on the{" "}
+                  The fee is set EU-wide, so it is identical whichever member state you apply to - there is no
+                  special per-nationality surcharge for {demonym} applicants.
+                </p>
+                <div className="mt-5 overflow-x-auto">
+                  <table className="w-full min-w-[420px] border-collapse text-sm">
+                    <thead>
+                      <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+                        <th scope="col" className="py-2.5 pr-4 font-medium">Applicant</th>
+                        <th scope="col" className="py-2.5 font-medium">Fee</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-line text-ink-soft">
+                      <tr>
+                        <td className="py-2.5 pr-4 font-display font-medium text-ink">Adults (12+)</td>
+                        <td className="mono py-2.5 tabular-nums">EUR 90</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2.5 pr-4 font-display font-medium text-ink">Children 6 to 12</td>
+                        <td className="mono py-2.5 tabular-nums">EUR 45</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2.5 pr-4 font-display font-medium text-ink">Children under 6</td>
+                        <td className="mono py-2.5 tabular-nums">Free</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-soft">
+                  <li className="flex gap-3">
+                    <span aria-hidden className="mono text-stamp">■</span>
+                    <span>+ VFS Global / TLScontact service fee where the consulate outsources intake.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span aria-hidden className="mono text-stamp">■</span>
+                    <span>Not refunded if the application is refused.</span>
+                  </li>
+                </ul>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  Full details, including the reduced visa-facilitation rate, on the{" "}
                   <Link href="/guide/schengen#fee" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                     Schengen visa fee page
                   </Link>.
