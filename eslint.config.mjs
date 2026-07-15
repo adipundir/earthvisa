@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Agent scratch worktrees - stale copies of src/, not part of the app.
     ".claude/**",
     ".data/**",
+    // Harness-installed skill/plugin infrastructure - gitignored, not part of the app.
+    ".agents/**",
   ]),
 ]);
 
