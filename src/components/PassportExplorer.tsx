@@ -280,7 +280,7 @@ export default function PassportExplorer() {
               const isNonOrdinary = currentType !== "ordinary";
               const isOpen = typeOpen === iso3;
               return (
-                <span key={iso3} className="group/chip inline-flex items-center gap-1.5 rounded-md border border-line-strong bg-paper-2 px-2.5 py-1.5 text-[14px] text-ink">
+                <span key={iso3} className="group/chip inline-flex items-center gap-1.5 rounded-md bg-paper-2 px-2.5 py-1.5 text-[14px] text-ink">
                   <span className="text-lg leading-none">{flagFor(iso3)}</span>
                   <span className="font-display font-semibold">{nameFor(iso3)}</span>
 
@@ -294,11 +294,11 @@ export default function PassportExplorer() {
                       aria-expanded={isOpen}
                       aria-haspopup="listbox"
                       aria-label={`Passport type: ${currentType}`}
-                      className={`mono inline-flex items-center gap-1 rounded px-2 py-1 text-[10px] font-medium uppercase tracking-[0.1em] transition ${
+                      className={`mono inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] transition ${
                         isNonOrdinary
-                          ? "border border-stamp/40 bg-stamp/10 text-stamp"
-                          : "border border-line-strong bg-paper-2 text-ink-mute hover:border-stamp/40 hover:bg-stamp/[0.05] hover:text-stamp"
-                      } ${isOpen ? "border-stamp/50 bg-stamp/10 text-stamp" : ""}`}
+                          ? "bg-stamp/10 text-stamp"
+                          : "text-ink-mute hover:bg-stamp/[0.08] hover:text-stamp"
+                      } ${isOpen ? "bg-stamp/10 text-stamp" : ""}`}
                     >
                       {PTYPE_SHORT[currentType]}
                       <svg viewBox="0 0 10 6" className={`h-2 w-2 shrink-0 transition-transform duration-150 ${isOpen ? "rotate-180" : ""}`} fill="currentColor">
