@@ -1,39 +1,53 @@
 {
-  "iso3": "SGP", "name": "Singapore", "updated": "2026-07-02",
-  "confidence": "medium",
-  "fees": [
-    {
-      "kind": "e_visa",
-      "name": "Singapore e-Visa (visa-required nationals)",
-      "amount": 30,
-      "currency": "SGD",
-      "amount_usd": 22,
-      "validity": "Single or multiple entry, typically issued for up to 2 months; processed within ~3 working days",
-      "applies": "nationals of visa-required countries (e.g. IND, CHN, and others per ICA schedule)",
-      "official": true,
-      "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements/visa-detail-page/india",
-      "notes": "Non-refundable S$30 processing fee, payable online by Visa/Mastercard credit or debit card. Applies uniformly across visa-required nationalities per ICA guidance; no separate reciprocity schedule found on ICA site."
-    },
-    {
-      "kind": "tourist_visa",
-      "name": "Visa fee via Singapore Overseas Mission / authorised visa agent",
-      "amount": null,
-      "currency": "SGD",
-      "amount_usd": null,
-      "validity": null,
-      "applies": "visa-required nationals applying in person or via agent rather than e-Visa",
-      "official": true,
-      "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements/visa-detail-page/india",
-      "notes": "ICA confirms the S$30 government fee applies; any additional mission/agent handling charge is not published by ICA and was not verifiable on an official source, so left null rather than estimated."
-    }
-  ],
-  "reciprocity_variations": [],
-  "vfs": {
-    "used": false,
-    "note": "Singapore visa applications for most nationalities (including India) are processed through ICA's own e-Service or via authorised local visa agents/Singapore Overseas Missions, not through VFS Global as an official outsourcing partner. No official VFS Global Singapore-outbound visa service page was found confirming VFS as the designated centre for the required nationalities; unverified third-party blog mentions of VFS/agent surcharges (₹300-1500) were excluded as non-official."
+ "iso3": "SGP",
+ "name": "Singapore",
+ "updated": "2026-07-02",
+ "confidence": "medium",
+ "fees": [
+  {
+   "kind": "e_visa",
+   "name": "Singapore e-Visa (visa-required nationals)",
+   "amount": 30,
+   "currency": "SGD",
+   "amount_usd": 22,
+   "validity": "Single or multiple entry, typically issued for up to 2 months; processed within ~3 working days",
+   "applies": "nationals of visa-required countries (e.g. IND, CHN, and others per ICA schedule)",
+   "official": true,
+   "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements/visa-detail-page/india",
+   "notes": "Non-refundable S$30 processing fee, payable online by Visa/Mastercard credit or debit card. Applies uniformly across visa-required nationalities per ICA guidance; no separate reciprocity schedule found on ICA site."
   },
-  "sources": [
-    "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements/visa-detail-page/india"
-  ],
-  "free_visa_notes": "Singapore grants visa-free entry to most passport holders (including USA, GBR, most EU/Schengen states, many others) for short tourist stays. A visa (S$30 e-Visa fee) is required only for nationals of specific countries per the ICA visa-required list (e.g. India, China, and others). Singapore is not a Schengen member; no Schengen fee applies."
+  {
+   "kind": "tourist_visa",
+   "name": "Visa fee via Singapore Overseas Mission / authorised visa agent",
+   "amount": null,
+   "currency": "SGD",
+   "amount_usd": null,
+   "validity": null,
+   "applies": "visa-required nationals applying in person or via agent rather than e-Visa",
+   "official": true,
+   "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements/visa-detail-page/india",
+   "notes": "ICA confirms the S$30 government fee applies; any additional mission/agent handling charge is not published by ICA and was not verifiable on an official source, so left null rather than estimated."
+  },
+  {
+   "kind": "eta",
+   "name": "SG Arrival Card (SGAC)",
+   "amount": 0,
+   "currency": "SGD",
+   "amount_usd": 0,
+   "validity": "Single arrival; submit within 3 days (including day of arrival) before entry",
+   "applies": "all travellers (exempt: transit without immigration clearance)",
+   "official": true,
+   "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/sg-arrival-card",
+   "notes": "Free digital arrival declaration required of every foreign visitor regardless of visa status; submitted online or via the MyICA app."
+  }
+ ],
+ "reciprocity_variations": [],
+ "vfs": {
+  "used": false,
+  "note": "Singapore visa applications for most nationalities (including India) are processed through ICA's own e-Service or via authorised local visa agents/Singapore Overseas Missions, not through VFS Global as an official outsourcing partner. No official VFS Global Singapore-outbound visa service page was found confirming VFS as the designated centre for the required nationalities; unverified third-party blog mentions of VFS/agent surcharges (₹300-1500) were excluded as non-official."
+ },
+ "sources": [
+  "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements/visa-detail-page/india"
+ ],
+ "free_visa_notes": "Singapore grants visa-free entry to most passport holders (including USA, GBR, most EU/Schengen states, many others) for short tourist stays. A visa (S$30 e-Visa fee) is required only for nationals of specific countries per the ICA visa-required list (e.g. India, China, and others). Singapore is not a Schengen member; no Schengen fee applies."
 }
