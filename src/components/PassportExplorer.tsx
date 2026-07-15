@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { dataset, flagFor, nameFor, isoToFlag } from "@/lib/dataset";
+import { dataset, flagFor, nameFor, isoToFlag, nameToSlug } from "@/lib/dataset";
 import { useDetectedPassport } from "@/lib/geo";
 import { compute, fmtMoney, LEVEL_LABEL, type CombinedEdge } from "@/lib/compute";
 import type { AccessLevel, PassportType, VisaType } from "@/lib/types";
@@ -517,7 +517,7 @@ export default function PassportExplorer() {
         </>
       )}
 
-      {detail && <DetailModal detail={detail} onClose={() => setDetail(null)} />}
+      {detail && <DetailModal detail={detail} primaryIso3={selected[0] ?? null} onClose={() => setDetail(null)} />}
     </div>
   );
 }
@@ -525,13 +525,13 @@ export default function PassportExplorer() {
 
 function EmptyState({ onAdd }: { onAdd: (iso3: string) => void }) {
   return (
-    <div className="reveal mt-14 overflow-hidden rounded-xl border border-line bg-card px-6 py-16 text-center">
-      <PassportBook className="mx-auto h-14 w-14 text-ink/75" />
-      <h2 className="font-display mt-5 text-2xl font-semibold text-ink">Add your passport above to get started</h2>
-      <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
+    <div className="reveal mt-10 overflow-hidden rounded-xl border border-line bg-card px-6 py-10 text-center">
+      <PassportBook className="mx-auto h-12 w-12 text-ink/75" />
+      <h2 className="font-display mt-4 text-2xl font-semibold text-ink">Add your passport above to get started</h2>
+      <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
         See visa-free destinations, golden visas, citizenship programs and fast-track routes open to you.
       </p>
-      <div className="mt-8 flex flex-wrap justify-center gap-2">
+      <div className="mt-6 flex flex-wrap justify-center gap-2">
         {EXAMPLE_PASSPORTS.slice(0, 6).map((iso3) => (
           <button
             key={iso3}
@@ -1405,7 +1405,7 @@ function FastPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onO
   );
 }
 
-function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void }) {
+function DetailModal({ detail, primaryIso3, onClose }: { detail: Detail; primaryIso3: string | null; onClose: () => void }) {
   const panelRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -1489,6 +1489,16 @@ function DetailModal({ detail, onClose }: { detail: Detail; onClose: () => void 
             </dl>
           )}
           {cleanProgramNote(detail.notes) && <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ink-soft">{cleanProgramNote(detail.notes)}</p>}
+          {/* Access-level details always have a corridor page (reach edges ARE
+              corridor candidates) - route the explorer into the full guide. */}
+          {detail.level && primaryIso3 && (
+            <Link
+              href={`/passport/${nameToSlug(nameFor(primaryIso3))}/${nameToSlug(detail.title)}`}
+              className="mono mt-5 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white"
+            >
+              Full {nameFor(primaryIso3)} → {detail.title} guide: fees, documents, how to apply
+            </Link>
+          )}
           {detail.sourceUrl && (
             <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-line pt-4">
               <SourceLink url={detail.sourceUrl} official={!!detail.sourceOfficial} />
