@@ -46,8 +46,11 @@ export default function Navbar({ lastUpdated }: { lastUpdated: string }) {
         </span>
 
         {/* w-full forces this onto its own line on mobile (flex-wrap trick);
-            sm:w-auto rejoins the logo's row once the meta cluster below fits. */}
-        <div className="flex w-full items-center gap-0.5 sm:w-auto sm:gap-1">
+            sm:w-auto rejoins the logo's row once the meta cluster below fits.
+            flex-wrap below sm: the five links are wider than the smallest
+            phone screens (~410px), so without wrapping they overflow the
+            viewport and force horizontal scroll on every single page. */}
+        <div className="flex w-full flex-wrap items-center gap-x-0.5 gap-y-1 sm:w-auto sm:flex-nowrap sm:gap-1">
           {LINKS.map(({ href, label }) => {
             const active = path === href || path.startsWith(href + "/");
             return (
