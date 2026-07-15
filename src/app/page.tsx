@@ -90,12 +90,6 @@ export default function Home() {
             <span className="hidden sm:inline"> · {dataset.cbi.length} citizenship programs · {dataset.rbi.length} residency routes</span>
           </p>
         </div>
-        {/* Machine-readable zone - the site's signature, not a stock hero image */}
-        <div aria-hidden="true" className="mrz select-none overflow-hidden whitespace-nowrap border-t border-line/60 px-5 py-2 text-[11px] text-ink-mute/30 sm:px-8">
-          P&lt;EARTHVISA&lt;&lt;WHAT&lt;CAN&lt;YOUR&lt;PASSPORT&lt;ACTUALLY&lt;DO&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-          <br />
-          {meta.countriesWithData}&lt;PASSPORTS&lt;{meta.destinationsWithVisaPolicy}&lt;POLICIES&lt;&lt;OFFICIAL&lt;SOURCES&lt;ONLY&lt;&lt;{meta.lastUpdated.replaceAll("-", "")}&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-        </div>
       </header>
 
       <script
