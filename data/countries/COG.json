@@ -1,465 +1,496 @@
 {
-  "iso2": "CG",
-  "iso3": "COG",
-  "name": "Republic of the Congo",
-  "region": "Africa",
-  "outbound_official": {
-    "found": false,
-    "note": "no official Republic of the Congo government outbound visa-list page located; rely on destination-side data"
+ "iso2": "CG",
+ "iso3": "COG",
+ "name": "Republic of the Congo",
+ "region": "Africa",
+ "outbound_official": {
+  "found": false,
+  "note": "no official Republic of the Congo government outbound visa-list page located; rely on destination-side data"
+ },
+ "visa_types": [
+  {
+   "category": "tourist",
+   "name": "Tourist Visa (Visa de Tourisme)",
+   "purpose": "Short-stay entry for tourism and leisure travel to the Republic of the Congo.",
+   "max_stay_days": null,
+   "validity_days": 90,
+   "entries": "multiple",
+   "fee_usd": 200,
+   "processing_days_min": 7,
+   "processing_days_max": 10,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://diplobrazza.net/etrangers-voyageant-en-republique-du-congo",
+   "notes": "Must be obtained prior to arrival at a Congolese embassy or consulate; no visa is issued at any port of entry. Per the official Embassy of the Republic of Congo to the USA (ambacongo-us.org), the tourist visa is issued for 90 days with multiple entries for non-US citizens, and 180 days multiple entries for US citizens; fee USD 200, processing 7-10 business days (fee and exact stay vary by issuing consulate). API-Congo and the Ministry of Foreign Affairs describe a shorter 15-day initial visitor stay that is extended in-country via a resident's card. Required documents: valid passport, two photos, notarised invitation letter or hotel reservation, and airline itinerary."
   },
-  "visa_types": [
-    {
-      "category": "tourist",
-      "name": "Tourist Visa (Visa de Tourisme)",
-      "purpose": "Short-stay entry for tourism and leisure travel to the Republic of the Congo.",
-      "max_stay_days": null,
-      "validity_days": 90,
-      "entries": "multiple",
-      "fee_usd": 200,
-      "processing_days_min": 7,
-      "processing_days_max": 10,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://diplobrazza.net/etrangers-voyageant-en-republique-du-congo",
-      "notes": "Must be obtained prior to arrival at a Congolese embassy or consulate; no visa is issued at any port of entry. Per the official Embassy of the Republic of Congo to the USA (ambacongo-us.org), the tourist visa is issued for 90 days with multiple entries for non-US citizens, and 180 days multiple entries for US citizens; fee USD 200, processing 7-10 business days (fee and exact stay vary by issuing consulate). API-Congo and the Ministry of Foreign Affairs describe a shorter 15-day initial visitor stay that is extended in-country via a resident's card. Required documents: valid passport, two photos, notarised invitation letter or hotel reservation, and airline itinerary."
-    },
-    {
-      "category": "business",
-      "name": "Business Visa (Visa d'Affaires)",
-      "purpose": "Entry for business activities, meetings, feasibility studies, and commercial or investment arrangements in the Republic of the Congo.",
-      "max_stay_days": 30,
-      "validity_days": 30,
-      "entries": "multiple",
-      "fee_usd": 200,
-      "processing_days_min": 7,
-      "processing_days_max": 10,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://diplobrazza.net/etrangers-voyageant-en-republique-du-congo",
-      "notes": "Must be obtained prior to arrival at a Congolese embassy or consulate. Per the official Embassy of the Republic of Congo to the USA (ambacongo-us.org), the business visa is issued for 30 days with multiple entries for non-US citizens (cannot exceed 30 days; extend at the nearest Office of Immigration in Congo) and 180 days multiple entries for US citizens; fee USD 200, processing 7-10 business days (fee varies by consulate). Requires a notarised business letter on company letterhead stating the nature of business."
-    },
-    {
-      "category": "student",
-      "name": "Student Visa / Student Residence Permit (Carte de Séjour Étudiant)",
-      "purpose": "Foreign students and researchers enrolled at a Congolese educational or research institution.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": null,
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-      "notes": "No separate student entry visa is issued abroad. Per the official Congolese embassy (ambacongo-us.org), students on exchange programs and researchers enter on a tourist visa and then change their status at the nearest Office of Immigration in Congo, obtaining an ordinary resident's card (carte de séjour) on the basis of a school/university enrollment certificate. Resident's card fees: 1 year 106,000 FCFA (~USD 176), 3 years 206,000 FCFA (~USD 343), 5 years 106,000 FCFA (~USD 176), issued by the Direction Départementale de la Surveillance du Territoire. Sources: API-Congo (.cg) and Ministry of Foreign Affairs (diplobrazza.net)."
-    },
-    {
-      "category": "family",
-      "name": "Family Reunion Visa / Spouse Residence (Regroupement Familial)",
-      "purpose": "Family members joining relatives resident in the Republic of the Congo, and foreign spouses of Congolese nationals.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": null,
-      "fee_usd": null,
-      "processing_days_min": 7,
-      "processing_days_max": 10,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-      "notes": "For family reunification (regroupement familial), the official embassy (ambacongo-us.org) requires proof of family affiliation (birth certificate, adoption papers, or legal marriage certificate) submitted with the visa application; applicants then regularise status in-country. A foreign national married for at least 2 years to a Congolese national is automatically granted a resident's card (carte de séjour) per API-Congo (.cg). Sources: Embassy of the Republic of Congo (ambacongo-us.org) and API-Congo / Ministry of Foreign Affairs."
-    },
-    {
-      "category": "work",
-      "name": "Work Visa / Foreign Worker Authorization (Autorisation de Travail pour Étranger)",
-      "purpose": "Entry and authorization to work in the Republic of the Congo as a foreign employee.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": null,
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-      "notes": "Foreign worker visa fee is 100,000 FCFA (~USD 165); work card fee is 10,000 FCFA (~USD 16). Categories include national staff, subordinate agents, and foreign personnel. Temporary employment and provisional work authorizations are also available. Must be obtained through the relevant Congolese authorities."
-    },
-    {
-      "category": "work",
-      "name": "Temporary / Provisional Work Authorization (Autorisation Provisoire de Travail)",
-      "purpose": "Short-term or provisional employment authorization for foreign workers, arranged through the Congolese employment agency (ACPE).",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": null,
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-      "notes": "Distinct from the standard foreign-worker contract visa. Temporary employment authorizations are obtained through the ACPE (Agence Congolaise Pour l'Emploi) application process, and provisional work authorizations are also available for foreign personnel. Source: API-Congo (official .cg investment-promotion agency)."
-    },
-    {
-      "category": "other",
-      "name": "Residence Visa / Residence Permit (Carte de Séjour)",
-      "purpose": "Long-term residence authorization for foreign nationals staying beyond the initial visa period, covering employees, students, religious ministers, professionals, and academics.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": 15,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-      "notes": "Initial visa may allow up to 15 days; extended through the Direction Départementale de la Surveillance du Territoire. Permit durations: 1 year (106,000 FCFA / ~EUR 161.60), 3 years (206,000 FCFA / ~EUR 314.04), 5 years (106,000 FCFA / ~EUR 161.60). Express Visa option available at additional cost for same-day processing. Categories include employees, students, religious ministers, initiates, professionals, and academics/researchers. A Privileged Resident Card (Carte de Résident Privilégié) is available after 10 years of uninterrupted residence, and automatically granted to foreign spouses of Congolese nationals (married 2+ years), economic investors, and recognised religious leaders."
-    },
-    {
-      "category": "diplomatic",
-      "name": "Diplomatic / Service Passport Visa Exemption",
-      "purpose": "Visa-free entry for holders of diplomatic, service, or special passports from countries with bilateral agreements with the Republic of the Congo.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": null,
-      "fee_usd": 0,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-      "notes": "Holders of diplomatic and service passports from Brazil, China, and Russia are exempt from visa requirements. Holders of diplomatic passports (only) from Portugal and Turkey are exempt. Chinese nationals with 'Public Affairs' passports (公务护照) are also exempt. These arrangements are based on bilateral agreements. Source for these specific exemptions is Wikipedia citing bilateral agreements; not independently confirmed on a directly accessible official Congo government page during this research."
-    },
-    {
-      "category": "diplomatic",
-      "name": "Official / Diplomatic Visa",
-      "purpose": "Holders of diplomatic or official passports, or UN Laissez-Passer, traveling to the Republic of the Congo on official government or international-organization business.",
-      "max_stay_days": null,
-      "validity_days": 365,
-      "entries": "multiple",
-      "fee_usd": 0,
-      "processing_days_min": 7,
-      "processing_days_max": 10,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "http://www.ambacongo-us.org/en/consular-services/visa",
-      "notes": "Issued to diplomatic/official passport bearers and UN Laissez-Passer holders traveling on official business. A 12-month (one-year) multiple-entry visa is granted when the application is accompanied by a diplomatic note, and diplomatic visa applications are exempt from visa fees. This is an issued visa and is distinct from the separate bilateral visa-free exemptions granted to certain nationalities' diplomatic/service passport holders. Source: official Embassy of the Republic of Congo to the USA (ambacongo-us.org)."
-    }
+  {
+   "category": "business",
+   "name": "Business Visa (Visa d'Affaires)",
+   "purpose": "Entry for business activities, meetings, feasibility studies, and commercial or investment arrangements in the Republic of the Congo.",
+   "max_stay_days": 30,
+   "validity_days": 30,
+   "entries": "multiple",
+   "fee_usd": 200,
+   "processing_days_min": 7,
+   "processing_days_max": 10,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://diplobrazza.net/etrangers-voyageant-en-republique-du-congo",
+   "notes": "Must be obtained prior to arrival at a Congolese embassy or consulate. Per the official Embassy of the Republic of Congo to the USA (ambacongo-us.org), the business visa is issued for 30 days with multiple entries for non-US citizens (cannot exceed 30 days; extend at the nearest Office of Immigration in Congo) and 180 days multiple entries for US citizens; fee USD 200, processing 7-10 business days (fee varies by consulate). Requires a notarised business letter on company letterhead stating the nature of business."
+  },
+  {
+   "category": "student",
+   "name": "Student Visa / Student Residence Permit (Carte de Séjour Étudiant)",
+   "purpose": "Foreign students and researchers enrolled at a Congolese educational or research institution.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": null,
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+   "notes": "No separate student entry visa is issued abroad. Per the official Congolese embassy (ambacongo-us.org), students on exchange programs and researchers enter on a tourist visa and then change their status at the nearest Office of Immigration in Congo, obtaining an ordinary resident's card (carte de séjour) on the basis of a school/university enrollment certificate. Resident's card fees: 1 year 106,000 FCFA (~USD 176), 3 years 206,000 FCFA (~USD 343), 5 years 106,000 FCFA (~USD 176), issued by the Direction Départementale de la Surveillance du Territoire. Sources: API-Congo (.cg) and Ministry of Foreign Affairs (diplobrazza.net)."
+  },
+  {
+   "category": "family",
+   "name": "Family Reunion Visa / Spouse Residence (Regroupement Familial)",
+   "purpose": "Family members joining relatives resident in the Republic of the Congo, and foreign spouses of Congolese nationals.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": null,
+   "fee_usd": null,
+   "processing_days_min": 7,
+   "processing_days_max": 10,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+   "notes": "For family reunification (regroupement familial), the official embassy (ambacongo-us.org) requires proof of family affiliation (birth certificate, adoption papers, or legal marriage certificate) submitted with the visa application; applicants then regularise status in-country. A foreign national married for at least 2 years to a Congolese national is automatically granted a resident's card (carte de séjour) per API-Congo (.cg). Sources: Embassy of the Republic of Congo (ambacongo-us.org) and API-Congo / Ministry of Foreign Affairs."
+  },
+  {
+   "category": "work",
+   "name": "Work Visa / Foreign Worker Authorization (Autorisation de Travail pour Étranger)",
+   "purpose": "Entry and authorization to work in the Republic of the Congo as a foreign employee.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": null,
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+   "notes": "Foreign worker visa fee is 100,000 FCFA (~USD 165); work card fee is 10,000 FCFA (~USD 16). Categories include national staff, subordinate agents, and foreign personnel. Temporary employment and provisional work authorizations are also available. Must be obtained through the relevant Congolese authorities."
+  },
+  {
+   "category": "work",
+   "name": "Temporary / Provisional Work Authorization (Autorisation Provisoire de Travail)",
+   "purpose": "Short-term or provisional employment authorization for foreign workers, arranged through the Congolese employment agency (ACPE).",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": null,
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+   "notes": "Distinct from the standard foreign-worker contract visa. Temporary employment authorizations are obtained through the ACPE (Agence Congolaise Pour l'Emploi) application process, and provisional work authorizations are also available for foreign personnel. Source: API-Congo (official .cg investment-promotion agency)."
+  },
+  {
+   "category": "other",
+   "name": "Residence Visa / Residence Permit (Carte de Séjour)",
+   "purpose": "Long-term residence authorization for foreign nationals staying beyond the initial visa period, covering employees, students, religious ministers, professionals, and academics.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": 15,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+   "notes": "Initial visa may allow up to 15 days; extended through the Direction Départementale de la Surveillance du Territoire. Permit durations: 1 year (106,000 FCFA / ~EUR 161.60), 3 years (206,000 FCFA / ~EUR 314.04), 5 years (106,000 FCFA / ~EUR 161.60). Express Visa option available at additional cost for same-day processing. Categories include employees, students, religious ministers, initiates, professionals, and academics/researchers. A Privileged Resident Card (Carte de Résident Privilégié) is available after 10 years of uninterrupted residence, and automatically granted to foreign spouses of Congolese nationals (married 2+ years), economic investors, and recognised religious leaders."
+  },
+  {
+   "category": "diplomatic",
+   "name": "Diplomatic / Service Passport Visa Exemption",
+   "purpose": "Visa-free entry for holders of diplomatic, service, or special passports from countries with bilateral agreements with the Republic of the Congo.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": null,
+   "fee_usd": 0,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+   "notes": "Holders of diplomatic and service passports from Brazil, China, and Russia are exempt from visa requirements. Holders of diplomatic passports (only) from Portugal and Turkey are exempt. Chinese nationals with 'Public Affairs' passports (公务护照) are also exempt. These arrangements are based on bilateral agreements. Source for these specific exemptions is Wikipedia citing bilateral agreements; not independently confirmed on a directly accessible official Congo government page during this research."
+  },
+  {
+   "category": "diplomatic",
+   "name": "Official / Diplomatic Visa",
+   "purpose": "Holders of diplomatic or official passports, or UN Laissez-Passer, traveling to the Republic of the Congo on official government or international-organization business.",
+   "max_stay_days": null,
+   "validity_days": 365,
+   "entries": "multiple",
+   "fee_usd": 0,
+   "processing_days_min": 7,
+   "processing_days_max": 10,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "http://www.ambacongo-us.org/en/consular-services/visa",
+   "notes": "Issued to diplomatic/official passport bearers and UN Laissez-Passer holders traveling on official business. A 12-month (one-year) multiple-entry visa is granted when the application is accompanied by a diplomatic note, and diplomatic visa applications are exempt from visa fees. This is an issued visa and is distinct from the separate bilateral visa-free exemptions granted to certain nationalities' diplomatic/service passport holders. Source: official Embassy of the Republic of Congo to the USA (ambacongo-us.org)."
+  }
+ ],
+ "visa_policy": {
+  "visa_free": [
+   {
+    "nationality": "Cameroon",
+    "iso3": "CMR",
+    "max_stay_days": 90,
+    "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Confirmed visa-free (not merely VOA) on official API-Congo (.cg government domain).",
+    "source_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+    "source_official": true
+   },
+   {
+    "nationality": "Central African Republic",
+    "iso3": "CAF",
+    "max_stay_days": 90,
+    "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Confirmed visa-free (not merely VOA) on official API-Congo (.cg government domain).",
+    "source_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+    "source_official": true
+   },
+   {
+    "nationality": "Chad",
+    "iso3": "TCD",
+    "max_stay_days": 90,
+    "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Confirmed visa-free (not merely VOA) on official API-Congo (.cg government domain).",
+    "source_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+    "source_official": true
+   },
+   {
+    "nationality": "Equatorial Guinea",
+    "iso3": "GNQ",
+    "max_stay_days": 90,
+    "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Listed as visa-free on Wikipedia's visa policy page for Republic of Congo.",
+    "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
+    "source_official": false
+   },
+   {
+    "nationality": "Gabon",
+    "iso3": "GAB",
+    "max_stay_days": 90,
+    "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Listed as visa-free on Wikipedia's visa policy page for Republic of Congo.",
+    "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
+    "source_official": false
+   }
   ],
-  "visa_policy": {
-    "visa_free": [
-      {
-        "nationality": "Cameroon",
-        "iso3": "CMR",
-        "max_stay_days": 90,
-        "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Confirmed visa-free (not merely VOA) on official API-Congo (.cg government domain).",
-        "source_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-        "source_official": true
-      },
-      {
-        "nationality": "Central African Republic",
-        "iso3": "CAF",
-        "max_stay_days": 90,
-        "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Confirmed visa-free (not merely VOA) on official API-Congo (.cg government domain).",
-        "source_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-        "source_official": true
-      },
-      {
-        "nationality": "Chad",
-        "iso3": "TCD",
-        "max_stay_days": 90,
-        "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Confirmed visa-free (not merely VOA) on official API-Congo (.cg government domain).",
-        "source_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-        "source_official": true
-      },
-      {
-        "nationality": "Equatorial Guinea",
-        "iso3": "GNQ",
-        "max_stay_days": 90,
-        "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Listed as visa-free on Wikipedia's visa policy page for Republic of Congo.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
-        "source_official": false
-      },
-      {
-        "nationality": "Gabon",
-        "iso3": "GAB",
-        "max_stay_days": 90,
-        "notes": "CEMAC member state. Biometric passport required per Wikipedia citing official sources. Visa exemption ratified by Republic of Congo on 23 October 2017 under CEMAC free movement agreement. Listed as visa-free on Wikipedia's visa policy page for Republic of Congo.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
-        "source_official": false
-      }
-    ],
-    "visa_on_arrival": [
-      {
-        "nationality": "Benin",
-        "iso3": "BEN",
-        "max_stay_days": null,
-        "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation based on airport authority source.",
-        "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-        "source_official": false
-      },
-      {
-        "nationality": "Burkina Faso",
-        "iso3": "BFA",
-        "max_stay_days": null,
-        "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
-        "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-        "source_official": false
-      },
-      {
-        "nationality": "Ivory Coast (Côte d'Ivoire)",
-        "iso3": "CIV",
-        "max_stay_days": null,
-        "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
-        "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-        "source_official": false
-      },
-      {
-        "nationality": "Mauritania",
-        "iso3": "MRT",
-        "max_stay_days": null,
-        "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
-        "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-        "source_official": false
-      },
-      {
-        "nationality": "Morocco",
-        "iso3": "MAR",
-        "max_stay_days": null,
-        "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
-        "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-        "source_official": false
-      },
-      {
-        "nationality": "Niger",
-        "iso3": "NER",
-        "max_stay_days": null,
-        "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
-        "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-        "source_official": false
-      },
-      {
-        "nationality": "Senegal",
-        "iso3": "SEN",
-        "max_stay_days": null,
-        "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
-        "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-        "source_official": false
-      },
-      {
-        "nationality": "Togo",
-        "iso3": "TGO",
-        "max_stay_days": null,
-        "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
-        "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-        "source_official": false
-      },
-      {
-        "nationality": "Rwanda",
-        "iso3": "RWA",
-        "max_stay_days": 90,
-        "notes": "Under the Congo-Rwanda Reciprocal Tourist and Business Visa Waiver Agreement. The official Congolese Ministry of International Cooperation (cooperation.gouv.cg) confirmed Senate ratification in September 2023. Ordinary passport holders receive 'free visa on arrival' (visa gratuit à l'arrivée) for up to 90 days; diplomatic and service passport holders are fully exempt. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation: the official ratification document specifically describes 'free visa on arrival' for ordinary passports, not a visa-free arrangement.",
-        "source_url": "https://www.cooperation.gouv.cg/ratification-de-laccord-relatif-a-lexemption-du-visa-entre-le-congo-et-le-rwanda/",
-        "source_official": true
-      },
-      {
-        "nationality": "United Arab Emirates",
-        "iso3": "ARE",
-        "max_stay_days": null,
-        "notes": "UAE nationals listed as visa-on-arrival per Wikipedia, effective October 9, 2018. Not found on the Brazzaville airport VOA page. Retained from prior record with low confidence; no official Congo government source confirmed this arrangement during re-validation.",
-        "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
-        "source_official": false
-      }
-    ],
-    "e_visa": [],
-    "eta": [],
-    "source_urls": [
-      "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-      "https://apicongo.cg/entrer_et_travailler_au_congo.php",
-      "https://diplobrazza.net/etrangers-voyageant-en-republique-du-congo",
-      "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-      "https://www.cooperation.gouv.cg/ratification-de-laccord-relatif-a-lexemption-du-visa-entre-le-congo-et-le-rwanda/",
-      "http://www.ambacongo-us.org/en/consular-services/visa",
-      "https://ambacongofr.org/index.php/l-ambassade/actualites/766-pas-de-visas-d-entree-en-republique-du-congo-pour-les-ressortissants-des-pays-de-la-cemac-du-senegal-de-la-cote-d-ivoire-et-du-benin",
-      "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
-      "https://www.fragomen.com/insights/republic-of-congorwanda-reciprocal-tourist-and-business-visa-waiver-agreement-implemented.html",
-      "https://english.news.cn/20260526/65cd3af64c1f49d986fda31304f8d210/c.html"
-    ],
-    "notes": "CEMAC member states (Cameroon, CAR, Chad, Equatorial Guinea, Gabon) are genuinely visa-free for 90 days (biometric passports required). West African nations listed on the official API-Congo page as 'exempt' (Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Senegal, Togo) are more precisely confirmed as visa-on-arrival at Brazzaville airport per the airport authority website; these have been reclassified. Rwanda ordinary passport holders receive a 'free visa on arrival' per the official Congolese Ministry of International Cooperation ratification of the September 2023 agreement - reclassified from visa_free to visa_on_arrival. Guinea Conakry appears only on the API-Congo exemption list but is NOT listed on the airport VOA page; moved to gaps pending clarification. UAE has Wikipedia-only support for VOA (since October 2018); retained with low confidence. President Sassou Nguesso announced on May 25, 2026 (Africa Day) that all African nationals will gain visa-free entry effective January 1, 2027 - not yet in force. No official e-visa portal exists for Republic of the Congo (Congo-Brazzaville); evisa.gouv.cd is for the Democratic Republic of the Congo."
-  },
-  "conditional_access": [
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["BRA", "CHN", "RUS"],
-      "passport_types": ["diplomatic", "service"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Holders of diplomatic or service passports issued by Brazil, China, and Russia do not require a visa to enter Republic of the Congo.",
-      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
-      "source_official": false,
-      "notes": "Sourced from Wikipedia citing bilateral agreements. No direct official Congo government page was accessible to confirm these specific agreements during this research session. cooperation.gouv.cg was unreachable during re-validation."
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["PRT", "TUR"],
-      "passport_types": ["diplomatic"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Holders of diplomatic passports issued by Portugal and Turkey do not require a visa to enter Republic of the Congo. (Service passport holders from these countries are NOT included.)",
-      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
-      "source_official": false,
-      "notes": "Sourced from Wikipedia citing bilateral agreements. No direct official Congo government page was accessible to confirm. Angola: a similar agreement for diplomatic and service passports was reportedly signed but not yet in force as of research date."
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["CHN"],
-      "passport_types": ["special"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Chinese nationals holding passports endorsed 'For Public Affairs' (公务护照, a special Chinese passport category below diplomatic/service but above ordinary) do not require a visa.",
-      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
-      "source_official": false,
-      "notes": "Sourced from Wikipedia. Chinese 'Public Affairs' passports are a distinct category. No official Congo government source accessible to confirm."
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["RWA"],
-      "passport_types": ["diplomatic", "service"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Rwandan holders of diplomatic or service passports are fully visa-exempt under the Congo-Rwanda Reciprocal Tourist and Business Visa Waiver Agreement ratified September 2023.",
-      "source_url": "https://www.cooperation.gouv.cg/ratification-de-laccord-relatif-a-lexemption-du-visa-entre-le-congo-et-le-rwanda/",
-      "source_official": true,
-      "notes": "The official ratification document on cooperation.gouv.cg distinguishes: diplomatic/service passports = full visa exemption; ordinary passports = free visa on arrival (VOA). Ordinary passport Rwanda entry is recorded in visa_on_arrival."
-    }
+  "visa_on_arrival": [
+   {
+    "nationality": "Benin",
+    "iso3": "BEN",
+    "max_stay_days": null,
+    "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation based on airport authority source.",
+    "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+    "source_official": false
+   },
+   {
+    "nationality": "Burkina Faso",
+    "iso3": "BFA",
+    "max_stay_days": null,
+    "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
+    "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+    "source_official": false
+   },
+   {
+    "nationality": "Ivory Coast (Côte d'Ivoire)",
+    "iso3": "CIV",
+    "max_stay_days": null,
+    "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
+    "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+    "source_official": false
+   },
+   {
+    "nationality": "Mauritania",
+    "iso3": "MRT",
+    "max_stay_days": null,
+    "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
+    "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+    "source_official": false
+   },
+   {
+    "nationality": "Morocco",
+    "iso3": "MAR",
+    "max_stay_days": null,
+    "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
+    "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+    "source_official": false
+   },
+   {
+    "nationality": "Niger",
+    "iso3": "NER",
+    "max_stay_days": null,
+    "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
+    "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+    "source_official": false
+   },
+   {
+    "nationality": "Senegal",
+    "iso3": "SEN",
+    "max_stay_days": null,
+    "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
+    "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+    "source_official": false
+   },
+   {
+    "nationality": "Togo",
+    "iso3": "TGO",
+    "max_stay_days": null,
+    "notes": "Confirmed visa-on-arrival at Maya-Maya International Airport Brazzaville per aeroport-brazzaville.com. API-Congo (.cg official domain) uses the term 'exempt' but the airport source clarifies this is a VOA arrangement. Max stay not specified. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation.",
+    "source_url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+    "source_official": false
+   },
+   {
+    "nationality": "Rwanda",
+    "iso3": "RWA",
+    "max_stay_days": 90,
+    "notes": "Under the Congo-Rwanda Reciprocal Tourist and Business Visa Waiver Agreement. The official Congolese Ministry of International Cooperation (cooperation.gouv.cg) confirmed Senate ratification in September 2023. Ordinary passport holders receive 'free visa on arrival' (visa gratuit à l'arrivée) for up to 90 days; diplomatic and service passport holders are fully exempt. Reclassified from visa_free to visa_on_arrival in June 2026 re-validation: the official ratification document specifically describes 'free visa on arrival' for ordinary passports, not a visa-free arrangement.",
+    "source_url": "https://www.cooperation.gouv.cg/ratification-de-laccord-relatif-a-lexemption-du-visa-entre-le-congo-et-le-rwanda/",
+    "source_official": true
+   },
+   {
+    "nationality": "United Arab Emirates",
+    "iso3": "ARE",
+    "max_stay_days": null,
+    "notes": "UAE nationals listed as visa-on-arrival per Wikipedia, effective October 9, 2018. Not found on the Brazzaville airport VOA page. Retained from prior record with low confidence; no official Congo government source confirmed this arrangement during re-validation.",
+    "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
+    "source_official": false
+   }
   ],
-  "cbi": {
-    "has_program": false,
-    "program_name": "",
-    "official_url": "",
-    "source_official": false,
-    "options": [],
-    "processing_time": "",
-    "dual_citizenship_allowed": null,
-    "residency_required": null,
-    "notes": "No citizenship-by-investment program found on any official Republic of the Congo government source."
-  },
-  "rbi": {
-    "programs": [
-      {
-        "name": "Republic of Congo Residence Permit (Carte de Séjour / Carte de Résident Privilégié)",
-        "type": "general_residence",
-        "min_amount": null,
-        "currency": null,
-        "path_to_pr_years": 10,
-        "path_to_citizenship_years": null,
-        "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-        "source_official": true,
-        "notes": "Residence permits available for 1 year (106,000 FCFA / ~€161.60), 3 years (206,000 FCFA / ~€314.04), or 5 years (106,000 FCFA / ~€161.60), issued by the Direction Départementale de la Surveillance du Territoire. Privileged resident card (carte de résident privilégié) requires uninterrupted residence of at least 10 years. Residence permits are issued automatically to: foreign nationals married for at least 2 years to a Congolese national; economic investors; and leaders of recognised religious denominations. No minimum investment amount stated for the 'economic investor' category on official sources. Source: API-Congo (Investment Promotion Agency) official .cg government domain."
-      }
-    ]
-  },
-  "fast_track": {
-    "programs": []
-  },
-  "agreements": [
-    "CEMAC (Communauté Économique et Monétaire de l'Afrique Centrale) free movement of persons - ratified by Republic of Congo on 23 October 2017; 90-day visa-free for biometric passport holders of CEMAC states",
-    "Congo-Rwanda Reciprocal Tourist and Business Visa Waiver Agreement - ratified September 2023; ordinary passports receive free VOA (90 days); diplomatic/service passports fully visa-exempt",
-    "Bilateral visa exemption for diplomatic/service passports of Brazil, China, Russia",
-    "Bilateral visa exemption for diplomatic passports of Portugal and Turkey",
-    "Pending: Bilateral visa exemption for diplomatic/service passports of Angola (signed, not yet confirmed in force)",
-    "Pending: All-African visa-free entry announced by President Sassou Nguesso on 25 May 2026, effective January 1, 2027 (not yet in force)"
+  "e_visa": [],
+  "eta": [],
+  "source_urls": [
+   "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+   "https://apicongo.cg/entrer_et_travailler_au_congo.php",
+   "https://diplobrazza.net/etrangers-voyageant-en-republique-du-congo",
+   "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+   "https://www.cooperation.gouv.cg/ratification-de-laccord-relatif-a-lexemption-du-visa-entre-le-congo-et-le-rwanda/",
+   "http://www.ambacongo-us.org/en/consular-services/visa",
+   "https://ambacongofr.org/index.php/l-ambassade/actualites/766-pas-de-visas-d-entree-en-republique-du-congo-pour-les-ressortissants-des-pays-de-la-cemac-du-senegal-de-la-cote-d-ivoire-et-du-benin",
+   "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
+   "https://www.fragomen.com/insights/republic-of-congorwanda-reciprocal-tourist-and-business-visa-waiver-agreement-implemented.html",
+   "https://english.news.cn/20260526/65cd3af64c1f49d986fda31304f8d210/c.html"
   ],
-  "official_domains": [
-    "ambacongofr.org",
-    "ambacongo-us.org",
-    "apicongo.cg",
-    "diplobrazza.net",
-    "finances.gouv.cg",
-    "cooperation.gouv.cg"
-  ],
-  "data_quality": {
-    "completeness": "medium",
-    "validation_notes": "Re-validation 2026-06-27: (1) RECLASSIFIED Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Senegal, Togo from visa_free to visa_on_arrival. These 8 West African nations appear on the API-Congo official page as 'exempt' but the Brazzaville airport authority website (aeroport-brazzaville.com/en/visa_on_arrival_congo.php) explicitly lists them as visa-on-arrival at Maya-Maya International Airport. The airport source is more precise about the actual mechanism. This is a significant correction - 8 entries moved from visa_free to visa_on_arrival. (2) RECLASSIFIED Rwanda from visa_free to visa_on_arrival. The official Congolese Ministry of International Cooperation ratification document (cooperation.gouv.cg) specifically describes ordinary passports receiving 'free visa on arrival' - not a visa-free waiver. Diplomatic/service passports for Rwanda added to conditional_access as fully visa-exempt. (3) REMOVED Guinea Conakry from visa_free list - it appears only on API-Congo's exemption listing but is NOT confirmed on the airport VOA page or any other source. Moved to gaps pending clarification. This follows the safety rule: when in doubt, classify down. (4) CONFIRMED Equatorial Guinea and Gabon remain as CEMAC visa-free per Wikipedia (these two were not listed on the API-Congo English page but are confirmed CEMAC members with the same agreement). (5) KEPT UAE in visa_on_arrival with low confidence flag (Wikipedia-only, not on airport VOA page). (6) ADDED Rwanda diplomatic/service conditional_access entry from the official cooperation.gouv.cg ratification page, which was now reachable via WebSearch (though direct WebFetch returned ECONNREFUSED). Re-validation 2026-06-29: Re-fetched apicongo.cg (both language versions), aeroport-brazzaville.com, diplobrazza.net, Wikipedia, and ran targeted WebSearches. NO classification changes. All existing entries confirmed: (a) CEMAC 5 (Cameroon, CAR, Chad, Equatorial Guinea, Gabon) visa-free 90 days biometric - re-confirmed by airport page explicitly; (b) 8 West African nationalities (Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Senegal, Togo) remain VOA per airport page - re-confirmed; (c) Rwanda ordinary passport VOA 90 days - cooperation.gouv.cg still ECONNREFUSED but WebSearch confirms agreement unchanged; (d) UAE VOA - Wikipedia confirms still listed; (e) Guinea Conakry: API-Congo still lists it as exempt, airport VOA page and Wikipedia still omit it - classification-down decision maintained, kept in gaps; (f) diplobrazza.net remains generic with no nationality list.",
-    "gaps": [
-      "Guinea (Conakry) visa status: Listed as visa-exempt on official API-Congo (.cg) page but NOT listed on Brazzaville airport VOA page. Cannot confirm as visa-free or visa-on-arrival from official sources. Removed from visa_free pending official clarification - contact Congolese embassy to verify.",
-      "UAE visa-on-arrival: Wikipedia-only source (October 2018 arrangement); not confirmed on Brazzaville airport VOA page or any official Congo government page. Retained with low confidence.",
-      "Max stay duration for all VOA nationalities (Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Senegal, Togo): not specified on any official source consulted.",
-      "Biometric passport requirement for CEMAC nationals: mentioned on Wikipedia citing official sources but not explicitly stated in accessible official Congo government pages.",
-      "Equatorial Guinea and Gabon visa-free status: confirmed by Wikipedia's CEMAC listing but not independently verified on a directly accessible .cg government domain during this session (ambacongofr.org HTTP 500; API-Congo English page omits them).",
-      "Diplomatic/service passport waivers for Brazil, China, Russia, Portugal, Turkey: Wikipedia-sourced only; no direct official Congo government page confirmed during re-validation.",
-      "Chinese 'Public Affairs' passport exemption: Wikipedia-sourced only; no official Congo government source accessible to confirm.",
-      "Angola diplomatic/service passport agreement: reportedly signed but not confirmed as in-force on any accessible official source.",
-      "2027 all-African visa-free policy: announced by President Sassou Nguesso on 25 May 2026 (confirmed by Xinhua). Not yet in force; no official decree text accessed.",
-      "Congo-Kazakhstan visa exemption memorandum (signed August 2, 2024): scope (diplomatic-only or ordinary) not confirmed on any accessible official source.",
-      "Tourist and business visa fees and exact max stay duration: not specified on any official source consulted.",
-      "Transit visa category: not found on official sources; existence unconfirmed.",
-      "E-visa or ETA system: no official government e-visa portal found for Republic of the Congo (Congo-Brazzaville). evisa.gouv.cd is for the Democratic Republic of the Congo.",
-      "RBI economic investor minimum investment threshold: API-Congo lists the category but gives no minimum amount figure."
-    ]
+  "notes": "CEMAC member states (Cameroon, CAR, Chad, Equatorial Guinea, Gabon) are genuinely visa-free for 90 days (biometric passports required). West African nations listed on the official API-Congo page as 'exempt' (Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Senegal, Togo) are more precisely confirmed as visa-on-arrival at Brazzaville airport per the airport authority website; these have been reclassified. Rwanda ordinary passport holders receive a 'free visa on arrival' per the official Congolese Ministry of International Cooperation ratification of the September 2023 agreement - reclassified from visa_free to visa_on_arrival. Guinea Conakry appears only on the API-Congo exemption list but is NOT listed on the airport VOA page; moved to gaps pending clarification. UAE has Wikipedia-only support for VOA (since October 2018); retained with low confidence. President Sassou Nguesso announced on May 25, 2026 (Africa Day) that all African nationals will gain visa-free entry effective January 1, 2027 - not yet in force. No official e-visa portal exists for Republic of the Congo (Congo-Brazzaville); evisa.gouv.cd is for the Democratic Republic of the Congo."
+ },
+ "conditional_access": [
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "BRA",
+    "CHN",
+    "RUS"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "service"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": null,
+   "conditions": "Holders of diplomatic or service passports issued by Brazil, China, and Russia do not require a visa to enter Republic of the Congo.",
+   "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
+   "source_official": false,
+   "notes": "Sourced from Wikipedia citing bilateral agreements. No direct official Congo government page was accessible to confirm these specific agreements during this research session. cooperation.gouv.cg was unreachable during re-validation."
   },
-  "sources_checked": [
-    {
-      "url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
-      "domain": "apicongo.cg",
-      "official": true,
-      "notes": "Official API-Congo (Investment Promotion Agency) - official .cg government domain. Re-fetched 2026-06-29. Lists Benin, Burkina Faso, Cameroon, CAR, Côte d'Ivoire, Guinea Conakry, Morocco, Mauritania, Niger, Senegal, Chad, and Togo as 'exempt' (French: 'A l'exception des ressortissants de…'). The term 'exempt' is used loosely - cross-referencing the Brazzaville airport source confirms 8 of these are VOA, not visa-free. CEMAC members (Cameroon, CAR, Chad) in the same list are visa-free under the CEMAC agreement. Guinea Conakry listed as exempt here but absent from airport VOA page - ambiguous."
-    },
-    {
-      "url": "https://apicongo.cg/entrer_et_travailler_au_congo.php",
-      "domain": "apicongo.cg",
-      "official": true,
-      "notes": "French-language version of the API-Congo entry and work guide. Re-fetched 2026-06-29. Confirms same exemption list as English version with identical 12 nationalities."
-    },
-    {
-      "url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
-      "domain": "aeroport-brazzaville.com",
-      "official": false,
-      "notes": "Brazzaville airport authority website. Re-fetched 2026-06-29. Explicitly names Benin, Burkina Faso, Ivory Coast, Mauritania, Morocco, Niger, Senegal, and Togo as visa-on-arrival at Maya-Maya International Airport. Also explicitly states CEMAC 5 (Cameroon, CAR, Chad, Equatorial Guinea, Gabon) are visa-free for stays under 90 days with biometric passports. Guinea Conakry absent from VOA list. Rwanda and UAE not mentioned. Data unchanged from prior validation."
-    },
-    {
-      "url": "https://diplobrazza.net/etrangers-voyageant-en-republique-du-congo",
-      "domain": "diplobrazza.net",
-      "official": true,
-      "notes": "Official Ministry of Foreign Affairs website. Re-fetched 2026-06-29. Still only general statement that most travelers need a visa; no specific nationality exemption list or fee schedule. Unchanged from prior validation."
-    },
-    {
-      "url": "https://www.cooperation.gouv.cg/ratification-de-laccord-relatif-a-lexemption-du-visa-entre-le-congo-et-le-rwanda/",
-      "domain": "cooperation.gouv.cg",
-      "official": true,
-      "notes": "Official Congo Ministry of International Cooperation. ECONNREFUSED on direct WebFetch in both 2026-06-27 and 2026-06-29 sessions. WebSearch 2026-06-29 re-confirmed: Senate ratified agreement July 2023; agreement signed 2021; diplomatic/service passports = full exemption; ordinary passports = free visa on arrival. Content unchanged from prior session."
-    },
-    {
-      "url": "https://ambacongofr.org/index.php/l-ambassade/actualites/766-pas-de-visas-d-entree-en-republique-du-congo-pour-les-ressortissants-des-pays-de-la-cemac-du-senegal-de-la-cote-d-ivoire-et-du-benin",
-      "domain": "ambacongofr.org",
-      "official": true,
-      "notes": "Official Embassy of the Republic of Congo in France. HTTP 500 during June 2026 re-validation (same as prior validation). Previously confirmed CEMAC countries + Senegal + Ivory Coast + Benin visa exemptions."
-    },
-    {
-      "url": "http://www.ambacongo-us.org/en/consular-services/visa",
-      "domain": "ambacongo-us.org",
-      "official": true,
-      "notes": "Official Embassy of the Republic of Congo to the USA. Not re-fetched this session; SSL certificate previously expired (403). States no visa is issued at any port of entry - may be outdated or refer only to nationalities without specific bilateral agreements."
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
-      "domain": "en.wikipedia.org",
-      "official": false,
-      "notes": "Wikipedia. Fetched June 2026 re-validation. Lists only 5 CEMAC countries as visa-free (90 days, biometric); lists Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Rwanda, Senegal, Togo, and UAE as visa-on-arrival. This supports the reclassification of 8 West African nationalities and Rwanda to VOA. Cites UAE VOA effective October 9, 2018."
-    },
-    {
-      "url": "https://www.fragomen.com/insights/republic-of-congorwanda-reciprocal-tourist-and-business-visa-waiver-agreement-implemented.html",
-      "domain": "fragomen.com",
-      "official": false,
-      "notes": "Fragomen immigration law firm. Details Congo-Rwanda visa waiver effective September 15, 2023. Superseded by official cooperation.gouv.cg source (found via WebSearch) for classification purposes."
-    },
-    {
-      "url": "https://english.news.cn/20260526/65cd3af64c1f49d986fda31304f8d210/c.html",
-      "domain": "english.news.cn",
-      "official": false,
-      "notes": "Xinhua News Agency. Confirms President Sassou Nguesso announced all-African visa-free entry effective January 1, 2027, at African Development Bank Annual Meetings in Brazzaville on May 25, 2026. Not yet in force."
-    }
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "PRT",
+    "TUR"
+   ],
+   "passport_types": [
+    "diplomatic"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": null,
+   "conditions": "Holders of diplomatic passports issued by Portugal and Turkey do not require a visa to enter Republic of the Congo. (Service passport holders from these countries are NOT included.)",
+   "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
+   "source_official": false,
+   "notes": "Sourced from Wikipedia citing bilateral agreements. No direct official Congo government page was accessible to confirm. Angola: a similar agreement for diplomatic and service passports was reportedly signed but not yet in force as of research date."
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "CHN"
+   ],
+   "passport_types": [
+    "special"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": null,
+   "conditions": "Chinese nationals holding passports endorsed 'For Public Affairs' (公务护照, a special Chinese passport category below diplomatic/service but above ordinary) do not require a visa.",
+   "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
+   "source_official": false,
+   "notes": "Sourced from Wikipedia. Chinese 'Public Affairs' passports are a distinct category. No official Congo government source accessible to confirm."
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "RWA"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "service"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": null,
+   "conditions": "Rwandan holders of diplomatic or service passports are fully visa-exempt under the Congo-Rwanda Reciprocal Tourist and Business Visa Waiver Agreement ratified September 2023.",
+   "source_url": "https://www.cooperation.gouv.cg/ratification-de-laccord-relatif-a-lexemption-du-visa-entre-le-congo-et-le-rwanda/",
+   "source_official": true,
+   "notes": "The official ratification document on cooperation.gouv.cg distinguishes: diplomatic/service passports = full visa exemption; ordinary passports = free visa on arrival (VOA). Ordinary passport Rwanda entry is recorded in visa_on_arrival."
+  }
+ ],
+ "cbi": {
+  "has_program": false,
+  "program_name": "",
+  "official_url": "",
+  "source_official": false,
+  "options": [],
+  "processing_time": "",
+  "dual_citizenship_allowed": null,
+  "residency_required": null,
+  "notes": "No citizenship-by-investment program found on any official Republic of the Congo government source."
+ },
+ "rbi": {
+  "programs": [
+   {
+    "name": "Republic of Congo Residence Permit (Carte de Séjour / Carte de Résident Privilégié)",
+    "type": "general_residence",
+    "min_amount": null,
+    "currency": null,
+    "path_to_pr_years": 10,
+    "path_to_citizenship_years": null,
+    "official_url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+    "source_official": true,
+    "notes": "Residence permits available for 1 year (106,000 FCFA / ~€161.60), 3 years (206,000 FCFA / ~€314.04), or 5 years (106,000 FCFA / ~€161.60), issued by the Direction Départementale de la Surveillance du Territoire. Privileged resident card (carte de résident privilégié) requires uninterrupted residence of at least 10 years. Residence permits are issued automatically to: foreign nationals married for at least 2 years to a Congolese national; economic investors; and leaders of recognised religious denominations. No minimum investment amount stated for the 'economic investor' category on official sources. Source: API-Congo (Investment Promotion Agency) official .cg government domain."
+   }
   ]
+ },
+ "fast_track": {
+  "programs": []
+ },
+ "agreements": [
+  "CEMAC (Communauté Économique et Monétaire de l'Afrique Centrale) free movement of persons - ratified by Republic of Congo on 23 October 2017; 90-day visa-free for biometric passport holders of CEMAC states",
+  "Congo-Rwanda Reciprocal Tourist and Business Visa Waiver Agreement - ratified September 2023; ordinary passports receive free VOA (90 days); diplomatic/service passports fully visa-exempt",
+  "Bilateral visa exemption for diplomatic/service passports of Brazil, China, Russia",
+  "Bilateral visa exemption for diplomatic passports of Portugal and Turkey",
+  "Pending: Bilateral visa exemption for diplomatic/service passports of Angola (signed, not yet confirmed in force)",
+  "Pending: All-African visa-free entry announced by President Sassou Nguesso on 25 May 2026, effective January 1, 2027 (not yet in force)"
+ ],
+ "official_domains": [
+  "ambacongofr.org",
+  "ambacongo-us.org",
+  "apicongo.cg",
+  "diplobrazza.net",
+  "finances.gouv.cg",
+  "cooperation.gouv.cg"
+ ],
+ "data_quality": {
+  "completeness": "medium",
+  "validation_notes": "Re-validation 2026-06-27: (1) RECLASSIFIED Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Senegal, Togo from visa_free to visa_on_arrival. These 8 West African nations appear on the API-Congo official page as 'exempt' but the Brazzaville airport authority website (aeroport-brazzaville.com/en/visa_on_arrival_congo.php) explicitly lists them as visa-on-arrival at Maya-Maya International Airport. The airport source is more precise about the actual mechanism. This is a significant correction - 8 entries moved from visa_free to visa_on_arrival. (2) RECLASSIFIED Rwanda from visa_free to visa_on_arrival. The official Congolese Ministry of International Cooperation ratification document (cooperation.gouv.cg) specifically describes ordinary passports receiving 'free visa on arrival' - not a visa-free waiver. Diplomatic/service passports for Rwanda added to conditional_access as fully visa-exempt. (3) REMOVED Guinea Conakry from visa_free list - it appears only on API-Congo's exemption listing but is NOT confirmed on the airport VOA page or any other source. Moved to gaps pending clarification. This follows the safety rule: when in doubt, classify down. (4) CONFIRMED Equatorial Guinea and Gabon remain as CEMAC visa-free per Wikipedia (these two were not listed on the API-Congo English page but are confirmed CEMAC members with the same agreement). (5) KEPT UAE in visa_on_arrival with low confidence flag (Wikipedia-only, not on airport VOA page). (6) ADDED Rwanda diplomatic/service conditional_access entry from the official cooperation.gouv.cg ratification page, which was now reachable via WebSearch (though direct WebFetch returned ECONNREFUSED). Re-validation 2026-06-29: Re-fetched apicongo.cg (both language versions), aeroport-brazzaville.com, diplobrazza.net, Wikipedia, and ran targeted WebSearches. NO classification changes. All existing entries confirmed: (a) CEMAC 5 (Cameroon, CAR, Chad, Equatorial Guinea, Gabon) visa-free 90 days biometric - re-confirmed by airport page explicitly; (b) 8 West African nationalities (Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Senegal, Togo) remain VOA per airport page - re-confirmed; (c) Rwanda ordinary passport VOA 90 days - cooperation.gouv.cg still ECONNREFUSED but WebSearch confirms agreement unchanged; (d) UAE VOA - Wikipedia confirms still listed; (e) Guinea Conakry: API-Congo still lists it as exempt, airport VOA page and Wikipedia still omit it - classification-down decision maintained, kept in gaps; (f) diplobrazza.net remains generic with no nationality list.",
+  "gaps": [
+   "Guinea (Conakry) visa status: Listed as visa-exempt on official API-Congo (.cg) page but NOT listed on Brazzaville airport VOA page. Cannot confirm as visa-free or visa-on-arrival from official sources. Removed from visa_free pending official clarification - contact Congolese embassy to verify.",
+   "UAE visa-on-arrival: Wikipedia-only source (October 2018 arrangement); not confirmed on Brazzaville airport VOA page or any official Congo government page. Retained with low confidence.",
+   "Max stay duration for all VOA nationalities (Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Senegal, Togo): not specified on any official source consulted.",
+   "Biometric passport requirement for CEMAC nationals: mentioned on Wikipedia citing official sources but not explicitly stated in accessible official Congo government pages.",
+   "Equatorial Guinea and Gabon visa-free status: confirmed by Wikipedia's CEMAC listing but not independently verified on a directly accessible .cg government domain during this session (ambacongofr.org HTTP 500; API-Congo English page omits them).",
+   "Diplomatic/service passport waivers for Brazil, China, Russia, Portugal, Turkey: Wikipedia-sourced only; no direct official Congo government page confirmed during re-validation.",
+   "Chinese 'Public Affairs' passport exemption: Wikipedia-sourced only; no official Congo government source accessible to confirm.",
+   "Angola diplomatic/service passport agreement: reportedly signed but not confirmed as in-force on any accessible official source.",
+   "2027 all-African visa-free policy: announced by President Sassou Nguesso on 25 May 2026 (confirmed by Xinhua). Not yet in force; no official decree text accessed.",
+   "Congo-Kazakhstan visa exemption memorandum (signed August 2, 2024): scope (diplomatic-only or ordinary) not confirmed on any accessible official source.",
+   "Tourist and business visa fees and exact max stay duration: not specified on any official source consulted.",
+   "Transit visa category: not found on official sources; existence unconfirmed.",
+   "E-visa or ETA system: no official government e-visa portal found for Republic of the Congo (Congo-Brazzaville). evisa.gouv.cd is for the Democratic Republic of the Congo.",
+   "RBI economic investor minimum investment threshold: API-Congo lists the category but gives no minimum amount figure."
+  ]
+ },
+ "sources_checked": [
+  {
+   "url": "https://apicongo.cg/entrer_et_travailler_au_congo.php?lang=en",
+   "domain": "apicongo.cg",
+   "official": true,
+   "notes": "Official API-Congo (Investment Promotion Agency) - official .cg government domain. Re-fetched 2026-06-29. Lists Benin, Burkina Faso, Cameroon, CAR, Côte d'Ivoire, Guinea Conakry, Morocco, Mauritania, Niger, Senegal, Chad, and Togo as 'exempt' (French: 'A l'exception des ressortissants de…'). The term 'exempt' is used loosely - cross-referencing the Brazzaville airport source confirms 8 of these are VOA, not visa-free. CEMAC members (Cameroon, CAR, Chad) in the same list are visa-free under the CEMAC agreement. Guinea Conakry listed as exempt here but absent from airport VOA page - ambiguous."
+  },
+  {
+   "url": "https://apicongo.cg/entrer_et_travailler_au_congo.php",
+   "domain": "apicongo.cg",
+   "official": true,
+   "notes": "French-language version of the API-Congo entry and work guide. Re-fetched 2026-06-29. Confirms same exemption list as English version with identical 12 nationalities."
+  },
+  {
+   "url": "https://www.aeroport-brazzaville.com/en/visa_on_arrival_congo.php",
+   "domain": "aeroport-brazzaville.com",
+   "official": false,
+   "notes": "Brazzaville airport authority website. Re-fetched 2026-06-29. Explicitly names Benin, Burkina Faso, Ivory Coast, Mauritania, Morocco, Niger, Senegal, and Togo as visa-on-arrival at Maya-Maya International Airport. Also explicitly states CEMAC 5 (Cameroon, CAR, Chad, Equatorial Guinea, Gabon) are visa-free for stays under 90 days with biometric passports. Guinea Conakry absent from VOA list. Rwanda and UAE not mentioned. Data unchanged from prior validation."
+  },
+  {
+   "url": "https://diplobrazza.net/etrangers-voyageant-en-republique-du-congo",
+   "domain": "diplobrazza.net",
+   "official": true,
+   "notes": "Official Ministry of Foreign Affairs website. Re-fetched 2026-06-29. Still only general statement that most travelers need a visa; no specific nationality exemption list or fee schedule. Unchanged from prior validation."
+  },
+  {
+   "url": "https://www.cooperation.gouv.cg/ratification-de-laccord-relatif-a-lexemption-du-visa-entre-le-congo-et-le-rwanda/",
+   "domain": "cooperation.gouv.cg",
+   "official": true,
+   "notes": "Official Congo Ministry of International Cooperation. ECONNREFUSED on direct WebFetch in both 2026-06-27 and 2026-06-29 sessions. WebSearch 2026-06-29 re-confirmed: Senate ratified agreement July 2023; agreement signed 2021; diplomatic/service passports = full exemption; ordinary passports = free visa on arrival. Content unchanged from prior session."
+  },
+  {
+   "url": "https://ambacongofr.org/index.php/l-ambassade/actualites/766-pas-de-visas-d-entree-en-republique-du-congo-pour-les-ressortissants-des-pays-de-la-cemac-du-senegal-de-la-cote-d-ivoire-et-du-benin",
+   "domain": "ambacongofr.org",
+   "official": true,
+   "notes": "Official Embassy of the Republic of Congo in France. HTTP 500 during June 2026 re-validation (same as prior validation). Previously confirmed CEMAC countries + Senegal + Ivory Coast + Benin visa exemptions."
+  },
+  {
+   "url": "http://www.ambacongo-us.org/en/consular-services/visa",
+   "domain": "ambacongo-us.org",
+   "official": true,
+   "notes": "Official Embassy of the Republic of Congo to the USA. Not re-fetched this session; SSL certificate previously expired (403). States no visa is issued at any port of entry - may be outdated or refer only to nationalities without specific bilateral agreements."
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Visa_policy_of_the_Republic_of_the_Congo",
+   "domain": "en.wikipedia.org",
+   "official": false,
+   "notes": "Wikipedia. Fetched June 2026 re-validation. Lists only 5 CEMAC countries as visa-free (90 days, biometric); lists Benin, Burkina Faso, Côte d'Ivoire, Mauritania, Morocco, Niger, Rwanda, Senegal, Togo, and UAE as visa-on-arrival. This supports the reclassification of 8 West African nationalities and Rwanda to VOA. Cites UAE VOA effective October 9, 2018."
+  },
+  {
+   "url": "https://www.fragomen.com/insights/republic-of-congorwanda-reciprocal-tourist-and-business-visa-waiver-agreement-implemented.html",
+   "domain": "fragomen.com",
+   "official": false,
+   "notes": "Fragomen immigration law firm. Details Congo-Rwanda visa waiver effective September 15, 2023. Superseded by official cooperation.gouv.cg source (found via WebSearch) for classification purposes."
+  },
+  {
+   "url": "https://english.news.cn/20260526/65cd3af64c1f49d986fda31304f8d210/c.html",
+   "domain": "english.news.cn",
+   "official": false,
+   "notes": "Xinhua News Agency. Confirms President Sassou Nguesso announced all-African visa-free entry effective January 1, 2027, at African Development Bank Annual Meetings in Brazzaville on May 25, 2026. Not yet in force."
+  }
+ ],
+ "advance_visa_notes": [
+  {
+   "nationalities_iso3": [
+    "USA"
+   ],
+   "notes": "Visa required in advance from the Embassy of the Republic of Congo in Washington, DC (the only US-based post that issues visas) - no on-arrival option exists. Fee: USD 200, cash or money order only. Notably, US citizens specifically are granted 180 days (6 months) multiple entry on the tourist visa, versus 90 days for most other nationalities. Passport valid 6+ months beyond arrival; yellow fever vaccination and an invitation letter or hotel reservation required.",
+   "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/RepublicoftheCongo.html",
+   "source_official": true
+  }
+ ]
 }

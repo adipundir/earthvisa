@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { dataset, flagFor, nameFor, isoToFlag } from "@/lib/dataset";
+import { dataset, flagFor, nameFor, isoToFlag, nameToSlug } from "@/lib/dataset";
 import { useDetectedPassport } from "@/lib/geo";
 import { compute, LEVEL_LABEL, type CombinedEdge } from "@/lib/compute";
 import type { AccessLevel, PassportType, VisaType } from "@/lib/types";
@@ -1200,6 +1200,19 @@ function ResultCard({
 
         {/* VFS Global document checklists - corridor-specific, for the held passport */}
         {!isOwnCountry && <VfsDocuments destIso3={destIso3} selected={selected} />}
+
+        {/* Every result here has a corresponding corridor page with the full
+            picture - fees, documents, how to apply - that this card only
+            summarizes. Routes into the corridor corpus the tool would
+            otherwise dead-end at. */}
+        {!isOwnCountry && selected.length > 0 && (
+          <Link
+            href={`/passport/${nameToSlug(nameFor(selected[0]))}/${nameToSlug(name)}`}
+            className="mono inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white"
+          >
+            Full {nameFor(selected[0])} → {name} guide: fees, documents, how to apply
+          </Link>
+        )}
       </div>
     </div>
   );

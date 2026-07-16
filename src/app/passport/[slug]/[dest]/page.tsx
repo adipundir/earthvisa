@@ -30,7 +30,7 @@ type Status =
   | { kind: "fom"; groups: string[] }
   | { kind: AccessLevel; maxStayDays: number | null; notes: string; sourceUrl: string; sourceOfficial: boolean; via?: string | null }
   | { kind: "own" }
-  | { kind: "visa_required" };
+  | { kind: "visa_required"; notes?: string; sourceUrl?: string; sourceOfficial?: boolean };
 
 function resolve(natIso3: string, destIso3: string): Status {
   if (natIso3 === destIso3) return { kind: "own" };
@@ -47,6 +47,13 @@ function resolve(natIso3: string, destIso3: string): Status {
       sourceOfficial: !!edge.sourceOfficial,
       via: edge.viaIso3 ? nameFor(edge.viaIso3) : null,
     };
+  }
+  // No positive access edge - genuinely visa-required. If this nationality's
+  // process/fee/current status has been specifically researched (embassy-only
+  // destinations otherwise show nothing but generic boilerplate), surface it.
+  const advance = (dataset.advanceVisaNotes?.[destIso3] ?? []).find((n) => n.nationalitiesIso3.includes(natIso3));
+  if (advance) {
+    return { kind: "visa_required", notes: advance.notes, sourceUrl: advance.sourceUrl, sourceOfficial: advance.sourceOfficial };
   }
   return { kind: "visa_required" };
 }

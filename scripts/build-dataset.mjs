@@ -725,14 +725,28 @@ const credentials = Object.values(CRED_REGISTRY)
 
 const topUnresolved = [...unresolved.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([k, v]) => `${k} (${v})`);
 
-// Build destinationVisaTypes index
+// Build destinationVisaTypes and advanceVisaNotes indexes
 const destinationVisaTypes = {};
+const advanceVisaNotes = {};
 for (const file of files) {
   let d2;
   try { d2 = JSON.parse(readFileSync(join(COUNTRIES_DIR, file), "utf8")); } catch { continue; }
   if (!d2 || !d2.iso3) continue;
   if (d2.visa_types && d2.visa_types.length > 0) {
     destinationVisaTypes[d2.iso3] = d2.visa_types;
+  }
+  // Nationality-scoped process/fee/advisory notes for genuinely visa-required
+  // corridors (no access-level edge exists, so the corridor page would
+  // otherwise show only generic "apply at an embassy" boilerplate).
+  if (Array.isArray(d2.advance_visa_notes) && d2.advance_visa_notes.length > 0) {
+    advanceVisaNotes[d2.iso3] = d2.advance_visa_notes
+      .filter((n) => Array.isArray(n.nationalities_iso3) && n.nationalities_iso3.length > 0 && n.notes)
+      .map((n) => ({
+        nationalitiesIso3: n.nationalities_iso3.map((c) => String(c).toUpperCase()),
+        notes: n.notes,
+        sourceUrl: n.source_url || "",
+        sourceOfficial: n.source_official !== false,
+      }));
   }
 }
 
@@ -804,6 +818,7 @@ const dataset = {
   fastTrack: fastTrack.sort((a, b) => a.name.localeCompare(b.name)),
   destinationVisaTypes,
   vfsCorridors,
+  advanceVisaNotes,
 };
 
 // ---- coverage invariants -----------------------------------------------------

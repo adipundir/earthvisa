@@ -10,26 +10,10 @@
  "visa_policy": {
   "visa_free": [
    {
-    "nationality": "United Kingdom nationals visiting Sinai Peninsula resorts only",
-    "iso3": "GBR",
-    "max_stay_days": 15,
-    "notes": "Free entry permission stamp granted upon arrival. Valid ONLY for Sharm El Sheikh, Dahab, Nuweiba and Taba resorts. Travellers intending to go outside these areas MUST obtain a visa. The consulate visa page states 15 days; the consulate FAQ page states 14 days - a discrepancy between two pages of the same source; 15 days is used here per the primary visas page.",
-    "source_url": "https://egyptconsulate.co.uk/visas/",
-    "source_official": true
-   },
-   {
     "nationality": "EU member state nationals visiting Sinai Peninsula resorts only",
     "iso3": null,
     "max_stay_days": 15,
     "notes": "Free entry permission stamp granted upon arrival. Valid ONLY for Sharm El Sheikh, Dahab, Nuweiba and Taba resorts. Travellers intending to go outside these areas MUST obtain a visa. Applies to all EU member state nationals. Same 14 vs 15-day discrepancy exists between consulate pages; 15 days used per primary visas page.",
-    "source_url": "https://egyptconsulate.co.uk/visas/",
-    "source_official": true
-   },
-   {
-    "nationality": "United States of America nationals visiting Sinai Peninsula resorts only",
-    "iso3": "USA",
-    "max_stay_days": 15,
-    "notes": "Free entry permission stamp granted upon arrival. Valid ONLY for Sharm El Sheikh, Dahab, Nuweiba and Taba resorts. Travellers intending to go outside these areas MUST obtain a visa.",
     "source_url": "https://egyptconsulate.co.uk/visas/",
     "source_official": true
    },
@@ -63,7 +47,7 @@
     "nationality": "United Kingdom",
     "iso3": "GBR",
     "max_stay_days": 30,
-    "notes": "Visa on arrival available at any Egyptian port of entry for full country access. Single entry $30 (fee increased from $25 effective 1 March 2026). Single entry, stay up to 30 days. Official e-visa alternative at visa2egypt.gov.eg (USD 30 single / USD 65 multiple entry; apply at least 7 days before departure; single-entry e-visa valid 3 months from issue).",
+    "notes": "Visa on arrival available at any Egyptian port of entry for full country access. Single entry $30 (fee increased from $25 effective 1 March 2026). Single entry, stay up to 30 days. Official e-visa alternative at visa2egypt.gov.eg (USD 30 single / USD 65 multiple entry; apply at least 7 days before departure; single-entry e-visa valid 3 months from issue).\n- Staying only within Sinai resorts (Sharm El Sheikh, Dahab, Nuweiba, Taba)? A FREE entry stamp is granted on arrival instead, no visa or fee needed - but it is void the moment you leave those areas (e.g. to see Cairo, Luxor, or the pyramids), for up to 15 days.",
     "source_url": "https://egyptconsulate.co.uk/visas/",
     "source_official": true
    },
@@ -79,7 +63,7 @@
     "nationality": "United States of America",
     "iso3": "USA",
     "max_stay_days": 30,
-    "notes": "Visa on arrival available at any Egyptian port of entry. Single entry $30 (fee increased from $25 effective 1 March 2026). Single entry, stay up to 30 days. Official e-visa alternative at visa2egypt.gov.eg (USD 30 single / USD 65 multiple entry; apply at least 7 days before departure; single-entry e-visa valid 3 months from issue).",
+    "notes": "Visa on arrival available at any Egyptian port of entry. Single entry $30 (fee increased from $25 effective 1 March 2026). Single entry, stay up to 30 days. Official e-visa alternative at visa2egypt.gov.eg (USD 30 single / USD 65 multiple entry; apply at least 7 days before departure; single-entry e-visa valid 3 months from issue).\n- Staying only within Sinai resorts (Sharm El Sheikh, Dahab, Nuweiba, Taba)? A FREE entry stamp is granted on arrival instead, no visa or fee needed - but it is void the moment you leave those areas (e.g. to see Cairo, Luxor, or the pyramids), for up to 15 days.",
     "source_url": "https://egyptconsulate.co.uk/visas/",
     "source_official": true
    },
@@ -1295,7 +1279,8 @@
    "VERIFIED 2026-06-29: Canada VoA and e-visa status confirmed correct. Egypt lifted pre-entry visa requirements for Canadians effective December 1, 2024 (announced by Egyptian Foreign Ministry October 14, 2024, confirmed by sis.gov.eg). Canada's presence in both VoA and e_visa lists is accurate.",
    "VERIFIED 2026-06-29: VoA nationalities list re-confirmed via egyptconsulate.co.uk/visas/ and egyptconsulate.co.uk/faq/. Confirmed: UK, EU members, USA, Australia, Croatia, Georgia, Japan, Canada, New Zealand, Norway, North Macedonia, Republic of Korea, Russia, Serbia, Ukraine. All match current record.",
    "VERIFIED 2026-06-29: E-visa country list re-confirmed on official portal (visa2egypt.gov.eg/eVisa/FAQ). All currently listed nationalities verified present. Portal still shows 'Macedonia' (not 'North Macedonia') - the record's use of 'North Macedonia' is the correct ISO name.",
-   "VERIFIED 2026-06-29: Pre-approval required list (not eligible for standard e-visa/VoA): Afghanistan, Ethiopia, Iran, Israel, Mali, Niger, Palestine, Sudan, Syria, and Travel Document holders - confirmed on egyptembassy.net. This is unchanged."
+   "VERIFIED 2026-06-29: Pre-approval required list (not eligible for standard e-visa/VoA): Afghanistan, Ethiopia, Iran, Israel, Mali, Niger, Palestine, Sudan, Syria, and Travel Document holders - confirmed on egyptembassy.net. This is unchanged.",
+   "CORRECTED 2026-07-16: USA and GBR previously had a standalone visa_free edge for Egypt's Sinai-resort-only free stamp, which - being the highest-ranked level - won resolution and rendered the corridor as blanket 'Visa-Free Entry / Nothing to arrange' for BOTH nationalities, even though that free stamp is void outside Sharm El Sheikh/Dahab/Nuweiba/Taba and the majority of tourists (Cairo, Luxor, pyramids) actually need the paid visa_on_arrival ($30) or e-visa. Removed the standalone edge; the free Sinai stamp is now a clearly-flagged alternative bullet on the accurate default (visa_on_arrival)."
   ],
   "gaps": [
    "Credential-based VoA rule (December 2020 decree): The rule allowing holders of valid and used visas from US/UK/Schengen/Canada/Australia/Japan/New Zealand to obtain visa on arrival was announced by Egypt's Ministry of Tourism and Antiquities on 15-17 December 2020. No permanent official Egyptian government .gov.eg URL publishing this rule was found; recorded under conditional_access based on multiple corroborating embassy and aggregator sources.",

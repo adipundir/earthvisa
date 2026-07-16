@@ -158,4 +158,8 @@ export interface Dataset {
   destinationVisaTypes: Record<string, VisaType[]>;
   /** destination iso3 -> VFS corridors that serve it (one per source country) */
   vfsCorridors: Record<string, VfsCorridorSummary[]>;
+  /** destination iso3 -> nationality-scoped notes for genuinely visa-required
+   *  corridors (no access-level edge exists) - process, fee, and any current
+   *  advisory/suspension context researched for that specific nationality. */
+  advanceVisaNotes: Record<string, { nationalitiesIso3: string[]; notes: string; sourceUrl: string; sourceOfficial: boolean }[]>;
 }

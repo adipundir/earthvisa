@@ -1,1143 +1,2825 @@
 {
-  "iso2": "HK",
-  "iso3": "HKG",
-  "name": "Hong Kong SAR",
-  "region": "Asia",
-  "official_domains": [
-    "immd.gov.hk",
-    "gov.hk"
+ "iso2": "HK",
+ "iso3": "HKG",
+ "name": "Hong Kong SAR",
+ "region": "Asia",
+ "official_domains": [
+  "immd.gov.hk",
+  "gov.hk"
+ ],
+ "outbound_official": {
+  "found": true,
+  "source_url": "https://www.immd.gov.hk/eng/service/travel_document/visa_free_access.html",
+  "source_official": true,
+  "asof": null,
+  "visa_free": [
+   {
+    "name": "Albania",
+    "iso3": "ALB"
+   },
+   {
+    "name": "Algeria",
+    "iso3": "DZA"
+   },
+   {
+    "name": "Andorra",
+    "iso3": "AND"
+   },
+   {
+    "name": "Angola",
+    "iso3": "AGO"
+   },
+   {
+    "name": "Anguilla",
+    "iso3": "AIA"
+   },
+   {
+    "name": "Antigua & Barbuda",
+    "iso3": "ATG"
+   },
+   {
+    "name": "Argentina",
+    "iso3": "ARG"
+   },
+   {
+    "name": "Armenia",
+    "iso3": "ARM"
+   },
+   {
+    "name": "Aruba",
+    "iso3": "ABW"
+   },
+   {
+    "name": "Austria",
+    "iso3": "AUT"
+   },
+   {
+    "name": "Azerbaijan",
+    "iso3": "AZE"
+   },
+   {
+    "name": "Bahamas",
+    "iso3": "BHS"
+   },
+   {
+    "name": "Barbados",
+    "iso3": "BRB"
+   },
+   {
+    "name": "Belarus",
+    "iso3": "BLR"
+   },
+   {
+    "name": "Belgium",
+    "iso3": "BEL"
+   },
+   {
+    "name": "Belize",
+    "iso3": "BLZ"
+   },
+   {
+    "name": "Benin",
+    "iso3": "BEN"
+   },
+   {
+    "name": "Bermuda",
+    "iso3": "BMU"
+   },
+   {
+    "name": "Bolivia",
+    "iso3": "BOL"
+   },
+   {
+    "name": "Bosnia and Herzegovina",
+    "iso3": "BIH"
+   },
+   {
+    "name": "Botswana",
+    "iso3": "BWA"
+   },
+   {
+    "name": "Brazil",
+    "iso3": "BRA"
+   },
+   {
+    "name": "British Virgin Islands",
+    "iso3": "VGB"
+   },
+   {
+    "name": "Brunei Darussalam",
+    "iso3": "BRN"
+   },
+   {
+    "name": "Bulgaria",
+    "iso3": "BGR"
+   },
+   {
+    "name": "Burkina Faso",
+    "iso3": "BFA"
+   },
+   {
+    "name": "Burundi",
+    "iso3": "BDI"
+   },
+   {
+    "name": "Cambodia",
+    "iso3": "KHM"
+   },
+   {
+    "name": "Cape Verde",
+    "iso3": "CPV"
+   },
+   {
+    "name": "Caribbean Netherlands",
+    "iso3": null
+   },
+   {
+    "name": "Cayman Islands",
+    "iso3": "CYM"
+   },
+   {
+    "name": "Chile",
+    "iso3": "CHL"
+   },
+   {
+    "name": "Colombia",
+    "iso3": "COL"
+   },
+   {
+    "name": "Comoros",
+    "iso3": "COM"
+   },
+   {
+    "name": "Cook Islands",
+    "iso3": "COK"
+   },
+   {
+    "name": "Croatia",
+    "iso3": "HRV"
+   },
+   {
+    "name": "Curacao",
+    "iso3": "CUW"
+   },
+   {
+    "name": "Cyprus",
+    "iso3": "CYP"
+   },
+   {
+    "name": "Czech Republic",
+    "iso3": "CZE"
+   },
+   {
+    "name": "Denmark",
+    "iso3": "DNK"
+   },
+   {
+    "name": "Djibouti",
+    "iso3": "DJI"
+   },
+   {
+    "name": "Dominica",
+    "iso3": "DMA"
+   },
+   {
+    "name": "Dominican Republic",
+    "iso3": "DOM"
+   },
+   {
+    "name": "Ecuador",
+    "iso3": "ECU"
+   },
+   {
+    "name": "Egypt",
+    "iso3": "EGY"
+   },
+   {
+    "name": "Estonia",
+    "iso3": "EST"
+   },
+   {
+    "name": "Ethiopia",
+    "iso3": "ETH"
+   },
+   {
+    "name": "Falkland Islands (Malvinas)",
+    "iso3": "FLK"
+   },
+   {
+    "name": "Faroe Islands",
+    "iso3": "FRO"
+   },
+   {
+    "name": "Fiji Islands",
+    "iso3": "FJI"
+   },
+   {
+    "name": "Finland",
+    "iso3": "FIN"
+   },
+   {
+    "name": "France",
+    "iso3": "FRA"
+   },
+   {
+    "name": "French Guiana",
+    "iso3": "GUF"
+   },
+   {
+    "name": "French Polynesia",
+    "iso3": "PYF"
+   },
+   {
+    "name": "French Southern Hemisphere and Antarctic Lands",
+    "iso3": "ATF"
+   },
+   {
+    "name": "Georgia",
+    "iso3": "GEO"
+   },
+   {
+    "name": "Germany",
+    "iso3": "DEU"
+   },
+   {
+    "name": "Gibraltar",
+    "iso3": "GIB"
+   },
+   {
+    "name": "Greece",
+    "iso3": "GRC"
+   },
+   {
+    "name": "Greenland",
+    "iso3": "GRL"
+   },
+   {
+    "name": "Grenada",
+    "iso3": "GRD"
+   },
+   {
+    "name": "Guadeloupe",
+    "iso3": "GLP"
+   },
+   {
+    "name": "Guam",
+    "iso3": "GUM"
+   },
+   {
+    "name": "Guyana",
+    "iso3": "GUY"
+   },
+   {
+    "name": "Hungary",
+    "iso3": "HUN"
+   },
+   {
+    "name": "Iceland",
+    "iso3": "ISL"
+   },
+   {
+    "name": "Indonesia",
+    "iso3": "IDN"
+   },
+   {
+    "name": "Iran",
+    "iso3": "IRN"
+   },
+   {
+    "name": "Ireland",
+    "iso3": "IRL"
+   },
+   {
+    "name": "Italy",
+    "iso3": "ITA"
+   },
+   {
+    "name": "Jamaica",
+    "iso3": "JAM"
+   },
+   {
+    "name": "Japan",
+    "iso3": "JPN"
+   },
+   {
+    "name": "Jordan",
+    "iso3": "JOR"
+   },
+   {
+    "name": "Kazakhstan",
+    "iso3": "KAZ"
+   },
+   {
+    "name": "Kiribati",
+    "iso3": "KIR"
+   },
+   {
+    "name": "Korea (Republic of)",
+    "iso3": "KOR"
+   },
+   {
+    "name": "Kuwait",
+    "iso3": "KWT"
+   },
+   {
+    "name": "Kyrgyzstan",
+    "iso3": "KGZ"
+   },
+   {
+    "name": "Laos",
+    "iso3": "LAO"
+   },
+   {
+    "name": "Latvia",
+    "iso3": "LVA"
+   },
+   {
+    "name": "Lebanon",
+    "iso3": "LBN"
+   },
+   {
+    "name": "Lesotho",
+    "iso3": "LSO"
+   },
+   {
+    "name": "Liechtenstein",
+    "iso3": "LIE"
+   },
+   {
+    "name": "Lithuania",
+    "iso3": "LTU"
+   },
+   {
+    "name": "Luxembourg",
+    "iso3": "LUX"
+   },
+   {
+    "name": "Madagascar",
+    "iso3": "MDG"
+   },
+   {
+    "name": "Malawi",
+    "iso3": "MWI"
+   },
+   {
+    "name": "Malaysia",
+    "iso3": "MYS"
+   },
+   {
+    "name": "Maldives",
+    "iso3": "MDV"
+   },
+   {
+    "name": "Mali",
+    "iso3": "MLI"
+   },
+   {
+    "name": "Malta",
+    "iso3": "MLT"
+   },
+   {
+    "name": "Martinique",
+    "iso3": "MTQ"
+   },
+   {
+    "name": "Mauritius",
+    "iso3": "MUS"
+   },
+   {
+    "name": "Mayotte",
+    "iso3": "MYT"
+   },
+   {
+    "name": "Mexico",
+    "iso3": "MEX"
+   },
+   {
+    "name": "Micronesia (Federated States of)",
+    "iso3": "FSM"
+   },
+   {
+    "name": "Moldova",
+    "iso3": "MDA"
+   },
+   {
+    "name": "Monaco",
+    "iso3": "MCO"
+   },
+   {
+    "name": "Mongolia",
+    "iso3": "MNG"
+   },
+   {
+    "name": "Montenegro",
+    "iso3": "MNE"
+   },
+   {
+    "name": "Montserrat",
+    "iso3": "MSR"
+   },
+   {
+    "name": "Morocco",
+    "iso3": "MAR"
+   },
+   {
+    "name": "Mozambique",
+    "iso3": "MOZ"
+   },
+   {
+    "name": "Namibia",
+    "iso3": "NAM"
+   },
+   {
+    "name": "Nepal",
+    "iso3": "NPL"
+   },
+   {
+    "name": "Netherlands",
+    "iso3": "NLD"
+   },
+   {
+    "name": "New Caledonia",
+    "iso3": "NCL"
+   },
+   {
+    "name": "New Zealand",
+    "iso3": "NZL"
+   },
+   {
+    "name": "Niger",
+    "iso3": "NER"
+   },
+   {
+    "name": "Niue",
+    "iso3": "NIU"
+   },
+   {
+    "name": "North Macedonia",
+    "iso3": "MKD"
+   },
+   {
+    "name": "Northern Mariana Islands",
+    "iso3": "MNP"
+   },
+   {
+    "name": "Norway",
+    "iso3": "NOR"
+   },
+   {
+    "name": "Oman",
+    "iso3": "OMN"
+   },
+   {
+    "name": "Palau",
+    "iso3": "PLW"
+   },
+   {
+    "name": "Panama",
+    "iso3": "PAN"
+   },
+   {
+    "name": "Papua New Guinea",
+    "iso3": "PNG"
+   },
+   {
+    "name": "Peru",
+    "iso3": "PER"
+   },
+   {
+    "name": "Philippines",
+    "iso3": "PHL"
+   },
+   {
+    "name": "Pitcairn, Henderson, Ducie & Oeno Islands",
+    "iso3": "PCN"
+   },
+   {
+    "name": "Poland",
+    "iso3": "POL"
+   },
+   {
+    "name": "Portugal",
+    "iso3": "PRT"
+   },
+   {
+    "name": "Qatar",
+    "iso3": "QAT"
+   },
+   {
+    "name": "Reunion",
+    "iso3": "REU"
+   },
+   {
+    "name": "Romania",
+    "iso3": "ROU"
+   },
+   {
+    "name": "Russia",
+    "iso3": "RUS"
+   },
+   {
+    "name": "Rwanda",
+    "iso3": "RWA"
+   },
+   {
+    "name": "Saint-Barthelemy",
+    "iso3": "BLM"
+   },
+   {
+    "name": "Saint-Martin (French Overseas Territory)",
+    "iso3": "MAF"
+   },
+   {
+    "name": "Saint-Pierre and Miquelon",
+    "iso3": "SPM"
+   },
+   {
+    "name": "Samoa",
+    "iso3": "WSM"
+   },
+   {
+    "name": "San Marino",
+    "iso3": "SMR"
+   },
+   {
+    "name": "Saudi Arabia",
+    "iso3": "SAU"
+   },
+   {
+    "name": "Serbia",
+    "iso3": "SRB"
+   },
+   {
+    "name": "Seychelles",
+    "iso3": "SYC"
+   },
+   {
+    "name": "Singapore",
+    "iso3": "SGP"
+   },
+   {
+    "name": "Slovak Republic",
+    "iso3": "SVK"
+   },
+   {
+    "name": "Slovenia",
+    "iso3": "SVN"
+   },
+   {
+    "name": "South Africa",
+    "iso3": "ZAF"
+   },
+   {
+    "name": "Spain",
+    "iso3": "ESP"
+   },
+   {
+    "name": "Sri Lanka",
+    "iso3": "LKA"
+   },
+   {
+    "name": "St. Helena",
+    "iso3": "SHN"
+   },
+   {
+    "name": "St. Kitts & Nevis",
+    "iso3": "KNA"
+   },
+   {
+    "name": "St. Lucia",
+    "iso3": "LCA"
+   },
+   {
+    "name": "St. Maarten (Caribbean Netherlands)",
+    "iso3": "SXM"
+   },
+   {
+    "name": "St. Vincent & the Grenadines",
+    "iso3": "VCT"
+   },
+   {
+    "name": "Suriname",
+    "iso3": "SUR"
+   },
+   {
+    "name": "Sweden",
+    "iso3": "SWE"
+   },
+   {
+    "name": "Switzerland",
+    "iso3": "CHE"
+   },
+   {
+    "name": "Tanzania",
+    "iso3": "TZA"
+   },
+   {
+    "name": "Thailand",
+    "iso3": "THA"
+   },
+   {
+    "name": "Timor-Leste",
+    "iso3": "TLS"
+   },
+   {
+    "name": "Togo",
+    "iso3": "TGO"
+   },
+   {
+    "name": "Tonga",
+    "iso3": "TON"
+   },
+   {
+    "name": "Trinidad & Tobago",
+    "iso3": "TTO"
+   },
+   {
+    "name": "Tunisia",
+    "iso3": "TUN"
+   },
+   {
+    "name": "Turkiye",
+    "iso3": "TUR"
+   },
+   {
+    "name": "Turks and Caicos Islands",
+    "iso3": "TCA"
+   },
+   {
+    "name": "Tuvalu",
+    "iso3": "TUV"
+   },
+   {
+    "name": "Uganda",
+    "iso3": "UGA"
+   },
+   {
+    "name": "Ukraine",
+    "iso3": "UKR"
+   },
+   {
+    "name": "United Arab Emirates",
+    "iso3": "ARE"
+   },
+   {
+    "name": "United Kingdom",
+    "iso3": "GBR"
+   },
+   {
+    "name": "Uruguay",
+    "iso3": "URY"
+   },
+   {
+    "name": "Uzbekistan",
+    "iso3": "UZB"
+   },
+   {
+    "name": "Vanuatu",
+    "iso3": "VUT"
+   },
+   {
+    "name": "Venezuela",
+    "iso3": "VEN"
+   },
+   {
+    "name": "Wallis and Futuna",
+    "iso3": "WLF"
+   },
+   {
+    "name": "Yemen",
+    "iso3": "YEM"
+   },
+   {
+    "name": "Zambia",
+    "iso3": "ZMB"
+   },
+   {
+    "name": "Zimbabwe",
+    "iso3": "ZWE"
+   }
   ],
-  "outbound_official": {
-    "found": true,
-    "source_url": "https://www.immd.gov.hk/eng/service/travel_document/visa_free_access.html",
-    "source_official": true,
-    "asof": null,
-    "visa_free": [
-      {"name": "Albania", "iso3": "ALB"},
-      {"name": "Algeria", "iso3": "DZA"},
-      {"name": "Andorra", "iso3": "AND"},
-      {"name": "Angola", "iso3": "AGO"},
-      {"name": "Anguilla", "iso3": "AIA"},
-      {"name": "Antigua & Barbuda", "iso3": "ATG"},
-      {"name": "Argentina", "iso3": "ARG"},
-      {"name": "Armenia", "iso3": "ARM"},
-      {"name": "Aruba", "iso3": "ABW"},
-      {"name": "Austria", "iso3": "AUT"},
-      {"name": "Azerbaijan", "iso3": "AZE"},
-      {"name": "Bahamas", "iso3": "BHS"},
-      {"name": "Barbados", "iso3": "BRB"},
-      {"name": "Belarus", "iso3": "BLR"},
-      {"name": "Belgium", "iso3": "BEL"},
-      {"name": "Belize", "iso3": "BLZ"},
-      {"name": "Benin", "iso3": "BEN"},
-      {"name": "Bermuda", "iso3": "BMU"},
-      {"name": "Bolivia", "iso3": "BOL"},
-      {"name": "Bosnia and Herzegovina", "iso3": "BIH"},
-      {"name": "Botswana", "iso3": "BWA"},
-      {"name": "Brazil", "iso3": "BRA"},
-      {"name": "British Virgin Islands", "iso3": "VGB"},
-      {"name": "Brunei Darussalam", "iso3": "BRN"},
-      {"name": "Bulgaria", "iso3": "BGR"},
-      {"name": "Burkina Faso", "iso3": "BFA"},
-      {"name": "Burundi", "iso3": "BDI"},
-      {"name": "Cambodia", "iso3": "KHM"},
-      {"name": "Cape Verde", "iso3": "CPV"},
-      {"name": "Caribbean Netherlands", "iso3": null},
-      {"name": "Cayman Islands", "iso3": "CYM"},
-      {"name": "Chile", "iso3": "CHL"},
-      {"name": "Colombia", "iso3": "COL"},
-      {"name": "Comoros", "iso3": "COM"},
-      {"name": "Cook Islands", "iso3": "COK"},
-      {"name": "Croatia", "iso3": "HRV"},
-      {"name": "Curacao", "iso3": "CUW"},
-      {"name": "Cyprus", "iso3": "CYP"},
-      {"name": "Czech Republic", "iso3": "CZE"},
-      {"name": "Denmark", "iso3": "DNK"},
-      {"name": "Djibouti", "iso3": "DJI"},
-      {"name": "Dominica", "iso3": "DMA"},
-      {"name": "Dominican Republic", "iso3": "DOM"},
-      {"name": "Ecuador", "iso3": "ECU"},
-      {"name": "Egypt", "iso3": "EGY"},
-      {"name": "Estonia", "iso3": "EST"},
-      {"name": "Ethiopia", "iso3": "ETH"},
-      {"name": "Falkland Islands (Malvinas)", "iso3": "FLK"},
-      {"name": "Faroe Islands", "iso3": "FRO"},
-      {"name": "Fiji Islands", "iso3": "FJI"},
-      {"name": "Finland", "iso3": "FIN"},
-      {"name": "France", "iso3": "FRA"},
-      {"name": "French Guiana", "iso3": "GUF"},
-      {"name": "French Polynesia", "iso3": "PYF"},
-      {"name": "French Southern Hemisphere and Antarctic Lands", "iso3": "ATF"},
-      {"name": "Georgia", "iso3": "GEO"},
-      {"name": "Germany", "iso3": "DEU"},
-      {"name": "Gibraltar", "iso3": "GIB"},
-      {"name": "Greece", "iso3": "GRC"},
-      {"name": "Greenland", "iso3": "GRL"},
-      {"name": "Grenada", "iso3": "GRD"},
-      {"name": "Guadeloupe", "iso3": "GLP"},
-      {"name": "Guam", "iso3": "GUM"},
-      {"name": "Guyana", "iso3": "GUY"},
-      {"name": "Hungary", "iso3": "HUN"},
-      {"name": "Iceland", "iso3": "ISL"},
-      {"name": "Indonesia", "iso3": "IDN"},
-      {"name": "Iran", "iso3": "IRN"},
-      {"name": "Ireland", "iso3": "IRL"},
-      {"name": "Italy", "iso3": "ITA"},
-      {"name": "Jamaica", "iso3": "JAM"},
-      {"name": "Japan", "iso3": "JPN"},
-      {"name": "Jordan", "iso3": "JOR"},
-      {"name": "Kazakhstan", "iso3": "KAZ"},
-      {"name": "Kiribati", "iso3": "KIR"},
-      {"name": "Korea (Republic of)", "iso3": "KOR"},
-      {"name": "Kuwait", "iso3": "KWT"},
-      {"name": "Kyrgyzstan", "iso3": "KGZ"},
-      {"name": "Laos", "iso3": "LAO"},
-      {"name": "Latvia", "iso3": "LVA"},
-      {"name": "Lebanon", "iso3": "LBN"},
-      {"name": "Lesotho", "iso3": "LSO"},
-      {"name": "Liechtenstein", "iso3": "LIE"},
-      {"name": "Lithuania", "iso3": "LTU"},
-      {"name": "Luxembourg", "iso3": "LUX"},
-      {"name": "Madagascar", "iso3": "MDG"},
-      {"name": "Malawi", "iso3": "MWI"},
-      {"name": "Malaysia", "iso3": "MYS"},
-      {"name": "Maldives", "iso3": "MDV"},
-      {"name": "Mali", "iso3": "MLI"},
-      {"name": "Malta", "iso3": "MLT"},
-      {"name": "Martinique", "iso3": "MTQ"},
-      {"name": "Mauritius", "iso3": "MUS"},
-      {"name": "Mayotte", "iso3": "MYT"},
-      {"name": "Mexico", "iso3": "MEX"},
-      {"name": "Micronesia (Federated States of)", "iso3": "FSM"},
-      {"name": "Moldova", "iso3": "MDA"},
-      {"name": "Monaco", "iso3": "MCO"},
-      {"name": "Mongolia", "iso3": "MNG"},
-      {"name": "Montenegro", "iso3": "MNE"},
-      {"name": "Montserrat", "iso3": "MSR"},
-      {"name": "Morocco", "iso3": "MAR"},
-      {"name": "Mozambique", "iso3": "MOZ"},
-      {"name": "Namibia", "iso3": "NAM"},
-      {"name": "Nepal", "iso3": "NPL"},
-      {"name": "Netherlands", "iso3": "NLD"},
-      {"name": "New Caledonia", "iso3": "NCL"},
-      {"name": "New Zealand", "iso3": "NZL"},
-      {"name": "Niger", "iso3": "NER"},
-      {"name": "Niue", "iso3": "NIU"},
-      {"name": "North Macedonia", "iso3": "MKD"},
-      {"name": "Northern Mariana Islands", "iso3": "MNP"},
-      {"name": "Norway", "iso3": "NOR"},
-      {"name": "Oman", "iso3": "OMN"},
-      {"name": "Palau", "iso3": "PLW"},
-      {"name": "Panama", "iso3": "PAN"},
-      {"name": "Papua New Guinea", "iso3": "PNG"},
-      {"name": "Peru", "iso3": "PER"},
-      {"name": "Philippines", "iso3": "PHL"},
-      {"name": "Pitcairn, Henderson, Ducie & Oeno Islands", "iso3": "PCN"},
-      {"name": "Poland", "iso3": "POL"},
-      {"name": "Portugal", "iso3": "PRT"},
-      {"name": "Qatar", "iso3": "QAT"},
-      {"name": "Reunion", "iso3": "REU"},
-      {"name": "Romania", "iso3": "ROU"},
-      {"name": "Russia", "iso3": "RUS"},
-      {"name": "Rwanda", "iso3": "RWA"},
-      {"name": "Saint-Barthelemy", "iso3": "BLM"},
-      {"name": "Saint-Martin (French Overseas Territory)", "iso3": "MAF"},
-      {"name": "Saint-Pierre and Miquelon", "iso3": "SPM"},
-      {"name": "Samoa", "iso3": "WSM"},
-      {"name": "San Marino", "iso3": "SMR"},
-      {"name": "Saudi Arabia", "iso3": "SAU"},
-      {"name": "Serbia", "iso3": "SRB"},
-      {"name": "Seychelles", "iso3": "SYC"},
-      {"name": "Singapore", "iso3": "SGP"},
-      {"name": "Slovak Republic", "iso3": "SVK"},
-      {"name": "Slovenia", "iso3": "SVN"},
-      {"name": "South Africa", "iso3": "ZAF"},
-      {"name": "Spain", "iso3": "ESP"},
-      {"name": "Sri Lanka", "iso3": "LKA"},
-      {"name": "St. Helena", "iso3": "SHN"},
-      {"name": "St. Kitts & Nevis", "iso3": "KNA"},
-      {"name": "St. Lucia", "iso3": "LCA"},
-      {"name": "St. Maarten (Caribbean Netherlands)", "iso3": "SXM"},
-      {"name": "St. Vincent & the Grenadines", "iso3": "VCT"},
-      {"name": "Suriname", "iso3": "SUR"},
-      {"name": "Sweden", "iso3": "SWE"},
-      {"name": "Switzerland", "iso3": "CHE"},
-      {"name": "Tanzania", "iso3": "TZA"},
-      {"name": "Thailand", "iso3": "THA"},
-      {"name": "Timor-Leste", "iso3": "TLS"},
-      {"name": "Togo", "iso3": "TGO"},
-      {"name": "Tonga", "iso3": "TON"},
-      {"name": "Trinidad & Tobago", "iso3": "TTO"},
-      {"name": "Tunisia", "iso3": "TUN"},
-      {"name": "Turkiye", "iso3": "TUR"},
-      {"name": "Turks and Caicos Islands", "iso3": "TCA"},
-      {"name": "Tuvalu", "iso3": "TUV"},
-      {"name": "Uganda", "iso3": "UGA"},
-      {"name": "Ukraine", "iso3": "UKR"},
-      {"name": "United Arab Emirates", "iso3": "ARE"},
-      {"name": "United Kingdom", "iso3": "GBR"},
-      {"name": "Uruguay", "iso3": "URY"},
-      {"name": "Uzbekistan", "iso3": "UZB"},
-      {"name": "Vanuatu", "iso3": "VUT"},
-      {"name": "Venezuela", "iso3": "VEN"},
-      {"name": "Wallis and Futuna", "iso3": "WLF"},
-      {"name": "Yemen", "iso3": "YEM"},
-      {"name": "Zambia", "iso3": "ZMB"},
-      {"name": "Zimbabwe", "iso3": "ZWE"}
-    ],
-    "visa_on_arrival": [],
-    "e_visa": [
-      {"name": "Bahrain", "iso3": "BHR", "notes": "E-visa required prior to visit; obtainable online before travel"}
-    ],
-    "eta": [
-      {"name": "Canada", "iso3": "CAN", "notes": "Electronic Travel Authorization (eTA) required prior to check-in at airport"},
-      {"name": "Israel", "iso3": "ISR", "notes": "ETA-IL required as of 1 January 2025"},
-      {"name": "Kenya", "iso3": "KEN", "notes": "Electronic Travel Authorisation (eTA) system required"},
-      {"name": "Korea (Republic of)", "iso3": "KOR", "notes": "K-ETA temporarily exempted through 31 December 2026"}
-    ],
-    "notes": "The official HKSAR Immigration Department page lists 174 countries and territories under a combined 'Visa-free access or visa-on-arrival' heading without strict separation between the two categories. The page notes that some destinations (Canada, Israel, Kenya) require prior electronic authorisation (ETA/eTA/ETA-IL) before travel, and Bahrain requires an e-visa obtained online in advance. Indonesia requires a digital 'All Indonesia' declaration. South Korea's K-ETA is temporarily suspended for HKSAR passport holders through 31 December 2026. Duration of stays range from 14 to 180 days depending on destination. Entries here reflect the outbound list as published on the official HKSAR Immigration Department travel document page."
-  },
-  "visa_policy": {
-    "visa_free": [
-      {"nationality":"Albania (biometric passports only)","iso3":"ALB","max_stay_days":14,"notes":"Holders of Albanian biometric passports only. Non-biometric Albanian passports require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Algeria","iso3":"DZA","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Andorra","iso3":"AND","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Anguilla","iso3":"AIA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Antigua & Barbuda","iso3":"ATG","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Argentina","iso3":"ARG","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Armenia","iso3":"ARM","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Australia","iso3":"AUS","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Austria","iso3":"AUT","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Bahamas","iso3":"BHS","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Bahrain","iso3":"BHR","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Barbados","iso3":"BRB","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Belarus","iso3":"BLR","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Belgium","iso3":"BEL","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Belize","iso3":"BLZ","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Benin","iso3":"BEN","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Bermuda","iso3":"BMU","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Bhutan","iso3":"BTN","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Bolivia","iso3":"BOL","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Bosnia and Herzegovina","iso3":"BIH","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Botswana","iso3":"BWA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Brazil","iso3":"BRA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Britain (British citizens)","iso3":"GBR","max_stay_days":180,"notes":"British citizens may stay visa-free for 180 days.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Britain (British Overseas Territories citizens, British Overseas citizens, British subjects and British Protected persons)","iso3":"GBR","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"British Antarctic Territory","iso3":null,"max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"British Indian Ocean Territory","iso3":"IOT","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"British Virgin Islands","iso3":"VGB","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Brunei Darussalam","iso3":"BRN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Bulgaria","iso3":"BGR","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Burkina Faso","iso3":"BFA","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Canada","iso3":"CAN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Cape Verde (Republic of)","iso3":"CPV","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Cayman Islands","iso3":"CYM","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Chad","iso3":"TCD","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Chile","iso3":"CHL","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Colombia","iso3":"COL","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Comoros","iso3":"COM","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Costa Rica","iso3":"CRI","max_stay_days":30,"notes":"Excludes Costa Rican Provisional passports and Documento de Identidad Y Viaje, which require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Croatia","iso3":"HRV","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Cyprus (Republic of)","iso3":"CYP","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Czech Republic","iso3":"CZE","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Denmark","iso3":"DNK","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Djibouti","iso3":"DJI","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Dominica (Commonwealth of)","iso3":"DMA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Dominican Republic","iso3":"DOM","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Ecuador","iso3":"ECU","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Egypt","iso3":"EGY","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"El Salvador","iso3":"SLV","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Equatorial Guinea","iso3":"GNQ","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Estonia","iso3":"EST","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Falkland Islands & Dependencies","iso3":"FLK","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Faroe Islands","iso3":"FRO","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Fiji","iso3":"FJI","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Finland","iso3":"FIN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"France","iso3":"FRA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Gabon","iso3":"GAB","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Georgia","iso3":"GEO","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Germany","iso3":"DEU","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Gibraltar","iso3":"GIB","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Greece","iso3":"GRC","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Greenland","iso3":"GRL","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Grenada","iso3":"GRD","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Guatemala","iso3":"GTM","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Guinea","iso3":"GIN","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Guyana","iso3":"GUY","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Haiti","iso3":"HTI","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Honduras","iso3":"HND","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Hungary","iso3":"HUN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Iceland","iso3":"ISL","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Indonesia","iso3":"IDN","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Ireland (Republic of)","iso3":"IRL","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Israel","iso3":"ISR","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Italy","iso3":"ITA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Jamaica","iso3":"JAM","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Japan","iso3":"JPN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Jordan","iso3":"JOR","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Kazakhstan","iso3":"KAZ","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Kenya","iso3":"KEN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Kiribati","iso3":"KIR","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Korea (Republic of)","iso3":"KOR","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Kuwait","iso3":"KWT","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Latvia","iso3":"LVA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Lesotho","iso3":"LSO","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Liechtenstein","iso3":"LIE","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Lithuania","iso3":"LTU","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Luxembourg","iso3":"LUX","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Madagascar","iso3":"MDG","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Malawi","iso3":"MWI","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Malaysia","iso3":"MYS","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Maldives","iso3":"MDV","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Mali","iso3":"MLI","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Malta","iso3":"MLT","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Marshall Islands (Republic of)","iso3":"MHL","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Mauritania","iso3":"MRT","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Mauritius","iso3":"MUS","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Mexico","iso3":"MEX","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Micronesia (Federated States of)","iso3":"FSM","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Monaco","iso3":"MCO","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Mongolia","iso3":"MNG","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Montenegro (Republic of)","iso3":"MNE","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Montserrat","iso3":"MSR","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Morocco","iso3":"MAR","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Mozambique","iso3":"MOZ","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Namibia","iso3":"NAM","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Nauru","iso3":"NRU","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Netherlands","iso3":"NLD","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"New Zealand","iso3":"NZL","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Niger","iso3":"NER","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"North Macedonia","iso3":"MKD","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Norway","iso3":"NOR","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Oman","iso3":"OMN","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Palau","iso3":"PLW","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Panama","iso3":"PAN","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Papua New Guinea","iso3":"PNG","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Paraguay","iso3":"PRY","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Peru","iso3":"PER","max_stay_days":30,"notes":"Excludes Special Peruvian passports, which require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Philippines","iso3":"PHL","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Pitcairn, Henderson, Ducie & Oeno Islands","iso3":"PCN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Poland","iso3":"POL","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Portugal","iso3":"PRT","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Qatar","iso3":"QAT","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Romania","iso3":"ROU","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Russian Federation","iso3":"RUS","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Samoa","iso3":"WSM","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"San Marino","iso3":"SMR","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Sao Tome and Principe","iso3":"STP","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Saudi Arabia","iso3":"SAU","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Serbia (Republic of) (holders of Serbian biometric passports only)","iso3":"SRB","max_stay_days":14,"notes":"Biometric passport holders only; non-biometric Serbian passports require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Seychelles","iso3":"SYC","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Singapore","iso3":"SGP","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Slovak Republic","iso3":"SVK","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Slovenia","iso3":"SVN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"South Africa","iso3":"ZAF","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Spain","iso3":"ESP","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"St. Helena","iso3":"SHN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"St. Helena Dependencies (Ascension, Tristan da Cunha)","iso3":null,"max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"St. Kitts and Nevis","iso3":"KNA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"St. Lucia","iso3":"LCA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"St. Vincent and the Grenadines","iso3":"VCT","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Suriname","iso3":"SUR","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Sweden","iso3":"SWE","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Switzerland","iso3":"CHE","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Tanzania","iso3":"TZA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Thailand","iso3":"THA","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"The South Georgia and the South Sandwich Islands","iso3":null,"max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"The Sovereign Base Areas of Akrotiri and Dhekelia","iso3":null,"max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Timor-Leste","iso3":"TLS","max_stay_days":7,"notes":"Not individually enumerated on the IMMD visa table; Timor-Leste nationals fall under the general provision 'Nationals of other foreign countries do not require visas for a visit - 7 Days'. Source: https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html (verified 2026-07)","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Tonga","iso3":"TON","max_stay_days":90,"notes":"Excludes Tongan National passports and Tongan Protected Persons passports, which require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Trinidad & Tobago","iso3":"TTO","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Tunisia","iso3":"TUN","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Türkiye","iso3":"TUR","max_stay_days":90,"notes":"Formerly known as Turkey.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Turks and Caicos Islands","iso3":"TCA","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Tuvalu","iso3":"TUV","max_stay_days":90,"notes":"Tuvalu travel documents with national status stated as 'I-TUVALU' require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Uganda","iso3":"UGA","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Ukraine","iso3":"UKR","max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"United Arab Emirates","iso3":"ARE","max_stay_days":30,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Uruguay","iso3":"URY","max_stay_days":90,"notes":"Uruguay passports issued under Decree 289/90 require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"U.S.A. (except U.S.A. Diplomatic passports)","iso3":"USA","max_stay_days":90,"notes":"U.S.A. Diplomatic passport holders require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"US Trust Territory of Pacific Islands (holders of US Trust Territory passports only)","iso3":null,"max_stay_days":14,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Vanuatu","iso3":"VUT","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Vatican City","iso3":"VAT","max_stay_days":14,"notes":"Vatican Service passports require a visa.","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Venezuela","iso3":"VEN","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Zambia","iso3":"ZMB","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true},
-      {"nationality":"Zimbabwe","iso3":"ZWE","max_stay_days":90,"notes":"","source_url":"https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html","source_official":true}
-    ],
-    "visa_on_arrival": [],
-    "eta": [
-      {
-        "nationality": "India",
-        "iso3": "IND",
-        "max_stay_days": 14,
-        "notes": "Pre-Arrival Registration (PAR) required; valid 6 months, multiple visits, 14 days each.",
-        "source_url": "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html",
-        "source_official": true
-      }
-    ],
-    "e_visa": [],
-    "source_urls": [
-      "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html"
-    ],
-    "notes": "Visa-free stay length varies by nationality (90/30/14/7 days). British citizens get 180 days. Nationals of foreign countries not otherwise listed (and not in the visa-required list) may visit visa-free for 7 days. India requires online Pre-Arrival Registration (PAR) before visa-free entry (see eta). Source: IMMD table updated November 2025."
-  },
-  "conditional_access": [
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Angola"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Angola may visit the HKSAR visa-free for a stay not exceeding 14 days. All other nationals (ordinary passport holders) are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Azerbaijan"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Azerbaijan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders require a visa. Note: the IMMD page uses footnote # which may also permit ordinary passport holders some form of access - but the live table shows ordinary passport holders require a visa for Azerbaijan.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Bangladesh"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Bangladesh may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Burundi"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Burundi may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Cambodia"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Cambodia may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders require a visa.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Cameroon"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Cameroon may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Congo (Republic of)"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of the Republic of Congo may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Ethiopia"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Ethiopia may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Ghana"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Ghana may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Kyrgyzstan"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Kyrgyzstan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Laos"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Laos may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside). Note: from October 2024 IMMD extended multiple-entry visa validity to 3 years for ordinary Laos nationals, but ordinary passport holders still require a visa.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Moldova"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Moldova may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Myanmar"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Myanmar may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside). Note: from October 2024 IMMD extended multiple-entry visa validity to 3 years for ordinary Myanmar nationals, but ordinary passport holders still require a visa.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Nepal"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Nepal may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Pakistan"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 30,
-      "conditions": "Holders of Diplomatic and Official passports of Pakistan may visit the HKSAR visa-free for a stay not exceeding 30 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Sri Lanka"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Sri Lanka may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Tajikistan"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Tajikistan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Togo"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Togo may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Turkmenistan"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Turkmenistan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Uzbekistan"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Uzbekistan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Vietnam"
-      ],
-      "passport_types": [
-        "diplomatic",
-        "official"
-      ],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 14,
-      "conditions": "Holders of Diplomatic and Official passports of Vietnam may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa. Note: from October 2024 IMMD extended multiple-entry visa validity to 3 years for ordinary Vietnamese nationals, but ordinary passport holders still require a visa.",
-      "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "source_official": true
-    }
+  "visa_on_arrival": [],
+  "e_visa": [
+   {
+    "name": "Bahrain",
+    "iso3": "BHR",
+    "notes": "E-visa required prior to visit; obtainable online before travel"
+   }
   ],
-  "visa_types": [
-    {
-      "category": "tourist",
-      "name": "Visitor Visa / Entry Permit",
-      "purpose": "Short-term tourism, leisure, or social visits to Hong Kong. Visitors may not work, study, or establish businesses.",
-      "max_stay_days": 90,
-      "validity_days": null,
-      "entries": "single",
-      "fee_usd": null,
-      "processing_days_min": 28,
-      "processing_days_max": 28,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
-      "notes": "Required for nationalities not on the visa-free list. Can be applied for online, by post, or through Chinese diplomatic missions. Max stay varies by approval. Nationalities on the visa-free list do not need to apply."
-    },
-    {
-      "category": "tourist",
-      "name": "Pre-Arrival Registration (PAR) for Indian Nationals",
-      "purpose": "Mandatory free online pre-registration allowing Indian ordinary passport holders to visit Hong Kong visa-free for up to 14 days per stay.",
-      "max_stay_days": 14,
-      "validity_days": 180,
-      "entries": "multiple",
-      "fee_usd": 0,
-      "processing_days_min": 0,
-      "processing_days_max": 0,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html",
-      "notes": "Free, instant approval. Valid 6 months with multiple visits, each stay up to 14 days. Printed notification slip and same passport must be carried. Diplomatic passport holders are exempt from PAR requirement."
-    },
-    {
-      "category": "transit",
-      "name": "Transit Visa",
-      "purpose": "Permits passage through Hong Kong for travelers continuing to another destination who require a visa and do not hold a visa-free nationality.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "single",
-      "fee_usd": null,
-      "processing_days_min": 28,
-      "processing_days_max": 28,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/visit_transit.html",
-      "notes": "Must hold onward ticket unless destination is Mainland China or Macau. Cannot work, study or establish businesses. Approval is entirely discretionary. Airside transit (not leaving the airport) for most nationalities does not require a transit visa."
-    },
-    {
-      "category": "work",
-      "name": "General Employment Policy (GEP) Visa",
-      "purpose": "Allows skilled professionals with a confirmed job offer to work in Hong Kong where their skills are not readily available locally.",
-      "max_stay_days": null,
-      "validity_days": 1095,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": 28,
-      "processing_days_max": 28,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/GEP.html",
-      "notes": "Initial stay up to 36 months (or contract duration). Extensions follow a 3-2 year pattern. Requires confirmed job offer, first degree or equivalent, and market-rate compensation. Excludes Afghanistan, Cuba, North Korea, and Mainland Chinese (who use ASMTP). After 7 years continuous residence, eligible for right of abode."
-    },
-    {
-      "category": "work",
-      "name": "Admission Scheme for Mainland Talents and Professionals (ASMTP)",
-      "purpose": "Allows Mainland Chinese skilled professionals to work in Hong Kong where their skills are not readily available locally.",
-      "max_stay_days": null,
-      "validity_days": 1095,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": 28,
-      "processing_days_max": 28,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/ASMTP.html",
-      "notes": "Mainland Chinese equivalent of GEP. Requires confirmed job offer and relevant qualifications. Extensions follow similar patterns to GEP."
-    },
-    {
-      "category": "work",
-      "name": "Top Talent Pass Scheme (TTPS)",
-      "purpose": "Attracts high-earning global talent and graduates of top universities to live and work in Hong Kong without requiring a pre-arranged job offer.",
-      "max_stay_days": null,
-      "validity_days": 1095,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": 28,
-      "processing_days_max": 28,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/TTPS.html",
-      "notes": "Category A: annual income HK$2.5M+, granted 36 months. Categories B & C: top university graduates, granted 24 months. Category C subject to annual quota. Extensions up to 3 years; top-tier earners (HK$2M+ salaries tax after 2 years) may receive 6-year extension. Excludes Afghanistan, Cuba, North Korea."
-    },
-    {
-      "category": "work",
-      "name": "Technology Talent Admission Scheme (TechTAS)",
-      "purpose": "Fast-track admission for technology talent to work in Hong Kong's innovation and technology sector.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/TECHTAS.html",
-      "notes": "Streamlined procedures since December 2025. Parallel quota and visa applications now allowed. R&D activity requirement in designated tech areas removed. Aimed at tech companies in designated sectors."
-    },
-    {
-      "category": "work",
-      "name": "Technical Professionals Stream (GEP(TP) & ASMTP(TP))",
-      "purpose": "Admission channel under GEP and ASMTP for skilled tradespeople in eight designated trades, targeting applicants aged 18-40.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/TPStream.html",
-      "notes": "Pilot program launched June 2025. Total quota of 10,000. Entry visas valid 24-36 months depending on qualifications. Targets eight specified skilled trades."
-    },
-    {
-      "category": "work",
-      "name": "Vocational Professionals Admission Scheme (VPAS)",
-      "purpose": "Allows admission of vocational professionals with technical qualifications to work in Hong Kong.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/vpas.html",
-      "notes": "Targets holders of vocational qualifications. Separate scheme from the professional degree-based GEP."
-    },
-    {
-      "category": "work",
-      "name": "Foreign Domestic Helper Visa",
-      "purpose": "Entry visa for foreign nationals employed as live-in domestic helpers in Hong Kong households.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/foreign_domestic_helpers.html",
-      "notes": "Subject to standard employment contract conditions. Helper must be employed by an approved employer, live in the employer's residence, and leave Hong Kong at contract end. Not a pathway to permanent residence."
-    },
-    {
-      "category": "student",
-      "name": "Student Visa / Entry Permit",
-      "purpose": "Permits non-local students to study at approved educational institutions in Hong Kong for the duration of their program.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": 42,
-      "processing_days_max": 42,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/study.html",
-      "notes": "Processing takes approximately 6 weeks. Stay duration matches program length, max 6 years. Undergraduate+ students may take curriculum-related internships, part-time on-campus work (20 hrs/week max), and unrestricted summer employment (Jun 1-Aug 31). Certain nationalities (Afghanistan, Cuba, DPRK, some others) face restrictions. Forms ID 995A and ID 995B required."
-    },
-    {
-      "category": "other",
-      "name": "Immigration Arrangements for Non-local Graduates (IANG)",
-      "purpose": "Allows graduates of Hong Kong's locally-accredited full-time degree programs or GBA campus programs to remain or return to Hong Kong to seek employment.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": 14,
-      "processing_days_max": 28,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/IANG.html",
-      "notes": "Recent graduates (within 6 months): processed in ~2 weeks, no job offer required. Non-recent graduates (after 6 months): ~4 weeks, job offer required. Initial stay 24 months. Extension pattern typically 3-3 years. Top-tier earners (HK$2M+ annually) receive 6-year extension. Quota-free. Recipients can freely change employer."
-    },
-    {
-      "category": "investment",
-      "name": "New Capital Investment Entrant Scheme (New CIES)",
-      "purpose": "Allows high-net-worth individuals who invest at least HK$30 million in permissible Hong Kong assets to obtain residency.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/newcies.html",
-      "notes": "Minimum net assets and investment of HK$30 million (approximately USD 3.8M). Initial permission to stay up to 24 months. Extensions of up to 3 years each. Must maintain portfolio requirements continuously. Applicants must be 18+. Cannot rely on employment or investment returns within HK to support themselves during initial period."
-    },
-    {
-      "category": "investment",
-      "name": "Investment as Entrepreneurs",
-      "purpose": "Allows foreign nationals to establish or join a business in Hong Kong that makes a substantial contribution to the local economy.",
-      "max_stay_days": null,
-      "validity_days": 1095,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": 28,
-      "processing_days_max": 28,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/investment.html",
-      "notes": "No fixed minimum investment threshold; assessed on business plan quality, financial resources, local job creation, and technology/skills contribution. Initial stay up to 36 months. Extensions follow 3-2 year pattern. Local sponsor required. Excludes Mainland Chinese, Afghanistan, Cuba, North Korea."
-    },
-    {
-      "category": "other",
-      "name": "Quality Migrant Admission Scheme (QMAS)",
-      "purpose": "Attracts highly skilled or talented persons to settle in Hong Kong to enhance economic competitiveness; no pre-arranged job required.",
-      "max_stay_days": null,
-      "validity_days": 1095,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/quality_migrant_admission_scheme.html",
-      "notes": "Two routes: General Points Test (initial 36 months) or Achievement-based Points Test (initial 8 years). Applicants must be 18+, financially self-sufficient, clean record, and hold a first degree or equivalent. Extensions require proof of settlement. Top-tier earners (HK$2M+ assessable salaries income) receive 5-year extension. Excludes Afghanistan, Cuba, North Korea."
-    },
-    {
-      "category": "working_holiday",
-      "name": "Working Holiday Scheme",
-      "purpose": "Allows young adults from participating countries to take an extended working holiday in Hong Kong, combining travel with temporary employment.",
-      "max_stay_days": 365,
-      "validity_days": 365,
-      "entries": "single",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/working_holiday_scheme.html",
-      "notes": "Eligible countries: Australia, Austria, Canada, France, Germany, Hungary, Ireland, Japan, Korea (Republic of), Netherlands, New Zealand, Sweden, United Kingdom. Age limit 18-30. Stay up to 12 months. Maintenance funds required (HK$14,000-HK$25,000 depending on nationality). Annual quotas per country (100-5,000 slots). Employment with same employer limited to 3-12 months depending on nationality. Extensions not normally considered. Irish, Japanese, and Korean citizens receive free visas."
-    },
-    {
-      "category": "family",
-      "name": "Dependant Visa / Entry Permit",
-      "purpose": "Allows spouses, unmarried children under 18, and parents (aged 60+, for permanent residents only) to join approved residents or permanent residents in Hong Kong.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": 14,
-      "processing_days_max": 42,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/residence_as_dependant.html",
-      "notes": "Extensions for initial applications take 6 weeks; renewals 2-3 weeks. Stay follows sponsor's permission: spouses/children on 3-3 year pattern; parents on 2-2-3 year pattern. Dependants of employed or permanent resident sponsors may work freely; dependants of student sponsors require prior permission to work. Same-sex spouses recognized."
-    },
-    {
-      "category": "other",
-      "name": "Second Generation of Chinese Hong Kong Permanent Residents Scheme (ASSG)",
-      "purpose": "Allows overseas-born children of Hong Kong permanent residents to settle in Hong Kong even without having been born or raised there.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/secondgenerationhkpr.html",
-      "notes": "Targets second generation of Chinese Hong Kong permanent residents who were born and raised overseas. Quota-free scheme."
-    },
-    {
-      "category": "other",
-      "name": "Training Visa",
-      "purpose": "Permits foreign nationals to come to Hong Kong for training purposes with an approved employer for a limited period.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "single",
-      "fee_usd": null,
-      "processing_days_min": 28,
-      "processing_days_max": 28,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/training.html",
-      "notes": "For structured training programs with a local employer. Not for general study or employment purposes."
-    },
-    {
-      "category": "work",
-      "name": "Special Scheme to Import Care Workers for Residential Care Homes",
-      "purpose": "Allows residential care homes for the elderly or persons with disabilities that have genuine local recruitment difficulties to employ imported care workers.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": 14,
-      "processing_days_max": 42,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/imported_careworker.html",
-      "notes": "Jointly administered by the Immigration Department and Social Welfare Department. e-Visa granted for up to 24 months or the employment contract term, whichever is shorter, under Standard Employment Contract SWD-ICW-16. Workers cannot change employer, post or workplace. Nationals of Afghanistan, Cuba, Laos, DPRK, Nepal and Vietnam are excluded. No right of abode acquired."
-    },
-    {
-      "category": "work",
-      "name": "Enhanced Supplementary Labour Scheme (ESLS)",
-      "purpose": "Allows employers with genuine difficulties recruiting locally to import workers at technician level and below for jobs that cannot be filled by the local workforce.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/imported_worker.html",
-      "notes": "Renamed from the Supplementary Labour Scheme effective 4 September 2023; operates under the Employees Retraining Ordinance. e-Visa normally granted for up to 24 months or the contract term, whichever is shorter, under Standard Employment Contract LD 294. Employer must pay a levy to the Employees Retraining Board. Workers cannot change employer, post or workplace, cannot bring dependants, and acquire no right of abode."
-    },
-    {
-      "category": "work",
-      "name": "Sector-specific Labour Importation Schemes (SLIS)",
-      "purpose": "Allows employers in designated sectors (e.g. construction and transport) facing genuine local recruitment difficulties to import labour from outside Hong Kong.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/slis.html",
-      "notes": "Sectors administered by designated bureaux/departments and statutory bodies. e-Visa normally granted for up to 24 months or the employment contract term, whichever is shorter. Workers cannot change employer, post or workplace, cannot bring dependants, and acquire no right of abode. Nationals of Afghanistan, Cuba, Laos, DPRK, Nepal and Vietnam are excluded."
-    },
-    {
-      "category": "tourist",
-      "name": "Pre-arrival Registration for Taiwan Residents",
-      "purpose": "Free online registration allowing eligible Chinese residents of Taiwan to visit Hong Kong as visitors without a separate visa or entry permit.",
-      "max_stay_days": 30,
-      "validity_days": 60,
-      "entries": "multiple",
-      "fee_usd": 0,
-      "processing_days_min": 0,
-      "processing_days_max": 0,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_taiwan_residents.html",
-      "notes": "Free of charge. Valid for two months and good for two entries, with a stay of up to 30 days as a visitor on each landing. For Chinese residents of Taiwan born in Taiwan or previously admitted as Taiwan residents who do not hold other travel documents. Applicant must hold a Taiwan re-entry travel document valid for at least six months. Those unable to obtain PAR may apply for an entry permit instead."
-    },
-    {
-      "category": "business",
-      "name": "Immigration Facilitation Scheme for Visitors Participating in Short-term Activities in Designated Sectors (STV Scheme)",
-      "purpose": "Lets professionals and talent invited by government-endorsed organisations undertake specified short-term work activities in Hong Kong as visitors without applying for an employment visa.",
-      "max_stay_days": 14,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.immd.gov.hk/eng/services/visas/stv.html",
-      "notes": "Launched 1 June 2024; scope expanded to 17 designated sectors (including healthcare, higher education, arts, sports, innovation and technology, aviation, finance and construction) from 1 November 2025. Eligible visitors may undertake the specified activities for up to 14 consecutive calendar days per period of permitted stay as a visitor, without an employment visa. Participation must be arranged through a government-endorsed organisation."
-    }
+  "eta": [
+   {
+    "name": "Canada",
+    "iso3": "CAN",
+    "notes": "Electronic Travel Authorization (eTA) required prior to check-in at airport"
+   },
+   {
+    "name": "Israel",
+    "iso3": "ISR",
+    "notes": "ETA-IL required as of 1 January 2025"
+   },
+   {
+    "name": "Kenya",
+    "iso3": "KEN",
+    "notes": "Electronic Travel Authorisation (eTA) system required"
+   },
+   {
+    "name": "Korea (Republic of)",
+    "iso3": "KOR",
+    "notes": "K-ETA temporarily exempted through 31 December 2026"
+   }
   ],
-  "cbi": null,
-  "rbi": null,
-  "fast_track": null,
-  "data_quality": {
-    "completeness": "high",
-    "validation_notes": [
-      "CORRECTION (2026-06-14): India (IND) reclassified from visa_free/visa_policy to eta. Ordinary Indian passport holders require mandatory free Pre-arrival Registration (PAR) online before travel (immd.gov.hk, IMMD official - verified June 2026). India removed from visa_policy array; conditional_access level updated to 'eta'. Airline aggregator claim of 'visa-free or visa-on-arrival' is incorrect - PAR is a mandatory pre-travel online registration prerequisite.",
-      "MAJOR ADDITION: Added complete visa_policy array covering all ~160+ ordinary-passport visa-free nationalities from the IMMD official table (updated November 2025). The prior record had no visa_policy entries at all.",
-      "ADDITION: Added India to conditional_access with basis='pre_registration' (14 days, ordinary passport, PAR required). India appears in the IMMD table with a '%' footnote indicating mandatory pre-arrival registration online.",
-      "ADDITION: Added Angola (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
-      "ADDITION: Added Azerbaijan (#) to conditional_access - diplomatic/official 14 days; ordinary = visa required (footnote # confirmed ordinary passport requires visa). Was missing from prior record.",
-      "ADDITION: Added Burundi (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
-      "ADDITION: Added Cambodia (#) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
-      "ADDITION: Added Cameroon (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
-      "ADDITION: Added Congo (Republic of) (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. The prior data_quality gap about Congo (Republic) is now resolved: the live IMMD table shows ^ footnote (diplomatic/official 14 days, ordinary = visa required).",
-      "ADDITION: Added Ethiopia (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
-      "ADDITION: Added Vietnam (#) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
-      "CONFIRMED: Bangladesh, Ghana, Sri Lanka, Togo (^ footnote), Pakistan (※ footnote), Kyrgyzstan, Laos, Moldova, Myanmar, Nepal, Tajikistan, Turkmenistan, Uzbekistan (# footnote) were all correctly classified in the prior record.",
-      "CONFIRMED: Eswatini (formerly Swaziland) uses footnote * (all nationals require visa including transit airside) - added to visa_policy notes section.",
-      "DATA SOURCE: The IMMD visit-visa-entry-permit page was confirmed as updated November 2025. Firecrawl fetch date was June 12, 2026.",
-      "REBUILD (2026-06-14): visa_policy fully reconstructed from the official IMMD visit-visa-entry-permit table (updated November 2025) via firecrawl_scrape. Every row with a positive visa-free period was captured into visa_policy.visa_free with its correct band (14/30/90 days; British citizens 180 days). India kept in eta (PAR). The catch-all '7 days for nationals of other foreign countries' row is noted in visa_policy.notes rather than as a named nationality. visa_policy is an object with keyed fields (not an array).",
-      "NOTE ON FOOTNOTE #: For countries with footnote # (Azerbaijan, Cambodia, Kyrgyzstan, Laos, Moldova, Myanmar, Nepal, Tajikistan, Turkmenistan, Uzbekistan, Vietnam), the IMMD remarks state only 'Holders of Diplomatic and Official passports may visit the HKSAR visa-free for a stay not exceeding 14 days' - this means ordinary passport holders DO require a visa (confirmed by 'Visa Required#' shown in the table's third column).",
-      "cbi, rbi, fast_track: Hong Kong does not operate a citizenship-by-investment or formal residency-by-investment programme in the standard CBI/RBI sense. The Quality Migrant Admission Scheme (QMAS) and other talent schemes exist but are not CBI/RBI. Set to null as not confirmable from official sources.",
-      "CORRECTION (2026-06-27): Added Albania (biometric passports only, 14 days) to visa_policy.visa_free. Was missing from the prior record. Confirmed from live IMMD visit-visa-entry-permit page (last updated 06-01-2026).",
-      "CORRECTION (2026-06-27): Added Algeria (14 days) to visa_policy.visa_free. Was noted in data_quality.gaps as confirmed but had not been added to the actual visa_free array. Confirmed from live IMMD visit-visa-entry-permit page (last updated 06-01-2026).",
-      "CORRECTION (2026-06-27): Added Armenia (30 days) to visa_policy.visa_free. Was entirely missing from the prior record despite appearing on the live IMMD table. Confirmed from live IMMD visit-visa-entry-permit page (last updated 06-01-2026).",
-      "CONFIRMED (2026-06-27): Bosnia and Herzegovina remains at 14 days - live page confirms. South Africa remains at 30 days - live page confirms. Marshall Islands at 14 days - confirmed. India PAR (14 days, eta) - confirmed. Lebanon is visa required - confirmed not in visa_free list. Palau 14 days - confirmed. Algeria, Armenia, Albania (biometric) were the only omissions found.",
-      "CONFIRMED (2026-06-29): Full re-verification run against live IMMD visit-visa-entry-permit page (last updated 06-01-2026, content November 2025). Cross-checked all 163 visa_free entries. No additions, removals, or stay-duration changes required. Specifically confirmed: Rwanda (RWA), Iran (IRN), Yemen (YEM) are NOT in visa_policy.visa_free (they only appear in outbound_official.visa_free, which is correct - those are HK passport outbound rights, not inbound). Ethiopia (ETH) correctly in conditional_access only (diplomatic/official 14 days; ordinary = visa required with ^ footnote). Thailand confirmed 30 days. UAE confirmed 30 days. Saudi Arabia confirmed 90 days. Egypt confirmed 90 days. Tonga confirmed 90 days. Tuvalu confirmed 90 days. Kiribati confirmed 90 days. Nauru confirmed 90 days. Serbia biometric-only entry confirmed 14 days. India PAR (eta, 14 days, free, valid 6 months multiple entry) confirmed still in operation. No press releases from January-June 2026 affected inbound visa-free policy. The IMMD press releases from 2026 (Azerbaijan visa-free Jan 2026, Sri Lanka VOA Apr 2026) are OUTBOUND changes for HKSAR passport holders, not inbound changes. Record is fully consistent with live official source."
-    ],
-    "gaps": [
-      "The exact bilateral treaty names, dates, and signatories for the diplomatic/official passport waivers (Bangladesh, Ghana, Sri Lanka, Togo, Pakistan, Kyrgyzstan, Laos, Moldova, Myanmar, Nepal, Tajikistan, Turkmenistan, Uzbekistan, Angola, Burundi, Cameroon, Congo (Republic), Ethiopia, Azerbaijan, Cambodia, Vietnam) are not published on the IMMD visit-visa-entry-permit page.",
-      "No credential-based conditional entry rule (e.g., held third-country visa/residence permit) was found on any official IMMD/gov.hk source. Hong Kong immigration does not appear to grant facilitated entry solely because a traveller holds a valid US, Schengen, UK, Canadian, Australian, Japanese, or other foreign visa or residence permit.",
-      "No OCI (Overseas Citizen of India) cardholder conditional entry rule found for Hong Kong. The Hong Kong PAR page exempts diplomatic/official Indian passport holders, UN Laissez-Passer holders, HKSAR Travel Pass holders, and e-Channel frequent visitors - OCI is not listed as a separate exempt category.",
-      "Eswatini (formerly Swaziland): classified under * footnote (all nationals including diplomats require visa). Could not confirm whether Eswatini has a separate diplomatic passport agreement on the live page - the table shows 'Visa Required*' with no ^ or # qualifier.",
-      "Belarus 30-day ordinary passport access was confirmed from the live table."
-    ]
+  "notes": "The official HKSAR Immigration Department page lists 174 countries and territories under a combined 'Visa-free access or visa-on-arrival' heading without strict separation between the two categories. The page notes that some destinations (Canada, Israel, Kenya) require prior electronic authorisation (ETA/eTA/ETA-IL) before travel, and Bahrain requires an e-visa obtained online in advance. Indonesia requires a digital 'All Indonesia' declaration. South Korea's K-ETA is temporarily suspended for HKSAR passport holders through 31 December 2026. Duration of stays range from 14 to 180 days depending on destination. Entries here reflect the outbound list as published on the official HKSAR Immigration Department travel document page."
+ },
+ "visa_policy": {
+  "visa_free": [
+   {
+    "nationality": "Albania (biometric passports only)",
+    "iso3": "ALB",
+    "max_stay_days": 14,
+    "notes": "Holders of Albanian biometric passports only. Non-biometric Albanian passports require a visa.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Algeria",
+    "iso3": "DZA",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Andorra",
+    "iso3": "AND",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Anguilla",
+    "iso3": "AIA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Antigua & Barbuda",
+    "iso3": "ATG",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Argentina",
+    "iso3": "ARG",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Armenia",
+    "iso3": "ARM",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Australia",
+    "iso3": "AUS",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Austria",
+    "iso3": "AUT",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Bahamas",
+    "iso3": "BHS",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Bahrain",
+    "iso3": "BHR",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Barbados",
+    "iso3": "BRB",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Belarus",
+    "iso3": "BLR",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Belgium",
+    "iso3": "BEL",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Belize",
+    "iso3": "BLZ",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Benin",
+    "iso3": "BEN",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Bermuda",
+    "iso3": "BMU",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Bhutan",
+    "iso3": "BTN",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Bolivia",
+    "iso3": "BOL",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Bosnia and Herzegovina",
+    "iso3": "BIH",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Botswana",
+    "iso3": "BWA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Brazil",
+    "iso3": "BRA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Britain (British citizens)",
+    "iso3": "GBR",
+    "max_stay_days": 180,
+    "notes": "British citizens may stay visa-free for 180 days.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Britain (British Overseas Territories citizens, British Overseas citizens, British subjects and British Protected persons)",
+    "iso3": "GBR",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "British Antarctic Territory",
+    "iso3": null,
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "British Indian Ocean Territory",
+    "iso3": "IOT",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "British Virgin Islands",
+    "iso3": "VGB",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Brunei Darussalam",
+    "iso3": "BRN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Bulgaria",
+    "iso3": "BGR",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Burkina Faso",
+    "iso3": "BFA",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Canada",
+    "iso3": "CAN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Cape Verde (Republic of)",
+    "iso3": "CPV",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Cayman Islands",
+    "iso3": "CYM",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Chad",
+    "iso3": "TCD",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Chile",
+    "iso3": "CHL",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Colombia",
+    "iso3": "COL",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Comoros",
+    "iso3": "COM",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Costa Rica",
+    "iso3": "CRI",
+    "max_stay_days": 30,
+    "notes": "Excludes Costa Rican Provisional passports and Documento de Identidad Y Viaje, which require a visa.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Croatia",
+    "iso3": "HRV",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Cyprus (Republic of)",
+    "iso3": "CYP",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Czech Republic",
+    "iso3": "CZE",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Denmark",
+    "iso3": "DNK",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Djibouti",
+    "iso3": "DJI",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Dominica (Commonwealth of)",
+    "iso3": "DMA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Dominican Republic",
+    "iso3": "DOM",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Ecuador",
+    "iso3": "ECU",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Egypt",
+    "iso3": "EGY",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "El Salvador",
+    "iso3": "SLV",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Equatorial Guinea",
+    "iso3": "GNQ",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Estonia",
+    "iso3": "EST",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Falkland Islands & Dependencies",
+    "iso3": "FLK",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Faroe Islands",
+    "iso3": "FRO",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Fiji",
+    "iso3": "FJI",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Finland",
+    "iso3": "FIN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "France",
+    "iso3": "FRA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Gabon",
+    "iso3": "GAB",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Georgia",
+    "iso3": "GEO",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Germany",
+    "iso3": "DEU",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Gibraltar",
+    "iso3": "GIB",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Greece",
+    "iso3": "GRC",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Greenland",
+    "iso3": "GRL",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Grenada",
+    "iso3": "GRD",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Guatemala",
+    "iso3": "GTM",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Guinea",
+    "iso3": "GIN",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Guyana",
+    "iso3": "GUY",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Haiti",
+    "iso3": "HTI",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Honduras",
+    "iso3": "HND",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Hungary",
+    "iso3": "HUN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Iceland",
+    "iso3": "ISL",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Indonesia",
+    "iso3": "IDN",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Ireland (Republic of)",
+    "iso3": "IRL",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Israel",
+    "iso3": "ISR",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Italy",
+    "iso3": "ITA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Jamaica",
+    "iso3": "JAM",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Japan",
+    "iso3": "JPN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Jordan",
+    "iso3": "JOR",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Kazakhstan",
+    "iso3": "KAZ",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Kenya",
+    "iso3": "KEN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Kiribati",
+    "iso3": "KIR",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Korea (Republic of)",
+    "iso3": "KOR",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Kuwait",
+    "iso3": "KWT",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Latvia",
+    "iso3": "LVA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Lesotho",
+    "iso3": "LSO",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Liechtenstein",
+    "iso3": "LIE",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Lithuania",
+    "iso3": "LTU",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Luxembourg",
+    "iso3": "LUX",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Madagascar",
+    "iso3": "MDG",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Malawi",
+    "iso3": "MWI",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Malaysia",
+    "iso3": "MYS",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Maldives",
+    "iso3": "MDV",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Mali",
+    "iso3": "MLI",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Malta",
+    "iso3": "MLT",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Marshall Islands (Republic of)",
+    "iso3": "MHL",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Mauritania",
+    "iso3": "MRT",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Mauritius",
+    "iso3": "MUS",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Mexico",
+    "iso3": "MEX",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Micronesia (Federated States of)",
+    "iso3": "FSM",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Monaco",
+    "iso3": "MCO",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Mongolia",
+    "iso3": "MNG",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Montenegro (Republic of)",
+    "iso3": "MNE",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Montserrat",
+    "iso3": "MSR",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Morocco",
+    "iso3": "MAR",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Mozambique",
+    "iso3": "MOZ",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Namibia",
+    "iso3": "NAM",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Nauru",
+    "iso3": "NRU",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Netherlands",
+    "iso3": "NLD",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "New Zealand",
+    "iso3": "NZL",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Niger",
+    "iso3": "NER",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "North Macedonia",
+    "iso3": "MKD",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Norway",
+    "iso3": "NOR",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Oman",
+    "iso3": "OMN",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Palau",
+    "iso3": "PLW",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Panama",
+    "iso3": "PAN",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Papua New Guinea",
+    "iso3": "PNG",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Paraguay",
+    "iso3": "PRY",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Peru",
+    "iso3": "PER",
+    "max_stay_days": 30,
+    "notes": "Excludes Special Peruvian passports, which require a visa.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Philippines",
+    "iso3": "PHL",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Pitcairn, Henderson, Ducie & Oeno Islands",
+    "iso3": "PCN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Poland",
+    "iso3": "POL",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Portugal",
+    "iso3": "PRT",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Qatar",
+    "iso3": "QAT",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Romania",
+    "iso3": "ROU",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Russian Federation",
+    "iso3": "RUS",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Samoa",
+    "iso3": "WSM",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "San Marino",
+    "iso3": "SMR",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Sao Tome and Principe",
+    "iso3": "STP",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Saudi Arabia",
+    "iso3": "SAU",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Serbia (Republic of) (holders of Serbian biometric passports only)",
+    "iso3": "SRB",
+    "max_stay_days": 14,
+    "notes": "Biometric passport holders only; non-biometric Serbian passports require a visa.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Seychelles",
+    "iso3": "SYC",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Singapore",
+    "iso3": "SGP",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Slovak Republic",
+    "iso3": "SVK",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Slovenia",
+    "iso3": "SVN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "South Africa",
+    "iso3": "ZAF",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Spain",
+    "iso3": "ESP",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "St. Helena",
+    "iso3": "SHN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "St. Helena Dependencies (Ascension, Tristan da Cunha)",
+    "iso3": null,
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "St. Kitts and Nevis",
+    "iso3": "KNA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "St. Lucia",
+    "iso3": "LCA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "St. Vincent and the Grenadines",
+    "iso3": "VCT",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Suriname",
+    "iso3": "SUR",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Sweden",
+    "iso3": "SWE",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Switzerland",
+    "iso3": "CHE",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Tanzania",
+    "iso3": "TZA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Thailand",
+    "iso3": "THA",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "The South Georgia and the South Sandwich Islands",
+    "iso3": null,
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "The Sovereign Base Areas of Akrotiri and Dhekelia",
+    "iso3": null,
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Timor-Leste",
+    "iso3": "TLS",
+    "max_stay_days": 7,
+    "notes": "Not individually enumerated on the IMMD visa table; Timor-Leste nationals fall under the general provision 'Nationals of other foreign countries do not require visas for a visit - 7 Days'. Source: https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html (verified 2026-07)",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Tonga",
+    "iso3": "TON",
+    "max_stay_days": 90,
+    "notes": "Excludes Tongan National passports and Tongan Protected Persons passports, which require a visa.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Trinidad & Tobago",
+    "iso3": "TTO",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Tunisia",
+    "iso3": "TUN",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Türkiye",
+    "iso3": "TUR",
+    "max_stay_days": 90,
+    "notes": "Formerly known as Turkey.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Turks and Caicos Islands",
+    "iso3": "TCA",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Tuvalu",
+    "iso3": "TUV",
+    "max_stay_days": 90,
+    "notes": "Tuvalu travel documents with national status stated as 'I-TUVALU' require a visa.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Uganda",
+    "iso3": "UGA",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Ukraine",
+    "iso3": "UKR",
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "United Arab Emirates",
+    "iso3": "ARE",
+    "max_stay_days": 30,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Uruguay",
+    "iso3": "URY",
+    "max_stay_days": 90,
+    "notes": "Uruguay passports issued under Decree 289/90 require a visa.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "U.S.A. ordinary passport holders (except U.S.A. Diplomatic passports)",
+    "iso3": "USA",
+    "max_stay_days": 90,
+    "notes": "U.S.A. Diplomatic passport holders require a visa; ordinary passport holders are visa-free.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "US Trust Territory of Pacific Islands (holders of US Trust Territory passports only)",
+    "iso3": null,
+    "max_stay_days": 14,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Vanuatu",
+    "iso3": "VUT",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Vatican City",
+    "iso3": "VAT",
+    "max_stay_days": 14,
+    "notes": "Vatican Service passports require a visa.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Venezuela",
+    "iso3": "VEN",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Zambia",
+    "iso3": "ZMB",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   },
+   {
+    "nationality": "Zimbabwe",
+    "iso3": "ZWE",
+    "max_stay_days": 90,
+    "notes": "",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    "source_official": true
+   }
+  ],
+  "visa_on_arrival": [],
+  "eta": [
+   {
+    "nationality": "India",
+    "iso3": "IND",
+    "max_stay_days": 14,
+    "notes": "Pre-Arrival Registration (PAR) required; valid 6 months, multiple visits, 14 days each.",
+    "source_url": "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html",
+    "source_official": true
+   }
+  ],
+  "e_visa": [],
+  "source_urls": [
+   "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html"
+  ],
+  "notes": "Visa-free stay length varies by nationality (90/30/14/7 days). British citizens get 180 days. Nationals of foreign countries not otherwise listed (and not in the visa-required list) may visit visa-free for 7 days. India requires online Pre-Arrival Registration (PAR) before visa-free entry (see eta). Source: IMMD table updated November 2025."
+ },
+ "conditional_access": [
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Angola"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Angola may visit the HKSAR visa-free for a stay not exceeding 14 days. All other nationals (ordinary passport holders) are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
   },
-  "sources_checked": [
-    "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html (re-verified 2026-06-29; page last updated 06-01-2026)",
-    "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html",
-    "https://www.immd.gov.hk/eng/press/press-releases/20260213.html",
-    "https://www.immd.gov.hk/eng/services/visas/immigration-entry-guideline.html",
-    "https://www.immd.gov.hk/eng/services/visas/visit_transit.html",
-    "https://www.gov.hk/en/nonresidents/visarequire/",
-    "https://www.immd.gov.hk/eng/press/press-releases/20250127.html",
-    "https://webapp.immd.gov.hk/content_ver2/fparreg/html/english/ind_par_faq_page1.html",
-    "https://www.immd.gov.hk/eng/services/index.html",
-    "https://www.immd.gov.hk/eng/services/visas/working_holiday_scheme.html",
-    "https://www.immd.gov.hk/eng/services/visas/TTPS.html",
-    "https://www.immd.gov.hk/eng/services/visas/GEP.html",
-    "https://www.immd.gov.hk/eng/services/visas/study.html",
-    "https://www.immd.gov.hk/eng/services/visas/newcies.html",
-    "https://www.immd.gov.hk/eng/services/visas/investment.html",
-    "https://www.immd.gov.hk/eng/services/visas/quality_migrant_admission_scheme.html",
-    "https://www.immd.gov.hk/eng/services/visas/IANG.html",
-    "https://www.immd.gov.hk/eng/services/visas/residence_as_dependant.html",
-    "https://www.immd.gov.hk/eng/services/visas/visit_transit.html"
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Azerbaijan"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Azerbaijan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders require a visa. Note: the IMMD page uses footnote # which may also permit ordinary passport holders some form of access - but the live table shows ordinary passport holders require a visa for Azerbaijan.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Bangladesh"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Bangladesh may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Burundi"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Burundi may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Cambodia"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Cambodia may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders require a visa.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Cameroon"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Cameroon may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Congo (Republic of)"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of the Republic of Congo may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Ethiopia"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Ethiopia may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose, including those in transit remaining on the airside.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Ghana"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Ghana may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Kyrgyzstan"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Kyrgyzstan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Laos"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Laos may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside). Note: from October 2024 IMMD extended multiple-entry visa validity to 3 years for ordinary Laos nationals, but ordinary passport holders still require a visa.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Moldova"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Moldova may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Myanmar"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Myanmar may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside). Note: from October 2024 IMMD extended multiple-entry visa validity to 3 years for ordinary Myanmar nationals, but ordinary passport holders still require a visa.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Nepal"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Nepal may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Pakistan"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 30,
+   "conditions": "Holders of Diplomatic and Official passports of Pakistan may visit the HKSAR visa-free for a stay not exceeding 30 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Sri Lanka"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Sri Lanka may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Tajikistan"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Tajikistan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Togo"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Togo may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Turkmenistan"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Turkmenistan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Uzbekistan"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Uzbekistan may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa for the HKSAR for whatever purpose (including those who are in transit and remain on the airside).",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Vietnam"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 14,
+   "conditions": "Holders of Diplomatic and Official passports of Vietnam may visit the HKSAR visa-free for a stay not exceeding 14 days. Ordinary passport holders are required to hold a valid visa. Note: from October 2024 IMMD extended multiple-entry visa validity to 3 years for ordinary Vietnamese nationals, but ordinary passport holders still require a visa.",
+   "source_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "source_official": true
+  }
+ ],
+ "visa_types": [
+  {
+   "category": "tourist",
+   "name": "Visitor Visa / Entry Permit",
+   "purpose": "Short-term tourism, leisure, or social visits to Hong Kong. Visitors may not work, study, or establish businesses.",
+   "max_stay_days": 90,
+   "validity_days": null,
+   "entries": "single",
+   "fee_usd": null,
+   "processing_days_min": 28,
+   "processing_days_max": 28,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+   "notes": "Required for nationalities not on the visa-free list. Can be applied for online, by post, or through Chinese diplomatic missions. Max stay varies by approval. Nationalities on the visa-free list do not need to apply."
+  },
+  {
+   "category": "tourist",
+   "name": "Pre-Arrival Registration (PAR) for Indian Nationals",
+   "purpose": "Mandatory free online pre-registration allowing Indian ordinary passport holders to visit Hong Kong visa-free for up to 14 days per stay.",
+   "max_stay_days": 14,
+   "validity_days": 180,
+   "entries": "multiple",
+   "fee_usd": 0,
+   "processing_days_min": 0,
+   "processing_days_max": 0,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html",
+   "notes": "Free, instant approval. Valid 6 months with multiple visits, each stay up to 14 days. Printed notification slip and same passport must be carried. Diplomatic passport holders are exempt from PAR requirement."
+  },
+  {
+   "category": "transit",
+   "name": "Transit Visa",
+   "purpose": "Permits passage through Hong Kong for travelers continuing to another destination who require a visa and do not hold a visa-free nationality.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "single",
+   "fee_usd": null,
+   "processing_days_min": 28,
+   "processing_days_max": 28,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/visit_transit.html",
+   "notes": "Must hold onward ticket unless destination is Mainland China or Macau. Cannot work, study or establish businesses. Approval is entirely discretionary. Airside transit (not leaving the airport) for most nationalities does not require a transit visa."
+  },
+  {
+   "category": "work",
+   "name": "General Employment Policy (GEP) Visa",
+   "purpose": "Allows skilled professionals with a confirmed job offer to work in Hong Kong where their skills are not readily available locally.",
+   "max_stay_days": null,
+   "validity_days": 1095,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": 28,
+   "processing_days_max": 28,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/GEP.html",
+   "notes": "Initial stay up to 36 months (or contract duration). Extensions follow a 3-2 year pattern. Requires confirmed job offer, first degree or equivalent, and market-rate compensation. Excludes Afghanistan, Cuba, North Korea, and Mainland Chinese (who use ASMTP). After 7 years continuous residence, eligible for right of abode."
+  },
+  {
+   "category": "work",
+   "name": "Admission Scheme for Mainland Talents and Professionals (ASMTP)",
+   "purpose": "Allows Mainland Chinese skilled professionals to work in Hong Kong where their skills are not readily available locally.",
+   "max_stay_days": null,
+   "validity_days": 1095,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": 28,
+   "processing_days_max": 28,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/ASMTP.html",
+   "notes": "Mainland Chinese equivalent of GEP. Requires confirmed job offer and relevant qualifications. Extensions follow similar patterns to GEP."
+  },
+  {
+   "category": "work",
+   "name": "Top Talent Pass Scheme (TTPS)",
+   "purpose": "Attracts high-earning global talent and graduates of top universities to live and work in Hong Kong without requiring a pre-arranged job offer.",
+   "max_stay_days": null,
+   "validity_days": 1095,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": 28,
+   "processing_days_max": 28,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/TTPS.html",
+   "notes": "Category A: annual income HK$2.5M+, granted 36 months. Categories B & C: top university graduates, granted 24 months. Category C subject to annual quota. Extensions up to 3 years; top-tier earners (HK$2M+ salaries tax after 2 years) may receive 6-year extension. Excludes Afghanistan, Cuba, North Korea."
+  },
+  {
+   "category": "work",
+   "name": "Technology Talent Admission Scheme (TechTAS)",
+   "purpose": "Fast-track admission for technology talent to work in Hong Kong's innovation and technology sector.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/TECHTAS.html",
+   "notes": "Streamlined procedures since December 2025. Parallel quota and visa applications now allowed. R&D activity requirement in designated tech areas removed. Aimed at tech companies in designated sectors."
+  },
+  {
+   "category": "work",
+   "name": "Technical Professionals Stream (GEP(TP) & ASMTP(TP))",
+   "purpose": "Admission channel under GEP and ASMTP for skilled tradespeople in eight designated trades, targeting applicants aged 18-40.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/TPStream.html",
+   "notes": "Pilot program launched June 2025. Total quota of 10,000. Entry visas valid 24-36 months depending on qualifications. Targets eight specified skilled trades."
+  },
+  {
+   "category": "work",
+   "name": "Vocational Professionals Admission Scheme (VPAS)",
+   "purpose": "Allows admission of vocational professionals with technical qualifications to work in Hong Kong.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/vpas.html",
+   "notes": "Targets holders of vocational qualifications. Separate scheme from the professional degree-based GEP."
+  },
+  {
+   "category": "work",
+   "name": "Foreign Domestic Helper Visa",
+   "purpose": "Entry visa for foreign nationals employed as live-in domestic helpers in Hong Kong households.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/foreign_domestic_helpers.html",
+   "notes": "Subject to standard employment contract conditions. Helper must be employed by an approved employer, live in the employer's residence, and leave Hong Kong at contract end. Not a pathway to permanent residence."
+  },
+  {
+   "category": "student",
+   "name": "Student Visa / Entry Permit",
+   "purpose": "Permits non-local students to study at approved educational institutions in Hong Kong for the duration of their program.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": 42,
+   "processing_days_max": 42,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/study.html",
+   "notes": "Processing takes approximately 6 weeks. Stay duration matches program length, max 6 years. Undergraduate+ students may take curriculum-related internships, part-time on-campus work (20 hrs/week max), and unrestricted summer employment (Jun 1-Aug 31). Certain nationalities (Afghanistan, Cuba, DPRK, some others) face restrictions. Forms ID 995A and ID 995B required."
+  },
+  {
+   "category": "other",
+   "name": "Immigration Arrangements for Non-local Graduates (IANG)",
+   "purpose": "Allows graduates of Hong Kong's locally-accredited full-time degree programs or GBA campus programs to remain or return to Hong Kong to seek employment.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": 14,
+   "processing_days_max": 28,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/IANG.html",
+   "notes": "Recent graduates (within 6 months): processed in ~2 weeks, no job offer required. Non-recent graduates (after 6 months): ~4 weeks, job offer required. Initial stay 24 months. Extension pattern typically 3-3 years. Top-tier earners (HK$2M+ annually) receive 6-year extension. Quota-free. Recipients can freely change employer."
+  },
+  {
+   "category": "investment",
+   "name": "New Capital Investment Entrant Scheme (New CIES)",
+   "purpose": "Allows high-net-worth individuals who invest at least HK$30 million in permissible Hong Kong assets to obtain residency.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/newcies.html",
+   "notes": "Minimum net assets and investment of HK$30 million (approximately USD 3.8M). Initial permission to stay up to 24 months. Extensions of up to 3 years each. Must maintain portfolio requirements continuously. Applicants must be 18+. Cannot rely on employment or investment returns within HK to support themselves during initial period."
+  },
+  {
+   "category": "investment",
+   "name": "Investment as Entrepreneurs",
+   "purpose": "Allows foreign nationals to establish or join a business in Hong Kong that makes a substantial contribution to the local economy.",
+   "max_stay_days": null,
+   "validity_days": 1095,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": 28,
+   "processing_days_max": 28,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/investment.html",
+   "notes": "No fixed minimum investment threshold; assessed on business plan quality, financial resources, local job creation, and technology/skills contribution. Initial stay up to 36 months. Extensions follow 3-2 year pattern. Local sponsor required. Excludes Mainland Chinese, Afghanistan, Cuba, North Korea."
+  },
+  {
+   "category": "other",
+   "name": "Quality Migrant Admission Scheme (QMAS)",
+   "purpose": "Attracts highly skilled or talented persons to settle in Hong Kong to enhance economic competitiveness; no pre-arranged job required.",
+   "max_stay_days": null,
+   "validity_days": 1095,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/quality_migrant_admission_scheme.html",
+   "notes": "Two routes: General Points Test (initial 36 months) or Achievement-based Points Test (initial 8 years). Applicants must be 18+, financially self-sufficient, clean record, and hold a first degree or equivalent. Extensions require proof of settlement. Top-tier earners (HK$2M+ assessable salaries income) receive 5-year extension. Excludes Afghanistan, Cuba, North Korea."
+  },
+  {
+   "category": "working_holiday",
+   "name": "Working Holiday Scheme",
+   "purpose": "Allows young adults from participating countries to take an extended working holiday in Hong Kong, combining travel with temporary employment.",
+   "max_stay_days": 365,
+   "validity_days": 365,
+   "entries": "single",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/working_holiday_scheme.html",
+   "notes": "Eligible countries: Australia, Austria, Canada, France, Germany, Hungary, Ireland, Japan, Korea (Republic of), Netherlands, New Zealand, Sweden, United Kingdom. Age limit 18-30. Stay up to 12 months. Maintenance funds required (HK$14,000-HK$25,000 depending on nationality). Annual quotas per country (100-5,000 slots). Employment with same employer limited to 3-12 months depending on nationality. Extensions not normally considered. Irish, Japanese, and Korean citizens receive free visas."
+  },
+  {
+   "category": "family",
+   "name": "Dependant Visa / Entry Permit",
+   "purpose": "Allows spouses, unmarried children under 18, and parents (aged 60+, for permanent residents only) to join approved residents or permanent residents in Hong Kong.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": 14,
+   "processing_days_max": 42,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/residence_as_dependant.html",
+   "notes": "Extensions for initial applications take 6 weeks; renewals 2-3 weeks. Stay follows sponsor's permission: spouses/children on 3-3 year pattern; parents on 2-2-3 year pattern. Dependants of employed or permanent resident sponsors may work freely; dependants of student sponsors require prior permission to work. Same-sex spouses recognized."
+  },
+  {
+   "category": "other",
+   "name": "Second Generation of Chinese Hong Kong Permanent Residents Scheme (ASSG)",
+   "purpose": "Allows overseas-born children of Hong Kong permanent residents to settle in Hong Kong even without having been born or raised there.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/secondgenerationhkpr.html",
+   "notes": "Targets second generation of Chinese Hong Kong permanent residents who were born and raised overseas. Quota-free scheme."
+  },
+  {
+   "category": "other",
+   "name": "Training Visa",
+   "purpose": "Permits foreign nationals to come to Hong Kong for training purposes with an approved employer for a limited period.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "single",
+   "fee_usd": null,
+   "processing_days_min": 28,
+   "processing_days_max": 28,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/training.html",
+   "notes": "For structured training programs with a local employer. Not for general study or employment purposes."
+  },
+  {
+   "category": "work",
+   "name": "Special Scheme to Import Care Workers for Residential Care Homes",
+   "purpose": "Allows residential care homes for the elderly or persons with disabilities that have genuine local recruitment difficulties to employ imported care workers.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": 14,
+   "processing_days_max": 42,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/imported_careworker.html",
+   "notes": "Jointly administered by the Immigration Department and Social Welfare Department. e-Visa granted for up to 24 months or the employment contract term, whichever is shorter, under Standard Employment Contract SWD-ICW-16. Workers cannot change employer, post or workplace. Nationals of Afghanistan, Cuba, Laos, DPRK, Nepal and Vietnam are excluded. No right of abode acquired."
+  },
+  {
+   "category": "work",
+   "name": "Enhanced Supplementary Labour Scheme (ESLS)",
+   "purpose": "Allows employers with genuine difficulties recruiting locally to import workers at technician level and below for jobs that cannot be filled by the local workforce.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/imported_worker.html",
+   "notes": "Renamed from the Supplementary Labour Scheme effective 4 September 2023; operates under the Employees Retraining Ordinance. e-Visa normally granted for up to 24 months or the contract term, whichever is shorter, under Standard Employment Contract LD 294. Employer must pay a levy to the Employees Retraining Board. Workers cannot change employer, post or workplace, cannot bring dependants, and acquire no right of abode."
+  },
+  {
+   "category": "work",
+   "name": "Sector-specific Labour Importation Schemes (SLIS)",
+   "purpose": "Allows employers in designated sectors (e.g. construction and transport) facing genuine local recruitment difficulties to import labour from outside Hong Kong.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/slis.html",
+   "notes": "Sectors administered by designated bureaux/departments and statutory bodies. e-Visa normally granted for up to 24 months or the employment contract term, whichever is shorter. Workers cannot change employer, post or workplace, cannot bring dependants, and acquire no right of abode. Nationals of Afghanistan, Cuba, Laos, DPRK, Nepal and Vietnam are excluded."
+  },
+  {
+   "category": "tourist",
+   "name": "Pre-arrival Registration for Taiwan Residents",
+   "purpose": "Free online registration allowing eligible Chinese residents of Taiwan to visit Hong Kong as visitors without a separate visa or entry permit.",
+   "max_stay_days": 30,
+   "validity_days": 60,
+   "entries": "multiple",
+   "fee_usd": 0,
+   "processing_days_min": 0,
+   "processing_days_max": 0,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_taiwan_residents.html",
+   "notes": "Free of charge. Valid for two months and good for two entries, with a stay of up to 30 days as a visitor on each landing. For Chinese residents of Taiwan born in Taiwan or previously admitted as Taiwan residents who do not hold other travel documents. Applicant must hold a Taiwan re-entry travel document valid for at least six months. Those unable to obtain PAR may apply for an entry permit instead."
+  },
+  {
+   "category": "business",
+   "name": "Immigration Facilitation Scheme for Visitors Participating in Short-term Activities in Designated Sectors (STV Scheme)",
+   "purpose": "Lets professionals and talent invited by government-endorsed organisations undertake specified short-term work activities in Hong Kong as visitors without applying for an employment visa.",
+   "max_stay_days": 14,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.immd.gov.hk/eng/services/visas/stv.html",
+   "notes": "Launched 1 June 2024; scope expanded to 17 designated sectors (including healthcare, higher education, arts, sports, innovation and technology, aviation, finance and construction) from 1 November 2025. Eligible visitors may undertake the specified activities for up to 14 consecutive calendar days per period of permitted stay as a visitor, without an employment visa. Participation must be arranged through a government-endorsed organisation."
+  }
+ ],
+ "cbi": null,
+ "rbi": null,
+ "fast_track": null,
+ "data_quality": {
+  "completeness": "high",
+  "validation_notes": [
+   "CORRECTION (2026-06-14): India (IND) reclassified from visa_free/visa_policy to eta. Ordinary Indian passport holders require mandatory free Pre-arrival Registration (PAR) online before travel (immd.gov.hk, IMMD official - verified June 2026). India removed from visa_policy array; conditional_access level updated to 'eta'. Airline aggregator claim of 'visa-free or visa-on-arrival' is incorrect - PAR is a mandatory pre-travel online registration prerequisite.",
+   "MAJOR ADDITION: Added complete visa_policy array covering all ~160+ ordinary-passport visa-free nationalities from the IMMD official table (updated November 2025). The prior record had no visa_policy entries at all.",
+   "ADDITION: Added India to conditional_access with basis='pre_registration' (14 days, ordinary passport, PAR required). India appears in the IMMD table with a '%' footnote indicating mandatory pre-arrival registration online.",
+   "ADDITION: Added Angola (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
+   "ADDITION: Added Azerbaijan (#) to conditional_access - diplomatic/official 14 days; ordinary = visa required (footnote # confirmed ordinary passport requires visa). Was missing from prior record.",
+   "ADDITION: Added Burundi (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
+   "ADDITION: Added Cambodia (#) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
+   "ADDITION: Added Cameroon (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
+   "ADDITION: Added Congo (Republic of) (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. The prior data_quality gap about Congo (Republic) is now resolved: the live IMMD table shows ^ footnote (diplomatic/official 14 days, ordinary = visa required).",
+   "ADDITION: Added Ethiopia (^) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
+   "ADDITION: Added Vietnam (#) to conditional_access - diplomatic/official 14 days; ordinary = visa required. Was missing from prior record.",
+   "CONFIRMED: Bangladesh, Ghana, Sri Lanka, Togo (^ footnote), Pakistan (※ footnote), Kyrgyzstan, Laos, Moldova, Myanmar, Nepal, Tajikistan, Turkmenistan, Uzbekistan (# footnote) were all correctly classified in the prior record.",
+   "CONFIRMED: Eswatini (formerly Swaziland) uses footnote * (all nationals require visa including transit airside) - added to visa_policy notes section.",
+   "DATA SOURCE: The IMMD visit-visa-entry-permit page was confirmed as updated November 2025. Firecrawl fetch date was June 12, 2026.",
+   "REBUILD (2026-06-14): visa_policy fully reconstructed from the official IMMD visit-visa-entry-permit table (updated November 2025) via firecrawl_scrape. Every row with a positive visa-free period was captured into visa_policy.visa_free with its correct band (14/30/90 days; British citizens 180 days). India kept in eta (PAR). The catch-all '7 days for nationals of other foreign countries' row is noted in visa_policy.notes rather than as a named nationality. visa_policy is an object with keyed fields (not an array).",
+   "NOTE ON FOOTNOTE #: For countries with footnote # (Azerbaijan, Cambodia, Kyrgyzstan, Laos, Moldova, Myanmar, Nepal, Tajikistan, Turkmenistan, Uzbekistan, Vietnam), the IMMD remarks state only 'Holders of Diplomatic and Official passports may visit the HKSAR visa-free for a stay not exceeding 14 days' - this means ordinary passport holders DO require a visa (confirmed by 'Visa Required#' shown in the table's third column).",
+   "cbi, rbi, fast_track: Hong Kong does not operate a citizenship-by-investment or formal residency-by-investment programme in the standard CBI/RBI sense. The Quality Migrant Admission Scheme (QMAS) and other talent schemes exist but are not CBI/RBI. Set to null as not confirmable from official sources.",
+   "CORRECTION (2026-06-27): Added Albania (biometric passports only, 14 days) to visa_policy.visa_free. Was missing from the prior record. Confirmed from live IMMD visit-visa-entry-permit page (last updated 06-01-2026).",
+   "CORRECTION (2026-06-27): Added Algeria (14 days) to visa_policy.visa_free. Was noted in data_quality.gaps as confirmed but had not been added to the actual visa_free array. Confirmed from live IMMD visit-visa-entry-permit page (last updated 06-01-2026).",
+   "CORRECTION (2026-06-27): Added Armenia (30 days) to visa_policy.visa_free. Was entirely missing from the prior record despite appearing on the live IMMD table. Confirmed from live IMMD visit-visa-entry-permit page (last updated 06-01-2026).",
+   "CONFIRMED (2026-06-27): Bosnia and Herzegovina remains at 14 days - live page confirms. South Africa remains at 30 days - live page confirms. Marshall Islands at 14 days - confirmed. India PAR (14 days, eta) - confirmed. Lebanon is visa required - confirmed not in visa_free list. Palau 14 days - confirmed. Algeria, Armenia, Albania (biometric) were the only omissions found.",
+   "CONFIRMED (2026-06-29): Full re-verification run against live IMMD visit-visa-entry-permit page (last updated 06-01-2026, content November 2025). Cross-checked all 163 visa_free entries. No additions, removals, or stay-duration changes required. Specifically confirmed: Rwanda (RWA), Iran (IRN), Yemen (YEM) are NOT in visa_policy.visa_free (they only appear in outbound_official.visa_free, which is correct - those are HK passport outbound rights, not inbound). Ethiopia (ETH) correctly in conditional_access only (diplomatic/official 14 days; ordinary = visa required with ^ footnote). Thailand confirmed 30 days. UAE confirmed 30 days. Saudi Arabia confirmed 90 days. Egypt confirmed 90 days. Tonga confirmed 90 days. Tuvalu confirmed 90 days. Kiribati confirmed 90 days. Nauru confirmed 90 days. Serbia biometric-only entry confirmed 14 days. India PAR (eta, 14 days, free, valid 6 months multiple entry) confirmed still in operation. No press releases from January-June 2026 affected inbound visa-free policy. The IMMD press releases from 2026 (Azerbaijan visa-free Jan 2026, Sri Lanka VOA Apr 2026) are OUTBOUND changes for HKSAR passport holders, not inbound changes. Record is fully consistent with live official source.",
+   "CORRECTED 2026-07-17: the USA entry's nationality string ('U.S.A. (except U.S.A. Diplomatic passports)') false-triggered the builder's diplomatic-passport-only detector (the words 'passport' and 'diplomatic' both appearing in the nationality field), silently dropping the ordinary-passport visa_free edge entirely - the actual USA outbound reach was missing Hong Kong. Reworded to include 'ordinary passport', which the builder recognizes as an explicit unrestricted grant."
+  ],
+  "gaps": [
+   "The exact bilateral treaty names, dates, and signatories for the diplomatic/official passport waivers (Bangladesh, Ghana, Sri Lanka, Togo, Pakistan, Kyrgyzstan, Laos, Moldova, Myanmar, Nepal, Tajikistan, Turkmenistan, Uzbekistan, Angola, Burundi, Cameroon, Congo (Republic), Ethiopia, Azerbaijan, Cambodia, Vietnam) are not published on the IMMD visit-visa-entry-permit page.",
+   "No credential-based conditional entry rule (e.g., held third-country visa/residence permit) was found on any official IMMD/gov.hk source. Hong Kong immigration does not appear to grant facilitated entry solely because a traveller holds a valid US, Schengen, UK, Canadian, Australian, Japanese, or other foreign visa or residence permit.",
+   "No OCI (Overseas Citizen of India) cardholder conditional entry rule found for Hong Kong. The Hong Kong PAR page exempts diplomatic/official Indian passport holders, UN Laissez-Passer holders, HKSAR Travel Pass holders, and e-Channel frequent visitors - OCI is not listed as a separate exempt category.",
+   "Eswatini (formerly Swaziland): classified under * footnote (all nationals including diplomats require visa). Could not confirm whether Eswatini has a separate diplomatic passport agreement on the live page - the table shows 'Visa Required*' with no ^ or # qualifier.",
+   "Belarus 30-day ordinary passport access was confirmed from the live table."
   ]
+ },
+ "sources_checked": [
+  "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html (re-verified 2026-06-29; page last updated 06-01-2026)",
+  "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html",
+  "https://www.immd.gov.hk/eng/press/press-releases/20260213.html",
+  "https://www.immd.gov.hk/eng/services/visas/immigration-entry-guideline.html",
+  "https://www.immd.gov.hk/eng/services/visas/visit_transit.html",
+  "https://www.gov.hk/en/nonresidents/visarequire/",
+  "https://www.immd.gov.hk/eng/press/press-releases/20250127.html",
+  "https://webapp.immd.gov.hk/content_ver2/fparreg/html/english/ind_par_faq_page1.html",
+  "https://www.immd.gov.hk/eng/services/index.html",
+  "https://www.immd.gov.hk/eng/services/visas/working_holiday_scheme.html",
+  "https://www.immd.gov.hk/eng/services/visas/TTPS.html",
+  "https://www.immd.gov.hk/eng/services/visas/GEP.html",
+  "https://www.immd.gov.hk/eng/services/visas/study.html",
+  "https://www.immd.gov.hk/eng/services/visas/newcies.html",
+  "https://www.immd.gov.hk/eng/services/visas/investment.html",
+  "https://www.immd.gov.hk/eng/services/visas/quality_migrant_admission_scheme.html",
+  "https://www.immd.gov.hk/eng/services/visas/IANG.html",
+  "https://www.immd.gov.hk/eng/services/visas/residence_as_dependant.html",
+  "https://www.immd.gov.hk/eng/services/visas/visit_transit.html"
+ ]
 }

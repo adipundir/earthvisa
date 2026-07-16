@@ -34,6 +34,13 @@ const FORCE_CORRIDORS = new Set([
   // /guide/schengen/india's destination links.
   "IND|USA", "IND|CAN", "IND|AUS", "IND|SAU", "IND|KWT", "IND|FRA", "IND|GRC",
   "IND|ESP", // previously existed only via the mis-mapped Malta VFS file; Spain is a top Indian destination with full fee + visa-type data
+  // ~50% of site traffic is the US passport - these 16 destinations are
+  // genuinely visa-required with no VFS checklist, but each carries a
+  // researched advanceVisaNotes entry (fee, process, current suspension/
+  // advisory status where relevant) that would otherwise never render.
+  "USA|BFA", "USA|CAF", "USA|COG", "USA|DZA", "USA|ERI", "USA|LBR", "USA|NER",
+  "USA|NRU", "USA|IRN", "USA|PRK", "USA|RUS", "USA|SDN", "USA|TCD", "USA|TKM",
+  "USA|YEM", "USA|CHN",
 ]);
 
 /** Adjectival demonym, e.g. "Thailand Visa for Indian citizens". Copy that uses
