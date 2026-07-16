@@ -33,7 +33,7 @@
     "nationality": "Argentina",
     "iso3": "ARG",
     "max_stay_days": 90,
-    "notes": "V1: visa-free for tourism/non-work stays; visa required for certain gainful occupations.",
+    "notes": "Visa-free for tourism/other non-work stays of up to 90 days in any 180-day period. A visa is required, regardless of stay length, for work in construction, hotels/catering, cleaning, security, or escort services - and for any other paid work exceeding 8 days per calendar year. Stays beyond 90 days need a Swiss residence permit regardless of purpose.",
     "source_url": "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/bfm-anh01-liste1-e.pdf",
     "source_official": true
    },
@@ -89,7 +89,7 @@
     "nationality": "Brazil",
     "iso3": "BRA",
     "max_stay_days": 90,
-    "notes": "V1: visa-free for tourism/non-work stays; visa required for certain gainful occupations.",
+    "notes": "Visa-free for tourism/other non-work stays of up to 90 days in any 180-day period. A visa is required, regardless of stay length, for work in construction, hotels/catering, cleaning, security, or escort services - and for any other paid work exceeding 8 days per calendar year. Stays beyond 90 days need a Swiss residence permit regardless of purpose.",
     "source_url": "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/bfm-anh01-liste1-e.pdf",
     "source_official": true
    },
@@ -121,7 +121,7 @@
     "nationality": "Chile",
     "iso3": "CHL",
     "max_stay_days": 90,
-    "notes": "V1: visa-free for tourism/non-work stays; visa required for certain gainful occupations.",
+    "notes": "Visa-free for tourism/other non-work stays of up to 90 days in any 180-day period. A visa is required, regardless of stay length, for work in construction, hotels/catering, cleaning, security, or escort services - and for any other paid work exceeding 8 days per calendar year. Stays beyond 90 days need a Swiss residence permit regardless of purpose.",
     "source_url": "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/bfm-anh01-liste1-e.pdf",
     "source_official": true
    },
@@ -505,7 +505,7 @@
     "nationality": "Paraguay",
     "iso3": "PRY",
     "max_stay_days": 90,
-    "notes": "V1: visa-free for tourism/non-work stays; visa required for certain gainful occupations.",
+    "notes": "Visa-free for tourism/other non-work stays of up to 90 days in any 180-day period. A visa is required, regardless of stay length, for work in construction, hotels/catering, cleaning, security, or escort services - and for any other paid work exceeding 8 days per calendar year. Stays beyond 90 days need a Swiss residence permit regardless of purpose.",
     "source_url": "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/bfm-anh01-liste1-e.pdf",
     "source_official": true
    },
@@ -513,7 +513,7 @@
     "nationality": "Peru",
     "iso3": "PER",
     "max_stay_days": 90,
-    "notes": "V1: visa-free for tourism/non-work stays; visa required for certain gainful occupations.",
+    "notes": "Visa-free for tourism/other non-work stays of up to 90 days in any 180-day period. A visa is required, regardless of stay length, for work in construction, hotels/catering, cleaning, security, or escort services - and for any other paid work exceeding 8 days per calendar year. Stays beyond 90 days need a Swiss residence permit regardless of purpose.",
     "source_url": "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/bfm-anh01-liste1-e.pdf",
     "source_official": true
    },
@@ -729,7 +729,7 @@
     "nationality": "Uruguay",
     "iso3": "URY",
     "max_stay_days": 90,
-    "notes": "V1: visa-free for tourism/non-work stays; visa required for certain gainful occupations.",
+    "notes": "Visa-free for tourism/other non-work stays of up to 90 days in any 180-day period. A visa is required, regardless of stay length, for work in construction, hotels/catering, cleaning, security, or escort services - and for any other paid work exceeding 8 days per calendar year. Stays beyond 90 days need a Swiss residence permit regardless of purpose.",
     "source_url": "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/bfm-anh01-liste1-e.pdf",
     "source_official": true
    },
@@ -1962,7 +1962,8 @@
    "Verified: all diplomatic/service/official passport agreement dates and passport types confirmed against live sem.admin.ch/sem/en/home/international-rueckkehr/ch-migrationsaussenpolitik/abkommen/visumbefreiung-dipl.html.",
    "Verified: cbi.has_program=false confirmed - Switzerland has no CBI program.",
    "Verified: rbi lump-sum tax program confirmed from efd.admin.ch; 5 cantons (Zurich, Basel-Stadt, Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden) have abolished it; minimum federal tax base figure (CHF 434,700) not re-confirmed from live page - retained with gap flag.",
-   "Verified: ordinary naturalization requires 10 years residence + C permit - confirmed from sem.admin.ch/sem/en/home/integration-einbuergerung/schweizer-werden/ordentlich.html."
+   "Verified: ordinary naturalization requires 10 years residence + C permit - confirmed from sem.admin.ch/sem/en/home/integration-einbuergerung/schweizer-werden/ordentlich.html.",
+   "ENRICHED 2026-07-17: Argentina, Brazil, Chile, Paraguay, Peru, Uruguay confirmed via SEM Annex CH-1 List 1 (version 3 April 2026) to share the identical V1 footnote already verified for Colombia - replaced the vague 'certain gainful occupations' phrasing with the precise occupation list + 8-day/year threshold. The other 31 entries sharing the old phrasing were not individually re-verified and are left as-is (accurate, less precise)."
   ],
   "gaps": [
    "Exact federal minimum lump-sum tax base (CHF 434,700 cited as 2025 figure) not confirmed from the live efd.admin.ch page during this validation; EFD page did not display the numeric figure explicitly. Recommend direct check of Art. 14 para. 2 DBG (Swiss Federal Direct Tax Act).",

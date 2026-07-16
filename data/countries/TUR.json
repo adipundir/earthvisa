@@ -97,7 +97,7 @@
     "nationality": "Bosnia-Herzegovina",
     "iso3": "BIH",
     "max_stay_days": 90,
-    "notes": "90 days within 180-day period, ordinary passport",
+    "notes": "90 days within 180-day period; applies to ordinary passport holders AND official passports (Turkey's MFA defines this term to include diplomatic, service, special and official passports) - all Bosnia and Herzegovina passport types are visa-exempt.",
     "source_url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
     "source_official": true
    },
@@ -2380,7 +2380,8 @@
    "[2026-06-29] CONFIRMED Turkmenistan (TKM) correctly absent from visa_free: visa exemption cancelled September 14, 2022; sticker visa required.",
    "[2026-06-29] CONFIRMED Syria (SYR) correctly absent from visa_free: sticker visa required.",
    "[2026-06-29] NOTE: evisa.gov.tr e-visa eligible list included Croatia, Estonia, Latvia, Lithuania - these are all correctly in visa_free in this record; the evisa.gov.tr page appears to be outdated/legacy for those EU member states. Classification maintained as visa_free.",
-   "[2026-06-29] mfa.gov.tr main page returned socket error during this run; could not directly re-fetch. North Macedonia and Uzbekistan additions sourced from Wikipedia (not official); flagged in gaps."
+   "[2026-06-29] mfa.gov.tr main page returned socket error during this run; could not directly re-fetch. North Macedonia and Uzbekistan additions sourced from Wikipedia (not official); flagged in gaps.",
+   "CORRECTED 2026-07-17: notes wrongly scoped the exemption to 'ordinary passport' only. Turkey's MFA visa page explicitly extends the exemption to official passports too (its own glossary: official = diplomatic, service, special, official) for Bosnia and Herzegovina specifically - unlike some other nationalities on the same page (e.g. UK, where BN(O)/British Subject holders genuinely do need a different process), Bosnia has no such carve-out. Verified against mfa.gov.tr 17 Jul 2026."
   ],
   "gaps": [
    "Exact processing time for citizenship by investment not stated on official invest.gov.tr page",
