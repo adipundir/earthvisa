@@ -678,13 +678,13 @@
    "max_stay_days": 4,
    "validity_days": null,
    "entries": "single",
-   "fee_usd": null,
+   "fee_usd": 48,
    "processing_days_min": null,
    "processing_days_max": null,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.gov.cv/en/pedir-visto",
-   "notes": "Stay limited to 4 days; extendable once. Available via the consular portal at portalconsular.mnec.gov.cv. Transit passengers remaining airside (without clearing immigration) do not need a transit visa."
+   "notes": "Stay limited to 4 days; extendable once. Available via the consular portal at portalconsular.mnec.gov.cv. Transit passengers remaining airside (without clearing immigration) do not need a transit visa. 2026-07-17 UPDATE: gov.cv/en/pedir-visto now publishes a flat visa fee - 'The cost of the visa for Cabo Verde is 4,898 CVE' - shown in the same cost/validity table that lists Transit alongside Courtesy, Diplomatic, Official, Tourism, and Temporary (ordinary/multiple-entry) visas. 4,898 CVE is approx. 44.4 EUR at the fixed 110.265 CVE/EUR peg, approx. 48 USD (approximate conversion, not an official USD figure)."
   },
   {
    "category": "diplomatic",
@@ -693,13 +693,13 @@
    "max_stay_days": 30,
    "validity_days": 90,
    "entries": "multiple",
-   "fee_usd": null,
+   "fee_usd": 48,
    "processing_days_min": null,
    "processing_days_max": null,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.gov.cv/en/pedir-visto",
-   "notes": "Must be used within 90 days of issuance. Allows stays of up to 30 days per entry with multiple entries possible during the 90-day validity window. Holders of diplomatic and service passports of any country are generally exempt from prior visa requirements per Despacho n.º 244/GMAI/2025."
+   "notes": "Must be used within 90 days of issuance. Allows stays of up to 30 days per entry with multiple entries possible during the 90-day validity window. Holders of diplomatic and service passports of any country are generally exempt from prior visa requirements per Despacho n.º 244/GMAI/2025, so this formal visa category mainly applies to invited guests/courtesy cases without a blanket exemption. 2026-07-17 UPDATE: gov.cv/en/pedir-visto's cost table lists 'Diplomatic', 'Official' and 'Courtesy' as rows under the same flat fee statement - 'The cost of the visa for Cabo Verde is 4,898 CVE' (approx. 44.4 EUR at the fixed 110.265 CVE/EUR peg, approx. 48 USD; approximate conversion, not an official USD figure)."
   },
   {
    "category": "tourist",
@@ -708,13 +708,13 @@
    "max_stay_days": 90,
    "validity_days": 60,
    "entries": "single",
-   "fee_usd": null,
+   "fee_usd": 48,
    "processing_days_min": null,
    "processing_days_max": null,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.gov.cv/en/pedir-visto",
-   "notes": "Must be used within 60 days of issuance. Allows a stay of up to 90 days, extendable once for an additional 90 days. Application via portalconsular.mnec.gov.cv. All travellers must also pre-register via ease.gov.cv and pay the Airport Security Fee (TSA: approx CVE 3,400 / EUR 30.83 for international arrivals)."
+   "notes": "Must be used within 60 days of issuance. Allows a stay of up to 90 days, extendable once for an additional 90 days. Application via portalconsular.mnec.gov.cv. All travellers must also pre-register via ease.gov.cv and pay the Airport Security Fee (TSA: approx CVE 3,400 / EUR 30.83 for international arrivals). 2026-07-17 UPDATE: gov.cv/en/pedir-visto's cost table confirms Tourism at a flat fee of 4,898 CVE (approx. 44.4 EUR at the fixed 110.265 CVE/EUR peg, approx. 48 USD; approximate conversion, separate from the EASE TSA fee)."
   },
   {
    "category": "business",
@@ -722,14 +722,14 @@
    "purpose": "For business missions, short-term commercial activities, and professional engagements in Cabo Verde.",
    "max_stay_days": 180,
    "validity_days": 180,
-   "entries": "multiple",
-   "fee_usd": null,
+   "entries": "single",
+   "fee_usd": 48,
    "processing_days_min": null,
    "processing_days_max": null,
    "online": true,
    "on_arrival": false,
-   "official_url": "https://www.gov.cv/en/pedir-visto",
-   "notes": "Sub-category of the Visto Temporário. Single-entry variant permits stays up to 180 days. Multiple-entry variant allows a total of 90 days within one year. Also covers short-term professional/technical activities. Application via portalconsular.mnec.gov.cv."
+   "official_url": "https://portalconsular.mnec.gov.cv/en/vistos",
+   "notes": "Sub-category of the Visto Temporário (ordinary/single-entry variant). Per portalconsular.mnec.gov.cv/en/vistos: 'The ordinary one allows a stay of 180 days and the multiple entry permit allows the holder to have more than one entry and a total stay of 90 days, for one year from the date of issuance.' 2026-07-17 CORRECTION: 'entries' corrected from 'multiple' to 'single' to match the 180-day max stay, which per the official text belongs to the ordinary (single-entry) variant - the 90-day/1-year multiple-entry variant is a distinct option (see the Family Visit entry, which correctly models the multiple-entry case). Also covers short-term professional/technical activities. Application via portalconsular.mnec.gov.cv. FEE UPDATE: gov.cv/en/pedir-visto's cost table lists 'Ordinary temporary' at a flat fee of 4,898 CVE (approx. 44.4 EUR at the fixed 110.265 CVE/EUR peg, approx. 48 USD; approximate conversion)."
   },
   {
    "category": "other",
@@ -738,13 +738,13 @@
    "max_stay_days": 180,
    "validity_days": 180,
    "entries": "single",
-   "fee_usd": null,
+   "fee_usd": 48,
    "processing_days_min": null,
    "processing_days_max": null,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.gov.cv/en/pedir-visto",
-   "notes": "Sub-category of the Visto Temporário. Must be used within 180 days of issuance. Multiple-entry variant allows 90 days total over one year. Application via portalconsular.mnec.gov.cv."
+   "notes": "Sub-category of the Visto Temporário. Must be used within 180 days of issuance. Multiple-entry variant allows 90 days total over one year. Application via portalconsular.mnec.gov.cv. 2026-07-17 UPDATE: gov.cv/en/pedir-visto's cost table lists 'Ordinary temporary' at a flat fee of 4,898 CVE (approx. 44.4 EUR at the fixed 110.265 CVE/EUR peg, approx. 48 USD; approximate conversion)."
   },
   {
    "category": "medical",
@@ -753,13 +753,13 @@
    "max_stay_days": 180,
    "validity_days": 180,
    "entries": "single",
-   "fee_usd": null,
+   "fee_usd": 48,
    "processing_days_min": null,
    "processing_days_max": null,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.gov.cv/en/pedir-visto",
-   "notes": "Sub-category of the Visto Temporário. Must be used within 180 days of issuance. Application via portalconsular.mnec.gov.cv."
+   "notes": "Sub-category of the Visto Temporário. Must be used within 180 days of issuance. Application via portalconsular.mnec.gov.cv. 2026-07-17 UPDATE: gov.cv/en/pedir-visto's cost table lists 'Ordinary temporary' at a flat fee of 4,898 CVE (approx. 44.4 EUR at the fixed 110.265 CVE/EUR peg, approx. 48 USD; approximate conversion)."
   },
   {
    "category": "family",
@@ -768,13 +768,13 @@
    "max_stay_days": 90,
    "validity_days": 180,
    "entries": "multiple",
-   "fee_usd": null,
+   "fee_usd": 48,
    "processing_days_min": null,
    "processing_days_max": null,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.gov.cv/en/pedir-visto",
-   "notes": "Sub-category of the Visto Temporário. Multiple-entry variant allows 90 days total within one year. Application via portalconsular.mnec.gov.cv."
+   "notes": "Sub-category of the Visto Temporário. Multiple-entry variant allows 90 days total within one year. Application via portalconsular.mnec.gov.cv. 2026-07-17 UPDATE: gov.cv/en/pedir-visto's cost table lists 'Temporary multiple entry' at a flat fee of 4,898 CVE (approx. 44.4 EUR at the fixed 110.265 CVE/EUR peg, approx. 48 USD; approximate conversion)."
   },
   {
    "category": "work",
@@ -783,13 +783,13 @@
    "max_stay_days": 180,
    "validity_days": 180,
    "entries": "single",
-   "fee_usd": null,
+   "fee_usd": 48,
    "processing_days_min": null,
    "processing_days_max": null,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.gov.cv/en/pedir-visto",
-   "notes": "Sub-category of the Visto Temporário, distinct from the permanent-employment Visto de Residência - Trabalho. Per the Alta Autoridade para a Imigração (AAI) official page, the Temporary Visa covers cultural trips, business missions, professional activities, artistic/sports work, technical positions, teaching roles and qualified work not exceeding one year. Single-entry variant permits stays up to 180 days; multiple-entry variant allows 90 days total within one year. Must be used within 180 days of issuance. Application via portalconsular.mnec.gov.cv; also described at aai.gov.cv/imigrantes/entrada-permanencia-e-saida-de-cabo-verde/vistos."
+   "notes": "Sub-category of the Visto Temporário, distinct from the permanent-employment Visto de Residência - Trabalho. Per the Alta Autoridade para a Imigração (AAI) official page, the Temporary Visa covers cultural trips, business missions, professional activities, artistic/sports work, technical positions, teaching roles and qualified work not exceeding one year. Single-entry variant permits stays up to 180 days; multiple-entry variant allows 90 days total within one year. Must be used within 180 days of issuance. Application via portalconsular.mnec.gov.cv; also described at aai.gov.cv/imigrantes/entrada-permanencia-e-saida-de-cabo-verde/vistos. 2026-07-17 UPDATE: gov.cv/en/pedir-visto's cost table lists 'Ordinary temporary' at a flat fee of 4,898 CVE (approx. 44.4 EUR at the fixed 110.265 CVE/EUR peg, approx. 48 USD; approximate conversion)."
   },
   {
    "category": "work",

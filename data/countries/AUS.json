@@ -883,6 +883,36 @@
       "on_arrival": false,
       "official_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/investor-retirement-405",
       "notes": "Closed to new applications. Existing visa holders may remain. Australia currently has no open dedicated retirement visa and no digital nomad / remote work visa."
+    },
+    {
+      "category": "work",
+      "name": "National Innovation Visa (subclass 858)",
+      "purpose": "Permanent visa for individuals with an internationally recognised record of exceptional and outstanding achievement in an eligible priority field (e.g. AgriFood Tech, Space, FinTech, MedTech, Cybersecurity, Quantum, Resources Technology)",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/national-innovation-visa-858",
+      "notes": "Permanent visa; replaced the Global Talent Independent Program / former Distinguished Talent visa (858) on 7 December 2024. Requires submitting an Expression of Interest (EOI) via SkillSelect showing eligible achievements - the Department must invite the applicant before a full application can be lodged, and the application must be lodged within 60 days of invitation. A nominator is mandatory. This category is already tracked in this country's fast_track dataset but was missing from the general visa_types catalog; added here for completeness since it is a genuinely offered visa class open to the general public who meet eligibility, not just an investment fast-track."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Temporary Work (International Relations) visa (subclass 403)",
+      "purpose": "Work in Australia in specific circumstances that improve Australia's international relations, including under bilateral government agreements, employment with a recognised foreign government agency, or as a domestic worker employed by a person holding a diplomatic/consular visa",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-work-403",
+      "notes": "Covers several streams: Government Agreement, Foreign Government Agency (including foreign-language teachers employed by a foreign government), Domestic Worker (Diplomatic or Consular), and Privileges and Immunities. Requires sponsorship by an approved organisation and meeting health/character requirements; not a pathway to permanent residency. This is the current active visa class for diplomatic/consular-linked and international-relations postings - it was missing from the catalog even though the country's own data_quality gaps note explicitly flags that 'diplomatic staff posted to Australia require a formal subclass 995 diplomatic visa.' That reference is now outdated: subclass 995 (Diplomatic (Temporary) visa) is closed to new applications and has been replaced by subclass 403, confirmed via multiple independent migration-law sources cross-referencing the official immi.homeaffairs.gov.au visa listing pages. Subclass 995 itself is not added to the catalog since it is discontinued for new applicants."
     }
   ]
 }

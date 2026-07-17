@@ -184,9 +184,9 @@
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
-      "on_arrival": true,
+      "on_arrival": false,
       "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Renewable once. Status change prohibited. Work not permitted during visit."
+      "notes": "Renewable once. Status change not allowed. Work not permitted during visit. Corrected: the official visitors-visa page's V6 tab states applications are made 'at the office of a diplomatic mission of Rwanda... at immigration and emigration office or at any other place as may be determined by the Directorate General' — it does NOT list border-post/arrival issuance the way most other visitor visas (V1, V2, V3-1, V5, V7, V11) explicitly do, so on_arrival is corrected from true to false."
     },
     {
       "category": "business",
@@ -199,9 +199,9 @@
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
-      "on_arrival": true,
+      "on_arrival": false,
       "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Renewable once. Status change prohibited. Work not permitted during visit."
+      "notes": "Renewable once. Status change not allowed. Work not permitted during visit. Corrected: the official visitors-visa page's V6 tab states applications are made 'at the office of a diplomatic mission of Rwanda... at immigration and emigration office or at any other place as may be determined by the Directorate General' — it does NOT list border-post/arrival issuance the way most other visitor visas (V1, V2, V3-1, V5, V7, V11) explicitly do, so on_arrival is corrected from true to false."
     },
     {
       "category": "business",
@@ -244,9 +244,9 @@
       "processing_days_min": null,
       "processing_days_max": null,
       "online": true,
-      "on_arrival": true,
+      "on_arrival": false,
       "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Available only to skilled workers on the official Occupations on Demand List (ODL). Multiple entries. Status change to work permit (H1) is allowed after finding employment. Work prohibited during the job-search period."
+      "notes": "Available only to skilled workers on the official Occupations on Demand List (ODL). Multiple entries. Status change to work permit (H1) is allowed after finding employment. Work prohibited during the job-search period. Corrected: the official visitors-visa page's V4 tab states applications are made 'at the Directorate General of Immigration and Emigration, at the office of a diplomatic mission... or at any other place as may be determined by the Directorate General' — unlike most other visitor visas it does NOT mention border-post/arrival issuance, so on_arrival is corrected from true to false."
     },
     {
       "category": "other",
@@ -303,10 +303,10 @@
       "fee_usd": 0,
       "processing_days_min": null,
       "processing_days_max": null,
-      "online": false,
+      "online": true,
       "on_arrival": true,
       "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Free of charge. Issued to non-accredited government officials on an official mission. Status change prohibited. Work not permitted beyond the scope of the official visit."
+      "notes": "Free of charge. Issued to non-accredited government officials on an official mission. Status change prohibited. Work not permitted beyond the scope of the official visit. Corrected: the official visitors-visa page's V3-1 tab explicitly states it is 'Issued upon arrival at the border post, online, at immigration and emigration office, at the office of a diplomatic mission...' — so online is corrected from false to true (on_arrival was already correctly true)."
     },
     {
       "category": "diplomatic",
@@ -433,15 +433,15 @@
       "name": "Person with Assured Income Permit (K Permit)",
       "purpose": "Residence permit for retired persons and others with a guaranteed passive income who do not intend to be employed in Rwanda.",
       "max_stay_days": null,
-      "validity_days": null,
+      "validity_days": 730,
       "entries": "multiple",
-      "fee_usd": null,
+      "fee_usd": 105,
       "processing_days_min": null,
       "processing_days_max": null,
-      "online": false,
+      "online": true,
       "on_arrival": false,
-      "official_url": "https://businessprocedures.rdb.rw/procedure/138?l=en",
-      "notes": "Minimum age: 55 years. Minimum income requirement: USD 5,000 per month. This is a resident permit, not a visa; applicants must apply in-country after entering Rwanda. Work in Rwanda not permitted."
+      "official_url": "https://www.migration.gov.rw/our-services/permit/other-permits",
+      "notes": "Updated with newly-found detail on the Directorate General of Immigration and Emigration's own 'Other Permits' page (permit code K, 'Person with assured income, including a retired person who doesn't intend to be employed in Rwanda'): fee 150,000 RWF (approx USD 105), validity up to 2 years (renewable), online application available. Requirements: CV, police clearance, retirement certificate, Rwanda bank statement, application letter, and local medical insurance. This remains a resident permit, not a visa; applicants apply after entering Rwanda; work in Rwanda not permitted. The minimum-age-55 and minimum-income-USD-5,000/month thresholds previously cited from the RDB business-procedures page (https://businessprocedures.rdb.rw/procedure/138?l=en) are not restated on the current migration.gov.rw page but are presumed to still apply pending direct confirmation."
     },
     {
       "category": "investment",
@@ -712,6 +712,21 @@
       "on_arrival": false,
       "official_url": "https://www.migration.gov.rw/our-services/permit/dependant",
       "notes": "M1 (dependent of a Rwandan) and M3 (close relative of a permanent resident) are valid 3 years; M2 (dependent of a temporary resident) matches the principal's validity. Fee is 50% (half) of the fee paid by the principal applicant. Requires an application letter, marriage/birth/adoption certificate and police clearance (18+). M2 dependents also submit a copy of the principal's identity card."
+    },
+    {
+      "category": "other",
+      "name": "Visitor's Pass – Other Regional Bloc Citizens (VP-2)",
+      "purpose": "Entry pass for nationals of a regional organization or community (other than the East African Community) that has a reciprocal free-visa arrangement with Rwanda.",
+      "max_stay_days": 180,
+      "validity_days": 180,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": true,
+      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+      "notes": "Listed as a distinct category (VP-2) alongside the EAC Visitor's Pass (VP-1) on the official visitors-visa page's own visa-code menu and requirement tabs — it was previously missing from this catalog, which only had VP-1. Official text: 'issued to a national of a country member of a regional organization or community with free visa other than the East African Community citizens... issued at entry point or embassy... Single entry... Work is not permitted... Change of status is allowed... may be extended in exceptional circumstances.' Fee: 'agreed upon at community or organizational level' (reciprocal, no fixed published USD amount — hence fee_usd is null here). Validity: up to six months."
     }
   ],
   "visa_policy": {

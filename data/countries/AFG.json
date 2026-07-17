@@ -387,6 +387,21 @@
    "on_arrival": false,
    "official_url": "https://mfa.gov.af/en/types-of-visa",
    "notes": "Typically exempt from fees. Processed through the Deputy of Foreigners Visas at MFA which handles issuance/extension of visas to Diplomatic and International Organizations. Distinct from Service Visa which covers service passport holders."
+  },
+  {
+   "category": "other",
+   "name": "Exit Visa",
+   "purpose": "Issued to foreign nationals already in Afghanistan who were unable to extend their visa while in-country, for reasons such as imprisonment in Afghanistan, a judicial or legal order lifting a travel ban, or other legitimate and justified reasons, permitting them to depart the country.",
+   "max_stay_days": 6,
+   "validity_days": 6,
+   "entries": "single",
+   "fee_usd": 50,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://mfa.gov.af/en/exit-visa",
+   "notes": "USD 50 fee, 6-day validity. Confirmed on a dedicated official MFA page (previously this page did not resolve/was undocumented - the existing dataset's 'gaps' list flagged Exit Visa as listed on the types-of-visa index with no dedicated page found; that page now exists and is live). Distinct from Residence/Entry visas - it is specifically an exit-permitting document for foreigners who overstayed or were barred from leaving pending legal resolution. Entries assumed single (one-time exit document); not explicitly stated on the source page."
   }
  ],
  "conditional_access": [

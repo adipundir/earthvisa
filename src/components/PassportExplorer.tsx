@@ -730,21 +730,16 @@ const CATEGORY_LABEL: Record<string, string> = {
   digital_nomad: "Digital Nomad",
   family: "Family",
   investment: "Investment",
+  diplomatic: "Diplomatic",
+  humanitarian: "Humanitarian",
+  residence: "Residence",
+  other: "Other",
 };
 
-const CATEGORY_COLOR: Record<string, string> = {
-  tourist: "text-vfree bg-vfree/10 ring-vfree/30",
-  business: "text-bloc bg-bloc/10 ring-bloc/30",
-  student: "text-eta bg-eta/10 ring-eta/30",
-  work: "text-stamp bg-stamp/10 ring-stamp/30",
-  transit: "text-ink-soft bg-paper-3/60 ring-line-strong",
-  medical: "text-voa bg-voa/10 ring-voa/30",
-  retirement: "text-voa bg-voa/10 ring-voa/30",
-  working_holiday: "text-vfree bg-vfree/10 ring-vfree/30",
-  digital_nomad: "text-bloc bg-bloc/10 ring-bloc/30",
-  family: "text-stamp bg-stamp/10 ring-stamp/30",
-  investment: "text-voa bg-voa/10 ring-voa/30",
-};
+// One neutral chip style for every category - see DestinationExplorer.tsx for
+// why (category is a type label, not a status signal, and the old per-category
+// map had silently collapsed into near-duplicate colors anyway).
+const CATEGORY_CHIP = "text-ink-soft bg-paper-3/60 ring-line-strong";
 
 function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
@@ -774,7 +769,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
         {filtered.map((v, i) => (
           <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
             <div className="flex flex-wrap items-start gap-2">
-              <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_COLOR[v.category] ?? "text-ink-soft bg-paper-3 ring-line"}`}>
+              <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_CHIP}`}>
                 {CATEGORY_LABEL[v.category] ?? v.category}
               </span>
               <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>

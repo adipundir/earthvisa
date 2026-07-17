@@ -1466,14 +1466,29 @@
       "purpose": "Allows a bona fide visitor already admitted at a port of entry to extend their permitted stay beyond the period stamped on arrival.",
       "max_stay_days": 90,
       "validity_days": null,
-      "entries": null,
-      "fee_usd": null,
+      "entries": "single",
+      "fee_usd": 300,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://immigration.gov.ag/frequently-asked-questions/extentions-faqs/",
-      "notes": "Granted by the Immigration Department's Extensions Unit under the Immigration and Passport Act 2014. Application must be made in person (children included) at least one week before the current permit expires. Under the Act the maximum single extension is 90 days; the general Entry Requirements page separately describes further extensions 'not exceeding six months' at the Chief Immigration Officer's discretion. Requirements: passport valid 6+ months, completed extension form (available online), a sponsorship form, a valid return/onward ticket, and proof of medical insurance. There is no unqualified right to an extension, and a visitor cannot work on an entry permit or extension - a separate work permit is required."
+      "official_url": "https://immigration.gov.ag/fees/extention-fees/",
+      "notes": "Granted by the Immigration Department's Extensions Unit under the Immigration and Passport Act 2014. Application must be made in person (children included) at least one week before the current permit expires. Under the Act the maximum single extension is 90 days; the general Entry Requirements page separately describes further extensions 'not exceeding six months' at the Chief Immigration Officer's discretion. Requirements: passport valid 6+ months, completed extension form (available online), a sponsorship form, a valid return/onward ticket, and proof of medical insurance. There is no unqualified right to an extension, and a visitor cannot work on an entry permit or extension - a separate work permit is required. Extension of Stay application FEE confirmed via immigration.gov.ag/fees/extention-fees/: US$300.00 (or EC$ equivalent) for Non-CARICOM nationals, US$150.00 for CARICOM nationals; fee_usd here reflects the Non-CARICOM/general rate (previously null). Note: direct WebFetch of immigration.gov.ag pages returned TLS/SSL certificate errors on 2026-07-17 (a persistent, previously documented issue); this fee figure was obtained via search-engine content retrieval quoting the official page rather than a direct successful fetch, so re-verification once the site's SSL is fixed is advisable."
+    },
+    {
+      "category": "business",
+      "name": "Multiple-Entry Visa",
+      "purpose": "Allows a foreign national who is not visa-exempt to make repeated entries into Antigua and Barbuda over an extended period (e.g. for recurring business travel or frequent family visits) instead of being limited to a single visit under the standard eVisa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://immigration.gov.ag/visa-services/general-visa-information/",
+      "notes": "Official page (General Visa Information) states: 'Multiple-entry visas are available, and may be issued for multiple entries over a period of twelve months or twenty-four months at the discretion of the visa issuing officer.' Validity is therefore either 365 or 730 days depending on the issuing officer's decision, not a fixed term - left null here since it varies. Fee and per-visit maximum stay are not stated on the page content retrievable via search; the dedicated Visa Fees page (immigration.gov.ag/fees/visa-fees/) likely has the exact fee schedule but could not be directly verified - immigration.gov.ag returned persistent TLS/SSL certificate verification errors on direct fetch attempts (2026-07-17), consistent with prior sessions' documented gap. This entry is confirmed via an official-domain page whose content was retrieved through search-engine caching rather than a direct successful fetch; treat fee/validity specifics as needing re-confirmation once the SSL issue is resolved."
     }
   ],
   "sources_checked": [

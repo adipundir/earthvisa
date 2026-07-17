@@ -102,7 +102,7 @@ export interface CountrySummary {
 }
 
 export interface VisaType {
-  category: "tourist" | "business" | "student" | "work" | "transit" | "medical" | "retirement" | "working_holiday" | "digital_nomad" | "family" | "investment";
+  category: "tourist" | "business" | "student" | "work" | "transit" | "medical" | "retirement" | "working_holiday" | "digital_nomad" | "family" | "investment" | "diplomatic" | "humanitarian" | "residence" | "other";
   name: string;
   purpose: string;
   max_stay_days: number | null;

@@ -53,14 +53,14 @@
       "purpose": "For foreign nationals visiting Kiribati. The official Visitor Visa application form covers five sub-types selectable on the form: Tourist (or visiting family/friends), Guardian (of a student or work visa holder), Business visitor, Dependent child (of a Kiribati citizen, resident, work or student visa holder), and Limited purpose/event. Governed by the Kiribati Immigration Act 2019 and Immigration Procedure 2020.",
       "max_stay_days": null,
       "validity_days": null,
-      "entries": null,
-      "fee_usd": null,
+      "entries": "single",
+      "fee_usd": 40,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
       "official_url": "https://www.mfa.gov.ki/wp-content/uploads/2020/11/Visitor-Visa-FINAL.pdf",
-      "notes": "Nationals not covered by the Visa Exemption Order 2023 must apply. Fees are not published: the official form states 'Appropriate fee' and directs applicants to contact visaofficer@mfa.gov.ki for payment (fees payable in Australian dollars, Kiribati's currency). Applications lodged by email to visaofficer@mfa.gov.ki or in person at the Immigration Office in Bairiki, Tarawa, or the Kiritimati (London) branch. official_url verified as the live Visitor Visa application form (HTTP 200) 2026-07."
+      "notes": "Nationals not covered by the Visa Exemption Order 2023 must apply. The mfa.gov.ki application form itself only states 'Appropriate fee' and directs applicants to contact visaofficer@mfa.gov.ki for the payment amount. However, the official Kiribati National Tourism Office (kiribatitourism.gov.ki/entry-requirements-visa-info, a .gov.ki government domain) separately publishes the actual fee schedule: AUD $40 per person for Single Entry (reflected here), AUD $80 per person for Multiple Entry (see 'Visitor Visa (Multiple Entry)' entry). Fees payable in Australian dollars, Kiribati's currency. Applications lodged by email to visaofficer@mfa.gov.ki or in person at the Immigration Office in Bairiki, Tarawa, or the Kiritimati (London) branch. official_url verified as the live Visitor Visa application form (HTTP 200) 2026-07; fee figures sourced separately from kiribatitourism.gov.ki (verified 2026-07-17)."
     },
     {
       "category": "business",
@@ -271,6 +271,21 @@
       "on_arrival": false,
       "official_url": "https://www.mfa.gov.ki/wp-content/uploads/2020/11/Medical-form-FINAL.pdf",
       "notes": "The Medical Form is a supporting document, not a standalone visa. It is used alongside other visa applications requiring health declarations. official_url updated to the direct Medical Form PDF (verified HTTP 200 2026-07); previously pointed to the general mfa.gov.ki/visa/ index."
+    },
+    {
+      "category": "tourist",
+      "name": "Visitor Visa (Multiple Entry)",
+      "purpose": "For foreign nationals (not covered by the Visa Exemption Order 2023) who require multiple entries into Kiribati during the visa's validity, rather than a single visit — e.g. repeat tourism, family, or business trips. Same underlying Visitor Visa application as the single-entry option; the entry-count tier is selected/priced separately.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 80,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://kiribatitourism.gov.ki/entry-requirements-visa-info",
+      "notes": "Sourced from the official Kiribati National Tourism Office (kiribatitourism.gov.ki, a .gov.ki government domain), which publishes a fee schedule that the Ministry of Foreign Affairs & Immigration's own Visitor Visa form (mfa.gov.ki) does not: AUD $40 per person for Single Entry, AUD $80 per person for Multiple Entry. Applied for via the same Visitor Visa mechanism (mfa.gov.ki/wp-content/uploads/2020/11/Visitor-Visa-FINAL.pdf; email visaofficer@mfa.gov.ki). Work permits and stay extensions carry separate fees not covered by this figure. Processing time, validity period and max stay are not stated on the source page. Verified 2026-07-17."
     }
   ],
   "conditional_access": [],

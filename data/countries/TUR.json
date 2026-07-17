@@ -1099,7 +1099,7 @@
   {
    "category": "investment",
    "name": "Turkish Citizenship by Investment",
-   "purpose": "Citizenship via real estate or capital investment",
+   "purpose": "Citizenship via real estate, capital, bank deposit, government bond investment, or employment creation",
    "max_stay_days": null,
    "validity_days": null,
    "entries": "multiple",
@@ -1108,8 +1108,8 @@
    "processing_days_max": 180,
    "online": false,
    "on_arrival": false,
-   "official_url": "https://www.goc.gov.tr/citizenship-by-investment",
-   "notes": "Routes: (1) Real estate investment USD 400,000+ (held 3 years); (2) Capital investment USD 500,000+ in Turkish company or government bonds; (3) Employment creation (50+ employees). Citizenship granted directly - no residency period required. Application filed with General Directorate of Migration Management. Citizenship confers Turkish passport and full rights. Dual citizenship permitted."
+   "official_url": "https://www.invest.gov.tr/en/investmentguide/pages/acquiring-property-and-citizenship.aspx",
+   "notes": "Routes confirmed via the Investment Office of the Presidency (invest.gov.tr): (1) Real estate investment USD 400,000+, with a title deed restriction on resale for at least 3 years; (2) Fixed capital investment USD 500,000+; (3) Bank deposit USD 500,000+ in a Turkish bank, not withdrawn for at least 3 years; (4) Government bonds USD 500,000+, not sold for at least 3 years; (5) Employment creation for at least 50 people. Citizenship is subject to the decision of the President of the Republic of Türkiye after meeting a qualifying criterion. Application filed with the Presidency of Migration Management (Göç İdaresi Başkanlığı, 250+ office locations). Citizenship confers a Turkish passport and full rights; dual citizenship is permitted. Previous official_url (goc.gov.tr/citizenship-by-investment) returned 404 as of July 2026 and has been replaced with the Investment Office's official program page."
   },
   {
    "category": "business",
@@ -1200,6 +1200,21 @@
    "on_arrival": false,
    "official_url": "https://www.csgb.gov.tr/uigm/en/turquoise-card/",
    "notes": "Issued by the Ministry of Labour and Social Security (International Labour Force Directorate) to qualified foreigners, investors, scientists, and cultural figures. Confers rights equivalent to an indefinite (permanent) work permit. Issued with a 3-year transition period that becomes indefinite on application before expiry (extension requests within 180 days of expiry). Spouse and dependent children receive documents serving as residence permits. Distinct from the standard employer-tied work permit."
+  },
+  {
+   "category": "diplomatic",
+   "name": "Official Visa (Duty Assignment / Courier)",
+   "purpose": "Official duty assignments and diplomatic courier services for holders of diplomatic, service, special, and official passports",
+   "max_stay_days": null,
+   "validity_days": 180,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://www.mfa.gov.tr/general-information-about-turkish-visas.en.mfa",
+   "notes": "Listed by Türkiye's MFA as a distinct 'Official Visas' purpose category (duty assignment, courier service), alongside the Tourist/Businessperson, Student, Work, and Other visa categories. Holders of diplomatic, service, special and official passports apply for this purpose through the same official visa pre-application system used for ordinary sticker visas (visa.gov.tr / konsolosluk.gov.tr). Fee, entries and validity vary by nationality and by any bilateral exemption/reciprocity agreement; many diplomatic/service passport holders are visa-exempt or fee-exempt under separate bilateral arrangements reflected in Türkiye's visa-free policy list."
   }
  ],
  "conditional_access": [

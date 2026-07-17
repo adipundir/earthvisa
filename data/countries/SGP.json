@@ -534,8 +534,8 @@
    "processing_days_max": 14,
    "online": true,
    "on_arrival": false,
-   "official_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa-information",
-   "notes": "Required only for visa-required nationalities; most nationalities are visa-exempt and receive a 30- or 90-day Visit Pass on arrival. The same entry visa covers both social and business visits. Single-journey visa fee is S$30 (about US$22). Apply online via the ICA e-Service or through a local contact/authorised visa agent."
+   "official_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+   "notes": "Required only for visa-required nationalities; most nationalities are visa-exempt and receive a 30- or 90-day Visit Pass on arrival. The same entry visa covers both social and business visits. Single-journey visa fee is S$30 (about US$22), non-refundable, payable online by Visa/Mastercard. Apply online via the ICA e-Service or through a local contact/authorised visa agent/Singapore Overseas Mission. (Prior official_url returned a 404; updated to the live ICA 'Check if You Need an Entry Visa' page.)"
   },
   {
    "category": "work",
@@ -544,13 +544,13 @@
    "max_stay_days": null,
    "validity_days": 730,
    "entries": "multiple",
-   "fee_usd": 90,
+   "fee_usd": 242,
    "processing_days_min": 10,
    "processing_days_max": 35,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.mom.gov.sg/passes-and-permits/employment-pass",
-   "notes": "Minimum fixed monthly salary of SGD 5,600/month (general sectors, age 23 base), higher for older candidates (up to SGD 10,700/month at age 45+) and for financial services (SGD 6,200/month base, up to SGD 11,800/month at age 45+). Employer applies on behalf of candidate via EP Online. Fee SGD 105."
+   "notes": "Minimum fixed monthly salary of SGD 5,600/month (general sectors, age 23 base), higher for older candidates (up to SGD 10,700/month at age 45+) and for financial services (SGD 6,200/month base, up to SGD 11,800/month at age 45+). Employer applies on behalf of candidate via EP Online. Total government fee is SGD 330: SGD 105 application fee plus SGD 225 issuance fee (an additional SGD 30 Multiple Journey Visa fee applies for candidates from visa-required nationalities). Confirmed on mom.gov.sg/passes-and-permits/employment-pass/apply-for-a-pass; prior figure of SGD 105 only reflected the application fee, omitting the mandatory issuance fee."
   },
   {
    "category": "work",
@@ -559,13 +559,13 @@
    "max_stay_days": null,
    "validity_days": 730,
    "entries": "multiple",
-   "fee_usd": 60,
+   "fee_usd": 150,
    "processing_days_min": 10,
    "processing_days_max": 35,
    "online": true,
    "on_arrival": false,
    "official_url": "https://www.mom.gov.sg/passes-and-permits/s-pass",
-   "notes": "Minimum qualifying salary from 1 September 2025: SGD 3,300/month (general sectors) and SGD 3,800/month (financial services), rising with age up to SGD 4,800 / SGD 5,650 at age 45+. Increases again to SGD 3,600 / SGD 4,000 base for new applications from 1 January 2027. Quota- and levy-based (companies capped at a sector dependency ceiling). Employer applies via EP Online."
+   "notes": "Minimum qualifying salary from 1 September 2025: SGD 3,300/month (general sectors) and SGD 3,800/month (financial services), rising with age up to SGD 4,800 / SGD 5,650 at age 45+. Increases again to SGD 3,600 / SGD 4,000 base for new applications from 1 January 2027. Quota- and levy-based (companies capped at a sector dependency ceiling). Employer applies via EP Online. Total government fee is SGD 205: SGD 105 application fee plus SGD 100 issuance fee, confirmed on mom.gov.sg/passes-and-permits/s-pass/apply-for-a-pass (prior figure understated the total)."
   },
   {
    "category": "student",
@@ -746,6 +746,36 @@
    "on_arrival": true,
    "official_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa-free-transit-facility",
    "notes": "Free 96-hour transit granted at the checkpoint. India nationals and selected PRC travel-document holders must hold a valid visa or long-term pass for Australia, Canada, Germany, Japan, New Zealand, Switzerland, the UK or the USA; nationals of CIS countries, Georgia, Turkmenistan and Ukraine need only a confirmed onward air ticket. No extension allowed."
+  },
+  {
+   "category": "work",
+   "name": "Miscellaneous Work Pass",
+   "purpose": "Short-term work assignments for eligible foreigners such as conference/seminar speakers, religious workers, or journalists",
+   "max_stay_days": 60,
+   "validity_days": 60,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.mom.gov.sg/passes-and-permits/miscellaneous-work-pass",
+   "notes": "For eligible foreigners on short-term work assignments in Singapore not covered by other passes (e.g. speakers at a seminar/conference, religious workers, journalists). Valid up to 60 days and not renewable. No foreign worker levy or quota required; family passes are not available. Employer or a local sponsor must submit the application via the myMOM Portal. Fee not published on the official MOM overview/key-facts pages."
+  },
+  {
+   "category": "work",
+   "name": "Work Permit for Foreign Domestic Worker (FDW)",
+   "purpose": "Migrant domestic workers (MDWs) employed as helpers in private households in Singapore",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.mom.gov.sg/passes-and-permits/work-permit-for-foreign-domestic-worker",
+   "notes": "Distinct pass from the general 'Work Permit (for migrant workers)' entry already in this catalog (which covers construction, manufacturing, marine shipyard, process and services sectors); this permit is specifically for domestic helpers employed directly by private households. Valid up to 2 years depending on the validity of the security bond, and renewable. Employer applies via Work Permit Online (WPOL) before and after the worker's arrival; a security bond and medical insurance for the worker are required, and foreign worker levy applies. Exact fee not published on the official MOM overview page."
   }
  ]
 }

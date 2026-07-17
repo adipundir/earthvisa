@@ -1720,16 +1720,16 @@
       "category": "tourist",
       "name": "Tourist Visa (B12)",
       "purpose": "Short-stay tourism and leisure travel to Kazakhstan. Available both as a standard consular visa and as an electronic visa for eligible nationalities.",
-      "max_stay_days": 30,
-      "validity_days": null,
+      "max_stay_days": 90,
+      "validity_days": 180,
       "entries": "single",
       "fee_usd": 80,
       "processing_days_min": 1,
       "processing_days_max": 5,
       "online": true,
       "on_arrival": false,
-      "official_url": "https://egov.kz/cms/en/articles/rk_visa_obtaining",
-      "notes": "E-visa available to citizens of 109 countries; e-visa entry/exit restricted to international airports in Astana and Almaty. Standard consular processing up to 5 working days; e-visa issued within 30 minutes. Consular fee: USD 80 single-entry. Multiple-entry version costs USD 200 (1 year). An invitation letter from a Kazakh host is required; facilitated processing without an invitation letter available for citizens of 48 developed countries."
+      "official_url": "https://egov.kz/cms/en/articles/for_foreigners/visa_classification",
+      "notes": "CORRECTED: Kazakhstan's official visa classification page (egov.kz) states B12 single-entry visas are issued for up to 90 days and multiple-entry versions for up to 180 days - replacing a previously recorded 30-day/unspecified-validity figure that could not be located on either the classification page or the e-visa application page (egov.kz/rk_visa_obtaining). E-visa channel (via rk_visa_obtaining) remains available to citizens of 109 countries; e-visa entry/exit restricted to international airports in Astana and Almaty; e-visa processed within 30 minutes online vs up to 5 working days for standard consular applications. Consular fee: USD 80 single-entry; USD 200 multiple-entry option. Standard consular applications require an invitation letter from a Kazakh host; facilitated processing without an invitation letter is available to citizens of 48 developed countries."
     },
     {
       "category": "business",
@@ -1795,16 +1795,16 @@
       "category": "other",
       "name": "Residence Permit Acquisition Visa (B8)",
       "purpose": "A transition visa allowing foreign nationals to enter Kazakhstan for the purpose of obtaining a temporary or permanent residence permit.",
-      "max_stay_days": null,
-      "validity_days": null,
+      "max_stay_days": 90,
+      "validity_days": 90,
       "entries": "single",
       "fee_usd": null,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://egov.kz/cms/en/articles/exit-entry_of_foreign_nationals",
-      "notes": "National fee (duty): 7 MCI single-entry (approx. 27,524 KZT at 2025 MCI rate of 3,932 KZT) or 30 MCI multiple-entry (approx. 117,960 KZT). MCI = Monthly Calculation Index set annually by the Government of Kazakhstan."
+      "official_url": "https://egov.kz/cms/en/articles/for_foreigners/visa_classification",
+      "notes": "CORRECTED: Kazakhstan's official visa classification page (egov.kz) states B8 single- and multiple-entry visas are both issued for up to 90 days (previously recorded as unspecified/null in this catalog). National fee (duty) per egov.kz/exit-entry_of_foreign_nationals: 7 MCI single-entry (approx. 27,524 KZT at 2025 MCI rate of 3,932 KZT) or 30 MCI multiple-entry (approx. 117,960 KZT). MCI = Monthly Calculation Index set annually by the Government of Kazakhstan."
     },
     {
       "category": "diplomatic",
@@ -2135,6 +2135,36 @@
       "on_arrival": false,
       "official_url": "https://egov.kz/cms/en/articles/for_foreigners/visa_classification",
       "notes": "Category B4 in Kazakhstan's official visa classification. Single-entry stay up to 90 days; multiple-entry validity up to 1 year. For persons engaged in international road transport."
+    },
+    {
+      "category": "family",
+      "name": "Private Visit Visa for Ethnic Kazakhs (C10)",
+      "purpose": "For ethnic Kazakhs (persons of Kazakh ethnic origin residing abroad) travelling to Kazakhstan on a private/family visit, as distinct from the C1 permanent-repatriation visa for ethnic Kazakhs (kandas).",
+      "max_stay_days": 90,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://egov.kz/cms/en/articles/for_foreigners/visa_classification",
+      "notes": "Category C10 in Kazakhstan's official visa classification - was missing from the catalog. Official page text: issued to ethnic Kazakhs; single-entry visa up to 90 days, multiple-entry visa up to 3 years. Distinct from the B10 general private-visit visa (open to any nationality) and the C1 repatriation visa (permanent settlement / kandas status track)."
+    },
+    {
+      "category": "other",
+      "name": "Minor's Visa (C11)",
+      "purpose": "For foreign nationals under the age of 18 (minors) travelling to Kazakhstan, typically to accompany or join family members resident in the country.",
+      "max_stay_days": 365,
+      "validity_days": 1095,
+      "entries": "multiple",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://egov.kz/cms/en/articles/for_foreigners/visa_classification",
+      "notes": "Category C11 in Kazakhstan's official visa classification - was missing from the catalog. Official page text: issued to persons under the age of majority (up to 18); single-entry visa up to 1 year, multiple-entry visa up to 3 years."
     }
   ],
   "agreements": [

@@ -1202,6 +1202,36 @@
    "on_arrival": false,
    "official_url": "https://immigration.go.ke/class-m-refugees/",
    "notes": "Issued to a person who has been granted refugee status in Kenya, and their spouse, wishing to engage in a specific occupation, trade, business or profession. Issued gratis (free of charge). Requires refugee status recognition; applied via the eFNS portal (fns.immigration.go.ke)."
+  },
+  {
+   "category": "tourist",
+   "name": "One Year Multi-Entry eTA",
+   "purpose": "Multiple entries into Kenya over a one-year validity period, for tourism or business travel",
+   "max_stay_days": null,
+   "validity_days": 365,
+   "entries": "multiple",
+   "fee_usd": 300,
+   "processing_days_min": null,
+   "processing_days_max": 3,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://evisa.go.ke/eligibility",
+   "notes": "Distinct eTA product listed on the official eligibility page alongside the Standard (single-entry) and Transit eTAs: 'Allows for multiple entries into the country for a period of one year', fee USD 300. Per-entry maximum stay is not explicitly stated on the official page (likely governed by the same 90-day-per-visit rule as the standard eTA, but this is not confirmed in the source text, so left null rather than assumed). Applied online at evisa.go.ke/eligibility; processing generally capped at 72 hours per Kenya's eTA system. This product was already referenced in this record's visa_policy.eta notes field but had never been added as its own entry in visa_types, so travelers browsing the visa-type catalog would not see it existed."
+  },
+  {
+   "category": "tourist",
+   "name": "Five Year Multi-Entry eTA",
+   "purpose": "Multiple entries into Kenya over a five-year validity period; available to United States (American) nationals only",
+   "max_stay_days": null,
+   "validity_days": 1825,
+   "entries": "multiple",
+   "fee_usd": 185,
+   "processing_days_min": null,
+   "processing_days_max": 3,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://evisa.go.ke/eligibility",
+   "notes": "Distinct eTA product listed on the official eligibility page: 'For American nationals visiting the country for multiple times for five years', fee USD 185. Restricted to U.S. nationals per the official page wording. Per-entry maximum stay is not explicitly stated on the official page, so left null rather than assumed. Applied online at evisa.go.ke/eligibility; processing generally capped at 72 hours per Kenya's eTA system. This product was already referenced in this record's visa_policy.eta notes field but had never been added as its own entry in visa_types."
   }
  ],
  "conditional_access": [

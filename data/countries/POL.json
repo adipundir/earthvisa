@@ -1004,13 +1004,13 @@
       "max_stay_days": 365,
       "validity_days": 365,
       "entries": "multiple",
-      "fee_usd": null,
+      "fee_usd": 235,
       "processing_days_min": 15,
       "processing_days_max": 30,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://www.gov.pl/web/unitedkingdom/d-type-national-visa",
-      "notes": "Subcategories include: Study I year (beginning students), Study II year and above, and Study – Others (PhD, exchange, Erasmus, NAWA). Fee is EUR 100 in most jurisdictions (USD ~109); USD 235 at US consulates; GBP 175 in UK; free for Ukrainian nationals. Valid up to 1 year; holders may also stay in other Schengen states up to 90 days within any 180-day period. Processing 15 calendar days; up to 30 days for complex cases. Applications via e-Konsulat system in person at Polish consulate."
+      "official_url": "https://www.gov.pl/web/usa-en/d-type-national-visa",
+      "notes": "Subcategories include: Study I year (beginning students), Study II year and above, and Study – Others (PhD, exchange, Erasmus, NAWA). Fee confirmed as USD 235 at US consulates per official gov.pl/usa-en page (re-fetched 2026-07-17); EUR 100 (~USD 109) in most European jurisdictions; GBP 175 in UK; free for Ukrainian nationals. Valid up to 1 year; holders may also stay in other Schengen states up to 90 days within any 180-day period. Processing 15 calendar/working days; up to 30 days for complex cases. Applications via e-Konsulat system in person at Polish consulate."
     },
     {
       "category": "work",
@@ -1161,6 +1161,36 @@
       "on_arrival": false,
       "official_url": "https://www.gov.pl/web/unitedkingdom/d-type-national-visa",
       "notes": "Used for purposes such as cultural, sports, scientific, religious, and humanitarian activities. Same fee structure and processing times as other D-type categories. Applicants must provide documents proving their specific purpose of stay."
+    },
+    {
+      "category": "business",
+      "name": "National Visa (D-Type) – Business Activity",
+      "purpose": "Long-stay national visa for foreign nationals who own or intend to pursue registered business activity in Poland, or who have been invited by a Polish company for business-related purposes expected to exceed 90 days.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 235,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.pl/web/uae/d-type-national-visa",
+      "notes": "Listed as a distinct D-type visa purpose category ('Business') on the official gov.pl consular page (re-fetched 2026-07-17). For owners of registered businesses in Poland (supported by a KRS/CEIDG company excerpt and bank statements showing turnover) or foreign nationals invited by a Polish company for business purposes exceeding 90 days (supported by an official invitation letter). Fee AED 861 (~USD 234) at the UAE consulate; standard D-type consular fee schedule applies and varies by consulate (e.g. EUR 100 in most European jurisdictions, USD 235 at US consulates). Distinct from the short-stay C-type Schengen business visa (for visits under 90 days) and from the post-arrival Temporary Residence Permit for Conducting Business Activity administered via mos.cudzoziemcy.gov.pl."
+    },
+    {
+      "category": "medical",
+      "name": "National Visa (D-Type) – Medical Treatment",
+      "purpose": "Long-stay national visa for foreign nationals travelling to Poland to undergo medical treatment for a period expected to exceed 90 days.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 235,
+      "processing_days_min": 15,
+      "processing_days_max": 30,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.gov.pl/web/uae/d-type-national-visa",
+      "notes": "Listed as a distinct D-type visa purpose category ('Medical Treatment') on the official gov.pl consular page (re-fetched 2026-07-17), for patients seeking medical treatment in Poland. Fee AED 861 (~USD 234) at the UAE consulate; standard D-type consular fee schedule applies and varies by consulate. Distinct from the existing 'National Visa (D-Type) – Medical Professional' entry, which covers foreign-qualified doctors/dentists/nurses/paramedics seeking to practice their profession in Poland after qualification recognition by the Ministry of Health, not patients receiving treatment."
     }
   ],
   "sources_checked": [

@@ -738,7 +738,7 @@
     {
       "category": "work",
       "name": "Employment Gold Card",
-      "purpose": "A combined open work permit, resident visa, Alien Resident Certificate, and re-entry permit for highly skilled foreign professionals in 11 designated fields.",
+      "purpose": "A combined open work permit, resident visa, Alien Resident Certificate, and re-entry permit for highly skilled foreign professionals in 12 designated fields.",
       "max_stay_days": null,
       "validity_days": 1095,
       "entries": "multiple",
@@ -748,7 +748,7 @@
       "online": true,
       "on_arrival": false,
       "official_url": "https://goldcard.nat.gov.tw/en/",
-      "notes": "Valid 1, 2, or 3 years (applicant's choice). Eligible fields: Architecture, Arts and Culture, Digital, Economy, Education, Finance, National Defense, Science and Technology, Law, Sports, Biotechnology/Environment. Fees vary: NT$3,700-NT$5,700 (most foreign passports); US passport holders abroad pay NT$7,605-NT$9,605. Process can exceed 60 business days. Open work authorization - work for any employer. Special tax incentives available. Apply at coa.immigration.gov.tw."
+      "notes": "Valid 1, 2, or 3 years (applicant's choice). Eligible fields per official qualification page (goldcard.nat.gov.tw/en/qualification/): Architecture, Biotechnology, Culture and Arts, Digital, Economy, Education, Environment, Finance, Law, National Defense, Science & Technology, Sports - 12 fields total (corrected from prior record's '11 designated fields', which under-counted by merging two fields into one bullet). An application must be submitted under only one field/regulation, except the Architecture field which permits multiple submissions. Fees vary: NT$3,700-NT$5,700 (most foreign passports); US passport holders applying abroad pay NT$7,605-NT$9,605. Processing can exceed 60 business days. Open work authorization - work for any employer. Special tax incentives available. Apply via coa.immigration.gov.tw."
     },
     {
       "category": "working_holiday",
@@ -974,6 +974,51 @@
       "on_arrival": false,
       "official_url": "https://www.boca.gov.tw/cp-166-288-b3876-2.html",
       "notes": "Separate category for overseas Chinese (huaqiao) students, distinct from the general foreign-student resident visa. Resident visa validity 3 months; holder must apply for an Alien Resident Certificate (ARC) within 30 days of arrival, with stay tied to enrollment. Single-entry resident visa fee NT$2,200 / US$66; converting from a visitor visa inside Taiwan adds an NT$800 handling fee."
+    },
+    {
+      "category": "work",
+      "name": "Visitor Visa - Entertaining Performance",
+      "purpose": "For foreign entertainers and performers undertaking performance activities in Taiwan; the organizer, sponsor, or employer must first obtain a work permit approval letter from Taiwan's Ministry of Labor.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.boca.gov.tw/cp-158-256-230ed-2.html",
+      "notes": "Requires an Approval Letter for the work permit issued by Taiwan's Ministry of Labor prior to application, plus travel documentation. Standard visitor visa fee applies (single-entry US$50; multiple-entry US$100 per BOCA's Standard Fees schedule - multiple-entry may be available on request). Stay duration and validity not stated verbatim on the official page. Online application via visawebapp.boca.gov.tw."
+    },
+    {
+      "category": "student",
+      "name": "Visitor Visa - Studying Religious Doctrine",
+      "purpose": "For foreign nationals undertaking religious doctrine studies in Taiwan, with approval from the Ministry of the Interior or another relevant competent authority.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.boca.gov.tw/cp-158-7534-042ad-2.html",
+      "notes": "Requires a photocopy of an approval letter from the competent authority. Standard visitor visa fee applies (single-entry US$50; multiple-entry US$100 available on request). Holders who enter Taiwan visa-free, on a landing visa, or a visitor visa not for religious studies may not extend stay or convert to a resident visa on this basis - must leave Taiwan and reapply via an ROC overseas mission. A separate Resident Visa for Studying Religious Doctrine exists for longer stays (processing approx. 8 working days domestically) at https://www.boca.gov.tw/cp-166-287-1eaf7-2.html. Stay duration and validity not stated verbatim on the official visitor-visa page."
+    },
+    {
+      "category": "other",
+      "name": "Visitor Visa - Visiting Purpose",
+      "purpose": "A general visitor visa category for foreign nationals visiting Taiwan for reasons not covered by the tourism, business, or visiting-relatives categories; requires an invitation letter from a Taiwan-based inviting organization or individual.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://www.boca.gov.tw/cp-158-253-46961-2.html",
+      "notes": "Distinct from the Tourism and Visiting Relatives visitor-visa categories. Requires an invitation letter, proof of stable financial resources (e.g. bank statement), and a travel itinerary. Standard visitor visa fee applies (single-entry US$50; multiple-entry US$100 available on request). Stay duration and validity not stated verbatim on the official page. Interview may be required."
     }
   ],
   "agreements": [],

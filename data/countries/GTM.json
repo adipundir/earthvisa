@@ -45,13 +45,13 @@
       "max_stay_days": 90,
       "validity_days": 180,
       "entries": "single",
-      "fee_usd": null,
+      "fee_usd": 50,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://igm.gob.gt/consultas-frecuentes-para-tramite-de-visas-guatemaltecas/",
-      "notes": "Category C nationals must first obtain IGM authorization before the consulate can issue a visa - this is an additional step not required for Category B. Category C nationals are NOT exempt from the visa requirement even if they hold a US/Canada/Schengen/Mexico visa. Category C country list is published at igm.gob.gt/clasificacion-de-paises/ but embedded as a static image. Fees and processing times for Category C are not officially published in extractable text. Governed by Acuerdo IGM-015-2025."
+      "official_url": "https://servicios.igm.gob.gt/uip/wp-content/uploads/2025/02/Acuerdo-Numero-IGM-029-2023-Del-Director-General-del-Instituto-Guatemalteco-de-Migracion.-Reglamento-de-Tarifas-por-Servicios-Migratorios-del-Instituto-Guatemalteco-de-Migracion.pdf",
+      "notes": "Category C nationals must first obtain IGM authorization before the consulate can issue a visa - this is an additional step not required for Category B. Category C nationals are NOT exempt from the visa requirement even if they hold a US/Canada/Schengen/Mexico visa. Category C country list is published at igm.gob.gt/clasificacion-de-paises/ but embedded as a static image. Corrected 2026-07: fee confirmed as USD 50 (previously listed as unknown/null) - Article 4 of the official Reglamento de Tarifas por Servicios Migratorios (Acuerdo IGM-029-2023) sets 'Visa simple' issued at Guatemalan diplomatic/consular missions abroad at USD 50 uniformly; the tariff schedule differentiates only by entry type (simple vs. multiple) and issuance location (domestic vs. consular), not by traveler category, so the same USD 50 rate that applies to Category B's tourist visa applies here. Processing time is still not officially published in extractable text (the added IGM pre-authorization step for Category C likely extends processing beyond Category B's 2 business days, but no figure is confirmed). Governed by Acuerdo IGM-015-2025 (Reglamento de Visas Guatemaltecas)."
     },
     {
       "category": "business",
@@ -270,13 +270,13 @@
       "max_stay_days": 90,
       "validity_days": 180,
       "entries": "single",
-      "fee_usd": 25,
+      "fee_usd": 50,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://igm.gob.gt/conozca-los-tipos-de-visa-que-emite-el-instituto-guatemalteco-de-migracion/",
-      "notes": "Distinct from the (non-remunerated) business/visitor visa: this covers paid consulting or advisory work and additionally requires an original letter of service requirement issued by the requesting Guatemalan public or private institution. Issued within the consular visa framework (Categoria B nationals apply at consulates; Categoria C nationals require prior IGM authorization). Official application form for Categoria C: Visa-de-Actividad-de-Consulta-o-Asesoria-Remunerada (VTV-IGM-01-2024). Fee approximated from the Tarifario de Extranjeria (Acuerdo IGM-029-2023) 'visa simple' USD 25 (plus USD 25 application intake). Governed by the Reglamento de Visas Guatemaltecas (Acuerdo IGM-015-2025). Source: IGM 'Conozca los Tipos de Visa que emite el IGM' (June 2025)."
+      "official_url": "https://servicios.igm.gob.gt/uip/wp-content/uploads/2025/02/Acuerdo-Numero-IGM-029-2023-Del-Director-General-del-Instituto-Guatemalteco-de-Migracion.-Reglamento-de-Tarifas-por-Servicios-Migratorios-del-Instituto-Guatemalteco-de-Migracion.pdf",
+      "notes": "Distinct from the (non-remunerated) business/visitor visa: this covers paid consulting or advisory work and additionally requires an original letter of service requirement issued by the requesting Guatemalan public or private institution. Issued within the consular visa framework (Categoria B nationals apply at consulates; Categoria C nationals require prior IGM authorization). Official application form for Categoria C: Visa-de-Actividad-de-Consulta-o-Asesoria-Remunerada (VTV-IGM-01-2024). Corrected 2026-07: fee confirmed as USD 50, not USD 25 - Article 4 of the official Reglamento de Tarifas por Servicios Migratorios (Acuerdo IGM-029-2023) sets 'Visa simple' issued at Guatemalan diplomatic/consular missions abroad at USD 50 (the USD 25 rate under Article 3 applies only to visas processed domestically within Guatemalan territory, not the consular channel this visa type actually uses), plus a separate USD 25 application-intake fee. Governed by the Reglamento de Visas Guatemaltecas (Acuerdo IGM-015-2025). Source: Acuerdo IGM-029-2023 (official tariff regulation) and IGM 'Conozca los Tipos de Visa que emite el IGM' (June 2025)."
     },
     {
       "category": "other",
@@ -307,6 +307,51 @@
       "on_arrival": false,
       "official_url": "https://igm.gob.gt/wp-content/uploads/2025/06/2025-Arte-Solicitud-de-Refugio-IGM_17.5-x-24-pulgadas_Actualizado.pdf",
       "notes": "Administered by the IGM Departamento de Reconocimiento del Estatuto de Refugiado under the Codigo de Migracion (Decreto 44-2016) and the 1951 Refugee Convention. Free of charge - the Tarifario de Extranjeria (Acuerdo IGM-029-2023) expressly exempts constancias and certificaciones issued by the refugee-status department from fees. Official guidance: 'Guia para solicitar refugio en Guatemala' (2025), published in the IGM Refugio section (igm.gob.gt/category/atencion-y-proteccion-a-los-migrantes). This is an in-country protection-status application, not a consular visa."
+    },
+    {
+      "category": "humanitarian",
+      "name": "Residencia Temporal para Refugiados o Asilados Políticos (Temporary Residency for Recognized Refugees / Political Asylees)",
+      "purpose": "Grants legal temporary residence status in Guatemala to a foreign national once their claim for refugee status or political asylum has been officially recognized, following the separate, free recognition-application process.",
+      "max_stay_days": 365,
+      "validity_days": 365,
+      "entries": "multiple",
+      "fee_usd": 50,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://servicios.igm.gob.gt/uip/wp-content/uploads/2025/02/Acuerdo-Numero-IGM-029-2023-Del-Director-General-del-Instituto-Guatemalteco-de-Migracion.-Reglamento-de-Tarifas-por-Servicios-Migratorios-del-Instituto-Guatemalteco-de-Migracion.pdf",
+      "notes": "Distinct from 'Solicitud de Reconocimiento del Estatuto de Refugiado' (the free initial application to have refugee/asylum status recognized, already catalogued separately) - this is the residency permit issued to a claimant AFTER recognition, converting protection status into lawful temporary residence. Sourced from Article 3, item 3.6 of the official Reglamento de Tarifas por Servicios Migratorios (Acuerdo IGM-029-2023): 'Residencia Temporal para refugiados o asilados políticos, USD 50.00.' Administered under the Codigo de Migracion (Decreto 44-2016) and the 1951 Refugee Convention framework, alongside the IGM Departamento de Reconocimiento del Estatuto de Refugiado. Added 2026-07 - was missing from the prior catalog, which only covered the free recognition-application stage."
+    },
+    {
+      "category": "residence",
+      "name": "Residencia Permanente (General Permanent Residency)",
+      "purpose": "Grants indefinite legal residence in Guatemala to foreign nationals who qualify through standard paths, most commonly five continuous years holding a qualifying temporary residency (student, worker, investor, religious, family, etc.), marriage to a Guatemalan national, or other grounds recognized under the Codigo de Migracion.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 700,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://servicios.igm.gob.gt/uip/wp-content/uploads/2025/02/Acuerdo-Numero-IGM-029-2023-Del-Director-General-del-Instituto-Guatemalteco-de-Migracion.-Reglamento-de-Tarifas-por-Servicios-Migratorios-del-Instituto-Guatemalteco-de-Migracion.pdf",
+      "notes": "The general/default permanent residency, distinct from the specialized reduced-fee Rentista/Pensionado (USD 400, already catalogued) and Centroamericano (USD 500) permanent residency tracks. Sourced from Article 3, item 3.7 of the official Reglamento de Tarifas por Servicios Migratorios (Acuerdo IGM-029-2023): 'Residencia Permanente, USD 700.00.' Several temporary-residency entries in this catalog (student, migrant worker, investor, intellectual/researcher, religious minister, dependent) note that holders may apply for permanent residency after 5 continuous years - this is the destination category those paths lead to. A separate USD 40/year 'cuota anual de extranjeria' applies to all permanent residents (Article 4.1.3 of the same regulation); residence is granted with no fixed expiry once approved. Added 2026-07 - was missing from the prior catalog."
+    },
+    {
+      "category": "residence",
+      "name": "Residencia Permanente para Centroamericanos (Permanent Residency for Central American Nationals)",
+      "purpose": "Reduced-fee permanent residency track available specifically to nationals of Central American countries, granting indefinite legal residence in Guatemala.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "multiple",
+      "fee_usd": 500,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://servicios.igm.gob.gt/uip/wp-content/uploads/2025/02/Acuerdo-Numero-IGM-029-2023-Del-Director-General-del-Instituto-Guatemalteco-de-Migracion.-Reglamento-de-Tarifas-por-Servicios-Migratorios-del-Instituto-Guatemalteco-de-Migracion.pdf",
+      "notes": "Reduced-rate permanent residency (USD 500) versus the USD 700 general rate, reflecting Central-American regional-integration treatment; likely ties to the same CA-4/SICA framework referenced elsewhere in this catalog (e.g., the CA-4 90-day visa-free entry for El Salvador, Honduras, Nicaragua). Sourced from Article 3, item 3.8 of the official Reglamento de Tarifas por Servicios Migratorios (Acuerdo IGM-029-2023): 'Residencia Permanente para centroamericanos, USD 500.00.' Eligibility criteria and the qualifying-nationality list beyond the general Central American designation are not confirmed in extractable text. A separate USD 40/year 'cuota anual de extranjeria' applies to all permanent residents (Article 4.1.3 of the same regulation). Added 2026-07 - was missing from the prior catalog."
     }
   ],
   "visa_policy": {

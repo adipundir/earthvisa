@@ -869,17 +869,16 @@
    "category": "transit",
    "name": "Transit Visa",
    "purpose": "Short-stay passage through Algeria en route to a third country.",
-   "max_stay_days": 3,
+   "max_stay_days": 7,
    "validity_days": 30,
    "entries": "single",
    "fee_usd": null,
-   "fee_local": "£60 (UK applicants)",
    "processing_days_min": 10,
    "processing_days_max": 15,
    "online": false,
    "on_arrival": false,
-   "official_url": "https://www.algerian-consulate.org.uk/visas/visa-to-algeria",
-   "notes": "Lower fee than other visa types. Requires proof of onward travel and valid visa for destination country if required. Airport transit visa may also be required depending on nationality."
+   "official_url": "https://www.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria",
+   "notes": "Corrected max stay from 3 to 7 days: the Algerian MFA's official entry-visa page states the duration of stay of the transit visa is 7 days (confirmed via consistent search-engine extraction of mfa.gov.dz and its mirrored embassy subdomains, e.g. embwashington.mfa.gov.dz; direct WebFetch of mfa.gov.dz and all its subdomains continues to fail with SSL certificate verification errors this run, consistent with the 2026-06-27 validation note - this URL was previously live-scraped successfully via Firecrawl on 2026-06-13). Fee GBP 60 (UK applicants) and 10-15 working day processing confirmed via fresh fetch of Algerian Consulate General London page (algerian-consulate.org.uk) on this run. Requires proof of onward travel and valid visa for destination country if required. Airport transit visa may also be required depending on nationality."
   },
   {
    "category": "diplomatic",

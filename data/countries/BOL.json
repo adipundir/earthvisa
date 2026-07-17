@@ -645,6 +645,36 @@
       "on_arrival": false,
       "official_url": "https://consulados.cancilleria.gob.bo/base/visas/",
       "notes": "Free of charge (arancel consular). Maximum stay up to 15 days. Requires onward tickets proving the final destination is a third country."
+    },
+    {
+      "category": "humanitarian",
+      "name": "Visa Humanitaria",
+      "purpose": "For persons requiring international protection under the non-refoulement principle, victims of human trafficking or migrant smuggling, and companions of persons requiring medical treatment in Bolivia.",
+      "max_stay_days": 30,
+      "validity_days": 30,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulados.cancilleria.gob.bo/base/visas/",
+      "notes": "Free of charge per the consular arancel (consulados.cancilleria.gob.bo/base/arancel-consular/). Grants up to 30 days in Bolivian territory. Three eligible categories: (1) persons requiring international protection, (2) victims of human trafficking/migrant smuggling, (3) companions of persons requiring medical treatment. Requirements vary by category: sworn declaration form, passport valid 6+ months, yellow fever certificate (if applicable) and photo for standard applicants; proof of victim status for trafficking victims; medical certificate of necessity for medical companions. Exact entry count and processing time not specified on official source; 'single' assumed as the conservative default."
+    },
+    {
+      "category": "diplomatic",
+      "name": "Visa de Cortesía (Courtesy Visa)",
+      "purpose": "Issued to high-ranking state officials, government officials, international organization representatives, and cultural or religious personalities traveling on official or institutional business who do not otherwise qualify for a full diplomatic visa.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": 0,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://consulados.cancilleria.gob.bo/base/visas/",
+      "notes": "Free of charge per the consular arancel (consulados.cancilleria.gob.bo/base/arancel-consular/). Requires an invitation issued by a Bolivian public institution, channeled through the Ministry of Foreign Affairs. Max stay, validity, and entry count not specified on official source; 'single' assumed as the conservative default. Distinct from the passport-type-based diplomatic/official/service visa-free policy already recorded under conditional_access - this visa is for individuals invited in a courtesy capacity regardless of passport type."
     }
   ],
   "cbi": {

@@ -1618,6 +1618,51 @@
       "on_arrival": false,
       "official_url": "https://www.embassyoflibyadc.org/visa",
       "notes": "Per the Embassy of Libya in Washington DC: USD 25 for a 90-day validity single-entry visa, or USD 160 for a 365-day validity multiple-entry visa. Requires a valid passport (6+ months), a copy of the applicant's Libyan passport, a copy of a national ID or driver's license, an electronic birth certificate, and two passport photos. This is a distinct category for Libyan-origin dual nationals; it is not a residence or citizenship document. Final approval comes from authorities in Libya."
+    },
+    {
+      "category": "business",
+      "name": "Libya Mission Visa (E-Visa)",
+      "purpose": "Issued via the official Libya e-visa portal (evisa.gov.ly) for foreign nationals traveling to Libya on an official or organizational mission (government-linked delegations, institutional/organizational business missions) rather than personal tourism.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://back.evisa.gov.ly/api/v1/visa-types",
+      "notes": "Listed as a distinct visa type on the official Libya e-visa portal API (key: mission_visa, integration_key: 6, Arabic name 'مهمة') with is_available: true, confirmed live 2026-07. This is a separate product from the tourist e-visa and from the existing embassy-issued 'Libya Business Visa' entry in this catalog (which is a different, consular-only product with its own fee schedule). The API does not expose fee, validity, max-stay, or entry-count fields for this type, and evisa.gov.ly's public pages are a JavaScript SPA that renders no static descriptive content, so those parameters could not be independently confirmed; entries defaulted to 'single' by analogy with the portal's other e-visa products pending confirmation."
+    },
+    {
+      "category": "family",
+      "name": "Libya Visit Visa (E-Visa)",
+      "purpose": "Issued via the official Libya e-visa portal (evisa.gov.ly) for foreign nationals visiting Libya for personal, family, or social visit purposes, as distinct from organized/escorted tourism.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://back.evisa.gov.ly/api/v1/visa-types",
+      "notes": "Listed as a distinct visa type on the official Libya e-visa portal API (key: visit_visa, integration_key: 7, Arabic name 'زيارة') with is_available: true, confirmed live 2026-07. Distinct from the existing 'Non-Libyan Spouse Visa' entry (an embassy-issued category specifically for spouses of Libyan citizens). The API does not expose fee, validity, max-stay, or entry-count fields, and evisa.gov.ly's public pages are a JavaScript SPA with no renderable static content describing this product further, so those parameters could not be independently confirmed; entries defaulted to 'single' by analogy with the portal's other e-visa products pending confirmation."
+    },
+    {
+      "category": "family",
+      "name": "Libya Family Join Visa (E-Visa)",
+      "purpose": "Family-reunification visa category listed on the official Libya e-visa portal, intended for foreign family members seeking to join relatives already residing in Libya.",
+      "max_stay_days": null,
+      "validity_days": null,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://back.evisa.gov.ly/api/v1/visa-types",
+      "notes": "Listed on the official Libya e-visa portal API (key: join_visa, integration_key: 8, Arabic name 'الالتحاق') but marked is_available: false as of live 2026-07 verification - not currently open for online application, the same 'currently unavailable' status already documented in this catalog for the Work Visa entry sourced from this API. No fee, validity, or stay parameters are published; entries defaulted to 'single' pending confirmation since the API does not expose this field. Applicants seeking Libyan family reunification should currently use the embassy-issued 'Non-Libyan Spouse Visa' (for spouses) or contact a Libyan diplomatic mission directly."
     }
   ],
   "outbound_official": {

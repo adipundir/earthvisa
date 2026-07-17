@@ -929,8 +929,8 @@
    "processing_days_max": 3,
    "online": false,
    "on_arrival": false,
-   "official_url": "https://www.mfa.go.th/en/publicservice/5d5bcc2615e39c306000a309",
-   "notes": "Applied at Thai embassy/consulate. Single-entry (TR) or multiple-entry (TRMT) available. Standard single-entry TR: 60 days, extendable once by 30 days at immigration office (THB 1,900 fee). Multiple-entry TR valid 6 months, each stay up to 60 days."
+   "official_url": "https://www.mfa.go.th/en/publicservice/5d5bcc2615e39c306000a316",
+   "notes": "Applied at Thai embassy/consulate. Single-entry (TR) or multiple-entry (TRMT) available. Standard single-entry TR: 60 days, extendable once by 30 days at immigration office (THB 1,900 fee). Multiple-entry TR valid 6 months, each stay up to 60 days. CORRECTED official_url: the previous link (…5d5bcc2615e39c306000a309) was verified by direct HTTP fetch to resolve to the MFA 'Summary of countries and territories entitled for Visa Exemption and Visa on Arrival' page - it does not describe the Tourist Visa at all. Replaced with MFA's 'Issuance of Visa' page (title confirmed via fetch), whose Section 2 'TOURIST VISA' documents the base fee (THB 1,000/entry per the standard MFA schedule; higher USD-denominated fees such as USD 40 apply at specific embassies e.g. Washington DC), 3-6 month validity, and 60-day permitted stay - matching the figures already recorded here."
   },
   {
    "category": "tourist",
@@ -974,8 +974,8 @@
    "processing_days_max": 7,
    "online": false,
    "on_arrival": false,
-   "official_url": "https://www.mfa.go.th/en/publicservice/5d5bcc2615e39c306000a31a",
-   "notes": "For business activities or employment. Requires letter from Thai employer or business. Initial 90-day stay; must obtain work permit and convert to 1-year extension of stay at immigration in Thailand. Multiple-entry Non-B available for established employees."
+   "official_url": "https://www.mfa.go.th/en/page/non-immigrant-visa-b?menu=5e1ff6f857b01e00a84023d4",
+   "notes": "For business activities or employment. Requires letter from Thai employer or business. Initial 90-day stay; must obtain work permit and convert to 1-year extension of stay at immigration in Thailand. Multiple-entry Non-B available for established employees. CORRECTED official_url: the previous link (…5d5bcc2615e39c306000a31a) was verified by direct HTTP fetch to resolve to the MFA 'General Information' overview page (visa exemption/VOA/health-certificate overview), not a Non-B-specific page. Replaced with MFA's dedicated 'Non-Immigrant Visa \"B\"' page (title confirmed via fetch), which explicitly covers Category B (business/work), confirms the THB 2,000 single-entry/3-month and THB 5,000 multiple-entry/1-year fee structure (USD 80 at Thai Embassy Washington DC for single-entry, matching the fee_usd already recorded here), and also documents the related Business-Approved ('B-A') and Investment and Business ('IB') sub-categories - the same page already correctly used as official_url for this dataset's separate 'Non-Immigrant IB Visa' entry."
   },
   {
    "category": "digital_nomad",
@@ -1096,6 +1096,21 @@
    "on_arrival": false,
    "official_url": "https://wellington.thaiembassy.org/th/publicservice/17705-working-holiday-visa",
    "notes": "Bilateral youth-exchange scheme (agreements with Australia and New Zealand). Applicants aged 18-30 with tertiary qualifications. Multiple-entry, stay up to 12 months (visa valid 3 months to make first entry). Employment with any single employer limited to 3 months; one-time, non-renewable. Fee varies by embassy (e.g., ~NZ$1,000 at Wellington). Applied online via thaievisa.go.th."
+  },
+  {
+   "category": "business",
+   "name": "Three-Year Non-Immigrant Visa \"B\" (Business Only)",
+   "purpose": "Multiple-entry, long-validity business visa for foreign businesspeople who need to visit Thailand repeatedly over several years for business purposes (not for employment)",
+   "max_stay_days": 90,
+   "validity_days": 1095,
+   "entries": "multiple",
+   "fee_usd": 400,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://mfa.go.th/en/page/three-year-non-immigrant-visa-b?menu=5e1ff6ffc4281a00260dfb29",
+   "notes": "Confirmed on the official MFA page (title verified via HTTP fetch: 'Three-Year Non-Immigrant Visa \"B\" (Business only)'). Distinct from the standard 90-day-validity Non-Immigrant B (Business/Work) visa already in this dataset. Valid for 3 years with multiple entries; each visit permits a stay of up to 90 days. Employment of any kind is strictly prohibited under this visa - it is for business visits only (meetings, inspecting operations, negotiating with partners), not for working in Thailand. Fee: THB 10,000, non-refundable, per the MFA page (~USD 400, consistent with the Royal Thai Embassy Washington DC's own USD-denominated fee schedule for this visa). Applied at a Royal Thai Embassy/Consulate-General in the applicant's country of residence; Consulates-General headed by an Honorary Consul-General are not authorized to issue this visa. Issuance is at the discretion of the consular officer. This was previously absent from the visa_types catalog even though the standard Non-B, O-A, O-X and IB variants were all present."
   }
  ],
  "outbound_official": {

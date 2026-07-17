@@ -1050,18 +1050,18 @@
     },
     {
       "category": "transit",
-      "name": "Kosovo C Visa (Transit Visa)",
-      "purpose": "Allows foreign nationals to transit through Kosovo. Covered under the same short-stay C visa category as tourist/visit visas.",
-      "max_stay_days": 90,
-      "validity_days": null,
-      "entries": null,
+      "name": "Kosovo B Visa (Territorial Transit Visa)",
+      "purpose": "Issued by Kosovo diplomatic/consular missions for transit through the territory of the Republic of Kosovo. Legally distinct from the short-stay (C) entry visa; standard duration is set to match the time required for the transit journey, with a multiple-entry option available for travelers who transit repeatedly.",
+      "max_stay_days": null,
+      "validity_days": 180,
+      "entries": "multiple",
       "fee_usd": 43,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://arkivi.mfa-ks.net/en/sherbimet_konsullore/506/paraqitja-e-krkess-pr-viz/506.html",
-      "notes": "Transit is explicitly covered under the Kosovo C Visa. The same 40 EUR fee and application requirements apply. Nationals holding a valid biometric Schengen residence permit or valid multi-entry Schengen visa may transit without a visa for up to 15 days. Laissez-Passer holders from UN, NATO, OSCE, Council of Europe and EU are fully exempt from visa requirements."
+      "official_url": "https://www.kosovopolice.com/wp-content/uploads/2025/09/Border-Police-Brochure-ENG.pdf",
+      "notes": "Correction: the official Ministry of Internal Affairs/Kosovo Border Police brochure 'Guidelines for Entry, Movement, Residence and Employment of Foreigners in the Republic of Kosovo' confirms Kosovo's diplomatic/consular missions issue four distinct visa letters: A (airport transit), B (territorial transit), C (short-stay, up to 90 days per 180-day period, multi-entry validity from 6 months to 5 years) and D (long-stay). General territorial transit is officially a B visa, not a variant of the C visa as previously recorded. A multiple-entry B visa is granted for validity of up to six months for one, two or more transits; single-journey B visas matched to the specific transit duration are also issued. Kosovo's public-facing consular/embassy pages (MFA, ambasadat.net) do not separately publish a Type-B fee schedule, so the general 40 EUR (approx. USD 43) short-stay visa application fee is carried over as an estimate rather than a confirmed B-visa-specific rate. Nationals holding a valid biometric Schengen residence permit or valid multi-entry Schengen visa may still transit without any Kosovo visa for up to 15 days. Laissez-Passer holders from UN, NATO, OSCE, Council of Europe and EU remain fully exempt from visa requirements."
     },
     {
       "category": "business",
@@ -1182,6 +1182,21 @@
       "on_arrival": false,
       "official_url": "https://mpb.rks-gov.net/f/45/Temporary-residence-permit-for-foreigners",
       "notes": "Humanitarian grounds are one of the temporary-residence purposes enumerated in Law No. 08/L-296 on Foreigners (alongside employment, secondment, family reunification and education). Permit is issued by the Ministry of Internal Affairs (MPB) and is generally valid up to one year and renewable. Not a nationality-based waiver and not applied for at an embassy as a standard visa."
+    },
+    {
+      "category": "transit",
+      "name": "Kosovo A Visa (Airport Transit Visa)",
+      "purpose": "Issued by Kosovo diplomatic/consular missions for air transit through the international transit area of a Kosovo airport, for nationals of countries for which the Government of Kosovo has set an airport-transit visa requirement by decision. Does not authorize entry onto Kosovo territory.",
+      "max_stay_days": null,
+      "validity_days": 180,
+      "entries": "multiple",
+      "fee_usd": 43,
+      "processing_days_min": null,
+      "processing_days_max": null,
+      "online": false,
+      "on_arrival": false,
+      "official_url": "https://www.kosovopolice.com/wp-content/uploads/2025/09/Border-Police-Brochure-ENG.pdf",
+      "notes": "Confirmed by the official Ministry of Internal Affairs/Kosovo Border Police brochure 'Guidelines for Entry, Movement, Residence and Employment of Foreigners in the Republic of Kosovo' (Directorate for Migration and Foreigners): Kosovo diplomatic and consular missions issue a distinct air-transit visa (Type A), separate from the short-stay (C) and long-stay (D) entry visas. A multiple-entry Type A visa is granted for validity of up to six months, covering one, two or more airport transits; shorter single-journey versions matched to a specific transit are also issued. This letter/category was previously missing from the catalog (only C and D were recorded). No Type-A-specific fee is separately published by MFA; the 43 USD (40 EUR) figure is carried over from Kosovo's general short-stay consular visa fee schedule as a reasonable estimate, not a confirmed Type-A rate."
     }
   ],
   "sources_checked": [

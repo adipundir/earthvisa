@@ -11,13 +11,13 @@
       "max_stay_days": 90,
       "validity_days": 90,
       "entries": "multiple",
-      "fee_usd": 50,
+      "fee_usd": 150,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://ctoro.cancilleria.gob.ar/en/consular-services",
-      "notes": "Required only for nationalities not covered by Argentina's visa exemption list. Many nationalities (Canada, USA, EU, Australia, etc.) enter visa-free for up to 90 days. Fee approximately USD 50 per the national consular transitory-visa fee schedule; exact amount may vary by nationality and reciprocity. Application submitted to Argentine consulate or embassy in country of residence."
+      "official_url": "https://cancilleria.gob.ar/en/services/visa/tourist-visa",
+      "notes": "Required only for nationalities not covered by Argentina's visa exemption list. Many nationalities (Canada, USA, EU, Australia, etc.) enter visa-free for up to 90 days. Consular fee is USD 150 (or EUR equivalent, payable in local currency of the consular office) per the official Cancillería tourist-visa page as of July 2026 — corrected upward from a previously recorded USD 50, which is now stale. Requires passport valid 6+ months with 2 blank pages, two 4x4cm color photos, proof of income, round-trip flight reservation, hotel reservation/itinerary or invitation letter, and a mandatory consular interview. Application submitted in person at the Argentine consulate or embassy in country of residence; meeting requirements does not guarantee approval."
     },
     {
       "category": "business",
@@ -26,13 +26,13 @@
       "max_stay_days": 60,
       "validity_days": 60,
       "entries": "multiple",
-      "fee_usd": 100,
+      "fee_usd": 200,
       "processing_days_min": null,
       "processing_days_max": null,
       "online": false,
       "on_arrival": false,
-      "official_url": "https://ctoro.cancilleria.gob.ar/en/consular-services",
-      "notes": "Permits business activities but not paid employment in Argentina. Separate from the temporary work visa categories. Applicable to nationals requiring a visa. Fee approximately USD 100 per the national consular transitory-visa fee schedule."
+      "official_url": "https://cancilleria.gob.ar/es/servicios/visas/visas-para-negocios",
+      "notes": "Permits business activities but not paid employment in Argentina. Separate from the temporary work visa categories. Applicable to nationals requiring a visa. Consular fee is USD 200 (or EUR equivalent, payable in local currency of the consular office) per the official Cancillería business-visa page as of July 2026 — corrected upward from a previously recorded USD 100, which is now stale. Application is in person; applicant must contact the relevant consular office to schedule an appointment. Meeting requirements does not guarantee approval, which remains at the exclusive discretion of the Argentine State."
     },
     {
       "category": "work",
@@ -333,6 +333,21 @@
       "on_arrival": false,
       "official_url": "https://cancilleria.gob.ar/en/service/services/work-holiday-programme",
       "notes": "Bilateral Work & Holiday agreements are in force with Australia, Denmark, France, Germany, Ireland, Netherlands, New Zealand, Poland, Portugal, Republic of Korea, and Sweden; annual quotas vary by country and several (Denmark, Germany, Sweden) are uncapped. Generally for applicants aged 18-30 (extended to 35 for Ireland). Multiple entries permitted. Exact terms vary by agreement (e.g. Ireland: up to 9 months' stay, work up to 6 months renewable a further 3 months, study up to 3 months). Applied in person at the Argentine consulate with a compulsory interview; one-time participation only. Not available through the online RADEX system."
+    },
+    {
+      "category": "other",
+      "name": "Electronic Entry Processing – TIE 24H (Tramitación de Ingreso Electrónica)",
+      "purpose": "Online pre-travel authorization for nationals of countries exempt from Argentina's tourist visa requirement who wish to enter for non-tourism activities: business/trade fairs, professional, technical, scientific, religious, or artistic work, digital nomad activity, and academic/exchange/internship/volunteer/scholarship programs.",
+      "max_stay_days": null,
+      "validity_days": 90,
+      "entries": "single",
+      "fee_usd": null,
+      "processing_days_min": 10,
+      "processing_days_max": 10,
+      "online": true,
+      "on_arrival": false,
+      "official_url": "https://cancilleria.gob.ar/es/servicios/visas/tramitacion-de-ingreso-electronica-tie-24-h",
+      "notes": "Available only to nationals of countries visa-exempt for tourism under Art. 24 inc. a of Law 25.871. Two modalities: up to 30 days (renewable) for short business/professional/artistic activities, or up to 12 months (non-renewable) for study, exchange, internship, volunteering, or scholarship programs — max_stay_days left null here because the two tracks differ substantially; consult the official page for the applicable track. The approved certificate authorizes initial entry (single-use certificate for that purpose); once in Argentina the holder's onward entry/exit status is governed by their authorized permanence. Processed entirely online via the National Directorate of Migration's RADEX portal (apply before travel from home country); applicant must not enter Argentina before the request is resolved. Resolution takes 10 business days. Approved certificate is valid 3 months from issuance for initial entry. Applicant must also contact the relevant Argentine consular office. No fee amount is published on the official pages reviewed. Corroborated at https://www.argentina.gob.ar/migraciones/tramitacion-de-ingreso-electronica-tie-24h."
     }
   ],
   "visa_policy": {
