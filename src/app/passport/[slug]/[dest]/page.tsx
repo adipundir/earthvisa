@@ -359,7 +359,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const s = resolve(n.iso3, d.iso3);
   const nd = DEMONYM[n.iso3] ?? n.name;
   const title = corridorTitle(n.iso3, d.iso3, d.name, nd, s);
-  const description = `${answerSentence(nd, d.name, s)} See stay length, fees, conditions, required documents and the official government source.`;
+  const answer = answerSentence(nd, d.name, s);
+  // The full suffix only fits Google's ~155-160 char SERP window when the
+  // base answer is short (own/fom/visa_free/voa); eta/e_visa/visa_required
+  // sentences are already long, so appending it there just pushes past the
+  // truncation point instead of adding value.
+  const description = answer.length <= 110 ? `${answer} See fees, stay length & required documents.` : answer;
   const canonical = `https://earthvisa.in/passport/${slug}/${dest}`;
   const aliasLead = CORRIDOR_TITLE_ALIAS[d.iso3];
   const short = SHORT_NAME[d.iso3] ?? d.name;

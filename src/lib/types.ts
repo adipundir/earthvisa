@@ -162,4 +162,8 @@ export interface Dataset {
    *  corridors (no access-level edge exists) - process, fee, and any current
    *  advisory/suspension context researched for that specific nationality. */
   advanceVisaNotes: Record<string, { nationalitiesIso3: string[]; notes: string; sourceUrl: string; sourceOfficial: boolean }[]>;
+  /** iso3 -> ISO date (YYYY-MM-DD) of that country's data file's most recent
+   *  git commit. Used for per-page sitemap lastModified so one country's
+   *  update doesn't bump every URL's timestamp - see src/app/sitemap.ts. */
+  countryLastUpdated: Record<string, string>;
 }

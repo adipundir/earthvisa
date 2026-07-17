@@ -8,7 +8,7 @@ function nameToSlug(name: string): string {
 }
 
 // Static SEO routes built outside the country/corridor graph.
-const GUIDE_PAGES = ["/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa"];
+const GUIDE_PAGES = ["/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa", "/guide/japan-visa-fee-increase-2026"];
 const PROGRAM_PAGES = [
   "/programs/citizenship-by-investment",
   "/programs/golden-visa",
@@ -35,32 +35,44 @@ const LIST_PAGES = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://earthvisa.in";
-  // Stamp entries with the dataset's update date, NOT the build time - every
-  // deploy otherwise tells crawlers all ~24k URLs just changed, triggering
-  // full-site recrawl waves after each push.
+  // Fallback for static/aggregate pages and anything missing from
+  // countryLastUpdated (e.g. a country file that's never been committed yet).
   const lastModified = new Date(dataset.meta.lastUpdated);
+  // Per-country dates (from that country's own git history - see
+  // countryLastUpdated in build-dataset.mjs) so updating one country's data
+  // doesn't bump every URL's timestamp and trigger a full-site recrawl wave.
+  const dateFor = (iso3: string): Date => {
+    const d = dataset.countryLastUpdated?.[iso3];
+    return d ? new Date(d) : lastModified;
+  };
   const passportPages = dataset.allCountries.map((c) => ({
     url: `${base}/passport/${nameToSlug(c.name)}`,
-    lastModified,
+    lastModified: dateFor(c.iso3),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
   const destinationPages = dataset.allCountries.map((c) => ({
     url: `${base}/destination/${nameToSlug(c.name)}`,
-    lastModified,
+    lastModified: dateFor(c.iso3),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
-  const corridorPages = corridorPairs().map((c) => ({
-    url: `${base}/passport/${c.natSlug}/${c.destSlug}`,
-    lastModified,
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  const corridorPages = corridorPairs().map((c) => {
+    const natDate = dateFor(c.nat);
+    const destDate = dateFor(c.dest);
+    return {
+      url: `${base}/passport/${c.natSlug}/${c.destSlug}`,
+      // a corridor page's content depends on BOTH countries' data, so use
+      // whichever changed more recently.
+      lastModified: natDate > destDate ? natDate : destDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    };
+  });
   // Colloquial alias destinations (dubai, bali, ...) - high-volume query tokens.
-  const aliasPages = [...aliasBySlug.keys()].map((slug) => ({
-    url: `${base}/destination/${slug}`,
-    lastModified,
+  const aliasPages = [...aliasBySlug.values()].map((a) => ({
+    url: `${base}/destination/${a.slug}`,
+    lastModified: dateFor(a.iso3),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -69,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const c = dataset.allCountries.find((x) => x.iso3 === iso3);
     return c ? [{
       url: `${base}/guide/schengen/${nameToSlug(c.name)}`,
-      lastModified,
+      lastModified: dateFor(iso3),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }] : [];
@@ -84,6 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, lastModified, changeFrequency: "weekly", priority: 1.0 },
     { url: `${base}/visit`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/rankings`, lastModified, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/rankings/visa-fees`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/passport`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/destination`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/destination/europe`, lastModified, changeFrequency: "monthly", priority: 0.8 },

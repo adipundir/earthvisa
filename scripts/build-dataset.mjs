@@ -6,6 +6,7 @@
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { execSync } from "node:child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -795,6 +796,33 @@ if (Object.keys(vfsSkipped).length) {
 }
 console.log(`  VFS: indexed ${vfsCorridorCount} corridors across ${Object.keys(vfsCorridors).length} destinations.`);
 
+// ---- per-country last-modified dates, from git history ---------------------
+// The sitemap needs a per-page lastModified so an update to one country's data
+// doesn't bump every URL's timestamp and trigger a full-site recrawl wave -
+// so this is sourced from each data/countries/{ISO}.json file's own most
+// recent commit, not the single build-time date used for meta.lastUpdated.
+const countryLastUpdated = {};
+try {
+  const log = execSync('git log --format="COMMIT %aI" --name-only -- data/countries/', {
+    cwd: ROOT,
+    maxBuffer: 1024 * 1024 * 64,
+  }).toString();
+  let currentDate = null;
+  for (const line of log.split("\n")) {
+    if (line.startsWith("COMMIT ")) {
+      currentDate = line.slice(7).trim();
+    } else if (line.startsWith("data/countries/") && line.endsWith(".json")) {
+      const iso3 = line.slice("data/countries/".length, -".json".length);
+      if (!(iso3 in countryLastUpdated) && currentDate) {
+        countryLastUpdated[iso3] = currentDate.slice(0, 10);
+      }
+    }
+  }
+} catch {
+  // not a git checkout (shouldn't happen for this project) - callers fall
+  // back to meta.lastUpdated when a country is missing from this map.
+}
+
 const dataset = {
   meta: {
     note: "Official-source-first dataset. Visa-free reach is derived by inverting each country's own official visa-policy pages; gaps remain where governments don't publish enumerated lists.",
@@ -819,6 +847,7 @@ const dataset = {
   destinationVisaTypes,
   vfsCorridors,
   advanceVisaNotes,
+  countryLastUpdated,
 };
 
 // ---- coverage invariants -----------------------------------------------------

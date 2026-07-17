@@ -23,6 +23,10 @@ export async function generateMetadata({ params }: { params: Promise<{ username:
     alternates: { canonical: `https://earthvisa.in/earthling/${e.username}` },
     openGraph: { title, description, url: `https://earthvisa.in/earthling/${e.username}`, type: "profile" },
     twitter: { card: "summary_large_image", title, description },
+    // Unbounded user-generated pages with minimal unique content per profile -
+    // keep them out of the index (already excluded from the sitemap) while
+    // still letting link equity flow through outbound links (follow: true).
+    robots: { index: false, follow: true },
   };
 }
 

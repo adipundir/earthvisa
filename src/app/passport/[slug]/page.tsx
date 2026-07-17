@@ -84,10 +84,10 @@ const rankOf = new Map(
 // shape, and rank-in-title answers it in the SERP. India gets the exact
 // highest-volume phrasing for its cluster.
 function passportTitle(iso3: string, name: string, rank: number | undefined, vfCount: number): string {
-  if (iso3 === "IND") return `Visa-Free Countries for Indians 2026 - Full List (${vfCount}) & Passport Rank`;
+  if (iso3 === "IND") return `Visa-Free Countries for Indians 2026: Full List (${vfCount}) & Passport Rank`;
   return rank
-    ? `${name} Passport Ranking 2026: #${rank} of ${TOTAL_PASSPORTS} - ${vfCount} Visa-Free Countries`
-    : `${name} Passport Ranking 2026 - ${vfCount} Visa-Free Countries`;
+    ? `${name} Passport Rank 2026: #${rank}/${TOTAL_PASSPORTS} - ${vfCount} Visa-Free`
+    : `${name} Passport 2026 - ${vfCount} Visa-Free Countries`;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -108,7 +108,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = `Visa-free countries for the ${adj} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} via eTA or e-visa${rank ? `. Ranked #${rank} of ${TOTAL_PASSPORTS} passports` : ""}. Full list from official government sources.`;
 
   return {
-    title,
+    // absolute opts out of the root layout's "%s | Earth Visa" template - these
+    // titles are already tight against the SERP length budget on their own,
+    // and the auto-appended suffix was pushing nearly all of them well over.
+    title: { absolute: title },
     description,
     keywords: [
       `visa free countries for ${country.name.toLowerCase()} passport`,

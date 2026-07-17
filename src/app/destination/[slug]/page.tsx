@@ -183,7 +183,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     : `${country.name} visa requirements 2026: ${accessSummary}. Check if your passport needs a visa, tourist visa rules, and entry conditions from official sources.`;
 
   return {
-    title,
+    // absolute opts out of the root layout's "%s | Earth Visa" template -
+    // this template is already tight against the SERP length budget for
+    // longer country names, and the auto-appended suffix pushed most of
+    // them over 60 chars despite looking "fine" when measured without it.
+    title: { absolute: title },
     description,
     keywords: [
       `do I need a visa for ${display.toLowerCase()}`,
