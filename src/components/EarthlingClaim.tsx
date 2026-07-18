@@ -197,7 +197,7 @@ export default function EarthlingClaim({ countries, credentials }: {
                 onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
                 onFocus={() => setOpen(true)}
                 placeholder={passports.length ? "Add another passport…" : "Search your country…"}
-                className="min-w-[180px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
+                className="min-w-[180px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute"
               />
             )}
           </div>
@@ -287,7 +287,7 @@ export default function EarthlingClaim({ countries, credentials }: {
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="yourname"
                   maxLength={19}
-                  className="min-h-[48px] flex-1 bg-transparent text-[15px] text-ink outline-none placeholder:text-ink-mute/70"
+                  className="min-h-[48px] flex-1 bg-transparent text-[15px] text-ink outline-none placeholder:text-ink-mute"
                 />
               </div>
               {availability && (
@@ -301,7 +301,7 @@ export default function EarthlingClaim({ countries, credentials }: {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@email.com"
               type="email"
-              className="min-h-[48px] self-start rounded-lg border border-line-strong bg-card px-3 py-[11px] text-[15px] text-ink outline-none placeholder:text-ink-mute/70 focus:border-stamp"
+              className="min-h-[48px] self-start rounded-lg border border-line-strong bg-card px-3 py-[11px] text-[15px] text-ink outline-none placeholder:text-ink-mute focus:border-stamp"
             />
           </div>
           <p className="mono mt-2 text-[11px] leading-relaxed text-ink-mute">

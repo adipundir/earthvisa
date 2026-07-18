@@ -2,10 +2,20 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { dataset, flagFor, nameFor, isoToFlag, nameToSlug } from "@/lib/dataset";
+import { isoToFlag, nameToSlug } from "@/lib/format";
+import {
+  credShort,
+  flagFor,
+  groupLabel,
+  groupMembers,
+  isUsefulCorridor,
+  nameFor,
+  useComputeData,
+  useExplorerCore,
+} from "@/lib/explorer-data";
 import { useDetectedPassport } from "@/lib/geo";
-import { compute, fmtMoney, LEVEL_LABEL, type CombinedEdge } from "@/lib/compute";
-import type { AccessLevel, PassportType, VisaType } from "@/lib/types";
+import { computeWith, fmtMoney, LEVEL_LABEL, type CombinedEdge, type PassportResult } from "@/lib/compute-core";
+import type { AccessLevel, Credential, PassportType } from "@/lib/types";
 
 const PASSPORT_TYPES: { id: PassportType; label: string }[] = [
   { id: "ordinary", label: "Ordinary" },
@@ -21,7 +31,16 @@ const PTYPE_SHORT: Record<PassportType, string> = {
   official: "OFF",
 };
 
-const EXAMPLE_PASSPORTS = ["IND", "DEU", "USA", "BRA", "NGA", "PHL", "PAK", "MEX"];
+// Hardcoded (not read from the fetched core slice) so the empty state is fully
+// server-rendered - names must match dataset allCountries entries.
+const EXAMPLE_PASSPORTS = [
+  { iso3: "IND", iso2: "IN", name: "India" },
+  { iso3: "DEU", iso2: "DE", name: "Germany" },
+  { iso3: "USA", iso2: "US", name: "United States" },
+  { iso3: "BRA", iso2: "BR", name: "Brazil" },
+  { iso3: "NGA", iso2: "NG", name: "Nigeria" },
+  { iso3: "PHL", iso2: "PH", name: "Philippines" },
+];
 
 // ISO3 to show as flag for each credential group
 const GROUP_ISO3: Record<string, string> = {
@@ -49,17 +68,6 @@ const LEVEL_STYLE: Record<AccessLevel, string> = {
   eta:             "text-eta bg-eta/[0.08] border border-eta/25",
   e_visa:          "text-evisa bg-evisa/[0.08] border border-evisa/25",
 };
-
-const LEVEL_LEFT_BORDER: Record<AccessLevel, string> = {
-  visa_free:       "border-l-vfree",
-  visa_on_arrival: "border-l-voa",
-  eta:             "border-l-eta",
-  e_visa:          "border-l-evisa",
-};
-
-const CRED_SHORT: Record<string, string> = Object.fromEntries(
-  dataset.credentials.map((c) => [c.id, c.short]),
-);
 
 // Crawler annotations occasionally leak schema vocabulary ("min_amount",
 // "source_official=false") into program notes. Drop those sentences at render
@@ -101,14 +109,13 @@ const CRED_CHIP_LABEL: Record<string, string> = {
 };
 
 // Group credentials by issuing country (preserving CRED_CATALOG order)
-const CREDENTIAL_GROUPS: { name: string; items: typeof dataset.credentials }[] = [];
-{
-  const map = new Map<string, typeof dataset.credentials>();
-  for (const c of dataset.credentials) {
+function buildCredentialGroups(credentials: Credential[]): { name: string; items: Credential[] }[] {
+  const map = new Map<string, Credential[]>();
+  for (const c of credentials) {
     if (!map.has(c.group)) map.set(c.group, []);
     map.get(c.group)!.push(c);
   }
-  for (const [name, items] of map) CREDENTIAL_GROUPS.push({ name, items });
+  return [...map.entries()].map(([name, items]) => ({ name, items }));
 }
 
 type TabKey = "visa_free" | "visa_on_arrival" | "eta" | "fom" | "cbi" | "rbi" | "fast" | "transit";
@@ -118,6 +125,10 @@ type Detail = {
   title: string;
   subtitle?: string;
   level?: AccessLevel;
+  /** passport that actually grants this access (may differ from selected[0] for dual citizens) */
+  viaIso3?: string | null;
+  /** freedom-of-movement results have no level but do have a corridor page */
+  corridor?: boolean;
   badges?: { text: string; tone: "stamp" | "bloc" | "vfree" }[];
   rows?: { label: string; value: React.ReactNode }[];
   options?: { label: string; value: string }[];
@@ -134,6 +145,7 @@ export default function PassportExplorer() {
   const [open, setOpen] = useState(false);
   const [credQuery, setCredQuery] = useState("");
   const [credOpen, setCredOpen] = useState(false);
+  const [credHi, setCredHi] = useState(-1); // highlighted option in credentials combobox
   const [showCreds, setShowCreds] = useState(false); // advanced "visas you hold" section, collapsed by default
   const [typeOpen, setTypeOpen] = useState<string | null>(null);
   const [tab, setTab] = useState<TabKey>("visa_free");
@@ -147,14 +159,18 @@ export default function PassportExplorer() {
   const credBoxRef = useRef<HTMLDivElement>(null);
   const typeRefs = useRef<Record<string, HTMLElement | null>>({});
 
+  const { core, failed: coreFailed, retry: retryCore } = useExplorerCore();
+
   // Seed selection from deep-link query params (e.g. /?passport=IND,DEU&cred=US_VISA)
   // so links from the static passport/destination pages land pre-filled.
+  // Waits for the core slice - params are validated against the country list.
   useEffect(() => {
+    if (!core) return;
     // Deferred a tick so state updates never run synchronously in the effect
     // flush (react-hooks/set-state-in-effect); behavior is unchanged.
     const t = setTimeout(() => {
       const sp = new URLSearchParams(window.location.search);
-      const valid = new Set(dataset.allCountries.map((c) => c.iso3));
+      const valid = new Set(core.allCountries.map((c) => c.iso3));
       const passports = (sp.get("passport") ?? "")
         .split(",").map((s) => s.trim().toUpperCase()).filter((s) => valid.has(s));
       if (passports.length) {
@@ -162,11 +178,11 @@ export default function PassportExplorer() {
         setPtypes(Object.fromEntries(passports.map((p) => [p, "ordinary" as PassportType])));
       }
       const credParam = (sp.get("cred") ?? "")
-        .split(",").map((s) => s.trim()).filter((id) => dataset.credentials.some((c) => c.id === id));
+        .split(",").map((s) => s.trim()).filter((id) => core.credentials.some((c) => c.id === id));
       if (credParam.length) setCreds(credParam);
     }, 0);
     return () => clearTimeout(t);
-  }, []);
+  }, [core]);
 
   // Auto-fill the passport from the visitor's detected country - but only on a
   // truly empty field, and never over a deep-link or a manual choice. The chip
@@ -225,22 +241,37 @@ export default function PassportExplorer() {
 
   const options = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return dataset.allCountries
+    return (core?.allCountries ?? [])
       .filter((c) => !selected.includes(c.iso3))
       .filter((c) => !q || c.name.toLowerCase().includes(q) || c.iso3.toLowerCase().includes(q) || c.iso2.toLowerCase() === q)
       .slice(0, 80);
-  }, [query, selected]);
+  }, [query, selected, core]);
 
-  const result = useMemo(() => compute(selected, creds, ptypes), [selected, creds, ptypes]);
+  const hasInput = selected.length > 0 || creds.length > 0;
+  const { snap, failed: dataFailed, retry: retryData } = useComputeData(selected, creds, hasInput);
+  // Results render only when the fetched slices cover the CURRENT selection -
+  // a slice that is still in flight must never silently shrink the numbers.
+  const result = useMemo(() => {
+    if (!snap) return null;
+    if (snap.selected.join("|") !== selected.join("|") || snap.creds.join("|") !== creds.join("|")) return null;
+    return computeWith(snap.data, snap.selected, snap.creds, ptypes);
+  }, [snap, selected, creds, ptypes]);
 
+  const credentialGroups = useMemo(() => buildCredentialGroups(core?.credentials ?? []), [core]);
   const credGroupOptions = useMemo(() => {
     const q = credQuery.trim().toLowerCase();
-    if (!q) return CREDENTIAL_GROUPS;
-    return CREDENTIAL_GROUPS.filter((g) =>
+    if (!q) return credentialGroups;
+    return credentialGroups.filter((g) =>
       g.name.toLowerCase().includes(q) ||
       g.items.some((c) => c.short.toLowerCase().includes(q) || c.label.toLowerCase().includes(q))
     );
-  }, [credQuery]);
+  }, [credQuery, credentialGroups]);
+
+  const flatCredOptions = useMemo(() => credGroupOptions.flatMap((g) => g.items), [credGroupOptions]);
+  const credIndexById = useMemo(
+    () => new Map(flatCredOptions.map((c, i) => [c.id, i] as const)),
+    [flatCredOptions],
+  );
 
 
   function add(iso3: string) {
@@ -259,8 +290,6 @@ export default function PassportExplorer() {
   function toggleCred(id: string) {
     setCreds((c) => (c.includes(id) ? c.filter((x) => x !== id) : [...c, id]));
   }
-
-  const hasInput = selected.length > 0 || creds.length > 0;
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
@@ -281,20 +310,28 @@ export default function PassportExplorer() {
               const isOpen = typeOpen === iso3;
               return (
                 <span key={iso3} className="group/chip inline-flex items-center gap-1.5 rounded-md bg-paper-2 px-2.5 py-1.5 text-[14px] text-ink">
-                  <span className="text-lg leading-none">{flagFor(iso3)}</span>
+                  <span aria-hidden="true" className="text-lg leading-none">{flagFor(iso3)}</span>
                   <span className="font-display font-semibold">{nameFor(iso3)}</span>
 
                   {/* per-passport type selector - always visible so touch/keyboard users can reach it */}
                   <span
                     className="relative ml-0.5"
                     ref={(el) => { typeRefs.current[iso3] = el; }}
+                    onKeyDown={(e) => {
+                      // arrow keys walk the open listbox, matching aria-haspopup="listbox"
+                      if (!isOpen || (e.key !== "ArrowDown" && e.key !== "ArrowUp")) return;
+                      e.preventDefault();
+                      const opts = Array.from(e.currentTarget.querySelectorAll<HTMLButtonElement>('[role="option"]'));
+                      const i = opts.indexOf(document.activeElement as HTMLButtonElement);
+                      opts[e.key === "ArrowDown" ? Math.min(i + 1, opts.length - 1) : Math.max(i - 1, 0)]?.focus();
+                    }}
                   >
                     <button
                       onClick={(e) => { e.stopPropagation(); setTypeOpen(isOpen ? null : iso3); }}
                       aria-expanded={isOpen}
                       aria-haspopup="listbox"
                       aria-label={`Passport type: ${currentType}`}
-                      className={`mono inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] transition ${
+                      className={`mono relative inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] transition after:absolute after:-inset-1.5 after:content-[''] ${
                         isNonOrdinary
                           ? "bg-stamp/10 text-stamp"
                           : "text-ink-mute hover:bg-stamp/[0.08] hover:text-stamp"
@@ -345,7 +382,7 @@ export default function PassportExplorer() {
 
                   <button
                     onClick={() => remove(iso3)}
-                    className="ml-0.5 grid h-6 w-6 place-items-center rounded-full text-[14px] text-ink-mute transition hover:bg-stamp/20 hover:text-stamp"
+                    className="relative ml-0.5 grid h-6 w-6 place-items-center rounded-full text-[14px] text-ink-mute transition after:absolute after:-inset-2 after:content-[''] hover:bg-stamp/20 hover:text-stamp"
                     aria-label={`Remove ${nameFor(iso3)}`}
                   >×</button>
                 </span>
@@ -362,18 +399,25 @@ export default function PassportExplorer() {
                 else if (e.key === "Enter") { const pick = options[hi] ?? options[0]; if (pick) { e.preventDefault(); add(pick.iso3); setHi(-1); } }
               }}
               role="combobox"
-              aria-expanded={open && options.length > 0}
+              aria-expanded={open && (options.length > 0 || query.trim().length > 0)}
               aria-controls="passport-listbox"
               aria-autocomplete="list"
               aria-activedescendant={hi >= 0 ? `passport-opt-${hi}` : undefined}
               aria-label="Search for a passport country"
               placeholder={selected.length ? "Add another country…" : "Search for a country…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute/70"
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute"
             />
           </div>
 
-          {open && options.length > 0 && (
+          {open && (options.length > 0 || query.trim().length > 0) && (
             <ul id="passport-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
+              {options.length === 0 && (
+                <li className="px-4 py-6 text-center text-sm text-ink-mute">
+                  {core
+                    ? <>No country matches &ldquo;{query.trim()}&rdquo; - try the English name or ISO code</>
+                    : "Loading countries…"}
+                </li>
+              )}
               {options.map((c, i) => (
                 <li key={c.iso3} role="option" id={`passport-opt-${i}`} aria-selected={hi === i}>
                   <button
@@ -383,7 +427,7 @@ export default function PassportExplorer() {
                     onMouseEnter={() => setHi(i)}
                     className={`flex w-full items-center gap-3 px-4 py-2.5 text-left transition ${hi === i ? "bg-paper-2" : "hover:bg-paper-2"}`}
                   >
-                    <span className="text-xl">{isoToFlag(c.iso2)}</span>
+                    <span aria-hidden="true" className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
                     <span className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
                   </button>
@@ -396,7 +440,7 @@ export default function PassportExplorer() {
         {autoDetected && selected.includes(autoDetected) && (
           <p className="mt-2.5 text-[12px] text-ink-mute">
             <span aria-hidden="true">📍</span> Added{" "}
-            <span className="font-medium text-ink-soft">{flagFor(autoDetected)} {nameFor(autoDetected)}</span>{" "}
+            <span className="font-medium text-ink-soft"><span aria-hidden="true">{flagFor(autoDetected)}</span> {nameFor(autoDetected)}</span>{" "}
             from your location. Not yours? Remove it above.
           </p>
         )}
@@ -422,15 +466,15 @@ export default function PassportExplorer() {
           <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-card px-4 py-2 transition-all ${credOpen ? "border-stamp" : "border-line-strong"}`}>
             {/* Selected credential chips */}
             {creds.map((credId) => {
-              const c = dataset.credentials.find((x) => x.id === credId);
+              const c = core?.credentials.find((x) => x.id === credId);
               if (!c) return null;
               return (
                 <span key={credId} className="inline-flex items-center gap-1.5 rounded-md border border-stamp/30 bg-stamp/[0.06] px-2.5 py-1.5 text-[13px] text-stamp">
-                  <span className="text-base leading-none">{GROUP_ISO3[c.group] ? flagFor(GROUP_ISO3[c.group]) : ""}</span>
+                  <span aria-hidden="true" className="text-base leading-none">{GROUP_ISO3[c.group] ? flagFor(GROUP_ISO3[c.group]) : ""}</span>
                   <span className="font-display font-medium">{c.short}</span>
                   <button
                     onClick={() => toggleCred(credId)}
-                    className="ml-0.5 grid h-6 w-6 place-items-center rounded-full text-[14px] transition hover:bg-stamp/20"
+                    className="relative ml-0.5 grid h-6 w-6 place-items-center rounded-full text-[14px] transition after:absolute after:-inset-2 after:content-[''] hover:bg-stamp/20"
                     aria-label={`Remove ${c.short}`}
                   >×</button>
                 </span>
@@ -438,41 +482,62 @@ export default function PassportExplorer() {
             })}
             <input
               value={credQuery}
-              onChange={(e) => { setCredQuery(e.target.value); setCredOpen(true); }}
+              onChange={(e) => { setCredQuery(e.target.value); setCredOpen(true); setCredHi(-1); }}
               onFocus={() => setCredOpen(true)}
-              onKeyDown={(e) => { if (e.key === "Escape") setCredOpen(false); }}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") { setCredOpen(false); setCredHi(-1); }
+                else if (e.key === "ArrowDown") { e.preventDefault(); setCredOpen(true); setCredHi((h) => Math.min(h + 1, flatCredOptions.length - 1)); }
+                else if (e.key === "ArrowUp") { e.preventDefault(); setCredHi((h) => Math.max(h - 1, 0)); }
+                else if (e.key === "Enter" && credOpen) { const pick = flatCredOptions[credHi] ?? flatCredOptions[0]; if (pick) { e.preventDefault(); toggleCred(pick.id); setCredOpen(false); setCredHi(-1); } }
+              }}
+              role="combobox"
+              aria-expanded={credOpen}
+              aria-controls="passport-cred-listbox"
+              aria-autocomplete="list"
+              aria-activedescendant={credHi >= 0 ? `passport-cred-opt-${credHi}` : undefined}
               aria-label="Search visas and permits you hold"
               placeholder={creds.length ? "Add another visa or permit…" : "Search by country - e.g. Japan visa, US Green Card, Schengen…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute/70"
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute"
+              autoComplete="off"
             />
             {creds.length > 0 && (
-              <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono shrink-0 text-[11px] uppercase tracking-[0.1em] text-ink-soft hover:text-stamp">
+              <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono inline-flex min-h-[32px] shrink-0 items-center px-1.5 text-[11px] uppercase tracking-[0.1em] text-ink-soft transition hover:text-stamp">
                 Clear
               </button>
             )}
           </div>
 
           {credOpen && (
-            <div className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-card shadow-xl shadow-black/10">
+            <div id="passport-cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-card shadow-xl shadow-black/10">
+              {credGroupOptions.length === 0 && (
+                <p className="px-4 py-6 text-center text-sm text-ink-mute">
+                  {core ? <>No visas or permits found for &ldquo;{credQuery}&rdquo;</> : "Loading visas & permits…"}
+                </p>
+              )}
               {credGroupOptions.map(({ name, items }) => (
-                <div key={name} className="border-b border-line last:border-0">
-                  <div className="flex items-center gap-2.5 px-4 pt-3 pb-2">
+                <div key={name} role="group" aria-label={name} className="border-b border-line last:border-0">
+                  <div aria-hidden="true" className="flex items-center gap-2.5 px-4 pt-3 pb-2">
                     <span className="text-xl leading-none">{GROUP_ISO3[name] ? flagFor(GROUP_ISO3[name]) : "🌐"}</span>
                     <span className="font-display text-[14px] font-semibold text-ink">{name}</span>
                   </div>
                   <div className="flex flex-wrap gap-2 px-4 pb-3 pl-11">
                     {items.map((c) => {
                       const on = creds.includes(c.id);
+                      const idx = credIndexById.get(c.id) ?? -1;
                       return (
                         <button
                           key={c.id}
-                          onClick={() => { toggleCred(c.id); setCredOpen(false); }}
-                          aria-pressed={on}
+                          id={`passport-cred-opt-${idx}`}
+                          role="option"
+                          aria-selected={on}
+                          tabIndex={-1}
+                          onClick={() => { toggleCred(c.id); setCredOpen(false); setCredHi(-1); }}
+                          onMouseEnter={() => setCredHi(idx)}
                           className={`inline-flex items-center gap-1.5 rounded border px-3 py-1.5 text-[12px] transition ${
                             on
                               ? "border-stamp/40 bg-stamp/[0.06] font-semibold text-stamp"
                               : "border-line-strong bg-card text-ink-soft hover:border-ink-mute hover:text-ink"
-                          }`}
+                          } ${credHi === idx ? "ring-1 ring-stamp/60" : ""}`}
                         >
                           {on && <span className="text-[10px] font-bold">✓</span>}
                           {CRED_CHIP_LABEL[c.id] ?? c.short}
@@ -482,9 +547,6 @@ export default function PassportExplorer() {
                   </div>
                 </div>
               ))}
-              {credGroupOptions.length === 0 && (
-                <p className="px-4 py-6 text-center text-sm text-ink-mute">No credentials found for &ldquo;{credQuery}&rdquo;</p>
-              )}
             </div>
           )}
         </div>
@@ -493,7 +555,11 @@ export default function PassportExplorer() {
 
       {/* ── Results ── */}
       {!hasInput ? (
-        <EmptyState onAdd={add} />
+        coreFailed && !core ? <DataError onRetry={retryCore} /> : <EmptyState onAdd={add} />
+      ) : dataFailed ? (
+        <DataError onRetry={retryData} />
+      ) : !result ? (
+        <DataPending />
       ) : (
         <>
           <StatBand result={result} activeTab={tab} setTab={setTab} />
@@ -517,7 +583,7 @@ export default function PassportExplorer() {
         </>
       )}
 
-      {detail && <DetailModal detail={detail} primaryIso3={selected[0] ?? null} onClose={() => setDetail(null)} />}
+      {detail && <DetailModal detail={detail} selectedIso3s={selected} onClose={() => setDetail(null)} />}
     </div>
   );
 }
@@ -532,14 +598,14 @@ function EmptyState({ onAdd }: { onAdd: (iso3: string) => void }) {
         See visa-free destinations, golden visas, citizenship programs and fast-track routes open to you.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-2">
-        {EXAMPLE_PASSPORTS.slice(0, 6).map((iso3) => (
+        {EXAMPLE_PASSPORTS.map((c) => (
           <button
-            key={iso3}
-            onClick={() => onAdd(iso3)}
+            key={c.iso3}
+            onClick={() => onAdd(c.iso3)}
             className="mono inline-flex items-center gap-2 rounded border border-line-strong bg-card px-3 py-2 text-[12px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
           >
-            <span className="text-base">{flagFor(iso3)}</span>
-            {nameFor(iso3)}
+            <span aria-hidden="true" className="text-base">{isoToFlag(c.iso2)}</span>
+            {c.name}
           </button>
         ))}
       </div>
@@ -547,10 +613,34 @@ function EmptyState({ onAdd }: { onAdd: (iso3: string) => void }) {
   );
 }
 
-const iso3ToRegion = new Map(dataset.allCountries.map((c) => [c.iso3, c.region]));
+function DataPending() {
+  return (
+    <div role="status" aria-live="polite" className="reveal mt-10 flex items-center justify-center gap-2.5 rounded-xl border border-line bg-card px-6 py-12">
+      <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-stamp" />
+      <span className="mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft">Loading official records…</span>
+    </div>
+  );
+}
+
+function DataError({ onRetry }: { onRetry: () => void }) {
+  return (
+    <div className="reveal mt-10 rounded-xl border border-stamp/30 bg-stamp/[0.04] px-6 py-10 text-center">
+      <p className="font-display text-xl font-semibold text-ink">Couldn&apos;t load the visa dataset</p>
+      <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
+        The connection dropped before the official records arrived. Rather than guess, nothing is shown until they load.
+      </p>
+      <button
+        onClick={onRetry}
+        className="mono mt-5 inline-flex min-h-[44px] items-center rounded-sm border border-stamp px-5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
+      >
+        Retry
+      </button>
+    </div>
+  );
+}
 
 function StatBand({ result, activeTab, setTab }: {
-  result: ReturnType<typeof compute>;
+  result: PassportResult;
   activeTab: TabKey;
   setTab: (t: TabKey) => void;
 }) {
@@ -616,7 +706,7 @@ function StatBand({ result, activeTab, setTab }: {
         <span className="text-ink-soft">destinations reachable without obtaining a prior visa</span>
         {result.selected.length > 1 && strongest && (
           <span className="ml-auto hidden text-sm italic text-ink-mute sm:inline">
-            Strongest: {flagFor(strongest.iso3)} {nameFor(strongest.iso3)} ({strongest.total})
+            Strongest: <span aria-hidden="true">{flagFor(strongest.iso3)}</span> {nameFor(strongest.iso3)} ({strongest.total})
           </span>
         )}
       </div>
@@ -700,7 +790,8 @@ function StatBand({ result, activeTab, setTab }: {
           </button>
           <button
             onClick={() => setTab("fast")}
-            className={`mono inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
+            aria-pressed={activeTab === "fast"}
+            className={`mono inline-flex min-h-[36px] items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
               activeTab === "fast"
                 ? "border-stamp/30 bg-stamp/[0.06] text-stamp"
                 : "border-line-strong bg-paper-2/60 text-ink-mute hover:border-stamp/30 hover:text-ink"
@@ -715,271 +806,6 @@ function StatBand({ result, activeTab, setTab }: {
   );
 }
 
-
-// ── Visa Type Cards ───────────────────────────────────────────────────────────
-
-const CATEGORY_LABEL: Record<string, string> = {
-  tourist: "Tourist",
-  business: "Business",
-  student: "Student",
-  work: "Work",
-  transit: "Transit",
-  medical: "Medical",
-  retirement: "Retirement",
-  working_holiday: "Working Holiday",
-  digital_nomad: "Digital Nomad",
-  family: "Family",
-  investment: "Investment",
-  diplomatic: "Diplomatic",
-  humanitarian: "Humanitarian",
-  residence: "Residence",
-  other: "Other",
-};
-
-// One neutral chip style for every category - see DestinationExplorer.tsx for
-// why (category is a type label, not a status signal, and the old per-category
-// map had silently collapsed into near-duplicate colors anyway).
-const CATEGORY_CHIP = "text-ink-soft bg-paper-3/60 ring-line-strong";
-
-function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
-  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
-  const cats = Array.from(new Set(visaTypes.map(v => v.category)));
-  const filtered = categoryFilter ? visaTypes.filter(v => v.category === categoryFilter) : visaTypes;
-  return (
-    <div className="mt-6 border-t border-line pt-6">
-      <p className="mono mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
-        {visaTypes.length} visa type{visaTypes.length !== 1 ? "s" : ""} available
-      </p>
-      {cats.length > 1 && (
-        <div className="mb-4 flex flex-wrap gap-1.5">
-          <button
-            onClick={() => setCategoryFilter(null)}
-            className={`mono rounded px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
-          >All</button>
-          {cats.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setCategoryFilter(cat === categoryFilter ? null : cat)}
-              className={`mono rounded px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
-            >{CATEGORY_LABEL[cat] ?? cat}</button>
-          ))}
-        </div>
-      )}
-      <div className="space-y-3">
-        {filtered.map((v, i) => (
-          <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-            <div className="flex flex-wrap items-start gap-2">
-              <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_CHIP}`}>
-                {CATEGORY_LABEL[v.category] ?? v.category}
-              </span>
-              <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
-            </div>
-            {v.purpose && <p className="mt-1.5 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
-            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
-              {v.max_stay_days != null && (
-                <span className="mono text-[11px] text-ink-mute"><span className="font-semibold text-ink">{v.max_stay_days}</span> days max stay</span>
-              )}
-              {v.validity_days != null && (
-                <span className="mono text-[11px] text-ink-mute">valid <span className="font-semibold text-ink">{v.validity_days}</span> days</span>
-              )}
-              {v.entries && (
-                <span className="mono text-[11px] text-ink-mute"><span className="font-semibold text-ink capitalize">{v.entries}</span> entry</span>
-              )}
-              {v.fee_usd != null && (
-                <span className="mono text-[11px] text-ink-mute">fee: <span className="font-semibold text-stamp">{v.fee_usd === 0 ? "free" : `~$${v.fee_usd}`}</span></span>
-              )}
-              {(v.processing_days_min != null || v.processing_days_max != null) && (
-                <span className="mono text-[11px] text-ink-mute">processing: <span className="font-semibold text-ink">{v.processing_days_min != null && v.processing_days_max != null && v.processing_days_min !== v.processing_days_max ? `${v.processing_days_min}–${v.processing_days_max} days` : `${v.processing_days_min ?? v.processing_days_max} days`}</span></span>
-              )}
-              {v.on_arrival && <span className="mono text-[11px] font-semibold text-voa">on arrival</span>}
-              {v.online && !v.on_arrival && <span className="mono text-[11px] font-semibold text-vfree">apply online</span>}
-            </div>
-            {v.notes && <p className="mt-2 line-clamp-2 text-[11px] leading-relaxed text-ink-mute">{v.notes}</p>}
-            {v.official_url && (
-              <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">
-                {hostOf(v.official_url)} ↗
-              </a>
-            )}
-          </div>
-        ))}
-        {filtered.length === 0 && (
-          <p className="text-sm text-ink-mute">No visa types match this filter.</p>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function DestinationResult({
-  destIso3,
-  result,
-  onOpen,
-  onClear,
-  creds,
-}: {
-  destIso3: string;
-  result: ReturnType<typeof compute>;
-  onOpen: (d: Detail) => void;
-  onClear: () => void;
-  creds: string[];
-}) {
-  const reach = result.reach.find((e) => e.dest === destIso3) as (CombinedEdge & { conditions?: string | null }) | undefined;
-  const transit = result.transitReach.find((e) => e.dest === destIso3) as (CombinedEdge & { conditions?: string | null }) | undefined;
-  const fom = result.freedomOfMovement.find((e) => e.dest === destIso3);
-  const isOwnCountry = result.selected.includes(destIso3);
-
-  const flag = flagFor(destIso3);
-  const name = nameFor(destIso3);
-
-  const leftBorder = reach
-    ? (LEVEL_LEFT_BORDER[reach.level] ?? "border-l-line-strong")
-    : fom ? "border-l-bloc"
-    : isOwnCountry ? "border-l-bloc"
-    : "border-l-ink-mute/40";
-
-  return (
-    <div className={`reveal mt-8 overflow-hidden rounded-xl border border-line-strong bg-card shadow-sm border-l-4 ${leftBorder}`}>
-      <div className="flex items-center justify-between border-b border-line px-6 py-4">
-        <div className="flex items-center gap-3">
-          <span className="text-3xl leading-none">{flag}</span>
-          <div>
-            <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Your access to</p>
-            <h3 className="font-display text-xl font-semibold text-ink">{name}</h3>
-          </div>
-        </div>
-        <button onClick={onClear} className="mono text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute transition hover:text-ink">
-          Clear ×
-        </button>
-      </div>
-
-      <div className="px-6 py-5">
-        {isOwnCountry ? (
-          <div className="flex items-center gap-3">
-            <span className="text-2xl">🏠</span>
-            <div>
-              <p className="font-semibold text-ink">This is one of your home countries</p>
-              <p className="mt-0.5 text-sm text-ink-soft">You hold citizenship here - no visa required.</p>
-            </div>
-          </div>
-        ) : reach ? (
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <AccessPill level={reach.level} />
-              {reach.maxStayDays != null && (
-                <span className="text-sm text-ink-soft">
-                  <span className="font-semibold text-ink">{reach.maxStayDays}</span> days max stay
-                </span>
-              )}
-              {reach.viaIso3 && (
-                <span className="text-sm text-ink-soft">
-                  via {flagFor(reach.viaIso3)} <span className="font-medium text-ink">{nameFor(reach.viaIso3)}</span>
-                </span>
-              )}
-              {reach.viaCredential && (
-                <span className="mono rounded border border-stamp/30 bg-stamp/[0.05] px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-stamp">
-                  via {CRED_SHORT[reach.viaCredential] ?? "held visa"}
-                </span>
-              )}
-            </div>
-            <p className="mt-2 text-sm text-ink-soft">
-              {reach.level === "visa_free"
-                ? "Enter with just your passport - no visa application needed."
-                : reach.level === "visa_on_arrival"
-                ? "Get your visa stamp at the airport on arrival."
-                : "Apply online before you travel - no embassy visit required."}
-            </p>
-
-            {(reach.conditions || reach.notes) && (
-              <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                <p className="mono mb-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Conditions &amp; notes</p>
-                <p className="text-sm leading-relaxed text-ink-soft">
-                  {reach.conditions && reach.notes ? `${reach.conditions} - ${reach.notes}` : reach.conditions ?? reach.notes}
-                </p>
-              </div>
-            )}
-
-            <div className="mt-4 flex items-center gap-3">
-              {reach.sourceUrl && <SourceLink url={reach.sourceUrl} official={reach.sourceOfficial} />}
-              <button
-                onClick={() => onOpen(reachDetail(reach))}
-                className="mono text-[10px] font-medium uppercase tracking-[0.12em] text-stamp transition hover:underline"
-              >
-                Full details →
-              </button>
-            </div>
-          </div>
-        ) : fom ? (
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="mono inline-flex items-center rounded border border-bloc/30 bg-bloc/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-bloc">
-                Freedom of movement
-              </span>
-              <span className="text-sm text-ink-soft">Right to live and work - no visa required</span>
-            </div>
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              {fom.groups.map((g) => (
-                <span key={g} className="mono rounded bg-paper-3 px-2 py-1 text-[10px] uppercase tracking-[0.1em] text-ink-soft">
-                  {dataset.groupLabels[g] ?? g}
-                </span>
-              ))}
-            </div>
-          </div>
-        ) : transit ? (
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="mono inline-flex items-center rounded border border-eta/30 bg-eta/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-eta">
-                Transit only
-              </span>
-              {transit.maxStayDays != null && (
-                <span className="text-sm text-ink-soft">up to {transit.maxStayDays} hours</span>
-              )}
-            </div>
-            <p className="mt-2 text-sm text-ink-soft">
-              You can change planes or transit without a visa - but <strong className="font-medium text-ink">not for tourism or extended stays</strong>.
-            </p>
-            {transit.conditions && <p className="mt-2 text-sm text-ink-soft">{transit.conditions}</p>}
-          </div>
-        ) : (
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="mono inline-flex items-center rounded border border-line-strong bg-paper-2 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-soft">
-                Visa required
-              </span>
-            </div>
-            <p className="mt-2 text-sm text-ink-soft">
-              {result.selected.length === 0
-                ? "Add your passport above to see visa requirements."
-                : `No automatic access found with your current passport(s) and credentials. You will need to apply for a visa before travelling to ${name}.`}
-            </p>
-            {result.selected.length > 0 && (
-              <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">What you can do</p>
-                <ul className="space-y-1.5 text-sm text-ink-soft">
-                  <li>→ Apply for a tourist/visitor visa at {name}&apos;s embassy or consulate</li>
-                  {creds.length === 0 && (
-                    <li>→ Check if holding a US, Schengen, UK, or Japan visa unlocks access (add credentials above)</li>
-                  )}
-                  {result.cbi.some(p => p.iso3 === destIso3) && (
-                    <li>→ <span className="font-medium text-stamp">CBI program available</span> - invest to obtain citizenship here</li>
-                  )}
-                  {result.rbi.some(p => p.iso3 === destIso3) && (
-                    <li>→ <span className="font-medium text-voa">Golden visa available</span> - invest to obtain residency here</li>
-                  )}
-                </ul>
-              </div>
-            )}
-          </div>
-        )}
-        {!isOwnCountry && (() => {
-          const visaTypes = dataset.destinationVisaTypes?.[destIso3];
-          return visaTypes && visaTypes.length > 0 ? <VisaTypeCards visaTypes={visaTypes} /> : (
-            <p className="mt-4 text-[12px] text-ink-mute">Detailed visa type data not yet available for this country.</p>
-          );
-        })()}
-      </div>
-    </div>
-  );
-}
 
 function AccessPill({ level }: { level: AccessLevel }) {
   return (
@@ -1027,18 +853,18 @@ function ClickCard({ onOpen, className, style, children }: { onOpen: () => void;
 
 function reachDetail(e: CombinedEdge): Detail {
   const badges: Detail["badges"] = [];
-  if (e.viaCredential) badges.push({ text: `via ${CRED_SHORT[e.viaCredential] ?? "held visa"}`, tone: "stamp" });
+  if (e.viaCredential) badges.push({ text: `via ${credShort(e.viaCredential) ?? "held visa"}`, tone: "stamp" });
   if (e.viaPassportType) badges.push({ text: `${e.viaPassportType} passport`, tone: "bloc" });
   const rows: Detail["rows"] = [];
   if (e.maxStayDays != null) rows.push({ label: "Maximum stay", value: `${e.maxStayDays} days` });
-  if (e.viaIso3) rows.push({ label: "Via passport", value: `${flagFor(e.viaIso3)} ${nameFor(e.viaIso3)}` });
+  if (e.viaIso3) rows.push({ label: "Via passport", value: <><span aria-hidden="true">{flagFor(e.viaIso3)}</span> {nameFor(e.viaIso3)}</> });
   return {
     iso3: e.dest, title: nameFor(e.dest), subtitle: LEVEL_LABEL[e.level], level: e.level,
-    badges, rows, notes: e.notes, sourceUrl: e.sourceUrl, sourceOfficial: e.sourceOfficial,
+    viaIso3: e.viaIso3, badges, rows, notes: e.notes, sourceUrl: e.sourceUrl, sourceOfficial: e.sourceOfficial,
   };
 }
 
-function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: ReturnType<typeof compute>; entries: ReturnType<typeof compute>["reach"]; filter: string; setFilter: (s: string) => void; onOpen: (d: Detail) => void }) {
+function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: PassportResult; entries: CombinedEdge[]; filter: string; setFilter: (s: string) => void; onOpen: (d: Detail) => void }) {
   const q = filter.trim().toLowerCase();
   const rows = entries.filter((e) => !q || nameFor(e.dest).toLowerCase().includes(q));
   if (entries.length === 0) return <Note>No official visa-policy data yet maps to this passport. Many governments don&apos;t publish enumerated visa-free lists; reach is derived only from destinations that do.</Note>;
@@ -1050,7 +876,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
         onKeyDown={(e) => { if (e.key === "Escape") setFilter(""); }}
         aria-label="Filter destinations by name"
         placeholder="Filter destinations…"
-        className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-card px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute/70"
+        className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-card px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute"
       />
       {rows.length === 0 && (
         <p className="rounded-lg border border-dashed border-line bg-paper-2/40 px-4 py-6 text-center text-sm text-ink-soft">
@@ -1061,7 +887,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {rows.map((e) => (
           <ClickCard key={e.dest} onOpen={() => onOpen(reachDetail(e))} className={`group flex items-start gap-3 p-3.5 ${CARD}`}>
-            <span className="text-2xl leading-none">{flagFor(e.dest)}</span>
+            <span aria-hidden="true" className="text-2xl leading-none">{flagFor(e.dest)}</span>
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between gap-2">
                 <span className="font-display min-w-0 truncate font-medium text-ink">{nameFor(e.dest)}</span>
@@ -1071,7 +897,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
                 {e.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {e.maxStayDays} days</span>}
                 {e.viaCredential && (
                   <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-stamp ring-1 ring-stamp/30">
-                    via {CRED_SHORT[e.viaCredential] ?? "held visa"}
+                    via {credShort(e.viaCredential) ?? "held visa"}
                   </span>
                 )}
                 {e.viaPassportType && (
@@ -1082,7 +908,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
                 {e.sourceUrl && <span className="mono inline-flex items-center gap-1.5 text-[11px] text-ink-mute"><SourceDot official={e.sourceOfficial} />{hostOf(e.sourceUrl)}</span>}
               </div>
               {e.notes && <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink-mute">{e.notes}</p>}
-              <span className="mono mt-1.5 block text-[10px] font-medium uppercase tracking-[0.1em] text-stamp/80 transition group-hover:text-stamp">Details ›</span>
+              <span className="mono mt-1.5 block text-[10px] font-medium uppercase tracking-[0.1em] text-stamp">Details ›</span>
             </div>
           </ClickCard>
         ))}
@@ -1091,7 +917,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Re
   );
 }
 
-function TransitPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOpen: (d: Detail) => void }) {
+function TransitPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: Detail) => void }) {
   if (result.transitReach.length === 0)
     return <Note>No transit-only destinations in your current credential combination.</Note>;
   return (
@@ -1104,7 +930,7 @@ function TransitPanel({ result, onOpen }: { result: ReturnType<typeof compute>; 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {result.transitReach.map((e) => (
           <ClickCard key={e.dest} onOpen={() => onOpen(reachDetail(e))} className={`group flex items-start gap-3 p-3.5 ${CARD}`}>
-            <span className="text-2xl leading-none">{flagFor(e.dest)}</span>
+            <span aria-hidden="true" className="text-2xl leading-none">{flagFor(e.dest)}</span>
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between gap-2">
                 <span className="font-display min-w-0 truncate font-medium text-ink">{nameFor(e.dest)}</span>
@@ -1114,7 +940,7 @@ function TransitPanel({ result, onOpen }: { result: ReturnType<typeof compute>; 
                 {e.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {e.maxStayDays}h transit</span>}
                 {e.viaCredential && (
                   <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-stamp ring-1 ring-stamp/30">
-                    via {CRED_SHORT[e.viaCredential] ?? "held visa"}
+                    via {credShort(e.viaCredential) ?? "held visa"}
                   </span>
                 )}
                 {e.sourceUrl && <span className="mono inline-flex items-center gap-1.5 text-[11px] text-ink-mute"><SourceDot official={e.sourceOfficial} />{hostOf(e.sourceUrl)}</span>}
@@ -1128,7 +954,7 @@ function TransitPanel({ result, onOpen }: { result: ReturnType<typeof compute>; 
   );
 }
 
-function FomPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOpen: (d: Detail) => void }) {
+function FomPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: Detail) => void }) {
   if (result.freedomOfMovement.length === 0)
     return <Note>None of your passports belong to a free-movement bloc in our dataset (EU/EEA, GCC, CARICOM, ECOWAS, ASEAN, Mercosur, Common Travel Area, Trans-Tasman…).</Note>;
   return (
@@ -1145,19 +971,22 @@ function FomPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
             key={e.dest}
             onOpen={() => onOpen({
               iso3: e.dest, title: nameFor(e.dest), subtitle: "Freedom of movement",
-              badges: e.groups.map((g) => ({ text: dataset.groupLabels[g] ?? g, tone: "bloc" as const })),
+              // the granting passport = the selected one that belongs to a shared bloc
+              viaIso3: result.selected.find((s) => e.groups.some((g) => groupMembers(g).includes(s))),
+              corridor: true,
+              badges: e.groups.map((g) => ({ text: groupLabel(g), tone: "bloc" as const })),
               notes: "Shared regional-bloc membership - typically grants visa-free entry and, depending on the bloc, the right to live and work. Confirm the specific rights per bloc.",
             })}
             className={`reveal flex items-center gap-3 border-bloc/20 bg-bloc/[0.04] p-3.5 ${CARD}`}
             style={{ animationDelay: `${(i % 10) * 35}ms` }}
           >
-            <span className="text-2xl">{flagFor(e.dest)}</span>
+            <span aria-hidden="true" className="text-2xl">{flagFor(e.dest)}</span>
             <div className="min-w-0">
               <div className="font-display truncate font-medium text-ink">{nameFor(e.dest)}</div>
               <div className="mt-1 flex flex-wrap gap-1">
                 {e.groups.map((g) => (
                   <span key={g} className="mono rounded-[2px] bg-bloc/10 px-1.5 py-0.5 text-[9px] uppercase tracking-[0.1em] text-bloc">
-                    {dataset.groupLabels[g] ?? g}
+                    {groupLabel(g)}
                   </span>
                 ))}
               </div>
@@ -1220,7 +1049,7 @@ function PanelFilter({ value, onChange, placeholder }: { value: string; onChange
       onKeyDown={(e) => { if (e.key === "Escape") onChange(""); }}
       aria-label={placeholder}
       placeholder={placeholder}
-      className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-card px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute/70"
+      className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-card px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute"
     />
   );
 }
@@ -1234,7 +1063,7 @@ function NoMatch({ filter, onClear }: { filter: string; onClear: () => void }) {
   );
 }
 
-function CbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOpen: (d: Detail) => void }) {
+function CbiPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: Detail) => void }) {
   if (result.cbi.length === 0) return <Note>No citizenship-by-investment programs found on official sources yet.</Note>;
   return (
     <div className="grid gap-4 lg:grid-cols-2">
@@ -1260,7 +1089,7 @@ function CbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
           style={{ animationDelay: `${(i % 8) * 40}ms` }}
         >
           <div className="flex items-center gap-3">
-            <span className="text-3xl">{flagFor(p.iso3)}</span>
+            <span aria-hidden="true" className="text-3xl">{flagFor(p.iso3)}</span>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-display text-lg font-semibold text-ink">{nameFor(p.iso3)}</span>
@@ -1296,7 +1125,7 @@ function CbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
   );
 }
 
-function RbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOpen: (d: Detail) => void }) {
+function RbiPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: Detail) => void }) {
   const [filter, setFilter] = useState("");
   if (result.rbi.length === 0) return <Note>No residence-by-investment / golden-visa programs found on official sources yet.</Note>;
   // Drop entries that would render identically (same country, program name and amount).
@@ -1326,7 +1155,7 @@ function RbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
             style={{ animationDelay: `${(i % 10) * 30}ms` }}
           >
             <div className="flex items-center gap-2.5">
-              <span className="text-2xl">{flagFor(p.iso3)}</span>
+              <span aria-hidden="true" className="text-2xl">{flagFor(p.iso3)}</span>
               <div className="min-w-0">
                 <div className="font-display truncate font-medium text-ink">{p.program_name}</div>
                 <div className="mono text-[11px] font-medium uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.type ? ` · ${programTypeLabel(p.type)}` : ""}</div>
@@ -1351,7 +1180,7 @@ function RbiPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOp
   );
 }
 
-function FastPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onOpen: (d: Detail) => void }) {
+function FastPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: Detail) => void }) {
   const [filter, setFilter] = useState("");
   if (result.fastTrack.length === 0) return <Note>No fast-track / skilled / talent / digital-nomad programs found on official sources yet.</Note>;
   // Drop entries that would render identically (same country, program name and category).
@@ -1381,7 +1210,7 @@ function FastPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onO
             style={{ animationDelay: `${(i % 10) * 30}ms` }}
           >
             <div className="flex items-center gap-2.5">
-              <span className="text-2xl">{flagFor(p.iso3)}</span>
+              <span aria-hidden="true" className="text-2xl">{flagFor(p.iso3)}</span>
               <div className="min-w-0">
                 <div className="font-display truncate font-medium text-ink">{p.program_name}</div>
                 <div className="mono text-[11px] font-medium uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.category ? ` · ${programTypeLabel(p.category)}` : ""}</div>
@@ -1400,8 +1229,17 @@ function FastPanel({ result, onOpen }: { result: ReturnType<typeof compute>; onO
   );
 }
 
-function DetailModal({ detail, primaryIso3, onClose }: { detail: Detail; primaryIso3: string | null; onClose: () => void }) {
+function DetailModal({ detail, selectedIso3s, onClose }: { detail: Detail; selectedIso3s: string[]; onClose: () => void }) {
   const panelRef = useRef<HTMLDivElement>(null);
+  // Corridor guide CTA: only for access-level / FoM results, linked from the
+  // passport that actually grants the access - and only when that corridor
+  // page really exists (pruned thin corridors 404).
+  const guideNat = useMemo(() => {
+    if (!detail.level && !detail.corridor) return null;
+    return [detail.viaIso3, ...selectedIso3s].find(
+      (n): n is string => !!n && n !== detail.iso3 && isUsefulCorridor(n, detail.iso3),
+    ) ?? null;
+  }, [detail, selectedIso3s]);
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -1447,12 +1285,12 @@ function DetailModal({ detail, primaryIso3, onClose }: { detail: Detail; primary
       <div className="reveal absolute inset-0 bg-black/40 backdrop-blur-[2px]" style={{ animationDuration: "0.25s" }} onClick={onClose} />
       <div ref={panelRef} tabIndex={-1} className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-xl border border-line-strong bg-card shadow-2xl shadow-black/20 outline-none" style={{ animationDuration: "0.3s" }}>
         <div className="rule-double flex items-start gap-3 px-6 pb-4 pt-6">
-          <span className="text-4xl leading-none">{flagFor(detail.iso3)}</span>
+          <span aria-hidden="true" className="text-4xl leading-none">{flagFor(detail.iso3)}</span>
           <div className="min-w-0 flex-1">
             <h3 className="font-display text-2xl font-semibold leading-tight text-ink">{detail.title}</h3>
             {detail.subtitle && <div className="mt-0.5 text-sm italic text-ink-soft">{detail.subtitle}</div>}
           </div>
-          <button onClick={onClose} aria-label="Close" className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-lg text-ink-mute transition hover:bg-stamp hover:text-white">×</button>
+          <button onClick={onClose} aria-label="Close" className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-lg text-ink-mute transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep">×</button>
         </div>
         <div className="max-h-[70vh] overflow-auto px-6 py-5">
           {(detail.level || (detail.badges && detail.badges.length > 0)) && (
@@ -1484,16 +1322,22 @@ function DetailModal({ detail, primaryIso3, onClose }: { detail: Detail; primary
             </dl>
           )}
           {cleanProgramNote(detail.notes) && <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ink-soft">{cleanProgramNote(detail.notes)}</p>}
-          {/* Access-level details always have a corridor page (reach edges ARE
-              corridor candidates) - route the explorer into the full guide. */}
-          {detail.level && primaryIso3 && (
+          {guideNat ? (
             <Link
-              href={`/passport/${nameToSlug(nameFor(primaryIso3))}/${nameToSlug(detail.title)}`}
-              className="mono mt-5 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white"
+              href={`/passport/${nameToSlug(nameFor(guideNat))}/${nameToSlug(detail.title)}`}
+              className="mono mt-5 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
             >
-              Full {nameFor(primaryIso3)} → {detail.title} guide: fees, documents, how to apply
+              Full {nameFor(guideNat)} → {detail.title} guide: fees, documents, how to apply
             </Link>
-          )}
+          ) : (detail.level || detail.corridor) && selectedIso3s.length > 0 && selectedIso3s[0] !== detail.iso3 ? (
+            /* corridor page pruned - fall back to the passport hub, which always exists */
+            <Link
+              href={`/passport/${nameToSlug(nameFor(selectedIso3s[0]))}`}
+              className="mono mt-5 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
+            >
+              {`Full ${nameFor(selectedIso3s[0])} passport guide: every destination & entry rule`}
+            </Link>
+          ) : null}
           {detail.sourceUrl && (
             <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-line pt-4">
               <SourceLink url={detail.sourceUrl} official={!!detail.sourceOfficial} />

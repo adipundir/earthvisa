@@ -92,8 +92,12 @@ export default function ProofOfFundsHub() {
       <main className="min-h-screen">
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-5xl px-5 pt-8 pb-10 sm:px-8">
-            <nav className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.15em] text-ink-mute">
-              <Link href="/" className="transition hover:text-ink">Earth Visa</Link> / Proof of Funds
+            <nav aria-label="Breadcrumb" className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.15em] text-ink-mute">
+              <Link href="/" className="transition hover:text-ink">Earth Visa</Link>
+              <span aria-hidden> / </span>
+              <Link href="/guide" className="transition hover:text-ink">Guides</Link>
+              <span aria-hidden> / </span>
+              Proof of Funds
             </nav>
             <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
               Proof of Funds for a Visa

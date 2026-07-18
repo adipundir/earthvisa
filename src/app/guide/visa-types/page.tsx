@@ -165,12 +165,12 @@ export default function VisaTypesGlossaryPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
               <span aria-hidden>/</span>
-              <span className="inline-flex min-h-[44px] items-center">Guide</span>
+              <Link href="/guide" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Guides</Link>
               <span aria-hidden>/</span>
               <span className="inline-flex min-h-[44px] items-center text-ink">Visa Types</span>
             </nav>
@@ -235,6 +235,65 @@ export default function VisaTypesGlossaryPage() {
                 </a>
               ))}
             </nav>
+          </section>
+
+          {/* The three-way comparison the title promises, answered up front;
+              the per-concept sections below go deeper on each column. */}
+          <section className="mt-12 max-w-3xl">
+            <h2 id="comparison" className="scroll-mt-24 font-display text-2xl font-semibold text-ink">
+              Visa-Free vs Visa on Arrival vs eTA vs e-Visa: The Difference
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+              All four mean you skip the embassy - the differences are whether a visa is actually issued, where, and
+              whether you must apply before flying. At a glance:
+            </p>
+            <div className="mt-4 overflow-x-auto">
+              <table className="w-full min-w-[640px] border-collapse text-sm">
+                <thead>
+                  <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Question</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium text-vfree">Visa-Free</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Visa on Arrival</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">eTA</th>
+                    <th scope="col" className="py-2.5 font-medium">e-Visa</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-line text-ink-soft">
+                  <tr>
+                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Is a visa issued?</td>
+                    <td className="py-2.5 pr-4">No</td>
+                    <td className="py-2.5 pr-4">Yes - at the border</td>
+                    <td className="py-2.5 pr-4">No - a pre-screening</td>
+                    <td className="py-2.5">Yes - a full visa, digital</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Where it happens</td>
+                    <td className="py-2.5 pr-4">Nowhere - just your passport</td>
+                    <td className="py-2.5 pr-4">A counter at the airport or land border</td>
+                    <td className="py-2.5 pr-4">Online, linked to your passport</td>
+                    <td className="py-2.5">Online application portal</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Apply before flying?</td>
+                    <td className="py-2.5 pr-4">No</td>
+                    <td className="py-2.5 pr-4">No - but bring the fee and documents</td>
+                    <td className="py-2.5 pr-4">Yes</td>
+                    <td className="py-2.5">Yes</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Typical cost</td>
+                    <td className="py-2.5 pr-4">Free</td>
+                    <td className="py-2.5 pr-4">A fee paid in person at the border</td>
+                    <td className="py-2.5 pr-4">Free or a small online fee</td>
+                    <td className="py-2.5">A visa fee paid online</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+              Which column applies to you is nationality-specific - the same destination can sit in a different column
+              for every passport. Each concept is defined in depth below.
+            </p>
           </section>
 
           {/* Visa-Free */}

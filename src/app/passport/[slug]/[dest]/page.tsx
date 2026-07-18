@@ -131,6 +131,10 @@ function cleanChecklistLines(text: string, keepNames: string[], foreignNames: st
       const line = raw.trim();
       if (/^important notes?:?$/i.test(line)) return false;
       if (/^documents? required:?$/i.test(line)) return false;
+      if (/^(?:notes?|document check ?list)\s*:?$/i.test(line)) return false;
+      // References to VFS's own site furniture ("go to the link 'VISA TYPES
+      // column'") point at UI that does not exist here - dead weight without a URL.
+      if (/visa types column|go to the link/i.test(line) && !/https?:\/\//i.test(line)) return false;
       if (/mandatory documents.*mentioned in the checklist/i.test(line)) return false;
       if (/checklist needs to be filled for each application/i.test(line)) return false;
       if (/application form will not be accepted without the relevant check ?list/i.test(line)) return false;
@@ -210,9 +214,6 @@ function DocBlocks({ text }: { text: string }) {
               </a>
             ))}
           </div>
-          <p className="mt-1.5 text-[11px] leading-relaxed text-ink-mute">
-            Official checklist{pdfs.length > 1 ? "s" : ""} - fill in the one for your visa type and submit it with the application form.
-          </p>
         </div>
       )}
       {bullets.length > 0 && (
@@ -232,10 +233,19 @@ function DocBlocks({ text }: { text: string }) {
   );
 }
 
-// Requirement lines (each "- ..." bullet) that are byte-identical across every
-// visa type in a corridor (photo spec, passport-copy clause, etc.) are true
-// boilerplate, not per-type content - hoist them into one shared block instead
-// of repeating the same ~100-word paragraph inside every accordion.
+// Requirement lines (each "- ..." bullet) repeated across most visa types in a
+// corridor (photo spec, passport-copy clause, etc.) are boilerplate, not
+// per-type content - hoist them into one shared block instead of repeating the
+// same ~100-word paragraph inside every accordion. Matching uses a normalized
+// key (case/whitespace/punctuation/parentheticals collapsed) so trivial
+// wording variants still count as one line, and the bar is a >=60% majority
+// rather than all entries - one divergent checklist (a jurisdiction variant,
+// say) previously defeated the hoist on every heavy corridor. Lines carrying a
+// URL (per-type PDF checklists) and short heading-ish fragments never hoist.
+const VFS_COMMON_SHARE = 0.6;
+const normLine = (s: string) =>
+  s.toLowerCase().replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
+const hoistable = (line: string) => !/https?:\/\//i.test(line) && normLine(line).split(" ").length >= 4;
 function splitLines(text: string): string[] {
   return text.split("\n").map((l) => l.trim()).filter(Boolean);
 }
@@ -243,20 +253,40 @@ function extractCommonLines<T extends { documents_required: string }>(entries: T
   const lineSets = entries.map((e) => splitLines(e.documents_required));
   if (entries.length < 2) return { common: [], perEntry: lineSets };
   const counts = new Map<string, number>();
-  for (const lines of lineSets) for (const line of new Set(lines)) counts.set(line, (counts.get(line) ?? 0) + 1);
-  const common = [...counts.entries()].filter(([, c]) => c === entries.length).map(([line]) => line);
-  const commonSet = new Set(common);
-  return { common, perEntry: lineSets.map((lines) => lines.filter((l) => !commonSet.has(l))) };
+  for (const lines of lineSets) for (const k of new Set(lines.filter(hoistable).map(normLine))) counts.set(k, (counts.get(k) ?? 0) + 1);
+  const minCount = Math.max(2, Math.ceil(entries.length * VFS_COMMON_SHARE));
+  const commonKeys = new Set([...counts].filter(([, c]) => c >= minCount).map(([k]) => k));
+  // The first occurrence (original wording intact) is what displays.
+  const common: string[] = [];
+  const seen = new Set<string>();
+  for (const lines of lineSets) {
+    for (const l of lines) {
+      if (!hoistable(l)) continue;
+      const k = normLine(l);
+      if (commonKeys.has(k) && !seen.has(k)) { seen.add(k); common.push(l); }
+    }
+  }
+  return { common, perEntry: lineSets.map((lines) => lines.filter((l) => !(hoistable(l) && commonKeys.has(normLine(l))))) };
 }
 
-// Visa-type notes arrive as flowing prose. Sentences repeated verbatim across
-// 3+ cards ("National visa fee €75 (approx. USD 81).", "Online application
-// through Consular Services Portal available as of January 2025.") are
-// destination boilerplate, not per-type content - hoist them into one shared
-// block above the cards, the same treatment extractCommonLines() gives VFS
-// checklist lines. Sentence splitting guards abbreviations ("approx.", "e.g.")
-// and unbalanced parentheses so prose is never cut mid-thought.
-const NOTE_MIN_REPEATS = 3;
+// Crawl residue: a one-line body that merely echoes the entry's own name or
+// category ("Employment IB" under "Category IB (Working With Company Under
+// Boi)") carries zero requirement content. VFS labels work visas "Employment",
+// hence the synonym.
+const CATEGORY_SYNONYM: Record<string, string> = { work: "employment" };
+function isLabelEcho(v: { name: string; category: string; documents_required: string }): boolean {
+  const lines = splitLines(v.documents_required);
+  if (lines.length !== 1 || /https?:\/\//i.test(lines[0])) return false;
+  const words = normLine(lines[0]).split(" ");
+  if (words.length === 0 || words.length > 5) return false;
+  const label = ` ${normLine(`${v.name} ${v.category} ${CATEGORY_SYNONYM[v.category] ?? ""}`)} `;
+  return words.every((w) => label.includes(` ${w} `));
+}
+
+// Visa-type notes arrive as flowing prose - split into sentences so 3+
+// discrete facts render as scannable bullets. Splitting guards abbreviations
+// ("approx.", "e.g.") and unbalanced parentheses so prose is never cut
+// mid-thought.
 function splitSentences(text: string): string[] {
   const parts: string[] = [];
   let buf = "";
@@ -272,26 +302,6 @@ function splitSentences(text: string): string[] {
   if (buf) parts.push(buf);
   return parts;
 }
-function extractCommonSentences(notes: (string | null)[]): { common: string[]; perEntry: string[] } {
-  const sets = notes.map((t) => (t ? splitSentences(t) : []));
-  // Parentheticals are clarification, not distinct facts - "fee €75 (approx.
-  // USD 81)." and "fee €75." are the same boilerplate line, so strip them
-  // before matching (the first occurrence, parenthetical intact, is displayed).
-  const norm = (s: string) => s.toLowerCase().replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").replace(/[.;]+$/, "").trim();
-  const counts = new Map<string, number>();
-  for (const sents of sets) for (const k of new Set(sents.map(norm))) counts.set(k, (counts.get(k) ?? 0) + 1);
-  const commonKeys = new Set([...counts].filter(([, c]) => c >= NOTE_MIN_REPEATS).map(([k]) => k));
-  const common: string[] = [];
-  const seen = new Set<string>();
-  for (const sents of sets) {
-    for (const s of sents) {
-      const k = norm(s);
-      if (commonKeys.has(k) && !seen.has(k)) { seen.add(k); common.push(s); }
-    }
-  }
-  return { common, perEntry: sets.map((sents) => sents.filter((s) => !commonKeys.has(norm(s))).join(" ")) };
-}
-
 // Bare URLs in checklist text (100+ character asset links) become real anchors
 // with a short label - otherwise they are unclickable and, being unbreakable
 // strings, force horizontal overflow on mobile.
@@ -316,12 +326,18 @@ function linkifyDocs(text: string): React.ReactNode[] {
   return nodes;
 }
 
-const VERB: Record<string, string> = {
-  visa_free: "can travel visa-free to",
-  visa_on_arrival: "can get a visa on arrival for",
-  eta: "need an eTA for",
-  e_visa: "can apply for an e-Visa for",
-};
+// Advisory / citation URLs (travel.state.gov country pages, travel.gc.ca
+// destination advisories, MOFA's visa-EXEMPTION list) document a policy - they
+// are not application portals, and must never render behind an "Apply" action.
+const ADVISORY_URL_RE = /travel\.state\.gov|travel\.gc\.ca|smartraveller\.gov\.au|advisor|\bnovisa\b|exemption/i;
+const isAdvisoryUrl = (url: string | null | undefined): url is string => !!url && ADVISORY_URL_RE.test(url);
+
+// An advance note stating that travel/visa issuance is banned or suspended for
+// this nationality (US→North Korea passport-validity ban, Burkina Faso/Niger
+// issuance suspensions, …) means there is nothing to apply for - the page must
+// link the official advisory instead of an apply CTA.
+const TRAVEL_BAN_RE = /passports? (?:are|is) not valid for travel|no route for ordinary tourism|suspended[^.]{0,40}visa issuance|visa issuance[^.]{0,40}suspended|not (?:routinely|currently) issuing[^.]{0,40}visas/i;
+const isTravelBanned = (s: Status): boolean => s.kind === "visa_required" && !!s.notes && TRAVEL_BAN_RE.test(s.notes);
 
 function answerSentence(nat: string, dest: string, s: Status): string {
   switch (s.kind) {
@@ -331,7 +347,12 @@ function answerSentence(nat: string, dest: string, s: Status): string {
     case "visa_on_arrival": return `${nat} passport holders can get a visa on arrival for ${dest}${s.maxStayDays ? ` (up to ${s.maxStayDays} days)` : ""}, so no visa is needed before travelling.`;
     case "eta": return `${nat} passport holders need an approved eTA (electronic travel authorisation) before travelling to ${dest} - a quick online pre-screening completed before departure, not a full visa.`;
     case "e_visa": return `${nat} passport holders can apply online for a ${dest} e-Visa before travel. Unlike an eTA, this is an actual visa - just issued digitally - so no embassy visit is needed for eligible short-term visits. Eligibility and covered purposes vary, so check the conditions below.`;
-    default: return `${nat} passport holders need a visa to enter ${dest}. Apply at a ${dest} embassy or consulate, or the official visa portal, before travelling.`;
+    default:
+      // "Apply at the embassy" is wrong advice when the advance note says
+      // issuance/travel is banned or suspended for this nationality.
+      return isTravelBanned(s)
+        ? `${nat} passport holders currently cannot travel to ${dest} for ordinary tourism - see the policy note for the official restriction and current status.`
+        : `${nat} passport holders need a visa to enter ${dest}. Apply at a ${dest} embassy or consulate, or the official visa portal, before travelling.`;
   }
 }
 
@@ -346,7 +367,10 @@ function faqAnswerSentence(nat: string, dest: string, s: Status): string {
     case "visa_on_arrival": return `No advance visa is required - ${nat} citizens get a visa on arrival at the border${s.maxStayDays ? ` for stays of up to ${s.maxStayDays} days` : ""}.`;
     case "eta": return `Not a visa, but yes - an approved eTA (a quick online pre-screening) is required before travelling.`;
     case "e_visa": return `Yes, but it can be completed entirely online - no embassy visit is required for eligible short-term visits.`;
-    default: return `Yes - ${nat} citizens must apply for a visa in advance at a ${dest} embassy, consulate, or official visa portal before travelling.`;
+    default:
+      return isTravelBanned(s)
+        ? `Yes, but ordinary tourist travel is currently suspended or restricted for ${nat} citizens - see the policy note on this page for the official status.`
+        : `Yes - ${nat} citizens must apply for a visa in advance at a ${dest} embassy, consulate, or official visa portal before travelling.`;
   }
 }
 
@@ -482,7 +506,7 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
       })()}
       {v.official_url && (
         <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
-          Apply here ↗
+          {isAdvisoryUrl(v.official_url) ? "Official advisory" : "Apply here"} ↗
         </a>
       )}
     </div>
@@ -541,6 +565,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           documents_required: cleanChecklistLines(stripVfsBoilerplate(v.documents_required), keepNames, foreignNames),
         }))
         .filter((v: { documents_required: string }) => v.documents_required)
+        .filter((v: { name: string; category: string; documents_required: string }) => !isLabelEcho(v))
         // Tourist first: it's what the vast majority of readers actually need,
         // and a hard positional cutoff below must not bury it under niche types.
         .sort((a: { category: string }, b: { category: string }) => (a.category === "tourist" ? -1 : b.category === "tourist" ? 1 : 0));
@@ -638,11 +663,31 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     visaTypes.length > 0 &&
     ((!hasVfs && need && visaTypes.some((v) => TRAVELER_CATS.has(v.category))) ||
       visaTypes.some((v) => !TRAVELER_CATS.has(v.category)));
-  const applyUrl = need
-    ? (("sourceUrl" in s && s.sourceUrl) || visaTypes.find((v) => v.official_url)?.official_url || null)
+  // The status source can be a citation (a travel.state.gov country page on a
+  // US corridor), not a portal - only a non-advisory URL may become the "Apply"
+  // action. An advance note can also rule out whole channels: a stated e-visa
+  // ineligibility ("not on Russia's approved e-visa nationality list") makes
+  // the destination's e-visa portal the wrong door, and a ban/suspension means
+  // there is nothing to apply for at all.
+  const statusUrl = "sourceUrl" in s && s.sourceUrl ? s.sourceUrl : null;
+  const travelBanned = isTravelBanned(s);
+  const eVisaIneligible = s.kind === "visa_required" && !!s.notes && /\bnot (?:on|in|eligible(?: for)?)\b[^.]{0,60}\be-?visa/i.test(s.notes);
+  const portalUrl = visaTypes
+    .map((v) => v.official_url)
+    .filter((u): u is string => !!u && !isAdvisoryUrl(u) && !(eVisaIneligible && /e-?visa/i.test(u)))[0] ?? null;
+  const applyUrl = need && !travelBanned
+    ? ((statusUrl && !isAdvisoryUrl(statusUrl) ? statusUrl : null) ?? portalUrl)
+    : null;
+  const advisoryUrl = travelBanned ? statusUrl : null;
+  // A fee-variation note sometimes carries the lodging channel itself ("all
+  // applications must be lodged through VFS Global Dhaka; the Embassy … no
+  // longer accepts direct applications") - that is an apply step, not just a
+  // fee fact, so surface the sentence in the apply section too.
+  const lodgingFact = s.kind === "visa_required" && feeVariation?.note
+    ? splitSentences(feeVariation.note).find((t) => /must be lodged|no longer accepts direct applications/i.test(t)) ?? null
     : null;
   const jumpLinks = [
-    { href: "#apply", label: need ? "How to apply" : "How to enter" },
+    { href: "#apply", label: travelBanned ? "Current status" : need ? "How to apply" : "How to enter" },
     credGroups.length > 0 ? { href: "#no-advance-visa", label: "No-visa exceptions" } : null,
     feeList.length > 0 ? { href: "#fees", label: "Fees" } : null,
     vfsDocs.length > 0 ? { href: "#documents", label: "Documents" } : null,
@@ -720,12 +765,14 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
         <header className="border-b border-line bg-paper-2/50">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             <div className="min-w-0">
-              <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[11px] font-medium uppercase tracking-[0.18em] text-ink-mute">
-                <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
-                <span>/</span>
-                <Link href={`/passport/${slug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">{n.name}</Link>
-                <span>/</span>
-                <span className="text-ink-soft">{d.name}</span>
+              <nav aria-label="Breadcrumb" className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+                <ol className="flex flex-wrap items-center gap-x-2">
+                  <li><Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link></li>
+                  <li aria-hidden="true">/</li>
+                  <li><Link href={`/passport/${slug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">{n.name}</Link></li>
+                  <li aria-hidden="true">/</li>
+                  <li aria-current="page" className="text-ink-soft">{d.name}</li>
+                </ol>
               </nav>
               <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none" aria-hidden="true">{flagFor(d.iso3)}</span>
@@ -814,6 +861,28 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   {applicationNoteFor(d.iso3)}
                 </p>
               ) : null}
+              {/* Mobile jump nav: below lg the rail (jump links + apply button)
+                  stacks after the FAQ - thousands of words down - so both get a
+                  second, scrollable home right under the verdict card. */}
+              <nav aria-label="Jump to section" className="-mx-5 mt-5 px-5 sm:-mx-8 sm:px-8 lg:hidden">
+                <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {applyUrl && (
+                    <a href={applyUrl} target="_blank" rel="noreferrer" className="mono inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-stamp bg-stamp px-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white">
+                      Apply ↗
+                    </a>
+                  )}
+                  {advisoryUrl && (
+                    <a href={advisoryUrl} target="_blank" rel="noreferrer" className="mono inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-line-strong bg-card px-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft">
+                      Official advisory ↗
+                    </a>
+                  )}
+                  {jumpLinks.map((j) => (
+                    <a key={j.href} href={j.href} className="mono inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-line bg-card px-3.5 text-[11px] uppercase tracking-[0.12em] text-ink-soft transition hover:border-stamp hover:text-ink">
+                      {j.label}
+                    </a>
+                  ))}
+                </div>
+              </nav>
             </div>
           </div>
         </header>
@@ -821,12 +890,9 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
         <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 lg:grid lg:grid-cols-[minmax(0,1fr)_290px] lg:items-start lg:gap-12">
           <div className="min-w-0">
           {/* What you need to do */}
-          {(() => {
-            const fallbackApplyUrl = visaTypes.find((v) => v.official_url)?.official_url;
-            return (
           <section id="apply" className="mb-10 scroll-mt-24">
             <h2 className="font-display text-xl font-semibold text-ink">
-              {need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
+              {travelBanned ? `${d.name} travel status for ${nd} citizens` : need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
             </h2>
             <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-soft">
               {s.kind === "visa_free" && <li>→ Travel with just your valid {nd} passport. No visa or prior application needed.</li>}
@@ -848,19 +914,29 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   {"sourceUrl" in s && s.sourceUrl && <>{" "}<ApplyLink href={s.sourceUrl} /></>}
                 </li>
               )}
-              {s.kind === "visa_required" && (
+              {/* The hero already states THAT a visa is needed - these steps
+                  carry the operational facts instead of restating the verdict. */}
+              {s.kind === "visa_required" && travelBanned && (
                 <li>
-                  → Apply for a visa at the {d.name} embassy/consulate or official visa application centre before travelling.
-                  {fallbackApplyUrl && <>{" "}<ApplyLink href={fallbackApplyUrl} /></>}
+                  → Ordinary travel to {d.name} is currently not possible on {article(nd)} {nd} passport - see the policy note above for the official restriction.
+                  {advisoryUrl && <>{" "}<ApplyLink href={advisoryUrl} label="Read the official advisory" /></>}
                 </li>
+              )}
+              {s.kind === "visa_required" && !travelBanned && (
+                <li>
+                  → Lodge your application {destFees?.vfs.used && destFees.vfs.operator ? `at ${article(destFees.vfs.operator)} ${destFees.vfs.operator} visa application centre` : `at the ${d.name} embassy or consulate that serves your region`}, with the completed form and required documents.
+                  {applyUrl && <>{" "}<ApplyLink href={applyUrl} /></>}
+                </li>
+              )}
+              {s.kind === "visa_required" && !travelBanned && lodgingFact && <li>→ {lodgingFact}</li>}
+              {s.kind === "visa_required" && !travelBanned && processingFact && (
+                <li>→ Allow {processingFact.charAt(0).toLowerCase()}{processingFact.slice(1)} for processing once lodged - apply well before your travel date.</li>
               )}
               {vfsDocs.length > 0 && (
                 <li>→ <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " - only needed if you apply for a longer-stay visa" : ", by visa type"}.</li>
               )}
             </ul>
           </section>
-            );
-          })()}
 
           {/* Held-credential exceptions - officially published no-advance-visa routes */}
           {credGroups.length > 0 && (
@@ -1023,10 +1099,14 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 {noVisaShortStay
                   ? `No visa documents are needed for a short visit - ${nd} citizens enter ${d.name} with just a valid passport. If you apply for a longer-stay visa, these are the exact documents required, by visa type, from the official visa application centre.`
                   : `The exact documents ${nd} citizens must submit for ${d.name}, by visa type, from the official visa application centre.`}
+                {/* One caption for the whole section - previously repeated
+                    under the PDF pills inside every accordion. */}
+                {/\.pdf/i.test([vfsCommonLines.join("\n"), ...vfsDocs.map((v) => v.documents_required)].join("\n")) &&
+                  " Where a visa type links an official PDF checklist, fill in that checklist and submit it with the application form."}
               </p>
               {vfsCommonLines.length > 0 && (
                 <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3.5">
-                  <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">Required for every visa type below</p>
+                  <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">Required for most visa types below</p>
                   <DocBlocks text={vfsCommonLines.join("\n")} />
                 </div>
               )}
@@ -1057,13 +1137,14 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               useful to know about even on an easy tourist-entry corridor. */}
           {visaTypes.length > 0 && (() => {
             const TRAVELER_CATEGORIES = new Set(["tourist", "business", "transit"]);
-            const touristTypes = visaTypes.filter((v) => TRAVELER_CATEGORIES.has(v.category));
+            // An e-visa product this nationality is excluded from (per the
+            // advance note) must not render an open card with an apply link.
+            const touristTypes = visaTypes.filter((v) =>
+              TRAVELER_CATEGORIES.has(v.category) &&
+              !(eVisaIneligible && /e-?visa|electronic/i.test(`${v.official_url ?? ""} ${v.name}`)));
             const otherTypes = visaTypes.filter((v) => !TRAVELER_CATEGORIES.has(v.category));
             const showTourist = !hasVfs && need && touristTypes.length > 0;
             if (!showTourist && otherTypes.length === 0) return null;
-            // Notes sentences repeated across 3+ "other category" cards are
-            // destination-wide boilerplate - hoist them once above the grid.
-            const { common: sharedNotes, perEntry: dedupedNotes } = extractCommonSentences(otherTypes.map((v) => v.notes));
             return (
               <section id="visa-types" className="mb-10 scroll-mt-24 border-t border-line pt-8">
                 {/* The h2 renders whenever the section exists - otherwise the
@@ -1082,24 +1163,36 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                       <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </summary>
                     <p className="mt-3 text-sm text-ink-soft">
-                      These don&apos;t apply to a typical short visit, but cover other reasons people travel to {d.name}. Eligibility varies by visa type - some are limited to specific nationalities, so check each one&apos;s conditions.
+                      These don&apos;t apply to a typical short visit, but cover other reasons people travel to {d.name}. Eligibility varies by visa type - some are limited to specific nationalities, so check each one&apos;s conditions on the official page.
                     </p>
-                    {sharedNotes.length > 0 && (
-                      <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3.5">
-                        <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">Common to several visa categories below</p>
-                        <ul className="space-y-1.5">
-                          {sharedNotes.map((line, i) => (
-                            <li key={i} className="flex gap-2.5 text-[12.5px] leading-relaxed text-ink-soft">
-                              <span aria-hidden="true" className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
-                              <span className="min-w-0 break-words">{line}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                      {otherTypes.map((v, i) => <VisaTypeCard key={i} v={{ ...v, notes: dedupedNotes[i] || null }} suppressFee={feeList.length > 0} />)}
-                    </div>
+                    {/* Compact index, not full cards: this catalog is
+                        destination-generic and identical on every corridor into
+                        {dest} - one mono line per type keeps the categories
+                        discoverable without shipping the same multi-thousand-word
+                        blob on dozens of pages. */}
+                    <ul className="mt-4 divide-y divide-line border-y border-line">
+                      {otherTypes.map((v, i) => (
+                        <li key={i} className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-2.5">
+                          <span className="font-display text-[13.5px] font-medium text-ink">{v.name}</span>
+                          <span className="mono flex flex-wrap gap-x-3 text-[11px] text-ink-mute">
+                            <span className="uppercase tracking-[0.08em]">{v.category.replace(/_/g, " ")}</span>
+                            {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
+                            {v.fee_usd != null && (v.fee_usd === 0 ? <span className="text-vfree">free</span> : <span>~${v.fee_usd}</span>)}
+                            {v.online && <span className="text-vfree">online</span>}
+                          </span>
+                          {v.official_url && (
+                            <a href={v.official_url} target="_blank" rel="noreferrer" className="mono ml-auto text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
+                              {isAdvisoryUrl(v.official_url) ? "advisory" : "official"} ↗
+                            </a>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-3 text-sm text-ink-soft">
+                      <Link href={`/destination/${dest}`} className="font-medium text-stamp underline-offset-2 hover:underline">
+                        {d.name} visa policy, fees & entry rules in full →
+                      </Link>
+                    </p>
                   </details>
                 )}
               </section>
@@ -1153,6 +1246,15 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 className="mono mt-6 flex min-h-[48px] items-center justify-center rounded-lg border border-stamp bg-stamp px-4 text-[12px] font-medium uppercase tracking-[0.14em] text-white transition hover:bg-stamp-deep lg:mt-7"
               >
                 Apply on the official portal ↗
+              </a>
+            ) : advisoryUrl ? (
+              <a
+                href={advisoryUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mono mt-6 flex min-h-[48px] items-center justify-center rounded-lg border border-line-strong bg-card px-4 text-[12px] font-medium uppercase tracking-[0.14em] text-ink-soft transition hover:border-ink-soft hover:text-ink lg:mt-7"
+              >
+                Read the official advisory ↗
               </a>
             ) : (
               <Link

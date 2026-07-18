@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { dataset, flagFor, nameFor } from "@/lib/dataset";
-import { corridorsForDestination, DEMONYM } from "@/lib/corridors";
+import { corridorsForDestination, isUsefulCorridor, DEMONYM } from "@/lib/corridors";
 import { aliasBySlug, SHORT_NAME, type ColloquialAlias } from "@/lib/colloquial";
 import { feesFor, fmtFee } from "@/lib/fees";
 import { buildReverseIndex } from "../reverse-index";
@@ -87,36 +87,48 @@ function Chevron() {
   );
 }
 
-// A single nationality entry. The whole ≥44px row is one tappable next/link.
+// A single nationality entry. The whole ≥44px row is one tappable next/link -
+// to the nationality-specific corridor page when one exists (a user on
+// /destination/thailand clicking "India" wants India → Thailand rules), else
+// the passport hub.
 function NationalityRow({
   iso3,
+  destIso3,
+  destSlug,
   maxStayDays,
   levelClass,
   label,
 }: {
   iso3: string;
+  destIso3: string;
+  /** the destination COUNTRY's slug (never a colloquial alias slug) */
+  destSlug: string;
   maxStayDays: number | null;
   levelClass: string;
   label: string;
 }) {
+  const natSlug = nameToSlug(nameFor(iso3));
+  const href = isUsefulCorridor(iso3, destIso3) ? `/passport/${natSlug}/${destSlug}` : `/passport/${natSlug}`;
   return (
-    <Link
-      href={`/passport/${nameToSlug(nameFor(iso3))}`}
-      className="group/row flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
-    >
-      <span className="text-xl">{flagFor(iso3)}</span>
-      <div className="min-w-0">
-        <span className="font-display text-sm font-medium text-ink transition group-hover/row:text-stamp">
-          {nameFor(iso3)}
+    <li>
+      <Link
+        href={href}
+        className="group/row flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+      >
+        <span className="text-xl">{flagFor(iso3)}</span>
+        <div className="min-w-0">
+          <span className="font-display text-sm font-medium text-ink transition group-hover/row:text-stamp">
+            {nameFor(iso3)}
+          </span>
+          {maxStayDays != null && (
+            <div className="mono text-[11px] text-ink-mute">≤ {maxStayDays} days</div>
+          )}
+        </div>
+        <span className={`mono ml-auto whitespace-nowrap rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${levelClass}`}>
+          {label}
         </span>
-        {maxStayDays != null && (
-          <div className="mono text-[11px] text-ink-mute">≤ {maxStayDays} days</div>
-        )}
-      </div>
-      <span className={`mono ml-auto whitespace-nowrap rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${levelClass}`}>
-        {label}
-      </span>
-    </Link>
+      </Link>
+    </li>
   );
 }
 
@@ -221,6 +233,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
   const flag = flagFor(country.iso3);
   const destIso3 = country.iso3;
+  // Corridor URLs always use the official country slug, even on alias pages
+  // (dubai renders ARE, but the corridor lives at /passport/x/united-arab-emirates).
+  const destCountrySlug = nameToSlug(country.name);
 
   const accessByLevel = buildReverseIndex(destIso3);
   const vfCount = accessByLevel.visa_free.length;
@@ -347,12 +362,22 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
     },
   ];
 
-  // Corridor guides where this country is the destination (internal link mesh).
-  const corridorLinks = corridorsForDestination(destIso3).map((c) => ({
-    href: `/passport/${c.natSlug}/${c.destSlug}`,
-    label: `${DEMONYM[c.nat] ?? nameFor(c.nat)} citizens`,
-    iso3: c.nat,
-  }));
+  // Corridor guides where this country is the destination. Nationalities in
+  // the access lists above already link straight to their corridor page, so
+  // this mesh keeps only the rest (typically visa-required nationalities with
+  // a VFS checklist, credential unlock or advance-visa notes) instead of
+  // re-listing every corridor twice. Labels carry the corridor pages' query
+  // shape ("Thailand visa for Indian citizens").
+  const linkedNats = new Set(
+    [...accessByLevel.visa_free, ...accessByLevel.visa_on_arrival, ...accessByLevel.eta, ...accessByLevel.e_visa].map((e) => e.iso3),
+  );
+  const corridorLinks = corridorsForDestination(destIso3)
+    .filter((c) => !linkedNats.has(c.nat))
+    .map((c) => ({
+      href: `/passport/${c.natSlug}/${c.destSlug}`,
+      label: `${country.name} visa for ${DEMONYM[c.nat] ?? nameFor(c.nat)} citizens`,
+      iso3: c.nat,
+    }));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -400,11 +425,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono mb-4 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
-              <span>/</span>
+              <span aria-hidden>/</span>
               <Link href="/destination" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Destinations</Link>
-              <span>/</span>
+              <span aria-hidden>/</span>
               <span className="text-ink">{country.name}</span>
             </nav>
 
@@ -511,11 +536,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="mt-2 text-sm text-ink-soft">
                 Passport holders from these countries can enter {country.name} without a visa - no embassy appointment, no advance fee.
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {accessByLevel.visa_free.slice(0, PREVIEW_VF).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_free} label="Visa-free" />
+                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_free} label="Visa-free" />
                 ))}
-              </div>
+              </ul>
               {vfCount > PREVIEW_VF && (
                 <details className="group mt-2.5">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
@@ -523,11 +548,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     <span className="hidden group-open:inline">Show fewer</span>
                     <Chevron />
                   </summary>
-                  <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {accessByLevel.visa_free.slice(PREVIEW_VF).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_free} label="Visa-free" />
+                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_free} label="Visa-free" />
                     ))}
-                  </div>
+                  </ul>
                 </details>
               )}
             </section>
@@ -542,11 +567,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="mt-2 text-sm text-ink-soft">
                 Citizens of these countries can obtain a visa stamp at the {country.name} border on arrival - no advance embassy visit required.
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {accessByLevel.visa_on_arrival.slice(0, PREVIEW_VOA).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_on_arrival} label="On arrival" />
+                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_on_arrival} label="On arrival" />
                 ))}
-              </div>
+              </ul>
               {voaCount > PREVIEW_VOA && (
                 <details className="group mt-2.5">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
@@ -554,11 +579,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     <span className="hidden group-open:inline">Show fewer</span>
                     <Chevron />
                   </summary>
-                  <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {accessByLevel.visa_on_arrival.slice(PREVIEW_VOA).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_on_arrival} label="On arrival" />
+                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_on_arrival} label="On arrival" />
                     ))}
-                  </div>
+                  </ul>
                 </details>
               )}
             </section>
@@ -573,11 +598,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="mt-2 text-sm text-ink-soft">
                 These nationalities can apply for an electronic travel authorisation or e-Visa online before travel - no embassy visit required.
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {etaAndEvisa.slice(0, PREVIEW_ETA).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS[e.lvl]} label={e.lvl === "eta" ? "eTA" : "e-Visa"} />
+                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS[e.lvl]} label={e.lvl === "eta" ? "eTA" : "e-Visa"} />
                 ))}
-              </div>
+              </ul>
               {etaCount > PREVIEW_ETA && (
                 <details className="group mt-2.5">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
@@ -585,11 +610,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     <span className="hidden group-open:inline">Show fewer</span>
                     <Chevron />
                   </summary>
-                  <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {etaAndEvisa.slice(PREVIEW_ETA).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS[e.lvl]} label={e.lvl === "eta" ? "eTA" : "e-Visa"} />
+                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS[e.lvl]} label={e.lvl === "eta" ? "eTA" : "e-Visa"} />
                     ))}
-                  </div>
+                  </ul>
                 </details>
               )}
             </section>
@@ -624,6 +649,45 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     </div>
                   ))}
                 </div>
+                {paid.length > 6 && (
+                  <details className="group mt-2.5">
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                      <span className="group-open:hidden">Show all {paid.length} fees</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <Chevron />
+                    </summary>
+                    <div className="mt-2.5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                      {paid.slice(6).map((f, i) => (
+                        <div key={i + 6} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
+                          <p className="font-display text-[14px] font-semibold text-ink">{f.name}</p>
+                          <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
+                          <div className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
+                            {f.validity && <span>{f.validity}</span>}
+                            {f.official && <span className="text-vfree">official source</span>}
+                          </div>
+                          {f.source_url && (
+                            <a href={f.source_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-block text-[10px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
+                              {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
+                            </a>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                )}
+                {destIso3 === "JPN" && (
+                  <p className="mt-3 max-w-2xl text-sm text-ink-soft">
+                    Japan revised these fees for the first time since 1978, effective 1 July 2026 -{" "}
+                    <Link href="/guide/japan-visa-fee-increase-2026" className="font-medium text-stamp underline-offset-2 hover:underline">
+                      see the full old-vs-new fee breakdown
+                    </Link>.
+                  </p>
+                )}
+                <p className="mt-3 text-sm text-ink-soft">
+                  <Link href="/rankings/visa-fees" className="font-medium text-stamp underline-offset-2 hover:underline">
+                    Compare official tourist-visa fees across every destination →
+                  </Link>
+                </p>
                 {df.vfs.used && (
                   <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
                     {/* No amount here: crawled service fees are per-country (often
@@ -704,7 +768,8 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 {country.name} Visa Guides by Nationality
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                Step-by-step {country.name} visa requirements, fees and document checklists for travellers from these countries.
+                Step-by-step {country.name} visa requirements, fees and document checklists for travellers from these
+                countries. Nationalities in the access lists above link straight to their own guides.
               </p>
               <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {corridorLinks.slice(0, PREVIEW_CORRIDORS).map((l) => (

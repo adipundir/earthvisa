@@ -183,7 +183,7 @@ export default function RankingsPage() {
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <span className="inline-flex min-h-[44px] items-center text-ink">Rankings</span>
@@ -236,6 +236,11 @@ export default function RankingsPage() {
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               We count visa-free, visa-on-arrival, eTA and e-visa access separately, from official government sources - see
               the <a href="#methodology" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">methodology</a> below.
+              Reach is one axis; the other is cost - see{" "}
+              <Link href="/rankings/visa-fees" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">
+                the real cost of a tourist visa
+              </Link>
+              , the same destinations ranked by their official published fee.
             </p>
           </section>
 
@@ -264,7 +269,7 @@ export default function RankingsPage() {
                       <span className="ml-1 text-[10px] font-normal uppercase tracking-[0.1em] text-ink-mute">reach</span>
                     </span>
                     <span className="mono mt-1 text-[11px] text-ink-mute">
-                      {r.visaFree} visa-free · {r.visaOnArrival} VoA · {r.eta} eTA/e-visa
+                      {r.visaFree} visa-free · {r.visaOnArrival} VoA · {r.eta} eTA / e-Visa
                     </span>
                   </Link>
                 </li>

@@ -882,3 +882,7 @@ if (negationGaps.length) {
   negationGaps.forEach((g) => console.log(`      ${g}`));
 }
 console.log(`  top unresolved nationality labels: ${topUnresolved.slice(0, 8).join(", ") || "none"}`);
+
+// Re-emit the client-explorer slices (public/explorer/) so they always match
+// the dataset just written. Also runs standalone via `npm run build` (prebuild).
+execSync(`node ${JSON.stringify(join(__dirname, "build-explorer-slices.mjs"))}`, { stdio: "inherit" });

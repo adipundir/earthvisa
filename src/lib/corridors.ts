@@ -1,5 +1,5 @@
 import { dataset } from "./dataset";
-import { compute } from "./compute";
+import { corridorDestsForNat } from "./corridor-dests.mjs";
 
 // Highest-search-volume visa corridors ("<destination> visa for <nationality>").
 // Curated subset (top nationalities × top destinations) so the build stays lean
@@ -20,28 +20,10 @@ export const TOP_DESTINATIONS = [
   "IRL",
 ];
 
-// High-search-demand corridors that the thin-content prune would otherwise drop
-// (visa-required, no grant/VFS docs). These render destination visa types + fee
-// data instead, so they carry real content. "nat|dest" keys.
-const FORCE_CORRIDORS = new Set([
-  "IND|IRL", "PAK|IRL",
-  "NGA|CAN",
-  "IND|GBR", "PAK|GBR", "NGA|GBR",
-  "CHN|JPN", "SAU|JPN", "ZAF|JPN", // reclassified visa-required (Japan eVISA is residence-based, not a nationality grant); keep - fee data + application note
-  // Top Indian outbound destinations that are visa-required with no VFS
-  // checklist - previously 404ed while Tuvalu got a page. All carry rich fee
-  // + visa-type data (audit-verified); FRA/GRC also close the two holes in
-  // /guide/schengen/india's destination links.
-  "IND|USA", "IND|CAN", "IND|AUS", "IND|SAU", "IND|KWT", "IND|FRA", "IND|GRC",
-  "IND|ESP", // previously existed only via the mis-mapped Malta VFS file; Spain is a top Indian destination with full fee + visa-type data
-  // ~50% of site traffic is the US passport - these 16 destinations are
-  // genuinely visa-required with no VFS checklist, but each carries a
-  // researched advanceVisaNotes entry (fee, process, current suspension/
-  // advisory status where relevant) that would otherwise never render.
-  "USA|BFA", "USA|CAF", "USA|COG", "USA|DZA", "USA|ERI", "USA|LBR", "USA|NER",
-  "USA|NRU", "USA|IRN", "USA|PRK", "USA|RUS", "USA|SDN", "USA|TCD", "USA|TKM",
-  "USA|YEM", "USA|CHN",
-]);
+// The high-search-demand FORCE_CORRIDORS list and the shared thin-content
+// quality bar now live in ./corridor-dests.mjs, which is also what
+// scripts/build-explorer-slices.mjs uses to emit per-passport corridor sets
+// for the client explorers - one implementation, no drift.
 
 /** Adjectival demonym, e.g. "Thailand Visa for Indian citizens". Copy that uses
  * this map must fall back to a phrasing that reads correctly with the bare
@@ -104,50 +86,21 @@ let _useful: Set<string> | null = null;
  */
 export function corridorPairs(): CorridorPair[] {
   if (_pairs) return _pairs;
-  const vfs = dataset.vfsCorridors ?? {};
   const out: CorridorPair[] = [];
-  // Held-credential unlock destinations, mirroring the corridor page's own
-  // credGroups filter (non-transit, tourist entry, no refugee documents).
-  // "*" collects edges with no nationality scope (any passport qualifies).
-  const credDests = new Map<string, Set<string>>();
-  for (const edges of Object.values(dataset.credentialAccess ?? {})) {
-    for (const e of edges) {
-      if (e.transit) continue;
-      if (/refugee|airport transit/i.test(`${e.notes ?? ""} ${e.conditions ?? ""}`)) continue;
-      const scopes = e.nationalityScope == null ? ["*"] : e.nationalityScope;
-      for (const s of scopes) {
-        if (!credDests.has(s)) credDests.set(s, new Set());
-        credDests.get(s)!.add(e.dest);
-      }
-    }
-  }
-  const anyNatCredDests = credDests.get("*") ?? new Set<string>();
   // Every passport (not just the curated top nationalities) gets a corridor
   // page for every destination where IT has genuine content: an access grant,
   // freedom of movement, a VFS document checklist, a credential unlock, or an
   // explicit force-include. Same thin-content bar as before - just no longer
   // capped to a curated nationality x destination grid, so "click any
   // destination card" always lands on a real per-passport page when one exists.
+  // The derivation itself lives in ./corridor-dests.mjs, shared with the
+  // explorer-slice build so the client "Full guide" gating can't drift.
   for (const n of dataset.allCountries) {
-    const nat = n.iso3;
-    const r = compute([nat], [], {});
-    const candidates = new Set<string>();
-    for (const e of r.reach) candidates.add(e.dest);
-    for (const e of r.freedomOfMovement) candidates.add(e.dest);
-    for (const [dst, corrs] of Object.entries(vfs)) {
-      if (corrs.some((c) => c.sourceIso3 === nat)) candidates.add(dst);
-    }
-    for (const dst of anyNatCredDests) candidates.add(dst);
-    for (const dst of credDests.get(nat) ?? []) candidates.add(dst);
-    for (const key of FORCE_CORRIDORS) {
-      const [fn, fd] = key.split("|");
-      if (fn === nat) candidates.add(fd);
-    }
-    for (const dst of candidates) {
-      if (dst === nat) continue;
+    const natSlug = nameToSlug(n.name);
+    for (const dst of corridorDestsForNat(dataset, n.iso3)) {
       const d = byIso3.get(dst);
       if (!d) continue;
-      out.push({ nat, dest: dst, natSlug: nameToSlug(n.name), destSlug: nameToSlug(d.name) });
+      out.push({ nat: n.iso3, dest: dst, natSlug, destSlug: nameToSlug(d.name) });
     }
   }
   _pairs = out;

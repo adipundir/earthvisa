@@ -69,13 +69,17 @@
   --ink-mute:  #8b8f97;
   --line:        #26272c;
   --line-strong: #3a3c42;
-  --stamp:      #d15b4c;
+  /* stamp/bloc are TEXT accents in dark: #d66555 clears 4.5:1 AA on every dark
+     surface (paper 5.45, paper-2 5.09, paper-3 4.64, card 4.94). It is too
+     light to sit under white text - white-on-red surfaces must use
+     --stamp-deep instead (white on #b23528 = 6.12:1); see overrides below. */
+  --stamp:      #d66555;
   --stamp-deep: #b23528;
   --vfree: #58b17f;
   --voa:   #a3a7b0;
   --eta:   #a3a7b0;
   --evisa: #a3a7b0;
-  --bloc:  #d15b4c;
+  --bloc:  #d66555;
 }
 
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -88,6 +92,10 @@ body {
 }
 
 ::selection { background: var(--stamp); color: #ffffff; }
+/* Dark --stamp is tuned as a text accent and fails AA under white text -
+   white-on-red surfaces swap to the deeper red in dark mode. */
+.dark ::selection { background: var(--stamp-deep); }
+.dark .skip-link { background: var(--stamp-deep); }
 
 .font-display { font-family: var(--font-display), system-ui, sans-serif; }
 .font-mono    { font-family: var(--font-mono), ui-monospace, monospace; }

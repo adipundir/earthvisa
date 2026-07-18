@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 // Corridors real visitors actually search for (Search Console) - the strip
 // doubles as instant utility and an entry into the corridor corpus.
 const POPULAR_CORRIDORS = [
-  { flag: "🇮🇳", from: "India", to: "UAE", href: "/passport/india/uae" },
+  { flag: "🇮🇳", from: "India", to: "UAE", href: "/passport/india/united-arab-emirates" },
   { flag: "🇮🇳", from: "India", to: "Thailand", href: "/passport/india/thailand" },
   { flag: "🇩🇪", from: "Germany", to: "Japan", href: "/passport/germany/japan" },
   { flag: "🇦🇺", from: "Australia", to: "Egypt", href: "/passport/australia/egypt" },

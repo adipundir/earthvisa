@@ -5,6 +5,7 @@ import { dataset, flagFor, nameFor } from "@/lib/dataset";
 const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { compute } from "@/lib/compute";
 import { corridorsForNationality, isUsefulCorridor, DEMONYM, TOP_DESTINATIONS } from "@/lib/corridors";
+import { feesFor, fmtFee, type FeeEntry } from "@/lib/fees";
 import CorridorLinks from "@/components/CorridorLinks";
 import PassportDestinationSearch from "@/components/PassportDestinationSearch";
 import type { AccessLevel, CbiProgram } from "@/lib/types";
@@ -70,6 +71,30 @@ const LIST_LINKS: Record<string, { vf?: string; voa?: string; evisa?: string; us
     vf: "/list/visa-free-countries-for-nigerians",
     voa: "/list/visa-on-arrival-countries-for-nigerians",
   },
+  IDN: {
+    vf: "/list/visa-free-countries-for-indonesians",
+    voa: "/list/visa-on-arrival-countries-for-indonesians",
+  },
+  VNM: {
+    vf: "/list/visa-free-countries-for-vietnamese-citizens",
+    voa: "/list/visa-on-arrival-countries-for-vietnamese-citizens",
+  },
+  BRA: {
+    vf: "/list/visa-free-countries-for-brazilians",
+    voa: "/list/visa-on-arrival-countries-for-brazilians",
+  },
+  MEX: {
+    vf: "/list/visa-free-countries-for-mexicans",
+    voa: "/list/visa-on-arrival-countries-for-mexicans",
+  },
+  EGY: {
+    vf: "/list/visa-free-countries-for-egyptians",
+    voa: "/list/visa-on-arrival-countries-for-egyptians",
+  },
+  BGD: {
+    vf: "/list/visa-free-countries-for-bangladeshis",
+    voa: "/list/visa-on-arrival-countries-for-bangladeshis",
+  },
 };
 
 // Global rank by total reach - shared by metadata and the page body.
@@ -81,10 +106,10 @@ const rankOf = new Map(
 );
 
 // Head-term titles: "{country} passport ranking 2026" is the dominant query
-// shape, and rank-in-title answers it in the SERP. India gets the exact
-// highest-volume phrasing for its cluster.
-function passportTitle(iso3: string, name: string, rank: number | undefined, vfCount: number): string {
-  if (iso3 === "IND") return `Visa-Free Countries for Indians 2026: Full List (${vfCount}) & Passport Rank`;
+// shape, and rank-in-title answers it in the SERP. Every hub is rank-first -
+// "visa free countries for {people}" belongs to the /list pages, so the hub
+// never competes with its own listicle for the same query.
+function passportTitle(name: string, rank: number | undefined, vfCount: number): string {
   return rank
     ? `${name} Passport Rank 2026: #${rank}/${TOTAL_PASSPORTS} - ${vfCount} Visa-Free`
     : `${name} Passport 2026 - ${vfCount} Visa-Free Countries`;
@@ -103,9 +128,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const flag = flagFor(country.iso3);
 
   const rank = rankOf.get(country.iso3);
-  const title = passportTitle(country.iso3, country.name, rank, vfCount);
+  const title = passportTitle(country.name, rank, vfCount);
   const { adj } = nationalityPhrases(country.iso3, country.name);
-  const description = `Visa-free countries for the ${adj} passport 2026: ${vfCount} destinations without a visa, ${voaCount} visa on arrival, and ${etaCount} via eTA or e-visa${rank ? `. Ranked #${rank} of ${TOTAL_PASSPORTS} passports` : ""}. Full list from official government sources.`;
+  // Rank-first description: the "visa free countries for X" promise belongs to
+  // the /list pages, so the hub pitches its rank + access breakdown instead.
+  const description = `${rank ? `The ${adj} passport ranks #${rank} of ${TOTAL_PASSPORTS} in 2026` : `${adj} passport 2026`}: ${vfCount} destinations visa-free, ${voaCount} visa on arrival, and ${etaCount} via eTA or e-visa. Full access breakdown from official government sources.`;
 
   return {
     // absolute opts out of the root layout's "%s | Earth Visa" template - these
@@ -113,15 +140,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // and the auto-appended suffix was pushing nearly all of them well over.
     title: { absolute: title },
     description,
+    // No "visa free countries for X" / "visa on arrival countries for X"
+    // phrasings here - those are the /list pages' head terms.
     keywords: [
-      `visa free countries for ${country.name.toLowerCase()} passport`,
-      `${country.name.toLowerCase()} passport visa free countries`,
       `${country.name.toLowerCase()} passport ranking 2026`,
       `${country.name.toLowerCase()} passport ranking`,
+      `${country.name.toLowerCase()} passport rank`,
       `how many countries can ${country.name.toLowerCase()} visit without visa`,
       `${country.name.toLowerCase()} passport strength`,
-      `${country.name.toLowerCase()} visa on arrival countries`,
-      `visa on arrival countries for ${country.name.toLowerCase()} passport`,
+      `${country.name.toLowerCase()} passport power`,
       `countries ${country.name.toLowerCase()} can visit without visa`,
       `most powerful passport ${country.name.toLowerCase()}`,
     ],
@@ -153,34 +180,75 @@ function DestCard({ natName, natIso3, edge, fom = false }: {
     ? `/passport/${nameToSlug(natName)}/${destSlug}`
     : `/destination/${destSlug}`;
   return (
-    <Link href={href} className="group flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong hover:bg-paper-2">
-      <span className="text-xl">{flagFor(edge.dest)}</span>
-      <div className="min-w-0">
-        <div className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{nameFor(edge.dest)}</div>
-        {fom ? (
-          <div className="mono text-[11px] text-ink-mute">Freedom of movement</div>
-        ) : (
-          edge.maxStayDays != null && <div className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days</div>
-        )}
-      </div>
-    </Link>
+    <li>
+      <Link href={href} className="group flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong hover:bg-paper-2">
+        <span className="text-xl">{flagFor(edge.dest)}</span>
+        <div className="min-w-0">
+          <div className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{nameFor(edge.dest)}</div>
+          {fom ? (
+            <div className="mono text-[11px] text-ink-mute">Freedom of movement</div>
+          ) : (
+            edge.maxStayDays != null && <div className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days</div>
+          )}
+        </div>
+      </Link>
+    </li>
   );
 }
 
-// A visa-required destination card - always links to the corridor page when
+// Cheapest official published embassy tourist-visa fee for a destination,
+// mirroring the general-public filter on /rankings/visa-fees (no child/group/
+// single-nationality rates, no "No fee"/"Not offered" data notes) - but
+// restricted to kind === "tourist_visa": quoting a destination's cheaper
+// e-visa or VoA here would misprice exactly the nationality that can't use it.
+const VR_NOT_RE = /^not?\s/i;
+const VR_NARROW_RE = /\bchild\b|\binfant\b|for \w+ nationals\b|\bgroup\b|\bfamily\b|\bcollective\b/i;
+function touristVisaFee(destIso3: string): string | null {
+  const d = feesFor(destIso3);
+  if (!d) return null;
+  const candidates = d.fees.filter(
+    (f: FeeEntry) =>
+      f.kind === "tourist_visa" && f.official && f.amount_usd != null &&
+      !VR_NOT_RE.test(f.name) && !VR_NARROW_RE.test(f.name),
+  );
+  if (candidates.length === 0) return null;
+  return fmtFee(candidates.reduce((a, b) => (a.amount_usd! <= b.amount_usd! ? a : b)));
+}
+
+// A visa-required destination row - always links to the corridor page when
 // one exists (VFS document checklist, fees, etc.), since "visa required"
 // destinations are exactly where that per-corridor detail matters most.
-// No "Visa required" badge: the section h2 already says it.
-function VrCard({ natName, natIso3, dest }: { natName: string; natIso3: string; dest: { iso3: string; name: string } }) {
+// Rendered as a table row so the section carries real data (the destination's
+// official tourist-visa fee) instead of a grid of name-only cards.
+function VrRow({ natName, natIso3, dest }: { natName: string; natIso3: string; dest: { iso3: string; name: string } }) {
   const destSlug = nameToSlug(dest.name);
   const href = isUsefulCorridor(natIso3, dest.iso3)
     ? `/passport/${nameToSlug(natName)}/${destSlug}`
     : `/destination/${destSlug}`;
+  const fee = touristVisaFee(dest.iso3);
   return (
-    <Link href={href} className="group flex items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong hover:bg-paper-2">
-      <span className="text-xl">{flagFor(dest.iso3)}</span>
-      <div className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{dest.name}</div>
-    </Link>
+    <tr className="transition hover:bg-paper-2/70">
+      <td className="px-3.5 py-1.5">
+        <Link href={href} className="group flex min-h-[40px] items-center gap-2.5 font-display text-sm font-medium text-ink transition hover:text-stamp">
+          <span className="text-lg">{flagFor(dest.iso3)}</span>
+          <span className="min-w-0">{dest.name}</span>
+          <span aria-hidden className="mono text-ink-mute transition group-hover:text-stamp">→</span>
+        </Link>
+      </td>
+      <td className="mono px-3.5 py-1.5 text-right text-sm tabular-nums text-ink-soft">{fee ?? "—"}</td>
+    </tr>
+  );
+}
+
+// Shared header for the visa-required tables (preview + "Show all" tail).
+function VrTableHead() {
+  return (
+    <thead>
+      <tr className="border-b border-line-strong bg-paper-2">
+        <th scope="col" className="mono px-3.5 py-2.5 text-left text-[11px] uppercase tracking-[0.15em] text-ink-mute">Destination</th>
+        <th scope="col" className="mono px-3.5 py-2.5 text-right text-[11px] uppercase tracking-[0.15em] text-ink-mute">Tourist visa fee</th>
+      </tr>
+    </thead>
   );
 }
 
@@ -269,23 +337,22 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
   const rank = rankOf.get(country.iso3) ?? null;
   const listLinks = LIST_LINKS[country.iso3] ?? {};
 
-  // Corridor guides where this passport is the traveller (internal link mesh).
-  // Highest-search-demand destinations first (TOP_DESTINATIONS order) so the
-  // collapsed CorridorLinks preview surfaces the corridors people actually
-  // search for; the long tail follows alphabetically behind "Show all".
+  // Highest-search-demand corridor guides (TOP_DESTINATIONS order). Every
+  // destination card above already corridor-targets, so this is a short
+  // quick-access strip - not a second full mesh of the same ~200 links.
+  // Labels carry the corridor pages' query token ("Thailand visa").
   const { adj: demonym, citizens, citizensCap, citizensTitle } = nationalityPhrases(country.iso3, country.name);
   const natCorridors = corridorsForNationality(country.iso3);
   const demandRank = new Map(TOP_DESTINATIONS.map((d, i) => [d, i] as const));
   const corridorLinks = natCorridors
     .map((c) => ({
       href: `/passport/${c.natSlug}/${c.destSlug}`,
-      label: nameFor(c.dest),
+      label: `${nameFor(c.dest)} visa`,
       iso3: c.dest,
+      demand: demandRank.get(c.dest) ?? Infinity,
     }))
-    .sort((a, b) =>
-      ((demandRank.get(a.iso3) ?? Infinity) - (demandRank.get(b.iso3) ?? Infinity))
-      || a.label.localeCompare(b.label),
-    );
+    .sort((a, b) => (a.demand - b.demand) || a.label.localeCompare(b.label))
+    .slice(0, 10);
   // Header search: jump to a destination's visa guide for this nationality.
   const searchOptions = dataset.allCountries
     .filter((c) => c.iso3 !== country.iso3)
@@ -353,7 +420,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link>
@@ -437,11 +504,11 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Enter with just your {demonym} passport - no visa application, no fee, no advance paperwork required.
                 {listLinks.vf && <> <Link href={listLinks.vf} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full visa-free guide →</Link></>}
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {vfEdges.slice(0, 30).map((e) => (
                   <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} fom={fomSet.has(e.dest)} />
                 ))}
-              </div>
+              </ul>
               {vfEdges.length > 30 && (
                 <details className="group mt-3">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
@@ -449,11 +516,11 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
-                  <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {vfEdges.slice(30).map((e) => (
                       <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} fom={fomSet.has(e.dest)} />
                     ))}
-                  </div>
+                  </ul>
                 </details>
               )}
             </section>
@@ -469,11 +536,11 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Receive your visa stamp at the airport on arrival - no embassy visit required.
                 {listLinks.voa && <> <Link href={listLinks.voa} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full visa-on-arrival guide →</Link></>}
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {voaEdges.slice(0, 18).map((e) => (
                   <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                 ))}
-              </div>
+              </ul>
               {voaEdges.length > 18 && (
                 <details className="group mt-3">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
@@ -481,11 +548,11 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
-                  <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {voaEdges.slice(18).map((e) => (
                       <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                     ))}
-                  </div>
+                  </ul>
                 </details>
               )}
             </section>
@@ -501,11 +568,11 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <p className="mt-2 text-sm text-ink-soft">
                 Apply online before you travel for a quick, usually automated pre-screening - not a visa, and layered on top of entry you already qualify for. No embassy visit required.
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {etaOnlyEdges.slice(0, 30).map((e) => (
                   <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                 ))}
-              </div>
+              </ul>
               {etaOnlyEdges.length > 30 && (
                 <details className="group mt-3">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
@@ -513,11 +580,11 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
-                  <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {etaOnlyEdges.slice(30).map((e) => (
                       <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                     ))}
-                  </div>
+                  </ul>
                 </details>
               )}
             </section>
@@ -533,11 +600,11 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Apply online before you travel - this is an actual visa, just granted digitally instead of via an embassy stamp, so no embassy visit is required for eligible short-term visits.
                 {listLinks.evisa && <> <Link href={listLinks.evisa} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full e-visa guide →</Link></>}
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {evisaOnlyEdges.slice(0, 30).map((e) => (
                   <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                 ))}
-              </div>
+              </ul>
               {evisaOnlyEdges.length > 30 && (
                 <details className="group mt-3">
                   <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
@@ -545,11 +612,11 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
-                  <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {evisaOnlyEdges.slice(30).map((e) => (
                       <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
                     ))}
-                  </div>
+                  </ul>
                 </details>
               )}
             </section>
@@ -564,21 +631,23 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <p className="mt-2 text-sm text-ink-soft">
                 {citizensCap} have the right to live and work in these countries through regional bloc membership - no visa required.
               </p>
-              <div className="mt-5 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
                 {fomEdges.map((e) => {
                   const destSlug = nameToSlug(nameFor(e.dest));
                   const href = isUsefulCorridor(country.iso3, e.dest)
                     ? `/passport/${slug}/${destSlug}`
                     : `/destination/${destSlug}`;
                   return (
-                    <Link key={e.dest} href={href} className="group flex min-h-[40px] items-center gap-2.5 text-[15px] text-ink-soft transition hover:text-stamp">
-                      <span className="text-lg">{flagFor(e.dest)}</span>
-                      <span className="font-display underline decoration-line underline-offset-4 transition group-hover:decoration-stamp">{nameFor(e.dest)}</span>
-                      <span aria-hidden className="mono text-ink-mute transition group-hover:text-stamp">→</span>
-                    </Link>
+                    <li key={e.dest}>
+                      <Link href={href} className="group flex min-h-[40px] items-center gap-2.5 text-[15px] text-ink-soft transition hover:text-stamp">
+                        <span className="text-lg">{flagFor(e.dest)}</span>
+                        <span className="font-display underline decoration-line underline-offset-4 transition group-hover:decoration-stamp">{nameFor(e.dest)}</span>
+                        <span aria-hidden className="mono text-ink-mute transition group-hover:text-stamp">→</span>
+                      </Link>
+                    </li>
                   );
                 })}
-              </div>
+              </ul>
             </section>
           )}
 
@@ -652,12 +721,17 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Visa Required for {demonym} Passport Holders ({vrCount})
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                {demonym} citizens must apply in advance at an embassy, consulate, or official visa portal before travelling - no on-arrival or online-only option exists for these destinations.
+                {demonym} citizens must apply in advance at an embassy, consulate, or official visa portal before travelling - no on-arrival or online-only option exists for these destinations. Fees shown are each destination&apos;s cheapest official published tourist-visa rate; tap a destination for the full guide.
               </p>
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                {vrEdges.slice(0, 30).map((c) => (
-                  <VrCard key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
-                ))}
+              <div className="mt-5 overflow-x-auto rounded-sm border border-line">
+                <table className="w-full min-w-[420px] border-collapse text-left">
+                  <VrTableHead />
+                  <tbody className="divide-y divide-line">
+                    {vrEdges.slice(0, 30).map((c) => (
+                      <VrRow key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
+                    ))}
+                  </tbody>
+                </table>
               </div>
               {vrEdges.length > 30 && (
                 <details className="group mt-3">
@@ -666,22 +740,31 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                     <span className="hidden group-open:inline">Show fewer</span>
                     <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
-                  <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                    {vrEdges.slice(30).map((c) => (
-                      <VrCard key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
-                    ))}
+                  <div className="mt-3 overflow-x-auto rounded-sm border border-line">
+                    <table className="w-full min-w-[420px] border-collapse text-left">
+                      <VrTableHead />
+                      <tbody className="divide-y divide-line">
+                        {vrEdges.slice(30).map((c) => (
+                          <VrRow key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </details>
               )}
+              <p className="mono mt-3 max-w-2xl text-[11px] leading-relaxed text-ink-mute">
+                &quot;—&quot; means the destination publishes no single official tourist-visa figure (often a per-nationality
+                reciprocity schedule). Fees exclude service and application-centre charges.
+              </p>
             </section>
           )}
 
-          {/* Corridor guides (internal link mesh to detailed per-destination pages -
-              spans every access level, not just visa-required, so titled distinctly
-              from the section above). */}
+          {/* Top-demand corridor guides only: every destination card above
+              already links to its corridor page, so a full second mesh of the
+              same ~200 links would be pure duplication. */}
           <CorridorLinks
-            title={`${country.name} Visa Guides by Destination`}
-            description={`Step-by-step visa guides, fees and document checklists for ${demonym} passport holders - highest-demand destinations first.`}
+            title={`Most-Searched Visa Guides for ${demonym} Travellers`}
+            description={`The highest-demand step-by-step guides for ${demonym} passport holders - requirements, fees and document checklists. Every destination above links to its own guide too.`}
             links={corridorLinks}
           />
 

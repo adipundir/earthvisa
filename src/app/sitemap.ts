@@ -8,8 +8,9 @@ function nameToSlug(name: string): string {
 }
 
 // Static SEO routes built outside the country/corridor graph.
-const GUIDE_PAGES = ["/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa", "/guide/japan-visa-fee-increase-2026"];
+const GUIDE_PAGES = ["/guide", "/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa", "/guide/japan-visa-fee-increase-2026"];
 const PROGRAM_PAGES = [
+  "/programs",
   "/programs/citizenship-by-investment",
   "/programs/golden-visa",
   "/programs/digital-nomad-visa",
@@ -23,11 +24,23 @@ const LIST_PAGES = [
   "/list/visa-free-countries-for-pakistanis",
   "/list/visa-free-countries-for-filipinos",
   "/list/visa-free-countries-for-nigerians",
+  "/list/visa-free-countries-for-indonesians",
+  "/list/visa-free-countries-for-vietnamese-citizens",
+  "/list/visa-free-countries-for-brazilians",
+  "/list/visa-free-countries-for-mexicans",
+  "/list/visa-free-countries-for-egyptians",
+  "/list/visa-free-countries-for-bangladeshis",
   "/list/e-visa-countries-for-indians",
   "/list/visa-on-arrival-countries-for-indians",
   "/list/visa-on-arrival-countries-for-pakistanis",
   "/list/visa-on-arrival-countries-for-filipinos",
   "/list/visa-on-arrival-countries-for-nigerians",
+  "/list/visa-on-arrival-countries-for-indonesians",
+  "/list/visa-on-arrival-countries-for-vietnamese-citizens",
+  "/list/visa-on-arrival-countries-for-brazilians",
+  "/list/visa-on-arrival-countries-for-mexicans",
+  "/list/visa-on-arrival-countries-for-egyptians",
+  "/list/visa-on-arrival-countries-for-bangladeshis",
   "/list/countries-with-us-visa-for-indians",
   "/list/countries-with-us-visa-for-pakistani-citizens",
   "/list/countries-with-us-visa-for-filipino-citizens",

@@ -79,7 +79,7 @@ export default function CountryIndex({
           <svg
             viewBox="0 0 24 24"
             aria-hidden="true"
-            className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-mute/70"
+            className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-mute"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -96,7 +96,7 @@ export default function CountryIndex({
             placeholder="Type a country name…"
             aria-label="Search countries by name"
             autoComplete="off"
-            className="w-full rounded-lg border border-line-strong bg-card py-2.5 pl-10 pr-4 text-[15px] text-ink outline-none transition placeholder:text-ink-mute/70 focus:border-stamp"
+            className="w-full rounded-lg border border-line-strong bg-card py-2.5 pl-10 pr-4 text-[15px] text-ink outline-none transition placeholder:text-ink-mute focus:border-stamp"
           />
         </div>
         <p

@@ -16,27 +16,33 @@ const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/passport", label: "All passports" },
       { href: "/destination", label: "All destinations" },
       { href: "/rankings", label: "Passport ranking 2026" },
+      { href: "/rankings/visa-fees", label: "Visa fee ranking 2026" },
       { href: "/earthling", label: "Claim your Earthling ID" },
     ],
   },
   {
     title: "Guides",
     links: [
+      { href: "/guide", label: "All guides" },
       { href: "/guide/schengen", label: "Schengen visa" },
       { href: "/guide/proof-of-funds", label: "Proof of funds" },
       { href: "/guide/etias", label: "ETIAS" },
       { href: "/guide/umrah-visa", label: "Umrah visa" },
       { href: "/guide/gcc-visa", label: "GCC unified visa" },
+      { href: "/guide/japan-visa-fee-increase-2026", label: "Japan visa fee increase" },
       { href: "/destination/europe", label: "Visa for Europe" },
     ],
   },
   {
     title: "Programs",
     links: [
+      { href: "/programs", label: "All programs" },
       { href: "/programs/citizenship-by-investment", label: "Citizenship by investment" },
       { href: "/programs/golden-visa", label: "Golden visas" },
       { href: "/programs/digital-nomad-visa", label: "Digital nomad visas" },
       { href: "/programs/easiest-citizenship", label: "Easiest citizenship" },
+      { href: "/programs/work-visa", label: "Work visas" },
+      { href: "/programs/student-visa", label: "Student visas" },
     ],
   },
   {

@@ -3,7 +3,9 @@ import { dataset } from "@/lib/dataset";
 const TOTAL_PASSPORTS = dataset.allCountries.length;
 
 // Cross-link mesh between the /programs/* guides and the rankings page.
-const GUIDES = [
+// Exported so /programs (the index) renders the same registry - one list,
+// no drift between the nav and the index page.
+export const GUIDES = [
   {
     href: "/programs/citizenship-by-investment",
     title: "Citizenship by Investment",
@@ -23,6 +25,16 @@ const GUIDES = [
     href: "/programs/easiest-citizenship",
     title: "Easiest Citizenship",
     desc: "The fastest legal routes to a second passport, ranked from the data.",
+  },
+  {
+    href: "/programs/work-visa",
+    title: "Work Visa Countries",
+    desc: "Countries with work permits and employment visas, from official immigration sources.",
+  },
+  {
+    href: "/programs/student-visa",
+    title: "Student Visa Countries",
+    desc: "Study-abroad visa routes by country, from official immigration sources.",
   },
   {
     href: "/rankings",

@@ -32,6 +32,18 @@ const LISTS: ListConfig[] = [
   { slug: "visa-on-arrival-countries-for-pakistanis", kind: "voa", nat: "PAK", people: "Pakistanis", peopleTitle: "Pakistanis" },
   { slug: "visa-on-arrival-countries-for-filipinos", kind: "voa", nat: "PHL", people: "Filipinos", peopleTitle: "Filipinos" },
   { slug: "visa-on-arrival-countries-for-nigerians", kind: "voa", nat: "NGA", people: "Nigerians", peopleTitle: "Nigerians" },
+  { slug: "visa-free-countries-for-indonesians", kind: "visa_free", nat: "IDN", people: "Indonesians", peopleTitle: "Indonesians" },
+  { slug: "visa-free-countries-for-vietnamese-citizens", kind: "visa_free", nat: "VNM", people: "Vietnamese citizens", peopleTitle: "Vietnamese Citizens" },
+  { slug: "visa-free-countries-for-brazilians", kind: "visa_free", nat: "BRA", people: "Brazilians", peopleTitle: "Brazilians" },
+  { slug: "visa-free-countries-for-mexicans", kind: "visa_free", nat: "MEX", people: "Mexicans", peopleTitle: "Mexicans" },
+  { slug: "visa-free-countries-for-egyptians", kind: "visa_free", nat: "EGY", people: "Egyptians", peopleTitle: "Egyptians" },
+  { slug: "visa-free-countries-for-bangladeshis", kind: "visa_free", nat: "BGD", people: "Bangladeshis", peopleTitle: "Bangladeshis" },
+  { slug: "visa-on-arrival-countries-for-indonesians", kind: "voa", nat: "IDN", people: "Indonesians", peopleTitle: "Indonesians" },
+  { slug: "visa-on-arrival-countries-for-vietnamese-citizens", kind: "voa", nat: "VNM", people: "Vietnamese citizens", peopleTitle: "Vietnamese Citizens" },
+  { slug: "visa-on-arrival-countries-for-brazilians", kind: "voa", nat: "BRA", people: "Brazilians", peopleTitle: "Brazilians" },
+  { slug: "visa-on-arrival-countries-for-mexicans", kind: "voa", nat: "MEX", people: "Mexicans", peopleTitle: "Mexicans" },
+  { slug: "visa-on-arrival-countries-for-egyptians", kind: "voa", nat: "EGY", people: "Egyptians", peopleTitle: "Egyptians" },
+  { slug: "visa-on-arrival-countries-for-bangladeshis", kind: "voa", nat: "BGD", people: "Bangladeshis", peopleTitle: "Bangladeshis" },
   { slug: "e-visa-countries-for-indians", kind: "e_visa", nat: "IND", people: "Indians", peopleTitle: "Indians" },
   { slug: "countries-with-us-visa-for-indians", kind: "us_visa", nat: "IND", people: "Indians", peopleTitle: "Indians" },
   { slug: "countries-with-us-visa-for-pakistani-citizens", kind: "us_visa", nat: "PAK", people: "Pakistani citizens", peopleTitle: "Pakistani Citizens" },
@@ -336,6 +348,13 @@ function buildListData(cfg: ListConfig): ListData | null {
   // visa_free
   const main = [...base.reachByLevel.visa_free].sort(byName);
   const n = main.length;
+  // Strong passports (Brazil ~100+, Mexico ~90) would otherwise dump a
+  // multi-thousand-character enumeration into the FAQ and its JSON-LD mirror.
+  const vfNames = main.map((e) => nameFor(e.dest));
+  const vfEnum =
+    vfNames.length > 25
+      ? `${vfNames.slice(0, 25).join(", ")} and ${vfNames.length - 25} more - see the full list above`
+      : joinNames(vfNames);
   const notable = pickNotable(main, ["THA", "MYS", "NPL", "MUS", "KAZ", "PHL", "SGP", "IDN", "BRA", "KEN", "SYC", "BRB", "FJI"]);
   const longest = [...main].filter((e) => e.maxStayDays != null).sort((a, b) => (b.maxStayDays ?? 0) - (a.maxStayDays ?? 0));
   const usVf = usDelta.filter((e) => e.level === "visa_free");
@@ -360,7 +379,7 @@ function buildListData(cfg: ListConfig): ListData | null {
       },
       {
         q: `Which countries can ${cfg.people} visit without a visa?`,
-        a: `The ${n} visa-free countries for ${adj} passport holders in 2026 are: ${joinNames(main.map((e) => nameFor(e.dest)))}. Stay limits vary per country - see the list above.`,
+        a: `The ${n} visa-free countries for ${adj} passport holders in 2026 are: ${vfEnum}. Stay limits vary per country - see the list above.`,
       },
       {
         q: `Which visa free country gives ${cfg.people} the longest stay?`,
@@ -424,26 +443,41 @@ function Chevron() {
 }
 
 // One destination row. The whole >=44px card is a single tappable link to the
-// destination page; corridor guides get their own section below the list.
-function DestCard({ edge, condition }: { edge: CombinedEdge; condition: string | null }) {
+// nationality-specific corridor guide when one exists (the page is written for
+// exactly that reader), else the destination page. The level badge only
+// renders in mixed-level sections (`showLevel`) - repeating an identical chip
+// on every row of a single-level list restates the section h2 23 times.
+function DestCard({ edge, condition, nat, natSlug, showLevel = false }: {
+  edge: CombinedEdge;
+  condition: string | null;
+  nat: string;
+  natSlug: string;
+  showLevel?: boolean;
+}) {
   const name = nameFor(edge.dest);
+  const destSlug = nameToSlug(name);
+  const href = isUsefulCorridor(nat, edge.dest) ? `/passport/${natSlug}/${destSlug}` : `/destination/${destSlug}`;
   return (
-    <Link
-      href={`/destination/${nameToSlug(name)}`}
-      className="group flex min-h-[44px] items-start gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
-    >
-      <span className="pt-0.5 text-xl leading-none">{flagFor(edge.dest)}</span>
-      <div className="min-w-0 flex-1">
-        <div className="flex flex-wrap items-baseline gap-x-2">
-          <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{name}</span>
-          {edge.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days</span>}
+    <li className="h-full">
+      <Link
+        href={href}
+        className="group flex h-full min-h-[44px] items-start gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+      >
+        <span className="pt-0.5 text-xl leading-none">{flagFor(edge.dest)}</span>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-baseline gap-x-2">
+            <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{name}</span>
+            {edge.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days</span>}
+          </div>
+          {condition && <p className="mono mt-1 text-[11px] leading-relaxed text-ink-mute">{condition}</p>}
         </div>
-        {condition && <p className="mono mt-1 text-[11px] leading-relaxed text-ink-mute">{condition}</p>}
-      </div>
-      <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
-        {SHORT_LEVEL[edge.level]}
-      </span>
-    </Link>
+        {showLevel && (
+          <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
+            {SHORT_LEVEL[edge.level]}
+          </span>
+        )}
+      </Link>
+    </li>
   );
 }
 
@@ -473,13 +507,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
           { k: "Unlocked with US visa", v: main.length },
           { k: "Become visa-free", v: dVf.length },
           { k: "Visa on arrival", v: dVoa.length },
-          { k: "e-Visa / eTA", v: dE.length },
+          { k: "eTA / e-Visa", v: dE.length },
         ]
       : cfg.kind === "voa"
       ? [
           { k: "Visa on arrival", v: main.length },
           { k: "Visa-free", v: vfCount },
-          { k: "e-Visa / eTA", v: eCount },
+          { k: "eTA / e-Visa", v: eCount },
           { k: "Total reach", v: total },
         ]
       : cfg.kind === "e_visa"
@@ -492,7 +526,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
       : [
           { k: "Visa-free", v: main.length },
           { k: "Visa on arrival", v: voaCount },
-          { k: "e-Visa / eTA", v: eCount },
+          { k: "eTA / e-Visa", v: eCount },
           { k: "Total reach", v: total },
         ];
 
@@ -520,15 +554,6 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
       : cfg.kind === "e_visa"
       ? `${main.length} visas issued fully online · official sources`
       : `${main.length} countries, zero paperwork · official sources`;
-
-  // Corridor guides for destinations on this list (only pages that exist).
-  const guideLinks = main
-    .filter((e) => isUsefulCorridor(cfg.nat, e.dest))
-    .map((e) => ({
-      href: `/passport/${natSlug}/${nameToSlug(nameFor(e.dest))}`,
-      label: nameFor(e.dest),
-      iso3: e.dest,
-    }));
 
   const siblingLinks = LISTS.filter((l) => l.slug !== slug).map((l) => ({
     href: `/list/${l.slug}`,
@@ -563,11 +588,14 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
         "@type": "ItemList",
         name: d.title,
         numberOfItems: main.length,
+        // Mirrors the visible cards' targets: corridor guide when one exists.
         itemListElement: main.map((e, i) => ({
           "@type": "ListItem",
           position: i + 1,
           name: nameFor(e.dest),
-          url: `https://earthvisa.in/destination/${nameToSlug(nameFor(e.dest))}`,
+          url: isUsefulCorridor(cfg.nat, e.dest)
+            ? `https://earthvisa.in/passport/${natSlug}/${nameToSlug(nameFor(e.dest))}`
+            : `https://earthvisa.in/destination/${nameToSlug(nameFor(e.dest))}`,
         })),
       },
     ],
@@ -582,7 +610,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href={`/passport/${natSlug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">
@@ -590,7 +618,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               </Link>
               <span aria-hidden>/</span>
               <span className="inline-flex min-h-[44px] items-center text-ink">
-                {cfg.kind === "us_visa" ? "With a US Visa" : cfg.kind === "voa" ? "Visa on Arrival" : "Visa Free"}
+                {cfg.kind === "us_visa" ? "With a US Visa" : cfg.kind === "voa" ? "Visa on Arrival" : cfg.kind === "e_visa" ? "e-Visa" : "Visa Free"}
               </span>
             </nav>
 
@@ -668,11 +696,11 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   <p className="mt-2 text-sm text-ink-soft">
                     These countries waive their visa entirely for {cfg.people} who hold a valid US visa - check the condition on each row.
                   </p>
-                  <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {dVf.map((e) => (
-                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} />
+                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} />
                     ))}
-                  </div>
+                  </ul>
                 </section>
               )}
               {dVoa.length > 0 && (
@@ -683,11 +711,11 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   <p className="mt-2 text-sm text-ink-soft">
                     With a valid US visa, {cfg.people} can get a visa stamped at the border in these countries instead of applying at an embassy.
                   </p>
-                  <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {dVoa.map((e) => (
-                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} />
+                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} />
                     ))}
-                  </div>
+                  </ul>
                 </section>
               )}
               {dE.length > 0 && (
@@ -698,11 +726,12 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   <p className="mt-2 text-sm text-ink-soft">
                     These destinations let US-visa holders apply through a simplified online e-visa or eTA instead of a full embassy process.
                   </p>
-                  <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  {/* Mixed e-Visa + eTA section: the badge distinguishes the two levels. */}
+                  <ul className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {dE.map((e) => (
-                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} />
+                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} showLevel />
                     ))}
-                  </div>
+                  </ul>
                 </section>
               )}
             </>
@@ -718,11 +747,11 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   ? `Alphabetical list of every country issuing ${cfg.people} a visa on arrival in 2026, with the maximum stay where officially published.`
                   : `Alphabetical list of every country ${cfg.people} can enter with just a passport in 2026, with the maximum stay where officially published.`}
               </p>
-              <div className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {main.map((e) => (
-                  <DestCard key={e.dest} edge={e} condition={cfg.kind === "voa" ? voaCondition(e.notes ?? "") : firstSentence(e.notes ?? "")} />
+                  <DestCard key={e.dest} edge={e} condition={cfg.kind === "voa" ? voaCondition(e.notes ?? "") : firstSentence(e.notes ?? "")} nat={cfg.nat} natSlug={natSlug} />
                 ))}
-              </div>
+              </ul>
             </section>
           )}
 
@@ -770,12 +799,8 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
             </section>
           )}
 
-          {/* Corridor guides for destinations on this list */}
-          <CorridorLinks
-            title={`Detailed Visa Guides for ${adj} Travellers`}
-            description={`Step-by-step requirements, fees and document checklists for ${adj} passport holders visiting destinations on this list.`}
-            links={guideLinks}
-          />
+          {/* No separate "detailed guides" mesh: every card above already
+              links to the nationality-specific corridor guide where one exists. */}
 
           {/* FAQ */}
           <section className="mt-14">

@@ -34,11 +34,16 @@ export default function DestinationIndex() {
     <main className="min-h-screen">
       <header className="border-b border-line-strong bg-paper-2/60">
         <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-10 sm:px-8">
-          <nav className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.15em] text-ink-mute">
-            <Link href="/" className="transition hover:text-ink">Earth Visa</Link> / Destinations
+          <nav aria-label="Breadcrumb" className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.15em] text-ink-mute">
+            <Link href="/" className="transition hover:text-ink">Earth Visa</Link>
+            <span aria-hidden> / </span>
+            Destinations
           </nav>
           <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
-            Browse by Destination
+            Visa Requirements by Destination
+            <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
+              Entry Rules for Every Country
+            </span>
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
             Choose a destination to see which nationalities can enter visa-free, on arrival or with an eTA,
@@ -56,6 +61,14 @@ export default function DestinationIndex() {
         </div>
       </header>
 
+      {/* CountryIndex owns the search + flat list; this heading gives the
+          link wall a semantic outline (the page otherwise has no h2). */}
+      <div className="mx-auto w-full max-w-6xl px-5 pt-10 -mb-6 sm:px-8">
+        <h2 className="font-display text-2xl font-semibold text-ink">All Destinations A–Z</h2>
+        <p className="mt-2 text-sm text-ink-soft">
+          Each destination links to its entry rules, visa-free nationality lists and official visa fees.
+        </p>
+      </div>
       <Suspense fallback={null}>
         <CountryIndex regions={regions} kind="destination" />
       </Suspense>

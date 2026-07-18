@@ -296,7 +296,7 @@ export default function VisaFeesRankingPage() {
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/rankings" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Rankings</Link>
@@ -352,6 +352,10 @@ export default function VisaFeesRankingPage() {
             <p className="mt-4 text-sm leading-relaxed text-ink-soft">
               Every figure is the destination&apos;s own lowest published rate for a standard adult tourist product - see
               the <a href="#methodology" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">methodology</a> for exactly what is (and isn&apos;t) counted.
+              These schedules do move: Japan&apos;s first fee revision since 1978 took effect 1 July 2026 - see{" "}
+              <Link href="/guide/japan-visa-fee-increase-2026" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">
+                the Japan visa fee increase, explained
+              </Link>.
             </p>
           </section>
 
