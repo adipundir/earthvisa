@@ -190,7 +190,7 @@ export default function ThailandVisaChangesGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/guide" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Guides</Link>
@@ -198,10 +198,9 @@ export default function ThailandVisaChangesGuidePage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Thailand Visa Changes</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 Thailand Visa Changes 2026
                 <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                   The 60-Day Visa-Free Stay Is Ending - Here&apos;s Who Lands Where
@@ -213,19 +212,19 @@ export default function ThailandVisaChangesGuidePage() {
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Visa-free stay today", v: "60 days" },
                 { k: "New standard stay", v: "30 days" },
                 { k: "Countries covered", v: "93 → 65" },
                 { k: "Visa on arrival list", v: "31 → 3" },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -233,11 +232,11 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* Current-rule banner - the single most important fact on the page */}
           <section className="mt-10 max-w-3xl">
-            <div className="rounded-lg border border-eta/30 bg-eta/[0.06] px-5 py-4">
-              <p className="mono text-[10px] font-medium uppercase tracking-[0.16em] text-eta">
+            <div className="card-doc card-doc-rule px-5 py-4">
+              <p className="mono-chrome">
                 Status checked {CHECKED_STAMP}
               </p>
-              <p className="mt-2 text-base leading-relaxed text-ink-soft">
+              <p className="text-body mt-2 text-ink-soft">
                 <strong className="text-ink">The old rules still apply.</strong> The new tiers take effect{" "}
                 <strong className="text-ink">15 days after publication in the Royal Gazette</strong>, and no
                 publication date has been announced. Until then, the 60-day visa exemption and the 31-country
@@ -249,8 +248,8 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* What's changing */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">What&apos;s Changing</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">What&apos;s Changing</h2>
+            <p className="text-body mt-3 text-ink-soft">
               Since <strong className="text-ink">15 July 2024</strong>, Thailand has given passport holders of 93
               countries a blanket <strong className="text-ink">60-day visa-free stay</strong>. On{" "}
               <strong className="text-ink">19 May 2026</strong> the Cabinet approved scrapping that scheme, and on{" "}
@@ -261,9 +260,9 @@ export default function ThailandVisaChangesGuidePage() {
               <table className="w-full min-w-[520px] border-collapse text-left">
                 <thead>
                   <tr className="border-b border-line-strong">
-                    <th scope="col" className="mono py-3 pr-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Entry route</th>
-                    <th scope="col" className="mono py-3 pr-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Today (in force)</th>
-                    <th scope="col" className="mono py-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Approved (pending Gazette)</th>
+                    <th scope="col" className="mono-chrome py-3 pr-4">Entry route</th>
+                    <th scope="col" className="mono-chrome py-3 pr-4">Today (in force)</th>
+                    <th scope="col" className="mono-chrome py-3">Approved (pending Gazette)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-line">
@@ -295,7 +294,7 @@ export default function ThailandVisaChangesGuidePage() {
                 </tbody>
               </table>
             </div>
-            <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-5 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               <strong className="font-semibold text-ink">The full 59-country list is not public yet.</strong>{" "}
               Officials have confirmed the tier sizes and named some members (below), but the definitive
               country-by-country annexes only appear with Royal Gazette publication. This page lists only
@@ -305,15 +304,15 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* The India story */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">The India Reversal: VoA Demotion Undone</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">The India Reversal: VoA Demotion Undone</h2>
+            <p className="text-body mt-3 text-ink-soft">
               The May framework&apos;s most controversial line moved <strong className="text-ink">India</strong> off
               the visa-free list entirely, down to a 15-day visa on arrival with a THB 2,000 fee. After reports of
               falling Indian arrivals, the Cabinet reversed course on <strong className="text-ink">14 July 2026</strong>:
               India is confirmed on the <strong className="text-ink">30-day visa-free list</strong>, with officials
               citing India&apos;s economic importance and Indian visitors&apos; roughly 7-day average stays.
             </p>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-3 text-ink-soft">
               Nothing has changed at the border yet: Indian passport holders still enter visa-free for up to{" "}
               <strong className="text-ink">{indDaysToday ?? 60} days</strong> today, becoming 30 days once the new
               rules take effect. Full requirements on the{" "}
@@ -326,8 +325,8 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* Who lands where */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">Who Lands Where - Confirmed Placements Only</h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <h2 className="text-section text-ink">Who Lands Where - Confirmed Placements Only</h2>
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Individually sourced from the Tourism Authority of Thailand&apos;s official announcement and Thai press
               coverage of the 14 July 2026 Cabinet session: all 27 EU member states (Croatia, Bulgaria, Cyprus and
               Malta were named as additions), India and the Maldives are on the 30-day list. Each card shows the
@@ -338,14 +337,14 @@ export default function ThailandVisaChangesGuidePage() {
                 <Link
                   key={iso3}
                   href={isUsefulCorridor(iso3, THA) ? `/passport/${nameToSlug(nameFor(iso3))}/${thaSlug}` : `/passport/${nameToSlug(nameFor(iso3))}`}
-                  className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                  className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5"
                 >
                   <span className="text-xl">{flagFor(iso3)}</span>
                   <div className="min-w-0">
                     <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{nameFor(iso3)}</span>
-                    <div className="mono text-[10px] text-ink-mute">today: {todayLabel(iso3)}</div>
+                    <div className="mono text-[11px] text-ink-mute">today: {todayLabel(iso3)}</div>
                   </div>
-                  <span className="mono ml-auto shrink-0 rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-vfree ring-1 ring-vfree/30">
+                  <span className="mono ml-auto shrink-0 rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-vfree ring-1 ring-vfree/30">
                     → 30 days
                   </span>
                 </Link>
@@ -354,20 +353,20 @@ export default function ThailandVisaChangesGuidePage() {
 
             <div className="mt-8 grid gap-8 lg:grid-cols-2">
               <div>
-                <h3 className="font-display text-lg font-semibold text-ink">The 15-Day Tier</h3>
-                <p className="mt-1.5 max-w-xl text-sm text-ink-soft">
+                <h3 className="text-sub text-ink">The 15-Day Tier</h3>
+                <p className="text-body mt-1.5 max-w-xl text-ink-soft">
                   Two countries drop from 60 days to 15 - the shortest visa-free tier, flagged for review against
                   tourism volumes.
                 </p>
                 <div className="mt-4 grid gap-2.5">
                   {TIER_15.map((iso3) => (
-                    <div key={iso3} className="flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
+                    <div key={iso3} className="card-doc flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                       <span className="text-xl">{flagFor(iso3)}</span>
                       <div className="min-w-0">
                         <span className="font-display text-sm font-medium text-ink">{nameFor(iso3)}</span>
-                        <div className="mono text-[10px] text-ink-mute">today: {todayLabel(iso3)}</div>
+                        <div className="mono text-[11px] text-ink-mute">today: {todayLabel(iso3)}</div>
                       </div>
-                      <span className="mono ml-auto shrink-0 rounded-[3px] bg-eta/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">
+                      <span className="mono ml-auto shrink-0 rounded-[3px] bg-eta/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">
                         → 15 days
                       </span>
                     </div>
@@ -375,20 +374,20 @@ export default function ThailandVisaChangesGuidePage() {
                 </div>
               </div>
               <div>
-                <h3 className="font-display text-lg font-semibold text-ink">The 3-Country Visa on Arrival</h3>
-                <p className="mt-1.5 max-w-xl text-sm text-ink-soft">
+                <h3 className="text-sub text-ink">The 3-Country Visa on Arrival</h3>
+                <p className="text-body mt-1.5 max-w-xl text-ink-soft">
                   Visa on arrival survives for just three nationalities (15 days, THB 2,000, designated checkpoints).
                   India was slated to be the fourth until the July revision moved it to visa-free.
                 </p>
                 <div className="mt-4 grid gap-2.5">
                   {VOA_3.map((iso3) => (
-                    <div key={iso3} className="flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
+                    <div key={iso3} className="card-doc flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                       <span className="text-xl">{flagFor(iso3)}</span>
                       <div className="min-w-0">
                         <span className="font-display text-sm font-medium text-ink">{nameFor(iso3)}</span>
-                        <div className="mono text-[10px] text-ink-mute">today: {todayLabel(iso3)}</div>
+                        <div className="mono text-[11px] text-ink-mute">today: {todayLabel(iso3)}</div>
                       </div>
-                      <span className="mono ml-auto shrink-0 rounded-[3px] bg-eta/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">
+                      <span className="mono ml-auto shrink-0 rounded-[3px] bg-eta/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">
                         → VoA
                       </span>
                     </div>
@@ -397,7 +396,7 @@ export default function ThailandVisaChangesGuidePage() {
               </div>
             </div>
 
-            <p className="mono mt-6 max-w-3xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-6 max-w-3xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               <strong className="font-semibold text-ink">Widely reported but not yet officially itemised:</strong>{" "}
               coverage consistently places the United States, United Kingdom, Australia, Canada, Japan and South
               Korea on the 30-day list, and the scheme&apos;s shrink from 93 to 65 countries means roughly two dozen
@@ -408,8 +407,8 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* Effective date mechanics */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">When It Takes Effect - and What Happens Mid-Trip</h2>
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">When It Takes Effect - and What Happens Mid-Trip</h2>
+            <ul className="text-body mt-4 space-y-2 text-ink-soft">
               <li className="flex gap-3">
                 <span aria-hidden className="mono text-stamp">&rarr;</span>
                 <span>
@@ -446,8 +445,8 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* Protected categories */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Long-Stay Visas Are Not Touched</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Long-Stay Visas Are Not Touched</h2>
+            <p className="text-body mt-3 text-ink-soft">
               This reform rewrites <em>visa-exempt short-stay</em> entry only. If you hold - or are applying for -
               a <strong className="text-ink">Destination Thailand Visa (DTV)</strong>, a{" "}
               <strong className="text-ink">Long-Term Resident (LTR)</strong> visa,{" "}
@@ -463,8 +462,8 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* Sources */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Sources</h2>
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Sources</h2>
+            <ul className="text-body mt-4 space-y-2 text-ink-soft">
               <li className="flex gap-3">
                 <span aria-hidden className="mono text-stamp">&rarr;</span>
                 <span>
@@ -488,7 +487,7 @@ export default function ThailandVisaChangesGuidePage() {
                 </span>
               </li>
             </ul>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               Current-status figures on this page (60-day stays, visa-on-arrival entries) are rendered live from
               Earth Visa&apos;s dataset, which tracks the legally active policy from official Thai government
               sources - not the pending one. The dataset flips only when the Royal Gazette publishes.
@@ -497,15 +496,15 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Thailand Visa Changes FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Thailand Visa Changes FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -520,17 +519,17 @@ export default function ThailandVisaChangesGuidePage() {
 
           {/* Related */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Related Guides</h2>
+            <h2 className="text-section text-ink">Related Guides</h2>
             <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
               <li>
-                <Link href="/guide/visa-types" className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong">
+                <Link href="/guide/visa-types" className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                   <span className="text-xl">📄</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">Visa types explained</span>
                   <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
                 </Link>
               </li>
               <li>
-                <Link href="/guide/japan-visa-fee-increase-2026" className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong">
+                <Link href="/guide/japan-visa-fee-increase-2026" className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                   <span className="text-xl">🇯🇵</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">Japan visa fee increase 2026</span>
                   <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
@@ -540,11 +539,11 @@ export default function ThailandVisaChangesGuidePage() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               What does your passport get in Thailand right now?
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               The rules above are the approved future - your trip runs on today&apos;s. See the current, in-force
               entry rule for every nationality on the{" "}
               <Link href={`/destination/${thaSlug}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
@@ -553,7 +552,7 @@ export default function ThailandVisaChangesGuidePage() {
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check your visa requirements →
             </Link>

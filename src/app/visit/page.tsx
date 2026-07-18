@@ -25,18 +25,21 @@ export const metadata: Metadata = {
 export default function VisitPage() {
   return (
     <main className="min-h-screen">
-      <header className="border-b border-line-strong bg-paper-2/60">
-        <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-10 sm:px-8">
-          <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
-            Do I need a visa for{" "}
-            <span className="italic text-stamp">my destination?</span>
-          </h1>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
-            Select where you want to go, then add your passport. We&apos;ll tell you exactly what access you have - visa-free, on arrival, eTA, or visa required - with conditions and official source links.
-          </p>
-        </div>
-      </header>
-      <DestinationExplorer />
+      {/* Tool-first hero (spec §10): the destination input is the hero element,
+          rendered by DestinationExplorer right under this server-rendered copy. */}
+      <DestinationExplorer
+        hero={
+          <div>
+            <h1 className="text-display max-w-3xl text-ink">
+              Do I need a visa for{" "}
+              <span className="italic text-stamp">my destination?</span>
+            </h1>
+            <p className="text-body measure mt-3 text-ink-soft">
+              Select where you want to go, then add your passport. We&apos;ll tell you exactly what access you have - visa-free, on arrival, eTA, or visa required - with conditions and official source links.
+            </p>
+          </div>
+        }
+      />
     </main>
   );
 }

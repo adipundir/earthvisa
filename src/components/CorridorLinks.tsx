@@ -8,18 +8,25 @@ export interface CorridorLink {
   iso3: string;
 }
 
+// Ledger row (spec §12): compact rows in a document card, hairline dividers.
+// nth-child resets keep the first visual row of each column count (1/2/3 cols)
+// clear of a top hairline.
+const LEDGER_ROW_LI =
+  "border-t border-line first:border-t-0 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0";
+const LEDGER_GRID_UL = "card-doc grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
+
 function Row({ l }: { l: CorridorLink }) {
   return (
-    <li>
+    <li className={LEDGER_ROW_LI}>
       <Link
         href={l.href}
-        className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+        className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
       >
-        <span className="text-xl">{flagFor(l.iso3)}</span>
-        <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+        <span className="text-lg leading-none">{flagFor(l.iso3)}</span>
+        <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
           {l.label}
         </span>
-        <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">
+        <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">
           →
         </span>
       </Link>
@@ -53,9 +60,9 @@ export default function CorridorLinks({
   const rest = links.slice(previewCount);
   return (
     <section className="mt-12">
-      <h2 className="font-display text-2xl font-semibold text-ink">{title}</h2>
-      <p className="mt-2 text-sm text-ink-soft">{description}</p>
-      <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+      <h2 className="text-section text-ink">{title}</h2>
+      <p className="text-body mt-2 max-w-3xl text-ink-soft">{description}</p>
+      <ul className={`${LEDGER_GRID_UL} mt-5`}>
         {preview.map((l) => (
           <Row key={l.href} l={l} />
         ))}
@@ -67,7 +74,7 @@ export default function CorridorLinks({
             <span className="hidden group-open:inline">Show fewer</span>
             <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
           </summary>
-          <ul className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className={`${LEDGER_GRID_UL} mt-3`}>
             {rest.map((l) => (
               <Row key={l.href} l={l} />
             ))}

@@ -221,7 +221,7 @@ function ProgramCard({ p }: { p: CbiProgram }) {
       ),
   );
   return (
-    <article className="flex flex-col rounded-sm border border-line bg-paper-2/70 p-4">
+    <article className="card-doc flex flex-col p-4">
       <div className="flex items-center gap-3">
         <span className="text-2xl">{flagFor(p.iso3)}</span>
         <div className="min-w-0">
@@ -231,7 +231,7 @@ function ProgramCard({ p }: { p: CbiProgram }) {
           >
             {p.name}
           </Link>
-          <div className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">{p.region}</div>
+          <div className="mono-chrome">{p.region}</div>
         </div>
       </div>
       <p className="mt-1 text-sm italic leading-snug text-ink-soft">{p.program_name}</p>
@@ -249,7 +249,7 @@ function ProgramCard({ p }: { p: CbiProgram }) {
         <p className="mono mt-2 text-[11px] text-ink-mute">Processing: {processingLabel(p.processing_time)}</p>
       )}
 
-      <div className="mono mt-3 flex flex-wrap gap-1.5 text-[9px] uppercase tracking-[0.1em]">
+      <div className="mono mt-3 flex flex-wrap gap-1.5 text-[11px] uppercase tracking-[0.1em]">
         {p.residency_required === false && (
           <span className="rounded-[3px] bg-vfree/10 px-2 py-0.5 text-vfree ring-1 ring-vfree/30">
             No residency requirement
@@ -305,7 +305,7 @@ export default function CitizenshipByInvestmentPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -315,9 +315,8 @@ export default function CitizenshipByInvestmentPage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Citizenship by Investment</span>
             </nav>
 
-            <div className="rule-double" />
 
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+            <h1 className="text-display mt-6 text-ink">
               Citizenship by Investment 2026
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                 {`All ${programs.length} Programs Compared by Cost & Passport Power`}
@@ -328,7 +327,7 @@ export default function CitizenshipByInvestmentPage() {
               change often
             </p>
 
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Programs tracked", v: String(programs.length) },
                 {
@@ -338,19 +337,19 @@ export default function CitizenshipByInvestmentPage() {
                 { k: "Strongest CBI passport", v: `${worth[0].w.visaFree} visa-free` },
                 { k: "Allow dual citizenship", v: String(dualAllowedCount) },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               <strong className="text-ink">Citizenship by investment (CBI)</strong> grants a full second passport in
               exchange for a qualifying investment - most commonly a donation to a national development fund, an
               approved real estate purchase, or a business investment.
@@ -369,21 +368,21 @@ export default function CitizenshipByInvestmentPage() {
 
           {/* Cheapest ranking + passport worth: one price-to-power table */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Cheapest Citizenship by Investment in 2026 (Ranked) - and What Each CBI Passport Is Worth
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Every program ranked by its lowest USD-denominated published minimum, next to the passport&apos;s
               visa-free destinations and global rank - the price-to-power view. Headline minimums exclude government
               processing, due diligence and dependant fees.
             </p>
-            <p className="mono mt-5 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+            <p className="mono-chrome mt-5 sm:hidden">
               Scroll sideways for all columns →
             </p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">
               <table className="w-full min-w-[640px] border-collapse text-sm">
                 <thead>
-                  <tr className="mono border-b border-line-strong text-left text-[10px] uppercase tracking-[0.15em] text-ink-mute">
+                  <tr className="mono-chrome border-b border-line-strong text-left">
                     <th scope="col" className="py-2.5 pr-4 text-right font-medium">#</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Passport</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Cheapest option</th>
@@ -407,7 +406,7 @@ export default function CitizenshipByInvestmentPage() {
                             {p.name}
                           </Link>
                           {isAnnouncedOnly(p) && (
-                            <span className="mono ml-2 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                            <span className="mono ml-2 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
                               announced
                             </span>
                           )}
@@ -432,15 +431,15 @@ export default function CitizenshipByInvestmentPage() {
                 </tbody>
               </table>
             </div>
-            <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
+            <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
               Rank covers USD-denominated published minimums only; amounts published in other currencies are shown as
               published, never converted, and sit unranked at the bottom with the no-published-minimum programs.
             </p>
-            <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
+            <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
               Global rank is by total destinations reachable without a pre-arranged visa (visa-free + visa on arrival
               + eTA), so a passport can rank above another that has more strictly visa-free destinations.
             </p>
-            <p className="mt-3 text-sm text-ink-soft">
+            <p className="text-body mt-3 max-w-3xl text-ink-soft">
               Compare these against all {TOTAL_RANKED_PASSPORTS} passports on the{" "}
               <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">
                 Earth Visa passport rankings
@@ -451,10 +450,10 @@ export default function CitizenshipByInvestmentPage() {
 
           {/* Full list */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Citizenship by Investment Countries List 2026 ({programs.length} Programs)
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Every CBI route in our dataset, with investment options, processing time and program conditions.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -466,15 +465,15 @@ export default function CitizenshipByInvestmentPage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Citizenship by Investment FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Citizenship by Investment FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -483,17 +482,17 @@ export default function CitizenshipByInvestmentPage() {
           <ProgramsNav current="/programs/citizenship-by-investment" />
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               See exactly what a second passport would add
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Pick any combination of passports on Earth Visa and see the combined visa-free map - before you spend a
               cent.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Compare passports on Earth Visa →
             </Link>

@@ -57,10 +57,10 @@ export async function generateStaticParams() {
 }
 
 const LEVEL_COLORS: Record<AccessLevel, string> = {
-  visa_free: "text-vfree bg-vfree/10 ring-vfree/30",
-  visa_on_arrival: "text-voa bg-voa/10 ring-voa/30",
-  eta: "text-eta bg-eta/10 ring-eta/30",
-  e_visa: "text-evisa bg-evisa/10 ring-evisa/30",
+  visa_free: "text-vfree bg-vfree/10 border-vfree/40",
+  visa_on_arrival: "text-voa bg-voa/10 border-voa/40",
+  eta: "text-eta bg-eta/10 border-eta/40",
+  e_visa: "text-evisa bg-evisa/10 border-evisa/40",
 };
 
 // How many entries to show before the in-place "Show all" disclosure.
@@ -87,63 +87,74 @@ function Chevron() {
   );
 }
 
-// A single nationality entry. The whole ≥44px row is one tappable next/link -
-// to the nationality-specific corridor page when one exists (a user on
-// /destination/thailand clicking "India" wants India → Thailand rules), else
-// the passport hub.
+// A single nationality entry: a compact ledger row (spec §12) - the whole
+// ≥44px row is one tappable next/link, to the nationality-specific corridor
+// page when one exists (a user on /destination/thailand clicking "India"
+// wants India → Thailand rules), else the passport hub. Rows sit inside one
+// document card with hairline dividers, not per-item boxes. The status badge
+// renders only in mixed-category sections (spec §11) - single-category
+// sections carry the status once, in the header.
 function NationalityRow({
   iso3,
   destIso3,
   destSlug,
   maxStayDays,
-  levelClass,
-  label,
+  badge,
 }: {
   iso3: string;
   destIso3: string;
   /** the destination COUNTRY's slug (never a colloquial alias slug) */
   destSlug: string;
   maxStayDays: number | null;
-  levelClass: string;
-  label: string;
+  badge?: { levelClass: string; label: string };
 }) {
   const natSlug = nameToSlug(nameFor(iso3));
   const href = isUsefulCorridor(iso3, destIso3) ? `/passport/${natSlug}/${destSlug}` : `/passport/${natSlug}`;
   return (
-    <li>
+    <li className="bg-card">
       <Link
         href={href}
-        className="group/row flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+        className="group/row flex min-h-[44px] items-center gap-3 px-3.5 py-2 transition hover:bg-paper-2/60"
       >
-        <span className="text-xl">{flagFor(iso3)}</span>
-        <div className="min-w-0">
-          <span className="font-display text-sm font-medium text-ink transition group-hover/row:text-stamp">
-            {nameFor(iso3)}
-          </span>
-          {maxStayDays != null && (
-            <div className="mono text-[11px] text-ink-mute">≤ {maxStayDays} days</div>
-          )}
-        </div>
-        <span className={`mono ml-auto whitespace-nowrap rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${levelClass}`}>
-          {label}
+        <span className="text-lg" aria-hidden="true">{flagFor(iso3)}</span>
+        <span className="min-w-0 truncate font-display text-sm font-medium text-ink transition group-hover/row:text-stamp">
+          {nameFor(iso3)}
         </span>
+        {maxStayDays != null && (
+          <span className="mono ml-auto shrink-0 whitespace-nowrap text-[11px] text-ink-mute">≤ {maxStayDays} days</span>
+        )}
+        {badge && (
+          <span className={`mono shrink-0 whitespace-nowrap rounded-[2px] border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ${maxStayDays == null ? "ml-auto" : ""} ${badge.levelClass}`}>
+            {badge.label}
+          </span>
+        )}
       </Link>
     </li>
   );
 }
 
-// A single corridor-guide link row - same markup as components/CorridorLinks,
-// rendered locally so the destination page can cap the list behind the same
-// preview + <details> "Show all" pattern the nationality lists use.
+// The document card wrapping a grid of ledger rows: 2-3 columns on desktop,
+// 1px gaps over the line colour double as hairline dividers both ways.
+function LedgerGrid({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return (
+    <div className={`card-doc overflow-hidden ${className}`}>
+      <ul className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">{children}</ul>
+    </div>
+  );
+}
+
+// A single corridor-guide link row - same ledger-row treatment as the
+// nationality lists, rendered locally so the destination page can cap the
+// list behind the same preview + <details> "Show all" pattern.
 function CorridorLinkRow({ href, label, iso3 }: { href: string; label: string; iso3: string }) {
   return (
-    <li>
+    <li className="bg-card">
       <Link
         href={href}
-        className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+        className="group flex min-h-[44px] items-center gap-3 px-3.5 py-2 transition hover:bg-paper-2/60"
       >
-        <span className="text-xl">{flagFor(iso3)}</span>
-        <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+        <span className="text-lg" aria-hidden="true">{flagFor(iso3)}</span>
+        <span className="min-w-0 truncate font-display text-sm font-medium text-ink transition group-hover:text-stamp">
           {label}
         </span>
         <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">
@@ -339,7 +350,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       // as bullets via `render` below.
       a: `${faq3Lead} ${faq3Docs.map((d) => d.toLowerCase()).join(", ")}. ${faq3Close}`,
       render: (
-        <div className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">
+        <div className="text-body measure mt-1 pb-4 text-ink-soft">
           <p>{faq3Lead}</p>
           <ul className="mt-2 space-y-1.5">
             {faq3Docs.map((d) => (
@@ -422,8 +433,8 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
       <main className="min-h-screen">
         {/* Header */}
-        <header className="border-b border-line-strong bg-paper-2/60">
-          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
+        <header className="bg-grid-paper">
+          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-10 sm:px-8">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mono mb-4 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
@@ -433,48 +444,55 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <span className="text-ink">{country.name}</span>
             </nav>
 
-            <div className="rule-double" />
-
-            <div className="mt-6">
-              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+            <div>
+              <h1 className="text-display text-ink">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">{flag}</span>
                 {display} Visa Requirements 2026
-                <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
+                <span className="mt-1 block font-display text-xl font-normal italic leading-snug tracking-normal text-ink-soft sm:text-2xl">
                   {alias ? <>Entry Rules Under {country.name} Visa Policy</> : <>Entry Rules &amp; Visa-Free Access by Passport</>}
                 </span>
               </h1>
               {/* The openness judgment lives in the intro paragraph below;
                   stating it here too would say the same thing twice. */}
-              <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
+              <p className="mono mt-3 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                 {policyTracked
                   ? <>{plural(vfCount, "nationality", "nationalities")} admitted visa-free</>
                   : <>visa policy not published as an enumerated list · not yet tracked</>}
               </p>
             </div>
             {alias && (
-              <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+              <p className="text-body mt-4 max-w-2xl rounded-[2px] border border-line bg-paper-2/70 px-3.5 py-2.5 text-ink-soft">
                 {alias.note}
               </p>
             )}
 
-            {/* Stats - only when the destination's policy is actually tracked */}
+            {/* Primary action, above the fold: the same entry check the
+                closing CTA offers, so the answer is one tap away up top. */}
+            <Link href={`/visit?dest=${destIso3}`} className="btn-stamp mt-5">
+              Check visa requirements on Earth Visa →
+            </Link>
+
+            {/* Stats - only when the destination's policy is actually tracked.
+                Rendered as an internal-hairline ledger row on a document card. */}
             {policyTracked && (
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-5">
-              {[
-                { k: "Visa-free nationalities", v: vfCount },
-                { k: "Visa on arrival", v: voaCount },
-                { k: "eTA / e-Visa", v: etaCount },
-                { k: "Total streamlined", v: totalWithAccess },
-                { k: "Visa required in advance", v: visaRequiredCount },
-              ].map(({ k, v }, i, arr) => (
-                // The odd fifth stat spans the full width on the 2-col mobile
-                // grid instead of dangling beside an empty cell.
-                <div key={k} className={i === arr.length - 1 ? "col-span-2 sm:col-span-1" : undefined}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
-                  <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
-                </div>
-              ))}
-            </dl>
+            <div className="card-doc card-doc-rule mt-6">
+              <dl className="grid grid-cols-2 gap-px bg-line sm:grid-cols-5">
+                {[
+                  { k: "Visa-free nationalities", v: vfCount },
+                  { k: "Visa on arrival", v: voaCount },
+                  { k: "eTA / e-Visa", v: etaCount },
+                  { k: "Total streamlined", v: totalWithAccess },
+                  { k: "Visa required in advance", v: visaRequiredCount },
+                ].map(({ k, v }, i, arr) => (
+                  // The odd fifth stat spans the full width on the 2-col mobile
+                  // grid instead of dangling beside an empty cell.
+                  <div key={k} className={`bg-card px-4 py-3 ${i === arr.length - 1 ? "col-span-2 sm:col-span-1" : ""}`}>
+                    <dt className="mono text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">{k}</dt>
+                    <dd className="mono mt-1 text-xl font-semibold tabular-nums text-ink">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
             )}
           </div>
         </header>
@@ -484,7 +502,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           {/* Intro paragraph - keyword-rich */}
           <section className="mt-10 max-w-3xl">
             {!policyTracked && (
-              <p className="rounded-lg border border-eta/30 bg-eta/[0.06] px-5 py-4 text-base leading-relaxed text-ink-soft">
+              <p className="text-body rounded-[2px] border border-line-strong bg-paper-2/70 px-5 py-4 text-ink-soft">
                 <strong className="text-ink">{country.name} does not publish its visa policy as an enumerated per-nationality list</strong>{" "}
                 on an official source Earth Visa can verify, so we do not yet track which nationalities can enter and how.
                 Rather than estimate, we only publish entry rules confirmed against official government publications  - 
@@ -495,7 +513,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 headings below own the numbers. One openness judgment, one
                 actionable routing sentence. */}
             {policyTracked && (
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body measure text-ink-soft">
               {possessive(country.name)} visa policy is{" "}
               <strong className="text-ink">{openness}</strong> relative to other destinations worldwide.{" "}
               {visaRequiredCount === 0 && totalWithAccess > 0 ? (
@@ -525,107 +543,123 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               )}
             </p>
             )}
+            {/* Pending change: its own labeled sub-block with a date chip
+                (spec §8) - never buried mid-paragraph. */}
             {destIso3 === "THA" && (
-              <p className="mt-4 rounded-lg border border-eta/30 bg-eta/[0.06] px-5 py-4 text-sm leading-relaxed text-ink-soft">
-                <strong className="text-ink">Approved change pending:</strong> Thailand&apos;s Cabinet (19 May 2026,
-                revised 14 July 2026) approved replacing the 60-day visa exemption with 30- and 15-day tiers and a
-                3-country visa on arrival. It is <strong className="text-ink">not in force yet</strong> - the rules
-                below apply until 15 days after Royal Gazette publication -{" "}
-                <Link href="/guide/thailand-visa-changes-2026" className="font-medium text-stamp underline-offset-2 hover:underline">
-                  see who lands in which tier
-                </Link>.
-              </p>
+              <div className="mt-4 rounded-[2px] border border-line-strong bg-paper-2/70 px-5 py-4">
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="mono text-[11px] font-semibold uppercase tracking-[0.16em] text-stamp">Approved change pending</p>
+                  <span className="mono rounded-[2px] border border-line-strong bg-card px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-ink-soft">revised 14 July 2026</span>
+                </div>
+                <p className="text-body mt-2 font-semibold text-ink">
+                  Thailand&apos;s Cabinet (19 May 2026, revised 14 July 2026) approved replacing the 60-day visa
+                  exemption with 30- and 15-day tiers and a 3-country visa on arrival.
+                </p>
+                <p className="text-body mt-1.5 text-ink-soft">
+                  It is <strong className="font-semibold text-ink">not in force yet</strong> - the rules
+                  below apply until 15 days after Royal Gazette publication -{" "}
+                  <Link href="/guide/thailand-visa-changes-2026" className="font-medium text-stamp underline-offset-2 hover:underline">
+                    see who lands in which tier
+                  </Link>.
+                </p>
+              </div>
             )}
           </section>
 
-          {/* Visa-free nationalities */}
+          {/* Visa-free nationalities. Single-category section: the header
+              carries the status once; rows drop the per-card badge (spec §11). */}
           {vfCount > 0 && (
-            <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+            <section className="mt-14">
+              <p className="eyebrow">Visa-free</p>
+              <h2 className="text-section mt-2 text-ink">
                 Countries Whose Citizens Can Visit {country.name} Visa-Free ({vfCount})
               </h2>
-              <p className="mt-2 text-sm text-ink-soft">
+              <p className="text-body measure mt-2 text-ink-soft">
                 Passport holders from these countries can enter {country.name} without a visa - no embassy appointment, no advance fee.
               </p>
-              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <LedgerGrid className="mt-5">
                 {accessByLevel.visa_free.slice(0, PREVIEW_VF).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_free} label="Visa-free" />
+                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
                 ))}
-              </ul>
+              </LedgerGrid>
               {vfCount > PREVIEW_VF && (
                 <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                     <span className="group-open:hidden">Show all {vfCount}</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <Chevron />
                   </summary>
-                  <ul className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <LedgerGrid className="mt-2.5">
                     {accessByLevel.visa_free.slice(PREVIEW_VF).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_free} label="Visa-free" />
+                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
                     ))}
-                  </ul>
+                  </LedgerGrid>
                 </details>
               )}
             </section>
           )}
 
-          {/* Visa on arrival */}
+          {/* Visa on arrival. Single-category: no per-row badges (spec §11). */}
           {voaCount > 0 && (
-            <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+            <section className="mt-14">
+              <p className="eyebrow">Visa on arrival</p>
+              <h2 className="text-section mt-2 text-ink">
                 Nationalities That Get Visa on Arrival to {country.name} ({voaCount})
               </h2>
-              <p className="mt-2 text-sm text-ink-soft">
+              <p className="text-body measure mt-2 text-ink-soft">
                 Citizens of these countries can obtain a visa stamp at the {country.name} border on arrival - no advance embassy visit required.
               </p>
-              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <LedgerGrid className="mt-5">
                 {accessByLevel.visa_on_arrival.slice(0, PREVIEW_VOA).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_on_arrival} label="On arrival" />
+                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
                 ))}
-              </ul>
+              </LedgerGrid>
               {voaCount > PREVIEW_VOA && (
                 <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                     <span className="group-open:hidden">Show all {voaCount}</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <Chevron />
                   </summary>
-                  <ul className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <LedgerGrid className="mt-2.5">
                     {accessByLevel.visa_on_arrival.slice(PREVIEW_VOA).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS.visa_on_arrival} label="On arrival" />
+                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
                     ))}
-                  </ul>
+                  </LedgerGrid>
                 </details>
               )}
             </section>
           )}
 
-          {/* eTA / e-Visa */}
+          {/* eTA / e-Visa. MIXED categories share this section, so each row
+              keeps its badge - an e-Visa (a full online visa application) must
+              never read as the lighter "eTA" authorisation (spec §11). */}
           {etaCount > 0 && (
-            <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+            <section className="mt-14">
+              <p className="eyebrow">eTA / e-Visa</p>
+              <h2 className="text-section mt-2 text-ink">
                 eTA &amp; e-Visa Eligible Countries for {country.name} ({etaCount})
               </h2>
-              <p className="mt-2 text-sm text-ink-soft">
+              <p className="text-body measure mt-2 text-ink-soft">
                 These nationalities can apply for an electronic travel authorisation or e-Visa online before travel - no embassy visit required.
               </p>
-              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <LedgerGrid className="mt-5">
                 {etaAndEvisa.slice(0, PREVIEW_ETA).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS[e.lvl]} label={e.lvl === "eta" ? "eTA" : "e-Visa"} />
+                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} badge={{ levelClass: LEVEL_COLORS[e.lvl], label: e.lvl === "eta" ? "eTA" : "e-Visa" }} />
                 ))}
-              </ul>
+              </LedgerGrid>
               {etaCount > PREVIEW_ETA && (
                 <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                     <span className="group-open:hidden">Show all {etaCount}</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <Chevron />
                   </summary>
-                  <ul className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <LedgerGrid className="mt-2.5">
                     {etaAndEvisa.slice(PREVIEW_ETA).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} levelClass={LEVEL_COLORS[e.lvl]} label={e.lvl === "eta" ? "eTA" : "e-Visa"} />
+                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} badge={{ levelClass: LEVEL_COLORS[e.lvl], label: e.lvl === "eta" ? "eTA" : "e-Visa" }} />
                     ))}
-                  </ul>
+                  </LedgerGrid>
                 </details>
               )}
             </section>
@@ -636,71 +670,67 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             const df = feesFor(destIso3);
             const paid = df?.fees.filter((f) => f.amount != null) ?? [];
             if (!df || paid.length === 0) return null;
+            // Compact fee ledger rows (spec §12) - name + meta left, amount
+            // right, hairline dividers inside one document card.
+            const feeRow = (f: (typeof paid)[number], i: number) => (
+              <li key={i} className="flex min-h-[52px] flex-wrap items-center gap-x-4 gap-y-1 bg-card px-4 py-2.5">
+                <div className="min-w-0 flex-1">
+                  <p className="font-display text-[15px] font-medium text-ink">{f.name}</p>
+                  <div className="mono flex flex-wrap gap-x-3 gap-y-0.5 text-[11px] text-ink-mute">
+                    {f.validity && <span>{f.validity}</span>}
+                    {f.official && <span className="text-vfree">official source</span>}
+                    {f.source_url && (
+                      <a href={f.source_url} target="_blank" rel="noreferrer" className="underline-offset-2 transition hover:text-ink hover:underline">
+                        {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <p className="mono shrink-0 text-[15px] font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
+              </li>
+            );
             return (
-              <section className="mt-12">
-                <h2 className="font-display text-2xl font-semibold text-ink">
+              <section className="mt-14">
+                <p className="eyebrow">Fees</p>
+                <h2 className="text-section mt-2 text-ink">
                   {display} Visa Fees ({df.updated ? `updated ${fmtUpdated(df.updated)}` : "2026"})
                 </h2>
-                {/* No lead paragraph: each card carries its own "official
+                {/* No lead paragraph: each row carries its own "official
                     source" chip and source-domain link. */}
-                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {paid.slice(0, 6).map((f, i) => (
-                    <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                      <p className="font-display text-[14px] font-semibold text-ink">{f.name}</p>
-                      <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
-                      <div className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
-                        {f.validity && <span>{f.validity}</span>}
-                        {f.official && <span className="text-vfree">official source</span>}
-                      </div>
-                      {f.source_url && (
-                        <a href={f.source_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-block text-[10px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
-                          {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
-                        </a>
-                      )}
-                    </div>
-                  ))}
+                <div className="card-doc mt-5 overflow-hidden">
+                  <ul className="grid gap-px bg-line sm:grid-cols-2">
+                    {paid.slice(0, 6).map(feeRow)}
+                  </ul>
                 </div>
                 {paid.length > 6 && (
                   <details className="group mt-2.5">
-                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                       <span className="group-open:hidden">Show all {paid.length} fees</span>
                       <span className="hidden group-open:inline">Show fewer</span>
                       <Chevron />
                     </summary>
-                    <div className="mt-2.5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                      {paid.slice(6).map((f, i) => (
-                        <div key={i + 6} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                          <p className="font-display text-[14px] font-semibold text-ink">{f.name}</p>
-                          <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
-                          <div className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
-                            {f.validity && <span>{f.validity}</span>}
-                            {f.official && <span className="text-vfree">official source</span>}
-                          </div>
-                          {f.source_url && (
-                            <a href={f.source_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-block text-[10px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
-                              {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
-                            </a>
-                          )}
-                        </div>
-                      ))}
+                    <div className="card-doc mt-2.5 overflow-hidden">
+                      <ul className="grid gap-px bg-line sm:grid-cols-2">
+                        {paid.slice(6).map((f, i) => feeRow(f, i + 6))}
+                      </ul>
                     </div>
                   </details>
                 )}
                 {destIso3 === "JPN" && (
-                  <p className="mt-3 max-w-2xl text-sm text-ink-soft">
+                  <p className="text-body measure mt-3 text-ink-soft">
                     Japan revised these fees for the first time since 1978, effective 1 July 2026 -{" "}
                     <Link href="/guide/japan-visa-fee-increase-2026" className="font-medium text-stamp underline-offset-2 hover:underline">
                       see the full old-vs-new fee breakdown
                     </Link>.
                   </p>
                 )}
-                <p className="mt-3 text-sm text-ink-soft">
+                <p className="text-body mt-3 text-ink-soft">
                   <Link href="/rankings/visa-fees" className="font-medium text-stamp underline-offset-2 hover:underline">
                     Compare official tourist-visa fees across every destination →
                   </Link>
                 </p>
                 {df.vfs.used && (
-                  <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                  <p className="text-body mt-3 max-w-2xl rounded-[2px] border border-line bg-paper-2/70 px-3.5 py-2.5 text-ink-soft">
                     {/* No amount here: crawled service fees are per-country (often
                         India-centre figures) and this page is nationality-agnostic.
                         Exact amounts belong on corridor pages. */}
@@ -716,11 +746,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               Absence of a product here means none is recorded, NOT that transit
               is visa-free - so nothing is asserted when the list is empty. */}
           {transitTypes.length > 0 && (
-            <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+            <section className="mt-14">
+              <p className="eyebrow">Transit</p>
+              <h2 className="text-section mt-2 text-ink">
                 {display} Transit Visa
               </h2>
-              <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+              <p className="text-body measure mt-2 text-ink-soft">
                 {country.name} publishes {transitTypes.length === 1 ? "a transit visa product" : `${transitTypes.length} transit visa products`} for
                 travellers passing through to another destination. Whether you need one depends on your nationality and
                 whether you stay airside  - {" "}
@@ -730,16 +761,16 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {transitTypes.map((v, i) => (
-                  <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                    <p className="font-display text-[14px] font-semibold text-ink">{v.name}</p>
-                    {v.purpose && <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
+                  <div key={i} className="card-doc px-4 py-3.5">
+                    <p className="font-display text-[15px] font-semibold text-ink">{v.name}</p>
+                    {v.purpose && <p className="text-body mt-1 text-ink-soft">{v.purpose}</p>}
                     <div className="mono mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
                       {v.max_stay_days != null && <span>up to {v.max_stay_days} day{v.max_stay_days === 1 ? "" : "s"}</span>}
                       {v.fee_usd != null && (v.fee_usd === 0 ? <span className="text-vfree">free</span> : <span>~${v.fee_usd}</span>)}
                       {v.online && <span className="text-vfree">apply online</span>}
                       {v.on_arrival && <span className="text-voa">on arrival</span>}
                     </div>
-                    {v.notes && <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>}
+                    {v.notes && <p className="text-body mt-2 text-ink-soft">{v.notes}</p>}
                     {v.official_url && (
                       <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
                         Apply here ↗
@@ -753,17 +784,18 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <p className="eyebrow">FAQ</p>
+            <h2 className="text-section mt-2 text-ink">
               {country.name} Visa Requirements FAQ
             </h2>
-            <div className="mt-5 divide-y divide-line">
+            <div className="card-doc mt-5 divide-y divide-line px-4 sm:px-5">
               {faqs.map(({ q, a, render }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  {render ?? <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>}
+                  {render ?? <p className="text-body measure mt-1 pb-4 text-ink-soft">{a}</p>}
                 </details>
               ))}
             </div>
@@ -774,48 +806,46 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               pattern as the nationality lists - big destinations have ~200
               corridors, and every link stays in the HTML for crawlers. */}
           {corridorLinks.length > 0 && (
-            <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+            <section className="mt-14">
+              <p className="eyebrow">By nationality</p>
+              <h2 className="text-section mt-2 text-ink">
                 {country.name} Visa Guides by Nationality
               </h2>
-              <p className="mt-2 text-sm text-ink-soft">
+              <p className="text-body measure mt-2 text-ink-soft">
                 Step-by-step {country.name} visa requirements, fees and document checklists for travellers from these
                 countries. Nationalities in the access lists above link straight to their own guides.
               </p>
-              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <LedgerGrid className="mt-5">
                 {corridorLinks.slice(0, PREVIEW_CORRIDORS).map((l) => (
                   <CorridorLinkRow key={l.href} href={l.href} label={l.label} iso3={l.iso3} />
                 ))}
-              </ul>
+              </LedgerGrid>
               {corridorLinks.length > PREVIEW_CORRIDORS && (
                 <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                     <span className="group-open:hidden">Show all {corridorLinks.length}</span>
                     <span className="hidden group-open:inline">Show fewer</span>
                     <Chevron />
                   </summary>
-                  <ul className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <LedgerGrid className="mt-2.5">
                     {corridorLinks.slice(PREVIEW_CORRIDORS).map((l) => (
                       <CorridorLinkRow key={l.href} href={l.href} label={l.label} iso3={l.iso3} />
                     ))}
-                  </ul>
+                  </LedgerGrid>
                 </details>
               )}
             </section>
           )}
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-rule card-doc-ticks mt-14 px-6 py-10 text-center">
+            <h2 className="text-section text-ink">
               Check your specific visa requirements for {country.name}
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mx-auto mt-2 max-w-[52ch] text-ink-soft">
               Enter your passport to instantly see whether you need a visa for {country.name}, how long you can stay, and what documents you need.
             </p>
-            <Link
-              href={`/visit?dest=${destIso3}`}
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
-            >
+            <Link href={`/visit?dest=${destIso3}`} className="btn-stamp mt-6">
               Check visa requirements on Earth Visa →
             </Link>
           </section>

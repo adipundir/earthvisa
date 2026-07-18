@@ -189,7 +189,7 @@ export default function GccVisaGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/guide" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Guides</Link>
@@ -197,10 +197,9 @@ export default function GccVisaGuidePage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">GCC Unified Visa</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 GCC Unified Visa 2026
                 <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                   The &quot;Grand Tours&quot; Visa - Status &amp; Today&apos;s Gulf Entry Rules
@@ -212,19 +211,19 @@ export default function GccVisaGuidePage() {
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Member states", v: members.length },
                 { k: "Visa-free grants (sum of 6 states)", v: totalVf },
                 { k: "Visa on arrival grants", v: totalVoa },
                 { k: "eTA / e-Visa grants", v: totalE },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -232,8 +231,8 @@ export default function GccVisaGuidePage() {
 
           {/* What it is */}
           <section className="mt-10 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">What Is the GCC Unified Tourist Visa?</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">What Is the GCC Unified Tourist Visa?</h2>
+            <p className="text-body mt-3 text-ink-soft">
               The six Gulf Cooperation Council states -{" "}
               {members.map((m, i) => (
                 <span key={m}>
@@ -246,7 +245,7 @@ export default function GccVisaGuidePage() {
               one authorisation, tourism travel across all six countries - the way a single Schengen visa covers the{" "}
               <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen area</Link>.
             </p>
-            <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-5 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               Status: approved and announced, but <strong>not yet live per our dataset</strong> - every Gulf entry rule
               we record is still issued per state. No launch date or fee is stated here; confirm rollout status on
               official GCC or member-state channels before planning a multi-country trip around it.
@@ -255,8 +254,8 @@ export default function GccVisaGuidePage() {
 
           {/* The six states, data-driven openness */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">The Six GCC Member States</h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <h2 className="text-section text-ink">The Six GCC Member States</h2>
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               How open each member is today - counts are nationalities admitted at each level.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -264,14 +263,14 @@ export default function GccVisaGuidePage() {
                 <Link
                   key={iso3}
                   href={`/destination/${nameToSlug(name)}`}
-                  className="group rounded-sm border border-line bg-paper-2/70 p-4 transition hover:border-line-strong"
+                  className="card-doc group p-4"
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{flagFor(iso3)}</span>
                     <span className="font-display font-semibold text-ink transition group-hover:text-stamp">{name}</span>
                     <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
                   </div>
-                  <p className="mono mt-3 text-[11px] leading-relaxed text-ink-mute">
+                  <p className="mt-3 max-w-2xl text-[13px] leading-relaxed text-ink-mute">
                     {counts.visa_free} visa-free · {counts.visa_on_arrival} on arrival · {counts.eta + counts.e_visa} eTA/e-visa
                   </p>
                 </Link>
@@ -281,24 +280,24 @@ export default function GccVisaGuidePage() {
 
           {/* Until it launches: per-state rules matrix */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Until It Launches: Visa Rules per GCC State
             </h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Today you still deal with six separate visa systems. The matrix below shows the entry level each state
               grants to popular passports. &quot;Visa required&quot; means no visa-free, on-arrival, eTA or e-visa
               grant is recorded - apply in advance.
             </p>
-            <p className="mono mt-4 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute sm:hidden">
+            <p className="mono-chrome mt-4 sm:hidden">
               Swipe sideways for all six states <span aria-hidden>→</span>
             </p>
             <div className="mt-2 overflow-x-auto sm:mt-5">
               <table className="w-full min-w-[720px] border-collapse text-left">
                 <thead>
                   <tr className="border-b border-line-strong">
-                    <th scope="col" className="mono py-3 pr-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Passport</th>
+                    <th scope="col" className="mono-chrome py-3 pr-4">Passport</th>
                     {members.map((dest) => (
-                      <th key={dest} scope="col" className="mono px-2 py-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+                      <th key={dest} scope="col" className="mono-chrome px-2 py-3">
                         <span className="mr-1.5">{flagFor(dest)}</span>
                         {nameFor(dest) === "United Arab Emirates" ? "UAE" : nameFor(dest)}
                       </th>
@@ -317,12 +316,12 @@ export default function GccVisaGuidePage() {
                       {cells.map(({ dest, edge }) => (
                         <td key={dest} className="px-2 py-3">
                           {edge ? (
-                            <span className={`mono inline-block rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
+                            <span className={`mono inline-block rounded-[3px] px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
                               {LEVEL_LABEL[edge.level]}
                               {edge.maxStayDays != null && ` ${edge.maxStayDays}d`}
                             </span>
                           ) : (
-                            <span className="mono inline-block rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                            <span className="mono inline-block rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
                               Visa required
                             </span>
                           )}
@@ -341,10 +340,10 @@ export default function GccVisaGuidePage() {
           {/* GCC residents */}
           {gccResidenceEdges.length > 0 && (
             <section className="mt-12 max-w-3xl">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+              <h2 className="text-section text-ink">
                 Already a GCC Resident? Your Permit Unlocks Neighbours
               </h2>
-              <p className="mt-3 text-base leading-relaxed text-ink-soft">
+              <p className="text-body mt-3 text-ink-soft">
                 The closest live thing to a unified Gulf visa:{" "}
                 <strong className="text-ink">credential-based access for GCC residence-permit holders</strong> into
                 other member states, regardless of nationality - commonly limited to permits valid 3+ months and, in
@@ -352,17 +351,17 @@ export default function GccVisaGuidePage() {
               </p>
               <ul className="mt-4 space-y-2.5">
                 {gccResidenceEdges.map((e) => (
-                  <li key={`${e.dest}-${e.level}`} className="flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
+                  <li key={`${e.dest}-${e.level}`} className="card-doc flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                     <span className="text-xl">{flagFor(e.dest)}</span>
                     <span className="font-display text-sm font-medium text-ink">{nameFor(e.dest)}</span>
-                    <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[e.level]}`}>
+                    <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[e.level]}`}>
                       {LEVEL_LABEL[e.level]}
                       {e.maxStayDays != null && ` · ${e.maxStayDays}d`}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+              <p className="text-body mt-3 text-ink-soft">
                 Conditions differ per state (profession lists, permit validity, family riders) - verify on each
                 state&apos;s official portal before travelling.
               </p>
@@ -371,15 +370,15 @@ export default function GccVisaGuidePage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">GCC Unified Visa FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">GCC Unified Visa FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -394,17 +393,17 @@ export default function GccVisaGuidePage() {
 
           {/* Related */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Related Guides</h2>
+            <h2 className="text-section text-ink">Related Guides</h2>
             <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
               <li>
-                <Link href="/guide/umrah-visa" className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong">
+                <Link href="/guide/umrah-visa" className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                   <span className="text-xl">{flagFor("SAU")}</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">Umrah visa guide (Saudi Arabia)</span>
                   <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
                 </Link>
               </li>
               <li>
-                <Link href="/rankings" className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong">
+                <Link href="/rankings" className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                   <span className="text-xl">🛂</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">Passport rankings 2026</span>
                   <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
@@ -414,17 +413,17 @@ export default function GccVisaGuidePage() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Check your visa options for every Gulf state
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Enter your passport to see your current entry level for the UAE, Saudi Arabia, Qatar, Oman, Bahrain and
               Kuwait - including credential-based routes.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check visa requirements on Earth Visa →
             </Link>

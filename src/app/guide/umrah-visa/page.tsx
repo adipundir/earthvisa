@@ -197,7 +197,7 @@ export default function UmrahVisaGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/guide" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Guides</Link>
@@ -205,10 +205,9 @@ export default function UmrahVisaGuidePage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Umrah Visa</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">{flagFor("SAU")}</span>
                 Umrah Visa 2026
                 <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
@@ -221,19 +220,19 @@ export default function UmrahVisaGuidePage() {
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Tourist e-Visa nationalities", v: String(sauEvisaCount) },
                 { k: "Visa-free nationalities", v: String(sauVfCount) },
                 { k: "Tourist e-Visa max stay", v: eVisaType?.max_stay_days ? `${eVisaType.max_stay_days} days` : "varies" },
                 { k: "Tourist e-Visa fee", v: eVisaType?.fee_usd ? `~USD ${eVisaType.fee_usd}` : "see official" },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -241,7 +240,7 @@ export default function UmrahVisaGuidePage() {
 
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               There are three main ways to enter <Link href={`/destination/${nameToSlug(nameFor("SAU"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Saudi Arabia</Link>{" "}
               for <strong className="text-ink">Umrah</strong>: the <strong className="text-ink">Saudi tourist visa</strong>{" "}
               (which allows Umrah but not Hajj), the{" "}
@@ -253,7 +252,7 @@ export default function UmrahVisaGuidePage() {
               official-source dataset.
             </p>
             {notEligibleNames.length > 0 && (
-              <p className="mt-4 text-base leading-relaxed text-ink-soft">
+              <p className="text-body mt-4 text-ink-soft">
                 Major Umrah-origin nationalities - {notEligibleNames.join(", ")} - are{" "}
                 <strong className="text-ink">not</strong> eligible for the tourist e-Visa per our data, so for them the
                 Nusuk Umrah visa (or the US/UK/Schengen visa-holder route) is the practical path.
@@ -263,26 +262,26 @@ export default function UmrahVisaGuidePage() {
 
           {/* Route 1: tourist visa */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Route 1: Umrah on a Saudi Tourist Visa</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Route 1: Umrah on a Saudi Tourist Visa</h2>
+            <p className="text-body mt-3 text-ink-soft">
               Tourist visa holders may perform Umrah at any time of year outside the Hajj season. Two tourist
               products exist:
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {sauTourist.map((vt) => (
-                <div key={vt.name} className="rounded-sm border border-line bg-paper-2/70 p-4">
+                <div key={vt.name} className="card-doc p-4">
                   <div className="font-display font-semibold text-ink">{vt.name}</div>
-                  <p className="mono mt-2 text-[11px] leading-relaxed text-ink-mute">
+                  <p className="mt-2 text-[13px] leading-relaxed text-ink-mute">
                     {vt.fee_usd != null && <>~USD {vt.fee_usd} · </>}
                     {vt.max_stay_days != null && <>up to {vt.max_stay_days} days per visit · </>}
                     {vt.entries && <>{vt.entries} entry · </>}
                     {vt.online ? "apply online" : "issued at the border"}
                   </p>
-                  {vt.notes && <p className="mt-2 text-sm leading-relaxed text-ink-soft">{vt.notes}</p>}
+                  {vt.notes && <p className="text-body mt-2 max-w-3xl text-ink-soft">{vt.notes}</p>}
                 </div>
               ))}
             </div>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               Eligibility is limited - check whether your passport qualifies on the official portal (visitsaudi.com) or
               via your <Link href="/visit?dest=SAU" className="text-stamp underline underline-offset-2">Earth Visa check</Link>.
               A tourist visa never permits Hajj - the dedicated Hajj visa is issued only via{" "}
@@ -292,8 +291,8 @@ export default function UmrahVisaGuidePage() {
 
           {/* Route 2: Nusuk Umrah visa */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Route 2: The Dedicated Umrah Visa via Nusuk</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Route 2: The Dedicated Umrah Visa via Nusuk</h2>
+            <p className="text-body mt-3 text-ink-soft">
               For nationalities without tourist visa access - which includes the largest pilgrimage origins - the
               dedicated <strong className="text-ink">Umrah visa</strong> is the standard route. It is
               processed through <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>,
@@ -318,7 +317,7 @@ export default function UmrahVisaGuidePage() {
                   <span className="mono mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full border border-line-strong text-[11px] font-semibold text-stamp">{i + 1}</span>
                   <div>
                     <h3 className="font-display text-base font-semibold text-ink">{t}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-soft">{d}</p>
+                    <p className="text-body mt-1 text-ink-soft">{d}</p>
                   </div>
                 </li>
               ))}
@@ -330,13 +329,13 @@ export default function UmrahVisaGuidePage() {
                 { k: "Bookings", v: "Must be linked to confirmed Nusuk accommodation and transport" },
                 { k: "Hajj season", v: "Not issued during the Hajj blackout" },
               ].map(({ k, v }) => (
-                <div key={k} className="rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                  <dt className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="card-doc px-3.5 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-1 text-sm leading-snug text-ink">{v}</dd>
                 </div>
               ))}
             </dl>
-            <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-5 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               Umrah visa fees and validity are set by Saudi authorities and are not recorded in our dataset - confirm
               them on the official Nusuk platform, not third-party agents&apos; ads. Women&apos;s mahram (male guardian)
               rules have been relaxed per official Saudi policy; verify the current conditions before travel.
@@ -346,19 +345,19 @@ export default function UmrahVisaGuidePage() {
           {/* Route 3: credential VoA */}
           {credentialVoA.length > 0 && (
             <section className="mt-12 max-w-3xl">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+              <h2 className="text-section text-ink">
                 Route 3: Visa on Arrival with a US, UK or Schengen Visa
               </h2>
-              <p className="mt-3 text-base leading-relaxed text-ink-soft">
+              <p className="text-body mt-3 text-ink-soft">
                 Saudi tourist visa regulations grant a <strong className="text-ink">visa on arrival</strong> to
                 travellers of <strong className="text-ink">any nationality</strong> who hold one of the credentials
                 below.
               </p>
               <ul className="mt-4 space-y-2.5">
                 {credentialVoA.map(({ id, edge }) => (
-                  <li key={id} className="flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
+                  <li key={id} className="card-doc flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                     <span className="font-display text-sm font-medium text-ink">{credLabel[id]}</span>
-                    <span className="mono ml-auto shrink-0 rounded-[3px] bg-voa/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-voa ring-1 ring-voa/30">
+                    <span className="mono ml-auto shrink-0 rounded-[3px] bg-voa/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-voa ring-1 ring-voa/30">
                       On arrival{edge?.maxStayDays ? ` · ${edge.maxStayDays}d` : ""}
                     </span>
                   </li>
@@ -371,13 +370,13 @@ export default function UmrahVisaGuidePage() {
                   { k: "Passport", v: "Valid 6+ months" },
                   { k: "Family", v: "First-degree relatives travelling together included" },
                 ].map(({ k, v }) => (
-                  <div key={k} className="rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
-                    <dt className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                  <div key={k} className="card-doc px-3.5 py-2.5">
+                    <dt className="mono-chrome">{k}</dt>
                     <dd className="mt-1 text-sm leading-snug text-ink">{v}</dd>
                   </div>
                 ))}
               </dl>
-              <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+              <p className="text-body mt-4 text-ink-soft">
                 This is the fastest legal route for many Indian, Pakistani and Bangladeshi travellers who already hold
                 a used US, UK or Schengen visa - and the resulting tourist visa allows Umrah.
               </p>
@@ -386,8 +385,8 @@ export default function UmrahVisaGuidePage() {
 
           {/* Per-nationality pointers */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">Umrah Visa by Nationality</h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <h2 className="text-section text-ink">Umrah Visa by Nationality</h2>
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Saudi entry status per passport. &quot;Visa required in advance&quot; means the
               Nusuk Umrah visa (or the US/UK/Schengen visa-holder route above) is your path.
             </p>
@@ -396,12 +395,12 @@ export default function UmrahVisaGuidePage() {
                 <Link
                   key={iso3}
                   href={`/passport/${nameToSlug(name)}`}
-                  className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                  className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5"
                 >
                   <span className="text-xl">{flagFor(iso3)}</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{name}</span>
                   <span
-                    className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${
+                    className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] ring-1 ${
                       edge ? "bg-evisa/10 text-evisa ring-evisa/30" : "bg-stamp/10 text-stamp ring-stamp/30"
                     }`}
                   >
@@ -414,15 +413,15 @@ export default function UmrahVisaGuidePage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Umrah Visa FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Umrah Visa FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -437,17 +436,17 @@ export default function UmrahVisaGuidePage() {
 
           {/* Related */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Related Guides</h2>
+            <h2 className="text-section text-ink">Related Guides</h2>
             <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
               <li>
-                <Link href={`/destination/${nameToSlug(nameFor("SAU"))}`} className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong">
+                <Link href={`/destination/${nameToSlug(nameFor("SAU"))}`} className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                   <span className="text-xl">{flagFor("SAU")}</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">Saudi Arabia visa requirements</span>
                   <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
                 </Link>
               </li>
               <li>
-                <Link href="/guide/gcc-visa" className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong">
+                <Link href="/guide/gcc-visa" className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                   <span className="text-xl">🌍</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">GCC unified tourist visa guide</span>
                   <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
@@ -457,17 +456,17 @@ export default function UmrahVisaGuidePage() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Check your exact Saudi Arabia entry options
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Enter your passport (and any US, UK or Schengen visas you hold) to see every route into Saudi Arabia -
               including credential-based visa on arrival.
             </p>
             <Link
               href="/visit?dest=SAU"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check visa requirements on Earth Visa →
             </Link>

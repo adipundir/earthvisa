@@ -191,7 +191,7 @@ function CountryBlock({ name, list }: { name: string; list: RbiProgram[] }) {
   const w = passportWorth(iso3);
   const slug = nameToSlug(name);
   return (
-    <div className="rounded-sm border border-line bg-paper-2/70 p-4">
+    <div className="card-doc p-4">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <span className="text-2xl">{flagFor(iso3)}</span>
         <Link
@@ -217,7 +217,7 @@ function CountryBlock({ name, list }: { name: string; list: RbiProgram[] }) {
                   {p.program_name}
                 </span>
                 {closed && (
-                  <span className="mono rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                  <span className="mono rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
                     closed per official source
                   </span>
                 )}
@@ -256,7 +256,7 @@ export default function GoldenVisaPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -266,9 +266,8 @@ export default function GoldenVisaPage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Golden Visa</span>
             </nav>
 
-            <div className="rule-double" />
 
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+            <h1 className="text-display mt-6 text-ink">
               Golden Visa Countries 2026
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                 Residency by Investment in {countryCount} Countries, by Region
@@ -279,32 +278,32 @@ export default function GoldenVisaPage() {
               · thresholds change frequently
             </p>
 
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Investment routes", v: programs.length },
                 { k: "Countries", v: countryCount },
                 { k: "Europe routes", v: europePrograms.length },
                 { k: "Publish citizenship path", v: withCitizenshipPath.length },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               A <strong className="text-ink">golden visa</strong> grants long-term residency in exchange for a
               qualifying investment - real estate, fund units, bonds, a deposit, or a business. For every country
               below we also show <strong className="text-ink">what its passport is worth</strong>: the visa-free
               destination count and global rank from our <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">passport rankings</Link>.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               Golden visas have been retreating in Europe: Spain&apos;s program is recorded as{" "}
               <strong className="text-ink">abolished</strong> and the Irish, UK and Australian investor routes as{" "}
               <strong className="text-ink">closed</strong>. Closed routes stay listed and clearly flagged.
@@ -313,10 +312,10 @@ export default function GoldenVisaPage() {
 
           {/* Named golden visas */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Countries with a Program Named &quot;Golden Visa&quot; ({namedGolden.length})
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               These jurisdictions brand their investor residence route as a golden visa or golden residency in official
               sources.
             </p>
@@ -330,7 +329,7 @@ export default function GoldenVisaPage() {
                   <span className="text-base">{flagFor(p.iso3)}</span>
                   {p.name}
                   {isClosedProgram(p) && (
-                    <span className="rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[9px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                    <span className="rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
                       closed
                     </span>
                   )}
@@ -346,13 +345,13 @@ export default function GoldenVisaPage() {
             const total = countries.reduce((n, [, list]) => n + list.length, 0);
             return (
               <section key={region} className="mt-12">
-                <h2 className="font-display text-2xl font-semibold text-ink">
+                <h2 className="text-section text-ink">
                   Golden Visa {region === "Europe" ? "Europe" : `Programs in ${region}`} ({total} Routes,{" "}
                   {countries.length} Countries)
                 </h2>
                 {region === "Europe" ? (
                   <>
-                    <p className="mt-2 text-sm text-ink-soft">
+                    <p className="text-body mt-2 max-w-3xl text-ink-soft">
                       Europe remains the busiest golden visa market. EU residence permits generally allow short stays
                       across the Schengen area, but the permit itself is national - conditions vary by country.
                     </p>
@@ -400,15 +399,15 @@ export default function GoldenVisaPage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Golden Visa FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Golden Visa FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -417,17 +416,17 @@ export default function GoldenVisaPage() {
           <ProgramsNav current="/programs/golden-visa" />
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Check what residency could eventually unlock
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Use Earth Visa to see the visa-free map of any passport - including the one at the end of a golden visa
               path.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Explore passports on Earth Visa →
             </Link>

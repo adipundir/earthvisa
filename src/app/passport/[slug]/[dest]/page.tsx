@@ -206,7 +206,7 @@ function DocBlocks({ text }: { text: string }) {
                 href={p.url}
                 target="_blank"
                 rel="noreferrer"
-                className="mono inline-flex min-h-[32px] items-center gap-1.5 rounded-md border border-line-strong bg-card px-2.5 py-1 text-[11px] text-ink-soft transition hover:border-stamp hover:text-stamp"
+                className="mono inline-flex min-h-[32px] items-center gap-1.5 rounded-[2px] border border-line-strong bg-card px-2.5 py-1 text-[11px] text-ink-soft transition hover:border-stamp hover:text-stamp"
               >
                 <svg viewBox="0 0 12 14" aria-hidden="true" className="h-3 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M2 1h5l3 3v9H2z" strokeLinejoin="round" /><path d="M7 1v3h3" strokeLinejoin="round" /></svg>
                 {p.label}
@@ -217,17 +217,17 @@ function DocBlocks({ text }: { text: string }) {
         </div>
       )}
       {bullets.length > 0 && (
-        <ul className="space-y-1.5">
+        <ul className="measure space-y-1.5">
           {bullets.map((b, i) => (
-            <li key={i} className="flex gap-2.5 text-[12.5px] leading-relaxed text-ink-soft">
-              <span aria-hidden="true" className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+            <li key={i} className="text-body flex gap-2.5 text-ink-soft">
+              <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
               <span className="min-w-0 break-words">{linkifyDocs(b)}</span>
             </li>
           ))}
         </ul>
       )}
       {notes.map((t, i) => (
-        <p key={i} className="break-words text-[12.5px] leading-relaxed text-ink-soft">{linkifyDocs(t)}</p>
+        <p key={i} className="text-body measure break-words text-ink-soft">{linkifyDocs(t)}</p>
       ))}
     </div>
   );
@@ -420,10 +420,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 const LEVEL_COLORS: Record<AccessLevel, string> = {
-  visa_free: "text-vfree bg-vfree/10 ring-vfree/30",
-  visa_on_arrival: "text-voa bg-voa/10 ring-voa/30",
-  eta: "text-eta bg-eta/10 ring-eta/30",
-  e_visa: "text-evisa bg-evisa/10 ring-evisa/30",
+  visa_free: "text-vfree bg-vfree/10 border-vfree/40",
+  visa_on_arrival: "text-voa bg-voa/10 border-voa/40",
+  eta: "text-eta bg-eta/10 border-eta/40",
+  e_visa: "text-evisa bg-evisa/10 border-evisa/40",
 };
 
 // Anchors on the /guide/visa-types glossary - lets a reader who lands on any
@@ -439,13 +439,15 @@ const GLOSSARY_ANCHOR: Record<string, string> = {
 };
 
 function StatusBadge({ s }: { s: Status }) {
-  if (s.kind === "own") return <Badge cls="text-bloc bg-bloc/10 ring-bloc/30">Home country</Badge>;
-  if (s.kind === "fom") return <Badge cls="text-bloc bg-bloc/10 ring-bloc/30" href={`/guide/visa-types#${GLOSSARY_ANCHOR.fom}`}>Freedom of movement</Badge>;
-  if (s.kind === "visa_required") return <Badge cls="text-ink-soft bg-paper-3 ring-line-strong" href={`/guide/visa-types#${GLOSSARY_ANCHOR.visa_required}`}>Visa required</Badge>;
+  if (s.kind === "own") return <Badge cls="text-bloc bg-bloc/10 border-bloc/40">Home country</Badge>;
+  if (s.kind === "fom") return <Badge cls="text-bloc bg-bloc/10 border-bloc/40" href={`/guide/visa-types#${GLOSSARY_ANCHOR.fom}`}>Freedom of movement</Badge>;
+  if (s.kind === "visa_required") return <Badge cls="text-ink-soft bg-paper-3 border-line-strong" href={`/guide/visa-types#${GLOSSARY_ANCHOR.visa_required}`}>Visa required</Badge>;
   return <Badge cls={LEVEL_COLORS[s.kind]} href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind]}`}>{LEVEL_LABEL[s.kind]}</Badge>;
 }
+// Stamp-like status chip: 1px border, near-square radius, and the spec's one
+// allowed ≤1° rotation (verdict chip only - nowhere else on the site).
 function Badge({ cls, href, children }: { cls: string; href?: string; children: React.ReactNode }) {
-  const className = `mono inline-flex items-center rounded px-2.5 py-1 text-[12px] font-semibold uppercase tracking-[0.12em] ring-1 ${cls}`;
+  const className = `mono inline-flex -rotate-1 items-center rounded-[2px] border px-2.5 py-1 text-[12px] font-semibold uppercase tracking-[0.12em] ${cls}`;
   if (href) return <Link href={href} className={`${className} transition hover:opacity-80`} title="What does this mean?">{children}</Link>;
   return <span className={className}>{children}</span>;
 }
@@ -458,6 +460,70 @@ function ApplyLink({ href, label = "Apply here" }: { href: string; label?: strin
     <a href={href} target="_blank" rel="noreferrer" className="font-medium text-stamp underline-offset-2 hover:underline">
       {label} ↗
     </a>
+  );
+}
+
+// First "14 July 2026"-style date inside a pending-change note becomes the
+// sub-block's mono date chip - derived from the note text, never invented.
+const NOTE_DATE_RE = /\b\d{1,2} (?:January|February|March|April|May|June|July|August|September|October|November|December) \d{4}\b/;
+
+// Policy note, structured (spec §8 - no text walls): mono label, bold one-line
+// lead (the actionable fact), detail at body size, and any "Upcoming change:"
+// content in its own labeled sub-block with a date chip instead of buried
+// mid-paragraph. Structured notes (newline "- " bullets with an optional short
+// "Label:" line) keep their scannable bullet list.
+function PolicyNote({ notes }: { notes: string }) {
+  const lines = notes.split("\n").map((l) => l.trim()).filter(Boolean);
+  const leadLines: string[] = [];
+  const bullets: string[] = [];
+  let listLabel: string | null = null;
+  for (const line of lines) {
+    if (/^[-•]\s+/.test(line)) bullets.push(line.replace(/^[-•]\s+/, ""));
+    else if (/:$/.test(line) && line.length <= 40) listLabel = line.replace(/:$/, "");
+    else leadLines.push(line);
+  }
+  const sentences = splitSentences(leadLines.join(" "));
+  const changeIdx = sentences.findIndex((t) => /^upcoming change[:\s]/i.test(t));
+  const leadSentences = changeIdx === -1 ? sentences : sentences.slice(0, changeIdx);
+  const changeSentences = (changeIdx === -1 ? [] : sentences.slice(changeIdx)).map((t, i) => {
+    const stripped = i === 0 ? t.replace(/^upcoming change:\s*/i, "") : t;
+    return i === 0 ? stripped.charAt(0).toUpperCase() + stripped.slice(1) : stripped;
+  });
+  const changeDate = changeSentences.length > 0 ? NOTE_DATE_RE.exec(changeSentences.join(" "))?.[0] ?? null : null;
+  return (
+    <div className="border-t border-line px-5 py-4 sm:px-6">
+      <p className="eyebrow">Policy note</p>
+      {leadSentences.length > 0 && (
+        <p className="text-body measure mt-2 font-semibold text-ink">{leadSentences[0]}</p>
+      )}
+      {leadSentences.length > 1 && (
+        <p className="text-body measure mt-1.5 text-ink-soft">{leadSentences.slice(1).join(" ")}</p>
+      )}
+      {bullets.length > 0 && (
+        <>
+          {listLabel && <p className="mono-chrome mt-3">{listLabel}</p>}
+          <ul className={`${listLabel ? "mt-1.5" : "mt-3"} measure space-y-1`}>
+            {bullets.map((b, i) => (
+              <li key={i} className="text-body flex gap-2.5 text-ink-soft">
+                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+                <span className="min-w-0 break-words">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      {changeSentences.length > 0 && (
+        <div className="mt-3.5 max-w-3xl rounded-[2px] border border-line bg-paper-2/70 px-4 py-3.5">
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="mono text-[11px] font-semibold uppercase tracking-[0.16em] text-stamp">Upcoming change</p>
+            {changeDate && (
+              <span className="mono rounded-[2px] border border-line-strong bg-card px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-ink-soft">{changeDate}</span>
+            )}
+          </div>
+          <p className="text-body measure mt-2 text-ink-soft">{changeSentences.join(" ")}</p>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -475,9 +541,9 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
       ? (pMax != null && pMax > 0 ? `up to ${pMax}d processing` : pMin === 0 ? "under 24h processing" : null)
       : `${pMin}${pMax != null && pMax !== pMin ? `-${pMax}` : ""}d processing`;
   return (
-    <div className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-      <p className="font-display text-[14px] font-semibold text-ink">{v.name}</p>
-      {v.purpose && <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>}
+    <div className="card-doc px-4 py-3.5">
+      <p className="font-display text-[15px] font-semibold text-ink">{v.name}</p>
+      {v.purpose && <p className="text-body mt-1 text-ink-soft">{v.purpose}</p>}
       <div className="mono mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
         {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
         {v.entries && <span>{v.entries} entry</span>}
@@ -494,14 +560,14 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
         return sentences.length >= 3 ? (
           <ul className="mt-2 space-y-1">
             {sentences.map((t, i) => (
-              <li key={i} className="flex gap-2 text-[12px] leading-relaxed text-ink-soft">
-                <span aria-hidden="true" className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+              <li key={i} className="text-body flex gap-2 text-ink-soft">
+                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
                 <span className="min-w-0 break-words">{t}</span>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{v.notes}</p>
+          <p className="text-body mt-2 text-ink-soft">{v.notes}</p>
         );
       })()}
       {v.official_url && (
@@ -762,8 +828,8 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="min-h-screen">
-        <header className="border-b border-line bg-paper-2/50">
-          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
+        <header className="bg-grid-paper">
+          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-10 sm:px-8">
             <div className="min-w-0">
               <nav aria-label="Breadcrumb" className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-ink-mute">
                 <ol className="flex flex-wrap items-center gap-x-2">
@@ -774,74 +840,39 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   <li aria-current="page" className="text-ink-soft">{d.name}</li>
                 </ol>
               </nav>
-              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+              <h1 className="text-display text-ink">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none" aria-hidden="true">{flagFor(d.iso3)}</span>
                 {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
-                <span className="block text-lg font-normal italic text-ink-soft sm:text-xl">
+                <span className="mt-1 block font-display text-lg font-normal italic leading-snug tracking-normal text-ink-soft sm:text-xl">
                   {umrah ? "Tourist & Umrah - 2026 Requirements" : "2026 Requirements, Fees & Documents"}
                 </span>
               </h1>
               {aliasNote && (
-                <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                <p className="text-body mt-3 max-w-2xl rounded-[2px] border border-line bg-paper-2/70 px-3.5 py-2.5 text-ink-soft">
                   {aliasNote}
                 </p>
               )}
-              {/* Verdict card: the whole answer, scannable in one glance -
-                  status, one-line verdict, and the facts a traveler actually
-                  came for pulled out of the prose into a strip. */}
-              <div className="mt-6">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
-                  <StatusBadge s={s} />
-                  <p className="min-w-0 flex-1 text-[15px] leading-relaxed text-ink-soft">{answerSentence(nd, d.name, s)}</p>
+              {/* Entry stamp card (spec §7): status chip + verdict sentence +
+                  stat-tile ledger + policy note + source footer unified in ONE
+                  document card - the whole answer, scannable in one glance. */}
+              <div className="card-doc card-doc-rule card-doc-ticks mt-6">
+                <div className="flex flex-col items-start gap-3 px-5 pt-5 pb-4 sm:flex-row sm:gap-4 sm:px-6">
+                  <span className="pt-0.5"><StatusBadge s={s} /></span>
+                  <p className="min-w-0 flex-1 text-[17px] leading-normal text-ink sm:text-[19px]">{answerSentence(nd, d.name, s)}</p>
                 </div>
-                <dl className={`mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line ${facts.length >= 4 ? "sm:grid-cols-4" : "sm:grid-cols-3"}`}>
-                  {facts.map((f, i) => (
-                    <div key={f.k} className={`bg-card px-4 py-3 ${facts.length % 2 === 1 && i === facts.length - 1 ? "col-span-2 sm:col-span-1" : ""}`}>
-                      <dt className="mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink-mute">{f.k}</dt>
-                      <dd className="mt-1 font-display text-[17px] font-semibold leading-snug text-ink">{f.v}</dd>
+                {/* Stat tiles: internal 3-col ledger row divided by hairlines -
+                    a compact row on mobile too, never a tall stack. */}
+                <dl className={`grid gap-px border-t border-line bg-line ${facts.length >= 4 ? "grid-cols-2 sm:grid-cols-4" : facts.length === 3 ? "grid-cols-3" : "grid-cols-2"}`}>
+                  {facts.map((f) => (
+                    <div key={f.k} className="bg-card px-3 py-3 sm:px-5">
+                      <dt className="mono text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">{f.k}</dt>
+                      <dd className="mt-1 font-display text-[15px] font-semibold leading-snug text-ink sm:text-[18px]">{f.v}</dd>
                     </div>
                   ))}
                 </dl>
-                {/* Policy note: a plain string renders as one paragraph, as
-                    before. Structured notes (newline "- " bullet lines, with an
-                    optional short "Label:" line introducing them) render as a
-                    short lead plus a labeled bullet list - discrete facts like
-                    entry requirements stay scannable rows, never a prose wall. */}
-                {"notes" in s && s.notes ? (() => {
-                  const lines = s.notes.split("\n").map((l) => l.trim()).filter(Boolean);
-                  const lead: string[] = [];
-                  const bullets: string[] = [];
-                  let listLabel: string | null = null;
-                  for (const line of lines) {
-                    if (/^[-•]\s+/.test(line)) bullets.push(line.replace(/^[-•]\s+/, ""));
-                    else if (/:$/.test(line) && line.length <= 40) listLabel = line.replace(/:$/, "");
-                    else lead.push(line);
-                  }
-                  return (
-                    <div className="mt-4 rounded-lg border border-eta/25 bg-eta/[0.05] px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-                      <p>
-                        <span className="mono mr-2 text-[10px] font-medium uppercase tracking-[0.14em] text-eta">Policy note</span>
-                        {lead.join(" ")}
-                      </p>
-                      {bullets.length > 0 && (
-                        <>
-                          {listLabel && (
-                            <p className="mono mt-2.5 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">{listLabel}</p>
-                          )}
-                          <ul className={`${listLabel ? "mt-1.5" : "mt-2.5"} space-y-1`}>
-                            {bullets.map((b, i) => (
-                              <li key={i} className="flex gap-2.5">
-                                <span aria-hidden="true" className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
-                                <span className="min-w-0 break-words">{b}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </>
-                      )}
-                    </div>
-                  );
-                })() : null}
-                <div className="mono mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-line pt-3.5 text-[11px] text-ink-mute">
+                {"notes" in s && s.notes ? <PolicyNote notes={s.notes} /> : null}
+                {/* Source line: card footer. */}
+                <div className="mono flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-line bg-paper-2/60 px-5 py-3 text-[11px] text-ink-mute sm:px-6">
                   {"sourceUrl" in s && s.sourceUrl ? (
                     <a href={s.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-ink">
                       <span className={`inline-block h-2 w-2 rounded-full ${s.sourceOfficial ? "bg-vfree" : "bg-eta"}`} />
@@ -855,19 +886,29 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   </Link>
                 </div>
               </div>
-              {need && applicationNoteFor(d.iso3) ? (
-                <p className="mt-4 max-w-3xl rounded-lg border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-ink-soft">
-                  <span className="mono mr-2 text-[10px] font-medium uppercase tracking-[0.14em] text-stamp">How it works</span>
-                  {applicationNoteFor(d.iso3)}
-                </p>
-              ) : null}
+              {(() => {
+                const appNote = need ? applicationNoteFor(d.iso3) : null;
+                if (!appNote) return null;
+                // Same no-text-wall structure as the policy note: label, bold
+                // one-line lead, detail at body size.
+                const sentences = splitSentences(appNote);
+                return (
+                  <div className="card-doc mt-4 max-w-3xl px-5 py-4">
+                    <p className="eyebrow">How it works</p>
+                    <p className="text-body measure mt-2 font-semibold text-ink">{sentences[0]}</p>
+                    {sentences.length > 1 && (
+                      <p className="text-body measure mt-1.5 text-ink-soft">{sentences.slice(1).join(" ")}</p>
+                    )}
+                  </div>
+                );
+              })()}
               {/* Mobile jump nav: below lg the rail (jump links + apply button)
                   stacks after the FAQ - thousands of words down - so both get a
                   second, scrollable home right under the verdict card. */}
               <nav aria-label="Jump to section" className="-mx-5 mt-5 px-5 sm:-mx-8 sm:px-8 lg:hidden">
                 <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                   {applyUrl && (
-                    <a href={applyUrl} target="_blank" rel="noreferrer" className="mono inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-stamp bg-stamp px-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white">
+                    <a href={applyUrl} target="_blank" rel="noreferrer" className="mono inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-stamp bg-stamp px-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white dark:border-stamp-deep dark:bg-stamp-deep">
                       Apply ↗
                     </a>
                   )}
@@ -890,11 +931,12 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
         <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 lg:grid lg:grid-cols-[minmax(0,1fr)_290px] lg:items-start lg:gap-12">
           <div className="min-w-0">
           {/* What you need to do */}
-          <section id="apply" className="mb-10 scroll-mt-24">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section id="apply" className="mb-12 scroll-mt-24">
+            <p className="eyebrow">{travelBanned ? "Current status" : need ? "How to apply" : "How to enter"}</p>
+            <h2 className="text-section mt-2 text-ink">
               {travelBanned ? `${d.name} travel status for ${nd} citizens` : need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
             </h2>
-            <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-soft">
+            <ul className="text-body measure mt-4 space-y-2 text-ink-soft">
               {s.kind === "visa_free" && <li>→ Travel with just your valid {nd} passport. No visa or prior application needed.</li>}
               {s.kind === "visa_on_arrival" && (
                 <li>
@@ -940,26 +982,27 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
           {/* Held-credential exceptions - officially published no-advance-visa routes */}
           {credGroups.length > 0 && (
-            <section id="no-advance-visa" className="mb-10 scroll-mt-24 border-t border-line pt-8">
-              <h2 className="font-display text-xl font-semibold text-ink">
+            <section id="no-advance-visa" className="mb-12 scroll-mt-24">
+              <p className="eyebrow">No-visa exceptions</p>
+              <h2 className="text-section mt-2 text-ink">
                 No advance visa with these documents
               </h2>
-              <p className="mt-1 max-w-2xl text-sm text-ink-soft">
+              <p className="text-body measure mt-2 text-ink-soft">
                 {d.name} officially admits {nd} citizens without a pre-arranged visa when they hold certain third-country visas or residence permits.
               </p>
               <div className="mt-4 space-y-3">
                 {credGroups.map((group, gi) => (
-                  <div key={gi} className="rounded-lg border border-vfree/30 bg-vfree/[0.05] px-4 py-3">
+                  <div key={gi} className="rounded-[2px] border border-vfree/40 bg-vfree/[0.05] px-4 py-3.5">
                     <p className="mono text-[11px] font-semibold uppercase tracking-[0.12em] text-vfree">
                       {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {group.map((u) => (
-                        <span key={u.cred} className="mono rounded-[3px] bg-card px-2 py-0.5 text-[11px] text-ink ring-1 ring-line-strong">{u.label}</span>
+                        <span key={u.cred} className="mono rounded-[2px] border border-line-strong bg-card px-2 py-0.5 text-[11px] text-ink">{u.label}</span>
                       ))}
                     </div>
                     {group[0].conditions && (
-                      <p className="mt-2 text-[12px] leading-relaxed text-ink-soft">{group[0].conditions}. Conditions vary slightly per document - check each rule via the official source{group[0].sourceUrl ? "" : ""}.</p>
+                      <p className="text-body measure mt-2 text-ink-soft">{group[0].conditions}. Conditions vary slightly per document - check each rule via the official source{group[0].sourceUrl ? "" : ""}.</p>
                     )}
                     {group[0].sourceUrl && (
                       <a href={group[0].sourceUrl} target="_blank" rel="noreferrer" className="mono mt-1.5 inline-block text-[11px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
@@ -969,7 +1012,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   </div>
                 ))}
               </div>
-              <p className="mt-3 text-sm text-ink-soft">
+              <p className="text-body mt-3 text-ink-soft">
                 <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">
                   Check what all your documents unlock at once →
                 </Link>
@@ -979,26 +1022,30 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
           {/* Official visa fees (crawled from government sources) */}
           {feeList.length > 0 && (
-            <section id="fees" className="mb-10 scroll-mt-24 border-t border-line pt-8">
-              <h2 className="font-display text-xl font-semibold text-ink">
+            <section id="fees" className="mb-12 scroll-mt-24">
+              <p className="eyebrow">Fees</p>
+              <h2 className="text-section mt-2 text-ink">
                 {d.name} visa cost for {nd} citizens
               </h2>
 
               {/* Nationality-specific fee (reciprocity) - highlighted, since it's the
                   single most useful number for this corridor. */}
               {feeVariation?.amount != null && (
-                <div className="mt-4 flex flex-col gap-2 rounded-lg border border-stamp/30 bg-stamp/[0.06] px-5 py-4 sm:flex-row sm:items-center sm:gap-6">
+                <div className="mt-4 flex flex-col gap-2 rounded-[2px] border border-stamp/40 bg-stamp/[0.05] px-5 py-4 sm:flex-row sm:items-center sm:gap-6">
                   <div className="shrink-0">
                     <p className="mono text-[10px] font-medium uppercase tracking-[0.16em] text-stamp">Fee for {nd} citizens</p>
                     <p className="mono mt-0.5 text-2xl font-bold tabular-nums text-stamp">{fmtFee(feeVariation)}</p>
                   </div>
                   {feeVariation.note && (
-                    <p className="text-[13px] leading-relaxed text-ink-soft">{feeVariation.note}</p>
+                    <p className="text-body text-ink-soft">{feeVariation.note}</p>
                   )}
                 </div>
               )}
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {/* Fee ledger: compact hairline-divided rows in one document
+                  card (spec §12) instead of chunky per-fee boxes. */}
+              <div className="card-doc mt-4">
+                <ul className="divide-y divide-line">
                 {(() => {
                   // The nationality-specific variation overrides ONE row - the first
                   // of its kind (the primary product). Overriding every same-kind row
@@ -1008,27 +1055,30 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     ? feeList.slice(0, 4).findIndex((f) => f.kind === feeVariation.kind)
                     : -1;
                   return feeList.slice(0, 4).map((f, i) => (
-                  <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                    <p className="font-display text-[14px] font-semibold text-ink">{f.name}</p>
-                    {feeVariation?.amount != null && i === variationRowIdx ? (
-                      <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(feeVariation)}</p>
-                    ) : f.amount != null ? (
-                      <p className="mono mt-1 text-lg font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
-                    ) : (
-                      <p className="mt-1 text-sm text-ink-mute">Fee not published by {d.name}</p>
-                    )}
-                    <div className="mono mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
-                      {f.validity && <span>{f.validity}</span>}
-                      {f.official && <span className="text-vfree">official source</span>}
+                  <li key={i} className="flex min-h-[52px] flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2.5 sm:px-5">
+                    <div className="min-w-0 flex-1">
+                      <p className="font-display text-[15px] font-medium text-ink">{f.name}</p>
+                      <div className="mono flex flex-wrap gap-x-3 gap-y-0.5 text-[11px] text-ink-mute">
+                        {f.validity && <span>{f.validity}</span>}
+                        {f.official && <span className="text-vfree">official source</span>}
+                        {f.source_url && (
+                          <a href={f.source_url} target="_blank" rel="noreferrer" className="underline-offset-2 transition hover:text-ink hover:underline">
+                            {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
+                          </a>
+                        )}
+                      </div>
                     </div>
-                    {f.source_url && (
-                      <a href={f.source_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-block text-[11px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
-                        {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
-                      </a>
+                    {feeVariation?.amount != null && i === variationRowIdx ? (
+                      <p className="mono shrink-0 text-[15px] font-semibold tabular-nums text-ink">{fmtFee(feeVariation)}</p>
+                    ) : f.amount != null ? (
+                      <p className="mono shrink-0 text-[15px] font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
+                    ) : (
+                      <p className="shrink-0 text-[13px] text-ink-mute">Fee not published by {d.name}</p>
                     )}
-                  </div>
+                  </li>
                   ));
                 })()}
+                </ul>
               </div>
               {/* Only visa_required corridors route through a VFS/VAC centre -
                   on VoA/eTA/e-visa corridors the application never touches VFS,
@@ -1044,16 +1094,16 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 const natMatch = !!destFees.vfs.service_fee &&
                   (src.includes(`/${n.iso3.toLowerCase()}/`) || src.includes(`/${natSlugLower}/`) || src.includes(`/${n.name.toLowerCase()}/`));
                 return (
-                  <p className="mono mt-3 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                  <p className="text-body mt-3 max-w-2xl rounded-[2px] border border-line bg-paper-2/70 px-3.5 py-2.5 text-ink-soft">
                     Applications are handled via {destFees.vfs.operator} - {natMatch
                       ? `the service fee for ${nd} applicants is about ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee} on top of the visa fee (varies by centre).`
                       : `a service fee applies on top of the visa fee and varies by country and centre.`}
                   </p>
                 );
               })()}
-              {/* Provenance lives on each fee card's source link - the stamp
+              {/* Provenance lives on each fee row's source link - the stamp
                   only needs to carry freshness. */}
-              <p className="mono mt-3 text-[11px] font-medium uppercase tracking-[0.12em] text-ink-mute">
+              <p className="mono-chrome mt-3">
                 Fees checked {fmtDay(destFees?.updated) ?? "recently"}
               </p>
             </section>
@@ -1075,7 +1125,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             const renderDoc = (v: typeof vfsDocs[number], i: number) => (
               <details key={i} className="group">
                 <summary className="flex min-h-[48px] cursor-pointer list-none items-center gap-3 py-3 [&::-webkit-details-marker]:hidden">
-                  <span className="font-display text-[14px] font-medium text-ink transition group-open:text-stamp">{prettyName(v.name)}</span>
+                  <span className="font-display text-[15px] font-medium text-ink transition group-open:text-stamp">{prettyName(v.name)}</span>
                   {v.category.toLowerCase() !== v.name.trim().toLowerCase() && (
                     <span className="mono shrink-0 rounded-[3px] bg-paper-3 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-ink-mute">{v.category}</span>
                   )}
@@ -1085,17 +1135,18 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   {v.documents_required ? (
                     <DocBlocks text={v.documents_required} />
                   ) : (
-                    <p className="text-[12.5px] italic leading-relaxed text-ink-mute">Same requirements as above, plus this visa type&apos;s stated stay/fee terms.</p>
+                    <p className="text-body italic text-ink-mute">Same requirements as above, plus this visa type&apos;s stated stay/fee terms.</p>
                   )}
                 </div>
               </details>
             );
             return (
-            <section id="documents" className="mb-10 scroll-mt-24 border-t border-line pt-8">
-              <h2 className="font-display text-xl font-semibold text-ink">
+            <section id="documents" className="mb-12 scroll-mt-24">
+              <p className="eyebrow">Documents</p>
+              <h2 className="text-section mt-2 text-ink">
                 {noVisaShortStay ? `${d.name} visa documents for ${nd} applicants` : `Documents required for ${nd} applicants`}
               </h2>
-              <p className="mt-1 text-sm text-ink-soft">
+              <p className="text-body measure mt-2 text-ink-soft">
                 {noVisaShortStay
                   ? `No visa documents are needed for a short visit - ${nd} citizens enter ${d.name} with just a valid passport. If you apply for a longer-stay visa, these are the exact documents required, by visa type, from the official visa application centre.`
                   : `The exact documents ${nd} citizens must submit for ${d.name}, by visa type, from the official visa application centre.`}
@@ -1105,22 +1156,22 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   " Where a visa type links an official PDF checklist, fill in that checklist and submit it with the application form."}
               </p>
               {vfsCommonLines.length > 0 && (
-                <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3.5">
-                  <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">Required for most visa types below</p>
+                <div className="card-doc mt-4 px-4 py-3.5 sm:px-5">
+                  <p className="mono-chrome mb-2">Required for most visa types below</p>
                   <DocBlocks text={vfsCommonLines.join("\n")} />
                 </div>
               )}
-              <div className="mt-4 divide-y divide-line border-y border-line">
+              <div className="card-doc mt-4 divide-y divide-line px-4 sm:px-5">
                 {visible.map(renderDoc)}
               </div>
               {hidden.length > 0 && (
-                <details className="group mt-2">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                <details className="group mt-2.5">
+                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                     <span className="group-open:hidden">Show all {vfsDocs.length} visa-type document checklists</span>
                     <span className="hidden group-open:inline">Hide the rest</span>
                     <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </summary>
-                  <div className="mt-3 divide-y divide-line border-y border-line">{hidden.map((v, i) => renderDoc(v, VFS_PREVIEW + i))}</div>
+                  <div className="card-doc mt-3 divide-y divide-line px-4 sm:px-5">{hidden.map((v, i) => renderDoc(v, VFS_PREVIEW + i))}</div>
                 </details>
               )}
               {vfsCorr?.sourceUrl && (
@@ -1146,10 +1197,11 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             const showTourist = !hasVfs && need && touristTypes.length > 0;
             if (!showTourist && otherTypes.length === 0) return null;
             return (
-              <section id="visa-types" className="mb-10 scroll-mt-24 border-t border-line pt-8">
+              <section id="visa-types" className="mb-12 scroll-mt-24">
                 {/* The h2 renders whenever the section exists - otherwise the
                     rail's "Visa types" jump link lands on an unlabeled button. */}
-                <h2 className="font-display text-xl font-semibold text-ink">{d.name} visa types</h2>
+                <p className="eyebrow">Visa types</p>
+                <h2 className="text-section mt-2 text-ink">{d.name} visa types</h2>
                 {showTourist && (
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {touristTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
@@ -1157,23 +1209,23 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 )}
                 {otherTypes.length > 0 && (
                   <details className={`group ${showTourist ? "mt-8" : "mt-4"}`}>
-                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                       <span className="group-open:hidden">Other {d.name} visa categories ({otherTypes.length})</span>
                       <span className="hidden group-open:inline">Hide other visa categories</span>
                       <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </summary>
-                    <p className="mt-3 text-sm text-ink-soft">
+                    <p className="text-body measure mt-3 text-ink-soft">
                       These don&apos;t apply to a typical short visit, but cover other reasons people travel to {d.name}. Eligibility varies by visa type - some are limited to specific nationalities, so check each one&apos;s conditions on the official page.
                     </p>
                     {/* Compact index, not full cards: this catalog is
                         destination-generic and identical on every corridor into
-                        {dest} - one mono line per type keeps the categories
+                        {dest} - one ledger line per type keeps the categories
                         discoverable without shipping the same multi-thousand-word
                         blob on dozens of pages. */}
-                    <ul className="mt-4 divide-y divide-line border-y border-line">
+                    <ul className="card-doc mt-4 divide-y divide-line px-4">
                       {otherTypes.map((v, i) => (
-                        <li key={i} className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-2.5">
-                          <span className="font-display text-[13.5px] font-medium text-ink">{v.name}</span>
+                        <li key={i} className="flex min-h-[44px] flex-wrap items-baseline gap-x-3 gap-y-1 py-2.5">
+                          <span className="font-display text-[14px] font-medium text-ink">{v.name}</span>
                           <span className="mono flex flex-wrap gap-x-3 text-[11px] text-ink-mute">
                             <span className="uppercase tracking-[0.08em]">{v.category.replace(/_/g, " ")}</span>
                             {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
@@ -1188,7 +1240,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                         </li>
                       ))}
                     </ul>
-                    <p className="mt-3 text-sm text-ink-soft">
+                    <p className="text-body mt-3 text-ink-soft">
                       <Link href={`/destination/${dest}`} className="font-medium text-stamp underline-offset-2 hover:underline">
                         {d.name} visa policy, fees & entry rules in full →
                       </Link>
@@ -1200,18 +1252,19 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           })()}
 
           {/* FAQ */}
-          <section id="faq" className="scroll-mt-24 border-t border-line pt-8">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section id="faq" className="scroll-mt-24">
+            <p className="eyebrow">FAQ</p>
+            <h2 className="text-section mt-2 text-ink">
               {d.name} visa for {nd} citizens - FAQ
             </h2>
-            <div className="mt-4 divide-y divide-line">
+            <div className="card-doc mt-4 divide-y divide-line px-4 sm:px-5">
               {faq.map(({ q, a }) => (
                 <details key={q} className="group py-1">
                   <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-4 py-3 font-display text-[15px] font-medium text-ink">
                     {q}
                     <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform duration-150 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </summary>
-                  <p className="mt-1 mb-3 max-w-2xl text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body measure mt-1 mb-3 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -1222,52 +1275,42 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           {/* Sticky rail: orientation + action + the related-corridor mesh
               (which previously sat as a full-width farm at the page bottom).
               On mobile this stacks after the FAQ, same reading order as before. */}
-          <aside className="mt-12 border-t border-line pt-8 lg:sticky lg:top-24 lg:mt-0 lg:border-t-0 lg:pt-0">
-            {/* Jump nav - desktop only; pointless when the rail is at the bottom */}
-            <nav aria-label="On this page" className="hidden lg:block">
-              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-ink-mute">On this page</p>
-              <ul className="mt-2.5 space-y-0.5 border-l border-line">
-                {jumpLinks.map((j) => (
-                  <li key={j.href}>
-                    <a href={j.href} className="block border-l-2 border-transparent py-1 pl-3 text-[13px] text-ink-soft transition hover:border-stamp hover:text-ink">
-                      {j.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+          <aside className="mt-14 lg:sticky lg:top-24 lg:mt-0">
+            {/* TOC + primary CTA share one document card (spec §14). */}
+            <div className="card-doc px-5 py-5">
+              {/* Jump nav - desktop only; pointless when the rail is at the bottom */}
+              <nav aria-label="On this page" className="hidden lg:block">
+                <p className="eyebrow">On this page</p>
+                <ul className="mt-3 space-y-0.5 border-l border-line">
+                  {jumpLinks.map((j) => (
+                    <li key={j.href}>
+                      <a href={j.href} className="block border-l-2 border-transparent py-1 pl-3 text-[13px] text-ink-soft transition hover:border-stamp hover:text-ink">
+                        {j.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
 
-            {/* Primary action */}
-            {applyUrl ? (
-              <a
-                href={applyUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mono mt-6 flex min-h-[48px] items-center justify-center rounded-lg border border-stamp bg-stamp px-4 text-[12px] font-medium uppercase tracking-[0.14em] text-white transition hover:bg-stamp-deep lg:mt-7"
-              >
-                Apply on the official portal ↗
-              </a>
-            ) : advisoryUrl ? (
-              <a
-                href={advisoryUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mono mt-6 flex min-h-[48px] items-center justify-center rounded-lg border border-line-strong bg-card px-4 text-[12px] font-medium uppercase tracking-[0.14em] text-ink-soft transition hover:border-ink-soft hover:text-ink lg:mt-7"
-              >
-                Read the official advisory ↗
-              </a>
-            ) : (
-              <Link
-                href={`/visit?dest=${d.iso3}&passport=${n.iso3}`}
-                className="mono mt-6 flex min-h-[48px] items-center justify-center rounded-lg border border-stamp bg-stamp/[0.07] px-4 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white lg:mt-7"
-              >
-                Check your full options →
-              </Link>
-            )}
+              {/* Primary action */}
+              {applyUrl ? (
+                <a href={applyUrl} target="_blank" rel="noreferrer" className="btn-stamp w-full lg:mt-5">
+                  Apply on the official portal ↗
+                </a>
+              ) : advisoryUrl ? (
+                <a href={advisoryUrl} target="_blank" rel="noreferrer" className="btn-stamp-outline w-full lg:mt-5">
+                  Read the official advisory ↗
+                </a>
+              ) : (
+                <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="btn-stamp w-full lg:mt-5">
+                  Check your full options →
+                </Link>
+              )}
+            </div>
 
             {/* Related corridors */}
             <div className="mt-8">
-              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">For {nd} citizens</p>
+              <p className="eyebrow">For {nd} citizens</p>
               <ul className="mt-2 space-y-0.5">
                 {sameNat.slice(0, 6).map((c) => (
                   <li key={c!.iso3}>
@@ -1279,7 +1322,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               </ul>
             </div>
             <div className="mt-6">
-              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-stamp">{d.name} visa for</p>
+              <p className="eyebrow">{d.name} visa for</p>
               <ul className="mt-2 space-y-0.5">
                 {sameDest.slice(0, 6).map((c) => (
                   <li key={c!.iso3}>

@@ -84,21 +84,29 @@ function Chevron({ toggle = false }: { toggle?: boolean }) {
   );
 }
 
-// One tappable country tile linking to a destination or passport page.
+// Ledger-row vocabulary (spec §12): compact rows inside a document card. The
+// nth-child border resets clear the top hairline on the first visual row for
+// each column count (1 col base / 2 cols sm / 3 cols lg). Applied directly to
+// the grid children (Link rows here, li rows in the guide lists below).
+const LEDGER_GRID = "card-doc grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
+const LEDGER_ROW =
+  "border-t border-line first:border-t-0 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0";
+
+// One tappable country ledger row linking to a destination or passport page.
 function CountryTile({ iso3, href, sub }: { iso3: string; href: string; sub?: string }) {
   return (
     <Link
       href={href}
-      className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+      className={`${LEDGER_ROW} group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50`}
     >
-      <span className="text-xl">{flagFor(iso3)}</span>
-      <div className="min-w-0">
-        <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+      <span className="text-lg leading-none">{flagFor(iso3)}</span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
           {nameFor(iso3)}
         </span>
-        {sub && <div className="mono text-[10px] text-ink-mute">{sub}</div>}
-      </div>
-      <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
+        {sub && <span className="mono block text-[11px] text-ink-mute">{sub}</span>}
+      </span>
+      <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
     </Link>
   );
 }
@@ -182,7 +190,7 @@ export default function SchengenGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/guide" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Guides</Link>
@@ -190,10 +198,9 @@ export default function SchengenGuidePage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Schengen Visa</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">🇪🇺</span>
                 Schengen Visa 2026
                 <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
@@ -206,19 +213,19 @@ export default function SchengenGuidePage() {
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Member countries", v: String(memberCount) },
                 { k: "Nationalities exempt", v: String(counts.exempt) },
                 { k: "Need a visa", v: String(counts.required) },
                 { k: "Max short stay", v: "90/180" },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -226,13 +233,13 @@ export default function SchengenGuidePage() {
 
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               The <strong className="text-ink">Schengen visa</strong> is Europe&apos;s common short-stay visa
               (Type C): one application, one sticker, and free movement across the whole area. Whether you need
               one depends on your passport - see{" "}
               <Link href="#who-needs" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">who needs a Schengen visa</Link>.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               This guide covers the <Link href="#countries" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen countries list</Link>,{" "}
               <Link href="#who-needs" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">who needs a visa</Link>,{" "}
               <Link href="#apply" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">how to apply</Link>, the{" "}
@@ -243,8 +250,8 @@ export default function SchengenGuidePage() {
 
           {/* What is the Schengen Area */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">What Is the Schengen Area?</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">What Is the Schengen Area?</h2>
+            <p className="text-body mt-3 text-ink-soft">
               The Schengen Area is a group of {memberCount} European countries that abolished passport checks at
               their shared internal borders. Once you enter one member state legally, you can travel to the others
               without further border control. Most Schengen members are EU countries, joined by Iceland,
@@ -258,14 +265,14 @@ export default function SchengenGuidePage() {
 
           {/* Schengen countries list */}
           <section id="countries" className="mt-12 scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Schengen Countries List 2026 ({memberCount})
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               One Schengen short-stay visa is valid in all of these countries. Tap any country for its full entry
               requirements by passport.
             </p>
-            <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={`${LEDGER_GRID} mt-5`}>
               {memberList.map((iso3) => (
                 <CountryTile key={iso3} iso3={iso3} href={`/destination/${nameToSlug(nameFor(iso3))}`} sub="Schengen member" />
               ))}
@@ -274,8 +281,8 @@ export default function SchengenGuidePage() {
 
           {/* 90/180 rule */}
           <section id="rule" className="mt-12 max-w-3xl scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">The 90/180 Rule, Explained</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">The 90/180 Rule, Explained</h2>
+            <p className="text-body mt-3 text-ink-soft">
               Whether you enter visa-free or on a Schengen visa, short stays are capped at{" "}
               <strong className="text-ink">90 days within any rolling 180-day period</strong> - counted across the
               whole Schengen Area, not per country. Three days in{" "}
@@ -292,10 +299,10 @@ export default function SchengenGuidePage() {
 
           {/* Who needs one - data-derived */}
           <section id="who-needs" className="mt-12 scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Who Needs a Schengen Visa in 2026?
             </h2>
-            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               The EU keeps one harmonised exemption list, so a single member&apos;s published policy answers the
               question for the whole area - verified here against France&apos;s official visa policy.
             </p>
@@ -303,12 +310,12 @@ export default function SchengenGuidePage() {
             <h3 className="mt-6 font-display text-lg font-semibold text-ink">
               Nationalities That Do Not Need a Schengen Visa ({vfToFrance.length} visa-exempt)
             </h3>
-            <p className="mt-1 text-sm text-ink-soft">
+            <p className="text-body mt-1 text-ink-soft">
               These passports are admitted visa-free for up to 90 days in any 180. Citizens of the {memberCount}{" "}
               Schengen member states are not listed here - they have freedom of movement, with no visa and no stay
               limit. Tap a passport for its full visa-free list.
             </p>
-            <div className="mt-4 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={`${LEDGER_GRID} mt-4`}>
               {vfToFrance.slice(0, 15).map((e) => (
                 <CountryTile
                   key={e.iso3}
@@ -324,7 +331,7 @@ export default function SchengenGuidePage() {
                 <span className="hidden group-open/toggle:inline">Show fewer</span>
                 <Chevron toggle />
               </summary>
-              <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className={`${LEDGER_GRID} mt-2.5`}>
                 {vfToFrance.slice(15).map((e) => (
                   <CountryTile
                     key={e.iso3}
@@ -339,10 +346,10 @@ export default function SchengenGuidePage() {
             <h3 className="mt-8 font-display text-lg font-semibold text-ink">
               Nationalities That Need a Schengen Visa ({counts.required})
             </h3>
-            <p className="mt-1 text-sm text-ink-soft">
+            <p className="text-body mt-1 text-ink-soft">
               These passports must obtain a Schengen short-stay visa before travelling, even for tourism.
             </p>
-            <div className="mt-4 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={`${LEDGER_GRID} mt-4`}>
               {counts.requiredIso3.slice(0, 15).map((iso3) => (
                 <CountryTile key={iso3} iso3={iso3} href={`/passport/${nameToSlug(nameFor(iso3))}`} sub="Schengen visa required" />
               ))}
@@ -353,7 +360,7 @@ export default function SchengenGuidePage() {
                 <span className="hidden group-open/toggle:inline">Show fewer</span>
                 <Chevron toggle />
               </summary>
-              <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className={`${LEDGER_GRID} mt-2.5`}>
                 {counts.requiredIso3.slice(15).map((iso3) => (
                   <CountryTile key={iso3} iso3={iso3} href={`/passport/${nameToSlug(nameFor(iso3))}`} sub="Schengen visa required" />
                 ))}
@@ -363,43 +370,43 @@ export default function SchengenGuidePage() {
 
           {/* Per-nationality guides */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Schengen Visa Guides by Nationality
             </h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Dedicated Schengen guides for the most-searched nationalities: whether you need a visa, where to apply,
               documents and fees.
             </p>
             <h3 className="mt-5 font-display text-base font-semibold text-ink">Visa required</h3>
-            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className={`${LEDGER_GRID} mt-3`}>
               {guidesRequired.map((g) => (
-                <li key={g.iso3}>
+                <li key={g.iso3} className={LEDGER_ROW}>
                   <Link
                     href={`/guide/schengen/${g.slug}`}
-                    className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                    className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
                   >
-                    <span className="text-xl">{flagFor(g.iso3)}</span>
-                    <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+                    <span className="text-lg leading-none">{flagFor(g.iso3)}</span>
+                    <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
                       Schengen visa for {DEMONYM[g.iso3] ?? g.name} citizens
                     </span>
-                    <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
+                    <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
                   </Link>
                 </li>
               ))}
             </ul>
             <h3 className="mt-6 font-display text-base font-semibold text-ink">No visa needed (short stays)</h3>
-            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className={`${LEDGER_GRID} mt-3`}>
               {guidesNotRequired.map((g) => (
-                <li key={g.iso3}>
+                <li key={g.iso3} className={LEDGER_ROW}>
                   <Link
                     href={`/guide/schengen/${g.slug}`}
-                    className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                    className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
                   >
-                    <span className="text-xl">{flagFor(g.iso3)}</span>
-                    <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+                    <span className="text-lg leading-none">{flagFor(g.iso3)}</span>
+                    <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
                       Schengen rules for {DEMONYM[g.iso3] ?? g.name} citizens
                     </span>
-                    <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
+                    <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
                   </Link>
                 </li>
               ))}
@@ -408,8 +415,8 @@ export default function SchengenGuidePage() {
 
           {/* How to apply */}
           <section id="apply" className="mt-12 max-w-3xl scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">How to Apply for a Schengen Visa</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">How to Apply for a Schengen Visa</h2>
+            <p className="text-body mt-3 text-ink-soft">
               The application process is harmonised across members - the same form, fee and core documents everywhere.
             </p>
             <ol className="mt-5 space-y-4">
@@ -435,11 +442,11 @@ export default function SchengenGuidePage() {
                   d: "In the official data we track for France, consulates decide within 15 days in most cases, extendable to up to 45 days. You can apply up to 6 months before travel.",
                 },
               ].map((s, i) => (
-                <li key={s.t} className="flex gap-4 rounded-sm border border-line bg-paper-2/70 p-4">
+                <li key={s.t} className="card-doc flex gap-4 p-4">
                   <span className="mono text-lg font-semibold tabular-nums text-stamp">{String(i + 1).padStart(2, "0")}</span>
                   <div>
                     <h3 className="font-display text-[15px] font-semibold text-ink">{s.t}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-soft">{s.d}</p>
+                    <p className="text-body mt-1 text-ink-soft">{s.d}</p>
                   </div>
                 </li>
               ))}
@@ -448,14 +455,14 @@ export default function SchengenGuidePage() {
 
           {/* Fee */}
           <section id="fee" className="mt-12 max-w-3xl scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">Schengen Visa Fee 2026</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Schengen Visa Fee 2026</h2>
+            <p className="text-body mt-3 text-ink-soft">
               The short-stay visa fee is set EU-wide, so it is the same whichever member state you apply to:
             </p>
             <div className="mt-5 overflow-x-auto">
               <table className="w-full min-w-[420px] border-collapse text-sm">
                 <thead>
-                  <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+                  <tr className="mono-chrome border-b border-line-strong text-left">
                     <th scope="col" className="py-2.5 pr-4 font-medium">Applicant</th>
                     <th scope="col" className="py-2.5 font-medium">Fee</th>
                   </tr>
@@ -480,7 +487,7 @@ export default function SchengenGuidePage() {
                 </tbody>
               </table>
             </div>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-soft">
+            <ul className="text-body mt-3 space-y-2 text-ink-soft">
               <li className="flex gap-3">
                 <span aria-hidden className="mono text-stamp">■</span>
                 <span>A separate VFS Global or TLScontact service fee is charged on top where the consulate outsources intake.</span>
@@ -490,7 +497,7 @@ export default function SchengenGuidePage() {
                 <span>The visa fee is not refunded if the application is refused.</span>
               </li>
             </ul>
-            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-3 text-ink-soft">
               Wondering how much money to show in your bank statement? See our{" "}
               <Link href="/guide/proof-of-funds#schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 Schengen proof-of-funds guide
@@ -501,10 +508,10 @@ export default function SchengenGuidePage() {
 
           {/* Corridor guides per top destination */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Schengen Visa Requirements by Destination &amp; Nationality
             </h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Detailed corridor guides - stay length, conditions, documents and official sources - for the
               most-visited Schengen destinations.
             </p>
@@ -513,7 +520,7 @@ export default function SchengenGuidePage() {
                 const links = corridorsForDestination(dest);
                 if (links.length === 0) return null;
                 return (
-                  <details key={dest} className="group rounded-sm border border-line bg-paper-2/70">
+                  <details key={dest} className="card-doc group">
                     <summary className="flex min-h-[44px] cursor-pointer list-none items-center gap-3 px-4 py-3 [&::-webkit-details-marker]:hidden">
                       <span className="text-xl">{flagFor(dest)}</span>
                       <span className="font-display text-[15px] font-medium text-ink">
@@ -521,18 +528,18 @@ export default function SchengenGuidePage() {
                       </span>
                       <span className="ml-auto"><Chevron /></span>
                     </summary>
-                    <ul className="grid gap-2.5 border-t border-line p-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <ul className="grid border-t border-line px-4 pb-1 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3">
                       {links.map((c) => (
-                        <li key={`${c.nat}-${c.dest}`}>
+                        <li key={`${c.nat}-${c.dest}`} className={LEDGER_ROW}>
                           <Link
                             href={`/passport/${c.natSlug}/${c.destSlug}`}
-                            className="group/link flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper px-3.5 py-2.5 transition hover:border-line-strong"
+                            className="group/link flex min-h-[44px] items-center gap-2.5 py-1 transition hover:bg-paper-2/50"
                           >
-                            <span className="text-xl">{flagFor(c.nat)}</span>
-                            <span className="font-display text-sm font-medium text-ink transition group-hover/link:text-stamp">
+                            <span className="text-lg leading-none">{flagFor(c.nat)}</span>
+                            <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover/link:text-stamp">
                               {DEMONYM[c.nat] ?? nameFor(c.nat)} citizens
                             </span>
-                            <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover/link:text-stamp">→</span>
+                            <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover/link:text-stamp">→</span>
                           </Link>
                         </li>
                       ))}
@@ -545,33 +552,33 @@ export default function SchengenGuidePage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Schengen Visa FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Schengen Visa FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {FAQS.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
           </section>
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Check your Schengen visa requirements
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Enter your passport to instantly see whether you need a Schengen visa, how long you can stay, and which
               European countries you can enter visa-free. Or compare all passports on the{" "}
               <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">passport rankings</Link>.
             </p>
             <Link
               href="/visit?dest=FRA"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check visa requirements on Earth Visa →
             </Link>

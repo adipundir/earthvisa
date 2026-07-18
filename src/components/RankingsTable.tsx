@@ -57,7 +57,7 @@ const SEARCH_ALIASES: Record<string, string[]> = {
 const TH_BASE = "sticky top-0 z-10 bg-paper-2 shadow-[0_1px_0_var(--color-line-strong)]";
 const TH_STICKY_LEFT = "left-0 z-20 w-20 min-w-20";
 const TH_STICKY_NAME = "left-20 z-20 min-w-44 shadow-[0_1px_0_var(--color-line-strong),1px_0_0_var(--color-line)]";
-const TD_STICKY = "sticky z-[1] bg-paper transition group-hover/row:bg-paper-2";
+const TD_STICKY = "sticky z-[1] bg-card transition group-hover/row:bg-paper-2";
 
 /**
  * Client-side sortable ranking table for all 199 passports. The rows are
@@ -109,7 +109,7 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
         />
       </label>
 
-      <div className="mt-4 max-h-[75vh] overflow-auto rounded-sm border border-line">
+      <div className="card-doc mt-4 max-h-[75vh] overflow-auto">
         <table className="w-full min-w-[640px] border-collapse text-left">
           <thead>
             <tr>
@@ -143,7 +143,7 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
           </thead>
           <tbody className="divide-y divide-line">
             {visible.map((r) => (
-              <tr key={r.iso3} className="group/row transition hover:bg-paper-2/70">
+              <tr key={r.iso3} className="group/row transition hover:bg-paper-2">
                 <td className={`${TD_STICKY} left-0 mono px-3.5 py-2 text-sm tabular-nums text-ink-mute`}>#{r.rank}</td>
                 <td className={`${TD_STICKY} left-20 px-3.5 py-1 shadow-[1px_0_0_var(--color-line)]`}>
                   <Link

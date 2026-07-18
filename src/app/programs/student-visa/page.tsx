@@ -202,7 +202,7 @@ function RouteRow({ v }: { v: VisaType }) {
       </p>
       {v.notes && (
         <details className="group mt-1.5">
-          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.1em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
+          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.1em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
             <span className="group-open:hidden">Details from official source</span>
             <span className="hidden group-open:inline">Hide details</span>
             <Chevron />
@@ -230,7 +230,7 @@ function CountryCard({ e }: { e: StudentEntry }) {
   const visible = e.visaTypes.slice(0, VISIBLE);
   const hidden = e.visaTypes.slice(VISIBLE);
   return (
-    <div className="rounded-sm border border-line bg-paper-2/70 p-4">
+    <div className="card-doc p-4">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <span className="text-2xl">{flagFor(e.iso3)}</span>
         <Link
@@ -277,7 +277,7 @@ export default function StudentVisaPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -287,9 +287,8 @@ export default function StudentVisaPage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Student Visa</span>
             </nav>
 
-            <div className="rule-double" />
 
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+            <h1 className="text-display mt-6 text-ink">
               Student Visa Countries 2026
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                 Study Abroad Visa Requirements in {countryCount} Countries, by Region
@@ -299,7 +298,7 @@ export default function StudentVisaPage() {
               {countryCount} countries · {totalRoutes} student visa routes · data refreshed {lastUpdated}
             </p>
 
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-5">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-5">
               {[
                 { k: "Countries", v: countryCount },
                 { k: "Visa routes tracked", v: totalRoutes },
@@ -307,15 +306,15 @@ export default function StudentVisaPage() {
                 { k: "Publish part-time work rights", v: partTimeCountries },
                 { k: "Routes with processing times", v: routesWithProcessingTime },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5 last:col-span-2 sm:last:col-span-1">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
 
             <nav aria-label="Jump to a region" className="mono mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] uppercase tracking-[0.15em]">
-              <span className="text-[10px] text-ink-mute">Jump to</span>
+              <span className="text-[11px] text-ink-mute">Jump to</span>
               {REGION_ORDER.filter((r) => (byRegion.get(r) ?? []).length > 0).map((r) => (
                 <a
                   key={r}
@@ -335,7 +334,7 @@ export default function StudentVisaPage() {
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               A <strong className="text-ink">student visa</strong> lets you enter and remain in a country to study at
               an accredited institution. Nearly every route shares the same skeleton: a{" "}
               <strong className="text-ink">confirmed offer or enrolment letter</strong> from the institution, proof
@@ -345,11 +344,11 @@ export default function StudentVisaPage() {
               once you graduate. Beyond that shared shape, the details - permit length, entries, processing time,
               fees - vary a great deal by destination, which is why we list them individually below.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               Some destinations publish a single general student visa, others run several categories for different
               levels or lengths of study. Grouped by region below, with a link to the official source for every route.
             </p>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               Every route on this page requires proof you can pay for tuition and living costs - see our{" "}
               <Link href="/guide/proof-of-funds" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">
                 proof of funds guide
@@ -366,13 +365,13 @@ export default function StudentVisaPage() {
             const total = countries.reduce((n, e) => n + e.visaTypes.length, 0);
             return (
               <section key={region} id={region.toLowerCase()} className="mt-12 scroll-mt-24">
-                <h2 className="font-display text-2xl font-semibold text-ink">
+                <h2 className="text-section text-ink">
                   Student Visas {region === "Europe" ? "in Europe" : `in ${region}`} ({total} Routes, {countries.length}{" "}
                   Countries)
                 </h2>
                 {region === "Europe" ? (
                   <>
-                    <p className="mt-2 text-sm text-ink-soft">
+                    <p className="text-body mt-2 max-w-3xl text-ink-soft">
                       {europeCountries.length} European countries carry a student visa route in our dataset, from
                       short-stay language courses to multi-year Type D national study visas.
                     </p>
@@ -404,15 +403,15 @@ export default function StudentVisaPage() {
 
           {/* FAQ */}
           <section id="faq" className="mt-14 scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">Student Visa FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Student Visa FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -421,17 +420,17 @@ export default function StudentVisaPage() {
           <ProgramsNav current="/programs/student-visa" />
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Check if you even need a visa to scout the campus first
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Many applicants visit a university or city visa-free before committing to a course and a student visa
               application. Check your passport&apos;s visa-free reach on Earth Visa.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Explore passports on Earth Visa →
             </Link>

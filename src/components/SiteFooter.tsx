@@ -59,8 +59,14 @@ const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-line-strong bg-paper-2">
-      <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-8">
+    // Same paper ground as the page (no gray band, no full-bleed hairline):
+    // the footer opens with a contained double rule - document-ledger close,
+    // not edge-to-edge chrome.
+    <footer className="mt-auto">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <div className="rule-double" aria-hidden="true" />
+      </div>
+      <div className="mx-auto w-full max-w-6xl px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
           {/* Brand + methodology */}
           <div className="max-w-xs">
@@ -68,25 +74,19 @@ export default function SiteFooter() {
               <BrandMark size={28} className="shrink-0" />
               <span className="font-display text-[19px] font-semibold tracking-tight">Earth Visa</span>
             </div>
-            <p className="mt-3 text-[13px] leading-relaxed text-ink-soft">
+            <p className="mt-3 text-[14px] leading-relaxed text-ink-soft">
               Visa rules, fees and entry requirements for {TOTAL_PASSPORTS} passports - sourced only from official
               government publications, never third-party aggregators.
-            </p>
-            <p
-              className="mono mt-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute"
-              title={`Data last updated ${dataset.meta.lastUpdated}`}
-            >
-              Updated {fmtDate(dataset.meta.lastUpdated)}
             </p>
           </div>
 
           {COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
-              <p className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-ink-mute">{col.title}</p>
-              <ul className="mt-3 space-y-2">
+              <p className="eyebrow">{col.title}</p>
+              <ul className="mt-4 space-y-2.5">
                 {col.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="text-[13.5px] text-ink-soft transition hover:text-stamp">
+                    <Link href={l.href} className="text-[14px] text-ink-soft transition hover:text-stamp">
                       {l.label}
                     </Link>
                   </li>
@@ -94,6 +94,18 @@ export default function SiteFooter() {
               </ul>
             </nav>
           ))}
+        </div>
+
+        {/* Meta strip: carries the sitewide chrome on every viewport - the
+            nav shows it only from lg up, so this is its mobile home. */}
+        <div className="mono-chrome mt-12 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 border-t border-line pt-5">
+          <span>Official sources only</span>
+          <span className="h-3 w-px bg-line-strong" aria-hidden="true" />
+          <span title={`Data last updated ${dataset.meta.lastUpdated}`}>
+            Updated {fmtDate(dataset.meta.lastUpdated)}
+          </span>
+          <span className="h-3 w-px bg-line-strong" aria-hidden="true" />
+          <span>{TOTAL_PASSPORTS} passports tracked</span>
         </div>
       </div>
     </footer>

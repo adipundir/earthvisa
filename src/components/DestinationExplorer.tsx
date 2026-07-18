@@ -53,6 +53,27 @@ const GROUP_ISO3: Record<string, string> = {
   "Brazil": "BRA",
 };
 
+// Hardcoded (not read from the fetched core slice) so the teaching empty
+// state is fully server-rendered - iso3s must exist in dataset allCountries.
+const EXAMPLE_ROUTES = [
+  { fromIso3: "IND", fromIso2: "IN", from: "India", toIso3: "THA", toIso2: "TH", to: "Thailand" },
+  { fromIso3: "NGA", fromIso2: "NG", from: "Nigeria", toIso3: "GBR", toIso2: "GB", to: "UK" },
+  { fromIso3: "USA", fromIso2: "US", from: "USA", toIso3: "JPN", toIso2: "JP", to: "Japan" },
+  { fromIso3: "PHL", fromIso2: "PH", from: "Philippines", toIso3: "ARE", toIso2: "AE", to: "UAE" },
+  { fromIso3: "DEU", fromIso2: "DE", from: "Germany", toIso3: "BRA", toIso2: "BR", to: "Brazil" },
+  { fromIso3: "PAK", fromIso2: "PK", from: "Pakistan", toIso3: "NPL", toIso2: "NP", to: "Nepal" },
+];
+
+// Passport examples for the "destination chosen, no passport yet" prompt.
+const EXAMPLE_PASSPORTS = [
+  { iso3: "IND", iso2: "IN", name: "India" },
+  { iso3: "DEU", iso2: "DE", name: "Germany" },
+  { iso3: "USA", iso2: "US", name: "United States" },
+  { iso3: "BRA", iso2: "BR", name: "Brazil" },
+  { iso3: "NGA", iso2: "NG", name: "Nigeria" },
+  { iso3: "PHL", iso2: "PH", name: "Philippines" },
+];
+
 /** noun phrase for a credential group, used in the "can unlock entry" hint */
 const HUB_LABEL: Record<string, string> = {
   "United States": "the US",
@@ -101,13 +122,6 @@ const LEVEL_STYLE: Record<AccessLevel, string> = {
   visa_on_arrival: "text-voa bg-voa/[0.08] border border-voa/25",
   eta:           "text-eta bg-eta/[0.08] border border-eta/25",
   e_visa:        "text-evisa bg-evisa/[0.08] border border-evisa/25",
-};
-
-const LEVEL_LEFT_BORDER: Record<AccessLevel, string> = {
-  visa_free:     "border-l-vfree",
-  visa_on_arrival: "border-l-voa",
-  eta:           "border-l-eta",
-  e_visa:        "border-l-evisa",
 };
 
 
@@ -197,7 +211,7 @@ function SourceLink({ url, official }: { url: string; official: boolean }) {
 
 // ── Main component ────────────────────────────────────────────────────────────
 
-export default function DestinationExplorer() {
+export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }) {
   // Destination is the primary focus
   const [destIso3, setDestIso3] = useState<string | null>(null);
   const [destQuery, setDestQuery] = useState("");
@@ -352,6 +366,14 @@ export default function DestinationExplorer() {
     setDestIso3(null);
     setDestQuery("");
   }
+  /** Teaching-state chips: fill the whole form with a worked example. */
+  function fillExample(fromIso3: string, toIso3: string) {
+    setDestIso3(toIso3);
+    setDestQuery("");
+    setDestOpen(false);
+    setSelected([fromIso3]);
+    setPtypes({ [fromIso3]: "ordinary" });
+  }
 
   // ── Compute results ──────────────────────────────────────────────────────────
   const { snap, failed: dataFailed, retry: retryData } = useComputeData(selected, creds, selected.length > 0);
@@ -379,19 +401,21 @@ export default function DestinationExplorer() {
   const isOwnCountry = destIso3 != null && selected.includes(destIso3);
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
+    <>
+      {/* ── Hero band (spec §10): H1 + the destination input as the hero
+          element. Passports & credentials follow below. ── */}
+      <section className="bg-grid-paper">
+        <div className="mx-auto w-full max-w-6xl px-5 pb-10 pt-8 sm:px-8 sm:pt-12 lg:pt-14">
+          {hero}
 
-      {/* ── DESTINATION - primary ── */}
-      <div className="mt-8">
-        <div className="mb-2">
-          <p className="font-display text-lg font-bold text-ink">Destination</p>
-          <p className="mt-0.5 text-[13px] text-ink-soft">Where do you want to go? Start here - enter your destination first</p>
-        </div>
+          {/* ── DESTINATION - primary ── */}
+          <div className="mt-7 max-w-2xl">
+        <p className="eyebrow mb-2">Destination</p>
 
         <div ref={destBoxRef} className="relative z-30 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) destInputRef.current?.focus(); }}
-            className={`flex min-h-[2.75rem] w-full items-center gap-3 rounded-lg border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
+            className={`flex min-h-[3.25rem] w-full items-center gap-3 rounded-[2px] border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
               destIso3
                 ? "border-line-strong"
                 : destOpen
@@ -446,7 +470,7 @@ export default function DestinationExplorer() {
           </div>
 
           {destOpen && !destIso3 && (destOptions.length > 0 || destQuery.trim().length > 0) && (
-            <ul id="dest-listbox" role="listbox" aria-label="Matching destinations" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
+            <ul id="dest-listbox" role="listbox" aria-label="Matching destinations" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-[2px] border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
               {destOptions.length === 0 && (
                 <li className="px-4 py-6 text-center text-sm text-ink-mute">
                   {core
@@ -474,17 +498,47 @@ export default function DestinationExplorer() {
         </div>
       </div>
 
-      {/* ── PASSPORT(S) ── */}
-      <div className="mt-6">
+          {/* ── Teaching state (spec §9): worked examples that fill the form ── */}
+          {!destIso3 && (
+            <div className="mt-6 max-w-2xl">
+              <p className="mono-chrome">Or tap a route to try one</p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {EXAMPLE_ROUTES.map((r) => (
+                  <button
+                    key={r.fromIso3 + r.toIso3}
+                    type="button"
+                    onClick={() => fillExample(r.fromIso3, r.toIso3)}
+                    className="mono inline-flex min-h-[36px] items-center gap-1.5 rounded-[2px] border border-line-strong bg-card px-3 text-[12px] text-ink-soft transition hover:border-stamp hover:text-stamp"
+                  >
+                    <span aria-hidden="true" className="text-base leading-none">{isoToFlag(r.fromIso2)}</span>
+                    {r.from}
+                    <span aria-hidden="true" className="text-ink-mute">→</span>
+                    <span aria-hidden="true" className="text-base leading-none">{isoToFlag(r.toIso2)}</span>
+                    {r.to}
+                  </button>
+                ))}
+              </div>
+              <p className="mono-chrome mt-4">You get: the exact verdict · stay limit · conditions · official source</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
+
+      {/* ── PASSPORT(S) + CREDENTIALS - one row on desktop, not a dead stack ── */}
+      <div className="mt-8 grid items-start gap-x-8 gap-y-6 lg:grid-cols-2">
+
+      <div>
         <div className="mb-2">
-          <p className="font-display text-lg font-bold text-ink">Your Passport(s)</p>
-          <p className="mt-0.5 text-[13px] text-ink-soft">Add one or more - dual citizens get the best access from either</p>
+          <p className="text-sub text-ink">Your Passport(s)</p>
+          <p className="mt-0.5 text-[13px] leading-relaxed text-ink-soft">Add one or more - dual citizens get the best access from either</p>
         </div>
 
         <div ref={passBoxRef} className="relative z-20 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) passInputRef.current?.focus(); }}
-            className="flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-card px-4 py-2 transition-colors focus-within:border-stamp focus-within:ring-1 focus-within:ring-stamp"
+            className="flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-[2px] border border-line-strong bg-card px-4 py-2 transition-colors focus-within:border-stamp focus-within:ring-1 focus-within:ring-stamp"
           >
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
@@ -529,9 +583,9 @@ export default function DestinationExplorer() {
                       <div
                         role="listbox"
                         aria-label="Passport type"
-                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-black/25"
+                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-[2px] border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-black/25"
                       >
-                        <p className="mono border-b border-line px-3 pb-2 pt-2 text-[9px] uppercase tracking-[0.18em] text-ink-mute">
+                        <p className="mono-chrome border-b border-line px-3 pb-2 pt-2">
                           Passport type
                         </p>
                         {PASSPORT_TYPES.map((t) => {
@@ -591,7 +645,7 @@ export default function DestinationExplorer() {
           </div>
 
           {passOpen && (passOptions.length > 0 || passQuery.trim().length > 0) && (
-            <ul id="dest-pass-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
+            <ul id="dest-pass-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-[2px] border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
               {passOptions.length === 0 && (
                 <li className="px-4 py-6 text-center text-sm text-ink-mute">
                   {core
@@ -629,19 +683,19 @@ export default function DestinationExplorer() {
       </div>
 
       {/* ── CREDENTIALS ── */}
-      <div className="mt-6">
+      <div>
         <div className="mb-2">
-          <p className="font-display text-lg font-bold text-ink">
+          <p className="text-sub text-ink">
             Visas &amp; Permits
             <span className="ml-2 font-display text-[13px] font-normal italic text-ink-soft">optional</span>
           </p>
-          <p className="mt-0.5 text-[13px] text-ink-soft">A valid US, UK, Schengen or Japan visa - any type (tourist, work, student) - or residency can unlock extra countries</p>
+          <p className="mt-0.5 text-[13px] leading-relaxed text-ink-soft">A valid US, UK, Schengen or Japan visa - any type (tourist, work, student) - or residency can unlock extra countries</p>
         </div>
 
         <div ref={credBoxRef} className="relative z-10 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) credInputRef.current?.focus(); }}
-            className={`flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-lg border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
+            className={`flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-[2px] border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
               credOpen ? "border-stamp" : "border-line-strong"
             }`}
           >
@@ -689,7 +743,7 @@ export default function DestinationExplorer() {
           </div>
 
           {credOpen && (
-            <div id="cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-card shadow-xl shadow-black/10">
+            <div id="cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-[2px] border border-line-strong bg-card shadow-xl shadow-black/10">
               {credGroupOptions.length === 0 && (
                 <p className="px-4 py-6 text-center text-sm text-ink-mute">
                   {core ? <>No visas or permits found for &ldquo;{credQuery}&rdquo;</> : "Loading visas & permits…"}
@@ -734,17 +788,32 @@ export default function DestinationExplorer() {
 
       </div>
 
+      </div>
+
       {/* ── RESULT CARD ── */}
       {destIso3 && (
         <div className="mt-8">
           {selected.length === 0 ? (
-            /* No passport yet - prompt */
-            <div className="rounded-xl border-2 border-dashed border-line-strong bg-paper-2/40 px-8 py-12 text-center">
-              <p className="font-display text-lg font-medium text-ink">Add your passport above</p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+            /* No passport yet - teach, don't dead-end (spec §9) */
+            <div className="card-doc px-5 py-6 sm:px-8 sm:py-8">
+              <p className="text-sub text-ink">Add your passport above</p>
+              <p className="text-body mt-2 max-w-xl text-ink-soft">
                 Select the country whose passport you hold to see whether you need a visa for{" "}
                 <span className="font-medium text-ink">{nameFor(destIso3)}</span>.
               </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {EXAMPLE_PASSPORTS.map((c) => (
+                  <button
+                    key={c.iso3}
+                    type="button"
+                    onClick={() => addPassport(c.iso3)}
+                    className="mono inline-flex min-h-[36px] items-center gap-1.5 rounded-[2px] border border-line-strong bg-card px-3 text-[12px] text-ink-soft transition hover:border-stamp hover:text-stamp"
+                  >
+                    <span aria-hidden="true" className="text-base leading-none">{isoToFlag(c.iso2)}</span>
+                    {c.name}
+                  </button>
+                ))}
+              </div>
             </div>
           ) : coreFailed || dataFailed || destFailed ? (
             <DataError onRetry={() => { retryCore(); retryData(); retryDest(); }} />
@@ -769,26 +838,21 @@ export default function DestinationExplorer() {
 
       {/* ── "Also check" cross-link - below the result so the verdict stays first ── */}
       {destIso3 && selected.length > 0 && (
-        <div className="mt-6 flex flex-col items-start gap-3 rounded-lg border border-line bg-paper-2 px-5 py-4 sm:flex-row sm:items-center">
+        <div className="mt-6 flex flex-col items-start gap-3 rounded-[2px] border border-line bg-paper-2 px-5 py-4 sm:flex-row sm:items-center">
           <div className="min-w-0 flex-1">
-            <p className="font-display text-[14px] font-medium text-ink">Also check - everything your passport unlocks</p>
-            <p className="mt-0.5 text-sm text-ink-soft">See all visa-free destinations, freedom of movement rights, golden visas and citizenship programs open to you</p>
+            <p className="text-sub text-ink">Also check - everything your passport unlocks</p>
+            <p className="mt-0.5 text-[15px] leading-relaxed text-ink-soft">See all visa-free destinations, freedom of movement rights, golden visas and citizenship programs open to you</p>
           </div>
           <Link
             href={`/?passport=${selected.join(",")}${creds.length ? `&cred=${creds.join(",")}` : ""}`}
-            className="mono shrink-0 rounded border border-stamp/30 bg-card px-4 py-2 text-[12px] uppercase tracking-[0.12em] text-stamp transition hover:bg-stamp/[0.05]"
+            className="btn-stamp-outline shrink-0"
           >
             Explore your passport →
           </Link>
         </div>
       )}
-
-      {!destIso3 && (
-        <div className="mt-14 rounded-xl border border-dashed border-line px-8 py-16 text-center">
-          <p className="font-display text-2xl font-semibold text-ink">Enter your destination above to begin</p>
-        </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 }
 
@@ -824,9 +888,9 @@ function NotesField({ notes }: { notes: string }) {
   const [expanded, setExpanded] = useState(false);
   return (
     <div className="mt-2">
-      <p className={`text-[11px] leading-relaxed text-ink-mute ${expanded ? "" : "line-clamp-2"}`}>{notes}</p>
+      <p className={`text-[13px] leading-relaxed text-ink-soft ${expanded ? "" : "line-clamp-2"}`}>{notes}</p>
       {notes.length > 120 && (
-        <button onClick={() => setExpanded(e => !e)} className="mono mt-0.5 text-[11px] text-ink-soft transition hover:text-ink">
+        <button onClick={() => setExpanded(e => !e)} className="mono mt-0.5 min-h-[24px] text-[11px] text-ink-soft transition hover:text-ink">
           {expanded ? "Show less ▴" : "Show more ▾"}
         </button>
       )}
@@ -846,7 +910,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
   const shown = expanded ? filtered : filtered.slice(0, 3);
   return (
     <div className="mt-6 border-t border-line pt-6">
-      <p className="mono mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+      <p className="mono-chrome mb-3">
         {visaTypes.length} visa type{visaTypes.length !== 1 ? "s" : ""} available
       </p>
       {cats.length > 1 && (
@@ -884,20 +948,20 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
             accent: v.on_arrival ? "text-voa" : v.online ? "text-vfree" : undefined,
           });
           return (
-            <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3.5">
+            <div key={i} className="rounded-[2px] border border-line-strong bg-paper-2 px-4 py-3.5">
               <div className="flex flex-wrap items-start gap-2">
-                <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_CHIP}`}>
+                <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_CHIP}`}>
                   {CATEGORY_LABEL[v.category] ?? v.category}
                 </span>
-                <span className="font-display text-[13px] font-semibold text-ink">{v.name}</span>
+                <span className="font-display text-[14px] font-semibold text-ink">{v.name}</span>
               </div>
               {v.purpose && (
-                <p className="mt-1.5 text-[12px] leading-relaxed text-ink-soft">{v.purpose}</p>
+                <p className="mt-1.5 text-[14px] leading-relaxed text-ink-soft">{v.purpose}</p>
               )}
               <dl className="mono mt-3 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-line pt-3 sm:grid-cols-3 lg:grid-cols-6">
                 {stats.map((s) => (
                   <div key={s.label}>
-                    <dt className="text-[9px] uppercase tracking-[0.14em] text-ink-mute">{s.label}</dt>
+                    <dt className="text-[10px] uppercase tracking-[0.14em] text-ink-mute">{s.label}</dt>
                     <dd className={`mt-0.5 text-[13px] font-semibold ${s.accent ?? "text-ink"}`}>{s.value}</dd>
                   </div>
                 ))}
@@ -915,7 +979,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
         {!expanded && filtered.length > shown.length && (
           <button
             onClick={() => setShowAll(true)}
-            className="mono flex min-h-[44px] w-full items-center justify-center gap-2 rounded-lg border border-dashed border-line-strong text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft transition hover:border-ink-mute hover:text-ink"
+            className="mono flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[2px] border border-line-strong bg-card text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft transition hover:border-ink-mute hover:text-ink"
           >
             Show all {filtered.length} visa types ▾
           </button>
@@ -923,7 +987,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
         {showAll && categoryFilter == null && filtered.length > 3 && (
           <button
             onClick={() => setShowAll(false)}
-            className="mono flex min-h-[44px] w-full items-center justify-center gap-2 rounded-lg border border-dashed border-line-strong text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft transition hover:border-ink-mute hover:text-ink"
+            className="mono flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[2px] border border-line-strong bg-card text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft transition hover:border-ink-mute hover:text-ink"
           >
             Show fewer ▴
           </button>
@@ -958,27 +1022,27 @@ function VfsTypeRow({ v }: { v: VfsVisaType }) {
   const [open, setOpen] = useState(false);
   const docs = v.documents_required?.trim();
   return (
-    <div className="rounded-lg border border-line-strong bg-card">
+    <div className="rounded-[2px] border border-line-strong bg-card">
       <button
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         className="flex w-full items-center gap-2 px-4 py-2.5 text-left"
       >
-        <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[9px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_CHIP}`}>
+        <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_CHIP}`}>
           {CATEGORY_LABEL[v.category] ?? v.category}
         </span>
-        <span className="font-display text-[13px] font-semibold text-ink">{normalizeVfsName(v.name)}</span>
+        <span className="font-display text-[14px] font-semibold text-ink">{normalizeVfsName(v.name)}</span>
         <svg viewBox="0 0 10 6" className={`ml-auto h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform ${open ? "rotate-180" : ""}`} fill="currentColor"><path d="M0 0l5 6 5-6z" /></svg>
       </button>
       {open && (
         <div className="border-t border-line px-4 py-3">
           {docs ? (
             <div>
-              <p className="mono mb-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Documents required</p>
-              <LinkifiedText text={docs} className="whitespace-pre-wrap text-[12px] leading-relaxed text-ink-soft" />
+              <p className="mono-chrome mb-1.5 text-[10px]">Documents required</p>
+              <LinkifiedText text={docs} className="whitespace-pre-wrap text-[13px] leading-relaxed text-ink-soft" />
             </div>
           ) : (
-            <p className="text-[12px] text-ink-mute">No document checklist published for this type.</p>
+            <p className="text-[13px] text-ink-mute">No document checklist published for this type.</p>
           )}
         </div>
       )}
@@ -1026,12 +1090,12 @@ function VfsDocuments({ destIso3, corridors, selected }: { destIso3: string; cor
   return (
     <div className="mt-6 border-t border-line pt-6">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <p className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+        <p className="mono-chrome">
           Document checklists - applying from {srcName}
         </p>
         <span className="mono text-[10px] text-ink-mute">via VFS Global</span>
       </div>
-      <p className="mt-1 text-[12px] leading-relaxed text-ink-soft">
+      <p className="mt-1 text-[14px] leading-relaxed text-ink-soft">
         Required documents for {srcName} residents applying for {nameFor(destIso3)} at the VFS visa application centre, by visa type. VFS is the official outsourcing partner - confirm against the embassy before applying.
       </p>
 
@@ -1079,7 +1143,7 @@ function VfsDocuments({ destIso3, corridors, selected }: { destIso3: string; cor
 
 function DataPending() {
   return (
-    <div role="status" aria-live="polite" className="reveal flex items-center justify-center gap-2.5 rounded-xl border border-line bg-card px-6 py-12">
+    <div role="status" aria-live="polite" className="reveal flex items-center justify-center gap-2.5 rounded-[2px] border border-line bg-card px-6 py-12">
       <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-stamp" />
       <span className="mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft">Loading official records…</span>
     </div>
@@ -1088,15 +1152,12 @@ function DataPending() {
 
 function DataError({ onRetry }: { onRetry: () => void }) {
   return (
-    <div className="reveal rounded-xl border border-stamp/30 bg-stamp/[0.04] px-6 py-10 text-center">
+    <div className="reveal rounded-[2px] border border-stamp/30 bg-stamp/[0.04] px-6 py-10 text-center">
       <p className="font-display text-xl font-semibold text-ink">Couldn&apos;t load the visa dataset</p>
-      <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
+      <p className="text-body mx-auto mt-2 max-w-md text-ink-soft">
         The connection dropped before the official records arrived. Rather than guess, nothing is shown until they load.
       </p>
-      <button
-        onClick={onRetry}
-        className="mono mt-5 inline-flex min-h-[44px] items-center rounded-sm border border-stamp px-5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
-      >
+      <button onClick={onRetry} className="btn-stamp mt-5">
         Retry
       </button>
     </div>
@@ -1141,13 +1202,6 @@ function ResultCard({
     ) ?? null;
   }, [isOwnCountry, selected, accessEdge, destIso3]);
 
-  const leftBorder = (() => {
-    if (isOwnCountry || fomEdge) return "border-l-bloc";
-    if (accessEdge) return LEVEL_LEFT_BORDER[accessEdge.level] ?? "border-l-line-strong";
-    if (transitEdge) return "border-l-eta"; // matches the "Transit only" pill
-    return "border-l-ink-mute/40";
-  })();
-
   // Credential hubs whose visa/permit would unlock this destination for one of
   // the held passports (data-driven; excludes the destination's own
   // credentials). credUnlocks in the destination slice pre-filters to
@@ -1170,13 +1224,13 @@ function ResultCard({
   })();
 
   return (
-    <div className={`overflow-hidden rounded-xl border border-line-strong bg-card shadow-sm border-l-4 ${leftBorder}`}>
+    <div className="card-doc card-doc-rule overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-4 border-b border-line px-6 py-5">
         <span aria-hidden="true" className="text-4xl leading-none">{flag}</span>
         <div>
-          <p className="mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Entry requirements for</p>
-          <h2 className="font-display text-[22px] font-semibold text-ink">{name}</h2>
+          <p className="mono-chrome text-[10px]">Entry requirements for</p>
+          <h2 className="text-section text-ink">{name}</h2>
         </div>
       </div>
 
@@ -1186,7 +1240,7 @@ function ResultCard({
             <span aria-hidden="true" className="text-2xl">🏠</span>
             <div>
               <p className="font-semibold text-ink">This is one of your home countries</p>
-              <p className="mt-0.5 text-sm text-ink-soft">You hold citizenship here - no visa required.</p>
+              <p className="text-body mt-0.5 text-ink-soft">You hold citizenship here - no visa required.</p>
             </div>
           </div>
         ) : fomEdge ? (
@@ -1195,7 +1249,7 @@ function ResultCard({
               <span className="mono inline-flex items-center rounded border border-bloc/30 bg-bloc/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-bloc">
                 Freedom of movement
               </span>
-              <span className="text-sm text-ink-soft">Right to live and work - no visa required</span>
+              <span className="text-[15px] text-ink-soft">Right to live and work - no visa required</span>
             </div>
             {fomEdge.groups.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-1.5">
@@ -1213,12 +1267,12 @@ function ResultCard({
             <div className="flex flex-wrap items-center gap-3">
               <AccessPill level={accessEdge.level} />
               {accessEdge.maxStayDays != null && (
-                <span className="text-sm text-ink-soft">
+                <span className="text-[15px] text-ink-soft">
                   <span className="font-semibold text-ink">{accessEdge.maxStayDays}</span> days max stay
                 </span>
               )}
               {accessEdge.viaIso3 && (
-                <span className="text-sm text-ink-soft">
+                <span className="text-[15px] text-ink-soft">
                   via <span aria-hidden="true">{flagFor(accessEdge.viaIso3)}</span> <span className="font-medium text-ink">{nameFor(accessEdge.viaIso3)}</span>
                 </span>
               )}
@@ -1228,7 +1282,8 @@ function ResultCard({
                 </span>
               )}
             </div>
-            <p className="mt-2 text-sm text-ink-soft">
+            {/* verdict sentence - the answer, at answer size (spec §7) */}
+            <p className="mt-2 text-[17px] leading-relaxed text-ink">
               {accessEdge.level === "visa_free"
                 ? "Enter with just your passport - no visa application needed."
                 : accessEdge.level === "visa_on_arrival"
@@ -1237,9 +1292,9 @@ function ResultCard({
             </p>
 
             {(accessEdge.conditions || accessEdge.notes) && (
-              <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-                <p className="mono mb-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">Conditions &amp; notes</p>
-                <p className="text-sm leading-relaxed text-ink-soft">
+              <div className="mt-4 rounded-[2px] border border-line-strong bg-paper-2 px-4 py-3">
+                <p className="mono-chrome mb-1.5 text-[10px]">Conditions &amp; notes</p>
+                <p className="text-body text-ink-soft">
                   {accessEdge.conditions && accessEdge.notes
                     ? `${accessEdge.conditions} - ${accessEdge.notes}`
                     : accessEdge.conditions ?? accessEdge.notes}
@@ -1260,15 +1315,15 @@ function ResultCard({
                 Transit only
               </span>
               {transitEdge.maxStayDays != null && (
-                <span className="text-sm text-ink-soft">
+                <span className="text-[15px] text-ink-soft">
                   up to <span className="font-semibold text-ink">{transitEdge.maxStayDays}</span> day{transitEdge.maxStayDays === 1 ? "" : "s"}
                 </span>
               )}
             </div>
-            <p className="mt-2 text-sm text-ink-soft">
-              You can change planes or transit without a visa - but <strong className="font-medium text-ink">not for tourism or extended stays</strong>.
+            <p className="mt-2 text-[17px] leading-relaxed text-ink">
+              You can change planes or transit without a visa - but <strong className="font-medium">not for tourism or extended stays</strong>.
             </p>
-            {transitEdge.conditions && <p className="mt-2 text-sm text-ink-soft">{transitEdge.conditions}</p>}
+            {transitEdge.conditions && <p className="text-body mt-2 text-ink-soft">{transitEdge.conditions}</p>}
             {transitEdge.sourceUrl && (
               <div className="mt-3">
                 <SourceLink url={transitEdge.sourceUrl} official={transitEdge.sourceOfficial} />
@@ -1282,13 +1337,13 @@ function ResultCard({
                 Visa required
               </span>
             </div>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="mt-2 text-[17px] leading-relaxed text-ink">
               No automatic entry found for your passport{selected.length > 1 ? "s" : ""} and credentials. You will need to apply for a visa before travelling to {withArticle(name)}.
             </p>
 
-            <div className="mt-4 rounded-lg border border-line-strong bg-paper-2 px-4 py-3">
-              <p className="mono mb-2 text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">What you can do</p>
-              <ul className="space-y-1.5 text-sm text-ink-soft">
+            <div className="mt-4 rounded-[2px] border border-line-strong bg-paper-2 px-4 py-3">
+              <p className="mono-chrome mb-2 text-[10px]">What you can do</p>
+              <ul className="text-body space-y-1.5 text-ink-soft">
                 <li>→ Apply for a tourist/visitor visa at an embassy or consulate of {withArticle(name)}</li>
                 {credHintLabels.length > 0 && (
                   <li>→ Holding a visa or residence permit from {listJoin(credHintLabels)} can unlock entry here - add it above</li>
@@ -1312,14 +1367,14 @@ function ResultCard({
         {!isOwnCountry && selected.length > 0 && (guideNat ? (
           <Link
             href={`/passport/${nameToSlug(nameFor(guideNat))}/${nameToSlug(name)}`}
-            className="mono inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
+            className="btn-stamp w-full"
           >
             Full {nameFor(guideNat)} → {name} guide: fees, documents, how to apply
           </Link>
         ) : (
           <Link
             href={`/passport/${nameToSlug(nameFor(selected[0]))}`}
-            className="mono inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
+            className="btn-stamp w-full"
           >
             {`Full ${nameFor(selected[0])} passport guide: every destination & entry rule`}
           </Link>

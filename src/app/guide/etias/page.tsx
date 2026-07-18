@@ -171,7 +171,7 @@ export default function EtiasGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/guide" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Guides</Link>
@@ -179,10 +179,9 @@ export default function EtiasGuidePage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">ETIAS</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 ETIAS Explained 2026
                 <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                   The EU Travel Authorisation - and Why It Is Not a Visa
@@ -194,19 +193,19 @@ export default function EtiasGuidePage() {
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Schengen states", v: String(schengen.length) },
                 { k: "EU members", v: String(euCount) },
                 { k: "Passports in the ETIAS group", v: String(vfToFranceCount) },
                 { k: "Typical visa-free stay", v: usStay ? `${usStay} days` : "varies" },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -214,8 +213,8 @@ export default function EtiasGuidePage() {
 
           {/* ETIAS is not a visa */}
           <section className="mt-10 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">ETIAS Is Not a Visa</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">ETIAS Is Not a Visa</h2>
+            <p className="text-body mt-3 text-ink-soft">
               <strong className="text-ink">ETIAS</strong>{" "}
               (European Travel Information and Authorisation System) is the
               EU&apos;s upcoming <strong className="text-ink">travel authorisation for visa-exempt travellers</strong> -
@@ -223,24 +222,24 @@ export default function EtiasGuidePage() {
               for because your passport does not qualify for visa-free entry; ETIAS is the opposite.
             </p>
             <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
-              <div className="rounded-sm border border-line bg-paper-2/70 p-4">
-                <h3 className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">ETIAS is</h3>
-                <ul className="mt-2.5 space-y-2 text-sm leading-relaxed text-ink-soft">
+              <div className="card-doc p-4">
+                <h3 className="mono-chrome">ETIAS is</h3>
+                <ul className="text-body mt-2.5 space-y-2 text-ink-soft">
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>A short online security pre-screening before travel</span></li>
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>Only for passports that already enter the <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen area</Link> without a visa</span></li>
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>The same concept as the US ESTA and the Canadian and UK eTA</span></li>
                 </ul>
               </div>
-              <div className="rounded-sm border border-line bg-paper-2/70 p-4">
-                <h3 className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">ETIAS is not</h3>
-                <ul className="mt-2.5 space-y-2 text-sm leading-relaxed text-ink-soft">
+              <div className="card-doc p-4">
+                <h3 className="mono-chrome">ETIAS is not</h3>
+                <ul className="text-body mt-2.5 space-y-2 text-ink-soft">
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>A visa, or a change to your visa-free status</span></li>
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>A change to stay limits - the 90/180 rule still applies</span></li>
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>An embassy process - there is no appointment</span></li>
                 </ul>
               </div>
             </div>
-            <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-5 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               <strong className="font-semibold text-ink">Status:</strong> launch date &amp; fee not yet fixed -
               official tracker:{" "}
               <a href={OFFICIAL_URL} rel="noopener noreferrer" className="text-stamp underline underline-offset-2">travel-europe.europa.eu</a>.
@@ -250,8 +249,8 @@ export default function EtiasGuidePage() {
 
           {/* Who will need it */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Who Will Need ETIAS</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Who Will Need ETIAS</h2>
+            <p className="text-body mt-3 text-ink-soft">
               ETIAS will apply to <strong className="text-ink">visa-exempt, non-EU nationals</strong> making short
               visits to the Schengen area - the same travellers who today simply board a plane with their passport,
               including those from the{" "}
@@ -272,29 +271,26 @@ export default function EtiasGuidePage() {
                 <h3 className="mt-8 font-display text-lg font-semibold text-ink">
                   Example Passports in the ETIAS Group (Visa-Free to Schengen Today)
                 </h3>
-                <p className="mt-2 text-sm text-ink-soft">
+                <p className="text-body mt-2 max-w-3xl text-ink-soft">
                   Confirmed visa-free to France in our dataset - these are the travellers ETIAS is built for.
                 </p>
               </>
             )}
+            {/* Single-category section (all visa-free): the heading carries the
+                status once, so rows drop the per-card badge (spec §11). */}
             {visaExemptSamples.length > 0 && (
-              <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+              <div className="card-doc mt-4 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5">
                 {visaExemptSamples.map(({ iso3, edge }) => (
                   <Link
                     key={iso3}
                     href={`/passport/${nameToSlug(nameFor(iso3))}`}
-                    className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                    className="group flex min-h-[44px] items-center gap-2.5 border-t border-line py-1.5 transition first:border-t-0 hover:bg-paper-2/50 sm:[&:nth-child(-n+2)]:border-t-0"
                   >
-                    <span className="text-xl">{flagFor(iso3)}</span>
-                    <div className="min-w-0">
-                      <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{nameFor(iso3)}</span>
-                      {edge?.maxStayDays != null && (
-                        <div className="mono text-[10px] text-ink-mute">≤ {edge.maxStayDays} days visa-free</div>
-                      )}
-                    </div>
-                    <span className="mono ml-auto rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-vfree ring-1 ring-vfree/30">
-                      Visa-free
-                    </span>
+                    <span className="text-lg leading-none">{flagFor(iso3)}</span>
+                    <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{nameFor(iso3)}</span>
+                    {edge?.maxStayDays != null && (
+                      <span className="mono-chrome shrink-0 tabular-nums">≤ {edge.maxStayDays} days visa-free</span>
+                    )}
                   </Link>
                 ))}
               </div>
@@ -303,7 +299,7 @@ export default function EtiasGuidePage() {
 
           {/* How it works */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">How ETIAS Works</h2>
+            <h2 className="text-section text-ink">How ETIAS Works</h2>
             <ol className="mt-4 space-y-4">
               {[
                 {
@@ -327,7 +323,7 @@ export default function EtiasGuidePage() {
                   <span className="mono mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full border border-line-strong text-[11px] font-semibold text-stamp">{i + 1}</span>
                   <div>
                     <h3 className="font-display text-base font-semibold text-ink">{t}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-soft">{d}</p>
+                    <p className="text-body mt-1 text-ink-soft">{d}</p>
                   </div>
                 </li>
               ))}
@@ -336,27 +332,27 @@ export default function EtiasGuidePage() {
 
           {/* Where ETIAS applies - dataset Schengen list */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Where ETIAS Will Apply: The Schengen Countries ({schengen.length})
             </h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               The {schengen.length} Schengen members recorded in our dataset are listed below - each links to its
               entry-requirements page. The EU&apos;s own list also includes Cyprus, an EU member not yet in Schengen.
               For how the Schengen short-stay rules work, see the{" "}
               <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen visa guide</Link>.
             </p>
-            <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3">
               {schengen.map((iso3) => (
                 <Link
                   key={iso3}
                   href={`/destination/${nameToSlug(nameFor(iso3))}`}
-                  className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                  className="group flex min-h-[44px] items-center gap-2.5 border-t border-line py-1.5 transition first:border-t-0 hover:bg-paper-2/50 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0"
                 >
-                  <span className="text-xl">{flagFor(iso3)}</span>
-                  <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+                  <span className="text-lg leading-none">{flagFor(iso3)}</span>
+                  <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
                     {nameFor(iso3)}
                   </span>
-                  <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
+                  <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
                 </Link>
               ))}
             </div>
@@ -364,15 +360,15 @@ export default function EtiasGuidePage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">ETIAS FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">ETIAS FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -386,18 +382,18 @@ export default function EtiasGuidePage() {
           />
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Does your passport enter Schengen visa-free?
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Check your passport&apos;s Europe access - if you are visa-exempt, ETIAS will apply to you; if not, the
               Schengen visa process does. See the full picture, or compare passports on the{" "}
               <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">passport rankings</Link>.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check your visa requirements →
             </Link>

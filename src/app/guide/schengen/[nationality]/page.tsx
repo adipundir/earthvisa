@@ -229,7 +229,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/guide/schengen" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Schengen Visa</Link>
@@ -237,10 +237,9 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
               <span className="inline-flex min-h-[44px] items-center text-ink">{country.name}</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">{flag}</span>
                 Schengen Visa for {plural} 2026
                 <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
@@ -253,7 +252,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Countries covered", v: String(memberCount) },
                 {
@@ -269,12 +268,12 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
                   v: status === "visa_required" ? "EUR 90" : "None",
                 },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -282,13 +281,13 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
 
           {/* Verdict */}
           <section className="mt-10 max-w-3xl">
-            <div className="rounded-sm border border-line-strong bg-paper-2/70 p-5">
-              <h2 className="mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <div className="card-doc p-5">
+              <h2 className="mono-chrome">
                 Do {plural} need a Schengen visa?
               </h2>
               <p className="mt-2 text-base leading-relaxed text-ink">{verdict}</p>
             </div>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               {status === "member" && (
                 <>
                   {country.name} is one of the {memberCount} Schengen members, so this page is short by design:
@@ -332,28 +331,31 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
           {/* Where to apply / corridor coverage */}
           {schengenCorridors.length > 0 && (
             <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+              <h2 className="text-section text-ink">
                 {status === "visa_required"
                   ? `Schengen Country Guides for ${demonym} Applicants (${schengenCorridors.length})`
                   : `Schengen Entry Guides for ${demonym} Travellers (${schengenCorridors.length})`}
               </h2>
-              <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+              <p className="text-body mt-2 max-w-3xl text-ink-soft">
                 {status === "visa_required"
                   ? `Per-country corridor guides for ${demonym} citizens - apply through the consulate of your main destination. Where available, these include the exact document checklist published for ${country.name}.`
                   : `Per-country entry guides for ${demonym} citizens - stay length, conditions and the official source for each destination.`}
               </p>
-              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3">
                 {schengenCorridors.map((c) => (
-                  <li key={`${c.nat}-${c.dest}`}>
+                  <li
+                    key={`${c.nat}-${c.dest}`}
+                    className="border-t border-line first:border-t-0 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0"
+                  >
                     <Link
                       href={`/passport/${c.natSlug}/${c.destSlug}`}
-                      className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                      className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
                     >
-                      <span className="text-xl">{flagFor(c.dest)}</span>
-                      <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+                      <span className="text-lg leading-none">{flagFor(c.dest)}</span>
+                      <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
                         {nameFor(c.dest)} visa for {demonym} citizens
                       </span>
-                      <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
+                      <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
                     </Link>
                   </li>
                 ))}
@@ -365,15 +367,15 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
             <>
               {/* Documents */}
               <section className="mt-12 max-w-3xl">
-                <h2 className="font-display text-2xl font-semibold text-ink">
+                <h2 className="text-section text-ink">
                   Schengen Visa Documents for {plural}
                 </h2>
-                <p className="mt-3 text-base leading-relaxed text-ink-soft">
+                <p className="text-body mt-3 text-ink-soft">
                   The core file is the same at every Schengen consulate. Each consulate (and its VFS Global or
                   TLScontact centre) publishes the exact checklist for applicants from {country.name} - our
                   per-country guides above link the official checklists where we hold them.
                 </p>
-                <ul className="mt-5 space-y-2.5">
+                <ul className="card-doc mt-5 px-4 sm:px-5">
                   {[
                     "Harmonised Schengen short-stay application form, signed",
                     "Passport valid at least three months beyond your planned departure from the Schengen Area",
@@ -383,9 +385,9 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
                     "Proof of sufficient funds for the stay",
                     `Evidence of ties to ${country.name}: employment or study letter, property, family - anything showing you will return`,
                   ].map((doc) => (
-                    <li key={doc} className="flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5">
+                    <li key={doc} className="flex min-h-[44px] items-center gap-3 border-t border-line py-2 first:border-t-0">
                       <span aria-hidden className="mono text-stamp">■</span>
-                      <span className="text-sm text-ink-soft">{doc}</span>
+                      <span className="text-[15px] leading-snug text-ink-soft">{doc}</span>
                     </li>
                   ))}
                 </ul>
@@ -393,17 +395,17 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
 
               {/* Fee */}
               <section className="mt-12 max-w-3xl">
-                <h2 className="font-display text-2xl font-semibold text-ink">
+                <h2 className="text-section text-ink">
                   Schengen Visa Fee for {plural}
                 </h2>
-                <p className="mt-3 text-base leading-relaxed text-ink-soft">
+                <p className="text-body mt-3 text-ink-soft">
                   The fee is set EU-wide, so it is identical whichever member state you apply to - there is no
                   special per-nationality surcharge for {demonym} applicants.
                 </p>
                 <div className="mt-5 overflow-x-auto">
                   <table className="w-full min-w-[420px] border-collapse text-sm">
                     <thead>
-                      <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+                      <tr className="mono-chrome border-b border-line-strong text-left">
                         <th scope="col" className="py-2.5 pr-4 font-medium">Applicant</th>
                         <th scope="col" className="py-2.5 font-medium">Fee</th>
                       </tr>
@@ -424,7 +426,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
                     </tbody>
                   </table>
                 </div>
-                <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-soft">
+                <ul className="text-body mt-3 space-y-2 text-ink-soft">
                   <li className="flex gap-3">
                     <span aria-hidden className="mono text-stamp">■</span>
                     <span>+ VFS Global / TLScontact service fee where the consulate outsources intake.</span>
@@ -434,7 +436,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
                     <span>Not refunded if the application is refused.</span>
                   </li>
                 </ul>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                <p className="text-body mt-3 text-ink-soft">
                   Full details, including the reduced visa-facilitation rate, on the{" "}
                   <Link href="/guide/schengen#fee" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                     Schengen visa fee page
@@ -446,10 +448,10 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
 
           {/* Where else can this passport go */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Beyond Schengen: What the {country.name} Passport Unlocks
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-3 text-ink-soft">
               Europe is one region - see the full picture of where the {country.name} passport can travel visa-free,
               on arrival or with an e-visa on the{" "}
               <Link href={`/passport/${passportSlug}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
@@ -469,33 +471,33 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Schengen Visa for {plural}: FAQ
             </h2>
-            <div className="mt-5 divide-y divide-line">
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
           </section>
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Check every destination for the {country.name} passport
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               See the full visa-free list, visa on arrival destinations and e-visa options for {demonym} travellers.
             </p>
             <Link
               href={`/visit?passport=${country.iso3}`}
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check visa requirements on Earth Visa →
             </Link>

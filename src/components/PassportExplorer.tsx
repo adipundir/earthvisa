@@ -137,7 +137,7 @@ type Detail = {
   sourceOfficial?: boolean;
 };
 
-export default function PassportExplorer() {
+export default function PassportExplorer({ hero }: { hero?: React.ReactNode }) {
   const [selected, setSelected] = useState<string[]>([]);
   const [creds, setCreds] = useState<string[]>([]);
   const [ptypes, setPtypes] = useState<Record<string, PassportType>>({});
@@ -292,18 +292,23 @@ export default function PassportExplorer() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
+    <>
+      {/* ── Hero band (spec §10): copy left, the tool itself right - the tool IS
+          the product, so it replaces the old decorative illustration. ── */}
+      <section className="bg-grid-paper">
+        <div className="mx-auto grid w-full max-w-6xl items-start gap-8 px-5 pb-10 pt-8 sm:px-8 sm:pt-12 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-12 lg:pb-16 lg:pt-16">
+          {hero}
 
-      {/* ── Passport search - full width ── */}
-      <div className="mt-8">
+          {/* The checker: a document card sitting on the paper ground */}
+          <div className="card-doc card-doc-rule card-doc-ticks p-5 sm:p-6">
         <div className="mb-3">
-          <p className="font-display text-[17px] font-semibold text-ink">Your Passport(s)</p>
-          <p className="mt-0.5 text-sm text-ink-soft">Enter the country whose passport you hold - add multiple if you have dual citizenship</p>
+          <p className="text-sub text-ink">Your Passport(s)</p>
+          <p className="mt-0.5 text-[13px] leading-relaxed text-ink-soft">Enter the country whose passport you hold - add multiple if you have dual citizenship</p>
         </div>
 
         <div ref={boxRef} className="relative z-30 w-full">
           {/* Full-width search box */}
-          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-card px-4 py-2 transition-all focus-within:border-stamp">
+          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-[2px] border border-line-strong bg-card px-4 py-2 transition-all focus-within:border-stamp">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
@@ -347,9 +352,9 @@ export default function PassportExplorer() {
                       <div
                         role="listbox"
                         aria-label="Passport type"
-                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-black/25"
+                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-[2px] border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-black/25"
                       >
-                        <p className="mono border-b border-line px-3 pb-2 pt-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+                        <p className="mono-chrome border-b border-line px-3 pb-2 pt-2">
                           Passport type
                         </p>
                         {PASSPORT_TYPES.map((t) => {
@@ -410,7 +415,7 @@ export default function PassportExplorer() {
           </div>
 
           {open && (options.length > 0 || query.trim().length > 0) && (
-            <ul id="passport-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
+            <ul id="passport-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-[2px] border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
               {options.length === 0 && (
                 <li className="px-4 py-6 text-center text-sm text-ink-mute">
                   {core
@@ -445,11 +450,9 @@ export default function PassportExplorer() {
           </p>
         )}
 
-      </div>
-
       {/* ── Visas & permits - collapsed by default so the entry stays simple ── */}
       <details
-        className="group mt-6"
+        className="group mt-5"
         open={showCreds || creds.length > 0}
         onToggle={(e) => setShowCreds(e.currentTarget.open)}
       >
@@ -463,7 +466,7 @@ export default function PassportExplorer() {
         </p>
 
         <div ref={credBoxRef} className="relative z-20 mt-3 w-full">
-          <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-lg border bg-card px-4 py-2 transition-all ${credOpen ? "border-stamp" : "border-line-strong"}`}>
+          <div className={`flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-[2px] border bg-card px-4 py-2 transition-all ${credOpen ? "border-stamp" : "border-line-strong"}`}>
             {/* Selected credential chips */}
             {creds.map((credId) => {
               const c = core?.credentials.find((x) => x.id === credId);
@@ -508,7 +511,7 @@ export default function PassportExplorer() {
           </div>
 
           {credOpen && (
-            <div id="passport-cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-card shadow-xl shadow-black/10">
+            <div id="passport-cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-[2px] border border-line-strong bg-card shadow-xl shadow-black/10">
               {credGroupOptions.length === 0 && (
                 <p className="px-4 py-6 text-center text-sm text-ink-mute">
                   {core ? <>No visas or permits found for &ldquo;{credQuery}&rdquo;</> : "Loading visas & permits…"}
@@ -552,10 +555,35 @@ export default function PassportExplorer() {
         </div>
       </details>
 
+          {/* ── Teaching state (spec §9): tappable examples that fill the input ── */}
+          {!hasInput && (
+            <div className="mt-5 border-t border-line pt-4">
+              <p className="mono-chrome">No passport yet - tap one to try</p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {EXAMPLE_PASSPORTS.map((c) => (
+                  <button
+                    key={c.iso3}
+                    type="button"
+                    onClick={() => add(c.iso3)}
+                    className="mono inline-flex min-h-[36px] items-center gap-1.5 rounded-[2px] border border-line-strong bg-card px-3 text-[12px] text-ink-soft transition hover:border-stamp hover:text-stamp"
+                  >
+                    <span aria-hidden="true" className="text-base leading-none">{isoToFlag(c.iso2)}</span>
+                    {c.name}
+                  </button>
+                ))}
+              </div>
+              <p className="mono-chrome mt-4">You get: visa-free list · stay limits · official sources</p>
+            </div>
+          )}
+          </div>
+        </div>
+      </section>
 
       {/* ── Results ── */}
+      {(hasInput || (coreFailed && !core)) && (
+      <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
       {!hasInput ? (
-        coreFailed && !core ? <DataError onRetry={retryCore} /> : <EmptyState onAdd={add} />
+        <DataError onRetry={retryCore} />
       ) : dataFailed ? (
         <DataError onRetry={retryData} />
       ) : !result ? (
@@ -582,40 +610,18 @@ export default function PassportExplorer() {
           </div>
         </>
       )}
+      </div>
+      )}
 
       {detail && <DetailModal detail={detail} selectedIso3s={selected} onClose={() => setDetail(null)} />}
-    </div>
+    </>
   );
 }
 
-
-function EmptyState({ onAdd }: { onAdd: (iso3: string) => void }) {
-  return (
-    <div className="reveal mt-10 overflow-hidden rounded-xl border border-line bg-card px-6 py-10 text-center">
-      <PassportBook className="mx-auto h-12 w-12 text-ink/75" />
-      <h2 className="font-display mt-4 text-2xl font-semibold text-ink">Add your passport above to get started</h2>
-      <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
-        See visa-free destinations, golden visas, citizenship programs and fast-track routes open to you.
-      </p>
-      <div className="mt-6 flex flex-wrap justify-center gap-2">
-        {EXAMPLE_PASSPORTS.map((c) => (
-          <button
-            key={c.iso3}
-            onClick={() => onAdd(c.iso3)}
-            className="mono inline-flex items-center gap-2 rounded border border-line-strong bg-card px-3 py-2 text-[12px] text-ink-soft transition hover:border-ink-mute hover:text-ink"
-          >
-            <span aria-hidden="true" className="text-base">{isoToFlag(c.iso2)}</span>
-            {c.name}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function DataPending() {
   return (
-    <div role="status" aria-live="polite" className="reveal mt-10 flex items-center justify-center gap-2.5 rounded-xl border border-line bg-card px-6 py-12">
+    <div role="status" aria-live="polite" className="reveal mt-10 flex items-center justify-center gap-2.5 rounded-[2px] border border-line bg-card px-6 py-12">
       <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-stamp" />
       <span className="mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft">Loading official records…</span>
     </div>
@@ -624,15 +630,12 @@ function DataPending() {
 
 function DataError({ onRetry }: { onRetry: () => void }) {
   return (
-    <div className="reveal mt-10 rounded-xl border border-stamp/30 bg-stamp/[0.04] px-6 py-10 text-center">
+    <div className="reveal mt-10 rounded-[2px] border border-stamp/30 bg-stamp/[0.04] px-6 py-10 text-center">
       <p className="font-display text-xl font-semibold text-ink">Couldn&apos;t load the visa dataset</p>
-      <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
+      <p className="text-body mx-auto mt-2 max-w-md text-ink-soft">
         The connection dropped before the official records arrived. Rather than guess, nothing is shown until they load.
       </p>
-      <button
-        onClick={onRetry}
-        className="mono mt-5 inline-flex min-h-[44px] items-center rounded-sm border border-stamp px-5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
-      >
+      <button onClick={onRetry} className="btn-stamp mt-5">
         Retry
       </button>
     </div>
@@ -713,7 +716,7 @@ function StatBand({ result, activeTab, setTab }: {
 
       {/* Claim teaser: the moment the user has a number is the moment it can
           become an identity - route them to the Earthling claim flow. */}
-      <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-stamp/25 bg-stamp/[0.04] px-4 py-2.5">
+      <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-[2px] border border-stamp/25 bg-stamp/[0.04] px-4 py-2.5">
         <span className="text-sm text-ink-soft">That number is your <strong className="text-ink">reach</strong>. Lock it in on the leaderboard:</span>
         <Link href="/earthling" className="mono min-h-[32px] inline-flex items-center text-[12px] font-medium uppercase tracking-[0.12em] text-stamp underline-offset-2 hover:underline">
           Claim your Earthling ID →
@@ -727,9 +730,9 @@ function StatBand({ result, activeTab, setTab }: {
               onClick={() => setTab(c.tab)}
               aria-pressed={activeTab === c.tab}
               aria-describedby={`stat-tip-${c.tab}`}
-              className={`flex h-[4.5rem] w-full flex-col justify-center rounded-lg border px-4 text-left transition ${
+              className={`flex h-[4.5rem] w-full flex-col justify-center rounded-[2px] border px-4 text-left transition ${
                 activeTab === c.tab
-                  ? `border-t-[3px] ${c.activeBar} border-x-line-strong border-b-line-strong bg-paper-2 shadow-sm ring-1 ring-inset ring-stamp/15`
+                  ? `border-t-[3px] ${c.activeBar} border-x-line-strong border-b-line-strong bg-paper-2 ring-1 ring-inset ring-stamp/15`
                   : "border-line-strong bg-card hover:bg-paper-2"
               }`}
             >
@@ -779,7 +782,7 @@ function StatBand({ result, activeTab, setTab }: {
             onClick={() => setTab("transit")}
             aria-pressed={activeTab === "transit"}
             title="Destinations you can transit (change planes) without a visa. Some appear only once a held visa unlocks them."
-            className={`mono inline-flex min-h-[36px] items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
+            className={`mono inline-flex min-h-[36px] items-center gap-2 rounded-[2px] border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
               activeTab === "transit"
                 ? "border-eta/40 bg-eta/[0.07] text-eta"
                 : "border-line-strong bg-paper-2/60 text-ink-mute hover:border-eta/40 hover:text-ink"
@@ -791,7 +794,7 @@ function StatBand({ result, activeTab, setTab }: {
           <button
             onClick={() => setTab("fast")}
             aria-pressed={activeTab === "fast"}
-            className={`mono inline-flex min-h-[36px] items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
+            className={`mono inline-flex min-h-[36px] items-center gap-2 rounded-[2px] border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
               activeTab === "fast"
                 ? "border-stamp/30 bg-stamp/[0.06] text-stamp"
                 : "border-line-strong bg-paper-2/60 text-ink-mute hover:border-stamp/30 hover:text-ink"
@@ -834,7 +837,10 @@ function SourceDot({ official }: { official: boolean }) {
   return <span role="img" aria-label={label} className={`inline-block h-2 w-2 rounded-full ${official ? "bg-vfree" : "bg-eta"}`} title={label} />;
 }
 
-const CARD = "cursor-pointer rounded-lg border border-line bg-card shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition hover:border-line-strong hover:shadow-[0_4px_12px_-4px_rgba(0,0,0,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-stamp/30";
+// Document-card surface for interactive result cards - the .card-doc recipe
+// hand-rolled in utilities so hover/focus border states still apply (the
+// unlayered .card-doc class would override hover:border-* utilities).
+const CARD = "cursor-pointer rounded-[2px] border border-line-strong bg-card transition hover:border-ink-mute focus:outline-none focus-visible:ring-2 focus-visible:ring-stamp/30";
 
 function ClickCard({ onOpen, className, style, children }: { onOpen: () => void; className?: string; style?: React.CSSProperties; children: React.ReactNode }) {
   return (
@@ -879,7 +885,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Pa
         className="mono mb-5 w-full max-w-xs rounded-sm border border-line-strong bg-card px-3 py-2 text-sm text-ink outline-none transition focus:border-stamp placeholder:text-ink-mute"
       />
       {rows.length === 0 && (
-        <p className="rounded-lg border border-dashed border-line bg-paper-2/40 px-4 py-6 text-center text-sm text-ink-soft">
+        <p className="text-body rounded-[2px] border border-line-strong bg-card px-4 py-6 text-center text-ink-soft">
           No destinations match &ldquo;{filter}&rdquo;.{" "}
           <button onClick={() => setFilter("")} className="font-medium text-stamp underline-offset-2 hover:underline">Clear filter</button>
         </p>
@@ -907,7 +913,7 @@ function ReachPanel({ result, entries, filter, setFilter, onOpen }: { result: Pa
                 )}
                 {e.sourceUrl && <span className="mono inline-flex items-center gap-1.5 text-[11px] text-ink-mute"><SourceDot official={e.sourceOfficial} />{hostOf(e.sourceUrl)}</span>}
               </div>
-              {e.notes && <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink-mute">{e.notes}</p>}
+              {e.notes && <p className="mt-1.5 line-clamp-2 text-[15px] leading-snug text-ink-soft">{e.notes}</p>}
               <span className="mono mt-1.5 block text-[10px] font-medium uppercase tracking-[0.1em] text-stamp">Details ›</span>
             </div>
           </ClickCard>
@@ -922,7 +928,7 @@ function TransitPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: 
     return <Note>No transit-only destinations in your current credential combination.</Note>;
   return (
     <div className="reveal">
-      <div className="mb-5 rounded-md border border-eta/25 bg-eta/[0.05] px-4 py-3 text-sm leading-relaxed text-ink-soft">
+      <div className="text-body mb-5 rounded-[2px] border border-eta/25 bg-eta/[0.05] px-4 py-3 text-ink-soft">
         <span className="mono mr-2 font-semibold uppercase tracking-[0.1em] text-eta">Transit only</span>
         These destinations allow you to change planes or transit the country without a visa - but{" "}
         <strong className="font-semibold text-ink">not for tourism or extended stays</strong>. They appear here separately so they aren&apos;t confused with regular visa-free access.
@@ -945,7 +951,7 @@ function TransitPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: 
                 )}
                 {e.sourceUrl && <span className="mono inline-flex items-center gap-1.5 text-[11px] text-ink-mute"><SourceDot official={e.sourceOfficial} />{hostOf(e.sourceUrl)}</span>}
               </div>
-              {e.notes && <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink-mute">{e.notes}</p>}
+              {e.notes && <p className="mt-1.5 line-clamp-2 text-[15px] leading-snug text-ink-soft">{e.notes}</p>}
             </div>
           </ClickCard>
         ))}
@@ -977,7 +983,7 @@ function FomPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: Deta
               badges: e.groups.map((g) => ({ text: groupLabel(g), tone: "bloc" as const })),
               notes: "Shared regional-bloc membership - typically grants visa-free entry and, depending on the bloc, the right to live and work. Confirm the specific rights per bloc.",
             })}
-            className={`reveal flex items-center gap-3 border-bloc/20 bg-bloc/[0.04] p-3.5 ${CARD}`}
+            className="reveal flex cursor-pointer items-center gap-3 rounded-[2px] border border-bloc/25 bg-bloc/[0.04] p-3.5 transition hover:border-bloc/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-stamp/30"
             style={{ animationDelay: `${(i % 10) * 35}ms` }}
           >
             <span aria-hidden="true" className="text-2xl">{flagFor(e.dest)}</span>
@@ -1056,7 +1062,7 @@ function PanelFilter({ value, onChange, placeholder }: { value: string; onChange
 
 function NoMatch({ filter, onClear }: { filter: string; onClear: () => void }) {
   return (
-    <p className="rounded-lg border border-dashed border-line bg-paper-2/40 px-4 py-6 text-center text-sm text-ink-soft">
+    <p className="text-body rounded-[2px] border border-line-strong bg-card px-4 py-6 text-center text-ink-soft">
       No programs match &ldquo;{filter}&rdquo;.{" "}
       <button onClick={onClear} className="font-medium text-stamp underline-offset-2 hover:underline">Clear filter</button>
     </p>
@@ -1171,7 +1177,7 @@ function RbiPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: Deta
               {p.path_to_citizenship_years != null && <span>Citizenship in {p.path_to_citizenship_years}y</span>}
               {p.official_url && <span className="inline-flex items-center gap-1.5"><SourceDot official={p.source_official} />{hostOf(p.official_url)}</span>}
             </div>
-            {cleanProgramNote(p.notes) && <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink-mute">{cleanProgramNote(p.notes)}</p>}
+            {cleanProgramNote(p.notes) && <p className="mt-2 line-clamp-2 text-[15px] leading-snug text-ink-soft">{cleanProgramNote(p.notes)}</p>}
           </ClickCard>
           );
         })}
@@ -1216,7 +1222,7 @@ function FastPanel({ result, onOpen }: { result: PassportResult; onOpen: (d: Det
                 <div className="mono text-[11px] font-medium uppercase tracking-[0.08em] text-ink-mute">{nameFor(p.iso3)}{p.category ? ` · ${programTypeLabel(p.category)}` : ""}</div>
               </div>
             </div>
-            {p.eligibility && <p className="mt-2 line-clamp-3 text-sm leading-snug text-ink-soft">{p.eligibility}</p>}
+            {p.eligibility && <p className="mt-2 line-clamp-3 text-[15px] leading-snug text-ink-soft">{p.eligibility}</p>}
             <div className="mono mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-mute">
               {p.processing_time && <span>{fmtProcessing(p.processing_time)}</span>}
               {p.official_url && <span className="inline-flex items-center gap-1.5"><SourceDot official={p.source_official} />{hostOf(p.official_url)}</span>}
@@ -1283,7 +1289,7 @@ function DetailModal({ detail, selectedIso3s, onClose }: { detail: Detail; selec
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={detail.title}>
       <div className="reveal absolute inset-0 bg-black/40 backdrop-blur-[2px]" style={{ animationDuration: "0.25s" }} onClick={onClose} />
-      <div ref={panelRef} tabIndex={-1} className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-xl border border-line-strong bg-card shadow-2xl shadow-black/20 outline-none" style={{ animationDuration: "0.3s" }}>
+      <div ref={panelRef} tabIndex={-1} className="reveal relative z-10 w-full max-w-lg overflow-hidden rounded-[2px] border border-line-strong bg-card shadow-2xl shadow-black/20 outline-none" style={{ animationDuration: "0.3s" }}>
         <div className="rule-double flex items-start gap-3 px-6 pb-4 pt-6">
           <span aria-hidden="true" className="text-4xl leading-none">{flagFor(detail.iso3)}</span>
           <div className="min-w-0 flex-1">
@@ -1315,17 +1321,17 @@ function DetailModal({ detail, selectedIso3s, onClose }: { detail: Detail; selec
             <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-6 gap-y-2.5">
               {detail.rows.map((r, i) => (
                 <div key={i} className="contents">
-                  <dt className="mono self-center text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute">{r.label}</dt>
-                  <dd className="text-sm text-ink">{r.value}</dd>
+                  <dt className="mono-chrome self-center text-[10px]">{r.label}</dt>
+                  <dd className="text-[15px] text-ink">{r.value}</dd>
                 </div>
               ))}
             </dl>
           )}
-          {cleanProgramNote(detail.notes) && <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ink-soft">{cleanProgramNote(detail.notes)}</p>}
+          {cleanProgramNote(detail.notes) && <p className="text-body mt-4 whitespace-pre-line text-ink-soft">{cleanProgramNote(detail.notes)}</p>}
           {guideNat ? (
             <Link
               href={`/passport/${nameToSlug(nameFor(guideNat))}/${nameToSlug(detail.title)}`}
-              className="mono mt-5 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
+              className="btn-stamp mt-5 w-full"
             >
               Full {nameFor(guideNat)} → {detail.title} guide: fees, documents, how to apply
             </Link>
@@ -1333,7 +1339,7 @@ function DetailModal({ detail, selectedIso3s, onClose }: { detail: Detail; selec
             /* corridor page pruned - fall back to the passport hub, which always exists */
             <Link
               href={`/passport/${nameToSlug(nameFor(selectedIso3s[0]))}`}
-              className="mono mt-5 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-sm border border-stamp bg-stamp/[0.06] px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-stamp transition hover:bg-stamp hover:text-white dark:hover:bg-stamp-deep"
+              className="btn-stamp mt-5 w-full"
             >
               {`Full ${nameFor(selectedIso3s[0])} passport guide: every destination & entry rule`}
             </Link>
@@ -1352,20 +1358,9 @@ function DetailModal({ detail, selectedIso3s, onClose }: { detail: Detail; selec
 
 function Note({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-dashed border-line px-5 py-10 text-center leading-relaxed text-ink-soft">
-      {children}
+    <div className="card-doc px-5 py-6">
+      <p className="mono-chrome">No entries</p>
+      <p className="text-body measure mt-2 text-ink-soft">{children}</p>
     </div>
-  );
-}
-
-function PassportBook({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M13 5h22a2 2 0 0 1 2 2v34a2 2 0 0 1-2 2H13a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Z" />
-      <path d="M9 38a4 4 0 0 1 4-3h24" />
-      <circle cx="23" cy="18" r="5" />
-      <path d="M18 18h10M23 13v10" className="opacity-50" />
-      <path d="M18 28h10M20 32h6" />
-    </svg>
   );
 }

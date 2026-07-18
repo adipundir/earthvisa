@@ -83,7 +83,7 @@ export default function PassportDestinationSearch({
 
   return (
     <div className="relative mt-6 max-w-xl">
-      <label className="mono mb-1.5 block text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+      <label className="mono-chrome mb-1.5 block">
         Do {citizens} need a visa for…?
       </label>
       <div className="relative">
@@ -119,11 +119,11 @@ export default function PassportDestinationSearch({
           aria-activedescendant={open && matches[hi] ? `${listId}-opt-${hi}` : undefined}
           aria-label={`Check visa requirements for ${citizens} by destination country`}
           placeholder="Type a country - e.g. Thailand, UK, Dubai…"
-          className="w-full rounded-lg border border-line-strong bg-card py-2.5 pl-10 pr-4 text-[15px] text-ink outline-none transition placeholder:text-ink-mute focus:border-stamp"
+          className="w-full rounded-[2px] border border-line-strong bg-card py-2.5 pl-10 pr-4 text-[15px] text-ink outline-none transition placeholder:text-ink-mute focus:border-stamp"
         />
       </div>
       {open && matches.length > 0 && (
-        <ul id={listId} role="listbox" className="absolute z-30 mt-1.5 max-h-80 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
+        <ul id={listId} role="listbox" className="absolute z-30 mt-1.5 max-h-80 w-full overflow-auto rounded-[2px] border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
           {matches.map((o, i) => (
             <li key={o.slug} id={`${listId}-opt-${i}`} role="option" aria-selected={hi === i}>
               <button
@@ -144,8 +144,8 @@ export default function PassportDestinationSearch({
         </ul>
       )}
       {open && norm.length > 0 && matches.length === 0 && (
-        <div className="absolute z-30 mt-1.5 w-full rounded-lg border border-line-strong bg-card px-4 py-3 shadow-xl shadow-black/10">
-          <p className="text-sm text-ink-mute">No countries match &ldquo;{q.trim()}&rdquo;. Try the official country name.</p>
+        <div className="absolute z-30 mt-1.5 w-full rounded-[2px] border border-line-strong bg-card px-4 py-3 shadow-xl shadow-black/10">
+          <p className="text-[15px] text-ink-mute">No countries match &ldquo;{q.trim()}&rdquo;. Try the official country name.</p>
         </div>
       )}
     </div>

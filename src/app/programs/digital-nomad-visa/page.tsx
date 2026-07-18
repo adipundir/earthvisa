@@ -186,7 +186,7 @@ function NomadCard({ e }: { e: NomadEntry }) {
   const slug = nameToSlug(e.name);
   const w = passportWorth(e.iso3);
   return (
-    <article className="flex flex-col rounded-sm border border-line bg-paper-2/70 p-4">
+    <article className="card-doc flex flex-col p-4">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <span className="text-2xl">{flagFor(e.iso3)}</span>
         <Link
@@ -196,18 +196,18 @@ function NomadCard({ e }: { e: NomadEntry }) {
           {e.name}
         </Link>
         {e.status === "closed" && (
-          <span className="mono rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+          <span className="mono rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
             closed per official source
           </span>
         )}
         {e.status === "announced" && (
-          <span className="mono rounded-[3px] bg-eta/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">
+          <span className="mono rounded-[3px] bg-eta/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">
             announced - not yet open
           </span>
         )}
       </div>
       <p className="mt-1 text-sm italic leading-snug text-ink-soft">{e.program}</p>
-      <p className="mono mt-2 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute">{typeLabel(e.category)}</p>
+      <p className="mono-chrome mt-2">{typeLabel(e.category)}</p>
       {e.processing && <p className="mono mt-1.5 text-[11px] text-ink-mute">Processing: {e.processing}</p>}
       {e.detail && (
         <details className="group mt-2">
@@ -250,7 +250,7 @@ export default function DigitalNomadVisaPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -260,9 +260,8 @@ export default function DigitalNomadVisaPage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Digital Nomad Visa</span>
             </nav>
 
-            <div className="rule-double" />
 
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+            <h1 className="text-display mt-6 text-ink">
               Digital Nomad Visa Countries 2026
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                 {countryCount} Countries with Remote Work Visas &amp; Residence Routes
@@ -272,39 +271,39 @@ export default function DigitalNomadVisaPage() {
               {entries.length} programs · data refreshed {lastUpdated}
             </p>
 
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Countries", v: countryCount },
                 { k: "Programs tracked", v: entries.length },
                 { k: "Open routes", v: openCount },
                 { k: "Announced / closed", v: notOpenCount },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               A <strong className="text-ink">digital nomad visa</strong> lets you live in a country while working
               remotely for employers or clients based abroad - legally, without pretending to be a tourist. Our
               dataset tracks <strong className="text-ink">{entries.length} remote-work routes</strong> across{" "}
               <strong className="text-ink">{countryCount} countries</strong>, grouped by region below.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               Two honest caveats. First, income thresholds change so often that summarising them in one table would age
               badly - so each entry instead quotes the{" "}
               <strong className="text-ink">program&apos;s eligibility text verbatim</strong> as of crawl time. Second,
               not every announced program is open: entries recorded as announced or discontinued are labelled, not
               hidden.
             </p>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               Data compiled directly from official government publications, last refreshed {lastUpdated}.
             </p>
           </section>
@@ -315,7 +314,7 @@ export default function DigitalNomadVisaPage() {
             if (list.length === 0) return null;
             return (
               <section key={region} className="mt-12">
-                <h2 className="font-display text-2xl font-semibold text-ink">
+                <h2 className="text-section text-ink">
                   Digital Nomad Visas in {region} ({list.length})
                 </h2>
                 <div className="mt-5 grid gap-3 lg:grid-cols-2">
@@ -329,15 +328,15 @@ export default function DigitalNomadVisaPage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Digital Nomad Visa FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Digital Nomad Visa FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -346,17 +345,17 @@ export default function DigitalNomadVisaPage() {
           <ProgramsNav current="/programs/digital-nomad-visa" />
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               First, check if you even need a visa to arrive
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Many nomads scout a country visa-free before committing to a permit. Check your passport&apos;s access to
               any destination on Earth Visa.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check visa-free access →
             </Link>

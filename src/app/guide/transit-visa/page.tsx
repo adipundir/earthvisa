@@ -185,14 +185,14 @@ function TransitTile({ e }: { e: TransitEntry }) {
   return (
     <Link
       href={`/destination/${slug}`}
-      className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+      className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5"
     >
       <span className="text-xl">{flagFor(e.iso3)}</span>
       <div className="min-w-0">
         <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
           {e.name}
         </span>
-        <div className="mono text-[10px] text-ink-mute">{bits.join(" · ")}</div>
+        <div className="mono text-[11px] text-ink-mute">{bits.join(" · ")}</div>
       </div>
       <span aria-hidden className="mono ml-auto shrink-0 text-ink-mute transition group-hover:text-stamp">
         →
@@ -213,7 +213,7 @@ export default function TransitVisaGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -223,10 +223,9 @@ export default function TransitVisaGuidePage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Transit Visa</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">✈️</span>
                 Transit Visa Guide 2026
                 <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
@@ -239,32 +238,32 @@ export default function TransitVisaGuidePage() {
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Destinations tracked", v: String(destinationCount) },
                 { k: "Publish an official fee", v: String(withFee) },
                 { k: "Offer online application", v: String(withOnline) },
                 { k: "Issue on arrival", v: String(withOnArrival) },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               A <strong className="text-ink">transit visa</strong> is for travellers who are only passing through a
               country to reach a connecting flight or an onward destination - not for actually visiting it. It is a
               different product from a tourist visa: shorter permitted stay, a narrower purpose, and often (though
               not always) an easier or cheaper route than entering as a visitor.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               The most common source of confusion is that &quot;transit&quot; covers two very different situations -{" "}
               <Link href="#direct-vs-indirect" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 direct (airside) transit and indirect (landside) transit
@@ -279,7 +278,7 @@ export default function TransitVisaGuidePage() {
               </Link>{" "}
               to run before you book a connecting itinerary.
             </p>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               This page explains transit visas in general terms. Rules are set per destination and per nationality -
               use{" "}
               <Link href="/visit" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
@@ -291,18 +290,18 @@ export default function TransitVisaGuidePage() {
 
           {/* Direct vs indirect */}
           <section id="direct-vs-indirect" className="mt-12 max-w-3xl scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Direct (Airside) Transit vs Indirect (Landside) Transit
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-3 text-ink-soft">
               Whether a transit visa is required almost always turns on which of these two situations you are in:
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <div className="rounded-sm border border-vfree/30 bg-vfree/[0.05] p-4">
-                <p className="mono text-[10px] font-semibold uppercase tracking-[0.15em] text-vfree">
+                <p className="mono text-[11px] font-semibold uppercase tracking-[0.15em] text-vfree">
                   Direct / airside transit
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                <p className="text-body mt-2 max-w-3xl text-ink-soft">
                   Same airport, same day, on a through-checked itinerary, staying entirely within the international
                   or &quot;airside&quot; transit area - you never cross immigration into the country. This is the
                   scenario most countries treat leniently: it very often needs nothing at all, regardless of
@@ -310,10 +309,10 @@ export default function TransitVisaGuidePage() {
                 </p>
               </div>
               <div className="rounded-sm border border-stamp/30 bg-stamp/[0.05] p-4">
-                <p className="mono text-[10px] font-semibold uppercase tracking-[0.15em] text-stamp">
+                <p className="mono text-[11px] font-semibold uppercase tracking-[0.15em] text-stamp">
                   Indirect / landside transit
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                <p className="text-body mt-2 max-w-3xl text-ink-soft">
                   Changing airports or terminals in a way that requires clearing immigration, an overnight layover,
                   or leaving the airport (going &quot;landside&quot;) for any reason - a hotel stay, a city visit, or
                   simply collecting and rechecking your own baggage. This is treated much more like a normal entry,
@@ -321,7 +320,7 @@ export default function TransitVisaGuidePage() {
                 </p>
               </div>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               The dividing line is border control, not the clock: a nine-hour airside layover can need nothing, while
               a two-hour landside stop can need a full visa - because one crosses into the country and the other
               doesn&apos;t.
@@ -330,10 +329,10 @@ export default function TransitVisaGuidePage() {
 
           {/* Nationality + country */}
           <section id="nationality-and-country" className="mt-12 max-w-3xl scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               It Depends on Your Passport AND the Transit Country
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-3 text-ink-soft">
               There is no universal transit-visa rule:
             </p>
             <ul className="mt-3 space-y-2 text-base leading-relaxed text-ink-soft">
@@ -351,10 +350,10 @@ export default function TransitVisaGuidePage() {
 
           {/* By destination - dataset derived */}
           <section id="destinations" className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Transit Visa Products by Destination ({destinationCount})
             </h2>
-            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               This shows what each destination publishes for travellers who do need a transit visa - not who is
               exempt from one; tap a destination for its full passport-by-passport entry requirements.
             </p>
@@ -381,8 +380,8 @@ export default function TransitVisaGuidePage() {
 
           {/* Checklist */}
           <section id="checklist" className="mt-12 max-w-3xl scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">Before You Book: A Transit Checklist</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Before You Book: A Transit Checklist</h2>
+            <p className="text-body mt-3 text-ink-soft">
               Run through this before booking a connecting itinerary, not after:
             </p>
             <ol className="mt-5 space-y-4">
@@ -408,11 +407,11 @@ export default function TransitVisaGuidePage() {
                   d: "Transit visa rules and exemption lists change, and airlines can deny boarding at check-in if you lack a required transit visa. Confirm requirements while your itinerary is still flexible enough to add a visa application or change routing.",
                 },
               ].map((s, i) => (
-                <li key={s.t} className="flex gap-4 rounded-sm border border-line bg-paper-2/70 p-4">
+                <li key={s.t} className="card-doc flex gap-4 p-4">
                   <span className="mono text-lg font-semibold tabular-nums text-stamp">{String(i + 1).padStart(2, "0")}</span>
                   <div>
                     <h3 className="font-display text-[15px] font-semibold text-ink">{s.t}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-soft">{s.d}</p>
+                    <p className="text-body mt-1 text-ink-soft">{s.d}</p>
                   </div>
                 </li>
               ))}
@@ -421,8 +420,8 @@ export default function TransitVisaGuidePage() {
 
           {/* Tool pointer */}
           <section id="tool" className="mt-12 max-w-3xl scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">Check Transit Access for Your Passport</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Check Transit Access for Your Passport</h2>
+            <p className="text-body mt-3 text-ink-soft">
               Earth Visa&apos;s interactive passport checker includes a dedicated transit-access view alongside its
               regular visa-free, visa-on-arrival, eTA and e-visa results, showing destinations a given passport can
               transit without a visa. Enter a passport on{" "}
@@ -435,30 +434,30 @@ export default function TransitVisaGuidePage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Transit Visa FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Transit Visa FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {FAQS.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
           </section>
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">Check transit visa access for your passport</h2>
-            <p className="mt-2 text-sm text-ink-soft">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">Check transit visa access for your passport</h2>
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               See whether your passport can transit a specific country visa-free, on arrival, or needs a visa in
               advance - and its full visa-free destination list while you&apos;re there.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check visa requirements on Earth Visa →
             </Link>

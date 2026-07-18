@@ -442,11 +442,18 @@ function Chevron() {
   );
 }
 
-// One destination row. The whole >=44px card is a single tappable link to the
+// One destination ledger row (spec §12: compact rows in a document card with
+// hairline dividers). The whole >=44px row is a single tappable link to the
 // nationality-specific corridor guide when one exists (the page is written for
 // exactly that reader), else the destination page. The level badge only
 // renders in mixed-level sections (`showLevel`) - repeating an identical chip
 // on every row of a single-level list restates the section h2 23 times.
+// nth-child resets keep the first visual row of each column count clear of a
+// top hairline (1 col base / 2 cols sm / 3 cols lg).
+const LEDGER_ROW_LI =
+  "border-t border-line first:border-t-0 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0";
+const LEDGER_GRID_UL = "card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
+
 function DestCard({ edge, condition, nat, natSlug, showLevel = false }: {
   edge: CombinedEdge;
   condition: string | null;
@@ -458,21 +465,21 @@ function DestCard({ edge, condition, nat, natSlug, showLevel = false }: {
   const destSlug = nameToSlug(name);
   const href = isUsefulCorridor(nat, edge.dest) ? `/passport/${natSlug}/${destSlug}` : `/destination/${destSlug}`;
   return (
-    <li className="h-full">
+    <li className={LEDGER_ROW_LI}>
       <Link
         href={href}
-        className="group flex h-full min-h-[44px] items-start gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+        className="group flex min-h-[44px] items-start gap-2.5 py-2 transition hover:bg-paper-2/50"
       >
-        <span className="pt-0.5 text-xl leading-none">{flagFor(edge.dest)}</span>
+        <span className="pt-0.5 text-lg leading-none">{flagFor(edge.dest)}</span>
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-baseline gap-x-2">
-            <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{name}</span>
-            {edge.maxStayDays != null && <span className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days</span>}
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="min-w-0 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{name}</span>
+            {edge.maxStayDays != null && <span className="mono-chrome shrink-0 tabular-nums">≤ {edge.maxStayDays} days</span>}
           </div>
-          {condition && <p className="mono mt-1 text-[11px] leading-relaxed text-ink-mute">{condition}</p>}
+          {condition && <p className="mt-0.5 text-[13px] leading-snug text-ink-mute">{condition}</p>}
         </div>
         {showLevel && (
-          <span className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
+          <span className={`mono mt-1 shrink-0 rounded-[3px] px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.1em] ring-1 ${LEVEL_COLORS[edge.level]}`}>
             {SHORT_LEVEL[edge.level]}
           </span>
         )}
@@ -607,10 +614,10 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
 
       <main className="min-h-screen">
         {/* Header */}
-        <header className="border-b border-line-strong bg-paper-2/60">
+        <header className="bg-grid-paper border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href={`/passport/${natSlug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">
@@ -622,10 +629,9 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               </span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">{flag}</span>
                 {h1}
                 <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">{h1Sub}</span>
@@ -634,14 +640,14 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {stats.map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -651,13 +657,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
           <section className="mt-10 max-w-3xl">
             {cfg.kind === "us_visa" && (
               <>
-                <p className="text-base leading-relaxed text-ink-soft">
+                <p className="text-body text-ink-soft">
                   A valid US visa in a <Link href={`/passport/${natSlug}`} className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">{country.name} passport</Link>{" "}
                   unlocks <strong className="text-ink">extra destinations</strong> in 2026 that would otherwise require a full embassy visa - some waive it entirely, others switch to a visa on arrival or an easy e-visa.
                   On its own, the {country.name} passport reaches {total} destinations - see the{" "}
                   <Link href="/rankings" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">2026 passport rankings</Link> for how that compares.
                 </p>
-                <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+                <p className="card-doc mt-5 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
                   Every entry below requires a valid US visa - typically a multiple-entry B1/B2 visitor visa physically affixed in your passport. An ESTA is not a visa.
                   Each destination sets its own conditions (visa type, remaining validity, prior use); the exact condition is shown on each row.
                   Verify with the destination&apos;s border authority before booking.
@@ -665,7 +671,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               </>
             )}
             {cfg.kind === "voa" && (
-              <p className="text-base leading-relaxed text-ink-soft">
+              <p className="text-body text-ink-soft">
                 <strong className="text-ink">{main.length} countries</strong> issue {cfg.people} a{" "}
                 <strong className="text-ink">visa on arrival</strong> in 2026 - you land, pay the fee at the border counter, and get stamped in without an embassy appointment.
                 Fees, stay limits and documents vary per country. See how the{" "}
@@ -675,7 +681,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               </p>
             )}
             {cfg.kind === "visa_free" && (
-              <p className="text-base leading-relaxed text-ink-soft">
+              <p className="text-body text-ink-soft">
                 {adj} passport holders can visit <strong className="text-ink">{main.length} countries without any visa</strong> in 2026 - no application, no fee, no embassy queue.
                 See how the{" "}
                 <Link href={`/passport/${natSlug}`} className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">{country.name} passport</Link>{" "}
@@ -690,13 +696,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
             <>
               {dVf.length > 0 && (
                 <section className="mt-12">
-                  <h2 className="font-display text-2xl font-semibold text-ink">
+                  <h2 className="text-section text-ink">
                     Visa-Free for {cfg.peopleTitle} with a US Visa ({dVf.length})
                   </h2>
-                  <p className="mt-2 text-sm text-ink-soft">
+                  <p className="text-body mt-2 max-w-3xl text-ink-soft">
                     These countries waive their visa entirely for {cfg.people} who hold a valid US visa - check the condition on each row.
                   </p>
-                  <ul className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className={LEDGER_GRID_UL}>
                     {dVf.map((e) => (
                       <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} />
                     ))}
@@ -705,13 +711,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               )}
               {dVoa.length > 0 && (
                 <section className="mt-12">
-                  <h2 className="font-display text-2xl font-semibold text-ink">
+                  <h2 className="text-section text-ink">
                     Visa on Arrival with a US Visa ({dVoa.length})
                   </h2>
-                  <p className="mt-2 text-sm text-ink-soft">
+                  <p className="text-body mt-2 max-w-3xl text-ink-soft">
                     With a valid US visa, {cfg.people} can get a visa stamped at the border in these countries instead of applying at an embassy.
                   </p>
-                  <ul className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className={LEDGER_GRID_UL}>
                     {dVoa.map((e) => (
                       <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} />
                     ))}
@@ -720,14 +726,14 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               )}
               {dE.length > 0 && (
                 <section className="mt-12">
-                  <h2 className="font-display text-2xl font-semibold text-ink">
+                  <h2 className="text-section text-ink">
                     Easier e-Visa &amp; eTA with a US Visa ({dE.length})
                   </h2>
-                  <p className="mt-2 text-sm text-ink-soft">
+                  <p className="text-body mt-2 max-w-3xl text-ink-soft">
                     These destinations let US-visa holders apply through a simplified online e-visa or eTA instead of a full embassy process.
                   </p>
                   {/* Mixed e-Visa + eTA section: the badge distinguishes the two levels. */}
-                  <ul className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className={LEDGER_GRID_UL}>
                     {dE.map((e) => (
                       <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} showLevel />
                     ))}
@@ -737,17 +743,17 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
             </>
           ) : (
             <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+              <h2 className="text-section text-ink">
                 {cfg.kind === "voa"
                   ? `All ${main.length} Visa on Arrival Countries for ${cfg.peopleTitle} (2026)`
                   : `All ${main.length} Visa Free Countries for ${cfg.peopleTitle} (2026)`}
               </h2>
-              <p className="mt-2 text-sm text-ink-soft">
+              <p className="text-body mt-2 max-w-3xl text-ink-soft">
                 {cfg.kind === "voa"
                   ? `Alphabetical list of every country issuing ${cfg.people} a visa on arrival in 2026, with the maximum stay where officially published.`
                   : `Alphabetical list of every country ${cfg.people} can enter with just a passport in 2026, with the maximum stay where officially published.`}
               </p>
-              <ul className="mt-5 grid items-start gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className={LEDGER_GRID_UL}>
                 {main.map((e) => (
                   <DestCard key={e.dest} edge={e} condition={cfg.kind === "voa" ? voaCondition(e.notes ?? "") : firstSentence(e.notes ?? "")} nat={cfg.nat} natSlug={natSlug} />
                 ))}
@@ -758,8 +764,8 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
           {/* Cross-sell: what else the passport can do */}
           {cfg.kind === "visa_free" && usDelta.length > 0 && usList && (
             <section className="mt-12 max-w-3xl">
-              <h2 className="font-display text-2xl font-semibold text-ink">Beyond Visa Free: {usDelta.length} More with a US Visa</h2>
-              <p className="mt-2 text-base leading-relaxed text-ink-soft">
+              <h2 className="text-section text-ink">Beyond Visa Free: {usDelta.length} More with a US Visa</h2>
+              <p className="text-body mt-2 text-ink-soft">
                 If you hold a valid US visa, {dVf.length} additional countries become visa-free for {cfg.people} - including{" "}
                 {joinNames(pickNotable(dVf, ["MEX", "PER", "ARG", "SRB", "COL"], 4))} - and more open up on arrival or by e-visa.
                 See the full list:{" "}
@@ -771,8 +777,8 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
           )}
           {cfg.kind === "voa" && (
             <section className="mt-12 max-w-3xl">
-              <h2 className="font-display text-2xl font-semibold text-ink">No Visa at All: {vfCount} Visa Free Countries</h2>
-              <p className="mt-2 text-base leading-relaxed text-ink-soft">
+              <h2 className="text-section text-ink">No Visa at All: {vfCount} Visa Free Countries</h2>
+              <p className="text-body mt-2 text-ink-soft">
                 Before queueing at a border counter, remember that {cfg.people} can enter{" "}
                 <strong className="text-ink">{vfCount} countries with no visa whatsoever</strong> -{" "}
                 {vfList ? (
@@ -804,21 +810,21 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               {cfg.kind === "us_visa"
                 ? `Travelling with a US Visa: ${adj} Passport FAQ`
                 : cfg.kind === "voa"
                 ? `Visa on Arrival for ${cfg.peopleTitle}: FAQ`
                 : `Visa Free Travel for ${cfg.peopleTitle}: FAQ`}
             </h2>
-            <div className="mt-5 divide-y divide-line">
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {d.faqs.map(({ q, a }) => (
                 <details key={q} className="group py-1">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 mb-3 max-w-3xl text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 mb-3 max-w-3xl text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -832,16 +838,16 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
           />
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Check what your exact documents unlock
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Select your passport plus any visas or residence permits you hold - Earth Visa shows every destination you can enter, with conditions from official sources.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check visa requirements on Earth Visa →
             </Link>

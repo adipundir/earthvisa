@@ -241,6 +241,13 @@ const FAQS = [
   },
 ];
 
+// Ledger-row vocabulary (spec §12): compact rows inside a document card.
+const LEDGER_COL_OL = "card-doc mt-5 grid px-4 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-5 sm:gap-x-8 sm:px-5";
+const LEDGER_COL_LI = "border-t border-line first:border-t-0 sm:[&:nth-child(6)]:border-t-0";
+const LEDGER_GRID_OL = "card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
+const LEDGER_ROW_LI =
+  "border-t border-line first:border-t-0 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0";
+
 export default function VisaFeesRankingPage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -293,10 +300,10 @@ export default function VisaFeesRankingPage() {
 
       <main className="min-h-screen">
         {/* Header */}
-        <header className="border-b border-line-strong bg-paper-2/60">
+        <header className="bg-grid-paper border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
             {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/rankings" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Rankings</Link>
@@ -304,10 +311,9 @@ export default function VisaFeesRankingPage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Visa Fees</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 The Real Cost of a Tourist Visa
                 <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                   Fees Compared Across {TOTAL_DESTINATIONS} Destinations, 2026
@@ -319,19 +325,19 @@ export default function VisaFeesRankingPage() {
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Destinations ranked", v: String(rankedCount) },
                 { k: "Charge nothing", v: String(freeRows.length) },
                 { k: "Median fee (paid)", v: `$${medianPaid}` },
                 { k: "Data updated", v: fmtDate(feeUpdated) },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -339,7 +345,7 @@ export default function VisaFeesRankingPage() {
 
           {/* Intro - answers the core query up front */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               Passport-power rankings measure how many countries you can enter. This measures something no one else has
               indexed: <strong className="text-ink">what it costs</strong>. Across {rankedCount} destinations with a
               directly comparable, official published fee, {freeRows.length} charge nothing at all, the median paid fee
@@ -349,7 +355,7 @@ export default function VisaFeesRankingPage() {
               </Link>{" "}
               at {priciest.feeLabel}.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               Every figure is the destination&apos;s own lowest published rate for a standard adult tourist product - see
               the <a href="#methodology" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">methodology</a> for exactly what is (and isn&apos;t) counted.
               These schedules do move: Japan&apos;s first fee revision since 1978 took effect 1 July 2026 - see{" "}
@@ -361,24 +367,24 @@ export default function VisaFeesRankingPage() {
 
           {/* Free destinations */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               {freeRows.length} Destinations With No Tourist Visa Fee
             </h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               No visa fee, no e-visa charge, no arrival levy - just a passport, and in some cases a free digital arrival
               form. This is not the same as visa-free access for every nationality; it means the destination itself
               charges nothing for the product listed.
             </p>
-            <ol className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            <ol className={LEDGER_GRID_OL}>
               {freeRows.map((r) => (
-                <li key={r.iso3}>
+                <li key={r.iso3} className={LEDGER_ROW_LI}>
                   <Link
                     href={`/destination/${r.slug}`}
-                    className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                    className="group flex min-h-[44px] items-center gap-2.5 py-1 transition hover:bg-paper-2/50"
                   >
-                    <span className="text-xl">{r.flag}</span>
+                    <span className="text-lg leading-none">{r.flag}</span>
                     <span className="min-w-0 flex-1">
-                      <span className="block font-display text-sm font-medium text-ink transition group-hover:text-stamp">{r.name}</span>
+                      <span className="block truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{r.name}</span>
                       <span className="mono block text-[11px] text-ink-mute">{r.kindLabel}</span>
                     </span>
                     <span className="mono ml-auto shrink-0 text-sm font-semibold text-vfree">Free</span>
@@ -390,29 +396,29 @@ export default function VisaFeesRankingPage() {
 
           {/* Most expensive */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               The 10 Most Expensive Tourist Visas in 2026
             </h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Ranked by the destination&apos;s own lowest published standard-entry fee - some publish steeper rates for
               multiple-entry or expedited service, which are not counted here.
             </p>
-            <ol className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-5">
+            <ol className={LEDGER_COL_OL}>
               {priciest10.map((r) => (
-                <li key={r.iso3}>
+                <li key={r.iso3} className={LEDGER_COL_LI}>
                   <Link
                     href={`/destination/${r.slug}`}
-                    className="group flex min-h-[44px] flex-col rounded-sm border border-line bg-paper-2/70 px-3.5 py-3 transition hover:border-line-strong"
+                    className="group flex min-h-[52px] items-center gap-3 py-2 transition hover:bg-paper-2/50"
                   >
-                    <span className="mono text-[11px] font-medium uppercase tracking-[0.18em] text-stamp">#{r.rank}</span>
-                    <span className="mt-1.5 flex items-center gap-2">
-                      <span className="text-2xl">{r.flag}</span>
-                      <span className="font-display text-sm font-semibold text-ink transition group-hover:text-stamp">{r.name}</span>
+                    <span className="mono w-9 shrink-0 text-[13px] font-semibold tabular-nums text-stamp">#{r.rank}</span>
+                    <span className="text-lg leading-none">{r.flag}</span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{r.name}</span>
+                      <span className="mono block text-[11px] text-ink-mute">{r.kindLabel}</span>
                     </span>
-                    <span className="mono mt-2 text-lg font-semibold tabular-nums text-stamp">
+                    <span className="mono ml-auto shrink-0 text-lg font-semibold tabular-nums text-stamp">
                       ${r.feeUsd.toLocaleString()}
                     </span>
-                    <span className="mono mt-1 text-[11px] text-ink-mute">{r.kindLabel}</span>
                   </Link>
                 </li>
               ))}
@@ -421,10 +427,10 @@ export default function VisaFeesRankingPage() {
 
           {/* Full sortable table */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Full Visa Fee Comparison: {rankedCount} Destinations Ranked
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Click a column header to sort, or filter by country or region. Every row links to the destination&apos;s
               full fee breakdown and official source.
             </p>
@@ -432,7 +438,7 @@ export default function VisaFeesRankingPage() {
               <FeesTable rows={rows} />
             </div>
             {unrankedCount > 0 && (
-              <p className="mono mt-3 max-w-2xl text-[11px] leading-relaxed text-ink-mute">
+              <p className="mt-3 max-w-2xl text-[13px] leading-relaxed text-ink-mute">
                 {unrankedCount} further destinations aren&apos;t ranked here because no single official fee could be
                 confirmed - typically because the fee varies by requesting nationality on a reciprocity schedule, or
                 only a range/embassy-discretion figure is published. See each destination&apos;s own page for detail.
@@ -442,10 +448,10 @@ export default function VisaFeesRankingPage() {
 
           {/* Cheapest paid - the "you don't need $0 to travel cheap" complement to the free list */}
           <section className="mt-14 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Cheapest Paid Tourist Visas in 2026
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Just above free: {cheapestPaid.slice(0, 5).map((r) => `${r.name} ($${r.feeUsd})`).join(", ")}
               {cheapestPaid.length > 5 ? `, and ${cheapestPaid.slice(5).map((r) => `${r.name} ($${r.feeUsd})`).join(", ")}` : ""} round out
               the ten lowest confirmed paid fees - see the full table above for every destination in between.
@@ -454,24 +460,24 @@ export default function VisaFeesRankingPage() {
 
           {/* Regional patterns */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Visa Fees by Region
             </h2>
-            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Europe&apos;s median is driven almost entirely by the flat Schengen short-stay fee. The more striking
               pattern is Africa: its median published tourist-visa fee runs well above Asia&apos;s and Americas&apos;,
               despite far lower average incomes in many of its constituent countries - the same {"$"}50-100 fee is a
               very different share of a traveller&apos;s (or a visiting relative&apos;s) budget depending on where they&apos;re from.
             </p>
-            <div className="mt-5 overflow-x-auto rounded-sm border border-line">
+            <div className="card-doc mt-5 overflow-x-auto">
               <table className="w-full min-w-[560px] border-collapse text-left">
                 <thead>
                   <tr className="border-b border-line-strong bg-paper-2">
-                    <th scope="col" className="mono px-3.5 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-mute">Region</th>
-                    <th scope="col" className="mono px-3.5 py-2.5 text-right text-[11px] uppercase tracking-[0.15em] text-ink-mute">Destinations</th>
-                    <th scope="col" className="mono px-3.5 py-2.5 text-right text-[11px] uppercase tracking-[0.15em] text-ink-mute">Median fee</th>
-                    <th scope="col" className="mono px-3.5 py-2.5 text-right text-[11px] uppercase tracking-[0.15em] text-ink-mute">Charge nothing</th>
-                    <th scope="col" className="mono px-3.5 py-2.5 text-left text-[11px] uppercase tracking-[0.15em] text-ink-mute">Priciest</th>
+                    <th scope="col" className="mono-chrome px-3.5 py-2.5 text-left">Region</th>
+                    <th scope="col" className="mono-chrome px-3.5 py-2.5 text-right">Destinations</th>
+                    <th scope="col" className="mono-chrome px-3.5 py-2.5 text-right">Median fee</th>
+                    <th scope="col" className="mono-chrome px-3.5 py-2.5 text-right">Charge nothing</th>
+                    <th scope="col" className="mono-chrome px-3.5 py-2.5 text-left">Priciest</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-line">
@@ -492,10 +498,10 @@ export default function VisaFeesRankingPage() {
           {/* Hidden markup: VFS / outsourced application-centre fees */}
           {vfsInr.length > 0 && (
             <section className="mt-14">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+              <h2 className="text-section text-ink">
                 The Hidden Markup: Outsourced Application-Centre Fees
               </h2>
-              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+              <p className="text-body mt-2 max-w-3xl text-ink-soft">
                 {vfsUsedCount} destinations in this dataset outsource visa-application handling to a private company -
                 almost always VFS Global - which charges its own service fee, separately from and on top of the
                 government&apos;s visa fee above. That charge doesn&apos;t appear in most &quot;visa cost&quot; comparisons because
@@ -504,13 +510,13 @@ export default function VisaFeesRankingPage() {
                 the {vfsInr.length} below are reported from India-based application centres, so they&apos;re directly comparable
                 in one currency - a further {vfsClean.length - vfsInr.length} are confirmed in other local currencies on their own destination pages.
               </p>
-              <div className="mt-5 overflow-x-auto rounded-sm border border-line">
+              <div className="card-doc mt-5 overflow-x-auto">
                 <table className="w-full min-w-[520px] border-collapse text-left">
                   <thead>
                     <tr className="border-b border-line-strong bg-paper-2">
-                      <th scope="col" className="mono px-3.5 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-mute">Destination</th>
-                      <th scope="col" className="mono px-3.5 py-2.5 text-right text-[11px] uppercase tracking-[0.15em] text-ink-mute">Service fee</th>
-                      <th scope="col" className="mono px-3.5 py-2.5 text-left text-[11px] uppercase tracking-[0.15em] text-ink-mute">Operator</th>
+                      <th scope="col" className="mono-chrome px-3.5 py-2.5 text-left">Destination</th>
+                      <th scope="col" className="mono-chrome px-3.5 py-2.5 text-right">Service fee</th>
+                      <th scope="col" className="mono-chrome px-3.5 py-2.5 text-left">Operator</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-line">
@@ -531,7 +537,7 @@ export default function VisaFeesRankingPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="mono mt-3 text-[11px] leading-relaxed text-ink-mute">
+              <p className="mt-3 max-w-2xl text-[13px] leading-relaxed text-ink-mute">
                 All figures reported from India-based application centres for consistency of currency; the same
                 operator charges a different, locally-set fee at centres in other countries. Amounts are additional
                 to the destination&apos;s own visa fee in the ranking above, not a substitute for it.
@@ -541,29 +547,29 @@ export default function VisaFeesRankingPage() {
 
           {/* Methodology */}
           <section id="methodology" className="mt-14 max-w-3xl scroll-mt-24">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Methodology: How This Fee Comparison Is Built
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-3 text-ink-soft">
               Earth Visa crawled the <strong className="text-ink">official fee schedule</strong> published by each
               destination&apos;s own immigration authority, foreign ministry, or e-visa/eTA portal - not third-party
               visa-agency markups. The dataset was last refreshed <strong className="text-ink">{fmtDate(feeUpdated)}</strong>.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">For each destination we take the lowest amount among four tourist-facing products:</p>
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">For each destination we take the lowest amount among four tourist-facing products:</p>
+            <ul className="text-body mt-4 space-y-2 text-ink-soft">
               <li><strong className="text-ink">Tourist visa</strong> - a standard embassy/consulate-issued visa.</li>
               <li><strong className="text-ink">e-Visa</strong> - a full visa applied for and issued entirely online.</li>
               <li><strong className="text-ink">Visa on arrival</strong> - a visa issued at the border on landing.</li>
               <li><strong className="text-ink">eTA</strong> - an electronic travel authorisation or mandatory digital arrival form.</li>
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               We exclude business, transit and student/work visas (different product, different price), any fee without
               a published amount, and narrow-scope rates that don&apos;t reflect what a standard adult tourist pays - child
               and infant discounts, group/collective and family-passport rates, and one-off bilateral carve-outs for a
               single nationality. Amounts are converted to USD at the rate recorded at crawl time; native-currency figures
               are shown alongside on each destination&apos;s own page.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-4 text-ink-soft">
               {unrankedCount} destinations are left out of the ranking entirely because their fee genuinely isn&apos;t one
               number - it varies by the traveller&apos;s own nationality under a reciprocity schedule (common for embassy-issued
               visas), or only a range, &quot;contact embassy&quot;, or since-discontinued figure is published. Publishing a single
@@ -573,17 +579,17 @@ export default function VisaFeesRankingPage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Visa Fee Comparison 2026: FAQ
             </h2>
-            <div className="mt-5 divide-y divide-line">
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {FAQS.map(({ q, a }) => (
                 <details key={q} className="group py-1">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <svg viewBox="0 0 16 16" aria-hidden className="h-4 w-4 shrink-0 text-ink-mute transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
-                  <p className="mt-1 mb-3 max-w-3xl text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 mb-3 max-w-3xl text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -591,7 +597,7 @@ export default function VisaFeesRankingPage() {
 
           {/* Cross-link to the passport-power ranking */}
           <section className="mt-12 max-w-3xl">
-            <p className="text-sm leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               Fee is only half the story - see how many destinations your passport can reach without any visa at all in
               the{" "}
               <Link href="/rankings" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">
@@ -602,17 +608,17 @@ export default function VisaFeesRankingPage() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Check the exact fee for your passport
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Select your passport and a destination to see the visa type, fee, and documents required - sourced from
               official government pages.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check visa requirements on Earth Visa →
             </Link>

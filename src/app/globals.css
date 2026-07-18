@@ -31,23 +31,27 @@
   --color-bloc:  var(--bloc);
 }
 
-/* ── Light: clean white, neutral grays, two chromatic accents only ────────
+/* ── Light: warm paper ground, white document surfaces, two accents only ──
    Color discipline: the UI is neutrals + TWO accents.
      stamp (brand red)  = actions, links, "visa required"
      vfree (green)      = the single positive signal: "you can just go"
    All intermediate process states (voa / eta / evisa) share ONE neutral
-   slate - the label text differentiates them, not a rainbow. */
+   slate - the label text differentiates them, not a rainbow.
+   Ground system (design revamp): --paper is VISIBLY warm and runs
+   edge-to-edge behind every page; --card stays pure white and is reserved
+   for document surfaces (cards, inputs, tables) sitting ON the paper.
+   Never use --card / white as a full-width section band. */
 :root {
   color-scheme: light;
-  --paper:   #ffffff;
-  --paper-2: #f7f7f8;
-  --paper-3: #efeff1;
+  --paper:   #fbf8f2;
+  --paper-2: #f5f0e6;
+  --paper-3: #ebe5d7;
   --card:    #ffffff;
   --ink:       #171d2b;
   --ink-soft:  #434a59;
-  --ink-mute:  #5e6573; /* must clear 4.5:1 AA on all three paper tones - a11y-critical */
-  --line:        #e4e5e8;
-  --line-strong: #cfd1d6;
+  --ink-mute:  #5e6573; /* clears 4.5:1 AA on all three paper tones (worst: 4.66 on paper-3) - a11y-critical */
+  --line:        #e5e0d3; /* warm hairlines so rules sit in the paper, not on it */
+  --line-strong: #d1cab9;
   --stamp:      #b23528;
   --stamp-deep: #7c241d;
   --vfree: #2e6b44;
@@ -84,11 +88,20 @@
 
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
+/* Base body text: 15px mobile / 16px desktop at 1.6 - the readability floor.
+   (rem-based Tailwind utilities are unaffected: rem tracks <html>, not body.
+   Elements with explicit text-* classes keep their size; wave 2 migrates
+   those toward .text-body / the type-scale utilities below.) */
 body {
   position: relative;
   color: var(--ink);
   font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
   background: var(--paper);
+}
+@media (min-width: 640px) {
+  body { font-size: 16px; }
 }
 
 ::selection { background: var(--stamp); color: #ffffff; }
@@ -100,6 +113,155 @@ body {
 .font-display { font-family: var(--font-display), system-ui, sans-serif; }
 .font-mono    { font-family: var(--font-mono), ui-monospace, monospace; }
 .mono         { font-family: var(--font-mono), ui-monospace, monospace; }
+
+/* ══ Design-revamp foundation utilities (wave 1) ══════════════════════════
+   Shared vocabulary for all page templates. These are unlayered, so they
+   win over Tailwind utility classes - treat them as the system, don't
+   fight them with arbitrary values. Everything below has dark-mode parity
+   via the runtime tokens (and explicit .dark overrides where noted). */
+
+/* ── Type scale (spec §2) ── */
+/* Page H1. 30px @390px → 48px @1440px. Keep the italic red accent-word
+   pattern on marketing/tool pages (a nested <em class="text-stamp">). */
+.text-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(30px, 2.4vw + 20.6px, 48px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+}
+/* Section H2. 21px mobile → 27px desktop. */
+.text-section {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(21px, 0.6vw + 18.4px, 27px);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+}
+/* Sub-heading H3. */
+.text-sub {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+/* Body copy - matches the body element default; use to upgrade elements
+   that currently carry text-sm / text-[13px]. Pair with .measure for prose. */
+.text-body { font-size: 15px; line-height: 1.6; }
+@media (min-width: 640px) { .text-body { font-size: 16px; } }
+.measure { max-width: 68ch; }
+/* Mono chrome: labels / eyebrows / meta ONLY - never sentences. */
+.mono-chrome {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+}
+
+/* ── Section eyebrow (spec §4): mono label + short 32px rule fragment.
+   Replaces full-width hairline section openers (hairlines survive only
+   inside tables/ledgers). Use on the element that holds the label text. */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+}
+.eyebrow::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  flex: none;
+  background: var(--line-strong);
+}
+
+/* ── Spacing rhythm (spec §3): 40px mobile → 72px desktop section padding. */
+.section-pad { padding-block: clamp(40px, 3vw + 28.3px, 72px); }
+
+/* ── Paper-grid ground (spec §1): faint 24px graph grid for hero/section
+   grounds. Subtle by design - NEVER behind long body text. color-mix on
+   --ink flips it automatically in dark mode. */
+.bg-grid-paper {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Document card (spec §5): the signature surface. White, 1px strong
+   border, near-square 2px radius, NO shadow. Migrate every
+   "rounded-lg + gray border + white" card to this. */
+.card-doc {
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+}
+/* Key cards (verdict, stat tiles): subtle top rule in ink. */
+.card-doc-rule { border-top: 2px solid var(--ink); }
+/* Optional corner registration ticks (top-left + bottom-right). */
+.card-doc-ticks { position: relative; }
+.card-doc-ticks::before,
+.card-doc-ticks::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 0 solid var(--line-strong);
+  pointer-events: none;
+}
+.card-doc-ticks::before { top: 5px; left: 5px; border-top-width: 1px; border-left-width: 1px; }
+.card-doc-ticks::after { bottom: 5px; right: 5px; border-bottom-width: 1px; border-right-width: 1px; }
+
+/* ── Buttons (spec §6): primary = stamp-filled, secondary = stamp outline.
+   Mono uppercase 12px tracked, 44px min tap target. ONE primary per view. */
+.btn-stamp,
+.btn-stamp-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 20px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-align: center;
+  border: 1px solid var(--stamp);
+  border-radius: 2px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.btn-stamp { background: var(--stamp); color: #ffffff; }
+.btn-stamp:hover { background: var(--stamp-deep); border-color: var(--stamp-deep); }
+/* Dark --stamp fails AA under white text - filled buttons use the deep red
+   (white on #b23528 = 6.12:1); hover brightens the border as the affordance. */
+.dark .btn-stamp { background: var(--stamp-deep); border-color: var(--stamp-deep); }
+.dark .btn-stamp:hover { border-color: var(--stamp); }
+.btn-stamp-outline { background: transparent; color: var(--stamp); }
+.btn-stamp-outline:hover { background: color-mix(in srgb, var(--stamp) 8%, transparent); }
+
+/* ── Nav link rail: single-row horizontally scrollable strip (spec §13).
+   Scrollbar hidden; below xl a right-edge fade hints at overflow (the
+   24px padding keeps the last link clear of the fade at scroll end). */
+.nav-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-scroll::-webkit-scrollbar { display: none; }
+@media (max-width: 1279px) {
+  .nav-scroll {
+    padding-right: 24px;
+    mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent);
+  }
+}
 
 .rule-double {
   border-bottom: 1px solid var(--line-strong);

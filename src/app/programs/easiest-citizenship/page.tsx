@@ -219,7 +219,7 @@ export default function EasiestCitizenshipPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -229,9 +229,8 @@ export default function EasiestCitizenshipPage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Easiest Citizenship</span>
             </nav>
 
-            <div className="rule-double" />
 
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+            <h1 className="text-display mt-6 text-ink">
               Easiest Country to Get Citizenship 2026
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                 The Fastest Legal Routes, Ranked from the Data
@@ -241,7 +240,7 @@ export default function EasiestCitizenshipPage() {
               3 legal routes compared · official publications · data refreshed {lastUpdated}
             </p>
 
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "CBI programs (months)", v: String(dataset.cbi.length) },
                 { k: "Shortest residence path", v: `${fastestPathYears} yrs` },
@@ -251,19 +250,19 @@ export default function EasiestCitizenshipPage() {
                   v: `${fmtMoney(cbiPriced[0].min, "USD")}${isAnnouncedOnly(cbiPriced[0].p) ? " (announced)" : ""}`,
                 },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-base leading-relaxed text-ink-soft">
+            <p className="text-body text-ink-soft">
               &quot;Easiest&quot; means different things depending on what you are spending.{" "}
               <strong className="text-ink">Money:</strong> citizenship by investment grants a passport in months.{" "}
               <strong className="text-ink">Time:</strong> some countries publish residence-to-citizenship paths short
@@ -271,7 +270,7 @@ export default function EasiestCitizenshipPage() {
               naturalisation routes reward specific skills or contributions. Where a number is not published, we say
               so instead of inventing one.
             </p>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               Published timelines are eligibility minimums, not guarantees. Naturalisation everywhere adds language,
               physical presence and good-character conditions, and grants remain discretionary.
             </p>
@@ -279,15 +278,15 @@ export default function EasiestCitizenshipPage() {
 
           {/* Route 1: CBI */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Route 1 - Citizenship by Investment: Months, Not Years
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               The fastest legal route to a second passport, sorted by lowest published USD minimum; each entry shows
               what the passport is worth.
             </p>
             <div className="mono mt-3 flex flex-wrap items-center gap-2 text-[11px] text-ink-soft">
-              <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">
+              <span className="mono-chrome">
                 Fastest published processing
               </span>
               {timedCbi.map((p) => (
@@ -307,20 +306,20 @@ export default function EasiestCitizenshipPage() {
                   <Link
                     key={p.iso3}
                     href={`/passport/${nameToSlug(p.name)}`}
-                    className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                    className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5"
                   >
                     <span className="text-xl">{flagFor(p.iso3)}</span>
                     <div className="min-w-0">
                       <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
                         {p.name}
                       </span>
-                      <div className="mono text-[10px] text-ink-mute">
+                      <div className="mono text-[11px] text-ink-mute">
                         from {fmtMoney(min, "USD")}
                         {isAnnouncedOnly(p) ? " · announced" : ""}
                       </div>
                     </div>
                     {w && (
-                      <span className="mono ml-auto rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-vfree ring-1 ring-vfree/30">
+                      <span className="mono ml-auto rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-vfree ring-1 ring-vfree/30">
                         {w.visaFree} visa-free
                       </span>
                     )}
@@ -329,12 +328,12 @@ export default function EasiestCitizenshipPage() {
               })}
             </div>
             {cbiUnpriced.length > 0 && (
-              <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
+              <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
                 Also tracked, without a USD-published minimum (priced in other currencies or discretionary):{" "}
                 {cbiUnpriced.map((p) => p.name).join(", ")}.
               </p>
             )}
-            <p className="mt-4 text-sm text-ink-soft">
+            <p className="text-body mt-4 max-w-3xl text-ink-soft">
               Full comparison with every investment option and processing time:{" "}
               <Link
                 href="/programs/citizenship-by-investment"
@@ -347,21 +346,21 @@ export default function EasiestCitizenshipPage() {
 
           {/* Route 2: shortest residence paths */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Route 2 - Shortest Published Residence-to-Citizenship Paths
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               {pathRows.length} countries in our residency dataset publish a residence-to-citizenship timeline for at
               least one program. The shortest per country, ranked:
             </p>
-            <p className="mono mt-5 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+            <p className="mono-chrome mt-5 sm:hidden">
               Scroll sideways for all columns →
             </p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">
               <table className="w-full min-w-[560px] table-fixed border-collapse text-sm">
                 <PathCols />
                 <thead>
-                  <tr className="mono border-b border-line-strong text-left text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">
+                  <tr className="mono-chrome border-b border-line-strong text-left">
                     <th scope="col" className="py-2.5 pr-4 text-right font-medium">Path</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Country</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Program (shortest route)</th>
@@ -394,7 +393,7 @@ export default function EasiestCitizenshipPage() {
                 </div>
               </details>
             )}
-            <p className="mono mt-3 max-w-3xl text-[11px] leading-relaxed text-ink-mute">
+            <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
               Years shown are the published minimum residence before naturalisation eligibility for that program, per
               the official sources in our dataset. Programs our sources record as closed or abolished are excluded.
               Language, physical-presence and character requirements apply on top, and approval is discretionary.
@@ -404,17 +403,17 @@ export default function EasiestCitizenshipPage() {
           {/* Route 3: fast-track naturalisation */}
           {ftCitizenship.length > 0 && (
             <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+              <h2 className="text-section text-ink">
                 Route 3 - Fast-Track Naturalisation for Skills &amp; Contributions
               </h2>
-              <p className="mt-2 text-sm text-ink-soft">
+              <p className="text-body mt-2 max-w-3xl text-ink-soft">
                 {ftCitizenship.length === 1
                   ? "Accelerated naturalisation for specific profiles is rare - one route in our fast-track dataset currently qualifies:"
                   : "A small number of countries run accelerated naturalisation for specific profiles. From our fast-track dataset:"}
               </p>
               <div className={ftCitizenship.length === 1 ? "mt-5 max-w-xl" : "mt-5 grid gap-3 sm:grid-cols-2"}>
                 {ftCitizenship.map((f) => (
-                  <article key={`${f.iso3}-${f.program_name}`} className="rounded-sm border border-line bg-paper-2/70 p-4">
+                  <article key={`${f.iso3}-${f.program_name}`} className="card-doc p-4">
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">{flagFor(f.iso3)}</span>
                       <Link
@@ -439,10 +438,10 @@ export default function EasiestCitizenshipPage() {
 
           {/* Worth */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Easy to Get vs Worth Having: Passport Power Check
             </h2>
-            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               An easy citizenship is only a good deal if the passport delivers. Among CBI countries in our data,
               visa-free access ranges from{" "}
               <strong className="text-ink">{cbiWorth[cbiWorth.length - 1].w.visaFree}</strong> destinations (
@@ -470,15 +469,15 @@ export default function EasiestCitizenshipPage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Easiest Citizenship FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Easiest Citizenship FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -487,17 +486,17 @@ export default function EasiestCitizenshipPage() {
           <ProgramsNav current="/programs/easiest-citizenship" />
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Compare before you commit
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Select any passport on Earth Visa and see its full visa-free map, sourced from official government
               publications.
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Open the passport tool →
             </Link>

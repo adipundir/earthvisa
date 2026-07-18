@@ -92,14 +92,14 @@ export default function ProofOfFundsHub() {
       <main className="min-h-screen">
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-5xl px-5 pt-8 pb-10 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.15em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4">
               <Link href="/" className="transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden> / </span>
               <Link href="/guide" className="transition hover:text-ink">Guides</Link>
               <span aria-hidden> / </span>
               Proof of Funds
             </nav>
-            <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+            <h1 className="text-display text-ink">
               Proof of Funds for a Visa
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                 How much bank balance to show in 2026
@@ -131,23 +131,23 @@ export default function ProofOfFundsHub() {
           {/* Schengen per-country subsistence table - the centrepiece */}
           {schengen && schengen.official.per_member.length > 0 && (
             <section className="mb-14">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+              <h2 className="text-section text-ink">
                 Schengen visa: daily funds required, by country
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">
+              <p className="text-body mt-2 max-w-2xl text-ink-soft">
                 Each Schengen country sets its own official daily amount you must prove for the length of your stay.
                 Multiply the daily rate by your number of days for the official minimum.
               </p>
-              <p className="mono mt-4 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute sm:hidden">
+              <p className="mono-chrome mt-4 sm:hidden">
                 Swipe sideways for the notes column <span aria-hidden>→</span>
               </p>
-              <div className="mt-2 overflow-x-auto rounded-lg border border-line-strong sm:mt-5">
+              <div className="card-doc mt-2 overflow-x-auto sm:mt-5">
                 <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
                   <thead>
-                    <tr className="bg-paper-2/70 text-[11px] uppercase tracking-[0.1em] text-ink-mute">
-                      <th scope="col" className="px-4 py-2.5 font-medium">Country</th>
-                      <th scope="col" className="px-4 py-2.5 font-medium">Daily amount</th>
-                      <th scope="col" className="px-4 py-2.5 font-medium">Notes</th>
+                    <tr className="border-b border-line-strong bg-paper-2">
+                      <th scope="col" className="mono-chrome px-4 py-2.5">Country</th>
+                      <th scope="col" className="mono-chrome px-4 py-2.5">Daily amount</th>
+                      <th scope="col" className="mono-chrome px-4 py-2.5">Notes</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -164,15 +164,15 @@ export default function ProofOfFundsHub() {
                   </tbody>
                 </table>
               </div>
-              <p className="mono mt-2 text-[10px] font-medium uppercase tracking-[0.12em] text-ink-mute">
+              <p className="mono-chrome mt-2">
                 Checked {schengen.updated} · sourced directly from consulate publications
               </p>
             </section>
           )}
 
           {/* Per-visa cards */}
-          <h2 className="font-display text-2xl font-semibold text-ink">Proof of funds by visa</h2>
-          <p className="mt-2 max-w-2xl text-sm text-ink-soft">
+          <h2 className="text-section text-ink">Proof of funds by visa</h2>
+          <p className="text-body mt-2 max-w-2xl text-ink-soft">
             {records.length} major visas, each with the official rule and what applicants report.{" "}
             {noFigureCount} of the {records.length} publish no fixed figure at all - for those, officers assess your
             whole financial profile against the trip, and the community-reported range is the only number available.
@@ -187,21 +187,21 @@ export default function ProofOfFundsHub() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Proof of funds FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Proof of funds FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {FAQS.map(({ q, a }) => (
                 <details key={q} className="group py-1">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-[15px] font-medium text-ink">
                     {q}
                     <svg viewBox="0 0 16 16" aria-hidden className="h-4 w-4 shrink-0 text-ink-mute transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                   </summary>
-                  <p className="mt-1 mb-3 max-w-3xl text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 mb-3 max-w-3xl text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
           </section>
 
-          <p className="mt-10 text-sm text-ink-soft">
+          <p className="text-body mt-10 max-w-3xl text-ink-soft">
             Related:{" "}
             <Link href="/guide/schengen" className="text-stamp underline-offset-2 hover:underline">Schengen visa guide</Link>,{" "}
             <Link href="/rankings" className="text-stamp underline-offset-2 hover:underline">passport ranking 2026</Link>.

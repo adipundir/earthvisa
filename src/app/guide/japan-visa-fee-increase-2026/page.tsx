@@ -190,7 +190,7 @@ export default function JapanVisaFeeIncreaseGuidePage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
+            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <Link href="/guide" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Guides</Link>
@@ -198,10 +198,9 @@ export default function JapanVisaFeeIncreaseGuidePage() {
               <span className="inline-flex min-h-[44px] items-center text-ink">Japan Visa Fee Increase</span>
             </nav>
 
-            <div className="rule-double" />
 
             <div className="mt-6">
-              <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              <h1 className="text-display text-ink">
                 Japan Visa Fee Increase 2026
                 <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                   Old vs New Fees, Effective Date &amp; Who&apos;s Actually Exempt
@@ -213,19 +212,19 @@ export default function JapanVisaFeeIncreaseGuidePage() {
             </div>
 
             {/* Stats */}
-            <dl className="mono mt-6 grid grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-4 text-ink sm:grid-cols-4">
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Old single-entry fee", v: "¥3,000" },
                 { k: "New single-entry fee", v: "¥15,000" },
                 { k: "Increase", v: "~5× (400%)" },
                 { k: "Visa-exempt nationalities (unaffected)", v: visaFreeCount != null ? String(visaFreeCount) : "75" },
               ].map(({ k, v }) => (
-                <div key={k}>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">{k}</dt>
+                <div key={k} className="bg-card px-4 py-2.5">
+                  <dt className="mono-chrome">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
-            </dl>
+            </dl></div>
           </div>
         </header>
 
@@ -233,8 +232,8 @@ export default function JapanVisaFeeIncreaseGuidePage() {
 
           {/* What changed */}
           <section className="mt-10 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">What Actually Changed</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">What Actually Changed</h2>
+            <p className="text-body mt-3 text-ink-soft">
               On <strong className="text-ink">19 June 2026</strong>, Japan&apos;s Cabinet approved the first revision
               to its visa issuance fee schedule since <strong className="text-ink">1978</strong>. The new fees apply
               to visa applications submitted at Japanese embassies and consulates on or after{" "}
@@ -244,10 +243,10 @@ export default function JapanVisaFeeIncreaseGuidePage() {
               <table className="w-full min-w-[520px] border-collapse text-left">
                 <thead>
                   <tr className="border-b border-line-strong">
-                    <th scope="col" className="mono py-3 pr-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Category</th>
-                    <th scope="col" className="mono py-3 pr-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Old fee</th>
-                    <th scope="col" className="mono py-3 pr-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">New fee (from 1 Jul 2026)</th>
-                    <th scope="col" className="mono py-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Change</th>
+                    <th scope="col" className="mono-chrome py-3 pr-4">Category</th>
+                    <th scope="col" className="mono-chrome py-3 pr-4">Old fee</th>
+                    <th scope="col" className="mono-chrome py-3 pr-4">New fee (from 1 Jul 2026)</th>
+                    <th scope="col" className="mono-chrome py-3">Change</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-line">
@@ -266,7 +265,7 @@ export default function JapanVisaFeeIncreaseGuidePage() {
                 </tbody>
               </table>
             </div>
-            <p className="mono mt-5 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-5 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               <strong className="font-semibold text-ink">Note on USD figures:</strong> approximate, since JPY/USD
               moves - press coverage of this story has cited figures from roughly $18 to $93 depending on the
               exchange rate used on the day. The JPY amounts above are the fixed, official figures.
@@ -275,8 +274,8 @@ export default function JapanVisaFeeIncreaseGuidePage() {
 
           {/* Which categories */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Which Visa Categories This Affects</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Which Visa Categories This Affects</h2>
+            <p className="text-body mt-3 text-ink-soft">
               The fee rise is not limited to tourist visas. Of the {jpnTypes.length} Japan visa categories in our
               dataset, <strong className="text-ink">{singleEntryGroup.length} now cost JPY 15,000</strong> (the
               Temporary Visitor/tourist visa plus almost every work, student and family long-term category) and{" "}
@@ -285,7 +284,7 @@ export default function JapanVisaFeeIncreaseGuidePage() {
               </strong>.
             </p>
             {otherGroup.length > 0 && (
-              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft">
+              <ul className="text-body mt-4 space-y-2 text-ink-soft">
                 {otherGroup.map((t) => (
                   <li key={t.name} className="flex gap-3">
                     <span aria-hidden className="mono text-stamp">&rarr;</span>
@@ -305,10 +304,10 @@ export default function JapanVisaFeeIncreaseGuidePage() {
 
           {/* Not a new visa requirement */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               This Is a Fee Change, Not a New Visa Requirement
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <p className="text-body mt-3 text-ink-soft">
               Nothing about <em>who</em> needs a Japan visa has changed. Japan&apos;s visa-exemption list -{" "}
               <strong className="text-ink">{visaFreeCount ?? 75} countries and regions</strong> in our dataset -
               is set independently of this fee schedule and has not been altered by it. If your passport was
@@ -323,10 +322,10 @@ export default function JapanVisaFeeIncreaseGuidePage() {
           {/* Who is NOT affected */}
           {visaFreeSamples.length > 0 && (
             <section className="mt-12">
-              <h2 className="font-display text-2xl font-semibold text-ink">
+              <h2 className="text-section text-ink">
                 Who Is NOT Affected: Visa-Exempt Nationalities
               </h2>
-              <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+              <p className="text-body mt-2 max-w-3xl text-ink-soft">
                 Confirmed visa-free to Japan in our dataset - none of these pay the new fee for a short stay.
               </p>
               <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -334,16 +333,16 @@ export default function JapanVisaFeeIncreaseGuidePage() {
                   <Link
                     key={iso3}
                     href={`/passport/${nameToSlug(nameFor(iso3))}`}
-                    className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                    className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5"
                   >
                     <span className="text-xl">{flagFor(iso3)}</span>
                     <div className="min-w-0">
                       <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{nameFor(iso3)}</span>
                       {edge?.maxStayDays != null && (
-                        <div className="mono text-[10px] text-ink-mute">≤ {edge.maxStayDays} days visa-free</div>
+                        <div className="mono text-[11px] text-ink-mute">≤ {edge.maxStayDays} days visa-free</div>
                       )}
                     </div>
-                    <span className="mono ml-auto rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-vfree ring-1 ring-vfree/30">
+                    <span className="mono ml-auto rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-vfree ring-1 ring-vfree/30">
                       Visa-free
                     </span>
                   </Link>
@@ -354,8 +353,8 @@ export default function JapanVisaFeeIncreaseGuidePage() {
 
           {/* Indonesia / Thailand nuance */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">The ePassport Exception: Indonesia &amp; Thailand</h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">The ePassport Exception: Indonesia &amp; Thailand</h2>
+            <p className="text-body mt-3 text-ink-soft">
               A few nationalities sit in between - visa-free only under specific conditions. Indonesian and Thai
               citizens holding an <strong className="text-ink">ICAO-compliant ePassport</strong> registered under
               Japan&apos;s exemption scheme enter visa-free
@@ -370,10 +369,10 @@ export default function JapanVisaFeeIncreaseGuidePage() {
 
           {/* Who IS affected */}
           <section className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="text-section text-ink">
               Who IS Affected: Nationalities That Need a Japan Visa
             </h2>
-            <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               These nationalities require a visa for Japan today (confirmed by our dataset - no visa-free, on-arrival
               or e-visa access), so they are the travellers actually paying the new, higher fee. This is not the
               full list - see the{" "}
@@ -387,11 +386,11 @@ export default function JapanVisaFeeIncreaseGuidePage() {
                 <Link
                   key={nat}
                   href={`/passport/${nameToSlug(nameFor(nat))}/${nameToSlug(nameFor(JPN))}`}
-                  className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                  className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5"
                 >
                   <span className="text-xl">{flagFor(nat)}</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{nameFor(nat)}</span>
-                  <span className="mono ml-auto shrink-0 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                  <span className="mono ml-auto shrink-0 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
                     Visa required
                   </span>
                 </Link>
@@ -401,8 +400,8 @@ export default function JapanVisaFeeIncreaseGuidePage() {
 
           {/* Official sources */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Official Sources</h2>
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft">
+            <h2 className="text-section text-ink">Official Sources</h2>
+            <ul className="text-body mt-4 space-y-2 text-ink-soft">
               <li className="flex gap-3">
                 <span aria-hidden className="mono text-stamp">&rarr;</span>
                 <span>
@@ -425,7 +424,7 @@ export default function JapanVisaFeeIncreaseGuidePage() {
                 </span>
               </li>
             </ul>
-            <p className="mono mt-4 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
               MOFA and consulate pages sometimes block automated fetches; the fee figures on this page were
               corroborated across multiple official consulate fee schedules and immigration-law advisory sources
               (Fragomen, Newland Chase) before publishing.
@@ -434,15 +433,15 @@ export default function JapanVisaFeeIncreaseGuidePage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold text-ink">Japan Visa Fee Increase FAQ</h2>
-            <div className="mt-5 divide-y divide-line">
+            <h2 className="text-section text-ink">Japan Visa Fee Increase FAQ</h2>
+            <div className="card-doc mt-5 divide-y divide-line px-5">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
                     {q}
                     <Chevron />
                   </summary>
-                  <p className="mt-1 max-w-3xl pb-4 text-sm leading-relaxed text-ink-soft">{a}</p>
+                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
                 </details>
               ))}
             </div>
@@ -457,17 +456,17 @@ export default function JapanVisaFeeIncreaseGuidePage() {
 
           {/* Related */}
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-display text-2xl font-semibold text-ink">Related Guides</h2>
+            <h2 className="text-section text-ink">Related Guides</h2>
             <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
               <li>
-                <Link href="/guide/visa-types" className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong">
+                <Link href="/guide/visa-types" className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                   <span className="text-xl">📄</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">Visa types explained</span>
                   <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
                 </Link>
               </li>
               <li>
-                <Link href="/guide/transit-visa" className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong">
+                <Link href="/guide/transit-visa" className="card-doc group flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                   <span className="text-xl">✈️</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">Transit visa guide</span>
                   <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
@@ -477,11 +476,11 @@ export default function JapanVisaFeeIncreaseGuidePage() {
           </section>
 
           {/* CTA */}
-          <section className="mt-12 rounded-lg border border-line-strong bg-paper-2/40 px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-semibold text-ink">
+          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">
               Does your passport need a Japan visa at all?
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Check your passport&apos;s Japan access first - if you&apos;re visa-exempt, this fee increase doesn&apos;t
               touch you. See full entry rules and stay limits on the{" "}
               <Link href={`/destination/${nameToSlug(nameFor(JPN))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
@@ -490,7 +489,7 @@ export default function JapanVisaFeeIncreaseGuidePage() {
             </p>
             <Link
               href="/visit"
-              className="mono mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white"
+              className="btn-stamp mt-5"
             >
               Check your visa requirements →
             </Link>
