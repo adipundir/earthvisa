@@ -48,6 +48,11 @@ const GUIDES: { href: string; title: string; desc: string }[] = [
     title: "Japan Visa Fee Increase 2026",
     desc: "Japan's first fee revision since 1978, effective 1 July 2026: old vs new fees and who is exempt.",
   },
+  {
+    href: "/guide/thailand-visa-changes-2026",
+    title: "Thailand Visa Changes 2026",
+    desc: "The 60-day visa-free stay is being replaced by 30- and 15-day tiers - approved but not yet in force. Who lands where.",
+  },
 ];
 
 // Highest-demand per-nationality Schengen guides surfaced directly; the full

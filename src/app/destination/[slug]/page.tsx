@@ -525,6 +525,17 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               )}
             </p>
             )}
+            {destIso3 === "THA" && (
+              <p className="mt-4 rounded-lg border border-eta/30 bg-eta/[0.06] px-5 py-4 text-sm leading-relaxed text-ink-soft">
+                <strong className="text-ink">Approved change pending:</strong> Thailand&apos;s Cabinet (19 May 2026,
+                revised 14 July 2026) approved replacing the 60-day visa exemption with 30- and 15-day tiers and a
+                3-country visa on arrival. It is <strong className="text-ink">not in force yet</strong> - the rules
+                below apply until 15 days after Royal Gazette publication -{" "}
+                <Link href="/guide/thailand-visa-changes-2026" className="font-medium text-stamp underline-offset-2 hover:underline">
+                  see who lands in which tier
+                </Link>.
+              </p>
+            )}
           </section>
 
           {/* Visa-free nationalities */}
