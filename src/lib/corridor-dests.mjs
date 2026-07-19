@@ -33,6 +33,10 @@ export const FORCE_CORRIDORS = new Set([
   "USA|BFA", "USA|CAF", "USA|COG", "USA|DZA", "USA|ERI", "USA|LBR", "USA|NER",
   "USA|NRU", "USA|IRN", "USA|PRK", "USA|RUS", "USA|SDN", "USA|TCD", "USA|TKM",
   "USA|YEM", "USA|CHN",
+  // Mexico -> USA: visa-required with no VFS pair, but a top corridor for a
+  // top audience; carries a researched advance note (B-1/B-2 process + Border
+  // Crossing Card DSP-150) so the page is genuinely differentiated.
+  "MEX|USA",
 ]);
 
 // Memoized per dataset object: credential-unlock destinations by nationality
