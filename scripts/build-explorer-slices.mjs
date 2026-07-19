@@ -36,6 +36,16 @@ const write = (rel, obj) => {
   return json.length;
 };
 
+// Global passport rank (#N of 199) by total reach - MUST match the sort in
+// src/app/rankings/page.tsx buildRows() exactly (total edges descending,
+// stable over dataset order) so the landing chip agrees with /rankings.
+const ranks = Object.fromEntries(
+  Object.entries(dataset.passportAccess)
+    .map(([iso3, edges]) => [iso3, edges.length])
+    .sort((a, b) => b[1] - a[1])
+    .map(([iso3], i) => [iso3, i + 1]),
+);
+
 // ---- core.json (eager, must stay small - it blocks explorer first paint) ----
 const coreBytes = write("core.json", {
   allCountries: dataset.allCountries,
@@ -45,6 +55,7 @@ const coreBytes = write("core.json", {
   diplomaticAny: dataset.diplomaticAny,
   // passports that have any derived visa-policy edges (geo auto-detect gate)
   passportsWithPolicy: Object.keys(dataset.passportAccess),
+  ranks,
 });
 if (coreBytes > 300_000) {
   console.error(`  ✗ explorer core.json is ${coreBytes} bytes (budget 300KB) - move the offending field to a lazy slice.`);

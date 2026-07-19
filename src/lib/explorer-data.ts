@@ -39,6 +39,8 @@ export interface ExplorerCore {
   diplomaticAny: AccessEdge[];
   /** passports with any derived visa-policy edges (geo auto-detect gate) */
   passportsWithPolicy: string[];
+  /** global rank by total reach (#N of allCountries.length) - matches /rankings */
+  ranks: Record<string, number>;
 }
 
 interface ExplorerPrograms {

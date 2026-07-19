@@ -87,59 +87,35 @@ export default function Home() {
         }}
       />
 
-      {/* ── Tool-first hero (spec §10): copy left, the checker itself right.
-          The hero band + tool card live inside PassportExplorer so the tool
-          state stays client-side while this copy stays server-rendered. ── */}
-      <PassportExplorer
-        hero={
-          <div className="lg:pt-2">
-            <p className="mono text-[11px] font-medium uppercase tracking-[0.22em] text-stamp">
-              {/* tail hidden on mobile so the kicker never wraps to a lone word */}
-              Official government sources<span className="hidden sm:inline"> · nothing else</span>
-            </p>
-            <h1 className="text-display mt-4 max-w-3xl text-ink">
-              What can your passport <span className="italic text-stamp">actually</span>&nbsp;do?
-            </h1>
-            <p className="text-body mt-4 max-w-xl text-ink-soft">
-              Every visa-free country, fee and entry rule for your passport - and what a US or
-              Schengen visa in it unlocks on top.
-            </p>
-            <p className="mono-chrome mt-6 hidden sm:block">
-              {meta.countriesWithData} passports · {meta.destinationsWithVisaPolicy} visa policies
-            </p>
-          </div>
-        }
-      />
+      {/* The instrument. Empty: one question + one input, full viewport.
+          Selected: the same page becomes the answer grid. */}
+      <PassportExplorer />
 
-      {/* ── Most-checked corridors + deeper entry points ── */}
+      {/* ── Below the fold: most-checked routes + deeper entry points ── */}
       <section>
-        <div className="mx-auto w-full max-w-6xl px-5 pb-14 pt-4 sm:px-8">
-          <h2 className="eyebrow">Most checked routes</h2>
+        <div className="mx-auto w-full max-w-6xl border-t border-hair px-5 pb-16 pt-12 sm:px-8">
+          <h2 className="text-[15px] font-semibold text-ink">Most checked routes</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {POPULAR_CORRIDORS.map((c) => (
-              <Link
-                key={c.href}
-                href={c.href}
-                className="mono inline-flex min-h-[40px] items-center gap-2 rounded-[2px] border border-line-strong bg-card px-3.5 py-1.5 text-[12.5px] text-ink-soft transition hover:border-stamp hover:text-stamp"
-              >
+              <Link key={c.href} href={c.href} className="chip">
                 <span aria-hidden="true">{c.flag}</span>
-                {c.from} <span aria-hidden="true" className="text-ink-mute">→</span> {c.to}
+                {c.from} <span aria-hidden="true" className="text-ink-3">→</span> {c.to}
               </Link>
             ))}
           </div>
 
-          <div className="mt-12 grid gap-x-10 gap-y-5 sm:grid-cols-3">
+          <div className="mt-14 grid gap-x-10 gap-y-6 sm:grid-cols-3">
             <Link href="/rankings" className="group">
-              <p className="text-sub text-ink transition group-hover:text-stamp">Passport Ranking {dataYear} <span aria-hidden="true">→</span></p>
-              <p className="mt-1 text-[15px] leading-relaxed text-ink-soft">All {meta.countriesWithData} passports ranked by real reach.</p>
+              <p className="text-[16.5px] font-semibold text-ink transition group-hover:text-accent">Passport Ranking {dataYear} <span aria-hidden="true">→</span></p>
+              <p className="mt-1 text-[14.5px] leading-relaxed text-ink-2">All {meta.countriesWithData} passports ranked by real reach.</p>
             </Link>
             <Link href="/guide/visa-types" className="group">
-              <p className="text-sub text-ink transition group-hover:text-stamp">Visa types, explained <span aria-hidden="true">→</span></p>
-              <p className="mt-1 text-[15px] leading-relaxed text-ink-soft">Visa-free vs on arrival vs eTA vs e-visa - one plain-language glossary.</p>
+              <p className="text-[16.5px] font-semibold text-ink transition group-hover:text-accent">Visa types, explained <span aria-hidden="true">→</span></p>
+              <p className="mt-1 text-[14.5px] leading-relaxed text-ink-2">Visa-free vs on arrival vs eTA vs e-visa - one plain-language glossary.</p>
             </Link>
             <Link href="/earthling" className="group">
-              <p className="text-sub text-ink transition group-hover:text-stamp">How far can you go? <span aria-hidden="true">→</span></p>
-              <p className="mt-1 text-[15px] leading-relaxed text-ink-soft">Claim your Earthling ID and take a seat on the leaderboard.</p>
+              <p className="text-[16.5px] font-semibold text-ink transition group-hover:text-accent">How far can you go? <span aria-hidden="true">→</span></p>
+              <p className="mt-1 text-[14.5px] leading-relaxed text-ink-2">Claim your Earthling ID and take a seat on the leaderboard.</p>
             </Link>
           </div>
         </div>
@@ -147,17 +123,16 @@ export default function Home() {
 
       {/* ── FAQ ── */}
       <section>
-        <div className="mx-auto w-full max-w-6xl px-5 pb-16 pt-2 sm:px-8">
-          <p className="eyebrow">FAQ</p>
-          <h2 className="text-section mt-3 text-ink">Frequently asked questions</h2>
-          <div className="mt-5 divide-y divide-line">
+        <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
+          <h2 className="text-[22px] font-bold tracking-tight text-ink">Frequently asked questions</h2>
+          <div className="mt-4 divide-y divide-hair border-y border-hair">
             {faq.map(({ q, a }) => (
               <details key={q} className="group py-1">
-                <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-4 py-3 font-display text-[15px] font-medium text-ink">
+                <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-4 py-3 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
                   {q}
-                  <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform duration-150 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 text-ink-3 transition-transform duration-150 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </summary>
-                <p className="text-body measure mt-3 pb-3 text-ink-soft">{a}</p>
+                <p className="measure mt-1 pb-4 text-[15px] leading-relaxed text-ink-2">{a}</p>
               </details>
             ))}
           </div>

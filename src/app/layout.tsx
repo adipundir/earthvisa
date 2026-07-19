@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
@@ -8,16 +8,13 @@ import Script from "next/script";
 import { dataset } from "@/lib/dataset";
 const TOTAL_PASSPORTS = dataset.allCountries.length;
 
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
+// The single sitewide family (design system v2): Archivo variable, with the
+// width axis so display type can run wide (font-stretch up to 125%).
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  axes: ["wdth"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -79,7 +76,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {/* Theme init BEFORE paint: .dark from localStorage, else system. */}
@@ -152,7 +149,7 @@ export default function RootLayout({
           }}
         />
         <a href="#main" className="skip-link">Skip to main content</a>
-        <Navbar lastUpdated={dataset.meta.lastUpdated} />
+        <Navbar />
         <div id="main" tabIndex={-1} className="flex flex-1 flex-col outline-none">
           {children}
         </div>

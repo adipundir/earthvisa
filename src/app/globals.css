@@ -1,23 +1,47 @@
 @import "tailwindcss";
 
+/* ════════════════════════════════════════════════════════════════════════════
+   Earth Visa — Design System v2 "Instrument" (see DESIGN-SYSTEM.md)
+   Cool near-white ground, white surfaces, hairlines. One family: Archivo.
+   Exactly three non-neutral colors, each with ONE job:
+     accent  #2036E8  electric blue  — actions, links, focus, interactive
+     verdict #0E7F41  green         — visa-free / positive signals ONLY
+     change  #D9251C  red           — pending-change / negative data ONLY
+   ════════════════════════════════════════════════════════════════════════════ */
+
 /* Class-strategy dark mode: `.dark` on <html> (set pre-paint by the inline
    script in layout.tsx, persisted in localStorage, defaults to system). */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* All color tokens resolve through runtime CSS variables so the entire
-   palette swaps with the .dark class - utilities compile to var() references,
-   never baked-in hex. Add new colors here AND in both palettes below. */
+/* All color tokens resolve through runtime CSS variables so the palette swaps
+   with the .dark class - utilities compile to var() references, never hex.
+   LEGACY names (paper/card/ink-soft/stamp/vfree…) are kept and re-pointed at
+   the new palette so the ~30 unmigrated templates stay presentable; NEW code
+   must use the v2 names (ground/surface/hair/ink-2/accent/verdict/change). */
 @theme inline {
-  --font-display: var(--font-plex-sans);
-  --font-body: var(--font-plex-sans);
-  --font-mono: var(--font-plex-mono);
+  --font-display: var(--font-archivo);
+  --font-body: var(--font-archivo);
+  /* v2 has NO mono anywhere - legacy .font-mono/.mono resolve to Archivo too */
+  --font-mono: var(--font-archivo);
 
+  /* ── v2 names ── */
+  --color-ground:  var(--paper);
+  --color-surface: var(--card);
+  --color-hair:        var(--line);
+  --color-hair-strong: var(--line-strong);
+  --color-ink:    var(--ink);
+  --color-ink-2:  var(--ink-2);   /* secondary #525E6E - AA on all grounds */
+  --color-ink-3:  var(--ink-3);   /* muted #8A94A2 - large/meta only */
+  --color-accent:      var(--stamp);
+  --color-accent-deep: var(--stamp-deep);
+  --color-verdict: var(--vfree);
+  --color-change:  var(--change);
+
+  /* ── legacy names (unmigrated templates) ── */
   --color-paper:   var(--paper);
   --color-paper-2: var(--paper-2);
   --color-paper-3: var(--paper-3);
-  /* elevated surfaces (cards, inputs, modals) - white in light, raised near-black in dark */
   --color-card:    var(--card);
-  --color-ink:       var(--ink);
   --color-ink-soft:  var(--ink-soft);
   --color-ink-mute:  var(--ink-mute);
   --color-line:        var(--line);
@@ -31,67 +55,64 @@
   --color-bloc:  var(--bloc);
 }
 
-/* ── Light: warm paper ground, white document surfaces, two accents only ──
-   Color discipline: the UI is neutrals + TWO accents.
-     stamp (brand red)  = actions, links, "visa required"
-     vfree (green)      = the single positive signal: "you can just go"
-   All intermediate process states (voa / eta / evisa) share ONE neutral
-   slate - the label text differentiates them, not a rainbow.
-   Ground system (design revamp): --paper is VISIBLY warm and runs
-   edge-to-edge behind every page; --card stays pure white and is reserved
-   for document surfaces (cards, inputs, tables) sitting ON the paper.
-   Never use --card / white as a full-width section band. */
+/* ── Light (the primary mode - daylight consumer utility) ──────────────── */
 :root {
   color-scheme: light;
-  --paper:   #fbf8f2;
-  --paper-2: #f5f0e6;
-  --paper-3: #ebe5d7;
-  --card:    #ffffff;
-  --ink:       #171d2b;
-  --ink-soft:  #434a59;
-  --ink-mute:  #5e6573; /* clears 4.5:1 AA on all three paper tones (worst: 4.66 on paper-3) - a11y-critical */
-  --line:        #e5e0d3; /* warm hairlines so rules sit in the paper, not on it */
-  --line-strong: #d1cab9;
-  --stamp:      #b23528;
-  --stamp-deep: #7c241d;
-  --vfree: #2e6b44;
-  --voa:   #4a5160;
-  --eta:   #4a5160;
-  --evisa: #4a5160;
-  --bloc:  #b23528;
+  --paper:   #F6F7F9;  /* ground */
+  --paper-2: #EEF1F4;  /* raised neutral (legacy hover fills, required tiles) */
+  --paper-3: #E5E9EE;
+  --card:    #FFFFFF;  /* surface */
+  --ink:      #0B0E14;
+  --ink-2:    #525E6E; /* secondary - AA (6.0:1) on ground */
+  --ink-3:    #8A94A2; /* muted - large/meta only (fails AA small) */
+  --ink-soft: #3D4753; /* legacy secondary text - darker so old 13px text stays AA */
+  --ink-mute: #525E6E; /* legacy meta text - mapped to AA-safe secondary */
+  --line:        #E2E6EB;
+  --line-strong: #D3D9E0;
+  --stamp:      #2036E8; /* legacy action color → v2 accent blue */
+  --stamp-deep: #1526C4;
+  --vfree:  #0E7F41;
+  --change: #D9251C;
+  --voa:   #4A5568;    /* legacy process-state slate (label text differentiates) */
+  --eta:   #4A5568;
+  --evisa: #4A5568;
+  --bloc:  #2036E8;
+  /* tile fills (destination grid) */
+  --fill-verdict: #E4F3EA;  /* green tint - visa-free */
+  --fill-online:  #E8ECFD;  /* blue tint - eTA / e-visa */
 }
 
-/* ── Dark: neutral black surfaces (no blue cast), lifted accents for AA ──── */
+/* ── Dark: cool near-black, same hue logic, accents lifted for AA ───────── */
 .dark {
   color-scheme: dark;
-  --paper:   #0b0c0e;
-  --paper-2: #141517;
-  --paper-3: #1d1e22;
-  --card:    #17181c;
-  --ink:       #eaebed;
-  --ink-soft:  #b4b7bd;
-  --ink-mute:  #8b8f97;
-  --line:        #26272c;
-  --line-strong: #3a3c42;
-  /* stamp/bloc are TEXT accents in dark: #d66555 clears 4.5:1 AA on every dark
-     surface (paper 5.45, paper-2 5.09, paper-3 4.64, card 4.94). It is too
-     light to sit under white text - white-on-red surfaces must use
-     --stamp-deep instead (white on #b23528 = 6.12:1); see overrides below. */
-  --stamp:      #d66555;
-  --stamp-deep: #b23528;
-  --vfree: #58b17f;
-  --voa:   #a3a7b0;
-  --eta:   #a3a7b0;
-  --evisa: #a3a7b0;
-  --bloc:  #d66555;
+  --paper:   #0B0E14;
+  --paper-2: #151A22;
+  --paper-3: #1D242E;
+  --card:    #10151D;
+  --ink:      #F2F4F7;
+  --ink-2:    #9AA4B2;
+  --ink-3:    #6E7887;
+  --ink-soft: #B6BEC9;
+  --ink-mute: #9AA4B2;
+  --line:        #222933;
+  --line-strong: #333C48;
+  /* #8E9BFF clears 4.5:1 as text on every dark surface; filled buttons keep
+     the saturated blue (white on #2036E8 = 7.6:1) via --stamp-deep. */
+  --stamp:      #8E9BFF;
+  --stamp-deep: #2036E8;
+  --vfree:  #4EC07E;
+  --change: #FF6B61;
+  --voa:   #9AA4B2;
+  --eta:   #9AA4B2;
+  --evisa: #9AA4B2;
+  --bloc:  #8E9BFF;
+  --fill-verdict: #12271B;
+  --fill-online:  #171D33;
 }
 
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
-/* Base body text: 15px mobile / 16px desktop at 1.6 - the readability floor.
-   (rem-based Tailwind utilities are unaffected: rem tracks <html>, not body.
-   Elements with explicit text-* classes keep their size; wave 2 migrates
-   those toward .text-body / the type-scale utilities below.) */
+/* Base body text: 16px/1.6 (15px on small screens). */
 body {
   position: relative;
   color: var(--ink);
@@ -105,73 +126,176 @@ body {
 }
 
 ::selection { background: var(--stamp); color: #ffffff; }
-/* Dark --stamp is tuned as a text accent and fails AA under white text -
-   white-on-red surfaces swap to the deeper red in dark mode. */
 .dark ::selection { background: var(--stamp-deep); }
 .dark .skip-link { background: var(--stamp-deep); }
 
 .font-display { font-family: var(--font-display), system-ui, sans-serif; }
-.font-mono    { font-family: var(--font-mono), ui-monospace, monospace; }
-.mono         { font-family: var(--font-mono), ui-monospace, monospace; }
+/* v2: no mono anywhere. Legacy mono call sites render Archivo with tabular
+   figures so numeric columns keep their alignment. */
+.font-mono { font-family: var(--font-mono), system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+.mono      { font-family: var(--font-mono), system-ui, sans-serif; font-variant-numeric: tabular-nums; }
 
-/* ══ Design-revamp foundation utilities (wave 1) ══════════════════════════
-   Shared vocabulary for all page templates. These are unlayered, so they
-   win over Tailwind utility classes - treat them as the system, don't
-   fight them with arbitrary values. Everything below has dark-mode parity
-   via the runtime tokens (and explicit .dark overrides where noted). */
+/* ══ v2 signature utilities ══════════════════════════════════════════════ */
 
-/* ── Type scale (spec §2) ── */
-/* Page H1. 30px @390px → 48px @1440px. Keep the italic red accent-word
-   pattern on marketing/tool pages (a nested <em class="text-stamp">). */
+/* Display question ("Where can you go?") - Google-homepage scale. */
+.text-question {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(42px, 7.2vw, 84px);
+  font-weight: 800;
+  font-stretch: 115%;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+/* Verdict display type (green "Visa-free" / ink "Visa required").
+   NOT named .text-verdict: that must stay the Tailwind color utility. */
+.verdict-word {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(58px, 10vw, 150px);
+  font-weight: 850;
+  font-stretch: 118%;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+}
+
+/* Giant-numeral stat cell (60 / ₹0 / 93 style). Pair with .stat-label. */
+.stat-num {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 800;
+  font-stretch: 116%;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.stat-label {
+  font-size: 14px;
+  font-weight: 550;
+  color: var(--ink-2);
+}
+
+/* The one input: large, white, hairline, blue focus ring. */
+.input-hero {
+  width: 100%;
+  height: 62px;
+  padding: 0 22px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input-hero::placeholder { color: var(--ink-3); font-weight: 450; }
+.input-hero:focus { border-color: var(--stamp); box-shadow: 0 0 0 3px color-mix(in srgb, var(--stamp) 18%, transparent); }
+@media (max-width: 640px) { .input-hero { height: 56px; font-size: 16.5px; padding: 0 18px; } }
+
+/* Destination-grid tile fills (pattern 3). Fill + a text label carry the
+   level (never color alone). Hover/focus ring is the action blue. */
+.tile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 8px 11px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+.tile:hover { border-color: var(--stamp); }
+.tile-free    { background: var(--fill-verdict); }
+.tile-voa     { background: var(--card); border-color: color-mix(in srgb, var(--vfree) 45%, transparent); }
+.tile-voa:hover { border-color: var(--stamp); }
+.tile-online  { background: var(--fill-online); }
+.tile-req     { background: var(--paper-2); }
+
+/* Floating surfaces (dropdowns / dialogs) - the single allowed soft shadow. */
+.float-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 18px 44px -18px rgba(11, 14, 20, 0.25);
+}
+.dark .float-panel { box-shadow: 0 18px 44px -18px rgba(0, 0, 0, 0.7); }
+
+/* Quiet chip (context row, filters). Active state = blue. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 5px 13px;
+  font-size: 13.5px;
+  font-weight: 550;
+  color: var(--ink-2);
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  transition: color 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+.chip:hover { color: var(--ink); border-color: var(--ink-3); }
+.chip[aria-pressed="true"], .chip-active {
+  color: #ffffff;
+  background: var(--stamp-deep);
+  border-color: var(--stamp-deep);
+}
+.dark .chip[aria-pressed="true"], .dark .chip-active { background: var(--stamp-deep); border-color: var(--stamp-deep); }
+
+/* ══ Legacy utilities — mapped into v2 so unmigrated templates stay
+   presentable (Phase 3 migrates them properly, then these shrink). ══════ */
+
+/* Page H1 (legacy pages). Archivo, same clamp scale. */
 .text-display {
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(30px, 2.4vw + 20.6px, 48px);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.12;
+  font-weight: 750;
+  font-stretch: 108%;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
-/* Section H2. 21px mobile → 27px desktop. */
+/* Legacy pages italicize an accent word inside H1s - italic Archivo at 750
+   reads poorly; neutralize to the accent color only. */
+.text-display em, .text-display i { font-style: normal; }
 .text-section {
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(21px, 0.6vw + 18.4px, 27px);
-  font-weight: 600;
-  letter-spacing: -0.005em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   line-height: 1.25;
 }
-/* Sub-heading H3. */
 .text-sub {
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.4;
 }
-/* Body copy - matches the body element default; use to upgrade elements
-   that currently carry text-sm / text-[13px]. Pair with .measure for prose. */
 .text-body { font-size: 15px; line-height: 1.6; }
 @media (min-width: 640px) { .text-body { font-size: 16px; } }
 .measure { max-width: 68ch; }
-/* Mono chrome: labels / eyebrows / meta ONLY - never sentences. */
+
+/* Legacy mono-caps meta chrome → small Archivo label (caps kept for layout
+   fit on unmigrated pages; v2 code must not use this class). */
 .mono-chrome {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 11px;
-  font-weight: 500;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.07em;
   color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
 }
 
-/* ── Section eyebrow (spec §4): mono label + short 32px rule fragment.
-   Replaces full-width hairline section openers (hairlines survive only
-   inside tables/ledgers). Use on the element that holds the label text. */
+/* Legacy section eyebrow: label + short rule fragment. */
 .eyebrow {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 11px;
-  font-weight: 500;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.07em;
   color: var(--ink-mute);
 }
 .eyebrow::after {
@@ -182,45 +306,23 @@ body {
   background: var(--line-strong);
 }
 
-/* ── Spacing rhythm (spec §3): 40px mobile → 72px desktop section padding. */
 .section-pad { padding-block: clamp(40px, 3vw + 28.3px, 72px); }
 
-/* ── Paper-grid ground (spec §1): faint 24px graph grid for hero/section
-   grounds. Subtle by design - NEVER behind long body text. color-mix on
-   --ink flips it automatically in dark mode. */
-.bg-grid-paper {
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
+/* Graph-paper ground is dead (v2: clean ground, no texture). */
+.bg-grid-paper { background-image: none; }
 
-/* ── Document card (spec §5): the signature surface. White, 1px strong
-   border, near-square 2px radius, NO shadow. Migrate every
-   "rounded-lg + gray border + white" card to this. */
+/* Legacy document card → v2 surface card: white, hairline, 12px radius. */
 .card-doc {
   background: var(--card);
-  border: 1px solid var(--line-strong);
-  border-radius: 2px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
 }
-/* Key cards (verdict, stat tiles): subtle top rule in ink. */
+/* Key-card top rule: keep as a quiet ink rule (matches v2 data-band language). */
 .card-doc-rule { border-top: 2px solid var(--ink); }
-/* Optional corner registration ticks (top-left + bottom-right). */
-.card-doc-ticks { position: relative; }
-.card-doc-ticks::before,
-.card-doc-ticks::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 0 solid var(--line-strong);
-  pointer-events: none;
-}
-.card-doc-ticks::before { top: 5px; left: 5px; border-top-width: 1px; border-left-width: 1px; }
-.card-doc-ticks::after { bottom: 5px; right: 5px; border-bottom-width: 1px; border-right-width: 1px; }
+/* Corner registration ticks are dead in v2. */
+.card-doc-ticks::before, .card-doc-ticks::after { content: none; }
 
-/* ── Buttons (spec §6): primary = stamp-filled, secondary = stamp outline.
-   Mono uppercase 12px tracked, 44px min tap target. ONE primary per view. */
+/* Legacy buttons → v2: blue action, sentence case, 8px radius. */
 .btn-stamp,
 .btn-stamp-outline {
   display: inline-flex;
@@ -229,28 +331,23 @@ body {
   gap: 8px;
   min-height: 44px;
   padding: 10px 20px;
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 650;
+  text-transform: none;
+  letter-spacing: 0;
   text-align: center;
-  border: 1px solid var(--stamp);
-  border-radius: 2px;
+  border: 1px solid var(--stamp-deep);
+  border-radius: 8px;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
-.btn-stamp { background: var(--stamp); color: #ffffff; }
-.btn-stamp:hover { background: var(--stamp-deep); border-color: var(--stamp-deep); }
-/* Dark --stamp fails AA under white text - filled buttons use the deep red
-   (white on #b23528 = 6.12:1); hover brightens the border as the affordance. */
-.dark .btn-stamp { background: var(--stamp-deep); border-color: var(--stamp-deep); }
-.dark .btn-stamp:hover { border-color: var(--stamp); }
-.btn-stamp-outline { background: transparent; color: var(--stamp); }
-.btn-stamp-outline:hover { background: color-mix(in srgb, var(--stamp) 8%, transparent); }
+.btn-stamp { background: var(--stamp-deep); color: #ffffff; }
+.btn-stamp:hover { background: var(--stamp); border-color: var(--stamp); }
+.dark .btn-stamp:hover { background: #3D51F0; border-color: #3D51F0; }
+.btn-stamp-outline { background: transparent; color: var(--stamp); border-color: color-mix(in srgb, var(--stamp) 45%, transparent); }
+.btn-stamp-outline:hover { background: color-mix(in srgb, var(--stamp) 8%, transparent); border-color: var(--stamp); }
 
-/* ── Nav link rail: single-row horizontally scrollable strip (spec §13).
-   Scrollbar hidden; below xl a right-edge fade hints at overflow (the
-   24px padding keeps the last link clear of the fade at scroll end). */
+/* Nav link rail: single-row horizontally scrollable strip. */
 .nav-scroll {
   overflow-x: auto;
   scrollbar-width: none;
@@ -263,24 +360,25 @@ body {
   }
 }
 
-.rule-double {
-  border-bottom: 1px solid var(--line-strong);
-  box-shadow: 0 3px 0 -2px var(--line-strong);
-}
+/* Legacy double ledger rule → single hairline. */
+.rule-double { border-bottom: 1px solid var(--line); box-shadow: none; }
 
+/* Legacy MRZ strip → quiet tracked Archivo (no mono in v2). */
 .mrz {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  letter-spacing: 0.18em;
+  font-family: var(--font-body), system-ui, sans-serif;
+  letter-spacing: 0.14em;
   word-break: break-all;
   line-height: 1.7;
+  font-variant-numeric: tabular-nums;
 }
 
+/* Legacy stamp badge → neutral outlined chip that inherits its text color
+   (utility color classes like text-vfree keep working). */
 .stamp {
-  border: 2px solid var(--stamp);
-  color: var(--stamp);
-  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+  border-radius: 6px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
 }
 
 .reveal    { opacity: 1; }
@@ -293,10 +391,10 @@ body {
   left: 0.5rem;
   z-index: 100;
   transform: translateY(-150%);
-  background: var(--stamp);
+  background: var(--stamp-deep);
   color: #ffffff;
   padding: 0.6rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
   transition: transform 0.15s ease;
@@ -304,11 +402,8 @@ body {
 .skip-link:focus { transform: translateY(0); outline: 2px solid #ffffff; outline-offset: 2px; }
 
 /* Visible focus ring for keyboard users across interactive elements.
-   NOTE: text inputs are intentionally excluded. Every search input in the app
-   shows focus via its own border (focus:border-*) or a focus-within wrapper;
-   adding an offset outline here stacks on top of that border and reads as a
-   double border. This rule is unlayered, so it would win over any Tailwind
-   focus-visible:outline-none utility on the input - hence the exclusion here. */
+   Text inputs are excluded: every search input shows focus via its own
+   border/ring (.input-hero, focus-within wrappers). */
 a:focus-visible,
 button:focus-visible,
 [role="option"]:focus-visible,
@@ -318,16 +413,14 @@ button:focus-visible,
   border-radius: 4px;
 }
 
-/* Summaries get a quieter focus treatment: Chromium flags <summary> as
-   :focus-visible even on mouse click, so the red ring above would wrap every
-   accordion row the user opens. The surface tint alone fails WCAG non-text
-   contrast (~1.1:1), so an inset stamp bar provides the >=3:1 indicator while
-   staying calm for mouse users. */
+/* Summaries: Chromium flags <summary> as :focus-visible on mouse click, so a
+   ring would wrap every opened accordion. Inset accent bar = the ≥3:1
+   indicator, calm for mouse users. */
 summary:focus-visible {
   outline: none;
-  background: var(--paper-3);
+  background: var(--paper-2);
   box-shadow: inset 3px 0 0 var(--stamp);
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 * { scrollbar-color: var(--line-strong) transparent; }
