@@ -83,6 +83,7 @@
   /* tile fills (destination grid) */
   --fill-verdict: #E4F3EA;  /* green tint - visa-free */
   --fill-online:  #E8ECFD;  /* blue tint - eTA / e-visa */
+  --fill-req:     #F8E4E1;  /* red tint - visa required */
 }
 
 /* ── Dark: cool near-black, same hue logic, accents lifted for AA ───────── */
@@ -115,6 +116,7 @@
   --online: #8E9BFF;
   --fill-verdict: #0C1F13;
   --fill-online:  #10142A;
+  --fill-req:     #26100D;
 }
 
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -215,7 +217,7 @@ body {
 .tile-voa     { background: var(--card); border-color: color-mix(in srgb, var(--vfree) 45%, transparent); }
 .tile-voa:hover { border-color: var(--stamp); }
 .tile-online  { background: var(--fill-online); }
-.tile-req     { background: var(--paper-2); }
+.tile-req     { background: var(--fill-req); }
 
 /* Floating surfaces (dropdowns / dialogs) - the single allowed soft shadow. */
 .float-panel {

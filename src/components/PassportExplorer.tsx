@@ -159,7 +159,7 @@ function tileSub(t: Tile): { text: string; cls: string; srPrefix?: string } {
     case "online":
       return { text: join(t.edge!.level === "eta" ? "eTA" : "eVisa", days, via), cls: "text-online" };
     case "req":
-      return { text: "Visa required", cls: "text-ink-3" };
+      return { text: "Visa required", cls: "text-change" };
   }
 }
 
@@ -474,7 +474,6 @@ export default function PassportExplorer() {
         {selected.map((iso3) => {
           const t = ptypes[iso3] ?? "ordinary";
           const isOpen = typeOpen === iso3;
-          const rank = core?.ranks[iso3];
           return (
             <span key={iso3} className="flex items-center gap-2">
               <span className="chip !gap-0 py-1 pl-3 pr-1.5 text-ink">
@@ -523,15 +522,6 @@ export default function PassportExplorer() {
                   className="ml-0.5 grid h-7 w-7 place-items-center rounded-full text-[15px] text-ink-3 transition hover:bg-ground hover:text-change"
                 >×</button>
               </span>
-              {rank != null && (
-                <Link
-                  href="/rankings"
-                  title={`${nameFor(iso3)} passport ranking`}
-                  className="text-[13px] font-medium tabular-nums text-ink-2 underline-offset-4 transition hover:text-accent hover:underline"
-                >
-                  #{rank}/{total}
-                </Link>
-              )}
             </span>
           );
         })}
@@ -613,6 +603,27 @@ export default function PassportExplorer() {
             </div>
           )}
         </span>
+
+        {/* Passport ranking: quiet meta, right side */}
+        {selected.some((iso3) => core?.ranks[iso3] != null) && (
+          <span className="ml-auto flex items-center gap-3">
+            {selected.map((iso3) => {
+              const rank = core?.ranks[iso3];
+              if (rank == null) return null;
+              return (
+                <Link
+                  key={iso3}
+                  href="/rankings"
+                  title={`${nameFor(iso3)} passport ranking`}
+                  className="inline-flex items-center gap-1.5 text-[13px] font-medium tabular-nums text-ink-2 underline-offset-4 transition hover:text-accent hover:underline"
+                >
+                  {selected.length > 1 && <span aria-hidden="true" className="text-[14px] leading-none">{flagFor(iso3)}</span>}
+                  #{rank}/{total}
+                </Link>
+              );
+            })}
+          </span>
+        )}
       </div>
 
       {autoDetected && selected.includes(autoDetected) && (

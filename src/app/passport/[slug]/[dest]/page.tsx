@@ -10,6 +10,7 @@ import { TOP_NATIONALITIES, TOP_DESTINATIONS, preWarmCorridorPairs, isUsefulCorr
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
 import { feesFor, relevantFees, variationFor, fmtFee } from "@/lib/fees";
 import { applicationNoteFor } from "@/lib/applicationNotes";
+import VisaTypeDialog, { type VisaTypeMeta } from "@/components/VisaTypeDialog";
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
@@ -586,61 +587,28 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
     : pMin == null || pMin === 0
       ? (pMax != null && pMax > 0 ? `up to ${pMax}d processing` : pMin === 0 ? "under 24h processing" : null)
       : `${pMin}${pMax != null && pMax !== pMin ? `-${pMax}` : ""}d processing`;
-  const hasDetail = !!v.notes || !!v.official_url;
-  // Compact-by-default (owner directive: the always-open note dumps were
-  // information overload). The card shows name + purpose + one meta row;
-  // the note bullets and official link live behind a Details disclosure.
-  const head = (
-    <>
-      <p className="text-[15px] font-semibold text-ink">{v.name}</p>
-      {v.purpose && <p className="mt-1 text-[14px] leading-snug text-ink-2 line-clamp-2">{v.purpose}</p>}
-      <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[13px] font-medium tabular-nums text-ink-2">
-        {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
-        {v.entries && <span>{v.entries} entry</span>}
-        {processing && <span>{processing}</span>}
-        {/* Suppress the rough USD figure when the official fee section above
-            already quotes the same fee - two conversions of one fee reads as an error. */}
-        {v.fee_usd != null && !suppressFee && (v.fee_usd === 0 ? <span className="text-verdict">free</span> : <span>~${v.fee_usd}</span>)}
-        {v.online && <span className="text-verdict">online</span>}
-      </div>
-    </>
-  );
-  if (!hasDetail) {
-    return <div className="rounded-xl border border-hair bg-surface px-4 py-3.5">{head}</div>;
-  }
+  // Compact-by-default (owner directive: no inline expansion - a compact card
+  // opens a dialog with the full record). The card shows name + purpose + one
+  // meta row; notes, validity and the official link live in the modal.
+  const meta: VisaTypeMeta[] = [];
+  if (v.max_stay_days != null) meta.push({ text: `${v.max_stay_days} days` });
+  if (v.entries) meta.push({ text: `${v.entries} entry` });
+  if (processing) meta.push({ text: processing });
+  // Suppress the rough USD figure when the official fee section above
+  // already quotes the same fee - two conversions of one fee reads as an error.
+  if (v.fee_usd != null && !suppressFee) meta.push(v.fee_usd === 0 ? { text: "free", tone: "verdict" } : { text: `~$${v.fee_usd}` });
+  if (v.online) meta.push({ text: "online", tone: "verdict" });
+  if (v.validity_days != null) meta.push({ text: `valid ${v.validity_days}d` });
   return (
-    <details className="group rounded-xl border border-hair bg-surface px-4 py-3.5">
-      <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-        {head}
-        <span className="mt-2 inline-flex items-center gap-1 text-[13px] font-semibold text-accent">
-          <span className="group-open:hidden">Details</span>
-          <span className="hidden group-open:inline">Less</span>
-          <svg viewBox="0 0 10 6" className="h-2 w-2 transition-transform group-open:rotate-180" fill="currentColor" aria-hidden="true"><path d="M0 0l5 6 5-6z" /></svg>
-        </span>
-      </summary>
-      {/* Notes holding 3+ discrete facts render as scannable bullets, not a
-          run-on paragraph; one- or two-sentence notes stay as prose. */}
-      {v.notes && (() => {
-        const sentences = splitSentences(v.notes);
-        return sentences.length >= 3 ? (
-          <ul className="mt-3 space-y-1.5 border-t border-hair pt-3">
-            {sentences.map((t, i) => (
-              <li key={i} className="flex gap-2 text-[14.5px] leading-relaxed text-ink-2">
-                <span aria-hidden="true" className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
-                <span className="min-w-0 break-words">{t}</span>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="mt-3 border-t border-hair pt-3 text-[14.5px] leading-relaxed text-ink-2">{v.notes}</p>
-        );
-      })()}
-      {v.official_url && (
-        <a href={v.official_url} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-accent underline-offset-2 hover:underline">
-          {isAdvisoryUrl(v.official_url) ? "Official advisory" : "Apply here"} ↗
-        </a>
-      )}
-    </details>
+    <VisaTypeDialog
+      name={v.name}
+      category={v.category.replace(/_/g, " ")}
+      purpose={v.purpose || undefined}
+      meta={meta}
+      sentences={v.notes ? splitSentences(v.notes) : []}
+      officialUrl={v.official_url || undefined}
+      officialLabel={v.official_url ? (isAdvisoryUrl(v.official_url) ? "Official advisory" : "Apply here") : undefined}
+    />
   );
 }
 
@@ -890,7 +858,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       case "e_visa": return { word: "e-Visa", cls: "text-online", sub: "Apply online - no embassy visit." };
       default: return travelBanned
         ? { word: "Suspended", cls: "text-ink", sub: "Ordinary tourist travel is currently not possible." }
-        : { word: "Visa required", cls: "text-ink", sub: "Apply before you travel." };
+        : { word: "Visa required", cls: "text-change", sub: "Apply before you travel." };
     }
   })();
 
@@ -1411,50 +1379,25 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 {/* The h2 renders whenever the section exists - otherwise the
                     jump chip "Visa types" lands on an unlabeled block. */}
                 <h2 className="text-[15px] font-semibold text-ink">{d.name} visa types</h2>
-                {showTourist && (
-                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    {touristTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
-                  </div>
-                )}
                 {otherTypes.length > 0 && (
-                  <details className={`group ${showTourist ? "mt-6" : "mt-4"}`}>
-                    <summary className="chip cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <span className="group-open:hidden">Other {d.name} visa categories ({otherTypes.length})</span>
-                      <span className="hidden group-open:inline">Hide other visa categories</span>
-                      <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    </summary>
-                    <p className="mt-3 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-                      Other reasons people travel to {d.name}. Eligibility varies by visa type - check each one&apos;s conditions on the official page.
-                    </p>
-                    {/* Compact index, not full cards: this catalog is
-                        destination-generic and identical on every corridor into
-                        {dest} - one ledger line per type keeps the categories
-                        discoverable without shipping the same multi-thousand-word
-                        blob on dozens of pages. */}
-                    <ul className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
-                      {otherTypes.map((v, i) => (
-                        <li key={i} className="flex min-h-[44px] flex-wrap items-baseline gap-x-3 gap-y-1 py-2.5">
-                          <span className="text-[14.5px] font-semibold text-ink">{v.name}</span>
-                          <span className="flex flex-wrap gap-x-3 text-[13px] font-medium tabular-nums text-ink-2">
-                            <span>{v.category.replace(/_/g, " ")}</span>
-                            {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
-                            {v.fee_usd != null && (v.fee_usd === 0 ? <span className="text-verdict">free</span> : <span>~${v.fee_usd}</span>)}
-                            {v.online && <span className="text-verdict">online</span>}
-                          </span>
-                          {v.official_url && (
-                            <a href={v.official_url} target="_blank" rel="noreferrer" className="ml-auto text-[13px] font-semibold text-accent underline-offset-2 hover:underline">
-                              {isAdvisoryUrl(v.official_url) ? "advisory" : "official"} ↗
-                            </a>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="mt-3 text-[14.5px]">
-                      <Link href={`/destination/${dest}`} className="font-semibold text-accent underline-offset-2 hover:underline">
-                        {d.name} visa policy, fees & entry rules in full →
-                      </Link>
-                    </p>
-                  </details>
+                  <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
+                    Every {d.name} visa category and its key facts. Eligibility varies by type - open a card for the conditions and the official page.
+                  </p>
+                )}
+                {/* All types listed as compact dialog cards (owner directive:
+                    "list all visas and their data" - no hidden collapse).
+                    Tourist/business/transit lead when this corridor needs a
+                    visa; the rest follow in catalog order. */}
+                <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {showTourist && touristTypes.map((v, i) => <VisaTypeCard key={`t${i}`} v={v} suppressFee={feeList.length > 0} />)}
+                  {otherTypes.map((v, i) => <VisaTypeCard key={`o${i}`} v={v} suppressFee={false} />)}
+                </div>
+                {otherTypes.length > 0 && (
+                  <p className="mt-4 text-[14.5px]">
+                    <Link href={`/destination/${dest}`} className="font-semibold text-accent underline-offset-2 hover:underline">
+                      {d.name} visa policy, fees & entry rules in full →
+                    </Link>
+                  </p>
                 )}
               </section>
             );
