@@ -1,1199 +1,1416 @@
 {
-  "iso2": "RW",
-  "iso3": "RWA",
-  "name": "Rwanda",
-  "region": "Africa",
-  "outbound_official": {
-    "found": true,
-    "source_url": "https://www.migration.gov.rw/1-1/sops-1",
+ "iso2": "RW",
+ "iso3": "RWA",
+ "name": "Rwanda",
+ "region": "Africa",
+ "outbound_official": {
+  "found": true,
+  "source_url": "https://www.migration.gov.rw/1-1/sops-1",
+  "source_official": true,
+  "asof": null,
+  "visa_free": [
+   {
+    "name": "Angola",
+    "iso3": "AGO"
+   },
+   {
+    "name": "Antigua and Barbuda",
+    "iso3": "ATG"
+   },
+   {
+    "name": "Bahamas",
+    "iso3": "BHS"
+   },
+   {
+    "name": "Barbados",
+    "iso3": "BRB"
+   },
+   {
+    "name": "Bangladesh",
+    "iso3": "BGD"
+   },
+   {
+    "name": "Benin",
+    "iso3": "BEN"
+   },
+   {
+    "name": "Burkina Faso",
+    "iso3": "BFA"
+   },
+   {
+    "name": "Burundi",
+    "iso3": "BDI"
+   },
+   {
+    "name": "Central African Republic",
+    "iso3": "CAF"
+   },
+   {
+    "name": "Chad",
+    "iso3": "TCD"
+   },
+   {
+    "name": "Cook Islands",
+    "iso3": "COK"
+   },
+   {
+    "name": "Democratic Republic of Congo",
+    "iso3": "COD"
+   },
+   {
+    "name": "Dominica",
+    "iso3": "DMA"
+   },
+   {
+    "name": "Dominican Republic",
+    "iso3": "DOM"
+   },
+   {
+    "name": "Ecuador",
+    "iso3": "ECU"
+   },
+   {
+    "name": "Federation of Saint Christopher and Nevis",
+    "iso3": "KNA"
+   },
+   {
+    "name": "Ghana",
+    "iso3": "GHA"
+   },
+   {
+    "name": "Grenada",
+    "iso3": "GRD"
+   },
+   {
+    "name": "Guinea",
+    "iso3": "GIN"
+   },
+   {
+    "name": "Guinea-Bissau",
+    "iso3": "GNB"
+   },
+   {
+    "name": "Haiti",
+    "iso3": "HTI"
+   },
+   {
+    "name": "Ivory Coast",
+    "iso3": "CIV"
+   },
+   {
+    "name": "Jordan",
+    "iso3": "JOR"
+   },
+   {
+    "name": "Kenya",
+    "iso3": "KEN"
+   },
+   {
+    "name": "Kiribati",
+    "iso3": "KIR"
+   },
+   {
+    "name": "Laos",
+    "iso3": "LAO"
+   },
+   {
+    "name": "Liberia",
+    "iso3": "LBR"
+   },
+   {
+    "name": "Mali",
+    "iso3": "MLI"
+   },
+   {
+    "name": "Maldives",
+    "iso3": "MDV"
+   },
+   {
+    "name": "Mauritius",
+    "iso3": "MUS"
+   },
+   {
+    "name": "Montserrat",
+    "iso3": "MSR"
+   },
+   {
+    "name": "Mozambique",
+    "iso3": "MOZ"
+   },
+   {
+    "name": "Niger",
+    "iso3": "NER"
+   },
+   {
+    "name": "Palau Islands",
+    "iso3": "PLW"
+   },
+   {
+    "name": "Qatar",
+    "iso3": "QAT"
+   },
+   {
+    "name": "Republic of Micronesia",
+    "iso3": "FSM"
+   },
+   {
+    "name": "Saint Vincent and Grenadines",
+    "iso3": "VCT"
+   },
+   {
+    "name": "Samoa",
+    "iso3": "WSM"
+   },
+   {
+    "name": "São Tomé and Príncipe",
+    "iso3": "STP"
+   },
+   {
+    "name": "Senegal",
+    "iso3": "SEN"
+   },
+   {
+    "name": "Seychelles",
+    "iso3": "SYC"
+   },
+   {
+    "name": "Singapore",
+    "iso3": "SGP"
+   },
+   {
+    "name": "Somalia",
+    "iso3": "SOM"
+   },
+   {
+    "name": "Tanzania",
+    "iso3": "TZA"
+   },
+   {
+    "name": "The Gambia",
+    "iso3": "GMB"
+   },
+   {
+    "name": "The Republic of Congo",
+    "iso3": "COG"
+   },
+   {
+    "name": "Uganda",
+    "iso3": "UGA"
+   },
+   {
+    "name": "Vanuatu",
+    "iso3": "VUT"
+   }
+  ],
+  "visa_on_arrival": [
+   {
+    "name": "Cape Verde Island",
+    "iso3": "CPV"
+   },
+   {
+    "name": "Djibouti",
+    "iso3": "DJI"
+   },
+   {
+    "name": "Ethiopia",
+    "iso3": "ETH"
+   },
+   {
+    "name": "Indonesia",
+    "iso3": "IDN"
+   },
+   {
+    "name": "Macao (SAR China)",
+    "iso3": "MAC"
+   },
+   {
+    "name": "Madagascar",
+    "iso3": "MDG"
+   },
+   {
+    "name": "Namibia",
+    "iso3": "NAM"
+   },
+   {
+    "name": "Nepal",
+    "iso3": "NPL"
+   },
+   {
+    "name": "Nicaragua",
+    "iso3": "NIC"
+   },
+   {
+    "name": "Niue",
+    "iso3": "NIU"
+   },
+   {
+    "name": "Philippines",
+    "iso3": "PHL"
+   },
+   {
+    "name": "Sierra Leone",
+    "iso3": "SLE"
+   },
+   {
+    "name": "Sri Lanka",
+    "iso3": "LKA"
+   },
+   {
+    "name": "Timor-Leste",
+    "iso3": "TLS"
+   },
+   {
+    "name": "Tuvalu",
+    "iso3": "TUV"
+   },
+   {
+    "name": "Zambia",
+    "iso3": "ZMB"
+   },
+   {
+    "name": "Zimbabwe",
+    "iso3": "ZWE"
+   },
+   {
+    "name": "South Sudan",
+    "iso3": "SSD"
+   }
+  ],
+  "e_visa": [],
+  "eta": [],
+  "notes": "Source: Rwanda Directorate General of Immigration and Emigration (migration.gov.rw), official 'List of countries that Rwandan passport holders travel visa free' page. The page groups destinations into 'Visa Not Required', 'Visa Upon Arrival', and 'Visa Free on Arrival' (South Sudan). South Sudan is placed under visa_on_arrival here as the page labels it 'Visa Free on Arrival' (a distinct sub-category from fully visa-not-required). No date stamp was present on the source page at time of retrieval (2026-06-14). No e-visa or ETA categories are listed on this official outbound page."
+ },
+ "visa_types": [
+  {
+   "category": "tourist",
+   "name": "Holiday/Tourism Visa (V1) - Single Entry",
+   "purpose": "For foreign nationals wishing to visit Rwanda for tourism, leisure or holiday purposes. Work is not permitted.",
+   "max_stay_days": 30,
+   "validity_days": 30,
+   "entries": "single",
+   "fee_usd": 50,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Fee is waived (free) for nationals of countries with bilateral visa waiver arrangements (AU, Commonwealth, La Francophonie members and specific 90-day free-visa countries). Status change permitted. Applications via irembo.gov.rw, diplomatic missions, or border entry points."
+  },
+  {
+   "category": "tourist",
+   "name": "Holiday/Tourism Visa (V1) - Multiple Entry",
+   "purpose": "For foreign nationals wishing to visit Rwanda for tourism, leisure or holiday purposes on multiple trips. Work is not permitted.",
+   "max_stay_days": 90,
+   "validity_days": 90,
+   "entries": "multiple",
+   "fee_usd": 70,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Fee is waived for eligible nationals (AU/Commonwealth/La Francophonie/bilateral waiver countries). Status change permitted."
+  },
+  {
+   "category": "tourist",
+   "name": "Group Tourist Visa (V8)",
+   "purpose": "For organized tourist groups of 4 to 10 persons visiting Rwanda together for leisure or tourism.",
+   "max_stay_days": 30,
+   "validity_days": 30,
+   "entries": "single",
+   "fee_usd": 150,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Fee of USD 150 covers the entire group of 4-10 tourists. Work not permitted."
+  },
+  {
+   "category": "tourist",
+   "name": "East African Tourist Visa (V11 / EATV)",
+   "purpose": "Regional multi-country tourist visa covering Rwanda, Kenya and Uganda with multiple entries for tourism across all three countries.",
+   "max_stay_days": 90,
+   "validity_days": 90,
+   "entries": "multiple",
+   "fee_usd": 100,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Valid for travel within Rwanda, Kenya, and Uganda. Governed by EAC regional agreement. Available at Rwandan diplomatic missions, border entry points, or via irembo.gov.rw."
+  },
+  {
+   "category": "transit",
+   "name": "Transit Visa (VT)",
+   "purpose": "For travelers transiting through Rwanda en route to a third destination.",
+   "max_stay_days": 3,
+   "validity_days": 3,
+   "entries": "single",
+   "fee_usd": 30,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/transit-visa",
+   "notes": "Valid for 72 hours maximum. Work not permitted. Status change not allowed. Free for nationals of countries with visa waiver arrangements. Available at entry points and via irembo.gov.rw."
+  },
+  {
+   "category": "transit",
+   "name": "Transit Visa - Unforeseen Circumstances (VE-2)",
+   "purpose": "For travelers stranded in Rwanda due to unforeseen circumstances such as flight cancellation, schedule changes, or bad weather.",
+   "max_stay_days": 3,
+   "validity_days": 3,
+   "entries": "single",
+   "fee_usd": 0,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/transit-visa",
+   "notes": "Free of charge. Issued at the border/airport when traveler is inconvenienced due to circumstances beyond their control. Valid for up to 72 hours. Work not permitted. Status change not allowed."
+  },
+  {
+   "category": "business",
+   "name": "Business Survey Visa (V6) - Single Entry",
+   "purpose": "For foreign nationals visiting Rwanda to survey business opportunities, conduct market research, or explore investment prospects.",
+   "max_stay_days": 90,
+   "validity_days": 90,
+   "entries": "single",
+   "fee_usd": 50,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Renewable once. Status change not allowed. Work not permitted during visit. Corrected: the official visitors-visa page's V6 tab states applications are made 'at the office of a diplomatic mission of Rwanda... at immigration and emigration office or at any other place as may be determined by the Directorate General' - it does NOT list border-post/arrival issuance the way most other visitor visas (V1, V2, V3-1, V5, V7, V11) explicitly do, so on_arrival is corrected from true to false."
+  },
+  {
+   "category": "business",
+   "name": "Business Survey Visa (V6) - Multiple Entry",
+   "purpose": "For foreign nationals making multiple visits to Rwanda to survey business opportunities, conduct market research, or explore investment prospects.",
+   "max_stay_days": 90,
+   "validity_days": 90,
+   "entries": "multiple",
+   "fee_usd": 70,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Renewable once. Status change not allowed. Work not permitted during visit. Corrected: the official visitors-visa page's V6 tab states applications are made 'at the office of a diplomatic mission of Rwanda... at immigration and emigration office or at any other place as may be determined by the Directorate General' - it does NOT list border-post/arrival issuance the way most other visitor visas (V1, V2, V3-1, V5, V7, V11) explicitly do, so on_arrival is corrected from true to false."
+  },
+  {
+   "category": "business",
+   "name": "Itinerant Business Visa (V9)",
+   "purpose": "For frequent business visitors including foreign investors, board members, and representatives of multinational companies with significant ongoing business activities in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": 200,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Valid for 2 to 10 years, renewable. Intended for persons who do not reside in Rwanda but have significant regular business activity in the country. Multiple entries permitted."
+  },
+  {
+   "category": "business",
+   "name": "Reciprocity Visa (V12)",
+   "purpose": "Long-stay multiple-entry visa issued based on bilateral reciprocal arrangements between Rwanda and the applicant's home country.",
+   "max_stay_days": null,
+   "validity_days": 3650,
+   "entries": "multiple",
+   "fee_usd": 160,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Valid up to 10 years, renewable. Granted on the basis of reciprocal bilateral agreements. Conditions depend on the specific bilateral arrangement."
+  },
+  {
+   "category": "work",
+   "name": "Job Search Visa (V4)",
+   "purpose": "For skilled foreign workers whose occupation appears on Rwanda's official Occupations on Demand List (ODL) to visit Rwanda and seek employment.",
+   "max_stay_days": 90,
+   "validity_days": 90,
+   "entries": "multiple",
+   "fee_usd": 50,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Available only to skilled workers on the official Occupations on Demand List (ODL). Multiple entries. Status change to work permit (H1) is allowed after finding employment. Work prohibited during the job-search period. Corrected: the official visitors-visa page's V4 tab states applications are made 'at the Directorate General of Immigration and Emigration, at the office of a diplomatic mission... or at any other place as may be determined by the Directorate General' - unlike most other visitor visas it does NOT mention border-post/arrival issuance, so on_arrival is corrected from true to false."
+  },
+  {
+   "category": "other",
+   "name": "Conference/Meetings Visa (V5)",
+   "purpose": "For foreign nationals attending official conferences, seminars, meetings, or similar events in Rwanda.",
+   "max_stay_days": 30,
+   "validity_days": 30,
+   "entries": "single",
+   "fee_usd": 50,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Free for nationals of countries with visa waiver arrangements. Work is prohibited beyond the conference scope. Status change is allowed."
+  },
+  {
+   "category": "medical",
+   "name": "Medical Treatment Visa (V7)",
+   "purpose": "For foreign nationals traveling to Rwanda to receive medical treatment, and their care attendants.",
+   "max_stay_days": 90,
+   "validity_days": 90,
+   "entries": "single",
+   "fee_usd": 30,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Covers the patient and their care attendants. Renewable in cases where continued treatment requires an extended stay. Status change permitted."
+  },
+  {
+   "category": "family",
+   "name": "Family Visit Visa (V2)",
+   "purpose": "For foreign nationals visiting family members residing in Rwanda.",
+   "max_stay_days": 30,
+   "validity_days": 30,
+   "entries": "single",
+   "fee_usd": 50,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Single entry at USD 50; multiple entry (90 days) at USD 70. Fee waived for eligible nationals. Status change permitted. Specifications mirror the Holiday/Tourism V1 visa."
+  },
+  {
+   "category": "diplomatic",
+   "name": "Official Visit Visa (V3-1)",
+   "purpose": "For non-accredited foreign government officials making an official visit to Rwanda.",
+   "max_stay_days": 30,
+   "validity_days": 30,
+   "entries": "single",
+   "fee_usd": 0,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Free of charge. Issued to non-accredited government officials on an official mission. Status change prohibited. Work not permitted beyond the scope of the official visit. Corrected: the official visitors-visa page's V3-1 tab explicitly states it is 'Issued upon arrival at the border post, online, at immigration and emigration office, at the office of a diplomatic mission...' - so online is corrected from false to true (on_arrival was already correctly true)."
+  },
+  {
+   "category": "diplomatic",
+   "name": "Accredited Diplomat Visa (V3-2)",
+   "purpose": "For foreign diplomatic officials formally accredited to Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 0,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Free of charge. Valid for 2 years, renewable. Issued to officially accredited diplomatic personnel assigned to Rwanda. Multiple entries permitted."
+  },
+  {
+   "category": "other",
+   "name": "Visa Waiver - Free Entry (VE-1)",
+   "purpose": "Entry pass issued to nationals of countries with a bilateral visa waiver arrangement with Rwanda, allowing visa-free or free-of-charge entry.",
+   "max_stay_days": 90,
+   "validity_days": 90,
+   "entries": "single",
+   "fee_usd": 0,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "90-day waiver for bilateral agreement nations; 30-day free visa for AU/Commonwealth/La Francophonie members. Issued at border/entry points or diplomatic missions. EAC citizens receive a separate Visitor's Pass (VP-1) rather than this waiver entry."
+  },
+  {
+   "category": "other",
+   "name": "EAC Visitor's Pass (VP-1)",
+   "purpose": "Free entry pass for citizens of East African Community (EAC) member states, allowing stays of up to six months without a visa.",
+   "max_stay_days": 180,
+   "validity_days": 180,
+   "entries": "single",
+   "fee_usd": 0,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "For citizens of EAC Partner States (Burundi, Kenya, Uganda, Tanzania, South Sudan). Issued free upon arrival. Citizens of Uganda and Kenya may enter on a national ID card. This is a genuine visitor's pass under EAC free-movement obligations, not a standard visa."
+  },
+  {
+   "category": "other",
+   "name": "Crew Member Visa (VC)",
+   "purpose": "For aircraft or boat crew members entering Rwanda at official entry points in the course of their duties.",
+   "max_stay_days": 3,
+   "validity_days": 3,
+   "entries": "single",
+   "fee_usd": 0,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Free of charge. Valid for 72 hours. Issued at the entry point. Work beyond crew duties not permitted."
+  },
+  {
+   "category": "other",
+   "name": "Bridging Visa (V10)",
+   "purpose": "Temporary visa issued to persons whose existing immigration status has lapsed while they regularize their situation in Rwanda.",
+   "max_stay_days": 90,
+   "validity_days": 90,
+   "entries": "single",
+   "fee_usd": 30,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Maximum 90 days. Intended for status-lapsed visitors pending permit renewal or change of status. Applied for in-country at the Directorate General of Immigration."
+  },
+  {
+   "category": "digital_nomad",
+   "name": "Remote Worker Visa (2-year)",
+   "purpose": "Allows qualifying remote workers in priority professional fields to live and legally work in Rwanda for a foreign employer or their own offshore company.",
+   "max_stay_days": 730,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": null,
+   "on_arrival": false,
+   "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
+   "notes": "Established under Investment Promotion and Facilitation Law No. 006/2021 of 8 February 2021. Detailed in RRA Investment Incentives document (August 2023), Section XVII (Talent Attraction Incentives). Fee and application portal not published on migration.gov.rw or irembo.gov.rw as of June 2026."
+  },
+  {
+   "category": "other",
+   "name": "Entrepreneurship Visa (2-year)",
+   "purpose": "Allows foreign startup founders and innovative entrepreneurs and their dependents to reside in Rwanda and establish a business.",
+   "max_stay_days": 730,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": null,
+   "on_arrival": false,
+   "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
+   "notes": "Established under Investment Promotion and Facilitation Law No. 006/2021. Detailed in RRA Investment Incentives document (August 2023), Section XVII. No dedicated application portal found on migration.gov.rw or irembo.gov.rw as of June 2026."
+  },
+  {
+   "category": "student",
+   "name": "Talent Visa (2-year) - International Graduates",
+   "purpose": "Allows qualifying international graduates from recognized higher institutions to remain in Rwanda for up to two years after completing their studies.",
+   "max_stay_days": 730,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": null,
+   "on_arrival": false,
+   "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
+   "notes": "Commences from the date of study completion. Established under Investment Promotion and Facilitation Law No. 006/2021. Detailed in RRA Investment Incentives document (August 2023), Section XVII. No dedicated application portal found on migration.gov.rw or irembo.gov.rw as of June 2026."
+  },
+  {
+   "category": "retirement",
+   "name": "Person with Assured Income Permit (K Permit)",
+   "purpose": "Residence permit for retired persons and others with a guaranteed passive income who do not intend to be employed in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/other-permits",
+   "notes": "Updated with newly-found detail on the Directorate General of Immigration and Emigration's own 'Other Permits' page (permit code K, 'Person with assured income, including a retired person who doesn't intend to be employed in Rwanda'): fee 150,000 RWF (approx USD 105), validity up to 2 years (renewable), online application available. Requirements: CV, police clearance, retirement certificate, Rwanda bank statement, application letter, and local medical insurance. This remains a resident permit, not a visa; applicants apply after entering Rwanda; work in Rwanda not permitted. The minimum-age-55 and minimum-income-USD-5,000/month thresholds previously cited from the RDB business-procedures page (https://businessprocedures.rdb.rw/procedure/138?l=en) are not restated on the current migration.gov.rw page but are presumed to still apply pending direct confirmation."
+  },
+  {
+   "category": "investment",
+   "name": "Business Investor Resident Permit (Temporary)",
+   "purpose": "Resident permits for foreign nationals certified as investors by the Rwanda Development Board (RDB), covering multiple economic sectors.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/business-investor",
+   "notes": "Multiple category codes depending on sector: mining (A1/A3-1), agriculture (B1/B3-1), manufacturing (F1/F3-1), hospitality (O1/O3-1), IT (W1/W3-1), transport/logistics (X1/X3-1), other (Z1/Z3-1). New permit fee: 150,000 RWF (up to 2 years). Recurring permit fee: 250,000 RWF (up to 5 years). No minimum investment threshold published. Path to citizenship after 15 consecutive years of residence."
+  },
+  {
+   "category": "work",
+   "name": "Skilled Worker Permit - Occupations on Demand (H1)",
+   "purpose": "Temporary resident work permit for skilled foreign workers whose occupation appears on Rwanda's Occupations on Demand List (ODL) and who hold the required qualifications and relevant work experience.",
+   "max_stay_days": null,
+   "validity_days": 1095,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 3 years, renewable. No labour-market test required (unlike the H2 sponsored category). Requires an employment contract, certified academic certificates, employer recommendation, CV and police clearance. A 90-day Job Search Visa (V4) is available to ODL workers before securing employment."
+  },
+  {
+   "category": "work",
+   "name": "Sponsored Skilled Worker Permit (H2)",
+   "purpose": "Temporary resident work permit for skilled foreign workers sponsored by a specific Rwandan employer who hold the required qualifications and relevant work experience.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Tied to a specific sponsoring employer. Requires certified academic certificates, an employment contract, employer recommendation, CV and police clearance."
+  },
+  {
+   "category": "work",
+   "name": "Government/Public Institution Employment Permit (E1)",
+   "purpose": "Work permit for foreign nationals contracted by the Government of Rwanda, tertiary institutions or parastatals.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires a government/institution contract, application letter, certified academic certificates, police clearance (last 6 months) and a detailed CV."
+  },
+  {
+   "category": "work",
+   "name": "Technical Assistance Employment Permit (E2)",
+   "purpose": "Work permit for foreign nationals providing technical expertise or assistance under a bilateral or cooperation agreement.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 70,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 100,000 RWF (approx USD 70). Valid up to 2 years, renewable. Requires a MINAFFET recommendation, Note Verbale, police clearance, certified academic certificates and CV."
+  },
+  {
+   "category": "work",
+   "name": "Journalist/Media Permit (H3)",
+   "purpose": "Work permit for foreign journalists and media representatives accredited by the competent Rwandan authority.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires media accreditation, an employment contract, recommendation letter, police clearance and CV."
+  },
+  {
+   "category": "work",
+   "name": "Semi-Skilled Regional Worker Permit (H4)",
+   "purpose": "Work permit for semi-skilled workers or artisans who are nationals of a country within the region (EAC/regional bloc).",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 35,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 50,000 RWF (approx USD 35) - reduced fee for regional nationals. Valid up to 2 years, renewable. Requires an employment contract, police clearance, CV and employer recommendation."
+  },
+  {
+   "category": "work",
+   "name": "International/Regional Organisation Staff Permit (H5)",
+   "purpose": "Work permit for foreign staff employed by an international or regional organization operating in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires a MINAFFET recommendation, Note Verbale, police clearance, academic certificates, CV and employment contract."
+  },
+  {
+   "category": "work",
+   "name": "Special Agreement/Reciprocity Employment Permit (H6)",
+   "purpose": "Work permit for foreign employees admitted under a special agreement or reciprocity arrangement between Rwanda and their home country.",
+   "max_stay_days": null,
+   "validity_days": null,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee and validity are set on a reciprocal basis per the underlying bilateral agreement. Requires an employment contract, certified academic certificates, police clearance, CV and recommendation letter."
+  },
+  {
+   "category": "work",
+   "name": "NGO Employee Permit (N2)",
+   "purpose": "Work permit for foreign nationals employed by a Non-Governmental Organization registered in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires an employment contract, RGB (Rwanda Governance Board) registration certificate, employer recommendation, certified academic certificates, police clearance and CV."
+  },
+  {
+   "category": "work",
+   "name": "Professional Player/Artist Permit (C2)",
+   "purpose": "Work permit for professional foreign athletes, players and entertainers/artists engaged in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 70,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 100,000 RWF (approx USD 70). Valid up to 2 years, renewable. Requires an employment/engagement contract, CV, recommendation letter and police clearance."
+  },
+  {
+   "category": "work",
+   "name": "Multinational/Regional Company Employee Permit (Q1)",
+   "purpose": "Work permit for a foreign employee of a multinational or regional company that maintains its international or regional office in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 365,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid 1 year, renewable only under exceptional circumstances. Requires proof of company affiliation, the foreign employment contract, police clearance, CV and recommendation letter."
+  },
+  {
+   "category": "work",
+   "name": "Refugee Worker Permit (J)",
+   "purpose": "Work permit for a foreign worker holding refugee status in another country who has secured employment in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires an employment contract, certified academic certificates, CV, police clearance and recommendation letter."
+  },
+  {
+   "category": "student",
+   "name": "Student Permit (U1)",
+   "purpose": "Residence permit for foreign nationals enrolled to study at a school or institution of learning in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 365,
+   "entries": "multiple",
+   "fee_usd": 14,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/study-research",
+   "notes": "Fee: 20,000 RWF (approx USD 14). Valid 1 year, renewable. Requires a travel document valid 6+ months, a school recommendation/admission letter, a sponsorship letter and police clearance (applicants aged 18+)."
+  },
+  {
+   "category": "student",
+   "name": "Occupational Trainee Permit (U2)",
+   "purpose": "Residence permit for foreign nationals undertaking training, an internship or academic research in Rwanda to enhance professional skills.",
+   "max_stay_days": null,
+   "validity_days": 365,
+   "entries": "multiple",
+   "fee_usd": 35,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/study-research",
+   "notes": "Fee: 50,000 RWF (approx USD 35). Valid 1 year, renewable. Requires a university recommendation, internship/training agreement, CV, academic transcript and police clearance (18+)."
+  },
+  {
+   "category": "student",
+   "name": "Professional Research Permit (H7)",
+   "purpose": "Residence permit for foreign professional researchers who are not accredited to or affiliated with a Rwandan school, vocational or research institution.",
+   "max_stay_days": null,
+   "validity_days": 730,
+   "entries": "multiple",
+   "fee_usd": 105,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/study-research",
+   "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires certified academic certificates, a research permit from the competent Rwandan authority, police clearance (last 6 months), CV and a recommendation."
+  },
+  {
+   "category": "work",
+   "name": "Student Holiday/Graduate Work Permit (P2)",
+   "purpose": "Work permit allowing higher-education students to work during holidays and recent graduates to take up employment in Rwanda.",
+   "max_stay_days": null,
+   "validity_days": 365,
+   "entries": "multiple",
+   "fee_usd": 14,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/study-research",
+   "notes": "Fee: 20,000 RWF (approx USD 14). Valid 1 year. Requires an employment contract, CV, academic certificate, employer recommendation and police clearance (last 6 months)."
+  },
+  {
+   "category": "family",
+   "name": "Dependent Pass (M1/M2/M3)",
+   "purpose": "Residence pass for the spouse, children and dependent family members of a Rwandan citizen (M1), a temporary resident permit holder (M2) or a permanent resident permit holder (M3).",
+   "max_stay_days": null,
+   "validity_days": 1095,
+   "entries": "multiple",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": true,
+   "on_arrival": false,
+   "official_url": "https://www.migration.gov.rw/our-services/permit/dependant",
+   "notes": "M1 (dependent of a Rwandan) and M3 (close relative of a permanent resident) are valid 3 years; M2 (dependent of a temporary resident) matches the principal's validity. Fee is 50% (half) of the fee paid by the principal applicant. Requires an application letter, marriage/birth/adoption certificate and police clearance (18+). M2 dependents also submit a copy of the principal's identity card."
+  },
+  {
+   "category": "other",
+   "name": "Visitor's Pass - Other Regional Bloc Citizens (VP-2)",
+   "purpose": "Entry pass for nationals of a regional organization or community (other than the East African Community) that has a reciprocal free-visa arrangement with Rwanda.",
+   "max_stay_days": 180,
+   "validity_days": 180,
+   "entries": "single",
+   "fee_usd": null,
+   "processing_days_min": null,
+   "processing_days_max": null,
+   "online": false,
+   "on_arrival": true,
+   "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+   "notes": "Listed as a distinct category (VP-2) alongside the EAC Visitor's Pass (VP-1) on the official visitors-visa page's own visa-code menu and requirement tabs - it was previously missing from this catalog, which only had VP-1. Official text: 'issued to a national of a country member of a regional organization or community with free visa other than the East African Community citizens... issued at entry point or embassy... Single entry... Work is not permitted... Change of status is allowed... may be extended in exceptional circumstances.' Fee: 'agreed upon at community or organizational level' (reciprocal, no fixed published USD amount - hence the fee shown is null here). Validity: up to six months."
+  }
+ ],
+ "visa_policy": {
+  "visa_free": [
+   {
+    "nationality": "East African Community (EAC) member states citizens (Burundi, Kenya, Uganda, United Republic of Tanzania, South Sudan)",
+    "iso3": null,
+    "max_stay_days": 180,
+    "notes": "Citizens of EAC Partner States are issued a Visitor's Pass (VP-1) free of charge upon arrival, valid for up to six months. Citizens of Uganda and Kenya may enter using their national ID card. No permit fees apply for EAC citizens. This is a genuine entry pass - not a visa on arrival - consistent with EAC free-movement obligations.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   }
+  ],
+  "visa_on_arrival": [
+   {
+    "nationality": "African Union, Commonwealth and La Francophonie member states",
+    "iso3": null,
+    "max_stay_days": 30,
+    "notes": "Citizens of countries that are members of the African Union, Commonwealth, or La Francophonie receive a visa on arrival with the visa fee waived (free of charge) for a stay of 30 days. The visa is still formally issued upon arrival - it is not a visa-free pass. Countries with a full bilateral visa waiver arrangement with Rwanda receive 90 days free. See the official Rwanda visa regime communique (March 2020 PDF) for the enumerated list of eligible states.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Angola",
+    "iso3": "AGO",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Benin",
+    "iso3": "BEN",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Central African Republic",
+    "iso3": "CAF",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Chad",
+    "iso3": "TCD",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Cote d'Ivoire",
+    "iso3": "CIV",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Democratic Republic of Congo",
+    "iso3": "COD",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Saint Kitts and Nevis",
+    "iso3": "KNA",
+    "max_stay_days": 90,
+    "notes": "Listed on official page as 'The Federation of Saint Christopher and Nevis'; free visa on arrival for 90 days.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Ghana",
+    "iso3": "GHA",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Guinea",
+    "iso3": "GIN",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Indonesia",
+    "iso3": "IDN",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Haiti",
+    "iso3": "HTI",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Mauritius",
+    "iso3": "MUS",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Philippines",
+    "iso3": "PHL",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Senegal",
+    "iso3": "SEN",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Seychelles",
+    "iso3": "SYC",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Sierra Leone",
+    "iso3": "SLE",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Sao Tome and Principe",
+    "iso3": "STP",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Singapore",
+    "iso3": "SGP",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "Qatar",
+    "iso3": "QAT",
+    "max_stay_days": 90,
+    "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   },
+   {
+    "nationality": "All other nationalities (not visa-exempt or free-visa eligible)",
+    "iso3": null,
+    "max_stay_days": 30,
+    "notes": "From 1 January 2018, nationals of all countries can obtain a visa on arrival at Kigali International Airport and all land borders without prior application. Fee: USD 50 for single entry (30 days). Multiple entry: USD 70 (90 days). Applicants also have the option to apply online via irembo.gov.rw before departure.",
+    "source_url": "https://www.migration.gov.rw/visa-on-arrival",
+    "source_official": true
+   }
+  ],
+  "e_visa": [
+   {
+    "nationality": "All nationalities",
+    "iso3": null,
+    "max_stay_days": 30,
+    "notes": "Online visa applications accepted via irembo.gov.rw for all nationalities. USD 50 for single entry (30 days); USD 70 for multiple entry (90 days). Fee is waived for nationals of countries with a visa waiver arrangement (AU, Commonwealth, La Francophonie, or bilateral 90-day waiver). Applicants may pay online or upon arrival.",
+    "source_url": "https://irembo.gov.rw/home/citizen/all_services",
+    "source_official": true
+   }
+  ],
+  "eta": [],
+  "source_urls": [
+   "https://www.migration.gov.rw/visa-on-arrival",
+   "https://www.migration.gov.rw/visa/visitors-visa",
+   "https://migration.gov.rw/fileadmin/user_upload/pdf_files/rwanda_s_new_visa_regine_-_final_final2.pdf",
+   "https://businessprocedures.rdb.rw/objective/57?l=en",
+   "https://irembo.gov.rw/home/citizen/all_services",
+   "https://www.migration.gov.rw/our-services/visa-issued-under-special-arrangement"
+  ],
+  "notes": "Rwanda operates a highly open visa policy since 1 January 2018. EAC citizens get a genuine visitor's pass (visa-free) for up to 6 months. African Union, Commonwealth and La Francophonie member nationals receive a free visa on arrival for 30 days (fee waived, but a visa is still formally issued). An explicit list of 19 countries (Angola, Benin, CAR, Chad, Cote d'Ivoire, DRC, Saint Kitts & Nevis, Ghana, Guinea, Indonesia, Haiti, Mauritius, Philippines, Senegal, Seychelles, Sierra Leone, Sao Tome & Principe, Singapore, Qatar) receive a free 90-day visa on arrival. All other nationalities pay USD 50 (single entry, 30 days) or USD 70 (multiple entry, 90 days) on arrival or via e-visa. The East Africa Tourist Visa (EATV/V11) at USD 100 covers Rwanda, Kenya, and Uganda with multiple entries valid for 90 days. CLASSIFICATION NOTE: AU/Commonwealth/La Francophonie and 19-country free entries are recorded as visa_on_arrival (free) rather than visa_free, consistent with Rwanda's own terminology ('visa on arrival with fee waiver') on migration.gov.rw. Only the EAC pass is truly visa_free."
+ },
+ "conditional_access": [
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Angola",
+    "Benin",
+    "China",
+    "Cote d'Ivoire",
+    "Central African Republic",
+    "Chad",
+    "Democratic Republic of Congo",
+    "Djibouti",
+    "Ethiopia",
+    "Saint Kitts and Nevis",
+    "Gabon",
+    "Ghana",
+    "Guinea",
+    "Indonesia",
+    "India",
+    "Israel",
+    "Haiti",
+    "Mauritius",
+    "Mozambique",
+    "Morocco",
+    "Namibia",
+    "Philippines",
+    "Sao Tome and Principe",
+    "Senegal",
+    "Seychelles",
+    "Singapore",
+    "South Africa",
+    "Turkey",
+    "United Arab Emirates"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "service",
+    "official"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": 90,
+   "conditions": "Holders of diplomatic and service/official passports of the listed 29 countries are granted visa-free entry for 90 days under bilateral visa suppression agreements. China also includes Public Affairs passport holders. These exemptions apply only to diplomatic/service/official passport holders; ordinary passport holders of these countries are subject to standard visa-on-arrival or free-visa-on-arrival rules by nationality.",
+   "source_url": "https://www.rwandainkenya.gov.rw/services/service-details-1/visa-8",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Russia"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "service"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": null,
+   "conditions": "Rwanda and Russia signed a visa waiver agreement for holders of diplomatic and service passports. The agreement was first signed in Sochi on 9 November 2024 and a further instrument was signed in Antalya on 18 April 2026. Entry into force date is not confirmed on any official Rwanda government source as of June 2026. Included here as a signed agreement; may not yet be operational. Stay duration not published.",
+   "source_url": "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-russia-sign-visa-waiver-agreement",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Venezuela"
+   ],
+   "passport_types": [
+    "diplomatic",
+    "official",
+    "special"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": null,
+   "conditions": "Rwanda and Venezuela signed a Memorandum of Understanding on visa waiver for holders of Diplomatic, Official, and Special passports, signed in Kigali on 1 November 2023. Entry into force date is not confirmed on any official Rwanda government source. Stay duration not published.",
+   "source_url": "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-venezuela-sign-agreement-on-visa-waiver",
+   "source_official": true
+  },
+  {
+   "basis": "passport_type",
+   "eligible_nationalities": [
+    "Maldives"
+   ],
+   "passport_types": [
+    "unknown - not specified in official source"
+   ],
+   "credential": null,
+   "level": "visa_free",
+   "max_stay_days": null,
+   "conditions": "Rwanda and Maldives signed an Agreement on Mutual Visa Exemption on 5 May 2023. Passport types covered (ordinary, diplomatic, official) and stay duration are not specified in the official announcement on minaffet.gov.rw. Entry into force date not confirmed. Included as a signed agreement pending detail confirmation.",
+   "source_url": "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-maldives-sign-agreement-on-mutual-visa-exemption",
+   "source_official": true
+  }
+ ],
+ "cbi": {
+  "has_program": false,
+  "program_name": "",
+  "official_url": "https://www.migration.gov.rw/our-services/citizenshipss",
+  "source_official": true,
+  "options": [],
+  "processing_time": "6 months",
+  "dual_citizenship_allowed": null,
+  "residency_required": null,
+  "notes": "Rwanda does not have a formal standalone Citizenship-by-Investment (CBI) program with defined investment thresholds. The official citizenship page lists 'Substantial sustainable investments or activities' as one of several discretionary grounds for citizenship by acquisition (naturalization), but no minimum investment amount, program name, or dedicated CBI processing pathway is published on the official migration site. Applicants on investment grounds must provide proof of registration as an investor and a certificate of sustainable occupation/activities. Application fees range from 5,000 to 150,000 RWF depending on pathway. Processing time for citizenship applications is 6 months. No advertised CBI product found on any official Rwanda government domain."
+ },
+ "rbi": {
+  "programs": [
+   {
+    "name": "Business Investor Resident Permits (Temporary) - multiple sector categories",
+    "type": "business",
+    "min_amount": null,
+    "currency": null,
+    "path_to_pr_years": null,
+    "path_to_citizenship_years": 15,
+    "official_url": "https://www.migration.gov.rw/our-services/business-investor",
     "source_official": true,
-    "asof": null,
-    "visa_free": [
-      {"name": "Angola", "iso3": "AGO"},
-      {"name": "Antigua and Barbuda", "iso3": "ATG"},
-      {"name": "Bahamas", "iso3": "BHS"},
-      {"name": "Barbados", "iso3": "BRB"},
-      {"name": "Bangladesh", "iso3": "BGD"},
-      {"name": "Benin", "iso3": "BEN"},
-      {"name": "Burkina Faso", "iso3": "BFA"},
-      {"name": "Burundi", "iso3": "BDI"},
-      {"name": "Central African Republic", "iso3": "CAF"},
-      {"name": "Chad", "iso3": "TCD"},
-      {"name": "Cook Islands", "iso3": "COK"},
-      {"name": "Democratic Republic of Congo", "iso3": "COD"},
-      {"name": "Dominica", "iso3": "DMA"},
-      {"name": "Dominican Republic", "iso3": "DOM"},
-      {"name": "Ecuador", "iso3": "ECU"},
-      {"name": "Federation of Saint Christopher and Nevis", "iso3": "KNA"},
-      {"name": "Ghana", "iso3": "GHA"},
-      {"name": "Grenada", "iso3": "GRD"},
-      {"name": "Guinea", "iso3": "GIN"},
-      {"name": "Guinea-Bissau", "iso3": "GNB"},
-      {"name": "Haiti", "iso3": "HTI"},
-      {"name": "Ivory Coast", "iso3": "CIV"},
-      {"name": "Jordan", "iso3": "JOR"},
-      {"name": "Kenya", "iso3": "KEN"},
-      {"name": "Kiribati", "iso3": "KIR"},
-      {"name": "Laos", "iso3": "LAO"},
-      {"name": "Liberia", "iso3": "LBR"},
-      {"name": "Mali", "iso3": "MLI"},
-      {"name": "Maldives", "iso3": "MDV"},
-      {"name": "Mauritius", "iso3": "MUS"},
-      {"name": "Montserrat", "iso3": "MSR"},
-      {"name": "Mozambique", "iso3": "MOZ"},
-      {"name": "Niger", "iso3": "NER"},
-      {"name": "Palau Islands", "iso3": "PLW"},
-      {"name": "Qatar", "iso3": "QAT"},
-      {"name": "Republic of Micronesia", "iso3": "FSM"},
-      {"name": "Saint Vincent and Grenadines", "iso3": "VCT"},
-      {"name": "Samoa", "iso3": "WSM"},
-      {"name": "São Tomé and Príncipe", "iso3": "STP"},
-      {"name": "Senegal", "iso3": "SEN"},
-      {"name": "Seychelles", "iso3": "SYC"},
-      {"name": "Singapore", "iso3": "SGP"},
-      {"name": "Somalia", "iso3": "SOM"},
-      {"name": "Tanzania", "iso3": "TZA"},
-      {"name": "The Gambia", "iso3": "GMB"},
-      {"name": "The Republic of Congo", "iso3": "COG"},
-      {"name": "Uganda", "iso3": "UGA"},
-      {"name": "Vanuatu", "iso3": "VUT"}
-    ],
-    "visa_on_arrival": [
-      {"name": "Cape Verde Island", "iso3": "CPV"},
-      {"name": "Djibouti", "iso3": "DJI"},
-      {"name": "Ethiopia", "iso3": "ETH"},
-      {"name": "Indonesia", "iso3": "IDN"},
-      {"name": "Macao (SAR China)", "iso3": "MAC"},
-      {"name": "Madagascar", "iso3": "MDG"},
-      {"name": "Namibia", "iso3": "NAM"},
-      {"name": "Nepal", "iso3": "NPL"},
-      {"name": "Nicaragua", "iso3": "NIC"},
-      {"name": "Niue", "iso3": "NIU"},
-      {"name": "Philippines", "iso3": "PHL"},
-      {"name": "Sierra Leone", "iso3": "SLE"},
-      {"name": "Sri Lanka", "iso3": "LKA"},
-      {"name": "Timor-Leste", "iso3": "TLS"},
-      {"name": "Tuvalu", "iso3": "TUV"},
-      {"name": "Zambia", "iso3": "ZMB"},
-      {"name": "Zimbabwe", "iso3": "ZWE"},
-      {"name": "South Sudan", "iso3": "SSD"}
-    ],
-    "e_visa": [],
-    "eta": [],
-    "notes": "Source: Rwanda Directorate General of Immigration and Emigration (migration.gov.rw), official 'List of countries that Rwandan passport holders travel visa free' page. The page groups destinations into 'Visa Not Required', 'Visa Upon Arrival', and 'Visa Free on Arrival' (South Sudan). South Sudan is placed under visa_on_arrival here as the page labels it 'Visa Free on Arrival' (a distinct sub-category from fully visa-not-required). No date stamp was present on the source page at time of retrieval (2026-06-14). No e-visa or ETA categories are listed on this official outbound page."
-  },
-  "visa_types": [
-    {
-      "category": "tourist",
-      "name": "Holiday/Tourism Visa (V1) - Single Entry",
-      "purpose": "For foreign nationals wishing to visit Rwanda for tourism, leisure or holiday purposes. Work is not permitted.",
-      "max_stay_days": 30,
-      "validity_days": 30,
-      "entries": "single",
-      "fee_usd": 50,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Fee is waived (free) for nationals of countries with bilateral visa waiver arrangements (AU, Commonwealth, La Francophonie members and specific 90-day free-visa countries). Status change permitted. Applications via irembo.gov.rw, diplomatic missions, or border entry points."
-    },
-    {
-      "category": "tourist",
-      "name": "Holiday/Tourism Visa (V1) - Multiple Entry",
-      "purpose": "For foreign nationals wishing to visit Rwanda for tourism, leisure or holiday purposes on multiple trips. Work is not permitted.",
-      "max_stay_days": 90,
-      "validity_days": 90,
-      "entries": "multiple",
-      "fee_usd": 70,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Fee is waived for eligible nationals (AU/Commonwealth/La Francophonie/bilateral waiver countries). Status change permitted."
-    },
-    {
-      "category": "tourist",
-      "name": "Group Tourist Visa (V8)",
-      "purpose": "For organized tourist groups of 4 to 10 persons visiting Rwanda together for leisure or tourism.",
-      "max_stay_days": 30,
-      "validity_days": 30,
-      "entries": "single",
-      "fee_usd": 150,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Fee of USD 150 covers the entire group of 4-10 tourists. Work not permitted."
-    },
-    {
-      "category": "tourist",
-      "name": "East African Tourist Visa (V11 / EATV)",
-      "purpose": "Regional multi-country tourist visa covering Rwanda, Kenya and Uganda with multiple entries for tourism across all three countries.",
-      "max_stay_days": 90,
-      "validity_days": 90,
-      "entries": "multiple",
-      "fee_usd": 100,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Valid for travel within Rwanda, Kenya, and Uganda. Governed by EAC regional agreement. Available at Rwandan diplomatic missions, border entry points, or via irembo.gov.rw."
-    },
-    {
-      "category": "transit",
-      "name": "Transit Visa (VT)",
-      "purpose": "For travelers transiting through Rwanda en route to a third destination.",
-      "max_stay_days": 3,
-      "validity_days": 3,
-      "entries": "single",
-      "fee_usd": 30,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/transit-visa",
-      "notes": "Valid for 72 hours maximum. Work not permitted. Status change not allowed. Free for nationals of countries with visa waiver arrangements. Available at entry points and via irembo.gov.rw."
-    },
-    {
-      "category": "transit",
-      "name": "Transit Visa - Unforeseen Circumstances (VE-2)",
-      "purpose": "For travelers stranded in Rwanda due to unforeseen circumstances such as flight cancellation, schedule changes, or bad weather.",
-      "max_stay_days": 3,
-      "validity_days": 3,
-      "entries": "single",
-      "fee_usd": 0,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/transit-visa",
-      "notes": "Free of charge. Issued at the border/airport when traveler is inconvenienced due to circumstances beyond their control. Valid for up to 72 hours. Work not permitted. Status change not allowed."
-    },
-    {
-      "category": "business",
-      "name": "Business Survey Visa (V6) - Single Entry",
-      "purpose": "For foreign nationals visiting Rwanda to survey business opportunities, conduct market research, or explore investment prospects.",
-      "max_stay_days": 90,
-      "validity_days": 90,
-      "entries": "single",
-      "fee_usd": 50,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Renewable once. Status change not allowed. Work not permitted during visit. Corrected: the official visitors-visa page's V6 tab states applications are made 'at the office of a diplomatic mission of Rwanda... at immigration and emigration office or at any other place as may be determined by the Directorate General' - it does NOT list border-post/arrival issuance the way most other visitor visas (V1, V2, V3-1, V5, V7, V11) explicitly do, so on_arrival is corrected from true to false."
-    },
-    {
-      "category": "business",
-      "name": "Business Survey Visa (V6) - Multiple Entry",
-      "purpose": "For foreign nationals making multiple visits to Rwanda to survey business opportunities, conduct market research, or explore investment prospects.",
-      "max_stay_days": 90,
-      "validity_days": 90,
-      "entries": "multiple",
-      "fee_usd": 70,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Renewable once. Status change not allowed. Work not permitted during visit. Corrected: the official visitors-visa page's V6 tab states applications are made 'at the office of a diplomatic mission of Rwanda... at immigration and emigration office or at any other place as may be determined by the Directorate General' - it does NOT list border-post/arrival issuance the way most other visitor visas (V1, V2, V3-1, V5, V7, V11) explicitly do, so on_arrival is corrected from true to false."
-    },
-    {
-      "category": "business",
-      "name": "Itinerant Business Visa (V9)",
-      "purpose": "For frequent business visitors including foreign investors, board members, and representatives of multinational companies with significant ongoing business activities in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": 200,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Valid for 2 to 10 years, renewable. Intended for persons who do not reside in Rwanda but have significant regular business activity in the country. Multiple entries permitted."
-    },
-    {
-      "category": "business",
-      "name": "Reciprocity Visa (V12)",
-      "purpose": "Long-stay multiple-entry visa issued based on bilateral reciprocal arrangements between Rwanda and the applicant's home country.",
-      "max_stay_days": null,
-      "validity_days": 3650,
-      "entries": "multiple",
-      "fee_usd": 160,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Valid up to 10 years, renewable. Granted on the basis of reciprocal bilateral agreements. Conditions depend on the specific bilateral arrangement."
-    },
-    {
-      "category": "work",
-      "name": "Job Search Visa (V4)",
-      "purpose": "For skilled foreign workers whose occupation appears on Rwanda's official Occupations on Demand List (ODL) to visit Rwanda and seek employment.",
-      "max_stay_days": 90,
-      "validity_days": 90,
-      "entries": "multiple",
-      "fee_usd": 50,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Available only to skilled workers on the official Occupations on Demand List (ODL). Multiple entries. Status change to work permit (H1) is allowed after finding employment. Work prohibited during the job-search period. Corrected: the official visitors-visa page's V4 tab states applications are made 'at the Directorate General of Immigration and Emigration, at the office of a diplomatic mission... or at any other place as may be determined by the Directorate General' - unlike most other visitor visas it does NOT mention border-post/arrival issuance, so on_arrival is corrected from true to false."
-    },
-    {
-      "category": "other",
-      "name": "Conference/Meetings Visa (V5)",
-      "purpose": "For foreign nationals attending official conferences, seminars, meetings, or similar events in Rwanda.",
-      "max_stay_days": 30,
-      "validity_days": 30,
-      "entries": "single",
-      "fee_usd": 50,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Free for nationals of countries with visa waiver arrangements. Work is prohibited beyond the conference scope. Status change is allowed."
-    },
-    {
-      "category": "medical",
-      "name": "Medical Treatment Visa (V7)",
-      "purpose": "For foreign nationals traveling to Rwanda to receive medical treatment, and their care attendants.",
-      "max_stay_days": 90,
-      "validity_days": 90,
-      "entries": "single",
-      "fee_usd": 30,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Covers the patient and their care attendants. Renewable in cases where continued treatment requires an extended stay. Status change permitted."
-    },
-    {
-      "category": "family",
-      "name": "Family Visit Visa (V2)",
-      "purpose": "For foreign nationals visiting family members residing in Rwanda.",
-      "max_stay_days": 30,
-      "validity_days": 30,
-      "entries": "single",
-      "fee_usd": 50,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Single entry at USD 50; multiple entry (90 days) at USD 70. Fee waived for eligible nationals. Status change permitted. Specifications mirror the Holiday/Tourism V1 visa."
-    },
-    {
-      "category": "diplomatic",
-      "name": "Official Visit Visa (V3-1)",
-      "purpose": "For non-accredited foreign government officials making an official visit to Rwanda.",
-      "max_stay_days": 30,
-      "validity_days": 30,
-      "entries": "single",
-      "fee_usd": 0,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Free of charge. Issued to non-accredited government officials on an official mission. Status change prohibited. Work not permitted beyond the scope of the official visit. Corrected: the official visitors-visa page's V3-1 tab explicitly states it is 'Issued upon arrival at the border post, online, at immigration and emigration office, at the office of a diplomatic mission...' - so online is corrected from false to true (on_arrival was already correctly true)."
-    },
-    {
-      "category": "diplomatic",
-      "name": "Accredited Diplomat Visa (V3-2)",
-      "purpose": "For foreign diplomatic officials formally accredited to Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 0,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Free of charge. Valid for 2 years, renewable. Issued to officially accredited diplomatic personnel assigned to Rwanda. Multiple entries permitted."
-    },
-    {
-      "category": "other",
-      "name": "Visa Waiver - Free Entry (VE-1)",
-      "purpose": "Entry pass issued to nationals of countries with a bilateral visa waiver arrangement with Rwanda, allowing visa-free or free-of-charge entry.",
-      "max_stay_days": 90,
-      "validity_days": 90,
-      "entries": "single",
-      "fee_usd": 0,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "90-day waiver for bilateral agreement nations; 30-day free visa for AU/Commonwealth/La Francophonie members. Issued at border/entry points or diplomatic missions. EAC citizens receive a separate Visitor's Pass (VP-1) rather than this waiver entry."
-    },
-    {
-      "category": "other",
-      "name": "EAC Visitor's Pass (VP-1)",
-      "purpose": "Free entry pass for citizens of East African Community (EAC) member states, allowing stays of up to six months without a visa.",
-      "max_stay_days": 180,
-      "validity_days": 180,
-      "entries": "single",
-      "fee_usd": 0,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "For citizens of EAC Partner States (Burundi, Kenya, Uganda, Tanzania, South Sudan). Issued free upon arrival. Citizens of Uganda and Kenya may enter on a national ID card. This is a genuine visitor's pass under EAC free-movement obligations, not a standard visa."
-    },
-    {
-      "category": "other",
-      "name": "Crew Member Visa (VC)",
-      "purpose": "For aircraft or boat crew members entering Rwanda at official entry points in the course of their duties.",
-      "max_stay_days": 3,
-      "validity_days": 3,
-      "entries": "single",
-      "fee_usd": 0,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Free of charge. Valid for 72 hours. Issued at the entry point. Work beyond crew duties not permitted."
-    },
-    {
-      "category": "other",
-      "name": "Bridging Visa (V10)",
-      "purpose": "Temporary visa issued to persons whose existing immigration status has lapsed while they regularize their situation in Rwanda.",
-      "max_stay_days": 90,
-      "validity_days": 90,
-      "entries": "single",
-      "fee_usd": 30,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Maximum 90 days. Intended for status-lapsed visitors pending permit renewal or change of status. Applied for in-country at the Directorate General of Immigration."
-    },
-    {
-      "category": "digital_nomad",
-      "name": "Remote Worker Visa (2-year)",
-      "purpose": "Allows qualifying remote workers in priority professional fields to live and legally work in Rwanda for a foreign employer or their own offshore company.",
-      "max_stay_days": 730,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": null,
-      "on_arrival": false,
-      "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
-      "notes": "Established under Investment Promotion and Facilitation Law No. 006/2021 of 8 February 2021. Detailed in RRA Investment Incentives document (August 2023), Section XVII (Talent Attraction Incentives). Fee and application portal not published on migration.gov.rw or irembo.gov.rw as of June 2026."
-    },
-    {
-      "category": "other",
-      "name": "Entrepreneurship Visa (2-year)",
-      "purpose": "Allows foreign startup founders and innovative entrepreneurs and their dependents to reside in Rwanda and establish a business.",
-      "max_stay_days": 730,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": null,
-      "on_arrival": false,
-      "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
-      "notes": "Established under Investment Promotion and Facilitation Law No. 006/2021. Detailed in RRA Investment Incentives document (August 2023), Section XVII. No dedicated application portal found on migration.gov.rw or irembo.gov.rw as of June 2026."
-    },
-    {
-      "category": "student",
-      "name": "Talent Visa (2-year) - International Graduates",
-      "purpose": "Allows qualifying international graduates from recognized higher institutions to remain in Rwanda for up to two years after completing their studies.",
-      "max_stay_days": 730,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": null,
-      "on_arrival": false,
-      "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
-      "notes": "Commences from the date of study completion. Established under Investment Promotion and Facilitation Law No. 006/2021. Detailed in RRA Investment Incentives document (August 2023), Section XVII. No dedicated application portal found on migration.gov.rw or irembo.gov.rw as of June 2026."
-    },
-    {
-      "category": "retirement",
-      "name": "Person with Assured Income Permit (K Permit)",
-      "purpose": "Residence permit for retired persons and others with a guaranteed passive income who do not intend to be employed in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/other-permits",
-      "notes": "Updated with newly-found detail on the Directorate General of Immigration and Emigration's own 'Other Permits' page (permit code K, 'Person with assured income, including a retired person who doesn't intend to be employed in Rwanda'): fee 150,000 RWF (approx USD 105), validity up to 2 years (renewable), online application available. Requirements: CV, police clearance, retirement certificate, Rwanda bank statement, application letter, and local medical insurance. This remains a resident permit, not a visa; applicants apply after entering Rwanda; work in Rwanda not permitted. The minimum-age-55 and minimum-income-USD-5,000/month thresholds previously cited from the RDB business-procedures page (https://businessprocedures.rdb.rw/procedure/138?l=en) are not restated on the current migration.gov.rw page but are presumed to still apply pending direct confirmation."
-    },
-    {
-      "category": "investment",
-      "name": "Business Investor Resident Permit (Temporary)",
-      "purpose": "Resident permits for foreign nationals certified as investors by the Rwanda Development Board (RDB), covering multiple economic sectors.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/business-investor",
-      "notes": "Multiple category codes depending on sector: mining (A1/A3-1), agriculture (B1/B3-1), manufacturing (F1/F3-1), hospitality (O1/O3-1), IT (W1/W3-1), transport/logistics (X1/X3-1), other (Z1/Z3-1). New permit fee: 150,000 RWF (up to 2 years). Recurring permit fee: 250,000 RWF (up to 5 years). No minimum investment threshold published. Path to citizenship after 15 consecutive years of residence."
-    },
-    {
-      "category": "work",
-      "name": "Skilled Worker Permit - Occupations on Demand (H1)",
-      "purpose": "Temporary resident work permit for skilled foreign workers whose occupation appears on Rwanda's Occupations on Demand List (ODL) and who hold the required qualifications and relevant work experience.",
-      "max_stay_days": null,
-      "validity_days": 1095,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 3 years, renewable. No labour-market test required (unlike the H2 sponsored category). Requires an employment contract, certified academic certificates, employer recommendation, CV and police clearance. A 90-day Job Search Visa (V4) is available to ODL workers before securing employment."
-    },
-    {
-      "category": "work",
-      "name": "Sponsored Skilled Worker Permit (H2)",
-      "purpose": "Temporary resident work permit for skilled foreign workers sponsored by a specific Rwandan employer who hold the required qualifications and relevant work experience.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Tied to a specific sponsoring employer. Requires certified academic certificates, an employment contract, employer recommendation, CV and police clearance."
-    },
-    {
-      "category": "work",
-      "name": "Government/Public Institution Employment Permit (E1)",
-      "purpose": "Work permit for foreign nationals contracted by the Government of Rwanda, tertiary institutions or parastatals.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires a government/institution contract, application letter, certified academic certificates, police clearance (last 6 months) and a detailed CV."
-    },
-    {
-      "category": "work",
-      "name": "Technical Assistance Employment Permit (E2)",
-      "purpose": "Work permit for foreign nationals providing technical expertise or assistance under a bilateral or cooperation agreement.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 70,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 100,000 RWF (approx USD 70). Valid up to 2 years, renewable. Requires a MINAFFET recommendation, Note Verbale, police clearance, certified academic certificates and CV."
-    },
-    {
-      "category": "work",
-      "name": "Journalist/Media Permit (H3)",
-      "purpose": "Work permit for foreign journalists and media representatives accredited by the competent Rwandan authority.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires media accreditation, an employment contract, recommendation letter, police clearance and CV."
-    },
-    {
-      "category": "work",
-      "name": "Semi-Skilled Regional Worker Permit (H4)",
-      "purpose": "Work permit for semi-skilled workers or artisans who are nationals of a country within the region (EAC/regional bloc).",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 35,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 50,000 RWF (approx USD 35) - reduced fee for regional nationals. Valid up to 2 years, renewable. Requires an employment contract, police clearance, CV and employer recommendation."
-    },
-    {
-      "category": "work",
-      "name": "International/Regional Organisation Staff Permit (H5)",
-      "purpose": "Work permit for foreign staff employed by an international or regional organization operating in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires a MINAFFET recommendation, Note Verbale, police clearance, academic certificates, CV and employment contract."
-    },
-    {
-      "category": "work",
-      "name": "Special Agreement/Reciprocity Employment Permit (H6)",
-      "purpose": "Work permit for foreign employees admitted under a special agreement or reciprocity arrangement between Rwanda and their home country.",
-      "max_stay_days": null,
-      "validity_days": null,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee and validity are set on a reciprocal basis per the underlying bilateral agreement. Requires an employment contract, certified academic certificates, police clearance, CV and recommendation letter."
-    },
-    {
-      "category": "work",
-      "name": "NGO Employee Permit (N2)",
-      "purpose": "Work permit for foreign nationals employed by a Non-Governmental Organization registered in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires an employment contract, RGB (Rwanda Governance Board) registration certificate, employer recommendation, certified academic certificates, police clearance and CV."
-    },
-    {
-      "category": "work",
-      "name": "Professional Player/Artist Permit (C2)",
-      "purpose": "Work permit for professional foreign athletes, players and entertainers/artists engaged in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 70,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 100,000 RWF (approx USD 70). Valid up to 2 years, renewable. Requires an employment/engagement contract, CV, recommendation letter and police clearance."
-    },
-    {
-      "category": "work",
-      "name": "Multinational/Regional Company Employee Permit (Q1)",
-      "purpose": "Work permit for a foreign employee of a multinational or regional company that maintains its international or regional office in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 365,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid 1 year, renewable only under exceptional circumstances. Requires proof of company affiliation, the foreign employment contract, police clearance, CV and recommendation letter."
-    },
-    {
-      "category": "work",
-      "name": "Refugee Worker Permit (J)",
-      "purpose": "Work permit for a foreign worker holding refugee status in another country who has secured employment in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/employment",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires an employment contract, certified academic certificates, CV, police clearance and recommendation letter."
-    },
-    {
-      "category": "student",
-      "name": "Student Permit (U1)",
-      "purpose": "Residence permit for foreign nationals enrolled to study at a school or institution of learning in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 365,
-      "entries": "multiple",
-      "fee_usd": 14,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/study-research",
-      "notes": "Fee: 20,000 RWF (approx USD 14). Valid 1 year, renewable. Requires a travel document valid 6+ months, a school recommendation/admission letter, a sponsorship letter and police clearance (applicants aged 18+)."
-    },
-    {
-      "category": "student",
-      "name": "Occupational Trainee Permit (U2)",
-      "purpose": "Residence permit for foreign nationals undertaking training, an internship or academic research in Rwanda to enhance professional skills.",
-      "max_stay_days": null,
-      "validity_days": 365,
-      "entries": "multiple",
-      "fee_usd": 35,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/study-research",
-      "notes": "Fee: 50,000 RWF (approx USD 35). Valid 1 year, renewable. Requires a university recommendation, internship/training agreement, CV, academic transcript and police clearance (18+)."
-    },
-    {
-      "category": "student",
-      "name": "Professional Research Permit (H7)",
-      "purpose": "Residence permit for foreign professional researchers who are not accredited to or affiliated with a Rwandan school, vocational or research institution.",
-      "max_stay_days": null,
-      "validity_days": 730,
-      "entries": "multiple",
-      "fee_usd": 105,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/study-research",
-      "notes": "Fee: 150,000 RWF (approx USD 105). Valid up to 2 years, renewable. Requires certified academic certificates, a research permit from the competent Rwandan authority, police clearance (last 6 months), CV and a recommendation."
-    },
-    {
-      "category": "work",
-      "name": "Student Holiday/Graduate Work Permit (P2)",
-      "purpose": "Work permit allowing higher-education students to work during holidays and recent graduates to take up employment in Rwanda.",
-      "max_stay_days": null,
-      "validity_days": 365,
-      "entries": "multiple",
-      "fee_usd": 14,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/study-research",
-      "notes": "Fee: 20,000 RWF (approx USD 14). Valid 1 year. Requires an employment contract, CV, academic certificate, employer recommendation and police clearance (last 6 months)."
-    },
-    {
-      "category": "family",
-      "name": "Dependent Pass (M1/M2/M3)",
-      "purpose": "Residence pass for the spouse, children and dependent family members of a Rwandan citizen (M1), a temporary resident permit holder (M2) or a permanent resident permit holder (M3).",
-      "max_stay_days": null,
-      "validity_days": 1095,
-      "entries": "multiple",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": true,
-      "on_arrival": false,
-      "official_url": "https://www.migration.gov.rw/our-services/permit/dependant",
-      "notes": "M1 (dependent of a Rwandan) and M3 (close relative of a permanent resident) are valid 3 years; M2 (dependent of a temporary resident) matches the principal's validity. Fee is 50% (half) of the fee paid by the principal applicant. Requires an application letter, marriage/birth/adoption certificate and police clearance (18+). M2 dependents also submit a copy of the principal's identity card."
-    },
-    {
-      "category": "other",
-      "name": "Visitor's Pass - Other Regional Bloc Citizens (VP-2)",
-      "purpose": "Entry pass for nationals of a regional organization or community (other than the East African Community) that has a reciprocal free-visa arrangement with Rwanda.",
-      "max_stay_days": 180,
-      "validity_days": 180,
-      "entries": "single",
-      "fee_usd": null,
-      "processing_days_min": null,
-      "processing_days_max": null,
-      "online": false,
-      "on_arrival": true,
-      "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-      "notes": "Listed as a distinct category (VP-2) alongside the EAC Visitor's Pass (VP-1) on the official visitors-visa page's own visa-code menu and requirement tabs - it was previously missing from this catalog, which only had VP-1. Official text: 'issued to a national of a country member of a regional organization or community with free visa other than the East African Community citizens... issued at entry point or embassy... Single entry... Work is not permitted... Change of status is allowed... may be extended in exceptional circumstances.' Fee: 'agreed upon at community or organizational level' (reciprocal, no fixed published USD amount - hence fee_usd is null here). Validity: up to six months."
-    }
-  ],
-  "visa_policy": {
-    "visa_free": [
-      {
-        "nationality": "East African Community (EAC) member states citizens (Burundi, Kenya, Uganda, United Republic of Tanzania, South Sudan)",
-        "iso3": null,
-        "max_stay_days": 180,
-        "notes": "Citizens of EAC Partner States are issued a Visitor's Pass (VP-1) free of charge upon arrival, valid for up to six months. Citizens of Uganda and Kenya may enter using their national ID card. No permit fees apply for EAC citizens. This is a genuine entry pass - not a visa on arrival - consistent with EAC free-movement obligations.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      }
-    ],
-    "visa_on_arrival": [
-      {
-        "nationality": "African Union, Commonwealth and La Francophonie member states",
-        "iso3": null,
-        "max_stay_days": 30,
-        "notes": "Citizens of countries that are members of the African Union, Commonwealth, or La Francophonie receive a visa on arrival with the visa fee waived (free of charge) for a stay of 30 days. The visa is still formally issued upon arrival - it is not a visa-free pass. Countries with a full bilateral visa waiver arrangement with Rwanda receive 90 days free. See the official Rwanda visa regime communique (March 2020 PDF) for the enumerated list of eligible states.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Angola",
-        "iso3": "AGO",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Benin",
-        "iso3": "BEN",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Central African Republic",
-        "iso3": "CAF",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Chad",
-        "iso3": "TCD",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Cote d'Ivoire",
-        "iso3": "CIV",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Democratic Republic of Congo",
-        "iso3": "COD",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Saint Kitts and Nevis",
-        "iso3": "KNA",
-        "max_stay_days": 90,
-        "notes": "Listed on official page as 'The Federation of Saint Christopher and Nevis'; free visa on arrival for 90 days.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Ghana",
-        "iso3": "GHA",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Guinea",
-        "iso3": "GIN",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Indonesia",
-        "iso3": "IDN",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Haiti",
-        "iso3": "HTI",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Mauritius",
-        "iso3": "MUS",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Philippines",
-        "iso3": "PHL",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Senegal",
-        "iso3": "SEN",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Seychelles",
-        "iso3": "SYC",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Sierra Leone",
-        "iso3": "SLE",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Sao Tome and Principe",
-        "iso3": "STP",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Singapore",
-        "iso3": "SGP",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "Qatar",
-        "iso3": "QAT",
-        "max_stay_days": 90,
-        "notes": "Free visa on arrival for 90 days per official visa-on-arrival page.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      },
-      {
-        "nationality": "All other nationalities (not visa-exempt or free-visa eligible)",
-        "iso3": null,
-        "max_stay_days": 30,
-        "notes": "From 1 January 2018, nationals of all countries can obtain a visa on arrival at Kigali International Airport and all land borders without prior application. Fee: USD 50 for single entry (30 days). Multiple entry: USD 70 (90 days). Applicants also have the option to apply online via irembo.gov.rw before departure.",
-        "source_url": "https://www.migration.gov.rw/visa-on-arrival",
-        "source_official": true
-      }
-    ],
-    "e_visa": [
-      {
-        "nationality": "All nationalities",
-        "iso3": null,
-        "max_stay_days": 30,
-        "notes": "Online visa applications accepted via irembo.gov.rw for all nationalities. USD 50 for single entry (30 days); USD 70 for multiple entry (90 days). Fee is waived for nationals of countries with a visa waiver arrangement (AU, Commonwealth, La Francophonie, or bilateral 90-day waiver). Applicants may pay online or upon arrival.",
-        "source_url": "https://irembo.gov.rw/home/citizen/all_services",
-        "source_official": true
-      }
-    ],
-    "eta": [],
-    "source_urls": [
-      "https://www.migration.gov.rw/visa-on-arrival",
-      "https://www.migration.gov.rw/visa/visitors-visa",
-      "https://migration.gov.rw/fileadmin/user_upload/pdf_files/rwanda_s_new_visa_regine_-_final_final2.pdf",
-      "https://businessprocedures.rdb.rw/objective/57?l=en",
-      "https://irembo.gov.rw/home/citizen/all_services",
-      "https://www.migration.gov.rw/our-services/visa-issued-under-special-arrangement"
-    ],
-    "notes": "Rwanda operates a highly open visa policy since 1 January 2018. EAC citizens get a genuine visitor's pass (visa-free) for up to 6 months. African Union, Commonwealth and La Francophonie member nationals receive a free visa on arrival for 30 days (fee waived, but a visa is still formally issued). An explicit list of 19 countries (Angola, Benin, CAR, Chad, Cote d'Ivoire, DRC, Saint Kitts & Nevis, Ghana, Guinea, Indonesia, Haiti, Mauritius, Philippines, Senegal, Seychelles, Sierra Leone, Sao Tome & Principe, Singapore, Qatar) receive a free 90-day visa on arrival. All other nationalities pay USD 50 (single entry, 30 days) or USD 70 (multiple entry, 90 days) on arrival or via e-visa. The East Africa Tourist Visa (EATV/V11) at USD 100 covers Rwanda, Kenya, and Uganda with multiple entries valid for 90 days. CLASSIFICATION NOTE: AU/Commonwealth/La Francophonie and 19-country free entries are recorded as visa_on_arrival (free) rather than visa_free, consistent with Rwanda's own terminology ('visa on arrival with fee waiver') on migration.gov.rw. Only the EAC pass is truly visa_free."
-  },
-  "conditional_access": [
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": [
-        "Angola",
-        "Benin",
-        "China",
-        "Cote d'Ivoire",
-        "Central African Republic",
-        "Chad",
-        "Democratic Republic of Congo",
-        "Djibouti",
-        "Ethiopia",
-        "Saint Kitts and Nevis",
-        "Gabon",
-        "Ghana",
-        "Guinea",
-        "Indonesia",
-        "India",
-        "Israel",
-        "Haiti",
-        "Mauritius",
-        "Mozambique",
-        "Morocco",
-        "Namibia",
-        "Philippines",
-        "Sao Tome and Principe",
-        "Senegal",
-        "Seychelles",
-        "Singapore",
-        "South Africa",
-        "Turkey",
-        "United Arab Emirates"
-      ],
-      "passport_types": ["diplomatic", "service", "official"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": 90,
-      "conditions": "Holders of diplomatic and service/official passports of the listed 29 countries are granted visa-free entry for 90 days under bilateral visa suppression agreements. China also includes Public Affairs passport holders. These exemptions apply only to diplomatic/service/official passport holders; ordinary passport holders of these countries are subject to standard visa-on-arrival or free-visa-on-arrival rules by nationality.",
-      "source_url": "https://www.rwandainkenya.gov.rw/services/service-details-1/visa-8",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["Russia"],
-      "passport_types": ["diplomatic", "service"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Rwanda and Russia signed a visa waiver agreement for holders of diplomatic and service passports. The agreement was first signed in Sochi on 9 November 2024 and a further instrument was signed in Antalya on 18 April 2026. Entry into force date is not confirmed on any official Rwanda government source as of June 2026. Included here as a signed agreement; may not yet be operational. Stay duration not published.",
-      "source_url": "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-russia-sign-visa-waiver-agreement",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["Venezuela"],
-      "passport_types": ["diplomatic", "official", "special"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Rwanda and Venezuela signed a Memorandum of Understanding on visa waiver for holders of Diplomatic, Official, and Special passports, signed in Kigali on 1 November 2023. Entry into force date is not confirmed on any official Rwanda government source. Stay duration not published.",
-      "source_url": "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-venezuela-sign-agreement-on-visa-waiver",
-      "source_official": true
-    },
-    {
-      "basis": "passport_type",
-      "eligible_nationalities": ["Maldives"],
-      "passport_types": ["unknown - not specified in official source"],
-      "credential": null,
-      "level": "visa_free",
-      "max_stay_days": null,
-      "conditions": "Rwanda and Maldives signed an Agreement on Mutual Visa Exemption on 5 May 2023. Passport types covered (ordinary, diplomatic, official) and stay duration are not specified in the official announcement on minaffet.gov.rw. Entry into force date not confirmed. Included as a signed agreement pending detail confirmation.",
-      "source_url": "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-maldives-sign-agreement-on-mutual-visa-exemption",
-      "source_official": true
-    }
-  ],
-  "cbi": {
-    "has_program": false,
-    "program_name": "",
-    "official_url": "https://www.migration.gov.rw/our-services/citizenshipss",
+    "notes": "Multiple investor permit categories for foreign investors certified by Rwanda Development Board (RDB), covering: mining (A1/A3-1), agriculture/animal husbandry (B1/B3-1), manufacturing (F1/F3-1), hospitality (O1/O3-1), IT (W1/W3-1), transport/logistics (X1/X3-1), other sectors (Z1/Z3-1). New permit fee: 150,000 RWF (up to 2 years). Recurring permit fee: 250,000 RWF (up to 5 years). No minimum investment threshold published on official pages. Citizenship by residence requires 15 consecutive years."
+   },
+   {
+    "name": "Person with Assured Income Permit (K Permit)",
+    "type": "passive_income",
+    "min_amount": 5000,
+    "currency": "USD",
+    "path_to_pr_years": null,
+    "path_to_citizenship_years": null,
+    "official_url": "https://businessprocedures.rdb.rw/procedure/138?l=en",
     "source_official": true,
-    "options": [],
-    "processing_time": "6 months",
-    "dual_citizenship_allowed": null,
-    "residency_required": null,
-    "notes": "Rwanda does not have a formal standalone Citizenship-by-Investment (CBI) program with defined investment thresholds. The official citizenship page lists 'Substantial sustainable investments or activities' as one of several discretionary grounds for citizenship by acquisition (naturalization), but no minimum investment amount, program name, or dedicated CBI processing pathway is published on the official migration site. Applicants on investment grounds must provide proof of registration as an investor and a certificate of sustainable occupation/activities. Application fees range from 5,000 to 150,000 RWF depending on pathway. Processing time for citizenship applications is 6 months. No advertised CBI product found on any official Rwanda government domain."
-  },
-  "rbi": {
-    "programs": [
-      {
-        "name": "Business Investor Resident Permits (Temporary) - multiple sector categories",
-        "type": "business",
-        "min_amount": null,
-        "currency": null,
-        "path_to_pr_years": null,
-        "path_to_citizenship_years": 15,
-        "official_url": "https://www.migration.gov.rw/our-services/business-investor",
-        "source_official": true,
-        "notes": "Multiple investor permit categories for foreign investors certified by Rwanda Development Board (RDB), covering: mining (A1/A3-1), agriculture/animal husbandry (B1/B3-1), manufacturing (F1/F3-1), hospitality (O1/O3-1), IT (W1/W3-1), transport/logistics (X1/X3-1), other sectors (Z1/Z3-1). New permit fee: 150,000 RWF (up to 2 years). Recurring permit fee: 250,000 RWF (up to 5 years). No minimum investment threshold published on official pages. Citizenship by residence requires 15 consecutive years."
-      },
-      {
-        "name": "Person with Assured Income Permit (K Permit)",
-        "type": "passive_income",
-        "min_amount": 5000,
-        "currency": "USD",
-        "path_to_pr_years": null,
-        "path_to_citizenship_years": null,
-        "official_url": "https://businessprocedures.rdb.rw/procedure/138?l=en",
-        "source_official": true,
-        "notes": "Issued to persons with assured income including retired persons who do not intend to be employed in Rwanda. Minimum age: 55 years. Minimum income: USD 5,000 per month required."
-      },
-      {
-        "name": "Itinerant Business Visa (V9) - Long-term Investor Visa",
-        "type": "business",
-        "min_amount": null,
-        "currency": "USD",
-        "path_to_pr_years": null,
-        "path_to_citizenship_years": null,
-        "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-        "source_official": true,
-        "notes": "Issued to a foreign investor, board member or representative of a multinational company who does not reside in Rwanda but has significant business activities in the country and needs to regularly visit. Fee: USD 200. Valid for 2 to 10 years (renewable). Multiple entries. This is a long-stay visa category rather than a full residence permit."
-      }
-    ]
-  },
-  "fast_track": {
-    "programs": [
-      {
-        "name": "Entrepreneurship Visa (2-year) - Startup Founders",
-        "category": "startup",
-        "eligibility": "Foreign start-up founders and innovative entrepreneurs and their dependents",
-        "processing_time": null,
-        "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
-        "source_official": true,
-        "notes": "2-year entrepreneurship visa allowing foreign startup founders to start a business in Rwanda. Based on Investment Promotion and Facilitation Law No. 006/2021 of 8 February 2021. Detailed in RRA Investment Incentives document (August 2023) Section XVII (Talent Attraction Incentives). No dedicated application portal found on migration.gov.rw or irembo.gov.rw."
-      },
-      {
-        "name": "Talent Visa (2-year) - International Graduates",
-        "category": "talent",
-        "eligibility": "Qualifying international students from qualifying higher institutions of learning",
-        "processing_time": null,
-        "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
-        "source_official": true,
-        "notes": "2-year talent visa commencing from the date of completion of studies for qualifying international graduates. Detailed in RRA Investment Incentives document (August 2023) Section XVII. No dedicated application portal found on migration.gov.rw or irembo.gov.rw."
-      },
-      {
-        "name": "Remote Worker Visa (2-year)",
-        "category": "digital_nomad",
-        "eligibility": "Qualifying remote workers in priority professional fields",
-        "processing_time": null,
-        "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
-        "source_official": true,
-        "notes": "2-year visa allowing qualifying remote workers to live in Rwanda and legally work for an employer registered abroad or their own company. Detailed in RRA Investment Incentives document (August 2023) Section XVII. No dedicated application portal found on migration.gov.rw or irembo.gov.rw at time of research."
-      },
-      {
-        "name": "Skilled Worker Permit - Occupations on Demand (H1)",
-        "category": "skilled_worker",
-        "eligibility": "Skilled workers whose occupation appears on the official Occupations on Demand List (ODL) published by the Directorate General of Immigration",
-        "processing_time": null,
-        "official_url": "https://businessprocedures.rdb.rw/procedure/129?l=en",
-        "source_official": true,
-        "notes": "Temporary resident permit (H1) for skilled workers on the Occupations on Demand List. No labour market test required (unlike the H2 sponsored category). A job-search visa (V4) of 90 days at USD 50 is also available for workers on the ODL to seek employment before applying for an H1 permit."
-      },
-      {
-        "name": "East Africa Tourist Visa (EATV / V11)",
-        "category": "regional_travel",
-        "eligibility": "Foreign tourists intending to visit Rwanda, Kenya, and Uganda",
-        "processing_time": null,
-        "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
-        "source_official": true,
-        "notes": "USD 100; valid 90 days with multiple entries covering Rwanda, Kenya and Uganda. Available on arrival, online via irembo.gov.rw, or at Rwandan diplomatic missions abroad. Formally classified as visa type V11 on the official visitors-visa page."
-      }
-    ]
-  },
-  "agreements": [
-    "East African Community (EAC) - free movement/entry pass for EAC citizens (up to 6 months)",
-    "African Union (AU) - free visa on arrival (fee waived) for AU member citizens (30 days)",
-    "Commonwealth - free visa on arrival (fee waived) for Commonwealth citizens (30 days)",
-    "La Francophonie (OIF) - free visa on arrival (fee waived) for La Francophonie member citizens (30 days)",
-    "CEPGL (Economic Community of the Great Lakes Countries) - regional trade permits (G1) for CEPGL/EAC nationals",
-    "Bilateral diplomatic/service passport visa suppression agreements with 29 countries (see conditional_access)",
-    "Rwanda-Russia - diplomatic and service passport visa waiver (signed Nov 2024 and Apr 2026; entry into force unconfirmed)",
-    "Rwanda-Venezuela - diplomatic, official and special passport visa waiver MOU (signed Nov 2023; entry into force unconfirmed)",
-    "Rwanda-Maldives - mutual visa exemption (signed May 2023; passport types and entry into force unconfirmed)"
-  ],
-  "official_domains": [
-    "migration.gov.rw",
-    "gov.rw",
-    "irembo.gov.rw",
-    "businessprocedures.rdb.rw",
-    "rra.gov.rw",
-    "minaffet.gov.rw",
-    "rwandainkenya.gov.rw",
-    "rwandainrussia.gov.rw"
-  ],
-  "data_quality": {
-    "completeness": "high",
-    "validation_notes": [
-      "CORRECTED (classification): AU/Commonwealth/La Francophonie free entry and the 19-country 90-day free entry were previously in visa_policy.visa_free but are formally issued as visa-on-arrival by Rwanda (migration.gov.rw calls them 'visa on arrival with fee waiver'). Moved to visa_policy.visa_on_arrival. Only the EAC visitor's pass remains as true visa_free.",
-      "ADDED (conditional_access): Rwanda-Russia diplomatic/service passport visa waiver agreement (signed Sochi 9 Nov 2024; second signing Antalya 18 Apr 2026) added to conditional_access. Entry into force unconfirmed on official sources.",
-      "ADDED (conditional_access): Rwanda-Venezuela MOU for diplomatic/official/special passport holders (signed 1 Nov 2023) added to conditional_access. Entry into force unconfirmed.",
-      "ADDED (conditional_access): Rwanda-Maldives mutual visa exemption (signed 5 May 2023) added to conditional_access. Passport types and stay duration not specified in official announcement.",
-      "VERIFIED: 29-country diplomatic/service/official passport list (conditional_access entry 1) confirmed unchanged from rwandainkenya.gov.rw.",
-      "VERIFIED: 19-country list of 90-day free-visa-on-arrival nations confirmed unchanged from migration.gov.rw/visa-on-arrival.",
-      "VERIFIED: EAC 6-month visitor's pass confirmed unchanged.",
-      "VERIFIED: CBI - no formal program confirmed; no minimum investment threshold published.",
-      "VERIFIED: RBI investor permit fees confirmed (150,000 RWF new, 250,000 RWF recurring); no minimum investment threshold.",
-      "UPDATED: EATV now noted as visa type V11 per visitors-visa page classification.",
-      "UPDATED: CBI notes expanded to include fee range (5,000-150,000 RWF) sourced from citizenship page.",
-      "ADDED (outbound_official): Rwanda Directorate General of Immigration official outbound page (migration.gov.rw/1-1/sops-1) located and recorded. Lists 48 visa-free destinations and 18 visa-on-arrival destinations for Rwanda ordinary passport holders.",
-      "ADDED (visa_types): Full visa_types array added covering all 17 official visitor visa categories (V1 - V12, VT, VE-1, VE-2, VP-1, VC) plus permit-level categories (K Permit, Business Investor Permit) and the three talent attraction visas (Remote Worker, Entrepreneurship, Talent Visa) under Investment Law No. 006/2021. Sources: migration.gov.rw/visa/visitors-visa, migration.gov.rw/visa/transit-visa, businessprocedures.rdb.rw, rra.gov.rw.",
-      "VERIFIED (2026-06-27): Re-fetched migration.gov.rw/visa-on-arrival and rwandainkenya.gov.rw/services/service-details-1/visa-8 and migration.gov.rw/our-services/visa-issued-under-special-arrangement. All core visa lists confirmed unchanged: 19-country 90-day free-visa-on-arrival list, EAC 6-month visitor's pass, AU/Commonwealth/La Francophonie 30-day free VoA, and 29-country diplomatic/service/official passport exemption list - all match existing record exactly. No new ordinary-passport visa-free countries added to migration.gov.rw as of this re-check.",
-      "NOTED (2026-06-27): Rwanda-Mozambique ordinary passport visa exemption agreement signed 20 Oct 2022 (per minaffet.gov.rw announcement). Entry into force unconfirmed; migration.gov.rw does NOT list Mozambique in the 90-day free-entry list. Kept in gaps; not promoted to visa_policy until confirmed operative on official page.",
-      "NOTED (2026-06-27): Rwanda-Russia visa waiver re-confirmed as covering diplomatic and service passports only per minaffet.gov.rw. No entry into force date published. Retained in conditional_access with uncertainty note unchanged.",
-      "NOTED (2026-06-27): No new bilateral ordinary-passport visa agreements found on minaffet.gov.rw or migration.gov.rw since last run. No nationality-level changes to visa_policy lists warranted.",
-      "VERIFIED (2026-06-29): Re-fetched migration.gov.rw/visa-on-arrival, migration.gov.rw/our-services/visa-issued-under-special-arrangement, rwandainkenya.gov.rw/services/service-details-1/visa-8, and minaffet.gov.rw/updates. All core inbound lists confirmed unchanged: 19-country 90-day free-visa-on-arrival list unchanged (Mozambique confirmed absent from ordinary-passport list on both migration.gov.rw and rwandainkenya.gov.rw - appears only in diplomatic/service/official passport list, consistent with record), EAC 6-month visitor's pass unchanged, AU/Commonwealth/La Francophonie 30-day free VoA unchanged, 29-country diplomatic/service/official passport exemption list unchanged. Rwanda-Russia visa waiver confirmed covering diplomatic and service passports only (signed 9 Nov 2024 Sochi; no entry-into-force date published). No new ordinary-passport bilateral visa agreements found on minaffet.gov.rw for 2025-2026. No nationality-level changes to any visa_policy list warranted. Record confirmed accurate as of 2026-06-29."
-    ],
-    "gaps": [
-      "The March 2020 official visa regime communique PDF was partially cut off; the complete enumerated list of AU/Commonwealth/La Francophonie countries granted 30-day free visa on arrival is not fully legible from the official PDF.",
-      "No specific minimum investment amount for any investor residence permit is stated on official migration.gov.rw pages; amounts are absent, not merely omitted by this researcher.",
-      "Permanent Permits page (migration.gov.rw/our-services/permit/permanent-permits) only states 'The applicant should contact DGIE before making any application' - no published criteria or thresholds.",
-      "The 2-year Remote Worker Visa, Talent Visa, and Entrepreneurship Visa are referenced in the RRA Investment Incentives PDF (August 2023) under Investment Law No. 006/2021, but no dedicated application portal or detailed requirements page was found on irembo.gov.rw or migration.gov.rw.",
-      "Dual citizenship rules for Rwanda not explicitly stated on official immigration pages; renunciation of Rwandan nationality is addressed but active dual-citizenship holding status is unclear from official sources.",
-      "No formal CBI program with fixed investment thresholds found on any official Rwanda government domain.",
-      "CONDITIONAL ACCESS - No official Rwanda government source found granting entry based on holding a third-country credential (US visa, Schengen visa, UK visa, residence permit, etc.). Not recorded per hard classification rules.",
-      "CONDITIONAL ACCESS - No OCI (Overseas Citizen of India) or similar diaspora/heritage special-status entry rules found for Rwanda on any official source.",
-      "CONDITIONAL ACCESS - Rwanda-Russia visa waiver: signed twice (Nov 2024 Sochi; Apr 2026 Antalya) but no entry-into-force date published on any official Rwandan government source. Operational status uncertain.",
-      "CONDITIONAL ACCESS - Rwanda-Venezuela MOU (signed Nov 2023): entry into force unconfirmed on official sources.",
-      "CONDITIONAL ACCESS - Rwanda-Maldives mutual visa exemption (signed May 2023): passport types covered (ordinary vs diplomatic only) and stay duration not specified in official minaffet.gov.rw announcement.",
-      "CONDITIONAL ACCESS - Rwanda-Mozambique ordinary passport visa exemption (signed Oct 2022): agreement confirmed on minaffet.gov.rw but entry into force unconfirmed; Mozambique does NOT appear on migration.gov.rw/visa-on-arrival as of 2026-06-27. Not elevated to visa_policy until confirmed operative.",
-      "CONDITIONAL ACCESS - Rwanda-Azerbaijan and Rwanda-Kazakhstan diplomatic-service passport agreements (noted on aggregator sources as signed Sep 2023 and Sep 2024 respectively) not found confirmed on any official Rwandan government source; not recorded.",
-      "VP-2 Visitor's Pass for Regional Blocs: the official visitors-visa page references a 'VP-2' category for citizens of regional blocs at community-determined fees and up to 6 months, but the specific blocs and conditions are not enumerated on the page; not recorded without a complete official list.",
-      "OUTBOUND - outbound_official page (migration.gov.rw/1-1/sops-1) carries no publication date; currency of the list cannot be confirmed with a timestamp.",
-      "Processing times for visa applications are not published on migration.gov.rw or irembo.gov.rw; recorded as null throughout visa_types.",
-      "Student visa (for studying in Rwanda, not the post-graduation Talent Visa) is referenced in the migration.gov.rw site navigation but no dedicated page with fees or requirements was found; not recorded as a separate visa_types entry.",
-      "Fee for the Talent Attraction visas (Remote Worker, Entrepreneurship, Talent Visa) is not published on any official source; recorded as null."
-    ]
-  },
-  "sources_checked": [
-    "https://www.migration.gov.rw/visa-on-arrival",
-    "https://www.migration.gov.rw/visa/visitors-visa",
-    "https://www.migration.gov.rw/visa/transit-visa",
-    "https://migration.gov.rw/fileadmin/user_upload/pdf_files/rwanda_s_new_visa_regine_-_final_final2.pdf",
-    "https://www.migration.gov.rw/our-services/citizenshipss",
-    "https://www.migration.gov.rw/our-services/business-investor",
-    "https://www.migration.gov.rw/our-services/permit",
-    "https://www.migration.gov.rw/our-services/permit/permanent-permits",
-    "https://www.migration.gov.rw/our-services/visa-issued-under-special-arrangement",
-    "https://businessprocedures.rdb.rw/objective/57?l=en",
-    "https://businessprocedures.rdb.rw/procedure/138?l=en",
-    "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
-    "https://irembo.gov.rw/home/citizen/all_services",
-    "https://www.gov.rw/",
-    "https://www.rwandainkenya.gov.rw/services/service-details-1/visa-8",
-    "https://www.rwandainuk.gov.rw/services/service-details/visa-application",
-    "https://www.rwandainusa.gov.rw/services/service-details/visa-1usa",
-    "https://www.rwandainrussia.gov.rw/services/service-details-1",
-    "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-venezuela-sign-agreement-on-visa-waiver",
-    "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-russia-sign-visa-waiver-agreement",
-    "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-mozambique-signed-an-agreement-on-the-exemption-from-visa-requirements",
-    "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-maldives-sign-agreement-on-mutual-visa-exemption",
-    "https://www.minaffet.gov.rw/",
-    "https://www.migration.gov.rw/1-1/sops-1",
-    "https://www.rwandainzimbabwe.gov.rw/actualites/info-details/three-things-to-know-about-rwandas-visa-free-policy",
-    "https://www.minaffet.gov.rw/updates"
+    "notes": "Issued to persons with assured income including retired persons who do not intend to be employed in Rwanda. Minimum age: 55 years. Minimum income: USD 5,000 per month required."
+   },
+   {
+    "name": "Itinerant Business Visa (V9) - Long-term Investor Visa",
+    "type": "business",
+    "min_amount": null,
+    "currency": "USD",
+    "path_to_pr_years": null,
+    "path_to_citizenship_years": null,
+    "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+    "source_official": true,
+    "notes": "Issued to a foreign investor, board member or representative of a multinational company who does not reside in Rwanda but has significant business activities in the country and needs to regularly visit. Fee: USD 200. Valid for 2 to 10 years (renewable). Multiple entries. This is a long-stay visa category rather than a full residence permit."
+   }
   ]
+ },
+ "fast_track": {
+  "programs": [
+   {
+    "name": "Entrepreneurship Visa (2-year) - Startup Founders",
+    "category": "startup",
+    "eligibility": "Foreign start-up founders and innovative entrepreneurs and their dependents",
+    "processing_time": null,
+    "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
+    "source_official": true,
+    "notes": "2-year entrepreneurship visa allowing foreign startup founders to start a business in Rwanda. Based on Investment Promotion and Facilitation Law No. 006/2021 of 8 February 2021. Detailed in RRA Investment Incentives document (August 2023) Section XVII (Talent Attraction Incentives). No dedicated application portal found on migration.gov.rw or irembo.gov.rw."
+   },
+   {
+    "name": "Talent Visa (2-year) - International Graduates",
+    "category": "talent",
+    "eligibility": "Qualifying international students from qualifying higher institutions of learning",
+    "processing_time": null,
+    "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
+    "source_official": true,
+    "notes": "2-year talent visa commencing from the date of completion of studies for qualifying international graduates. Detailed in RRA Investment Incentives document (August 2023) Section XVII. No dedicated application portal found on migration.gov.rw or irembo.gov.rw."
+   },
+   {
+    "name": "Remote Worker Visa (2-year)",
+    "category": "digital_nomad",
+    "eligibility": "Qualifying remote workers in priority professional fields",
+    "processing_time": null,
+    "official_url": "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
+    "source_official": true,
+    "notes": "2-year visa allowing qualifying remote workers to live in Rwanda and legally work for an employer registered abroad or their own company. Detailed in RRA Investment Incentives document (August 2023) Section XVII. No dedicated application portal found on migration.gov.rw or irembo.gov.rw at time of research."
+   },
+   {
+    "name": "Skilled Worker Permit - Occupations on Demand (H1)",
+    "category": "skilled_worker",
+    "eligibility": "Skilled workers whose occupation appears on the official Occupations on Demand List (ODL) published by the Directorate General of Immigration",
+    "processing_time": null,
+    "official_url": "https://businessprocedures.rdb.rw/procedure/129?l=en",
+    "source_official": true,
+    "notes": "Temporary resident permit (H1) for skilled workers on the Occupations on Demand List. No labour market test required (unlike the H2 sponsored category). A job-search visa (V4) of 90 days at USD 50 is also available for workers on the ODL to seek employment before applying for an H1 permit."
+   },
+   {
+    "name": "East Africa Tourist Visa (EATV / V11)",
+    "category": "regional_travel",
+    "eligibility": "Foreign tourists intending to visit Rwanda, Kenya, and Uganda",
+    "processing_time": null,
+    "official_url": "https://www.migration.gov.rw/visa/visitors-visa",
+    "source_official": true,
+    "notes": "USD 100; valid 90 days with multiple entries covering Rwanda, Kenya and Uganda. Available on arrival, online via irembo.gov.rw, or at Rwandan diplomatic missions abroad. Formally classified as visa type V11 on the official visitors-visa page."
+   }
+  ]
+ },
+ "agreements": [
+  "East African Community (EAC) - free movement/entry pass for EAC citizens (up to 6 months)",
+  "African Union (AU) - free visa on arrival (fee waived) for AU member citizens (30 days)",
+  "Commonwealth - free visa on arrival (fee waived) for Commonwealth citizens (30 days)",
+  "La Francophonie (OIF) - free visa on arrival (fee waived) for La Francophonie member citizens (30 days)",
+  "CEPGL (Economic Community of the Great Lakes Countries) - regional trade permits (G1) for CEPGL/EAC nationals",
+  "Bilateral diplomatic/service passport visa suppression agreements with 29 countries (see conditional_access)",
+  "Rwanda-Russia - diplomatic and service passport visa waiver (signed Nov 2024 and Apr 2026; entry into force unconfirmed)",
+  "Rwanda-Venezuela - diplomatic, official and special passport visa waiver MOU (signed Nov 2023; entry into force unconfirmed)",
+  "Rwanda-Maldives - mutual visa exemption (signed May 2023; passport types and entry into force unconfirmed)"
+ ],
+ "official_domains": [
+  "migration.gov.rw",
+  "gov.rw",
+  "irembo.gov.rw",
+  "businessprocedures.rdb.rw",
+  "rra.gov.rw",
+  "minaffet.gov.rw",
+  "rwandainkenya.gov.rw",
+  "rwandainrussia.gov.rw"
+ ],
+ "data_quality": {
+  "completeness": "high",
+  "validation_notes": [
+   "CORRECTED (classification): AU/Commonwealth/La Francophonie free entry and the 19-country 90-day free entry were previously in visa_policy.visa_free but are formally issued as visa-on-arrival by Rwanda (migration.gov.rw calls them 'visa on arrival with fee waiver'). Moved to visa_policy.visa_on_arrival. Only the EAC visitor's pass remains as true visa_free.",
+   "ADDED (conditional_access): Rwanda-Russia diplomatic/service passport visa waiver agreement (signed Sochi 9 Nov 2024; second signing Antalya 18 Apr 2026) added to conditional_access. Entry into force unconfirmed on official sources.",
+   "ADDED (conditional_access): Rwanda-Venezuela MOU for diplomatic/official/special passport holders (signed 1 Nov 2023) added to conditional_access. Entry into force unconfirmed.",
+   "ADDED (conditional_access): Rwanda-Maldives mutual visa exemption (signed 5 May 2023) added to conditional_access. Passport types and stay duration not specified in official announcement.",
+   "VERIFIED: 29-country diplomatic/service/official passport list (conditional_access entry 1) confirmed unchanged from rwandainkenya.gov.rw.",
+   "VERIFIED: 19-country list of 90-day free-visa-on-arrival nations confirmed unchanged from migration.gov.rw/visa-on-arrival.",
+   "VERIFIED: EAC 6-month visitor's pass confirmed unchanged.",
+   "VERIFIED: CBI - no formal program confirmed; no minimum investment threshold published.",
+   "VERIFIED: RBI investor permit fees confirmed (150,000 RWF new, 250,000 RWF recurring); no minimum investment threshold.",
+   "UPDATED: EATV now noted as visa type V11 per visitors-visa page classification.",
+   "UPDATED: CBI notes expanded to include fee range (5,000-150,000 RWF) sourced from citizenship page.",
+   "ADDED (outbound_official): Rwanda Directorate General of Immigration official outbound page (migration.gov.rw/1-1/sops-1) located and recorded. Lists 48 visa-free destinations and 18 visa-on-arrival destinations for Rwanda ordinary passport holders.",
+   "ADDED (visa_types): Full visa_types array added covering all 17 official visitor visa categories (V1 - V12, VT, VE-1, VE-2, VP-1, VC) plus permit-level categories (K Permit, Business Investor Permit) and the three talent attraction visas (Remote Worker, Entrepreneurship, Talent Visa) under Investment Law No. 006/2021. Sources: migration.gov.rw/visa/visitors-visa, migration.gov.rw/visa/transit-visa, businessprocedures.rdb.rw, rra.gov.rw.",
+   "VERIFIED (2026-06-27): Re-fetched migration.gov.rw/visa-on-arrival and rwandainkenya.gov.rw/services/service-details-1/visa-8 and migration.gov.rw/our-services/visa-issued-under-special-arrangement. All core visa lists confirmed unchanged: 19-country 90-day free-visa-on-arrival list, EAC 6-month visitor's pass, AU/Commonwealth/La Francophonie 30-day free VoA, and 29-country diplomatic/service/official passport exemption list - all match existing record exactly. No new ordinary-passport visa-free countries added to migration.gov.rw as of this re-check.",
+   "NOTED (2026-06-27): Rwanda-Mozambique ordinary passport visa exemption agreement signed 20 Oct 2022 (per minaffet.gov.rw announcement). Entry into force unconfirmed; migration.gov.rw does NOT list Mozambique in the 90-day free-entry list. Kept in gaps; not promoted to visa_policy until confirmed operative on official page.",
+   "NOTED (2026-06-27): Rwanda-Russia visa waiver re-confirmed as covering diplomatic and service passports only per minaffet.gov.rw. No entry into force date published. Retained in conditional_access with uncertainty note unchanged.",
+   "NOTED (2026-06-27): No new bilateral ordinary-passport visa agreements found on minaffet.gov.rw or migration.gov.rw since last run. No nationality-level changes to visa_policy lists warranted.",
+   "VERIFIED (2026-06-29): Re-fetched migration.gov.rw/visa-on-arrival, migration.gov.rw/our-services/visa-issued-under-special-arrangement, rwandainkenya.gov.rw/services/service-details-1/visa-8, and minaffet.gov.rw/updates. All core inbound lists confirmed unchanged: 19-country 90-day free-visa-on-arrival list unchanged (Mozambique confirmed absent from ordinary-passport list on both migration.gov.rw and rwandainkenya.gov.rw - appears only in diplomatic/service/official passport list, consistent with record), EAC 6-month visitor's pass unchanged, AU/Commonwealth/La Francophonie 30-day free VoA unchanged, 29-country diplomatic/service/official passport exemption list unchanged. Rwanda-Russia visa waiver confirmed covering diplomatic and service passports only (signed 9 Nov 2024 Sochi; no entry-into-force date published). No new ordinary-passport bilateral visa agreements found on minaffet.gov.rw for 2025-2026. No nationality-level changes to any visa_policy list warranted. Record confirmed accurate as of 2026-06-29."
+  ],
+  "gaps": [
+   "The March 2020 official visa regime communique PDF was partially cut off; the complete enumerated list of AU/Commonwealth/La Francophonie countries granted 30-day free visa on arrival is not fully legible from the official PDF.",
+   "No specific minimum investment amount for any investor residence permit is stated on official migration.gov.rw pages; amounts are absent, not merely omitted by this researcher.",
+   "Permanent Permits page (migration.gov.rw/our-services/permit/permanent-permits) only states 'The applicant should contact DGIE before making any application' - no published criteria or thresholds.",
+   "The 2-year Remote Worker Visa, Talent Visa, and Entrepreneurship Visa are referenced in the RRA Investment Incentives PDF (August 2023) under Investment Law No. 006/2021, but no dedicated application portal or detailed requirements page was found on irembo.gov.rw or migration.gov.rw.",
+   "Dual citizenship rules for Rwanda not explicitly stated on official immigration pages; renunciation of Rwandan nationality is addressed but active dual-citizenship holding status is unclear from official sources.",
+   "No formal CBI program with fixed investment thresholds found on any official Rwanda government domain.",
+   "CONDITIONAL ACCESS - No official Rwanda government source found granting entry based on holding a third-country credential (US visa, Schengen visa, UK visa, residence permit, etc.). Not recorded per hard classification rules.",
+   "CONDITIONAL ACCESS - No OCI (Overseas Citizen of India) or similar diaspora/heritage special-status entry rules found for Rwanda on any official source.",
+   "CONDITIONAL ACCESS - Rwanda-Russia visa waiver: signed twice (Nov 2024 Sochi; Apr 2026 Antalya) but no entry-into-force date published on any official Rwandan government source. Operational status uncertain.",
+   "CONDITIONAL ACCESS - Rwanda-Venezuela MOU (signed Nov 2023): entry into force unconfirmed on official sources.",
+   "CONDITIONAL ACCESS - Rwanda-Maldives mutual visa exemption (signed May 2023): passport types covered (ordinary vs diplomatic only) and stay duration not specified in official minaffet.gov.rw announcement.",
+   "CONDITIONAL ACCESS - Rwanda-Mozambique ordinary passport visa exemption (signed Oct 2022): agreement confirmed on minaffet.gov.rw but entry into force unconfirmed; Mozambique does NOT appear on migration.gov.rw/visa-on-arrival as of 2026-06-27. Not elevated to visa_policy until confirmed operative.",
+   "CONDITIONAL ACCESS - Rwanda-Azerbaijan and Rwanda-Kazakhstan diplomatic-service passport agreements (noted on aggregator sources as signed Sep 2023 and Sep 2024 respectively) not found confirmed on any official Rwandan government source; not recorded.",
+   "VP-2 Visitor's Pass for Regional Blocs: the official visitors-visa page references a 'VP-2' category for citizens of regional blocs at community-determined fees and up to 6 months, but the specific blocs and conditions are not enumerated on the page; not recorded without a complete official list.",
+   "OUTBOUND - outbound_official page (migration.gov.rw/1-1/sops-1) carries no publication date; currency of the list cannot be confirmed with a timestamp.",
+   "Processing times for visa applications are not published on migration.gov.rw or irembo.gov.rw; recorded as null throughout visa_types.",
+   "Student visa (for studying in Rwanda, not the post-graduation Talent Visa) is referenced in the migration.gov.rw site navigation but no dedicated page with fees or requirements was found; not recorded as a separate visa_types entry.",
+   "Fee for the Talent Attraction visas (Remote Worker, Entrepreneurship, Talent Visa) is not published on any official source; recorded as null."
+  ]
+ },
+ "sources_checked": [
+  "https://www.migration.gov.rw/visa-on-arrival",
+  "https://www.migration.gov.rw/visa/visitors-visa",
+  "https://www.migration.gov.rw/visa/transit-visa",
+  "https://migration.gov.rw/fileadmin/user_upload/pdf_files/rwanda_s_new_visa_regine_-_final_final2.pdf",
+  "https://www.migration.gov.rw/our-services/citizenshipss",
+  "https://www.migration.gov.rw/our-services/business-investor",
+  "https://www.migration.gov.rw/our-services/permit",
+  "https://www.migration.gov.rw/our-services/permit/permanent-permits",
+  "https://www.migration.gov.rw/our-services/visa-issued-under-special-arrangement",
+  "https://businessprocedures.rdb.rw/objective/57?l=en",
+  "https://businessprocedures.rdb.rw/procedure/138?l=en",
+  "https://www.rra.gov.rw/fileadmin/user_upload/RRA_investment_incentives.pdf",
+  "https://irembo.gov.rw/home/citizen/all_services",
+  "https://www.gov.rw/",
+  "https://www.rwandainkenya.gov.rw/services/service-details-1/visa-8",
+  "https://www.rwandainuk.gov.rw/services/service-details/visa-application",
+  "https://www.rwandainusa.gov.rw/services/service-details/visa-1usa",
+  "https://www.rwandainrussia.gov.rw/services/service-details-1",
+  "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-venezuela-sign-agreement-on-visa-waiver",
+  "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-russia-sign-visa-waiver-agreement",
+  "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-mozambique-signed-an-agreement-on-the-exemption-from-visa-requirements",
+  "https://www.minaffet.gov.rw/updates/news-details/rwanda-and-maldives-sign-agreement-on-mutual-visa-exemption",
+  "https://www.minaffet.gov.rw/",
+  "https://www.migration.gov.rw/1-1/sops-1",
+  "https://www.rwandainzimbabwe.gov.rw/actualites/info-details/three-things-to-know-about-rwandas-visa-free-policy",
+  "https://www.minaffet.gov.rw/updates"
+ ]
 }

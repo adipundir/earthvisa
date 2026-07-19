@@ -23,6 +23,9 @@ five. One obvious action per view; everything else whispers or waits.
   dark variants. Light-first remains the default.
 - **Copy rule: no em or en dashes anywhere** (owner directive). Use " - ", a comma,
   a period, or "·". Digit ranges use a plain hyphen (90-180).
+- **FINAL (owner decision 2026-07-20): red is the accent theme.** Brand red for
+  actions/links/focus; blue exists ONLY as the eTA/e-visa data-category hue;
+  green = visa-free only. This is settled - do not revisit.
 - **Accent scarcity rule** (owner directive): the red accent is for interactive
   elements (buttons, links, focus, active states) and change-data moments ONLY.
   Never on decorative chrome: no red borders, rules, dividers, or section edges.

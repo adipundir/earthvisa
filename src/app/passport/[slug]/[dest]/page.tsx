@@ -586,10 +586,14 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
     : pMin == null || pMin === 0
       ? (pMax != null && pMax > 0 ? `up to ${pMax}d processing` : pMin === 0 ? "under 24h processing" : null)
       : `${pMin}${pMax != null && pMax !== pMin ? `-${pMax}` : ""}d processing`;
-  return (
-    <div className="rounded-xl border border-hair bg-surface px-4 py-3.5">
+  const hasDetail = !!v.notes || !!v.official_url;
+  // Compact-by-default (owner directive: the always-open note dumps were
+  // information overload). The card shows name + purpose + one meta row;
+  // the note bullets and official link live behind a Details disclosure.
+  const head = (
+    <>
       <p className="text-[15px] font-semibold text-ink">{v.name}</p>
-      {v.purpose && <p className="mt-1 text-[14.5px] leading-relaxed text-ink-2">{v.purpose}</p>}
+      {v.purpose && <p className="mt-1 text-[14px] leading-snug text-ink-2 line-clamp-2">{v.purpose}</p>}
       <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[13px] font-medium tabular-nums text-ink-2">
         {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
         {v.entries && <span>{v.entries} entry</span>}
@@ -599,12 +603,27 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
         {v.fee_usd != null && !suppressFee && (v.fee_usd === 0 ? <span className="text-verdict">free</span> : <span>~${v.fee_usd}</span>)}
         {v.online && <span className="text-verdict">online</span>}
       </div>
+    </>
+  );
+  if (!hasDetail) {
+    return <div className="rounded-xl border border-hair bg-surface px-4 py-3.5">{head}</div>;
+  }
+  return (
+    <details className="group rounded-xl border border-hair bg-surface px-4 py-3.5">
+      <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+        {head}
+        <span className="mt-2 inline-flex items-center gap-1 text-[13px] font-semibold text-accent">
+          <span className="group-open:hidden">Details</span>
+          <span className="hidden group-open:inline">Less</span>
+          <svg viewBox="0 0 10 6" className="h-2 w-2 transition-transform group-open:rotate-180" fill="currentColor" aria-hidden="true"><path d="M0 0l5 6 5-6z" /></svg>
+        </span>
+      </summary>
       {/* Notes holding 3+ discrete facts render as scannable bullets, not a
           run-on paragraph; one- or two-sentence notes stay as prose. */}
       {v.notes && (() => {
         const sentences = splitSentences(v.notes);
         return sentences.length >= 3 ? (
-          <ul className="mt-2 space-y-1">
+          <ul className="mt-3 space-y-1.5 border-t border-hair pt-3">
             {sentences.map((t, i) => (
               <li key={i} className="flex gap-2 text-[14.5px] leading-relaxed text-ink-2">
                 <span aria-hidden="true" className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
@@ -613,15 +632,15 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
             ))}
           </ul>
         ) : (
-          <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">{v.notes}</p>
+          <p className="mt-3 border-t border-hair pt-3 text-[14.5px] leading-relaxed text-ink-2">{v.notes}</p>
         );
       })()}
       {v.official_url && (
-        <a href={v.official_url} target="_blank" rel="noreferrer" className="mt-2 inline-flex items-center gap-1 text-[13px] font-semibold text-accent underline-offset-2 hover:underline">
+        <a href={v.official_url} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-accent underline-offset-2 hover:underline">
           {isAdvisoryUrl(v.official_url) ? "Official advisory" : "Apply here"} ↗
         </a>
       )}
-    </div>
+    </details>
   );
 }
 
