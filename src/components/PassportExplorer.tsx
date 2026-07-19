@@ -299,16 +299,16 @@ export default function PassportExplorer({ hero }: { hero?: React.ReactNode }) {
         <div className="mx-auto grid w-full max-w-6xl items-start gap-8 px-5 pb-10 pt-8 sm:px-8 sm:pt-12 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-12 lg:pb-16 lg:pt-16">
           {hero}
 
-          {/* The checker: a document card sitting on the paper ground */}
+          {/* The checker: a document card sitting on the paper ground.
+              One obvious action - the input. Everything else whispers or waits. */}
           <div className="card-doc card-doc-rule card-doc-ticks p-5 sm:p-6">
-        <div className="mb-3">
-          <p className="text-sub text-ink">Your Passport(s)</p>
-          <p className="mt-0.5 text-[13px] leading-relaxed text-ink-soft">Enter the country whose passport you hold - add multiple if you have dual citizenship</p>
-        </div>
+        <label htmlFor="passport-search-input" className="mb-2 block text-[15px] font-semibold text-ink">
+          Your passport
+        </label>
 
         <div ref={boxRef} className="relative z-30 w-full">
-          {/* Full-width search box */}
-          <div className="flex min-h-[2.75rem] w-full flex-wrap items-center gap-2 rounded-[2px] border border-line-strong bg-card px-4 py-2 transition-all focus-within:border-stamp">
+          {/* Full-width search box - the main act, sized like it */}
+          <div className="flex min-h-[3.25rem] w-full flex-wrap items-center gap-2 rounded-[2px] border border-line-strong bg-card px-4 py-2 transition-all focus-within:border-stamp">
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
               const isNonOrdinary = currentType !== "ordinary";
@@ -409,8 +409,9 @@ export default function PassportExplorer({ hero }: { hero?: React.ReactNode }) {
               aria-autocomplete="list"
               aria-activedescendant={hi >= 0 ? `passport-opt-${hi}` : undefined}
               aria-label="Search for a passport country"
-              placeholder={selected.length ? "Add another country…" : "Search for a country…"}
-              className="min-w-[220px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute"
+              id="passport-search-input"
+              placeholder={selected.length ? "Add another country…" : "Type your country - e.g. India"}
+              className="min-w-[220px] flex-1 bg-transparent py-1 text-[16px] text-ink outline-none focus-visible:outline-none placeholder:text-ink-mute"
             />
           </div>
 
@@ -450,15 +451,17 @@ export default function PassportExplorer({ hero }: { hero?: React.ReactNode }) {
           </p>
         )}
 
-      {/* ── Visas & permits - collapsed by default so the entry stays simple ── */}
+      {/* ── Visas & permits - tertiary: quiet, and only offered once a passport
+          exists (a credential means nothing before one is picked) ── */}
+      {(selected.length > 0 || creds.length > 0) && (
       <details
-        className="group mt-5"
+        className="group mt-4"
         open={showCreds || creds.length > 0}
         onToggle={(e) => setShowCreds(e.currentTarget.open)}
       >
-        <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[12px] uppercase tracking-[0.14em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
-          <span aria-hidden className="text-[16px] font-normal leading-none transition group-open:rotate-45">+</span>
-          <span className="group-open:hidden">Add a visa or permit you hold - optional</span>
+        <summary className="inline-flex min-h-[44px] cursor-pointer list-none items-center gap-1.5 text-[13px] text-ink-mute transition hover:text-ink [&::-webkit-details-marker]:hidden">
+          <span aria-hidden className="text-[15px] font-normal leading-none transition group-open:rotate-45">+</span>
+          <span className="group-open:hidden">Add a visa or permit you hold (optional)</span>
           <span className="hidden group-open:inline">Visas &amp; permits you hold</span>
         </summary>
         <p className="mt-3 max-w-2xl text-sm text-ink-soft">
@@ -554,26 +557,26 @@ export default function PassportExplorer({ hero }: { hero?: React.ReactNode }) {
           )}
         </div>
       </details>
+      )}
 
-          {/* ── Teaching state (spec §9): tappable examples that fill the input ── */}
+          {/* ── Empty state: one whispered line of tappable examples - nothing else ── */}
           {!hasInput && (
-            <div className="mt-5 border-t border-line pt-4">
-              <p className="mono-chrome">No passport yet - tap one to try</p>
-              <div className="mt-2.5 flex flex-wrap gap-2">
-                {EXAMPLE_PASSPORTS.map((c) => (
+            <p className="mt-3 text-[13px] text-ink-mute">
+              Try:{" "}
+              {EXAMPLE_PASSPORTS.slice(0, 3).map((c, i) => (
+                <span key={c.iso3}>
+                  {i > 0 && <span aria-hidden> · </span>}
                   <button
-                    key={c.iso3}
                     type="button"
                     onClick={() => add(c.iso3)}
-                    className="mono inline-flex min-h-[36px] items-center gap-1.5 rounded-[2px] border border-line-strong bg-card px-3 text-[12px] text-ink-soft transition hover:border-stamp hover:text-stamp"
+                    className="relative inline-flex items-center gap-1 text-ink-soft underline decoration-line-strong underline-offset-4 transition after:absolute after:-inset-2 after:content-[''] hover:text-stamp hover:decoration-stamp"
                   >
-                    <span aria-hidden="true" className="text-base leading-none">{isoToFlag(c.iso2)}</span>
+                    <span aria-hidden="true">{isoToFlag(c.iso2)}</span>
                     {c.name}
                   </button>
-                ))}
-              </div>
-              <p className="mono-chrome mt-4">You get: visa-free list · stay limits · official sources</p>
-            </div>
+                </span>
+              ))}
+            </p>
           )}
           </div>
         </div>

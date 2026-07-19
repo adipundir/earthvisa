@@ -106,7 +106,6 @@ export default function Home() {
             </p>
             <p className="mono-chrome mt-6 hidden sm:block">
               {meta.countriesWithData} passports · {meta.destinationsWithVisaPolicy} visa policies
-              <span className="hidden lg:inline"> · {dataset.cbi.length} citizenship programs · {dataset.rbi.length} residency routes</span>
             </p>
           </div>
         }

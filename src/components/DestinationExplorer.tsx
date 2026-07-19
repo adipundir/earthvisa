@@ -498,28 +498,24 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
         </div>
       </div>
 
-          {/* ── Teaching state (spec §9): worked examples that fill the form ── */}
+          {/* ── Empty state: one whispered line of worked examples - nothing else ── */}
           {!destIso3 && (
-            <div className="mt-6 max-w-2xl">
-              <p className="mono-chrome">Or tap a route to try one</p>
-              <div className="mt-2.5 flex flex-wrap gap-2">
-                {EXAMPLE_ROUTES.map((r) => (
+            <p className="mt-3 max-w-2xl text-[13px] text-ink-mute">
+              Try:{" "}
+              {EXAMPLE_ROUTES.slice(0, 3).map((r, i) => (
+                <span key={r.fromIso3 + r.toIso3}>
+                  {i > 0 && <span aria-hidden> · </span>}
                   <button
-                    key={r.fromIso3 + r.toIso3}
                     type="button"
                     onClick={() => fillExample(r.fromIso3, r.toIso3)}
-                    className="mono inline-flex min-h-[36px] items-center gap-1.5 rounded-[2px] border border-line-strong bg-card px-3 text-[12px] text-ink-soft transition hover:border-stamp hover:text-stamp"
+                    className="relative inline-flex items-center gap-1 text-ink-soft underline decoration-line-strong underline-offset-4 transition after:absolute after:-inset-2 after:content-[''] hover:text-stamp hover:decoration-stamp"
                   >
-                    <span aria-hidden="true" className="text-base leading-none">{isoToFlag(r.fromIso2)}</span>
-                    {r.from}
-                    <span aria-hidden="true" className="text-ink-mute">→</span>
-                    <span aria-hidden="true" className="text-base leading-none">{isoToFlag(r.toIso2)}</span>
-                    {r.to}
+                    <span aria-hidden="true">{isoToFlag(r.fromIso2)}</span>
+                    {r.from} → {r.to}
                   </button>
-                ))}
-              </div>
-              <p className="mono-chrome mt-4">You get: the exact verdict · stay limit · conditions · official source</p>
-            </div>
+                </span>
+              ))}
+            </p>
           )}
         </div>
       </section>
@@ -530,10 +526,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
       <div className="mt-8 grid items-start gap-x-8 gap-y-6 lg:grid-cols-2">
 
       <div>
-        <div className="mb-2">
-          <p className="text-sub text-ink">Your Passport(s)</p>
-          <p className="mt-0.5 text-[13px] leading-relaxed text-ink-soft">Add one or more - dual citizens get the best access from either</p>
-        </div>
+        <p className="mb-2 text-[15px] font-semibold text-ink">Your passport</p>
 
         <div ref={passBoxRef} className="relative z-20 w-full">
           <div
@@ -684,13 +677,10 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
 
       {/* ── CREDENTIALS ── */}
       <div>
-        <div className="mb-2">
-          <p className="text-sub text-ink">
-            Visas &amp; Permits
-            <span className="ml-2 font-display text-[13px] font-normal italic text-ink-soft">optional</span>
-          </p>
-          <p className="mt-0.5 text-[13px] leading-relaxed text-ink-soft">A valid US, UK, Schengen or Japan visa - any type (tourist, work, student) - or residency can unlock extra countries</p>
-        </div>
+        <p className="mb-2 text-[15px] font-semibold text-ink">
+          Visas &amp; permits you hold
+          <span className="ml-2 text-[13px] font-normal text-ink-mute">optional</span>
+        </p>
 
         <div ref={credBoxRef} className="relative z-10 w-full">
           <div
