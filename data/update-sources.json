@@ -2,7 +2,7 @@
  "_readme": "GENERATED FILE - do not hand-edit. Central index of every official source URL per country, derived from data/countries/*.json (the single source of truth). Regenerate: node scripts/extract-update-sources.mjs. Use this to find which pages to re-check when updating a country's visa data.",
  "generated_from": "data/countries/*.json",
  "countries": 199,
- "total_source_urls": 3186,
+ "total_source_urls": 3187,
  "index": {
   "AFG": {
    "name": "Afghanistan",
@@ -5731,7 +5731,7 @@
     "travel.gov.cv",
     "boe.incv.cv"
    ],
-   "source_count": 8,
+   "source_count": 9,
    "sources": [
     {
      "url": "https://www.gov.cv/en/pedir-visto",
@@ -5757,6 +5757,14 @@
      "used_in": [
       "fast_track",
       "visa_types"
+     ]
+    },
+    {
+     "url": "https://visasnews.com/en/cape-verde-visa-on-arrival-suspended-for-citizens-of-96-countries/",
+     "description": "Advance-visa note (AFG, ARM, AZE, BDI, BGD, BHR, BLR, BOL, BRN, BTN, BWA, CAF, CHL, CMR, COD, COG, COL, COM, CRI, DJI, DMA, DOM, DZA, ECU, EGY, ERI, ETH, GAB, GTM, GUY, HND, HTI, IDN, IND, IRN, IRQ, JAM, JOR, KAZ, KGZ, KHM, KIR, LAO, LBN, LBY, LKA, LSO, MDG, MEX, MMR, MNG, MRT, MWI, NAM, NIC, NPL, NRU, OMN, PAK, PAN, PER, PHL, PLW, PNG, PRK, PRY, PSE, RWA, SDN, SLV, SOM, SSD, SUR, SWZ, SYR, TCD, TJK, TKM, TON, TTO, TUN, TUR, TUV, TWN, TZA, UGA, UZB, VEN, VNM, VUT, WSM, YEM, ZMB, ZWE)",
+     "official": false,
+     "used_in": [
+      "advance_visa_notes"
      ]
     },
     {

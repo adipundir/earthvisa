@@ -94,7 +94,7 @@ export default function Home() {
       {/* ── Below the fold: most-checked routes + deeper entry points ── */}
       <section>
         <div className="mx-auto w-full max-w-6xl border-t border-hair px-5 pb-16 pt-12 sm:px-8">
-          <h2 className="text-[15px] font-semibold text-ink">Most checked routes</h2>
+          <h2 className="text-[20px] font-bold tracking-tight text-ink">Most checked routes</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {POPULAR_CORRIDORS.map((c) => (
               <Link key={c.href} href={c.href} className="chip">

@@ -33,6 +33,8 @@ export interface CredentialEdge extends AccessEdge {
   conditions?: string;
   /** true when access is airside/landside transit only - NOT regular tourist entry */
   transit?: boolean;
+  /** human name of the specific document for OTHER_CRED edges, e.g. "APEC Business Travel Card" */
+  docLabel?: string;
 }
 
 export interface CbiOption {

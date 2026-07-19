@@ -465,6 +465,12 @@ function isTransitOnly(conditions) {
   return /\btransit[\s-]?only\b|airport\s+transit\s+visa[\s-]?exempt|airside\s+transit\s+only|landside\s+transit\s+only|\btwov\b|transit\s+without\s+visa\s+\(twov\)|type\s+[ab]\s+transit\s+visa\s+exempt/.test(s);
 }
 
+// APEC Business Travel Card holders can only be citizens of the fully participating
+// ABTC economies - an unscoped ABTC edge would advertise the card to nationalities
+// that cannot hold one (USA/CAN are transitional members: fast-track lanes only,
+// no visa-free entry, so they are excluded here).
+const ABTC_ISO3 = ["AUS", "BRN", "CHL", "CHN", "HKG", "IDN", "JPN", "KOR", "MEX", "MYS", "NZL", "PER", "PHL", "PNG", "RUS", "SGP", "THA", "TWN", "VNM"];
+
 function addCredEdge(credId, dest, level, scope, edge) {
   // Keep every edge (scope + level differ by nationality, e.g. India gets visa-free to
   // Argentina with a US visa while others get only the e-visa AVE). compute resolves the
@@ -472,10 +478,13 @@ function addCredEdge(credId, dest, level, scope, edge) {
   // exact (dest, level, scope) repeats.
   if (!credAccess.has(credId)) credAccess.set(credId, []);
   const list = credAccess.get(credId);
+  if (scope == null && /APEC Business Travel Card|\bABTC\b/i.test(`${edge.conditions || ""} ${edge.notes || ""}`)) {
+    scope = ABTC_ISO3.filter((x) => x !== dest);
+  }
   const scopeKey = scope ? [...scope].sort().join(",") : "*";
   if (list.some((e) => e.dest === dest && e.level === level && (e.nationalityScope ? [...e.nationalityScope].sort().join(",") : "*") === scopeKey)) return;
   const transit = isTransitOnly(edge.conditions);
-  list.push({ dest, level, maxStayDays: edge.maxStayDays, sourceUrl: edge.sourceUrl, sourceOfficial: edge.sourceOfficial, notes: edge.notes, nationalityScope: scope, conditions: edge.conditions || "", transit });
+  list.push({ dest, level, maxStayDays: edge.maxStayDays, sourceUrl: edge.sourceUrl, sourceOfficial: edge.sourceOfficial, notes: edge.notes, nationalityScope: scope, conditions: edge.conditions || "", transit, ...(edge.docLabel ? { docLabel: edge.docLabel } : {}) });
 }
 
 function addDiploEdge(origin, dest, level, passportTypes, edge) {
@@ -637,7 +646,13 @@ for (const f of files) {
       const subtype = ca.credential && ca.credential.subtype ? String(ca.credential.subtype) : "";
       const issuer = ca.credential && ca.credential.issuer ? String(ca.credential.issuer) : "";
       const accepts = [issuer && subtype ? `${issuer}: ${subtype}` : issuer || subtype, conditions].filter(Boolean).join(" - ");
-      const edge = { maxStayDays: typeof ca.max_stay_days === "number" ? ca.max_stay_days : null, sourceUrl: ca.source_url || "", sourceOfficial: ca.source_official !== false, notes: accepts, conditions };
+      // Short human name of the specific document ("APEC Business Travel Card", not
+      // the raw catalog bucket id) - the UI needs it for OTHER_CRED edges, where the
+      // catalog has no label. Trailing parentheticals are per-destination caveats
+      // that already live in conditions.
+      const type = ca.credential && ca.credential.type ? String(ca.credential.type).replace(/_/g, " ") : "";
+      const docLabel = (subtype.replace(/\s*\(.*$/, "").trim() || [issuer, type].filter(Boolean).join(" ")).trim();
+      const edge = { maxStayDays: typeof ca.max_stay_days === "number" ? ca.max_stay_days : null, sourceUrl: ca.source_url || "", sourceOfficial: ca.source_official !== false, notes: accepts, conditions, docLabel };
       addCredEdge(cid, iso3, level, scope, edge);
     }
   }

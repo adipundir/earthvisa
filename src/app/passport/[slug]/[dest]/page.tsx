@@ -700,7 +700,11 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             !/refugee|airport transit/i.test(`${e.notes ?? ""} ${e.conditions ?? ""}`))
           .map((e) => ({
             cred,
-            label: credLabelById.get(cred) ?? cred,
+            // OTHER_CRED is a catalog bucket for destination-specific documents
+            // (APEC card, origin cards, ...) - show the document's own name,
+            // never the raw bucket id. No name at all -> no chip; the
+            // conditions paragraph carries the rule.
+            label: credLabelById.get(cred) ?? (e.docLabel || null),
             level: e.level,
             maxStayDays: e.maxStayDays,
             conditions: (e.conditions || e.notes || "").split(". ")[0],
@@ -1150,7 +1154,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
           {/* ── What you need to do ── */}
           <section id="apply" className="mt-12 scroll-mt-24">
-            <h2 className="text-[15px] font-semibold text-ink">
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">
               {travelBanned ? `${d.name} travel status for ${nd} citizens` : need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
             </h2>
             {appNoteSentences.length > 0 && (
@@ -1172,7 +1176,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           {/* ── Held-credential exceptions - officially published no-advance-visa routes ── */}
           {credGroups.length > 0 && (
             <section id="no-advance-visa" className="mt-12 scroll-mt-24">
-              <h2 className="text-[15px] font-semibold text-ink">No advance visa with these documents</h2>
+              <h2 className="text-[20px] font-bold tracking-tight text-ink">No advance visa with these documents</h2>
               <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
                 {d.name} officially admits {nd} citizens without a pre-arranged visa when they hold:
               </p>
@@ -1182,11 +1186,13 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     <p className="text-[15px] font-bold text-verdict">
                       {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
                     </p>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      {group.map((u) => (
-                        <span key={u.cred} className="inline-flex items-center rounded-md border border-hair-strong bg-surface px-2 py-0.5 text-[13px] font-medium text-ink">{u.label}</span>
-                      ))}
-                    </div>
+                    {group.some((u) => u.label) && (
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {group.filter((u) => u.label).map((u, ui) => (
+                          <span key={`${u.cred}${ui}`} className="inline-flex items-center rounded-md border border-hair-strong bg-surface px-2 py-0.5 text-[13px] font-medium text-ink">{u.label}</span>
+                        ))}
+                      </div>
+                    )}
                     {group[0].conditions && (
                       <p className="mt-2 max-w-2xl text-[14.5px] leading-relaxed text-ink-2">{group[0].conditions}. Conditions vary slightly per document.</p>
                     )}
@@ -1209,7 +1215,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           {/* ── Official visa fees (crawled from government sources) ── */}
           {feeList.length > 0 && (
             <section id="fees" className="mt-12 scroll-mt-24">
-              <h2 className="text-[15px] font-semibold text-ink">{d.name} visa cost for {nd} citizens</h2>
+              <h2 className="text-[20px] font-bold tracking-tight text-ink">{d.name} visa cost for {nd} citizens</h2>
 
               {/* Nationality-specific fee (reciprocity) - the single most useful
                   number for this corridor, shown at readout scale. */}
@@ -1321,7 +1327,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             );
             return (
               <section id="documents" className="mt-12 scroll-mt-24">
-                <h2 className="text-[15px] font-semibold text-ink">
+                <h2 className="text-[20px] font-bold tracking-tight text-ink">
                   {noVisaShortStay ? `${d.name} visa documents for ${nd} applicants` : `Documents required for ${nd} applicants`}
                 </h2>
                 <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
@@ -1378,7 +1384,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               <section id="visa-types" className="mt-12 scroll-mt-24">
                 {/* The h2 renders whenever the section exists - otherwise the
                     jump chip "Visa types" lands on an unlabeled block. */}
-                <h2 className="text-[15px] font-semibold text-ink">{d.name} visa types</h2>
+                <h2 className="text-[20px] font-bold tracking-tight text-ink">{d.name} visa types</h2>
                 {otherTypes.length > 0 && (
                   <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
                     Every {d.name} visa category and its key facts. Eligibility varies by type - open a card for the conditions and the official page.
@@ -1405,7 +1411,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
           {/* ── FAQ ── */}
           <section id="faq" className="mt-12 scroll-mt-24">
-            <h2 className="text-[15px] font-semibold text-ink">{d.name} visa for {nd} citizens - FAQ</h2>
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">{d.name} visa for {nd} citizens - FAQ</h2>
             <div className="mt-3 max-w-3xl divide-y divide-hair border-y border-hair">
               {faq.map(({ q, a }) => (
                 <details key={q} className="group py-1">
@@ -1423,7 +1429,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           <section aria-label="Related corridors" className="mt-14 border-t border-hair pt-8">
             <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
               <div>
-                <h2 className="text-[15px] font-semibold text-ink">More for {nd} citizens</h2>
+                <h2 className="text-[20px] font-bold tracking-tight text-ink">More for {nd} citizens</h2>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {sameNat.slice(0, 6).map((c) => (
                     <Link key={c!.iso3} href={`/passport/${slug}/${nameToSlug(c!.name)}`} className="chip">
@@ -1434,7 +1440,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
               <div>
-                <h2 className="text-[15px] font-semibold text-ink">{d.name} visa for</h2>
+                <h2 className="text-[20px] font-bold tracking-tight text-ink">{d.name} visa for</h2>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {sameDest.slice(0, 6).map((c) => (
                     <Link key={c!.iso3} href={`/passport/${nameToSlug(c!.name)}/${dest}`} className="chip">
