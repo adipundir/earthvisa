@@ -23,6 +23,10 @@ five. One obvious action per view; everything else whispers or waits.
   dark variants. Light-first remains the default.
 - **Copy rule: no em or en dashes anywhere** (owner directive). Use " - ", a comma,
   a period, or "·". Digit ranges use a plain hyphen (90-180).
+- **Accent scarcity rule** (owner directive): the red accent is for interactive
+  elements (buttons, links, focus, active states) and change-data moments ONLY.
+  Never on decorative chrome: no red borders, rules, dividers, or section edges.
+  Roughly one filled red element per viewport; if two compete, demote one.
 - Type: **Archivo** (variable, via next/font/google). Display/numerals: weight 800-850,
   width ~115% where supported, tracking -0.02em, tabular figures. UI/body: 400-650.
   NO second family, NO mono anywhere (URLs/timestamps may use 13px Archivo at 500).
