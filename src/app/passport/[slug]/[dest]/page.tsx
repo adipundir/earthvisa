@@ -1121,21 +1121,16 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   Read the official advisory ↗
                 </a>
               )}
-              {statusUrl ? (
+              {statusUrl && (
                 <a href={statusUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-ink">
                   <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${("sourceOfficial" in s && s.sourceOfficial) ? "bg-verdict" : "bg-ink-3"}`} />
                   Source · {sourceHost(statusUrl)} ↗
                 </a>
-              ) : (
-                <span className="inline-flex items-center gap-1.5">
-                  <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-verdict" />
-                  Official government sources
-                </span>
               )}
               {vfsDocs.length > 0 && (
                 <a href="#documents" className="font-semibold text-accent underline-offset-2 hover:underline">Document checklist →</a>
               )}
-              <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="transition hover:text-ink">Check your full options →</Link>
+              <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="transition hover:text-ink">Check entry with visas you already hold →</Link>
               <Link href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind] ?? "visa-required"}`} className="transition hover:text-ink sm:ml-auto">
                 What &ldquo;{glossaryLabel}&rdquo; means →
               </Link>
