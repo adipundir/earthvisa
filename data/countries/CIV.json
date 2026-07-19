@@ -204,7 +204,7 @@
     "nationality": "All nationalities (ordinary passport holders not in visa-free category)",
     "iso3": null,
     "max_stay_days": 90,
-    "notes": "E-visa (pre-enrollment online + biometric enrollment at Abidjan airport) available through snedai.com, the only officially state-recognized and accredited site for Côte d'Ivoire visa applications. Valid 3 months (multiple entries). Cost: 73 Euros including bank fees. Processing: up to 48 working hours (Monday–Friday). Upon arrival at Félix Houphouët-Boigny International Airport (Abidjan), applicant presents pre-enrollment approval document and completes biometric enrollment at 'Visa aéroport' (open 24/7). Ordinary passports only, minimum 6 months validity. Yellow fever vaccination certificate required at airport. Required documents: passport copy, return air ticket, invitation letter or accommodation certificate (must be typed, printed, signed, stamped, and legalized). The CEPICI official PDF (2018) confirms the e-visa process and 73 EUR cost.",
+    "notes": "E-visa (pre-enrollment online + biometric enrollment at Abidjan airport) available through snedai.com, the only officially state-recognized and accredited site for Côte d'Ivoire visa applications. Valid 3 months (multiple entries). Cost: 73 Euros including bank fees. Processing: up to 48 working hours (Monday - Friday). Upon arrival at Félix Houphouët-Boigny International Airport (Abidjan), applicant presents pre-enrollment approval document and completes biometric enrollment at 'Visa aéroport' (open 24/7). Ordinary passports only, minimum 6 months validity. Yellow fever vaccination certificate required at airport. Required documents: passport copy, return air ticket, invitation letter or accommodation certificate (must be typed, printed, signed, stamped, and legalized). The CEPICI official PDF (2018) confirms the e-visa process and 73 EUR cost.",
     "source_url": "https://snedai.com/e-visa/",
     "source_official": true
    },
@@ -238,7 +238,7 @@
    "credential": null,
    "level": "visa_free",
    "max_stay_days": 90,
-   "conditions": "France–Côte d'Ivoire Agreement on reciprocal short-stay visa exemption for diplomatic passport holders, signed in Paris on 20 January 2025, in force from 1 June 2025 (Décret n° 2025-357 du 18 avril 2025, published on legifrance.gouv.fr). Diplomatic passport must retain at least 3 months validity beyond intended departure date. Must be accompanied by official diplomatic note or mission order. No employment (including self-employment) permitted. Multiple stays not exceeding 90 days within any 180-day period. Covers France (metropolitan departments, overseas regions/departments, overseas collectivities, New Caledonia) and Côte d'Ivoire territory. Diplomatic passports only - service and official passports are NOT covered by this specific agreement.",
+   "conditions": "France - Côte d'Ivoire Agreement on reciprocal short-stay visa exemption for diplomatic passport holders, signed in Paris on 20 January 2025, in force from 1 June 2025 (Décret n° 2025-357 du 18 avril 2025, published on legifrance.gouv.fr). Diplomatic passport must retain at least 3 months validity beyond intended departure date. Must be accompanied by official diplomatic note or mission order. No employment (including self-employment) permitted. Multiple stays not exceeding 90 days within any 180-day period. Covers France (metropolitan departments, overseas regions/departments, overseas collectivities, New Caledonia) and Côte d'Ivoire territory. Diplomatic passports only - service and official passports are NOT covered by this specific agreement.",
    "source_url": "https://www.legifrance.gouv.fr/jorf/id/JORFSCTA000051491648",
    "source_official": true,
    "issuer_country": "FRA",
@@ -268,7 +268,7 @@
    "conditions": "Holders of diplomatic or service category passports issued to nationals of Austria, Brazil, China, Gabon, Israel, South Africa, Turkey, Uganda, Venezuela and Vietnam do not require a visa for Côte d'Ivoire. Source: Côte d'Ivoire Ministry of Foreign Affairs official document dated 15 March 2013 (Conseil aux voyageurs / Annexe.pdf). Note: The CEPICI PDF (2018) lists these same countries with 'passeport ordinaire' notation for some (e.g., South Africa, Gabon, Israel, Uganda, Brazil) in the 'visa required but no prior DST consultation' list - this indicates their ORDINARY passports require a visa, while diplomatic/service passports are exempt as per the 2013 MFA Annexe document. No stay duration specified in source.",
    "source_url": "https://diplomatie.gouv.ci/userfiles/file/Conseil%20aux%20voyageurs/Annexe.pdf",
    "source_official": true,
-   "notes": "Original source is an official Côte d'Ivoire MFA document (diplomatie.gouv.ci domain), dated 15 March 2013. Document is archived (Wayback Machine). The CEPICI 2018 PDF (official government source, sftp.225invest.ci) confirms that South Africa, Brazil, Gabon, Israel, and Uganda holders of ordinary passports require a visa - consistent with their diplomatic/service passport exemption being the operative rule. Current applicability of these agreements (2024–2026) unverified against a live official source, but confirmed in both the 2013 and 2018 official documents."
+   "notes": "Original source is an official Côte d'Ivoire MFA document (diplomatie.gouv.ci domain), dated 15 March 2013. Document is archived (Wayback Machine). The CEPICI 2018 PDF (official government source, sftp.225invest.ci) confirms that South Africa, Brazil, Gabon, Israel, and Uganda holders of ordinary passports require a visa - consistent with their diplomatic/service passport exemption being the operative rule. Current applicability of these agreements (2024-2026) unverified against a live official source, but confirmed in both the 2013 and 2018 official documents."
   },
   {
    "basis": "passport_type",
@@ -365,11 +365,11 @@
    "CORRECTED: Added Morocco, Tunisia, Mauritania, Chad, Central African Republic, Philippines, Seychelles, Singapore as individual visa_free entries - all confirmed from the official CEPICI PDF (2018).",
    "CORRECTED: Added new conditional_access entry for residence permit holders ('titre de séjour') - confirmed in SNEDAI FAQ (official state-accredited portal). Prior record did not capture this rule.",
    "CONFIRMED UNCHANGED: e-visa process, cost (73 EUR), procedures - all verified against current snedai.com/e-visa/ (scraped June 2026). No change.",
-   "CONFIRMED UNCHANGED: France–Côte d'Ivoire diplomatic passport agreement (legifrance.gouv.fr) - verified, in force from 1 June 2025.",
+   "CONFIRMED UNCHANGED: France - Côte d'Ivoire diplomatic passport agreement (legifrance.gouv.fr) - verified, in force from 1 June 2025.",
    "CONFIRMED UNCHANGED: cbi.has_program=false - no CBI program found.",
    "NOTE: The CEPICI PDF also lists some countries (Austria, Brazil, China, Gabon, Israel, South Africa, Turkey, Uganda, Venezuela) as requiring a visa with 'passeport ordinaire' annotation - these are listed under Option 1 (visa required, no prior DST consultation). This is consistent with: their ordinary passport holders require a visa; their diplomatic/service passport holders are exempt per the 2013 MFA Annexe document.",
-   "REVALIDATED 2026-06-27: Re-fetched official sources. Wikipedia (last updated May 2026) confirms no new visa-free countries added after Rwanda (June 2019) - full list of 24 visa-free countries unchanged. E-visa fee (73 EUR) confirmed unchanged via search against snedai.com (snedai.com/e-visa/ returned HTTP 403 directly but fee confirmed via UK embassy diplomatie.gouv.ci page and search results). Embassy visa fee (58 EUR) confirmed from royaumeuni.diplomatie.gouv.ci/visa.php. Rwanda visa-free status (bilan.gouv.ci, June 2019) retained - absent from some aggregator lists (embassies.net 2026 shows 23 countries) but well-sourced on official domain. No new bilateral visa exemption agreements for ordinary passports found in 2024–2026 searches. France diplomatic passport agreement (legifrance.gouv.fr, in force 1 June 2025) still current. snedai.com/faq-visa-biometrique/ returned HTTP 403 - residence permit exemption entry in conditional_access preserved per safety rule (cannot disprove from live source). ECOWAS free-movement ratification confirmed on diplomatie.gouv.ci. No changes made to visa_policy, conditional_access, e_visa, cbi, or rbi fields - all confirmed or preserved as-is.",
-   "REVALIDATED 2026-06-29: Re-fetched key official sources. Wikipedia (last updated May 2026) re-confirmed: 14 ECOWAS members + 9 non-ECOWAS African/Asian countries (CAF, COG, TCD, MRT, MAR, PHL, SYC, SGP, TUN) + Rwanda = 24 visa-free countries total; no additions since Rwanda (June 2019). E-visa fee 73 EUR confirmed via multiple 2025–2026 search results. UK Embassy (royaumeuni.diplomatie.gouv.ci/visa.php) confirms 58 EUR embassy fee and 48-hour processing. Paris Embassy (france.diplomatie.gouv.ci/visa.php) confirms 50 EUR dossier fee (plus bank fees), consistent with 58 EUR total in current record. snedai.com returned HTTP 403 again - e-visa and FAQ entries preserved as-is per safety rule. diplomatie.gouv.ci/cedeao page confirms ECOWAS free movement protocol ratification. embassies.net (2026) lists 23 countries (omits Rwanda) - treated as aggregator gap, not a policy change, given bilan.gouv.ci official sourcing. No new ordinary-passport bilateral visa agreements found in 2024–2026. No changes made to any visa_policy, conditional_access, e_visa, cbi, rbi, or fast_track entries."
+   "REVALIDATED 2026-06-27: Re-fetched official sources. Wikipedia (last updated May 2026) confirms no new visa-free countries added after Rwanda (June 2019) - full list of 24 visa-free countries unchanged. E-visa fee (73 EUR) confirmed unchanged via search against snedai.com (snedai.com/e-visa/ returned HTTP 403 directly but fee confirmed via UK embassy diplomatie.gouv.ci page and search results). Embassy visa fee (58 EUR) confirmed from royaumeuni.diplomatie.gouv.ci/visa.php. Rwanda visa-free status (bilan.gouv.ci, June 2019) retained - absent from some aggregator lists (embassies.net 2026 shows 23 countries) but well-sourced on official domain. No new bilateral visa exemption agreements for ordinary passports found in 2024-2026 searches. France diplomatic passport agreement (legifrance.gouv.fr, in force 1 June 2025) still current. snedai.com/faq-visa-biometrique/ returned HTTP 403 - residence permit exemption entry in conditional_access preserved per safety rule (cannot disprove from live source). ECOWAS free-movement ratification confirmed on diplomatie.gouv.ci. No changes made to visa_policy, conditional_access, e_visa, cbi, or rbi fields - all confirmed or preserved as-is.",
+   "REVALIDATED 2026-06-29: Re-fetched key official sources. Wikipedia (last updated May 2026) re-confirmed: 14 ECOWAS members + 9 non-ECOWAS African/Asian countries (CAF, COG, TCD, MRT, MAR, PHL, SYC, SGP, TUN) + Rwanda = 24 visa-free countries total; no additions since Rwanda (June 2019). E-visa fee 73 EUR confirmed via multiple 2025-2026 search results. UK Embassy (royaumeuni.diplomatie.gouv.ci/visa.php) confirms 58 EUR embassy fee and 48-hour processing. Paris Embassy (france.diplomatie.gouv.ci/visa.php) confirms 50 EUR dossier fee (plus bank fees), consistent with 58 EUR total in current record. snedai.com returned HTTP 403 again - e-visa and FAQ entries preserved as-is per safety rule. diplomatie.gouv.ci/cedeao page confirms ECOWAS free movement protocol ratification. embassies.net (2026) lists 23 countries (omits Rwanda) - treated as aggregator gap, not a policy change, given bilan.gouv.ci official sourcing. No new ordinary-passport bilateral visa agreements found in 2024-2026. No changes made to any visa_policy, conditional_access, e_visa, cbi, rbi, or fast_track entries."
   ],
   "gaps": [
    "ECOWAS member stay-duration: ECOWAS protocol provides free movement and right of establishment but no explicit maximum stay days in official text found on diplomatie.gouv.ci. Most ECOWAS sources indicate indefinite residence right rather than 90-day cap.",
@@ -397,7 +397,7 @@
    "online": true,
    "on_arrival": false,
    "official_url": "https://snedai.com/e-visa/",
-   "notes": "Fee is 73 EUR (including bank fees). Processing up to 48 working hours (Monday–Friday). Requires ordinary passport with minimum 6 months validity, return air ticket, invitation letter or accommodation certificate (typed, printed, signed, stamped, and legalized), and yellow fever vaccination certificate at the airport. Biometric enrollment completed at 'Visa aéroport' desk (open 24/7) at Abidjan airport. Only snedai.com is officially state-recognized and accredited for this process. No separate tourist vs. business designation - one general-purpose short-stay visa category."
+   "notes": "Fee is 73 EUR (including bank fees). Processing up to 48 working hours (Monday - Friday). Requires ordinary passport with minimum 6 months validity, return air ticket, invitation letter or accommodation certificate (typed, printed, signed, stamped, and legalized), and yellow fever vaccination certificate at the airport. Biometric enrollment completed at 'Visa aéroport' desk (open 24/7) at Abidjan airport. Only snedai.com is officially state-recognized and accredited for this process. No separate tourist vs. business designation - one general-purpose short-stay visa category."
   },
   {
    "category": "business",
@@ -487,7 +487,7 @@
    "online": false,
    "on_arrival": false,
    "official_url": "https://france.diplomatie.gouv.ci/visa.php?num=1",
-   "notes": "Listed as a distinct purpose ('Visa d'études ou de recherches') on Côte d'Ivoire embassy visa pages. Requires a certificate of enrolment (certificat de scolarité/inscription), academic records, proof of accommodation, proof of financial means and health insurance. Biometric visa fee 50 EUR dossier (about 58 EUR total). Short-stay biometric visa validity is 1–3 months; for a long stay (long séjour, up to 1 year) students apply through a Côte d'Ivoire embassy/consulate or the competent ministry, then obtain a Carte de Résident (student category) from ONECI in-country."
+   "notes": "Listed as a distinct purpose ('Visa d'études ou de recherches') on Côte d'Ivoire embassy visa pages. Requires a certificate of enrolment (certificat de scolarité/inscription), academic records, proof of accommodation, proof of financial means and health insurance. Biometric visa fee 50 EUR dossier (about 58 EUR total). Short-stay biometric visa validity is 1-3 months; for a long stay (long séjour, up to 1 year) students apply through a Côte d'Ivoire embassy/consulate or the competent ministry, then obtain a Carte de Résident (student category) from ONECI in-country."
   },
   {
    "category": "family",
@@ -502,7 +502,7 @@
    "online": true,
    "on_arrival": false,
    "official_url": "https://france.diplomatie.gouv.ci/visa.php?num=1",
-   "notes": "Listed as a distinct purpose ('Visa pour visite privée') on Côte d'Ivoire embassy visa pages. Requires an invitation letter from the host (or a hotel reservation). Biometric short-stay visa, valid 1–3 months. Fee 50 EUR dossier (about 58 EUR total) at an embassy, or about 70–73 EUR via the snedai e-visa airport channel. Same biometric visa product as tourism/business, differentiated by the declared purpose."
+   "notes": "Listed as a distinct purpose ('Visa pour visite privée') on Côte d'Ivoire embassy visa pages. Requires an invitation letter from the host (or a hotel reservation). Biometric short-stay visa, valid 1-3 months. Fee 50 EUR dossier (about 58 EUR total) at an embassy, or about 70-73 EUR via the snedai e-visa airport channel. Same biometric visa product as tourism/business, differentiated by the declared purpose."
   },
   {
    "category": "medical",
@@ -517,11 +517,11 @@
    "online": true,
    "on_arrival": false,
    "official_url": "https://snedai.com/e-visa/",
-   "notes": "'Santé et affaires sociales' (health and social affairs) is one of the four official purpose categories of the biometric entry visa, alongside business (affaires), study (études) and tourism/leisure (tourisme), per the snedai e-visa framework and diplomatie.gouv.ci embassy guidance. Issued as a biometric short-stay visa (1–3 months); a long-stay visa (up to 1 year) is available for extended treatment via a Côte d'Ivoire embassy or the competent ministry. Standard biometric visa fee applies (about 70 EUR e-visa / 50 EUR embassy dossier)."
+   "notes": "'Santé et affaires sociales' (health and social affairs) is one of the four official purpose categories of the biometric entry visa, alongside business (affaires), study (études) and tourism/leisure (tourisme), per the snedai e-visa framework and diplomatie.gouv.ci embassy guidance. Issued as a biometric short-stay visa (1-3 months); a long-stay visa (up to 1 year) is available for extended treatment via a Côte d'Ivoire embassy or the competent ministry. Standard biometric visa fee applies (about 70 EUR e-visa / 50 EUR embassy dossier)."
   },
   {
    "category": "work",
-   "name": "Carte de Résident – Travailleur (Worker Resident Card)",
+   "name": "Carte de Résident - Travailleur (Worker Resident Card)",
    "purpose": "Foreign nationals (non-UEMOA) employed in Côte d'Ivoire who take up residence to work.",
    "max_stay_days": null,
    "validity_days": null,
@@ -536,7 +536,7 @@
   },
   {
    "category": "retirement",
-   "name": "Carte de Résident – Retraité (Retiree Resident Card)",
+   "name": "Carte de Résident - Retraité (Retiree Resident Card)",
    "purpose": "Retired foreign nationals (non-UEMOA) taking up residence in Côte d'Ivoire.",
    "max_stay_days": null,
    "validity_days": null,

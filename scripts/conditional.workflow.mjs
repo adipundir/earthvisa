@@ -126,7 +126,7 @@ C) **Passport-type-only waiver** - visa exemption that applies ONLY to **diploma
 - Capture conditions verbatim-ish (e.g. "visa must have been used at least once", "passport/visa valid ≥6 months", "single entry, 30 days, fee US$100", "agreement dated 29 July 2019").
 
 ## TOOLS
-PREFER raw official pages via WebFetch. Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch); WebSearch to find the official URL, WebFetch to read it. Fall back to Firecrawl (ToolSearch select:mcp__firecrawl-mcp__firecrawl_scrape) ONLY when WebFetch is blocked/empty. Be economical (~6–12 calls). Search seeds: "${c.name} visa exemption holders of US visa official", "${c.name} visa free Schengen visa holders immigration", "${c.name} diplomatic service passport visa waiver agreement", "${c.name} OCI cardholder entry", "${c.name} visa policy official residence permit".
+PREFER raw official pages via WebFetch. Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch); WebSearch to find the official URL, WebFetch to read it. Fall back to Firecrawl (ToolSearch select:mcp__firecrawl-mcp__firecrawl_scrape) ONLY when WebFetch is blocked/empty. Be economical (~6-12 calls). Search seeds: "${c.name} visa exemption holders of US visa official", "${c.name} visa free Schengen visa holders immigration", "${c.name} diplomatic service passport visa waiver agreement", "${c.name} OCI cardholder entry", "${c.name} visa policy official residence permit".
 
 ## OUTPUT - MERGE INTO THE FILE
 1. Read the existing file with the Read tool: ${file}

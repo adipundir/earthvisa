@@ -4,7 +4,7 @@
 // IndexNow is a push protocol: instead of waiting for a crawler to re-visit,
 // we tell the engines "these URLs exist / changed" and they queue them for
 // crawling within hours. Google does NOT use IndexNow (submit the sitemap in
-// Search Console instead), but Bing does — this is the fast path to Bing.
+// Search Console instead), but Bing does - this is the fast path to Bing.
 //
 // Usage:
 //   node scripts/indexnow.mjs                # submit all sitemap URLs

@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /* ════════════════════════════════════════════════════════════════════════════
-   Earth Visa — Design System v2 "Instrument" (see DESIGN-SYSTEM.md)
+   Earth Visa - Design System v2 "Instrument" (see DESIGN-SYSTEM.md)
    Cool near-white ground, white surfaces, hairlines. One family: Archivo.
    Exactly three non-neutral colors, each with ONE job:
-     accent  #2036E8  electric blue  — actions, links, focus, interactive
-     verdict #0E7F41  green         — visa-free / positive signals ONLY
-     change  #D9251C  red           — pending-change / negative data ONLY
+     accent  #B23528  brand red - actions, links, focus, interactive (blue #2036E8 survives ONLY as the "online" data-category hue)
+     verdict #0E7F41  green - visa-free / positive signals ONLY
+     change  #D9251C  red - pending-change / negative data ONLY
    ════════════════════════════════════════════════════════════════════════════ */
 
 /* Class-strategy dark mode: `.dark` on <html> (set pre-paint by the inline
@@ -36,6 +36,7 @@
   --color-accent-deep: var(--stamp-deep);
   --color-verdict: var(--vfree);
   --color-change:  var(--change);
+  --color-online:  var(--online); /* eTA/eVisa data-category hue */
 
   /* ── legacy names (unmigrated templates) ── */
   --color-paper:   var(--paper);
@@ -58,6 +59,7 @@
 /* ── Light (the primary mode - daylight consumer utility) ──────────────── */
 :root {
   color-scheme: light;
+  --rule-strong: #0B0E14; /* strong rules: ink on light, subtle on black */
   --paper:   #F6F7F9;  /* ground */
   --paper-2: #EEF1F4;  /* raised neutral (legacy hover fills, required tiles) */
   --paper-3: #E5E9EE;
@@ -69,14 +71,15 @@
   --ink-mute: #525E6E; /* legacy meta text - mapped to AA-safe secondary */
   --line:        #E2E6EB;
   --line-strong: #D3D9E0;
-  --stamp:      #2036E8; /* legacy action color → v2 accent blue */
-  --stamp-deep: #1526C4;
+  --stamp:      #B23528; /* v2 accent: the brand red (owner directive) */
+  --stamp-deep: #8F2318;
   --vfree:  #0E7F41;
   --change: #D9251C;
   --voa:   #4A5568;    /* legacy process-state slate (label text differentiates) */
   --eta:   #4A5568;
   --evisa: #4A5568;
-  --bloc:  #2036E8;
+  --bloc:  #B23528;
+  --online: #2036E8; /* data-category hue for eTA/eVisa only, NOT an accent */
   /* tile fills (destination grid) */
   --fill-verdict: #E4F3EA;  /* green tint - visa-free */
   --fill-online:  #E8ECFD;  /* blue tint - eTA / e-visa */
@@ -85,29 +88,33 @@
 /* ── Dark: cool near-black, same hue logic, accents lifted for AA ───────── */
 .dark {
   color-scheme: dark;
-  --paper:   #0B0E14;
-  --paper-2: #151A22;
-  --paper-3: #1D242E;
-  --card:    #10151D;
+  --rule-strong: #2C2C32; /* never near-white lines on the black ground */
+  /* Absolute black ground (owner directive 2026-07-20); surfaces lift off it
+     only barely, hairlines stay just-visible. */
+  --paper:   #000000;
+  --paper-2: #0C0C0E;
+  --paper-3: #141417;
+  --card:    #0A0A0C;
   --ink:      #F2F4F7;
   --ink-2:    #9AA4B2;
   --ink-3:    #6E7887;
   --ink-soft: #B6BEC9;
   --ink-mute: #9AA4B2;
-  --line:        #222933;
-  --line-strong: #333C48;
-  /* #8E9BFF clears 4.5:1 as text on every dark surface; filled buttons keep
-     the saturated blue (white on #2036E8 = 7.6:1) via --stamp-deep. */
-  --stamp:      #8E9BFF;
-  --stamp-deep: #2036E8;
+  --line:        #1C1C20;
+  --line-strong: #2C2C32;
+  /* #D66555 clears 4.5:1 as text on the black ground; filled buttons use the
+     saturated brand red (white on #B23528 = 6.1:1) via --stamp-deep. */
+  --stamp:      #D66555;
+  --stamp-deep: #B23528;
   --vfree:  #4EC07E;
   --change: #FF6B61;
   --voa:   #9AA4B2;
   --eta:   #9AA4B2;
   --evisa: #9AA4B2;
-  --bloc:  #8E9BFF;
-  --fill-verdict: #12271B;
-  --fill-online:  #171D33;
+  --bloc:  #D66555;
+  --online: #8E9BFF;
+  --fill-verdict: #0C1F13;
+  --fill-online:  #10142A;
 }
 
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -242,7 +249,7 @@ body {
 }
 .dark .chip[aria-pressed="true"], .dark .chip-active { background: var(--stamp-deep); border-color: var(--stamp-deep); }
 
-/* ══ Legacy utilities — mapped into v2 so unmigrated templates stay
+/* ══ Legacy utilities - mapped into v2 so unmigrated templates stay
    presentable (Phase 3 migrates them properly, then these shrink). ══════ */
 
 /* Page H1 (legacy pages). Archivo, same clamp scale. */
@@ -318,7 +325,7 @@ body {
   border-radius: 12px;
 }
 /* Key-card top rule: keep as a quiet ink rule (matches v2 data-band language). */
-.card-doc-rule { border-top: 2px solid var(--ink); }
+.card-doc-rule { border-top: 2px solid var(--rule-strong); }
 /* Corner registration ticks are dead in v2. */
 .card-doc-ticks::before, .card-doc-ticks::after { content: none; }
 

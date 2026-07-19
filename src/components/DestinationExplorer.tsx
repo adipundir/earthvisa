@@ -928,7 +928,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
           if (v.processing_days_min != null || v.processing_days_max != null) {
             const { processing_days_min: min, processing_days_max: max } = v;
             const value = min != null && max != null && min !== max
-              ? `${min}–${max} days`
+              ? `${min} - ${max} days`
               : (() => { const d = (min ?? max)!; return d === 0 ? "Immediate" : `${d} day${d === 1 ? "" : "s"}`; })();
             stats.push({ label: "Processing", value });
           }

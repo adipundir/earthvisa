@@ -606,7 +606,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Provincial Nominee Program (PNP) – Entrepreneur/Business Streams",
+        "name": "Provincial Nominee Program (PNP) - Entrepreneur/Business Streams",
         "type": "business/entrepreneur",
         "min_amount": null,
         "currency": "CAD",
@@ -632,7 +632,7 @@
   "fast_track": {
     "programs": [
       {
-        "name": "Express Entry – Federal Skilled Worker Program",
+        "name": "Express Entry - Federal Skilled Worker Program",
         "category": "skilled_worker",
         "eligibility": "Skilled workers with at least 1 year continuous paid full-time work experience (or equivalent part-time: 1,560 hours) in a NOC TEER 0, 1, 2, or 3 occupation; language proficiency; education; minimum 67 CRS points",
         "processing_time": "6 months (service standard for 80% of complete applications)",
@@ -641,7 +641,7 @@
         "notes": "Canada's flagship points-based skilled worker permanent residence pathway. Candidates create an online profile, enter the pool, and receive Invitations to Apply (ITA) through rounds of invitations. Category-based selection rounds for 2026 prioritize healthcare/social services, trades, and STEM occupations."
       },
       {
-        "name": "Express Entry – Canadian Experience Class",
+        "name": "Express Entry - Canadian Experience Class",
         "category": "skilled_worker",
         "eligibility": "At least 1 year of skilled work experience in Canada in NOC TEER 0, 1, 2, or 3; language proficiency",
         "processing_time": "6 months (service standard for 80% of complete applications)",
@@ -650,7 +650,7 @@
         "notes": "For those with recent Canadian work experience. Part of the Express Entry system."
       },
       {
-        "name": "Express Entry – Federal Skilled Trades Program",
+        "name": "Express Entry - Federal Skilled Trades Program",
         "category": "skilled_trades",
         "eligibility": "Skilled trade workers with qualifying job offer or certificate of qualification; at least 2 years paid full-time work experience in a skilled trade within 5 years before applying; language proficiency",
         "processing_time": "6 months (service standard for 80% of complete applications)",
@@ -659,7 +659,7 @@
         "notes": "For tradespeople such as carpenters, plumbers, electricians. Part of the Express Entry system."
       },
       {
-        "name": "Global Skills Strategy (GSS) – 2-Week Work Permit Processing",
+        "name": "Global Skills Strategy (GSS) - 2-Week Work Permit Processing",
         "category": "highly_skilled/talent",
         "eligibility": "Workers in NOC TEER 0 (management) or TEER 1 (university degree required) occupations; employer must qualify; biometrics submitted within 2 weeks of instruction letter",
         "processing_time": "2 weeks (goal for 80% of eligible complete applications)",
@@ -668,7 +668,7 @@
         "notes": "Fast-track temporary work permit processing for highly skilled workers. Canada aims to process 80% of eligible complete GSS work permit applications within 2 weeks. Applies to both LMIA-required and LMIA-exempt positions at TEER 0 and TEER 1 levels."
       },
       {
-        "name": "International Experience Canada (IEC) – Working Holiday",
+        "name": "International Experience Canada (IEC) - Working Holiday",
         "category": "youth_mobility",
         "eligibility": "Youth aged 18-35 (18-30 in some countries) from 35+ partner countries; must hold valid passport from eligible country; meet health and character requirements",
         "processing_time": null,
@@ -701,7 +701,7 @@
       "UPDATED conditional_access: Indonesia and Malaysia confirmed as added to the eta-x eligible country list effective May 26, 2026, per official eta-x.html page (modified 2026-05-26). The eligible_nationalities arrays in both eta-x credential entries already included IDN and MYS and are confirmed correct.",
       "UPDATED TWOV: Indonesia note updated to reflect that Indonesia nationals who do not meet TWOV requirements must apply for a transit visa (different from PHL/THA/TWN who may be eligible for eTA in some cases), per the updated TWOV eligibility page.",
       "REMOVED from eta list: Prior separate entry for 'Anguilla (British Overseas Territory passport holders)' and 'Bermuda (British Overseas Territory passport holders)' and 'Turks and Caicos Islands (British Overseas Territory passport holders)' replaced with full expanded British breakdown covering all territories.",
-      "2026-06-27 RE-VERIFICATION: Official Canada.ca pages returned HTTP 403 (direct WebFetch blocked). Verification conducted via WebSearch (site:canada.ca), official press-release pages, cicnews.com, moving2canada.com, Wikipedia visa policy of Canada, and official IRCC news announcements. Full eTA list (54 visa-exempt countries/territories) confirmed consistent with existing record. Qatar confirmed in eTA list (visa exemption effective November 25, 2025; eTA required for air travel). Indonesia and Malaysia confirmed as conditional eTA-eligible (eta-x) only - not in main eTA list. All 17 eta-x countries confirmed unchanged. Ebola temporary border restriction (residency-based, May 27–August 28, 2026) noted in gaps - not a structural visa policy change. Start-up Visa Program confirmed CLOSED December 19, 2025 (not merely paused). No other nationality-level visa_policy changes detected. No entries added or removed from visa_free, visa_on_arrival, eta, or e_visa lists.",
+      "2026-06-27 RE-VERIFICATION: Official Canada.ca pages returned HTTP 403 (direct WebFetch blocked). Verification conducted via WebSearch (site:canada.ca), official press-release pages, cicnews.com, moving2canada.com, Wikipedia visa policy of Canada, and official IRCC news announcements. Full eTA list (54 visa-exempt countries/territories) confirmed consistent with existing record. Qatar confirmed in eTA list (visa exemption effective November 25, 2025; eTA required for air travel). Indonesia and Malaysia confirmed as conditional eTA-eligible (eta-x) only - not in main eTA list. All 17 eta-x countries confirmed unchanged. Ebola temporary border restriction (residency-based, May 27 - August 28, 2026) noted in gaps - not a structural visa policy change. Start-up Visa Program confirmed CLOSED December 19, 2025 (not merely paused). No other nationality-level visa_policy changes detected. No entries added or removed from visa_free, visa_on_arrival, eta, or e_visa lists.",
       "2026-06-29 RE-VERIFICATION: Official Canada.ca pages again returned HTTP 403 (direct WebFetch blocked). Verification conducted via: Canada Gazette Part 2 (gazette.gc.ca/rp-pr/p2/2026/2026-06-03/html/sor-dors87-eng.html) - confirmed the only 2026 regulatory amendment to eTA eligibility was the May 26, 2026 addition of Indonesia and Malaysia to the conditional eta-x list (already in record); Wikipedia Visa policy of Canada confirmed 54 eTA-required countries/territories consistent with existing record; cicnews.com, magellanimmigration.com, and canadavisa.com all confirmed no new nationality-level changes since the June 2026 check; WebSearch on IRCC June 2026 announcements confirmed no new visa exemptions or removals affecting nationality-level access; Magellan Immigration June 2026 review confirmed only study permit and work permit changes (no visa-policy nationality changes) in June 2026. Romania electronic-passport-only requirement, Israel national-passport-only requirement, Taiwan personal-ID-number requirement, and all British subcategory distinctions confirmed unchanged. All 17 conditional eta-x countries (including IDN and MYS) confirmed correct. No entries added, removed, or modified in visa_free, visa_on_arrival, eta, or e_visa lists. Start-up Visa Program: still CLOSED; the transitional June 30, 2026 deadline (for 2025 commitment certificate holders) has now passed - all new applications permanently closed."
     ],
     "gaps": [
@@ -723,7 +723,7 @@
   "sources_checked": [
     {
       "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/eligibility.html",
-      "description": "Official IRCC eTA eligibility page – who needs an eTA to travel to Canada",
+      "description": "Official IRCC eTA eligibility page - who needs an eTA to travel to Canada",
       "accessible": true,
       "note": "Successfully scraped via Firecrawl stealth proxy on 2026-06-14. Page last modified 2026-06-05. Confirmed US LPR exemption (as of April 26, 2022), eTA-required countries list reference, and conditional eTA for select visa-required countries."
     },
@@ -735,7 +735,7 @@
     },
     {
       "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/entry-requirements-country.html",
-      "description": "Official IRCC entry requirements by country – full visa/eTA/exemption listings",
+      "description": "Official IRCC entry requirements by country - full visa/eTA/exemption listings",
       "accessible": true,
       "note": "Successfully scraped via Firecrawl stealth proxy on 2026-06-14. Page last modified 2026-06-05. Confirmed complete eTA country list (including Papua New Guinea, Qatar, Samoa, Solomon Islands, Vatican City State, and full breakdown of British categories), Romania electronic-passport-only caveat, Israel national-passport-only caveat, Taiwan personal-ID-number caveat, US LPR rules by travel mode, and full no-visa/no-eTA exemption list."
     },
@@ -812,8 +812,8 @@
     },
     {
       "category": "working_holiday",
-      "name": "International Experience Canada (IEC) – Working Holiday",
-      "purpose": "Living and working in Canada for up to 1–2 years (youth, select nationalities)",
+      "name": "International Experience Canada (IEC) - Working Holiday",
+      "purpose": "Living and working in Canada for up to 1-2 years (youth, select nationalities)",
       "max_stay_days": 730,
       "validity_days": 730,
       "entries": "multiple",
@@ -823,7 +823,7 @@
       "online": true,
       "on_arrival": false,
       "official_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec.html",
-      "notes": "Available for youth 18–35 from over 30 countries via bilateral agreements. Apply through IEC portal. Total fee is CAD 284.75 (CAD 184.75 IEC participation fee + CAD 100 open work permit holder fee), per the IRCC fee list updated 2026-07-02."
+      "notes": "Available for youth 18-35 from over 30 countries via bilateral agreements. Apply through IEC portal. Total fee is CAD 284.75 (CAD 184.75 IEC participation fee + CAD 100 open work permit holder fee), per the IRCC fee list updated 2026-07-02."
     },
     {
       "category": "business",
@@ -883,7 +883,7 @@
       "online": true,
       "on_arrival": false,
       "official_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation.html",
-      "notes": "Open work permit for graduates of eligible DLIs. Length matches the study program (minimum 8 months) up to a maximum of 3 years; issued once per person. Fee CAD 255 (CAD 155 work permit + CAD 100 open work permit holder fee). Field-of-study and language eligibility criteria apply following the 2024–2025 reforms."
+      "notes": "Open work permit for graduates of eligible DLIs. Length matches the study program (minimum 8 months) up to a maximum of 3 years; issued once per person. Fee CAD 255 (CAD 155 work permit + CAD 100 open work permit holder fee). Field-of-study and language eligibility criteria apply following the 2024-2025 reforms."
     },
     {
       "category": "family",

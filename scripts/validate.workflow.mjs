@@ -115,7 +115,7 @@ function validatePrompt(c) {
 Read the existing file with the Read tool: ${file} (note its current visa_policy / conditional_access / cbi / rbi / fast_track and source_urls).
 
 ## STEP 2 - re-visit OFFICIAL sources (this is a re-fetch, not a memory check)
-Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch). PREFER reading the raw official page via WebFetch directly from ${c.name}'s government / MFA / immigration / e-visa / citizenship domain (*.gov, *.gov.<cc>, *.gob.<cc>, *.govt.<cc>, *.gouv.<cc>). Fall back to Firecrawl (ToolSearch select:mcp__firecrawl-mcp__firecrawl_scrape) ONLY if WebFetch is blocked/empty. Re-open the source_urls already in the file plus search for the current official visa-policy page. Be economical (~6–14 tool calls).
+Load WebSearch + WebFetch (ToolSearch select:WebSearch,WebFetch). PREFER reading the raw official page via WebFetch directly from ${c.name}'s government / MFA / immigration / e-visa / citizenship domain (*.gov, *.gov.<cc>, *.gob.<cc>, *.govt.<cc>, *.gouv.<cc>). Fall back to Firecrawl (ToolSearch select:mcp__firecrawl-mcp__firecrawl_scrape) ONLY if WebFetch is blocked/empty. Re-open the source_urls already in the file plus search for the current official visa-policy page. Be economical (~6-14 tool calls).
 
 ## STEP 3 - verify + CORRECT, with strict classification
 Record a fact ONLY from an official government/immigration domain; cite the exact source_url; never invent. Then classify EVERY entry correctly:

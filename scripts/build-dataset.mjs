@@ -84,8 +84,8 @@ const GROUP_LABELS = {
   EU: "European Union", EEA: "European Economic Area", EFTA: "EFTA", SCHENGEN: "Schengen Area",
   GCC: "Gulf Cooperation Council", CARICOM: "CARICOM", OECS: "Org. of Eastern Caribbean States",
   ECOWAS: "ECOWAS (West Africa)", ASEAN: "ASEAN", MERCOSUR: "Mercosur", ANDEAN: "Andean Community",
-  CIS: "Commonwealth of Independent States", CTA: "Common Travel Area (UK–Ireland)",
-  TRANS_TASMAN: "Trans-Tasman (AU–NZ)", EAC: "East African Community",
+  CIS: "Commonwealth of Independent States", CTA: "Common Travel Area (UK - Ireland)",
+  TRANS_TASMAN: "Trans-Tasman (AU - NZ)", EAC: "East African Community",
 };
 
 // Extra regional blocs used ONLY to expand visa-policy nationality labels (not shipped as

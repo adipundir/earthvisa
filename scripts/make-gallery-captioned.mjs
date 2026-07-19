@@ -46,9 +46,9 @@ async function render(html, file) {
 
 const SLIDES = [
   { file: "cap-1-passport.png", eyebrow: "WHAT CAN YOUR PASSPORT DO?", headline: "Every visa-free country, on one page.", sub: "Visa-free, visa-on-arrival, eTA and e-visa reach for all 199 passports.", url: "earthvisa.in/passport/india", img: b64("gallery-3-passport.png") },
-  { file: "cap-2-corridor.png", eyebrow: "DO I NEED A VISA?", headline: "Fees, documents & the official source — per route.", sub: "The exact requirement for your nationality, with government-sourced fees and VFS charges.", url: "earthvisa.in/passport/india/thailand", img: b64("gallery-5-corridor-fees.png") },
+  { file: "cap-2-corridor.png", eyebrow: "DO I NEED A VISA?", headline: "Fees, documents & the official source - per route.", sub: "The exact requirement for your nationality, with government-sourced fees and VFS charges.", url: "earthvisa.in/passport/india/thailand", img: b64("gallery-5-corridor-fees.png") },
   { file: "cap-3-proof-of-funds.png", eyebrow: "PROOF OF FUNDS", headline: "How much bank balance to actually show.", sub: "Official Schengen daily-subsistence amounts, kept separate from what applicants report.", url: "earthvisa.in/guide/proof-of-funds", img: b64("gallery-6-proof-of-funds.png") },
-  { file: "cap-4-rankings.png", eyebrow: "PASSPORT INDEX 2026", headline: "All 199 passports, ranked by real access.", sub: "Official-source visa-free reach — see exactly where any passport stands.", url: "earthvisa.in/rankings", img: b64("gallery-4-rankings.png") },
+  { file: "cap-4-rankings.png", eyebrow: "PASSPORT INDEX 2026", headline: "All 199 passports, ranked by real access.", sub: "Official-source visa-free reach - see exactly where any passport stands.", url: "earthvisa.in/rankings", img: b64("gallery-4-rankings.png") },
 ];
 
 for (const s of SLIDES) await render(slide(s), s.file);

@@ -109,7 +109,7 @@ export default function CountryIndex({
         </p>
       </div>
 
-      {/* Flat A–Z country list */}
+      {/* Flat A - Z country list */}
       <ul className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
         {rows.map((c) => (
           <li key={c.iso3}>

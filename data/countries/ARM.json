@@ -543,7 +543,7 @@
         "nationality": "Countries not eligible for visa-free entry and not on the invitation-only list",
         "iso3": null,
         "max_stay_days": 120,
-        "notes": "Armenian e-visa available via evisa.mfa.am. Visitor visa up to 21 days: non-refundable fee AMD 3,000 (approx. USD 8). Visitor visa up to 120 days: non-refundable fee AMD 15,000 (approx. USD 38–39). Multiple-entry e-visas also available (60 days / 6-month validity: USD 52; 120 days / 1-year validity: USD 103). E-visa portal is operated by the Ministry of Foreign Affairs. Individual nationality eligibility must be checked via the portal at evisa.mfa.am/check-eligibility. Certain nationalities require an invitation and can only apply at Armenian diplomatic missions - see https://www.mfa.am/en/invitation_only",
+        "notes": "Armenian e-visa available via evisa.mfa.am. Visitor visa up to 21 days: non-refundable fee AMD 3,000 (approx. USD 8). Visitor visa up to 120 days: non-refundable fee AMD 15,000 (approx. USD 38-39). Multiple-entry e-visas also available (60 days / 6-month validity: USD 52; 120 days / 1-year validity: USD 103). E-visa portal is operated by the Ministry of Foreign Affairs. Individual nationality eligibility must be checked via the portal at evisa.mfa.am/check-eligibility. Certain nationalities require an invitation and can only apply at Armenian diplomatic missions - see https://www.mfa.am/en/invitation_only",
         "source_url": "https://evisa.mfa.am/",
         "source_official": true
       }
@@ -559,7 +559,7 @@
       "https://kuwait.mfa.am/en/news/2026/01/01/important-clarifications-regarding-updates-on-visa-free-entry-to-armenia/15211",
       "https://canada.mfa.am/en/fees/"
     ],
-    "notes": "Unilateral visa-free list last updated 02.02.2024 per official MFA page. Bilateral agreements list also updated 02.02.2024. Armenian visas issued for a maximum of 120 days with possible 60-day extension. No visa on arrival as a default border policy; ordinary e-visas and mission visas must generally be obtained in advance. Citizens staying visa-free may stay up to 180 days per year. Diplomatic/service passport bilateral agreements for select countries are captured in conditional_access. The temporary 113-country credential-based exemption (Jan 1 – Jul 1, 2026) is captured in conditional_access and has now expired as of July 1, 2026; no official extension was found as of this validation (June 29, 2026)."
+    "notes": "Unilateral visa-free list last updated 02.02.2024 per official MFA page. Bilateral agreements list also updated 02.02.2024. Armenian visas issued for a maximum of 120 days with possible 60-day extension. No visa on arrival as a default border policy; ordinary e-visas and mission visas must generally be obtained in advance. Citizens staying visa-free may stay up to 180 days per year. Diplomatic/service passport bilateral agreements for select countries are captured in conditional_access. The temporary 113-country credential-based exemption (Jan 1 - Jul 1, 2026) is captured in conditional_access and has now expired as of July 1, 2026; no official extension was found as of this validation (June 29, 2026)."
   },
   "conditional_access": [
     {
@@ -1284,7 +1284,7 @@
       "CORRECTED: conditional_access credential entry - clarified that UK residence permits are NOT confirmed as qualifying issuers per official MFA embassy announcements (dubai.mfa.am, kuwait.mfa.am), which consistently name only US, EU/Schengen, and GCC (UAE, Bahrain, Qatar, Saudi Arabia, Kuwait, Oman). Removed the claim that UK qualifies; added explicit note in conditions field.",
       "CORRECTED: conditional_access credential entry - added explicit note that mobile IDs, electronic cards, scanned copies, and photographs are NOT accepted as qualifying credential formats, per official Kuwait embassy clarification.",
       "CORRECTED: conditional_access credential entry - source_url updated from generic mfa.am/en/visa/ to the specific Kuwait embassy official clarification page which contains the most complete official terms.",
-      "CORRECTED: Montenegro conditional_access entry - removed erroneous seasonal ordinary-passport note (April–October exemption). Montenegro ordinary passports are on the unilateral exemption list (visa_free) year-round at 180 days/year; the seasonal reference was an artifact of older bilateral data.",
+      "CORRECTED: Montenegro conditional_access entry - removed erroneous seasonal ordinary-passport note (April - October exemption). Montenegro ordinary passports are on the unilateral exemption list (visa_free) year-round at 180 days/year; the seasonal reference was an artifact of older bilateral data.",
       "CONFIRMED UNCHANGED: The visa_free unilateral list (mfa.am/en/visafreelist) and bilateral list (mfa.am/en/whoneedvisa) match the prior record - mfa.am main domain blocked by Radware DDoS protection during this pass; no changes confirmed.",
       "CONFIRMED UNCHANGED: cbi.has_program=false - no CBI program confirmed on any official source.",
       "CONFIRMED UNCHANGED: rbi programs - fees and structures match the prior record.",

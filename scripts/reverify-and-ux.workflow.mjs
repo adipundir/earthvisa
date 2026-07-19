@@ -132,7 +132,7 @@ function verifyPrompt(c) {
   return `You are VALIDATING and CORRECTING the immigration record for ONE destination - **${c.name}** (iso2=${c.iso2}, iso3=${c.iso3}). Re-visit ${c.name}'s OWN official sources, verify the existing record against the live pages, correct anything genuinely wrong, and rewrite the file. This node captures who ${c.name} admits and on what terms.
 
 ## TOOLS
-Load WebFetch + WebSearch: ToolSearch select:WebFetch,WebSearch. NOTE: Firecrawl is OFFLINE this run - do NOT try to load it. Use WebFetch to read official pages directly; use WebSearch to find the current official page. Be economical (~6–14 tool calls).
+Load WebFetch + WebSearch: ToolSearch select:WebFetch,WebSearch. NOTE: Firecrawl is OFFLINE this run - do NOT try to load it. Use WebFetch to read official pages directly; use WebSearch to find the current official page. Be economical (~6-14 tool calls).
 
 ## STEP 1 - read current record
 Read ${file}. Note its current visa_policy (visa_free / visa_on_arrival / e_visa / eta), conditional_access, visa_required (negation), cbi / rbi / fast_track, and source_urls.

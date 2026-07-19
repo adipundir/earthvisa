@@ -52,7 +52,7 @@ await renderHTML(
   card(
     `<div style="display:flex;align-items:center;gap:20px;margin-bottom:44px">${mark(66)}<span style="font-size:44px;font-weight:700;letter-spacing:-.02em">Earth Visa</span></div>
      <div style="font-size:82px;font-weight:700;line-height:1.03;letter-spacing:-.03em;max-width:1000px">What can your passport do?</div>
-     <div style="font-size:33px;color:#41506b;margin-top:30px;max-width:930px;line-height:1.32">Visa-free travel, entry rules, official fees and document checklists for all 199 passports — from government sources only.</div>`
+     <div style="font-size:33px;color:#41506b;margin-top:30px;max-width:930px;line-height:1.32">Visa-free travel, entry rules, official fees and document checklists for all 199 passports - from government sources only.</div>`
   ),
   1270, 760, "gallery-1-hero.png"
 );
@@ -61,10 +61,10 @@ await renderHTML(
     `<div style="display:flex;align-items:center;gap:16px;margin-bottom:52px">${mark(48)}<span style="font-size:30px;font-weight:700;letter-spacing:-.02em">Earth Visa</span></div>
      <div style="font-size:60px;font-weight:700;letter-spacing:-.02em;line-height:1.05;margin-bottom:44px">Built on one rule</div>
      <div style="display:flex;flex-direction:column;gap:26px;font-size:34px;color:#26344d">
-       <div style="display:flex;align-items:center;gap:20px"><span style="color:#b23528;font-weight:700">✓</span> Official government sources only — never aggregators</div>
+       <div style="display:flex;align-items:center;gap:20px"><span style="color:#b23528;font-weight:700">✓</span> Official government sources only - never aggregators</div>
        <div style="display:flex;align-items:center;gap:20px"><span style="color:#b23528;font-weight:700">✓</span> Visa fees, VFS charges & document checklists</div>
        <div style="display:flex;align-items:center;gap:20px"><span style="color:#b23528;font-weight:700">✓</span> Passport rankings & proof-of-funds guides</div>
-       <div style="display:flex;align-items:center;gap:20px"><span style="color:#b23528;font-weight:700">✓</span> Free — no login, no ads, no tracking</div>
+       <div style="display:flex;align-items:center;gap:20px"><span style="color:#b23528;font-weight:700">✓</span> Free - no login, no ads, no tracking</div>
      </div>`
   ),
   1270, 760, "gallery-2-trust.png"

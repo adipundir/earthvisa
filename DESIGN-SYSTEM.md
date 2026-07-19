@@ -18,7 +18,11 @@ five. One obvious action per view; everything else whispers or waits.
 - **Action accent**: `#2036E8` electric blue — buttons, links, focus, interactive states. Nothing else is blue.
 - **Verdict green**: `#0E7F41` — visa-free/positive signals ONLY. Nothing else is green.
 - **Change red**: `#D9251C` — pending-change/negative data moments ONLY (the `60→30` cell). Not a UI chrome color.
-- Dark mode: derive later; light-first (daylight consumer utility).
+- Dark mode: **absolute black** ground `#000000` (owner directive); surfaces barely
+  lift (`#0A0A0C`-`#141417`), hairlines just-visible, accents use the AA-lifted
+  dark variants. Light-first remains the default.
+- **Copy rule: no em or en dashes anywhere** (owner directive). Use " - ", a comma,
+  a period, or "·". Digit ranges use a plain hyphen (90-180).
 - Type: **Archivo** (variable, via next/font/google). Display/numerals: weight 800-850,
   width ~115% where supported, tracking -0.02em, tabular figures. UI/body: 400-650.
   NO second family, NO mono anywhere (URLs/timestamps may use 13px Archivo at 500).

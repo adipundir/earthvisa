@@ -245,7 +245,7 @@
   "rbi": {
     "programs": [
       {
-        "name": "Occupation Permit – Investor Category (Option 1)",
+        "name": "Occupation Permit - Investor Category (Option 1)",
         "type": "business_investment",
         "min_amount": 50000,
         "currency": "USD",
@@ -256,7 +256,7 @@
         "notes": "Minimum investment of USD 50,000. Occupation Permit valid for 10 years, renewable. Eligible for 20-year Permanent Residence Permit after at least 5 years as Investor OP holder with cumulative turnover of MUR 20 million over 5 years (MUR 1.5 million in year 1). Year 6+ renewal requires MUR 5 million annual turnover. Application fee USD 1,000 upon approval; USD 50 non-refundable application fee. Updated August 2025."
       },
       {
-        "name": "Occupation Permit – Investor Category (Option 2)",
+        "name": "Occupation Permit - Investor Category (Option 2)",
         "type": "business_investment",
         "min_amount": 100000,
         "currency": "USD",
@@ -267,7 +267,7 @@
         "notes": "Minimum investment of USD 100,000. Occupation Permit valid for 10 years, renewable. Eligible for 20-year Permanent Residence Permit after at least 5 years with cumulative turnover of MUR 15 million over 5 years (MUR 1 million in year 1). Year 6+ renewal requires MUR 5 million annual turnover. Higher investment threshold with lower turnover target compared to Option 1. Updated August 2025."
       },
       {
-        "name": "Permanent Residence Permit (PRP) – Real Estate Investment",
+        "name": "Permanent Residence Permit (PRP) - Real Estate Investment",
         "type": "real_estate",
         "min_amount": 375000,
         "currency": "USD",
@@ -289,7 +289,7 @@
         "notes": "Available to foreign nationals above 50 years of age. Occupation Permit (Retired) issued for up to 5 years (changed from 10 years effective August 2025). Requires transfer of at least USD 2,000 per month (USD 24,000 per year) to a Mauritian bank account and minimum 180 days per year residency in Mauritius. Eligible for 20-year Permanent Residence Permit after holding the Residence Permit for at least 5 years with total transfer of at least USD 200,000 over the 5-year period. Application fee USD 50 (non-refundable). CORRECTION: Prior record stated 10-year permit duration and USD 54,000 over 3 years; updated to reflect August 2025 rule changes."
       },
       {
-        "name": "Occupation Permit – Professional Category",
+        "name": "Occupation Permit - Professional Category",
         "type": "skilled_worker",
         "min_amount": null,
         "currency": null,
@@ -311,7 +311,7 @@
         "notes": "New category introduced effective August 2025 for highly skilled professionals earning at least MUR 250,000/month. Administered through NELS (National Electronic Licensing System). Full eligibility criteria and PRP pathway not yet confirmed on official Passport Immigration Office page."
       },
       {
-        "name": "Occupation Permit – Self-Employed Category",
+        "name": "Occupation Permit - Self-Employed Category",
         "type": "self_employed_entrepreneur",
         "min_amount": 50000,
         "currency": "USD",
@@ -359,8 +359,8 @@
     ]
   },
   "agreements": [
-    "COMESA (Common Market for Eastern and Southern Africa) – Mauritius is a member; holders of COMESA laissez-passer are exempt from Mauritius visa requirements",
-    "SADC (Southern African Development Community) – Mauritius is a member; holders of SADC laissez-passer are exempt from Mauritius visa requirements"
+    "COMESA (Common Market for Eastern and Southern Africa) - Mauritius is a member; holders of COMESA laissez-passer are exempt from Mauritius visa requirements",
+    "SADC (Southern African Development Community) - Mauritius is a member; holders of SADC laissez-passer are exempt from Mauritius visa requirements"
   ],
   "official_domains": [
     "passport.govmu.org",
@@ -373,8 +373,8 @@
     "completeness": "high",
     "validation_notes": [
       "CORRECTED (June 2026): Retired Non-Citizen Residence Permit duration changed from 10 years to 5 years, per August 2025 immigration rule changes. Minimum transfer requirement updated from USD 54,000 over 3 years to USD 24,000/year (USD 2,000/month), with 180 days/year residency required. PRP eligibility path extended from 3 years to 5 years, with total transfer of USD 200,000 over 5 years.",
-      "CORRECTED (June 2026): Occupation Permit – Professional Category: minimum salary threshold updated to MUR 30,000/month; PRP eligibility path extended from 3 to 5 years; PRP salary threshold updated from MUR 150,000/month to MUR 400,000/month, per August 2025 changes.",
-      "CORRECTED (June 2026): Occupation Permit – Investor Category: now two options (USD 50,000 and USD 100,000) with differentiated turnover targets (MUR 20M vs MUR 15M cumulative over 5 years); PRP eligibility now 5 years (not unspecified).",
+      "CORRECTED (June 2026): Occupation Permit - Professional Category: minimum salary threshold updated to MUR 30,000/month; PRP eligibility path extended from 3 to 5 years; PRP salary threshold updated from MUR 150,000/month to MUR 400,000/month, per August 2025 changes.",
+      "CORRECTED (June 2026): Occupation Permit - Investor Category: now two options (USD 50,000 and USD 100,000) with differentiated turnover targets (MUR 20M vs MUR 15M cumulative over 5 years); PRP eligibility now 5 years (not unspecified).",
       "CORRECTED (June 2026): Self-Employed OP: now restricted to services sector, USD 50,000 minimum investment, updated turnover targets (MUR 750K year 1, MUR 6M cumulative over 5 years).",
       "CORRECTED (June 2026): Young Professional OP: validity reduced from 3 years to 2 years, minimum salary MUR 25,000/month per August 2025 changes.",
       "ADDED (June 2026): Expert Pass - new high-skill tier at MUR 250,000/month introduced August 2025.",
@@ -402,7 +402,7 @@
       "No OCI or equivalent special-status cardholder entry privilege found on official Mauritius immigration sources.",
       "Wikipedia reports that Mainland China diplomatic/official/service passport holders receive a 60-day (not 90-day) exemption; this could not be verified on an official Mauritius government page and is therefore not recorded in conditional_access.",
       "Cote d'Ivoire bilateral diplomatic/official passport agreement (conditional_access entry 2): Cabinet approved signing on 28 March 2025 (pmo.govmu.org official) but formal entry-into-force date not confirmed on the Mauritius Passport and Immigration Office website.",
-      "A Ukraine–Mauritius general visa waiver agreement was reportedly signed on 8 August 2024 (per Interfax Ukraine). Ukraine is already listed as visa-free for ordinary passports. Formal confirmation on official Mauritius government page not found.",
+      "A Ukraine - Mauritius general visa waiver agreement was reportedly signed on 8 August 2024 (per Interfax Ukraine). Ukraine is already listed as visa-free for ordinary passports. Formal confirmation on official Mauritius government page not found.",
       "Expert Pass (MUR 250,000/month) full eligibility criteria and PRP pathway not yet published on official Passport Immigration Office page; sourced from third-party immigration advisory (ibn.co.za).",
       "August 2025 RBI changes (retirement permit, professional OP, YPOP, investor OP options, self-employed) sourced from immigration advisory (ibn.co.za/visaverge.com); exact implementing regulations on official govmu.org or EDB Mauritius pages not directly fetched - should be verified against official NELS/EDB portal when available."
     ]
@@ -502,7 +502,7 @@
       {"name": "Burundi", "iso3": "BDI"},
       {"name": "Cameroon", "iso3": "CMR"},
       {"name": "Comoros", "iso3": "COM"},
-      {"name": "Congo – Republic of (Brazzaville)", "iso3": "COG"},
+      {"name": "Congo - Republic of (Brazzaville)", "iso3": "COG"},
       {"name": "Djibouti", "iso3": "DJI"},
       {"name": "Dominica", "iso3": "DMA"},
       {"name": "Fiji", "iso3": "FJI"},
@@ -693,7 +693,7 @@
     },
     {
       "category": "work",
-      "name": "Occupation Permit – Professional Category",
+      "name": "Occupation Permit - Professional Category",
       "purpose": "Allows foreign professionals employed by a company in Mauritius to work and reside in the country.",
       "max_stay_days": null,
       "validity_days": 1095,
@@ -723,7 +723,7 @@
     },
     {
       "category": "investment",
-      "name": "Occupation Permit – Investor Category",
+      "name": "Occupation Permit - Investor Category",
       "purpose": "Allows foreign investors who invest in a business in Mauritius to reside and manage that investment.",
       "max_stay_days": null,
       "validity_days": 3650,
@@ -738,7 +738,7 @@
     },
     {
       "category": "other",
-      "name": "Occupation Permit – Self-Employed Category",
+      "name": "Occupation Permit - Self-Employed Category",
       "purpose": "Allows self-employed foreign entrepreneurs in the services sector to reside and operate their business in Mauritius.",
       "max_stay_days": null,
       "validity_days": 3650,
@@ -828,30 +828,30 @@
     }
   ],
   "sources_checked": [
-    {"url": "https://passport.govmu.org/passport/?page_id=605", "description": "Mauritius Passport and Immigration Office – Visa Requirements page (verified June 2026)", "official": true},
-    {"url": "https://passport.govmu.org/passport/wp-content/uploads/2021/03/Visa-Requirement-Country-22062022.pdf", "description": "Mauritius Passport and Immigration Office – Visa Requirement Country-wise PDF (dated 22 June 2022)", "official": true},
-    {"url": "https://passport.govmu.org/passport/?page_id=620", "description": "Mauritius Passport and Immigration Office – Application for Visa page", "official": true},
-    {"url": "https://passport.govmu.org/passport/?page_id=626", "description": "Mauritius Passport and Immigration Office – Occupation Permit page", "official": true},
-    {"url": "https://passport.govmu.org/passport/?page_id=595", "description": "Mauritius Passport and Immigration Office – Premium Visa page (verified June 2026)", "official": true},
-    {"url": "https://dha.govmu.org/Pages/Services/Citizenship.aspx", "description": "Mauritius Defence and Home Affairs Division – Citizenship page (verified June 2026)", "official": true},
-    {"url": "https://residency.mu/live/mauritius-premium-visa/", "description": "Residency in Mauritius (official EDB portal) – Premium Visa page (verified June 2026; 180+ countries confirmed)", "official": true},
-    {"url": "https://residency.mu/invest/investment-of-usd-50000/", "description": "Residency in Mauritius (official EDB portal) – Investment page", "official": true},
-    {"url": "https://edbmauritius.org/work-live", "description": "EDB Mauritius – Work and Live page", "official": true},
-    {"url": "https://pmo.govmu.org/CabinetDecision/2025/Highlights%20of%20Cabinet%20Meeting%2028%20March%202025.pdf", "description": "Mauritius Prime Minister's Office – Cabinet Meeting Highlights 28 March 2025 (Cote d'Ivoire diplomatic passport visa exemption agreement)", "official": true},
-    {"url": "https://foreign.govmu.org/Pages/Services/General-Consular-Information.aspx", "description": "Mauritius Ministry of Foreign Affairs – General Consular Information page", "official": true},
-    {"url": "https://www.ibn.co.za/blog-and-news/mauritius-permit-updates-2025/", "description": "IBN Immigration – Mauritius Permit Updates 2025 (non-official; used for August 2025 RBI changes cross-reference)", "official": false},
-    {"url": "https://visasnews.com/en/mauritius-prepares-to-introduce-an-electronic-travel-authorization/", "description": "VisasNews – Mauritius ETA announcement (December 2025; non-official)", "official": false},
-    {"url": "https://passport.govmu.org/passport/?page_id=580", "description": "Mauritius Passport and Immigration Office – Student Visa page (verified June 2026)", "official": true},
-    {"url": "https://passport.govmu.org/passport/?page_id=632", "description": "Mauritius Passport and Immigration Office – Wedding Visa page (verified June 2026)", "official": true},
-    {"url": "https://passport.govmu.org/passport/?page_id=593", "description": "Mauritius Passport and Immigration Office – Extension of Visa page (verified June 2026)", "official": true},
-    {"url": "https://residency.mu", "description": "Residency in Mauritius – EDB official portal home (verified June 2026)", "official": true},
-    {"url": "https://passport.govmu.org/passport/?page_id=587", "description": "Mauritius Passport and Immigration Office – Travel Requirements page (verified June 2026; confirms Taiwan passport = 60-day VoA; no ETA system listed; Reunion Island/Northern Cyprus/BIOC passports noted)", "official": true},
-    {"url": "https://passport.govmu.org/passport/?page_id=547", "description": "Mauritius Passport and Immigration Office – News page (verified June 2026; June 12 2026 Travel Advisory noted; Sep 2022 Reunion Island ID-card entry notice; no nationality-level visa policy changes found)", "official": true},
-    {"url": "https://passport.govmu.org/passport/?p=1246", "description": "Mauritius Passport and Immigration Office – Official notice: French nationals from Reunion Island may enter on valid French Identity Card (19 Sep 2022 – 30 Jun 2023); extension status unconfirmed on this official page", "official": true},
-    {"url": "https://foreign.govmu.org/Pages/Services/Visa-Information.aspx", "description": "Mauritius Ministry of Foreign Affairs – Visa Information landing page (verified June 2026; links to Nov 2025 outbound PDF and passport.govmu.org for inbound; no new inbound visa policy PDFs found)", "official": true},
-    {"url": "https://travel.state.gov/en/international-travel/travel-advisories/mauritius.html", "description": "US State Department – Mauritius Travel Advisory (Level 2; updated December 2025; confirms all foreign nationals must complete Mauritius All-in-One Travel Digital Form 72 hrs prior to arrival; confirms entry ban effective 6 June 2026 for travellers who have been in DRC/Uganda/South Sudan within 21 days; confirms no visa needed for stays up to 2 months)", "official": false},
-    {"url": "https://visasnews.com/en/mauritius-future-e-visa-eta-system-takes-shape-in-2026-2027-budget/", "description": "VisasNews – Mauritius ETA/e-visa takes shape in 2026-2027 budget (June 2026; non-official; Immigration Act amendment proposed for digital ETA; launch expected 2027)", "official": false},
-    {"url": "https://passport.govmu.org/passport/?p=1448", "description": "Mauritius Passport and Immigration Office – Official Travel Advisory dated 12 June 2026: confirms entry ban for travelers who visited DRC/Uganda/South Sudan within 21 days; confirms both All-in-One Travel Form AND Health Declaration Form required at point of departure prior to arrival; quarantine requirement for Mauritius citizens/PR with travel history in banned countries (verified June 2026-29)", "official": true},
-    {"url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Mauritius.html", "description": "US State Department – Mauritius Country Information Page (verified June 2026-29; confirms no visa required for stays 60 days or less; confirms All-in-One Travel Digital Form 72 hrs before arrival; confirms entry ban effective 6 June 2026 for DRC/Uganda/South Sudan travelers)", "official": false}
+    {"url": "https://passport.govmu.org/passport/?page_id=605", "description": "Mauritius Passport and Immigration Office - Visa Requirements page (verified June 2026)", "official": true},
+    {"url": "https://passport.govmu.org/passport/wp-content/uploads/2021/03/Visa-Requirement-Country-22062022.pdf", "description": "Mauritius Passport and Immigration Office - Visa Requirement Country-wise PDF (dated 22 June 2022)", "official": true},
+    {"url": "https://passport.govmu.org/passport/?page_id=620", "description": "Mauritius Passport and Immigration Office - Application for Visa page", "official": true},
+    {"url": "https://passport.govmu.org/passport/?page_id=626", "description": "Mauritius Passport and Immigration Office - Occupation Permit page", "official": true},
+    {"url": "https://passport.govmu.org/passport/?page_id=595", "description": "Mauritius Passport and Immigration Office - Premium Visa page (verified June 2026)", "official": true},
+    {"url": "https://dha.govmu.org/Pages/Services/Citizenship.aspx", "description": "Mauritius Defence and Home Affairs Division - Citizenship page (verified June 2026)", "official": true},
+    {"url": "https://residency.mu/live/mauritius-premium-visa/", "description": "Residency in Mauritius (official EDB portal) - Premium Visa page (verified June 2026; 180+ countries confirmed)", "official": true},
+    {"url": "https://residency.mu/invest/investment-of-usd-50000/", "description": "Residency in Mauritius (official EDB portal) - Investment page", "official": true},
+    {"url": "https://edbmauritius.org/work-live", "description": "EDB Mauritius - Work and Live page", "official": true},
+    {"url": "https://pmo.govmu.org/CabinetDecision/2025/Highlights%20of%20Cabinet%20Meeting%2028%20March%202025.pdf", "description": "Mauritius Prime Minister's Office - Cabinet Meeting Highlights 28 March 2025 (Cote d'Ivoire diplomatic passport visa exemption agreement)", "official": true},
+    {"url": "https://foreign.govmu.org/Pages/Services/General-Consular-Information.aspx", "description": "Mauritius Ministry of Foreign Affairs - General Consular Information page", "official": true},
+    {"url": "https://www.ibn.co.za/blog-and-news/mauritius-permit-updates-2025/", "description": "IBN Immigration - Mauritius Permit Updates 2025 (non-official; used for August 2025 RBI changes cross-reference)", "official": false},
+    {"url": "https://visasnews.com/en/mauritius-prepares-to-introduce-an-electronic-travel-authorization/", "description": "VisasNews - Mauritius ETA announcement (December 2025; non-official)", "official": false},
+    {"url": "https://passport.govmu.org/passport/?page_id=580", "description": "Mauritius Passport and Immigration Office - Student Visa page (verified June 2026)", "official": true},
+    {"url": "https://passport.govmu.org/passport/?page_id=632", "description": "Mauritius Passport and Immigration Office - Wedding Visa page (verified June 2026)", "official": true},
+    {"url": "https://passport.govmu.org/passport/?page_id=593", "description": "Mauritius Passport and Immigration Office - Extension of Visa page (verified June 2026)", "official": true},
+    {"url": "https://residency.mu", "description": "Residency in Mauritius - EDB official portal home (verified June 2026)", "official": true},
+    {"url": "https://passport.govmu.org/passport/?page_id=587", "description": "Mauritius Passport and Immigration Office - Travel Requirements page (verified June 2026; confirms Taiwan passport = 60-day VoA; no ETA system listed; Reunion Island/Northern Cyprus/BIOC passports noted)", "official": true},
+    {"url": "https://passport.govmu.org/passport/?page_id=547", "description": "Mauritius Passport and Immigration Office - News page (verified June 2026; June 12 2026 Travel Advisory noted; Sep 2022 Reunion Island ID-card entry notice; no nationality-level visa policy changes found)", "official": true},
+    {"url": "https://passport.govmu.org/passport/?p=1246", "description": "Mauritius Passport and Immigration Office - Official notice: French nationals from Reunion Island may enter on valid French Identity Card (19 Sep 2022-30 Jun 2023); extension status unconfirmed on this official page", "official": true},
+    {"url": "https://foreign.govmu.org/Pages/Services/Visa-Information.aspx", "description": "Mauritius Ministry of Foreign Affairs - Visa Information landing page (verified June 2026; links to Nov 2025 outbound PDF and passport.govmu.org for inbound; no new inbound visa policy PDFs found)", "official": true},
+    {"url": "https://travel.state.gov/en/international-travel/travel-advisories/mauritius.html", "description": "US State Department - Mauritius Travel Advisory (Level 2; updated December 2025; confirms all foreign nationals must complete Mauritius All-in-One Travel Digital Form 72 hrs prior to arrival; confirms entry ban effective 6 June 2026 for travellers who have been in DRC/Uganda/South Sudan within 21 days; confirms no visa needed for stays up to 2 months)", "official": false},
+    {"url": "https://visasnews.com/en/mauritius-future-e-visa-eta-system-takes-shape-in-2026-2027-budget/", "description": "VisasNews - Mauritius ETA/e-visa takes shape in 2026-2027 budget (June 2026; non-official; Immigration Act amendment proposed for digital ETA; launch expected 2027)", "official": false},
+    {"url": "https://passport.govmu.org/passport/?p=1448", "description": "Mauritius Passport and Immigration Office - Official Travel Advisory dated 12 June 2026: confirms entry ban for travelers who visited DRC/Uganda/South Sudan within 21 days; confirms both All-in-One Travel Form AND Health Declaration Form required at point of departure prior to arrival; quarantine requirement for Mauritius citizens/PR with travel history in banned countries (verified June 2026-29)", "official": true},
+    {"url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Mauritius.html", "description": "US State Department - Mauritius Country Information Page (verified June 2026-29; confirms no visa required for stays 60 days or less; confirms All-in-One Travel Digital Form 72 hrs before arrival; confirms entry ban effective 6 June 2026 for DRC/Uganda/South Sudan travelers)", "official": false}
   ]
 }

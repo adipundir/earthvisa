@@ -240,7 +240,7 @@ function VrRow({ natName, natIso3, dest }: { natName: string; natIso3: string; d
           <span aria-hidden className="mono text-ink-mute transition group-hover:text-stamp">→</span>
         </Link>
       </td>
-      <td className="mono px-3.5 py-1.5 text-right text-sm tabular-nums text-ink-soft">{fee ?? "—"}</td>
+      <td className="mono px-3.5 py-1.5 text-right text-sm tabular-nums text-ink-soft">{fee ?? " - "}</td>
     </tr>
   );
 }
@@ -274,7 +274,7 @@ function cleanProcessingTime(raw: string | null | undefined): string | null {
 // Abs. 6)"). Cards show a short label; the legal citation, alternate names
 // after "/" and decree suffixes after a dash live on the program page.
 function shortProgramLabel(raw: string): string {
-  const s = raw.split("(")[0].split(/\s+[–—-]\s+/)[0].split(" / ")[0].trim().replace(/[.,;:]+$/, "");
+  const s = raw.split("(")[0].split(/\s+[ -  - -]\s+/)[0].split(" / ")[0].trim().replace(/[.,;:]+$/, "");
   return s || raw;
 }
 
@@ -756,7 +756,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 </details>
               )}
               <p className="mt-3 max-w-2xl text-[13px] leading-relaxed text-ink-mute">
-                &quot;—&quot; means the destination publishes no single official tourist-visa figure (often a per-nationality
+                &quot; - &quot; means the destination publishes no single official tourist-visa figure (often a per-nationality
                 reciprocity schedule). Fees exclude service and application-centre charges.
               </p>
             </section>
@@ -790,7 +790,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 },
                 ...(cbiCount > 0 ? [{
                   q: `Can ${citizens} get a second citizenship through investment?`,
-                  a: `Yes. ${citizensCap} can apply for ${cbiCount} citizenship by investment (CBI) programs including those in the Caribbean (St Kitts, Dominica, Grenada), Malta, Turkey, and others. These programs grant a second passport in exchange for a qualifying investment, typically starting from $100,000–$200,000.`,
+                  a: `Yes. ${citizensCap} can apply for ${cbiCount} citizenship by investment (CBI) programs including those in the Caribbean (St Kitts, Dominica, Grenada), Malta, Turkey, and others. These programs grant a second passport in exchange for a qualifying investment, typically starting from $100,000 - $200,000.`,
                 }] : []),
                 {
                   q: `Which countries can ${demonym} passport holders visit on arrival?`,

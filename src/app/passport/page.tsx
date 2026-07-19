@@ -69,7 +69,7 @@ export default function PassportIndex() {
       {/* CountryIndex owns the search + flat list; this heading gives the
           link wall a semantic outline (the page otherwise has no h2). */}
       <div className="mx-auto w-full max-w-6xl px-5 pt-10 -mb-6 sm:px-8">
-        <h2 className="text-section text-ink">All Passports A–Z</h2>
+        <h2 className="text-section text-ink">All Passports A - Z</h2>
         <p className="text-body mt-2 max-w-3xl text-ink-soft">
           Each passport links to its full visa-free country list, 2026 rank and per-destination visa guides.
         </p>

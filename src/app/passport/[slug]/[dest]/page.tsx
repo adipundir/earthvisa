@@ -175,7 +175,7 @@ function parseDocBlocks(text: string): { pdfs: { label: string; url: string }[];
     if (!line) continue;
     const pdf = /^(.{2,120}?)\s*\(\s*(https?:\/\/\S+?\.pdf[^\s)]*)\s*\)[\s.]*$/i.exec(line);
     if (pdf) {
-      let label = pdf[1].replace(/[-–—:\s]+$/, "").trim();
+      let label = pdf[1].replace(/[- -  - :\s]+$/, "").trim();
       // Some crawled lines are "url (url)" duplicates - a raw URL is useless
       // as a pill label, so fall back to the PDF's decoded filename.
       if (/https?:\/\//i.test(label)) {

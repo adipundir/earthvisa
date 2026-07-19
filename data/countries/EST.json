@@ -973,7 +973,7 @@
       "UPDATE 2026-06-29 - Visa-free list re-confirmed: Re-fetched vm.ee official page. The ordinary-passport visa-free country list (last updated 18.12.2024 on vm.ee) is confirmed unchanged. No countries added or removed since prior validation. All 62 entries in visa_free[] confirmed correct."
     ],
     "gaps": [
-      "ETIAS (European Travel Information and Authorisation System): Planned for Q4 2026 (October–December) but not yet operational as of research date (June 2026). When launched, visa-exempt third-country nationals visiting Estonia will need ETIAS pre-travel authorisation (EUR 20 fee). No confirmed specific launch date within Q4 2026; EU committed to give at least 6 months' advance notice.",
+      "ETIAS (European Travel Information and Authorisation System): Planned for Q4 2026 (October - December) but not yet operational as of research date (June 2026). When launched, visa-exempt third-country nationals visiting Estonia will need ETIAS pre-travel authorisation (EUR 20 fee). No confirmed specific launch date within Q4 2026; EU committed to give at least 6 months' advance notice.",
       "The official vm.ee page (last updated 18.12.2024) has not been updated to reflect the March 6, 2026 EU Commission Implementing Regulation suspending Georgian diplomatic/service/official passport holders from Schengen visa-free travel. The conditional_access entry has been updated from both the vm.ee page (May 8, 2025 bilateral suspension) and the EC press release IP_26_564 (March 6, 2026 broader suspension, valid 12 months until March 6, 2027).",
       "The official vm.ee page for diplomatic/official passport exemptions lists country groups rather than all individual countries; Russia's diplomatic exemption is suspended but the list may evolve.",
       "Path-to-permanent-residence year requirements for investor and startup permits not explicitly stated on the official politsei.ee pages; standard naturalisation rules apply (8 years total, 5 on permanent basis) per citizenship page.",
@@ -989,7 +989,7 @@
   "visa_types": [
     {
       "category": "tourist",
-      "name": "Schengen Short-Stay Visa (C Visa) – Tourism",
+      "name": "Schengen Short-Stay Visa (C Visa) - Tourism",
       "purpose": "Permits tourism, leisure, and family visits to Estonia and the wider Schengen Area for up to 90 days within any 180-day period.",
       "max_stay_days": 90,
       "validity_days": 180,
@@ -1000,11 +1000,11 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://vm.ee/en/consular-visa-and-travel-information/visa-information/application-schengen-visa",
-      "notes": "Standard adult fee EUR 90 (approx USD 97). Children 6–11 pay EUR 45; under 6 are free. Facilitation agreement countries pay EUR 35–EUR 67.50. Multiple-entry variants valid up to 5 years. Application must be submitted 15 days before travel and no earlier than 6 months ahead. Financial means required: EUR 70/day. Processing standard 15 days; complex cases up to 45 days."
+      "notes": "Standard adult fee EUR 90 (approx USD 97). Children 6-11 pay EUR 45; under 6 are free. Facilitation agreement countries pay EUR 35 - EUR 67.50. Multiple-entry variants valid up to 5 years. Application must be submitted 15 days before travel and no earlier than 6 months ahead. Financial means required: EUR 70/day. Processing standard 15 days; complex cases up to 45 days."
     },
     {
       "category": "business",
-      "name": "Schengen Short-Stay Visa (C Visa) – Business",
+      "name": "Schengen Short-Stay Visa (C Visa) - Business",
       "purpose": "Permits business-related activities such as meetings, conferences, and negotiations in Estonia and the Schengen Area for up to 90 days within any 180-day period.",
       "max_stay_days": 90,
       "validity_days": 180,
@@ -1034,7 +1034,7 @@
     },
     {
       "category": "work",
-      "name": "Long-Stay D Visa – Short-Term Employment",
+      "name": "Long-Stay D Visa - Short-Term Employment",
       "purpose": "Allows a third-country national to enter Estonia to take up short-term paid employment with an Estonian employer for a period exceeding 90 days but not more than 365 days.",
       "max_stay_days": 365,
       "validity_days": 365,
@@ -1045,11 +1045,11 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://vm.ee/en/consular-visa-and-travel-information/visa-information/application-long-stay-d-visa",
-      "notes": "Fee EUR 120 (approx USD 130); children 6–11 EUR 60. Financial means requirement: EUR 1,320 one-time for short-term employment. Two consecutive D-visas cannot exceed 548 days within 730 consecutive days. Also allows up to 90 days travel in other Schengen states. Foreign documents require apostille/legalization and translation."
+      "notes": "Fee EUR 120 (approx USD 130); children 6-11 EUR 60. Financial means requirement: EUR 1,320 one-time for short-term employment. Two consecutive D-visas cannot exceed 548 days within 730 consecutive days. Also allows up to 90 days travel in other Schengen states. Foreign documents require apostille/legalization and translation."
     },
     {
       "category": "work",
-      "name": "Long-Stay D Visa – Seasonal Work",
+      "name": "Long-Stay D Visa - Seasonal Work",
       "purpose": "Permits third-country nationals to undertake seasonal agricultural or other seasonal work in Estonia for up to 365 days within a 12-month period.",
       "max_stay_days": 365,
       "validity_days": 365,
@@ -1064,7 +1064,7 @@
     },
     {
       "category": "student",
-      "name": "Long-Stay D Visa – Studies",
+      "name": "Long-Stay D Visa - Studies",
       "purpose": "Enables third-country nationals to enter Estonia for study at an accredited institution (university, college, or other recognised programme) for periods exceeding 90 days.",
       "max_stay_days": 365,
       "validity_days": 365,
@@ -1079,7 +1079,7 @@
     },
     {
       "category": "digital_nomad",
-      "name": "Long-Stay D Visa – Digital Nomad (Remote Work)",
+      "name": "Long-Stay D Visa - Digital Nomad (Remote Work)",
       "purpose": "Allows remote workers employed by companies or clients outside Estonia to live and work in Estonia for up to one year.",
       "max_stay_days": 365,
       "validity_days": 365,
@@ -1094,7 +1094,7 @@
     },
     {
       "category": "investment",
-      "name": "Long-Stay D Visa – Start-up Business",
+      "name": "Long-Stay D Visa - Start-up Business",
       "purpose": "Permits founders of start-up companies with international growth potential to enter Estonia to establish and operate their business.",
       "max_stay_days": 365,
       "validity_days": 365,
@@ -1109,7 +1109,7 @@
     },
     {
       "category": "working_holiday",
-      "name": "Long-Stay D Visa – Working Holiday",
+      "name": "Long-Stay D Visa - Working Holiday",
       "purpose": "Allows young adults from partner countries to stay in Estonia for up to 12 months, combining tourism with incidental employment.",
       "max_stay_days": 365,
       "validity_days": 365,
@@ -1120,11 +1120,11 @@
       "online": false,
       "on_arrival": false,
       "official_url": "https://vm.ee/en/consular-visa-and-travel-information/visa-information/application-long-stay-d-visa",
-      "notes": "Fee EUR 120. Available to citizens of Australia and New Zealand (ages 18–35) and Canada (ages 18–35) and Japan (ages 18–30). Bilateral working holiday agreements underpin eligibility. Primary purpose is holiday/travel; work is permitted incidentally."
+      "notes": "Fee EUR 120. Available to citizens of Australia and New Zealand (ages 18-35) and Canada (ages 18-35) and Japan (ages 18-30). Bilateral working holiday agreements underpin eligibility. Primary purpose is holiday/travel; work is permitted incidentally."
     },
     {
       "category": "family",
-      "name": "Long-Stay D Visa – Family Reunification / Other Purposes",
+      "name": "Long-Stay D Visa - Family Reunification / Other Purposes",
       "purpose": "Permits third-country nationals joining family members legally residing in Estonia, or other long-stay purposes not covered by other D-visa sub-categories.",
       "max_stay_days": 365,
       "validity_days": 365,
@@ -1139,7 +1139,7 @@
     },
     {
       "category": "diplomatic",
-      "name": "Schengen Visa – Diplomatic / Official Passport Holders",
+      "name": "Schengen Visa - Diplomatic / Official Passport Holders",
       "purpose": "Visa issued (or exemption granted) for holders of diplomatic, service, or official passports of countries with bilateral agreements with Estonia/EU, for official travel.",
       "max_stay_days": 90,
       "validity_days": 180,
@@ -1154,7 +1154,7 @@
     },
     {
       "category": "other",
-      "name": "Long-Stay D Visa – Start-up Employment",
+      "name": "Long-Stay D Visa - Start-up Employment",
       "purpose": "Allows a non-EU national to enter Estonia to take up employment at an officially recognised Estonian start-up company.",
       "max_stay_days": 365,
       "validity_days": 365,
@@ -1248,7 +1248,7 @@
     "source_url": "https://reisitargalt.vm.ee/",
     "source_official": true,
     "asof": "2026-06-14",
-    "notes": "The Estonian Ministry of Foreign Affairs operates the 'Reisi Targalt' (Travel Smart) portal at reisitargalt.vm.ee, which is Estonia's official origin-side travel advisory covering visa requirements for Estonian ordinary-passport citizens traveling to 214+ destinations. Each country has its own dedicated sub-page (reisitargalt.vm.ee/sihtkoht/<country>/). There is no single consolidated downloadable list page; the portal is the authoritative per-country reference. Data below is drawn from individual country sub-pages fetched June 2026. Estonia is an EU/Schengen member, so Estonian citizens have full freedom of movement within the EU/Schengen area. Key electronic authorisation requirements: ESTA for USA, eTA for Canada, eVisitor for Australia, NZeTA for New Zealand. China visa-free is a temporary arrangement valid Nov 30 2024 – Dec 31 2026 (up to 30 days).",
+    "notes": "The Estonian Ministry of Foreign Affairs operates the 'Reisi Targalt' (Travel Smart) portal at reisitargalt.vm.ee, which is Estonia's official origin-side travel advisory covering visa requirements for Estonian ordinary-passport citizens traveling to 214+ destinations. Each country has its own dedicated sub-page (reisitargalt.vm.ee/sihtkoht/<country>/). There is no single consolidated downloadable list page; the portal is the authoritative per-country reference. Data below is drawn from individual country sub-pages fetched June 2026. Estonia is an EU/Schengen member, so Estonian citizens have full freedom of movement within the EU/Schengen area. Key electronic authorisation requirements: ESTA for USA, eTA for Canada, eVisitor for Australia, NZeTA for New Zealand. China visa-free is a temporary arrangement valid Nov 30 2024 - Dec 31 2026 (up to 30 days).",
     "visa_free": [
       {"name": "Albania", "iso3": "ALB"},
       {"name": "Andorra", "iso3": "AND"},

@@ -1,8 +1,8 @@
 "use client";
 
 // The landing IS the product (design system v2 "Instrument"):
-//   Empty state  — one centered question + the passport input. Nothing else.
-//   Selected     — the same page transforms: compact context row (chips, rank,
+//   Empty state - one centered question + the passport input. Nothing else.
+//   Selected - the same page transforms: compact context row (chips, rank,
 //                  quiet credential entry), a count-up headline stat, level
 //                  filter chips, and the fill-coded 199-destination grid.
 // Every tile links to its corridor page (falling back to the destination page
@@ -157,7 +157,7 @@ function tileSub(t: Tile): { text: string; cls: string; srPrefix?: string } {
     case "voa":
       return { text: join("On arrival", days, via), cls: "text-verdict" };
     case "online":
-      return { text: join(t.edge!.level === "eta" ? "eTA" : "eVisa", days, via), cls: "text-accent" };
+      return { text: join(t.edge!.level === "eta" ? "eTA" : "eVisa", days, via), cls: "text-online" };
     case "req":
       return { text: "Visa required", cls: "text-ink-3" };
   }
@@ -241,7 +241,7 @@ function CountrySearch({
         id={inputId}
         autoFocus={autoFocus}
         autoComplete="off"
-        placeholder={hero ? "Your passport — e.g. India" : "Add a passport…"}
+        placeholder={hero ? "Your passport - e.g. India" : "Add a passport…"}
         className={
           hero
             ? "input-hero"
