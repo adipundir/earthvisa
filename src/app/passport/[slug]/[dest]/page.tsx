@@ -8,7 +8,7 @@ import { compute, LEVEL_LABEL } from "@/lib/compute";
 import type { AccessLevel, VisaType } from "@/lib/types";
 import { TOP_NATIONALITIES, TOP_DESTINATIONS, preWarmCorridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
-import { feesFor, relevantFees, variationFor, fmtFee } from "@/lib/fees";
+import { feesFor, relevantFees, variationFor, fmtFee, toUsd } from "@/lib/fees";
 import { applicationNoteFor } from "@/lib/applicationNotes";
 import VisaTypeDialog, { type VisaTypeMeta } from "@/components/VisaTypeDialog";
 
@@ -447,7 +447,7 @@ const GLOSSARY_ANCHOR: Record<string, string> = {
 // shown elsewhere on the page.
 function ApplyLink({ href, label = "Apply here" }: { href: string; label?: string }) {
   return (
-    <a href={href} target="_blank" rel="noreferrer" className="font-semibold text-accent underline-offset-2 hover:underline">
+    <a href={href} target="_blank" rel="noreferrer" className="relative font-semibold text-accent underline-offset-2 after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:underline">
       {label} ↗
     </a>
   );
@@ -557,7 +557,9 @@ function FactStrip({ cells }: { cells: FactCell[] }) {
               </>
             ) : c.kind === "num" ? (
               <>
-                <p className="stat-num text-[clamp(38px,4.2vw,60px)] text-ink">{c.num}</p>
+                {/* Long numerals ("500,000") overflow a phone-width cell at the
+                    38px floor - scale with the viewport below sm instead. */}
+                <p className={`stat-num text-ink ${String(c.num).length >= 7 ? "text-[clamp(26px,9vw,60px)] sm:text-[clamp(38px,4.2vw,60px)]" : "text-[clamp(38px,4.2vw,60px)]"}`}>{c.num}</p>
                 {c.unit && <p className="mt-2 text-[15px] font-bold text-ink">{c.unit}</p>}
                 {c.detail && <p className="mt-0.5 text-[13.5px] font-medium text-ink-2">{c.detail}</p>}
               </>
@@ -679,7 +681,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
   // Official visa fees for this corridor (crawled from government sources).
   const destFees = feesFor(d.iso3);
-  const feeList = relevantFees(d.iso3, s.kind);
+  const feeList = relevantFees(d.iso3, s.kind, n.iso3);
   const feeVariation = variationFor(d.iso3, n.iso3);
   const headlineFee = feeVariation?.amount != null ? feeVariation : feeList.find((f) => f.amount != null) ?? null;
 
@@ -1122,16 +1124,16 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </a>
               )}
               {statusUrl && (
-                <a href={statusUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-ink">
+                <a href={statusUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] inline-flex items-center gap-1.5 transition hover:text-ink">
                   <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${("sourceOfficial" in s && s.sourceOfficial) ? "bg-verdict" : "bg-ink-3"}`} />
                   Source · {sourceHost(statusUrl)} ↗
                 </a>
               )}
               {vfsDocs.length > 0 && (
-                <a href="#documents" className="font-semibold text-accent underline-offset-2 hover:underline">Document checklist →</a>
+                <a href="#documents" className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] font-semibold text-accent underline-offset-2 hover:underline">Document checklist →</a>
               )}
-              <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="transition hover:text-ink">Check entry with visas you already hold →</Link>
-              <Link href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind] ?? "visa-required"}`} className="transition hover:text-ink sm:ml-auto">
+              <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] transition hover:text-ink">Check entry with visas you already hold →</Link>
+              <Link href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind] ?? "visa-required"}`} className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] transition hover:text-ink sm:ml-auto">
                 What &ldquo;{glossaryLabel}&rdquo; means →
               </Link>
             </div>
@@ -1218,13 +1220,39 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 <div className="mt-5 flex flex-wrap items-end gap-x-10 gap-y-2">
                   <div>
                     <p className="stat-num text-[clamp(30px,3vw,42px)] text-ink">{fmtFee(feeVariation)}</p>
-                    <p className="stat-label mt-1.5">fee for {nd} citizens</p>
+                    <p className="stat-label mt-1.5">{feeVariation.items?.length ? `single entry, for ${nd} citizens` : `fee for ${nd} citizens`}</p>
                   </div>
                   {feeVariation.note && (
                     <p className="max-w-xl pb-1 text-[14.5px] leading-relaxed text-ink-2">{feeVariation.note}</p>
                   )}
                 </div>
               )}
+
+              {/* Itemized official schedule for this nationality (stored in the
+                  destination's original currency; ~$ converted via the fx-rates
+                  snapshot) - every category, not just the headline number. */}
+              {feeVariation?.items?.length ? (
+                <>
+                  <ul className="mt-5 max-w-3xl divide-y divide-hair border-y border-hair">
+                    {feeVariation.items.map((it, i) => (
+                      <li key={i} className="flex min-h-[44px] flex-wrap items-center gap-x-4 gap-y-0.5 py-2.5">
+                        <p className="min-w-0 flex-1 text-[15px] font-medium text-ink">{it.label}</p>
+                        <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">
+                          {feeVariation.currency} {it.amount.toLocaleString()}
+                          {toUsd(it.amount, feeVariation.currency) != null && feeVariation.currency !== "USD" && (
+                            <span className="ml-2 font-medium text-ink-2">~${toUsd(it.amount, feeVariation.currency)!.toLocaleString()}</span>
+                          )}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                  {feeVariation.source_url && (
+                    <a href={feeVariation.source_url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] mt-2.5 inline-flex items-center gap-1 text-[13px] font-medium text-ink-2 underline-offset-2 transition hover:text-ink hover:underline">
+                      Official schedule · {sourceHost(feeVariation.source_url)} ↗
+                    </a>
+                  )}
+                </>
+              ) : (
 
               <ul className="mt-5 max-w-3xl divide-y divide-hair border-y border-hair">
                 {(() => {
@@ -1260,6 +1288,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   ));
                 })()}
               </ul>
+              )}
               {/* Only visa_required corridors route through a VFS/VAC centre -
                   on VoA/eTA/e-visa corridors the application never touches VFS,
                   so the note would contradict the page's own apply steps. */}
@@ -1395,7 +1424,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </div>
                 {otherTypes.length > 0 && (
                   <p className="mt-4 text-[14.5px]">
-                    <Link href={`/destination/${dest}`} className="font-semibold text-accent underline-offset-2 hover:underline">
+                    <Link href={`/destination/${dest}`} className="relative font-semibold text-accent underline-offset-2 after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:underline">
                       {d.name} visa policy, fees & entry rules in full →
                     </Link>
                   </p>

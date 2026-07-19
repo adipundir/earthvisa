@@ -767,7 +767,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                     </div>
                     {v.notes && <p className="text-body mt-2 text-ink-soft">{v.notes}</p>}
                     {v.official_url && (
-                      <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
+                      <a href={v.official_url} target="_blank" rel="noreferrer" className="mono relative mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 after:absolute after:-inset-x-1 after:-inset-y-3 after:content-[''] hover:underline">
                         Apply here ↗
                       </a>
                     )}

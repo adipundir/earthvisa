@@ -393,6 +393,15 @@ body {
 .reveal    { opacity: 1; }
 .stamp-in  { opacity: 1; }
 
+/* Mobile: freeze the page behind an open modal dialog. */
+body:has(dialog[open]) { overflow: hidden; }
+
+/* iOS Safari auto-zooms the page when a focused field is under 16px, so every
+   field holds 16px on small screens (.input-hero already does via its own rule). */
+@media (max-width: 640px) {
+  input:not(.input-hero), select, textarea { font-size: 16px !important; }
+}
+
 /* Skip-to-content link: hidden until keyboard-focused */
 .skip-link {
   position: fixed;

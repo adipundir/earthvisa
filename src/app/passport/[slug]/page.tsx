@@ -444,7 +444,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               {rank && (
                 <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
                   Ranked #{rank} of {TOTAL_PASSPORTS} passports worldwide ·{" "}
-                  <Link href="/rankings" className="underline decoration-line underline-offset-4 transition hover:text-ink">
+                  <Link href="/rankings" className="relative underline decoration-line underline-offset-4 transition after:absolute after:-inset-x-1 after:-inset-y-3 after:content-[''] hover:text-ink">
                     Full 2026 passport index
                   </Link>
                 </p>

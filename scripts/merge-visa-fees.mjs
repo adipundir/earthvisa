@@ -39,6 +39,8 @@ for (const f of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
         official: !!x.official,
         source_url: x.source_url ?? null,
         notes: trim(x.notes),
+        // when present, this fee row only applies to (and only renders for) these nationalities
+        ...(Array.isArray(x.applies_nationalities) && x.applies_nationalities.length ? { applies_nationalities: x.applies_nationalities } : {}),
       })),
     variations: (d.reciprocity_variations ?? [])
       .filter((v) => v && Array.isArray(v.nationalities))
@@ -48,6 +50,11 @@ for (const f of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
         amount: typeof v.amount === "number" ? v.amount : null,
         currency: v.currency ?? null,
         note: trim(v.note),
+        ...(v.source_url ? { source_url: v.source_url } : {}),
+        // itemized per-category schedule (entries/duration tiers) in the variation's currency
+        ...(Array.isArray(v.items) && v.items.length
+          ? { items: v.items.filter((it) => it && typeof it.amount === "number" && it.label).map((it) => ({ label: String(it.label), amount: it.amount })) }
+          : {}),
       })),
     vfs: d.vfs?.used
       ? {

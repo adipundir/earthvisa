@@ -75,7 +75,7 @@ export default function VisaTypeDialog({ name, category, purpose, meta, sentence
               type="button"
               onClick={() => ref.current?.close()}
               aria-label="Close"
-              className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-[19px] leading-none text-ink-3 transition hover:bg-ground hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="-m-1 grid h-11 w-11 shrink-0 place-items-center rounded-full text-[19px] leading-none text-ink-3 transition hover:bg-ground hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >×</button>
           </div>
 

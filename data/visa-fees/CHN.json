@@ -1,120 +1,171 @@
 {
-  "iso3": "CHN",
-  "name": "China",
-  "updated": "2026-07-02",
-  "confidence": "high",
-  "fees": [
-    {
-      "kind": "tourist_visa",
-      "name": "Ordinary visa (L tourist / M business etc.), single entry - base schedule for non-US nationals applying in the US",
-      "amount": 23,
-      "currency": "USD",
-      "amount_usd": 23,
-      "validity": "single entry, typically 3 months to enter",
-      "applies": "most nationalities (non-US) applying at Chinese missions in the US; fees are reciprocity-based and vary by country of application",
-      "official": true,
-      "source_url": "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202412/t20241227_11519914.htm",
-      "notes": "25% visa-fee reduction officially extended until 31 Dec 2026. Double entry USD 34, 6-month multiple USD 45, 12+ month multiple USD 68. Express service +USD 25. Same schedule applies to business (M) visas - fee depends on entries, not visa category."
-    },
-    {
-      "kind": "tourist_visa",
-      "name": "Ordinary visa for US citizens (any entries, incl. 10-year multiple)",
-      "amount": 140,
-      "currency": "USD",
-      "amount_usd": 140,
-      "validity": "single, double or multiple entry up to 10 years",
-      "applies": "US nationals (reciprocity fee)",
-      "official": true,
-      "source_url": "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202412/t20241227_11519914.htm",
-      "notes": "Flat USD 140 for US citizens regardless of number of entries; reduced rate valid until 31 Dec 2026."
-    },
-    {
-      "kind": "business_visa",
-      "name": "Business (M) visa",
-      "amount": 23,
-      "currency": "USD",
-      "amount_usd": 23,
-      "validity": "single entry (higher for double/multiple)",
-      "applies": "non-US nationals applying in the US; US citizens pay flat USD 140; amounts vary by country of application per reciprocity",
-      "official": true,
-      "source_url": "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202412/t20241227_11519914.htm",
-      "notes": "China prices visas by number of entries, not category: business visa costs the same as tourist on each national schedule."
-    },
-    {
-      "kind": "e_visa",
-      "name": "China e-visa (evisa.mfa.gov.cn, launched 2025-26)",
-      "amount": null,
-      "currency": "USD",
-      "amount_usd": null,
-      "validity": null,
-      "applies": "eligible nationalities",
-      "official": true,
-      "source_url": "https://evisa.mfa.gov.cn",
-      "notes": "China rolled out an online e-visa via the MFA portal; multiple 2026 reports state it is currently free of charge when applied directly on the official portal, but the fee could not be independently verified on an official English page at time of writing - amount left null."
-    },
-    {
-      "kind": "visa_on_arrival",
-      "name": "Port visa (visa on arrival at designated ports)",
-      "amount": null,
-      "currency": "CNY",
-      "amount_usd": null,
-      "validity": "short stay, issued at port for urgent/invited travel or tour groups",
-      "applies": "limited cases (urgent business with inviting entity, tour groups at designated ports, Hainan/Guangdong group schemes)",
-      "official": true,
-      "source_url": "https://www.nia.gov.cn/",
-      "notes": "China issues 'port visas' only in limited urgent/group cases; fee follows the national reciprocity schedule and is published per port - no single nationwide amount, so left null."
-    },
-    {
-      "kind": "transit_visa",
-      "name": "240-hour visa-free transit",
-      "amount": 0,
-      "currency": "USD",
-      "amount_usd": 0,
-      "validity": "up to 240 hours (10 days) at designated ports",
-      "applies": "nationals of 54+ eligible countries transiting to a third country",
-      "official": true,
-      "source_url": "https://www.nia.gov.cn/",
-      "notes": "Visa-free transit carries no fee. Separately, 30-day unilateral visa-free entry applies to 40+ countries (incl. most EU, UK, Japan, Australia, Canada) until at least 31 Dec 2026 - also free."
-    }
-  ],
-  "reciprocity_variations": [
-    {
-      "nationalities": ["USA"],
-      "kind": "tourist_visa",
-      "amount": 140,
-      "currency": "USD",
-      "note": "Flat fee for any entry type incl. 10-year multiple; reduced schedule until 31 Dec 2026 (official Chinese Embassy in US)."
-    },
-    {
-      "nationalities": ["IND"],
-      "kind": "tourist_visa",
-      "amount": 2900,
-      "currency": "INR",
-      "note": "Single entry INR 2,900; double 4,400; 6-mo multiple 5,900; 1-yr+ multiple 8,800 (official CVASC Delhi fee schedule); CVASC service fee extra."
-    },
-    {
-      "nationalities": ["GBR", "CAN", "NGA", "PAK", "PHL", "BGD", "RUS"],
-      "kind": "tourist_visa",
-      "amount": null,
-      "currency": null,
-      "note": "Fees are set per-country by reciprocity and published in local currency by each Chinese embassy/CVASC (e.g. UK schedule published as an image on visaforchina.cn London and could not be machine-verified). Many of these nationalities also fall under mutual visa exemptions (e.g. Russia-China group exemption, 2025 unilateral trial exemptions). Check local CVASC schedule."
-    }
-  ],
-  "vfs": {
-    "used": true,
-    "operator": "CVASC (Chinese Visa Application Service Center, official outsourced network; not VFS Global)",
-    "service_fee": "2107-3106",
-    "currency": "INR",
-    "note": "China routes most applications through its own CVASC centres. Service fee varies by country/centre; India (Delhi): INR 2,107 regular / INR 3,106 express incl. tax. Other countries publish local-currency service fees on their visaforchina.cn centre page.",
-    "source_url": "https://www.visaforchina.cn/DEL3_EN/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian"
+ "iso3": "CHN",
+ "name": "China",
+ "updated": "2026-07-20",
+ "confidence": "high",
+ "fees": [
+  {
+   "kind": "tourist_visa",
+   "name": "Ordinary visa (L tourist / M business etc.), single entry - base schedule for non-US nationals applying in the US",
+   "amount": 23,
+   "currency": "USD",
+   "amount_usd": 23,
+   "validity": "single entry, typically 3 months to enter",
+   "applies": "most nationalities (non-US) applying at Chinese missions in the US; fees are reciprocity-based and vary by country of application",
+   "official": true,
+   "source_url": "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202412/t20241227_11519914.htm",
+   "notes": "25% visa-fee reduction officially extended until 31 Dec 2026. Double entry USD 34, 6-month multiple USD 45, 12+ month multiple USD 68. Express service +USD 25. Same schedule applies to business (M) visas - fee depends on entries, not visa category."
   },
-  "sources": [
-    "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202412/t20241227_11519914.htm",
-    "https://sanfrancisco.china-consulate.gov.cn/eng/lsfw/lszj/notice/202512/t20251230_11790159.htm",
-    "https://www.visaforchina.cn/DEL3_EN/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian",
-    "https://bio.visaforchina.cn/LON3_EN/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian",
-    "https://evisa.mfa.gov.cn",
-    "https://www.nia.gov.cn/"
-  ],
-  "free_visa_notes": "China is not visa-free for everyone, but until 31 Dec 2026 it grants unilateral 30-day visa-free entry to nationals of 40+ countries (most of the EU, UK, Japan, South Korea, Australia, NZ, Canada, Brazil, etc.) and 240-hour visa-free transit to 54+ nationalities - both free of charge. A 25% reduction on all consular visa fees also runs until 31 Dec 2026."
+  {
+   "kind": "tourist_visa",
+   "name": "Ordinary visa for US citizens (any entries, incl. 10-year multiple)",
+   "amount": 140,
+   "currency": "USD",
+   "amount_usd": 140,
+   "validity": "single, double or multiple entry up to 10 years",
+   "applies": "US nationals (reciprocity fee)",
+   "official": true,
+   "source_url": "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202412/t20241227_11519914.htm",
+   "notes": "Flat USD 140 for US citizens regardless of number of entries; reduced rate valid until 31 Dec 2026.",
+   "applies_nationalities": [
+    "USA"
+   ]
+  },
+  {
+   "kind": "business_visa",
+   "name": "Business (M) visa",
+   "amount": 23,
+   "currency": "USD",
+   "amount_usd": 23,
+   "validity": "single entry (higher for double/multiple)",
+   "applies": "non-US nationals applying in the US; US citizens pay flat USD 140; amounts vary by country of application per reciprocity",
+   "official": true,
+   "source_url": "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202412/t20241227_11519914.htm",
+   "notes": "China prices visas by number of entries, not category: business visa costs the same as tourist on each national schedule."
+  },
+  {
+   "kind": "e_visa",
+   "name": "China e-visa (evisa.mfa.gov.cn, launched 2025-26)",
+   "amount": null,
+   "currency": "USD",
+   "amount_usd": null,
+   "validity": null,
+   "applies": "eligible nationalities",
+   "official": true,
+   "source_url": "https://evisa.mfa.gov.cn",
+   "notes": "China rolled out an online e-visa via the MFA portal; multiple 2026 reports state it is currently free of charge when applied directly on the official portal, but the fee could not be independently verified on an official English page at time of writing - amount left null."
+  },
+  {
+   "kind": "visa_on_arrival",
+   "name": "Port visa (visa on arrival at designated ports)",
+   "amount": null,
+   "currency": "CNY",
+   "amount_usd": null,
+   "validity": "short stay, issued at port for urgent/invited travel or tour groups",
+   "applies": "limited cases (urgent business with inviting entity, tour groups at designated ports, Hainan/Guangdong group schemes)",
+   "official": true,
+   "source_url": "https://www.nia.gov.cn/",
+   "notes": "China issues 'port visas' only in limited urgent/group cases; fee follows the national reciprocity schedule and is published per port - no single nationwide amount, so left null."
+  },
+  {
+   "kind": "transit_visa",
+   "name": "240-hour visa-free transit",
+   "amount": 0,
+   "currency": "USD",
+   "amount_usd": 0,
+   "validity": "up to 240 hours (10 days) at designated ports",
+   "applies": "nationals of 54+ eligible countries transiting to a third country",
+   "official": true,
+   "source_url": "https://www.nia.gov.cn/",
+   "notes": "Visa-free transit carries no fee. Separately, 30-day unilateral visa-free entry applies to 40+ countries (incl. most EU, UK, Japan, Australia, Canada) until at least 31 Dec 2026 - also free."
+  }
+ ],
+ "reciprocity_variations": [
+  {
+   "nationalities": [
+    "USA"
+   ],
+   "kind": "tourist_visa",
+   "amount": 140,
+   "currency": "USD",
+   "note": "Flat fee for any entry type incl. 10-year multiple; reduced schedule until 31 Dec 2026 (official Chinese Embassy in US)."
+  },
+  {
+   "nationalities": [
+    "IND"
+   ],
+   "kind": "tourist_visa",
+   "amount": 2900,
+   "currency": "INR",
+   "note": "Official Chinese Embassy in India reduced schedule, valid until 31 Dec 2026. Fee depends on number of entries, not visa category (L tourist / M business alike). Express (+Rs 1,800) or urgent (+Rs 2,700) processing and the CVASC service fee are extra.",
+   "source_url": "https://in.china-embassy.gov.cn/eng/lsfw/qz/202601/t20260104_11797373.htm",
+   "items": [
+    {
+     "label": "Single entry",
+     "amount": 2900
+    },
+    {
+     "label": "Double entry",
+     "amount": 4400
+    },
+    {
+     "label": "6-month multiple entry",
+     "amount": 5900
+    },
+    {
+     "label": "12-month or longer multiple entry",
+     "amount": 8800
+    },
+    {
+     "label": "Group visa, per applicant",
+     "amount": 1800
+    },
+    {
+     "label": "Express service, added to visa fee",
+     "amount": 1800
+    },
+    {
+     "label": "Urgent service, added to visa fee",
+     "amount": 2700
+    }
+   ]
+  },
+  {
+   "nationalities": [
+    "GBR",
+    "CAN",
+    "NGA",
+    "PAK",
+    "PHL",
+    "BGD",
+    "RUS"
+   ],
+   "kind": "tourist_visa",
+   "amount": null,
+   "currency": null,
+   "note": "Fees are set per-country by reciprocity and published in local currency by each Chinese embassy/CVASC (e.g. UK schedule published as an image on visaforchina.cn London and could not be machine-verified). Many of these nationalities also fall under mutual visa exemptions (e.g. Russia-China group exemption, 2025 unilateral trial exemptions). Check local CVASC schedule."
+  }
+ ],
+ "vfs": {
+  "used": true,
+  "operator": "CVASC (Chinese Visa Application Service Center, official outsourced network; not VFS Global)",
+  "service_fee": "2107-3106",
+  "currency": "INR",
+  "note": "China routes most applications through its own CVASC centres. Service fee varies by country/centre; India (Delhi): INR 2,107 regular / INR 3,106 express incl. tax. Other countries publish local-currency service fees on their visaforchina.cn centre page.",
+  "source_url": "https://www.visaforchina.cn/DEL3_EN/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian"
+ },
+ "sources": [
+  "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202412/t20241227_11519914.htm",
+  "https://sanfrancisco.china-consulate.gov.cn/eng/lsfw/lszj/notice/202512/t20251230_11790159.htm",
+  "https://www.visaforchina.cn/DEL3_EN/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian",
+  "https://bio.visaforchina.cn/LON3_EN/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian",
+  "https://evisa.mfa.gov.cn",
+  "https://www.nia.gov.cn/",
+  {
+   "url": "https://in.china-embassy.gov.cn/eng/lsfw/qz/202601/t20260104_11797373.htm",
+   "description": "Chinese Embassy in India: visa-fee reduction notice with full INR fee tables (Indian, other, and US/CAN-group passports), 4 Jan 2026",
+   "official": true
+  }
+ ],
+ "free_visa_notes": "China is not visa-free for everyone, but until 31 Dec 2026 it grants unilateral 30-day visa-free entry to nationals of 40+ countries (most of the EU, UK, Japan, South Korea, Australia, NZ, Canada, Brazil, etc.) and 240-hour visa-free transit to 54+ nationalities - both free of charge. A 25% reduction on all consular visa fees also runs until 31 Dec 2026."
 }

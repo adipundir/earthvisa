@@ -1,7 +1,10 @@
 import raw from "@/data/visa-fees.json";
+import fx from "@/data/fx-rates.json";
 
 // Official visa fees per destination, crawled from government / official-portal
 // sources (see data/visa-fees/ for the raw per-country records with full notes).
+// Fees are stored in their ORIGINAL currency; approximate USD figures are
+// derived at render time from the fx-rates snapshot (scripts/update-fx-rates.mjs).
 // Fees change; every entry carries its source URL and crawl date.
 
 export interface FeeEntry {
@@ -14,6 +17,13 @@ export interface FeeEntry {
   official: boolean;
   source_url: string | null;
   notes: string;
+  /** when present, this fee row only applies to (and only renders for) these nationalities */
+  applies_nationalities?: string[];
+}
+
+export interface FeeVariationItem {
+  label: string;
+  amount: number;
 }
 
 export interface FeeVariation {
@@ -22,6 +32,21 @@ export interface FeeVariation {
   amount: number | null;
   currency: string | null;
   note: string;
+  source_url?: string;
+  /** itemized per-category schedule (entry/duration tiers) in the variation's currency */
+  items?: FeeVariationItem[];
+}
+
+const FX_RATES = (fx as { rates: Record<string, number> }).rates;
+
+/** Convert an amount in an original currency to approximate USD via the rates snapshot. */
+export function toUsd(amount: number | null, currency: string | null): number | null {
+  if (amount == null) return null;
+  if (!currency || currency === "USD") return amount;
+  const rate = FX_RATES[currency];
+  if (!rate || rate <= 0) return null;
+  // whole dollars - these are approximations, not quotes, and decimals read as false precision
+  return Math.round(amount / rate);
 }
 
 export interface VfsInfo {
@@ -70,21 +95,24 @@ function isRenderableFee(f: FeeEntry & { applies?: string | null }): boolean {
 }
 
 /** The fee entries relevant to one nationality's access status at a destination. */
-export function relevantFees(destIso3: string, statusKind: string): FeeEntry[] {
+export function relevantFees(destIso3: string, statusKind: string, natIso3?: string): FeeEntry[] {
   const d = feesByIso3[destIso3];
   if (!d) return [];
   const kinds = KIND_FOR_LEVEL[statusKind];
   if (!kinds) return [];
-  const hits = d.fees.filter((f) => kinds.includes(f.kind) && isRenderableFee(f));
+  // Nationality-scoped rows (e.g. China's flat US-citizen fee) must never render
+  // on another nationality's corridor.
+  const applies = (f: FeeEntry) => !f.applies_nationalities || (natIso3 != null && f.applies_nationalities.includes(natIso3));
+  const hits = d.fees.filter((f) => kinds.includes(f.kind) && isRenderableFee(f) && applies(f));
   // visa_required fallback: if no tourist/e-visa recorded, show whatever paid entry kinds exist
   if (hits.length === 0 && statusKind === "visa_required") {
-    return d.fees.filter((f) => f.kind !== "transit_visa" && isRenderableFee(f)).slice(0, 2);
+    return d.fees.filter((f) => f.kind !== "transit_visa" && isRenderableFee(f) && applies(f)).slice(0, 2);
   }
   // e-visa / eTA fallback: when the matching kind has no published amount, the
   // destination's tourist-visa fee is what the online applicant actually pays
   // (e.g. UAE records its AED tourist-visa fees with no separate e_visa row).
   if ((statusKind === "e_visa" || statusKind === "eta") && !hits.some((f) => f.amount != null)) {
-    const tourist = d.fees.filter((f) => f.kind === "tourist_visa" && f.amount != null);
+    const tourist = d.fees.filter((f) => f.kind === "tourist_visa" && f.amount != null && applies(f));
     if (tourist.length > 0) return [...hits, ...tourist];
   }
   return hits;
@@ -101,5 +129,9 @@ export function fmtFee(f: { amount: number | null; currency: string | null; amou
   if (f.amount === 0) return "Free"; // genuinely free products, not "AUD 0 (~$0)"
   if (f.amount == null) return "see official source";
   const base = `${f.currency ?? ""} ${f.amount.toLocaleString()}`.trim();
-  return f.amount_usd != null && f.currency !== "USD" ? `${base} (~$${f.amount_usd.toLocaleString()})` : base;
+  if (f.currency === "USD") return base;
+  // Live-rate conversion from the original currency; stored amount_usd is the
+  // fallback for currencies missing from the rates snapshot.
+  const usd = toUsd(f.amount, f.currency) ?? f.amount_usd ?? null;
+  return usd != null ? `${base} (~$${usd.toLocaleString()})` : base;
 }

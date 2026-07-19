@@ -77,10 +77,11 @@ export default function SiteFooter() {
           {COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
               <p className="text-[13.5px] font-semibold text-ink">{col.title}</p>
-              <ul className="mt-3.5 space-y-2.5">
+              <ul className="mt-3.5 space-y-1">
                 {col.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="text-[13.5px] text-ink-2 transition hover:text-accent">
+                    {/* inline-block + py-1 keeps the visual rhythm but widens the tap target */}
+                    <Link href={l.href} className="inline-block py-1 text-[13.5px] text-ink-2 transition hover:text-accent">
                       {l.label}
                     </Link>
                   </li>
