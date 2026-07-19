@@ -620,7 +620,7 @@ export default function VisaFeesRankingPage() {
               href="/visit"
               className="btn-stamp mt-5"
             >
-              Check visa requirements on Earth Visa →
+              Check for your passport →
             </Link>
           </section>
 

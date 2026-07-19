@@ -466,11 +466,6 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               </p>
             )}
 
-            {/* Primary action, above the fold: the same entry check the
-                closing CTA offers, so the answer is one tap away up top. */}
-            <Link href={`/visit?dest=${destIso3}`} className="btn-stamp mt-5">
-              Check visa requirements on Earth Visa →
-            </Link>
 
             {/* Stats - only when the destination's policy is actually tracked.
                 Rendered as an internal-hairline ledger row on a document card. */}
@@ -846,7 +841,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               Enter your passport to instantly see whether you need a visa for {country.name}, how long you can stay, and what documents you need.
             </p>
             <Link href={`/visit?dest=${destIso3}`} className="btn-stamp mt-6">
-              Check visa requirements on Earth Visa →
+              Check for your passport →
             </Link>
           </section>
 

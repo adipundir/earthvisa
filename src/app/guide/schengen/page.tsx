@@ -580,7 +580,7 @@ export default function SchengenGuidePage() {
               href="/visit?dest=FRA"
               className="btn-stamp mt-5"
             >
-              Check visa requirements on Earth Visa →
+              Check for your passport →
             </Link>
           </section>
 

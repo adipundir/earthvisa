@@ -5,12 +5,11 @@
 // ONE implementation means the client gating can never drift from the set of
 // corridor pages the server actually publishes.
 //
-// Quality bar (unchanged): a (nationality, destination) corridor only exists
-// when it carries genuinely differentiated content - an access grant
-// (visa-free / VoA / eTA / e-visa), freedom of movement, a VFS document
-// checklist, a held-credential unlock, or an explicit force-include below.
-// Corridors that would only say a generic "visa required, apply at an embassy"
-// are skipped so we never publish thin, near-duplicate pages.
+// Coverage rule (owner directive 2026-07-20): EVERY nationality has a corridor
+// page to EVERY other destination - 199 x 198 pairs, no thin-content pruning.
+// The content-rich ordering below (grants, FoM, VFS, unlocks) is preserved
+// FIRST because several pages render corridorsForNationality() in insertion
+// order; the remaining visa-required destinations follow alphabetically.
 
 // High-search-demand corridors that the thin-content prune would otherwise drop
 // (visa-required, no grant/VFS docs). These render destination visa types + fee
@@ -129,5 +128,12 @@ export function corridorDestsForNat(data, nat) {
     if (!valid.has(dst)) continue;
     out.push(dst);
   }
-  return out;
+  // Owner directive: full coverage. Append every remaining destination
+  // (visa-required pairs with no special content) alphabetically by name.
+  const have = new Set(out);
+  const rest = data.allCountries
+    .filter((c) => c.iso3 !== nat && !have.has(c.iso3))
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((c) => c.iso3);
+  return [...out, ...rest];
 }

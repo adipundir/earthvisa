@@ -499,7 +499,7 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
               href={`/visit?passport=${country.iso3}`}
               className="btn-stamp mt-5"
             >
-              Check visa requirements on Earth Visa →
+              Check for your passport →
             </Link>
           </section>
 

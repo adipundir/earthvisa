@@ -849,7 +849,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
               href="/visit"
               className="btn-stamp mt-5"
             >
-              Check visa requirements on Earth Visa →
+              Check for your passport →
             </Link>
           </section>
 

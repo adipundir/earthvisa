@@ -15,14 +15,26 @@ const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
 const slugToCountry = (slug: string) => bySlug.get(slug) ?? null;
 
-// Only the curated, genuinely-useful corridors exist; anything else 404s rather
-// than rendering a thin "visa required" page (isUsefulCorridor() enforces this
-// below, since dynamicParams=true no longer gates it for us at the framework
-// level - see preWarmCorridorPairs()).
+// Full coverage (owner directive): every nationality->destination pair renders
+// a corridor page (199 x 198). isUsefulCorridor() below now only rejects
+// invalid slugs and self-pairs; preWarmCorridorPairs() still SSGs the
+// high-traffic subset and the rest render on demand via dynamicParams.
 export const dynamicParams = true;
 
 export function generateStaticParams() {
   return preWarmCorridorPairs().map((c) => ({ slug: c.natSlug, dest: c.destSlug }));
+}
+
+// compute() is pure and per-nationality - memoize it so metadata, the page and
+// the hero's reach stat share one result instead of re-deriving the graph.
+const prCache = new Map<string, ReturnType<typeof compute>>();
+function computeFor(natIso3: string) {
+  let r = prCache.get(natIso3);
+  if (!r) {
+    r = compute([natIso3], [], {});
+    prCache.set(natIso3, r);
+  }
+  return r;
 }
 
 // ── Access resolution ─────────────────────────────────────────────────────────
@@ -34,7 +46,7 @@ type Status =
 
 function resolve(natIso3: string, destIso3: string): Status {
   if (natIso3 === destIso3) return { kind: "own" };
-  const r = compute([natIso3], [], {});
+  const r = computeFor(natIso3);
   const fom = r.freedomOfMovement.find((e) => e.dest === destIso3);
   if (fom) return { kind: "fom", groups: fom.groups };
   const edge = r.reach.find((e) => e.dest === destIso3);
@@ -175,7 +187,7 @@ function parseDocBlocks(text: string): { pdfs: { label: string; url: string }[];
     if (!line) continue;
     const pdf = /^(.{2,120}?)\s*\(\s*(https?:\/\/\S+?\.pdf[^\s)]*)\s*\)[\s.]*$/i.exec(line);
     if (pdf) {
-      let label = pdf[1].replace(/[- -  - :\s]+$/, "").trim();
+      let label = pdf[1].replace(/[-:\s]+$/, "").trim();
       // Some crawled lines are "url (url)" duplicates - a raw URL is useless
       // as a pill label, so fall back to the PDF's decoded filename.
       if (/https?:\/\//i.test(label)) {
@@ -198,36 +210,34 @@ function DocBlocks({ text }: { text: string }) {
   return (
     <div className="space-y-3">
       {pdfs.length > 0 && (
-        <div>
-          <div className="flex flex-wrap gap-2">
-            {pdfs.map((p, i) => (
-              <a
-                key={i}
-                href={p.url}
-                target="_blank"
-                rel="noreferrer"
-                className="mono inline-flex min-h-[32px] items-center gap-1.5 rounded-[2px] border border-line-strong bg-card px-2.5 py-1 text-[11px] text-ink-soft transition hover:border-stamp hover:text-stamp"
-              >
-                <svg viewBox="0 0 12 14" aria-hidden="true" className="h-3 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M2 1h5l3 3v9H2z" strokeLinejoin="round" /><path d="M7 1v3h3" strokeLinejoin="round" /></svg>
-                {p.label}
-                <span className="text-ink-mute">PDF ↗</span>
-              </a>
-            ))}
-          </div>
+        <div className="flex flex-wrap gap-2">
+          {pdfs.map((p, i) => (
+            <a
+              key={i}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-[34px] items-center gap-1.5 rounded-md border border-hair-strong bg-surface px-2.5 py-1 text-[13px] font-medium text-ink-2 transition hover:border-accent hover:text-accent"
+            >
+              <svg viewBox="0 0 12 14" aria-hidden="true" className="h-3 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M2 1h5l3 3v9H2z" strokeLinejoin="round" /><path d="M7 1v3h3" strokeLinejoin="round" /></svg>
+              {p.label}
+              <span className="text-ink-3">PDF ↗</span>
+            </a>
+          ))}
         </div>
       )}
       {bullets.length > 0 && (
-        <ul className="measure space-y-1.5">
+        <ul className="max-w-[68ch] space-y-1.5">
           {bullets.map((b, i) => (
-            <li key={i} className="text-body flex gap-2.5 text-ink-soft">
-              <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+            <li key={i} className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
+              <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
               <span className="min-w-0 break-words">{linkifyDocs(b)}</span>
             </li>
           ))}
         </ul>
       )}
       {notes.map((t, i) => (
-        <p key={i} className="text-body measure break-words text-ink-soft">{linkifyDocs(t)}</p>
+        <p key={i} className="max-w-[68ch] break-words text-[15px] leading-relaxed text-ink-2">{linkifyDocs(t)}</p>
       ))}
     </div>
   );
@@ -316,7 +326,7 @@ function linkifyDocs(text: string): React.ReactNode[] {
     let label = "official link";
     try { label = new URL(url).hostname.replace(/^www\./, ""); } catch { /* keep default */ }
     nodes.push(
-      <a key={key++} href={url} target="_blank" rel="noreferrer" className="text-stamp underline underline-offset-2 transition hover:text-ink">
+      <a key={key++} href={url} target="_blank" rel="noreferrer" className="text-accent underline underline-offset-2 transition hover:text-ink">
         {/\.pdf(\?|#|$)/i.test(url) ? "PDF checklist" : label} ↗
       </a>,
     );
@@ -356,9 +366,9 @@ function answerSentence(nat: string, dest: string, s: Status): string {
   }
 }
 
-// Shorter, differently-framed answer for the FAQ - the hero paragraph above
-// already gives the full sentence, so the FAQ leads with a direct yes/no
-// instead of repeating it verbatim.
+// Shorter, differently-framed answer for the FAQ - the hero above already
+// gives the full answer, so the FAQ leads with a direct yes/no instead of
+// repeating it verbatim.
 function faqAnswerSentence(nat: string, dest: string, s: Status): string {
   switch (s.kind) {
     case "own": return `No - ${dest} is ${nat}'s own country.`;
@@ -419,13 +429,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-const LEVEL_COLORS: Record<AccessLevel, string> = {
-  visa_free: "text-vfree bg-vfree/10 border-vfree/40",
-  visa_on_arrival: "text-voa bg-voa/10 border-voa/40",
-  eta: "text-eta bg-eta/10 border-eta/40",
-  e_visa: "text-evisa bg-evisa/10 border-evisa/40",
-};
-
 // Anchors on the /guide/visa-types glossary - lets a reader who lands on any
 // corridor page click through to what the access level generically means,
 // instead of only ever seeing a corridor-specific sentence.
@@ -438,41 +441,26 @@ const GLOSSARY_ANCHOR: Record<string, string> = {
   fom: "freedom-of-movement",
 };
 
-function StatusBadge({ s }: { s: Status }) {
-  if (s.kind === "own") return <Badge cls="text-bloc bg-bloc/10 border-bloc/40">Home country</Badge>;
-  if (s.kind === "fom") return <Badge cls="text-bloc bg-bloc/10 border-bloc/40" href={`/guide/visa-types#${GLOSSARY_ANCHOR.fom}`}>Freedom of movement</Badge>;
-  if (s.kind === "visa_required") return <Badge cls="text-ink-soft bg-paper-3 border-line-strong" href={`/guide/visa-types#${GLOSSARY_ANCHOR.visa_required}`}>Visa required</Badge>;
-  return <Badge cls={LEVEL_COLORS[s.kind]} href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind]}`}>{LEVEL_LABEL[s.kind]}</Badge>;
-}
-// Stamp-like status chip: 1px border, near-square radius, and the spec's one
-// allowed ≤1° rotation (verdict chip only - nowhere else on the site).
-function Badge({ cls, href, children }: { cls: string; href?: string; children: React.ReactNode }) {
-  const className = `mono inline-flex -rotate-1 items-center rounded-[2px] border px-2.5 py-1 text-[12px] font-semibold uppercase tracking-[0.12em] ${cls}`;
-  if (href) return <Link href={href} className={`${className} transition hover:opacity-80`} title="What does this mean?">{children}</Link>;
-  return <span className={className}>{children}</span>;
-}
-
 // A real link to the actual application portal, not just a citation - this is
 // the "go do the thing" action, distinct from the small source-citation links
 // shown elsewhere on the page.
 function ApplyLink({ href, label = "Apply here" }: { href: string; label?: string }) {
   return (
-    <a href={href} target="_blank" rel="noreferrer" className="font-medium text-stamp underline-offset-2 hover:underline">
+    <a href={href} target="_blank" rel="noreferrer" className="font-semibold text-accent underline-offset-2 hover:underline">
       {label} ↗
     </a>
   );
 }
 
 // First "14 July 2026"-style date inside a pending-change note becomes the
-// sub-block's mono date chip - derived from the note text, never invented.
+// advisory's date readout - derived from the note text, never invented.
 const NOTE_DATE_RE = /\b\d{1,2} (?:January|February|March|April|May|June|July|August|September|October|November|December) \d{4}\b/;
 
-// Policy note, structured (spec §8 - no text walls): mono label, bold one-line
-// lead (the actionable fact), detail at body size, and any "Upcoming change:"
-// content in its own labeled sub-block with a date chip instead of buried
-// mid-paragraph. Structured notes (newline "- " bullets with an optional short
-// "Label:" line) keep their scannable bullet list.
-function PolicyNote({ notes }: { notes: string }) {
+// ── Policy-note parsing (signature pattern 2: change-as-data) ────────────────
+// Notes arrive as flowing prose with an optional "Upcoming change:" tail and
+// optional structured "- " bullets. Split them so the pending change renders
+// as DATA (a 60→30 stat cell plus labeled readout cells) instead of a text wall.
+function parseNotes(notes: string) {
   const lines = notes.split("\n").map((l) => l.trim()).filter(Boolean);
   const leadLines: string[] = [];
   const bullets: string[] = [];
@@ -490,40 +478,98 @@ function PolicyNote({ notes }: { notes: string }) {
     return i === 0 ? stripped.charAt(0).toUpperCase() + stripped.slice(1) : stripped;
   });
   const changeDate = changeSentences.length > 0 ? NOTE_DATE_RE.exec(changeSentences.join(" "))?.[0] ?? null : null;
+  return { leadSentences, bullets, listLabel, changeSentences, changeDate };
+}
+
+// Source citations live inside parentheticals that carry a full date
+// ("(TAT Newsroom, 16 July 2026; Nation Thailand, 14 July 2026)") - extract
+// them as a quiet source line. Numeric parentheticals ("(15 days, THB 2,000
+// fee)") and bare date stamps ("(19 May 2026)") never match.
+const SOURCE_PAREN_RE = /\(([A-Za-z][^()]*\b\d{1,2} (?:January|February|March|April|May|June|July|August|September|October|November|December) \d{4}[^()]*)\)/g;
+const KEEP_STAY_RE = /(?:travellers|travelers) who enter before the effective date keep their originally permitted stay/i;
+
+function parseChange(changeSentences: string[], currentStay: number | null) {
+  const text = changeSentences.join(" ");
+  // New max stay: only when the note names a replacement N-day rule that
+  // differs from the current stay. Removal-style changes stay prose-only.
+  let newDays: number | null = null;
+  for (const rx of [/\bnew (\d{1,3})[- ]day\b/i, /\brevised (\d{1,3})[- ]day\b/i, /\bwith a (?:revised )?(\d{1,3})[- ]day\b/i, /\bto an? (\d{1,3})[- ]day\b/i]) {
+    const m = rx.exec(text);
+    if (m && Number(m[1]) !== currentStay) { newDays = Number(m[1]); break; }
+  }
+  const effectM = /takes effect (\d{1,3}) days? after/i.exec(text);
+  const takesEffect = effectM
+    ? `${effectM[1]} days after ${/royal gazette/i.test(text) ? "Royal Gazette publication" : "official publication"}`
+    : NOTE_DATE_RE.exec(/(?:takes effect|effective from)[^.]{0,80}/i.exec(text)?.[0] ?? "")?.[0] ?? null;
+  const status = /not yet published/i.test(text)
+    ? `Not yet published - the ${currentStay ? `${currentStay}-day rule` : "current rule"} still applies`
+    : null;
+  // Prose: everything the readout cells did NOT capture. The boilerplate
+  // "Takes effect … Royal Gazette …" sentence drops only when both of its
+  // facts (timing and status) parsed into cells; its keep-your-stay clause is
+  // preserved as one short line.
+  const sources: string[] = [];
+  const strip = (t: string) =>
+    t.replace(SOURCE_PAREN_RE, (_, inner: string) => { sources.push(...inner.split(/;\s*/)); return ""; })
+      .replace(/\s{2,}/g, " ").replace(/\s+([.,;])/g, "$1").trim();
+  const prose: string[] = [];
+  let keepStayDropped = false;
+  for (const s0 of changeSentences) {
+    const cleaned = strip(s0);
+    if (/^takes effect\b/i.test(cleaned) && takesEffect && status) {
+      if (KEEP_STAY_RE.test(cleaned)) keepStayDropped = true;
+      continue;
+    }
+    if (cleaned) prose.push(cleaned);
+  }
+  if (keepStayDropped) prose.push("Enter before the effective date and you keep your current stay.");
+  return { newDays, takesEffect, status, prose: prose.join(" "), sources: sources.map((x) => x.trim()).filter(Boolean) };
+}
+
+// ── Fact-strip cells (signature pattern 1: verdict plus giant numerals) ──────
+type FactCell =
+  | { kind: "num"; num: string; unit?: string; detail?: string }
+  | { kind: "word"; word: string; detail?: string }
+  | { kind: "change"; from: number; to: number };
+
+const COLS: Record<number, string> = {
+  1: "sm:grid-cols-1",
+  2: "sm:grid-cols-2",
+  3: "sm:grid-cols-3",
+  4: "sm:grid-cols-4",
+};
+
+function FactStrip({ cells }: { cells: FactCell[] }) {
   return (
-    <div className="border-t border-line px-5 py-4 sm:px-6">
-      <p className="eyebrow">Policy note</p>
-      {leadSentences.length > 0 && (
-        <p className="text-body measure mt-2 font-semibold text-ink">{leadSentences[0]}</p>
-      )}
-      {leadSentences.length > 1 && (
-        <p className="text-body measure mt-1.5 text-ink-soft">{leadSentences.slice(1).join(" ")}</p>
-      )}
-      {bullets.length > 0 && (
-        <>
-          {listLabel && <p className="mono-chrome mt-3">{listLabel}</p>}
-          <ul className={`${listLabel ? "mt-1.5" : "mt-3"} measure space-y-1`}>
-            {bullets.map((b, i) => (
-              <li key={i} className="text-body flex gap-2.5 text-ink-soft">
-                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
-                <span className="min-w-0 break-words">{b}</span>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-      {changeSentences.length > 0 && (
-        <div className="mt-3.5 max-w-3xl rounded-[2px] border border-line bg-paper-2/70 px-4 py-3.5">
-          <div className="flex flex-wrap items-center gap-2">
-            <p className="mono text-[11px] font-semibold uppercase tracking-[0.16em] text-stamp">Upcoming change</p>
-            {changeDate && (
-              <span className="mono rounded-[2px] border border-line-strong bg-card px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-ink-soft">{changeDate}</span>
+    <section aria-label="Entry facts" className="mt-9 border-t border-hair">
+      <div className={`grid grid-cols-2 gap-y-8 ${COLS[cells.length] ?? "sm:grid-cols-4"}`}>
+        {cells.map((c, i) => (
+          <div key={i} className="min-w-0 pr-4 pt-6 sm:border-l sm:border-hair sm:pl-7 sm:first:border-l-0 sm:first:pl-0">
+            {c.kind === "change" ? (
+              <>
+                <p className="stat-num whitespace-nowrap text-[clamp(38px,4.2vw,60px)] text-ink">
+                  {c.from}
+                  <span className="text-change">→{c.to}</span>
+                </p>
+                <p className="mt-2 text-[14px] font-bold text-change">Change pending</p>
+                <p className="mt-0.5 text-[13.5px] font-medium text-ink-2">days · not yet in force</p>
+              </>
+            ) : c.kind === "num" ? (
+              <>
+                <p className="stat-num text-[clamp(38px,4.2vw,60px)] text-ink">{c.num}</p>
+                {c.unit && <p className="mt-2 text-[15px] font-bold text-ink">{c.unit}</p>}
+                {c.detail && <p className="mt-0.5 text-[13.5px] font-medium text-ink-2">{c.detail}</p>}
+              </>
+            ) : (
+              <>
+                <p className="stat-num flex min-h-[clamp(38px,4.2vw,60px)] items-end text-[clamp(23px,2vw,29px)] text-ink">{c.word}</p>
+                {c.detail && <p className="mt-2 text-[13.5px] font-medium text-ink-2">{c.detail}</p>}
+              </>
             )}
           </div>
-          <p className="text-body measure mt-2 text-ink-soft">{changeSentences.join(" ")}</p>
-        </div>
-      )}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -541,17 +587,17 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
       ? (pMax != null && pMax > 0 ? `up to ${pMax}d processing` : pMin === 0 ? "under 24h processing" : null)
       : `${pMin}${pMax != null && pMax !== pMin ? `-${pMax}` : ""}d processing`;
   return (
-    <div className="card-doc px-4 py-3.5">
-      <p className="font-display text-[15px] font-semibold text-ink">{v.name}</p>
-      {v.purpose && <p className="text-body mt-1 text-ink-soft">{v.purpose}</p>}
-      <div className="mono mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-ink-mute">
+    <div className="rounded-xl border border-hair bg-surface px-4 py-3.5">
+      <p className="text-[15px] font-semibold text-ink">{v.name}</p>
+      {v.purpose && <p className="mt-1 text-[14.5px] leading-relaxed text-ink-2">{v.purpose}</p>}
+      <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[13px] font-medium tabular-nums text-ink-2">
         {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
         {v.entries && <span>{v.entries} entry</span>}
         {processing && <span>{processing}</span>}
         {/* Suppress the rough USD figure when the official fee section above
             already quotes the same fee - two conversions of one fee reads as an error. */}
-        {v.fee_usd != null && !suppressFee && (v.fee_usd === 0 ? <span className="text-vfree">free</span> : <span>~${v.fee_usd}</span>)}
-        {v.online && <span className="text-vfree">online</span>}
+        {v.fee_usd != null && !suppressFee && (v.fee_usd === 0 ? <span className="text-verdict">free</span> : <span>~${v.fee_usd}</span>)}
+        {v.online && <span className="text-verdict">online</span>}
       </div>
       {/* Notes holding 3+ discrete facts render as scannable bullets, not a
           run-on paragraph; one- or two-sentence notes stay as prose. */}
@@ -560,18 +606,18 @@ function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean })
         return sentences.length >= 3 ? (
           <ul className="mt-2 space-y-1">
             {sentences.map((t, i) => (
-              <li key={i} className="text-body flex gap-2 text-ink-soft">
-                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-mute/70" />
+              <li key={i} className="flex gap-2 text-[14.5px] leading-relaxed text-ink-2">
+                <span aria-hidden="true" className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
                 <span className="min-w-0 break-words">{t}</span>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="text-body mt-2 text-ink-soft">{v.notes}</p>
+          <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">{v.notes}</p>
         );
       })()}
       {v.official_url && (
-        <a href={v.official_url} target="_blank" rel="noreferrer" className="mono mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
+        <a href={v.official_url} target="_blank" rel="noreferrer" className="mt-2 inline-flex items-center gap-1 text-[13px] font-semibold text-accent underline-offset-2 hover:underline">
           {isAdvisoryUrl(v.official_url) ? "Official advisory" : "Apply here"} ↗
         </a>
       )}
@@ -604,7 +650,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const vfsCorrs = (dataset.vfsCorridors?.[d.iso3] ?? []).filter((c) => c.sourceIso3 === n.iso3);
   const vfsCorr = vfsCorrs[0];
   const hasVfs = vfsCorrs.length > 0;
-  // hasVfs = a corridor file exists; hasVfsDocs (set below) = documents actually render.
+  // hasVfs = a corridor file exists; vfsDocs (set below) = documents actually render.
   // Inline the real corridor document checklist (unique per nationality→destination)
   // instead of a destination-generic visa-types block. Read at build time.
   let vfsDocs: { name: string; category: string; documents_required: string }[] = [];
@@ -686,21 +732,6 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const sameNat = TOP_DESTINATIONS.filter((x) => x !== d.iso3 && x !== n.iso3 && isUsefulCorridor(n.iso3, x)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
   const sameDest = TOP_NATIONALITIES.filter((x) => x !== n.iso3 && x !== d.iso3 && isUsefulCorridor(x, d.iso3)).slice(0, 8).map((x) => byIso3.get(x)).filter(Boolean);
 
-  // ── Verdict-card facts: the numbers a traveler actually came for, pulled out
-  // of the prose and into one scannable strip at the top of the page. ─────────
-  const stayFact = s.kind === "fom" ? "Unlimited" : "maxStayDays" in s && s.maxStayDays ? `${s.maxStayDays} days` : "Varies";
-  const costFact =
-    s.kind === "own" ? null
-    : noVisaShortStay ? "Free"
-    : headlineFee
-      ? (headlineFee.amount === 0 ? "Free" : headlineFee.amount != null ? `${headlineFee.currency ?? ""} ${headlineFee.amount.toLocaleString()}`.trim() : "See source")
-      : "Not published";
-  const applyFact =
-    s.kind === "own" ? "Home country"
-    : s.kind === "fom" || s.kind === "visa_free" ? "Nothing to arrange"
-    : s.kind === "visa_on_arrival" ? "At the border"
-    : s.kind === "eta" || s.kind === "e_visa" ? "Online, before travel"
-    : "Embassy / visa centre";
   const hasProcessing = (v: VisaType) => v.processing_days_min != null || v.processing_days_max != null;
   const processingType = need
     ? visaTypes.find((v) => v.category === "tourist" && hasProcessing(v)) ?? visaTypes.find(hasProcessing)
@@ -716,14 +747,8 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     if (max != null && max !== min) return `${min}-${max} days`;
     return `${min} day${min === 1 ? "" : "s"}`;
   })();
-  const facts = [
-    { k: "Max stay", v: stayFact },
-    costFact ? { k: "Visa cost", v: costFact } : null,
-    { k: "How to apply", v: applyFact },
-    processingFact ? { k: "Processing", v: processingFact } : null,
-  ].filter(Boolean) as { k: string; v: string }[];
 
-  // Rail plumbing: which sections exist (jump links) + the primary apply URL.
+  // Which sections exist (jump chips) + the primary apply URL.
   const TRAVELER_CATS = new Set(["tourist", "business", "transit"]);
   const hasTypesSection =
     visaTypes.length > 0 &&
@@ -761,7 +786,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     { href: "#faq", label: "FAQ" },
   ].filter(Boolean) as { href: string; label: string }[];
 
-  // Cost FAQ: never assert a visa fee for a corridor where no visa is needed  - 
+  // Cost FAQ: never assert a visa fee for a corridor where no visa is needed  -
   // on visa-free / freedom-of-movement corridors the answer leads with "no
   // fee" and frames any published fee as the longer-stay visa option. This
   // text is also emitted into FAQPage JSON-LD, so it must stand alone. Skipped
@@ -824,228 +849,396 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     ],
   };
 
+  // ── Verdict, fact strip and change-as-data (v2 signature patterns 1 + 2) ───
+  const curStay = "maxStayDays" in s ? s.maxStayDays : null;
+  const noteParsed = "notes" in s && s.notes ? parseNotes(s.notes) : null;
+  const change = noteParsed && noteParsed.changeSentences.length > 0 ? parseChange(noteParsed.changeSentences, curStay) : null;
+  // On short-note kinds the note's first sentence IS the verdict context
+  // ("Visa exemption for tourism and short-term business, effective 15 July
+  // 2024.") - promote it into the verdict sub-line. Researched advance notes
+  // on visa-required corridors are real content and keep their own block.
+  const promotedLead = noteParsed && s.kind !== "visa_required" ? noteParsed.leadSentences[0] ?? null : null;
+  const policyLead = noteParsed ? (promotedLead ? noteParsed.leadSentences.slice(1) : noteParsed.leadSentences) : [];
+  const showPolicy = !!noteParsed && (policyLead.length > 0 || noteParsed.bullets.length > 0);
+
+  const verdict = (() => {
+    switch (s.kind) {
+      case "own": return { word: "No visa", cls: "text-verdict", sub: "It's your own country." };
+      case "fom": return { word: "No visa", cls: "text-verdict", sub: "Freedom of movement - live, work and travel." };
+      case "visa_free": return { word: "Visa-free", cls: "text-verdict", sub: "Nothing to arrange." };
+      case "visa_on_arrival": return { word: "Visa on arrival", cls: "text-verdict", sub: "Issued at the border." };
+      case "eta": return { word: "eTA", cls: "text-online", sub: "Online approval before you fly - not a visa." };
+      case "e_visa": return { word: "e-Visa", cls: "text-online", sub: "Apply online - no embassy visit." };
+      default: return travelBanned
+        ? { word: "Suspended", cls: "text-ink", sub: "Ordinary tourist travel is currently not possible." }
+        : { word: "Visa required", cls: "text-ink", sub: "Apply before you travel." };
+    }
+  })();
+
+  const stayCell: FactCell = s.kind === "fom" || s.kind === "own"
+    ? { kind: "num", num: "∞", unit: "stay", detail: "no time limit" }
+    : curStay
+      ? { kind: "num", num: String(curStay), unit: "days", detail: "max stay per entry" }
+      : { kind: "word", word: "Varies", detail: "stay depends on visa type" };
+  const feeUsd = headlineFee && "amount_usd" in headlineFee && headlineFee.currency !== "USD" ? headlineFee.amount_usd : null;
+  const feeCell: FactCell | null = s.kind === "own"
+    ? null
+    : noVisaShortStay
+      ? { kind: "num", num: "0", unit: "visa fee", detail: "free entry" }
+      : headlineFee
+        ? headlineFee.amount === 0
+          ? { kind: "num", num: "0", unit: "visa fee", detail: feeVariation?.amount === 0 ? `waived for ${nd} citizens` : s.kind === "visa_on_arrival" ? "free at the border" : "free of charge" }
+          : headlineFee.amount != null
+            ? {
+                kind: "num",
+                num: headlineFee.amount.toLocaleString(),
+                unit: `${headlineFee.currency ? `${headlineFee.currency} · ` : ""}visa fee`,
+                detail: feeUsd != null ? `about $${feeUsd.toLocaleString()}` : feeVariation?.amount != null ? `for ${nd} citizens` : undefined,
+              }
+            : { kind: "word", word: "See source", detail: "fee on the official page" }
+        : { kind: "word", word: "Not published", detail: `no official ${d.name} figure` };
+  const thirdCell: FactCell | null = noVisaShortStay
+    ? { kind: "num", num: "1", unit: "document", detail: "your valid passport" }
+    : (() => {
+        const min = processingType?.processing_days_min;
+        const max = processingType?.processing_days_max;
+        if (min != null || max != null) {
+          if (min == null || min === 0) {
+            if (max != null && max > 0) return { kind: "num", num: `≤${max}`, unit: max === 1 ? "day" : "days", detail: "processing time" } as FactCell;
+            if (min === 0) return { kind: "num", num: "<24", unit: "hours", detail: "processing time" } as FactCell;
+          } else if (max != null && max !== min) {
+            return { kind: "num", num: `${min}-${max}`, unit: "days", detail: "processing time" } as FactCell;
+          } else {
+            return { kind: "num", num: String(min), unit: min === 1 ? "day" : "days", detail: "processing time" } as FactCell;
+          }
+        }
+        if (vfsDocs.length > 0) return { kind: "num", num: String(vfsDocs.length), unit: "checklists", detail: "documents by visa type" } as FactCell;
+        if (visaTypes.length > 0) return { kind: "num", num: String(visaTypes.length), unit: "visa types", detail: `published by ${d.name}` } as FactCell;
+        return null;
+      })();
+  // The fourth cell IS the pending change when one parses (swiss pattern) -
+  // otherwise it carries the apply channel.
+  const fourthCell: FactCell | null = change?.newDays && curStay
+    ? { kind: "change", from: curStay, to: change.newDays }
+    : s.kind === "own"
+      ? null
+      : travelBanned
+        ? { kind: "word", word: "No route", detail: "see the official advisory" }
+        : noVisaShortStay
+          ? { kind: "num", num: "0", unit: "forms", detail: "no application, no appointment" }
+          : s.kind === "visa_on_arrival"
+            ? { kind: "word", word: "Border", detail: "visa issued on arrival" }
+            : s.kind === "eta" || s.kind === "e_visa"
+              ? { kind: "word", word: "Online", detail: "apply before travel" }
+              : destFees?.vfs.used && destFees.vfs.operator
+                // Operator strings from the fee crawl can be long parentheticals
+                // ("CVASC (Chinese Visa Application Service Center, ...)").
+                // A stat cell carries ONE word; the detail line names the role.
+                ? { kind: "word", word: destFees.vfs.operator.split(/[ (]/)[0], detail: "visa application centre" }
+                : { kind: "word", word: "Embassy", detail: "apply in advance" };
+  const cells = [stayCell, feeCell, thirdCell, fourthCell].filter(Boolean) as FactCell[];
+
+  // Secondary stat: this passport's total no-embassy reach (same count and
+  // wording as the landing instrument).
+  const natReach = computeFor(n.iso3).reach.length;
+  const natTotal = dataset.allCountries.length;
+
+  const checkedDate = fmtDay(dataset.meta.lastUpdated);
+  const glossaryLabel = s.kind === "own" ? "home country" : s.kind === "fom" ? "freedom of movement" : s.kind === "visa_required" ? "visa required" : LEVEL_LABEL[s.kind].toLowerCase();
+  const sourceHost = (url: string) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "official source"; } };
+  const appNote = need ? applicationNoteFor(d.iso3) : null;
+  const appNoteSentences = appNote ? splitSentences(appNote) : [];
+
+  const steps = ([
+    s.kind === "visa_free" && <>Travel with your valid {nd} passport - no visa, no application.</>,
+    s.kind === "visa_on_arrival" && (
+      <>Get your visa at the {d.name} border on arrival - carry the fee and documents.{statusUrl && <> <ApplyLink href={statusUrl} /></>}</>
+    ),
+    s.kind === "eta" && (
+      <>Apply online before you travel - approval is usually quick.{statusUrl && <> <ApplyLink href={statusUrl} /></>}</>
+    ),
+    s.kind === "e_visa" && (
+      <>Apply online before travel and carry the approval.{statusUrl && <> <ApplyLink href={statusUrl} /></>}</>
+    ),
+    s.kind === "visa_required" && travelBanned && (
+      <>Ordinary travel to {d.name} is currently not possible on {article(nd)} {nd} passport.{advisoryUrl && <> <ApplyLink href={advisoryUrl} label="Read the official advisory" /></>}</>
+    ),
+    s.kind === "visa_required" && !travelBanned && (
+      <>Lodge your application {destFees?.vfs.used && destFees.vfs.operator ? `at ${article(destFees.vfs.operator)} ${destFees.vfs.operator} visa application centre` : `at the ${d.name} embassy or consulate that serves your region`}, with the completed form and required documents.{applyUrl && <> <ApplyLink href={applyUrl} /></>}</>
+    ),
+    s.kind === "visa_required" && !travelBanned && lodgingFact && <>{lodgingFact}</>,
+    s.kind === "visa_required" && !travelBanned && processingFact && (
+      <>Allow {processingFact.charAt(0).toLowerCase()}{processingFact.slice(1)} for processing - apply well before your travel date.</>
+    ),
+    vfsDocs.length > 0 && (
+      <><Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-semibold text-accent underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " - only needed for a longer-stay visa" : ", by visa type"}.</>
+    ),
+  ].filter(Boolean)) as React.ReactNode[];
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="min-h-screen">
-        <header className="bg-grid-paper">
-          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-10 sm:px-8">
-            <div className="min-w-0">
-              <nav aria-label="Breadcrumb" className="mono mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-ink-mute">
-                <ol className="flex flex-wrap items-center gap-x-2">
-                  <li><Link href="/passport" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Passports</Link></li>
-                  <li aria-hidden="true">/</li>
-                  <li><Link href={`/passport/${slug}`} className="inline-flex min-h-[44px] items-center transition hover:text-ink">{n.name}</Link></li>
-                  <li aria-hidden="true">/</li>
-                  <li aria-current="page" className="text-ink-soft">{d.name}</li>
-                </ol>
-              </nav>
-              <h1 className="text-display text-ink">
-                <span className="mr-2.5 align-baseline text-[0.9em] leading-none" aria-hidden="true">{flagFor(d.iso3)}</span>
-                {aliasLead ? `${aliasLead} & ${SHORT_NAME[d.iso3] ?? d.name}` : d.name} Visa for {nd} Citizens
-                <span className="mt-1 block font-display text-lg font-normal italic leading-snug tracking-normal text-ink-soft sm:text-xl">
-                  {umrah ? "Tourist & Umrah - 2026 Requirements" : "2026 Requirements, Fees & Documents"}
+        <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
+
+          {/* ── Hero: the complete answer ── */}
+          <header>
+            <nav aria-label="Breadcrumb" className="pt-6 text-[13px] font-medium text-ink-2">
+              <ol className="flex flex-wrap items-center gap-x-2">
+                <li><Link href="/passport" className="inline-flex min-h-[24px] items-center transition hover:text-ink">Passports</Link></li>
+                <li aria-hidden="true" className="text-ink-3">/</li>
+                <li><Link href={`/passport/${slug}`} className="inline-flex min-h-[24px] items-center transition hover:text-ink">{n.name}</Link></li>
+                <li aria-hidden="true" className="text-ink-3">/</li>
+                <li aria-current="page" className="font-semibold text-ink">{d.name}</li>
+              </ol>
+            </nav>
+
+            <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <h1 className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[24px] font-bold tracking-tight text-ink sm:text-[29px]">
+                <span aria-hidden="true" className="inline-flex items-center gap-1">
+                  {flagFor(n.iso3)}
+                  <span className="relative -top-px text-[0.8em] text-ink-3">→</span>
+                  {flagFor(d.iso3)}
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  {n.name}
+                  <span aria-hidden="true" className="relative -top-px text-[0.85em] font-semibold text-ink-2">→</span>
+                  {d.name}
                 </span>
               </h1>
-              {aliasNote && (
-                <p className="text-body mt-3 max-w-2xl rounded-[2px] border border-line bg-paper-2/70 px-3.5 py-2.5 text-ink-soft">
-                  {aliasNote}
-                </p>
-              )}
-              {/* Entry stamp card (spec §7): status chip + verdict sentence +
-                  stat-tile ledger + policy note + source footer unified in ONE
-                  document card - the whole answer, scannable in one glance. */}
-              <div className="card-doc card-doc-rule card-doc-ticks mt-6">
-                <div className="flex flex-col items-start gap-3 px-5 pt-5 pb-4 sm:flex-row sm:gap-4 sm:px-6">
-                  <span className="pt-0.5"><StatusBadge s={s} /></span>
-                  <p className="min-w-0 flex-1 text-[17px] leading-normal text-ink sm:text-[19px]">{answerSentence(nd, d.name, s)}</p>
-                </div>
-                {/* Stat tiles: internal 3-col ledger row divided by hairlines -
-                    a compact row on mobile too, never a tall stack. */}
-                <dl className={`grid gap-px border-t border-line bg-line ${facts.length >= 4 ? "grid-cols-2 sm:grid-cols-4" : facts.length === 3 ? "grid-cols-3" : "grid-cols-2"}`}>
-                  {facts.map((f) => (
-                    <div key={f.k} className="bg-card px-3 py-3 sm:px-5">
-                      <dt className="mono text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute">{f.k}</dt>
-                      <dd className="mt-1 font-display text-[15px] font-semibold leading-snug text-ink sm:text-[18px]">{f.v}</dd>
-                    </div>
-                  ))}
-                </dl>
-                {"notes" in s && s.notes ? <PolicyNote notes={s.notes} /> : null}
-                {/* Source line: card footer. */}
-                <div className="mono flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-line bg-paper-2/60 px-5 py-3 text-[11px] text-ink-mute sm:px-6">
-                  {"sourceUrl" in s && s.sourceUrl ? (
-                    <a href={s.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-ink">
-                      <span className={`inline-block h-2 w-2 rounded-full ${s.sourceOfficial ? "bg-vfree" : "bg-eta"}`} />
-                      {(() => { try { return new URL(s.sourceUrl).hostname.replace(/^www\./, ""); } catch { return "official source"; } })()} ↗
-                    </a>
-                  ) : (
-                    <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full bg-vfree" />official government sources</span>
-                  )}
-                  <Link href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind] ?? "visa-required"}`} className="transition hover:text-ink">
-                    What does &ldquo;{s.kind === "own" ? "home country" : s.kind === "fom" ? "freedom of movement" : s.kind === "visa_required" ? "visa required" : LEVEL_LABEL[s.kind].toLowerCase()}&rdquo; mean? →
-                  </Link>
-                </div>
-              </div>
-              {(() => {
-                const appNote = need ? applicationNoteFor(d.iso3) : null;
-                if (!appNote) return null;
-                // Same no-text-wall structure as the policy note: label, bold
-                // one-line lead, detail at body size.
-                const sentences = splitSentences(appNote);
-                return (
-                  <div className="card-doc mt-4 max-w-3xl px-5 py-4">
-                    <p className="eyebrow">How it works</p>
-                    <p className="text-body measure mt-2 font-semibold text-ink">{sentences[0]}</p>
-                    {sentences.length > 1 && (
-                      <p className="text-body measure mt-1.5 text-ink-soft">{sentences.slice(1).join(" ")}</p>
-                    )}
-                  </div>
-                );
-              })()}
-              {/* Mobile jump nav: below lg the rail (jump links + apply button)
-                  stacks after the FAQ - thousands of words down - so both get a
-                  second, scrollable home right under the verdict card. */}
-              <nav aria-label="Jump to section" className="-mx-5 mt-5 px-5 sm:-mx-8 sm:px-8 lg:hidden">
-                <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {applyUrl && (
-                    <a href={applyUrl} target="_blank" rel="noreferrer" className="mono inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-stamp bg-stamp px-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white dark:border-stamp-deep dark:bg-stamp-deep">
-                      Apply ↗
-                    </a>
-                  )}
-                  {advisoryUrl && (
-                    <a href={advisoryUrl} target="_blank" rel="noreferrer" className="mono inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-line-strong bg-card px-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft">
-                      Official advisory ↗
-                    </a>
-                  )}
-                  {jumpLinks.map((j) => (
-                    <a key={j.href} href={j.href} className="mono inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-line bg-card px-3.5 text-[11px] uppercase tracking-[0.12em] text-ink-soft transition hover:border-stamp hover:text-ink">
-                      {j.label}
-                    </a>
-                  ))}
-                </div>
-              </nav>
+              <p className="text-[13.5px] font-medium tabular-nums text-ink-2 sm:ml-auto">
+                {nd} passport{checkedDate ? ` · checked ${checkedDate}` : ""}
+              </p>
             </div>
-          </div>
-        </header>
+            {aliasNote && <p className="mt-2 max-w-2xl text-[13.5px] text-ink-2">{aliasNote}</p>}
 
-        <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 lg:grid lg:grid-cols-[minmax(0,1fr)_290px] lg:items-start lg:gap-12">
-          <div className="min-w-0">
-          {/* What you need to do */}
-          <section id="apply" className="mb-12 scroll-mt-24">
-            <p className="eyebrow">{travelBanned ? "Current status" : need ? "How to apply" : "How to enter"}</p>
-            <h2 className="text-section mt-2 text-ink">
-              {travelBanned ? `${d.name} travel status for ${nd} citizens` : need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
-            </h2>
-            <ul className="text-body measure mt-4 space-y-2 text-ink-soft">
-              {s.kind === "visa_free" && <li>→ Travel with just your valid {nd} passport. No visa or prior application needed.</li>}
-              {s.kind === "visa_on_arrival" && (
-                <li>
-                  → Obtain your visa at the {d.name} border/airport on arrival; carry the required fee and documents.
-                  {"sourceUrl" in s && s.sourceUrl && <>{" "}<ApplyLink href={s.sourceUrl} /></>}
-                </li>
+            <section aria-label="Verdict" className="mt-8 flex items-end justify-between gap-12">
+              <div className="min-w-0">
+                <p
+                  className={`verdict-word ${verdict.cls}`}
+                  style={verdict.word.length >= 13 ? { fontSize: "clamp(46px, 7.4vw, 108px)" } : undefined}
+                >
+                  {verdict.word}
+                </p>
+                <p className="mt-4 text-[17px] font-semibold leading-normal text-ink sm:text-[19px]">
+                  {verdict.sub}
+                  {s.kind === "fom" && <span className="font-medium text-ink-2"> {s.groups.join(" · ")}.</span>}
+                  {promotedLead && <span className="font-medium text-ink-2"> {promotedLead}</span>}
+                </p>
+              </div>
+              <Link href={`/passport/${slug}`} className="group hidden shrink-0 pb-2 text-right lg:block">
+                <span className="stat-num block text-[44px] text-ink">
+                  {natReach}
+                  <span className="text-[26px] font-bold text-ink-3">/{natTotal}</span>
+                </span>
+                <span className="mt-1.5 block text-[13.5px] font-medium leading-snug text-ink-2 transition group-hover:text-accent">
+                  destinations, no embassy visit,<br />on {article(nd)} {nd} passport →
+                </span>
+              </Link>
+            </section>
+
+            <FactStrip cells={cells} />
+
+            {/* Pending change: data first (readout cells), then the one prose
+                line the cells could not carry, then the source citations. */}
+            {change && (
+              <section aria-label="Pending policy change" className="mt-9 border-t border-hair pt-5">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-hair-strong bg-surface px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.08em] text-change">
+                    <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-change" />
+                    Change pending
+                  </span>
+                  {noteParsed?.changeDate && <span className="text-[13.5px] font-medium tabular-nums text-ink-2">approved {noteParsed.changeDate}</span>}
+                </div>
+                {(change.newDays != null || change.takesEffect || change.status) && (
+                  <dl className="mt-5 grid gap-x-8 gap-y-4 sm:grid-cols-3">
+                    {change.newDays != null && (
+                      <div>
+                        <dt className="text-[13px] font-medium text-ink-2">New max stay</dt>
+                        <dd className="mt-0.5 text-[16.5px] font-bold tabular-nums text-ink">{change.newDays} days</dd>
+                      </div>
+                    )}
+                    {change.takesEffect && (
+                      <div>
+                        <dt className="text-[13px] font-medium text-ink-2">Takes effect</dt>
+                        <dd className="mt-0.5 text-[16.5px] font-bold tabular-nums text-ink">{change.takesEffect}</dd>
+                      </div>
+                    )}
+                    {change.status && (
+                      <div>
+                        <dt className="text-[13px] font-medium text-ink-2">Status</dt>
+                        <dd className="mt-0.5 text-[16.5px] font-bold text-ink">{change.status}</dd>
+                      </div>
+                    )}
+                  </dl>
+                )}
+                {change.prose && <p className="mt-4 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">{change.prose}</p>}
+                {change.sources.length > 0 && (
+                  <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[13px] font-medium tabular-nums text-ink-2">
+                    {change.sources.map((src) => <span key={src}>{src}</span>)}
+                  </p>
+                )}
+              </section>
+            )}
+
+            {/* Researched policy note (advance-visa-notes system) - anything
+                the sub-line and change block did not already carry. */}
+            {showPolicy && noteParsed && (
+              <section aria-label="Policy note" className="mt-9 border-t border-hair pt-5">
+                <p className="text-[13px] font-semibold text-ink-2">Policy note</p>
+                {policyLead.length > 0 && (
+                  <p className="mt-2 max-w-3xl text-[15.5px] font-semibold leading-relaxed text-ink">{policyLead[0]}</p>
+                )}
+                {policyLead.length > 1 && (
+                  <p className="mt-1.5 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">{policyLead.slice(1).join(" ")}</p>
+                )}
+                {noteParsed.bullets.length > 0 && (
+                  <>
+                    {noteParsed.listLabel && <p className="mt-3 text-[13px] font-semibold text-ink-2">{noteParsed.listLabel}</p>}
+                    <ul className={`${noteParsed.listLabel ? "mt-1.5" : "mt-3"} max-w-3xl space-y-1`}>
+                      {noteParsed.bullets.map((b, i) => (
+                        <li key={i} className="flex gap-2.5 text-[14.5px] leading-relaxed text-ink-2">
+                          <span aria-hidden="true" className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
+                          <span className="min-w-0 break-words">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </section>
+            )}
+
+            {/* Hero foot: the one action + source + standing links. */}
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 border-t border-hair pt-5 text-[14px] font-medium text-ink-2">
+              {applyUrl && (
+                <a
+                  href={applyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-lg bg-accent px-5 text-[14.5px] font-semibold text-white transition hover:bg-accent-deep dark:bg-accent-deep dark:hover:bg-accent"
+                >
+                  Apply on the official portal ↗
+                </a>
               )}
-              {s.kind === "eta" && (
-                <li>
-                  → Apply online for the eTA before you travel; approval is usually quick.
-                  {"sourceUrl" in s && s.sourceUrl && <>{" "}<ApplyLink href={s.sourceUrl} /></>}
-                </li>
+              {advisoryUrl && (
+                <a
+                  href={advisoryUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-lg border border-hair-strong bg-surface px-5 text-[14.5px] font-semibold text-ink transition hover:border-ink-3"
+                >
+                  Read the official advisory ↗
+                </a>
               )}
-              {s.kind === "e_visa" && (
-                <li>
-                  → Apply for the e-Visa online before travel and carry the approval.
-                  {"sourceUrl" in s && s.sourceUrl && <>{" "}<ApplyLink href={s.sourceUrl} /></>}
-                </li>
-              )}
-              {/* The hero already states THAT a visa is needed - these steps
-                  carry the operational facts instead of restating the verdict. */}
-              {s.kind === "visa_required" && travelBanned && (
-                <li>
-                  → Ordinary travel to {d.name} is currently not possible on {article(nd)} {nd} passport - see the policy note above for the official restriction.
-                  {advisoryUrl && <>{" "}<ApplyLink href={advisoryUrl} label="Read the official advisory" /></>}
-                </li>
-              )}
-              {s.kind === "visa_required" && !travelBanned && (
-                <li>
-                  → Lodge your application {destFees?.vfs.used && destFees.vfs.operator ? `at ${article(destFees.vfs.operator)} ${destFees.vfs.operator} visa application centre` : `at the ${d.name} embassy or consulate that serves your region`}, with the completed form and required documents.
-                  {applyUrl && <>{" "}<ApplyLink href={applyUrl} /></>}
-                </li>
-              )}
-              {s.kind === "visa_required" && !travelBanned && lodgingFact && <li>→ {lodgingFact}</li>}
-              {s.kind === "visa_required" && !travelBanned && processingFact && (
-                <li>→ Allow {processingFact.charAt(0).toLowerCase()}{processingFact.slice(1)} for processing once lodged - apply well before your travel date.</li>
+              {statusUrl ? (
+                <a href={statusUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-ink">
+                  <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${("sourceOfficial" in s && s.sourceOfficial) ? "bg-verdict" : "bg-ink-3"}`} />
+                  Source · {sourceHost(statusUrl)} ↗
+                </a>
+              ) : (
+                <span className="inline-flex items-center gap-1.5">
+                  <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-verdict" />
+                  Official government sources
+                </span>
               )}
               {vfsDocs.length > 0 && (
-                <li>→ <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " - only needed if you apply for a longer-stay visa" : ", by visa type"}.</li>
+                <a href="#documents" className="font-semibold text-accent underline-offset-2 hover:underline">Document checklist →</a>
               )}
-            </ul>
+              <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="transition hover:text-ink">Check your full options →</Link>
+              <Link href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind] ?? "visa-required"}`} className="transition hover:text-ink sm:ml-auto">
+                What &ldquo;{glossaryLabel}&rdquo; means →
+              </Link>
+            </div>
+          </header>
+
+          {/* ── Jump chips: the only in-page nav (the hero already answered,
+              so a persistent desktop TOC rail earns nothing). ── */}
+          <nav aria-label="Jump to section" className="-mx-5 mt-7 px-5 sm:mx-0 sm:px-0">
+            <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {jumpLinks.map((j) => (
+                <a key={j.href} href={j.href} className="chip shrink-0">{j.label}</a>
+              ))}
+            </div>
+          </nav>
+
+          {/* ── What you need to do ── */}
+          <section id="apply" className="mt-12 scroll-mt-24">
+            <h2 className="text-[15px] font-semibold text-ink">
+              {travelBanned ? `${d.name} travel status for ${nd} citizens` : need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
+            </h2>
+            {appNoteSentences.length > 0 && (
+              <p className="mt-3 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
+                <span className="font-semibold text-ink">{appNoteSentences[0]}</span>
+                {appNoteSentences.length > 1 && <> {appNoteSentences.slice(1).join(" ")}</>}
+              </p>
+            )}
+            <ol className="mt-4 max-w-3xl border-y border-hair">
+              {steps.map((step, i) => (
+                <li key={i} className="flex gap-5 border-b border-hair py-3.5 text-[15px] leading-relaxed text-ink last:border-b-0">
+                  <span aria-hidden="true" className="pt-[3px] text-[13px] font-semibold tabular-nums text-ink-3">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="min-w-0">{step}</span>
+                </li>
+              ))}
+            </ol>
           </section>
 
-          {/* Held-credential exceptions - officially published no-advance-visa routes */}
+          {/* ── Held-credential exceptions - officially published no-advance-visa routes ── */}
           {credGroups.length > 0 && (
-            <section id="no-advance-visa" className="mb-12 scroll-mt-24">
-              <p className="eyebrow">No-visa exceptions</p>
-              <h2 className="text-section mt-2 text-ink">
-                No advance visa with these documents
-              </h2>
-              <p className="text-body measure mt-2 text-ink-soft">
-                {d.name} officially admits {nd} citizens without a pre-arranged visa when they hold certain third-country visas or residence permits.
+            <section id="no-advance-visa" className="mt-12 scroll-mt-24">
+              <h2 className="text-[15px] font-semibold text-ink">No advance visa with these documents</h2>
+              <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
+                {d.name} officially admits {nd} citizens without a pre-arranged visa when they hold:
               </p>
-              <div className="mt-4 space-y-3">
+              <div className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
                 {credGroups.map((group, gi) => (
-                  <div key={gi} className="rounded-[2px] border border-vfree/40 bg-vfree/[0.05] px-4 py-3.5">
-                    <p className="mono text-[11px] font-semibold uppercase tracking-[0.12em] text-vfree">
+                  <div key={gi} className="py-4">
+                    <p className="text-[15px] font-bold text-verdict">
                       {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {group.map((u) => (
-                        <span key={u.cred} className="mono rounded-[2px] border border-line-strong bg-card px-2 py-0.5 text-[11px] text-ink">{u.label}</span>
+                        <span key={u.cred} className="inline-flex items-center rounded-md border border-hair-strong bg-surface px-2 py-0.5 text-[13px] font-medium text-ink">{u.label}</span>
                       ))}
                     </div>
                     {group[0].conditions && (
-                      <p className="text-body measure mt-2 text-ink-soft">{group[0].conditions}. Conditions vary slightly per document - check each rule via the official source{group[0].sourceUrl ? "" : ""}.</p>
+                      <p className="mt-2 max-w-2xl text-[14.5px] leading-relaxed text-ink-2">{group[0].conditions}. Conditions vary slightly per document.</p>
                     )}
                     {group[0].sourceUrl && (
-                      <a href={group[0].sourceUrl} target="_blank" rel="noreferrer" className="mono mt-1.5 inline-block text-[11px] text-ink-mute underline-offset-2 transition hover:text-ink hover:underline">
-                        {(() => { try { return new URL(group[0].sourceUrl).hostname.replace(/^www\./, ""); } catch { return "official source"; } })()} ↗
+                      <a href={group[0].sourceUrl} target="_blank" rel="noreferrer" className="mt-1.5 inline-block text-[13px] font-medium text-ink-2 underline-offset-2 transition hover:text-ink hover:underline">
+                        {sourceHost(group[0].sourceUrl)} ↗
                       </a>
                     )}
                   </div>
                 ))}
               </div>
-              <p className="text-body mt-3 text-ink-soft">
-                <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-medium text-stamp underline-offset-2 hover:underline">
+              <p className="mt-3 text-[14.5px]">
+                <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-semibold text-accent underline-offset-2 hover:underline">
                   Check what all your documents unlock at once →
                 </Link>
               </p>
             </section>
           )}
 
-          {/* Official visa fees (crawled from government sources) */}
+          {/* ── Official visa fees (crawled from government sources) ── */}
           {feeList.length > 0 && (
-            <section id="fees" className="mb-12 scroll-mt-24">
-              <p className="eyebrow">Fees</p>
-              <h2 className="text-section mt-2 text-ink">
-                {d.name} visa cost for {nd} citizens
-              </h2>
+            <section id="fees" className="mt-12 scroll-mt-24">
+              <h2 className="text-[15px] font-semibold text-ink">{d.name} visa cost for {nd} citizens</h2>
 
-              {/* Nationality-specific fee (reciprocity) - highlighted, since it's the
-                  single most useful number for this corridor. */}
+              {/* Nationality-specific fee (reciprocity) - the single most useful
+                  number for this corridor, shown at readout scale. */}
               {feeVariation?.amount != null && (
-                <div className="mt-4 flex flex-col gap-2 rounded-[2px] border border-stamp/40 bg-stamp/[0.05] px-5 py-4 sm:flex-row sm:items-center sm:gap-6">
-                  <div className="shrink-0">
-                    <p className="mono text-[10px] font-medium uppercase tracking-[0.16em] text-stamp">Fee for {nd} citizens</p>
-                    <p className="mono mt-0.5 text-2xl font-bold tabular-nums text-stamp">{fmtFee(feeVariation)}</p>
+                <div className="mt-5 flex flex-wrap items-end gap-x-10 gap-y-2">
+                  <div>
+                    <p className="stat-num text-[clamp(30px,3vw,42px)] text-ink">{fmtFee(feeVariation)}</p>
+                    <p className="stat-label mt-1.5">fee for {nd} citizens</p>
                   </div>
                   {feeVariation.note && (
-                    <p className="text-body text-ink-soft">{feeVariation.note}</p>
+                    <p className="max-w-xl pb-1 text-[14.5px] leading-relaxed text-ink-2">{feeVariation.note}</p>
                   )}
                 </div>
               )}
 
-              {/* Fee ledger: compact hairline-divided rows in one document
-                  card (spec §12) instead of chunky per-fee boxes. */}
-              <div className="card-doc mt-4">
-                <ul className="divide-y divide-line">
+              <ul className="mt-5 max-w-3xl divide-y divide-hair border-y border-hair">
                 {(() => {
                   // The nationality-specific variation overrides ONE row - the first
                   // of its kind (the primary product). Overriding every same-kind row
@@ -1055,31 +1248,30 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     ? feeList.slice(0, 4).findIndex((f) => f.kind === feeVariation.kind)
                     : -1;
                   return feeList.slice(0, 4).map((f, i) => (
-                  <li key={i} className="flex min-h-[52px] flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2.5 sm:px-5">
-                    <div className="min-w-0 flex-1">
-                      <p className="font-display text-[15px] font-medium text-ink">{f.name}</p>
-                      <div className="mono flex flex-wrap gap-x-3 gap-y-0.5 text-[11px] text-ink-mute">
-                        {f.validity && <span>{f.validity}</span>}
-                        {f.official && <span className="text-vfree">official source</span>}
-                        {f.source_url && (
-                          <a href={f.source_url} target="_blank" rel="noreferrer" className="underline-offset-2 transition hover:text-ink hover:underline">
-                            {(() => { try { return new URL(f.source_url).hostname.replace(/^www\./, ""); } catch { return "source"; } })()} ↗
-                          </a>
-                        )}
+                    <li key={i} className="flex min-h-[52px] flex-wrap items-center gap-x-4 gap-y-1 py-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[15px] font-semibold text-ink">{f.name}</p>
+                        <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-[13px] font-medium text-ink-2">
+                          {f.validity && <span>{f.validity}</span>}
+                          {f.official && <span className="text-verdict">official source</span>}
+                          {f.source_url && (
+                            <a href={f.source_url} target="_blank" rel="noreferrer" className="underline-offset-2 transition hover:text-ink hover:underline">
+                              {sourceHost(f.source_url)} ↗
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    {feeVariation?.amount != null && i === variationRowIdx ? (
-                      <p className="mono shrink-0 text-[15px] font-semibold tabular-nums text-ink">{fmtFee(feeVariation)}</p>
-                    ) : f.amount != null ? (
-                      <p className="mono shrink-0 text-[15px] font-semibold tabular-nums text-ink">{fmtFee(f)}</p>
-                    ) : (
-                      <p className="shrink-0 text-[13px] text-ink-mute">Fee not published by {d.name}</p>
-                    )}
-                  </li>
+                      {feeVariation?.amount != null && i === variationRowIdx ? (
+                        <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">{fmtFee(feeVariation)}</p>
+                      ) : f.amount != null ? (
+                        <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">{fmtFee(f)}</p>
+                      ) : (
+                        <p className="shrink-0 text-[13px] text-ink-2">Fee not published by {d.name}</p>
+                      )}
+                    </li>
                   ));
                 })()}
-                </ul>
-              </div>
+              </ul>
               {/* Only visa_required corridors route through a VFS/VAC centre -
                   on VoA/eTA/e-visa corridors the application never touches VFS,
                   so the note would contradict the page's own apply steps. */}
@@ -1094,22 +1286,22 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 const natMatch = !!destFees.vfs.service_fee &&
                   (src.includes(`/${n.iso3.toLowerCase()}/`) || src.includes(`/${natSlugLower}/`) || src.includes(`/${n.name.toLowerCase()}/`));
                 return (
-                  <p className="text-body mt-3 max-w-2xl rounded-[2px] border border-line bg-paper-2/70 px-3.5 py-2.5 text-ink-soft">
+                  <p className="mt-3 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
                     Applications are handled via {destFees.vfs.operator} - {natMatch
                       ? `the service fee for ${nd} applicants is about ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee} on top of the visa fee (varies by centre).`
                       : `a service fee applies on top of the visa fee and varies by country and centre.`}
                   </p>
                 );
               })()}
-              {/* Provenance lives on each fee row's source link - the stamp
+              {/* Provenance lives on each fee row's source link - this line
                   only needs to carry freshness. */}
-              <p className="mono-chrome mt-3">
+              <p className="mt-3 text-[13px] font-medium tabular-nums text-ink-2">
                 Fees checked {fmtDay(destFees?.updated) ?? "recently"}
               </p>
             </section>
           )}
 
-          {/* VFS document checklist - genuinely per-corridor content */}
+          {/* ── VFS document checklist - genuinely per-corridor content ── */}
           {vfsDocs.length > 0 && (() => {
             const visible = vfsDocs.slice(0, VFS_PREVIEW);
             const hidden = vfsDocs.slice(VFS_PREVIEW);
@@ -1125,67 +1317,66 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             const renderDoc = (v: typeof vfsDocs[number], i: number) => (
               <details key={i} className="group">
                 <summary className="flex min-h-[48px] cursor-pointer list-none items-center gap-3 py-3 [&::-webkit-details-marker]:hidden">
-                  <span className="font-display text-[15px] font-medium text-ink transition group-open:text-stamp">{prettyName(v.name)}</span>
+                  <span className="text-[15px] font-semibold text-ink transition group-open:text-accent">{prettyName(v.name)}</span>
                   {v.category.toLowerCase() !== v.name.trim().toLowerCase() && (
-                    <span className="mono shrink-0 rounded-[3px] bg-paper-3 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] text-ink-mute">{v.category}</span>
+                    <span className="shrink-0 rounded-md border border-hair-strong px-1.5 py-0.5 text-[11.5px] font-medium text-ink-2">{v.category}</span>
                   )}
-                  <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-auto h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-auto h-2.5 w-2.5 shrink-0 text-ink-3 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </summary>
                 <div className="pb-5 pr-6 pt-1">
                   {v.documents_required ? (
                     <DocBlocks text={v.documents_required} />
                   ) : (
-                    <p className="text-body italic text-ink-mute">Same requirements as above, plus this visa type&apos;s stated stay/fee terms.</p>
+                    <p className="text-[15px] italic text-ink-2">Same requirements as above, plus this visa type&apos;s stated stay/fee terms.</p>
                   )}
                 </div>
               </details>
             );
             return (
-            <section id="documents" className="mb-12 scroll-mt-24">
-              <p className="eyebrow">Documents</p>
-              <h2 className="text-section mt-2 text-ink">
-                {noVisaShortStay ? `${d.name} visa documents for ${nd} applicants` : `Documents required for ${nd} applicants`}
-              </h2>
-              <p className="text-body measure mt-2 text-ink-soft">
-                {noVisaShortStay
-                  ? `No visa documents are needed for a short visit - ${nd} citizens enter ${d.name} with just a valid passport. If you apply for a longer-stay visa, these are the exact documents required, by visa type, from the official visa application centre.`
-                  : `The exact documents ${nd} citizens must submit for ${d.name}, by visa type, from the official visa application centre.`}
-                {/* One caption for the whole section - previously repeated
-                    under the PDF pills inside every accordion. */}
-                {/\.pdf/i.test([vfsCommonLines.join("\n"), ...vfsDocs.map((v) => v.documents_required)].join("\n")) &&
-                  " Where a visa type links an official PDF checklist, fill in that checklist and submit it with the application form."}
-              </p>
-              {vfsCommonLines.length > 0 && (
-                <div className="card-doc mt-4 px-4 py-3.5 sm:px-5">
-                  <p className="mono-chrome mb-2">Required for most visa types below</p>
-                  <DocBlocks text={vfsCommonLines.join("\n")} />
+              <section id="documents" className="mt-12 scroll-mt-24">
+                <h2 className="text-[15px] font-semibold text-ink">
+                  {noVisaShortStay ? `${d.name} visa documents for ${nd} applicants` : `Documents required for ${nd} applicants`}
+                </h2>
+                <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
+                  {noVisaShortStay
+                    ? `Only needed for a longer-stay visa - exact documents by visa type, from the official visa application centre.`
+                    : `Exact documents by visa type, from the official visa application centre.`}
+                  {/* One caption for the whole section - previously repeated
+                      under the PDF pills inside every accordion. */}
+                  {/\.pdf/i.test([vfsCommonLines.join("\n"), ...vfsDocs.map((v) => v.documents_required)].join("\n")) &&
+                    " Where a visa type links an official PDF checklist, fill it in and submit it with the application form."}
+                </p>
+                {vfsCommonLines.length > 0 && (
+                  <div className="mt-4 max-w-3xl border-t border-hair pt-4">
+                    <p className="mb-2.5 text-[13px] font-semibold text-ink-2">Required for most visa types below</p>
+                    <DocBlocks text={vfsCommonLines.join("\n")} />
+                  </div>
+                )}
+                <div className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
+                  {visible.map(renderDoc)}
                 </div>
-              )}
-              <div className="card-doc mt-4 divide-y divide-line px-4 sm:px-5">
-                {visible.map(renderDoc)}
-              </div>
-              {hidden.length > 0 && (
-                <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                    <span className="group-open:hidden">Show all {vfsDocs.length} visa-type document checklists</span>
-                    <span className="hidden group-open:inline">Hide the rest</span>
-                    <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                  </summary>
-                  <div className="card-doc mt-3 divide-y divide-line px-4 sm:px-5">{hidden.map((v, i) => renderDoc(v, VFS_PREVIEW + i))}</div>
-                </details>
-              )}
-              {vfsCorr?.sourceUrl && (
-                <a href={vfsCorr.sourceUrl} target="_blank" rel="noreferrer" className="mono mt-3 inline-flex items-center gap-1 text-[11px] text-ink-mute transition hover:text-ink">via VFS Global ↗</a>
-              )}
-            </section>
+                {hidden.length > 0 && (
+                  <details className="group mt-3 max-w-3xl">
+                    <summary className="chip cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                      <span className="group-open:hidden">Show all {vfsDocs.length} visa-type document checklists</span>
+                      <span className="hidden group-open:inline">Hide the rest</span>
+                      <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </summary>
+                    <div className="mt-3 divide-y divide-hair border-y border-hair">{hidden.map((v, i) => renderDoc(v, VFS_PREVIEW + i))}</div>
+                  </details>
+                )}
+                {vfsCorr?.sourceUrl && (
+                  <a href={vfsCorr.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-[13px] font-medium text-ink-2 transition hover:text-ink">via VFS Global ↗</a>
+                )}
+              </section>
             );
           })()}
 
-          {/* Destination visa types: tourist/business/transit shown directly when
+          {/* ── Destination visa types: tourist/business/transit shown directly when
               relevant to the resolved status; every other category (work, student,
               digital nomad, retirement, investment, family, medical) surfaces
               regardless, since e.g. a destination's work or retirement visa is
-              useful to know about even on an easy tourist-entry corridor. */}
+              useful to know about even on an easy tourist-entry corridor. ── */}
           {visaTypes.length > 0 && (() => {
             const TRAVELER_CATEGORIES = new Set(["tourist", "business", "transit"]);
             // An e-visa product this nationality is excluded from (per the
@@ -1197,51 +1388,50 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             const showTourist = !hasVfs && need && touristTypes.length > 0;
             if (!showTourist && otherTypes.length === 0) return null;
             return (
-              <section id="visa-types" className="mb-12 scroll-mt-24">
+              <section id="visa-types" className="mt-12 scroll-mt-24">
                 {/* The h2 renders whenever the section exists - otherwise the
-                    rail's "Visa types" jump link lands on an unlabeled button. */}
-                <p className="eyebrow">Visa types</p>
-                <h2 className="text-section mt-2 text-ink">{d.name} visa types</h2>
+                    jump chip "Visa types" lands on an unlabeled block. */}
+                <h2 className="text-[15px] font-semibold text-ink">{d.name} visa types</h2>
                 {showTourist && (
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {touristTypes.map((v, i) => <VisaTypeCard key={i} v={v} suppressFee={feeList.length > 0} />)}
                   </div>
                 )}
                 {otherTypes.length > 0 && (
-                  <details className={`group ${showTourist ? "mt-8" : "mt-4"}`}>
-                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                  <details className={`group ${showTourist ? "mt-6" : "mt-4"}`}>
+                    <summary className="chip cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                       <span className="group-open:hidden">Other {d.name} visa categories ({otherTypes.length})</span>
                       <span className="hidden group-open:inline">Hide other visa categories</span>
                       <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </summary>
-                    <p className="text-body measure mt-3 text-ink-soft">
-                      These don&apos;t apply to a typical short visit, but cover other reasons people travel to {d.name}. Eligibility varies by visa type - some are limited to specific nationalities, so check each one&apos;s conditions on the official page.
+                    <p className="mt-3 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
+                      Other reasons people travel to {d.name}. Eligibility varies by visa type - check each one&apos;s conditions on the official page.
                     </p>
                     {/* Compact index, not full cards: this catalog is
                         destination-generic and identical on every corridor into
                         {dest} - one ledger line per type keeps the categories
                         discoverable without shipping the same multi-thousand-word
                         blob on dozens of pages. */}
-                    <ul className="card-doc mt-4 divide-y divide-line px-4">
+                    <ul className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
                       {otherTypes.map((v, i) => (
                         <li key={i} className="flex min-h-[44px] flex-wrap items-baseline gap-x-3 gap-y-1 py-2.5">
-                          <span className="font-display text-[14px] font-medium text-ink">{v.name}</span>
-                          <span className="mono flex flex-wrap gap-x-3 text-[11px] text-ink-mute">
-                            <span className="uppercase tracking-[0.08em]">{v.category.replace(/_/g, " ")}</span>
+                          <span className="text-[14.5px] font-semibold text-ink">{v.name}</span>
+                          <span className="flex flex-wrap gap-x-3 text-[13px] font-medium tabular-nums text-ink-2">
+                            <span>{v.category.replace(/_/g, " ")}</span>
                             {v.max_stay_days != null && <span>{v.max_stay_days} days</span>}
-                            {v.fee_usd != null && (v.fee_usd === 0 ? <span className="text-vfree">free</span> : <span>~${v.fee_usd}</span>)}
-                            {v.online && <span className="text-vfree">online</span>}
+                            {v.fee_usd != null && (v.fee_usd === 0 ? <span className="text-verdict">free</span> : <span>~${v.fee_usd}</span>)}
+                            {v.online && <span className="text-verdict">online</span>}
                           </span>
                           {v.official_url && (
-                            <a href={v.official_url} target="_blank" rel="noreferrer" className="mono ml-auto text-[11px] font-medium text-stamp underline-offset-2 hover:underline">
+                            <a href={v.official_url} target="_blank" rel="noreferrer" className="ml-auto text-[13px] font-semibold text-accent underline-offset-2 hover:underline">
                               {isAdvisoryUrl(v.official_url) ? "advisory" : "official"} ↗
                             </a>
                           )}
                         </li>
                       ))}
                     </ul>
-                    <p className="text-body mt-3 text-ink-soft">
-                      <Link href={`/destination/${dest}`} className="font-medium text-stamp underline-offset-2 hover:underline">
+                    <p className="mt-3 text-[14.5px]">
+                      <Link href={`/destination/${dest}`} className="font-semibold text-accent underline-offset-2 hover:underline">
                         {d.name} visa policy, fees & entry rules in full →
                       </Link>
                     </p>
@@ -1251,89 +1441,50 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             );
           })()}
 
-          {/* FAQ */}
-          <section id="faq" className="scroll-mt-24">
-            <p className="eyebrow">FAQ</p>
-            <h2 className="text-section mt-2 text-ink">
-              {d.name} visa for {nd} citizens - FAQ
-            </h2>
-            <div className="card-doc mt-4 divide-y divide-line px-4 sm:px-5">
+          {/* ── FAQ ── */}
+          <section id="faq" className="mt-12 scroll-mt-24">
+            <h2 className="text-[15px] font-semibold text-ink">{d.name} visa for {nd} citizens - FAQ</h2>
+            <div className="mt-3 max-w-3xl divide-y divide-hair border-y border-hair">
               {faq.map(({ q, a }) => (
                 <details key={q} className="group py-1">
-                  <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-4 py-3 font-display text-[15px] font-medium text-ink">
+                  <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-4 py-3 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
                     {q}
-                    <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 text-ink-mute transition-transform duration-150 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 text-ink-3 transition-transform duration-150 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </summary>
-                  <p className="text-body measure mt-1 mb-3 text-ink-soft">{a}</p>
+                  <p className="mt-1 mb-3 max-w-[68ch] text-[15px] leading-relaxed text-ink-2">{a}</p>
                 </details>
               ))}
             </div>
           </section>
 
-          </div>
-
-          {/* Sticky rail: orientation + action + the related-corridor mesh
-              (which previously sat as a full-width farm at the page bottom).
-              On mobile this stacks after the FAQ, same reading order as before. */}
-          <aside className="mt-14 lg:sticky lg:top-24 lg:mt-0">
-            {/* TOC + primary CTA share one document card (spec §14). */}
-            <div className="card-doc px-5 py-5">
-              {/* Jump nav - desktop only; pointless when the rail is at the bottom */}
-              <nav aria-label="On this page" className="hidden lg:block">
-                <p className="eyebrow">On this page</p>
-                <ul className="mt-3 space-y-0.5 border-l border-line">
-                  {jumpLinks.map((j) => (
-                    <li key={j.href}>
-                      <a href={j.href} className="block border-l-2 border-transparent py-1 pl-3 text-[13px] text-ink-soft transition hover:border-stamp hover:text-ink">
-                        {j.label}
-                      </a>
-                    </li>
+          {/* ── Related corridors (crawl mesh) ── */}
+          <section aria-label="Related corridors" className="mt-14 border-t border-hair pt-8">
+            <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+              <div>
+                <h2 className="text-[15px] font-semibold text-ink">More for {nd} citizens</h2>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {sameNat.slice(0, 6).map((c) => (
+                    <Link key={c!.iso3} href={`/passport/${slug}/${nameToSlug(c!.name)}`} className="chip">
+                      <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3 w-[18px] shrink-0 rounded-[2px] border border-hair object-cover" />
+                      {c!.name} visa
+                    </Link>
                   ))}
-                </ul>
-              </nav>
-
-              {/* Primary action */}
-              {applyUrl ? (
-                <a href={applyUrl} target="_blank" rel="noreferrer" className="btn-stamp w-full lg:mt-5">
-                  Apply on the official portal ↗
-                </a>
-              ) : advisoryUrl ? (
-                <a href={advisoryUrl} target="_blank" rel="noreferrer" className="btn-stamp-outline w-full lg:mt-5">
-                  Read the official advisory ↗
-                </a>
-              ) : (
-                <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="btn-stamp w-full lg:mt-5">
-                  Check your full options →
-                </Link>
-              )}
-            </div>
-
-            {/* Related corridors */}
-            <div className="mt-8">
-              <p className="eyebrow">For {nd} citizens</p>
-              <ul className="mt-2 space-y-0.5">
-                {sameNat.slice(0, 6).map((c) => (
-                  <li key={c!.iso3}>
-                    <Link href={`/passport/${slug}/${nameToSlug(c!.name)}`} className="flex min-h-[36px] items-center gap-2.5 text-[13.5px] text-ink-soft transition hover:text-ink">
-                      <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3 w-[18px] shrink-0 rounded-[2px] border border-line object-cover" /> {c!.name} visa
+                </div>
+              </div>
+              <div>
+                <h2 className="text-[15px] font-semibold text-ink">{d.name} visa for</h2>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {sameDest.slice(0, 6).map((c) => (
+                    <Link key={c!.iso3} href={`/passport/${nameToSlug(c!.name)}/${dest}`} className="chip">
+                      <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3 w-[18px] shrink-0 rounded-[2px] border border-hair object-cover" />
+                      {DEMONYM[c!.iso3] ?? c!.name} citizens
                     </Link>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="mt-6">
-              <p className="eyebrow">{d.name} visa for</p>
-              <ul className="mt-2 space-y-0.5">
-                {sameDest.slice(0, 6).map((c) => (
-                  <li key={c!.iso3}>
-                    <Link href={`/passport/${nameToSlug(c!.name)}/${dest}`} className="flex min-h-[36px] items-center gap-2.5 text-[13.5px] text-ink-soft transition hover:text-ink">
-                      <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3 w-[18px] shrink-0 rounded-[2px] border border-line object-cover" /> {DEMONYM[c!.iso3] ?? c!.name} citizens
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
+          </section>
+
         </div>
       </main>
     </>
