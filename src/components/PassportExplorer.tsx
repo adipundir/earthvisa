@@ -23,6 +23,7 @@ import {
   type ExplorerCore,
 } from "@/lib/explorer-data";
 import { useDetectedPassport } from "@/lib/geo";
+import WorldDotMap from "@/components/WorldDotMap";
 import { computeWith, type CombinedEdge } from "@/lib/compute-core";
 import type { Credential, PassportType } from "@/lib/types";
 
@@ -417,6 +418,14 @@ export default function PassportExplorer() {
 
   const credentialGroups = useMemo(() => buildCredentialGroups(core?.credentials ?? []), [core]);
 
+  // iso3 -> access kind for the reach map (req included so required
+  // countries render as faint neutral dots rather than unknowns).
+  const kindByIso3 = useMemo(() => {
+    const m: Record<string, TileKind> = {};
+    for (const t of tiles) m[t.iso3] = t.kind;
+    return m;
+  }, [tiles]);
+
   function add(iso3: string) {
     setSelected((s) => (s.includes(iso3) ? s : [...s, iso3]));
     setPtypes((p) => (iso3 in p ? p : { ...p, [iso3]: "ordinary" }));
@@ -639,7 +648,8 @@ export default function PassportExplorer() {
         <DataPending />
       ) : (
         <>
-          <div className="mt-8" aria-live="polite">
+          <div className="mt-8 flex items-center gap-10" aria-live="polite">
+            <div className="min-w-0">
             <p className="stat-num text-[clamp(88px,13vw,148px)] text-ink">
               {shown}
               <span className="text-[0.36em] font-bold text-ink-3">/{total}</span>
@@ -657,6 +667,12 @@ export default function PassportExplorer() {
                 Claim this reach as your Earthling ID - citizen of Earth, on record →
               </Link>
             </p>
+            </div>
+            {/* The reach map fills the count row's empty right half on
+                desktop - same hues as the grid, no text. */}
+            <div className="hidden min-w-0 max-w-[560px] flex-1 lg:block" aria-hidden="true">
+              <WorldDotMap kinds={kindByIso3} selected={selected} />
+            </div>
           </div>
 
           {/* Level filter chips */}
