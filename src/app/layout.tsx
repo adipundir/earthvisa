@@ -3,6 +3,8 @@ import { Archivo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
+import LaunchBanner from "@/components/LaunchBanner";
+import { PRODUCT_HUNT_LAUNCH } from "@/lib/launch";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import { dataset } from "@/lib/dataset";
@@ -79,10 +81,12 @@ export default function RootLayout({
       className={`${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {/* Theme init BEFORE paint: .dark from localStorage, else system. */}
+        {/* Theme init BEFORE paint: .dark from localStorage, else system.
+            Same pass hides the Product Hunt banner for anyone who already
+            dismissed it, so returning visitors never see it flash in. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`,
+            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark");if(localStorage.getItem(${JSON.stringify(PRODUCT_HUNT_LAUNCH.dismissKey)})==="1")document.documentElement.classList.add("ph-dismissed")}catch(e){}`,
           }}
         />
         <script
@@ -149,6 +153,7 @@ export default function RootLayout({
           }}
         />
         <a href="#main" className="skip-link">Skip to main content</a>
+        <LaunchBanner />
         <Navbar />
         <div id="main" tabIndex={-1} className="flex flex-1 flex-col outline-none">
           {children}
