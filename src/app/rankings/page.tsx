@@ -136,14 +136,39 @@ const FAQS = [
   },
 ];
 
-// Ledger-row vocabulary (spec §12): compact rows inside a document card.
-// Ten-row lists run column-major on sm+ (ranks 1-5 left, 6-10 right), so the
-// nth-child(6) reset clears the top hairline of the second column's first row.
-const LEDGER_COL_OL = "card-doc mt-5 grid px-4 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-5 sm:gap-x-8 sm:px-5";
-const LEDGER_COL_LI = "border-t border-line first:border-t-0 sm:[&:nth-child(6)]:border-t-0";
-const LEDGER_GRID_UL = "card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
-const LEDGER_ROW_LI =
-  "border-t border-line first:border-t-0 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0";
+// v2 ledger list (corridor idiom): hairline-divided rows - rank (tabular,
+// muted), flag, name (bold ink), 13px four-way breakdown in the data-category
+// hues, score (bold ink) with a quiet label.
+function LedgerList({ list }: { list: RankingRow[] }) {
+  return (
+    <ol className="mt-5 max-w-3xl divide-y divide-hair border-y border-hair">
+      {list.map((r) => (
+        <li key={r.iso3}>
+          <Link href={`/passport/${r.slug}`} className="group flex min-h-[56px] items-center gap-3 py-2.5">
+            <span className="w-9 shrink-0 text-right text-[13px] font-medium tabular-nums text-ink-3">#{r.rank}</span>
+            <span aria-hidden="true" className="text-lg leading-none">{r.flag}</span>
+            <span className="min-w-0 flex-1">
+              <span className="block truncate text-[15px] font-semibold text-ink transition group-hover:text-accent">{r.name}</span>
+              <span className="block text-[13px] font-medium tabular-nums text-ink-3">
+                <span className="whitespace-nowrap text-verdict">{r.visaFree} visa-free</span>
+                {" · "}
+                <span className="whitespace-nowrap text-voa">{r.visaOnArrival} VoA</span>
+                {" · "}
+                <span className="whitespace-nowrap text-online">{r.eta} eTA</span>
+                {" · "}
+                <span className="whitespace-nowrap text-online">{r.eVisa} e-Visa</span>
+              </span>
+            </span>
+            <span className="ml-auto shrink-0 text-right">
+              <span className="block text-[17px] font-bold leading-tight tabular-nums text-ink">{r.score}</span>
+              <span className="block text-[11px] font-medium leading-tight text-ink-3">score</span>
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 export default function RankingsPage() {
   const jsonLd = {
@@ -194,65 +219,70 @@ export default function RankingsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <main className="min-h-screen">
-        {/* Header */}
-        <header className="bg-grid-paper border-b border-line-strong bg-paper-2/60">
-          <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
-              <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
-              <span aria-hidden>/</span>
-              <span className="inline-flex min-h-[44px] items-center text-ink">Rankings</span>
+        <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
+
+          {/* Header */}
+          <header>
+            <nav aria-label="Breadcrumb" className="pt-6 text-[13px] font-medium text-ink-2">
+              <ol className="flex flex-wrap items-center gap-x-2">
+                <li><Link href="/" className="inline-flex min-h-[24px] items-center transition hover:text-ink">Earth Visa</Link></li>
+                <li aria-hidden="true" className="text-ink-3">/</li>
+                <li aria-current="page" className="font-semibold text-ink">Rankings</li>
+              </ol>
             </nav>
 
-
-            <div className="mt-6">
-              <h1 className="text-display text-ink">
+            <div className="mt-8">
+              <h1 className="max-w-3xl text-[clamp(34px,5vw,56px)] font-extrabold leading-[1.04] tracking-[-0.02em] text-ink">
                 Passport Ranking 2026
-                <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
+                <span className="mt-3 block text-[18px] font-semibold leading-snug tracking-normal text-ink-2 sm:text-[21px]">
                   The Most Powerful Passports in the World
                 </span>
               </h1>
-              <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
+              <p className="mt-4 text-[13px] font-medium tabular-nums text-ink-3">
                 All {rows.length} passports ranked · official sources only
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
-              {[
-                { k: "Passports ranked", v: String(rows.length) },
-                { k: "Destinations tracked", v: String(destCount) },
-                { k: "#1 score", v: String(top1.score) },
-                { k: "Data updated", v: fmtDate(dataset.meta.lastUpdated) },
-              ].map(({ k, v }) => (
-                <div key={k} className="bg-card px-4 py-2.5">
-                  <dt className="mono-chrome">{k}</dt>
-                  <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
+            {/* Stat band (corridor FactStrip idiom) */}
+            <section aria-label="Ranking facts" className="mt-9 border-t border-hair">
+              <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4">
+                {[
+                  { k: "Passports ranked", v: String(rows.length) },
+                  { k: "Destinations tracked", v: String(destCount) },
+                  { k: "#1 score", v: String(top1.score) },
+                ].map(({ k, v }) => (
+                  <div key={k} className="min-w-0 pr-4 pt-6 sm:border-l sm:border-hair sm:pl-7 sm:first:border-l-0 sm:first:pl-0">
+                    <p className="stat-num text-[clamp(38px,4.2vw,60px)] text-ink">{v}</p>
+                    <p className="stat-label mt-2">{k}</p>
+                  </div>
+                ))}
+                <div className="min-w-0 pr-4 pt-6 sm:border-l sm:border-hair sm:pl-7">
+                  <p className="stat-num flex min-h-[clamp(38px,4.2vw,60px)] items-end text-[clamp(23px,2vw,29px)] text-ink">
+                    {fmtDate(dataset.meta.lastUpdated)}
+                  </p>
+                  <p className="stat-label mt-2">Data updated</p>
                 </div>
-              ))}
-            </dl></div>
-          </div>
-        </header>
-
-        <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
+              </div>
+            </section>
+          </header>
 
           {/* Intro - target queries answered up front */}
           <section className="mt-10 max-w-3xl">
-            <p className="text-body text-ink-soft">
-              The <strong className="text-ink">most powerful passport in 2026</strong> is the{" "}
-              <Link href={`/passport/${top1.slug}`} className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">
+            <p className="text-[15px] leading-relaxed text-ink-2">
+              The <strong className="font-semibold text-ink">most powerful passport in 2026</strong> is the{" "}
+              <Link href={`/passport/${top1.slug}`} className="font-semibold text-accent underline-offset-2 transition hover:underline">
                 {top1.name} passport
               </Link>
               {tiedWithTop.length > 0 && <> (tied with {listNames(tiedWithTop)})</>}
-              , scoring <strong className="text-ink">{top1.score} destinations</strong> with no visa needed in advance -{" "}
+              , scoring <strong className="font-semibold text-ink">{top1.score} destinations</strong> with no visa needed in advance -{" "}
               {top1.visaFree} visa-free, {top1.visaOnArrival} visa on arrival, and {top1.eta} with an eTA. e-Visas
               ({top1.eVisa} more for the leader) are listed but never counted: an e-visa is still a visa.
             </p>
-            <p className="text-body mt-4 text-ink-soft">
+            <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
               We score visa-free + visa on arrival + eTA, list e-visa access separately, and use official government sources only - see
-              the <a href="#methodology" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">methodology</a> below.
+              the <a href="#methodology" className="font-semibold text-accent underline-offset-2 transition hover:underline">methodology</a> below.
               Reach is one axis; the other is cost - see{" "}
-              <Link href="/rankings/visa-fees" className="font-medium text-stamp underline decoration-stamp/40 underline-offset-2 transition hover:decoration-stamp">
+              <Link href="/rankings/visa-fees" className="font-semibold text-accent underline-offset-2 transition hover:underline">
                 the real cost of a tourist visa
               </Link>
               , the same destinations ranked by their official published fee.
@@ -261,43 +291,21 @@ export default function RankingsPage() {
 
           {/* Top 10 - the "most powerful passport" answer */}
           <section className="mt-12">
-            <h2 className="text-section text-ink">
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Top 10 Most Powerful Passports in 2026
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
+            <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
               Ranked by score: visa-free destinations plus visa on arrival and eTA. e-Visa counts are shown alongside but do not affect the rank. Tap any passport for its full destination list.
             </p>
-            <ol className={LEDGER_COL_OL}>
-              {top10.map((r) => (
-                <li key={r.iso3} className={LEDGER_COL_LI}>
-                  <Link
-                    href={`/passport/${r.slug}`}
-                    className="group flex min-h-[52px] items-center gap-3 py-2 transition hover:bg-paper-2/50"
-                  >
-                    <span className="mono w-9 shrink-0 text-[13px] font-semibold tabular-nums text-stamp">#{r.rank}</span>
-                    <span className="text-lg leading-none">{r.flag}</span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{r.name}</span>
-                      <span className="mono block text-[11px] text-ink-mute">
-                        {r.visaFree} visa-free · {r.visaOnArrival} VoA · {r.eta} eTA · {r.eVisa} e-Visa
-                      </span>
-                    </span>
-                    <span className="mono ml-auto shrink-0 text-lg font-semibold tabular-nums text-ink">
-                      {r.score}
-                      <span className="ml-1 text-[10px] font-normal uppercase tracking-[0.1em] text-ink-mute">score</span>
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ol>
+            <LedgerList list={top10} />
           </section>
 
           {/* Full sortable table */}
           <section className="mt-14">
-            <h2 className="text-section text-ink">
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Full Passport Index 2026: All {rows.length} Passports Ranked
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
+            <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
               Click a column header to sort, or filter by country name. Every passport links to its full visa-free country list.
             </p>
             <div className="mt-5">
@@ -307,80 +315,70 @@ export default function RankingsPage() {
 
           {/* Bottom 10 - "weakest passport" query */}
           <section className="mt-14">
-            <h2 className="text-section text-ink">
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">
               The 10 Weakest Passports in the World 2026
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
+            <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
               At the other end of the ranking, holders of these passports need an embassy visa for most international trips.
               A weak passport does not mean no options: visa-on-arrival and e-visa destinations still exist for every passport
               on this list, and holding credentials like a valid US or Schengen visa can unlock additional destinations.
             </p>
-            <ol className={LEDGER_COL_OL}>
-              {bottom10.map((r) => (
-                <li key={r.iso3} className={LEDGER_COL_LI}>
-                  <Link
-                    href={`/passport/${r.slug}`}
-                    className="group flex min-h-[44px] items-center gap-3 py-1 transition hover:bg-paper-2/50"
-                  >
-                    <span className="mono w-9 shrink-0 text-[13px] tabular-nums text-ink-mute">#{r.rank}</span>
-                    <span className="text-lg leading-none">{r.flag}</span>
-                    <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{r.name}</span>
-                    <span className="mono ml-auto shrink-0 text-sm tabular-nums text-ink-soft">
-                      {r.score}
-                      <span className="ml-1 text-[10px] font-medium uppercase tracking-[0.1em] text-ink-mute">score</span>
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ol>
+            <LedgerList list={bottom10} />
           </section>
 
           {/* Methodology */}
           <section id="methodology" className="mt-14 max-w-3xl scroll-mt-24">
-            <h2 className="text-section text-ink">
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">
               How This Passport Ranking Is Calculated
             </h2>
-            <p className="text-body mt-3 text-ink-soft">
-              Earth Visa builds its passport index from <strong className="text-ink">official government sources only</strong>:
+            <p className="mt-3 text-[15px] leading-relaxed text-ink-2">
+              Earth Visa builds its passport index from <strong className="font-semibold text-ink">official government sources only</strong>:
               each destination country&apos;s own published visa policy - foreign ministry pages, immigration and border authority
               portals, and bilateral agreements - inverted into per-passport access lists. For every passport we count four
               access levels across {destCount} destinations:
             </p>
-            <ul className="text-body mt-4 space-y-2 text-ink-soft">
-              <li><strong className="text-vfree">Visa-free</strong> - entry with just the passport; no application, no fee.</li>
-              <li><strong className="text-voa">Visa on arrival</strong> - a visa stamped at the border on landing.</li>
-              <li><strong className="text-eta">eTA</strong> - an electronic travel authorisation approved online before departure.</li>
-              <li><strong className="text-evisa">e-Visa</strong> - a full visa applied for and issued online, no embassy visit.</li>
+            <ul className="mt-4 space-y-2">
+              <li className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
+                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
+                <span><strong className="font-semibold text-verdict">Visa-free</strong> - entry with just the passport; no application, no fee.</span>
+              </li>
+              <li className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
+                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
+                <span><strong className="font-semibold text-voa">Visa on arrival</strong> - a visa stamped at the border on landing.</span>
+              </li>
+              <li className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
+                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
+                <span><strong className="font-semibold text-online">eTA</strong> - an electronic travel authorisation approved online before departure.</span>
+              </li>
+              <li className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
+                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
+                <span><strong className="font-semibold text-online">e-Visa</strong> - a full visa applied for and issued online, no embassy visit.</span>
+              </li>
             </ul>
-            <p className="text-body mt-4 text-ink-soft">
-              The ranking <strong className="text-ink">score counts the first three</strong> - visa-free, visa on arrival, and
+            <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
+              The ranking <strong className="font-semibold text-ink">score counts the first three</strong> - visa-free, visa on arrival, and
               eTA - the destinations you can head to without applying for a visa first. An e-visa is a real visa application,
               just submitted online, so e-visa destinations are listed in their own column and never counted toward the score.
-              <strong className="text-ink"> Total reach</strong> (all four levels) is shown alongside. Passports with equal
+              <strong className="font-semibold text-ink"> Total reach</strong> (all four levels) is shown alongside. Passports with equal
               scores are listed in sequence, so adjacent ranks can share the same score.
             </p>
           </section>
 
           {/* Popular passport quick links */}
           <section className="mt-14">
-            <h2 className="text-section text-ink">
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Look Up a Popular Passport
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
+            <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
               Jump straight to the full visa-free country list and 2026 rank for these frequently checked passports.
             </p>
-            <ul className={LEDGER_GRID_UL}>
+            <ul className="mt-4 flex flex-wrap gap-2">
               {popular.map((r) => (
-                <li key={r.iso3} className={LEDGER_ROW_LI}>
-                  <Link
-                    href={`/passport/${r.slug}`}
-                    className="group flex min-h-[44px] items-center gap-2.5 py-1 transition hover:bg-paper-2/50"
-                  >
-                    <span className="text-lg leading-none">{r.flag}</span>
-                    <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
-                      {r.name} passport
-                    </span>
-                    <span className="mono-chrome shrink-0 tabular-nums">#{r.rank}</span>
+                <li key={r.iso3}>
+                  <Link href={`/passport/${r.slug}`} className="chip">
+                    <span aria-hidden="true" className="text-base leading-none">{r.flag}</span>
+                    {r.name} passport
+                    <span className="tabular-nums text-ink-3">#{r.rank}</span>
                   </Link>
                 </li>
               ))}
@@ -389,33 +387,33 @@ export default function RankingsPage() {
 
           {/* FAQ */}
           <section className="mt-14">
-            <h2 className="text-section text-ink">
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Passport Ranking 2026 FAQ
             </h2>
-            <div className="card-doc mt-5 divide-y divide-line px-5">
+            <div className="mt-3 max-w-3xl divide-y divide-hair border-y border-hair">
               {FAQS.map(({ q, a }) => (
                 <details key={q} className="group py-1">
-                  <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
+                  <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-3 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
                     {q}
-                    <svg viewBox="0 0 16 16" aria-hidden className="h-4 w-4 shrink-0 text-ink-mute transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+                    <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 text-ink-3 transition-transform duration-150 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </summary>
-                  <p className="text-body mt-1 mb-3 max-w-3xl text-ink-soft">{a}</p>
+                  <p className="mt-1 mb-3 max-w-[68ch] text-[15px] leading-relaxed text-ink-2">{a}</p>
                 </details>
               ))}
             </div>
           </section>
 
           {/* CTA */}
-          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
-            <h2 className="text-section text-ink">
+          <section className="mt-16 border-t border-hair pt-10 text-center">
+            <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Where does your passport rank?
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
+            <p className="mx-auto mt-2 max-w-2xl text-[15px] leading-relaxed text-ink-2">
               Enter your passport to see its exact rank, every visa-free destination, and what a second passport or a held visa could unlock.
             </p>
             <Link
               href="/"
-              className="btn-stamp mt-5"
+              className="btn-stamp mt-6"
             >
               Check your passport on Earth Visa →
             </Link>

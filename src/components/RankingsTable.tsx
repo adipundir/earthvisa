@@ -59,10 +59,10 @@ const SEARCH_ALIASES: Record<string, string[]> = {
 // left-20 - both stay visible while the numeric columns scroll on mobile.
 // Header underline and sticky-edge rules are box-shadows because collapsed
 // table borders do not travel with position:sticky cells.
-const TH_BASE = "sticky top-0 z-10 bg-paper-2 shadow-[0_1px_0_var(--color-line-strong)]";
+const TH_BASE = "sticky top-0 z-10 bg-surface shadow-[0_1px_0_var(--color-hair-strong)]";
 const TH_STICKY_LEFT = "left-0 z-20 w-20 min-w-20";
-const TH_STICKY_NAME = "left-20 z-20 min-w-44 shadow-[0_1px_0_var(--color-line-strong),1px_0_0_var(--color-line)]";
-const TD_STICKY = "sticky z-[1] bg-card transition group-hover/row:bg-paper-2";
+const TH_STICKY_NAME = "left-20 z-20 min-w-44 shadow-[0_1px_0_var(--color-hair-strong),1px_0_0_var(--color-hair)]";
+const TD_STICKY = "sticky z-[1] bg-surface transition group-hover/row:bg-ground";
 
 /**
  * Client-side sortable ranking table for all 199 passports. The rows are
@@ -110,11 +110,11 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Filter by country..."
-          className="mono min-h-[44px] w-full rounded-sm border border-line bg-card px-3.5 py-2 text-sm text-ink placeholder:text-ink-mute outline-none focus:border-stamp"
+          className="min-h-[44px] w-full rounded-lg border border-hair-strong bg-surface px-3.5 py-2 text-[16px] text-ink outline-none transition placeholder:text-ink-3 focus:border-accent sm:text-[15px]"
         />
       </label>
 
-      <div className="card-doc mt-4 max-h-[75vh] overflow-auto">
+      <div className="mt-4 max-h-[75vh] overflow-auto rounded-xl border border-hair bg-surface">
         <table className="w-full min-w-[640px] border-collapse text-left">
           <thead>
             <tr>
@@ -132,12 +132,12 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
                     <button
                       type="button"
                       onClick={() => toggleSort(col.key)}
-                      className={`mono inline-flex min-h-[44px] w-full cursor-pointer items-center gap-1.5 px-3.5 py-2 text-[11px] uppercase tracking-[0.15em] transition hover:text-ink ${
+                      className={`inline-flex min-h-[44px] w-full cursor-pointer items-center gap-1.5 px-3.5 py-2 text-[13px] font-semibold transition hover:text-ink ${
                         col.numeric && col.key !== "rank" ? "justify-end" : "justify-start"
-                      } ${active ? "text-ink" : "text-ink-mute"}`}
+                      } ${active ? "text-ink" : "text-ink-2"}`}
                     >
                       {col.label}
-                      <span aria-hidden className={active ? "text-stamp" : "text-transparent"}>
+                      <span aria-hidden className={active ? "text-accent" : "text-transparent"}>
                         {active && sortDir === "asc" ? "↑" : "↓"}
                       </span>
                     </button>
@@ -146,32 +146,32 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
               })}
             </tr>
           </thead>
-          <tbody className="divide-y divide-line">
+          <tbody className="divide-y divide-hair">
             {visible.map((r) => (
-              <tr key={r.iso3} className="group/row transition hover:bg-paper-2">
-                <td className={`${TD_STICKY} left-0 mono px-3.5 py-2 text-sm tabular-nums text-ink-mute`}>#{r.rank}</td>
-                <td className={`${TD_STICKY} left-20 px-3.5 py-1 shadow-[1px_0_0_var(--color-line)]`}>
+              <tr key={r.iso3} className="group/row transition hover:bg-ground">
+                <td className={`${TD_STICKY} left-0 px-3.5 py-2 text-sm font-medium tabular-nums text-ink-2`}>#{r.rank}</td>
+                <td className={`${TD_STICKY} left-20 px-3.5 py-1 shadow-[1px_0_0_var(--color-hair)]`}>
                   <Link
                     href={`/passport/${r.slug}`}
                     className="group flex min-h-[44px] items-center gap-2.5"
                   >
                     <span className="text-lg">{r.flag}</span>
-                    <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+                    <span className="text-sm font-semibold text-ink transition group-hover:text-accent">
                       {r.name}
                     </span>
                   </Link>
                 </td>
-                <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-vfree">{r.visaFree}</td>
-                <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-voa">{r.visaOnArrival}</td>
-                <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-eta">{r.eta}</td>
-                <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-evisa">{r.eVisa}</td>
-                <td className="mono px-3.5 py-2 text-right text-sm font-semibold tabular-nums text-ink">{r.score}</td>
-                <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-ink-soft">{r.total}</td>
+                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-verdict">{r.visaFree}</td>
+                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-voa">{r.visaOnArrival}</td>
+                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-online">{r.eta}</td>
+                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-online/80">{r.eVisa}</td>
+                <td className="px-3.5 py-2 text-right text-sm font-bold tabular-nums text-ink">{r.score}</td>
+                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-ink-2">{r.total}</td>
               </tr>
             ))}
             {visible.length === 0 && (
               <tr>
-                <td colSpan={COLUMNS.length} className="px-3.5 py-6 text-center text-sm text-ink-mute">
+                <td colSpan={COLUMNS.length} className="px-3.5 py-6 text-center text-sm text-ink-2">
                   No passports match &quot;{query}&quot;
                 </td>
               </tr>

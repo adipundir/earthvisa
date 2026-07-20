@@ -33,10 +33,10 @@ function fold(s: string): string {
   return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-const TH_BASE = "sticky top-0 z-10 bg-paper-2 shadow-[0_1px_0_var(--color-line-strong)]";
+const TH_BASE = "sticky top-0 z-10 bg-surface shadow-[0_1px_0_var(--color-hair-strong)]";
 const TH_STICKY_LEFT = "left-0 z-20 w-20 min-w-20";
-const TH_STICKY_NAME = "left-20 z-20 min-w-44 shadow-[0_1px_0_var(--color-line-strong),1px_0_0_var(--color-line)]";
-const TD_STICKY = "sticky z-[1] bg-card transition group-hover/row:bg-paper-2";
+const TH_STICKY_NAME = "left-20 z-20 min-w-44 shadow-[0_1px_0_var(--color-hair-strong),1px_0_0_var(--color-hair)]";
+const TD_STICKY = "sticky z-[1] bg-surface transition group-hover/row:bg-ground";
 
 /**
  * Client-side sortable/filterable table of every destination with a
@@ -79,11 +79,11 @@ export default function FeesTable({ rows }: { rows: FeeRow[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Filter by country or region..."
-          className="mono min-h-[44px] w-full rounded-sm border border-line bg-card px-3.5 py-2 text-sm text-ink placeholder:text-ink-mute outline-none focus:border-stamp"
+          className="min-h-[44px] w-full rounded-lg border border-hair-strong bg-surface px-3.5 py-2 text-sm font-medium text-ink outline-none transition placeholder:text-ink-3 focus:border-accent"
         />
       </label>
 
-      <div className="card-doc mt-4 max-h-[75vh] overflow-auto">
+      <div className="mt-4 max-h-[75vh] overflow-auto rounded-xl border border-hair bg-surface">
         <table className="w-full min-w-[640px] border-collapse text-left">
           <thead>
             <tr>
@@ -101,12 +101,12 @@ export default function FeesTable({ rows }: { rows: FeeRow[] }) {
                     <button
                       type="button"
                       onClick={() => toggleSort(col.key)}
-                      className={`mono inline-flex min-h-[44px] w-full cursor-pointer items-center gap-1.5 px-3.5 py-2 text-[11px] uppercase tracking-[0.15em] transition hover:text-ink ${
+                      className={`inline-flex min-h-[44px] w-full cursor-pointer items-center gap-1.5 px-3.5 py-2 text-[13px] font-semibold transition hover:text-ink ${
                         col.numeric && col.key !== "rank" ? "justify-end" : "justify-start"
-                      } ${active ? "text-ink" : "text-ink-mute"}`}
+                      } ${active ? "text-ink" : "text-ink-2"}`}
                     >
                       {col.label}
-                      <span aria-hidden className={active ? "text-stamp" : "text-transparent"}>
+                      <span aria-hidden className={active ? "text-accent" : "text-transparent"}>
                         {active && sortDir === "asc" ? "↑" : "↓"}
                       </span>
                     </button>
@@ -114,30 +114,30 @@ export default function FeesTable({ rows }: { rows: FeeRow[] }) {
                 );
               })}
               <th scope="col" className={`${TH_BASE} text-left`}>
-                <span className="mono inline-flex min-h-[44px] items-center px-3.5 py-2 text-[11px] uppercase tracking-[0.15em] text-ink-mute">
+                <span className="inline-flex min-h-[44px] items-center px-3.5 py-2 text-[13px] font-semibold text-ink-2">
                   Product / source
                 </span>
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-line">
+          <tbody className="divide-y divide-hair">
             {visible.map((r) => (
-              <tr key={r.iso3} className="group/row transition hover:bg-paper-2">
-                <td className={`${TD_STICKY} left-0 mono px-3.5 py-2 text-sm tabular-nums text-ink-mute`}>#{r.rank}</td>
-                <td className={`${TD_STICKY} left-20 px-3.5 py-1 shadow-[1px_0_0_var(--color-line)]`}>
+              <tr key={r.iso3} className="group/row transition hover:bg-ground">
+                <td className={`${TD_STICKY} left-0 px-3.5 py-2 text-[13px] font-medium tabular-nums text-ink-3`}>{r.rank}</td>
+                <td className={`${TD_STICKY} left-20 px-3.5 py-1 shadow-[1px_0_0_var(--color-hair)]`}>
                   <Link
                     href={`/destination/${r.slug}`}
-                    className="group/link flex min-h-[44px] items-center gap-2 py-1 text-sm font-medium text-ink transition hover:text-stamp"
+                    className="flex min-h-[44px] items-center gap-2 py-1 text-sm font-semibold text-ink transition hover:text-accent"
                   >
-                    <span className="text-base leading-none">{r.flag}</span>
+                    <span aria-hidden="true" className="text-base leading-none">{r.flag}</span>
                     {r.name}
                   </Link>
                 </td>
-                <td className="px-3.5 py-2 text-sm text-ink-soft">{r.region}</td>
-                <td className={`mono px-3.5 py-2 text-right text-sm font-semibold tabular-nums ${r.feeUsd === 0 ? "text-vfree" : r.feeUsd >= 150 ? "text-stamp" : "text-ink"}`}>
+                <td className="px-3.5 py-2 text-sm text-ink-2">{r.region}</td>
+                <td className={`px-3.5 py-2 text-right text-sm font-bold tabular-nums ${r.feeUsd === 0 ? "text-verdict" : "text-ink"}`}>
                   {r.feeUsd === 0 ? "Free" : `$${r.feeUsd.toLocaleString()}`}
                 </td>
-                <td className="mono px-3.5 py-2 text-[11px] text-ink-mute">
+                <td className="px-3.5 py-2 text-[12.5px] font-medium text-ink-3">
                   <span>{r.kindLabel}</span>
                   {r.sourceUrl && r.sourceHost && (
                     <>
@@ -154,7 +154,7 @@ export default function FeesTable({ rows }: { rows: FeeRow[] }) {
         </table>
       </div>
       {visible.length === 0 && (
-        <p className="mono mt-4 text-center text-sm text-ink-mute">No destinations match &quot;{query}&quot;.</p>
+        <p className="mt-4 text-center text-sm text-ink-2">No destinations match &quot;{query}&quot;.</p>
       )}
     </div>
   );

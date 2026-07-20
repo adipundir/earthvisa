@@ -367,7 +367,7 @@ body {
 }
 .btn-stamp { background: var(--stamp-deep); color: #ffffff; }
 .btn-stamp:hover { background: var(--stamp); border-color: var(--stamp); }
-.dark .btn-stamp:hover { background: #3D51F0; border-color: #3D51F0; }
+.dark .btn-stamp:hover { background: var(--stamp); border-color: var(--stamp); }
 .btn-stamp-outline { background: transparent; color: var(--stamp); border-color: color-mix(in srgb, var(--stamp) 45%, transparent); }
 .btn-stamp-outline:hover { background: color-mix(in srgb, var(--stamp) 8%, transparent); border-color: var(--stamp); }
 
