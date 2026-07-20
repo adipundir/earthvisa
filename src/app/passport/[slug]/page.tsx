@@ -97,10 +97,13 @@ const LIST_LINKS: Record<string, { vf?: string; voa?: string; evisa?: string; us
   },
 };
 
-// Global rank by total reach - shared by metadata and the page body.
+// Global rank by score (visa-free + VoA + eTA; e-visa NOT counted - it is a
+// visa application, just online). MUST match buildRows() in
+// src/app/rankings/page.tsx and the ranks map in build-explorer-slices.mjs.
+const RANK_LEVELS = new Set(["visa_free", "visa_on_arrival", "eta"]);
 const rankOf = new Map(
   Object.entries(dataset.passportAccess)
-    .map(([iso3, edges]) => ({ iso3, count: edges.length }))
+    .map(([iso3, edges]) => ({ iso3, count: edges.filter((e) => RANK_LEVELS.has(e.level)).length }))
     .sort((a, b) => b.count - a.count)
     .map((r, i) => [r.iso3, i + 1]),
 );
@@ -123,7 +126,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const result = compute([country.iso3], [], {});
   const vfCount = result.reachByLevel.visa_free.length;
   const voaCount = result.reachByLevel.visa_on_arrival.length;
-  const etaCount = result.reachByLevel.eta.length + result.reachByLevel.e_visa.length;
+  const etaCount = result.reachByLevel.eta.length;
+  const eVisaCount = result.reachByLevel.e_visa.length;
   const total = result.reach.length;
   const flag = flagFor(country.iso3);
 
@@ -132,7 +136,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { adj } = nationalityPhrases(country.iso3, country.name);
   // Rank-first description: the "visa free countries for X" promise belongs to
   // the /list pages, so the hub pitches its rank + access breakdown instead.
-  const description = `${rank ? `The ${adj} passport ranks #${rank} of ${TOTAL_PASSPORTS} in 2026` : `${adj} passport 2026`}: ${vfCount} destinations visa-free, ${voaCount} visa on arrival, and ${etaCount} via eTA or e-visa. Full access breakdown from official government sources.`;
+  const description = `${rank ? `The ${adj} passport ranks #${rank} of ${TOTAL_PASSPORTS} in 2026` : `${adj} passport 2026`}: ${vfCount} destinations visa-free, ${voaCount} visa on arrival, ${etaCount} with an eTA, and ${eVisaCount} via e-visa. Full access breakdown from official government sources.`;
 
   return {
     // absolute opts out of the root layout's "%s | Earth Visa" template - these

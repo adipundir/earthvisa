@@ -36,12 +36,14 @@ const write = (rel, obj) => {
   return json.length;
 };
 
-// Global passport rank (#N of 199) by total reach - MUST match the sort in
-// src/app/rankings/page.tsx buildRows() exactly (total edges descending,
-// stable over dataset order) so the landing chip agrees with /rankings.
+// Global passport rank (#N of 199) by SCORE: visa-free + VoA + eTA. e-visa
+// does NOT count (a visa application, just online). MUST match buildRows() in
+// src/app/rankings/page.tsx and rankOf in src/app/passport/[slug]/page.tsx
+// (score descending, stable over dataset order) so the landing chip agrees.
+const RANK_LEVELS = new Set(["visa_free", "visa_on_arrival", "eta"]);
 const ranks = Object.fromEntries(
   Object.entries(dataset.passportAccess)
-    .map(([iso3, edges]) => [iso3, edges.length])
+    .map(([iso3, edges]) => [iso3, edges.filter((e) => RANK_LEVELS.has(e.level)).length])
     .sort((a, b) => b[1] - a[1])
     .map(([iso3], i) => [iso3, i + 1]),
 );

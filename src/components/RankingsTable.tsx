@@ -11,12 +11,15 @@ export interface RankingRow {
   slug: string;
   visaFree: number;
   visaOnArrival: number;
-  /** eTA + e-Visa combined */
   eta: number;
+  eVisa: number;
+  /** ranking score: visa-free + visa on arrival + eTA (e-visa NOT counted) */
+  score: number;
+  /** all four levels combined (score + e-visa) */
   total: number;
 }
 
-type SortKey = "rank" | "name" | "visaFree" | "visaOnArrival" | "eta" | "total";
+type SortKey = "rank" | "name" | "visaFree" | "visaOnArrival" | "eta" | "eVisa" | "score" | "total";
 type SortDir = "asc" | "desc";
 
 const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
@@ -24,7 +27,9 @@ const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
   { key: "name", label: "Passport", numeric: false },
   { key: "visaFree", label: "Visa-free", numeric: true },
   { key: "visaOnArrival", label: "Visa on arrival", numeric: true },
-  { key: "eta", label: "eTA / e-Visa", numeric: true },
+  { key: "eta", label: "eTA", numeric: true },
+  { key: "eVisa", label: "e-Visa", numeric: true },
+  { key: "score", label: "Score", numeric: true },
   { key: "total", label: "Total reach", numeric: true },
 ];
 
@@ -159,7 +164,9 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
                 <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-vfree">{r.visaFree}</td>
                 <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-voa">{r.visaOnArrival}</td>
                 <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-eta">{r.eta}</td>
-                <td className="mono px-3.5 py-2 text-right text-sm font-semibold tabular-nums text-ink">{r.total}</td>
+                <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-evisa">{r.eVisa}</td>
+                <td className="mono px-3.5 py-2 text-right text-sm font-semibold tabular-nums text-ink">{r.score}</td>
+                <td className="mono px-3.5 py-2 text-right text-sm tabular-nums text-ink-soft">{r.total}</td>
               </tr>
             ))}
             {visible.length === 0 && (
