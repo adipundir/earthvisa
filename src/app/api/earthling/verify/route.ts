@@ -27,21 +27,21 @@ export async function GET(req: Request) {
 <meta name="robots" content="noindex">
 <title>Confirm @${rec.username} - Earth Visa</title>
 <style>
-  body{margin:0;display:grid;min-height:100vh;place-items:center;background:#ffffff;color:#171d2b;font-family:-apple-system,'Segoe UI',sans-serif}
-  @media (prefers-color-scheme:dark){body{background:#0b0c0e;color:#eaebed}}
+  body{margin:0;display:grid;min-height:100vh;place-items:center;background:#F6F7F9;color:#0B0E14;font-family:-apple-system,'Segoe UI',sans-serif}
+  @media (prefers-color-scheme:dark){body{background:#000000;color:#F2F4F7}}
   main{text-align:center;padding:24px;max-width:420px}
-  p.k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#b23528;font-weight:600;margin:0}
-  h1{font-size:26px;margin:12px 0 8px}
-  p.d{font-size:14px;line-height:1.6;opacity:.75;margin:0 0 24px}
-  button{padding:13px 28px;background:#b23528;color:#fff;border:0;border-radius:4px;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
-  button:hover{background:#7c241d}
+  p.k{font-size:14px;font-weight:700;margin:0}
+  h1{font-size:28px;letter-spacing:-0.02em;margin:14px 0 8px}
+  p.d{font-size:14.5px;line-height:1.6;opacity:.72;margin:0 0 26px}
+  button{padding:13px 28px;background:#B23528;color:#fff;border:0;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer}
+  button:hover{background:#8F2318}
 </style>
 </head>
 <body>
 <main>
   <p class="k">Earth Visa</p>
   <h1>Confirm @${rec.username}</h1>
-  <p class="d">One click locks in your Earthling ID and your reach of ${rec.reach} destinations.</p>
+  <p class="d">One click makes you a citizen of Earth on record - @${rec.username}, with a reach of ${rec.reach} destinations.</p>
   <form method="post" action="/api/earthling/verify">
     <input type="hidden" name="token" value="${token}">
     <button type="submit">Confirm @${rec.username}</button>

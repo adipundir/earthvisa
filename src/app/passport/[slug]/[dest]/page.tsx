@@ -11,6 +11,7 @@ import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "
 import { feesFor, relevantFees, variationFor, fmtFee, toUsd } from "@/lib/fees";
 import { applicationNoteFor } from "@/lib/applicationNotes";
 import VisaTypeDialog, { type VisaTypeMeta } from "@/components/VisaTypeDialog";
+import ReportIssue from "@/components/ReportIssue";
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
@@ -1447,6 +1448,9 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </details>
               ))}
             </div>
+            <p className="mt-4 text-[13px] text-ink-2">
+              Spotted wrong or outdated information? <ReportIssue />
+            </p>
           </section>
 
           {/* ── Related corridors (crawl mesh) ── */}

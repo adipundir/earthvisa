@@ -32,40 +32,39 @@ export default async function LeaderboardPage({ searchParams }: { searchParams: 
 
   return (
     <main className="min-h-screen">
-      <header className="border-b border-line-strong bg-paper-2/60">
-        <div className="mx-auto w-full max-w-4xl px-5 pt-6 pb-8 sm:px-8">
-          <nav className="mono mb-4 flex flex-wrap items-center gap-x-2 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">
-            <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
-            <span aria-hidden>/</span>
-            <Link href="/earthling" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earthling</Link>
-            <span aria-hidden>/</span>
-            <span className="inline-flex min-h-[44px] items-center text-ink">Leaderboard</span>
-          </nav>
-          <div className="rule-double" />
-          <h1 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight text-ink">
-            Earthling Leaderboard
-            <span className="block text-2xl font-normal italic text-ink-soft">Who can go the furthest?</span>
-          </h1>
-          <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-            {total} Earthling{total === 1 ? "" : "s"} · reach = passports + held visas · self-declared
-          </p>
-        </div>
-      </header>
-
       <div className="mx-auto w-full max-w-4xl px-5 pb-20 sm:px-8">
+        <nav aria-label="Breadcrumb" className="pt-6 text-[13px] font-medium text-ink-2">
+          <ol className="flex flex-wrap items-center gap-x-2">
+            <li><Link href="/" className="inline-flex min-h-[24px] items-center transition hover:text-ink">Earth Visa</Link></li>
+            <li aria-hidden="true" className="text-ink-3">/</li>
+            <li><Link href="/earthling" className="inline-flex min-h-[24px] items-center transition hover:text-ink">Earthling</Link></li>
+            <li aria-hidden="true" className="text-ink-3">/</li>
+            <li aria-current="page" className="font-semibold text-ink">Leaderboard</li>
+          </ol>
+        </nav>
+
+        <header className="mt-8">
+          <h1 className="text-[clamp(28px,3.8vw,42px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-ink">
+            Earthling leaderboard
+          </h1>
+          <p className="mt-3 max-w-2xl text-[15.5px] leading-relaxed text-ink-2">
+            Who can go the furthest? Reach counts every destination enterable without an embassy visa - your passports plus the visas you hold.
+          </p>
+          <p className="mt-2 text-[13px] font-medium tabular-nums text-ink-3">
+            {total} Earthling{total === 1 ? "" : "s"} · citizens of Earth · self-declared
+          </p>
+        </header>
+
         {presentCountries.length > 1 && (
           <div className="mt-8 flex flex-wrap gap-2">
-            <Link
-              href="/earthling/leaderboard"
-              className={`mono min-h-[36px] rounded-md border px-3 py-1.5 text-[12px] transition ${!filter ? "border-stamp bg-stamp/[0.08] text-stamp" : "border-line-strong text-ink-soft hover:border-stamp/40"}`}
-            >
+            <Link href="/earthling/leaderboard" className={`chip ${!filter ? "chip-active" : ""}`}>
               Global
             </Link>
             {presentCountries.map((c) => (
               <Link
                 key={c!.iso3}
                 href={`/earthling/leaderboard?country=${c!.iso3}`}
-                className={`mono min-h-[36px] rounded-md border px-3 py-1.5 text-[12px] transition ${filter === c!.iso3 ? "border-stamp bg-stamp/[0.08] text-stamp" : "border-line-strong text-ink-soft hover:border-stamp/40"}`}
+                className={`chip ${filter === c!.iso3 ? "chip-active" : ""}`}
               >
                 {isoToFlag(c!.iso2)} {c!.name}
               </Link>
@@ -74,30 +73,33 @@ export default async function LeaderboardPage({ searchParams }: { searchParams: 
         )}
 
         {rows.length === 0 ? (
-          <div className="mt-10 rounded-xl border border-dashed border-line px-6 py-16 text-center">
-            <p className="font-display text-xl font-semibold text-ink">The board is empty.</p>
-            <p className="mt-2 text-sm text-ink-soft">Somebody has to be Earthling #1.</p>
-            <Link href="/earthling" className="mono mt-6 inline-flex min-h-[44px] items-center rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white">
-              Claim your Earthling ID →
+          <div className="mt-10 rounded-xl border border-hair bg-surface px-6 py-16 text-center">
+            <p className="text-[20px] font-bold tracking-tight text-ink">The board is empty.</p>
+            <p className="mt-2 text-[14.5px] text-ink-2">Somebody has to be Earthling #1 - citizen of Earth.</p>
+            <Link
+              href="/earthling"
+              className="mt-6 inline-flex min-h-[46px] items-center justify-center rounded-lg bg-accent px-5 text-[14.5px] font-semibold text-white transition hover:bg-accent-deep dark:bg-accent-deep dark:hover:bg-accent"
+            >
+              Claim your Earthling ID
             </Link>
           </div>
         ) : (
-          <ol className="mt-8 divide-y divide-line">
+          <ol className="mt-8 divide-y divide-hair border-y border-hair">
             {rows.map((e, i) => (
               <li key={e.username}>
-                <Link href={`/earthling/${e.username}`} className="group flex min-h-[56px] items-center gap-4 py-3 transition">
-                  <span className={`mono w-8 text-right text-[15px] font-semibold tabular-nums ${i < 3 ? "text-stamp" : "text-ink-mute"}`}>{i + 1}</span>
-                  <span className="text-2xl">{isoToFlag(byIso3.get(e.passports[0])?.iso2 ?? "")}</span>
-                  <span className="font-display text-[16px] font-medium text-ink transition group-hover:text-stamp">@{e.username}</span>
-                  <span className="mono ml-auto text-[11px] uppercase tracking-[0.1em] text-ink-mute">beats {e.percentile}%</span>
-                  <span className="mono w-14 text-right text-[17px] font-bold tabular-nums text-stamp">{e.reach}</span>
+                <Link href={`/earthling/${e.username}`} className="group flex min-h-[56px] items-center gap-4 py-3">
+                  <span className={`w-8 shrink-0 text-right text-[15px] font-semibold tabular-nums ${i < 3 ? "text-ink" : "text-ink-3"}`}>{i + 1}</span>
+                  <span aria-hidden="true" className="text-2xl">{isoToFlag(byIso3.get(e.passports[0])?.iso2 ?? "")}</span>
+                  <span className="min-w-0 truncate text-[16px] font-semibold text-ink transition group-hover:text-accent">@{e.username}</span>
+                  <span className="ml-auto shrink-0 text-[13px] font-medium tabular-nums text-ink-3 max-sm:hidden">beats {e.percentile}%</span>
+                  <span className="w-14 shrink-0 text-right text-[17px] font-bold tabular-nums text-ink max-sm:ml-auto">{e.reach}</span>
                 </Link>
               </li>
             ))}
           </ol>
         )}
 
-        <p className="mono mt-10 max-w-2xl rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 text-[11px] leading-relaxed text-ink-mute">
+        <p className="mt-10 text-[13px] text-ink-3">
           Self-declared - a game, not a certification.
         </p>
       </div>

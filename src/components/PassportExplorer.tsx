@@ -650,6 +650,13 @@ export default function PassportExplorer() {
                 <> · {selected.map((s) => nameFor(s)).join(" + ")} passport{selected.length > 1 ? "s" : ""}</>
               )}
             </p>
+            {/* One quiet line (never a tour): the reach number is the hook for
+                the Earthling ID - claim it while it's on screen. */}
+            <p className="mt-2 text-[13px]">
+              <Link href="/earthling" className="relative text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-accent hover:underline">
+                Claim this reach as your Earthling ID - citizen of Earth, on record →
+              </Link>
+            </p>
           </div>
 
           {/* Level filter chips */}

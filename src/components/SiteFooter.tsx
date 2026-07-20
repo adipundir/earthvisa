@@ -3,6 +3,7 @@ import { dataset } from "@/lib/dataset";
 const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { fmtDate } from "@/lib/format";
 import BrandMark from "@/components/BrandMark";
+import ReportIssue from "@/components/ReportIssue";
 
 // Sitewide footer. Its main job beyond branding is reachability: it links every
 // hub, guide, program and popular list page from every route, so nothing is
@@ -100,6 +101,22 @@ export default function SiteFooter() {
           </span>
           <span className="h-3 w-px bg-hair-strong" aria-hidden="true" />
           <span>{TOTAL_PASSPORTS} passports tracked</span>
+          <span className="h-3 w-px bg-hair-strong" aria-hidden="true" />
+          <ReportIssue className="relative text-[13px] text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-ink hover:underline" />
+        </div>
+
+        {/* Bottom bar: copyright left, studio credit right (SpinalFluid
+            wordmark colors ported from the SpinalFluid brand). */}
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-x-6 gap-y-1.5 text-[13px] text-ink-2">
+          <span>© 2026 Earth Visa</span>
+          <a
+            href="https://tryspinalfluid.com"
+            target="_blank"
+            rel="noreferrer"
+            className="relative inline-flex items-center gap-1.5 py-1 transition hover:text-ink"
+          >
+            Product of <span className="font-semibold tracking-tight text-ink">Spinal<span className="sf-gold">fluid</span></span>
+          </a>
         </div>
       </div>
     </footer>

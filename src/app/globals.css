@@ -448,3 +448,16 @@ summary:focus-visible {
 ::-webkit-scrollbar-thumb { background: var(--line-strong); border: 3px solid var(--paper); border-radius: 10px; }
 
 /* voa amber 2026-07-20 */
+
+/* ── SpinalFluid studio credit ─────────────────────────────────────────────
+   The SpinalFluid wordmark's metallic-gold "fluid" (gradients ported verbatim
+   from the SpinalFluid brand). Used once, in the footer credit line. */
+.sf-gold {
+  background-image: linear-gradient(100deg, #B6831C 0%, #E7B73E 22%, #A5720F 46%, #EDC04F 70%, #B6831C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dark .sf-gold {
+  background-image: linear-gradient(100deg, #F3E4B4 0%, #CAA867 28%, #9C7634 50%, #D8B478 72%, #F3E4B4 100%);
+}

@@ -139,15 +139,15 @@ export default function EarthlingClaim({ countries, credentials }: {
 
   if (claimed?.pending) {
     return (
-      <div className="rounded-xl border border-line-strong bg-paper-2 px-6 py-8 text-center">
-        <p className="mono text-[11px] font-medium uppercase tracking-[0.18em] text-stamp">One step left</p>
-        <h2 className="mt-3 font-display text-3xl font-semibold text-ink">Check your inbox</h2>
-        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
-          We sent a confirmation link to <strong className="text-ink">{claimed.email}</strong>. Click it within
-          24 hours to activate <strong className="text-ink">@{claimed.username}</strong> and take your seat on
+      <div className="rounded-xl border border-hair bg-surface px-6 py-10 text-center">
+        <p className="text-[13px] font-semibold text-ink-2">One step left</p>
+        <h2 className="mt-2 text-[24px] font-bold tracking-tight text-ink">Check your inbox</h2>
+        <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-ink-2">
+          We sent a confirmation link to <strong className="font-semibold text-ink">{claimed.email}</strong>. Click it within
+          24 hours to activate <strong className="font-semibold text-ink">@{claimed.username}</strong> and take your seat on
           the leaderboard. Until then the name is only reserved - nothing is published.
         </p>
-        <p className="mono mt-6 text-[11px] uppercase tracking-[0.12em] text-ink-mute">
+        <p className="mt-6 text-[13px] font-medium tabular-nums text-ink-3">
           Your reach: {claimed.reach} destinations · beats {claimed.percentile}% of passports
         </p>
       </div>
@@ -156,17 +156,23 @@ export default function EarthlingClaim({ countries, credentials }: {
 
   if (claimed) {
     return (
-      <div className="rounded-xl border border-vfree/30 bg-vfree/[0.05] px-6 py-8 text-center">
-        <p className="mono text-[11px] font-medium uppercase tracking-[0.18em] text-vfree">Earthling #{claimed.seq} · claimed</p>
-        <h2 className="mt-3 font-display text-3xl font-semibold text-ink">@{claimed.username}</h2>
-        <p className="mt-4 font-display text-6xl font-bold tabular-nums text-stamp">{claimed.reach}</p>
-        <p className="mt-1 text-sm text-ink-soft">destinations reachable - more reach than {claimed.percentile}% of the world&apos;s passports</p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <a href={`/earthling/${claimed.username}`} className="mono inline-flex min-h-[44px] items-center rounded-sm border border-stamp bg-stamp/[0.07] px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-stamp transition hover:bg-stamp hover:text-white">
-            View your profile →
+      <div className="rounded-xl border border-hair bg-surface px-6 py-10 text-center">
+        <p className="text-[13px] font-semibold text-ink-2">Your Earthling ID - citizen of Earth #{claimed.seq}</p>
+        <h2 className="mt-2 text-[26px] font-bold tracking-tight text-ink">@{claimed.username}</h2>
+        <p className="stat-num mt-6 text-[clamp(56px,9vw,84px)] text-ink">{claimed.reach}</p>
+        <p className="mt-2 text-[15px] text-ink-2">destinations reachable - more reach than {claimed.percentile}% of the world&apos;s passports</p>
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={`/earthling/${claimed.username}`}
+            className="inline-flex min-h-[46px] items-center justify-center rounded-lg bg-accent px-5 text-[14.5px] font-semibold text-white transition hover:bg-accent-deep dark:bg-accent-deep dark:hover:bg-accent"
+          >
+            View your profile
           </a>
-          <button onClick={copyProfile} className="mono inline-flex min-h-[44px] items-center rounded-sm border border-line-strong px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-stamp hover:text-stamp">
-            {copied ? "Copied!" : "Copy share link"}
+          <button
+            onClick={copyProfile}
+            className="inline-flex min-h-[46px] items-center justify-center rounded-lg border border-hair-strong bg-surface px-5 text-[14.5px] font-semibold text-ink transition hover:border-ink-3"
+          >
+            {copied ? "Copied" : "Copy share link"}
           </button>
         </div>
       </div>
@@ -177,17 +183,17 @@ export default function EarthlingClaim({ countries, credentials }: {
     <div className="space-y-8">
       {/* Step 1: passports */}
       <div>
-        <p className="mono text-[11px] font-medium uppercase tracking-[0.18em] text-stamp">1 · Your passport{passports.length > 1 ? "s" : ""}</p>
+        <p className="text-[13px] font-semibold text-ink-2"><span className="tabular-nums">1 ·</span> Your passport{passports.length > 1 ? "s" : ""}</p>
         <div ref={boxRef} className="relative mt-3">
-          <div className="flex min-h-[52px] flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-card px-3 py-2 focus-within:border-stamp">
+          <div className="flex min-h-[52px] flex-wrap items-center gap-2 rounded-lg border border-hair-strong bg-surface px-3 py-2 transition focus-within:border-accent">
             {passports.map((p, i) => (
-              <span key={p.iso3} className="mono inline-flex items-center gap-1.5 rounded bg-paper-3 px-2 py-1 text-[12px] text-ink">
-                <span>{isoToFlag(p.iso2)}</span> {p.name}
-                {i === 0 && <span className="text-[9px] uppercase tracking-[0.08em] text-ink-mute">primary</span>}
+              <span key={p.iso3} className="inline-flex items-center gap-1.5 rounded-full border border-hair-strong bg-surface py-1 pl-2.5 pr-1 text-[13.5px] font-medium text-ink">
+                <span aria-hidden="true">{isoToFlag(p.iso2)}</span> {p.name}
+                {i === 0 && <span className="text-[11px] font-medium text-ink-3">primary</span>}
                 <button
                   onClick={() => setPassports(passports.filter((x) => x.iso3 !== p.iso3))}
                   aria-label={`Remove ${p.name}`}
-                  className="ml-0.5 text-ink-mute transition hover:text-stamp"
+                  className="grid h-6 w-6 place-items-center rounded-full text-[15px] text-ink-3 transition hover:bg-ground hover:text-change"
                 >×</button>
               </span>
             ))}
@@ -197,26 +203,26 @@ export default function EarthlingClaim({ countries, credentials }: {
                 onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
                 onFocus={() => setOpen(true)}
                 placeholder={passports.length ? "Add another passport…" : "Search your country…"}
-                className="min-w-[180px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-mute"
+                className="min-w-[180px] flex-1 bg-transparent py-1 text-[15px] text-ink outline-none placeholder:text-ink-3"
               />
             )}
           </div>
           {open && (query.trim() || matches.length > 0) && (
-            <ul role="listbox" className="absolute z-20 mt-1.5 w-full overflow-hidden rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/15">
+            <ul role="listbox" className="float-panel absolute z-20 mt-2 w-full overflow-hidden py-1.5">
               {!query.trim() && matches.length > 0 && (
-                <li aria-hidden="true" className="mono px-4 pb-1 pt-2 text-[10px] font-medium uppercase tracking-[0.16em] text-ink-mute">Popular passports - or type to search</li>
+                <li aria-hidden="true" className="px-4 pb-1 pt-1.5 text-[12px] font-semibold text-ink-3">Popular passports - or type to search</li>
               )}
               {matches.length === 0 && (
-                <li className="px-4 py-2.5 text-sm text-ink-mute">No country matches - check the spelling.</li>
+                <li className="px-4 py-2.5 text-[14px] text-ink-3">No country matches - check the spelling.</li>
               )}
               {matches.map((c) => (
                 <li key={c.iso3}>
                   <button
                     onClick={() => { setPassports([...passports, c]); setQuery(""); setOpen(false); }}
-                    className="flex min-h-[44px] w-full items-center gap-3 px-4 py-2 text-left transition hover:bg-paper-3"
+                    className="flex min-h-[44px] w-full items-center gap-3 px-4 py-2 text-left transition hover:bg-ground"
                   >
-                    <span className="text-xl">{isoToFlag(c.iso2)}</span>
-                    <span className="font-display text-[15px] text-ink">{c.name}</span>
+                    <span aria-hidden="true" className="text-xl">{isoToFlag(c.iso2)}</span>
+                    <span className="text-[15px] font-medium text-ink">{c.name}</span>
                   </button>
                 </li>
               ))}
@@ -227,7 +233,10 @@ export default function EarthlingClaim({ countries, credentials }: {
 
       {/* Step 2: credentials */}
       <div>
-        <p className="mono text-[11px] font-medium uppercase tracking-[0.18em] text-stamp">2 · Visas &amp; permits you hold <span className="normal-case tracking-normal text-ink-mute">(optional - this is how you beat your passport&apos;s baseline)</span></p>
+        <p className="text-[13px] font-semibold text-ink-2">
+          <span className="tabular-nums">2 ·</span> Visas &amp; permits you hold{" "}
+          <span className="font-normal text-ink-3">(optional - this is how you beat your passport&apos;s baseline)</span>
+        </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {credentials.map((c) => {
             const on = creds.has(c.id);
@@ -240,8 +249,8 @@ export default function EarthlingClaim({ countries, credentials }: {
                   setCreds(next);
                 }}
                 aria-pressed={on}
-                className={`mono min-h-[36px] rounded-md border px-3 py-1.5 text-[12px] transition ${
-                  on ? "border-stamp bg-stamp/[0.08] text-stamp" : "border-line-strong bg-paper-2/60 text-ink-soft hover:border-stamp/40 hover:text-ink"
+                className={`inline-flex min-h-[36px] items-center rounded-full border px-3.5 py-1 text-[13.5px] font-medium transition ${
+                  on ? "border-accent/45 bg-surface text-accent" : "border-hair-strong bg-surface text-ink-2 hover:border-ink-3 hover:text-ink"
                 }`}
               >
                 {c.label}
@@ -253,22 +262,22 @@ export default function EarthlingClaim({ countries, credentials }: {
 
       {/* The number */}
       {passports.length > 0 && (
-        <div className="rounded-xl border border-line-strong bg-paper-2 px-6 py-8 text-center">
+        <div className="rounded-xl border border-hair bg-surface px-6 py-8 text-center">
           {reach ? (
             <>
-              <p className={`font-display text-7xl font-bold tabular-nums text-stamp transition-opacity ${loadingReach ? "opacity-40" : ""}`}>{reach.total}</p>
-              <p className="mt-2 text-base text-ink-soft">
-                destinations without an embassy visa - <strong className="text-ink">more reach than {reach.percentile}% of the world&apos;s passports</strong>
+              <p className={`stat-num text-[clamp(56px,9vw,84px)] text-ink transition-opacity ${loadingReach ? "opacity-40" : ""}`}>{reach.total}</p>
+              <p className="mt-3 text-[15px] text-ink-2">
+                destinations without an embassy visa - <strong className="font-semibold text-ink">more reach than {reach.percentile}% of the world&apos;s passports</strong>
               </p>
-              <p className="mono mt-3 text-[11px] uppercase tracking-[0.12em] text-ink-mute">
+              <p className="mt-2 text-[13px] font-medium tabular-nums text-ink-3">
                 {reach.visaFree} visa-free · {reach.visaOnArrival} on arrival · {reach.etaOrEvisa} eTA / e-visa
               </p>
             </>
           ) : (
             reachError ? (
-              <p className="text-sm text-stamp">Couldn&apos;t compute your reach - check your connection, then tap a passport chip to retry.</p>
+              <p className="text-[14px] text-change">Couldn&apos;t compute your reach - check your connection, then tap a passport chip to retry.</p>
             ) : (
-              <p className="text-sm text-ink-mute">Computing your reach…</p>
+              <p className="text-[14px] text-ink-3">Computing your reach…</p>
             )
           )}
         </div>
@@ -277,22 +286,22 @@ export default function EarthlingClaim({ countries, credentials }: {
       {/* Step 3: claim */}
       {reach && (
         <div>
-          <p className="mono text-[11px] font-medium uppercase tracking-[0.18em] text-stamp">3 · Claim your Earthling ID</p>
+          <p className="text-[13px] font-semibold text-ink-2"><span className="tabular-nums">3 ·</span> Claim your Earthling ID - citizen of Earth</p>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             <div>
-              <div className="flex items-center rounded-lg border border-line-strong bg-card px-3 focus-within:border-stamp">
-                <span className="mono text-[15px] text-ink-mute">earthvisa.in/@</span>
+              <div className="flex items-center rounded-lg border border-hair-strong bg-surface px-3 transition focus-within:border-accent">
+                <span className="text-[15px] tabular-nums text-ink-3">earthvisa.in/@</span>
                 <input
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="yourname"
                   maxLength={19}
-                  className="min-h-[48px] flex-1 bg-transparent text-[15px] text-ink outline-none placeholder:text-ink-mute"
+                  className="min-h-[48px] flex-1 bg-transparent text-[15px] text-ink outline-none placeholder:text-ink-3"
                 />
               </div>
               {availability && (
-                <p className={`mono mt-1.5 text-[11px] ${availability.available ? "text-vfree" : "text-stamp"}`}>
-                  {availability.available ? "✓ available" : availability.reason ?? "taken"}
+                <p className={`mt-1.5 text-[13px] font-medium ${availability.available ? "text-ink-2" : "text-change"}`}>
+                  {availability.available ? "Available" : availability.reason ?? "Taken"}
                 </p>
               )}
             </div>
@@ -301,19 +310,19 @@ export default function EarthlingClaim({ countries, credentials }: {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@email.com"
               type="email"
-              className="min-h-[48px] self-start rounded-lg border border-line-strong bg-card px-3 py-[11px] text-[15px] text-ink outline-none placeholder:text-ink-mute focus:border-stamp"
+              className="min-h-[48px] self-start rounded-lg border border-hair-strong bg-surface px-3 py-[11px] text-[15px] text-ink outline-none transition placeholder:text-ink-3 focus:border-accent"
             />
           </div>
-          <p className="mono mt-2 text-[11px] leading-relaxed text-ink-mute">
+          <p className="mt-2 max-w-2xl text-[13px] leading-relaxed text-ink-3">
             Your email is only used for reach-change alerts (e.g. a destination opens up for your passport). Holdings stay private - your profile shows the number, never the list.
           </p>
-          {claimError && <p className="mt-2 text-sm text-stamp">{claimError}</p>}
+          {claimError && <p className="mt-2 text-[14px] text-change">{claimError}</p>}
           <button
             onClick={claim}
             disabled={claiming || !availability?.available || !email.includes("@")}
-            className="mono mt-4 inline-flex min-h-[48px] items-center rounded-sm border border-stamp bg-stamp px-6 py-2.5 text-[13px] uppercase tracking-[0.15em] text-white transition hover:bg-stamp-deep disabled:cursor-not-allowed disabled:opacity-40"
+            className="mt-4 inline-flex min-h-[48px] items-center justify-center rounded-lg bg-accent px-6 text-[15px] font-semibold text-white transition hover:bg-accent-deep disabled:cursor-not-allowed disabled:opacity-40 dark:bg-accent-deep dark:hover:bg-accent"
           >
-            {claiming ? "Claiming…" : `Claim @${username.trim().toLowerCase() || "…"} →`}
+            {claiming ? "Claiming…" : `Claim @${username.trim().toLowerCase() || "…"}`}
           </button>
         </div>
       )}

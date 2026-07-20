@@ -25,27 +25,28 @@ export async function sendClaimVerificationEmail(opts: {
   const from = process.env.EMAIL_FROM || "Earth Visa <onboarding@resend.dev>";
 
   const { to, username, reach, percentile, verifyUrl } = opts;
+  // v2 "Instrument" styling: sentence case (no uppercase-tracking chrome),
+  // system sans (Archivo isn't email-safe), one red button, quiet meta.
   const html = `
-<div style="margin:0 auto;max-width:520px;padding:32px 24px;font-family:'IBM Plex Sans',-apple-system,Segoe UI,sans-serif;color:#171d2b">
-  <p style="margin:0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#b23528;font-weight:600">Earth Visa</p>
-  <h1 style="margin:12px 0 0;font-size:24px;line-height:1.3">Confirm your Earthling ID</h1>
-  <p style="margin:16px 0 0;font-size:15px;line-height:1.6;color:#434a59">
-    You claimed <strong style="color:#171d2b">@${username}</strong>. Your reach is
-    <strong style="color:#b23528">${reach} destinations</strong> - more than ${percentile}% of the
-    world's passports. One click locks it in:
+<div style="margin:0 auto;max-width:520px;padding:36px 24px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:#0B0E14">
+  <p style="margin:0;font-size:14px;font-weight:700;color:#0B0E14">Earth Visa</p>
+  <h1 style="margin:20px 0 0;font-size:26px;line-height:1.25;letter-spacing:-0.02em;font-weight:800">You're @${username}, citizen of Earth</h1>
+  <p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#525E6E">
+    Your reach is <strong style="color:#0B0E14">${reach} destinations</strong> without an embassy visit -
+    more than ${percentile}% of the world's passports. One click makes it official:
   </p>
-  <p style="margin:24px 0">
+  <p style="margin:26px 0">
     <a href="${verifyUrl}"
-       style="display:inline-block;padding:12px 24px;background:#b23528;color:#ffffff;text-decoration:none;border-radius:4px;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">
+       style="display:inline-block;padding:13px 26px;background:#B23528;color:#ffffff;text-decoration:none;border-radius:8px;font-size:15px;font-weight:600">
       Confirm @${username}
     </a>
   </p>
-  <p style="margin:16px 0 0;font-size:13px;line-height:1.6;color:#5e6573">
+  <p style="margin:16px 0 0;font-size:13px;line-height:1.6;color:#525E6E">
     The link expires in 24 hours, after which the name frees up again.
     If you didn't claim this, ignore this email - nothing is published without confirmation.
   </p>
-  <p style="margin:24px 0 0;padding-top:16px;border-top:1px solid #e4e5e8;font-size:12px;color:#5e6573">
-    Earth Visa · official-source visa data · <a href="https://earthvisa.in" style="color:#b23528">earthvisa.in</a>
+  <p style="margin:28px 0 0;padding-top:16px;border-top:1px solid #E2E6EB;font-size:12.5px;color:#525E6E">
+    Earth Visa · visa data from official sources only · <a href="https://earthvisa.in" style="color:#B23528;text-decoration:none">earthvisa.in</a>
   </p>
 </div>`;
 
@@ -56,7 +57,7 @@ export async function sendClaimVerificationEmail(opts: {
       body: JSON.stringify({
         from,
         to: [to],
-        subject: `Confirm @${username} - your reach is ${reach} destinations`,
+        subject: `Confirm @${username} · citizen of Earth with ${reach} destinations`,
         html,
       }),
     });
