@@ -19,10 +19,10 @@ export default function AppleIcon() {
         }}
       >
         <svg width="118" height="118" viewBox="0 0 48 48">
-          <circle cx="24" cy="24" r="8.5" fill="#fffdf8" />
+          <circle cx="24" cy="24" r="8.5" fill="#ffffff" />
           <g transform="rotate(-26 24 24)">
-            <ellipse cx="24" cy="24" rx="16" ry="6.1" fill="none" stroke="#fffdf8" strokeWidth={2.4} />
-            <circle cx="40" cy="24" r="3.1" fill="#11203a" />
+            <ellipse cx="24" cy="24" rx="16" ry="6.1" fill="none" stroke="#ffffff" strokeWidth={2.4} />
+            <circle cx="40" cy="24" r="3.1" fill="#0b0e14" />
           </g>
         </svg>
       </div>

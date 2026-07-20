@@ -8,11 +8,12 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Brand palette (matches globals.css / icon.svg)
-const PAPER = "#f6f2e9";
-const INK = "#11203a";
-const RED = "#b23528";
-const INK_SOFT = "#3c4a63";
+// Brand palette - Design System v2 "Instrument" (matches globals.css). The prior
+// warm-paper/document identity (cream ground, navy ink, ruled frame) is dead.
+const PAPER = "#f6f7f9"; // cool ground
+const INK = "#0b0e14";
+const RED = "#b23528"; // brand red accent (used once, on the mark tile)
+const INK_SOFT = "#525e6e"; // secondary
 
 export default function Image() {
   return new ImageResponse(
@@ -25,10 +26,8 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           background: PAPER,
-          padding: "72px 80px",
+          padding: "76px 80px",
           fontFamily: "sans-serif",
-          // faint frame so the card reads as a "document"
-          border: `10px solid ${INK}`,
         }}
       >
         {/* Brand lockup: Orbit mark + wordmark */}
@@ -45,10 +44,10 @@ export default function Image() {
             }}
           >
             <svg width="66" height="66" viewBox="0 0 48 48">
-              <circle cx="24" cy="24" r="8.5" fill="#fffdf8" />
+              <circle cx="24" cy="24" r="8.5" fill="#ffffff" />
               <g transform="rotate(-26 24 24)">
-                <ellipse cx="24" cy="24" rx="16" ry="6.1" fill="none" stroke="#fffdf8" strokeWidth={2.4} />
-                <circle cx="40" cy="24" r="3.1" fill="#11203a" />
+                <ellipse cx="24" cy="24" rx="16" ry="6.1" fill="none" stroke="#ffffff" strokeWidth={2.4} />
+                <circle cx="40" cy="24" r="3.1" fill="#0b0e14" />
               </g>
             </svg>
           </div>
@@ -93,16 +92,14 @@ export default function Image() {
           </div>
         </div>
 
-        {/* Footer rule */}
+        {/* Footer */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            fontSize: 26,
-            color: RED,
-            fontWeight: 600,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
+            fontSize: 28,
+            color: INK_SOFT,
+            fontWeight: 500,
           }}
         >
           earthvisa.in
