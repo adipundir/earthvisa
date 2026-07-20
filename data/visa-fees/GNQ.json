@@ -1,73 +1,97 @@
 {
-  "iso3": "GNQ",
-  "name": "Equatorial Guinea",
-  "updated": "2026-07-02",
-  "confidence": "medium",
-  "fees": [
-    {
-      "kind": "e_visa",
-      "name": "E-Visa (single-entry, tourism and business)",
-      "amount": 75,
-      "currency": "USD",
-      "amount_usd": 75,
-      "validity": "90 days to enter; single entry, stay up to 90 days (some sources cite 30-day stay)",
-      "applies": "all nationalities requiring a visa",
-      "official": true,
-      "source_url": "https://equatorialguinea-evisa.com/",
-      "notes": "Official e-visa portal launched 1 July 2023 (equatorialguinea-evisa.com / egonline.vfsevisa.com, VFS Global technical partner). Fee payable only in USD by card. Processing ~24-72 hours to 5 working days. E-visa holders must arrive via Malabo International Airport. Portal blocked automated fetch; USD 75 fee corroborated by Fragomen and VFS Global press release."
-    },
-    {
-      "kind": "tourist_visa",
-      "name": "Embassy-issued sticker visa (tourist)",
-      "amount": null,
-      "currency": "USD",
-      "amount_usd": null,
-      "validity": null,
-      "applies": "all",
-      "official": false,
-      "source_url": "https://www.fragomen.com/insights/equatorial-guinea-e-visa-portal-to-be-operational-in-july.html",
-      "notes": "The e-visa platform replaced routine embassy visa applications from 1 July 2023; no current official embassy fee schedule could be verified. Amount left null rather than estimated."
-    },
-    {
-      "kind": "business_visa",
-      "name": "Business visa (via e-visa platform)",
-      "amount": 75,
-      "currency": "USD",
-      "amount_usd": 75,
-      "validity": "single entry",
-      "applies": "all nationalities requiring a visa",
-      "official": true,
-      "source_url": "https://www.vfsglobal.com/en/PDF/media-releases/2023/MR_20230619_EquitorialGuineaevisadraft.pdf",
-      "notes": "The single-entry e-visa covers both tourism and business travel at the same USD 75 fee."
-    },
-    {
-      "kind": "visa_on_arrival",
-      "name": "Visa on arrival",
-      "amount": null,
-      "currency": "USD",
-      "amount_usd": null,
-      "validity": null,
-      "applies": "not generally available",
-      "official": false,
-      "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Equatorial_Guinea",
-      "notes": "No general visa-on-arrival regime; travellers must obtain the e-visa before travel. UAE citizens are visa-exempt (90 days)."
-    }
-  ],
-  "reciprocity_variations": [],
-  "vfs": {
-    "used": true,
-    "operator": "VFS Global (VFS e-Visa technical partner)",
-    "service_fee": null,
-    "currency": "USD",
-    "note": "VFS Global operates the official e-visa platform (egonline.vfsevisa.com); no separately published VFS service fee was verifiable - the USD 75 appears to be the total published fee. No physical VFS/TLS/BLS visa application centres for Equatorial Guinea.",
-    "source_url": "https://www.vfsglobal.com/en/PDF/media-releases/2023/MR_20230619_EquitorialGuineaevisadraft.pdf"
+ "iso3": "GNQ",
+ "name": "Equatorial Guinea",
+ "updated": "2026-07-02",
+ "confidence": "medium",
+ "fees": [
+  {
+   "kind": "e_visa",
+   "name": "E-Visa (single-entry, tourism and business)",
+   "amount": 75,
+   "currency": "USD",
+   "amount_usd": 75,
+   "validity": "90 days to enter; single entry, stay up to 90 days (some sources cite 30-day stay)",
+   "applies": "all nationalities requiring a visa",
+   "official": true,
+   "source_url": "https://equatorialguinea-evisa.com/",
+   "notes": "Official e-visa portal launched 1 July 2023 (equatorialguinea-evisa.com / egonline.vfsevisa.com, VFS Global technical partner). Fee payable only in USD by card. Processing ~24-72 hours to 5 working days. E-visa holders must arrive via Malabo International Airport. Portal blocked automated fetch; USD 75 fee corroborated by Fragomen and VFS Global press release."
   },
-  "sources": [
-    "https://equatorialguinea-evisa.com/",
-    "https://egonline.vfsevisa.com/gnq/en",
-    "https://www.vfsglobal.com/en/PDF/media-releases/2023/MR_20230619_EquitorialGuineaevisadraft.pdf",
-    "https://www.fragomen.com/insights/equatorial-guinea-e-visa-portal-to-be-operational-in-july.html",
-    "https://en.wikipedia.org/wiki/Visa_policy_of_Equatorial_Guinea"
-  ],
-  "free_visa_notes": "Visa-free entry only for citizens of Barbados, Tunisia (30 days), Turkey (90 days), UAE (90 days), and CEMAC nationals (Cameroon, CAR, Chad, Congo, Gabon) with ID card or biometric passport. Everyone else needs the USD 75 e-visa."
+  {
+   "kind": "tourist_visa",
+   "name": "Embassy-issued sticker visa (tourist)",
+   "amount": null,
+   "currency": "USD",
+   "amount_usd": null,
+   "validity": null,
+   "applies": "all",
+   "official": false,
+   "source_url": "https://www.fragomen.com/insights/equatorial-guinea-e-visa-portal-to-be-operational-in-july.html",
+   "notes": "The e-visa platform replaced routine embassy visa applications from 1 July 2023; no current official embassy fee schedule could be verified. Amount left null rather than estimated."
+  },
+  {
+   "kind": "business_visa",
+   "name": "Business visa (via e-visa platform)",
+   "amount": 75,
+   "currency": "USD",
+   "amount_usd": 75,
+   "validity": "single entry",
+   "applies": "all nationalities requiring a visa",
+   "official": true,
+   "source_url": "https://www.vfsglobal.com/en/PDF/media-releases/2023/MR_20230619_EquitorialGuineaevisadraft.pdf",
+   "notes": "The single-entry e-visa covers both tourism and business travel at the same USD 75 fee."
+  },
+  {
+   "kind": "visa_on_arrival",
+   "name": "Visa on arrival",
+   "amount": null,
+   "currency": "USD",
+   "amount_usd": null,
+   "validity": null,
+   "applies": "not generally available",
+   "official": false,
+   "source_url": "https://en.wikipedia.org/wiki/Visa_policy_of_Equatorial_Guinea",
+   "notes": "No general visa-on-arrival regime; travellers must obtain the e-visa before travel. UAE citizens are visa-exempt (90 days)."
+  },
+  {
+   "kind": "e_visa",
+   "name": "E-Visa (EUR fee, stays under 90 days)",
+   "amount": 105,
+   "currency": "EUR",
+   "amount_usd": null,
+   "validity": "stays under 90 days",
+   "applies": null,
+   "official": true,
+   "source_url": "https://www.exteriores.gob.es/Embajadas/malabo/es/Paginas/index.aspx",
+   "notes": "EUR 105 for stays under 90 days, per the country visa_policy e_visa note (Spanish MFA June 2026 re-confirmation). Processing 72 hours after payment."
+  },
+  {
+   "kind": "tourist_visa",
+   "name": "Embassy visa (90-180 day stay)",
+   "amount": 300,
+   "currency": "USD",
+   "amount_usd": null,
+   "validity": "90-180 day stays",
+   "applies": null,
+   "official": true,
+   "source_url": "https://www.egembassydc.com/",
+   "notes": "Embassy of Equatorial Guinea in Washington DC lists USD 300 for 90-180 day stays (USD 200 standard), per the country visa_policy e_visa note. Cash no longer accepted as of 7 February 2025; online or money order only."
+  }
+ ],
+ "reciprocity_variations": [],
+ "vfs": {
+  "used": true,
+  "operator": "VFS Global (VFS e-Visa technical partner)",
+  "service_fee": null,
+  "currency": "USD",
+  "note": "VFS Global operates the official e-visa platform (egonline.vfsevisa.com); no separately published VFS service fee was verifiable - the USD 75 appears to be the total published fee. No physical VFS/TLS/BLS visa application centres for Equatorial Guinea.",
+  "source_url": "https://www.vfsglobal.com/en/PDF/media-releases/2023/MR_20230619_EquitorialGuineaevisadraft.pdf"
+ },
+ "sources": [
+  "https://equatorialguinea-evisa.com/",
+  "https://egonline.vfsevisa.com/gnq/en",
+  "https://www.vfsglobal.com/en/PDF/media-releases/2023/MR_20230619_EquitorialGuineaevisadraft.pdf",
+  "https://www.fragomen.com/insights/equatorial-guinea-e-visa-portal-to-be-operational-in-july.html",
+  "https://en.wikipedia.org/wiki/Visa_policy_of_Equatorial_Guinea"
+ ],
+ "free_visa_notes": "Visa-free entry only for citizens of Barbados, Tunisia (30 days), Turkey (90 days), UAE (90 days), and CEMAC nationals (Cameroon, CAR, Chad, Congo, Gabon) with ID card or biometric passport. Everyone else needs the USD 75 e-visa."
 }

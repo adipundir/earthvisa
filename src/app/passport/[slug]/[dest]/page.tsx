@@ -12,6 +12,7 @@ import { feesFor, relevantFees, variationFor, fmtFee, toUsd } from "@/lib/fees";
 import { applicationNoteFor } from "@/lib/applicationNotes";
 import VisaTypeDialog, { type VisaTypeMeta } from "@/components/VisaTypeDialog";
 import ReportIssue from "@/components/ReportIssue";
+import { residualSentences } from "@/lib/residual-notes";
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
@@ -558,9 +559,9 @@ function FactStrip({ cells }: { cells: FactCell[] }) {
               </>
             ) : c.kind === "num" ? (
               <>
-                {/* Long numerals ("500,000") overflow a phone-width cell at the
-                    38px floor - scale with the viewport below sm instead. */}
-                <p className={`stat-num text-ink ${String(c.num).length >= 7 ? "text-[clamp(26px,9vw,60px)] sm:text-[clamp(38px,4.2vw,60px)]" : "text-[clamp(38px,4.2vw,60px)]"}`}>{c.num}</p>
+                {/* Long numerals ("500,000", "100,000") overflow their cell at
+                    the full stat scale on every breakpoint - cap them lower. */}
+                <p className={`stat-num text-ink ${String(c.num).length >= 7 ? "text-[clamp(26px,9vw,44px)] sm:text-[clamp(30px,3vw,44px)]" : "text-[clamp(38px,4.2vw,60px)]"}`}>{c.num}</p>
                 {c.unit && <p className="mt-2 text-[15px] font-bold text-ink">{c.unit}</p>}
                 {c.detail && <p className="mt-0.5 text-[13.5px] font-medium text-ink-2">{c.detail}</p>}
               </>
@@ -847,13 +848,19 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const curStay = "maxStayDays" in s ? s.maxStayDays : null;
   const noteParsed = "notes" in s && s.notes ? parseNotes(s.notes) : null;
   const change = noteParsed && noteParsed.changeSentences.length > 0 ? parseChange(noteParsed.changeSentences, curStay) : null;
+  // Structured-first: sentences that only restate fee tiers / processing
+  // speeds / stay menus already rendered as data (fee section, stat strip,
+  // visa-type cards) are dropped; caveats always survive (residual-notes.ts).
+  const factsShown = { fees: feeList.length > 0 || feeVariation?.amount != null, types: visaTypes.length > 0 };
+  const residualLead = noteParsed ? residualSentences(noteParsed.leadSentences, factsShown.fees, factsShown.types) : [];
+  const residualBullets = noteParsed ? residualSentences(noteParsed.bullets, factsShown.fees, factsShown.types) : [];
   // On short-note kinds the note's first sentence IS the verdict context
   // ("Visa exemption for tourism and short-term business, effective 15 July
   // 2024.") - promote it into the verdict sub-line. Researched advance notes
   // on visa-required corridors are real content and keep their own block.
-  const promotedLead = noteParsed && s.kind !== "visa_required" ? noteParsed.leadSentences[0] ?? null : null;
-  const policyLead = noteParsed ? (promotedLead ? noteParsed.leadSentences.slice(1) : noteParsed.leadSentences) : [];
-  const showPolicy = !!noteParsed && (policyLead.length > 0 || noteParsed.bullets.length > 0);
+  const promotedLead = noteParsed && s.kind !== "visa_required" ? residualLead[0] ?? null : null;
+  const policyLead = promotedLead ? residualLead.slice(1) : residualLead;
+  const showPolicy = !!noteParsed && (policyLead.length > 0 || residualBullets.length > 0);
 
   const verdict = (() => {
     switch (s.kind) {
@@ -1086,11 +1093,11 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 {policyLead.length > 1 && (
                   <p className="mt-1.5 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">{policyLead.slice(1).join(" ")}</p>
                 )}
-                {noteParsed.bullets.length > 0 && (
+                {residualBullets.length > 0 && (
                   <>
                     {noteParsed.listLabel && <p className="mt-3 text-[13px] font-semibold text-ink-2">{noteParsed.listLabel}</p>}
                     <ul className={`${noteParsed.listLabel ? "mt-1.5" : "mt-3"} max-w-3xl space-y-1`}>
-                      {noteParsed.bullets.map((b, i) => (
+                      {residualBullets.map((b, i) => (
                         <li key={i} className="flex gap-2.5 text-[14.5px] leading-relaxed text-ink-2">
                           <span aria-hidden="true" className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
                           <span className="min-w-0 break-words">{b}</span>

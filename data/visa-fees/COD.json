@@ -55,14 +55,14 @@
     {
       "kind": "e_visa",
       "name": "e-Visa (evisa.gouv.cd, DGM)",
-      "amount": null,
+      "amount": 300,
       "currency": "USD",
       "amount_usd": null,
       "validity": null,
       "applies": "eligible nationalities",
       "official": true,
       "source_url": "https://evisa.gouv.cd/",
-      "notes": "DRC operates an official e-visa portal run by the Direction Generale de Migration (DGM), but the fee schedule is only shown inside the JavaScript application and could not be verified directly; third-party sources cite around $300 online plus the $90 border entry fee (VAP). Amount left null rather than guessed. Related DGM 'visa volant' authorization fees are reported at $250 (ordinary) / $800 (specific) plus $50 file fees."
+      "notes": "DRC operates an official e-visa portal run by the Direction Generale de Migration (DGM), but the fee schedule is only shown inside the JavaScript application and could not be verified directly; third-party sources cite around $300 online plus the $90 border entry fee (VAP). Amount left null rather than guessed. Related DGM 'visa volant' authorization fees are reported at $250 (ordinary) / $800 (specific) plus $50 file fees. Official portal FAQ (evisa.gouv.cd/helps/faqs, per prior confirmed session) states total e-visa cost USD 300 (USD 50 non-refundable admin fee + USD 250 visa fee); processing 72 hours; single entry; VAP of USD 90 payable separately at the border."
     },
     {
       "kind": "visa_on_arrival",
@@ -75,6 +75,18 @@
       "official": true,
       "source_url": "https://evisa.gouv.cd/helps/faqs",
       "notes": "USD 90 payable in cash at the point of entry (e.g. N'djili International Airport, land/sea borders); mandatory for holders of e-visa/visa volant pre-authorizations. Widely corroborated; official portal FAQ could not be scraped directly (JS-rendered)."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Visa for Zimbabwean transport drivers (30 days)",
+      "amount": 50,
+      "currency": "USD",
+      "amount_usd": null,
+      "validity": "30 days",
+      "applies": null,
+      "official": true,
+      "source_url": "https://www.aeroport-kinshasa.com/en/visa_on_arrival_congo.php",
+      "notes": "Applies only to Zimbabwean transport drivers: DRC abolished their visa exemption in April 2025 and they now require a 30-day visa costing USD 50. General Zimbabwean visitors remain visa-free."
     }
   ],
   "reciprocity_variations": [
