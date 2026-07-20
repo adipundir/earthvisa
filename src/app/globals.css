@@ -220,6 +220,19 @@ body {
 .tile-voa:hover { border-color: var(--stamp); }
 .tile-online  { background: var(--fill-online); }
 .tile-req     { background: var(--fill-req); }
+/* Dark grid, softened (owner: the saturated data hues read as neon on black).
+   Fills sink closer to the ground, the amber border thins, and tile LABELS mix
+   toward the neutral scale - full-strength hues stay for verdict words and
+   light mode, which the owner signed off on. */
+.dark .tile-free   { background: #091509; }
+.dark .tile-online { background: #0B0D15; }
+.dark .tile-req    { background: #190C0A; }
+.dark .tile-voa    { border-color: color-mix(in srgb, var(--voa) 26%, transparent); }
+.dark .tile-voa:hover { border-color: var(--stamp); }
+.dark .tile .text-verdict { color: color-mix(in srgb, var(--vfree) 48%, var(--ink-2)); }
+.dark .tile .text-voa     { color: color-mix(in srgb, var(--voa) 48%, var(--ink-2)); }
+.dark .tile .text-online  { color: color-mix(in srgb, var(--online) 48%, var(--ink-2)); }
+.dark .tile .text-change  { color: color-mix(in srgb, var(--change) 42%, var(--ink-2)); }
 
 /* Floating surfaces (dropdowns / dialogs) - the single allowed soft shadow. */
 .float-panel {
