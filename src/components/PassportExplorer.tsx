@@ -669,8 +669,9 @@ export default function PassportExplorer() {
             </p>
             </div>
             {/* The reach map fills the count row's empty right half on
-                desktop - same hues as the grid, no text. */}
-            <div className="hidden min-w-0 max-w-[560px] flex-1 lg:block" aria-hidden="true">
+                desktop - same hues as the grid, no text. Nudged below the
+                count's baseline so it reads as part of the row, not the nav. */}
+            <div className="hidden min-w-0 max-w-[560px] flex-1 lg:mt-14 lg:block" aria-hidden="true">
               <WorldDotMap kinds={kindByIso3} selected={selected} />
             </div>
           </div>
