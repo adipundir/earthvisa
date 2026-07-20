@@ -648,7 +648,14 @@ export default function PassportExplorer() {
         <DataPending />
       ) : (
         <>
-          <div className="mt-8 flex items-center gap-10" aria-live="polite">
+          <div className="relative mt-8" aria-live="polite">
+            {/* The reach map paints BEHIND the count row (absolute, first in
+                source order, pointer-events off) so it fills the empty right
+                half without adding a pixel of height - the filter bar below
+                keeps its original rhythm. */}
+            <div className="pointer-events-none absolute right-0 top-1/2 hidden w-[min(46%,560px)] -translate-y-[42%] lg:block" aria-hidden="true">
+              <WorldDotMap kinds={kindByIso3} selected={selected} />
+            </div>
             <div className="min-w-0">
             <p className="stat-num text-[clamp(88px,13vw,148px)] text-ink">
               {shown}
@@ -667,12 +674,6 @@ export default function PassportExplorer() {
                 Claim this reach as your Earthling ID - citizen of Earth, on record →
               </Link>
             </p>
-            </div>
-            {/* The reach map fills the count row's empty right half on
-                desktop - same hues as the grid, no text. Nudged below the
-                count's baseline so it reads as part of the row, not the nav. */}
-            <div className="hidden min-w-0 max-w-[560px] flex-1 lg:mt-14 lg:block" aria-hidden="true">
-              <WorldDotMap kinds={kindByIso3} selected={selected} />
             </div>
           </div>
 
