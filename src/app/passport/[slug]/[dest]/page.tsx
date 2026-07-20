@@ -859,7 +859,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       case "own": return { word: "No visa", cls: "text-verdict", sub: "It's your own country." };
       case "fom": return { word: "No visa", cls: "text-verdict", sub: "Freedom of movement - live, work and travel." };
       case "visa_free": return { word: "Visa-free", cls: "text-verdict", sub: "Nothing to arrange." };
-      case "visa_on_arrival": return { word: "Visa on arrival", cls: "text-verdict", sub: "Issued at the border." };
+      case "visa_on_arrival": return { word: "Visa on arrival", cls: "text-voa", sub: "Issued at the border." };
       case "eta": return { word: "eTA", cls: "text-online", sub: "Online approval before you fly - not a visa." };
       case "e_visa": return { word: "e-Visa", cls: "text-online", sub: "Apply online - no embassy visit." };
       default: return travelBanned
@@ -1180,7 +1180,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               <div className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
                 {credGroups.map((group, gi) => (
                   <div key={gi} className="py-4">
-                    <p className="text-[15px] font-bold text-verdict">
+                    <p className={`text-[15px] font-bold ${group[0].level === "visa_on_arrival" ? "text-voa" : group[0].level === "eta" || group[0].level === "e_visa" ? "text-online" : "text-verdict"}`}>
                       {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
                     </p>
                     {group.some((u) => u.label) && (

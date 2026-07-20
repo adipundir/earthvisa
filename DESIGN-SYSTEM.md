@@ -26,6 +26,10 @@ five. One obvious action per view; everything else whispers or waits.
 - **FINAL (owner decision 2026-07-20): red is the accent theme.** Brand red for
   actions/links/focus; blue exists ONLY as the eTA/e-visa data-category hue;
   green = visa-free only. This is settled - do not revisit.
+- **Access-level hues (owner directive 2026-07-20: every level visually distinct):**
+  green `--vfree` = visa-free ONLY; amber `--voa` (#A16207 light / #E2A93B dark) =
+  visa on arrival; blue `--online` = eTA/e-visa; red `--change` tint = visa required.
+  These are data-category hues, never accents.
 - **Accent scarcity rule** (owner directive): the red accent is for interactive
   elements (buttons, links, focus, active states) and change-data moments ONLY.
   Never on decorative chrome: no red borders, rules, dividers, or section edges.

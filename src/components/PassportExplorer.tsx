@@ -155,7 +155,7 @@ function tileSub(t: Tile): { text: string; cls: string; srPrefix?: string } {
     case "fom":
       return { text: "Free movement", cls: "text-verdict" };
     case "voa":
-      return { text: join("On arrival", days, via), cls: "text-verdict" };
+      return { text: join("On arrival", days, via), cls: "text-voa" };
     case "online":
       return { text: join(t.edge!.level === "eta" ? "eTA" : "eVisa", days, via), cls: "text-online" };
     case "req":
@@ -294,6 +294,10 @@ export default function PassportExplorer() {
   const [credOpen, setCredOpen] = useState(false);
   const [typeOpen, setTypeOpen] = useState<string | null>(null);
   const [autoDetected, setAutoDetected] = useState<string | null>(null);
+  // One-time tool tour: shown the first time a passport is auto-detected on
+  // this device (localStorage-gated), pointing at remove / + passport /
+  // + add a visa. Instructions are said once, then never again.
+  const [tourOpen, setTourOpen] = useState(false);
   const detectedPassport = useDetectedPassport();
   const autoSeededRef = useRef(false);
   const addRef = useRef<HTMLDivElement>(null);
@@ -338,6 +342,16 @@ export default function PassportExplorer() {
     }, 0);
     return () => clearTimeout(t);
   }, [detectedPassport]);
+
+  // Open the tour once per device, only when we auto-selected the passport
+  // (a visitor who typed their own passport already knows the controls).
+  useEffect(() => {
+    if (!autoDetected) return;
+    const t = setTimeout(() => {
+      try { if (!localStorage.getItem("ev-tour-seen")) setTourOpen(true); } catch { /* private mode */ }
+    }, 0);
+    return () => clearTimeout(t);
+  }, [autoDetected]);
 
   // Close the add-passport / credential popovers on outside click or Escape.
   useEffect(() => {
@@ -417,6 +431,11 @@ export default function PassportExplorer() {
 
   const credentialGroups = useMemo(() => buildCredentialGroups(core?.credentials ?? []), [core]);
 
+  function dismissTour() {
+    setTourOpen(false);
+    try { localStorage.setItem("ev-tour-seen", "1"); } catch { /* private mode */ }
+  }
+
   function add(iso3: string) {
     setSelected((s) => (s.includes(iso3) ? s : [...s, iso3]));
     setPtypes((p) => (iso3 in p ? p : { ...p, [iso3]: "ordinary" }));
@@ -426,6 +445,7 @@ export default function PassportExplorer() {
     setSelected((s) => s.filter((x) => x !== iso3));
     setPtypes((p) => { const n = { ...p }; delete n[iso3]; return n; });
     if (autoDetected === iso3) setAutoDetected(null);
+    if (tourOpen) dismissTour();
   }
   function toggleCred(id: string) {
     setCreds((c) => (c.includes(id) ? c.filter((x) => x !== id) : [...c, id]));
@@ -545,9 +565,9 @@ export default function PassportExplorer() {
         {/* + add passport (dual citizens) */}
         <span ref={addRef} className="relative">
           <button
-            onClick={() => { setAddOpen((o) => !o); setCredOpen(false); }}
+            onClick={() => { setAddOpen((o) => !o); setCredOpen(false); if (tourOpen) dismissTour(); }}
             aria-expanded={addOpen}
-            className="chip border-dashed !bg-transparent"
+            className={`chip border-dashed !bg-transparent ${tourOpen ? "ring-2 ring-accent/40" : ""}`}
           >
             + passport
           </button>
@@ -561,9 +581,9 @@ export default function PassportExplorer() {
         {/* + add a visa you hold (credentials appear only post-selection) */}
         <span ref={credRef} className="relative">
           <button
-            onClick={() => { setCredOpen((o) => !o); setAddOpen(false); }}
+            onClick={() => { setCredOpen((o) => !o); setAddOpen(false); if (tourOpen) dismissTour(); }}
             aria-expanded={credOpen}
-            className="chip border-dashed !bg-transparent"
+            className={`chip border-dashed !bg-transparent ${tourOpen ? "ring-2 ring-accent/40" : ""}`}
           >
             + add a visa you hold
           </button>
@@ -626,11 +646,23 @@ export default function PassportExplorer() {
         )}
       </div>
 
-      {autoDetected && selected.includes(autoDetected) && (
+      {autoDetected && selected.includes(autoDetected) && (tourOpen ? (
+        <div className="float-panel mt-3 max-w-md px-4 py-3.5">
+          <p className="text-[14px] font-semibold text-ink">
+            <span aria-hidden="true">{flagFor(autoDetected)}</span> {nameFor(autoDetected)} · detected from your location
+          </p>
+          <ul className="mt-2 space-y-1 text-[13.5px] leading-relaxed text-ink-2">
+            <li>Not your passport? Remove it with the <span className="font-semibold text-ink">×</span> on the chip.</li>
+            <li>Dual citizen? <span className="font-semibold text-ink">+ passport</span> adds another.</li>
+            <li>A US, UK, Schengen or Japan visa can unlock extra countries: <span className="font-semibold text-ink">+ add a visa you hold</span>.</li>
+          </ul>
+          <button onClick={dismissTour} className="chip mt-3">Got it</button>
+        </div>
+      ) : (
         <p className="mt-2.5 text-[13px] text-ink-2">
           Detected from your location - not your passport? Remove it above.
         </p>
-      )}
+      ))}
 
       {/* The answer */}
       {dataFailed ? (

@@ -4,7 +4,9 @@
    Earth Visa - Design System v2 "Instrument" (see DESIGN-SYSTEM.md)
    Cool near-white ground, white surfaces, hairlines. One family: Archivo.
    Exactly three non-neutral colors, each with ONE job:
-     accent  #B23528  brand red - actions, links, focus, interactive (blue #2036E8 survives ONLY as the "online" data-category hue)
+     accent  #B23528  brand red - actions, links, focus, interactive
+     data-category hues (never accents): blue #2036E8 "online" (eTA/eVisa),
+     amber #A16207 "voa" (visa on arrival)
      verdict #0E7F41  green - visa-free / positive signals ONLY
      change  #D9251C  red - pending-change / negative data ONLY
    ════════════════════════════════════════════════════════════════════════════ */
@@ -75,7 +77,7 @@
   --stamp-deep: #8F2318;
   --vfree:  #0E7F41;
   --change: #D9251C;
-  --voa:   #4A5568;    /* legacy process-state slate (label text differentiates) */
+  --voa:   #A16207;    /* visa-on-arrival data-category hue (amber) - green stays visa-free ONLY */
   --eta:   #4A5568;
   --evisa: #4A5568;
   --bloc:  #B23528;
@@ -109,7 +111,7 @@
   --stamp-deep: #B23528;
   --vfree:  #4EC07E;
   --change: #FF6B61;
-  --voa:   #9AA4B2;
+  --voa:   #E2A93B;
   --eta:   #9AA4B2;
   --evisa: #9AA4B2;
   --bloc:  #D66555;
@@ -214,7 +216,7 @@ body {
 }
 .tile:hover { border-color: var(--stamp); }
 .tile-free    { background: var(--fill-verdict); }
-.tile-voa     { background: var(--card); border-color: color-mix(in srgb, var(--vfree) 45%, transparent); }
+.tile-voa     { background: var(--card); border-color: color-mix(in srgb, var(--voa) 55%, transparent); }
 .tile-voa:hover { border-color: var(--stamp); }
 .tile-online  { background: var(--fill-online); }
 .tile-req     { background: var(--fill-req); }
@@ -444,3 +446,5 @@ summary:focus-visible {
 * { scrollbar-color: var(--line-strong) transparent; }
 ::-webkit-scrollbar { width: 11px; height: 11px; }
 ::-webkit-scrollbar-thumb { background: var(--line-strong); border: 3px solid var(--paper); border-radius: 10px; }
+
+/* voa amber 2026-07-20 */
