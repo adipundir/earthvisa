@@ -10,22 +10,34 @@ export interface PassportWorth {
   visaFree: number;
   /** total destinations reachable without a pre-arranged embassy visa */
   total: number;
-  /** rank among all ranked passports, by total reach (same method as /passport pages) */
+  /** canonical passport-index score: visa-free + visa on arrival + eTA (e-visa excluded) */
+  score: number;
+  /** rank among all ranked passports, by canonical score - identical to /rankings and /passport */
   rank: number;
 }
 
+// Rank MUST match rankings/page.tsx buildRows, passport/[slug] rankOf, and
+// build-explorer-slices.mjs: same collection (Object.entries(dataset.passportAccess)),
+// same score (visa-free + VoA + eTA, e-visa NEVER counted - an e-visa is still a visa
+// application), same stable descending sort. Ranking by edges.length instead silently
+// let e-visa reach reorder 183/199 passports vs the canonical index.
 const ranked = Object.entries(dataset.passportAccess)
-  .map(([iso3, edges]) => ({
-    iso3,
-    total: edges.length,
-    visaFree: edges.filter((e) => e.level === "visa_free").length,
-  }))
-  .sort((a, b) => b.total - a.total);
+  .map(([iso3, edges]) => {
+    const counts = { visa_free: 0, visa_on_arrival: 0, eta: 0, e_visa: 0 };
+    for (const e of edges) counts[e.level]++;
+    return {
+      iso3,
+      total: edges.length,
+      visaFree: counts.visa_free,
+      score: counts.visa_free + counts.visa_on_arrival + counts.eta,
+    };
+  })
+  .sort((a, b) => b.score - a.score);
 
 export const TOTAL_RANKED_PASSPORTS = ranked.length;
 
 const worthByIso3 = new Map<string, PassportWorth>(
-  ranked.map((r, i) => [r.iso3, { iso3: r.iso3, visaFree: r.visaFree, total: r.total, rank: i + 1 }]),
+  ranked.map((r, i) => [r.iso3, { iso3: r.iso3, visaFree: r.visaFree, total: r.total, score: r.score, rank: i + 1 }]),
 );
 
 export function passportWorth(iso3: string): PassportWorth | null {

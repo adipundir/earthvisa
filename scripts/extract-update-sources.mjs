@@ -28,8 +28,24 @@ for (const f of readdirSync(DIR).filter((x) => x.endsWith(".json")).sort()) {
     if (description && description.length > (e.description?.length ?? 0)) e.description = description;
     e.contexts.add(context);
   };
+  // Is a host a government / mission source? Used to flag string-form sources_checked
+  // entries, which carry no explicit `official` field (unlike the object form).
+  const isGovHost = (url) => {
+    try {
+      const h = new URL(url).hostname.toLowerCase();
+      return /(^|\.)(gov|gouv|gob|govt)(\.[a-z]{2,})*$/.test(h) || /\.gov\.[a-z]{2,}$/.test(h) ||
+        /(^|\.)(mfa|mofa|embassy|consulate|immigration|migration|evisa|e-visa)\./.test(h);
+    } catch { return false; }
+  };
 
-  for (const s of d.sources_checked ?? []) add(s.url, s.description, s.official, "sources_checked");
+  // sources_checked appears in BOTH shapes across the dataset: {url,description,official}
+  // objects (54 files) and bare URL strings (145 files). The string form was silently
+  // dropped here (s.url === undefined), losing ~3300 source URLs from the maintenance
+  // index. Handle both; derive `official` from the host for the flagless string form.
+  for (const s of d.sources_checked ?? []) {
+    if (typeof s === "string") add(s, "", isGovHost(s), "sources_checked");
+    else if (s && typeof s === "object") add(s.url, s.description, s.official, "sources_checked");
+  }
   for (const v of d.visa_types ?? []) add(v.official_url, `${v.name} official page`, true, "visa_types");
   for (const n of d.advance_visa_notes ?? []) add(n.source_url, `Advance-visa note (${(n.nationalities_iso3 ?? []).join(", ")})`, n.source_official, "advance_visa_notes");
   const walk = (node, context) => {

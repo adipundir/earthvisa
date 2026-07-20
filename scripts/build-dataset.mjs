@@ -59,8 +59,43 @@ const ALIASES = {
   "slovak republic": "SVK", "republic of north macedonia": "MKD", macedonia: "MKD",
   "turkiye": "TUR", "republic of turkey": "TUR",
   israeli: "ISR", chinese: "CHN", taiwanese: "TWN",
+  // SAR / long-form / comma-inverted variants that appear as free-text nationality
+  // labels but carry no structured iso3 - without these the passport loses reach
+  // (Macau) or a single-nationality diplomatic waiver leaks to every passport.
+  macau: "MAC", "macao sar": "MAC", "macau sar": "MAC",
+  "hong kong": "HKG",
+  "peoples republic of china": "CHN", "people s republic of china": "CHN",
+  "republic of china": "TWN", "republic of china taiwan": "TWN",
+  "republic of india": "IND", "republic of cuba": "CUB",
+  "viet nam": "VNM", "socialist republic of vietnam": "VNM",
+  "dpr korea": "PRK", "korea democratic people s republic of korea": "PRK",
+  "korea republic of korea": "KOR",
+  "republic of congo": "COG", "congo republic of the": "COG", "congo republic of": "COG",
+  "democratic republic of congo": "COD", "congo democratic republic of the": "COD",
+  "sao tome principe": "STP",
+  "bosnia herzegovina": "BIH", "maldive islands": "MDV",
 };
 for (const [k, v] of Object.entries(ALIASES)) nameToIso3.set(strip(k), v);
+
+// Resolve SAR / "of China" / "Special Administrative Region" / parenthetical
+// variants of Hong Kong & Macao (and similar long-form labels) that the flat
+// alias table can't enumerate combinatorially. Runs only as a FALLBACK after the
+// direct lookups, so it can never override a structured match. Returns iso3 or null.
+function normalizedLookup(label) {
+  const noParens = strip(String(label).replace(/\([^)]*\)/g, " "));
+  if (noParens && nameToIso3.has(noParens)) return nameToIso3.get(noParens);
+  const base = noParens || strip(label);
+  const s = base
+    .replace(/\bspecial administrative region\b/g, " ")
+    .replace(/\bsar\b/g, " ")
+    .replace(/\bprc\b/g, " ")
+    .replace(/\bof china\b/g, " ")
+    .replace(/\bchina\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (s && s !== base && nameToIso3.has(s)) return nameToIso3.get(s);
+  return null;
+}
 
 // ---- regional groups (iso3 lists) ------------------------------------------
 const GROUPS = {
@@ -297,11 +332,21 @@ function credObjsFromLabel(natRaw) {
 // ("Diplomatic and service passports only", "no visa required for diplomatic/official…").
 // Returns PassportType[] when the waiver is restricted to non-ordinary passports, else [].
 // Crucially: if the text explicitly grants ORDINARY passports, it is NOT restricted.
-function restrictedPassportTypes(nationality, notes) {
+function restrictedPassportTypes(nationality, notes, level) {
   const nat = (nationality || "").toLowerCase();
   const text = `${nat} ${(notes || "").toLowerCase()}`;
-  // explicit ordinary grant => the rule covers ordinary travellers, do not restrict
-  if (/ordinary passport/.test(text)) return [];
+  // Explicit ordinary mention => the rule speaks about ordinary travellers. Matches
+  // "ordinary passport" AND "ordinary <nationality> passport" (adjective between),
+  // e.g. "Ordinary Indian passport holders are not visa-exempt" (an e-visa grant to
+  // ordinary Indians that was wrongly routed to diplomatic-only).
+  if (/\bordinary\b[^.]{0,24}\bpassports?\b/.test(text)) {
+    // Never fabricate a false VISA-FREE: at the visa_free level, an "ordinary ...
+    // passport" mention that ALSO says ordinary holders still need a visa is a
+    // diplomatic-only entry, keep it restricted. At every other level (e-visa /
+    // VoA / eTA) the ordinary holder genuinely receives THIS document.
+    const ordinaryStillNeedsVisa = /ordinary[^.]{0,60}(not\s+visa[\s-]?exempt|must\s+obtain|require|need)/.test(text);
+    if (!(level === "visa_free" && ordinaryStillNeedsVisa)) return [];
+  }
   const restricted =
     /(diplomatic|service|official)[^.]{0,45}passports?\s+only/.test(text) ||
     /passports?\s+only[^.]{0,30}(diplomatic|service|official)/.test(text) ||
@@ -334,9 +379,23 @@ function resolveNatList(val) {
     const noParens = strip(String(it).replace(/\([^)]*\)/g, " "));
     if (noParens && nameToIso3.get(noParens)) { out.add(nameToIso3.get(noParens)); continue; }
     const noParensTrimmed = noParens.replace(/\b(citizens?|nationals?|passport holders?|residents?)\b/g, "").trim();
-    if (noParensTrimmed && nameToIso3.get(noParensTrimmed)) out.add(nameToIso3.get(noParensTrimmed));
+    if (noParensTrimmed && nameToIso3.get(noParensTrimmed)) { out.add(nameToIso3.get(noParensTrimmed)); continue; }
+    // SAR / "of China" / long-form normalization (Macao SAR, Hong Kong SAR (PRC), ...)
+    const norm = normalizedLookup(it);
+    if (norm) out.add(norm);
   }
   return out.size ? [...out] : null;
+}
+
+// Does a raw eligible_nationalities value explicitly mean "any nationality" (so a
+// passport-type waiver is genuinely global) rather than a NAMED list we simply
+// failed to resolve? Only the former may broadcast to all passports - treating an
+// unresolved single-country list as "any" is the diplomatic false-positive class.
+function isExplicitAnyNat(raw) {
+  if (raw == null) return true;
+  const arr = Array.isArray(raw) ? raw : [raw];
+  if (arr.length === 0) return true;
+  return arr.every((x) => /^\s*(any(_except)?|all(\s+(nationalit\w+|countr\w+|passport\w*|visitors?))?|every\w*|worldwide)\s*$/i.test(String(x)));
 }
 
 // Which nationalities does a credential-conditional LABEL apply to? iso3[] or null = any.
@@ -400,6 +459,18 @@ function visaRequiredIso3(d) {
 const unresolved = new Map(); // label -> count
 const negationGaps = []; // entries we could not safely expand
 
+// A geographically/purpose-limited entry permit ("... Sinai resorts only", "free
+// zone only", "border region only") is NOT country-wide visa-free reach. Inverting
+// it as full visa-free tells a traveller they can enter anywhere when the waiver
+// covers a few resort towns (Egypt granted all 27 EU passports false visa-free from
+// a "Sinai Peninsula resorts only" label). Only applied to unstructured (no iso3)
+// broad-expansion labels; each nationality's real level still comes from the
+// destination's other entries (Egypt's per-EU-state e-visa).
+const GEO_RESTRICTED_RE = /\b(?:resorts?|sinai|red sea|special economic zone|free[\s-]?zone|border (?:region|area|zone|district)|specified (?:area|region|zone|governorate)|designated (?:area|zone))\b[^.]{0,25}\bonly\b|\bonly\b[^.]{0,25}\b(?:resorts?|sinai|free[\s-]?zone)\b/i;
+// A platform/scheme the data itself flags as not (yet) operational must not feed
+// live reach (Syria's evisa.sy: "All nationalities (not yet operational) ...").
+const NON_OPERATIONAL_RE = /\bnot (?:yet )?operational\b|\bno longer operational\b|\bnon[\s-]?operational\b|\bnot (?:yet )?(?:functional|live|active)\b/i;
+
 function resolveOrigins(entry) {
   // returns array of iso3
   if (entry.iso3 && byIso3.has(String(entry.iso3).toUpperCase())) return [String(entry.iso3).toUpperCase()];
@@ -420,6 +491,10 @@ function resolveOrigins(entry) {
   // try trimming trailing words like "citizens", "nationals", "passport holders"
   const trimmed = strip(label).replace(/\b(citizens?|nationals?|passport holders?|residents?)\b/g, "").trim();
   if (trimmed && nameToIso3.get(trimmed)) return [nameToIso3.get(trimmed)];
+  // parenthetical / SAR / "of China" normalization (resolveNatList has this; resolveOrigins
+  // historically did not, silently dropping Macau/Hong-Kong-SAR reach)
+  const norm = normalizedLookup(label);
+  if (norm) return [norm];
   if (label.trim()) unresolved.set(label.trim(), (unresolved.get(label.trim()) || 0) + 1);
   return [];
 }
@@ -550,11 +625,28 @@ for (const f of files) {
         negationGaps.push(`${iso3} [eta] "${(entry.nationality || "").slice(0, 50)}" - pre-screening/declaration scoped by visa-free list, not expanded`);
         continue;
       }
+      const geoText = `${entry.nationality || ""} ${entry.notes || ""}`;
+      // Geographically/purpose-limited permit on a BROAD (no-iso3) label - do not
+      // invert as country-wide reach; the real per-nationality level survives via
+      // the destination's other entries.
+      if (!entry.iso3 && GEO_RESTRICTED_RE.test(geoText)) {
+        negationGaps.push(`${iso3} [${level}] "${(entry.nationality || "").slice(0, 50)}" - geographically/purpose-limited permit, not country-wide reach`);
+        continue;
+      }
+      // Scheme the data itself marks not-operational - skip so it never feeds reach.
+      // Matched on the NATIONALITY LABEL only (Syria: "All nationalities (not yet
+      // operational) except ..."), never on notes: notes routinely mention OTHER
+      // systems' status ("...ETIAS was not yet operational...") and matching them
+      // would wrongly strip a real grant (Kosovo -> Bulgaria visa-free).
+      if (NON_OPERATIONAL_RE.test(entry.nationality || "")) {
+        negationGaps.push(`${iso3} [${level}] "${(entry.nationality || "").slice(0, 50)}" - scheme flagged not operational, skipped`);
+        continue;
+      }
       // Conditional entries (held-credential or diplomatic/service-only) must NOT be inverted
       // as ordinary nationality reach - that mis-maps "valid Schengen visa" onto Schengen
       // passports and counts diplomatic-only waivers for ordinary travellers.
       const credObjs = credObjsFromLabel(entry.nationality);
-      const ptypes = restrictedPassportTypes(entry.nationality, entry.notes);
+      const ptypes = restrictedPassportTypes(entry.nationality, entry.notes, level);
       if (credObjs.length) {
         if (!hasStructured) {
           const scope = nationalityScope(entry.nationality);
@@ -638,8 +730,14 @@ for (const f of files) {
       const types = (Array.isArray(ca.passport_types) ? ca.passport_types : []).filter((t) => t !== "ordinary" && t !== "any");
       const pts = types.length ? types : ["diplomatic", "service"];
       const edge = { maxStayDays: typeof ca.max_stay_days === "number" ? ca.max_stay_days : null, sourceUrl: ca.source_url || "", sourceOfficial: ca.source_official !== false, notes: conditions };
-      if (scope === null) addDiploAny(iso3, level, pts, edge); // any nationality -> store once
-      else for (const o of scope) addDiploEdge(o, iso3, level, pts, edge);
+      if (scope === null) {
+        // Only broadcast to ALL passports when the label EXPLICITLY means "any".
+        // A named single-country list we merely failed to resolve ("Congo, Republic
+        // of the", "Republic of China (Taiwan)") must NOT become a global waiver -
+        // that broadcasts one nation's diplomatic exemption to all 199 passports.
+        if (isExplicitAnyNat(ca.eligible_nationalities)) addDiploAny(iso3, level, pts, edge);
+        else negationGaps.push(`${iso3} [${level}] diplomatic scope unresolved, NOT broadcast: ${JSON.stringify(ca.eligible_nationalities).slice(0, 60)}`);
+      } else for (const o of scope) addDiploEdge(o, iso3, level, pts, edge);
     } else {
       const cid = credId(ca.credential);
       // surface the exact issuer + accepted classes so granularity stays visible per destination

@@ -99,7 +99,9 @@
   "conditional_access": [
     {
       "basis": "passport_type",
-      "eligible_nationalities": "any",
+      "eligible_nationalities": [
+       "IND"
+      ],
       "passport_types": ["diplomatic", "official", "service"],
       "credential": null,
       "level": "visa_free",
@@ -114,7 +116,9 @@
     },
     {
       "basis": "passport_type",
-      "eligible_nationalities": "any",
+      "eligible_nationalities": [
+       "CHN"
+      ],
       "passport_types": ["diplomatic", "service", "official"],
       "credential": null,
       "level": "visa_free",

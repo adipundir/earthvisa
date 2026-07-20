@@ -786,7 +786,9 @@
   "conditional_access": [
     {
       "basis": "passport_type",
-      "eligible_nationalities": "any",
+      "eligible_nationalities": [
+       "ISR"
+      ],
       "passport_types": [
         "diplomatic",
         "service"

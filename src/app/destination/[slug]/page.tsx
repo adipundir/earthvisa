@@ -192,7 +192,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         : "every nationality needs a visa arranged in advance",
     );
   }
-  const accessSummary = accessBits.join(", ");
+  // Destinations that don't publish an enumerated visa policy (North Korea,
+  // Turkmenistan, Yemen) have an all-zero reverse index. Asserting "every
+  // nationality needs a visa arranged in advance" in the meta description would
+  // fabricate a policy nobody verified and contradict the page body, which shows
+  // the "not yet tracked" wording. Mirror that guard here (same visaPolicyCounts
+  // check the body uses) so the SERP snippet stays truthful.
+  const metaRecord = dataset.countries.find((c) => c.iso3 === country.iso3);
+  const policyTracked = Object.values(metaRecord?.visaPolicyCounts ?? {}).some((n) => n > 0);
+  const accessSummary = policyTracked
+    ? accessBits.join(", ")
+    : `${country.name} does not publish its visa policy as an enumerated list, so entry rules are not yet tracked from official sources`;
 
   // Alias pages target the colloquial query ("do i need a visa for dubai")
   // while making the governing jurisdiction explicit in the same title.

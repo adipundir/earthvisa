@@ -231,7 +231,9 @@
  "conditional_access": [
   {
    "basis": "passport_type",
-   "eligible_nationalities": "any",
+   "eligible_nationalities": [
+    "FRA"
+   ],
    "passport_types": [
     "diplomatic"
    ],
