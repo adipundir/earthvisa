@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { insertReport, recordReportAttempt, ReportStoreUnavailableError } from "@/lib/reports";
+import { clientIp } from "@/lib/client-ip";
 
 // POST /api/report { page, message, sourceUrl?, email?, website? }
 // Public data-inaccuracy reports. Stored for review against official sources;
@@ -51,7 +52,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
+    const ip = clientIp(req);
     if ((await recordReportAttempt(ip)) > 5) {
       return NextResponse.json({ error: "Too many reports from your network - try again in an hour." }, { status: 429 });
     }

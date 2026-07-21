@@ -171,11 +171,19 @@ export async function leaderboard(opts?: { primaryIso3?: string; limit?: number 
  *  hour (including this one). Old rows are purged opportunistically. */
 export async function recordClaimAttempt(ip: string): Promise<number> {
   return writeQuery(async (sql) => {
-    await sql`DELETE FROM claim_attempts WHERE at < now() - interval '2 hours'`;
-    await sql`INSERT INTO claim_attempts (ip) VALUES (${ip})`;
+    // Cleanup + insert + count in ONE atomic statement. Postgres data-modifying
+    // CTEs run against the statement-start snapshot, so the count subquery does
+    // not see the row `ins` just added - hence the explicit +1 for this attempt.
     const rows = (await sql`
-      SELECT count(*)::int AS count FROM claim_attempts
-      WHERE ip = ${ip} AND at > now() - interval '1 hour'`) as Row[];
+      WITH cleanup AS (
+        DELETE FROM claim_attempts WHERE at < now() - interval '2 hours'
+      ), ins AS (
+        INSERT INTO claim_attempts (ip) VALUES (${ip}) RETURNING at
+      )
+      SELECT (
+        SELECT count(*)::int FROM claim_attempts
+        WHERE ip = ${ip} AND at > now() - interval '1 hour'
+      ) + 1 AS count`) as Row[];
     return rows[0].count as number;
   });
 }

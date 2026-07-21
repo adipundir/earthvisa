@@ -12,6 +12,7 @@ import {
 import { sendClaimVerificationEmail } from "@/lib/earthling/email";
 import { reachFor, sanitizeHoldings } from "@/lib/earthling/reach";
 import { emailError, normalizeUsername, usernameError } from "@/lib/earthling/validate";
+import { clientIp } from "@/lib/client-ip";
 
 const unavailable = () =>
   NextResponse.json({ error: "Claims aren't open yet - check back soon." }, { status: 503 });
@@ -52,7 +53,7 @@ export async function POST(req: Request) {
   // Abuse controls BEFORE any compute or email: this endpoint sends mail to a
   // caller-supplied address, so it must not be free to loop.
   try {
-    const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
+    const ip = clientIp(req);
     const attempts = await recordClaimAttempt(ip);
     if (attempts > 5) {
       return NextResponse.json({ error: "Too many claim attempts from your network - try again in an hour." }, { status: 429 });

@@ -27,11 +27,18 @@ async function writeQuery<T>(fn: (sql: Sql) => Promise<T>): Promise<T> {
 /** Fixed-window rate limiting; returns this IP's attempts in the last hour. */
 export async function recordReportAttempt(ip: string): Promise<number> {
   return writeQuery(async (sql) => {
-    await sql`DELETE FROM report_attempts WHERE at < now() - interval '2 hours'`;
-    await sql`INSERT INTO report_attempts (ip) VALUES (${ip})`;
+    // Cleanup + insert + count in ONE atomic statement (see store.ts note: the
+    // count subquery reads the pre-insert snapshot, so +1 for this attempt).
     const rows = (await sql`
-      SELECT count(*)::int AS count FROM report_attempts
-      WHERE ip = ${ip} AND at > now() - interval '1 hour'`) as { count: number }[];
+      WITH cleanup AS (
+        DELETE FROM report_attempts WHERE at < now() - interval '2 hours'
+      ), ins AS (
+        INSERT INTO report_attempts (ip) VALUES (${ip}) RETURNING at
+      )
+      SELECT (
+        SELECT count(*)::int FROM report_attempts
+        WHERE ip = ${ip} AND at > now() - interval '1 hour'
+      ) + 1 AS count`) as { count: number }[];
     return rows[0].count;
   });
 }

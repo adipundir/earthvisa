@@ -23,6 +23,15 @@ export async function sendClaimVerificationEmail(opts: {
   const key = process.env.RESEND_API_KEY;
   if (!key) return { ok: false, skipped: true };
   const from = process.env.EMAIL_FROM || "Earth Visa <onboarding@resend.dev>";
+  // The resend.dev sandbox sender only delivers to the Resend account owner, so
+  // in production it would accept claims whose verification email never reaches
+  // the user. Treat it as "not configured" -> the claim route fails closed (503)
+  // instead of leaving a dead 24h reservation. Set EMAIL_FROM to a verified
+  // earthvisa.in sender to enable real delivery.
+  if (process.env.NODE_ENV === "production" && /@resend\.dev>?\s*$/i.test(from)) {
+    console.error("[earthling] EMAIL_FROM is unset/resend.dev in production - claims fail closed until a verified sender is configured");
+    return { ok: false, skipped: true };
+  }
 
   const { to, username, reach, percentile, verifyUrl } = opts;
   // v2 "Instrument" styling: sentence case (no uppercase-tracking chrome),

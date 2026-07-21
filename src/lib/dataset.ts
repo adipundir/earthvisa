@@ -1,3 +1,8 @@
+// Hard boundary: importing this module pulls in the 18MB dataset.json. The
+// `server-only` guard makes any accidental import from a Client Component a
+// BUILD error instead of a silent 18MB client-bundle regression. Client code
+// needs isoToFlag/nameToSlug -> import those from "@/lib/format" directly.
+import "server-only";
 import raw from "@/data/dataset.json";
 import type { Dataset, VisaType } from "./types";
 export type { VisaType };
