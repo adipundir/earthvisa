@@ -12,6 +12,7 @@
 // never quietly render partial numbers.
 import { useEffect, useState } from "react";
 import { isoToFlag } from "./format";
+import { assertShape } from "./validate-shape";
 import type { ComputeData } from "./compute-core";
 import type {
   AccessEdge,
@@ -99,6 +100,10 @@ const countryByIso3 = new Map<string, CoreCountry>();
 
 export function loadCore(): Promise<ExplorerCore> {
   return fetchJson<ExplorerCore>("core.json").then((c) => {
+    assertShape(c, [
+      "allCountries", "credentials", "groups", "groupLabels",
+      "diplomaticAny", "passportsWithPolicy", "ranks",
+    ], "explorer core.json");
     if (!coreState) {
       coreState = c;
       for (const x of c.allCountries) countryByIso3.set(x.iso3, x);
@@ -142,6 +147,7 @@ export function isUsefulCorridor(nat: string, dest: string): boolean {
 
 function loadPassportSlice(iso3: string): Promise<PassportSlice> {
   return fetchJson<PassportSlice>(`passport/${iso3}.json`).then((s) => {
+    assertShape(s, ["iso3", "access"], `explorer passport/${iso3}.json`);
     if (!corridorDests.has(s.iso3)) corridorDests.set(s.iso3, new Set(s.corridorDests));
     return s;
   });
@@ -156,6 +162,7 @@ async function assembleComputeData(selected: string[], creds: string[]): Promise
     Promise.all(selected.map(loadPassportSlice)),
     Promise.all(creds.map((id) => fetchJson<CredentialSlice>(`credential/${id}.json`))),
   ]);
+  assertShape(programs, ["cbi", "rbi", "fastTrack"], "explorer programs.json");
   const passportAccess: Record<string, AccessEdge[]> = {};
   const diplomaticAccess: Record<string, AccessEdge[]> = {};
   for (const s of passportSlices) {

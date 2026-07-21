@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "node --test scripts/lib/*.test.mjs",
     "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
