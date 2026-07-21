@@ -648,7 +648,14 @@ export default function PassportExplorer() {
         <DataPending />
       ) : (
         <>
-          <div className="relative mt-8" aria-live="polite">
+          <div className="relative mt-8">
+            {/* Static, screen-reader-only result announcement. The visible number
+                animates (useCountUp), so it must NOT sit in a live region or SRs
+                read every interpolated frame; this announces the final value once. */}
+            <p className="sr-only" role="status" aria-live="polite">
+              {reachCount} of {total} destinations reachable with no embassy visit
+              {selected.length > 0 ? `, ${selected.map((s) => nameFor(s)).join(" plus ")} passport${selected.length > 1 ? "s" : ""}` : ""}
+            </p>
             {/* The reach map paints BEHIND the count row (absolute, first in
                 source order, pointer-events off) so it fills the empty right
                 half without adding a pixel of height - the filter bar below

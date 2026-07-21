@@ -880,7 +880,7 @@ function NotesField({ notes }: { notes: string }) {
     <div className="mt-2">
       <p className={`text-[13px] leading-relaxed text-ink-soft ${expanded ? "" : "line-clamp-2"}`}>{notes}</p>
       {notes.length > 120 && (
-        <button onClick={() => setExpanded(e => !e)} className="mono mt-0.5 min-h-[24px] text-[11px] text-ink-soft transition hover:text-ink">
+        <button onClick={() => setExpanded(e => !e)} aria-expanded={expanded} className="mono mt-0.5 min-h-[24px] text-[11px] text-ink-soft transition hover:text-ink">
           {expanded ? "Show less ▴" : "Show more ▾"}
         </button>
       )}
@@ -907,12 +907,14 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
         <div className="mb-4 flex flex-wrap gap-1.5">
           <button
             onClick={() => setCategoryFilter(null)}
+            aria-pressed={!categoryFilter}
             className={`mono inline-flex min-h-[28px] items-center rounded px-3 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white dark:bg-stamp-deep" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
           >All</button>
           {cats.map(cat => (
             <button
               key={cat}
               onClick={() => setCategoryFilter(cat === categoryFilter ? null : cat)}
+              aria-pressed={categoryFilter === cat}
               className={`mono inline-flex min-h-[28px] items-center rounded px-3 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white dark:bg-stamp-deep" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
             >{CATEGORY_LABEL[cat] ?? cat}</button>
           ))}
@@ -1102,12 +1104,14 @@ function VfsDocuments({ destIso3, corridors, selected }: { destIso3: string; cor
             <div className="mt-4 mb-3 flex flex-wrap gap-1.5">
               <button
                 onClick={() => setCatFilter(null)}
+                aria-pressed={!catFilter}
                 className={`mono inline-flex min-h-[28px] items-center rounded px-3 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${!catFilter ? "bg-stamp text-white dark:bg-stamp-deep" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
               >All</button>
               {cats.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setCatFilter(cat === catFilter ? null : cat)}
+                  aria-pressed={catFilter === cat}
                   className={`mono inline-flex min-h-[28px] items-center rounded px-3 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${catFilter === cat ? "bg-stamp text-white dark:bg-stamp-deep" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
                 >{CATEGORY_LABEL[cat] ?? cat}</button>
               ))}

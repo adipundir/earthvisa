@@ -68,7 +68,7 @@
   --card:    #FFFFFF;  /* surface */
   --ink:      #0B0E14;
   --ink-2:    #525E6E; /* secondary - AA (6.0:1) on ground */
-  --ink-3:    #8A94A2; /* muted - large/meta only (fails AA small) */
+  --ink-3:    #6B7480; /* muted meta - darkened to clear AA (4.5:1) on the ground, since it leaked onto small readable text */
   --ink-soft: #3D4753; /* legacy secondary text - darker so old 13px text stays AA */
   --ink-mute: #525E6E; /* legacy meta text - mapped to AA-safe secondary */
   --line:        #E2E6EB;
@@ -473,6 +473,20 @@ summary:focus-visible {
 }
 .dark .sf-gold {
   background-image: linear-gradient(100deg, #F3E4B4 0%, #CAA867 28%, #9C7634 50%, #D8B478 72%, #F3E4B4 100%);
+}
+
+/* ── Reduced motion ────────────────────────────────────────────────────────
+   Users who ask for less motion get near-instant transitions and no looping
+   animations sitewide (live pulses, hover chevrons, count-ups). Applied last so
+   it overrides component-level durations. The count-up hook also short-circuits
+   in JS; this covers the CSS animations it can't reach. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ── Product Hunt launch banner ────────────────────────────────────────────

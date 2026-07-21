@@ -64,6 +64,7 @@ export default function ReportIssue({ page, className }: { page?: string; classN
 
       <dialog
         ref={ref}
+        aria-label="Report an inaccuracy"
         onClick={(e) => { if (e.target === ref.current) close(); }}
         className="dialog-modal m-auto w-[min(92vw,28rem)] rounded-2xl border border-hair bg-surface p-0 text-ink shadow-xl backdrop:bg-black/45"
       >

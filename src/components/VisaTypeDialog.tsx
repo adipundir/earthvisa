@@ -62,6 +62,7 @@ export default function VisaTypeDialog({ name, category, purpose, meta, sentence
 
       <dialog
         ref={ref}
+        aria-label={name}
         onClick={(e) => { if (e.target === ref.current) ref.current?.close(); }}
         className="dialog-modal m-auto w-[min(92vw,34rem)] rounded-2xl border border-hair bg-surface p-0 text-ink shadow-xl backdrop:bg-black/45"
       >

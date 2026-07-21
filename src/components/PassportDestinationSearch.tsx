@@ -83,7 +83,7 @@ export default function PassportDestinationSearch({
 
   return (
     <div className="relative mt-6 max-w-xl">
-      <label className="mono-chrome mb-1.5 block">
+      <label htmlFor={`${listId}-input`} className="mono-chrome mb-1.5 block">
         Do {citizens} need a visa for…?
       </label>
       <div className="relative">
@@ -112,12 +112,12 @@ export default function PassportDestinationSearch({
           }}
           type="search"
           autoComplete="off"
+          id={`${listId}-input`}
           role="combobox"
           aria-expanded={open && matches.length > 0}
           aria-controls={listId}
           aria-autocomplete="list"
           aria-activedescendant={open && matches[hi] ? `${listId}-opt-${hi}` : undefined}
-          aria-label={`Check visa requirements for ${citizens} by destination country`}
           placeholder="Type a country - e.g. Thailand, UK, Dubai…"
           className="w-full rounded-[2px] border border-line-strong bg-card py-2.5 pl-10 pr-4 text-[15px] text-ink outline-none transition placeholder:text-ink-mute focus:border-stamp"
         />
