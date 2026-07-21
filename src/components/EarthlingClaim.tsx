@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 import { isoToFlag } from "@/lib/format";
 
 // The Earthling claim flow: declare holdings -> watch your reach -> claim the
@@ -121,6 +122,7 @@ export default function EarthlingClaim({ countries, credentials }: {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) { setClaimError(data.error ?? `Something went wrong (${res.status}). Try again in a minute.`); return; }
       setClaimed(data.pendingVerification ? { ...data, pending: true } : data);
+      track("claim_submitted", { pending: !!data.pendingVerification });
     } catch {
       setClaimError("Network error - try again.");
     } finally {
@@ -133,6 +135,7 @@ export default function EarthlingClaim({ countries, credentials }: {
     try {
       await navigator.clipboard.writeText(`https://earthvisa.in/@${claimed.username}`);
       setCopied(true);
+      track("share_link_copied", { surface: "earthling_profile" });
       setTimeout(() => setCopied(false), 2000);
     } catch { /* clipboard unavailable */ }
   }

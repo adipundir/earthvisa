@@ -11,7 +11,9 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { isoToFlag, nameToSlug } from "@/lib/format";
+import ReportIssue from "@/components/ReportIssue";
 import {
   credShort,
   flagFor,
@@ -416,6 +418,34 @@ export default function PassportExplorer() {
   const reachCount = result?.reach.length ?? 0;
   const shown = useCountUp(reachCount);
 
+  // Funnel: top of the claim funnel - a reach was computed for a real selection.
+  useEffect(() => {
+    if (selected.length > 0 && reachCount > 0) {
+      track("reach_computed", { passports: selected.length, reach: reachCount });
+    }
+  }, [selected, reachCount]);
+
+  const [shared, setShared] = useState(false);
+  // Share the result directly (no claim required) - the strongest viral loop.
+  // Web Share on mobile, clipboard elsewhere. Points at the passport's own page.
+  async function shareReach() {
+    const url = selected.length
+      ? `https://earthvisa.in/passport/${nameToSlug(nameFor(selected[0]))}`
+      : "https://earthvisa.in";
+    const text = `My passport reaches ${reachCount} destinations with no embassy visit. Check yours:`;
+    try {
+      if (typeof navigator !== "undefined" && navigator.share) {
+        await navigator.share({ title: "Earth Visa", text, url });
+        track("share_link_copied", { surface: "reach_result", method: "web_share" });
+      } else {
+        await navigator.clipboard.writeText(url);
+        setShared(true);
+        setTimeout(() => setShared(false), 2000);
+        track("share_link_copied", { surface: "reach_result", method: "clipboard" });
+      }
+    } catch { /* user cancelled the share sheet, or clipboard unavailable */ }
+  }
+
   const credentialGroups = useMemo(() => buildCredentialGroups(core?.credentials ?? []), [core]);
 
   // iso3 -> access kind for the reach map (req included so required
@@ -681,6 +711,18 @@ export default function PassportExplorer() {
                 Claim this reach as your Earthling ID - citizen of Earth, on record →
               </Link>
             </p>
+            {selected.length > 0 && (
+              <button
+                type="button"
+                onClick={shareReach}
+                className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-hair-strong bg-surface px-3 py-1.5 text-[13px] font-medium text-ink-2 transition hover:border-ink-3 hover:text-ink"
+              >
+                <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11 5.5a2 2 0 1 0-1.9-2.6M5 9.5a2 2 0 1 0 0-1M11 13.5a2 2 0 1 0-1.9-2.6M6.7 8.6l3.6 2M10.3 4.9l-3.6 2" />
+                </svg>
+                {shared ? "Link copied" : "Share my reach"}
+              </button>
+            )}
             </div>
           </div>
 
@@ -735,6 +777,14 @@ export default function PassportExplorer() {
                 </span>
               ))}
             </p>
+          )}
+          {selected.length > 0 && (
+            <div className="mt-6">
+              <ReportIssue
+                page={`/passport/${nameToSlug(nameFor(selected[0]))}`}
+                className="text-[12.5px] text-ink-3 transition hover:text-ink"
+              />
+            </div>
           )}
         </>
       )}

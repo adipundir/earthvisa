@@ -4,6 +4,7 @@
 // Reports go to /api/report (Neon-backed) for review against official
 // sources. The page path is attached automatically.
 import { useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 
 export default function ReportIssue({ page, className }: { page?: string; className?: string }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -37,6 +38,7 @@ export default function ReportIssue({ page, className }: { page?: string; classN
         return;
       }
       setState("done");
+      track("report_submitted", { page: page ?? window.location.pathname });
     } catch {
       setError("Something went wrong - please try again.");
       setState("error");

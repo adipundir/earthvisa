@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { isoToFlag, nameToSlug } from "@/lib/format";
+import ReportIssue from "@/components/ReportIssue";
 import {
   credShort,
   flagFor,
@@ -1373,6 +1374,17 @@ function ResultCard({
             {`Full ${nameFor(selected[0])} passport guide: every destination & entry rule`}
           </Link>
         ))}
+
+        {/* Quiet escape hatch at the point distrust is felt - ties the report to
+            this specific corridor so a wrong edge is reportable from the verdict. */}
+        {!isOwnCountry && selected.length > 0 && (
+          <div className="mt-3">
+            <ReportIssue
+              page={`/passport/${nameToSlug(nameFor(selected[0]))}/${nameToSlug(name)}`}
+              className="text-[12.5px] text-ink-3 transition hover:text-ink"
+            />
+          </div>
+        )}
 
         {/* Visa types - shown when data is available (citizens don't need a visa for home) */}
         {!isOwnCountry && destSlice.visaTypes.length > 0 && <VisaTypeCards visaTypes={destSlice.visaTypes} />}
