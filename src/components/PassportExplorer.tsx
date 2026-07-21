@@ -426,6 +426,38 @@ export default function PassportExplorer() {
   }, [selected, reachCount]);
 
   const [shared, setShared] = useState(false);
+
+  // "Notify me when my visa access changes" - one quiet line on the reach
+  // result. Same store/degradation contract as reports; honeypot + rate-limited.
+  const [notifyEmail, setNotifyEmail] = useState("");
+  const [notifyHoney, setNotifyHoney] = useState("");
+  const [notifyState, setNotifyState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [notifyError, setNotifyError] = useState<string | null>(null);
+  async function submitNotify(e: React.FormEvent) {
+    e.preventDefault();
+    if (notifyState === "sending") return;
+    setNotifyState("sending");
+    setNotifyError(null);
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: notifyEmail.trim(), passports: selected, website: notifyHoney }),
+      });
+      if (!res.ok) {
+        const data = (await res.json().catch(() => null)) as { error?: string } | null;
+        setNotifyError(data?.error ?? "Something went wrong - please try again.");
+        setNotifyState("error");
+        return;
+      }
+      setNotifyState("done");
+      track("notify_subscribed", { passports: selected.length, reach: reachCount });
+    } catch {
+      setNotifyError("Network error - please try again.");
+      setNotifyState("error");
+    }
+  }
+
   // Share the result directly (no claim required) - the strongest viral loop.
   // Web Share on mobile, clipboard elsewhere. Points at the passport's own page.
   async function shareReach() {
@@ -602,9 +634,16 @@ export default function PassportExplorer() {
           <button
             onClick={() => { setCredOpen((o) => !o); setAddOpen(false); }}
             aria-expanded={credOpen}
-            className="chip border-dashed !bg-transparent"
+            className="chip border-dashed !bg-transparent !text-accent"
+            style={{ borderColor: "color-mix(in srgb, var(--stamp) 40%, transparent)" }}
           >
-            + add a visa you hold
+            {/* a visa/residence card - marks the credentials lever apart from
+                the plain "+ passport" chip (audit #9) */}
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2.25" y="3.25" width="11.5" height="9.5" rx="1.5" />
+              <path d="M4.75 6.75h2.5M4.75 9.25h6.5M4.75 11h4" />
+            </svg>
+            + visa I hold
           </button>
           {credOpen && (
             <div className="float-panel absolute left-0 top-full z-40 mt-2 max-h-[24rem] w-[21rem] overflow-auto py-2 max-sm:-left-24">
@@ -671,6 +710,21 @@ export default function PassportExplorer() {
         </p>
       )}
 
+      {/* Low-reach passport, no visa added yet: surface the credentials lever -
+          the biggest reach unlock most visitors don't know exists (audit #9). */}
+      {selected.length > 0 && creds.length === 0 && reachCount > 0 && reachCount < 70 && (
+        <p className="mt-2.5 text-[13px] text-ink-2">
+          A US, UK, Schengen or Japan visa unlocks extra countries -{" "}
+          <button
+            type="button"
+            onClick={() => { setCredOpen(true); setAddOpen(false); }}
+            className="font-medium text-accent underline-offset-2 transition hover:underline"
+          >
+            add a visa you hold
+          </button>.
+        </p>
+      )}
+
       {/* The answer */}
       {dataFailed ? (
         <DataError onRetry={retryData} />
@@ -722,6 +776,54 @@ export default function PassportExplorer() {
                 </svg>
                 {shared ? "Link copied" : "Share my reach"}
               </button>
+            )}
+            {/* One quiet line (never a tour): visa rules shift - leave an email
+                and we'll flag it if these passports' access changes. */}
+            {selected.length > 0 && (
+              <div className="mt-4 max-w-[400px]">
+                {notifyState === "done" ? (
+                  <p className="text-[13px] text-ink-2">
+                    You&apos;re on the list - we&apos;ll email you if this access changes.
+                  </p>
+                ) : (
+                  <form onSubmit={submitNotify}>
+                    <label htmlFor="notify-email" className="block text-[13px] text-ink-2">
+                      Get notified when your visa access changes
+                    </label>
+                    {/* honeypot: bots fill hidden fields; humans never see it */}
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      value={notifyHoney}
+                      onChange={(e) => setNotifyHoney(e.target.value)}
+                      className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                    />
+                    <div className="mt-1.5 flex gap-2">
+                      <input
+                        id="notify-email"
+                        type="email"
+                        value={notifyEmail}
+                        onChange={(e) => { setNotifyEmail(e.target.value); if (notifyState === "error") setNotifyState("idle"); }}
+                        placeholder="you@email.com"
+                        autoComplete="email"
+                        aria-label="Email for visa-access change alerts"
+                        className="h-10 min-w-0 flex-1 rounded-lg border border-hair-strong bg-surface px-3 text-[14px] text-ink outline-none transition placeholder:text-ink-3 focus:border-accent"
+                      />
+                      <button
+                        type="submit"
+                        disabled={notifyState === "sending"}
+                        className="shrink-0 rounded-lg border border-hair-strong bg-surface px-3.5 text-[13px] font-medium text-ink-2 transition hover:border-ink-3 hover:text-ink disabled:opacity-60"
+                      >
+                        {notifyState === "sending" ? "Sending…" : "Notify me"}
+                      </button>
+                    </div>
+                    {notifyError && <p className="mt-1.5 text-[12.5px] text-change">{notifyError}</p>}
+                  </form>
+                )}
+              </div>
             )}
             </div>
           </div>
