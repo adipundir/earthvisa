@@ -37,7 +37,24 @@ export interface FeeVariation {
   items?: FeeVariationItem[];
 }
 
-const FX_RATES = (fx as { rates: Record<string, number> }).rates;
+const FX_RATES = (fx as { rates: Record<string, number>; date: string }).rates;
+
+// Staleness guard: the ~USD figures are derived from this FX snapshot, so an old
+// one makes them silently drift. Warn loudly in server/build logs (never in the
+// user's browser console) so a maintainer runs `node scripts/update-fx-rates.mjs`.
+// Past a hard threshold callers can hide ~USD via `fxTooStale`.
+export const fxSnapshotDate = (fx as { date: string }).date;
+const fxAgeDays = (() => {
+  const t = Date.parse(fxSnapshotDate);
+  return Number.isNaN(t) ? Infinity : (Date.now() - t) / 86_400_000;
+})();
+export const fxIsStale = fxAgeDays > 45;
+export const fxTooStale = fxAgeDays > 120;
+if (fxIsStale && typeof window === "undefined") {
+  console.warn(
+    `[fx] fx-rates.json is ${Number.isFinite(fxAgeDays) ? Math.round(fxAgeDays) + " days" : "of unknown age"} old (${fxSnapshotDate}); ~USD figures may drift. Run: node scripts/update-fx-rates.mjs`,
+  );
+}
 
 /** Convert an amount in an original currency to approximate USD via the rates snapshot. */
 export function toUsd(amount: number | null, currency: string | null): number | null {

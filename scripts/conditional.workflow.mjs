@@ -6,7 +6,8 @@ export const meta = {
   ],
 };
 
-const DATA_DIR = '/Users/adityapundir/Documents/Projects/project-bluewhale/data/countries';
+import { fileURLToPath } from "node:url";
+const DATA_DIR = fileURLToPath(new URL("../data/countries", import.meta.url));
 
 // [iso2, iso3, name, region]
 const TUPLES = [

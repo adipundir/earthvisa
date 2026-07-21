@@ -4,7 +4,8 @@ export const meta = {
   phases: [{ title: 'VerifyIndia', detail: "one agent per destination checks India's treatment on the official site and fixes the India row (Sonnet, WebFetch-first)" }],
 };
 
-const DATA_DIR = '/Users/adityapundir/Documents/Projects/project-bluewhale/data/countries';
+import { fileURLToPath } from "node:url";
+const DATA_DIR = fileURLToPath(new URL("../data/countries", import.meta.url));
 
 // [iso3, name] - destinations where IndiGo and our data disagree about India
 const TARGETS = [

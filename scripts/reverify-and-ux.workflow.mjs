@@ -9,7 +9,8 @@ export const meta = {
   ],
 };
 
-const DATA_DIR = '/Users/adityapundir/Documents/Projects/project-bluewhale/data/countries';
+import { fileURLToPath } from "node:url";
+const DATA_DIR = fileURLToPath(new URL("../data/countries", import.meta.url));
 const APP = 'http://localhost:3001';
 
 // [iso2, iso3, name, region]
@@ -244,7 +245,7 @@ SURFACE: **${s.key}** - start at ${APP}${s.url}
 TEST THOROUGHLY: ${s.what}
 
 HOW:
-- Drive a real browser with Playwright. The package is installed in the repo, but ESM resolves 'playwright' relative to the SCRIPT's location, so you MUST create your script INSIDE the repo. Use a UNIQUE filename: /Users/adityapundir/Documents/Projects/project-bluewhale/scripts/_ux_${s.key}.mjs (Write it, run \`node scripts/_ux_${s.key}.mjs\` from the repo root via Bash, then DELETE it). Import: \`import { chromium } from "playwright";\`.
+- Drive a real browser with Playwright. The package is installed in the repo, but ESM resolves 'playwright' relative to the SCRIPT's location, so you MUST create your script INSIDE the repo. Use a UNIQUE filename: /Users/adityapundir/Documents/Projects/earthvisa/scripts/_ux_${s.key}.mjs (Write it, run \`node scripts/_ux_${s.key}.mjs\` from the repo root via Bash, then DELETE it). Import: \`import { chromium } from "playwright";\`.
 - Actually CLICK / type / tab through EVERY interactive element on this surface - not just look. Capture screenshots to /tmp/ux-${s.key}-*.png and Read them. Extract document.body.innerText to confirm state changes. Try keyboard (Tab/Enter/Escape) where relevant.
 - For each problem, be concrete: which exact element, what's confusing/broken/awkward, and a specific fix. Judge like a first-time user who must not get stuck. Include things that are subtle: unclear labels, dead clicks, no empty/loading state, tiny tap targets, missing focus, surprising navigation, redundant steps.
 
