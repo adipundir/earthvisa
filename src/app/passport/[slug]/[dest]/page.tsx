@@ -1468,7 +1468,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 <div className="mt-3 flex flex-wrap gap-2">
                   {sameNat.slice(0, 6).map((c) => (
                     <Link key={c!.iso3} href={`/passport/${slug}/${nameToSlug(c!.name)}`} className="chip">
-                      <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3 w-[18px] shrink-0 rounded-[2px] border border-hair object-cover" />
+                      <span aria-hidden="true" className="shrink-0 text-[13px] leading-none">{flagFor(c!.iso3)}</span>
                       {c!.name} visa
                     </Link>
                   ))}
@@ -1479,7 +1479,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 <div className="mt-3 flex flex-wrap gap-2">
                   {sameDest.slice(0, 6).map((c) => (
                     <Link key={c!.iso3} href={`/passport/${nameToSlug(c!.name)}/${dest}`} className="chip">
-                      <img src={`https://flagcdn.com/w40/${c!.iso2.toLowerCase()}.png`} alt="" loading="lazy" className="h-3 w-[18px] shrink-0 rounded-[2px] border border-hair object-cover" />
+                      <span aria-hidden="true" className="shrink-0 text-[13px] leading-none">{flagFor(c!.iso3)}</span>
                       {DEMONYM[c!.iso3] ?? c!.name} citizens
                     </Link>
                   ))}
