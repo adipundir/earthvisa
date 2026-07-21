@@ -31,7 +31,20 @@ const TAT_JUL_URL =
 const NATION_JUL_URL = "https://www.nationthailand.com/news/policy/40068630";
 
 const THA = "THA";
-const CHECKED_STAMP = "19 July 2026";
+
+// The single date this page was last human-verified against official Thai
+// sources. UPDATE THIS ONE CONSTANT whenever you re-check the status (and the
+// day the Royal Gazette finally publishes - that is the flip this page waits
+// for). Everything date-stamped below derives from it, so the page can never
+// show two different "as of" dates or a stamp that silently drifts out of sync
+// with the ISO date in the article's structured data.
+const LAST_REVIEWED = "2026-07-19"; // ISO 8601, machine-readable for JSON-LD
+const CHECKED_STAMP = new Date(`${LAST_REVIEWED}T00:00:00Z`).toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+}); // -> "19 July 2026"
 
 // Confirmed 30-day-tier samples (all 27 EU member states were confirmed as a
 // bloc by TAT; Croatia, Bulgaria, Cyprus, Malta were individually named as
@@ -170,6 +183,15 @@ export default function ThailandVisaChangesGuidePage() {
             item: "https://earthvisa.in/guide/thailand-visa-changes-2026",
           },
         ],
+      },
+      {
+        "@type": "Article",
+        headline: title,
+        description,
+        mainEntityOfPage: "https://earthvisa.in/guide/thailand-visa-changes-2026",
+        // Derived from the same LAST_REVIEWED constant as the visible stamp, so
+        // the structured date and the on-page date can never disagree.
+        dateModified: LAST_REVIEWED,
       },
       {
         "@type": "FAQPage",
