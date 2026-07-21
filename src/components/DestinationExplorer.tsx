@@ -119,10 +119,10 @@ function buildCredentialGroups(credentials: Credential[]): { name: string; items
 }
 
 const LEVEL_STYLE: Record<AccessLevel, string> = {
-  visa_free:     "text-vfree bg-vfree/[0.08] border border-vfree/25",
+  visa_free:       "text-verdict bg-verdict/[0.08] border border-verdict/25",
   visa_on_arrival: "text-voa bg-voa/[0.08] border border-voa/25",
-  eta:           "text-eta bg-eta/[0.08] border border-eta/25",
-  e_visa:        "text-evisa bg-evisa/[0.08] border border-evisa/25",
+  eta:             "text-online bg-online/[0.08] border border-online/25",
+  e_visa:          "text-online bg-online/[0.08] border border-online/25",
 };
 
 
@@ -182,7 +182,7 @@ function normalizeVfsName(name: string): string {
 
 function AccessPill({ level }: { level: AccessLevel }) {
   return (
-    <span className={`mono inline-flex items-center rounded px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] ${LEVEL_STYLE[level]}`}>
+    <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] ${LEVEL_STYLE[level]}`}>
       {LEVEL_LABEL[level]}
     </span>
   );
@@ -194,7 +194,7 @@ function SourceDot({ official }: { official: boolean }) {
     <span
       role="img"
       aria-label={label}
-      className={`inline-block h-2 w-2 rounded-full ${official ? "bg-vfree" : "bg-eta"}`}
+      className={`inline-block h-2 w-2 rounded-full ${official ? "bg-verdict" : "bg-ink-3"}`}
       title={label}
     />
   );
@@ -203,7 +203,7 @@ function SourceDot({ official }: { official: boolean }) {
 function SourceLink({ url, official }: { url: string; official: boolean }) {
   if (!url) return null;
   return (
-    <a href={url} target="_blank" rel="noreferrer" className="mono inline-flex items-center gap-1.5 text-[11px] text-ink-mute transition hover:text-ink">
+    <a href={url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-[12px] text-ink-3 transition hover:text-ink">
       <SourceDot official={official} />
       {hostOf(url)} ↗
     </a>
@@ -272,8 +272,13 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
 
   // Auto-fill the passport from the visitor's detected country - only on an empty
   // field, never over a deep-link or manual choice. Removable like any chip.
+  // #31 (CLS): geo resolves after first paint, so seeding a passport while a
+  // destination is already chosen would flip the empty "add your passport"
+  // prompt into the full result card and shift everything below. Gate the seed
+  // to the pre-destination state - once a destination exists the swap is only
+  // ever user-initiated, so no layout shift lands without interaction.
   useEffect(() => {
-    if (!detectedPassport || autoSeededRef.current) return;
+    if (!detectedPassport || autoSeededRef.current || destIso3) return;
     if (new URLSearchParams(window.location.search).get("passport")) return;
     const t = setTimeout(() => {
       autoSeededRef.current = true;
@@ -282,7 +287,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
       setAutoDetected(detectedPassport);
     }, 0);
     return () => clearTimeout(t);
-  }, [detectedPassport]);
+  }, [detectedPassport, destIso3]);
 
   // ── Click-outside handlers ───────────────────────────────────────────────────
   useEffect(() => {
@@ -411,12 +416,12 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
 
           {/* ── DESTINATION - primary ── */}
           <div className="mt-7 max-w-2xl">
-        <p className="eyebrow mb-2">Destination</p>
+        <p className="mb-2 text-[13px] font-medium text-ink-2">Destination</p>
 
         <div ref={destBoxRef} className="relative z-30 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) destInputRef.current?.focus(); }}
-            className={`flex min-h-[3.25rem] w-full items-center gap-3 rounded-[2px] border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
+            className={`flex min-h-[3.25rem] w-full items-center gap-3 rounded-lg border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
               destIso3
                 ? "border-line-strong"
                 : destOpen
@@ -471,7 +476,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
           </div>
 
           {destOpen && !destIso3 && (destOptions.length > 0 || destQuery.trim().length > 0) && (
-            <ul id="dest-listbox" role="listbox" aria-label="Matching destinations" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-[2px] border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
+            <ul id="dest-listbox" role="listbox" aria-label="Matching destinations" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
               {destOptions.length === 0 && (
                 <li className="px-4 py-6 text-center text-sm text-ink-mute">
                   {core
@@ -490,7 +495,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
                   >
                     <span aria-hidden="true" className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
-                    <span className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
+                    <span className="ml-auto text-[11px] font-medium text-ink-3">{c.region}</span>
                   </button>
                 </li>
               ))}
@@ -532,7 +537,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
         <div ref={passBoxRef} className="relative z-20 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) passInputRef.current?.focus(); }}
-            className="flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-[2px] border border-line-strong bg-card px-4 py-2 transition-colors focus-within:border-stamp focus-within:ring-1 focus-within:ring-stamp"
+            className="flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-lg border border-line-strong bg-card px-4 py-2 transition-colors focus-within:border-stamp focus-within:ring-1 focus-within:ring-stamp"
           >
             {selected.map((iso3) => {
               const currentType = ptypes[iso3] ?? "ordinary";
@@ -561,11 +566,11 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
                       aria-expanded={isOpen}
                       aria-haspopup="listbox"
                       aria-label={`Passport type: ${currentType}`}
-                      className={`mono relative inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] transition after:absolute after:-inset-1.5 after:content-[''] ${
+                      className={`relative inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-semibold tracking-[0.04em] transition after:absolute after:-inset-1.5 after:content-[''] ${
                         isNonOrdinary
-                          ? "bg-stamp/10 text-stamp"
-                          : "text-ink-mute hover:bg-stamp/[0.08] hover:text-stamp"
-                      } ${isOpen ? "bg-stamp/10 text-stamp" : ""}`}
+                          ? "bg-accent/10 text-accent"
+                          : "text-ink-3 hover:bg-accent/[0.08] hover:text-accent"
+                      } ${isOpen ? "bg-accent/10 text-accent" : ""}`}
                     >
                       {PTYPE_SHORT[currentType]}
                       <svg viewBox="0 0 10 6" className={`h-2 w-2 shrink-0 transition-transform duration-150 ${isOpen ? "rotate-180" : ""}`} fill="currentColor">
@@ -577,9 +582,9 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
                       <div
                         role="listbox"
                         aria-label="Passport type"
-                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-[2px] border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-black/25"
+                        className="absolute left-0 top-full z-50 mt-1.5 w-48 overflow-hidden rounded-lg border border-line-strong bg-paper-2 py-1 shadow-2xl shadow-black/25"
                       >
-                        <p className="mono-chrome border-b border-line px-3 pb-2 pt-2">
+                        <p className="border-b border-hair px-3 pb-2 pt-2 text-[11px] font-semibold text-ink-3">
                           Passport type
                         </p>
                         {PASSPORT_TYPES.map((t) => {
@@ -596,7 +601,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
                                   : "text-ink hover:bg-stamp/[0.04]"
                               }`}
                             >
-                              <span className={`mono w-7 shrink-0 text-[10px] font-bold tracking-[0.08em] ${active ? "text-stamp" : "text-ink-mute"}`}>
+                              <span className={`w-7 shrink-0 text-[10px] font-bold tracking-[0.04em] ${active ? "text-accent" : "text-ink-3"}`}>
                                 {PTYPE_SHORT[t.id]}
                               </span>
                               <span className="font-display text-[13px] font-medium">{t.label}</span>
@@ -639,7 +644,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
           </div>
 
           {passOpen && (passOptions.length > 0 || passQuery.trim().length > 0) && (
-            <ul id="dest-pass-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-[2px] border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
+            <ul id="dest-pass-listbox" role="listbox" aria-label="Matching countries" className="absolute z-20 mt-1.5 max-h-72 w-full overflow-auto rounded-lg border border-line-strong bg-card py-1 shadow-xl shadow-black/10">
               {passOptions.length === 0 && (
                 <li className="px-4 py-6 text-center text-sm text-ink-mute">
                   {core
@@ -658,7 +663,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
                   >
                     <span aria-hidden="true" className="text-xl">{isoToFlag(c.iso2)}</span>
                     <span className="font-display text-[15px] text-ink">{c.name}</span>
-                    <span className="mono ml-auto text-[10px] font-medium uppercase tracking-[0.15em] text-ink-mute">{c.region}</span>
+                    <span className="ml-auto text-[11px] font-medium text-ink-3">{c.region}</span>
                   </button>
                 </li>
               ))}
@@ -686,7 +691,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
         <div ref={credBoxRef} className="relative z-10 w-full">
           <div
             onClick={(e) => { if (e.target === e.currentTarget) credInputRef.current?.focus(); }}
-            className={`flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-[2px] border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
+            className={`flex min-h-[2.75rem] w-full cursor-text flex-wrap items-center gap-2 rounded-lg border bg-card px-4 py-2 transition-colors focus-within:ring-1 focus-within:ring-stamp ${
               credOpen ? "border-stamp" : "border-line-strong"
             }`}
           >
@@ -727,14 +732,14 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
               autoComplete="off"
             />
             {creds.length > 0 && (
-              <button onClick={() => { setCreds([]); setCredQuery(""); }} className="mono inline-flex min-h-[32px] shrink-0 items-center px-1.5 text-[11px] uppercase tracking-[0.1em] text-ink-soft transition hover:text-stamp">
+              <button onClick={() => { setCreds([]); setCredQuery(""); }} className="inline-flex min-h-[32px] shrink-0 items-center px-1.5 text-[12px] font-medium text-ink-2 transition hover:text-accent">
                 Clear
               </button>
             )}
           </div>
 
           {credOpen && (
-            <div id="cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-[2px] border border-line-strong bg-card shadow-xl shadow-black/10">
+            <div id="cred-listbox" role="listbox" aria-label="Available visas and permits" className="absolute z-30 mt-1.5 max-h-[26rem] w-full overflow-auto rounded-lg border border-line-strong bg-card shadow-xl shadow-black/10">
               {credGroupOptions.length === 0 && (
                 <p className="px-4 py-6 text-center text-sm text-ink-mute">
                   {core ? <>No visas or permits found for &ldquo;{credQuery}&rdquo;</> : "Loading visas & permits…"}
@@ -788,7 +793,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
             /* No passport yet - teach, don't dead-end (spec §9) */
             <div className="card-doc px-5 py-6 sm:px-8 sm:py-8">
               <p className="text-sub text-ink">Add your passport above</p>
-              <p className="text-body mt-2 max-w-xl text-ink-soft">
+              <p className="text-body mt-2 max-w-xl text-ink-2">
                 Select the country whose passport you hold to see whether you need a visa for{" "}
                 <span className="font-medium text-ink">{nameFor(destIso3)}</span>.
               </p>
@@ -798,7 +803,7 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
                     key={c.iso3}
                     type="button"
                     onClick={() => addPassport(c.iso3)}
-                    className="mono inline-flex min-h-[36px] items-center gap-1.5 rounded-[2px] border border-line-strong bg-card px-3 text-[12px] text-ink-soft transition hover:border-stamp hover:text-stamp"
+                    className="inline-flex min-h-[36px] items-center gap-1.5 rounded-lg border border-hair-strong bg-surface px-3 text-[13px] text-ink-2 transition hover:border-accent hover:text-accent"
                   >
                     <span aria-hidden="true" className="text-base leading-none">{isoToFlag(c.iso2)}</span>
                     {c.name}
@@ -829,10 +834,10 @@ export default function DestinationExplorer({ hero }: { hero?: React.ReactNode }
 
       {/* ── "Also check" cross-link - below the result so the verdict stays first ── */}
       {destIso3 && selected.length > 0 && (
-        <div className="mt-6 flex flex-col items-start gap-3 rounded-[2px] border border-line bg-paper-2 px-5 py-4 sm:flex-row sm:items-center">
+        <div className="mt-6 flex flex-col items-start gap-3 rounded-xl border border-hair bg-ground px-5 py-4 sm:flex-row sm:items-center">
           <div className="min-w-0 flex-1">
             <p className="text-sub text-ink">Also check - everything your passport unlocks</p>
-            <p className="mt-0.5 text-[15px] leading-relaxed text-ink-soft">See all visa-free destinations, freedom of movement rights, golden visas and citizenship programs open to you</p>
+            <p className="mt-0.5 text-[15px] leading-relaxed text-ink-2">See all visa-free destinations, freedom of movement rights, golden visas and citizenship programs open to you</p>
           </div>
           <Link
             href={`/?passport=${selected.join(",")}${creds.length ? `&cred=${creds.join(",")}` : ""}`}
@@ -881,7 +886,7 @@ function NotesField({ notes }: { notes: string }) {
     <div className="mt-2">
       <p className={`text-[13px] leading-relaxed text-ink-soft ${expanded ? "" : "line-clamp-2"}`}>{notes}</p>
       {notes.length > 120 && (
-        <button onClick={() => setExpanded(e => !e)} aria-expanded={expanded} className="mono mt-0.5 min-h-[24px] text-[11px] text-ink-soft transition hover:text-ink">
+        <button onClick={() => setExpanded(e => !e)} aria-expanded={expanded} className="mt-0.5 min-h-[24px] text-[12px] font-medium text-ink-2 transition hover:text-ink">
           {expanded ? "Show less ▴" : "Show more ▾"}
         </button>
       )}
@@ -901,7 +906,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
   const shown = expanded ? filtered : filtered.slice(0, 3);
   return (
     <div className="mt-6 border-t border-line pt-6">
-      <p className="mono-chrome mb-3">
+      <p className="mb-3 text-[13px] font-semibold text-ink-2">
         {visaTypes.length} visa type{visaTypes.length !== 1 ? "s" : ""} available
       </p>
       {cats.length > 1 && (
@@ -909,14 +914,14 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
           <button
             onClick={() => setCategoryFilter(null)}
             aria-pressed={!categoryFilter}
-            className={`mono inline-flex min-h-[28px] items-center rounded px-3 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${!categoryFilter ? "bg-stamp text-white dark:bg-stamp-deep" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+            className={`inline-flex min-h-[28px] items-center rounded-md px-3 py-1 text-[12px] font-medium transition ${!categoryFilter ? "bg-accent-deep text-white" : "border border-hair-strong text-ink-2 hover:border-ink-3 hover:text-ink"}`}
           >All</button>
           {cats.map(cat => (
             <button
               key={cat}
               onClick={() => setCategoryFilter(cat === categoryFilter ? null : cat)}
               aria-pressed={categoryFilter === cat}
-              className={`mono inline-flex min-h-[28px] items-center rounded px-3 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${categoryFilter === cat ? "bg-stamp text-white dark:bg-stamp-deep" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+              className={`inline-flex min-h-[28px] items-center rounded-md px-3 py-1 text-[12px] font-medium transition ${categoryFilter === cat ? "bg-accent-deep text-white" : "border border-hair-strong text-ink-2 hover:border-ink-3 hover:text-ink"}`}
             >{CATEGORY_LABEL[cat] ?? cat}</button>
           ))}
         </div>
@@ -938,12 +943,12 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
           stats.push({
             label: "Apply",
             value: v.on_arrival ? "On arrival" : v.online ? "Online" : "In advance",
-            accent: v.on_arrival ? "text-voa" : v.online ? "text-vfree" : undefined,
+            accent: v.on_arrival ? "text-voa" : v.online ? "text-online" : undefined,
           });
           return (
-            <div key={i} className="rounded-[2px] border border-line-strong bg-paper-2 px-4 py-3.5">
+            <div key={i} className="rounded-lg border border-line-strong bg-paper-2 px-4 py-3.5">
               <div className="flex flex-wrap items-start gap-2">
-                <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_CHIP}`}>
+                <span className={`shrink-0 rounded-md px-1.5 py-0.5 text-[10px] font-semibold ring-1 ${CATEGORY_CHIP}`}>
                   {CATEGORY_LABEL[v.category] ?? v.category}
                 </span>
                 <span className="font-display text-[14px] font-semibold text-ink">{v.name}</span>
@@ -951,10 +956,10 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
               {v.purpose && (
                 <p className="mt-1.5 text-[14px] leading-relaxed text-ink-soft">{v.purpose}</p>
               )}
-              <dl className="mono mt-3 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-line pt-3 sm:grid-cols-3 lg:grid-cols-6">
+              <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-hair pt-3 tabular-nums sm:grid-cols-3 lg:grid-cols-6">
                 {stats.map((s) => (
                   <div key={s.label}>
-                    <dt className="text-[10px] uppercase tracking-[0.14em] text-ink-mute">{s.label}</dt>
+                    <dt className="text-[11px] font-medium text-ink-3">{s.label}</dt>
                     <dd className={`mt-0.5 text-[13px] font-semibold ${s.accent ?? "text-ink"}`}>{s.value}</dd>
                   </div>
                 ))}
@@ -962,7 +967,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
               {v.notes && <NotesField notes={v.notes} />}
               {v.official_url && (
                 <a href={v.official_url} target="_blank" rel="noreferrer"
-                  className="mono mt-2 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">
+                  className="mt-2 inline-flex items-center gap-1 text-[12px] text-ink-3 transition hover:text-ink">
                   {hostOf(v.official_url)} ↗
                 </a>
               )}
@@ -972,7 +977,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
         {!expanded && filtered.length > shown.length && (
           <button
             onClick={() => setShowAll(true)}
-            className="mono flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[2px] border border-line-strong bg-card text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft transition hover:border-ink-mute hover:text-ink"
+            className="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-lg border border-hair-strong bg-surface text-[13px] font-semibold text-ink-2 transition hover:border-ink-3 hover:text-ink"
           >
             Show all {filtered.length} visa types ▾
           </button>
@@ -980,7 +985,7 @@ function VisaTypeCards({ visaTypes }: { visaTypes: VisaType[] }) {
         {showAll && categoryFilter == null && filtered.length > 3 && (
           <button
             onClick={() => setShowAll(false)}
-            className="mono flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[2px] border border-line-strong bg-card text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft transition hover:border-ink-mute hover:text-ink"
+            className="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-lg border border-hair-strong bg-surface text-[13px] font-semibold text-ink-2 transition hover:border-ink-3 hover:text-ink"
           >
             Show fewer ▴
           </button>
@@ -1015,13 +1020,13 @@ function VfsTypeRow({ v }: { v: VfsVisaType }) {
   const [open, setOpen] = useState(false);
   const docs = v.documents_required?.trim();
   return (
-    <div className="rounded-[2px] border border-line-strong bg-card">
+    <div className="rounded-lg border border-line-strong bg-card">
       <button
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         className="flex w-full items-center gap-2 px-4 py-2.5 text-left"
       >
-        <span className={`mono shrink-0 rounded-[3px] px-1.5 py-0.5 text-[10px] uppercase tracking-[0.08em] ring-1 ${CATEGORY_CHIP}`}>
+        <span className={`shrink-0 rounded-md px-1.5 py-0.5 text-[10px] font-semibold ring-1 ${CATEGORY_CHIP}`}>
           {CATEGORY_LABEL[v.category] ?? v.category}
         </span>
         <span className="font-display text-[14px] font-semibold text-ink">{normalizeVfsName(v.name)}</span>
@@ -1031,7 +1036,7 @@ function VfsTypeRow({ v }: { v: VfsVisaType }) {
         <div className="border-t border-line px-4 py-3">
           {docs ? (
             <div>
-              <p className="mono-chrome mb-1.5 text-[10px]">Documents required</p>
+              <p className="mb-1.5 text-[11px] font-semibold text-ink-3">Documents required</p>
               <LinkifiedText text={docs} className="whitespace-pre-wrap text-[13px] leading-relaxed text-ink-soft" />
             </div>
           ) : (
@@ -1081,12 +1086,12 @@ function VfsDocuments({ destIso3, corridors, selected }: { destIso3: string; cor
   const srcName = nameFor(corridor.sourceIso3);
 
   return (
-    <div className="mt-6 border-t border-line pt-6">
+    <div className="mt-6 border-t border-hair pt-6">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <p className="mono-chrome">
+        <p className="text-[14px] font-semibold text-ink">
           Document checklists - applying from {srcName}
         </p>
-        <span className="mono text-[10px] text-ink-mute">via VFS Global</span>
+        <span className="text-[12px] text-ink-3">via VFS Global</span>
       </div>
       <p className="mt-1 text-[14px] leading-relaxed text-ink-soft">
         Required documents for {srcName} residents applying for {nameFor(destIso3)} at the VFS visa application centre, by visa type. VFS is the official outsourcing partner - confirm against the embassy before applying.
@@ -1106,14 +1111,14 @@ function VfsDocuments({ destIso3, corridors, selected }: { destIso3: string; cor
               <button
                 onClick={() => setCatFilter(null)}
                 aria-pressed={!catFilter}
-                className={`mono inline-flex min-h-[28px] items-center rounded px-3 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${!catFilter ? "bg-stamp text-white dark:bg-stamp-deep" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+                className={`inline-flex min-h-[28px] items-center rounded-md px-3 py-1 text-[12px] font-medium transition ${!catFilter ? "bg-accent-deep text-white" : "border border-hair-strong text-ink-2 hover:border-ink-3 hover:text-ink"}`}
               >All</button>
               {cats.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setCatFilter(cat === catFilter ? null : cat)}
                   aria-pressed={catFilter === cat}
-                  className={`mono inline-flex min-h-[28px] items-center rounded px-3 py-1 text-[10px] font-medium uppercase tracking-[0.08em] transition ${catFilter === cat ? "bg-stamp text-white dark:bg-stamp-deep" : "border border-line-strong text-ink-mute hover:border-ink-mute hover:text-ink"}`}
+                  className={`inline-flex min-h-[28px] items-center rounded-md px-3 py-1 text-[12px] font-medium transition ${catFilter === cat ? "bg-accent-deep text-white" : "border border-hair-strong text-ink-2 hover:border-ink-3 hover:text-ink"}`}
                 >{CATEGORY_LABEL[cat] ?? cat}</button>
               ))}
             </div>
@@ -1122,7 +1127,7 @@ function VfsDocuments({ destIso3, corridors, selected }: { destIso3: string; cor
             {shown.map((v, i) => <VfsTypeRow key={i} v={v} />)}
           </div>
           <a href={corridor.sourceUrl} target="_blank" rel="noreferrer"
-            className="mono mt-3 inline-flex items-center gap-1 text-[10px] text-ink-mute transition hover:text-ink">
+            className="mt-3 inline-flex items-center gap-1 text-[12px] text-ink-3 transition hover:text-ink">
             {hostOf(corridor.sourceUrl)} ↗
           </a>
         </>
@@ -1138,18 +1143,18 @@ function VfsDocuments({ destIso3, corridors, selected }: { destIso3: string; cor
 
 function DataPending() {
   return (
-    <div role="status" aria-live="polite" className="reveal flex items-center justify-center gap-2.5 rounded-[2px] border border-line bg-card px-6 py-12">
-      <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-stamp" />
-      <span className="mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft">Loading official records…</span>
+    <div role="status" aria-live="polite" className="reveal flex items-center justify-center gap-2.5 rounded-xl border border-hair bg-surface px-6 py-12">
+      <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-accent" />
+      <span className="text-[13px] font-medium text-ink-2">Loading official records…</span>
     </div>
   );
 }
 
 function DataError({ onRetry }: { onRetry: () => void }) {
   return (
-    <div className="reveal rounded-[2px] border border-stamp/30 bg-stamp/[0.04] px-6 py-10 text-center">
+    <div className="reveal rounded-xl border border-hair-strong bg-surface px-6 py-10 text-center">
       <p className="font-display text-xl font-semibold text-ink">Couldn&apos;t load the visa dataset</p>
-      <p className="text-body mx-auto mt-2 max-w-md text-ink-soft">
+      <p className="text-body mx-auto mt-2 max-w-md text-ink-2">
         The connection dropped before the official records arrived. Rather than guess, nothing is shown until they load.
       </p>
       <button onClick={onRetry} className="btn-stamp mt-5">
@@ -1218,142 +1223,178 @@ function ResultCard({
     return labels;
   })();
 
+  // ── Verdict + fact strip (v2 signature pattern 1): the answer as display
+  //    type, then giant numerals. The old ~11px pill is demoted to a chip. ──
+  type FactCell =
+    | { num: string; unit: string; detail?: string }
+    | { word: string; detail?: string };
+
+  const isVisaRequired = !isOwnCountry && !fomEdge && !accessEdge && !transitEdge;
+
+  const verdict: { word: string; cls: string; sub: string } = (() => {
+    if (isOwnCountry) return { word: "No visa", cls: "text-verdict", sub: "This is one of your home countries - you hold citizenship here." };
+    if (fomEdge) return { word: "No visa", cls: "text-verdict", sub: "Freedom of movement - live, work and travel here, no visa required." };
+    if (accessEdge) {
+      switch (accessEdge.level) {
+        case "visa_free": return { word: "Visa-free", cls: "text-verdict", sub: "Enter with just your passport, no visa application needed." };
+        case "visa_on_arrival": return { word: "On arrival", cls: "text-voa", sub: "Get your visa stamp at the border when you land." };
+        case "eta": return { word: "eTA", cls: "text-online", sub: "Apply online before you travel, no embassy visit needed." };
+        default: return { word: "e-Visa", cls: "text-online", sub: "Apply online before you travel, no embassy visit needed." };
+      }
+    }
+    if (transitEdge) return { word: "Transit only", cls: "text-ink", sub: "You can change planes without a visa, but not for tourism or a longer stay." };
+    return { word: "Visa required", cls: "text-change", sub: `You will need to apply for a visa before travelling to ${withArticle(name)}.` };
+  })();
+
+  const cells: FactCell[] = (() => {
+    const out: FactCell[] = [];
+    if (isOwnCountry || fomEdge) {
+      out.push({ num: "∞", unit: "stay", detail: "no time limit" });
+      return out;
+    }
+    if (accessEdge) {
+      if (accessEdge.maxStayDays != null) {
+        out.push({ num: String(accessEdge.maxStayDays), unit: accessEdge.maxStayDays === 1 ? "day" : "days", detail: "max stay per entry" });
+      }
+      out.push(
+        accessEdge.level === "visa_free"
+          ? { word: "Passport", detail: "nothing to arrange" }
+          : accessEdge.level === "visa_on_arrival"
+          ? { word: "Border", detail: "issued on arrival" }
+          : { word: "Online", detail: "apply before you fly" },
+      );
+    } else if (transitEdge) {
+      if (transitEdge.maxStayDays != null) {
+        out.push({ num: String(transitEdge.maxStayDays), unit: transitEdge.maxStayDays === 1 ? "day" : "days", detail: "transit window" });
+      }
+      out.push({ word: "Airside", detail: "no tourism entry" });
+    } else {
+      out.push({ word: "Embassy", detail: "apply before you travel" });
+    }
+    if (!isOwnCountry && destSlice.visaTypes.length > 0) {
+      out.push({ num: String(destSlice.visaTypes.length), unit: destSlice.visaTypes.length === 1 ? "visa type" : "visa types", detail: `published by ${name}` });
+    }
+    return out;
+  })();
+
   return (
     <div className="card-doc card-doc-rule overflow-hidden">
       {/* Header */}
-      <div className="flex items-center gap-4 border-b border-line px-6 py-5">
+      <div className="flex items-center gap-4 border-b border-hair px-6 py-5">
         <span aria-hidden="true" className="text-4xl leading-none">{flag}</span>
         <div>
-          <p className="mono-chrome text-[10px]">Entry requirements for</p>
+          <p className="text-[13px] font-medium text-ink-2">Entry requirements for</p>
           <h2 className="text-section text-ink">{name}</h2>
         </div>
       </div>
 
-      <div className="space-y-4 px-6 py-6">
-        {isOwnCountry ? (
-          <div className="flex items-center gap-3">
-            <span aria-hidden="true" className="text-2xl">🏠</span>
-            <div>
-              <p className="font-semibold text-ink">This is one of your home countries</p>
-              <p className="text-body mt-0.5 text-ink-soft">You hold citizenship here - no visa required.</p>
-            </div>
-          </div>
-        ) : fomEdge ? (
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="mono inline-flex items-center rounded border border-bloc/30 bg-bloc/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-bloc">
-                Freedom of movement
-              </span>
-              <span className="text-[15px] text-ink-soft">Right to live and work - no visa required</span>
-            </div>
-            {fomEdge.groups.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {fomEdge.groups.map((g) => (
-                  <span key={g} className="mono rounded bg-paper-3 px-2 py-1 text-[10px] uppercase tracking-[0.1em] text-ink-soft">
+      <div className="space-y-6 px-6 py-7 sm:px-8">
+        <div>
+          {/* Lead: the verdict as display type (signature pattern 1) */}
+          <section aria-label="Verdict">
+            <p
+              className={`verdict-word ${verdict.cls}`}
+              style={{ fontSize: verdict.word.length >= 12 ? "clamp(46px, 7.4vw, 96px)" : "clamp(72px, 10vw, 120px)" }}
+            >
+              {verdict.word}
+            </p>
+            <p className="mt-4 max-w-2xl text-[17px] font-semibold leading-normal text-ink sm:text-[18px]">
+              {verdict.sub}
+            </p>
+
+            {!isOwnCountry && (accessEdge || transitEdge || fomEdge) && (
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                {accessEdge && <AccessPill level={accessEdge.level} />}
+                {transitEdge && !accessEdge && !fomEdge && (
+                  <span className="inline-flex items-center rounded-md border border-online/25 bg-online/[0.08] px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-online">
+                    Transit only
+                  </span>
+                )}
+                {accessEdge?.viaIso3 && (
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-hair-strong bg-surface px-2.5 py-1 text-[12.5px] font-medium text-ink-2">
+                    via <span aria-hidden="true">{flagFor(accessEdge.viaIso3)}</span> <span className="font-semibold text-ink">{nameFor(accessEdge.viaIso3)}</span>
+                  </span>
+                )}
+                {accessEdge?.viaCredential && (
+                  <span className="inline-flex items-center rounded-md border border-accent/30 bg-accent/[0.06] px-2.5 py-1 text-[12px] font-semibold text-accent">
+                    via {credShort(accessEdge.viaCredential) ?? "held visa"}
+                  </span>
+                )}
+                {fomEdge?.groups.map((g) => (
+                  <span key={g} className="inline-flex items-center rounded-md border border-hair-strong bg-surface px-2.5 py-1 text-[12.5px] font-medium text-ink-2">
                     {groupLabel(g)}
                   </span>
                 ))}
               </div>
             )}
-          </div>
-        ) : accessEdge ? (
-          <div>
-            {/* Single info row */}
-            <div className="flex flex-wrap items-center gap-3">
-              <AccessPill level={accessEdge.level} />
-              {accessEdge.maxStayDays != null && (
-                <span className="text-[15px] text-ink-soft">
-                  <span className="font-semibold text-ink">{accessEdge.maxStayDays}</span> days max stay
-                </span>
-              )}
-              {accessEdge.viaIso3 && (
-                <span className="text-[15px] text-ink-soft">
-                  via <span aria-hidden="true">{flagFor(accessEdge.viaIso3)}</span> <span className="font-medium text-ink">{nameFor(accessEdge.viaIso3)}</span>
-                </span>
-              )}
-              {accessEdge.viaCredential && (
-                <span className="mono rounded border border-stamp/30 bg-stamp/[0.05] px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-stamp">
-                  via {credShort(accessEdge.viaCredential) ?? "held visa"}
-                </span>
-              )}
-            </div>
-            {/* verdict sentence - the answer, at answer size (spec §7) */}
-            <p className="mt-2 text-[17px] leading-relaxed text-ink">
-              {accessEdge.level === "visa_free"
-                ? "Enter with just your passport - no visa application needed."
-                : accessEdge.level === "visa_on_arrival"
-                ? "Get your visa stamp at the airport on arrival."
-                : "Apply online before you travel - no embassy visit required."}
-            </p>
+          </section>
 
-            {(accessEdge.conditions || accessEdge.notes) && (
-              <div className="mt-4 rounded-[2px] border border-line-strong bg-paper-2 px-4 py-3">
-                <p className="mono-chrome mb-1.5 text-[10px]">Conditions &amp; notes</p>
-                <p className="text-body text-ink-soft">
-                  {accessEdge.conditions && accessEdge.notes
-                    ? `${accessEdge.conditions} - ${accessEdge.notes}`
-                    : accessEdge.conditions ?? accessEdge.notes}
-                </p>
+          {/* Giant-numeral fact strip */}
+          {cells.length > 0 && (
+            <section aria-label="Entry facts" className="mt-8 border-t border-hair">
+              <div className={`grid grid-cols-2 gap-y-6 ${cells.length >= 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
+                {cells.map((c, i) => (
+                  <div key={i} className="min-w-0 pr-4 pt-6 sm:border-l sm:border-hair sm:pl-7 sm:first:border-l-0 sm:first:pl-0">
+                    {"num" in c ? (
+                      <>
+                        <p className="stat-num text-[clamp(40px,6vw,64px)] text-ink">{c.num}</p>
+                        <p className="mt-2 text-[15px] font-bold text-ink">{c.unit}</p>
+                        {c.detail && <p className="mt-0.5 text-[13.5px] font-medium text-ink-2">{c.detail}</p>}
+                      </>
+                    ) : (
+                      <>
+                        <p className="stat-num flex min-h-[clamp(40px,6vw,64px)] items-end text-[clamp(24px,3vw,34px)] text-ink">{c.word}</p>
+                        {c.detail && <p className="mt-2 text-[13.5px] font-medium text-ink-2">{c.detail}</p>}
+                      </>
+                    )}
+                  </div>
+                ))}
               </div>
-            )}
+            </section>
+          )}
 
-            {accessEdge.sourceUrl && (
-              <div className="mt-4">
-                <SourceLink url={accessEdge.sourceUrl} official={accessEdge.sourceOfficial} />
-              </div>
-            )}
-          </div>
-        ) : transitEdge ? (
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="mono inline-flex items-center rounded border border-eta/30 bg-eta/[0.08] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-eta">
-                Transit only
-              </span>
-              {transitEdge.maxStayDays != null && (
-                <span className="text-[15px] text-ink-soft">
-                  up to <span className="font-semibold text-ink">{transitEdge.maxStayDays}</span> day{transitEdge.maxStayDays === 1 ? "" : "s"}
-                </span>
-              )}
+          {accessEdge && (accessEdge.conditions || accessEdge.notes) && (
+            <div className="mt-6 rounded-xl border border-hair-strong bg-ground px-4 py-3.5">
+              <p className="text-[12px] font-semibold text-ink-2">Conditions and notes</p>
+              <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-2">
+                {accessEdge.conditions && accessEdge.notes
+                  ? `${accessEdge.conditions} - ${accessEdge.notes}`
+                  : accessEdge.conditions ?? accessEdge.notes}
+              </p>
             </div>
-            <p className="mt-2 text-[17px] leading-relaxed text-ink">
-              You can change planes or transit without a visa - but <strong className="font-medium">not for tourism or extended stays</strong>.
-            </p>
-            {transitEdge.conditions && <p className="text-body mt-2 text-ink-soft">{transitEdge.conditions}</p>}
-            {transitEdge.sourceUrl && (
-              <div className="mt-3">
-                <SourceLink url={transitEdge.sourceUrl} official={transitEdge.sourceOfficial} />
-              </div>
-            )}
-          </div>
-        ) : (
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="mono inline-flex items-center rounded border border-line-strong bg-paper-2 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-soft">
-                Visa required
-              </span>
-            </div>
-            <p className="mt-2 text-[17px] leading-relaxed text-ink">
-              No automatic entry found for your passport{selected.length > 1 ? "s" : ""} and credentials. You will need to apply for a visa before travelling to {withArticle(name)}.
-            </p>
+          )}
 
-            <div className="mt-4 rounded-[2px] border border-line-strong bg-paper-2 px-4 py-3">
-              <p className="mono-chrome mb-2 text-[10px]">What you can do</p>
-              <ul className="text-body space-y-1.5 text-ink-soft">
-                <li>→ Apply for a tourist/visitor visa at an embassy or consulate of {withArticle(name)}</li>
+          {!accessEdge && transitEdge?.conditions && (
+            <p className="mt-4 text-[14.5px] leading-relaxed text-ink-2">{transitEdge.conditions}</p>
+          )}
+
+          {isVisaRequired && (
+            <div className="mt-6 rounded-xl border border-hair-strong bg-ground px-4 py-4">
+              <p className="text-[12px] font-semibold text-ink-2">What you can do</p>
+              <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[14.5px] leading-relaxed text-ink-2 marker:text-ink-3">
+                <li>Apply for a tourist or visitor visa at an embassy or consulate of {withArticle(name)}</li>
                 {credHintLabels.length > 0 && (
-                  <li>→ Holding a visa or residence permit from {listJoin(credHintLabels)} can unlock entry here - add it above</li>
+                  <li>Holding a visa or residence permit from {listJoin(credHintLabels)} can unlock entry here, add it above</li>
                 )}
                 {result.cbi.some((p) => p.iso3 === destIso3) && (
-                  <li>→ <Link href="/programs/citizenship-by-investment" className="font-medium text-stamp hover:underline">CBI program available</Link> - invest to obtain citizenship here</li>
+                  <li><Link href="/programs/citizenship-by-investment" className="font-semibold text-accent hover:underline">Citizenship by investment available</Link>, invest to obtain citizenship here</li>
                 )}
                 {result.rbi.some((p) => p.iso3 === destIso3) && (
-                  <li>→ <Link href="/programs/golden-visa" className="font-medium text-voa hover:underline">Golden visa available</Link> - invest to obtain residency here</li>
+                  <li><Link href="/programs/golden-visa" className="font-semibold text-accent hover:underline">Golden visa available</Link>, invest to obtain residency here</li>
                 )}
               </ul>
             </div>
+          )}
 
-          </div>
-        )}
+          {(accessEdge?.sourceUrl || (!accessEdge && transitEdge?.sourceUrl)) && (
+            <div className="mt-5">
+              <SourceLink
+                url={(accessEdge ?? transitEdge)!.sourceUrl}
+                official={(accessEdge ?? transitEdge)!.sourceOfficial}
+              />
+            </div>
+          )}
+        </div>
 
         {/* Full-guide CTA sits directly under the verdict, ahead of the
             visa-type long tail. It routes into the corridor corpus via the
