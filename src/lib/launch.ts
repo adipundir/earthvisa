@@ -5,7 +5,7 @@
 
 export const PRODUCT_HUNT_LAUNCH = {
   /** the ONLY switch: true = banner live sitewide, false = hidden */
-  enabled: true,
+  enabled: false,
   /** the launch page travellers land on when they click through */
   url: "https://www.producthunt.com/products/earth-visa?launch=earth-visa&utm_source=site-banner&utm_medium=banner&utm_campaign=earth-visa-launch",
   postId: "1201821",
