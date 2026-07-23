@@ -70,14 +70,17 @@ const LIST_LINKS: Record<string, { vf?: string; voa?: string; evisa?: string; us
   NGA: {
     vf: "/list/visa-free-countries-for-nigerians",
     voa: "/list/visa-on-arrival-countries-for-nigerians",
+    us: "/list/countries-with-us-visa-for-nigerian-citizens",
   },
   IDN: {
     vf: "/list/visa-free-countries-for-indonesians",
     voa: "/list/visa-on-arrival-countries-for-indonesians",
+    us: "/list/countries-with-us-visa-for-indonesian-citizens",
   },
   VNM: {
     vf: "/list/visa-free-countries-for-vietnamese-citizens",
     voa: "/list/visa-on-arrival-countries-for-vietnamese-citizens",
+    us: "/list/countries-with-us-visa-for-vietnamese-citizens",
   },
   BRA: {
     vf: "/list/visa-free-countries-for-brazilians",
@@ -90,10 +93,68 @@ const LIST_LINKS: Record<string, { vf?: string; voa?: string; evisa?: string; us
   EGY: {
     vf: "/list/visa-free-countries-for-egyptians",
     voa: "/list/visa-on-arrival-countries-for-egyptians",
+    us: "/list/countries-with-us-visa-for-egyptian-citizens",
   },
   BGD: {
     vf: "/list/visa-free-countries-for-bangladeshis",
     voa: "/list/visa-on-arrival-countries-for-bangladeshis",
+    us: "/list/countries-with-us-visa-for-bangladeshi-citizens",
+  },
+  NPL: {
+    voa: "/list/visa-on-arrival-countries-for-nepali-citizens",
+    us: "/list/countries-with-us-visa-for-nepali-citizens",
+  },
+  LKA: {
+    voa: "/list/visa-on-arrival-countries-for-sri-lankans",
+    us: "/list/countries-with-us-visa-for-sri-lankan-citizens",
+  },
+  CHN: {
+    voa: "/list/visa-on-arrival-countries-for-chinese-citizens",
+    us: "/list/countries-with-us-visa-for-chinese-citizens",
+  },
+  THA: {
+    voa: "/list/visa-on-arrival-countries-for-thai-citizens",
+    us: "/list/countries-with-us-visa-for-thai-citizens",
+  },
+  KEN: {
+    voa: "/list/visa-on-arrival-countries-for-kenyans",
+    us: "/list/countries-with-us-visa-for-kenyan-citizens",
+  },
+  GHA: {
+    voa: "/list/visa-on-arrival-countries-for-ghanaians",
+    us: "/list/countries-with-us-visa-for-ghanaian-citizens",
+  },
+  ZAF: {
+    voa: "/list/visa-on-arrival-countries-for-south-africans",
+    us: "/list/countries-with-us-visa-for-south-african-citizens",
+  },
+  MAR: {
+    voa: "/list/visa-on-arrival-countries-for-moroccans",
+    us: "/list/countries-with-us-visa-for-moroccan-citizens",
+  },
+  DZA: {
+    voa: "/list/visa-on-arrival-countries-for-algerians",
+    us: "/list/countries-with-us-visa-for-algerian-citizens",
+  },
+  ETH: {
+    voa: "/list/visa-on-arrival-countries-for-ethiopians",
+    us: "/list/countries-with-us-visa-for-ethiopian-citizens",
+  },
+  SAU: {
+    voa: "/list/visa-on-arrival-countries-for-saudis",
+    us: "/list/countries-with-us-visa-for-saudi-citizens",
+  },
+  KAZ: {
+    voa: "/list/visa-on-arrival-countries-for-kazakh-citizens",
+    us: "/list/countries-with-us-visa-for-kazakh-citizens",
+  },
+  JOR: {
+    voa: "/list/visa-on-arrival-countries-for-jordanians",
+    us: "/list/countries-with-us-visa-for-jordanian-citizens",
+  },
+  IRN: {
+    voa: "/list/visa-on-arrival-countries-for-iranians",
+    us: "/list/countries-with-us-visa-for-iranian-citizens",
   },
 };
 

@@ -48,6 +48,53 @@ const LISTS: ListConfig[] = [
   { slug: "countries-with-us-visa-for-indians", kind: "us_visa", nat: "IND", people: "Indians", peopleTitle: "Indians" },
   { slug: "countries-with-us-visa-for-pakistani-citizens", kind: "us_visa", nat: "PAK", people: "Pakistani citizens", peopleTitle: "Pakistani Citizens" },
   { slug: "countries-with-us-visa-for-filipino-citizens", kind: "us_visa", nat: "PHL", people: "Filipino citizens", peopleTitle: "Filipino Citizens" },
+  // GSC-driven expansion (2026-07-21): voa/us_visa are the proven-winning list
+  // patterns on this site (real CTR + page-1 positions - e.g. voa-for-pakistanis
+  // at position ~14, us-visa-for-filipino-citizens at position ~10) vs. the
+  // broad visa_free lists, which lose to established authority sites on that
+  // exact head term (position ~47-61 despite exact-match intent). Expansion
+  // criteria, computed from src/data/dataset.json: a nationality gets a new
+  // voa list when its passport's visa-free count < 60 AND visa-on-arrival
+  // count >= 15 (a "weak-to-medium" passport where VoA access is a genuinely
+  // valuable finding, not a footnote); a nationality gets a new us_visa list
+  // when compute([nat], ["US_VISA"], {}) yields >= 10 real unlocked
+  // destinations (below that, a US visa isn't a meaningful travel-hack for
+  // that passport). Strong passports (USA/GBR/DEU/FRA/CAN/AUS/...) were
+  // excluded from both - the US_VISA compute run showed only 1-2 unlocks for
+  // them, and VoA access is not their primary value proposition.
+  { slug: "visa-on-arrival-countries-for-nepali-citizens", kind: "voa", nat: "NPL", people: "Nepali citizens", peopleTitle: "Nepali Citizens" },
+  { slug: "visa-on-arrival-countries-for-sri-lankans", kind: "voa", nat: "LKA", people: "Sri Lankans", peopleTitle: "Sri Lankans" },
+  { slug: "visa-on-arrival-countries-for-chinese-citizens", kind: "voa", nat: "CHN", people: "Chinese citizens", peopleTitle: "Chinese Citizens" },
+  { slug: "visa-on-arrival-countries-for-thai-citizens", kind: "voa", nat: "THA", people: "Thai citizens", peopleTitle: "Thai Citizens" },
+  { slug: "visa-on-arrival-countries-for-kenyans", kind: "voa", nat: "KEN", people: "Kenyans", peopleTitle: "Kenyans" },
+  { slug: "visa-on-arrival-countries-for-ghanaians", kind: "voa", nat: "GHA", people: "Ghanaians", peopleTitle: "Ghanaians" },
+  { slug: "visa-on-arrival-countries-for-south-africans", kind: "voa", nat: "ZAF", people: "South Africans", peopleTitle: "South Africans" },
+  { slug: "visa-on-arrival-countries-for-moroccans", kind: "voa", nat: "MAR", people: "Moroccans", peopleTitle: "Moroccans" },
+  { slug: "visa-on-arrival-countries-for-algerians", kind: "voa", nat: "DZA", people: "Algerians", peopleTitle: "Algerians" },
+  { slug: "visa-on-arrival-countries-for-ethiopians", kind: "voa", nat: "ETH", people: "Ethiopians", peopleTitle: "Ethiopians" },
+  { slug: "visa-on-arrival-countries-for-saudis", kind: "voa", nat: "SAU", people: "Saudis", peopleTitle: "Saudis" },
+  { slug: "visa-on-arrival-countries-for-kazakh-citizens", kind: "voa", nat: "KAZ", people: "Kazakh citizens", peopleTitle: "Kazakh Citizens" },
+  { slug: "visa-on-arrival-countries-for-jordanians", kind: "voa", nat: "JOR", people: "Jordanians", peopleTitle: "Jordanians" },
+  { slug: "visa-on-arrival-countries-for-iranians", kind: "voa", nat: "IRN", people: "Iranians", peopleTitle: "Iranians" },
+  { slug: "countries-with-us-visa-for-bangladeshi-citizens", kind: "us_visa", nat: "BGD", people: "Bangladeshi citizens", peopleTitle: "Bangladeshi Citizens" },
+  { slug: "countries-with-us-visa-for-nepali-citizens", kind: "us_visa", nat: "NPL", people: "Nepali citizens", peopleTitle: "Nepali Citizens" },
+  { slug: "countries-with-us-visa-for-sri-lankan-citizens", kind: "us_visa", nat: "LKA", people: "Sri Lankan citizens", peopleTitle: "Sri Lankan Citizens" },
+  { slug: "countries-with-us-visa-for-indonesian-citizens", kind: "us_visa", nat: "IDN", people: "Indonesian citizens", peopleTitle: "Indonesian Citizens" },
+  { slug: "countries-with-us-visa-for-vietnamese-citizens", kind: "us_visa", nat: "VNM", people: "Vietnamese citizens", peopleTitle: "Vietnamese Citizens" },
+  { slug: "countries-with-us-visa-for-egyptian-citizens", kind: "us_visa", nat: "EGY", people: "Egyptian citizens", peopleTitle: "Egyptian Citizens" },
+  { slug: "countries-with-us-visa-for-chinese-citizens", kind: "us_visa", nat: "CHN", people: "Chinese citizens", peopleTitle: "Chinese Citizens" },
+  { slug: "countries-with-us-visa-for-nigerian-citizens", kind: "us_visa", nat: "NGA", people: "Nigerian citizens", peopleTitle: "Nigerian Citizens" },
+  { slug: "countries-with-us-visa-for-algerian-citizens", kind: "us_visa", nat: "DZA", people: "Algerian citizens", peopleTitle: "Algerian Citizens" },
+  { slug: "countries-with-us-visa-for-ethiopian-citizens", kind: "us_visa", nat: "ETH", people: "Ethiopian citizens", peopleTitle: "Ethiopian Citizens" },
+  { slug: "countries-with-us-visa-for-iranian-citizens", kind: "us_visa", nat: "IRN", people: "Iranian citizens", peopleTitle: "Iranian Citizens" },
+  { slug: "countries-with-us-visa-for-jordanian-citizens", kind: "us_visa", nat: "JOR", people: "Jordanian citizens", peopleTitle: "Jordanian Citizens" },
+  { slug: "countries-with-us-visa-for-thai-citizens", kind: "us_visa", nat: "THA", people: "Thai citizens", peopleTitle: "Thai Citizens" },
+  { slug: "countries-with-us-visa-for-kenyan-citizens", kind: "us_visa", nat: "KEN", people: "Kenyan citizens", peopleTitle: "Kenyan Citizens" },
+  { slug: "countries-with-us-visa-for-moroccan-citizens", kind: "us_visa", nat: "MAR", people: "Moroccan citizens", peopleTitle: "Moroccan Citizens" },
+  { slug: "countries-with-us-visa-for-ghanaian-citizens", kind: "us_visa", nat: "GHA", people: "Ghanaian citizens", peopleTitle: "Ghanaian Citizens" },
+  { slug: "countries-with-us-visa-for-kazakh-citizens", kind: "us_visa", nat: "KAZ", people: "Kazakh citizens", peopleTitle: "Kazakh Citizens" },
+  { slug: "countries-with-us-visa-for-south-african-citizens", kind: "us_visa", nat: "ZAF", people: "South African citizens", peopleTitle: "South African Citizens" },
+  { slug: "countries-with-us-visa-for-saudi-citizens", kind: "us_visa", nat: "SAU", people: "Saudi citizens", peopleTitle: "Saudi Citizens" },
 ];
 
 export async function generateStaticParams() {
