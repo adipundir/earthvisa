@@ -8,6 +8,10 @@ export const PRODUCT_HUNT_LAUNCH = {
   enabled: false,
   /** the launch page travellers land on when they click through */
   url: "https://www.producthunt.com/products/earth-visa?launch=earth-visa&utm_source=site-banner&utm_medium=banner&utm_campaign=earth-visa-launch",
+  /** Canonical, campaign-free product URL. `url` above carries utm_* params for
+   *  banner attribution; schema.org sameAs must point at the clean profile so
+   *  Google resolves it to the entity rather than a tracked one-off link. */
+  profileUrl: "https://www.producthunt.com/products/earth-visa",
   postId: "1201821",
   /** localStorage key for "user dismissed this". Bump the date suffix to re-show
    *  the bar to everyone on a future launch (e.g. a v2 hunt). */

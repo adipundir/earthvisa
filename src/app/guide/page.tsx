@@ -19,6 +19,11 @@ const GUIDES: { href: string; title: string; desc: string }[] = [
     desc: "The EU's upcoming travel authorisation: what it is, who needs it, and why it is not a visa.",
   },
   {
+    href: "/guide/esta",
+    title: "ESTA",
+    desc: "The US travel authorisation, the current fee, and the past travel that disqualifies you from the Visa Waiver Program.",
+  },
+  {
     href: "/guide/visa-types",
     title: "Visa Types Explained",
     desc: "Visa-free vs visa on arrival vs eTA vs e-Visa - one plain-language definition for every access level.",
@@ -27,6 +32,11 @@ const GUIDES: { href: string; title: string; desc: string }[] = [
     href: "/guide/transit-visa",
     title: "Transit Visas",
     desc: "Do you need one for a layover? Airside vs landside, and each destination's published transit products.",
+  },
+  {
+    href: "/guide/applying-from-your-country-of-residence",
+    title: "Applying from Where You Live",
+    desc: "Expat in the Gulf? Your nationality decides if you need a visa; your residence decides where you apply.",
   },
   {
     href: "/guide/proof-of-funds",

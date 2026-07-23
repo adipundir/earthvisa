@@ -8,7 +8,7 @@ function nameToSlug(name: string): string {
 }
 
 // Static SEO routes built outside the country/corridor graph.
-const GUIDE_PAGES = ["/guide", "/guide/schengen", "/guide/etias", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa", "/guide/japan-visa-fee-increase-2026", "/guide/thailand-visa-changes-2026"];
+const GUIDE_PAGES = ["/guide", "/guide/schengen", "/guide/etias", "/guide/esta", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa", "/guide/applying-from-your-country-of-residence", "/guide/japan-visa-fee-increase-2026", "/guide/thailand-visa-changes-2026"];
 const PROGRAM_PAGES = [
   "/programs",
   "/programs/citizenship-by-investment",
@@ -141,6 +141,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: base, lastModified, changeFrequency: "weekly", priority: 1.0 },
     { url: `${base}/visit`, lastModified, changeFrequency: "weekly", priority: 0.9 },
+    // /compare canonicalises every ?a=&b= variant back to the bare path, so the
+    // one bare URL is what belongs here.
+    { url: `${base}/compare`, lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/rankings`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/rankings/visa-fees`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/passport`, lastModified, changeFrequency: "monthly", priority: 0.7 },

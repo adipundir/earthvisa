@@ -125,9 +125,14 @@ export default function RootLayout({
                 "logo": {
                   "@type": "ImageObject",
                   "url": "https://earthvisa.in/icon.svg",
-                  "width": 32,
-                  "height": 32
+                  "width": 48,
+                  "height": 48
                 },
+                // sameAs is how Google ties this site to the same real-world
+                // entity across the web - the signal behind brand recognition
+                // and, eventually, a knowledge panel. Only list profiles we
+                // actually control; a wrong URL here is worse than none.
+                "sameAs": [PRODUCT_HUNT_LAUNCH.profileUrl],
                 "description": `Earth Visa tracks visa-free travel, visa on arrival, eTA, e-visa, golden visas, citizenship by investment and fast-track immigration for ${TOTAL_PASSPORTS} passports, sourced exclusively from official government publications.`
               },
               {
