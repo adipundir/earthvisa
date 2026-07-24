@@ -5,22 +5,26 @@ import { dataset } from "@/lib/dataset";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "What Can My Passport Do? Visa-Free Countries Checker",
+    // Lead with the brand: a bare "What Can My Passport Do?" title contained
+    // the word "Earth Visa" nowhere, so on a brand query ("earthvisa") every
+    // corridor page (each ends "| Earth Visa") out-matched the homepage. Brand
+    // first, primary keyword kept.
+    absolute: "Earth Visa: What Can My Passport Do? Visa-Free Checker",
   },
   description:
-    "Enter your passport to see visa-free countries, visa on arrival, eTA, freedom-of-movement rights, golden visas and citizenship by investment - all from official government sources.",
+    "Enter your passport to see visa-free countries, visa on arrival, eTA, freedom-of-movement rights, golden visas and citizenship by investment, all from official government sources.",
   alternates: { canonical: "https://earthvisa.in" },
   openGraph: {
-    title: "What Can My Passport Do? Visa-Free Countries Checker",
+    title: "Earth Visa: What Can My Passport Do?",
     description:
-      "See visa-free travel, visa on arrival, golden visas and citizenship by investment for your passport - from official government sources.",
+      "See visa-free travel, visa on arrival, golden visas and citizenship by investment for your passport, from official government sources.",
     url: "https://earthvisa.in",
   },
   twitter: {
     card: "summary_large_image",
-    title: "What Can My Passport Do? Visa-Free Countries Checker",
+    title: "Earth Visa: What Can My Passport Do?",
     description:
-      "See visa-free travel, visa on arrival, golden visas and citizenship by investment for your passport - from official government sources.",
+      "See visa-free travel, visa on arrival, golden visas and citizenship by investment for your passport, from official government sources.",
   },
 };
 
