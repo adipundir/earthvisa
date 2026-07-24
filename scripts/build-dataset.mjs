@@ -827,17 +827,40 @@ console.log(`  VFS: indexed ${vfsCorridorCount} corridors across ${Object.keys(v
 // doesn't bump every URL's timestamp and trigger a full-site recrawl wave -
 // so this is sourced from each data/countries/{ISO}.json file's own most
 // recent commit, not the single build-time date used for meta.lastUpdated.
+//
+// COSMETIC_COMMITS exists because that guard has one failure mode: a sitewide
+// find-replace over the data layer. On 2026-07-20, dae06d6 ("no dashes
+// anywhere") rewrote en-dashes to hyphens in 142 of 199 country files. Since a
+// corridor's date is max(nationality, destination), a corridor is bumped when
+// EITHER endpoint moves - so 71.4% of countries touched re-dated
+// 1 - 0.286^2 = 91.8% of corridors. The sitemap then told Google that 36,611 of
+// 39,932 URLs had changed, for punctuation. Impressions fell 97.7% the same day
+// (5,886/day -> 137/day) - a crawl-budget wave a 3-week-old domain cannot absorb.
+//
+// Listing a commit here means "this changed bytes, not information". Add a SHA
+// only for pure reformatting; anything that alters a fact must NOT be listed,
+// or the sitemap will under-report a real update.
+const COSMETIC_COMMITS = new Set([
+  // 2026-07-20 "Owner feedback round: no dashes anywhere" - en-dash -> hyphen
+  // across 941 JSON files, 142 of them country data. No fact changed.
+  "dae06d6e77ce09e65168c2a92882684d8fac9def",
+]);
+
 const countryLastUpdated = {};
 try {
-  const log = execSync('git log --format="COMMIT %aI" --name-only -- data/countries/', {
+  const log = execSync('git log --format="COMMIT %H %aI" --name-only -- data/countries/', {
     cwd: ROOT,
     maxBuffer: 1024 * 1024 * 64,
   }).toString();
   let currentDate = null;
+  let cosmetic = false;
   for (const line of log.split("\n")) {
     if (line.startsWith("COMMIT ")) {
-      currentDate = line.slice(7).trim();
+      const [sha, iso] = line.slice(7).trim().split(/\s+/);
+      cosmetic = COSMETIC_COMMITS.has(sha);
+      currentDate = iso;
     } else if (line.startsWith("data/countries/") && line.endsWith(".json")) {
+      if (cosmetic) continue;
       const iso3 = line.slice("data/countries/".length, -".json".length);
       if (!(iso3 in countryLastUpdated) && currentDate) {
         countryLastUpdated[iso3] = currentDate.slice(0, 10);
