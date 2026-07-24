@@ -148,14 +148,20 @@ body {
 
 /* ══ v2 signature utilities ══════════════════════════════════════════════ */
 
+/* Width-axis note (2026-07-24): display type previously ran at 108-118% on
+   Archivo's wdth axis with line-height at or below 1. Widening glyphs without
+   adding height, then shortening the line box, is what made headings read wide
+   and squat. The axis is still used - just near-neutral - so the v2 character
+   (heavy weight, tight tracking, big scale) survives without the spread. */
+
 /* Display question ("Where can you go?") - Google-homepage scale. */
 .text-question {
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(42px, 7.2vw, 84px);
   font-weight: 800;
-  font-stretch: 115%;
+  font-stretch: 103%;
   letter-spacing: -0.03em;
-  line-height: 1.02;
+  line-height: 1.08;
 }
 
 /* Verdict display type (green "Visa-free" / ink "Visa required").
@@ -164,18 +170,18 @@ body {
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(58px, 10vw, 150px);
   font-weight: 850;
-  font-stretch: 118%;
+  font-stretch: 102%;
   letter-spacing: -0.035em;
-  line-height: 0.94;
+  line-height: 1.04;
 }
 
 /* Giant-numeral stat cell (60 / ₹0 / 93 style). Pair with .stat-label. */
 .stat-num {
   font-family: var(--font-display), system-ui, sans-serif;
   font-weight: 800;
-  font-stretch: 116%;
+  font-stretch: 102%;
   letter-spacing: -0.02em;
-  line-height: 1;
+  line-height: 1.05;
   font-variant-numeric: tabular-nums;
 }
 .stat-label {
@@ -274,9 +280,9 @@ body {
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(30px, 2.4vw + 20.6px, 48px);
   font-weight: 750;
-  font-stretch: 108%;
+  font-stretch: 100%;
   letter-spacing: -0.02em;
-  line-height: 1.08;
+  line-height: 1.15;
 }
 /* Legacy pages italicize an accent word inside H1s - italic Archivo at 750
    reads poorly; neutralize to the accent color only. */
