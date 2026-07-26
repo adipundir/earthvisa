@@ -1,0 +1,1026 @@
+{
+  "dest_iso3": "USA",
+  "metric_id": "us_b_visa_adjusted_refusal",
+  "label": "B1/B2 visitor visa refusal rate",
+  "keyed_by": "nationality",
+  "measures": "refusal_rate_percent",
+  "higher_is_worse": true,
+  "definition": "[Refusals minus Overcomes] divided by [Issuances plus Refusals minus Overcomes]. Counted once per applicant per fiscal year, not per application: an applicant refused in April and issued in July counts only as an issuance.",
+  "scope": "B1/B2 visitor (tourism and business) visas only. Excludes student, work and all other classes.",
+  "caveats": [
+    "Visa Waiver Program nationals: the rate reflects only applications made at U.S. embassies and consulates. Travellers entering on ESTA are not counted, so these rates read higher than the real chance of being turned away.",
+    "A rate is not published where entry does not normally require a visa, so it should not be read as the odds of entering - only as the outcome of visa applications made.",
+    "Waivers of ineligibility are excluded from the calculation."
+  ],
+  "source_name": "U.S. Department of State, Bureau of Consular Affairs",
+  "source_url": "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics/nonimmigrant-b-visa-adjusted-refusal-rates-by-nationality.html",
+  "source_file_url": "https://travel.state.gov/content/dam/visas/Statistics/Non-Immigrant-Statistics/RefusalRates/FY25.pdf",
+  "source_official": true,
+  "retrieved_via": "web.archive.org - travel.state.gov blocks automated fetch at the TLS fingerprint level; archived bytes verified against live content",
+  "period": "FY2025",
+  "period_start": "2024-10-01",
+  "period_end": "2025-09-30",
+  "cadence": "annual, published roughly 2-4 months after the 30 September fiscal year end",
+  "generated": "2026-07-25",
+  "nationalities": 198,
+  "ambiguous_zero_count": 3,
+  "rows": [
+    {
+      "iso3": "AFG",
+      "name_in_source": "AFGHANISTAN",
+      "rate_percent": 63.25
+    },
+    {
+      "iso3": "AGO",
+      "name_in_source": "ANGOLA",
+      "rate_percent": 54.33
+    },
+    {
+      "iso3": "ALB",
+      "name_in_source": "ALBANIA",
+      "rate_percent": 37.32
+    },
+    {
+      "iso3": "AND",
+      "name_in_source": "ANDORRA",
+      "rate_percent": 9.09
+    },
+    {
+      "iso3": "ARE",
+      "name_in_source": "UNITED ARAB EMIRATES",
+      "rate_percent": 2.17
+    },
+    {
+      "iso3": "ARG",
+      "name_in_source": "ARGENTINA",
+      "rate_percent": 7.47
+    },
+    {
+      "iso3": "ARM",
+      "name_in_source": "ARMENIA",
+      "rate_percent": 56.37
+    },
+    {
+      "iso3": "ATG",
+      "name_in_source": "ANTIGUA AND BARBUDA",
+      "rate_percent": 38.89
+    },
+    {
+      "iso3": "AUS",
+      "name_in_source": "AUSTRALIA",
+      "rate_percent": 22.93
+    },
+    {
+      "iso3": "AUT",
+      "name_in_source": "AUSTRIA",
+      "rate_percent": 8.92
+    },
+    {
+      "iso3": "AZE",
+      "name_in_source": "AZERBAIJAN",
+      "rate_percent": 20.91
+    },
+    {
+      "iso3": "BDI",
+      "name_in_source": "BURUNDI",
+      "rate_percent": 69.23
+    },
+    {
+      "iso3": "BEL",
+      "name_in_source": "BELGIUM",
+      "rate_percent": 12.8
+    },
+    {
+      "iso3": "BEN",
+      "name_in_source": "BENIN",
+      "rate_percent": 64.58
+    },
+    {
+      "iso3": "BFA",
+      "name_in_source": "BURKINA FASO",
+      "rate_percent": 71.25
+    },
+    {
+      "iso3": "BGD",
+      "name_in_source": "BANGLADESH",
+      "rate_percent": 61.45
+    },
+    {
+      "iso3": "BGR",
+      "name_in_source": "BULGARIA",
+      "rate_percent": 5.11
+    },
+    {
+      "iso3": "BHR",
+      "name_in_source": "BAHRAIN",
+      "rate_percent": 24.01
+    },
+    {
+      "iso3": "BHS",
+      "name_in_source": "BAHAMAS, THE",
+      "rate_percent": 14.46
+    },
+    {
+      "iso3": "BIH",
+      "name_in_source": "BOSNIA-HERZEGOVINA",
+      "rate_percent": 14.89
+    },
+    {
+      "iso3": "BLR",
+      "name_in_source": "BELARUS",
+      "rate_percent": 26.58
+    },
+    {
+      "iso3": "BLZ",
+      "name_in_source": "BELIZE",
+      "rate_percent": 32.32
+    },
+    {
+      "iso3": "BOL",
+      "name_in_source": "BOLIVIA",
+      "rate_percent": 29.83
+    },
+    {
+      "iso3": "BRA",
+      "name_in_source": "BRAZIL",
+      "rate_percent": 14.87
+    },
+    {
+      "iso3": "BRB",
+      "name_in_source": "BARBADOS",
+      "rate_percent": 18.46
+    },
+    {
+      "iso3": "BRN",
+      "name_in_source": "BRUNEI",
+      "rate_percent": 8.33
+    },
+    {
+      "iso3": "BTN",
+      "name_in_source": "BHUTAN",
+      "rate_percent": 56.03
+    },
+    {
+      "iso3": "BWA",
+      "name_in_source": "BOTSWANA",
+      "rate_percent": 38.44
+    },
+    {
+      "iso3": "CAF",
+      "name_in_source": "CENTRAL AFRICAN REPUBLIC",
+      "rate_percent": 42.6
+    },
+    {
+      "iso3": "CAN",
+      "name_in_source": "CANADA",
+      "rate_percent": 53.1
+    },
+    {
+      "iso3": "CHE",
+      "name_in_source": "SWITZERLAND",
+      "rate_percent": 5.82
+    },
+    {
+      "iso3": "CHL",
+      "name_in_source": "CHILE",
+      "rate_percent": 16.38
+    },
+    {
+      "iso3": "CHN",
+      "name_in_source": "CHINA",
+      "rate_percent": 20.21
+    },
+    {
+      "iso3": "CIV",
+      "name_in_source": "COTE D`IVOIRE",
+      "rate_percent": 36.79
+    },
+    {
+      "iso3": "CMR",
+      "name_in_source": "CAMEROON",
+      "rate_percent": 60.55
+    },
+    {
+      "iso3": "COD",
+      "name_in_source": "CONGO, DEMOCRATIC REPUBLIC OF THE",
+      "rate_percent": 63.37
+    },
+    {
+      "iso3": "COG",
+      "name_in_source": "CONGO, REPUBLIC OF THE",
+      "rate_percent": 64.75
+    },
+    {
+      "iso3": "COL",
+      "name_in_source": "COLOMBIA",
+      "rate_percent": 32.84
+    },
+    {
+      "iso3": "COM",
+      "name_in_source": "COMOROS",
+      "rate_percent": 30.19
+    },
+    {
+      "iso3": "CPV",
+      "name_in_source": "CABO VERDE",
+      "rate_percent": 53.87
+    },
+    {
+      "iso3": "CRI",
+      "name_in_source": "COSTA RICA",
+      "rate_percent": 16.14
+    },
+    {
+      "iso3": "CUB",
+      "name_in_source": "CUBA",
+      "rate_percent": 70.86
+    },
+    {
+      "iso3": "CYP",
+      "name_in_source": "CYPRUS",
+      "rate_percent": 2.55
+    },
+    {
+      "iso3": "CZE",
+      "name_in_source": "CZECH REPUBLIC",
+      "rate_percent": 8.66
+    },
+    {
+      "iso3": "DEU",
+      "name_in_source": "GERMANY",
+      "rate_percent": 12.22
+    },
+    {
+      "iso3": "DJI",
+      "name_in_source": "DJIBOUTI",
+      "rate_percent": 61.47
+    },
+    {
+      "iso3": "DMA",
+      "name_in_source": "DOMINICA",
+      "rate_percent": 42.89
+    },
+    {
+      "iso3": "DNK",
+      "name_in_source": "DENMARK",
+      "rate_percent": 12.59
+    },
+    {
+      "iso3": "DOM",
+      "name_in_source": "DOMINICAN REPUBLIC",
+      "rate_percent": 36.4
+    },
+    {
+      "iso3": "DZA",
+      "name_in_source": "ALGERIA",
+      "rate_percent": 51.23
+    },
+    {
+      "iso3": "ECU",
+      "name_in_source": "ECUADOR",
+      "rate_percent": 42.24
+    },
+    {
+      "iso3": "EGY",
+      "name_in_source": "EGYPT",
+      "rate_percent": 47.61
+    },
+    {
+      "iso3": "ERI",
+      "name_in_source": "ERITREA",
+      "rate_percent": 60.02
+    },
+    {
+      "iso3": "ESP",
+      "name_in_source": "SPAIN",
+      "rate_percent": 23.67
+    },
+    {
+      "iso3": "EST",
+      "name_in_source": "ESTONIA",
+      "rate_percent": 11.33
+    },
+    {
+      "iso3": "ETH",
+      "name_in_source": "ETHIOPIA",
+      "rate_percent": 53.64
+    },
+    {
+      "iso3": "FIN",
+      "name_in_source": "FINLAND",
+      "rate_percent": 18.09
+    },
+    {
+      "iso3": "FJI",
+      "name_in_source": "FIJI",
+      "rate_percent": 32.83
+    },
+    {
+      "iso3": "FRA",
+      "name_in_source": "FRANCE",
+      "rate_percent": 9.67
+    },
+    {
+      "iso3": "FSM",
+      "name_in_source": "FEDERATED STATES OF MICRONESIA",
+      "rate_percent": 100.0
+    },
+    {
+      "iso3": "GAB",
+      "name_in_source": "GABON",
+      "rate_percent": 44.63
+    },
+    {
+      "iso3": "GBR",
+      "name_in_source": "GREAT BRITAIN AND NORTHERN IRELAND",
+      "rate_percent": 20.44
+    },
+    {
+      "iso3": "GEO",
+      "name_in_source": "GEORGIA",
+      "rate_percent": 45.57
+    },
+    {
+      "iso3": "GHA",
+      "name_in_source": "GHANA",
+      "rate_percent": 64.34
+    },
+    {
+      "iso3": "GIN",
+      "name_in_source": "GUINEA",
+      "rate_percent": 66.9
+    },
+    {
+      "iso3": "GMB",
+      "name_in_source": "GAMBIA, THE",
+      "rate_percent": 75.29
+    },
+    {
+      "iso3": "GNB",
+      "name_in_source": "GUINEA - BISSAU",
+      "rate_percent": 75.17
+    },
+    {
+      "iso3": "GNQ",
+      "name_in_source": "EQUATORIAL GUINEA",
+      "rate_percent": 68.63
+    },
+    {
+      "iso3": "GRC",
+      "name_in_source": "GREECE",
+      "rate_percent": 9.3
+    },
+    {
+      "iso3": "GRD",
+      "name_in_source": "GRENADA",
+      "rate_percent": 43.73
+    },
+    {
+      "iso3": "GTM",
+      "name_in_source": "GUATEMALA",
+      "rate_percent": 39.21
+    },
+    {
+      "iso3": "GUY",
+      "name_in_source": "GUYANA",
+      "rate_percent": 26.61
+    },
+    {
+      "iso3": "HKG",
+      "name_in_source": "HONG KONG S. A. R.",
+      "rate_percent": 7.72
+    },
+    {
+      "iso3": "HND",
+      "name_in_source": "HONDURAS",
+      "rate_percent": 46.52
+    },
+    {
+      "iso3": "HRV",
+      "name_in_source": "CROATIA",
+      "rate_percent": 14.75
+    },
+    {
+      "iso3": "HTI",
+      "name_in_source": "HAITI",
+      "rate_percent": 50.26
+    },
+    {
+      "iso3": "HUN",
+      "name_in_source": "HUNGARY",
+      "rate_percent": 7.91
+    },
+    {
+      "iso3": "IDN",
+      "name_in_source": "INDONESIA",
+      "rate_percent": 26.69
+    },
+    {
+      "iso3": "IND",
+      "name_in_source": "INDIA",
+      "rate_percent": 22.04
+    },
+    {
+      "iso3": "IRL",
+      "name_in_source": "IRELAND",
+      "rate_percent": 25.12
+    },
+    {
+      "iso3": "IRN",
+      "name_in_source": "IRAN",
+      "rate_percent": 62.44
+    },
+    {
+      "iso3": "IRQ",
+      "name_in_source": "IRAQ",
+      "rate_percent": 39.86
+    },
+    {
+      "iso3": "ISL",
+      "name_in_source": "ICELAND",
+      "rate_percent": 5.43
+    },
+    {
+      "iso3": "ISR",
+      "name_in_source": "ISRAEL",
+      "rate_percent": 11.32
+    },
+    {
+      "iso3": "ITA",
+      "name_in_source": "ITALY",
+      "rate_percent": 12.65
+    },
+    {
+      "iso3": "JAM",
+      "name_in_source": "JAMAICA",
+      "rate_percent": 44.26
+    },
+    {
+      "iso3": "JOR",
+      "name_in_source": "JORDAN",
+      "rate_percent": 56.63
+    },
+    {
+      "iso3": "JPN",
+      "name_in_source": "JAPAN",
+      "rate_percent": 5.68
+    },
+    {
+      "iso3": "KAZ",
+      "name_in_source": "KAZAKHSTAN",
+      "rate_percent": 51.75
+    },
+    {
+      "iso3": "KEN",
+      "name_in_source": "KENYA",
+      "rate_percent": 68.23
+    },
+    {
+      "iso3": "KGZ",
+      "name_in_source": "KYRGYZSTAN",
+      "rate_percent": 59.02
+    },
+    {
+      "iso3": "KHM",
+      "name_in_source": "CAMBODIA",
+      "rate_percent": 30.71
+    },
+    {
+      "iso3": "KIR",
+      "name_in_source": "KIRIBATI",
+      "rate_percent": 4.5
+    },
+    {
+      "iso3": "KNA",
+      "name_in_source": "ST. KITTS AND NEVIS",
+      "rate_percent": 35.09
+    },
+    {
+      "iso3": "KOR",
+      "name_in_source": "KOREA, SOUTH",
+      "rate_percent": 24.73
+    },
+    {
+      "iso3": "KWT",
+      "name_in_source": "KUWAIT",
+      "rate_percent": 6.06
+    },
+    {
+      "iso3": "LAO",
+      "name_in_source": "LAOS",
+      "rate_percent": 84.35
+    },
+    {
+      "iso3": "LBN",
+      "name_in_source": "LEBANON",
+      "rate_percent": 39.42
+    },
+    {
+      "iso3": "LBR",
+      "name_in_source": "LIBERIA",
+      "rate_percent": 73.01
+    },
+    {
+      "iso3": "LBY",
+      "name_in_source": "LIBYA",
+      "rate_percent": 31.78
+    },
+    {
+      "iso3": "LCA",
+      "name_in_source": "ST. LUCIA",
+      "rate_percent": 37.03
+    },
+    {
+      "iso3": "LIE",
+      "name_in_source": "LIECHTENSTEIN",
+      "ambiguous_zero": true
+    },
+    {
+      "iso3": "LKA",
+      "name_in_source": "SRI LANKA",
+      "rate_percent": 33.35
+    },
+    {
+      "iso3": "LSO",
+      "name_in_source": "LESOTHO",
+      "rate_percent": 38.24
+    },
+    {
+      "iso3": "LTU",
+      "name_in_source": "LITHUANIA",
+      "rate_percent": 21.32
+    },
+    {
+      "iso3": "LUX",
+      "name_in_source": "LUXEMBOURG",
+      "rate_percent": 13.77
+    },
+    {
+      "iso3": "LVA",
+      "name_in_source": "LATVIA",
+      "rate_percent": 19.0
+    },
+    {
+      "iso3": "MAC",
+      "name_in_source": "MACAU S.A.R.",
+      "rate_percent": 13.13
+    },
+    {
+      "iso3": "MAR",
+      "name_in_source": "MOROCCO",
+      "rate_percent": 26.91
+    },
+    {
+      "iso3": "MCO",
+      "name_in_source": "MONACO",
+      "ambiguous_zero": true
+    },
+    {
+      "iso3": "MDA",
+      "name_in_source": "MOLDOVA",
+      "rate_percent": 44.76
+    },
+    {
+      "iso3": "MDG",
+      "name_in_source": "MADAGASCAR",
+      "rate_percent": 17.23
+    },
+    {
+      "iso3": "MDV",
+      "name_in_source": "MALDIVES",
+      "rate_percent": 10.6
+    },
+    {
+      "iso3": "MEX",
+      "name_in_source": "MEXICO",
+      "rate_percent": 21.36
+    },
+    {
+      "iso3": "MHL",
+      "name_in_source": "MARSHALL ISLANDS, REPUBLIC OF THE",
+      "rate_percent": 35.71
+    },
+    {
+      "iso3": "MKD",
+      "name_in_source": "NORTH MACEDONIA",
+      "rate_percent": 25.55
+    },
+    {
+      "iso3": "MLI",
+      "name_in_source": "MALI",
+      "rate_percent": 55.57
+    },
+    {
+      "iso3": "MLT",
+      "name_in_source": "MALTA",
+      "rate_percent": 10.3
+    },
+    {
+      "iso3": "MMR",
+      "name_in_source": "BURMA",
+      "rate_percent": 64.19
+    },
+    {
+      "iso3": "MNE",
+      "name_in_source": "MONTENEGRO",
+      "rate_percent": 33.41
+    },
+    {
+      "iso3": "MNG",
+      "name_in_source": "MONGOLIA",
+      "rate_percent": 31.28
+    },
+    {
+      "iso3": "MOZ",
+      "name_in_source": "MOZAMBIQUE",
+      "rate_percent": 24.75
+    },
+    {
+      "iso3": "MRT",
+      "name_in_source": "MAURITANIA",
+      "rate_percent": 67.61
+    },
+    {
+      "iso3": "MUS",
+      "name_in_source": "MAURITIUS",
+      "rate_percent": 7.35
+    },
+    {
+      "iso3": "MWI",
+      "name_in_source": "MALAWI",
+      "rate_percent": 53.42
+    },
+    {
+      "iso3": "MYS",
+      "name_in_source": "MALAYSIA",
+      "rate_percent": 7.92
+    },
+    {
+      "iso3": "NAM",
+      "name_in_source": "NAMIBIA",
+      "rate_percent": 16.54
+    },
+    {
+      "iso3": "NER",
+      "name_in_source": "NIGER",
+      "rate_percent": 38.23
+    },
+    {
+      "iso3": "NGA",
+      "name_in_source": "NIGERIA",
+      "rate_percent": 57.0
+    },
+    {
+      "iso3": "NIC",
+      "name_in_source": "NICARAGUA",
+      "rate_percent": 53.15
+    },
+    {
+      "iso3": "NLD",
+      "name_in_source": "NETHERLANDS",
+      "rate_percent": 17.42
+    },
+    {
+      "iso3": "NOR",
+      "name_in_source": "NORWAY",
+      "rate_percent": 16.18
+    },
+    {
+      "iso3": "NPL",
+      "name_in_source": "NEPAL",
+      "rate_percent": 69.47
+    },
+    {
+      "iso3": "NRU",
+      "name_in_source": "NAURU",
+      "rate_percent": 24.14
+    },
+    {
+      "iso3": "NZL",
+      "name_in_source": "NEW ZEALAND",
+      "rate_percent": 21.94
+    },
+    {
+      "iso3": "OMN",
+      "name_in_source": "OMAN",
+      "rate_percent": 3.14
+    },
+    {
+      "iso3": "PAK",
+      "name_in_source": "PAKISTAN",
+      "rate_percent": 52.32
+    },
+    {
+      "iso3": "PAN",
+      "name_in_source": "PANAMA",
+      "rate_percent": 6.51
+    },
+    {
+      "iso3": "PER",
+      "name_in_source": "PERU",
+      "rate_percent": 20.9
+    },
+    {
+      "iso3": "PHL",
+      "name_in_source": "PHILIPPINES",
+      "rate_percent": 30.76
+    },
+    {
+      "iso3": "PLW",
+      "name_in_source": "PALAU",
+      "rate_percent": 80.0
+    },
+    {
+      "iso3": "PNG",
+      "name_in_source": "PAPUA NEW GUINEA",
+      "rate_percent": 10.57
+    },
+    {
+      "iso3": "POL",
+      "name_in_source": "POLAND",
+      "rate_percent": 11.63
+    },
+    {
+      "iso3": "PRK",
+      "name_in_source": "KOREA, NORTH",
+      "rate_percent": 33.33
+    },
+    {
+      "iso3": "PRT",
+      "name_in_source": "PORTUGAL",
+      "rate_percent": 8.19
+    },
+    {
+      "iso3": "PRY",
+      "name_in_source": "PARAGUAY",
+      "rate_percent": 18.71
+    },
+    {
+      "iso3": "PSE",
+      "name_in_source": "PALESTINIAN AUTHORITY TRAVEL DOCUMENT",
+      "rate_percent": 60.26
+    },
+    {
+      "iso3": "QAT",
+      "name_in_source": "QATAR",
+      "rate_percent": 9.69
+    },
+    {
+      "iso3": "ROU",
+      "name_in_source": "ROMANIA",
+      "rate_percent": 8.41
+    },
+    {
+      "iso3": "RUS",
+      "name_in_source": "RUSSIA",
+      "rate_percent": 40.38
+    },
+    {
+      "iso3": "RWA",
+      "name_in_source": "RWANDA",
+      "rate_percent": 64.71
+    },
+    {
+      "iso3": "SAU",
+      "name_in_source": "SAUDI ARABIA",
+      "rate_percent": 5.98
+    },
+    {
+      "iso3": "SDN",
+      "name_in_source": "SUDAN",
+      "rate_percent": 63.26
+    },
+    {
+      "iso3": "SEN",
+      "name_in_source": "SENEGAL",
+      "rate_percent": 73.96
+    },
+    {
+      "iso3": "SGP",
+      "name_in_source": "SINGAPORE",
+      "rate_percent": 18.64
+    },
+    {
+      "iso3": "SLB",
+      "name_in_source": "SOLOMON ISLANDS",
+      "rate_percent": 7.84
+    },
+    {
+      "iso3": "SLE",
+      "name_in_source": "SIERRA LEONE",
+      "rate_percent": 70.55
+    },
+    {
+      "iso3": "SLV",
+      "name_in_source": "EL SALVADOR",
+      "rate_percent": 58.22
+    },
+    {
+      "iso3": "SMR",
+      "name_in_source": "SAN MARINO",
+      "rate_percent": 20.0
+    },
+    {
+      "iso3": "SOM",
+      "name_in_source": "SOMALIA",
+      "rate_percent": 83.52
+    },
+    {
+      "iso3": "SRB",
+      "name_in_source": "SERBIA",
+      "rate_percent": 15.2
+    },
+    {
+      "iso3": "SSD",
+      "name_in_source": "SOUTH SUDAN",
+      "rate_percent": 76.09
+    },
+    {
+      "iso3": "STP",
+      "name_in_source": "SAO TOME AND PRINCIPE",
+      "rate_percent": 25.0
+    },
+    {
+      "iso3": "SUR",
+      "name_in_source": "SURINAME",
+      "rate_percent": 14.28
+    },
+    {
+      "iso3": "SVK",
+      "name_in_source": "SLOVAKIA",
+      "rate_percent": 14.33
+    },
+    {
+      "iso3": "SVN",
+      "name_in_source": "SLOVENIA",
+      "rate_percent": 14.57
+    },
+    {
+      "iso3": "SWE",
+      "name_in_source": "SWEDEN",
+      "rate_percent": 21.77
+    },
+    {
+      "iso3": "SWZ",
+      "name_in_source": "ESWATINI",
+      "rate_percent": 50.87
+    },
+    {
+      "iso3": "SYC",
+      "name_in_source": "SEYCHELLES",
+      "rate_percent": 13.22
+    },
+    {
+      "iso3": "SYR",
+      "name_in_source": "SYRIA",
+      "rate_percent": 50.69
+    },
+    {
+      "iso3": "TCD",
+      "name_in_source": "CHAD",
+      "rate_percent": 61.63
+    },
+    {
+      "iso3": "TGO",
+      "name_in_source": "TOGO",
+      "rate_percent": 72.02
+    },
+    {
+      "iso3": "THA",
+      "name_in_source": "THAILAND",
+      "rate_percent": 25.67
+    },
+    {
+      "iso3": "TJK",
+      "name_in_source": "TAJIKISTAN",
+      "rate_percent": 47.83
+    },
+    {
+      "iso3": "TKM",
+      "name_in_source": "TURKMENISTAN",
+      "rate_percent": 64.74
+    },
+    {
+      "iso3": "TLS",
+      "name_in_source": "TIMOR-LESTE",
+      "rate_percent": 20.45
+    },
+    {
+      "iso3": "TON",
+      "name_in_source": "TONGA",
+      "rate_percent": 47.21
+    },
+    {
+      "iso3": "TTO",
+      "name_in_source": "TRINIDAD AND TOBAGO",
+      "rate_percent": 14.92
+    },
+    {
+      "iso3": "TUN",
+      "name_in_source": "TUNISIA",
+      "rate_percent": 25.89
+    },
+    {
+      "iso3": "TUR",
+      "name_in_source": "TURKEY",
+      "rate_percent": 22.25
+    },
+    {
+      "iso3": "TUV",
+      "name_in_source": "TUVALU",
+      "rate_percent": 4.55
+    },
+    {
+      "iso3": "TWN",
+      "name_in_source": "TAIWAN",
+      "rate_percent": 9.45
+    },
+    {
+      "iso3": "TZA",
+      "name_in_source": "TANZANIA",
+      "rate_percent": 39.41
+    },
+    {
+      "iso3": "UGA",
+      "name_in_source": "UGANDA",
+      "rate_percent": 57.58
+    },
+    {
+      "iso3": "UKR",
+      "name_in_source": "UKRAINE",
+      "rate_percent": 33.92
+    },
+    {
+      "iso3": "URY",
+      "name_in_source": "URUGUAY",
+      "rate_percent": 2.59
+    },
+    {
+      "iso3": "UZB",
+      "name_in_source": "UZBEKISTAN",
+      "rate_percent": 52.46
+    },
+    {
+      "iso3": "VAT",
+      "name_in_source": "VATICAN CITY",
+      "ambiguous_zero": true
+    },
+    {
+      "iso3": "VCT",
+      "name_in_source": "ST. VINCENT AND THE GRENADINES",
+      "rate_percent": 37.34
+    },
+    {
+      "iso3": "VEN",
+      "name_in_source": "VENEZUELA",
+      "rate_percent": 48.22
+    },
+    {
+      "iso3": "VNM",
+      "name_in_source": "VIETNAM",
+      "rate_percent": 22.08
+    },
+    {
+      "iso3": "VUT",
+      "name_in_source": "VANUATU",
+      "rate_percent": 46.88
+    },
+    {
+      "iso3": "WSM",
+      "name_in_source": "SAMOA",
+      "rate_percent": 44.33
+    },
+    {
+      "iso3": "XKX",
+      "name_in_source": "KOSOVO",
+      "rate_percent": 35.0
+    },
+    {
+      "iso3": "YEM",
+      "name_in_source": "YEMEN",
+      "rate_percent": 67.98
+    },
+    {
+      "iso3": "ZAF",
+      "name_in_source": "SOUTH AFRICA",
+      "rate_percent": 11.66
+    },
+    {
+      "iso3": "ZMB",
+      "name_in_source": "ZAMBIA",
+      "rate_percent": 52.45
+    },
+    {
+      "iso3": "ZWE",
+      "name_in_source": "ZIMBABWE",
+      "rate_percent": 37.6
+    }
+  ],
+  "excluded_rows": [
+    {
+      "name_in_source": "*NON-NATIONALITY BASED ISSUANCES",
+      "rate_percent": 37.4,
+      "reason": "Not a nationality: State defines this as travel documents issued by an authority other than the holder's country of nationality (e.g. stateless persons)."
+    }
+  ]
+}

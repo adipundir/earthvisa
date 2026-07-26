@@ -1,0 +1,1301 @@
+{
+  "dest_iso3": "GBR",
+  "metric_id": "uk_visitor_visa_refusal",
+  "label": "Standard Visitor visa refusal rate",
+  "keyed_by": "nationality",
+  "measures": "refusal_rate_percent",
+  "higher_is_worse": true,
+  "definition": "Refused / (Issued + Refused) for Visitor entry-clearance decisions over the four most recent quarters. Withdrawn and lapsed cases are excluded from both sides because they are not decisions on the merits; their counts are included here so the figure can be recomputed on a different basis.",
+  "scope": "Visitor visas only (entry clearance). Excludes study, work, family and transit routes.",
+  "caveats": [
+    "Counts decisions made in the period, which may relate to applications submitted earlier.",
+    "Home Office marks data from 2025 Q1 onward as provisional.",
+    "Nationalities with fewer than 100 decisions in the window are omitted: small cells are distorted by disclosure control and swing heavily quarter to quarter."
+  ],
+  "source_name": "UK Home Office",
+  "source_url": "https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables",
+  "source_file_url": "https://assets.publishing.service.gov.uk/media/6a1d5a9f916cd732dcdaad5c/entry-clearance-visa-outcomes-datasets-mar-2026.xlsx",
+  "source_release": "Entry clearance visa applications and outcomes detailed datasets, year ending March 2026",
+  "source_official": true,
+  "period": "2025 Q2 to 2026 Q1",
+  "quarters": [
+    "2025 Q2",
+    "2025 Q3",
+    "2025 Q4",
+    "2026 Q1"
+  ],
+  "cadence": "quarterly",
+  "generated": "2026-07-25",
+  "nationalities": 138,
+  "omitted_low_volume": 47,
+  "rows": [
+    {
+      "iso3": "AFG",
+      "name_in_source": "Afghanistan",
+      "rate_percent": 66.53,
+      "issued": 1145,
+      "refused": 2276,
+      "withdrawn": 21,
+      "lapsed": 0
+    },
+    {
+      "iso3": "AGO",
+      "name_in_source": "Angola",
+      "rate_percent": 36.38,
+      "issued": 1387,
+      "refused": 793,
+      "withdrawn": 15,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ALB",
+      "name_in_source": "Albania",
+      "rate_percent": 27.65,
+      "issued": 22897,
+      "refused": 8749,
+      "withdrawn": 14,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ARE",
+      "name_in_source": "United Arab Emirates",
+      "rate_percent": 1.67,
+      "issued": 177,
+      "refused": 3,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ARM",
+      "name_in_source": "Armenia",
+      "rate_percent": 8.74,
+      "issued": 4355,
+      "refused": 417,
+      "withdrawn": 13,
+      "lapsed": 0
+    },
+    {
+      "iso3": "AUS",
+      "name_in_source": "Australia",
+      "rate_percent": 24.18,
+      "issued": 486,
+      "refused": 155,
+      "withdrawn": 29,
+      "lapsed": 0
+    },
+    {
+      "iso3": "AZE",
+      "name_in_source": "Azerbaijan",
+      "rate_percent": 22.29,
+      "issued": 7752,
+      "refused": 2224,
+      "withdrawn": 25,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BDI",
+      "name_in_source": "Burundi",
+      "rate_percent": 52.87,
+      "issued": 148,
+      "refused": 166,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BEL",
+      "name_in_source": "Belgium",
+      "rate_percent": 42.86,
+      "issued": 80,
+      "refused": 60,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BEN",
+      "name_in_source": "Benin",
+      "rate_percent": 48.1,
+      "issued": 437,
+      "refused": 405,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BFA",
+      "name_in_source": "Burkina Faso",
+      "rate_percent": 47.19,
+      "issued": 282,
+      "refused": 252,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BGD",
+      "name_in_source": "Bangladesh",
+      "rate_percent": 54.07,
+      "issued": 19498,
+      "refused": 22949,
+      "withdrawn": 58,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BGR",
+      "name_in_source": "Bulgaria",
+      "rate_percent": 9.72,
+      "issued": 325,
+      "refused": 35,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BIH",
+      "name_in_source": "Bosnia and Herzegovina",
+      "rate_percent": 7.06,
+      "issued": 2844,
+      "refused": 216,
+      "withdrawn": 7,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BLR",
+      "name_in_source": "Belarus",
+      "rate_percent": 6.85,
+      "issued": 8226,
+      "refused": 605,
+      "withdrawn": 38,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BOL",
+      "name_in_source": "Bolivia",
+      "rate_percent": 31.74,
+      "issued": 1802,
+      "refused": 838,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BRA",
+      "name_in_source": "Brazil",
+      "rate_percent": 29.73,
+      "issued": 260,
+      "refused": 110,
+      "withdrawn": 8,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BTN",
+      "name_in_source": "Bhutan",
+      "rate_percent": 18.1,
+      "issued": 181,
+      "refused": 40,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "BWA",
+      "name_in_source": "Botswana",
+      "rate_percent": 47.4,
+      "issued": 486,
+      "refused": 438,
+      "withdrawn": 6,
+      "lapsed": 0
+    },
+    {
+      "iso3": "CAN",
+      "name_in_source": "Canada",
+      "rate_percent": 17.05,
+      "issued": 438,
+      "refused": 90,
+      "withdrawn": 4,
+      "lapsed": 0
+    },
+    {
+      "iso3": "CHE",
+      "name_in_source": "Switzerland",
+      "rate_percent": 23.68,
+      "issued": 87,
+      "refused": 27,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "CHN",
+      "name_in_source": "China",
+      "rate_percent": 8.18,
+      "issued": 487108,
+      "refused": 43379,
+      "withdrawn": 320,
+      "lapsed": 0
+    },
+    {
+      "iso3": "CIV",
+      "name_in_source": "Ivory Coast",
+      "rate_percent": 36.62,
+      "issued": 2117,
+      "refused": 1223,
+      "withdrawn": 6,
+      "lapsed": 0
+    },
+    {
+      "iso3": "CMR",
+      "name_in_source": "Cameroon",
+      "rate_percent": 43.42,
+      "issued": 3695,
+      "refused": 2836,
+      "withdrawn": 32,
+      "lapsed": 0
+    },
+    {
+      "iso3": "COD",
+      "name_in_source": "Congo (Democratic Republic)",
+      "rate_percent": 57.65,
+      "issued": 2307,
+      "refused": 3140,
+      "withdrawn": 93,
+      "lapsed": 0
+    },
+    {
+      "iso3": "COG",
+      "name_in_source": "Congo",
+      "rate_percent": 44.67,
+      "issued": 436,
+      "refused": 352,
+      "withdrawn": 7,
+      "lapsed": 0
+    },
+    {
+      "iso3": "COL",
+      "name_in_source": "Colombia",
+      "rate_percent": 16.51,
+      "issued": 23000,
+      "refused": 4547,
+      "withdrawn": 28,
+      "lapsed": 0
+    },
+    {
+      "iso3": "COM",
+      "name_in_source": "Comoros",
+      "rate_percent": 27.47,
+      "issued": 169,
+      "refused": 64,
+      "withdrawn": 8,
+      "lapsed": 0
+    },
+    {
+      "iso3": "CPV",
+      "name_in_source": "Cape Verde",
+      "rate_percent": 34.52,
+      "issued": 129,
+      "refused": 68,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "CUB",
+      "name_in_source": "Cuba",
+      "rate_percent": 19.86,
+      "issued": 803,
+      "refused": 199,
+      "withdrawn": 7,
+      "lapsed": 0
+    },
+    {
+      "iso3": "DEU",
+      "name_in_source": "Germany",
+      "rate_percent": 25.54,
+      "issued": 414,
+      "refused": 142,
+      "withdrawn": 5,
+      "lapsed": 0
+    },
+    {
+      "iso3": "DJI",
+      "name_in_source": "Djibouti",
+      "rate_percent": 53.72,
+      "issued": 87,
+      "refused": 101,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "DMA",
+      "name_in_source": "Dominica",
+      "rate_percent": 25.09,
+      "issued": 2794,
+      "refused": 936,
+      "withdrawn": 7,
+      "lapsed": 0
+    },
+    {
+      "iso3": "DNK",
+      "name_in_source": "Denmark",
+      "rate_percent": 48.65,
+      "issued": 57,
+      "refused": 54,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "DOM",
+      "name_in_source": "Dominican Republic",
+      "rate_percent": 12.79,
+      "issued": 2277,
+      "refused": 334,
+      "withdrawn": 12,
+      "lapsed": 0
+    },
+    {
+      "iso3": "DZA",
+      "name_in_source": "Algeria",
+      "rate_percent": 43.85,
+      "issued": 11251,
+      "refused": 8787,
+      "withdrawn": 42,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ECU",
+      "name_in_source": "Ecuador",
+      "rate_percent": 16.27,
+      "issued": 5207,
+      "refused": 1012,
+      "withdrawn": 20,
+      "lapsed": 0
+    },
+    {
+      "iso3": "EGY",
+      "name_in_source": "Egypt",
+      "rate_percent": 23.86,
+      "issued": 30583,
+      "refused": 9583,
+      "withdrawn": 42,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ERI",
+      "name_in_source": "Eritrea",
+      "rate_percent": 62.64,
+      "issued": 269,
+      "refused": 451,
+      "withdrawn": 6,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ESP",
+      "name_in_source": "Spain",
+      "rate_percent": 16.39,
+      "issued": 357,
+      "refused": 70,
+      "withdrawn": 9,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ETH",
+      "name_in_source": "Ethiopia",
+      "rate_percent": 57.16,
+      "issued": 2244,
+      "refused": 2994,
+      "withdrawn": 6,
+      "lapsed": 0
+    },
+    {
+      "iso3": "FJI",
+      "name_in_source": "Fiji",
+      "rate_percent": 23.74,
+      "issued": 877,
+      "refused": 273,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "FRA",
+      "name_in_source": "France",
+      "rate_percent": 26.92,
+      "issued": 266,
+      "refused": 98,
+      "withdrawn": 6,
+      "lapsed": 0
+    },
+    {
+      "iso3": "GAB",
+      "name_in_source": "Gabon",
+      "rate_percent": 29.91,
+      "issued": 314,
+      "refused": 134,
+      "withdrawn": 6,
+      "lapsed": 0
+    },
+    {
+      "iso3": "GEO",
+      "name_in_source": "Georgia",
+      "rate_percent": 24.6,
+      "issued": 6016,
+      "refused": 1963,
+      "withdrawn": 10,
+      "lapsed": 0
+    },
+    {
+      "iso3": "GHA",
+      "name_in_source": "Ghana",
+      "rate_percent": 43.37,
+      "issued": 26442,
+      "refused": 20253,
+      "withdrawn": 89,
+      "lapsed": 0
+    },
+    {
+      "iso3": "GIN",
+      "name_in_source": "Guinea",
+      "rate_percent": 53.08,
+      "issued": 875,
+      "refused": 990,
+      "withdrawn": 7,
+      "lapsed": 0
+    },
+    {
+      "iso3": "GMB",
+      "name_in_source": "Gambia, The",
+      "rate_percent": 52.84,
+      "issued": 1369,
+      "refused": 1534,
+      "withdrawn": 3,
+      "lapsed": 0
+    },
+    {
+      "iso3": "GNB",
+      "name_in_source": "Guinea-Bissau",
+      "rate_percent": 55.5,
+      "issued": 89,
+      "refused": 111,
+      "withdrawn": 4,
+      "lapsed": 0
+    },
+    {
+      "iso3": "GNQ",
+      "name_in_source": "Equatorial Guinea",
+      "rate_percent": 35.19,
+      "issued": 70,
+      "refused": 38,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "HKG",
+      "name_in_source": "Hong Kong",
+      "rate_percent": 15.08,
+      "issued": 411,
+      "refused": 73,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "HND",
+      "name_in_source": "Honduras",
+      "rate_percent": 19.32,
+      "issued": 1236,
+      "refused": 296,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "HTI",
+      "name_in_source": "Haiti",
+      "rate_percent": 28.03,
+      "issued": 303,
+      "refused": 118,
+      "withdrawn": 4,
+      "lapsed": 0
+    },
+    {
+      "iso3": "IDN",
+      "name_in_source": "Indonesia",
+      "rate_percent": 10.21,
+      "issued": 38429,
+      "refused": 4372,
+      "withdrawn": 72,
+      "lapsed": 0
+    },
+    {
+      "iso3": "IND",
+      "name_in_source": "India",
+      "rate_percent": 18.11,
+      "issued": 541774,
+      "refused": 119850,
+      "withdrawn": 409,
+      "lapsed": 0
+    },
+    {
+      "iso3": "IRN",
+      "name_in_source": "Iran",
+      "rate_percent": 44.85,
+      "issued": 8052,
+      "refused": 6548,
+      "withdrawn": 123,
+      "lapsed": 0
+    },
+    {
+      "iso3": "IRQ",
+      "name_in_source": "Iraq",
+      "rate_percent": 44.72,
+      "issued": 11519,
+      "refused": 9320,
+      "withdrawn": 37,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ISR",
+      "name_in_source": "Israel",
+      "rate_percent": 4.87,
+      "issued": 1133,
+      "refused": 58,
+      "withdrawn": 15,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ITA",
+      "name_in_source": "Italy",
+      "rate_percent": 28.09,
+      "issued": 233,
+      "refused": 91,
+      "withdrawn": 3,
+      "lapsed": 0
+    },
+    {
+      "iso3": "JAM",
+      "name_in_source": "Jamaica",
+      "rate_percent": 32.94,
+      "issued": 5957,
+      "refused": 2926,
+      "withdrawn": 16,
+      "lapsed": 0
+    },
+    {
+      "iso3": "JOR",
+      "name_in_source": "Jordan",
+      "rate_percent": 18.12,
+      "issued": 13475,
+      "refused": 2982,
+      "withdrawn": 31,
+      "lapsed": 0
+    },
+    {
+      "iso3": "JPN",
+      "name_in_source": "Japan",
+      "rate_percent": 19.2,
+      "issued": 181,
+      "refused": 43,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "KAZ",
+      "name_in_source": "Kazakhstan",
+      "rate_percent": 33.86,
+      "issued": 11035,
+      "refused": 5649,
+      "withdrawn": 23,
+      "lapsed": 0
+    },
+    {
+      "iso3": "KEN",
+      "name_in_source": "Kenya",
+      "rate_percent": 34.67,
+      "issued": 13685,
+      "refused": 7262,
+      "withdrawn": 115,
+      "lapsed": 0
+    },
+    {
+      "iso3": "KGZ",
+      "name_in_source": "Kyrgyzstan",
+      "rate_percent": 27.05,
+      "issued": 1456,
+      "refused": 540,
+      "withdrawn": 4,
+      "lapsed": 0
+    },
+    {
+      "iso3": "KHM",
+      "name_in_source": "Cambodia",
+      "rate_percent": 11.57,
+      "issued": 2691,
+      "refused": 352,
+      "withdrawn": 9,
+      "lapsed": 0
+    },
+    {
+      "iso3": "KOR",
+      "name_in_source": "South Korea",
+      "rate_percent": 17.95,
+      "issued": 160,
+      "refused": 35,
+      "withdrawn": 3,
+      "lapsed": 0
+    },
+    {
+      "iso3": "KWT",
+      "name_in_source": "Kuwait",
+      "rate_percent": 8.48,
+      "issued": 205,
+      "refused": 19,
+      "withdrawn": 7,
+      "lapsed": 0
+    },
+    {
+      "iso3": "LAO",
+      "name_in_source": "Laos",
+      "rate_percent": 16.39,
+      "issued": 607,
+      "refused": 119,
+      "withdrawn": 9,
+      "lapsed": 0
+    },
+    {
+      "iso3": "LBN",
+      "name_in_source": "Lebanon",
+      "rate_percent": 14.45,
+      "issued": 12667,
+      "refused": 2140,
+      "withdrawn": 23,
+      "lapsed": 0
+    },
+    {
+      "iso3": "LBR",
+      "name_in_source": "Liberia",
+      "rate_percent": 39.6,
+      "issued": 389,
+      "refused": 255,
+      "withdrawn": 8,
+      "lapsed": 0
+    },
+    {
+      "iso3": "LBY",
+      "name_in_source": "Libya",
+      "rate_percent": 35.52,
+      "issued": 2739,
+      "refused": 1509,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "LCA",
+      "name_in_source": "St Lucia",
+      "rate_percent": 20.63,
+      "issued": 100,
+      "refused": 26,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "LKA",
+      "name_in_source": "Sri Lanka",
+      "rate_percent": 28.83,
+      "issued": 22590,
+      "refused": 9151,
+      "withdrawn": 47,
+      "lapsed": 0
+    },
+    {
+      "iso3": "LSO",
+      "name_in_source": "Lesotho",
+      "rate_percent": 26.83,
+      "issued": 180,
+      "refused": 66,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MAR",
+      "name_in_source": "Morocco",
+      "rate_percent": 34.82,
+      "issued": 22844,
+      "refused": 12203,
+      "withdrawn": 26,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MDA",
+      "name_in_source": "Moldova",
+      "rate_percent": 26.75,
+      "issued": 1725,
+      "refused": 630,
+      "withdrawn": 4,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MDG",
+      "name_in_source": "Madagascar",
+      "rate_percent": 23.64,
+      "issued": 478,
+      "refused": 148,
+      "withdrawn": 3,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MEX",
+      "name_in_source": "Mexico",
+      "rate_percent": 23.08,
+      "issued": 80,
+      "refused": 24,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MKD",
+      "name_in_source": "North Macedonia",
+      "rate_percent": 9.18,
+      "issued": 3721,
+      "refused": 376,
+      "withdrawn": 9,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MLI",
+      "name_in_source": "Mali",
+      "rate_percent": 43.24,
+      "issued": 386,
+      "refused": 294,
+      "withdrawn": 3,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MMR",
+      "name_in_source": "Myanmar (Burma)",
+      "rate_percent": 43.24,
+      "issued": 2365,
+      "refused": 1802,
+      "withdrawn": 3,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MNE",
+      "name_in_source": "Montenegro",
+      "rate_percent": 5.86,
+      "issued": 1703,
+      "refused": 106,
+      "withdrawn": 4,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MNG",
+      "name_in_source": "Mongolia",
+      "rate_percent": 16.26,
+      "issued": 3188,
+      "refused": 619,
+      "withdrawn": 8,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MOZ",
+      "name_in_source": "Mozambique",
+      "rate_percent": 24.21,
+      "issued": 883,
+      "refused": 282,
+      "withdrawn": 55,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MRT",
+      "name_in_source": "Mauritania",
+      "rate_percent": 31.97,
+      "issued": 200,
+      "refused": 94,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MWI",
+      "name_in_source": "Malawi",
+      "rate_percent": 33.67,
+      "issued": 1359,
+      "refused": 690,
+      "withdrawn": 10,
+      "lapsed": 0
+    },
+    {
+      "iso3": "MYS",
+      "name_in_source": "Malaysia",
+      "rate_percent": 33.56,
+      "issued": 99,
+      "refused": 50,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "NAM",
+      "name_in_source": "Namibia",
+      "rate_percent": 22.34,
+      "issued": 1064,
+      "refused": 306,
+      "withdrawn": 8,
+      "lapsed": 0
+    },
+    {
+      "iso3": "NER",
+      "name_in_source": "Niger",
+      "rate_percent": 35.92,
+      "issued": 132,
+      "refused": 74,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "NGA",
+      "name_in_source": "Nigeria",
+      "rate_percent": 38.65,
+      "issued": 106300,
+      "refused": 66956,
+      "withdrawn": 118,
+      "lapsed": 0
+    },
+    {
+      "iso3": "NLD",
+      "name_in_source": "Netherlands",
+      "rate_percent": 46.71,
+      "issued": 170,
+      "refused": 149,
+      "withdrawn": 5,
+      "lapsed": 0
+    },
+    {
+      "iso3": "NOR",
+      "name_in_source": "Norway",
+      "rate_percent": 57.48,
+      "issued": 91,
+      "refused": 123,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "NPL",
+      "name_in_source": "Nepal",
+      "rate_percent": 31.07,
+      "issued": 11514,
+      "refused": 5189,
+      "withdrawn": 10,
+      "lapsed": 0
+    },
+    {
+      "iso3": "NZL",
+      "name_in_source": "New Zealand",
+      "rate_percent": 29.67,
+      "issued": 128,
+      "refused": 54,
+      "withdrawn": 13,
+      "lapsed": 0
+    },
+    {
+      "iso3": "PAK",
+      "name_in_source": "Pakistan",
+      "rate_percent": 44.88,
+      "issued": 88553,
+      "refused": 72115,
+      "withdrawn": 295,
+      "lapsed": 0
+    },
+    {
+      "iso3": "PHL",
+      "name_in_source": "Philippines",
+      "rate_percent": 14.31,
+      "issued": 47350,
+      "refused": 7908,
+      "withdrawn": 123,
+      "lapsed": 0
+    },
+    {
+      "iso3": "POL",
+      "name_in_source": "Poland",
+      "rate_percent": 41.85,
+      "issued": 132,
+      "refused": 95,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "PRT",
+      "name_in_source": "Portugal",
+      "rate_percent": 43.86,
+      "issued": 64,
+      "refused": 50,
+      "withdrawn": 3,
+      "lapsed": 0
+    },
+    {
+      "iso3": "PSE",
+      "name_in_source": "Palestine",
+      "rate_percent": 43.46,
+      "issued": 2144,
+      "refused": 1648,
+      "withdrawn": 13,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ROU",
+      "name_in_source": "Romania",
+      "rate_percent": 64.11,
+      "issued": 75,
+      "refused": 134,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "RUS",
+      "name_in_source": "Russia",
+      "rate_percent": 6.74,
+      "issued": 47954,
+      "refused": 3466,
+      "withdrawn": 330,
+      "lapsed": 0
+    },
+    {
+      "iso3": "RWA",
+      "name_in_source": "Rwanda",
+      "rate_percent": 33.68,
+      "issued": 1213,
+      "refused": 616,
+      "withdrawn": 9,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SAU",
+      "name_in_source": "Saudi Arabia",
+      "rate_percent": 5.48,
+      "issued": 431,
+      "refused": 25,
+      "withdrawn": 5,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SDN",
+      "name_in_source": "Sudan",
+      "rate_percent": 61.56,
+      "issued": 2167,
+      "refused": 3470,
+      "withdrawn": 10,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SEN",
+      "name_in_source": "Senegal",
+      "rate_percent": 61.97,
+      "issued": 1683,
+      "refused": 2742,
+      "withdrawn": 6,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SLE",
+      "name_in_source": "Sierra Leone",
+      "rate_percent": 45.73,
+      "issued": 1652,
+      "refused": 1392,
+      "withdrawn": 10,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SLV",
+      "name_in_source": "El Salvador",
+      "rate_percent": 19.32,
+      "issued": 948,
+      "refused": 227,
+      "withdrawn": 4,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SOM",
+      "name_in_source": "Somalia",
+      "rate_percent": 66.29,
+      "issued": 355,
+      "refused": 698,
+      "withdrawn": 39,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SRB",
+      "name_in_source": "Serbia",
+      "rate_percent": 4.61,
+      "issued": 15336,
+      "refused": 741,
+      "withdrawn": 17,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SSD",
+      "name_in_source": "South Sudan",
+      "rate_percent": 53.85,
+      "issued": 114,
+      "refused": 133,
+      "withdrawn": 4,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SUR",
+      "name_in_source": "Suriname",
+      "rate_percent": 18.83,
+      "issued": 181,
+      "refused": 42,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SWE",
+      "name_in_source": "Sweden",
+      "rate_percent": 56.59,
+      "issued": 79,
+      "refused": 103,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SWZ",
+      "name_in_source": "Eswatini",
+      "rate_percent": 19.1,
+      "issued": 432,
+      "refused": 102,
+      "withdrawn": 28,
+      "lapsed": 0
+    },
+    {
+      "iso3": "SYR",
+      "name_in_source": "Syria",
+      "rate_percent": 53.31,
+      "issued": 1900,
+      "refused": 2169,
+      "withdrawn": 10,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TCD",
+      "name_in_source": "Chad",
+      "rate_percent": 56.29,
+      "issued": 125,
+      "refused": 161,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TGO",
+      "name_in_source": "Togo",
+      "rate_percent": 57.55,
+      "issued": 343,
+      "refused": 465,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "THA",
+      "name_in_source": "Thailand",
+      "rate_percent": 10.83,
+      "issued": 48562,
+      "refused": 5899,
+      "withdrawn": 67,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TJK",
+      "name_in_source": "Tajikistan",
+      "rate_percent": 36.56,
+      "issued": 892,
+      "refused": 514,
+      "withdrawn": 1,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TKM",
+      "name_in_source": "Turkmenistan",
+      "rate_percent": 23.91,
+      "issued": 888,
+      "refused": 279,
+      "withdrawn": 7,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TLS",
+      "name_in_source": "East Timor",
+      "rate_percent": 57.69,
+      "issued": 66,
+      "refused": 90,
+      "withdrawn": 7,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TTO",
+      "name_in_source": "Trinidad and Tobago",
+      "rate_percent": 11.17,
+      "issued": 8178,
+      "refused": 1028,
+      "withdrawn": 10,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TUN",
+      "name_in_source": "Tunisia",
+      "rate_percent": 24.95,
+      "issued": 6016,
+      "refused": 2000,
+      "withdrawn": 5,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TUR",
+      "name_in_source": "Turkey",
+      "rate_percent": 10.48,
+      "issued": 237421,
+      "refused": 27797,
+      "withdrawn": 252,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TWN",
+      "name_in_source": "Taiwan",
+      "rate_percent": 16.98,
+      "issued": 88,
+      "refused": 18,
+      "withdrawn": 0,
+      "lapsed": 0
+    },
+    {
+      "iso3": "TZA",
+      "name_in_source": "Tanzania",
+      "rate_percent": 33.74,
+      "issued": 3450,
+      "refused": 1757,
+      "withdrawn": 21,
+      "lapsed": 0
+    },
+    {
+      "iso3": "UGA",
+      "name_in_source": "Uganda",
+      "rate_percent": 54.29,
+      "issued": 4411,
+      "refused": 5240,
+      "withdrawn": 30,
+      "lapsed": 0
+    },
+    {
+      "iso3": "UKR",
+      "name_in_source": "Ukraine",
+      "rate_percent": 6.72,
+      "issued": 48583,
+      "refused": 3502,
+      "withdrawn": 76,
+      "lapsed": 0
+    },
+    {
+      "iso3": "USA",
+      "name_in_source": "United States",
+      "rate_percent": 34.74,
+      "issued": 2290,
+      "refused": 1219,
+      "withdrawn": 87,
+      "lapsed": 0
+    },
+    {
+      "iso3": "UZB",
+      "name_in_source": "Uzbekistan",
+      "rate_percent": 31.22,
+      "issued": 7382,
+      "refused": 3351,
+      "withdrawn": 19,
+      "lapsed": 0
+    },
+    {
+      "iso3": "VEN",
+      "name_in_source": "Venezuela",
+      "rate_percent": 21.89,
+      "issued": 3914,
+      "refused": 1097,
+      "withdrawn": 13,
+      "lapsed": 0
+    },
+    {
+      "iso3": "VNM",
+      "name_in_source": "Vietnam",
+      "rate_percent": 14.36,
+      "issued": 18703,
+      "refused": 3135,
+      "withdrawn": 63,
+      "lapsed": 0
+    },
+    {
+      "iso3": "VUT",
+      "name_in_source": "Vanuatu",
+      "rate_percent": 20.88,
+      "issued": 216,
+      "refused": 57,
+      "withdrawn": 6,
+      "lapsed": 0
+    },
+    {
+      "iso3": "XKX",
+      "name_in_source": "Kosovo",
+      "rate_percent": 24.28,
+      "issued": 4541,
+      "refused": 1456,
+      "withdrawn": 2,
+      "lapsed": 0
+    },
+    {
+      "iso3": "YEM",
+      "name_in_source": "Yemen",
+      "rate_percent": 59.78,
+      "issued": 1351,
+      "refused": 2008,
+      "withdrawn": 10,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ZAF",
+      "name_in_source": "South Africa",
+      "rate_percent": 3.9,
+      "issued": 76078,
+      "refused": 3090,
+      "withdrawn": 163,
+      "lapsed": 1
+    },
+    {
+      "iso3": "ZMB",
+      "name_in_source": "Zambia",
+      "rate_percent": 29.49,
+      "issued": 2549,
+      "refused": 1066,
+      "withdrawn": 50,
+      "lapsed": 0
+    },
+    {
+      "iso3": "ZWE",
+      "name_in_source": "Zimbabwe",
+      "rate_percent": 35.8,
+      "issued": 10545,
+      "refused": 5879,
+      "withdrawn": 31,
+      "lapsed": 0
+    }
+  ],
+  "excluded_rows": [
+    {
+      "name_in_source": "British overseas citizens",
+      "reason": "British nationality class, not a separate passport in our dataset."
+    },
+    {
+      "name_in_source": "Cyprus (Northern part of)",
+      "reason": "Not a state recognised in our country list."
+    },
+    {
+      "name_in_source": "Gibraltar (British)",
+      "reason": "British Overseas Territory; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Other and unknown",
+      "reason": "Aggregate bucket, not a nationality."
+    },
+    {
+      "name_in_source": "Refugee",
+      "reason": "Travel-document category, not a nationality."
+    },
+    {
+      "name_in_source": "Stateless",
+      "reason": "No nationality by definition."
+    }
+  ]
+}
