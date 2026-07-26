@@ -1,0 +1,723 @@
+{
+  "dest_iso3": "IRL",
+  "metric_id": "ie_short_stay_visa_refusal",
+  "label": "Short-stay visa refusal rate",
+  "keyed_by": "nationality",
+  "measures": "refusal_rate_percent",
+  "higher_is_worse": true,
+  "definition": "Refused / (Granted + Refused) for short-stay visa applications decided in the year.",
+  "scope": "Short-stay ('C') visa applications only. Long-stay ('D') applications are published separately and excluded here.",
+  "caveats": [
+    "Counts of 1 to 5 are suppressed in the source; nationalities whose granted or refused figure is suppressed are omitted rather than estimated.",
+    "Nationalities with fewer than 100 decisions in the year are omitted as too small to be stable."
+  ],
+  "source_name": "Department of Justice (Ireland) / Immigration Service Delivery",
+  "source_url": "https://data.gov.ie/dataset/visa-applications-and-decisions-year-and-nationality",
+  "source_file_url": "https://assets.gov.ie/static/documents/bd11bc22/visa_applications_and_decisions_-_year_and_nationality.csv",
+  "source_official": true,
+  "period": "2025",
+  "source_last_updated": "31/05/2026",
+  "cadence": "monthly",
+  "generated": "2026-07-26",
+  "nationalities": 70,
+  "omitted_low_volume": 24,
+  "omitted_suppressed": 28,
+  "rows": [
+    {
+      "iso3": "AFG",
+      "name_in_source": "Afghanistan",
+      "rate_percent": 53.35,
+      "granted": 181,
+      "refused": 207
+    },
+    {
+      "iso3": "ALB",
+      "name_in_source": "Albania",
+      "rate_percent": 41.02,
+      "granted": 302,
+      "refused": 210
+    },
+    {
+      "iso3": "ARM",
+      "name_in_source": "Armenia",
+      "rate_percent": 2.3,
+      "granted": 382,
+      "refused": 9
+    },
+    {
+      "iso3": "AZE",
+      "name_in_source": "Azerbaijan",
+      "rate_percent": 5.26,
+      "granted": 216,
+      "refused": 12
+    },
+    {
+      "iso3": "BGD",
+      "name_in_source": "Bangladesh",
+      "rate_percent": 35.42,
+      "granted": 899,
+      "refused": 493
+    },
+    {
+      "iso3": "BIH",
+      "name_in_source": "Bosnia and Herzegovina",
+      "rate_percent": 4.94,
+      "granted": 327,
+      "refused": 17
+    },
+    {
+      "iso3": "BLR",
+      "name_in_source": "Belarus",
+      "rate_percent": 2.69,
+      "granted": 542,
+      "refused": 15
+    },
+    {
+      "iso3": "BOL",
+      "name_in_source": "Bolivia (Plurinational State of)",
+      "rate_percent": 19.25,
+      "granted": 130,
+      "refused": 31
+    },
+    {
+      "iso3": "BWA",
+      "name_in_source": "Botswana",
+      "rate_percent": 35.57,
+      "granted": 96,
+      "refused": 53
+    },
+    {
+      "iso3": "CHN",
+      "name_in_source": "China",
+      "rate_percent": 3.81,
+      "granted": 10467,
+      "refused": 415
+    },
+    {
+      "iso3": "CIV",
+      "name_in_source": "C\u00f4te d'Ivoire",
+      "rate_percent": 58.1,
+      "granted": 44,
+      "refused": 61
+    },
+    {
+      "iso3": "CMR",
+      "name_in_source": "Cameroon",
+      "rate_percent": 91.89,
+      "granted": 163,
+      "refused": 1847
+    },
+    {
+      "iso3": "COD",
+      "name_in_source": "Congo (the Democratic Republic of the)",
+      "rate_percent": 72.44,
+      "granted": 124,
+      "refused": 326
+    },
+    {
+      "iso3": "COL",
+      "name_in_source": "Colombia",
+      "rate_percent": 2.41,
+      "granted": 1253,
+      "refused": 31
+    },
+    {
+      "iso3": "DOM",
+      "name_in_source": "Dominican Republic (the)",
+      "rate_percent": 5.19,
+      "granted": 201,
+      "refused": 11
+    },
+    {
+      "iso3": "DZA",
+      "name_in_source": "Algeria",
+      "rate_percent": 64.29,
+      "granted": 286,
+      "refused": 515
+    },
+    {
+      "iso3": "ECU",
+      "name_in_source": "Ecuador",
+      "rate_percent": 5.05,
+      "granted": 282,
+      "refused": 15
+    },
+    {
+      "iso3": "EGY",
+      "name_in_source": "Egypt",
+      "rate_percent": 16.26,
+      "granted": 1782,
+      "refused": 346
+    },
+    {
+      "iso3": "ETH",
+      "name_in_source": "Ethiopia",
+      "rate_percent": 41.56,
+      "granted": 225,
+      "refused": 160
+    },
+    {
+      "iso3": "GEO",
+      "name_in_source": "Georgia",
+      "rate_percent": 20.32,
+      "granted": 447,
+      "refused": 114
+    },
+    {
+      "iso3": "GHA",
+      "name_in_source": "Ghana",
+      "rate_percent": 47.81,
+      "granted": 501,
+      "refused": 459
+    },
+    {
+      "iso3": "IDN",
+      "name_in_source": "Indonesia",
+      "rate_percent": 4.88,
+      "granted": 1071,
+      "refused": 55
+    },
+    {
+      "iso3": "IND",
+      "name_in_source": "India",
+      "rate_percent": 5.06,
+      "granted": 44820,
+      "refused": 2388
+    },
+    {
+      "iso3": "IRN",
+      "name_in_source": "Iran (Islamic Republic of)",
+      "rate_percent": 29.51,
+      "granted": 523,
+      "refused": 219
+    },
+    {
+      "iso3": "IRQ",
+      "name_in_source": "Iraq",
+      "rate_percent": 47.69,
+      "granted": 170,
+      "refused": 155
+    },
+    {
+      "iso3": "JAM",
+      "name_in_source": "Jamaica",
+      "rate_percent": 9.52,
+      "granted": 95,
+      "refused": 10
+    },
+    {
+      "iso3": "JOR",
+      "name_in_source": "Jordan",
+      "rate_percent": 19.67,
+      "granted": 829,
+      "refused": 203
+    },
+    {
+      "iso3": "KAZ",
+      "name_in_source": "Kazakhstan",
+      "rate_percent": 3.65,
+      "granted": 264,
+      "refused": 10
+    },
+    {
+      "iso3": "KEN",
+      "name_in_source": "Kenya",
+      "rate_percent": 36.41,
+      "granted": 952,
+      "refused": 545
+    },
+    {
+      "iso3": "KWT",
+      "name_in_source": "Kuwait",
+      "rate_percent": 0.78,
+      "granted": 1143,
+      "refused": 9
+    },
+    {
+      "iso3": "LBN",
+      "name_in_source": "Lebanon",
+      "rate_percent": 7.33,
+      "granted": 872,
+      "refused": 69
+    },
+    {
+      "iso3": "LKA",
+      "name_in_source": "Sri Lanka",
+      "rate_percent": 18.87,
+      "granted": 821,
+      "refused": 191
+    },
+    {
+      "iso3": "MAR",
+      "name_in_source": "Morocco",
+      "rate_percent": 18.12,
+      "granted": 768,
+      "refused": 170
+    },
+    {
+      "iso3": "MDA",
+      "name_in_source": "Moldova (the Republic of)",
+      "rate_percent": 7.32,
+      "granted": 620,
+      "refused": 49
+    },
+    {
+      "iso3": "MKD",
+      "name_in_source": "North Macedonia",
+      "rate_percent": 2.15,
+      "granted": 318,
+      "refused": 7
+    },
+    {
+      "iso3": "MMR",
+      "name_in_source": "Myanmar",
+      "rate_percent": 32.37,
+      "granted": 94,
+      "refused": 45
+    },
+    {
+      "iso3": "MNE",
+      "name_in_source": "Montenegro",
+      "rate_percent": 0.0,
+      "granted": 112,
+      "refused": 0
+    },
+    {
+      "iso3": "MNG",
+      "name_in_source": "Mongolia",
+      "rate_percent": 26.62,
+      "granted": 317,
+      "refused": 115
+    },
+    {
+      "iso3": "MUS",
+      "name_in_source": "Mauritius",
+      "rate_percent": 3.86,
+      "granted": 448,
+      "refused": 18
+    },
+    {
+      "iso3": "MWI",
+      "name_in_source": "Malawi",
+      "rate_percent": 64.54,
+      "granted": 228,
+      "refused": 415
+    },
+    {
+      "iso3": "NAM",
+      "name_in_source": "Namibia",
+      "rate_percent": 10.64,
+      "granted": 126,
+      "refused": 15
+    },
+    {
+      "iso3": "NGA",
+      "name_in_source": "Nigeria",
+      "rate_percent": 32.52,
+      "granted": 4364,
+      "refused": 2103
+    },
+    {
+      "iso3": "NPL",
+      "name_in_source": "Nepal",
+      "rate_percent": 17.71,
+      "granted": 446,
+      "refused": 96
+    },
+    {
+      "iso3": "OMN",
+      "name_in_source": "Oman",
+      "rate_percent": 2.86,
+      "granted": 441,
+      "refused": 13
+    },
+    {
+      "iso3": "PAK",
+      "name_in_source": "Pakistan",
+      "rate_percent": 55.87,
+      "granted": 3625,
+      "refused": 4590
+    },
+    {
+      "iso3": "PER",
+      "name_in_source": "Peru",
+      "rate_percent": 3.47,
+      "granted": 445,
+      "refused": 16
+    },
+    {
+      "iso3": "PHL",
+      "name_in_source": "Philippines (the)",
+      "rate_percent": 10.46,
+      "granted": 3441,
+      "refused": 402
+    },
+    {
+      "iso3": "PSE",
+      "name_in_source": "Palestine, State of",
+      "rate_percent": 39.12,
+      "granted": 263,
+      "refused": 169
+    },
+    {
+      "iso3": "RUS",
+      "name_in_source": "Russian Federation (the)",
+      "rate_percent": 4.91,
+      "granted": 3623,
+      "refused": 187
+    },
+    {
+      "iso3": "SAU",
+      "name_in_source": "Saudi Arabia",
+      "rate_percent": 9.64,
+      "granted": 1574,
+      "refused": 168
+    },
+    {
+      "iso3": "SDN",
+      "name_in_source": "Sudan (the)",
+      "rate_percent": 50.24,
+      "granted": 421,
+      "refused": 425
+    },
+    {
+      "iso3": "SEN",
+      "name_in_source": "Senegal",
+      "rate_percent": 39.9,
+      "granted": 116,
+      "refused": 77
+    },
+    {
+      "iso3": "SLE",
+      "name_in_source": "Sierra Leone",
+      "rate_percent": 48.44,
+      "granted": 99,
+      "refused": 93
+    },
+    {
+      "iso3": "SOM",
+      "name_in_source": "Somalia",
+      "rate_percent": 56.97,
+      "granted": 182,
+      "refused": 241
+    },
+    {
+      "iso3": "SRB",
+      "name_in_source": "Serbia",
+      "rate_percent": 19.17,
+      "granted": 839,
+      "refused": 199
+    },
+    {
+      "iso3": "SWZ",
+      "name_in_source": "Eswatini",
+      "rate_percent": 41.44,
+      "granted": 65,
+      "refused": 46
+    },
+    {
+      "iso3": "SYR",
+      "name_in_source": "Syrian Arab Republic (the)",
+      "rate_percent": 38.21,
+      "granted": 228,
+      "refused": 141
+    },
+    {
+      "iso3": "TGO",
+      "name_in_source": "Togo",
+      "rate_percent": 90.91,
+      "granted": 12,
+      "refused": 120
+    },
+    {
+      "iso3": "THA",
+      "name_in_source": "Thailand",
+      "rate_percent": 20.02,
+      "granted": 959,
+      "refused": 240
+    },
+    {
+      "iso3": "TUN",
+      "name_in_source": "Tunisia",
+      "rate_percent": 13.48,
+      "granted": 353,
+      "refused": 55
+    },
+    {
+      "iso3": "TUR",
+      "name_in_source": "Turkiye",
+      "rate_percent": 13.6,
+      "granted": 4846,
+      "refused": 763
+    },
+    {
+      "iso3": "TZA",
+      "name_in_source": "Tanzania, the United Republic of",
+      "rate_percent": 46.48,
+      "granted": 243,
+      "refused": 211
+    },
+    {
+      "iso3": "UGA",
+      "name_in_source": "Uganda",
+      "rate_percent": 57.33,
+      "granted": 265,
+      "refused": 356
+    },
+    {
+      "iso3": "VEN",
+      "name_in_source": "Venezuela (Bolivarian Republic of)",
+      "rate_percent": 6.26,
+      "granted": 419,
+      "refused": 28
+    },
+    {
+      "iso3": "VNM",
+      "name_in_source": "Viet Nam",
+      "rate_percent": 13.04,
+      "granted": 860,
+      "refused": 129
+    },
+    {
+      "iso3": "XKX",
+      "name_in_source": "Kosovo",
+      "rate_percent": 5.56,
+      "granted": 272,
+      "refused": 16
+    },
+    {
+      "iso3": "YEM",
+      "name_in_source": "Yemen",
+      "rate_percent": 44.04,
+      "granted": 61,
+      "refused": 48
+    },
+    {
+      "iso3": "ZAF",
+      "name_in_source": "South Africa",
+      "rate_percent": 5.3,
+      "granted": 10530,
+      "refused": 589
+    },
+    {
+      "iso3": "ZMB",
+      "name_in_source": "Zambia",
+      "rate_percent": 32.36,
+      "granted": 232,
+      "refused": 111
+    },
+    {
+      "iso3": "ZWE",
+      "name_in_source": "Zimbabwe",
+      "rate_percent": 33.68,
+      "granted": 766,
+      "refused": 389
+    }
+  ],
+  "excluded_rows": [
+    {
+      "name_in_source": "*Other",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "American Samoa",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Anguilla",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Antarctica",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Aruba",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Bermuda",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Bonaire, Sint Eustatius and Saba",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Bouvet Island",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Cayman Islands (the)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Ceuta",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Christmas Island",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Cocos (Keeling) Islands (the)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Cook Islands (the)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Cura\u00e7ao",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Falkland Islands (the) [Malvinas]",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Faroe Islands (the)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "French Guiana",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "French Polynesia",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Gibraltar",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Greenland",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Guadeloupe",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Guam",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Guernsey",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Heard Island and McDonald Islands",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Isle of Man",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Jersey",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Martinique",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Mayotte",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Melilla",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Montserrat",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "New Caledonia",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Niue",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Norfolk Island",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Northern Mariana Islands (the)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Pitcairn",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Puerto Rico",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "R\u00e9union",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Saint Barth\u00e9lemy",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Saint Martin (French part)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Saint Pierre and Miquelon",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Sint Maarten (Dutch part)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "South Georgia and the South Sandwich Islands",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Svalbard and Jan Mayen",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Tokelau",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Turks and Caicos Islands (the)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "United States Minor Outlying Islands (the)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Virgin Islands (British)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Virgin Islands (U.S.)",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Wallis and Futuna",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "Western Sahara",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    },
+    {
+      "name_in_source": "\u00c5land Islands",
+      "reason": "Territory, dependency or aggregate; not among the 199 passports covered."
+    }
+  ]
+}

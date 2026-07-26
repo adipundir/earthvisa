@@ -166,12 +166,14 @@ def build(fy):
                        "application: an applicant refused in April and issued in July counts "
                        "only as an issuance."),
         "scope": "B1/B2 visitor (tourism and business) visas only. Excludes student, work and all other classes.",
+        # Worded as documentation of the statistic, not as advice to the reader:
+        # these render on visa-required corridors only, so a caveat addressed to
+        # "Visa Waiver nationals" would appear precisely where it cannot apply.
         "caveats": [
-            "Visa Waiver Program nationals: the rate reflects only applications made at U.S. "
-            "embassies and consulates. Travellers entering on ESTA are not counted, so these "
-            "rates read higher than the real chance of being turned away.",
-            "A rate is not published where entry does not normally require a visa, so it should "
-            "not be read as the odds of entering - only as the outcome of visa applications made.",
+            "Counts the outcome of visa applications actually made, not the chance of being "
+            "admitted at the border.",
+            "Figures cover applications at U.S. embassies and consulates only; travel under the "
+            "Visa Waiver Program is not counted.",
             "Waivers of ineligibility are excluded from the calculation.",
         ],
         "source_name": "U.S. Department of State, Bureau of Consular Affairs",

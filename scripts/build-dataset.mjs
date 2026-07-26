@@ -3,7 +3,7 @@
 //  - resolves visa-policy nationality strings -> iso3 (alias + regional-group expansion)
 //  - inverts the matrix: per passport, where can it go and at what access level
 //  - flattens CBI / RBI / fast-track programs into global lists
-import { readdirSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
@@ -794,6 +794,43 @@ for (const file of files) {
   if (advEntries.length > 0) advanceVisaNotes[d2.iso3] = advEntries;
 }
 
+// Build acceptanceRates index from data/acceptance-rates/<DEST>.json - official
+// per-nationality visa refusal statistics, built by scripts/build-acceptance-*.py.
+// Only a handful of governments publish these at all (US, UK, IE today); every
+// other destination is deliberately absent rather than estimated.
+//
+// The metric's semantics travel with the numbers: a consumer must render `label`
+// and `caveats` from here, never its own wording, so a B-visa-only or short-stay-only
+// figure can't be presented as a general "chance of approval".
+const acceptanceRates = {};
+const AR_DIR = join(ROOT, "data", "acceptance-rates");
+if (existsSync(AR_DIR)) {
+  for (const file of readdirSync(AR_DIR).filter((f) => f.endsWith(".json")).sort()) {
+    let a;
+    try { a = JSON.parse(readFileSync(join(AR_DIR, file), "utf8")); } catch { continue; }
+    if (!a?.dest_iso3 || !Array.isArray(a.rows)) continue;
+    const byNat = {};
+    for (const r of a.rows) {
+      // Rows flagged ambiguous carry no rate (see the US 0.00% footnote) and are
+      // skipped here so nothing downstream can render them as a number.
+      if (typeof r.rate_percent !== "number" || !r.iso3) continue;
+      byNat[r.iso3] = r.rate_percent;
+    }
+    acceptanceRates[a.dest_iso3] = {
+      metricId: a.metric_id,
+      label: a.label,
+      definition: a.definition,
+      scope: a.scope,
+      caveats: a.caveats ?? [],
+      sourceName: a.source_name,
+      sourceUrl: a.source_url,
+      sourceOfficial: a.source_official !== false,
+      period: a.period,
+      byNationality: byNat,
+    };
+  }
+}
+
 // Build vfsCorridors index from data/vfs/*.json (VFS Global document checklists).
 // The full sectioned document text stays in those files; here we keep only a
 // compact per-destination index so dataset.json stays lean.
@@ -913,6 +950,7 @@ const dataset = {
   destinationVisaTypes,
   vfsCorridors,
   advanceVisaNotes,
+  acceptanceRates,
   countryLastUpdated,
 };
 

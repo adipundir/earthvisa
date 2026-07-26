@@ -167,5 +167,28 @@ export interface Dataset {
   /** iso3 -> ISO date (YYYY-MM-DD) of that country's data file's most recent
    *  git commit. Used for per-page sitemap lastModified so one country's
    *  update doesn't bump every URL's timestamp - see src/app/sitemap.ts. */
+  /**
+   * Official per-nationality visa refusal statistics, keyed by destination ISO3.
+   * Only governments that actually publish this appear here - an absent
+   * destination means "not published", never "no refusals".
+   *
+   * `label`, `definition`, `scope` and `caveats` MUST be rendered from this
+   * object rather than written into the UI: each source measures something
+   * different (B-visa only, short-stay only, visitor only), and substituting a
+   * generic phrase like "approval chance" would misstate the figure.
+   */
+  acceptanceRates: Record<string, {
+    metricId: string;
+    label: string;
+    definition: string;
+    scope: string;
+    caveats: string[];
+    sourceName: string;
+    sourceUrl: string;
+    sourceOfficial: boolean;
+    period: string;
+    /** nationality ISO3 -> refusal rate as a percentage. */
+    byNationality: Record<string, number>;
+  }>;
   countryLastUpdated: Record<string, string>;
 }
