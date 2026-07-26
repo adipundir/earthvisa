@@ -10,7 +10,8 @@ import { TOP_NATIONALITIES, TOP_DESTINATIONS, preWarmCorridorPairs, isUsefulCorr
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
 import { feesFor, relevantFees, variationFor, fmtFee, toUsd } from "@/lib/fees";
 import { applicationNoteFor } from "@/lib/applicationNotes";
-import VisaTypeDialog, { type VisaTypeMeta } from "@/components/VisaTypeDialog";
+import { mergeVisaTypes } from "@/lib/merge-visa-types";
+
 import ReportIssue from "@/components/ReportIssue";
 import { residualSentences } from "@/lib/residual-notes";
 
@@ -638,44 +639,6 @@ function FactStrip({ cells }: { cells: FactCell[] }) {
   );
 }
 
-// One destination visa-type card - shows processing time and entry count
-// (already collected per visa type, previously never rendered) plus any notes
-// the source publishes (insurance/minors/entry-point clauses etc.), alongside
-// the existing name/purpose/stay/fee/apply-link fields.
-function VisaTypeCard({ v, suppressFee }: { v: VisaType; suppressFee: boolean }) {
-  // A 0-day minimum means sub-24h turnaround - never print "0d processing".
-  // Types that publish only a max still get "up to Nd processing".
-  const pMin = v.processing_days_min, pMax = v.processing_days_max;
-  const processing = pMin == null && pMax == null
-    ? null
-    : pMin == null || pMin === 0
-      ? (pMax != null && pMax > 0 ? `up to ${pMax}d processing` : pMin === 0 ? "under 24h processing" : null)
-      : `${pMin}${pMax != null && pMax !== pMin ? `-${pMax}` : ""}d processing`;
-  // Compact-by-default (owner directive: no inline expansion - a compact card
-  // opens a dialog with the full record). The card shows name + purpose + one
-  // meta row; notes, validity and the official link live in the modal.
-  const meta: VisaTypeMeta[] = [];
-  if (v.max_stay_days != null) meta.push({ text: `${v.max_stay_days} days` });
-  if (v.entries) meta.push({ text: `${v.entries} entry` });
-  if (processing) meta.push({ text: processing });
-  // Suppress the rough USD figure when the official fee section above
-  // already quotes the same fee - two conversions of one fee reads as an error.
-  if (v.fee_usd != null && !suppressFee) meta.push(v.fee_usd === 0 ? { text: "free", tone: "verdict" } : { text: `~$${v.fee_usd}` });
-  if (v.online) meta.push({ text: "online", tone: "verdict" });
-  if (v.validity_days != null) meta.push({ text: `valid ${v.validity_days}d` });
-  return (
-    <VisaTypeDialog
-      name={v.name}
-      category={v.category.replace(/_/g, " ")}
-      purpose={v.purpose || undefined}
-      meta={meta}
-      sentences={v.notes ? splitSentences(v.notes) : []}
-      officialUrl={v.official_url || undefined}
-      officialLabel={v.official_url ? (isAdvisoryUrl(v.official_url) ? "Official advisory" : "Apply here") : undefined}
-    />
-  );
-}
-
 export default async function CorridorPage({ params }: { params: Promise<{ slug: string; dest: string }> }) {
   const { slug, dest } = await params;
   const n = slugToCountry(slug);
@@ -707,7 +670,6 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   let vfsDocs: { name: string; category: string; documents_required: string }[] = [];
   let vfsCommonLines: string[] = [];
   let vfsPhotoLines: string[] = [];
-  const VFS_PREVIEW = 6;
   if (vfsCorrs.length > 0) {
     try {
       const merged = vfsCorrs.flatMap((c) => {
@@ -828,6 +790,10 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
 
   // Which sections exist (jump chips) + the primary apply URL.
   const TRAVELER_CATS = new Set(["tourist", "business", "transit"]);
+  // Categories a traveller would expect a visa-centre checklist for. Work,
+  // student and investment visas are handled by employers, universities and
+  // lawyers, and VFS rarely publishes checklists for them.
+  const CHECKLIST_EXPECTED = new Set(["tourist", "business", "transit", "medical", "family"]);
   const hasTypesSection =
     visaTypes.length > 0 &&
     ((!hasVfs && need && visaTypes.some((v) => TRAVELER_CATS.has(v.category))) ||
@@ -841,6 +807,20 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const statusUrl = "sourceUrl" in s && s.sourceUrl ? s.sourceUrl : null;
   const travelBanned = isTravelBanned(s);
   const eVisaIneligible = s.kind === "visa_required" && !!s.notes && /\bnot (?:on|in|eligible(?: for)?)\b[^.]{0,60}\be-?visa/i.test(s.notes);
+
+  // One list per corridor. Traveller categories are only worth showing when this
+  // corridor actually needs a visa AND we have no corridor-specific checklist
+  // that already covers them; work/student/investment types stay useful either
+  // way. An e-visa product this nationality is excluded from must not appear
+  // with an apply link.
+  const mergedTypes = mergeVisaTypes(
+    visaTypes.filter(
+      (v) =>
+        !(eVisaIneligible && /e-?visa|electronic/i.test(`${v.official_url ?? ""} ${v.name}`)) &&
+        (!TRAVELER_CATS.has(v.category) || (need && !hasVfs)),
+    ),
+    vfsDocs,
+  );
   const portalUrl = visaTypes
     .map((v) => v.official_url)
     .filter((u): u is string => !!u && !isAdvisoryUrl(u) && !(eVisaIneligible && /e-?visa/i.test(u)))[0] ?? null;
@@ -1468,54 +1448,121 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             </section>
           )}
 
-          {/* ── VFS document checklist - genuinely per-corridor content ── */}
-          {vfsDocs.length > 0 && (() => {
-            const visible = vfsDocs.slice(0, VFS_PREVIEW);
-            const hidden = vfsDocs.slice(VFS_PREVIEW);
-            // Raw VFS names are often ALL CAPS ("TOURIST") and the category chip
-            // duplicated them ("TOURIST TOURIST") - title-case shouty names and
-            // only show the chip when it adds information.
+          {/* ── Visa types: ONE list per corridor. The destination catalogue
+                (facts: stay, fee, processing) and the VFS checklists (paperwork,
+                specific to this nationality) used to render as two parallel
+                lists of visa-type names, which reads as duplication even where
+                the entries differ. mergeVisaTypes joins them; anything it can't
+                confidently match stays as its own entry rather than filing one
+                visa's documents under another visa's name. ── */}
+          {mergedTypes.length > 0 && (() => {
+            const TYPE_PREVIEW = 8;
+            const visible = mergedTypes.slice(0, TYPE_PREVIEW);
+            const hidden = mergedTypes.slice(TYPE_PREVIEW);
+            // Raw VFS names are often ALL CAPS ("TOURIST"); title-case them so a
+            // checklist-only entry doesn't shout next to catalogue names.
             const prettyName = (raw: string) => {
               const t = raw.trim();
               return t === t.toUpperCase() && /[A-Z]{3}/.test(t)
                 ? t.toLowerCase().replace(/(^|[\s(/:-])([a-z])/g, (m, pre, ch) => pre + ch.toUpperCase())
                 : t;
             };
-            const renderDoc = (v: typeof vfsDocs[number], i: number) => (
-              <details key={i} className="group">
+            const facts = (m: (typeof mergedTypes)[number]) => {
+              const f = m.facts;
+              if (!f) return [];
+              const out: string[] = [];
+              if (f.max_stay_days != null) out.push(`${f.max_stay_days} days`);
+              if (f.entries) out.push(`${f.entries} entry`);
+              // A 0-day minimum means sub-24h turnaround - never print "0d
+              // processing". Types publishing only a max still get "up to Nd".
+              const pMin = f.processing_days_min;
+              const pMax = f.processing_days_max;
+              const processing =
+                pMin == null && pMax == null
+                  ? null
+                  : pMin == null || pMin === 0
+                    ? pMax != null && pMax > 0
+                      ? `up to ${pMax}d processing`
+                      : pMin === 0
+                        ? "under 24h processing"
+                        : null
+                    : `${pMin}${pMax != null && pMax !== pMin ? `-${pMax}` : ""}d processing`;
+              if (processing) out.push(processing);
+              // The fee table above already carries this corridor's headline fee;
+              // repeating it per type is the duplication this merge exists to remove.
+              if (f.fee_usd != null && feeList.length === 0) out.push(f.fee_usd === 0 ? "free" : `~$${f.fee_usd}`);
+              if (f.validity_days) out.push(`valid ${f.validity_days}d`);
+              if (f.online) out.push("online");
+              return out;
+            };
+            const renderType = (m: (typeof mergedTypes)[number]) => (
+              <details key={m.key} className="group">
                 <summary className="flex min-h-[48px] cursor-pointer list-none items-center gap-3 py-3 [&::-webkit-details-marker]:hidden">
-                  <span className="text-[15px] font-semibold text-ink transition group-open:text-accent">{prettyName(v.name)}</span>
-                  {v.category.toLowerCase() !== v.name.trim().toLowerCase() && (
-                    <span className="shrink-0 rounded-md border border-hair-strong px-1.5 py-0.5 text-[11.5px] font-medium text-ink-2">{v.category}</span>
+                  <span className="text-[15px] font-semibold text-ink transition group-open:text-accent">{prettyName(m.name)}</span>
+                  {m.category.toLowerCase() !== m.name.trim().toLowerCase() && (
+                    <span className="shrink-0 rounded-md border border-hair-strong px-1.5 py-0.5 text-[11.5px] font-medium text-ink-2">{m.category}</span>
+                  )}
+                  {m.docs && (
+                    <span className="shrink-0 text-[11.5px] font-medium text-ink-3">documents</span>
                   )}
                   <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-auto h-2.5 w-2.5 shrink-0 text-ink-3 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </summary>
                 <div className="pb-5 pr-6 pt-1">
-                  {v.documents_required ? (
-                    <DocBlocks text={v.documents_required} />
+                  {facts(m).length > 0 && (
+                    <p className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-[13px] font-medium tabular-nums text-ink-2">
+                      {facts(m).map((x) => <span key={x}>{x}</span>)}
+                    </p>
+                  )}
+                  {m.facts?.purpose && (
+                    <p className="measure mb-3 text-[14.5px] leading-relaxed text-ink-2">{m.facts.purpose}</p>
+                  )}
+                  {/* Matched on category rather than a recognisable name, so the
+                      checklist's own title has to be visible - otherwise the
+                      reader can't tell which document set this actually is. */}
+                  {m.docsNameDiffers && m.docs && (
+                    <p className="mb-2 text-[13px] text-ink-3">
+                      Checklist filed by the visa centre as &ldquo;{prettyName(m.docs.name)}&rdquo;
+                    </p>
+                  )}
+                  {m.docs?.documents_required ? (
+                    <DocBlocks text={m.docs.documents_required} />
                   ) : (
-                    <p className="text-[15px] italic text-ink-2">Same requirements as above, plus this visa type&apos;s stated stay/fee terms.</p>
+                    // Only worth saying where a checklist would actually be
+                    // expected: this corridor has checklists AND this is a type
+                    // a traveller would look one up for. Printing it under all 27
+                    // of a destination's work and investment visas is noise.
+                    vfsCorr && CHECKLIST_EXPECTED.has(m.category) && (
+                      <p className="text-[14.5px] leading-relaxed text-ink-3">
+                        The visa application centre publishes no document checklist for this type.
+                      </p>
+                    )
+                  )}
+                  {m.facts?.notes && (
+                    <p className="measure mt-3 text-[14.5px] leading-relaxed text-ink-2">{m.facts.notes}</p>
+                  )}
+                  {m.facts?.official_url && (
+                    <a href={m.facts.official_url} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-accent underline-offset-2 hover:underline">
+                      Official page ↗
+                    </a>
                   )}
                 </div>
               </details>
             );
             return (
-              <section id="documents" className="mt-12 scroll-mt-24">
+              <section id="visa-types" className="mt-12 scroll-mt-24">
                 <h2 className="text-[20px] font-bold tracking-tight text-ink">
-                  {noVisaShortStay ? `${d.name} visa documents for ${nd} applicants` : `Documents required for ${nd} applicants`}
+                  {d.name} visa types {noVisaShortStay ? "" : `for ${nd} citizens`}
                 </h2>
-                <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-                  {noVisaShortStay
-                    ? `Only needed for a longer-stay visa - exact documents by visa type, from the official visa application centre.`
-                    : `Exact documents by visa type, from the official visa application centre.`}
-                  {/* One caption for the whole section - previously repeated
-                      under the PDF pills inside every accordion. */}
+                <p className="measure mt-2 text-[14.5px] leading-relaxed text-ink-2">
+                  Open a type for its documents, conditions and official page.
                   {/\.pdf/i.test([vfsCommonLines.join("\n"), ...vfsDocs.map((v) => v.documents_required)].join("\n")) &&
-                    " Where a visa type links an official PDF checklist, fill it in and submit it with the application form."}
+                    " Where a type links an official PDF checklist, fill it in and submit it with the application form."}
                 </p>
+                {/* Shared blocks sit above the list: they apply across types, so
+                    repeating them inside every accordion would be duplication. */}
                 {vfsCommonLines.length > 0 && (
                   <div className="mt-4 max-w-3xl border-t border-hair pt-4">
-                    <p className="mb-2.5 text-[13px] font-semibold text-ink-2">Required for most visa types below</p>
+                    <p className="mb-2.5 text-[13px] font-semibold text-ink-2">Required for most visa types</p>
                     <DocBlocks text={vfsCommonLines.join("\n")} />
                   </div>
                 )}
@@ -1533,65 +1580,26 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   </div>
                 )}
                 <div className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
-                  {visible.map(renderDoc)}
+                  {visible.map(renderType)}
                 </div>
                 {hidden.length > 0 && (
                   <details className="group mt-3 max-w-3xl">
                     <summary className="chip cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <span className="group-open:hidden">Show all {vfsDocs.length} visa-type document checklists</span>
+                      <span className="group-open:hidden">Show all {mergedTypes.length} visa types</span>
                       <span className="hidden group-open:inline">Hide the rest</span>
                       <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </summary>
-                    <div className="mt-3 divide-y divide-hair border-y border-hair">{hidden.map((v, i) => renderDoc(v, VFS_PREVIEW + i))}</div>
+                    <div className="mt-3 divide-y divide-hair border-y border-hair">{hidden.map(renderType)}</div>
                   </details>
                 )}
-                {vfsCorr?.sourceUrl && (
-                  <a href={vfsCorr.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-[13px] font-medium text-ink-2 transition hover:text-ink">via VFS Global ↗</a>
-                )}
-              </section>
-            );
-          })()}
-
-          {/* ── Destination visa types: tourist/business/transit shown directly when
-              relevant to the resolved status; every other category (work, student,
-              digital nomad, retirement, investment, family, medical) surfaces
-              regardless, since e.g. a destination's work or retirement visa is
-              useful to know about even on an easy tourist-entry corridor. ── */}
-          {visaTypes.length > 0 && (() => {
-            const TRAVELER_CATEGORIES = new Set(["tourist", "business", "transit"]);
-            // An e-visa product this nationality is excluded from (per the
-            // advance note) must not render an open card with an apply link.
-            const touristTypes = visaTypes.filter((v) =>
-              TRAVELER_CATEGORIES.has(v.category) &&
-              !(eVisaIneligible && /e-?visa|electronic/i.test(`${v.official_url ?? ""} ${v.name}`)));
-            const otherTypes = visaTypes.filter((v) => !TRAVELER_CATEGORIES.has(v.category));
-            const showTourist = !hasVfs && need && touristTypes.length > 0;
-            if (!showTourist && otherTypes.length === 0) return null;
-            return (
-              <section id="visa-types" className="mt-12 scroll-mt-24">
-                {/* The h2 renders whenever the section exists - otherwise the
-                    jump chip "Visa types" lands on an unlabeled block. */}
-                <h2 className="text-[20px] font-bold tracking-tight text-ink">{d.name} visa types</h2>
-                {otherTypes.length > 0 && (
-                  <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-                    Every {d.name} visa category and its key facts. Eligibility varies by type - open a card for the conditions and the official page.
-                  </p>
-                )}
-                {/* All types listed as compact dialog cards (owner directive:
-                    "list all visas and their data" - no hidden collapse).
-                    Tourist/business/transit lead when this corridor needs a
-                    visa; the rest follow in catalog order. */}
-                <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {showTourist && touristTypes.map((v, i) => <VisaTypeCard key={`t${i}`} v={v} suppressFee={feeList.length > 0} />)}
-                  {otherTypes.map((v, i) => <VisaTypeCard key={`o${i}`} v={v} suppressFee={false} />)}
-                </div>
-                {otherTypes.length > 0 && (
-                  <p className="mt-4 text-[14.5px]">
-                    <Link href={`/destination/${dest}`} className="relative font-semibold text-accent underline-offset-2 after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:underline">
-                      {d.name} visa policy, fees & entry rules in full →
-                    </Link>
-                  </p>
-                )}
+                <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px]">
+                  {vfsCorr?.sourceUrl && (
+                    <a href={vfsCorr.sourceUrl} target="_blank" rel="noreferrer" className="font-medium text-ink-2 transition hover:text-ink">via VFS Global ↗</a>
+                  )}
+                  <Link href={`/destination/${dest}`} className="font-semibold text-accent underline-offset-2 hover:underline">
+                    {d.name} visa policy, fees &amp; entry rules in full →
+                  </Link>
+                </p>
               </section>
             );
           })()}
