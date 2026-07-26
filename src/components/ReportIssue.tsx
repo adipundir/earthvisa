@@ -89,16 +89,23 @@ export default function ReportIssue({ page, className, label }: { page?: string;
         ref={ref}
         aria-label="Report an inaccuracy"
         onClick={(e) => { if (e.target === ref.current) close(); }}
-        className="dialog-modal m-auto w-[min(92vw,28rem)] rounded-2xl border border-hair bg-surface p-0 text-ink shadow-xl backdrop:bg-black/45"
+        className="dialog-modal m-auto w-[min(92vw,28rem)] rounded-2xl border border-hair bg-surface p-0 text-ink shadow-xl backdrop:bg-black/50"
       >
-        <div className="max-h-[85vh] overflow-y-auto p-6">
-          <div className="flex items-start justify-between gap-4">
+        {/*
+          showModal() focuses the first focusable descendant unless something
+          declares autofocus - that was the close button, so the dialog opened
+          with a ring drawn around the "x". Focus lands on this container
+          instead: screen readers still announce the dialog (it is labelled),
+          and nothing appears pre-selected.
+        */}
+        <div autoFocus tabIndex={-1} className="max-h-[85vh] overflow-y-auto p-6 outline-none">
+          <div className="flex items-start justify-between gap-3">
             <h3 className="text-[19px] font-bold tracking-tight text-ink">Report an inaccuracy</h3>
             <button
               type="button"
               onClick={close}
               aria-label="Close"
-              className="-m-1 grid h-11 w-11 shrink-0 place-items-center rounded-full text-[19px] leading-none text-ink-3 transition hover:bg-ground hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="-mr-1.5 -mt-1.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[17px] leading-none text-ink-3 transition hover:bg-ground hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >×</button>
           </div>
 
