@@ -110,6 +110,43 @@ function fmtDay(iso: string | null | undefined): string | null {
   return m ? `${Number(m[3])} ${MONTHS[Number(m[2]) - 1]} ${m[1]}` : iso;
 }
 
+// Headings under which VFS publishes photo rules. scripts/vfs-crawl.mjs promotes
+// only six sections of `full_text` into real fields and this is not one of them,
+// so it is recovered here at render time. The data files are never mutated.
+const PHOTO_HEADING = /^#{1,6}[ \t]*(?:photo specifications?(?: and fingerprints)?|photograph quality)[ \t]*:?[ \t]*$/i;
+
+/** Body of a named markdown section inside a VFS `full_text` blob, up to the next heading. */
+function fullTextSection(fullText: unknown, heading: RegExp): string {
+  if (typeof fullText !== "string") return "";
+  const lines = fullText.split("\n");
+  const start = lines.findIndex((l) => heading.test(l.trim()));
+  if (start < 0) return "";
+  const body: string[] = [];
+  for (let i = start + 1; i < lines.length; i++) {
+    if (/^#{1,6}\s/.test(lines[i])) break;
+    body.push(lines[i]);
+  }
+  return body.join("\n").trim();
+}
+
+/** The variant most visa types in a corridor agree on; ties break toward the fuller text. */
+function mostCommonSection(entries: { full_text?: unknown }[], heading: RegExp): string {
+  const counts = new Map<string, number>();
+  for (const e of entries) {
+    const body = fullTextSection(e?.full_text, heading);
+    if (body) counts.set(body, (counts.get(body) ?? 0) + 1);
+  }
+  let best = "";
+  let bestN = 0;
+  for (const [body, n] of counts) {
+    if (n > bestN || (n === bestN && body.length > best.length)) {
+      best = body;
+      bestN = n;
+    }
+  }
+  return best;
+}
+
 // VFS checklist bodies embed an insurance upsell ("Get the peace of mind you
 // need on your travels, with insurance made simple…") that is marketing, not a
 // document requirement. Strip it at render time - genuine insurance
@@ -646,6 +683,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   // instead of a destination-generic visa-types block. Read at build time.
   let vfsDocs: { name: string; category: string; documents_required: string }[] = [];
   let vfsCommonLines: string[] = [];
+  let vfsPhotoLines: string[] = [];
   const VFS_PREVIEW = 6;
   if (vfsCorrs.length > 0) {
     try {
@@ -672,6 +710,28 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
         // Tourist first: it's what the vast majority of readers actually need,
         // and a hard positional cutoff below must not bury it under niche types.
         .sort((a: { category: string }, b: { category: string }) => (a.category === "tourist" ? -1 : b.category === "tourist" ? 1 : 0));
+      // Photo requirements. The crawler promotes six sections of full_text to
+      // real fields and leaves this one buried, even though 1,055 of the 1,206
+      // corridor files carry it - and a non-compliant photo is one of the
+      // commonest avoidable rejection causes. It is near-identical across visa
+      // types within a corridor, so surface the most common variant once rather
+      // than repeating it under every type.
+      vfsPhotoLines = cleanChecklistLines(
+        stripVfsBoilerplate(mostCommonSection(merged, PHOTO_HEADING)),
+        keepNames,
+        foreignNames,
+      )
+        // Keep only genuine bullets. The section body interleaves bare
+        // sub-headings ("Photograph Quality", "Style and lighting") and
+        // colon-terminated lead-ins ("The photographs must be:") which read as
+        // nonsense once flattened into a list.
+        .split("\n")
+        .map((l) => l.trim())
+        .filter((l) => /^[-*•]\s+/.test(l))
+        .map((l) => l.replace(/^[-*•]\s*/, "").trim())
+        .filter((l) => l.length > 2)
+        .slice(0, 12);
+
       const { common, perEntry } = extractCommonLines(all);
       vfsCommonLines = common;
       vfsDocs = all.map((v: { name: string; category: string; documents_required: string }, i: number) => ({
@@ -772,8 +832,21 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const lodgingFact = s.kind === "visa_required" && feeVariation?.note
     ? splitSentences(feeVariation.note).find((t) => /must be lodged|no longer accepts direct applications/i.test(t)) ?? null
     : null;
+  // Official refusal statistics, shown ONLY on genuinely visa-required corridors.
+  // Deliberately NOT gated on `need`, which also covers eTA and e-visa: for the
+  // US, eTA means ESTA, i.e. precisely the Visa Waiver countries whose published
+  // rate counts only the rare traveller who still applied for a visa. Those read
+  // absurdly high (Micronesia 100% for the US, the US 34.7% for the UK) and would
+  // frighten people away from a trip they can make without a visa at all.
+  const acceptanceSrc = s.kind === "visa_required" ? dataset.acceptanceRates?.[d.iso3] : undefined;
+  const acceptanceRate = acceptanceSrc?.byNationality?.[n.iso3];
+  const acceptance = typeof acceptanceRate === "number" && acceptanceSrc
+    ? { ...acceptanceSrc, rate: acceptanceRate }
+    : null;
+
   const jumpLinks = [
     { href: "#apply", label: travelBanned ? "Current status" : need ? "How to apply" : "How to enter" },
+    acceptance ? { href: "#odds", label: "Refusal rate" } : null,
     credGroups.length > 0 ? { href: "#no-advance-visa", label: "No-visa exceptions" } : null,
     feeList.length > 0 ? { href: "#fees", label: "Fees" } : null,
     vfsDocs.length > 0 ? { href: "#documents", label: "Documents" } : null,
@@ -1188,6 +1261,42 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             </ol>
           </section>
 
+          {/* ── Official refusal statistics. Wording comes from the dataset, not
+                from here: each government measures something different (B-visa
+                only / visitor only / short-stay only), so a generic phrase like
+                "approval chance" would misstate the figure. ── */}
+          {acceptance && (
+            <section id="odds" className="mt-12 scroll-mt-24">
+              <h2 className="text-[20px] font-bold tracking-tight text-ink">
+                How often {d.name} refuses {nd} applicants
+              </h2>
+              <div className="mt-4 max-w-3xl border-y border-hair py-5">
+                <p className="stat-num text-ink">{acceptance.rate}%</p>
+                <p className="mt-1 text-[14.5px] text-ink-2">
+                  {acceptance.label} · {acceptance.period}
+                </p>
+                <p className="measure mt-4 text-[14.5px] leading-relaxed text-ink-2">{acceptance.definition}</p>
+                <p className="measure mt-2 text-[14.5px] leading-relaxed text-ink-2">{acceptance.scope}</p>
+                {acceptance.caveats.length > 0 && (
+                  <ul className="measure mt-3 space-y-1.5">
+                    {acceptance.caveats.map((c, i) => (
+                      <li key={i} className="text-[13.5px] leading-relaxed text-ink-3">{c}</li>
+                    ))}
+                  </ul>
+                )}
+                <a
+                  href={acceptance.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mono-chrome mt-4 inline-flex items-center gap-1.5 transition hover:text-ink"
+                >
+                  <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${acceptance.sourceOfficial ? "bg-verdict" : "bg-ink-3"}`} />
+                  {acceptance.sourceName} ↗
+                </a>
+              </div>
+            </section>
+          )}
+
           {/* ── Held-credential exceptions - officially published no-advance-visa routes ── */}
           {credGroups.length > 0 && (
             <section id="no-advance-visa" className="mt-12 scroll-mt-24">
@@ -1385,6 +1494,19 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   <div className="mt-4 max-w-3xl border-t border-hair pt-4">
                     <p className="mb-2.5 text-[13px] font-semibold text-ink-2">Required for most visa types below</p>
                     <DocBlocks text={vfsCommonLines.join("\n")} />
+                  </div>
+                )}
+                {vfsPhotoLines.length > 0 && (
+                  <div className="mt-4 max-w-3xl border-t border-hair pt-4">
+                    <p className="mb-2.5 text-[13px] font-semibold text-ink-2">Photo requirements</p>
+                    <ul className="space-y-1.5">
+                      {vfsPhotoLines.map((line, i) => (
+                        <li key={i} className="flex gap-2.5 text-[14.5px] leading-relaxed text-ink-2">
+                          <span aria-hidden="true" className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
+                          <span className="min-w-0">{line}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
                 <div className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
