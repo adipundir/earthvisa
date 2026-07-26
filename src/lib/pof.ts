@@ -28,7 +28,8 @@ export interface ProofOfFunds {
   name: string;
   visa: string;
   scope: "bloc" | "country";
-  updated: string;
+  /** null when the source record has no recorded check date - never substitute one. */
+  updated: string | null;
   confidence: "high" | "medium" | "low";
   official: {
     published: boolean;

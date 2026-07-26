@@ -6,13 +6,16 @@ import { join } from "node:path";
 
 const SRC = join(process.cwd(), "data", "proof-of-funds");
 const OUT = join(process.cwd(), "src", "data", "proof-of-funds.json");
-const FALLBACK_DATE = "2026-07-03"; // crawl date; some records recorded "undefined"
 // Official guidance must never be clipped mid-sentence: caps sit above the longest curated
 // string, and the post-merge audit below fails the build if any output still ends in "…".
 const trim = (s, n = 1200) => (typeof s === "string" && s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s ?? "");
-const fixDate = (d) => (d && d !== "undefined" ? d : FALLBACK_DATE);
+// A record with no recorded check date emits null, never a substituted constant: the UI
+// omits the "Checked …" line rather than showing a freshness claim we cannot source.
+// (This previously fell back to a hard-coded crawl date, which invented a per-record claim.)
+const fixDate = (d) => (d && d !== "undefined" ? d : null);
 
 const out = {};
+const undated = [];
 let count = 0, official = 0;
 for (const f of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
   let d;
@@ -48,6 +51,7 @@ for (const f of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
     sources: (d.sources ?? []).slice(0, 8),
   };
   if (entry.official.published) official++;
+  if (entry.updated === null) undated.push(d.key);
   out[d.key] = entry;
   count++;
 }
@@ -65,3 +69,8 @@ if (clipped.length) {
 }
 writeFileSync(OUT, JSON.stringify(out));
 console.log(`merged ${count} proof-of-funds records (${official} with a published official figure) → ${OUT}`);
+if (undated.length) {
+  // Surfaced, not silently filled: these records render without a "Checked" date
+  // until a real check date is recorded in data/proof-of-funds/<KEY>.json.
+  console.warn(`WARNING: ${undated.length} record(s) have no check date and will show none: ${undated.join(", ")}`);
+}

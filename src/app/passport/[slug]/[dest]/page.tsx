@@ -944,7 +944,17 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const natReach = computeFor(n.iso3).reach.length;
   const natTotal = dataset.allCountries.length;
 
-  const checkedDate = fmtDay(dataset.meta.lastUpdated);
+  // Freshness must describe the data, not the deploy. meta.lastUpdated is the
+  // build date (`new Date()` in build-dataset.mjs), so using it here made all
+  // ~40k corridors claim they were "checked" today on every deploy, whether or
+  // not anything had been re-verified. A corridor is only as fresh as its
+  // stalest input, so take the OLDER endpoint date. (sitemap.ts deliberately
+  // takes the newer one - "did anything change?" is a different question from
+  // "when was this last verified?".)
+  const endpointDates = [dataset.countryLastUpdated?.[n.iso3], dataset.countryLastUpdated?.[d.iso3]]
+    .filter((x): x is string => Boolean(x))
+    .sort();
+  const checkedDate = fmtDay(endpointDates[0] ?? dataset.meta.lastUpdated);
   const glossaryLabel = s.kind === "own" ? "home country" : s.kind === "fom" ? "freedom of movement" : s.kind === "visa_required" ? "visa required" : LEVEL_LABEL[s.kind].toLowerCase();
   const sourceHost = (url: string) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "official source"; } };
   const appNote = need ? applicationNoteFor(d.iso3) : null;

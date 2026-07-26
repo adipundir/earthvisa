@@ -765,16 +765,33 @@ for (const file of files) {
   // Nationality-scoped process/fee/advisory notes for genuinely visa-required
   // corridors (no access-level edge exists, so the corridor page would
   // otherwise show only generic "apply at an embassy" boilerplate).
-  if (Array.isArray(d2.advance_visa_notes) && d2.advance_visa_notes.length > 0) {
-    advanceVisaNotes[d2.iso3] = d2.advance_visa_notes
-      .filter((n) => Array.isArray(n.nationalities_iso3) && n.nationalities_iso3.length > 0 && n.notes)
-      .map((n) => ({
+  // Two shapes carry this same information: the canonical `advance_visa_notes`
+  // (one entry listing many nationalities) and `visa_required.advance_visa_required`
+  // (one entry per nationality - PLW is the only file using it). Normalise both
+  // into one index, so a key-name difference can't silently drop a corridor's
+  // explanatory note the way it did for Bangladesh/Myanmar -> Palau.
+  const advEntries = [];
+  for (const n of Array.isArray(d2.advance_visa_notes) ? d2.advance_visa_notes : []) {
+    if (Array.isArray(n?.nationalities_iso3) && n.nationalities_iso3.length > 0 && n.notes) {
+      advEntries.push({
         nationalitiesIso3: n.nationalities_iso3.map((c) => String(c).toUpperCase()),
         notes: n.notes,
         sourceUrl: n.source_url || "",
         sourceOfficial: n.source_official !== false,
-      }));
+      });
+    }
   }
+  for (const n of Array.isArray(d2.visa_required?.advance_visa_required) ? d2.visa_required.advance_visa_required : []) {
+    if (n?.iso3 && n.notes) {
+      advEntries.push({
+        nationalitiesIso3: [String(n.iso3).toUpperCase()],
+        notes: n.notes,
+        sourceUrl: n.source_url || "",
+        sourceOfficial: n.source_official !== false,
+      });
+    }
+  }
+  if (advEntries.length > 0) advanceVisaNotes[d2.iso3] = advEntries;
 }
 
 // Build vfsCorridors index from data/vfs/*.json (VFS Global document checklists).

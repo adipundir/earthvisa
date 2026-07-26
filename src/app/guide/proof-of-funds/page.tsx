@@ -165,7 +165,7 @@ export default function ProofOfFundsHub() {
                 </table>
               </div>
               <p className="mono-chrome mt-2">
-                Checked {schengen.updated} · sourced directly from consulate publications
+                {schengen.updated ? `Checked ${schengen.updated} · ` : ""}sourced directly from consulate publications
               </p>
             </section>
           )}
