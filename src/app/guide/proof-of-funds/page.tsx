@@ -3,6 +3,7 @@ import Link from "next/link";
 import { allPof, pofFor, fmtMoney } from "@/lib/pof";
 import { flagFor } from "@/lib/dataset";
 import PofCard from "@/components/PofCard";
+import ReportLine from "@/components/ReportLine";
 
 const TITLE = "Proof of Funds for Visa 2026: How Much Bank Balance to Show";
 const DESCRIPTION =
@@ -207,6 +208,7 @@ export default function ProofOfFundsHub() {
             <Link href="/rankings" className="text-stamp underline-offset-2 hover:underline">passport ranking 2026</Link>.
           </p>
         </div>
+        <ReportLine />
       </main>
     </>
   );

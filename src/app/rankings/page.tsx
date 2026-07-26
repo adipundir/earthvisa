@@ -5,6 +5,7 @@ const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { fmtDate } from "@/lib/format";
 import RankingsTable, { type RankingRow } from "@/components/RankingsTable";
 import type { AccessLevel } from "@/lib/types";
+import ReportLine from "@/components/ReportLine";
 
 // ── Ranking computation ─────────────────────────────────────────────────────
 // Score = visa-free + visa on arrival + eTA. An e-visa is still a visa
@@ -420,6 +421,7 @@ export default function RankingsPage() {
           </section>
 
         </div>
+        <ReportLine />
       </main>
     </>
   );

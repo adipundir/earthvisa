@@ -12,6 +12,7 @@ import {
 } from "@/lib/programs";
 import ProgramsNav from "@/components/ProgramsNav";
 import type { RbiProgram } from "@/lib/types";
+import ReportLine from "@/components/ReportLine";
 
 // ---------------------------------------------------------------------------
 // Data (all derived from dataset.rbi - nothing invented)
@@ -432,6 +433,7 @@ export default function GoldenVisaPage() {
             </Link>
           </section>
         </div>
+        <ReportLine />
       </main>
     </>
   );

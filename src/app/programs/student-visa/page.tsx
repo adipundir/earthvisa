@@ -4,6 +4,7 @@ import { dataset, flagFor, nameToSlug } from "@/lib/dataset";
 import { REGION_ORDER } from "@/lib/programs";
 import ProgramsNav from "@/components/ProgramsNav";
 import type { VisaType } from "@/lib/types";
+import ReportLine from "@/components/ReportLine";
 
 // ---------------------------------------------------------------------------
 // Data (all derived from dataset.destinationVisaTypes - nothing invented)
@@ -436,6 +437,7 @@ export default function StudentVisaPage() {
             </Link>
           </section>
         </div>
+        <ReportLine />
       </main>
     </>
   );

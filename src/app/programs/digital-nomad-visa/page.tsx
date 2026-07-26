@@ -11,6 +11,7 @@ import {
   typeLabel,
 } from "@/lib/programs";
 import ProgramsNav from "@/components/ProgramsNav";
+import ReportLine from "@/components/ReportLine";
 
 // ---------------------------------------------------------------------------
 // Data (all derived from dataset.fastTrack + dataset.rbi - nothing invented)
@@ -361,6 +362,7 @@ export default function DigitalNomadVisaPage() {
             </Link>
           </section>
         </div>
+        <ReportLine />
       </main>
     </>
   );

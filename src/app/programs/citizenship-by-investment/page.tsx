@@ -12,6 +12,7 @@ import {
 } from "@/lib/programs";
 import ProgramsNav from "@/components/ProgramsNav";
 import type { CbiProgram } from "@/lib/types";
+import ReportLine from "@/components/ReportLine";
 
 // ---------------------------------------------------------------------------
 // Data (all derived from dataset.cbi - nothing invented)
@@ -498,6 +499,7 @@ export default function CitizenshipByInvestmentPage() {
             </Link>
           </section>
         </div>
+        <ReportLine />
       </main>
     </>
   );

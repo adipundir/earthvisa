@@ -5,6 +5,7 @@ import type { VisaType } from "@/lib/dataset";
 import { fmtMoney } from "@/lib/compute";
 import { passportWorth, REGION_ORDER } from "@/lib/programs";
 import ProgramsNav from "@/components/ProgramsNav";
+import ReportLine from "@/components/ReportLine";
 
 // ---------------------------------------------------------------------------
 // Data (derived entirely from dataset.destinationVisaTypes - nothing invented)
@@ -493,6 +494,7 @@ export default function WorkVisaPage() {
             </Link>
           </section>
         </div>
+        <ReportLine />
       </main>
     </>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import CompareExplorer from "@/components/CompareExplorer";
 import { dataset } from "@/lib/dataset";
 import { nameToSlug } from "@/lib/format";
+import ReportLine from "@/components/ReportLine";
 
 const BASE_TITLE = "Compare Two Passports - Visa-Free Reach Side by Side";
 const BASE_DESC =
@@ -118,6 +119,7 @@ export default function ComparePage() {
           </div>
         </div>
       </section>
+      <ReportLine />
     </main>
   );
 }

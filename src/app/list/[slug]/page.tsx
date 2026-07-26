@@ -6,6 +6,7 @@ import { compute, type CombinedEdge, type PassportResult } from "@/lib/compute";
 import { DEMONYM, isUsefulCorridor } from "@/lib/corridors";
 import CorridorLinks from "@/components/CorridorLinks";
 import type { AccessLevel } from "@/lib/types";
+import ReportLine from "@/components/ReportLine";
 
 // Only the slugs below are served; anything else 404s at build time.
 export const dynamicParams = false;
@@ -901,6 +902,7 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
           </section>
 
         </div>
+        <ReportLine />
       </main>
     </>
   );

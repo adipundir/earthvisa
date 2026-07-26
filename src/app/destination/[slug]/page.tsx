@@ -8,6 +8,7 @@ import { aliasBySlug, SHORT_NAME, type ColloquialAlias } from "@/lib/colloquial"
 import { feesFor, fmtFee } from "@/lib/fees";
 import { buildReverseIndex } from "../reverse-index";
 import type { AccessLevel } from "@/lib/types";
+import ReportLine from "@/components/ReportLine";
 
 function nameToSlug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -856,6 +857,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           </section>
 
         </div>
+        <ReportLine />
       </main>
     </>
   );
