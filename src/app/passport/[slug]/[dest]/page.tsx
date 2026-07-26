@@ -152,8 +152,21 @@ function mostCommonSection(entries: { full_text?: unknown }[], heading: RegExp):
 // document requirement. Strip it at render time - genuine insurance
 // requirements ("Travel insurance is mandatory for all Schengen countries…")
 // stay untouched, and the underlying data files are never mutated.
+// VFS exports checklist bodies with hard line breaks mid-sentence: a newline
+// followed by deep indentation is a soft wrap, not a new item. Every downstream
+// step here works line by line, so left alone it shreds one sentence into a
+// column of fragments ("Note: Kindly arrange the" / "documents in the same order
+// as outlined in" / "with your visa application for" …). 1,986 records across
+// 331 corridor files carry these wraps, so this must run before anything else
+// splits the text.
+function unwrapSoftBreaks(text: string): string {
+  return text
+    .replace(/\n[ \t]{6,}(?=\S)/g, " ")
+    .replace(/[ \t]{2,}/g, " ");
+}
+
 function stripVfsBoilerplate(text: string): string {
-  const lines = text.split("\n");
+  const lines = unwrapSoftBreaks(text).split("\n");
   const out: string[] = [];
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -192,6 +205,16 @@ function cleanChecklistLines(text: string, keepNames: string[], foreignNames: st
       if (/application form will not be accepted without the relevant check ?list/i.test(line)) return false;
       // "click here" references whose hyperlink didn't survive the crawl point nowhere.
       if (/click here/i.test(line) && !/https?:\/\//i.test(line)) return false;
+      // Submission mechanics, not documents. These describe HOW to hand the
+      // papers in (collation order, photocopy quality, paper size) and were
+      // being hoisted under "Required for most visa types below", which reads as
+      // though A4 paper were an entry requirement. The documents themselves are
+      // in the linked PDF checklist. Deliberately narrow: "please provide a bank
+      // statement" is a real requirement and must survive.
+      if (/arrange the documents in the same order/i.test(line)) return false;
+      if (/photocopies\b.{0,30}\ba4\s*size/i.test(line)) return false;
+      if (/^cop(?:y|ies) should be good[- ]quality/i.test(line)) return false;
+      if (/printed in high\s*density/i.test(line)) return false;
       if (/passport holders?/i.test(line)) {
         const l = line.toLowerCase();
         // Only drop when a foreign country name DIRECTLY modifies the audience
