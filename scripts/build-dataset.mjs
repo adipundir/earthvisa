@@ -926,6 +926,42 @@ try {
   // back to meta.lastUpdated when a country is missing from this map.
 }
 
+// ---- sitemap safety invariant ------------------------------------------------
+// That fallback is safe for one or two countries and catastrophic in bulk: a
+// country with no date is stamped with the BUILD date, so if history is missing
+// wholesale the sitemap tells Google every URL changed today. That is exactly
+// the 2026-07-20 failure (91.7% of URLs re-dated -> impressions -97.7%), except
+// at 100% instead of 91.7%.
+//
+// The realistic way to hit this is a shallow clone: `git clone --depth=1` is the
+// default on most CI, Vercel included, and it truncates the log this map is
+// built from. Refuse to emit a dataset that would poison the sitemap - the fix
+// is to run `npm run data` on a full checkout and commit src/data/dataset.json.
+// Counting dated countries is NOT sufficient, and the obvious version of this
+// check gives false confidence: `git clone --depth=1` still carries every
+// country file inside its single commit, so all 199 get a date - the SAME date.
+// Every corridor then shares one lastmod that moves on every commit, which is
+// the 2026-07-20 failure made permanent rather than a one-off. Date DIVERSITY is
+// what actually distinguishes real history from a truncated one: a full checkout
+// currently yields 10 distinct dates, a depth=1 clone exactly 1.
+const datedCountries = Object.keys(countryLastUpdated).length;
+const distinctDates = new Set(Object.values(countryLastUpdated)).size;
+if (datedCountries < 150 || distinctDates < 3) {
+  let shallow = "unknown";
+  try {
+    shallow = execSync("git rev-parse --is-shallow-repository", { cwd: ROOT }).toString().trim();
+  } catch { /* not a git checkout at all */ }
+  console.error(`\n  x SITEMAP SAFETY: per-country dates look untrustworthy.`);
+  console.error(`    ${datedCountries} of ${masterList.length} countries dated (need >= 150).`);
+  console.error(`    ${distinctDates} distinct date(s) across them (need >= 3).`);
+  console.error(`    Shallow repository: ${shallow}.`);
+  console.error(`    These dates become the sitemap's per-URL lastModified. Collapsed or missing`);
+  console.error(`    history stamps all ~40k URLs as changed together and triggers a full-site`);
+  console.error(`    recrawl - the failure that cost 97.7% of impressions on 2026-07-20.`);
+  console.error(`    Fix: run 'npm run data' on a full (non-shallow) checkout and commit src/data/dataset.json.\n`);
+  process.exit(1);
+}
+
 const dataset = {
   meta: {
     note: "Official-source-first dataset. Visa-free reach is derived by inverting each country's own official visa-policy pages; gaps remain where governments don't publish enumerated lists.",

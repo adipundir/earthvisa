@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/build-explorer-slices.mjs",
+    "prebuild": "node scripts/data-pipeline.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "test": "node --test scripts/lib/*.test.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "data": "node scripts/data-pipeline.mjs",
+    "data:check": "node scripts/data-pipeline.mjs --check",
+    "data:force": "node scripts/data-pipeline.mjs --force"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
