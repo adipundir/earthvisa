@@ -111,30 +111,17 @@ function fmtDay(iso: string | null | undefined): string | null {
   return m ? `${Number(m[3])} ${MONTHS[Number(m[2]) - 1]} ${m[1]}` : iso;
 }
 
-// Headings under which VFS publishes photo rules. scripts/vfs-crawl.mjs promotes
-// only six sections of `full_text` into real fields and this is not one of them,
-// so it is recovered here at render time. The data files are never mutated.
-const PHOTO_HEADING = /^#{1,6}[ \t]*(?:photo specifications?(?: and fingerprints)?|photograph quality)[ \t]*:?[ \t]*$/i;
-
-/** Body of a named markdown section inside a VFS `full_text` blob, up to the next heading. */
-function fullTextSection(fullText: unknown, heading: RegExp): string {
-  if (typeof fullText !== "string") return "";
-  const lines = fullText.split("\n");
-  const start = lines.findIndex((l) => heading.test(l.trim()));
-  if (start < 0) return "";
-  const body: string[] = [];
-  for (let i = start + 1; i < lines.length; i++) {
-    if (/^#{1,6}\s/.test(lines[i])) break;
-    body.push(lines[i]);
-  }
-  return body.join("\n").trim();
-}
-
-/** The variant most visa types in a corridor agree on; ties break toward the fuller text. */
-function mostCommonSection(entries: { full_text?: unknown }[], heading: RegExp): string {
+/**
+ * The photo block most visa types in a corridor agree on; ties break toward the
+ * fuller text. Reads the promoted `photo_specifications` field - this used to
+ * re-parse it out of a raw `full_text` blob on every build, until
+ * scripts/promote-vfs-sections.mjs lifted it into a real field and dropped the
+ * blob (74% of which was a verbatim copy of the other fields in the same file).
+ */
+function mostCommonSection(entries: { photo_specifications?: unknown }[]): string {
   const counts = new Map<string, number>();
   for (const e of entries) {
-    const body = fullTextSection(e?.full_text, heading);
+    const body = typeof e?.photo_specifications === "string" ? e.photo_specifications.trim() : "";
     if (body) counts.set(body, (counts.get(body) ?? 0) + 1);
   }
   let best = "";
@@ -702,7 +689,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       // types within a corridor, so surface the most common variant once rather
       // than repeating it under every type.
       vfsPhotoLines = cleanChecklistLines(
-        stripVfsBoilerplate(mostCommonSection(merged, PHOTO_HEADING)),
+        stripVfsBoilerplate(mostCommonSection(merged)),
         keepNames,
         foreignNames,
       )

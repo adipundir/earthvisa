@@ -228,7 +228,29 @@ function parseCorridor(entry, includes) {
       forms: sections.download_forms || sections.forms || null,
       overview: sections.overview || sections._intro || null,
       insurance: sections.travel_medical_insurance_list || null,
-      full_text: text,
+      // Promoted rather than left in a raw blob. `full_text` used to be stored
+      // alongside these fields and was 74% a verbatim copy of them - two
+      // representations of one fact in one file, and 46MB of it across data/vfs.
+      // scripts/promote-vfs-sections.mjs removed it; keep these in step so the
+      // next crawl doesn't reintroduce the duplication. Add a promoted field
+      // here (and there) rather than re-adding full_text.
+      photo_specifications:
+        sections.photo_specifications ||
+        sections.photo_specification ||
+        sections.photo_specifications_and_fingerprints ||
+        sections.photograph_quality ||
+        null,
+      application_form:
+        sections.application_form ||
+        sections.visa_application_form ||
+        sections.online_application_form ||
+        sections.application_forms ||
+        null,
+      eligibility:
+        sections.eligibility_criteria ||
+        sections.who_should_apply ||
+        sections.who_can_apply ||
+        null,
     });
   }
   return visaTypes;
