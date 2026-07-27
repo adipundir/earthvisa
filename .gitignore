@@ -60,3 +60,8 @@ skills-lock.json
 # Raw statistical source files for acceptance rates - re-fetchable via
 # scripts/build-acceptance-*.py; the parsed JSON is what we commit.
 data/acceptance-rates/_raw/
+
+# Launch-video working media. Lives in the repo so everything for this
+# project is in one place, but stays out of git history - these are large
+# binaries derived from a source file, re-creatable via video/separate-stems.py.
+video/audio/
