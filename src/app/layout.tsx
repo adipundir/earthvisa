@@ -53,7 +53,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Earth Visa - Visa-Free Countries for ${TOTAL_PASSPORTS} Passports`,
     description: `Compare visa-free access for all ${TOTAL_PASSPORTS} passports. Check visa on arrival, e-visa, golden visas & citizenship by investment. Official sources.`,
-    // Twitter image is supplied by app/twitter-image.tsx (file-based Metadata API).
+    // No twitter:image on purpose. X falls back to og:image when it is absent,
+    // and the twitter-image.tsx routes were two-line re-exports of the OG card -
+    // byte-identical output behind a second URL, so every share card was being
+    // generated twice.
   },
   alternates: { canonical: "https://earthvisa.in" },
   // Search-engine ownership verification. Codes are supplied via Vercel env vars
