@@ -61,12 +61,25 @@ const STAGES = [
     outputs: ["data/update-sources.json"],
   },
   {
-    // build-dataset.mjs chains build-explorer-slices.mjs itself, so the slices
-    // are an output of this stage rather than a stage of their own.
+    // Needs FULL git history (per-country dates -> sitemap lastModified), so on a
+    // shallow CI clone it must be skipped, not rebuilt. It is skippable because
+    // its output is committed.
     name: "dataset",
     script: "build-dataset.mjs",
     inputs: ["data/countries", "data/vfs", "data/acceptance-rates", "data/countries.json"],
-    outputs: ["src/data/dataset.json", "public/explorer/core.json"],
+    outputs: ["src/data/dataset.json"],
+  },
+  {
+    // Separate stage precisely because public/explorer/ is GITIGNORED: on a fresh
+    // clone it is always missing, so this stage always runs - which is correct,
+    // it must, since nothing ships it. Keeping it fused to `dataset` meant
+    // "missing output" forced a dataset rebuild on every CI clone, which then hit
+    // the shallow-repository sitemap guard and broke every Vercel deploy.
+    // This stage reads only the committed dataset and needs no git history.
+    name: "explorer-slices",
+    script: "build-explorer-slices.mjs",
+    inputs: ["src/data/dataset.json"],
+    outputs: ["public/explorer/core.json"],
   },
 ];
 
@@ -166,8 +179,16 @@ for (const stage of STAGES) {
     process.exit(1);
   }
   // Re-hash: a stage may legitimately write into data/ (update-sources does),
-  // and the manifest must record what was actually consumed.
-  manifest[stage.name] = hashInputs(resolveInputs(stage.inputs));
+  // and the manifest must record what was actually consumed. It MUST use the
+  // same file list as the freshness comparison above, script included - storing
+  // a hash of a different set means stored never equals computed, every stage
+  // reports "sources changed" forever, and the manifest silently stops working.
+  // That is exactly what broke: it made CI rebuild the dataset on a shallow
+  // clone and trip the sitemap guard on every deploy.
+  manifest[stage.name] = hashInputs([
+    ...resolveInputs(stage.inputs),
+    join(ROOT, "scripts", stage.script),
+  ]);
   ran++;
 }
 

@@ -1025,4 +1025,13 @@ console.log(`  top unresolved nationality labels: ${topUnresolved.slice(0, 8).jo
 
 // Re-emit the client-explorer slices (public/explorer/) so they always match
 // the dataset just written. Also runs standalone via `npm run build` (prebuild).
-execSync(`node ${JSON.stringify(join(__dirname, "build-explorer-slices.mjs"))}`, { stdio: "inherit" });
+// Slices are NOT chained here any more. They are a separate pipeline stage.
+//
+// Why: public/explorer/ is gitignored, so on a fresh CI clone it is always
+// missing. While it was an output of this stage, the pipeline saw "missing
+// output", rebuilt the dataset, and hit the shallow-clone sitemap guard - which
+// broke every Vercel deploy. The dataset needs full git history; the slices only
+// need src/data/dataset.json, which is committed. Separating them lets CI skip
+// the first and always run the second.
+//
+// Run them with: node scripts/build-explorer-slices.mjs (or npm run data).
