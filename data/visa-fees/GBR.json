@@ -1,7 +1,7 @@
 {
   "iso3": "GBR",
   "name": "United Kingdom",
-  "updated": "2026-07-02",
+  "updated": "2026-07-28",
   "confidence": "high",
   "fees": [
     {
@@ -9,60 +9,70 @@
       "name": "Standard Visitor visa - up to 6 months",
       "amount": 135,
       "currency": "GBP",
-      "amount_usd": 186,
+      "amount_usd": 189,
       "validity": "6 months",
       "applies": "nationalities that require a visa to visit the UK (non-visa-national and non-eVisa/ETA-only countries)",
       "official": true,
       "source_url": "https://www.gov.uk/standard-visitor-visa/fees",
-      "notes": "Fee current from 8 April 2026 update. USD amount is the equivalent shown on the official fee calculator for USA applicants and varies slightly by application country due to exchange rate banding."
+      "notes": "Fee current from 8 April 2026 update. USD amount is the equivalent shown on the official fee calculator for USA applicants and varies slightly by application country due to exchange rate banding.",
+      "amount_usd_official": true,
+      "amount_usd_source_url": "https://visa-fees.homeoffice.gov.uk/y/usa/usd/visit/all"
     },
     {
       "kind": "tourist_visa",
       "name": "Standard Visitor visa - 2 years multiple entry",
       "amount": 506,
       "currency": "GBP",
-      "amount_usd": 696,
+      "amount_usd": 708,
       "validity": "2 years",
       "applies": "nationalities that require a visa to visit the UK",
       "official": true,
       "source_url": "https://www.gov.uk/standard-visitor-visa/fees",
-      "notes": "Long-term multiple entry option; no Immigration Health Surcharge applies to visit visas."
+      "notes": "Long-term multiple entry option; no Immigration Health Surcharge applies to visit visas.",
+      "amount_usd_official": true,
+      "amount_usd_source_url": "https://visa-fees.homeoffice.gov.uk/y/usa/usd/visit/all"
     },
     {
       "kind": "tourist_visa",
       "name": "Standard Visitor visa - 5 years multiple entry",
       "amount": 903,
       "currency": "GBP",
-      "amount_usd": 1242,
+      "amount_usd": 1263,
       "validity": "5 years",
       "applies": "nationalities that require a visa to visit the UK",
       "official": true,
       "source_url": "https://www.gov.uk/standard-visitor-visa/fees",
-      "notes": ""
+      "notes": "",
+      "amount_usd_official": true,
+      "amount_usd_source_url": "https://visa-fees.homeoffice.gov.uk/y/usa/usd/visit/all"
     },
     {
       "kind": "tourist_visa",
       "name": "Standard Visitor visa - 10 years multiple entry",
       "amount": 1128,
       "currency": "GBP",
-      "amount_usd": 1552,
+      "amount_usd": 1578,
       "validity": "10 years",
       "applies": "nationalities that require a visa to visit the UK",
       "official": true,
       "source_url": "https://www.gov.uk/standard-visitor-visa/fees",
-      "notes": ""
+      "notes": "",
+      "amount_usd_official": true,
+      "amount_usd_source_url": "https://visa-fees.homeoffice.gov.uk/y/usa/usd/visit/all"
     },
     {
       "kind": "transit_visa",
       "name": "Visitor in Transit visa",
       "amount": 74.5,
       "currency": "GBP",
-      "amount_usd": 103,
+      "amount_usd": 104,
       "validity": "single or double transit, up to 48 hours airside/landside",
       "applies": "nationalities that require a transit visa to pass through UK border control",
       "official": true,
       "source_url": "https://www.gov.uk/transit-visa/visitor-in-transit-visa",
-      "notes": "Direct Airside Transit Visa (DATV, no border crossing) fee not separately confirmed on official source in this pass; set to null in reciprocity notes if needed."
+      "notes": "Direct Airside Transit Visa (DATV, no border crossing) fee not separately confirmed on official source in this pass; set to null in reciprocity notes if needed.",
+      "amount_usd_official": true,
+      "amount_usd_source_url": "https://visa-fees.homeoffice.gov.uk/y/usa/usd/visit/all"
     },
     {
       "kind": "eta",
@@ -81,12 +91,14 @@
       "name": "Standard Visitor visa (business visitor activities)",
       "amount": 135,
       "currency": "GBP",
-      "amount_usd": 186,
+      "amount_usd": 189,
       "validity": "6 months",
       "applies": "nationalities that require a visa; business visits are covered under the Standard Visitor visa, not a separate business visa category",
       "official": true,
       "source_url": "https://www.gov.uk/standard-visitor-visa/fees",
-      "notes": "UK does not issue a distinct 'business visa'; business visitors use the Standard Visitor visa at the same fee tiers as tourist visits."
+      "notes": "UK does not issue a distinct 'business visa'; business visitors use the Standard Visitor visa at the same fee tiers as tourist visits.",
+      "amount_usd_official": true,
+      "amount_usd_source_url": "https://visa-fees.homeoffice.gov.uk/y/usa/usd/visit/all"
     }
   ],
   "reciprocity_variations": [],
@@ -105,5 +117,6 @@
     "https://visa-fees.homeoffice.gov.uk/y/usa/usd/visit/all",
     "https://www.gov.uk/find-a-visa-application-centre"
   ],
-  "free_visa_notes": "The UK is not visa-free for all nationalities. Many nationalities (EU/EEA, USA, Canada, Australia, Japan, South Korea, and others) do not need a visa for short visits but must obtain a paid Electronic Travel Authorisation (ETA, GBP 20) before travel. Other nationalities require a full Standard Visitor visa. No reciprocity-based fee variation by nationality was found on official UK sources; UK visa fees are applied uniformly regardless of applicant nationality (fees do vary slightly by application country due to currency conversion banding on the official fee calculator)."
+  "free_visa_notes": "The UK is not visa-free for all nationalities. Many nationalities (EU/EEA, USA, Canada, Australia, Japan, South Korea, and others) do not need a visa for short visits but must obtain a paid Electronic Travel Authorisation (ETA, GBP 20) before travel. Other nationalities require a full Standard Visitor visa. No reciprocity-based fee variation by nationality was found on official UK sources; UK visa fees are applied uniformly regardless of applicant nationality (fees do vary slightly by application country due to currency conversion banding on the official fee calculator).",
+  "notes": ""
 }

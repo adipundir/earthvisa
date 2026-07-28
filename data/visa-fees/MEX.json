@@ -1,7 +1,7 @@
 {
   "iso3": "MEX",
   "name": "Mexico",
-  "updated": "2026-07-02",
+  "updated": "2026-07-28",
   "confidence": "high",
   "fees": [
     {
@@ -43,14 +43,14 @@
     {
       "kind": "visa_on_arrival",
       "name": "Multiple Migratory Form (FMM) / visitor fee (DNR - Derecho de No Residente)",
-      "amount": null,
+      "amount": 983,
       "currency": "MXN",
       "amount_usd": null,
       "validity": "up to 180 days, single entry (days granted at officer's discretion)",
       "applies": "all foreign visitors (not a visa - an entry permit/tax); included in airfare for air arrivals",
       "official": true,
-      "source_url": "https://www.inm.gob.mx/fmme/publico/en/solicitud.html",
-      "notes": "Not a visa-on-arrival; Mexico has no VOA. The FMM/DNR is the non-resident entry fee under the Ley Federal de Derechos, updated annually. Third-party sources report approx MXN 983 (~USD 54) for 2026, but the INM portal does not publish the amount on a fetchable page, so amount left null. Free for land stays under 7 days; included in airline ticket for air arrivals."
+      "source_url": "https://www.inm.gob.mx/gobmx/derechos/",
+      "notes": "Derecho de No Residente (DNR): MXN 983, the same amount for air, sea and land entry. Often bundled into an air ticket, so many travellers never pay it separately."
     }
   ],
   "reciprocity_variations": [],

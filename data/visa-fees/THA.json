@@ -1,7 +1,7 @@
 {
   "iso3": "THA",
   "name": "Thailand",
-  "updated": "2026-07-02",
+  "updated": "2026-07-28",
   "confidence": "medium",
   "fees": [
     {
@@ -79,11 +79,15 @@
   ],
   "reciprocity_variations": [
     {
-      "nationalities": ["IND"],
+      "nationalities": [
+        "IND"
+      ],
       "kind": "tourist_visa",
-      "amount": 2500,
+      "amount": 3000,
       "currency": "INR",
-      "note": "VFS Global India cites Thailand Tourist Visa (single entry) fee of INR 2,500 (multiple entry INR 12,000), separate from the VFS logistics/service charge. Indian ordinary-passport holders also benefit from a visa-exemption arrangement for short tourist stays under current Thai government notifications, effective from mid-2024; verify current exemption status before assuming a visa is required."
+      "note": "Royal Thai Embassy New Delhi consular fee schedule effective 27 April 2026: Tourist Visa single entry INR 3,000, multiple entry INR 13,500 - separate from the VFS logistics/service charge. Indian ordinary-passport holders also benefit from a visa-exemption arrangement for short tourist stays under current Thai notifications, so this fee applies only where a visa is actually required.",
+      "source_url": "https://newdelhi.thaiembassy.org/en/page/consular-fee",
+      "official": true
     }
   ],
   "vfs": {

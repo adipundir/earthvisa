@@ -1,122 +1,122 @@
 {
- "iso3": "JPN",
- "name": "Japan",
- "updated": "2026-07-02",
- "confidence": "medium",
- "fees": [
-  {
-   "kind": "tourist_visa",
-   "name": "Short-term single-entry visa (embassy/consulate sticker visa)",
-   "amount": 15000,
-   "currency": "JPY",
-   "amount_usd": 95,
-   "validity": "typically 3 months to enter; stays up to 90 days",
-   "applies": "all visa-required nationalities (reciprocity reductions/exemptions exist for some)",
-   "official": true,
-   "source_url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
-   "notes": "Fee raised from JPY 3,000 to JPY 15,000 for applications filed on or after 1 July 2026 (first revision since 1978, cabinet-approved 19 June 2026). Payable in local currency at the embassy/consulate on issuance; collected only if the visa is granted. MOFA pages are Akamai-blocked to bots, so amounts cross-confirmed via consulate announcements (Consulate-General of Japan in Detroit, 'VISA FEES Effective July 1, 2026') and immigration-law firm alerts (Fragomen, Newland Chase)."
+  "iso3": "JPN",
+  "name": "Japan",
+  "updated": "2026-07-28",
+  "confidence": "medium",
+  "fees": [
+    {
+      "kind": "tourist_visa",
+      "name": "Short-term single-entry visa (embassy/consulate sticker visa)",
+      "amount": 15000,
+      "currency": "JPY",
+      "amount_usd": 95,
+      "validity": "typically 3 months to enter; stays up to 90 days",
+      "applies": "all visa-required nationalities (reciprocity reductions/exemptions exist for some)",
+      "official": true,
+      "source_url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
+      "notes": "Fee raised from JPY 3,000 to JPY 15,000 for applications filed on or after 1 July 2026 (first revision since 1978, cabinet-approved 19 June 2026). Payable in local currency at the embassy/consulate on issuance; collected only if the visa is granted. MOFA pages are Akamai-blocked to bots, so amounts cross-confirmed via consulate announcements (Consulate-General of Japan in Detroit, 'VISA FEES Effective July 1, 2026') and immigration-law firm alerts (Fragomen, Newland Chase)."
+    },
+    {
+      "kind": "tourist_visa",
+      "name": "Short-term multiple-entry visa",
+      "amount": 30000,
+      "currency": "JPY",
+      "amount_usd": 190,
+      "validity": "typically 1-10 years depending on nationality/eligibility",
+      "applies": "eligible nationalities",
+      "official": true,
+      "source_url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
+      "notes": "Raised from JPY 6,000 to JPY 30,000 effective 1 July 2026; collected on issuance."
+    },
+    {
+      "kind": "e_visa",
+      "name": "JAPAN eVISA (online single-entry short-term visa)",
+      "amount": 15000,
+      "currency": "JPY",
+      "amount_usd": null,
+      "validity": "single entry, stays up to 90 days",
+      "applies": "eligible nationalities/residence jurisdictions listed on evisa.mofa.go.jp",
+      "official": true,
+      "source_url": "https://www.evisa.mofa.go.jp/faq",
+      "notes": "MOFA eVISA FAQ Q7: the visa fee for an eVISA (single entry) is equivalent to 15,000 yen. Nationals of some countries/regions are exempt or reduced under reciprocal arrangements, set by the mission with jurisdiction over the applicant's residence."
+    },
+    {
+      "kind": "business_visa",
+      "name": "Short-term business visa (single or multiple entry)",
+      "amount": 15000,
+      "currency": "JPY",
+      "amount_usd": 95,
+      "validity": "single entry (JPY 15,000) or multiple entry (JPY 30,000)",
+      "applies": "all visa-required nationalities",
+      "official": true,
+      "source_url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
+      "notes": "Japan does not have a separate business-visa fee tier; short-term business visits use the same single/multiple-entry fee schedule (JPY 15,000 / JPY 30,000 from 1 July 2026)."
+    },
+    {
+      "kind": "transit_visa",
+      "name": "Transit visa",
+      "amount": null,
+      "currency": "JPY",
+      "amount_usd": null,
+      "validity": "transit stopover",
+      "applies": "abolished",
+      "official": true,
+      "source_url": "https://www.in.emb-japan.go.jp/itpr_en/visa.html",
+      "notes": "Abolished. Japan's fee schedule effective 1 July 2026 states the transit visa is abolished; travellers needing to leave the airport apply for a short-term stay visa instead. Previously JPY 700. This is NOT a merge into the single/double-entry fee - the category no longer exists."
+    }
+  ],
+  "reciprocity_variations": [
+    {
+      "nationalities": [
+        "BGD"
+      ],
+      "kind": "tourist_visa",
+      "amount": 0,
+      "currency": "JPY",
+      "note": "Visa fee waived (gratis) for Bangladeshi nationals under a bilateral arrangement - only the VFS Global service charge applies. Since 3 November 2024 all applications must be lodged through VFS Global Dhaka; the Embassy of Japan in Dhaka no longer accepts direct applications."
+    },
+    {
+      "nationalities": [
+        "IND"
+      ],
+      "kind": "tourist_visa",
+      "amount": 500,
+      "currency": "INR",
+      "note": "Indian nationals pay a reduced fee of INR 500 for both single- and multiple-entry short-term visas under a bilateral reciprocal arrangement (VFS Global official Japan-India fee page, effective 1 April 2025; other nationalities applying in India paid INR 1,750 single / INR 3,450 multiple pre-revision). Media reports state the INR 500 concession continues after 1 July 2026, but post-revision official confirmation was not reachable - verify before relying on it."
+    },
+    {
+      "nationalities": [
+        "CHN",
+        "RUS",
+        "PHL",
+        "PAK",
+        "NGA",
+        "USA",
+        "GBR",
+        "CAN"
+      ],
+      "kind": "tourist_visa",
+      "amount": null,
+      "currency": "JPY",
+      "note": "MOFA states nationals of some countries/regions are exempt from or pay reduced visa fees under reciprocal arrangements, but the per-country schedule page (mofa.go.jp) blocks automated access; standard rate JPY 15,000/30,000 applies unless a bilateral concession exists. USA/GBR/CAN nationals are visa-exempt for short tourist/business stays, so no fee normally arises."
+    }
+  ],
+  "vfs": {
+    "used": true,
+    "operator": "VFS Global",
+    "service_fee": "800",
+    "currency": "INR",
+    "note": "India: INR 800 (incl. taxes) per application, charged even for fee-exempt applicants; optional courier INR 550. Japan outsources visa intake to VFS Global in many countries (India, China, Philippines, UK, Russia, etc.); service fee varies by country/centre.",
+    "source_url": "https://www.vfsglobal.com/one-pager/japan/india/delhi/index.html"
   },
-  {
-   "kind": "tourist_visa",
-   "name": "Short-term multiple-entry visa",
-   "amount": 30000,
-   "currency": "JPY",
-   "amount_usd": 190,
-   "validity": "typically 1-10 years depending on nationality/eligibility",
-   "applies": "eligible nationalities",
-   "official": true,
-   "source_url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
-   "notes": "Raised from JPY 6,000 to JPY 30,000 effective 1 July 2026; collected on issuance."
-  },
-  {
-   "kind": "e_visa",
-   "name": "JAPAN eVISA (online single-entry short-term visa)",
-   "amount": null,
-   "currency": "JPY",
-   "amount_usd": null,
-   "validity": "single entry, stays up to 90 days",
-   "applies": "eligible nationalities/residence jurisdictions listed on evisa.mofa.go.jp",
-   "official": true,
-   "source_url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
-   "notes": "Pre-July-2026 the eVISA fee was 'equivalent to JPY 3,000' (single-entry rate), paid online by credit card. The eVISA is a single-entry visa, so the new JPY 15,000 single-entry rate is expected to apply from 1 July 2026, but MOFA had not published separate eVISA-specific confirmation at time of research - amount left null rather than guessed."
-  },
-  {
-   "kind": "business_visa",
-   "name": "Short-term business visa (single or multiple entry)",
-   "amount": 15000,
-   "currency": "JPY",
-   "amount_usd": 95,
-   "validity": "single entry (JPY 15,000) or multiple entry (JPY 30,000)",
-   "applies": "all visa-required nationalities",
-   "official": true,
-   "source_url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
-   "notes": "Japan does not have a separate business-visa fee tier; short-term business visits use the same single/multiple-entry fee schedule (JPY 15,000 / JPY 30,000 from 1 July 2026)."
-  },
-  {
-   "kind": "transit_visa",
-   "name": "Transit visa",
-   "amount": null,
-   "currency": "JPY",
-   "amount_usd": null,
-   "validity": "transit stopover",
-   "applies": "visa-required nationalities transiting and leaving the airport",
-   "official": false,
-   "source_url": "https://visasnews.com/en/japan-to-quintuple-visa-fees-starting-july-1-2026/",
-   "notes": "The old transit-visa fee was JPY 700. Reports on the 1 July 2026 revision indicate the separate transit category is merged into the single/double-entry fee category; no official post-revision transit fee could be verified on a reachable MOFA page, so amount is null."
-  }
- ],
- "reciprocity_variations": [
-  {
-   "nationalities": [
-    "BGD"
-   ],
-   "kind": "tourist_visa",
-   "amount": 0,
-   "currency": "JPY",
-   "note": "Visa fee waived (gratis) for Bangladeshi nationals under a bilateral arrangement - only the VFS Global service charge applies. Since 3 November 2024 all applications must be lodged through VFS Global Dhaka; the Embassy of Japan in Dhaka no longer accepts direct applications."
-  },
-  {
-   "nationalities": [
-    "IND"
-   ],
-   "kind": "tourist_visa",
-   "amount": 500,
-   "currency": "INR",
-   "note": "Indian nationals pay a reduced fee of INR 500 for both single- and multiple-entry short-term visas under a bilateral reciprocal arrangement (VFS Global official Japan-India fee page, effective 1 April 2025; other nationalities applying in India paid INR 1,750 single / INR 3,450 multiple pre-revision). Media reports state the INR 500 concession continues after 1 July 2026, but post-revision official confirmation was not reachable - verify before relying on it."
-  },
-  {
-   "nationalities": [
-    "CHN",
-    "RUS",
-    "PHL",
-    "PAK",
-    "NGA",
-    "USA",
-    "GBR",
-    "CAN"
-   ],
-   "kind": "tourist_visa",
-   "amount": null,
-   "currency": "JPY",
-   "note": "MOFA states nationals of some countries/regions are exempt from or pay reduced visa fees under reciprocal arrangements, but the per-country schedule page (mofa.go.jp) blocks automated access; standard rate JPY 15,000/30,000 applies unless a bilateral concession exists. USA/GBR/CAN nationals are visa-exempt for short tourist/business stays, so no fee normally arises."
-  }
- ],
- "vfs": {
-  "used": true,
-  "operator": "VFS Global",
-  "service_fee": "800",
-  "currency": "INR",
-  "note": "India: INR 800 (incl. taxes) per application, charged even for fee-exempt applicants; optional courier INR 550. Japan outsources visa intake to VFS Global in many countries (India, China, Philippines, UK, Russia, etc.); service fee varies by country/centre.",
-  "source_url": "https://www.vfsglobal.com/one-pager/japan/india/delhi/index.html"
- },
- "sources": [
-  "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
-  "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
-  "https://www.detroit.us.emb-japan.go.jp/itpr_ja/11_000001_00249.html",
-  "https://www.vfsglobal.com/one-pager/japan/india/delhi/index.html",
-  "https://www.fragomen.com/insights/japan-visa-issuance-fees-to-increase-effective-july-2026.html",
-  "https://newlandchase.com/japan-to-increase-visa-fees-for-foreign-nationals-beginning-july-1-2026/",
-  "https://visasnews.com/en/japan-to-quintuple-visa-fees-starting-july-1-2026/"
- ],
- "free_visa_notes": "Japan is not Schengen. No visa on arrival and no eTA yet (the JESTA electronic travel authorisation for visa-exempt visitors is planned but not launched as of July 2026). Nationals of ~70 visa-exempt countries (USA, UK, Canada, EU, Australia, etc.) need no visa and pay no fee for short stays. Fees collected only when a visa is issued; some nationalities are fee-exempt or reduced under reciprocal arrangements (e.g., India INR 500)."
+  "sources": [
+    "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
+    "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
+    "https://www.detroit.us.emb-japan.go.jp/itpr_ja/11_000001_00249.html",
+    "https://www.vfsglobal.com/one-pager/japan/india/delhi/index.html",
+    "https://www.fragomen.com/insights/japan-visa-issuance-fees-to-increase-effective-july-2026.html",
+    "https://newlandchase.com/japan-to-increase-visa-fees-for-foreign-nationals-beginning-july-1-2026/",
+    "https://visasnews.com/en/japan-to-quintuple-visa-fees-starting-july-1-2026/"
+  ],
+  "free_visa_notes": "Japan is not Schengen. No visa on arrival and no eTA yet (the JESTA electronic travel authorisation for visa-exempt visitors is planned but not launched as of July 2026). Nationals of ~70 visa-exempt countries (USA, UK, Canada, EU, Australia, etc.) need no visa and pay no fee for short stays. Fees collected only when a visa is issued; some nationalities are fee-exempt or reduced under reciprocal arrangements (e.g., India INR 500)."
 }

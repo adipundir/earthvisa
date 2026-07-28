@@ -1,7 +1,7 @@
 {
   "iso3": "MAC",
   "name": "Macau",
-  "updated": "2026-07-02",
+  "updated": "2026-07-28",
   "confidence": "high",
   "fees": [
     {
@@ -67,26 +67,35 @@
     {
       "kind": "tourist_visa",
       "name": "Advance Macau visa via Chinese embassy/consulate",
-      "amount": null,
-      "currency": "MOP",
+      "amount": 30,
+      "currency": "USD",
       "amount_usd": null,
       "validity": null,
       "applies": "nationals of BGD, NPL, NGA, PAK, LKA, VNM (must apply in advance) and anyone applying pre-travel",
       "official": true,
-      "source_url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
-      "notes": "Fee is set by the individual Chinese diplomatic mission and varies by mission and nationality; no single official published amount, so left null."
+      "source_url": "https://www.fsm.gov.mo/psp/eng/psp_top5_3m.html",
+      "notes": "Public Security Police Force schedule: regular application USD 30, plus USD 15 per accompanying child. A USD 20 communication fee applies where the mission must relay the application to the PSP. Charged in USD by Chinese diplomatic missions, not MOP."
     }
   ],
   "reciprocity_variations": [
     {
-      "nationalities": ["BGD", "NPL", "NGA", "PAK", "LKA", "VNM"],
+      "nationalities": [
+        "BGD",
+        "NPL",
+        "NGA",
+        "PAK",
+        "LKA",
+        "VNM"
+      ],
       "kind": "tourist_visa",
       "amount": null,
       "currency": "MOP",
       "note": "Not eligible for visa on arrival; must obtain a Macau visa in advance through a Chinese embassy/consulate. Fee varies by mission."
     }
   ],
-  "vfs": { "used": false },
+  "vfs": {
+    "used": false
+  },
   "sources": [
     "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
     "https://www.fsm.gov.mo/psp/eng/psp_top5_3m.html"

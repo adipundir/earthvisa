@@ -39,6 +39,16 @@ for (const f of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
         official: !!x.official,
         source_url: x.source_url ?? null,
         notes: trim(x.notes),
+        // Scope of the fee row. Carried because it can say the category no
+        // longer exists: Japan abolished its transit visa on 2026-07-01, and
+        // without this the abolition survived only as prose in `notes`, so a
+        // consumer had no structured way to stop rendering the row as a live fee.
+        ...(x.applies ? { applies: trim(x.applies, 200) } : {}),
+        // The government's own published USD price, where it sets one rather
+        // than converting. The UK charges USD 189 for a GBP 135 visa; a spot
+        // conversion gives 179.54, so a derived figure is WRONG, not stale.
+        ...(x.amount_usd_official ? { amount_usd_official: true } : {}),
+        ...(x.amount_usd_source_url ? { amount_usd_source_url: x.amount_usd_source_url } : {}),
         // when present, this fee row only applies to (and only renders for) these nationalities
         ...(Array.isArray(x.applies_nationalities) && x.applies_nationalities.length ? { applies_nationalities: x.applies_nationalities } : {}),
       })),

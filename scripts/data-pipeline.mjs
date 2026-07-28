@@ -132,7 +132,11 @@ let ran = 0;
 let stale = 0;
 
 for (const stage of STAGES) {
-  const files = resolveInputs(stage.inputs);
+  // The builder script is an input too. Hashing only data/ meant editing a merge
+  // script left its output stale while the pipeline reported "fresh" - which is
+  // exactly the silent-staleness failure this tool exists to prevent, and it bit
+  // us once already: merge-visa-fees.mjs gained a field and nothing rebuilt.
+  const files = [...resolveInputs(stage.inputs), join(ROOT, "scripts", stage.script)];
   const hash = hashInputs(files);
   const outputsExist = stage.outputs.every((o) => existsSync(join(ROOT, o)));
   const fresh = !FORCE && outputsExist && manifest[stage.name] === hash;
