@@ -63,6 +63,11 @@ const GUIDES: { href: string; title: string; desc: string }[] = [
     title: "Thailand Visa Changes 2026",
     desc: "The 60-day visa-free stay is being replaced by 30- and 15-day tiers - approved but not yet in force. Who lands where.",
   },
+  {
+    href: "/guide/argentina-citizenship",
+    title: "Argentina Citizenship",
+    desc: "The real 2-year residency path to citizenship, no investment or language test required, and why the 'buy it' shortcut isn't real.",
+  },
 ];
 
 // Highest-demand per-nationality Schengen guides surfaced directly; the full

@@ -204,7 +204,17 @@ function PathRow({ r }: { r: RbiProgram }) {
           {r.name}
         </Link>
       </td>
-      <td className="py-2 pr-4 text-[13px] italic text-ink-soft">{r.program_name}</td>
+      <td className="py-2 pr-4 text-[13px] italic text-ink-soft">
+        {r.program_name}
+        {r.iso3 === "ARG" && (
+          <>
+            {" "}
+            <Link href="/guide/argentina-citizenship" className="not-italic font-medium text-stamp underline-offset-2 hover:underline">
+              Full guide →
+            </Link>
+          </>
+        )}
+      </td>
       <td className="mono py-2 text-right tabular-nums text-ink-soft">{w ? `${w.visaFree} visa-free` : "-"}</td>
     </tr>
   );

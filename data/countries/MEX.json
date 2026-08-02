@@ -1565,7 +1565,7 @@
     "processing_time": "",
     "dual_citizenship_allowed": null,
     "residency_required": null,
-    "notes": "Mexico does not have an official Citizenship by Investment (CBI) program. No direct pathway exists to obtain Mexican citizenship solely through investment without a period of lawful residency. Confirmed by the absence of any official CBI program on gob.mx, INM, or SRE portals. Investment can lead to Temporary Residency (and later Permanent Residency), which after the legally required period can lead to naturalization."
+    "notes": "Mexico does not have an official Citizenship by Investment (CBI) program. No direct pathway exists to obtain Mexican citizenship solely through investment without a period of lawful residency. Confirmed by the absence of any official CBI program on gob.mx, INM, or SRE portals. Investment can lead to Temporary Residency (and later Permanent Residency), which after the legally required period can lead to naturalization. The naturalization route itself (Ley de Nacionalidad, Art. 20) is generous relative to peers: 5 years of residency for the general case, cut to 2 years for spouses of Mexican nationals (Art. 20-II) and for nationals of Latin American or Iberian Peninsula countries (Art. 20-I(c)) - Argentine, Spanish, and other Ibero-American passport holders qualify for the 2-year track. A Spanish-language exam plus a basic Mexican history/culture exam is mandatory (Reglamento Art. 14), waived to Spanish-only for refugees, minors, and applicants 60 or older. Dual citizenship has been permitted since the 1998 constitutional reform (Art. 32) with no renunciation required, except for a short list of reserved public offices (President, cabinet secretaries, military officer corps, etc.). Source: https://www.gob.mx/sre/acciones-y-programas/naturalizacion-de-extranjeros"
   },
   "rbi": {
     "programs": [
@@ -1575,10 +1575,10 @@
         "min_amount": 5378663,
         "currency": "MXN",
         "path_to_pr_years": 4,
-        "path_to_citizenship_years": null,
+        "path_to_citizenship_years": 5,
         "official_url": "https://embamex.sre.gob.mx/belgica/index.php/es/sercons/visas-es/22-seccion-consular/visas/612-temporary-resident-visa-for-investors",
         "source_official": true,
-        "notes": "Investment must exceed 45,850 days of UMA. As of February 1, 2026 the daily UMA value is MXN $117.31 (confirmed by INEGI), giving a threshold of approximately MXN $5,378,663. Investment can be demonstrated through: (1) equity interest/shares in a Mexican company; (2) movable or fixed assets for business purposes; or (3) evidence of Mexican economic activity employing at least 3 workers. Visa grants stay of more than 180 days and up to 4 years. Must apply for Temporary Resident Card at INM within 30 days of arrival."
+        "notes": "Investment must exceed 45,850 days of UMA. As of February 1, 2026 the daily UMA value is MXN $117.31 (confirmed by INEGI), giving a threshold of approximately MXN $5,378,663. Investment can be demonstrated through: (1) equity interest/shares in a Mexican company; (2) movable or fixed assets for business purposes; or (3) evidence of Mexican economic activity employing at least 3 workers. Visa grants stay of more than 180 days and up to 4 years. Must apply for Temporary Resident Card at INM within 30 days of arrival. path_to_citizenship_years reflects the general naturalization path (Ley de Nacionalidad Art. 20): 5 years of legal residency (temporary or permanent status both count) immediately preceding the application. Nationals of Latin American/Iberian Peninsula countries, or applicants married to a Mexican national, qualify for a reduced 2-year path instead (Art. 20-I(c) and 20-II) - see cbi.notes."
       },
       {
         "name": "Temporary Resident Visa - Economic Solvency (Rentista)",
@@ -1586,10 +1586,10 @@
         "min_amount": null,
         "currency": "MXN",
         "path_to_pr_years": 4,
-        "path_to_citizenship_years": null,
+        "path_to_citizenship_years": 5,
         "official_url": "https://consulmex.sre.gob.mx/reinounido/index.php/es/contenido/96-rentista-visitor-carnet-visa",
         "source_official": true,
-        "notes": "For retirees or those with passive income. Financial requirements include: average monthly income equivalent to 400 days of UMA (~MXN $46,924/month as of February 2026, based on UMA $117.31/day) for 6 months, OR average monthly bank balance of 20,000 days of UMA (~MXN $2,346,200/month) for 12 months, OR real estate ownership exceeding 40,000 UMA days (~MXN $4,692,400) in assessed value. Grants temporary residency for up to 4 years."
+        "notes": "For retirees or those with passive income. Financial requirements include: average monthly income equivalent to 400 days of UMA (~MXN $46,924, ~USD $2,688/month as of July 2026 FX) for 6 months, OR average monthly bank balance of 20,000 days of UMA (~MXN $2,346,200, ~USD $134,400) for 12 months, OR real estate ownership exceeding 40,000 UMA days (~MXN $4,692,400, ~USD $268,800) in assessed value. Grants temporary residency for up to 4 years. path_to_citizenship_years is the general 5-year naturalization path (Ley de Nacionalidad Art. 20); reduced to 2 years for spouses of Mexican nationals or nationals of Latin American/Iberian Peninsula countries - see cbi.notes for the full naturalization framework, including the mandatory Spanish + history/culture exam and dual-citizenship rules."
       },
       {
         "name": "Permanent Resident Visa - Economic Solvency",

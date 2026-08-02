@@ -44,7 +44,8 @@ for (const f of ["nauru-aerial", "us-visa-sticker", "statue-liberty", "reykjavik
   "paris-eiffel-sunrise", "caribbean-infinity-pool", "seattle-skyline", "one-wtc-looking-up", "folding-money",
   "supreme-court-dusk", "panama-city-skyline", "bocas-del-toro-beach", "milford-sound", "pantages-marquee-night",
   "arri-cinema-camera", "stage-light-beams", "beijing-birds-nest-night", "pacific-iss", "earthrise", "michigan-stadium", "milkyway-oeschinensee",
-  "buenos-aires-obelisco-sunset", "perito-moreno-glacier", "buenos-aires-congreso-sunset", "casa-rosada", "iguazu-falls", "puerto-madero"]) PH[f] = photo(f + ".jpg");
+  "buenos-aires-obelisco-sunset", "perito-moreno-glacier", "buenos-aires-congreso-sunset", "casa-rosada", "iguazu-falls", "puerto-madero",
+  "angel-independencia", "chichen-itza", "zocalo-cathedral", "reforma-skyline"]) PH[f] = photo(f + ".jpg");
 
 // pb 260: a 4:5 centered on a 9:16 reel canvas gets its bottom ~250px covered by IG UI.
 // Locator-map slide: the site's dot-matrix world with a highlighted marker.
@@ -80,14 +81,18 @@ const FMT45 = { key: "45", W: 1080, H: 1350, pt: 76, pb: 260, pl: 84, pr: 84, cu
 const FMT916 = { key: "916", W: 1080, H: 1920, pt: 290, pb: 530, pl: 84, pr: 150, cue: "Tap through" };
 
 const hl = (t) => `<span style="background:${RED};color:#fff;padding:1px 18px 5px;border-radius:12px">${t}</span>`;
-const masthead = `<div style="display:flex;align-items:center;gap:15px">${mark(54, "#FFFFFF")}<span style="font-size:37px;font-weight:800;letter-spacing:-.02em;color:#fff">Earth Visa</span></div>`;
+// Now that dimBg keeps photos bright rather than crushed to near-black, text needs its
+// own contrast against whatever's behind it (stone facades, ice, sky) rather than relying
+// on a heavy scrim - a soft shadow does that without darkening the photo itself.
+const TSHADOW = "text-shadow:0 2px 14px rgba(0,0,0,.7),0 1px 5px rgba(0,0,0,.6)";
+const masthead = `<div style="display:flex;align-items:center;gap:15px">${mark(54, "#FFFFFF")}<span style="font-size:37px;font-weight:800;letter-spacing:-.02em;color:#fff;${TSHADOW}">Earth Visa</span></div>`;
 // Header row on every slide: masthead left, subject-country flag right, vertically centered.
 const headerRow = (post) => `<div style="display:flex;align-items:center;justify-content:space-between">${masthead}${post.flag ? flagBadge(post.flag) : ""}</div>`;
 const footer = (src) => `
   <div style="height:1px;background:rgba(255,255,255,.28);margin:26px 0 20px"></div>
   <div style="display:flex;justify-content:space-between;align-items:center">
-    <span style="font-size:19px;color:rgba(255,255,255,.62);font-weight:500">${src}</span>
-    <span style="font-size:24px;color:#fff;font-weight:800;letter-spacing:-.01em">earthvisa.in</span>
+    <span style="font-size:19px;color:rgba(255,255,255,.62);font-weight:500;${TSHADOW}">${src}</span>
+    <span style="font-size:24px;color:#fff;font-weight:800;letter-spacing:-.01em;${TSHADOW}">earthvisa.in</span>
   </div>`;
 const arrow = (c) => `<svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 12h15m0 0l-6-6m6 6l-6 6" stroke="${c}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
@@ -99,9 +104,11 @@ const photoScrims = (f) => f.key === "45"
 const darkGlow = `<div style="position:absolute;inset:0;background:radial-gradient(1100px 800px at 88% -8%,rgba(217,37,28,.16),transparent 60%)"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(900px 700px at -10% 108%,rgba(32,54,232,.10),transparent 55%)"></div>`;
 // Dimmed photo behind dark data slides: keeps the sense of place, text stays king.
+// Light through the top/middle where the photo actually reads; only builds to a real
+// scrim in the lower third where the eyebrow/value/rows text block actually sits.
 const dimBg = (key, pos = "center") => `
-  <img src="${PH[key]}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos};filter:saturate(.85)"/>
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,15,.5) 0%,rgba(7,9,15,.78) 48%,rgba(7,9,15,.9) 100%)"></div>
+  <img src="${PH[key]}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}"/>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,15,.2) 0%,rgba(7,9,15,.15) 32%,rgba(7,9,15,.32) 50%,rgba(7,9,15,.66) 66%,rgba(7,9,15,.86) 82%,rgba(7,9,15,.92) 100%)"></div>
   ${darkGlow}`;
 const bgOf = (s, post) => { const k = s.bg ?? post?.bg; return k ? dimBg(k, s.bgPos ?? post?.bgPos) : darkGlow; };
 
@@ -133,60 +140,60 @@ const S = (post, f) => ({
     return frame(f, bgOf(s, post), `
       ${headerRow(post)}
       <div style="flex:1"></div>
-      ${s.eyebrow ? `<div style="font-size:27px;font-weight:700;color:${LIFT_RED};margin-bottom:18px">${s.eyebrow}</div>` : ""}
-      <div style="font-size:${vsize}px;font-weight:800;line-height:.95;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:${s.color || "#fff"}">${s.value}</div>
-      <div style="font-size:37px;font-weight:700;line-height:1.25;letter-spacing:-.015em;color:#fff;margin-top:22px;max-width:860px">${s.title}</div>
+      ${s.eyebrow ? `<div style="font-size:27px;font-weight:700;color:${LIFT_RED};margin-bottom:18px;${TSHADOW}">${s.eyebrow}</div>` : ""}
+      <div style="font-size:${vsize}px;font-weight:800;line-height:.95;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:${s.color || "#fff"};${TSHADOW}">${s.value}</div>
+      <div style="font-size:37px;font-weight:700;line-height:1.25;letter-spacing:-.015em;color:#fff;margin-top:22px;max-width:860px;${TSHADOW}">${s.title}</div>
       ${s.rows ? `<div style="display:flex;margin-top:44px">${s.rows.map(([v, l], i) => `<div style="${i ? `border-left:1px solid ${HAIR_D};padding-left:34px;` : ""}${i < s.rows.length - 1 ? "padding-right:34px;" : ""}">
-        <div style="font-size:40px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap;color:#fff">${v}</div>
-        <div style="font-size:20px;color:rgba(255,255,255,.62);font-weight:500;margin-top:7px">${l}</div></div>`).join("")}</div>` : ""}
-      ${s.note ? `<div style="font-size:23px;color:rgba(255,255,255,.72);line-height:1.5;margin-top:34px;max-width:840px">${s.note}</div>` : ""}
+        <div style="font-size:40px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap;color:#fff;${TSHADOW}">${v}</div>
+        <div style="font-size:20px;color:rgba(255,255,255,.62);font-weight:500;margin-top:7px;${TSHADOW}">${l}</div></div>`).join("")}</div>` : ""}
+      ${s.note ? `<div style="font-size:23px;color:rgba(255,255,255,.72);line-height:1.5;margin-top:34px;max-width:840px;${TSHADOW}">${s.note}</div>` : ""}
       ${footer(post.source)}`);
   },
   list(s) {
     return frame(f, bgOf(s, post), `
       ${headerRow(post)}
       <div style="flex:1"></div>
-      <div style="font-size:27px;font-weight:700;color:${LIFT_RED};margin-bottom:8px">${s.eyebrow || post.series || ""}</div>
-      <div style="font-size:46px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:26px">${s.heading}</div>
+      <div style="font-size:27px;font-weight:700;color:${LIFT_RED};margin-bottom:8px;${TSHADOW}">${s.eyebrow || post.series || ""}</div>
+      <div style="font-size:46px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:26px;${TSHADOW}">${s.heading}</div>
       <div>${s.rows.map((r, i) => `
         <div style="display:flex;align-items:center;justify-content:space-between;padding:19px 0;${i ? `border-top:1px solid rgba(255,255,255,.12);` : ""}">
           <div style="display:flex;align-items:center;gap:18px;min-width:0">
-            ${r.flag ? `<span style="font-size:38px;line-height:1;font-family:${EMOJI}">${r.flag}</span>` : ""}
+            ${r.flag ? `<span style="font-size:38px;line-height:1;font-family:${EMOJI};${TSHADOW}">${r.flag}</span>` : ""}
             <div>
-              <div style="font-size:30px;font-weight:700;color:#fff;letter-spacing:-.01em">${r.name}</div>
-              ${r.sub ? `<div style="font-size:20px;color:rgba(255,255,255,.6);font-weight:500;margin-top:4px">${r.sub}</div>` : ""}
+              <div style="font-size:30px;font-weight:700;color:#fff;letter-spacing:-.01em;${TSHADOW}">${r.name}</div>
+              ${r.sub ? `<div style="font-size:20px;color:rgba(255,255,255,.6);font-weight:500;margin-top:4px;${TSHADOW}">${r.sub}</div>` : ""}
             </div>
           </div>
-          <div style="font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;color:${r.color || "#fff"};padding-left:24px">${r.value || ""}</div>
+          <div style="font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;color:${r.color || "#fff"};padding-left:24px;${TSHADOW}">${r.value || ""}</div>
         </div>`).join("")}</div>
-      ${s.note ? `<div style="font-size:22px;color:rgba(255,255,255,.68);line-height:1.45;margin-top:26px">${s.note}</div>` : ""}
+      ${s.note ? `<div style="font-size:22px;color:rgba(255,255,255,.68);line-height:1.45;margin-top:26px;${TSHADOW}">${s.note}</div>` : ""}
       ${footer(post.source)}`);
   },
   text(s) {
     return frame(f, bgOf(s, post), `
       ${headerRow(post)}
       <div style="flex:1"></div>
-      <div style="font-size:27px;font-weight:700;color:${LIFT_RED};margin-bottom:8px">${s.eyebrow || ""}</div>
-      <div style="font-size:50px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:34px">${s.heading}</div>
+      <div style="font-size:27px;font-weight:700;color:${LIFT_RED};margin-bottom:8px;${TSHADOW}">${s.eyebrow || ""}</div>
+      <div style="font-size:50px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:34px;${TSHADOW}">${s.heading}</div>
       <div>${s.lines.map((t, i) => `
         <div style="display:flex;gap:22px;align-items:flex-start;padding:17px 0;${i ? `border-top:1px solid rgba(255,255,255,.10);` : ""}">
-          <span style="font-size:28px;font-weight:800;color:${LIFT_RED};font-variant-numeric:tabular-nums;min-width:44px">${String(i + 1).padStart(2, "0")}</span>
-          <span style="font-size:30px;color:rgba(255,255,255,.94);line-height:1.4;font-weight:500">${t}</span>
+          <span style="font-size:28px;font-weight:800;color:${LIFT_RED};font-variant-numeric:tabular-nums;min-width:44px;${TSHADOW}">${String(i + 1).padStart(2, "0")}</span>
+          <span style="font-size:30px;color:rgba(255,255,255,.94);line-height:1.4;font-weight:500;${TSHADOW}">${t}</span>
         </div>`).join("")}</div>
-      ${s.note ? `<div style="font-size:22px;color:rgba(255,255,255,.68);line-height:1.45;margin-top:26px">${s.note}</div>` : ""}
+      ${s.note ? `<div style="font-size:22px;color:rgba(255,255,255,.68);line-height:1.45;margin-top:26px;${TSHADOW}">${s.note}</div>` : ""}
       ${footer(post.source)}`);
   },
   map(s) {
     return frame(f, bgOf(s, post), `
       ${headerRow(post)}
       <div style="flex:1"></div>
-      <div style="font-size:27px;font-weight:700;color:${LIFT_RED};margin-bottom:10px">${s.eyebrow || ""}</div>
-      <div style="font-size:48px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:30px">${s.heading}</div>
+      <div style="font-size:27px;font-weight:700;color:${LIFT_RED};margin-bottom:10px;${TSHADOW}">${s.eyebrow || ""}</div>
+      <div style="font-size:48px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:30px;${TSHADOW}">${s.heading}</div>
       <div style="margin:0 0 30px">${worldMap(s.mx, s.my, s.label)}</div>
       ${s.rows ? `<div style="display:flex">${s.rows.map(([v, l], i) => `<div style="${i ? `border-left:1px solid ${HAIR_D};padding-left:34px;` : ""}${i < s.rows.length - 1 ? "padding-right:34px;" : ""}">
-        <div style="font-size:42px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;color:#fff">${v}</div>
-        <div style="font-size:20px;color:rgba(255,255,255,.62);font-weight:500;margin-top:7px">${l}</div></div>`).join("")}</div>` : ""}
-      ${s.note ? `<div style="font-size:23px;color:rgba(255,255,255,.72);line-height:1.5;margin-top:30px">${s.note}</div>` : ""}
+        <div style="font-size:42px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;color:#fff;${TSHADOW}">${v}</div>
+        <div style="font-size:20px;color:rgba(255,255,255,.62);font-weight:500;margin-top:7px;${TSHADOW}">${l}</div></div>`).join("")}</div>` : ""}
+      ${s.note ? `<div style="font-size:23px;color:rgba(255,255,255,.72);line-height:1.5;margin-top:30px;${TSHADOW}">${s.note}</div>` : ""}
       ${footer(post.source)}`);
   },
   cta() {
@@ -369,7 +376,7 @@ const POSTS = [
   {
     slug: "p12-argentina", flag: "ar", source: "Source: Constitution Art. 20 + Ley 346, official Argentine govt, 2026",
     slides: [
-      { type: "cover", photo: "buenos-aires-obelisco-sunset", pos: "center 42%", 
+      { type: "cover", photo: "buenos-aires-obelisco-sunset", pos: "center 30%", 
         headline: `The best passport deal<br>is not for ${hl("sale")}.`,
         sub: "Argentina gives you citizenship after 2 years of living there. No investment. No language test." },
       { bg: "perito-moreno-glacier", bgPos: "center 45%", type: "stat", eyebrow: "The deal",
@@ -387,6 +394,37 @@ const POSTS = [
         heading: "Not the “investment” one.",
         lines: ["In 2025 Argentina announced 30-day citizenship for investors", "In 2026 the courts struck down its legal basis", "The tender was suspended. No price was ever set", "We show what is real. That shortcut is not, yet."] },
       { bg: "puerto-madero", bgPos: "center 55%", type: "cta", headline: "Real paths to<br>real passports.", sub: "Official sources, honest scores, no hype. That is the whole idea." },
+    ],
+  },
+  {
+    slug: "p13-argentina-mexico", source: "Source: Argentina Const. Art. 20 + Ley 346; Mexico Ley de Nacionalidad Art. 20, official govt, 2026",
+    slides: [
+      { type: "cover", photo: "angel-independencia", pos: "center 30%",
+        headline: `Same region, ${hl("very different")}<br>citizenship clocks.`,
+        sub: "Argentina and Mexico, Latin America's two biggest passports, compared straight from the law." },
+      { bg: "chichen-itza", bgPos: "center 40%", type: "list", eyebrow: "The residency clock",
+        heading: "Years until you can apply.",
+        rows: [
+          { flag: "🇦🇷", name: "Argentina", sub: "any nationality, no exceptions needed", value: "2 years", color: LIFT_GREEN },
+          { flag: "🇲🇽", name: "Mexico", sub: "spouse of a Mexican, or Latin American/Iberian", value: "2 years", color: LIFT_GREEN },
+          { flag: "🇲🇽", name: "Mexico", sub: "everyone else", value: "5 years" },
+        ],
+        note: "Mexico's law (Ley de Nacionalidad, Art. 20) reserves the fast 2-year track for spouses of Mexican nationals and citizens of Latin America and the Iberian Peninsula. Argentina's 2 years, written into its Constitution, applies to literally anyone." },
+      { bg: "zocalo-cathedral", bgPos: "center 45%", type: "text", eyebrow: "The extra homework",
+        heading: "What each one actually asks.",
+        lines: ["Argentina: no language test, no history exam, no investment", "Mexico: a Spanish exam, plus a Mexican history and culture exam", "Mexico waives the history half only for refugees, minors, or applicants 60+", "Both let you keep your original passport - no renunciation either way"] },
+      { bg: "reforma-skyline", bgPos: "center 55%", type: "stat", eyebrow: "Mexico's residency ticket",
+        value: "$2,688", title: "a month in passive income, the minimum for Mexico's residency visa",
+        rows: [["$134,400", "or this much in savings"], ["$268,800", "or this much in property"], ["4 yrs", "temporary residency granted"]],
+        note: "Mexico prices this in UMA, an inflation-proof unit, not dollars - the peso amount holds even as the exchange rate moves. Argentina's equivalent Rentista visa has no published minimum income." },
+      { bg: "casa-rosada", bgPos: "center 42%", type: "list", eyebrow: "What the passport gets you",
+        heading: "Visa-free reach, our score.",
+        rows: [
+          { flag: "🇦🇷", name: "Argentina", value: "135", color: LIFT_GREEN },
+          { flag: "🇲🇽", name: "Mexico", value: "121" },
+        ],
+        note: "Both reach the Schengen Area and Japan visa-free. E-visas never counted - only visa-free, visa-on-arrival and eTA make our score." },
+      { type: "cta", headline: "Every citizenship law,<br>side by side.", sub: "Compare any two passports and their real paths to citizenship, sourced straight from the law." },
     ],
   },
 ];
