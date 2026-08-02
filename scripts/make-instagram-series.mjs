@@ -414,9 +414,9 @@ const POSTS = [
         heading: "What each one actually asks.",
         lines: ["Argentina: no language test, no history exam, no investment", "Mexico: a Spanish exam, plus a Mexican history and culture exam", "Mexico waives the history half only for refugees, minors, or applicants 60+", "Both let you keep your original passport - no renunciation either way"] },
       { bg: "reforma-skyline", bgPos: "center 55%", type: "stat", eyebrow: "Mexico's residency ticket",
-        value: "$2,688", title: "a month in passive income, the minimum for Mexico's residency visa",
-        rows: [["$134,400", "or this much in savings"], ["$268,800", "or this much in property"], ["4 yrs", "temporary residency granted"]],
-        note: "Mexico prices this in UMA, an inflation-proof unit, not dollars - the peso amount holds even as the exchange rate moves. Argentina's equivalent Rentista visa has no published minimum income." },
+        value: "$4,570", title: "a month in passive income, the minimum for Mexico's residency visa",
+        rows: [["$77,015", "or this much in savings"], ["6 / 12 mo", "income / savings track record needed"], ["4 yrs", "temporary residency granted"]],
+        note: "Mexico prices this in UMA, an inflation-proof unit, not dollars - the peso amount holds even as the exchange rate moves, and it was revised in 2025. Argentina's equivalent Rentista visa has no published minimum income." },
       { bg: "casa-rosada", bgPos: "center 42%", type: "list", eyebrow: "What the passport gets you",
         heading: "Visa-free reach, our score.",
         rows: [
