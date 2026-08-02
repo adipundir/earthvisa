@@ -33,6 +33,7 @@ const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/guide/japan-visa-fee-increase-2026", label: "Japan visa fee increase" },
       { href: "/guide/thailand-visa-changes-2026", label: "Thailand visa changes" },
       { href: "/guide/argentina-citizenship", label: "Argentina citizenship" },
+      { href: "/guide/mexico-citizenship", label: "Mexico citizenship" },
       { href: "/destination/europe", label: "Visa for Europe" },
     ],
   },

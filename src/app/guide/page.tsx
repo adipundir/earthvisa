@@ -68,6 +68,11 @@ const GUIDES: { href: string; title: string; desc: string }[] = [
     title: "Argentina Citizenship",
     desc: "The real 2-year residency path to citizenship, no investment or language test required, and why the 'buy it' shortcut isn't real.",
   },
+  {
+    href: "/guide/mexico-citizenship",
+    title: "Mexico Citizenship",
+    desc: "The 5-year, 2-year and 1-year naturalization tracks, the mandatory exam, the real fee, and how to start the residency clock.",
+  },
 ];
 
 // Highest-demand per-nationality Schengen guides surfaced directly; the full

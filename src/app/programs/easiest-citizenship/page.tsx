@@ -16,6 +16,13 @@ import type { CbiProgram, RbiProgram } from "@/lib/types";
 // Data (all derived from dataset.cbi / dataset.rbi / dataset.fastTrack)
 // ---------------------------------------------------------------------------
 
+// Countries with a dedicated deep-dive guide - links straight from their row
+// in the path table instead of leaving readers to search for it.
+const COUNTRY_GUIDES: Record<string, string> = {
+  ARG: "/guide/argentina-citizenship",
+  MEX: "/guide/mexico-citizenship",
+};
+
 const lastUpdated = dataset.meta.lastUpdated;
 
 // Route 1: citizenship by investment, cheapest USD-priced first, others after.
@@ -206,10 +213,10 @@ function PathRow({ r }: { r: RbiProgram }) {
       </td>
       <td className="py-2 pr-4 text-[13px] italic text-ink-soft">
         {r.program_name}
-        {r.iso3 === "ARG" && (
+        {COUNTRY_GUIDES[r.iso3] && (
           <>
             {" "}
-            <Link href="/guide/argentina-citizenship" className="not-italic font-medium text-stamp underline-offset-2 hover:underline">
+            <Link href={COUNTRY_GUIDES[r.iso3]} className="not-italic font-medium text-stamp underline-offset-2 hover:underline">
               Full guide →
             </Link>
           </>

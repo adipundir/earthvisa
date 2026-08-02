@@ -471,8 +471,8 @@ export default function ArgentinaCitizenshipGuidePage() {
               {[
                 { href: "/passport/argentina", label: "What the Argentine passport can do", flag: "ar" },
                 { href: "/destination/argentina", label: "Visa requirements for visiting Argentina", flag: "ar" },
+                { href: "/guide/mexico-citizenship", label: "Compare: Mexico's tiered citizenship path", flag: null },
                 { href: "/programs/easiest-citizenship", label: "Every country's fastest citizenship path", flag: null },
-                { href: "/guide/proof-of-funds", label: "How much bank balance visa officers expect", flag: null },
               ].map((l) => (
                 <Link
                   key={l.href}

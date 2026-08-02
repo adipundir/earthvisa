@@ -8,7 +8,7 @@ function nameToSlug(name: string): string {
 }
 
 // Static SEO routes built outside the country/corridor graph.
-const GUIDE_PAGES = ["/guide", "/guide/schengen", "/guide/etias", "/guide/esta", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa", "/guide/applying-from-your-country-of-residence", "/guide/japan-visa-fee-increase-2026", "/guide/thailand-visa-changes-2026", "/guide/argentina-citizenship"];
+const GUIDE_PAGES = ["/guide", "/guide/schengen", "/guide/etias", "/guide/esta", "/guide/umrah-visa", "/guide/gcc-visa", "/guide/proof-of-funds", "/guide/visa-types", "/guide/transit-visa", "/guide/applying-from-your-country-of-residence", "/guide/japan-visa-fee-increase-2026", "/guide/thailand-visa-changes-2026", "/guide/argentina-citizenship", "/guide/mexico-citizenship"];
 const PROGRAM_PAGES = [
   "/programs",
   "/programs/citizenship-by-investment",
