@@ -9,6 +9,7 @@ import { feesFor, fmtFee } from "@/lib/fees";
 import { buildReverseIndex } from "../reverse-index";
 import type { AccessLevel } from "@/lib/types";
 import ReportLine from "@/components/ReportLine";
+import SearchableLedger from "@/components/SearchableLedger";
 
 function nameToSlug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -112,7 +113,7 @@ function NationalityRow({
   const natSlug = nameToSlug(nameFor(iso3));
   const href = isUsefulCorridor(iso3, destIso3) ? `/passport/${natSlug}/${destSlug}` : `/passport/${natSlug}`;
   return (
-    <li className="bg-card">
+    <li className="bg-card" data-search={nameFor(iso3).toLowerCase()}>
       <Link
         href={href}
         className="group/row flex min-h-[44px] items-center gap-3 px-3.5 py-2 transition hover:bg-paper-2/60"
@@ -144,12 +145,17 @@ function LedgerGrid({ children, className = "" }: { children: ReactNode; classNa
   );
 }
 
+// This page's "Show all" disclosure look (bordered pill), reused across every
+// SearchableLedger instance below so search doesn't change the page's style.
+const SUMMARY_CLASS =
+  "mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden";
+
 // A single corridor-guide link row - same ledger-row treatment as the
 // nationality lists, rendered locally so the destination page can cap the
 // list behind the same preview + <details> "Show all" pattern.
 function CorridorLinkRow({ href, label, iso3 }: { href: string; label: string; iso3: string }) {
   return (
-    <li className="bg-card">
+    <li className="bg-card" data-search={label.toLowerCase()}>
       <Link
         href={href}
         className="group flex min-h-[44px] items-center gap-3 px-3.5 py-2 transition hover:bg-paper-2/60"
@@ -583,25 +589,27 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="text-body measure mt-2 text-ink-soft">
                 Passport holders from these countries can enter {country.name} without a visa - no embassy appointment, no advance fee.
               </p>
-              <LedgerGrid className="mt-5">
-                {accessByLevel.visa_free.slice(0, PREVIEW_VF).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
-                ))}
-              </LedgerGrid>
-              {vfCount > PREVIEW_VF && (
-                <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                    <span className="group-open:hidden">Show all {vfCount}</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <Chevron />
-                  </summary>
-                  <LedgerGrid className="mt-2.5">
-                    {accessByLevel.visa_free.slice(PREVIEW_VF).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
-                    ))}
-                  </LedgerGrid>
-                </details>
-              )}
+              <SearchableLedger count={vfCount} noun="visa-free nationalities">
+                <LedgerGrid className="mt-3">
+                  {accessByLevel.visa_free.slice(0, PREVIEW_VF).map((e) => (
+                    <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
+                  ))}
+                </LedgerGrid>
+                {vfCount > PREVIEW_VF && (
+                  <details className="group mt-2.5">
+                    <summary className={SUMMARY_CLASS}>
+                      <span className="group-open:hidden">Show all {vfCount}</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <Chevron />
+                    </summary>
+                    <LedgerGrid className="mt-2.5">
+                      {accessByLevel.visa_free.slice(PREVIEW_VF).map((e) => (
+                        <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
+                      ))}
+                    </LedgerGrid>
+                  </details>
+                )}
+              </SearchableLedger>
             </section>
           )}
 
@@ -615,25 +623,27 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="text-body measure mt-2 text-ink-soft">
                 Citizens of these countries can obtain a visa stamp at the {country.name} border on arrival - no advance embassy visit required.
               </p>
-              <LedgerGrid className="mt-5">
-                {accessByLevel.visa_on_arrival.slice(0, PREVIEW_VOA).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
-                ))}
-              </LedgerGrid>
-              {voaCount > PREVIEW_VOA && (
-                <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                    <span className="group-open:hidden">Show all {voaCount}</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <Chevron />
-                  </summary>
-                  <LedgerGrid className="mt-2.5">
-                    {accessByLevel.visa_on_arrival.slice(PREVIEW_VOA).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
-                    ))}
-                  </LedgerGrid>
-                </details>
-              )}
+              <SearchableLedger count={voaCount} noun="visa-on-arrival nationalities">
+                <LedgerGrid className="mt-3">
+                  {accessByLevel.visa_on_arrival.slice(0, PREVIEW_VOA).map((e) => (
+                    <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
+                  ))}
+                </LedgerGrid>
+                {voaCount > PREVIEW_VOA && (
+                  <details className="group mt-2.5">
+                    <summary className={SUMMARY_CLASS}>
+                      <span className="group-open:hidden">Show all {voaCount}</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <Chevron />
+                    </summary>
+                    <LedgerGrid className="mt-2.5">
+                      {accessByLevel.visa_on_arrival.slice(PREVIEW_VOA).map((e) => (
+                        <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} />
+                      ))}
+                    </LedgerGrid>
+                  </details>
+                )}
+              </SearchableLedger>
             </section>
           )}
 
@@ -649,25 +659,27 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               <p className="text-body measure mt-2 text-ink-soft">
                 These nationalities can apply for an electronic travel authorisation or e-Visa online before travel - no embassy visit required.
               </p>
-              <LedgerGrid className="mt-5">
-                {etaAndEvisa.slice(0, PREVIEW_ETA).map((e) => (
-                  <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} badge={{ levelClass: LEVEL_COLORS[e.lvl], label: e.lvl === "eta" ? "eTA" : "e-Visa" }} />
-                ))}
-              </LedgerGrid>
-              {etaCount > PREVIEW_ETA && (
-                <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                    <span className="group-open:hidden">Show all {etaCount}</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <Chevron />
-                  </summary>
-                  <LedgerGrid className="mt-2.5">
-                    {etaAndEvisa.slice(PREVIEW_ETA).map((e) => (
-                      <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} badge={{ levelClass: LEVEL_COLORS[e.lvl], label: e.lvl === "eta" ? "eTA" : "e-Visa" }} />
-                    ))}
-                  </LedgerGrid>
-                </details>
-              )}
+              <SearchableLedger count={etaCount} noun="eTA / e-Visa eligible nationalities">
+                <LedgerGrid className="mt-3">
+                  {etaAndEvisa.slice(0, PREVIEW_ETA).map((e) => (
+                    <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} badge={{ levelClass: LEVEL_COLORS[e.lvl], label: e.lvl === "eta" ? "eTA" : "e-Visa" }} />
+                  ))}
+                </LedgerGrid>
+                {etaCount > PREVIEW_ETA && (
+                  <details className="group mt-2.5">
+                    <summary className={SUMMARY_CLASS}>
+                      <span className="group-open:hidden">Show all {etaCount}</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <Chevron />
+                    </summary>
+                    <LedgerGrid className="mt-2.5">
+                      {etaAndEvisa.slice(PREVIEW_ETA).map((e) => (
+                        <NationalityRow key={e.iso3} iso3={e.iso3} destIso3={destIso3} destSlug={destCountrySlug} maxStayDays={e.maxStayDays} badge={{ levelClass: LEVEL_COLORS[e.lvl], label: e.lvl === "eta" ? "eTA" : "e-Visa" }} />
+                      ))}
+                    </LedgerGrid>
+                  </details>
+                )}
+              </SearchableLedger>
             </section>
           )}
 
@@ -821,25 +833,27 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                 Step-by-step {country.name} visa requirements, fees and document checklists for travellers from these
                 countries. Nationalities in the access lists above link straight to their own guides.
               </p>
-              <LedgerGrid className="mt-5">
-                {corridorLinks.slice(0, PREVIEW_CORRIDORS).map((l) => (
-                  <CorridorLinkRow key={l.href} href={l.href} label={l.label} iso3={l.iso3} />
-                ))}
-              </LedgerGrid>
-              {corridorLinks.length > PREVIEW_CORRIDORS && (
-                <details className="group mt-2.5">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-[2px] border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                    <span className="group-open:hidden">Show all {corridorLinks.length}</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <Chevron />
-                  </summary>
-                  <LedgerGrid className="mt-2.5">
-                    {corridorLinks.slice(PREVIEW_CORRIDORS).map((l) => (
-                      <CorridorLinkRow key={l.href} href={l.href} label={l.label} iso3={l.iso3} />
-                    ))}
-                  </LedgerGrid>
-                </details>
-              )}
+              <SearchableLedger count={corridorLinks.length} noun="nationality guides">
+                <LedgerGrid className="mt-3">
+                  {corridorLinks.slice(0, PREVIEW_CORRIDORS).map((l) => (
+                    <CorridorLinkRow key={l.href} href={l.href} label={l.label} iso3={l.iso3} />
+                  ))}
+                </LedgerGrid>
+                {corridorLinks.length > PREVIEW_CORRIDORS && (
+                  <details className="group mt-2.5">
+                    <summary className={SUMMARY_CLASS}>
+                      <span className="group-open:hidden">Show all {corridorLinks.length}</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <Chevron />
+                    </summary>
+                    <LedgerGrid className="mt-2.5">
+                      {corridorLinks.slice(PREVIEW_CORRIDORS).map((l) => (
+                        <CorridorLinkRow key={l.href} href={l.href} label={l.label} iso3={l.iso3} />
+                      ))}
+                    </LedgerGrid>
+                  </details>
+                )}
+              </SearchableLedger>
             </section>
           )}
 

@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { isoToFlag } from "@/lib/format";
+import { buildCredentialGroups, CRED_CHIP_LABEL, GROUP_ISO3 } from "@/components/DestinationExplorer";
+import type { Credential } from "@/lib/types";
 
 // The Earthling claim flow: declare holdings -> watch your reach -> claim the
 // handle. Receives only the light country/credential lists as props - reach is
@@ -10,21 +12,35 @@ import { isoToFlag } from "@/lib/format";
 // the 18MB dataset and the number can't be gamed client-side.
 
 interface CountryOpt { iso3: string; iso2: string; name: string }
-interface CredOpt { id: string; label: string }
 
 const MAX_PASSPORTS = 3;
+const MAX_CREDENTIALS = 6;
 
 // Shown as instant suggestions when the search field is focused empty.
 const POPULAR_PASSPORTS = ["IND", "USA", "GBR", "DEU", "PHL", "PAK", "NGA", "BRA"];
 
+// iso2 for GROUP_ISO3's country codes, so credential group headers can show a
+// flag without an explorer-slice fetch - this component stays deliberately
+// fetch-free (see the file comment above), so it uses the light isoToFlag
+// helper instead of the dataset-backed flagFor used elsewhere on the site.
+const ISO3_TO_ISO2: Record<string, string> = {
+  USA: "US", CAN: "CA", GBR: "GB", ARE: "AE", IND: "IN", AUS: "AU", DEU: "DE",
+  JPN: "JP", NZL: "NZ", KOR: "KR", SGP: "SG", MEX: "MX", CHL: "CL", COL: "CO",
+  PER: "PE", BRA: "BR",
+};
+const GROUP_ISO2: Record<string, string> = Object.fromEntries(
+  Object.entries(GROUP_ISO3).map(([group, iso3]) => [group, ISO3_TO_ISO2[iso3] ?? iso3]),
+);
+
 export default function EarthlingClaim({ countries, credentials }: {
   countries: CountryOpt[];
-  credentials: CredOpt[];
+  credentials: Credential[];
 }) {
   const [passports, setPassports] = useState<CountryOpt[]>([]);
   const [creds, setCreds] = useState<Set<string>>(new Set());
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
+  const [credQuery, setCredQuery] = useState("");
   const [reach, setReach] = useState<{ total: number; percentile: number; visaFree: number; visaOnArrival: number; etaOrEvisa: number } | null>(null);
   const [loadingReach, setLoadingReach] = useState(false);
   const [reachError, setReachError] = useState(false);
@@ -53,6 +69,17 @@ export default function EarthlingClaim({ countries, credentials }: {
     }
     return available.filter((c) => c.name.toLowerCase().includes(q)).slice(0, 8);
   }, [query, countries, passports]);
+
+  // Credentials grouped by issuing country/bloc (same grouping DestinationExplorer
+  // uses) so Step 2 reads as ~16 labelled clusters instead of a flat 22-pill wall.
+  const credentialGroups = useMemo(() => buildCredentialGroups(credentials), [credentials]);
+  const credGroupMatches = useMemo(() => {
+    const q = credQuery.trim().toLowerCase();
+    if (!q) return credentialGroups;
+    return credentialGroups
+      .map((g) => ({ ...g, items: g.items.filter((c) => c.short.toLowerCase().includes(q) || c.label.toLowerCase().includes(q) || g.name.toLowerCase().includes(q)) }))
+      .filter((g) => g.items.length > 0);
+  }, [credQuery, credentialGroups]);
 
   // Live reach preview - debounced, server-computed. All state updates happen
   // inside the timeout callback, and a stale flag stops out-of-order responses
@@ -234,32 +261,57 @@ export default function EarthlingClaim({ countries, credentials }: {
         </div>
       </div>
 
-      {/* Step 2: credentials */}
+      {/* Step 2: credentials - grouped by issuing country/bloc, with a search
+          box on top, instead of one flat wall of 22 pills. */}
       <div>
         <p className="text-[13px] font-semibold text-ink-2">
           <span className="tabular-nums">2 ·</span> Visas &amp; permits you hold{" "}
-          <span className="font-normal text-ink-3">(optional - this is how you beat your passport&apos;s baseline)</span>
+          <span className="font-normal text-ink-3">
+            (optional - this is how you beat your passport&apos;s baseline
+            {creds.size > 0 && `, ${creds.size}/${MAX_CREDENTIALS} selected`})
+          </span>
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {credentials.map((c) => {
-            const on = creds.has(c.id);
-            return (
-              <button
-                key={c.id}
-                onClick={() => {
-                  const next = new Set(creds);
-                  if (on) next.delete(c.id); else if (next.size < 6) next.add(c.id);
-                  setCreds(next);
-                }}
-                aria-pressed={on}
-                className={`inline-flex min-h-[36px] items-center rounded-full border px-3.5 py-1 text-[13.5px] font-medium transition ${
-                  on ? "border-accent/45 bg-surface text-accent" : "border-hair-strong bg-surface text-ink-2 hover:border-ink-3 hover:text-ink"
-                }`}
-              >
-                {c.label}
-              </button>
-            );
-          })}
+        {credentials.length > MAX_CREDENTIALS && (
+          <input
+            value={credQuery}
+            onChange={(e) => setCredQuery(e.target.value)}
+            placeholder="Search - Green Card, Schengen visa…"
+            aria-label="Search visas and permits"
+            className="mt-3 w-full max-w-sm rounded-lg border border-hair-strong bg-surface px-3.5 py-2 text-[14px] text-ink outline-none transition placeholder:text-ink-3 focus:border-accent"
+          />
+        )}
+        <div className="mt-3 space-y-3.5">
+          {credGroupMatches.length === 0 && (
+            <p className="text-[13.5px] text-ink-3">No visas or permits match &ldquo;{credQuery}&rdquo;.</p>
+          )}
+          {credGroupMatches.map(({ name, items }) => (
+            <div key={name}>
+              <p className="flex items-center gap-1.5 text-[12px] font-semibold text-ink-3">
+                <span aria-hidden="true">{GROUP_ISO2[name] ? isoToFlag(GROUP_ISO2[name]) : "🌐"}</span> {name}
+              </p>
+              <div className="mt-1.5 flex flex-wrap gap-2">
+                {items.map((c) => {
+                  const on = creds.has(c.id);
+                  return (
+                    <button
+                      key={c.id}
+                      onClick={() => {
+                        const next = new Set(creds);
+                        if (on) next.delete(c.id); else if (next.size < MAX_CREDENTIALS) next.add(c.id);
+                        setCreds(next);
+                      }}
+                      aria-pressed={on}
+                      className={`inline-flex min-h-[36px] items-center rounded-full border px-3.5 py-1 text-[13.5px] font-medium transition ${
+                        on ? "border-accent/45 bg-surface text-accent" : "border-hair-strong bg-surface text-ink-2 hover:border-ink-3 hover:text-ink"
+                      }`}
+                    >
+                      {CRED_CHIP_LABEL[c.id] ?? c.short}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

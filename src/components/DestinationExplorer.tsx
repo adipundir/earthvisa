@@ -35,7 +35,7 @@ const PTYPE_SHORT: Record<PassportType, string> = {
   official: "OFF",
 };
 
-const GROUP_ISO3: Record<string, string> = {
+export const GROUP_ISO3: Record<string, string> = {
   "United States": "USA",
   "Canada": "CAN",
   "United Kingdom": "GBR",
@@ -83,7 +83,7 @@ const HUB_LABEL: Record<string, string> = {
   "Schengen / EU": "the Schengen area",
 };
 
-const CRED_CHIP_LABEL: Record<string, string> = {
+export const CRED_CHIP_LABEL: Record<string, string> = {
   US_VISA: "Any visa",
   US_GREEN_CARD: "Green Card",
   CA_VISA: "Any visa",
@@ -109,7 +109,7 @@ const CRED_CHIP_LABEL: Record<string, string> = {
 };
 
 // Group credentials by issuing country (preserving CRED_CATALOG order)
-function buildCredentialGroups(credentials: Credential[]): { name: string; items: Credential[] }[] {
+export function buildCredentialGroups(credentials: Credential[]): { name: string; items: Credential[] }[] {
   const map = new Map<string, Credential[]>();
   for (const c of credentials) {
     if (!map.has(c.group)) map.set(c.group, []);

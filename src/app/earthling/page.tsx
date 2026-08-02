@@ -23,7 +23,9 @@ export const metadata: Metadata = {
 export default async function EarthlingPage({ searchParams }: { searchParams: Promise<{ verify?: string }> }) {
   const { verify } = await searchParams;
   const countries = dataset.allCountries.map((c) => ({ iso3: c.iso3, iso2: c.iso2, name: c.name }));
-  const credentials = dataset.credentials.map((c) => ({ id: c.id, label: c.label }));
+  // Full Credential shape (id, label, short, group) - EarthlingClaim groups
+  // these by issuing country/bloc instead of rendering a flat pill wall.
+  const credentials = dataset.credentials;
   const top = await leaderboard({ limit: 10 });
   const total = await earthlingCount();
 

@@ -7,6 +7,7 @@ import { compute } from "@/lib/compute";
 import { corridorsForNationality, isUsefulCorridor, DEMONYM, TOP_DESTINATIONS } from "@/lib/corridors";
 import { feesFor, fmtFee, type FeeEntry } from "@/lib/fees";
 import CorridorLinks from "@/components/CorridorLinks";
+import SearchableLedger from "@/components/SearchableLedger";
 import PassportDestinationSearch from "@/components/PassportDestinationSearch";
 import type { AccessLevel, CbiProgram } from "@/lib/types";
 
@@ -252,7 +253,7 @@ function DestCard({ natName, natIso3, edge, fom = false }: {
     ? `/passport/${nameToSlug(natName)}/${destSlug}`
     : `/destination/${destSlug}`;
   return (
-    <li className={LEDGER_ROW_LI}>
+    <li className={LEDGER_ROW_LI} data-search={nameFor(edge.dest).toLowerCase()}>
       <Link href={href} className="group flex min-h-[44px] items-center gap-2.5 py-1 transition hover:bg-paper-2/50">
         <span className="text-lg leading-none">{flagFor(edge.dest)}</span>
         <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{nameFor(edge.dest)}</span>
@@ -297,7 +298,7 @@ function VrRow({ natName, natIso3, dest }: { natName: string; natIso3: string; d
     : `/destination/${destSlug}`;
   const fee = touristVisaFee(dest.iso3);
   return (
-    <tr className="transition hover:bg-paper-2/70">
+    <tr className="transition hover:bg-paper-2/70" data-search={dest.name.toLowerCase()}>
       <td className="px-3.5 py-1.5">
         <Link href={href} className="group flex min-h-[44px] items-center gap-2.5 font-display text-[15px] font-medium text-ink transition hover:text-stamp">
           <span className="text-lg">{flagFor(dest.iso3)}</span>
@@ -572,25 +573,27 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Enter with just your {demonym} passport - no visa application, no fee, no advance paperwork required.
                 {listLinks.vf && <> <Link href={listLinks.vf} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full visa-free guide →</Link></>}
               </p>
-              <ul className={`${LEDGER_GRID_UL} mt-5`}>
-                {vfEdges.slice(0, 30).map((e) => (
-                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} fom={fomSet.has(e.dest)} />
-                ))}
-              </ul>
-              {vfEdges.length > 30 && (
-                <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                    <span className="group-open:hidden">Show all {vfEdges.length} visa-free destinations</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
-                  </summary>
-                  <ul className={`${LEDGER_GRID_UL} mt-3`}>
-                    {vfEdges.slice(30).map((e) => (
-                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} fom={fomSet.has(e.dest)} />
-                    ))}
-                  </ul>
-                </details>
-              )}
+              <SearchableLedger count={vfEdges.length} noun="visa-free destinations">
+                <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                  {vfEdges.slice(0, 30).map((e) => (
+                    <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} fom={fomSet.has(e.dest)} />
+                  ))}
+                </ul>
+                {vfEdges.length > 30 && (
+                  <details className="group mt-3">
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                      <span className="group-open:hidden">Show all {vfEdges.length} visa-free destinations</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+                    </summary>
+                    <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                      {vfEdges.slice(30).map((e) => (
+                        <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} fom={fomSet.has(e.dest)} />
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </SearchableLedger>
             </section>
           )}
 
@@ -604,25 +607,27 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Receive your visa stamp at the airport on arrival - no embassy visit required.
                 {listLinks.voa && <> <Link href={listLinks.voa} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full visa-on-arrival guide →</Link></>}
               </p>
-              <ul className={`${LEDGER_GRID_UL} mt-5`}>
-                {voaEdges.slice(0, 18).map((e) => (
-                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
-                ))}
-              </ul>
-              {voaEdges.length > 18 && (
-                <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                    <span className="group-open:hidden">Show all {voaEdges.length} visa-on-arrival countries</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
-                  </summary>
-                  <ul className={`${LEDGER_GRID_UL} mt-3`}>
-                    {voaEdges.slice(18).map((e) => (
-                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
-                    ))}
-                  </ul>
-                </details>
-              )}
+              <SearchableLedger count={voaEdges.length} noun="visa-on-arrival countries">
+                <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                  {voaEdges.slice(0, 18).map((e) => (
+                    <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                  ))}
+                </ul>
+                {voaEdges.length > 18 && (
+                  <details className="group mt-3">
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                      <span className="group-open:hidden">Show all {voaEdges.length} visa-on-arrival countries</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+                    </summary>
+                    <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                      {voaEdges.slice(18).map((e) => (
+                        <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </SearchableLedger>
             </section>
           )}
 
@@ -636,25 +641,27 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <p className="text-body mt-2 max-w-3xl text-ink-soft">
                 Apply online before you travel for a quick, usually automated pre-screening - not a visa, and layered on top of entry you already qualify for. No embassy visit required.
               </p>
-              <ul className={`${LEDGER_GRID_UL} mt-5`}>
-                {etaOnlyEdges.slice(0, 30).map((e) => (
-                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
-                ))}
-              </ul>
-              {etaOnlyEdges.length > 30 && (
-                <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                    <span className="group-open:hidden">Show all {etaOnlyEdges.length} eTA destinations</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
-                  </summary>
-                  <ul className={`${LEDGER_GRID_UL} mt-3`}>
-                    {etaOnlyEdges.slice(30).map((e) => (
-                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
-                    ))}
-                  </ul>
-                </details>
-              )}
+              <SearchableLedger count={etaOnlyEdges.length} noun="eTA destinations">
+                <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                  {etaOnlyEdges.slice(0, 30).map((e) => (
+                    <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                  ))}
+                </ul>
+                {etaOnlyEdges.length > 30 && (
+                  <details className="group mt-3">
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                      <span className="group-open:hidden">Show all {etaOnlyEdges.length} eTA destinations</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+                    </summary>
+                    <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                      {etaOnlyEdges.slice(30).map((e) => (
+                        <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </SearchableLedger>
             </section>
           )}
 
@@ -668,25 +675,27 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Apply online before you travel - this is an actual visa, just granted digitally instead of via an embassy stamp, so no embassy visit is required for eligible short-term visits.
                 {listLinks.evisa && <> <Link href={listLinks.evisa} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full e-visa guide →</Link></>}
               </p>
-              <ul className={`${LEDGER_GRID_UL} mt-5`}>
-                {evisaOnlyEdges.slice(0, 30).map((e) => (
-                  <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
-                ))}
-              </ul>
-              {evisaOnlyEdges.length > 30 && (
-                <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                    <span className="group-open:hidden">Show all {evisaOnlyEdges.length} e-Visa destinations</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
-                  </summary>
-                  <ul className={`${LEDGER_GRID_UL} mt-3`}>
-                    {evisaOnlyEdges.slice(30).map((e) => (
-                      <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
-                    ))}
-                  </ul>
-                </details>
-              )}
+              <SearchableLedger count={evisaOnlyEdges.length} noun="e-Visa destinations">
+                <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                  {evisaOnlyEdges.slice(0, 30).map((e) => (
+                    <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                  ))}
+                </ul>
+                {evisaOnlyEdges.length > 30 && (
+                  <details className="group mt-3">
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                      <span className="group-open:hidden">Show all {evisaOnlyEdges.length} e-Visa destinations</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+                    </summary>
+                    <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                      {evisaOnlyEdges.slice(30).map((e) => (
+                        <DestCard key={e.dest} natName={country.name} natIso3={country.iso3} edge={e} />
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </SearchableLedger>
             </section>
           )}
 
@@ -699,23 +708,25 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <p className="text-body mt-2 max-w-3xl text-ink-soft">
                 {citizensCap} have the right to live and work in these countries through regional bloc membership - no visa required.
               </p>
-              <ul className={`${LEDGER_GRID_UL} mt-5`}>
-                {fomEdges.map((e) => {
-                  const destSlug = nameToSlug(nameFor(e.dest));
-                  const href = isUsefulCorridor(country.iso3, e.dest)
-                    ? `/passport/${slug}/${destSlug}`
-                    : `/destination/${destSlug}`;
-                  return (
-                    <li key={e.dest} className={LEDGER_ROW_LI}>
-                      <Link href={href} className="group flex min-h-[44px] items-center gap-2.5 py-1 transition hover:bg-paper-2/50">
-                        <span className="text-lg leading-none">{flagFor(e.dest)}</span>
-                        <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{nameFor(e.dest)}</span>
-                        <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
+              <SearchableLedger count={fomEdges.length} noun="freedom-of-movement countries">
+                <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                  {fomEdges.map((e) => {
+                    const destSlug = nameToSlug(nameFor(e.dest));
+                    const href = isUsefulCorridor(country.iso3, e.dest)
+                      ? `/passport/${slug}/${destSlug}`
+                      : `/destination/${destSlug}`;
+                    return (
+                      <li key={e.dest} className={LEDGER_ROW_LI} data-search={nameFor(e.dest).toLowerCase()}>
+                        <Link href={href} className="group flex min-h-[44px] items-center gap-2.5 py-1 transition hover:bg-paper-2/50">
+                          <span className="text-lg leading-none">{flagFor(e.dest)}</span>
+                          <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{nameFor(e.dest)}</span>
+                          <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </SearchableLedger>
             </section>
           )}
 
@@ -791,35 +802,37 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <p className="text-body mt-2 max-w-3xl text-ink-soft">
                 {demonym} citizens must apply in advance at an embassy, consulate, or official visa portal before travelling - no on-arrival or online-only option exists for these destinations. Fees shown are each destination&apos;s cheapest official published tourist-visa rate; tap a destination for the full guide.
               </p>
-              <div className="card-doc mt-5 overflow-x-auto">
-                <table className="w-full min-w-[420px] border-collapse text-left">
-                  <VrTableHead />
-                  <tbody className="divide-y divide-line">
-                    {vrEdges.slice(0, 30).map((c) => (
-                      <VrRow key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              {vrEdges.length > 30 && (
-                <details className="group mt-3">
-                  <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                    <span className="group-open:hidden">Show all {vrEdges.length} visa-required destinations</span>
-                    <span className="hidden group-open:inline">Show fewer</span>
-                    <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
-                  </summary>
-                  <div className="card-doc mt-3 overflow-x-auto">
-                    <table className="w-full min-w-[420px] border-collapse text-left">
-                      <VrTableHead />
-                      <tbody className="divide-y divide-line">
-                        {vrEdges.slice(30).map((c) => (
-                          <VrRow key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </details>
-              )}
+              <SearchableLedger count={vrEdges.length} noun="visa-required destinations">
+                <div className="card-doc mt-3 overflow-x-auto">
+                  <table className="w-full min-w-[420px] border-collapse text-left">
+                    <VrTableHead />
+                    <tbody className="divide-y divide-line">
+                      {vrEdges.slice(0, 30).map((c) => (
+                        <VrRow key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {vrEdges.length > 30 && (
+                  <details className="group mt-3">
+                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+                      <span className="group-open:hidden">Show all {vrEdges.length} visa-required destinations</span>
+                      <span className="hidden group-open:inline">Show fewer</span>
+                      <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+                    </summary>
+                    <div className="card-doc mt-3 overflow-x-auto">
+                      <table className="w-full min-w-[420px] border-collapse text-left">
+                        <VrTableHead />
+                        <tbody className="divide-y divide-line">
+                          {vrEdges.slice(30).map((c) => (
+                            <VrRow key={c.iso3} natName={country.name} natIso3={country.iso3} dest={c} />
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </details>
+                )}
+              </SearchableLedger>
               <p className="mt-3 max-w-2xl text-[13px] leading-relaxed text-ink-mute">
                 &quot; - &quot; means the destination publishes no single official tourist-visa figure (often a per-nationality
                 reciprocity schedule). Fees exclude service and application-centre charges.

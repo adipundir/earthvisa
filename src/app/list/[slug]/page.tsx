@@ -5,6 +5,7 @@ import { dataset, flagFor, nameFor, nameToSlug } from "@/lib/dataset";
 import { compute, type CombinedEdge, type PassportResult } from "@/lib/compute";
 import { DEMONYM, isUsefulCorridor } from "@/lib/corridors";
 import CorridorLinks from "@/components/CorridorLinks";
+import SearchableLedger from "@/components/SearchableLedger";
 import type { AccessLevel } from "@/lib/types";
 import ReportLine from "@/components/ReportLine";
 
@@ -500,7 +501,7 @@ function Chevron() {
 // top hairline (1 col base / 2 cols sm / 3 cols lg).
 const LEDGER_ROW_LI =
   "border-t border-line first:border-t-0 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0";
-const LEDGER_GRID_UL = "card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
+const LEDGER_GRID_UL = "card-doc grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
 
 function DestCard({ edge, condition, nat, natSlug, showLevel = false }: {
   edge: CombinedEdge;
@@ -513,7 +514,7 @@ function DestCard({ edge, condition, nat, natSlug, showLevel = false }: {
   const destSlug = nameToSlug(name);
   const href = isUsefulCorridor(nat, edge.dest) ? `/passport/${natSlug}/${destSlug}` : `/destination/${destSlug}`;
   return (
-    <li className={LEDGER_ROW_LI}>
+    <li className={LEDGER_ROW_LI} data-search={name.toLowerCase()}>
       <Link
         href={href}
         className="group flex min-h-[44px] items-start gap-2.5 py-2 transition hover:bg-paper-2/50"
@@ -750,11 +751,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   <p className="text-body mt-2 max-w-3xl text-ink-soft">
                     These countries waive their visa entirely for {cfg.people} who hold a valid US visa - check the condition on each row.
                   </p>
-                  <ul className={LEDGER_GRID_UL}>
-                    {dVf.map((e) => (
-                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} />
-                    ))}
-                  </ul>
+                  <SearchableLedger count={dVf.length} noun="visa-free countries">
+                    <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                      {dVf.map((e) => (
+                        <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} />
+                      ))}
+                    </ul>
+                  </SearchableLedger>
                 </section>
               )}
               {dVoa.length > 0 && (
@@ -765,11 +768,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   <p className="text-body mt-2 max-w-3xl text-ink-soft">
                     With a valid US visa, {cfg.people} can get a visa stamped at the border in these countries instead of applying at an embassy.
                   </p>
-                  <ul className={LEDGER_GRID_UL}>
-                    {dVoa.map((e) => (
-                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} />
-                    ))}
-                  </ul>
+                  <SearchableLedger count={dVoa.length} noun="visa-on-arrival countries">
+                    <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                      {dVoa.map((e) => (
+                        <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} />
+                      ))}
+                    </ul>
+                  </SearchableLedger>
                 </section>
               )}
               {dE.length > 0 && (
@@ -781,11 +786,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                     These destinations let US-visa holders apply through a simplified online e-visa or eTA instead of a full embassy process.
                   </p>
                   {/* Mixed e-Visa + eTA section: the badge distinguishes the two levels. */}
-                  <ul className={LEDGER_GRID_UL}>
-                    {dE.map((e) => (
-                      <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} showLevel />
-                    ))}
-                  </ul>
+                  <SearchableLedger count={dE.length} noun="e-Visa / eTA countries">
+                    <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                      {dE.map((e) => (
+                        <DestCard key={e.dest} edge={e} condition={usVisaCondition(e)} nat={cfg.nat} natSlug={natSlug} showLevel />
+                      ))}
+                    </ul>
+                  </SearchableLedger>
                 </section>
               )}
             </>
@@ -801,11 +808,13 @@ export default async function ListPage({ params }: { params: Promise<{ slug: str
                   ? `Alphabetical list of every country issuing ${cfg.people} a visa on arrival in 2026, with the maximum stay where officially published.`
                   : `Alphabetical list of every country ${cfg.people} can enter with just a passport in 2026, with the maximum stay where officially published.`}
               </p>
-              <ul className={LEDGER_GRID_UL}>
-                {main.map((e) => (
-                  <DestCard key={e.dest} edge={e} condition={cfg.kind === "voa" ? voaCondition(e.notes ?? "") : firstSentence(e.notes ?? "")} nat={cfg.nat} natSlug={natSlug} />
-                ))}
-              </ul>
+              <SearchableLedger count={main.length} noun={cfg.kind === "voa" ? "visa-on-arrival countries" : "visa-free countries"}>
+                <ul className={`${LEDGER_GRID_UL} mt-3`}>
+                  {main.map((e) => (
+                    <DestCard key={e.dest} edge={e} condition={cfg.kind === "voa" ? voaCondition(e.notes ?? "") : firstSentence(e.notes ?? "")} nat={cfg.nat} natSlug={natSlug} />
+                  ))}
+                </ul>
+              </SearchableLedger>
             </section>
           )}
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { flagFor } from "@/lib/dataset";
+import SearchableLedger from "@/components/SearchableLedger";
 
 export interface CorridorLink {
   href: string;
@@ -17,7 +18,7 @@ const LEDGER_GRID_UL = "card-doc grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:
 
 function Row({ l }: { l: CorridorLink }) {
   return (
-    <li className={LEDGER_ROW_LI}>
+    <li className={LEDGER_ROW_LI} data-search={l.label.toLowerCase()}>
       <Link
         href={l.href}
         className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
@@ -62,25 +63,27 @@ export default function CorridorLinks({
     <section className="mt-12">
       <h2 className="text-section text-ink">{title}</h2>
       <p className="text-body mt-2 max-w-3xl text-ink-soft">{description}</p>
-      <ul className={`${LEDGER_GRID_UL} mt-5`}>
-        {preview.map((l) => (
-          <Row key={l.href} l={l} />
-        ))}
-      </ul>
-      {rest.length > 0 && (
-        <details className="group mt-3">
-          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-            <span className="group-open:hidden">Show all {links.length} guides</span>
-            <span className="hidden group-open:inline">Show fewer</span>
-            <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
-          </summary>
-          <ul className={`${LEDGER_GRID_UL} mt-3`}>
-            {rest.map((l) => (
-              <Row key={l.href} l={l} />
-            ))}
-          </ul>
-        </details>
-      )}
+      <SearchableLedger count={links.length} noun="guides">
+        <ul className={`${LEDGER_GRID_UL} mt-3`}>
+          {preview.map((l) => (
+            <Row key={l.href} l={l} />
+          ))}
+        </ul>
+        {rest.length > 0 && (
+          <details className="group mt-3">
+            <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
+              <span className="group-open:hidden">Show all {links.length} guides</span>
+              <span className="hidden group-open:inline">Show fewer</span>
+              <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
+            </summary>
+            <ul className={`${LEDGER_GRID_UL} mt-3`}>
+              {rest.map((l) => (
+                <Row key={l.href} l={l} />
+              ))}
+            </ul>
+          </details>
+        )}
+      </SearchableLedger>
     </section>
   );
 }

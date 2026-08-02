@@ -4,6 +4,7 @@ import { dataset, flagFor, nameFor, nameToSlug } from "@/lib/dataset";
 const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { DEMONYM, TOP_NATIONALITIES } from "@/lib/corridors";
 import { SCHENGEN_MEMBERS, schengenCounts, schengenStatus, type SchengenStatus } from "@/lib/schengen";
+import SearchableLedger from "@/components/SearchableLedger";
 
 const memberCount = SCHENGEN_MEMBERS.length;
 const counts = schengenCounts();
@@ -229,24 +230,26 @@ export default function EuropePage() {
             <p className="mt-2 max-w-3xl text-sm text-ink-soft">
               Schengen-zone status for the most-searched passports. Tap a nationality for its full Schengen guide.
             </p>
-            <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map((n) => (
-                <li key={n.iso3}>
-                  <Link
-                    href={n.hasGuide ? `/guide/schengen/${n.slug}` : `/passport/${n.slug}`}
-                    className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
-                  >
-                    <span className="text-xl">{flagFor(n.iso3)}</span>
-                    <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
-                      {DEMONYM[n.iso3] ?? n.name} citizens
-                    </span>
-                    <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${STATUS_CLASS[n.status]}`}>
-                      {STATUS_LABEL[n.status]}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <SearchableLedger count={featured.length} noun="nationalities">
+              <ul className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                {featured.map((n) => (
+                  <li key={n.iso3} data-search={`${n.name} ${DEMONYM[n.iso3] ?? ""}`.toLowerCase()}>
+                    <Link
+                      href={n.hasGuide ? `/guide/schengen/${n.slug}` : `/passport/${n.slug}`}
+                      className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                    >
+                      <span className="text-xl">{flagFor(n.iso3)}</span>
+                      <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+                        {DEMONYM[n.iso3] ?? n.name} citizens
+                      </span>
+                      <span className={`mono ml-auto rounded-[3px] px-2 py-0.5 text-[9px] uppercase tracking-[0.1em] ring-1 ${STATUS_CLASS[n.status]}`}>
+                        {STATUS_LABEL[n.status]}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </SearchableLedger>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
               Visa-exempt travellers (for example American, British, Canadian and Australian citizens) should note the
               EU&apos;s planned <strong className="text-ink">ETIAS</strong> travel authorisation - an online pre-travel
@@ -320,21 +323,24 @@ export default function EuropePage() {
             <p className="mt-2 max-w-3xl text-sm text-ink-soft">
               Tap any country for its full visa requirements by passport.
             </p>
-            <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-              {memberList.map((iso3) => (
-                <Link
-                  key={iso3}
-                  href={`/destination/${nameToSlug(nameFor(iso3))}`}
-                  className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
-                >
-                  <span className="text-xl">{flagFor(iso3)}</span>
-                  <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
-                    {nameFor(iso3)}
-                  </span>
-                  <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
-                </Link>
-              ))}
-            </div>
+            <SearchableLedger count={memberList.length} noun="Schengen countries">
+              <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                {memberList.map((iso3) => (
+                  <Link
+                    key={iso3}
+                    href={`/destination/${nameToSlug(nameFor(iso3))}`}
+                    data-search={nameFor(iso3).toLowerCase()}
+                    className="group flex min-h-[44px] items-center gap-3 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2.5 transition hover:border-line-strong"
+                  >
+                    <span className="text-xl">{flagFor(iso3)}</span>
+                    <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">
+                      {nameFor(iso3)}
+                    </span>
+                    <span aria-hidden className="mono ml-auto text-ink-mute transition group-hover:text-stamp">→</span>
+                  </Link>
+                ))}
+              </div>
+            </SearchableLedger>
           </section>
 
           {/* FAQ */}
