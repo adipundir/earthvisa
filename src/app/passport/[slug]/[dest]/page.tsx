@@ -811,8 +811,23 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const portalUrl = visaTypes
     .map((v) => v.official_url)
     .filter((u): u is string => !!u && !isAdvisoryUrl(u) && !(eVisaIneligible && /e-?visa/i.test(u)))[0] ?? null;
+  // On VFS-routed corridors the application is never lodged at the destination's
+  // own embassy/government portal - it goes through the VFS/VAC centre instead,
+  // which is exactly what the "Lodge your application at X visa application
+  // centre" copy already says. The apply BUTTON has to agree with that sentence,
+  // so it takes priority over statusUrl/portalUrl here. Only used when the
+  // crawled vfs.source_url is actually attributable to this nationality (same
+  // natMatch rule as the fee note below) - otherwise it may be a different
+  // country's VFS centre page, which is worse than the general portal link.
+  const vfsSrc = (destFees?.vfs.source_url ?? "").toLowerCase();
+  const natSlugForVfs = nameToSlug(n.name);
+  const vfsApplyUrl =
+    destFees?.vfs.used && s.kind === "visa_required" && destFees.vfs.source_url &&
+    (vfsSrc.includes(`/${n.iso3.toLowerCase()}/`) || vfsSrc.includes(`/${natSlugForVfs}/`) || vfsSrc.includes(`/${n.name.toLowerCase()}/`))
+      ? destFees.vfs.source_url
+      : null;
   const applyUrl = need && !travelBanned
-    ? ((statusUrl && !isAdvisoryUrl(statusUrl) ? statusUrl : null) ?? portalUrl)
+    ? (vfsApplyUrl ?? (statusUrl && !isAdvisoryUrl(statusUrl) ? statusUrl : null) ?? portalUrl)
     : null;
   const advisoryUrl = travelBanned ? statusUrl : null;
   // A fee-variation note sometimes carries the lodging channel itself ("all

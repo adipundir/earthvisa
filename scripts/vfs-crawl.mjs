@@ -69,16 +69,32 @@ const toIso3 = (code) => {
 // Map a VFS visa-type label to our VisaType category taxonomy.
 function categorize(name) {
   const n = name.toLowerCase();
-  if (/tourist|tourism|holiday|visit\b/.test(n)) return "tourist";
+  // Unambiguous tourism keywords first.
+  if (/tourist|tourism|holiday|sightsee/.test(n)) return "tourist";
   if (/business|conference|corporate|entrepreneur|start-?up|investor|investment/.test(n)) return "business";
   if (/student|study|research|university|educational|internship|exchange|scientific/.test(n)) return "student";
   if (/work|employment|seasonal|professional activity|job seek|independent work|labour|au ?pair/.test(n)) return "work";
   if (/transit|seamen|seaman|seafarer/.test(n)) return "transit";
   if (/medical|treatment|ill family/.test(n)) return "medical";
-  if (/retire|senior|rents|pension/.test(n)) return "retirement";
+  // Bare "rents" (no word boundary) matches inside "parents" - "Visit
+  // Parents" was landing in retirement instead of family/tourist.
+  if (/retire|senior|\brents\b|pension/.test(n)) return "retirement";
   if (/working holiday/.test(n)) return "working_holiday";
   if (/digital nomad|nomad/.test(n)) return "digital_nomad";
   if (/family|reunification|spouse|relatives|accompanying|visiting family/.test(n)) return "family";
+  // "Visitor"/"visit" alone is the weakest, most generic signal in this
+  // taxonomy - almost every visa type description mentions "visitor" in some
+  // form. Checking it last, as a tie-breaker only once nothing more specific
+  // matched, is what correctly classifies Japan's actual general tourist visa
+  // ("Temporary Visitor Visa for Sightseeing", already caught by "sightsee"
+  // above) without stealing "Temporary Visitor Visa for Business" from
+  // business, "Visitor's Visa: Academics, Researchers" from student, or
+  // "Visitor Family/Friends" from family - all of which contain "visitor" but
+  // have a strictly more specific category keyword earlier in this chain.
+  // "visit\b" alone previously missed "Visitor" (no word boundary between the
+  // "t" and "or" in "Visitor"), silently dropping real tourist visas into
+  // "other" - \bvisitor\b closes that gap.
+  if (/\bvisitor\b|\bvisit\b/.test(n)) return "tourist";
   return "other";
 }
 
