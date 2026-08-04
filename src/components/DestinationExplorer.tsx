@@ -16,6 +16,7 @@ import {
   type DestinationSlice,
 } from "@/lib/explorer-data";
 import { useDetectedPassport } from "@/lib/geo";
+import { parseDocBlocks } from "@/lib/docBlocks";
 import { computeWith, LEVEL_LABEL, type CombinedEdge, type FomEdge, type PassportResult } from "@/lib/compute-core";
 import type { AccessLevel, Credential, PassportType, VfsCorridorSummary, VisaType } from "@/lib/types";
 
@@ -150,7 +151,7 @@ function listJoin(items: string[]): string {
 }
 
 /** Render text with bare or parenthesised URLs turned into real links. */
-function LinkifiedText({ text, className }: { text: string; className?: string }) {
+function linkifyNodes(text: string): ReactNode[] {
   const re = /\((https?:\/\/[^\s()]*[^\s().,;:])\)|(https?:\/\/[^\s()]*[^\s().,;:])/g;
   const nodes: ReactNode[] = [];
   let last = 0;
@@ -166,7 +167,48 @@ function LinkifiedText({ text, className }: { text: string; className?: string }
     last = m.index + m[0].length;
   }
   if (last < text.length) nodes.push(text.slice(last));
-  return <p className={className}>{nodes}</p>;
+  return nodes;
+}
+
+// Structures a crawled "documents_required" blob (bullets, short section
+// labels like "Important Note:", PDF checklist links, plain notes) instead of
+// dumping it as one whitespace-pre-wrap block - that rendered every line,
+// heading or not, identically, which is what made checklists unreadable.
+function DocChecklist({ text }: { text: string }) {
+  const { pdfs, bullets, labels, notes } = parseDocBlocks(text);
+  return (
+    <div className="space-y-2.5">
+      {pdfs.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          {pdfs.map((p, i) => (
+            <a
+              key={i}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 rounded-md border border-line-strong bg-card px-2 py-1 text-[12px] font-medium text-ink-2 transition hover:border-stamp hover:text-stamp"
+            >
+              {p.label} <span className="text-ink-3">PDF ↗</span>
+            </a>
+          ))}
+        </div>
+      )}
+      {labels.length > 0 && <p className="text-[11px] font-semibold uppercase tracking-wide text-ink-3">{labels.join(" · ")}</p>}
+      {bullets.length > 0 && (
+        <ul className="space-y-1">
+          {bullets.map((b, i) => (
+            <li key={i} className="flex gap-2 text-[13px] leading-relaxed text-ink-soft">
+              <span aria-hidden="true" className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
+              <span className="min-w-0">{linkifyNodes(b)}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      {notes.map((t, i) => (
+        <p key={i} className="text-[13px] leading-relaxed text-ink-soft">{linkifyNodes(t)}</p>
+      ))}
+    </div>
+  );
 }
 
 /** VFS publishes some visa-type names in ALL CAPS - bring those in line with the rest. */
@@ -1037,7 +1079,7 @@ function VfsTypeRow({ v }: { v: VfsVisaType }) {
           {docs ? (
             <div>
               <p className="mb-1.5 text-[11px] font-semibold text-ink-3">Documents required</p>
-              <LinkifiedText text={docs} className="whitespace-pre-wrap text-[13px] leading-relaxed text-ink-soft" />
+              <DocChecklist text={docs} />
             </div>
           ) : (
             <p className="text-[13px] text-ink-mute">No document checklist published for this type.</p>

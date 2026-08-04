@@ -11,6 +11,7 @@ import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "
 import { feesFor, relevantFees, variationFor, fmtFee, toUsd } from "@/lib/fees";
 import { applicationNoteFor } from "@/lib/applicationNotes";
 import { mergeVisaTypes } from "@/lib/merge-visa-types";
+import { parseDocBlocks } from "@/lib/docBlocks";
 
 import ReportIssue from "@/components/ReportIssue";
 import { residualSentences } from "@/lib/residual-notes";
@@ -229,35 +230,8 @@ function cleanChecklistLines(text: string, keepNames: string[], foreignNames: st
 // UI can render real structure instead of a wall of prose: PDF checklist
 // links ("Tourist - Single (https://…/x.pdf)"), "- " requirement bullets, and
 // anything else as a plain note paragraph.
-function parseDocBlocks(text: string): { pdfs: { label: string; url: string }[]; bullets: string[]; notes: string[] } {
-  const pdfs: { label: string; url: string }[] = [];
-  const bullets: string[] = [];
-  const notes: string[] = [];
-  for (const raw of text.split("\n")) {
-    const line = raw.trim();
-    if (!line) continue;
-    const pdf = /^(.{2,120}?)\s*\(\s*(https?:\/\/\S+?\.pdf[^\s)]*)\s*\)[\s.]*$/i.exec(line);
-    if (pdf) {
-      let label = pdf[1].replace(/[-:\s]+$/, "").trim();
-      // Some crawled lines are "url (url)" duplicates - a raw URL is useless
-      // as a pill label, so fall back to the PDF's decoded filename.
-      if (/https?:\/\//i.test(label)) {
-        try {
-          const fname = decodeURIComponent(new URL(pdf[2]).pathname.split("/").pop() ?? "");
-          label = fname.replace(/\.pdf$/i, "").replace(/[-_]+/g, " ").trim() || "Checklist";
-        } catch { label = "Checklist"; }
-      }
-      pdfs.push({ label, url: pdf[2] });
-      continue;
-    }
-    if (/^[-•*]\s+/.test(line)) { bullets.push(line.replace(/^[-•*]\s+/, "")); continue; }
-    notes.push(line);
-  }
-  return { pdfs, bullets, notes };
-}
-
 function DocBlocks({ text }: { text: string }) {
-  const { pdfs, bullets, notes } = parseDocBlocks(text);
+  const { pdfs, bullets, labels, notes } = parseDocBlocks(text);
   return (
     <div className="space-y-3">
       {pdfs.length > 0 && (
@@ -276,6 +250,9 @@ function DocBlocks({ text }: { text: string }) {
             </a>
           ))}
         </div>
+      )}
+      {labels.length > 0 && (
+        <p className="mono-chrome">{labels.join(" · ")}</p>
       )}
       {bullets.length > 0 && (
         <ul className="max-w-[68ch] space-y-1.5">
@@ -1035,7 +1012,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const checkedDate = fmtDay(endpointDates[0] ?? dataset.meta.lastUpdated);
   const glossaryLabel = s.kind === "own" ? "home country" : s.kind === "fom" ? "freedom of movement" : s.kind === "visa_required" ? "visa required" : LEVEL_LABEL[s.kind].toLowerCase();
   const sourceHost = (url: string) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "official source"; } };
-  const appNote = need ? applicationNoteFor(d.iso3) : null;
+  const appNote = need ? applicationNoteFor(d.iso3, n.iso3) : null;
   const appNoteSentences = appNote ? splitSentences(appNote) : [];
 
   const steps = ([
