@@ -7,9 +7,11 @@ import ReportIssue from "./ReportIssue";
  * had nothing but the footer link.
  */
 export default function ReportLine({ className }: { className?: string }) {
+  // A <div>, not a <p>: ReportIssue renders a <dialog> (with its own headings
+  // and blocks), which is invalid - and a hydration error - inside a <p>.
   return (
-    <p className={className ?? "mt-10 text-[13px] text-ink-2"}>
+    <div className={className ?? "mt-10 text-[13px] text-ink-2"}>
       Spotted wrong or outdated information? <ReportIssue />
-    </p>
+    </div>
   );
 }

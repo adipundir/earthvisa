@@ -8,13 +8,34 @@ import { compute, LEVEL_LABEL } from "@/lib/compute";
 import type { AccessLevel, VisaType } from "@/lib/types";
 import { TOP_NATIONALITIES, TOP_DESTINATIONS, preWarmCorridorPairs, isUsefulCorridor, nameToSlug, DEMONYM } from "@/lib/corridors";
 import { SHORT_NAME, CORRIDOR_TITLE_ALIAS, ALIASES, UMRAH_NATIONALITIES } from "@/lib/colloquial";
-import { feesFor, relevantFees, variationFor, fmtFee, toUsd } from "@/lib/fees";
+import { feesFor, relevantFees, variationFor } from "@/lib/fees";
 import { applicationNoteFor } from "@/lib/applicationNotes";
 import { mergeVisaTypes } from "@/lib/merge-visa-types";
 import { parseDocBlocks } from "@/lib/docBlocks";
 
 import ReportIssue from "@/components/ReportIssue";
+import VisaTypeFilter from "@/components/VisaTypeFilter";
 import { residualSentences } from "@/lib/residual-notes";
+
+// Corridor pages show OFFICIAL prices only, in the fee's own currency (USD for
+// the USA, JPY for Japan, an INR reciprocal rate for India->Japan) - no "~$"
+// approximation. The sitewide fmtFee() appends a live-rate USD estimate, which
+// is a third, unofficial currency that just adds noise on a page already
+// scoped to two countries. A US corridor naturally shows "$185" because that
+// IS the official currency; nothing is lost.
+const fmtOfficial = (f: { amount: number | null; currency: string | null }): string =>
+  f.amount === 0 ? "Free" : f.amount == null ? "see official source" : `${f.currency ?? ""} ${f.amount.toLocaleString()}`.trim();
+
+// Pretty labels + display order for the visa-type category filter. Anything not
+// listed falls to the end, title-cased, so a new crawl category still renders.
+const VT_CATEGORY_LABEL: Record<string, string> = {
+  tourist: "Tourist", business: "Business", work: "Work", student: "Student",
+  family: "Family", medical: "Medical", transit: "Transit", investment: "Investment",
+  digital_nomad: "Digital nomad", retirement: "Retirement",
+  working_holiday: "Working holiday", other: "Other",
+};
+const VT_CATEGORY_ORDER = ["tourist", "business", "work", "student", "family", "medical", "transit", "investment", "digital_nomad", "retirement", "working_holiday", "other"];
+const vtCatLabel = (k: string) => VT_CATEGORY_LABEL[k] ?? k.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
 const bySlug = new Map(dataset.allCountries.map((c) => [nameToSlug(c.name), c]));
@@ -695,6 +716,16 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const feeList = relevantFees(d.iso3, s.kind, n.iso3);
   const feeVariation = variationFor(d.iso3, n.iso3);
   const headlineFee = feeVariation?.amount != null ? feeVariation : feeList.find((f) => f.amount != null) ?? null;
+  // When this nationality has a reciprocal reduction (e.g. India->Japan pays an
+  // INR rate), the destination's own standard schedule still matters as
+  // context - shown in ITS official currency (yen), not converted. Dedup by
+  // amount+currency and cap so the reference stays a footnote, not a second table.
+  const standardFeeRows = feeVariation?.amount != null
+    ? feeList
+        .filter((f) => f.amount != null && f.amount > 0 && f.currency !== feeVariation.currency)
+        .filter((f, i, arr) => arr.findIndex((x) => x.amount === f.amount && x.currency === f.currency) === i)
+        .slice(0, 4)
+    : [];
 
   // Held-credential unlocks: destinations like the UAE admit otherwise
   // visa-required nationals on arrival when they hold a major third-country
@@ -848,7 +879,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     const schedule = feeVariation?.amount != null ? ` for ${nd} citizens under ${d.name}'s nationality-based fee schedule` : "";
     const feeClause = headlineFee.amount === 0
       ? `the ${d.name} ${feeName} is free of charge${schedule}`
-      : `the ${d.name} ${feeName} fee is ${fmtFee(headlineFee)}${schedule}`;
+      : `the ${d.name} ${feeName} fee is ${fmtOfficial(headlineFee)}${schedule}`;
     // Never assert a specific VFS service-fee amount/currency here: the crawled
     // figure is whichever source-country VAC schedule happened to be available
     // (often India's, sometimes Nigeria's/Iraq's/USA's/etc.) and there is no
@@ -1183,7 +1214,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   rel="noreferrer"
                   className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-lg bg-accent px-5 text-[14.5px] font-semibold text-white transition hover:bg-accent-deep dark:bg-accent-deep dark:hover:bg-accent"
                 >
-                  Apply on the official portal ↗
+                  {vfsApplyUrl && applyUrl === vfsApplyUrl ? `Apply via ${destFees?.vfs.operator ?? "VFS Global"} ↗` : "Apply on the official portal ↗"}
                 </a>
               )}
               {advisoryUrl && (
@@ -1222,25 +1253,31 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             </div>
           </nav>
 
-          {/* ── What you need to do ── */}
+          {/* ── What you need to do. On desktop the context note sits left and
+                the numbered steps right, so the section fills the width instead
+                of stacking narrow on the left. ── */}
           <section id="apply" className="mt-12 scroll-mt-24">
             <h2 className="text-[20px] font-bold tracking-tight text-ink">
               {travelBanned ? `${d.name} travel status for ${nd} citizens` : need ? `How ${nd} citizens apply for a ${d.name} visa` : `Entering ${d.name} on ${article(nd)} ${nd} passport`}
             </h2>
-            {appNoteSentences.length > 0 && (
-              <p className="mt-3 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-                <span className="font-semibold text-ink">{appNoteSentences[0]}</span>
-                {appNoteSentences.length > 1 && <> {appNoteSentences.slice(1).join(" ")}</>}
-              </p>
-            )}
-            <ol className="mt-4 max-w-3xl border-y border-hair">
-              {steps.map((step, i) => (
-                <li key={i} className="flex gap-5 border-b border-hair py-3.5 text-[15px] leading-relaxed text-ink last:border-b-0">
-                  <span aria-hidden="true" className="pt-[3px] text-[13px] font-semibold tabular-nums text-ink-3">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="min-w-0">{step}</span>
-                </li>
-              ))}
-            </ol>
+            <div className={appNoteSentences.length > 0 ? "mt-4 grid gap-x-14 gap-y-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]" : "mt-4"}>
+              {appNoteSentences.length > 0 && (
+                <p className="text-[14.5px] leading-relaxed text-ink-2 lg:pt-1">
+                  <span className="font-semibold text-ink">{appNoteSentences[0]}</span>
+                  {appNoteSentences.length > 1 && <> {appNoteSentences.slice(1).join(" ")}</>}
+                </p>
+              )}
+              {/* Alone (no residence note), cap the steps at a readable measure
+                  so lines never run the full container width. */}
+              <ol className={`border-t border-hair ${appNoteSentences.length > 0 ? "" : "max-w-3xl"}`}>
+                {steps.map((step, i) => (
+                  <li key={i} className="flex gap-5 border-b border-hair py-3.5 text-[15px] leading-relaxed text-ink">
+                    <span aria-hidden="true" className="pt-[3px] text-[13px] font-semibold tabular-nums text-ink-3">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="min-w-0">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </section>
 
           {/* ── Official refusal statistics. Wording comes from the dataset, not
@@ -1248,62 +1285,64 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 only / visitor only / short-stay only), so a generic phrase like
                 "approval chance" would misstate the figure. ── */}
           {acceptance && (
-            <section id="odds" className="mt-12 scroll-mt-24">
+            <section id="odds" className="mt-14 scroll-mt-24">
               <h2 className="text-[20px] font-bold tracking-tight text-ink">
                 How often {d.name} refuses {nd} applicants
               </h2>
-              <div className="mt-4 max-w-3xl border-y border-hair py-5">
-                <p className="stat-num text-ink">{acceptance.rate}%</p>
-                <p className="mt-1 text-[14.5px] text-ink-2">
-                  {acceptance.label} · {acceptance.period}
-                </p>
-                <p className="measure mt-4 text-[14.5px] leading-relaxed text-ink-2">{acceptance.definition}</p>
-                <p className="measure mt-2 text-[14.5px] leading-relaxed text-ink-2">{acceptance.scope}</p>
-                {acceptance.caveats.length > 0 && (
-                  <ul className="measure mt-3 space-y-1.5">
-                    {acceptance.caveats.map((c, i) => (
-                      <li key={i} className="text-[13.5px] leading-relaxed text-ink-3">{c}</li>
-                    ))}
-                  </ul>
-                )}
-                <a
-                  href={acceptance.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mono-chrome mt-4 inline-flex items-center gap-1.5 transition hover:text-ink"
-                >
-                  <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${acceptance.sourceOfficial ? "bg-verdict" : "bg-ink-3"}`} />
-                  {acceptance.sourceName} ↗
-                </a>
+              <div className="mt-5 grid gap-x-14 gap-y-6 border-t border-hair pt-6 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)]">
+                <div>
+                  <p className="stat-num text-[clamp(40px,4vw,60px)] text-ink">{acceptance.rate}%</p>
+                  <p className="mt-1.5 text-[14.5px] text-ink-2">{acceptance.label} · {acceptance.period}</p>
+                  <a
+                    href={acceptance.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mono-chrome mt-4 inline-flex items-center gap-1.5 transition hover:text-ink"
+                  >
+                    <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${acceptance.sourceOfficial ? "bg-verdict" : "bg-ink-3"}`} />
+                    {acceptance.sourceName} ↗
+                  </a>
+                </div>
+                <div>
+                  <p className="text-[14.5px] leading-relaxed text-ink-2">{acceptance.definition}</p>
+                  <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">{acceptance.scope}</p>
+                  {acceptance.caveats.length > 0 && (
+                    <ul className="mt-3 space-y-1.5">
+                      {acceptance.caveats.map((c, i) => (
+                        <li key={i} className="text-[13.5px] leading-relaxed text-ink-3">{c}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
             </section>
           )}
 
           {/* ── Held-credential exceptions - officially published no-advance-visa routes ── */}
           {credGroups.length > 0 && (
-            <section id="no-advance-visa" className="mt-12 scroll-mt-24">
+            <section id="no-advance-visa" className="mt-14 scroll-mt-24">
               <h2 className="text-[20px] font-bold tracking-tight text-ink">No advance visa with these documents</h2>
-              <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
+              <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">
                 {d.name} officially admits {nd} citizens without a pre-arranged visa when they hold:
               </p>
-              <div className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
+              <div className={`mt-5 grid gap-4 ${credGroups.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"}`}>
                 {credGroups.map((group, gi) => (
-                  <div key={gi} className="py-4">
+                  <div key={gi} className="rounded-lg border border-hair bg-surface p-4">
                     <p className={`text-[15px] font-bold ${group[0].level === "visa_on_arrival" ? "text-voa" : group[0].level === "eta" || group[0].level === "e_visa" ? "text-online" : "text-verdict"}`}>
                       {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
                     </p>
                     {group.some((u) => u.label) && (
                       <div className="mt-2 flex flex-wrap gap-1.5">
                         {group.filter((u) => u.label).map((u, ui) => (
-                          <span key={`${u.cred}${ui}`} className="inline-flex items-center rounded-md border border-hair-strong bg-surface px-2 py-0.5 text-[13px] font-medium text-ink">{u.label}</span>
+                          <span key={`${u.cred}${ui}`} className="inline-flex items-center rounded-md border border-hair-strong bg-card px-2 py-0.5 text-[13px] font-medium text-ink">{u.label}</span>
                         ))}
                       </div>
                     )}
                     {group[0].conditions && (
-                      <p className="mt-2 max-w-2xl text-[14.5px] leading-relaxed text-ink-2">{group[0].conditions}. Conditions vary slightly per document.</p>
+                      <p className="mt-2 text-[14px] leading-relaxed text-ink-2">{group[0].conditions}. Conditions vary slightly per document.</p>
                     )}
                     {group[0].sourceUrl && (
-                      <a href={group[0].sourceUrl} target="_blank" rel="noreferrer" className="mt-1.5 inline-block text-[13px] font-medium text-ink-2 underline-offset-2 transition hover:text-ink hover:underline">
+                      <a href={group[0].sourceUrl} target="_blank" rel="noreferrer" className="mt-2 inline-block text-[13px] font-medium text-ink-2 underline-offset-2 transition hover:text-ink hover:underline">
                         {sourceHost(group[0].sourceUrl)} ↗
                       </a>
                     )}
@@ -1318,114 +1357,103 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
             </section>
           )}
 
-          {/* ── Official visa fees (crawled from government sources) ── */}
-          {feeList.length > 0 && (
-            <section id="fees" className="mt-12 scroll-mt-24">
+          {/* ── Official visa fees. Two columns fill the width: the headline
+                number + context on the left, the full official schedule on the
+                right. Prices are shown in their own official currency only (USD
+                for the USA, JPY for Japan, an INR reciprocal rate for India) -
+                no "~$" estimate, which would be a third, unofficial currency. ── */}
+          {feeList.length > 0 && (() => {
+            const heroFee = feeVariation?.amount != null ? feeVariation : headlineFee;
+            const heroLabel = feeVariation?.amount != null
+              ? `what ${nd} citizens pay`
+              : (headlineFee && "name" in headlineFee && headlineFee.name) ? headlineFee.name : `${d.name} visa fee`;
+            const feeVfsMatch = !!destFees?.vfs.service_fee &&
+              (vfsSrc.includes(`/${n.iso3.toLowerCase()}/`) || vfsSrc.includes(`/${nameToSlug(n.name)}/`) || vfsSrc.includes(`/${n.name.toLowerCase()}/`));
+            const showVfs = destFees?.vfs.used && s.kind === "visa_required";
+            const variationRowIdx = feeVariation?.amount != null && !feeVariation.items?.length
+              ? feeList.slice(0, 4).findIndex((f) => f.kind === feeVariation.kind) : -1;
+            return (
+            <section id="fees" className="mt-14 scroll-mt-24">
               <h2 className="text-[20px] font-bold tracking-tight text-ink">{d.name} visa cost for {nd} citizens</h2>
 
-              {/* Nationality-specific fee (reciprocity) - the single most useful
-                  number for this corridor, shown at readout scale. */}
-              {feeVariation?.amount != null && (
-                <div className="mt-5 flex flex-wrap items-end gap-x-10 gap-y-2">
-                  <div>
-                    <p className="stat-num text-[clamp(30px,3vw,42px)] text-ink">{fmtFee(feeVariation)}</p>
-                    <p className="stat-label mt-1.5">{feeVariation.items?.length ? `single entry, for ${nd} citizens` : `fee for ${nd} citizens`}</p>
-                  </div>
-                  {feeVariation.note && (
-                    <p className="max-w-xl pb-1 text-[14.5px] leading-relaxed text-ink-2">{feeVariation.note}</p>
+              <div className="mt-6 grid gap-x-14 gap-y-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+                {/* Left: the headline number + context */}
+                <div>
+                  {heroFee && (
+                    <>
+                      <p className="stat-num text-[clamp(34px,3.4vw,50px)] text-ink">{fmtOfficial(heroFee)}</p>
+                      <p className="stat-label mt-1.5">{heroLabel}</p>
+                    </>
+                  )}
+                  {feeVariation?.note && (
+                    <p className="measure mt-4 text-[14px] leading-relaxed text-ink-2">{feeVariation.note}</p>
+                  )}
+                  {standardFeeRows.length > 0 && (
+                    <div className="mt-6 border-t border-hair pt-4">
+                      <p className="mono-chrome">{d.name}&apos;s standard fee · most nationalities</p>
+                      <ul className="mt-2.5 space-y-1.5">
+                        {standardFeeRows.map((f, i) => (
+                          <li key={i} className="flex items-baseline justify-between gap-4 text-[14px]">
+                            <span className="min-w-0 text-ink-2">{f.name}</span>
+                            <span className="shrink-0 font-semibold tabular-nums text-ink">{fmtOfficial(f)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {showVfs && (
+                    <p className="measure mt-5 text-[13.5px] leading-relaxed text-ink-2">
+                      Lodged through {destFees!.vfs.operator}{feeVfsMatch
+                        ? `, whose service fee for ${nd} applicants is about ${destFees!.vfs.currency ?? ""} ${destFees!.vfs.service_fee} on top of the visa fee (varies by centre).`
+                        : `, whose service fee applies on top and varies by centre.`}
+                    </p>
                   )}
                 </div>
-              )}
 
-              {/* Itemized official schedule for this nationality (stored in the
-                  destination's original currency; ~$ converted via the fx-rates
-                  snapshot) - every category, not just the headline number. */}
-              {feeVariation?.items?.length ? (
-                <>
-                  <ul className="mt-5 max-w-3xl divide-y divide-hair border-y border-hair">
-                    {feeVariation.items.map((it, i) => (
-                      <li key={i} className="flex min-h-[44px] flex-wrap items-center gap-x-4 gap-y-0.5 py-2.5">
-                        <p className="min-w-0 flex-1 text-[15px] font-medium text-ink">{it.label}</p>
-                        <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">
-                          {feeVariation.currency} {it.amount.toLocaleString()}
-                          {toUsd(it.amount, feeVariation.currency) != null && feeVariation.currency !== "USD" && (
-                            <span className="ml-2 font-medium text-ink-2">~${toUsd(it.amount, feeVariation.currency)!.toLocaleString()}</span>
+                {/* Right: the full official schedule */}
+                <div className="lg:border-l lg:border-hair lg:pl-14">
+                  {feeVariation?.items?.length ? (
+                    <ul className="divide-y divide-hair border-y border-hair">
+                      {feeVariation.items.map((it, i) => (
+                        <li key={i} className="flex min-h-[48px] items-center gap-4 py-3">
+                          <p className="min-w-0 flex-1 text-[14.5px] font-medium text-ink">{it.label}</p>
+                          <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">{feeVariation.currency} {it.amount.toLocaleString()}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <ul className="divide-y divide-hair border-y border-hair">
+                      {feeList.slice(0, 6).map((f, i) => (
+                        <li key={i} className="flex min-h-[52px] items-center gap-4 py-3">
+                          <div className="min-w-0 flex-1">
+                            <p className="text-[14.5px] font-semibold text-ink">{f.name}</p>
+                            {f.validity && <p className="mt-0.5 text-[12.5px] font-medium text-ink-2">{f.validity}</p>}
+                          </div>
+                          {feeVariation?.amount != null && i === variationRowIdx ? (
+                            <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">{fmtOfficial(feeVariation)}</p>
+                          ) : f.amount != null ? (
+                            <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">{fmtOfficial(f)}</p>
+                          ) : (
+                            <p className="shrink-0 text-[13px] text-ink-2">not published</p>
                           )}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                  {feeVariation.source_url && (
-                    <a href={feeVariation.source_url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] mt-2.5 inline-flex items-center gap-1 text-[13px] font-medium text-ink-2 underline-offset-2 transition hover:text-ink hover:underline">
-                      Official schedule · {sourceHost(feeVariation.source_url)} ↗
-                    </a>
+                        </li>
+                      ))}
+                    </ul>
                   )}
-                </>
-              ) : (
-
-              <ul className="mt-5 max-w-3xl divide-y divide-hair border-y border-hair">
-                {(() => {
-                  // The nationality-specific variation overrides ONE row - the first
-                  // of its kind (the primary product). Overriding every same-kind row
-                  // clobbered e.g. Maldives' MVR 750 extension fee with India's free
-                  // VoA, mislabelling a real fee as "Free".
-                  const variationRowIdx = feeVariation?.amount != null
-                    ? feeList.slice(0, 4).findIndex((f) => f.kind === feeVariation.kind)
-                    : -1;
-                  return feeList.slice(0, 4).map((f, i) => (
-                    <li key={i} className="flex min-h-[52px] flex-wrap items-center gap-x-4 gap-y-1 py-3">
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[15px] font-semibold text-ink">{f.name}</p>
-                        <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-[13px] font-medium text-ink-2">
-                          {f.validity && <span>{f.validity}</span>}
-                          {f.official && <span className="text-verdict">official source</span>}
-                          {f.source_url && (
-                            <a href={f.source_url} target="_blank" rel="noreferrer" className="underline-offset-2 transition hover:text-ink hover:underline">
-                              {sourceHost(f.source_url)} ↗
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                      {feeVariation?.amount != null && i === variationRowIdx ? (
-                        <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">{fmtFee(feeVariation)}</p>
-                      ) : f.amount != null ? (
-                        <p className="shrink-0 text-[15.5px] font-bold tabular-nums text-ink">{fmtFee(f)}</p>
-                      ) : (
-                        <p className="shrink-0 text-[13px] text-ink-2">Fee not published by {d.name}</p>
-                      )}
-                    </li>
-                  ));
-                })()}
-              </ul>
-              )}
-              {/* Only visa_required corridors route through a VFS/VAC centre -
-                  on VoA/eTA/e-visa corridors the application never touches VFS,
-                  so the note would contradict the page's own apply steps. */}
-              {destFees?.vfs.used && s.kind === "visa_required" && (() => {
-                // The crawled service fee is a source-country figure (usually one
-                // centre's schedule). Show the amount ONLY when its source URL is
-                // attributable to this corridor's nationality (e.g. .../ind/en/...
-                // on an India corridor); for everyone else keep the
-                // nationality-agnostic wording - same rule as the destination page.
-                const src = (destFees.vfs.source_url ?? "").toLowerCase();
-                const natSlugLower = nameToSlug(n.name);
-                const natMatch = !!destFees.vfs.service_fee &&
-                  (src.includes(`/${n.iso3.toLowerCase()}/`) || src.includes(`/${natSlugLower}/`) || src.includes(`/${n.name.toLowerCase()}/`));
-                return (
-                  <p className="mt-3 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-                    Applications are handled via {destFees.vfs.operator} - {natMatch
-                      ? `the service fee for ${nd} applicants is about ${destFees.vfs.currency ?? ""} ${destFees.vfs.service_fee} on top of the visa fee (varies by centre).`
-                      : `a service fee applies on top of the visa fee and varies by country and centre.`}
-                  </p>
-                );
-              })()}
-              {/* Provenance lives on each fee row's source link - this line
-                  only needs to carry freshness. */}
-              <p className="mt-3 text-[13px] font-medium tabular-nums text-ink-2">
-                Fees checked {fmtDay(destFees?.updated) ?? "recently"}
-              </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1 text-[13px] font-medium text-ink-2">
+                    {(feeVariation?.source_url || feeList[0]?.source_url) && (
+                      <a href={(feeVariation?.source_url || feeList[0]?.source_url)!} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 underline-offset-2 transition hover:text-ink hover:underline">
+                        <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-verdict" />
+                        Official schedule · {sourceHost((feeVariation?.source_url || feeList[0]?.source_url)!)} ↗
+                      </a>
+                    )}
+                    <span className="tabular-nums">Checked {fmtDay(destFees?.updated) ?? "recently"}</span>
+                  </div>
+                </div>
+              </div>
             </section>
-          )}
+            );
+          })()}
 
           {/* ── Visa types: ONE list per corridor. The destination catalogue
                 (facts: stay, fee, processing) and the VFS checklists (paperwork,
@@ -1435,9 +1463,15 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 confidently match stays as its own entry rather than filing one
                 visa's documents under another visa's name. ── */}
           {mergedTypes.length > 0 && (() => {
-            const TYPE_PREVIEW = 8;
-            const visible = mergedTypes.slice(0, TYPE_PREVIEW);
-            const hidden = mergedTypes.slice(TYPE_PREVIEW);
+            // Category filter data: count each present category, ordered by the
+            // preferred sequence, so the menu bar reads tourist -> business ->
+            // ... rather than crawl order.
+            const catCounts = new Map<string, number>();
+            for (const m of mergedTypes) catCounts.set(m.category, (catCounts.get(m.category) ?? 0) + 1);
+            const cats = [...catCounts.entries()]
+              .sort((a, b) => (VT_CATEGORY_ORDER.indexOf(a[0]) + 1 || 99) - (VT_CATEGORY_ORDER.indexOf(b[0]) + 1 || 99))
+              .map(([key, count]) => ({ key, label: vtCatLabel(key), count }));
+            const hasSharedBlocks = vfsCommonLines.length > 0 || vfsPhotoLines.length > 0;
             // Raw VFS names are often ALL CAPS ("TOURIST"); title-case them so a
             // checklist-only entry doesn't shout next to catalogue names.
             const prettyName = (raw: string) => {
@@ -1474,19 +1508,17 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               if (f.online) out.push("online");
               return out;
             };
-            const renderType = (m: (typeof mergedTypes)[number]) => (
-              <details key={m.key} className="group">
-                <summary className="flex min-h-[48px] cursor-pointer list-none items-center gap-3 py-3 [&::-webkit-details-marker]:hidden">
-                  <span className="text-[15px] font-semibold text-ink transition group-open:text-accent">{prettyName(m.name)}</span>
-                  {m.category.toLowerCase() !== m.name.trim().toLowerCase() && (
-                    <span className="shrink-0 rounded-md border border-hair-strong px-1.5 py-0.5 text-[11.5px] font-medium text-ink-2">{m.category}</span>
-                  )}
+            const renderType = (m: (typeof mergedTypes)[number], i: number) => (
+              <details key={`${m.key}-${i}`} data-vt={m.category} className="group border-t border-hair first:border-t-0">
+                <summary className="flex min-h-[52px] cursor-pointer list-none items-center gap-3 py-3.5 [&::-webkit-details-marker]:hidden">
+                  <span className="min-w-0 flex-1 text-[15px] font-semibold text-ink transition group-open:text-accent">{prettyName(m.name)}</span>
+                  <span className="shrink-0 rounded-md border border-hair-strong px-1.5 py-0.5 text-[11px] font-medium text-ink-2">{vtCatLabel(m.category)}</span>
                   {m.docs && (
-                    <span className="shrink-0 text-[11.5px] font-medium text-ink-3">documents</span>
+                    <span className="hidden shrink-0 text-[11.5px] font-medium text-ink-3 sm:inline">documents</span>
                   )}
-                  <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-auto h-2.5 w-2.5 shrink-0 text-ink-3 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  <svg viewBox="0 0 12 8" aria-hidden="true" className="ml-1 h-2.5 w-2.5 shrink-0 text-ink-3 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </summary>
-                <div className="pb-5 pr-6 pt-1">
+                <div className="pb-5 pr-2 pt-1">
                   {facts(m).length > 0 && (
                     <p className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-[13px] font-medium tabular-nums text-ink-2">
                       {facts(m).map((x) => <span key={x}>{x}</span>)}
@@ -1528,55 +1560,57 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               </details>
             );
             return (
-              <section id="visa-types" className="mt-12 scroll-mt-24">
+              <section id="visa-types" className="mt-14 scroll-mt-24">
                 <h2 className="text-[20px] font-bold tracking-tight text-ink">
                   {d.name} visa types {noVisaShortStay ? "" : `for ${nd} citizens`}
                 </h2>
                 <p className="measure mt-2 text-[14.5px] leading-relaxed text-ink-2">
-                  Open a type for its documents, conditions and official page.
-                  {/\.pdf/i.test([vfsCommonLines.join("\n"), ...vfsDocs.map((v) => v.documents_required)].join("\n")) &&
-                    " Where a type links an official PDF checklist, fill it in and submit it with the application form."}
+                  Filter by purpose, then open any type for its checklist, conditions and official page.
                 </p>
-                {/* Shared blocks sit above the list: they apply across types, so
-                    repeating them inside every accordion would be duplication. */}
-                {vfsCommonLines.length > 0 && (
-                  <div className="mt-4 max-w-3xl border-t border-hair pt-4">
-                    <p className="mb-2.5 text-[13px] font-semibold text-ink-2">Required for most visa types</p>
-                    <DocBlocks text={vfsCommonLines.join("\n")} />
+
+                <VisaTypeFilter categories={cats.length > 1 ? cats : []}>
+                  {/* List left, shared prerequisites right - the two columns fill
+                      the width and the accordion stays single-column, so opening
+                      one type never leaves a blank gap beside it. */}
+                  <div className={`mt-2 grid gap-x-14 gap-y-8 ${hasSharedBlocks ? "lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]" : ""}`}>
+                    <div className="border-b border-hair">
+                      {mergedTypes.map(renderType)}
+                    </div>
+
+                    {hasSharedBlocks && (
+                      <aside className="lg:sticky lg:top-24 lg:self-start">
+                        {vfsCommonLines.length > 0 && (
+                          <div className="rounded-lg border border-hair bg-surface p-4">
+                            <p className="mono-chrome">Required for most types</p>
+                            <div className="mt-2.5">
+                              <DocBlocks text={vfsCommonLines.join("\n")} />
+                            </div>
+                          </div>
+                        )}
+                        {vfsPhotoLines.length > 0 && (
+                          <div className="mt-4 rounded-lg border border-hair bg-surface p-4">
+                            <p className="mono-chrome">Photo requirements</p>
+                            <ul className="mt-2.5 space-y-1.5">
+                              {vfsPhotoLines.map((line, i) => (
+                                <li key={i} className="flex gap-2.5 text-[13.5px] leading-relaxed text-ink-2">
+                                  <span aria-hidden="true" className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
+                                  <span className="min-w-0">{line}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </aside>
+                    )}
                   </div>
-                )}
-                {vfsPhotoLines.length > 0 && (
-                  <div className="mt-4 max-w-3xl border-t border-hair pt-4">
-                    <p className="mb-2.5 text-[13px] font-semibold text-ink-2">Photo requirements</p>
-                    <ul className="space-y-1.5">
-                      {vfsPhotoLines.map((line, i) => (
-                        <li key={i} className="flex gap-2.5 text-[14.5px] leading-relaxed text-ink-2">
-                          <span aria-hidden="true" className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
-                          <span className="min-w-0">{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                <div className="mt-4 max-w-3xl divide-y divide-hair border-y border-hair">
-                  {visible.map(renderType)}
-                </div>
-                {hidden.length > 0 && (
-                  <details className="group mt-3 max-w-3xl">
-                    <summary className="chip cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <span className="group-open:hidden">Show all {mergedTypes.length} visa types</span>
-                      <span className="hidden group-open:inline">Hide the rest</span>
-                      <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    </summary>
-                    <div className="mt-3 divide-y divide-hair border-y border-hair">{hidden.map(renderType)}</div>
-                  </details>
-                )}
-                <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px]">
+                </VisaTypeFilter>
+
+                <p className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-1 text-[13px]">
                   {vfsCorr?.sourceUrl && (
                     <a href={vfsCorr.sourceUrl} target="_blank" rel="noreferrer" className="font-medium text-ink-2 transition hover:text-ink">via VFS Global ↗</a>
                   )}
                   <Link href={`/destination/${dest}`} className="font-semibold text-accent underline-offset-2 hover:underline">
-                    {d.name} visa policy, fees &amp; entry rules in full →
+                    {d.name}{" "}visa policy, fees &amp; entry rules in full →
                   </Link>
                 </p>
               </section>
@@ -1584,22 +1618,22 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           })()}
 
           {/* ── FAQ ── */}
-          <section id="faq" className="mt-12 scroll-mt-24">
+          <section id="faq" className="mt-14 scroll-mt-24">
             <h2 className="text-[20px] font-bold tracking-tight text-ink">{d.name} visa for {nd} citizens - FAQ</h2>
-            <div className="mt-3 max-w-3xl divide-y divide-hair border-y border-hair">
+            <div className="mt-4 grid border-t border-hair sm:grid-cols-2 sm:gap-x-14">
               {faq.map(({ q, a }) => (
-                <details key={q} className="group py-1">
-                  <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-4 py-3 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
-                    {q}
+                <details key={q} className="group border-b border-hair">
+                  <summary className="flex min-h-[48px] cursor-pointer list-none items-center justify-between gap-4 py-3.5 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                    <span className="min-w-0">{q}</span>
                     <svg viewBox="0 0 12 8" aria-hidden="true" className="h-2.5 w-2.5 shrink-0 text-ink-3 transition-transform duration-150 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 1.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </summary>
-                  <p className="mt-1 mb-3 max-w-[68ch] text-[15px] leading-relaxed text-ink-2">{a}</p>
+                  <p className="mb-3.5 text-[14.5px] leading-relaxed text-ink-2">{a}</p>
                 </details>
               ))}
             </div>
-            <p className="mt-4 text-[13px] text-ink-2">
+            <div className="mt-4 text-[13px] text-ink-2">
               Spotted wrong or outdated information? <ReportIssue />
-            </p>
+            </div>
           </section>
 
           {/* ── Related corridors (crawl mesh) ── */}
