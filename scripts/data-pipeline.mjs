@@ -81,6 +81,31 @@ const STAGES = [
     inputs: ["src/data/dataset.json"],
     outputs: ["public/explorer/core.json"],
   },
+  {
+    // Offline data bundles for the iOS app (earthvisa-ios), served from
+    // /mobile/manifest.json so the app can refresh its data between App Store
+    // releases. Visa rules change weekly and review takes days, so the app
+    // cannot get its facts from its own release cycle.
+    //
+    // Same shape of reasoning as explorer-slices: public/mobile/ is gitignored,
+    // so on a fresh clone the output is missing and this always runs, which is
+    // what we want since nothing else ships it. It reads only committed derived
+    // data plus data/vfs, so it needs no git history and cannot trip the
+    // shallow-repository sitemap guard that build-dataset.mjs carries.
+    //
+    // Costs about 5s: the 53.8MB VFS corpus compresses at brotli quality 9
+    // rather than 11 for exactly this reason. See build-mobile-bundle.mjs.
+    name: "mobile-bundle",
+    script: "build-mobile-bundle.mjs",
+    inputs: [
+      "src/data/dataset.json",
+      "src/data/visa-fees.json",
+      "src/data/proof-of-funds.json",
+      "src/data/fx-rates.json",
+      "data/vfs",
+    ],
+    outputs: ["public/mobile/manifest.json"],
+  },
 ];
 
 const args = new Set(process.argv.slice(2));

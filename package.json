@@ -12,7 +12,10 @@
     "indexnow": "node scripts/indexnow.mjs",
     "data": "node scripts/data-pipeline.mjs",
     "data:check": "node scripts/data-pipeline.mjs --check",
-    "data:force": "node scripts/data-pipeline.mjs --force"
+    "data:force": "node scripts/data-pipeline.mjs --force",
+    "mobile:bundle": "node scripts/build-mobile-bundle.mjs",
+    "mobile:verify": "node scripts/verify-mobile-bundle.mjs",
+    "mobile:fixtures": "node scripts/verify-mobile-bundle.mjs --fixtures"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
