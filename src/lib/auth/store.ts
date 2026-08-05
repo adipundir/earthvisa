@@ -270,3 +270,26 @@ export function bearerToken(req: Request): string | null {
   const match = /^Bearer\s+(.+)$/i.exec(header.trim());
   return match ? match[1].trim() : null;
 }
+
+// ── Account deletion ─────────────────────────────────────────────────────────
+
+/** Permanently deletes an account and everything belonging to it.
+ *
+ *  App Store Guideline 5.1.1(v) requires that an app supporting account
+ *  creation also offers account DELETION from inside the app, not via a support
+ *  email or a web form. This is the endpoint behind that.
+ *
+ *  A real delete, not a soft one. Sessions, codes and applications cascade from
+ *  the foreign key; the account row itself goes. Anything added later that
+ *  references an account MUST declare ON DELETE CASCADE, or this silently stops
+ *  being a full deletion and the guarantee becomes a lie.
+ *
+ *  Returns false when the account no longer exists, which is treated as success
+ *  by the route: the caller asked for it to be gone and it is gone. */
+export async function deleteAccount(accountId: string): Promise<boolean> {
+  return writeQuery(async (sql) => {
+    const rows = (await sql`
+      DELETE FROM accounts WHERE id = ${accountId}::uuid RETURNING id`) as Row[];
+    return rows.length > 0;
+  });
+}

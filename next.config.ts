@@ -32,7 +32,15 @@ const nextConfig: NextConfig = {
       {
         // Every bundle filename contains a hash of its own content, so a given
         // URL can never change meaning and can be cached forever.
-        source: "/mobile/:version/:file*",
+        //
+        // The version segment is constrained to v<digits> and the filename uses
+        // `+` (one or more) rather than `*` (zero or more). Both matter: with
+        // `:version/:file*` this pattern also matched /mobile/manifest.json,
+        // binding :version to "manifest.json" and :file to nothing, and the
+        // manifest was then served immutable for a year. The manifest is the
+        // ONLY mutable URL in the scheme, so that silently disabled over-the-air
+        // data updates for every installed app while looking perfectly healthy.
+        source: "/mobile/:version(v\\d+)/:file+",
         headers: [
           { key: "cache-control", value: "public, max-age=31536000, immutable" },
           // These files ARE brotli, they are not brotli-encoded JSON. Serving

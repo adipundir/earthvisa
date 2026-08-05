@@ -103,6 +103,23 @@ export default function SiteFooter() {
             <span className="h-3 w-px bg-hair-strong" aria-hidden="true" />
             <ReportIssue className="relative text-[13px] text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-ink hover:underline" />
             <span className="h-3 w-px bg-hair-strong" aria-hidden="true" />
+            {/* Reachable from every page. App Store Guideline 5.1.1(i) needs a
+                privacy policy link, and GDPR/DPDP need it discoverable rather
+                than merely existing at a URL. */}
+            <Link
+              href="/privacy"
+              className="relative text-[13px] text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-ink hover:underline"
+            >
+              Privacy
+            </Link>
+            <span className="h-3 w-px bg-hair-strong" aria-hidden="true" />
+            <Link
+              href="/terms"
+              className="relative text-[13px] text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-ink hover:underline"
+            >
+              Terms
+            </Link>
+            <span className="h-3 w-px bg-hair-strong" aria-hidden="true" />
             <a
               href="https://instagram.com/earthvisa.in"
               target="_blank"
