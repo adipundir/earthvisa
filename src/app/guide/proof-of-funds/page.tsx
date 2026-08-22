@@ -213,17 +213,21 @@ export default function ProofOfFundsHub() {
               financial profile. Reported ranges come from applicants, not from any threshold.
             </p>
             <div className="card-doc mt-4 overflow-x-auto">
-              <table className="w-full min-w-[52rem] border-collapse text-left text-sm">
+              {/* Visa and the official figure stay inside a 390px viewport; the
+                  note is the last column so it is what the sideways swipe reveals. */}
+              <table className="w-full min-w-[55rem] border-collapse text-left text-sm">
                 <colgroup>
-                  <col className="w-[28rem]" />
-                  <col className="w-[10rem]" />
-                  <col className="w-[14rem]" />
+                  <col className="w-[11.5rem]" />
+                  <col className="w-[8.5rem]" />
+                  <col className="w-[11rem]" />
+                  <col className="w-[24rem]" />
                 </colgroup>
                 <thead>
                   <tr className="border-b border-line-strong bg-paper-2 text-[12px] font-semibold text-ink-mute">
                     <th scope="col" className="px-4 py-2.5">Visa</th>
                     <th scope="col" className="px-4 py-2.5">Official minimum</th>
                     <th scope="col" className="px-4 py-2.5">Applicants report</th>
+                    <th scope="col" className="px-4 py-2.5">Notes</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -241,12 +245,9 @@ export default function ProofOfFundsHub() {
                         className="scroll-mt-24 border-t border-line align-top"
                       >
                         <td className="px-4 py-3">
-                          <p className="font-display font-medium text-ink">
+                          <p className="font-display font-medium leading-snug text-ink">
                             <span aria-hidden className="mr-1.5">{iso3 ? flagFor(iso3) : "🇪🇺"}</span>
                             {p.visa}
-                          </p>
-                          <p className="mt-1 text-[12.5px] leading-snug text-ink-soft">
-                            {NOTES[p.key] ?? (hasFigure ? headline!.note : off.guidance)}
                           </p>
                           {source && (
                             <a
@@ -271,6 +272,9 @@ export default function ProofOfFundsHub() {
                         </td>
                         <td className="mono px-4 py-3 text-[13px] tabular-nums text-ink-soft">
                           {p.community.typical_approved ? communityRange(p.community.typical_approved) : "-"}
+                        </td>
+                        <td className="px-4 py-3 text-[12.5px] leading-snug text-ink-soft">
+                          {NOTES[p.key] ?? (hasFigure ? headline!.note : off.guidance)}
                         </td>
                       </tr>
                     );
