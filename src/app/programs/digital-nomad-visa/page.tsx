@@ -184,15 +184,26 @@ function Chevron() {
   );
 }
 
-// 53 of the 58 entries carry some spelling of "digital nomad" as their
+// 54 of the 58 entries carry some spelling of exactly "digital nomad" as their
 // category, which is what the whole page is about - the label only earns a line
-// when it says something the page title does not.
-const GENERIC_CATEGORY = /^digital[\s_-]?nomad/i;
+// when it says something the page title does not. Anchored at both ends, so
+// categories that name more than nomads (Mauritius' "digital nomad remote
+// worker", Thailand's "digital nomad / remote worker / freelancer") still show.
+const GENERIC_CATEGORY = /^digital[\s_-]?nomad$/i;
 // "Not specified on official page/source", "Not applicable - programme
-// discontinued" and friends repeat on ~17 entries and tell the reader nothing
-// the row does not already say. "Not yet ..." is deliberately NOT matched -
-// those strings carry rollout dates the announced badge does not.
-const EMPTY_PROCESSING = /^not\s+(specified|applicable|officially)/i;
+// discontinued" and friends repeat on 11 entries and tell the reader nothing
+// the row does not already say. Stripped as a clause rather than dropped as a
+// whole string, because Portugal's tacks a real instruction onto the end of it
+// ("...; consular appointment required"). "Not yet ..." is deliberately NOT
+// matched - those strings carry rollout dates the announced badge does not.
+const EMPTY_PROCESSING = /^not\s+(?:specified|applicable|officially)\b[^;]*(?:;\s*)?/i;
+
+/** drops the "not specified" boilerplate, keeps anything the source put after it */
+function cleanProcessing(processing: string): string | null {
+  const rest = processing.replace(EMPTY_PROCESSING, "").trim();
+  if (!rest) return null;
+  return rest.charAt(0).toUpperCase() + rest.slice(1);
+}
 
 // Every eligibility blob is one prose paragraph that mixes the money threshold
 // (the one fact people open this page for) with the rest of the conditions.
@@ -242,7 +253,7 @@ function NomadRow({ e }: { e: NomadEntry }) {
   const w = passportWorth(e.iso3);
   const { money, conditions } = splitEligibility(e.detail);
   const category = e.category && !GENERIC_CATEGORY.test(e.category) ? typeLabel(e.category) : null;
-  const processing = e.processing && !EMPTY_PROCESSING.test(e.processing) ? e.processing : null;
+  const processing = e.processing ? cleanProcessing(e.processing) : null;
   return (
     <tr className="border-t border-line align-top">
       <td className="py-2.5 pr-3">

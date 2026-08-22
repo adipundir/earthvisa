@@ -429,6 +429,7 @@ export default function PassportExplorer() {
 
   // "Notify me when my visa access changes" - one quiet line on the reach
   // result. Same store/degradation contract as reports; honeypot + rate-limited.
+  const [notifyOpen, setNotifyOpen] = useState(false);
   const [notifyEmail, setNotifyEmail] = useState("");
   const [notifyHoney, setNotifyHoney] = useState("");
   const [notifyState, setNotifyState] = useState<"idle" | "sending" | "done" | "error">("idle");
@@ -711,26 +712,6 @@ export default function PassportExplorer() {
         )}
       </div>
 
-      {autoDetected && selected.includes(autoDetected) && (
-        <p className="mt-2.5 text-[13px] text-ink-2">
-          Detected from your location - not your passport? Remove it above.
-        </p>
-      )}
-
-      {/* Low-reach passport, no visa added yet: surface the credentials lever -
-          the biggest reach unlock most visitors don't know exists (audit #9). */}
-      {selected.length > 0 && creds.length === 0 && reachCount > 0 && reachCount < 70 && (
-        <p className="mt-2.5 text-[13px] text-ink-2">
-          A US, UK, Schengen or Japan visa unlocks extra countries -{" "}
-          <button
-            type="button"
-            onClick={() => { setCredOpen(true); setAddOpen(false); }}
-            className="font-medium text-accent underline-offset-2 transition hover:underline"
-          >
-            add a visa you hold
-          </button>.
-        </p>
-      )}
 
       {/* The answer */}
       {dataFailed ? (
@@ -765,13 +746,6 @@ export default function PassportExplorer() {
                 <> · {selected.map((s) => nameFor(s)).join(" + ")} passport{selected.length > 1 ? "s" : ""}</>
               )}
             </p>
-            {/* One quiet line (never a tour): the reach number is the hook for
-                the Earthling ID - claim it while it's on screen. */}
-            <p className="mt-2 text-[13px]">
-              <Link href="/earthling" className="relative text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-accent hover:underline">
-                Claim this reach as your Earthling ID - citizen of Earth, on record →
-              </Link>
-            </p>
             {selected.length > 0 && (
               <button
                 type="button"
@@ -783,54 +757,6 @@ export default function PassportExplorer() {
                 </svg>
                 {shared ? "Link copied" : "Share my reach"}
               </button>
-            )}
-            {/* One quiet line (never a tour): visa rules shift - leave an email
-                and we'll flag it if these passports' access changes. */}
-            {selected.length > 0 && (
-              <div className="mt-4 max-w-[400px]">
-                {notifyState === "done" ? (
-                  <p className="text-[13px] text-ink-2">
-                    You&apos;re on the list - we&apos;ll email you if this access changes.
-                  </p>
-                ) : (
-                  <form onSubmit={submitNotify}>
-                    <label htmlFor="notify-email" className="block text-[13px] text-ink-2">
-                      Get notified when your visa access changes
-                    </label>
-                    {/* honeypot: bots fill hidden fields; humans never see it */}
-                    <input
-                      type="text"
-                      name="website"
-                      tabIndex={-1}
-                      autoComplete="off"
-                      aria-hidden="true"
-                      value={notifyHoney}
-                      onChange={(e) => setNotifyHoney(e.target.value)}
-                      className="absolute left-[-9999px] h-0 w-0 opacity-0"
-                    />
-                    <div className="mt-1.5 flex gap-2">
-                      <input
-                        id="notify-email"
-                        type="email"
-                        value={notifyEmail}
-                        onChange={(e) => { setNotifyEmail(e.target.value); if (notifyState === "error") setNotifyState("idle"); }}
-                        placeholder="you@email.com"
-                        autoComplete="email"
-                        aria-label="Email for visa-access change alerts"
-                        className="h-10 min-w-0 flex-1 rounded-lg border border-hair-strong bg-surface px-3 text-[14px] text-ink outline-none transition placeholder:text-ink-3 focus:border-accent"
-                      />
-                      <button
-                        type="submit"
-                        disabled={notifyState === "sending"}
-                        className="shrink-0 rounded-lg border border-hair-strong bg-surface px-3.5 text-[13px] font-medium text-ink-2 transition hover:border-ink-3 hover:text-ink disabled:opacity-60"
-                      >
-                        {notifyState === "sending" ? "Sending…" : "Notify me"}
-                      </button>
-                    </div>
-                    {notifyError && <p className="mt-1.5 text-[12.5px] text-change">{notifyError}</p>}
-                  </form>
-                )}
-              </div>
             )}
             </div>
           </div>
@@ -887,12 +813,74 @@ export default function PassportExplorer() {
               ))}
             </p>
           )}
+          {/* The two standing asks. They used to sit directly under the reach
+              number, where a claim link, a share button, an email form, a
+              location note and a credentials nudge were five things to do in
+              front of the one thing the page exists to say. Down here they are
+              read by someone who has already looked. */}
           {selected.length > 0 && (
-            <div className="mt-6">
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-hair pt-5 text-[13px]">
+              <Link href="/earthling" className="font-medium text-ink-2 underline-offset-2 transition hover:text-accent hover:underline">
+                Claim your Earthling ID →
+              </Link>
+              <button
+                type="button"
+                onClick={() => setNotifyOpen((v) => !v)}
+                aria-expanded={notifyOpen}
+                className="font-medium text-ink-2 underline-offset-2 transition hover:text-accent hover:underline"
+              >
+                Email me if this changes
+              </button>
               <ReportIssue
                 page={`/passport/${nameToSlug(nameFor(selected[0]))}`}
                 className="text-[12.5px] text-ink-3 transition hover:text-ink"
               />
+            </div>
+          )}
+          {selected.length > 0 && notifyOpen && (
+            <div className="mt-4 max-w-[400px]">
+              {notifyState === "done" ? (
+                  <p className="text-[13px] text-ink-2">
+                    You&apos;re on the list - we&apos;ll email you if this access changes.
+                  </p>
+                ) : (
+                  <form onSubmit={submitNotify}>
+                    <label htmlFor="notify-email" className="block text-[13px] text-ink-2">
+                      Get notified when your visa access changes
+                    </label>
+                    {/* honeypot: bots fill hidden fields; humans never see it */}
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      value={notifyHoney}
+                      onChange={(e) => setNotifyHoney(e.target.value)}
+                      className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                    />
+                    <div className="mt-1.5 flex gap-2">
+                      <input
+                        id="notify-email"
+                        type="email"
+                        value={notifyEmail}
+                        onChange={(e) => { setNotifyEmail(e.target.value); if (notifyState === "error") setNotifyState("idle"); }}
+                        placeholder="you@email.com"
+                        autoComplete="email"
+                        aria-label="Email for visa-access change alerts"
+                        className="h-10 min-w-0 flex-1 rounded-lg border border-hair-strong bg-surface px-3 text-[14px] text-ink outline-none transition placeholder:text-ink-3 focus:border-accent"
+                      />
+                      <button
+                        type="submit"
+                        disabled={notifyState === "sending"}
+                        className="shrink-0 rounded-lg border border-hair-strong bg-surface px-3.5 text-[13px] font-medium text-ink-2 transition hover:border-ink-3 hover:text-ink disabled:opacity-60"
+                      >
+                        {notifyState === "sending" ? "Sending…" : "Notify me"}
+                      </button>
+                    </div>
+                    {notifyError && <p className="mt-1.5 text-[12.5px] text-change">{notifyError}</p>}
+                  </form>
+                )}
             </div>
           )}
         </>

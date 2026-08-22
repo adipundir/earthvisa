@@ -358,7 +358,7 @@ export default function SchengenGuidePage() {
                     className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
                   >
                     <span className="text-lg leading-none">{flagFor(g.iso3)}</span>
-                    <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
+                    <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
                       {DEMONYM[g.iso3] ?? g.name} citizens
                     </span>
                     <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
@@ -375,7 +375,7 @@ export default function SchengenGuidePage() {
                     className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
                   >
                     <span className="text-lg leading-none">{flagFor(g.iso3)}</span>
-                    <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
+                    <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
                       {DEMONYM[g.iso3] ?? g.name} citizens
                     </span>
                     <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>

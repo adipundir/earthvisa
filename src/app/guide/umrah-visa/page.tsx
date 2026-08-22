@@ -231,12 +231,14 @@ export default function UmrahVisaGuidePage() {
               for <strong className="text-ink">Umrah</strong>, and your passport decides which: the tourist visa, the
               dedicated Umrah visa via the official{" "}
               <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>{" "}
-              platform, and - holding a used US, UK or Schengen visa - a visa on arrival.
+              platform, and - holding a valid, previously used US, UK or Schengen visa - a visa on arrival.
             </p>
             {notEligibleNames.length > 0 && (
               <p className="text-body mt-4 text-ink-soft">
                 {notEligibleNames.join(", ")} have <strong className="text-ink">no</strong> tourist e-Visa
-                eligibility in our data, so routes 2 and 3 are their practical paths.
+                eligibility in our data, so the Nusuk Umrah visa
+                {credentialVoA.length > 0 ? " - or the US/UK/Schengen visa-holder route -" : ""} is their practical
+                path.
               </p>
             )}
           </section>
