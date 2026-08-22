@@ -304,17 +304,21 @@ body {
 @media (min-width: 640px) { .text-body { font-size: 16px; } }
 .measure { max-width: 68ch; }
 
-/* Legacy mono-caps meta chrome → small Archivo label (caps kept for layout
-   fit on unmigrated pages; v2 code must not use this class). */
+/* Legacy mono-caps meta chrome → small Archivo label.
+   The caps and the wide tracking are gone. This class labels roughly 800
+   elements across the unmigrated templates - table headers, stat keys,
+   breadcrumbs, per-card meta - and while it shouted, every one of those pages
+   read as a v1 document rather than as this system. The design system's own
+   rule is sentence case everywhere, with uppercase only inside a verdict or
+   status chip, so the fastest way to bring the site onto the system was to
+   stop this one declaration from breaking it. v2 code still must not reach
+   for the class; it just no longer does damage where it survives. */
 .mono-chrome {
   font-family: var(--font-body), system-ui, sans-serif;
-  /* 11.5px was illegible on a phone in combination with caps + wide tracking;
-     this one declaration covers ~800 elements across the legacy templates. */
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--ink-mute);
+  letter-spacing: 0;
+  color: var(--ink-2, var(--ink-mute));
   font-variant-numeric: tabular-nums;
 }
 
@@ -324,11 +328,10 @@ body {
   align-items: center;
   gap: 10px;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--ink-mute);
+  letter-spacing: 0;
+  color: var(--ink-2, var(--ink-mute));
 }
 .eyebrow::after {
   content: "";

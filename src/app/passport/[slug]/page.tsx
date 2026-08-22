@@ -493,13 +493,10 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <h1 className="text-display text-ink">
                 <span className="mr-2.5 align-baseline text-[0.9em] leading-none sm:mr-3" aria-hidden="true">{flag}</span>
                 {country.name} Passport
-                <span className="block text-xl font-normal italic text-ink-soft sm:text-3xl">
-                  Visa-Free Countries &amp; Travel Power 2026
-                </span>
               </h1>
               {rank && (
-                <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-                  Ranked #{rank} of {TOTAL_PASSPORTS} passports worldwide ·{" "}
+                <p className="mt-2 text-[13px] font-medium text-ink-2">
+                  Ranked #{rank} of {TOTAL_PASSPORTS} ·{" "}
                   <Link href="/rankings" className="relative underline decoration-line underline-offset-4 transition after:absolute after:-inset-x-1 after:-inset-y-3 after:content-[''] hover:text-ink">
                     Full 2026 passport index
                   </Link>
@@ -508,7 +505,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
             </div>
 
             {/* Stats */}
-            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
+            <div className="mt-6 overflow-hidden rounded-lg border border-hair"><dl className="grid grid-cols-2 gap-px bg-hair text-ink sm:grid-cols-4">
               {[
                 { k: "Visa-free", v: vfCount },
                 { k: "Visa on arrival", v: voaCount },
@@ -516,7 +513,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 { k: "Total reach", v: total },
               ].map(({ k, v }) => (
                 <div key={k} className="bg-card px-4 py-2.5">
-                  <dt className="mono-chrome">{k}</dt>
+                  <dt className="text-[13px] font-medium text-ink-2">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -533,36 +530,16 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
 
-          {/* Intro - keyword-rich, kept to one short paragraph; the stat tiles
-              above carry the per-level counts. */}
-          <section className="mt-10 max-w-3xl">
-            <p className="text-body text-ink-soft">
-              The <strong className="text-ink">{demonym} passport</strong> provides visa-free, visa-on-arrival or online-authorisation access to{" "}
-              <strong className="text-ink">{total} countries</strong> as of 2026, making it{" "}
-              {rank && rank <= 20 ? "one of the most powerful passports in the world" : rank && rank <= 50 ? "a strong mid-tier passport" : rank && rank <= 100 ? "a passport with moderate global reach" : "a passport with growing international access"}.
-              {cbiCount > 0 && (
-                <>
-                  {" "}{citizensCap} can also pursue a second passport or residence permit through{" "}
-                  <Link href="/programs/citizenship-by-investment" className="font-medium text-stamp underline-offset-2 hover:underline">citizenship by investment</Link> or a{" "}
-                  <Link href="/programs/golden-visa" className="font-medium text-stamp underline-offset-2 hover:underline">golden visa</Link>.
-                </>
-              )}
-            </p>
-            <p className="eyebrow mt-3">
-              All data from official government sources
-            </p>
-          </section>
-
           {/* Visa-free destinations */}
           {vfEdges.length > 0 && (
             <section className="mt-12">
               <h2 className="text-section text-ink">
                 Visa-Free Destinations for {demonym} Passport Holders ({vfCount})
               </h2>
-              <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                Enter with just your {demonym} passport - no visa application, no fee, no advance paperwork required.
-                {listLinks.vf && <> <Link href={listLinks.vf} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full visa-free guide →</Link></>}
-              </p>
+              {listLinks.vf && (
+                <p className="mt-3"><Link href={listLinks.vf} className="chip">Visa-free guide →</Link></p>
+              )}
+
               <SearchableLedger count={vfEdges.length} noun="visa-free destinations">
                 <ul className={`${LEDGER_GRID_UL} mt-3`}>
                   {vfEdges.slice(0, 30).map((e) => (
@@ -572,7 +549,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 {vfEdges.length > 30 && (
                   <details className="group mt-3">
                     <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                      <span className="group-open:hidden">Show all {vfEdges.length} visa-free destinations</span>
+                      <span className="group-open:hidden">Show all {vfEdges.length}</span>
                       <span className="hidden group-open:inline">Show fewer</span>
                       <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                     </summary>
@@ -593,10 +570,10 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <h2 className="text-section text-ink">
                 Visa on Arrival Countries for {demonym} Passport Holders ({voaCount})
               </h2>
-              <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                Receive your visa stamp at the airport on arrival - no embassy visit required.
-                {listLinks.voa && <> <Link href={listLinks.voa} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full visa-on-arrival guide →</Link></>}
-              </p>
+              {listLinks.voa && (
+                <p className="mt-3"><Link href={listLinks.voa} className="chip">Visa-on-arrival guide →</Link></p>
+              )}
+
               <SearchableLedger count={voaEdges.length} noun="visa-on-arrival countries">
                 <ul className={`${LEDGER_GRID_UL} mt-3`}>
                   {voaEdges.slice(0, 18).map((e) => (
@@ -606,7 +583,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 {voaEdges.length > 18 && (
                   <details className="group mt-3">
                     <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                      <span className="group-open:hidden">Show all {voaEdges.length} visa-on-arrival countries</span>
+                      <span className="group-open:hidden">Show all {voaEdges.length}</span>
                       <span className="hidden group-open:inline">Show fewer</span>
                       <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                     </summary>
@@ -628,9 +605,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <h2 className="text-section text-ink">
                 eTA Destinations for {demonym} Passport Holders ({etaOnlyEdges.length})
               </h2>
-              <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                Apply online before you travel for a quick, usually automated pre-screening - not a visa, and layered on top of entry you already qualify for. No embassy visit required.
-              </p>
+
               <SearchableLedger count={etaOnlyEdges.length} noun="eTA destinations">
                 <ul className={`${LEDGER_GRID_UL} mt-3`}>
                   {etaOnlyEdges.slice(0, 30).map((e) => (
@@ -640,7 +615,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 {etaOnlyEdges.length > 30 && (
                   <details className="group mt-3">
                     <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                      <span className="group-open:hidden">Show all {etaOnlyEdges.length} eTA destinations</span>
+                      <span className="group-open:hidden">Show all {etaOnlyEdges.length}</span>
                       <span className="hidden group-open:inline">Show fewer</span>
                       <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                     </summary>
@@ -661,10 +636,10 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <h2 className="text-section text-ink">
                 e-Visa Destinations for {demonym} Passport Holders ({evisaOnlyEdges.length})
               </h2>
-              <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                Apply online before you travel - this is an actual visa, just granted digitally instead of via an embassy stamp, so no embassy visit is required for eligible short-term visits.
-                {listLinks.evisa && <> <Link href={listLinks.evisa} className="font-medium text-stamp underline-offset-2 hover:underline">Read the full e-visa guide →</Link></>}
-              </p>
+              {listLinks.evisa && (
+                <p className="mt-3"><Link href={listLinks.evisa} className="chip">e-Visa guide →</Link></p>
+              )}
+
               <SearchableLedger count={evisaOnlyEdges.length} noun="e-Visa destinations">
                 <ul className={`${LEDGER_GRID_UL} mt-3`}>
                   {evisaOnlyEdges.slice(0, 30).map((e) => (
@@ -674,7 +649,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 {evisaOnlyEdges.length > 30 && (
                   <details className="group mt-3">
                     <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                      <span className="group-open:hidden">Show all {evisaOnlyEdges.length} e-Visa destinations</span>
+                      <span className="group-open:hidden">Show all {evisaOnlyEdges.length}</span>
                       <span className="hidden group-open:inline">Show fewer</span>
                       <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                     </summary>
@@ -695,9 +670,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <h2 className="text-section text-ink">
                 Freedom of Movement Countries ({fomCount})
               </h2>
-              <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                {citizensCap} have the right to live and work in these countries through regional bloc membership - no visa required.
-              </p>
+
               <SearchableLedger count={fomEdges.length} noun="freedom-of-movement countries">
                 <ul className={`${LEDGER_GRID_UL} mt-3`}>
                   {fomEdges.map((e) => {
@@ -730,18 +703,12 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 Citizenship by Investment Programs Available to {citizensTitle} ({cbiCount})
               </h2>
               {rank != null && rank <= 20 ? (
-                <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                  Investment thresholds, qualifying routes and processing times for every program are compared on the central guide.{" "}
-                  <Link href="/programs/citizenship-by-investment" className="font-medium text-stamp underline-offset-2 hover:underline">
-                    Compare all citizenship by investment programs →
-                  </Link>
-                </p>
+                <p className="mt-3"><Link href="/programs/citizenship-by-investment" className="chip">Compare all programmes →</Link></p>
+
               ) : (
                 <>
-                  <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                    {demonym} passport holders can apply for citizenship by investment in these countries - gaining a second passport that can significantly increase global travel access and add rights to live, work, and do business abroad.{" "}
-                    <Link href="/programs/citizenship-by-investment" className="font-medium text-stamp underline-offset-2 hover:underline">Compare all programs →</Link>
-                  </p>
+                  <p className="mt-3"><Link href="/programs/citizenship-by-investment" className="chip">Compare all programmes →</Link></p>
+
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     {result.cbi.slice(0, 6).map((p) => (
                       <CbiCard key={p.iso3} p={p} />
@@ -750,7 +717,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                   {result.cbi.length > 6 && (
                     <details className="group mt-3">
                       <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                        <span className="group-open:hidden">Show all {result.cbi.length} citizenship by investment programs</span>
+                        <span className="group-open:hidden">Show all {result.cbi.length}</span>
                         <span className="hidden group-open:inline">Show fewer</span>
                         <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                       </summary>
@@ -773,9 +740,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <h2 className="text-section text-ink">
                 Already hold a US visa?
               </h2>
-              <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                A valid US visa unlocks additional destinations for {citizens} beyond this passport alone - several countries admit US-visa holders visa-free or on arrival under official published rules.
-              </p>
+
               <Link href={listLinks.us} className="btn-stamp mt-4">
                 See every country a US visa unlocks →
               </Link>
@@ -789,9 +754,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
               <h2 className="text-section text-ink">
                 Visa Required for {demonym} Passport Holders ({vrCount})
               </h2>
-              <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                {demonym} citizens must apply in advance at an embassy, consulate, or official visa portal before travelling - no on-arrival or online-only option exists for these destinations. Fees shown are each destination&apos;s cheapest official published tourist-visa rate; tap a destination for the full guide.
-              </p>
+
               <SearchableLedger count={vrEdges.length} noun="visa-required destinations">
                 <div className="card-doc mt-3 overflow-x-auto">
                   <table className="w-full min-w-[420px] border-collapse text-left">
@@ -806,7 +769,7 @@ export default async function PassportPage({ params }: { params: Promise<{ slug:
                 {vrEdges.length > 30 && (
                   <details className="group mt-3">
                     <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp transition hover:text-ink">
-                      <span className="group-open:hidden">Show all {vrEdges.length} visa-required destinations</span>
+                      <span className="group-open:hidden">Show all {vrEdges.length}</span>
                       <span className="hidden group-open:inline">Show fewer</span>
                       <svg viewBox="0 0 16 16" aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m4 6 4 4 4-4" /></svg>
                     </summary>

@@ -235,8 +235,8 @@ function ProgramRow({
   const status = isSuspended(p) ? "suspended" : isAnnouncedOnly(p) ? "announced, not enacted" : null;
   return (
     <tr className="border-b border-line align-top">
-      <td className="mono py-3 pr-3 text-right tabular-nums text-ink-mute">{rank ?? "-"}</td>
-      <td className="py-3 pr-4">
+      <td className="mono py-2.5 pr-3 text-right tabular-nums text-ink-mute">{rank ?? "-"}</td>
+      <td className="py-2.5 pr-4">
         <Link
           href={`/passport/${slug}`}
           className="inline-flex items-center gap-2 font-display font-medium text-ink transition hover:text-stamp"
@@ -271,34 +271,33 @@ function ProgramRow({
           )}
         </span>
       </td>
-      <td className="mono py-3 pr-4 text-right tabular-nums">
+      <td className="mono py-2.5 pr-4 text-right tabular-nums">
         {option && option.min_amount != null ? (
           <strong className="text-ink">{fmtMoney(option.min_amount, option.currency)}</strong>
         ) : (
           <span className="text-ink-soft">not published</span>
         )}
       </td>
-      <td className="mono py-3 pr-4 text-[11px] leading-relaxed text-ink-soft">
+      <td className="mono py-2.5 pr-4 text-[11px] leading-snug text-ink-soft">
         {options.length === 0
           ? "-"
           : options
               .map((o) => `${optionLabel(o.type)} ${o.min_amount != null ? fmtMoney(o.min_amount, o.currency) : "(not published)"}`)
               .join(" · ")}
       </td>
-      <td className="py-3 pr-4 text-[12px] leading-relaxed text-ink-soft">
+      <td className="py-2.5 pr-4 text-[12px] leading-snug text-ink-soft">
         {p.processing_time ? processingLabel(p.processing_time) : "not published"}
         {conditions.length > 0 && <span className="mt-0.5 block text-ink-mute">{conditions.join(" · ")}</span>}
       </td>
-      <td className="mono py-3 text-right text-[12px] tabular-nums">
+      <td className="mono py-2.5 text-right text-[12px] leading-snug tabular-nums">
         {w ? (
-          <>
-            <span className="text-ink">{w.visaFree} visa-free</span>
-            <span className="block text-ink-soft">#{w.rank} of {TOTAL_RANKED_PASSPORTS}</span>
-          </>
+          <span className="text-ink">
+            {w.visaFree} visa-free <span className="text-ink-soft">· #{w.rank}/{TOTAL_RANKED_PASSPORTS}</span>
+          </span>
         ) : (
           <span className="text-ink-soft">-</span>
         )}
-        <span className="mt-1 block whitespace-nowrap">
+        <span className="mt-0.5 block whitespace-nowrap">
           <Link href={`/passport/${slug}`} className="text-stamp transition hover:text-ink">
             passport
           </Link>
@@ -368,9 +367,9 @@ export default function CitizenshipByInvestmentPage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
-              <strong className="text-ink">Citizenship by investment (CBI)</strong> grants a full second passport in
-              exchange for a qualifying investment - a donation to a national fund, approved real estate, or a
-              business stake - and every program below sits next to what its passport is actually worth in our{" "}
+              <strong className="text-ink">Citizenship by investment (CBI)</strong> grants a second passport for a
+              qualifying investment - a donation, approved real estate, or a business stake - and every programme
+              below sits next to what its passport is worth in our{" "}
               <Link
                 href="/rankings"
                 className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
@@ -395,7 +394,15 @@ export default function CitizenshipByInvestmentPage() {
             </p>
             <p className="mt-4 text-[12px] font-medium text-ink-mute sm:hidden">Scroll sideways for all columns →</p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">
-              <table className="w-full min-w-[60rem] border-collapse text-sm">
+              <table className="w-full min-w-[66rem] border-collapse text-sm">
+                <colgroup>
+                  <col className="w-[2.25rem]" />
+                  <col className="w-[12rem]" />
+                  <col className="w-[7.5rem]" />
+                  <col className="w-[18rem]" />
+                  <col className="w-[17rem]" />
+                  <col className="w-[9rem]" />
+                </colgroup>
                 <thead>
                   <tr className="border-b border-line-strong text-left text-[12px] text-ink-mute">
                     <th scope="col" className="py-2.5 pr-3 text-right font-medium">#</th>
@@ -449,13 +456,9 @@ export default function CitizenshipByInvestmentPage() {
             <h2 className="text-section text-ink">
               See exactly what a second passport would add
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Pick any combination of passports on Earth Visa and see the combined visa-free map - before you spend a
-              cent.
-            </p>
             <Link
               href="/visit"
-              className="btn-stamp mt-5"
+              className="btn-stamp mt-4"
             >
               Compare passports on Earth Visa →
             </Link>

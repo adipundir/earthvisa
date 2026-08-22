@@ -168,8 +168,16 @@ export default function ProofOfFundsHub() {
                 Multiply the daily rate by your number of days. Cyprus is not in Schengen but applies the same rule to
                 its national visa.
               </p>
+              <p className="mt-3 text-[12px] font-medium text-ink-mute sm:hidden">
+                Both tables scroll sideways for the notes column →
+              </p>
               <div className="card-doc mt-4 overflow-x-auto">
-                <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+                <table className="w-full min-w-[46rem] border-collapse text-left text-sm">
+                  <colgroup>
+                    <col className="w-[9rem]" />
+                    <col className="w-[9rem]" />
+                    <col className="w-[28rem]" />
+                  </colgroup>
                   <thead>
                     <tr className="border-b border-line-strong bg-paper-2 text-[12px] font-semibold text-ink-mute">
                       <th scope="col" className="px-4 py-2.5">Country</th>
@@ -205,7 +213,12 @@ export default function ProofOfFundsHub() {
               financial profile. Reported ranges come from applicants, not from any threshold.
             </p>
             <div className="card-doc mt-4 overflow-x-auto">
-              <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
+              <table className="w-full min-w-[52rem] border-collapse text-left text-sm">
+                <colgroup>
+                  <col className="w-[28rem]" />
+                  <col className="w-[10rem]" />
+                  <col className="w-[14rem]" />
+                </colgroup>
                 <thead>
                   <tr className="border-b border-line-strong bg-paper-2 text-[12px] font-semibold text-ink-mute">
                     <th scope="col" className="px-4 py-2.5">Visa</th>
@@ -232,7 +245,7 @@ export default function ProofOfFundsHub() {
                             <span aria-hidden className="mr-1.5">{iso3 ? flagFor(iso3) : "🇪🇺"}</span>
                             {p.visa}
                           </p>
-                          <p className="mt-1 max-w-md text-[12.5px] leading-relaxed text-ink-soft">
+                          <p className="mt-1 text-[12.5px] leading-snug text-ink-soft">
                             {NOTES[p.key] ?? (hasFigure ? headline!.note : off.guidance)}
                           </p>
                           {source && (

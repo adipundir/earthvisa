@@ -189,9 +189,10 @@ function Chevron() {
 // when it says something the page title does not.
 const GENERIC_CATEGORY = /^digital[\s_-]?nomad/i;
 // "Not specified on official page/source", "Not applicable - programme
-// discontinued", "Not yet officially launched" and friends repeat on ~17
-// entries and tell the reader nothing the row's own status badge does not.
-const EMPTY_PROCESSING = /^not\s+(specified|applicable|officially|yet)/i;
+// discontinued" and friends repeat on ~17 entries and tell the reader nothing
+// the row does not already say. "Not yet ..." is deliberately NOT matched -
+// those strings carry rollout dates the announced badge does not.
+const EMPTY_PROCESSING = /^not\s+(specified|applicable|officially)/i;
 
 // Every eligibility blob is one prose paragraph that mixes the money threshold
 // (the one fact people open this page for) with the rest of the conditions.

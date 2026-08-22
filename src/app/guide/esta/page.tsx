@@ -229,8 +229,7 @@ export default function EstaGuidePage() {
             <p className="text-body mt-3 text-ink-soft">
               <strong className="text-ink">ESTA</strong>{" "}
               (Electronic System for Travel Authorization) decides whether a traveller may board for the United States
-              under the <strong className="text-ink">Visa Waiver Program</strong>. CBP is blunt about the limit: it is
-              not a visa, and cannot stand in for one where US law requires a visa.
+              under the <strong className="text-ink">Visa Waiver Program</strong>.
             </p>
             <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
               <div className="card-doc p-4">
@@ -264,9 +263,9 @@ export default function EstaGuidePage() {
               (Division O, Title II of Public Law 114-113) added section 217(a)(12) to the Immigration and Nationality
               Act: it removes people from the programme for where they have been, whatever their nationality, record
               or reason for going. <strong className="text-ink">Presence</strong> is the trigger - tourism, family,
-              journalism, aid work and business count identically. The statute names Iraq and Syria and extends to
-              state sponsors of terrorism plus any country of concern designated by the Secretary of Homeland
-              Security, which is how the list grew past two.
+              journalism, aid work and business count identically. It names Iraq and Syria, then extends to state
+              sponsors of terrorism and any country of concern designated by the Secretary of Homeland Security -
+              which is how the list reached nine.
             </p>
 
             <div className="card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3">
@@ -292,15 +291,25 @@ export default function EstaGuidePage() {
                 1 March 2011 question. If either date could apply to you, assume you are affected and plan for a visa.
               </p>
             </div>
+
+            <h3 className="mt-8 font-display text-lg font-semibold text-ink">The exceptions are narrow</h3>
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
+              Two carve-outs, both about <em>why</em> you were there, both requiring a determination by the Secretary
+              of Homeland Security: <strong className="text-ink">military service</strong> in the armed forces of a
+              Visa Waiver Program country, and{" "}
+              <strong className="text-ink">official duties as a full-time employee</strong> of a Visa Waiver Program
+              government. DHS may also waive the bar in US law enforcement or national security interests: there is
+              no waiver form - eligibility is considered when you apply for an ESTA - and waivers are rare, never
+              decided at the border, and not something to plan a trip around.
+            </p>
           </section>
 
           {/* Revocation */}
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">An Approved ESTA Can Be Revoked</h2>
             <p className="text-body mt-3 text-ink-soft">
-              An authorisation granted before a disqualifying trip is not protection: CBP may revoke an approved ESTA
-              at any time, and its Cuba guidance is explicit that for a traveller present in Cuba on or after 12
-              January 2021, or holding both a VWP and Cuban nationality,{" "}
+              CBP may revoke an approved ESTA at any time, and its Cuba guidance is explicit: for a traveller present
+              in Cuba on or after 12 January 2021, or holding both a VWP and Cuban nationality,{" "}
               <strong className="text-ink">the ESTA will be revoked</strong>. It can be valid when you book and
               invalid when you fly, so CBP advises applying for a new ESTA or a visa rather than finding out at the
               airport.
@@ -329,31 +338,7 @@ export default function EstaGuidePage() {
             </div>
             <p className="text-body mt-4 max-w-3xl text-ink-soft">
               Libya, Somalia and Yemen are deliberately <strong className="text-ink">not</strong> here: going there
-              restricts you, holding their nationality does not. The exceptions below do not apply to this rule.
-            </p>
-          </section>
-
-          {/* Exceptions and waivers */}
-          <section className="mt-12 max-w-3xl">
-            <h2 className="text-section text-ink">The Exceptions Are Narrow</h2>
-            <p className="text-body mt-3 text-ink-soft">
-              Two carve-outs, both about <em>why</em> you were there, both requiring a determination by the Secretary
-              of Homeland Security:
-            </p>
-            <ol className="text-body mt-4 space-y-3 text-ink-soft">
-              <li className="flex gap-3">
-                <span aria-hidden className="mono shrink-0 text-stamp">1</span>
-                <span>Presence to perform <strong className="text-ink">military service</strong> in the armed forces of a Visa Waiver Program country.</span>
-              </li>
-              <li className="flex gap-3">
-                <span aria-hidden className="mono shrink-0 text-stamp">2</span>
-                <span>Presence to carry out <strong className="text-ink">official duties as a full-time employee</strong> of a Visa Waiver Program country&apos;s government.</span>
-              </li>
-            </ol>
-            <p className="text-body mt-4 text-ink-soft">
-              Beyond those, DHS may waive the bar in US law enforcement or national security interests. There is no
-              waiver form - eligibility is considered when you apply for an ESTA. Waivers are rare, case-by-case,
-              never decided at the border, and not something to plan a trip around.
+              restricts you, holding their nationality does not. The exceptions above do not apply to this rule.
             </p>
           </section>
 
@@ -361,8 +346,8 @@ export default function EstaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">Fee, Validity and When You Need a New One</h2>
             <p className="text-body mt-3 text-ink-soft">
-              Section 100014 of Public Law 119-21 (4 July 2025) raised the statutory minimum, and CBP began charging
-              the inflation-adjusted FY2026 amount on 1 January 2026. It is adjusted annually, so confirm any figure -
+              Section 100014 of Public Law 119-21 (4 July 2025) raised the statutory minimum; CBP began charging the
+              inflation-adjusted FY2026 amount on 1 January 2026. It is adjusted annually, so confirm any figure -
               including this one - on{" "}
               <a
                 href={OFFICIAL_ESTA_URL}
@@ -440,10 +425,10 @@ export default function EstaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">If You Are Affected, You Can Still Travel</h2>
             <p className="text-body mt-3 text-ink-soft">
-              Losing VWP eligibility is not a ban - it moves you from the online route to the embassy one: a
-              nonimmigrant visa, normally a B-1/B-2, with an application, fee, interview and wait. Keep the ESTA
-              denial or revocation: travellers affected by the 2015 Act with imminent business, medical or
-              humanitarian travel may request an expedited appointment, and the consulate may ask to see it.
+              Losing VWP eligibility is not a ban - it moves you to the embassy route: a nonimmigrant visa, normally
+              a B-1/B-2, with an application, fee, interview and wait. Keep the ESTA denial or revocation, because
+              travellers affected by the 2015 Act with imminent business, medical or humanitarian travel may request
+              an expedited appointment and the consulate may ask to see it.
             </p>
             <p className="text-body mt-3 text-ink-soft">
               Entry suspensions by presidential proclamation are a separate regime with their own country lists,
