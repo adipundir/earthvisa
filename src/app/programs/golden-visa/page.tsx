@@ -28,8 +28,12 @@ const europeOpenCountries = [
   ...new Set(europePrograms.filter((p) => !isClosedProgram(p)).map((p) => p.name)),
 ].sort();
 
-// region -> [countryName, programs[]][] (countries alphabetical, per-country programs kept in data order)
-const byRegion = new Map<string, [string, RbiProgram[]][]>();
+// region -> { rows, countries } - one flat, country-alphabetical row list per region.
+// Every route used to render as its own card inside a per-region <details>; the same
+// facts now live in one compact table row each, so the whole page needs a single
+// disclosure instead of five.
+type RegionSlice = { rows: RbiProgram[]; countries: number };
+const byRegion = new Map<string, RegionSlice>();
 for (const region of REGION_ORDER) {
   const inRegion = programs.filter((p) => p.region === region);
   const byCountry = new Map<string, RbiProgram[]>();
@@ -37,15 +41,21 @@ for (const region of REGION_ORDER) {
     if (!byCountry.has(p.name)) byCountry.set(p.name, []);
     byCountry.get(p.name)!.push(p);
   }
-  byRegion.set(
-    region,
-    [...byCountry.entries()].sort((a, b) => a[0].localeCompare(b[0])),
-  );
+  const ordered = [...byCountry.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+  byRegion.set(region, { rows: ordered.flatMap(([, list]) => list), countries: ordered.length });
 }
 
-// Europe is the busiest region; show the first N countries expanded and collapse the rest
-// behind the same <details> pattern the other regions use (content stays in HTML for crawlers).
-const EUROPE_PREVIEW = 12;
+const europe = byRegion.get("Europe") ?? { rows: [], countries: 0 };
+const otherRegions = REGION_ORDER.filter((r) => r !== "Europe");
+
+// Europe leads the page; the rest of its routes join the other regions behind one disclosure.
+const EUROPE_PREVIEW = 18;
+const hiddenRows =
+  Math.max(europe.rows.length - EUROPE_PREVIEW, 0) +
+  otherRegions.reduce((n, r) => n + (byRegion.get(r)?.rows.length ?? 0), 0);
+const hiddenCountries =
+  Math.max(europe.countries - new Set(europe.rows.slice(0, EUROPE_PREVIEW).map((p) => p.iso3)).size, 0) +
+  otherRegions.reduce((n, r) => n + (byRegion.get(r)?.countries ?? 0), 0);
 
 // Programs literally named "golden" (one representative per country, closed ones kept and badged).
 const namedGolden = [
@@ -91,7 +101,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is a golden visa?",
-    a: `A golden visa is a residence permit granted in exchange for a qualifying investment - typically real estate, fund units, government bonds, a bank deposit, or a business investment. Unlike citizenship by investment, it grants residency first; many programs then publish a path to permanent residency and citizenship. Our dataset tracks ${programs.length} investment-linked residence routes across ${countryCount} countries, compiled from official government publications.`,
+    a: `A golden visa is a residence permit granted in exchange for a qualifying investment - typically real estate, fund units, government bonds, a bank deposit, or a business investment. Unlike citizenship by investment, which grants a passport directly, a golden visa grants residency first: it is usually cheaper to enter and often keeps the investment recoverable, but citizenship arrives only after years of residence, if at all. Our dataset tracks ${programs.length} investment-linked residence routes across ${countryCount} countries, compiled from official government publications.`,
   },
   {
     q: "Which countries offer golden visa programs in 2026?",
@@ -123,10 +133,6 @@ const faqs = [
   {
     q: "Does a golden visa lead to citizenship?",
     a: `Often, but indirectly. ${withCitizenshipPath.length} of the ${programs.length} routes in our dataset publish a residence-to-citizenship timeline, ranging from ${minCitPath} to ${maxCitPath} years. Naturalisation typically adds language, physical presence and good-character requirements on top of holding the permit - the published year count is an eligibility minimum, not a guarantee.`,
-  },
-  {
-    q: "Golden visa vs citizenship by investment: what is the difference?",
-    a: `A golden visa grants residency (a permit to live in the country) in exchange for investment; citizenship by investment grants a passport directly. Golden visas are usually cheaper to enter and often keep the investment recoverable, but citizenship arrives only after years of residence, if at all. See our citizenship by investment guide for the direct-passport routes.`,
   },
 ];
 
@@ -174,63 +180,73 @@ function Chevron() {
   );
 }
 
-function CountryBlock({ name, list }: { name: string; list: RbiProgram[] }) {
-  const iso3 = list[0].iso3;
-  const w = passportWorth(iso3);
-  const slug = nameToSlug(name);
+/** published residence milestones for one route, as one short cell */
+function pathText(p: RbiProgram): string {
+  const parts: string[] = [];
+  if (p.path_to_pr_years === 0) parts.push("PR immediate");
+  else if (
+    p.path_to_pr_years != null &&
+    p.path_to_pr_years > 0 &&
+    (p.path_to_citizenship_years == null || p.path_to_pr_years <= p.path_to_citizenship_years)
+  ) {
+    parts.push(`PR ${p.path_to_pr_years} yrs`);
+  }
+  if (p.path_to_citizenship_years != null) parts.push(`citizenship ${p.path_to_citizenship_years} yrs`);
+  return parts.join(" · ");
+}
+
+function RouteRow({ p }: { p: RbiProgram }) {
+  const closed = isClosedProgram(p);
+  const w = passportWorth(p.iso3);
+  const path = pathText(p);
   return (
-    <div className="card-doc p-4">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="text-2xl">{flagFor(iso3)}</span>
+    <tr className="border-b border-line align-top">
+      <td className="py-1.5 pr-4">
         <Link
-          href={`/passport/${slug}`}
-          className="inline-flex min-h-[44px] items-center font-display text-base font-semibold text-ink transition hover:text-stamp"
+          href={`/passport/${nameToSlug(p.name)}`}
+          className="inline-flex min-h-[44px] items-center gap-2 font-display text-sm font-medium text-ink transition hover:text-stamp"
         >
-          {name}
+          <span className="text-base">{flagFor(p.iso3)}</span>
+          {p.name}
         </Link>
-        {w && (
-          <span className="mono ml-auto text-[11px] text-ink-soft">
-            Passport worth: <strong className="text-ink">{w.visaFree} visa-free</strong> · #{w.rank} of{" "}
-            {TOTAL_RANKED_PASSPORTS}
+      </td>
+      <td className="py-3 pr-4 text-[13px] leading-snug text-ink-soft">
+        <span className={closed ? "text-ink-mute line-through decoration-stamp/60" : ""}>{p.program_name}</span>
+        {closed && (
+          <span className="mono ml-1.5 whitespace-nowrap rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[11px] text-stamp ring-1 ring-stamp/30">
+            closed
           </span>
         )}
-      </div>
-      <ul className="mt-2 divide-y divide-line">
-        {list.map((p, i) => {
-          const closed = isClosedProgram(p);
-          return (
-            <li key={`${p.program_name}-${i}`} className="py-2.5">
-              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                <span className={`font-display text-sm font-medium ${closed ? "text-ink-mute line-through decoration-stamp/60" : "text-ink"}`}>
-                  {p.program_name}
-                </span>
-                {closed && (
-                  <span className="mono rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
-                    closed per official source
-                  </span>
-                )}
-              </div>
-              <p className="mono mt-1 text-[11px] text-ink-soft">
-                {typeLabel(p.type)} ·{" "}
-                {p.min_amount != null ? (
-                  <>
-                    from <strong className="text-ink">{fmtMoney(p.min_amount, p.currency)}</strong>
-                  </>
-                ) : (
-                  <>minimum not published</>
-                )}
-                {p.path_to_pr_years === 0 && <> · immediate permanent residency</>}
-                {p.path_to_pr_years != null &&
-                  p.path_to_pr_years > 0 &&
-                  (p.path_to_citizenship_years == null || p.path_to_pr_years <= p.path_to_citizenship_years) && (
-                    <> · PR path: {p.path_to_pr_years} yrs</>
-                  )}
-                {p.path_to_citizenship_years != null && <> · citizenship path: {p.path_to_citizenship_years} yrs</>}
-              </p>
-            </li>
-          );
-        })}
-      </ul>
+      </td>
+      <td className="mono py-3 pr-4 text-[12px] leading-snug text-ink-soft">
+        {typeLabel(p.type)}
+        {p.min_amount != null ? ` · from ${fmtMoney(p.min_amount, p.currency)}` : " · minimum not published"}
+      </td>
+      <td className="mono py-3 pr-4 text-[12px] leading-snug text-ink-soft">{path || "not published"}</td>
+      <td className="mono py-3 text-right text-[12px] tabular-nums text-ink-soft">{w ? w.visaFree : "-"}</td>
+    </tr>
+  );
+}
+
+function RouteTable({ rows }: { rows: RbiProgram[] }) {
+  return (
+    <div className="mt-4 overflow-x-auto">
+      <table className="w-full min-w-[680px] border-collapse text-sm">
+        <thead>
+          <tr className="border-b border-line-strong text-left text-[12px] text-ink-mute">
+            <th scope="col" className="py-2.5 pr-4 font-medium">Country</th>
+            <th scope="col" className="py-2.5 pr-4 font-medium">Route</th>
+            <th scope="col" className="py-2.5 pr-4 font-medium">Type &amp; minimum</th>
+            <th scope="col" className="py-2.5 pr-4 font-medium">Published path</th>
+            <th scope="col" className="py-2.5 text-right font-medium">Visa-free</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((p, i) => (
+            <RouteRow key={`${p.iso3}-${p.program_name}-${i}`} p={p} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
@@ -244,7 +260,10 @@ export default function GoldenVisaPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-4 flex flex-wrap items-center gap-x-2 text-[12px] font-medium text-ink-mute"
+            >
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -262,8 +281,7 @@ export default function GoldenVisaPage() {
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {openPrograms.length} open routes · {closedPrograms.length} recorded closed · data refreshed {lastUpdated}{" "}
-              · thresholds change frequently
+              {openPrograms.length} open · {closedPrograms.length} closed · refreshed {lastUpdated}
             </p>
 
             <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
@@ -274,7 +292,7 @@ export default function GoldenVisaPage() {
                 { k: "Publish citizenship path", v: withCitizenshipPath.length },
               ].map(({ k, v }) => (
                 <div key={k} className="bg-card px-4 py-2.5">
-                  <dt className="mono-chrome">{k}</dt>
+                  <dt className="text-[12px] font-medium text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -287,14 +305,17 @@ export default function GoldenVisaPage() {
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
               A <strong className="text-ink">golden visa</strong> grants long-term residency in exchange for a
-              qualifying investment - real estate, fund units, bonds, a deposit, or a business. For every country
-              below we also show <strong className="text-ink">what its passport is worth</strong>: the visa-free
-              destination count and global rank from our <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">passport rankings</Link>.
-            </p>
-            <p className="text-body mt-4 text-ink-soft">
-              Golden visas have been retreating in Europe: Spain&apos;s program is recorded as{" "}
-              <strong className="text-ink">abolished</strong> and the Irish, UK and Australian investor routes as{" "}
-              <strong className="text-ink">closed</strong>. Closed routes stay listed and clearly flagged.
+              qualifying investment - real estate, fund units, bonds, a deposit, or a business. Each route below shows
+              its published minimum, its path to permanent residency or citizenship, and what that passport is worth in
+              our{" "}
+              <Link
+                href="/rankings"
+                className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
+              >
+                passport rankings
+              </Link>
+              . Spain&apos;s program is recorded as abolished and the Irish, UK and Australian investor routes as
+              closed; they stay listed and flagged.
             </p>
           </section>
 
@@ -303,10 +324,6 @@ export default function GoldenVisaPage() {
             <h2 className="text-section text-ink">
               Countries with a Program Named &quot;Golden Visa&quot; ({namedGolden.length})
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              These jurisdictions brand their investor residence route as a golden visa or golden residency in official
-              sources.
-            </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {namedGolden.map((p) => (
                 <Link
@@ -317,7 +334,7 @@ export default function GoldenVisaPage() {
                   <span className="text-base">{flagFor(p.iso3)}</span>
                   {p.name}
                   {isClosedProgram(p) && (
-                    <span className="rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                    <span className="rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[11px] text-stamp ring-1 ring-stamp/30">
                       closed
                     </span>
                   )}
@@ -326,64 +343,54 @@ export default function GoldenVisaPage() {
             </div>
           </section>
 
-          {/* Regions */}
-          {REGION_ORDER.map((region) => {
-            const countries = byRegion.get(region) ?? [];
-            if (countries.length === 0) return null;
-            const total = countries.reduce((n, [, list]) => n + list.length, 0);
-            return (
-              <section key={region} className="mt-12">
-                <h2 className="text-section text-ink">
-                  Golden Visa {region === "Europe" ? "Europe" : `Programs in ${region}`} ({total} Routes,{" "}
-                  {countries.length} Countries)
-                </h2>
-                {region === "Europe" ? (
-                  <>
-                    <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                      Europe remains the busiest golden visa market. EU residence permits generally allow short stays
-                      across the Schengen area, but the permit itself is national - conditions vary by country.
-                    </p>
-                    <div className="mt-5 grid gap-3 lg:grid-cols-2">
-                      {countries.slice(0, EUROPE_PREVIEW).map(([name, list]) => (
-                        <CountryBlock key={name} name={name} list={list} />
-                      ))}
-                    </div>
-                    {countries.length > EUROPE_PREVIEW && (
-                      <details className="group mt-3">
-                        <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                          <span className="group-open:hidden">
-                            Show all {total} routes in {countries.length} Europe countries
-                          </span>
-                          <span className="hidden group-open:inline">Show fewer Europe countries</span>
-                          <Chevron />
-                        </summary>
-                        <div className="mt-4 grid gap-3 lg:grid-cols-2">
-                          {countries.slice(EUROPE_PREVIEW).map(([name, list]) => (
-                            <CountryBlock key={name} name={name} list={list} />
-                          ))}
-                        </div>
-                      </details>
-                    )}
-                  </>
-                ) : (
-                  <details className="group mt-3">
-                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                      <span className="group-open:hidden">
-                        Show {total} routes in {countries.length} {region} countries
-                      </span>
-                      <span className="hidden group-open:inline">Hide {region} routes</span>
-                      <Chevron />
-                    </summary>
-                    <div className="mt-4 grid gap-3 lg:grid-cols-2">
-                      {countries.map(([name, list]) => (
-                        <CountryBlock key={name} name={name} list={list} />
-                      ))}
-                    </div>
-                  </details>
-                )}
-              </section>
-            );
-          })}
+          {/* Europe leads; every other region sits behind one disclosure below */}
+          <section className="mt-12">
+            <h2 className="text-section text-ink">
+              Golden Visa Europe ({europe.rows.length} Routes, {europe.countries} Countries)
+            </h2>
+            <p className="text-body mt-2 max-w-3xl text-ink-soft">
+              An EU residence permit generally allows short stays across the Schengen area, but the permit itself is
+              national - conditions vary by country.
+            </p>
+            <RouteTable rows={europe.rows.slice(0, EUROPE_PREVIEW)} />
+            <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
+              Visa-free counts destinations that passport reaches without a pre-arranged visa, from our ranking of{" "}
+              {TOTAL_RANKED_PASSPORTS} passports. Amounts are shown in the currency the official source publishes, and
+              published paths are eligibility minimums, not guarantees.
+            </p>
+          </section>
+
+          {hiddenRows > 0 && (
+            <details className="group mt-8">
+              <summary className="inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[13px] font-medium text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                <span className="group-open:hidden">
+                  Show the remaining {hiddenRows} routes in {hiddenCountries} countries
+                </span>
+                <span className="hidden group-open:inline">Hide the remaining routes</span>
+                <Chevron />
+              </summary>
+
+              {europe.rows.length > EUROPE_PREVIEW && (
+                <section className="mt-8">
+                  <h3 className="text-sub text-ink">More Europe Routes</h3>
+                  <RouteTable rows={europe.rows.slice(EUROPE_PREVIEW)} />
+                </section>
+              )}
+
+              {otherRegions.map((region) => {
+                const slice = byRegion.get(region);
+                if (!slice || slice.rows.length === 0) return null;
+                return (
+                  <section key={region} className="mt-10">
+                    <h2 className="text-section text-ink">
+                      Golden Visa Programs in {region} ({slice.rows.length} Routes, {slice.countries} Countries)
+                    </h2>
+                    <RouteTable rows={slice.rows} />
+                  </section>
+                );
+              })}
+            </details>
+          )}
 
           {/* FAQ */}
           <section className="mt-14">
@@ -409,8 +416,7 @@ export default function GoldenVisaPage() {
               Check what residency could eventually unlock
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Use Earth Visa to see the visa-free map of any passport - including the one at the end of a golden visa
-              path.
+              See the visa-free map of any passport - including the one at the end of a golden visa path.
             </p>
             <Link
               href="/visit"

@@ -226,7 +226,10 @@ export default function EasiestCitizenshipPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-4 flex flex-wrap items-center gap-x-2 text-[12px] font-medium text-ink-mute"
+            >
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -244,7 +247,7 @@ export default function EasiestCitizenshipPage() {
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              3 legal routes compared · official publications · data refreshed {lastUpdated}
+              Official publications · refreshed {lastUpdated}
             </p>
 
             <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
@@ -258,7 +261,7 @@ export default function EasiestCitizenshipPage() {
                 },
               ].map(({ k, v }) => (
                 <div key={k} className="bg-card px-4 py-2.5">
-                  <dt className="mono-chrome">{k}</dt>
+                  <dt className="text-[12px] font-medium text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -270,16 +273,11 @@ export default function EasiestCitizenshipPage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
-              &quot;Easiest&quot; means different things depending on what you are spending.{" "}
-              <strong className="text-ink">Money:</strong> citizenship by investment grants a passport in months.{" "}
-              <strong className="text-ink">Time:</strong> some countries publish residence-to-citizenship paths short
-              enough to plan around. <strong className="text-ink">Merit:</strong> a handful of fast-track
-              naturalisation routes reward specific skills or contributions. Where a number is not published, we say
-              so instead of inventing one.
-            </p>
-            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-              Published timelines are eligibility minimums, not guarantees. Naturalisation everywhere adds language,
-              physical presence and good-character conditions, and grants remain discretionary.
+              &quot;Easiest&quot; depends on what you are spending. <strong className="text-ink">Money:</strong>{" "}
+              citizenship by investment grants a passport in months. <strong className="text-ink">Time:</strong> some
+              countries publish residence-to-citizenship paths short enough to plan around.{" "}
+              <strong className="text-ink">Merit:</strong> a few fast-track naturalisation routes reward specific
+              skills. Where a number is not published, we say so instead of inventing one.
             </p>
           </section>
 
@@ -289,23 +287,15 @@ export default function EasiestCitizenshipPage() {
               Route 1 - Citizenship by Investment: Months, Not Years
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              The fastest legal route to a second passport, sorted by lowest published USD minimum; each entry shows
-              what the passport is worth.
-            </p>
-            <div className="mono mt-3 flex flex-wrap items-center gap-2 text-[11px] text-ink-soft">
-              <span className="mono-chrome">
-                Fastest published processing
-              </span>
-              {timedCbi.map((p) => (
-                <span
-                  key={p.iso3}
-                  className="inline-flex items-center gap-1.5 rounded-sm border border-line bg-paper-2/70 px-2.5 py-1"
-                >
-                  <span className="text-sm">{flagFor(p.iso3)}</span>
-                  {p.name} · <strong className="text-ink">{p.processing_time}</strong>
+              Sorted by lowest published USD minimum, with what each passport is worth. Fastest published processing:{" "}
+              {timedCbi.map((p, i) => (
+                <span key={p.iso3}>
+                  {i > 0 ? ", " : ""}
+                  {flagFor(p.iso3)} {p.name} <strong className="text-ink">{p.processing_time}</strong>
                 </span>
               ))}
-            </div>
+              .
+            </p>
             <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {cbiPriced.map(({ p, min }) => {
                 const w = passportWorth(p.iso3);
@@ -326,7 +316,7 @@ export default function EasiestCitizenshipPage() {
                       </div>
                     </div>
                     {w && (
-                      <span className="mono ml-auto rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-vfree ring-1 ring-vfree/30">
+                      <span className="mono ml-auto rounded-[3px] bg-vfree/10 px-2 py-0.5 text-[11px] text-vfree ring-1 ring-vfree/30">
                         {w.visaFree} visa-free
                       </span>
                     )}
@@ -344,12 +334,11 @@ export default function EasiestCitizenshipPage() {
               </p>
             )}
             <p className="text-body mt-4 max-w-3xl text-ink-soft">
-              Full comparison with every investment option and processing time:{" "}
               <Link
                 href="/programs/citizenship-by-investment"
                 className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
               >
-                Citizenship by Investment 2026 →
+                Every investment option and processing time compared →
               </Link>
             </p>
           </section>
@@ -360,17 +349,14 @@ export default function EasiestCitizenshipPage() {
               Route 2 - Shortest Published Residence-to-Citizenship Paths
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              {pathRows.length} countries in our residency dataset publish a residence-to-citizenship timeline for at
-              least one program. The shortest per country, ranked:
+              The shortest published timeline per country, for the {pathRows.length} countries that publish one.
             </p>
-            <p className="mono-chrome mt-5 sm:hidden">
-              Scroll sideways for all columns →
-            </p>
+            <p className="mt-4 text-[12px] font-medium text-ink-mute sm:hidden">Scroll sideways for all columns →</p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">
               <table className="w-full min-w-[560px] table-fixed border-collapse text-sm">
                 <PathCols />
                 <thead>
-                  <tr className="mono-chrome border-b border-line-strong text-left">
+                  <tr className="border-b border-line-strong text-left text-[12px] text-ink-mute">
                     <th scope="col" className="py-2.5 pr-4 text-right font-medium">Path</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Country</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Program (shortest route)</th>
@@ -386,7 +372,7 @@ export default function EasiestCitizenshipPage() {
             </div>
             {pathRows.length > PATH_PREVIEW && (
               <details className="group mt-2.5">
-                <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
+                <summary className="inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[13px] font-medium text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
                   <span className="group-open:hidden">Show all {pathRows.length} countries</span>
                   <span className="hidden group-open:inline">Show fewer</span>
                   <Chevron />
@@ -404,9 +390,9 @@ export default function EasiestCitizenshipPage() {
               </details>
             )}
             <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
-              Years shown are the published minimum residence before naturalisation eligibility for that program, per
-              the official sources in our dataset. Programs our sources record as closed or abolished are excluded.
-              Language, physical-presence and character requirements apply on top, and approval is discretionary.
+              Years are the published minimum residence before naturalisation eligibility, excluding programs our
+              sources record as closed. Language, physical-presence and character requirements apply on top, and
+              approval is discretionary everywhere.
             </p>
           </section>
 
@@ -417,9 +403,9 @@ export default function EasiestCitizenshipPage() {
                 Route 3 - Fast-Track Naturalisation for Skills &amp; Contributions
               </h2>
               <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                {ftCitizenship.length === 1
-                  ? "Accelerated naturalisation for specific profiles is rare - one route in our fast-track dataset currently qualifies:"
-                  : "A small number of countries run accelerated naturalisation for specific profiles. From our fast-track dataset:"}
+                Accelerated naturalisation for specific profiles is rare -{" "}
+                {ftCitizenship.length === 1 ? "one route" : `${ftCitizenship.length} routes`} in our fast-track dataset
+                qualify.
               </p>
               <div className={ftCitizenship.length === 1 ? "mt-5 max-w-xl" : "mt-5 grid gap-3 sm:grid-cols-2"}>
                 {ftCitizenship.map((f) => (
@@ -452,8 +438,7 @@ export default function EasiestCitizenshipPage() {
               Easy to Get vs Worth Having: Passport Power Check
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              An easy citizenship is only a good deal if the passport delivers. Among CBI countries in our data,
-              visa-free access ranges from{" "}
+              Among CBI countries in our data, visa-free access ranges from{" "}
               <strong className="text-ink">{cbiWorth[cbiWorth.length - 1].w.visaFree}</strong> destinations (
               <Link
                 href={`/passport/${nameToSlug(cbiWorth[cbiWorth.length - 1].p.name)}`}
@@ -468,12 +453,11 @@ export default function EasiestCitizenshipPage() {
               >
                 {cbiWorth[0].p.name}
               </Link>
-              , ranked #{cbiWorth[0].w.rank} of {TOTAL_RANKED_PASSPORTS}). Before committing to any route, compare the
-              target passport on the{" "}
+              , ranked #{cbiWorth[0].w.rank} of {TOTAL_RANKED_PASSPORTS}) - compare any target passport on the{" "}
               <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">
                 Earth Visa passport rankings
               </Link>{" "}
-              and browse its full visa-free list on its passport page.
+              first.
             </p>
           </section>
 
@@ -501,8 +485,7 @@ export default function EasiestCitizenshipPage() {
               Compare before you commit
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Select any passport on Earth Visa and see its full visa-free map, sourced from official government
-              publications.
+              Select any passport and see its full visa-free map, from official sources.
             </p>
             <Link
               href="/visit"

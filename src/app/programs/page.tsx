@@ -41,7 +41,10 @@ export default function ProgramsIndexPage() {
       <main className="min-h-screen">
         <header className="bg-grid-paper border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-4 flex flex-wrap items-center gap-x-2 text-[12px] font-medium text-ink-mute"
+            >
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Earth Visa</Link>
               <span aria-hidden>/</span>
               <span className="inline-flex min-h-[44px] items-center text-ink">Programs</span>
@@ -64,8 +67,7 @@ export default function ProgramsIndexPage() {
           <section className="mt-10">
             <h2 className="text-section text-ink">All Program Guides</h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Longer-term routes beyond tourist entry: residence and citizenship by investment, remote-work visas,
-              and employment and study permits - compared from official government publications.
+              Longer-term routes beyond tourist entry, compared from official government publications.
             </p>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {PROGRAMS.map((g) => (
@@ -101,8 +103,7 @@ export default function ProgramsIndexPage() {
               See what your passport already unlocks
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Before investing in a program, check every destination your current passport - plus any visas you hold -
-              can reach today.
+              Check every destination your passport - plus any visas you hold - can reach today.
             </p>
             <Link
               href="/"

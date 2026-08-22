@@ -66,8 +66,13 @@ export default function SiteFooter() {
       <div className="mx-auto w-full max-w-6xl px-5 pb-10 pt-12 sm:px-8 sm:pb-12 sm:pt-14">
         {/* Two columns from the base breakpoint up. Without one the four nav
             columns stacked into a single 1,608px run on a phone - 1.9 screens,
-            and 64% of the whole /visit page. */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
+            and 64% of the whole /visit page.
+            `items-start` matters: a grid row is otherwise as tall as its
+            tallest cell, so "Explore" (7 links) was being stretched to match
+            "Guides" (11) and ~134px of the footer was empty stretched cell.
+            Every one of the 29 anchors stays - this footer is what keeps every
+            hub, guide and programme page reachable from every route. */}
+        <div className="grid grid-cols-2 items-start gap-x-6 gap-y-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
           {/* Brand + methodology */}
           <div className="col-span-2 max-w-xs lg:col-span-1">
             <div className="flex items-center gap-2 text-ink">
@@ -82,15 +87,20 @@ export default function SiteFooter() {
           {COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
               <p className="text-[13.5px] font-semibold text-ink">{col.title}</p>
-              <ul className="mt-3.5">
+              <ul className="mt-2.5 sm:mt-3.5">
                 {col.links.map((l) => (
                   <li key={l.href}>
-                    {/* py-1.5 with no list gap holds the same rhythm as py-1 +
-                        space-y-1 did, and the after: box widens the hit area to
-                        ~42px without adding any height back to the footer. */}
+                    {/* py-1.5 is the floor, not a style choice. Measured: the
+                        after: box does NOT widen the tap target the way the old
+                        comment here claimed - stacked links have no gap, so each
+                        link's expanded box is covered by its neighbour's and
+                        elementFromPoint still resolves to the natural row. The
+                        real tap height is this padding plus the line box, and at
+                        py-1 that measured 26.6px. Height savings have to come
+                        from the layout, not from here. */}
                     <Link
                       href={l.href}
-                      className="relative inline-block py-1.5 text-[13.5px] text-ink-2 transition after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] hover:text-accent"
+                      className="relative inline-block py-1.5 text-[13.5px] text-ink-2 transition hover:text-accent"
                     >
                       {l.label}
                     </Link>

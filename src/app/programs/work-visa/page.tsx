@@ -35,8 +35,6 @@ const totalPrograms = allWork.length;
 const onlineCount = allWork.filter((v) => v.online).length;
 
 const byRegion = new Map<string, WorkEntry[]>(REGION_ORDER.map((r) => [r, entries.filter((e) => e.region === r)]));
-const europeEntries = byRegion.get("Europe") ?? [];
-const europeProgramCount = europeEntries.reduce((n, e) => n + e.visaTypes.length, 0);
 
 // Countries with the most distinct work-visa categories in our data (for the FAQ - computed, not hardcoded).
 const byCountryCount = [...entries].sort((a, b) => b.visaTypes.length - a.visaTypes.length);
@@ -93,29 +91,29 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is a work visa?",
-    a: `A work visa (or work permit) is a visa category that authorises paid employment or self-employment in the issuing country - distinct from a tourist or business visa, which generally does not permit working. Our dataset tracks ${totalPrograms} work visa programs across ${countryCount} countries, compiled from official government publications.`,
+    a: `A work visa (or work permit) authorises paid employment or self-employment in the issuing country, which a tourist or business visa does not. This page tracks ${totalPrograms} work visa programs across ${countryCount} countries, compiled from official government publications.`,
   },
   {
     q: "Do I need a job offer before applying for a work visa?",
-    a: `Usually, yes. Most work visas are employer-sponsored: a company in the destination country extends a job offer (and often a formal sponsorship or nomination) before you can apply. In our dataset, ${sponsorMentionCount} of the ${totalPrograms} work visa entries explicitly reference an employer, sponsor or job offer in their official description. A smaller set - at least ${noOfferCount} entries, typically points-based talent or job-seeker routes - are explicitly designed to let you enter without one, so you can search for work locally.`,
+    a: `Usually yes - most work visas are employer-sponsored, so a company extends a job offer (often with a formal sponsorship or nomination) before you apply. ${sponsorMentionCount} of the ${totalPrograms} entries here name an employer, sponsor or job offer; at least ${noOfferCount} - typically points-based talent or job-seeker routes - let you enter without one and look for work locally.`,
   },
   {
     q: "What is a labor market test?",
-    a: `A labor market test (sometimes called a labor market impact assessment or resident labor market test) is a requirement, used by some countries, that an employer first advertise the role and demonstrate that no qualified local or resident candidate is available before a foreign worker's visa can be approved. Not every work visa route requires one - some skilled-worker and intra-company transfer categories are exempt by design - so check the specific program's own eligibility text.`,
+    a: `A requirement, used by some countries, that the employer first advertise the role and show no qualified local or resident candidate was available before a foreign worker's visa is approved. Skilled-worker and intra-company transfer categories are often exempt by design, so check the program's own eligibility text.`,
   },
   {
     q: "What's the difference between a work visa and a working holiday visa?",
-    a: `A standard work visa is usually tied to a specific employer and job offer from the outset, with status conditional on that employment. A working holiday visa is a separate, typically reciprocal route for young people (commonly ages 18-30 or 18-35) that permits incidental work to fund travel, without requiring a job offer or employer sponsorship in advance, and is usually valid for a fixed period such as a year. Our dataset tracks these as a distinct category - ${workingHolidayCount} working holiday programs - separately from the work visa entries listed on this page.`,
+    a: `A work visa is normally tied to one employer and job offer, and your status depends on that employment. A working holiday visa is a separate reciprocal youth route (commonly ages 18-30 or 18-35) that permits incidental work to fund travel, needs no job offer, and usually runs for a fixed year. We track those separately: ${workingHolidayCount} working holiday programs.`,
   },
   {
     q: "What types of work permits exist?",
-    a: `Common categories include skilled worker visas (for roles matching a shortage list or salary/qualification threshold), intra-company transfer visas (for staff relocated within the same multinational employer), seasonal or temporary work visas (fixed-term, often agricultural or hospitality), and self-employed/freelance permits (for those setting up a business or working independently rather than for a local employer). A working holiday visa is a related but separate youth-exchange category. Exact eligibility and naming vary by country - see each destination's entries below for the categories that country actually publishes.`,
+    a: `Skilled worker visas (shortage list or salary/qualification threshold), intra-company transfers, seasonal or temporary work visas, and self-employed or freelance permits - plus the separate working holiday category. Naming and eligibility vary by country; each region table lists the categories that country actually publishes.`,
   },
   ...(minProcessing != null && maxProcessing != null
     ? [
         {
           q: "How long does a work visa take to process?",
-          a: `It varies widely by country and permit type. Across the officially published processing windows in our dataset, figures range from ${minProcessing} to ${maxProcessing} days - some routes are same-day or same-week, while others (typically those requiring a labor market test or multi-agency sign-off) publish windows of several months. Each entry below shows the specific range published by that country's official source.`,
+          a: `Officially published windows in this dataset run from ${minProcessing} to ${maxProcessing} days. Routes needing a labor market test or multi-agency sign-off sit at the long end; every program's own published range is in the region tables above.`,
         },
       ]
     : []),
@@ -123,13 +121,13 @@ const faqs = [
     ? [
         {
           q: "Can a work visa lead to permanent residency?",
-          a: `Sometimes directly, sometimes only after years of renewal. A few programs in our dataset grant permanent residence outright to the sponsored worker - for example, ${ausEntry!.name}'s ${prExample.name} is recorded as granting permanent residence to skilled workers nominated by an employer. Most other work visas are temporary and would need a separate residence or settlement application later; check each program's own text for its stated outcome.`,
+          a: `Sometimes directly, more often only after years of renewal. ${ausEntry!.name}'s ${prExample.name} is recorded as granting permanent residence outright to skilled workers nominated by an employer; most other work visas are temporary and need a separate residence or settlement application later.`,
         },
       ]
     : []),
   {
     q: "Which countries publish the most work visa categories?",
-    a: `${topCountries.join(" and ")} currently publish the most - ${topCount} distinct work visa categories each in our dataset - reflecting occupation- and sector-specific visa systems rather than a single generic work permit.`,
+    a: `${topCountries.join(" and ")}, with ${topCount} distinct work visa categories each - occupation- and sector-specific systems rather than a single generic work permit.`,
   },
 ];
 
@@ -176,7 +174,7 @@ function Chevron() {
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className="size-3.5 shrink-0 text-ink-mute transition-transform duration-200 group-open:rotate-180"
+      className="size-3.5 shrink-0 text-ink-3 transition-transform duration-200 group-open:rotate-180"
       fill="none"
       stroke="currentColor"
       strokeWidth="2.5"
@@ -202,107 +200,117 @@ function stayLabel(days: number | null): string | null {
   return `${days} day${days === 1 ? "" : "s"}`;
 }
 
-function entriesLabel(e: VisaType["entries"]): string {
-  return e === "multiple" ? "Multiple entry" : e === "double" ? "Double entry" : "Single entry";
+function entriesLabel(e: VisaType["entries"]): string | null {
+  return e === "multiple" ? "Multiple entry" : e === "double" ? "Double entry" : e === "single" ? "Single entry" : null;
 }
 
-function VisaTypeRow({ v }: { v: VisaType }) {
+/** one program = one table row: name + what it is, then the numbers in their own columns */
+function ProgramRow({ v }: { v: VisaType }) {
   const stay = stayLabel(v.max_stay_days);
+  const validity = v.validity_days != null && v.validity_days !== v.max_stay_days ? stayLabel(v.validity_days) : null;
+  const tags = [entriesLabel(v.entries), v.online ? "Apply online" : null, v.on_arrival ? "On arrival" : null].filter(
+    Boolean,
+  );
   return (
-    <li className="py-2.5">
-      <span className="font-display text-sm font-medium text-ink">{v.name}</span>
-      {v.purpose && <p className="mt-1 text-[13px] leading-relaxed text-ink-soft">{v.purpose}</p>}
-      <p className="mono mt-1.5 text-[11px] text-ink-mute">
-        {entriesLabel(v.entries)}
-        {stay && <> · stay up to {stay}</>}
-        {v.processing_days_min != null && v.processing_days_max != null && (
-          <>
-            {" "}
-            · processing {v.processing_days_min}-{v.processing_days_max} days
-          </>
-        )}
-        {v.fee_usd != null && (
-          <>
-            {" "}
-            · fee from <span className="text-ink">{fmtMoney(v.fee_usd, "USD")}</span>
-          </>
-        )}
-        {v.online && <> · apply online</>}
-        {v.on_arrival && <> · on arrival</>}
-      </p>
-      {v.official_url && (
-        <a
-          href={v.official_url}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          className="mono mt-1 inline-flex min-h-[44px] items-center text-[11px] uppercase tracking-[0.1em] text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
-        >
-          Official source →
-        </a>
-      )}
-    </li>
+    <tr className="border-t border-line align-top">
+      <td className="py-2.5 pr-3">
+        <span className="font-display text-[14px] font-medium text-ink">{v.name}</span>
+        {v.purpose && <span className="mt-0.5 block text-[13px] leading-snug text-ink-soft">{v.purpose}</span>}
+        <span className="mt-1 block text-[12px] text-ink-3">
+          {tags.join(" · ")}
+          {v.official_url && (
+            <>
+              {tags.length > 0 && " · "}
+              <a
+                href={v.official_url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
+              >
+                official source ↗
+              </a>
+            </>
+          )}
+        </span>
+      </td>
+      <td className="py-2.5 pr-3 text-[13px] whitespace-nowrap text-ink-soft tabular-nums">
+        {stay ?? "—"}
+        {validity && <span className="block text-[12px] text-ink-3">valid {validity}</span>}
+      </td>
+      <td className="py-2.5 pr-3 text-[13px] whitespace-nowrap text-ink-soft tabular-nums">
+        {v.processing_days_min != null && v.processing_days_max != null
+          ? `${v.processing_days_min}-${v.processing_days_max} days`
+          : "—"}
+      </td>
+      <td className="py-2.5 text-[13px] whitespace-nowrap text-ink-soft tabular-nums">
+        {v.fee_usd != null ? fmtMoney(v.fee_usd, "USD") : "—"}
+      </td>
+    </tr>
   );
 }
 
-function CountryBlock({ e }: { e: WorkEntry }) {
-  const slug = nameToSlug(e.name);
-  const w = passportWorth(e.iso3);
-  const VISIBLE = 1;
-  const visible = e.visaTypes.slice(0, VISIBLE);
-  const hidden = e.visaTypes.slice(VISIBLE);
+/** every country in a region, and every one of its programs, as a single table */
+function RegionTable({ countries }: { countries: WorkEntry[] }) {
   return (
-    <div className="card-doc p-4">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="text-2xl">{flagFor(e.iso3)}</span>
-        <Link
-          href={`/destination/${slug}`}
-          className="inline-flex min-h-[44px] items-center font-display text-base font-semibold text-ink transition hover:text-stamp"
-        >
-          {e.name}
-        </Link>
-        <span className="mono ml-auto text-[11px] text-ink-soft">
-          {e.visaTypes.length} work visa {e.visaTypes.length === 1 ? "type" : "types"}
-        </span>
-      </div>
-      <ul className="mt-2 divide-y divide-line">
-        {visible.map((v, i) => (
-          <VisaTypeRow key={`${v.name}-${i}`} v={v} />
-        ))}
-      </ul>
-      {hidden.length > 0 && (
-        <details className="group mt-1">
-          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
-            <span className="group-open:hidden">
-              Show {hidden.length} more {e.name} work visa {hidden.length === 1 ? "type" : "types"}
-            </span>
-            <span className="hidden group-open:inline">Hide extra {e.name} work visa types</span>
-            <Chevron />
-          </summary>
-          <ul className="divide-y divide-line">
-            {hidden.map((v, i) => (
-              <VisaTypeRow key={`${v.name}-${i}`} v={v} />
-            ))}
-          </ul>
-        </details>
-      )}
-      <div className="mt-3 border-t border-line pt-3">
-        <div className="mono flex flex-wrap gap-x-4 text-[11px]">
-          <Link
-            href={`/destination/${slug}`}
-            className="inline-flex min-h-[44px] items-center uppercase tracking-[0.12em] text-stamp transition hover:text-ink"
-          >
-            {e.name} entry rules →
-          </Link>
-          {w && (
-            <Link
-              href={`/passport/${slug}`}
-              className="inline-flex min-h-[44px] items-center uppercase tracking-[0.12em] text-ink-soft transition hover:text-ink"
-            >
-              Passport ({w.visaFree} visa-free) →
-            </Link>
-          )}
-        </div>
-      </div>
+    <div className="mt-4 overflow-x-auto pb-4">
+      <table className="w-full min-w-[38rem] border-collapse text-left">
+        <thead>
+          <tr className="border-b border-line-strong text-[12px] font-medium text-ink-3">
+            <th scope="col" className="py-2 pr-3 font-medium">
+              Work visa
+            </th>
+            <th scope="col" className="py-2 pr-3 font-medium">
+              Stay
+            </th>
+            <th scope="col" className="py-2 pr-3 font-medium">
+              Processing
+            </th>
+            <th scope="col" className="py-2 font-medium">
+              Fee
+            </th>
+          </tr>
+        </thead>
+        {countries.map((e) => {
+          const slug = nameToSlug(e.name);
+          const w = passportWorth(e.iso3);
+          return (
+            <tbody key={e.iso3}>
+              <tr className="border-t border-line-strong bg-paper-2/60">
+                <th scope="rowgroup" colSpan={4} className="px-0 py-2 text-left font-normal">
+                    <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <span aria-hidden>{flagFor(e.iso3)}</span>
+                      <Link
+                        href={`/destination/${slug}`}
+                        className="font-display text-[15px] font-semibold text-ink transition hover:text-stamp"
+                      >
+                        {e.name}
+                      </Link>
+                      <span className="text-[12px] text-ink-3">
+                        {e.visaTypes.length} work visa {e.visaTypes.length === 1 ? "type" : "types"}
+                      </span>
+                      <span className="ml-auto text-[12px] text-ink-3">
+                        <Link href={`/destination/${slug}`} className="text-stamp transition hover:text-ink">
+                          entry rules
+                        </Link>
+                        {w && (
+                          <>
+                            {" · "}
+                            <Link href={`/passport/${slug}`} className="text-stamp transition hover:text-ink">
+                              passport ({w.visaFree} visa-free)
+                            </Link>
+                          </>
+                        )}
+                      </span>
+                    </span>
+                  </th>
+                </tr>
+              {e.visaTypes.map((v, i) => (
+                <ProgramRow key={`${v.name}-${i}`} v={v} />
+              ))}
+            </tbody>
+          );
+        })}
+      </table>
     </div>
   );
 }
@@ -316,53 +324,51 @@ export default function WorkVisaPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
+            <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-x-2 text-[12.5px] text-ink-3">
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
               <span aria-hidden>/</span>
-              <Link href="/programs" className="inline-flex min-h-[44px] items-center transition hover:text-ink">Programs</Link>
+              <Link href="/programs" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
+                Programs
+              </Link>
               <span aria-hidden>/</span>
               <span className="inline-flex min-h-[44px] items-center text-ink">Work Visa</span>
             </nav>
 
-
-            <h1 className="text-display mt-6 text-ink">
+            <h1 className="text-display text-ink">
               Work Visa Countries 2026
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
                 Work Permits &amp; Employment Visas in {countryCount} Countries, by Region
               </span>
             </h1>
-            <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {totalPrograms} programs tracked · data refreshed {lastUpdated}
-            </p>
 
-            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
-              {[
-                { k: "Countries", v: countryCount },
-                { k: "Work visa types tracked", v: totalPrograms },
-                { k: "Europe programs", v: europeProgramCount },
-                { k: "Apply online", v: onlineCount },
-              ].map(({ k, v }) => (
-                <div key={k} className="bg-card px-4 py-2.5">
-                  <dt className="mono-chrome">{k}</dt>
-                  <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
-                </div>
-              ))}
-            </dl></div>
+            <div className="card-doc card-doc-rule mt-6 overflow-hidden">
+              <dl className="grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
+                {[
+                  { k: "Countries", v: String(countryCount) },
+                  { k: "Work visas tracked", v: String(totalPrograms) },
+                  { k: "Apply online", v: String(onlineCount) },
+                  { k: "Updated", v: lastUpdated },
+                ].map(({ k, v }) => (
+                  <div key={k} className="bg-card px-4 py-2.5">
+                    <dt className="text-[12.5px] text-ink-3">{k}</dt>
+                    <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
 
-            <nav aria-label="Jump to a region" className="mono mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] uppercase tracking-[0.15em]">
-              <span className="text-[11px] text-ink-mute">Jump to</span>
+            <nav
+              aria-label="Jump to a region"
+              className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-ink-3"
+            >
               {REGION_ORDER.filter((r) => (byRegion.get(r) ?? []).length > 0).map((r) => (
-                <a
-                  key={r}
-                  href={`#${r.toLowerCase()}`}
-                  className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink"
-                >
+                <a key={r} href={`#${r.toLowerCase()}`} className="text-stamp transition hover:text-ink">
                   {r}
                 </a>
               ))}
-              <a href="#faq" className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink">
+              <a href="#faq" className="text-stamp transition hover:text-ink">
                 FAQ
               </a>
             </nav>
@@ -370,114 +376,66 @@ export default function WorkVisaPage() {
         </header>
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
-          {/* Intro */}
+          {/* Intro - said once */}
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
-              A <strong className="text-ink">work visa</strong> authorises paid employment in the issuing country -
-              distinct from a tourist or business visa, which generally does not. Most work visas require an{" "}
-              <strong className="text-ink">employer sponsor and a job offer</strong> before you can apply, and some
-              countries also run a <strong className="text-ink">labor market test</strong> before approving a foreign
-              hire. Every program is grouped by region below.
+              A <strong className="text-ink">work visa</strong> authorises paid employment in the issuing country, which
+              a tourist or business visa does not. Most need an employer sponsor and a job offer first - some countries
+              also run a labor market test - and the usual families are skilled worker, intra-company transfer, seasonal,
+              self-employed and working holiday routes.
             </p>
-            <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5">
-              <span className="mono-chrome">
-                Common permit types
-              </span>
-              {["Skilled worker", "Intra-company transfer", "Seasonal", "Working holiday", "Self-employed"].map(
-                (t) => (
-                  <span
-                    key={t}
-                    className="mono rounded-sm border border-line bg-paper-2/70 px-2 py-1 text-[11px] text-ink-soft"
-                  >
-                    {t}
-                  </span>
-                ),
-              )}
-            </p>
-            <p className="text-body mt-4 text-ink-soft">
-              For every country we also show <strong className="text-ink">what its passport is worth</strong>: the
-              visa-free destination count and global rank from our{" "}
-              <Link
-                href="/rankings"
-                className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
-              >
-                passport rankings
+            <p className="mt-3 text-[13px] leading-relaxed text-ink-3">
+              Open a region for every program it publishes, with stay, processing time, fee and the official source.
+              Each country also links to its{" "}
+              <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2">
+                passport ranking
               </Link>
-              , since a work visa is often the first step toward a country you might one day hold a passport from.
-            </p>
-            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-              Eligibility, fees and processing times change frequently. Figures compiled directly from official
-              government publications, last refreshed {lastUpdated}.
+              . Rules change often; the official link is always the last word.
             </p>
           </section>
 
-          {/* Regions */}
-          {REGION_ORDER.map((region) => {
-            const countries = byRegion.get(region) ?? [];
-            if (countries.length === 0) return null;
-            const total = countries.reduce((n, e) => n + e.visaTypes.length, 0);
-            return (
-              <section key={region} id={region.toLowerCase()} className="mt-12 scroll-mt-24">
-                <h2 className="text-section text-ink">
-                  Work Visas in {region} ({total} Programs, {countries.length} Countries)
-                </h2>
-                {region === "Europe" ? (
-                  <div className="mt-5 grid gap-3 lg:grid-cols-2">
-                    {countries.map((e) => (
-                      <CountryBlock key={e.iso3} e={e} />
-                    ))}
-                  </div>
-                ) : (
-                  <details className="group mt-3">
-                    <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] text-ink-soft transition hover:border-line-strong hover:text-ink [&::-webkit-details-marker]:hidden">
-                      <span className="group-open:hidden">
-                        Show {total} programs in {countries.length} {region} countries
-                      </span>
-                      <span className="hidden group-open:inline">Hide {region} work visas</span>
+          {/* Regions - one table each, nothing repeated per country */}
+          <div className="mt-8 space-y-3">
+            {REGION_ORDER.map((region) => {
+              const countries = byRegion.get(region) ?? [];
+              if (countries.length === 0) return null;
+              const total = countries.reduce((n, e) => n + e.visaTypes.length, 0);
+              return (
+                <section key={region} id={region.toLowerCase()} className="scroll-mt-24">
+                  <details className="group card-doc px-4 py-1 sm:px-5">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
+                      <h2 className="text-section text-ink">
+                        Work Visas in {region} ({total} Programs, {countries.length} Countries)
+                      </h2>
                       <Chevron />
                     </summary>
-                    <div className="mt-4 grid gap-3 lg:grid-cols-2">
-                      {countries.map((e) => (
-                        <CountryBlock key={e.iso3} e={e} />
-                      ))}
-                    </div>
+                    <RegionTable countries={countries} />
+                    <div className="h-3" />
                   </details>
-                )}
-              </section>
-            );
-          })}
+                </section>
+              );
+            })}
+          </div>
 
           {/* FAQ */}
-          <section id="faq" className="mt-14 scroll-mt-24">
+          <section id="faq" className="mt-12 scroll-mt-24">
             <h2 className="text-section text-ink">Work Visa FAQ</h2>
-            <div className="card-doc mt-5 divide-y divide-line px-5">
+            <dl className="mt-4 max-w-3xl space-y-4">
               {faqs.map(({ q, a }) => (
-                <details key={q} className="group">
-                  <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
-                    {q}
-                    <Chevron />
-                  </summary>
-                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
-                </details>
+                <div key={q}>
+                  <dt className="font-display text-[15px] font-semibold text-ink">{q}</dt>
+                  <dd className="mt-1 text-[14px] leading-relaxed text-ink-soft">{a}</dd>
+                </div>
               ))}
-            </div>
+            </dl>
           </section>
 
           <ProgramsNav current="/programs/work-visa" />
 
           {/* CTA */}
-          <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
-            <h2 className="text-section text-ink">
-              Check if you need a visa before you even apply for the job
-            </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Many work-visa applicants first need a valid tourist or business entry to interview or sign paperwork in
-              person. Check your passport&apos;s visa-free access on Earth Visa.
-            </p>
-            <Link
-              href="/visit"
-              className="btn-stamp mt-5"
-            >
+          <section className="card-doc mt-12 px-6 py-8 text-center">
+            <h2 className="text-section text-ink">Check if you need a visa before you even apply for the job</h2>
+            <Link href="/visit" className="btn-stamp mt-4">
               Explore passports on Earth Visa →
             </Link>
           </section>

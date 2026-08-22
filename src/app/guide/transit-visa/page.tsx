@@ -88,27 +88,23 @@ const FAQS = [
   },
   {
     q: "Do I need a transit visa if I don't leave the airport?",
-    a: "Very often no - this is called direct or airside transit, where you land and depart from the same airport on the same booking without crossing border control into the country. Many countries let travellers of most or all nationalities transit airside without any visa, provided the connection is on the same day (or within a set number of hours) and the traveller stays within the international transit area. But this is not universal: some countries still require even airside transit passengers of certain nationalities to hold a visa, so it must be checked for your specific passport and airport, not assumed.",
+    a: "Very often no. Direct or airside transit - same airport, same booking, never crossing border control - is exempt for most or all nationalities in many countries, provided the connection is same-day and you stay in the international transit area. It is not universal: some countries require a visa even for airside transit by certain nationalities, so check your specific passport and airport rather than assuming.",
   },
   {
     q: "Does a layover under 24 hours need a visa?",
-    a: "Not necessarily, but layover length alone doesn't decide it. A short layover through the same airport, on the same ticket, without leaving the international transit area, is the scenario countries are most likely to exempt from a visa. A short layover that still involves changing airports or terminals outside security, or collecting and re-checking your own baggage through border control, is often treated as a normal entry regardless of how many hours it lasts - and can require a visa the same as staying for tourism.",
-  },
-  {
-    q: "What's the difference between direct and indirect transit?",
-    a: "Direct (airside) transit means staying within the international transit area of the same airport, on a through-checked itinerary, usually same-day - you never legally enter the country. Indirect (landside) transit means passing through immigration and border control at all: an overnight layover, a change of airport or terminal that requires re-entry through security, or collecting your luggage and rechecking it yourself. Indirect transit is treated much more like a normal entry, and countries are far more likely to require a visa for it, even when the same nationality would transit airside visa-free.",
+    a: "Layover length alone doesn't decide it. A same-airport, same-ticket connection without leaving the international transit area is what countries are most likely to exempt. A layover that changes airports or terminals outside security, or has you collect and re-check baggage through border control, is treated as a normal entry however short it is.",
   },
   {
     q: "Can transit visa rules differ from that country's regular tourist visa rules for the same passport?",
-    a: "Yes - transit and entry are governed by separate rules, and a country's transit-visa-exempt nationality list is often broader (or narrower) than its tourist-visa-exempt list. Never assume that being visa-exempt for tourism automatically means visa-exempt for transit, or vice versa.",
+    a: "Yes - a country's transit-visa-exempt nationality list is often broader or narrower than its tourist-visa-exempt list. Never assume visa-exempt for tourism means visa-exempt for transit, or the reverse.",
   },
   {
     q: "How do I check if I need a transit visa for a specific layover?",
-    a: "Check three things before booking: the length of your layover, whether you change terminals or airports (and therefore pass through border control), and whether the transit country publishes a transit-visa-exempt nationality list that covers your passport. Airline check-in staff and the transit country's immigration or embassy website are the two most reliable places to confirm this for your specific nationality and routing.",
+    a: "Three things before booking: your layover length, whether you change terminals or airports (and so pass through border control), and whether the transit country's transit-visa-exempt list covers your passport. Airline check-in staff and the transit country's immigration or embassy site are the reliable sources for your routing.",
   },
   {
     q: "Is a transit visa the same as a visa on arrival?",
-    a: "No. A visa on arrival is issued at the border for people who are actually entering and staying in the country. A transit visa is issued (sometimes also on arrival, sometimes only in advance) specifically for passengers continuing to another destination, and usually carries a shorter permitted stay and narrower conditions than a visa on arrival for tourism.",
+    a: "No. A visa on arrival is issued at the border to people entering and staying. A transit visa is issued specifically for passengers continuing onward, and usually carries a shorter permitted stay and narrower conditions.",
   },
 ];
 
@@ -244,33 +240,31 @@ export default function TransitVisaGuidePage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
-              A <strong className="text-ink">transit visa</strong> is for travellers who are only passing through a
-              country to reach a connecting flight or an onward destination - not for actually visiting it. It is a
-              different product from a tourist visa: shorter permitted stay, a narrower purpose, and often (though
-              not always) an easier or cheaper route than entering as a visitor.
+              A <strong className="text-ink">transit visa</strong> is for passing through a country to reach an onward
+              destination - not for visiting it. Shorter permitted stay, narrower purpose, and often an easier route
+              than entering as a visitor.
             </p>
-            <p className="text-body mt-4 text-ink-soft">
-              The most common source of confusion is that &quot;transit&quot; covers two very different situations -{" "}
+            <p className="text-body mt-3 text-ink-soft">
+              Jump to{" "}
               <Link href="#direct-vs-indirect" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
-                direct (airside) transit and indirect (landside) transit
-              </Link>{" "}
-              - and that whether you need a visa at all depends on{" "}
-              <Link href="#nationality-and-country" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
-                both your passport and the specific transit country&apos;s rules
+                airside vs landside transit
               </Link>
-              , not a single global standard. This guide covers both, plus a{" "}
+              , why it depends on{" "}
+              <Link href="#nationality-and-country" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
+                your passport and the transit country
+              </Link>
+              , or the{" "}
               <Link href="#checklist" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
-                practical checklist
-              </Link>{" "}
-              to run before you book a connecting itinerary.
+                pre-booking checklist
+              </Link>
+              .
             </p>
             <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-              This page explains transit visas in general terms. Rules are set per destination and per nationality -
-              use{" "}
+              Rules are set per destination and per nationality - check a specific corridor with{" "}
               <Link href="/visit" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 Earth Visa&apos;s passport checker
-              </Link>{" "}
-              to check a specific corridor. Data below last refreshed {lastUpdated}.
+              </Link>
+              . Data below last refreshed {lastUpdated}.
             </p>
           </section>
 
@@ -279,19 +273,15 @@ export default function TransitVisaGuidePage() {
             <h2 className="text-section text-ink">
               Direct (Airside) Transit vs Indirect (Landside) Transit
             </h2>
-            <p className="text-body mt-3 text-ink-soft">
-              Whether a transit visa is required almost always turns on which of these two situations you are in:
-            </p>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div className="rounded-sm border border-vfree/30 bg-vfree/[0.05] p-4">
                 <p className="mono text-[11px] font-semibold uppercase tracking-[0.15em] text-vfree">
                   Direct / airside transit
                 </p>
                 <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                  Same airport, same day, on a through-checked itinerary, staying entirely within the international
-                  or &quot;airside&quot; transit area - you never cross immigration into the country. This is the
-                  scenario most countries treat leniently: it very often needs nothing at all, regardless of
-                  nationality, provided the connection time and routing qualify.
+                  Same airport, same day, through-checked, entirely inside the international transit area - you never
+                  cross immigration. Most countries treat this leniently: it very often needs nothing at all,
+                  whatever your nationality, if the connection time and routing qualify.
                 </p>
               </div>
               <div className="rounded-sm border border-stamp/30 bg-stamp/[0.05] p-4">
@@ -299,17 +289,15 @@ export default function TransitVisaGuidePage() {
                   Indirect / landside transit
                 </p>
                 <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                  Changing airports or terminals in a way that requires clearing immigration, an overnight layover,
-                  or leaving the airport (going &quot;landside&quot;) for any reason - a hotel stay, a city visit, or
-                  simply collecting and rechecking your own baggage. This is treated much more like a normal entry,
-                  and can require a visa the same way a tourist visit would.
+                  An overnight layover, an airport or terminal change that requires clearing immigration, or leaving
+                  the airport at all - even just to collect and recheck your own baggage. Treated much like a normal
+                  entry, and can require a visa exactly as a tourist visit would.
                 </p>
               </div>
             </div>
             <p className="text-body mt-4 text-ink-soft">
-              The dividing line is border control, not the clock: a nine-hour airside layover can need nothing, while
-              a two-hour landside stop can need a full visa - because one crosses into the country and the other
-              doesn&apos;t.
+              The dividing line is border control, not the clock: a nine-hour airside layover can need nothing while a
+              two-hour landside stop needs a full visa.
             </p>
           </section>
 
@@ -318,19 +306,10 @@ export default function TransitVisaGuidePage() {
             <h2 className="text-section text-ink">
               It Depends on Your Passport AND the Transit Country
             </h2>
-            <p className="text-body mt-3 text-ink-soft">
-              There is no universal transit-visa rule:
-            </p>
             <ul className="mt-3 space-y-2 text-base leading-relaxed text-ink-soft">
-              <li>· Rules are set per destination and applied per nationality.</li>
-              <li>
-                · The transit-exempt list and the entry-exempt list are different lists - either one can be broader
-                than the other.
-              </li>
-              <li>
-                · So check your exact passport and transit country - never infer from tourist-visa status, or from
-                what another country requires on the same route.
-              </li>
+              <li>· Rules are set per destination and applied per nationality - there is no global standard.</li>
+              <li>· The transit-exempt list and the entry-exempt list are different lists; either can be broader.</li>
+              <li>· So never infer from tourist-visa status, or from what another country requires on the same route.</li>
             </ul>
           </section>
 
@@ -340,8 +319,8 @@ export default function TransitVisaGuidePage() {
               Transit Visa Products by Destination ({destinationCount})
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              This shows what each destination publishes for travellers who do need a transit visa - not who is
-              exempt from one; tap a destination for its full passport-by-passport entry requirements.
+              What each destination publishes for travellers who do need a transit visa - not who is exempt. Tap one
+              for its passport-by-passport requirements.
             </p>
             <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {shown.map((e) => (
@@ -367,30 +346,27 @@ export default function TransitVisaGuidePage() {
           {/* Checklist */}
           <section id="checklist" className="mt-12 max-w-3xl scroll-mt-24">
             <h2 className="text-section text-ink">Before You Book: A Transit Checklist</h2>
-            <p className="text-body mt-3 text-ink-soft">
-              Run through this before booking a connecting itinerary, not after:
-            </p>
-            <ol className="mt-5 space-y-4">
+            <ol className="mt-4 space-y-4">
               {[
                 {
                   t: "Check your layover length",
-                  d: "A short, same-day connection is far more likely to qualify as direct/airside transit than an overnight layover. Some countries also set a maximum transit time (for example a same-day cutoff) beyond which you're no longer treated as in transit at all.",
+                  d: "A short same-day connection is far more likely to qualify as airside transit than an overnight one. Some countries set a maximum transit time beyond which you are no longer in transit at all.",
                 },
                 {
                   t: "Check whether you change terminals or airports",
-                  d: "Connections that keep you within the same terminal's international area are treated differently from ones that require you to exit security, collect baggage, or transfer to a different airport across the city - the latter usually means clearing immigration.",
+                  d: "Staying inside one terminal's international area is treated differently from exiting security, collecting baggage, or crossing the city to another airport - the latter usually means clearing immigration.",
                 },
                 {
                   t: "Look for a published transit-visa-exempt nationality list",
-                  d: "Many countries publish a list of nationalities exempt from a transit visa - separate from their tourist-visa-exempt list. Check the transit country's own immigration or embassy site for your specific passport, rather than assuming your tourist-visa status carries over.",
+                  d: "Separate from the tourist-visa-exempt list. Check the transit country's own immigration or embassy site for your passport.",
                 },
                 {
-                  t: "Confirm the same for every leg of a multi-stop itinerary",
-                  d: "If your route connects through more than one country, each transit country's rules apply independently - clearing one leg visa-free doesn't tell you anything about the next.",
+                  t: "Confirm it for every leg of a multi-stop itinerary",
+                  d: "Each transit country's rules apply independently - clearing one leg visa-free tells you nothing about the next.",
                 },
                 {
-                  t: "Check well before booking, not at check-in",
-                  d: "Transit visa rules and exemption lists change, and airlines can deny boarding at check-in if you lack a required transit visa. Confirm requirements while your itinerary is still flexible enough to add a visa application or change routing.",
+                  t: "Check before booking, not at check-in",
+                  d: "Exemption lists change, and airlines deny boarding when a required transit visa is missing. Confirm while the itinerary is still flexible.",
                 },
               ].map((s, i) => (
                 <li key={s.t} className="card-doc flex gap-4 p-4">
@@ -402,19 +378,12 @@ export default function TransitVisaGuidePage() {
                 </li>
               ))}
             </ol>
-          </section>
-
-          {/* Tool pointer */}
-          <section id="tool" className="mt-12 max-w-3xl scroll-mt-24">
-            <h2 className="text-section text-ink">Check Transit Access for Your Passport</h2>
-            <p className="text-body mt-3 text-ink-soft">
-              Earth Visa&apos;s interactive passport checker includes a dedicated transit-access view alongside its
-              regular visa-free, visa-on-arrival, eTA and e-visa results, showing destinations a given passport can
-              transit without a visa. Enter a passport on{" "}
+            <p className="text-body mt-4 text-ink-soft">
+              The{" "}
               <Link href="/visit" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
-                the Earth Visa checker
+                Earth Visa passport checker
               </Link>{" "}
-              and open its transit view to see that specific corridor, rather than relying on a general rule.
+              has a transit-access view showing which destinations a given passport can transit without a visa.
             </p>
           </section>
 
@@ -438,8 +407,7 @@ export default function TransitVisaGuidePage() {
           <section className="card-doc card-doc-ticks mt-12 px-6 py-8 text-center">
             <h2 className="text-section text-ink">Check transit visa access for your passport</h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              See whether your passport can transit a specific country visa-free, on arrival, or needs a visa in
-              advance - and its full visa-free destination list while you&apos;re there.
+              Visa-free, on arrival, or a visa in advance - for any transit country.
             </p>
             <Link
               href="/visit"

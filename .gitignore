@@ -76,3 +76,6 @@ video/audio/
 # pipeline stage (scripts/build-mobile-bundle.mjs). manifest.json is synced into
 # earthvisa-ios and committed THERE to pin which data a build shipped with.
 /public/mobile/
+
+# Playwright screenshots from scripts/screenshots.mjs
+.screenshots/

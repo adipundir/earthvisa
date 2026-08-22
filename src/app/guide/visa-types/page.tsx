@@ -8,8 +8,6 @@ import { dataset } from "@/lib/dataset";
 // ---------------------------------------------------------------------------
 
 const lastUpdated = dataset.meta.lastUpdated;
-const passportCount = dataset.allCountries.length;
-const destinationCount = dataset.meta.destinationsWithVisaPolicy;
 const euMemberCount = dataset.groups.EU?.length ?? 0;
 
 // ---------------------------------------------------------------------------
@@ -98,19 +96,19 @@ function Chevron() {
 const FAQS = [
   {
     q: "What's the difference between an eTA and an e-visa?",
-    a: "An eTA is a pre-screening step on an entry you already have visa-free; an e-visa is a full visa, delivered online, for travellers who'd need one anyway. See the eTA and e-Visa sections above for the full comparison.",
+    a: "An eTA is a pre-screening step on an entry you already have visa-free; an e-visa is a full visa, delivered online, for travellers who'd need one anyway.",
   },
   {
     q: "Is a visa on arrival the same as visa-free?",
-    a: "No - visa on arrival still means a fee and a counter at the border, while visa-free means neither. See the Visa-Free and Visa on Arrival sections above for the full distinction.",
+    a: "No - visa on arrival still means a fee and a counter at the border, while visa-free means neither.",
   },
   {
     q: "Does freedom of movement mean I don't need any documents?",
-    a: "No - you still need a valid passport or national ID, and depending on the bloc you may need to register your residence after arriving if you plan to stay long-term. See the Freedom of Movement section above for what the right itself covers.",
+    a: "No - you still need a valid passport or national ID, and depending on the bloc you may need to register your residence if you stay long-term.",
   },
   {
     q: "Do I need a transit visa if I'm just changing planes?",
-    a: "It depends on the country, the airport, and whether you stay airside or go landside. See the Transit Visa section above for the full airside/landside breakdown and how to check your exact routing.",
+    a: "It depends on the country and the airport: staying airside often needs nothing, going landside can require one depending on your nationality and layover length.",
   },
 ];
 
@@ -167,23 +165,9 @@ export default function VisaTypesGlossaryPage() {
                 The Plain-Language Glossary Behind Every Badge on Earth Visa
               </span>
             </h1>
-            <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {CONCEPTS.length} concepts, defined once · data refreshed {lastUpdated}
+            <p className="mt-3 text-[13px] font-medium tabular-nums text-ink-soft">
+              {CONCEPTS.length} concepts, defined once · refreshed {lastUpdated}
             </p>
-
-            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
-              {[
-                { k: "Concepts explained", v: String(CONCEPTS.length) },
-                { k: "Passports tracked", v: String(passportCount) },
-                { k: "Destinations tracked", v: String(destinationCount) },
-                { k: "Last refreshed", v: lastUpdated },
-              ].map(({ k, v }) => (
-                <div key={k} className="bg-card px-4 py-2.5">
-                  <dt className="mono-chrome">{k}</dt>
-                  <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
-                </div>
-              ))}
-            </dl></div>
           </div>
         </header>
 
@@ -191,30 +175,24 @@ export default function VisaTypesGlossaryPage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
-              Every passport and destination page on Earth Visa shows one of a handful of status badges -{" "}
-              <strong className="text-ink">Visa-Free</strong>, <strong className="text-ink">Visa on Arrival</strong>,{" "}
-              <strong className="text-ink">eTA</strong>, <strong className="text-ink">e-Visa</strong>,{" "}
-              <strong className="text-ink">Visa Required</strong>, <strong className="text-ink">Freedom of Movement</strong> - but
-              a corridor page only ever tells you what applies to your specific passport and destination, never what
-              the term itself means. This page is that missing reference: one plain-language definition for every
-              access level and visa concept used across the site, so you know exactly what you&apos;re looking at
-              wherever you land.
-            </p>
-            <p className="text-body mt-4 text-ink-soft">
-              This is a definitional guide, not a per-country listing - for what actually applies to you, check a
-              specific <Link href="/visit" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">passport and destination pair</Link>{" "}
-              or browse the <Link href="/passport" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">passport index</Link>.
+              What every access-level badge on Earth Visa actually means - <strong className="text-ink">Visa-Free</strong>,{" "}
+              <strong className="text-ink">Visa on Arrival</strong>, <strong className="text-ink">eTA</strong>,{" "}
+              <strong className="text-ink">e-Visa</strong>, <strong className="text-ink">Visa Required</strong>,{" "}
+              <strong className="text-ink">Freedom of Movement</strong>. For what applies to you, check a specific{" "}
+              <Link href="/visit" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">passport and destination pair</Link>{" "}
+              or browse the{" "}
+              <Link href="/passport" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">passport index</Link>.
             </p>
 
             {/* Jump nav */}
-            <nav aria-label="Jump to a concept" className="mt-6 flex flex-wrap gap-2">
+            <nav aria-label="Jump to a concept" className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-[13.5px] font-medium">
               {CONCEPTS.map((c) => (
                 <a
                   key={c.id}
                   href={`#${c.id}`}
-                  className="mono inline-flex min-h-[44px] items-center gap-2 rounded-sm border border-line bg-paper-2/70 px-3.5 py-2 text-[11px] uppercase tracking-[0.12em] text-ink-soft transition hover:border-line-strong hover:text-ink"
+                  className="inline-flex min-h-[36px] items-center gap-1.5 text-ink-soft transition hover:text-ink"
                 >
-                  <span aria-hidden className={`h-2 w-2 rounded-full ${TONE_DOT[c.tone]}`} />
+                  <span aria-hidden className={`h-1.5 w-1.5 rounded-full ${TONE_DOT[c.tone]}`} />
                   {c.label}
                 </a>
               ))}
@@ -228,8 +206,8 @@ export default function VisaTypesGlossaryPage() {
               Visa-Free vs Visa on Arrival vs eTA vs e-Visa: The Difference
             </h2>
             <p className="text-body mt-3 text-ink-soft">
-              All four mean you skip the embassy - the differences are whether a visa is actually issued, where, and
-              whether you must apply before flying. At a glance:
+              All four mean you skip the embassy. What differs is whether a visa is issued, where, and whether you must
+              apply before flying.
             </p>
             <div className="mt-4 overflow-x-auto">
               <table className="w-full min-w-[640px] border-collapse text-sm">
@@ -275,8 +253,8 @@ export default function VisaTypesGlossaryPage() {
               </table>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              Which column applies to you is nationality-specific - the same destination can sit in a different column
-              for every passport. Each concept is defined in depth below.
+              Which column applies is nationality-specific: the same destination can sit in a different one for every
+              passport.
             </p>
           </section>
 
@@ -289,16 +267,11 @@ export default function VisaTypesGlossaryPage() {
               <ConceptTag tone="vfree">Access level</ConceptTag>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              Visa-free access is the simplest entry there is: show up with a valid passport and cross the border.
-              There is no application to file, no fee to pay, and nothing to prepare in advance beyond the passport
-              itself (an officer may still ask, at their discretion, to see a return ticket or proof of funds).
-              You&apos;ll typically get a stamp in your passport - or, inside a shared-border zone, nothing at all -
-              authorising a permitted stay length set entirely by the destination.
-            </p>
-            <p className="text-body mt-3 text-ink-soft">
-              Visa-free access is nationality-specific: the same destination can be visa-free for one passport and
-              require a full visa for another. See any passport&apos;s full visa-free list on its own page, or check a
-              specific pair on our{" "}
+              The simplest entry there is: show up with a valid passport and cross the border. No application, no fee,
+              nothing to prepare in advance - though an officer may still ask to see a return ticket or proof of funds.
+              You get a stamp (or, inside a shared-border zone, nothing at all) authorising a stay length the destination
+              sets. It is nationality-specific: the same destination can be visa-free for one passport and require a full
+              visa for another - check a pair on the{" "}
               <Link href="/visit" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 visa requirement tool
               </Link>
@@ -315,17 +288,12 @@ export default function VisaTypesGlossaryPage() {
               <ConceptTag tone="voa">Access level</ConceptTag>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              Visa on arrival looks similar to visa-free from the outside - you don&apos;t file anything before you
-              fly - but it is a materially different process. Instead of walking straight through immigration, you
-              queue at a dedicated visa-on-arrival counter, pay a fee in person (commonly cash, sometimes card), and
-              receive a visa sticker or stamp issued right there at the airport or land border.
-            </p>
-            <p className="text-body mt-3 text-ink-soft">
-              It is <strong className="text-ink">not the same as visa-free</strong>: there is a fee, there is a
-              counter process, and the officer issuing it can still ask for a return ticket, a hotel booking, or
-              proof of funds first. Because it happens in person, the exact fee, accepted currency and required
-              documents are set by that country&apos;s immigration authority and vary by destination - always check
-              the specific requirement for your passport and destination rather than assuming a flat rule.
+              You file nothing before you fly, but this is{" "}
+              <strong className="text-ink">not the same as visa-free</strong>: you queue at a dedicated counter, pay a
+              fee in person (commonly cash, sometimes card), and receive a visa sticker or stamp at the airport or land
+              border. The officer can still ask for a return ticket, hotel booking or proof of funds first, and the fee,
+              accepted currency and required documents are set per destination - so check the specific requirement
+              rather than assuming a flat rule.
             </p>
           </section>
 
@@ -338,22 +306,15 @@ export default function VisaTypesGlossaryPage() {
               <ConceptTag tone="eta">Pre-screening, not a visa</ConceptTag>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              An eTA is <strong className="text-ink">not a visa</strong>. It&apos;s a security pre-screening step
-              layered on top of an entry you already qualify for visa-free or under a visa-waiver arrangement. You
-              apply online before you travel, usually get an automated approval within minutes to a few days, and the
-              authorisation is linked electronically to your passport number - there is no physical document to
-              print, no sticker, and no embassy visit required.
-            </p>
-            <p className="text-body mt-3 text-ink-soft">
-              In Earth Visa&apos;s data, Kenya&apos;s official tourist entry requirement is literally named the
-              &quot;Electronic Travel Authorisation (eTA)&quot;, and destinations that run this kind of pre-screening
-              for at least one nationality also include Australia&apos;s ETA, Canada&apos;s eTA, the United
-              Kingdom&apos;s ETA and the United States&apos; ESTA - all pre-screening layers on top of an existing
-              visa-exempt entry, not full visas. See our{" "}
+              An eTA is <strong className="text-ink">not a visa</strong>: it&apos;s a security pre-screening layered on
+              top of an entry you already qualify for visa-free. You apply online before travelling, usually get an
+              automated approval within minutes to a few days, and it is linked electronically to your passport number -
+              no document to print, no sticker, no embassy visit. Kenya&apos;s eTA, Australia&apos;s ETA, Canada&apos;s
+              eTA, the UK&apos;s ETA and the United States&apos; ESTA all work this way. The EU&apos;s version is{" "}
               <Link href="/guide/etias" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
-                ETIAS guide
-              </Link>{" "}
-              for the EU&apos;s version of this same idea, applied across the Schengen Area.
+                ETIAS
+              </Link>
+              , applied across the Schengen Area.
             </p>
           </section>
 
@@ -366,61 +327,16 @@ export default function VisaTypesGlossaryPage() {
               <ConceptTag tone="evisa">A real visa, issued online</ConceptTag>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              An e-visa <strong className="text-ink">is</strong> an actual visa - a genuine entry permit - just
-              applied for and issued online instead of in person at an embassy or consulate. You fill out a form,
-              upload scanned documents (photo, passport bio page, sometimes a hotel booking or return ticket), pay a
-              fee online, and receive an approval letter or an electronic record tied to your passport instead of a
-              stamp obtained face-to-face. It replaces the embassy visit and the physical sticker, but it does not
-              replace the visa requirement itself: if you would otherwise need a visa to enter, an e-visa is still a
-              visa - simply a digital one.
+              An e-visa <strong className="text-ink">is</strong> an actual visa, just applied for and issued online
+              instead of at an embassy. You fill out a form, upload scanned documents (photo, passport bio page,
+              sometimes a hotel booking or return ticket), pay online, and receive an approval letter or electronic
+              record tied to your passport. It replaces the embassy visit, not the visa requirement.
             </p>
             <p className="text-body mt-3 text-ink-soft">
-              The key distinction from an eTA: an eTA is a pre-screening step on top of entry you already had
-              visa-free; an e-visa is the actual visa, for travellers who would need one anyway, delivered without a
-              passport-stamp appointment. Australia runs both tracks - its ETA for visa-exempt passports and its
-              eVisitor / e-Visa for the rest - same destination, two different mechanisms, depending on passport.
+              The distinction from an eTA: an eTA is pre-screening for travellers who are already visa-exempt; an
+              e-visa is the visa itself, for travellers who would need one anyway. Australia runs both - its ETA for
+              visa-exempt passports, its eVisitor / e-Visa for the rest.
             </p>
-
-            <h3 className="mt-6 font-display text-lg font-semibold text-ink">eTA vs e-Visa, at a Glance</h3>
-            <div className="mt-3 overflow-x-auto">
-              <table className="w-full min-w-[480px] border-collapse text-sm">
-                <thead>
-                  <tr className="mono-chrome border-b border-line-strong text-left">
-                    <th scope="col" className="py-2.5 pr-4 font-medium">
-                      Question
-                    </th>
-                    <th scope="col" className="py-2.5 pr-4 font-medium">
-                      eTA
-                    </th>
-                    <th scope="col" className="py-2.5 font-medium">
-                      e-Visa
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-line text-ink-soft">
-                  <tr>
-                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Is it a visa?</td>
-                    <td className="py-2.5 pr-4">No - a pre-screening layer</td>
-                    <td className="py-2.5">Yes - a full visa, just digital</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Who needs to file it</td>
-                    <td className="py-2.5 pr-4">Travellers already visa-exempt</td>
-                    <td className="py-2.5">Travellers who&apos;d otherwise need a visa</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2.5 pr-4 font-display font-medium text-ink">Where you apply</td>
-                    <td className="py-2.5 pr-4">Online, before travel</td>
-                    <td className="py-2.5">Online, before travel</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2.5 pr-4 font-display font-medium text-ink">What you receive</td>
-                    <td className="py-2.5 pr-4">An electronic record linked to your passport</td>
-                    <td className="py-2.5">An approval letter / electronic visa record</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
           </section>
 
           {/* Visa Required */}
@@ -432,20 +348,12 @@ export default function VisaTypesGlossaryPage() {
               <ConceptTag tone="neutral">Traditional visa</ConceptTag>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              For most passport-and-destination combinations that don&apos;t fall under any of the above, you need a
-              traditional visa: you must apply in advance, before you travel, at an embassy, a consulate, or an
-              authorised visa application centre such as VFS Global, TLScontact or BLS International acting on the
-              destination&apos;s behalf. The general shape of the process is consistent even though the specifics
-              vary enormously - you complete an application form, assemble supporting documents (passport, photos,
-              proof of funds, travel and accommodation details, sometimes an invitation letter), and in many cases
-              attend an in-person appointment to submit biometrics (fingerprints and a photo).
-            </p>
-            <p className="text-body mt-3 text-ink-soft">
-              A consulate then takes a published or typical processing time to reach a decision - it can be days or
-              it can be months, depending entirely on the destination and, often, on your specific nationality. There
-              is no single fee, document list or timeline that applies across every destination requiring a visa -
-              see the specific corridor page for your passport and destination for what actually applies, or start
-              from our{" "}
+              Everything else: you apply in advance at an embassy, consulate, or an authorised application centre such
+              as VFS Global, TLScontact or BLS International. You complete a form, assemble supporting documents
+              (passport, photos, proof of funds, travel and accommodation details, sometimes an invitation letter), and
+              often attend an appointment for biometrics. Processing runs from days to months depending on the
+              destination and your nationality. No single fee, document list or timeline applies everywhere - check
+              your own corridor on the{" "}
               <Link href="/visit" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 visa requirement tool
               </Link>
@@ -462,23 +370,18 @@ export default function VisaTypesGlossaryPage() {
               <ConceptTag tone="bloc">Beyond visa-free</ConceptTag>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              Freedom of movement is a broader right than visa-free entry: it is the right to live, work and reside
-              in another country, not just visit it temporarily. It doesn&apos;t come from a bilateral visa-waiver
-              arrangement between two governments - it comes from membership in a shared legal union or bloc that
-              both countries belong to. The clearest real-world example is the{" "}
-              <strong className="text-ink">European Union</strong>: citizens of its {euMemberCount} member states can
-              move to, work in, and reside in any other member state, a right that goes well beyond the short tourist
-              stays that ordinary visa-free travel allows.
+              A broader right than visa-free entry: the right to live, work and reside in another country, not just
+              visit it. It comes from membership of a shared legal union rather than a bilateral visa waiver - most
+              clearly the <strong className="text-ink">European Union</strong>, whose {euMemberCount} member states&apos;
+              citizens can move to, work in and reside in any other member state.
             </p>
             <p className="text-body mt-3 text-ink-soft">
-              Freedom of movement and Schengen are related but not the same thing: Schengen is about crossing internal
-              European borders without passport checks for short stays, while EU freedom of movement is about the
-              right to relocate and work long-term. The two overlap heavily but don&apos;t perfectly match - Ireland,
-              for instance, is in the EU (so Irish citizens have freedom of movement) but outside Schengen. See our{" "}
+              Not the same as Schengen, which is about crossing internal borders without passport checks for short
+              stays. They overlap but don&apos;t match: Ireland is in the EU but outside Schengen. See the{" "}
               <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 Schengen guide
               </Link>{" "}
-              for how the travel side works in practice.
+              for how the travel side works.
             </p>
           </section>
 
@@ -491,28 +394,17 @@ export default function VisaTypesGlossaryPage() {
               <ConceptTag tone="stamp">Depends on routing</ConceptTag>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              A transit visa is for passing through a country on the way to a final destination, not for a normal
-              visit - and whether you need one depends heavily on the specific country, the airport, and how you are
-              transiting.
-            </p>
-            <p className="text-body mt-3 text-ink-soft">
-              If you stay <strong className="text-ink">airside</strong> - inside the international transit zone of
-              an airport, on the same trip, without going through immigration - many countries require no transit
-              visa at all, regardless of nationality, because you never legally enter the country. The moment you go{" "}
-              <strong className="text-ink">landside</strong> - clearing immigration to leave the airport, collect
-              checked luggage, or change airports or terminals outside the secure zone - the rules change: some
-              countries then require a transit visa depending on your nationality and how long your layover is, while
-              others still let you through visa-free or issue one on arrival for the stopover.
-            </p>
-            <p className="text-body mt-3 text-ink-soft">
-              Because this varies so much by destination - and even by which specific airport you are routed through -
-              there is no single rule that covers every case. Always check the transit requirement for your exact
-              routing and nationality before booking a connection that leaves the international zone. For the
-              transit visa products published by each destination in our data, see our dedicated{" "}
+              For passing through a country on the way somewhere else. Stay{" "}
+              <strong className="text-ink">airside</strong> - inside the international transit zone, never clearing
+              immigration - and many countries require no transit visa at all, whatever your nationality, because you
+              never legally enter. Go <strong className="text-ink">landside</strong> to leave the airport, collect
+              checked luggage or change terminals outside the secure zone, and some countries require one depending on
+              your nationality and layover length, while others still let you through visa-free. It varies by airport
+              as well as by country, so check your exact routing before booking - and see the{" "}
               <Link href="/guide/transit-visa" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 transit visa guide
-              </Link>
-              .
+              </Link>{" "}
+              for the products each destination publishes.
             </p>
           </section>
 
@@ -537,10 +429,6 @@ export default function VisaTypesGlossaryPage() {
             <h2 className="text-section text-ink">
               Now check what actually applies to your passport
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Definitions are a start - the real answer depends on your passport and destination. Use Earth Visa to
-              see the exact access level for any pair, in seconds.
-            </p>
             <Link
               href="/visit"
               className="btn-stamp mt-5"

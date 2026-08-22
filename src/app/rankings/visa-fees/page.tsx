@@ -225,7 +225,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What is the most expensive tourist visa in the world in 2026?",
-    a: `Among destinations with a single published flat fee, ${priciest.name} has the highest tourist-visa cost we could confirm from an official source in 2026, at ${priciest.feeLabel}. The United Kingdom's Standard Visitor visa and several embassy-issued African visas (Algeria, Niger, Sudan) also sit near the top - see the full ranking above. Some destinations set fees per requesting nationality (reciprocity schedules) rather than one public figure, so they aren't included in this comparison.`,
+    a: `Among destinations with a single published flat fee, ${priciest.name} has the highest tourist-visa cost we could confirm from an official source in 2026, at ${priciest.feeLabel}. The United Kingdom's Standard Visitor visa and several embassy-issued African visas (Algeria, Niger, Sudan) also sit near the top. Destinations that price per requesting nationality on a reciprocity schedule aren't included.`,
   },
   {
     q: "Which countries have a completely free tourist visa or e-visa in 2026?",
@@ -237,7 +237,7 @@ const FAQS = [
   },
   {
     q: "Why do some countries charge an extra 'service fee' on top of the visa fee?",
-    a: `${vfsUsedCount} destinations in our dataset outsource visa-application logistics to a private company - almost always VFS Global - which charges its own service fee separately from, and on top of, the government's visa fee. That charge pays for the outsourcing company's operations (biometrics collection, document handling, courier), not the visa itself. We could only confirm one clean, unambiguous amount for ${vfsClean.length} destinations; see the outsourcing-fee table below.`,
+    a: `${vfsUsedCount} destinations outsource visa-application logistics to a private company - almost always VFS Global - which charges its own service fee on top of the government's visa fee. It pays for biometrics collection, document handling and courier, not the visa itself. We could confirm one clean amount for ${vfsClean.length} destinations; see the outsourcing-fee table above.`,
   },
   {
     q: "Why isn't every destination in this ranking?",
@@ -373,13 +373,12 @@ export default function VisaFeesRankingPage() {
               </Link>{" "}
               at {priciest.feeLabel}.
             </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-ink-2 sm:text-[16px]">
-              Every figure is the destination&apos;s own lowest published rate for a standard adult tourist product - see
-              the <a href="#methodology" className={A_ACCENT}>methodology</a>{" "}for exactly what is (and isn&apos;t) counted.
-              These schedules do move: Japan&apos;s first fee revision since 1978 took effect 1 July 2026 - see{" "}
+            <p className="mt-3 text-[13.5px] font-medium text-ink-3">
+              <a href="#methodology" className={A_ACCENT}>Methodology</a>
+              {" · "}
               <Link href="/guide/japan-visa-fee-increase-2026" className={A_ACCENT}>
-                the Japan visa fee increase, explained
-              </Link>.
+                Japan&apos;s first fee revision since 1978, effective 1 July 2026
+              </Link>
             </p>
           </section>
 
@@ -389,9 +388,8 @@ export default function VisaFeesRankingPage() {
               {freeRows.length} destinations with no tourist visa fee
             </h2>
             <p className={LEDE}>
-              No visa fee, no e-visa charge, no arrival levy - just a passport, and in some cases a free digital arrival
-              form. This is not the same as visa-free access for every nationality; it means the destination itself
-              charges nothing for the product listed.
+              No visa fee, no e-visa charge, no arrival levy - the destination charges nothing for the product listed,
+              which is not the same as visa-free access for every nationality.
             </p>
             <ol className={LIST_GRID_OL}>
               {freeRows.map((r) => (
@@ -417,10 +415,6 @@ export default function VisaFeesRankingPage() {
             <h2 className={H2}>
               The 10 most expensive tourist visas in 2026
             </h2>
-            <p className={LEDE}>
-              Ranked by the destination&apos;s own lowest published standard-entry fee - some publish steeper rates for
-              multiple-entry or expedited service, which are not counted here.
-            </p>
             <ol className={LIST_COL_OL}>
               {priciest10.map((r) => (
                 <li key={r.iso3} className={LIST_COL_LI}>
@@ -448,18 +442,13 @@ export default function VisaFeesRankingPage() {
             <h2 className={H2}>
               Full visa fee comparison: {rankedCount} destinations ranked
             </h2>
-            <p className={LEDE}>
-              Click a column header to sort, or filter by country or region. Every row links to the destination&apos;s
-              full fee breakdown and official source.
-            </p>
             <div className="mt-5">
               <FeesTable rows={rows} />
             </div>
             {unrankedCount > 0 && (
-              <p className="mt-3 max-w-2xl text-[13px] leading-relaxed text-ink-2">
-                {unrankedCount}{" "}further destinations aren&apos;t ranked here because no single official fee could be
-                confirmed - typically because the fee varies by requesting nationality on a reciprocity schedule, or
-                only a range/embassy-discretion figure is published. See each destination&apos;s own page for detail.
+              <p className="mt-3 max-w-2xl text-[13px] leading-relaxed text-ink-3">
+                {unrankedCount}{" "}further destinations aren&apos;t ranked: their fee isn&apos;t one public number.{" "}
+                <a href="#methodology" className={A_ACCENT}>Why</a>
               </p>
             )}
           </section>
@@ -470,9 +459,7 @@ export default function VisaFeesRankingPage() {
               Cheapest paid tourist visas in 2026
             </h2>
             <p className={LEDE}>
-              Just above free: {cheapestPaid.slice(0, 5).map((r) => `${r.name} ($${r.feeUsd})`).join(", ")}
-              {cheapestPaid.length > 5 ? `, and ${cheapestPaid.slice(5).map((r) => `${r.name} ($${r.feeUsd})`).join(", ")}` : ""} round out
-              the ten lowest confirmed paid fees - see the full table above for every destination in between.
+              The ten lowest confirmed paid fees: {cheapestPaid.map((r) => `${r.name} ($${r.feeUsd})`).join(", ")}.
             </p>
           </section>
 
@@ -482,10 +469,9 @@ export default function VisaFeesRankingPage() {
               Visa fees by region
             </h2>
             <p className={LEDE}>
-              Europe&apos;s median is driven almost entirely by the flat Schengen short-stay fee. The more striking
-              pattern is Africa: its median published tourist-visa fee runs well above Asia&apos;s and Americas&apos;,
-              despite far lower average incomes in many of its constituent countries - the same {"$"}50-100 fee is a
-              very different share of a traveller&apos;s (or a visiting relative&apos;s) budget depending on where they&apos;re from.
+              Europe&apos;s median is the flat Schengen short-stay fee. Africa&apos;s runs well above Asia&apos;s and the
+              Americas&apos; despite far lower average incomes - the same {"$"}50-100 is a very different share of a
+              traveller&apos;s budget depending on where they&apos;re from.
             </p>
             <div className="mt-5 overflow-x-auto rounded-xl border border-hair bg-surface">
               <table className="w-full min-w-[560px] border-collapse text-left">
@@ -520,13 +506,12 @@ export default function VisaFeesRankingPage() {
                 The hidden markup: outsourced application-centre fees
               </h2>
               <p className={LEDE}>
-                {vfsUsedCount}{" "}destinations in this dataset outsource visa-application handling to a private company -
-                almost always VFS Global - which charges its own service fee, separately from and on top of the
-                government&apos;s visa fee above. That charge doesn&apos;t appear in most &quot;visa cost&quot; comparisons because
-                it&apos;s paid to a different party for a different thing (biometrics, document handling, courier), not
-                the entry permit itself. We could confirm one clean, unambiguous amount for {vfsClean.length} destinations;
-                the {vfsInr.length}{" "}below are reported from India-based application centres, so they&apos;re directly comparable
-                in one currency - a further {vfsClean.length - vfsInr.length} are confirmed in other local currencies on their own destination pages.
+                {vfsUsedCount}{" "}destinations outsource visa-application handling to a private company - almost always
+                VFS Global - which charges its own fee for biometrics, document handling and courier, on top of the
+                government fee ranked above. The {vfsInr.length}{" "}below are the amounts we could confirm cleanly at
+                India-based centres, so they compare in one currency; {vfsClean.length - vfsInr.length} more are confirmed
+                in other local currencies on their own destination pages, and the same operator charges a different
+                locally-set fee at each.
               </p>
               <div className="mt-5 overflow-x-auto rounded-xl border border-hair bg-surface">
                 <table className="w-full min-w-[520px] border-collapse text-left">
@@ -555,11 +540,6 @@ export default function VisaFeesRankingPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="mt-3 max-w-2xl text-[13px] leading-relaxed text-ink-2">
-                All figures reported from India-based application centres for consistency of currency; the same
-                operator charges a different, locally-set fee at centres in other countries. Amounts are additional
-                to the destination&apos;s own visa fee in the ranking above, not a substitute for it.
-              </p>
             </section>
           )}
 
@@ -571,34 +551,19 @@ export default function VisaFeesRankingPage() {
             <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-ink-2">
               Earth Visa crawled the <strong className="font-semibold text-ink">official fee schedule</strong>{" "}published by each
               destination&apos;s own immigration authority, foreign ministry, or e-visa/eTA portal - not third-party
-              visa-agency markups. The dataset was last refreshed <strong className="font-semibold tabular-nums text-ink">{fmtDate(feeUpdated)}</strong>.
-            </p>
-            <p className={BODY}>For each destination we take the lowest amount among four tourist-facing products:</p>
-            <ul className="mt-4 max-w-3xl space-y-2">
-              {[
-                ["Tourist visa", "a standard embassy/consulate-issued visa."],
-                ["e-Visa", "a full visa applied for and issued entirely online."],
-                ["Visa on arrival", "a visa issued at the border on landing."],
-                ["eTA", "an electronic travel authorisation or mandatory digital arrival form."],
-              ].map(([term, def]) => (
-                <li key={term} className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
-                  <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
-                  <span><strong className="font-semibold text-ink">{term}</strong> - {def}</span>
-                </li>
-              ))}
-            </ul>
-            <p className={BODY}>
-              We exclude business, transit and student/work visas (different product, different price), any fee without
-              a published amount, and narrow-scope rates that don&apos;t reflect what a standard adult tourist pays - child
-              and infant discounts, group/collective and family-passport rates, and one-off bilateral carve-outs for a
-              single nationality. Amounts are converted to USD at the rate recorded at crawl time; native-currency figures
-              are shown alongside on each destination&apos;s own page.
+              visa-agency markups - and takes the lowest amount among four tourist products: tourist visa (embassy or
+              consulate-issued), e-visa (a full visa applied for and issued online), visa on arrival (issued at the border
+              on landing), and eTA (an electronic authorisation or mandatory digital arrival form). Last refreshed{" "}
+              <strong className="font-semibold tabular-nums text-ink">{fmtDate(feeUpdated)}</strong>.
             </p>
             <p className={BODY}>
-              {unrankedCount}{" "}destinations are left out of the ranking entirely because their fee genuinely isn&apos;t one
-              number - it varies by the traveller&apos;s own nationality under a reciprocity schedule (common for embassy-issued
-              visas), or only a range, &quot;contact embassy&quot;, or since-discontinued figure is published. Publishing a single
-              misleading average for those would be worse than omitting them.
+              Excluded: business, transit and student/work visas; multiple-entry and expedited rates; any fee without a
+              published amount; and narrow-scope rates that aren&apos;t what a standard adult tourist pays - child and
+              infant discounts, group/collective and family-passport rates, single-nationality carve-outs. Amounts are
+              converted to USD at the rate recorded at crawl time, with native-currency figures on each destination&apos;s
+              own page. The {unrankedCount}{" "}destinations left out are those whose fee genuinely isn&apos;t one number: it
+              varies by the traveller&apos;s nationality under a reciprocity schedule, or only a range or &quot;contact
+              embassy&quot; is published, and a single misleading average would be worse than omitting them.
             </p>
           </section>
 
@@ -620,26 +585,16 @@ export default function VisaFeesRankingPage() {
             </div>
           </section>
 
-          {/* Cross-link to the passport-power ranking */}
-          <section className="mt-12 max-w-3xl">
-            <p className="text-[15px] leading-relaxed text-ink-2 sm:text-[16px]">
-              Fee is only half the story - see how many destinations your passport can reach without any visa at all in
-              the{" "}
-              <Link href="/rankings" className={A_ACCENT}>
-                2026 passport ranking
-              </Link>
-              , or check your own passport&apos;s exact requirements and fees for any destination below.
-            </p>
-          </section>
-
           {/* CTA - the one action on this page */}
           <section className="mt-14 border-t border-hair pt-10">
             <h2 className={H2}>
               Check the exact fee for your passport
             </h2>
-            <p className={LEDE}>
-              Select your passport and a destination to see the visa type, fee, and documents required - sourced from
-              official government pages.
+            <p className="mt-2 text-[13.5px] font-medium text-ink-3">
+              Fee is only half the story - reach is the other:{" "}
+              <Link href="/rankings" className={A_ACCENT}>
+                the 2026 passport ranking
+              </Link>
             </p>
             <Link
               href="/visit"

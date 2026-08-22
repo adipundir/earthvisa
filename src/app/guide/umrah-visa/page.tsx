@@ -231,16 +231,15 @@ export default function UmrahVisaGuidePage() {
               (which allows Umrah but not Hajj), the{" "}
               <strong className="text-ink">dedicated Umrah visa</strong> processed through the official{" "}
               <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>{" "}
-              platform, and - for travellers who hold a valid, previously used US, UK or Schengen visa - a{" "}
+              platform, and - for travellers holding a valid, previously used US, UK or Schengen visa - a{" "}
               <strong className="text-ink">visa on arrival</strong> recorded in Saudi tourist visa regulations.
-              Which route applies depends on your passport, and every eligibility claim on this page comes from our
-              official-source dataset.
+              Which one applies depends on your passport.
             </p>
             {notEligibleNames.length > 0 && (
               <p className="text-body mt-4 text-ink-soft">
-                Major Umrah-origin nationalities - {notEligibleNames.join(", ")} - are{" "}
-                <strong className="text-ink">not</strong> eligible for the tourist e-Visa per our data, so for them the
-                Nusuk Umrah visa (or the US/UK/Schengen visa-holder route) is the practical path.
+                {notEligibleNames.join(", ")} are <strong className="text-ink">not</strong> eligible for the tourist
+                e-Visa per our data, so for them the Nusuk Umrah visa - or the US/UK/Schengen visa-holder route - is
+                the practical path.
               </p>
             )}
           </section>
@@ -249,8 +248,7 @@ export default function UmrahVisaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">Route 1: Umrah on a Saudi Tourist Visa</h2>
             <p className="text-body mt-3 text-ink-soft">
-              Tourist visa holders may perform Umrah at any time of year outside the Hajj season. Two tourist
-              products exist:
+              Tourist visa holders may perform Umrah at any time of year outside the Hajj season.
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {sauTourist.map((vt) => (
@@ -267,9 +265,9 @@ export default function UmrahVisaGuidePage() {
               ))}
             </div>
             <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-              Eligibility is limited - check whether your passport qualifies on the official portal (visitsaudi.com) or
-              via your <Link href="/visit?dest=SAU" className="text-stamp underline underline-offset-2">Earth Visa check</Link>.
-              A tourist visa never permits Hajj - the dedicated Hajj visa is issued only via{" "}
+              Eligibility is limited - check your passport on visitsaudi.com or with your{" "}
+              <Link href="/visit?dest=SAU" className="text-stamp underline underline-offset-2">Earth Visa check</Link>.
+              A tourist visa never permits Hajj, which is issued only via{" "}
               <a href="https://hajj.nusuk.sa/" rel="noopener noreferrer" className="text-stamp underline underline-offset-2">Nusuk Hajj</a>.
             </p>
           </section>
@@ -279,23 +277,23 @@ export default function UmrahVisaGuidePage() {
             <h2 className="text-section text-ink">Route 2: The Dedicated Umrah Visa via Nusuk</h2>
             <p className="text-body mt-3 text-ink-soft">
               For nationalities without tourist visa access - which includes the largest pilgrimage origins - the
-              dedicated <strong className="text-ink">Umrah visa</strong> is the standard route. It is
-              processed through <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>,
-              Saudi Arabia&apos;s official Umrah and Hajj platform, and its authorised travel providers. Typical flow:
+              dedicated <strong className="text-ink">Umrah visa</strong> is the standard route, processed through{" "}
+              <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>{" "}
+              and its authorised travel providers.
             </p>
             <ol className="mt-4 space-y-4">
               {[
                 {
                   t: "Register on Nusuk or book through an authorised provider",
-                  d: "The official platform handles the visa application, and most pilgrims book Umrah packages (visa + accommodation + transport) through Nusuk-authorised agents in their home country.",
+                  d: "Most pilgrims book a package (visa + accommodation + transport) through a Nusuk-authorised agent at home.",
                 },
                 {
                   t: "Submit documents",
-                  d: "Passport (commonly required to be valid 6+ months), photos, and proof of vaccination - meningococcal ACWY is commonly required per Saudi health requirements. Exact document lists vary by origin country; verify on official Saudi sources before you book.",
+                  d: "Passport usually valid 6+ months, photos, and proof of meningococcal ACWY vaccination. Exact lists vary by origin country - verify on official Saudi sources before you book.",
                 },
                 {
                   t: "Receive the e-visa and book rites",
-                  d: "The Umrah visa is issued electronically. Permits for the Rawdah (Prophet's Mosque) and other rites are booked inside the Nusuk app.",
+                  d: "The visa is issued electronically; Rawdah and other rite permits are booked inside the Nusuk app.",
                 },
               ].map(({ t, d }, i) => (
                 <li key={t} className="flex gap-4">
@@ -321,9 +319,9 @@ export default function UmrahVisaGuidePage() {
               ))}
             </dl>
             <p className="card-doc mt-5 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-              Umrah visa fees and validity are set by Saudi authorities and are not recorded in our dataset - confirm
-              them on the official Nusuk platform, not third-party agents&apos; ads. Women&apos;s mahram (male guardian)
-              rules have been relaxed per official Saudi policy; verify the current conditions before travel.
+              Umrah visa fees are set by Saudi authorities and not recorded in our dataset - confirm them on Nusuk
+              itself, not third-party agents&apos; ads. Mahram (male guardian) rules have been relaxed; verify the
+              current conditions before travel.
             </p>
           </section>
 
@@ -335,14 +333,14 @@ export default function UmrahVisaGuidePage() {
               </h2>
               <p className="text-body mt-3 text-ink-soft">
                 Saudi tourist visa regulations grant a <strong className="text-ink">visa on arrival</strong> to
-                travellers of <strong className="text-ink">any nationality</strong> who hold one of the credentials
-                below.
+                travellers of <strong className="text-ink">any nationality</strong> holding one of these credentials -
+                the fastest legal route for many Indian, Pakistani and Bangladeshi pilgrims, and it allows Umrah.
               </p>
               <ul className="mt-4 space-y-2.5">
                 {credentialVoA.map(({ id, edge }) => (
                   <li key={id} className="card-doc flex min-h-[44px] items-center gap-3 px-3.5 py-2.5">
                     <span className="font-display text-sm font-medium text-ink">{credLabel[id]}</span>
-                    <span className="mono ml-auto shrink-0 rounded-[3px] bg-voa/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-voa ring-1 ring-voa/30">
+                    <span className="mono ml-auto shrink-0 rounded-[3px] bg-voa/10 px-2 py-0.5 text-[11px] text-voa ring-1 ring-voa/30">
                       On arrival{edge?.maxStayDays ? ` · ${edge.maxStayDays}d` : ""}
                     </span>
                   </li>
@@ -361,10 +359,6 @@ export default function UmrahVisaGuidePage() {
                   </div>
                 ))}
               </dl>
-              <p className="text-body mt-4 text-ink-soft">
-                This is the fastest legal route for many Indian, Pakistani and Bangladeshi travellers who already hold
-                a used US, UK or Schengen visa - and the resulting tourist visa allows Umrah.
-              </p>
             </section>
           )}
 
@@ -372,8 +366,7 @@ export default function UmrahVisaGuidePage() {
           <section className="mt-12">
             <h2 className="text-section text-ink">Umrah Visa by Nationality</h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Saudi entry status per passport. &quot;Visa required in advance&quot; means the
-              Nusuk Umrah visa (or the US/UK/Schengen visa-holder route above) is your path.
+              &quot;Visa required&quot; means the Nusuk Umrah visa, or the credential route above, is your path.
             </p>
             <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {perNationality.map(({ iso3, name, edge }) => (
@@ -385,7 +378,7 @@ export default function UmrahVisaGuidePage() {
                   <span className="text-xl">{flagFor(iso3)}</span>
                   <span className="font-display text-sm font-medium text-ink transition group-hover:text-stamp">{name}</span>
                   <span
-                    className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] ring-1 ${
+                    className={`mono ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[11px] ring-1 ${
                       edge ? "bg-evisa/10 text-evisa ring-evisa/30" : "bg-stamp/10 text-stamp ring-stamp/30"
                     }`}
                   >

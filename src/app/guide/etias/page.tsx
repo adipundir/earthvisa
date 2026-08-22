@@ -103,11 +103,11 @@ export default function EtiasGuidePage() {
   const faqs = [
     {
       q: "Is ETIAS a visa?",
-      a: "No. ETIAS (European Travel Information and Authorisation System) is a travel authorisation, not a visa. It applies only to travellers who can already enter the Schengen area without a visa. It does not change visa-free status - it adds a quick online pre-screening step before travel, similar in concept to the US ESTA. Travellers who need a Schengen visa will continue to apply for a visa and will not use ETIAS.",
+      a: "No. ETIAS (European Travel Information and Authorisation System) is a travel authorisation for travellers who can already enter the Schengen area without a visa - a quick online pre-screening before travel, similar in concept to the US ESTA. It does not change visa-free status, and travellers who need a Schengen visa apply for a visa instead.",
     },
     {
       q: "Do US citizens need ETIAS in 2026?",
-      a: `US passport holders currently enter Schengen countries visa-free${usStay ? ` for up to ${usStay} days in any 180-day period` : ""}. Once ETIAS becomes mandatory, US citizens will complete the online authorisation before travelling - but they will still not need a visa. The start date is not yet fixed; see the status note above and travel-europe.europa.eu.`,
+      a: `US passport holders enter Schengen countries visa-free${usStay ? ` for up to ${usStay} days in any 180-day period` : ""}. Once ETIAS becomes mandatory they will complete the online authorisation before travelling - still no visa. The start date is not yet fixed; see the status note above.`,
     },
     {
       q: "When does ETIAS start?",
@@ -123,7 +123,7 @@ export default function EtiasGuidePage() {
     },
     {
       q: "Do I need ETIAS if I already need a Schengen visa?",
-      a: "No. ETIAS is only for visa-exempt travellers. If your passport requires a Schengen visa (for example, most applicants from India, Pakistan, Nigeria or the Philippines), you follow the Schengen visa process instead - ETIAS never applies to you. Check your passport's Schengen access on Earth Visa to see which process applies.",
+      a: "No. ETIAS is only for visa-exempt travellers. If your passport requires a Schengen visa (for example most applicants from India, Pakistan, Nigeria or the Philippines), you follow the Schengen visa process instead - ETIAS never applies to you.",
     },
   ];
 
@@ -201,10 +201,10 @@ export default function EtiasGuidePage() {
             <h2 className="text-section text-ink">ETIAS Is Not a Visa</h2>
             <p className="text-body mt-3 text-ink-soft">
               <strong className="text-ink">ETIAS</strong>{" "}
-              (European Travel Information and Authorisation System) is the
-              EU&apos;s upcoming <strong className="text-ink">travel authorisation for visa-exempt travellers</strong> -
-              and that distinction is the single most common point of confusion. A visa is entry permission you apply
-              for because your passport does not qualify for visa-free entry; ETIAS is the opposite.
+              (European Travel Information and Authorisation System) is the EU&apos;s upcoming{" "}
+              <strong className="text-ink">travel authorisation for visa-exempt travellers</strong>. A visa is entry
+              permission you apply for because your passport does not qualify for visa-free entry; ETIAS is the
+              opposite.
             </p>
             <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
               <div className="card-doc p-4">
@@ -236,18 +236,17 @@ export default function EtiasGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">Who Will Need ETIAS</h2>
             <p className="text-body mt-3 text-ink-soft">
-              ETIAS will apply to <strong className="text-ink">visa-exempt, non-EU nationals</strong> making short
-              visits to the Schengen area - the same travellers who today simply board a plane with their passport,
-              including those from the{" "}
+              It will apply to <strong className="text-ink">visa-exempt, non-EU nationals</strong> making short visits
+              to the Schengen area - the travellers who today simply board a plane with their passport, including
+              those from the{" "}
               <Link href={`/passport/${nameToSlug(nameFor("USA"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">United States</Link>,{" "}
               <Link href={`/passport/${nameToSlug(nameFor("GBR"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">United Kingdom</Link>,{" "}
               <Link href={`/passport/${nameToSlug(nameFor("CAN"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Canada</Link> and{" "}
               <Link href={`/passport/${nameToSlug(nameFor("AUS"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Australia</Link>.
             </p>
             <ul className="mt-4 space-y-2 text-base leading-relaxed text-ink-soft">
-              <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span><strong className="text-ink">Visa-exempt travellers</strong> (US, UK, Canadian, Australian and other visa-free passports): will need ETIAS once it becomes mandatory.</span></li>
-              <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span><strong className="text-ink">EU / Schengen citizens and residents</strong>: do not need ETIAS.</span></li>
-              <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span><strong className="text-ink">Travellers who need a Schengen visa</strong> (for example most applicants from India, Pakistan or Nigeria): never use ETIAS - the Schengen visa process applies instead. See our <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen visa guide</Link>.</span></li>
+              <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span><strong className="text-ink">EU / Schengen citizens and residents</strong>: never need ETIAS.</span></li>
+              <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span><strong className="text-ink">Travellers who need a Schengen visa</strong> (most applicants from India, Pakistan or Nigeria): the <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen visa process</Link> applies instead.</span></li>
             </ul>
 
             {/* Data-driven visa-exempt examples */}
@@ -256,9 +255,6 @@ export default function EtiasGuidePage() {
                 <h3 className="mt-8 font-display text-lg font-semibold text-ink">
                   Example Passports in the ETIAS Group (Visa-Free to Schengen Today)
                 </h3>
-                <p className="text-body mt-2 max-w-3xl text-ink-soft">
-                  Confirmed visa-free to France in our dataset - these are the travellers ETIAS is built for.
-                </p>
               </>
             )}
             {/* Single-category section (all visa-free): the heading carries the
@@ -274,7 +270,7 @@ export default function EtiasGuidePage() {
                     <span className="text-lg leading-none">{flagFor(iso3)}</span>
                     <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">{nameFor(iso3)}</span>
                     {edge?.maxStayDays != null && (
-                      <span className="mono-chrome shrink-0 tabular-nums">≤ {edge.maxStayDays} days visa-free</span>
+                      <span className="mono shrink-0 text-[11px] tabular-nums text-ink-mute">≤ {edge.maxStayDays} days</span>
                     )}
                   </Link>
                 ))}
@@ -289,19 +285,19 @@ export default function EtiasGuidePage() {
               {[
                 {
                   t: "Apply online before your trip",
-                  d: "The application is a web form: passport details, background and security questions. Per the official EU description, most applications are expected to be processed quickly, but some can take longer if follow-up checks are needed - so apply well before booking-critical dates.",
+                  d: "A web form: passport details, background and security questions. Most applications are expected to be processed quickly, but follow-up checks can take longer - so apply well before booking-critical dates.",
                 },
                 {
                   t: "The authorisation links to your passport electronically",
-                  d: "There is no sticker or stamp. Border systems and airlines read the authorisation from your passport number, which also means a new passport requires a new ETIAS.",
+                  d: "No sticker, no stamp. Airlines and border systems read it from your passport number, so a new passport means a new ETIAS.",
                 },
                 {
                   t: "Travel visa-free as before",
-                  d: "ETIAS covers multiple short visits over its validity period. Your stay limits do not change - the standard Schengen short-stay rule (90 days in any 180-day period) continues to apply to visa-exempt visitors.",
+                  d: "One ETIAS covers multiple short visits over its validity. Stay limits do not change: 90 days in any 180-day period.",
                 },
                 {
                   t: "Carriers and border guards check it",
-                  d: "Once mandatory, airlines are expected to verify ETIAS before boarding, and having an ETIAS does not guarantee entry - the final decision stays with border officers, as with any travel authorisation.",
+                  d: "Airlines are expected to verify ETIAS before boarding, and it does not guarantee entry - the final decision stays with border officers.",
                 },
               ].map(({ t, d }, i) => (
                 <li key={t} className="flex gap-4">
@@ -321,9 +317,8 @@ export default function EtiasGuidePage() {
               Where ETIAS Will Apply: The Schengen Countries ({schengen.length})
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              The {schengen.length} Schengen members recorded in our dataset are listed below - each links to its
-              entry-requirements page. The EU&apos;s own list also includes Cyprus, an EU member not yet in Schengen.
-              For how the Schengen short-stay rules work, see the{" "}
+              Tap a country for its entry requirements. The EU&apos;s own list also includes Cyprus, an EU member not
+              yet in Schengen; for how short-stay rules work, see the{" "}
               <Link href="/guide/schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen visa guide</Link>.
             </p>
             <div className="card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3">
@@ -372,8 +367,8 @@ export default function EtiasGuidePage() {
               Does your passport enter Schengen visa-free?
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Check your passport&apos;s Europe access - if you are visa-exempt, ETIAS will apply to you; if not, the
-              Schengen visa process does. See the full picture, or compare passports on the{" "}
+              If you are visa-exempt, ETIAS will apply to you; if not, the Schengen visa process does. Or compare
+              passports on the{" "}
               <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">passport rankings</Link>.
             </p>
             <Link

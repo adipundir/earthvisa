@@ -92,11 +92,11 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What is a passport index?",
-    a: `A passport index is a ranking of the world's passports by how much visa-free travel each one allows. Each passport is scored by counting the destinations its holders can enter without arranging a visa at an embassy first - fully visa-free, with a visa on arrival, or with a lightweight eTA. The Earth Visa passport index 2026 ranks all ${TOTAL_PASSPORTS} passports this way across ${destCount} destinations; e-visa access is tracked and shown separately, but an e-visa is still a visa application, so it does not add to the score.`,
+    a: `A passport index ranks the world's passports by how much visa-free travel each allows: the destinations its holders can enter without arranging a visa first - visa-free, visa on arrival, or a lightweight eTA. The Earth Visa passport index 2026 ranks all ${TOTAL_PASSPORTS} passports this way across ${destCount} destinations; e-visa access is shown separately and does not add to the score.`,
   },
   {
     q: "Which is the strongest visa in the world?",
-    a: `People often say "strongest visa" when they mean the strongest passport - the document that grants the most visa-free travel. By that measure, the ${top1.name} passport${tiedWithTop.length > 0 ? ` (tied with ${listNames(tiedWithTop)})` : ""} is the strongest in the world in 2026, with ${top1.score} destinations that require no visa in advance. (A "visa" itself is a permit to enter one country; a passport's strength is what determines how many countries you can enter visa-free.)`,
+    a: `"Strongest visa" usually means the strongest passport - a visa is only a permit to enter one country. By that measure the ${top1.name} passport${tiedWithTop.length > 0 ? ` (tied with ${listNames(tiedWithTop)})` : ""} is strongest in 2026, with ${top1.score} destinations that require no visa in advance.`,
   },
   {
     q: "Which passport is the strongest in the world in 2026?",
@@ -108,7 +108,7 @@ const FAQS = [
   },
   {
     q: "How is the passport ranking calculated?",
-    a: `Earth Visa tracks four access levels for every passport: visa-free entry, visa on arrival, eTA (electronic travel authorisation), and e-visa. The ranking score counts the first three - destinations where you can travel without applying for a visa in advance. An e-visa is a real visa application, just submitted online, so e-visa destinations are listed separately and do not add to the score. Every access grant is sourced from official government publications - foreign ministry visa policy pages, immigration portals, and published bilateral agreements - rather than third-party aggregators. Passports with equal scores are listed in sequence, so adjacent ranks can share the same score.`,
+    a: `Score = visa-free + visa on arrival + eTA: the destinations you can reach without applying for a visa in advance. An e-visa is a real visa application, just submitted online, so it is listed separately and never counted. Every access grant comes from official government publications - foreign ministry visa policy pages, immigration portals, published bilateral agreements - rather than third-party aggregators. Passports with equal scores are listed in sequence, so adjacent ranks can share a score.`,
   },
   {
     q: "What is the weakest passport in the world in 2026?",
@@ -116,7 +116,7 @@ const FAQS = [
   },
   {
     q: "Why do passport rankings differ between indexes?",
-    a: `Different passport indexes use different methodologies. Some, like the Henley Passport Index, group visa-free and visa-on-arrival access into a single score; others count e-visas toward the score or draw on airline industry databases rather than government sources. Earth Visa scores visa-free + visa on arrival + eTA (e-visas shown separately, never counted), across ${destCount} destinations. The exact rank of a passport can therefore differ by a few places between indexes, but the overall picture - which passports are strongest and weakest - is broadly consistent.`,
+    a: `Methodologies differ: some indexes count e-visas toward the score, others draw on airline industry databases rather than government sources. Earth Visa scores visa-free + visa on arrival + eTA across ${destCount} destinations, with e-visas shown separately. A passport's exact rank can therefore differ by a few places between indexes, though the overall picture is broadly consistent.`,
   },
 ];
 
@@ -262,14 +262,12 @@ export default function RankingsPage() {
               {top1.visaFree} visa-free, {top1.visaOnArrival} visa on arrival, and {top1.eta} with an eTA. e-Visas
               ({top1.eVisa} more for the leader) are listed but never counted: an e-visa is still a visa.
             </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
-              We score visa-free + visa on arrival + eTA, list e-visa access separately, and use official government sources only - see
-              the <a href="#methodology" className="font-semibold text-accent underline-offset-2 transition hover:underline">methodology</a> below.
-              Reach is one axis; the other is cost - see{" "}
+            <p className="mt-3 text-[13.5px] font-medium text-ink-3">
+              <a href="#methodology" className="font-semibold text-accent underline-offset-2 transition hover:underline">Methodology</a>
+              {" · "}
               <Link href="/rankings/visa-fees" className="font-semibold text-accent underline-offset-2 transition hover:underline">
-                the real cost of a tourist visa
+                The same destinations ranked by visa fee
               </Link>
-              , the same destinations ranked by their official published fee.
             </p>
           </section>
 
@@ -278,9 +276,6 @@ export default function RankingsPage() {
             <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Top 10 Most Powerful Passports in 2026
             </h2>
-            <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-              Ranked by score: visa-free destinations plus visa on arrival and eTA. e-Visa counts are shown alongside but do not affect the rank. Tap any passport for its full destination list.
-            </p>
             <LedgerList list={top10} />
           </section>
 
@@ -289,9 +284,6 @@ export default function RankingsPage() {
             <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Full Passport Index 2026: All {rows.length} Passports Ranked
             </h2>
-            <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-              Click a column header to sort, or filter by country name. Every passport links to its full visa-free country list.
-            </p>
             <div className="mt-5">
               <RankingsTable rows={rows} />
             </div>
@@ -303,9 +295,8 @@ export default function RankingsPage() {
               The 10 Weakest Passports in the World 2026
             </h2>
             <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-              At the other end of the ranking, holders of these passports need an embassy visa for most international trips.
-              A weak passport does not mean no options: visa-on-arrival and e-visa destinations still exist for every passport
-              on this list, and holding credentials like a valid US or Schengen visa can unlock additional destinations.
+              Holders need an embassy visa for most international trips - though visa-on-arrival and e-visa destinations
+              still exist for every passport here, and a held US or Schengen visa can unlock more.
             </p>
             <LedgerList list={bottom10} />
           </section>
@@ -316,14 +307,12 @@ export default function RankingsPage() {
               How This Passport Ranking Is Calculated
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink-2">
-              Earth Visa builds its passport index from <strong className="font-semibold text-ink">official government sources only</strong>:
-              each destination country&apos;s own published visa policy - foreign ministry pages, immigration and border authority
-              portals, and bilateral agreements - inverted into per-passport access lists across {destCount} destinations, rather
-              than pulled from a third-party aggregator or airline database.
-            </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
-              Passports with equal scores are listed in sequence, so adjacent ranks can share the same score. The dataset was
-              last refreshed <strong className="font-semibold tabular-nums text-ink">{fmtDate(dataset.meta.lastUpdated)}</strong>.
+              Score = visa-free + visa on arrival + eTA. An e-visa is still a visa application, so it is listed separately and
+              never counted. Every grant comes from <strong className="font-semibold text-ink">official government sources only</strong> -
+              each destination&apos;s own published visa policy (foreign ministry pages, immigration portals, bilateral agreements),
+              inverted into per-passport lists across {destCount} destinations, not a third-party aggregator or airline database.
+              Equal scores are listed in sequence, so adjacent ranks can share a score. Last refreshed{" "}
+              <strong className="font-semibold tabular-nums text-ink">{fmtDate(dataset.meta.lastUpdated)}</strong>.
             </p>
           </section>
 
@@ -332,9 +321,6 @@ export default function RankingsPage() {
             <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Look Up a Popular Passport
             </h2>
-            <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
-              Jump straight to the full visa-free country list and 2026 rank for these frequently checked passports.
-            </p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {popular.map((r) => (
                 <li key={r.iso3}>
@@ -371,9 +357,6 @@ export default function RankingsPage() {
             <h2 className="text-[20px] font-bold tracking-tight text-ink">
               Where does your passport rank?
             </h2>
-            <p className="mx-auto mt-2 max-w-2xl text-[15px] leading-relaxed text-ink-2">
-              Enter your passport to see its exact rank, every visa-free destination, and what a second passport or a held visa could unlock.
-            </p>
             <Link
               href="/"
               className="btn-stamp mt-6"

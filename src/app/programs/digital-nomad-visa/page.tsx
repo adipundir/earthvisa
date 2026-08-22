@@ -7,7 +7,6 @@ import {
   passportWorth,
   programStatus,
   REGION_ORDER,
-  TOTAL_RANKED_PASSPORTS,
   typeLabel,
 } from "@/lib/programs";
 import ProgramsNav from "@/components/ProgramsNav";
@@ -92,11 +91,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is a digital nomad visa?",
-    a: `A digital nomad visa is a visa or residence permit that lets you live in a country while working remotely for employers or clients based outside it. It is distinct from a work visa (which authorises local employment) and from tourist entry (which generally does not permit working). Our dataset tracks ${entries.length} such routes across ${countryCount} countries, compiled from official government publications.`,
+    a: `A visa or residence permit that lets you live in a country while working remotely for employers or clients based outside it. Unlike a work visa it does not authorise local employment, and unlike tourist entry it lets you work legally.`,
   },
   {
     q: "How many countries offer digital nomad visas in 2026?",
-    a: `Our dataset (last refreshed ${lastUpdated}) tracks ${countryCount} countries with a digital nomad or remote-work residence route - ${entries.length} programs in total, of which ${openCount} are open and ${notOpenCount} are recorded as announced-but-not-yet-open or discontinued per their official sources.`,
+    a: `${countryCount} countries, across ${entries.length} programs - ${openCount} open and ${notOpenCount} announced-but-not-yet-open or discontinued per their official sources (data refreshed ${lastUpdated}).`,
   },
   {
     q: "Which European countries offer digital nomad visas?",
@@ -104,15 +103,15 @@ const faqs = [
   },
   {
     q: "Can I work for a local company on a digital nomad visa?",
-    a: `Generally no. These routes are designed for income earned from employers or clients outside the host country - the eligibility text from each official source, quoted in the entries above, governs. Taking up local employment usually requires a separate work permit.`,
+    a: `Generally no. These routes cover income from employers or clients outside the host country; local employment usually needs a separate work permit.`,
   },
   {
     q: "Do digital nomad visas require a minimum income?",
-    a: `Most programs publish a minimum income or savings threshold, and these figures change frequently. We deliberately do not summarise thresholds in one table - instead, each entry above quotes the eligibility text directly from the official source at crawl time, so the exact current figure is right there in the entry.`,
+    a: `Most publish an income or savings threshold and the figures change often, so each entry above quotes its official source's eligibility text rather than a summarised number.`,
   },
   {
     q: "Do digital nomad visas lead to permanent residency?",
-    a: `It varies. Some routes are structured as residence permits whose years can count toward long-term residence, while many are non-immigrant visas that do not. See the entry for your destination above - it quotes the official source's own eligibility text, including whether the route counts toward residence.`,
+    a: `It varies. Some are residence permits whose years can count toward long-term residence; many are non-immigrant visas that do not. The entry above quotes each source's own wording.`,
   },
 ];
 
@@ -171,55 +170,54 @@ function Chevron() {
   );
 }
 
-function NomadCard({ e }: { e: NomadEntry }) {
+// 53 of the 58 entries carry some spelling of "digital nomad" as their
+// category, which is what the whole page is about - the label only earns a line
+// when it says something the page title does not.
+const GENERIC_CATEGORY = /^digital[\s_-]?nomad/i;
+// "Not specified on official page/source", "Not applicable - programme
+// discontinued" and friends repeat on ~17 entries and tell the reader nothing
+// the row does not already say.
+const EMPTY_PROCESSING = /^not\s+(specified|applicable|officially)/i;
+
+function NomadRow({ e }: { e: NomadEntry }) {
   const slug = nameToSlug(e.name);
   const w = passportWorth(e.iso3);
+  const category = e.category && !GENERIC_CATEGORY.test(e.category) ? typeLabel(e.category) : null;
+  const processing = e.processing && !EMPTY_PROCESSING.test(e.processing) ? e.processing : null;
+  const meta = category || processing || w;
   return (
-    <article className="card-doc flex flex-col p-4">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="text-2xl">{flagFor(e.iso3)}</span>
-        <Link
-          href={`/destination/${slug}`}
-          className="inline-flex min-h-[44px] items-center font-display font-semibold text-ink transition hover:text-stamp"
-        >
+    <li className="py-3">
+      <p className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+        <span aria-hidden className="text-lg leading-none">{flagFor(e.iso3)}</span>
+        <Link href={`/destination/${slug}`} className="py-1 font-display font-semibold text-ink transition hover:text-stamp">
           {e.name}
         </Link>
+        <span className="text-[13px] italic leading-snug text-ink-soft">{e.program}</span>
         {e.status === "closed" && (
-          <span className="mono rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
-            closed per official source
-          </span>
+          <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">closed</span>
         )}
         {e.status === "announced" && (
-          <span className="mono rounded-[3px] bg-eta/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">
-            announced - not yet open
-          </span>
+          <span className="mono rounded-[3px] bg-eta/10 px-1.5 py-0.5 text-[11px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">announced</span>
         )}
-      </div>
-      <p className="mt-1 text-sm italic leading-snug text-ink-soft">{e.program}</p>
-      <p className="mono-chrome mt-2">{typeLabel(e.category)}</p>
-      {e.processing && <p className="mono mt-1.5 text-[11px] text-ink-mute">Processing: {e.processing}</p>}
-      {/* Shown rather than folded - 40 of the 57 eligibility blocks carry the
-          income threshold, which is what people open this page for, and hiding
-          all 57 behind a tap was why the page needed a paragraph above it
-          explaining the hiding. Clamped to three lines so surfacing them does
-          not simply trade 58 accordions for six extra screens of scrolling;
-          the full text stays in the markup. */}
-      {e.detail && <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-ink-soft">{e.detail}</p>}
-      <div className="mt-auto border-t border-line pt-3">
-        <div className="mono flex flex-wrap gap-x-4 text-[11px]">
-          {/* No "{name} entry rules →" link here: the card heading above already
-              links the same /destination/{slug} href. */}
+      </p>
+      {/* Shown rather than folded - 40 of the eligibility blocks carry the
+          income threshold, which is what people open this page for. Clamped to
+          three lines; the full text stays in the markup. */}
+      {e.detail && <p className="mt-0.5 line-clamp-3 text-[13px] leading-relaxed text-ink-soft">{e.detail}</p>}
+      {meta && (
+        <p className="mt-1 flex flex-wrap items-baseline gap-x-2 text-[12px] text-ink-mute">
+          {category && <span>{category}</span>}
+          {category && processing && <span aria-hidden>·</span>}
+          {processing && <span>{processing}</span>}
+          {(category || processing) && w && <span aria-hidden>·</span>}
           {w && (
-            <Link
-              href={`/passport/${slug}`}
-              className="inline-flex min-h-[44px] items-center uppercase tracking-[0.12em] text-ink-soft transition hover:text-ink"
-            >
-              Passport ({w.visaFree} visa-free) →
+            <Link href={`/passport/${slug}`} className="underline-offset-2 transition hover:text-ink hover:underline">
+              passport · {w.visaFree} visa-free →
             </Link>
           )}
-        </div>
-      </div>
-    </article>
+        </p>
+      )}
+    </li>
   );
 }
 
@@ -249,55 +247,37 @@ export default function DigitalNomadVisaPage() {
                 {countryCount}{" "}Countries with Remote Work Visas &amp; Residence Routes
               </span>
             </h1>
-            <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {entries.length} programs · data refreshed {lastUpdated}
+            {/* One line instead of a four-cell stat card that repeated the
+                counts already in the H1 and this line. */}
+            <p className="mono mt-3 text-[12px] font-medium tabular-nums text-ink-soft">
+              {entries.length} programs · {openCount} open · {notOpenCount} announced or closed · refreshed {lastUpdated}
             </p>
-
-            <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
-              {[
-                { k: "Countries", v: countryCount },
-                { k: "Programs tracked", v: entries.length },
-                { k: "Open routes", v: openCount },
-                { k: "Announced / closed", v: notOpenCount },
-              ].map(({ k, v }) => (
-                <div key={k} className="bg-card px-4 py-2.5">
-                  <dt className="mono-chrome">{k}</dt>
-                  <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
-                </div>
-              ))}
-            </dl></div>
           </div>
         </header>
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
-          {/* Intro */}
-          <section className="mt-10 max-w-3xl">
+          {/* Intro - one sentence; the counts are in the header line above. */}
+          <section className="mt-8 max-w-3xl">
             <p className="text-body text-ink-soft">
               A <strong className="text-ink">digital nomad visa</strong> lets you live in a country while working
-              remotely for employers or clients based abroad - legally, without pretending to be a tourist. Our
-              dataset tracks <strong className="text-ink">{entries.length} remote-work routes</strong> across{" "}
-              <strong className="text-ink">{countryCount} countries</strong>, grouped by region below.
+              remotely for employers or clients based abroad - legally, without pretending to be a tourist.
             </p>
-            {/* The "two honest caveats" paragraph and the refresh-date card both
-                went: the first existed to excuse eligibility text being hidden
-                (it is now shown on every card), and the second repeated the
-                "data refreshed" line printed in the header above. */}
           </section>
 
-          {/* Regions */}
+          {/* Regions - one dense row per program rather than a card each */}
           {REGION_ORDER.map((region) => {
             const list = byRegion.get(region) ?? [];
             if (list.length === 0) return null;
             return (
-              <section key={region} className="mt-12">
+              <section key={region} className="mt-10">
                 <h2 className="text-section text-ink">
                   Digital Nomad Visas in {region} ({list.length})
                 </h2>
-                <div className="mt-5 grid gap-3 lg:grid-cols-2">
+                <ul className="mt-3 divide-y divide-line border-t border-line lg:columns-2 lg:gap-10 lg:[&>li]:break-inside-avoid">
                   {list.map((e) => (
-                    <NomadCard key={`${e.iso3}-${e.program}`} e={e} />
+                    <NomadRow key={`${e.iso3}-${e.program}`} e={e} />
                   ))}
-                </div>
+                </ul>
               </section>
             );
           })}
@@ -325,13 +305,9 @@ export default function DigitalNomadVisaPage() {
             <h2 className="text-section text-ink">
               First, check if you even need a visa to arrive
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Many nomads scout a country visa-free before committing to a permit. Check your passport&apos;s access to
-              any destination on Earth Visa.
-            </p>
             <Link
               href="/visit"
-              className="btn-stamp mt-5"
+              className="btn-stamp mt-4"
             >
               Check visa-free access →
             </Link>

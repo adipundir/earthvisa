@@ -100,11 +100,7 @@ function CountryTile({ iso3, href, sub }: { iso3: string; href: string; sub?: st
 const FAQS = [
   {
     q: "What is a Schengen visa?",
-    a: `A Schengen visa is a short-stay visa (Type C) that lets you travel across all ${memberCount} Schengen Area countries on one document. It allows stays of up to 90 days in any 180-day period for tourism, family visits or business. You apply once, at the consulate of your main destination, and can then cross internal Schengen borders without further checks.`,
-  },
-  {
-    q: "Which countries are in the Schengen Area in 2026?",
-    a: `The Schengen Area has ${memberCount} member countries in 2026: ${SCHENGEN_MEMBERS.map((m) => nameFor(m)).sort().join(", ")}. One short-stay visa covers all of them. Note that Ireland is in the EU but not in Schengen, and the United Kingdom runs its own visa policy.`,
+    a: `A Schengen visa is a short-stay visa (Type C) valid across all ${memberCount} Schengen Area countries on one document, for stays of up to 90 days in any 180-day period for tourism, family visits or business. You apply once, at the consulate of your main destination, then cross internal Schengen borders without further checks. Ireland is in the EU but not in Schengen, and the United Kingdom runs its own visa policy - a Schengen visa is not valid in either.`,
   },
   {
     q: "Do I need a Schengen visa?",
@@ -112,27 +108,19 @@ const FAQS = [
   },
   {
     q: "How much does a Schengen visa cost?",
-    a: "The standard Schengen short-stay visa fee in the official fee schedules we track is EUR 90 for adults and EUR 45 for children aged 6 to 12; children under 6 are free. A reduced EUR 35 fee applies to nationals of countries with an EU visa-facilitation agreement (for example several Eastern European and Caucasus states). Service-centre handling fees (VFS, TLScontact) are charged on top where consulates outsource intake.",
+    a: "EUR 90 for adults, EUR 45 for children aged 6 to 12, free under 6, and EUR 35 for nationals of countries with an EU visa-facilitation agreement. Service-centre handling fees (VFS, TLScontact) are charged on top where consulates outsource intake.",
   },
   {
     q: "What is the 90/180 rule?",
-    a: "Visa-free visitors and Schengen visa holders may stay at most 90 days within any rolling 180-day window, counted across the whole Schengen Area, not per country. Every day spent in any member state counts toward the same allowance. On each day of your stay, look back 180 days: the total days spent in Schengen in that window must not exceed 90.",
+    a: "Visa-free visitors and Schengen visa holders may stay at most 90 days within any rolling 180-day window, counted across the whole Schengen Area rather than per country. On each day of your stay, look back 180 days: the total days spent in Schengen in that window must not exceed 90.",
   },
   {
     q: "How long does a Schengen visa take to process?",
     a: "In the official data we track for France, consulates decide within 15 days in most cases, extendable to up to 45 days when extra scrutiny or documents are needed. You can lodge the application up to 6 months before travel; applying at least several weeks ahead is strongly advised in high season.",
   },
   {
-    q: "Can I visit all Schengen countries with one visa?",
-    a: `Yes. A standard (non-territorially-limited) Schengen short-stay visa is valid for the whole area - all ${memberCount} member countries - within its validity dates and the 90/180 limit. You must apply at the consulate of your main destination (longest stay), or of first entry if stays are equal.`,
-  },
-  {
-    q: "Is the United Kingdom in the Schengen Area?",
-    a: "No. The United Kingdom is not a Schengen member and runs its own visa policy, as does Ireland (which is in the EU but stayed outside Schengen). A Schengen visa does not grant entry to the UK or Ireland, and UK/Irish visas do not grant entry to the Schengen Area.",
-  },
-  {
     q: "What documents do I need for a Schengen visa?",
-    a: "The standard file is: the harmonised application form, a passport valid at least three months beyond your planned departure from Schengen, recent photos, travel medical insurance with at least EUR 30,000 coverage valid across Schengen, proof of accommodation and itinerary, proof of sufficient funds, and evidence of ties to your home country. Consulates and their VFS/TLScontact centres publish per-nationality checklists - see our per-country corridor guides for specifics.",
+    a: "The harmonised application form, a passport valid at least three months beyond your planned departure from Schengen, recent photos, travel medical insurance with at least EUR 30,000 coverage valid across Schengen, proof of accommodation and itinerary, proof of funds, and evidence of ties to your home country. Consulates and their VFS/TLScontact centres publish per-nationality checklists.",
   },
 ];
 
@@ -225,15 +213,16 @@ export default function SchengenGuidePage() {
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
               The <strong className="text-ink">Schengen visa</strong> is Europe&apos;s common short-stay visa
-              (Type C): one application, one sticker, and free movement across the whole area. Whether you need
-              one depends on your passport - see{" "}
-              <Link href="#who-needs" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">who needs a Schengen visa</Link>.
+              (Type C): one application, one sticker, free movement across all {memberCount} countries. Whether you
+              need one{" "}
+              <Link href="#who-needs" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">depends on your passport</Link>.
             </p>
-            <p className="text-body mt-4 text-ink-soft">
-              This guide covers the <Link href="#countries" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen countries list</Link>,{" "}
+            <p className="text-body mt-3 text-ink-soft">
+              Jump to:{" "}
+              <Link href="#countries" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">countries list</Link>,{" "}
               <Link href="#who-needs" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">who needs a visa</Link>,{" "}
-              <Link href="#apply" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">how to apply</Link>, the{" "}
-              <Link href="#fee" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Schengen visa fee</Link> and the{" "}
+              <Link href="#apply" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">how to apply</Link>,{" "}
+              <Link href="#fee" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">fee</Link>,{" "}
               <Link href="#rule" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">90/180 rule</Link>.
             </p>
           </section>
@@ -242,10 +231,9 @@ export default function SchengenGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">What Is the Schengen Area?</h2>
             <p className="text-body mt-3 text-ink-soft">
-              The Schengen Area is a group of {memberCount} European countries that abolished passport checks at
-              their shared internal borders. Once you enter one member state legally, you can travel to the others
-              without further border control. Most Schengen members are EU countries, joined by Iceland,
-              Liechtenstein, Norway and Switzerland. Two important exceptions trip up travellers:{" "}
+              {memberCount} European countries that abolished passport checks at their shared internal borders: enter
+              one member state legally and you can travel to the others without further border control. Most are EU
+              countries, joined by Iceland, Liechtenstein, Norway and Switzerland. Two exceptions trip travellers up:{" "}
               <Link href="/destination/ireland" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Ireland</Link>{" "}
               is in the EU but not in Schengen, and the{" "}
               <Link href="/destination/united-kingdom" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">United Kingdom</Link>{" "}
@@ -259,8 +247,7 @@ export default function SchengenGuidePage() {
               Schengen Countries List 2026 ({memberCount})
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              One Schengen short-stay visa is valid in all of these countries. Tap any country for its full entry
-              requirements by passport.
+              One short-stay visa is valid in all of them. Tap a country for its entry requirements by passport.
             </p>
             <div className={`${LEDGER_GRID} mt-5`}>
               {memberList.map((iso3) => (
@@ -275,15 +262,15 @@ export default function SchengenGuidePage() {
             <p className="text-body mt-3 text-ink-soft">
               Whether you enter visa-free or on a Schengen visa, short stays are capped at{" "}
               <strong className="text-ink">90 days within any rolling 180-day period</strong> - counted across the
-              whole Schengen Area, not per country. Three days in{" "}
+              whole area, not per country. Three days in{" "}
               <Link href="/destination/france" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">France</Link>,
               four in{" "}
               <Link href="/destination/italy" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Italy</Link>{" "}
               and a week in{" "}
               <Link href="/destination/spain" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Spain</Link>{" "}
               all draw from the same allowance. The window rolls: on each day of your stay, look back 180 days and
-              count every day spent in any Schengen country - the total must not exceed 90. Overstaying can mean
-              fines, an entry ban, and refusals on future visa applications.
+              count every day spent in any Schengen country - the total must not exceed 90. Overstaying means fines,
+              an entry ban, and refusals later.
             </p>
           </section>
 
@@ -293,17 +280,16 @@ export default function SchengenGuidePage() {
               Who Needs a Schengen Visa in 2026?
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              The EU keeps one harmonised exemption list, so a single member&apos;s published policy answers the
-              question for the whole area - verified here against France&apos;s official visa policy.
+              The EU keeps one harmonised exemption list, so a single member&apos;s policy answers the question for
+              the whole area - verified here against France&apos;s.
             </p>
 
             <h3 className="mt-6 font-display text-lg font-semibold text-ink">
               Nationalities That Do Not Need a Schengen Visa ({vfToFrance.length} visa-exempt)
             </h3>
             <p className="text-body mt-1 text-ink-soft">
-              These passports are admitted visa-free for up to 90 days in any 180. Citizens of the {memberCount}{" "}
-              Schengen member states are not listed here - they have freedom of movement, with no visa and no stay
-              limit. Tap a passport for its full visa-free list.
+              Admitted visa-free for up to 90 days in any 180. Citizens of the {memberCount} member states are not
+              listed - they have freedom of movement, with no visa and no stay limit.
             </p>
             <div className={`${LEDGER_GRID} mt-4`}>
               {vfToFrance.slice(0, 15).map((e) => (
@@ -337,7 +323,7 @@ export default function SchengenGuidePage() {
               Nationalities That Need a Schengen Visa ({counts.required})
             </h3>
             <p className="text-body mt-1 text-ink-soft">
-              These passports must obtain a Schengen short-stay visa before travelling, even for tourism.
+              Must obtain a short-stay visa before travelling, even for tourism.
             </p>
             <div className={`${LEDGER_GRID} mt-4`}>
               {counts.requiredIso3.slice(0, 15).map((iso3) => (
@@ -364,8 +350,7 @@ export default function SchengenGuidePage() {
               Schengen Visa Guides by Nationality
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Dedicated Schengen guides for the most-searched nationalities: whether you need a visa, where to apply,
-              documents and fees.
+              Whether you need a visa, where to apply, documents and fees - per nationality.
             </p>
             <h3 className="mt-5 font-display text-base font-semibold text-ink">Visa required</h3>
             <ul className={`${LEDGER_GRID} mt-3`}>
@@ -407,29 +392,29 @@ export default function SchengenGuidePage() {
           <section id="apply" className="mt-12 max-w-3xl scroll-mt-24">
             <h2 className="text-section text-ink">How to Apply for a Schengen Visa</h2>
             <p className="text-body mt-3 text-ink-soft">
-              The application process is harmonised across members - the same form, fee and core documents everywhere.
+              Harmonised across members - the same form, fee and core documents everywhere.
             </p>
             <ol className="mt-5 space-y-4">
               {[
                 {
                   t: "Pick the right consulate",
-                  d: "Apply to the country of your main destination - where you will spend the longest. If stays are equal, apply to the country of first entry. Applying to the \"easiest\" consulate while mainly visiting another country is a common ground for refusal.",
+                  d: "The country of your main destination - where you spend longest, or first entry if stays are equal. Applying to the \"easiest\" consulate while mainly visiting elsewhere is a common ground for refusal.",
                 },
                 {
                   t: "Fill the harmonised application form",
-                  d: "Every member uses the same Schengen short-stay form. Most consulates take applications through outsourced centres (VFS Global, TLScontact or BLS) in your country of residence.",
+                  d: "Most consulates take applications through outsourced centres (VFS Global, TLScontact or BLS) in your country of residence.",
                 },
                 {
                   t: "Gather the standard file",
-                  d: "Passport valid at least three months beyond departure from Schengen, photos, travel medical insurance with at least EUR 30,000 coverage, proof of accommodation, itinerary, proof of funds, and evidence of ties to your home country. Exact per-nationality checklists are published by each consulate - see our corridor guides below.",
+                  d: "Passport valid three months beyond departure, photos, travel medical insurance with EUR 30,000 coverage, accommodation, itinerary, proof of funds, evidence of ties to home. Each consulate publishes its own per-nationality checklist.",
                 },
                 {
                   t: "Book biometrics and pay the fee",
-                  d: "First-time applicants give fingerprints; these stay valid in the VIS system for later applications. The standard fee is EUR 90 for adults (see the fee section below).",
+                  d: "First-time applicants give fingerprints, valid in the VIS system for later applications.",
                 },
                 {
                   t: "Wait for the decision",
-                  d: "In the official data we track for France, consulates decide within 15 days in most cases, extendable to up to 45 days. You can apply up to 6 months before travel.",
+                  d: "For France, consulates decide within 15 days in most cases, extendable to 45. You can apply up to 6 months before travel.",
                 },
               ].map((s, i) => (
                 <li key={s.t} className="card-doc flex gap-4 p-4">
@@ -447,7 +432,7 @@ export default function SchengenGuidePage() {
           <section id="fee" className="mt-12 max-w-3xl scroll-mt-24">
             <h2 className="text-section text-ink">Schengen Visa Fee 2026</h2>
             <p className="text-body mt-3 text-ink-soft">
-              The short-stay visa fee is set EU-wide, so it is the same whichever member state you apply to:
+              Set EU-wide - the same whichever member state you apply to.
             </p>
             <div className="mt-5 overflow-x-auto">
               <table className="w-full min-w-[420px] border-collapse text-sm">
@@ -477,22 +462,12 @@ export default function SchengenGuidePage() {
                 </tbody>
               </table>
             </div>
-            <ul className="text-body mt-3 space-y-2 text-ink-soft">
-              <li className="flex gap-3">
-                <span aria-hidden className="mono text-stamp">■</span>
-                <span>A separate VFS Global or TLScontact service fee is charged on top where the consulate outsources intake.</span>
-              </li>
-              <li className="flex gap-3">
-                <span aria-hidden className="mono text-stamp">■</span>
-                <span>The visa fee is not refunded if the application is refused.</span>
-              </li>
-            </ul>
             <p className="text-body mt-3 text-ink-soft">
-              Wondering how much money to show in your bank statement? See our{" "}
+              A VFS Global or TLScontact service fee is charged on top where the consulate outsources intake, and the
+              visa fee is not refunded if you are refused. For the bank balance to show, see the{" "}
               <Link href="/guide/proof-of-funds#schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 Schengen proof-of-funds guide
-              </Link>{" "}
-              for the official daily-subsistence amount required by each member state.
+              </Link>.
             </p>
           </section>
 
@@ -508,8 +483,7 @@ export default function SchengenGuidePage() {
               Schengen Visa Requirements by Destination &amp; Nationality
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Per-nationality guides - stay length, conditions, documents and official sources - for the
-              most-visited Schengen destinations.
+              Stay length, conditions, documents and official sources for the most-visited Schengen destinations.
             </p>
             <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {CORRIDOR_DESTS.map((dest) => {
@@ -555,8 +529,7 @@ export default function SchengenGuidePage() {
               Check your Schengen visa requirements
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Enter your passport to instantly see whether you need a Schengen visa, how long you can stay, and which
-              European countries you can enter visa-free. Or compare all passports on the{" "}
+              Or compare all passports on the{" "}
               <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">passport rankings</Link>.
             </p>
             <Link

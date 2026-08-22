@@ -217,6 +217,22 @@ function ProgramCard({ p }: { p: CbiProgram }) {
           optionLabel(x.type) === optionLabel(o.type) && x.min_amount === o.min_amount && x.currency === o.currency,
       ),
   );
+  // Conditions used to be four coloured chips per card; as one plain line they read
+  // as facts rather than chrome, and the status chip stays the card's only badge.
+  const conditions = [
+    p.residency_required === false ? "no residency requirement" : null,
+    p.residency_required === true ? "residency required" : null,
+    p.dual_citizenship_allowed === true ? "dual citizenship allowed" : null,
+  ].filter(Boolean);
+  const meta = [
+    p.processing_time ? `Processing: ${processingLabel(p.processing_time)}` : null,
+    ...conditions,
+  ].filter(Boolean);
+  const status = isSuspended(p)
+    ? { label: "Suspended", cls: "bg-change/10 text-change ring-change/30" }
+    : isAnnouncedOnly(p)
+      ? { label: "Announced, not enacted", cls: "bg-stamp/10 text-stamp ring-stamp/30" }
+      : null;
   return (
     <article className="card-doc flex flex-col p-4">
       <div className="flex items-center gap-3">
@@ -228,8 +244,13 @@ function ProgramCard({ p }: { p: CbiProgram }) {
           >
             {p.name}
           </Link>
-          <div className="mono-chrome">{p.region}</div>
+          <div className="text-[12px] text-ink-mute">{p.region}</div>
         </div>
+        {status && (
+          <span className={`ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[11px] ring-1 ${status.cls}`}>
+            {status.label}
+          </span>
+        )}
       </div>
       <p className="mt-1 text-sm italic leading-snug text-ink-soft">{p.program_name}</p>
 
@@ -242,57 +263,24 @@ function ProgramCard({ p }: { p: CbiProgram }) {
         ))}
       </ul>
 
-      {p.processing_time && (
-        <p className="mono mt-2 text-[11px] text-ink-mute">Processing: {processingLabel(p.processing_time)}</p>
-      )}
-
-      <div className="mono mt-3 flex flex-wrap gap-1.5 text-[11px] uppercase tracking-[0.1em]">
-        {isSuspended(p) ? (
-          <span className="rounded-[3px] bg-change/10 px-2 py-0.5 text-change ring-1 ring-change/30">
-            Suspended - not currently usable
-          </span>
-        ) : (
-          <>
-            {p.residency_required === false && (
-              <span className="rounded-[3px] bg-vfree/10 px-2 py-0.5 text-vfree ring-1 ring-vfree/30">
-                No residency requirement
-              </span>
-            )}
-            {p.residency_required === true && (
-              <span className="rounded-[3px] bg-eta/10 px-2 py-0.5 text-eta ring-1 ring-eta/30">
-                Residency required
-              </span>
-            )}
-            {p.dual_citizenship_allowed === true && (
-              <span className="rounded-[3px] bg-voa/10 px-2 py-0.5 text-voa ring-1 ring-voa/30">
-                Dual citizenship allowed
-              </span>
-            )}
-            {isAnnouncedOnly(p) && (
-              <span className="rounded-[3px] bg-stamp/10 px-2 py-0.5 text-stamp ring-1 ring-stamp/30">
-                Announced - not yet enacted per source notes
-              </span>
-            )}
-          </>
-        )}
-      </div>
+      {meta.length > 0 && <p className="mono mt-2 text-[11px] text-ink-mute">{meta.join(" · ")}</p>}
 
       {w && (
         <div className="mt-auto border-t border-line pt-3">
-          <p className="mono mt-1 text-[11px] text-ink-soft">
-            Passport: <strong className="text-ink">{w.visaFree} visa-free</strong> destinations · #{w.rank} of{" "}
+          <p className="mono text-[11px] text-ink-soft">
+            Passport: <strong className="text-ink">{w.visaFree} visa-free</strong> · #{w.rank} of{" "}
             {TOTAL_RANKED_PASSPORTS}
           </p>
-          <div className="mono mt-1 flex flex-wrap gap-x-4 text-[11px]">
+          <div className="mt-1 flex flex-wrap gap-x-4 text-[12px] font-medium">
             <Link
               href={`/passport/${slug}`}
-              className="inline-flex min-h-[44px] items-center uppercase tracking-[0.12em] text-stamp transition hover:text-ink"
+              className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink"
             >
               Passport details →
             </Link>
             <Link
               href={`/destination/${slug}`}
-              className="inline-flex min-h-[44px] items-center uppercase tracking-[0.12em] text-stamp transition hover:text-ink"
+              className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink"
             >
               Entry rules →
             </Link>
@@ -312,7 +300,10 @@ export default function CitizenshipByInvestmentPage() {
         {/* Header */}
         <header className="border-b border-line-strong bg-paper-2/60">
           <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-8 sm:px-8">
-            <nav aria-label="Breadcrumb" className="mono-chrome mb-4 flex flex-wrap items-center gap-x-2">
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-4 flex flex-wrap items-center gap-x-2 text-[12px] font-medium text-ink-mute"
+            >
               <Link href="/" className="inline-flex min-h-[44px] items-center transition hover:text-ink">
                 Earth Visa
               </Link>
@@ -330,8 +321,7 @@ export default function CitizenshipByInvestmentPage() {
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-              {programs.length} programs tracked · official publications · data refreshed {lastUpdated} · minimums
-              change often
+              Official publications · refreshed {lastUpdated}
             </p>
 
             <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
@@ -345,7 +335,7 @@ export default function CitizenshipByInvestmentPage() {
                 { k: "Allow dual citizenship", v: String(dualAllowedCount) },
               ].map(({ k, v }) => (
                 <div key={k} className="bg-card px-4 py-2.5">
-                  <dt className="mono-chrome">{k}</dt>
+                  <dt className="text-[12px] font-medium text-ink-mute">{k}</dt>
                   <dd className="mt-0.5 text-xl font-semibold tabular-nums">{v}</dd>
                 </div>
               ))}
@@ -358,18 +348,18 @@ export default function CitizenshipByInvestmentPage() {
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
               <strong className="text-ink">Citizenship by investment (CBI)</strong> grants a full second passport in
-              exchange for a qualifying investment - most commonly a donation to a national development fund, an
-              approved real estate purchase, or a business investment.
+              exchange for a qualifying investment - a donation to a national fund, approved real estate, or a
+              business stake - and every program below sits next to what its passport is actually worth in our{" "}
+              <Link
+                href="/rankings"
+                className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
+              >
+                passport rankings
+              </Link>
+              .
               {isAnnouncedOnly(cheapest[0].p) && (
-                <>
-                  {" "}
-                  The lowest published minimum is announced, not yet enacted - the lowest enacted minimum is{" "}
-                  <strong className="text-ink">{fmtMoney(cheapestEnacted.min, "USD")}</strong>.
-                </>
-              )}{" "}
-              For every program below we also show{" "}
-              <strong className="text-ink">what the passport is actually worth</strong>: its visa-free destination
-              count and global rank from our <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">passport rankings</Link>.
+                <> The lowest enacted minimum is {fmtMoney(cheapestEnacted.min, "USD")}.</>
+              )}
             </p>
           </section>
 
@@ -379,17 +369,13 @@ export default function CitizenshipByInvestmentPage() {
               Cheapest Citizenship by Investment in 2026 (Ranked) - and What Each CBI Passport Is Worth
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Every program ranked by its lowest USD-denominated published minimum, next to the passport&apos;s
-              visa-free destinations and global rank - the price-to-power view. Headline minimums exclude government
-              processing, due diligence and dependant fees.
+              Ranked by lowest published USD minimum, which excludes processing, due diligence and dependant fees.
             </p>
-            <p className="mono-chrome mt-5 sm:hidden">
-              Scroll sideways for all columns →
-            </p>
+            <p className="mt-4 text-[12px] font-medium text-ink-mute sm:hidden">Scroll sideways for all columns →</p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">
               <table className="w-full min-w-[640px] border-collapse text-sm">
                 <thead>
-                  <tr className="mono-chrome border-b border-line-strong text-left">
+                  <tr className="border-b border-line-strong text-left text-[12px] text-ink-mute">
                     <th scope="col" className="py-2.5 pr-4 text-right font-medium">#</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Passport</th>
                     <th scope="col" className="py-2.5 pr-4 font-medium">Cheapest option</th>
@@ -413,12 +399,12 @@ export default function CitizenshipByInvestmentPage() {
                             {p.name}
                           </Link>
                           {isSuspended(p) ? (
-                            <span className="mono ml-2 rounded-[3px] bg-change/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-change ring-1 ring-change/30">
+                            <span className="mono ml-2 rounded-[3px] bg-change/10 px-2 py-0.5 text-[11px] text-change ring-1 ring-change/30">
                               suspended
                             </span>
                           ) : (
                             isAnnouncedOnly(p) && (
-                              <span className="mono ml-2 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                              <span className="mono ml-2 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] text-stamp ring-1 ring-stamp/30">
                                 announced
                               </span>
                             )
@@ -445,16 +431,13 @@ export default function CitizenshipByInvestmentPage() {
               </table>
             </div>
             <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
-              Rank covers USD-denominated published minimums only; amounts published in other currencies are shown as
-              published, never converted, and sit unranked at the bottom with the no-published-minimum programs.
-            </p>
-            <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
-              Global rank is by total destinations reachable without a pre-arranged visa (visa-free + visa on arrival
-              + eTA), so a passport can rank above another that has more strictly visa-free destinations.
-            </p>
-            <p className="text-body mt-3 max-w-3xl text-ink-soft">
-              Compare these against all {TOTAL_RANKED_PASSPORTS} passports on the{" "}
-              <Link href="/rankings" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink">
+              Amounts in other currencies are shown as published, never converted, and sit unranked at the bottom.
+              Global rank counts every destination reachable without a pre-arranged visa (visa-free + visa on arrival +
+              eTA) - compare all {TOTAL_RANKED_PASSPORTS} passports in the{" "}
+              <Link
+                href="/rankings"
+                className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
+              >
                 Earth Visa passport rankings
               </Link>
               .
@@ -466,9 +449,6 @@ export default function CitizenshipByInvestmentPage() {
             <h2 className="text-section text-ink">
               Citizenship by Investment Countries List 2026 ({programs.length} Programs)
             </h2>
-            <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Every CBI route in our dataset, with investment options, processing time and program conditions.
-            </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {programs.map((p) => (
                 <ProgramCard key={p.iso3} p={p} />
