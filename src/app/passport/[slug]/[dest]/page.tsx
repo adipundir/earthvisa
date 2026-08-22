@@ -35,6 +35,11 @@ const VT_CATEGORY_LABEL: Record<string, string> = {
   working_holiday: "Working holiday", other: "Other",
 };
 const VT_CATEGORY_ORDER = ["tourist", "business", "work", "student", "family", "medical", "transit", "investment", "digital_nomad", "retirement", "working_holiday", "other"];
+
+// What a corridor page opens on. Everything else is one tap away under its own
+// chip or under "All": these are the three a traveller arrives for, and the
+// other forty are why the list needed a default in the first place.
+const VT_COMMON_CATEGORIES = ["tourist", "business", "transit"];
 const vtCatLabel = (k: string) => VT_CATEGORY_LABEL[k] ?? k.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
 const byIso3 = new Map(dataset.allCountries.map((c) => [c.iso3, c]));
@@ -951,11 +956,22 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     }
   })();
 
+  // A tourist type's published stay, for the case where the access edge itself
+  // carries none. "Varies" at 60px is a non-answer on the one cell people read
+  // first, and the destination usually does publish a number - it is just on
+  // the visa type rather than on the edge.
+  const touristStay = mergedTypes
+    .filter((m) => m.category === "tourist")
+    .map((m) => m.facts?.max_stay_days)
+    .filter((x): x is number => typeof x === "number")
+    .sort((a, b) => b - a)[0] ?? null;
   const stayCell: FactCell = s.kind === "fom" || s.kind === "own"
     ? { kind: "num", num: "∞", unit: "stay", detail: "no time limit" }
     : curStay
       ? { kind: "num", num: String(curStay), unit: "days", detail: "max stay per entry" }
-      : { kind: "word", word: "Varies", detail: "stay depends on visa type" };
+      : touristStay
+        ? { kind: "num", num: String(touristStay), unit: "days", detail: "on a tourist visa" }
+        : { kind: "word", word: "Varies", detail: "by visa type" };
   const feeUsd = headlineFee && "amount_usd" in headlineFee && headlineFee.currency !== "USD" ? headlineFee.amount_usd : null;
   const feeCell: FactCell | null = s.kind === "own"
     ? null
@@ -1031,7 +1047,46 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
     .sort();
   const checkedDate = fmtDay(endpointDates[0] ?? dataset.meta.lastUpdated);
   const glossaryLabel = s.kind === "own" ? "home country" : s.kind === "fom" ? "freedom of movement" : s.kind === "visa_required" ? "visa required" : LEVEL_LABEL[s.kind].toLowerCase();
-  const sourceHost = (url: string) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "official source"; } };
+  // The words every credential condition on this corridor shares.
+//
+// The UAE publishes ten no-advance-visa routes for Indians and states each one
+// as "Indian ordinary passport holder must hold a valid X with at least 6
+// months validity from arrival date". Rendered per card that is the same
+// sentence ten times and the distinguishing word is buried in the middle of
+// it. This lifts the shared opening and closing out so each line carries only
+// what makes it different; nothing is dropped, it moves to a heading and a
+// footnote.
+function commonAffixes(lines: string[]): { prefix: string; suffix: string } {
+  if (lines.length < 2) return { prefix: "", suffix: "" };
+  const words = lines.map((l) => l.trim().split(/\s+/));
+  let pre = 0;
+  while (words.every((w) => w.length > pre + 1 && w[pre].toLowerCase() === words[0][pre].toLowerCase())) pre++;
+  let suf = 0;
+  while (
+    words.every(
+      (w) =>
+        w.length > pre + suf + 1 &&
+        w[w.length - 1 - suf].toLowerCase() === words[0][words[0].length - 1 - suf].toLowerCase(),
+    )
+  ) suf++;
+  // Only worth hoisting when it is a phrase, not an article.
+  return {
+    prefix: pre >= 3 ? words[0].slice(0, pre).join(" ") : "",
+    suffix: suf >= 3 ? words[0].slice(words[0].length - suf).join(" ") : "",
+  };
+}
+
+function stripAffixes(line: string, prefix: string, suffix: string): string {
+  let out = line.trim();
+  if (prefix && out.toLowerCase().startsWith(prefix.toLowerCase())) out = out.slice(prefix.length).trim();
+  if (suffix && out.toLowerCase().endsWith(suffix.toLowerCase())) out = out.slice(0, out.length - suffix.length).trim();
+  return out.replace(/^[,;:\s]+|[,;:\s]+$/g, "");
+}
+
+const sourceHost = (url: string) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "official source"; } };
+  // Filled by the no-advance-visa section head, read by its cards: the words
+  // every credential condition on this corridor shares.
+  const credAffix = { prefix: "", suffix: "" };
   const appNote = need ? applicationNoteFor(d.iso3, n.iso3) : null;
   const appNoteSentences = appNote ? splitSentences(appNote) : [];
 
@@ -1053,12 +1108,10 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
       <>Lodge your application {destFees?.vfs.used && destFees.vfs.operator ? `at ${article(destFees.vfs.operator)} ${destFees.vfs.operator} visa application centre` : `at the ${d.name} embassy or consulate that serves your region`}, with the completed form and required documents.{applyUrl && <> <ApplyLink href={applyUrl} /></>}</>
     ),
     s.kind === "visa_required" && !travelBanned && lodgingFact && <>{lodgingFact}</>,
-    s.kind === "visa_required" && !travelBanned && processingFact && (
-      <>Allow {processingFact.charAt(0).toLowerCase()}{processingFact.slice(1)} for processing - apply well before your travel date.</>
-    ),
-    vfsDocs.length > 0 && (
-      <><Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-semibold text-accent underline-offset-2 hover:underline">See the exact document checklist</Link> for {nd} applicants{noVisaShortStay ? " - only needed for a longer-stay visa" : ", by visa type"}.</>
-    ),
+    // The processing step and the document-checklist step used to live here.
+    // Both restated something already on the screen: the fact strip carries
+    // the processing time as a numeral, and the hero carries the checklist as
+    // a link. A step that repeats a fact is a step nobody reads.
   ].filter(Boolean)) as React.ReactNode[];
 
   return (
@@ -1218,17 +1271,15 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
               )}
               {statusUrl && (
                 <a href={statusUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] inline-flex items-center gap-1.5 transition hover:text-ink">
-                  <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${("sourceOfficial" in s && s.sourceOfficial) ? "bg-verdict" : "bg-ink-3"}`} />
+                  <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${("sourceOfficial" in s && s.sourceOfficial) ? "bg-ink-2" : "bg-ink-3"}`} />
                   Source · {sourceHost(statusUrl)} ↗
                 </a>
               )}
-              {vfsDocs.length > 0 && (
-                <a href="#documents" className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] font-semibold text-accent underline-offset-2 hover:underline">Document checklist →</a>
-              )}
-              <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] transition hover:text-ink">Check entry with visas you already hold →</Link>
-              <Link href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind] ?? "visa-required"}`} className="relative after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] transition hover:text-ink sm:ml-auto">
-                What &ldquo;{glossaryLabel}&rdquo; means →
-              </Link>
+              {/* Three links used to sit here beside the button. The document
+                  checklist is the jump chip immediately below this row, and
+                  /visit and the glossary are standing links rather than this
+                  corridor's action - they are at the FAQ foot now. One
+                  viewport, one action. */}
             </div>
           </header>
 
@@ -1288,7 +1339,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                     rel="noreferrer"
                     className="mono-chrome mt-4 inline-flex items-center gap-1.5 transition hover:text-ink"
                   >
-                    <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${acceptance.sourceOfficial ? "bg-verdict" : "bg-ink-3"}`} />
+                    <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full ${acceptance.sourceOfficial ? "bg-ink-2" : "bg-ink-3"}`} />
                     {acceptance.sourceName} ↗
                   </a>
                 </div>
@@ -1311,9 +1362,17 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
           {credGroups.length > 0 && (
             <section id="no-advance-visa" className="mt-14 scroll-mt-24">
               <h2 className="text-[20px] font-bold tracking-tight text-ink">No advance visa with these documents</h2>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">
-                {d.name} officially admits {nd} citizens without a pre-arranged visa when they hold:
-              </p>
+              {(() => {
+                const all = credGroups.flat().map((u) => u.conditions).filter((x): x is string => Boolean(x));
+                const { prefix, suffix } = commonAffixes(all);
+                credAffix.prefix = prefix;
+                credAffix.suffix = suffix;
+                return (
+                  <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">
+                    {`${d.name} admits ${nd} citizens without a pre-arranged visa on a valid document${suffix ? `, ${suffix}` : ""}:`}
+                  </p>
+                );
+              })()}
               <div className={`mt-5 grid gap-4 ${credGroups.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"}`}>
                 {credGroups.map((group, gi) => {
                   // A group shares one outcome ("visa on arrival, 14 days") but
@@ -1339,7 +1398,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                       <p className={`text-[15px] font-bold ${group[0].level === "visa_on_arrival" ? "text-voa" : group[0].level === "eta" || group[0].level === "e_visa" ? "text-online" : "text-verdict"}`}>
                         {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
                       </p>
-                      {group.some((u) => u.label) && (
+                      {buckets.length === 1 && group.some((u) => u.label) && (
                         <div className="mt-2 flex flex-wrap gap-1.5">
                           {group.filter((u) => u.label).map((u, ui) => (
                             <span key={`${u.cred}${ui}`} className="inline-flex items-center rounded-md border border-hair-strong bg-card px-2 py-0.5 text-[13px] font-medium text-ink">{u.label}</span>
@@ -1354,9 +1413,12 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                                 {b.items.filter((u) => u.label).map((u) => u.label).join(", ")}
                               </p>
                             )}
-                            {b.conditions && (
-                              <p className="text-[14px] leading-relaxed text-ink-2">{b.conditions}.</p>
-                            )}
+                            {b.conditions && (() => {
+                              const rest = stripAffixes(b.conditions, credAffix.prefix, credAffix.suffix);
+                              return rest ? (
+                                <p className="text-[14px] leading-relaxed text-ink-2">{rest}.</p>
+                              ) : null;
+                            })()}
                             {b.sourceUrl && (
                               <a href={b.sourceUrl} target="_blank" rel="noreferrer" className="mt-0.5 inline-block text-[13px] font-medium text-ink-2 underline-offset-2 transition hover:text-ink hover:underline">
                                 {sourceHost(b.sourceUrl)} ↗
@@ -1463,7 +1525,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                   <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1 text-[13px] font-medium text-ink-2">
                     {(feeVariation?.source_url || feeList[0]?.source_url) && (
                       <a href={(feeVariation?.source_url || feeList[0]?.source_url)!} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 underline-offset-2 transition hover:text-ink hover:underline">
-                        <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-verdict" />
+                        <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-ink-2" />
                         Official schedule · {sourceHost((feeVariation?.source_url || feeList[0]?.source_url)!)} ↗
                       </a>
                     )}
@@ -1584,11 +1646,8 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 <h2 className="text-[20px] font-bold tracking-tight text-ink">
                   {d.name} visa types {noVisaShortStay ? "" : `for ${nd} citizens`}
                 </h2>
-                <p className="measure mt-2 text-[14.5px] leading-relaxed text-ink-2">
-                  Filter by purpose, then open any type for its checklist, conditions and official page.
-                </p>
 
-                <VisaTypeFilter categories={cats.length > 1 ? cats : []}>
+                <VisaTypeFilter categories={cats.length > 1 ? cats : []} commonKeys={VT_COMMON_CATEGORIES}>
                   {/* List left, shared prerequisites right - the two columns fill
                       the width and the accordion stays single-column, so opening
                       one type never leaves a blank gap beside it. */}
@@ -1651,8 +1710,14 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </details>
               ))}
             </div>
+            <p className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13.5px] font-medium text-ink-2">
+              <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="transition hover:text-ink">Check entry with visas you already hold →</Link>
+              <Link href={`/guide/visa-types#${GLOSSARY_ANCHOR[s.kind] ?? "visa-required"}`} className="transition hover:text-ink">
+                What &ldquo;{glossaryLabel}&rdquo; means →
+              </Link>
+            </p>
             <div className="mt-4 text-[13px] text-ink-2">
-              Spotted wrong or outdated information? <ReportIssue />
+              <ReportIssue />
             </div>
           </section>
 

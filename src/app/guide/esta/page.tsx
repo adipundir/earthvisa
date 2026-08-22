@@ -122,35 +122,35 @@ export default function EstaGuidePage() {
   const faqs = [
     {
       q: "Is ESTA a visa?",
-      a: "No - ESTA is an automated eligibility check, not a visa. See \"ESTA Is Not a Visa\" above for what that distinction actually means.",
+      a: "No - it is an automated eligibility check, and cannot stand in for a visa where US law requires one.",
     },
     {
       q: "Can travelling to another country stop me from getting an ESTA?",
-      a: "Yes - prior presence in specific countries disqualifies you from the Visa Waiver Program regardless of trip purpose. See \"The Travel History That Disqualifies You\" above for the full list, dates and narrow exceptions.",
+      a: "Yes - presence in any of the nine countries listed above disqualifies you from the Visa Waiver Program, whatever the purpose of the trip.",
     },
     {
       q: "Can an ESTA I already hold be revoked?",
-      a: "Yes - CBP can revoke an approved ESTA at any time, including over a disqualifying trip taken after approval. See \"An Approved ESTA Can Be Revoked\" above for how that plays out.",
+      a: "Yes - CBP can revoke an approved ESTA at any time, including over a disqualifying trip taken after approval.",
     },
     {
       q: "Does dual nationality affect my ESTA?",
-      a: "Yes, against a shorter, separate list of countries than the travel-history rule, and without the military/official exceptions. See \"Dual Nationality: A Separate, Shorter List\" above for the full list.",
+      a: "Yes, against a shorter, separate list (Iraq, Syria, Iran, North Korea, Sudan, Cuba), and the military and official-duty exceptions do not apply to it.",
     },
     {
       q: "How long is an ESTA valid?",
-      a: "Typically two years, or until your passport expires, whichever comes first. See \"Fee, Validity and When You Need a New One\" above for what triggers a fresh application.",
+      a: "Typically two years, or until your passport expires, whichever comes first.",
     },
     {
       q: "My ESTA was denied. What now?",
-      a: "A denial only closes the Visa Waiver Program route - you can still apply for a US visa. See \"If You Are Affected, You Can Still Travel\" above for the process and CBP's expedited-appointment tip.",
+      a: "A denial closes only the Visa Waiver Program route - you can still apply for a US visa, normally a B-1/B-2.",
     },
     {
       q: "Do I need an ESTA if I already hold a US visa?",
-      a: "No. CBP states that individuals travelling on valid visas are not required to apply for ESTA, and may travel on that visa for the purpose it was issued for.",
+      a: "No. CBP states that travellers on a valid visa need no ESTA and may travel on that visa for the purpose it was issued for.",
     },
     {
       q: "Do children need their own ESTA?",
-      a: "Yes. CBP requires accompanied and unaccompanied children, regardless of age, to obtain their own independent ESTA approval. There is no family application.",
+      a: "Yes - accompanied and unaccompanied children of any age need their own approval. There is no family application.",
     },
   ];
 
@@ -229,8 +229,8 @@ export default function EstaGuidePage() {
             <p className="text-body mt-3 text-ink-soft">
               <strong className="text-ink">ESTA</strong>{" "}
               (Electronic System for Travel Authorization) decides whether a traveller may board for the United States
-              under the <strong className="text-ink">Visa Waiver Program</strong>. CBP puts the limit bluntly: an
-              approved ESTA is not a visa, and cannot stand in for one where US law requires a visa.
+              under the <strong className="text-ink">Visa Waiver Program</strong>. CBP is blunt about the limit: it is
+              not a visa, and cannot stand in for one where US law requires a visa.
             </p>
             <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
               <div className="card-doc p-4">
@@ -247,14 +247,10 @@ export default function EstaGuidePage() {
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>A visa, or a substitute for one where a visa is required</span></li>
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>A guarantee of entry - a CBP officer decides admission at the port of entry</span></li>
                   <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>Permission to work or study in the United States</span></li>
+                  <li className="flex gap-3"><span aria-hidden className="mono text-stamp">→</span><span>Appealable: travelling under the programme waives any appeal of a CBP admissibility decision, except an asylum claim</span></li>
                 </ul>
               </div>
             </div>
-            <p className="text-body mt-4 text-ink-soft">
-              Travelling under the programme also waives your right to appeal a CBP officer&apos;s admissibility
-              decision, other than on an asylum claim - one reason a visa is sometimes the better route even when an
-              ESTA would be granted.
-            </p>
           </section>
 
           {/* THE core section: what disqualifies you */}
@@ -266,11 +262,11 @@ export default function EstaGuidePage() {
               The{" "}
               <strong className="text-ink">Visa Waiver Program Improvement and Terrorist Travel Prevention Act of 2015</strong>{" "}
               (Division O, Title II of Public Law 114-113) added section 217(a)(12) to the Immigration and Nationality
-              Act: it removes people from the programme based on where they have been, regardless of nationality,
-              record or purpose of trip. The trigger is <strong className="text-ink">presence</strong> - tourism, a
-              family visit, journalism, aid work and business all count identically. The statute names Iraq and Syria,
-              then extends to state sponsors of terrorism and any further country of concern designated by the
-              Secretary of Homeland Security, which is how the list grew past two.
+              Act: it removes people from the programme for where they have been, whatever their nationality, record
+              or reason for going. <strong className="text-ink">Presence</strong> is the trigger - tourism, family,
+              journalism, aid work and business count identically. The statute names Iraq and Syria and extends to
+              state sponsors of terrorism plus any country of concern designated by the Secretary of Homeland
+              Security, which is how the list grew past two.
             </p>
 
             <div className="card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3">
@@ -291,10 +287,9 @@ export default function EstaGuidePage() {
             <div className="card-doc card-doc-rule mt-5 max-w-3xl p-4">
               <h3 className="font-display text-[15px] font-semibold text-ink">Two different dates, and CBP is not consistent about them</h3>
               <p className="text-body mt-2 text-ink-soft">
-                Eight countries share the statutory 1 March 2011 threshold. Cuba runs on its own date - 12 January
-                2021, its state-sponsor designation - and CBP&apos;s Cuba guidance says so, while the live ESTA form
-                asks all nine as one 1 March 2011 question. If either date could apply to you, assume you are affected
-                and plan for a visa.
+                Eight countries share the statutory 1 March 2011 threshold; Cuba runs on its own 12 January 2021
+                designation date, which CBP&apos;s Cuba guidance states while the live ESTA form asks all nine as one
+                1 March 2011 question. If either date could apply to you, assume you are affected and plan for a visa.
               </p>
             </div>
           </section>
@@ -303,12 +298,12 @@ export default function EstaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">An Approved ESTA Can Be Revoked</h2>
             <p className="text-body mt-3 text-ink-soft">
-              An authorisation granted before a disqualifying trip is not protection. CBP states an approved ESTA may
-              be revoked at any time, and its Cuba guidance is explicit: if the traveller was present in Cuba on or
-              after 12 January 2021, or holds dual nationality with both a VWP country and Cuba,{" "}
-              <strong className="text-ink">the ESTA will be revoked</strong>. So an ESTA can be valid when you book
-              and invalid by the time you fly. CBP advises applying for a new ESTA or a visa proactively rather than
-              finding out at the airport.
+              An authorisation granted before a disqualifying trip is not protection: CBP may revoke an approved ESTA
+              at any time, and its Cuba guidance is explicit that for a traveller present in Cuba on or after 12
+              January 2021, or holding both a VWP and Cuban nationality,{" "}
+              <strong className="text-ink">the ESTA will be revoked</strong>. It can be valid when you book and
+              invalid when you fly, so CBP advises applying for a new ESTA or a visa rather than finding out at the
+              airport.
             </p>
           </section>
 
@@ -316,9 +311,8 @@ export default function EstaGuidePage() {
           <section className="mt-12">
             <h2 className="text-section text-ink">Dual Nationality: A Separate, Shorter List</h2>
             <p className="text-body mt-3 max-w-3xl text-ink-soft">
-              A second restriction runs alongside the travel one and is frequently conflated with it: nationals of VWP
-              countries who are <em>also</em> nationals of the countries below cannot travel under the Visa Waiver
-              Program, however strong the VWP passport they hold.
+              A second restriction, frequently conflated with the travel one: VWP nationals who are <em>also</em>{" "}
+              nationals of the countries below cannot use the Visa Waiver Program at all.
             </p>
             <div className="card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3">
               {NATIONALITY_BAR.map((iso3) => (
@@ -334,9 +328,8 @@ export default function EstaGuidePage() {
               ))}
             </div>
             <p className="text-body mt-4 max-w-3xl text-ink-soft">
-              Note what is <strong className="text-ink">not</strong> here: Libya, Somalia and Yemen restrict you if
-              you have been there, but their nationality alone does not. And the exceptions below, which can rescue a
-              traveller caught by the presence rule, do not apply to this rule at all.
+              Libya, Somalia and Yemen are deliberately <strong className="text-ink">not</strong> here: going there
+              restricts you, holding their nationality does not. The exceptions below do not apply to this rule.
             </p>
           </section>
 
@@ -344,8 +337,8 @@ export default function EstaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">The Exceptions Are Narrow</h2>
             <p className="text-body mt-3 text-ink-soft">
-              Two carve-outs exist, both about <em>why</em> you were there and both requiring a determination by the
-              Secretary of Homeland Security:
+              Two carve-outs, both about <em>why</em> you were there, both requiring a determination by the Secretary
+              of Homeland Security:
             </p>
             <ol className="text-body mt-4 space-y-3 text-ink-soft">
               <li className="flex gap-3">
@@ -358,10 +351,9 @@ export default function EstaGuidePage() {
               </li>
             </ol>
             <p className="text-body mt-4 text-ink-soft">
-              Beyond those, DHS may grant a discretionary waiver where it is in US law enforcement or national
-              security interests. There is no waiver form - you apply for an ESTA and eligibility is considered in
-              that adjudication. Waivers are rare, case-by-case, never decided at the border, and not something to
-              plan a trip around.
+              Beyond those, DHS may waive the bar in US law enforcement or national security interests. There is no
+              waiver form - eligibility is considered when you apply for an ESTA. Waivers are rare, case-by-case,
+              never decided at the border, and not something to plan a trip around.
             </p>
           </section>
 
@@ -370,8 +362,8 @@ export default function EstaGuidePage() {
             <h2 className="text-section text-ink">Fee, Validity and When You Need a New One</h2>
             <p className="text-body mt-3 text-ink-soft">
               Section 100014 of Public Law 119-21 (4 July 2025) raised the statutory minimum, and CBP began charging
-              the inflation-adjusted FY2026 amount on 1 January 2026. The fee is adjusted annually, so confirm any
-              figure - including this one - on{" "}
+              the inflation-adjusted FY2026 amount on 1 January 2026. It is adjusted annually, so confirm any figure -
+              including this one - on{" "}
               <a
                 href={OFFICIAL_ESTA_URL}
                 target="_blank"
@@ -396,8 +388,8 @@ export default function EstaGuidePage() {
               ))}
             </div>
             <p className="text-body mt-4 text-ink-soft">
-              A new passport, a name change, a change of citizenship, or a change to any yes/no eligibility answer all
-              require a fresh application and a fresh fee - none of them can be amended on an existing authorisation.
+              A new passport, name change, change of citizenship or change to any yes/no eligibility answer cannot be
+              amended on an existing authorisation: each needs a fresh application and fee.
             </p>
           </section>
 
@@ -407,9 +399,8 @@ export default function EstaGuidePage() {
               Who Needs an ESTA ({vwpPassports.length} passports)
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              These passports reach the United States without a visa but with a mandatory pre-travel authorisation.
-              Everyone needs their own ESTA, children of any age included, and it applies to land crossings and to
-              transit, not just flights.
+              No visa, but a mandatory pre-travel authorisation - one per traveller, children of any age included,
+              for land crossings and transit as well as flights.
             </p>
             <div className="card-doc mt-5 grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3">
               {vwpPassports.map((iso3) => (
@@ -428,7 +419,7 @@ export default function EstaGuidePage() {
             </div>
             {noEstaNeeded.length > 0 && (
               <p className="text-body mt-4 max-w-3xl text-ink-soft">
-                Not everyone who enters without a visa needs one:{" "}
+                Entering without a visa does not always mean an ESTA:{" "}
                 {noEstaNeeded.map((iso3, i) => (
                   <span key={iso3}>
                     {i > 0 && i === noEstaNeeded.length - 1 ? " and " : i > 0 ? ", " : ""}
@@ -440,7 +431,7 @@ export default function EstaGuidePage() {
                     </Link>
                   </span>
                 ))}{" "}
-                enter under separate arrangements, outside the Visa Waiver Program and its ESTA requirement.
+                enter under separate arrangements, outside the programme entirely.
               </p>
             )}
           </section>
@@ -449,15 +440,15 @@ export default function EstaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">If You Are Affected, You Can Still Travel</h2>
             <p className="text-body mt-3 text-ink-soft">
-              Losing VWP eligibility is not a ban - it moves you from the online route to the embassy route: a
-              nonimmigrant visa, normally a B-1/B-2, with an application, fee, interview and wait. Keep a copy of the
-              ESTA denial or revocation: a traveller affected by the 2015 Act with imminent business, medical or
+              Losing VWP eligibility is not a ban - it moves you from the online route to the embassy one: a
+              nonimmigrant visa, normally a B-1/B-2, with an application, fee, interview and wait. Keep the ESTA
+              denial or revocation: travellers affected by the 2015 Act with imminent business, medical or
               humanitarian travel may request an expedited appointment, and the consulate may ask to see it.
             </p>
             <p className="text-body mt-3 text-ink-soft">
-              Entry suspensions issued by presidential proclamation are a separate regime with their own country
-              lists and exceptions, and they change. If one may apply to you, check the current proclamation text on
-              the Federal Register alongside{" "}
+              Entry suspensions by presidential proclamation are a separate regime with their own country lists,
+              exceptions and revisions. If one may apply to you, check the current proclamation on the Federal
+              Register alongside{" "}
               <a
                 href={CBP_VWP_ACT_FAQ}
                 target="_blank"
@@ -489,8 +480,7 @@ export default function EstaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">Sources</h2>
             <p className="text-body mt-2 text-ink-soft">
-              Every rule here comes from US government publications. Where CBP&apos;s own pages conflict, this page
-              says so rather than picking the convenient reading.
+              Every rule here comes from US government publications.
             </p>
             <ul className="card-doc mt-5 divide-y divide-line px-5">
               {[

@@ -11,7 +11,7 @@ export default function ReportLine({ className }: { className?: string }) {
   // and blocks), which is invalid - and a hydration error - inside a <p>.
   return (
     <div className={className ?? "mt-10 text-[13px] text-ink-2"}>
-      Spotted wrong or outdated information? <ReportIssue />
+      <ReportIssue />
     </div>
   );
 }

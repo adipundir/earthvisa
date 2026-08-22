@@ -69,28 +69,35 @@ const communityRange = (s: string) => (s.split("\n")[0] ?? "").trim();
 // across all 14 records (3-6 months of statements, ITR, salary slips, a
 // sponsor's own papers; lump-sum deposits, borrowed funds, thin history).
 // Stated once here instead of once per visa. Only what genuinely differs by
-// visa is listed in DIFFERENCES below.
+// visa stays in that visa's own row note.
 const COMMON_DOCUMENTS =
   "3-6 months of personal bank statements, income tax returns for the last 1-3 years, recent salary slips plus an employment or leave letter (business registration and accounts if self-employed), savings or fixed-deposit proof, and - if a third party is paying - a sponsorship letter with the sponsor's own statements, payslips and returns. Confirmed return travel and prepaid accommodation support every application.";
 
 const COMMON_RED_FLAGS =
   "A large lump sum deposited shortly before applying with no documented source; borrowed or gifted money with no paper trail; a dormant, newly opened or erratic account with no regular salary credits; a balance that does not match your declared income or occupation; a balance that does not plausibly cover the trip and the flight home; and financial details that contradict the application form.";
 
-const DIFFERENCES: string[] = [
-  "UAE: the USD 4,000 six-month balance applies only to the self-sponsored 5-year multi-entry visa. Standard 30/60/90-day tourist visas sponsored by an airline, hotel or resident publish no balance requirement at all.",
-  "Thailand: THB 20,000 per person or THB 40,000 per family must be available as cash or equivalent at the border, checked at the officer's discretion - not only on a statement.",
-  "New Zealand: NZD 400 a month instead of NZD 1,000 if accommodation is already paid for, and the money for your onward ticket must be shown separately.",
-  "Schengen: travel insurance with EUR 30,000 of cover is a separate requirement, and prepaid accommodation lowers the daily rate in several states (France, Croatia).",
-  "China: no single figure. Mumbai publishes INR 100,000 per applicant, Pakistan USD 100 a day, Cebu no figure at all - use the instructions of the post covering your address.",
-  "South Korea: the New York consulate advises a 3-month average balance above USD 3,000; multiple-entry applications ask for two accounts and recent pay stubs.",
-  "Ireland and Japan: statements must be originals on bank paper, stamped and signed - online printouts are generally refused. Ireland also wants a written explanation for any unusual deposit or withdrawal.",
-  "Singapore: unemployed applicants file a Certificate of Bank Deposit, which has no minimum amount and only has to reflect real means.",
-  "Australia: a sponsor files Form 1149 alongside their own financial evidence.",
-  "United States: an invitation letter or Affidavit of Support is explicitly not required and is not a deciding factor; ties abroad are weighed with the money.",
-  "Canada: if someone else is funding the trip, their financial proof is required instead of yours.",
-  "United Kingdom: the Home Office may go back to your bank to verify submitted statements.",
-  "Malaysia: funds must be presentable on arrival as cash, traveller's cheques, a debit or credit card, or a recognised e-wallet.",
-];
+// The dataset's official prose and the per-visa exceptions used to be printed
+// twice - once as the row's guidance paragraph, once again as a "where the rules
+// differ" bullet below. Merged here into one note per visa: the official
+// requirement plus only what genuinely differs for that country. Every figure and
+// rule from both sources is preserved; a record without an entry falls back to the
+// dataset text.
+const NOTES: Record<string, string> = {
+  ARE: "Applies only to the self-sponsored 5-year multi-entry visa, documented across the 6 months before submission. Standard 30/60/90-day tourist visas sponsored by an airline, hotel or UAE resident publish no balance requirement at all.",
+  AUS: "Judged under the Genuine Temporary Entrant test: cover accommodation, daily expenses, in-country travel and return transport, proportional to your itinerary. A sponsor files Form 1149 alongside their own financial evidence.",
+  CAN: "IRCC asks for 'proof of sufficient funds to cover your travel and expenses in Canada', assessed case-by-case against trip length, accommodation and number of travellers. If someone else is funding the trip, their financial proof is required instead of yours.",
+  CHN: "No single figure. The embassy in Pakistan sets USD 100 a day, Mumbai a flat INR 100,000 per applicant, Cebu a 6-month bank certificate with no amount - use the instructions of the post covering your address.",
+  GBR: "UKVI requires only that you can pay for the return journey and 'support yourself without working or getting help from public funds'. Caseworkers weigh declared trip costs against your income credibility, and the Home Office may go back to your bank to verify statements.",
+  IRL: "The visa officer decides whether you have 'adequate financial means' to support and accommodate yourself - or an Irish sponsor who can - without working or claiming public funds. Statements must be stamped originals on bank paper, with a written explanation for any unusual deposit or withdrawal.",
+  JPN: "Consulates weigh bank statements, tax returns and employer or business proof; requirements are set per consulate or VFS jurisdiction and examiners can ask for more. Statements must be stamped originals - online printouts are generally refused.",
+  KOR: "The embassy in India asks for 6 months of statements with no balance figure; the New York consulate advises a 3-month average above USD 3,000. Multiple-entry applications ask for two accounts and recent pay stubs.",
+  MYS: "'Proof of sufficient funds for staying in Malaysia', presentable on arrival as cash, traveller's cheques, a debit or credit card, or a recognised e-wallet.",
+  NZL: "NZD 1,000 a month if you pay your own accommodation, NZD 400 a month if it is already prepaid. Funds may be your own or an approved sponsor's, and money for the onward ticket must be shown separately.",
+  SGP: "ICA requires 'sufficient funds for the length of intended stay' plus a confirmed onward or return ticket. Unemployed applicants file a Certificate of Bank Deposit, which has no minimum amount and only has to reflect real means.",
+  THA: "THB 20,000 per person or THB 40,000 per family (about USD 550 / INR 47,000), as cash or foreign-currency equivalent checked at the border at the officer's discretion - not only on a statement. Applies to visa exemption, visa on arrival and embassy applications alike. Some official pages still cite an older THB 10,000 / 20,000; MFA pages use 20,000 / 40,000 for 2025-2026.",
+  USA: "Under INA 214(b) you must show 'evidence of funds to cover your expenses' and pay all costs of the trip, weighed together with ties abroad such as job, family and property. An invitation letter or Affidavit of Support is explicitly not required and not a deciding factor.",
+  schengen: "No EU-wide figure: each state fixes its own daily reference amount under Annex 25 of the EU Practical Handbook for Border Guards, and prepaid accommodation lowers it in several states - France's cited baseline is EUR 65 a day with accommodation paid, EUR 120 without. Travel insurance with EUR 30,000 of cover is a separate requirement.",
+};
 
 export default function ProofOfFundsHub() {
   const jsonLd = {
@@ -195,7 +202,7 @@ export default function ProofOfFundsHub() {
             <h2 className="text-section text-ink">Proof of funds by visa</h2>
             <p className="text-body mt-2 max-w-2xl text-ink-soft">
               {noFigureCount} of these {records.length} visas publish no fixed figure - officers judge your whole
-              financial profile. Reported ranges are compiled from applicant reports, not official thresholds.
+              financial profile. Reported ranges come from applicants, not from any threshold.
             </p>
             <div className="card-doc mt-4 overflow-x-auto">
               <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
@@ -226,7 +233,7 @@ export default function ProofOfFundsHub() {
                             {p.visa}
                           </p>
                           <p className="mt-1 max-w-md text-[12.5px] leading-relaxed text-ink-soft">
-                            {hasFigure ? headline!.note : off.guidance}
+                            {NOTES[p.key] ?? (hasFigure ? headline!.note : off.guidance)}
                           </p>
                           {source && (
                             <a
@@ -271,15 +278,6 @@ export default function ProofOfFundsHub() {
               <h2 className="text-sub text-ink">What gets applications refused</h2>
               <p className="text-body mt-2 text-ink-soft">{COMMON_RED_FLAGS}</p>
             </div>
-          </section>
-
-          <section className="mt-10">
-            <h2 className="text-section text-ink">Where the rules actually differ</h2>
-            <ul className="mt-4 space-y-2 text-[13px] leading-relaxed text-ink-soft">
-              {DIFFERENCES.map((d) => (
-                <li key={d} className="border-l-2 border-line pl-3">{d}</li>
-              ))}
-            </ul>
           </section>
 
           {/* FAQ */}

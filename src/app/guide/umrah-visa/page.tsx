@@ -127,29 +127,29 @@ export default function UmrahVisaGuidePage() {
   const faqs = [
     {
       q: "Can I perform Umrah on a Saudi tourist visa?",
-      a: `Yes - tourist visa holders may perform Umrah, though not Hajj. ${sauEvisaCount} nationalities are eligible for the Saudi tourist e-Visa${eVisaType?.fee_usd ? `, priced at about USD ${eVisaType.fee_usd}` : ""}${eVisaType?.max_stay_days ? ` with stays up to ${eVisaType.max_stay_days} days` : ""}. If your nationality is not eligible for the tourist e-visa, the dedicated Umrah visa through the official Nusuk platform is the standard route.`,
+      a: `Yes - tourist visa holders may perform Umrah, though not Hajj. ${sauEvisaCount} nationalities are eligible for the Saudi tourist e-Visa${eVisaType?.fee_usd ? `, about USD ${eVisaType.fee_usd}` : ""}${eVisaType?.max_stay_days ? `, stays up to ${eVisaType.max_stay_days} days` : ""}. Otherwise the dedicated Umrah visa via Nusuk is the standard route.`,
     },
     {
       q: "What is Nusuk?",
-      a: "Nusuk (nusuk.sa) is Saudi Arabia's official platform for planning Umrah and Hajj. Dedicated Umrah visas are processed through Nusuk and its authorised travel providers - you can book permits for the Rawdah and other rites there as well. Treat any non-official site offering 'Umrah visas' with caution and start from the official platform.",
+      a: "Nusuk (nusuk.sa) is Saudi Arabia's official platform for Umrah and Hajj: dedicated Umrah visas are processed through it and its authorised providers, and Rawdah and other rite permits are booked there. Treat non-official 'Umrah visa' sites with caution.",
     },
     {
       q: "Do Indian citizens need a visa for Umrah?",
       a: indEdge
-        ? `Indian passport holders qualify for ${LEVEL_LABEL[indEdge.level].toLowerCase()} access to Saudi Arabia. Dedicated Umrah visas also remain available through the official Nusuk platform. Verify current conditions on official Saudi sources before booking.`
-        : "Yes. Our dataset records no visa-free, visa-on-arrival or tourist e-visa eligibility for Indian passport holders to Saudi Arabia, so Indian pilgrims apply in advance - typically for a dedicated Umrah visa processed through the official Nusuk platform or its authorised agents. Separately, under Saudi tourist visa regulations, travellers of any nationality holding a valid, previously used US, UK or Schengen visa can obtain a visa on arrival - a route many Indian travellers qualify for.",
+        ? `Indian passport holders qualify for ${LEVEL_LABEL[indEdge.level].toLowerCase()} access to Saudi Arabia, and dedicated Umrah visas remain available through Nusuk. Verify current conditions on official Saudi sources before booking.`
+        : "Yes. Our dataset records no visa-free, visa-on-arrival or tourist e-visa eligibility for Indian passport holders, so Indian pilgrims apply in advance - typically a dedicated Umrah visa through Nusuk or its authorised agents. Separately, any nationality holding a valid, previously used US, UK or Schengen visa can obtain a visa on arrival.",
     },
     {
       q: "Can women perform Umrah without a mahram?",
-      a: "Saudi authorities have relaxed the former mahram (male guardian) requirement, and official guidance has allowed women to perform Umrah without a male guardian. Rules and conditions can change - verify the current position on the official Nusuk platform or with a Saudi consulate before booking.",
+      a: "Saudi authorities have relaxed the former mahram (male guardian) requirement, and official guidance has allowed women to perform Umrah without one. Conditions can change - verify on Nusuk or with a Saudi consulate before booking.",
     },
     {
       q: "What vaccinations are required for Umrah?",
-      a: "Meningococcal ACWY vaccination is commonly required for Umrah and Hajj travellers per official Saudi health requirements, and seasonal requirements can be added. Health rules are set by the Saudi Ministry of Health and vary by season and origin country - verify the current requirements on official Saudi sources before travel.",
+      a: "Meningococcal ACWY vaccination is commonly required for Umrah and Hajj travellers, and seasonal requirements can be added. Rules are set by the Saudi Ministry of Health and vary by season and origin country - verify before travel.",
     },
     {
       q: "Can I perform Hajj on a tourist visa or Umrah visa?",
-      a: "No. Hajj requires a dedicated Hajj visa issued under national quotas through authorised Hajj operators - a tourist visa or Umrah visa does not permit Hajj. Saudi authorities enforce this strictly during the Hajj season.",
+      a: "No. Hajj requires a dedicated Hajj visa issued under national quotas through authorised operators, and Saudi authorities enforce this strictly during the Hajj season.",
     },
   ];
 
@@ -226,20 +226,17 @@ export default function UmrahVisaGuidePage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
-              There are three main ways to enter <Link href={`/destination/${nameToSlug(nameFor("SAU"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Saudi Arabia</Link>{" "}
-              for <strong className="text-ink">Umrah</strong>: the <strong className="text-ink">Saudi tourist visa</strong>{" "}
-              (which allows Umrah but not Hajj), the{" "}
-              <strong className="text-ink">dedicated Umrah visa</strong> processed through the official{" "}
+              Three routes into{" "}
+              <Link href={`/destination/${nameToSlug(nameFor("SAU"))}`} className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Saudi Arabia</Link>{" "}
+              for <strong className="text-ink">Umrah</strong>, and your passport decides which: the tourist visa, the
+              dedicated Umrah visa via the official{" "}
               <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>{" "}
-              platform, and - for travellers holding a valid, previously used US, UK or Schengen visa - a{" "}
-              <strong className="text-ink">visa on arrival</strong> recorded in Saudi tourist visa regulations.
-              Which one applies depends on your passport.
+              platform, and - holding a used US, UK or Schengen visa - a visa on arrival.
             </p>
             {notEligibleNames.length > 0 && (
               <p className="text-body mt-4 text-ink-soft">
-                {notEligibleNames.join(", ")} are <strong className="text-ink">not</strong> eligible for the tourist
-                e-Visa per our data, so for them the Nusuk Umrah visa - or the US/UK/Schengen visa-holder route - is
-                the practical path.
+                {notEligibleNames.join(", ")} have <strong className="text-ink">no</strong> tourist e-Visa
+                eligibility in our data, so routes 2 and 3 are their practical paths.
               </p>
             )}
           </section>
@@ -265,9 +262,9 @@ export default function UmrahVisaGuidePage() {
               ))}
             </div>
             <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-              Eligibility is limited - check your passport on visitsaudi.com or with your{" "}
-              <Link href="/visit?dest=SAU" className="text-stamp underline underline-offset-2">Earth Visa check</Link>.
-              A tourist visa never permits Hajj, which is issued only via{" "}
+              Eligibility is limited - confirm on visitsaudi.com, or{" "}
+              <Link href="/visit?dest=SAU" className="text-stamp underline underline-offset-2">check your passport</Link>.
+              A tourist visa never permits Hajj, issued only via{" "}
               <a href="https://hajj.nusuk.sa/" rel="noopener noreferrer" className="text-stamp underline underline-offset-2">Nusuk Hajj</a>.
             </p>
           </section>
@@ -276,8 +273,8 @@ export default function UmrahVisaGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">Route 2: The Dedicated Umrah Visa via Nusuk</h2>
             <p className="text-body mt-3 text-ink-soft">
-              For nationalities without tourist visa access - which includes the largest pilgrimage origins - the
-              dedicated <strong className="text-ink">Umrah visa</strong> is the standard route, processed through{" "}
+              The standard route for nationalities without tourist visa access, which includes the largest pilgrimage
+              origins. It is processed through{" "}
               <a href={NUSUK_URL} rel="noopener noreferrer" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Nusuk</a>{" "}
               and its authorised travel providers.
             </p>
@@ -285,15 +282,15 @@ export default function UmrahVisaGuidePage() {
               {[
                 {
                   t: "Register on Nusuk or book through an authorised provider",
-                  d: "Most pilgrims book a package (visa + accommodation + transport) through a Nusuk-authorised agent at home.",
+                  d: "Most pilgrims book a package - visa, accommodation and transport - through a Nusuk-authorised agent at home.",
                 },
                 {
                   t: "Submit documents",
-                  d: "Passport usually valid 6+ months, photos, and proof of meningococcal ACWY vaccination. Exact lists vary by origin country - verify on official Saudi sources before you book.",
+                  d: "Passport usually valid 6+ months, photos, and proof of meningococcal ACWY vaccination. Lists vary by origin country - verify on official Saudi sources.",
                 },
                 {
                   t: "Receive the e-visa and book rites",
-                  d: "The visa is issued electronically; Rawdah and other rite permits are booked inside the Nusuk app.",
+                  d: "Issued electronically; Rawdah and other rite permits are booked inside the Nusuk app.",
                 },
               ].map(({ t, d }, i) => (
                 <li key={t} className="flex gap-4">
@@ -319,9 +316,8 @@ export default function UmrahVisaGuidePage() {
               ))}
             </dl>
             <p className="card-doc mt-5 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-              Umrah visa fees are set by Saudi authorities and not recorded in our dataset - confirm them on Nusuk
-              itself, not third-party agents&apos; ads. Mahram (male guardian) rules have been relaxed; verify the
-              current conditions before travel.
+              Umrah visa fees are set by Saudi authorities and not in our dataset - confirm them on Nusuk itself, not
+              in agents&apos; ads. Mahram (male guardian) rules have been relaxed; verify before travel.
             </p>
           </section>
 
@@ -332,9 +328,9 @@ export default function UmrahVisaGuidePage() {
                 Route 3: Visa on Arrival with a US, UK or Schengen Visa
               </h2>
               <p className="text-body mt-3 text-ink-soft">
-                Saudi tourist visa regulations grant a <strong className="text-ink">visa on arrival</strong> to
-                travellers of <strong className="text-ink">any nationality</strong> holding one of these credentials -
-                the fastest legal route for many Indian, Pakistani and Bangladeshi pilgrims, and it allows Umrah.
+                Saudi tourist visa regulations grant a visa on arrival, valid for Umrah, to travellers of{" "}
+                <strong className="text-ink">any nationality</strong> holding one of these credentials - the fastest
+                legal route for many Indian, Pakistani and Bangladeshi pilgrims.
               </p>
               <ul className="mt-4 space-y-2.5">
                 {credentialVoA.map(({ id, edge }) => (
@@ -439,8 +435,7 @@ export default function UmrahVisaGuidePage() {
               Check your exact Saudi Arabia entry options
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Enter your passport (and any US, UK or Schengen visas you hold) to see every route into Saudi Arabia -
-              including credential-based visa on arrival.
+              Add any US, UK or Schengen visa you hold to see the credential-based visa on arrival too.
             </p>
             <Link
               href="/visit?dest=SAU"

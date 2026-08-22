@@ -43,8 +43,9 @@ const nonUsdPriced = programs.filter((p) => cbiMinUsd(p) == null && p.options.so
 // Programs with no published minimum at all (discretionary / not yet regulated).
 const noPublishedMin = programs.filter((p) => p.options.every((o) => o.min_amount == null));
 
-// One price-to-power table serves both the "cheapest ranked" and "what each passport is worth"
-// views: USD-ranked programs first, then non-USD-priced (shown as published, never converted),
+// ONE table now carries everything the per-program cards used to repeat: price rank,
+// every investment route, processing, conditions and what the passport is worth.
+// USD-ranked programs first, then non-USD-priced (shown as published, never converted),
 // then programs with no published minimum.
 const priceRows = [
   ...cheapest.map(({ p }, i) => ({ p, rank: i + 1 as number | null, option: cheapestUsdOption(p) })),
@@ -205,7 +206,16 @@ function Chevron() {
   );
 }
 
-function ProgramCard({ p }: { p: CbiProgram }) {
+/** one programme = one row: price rank, every route, processing, conditions, passport power */
+function ProgramRow({
+  p,
+  rank,
+  option,
+}: {
+  p: CbiProgram;
+  rank: number | null;
+  option: CbiProgram["options"][number] | null;
+}) {
   const w = passportWorth(p.iso3);
   const slug = nameToSlug(p.name);
   // Some source rows repeat an option that renders to the same label + amount; collapse them for display.
@@ -217,77 +227,88 @@ function ProgramCard({ p }: { p: CbiProgram }) {
           optionLabel(x.type) === optionLabel(o.type) && x.min_amount === o.min_amount && x.currency === o.currency,
       ),
   );
-  // Conditions used to be four coloured chips per card; as one plain line they read
-  // as facts rather than chrome, and the status chip stays the card's only badge.
   const conditions = [
     p.residency_required === false ? "no residency requirement" : null,
     p.residency_required === true ? "residency required" : null,
     p.dual_citizenship_allowed === true ? "dual citizenship allowed" : null,
   ].filter(Boolean);
-  const meta = [
-    p.processing_time ? `Processing: ${processingLabel(p.processing_time)}` : null,
-    ...conditions,
-  ].filter(Boolean);
-  const status = isSuspended(p)
-    ? { label: "Suspended", cls: "bg-change/10 text-change ring-change/30" }
-    : isAnnouncedOnly(p)
-      ? { label: "Announced, not enacted", cls: "bg-stamp/10 text-stamp ring-stamp/30" }
-      : null;
+  const status = isSuspended(p) ? "suspended" : isAnnouncedOnly(p) ? "announced, not enacted" : null;
   return (
-    <article className="card-doc flex flex-col p-4">
-      <div className="flex items-center gap-3">
-        <span className="text-2xl">{flagFor(p.iso3)}</span>
-        <div className="min-w-0">
-          <Link
-            href={`/passport/${slug}`}
-            className="inline-flex min-h-[44px] items-center font-display font-semibold text-ink transition hover:text-stamp"
-          >
-            {p.name}
-          </Link>
-          <div className="text-[12px] text-ink-mute">{p.region}</div>
-        </div>
+    <tr className="border-b border-line align-top">
+      <td className="mono py-3 pr-3 text-right tabular-nums text-ink-mute">{rank ?? "-"}</td>
+      <td className="py-3 pr-4">
+        <Link
+          href={`/passport/${slug}`}
+          className="inline-flex items-center gap-2 font-display font-medium text-ink transition hover:text-stamp"
+        >
+          <span className="text-lg">{flagFor(p.iso3)}</span>
+          {p.name}
+        </Link>
         {status && (
-          <span className={`ml-auto shrink-0 rounded-[3px] px-2 py-0.5 text-[11px] ring-1 ${status.cls}`}>
-            {status.label}
+          <span
+            className={`mono ml-2 whitespace-nowrap rounded-[3px] px-1.5 py-0.5 text-[10px] ring-1 ${
+              isSuspended(p) ? "bg-change/10 text-change ring-change/30" : "bg-stamp/10 text-stamp ring-stamp/30"
+            }`}
+          >
+            {status}
           </span>
         )}
-      </div>
-      <p className="mt-1 text-sm italic leading-snug text-ink-soft">{p.program_name}</p>
-
-      <ul className="mono mt-3 space-y-1 text-[11px] text-ink-soft">
-        {options.map((o, i) => (
-          <li key={`${o.type}-${i}`}>
-            {optionLabel(o.type)} ·{" "}
-            {o.min_amount != null ? <>from {fmtMoney(o.min_amount, o.currency)}</> : <>minimum not published</>}
-          </li>
-        ))}
-      </ul>
-
-      {meta.length > 0 && <p className="mono mt-2 text-[11px] text-ink-mute">{meta.join(" · ")}</p>}
-
-      {w && (
-        <div className="mt-auto border-t border-line pt-3">
-          <p className="mono text-[11px] text-ink-soft">
-            Passport: <strong className="text-ink">{w.visaFree} visa-free</strong> · #{w.rank} of{" "}
-            {TOTAL_RANKED_PASSPORTS}
-          </p>
-          <div className="mt-1 flex flex-wrap gap-x-4 text-[12px] font-medium">
-            <Link
-              href={`/passport/${slug}`}
-              className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink"
-            >
-              Passport details →
-            </Link>
-            <Link
-              href={`/destination/${slug}`}
-              className="inline-flex min-h-[44px] items-center text-stamp transition hover:text-ink"
-            >
-              Entry rules →
-            </Link>
-          </div>
-        </div>
-      )}
-    </article>
+        <span className="mt-0.5 block text-[12px] italic leading-snug text-ink-soft">{p.program_name}</span>
+        <span className="mt-0.5 block text-[12px] text-ink-mute">
+          {p.region}
+          {p.official_url && (
+            <>
+              {" · "}
+              <a
+                href={p.official_url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="underline decoration-line-strong underline-offset-2 transition hover:text-ink"
+              >
+                official source ↗
+              </a>
+            </>
+          )}
+        </span>
+      </td>
+      <td className="mono py-3 pr-4 text-right tabular-nums">
+        {option && option.min_amount != null ? (
+          <strong className="text-ink">{fmtMoney(option.min_amount, option.currency)}</strong>
+        ) : (
+          <span className="text-ink-soft">not published</span>
+        )}
+      </td>
+      <td className="mono py-3 pr-4 text-[11px] leading-relaxed text-ink-soft">
+        {options.length === 0
+          ? "-"
+          : options
+              .map((o) => `${optionLabel(o.type)} ${o.min_amount != null ? fmtMoney(o.min_amount, o.currency) : "(not published)"}`)
+              .join(" · ")}
+      </td>
+      <td className="py-3 pr-4 text-[12px] leading-relaxed text-ink-soft">
+        {p.processing_time ? processingLabel(p.processing_time) : "not published"}
+        {conditions.length > 0 && <span className="mt-0.5 block text-ink-mute">{conditions.join(" · ")}</span>}
+      </td>
+      <td className="mono py-3 text-right text-[12px] tabular-nums">
+        {w ? (
+          <>
+            <span className="text-ink">{w.visaFree} visa-free</span>
+            <span className="block text-ink-soft">#{w.rank} of {TOTAL_RANKED_PASSPORTS}</span>
+          </>
+        ) : (
+          <span className="text-ink-soft">-</span>
+        )}
+        <span className="mt-1 block whitespace-nowrap">
+          <Link href={`/passport/${slug}`} className="text-stamp transition hover:text-ink">
+            passport
+          </Link>
+          {" · "}
+          <Link href={`/destination/${slug}`} className="text-stamp transition hover:text-ink">
+            entry rules
+          </Link>
+        </span>
+      </td>
+    </tr>
   );
 }
 
@@ -363,77 +384,38 @@ export default function CitizenshipByInvestmentPage() {
             </p>
           </section>
 
-          {/* Cheapest ranking + passport worth: one price-to-power table */}
+          {/* One table: the cheapest ranking, every route, and what each passport is worth */}
           <section className="mt-12">
             <h2 className="text-section text-ink">
-              Cheapest Citizenship by Investment in 2026 (Ranked) - and What Each CBI Passport Is Worth
+              Citizenship by Investment Countries List 2026: All {programs.length} Programs, Cheapest First
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
               Ranked by lowest published USD minimum, which excludes processing, due diligence and dependant fees.
+              Amounts in other currencies are shown as published, never converted, and sit unranked at the bottom.
             </p>
             <p className="mt-4 text-[12px] font-medium text-ink-mute sm:hidden">Scroll sideways for all columns →</p>
             <div className="mt-1.5 overflow-x-auto sm:mt-5">
-              <table className="w-full min-w-[640px] border-collapse text-sm">
+              <table className="w-full min-w-[60rem] border-collapse text-sm">
                 <thead>
                   <tr className="border-b border-line-strong text-left text-[12px] text-ink-mute">
-                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">#</th>
-                    <th scope="col" className="py-2.5 pr-4 font-medium">Passport</th>
-                    <th scope="col" className="py-2.5 pr-4 font-medium">Cheapest option</th>
-                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">Min. investment</th>
-                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">Visa-free</th>
-                    <th scope="col" className="py-2.5 text-right font-medium">Global rank</th>
+                    <th scope="col" className="py-2.5 pr-3 text-right font-medium">#</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Passport &amp; programme</th>
+                    <th scope="col" className="py-2.5 pr-4 text-right font-medium">From</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Investment routes</th>
+                    <th scope="col" className="py-2.5 pr-4 font-medium">Processing &amp; conditions</th>
+                    <th scope="col" className="py-2.5 text-right font-medium">Passport power</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {priceRows.map(({ p, rank, option }) => {
-                    const w = passportWorth(p.iso3);
-                    return (
-                      <tr key={p.iso3} className="border-b border-line">
-                        <td className="mono py-2 pr-4 text-right tabular-nums text-ink-mute">{rank ?? "-"}</td>
-                        <td className="py-2 pr-4">
-                          <Link
-                            href={`/passport/${nameToSlug(p.name)}`}
-                            className="inline-flex min-h-[44px] items-center gap-2.5 font-display font-medium text-ink transition hover:text-stamp"
-                          >
-                            <span className="text-lg">{flagFor(p.iso3)}</span>
-                            {p.name}
-                          </Link>
-                          {isSuspended(p) ? (
-                            <span className="mono ml-2 rounded-[3px] bg-change/10 px-2 py-0.5 text-[11px] text-change ring-1 ring-change/30">
-                              suspended
-                            </span>
-                          ) : (
-                            isAnnouncedOnly(p) && (
-                              <span className="mono ml-2 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] text-stamp ring-1 ring-stamp/30">
-                                announced
-                              </span>
-                            )
-                          )}
-                        </td>
-                        <td className="mono py-2 pr-4 text-[11px] text-ink-soft">
-                          {option ? optionLabel(option.type) : "-"}
-                        </td>
-                        <td className="mono py-2 pr-4 text-right tabular-nums">
-                          {option && option.min_amount != null ? (
-                            <strong className="text-ink">{fmtMoney(option.min_amount, option.currency)}</strong>
-                          ) : (
-                            <span className="text-ink-soft">not published</span>
-                          )}
-                        </td>
-                        <td className="mono py-2 pr-4 text-right tabular-nums text-ink">{w ? w.visaFree : "-"}</td>
-                        <td className="mono py-2 text-right tabular-nums text-ink-soft">
-                          {w ? `#${w.rank} of ${TOTAL_RANKED_PASSPORTS}` : "-"}
-                        </td>
-                      </tr>
-                    );
-                  })}
+                  {priceRows.map(({ p, rank, option }) => (
+                    <ProgramRow key={p.iso3} p={p} rank={rank} option={option} />
+                  ))}
                 </tbody>
               </table>
             </div>
             <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
-              Amounts in other currencies are shown as published, never converted, and sit unranked at the bottom.
-              Global rank counts every destination reachable without a pre-arranged visa (visa-free + visa on arrival +
-              eTA) - compare all {TOTAL_RANKED_PASSPORTS} passports in the{" "}
+              Passport power counts every destination reachable without a pre-arranged visa (visa-free + visa on
+              arrival + eTA) - compare all {TOTAL_RANKED_PASSPORTS} passports in the{" "}
               <Link
                 href="/rankings"
                 className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:text-ink"
@@ -442,18 +424,6 @@ export default function CitizenshipByInvestmentPage() {
               </Link>
               .
             </p>
-          </section>
-
-          {/* Full list */}
-          <section className="mt-12">
-            <h2 className="text-section text-ink">
-              Citizenship by Investment Countries List 2026 ({programs.length} Programs)
-            </h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {programs.map((p) => (
-                <ProgramCard key={p.iso3} p={p} />
-              ))}
-            </div>
           </section>
 
           {/* FAQ */}

@@ -100,27 +100,27 @@ function CountryTile({ iso3, href, sub }: { iso3: string; href: string; sub?: st
 const FAQS = [
   {
     q: "What is a Schengen visa?",
-    a: `A Schengen visa is a short-stay visa (Type C) valid across all ${memberCount} Schengen Area countries on one document, for stays of up to 90 days in any 180-day period for tourism, family visits or business. You apply once, at the consulate of your main destination, then cross internal Schengen borders without further checks. Ireland is in the EU but not in Schengen, and the United Kingdom runs its own visa policy - a Schengen visa is not valid in either.`,
+    a: `One short-stay visa (Type C) valid across all ${memberCount} Schengen countries for up to 90 days in any 180, for tourism, family visits or business. It is not valid in Ireland or the United Kingdom, which run their own visa policies.`,
   },
   {
     q: "Do I need a Schengen visa?",
-    a: `It depends on your nationality. Citizens of ${counts.exempt} of the ${TOTAL_PASSPORTS} nationalities Earth Visa tracks do not need a Schengen visa for short stays - either because their country is a Schengen member or because they are on the EU's visa-exempt list (verified against France's published visa policy). The remaining ${counts.required} nationalities must apply for a Schengen short-stay visa before travelling.`,
+    a: `It depends on your nationality: ${counts.exempt} of the ${TOTAL_PASSPORTS} nationalities we track are exempt for short stays (Schengen members, or on the EU's visa-exempt list), and the remaining ${counts.required} must apply before travelling.`,
   },
   {
     q: "How much does a Schengen visa cost?",
-    a: "EUR 90 for adults, EUR 45 for children aged 6 to 12, free under 6, and EUR 35 for nationals of countries with an EU visa-facilitation agreement. Service-centre handling fees (VFS, TLScontact) are charged on top where consulates outsource intake.",
+    a: "EUR 90 for adults, EUR 45 for children aged 6 to 12, free under 6, and EUR 35 under an EU visa-facilitation agreement. VFS or TLScontact handling fees are charged on top.",
   },
   {
     q: "What is the 90/180 rule?",
-    a: "Visa-free visitors and Schengen visa holders may stay at most 90 days within any rolling 180-day window, counted across the whole Schengen Area rather than per country. On each day of your stay, look back 180 days: the total days spent in Schengen in that window must not exceed 90.",
+    a: "At most 90 days in any rolling 180-day window, counted across the whole Schengen Area rather than per country. On each day of your stay, look back 180 days: the days spent in Schengen must not exceed 90.",
   },
   {
     q: "How long does a Schengen visa take to process?",
-    a: "In the official data we track for France, consulates decide within 15 days in most cases, extendable to up to 45 days when extra scrutiny or documents are needed. You can lodge the application up to 6 months before travel; applying at least several weeks ahead is strongly advised in high season.",
+    a: "For France, 15 days in most cases, extendable to 45 where extra scrutiny is needed. You can apply up to 6 months before travel, and several weeks ahead is advisable in high season.",
   },
   {
     q: "What documents do I need for a Schengen visa?",
-    a: "The harmonised application form, a passport valid at least three months beyond your planned departure from Schengen, recent photos, travel medical insurance with at least EUR 30,000 coverage valid across Schengen, proof of accommodation and itinerary, proof of funds, and evidence of ties to your home country. Consulates and their VFS/TLScontact centres publish per-nationality checklists.",
+    a: "The harmonised form, a passport valid three months beyond departure, photos, travel medical insurance with EUR 30,000 coverage, accommodation and itinerary, proof of funds, and evidence of ties to home. Consulates publish per-nationality checklists.",
   },
 ];
 
@@ -212,9 +212,8 @@ export default function SchengenGuidePage() {
           {/* Intro */}
           <section className="mt-10 max-w-3xl">
             <p className="text-body text-ink-soft">
-              The <strong className="text-ink">Schengen visa</strong> is Europe&apos;s common short-stay visa
-              (Type C): one application, one sticker, free movement across all {memberCount} countries. Whether you
-              need one{" "}
+              Europe&apos;s common short-stay visa (Type C): one application, one sticker, free movement across all{" "}
+              {memberCount} countries. Whether you need one{" "}
               <Link href="#who-needs" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">depends on your passport</Link>.
             </p>
             <p className="text-body mt-3 text-ink-soft">
@@ -231,13 +230,12 @@ export default function SchengenGuidePage() {
           <section className="mt-12 max-w-3xl">
             <h2 className="text-section text-ink">What Is the Schengen Area?</h2>
             <p className="text-body mt-3 text-ink-soft">
-              {memberCount} European countries that abolished passport checks at their shared internal borders: enter
-              one member state legally and you can travel to the others without further border control. Most are EU
-              countries, joined by Iceland, Liechtenstein, Norway and Switzerland. Two exceptions trip travellers up:{" "}
+              {memberCount} European countries with no passport checks at their shared internal borders - mostly EU
+              members, joined by Iceland, Liechtenstein, Norway and Switzerland.{" "}
               <Link href="/destination/ireland" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Ireland</Link>{" "}
               is in the EU but not in Schengen, and the{" "}
               <Link href="/destination/united-kingdom" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">United Kingdom</Link>{" "}
-              is in neither - both run their own visa policies, so a Schengen visa is not valid there.
+              is in neither: a Schengen visa is not valid in either.
             </p>
           </section>
 
@@ -251,7 +249,7 @@ export default function SchengenGuidePage() {
             </p>
             <div className={`${LEDGER_GRID} mt-5`}>
               {memberList.map((iso3) => (
-                <CountryTile key={iso3} iso3={iso3} href={`/destination/${nameToSlug(nameFor(iso3))}`} sub="Schengen member" />
+                <CountryTile key={iso3} iso3={iso3} href={`/destination/${nameToSlug(nameFor(iso3))}`} />
               ))}
             </div>
           </section>
@@ -260,17 +258,16 @@ export default function SchengenGuidePage() {
           <section id="rule" className="mt-12 max-w-3xl scroll-mt-24">
             <h2 className="text-section text-ink">The 90/180 Rule, Explained</h2>
             <p className="text-body mt-3 text-ink-soft">
-              Whether you enter visa-free or on a Schengen visa, short stays are capped at{" "}
-              <strong className="text-ink">90 days within any rolling 180-day period</strong> - counted across the
-              whole area, not per country. Three days in{" "}
+              Visa-free or on a visa, short stays are capped at{" "}
+              <strong className="text-ink">90 days within any rolling 180-day period</strong>, counted across the
+              whole area: three days in{" "}
               <Link href="/destination/france" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">France</Link>,
               four in{" "}
               <Link href="/destination/italy" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Italy</Link>{" "}
               and a week in{" "}
               <Link href="/destination/spain" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">Spain</Link>{" "}
-              all draw from the same allowance. The window rolls: on each day of your stay, look back 180 days and
-              count every day spent in any Schengen country - the total must not exceed 90. Overstaying means fines,
-              an entry ban, and refusals later.
+              all draw from one allowance. On each day of the stay, look back 180 days: the total must not exceed 90.
+              Overstaying means fines, an entry ban and later refusals.
             </p>
           </section>
 
@@ -297,7 +294,7 @@ export default function SchengenGuidePage() {
                   key={e.iso3}
                   iso3={e.iso3}
                   href={`/passport/${nameToSlug(nameFor(e.iso3))}`}
-                  sub={e.maxStayDays != null ? `visa-free ≤ ${e.maxStayDays} days` : "visa-free"}
+                  sub={e.maxStayDays != null && e.maxStayDays !== 90 ? `≤ ${e.maxStayDays} days` : undefined}
                 />
               ))}
             </div>
@@ -313,7 +310,7 @@ export default function SchengenGuidePage() {
                     key={e.iso3}
                     iso3={e.iso3}
                     href={`/passport/${nameToSlug(nameFor(e.iso3))}`}
-                    sub={e.maxStayDays != null ? `visa-free ≤ ${e.maxStayDays} days` : "visa-free"}
+                    sub={e.maxStayDays != null && e.maxStayDays !== 90 ? `≤ ${e.maxStayDays} days` : undefined}
                   />
                 ))}
               </div>
@@ -327,7 +324,7 @@ export default function SchengenGuidePage() {
             </p>
             <div className={`${LEDGER_GRID} mt-4`}>
               {counts.requiredIso3.slice(0, 15).map((iso3) => (
-                <CountryTile key={iso3} iso3={iso3} href={`/passport/${nameToSlug(nameFor(iso3))}`} sub="Schengen visa required" />
+                <CountryTile key={iso3} iso3={iso3} href={`/passport/${nameToSlug(nameFor(iso3))}`} />
               ))}
             </div>
             <details className="group/toggle mt-2.5">
@@ -338,7 +335,7 @@ export default function SchengenGuidePage() {
               </summary>
               <div className={`${LEDGER_GRID} mt-2.5`}>
                 {counts.requiredIso3.slice(15).map((iso3) => (
-                  <CountryTile key={iso3} iso3={iso3} href={`/passport/${nameToSlug(nameFor(iso3))}`} sub="Schengen visa required" />
+                  <CountryTile key={iso3} iso3={iso3} href={`/passport/${nameToSlug(nameFor(iso3))}`} />
                 ))}
               </div>
             </details>
@@ -350,7 +347,7 @@ export default function SchengenGuidePage() {
               Schengen Visa Guides by Nationality
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Whether you need a visa, where to apply, documents and fees - per nationality.
+              Where to apply, documents and fees for your passport.
             </p>
             <h3 className="mt-5 font-display text-base font-semibold text-ink">Visa required</h3>
             <ul className={`${LEDGER_GRID} mt-3`}>
@@ -361,8 +358,8 @@ export default function SchengenGuidePage() {
                     className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
                   >
                     <span className="text-lg leading-none">{flagFor(g.iso3)}</span>
-                    <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
-                      Schengen visa for {DEMONYM[g.iso3] ?? g.name} citizens
+                    <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
+                      {DEMONYM[g.iso3] ?? g.name} citizens
                     </span>
                     <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
                   </Link>
@@ -378,8 +375,8 @@ export default function SchengenGuidePage() {
                     className="group flex min-h-[44px] items-center gap-2.5 py-1.5 transition hover:bg-paper-2/50"
                   >
                     <span className="text-lg leading-none">{flagFor(g.iso3)}</span>
-                    <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
-                      Schengen rules for {DEMONYM[g.iso3] ?? g.name} citizens
+                    <span className="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink transition group-hover:text-stamp">
+                      {DEMONYM[g.iso3] ?? g.name} citizens
                     </span>
                     <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover:text-stamp">→</span>
                   </Link>
@@ -398,11 +395,11 @@ export default function SchengenGuidePage() {
               {[
                 {
                   t: "Pick the right consulate",
-                  d: "The country of your main destination - where you spend longest, or first entry if stays are equal. Applying to the \"easiest\" consulate while mainly visiting elsewhere is a common ground for refusal.",
+                  d: "Your main destination - where you spend longest, or first entry if stays are equal. Applying to an \"easier\" consulate while mainly visiting elsewhere is a common ground for refusal.",
                 },
                 {
                   t: "Fill the harmonised application form",
-                  d: "Most consulates take applications through outsourced centres (VFS Global, TLScontact or BLS) in your country of residence.",
+                  d: "Usually lodged at an outsourced centre (VFS Global, TLScontact or BLS) in your country of residence.",
                 },
                 {
                   t: "Gather the standard file",
@@ -410,11 +407,11 @@ export default function SchengenGuidePage() {
                 },
                 {
                   t: "Book biometrics and pay the fee",
-                  d: "First-time applicants give fingerprints, valid in the VIS system for later applications.",
+                  d: "Fingerprints on the first application, then reused from the VIS system.",
                 },
                 {
                   t: "Wait for the decision",
-                  d: "For France, consulates decide within 15 days in most cases, extendable to 45. You can apply up to 6 months before travel.",
+                  d: "France decides within 15 days in most cases, extendable to 45. Apply up to 6 months before travel.",
                 },
               ].map((s, i) => (
                 <li key={s.t} className="card-doc flex gap-4 p-4">
@@ -463,8 +460,8 @@ export default function SchengenGuidePage() {
               </table>
             </div>
             <p className="text-body mt-3 text-ink-soft">
-              A VFS Global or TLScontact service fee is charged on top where the consulate outsources intake, and the
-              visa fee is not refunded if you are refused. For the bank balance to show, see the{" "}
+              A VFS Global or TLScontact service fee is charged on top, and the fee is not refunded if you are
+              refused. For the bank balance to show, see the{" "}
               <Link href="/guide/proof-of-funds#schengen" className="text-stamp underline decoration-line-strong underline-offset-2 transition hover:decoration-stamp">
                 Schengen proof-of-funds guide
               </Link>.
@@ -483,7 +480,7 @@ export default function SchengenGuidePage() {
               Schengen Visa Requirements by Destination &amp; Nationality
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Stay length, conditions, documents and official sources for the most-visited Schengen destinations.
+              Stay length, conditions and documents for the most-visited Schengen destinations.
             </p>
             <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {CORRIDOR_DESTS.map((dest) => {

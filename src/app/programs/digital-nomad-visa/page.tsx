@@ -25,6 +25,7 @@ interface NomadEntry {
   processing: string;
   /** verbatim eligibility / program notes from the official source at crawl time */
   detail: string;
+  source: string;
   status: "open" | "closed" | "announced";
 }
 
@@ -37,6 +38,7 @@ const entries: NomadEntry[] = [
     category: f.category || "digital_nomad",
     processing: f.processing_time,
     detail: f.eligibility,
+    source: f.official_url,
     status: programStatus([f.program_name, f.eligibility, f.processing_time, f.notes].join(" ")),
   })),
   // Remote-work residence permits from the residency dataset, for countries that
@@ -49,6 +51,7 @@ const entries: NomadEntry[] = [
     category: r.type,
     processing: "",
     detail: r.notes,
+    source: r.official_url,
     status: programStatus([r.program_name, r.notes].join(" ")),
   })),
 ].sort((a, b) => a.name.localeCompare(b.name));
@@ -62,6 +65,15 @@ const byRegion = new Map<string, NomadEntry[]>(
 );
 const europeCountries = [
   ...new Set((byRegion.get("Europe") ?? []).filter((e) => e.status === "open").map((e) => e.name)),
+].sort();
+// Countries whose own source text says it publishes no income floor - computed,
+// so the FAQ can never drift from the table above it.
+const noIncomeCountries = [
+  ...new Set(
+    entries
+      .filter((e) => /\bno (?:mandatory )?minimum income\b/i.test(e.detail))
+      .map((e) => e.name),
+  ),
 ].sort();
 
 // ---------------------------------------------------------------------------
@@ -107,11 +119,13 @@ const faqs = [
   },
   {
     q: "Do digital nomad visas require a minimum income?",
-    a: `Most publish an income or savings threshold and the figures change often, so each entry above quotes its official source's eligibility text rather than a summarised number.`,
+    a: `Most do, and the figures move often - so the income column quotes each official source's own threshold rather than a rounded summary.${
+      noIncomeCountries.length ? ` ${noIncomeCountries.join(", ")} publish none.` : ""
+    }`,
   },
   {
     q: "Do digital nomad visas lead to permanent residency?",
-    a: `It varies. Some are residence permits whose years can count toward long-term residence; many are non-immigrant visas that do not. The entry above quotes each source's own wording.`,
+    a: `It varies. Some are residence permits whose years can count toward long-term residence; many are non-immigrant visas that do not. Each region table quotes its source's own wording.`,
   },
 ];
 
@@ -175,53 +189,143 @@ function Chevron() {
 // when it says something the page title does not.
 const GENERIC_CATEGORY = /^digital[\s_-]?nomad/i;
 // "Not specified on official page/source", "Not applicable - programme
-// discontinued" and friends repeat on ~17 entries and tell the reader nothing
-// the row does not already say.
-const EMPTY_PROCESSING = /^not\s+(specified|applicable|officially)/i;
+// discontinued", "Not yet officially launched" and friends repeat on ~17
+// entries and tell the reader nothing the row's own status badge does not.
+const EMPTY_PROCESSING = /^not\s+(specified|applicable|officially|yet)/i;
 
+// Every eligibility blob is one prose paragraph that mixes the money threshold
+// (the one fact people open this page for) with the rest of the conditions.
+// Splitting on sentence boundaries lets the threshold move into its own column
+// without rewriting a word of the source text - the sentences that carry it are
+// removed from the conditions cell, so nothing is shown twice and nothing is lost.
+const SENTENCE_BREAK = /(?<=[.;])\s+/;
+const MONEY_CONTEXT =
+  /\b(income|salary|salaries|savings|earns?|earning|funds|financial|wage|remuneration|balance|threshold)\b/i;
+
+/**
+ * Sentence split that survives the abbreviations these sources are full of:
+ * "B/. 36,000" and "(approx. USD 37,000)" would otherwise be torn in half and
+ * lose their currency. A fragment is glued back on when the previous one has an
+ * unclosed bracket, or ended in a period and this one resumes in lower case.
+ */
+function splitSentences(text: string): string[] {
+  const out: string[] = [];
+  for (const part of text.split(SENTENCE_BREAK).map((s) => s.trim()).filter(Boolean)) {
+    const prev = out[out.length - 1];
+    if (prev) {
+      const unclosed = (prev.match(/\(/g) ?? []).length > (prev.match(/\)/g) ?? []).length;
+      if (unclosed || (prev.endsWith(".") && /^[a-z0-9]/.test(part))) {
+        out[out.length - 1] = `${prev} ${part}`;
+        continue;
+      }
+    }
+    out.push(part);
+  }
+  return out;
+}
+
+function splitEligibility(detail: string): { money: string; conditions: string } {
+  const sentences = splitSentences(detail);
+  const money: string[] = [];
+  const conditions: string[] = [];
+  for (const s of sentences) {
+    if (/\d/.test(s) && MONEY_CONTEXT.test(s)) money.push(s);
+    else conditions.push(s);
+  }
+  return { money: money.join(" "), conditions: conditions.join(" ") };
+}
+
+/** one programme = one table row: who it is for, then its numbers in their own columns */
 function NomadRow({ e }: { e: NomadEntry }) {
   const slug = nameToSlug(e.name);
   const w = passportWorth(e.iso3);
+  const { money, conditions } = splitEligibility(e.detail);
   const category = e.category && !GENERIC_CATEGORY.test(e.category) ? typeLabel(e.category) : null;
   const processing = e.processing && !EMPTY_PROCESSING.test(e.processing) ? e.processing : null;
-  const meta = category || processing || w;
   return (
-    <li className="py-3">
-      <p className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-        <span aria-hidden className="text-lg leading-none">{flagFor(e.iso3)}</span>
-        <Link href={`/destination/${slug}`} className="py-1 font-display font-semibold text-ink transition hover:text-stamp">
-          {e.name}
-        </Link>
-        <span className="text-[13px] italic leading-snug text-ink-soft">{e.program}</span>
-        {e.status === "closed" && (
-          <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">closed</span>
+    <tr className="border-t border-line align-top">
+      <td className="py-2.5 pr-3">
+        <span className="flex flex-wrap items-baseline gap-x-2">
+          <span aria-hidden>{flagFor(e.iso3)}</span>
+          <Link
+            href={`/destination/${slug}`}
+            className="font-display text-[14px] font-semibold text-ink transition hover:text-stamp"
+          >
+            {e.name}
+          </Link>
+          {e.status === "closed" && (
+            <span className="mono rounded-[3px] bg-stamp/10 px-1.5 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+              closed
+            </span>
+          )}
+          {e.status === "announced" && (
+            <span className="mono rounded-[3px] bg-eta/10 px-1.5 py-0.5 text-[11px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">
+              announced
+            </span>
+          )}
+        </span>
+        <span className="mt-0.5 block text-[13px] leading-snug italic text-ink-soft">{e.program}</span>
+        {conditions && (
+          <span className="mt-1 block text-[13px] leading-relaxed text-ink-soft">{conditions}</span>
         )}
-        {e.status === "announced" && (
-          <span className="mono rounded-[3px] bg-eta/10 px-1.5 py-0.5 text-[11px] uppercase tracking-[0.1em] text-eta ring-1 ring-eta/30">announced</span>
-        )}
-      </p>
-      {/* Shown rather than folded - 40 of the eligibility blocks carry the
-          income threshold, which is what people open this page for. Clamped to
-          three lines; the full text stays in the markup. */}
-      {e.detail && <p className="mt-0.5 line-clamp-3 text-[13px] leading-relaxed text-ink-soft">{e.detail}</p>}
-      {meta && (
-        <p className="mt-1 flex flex-wrap items-baseline gap-x-2 text-[12px] text-ink-mute">
-          {category && <span>{category}</span>}
-          {category && processing && <span aria-hidden>·</span>}
-          {processing && <span>{processing}</span>}
-          {(category || processing) && w && <span aria-hidden>·</span>}
+        <span className="mt-1 block text-[12px] text-ink-mute">
+          {category && <span>{category} · </span>}
           {w && (
-            <Link href={`/passport/${slug}`} className="underline-offset-2 transition hover:text-ink hover:underline">
-              passport · {w.visaFree} visa-free →
+            <Link href={`/passport/${slug}`} className="text-stamp transition hover:text-ink">
+              passport ({w.visaFree} visa-free)
             </Link>
           )}
-        </p>
-      )}
-    </li>
+          {e.source && (
+            <>
+              {w && " · "}
+              <a
+                href={e.source}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-stamp transition hover:text-ink"
+              >
+                official source ↗
+              </a>
+            </>
+          )}
+        </span>
+      </td>
+      <td className="py-2.5 pr-3 text-[13px] leading-relaxed text-ink-soft">{money || "—"}</td>
+      <td className="py-2.5 text-[13px] leading-relaxed text-ink-soft">{processing || "—"}</td>
+    </tr>
+  );
+}
+
+/** every programme in a region as a single table, instead of a block each */
+function RegionTable({ list }: { list: NomadEntry[] }) {
+  return (
+    <div className="mt-4 overflow-x-auto pb-4">
+      <table className="w-full min-w-[42rem] border-collapse text-left">
+        <thead>
+          <tr className="border-b border-line-strong text-[12px] font-medium text-ink-mute">
+            <th scope="col" className="w-1/2 py-2 pr-3 font-medium">
+              Country &amp; programme
+            </th>
+            <th scope="col" className="py-2 pr-3 font-medium">
+              Income requirement
+            </th>
+            <th scope="col" className="py-2 font-medium">
+              Processing
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {list.map((e) => (
+            <NomadRow key={`${e.iso3}-${e.program}`} e={e} />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
 export default function DigitalNomadVisaPage() {
+  const regions = REGION_ORDER.filter((r) => (byRegion.get(r) ?? []).length > 0);
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -252,50 +356,68 @@ export default function DigitalNomadVisaPage() {
             <p className="mono mt-3 text-[12px] font-medium tabular-nums text-ink-soft">
               {entries.length} programs · {openCount} open · {notOpenCount} announced or closed · refreshed {lastUpdated}
             </p>
+
+            <nav
+              aria-label="Jump to a region"
+              className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-ink-mute"
+            >
+              {regions.map((r) => (
+                <a key={r} href={`#${r.toLowerCase()}`} className="text-stamp transition hover:text-ink">
+                  {r}
+                </a>
+              ))}
+              <a href="#faq" className="text-stamp transition hover:text-ink">
+                FAQ
+              </a>
+            </nav>
           </div>
         </header>
 
         <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
-          {/* Intro - one sentence; the counts are in the header line above. */}
+          {/* Intro - said once; every other line on this page is data. */}
           <section className="mt-8 max-w-3xl">
             <p className="text-body text-ink-soft">
               A <strong className="text-ink">digital nomad visa</strong> lets you live in a country while working
               remotely for employers or clients based abroad - legally, without pretending to be a tourist.
             </p>
+            <p className="mt-3 text-[13px] leading-relaxed text-ink-mute">
+              Open a region for every programme it publishes, with the income threshold, processing time and eligibility
+              text quoted from the official source. Thresholds change often; the official link is always the last word.
+            </p>
           </section>
 
-          {/* Regions - one dense row per program rather than a card each */}
-          {REGION_ORDER.map((region) => {
-            const list = byRegion.get(region) ?? [];
-            if (list.length === 0) return null;
-            return (
-              <section key={region} className="mt-10">
-                <h2 className="text-section text-ink">
-                  Digital Nomad Visas in {region} ({list.length})
-                </h2>
-                <ul className="mt-3 divide-y divide-line border-t border-line lg:columns-2 lg:gap-10 lg:[&>li]:break-inside-avoid">
-                  {list.map((e) => (
-                    <NomadRow key={`${e.iso3}-${e.program}`} e={e} />
-                  ))}
-                </ul>
-              </section>
-            );
-          })}
+          {/* Regions - one table each, nothing repeated per country */}
+          <div className="mt-8 space-y-3">
+            {regions.map((region) => {
+              const list = byRegion.get(region) ?? [];
+              return (
+                <section key={region} id={region.toLowerCase()} className="scroll-mt-24">
+                  <details className="group card-doc px-4 py-1 sm:px-5">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
+                      <h2 className="text-section text-ink">
+                        Digital Nomad Visas in {region} ({list.length})
+                      </h2>
+                      <Chevron />
+                    </summary>
+                    <RegionTable list={list} />
+                    <div className="h-3" />
+                  </details>
+                </section>
+              );
+            })}
+          </div>
 
           {/* FAQ */}
-          <section className="mt-14">
+          <section id="faq" className="mt-12 scroll-mt-24">
             <h2 className="text-section text-ink">Digital Nomad Visa FAQ</h2>
-            <div className="card-doc mt-5 divide-y divide-line px-5">
+            <dl className="mt-4 max-w-3xl space-y-4">
               {faqs.map(({ q, a }) => (
-                <details key={q} className="group">
-                  <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[15px] font-medium text-ink [&::-webkit-details-marker]:hidden">
-                    {q}
-                    <Chevron />
-                  </summary>
-                  <p className="text-body mt-1 max-w-3xl pb-4 text-ink-soft">{a}</p>
-                </details>
+                <div key={q}>
+                  <dt className="font-display text-[15px] font-semibold text-ink">{q}</dt>
+                  <dd className="mt-1 text-[14px] leading-relaxed text-ink-soft">{a}</dd>
+                </div>
               ))}
-            </div>
+            </dl>
           </section>
 
           <ProgramsNav current="/programs/digital-nomad-visa" />
