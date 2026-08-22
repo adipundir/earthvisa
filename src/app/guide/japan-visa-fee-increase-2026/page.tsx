@@ -47,20 +47,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "japan visa fee increase",
-    "japan visa fee 2026",
-    "japan visa cost july 2026",
-    "japan visa fee hike",
-    "japan visa price increase",
-    "japan single entry visa fee",
-    "japan multiple entry visa fee",
-    "new japan visa fees",
-    "japan visa fee for indian citizens",
-    "japan visa fee for chinese citizens",
-    "do us citizens need a japan visa",
-    "japan visa exempt countries",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/japan-visa-fee-increase-2026" },
   openGraph: {
     title,

@@ -7,7 +7,13 @@ import {
   issuePhoneCode,
   recordCodeRequest,
 } from "@/lib/auth/store";
-import { SmsUnavailableError, sendVerificationCode } from "@/lib/auth/sms";
+import {
+  SmsUnavailableError,
+  SmsUnsupportedRegionError,
+  UNSUPPORTED_REGION_MESSAGE,
+  isSupportedSmsDestination,
+  sendVerificationCode,
+} from "@/lib/auth/sms";
 import { normalisePhone } from "@/lib/auth/phone";
 
 // POST /api/auth/phone/start { phone }
@@ -27,6 +33,21 @@ export async function POST(req: Request) {
   if (!phone) {
     return NextResponse.json(
       { error: "That does not look like a valid phone number.", code: "invalid_phone" },
+      { status: 400 },
+    );
+  }
+
+  // Checked before ANY state is written. Further down we would consume this
+  // number's hourly quota and store a one-time code, then discover at send
+  // time that no route exists to deliver it - leaving a live code for a phone
+  // that can never receive one, and quota spent on a request that was always
+  // going to fail.
+  if (!isSupportedSmsDestination(phone)) {
+    return NextResponse.json(
+      {
+        error: UNSUPPORTED_REGION_MESSAGE + " Please use Sign in with Apple instead.",
+        code: "region_unsupported",
+      },
       { status: 400 },
     );
   }
@@ -52,6 +73,18 @@ export async function POST(req: Request) {
     const { code } = await issuePhoneCode(phone);
     await sendVerificationCode(phone, code);
   } catch (err) {
+    // 400, not 503: the number is out of range for the registered sender and
+    // no retry will change that. Name the alternative, because Sign in with
+    // Apple genuinely does work for these users.
+    if (err instanceof SmsUnsupportedRegionError) {
+      return NextResponse.json(
+        {
+          error: err.message + " Please use Sign in with Apple instead.",
+          code: "region_unsupported",
+        },
+        { status: 400 },
+      );
+    }
     if (err instanceof SmsUnavailableError) {
       return NextResponse.json(
         { error: "Could not send the code right now. Please try again shortly." },

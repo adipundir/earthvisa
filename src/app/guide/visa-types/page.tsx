@@ -23,21 +23,6 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "visa types explained",
-    "types of visa",
-    "eta vs evisa",
-    "difference between eta and e visa",
-    "what is an eta",
-    "what is an evisa",
-    "what is an e visa",
-    "visa on arrival vs visa free",
-    "freedom of movement meaning",
-    "what is a transit visa",
-    "visa required meaning",
-    "electronic travel authorization explained",
-    "visa glossary",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/visa-types" },
   openGraph: {
     title: TITLE,
@@ -113,19 +98,19 @@ function Chevron() {
 const FAQS = [
   {
     q: "What's the difference between an eTA and an e-visa?",
-    a: "An eTA is not a visa: it's an online pre-screening check layered on top of an entry you already qualify for visa-free or under a visa-waiver arrangement. An e-visa is an actual visa - the full entry permit a destination would otherwise require in person at an embassy - just applied for and issued online instead. If your passport is already visa-exempt for a country, an eTA (where one is required) is what you file. If your passport would need a visa anyway, an e-visa is that same visa, simply delivered digitally.",
+    a: "An eTA is a pre-screening step on an entry you already have visa-free; an e-visa is a full visa, delivered online, for travellers who'd need one anyway. See the eTA and e-Visa sections above for the full comparison.",
   },
   {
     q: "Is a visa on arrival the same as visa-free?",
-    a: "No. Visa-free means you walk through immigration with just your passport - no fee, no counter, no advance paperwork. Visa on arrival also requires no advance application, but you queue at a dedicated counter at the airport or land border, pay a fee in person, and get a stamp or sticker issued there and then. The two get confused because neither one requires applying before you fly, but only one of them is actually free and counter-free.",
+    a: "No - visa on arrival still means a fee and a counter at the border, while visa-free means neither. See the Visa-Free and Visa on Arrival sections above for the full distinction.",
   },
   {
     q: "Does freedom of movement mean I don't need any documents?",
-    a: "No - you still need a valid passport or national ID, and depending on the bloc you may need to register your residence after arriving if you plan to stay long-term. What freedom of movement removes is the visa requirement and the short-stay time limit: it grants the right to live, work and reside, not just to visit, for as long as you remain a citizen of a member state.",
+    a: "No - you still need a valid passport or national ID, and depending on the bloc you may need to register your residence after arriving if you plan to stay long-term. See the Freedom of Movement section above for what the right itself covers.",
   },
   {
     q: "Do I need a transit visa if I'm just changing planes?",
-    a: "It depends on the country, the specific airport, and whether you stay airside. If you remain inside the international transit zone without clearing immigration, many countries require no visa at all, regardless of nationality. If you have to go landside - to clear immigration, collect checked luggage, or change airports or terminals outside the secure zone - some countries then require a transit visa depending on your nationality and layover length, while others still allow it visa-free. Always check the rule for your exact routing rather than assuming transit is automatically visa-free.",
+    a: "It depends on the country, the airport, and whether you stay airside or go landside. See the Transit Visa section above for the full airside/landside breakdown and how to check your exact routing.",
   },
 ];
 

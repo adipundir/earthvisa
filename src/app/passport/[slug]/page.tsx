@@ -208,16 +208,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description,
     // No "visa free countries for X" / "visa on arrival countries for X"
     // phrasings here - those are the /list pages' head terms.
-    keywords: [
-      `${country.name.toLowerCase()} passport ranking 2026`,
-      `${country.name.toLowerCase()} passport ranking`,
-      `${country.name.toLowerCase()} passport rank`,
-      `how many countries can ${country.name.toLowerCase()} visit without visa`,
-      `${country.name.toLowerCase()} passport strength`,
-      `${country.name.toLowerCase()} passport power`,
-      `countries ${country.name.toLowerCase()} can visit without visa`,
-      `most powerful passport ${country.name.toLowerCase()}`,
-    ],
     openGraph: {
       title,
       description,

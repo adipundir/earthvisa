@@ -23,6 +23,12 @@
 # misc
 .DS_Store
 *.pem
+# ...except the RDS certificate authorities, which are PUBLIC root certs, not
+# keys. src/lib/db.ts verifies the database's certificate against this bundle,
+# so a container built from a git checkout that lacks it falls back to the
+# system trust store - which does not contain Amazon's RDS CAs - and every
+# single query then fails with SELF_SIGNED_CERT_IN_CHAIN at run time.
+!certs/*.pem
 
 # debug
 npm-debug.log*

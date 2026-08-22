@@ -17,6 +17,10 @@ export interface FeeEntry {
   official: boolean;
   source_url: string | null;
   notes: string;
+  /** who/where this row's own text says it covers, e.g. "most nationalities (non-US)
+   * applying at Chinese missions in the US" - a location-scoped reference, not a
+   * general one, even when it also says "most nationalities". */
+  applies?: string | null;
   /** when present, this fee row only applies to (and only renders for) these nationalities */
   applies_nationalities?: string[];
 }

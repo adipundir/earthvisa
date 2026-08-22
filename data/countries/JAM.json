@@ -1116,7 +1116,10 @@
       "max_stay_days": 90,
       "conditions": "Nationals of any country (except Taiwan) who hold a valid United States Permanent Resident Card (Green Card / Alien Registration Card) do not require a visa to visit Jamaica, provided travel is being done directly between the USA and Jamaica. Must travel with a valid passport or travel document for the duration of stay. Taiwan nationals are explicitly excluded. Source verbatim: 'applicants who possess a valid United States Permanent Resident Card (Green Card), regardless of nationality do not require a visa to visit Jamaica, if travel is being done directly between the USA and Jamaica.'",
       "source_url": "https://congenjamaica-ny.org/requirements-for-entry-into-jamaica/",
-      "source_official": true
+      "source_official": true,
+      "excluded_nationalities": [
+        "Taiwan"
+      ]
     },
     {
       "basis": "passport_type",

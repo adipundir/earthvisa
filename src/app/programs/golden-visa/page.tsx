@@ -74,19 +74,6 @@ const description = `Golden visa programs in 2026 across ${countryCount} countri
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "golden visa",
-    "golden visa countries",
-    "golden visa europe",
-    "golden visa 2026",
-    "residency by investment",
-    "golden visa portugal",
-    "golden visa greece",
-    "investor visa",
-    "residence permit by investment",
-    "cheapest golden visa europe",
-    "golden visa countries list 2026",
-  ],
   alternates: { canonical: "https://earthvisa.in/programs/golden-visa" },
   openGraph: {
     title,

@@ -22,20 +22,27 @@ export interface FeeRow {
 type SortKey = "rank" | "name" | "region" | "feeUsd";
 type SortDir = "asc" | "desc";
 
-const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
+// `mobile: false` drops the column below sm. Without it the table was 648px wide
+// inside a 348px viewport and the Fee column started at x=364 - a fee ranking
+// that showed no fee on a phone unless you knew to swipe sideways.
+const COLUMNS: { key: SortKey; label: string; numeric: boolean; mobile?: false }[] = [
   { key: "rank", label: "Rank", numeric: true },
   { key: "name", label: "Destination", numeric: false },
-  { key: "region", label: "Region", numeric: false },
+  { key: "region", label: "Region", numeric: false, mobile: false },
   { key: "feeUsd", label: "Fee (from)", numeric: true },
 ];
+
+const HIDE_SM = "hidden sm:table-cell";
 
 function fold(s: string): string {
   return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 const TH_BASE = "sticky top-0 z-10 bg-surface shadow-[0_1px_0_var(--color-hair-strong)]";
-const TH_STICKY_LEFT = "left-0 z-20 w-20 min-w-20";
-const TH_STICKY_NAME = "left-20 z-20 min-w-44 shadow-[0_1px_0_var(--color-hair-strong),1px_0_0_var(--color-hair)]";
+// Narrower sticky gutter on phones so the fee column has room to land on screen.
+const TH_STICKY_LEFT = "left-0 z-20 w-12 min-w-12 sm:w-20 sm:min-w-20";
+const TH_STICKY_NAME =
+  "left-12 z-20 w-[168px] max-w-[168px] shadow-[0_1px_0_var(--color-hair-strong),1px_0_0_var(--color-hair)] sm:left-20 sm:w-auto sm:min-w-44 sm:max-w-none";
 const TD_STICKY = "sticky z-[1] bg-surface transition group-hover/row:bg-ground";
 
 /**
@@ -83,8 +90,11 @@ export default function FeesTable({ rows }: { rows: FeeRow[] }) {
         />
       </label>
 
+      {/* The height cap stays on mobile: dropping it let 174 rows expand inline
+          and took the page from 12.2 to 21.9 phone screens, which is a worse
+          problem than the nested scroll region it was meant to fix. */}
       <div className="mt-4 max-h-[75vh] overflow-auto rounded-xl border border-hair bg-surface">
-        <table className="w-full min-w-[640px] border-collapse text-left">
+        <table className="w-full table-fixed border-collapse text-left sm:min-w-[640px] sm:table-auto">
           <thead>
             <tr>
               {COLUMNS.map((col) => {
@@ -94,14 +104,14 @@ export default function FeesTable({ rows }: { rows: FeeRow[] }) {
                     key={col.key}
                     scope="col"
                     aria-sort={active ? (sortDir === "asc" ? "ascending" : "descending") : "none"}
-                    className={`${TH_BASE} ${
+                    className={`${TH_BASE} ${col.mobile === false ? HIDE_SM : ""} ${
                       col.key === "rank" ? TH_STICKY_LEFT : col.key === "name" ? TH_STICKY_NAME : ""
                     } ${col.numeric && col.key !== "rank" ? "text-right" : "text-left"}`}
                   >
                     <button
                       type="button"
                       onClick={() => toggleSort(col.key)}
-                      className={`inline-flex min-h-[44px] w-full cursor-pointer items-center gap-1.5 px-3.5 py-2 text-[13px] font-semibold transition hover:text-ink ${
+                      className={`inline-flex min-h-[44px] w-full cursor-pointer items-center gap-1.5 px-2 py-2 text-[13px] font-semibold transition hover:text-ink sm:px-3.5 ${
                         col.numeric && col.key !== "rank" ? "justify-end" : "justify-start"
                       } ${active ? "text-ink" : "text-ink-2"}`}
                     >
@@ -113,7 +123,7 @@ export default function FeesTable({ rows }: { rows: FeeRow[] }) {
                   </th>
                 );
               })}
-              <th scope="col" className={`${TH_BASE} text-left`}>
+              <th scope="col" className={`${TH_BASE} ${HIDE_SM} text-left`}>
                 <span className="inline-flex min-h-[44px] items-center px-3.5 py-2 text-[13px] font-semibold text-ink-2">
                   Product / source
                 </span>
@@ -123,21 +133,23 @@ export default function FeesTable({ rows }: { rows: FeeRow[] }) {
           <tbody className="divide-y divide-hair">
             {visible.map((r) => (
               <tr key={r.iso3} className="group/row transition hover:bg-ground">
-                <td className={`${TD_STICKY} left-0 px-3.5 py-2 text-[13px] font-medium tabular-nums text-ink-3`}>{r.rank}</td>
-                <td className={`${TD_STICKY} left-20 px-3.5 py-1 shadow-[1px_0_0_var(--color-hair)]`}>
+                <td className={`${TD_STICKY} left-0 px-2 py-2 text-[13px] font-medium tabular-nums text-ink-3 sm:px-3.5`}>{r.rank}</td>
+                <td className={`${TD_STICKY} left-12 px-2 py-1 shadow-[1px_0_0_var(--color-hair)] sm:left-20 sm:px-3.5`}>
                   <Link
                     href={`/destination/${r.slug}`}
-                    className="flex min-h-[44px] items-center gap-2 py-1 text-sm font-semibold text-ink transition hover:text-accent"
+                    className="flex min-h-[44px] w-full min-w-0 items-center gap-2 py-1 text-sm font-semibold text-ink transition hover:text-accent"
                   >
-                    <span aria-hidden="true" className="text-base leading-none">{r.flag}</span>
-                    {r.name}
+                    <span aria-hidden="true" className="shrink-0 text-base leading-none">{r.flag}</span>
+                    {/* Truncated so a long destination name cannot widen the
+                        sticky column and push the fee back off a 348px screen. */}
+                    <span className="truncate">{r.name}</span>
                   </Link>
                 </td>
-                <td className="px-3.5 py-2 text-sm text-ink-2">{r.region}</td>
+                <td className={`${HIDE_SM} px-3.5 py-2 text-sm text-ink-2`}>{r.region}</td>
                 <td className={`px-3.5 py-2 text-right text-sm font-bold tabular-nums ${r.feeUsd === 0 ? "text-verdict" : "text-ink"}`}>
                   {r.feeUsd === 0 ? "Free" : `$${r.feeUsd.toLocaleString()}`}
                 </td>
-                <td className="px-3.5 py-2 text-[12.5px] font-medium text-ink-3">
+                <td className={`${HIDE_SM} px-3.5 py-2 text-[12.5px] font-medium text-ink-3`}>
                   <span>{r.kindLabel}</span>
                   {r.sourceUrl && r.sourceHost && (
                     <>

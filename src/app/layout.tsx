@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import LaunchBanner from "@/components/LaunchBanner";
 import { PRODUCT_HUNT_LAUNCH } from "@/lib/launch";
-import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import { dataset } from "@/lib/dataset";
 const TOTAL_PASSPORTS = dataset.allCountries.length;
@@ -26,16 +25,9 @@ export const metadata: Metadata = {
     template: "%s | Earth Visa",
   },
   description: `Compare visa-free access for all ${TOTAL_PASSPORTS} passports. Check visa on arrival, e-visa, golden visas & citizenship by investment programs worldwide. Official government sources only.`,
-  keywords: [
-    "passport strength", "passport index", "passport ranking", "most powerful passport",
-    "strongest passport in the world", "passport strength index", "visa free countries",
-    "visa on arrival countries", "how many countries can I visit without visa",
-    "citizenship by investment", "golden visa", "second passport", "digital nomad visa",
-    "easiest country to get citizenship", "dual citizenship", "free movement rights",
-    "e-visa countries", "fast track immigration", "passport strength", "travel without visa",
-    "visa free countries for indian passport", "us passport visa free countries",
-    "passport rankings 2026", "best passport in the world"
-  ],
+  // No `keywords`: Google has ignored the meta keywords tag since 2009 and Bing
+  // treats stuffing it as a negative quality signal. It was 24 terms and 564
+  // bytes on every one of the ~40k URLs, for nothing.
   authors: [{ name: "Earth Visa" }],
   creator: "Earth Visa",
   publisher: "Earth Visa",
@@ -59,9 +51,17 @@ export const metadata: Metadata = {
     // generated twice.
   },
   alternates: { canonical: "https://earthvisa.in" },
-  // Search-engine ownership verification. Codes are supplied via Vercel env vars
-  // (GOOGLE_SITE_VERIFICATION from Google Search Console, BING_SITE_VERIFICATION
-  // from Bing Webmaster Tools) so they can be added without a code change.
+  // Search-engine ownership verification (GOOGLE_SITE_VERIFICATION from Google
+  // Search Console, BING_SITE_VERIFICATION from Bing Webmaster Tools).
+  //
+  // These are read while PRERENDERING, not per request - `metadata` is a
+  // module-level export and almost every page here is static. So they must be
+  // supplied as docker build args (see Dockerfile and deploy/buildspec-web.yml),
+  // not as ECS task environment: a value injected at run time changes nothing,
+  // because the pages that would carry the tag were already rendered.
+  //
+  // Google ownership is currently held by a DNS TXT record regardless, so an
+  // empty value here costs nothing and simply omits the tag.
   verification: {
     ...(process.env.GOOGLE_SITE_VERIFICATION
       ? { google: process.env.GOOGLE_SITE_VERIFICATION }
@@ -167,9 +167,8 @@ export default function RootLayout({
           {children}
         </div>
         <SiteFooter />
-        <Analytics />
         {/* Microsoft Clarity (heatmaps / scroll maps / session recordings).
-            Loads only when NEXT_PUBLIC_CLARITY_ID is set (Vercel env var), and
+            Loads only when NEXT_PUBLIC_CLARITY_ID is set, and
             lazily after the page is interactive so it never touches CWV. */}
         {process.env.NEXT_PUBLIC_CLARITY_ID && (
           <Script id="ms-clarity" strategy="lazyOnload">

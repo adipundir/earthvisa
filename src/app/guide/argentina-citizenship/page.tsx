@@ -44,23 +44,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "argentina citizenship",
-    "argentina citizenship by residency",
-    "how to get argentine citizenship",
-    "argentina 2 year citizenship",
-    "argentina naturalization",
-    "carta de ciudadania",
-    "argentina dual citizenship",
-    "argentina citizenship by investment",
-    "argentina residency visa",
-    "ley 346 argentina",
-    "argentina rentista visa",
-    "argentina passport",
-    "move to argentina citizenship",
-    "argentina citizenship requirements",
-    "argentina second passport",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/argentina-citizenship" },
   openGraph: {
     title,

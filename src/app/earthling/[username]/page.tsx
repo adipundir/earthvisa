@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { dataset } from "@/lib/dataset";
 import { isoToFlag, fmtDate } from "@/lib/format";
-import { getEarthling } from "@/lib/earthling/store";
+import { earthlingRank, getEarthling } from "@/lib/earthling/store";
 
 export const dynamic = "force-dynamic";
 
@@ -14,8 +14,9 @@ export async function generateMetadata({ params }: { params: Promise<{ username:
   const { username } = await params;
   const e = await getEarthling(username);
   if (!e) return { title: "Earthling not found" };
+  const rank = await earthlingRank(e.seq);
   const title = `@${e.username} reaches ${e.reach} destinations`;
-  const description = `Earthling #${e.seq} has more reach than ${e.percentile}% of the world's passports. How far can you go?`;
+  const description = `Earthling #${rank} has more reach than ${e.percentile}% of the world's passports. How far can you go?`;
   return {
     title,
     description,
@@ -38,6 +39,7 @@ export default async function EarthlingProfile({ params, searchParams }: {
   const { welcome } = await searchParams;
   const e = await getEarthling(username);
   if (!e) notFound();
+  const rank = await earthlingRank(e.seq);
 
   const primary = dataset.allCountries.find((c) => c.iso3 === e.passports[0]);
   // The email-confirmation redirect lands here with ?welcome=1 - greet the new
@@ -65,7 +67,7 @@ export default async function EarthlingProfile({ params, searchParams }: {
 
         <div className={`${isWelcome ? "mt-6" : "mt-8"} rounded-xl border border-hair bg-surface px-6 py-12 text-center sm:px-12`}>
           <p className="text-[13px] font-semibold text-ink-2">
-            {isWelcome ? "Your Earthling ID - citizen of Earth" : "Earthling ID · citizen of Earth"} #{e.seq}
+            {isWelcome ? "Your Earthling ID - citizen of Earth" : "Earthling ID · citizen of Earth"} #{rank}
           </p>
           <h1 className="mt-3 flex items-center justify-center gap-3 text-[28px] font-bold tracking-tight text-ink sm:text-[32px]">
             {primary && <span aria-hidden="true">{isoToFlag(primary.iso2)}</span>}

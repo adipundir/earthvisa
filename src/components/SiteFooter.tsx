@@ -3,7 +3,7 @@ import { dataset } from "@/lib/dataset";
 const TOTAL_PASSPORTS = dataset.allCountries.length;
 import { fmtDate } from "@/lib/format";
 import BrandMark from "@/components/BrandMark";
-import ReportIssue from "@/components/ReportIssue";
+import FooterReportLink from "@/components/FooterReportLink";
 
 // Sitewide footer. Its main job beyond branding is reachability: it links every
 // hub, guide, program and popular list page from every route, so nothing is
@@ -64,27 +64,34 @@ export default function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-hair">
       <div className="mx-auto w-full max-w-6xl px-5 pb-10 pt-12 sm:px-8 sm:pb-12 sm:pt-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
+        {/* Two columns from the base breakpoint up. Without one the four nav
+            columns stacked into a single 1,608px run on a phone - 1.9 screens,
+            and 64% of the whole /visit page. */}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
           {/* Brand + methodology */}
-          <div className="max-w-xs">
+          <div className="col-span-2 max-w-xs lg:col-span-1">
             <div className="flex items-center gap-2 text-ink">
               <BrandMark size={26} className="shrink-0" />
               <span className="text-[18px] font-bold tracking-tight">Earth Visa</span>
             </div>
             <p className="mt-3 text-[13.5px] leading-relaxed text-ink-2">
-              Visa rules, fees and entry requirements for {TOTAL_PASSPORTS} passports - sourced only from official
-              government publications, never third-party aggregators.
+              Visa rules, fees and entry requirements for {TOTAL_PASSPORTS} passports.
             </p>
           </div>
 
           {COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
               <p className="text-[13.5px] font-semibold text-ink">{col.title}</p>
-              <ul className="mt-3.5 space-y-1">
+              <ul className="mt-3.5">
                 {col.links.map((l) => (
                   <li key={l.href}>
-                    {/* inline-block + py-1 keeps the visual rhythm but widens the tap target */}
-                    <Link href={l.href} className="inline-block py-1 text-[13.5px] text-ink-2 transition hover:text-accent">
+                    {/* py-1.5 with no list gap holds the same rhythm as py-1 +
+                        space-y-1 did, and the after: box widens the hit area to
+                        ~42px without adding any height back to the footer. */}
+                    <Link
+                      href={l.href}
+                      className="relative inline-block py-1.5 text-[13.5px] text-ink-2 transition after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] hover:text-accent"
+                    >
                       {l.label}
                     </Link>
                   </li>
@@ -100,8 +107,7 @@ export default function SiteFooter() {
         <div className="mt-12 flex flex-wrap items-center justify-between gap-x-6 gap-y-1.5 border-t border-hair pt-5 text-[13px] text-ink-2">
           <span className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
             <span title={`Data last updated ${fmtDate(dataset.meta.lastUpdated)}`}>© 2026 Earth Visa</span>
-            <span className="h-3 w-px bg-hair-strong" aria-hidden="true" />
-            <ReportIssue className="relative text-[13px] text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-ink hover:underline" />
+            <FooterReportLink className="relative text-[13px] text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-ink hover:underline" />
             <span className="h-3 w-px bg-hair-strong" aria-hidden="true" />
             {/* Reachable from every page. App Store Guideline 5.1.1(i) needs a
                 privacy policy link, and GDPR/DPDP need it discoverable rather

@@ -6,10 +6,12 @@ import {
   cbiMinUsd,
   isAnnouncedOnly,
   isClosedProgram,
+  isSuspended,
   passportWorth,
   TOTAL_RANKED_PASSPORTS,
 } from "@/lib/programs";
 import ProgramsNav from "@/components/ProgramsNav";
+import ReportLine from "@/components/ReportLine";
 import type { CbiProgram, RbiProgram } from "@/lib/types";
 
 // ---------------------------------------------------------------------------
@@ -88,18 +90,6 @@ const description = `Easiest countries to get citizenship in 2026, from the data
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "easiest country to get citizenship",
-    "easiest citizenship",
-    "easiest citizenship to get 2026",
-    "fastest citizenship",
-    "fastest way to get second citizenship",
-    "citizenship after 2 years",
-    "easiest second passport",
-    "quickest citizenship by investment",
-    "easiest european citizenship",
-    "shortest naturalization time",
-  ],
   alternates: { canonical: "https://earthvisa.in/programs/easiest-citizenship" },
   openGraph: {
     title,
@@ -347,7 +337,10 @@ export default function EasiestCitizenshipPage() {
             {cbiUnpriced.length > 0 && (
               <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
                 Also tracked, without a USD-published minimum (priced in other currencies or discretionary):{" "}
-                {cbiUnpriced.map((p) => p.name).join(", ")}.
+                {cbiUnpriced
+                  .map((p) => (isSuspended(p) ? `${p.name} (suspended - applications not open, not a live route)` : p.name))
+                  .join(", ")}
+                .
               </p>
             )}
             <p className="text-body mt-4 max-w-3xl text-ink-soft">
@@ -518,6 +511,7 @@ export default function EasiestCitizenshipPage() {
               Open the passport tool →
             </Link>
           </section>
+          <ReportLine />
         </div>
       </main>
     </>

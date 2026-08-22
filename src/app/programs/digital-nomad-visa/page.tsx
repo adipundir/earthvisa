@@ -75,18 +75,6 @@ const description = `Digital nomad visa countries in 2026: ${countryCount} count
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "digital nomad visa",
-    "digital nomad visa countries",
-    "digital nomad visa 2026",
-    "remote work visa",
-    "countries with digital nomad visas",
-    "digital nomad visa europe",
-    "digital nomad visa asia",
-    "work remotely abroad visa",
-    "freelancer visa",
-    "digital nomad residence permit",
-  ],
   alternates: { canonical: "https://earthvisa.in/programs/digital-nomad-visa" },
   openGraph: {
     title,
@@ -210,24 +198,17 @@ function NomadCard({ e }: { e: NomadEntry }) {
       <p className="mt-1 text-sm italic leading-snug text-ink-soft">{e.program}</p>
       <p className="mono-chrome mt-2">{typeLabel(e.category)}</p>
       {e.processing && <p className="mono mt-1.5 text-[11px] text-ink-mute">Processing: {e.processing}</p>}
-      {e.detail && (
-        <details className="group mt-2">
-          <summary className="mono inline-flex min-h-[44px] cursor-pointer list-none items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-stamp transition hover:text-ink [&::-webkit-details-marker]:hidden">
-            <span className="group-open:hidden">Eligibility per official source</span>
-            <span className="hidden group-open:inline">Hide eligibility</span>
-            <Chevron />
-          </summary>
-          <p className="mt-1 text-[13px] leading-relaxed text-ink-soft">{e.detail}</p>
-        </details>
-      )}
+      {/* Shown rather than folded - 40 of the 57 eligibility blocks carry the
+          income threshold, which is what people open this page for, and hiding
+          all 57 behind a tap was why the page needed a paragraph above it
+          explaining the hiding. Clamped to three lines so surfacing them does
+          not simply trade 58 accordions for six extra screens of scrolling;
+          the full text stays in the markup. */}
+      {e.detail && <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-ink-soft">{e.detail}</p>}
       <div className="mt-auto border-t border-line pt-3">
         <div className="mono flex flex-wrap gap-x-4 text-[11px]">
-          <Link
-            href={`/destination/${slug}`}
-            className="inline-flex min-h-[44px] items-center uppercase tracking-[0.12em] text-stamp transition hover:text-ink"
-          >
-            {e.name} entry rules →
-          </Link>
+          {/* No "{name} entry rules →" link here: the card heading above already
+              links the same /destination/{slug} href. */}
           {w && (
             <Link
               href={`/passport/${slug}`}
@@ -265,7 +246,7 @@ export default function DigitalNomadVisaPage() {
             <h1 className="text-display mt-6 text-ink">
               Digital Nomad Visa Countries 2026
               <span className="block text-2xl font-normal italic text-ink-soft sm:text-3xl">
-                {countryCount} Countries with Remote Work Visas &amp; Residence Routes
+                {countryCount}{" "}Countries with Remote Work Visas &amp; Residence Routes
               </span>
             </h1>
             <p className="mono mt-2 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
@@ -297,16 +278,10 @@ export default function DigitalNomadVisaPage() {
               dataset tracks <strong className="text-ink">{entries.length} remote-work routes</strong> across{" "}
               <strong className="text-ink">{countryCount} countries</strong>, grouped by region below.
             </p>
-            <p className="text-body mt-4 text-ink-soft">
-              Two honest caveats. First, income thresholds change so often that summarising them in one table would age
-              badly - so each entry instead quotes the{" "}
-              <strong className="text-ink">program&apos;s eligibility text verbatim</strong> as of crawl time. Second,
-              not every announced program is open: entries recorded as announced or discontinued are labelled, not
-              hidden.
-            </p>
-            <p className="card-doc mt-4 max-w-2xl px-4 py-3 text-[13px] leading-relaxed text-ink-soft">
-              Data compiled directly from official government publications, last refreshed {lastUpdated}.
-            </p>
+            {/* The "two honest caveats" paragraph and the refresh-date card both
+                went: the first existed to excuse eligibility text being hidden
+                (it is now shown on every card), and the second repeated the
+                "data refreshed" line printed in the header above. */}
           </section>
 
           {/* Regions */}

@@ -182,7 +182,10 @@ export function computeWith(
     .sort((a, b) => nameFor(a.dest).localeCompare(nameFor(b.dest)));
 
   // --- investment / migration programs (opportunities, exclude your own country) ---
-  const cbi = data.cbi.filter((p) => !selSet.has(p.iso3));
+  // a program can also flatly ban specific nationalities from applying (e.g. St Kitts CBI
+  // bans Afghanistan/Belarus/Iran/Iraq/North Korea/Russia) - that must hide it from those
+  // passport pages even though the passport isn't the program's own country
+  const cbi = data.cbi.filter((p) => !selSet.has(p.iso3) && !(p.excludedNationalities || []).some((x) => selSet.has(x)));
   const rbi = data.rbi.filter((p) => !selSet.has(p.iso3));
   const fastTrack = data.fastTrack.filter((p) => !selSet.has(p.iso3));
 

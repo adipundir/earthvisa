@@ -67,20 +67,6 @@ const DESCRIPTION = `What a transit visa is, direct/airside vs indirect/landside
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "transit visa",
-    "transit visa requirements",
-    "do i need a transit visa",
-    "airport transit visa",
-    "direct transit vs indirect transit",
-    "transit visa exempt countries",
-    "layover visa",
-    "connecting flight visa requirements",
-    "landside transit visa",
-    "airside transit",
-    "transit visa 2026",
-    "does a layover need a visa",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/transit-visa" },
   openGraph: {
     title: TITLE,

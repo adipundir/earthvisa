@@ -82,17 +82,6 @@ export async function generateMetadata({ params }: { params: Promise<{ nationali
   return {
     title,
     description,
-    keywords: [
-      `schengen visa for ${plural.toLowerCase()}`,
-      `schengen visa for ${demonym.toLowerCase()} citizens`,
-      `do ${demonym.toLowerCase()} citizens need a schengen visa`,
-      `schengen visa requirements for ${plural.toLowerCase()}`,
-      `schengen visa requirements ${country.name.toLowerCase()}`,
-      `${country.name.toLowerCase()} schengen visa 2026`,
-      `europe visa for ${plural.toLowerCase()}`,
-      `schengen visa fee for ${plural.toLowerCase()}`,
-      `schengen visa documents for ${plural.toLowerCase()}`,
-    ],
     alternates: { canonical: `https://earthvisa.in/guide/schengen/${nationality}` },
     openGraph: {
       title,
@@ -152,16 +141,8 @@ export default async function SchengenNationalityPage({ params }: { params: Prom
     ...(status === "visa_required"
       ? [
           {
-            q: `How much is the Schengen visa fee for ${plural}?`,
-            a: `The standard Schengen short-stay visa fee in the official fee schedules we track is EUR 90 for adults and EUR 45 for children aged 6 to 12; children under 6 are free. Where the consulate outsources intake to VFS Global or TLScontact, a service fee is charged on top. The fee is the same whichever Schengen country you apply to.`,
-          },
-          {
             q: `Where do ${plural} apply for a Schengen visa?`,
             a: `Apply at the consulate (or its VFS Global / TLScontact centre) of your main destination - the Schengen country where you will spend the longest. If your stays are equal, apply to the country of first entry. Applying to a different member because it seems easier is a common ground for refusal.`,
-          },
-          {
-            q: `What documents do ${plural} need for a Schengen visa?`,
-            a: `The standard file is: the harmonised application form, a passport valid at least three months beyond departure from Schengen, recent photos, travel medical insurance with at least EUR 30,000 coverage, proof of accommodation and itinerary, proof of funds, and evidence of ties to ${country.name}. Each consulate publishes an exact per-nationality checklist - see our per-country guides for specifics.`,
           },
           {
             q: `How long does a Schengen visa take for ${plural}?`,

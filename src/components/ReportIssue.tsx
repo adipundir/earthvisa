@@ -14,7 +14,7 @@
 // label is deliberately a full sentence, comfortably over the API's 10-character
 // minimum) with any typed detail appended.
 import { useRef, useState } from "react";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 
 const REASONS = [
   "The fee is wrong or out of date",
@@ -27,6 +27,10 @@ const REASONS = [
 
 export default function ReportIssue({ page, className, label }: { page?: string; className?: string; label?: string }) {
   const ref = useRef<HTMLDialogElement>(null);
+  // The dialog body used to be server-rendered into every page on the site -
+  // ~79 words and 4.5KB of form copy in the HTML of all ~40k URLs, for a modal
+  // almost nobody opens. It now mounts on first open.
+  const [opened, setOpened] = useState(false);
   const [reason, setReason] = useState<string>("");
   const [message, setMessage] = useState("");
   const [sourceUrl, setSourceUrl] = useState("");
@@ -79,7 +83,7 @@ export default function ReportIssue({ page, className, label }: { page?: string;
     <>
       <button
         type="button"
-        onClick={() => ref.current?.showModal()}
+        onClick={() => { setOpened(true); ref.current?.showModal(); }}
         className={className ?? "relative text-[13px] font-medium text-ink-2 underline-offset-2 transition after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] hover:text-ink hover:underline"}
       >
         {label ?? "Report an inaccuracy"}
@@ -98,6 +102,7 @@ export default function ReportIssue({ page, className, label }: { page?: string;
           instead: screen readers still announce the dialog (it is labelled),
           and nothing appears pre-selected.
         */}
+        {opened && (
         <div autoFocus tabIndex={-1} className="max-h-[85vh] overflow-y-auto p-6 outline-none">
           <div className="flex items-start justify-between gap-3">
             <h3 className="text-[19px] font-bold tracking-tight text-ink">Report an inaccuracy</h3>
@@ -112,18 +117,13 @@ export default function ReportIssue({ page, className, label }: { page?: string;
           {state === "done" ? (
             <div className="mt-3">
               <p className="text-[15px] leading-relaxed text-ink">Thank you - your report is in.</p>
-              <p className="mt-1.5 text-[14px] leading-relaxed text-ink-2">
-                Every report is reviewed against official government sources before anything changes on the site.
-              </p>
               <button type="button" onClick={close} className="chip mt-4">Close</button>
             </div>
           ) : (
-            <form onSubmit={submit} className="mt-3">
-              <p className="text-[14px] leading-relaxed text-ink-2">
-                Pick what looks wrong. That alone is enough - we check every report against official sources.
-              </p>
-
-              <fieldset className="mt-3">
+            <form onSubmit={submit}>
+              {/* No instruction line: six labelled chips under a heading that
+                  says "Report an inaccuracy" do not need to be explained. */}
+              <fieldset className="mt-4">
                 <legend className="sr-only">What&apos;s wrong?</legend>
                 <div className="flex flex-wrap gap-2">
                   {REASONS.map((r) => {
@@ -202,6 +202,7 @@ export default function ReportIssue({ page, className, label }: { page?: string;
             </form>
           )}
         </div>
+        )}
       </dialog>
     </>
   );

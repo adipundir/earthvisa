@@ -32,22 +32,6 @@ const DESCRIPTION = `Schengen visa guide 2026: one short-stay visa covers all ${
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "schengen visa",
-    "schengen visa requirements",
-    "schengen visa 2026",
-    "schengen countries list",
-    "schengen countries list 2026",
-    "schengen visa fee",
-    "schengen visa cost",
-    "how to apply for schengen visa",
-    "schengen visa documents",
-    "90/180 rule schengen",
-    "what is the schengen area",
-    "which countries need schengen visa",
-    "schengen visa free countries",
-    "schengen short stay visa type c",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/schengen" },
   openGraph: {
     title: TITLE,
@@ -88,7 +72,9 @@ function Chevron({ toggle = false }: { toggle?: boolean }) {
 // nth-child border resets clear the top hairline on the first visual row for
 // each column count (1 col base / 2 cols sm / 3 cols lg). Applied directly to
 // the grid children (Link rows here, li rows in the guide lists below).
-const LEDGER_GRID = "card-doc grid px-4 sm:grid-cols-2 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
+// Two columns from the base breakpoint. With no base column count, 199 country
+// tiles stacked into one column and made this page 12,960px tall on a phone.
+const LEDGER_GRID = "card-doc grid grid-cols-2 gap-x-5 px-4 sm:gap-x-8 sm:px-5 lg:grid-cols-3";
 const LEDGER_ROW =
   "border-t border-line first:border-t-0 sm:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0";
 
@@ -216,7 +202,11 @@ export default function SchengenGuidePage() {
             <div className="card-doc card-doc-rule mt-6 overflow-hidden"><dl className="mono grid grid-cols-2 gap-px bg-line text-ink sm:grid-cols-4">
               {[
                 { k: "Member countries", v: String(memberCount) },
-                { k: "Nationalities exempt", v: String(counts.exempt) },
+                // Non-member nationalities on the visa-exemption list only - the memberCount
+                // tile above already covers the 29 members, so this must not double-count them
+                // (and now matches the itemized "Nationalities That Do Not Need a Schengen Visa"
+                // list below, which is member-countries-excluded by the same logic).
+                { k: "Also visa-exempt", v: String(counts.exempt - memberCount) },
                 { k: "Need a visa", v: String(counts.required) },
                 { k: "Max short stay", v: "90/180" },
               ].map(({ k, v }) => (
@@ -506,48 +496,41 @@ export default function SchengenGuidePage() {
             </p>
           </section>
 
-          {/* Corridor guides per top destination */}
+          {/* Corridor guides per top destination.
+              This used to render every nationality corridor for all six
+              destinations inline: 1,188 links and ~4,900 words, 61% of the
+              page. Those exact corridor URLs are already linked from each
+              /destination/[slug] page - the two link sets were verified as an
+              identical match, so nothing here was the only path to anything.
+              Six hub links replace them. */}
           <section className="mt-12">
             <h2 className="text-section text-ink">
               Schengen Visa Requirements by Destination &amp; Nationality
             </h2>
             <p className="text-body mt-2 max-w-3xl text-ink-soft">
-              Detailed corridor guides - stay length, conditions, documents and official sources - for the
+              Per-nationality guides - stay length, conditions, documents and official sources - for the
               most-visited Schengen destinations.
             </p>
-            <div className="mt-5 space-y-2.5">
+            <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {CORRIDOR_DESTS.map((dest) => {
                 const links = corridorsForDestination(dest);
                 if (links.length === 0) return null;
                 return (
-                  <details key={dest} className="card-doc group">
-                    <summary className="flex min-h-[44px] cursor-pointer list-none items-center gap-3 px-4 py-3 [&::-webkit-details-marker]:hidden">
+                  <li key={dest}>
+                    <Link
+                      href={`/destination/${nameToSlug(nameFor(dest))}`}
+                      className="card-doc group/link flex min-h-[44px] items-center gap-3 px-4 py-3 transition hover:bg-paper-2/50"
+                    >
                       <span className="text-xl">{flagFor(dest)}</span>
-                      <span className="font-display text-[15px] font-medium text-ink">
-                        {nameFor(dest)} visa guides by nationality ({links.length})
+                      <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover/link:text-stamp">
+                        {nameFor(dest)} by nationality ({links.length})
                       </span>
-                      <span className="ml-auto"><Chevron /></span>
-                    </summary>
-                    <ul className="grid border-t border-line px-4 pb-1 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3">
-                      {links.map((c) => (
-                        <li key={`${c.nat}-${c.dest}`} className={LEDGER_ROW}>
-                          <Link
-                            href={`/passport/${c.natSlug}/${c.destSlug}`}
-                            className="group/link flex min-h-[44px] items-center gap-2.5 py-1 transition hover:bg-paper-2/50"
-                          >
-                            <span className="text-lg leading-none">{flagFor(c.nat)}</span>
-                            <span className="min-w-0 flex-1 font-display text-[15px] font-medium text-ink transition group-hover/link:text-stamp">
-                              {DEMONYM[c.nat] ?? nameFor(c.nat)} citizens
-                            </span>
-                            <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover/link:text-stamp">→</span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
+                      <span aria-hidden className="mono shrink-0 text-ink-mute transition group-hover/link:text-stamp">→</span>
+                    </Link>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </section>
 
           {/* FAQ */}

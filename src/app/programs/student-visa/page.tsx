@@ -62,19 +62,6 @@ const description = `Student visa requirements for ${countryCount} countries in 
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "student visa",
-    "student visa countries",
-    "study abroad visa",
-    "student visa 2026",
-    "study permit",
-    "international student visa",
-    "student visa requirements",
-    "part time work student visa",
-    "post study work visa",
-    "student visa processing time",
-    "student visa proof of funds",
-  ],
   alternates: { canonical: "https://earthvisa.in/programs/student-visa" },
   openGraph: {
     title,

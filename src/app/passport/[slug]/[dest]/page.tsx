@@ -454,24 +454,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: { absolute: `${title} | Earth Visa` },
     description,
-    keywords: [
-      `${d.name.toLowerCase()} visa for ${nd.toLowerCase()}`,
-      `${d.name.toLowerCase()} visa for ${nd.toLowerCase()} citizens`,
-      `do ${nd.toLowerCase()} citizens need visa for ${d.name.toLowerCase()}`,
-      `${n.name.toLowerCase()} passport ${d.name.toLowerCase()} visa`,
-      `${d.name.toLowerCase()} visa requirements for ${nd.toLowerCase()}`,
-      `${n.name.toLowerCase()} to ${d.name.toLowerCase()} visa`,
-      ...(aliasLead ? [
-        `${aliasLead.toLowerCase()} visa for ${nd.toLowerCase()}`,
-        `${aliasLead.toLowerCase()} visa for ${nd.toLowerCase()} citizens`,
-        `${aliasLead.toLowerCase()} visa requirements for ${nd.toLowerCase()}`,
-      ] : []),
-      ...(short !== d.name ? [`${short.toLowerCase()} visa for ${nd.toLowerCase()}`] : []),
-      ...(d.iso3 === "SAU" && UMRAH_NATIONALITIES.has(n.iso3) ? [
-        `umrah visa for ${nd.toLowerCase()}`,
-        `umrah visa requirements for ${nd.toLowerCase()}`,
-      ] : []),
-    ],
     alternates: { canonical },
     openGraph: { title, description, url: canonical, type: "article" },
     twitter: { card: "summary_large_image", title, description },
@@ -720,9 +702,15 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   // INR rate), the destination's own standard schedule still matters as
   // context - shown in ITS official currency (yen), not converted. Dedup by
   // amount+currency and cap so the reference stays a footnote, not a second table.
+  // A row whose own `applies` text is scoped to a specific embassy/mission
+  // ("applying at Chinese missions in the US") is not a general reference even
+  // when it also says "most nationalities" - showing it under a "standard fee ·
+  // most nationalities" heading overstates it, so it is excluded here.
+  const LOCATION_SCOPED_FEE = /\bapplying\s+(?:at|in)\b(?!\s+person\b)/i;
   const standardFeeRows = feeVariation?.amount != null
     ? feeList
         .filter((f) => f.amount != null && f.amount > 0 && f.currency !== feeVariation.currency)
+        .filter((f) => !LOCATION_SCOPED_FEE.test(f.applies ?? ""))
         .filter((f, i, arr) => arr.findIndex((x) => x.amount === f.amount && x.currency === f.currency) === i)
         .slice(0, 4)
     : [];
@@ -789,10 +777,6 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   // student and investment visas are handled by employers, universities and
   // lawyers, and VFS rarely publishes checklists for them.
   const CHECKLIST_EXPECTED = new Set(["tourist", "business", "transit", "medical", "family"]);
-  const hasTypesSection =
-    visaTypes.length > 0 &&
-    ((!hasVfs && need && visaTypes.some((v) => TRAVELER_CATS.has(v.category))) ||
-      visaTypes.some((v) => !TRAVELER_CATS.has(v.category)));
   // The status source can be a citation (a travel.state.gov country page on a
   // US corridor), not a portal - only a non-advisory URL may become the "Apply"
   // action. An advance note can also rule out whole channels: a stated e-visa
@@ -804,18 +788,23 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
   const eVisaIneligible = s.kind === "visa_required" && !!s.notes && /\bnot (?:on|in|eligible(?: for)?)\b[^.]{0,60}\be-?visa/i.test(s.notes);
 
   // One list per corridor. Traveller categories are only worth showing when this
-  // corridor actually needs a visa AND we have no corridor-specific checklist
-  // that already covers them; work/student/investment types stay useful either
-  // way. An e-visa product this nationality is excluded from must not appear
-  // with an apply link.
+  // corridor actually needs a visa; work/student/investment types stay useful
+  // either way. An e-visa product this nationality is excluded from must not
+  // appear with an apply link. Whether a VFS checklist exists is NOT a reason to
+  // drop a traveller-category catalogue entry here - mergeVisaTypes needs the
+  // full catalogue to decide what merges with a checklist and what stands alone
+  // (a checklist existing for SOME visa types on this corridor doesn't mean it
+  // covers all of them; catalogue-only products would otherwise vanish and
+  // matched ones would lose their facts to a documents-only card).
   const mergedTypes = mergeVisaTypes(
     visaTypes.filter(
       (v) =>
         !(eVisaIneligible && /e-?visa|electronic/i.test(`${v.official_url ?? ""} ${v.name}`)) &&
-        (!TRAVELER_CATS.has(v.category) || (need && !hasVfs)),
+        (!TRAVELER_CATS.has(v.category) || need),
     ),
     vfsDocs,
   );
+  const hasTypesSection = mergedTypes.length > 0;
   const portalUrl = visaTypes
     .map((v) => v.official_url)
     .filter((u): u is string => !!u && !isAdvisoryUrl(u) && !(eVisaIneligible && /e-?visa/i.test(u)))[0] ?? null;
@@ -1104,7 +1093,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 </span>
               </h1>
               <p className="text-[13.5px] font-medium tabular-nums text-ink-2 sm:ml-auto">
-                {nd} passport{checkedDate ? ` · checked ${checkedDate}` : ""}
+                {nd} passport{checkedDate ? ` · policy checked ${checkedDate}` : ""}
               </p>
             </div>
             {aliasNote && <p className="mt-2 max-w-2xl text-[13.5px] text-ink-2">{aliasNote}</p>}
@@ -1326,28 +1315,59 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                 {d.name} officially admits {nd} citizens without a pre-arranged visa when they hold:
               </p>
               <div className={`mt-5 grid gap-4 ${credGroups.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"}`}>
-                {credGroups.map((group, gi) => (
-                  <div key={gi} className="rounded-lg border border-hair bg-surface p-4">
-                    <p className={`text-[15px] font-bold ${group[0].level === "visa_on_arrival" ? "text-voa" : group[0].level === "eta" || group[0].level === "e_visa" ? "text-online" : "text-verdict"}`}>
-                      {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
-                    </p>
-                    {group.some((u) => u.label) && (
-                      <div className="mt-2 flex flex-wrap gap-1.5">
-                        {group.filter((u) => u.label).map((u, ui) => (
-                          <span key={`${u.cred}${ui}`} className="inline-flex items-center rounded-md border border-hair-strong bg-card px-2 py-0.5 text-[13px] font-medium text-ink">{u.label}</span>
+                {credGroups.map((group, gi) => {
+                  // A group shares one outcome ("visa on arrival, 14 days") but
+                  // its member credentials can carry genuinely different
+                  // conditions and official sources (e.g. a US-visa entry
+                  // requiring 6 months' validity vs. a Schengen-residence entry
+                  // that states no such requirement) - bucket by the actual
+                  // (conditions, source) pair so each distinct rule gets its own
+                  // attributed line instead of borrowing credential #1's.
+                  const buckets: { conditions: string | null; sourceUrl: string | null; items: typeof group }[] = [];
+                  for (const u of group) {
+                    const conditions = u.conditions || null;
+                    const sourceUrl = u.sourceUrl || null;
+                    let bucket = buckets.find((b) => b.conditions === conditions && b.sourceUrl === sourceUrl);
+                    if (!bucket) {
+                      bucket = { conditions, sourceUrl, items: [] };
+                      buckets.push(bucket);
+                    }
+                    bucket.items.push(u);
+                  }
+                  return (
+                    <div key={gi} className="rounded-lg border border-hair bg-surface p-4">
+                      <p className={`text-[15px] font-bold ${group[0].level === "visa_on_arrival" ? "text-voa" : group[0].level === "eta" || group[0].level === "e_visa" ? "text-online" : "text-verdict"}`}>
+                        {LEVEL_LABEL[group[0].level]}{group[0].maxStayDays ? ` · up to ${group[0].maxStayDays} days` : ""}
+                      </p>
+                      {group.some((u) => u.label) && (
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                          {group.filter((u) => u.label).map((u, ui) => (
+                            <span key={`${u.cred}${ui}`} className="inline-flex items-center rounded-md border border-hair-strong bg-card px-2 py-0.5 text-[13px] font-medium text-ink">{u.label}</span>
+                          ))}
+                        </div>
+                      )}
+                      <div className="mt-2 space-y-2.5">
+                        {buckets.map((b, bi) => (
+                          <div key={bi}>
+                            {buckets.length > 1 && b.items.some((u) => u.label) && (
+                              <p className="text-[12px] font-semibold uppercase tracking-wide text-ink-3">
+                                {b.items.filter((u) => u.label).map((u) => u.label).join(", ")}
+                              </p>
+                            )}
+                            {b.conditions && (
+                              <p className="text-[14px] leading-relaxed text-ink-2">{b.conditions}.</p>
+                            )}
+                            {b.sourceUrl && (
+                              <a href={b.sourceUrl} target="_blank" rel="noreferrer" className="mt-0.5 inline-block text-[13px] font-medium text-ink-2 underline-offset-2 transition hover:text-ink hover:underline">
+                                {sourceHost(b.sourceUrl)} ↗
+                              </a>
+                            )}
+                          </div>
                         ))}
                       </div>
-                    )}
-                    {group[0].conditions && (
-                      <p className="mt-2 text-[14px] leading-relaxed text-ink-2">{group[0].conditions}. Conditions vary slightly per document.</p>
-                    )}
-                    {group[0].sourceUrl && (
-                      <a href={group[0].sourceUrl} target="_blank" rel="noreferrer" className="mt-2 inline-block text-[13px] font-medium text-ink-2 underline-offset-2 transition hover:text-ink hover:underline">
-                        {sourceHost(group[0].sourceUrl)} ↗
-                      </a>
-                    )}
-                  </div>
-                ))}
+                    </div>
+                  );
+                })}
               </div>
               <p className="mt-3 text-[14.5px]">
                 <Link href={`/visit?dest=${d.iso3}&passport=${n.iso3}`} className="font-semibold text-accent underline-offset-2 hover:underline">
@@ -1447,7 +1467,7 @@ export default async function CorridorPage({ params }: { params: Promise<{ slug:
                         Official schedule · {sourceHost((feeVariation?.source_url || feeList[0]?.source_url)!)} ↗
                       </a>
                     )}
-                    <span className="tabular-nums">Checked {fmtDay(destFees?.updated) ?? "recently"}</span>
+                    <span className="tabular-nums">Fee schedule checked {fmtDay(destFees?.updated) ?? "recently"}</span>
                   </div>
                 </div>
               </div>

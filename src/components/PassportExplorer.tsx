@@ -11,7 +11,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { isoToFlag, nameToSlug } from "@/lib/format";
 import ReportIssue from "@/components/ReportIssue";
 import {
@@ -459,11 +459,18 @@ export default function PassportExplorer() {
   }
 
   // Share the result directly (no claim required) - the strongest viral loop.
-  // Web Share on mobile, clipboard elsewhere. Points at the passport's own page.
+  // Web Share on mobile, clipboard elsewhere. A single ordinary passport with
+  // no extra credentials points at its own static page; anything more (a
+  // second passport, or a held visa/credential) uses the same deep-link
+  // query format the homepage already reads on load, so the shared text's
+  // combined reachCount always matches what the linked page shows.
   async function shareReach() {
-    const url = selected.length
-      ? `https://earthvisa.in/passport/${nameToSlug(nameFor(selected[0]))}`
-      : "https://earthvisa.in";
+    const url =
+      selected.length > 1 || creds.length > 0
+        ? `https://earthvisa.in/?passport=${selected.join(",")}${creds.length ? `&cred=${creds.join(",")}` : ""}`
+        : selected.length
+          ? `https://earthvisa.in/passport/${nameToSlug(nameFor(selected[0]))}`
+          : "https://earthvisa.in";
     const text = `My passport reaches ${reachCount} destinations with no embassy visit. Check yours:`;
     try {
       if (typeof navigator !== "undefined" && navigator.share) {

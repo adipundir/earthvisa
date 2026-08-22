@@ -47,21 +47,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "umrah visa",
-    "umrah visa 2026",
-    "umrah visa for indian",
-    "nusuk",
-    "nusuk umrah visa",
-    "umrah on tourist visa",
-    "saudi arabia umrah visa",
-    "umrah visa requirements",
-    "umrah visa for pakistani",
-    "umrah visa for bangladeshi",
-    "umrah without mahram",
-    "umrah vaccination requirements",
-    "saudi tourist visa umrah",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/umrah-visa" },
   openGraph: {
     title,

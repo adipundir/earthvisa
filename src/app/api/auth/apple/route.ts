@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { verifyAppleIdentityToken } from "@/lib/auth/apple";
+import { AppleKeysUnavailableError, verifyAppleIdentityToken } from "@/lib/auth/apple";
 import { AuthStoreUnavailableError, createSession, upsertAccountByApple } from "@/lib/auth/store";
 
 // POST /api/auth/apple { identityToken, fullName?, email? } -> { token, account }
@@ -27,6 +27,18 @@ export async function POST(req: Request) {
   try {
     identity = await verifyAppleIdentityToken(identityToken);
   } catch (err) {
+    // 503, not 401, when the failure is OURS. A 401 tells the app the Apple
+    // credential was refused, and /api/auth/me:4-7 establishes 401 as the
+    // signal to discard the token - so answering 401 during an Apple or
+    // network outage signs every user out and tells them their Apple ID was
+    // rejected, for a condition that clears itself.
+    if (err instanceof AppleKeysUnavailableError) {
+      console.error("[auth] Apple key set unavailable:", err.message);
+      return NextResponse.json(
+        { error: "Could not reach Apple to verify that sign-in. Please try again." },
+        { status: 503 },
+      );
+    }
     // Never echo the reason: the difference between "wrong audience" and "bad
     // signature" is useful to someone probing the endpoint and to nobody else.
     console.warn("[auth] Apple identity token rejected:", err instanceof Error ? err.message : err);

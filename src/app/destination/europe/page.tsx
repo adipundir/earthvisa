@@ -22,18 +22,6 @@ const DESCRIPTION = `Europe is not one visa zone: ${memberCount} countries share
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "do i need a visa for europe",
-    "europe visa requirements",
-    "europe visa requirements 2026",
-    "visa for europe",
-    "europe tourist visa",
-    "schengen visa",
-    "which european countries need a visa",
-    "europe visa free countries",
-    "travel to europe visa",
-    "etias europe",
-  ],
   alternates: { canonical: "https://earthvisa.in/destination/europe" },
   openGraph: {
     title: TITLE,

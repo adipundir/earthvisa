@@ -40,22 +40,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "mexico citizenship",
-    "how to get mexican citizenship",
-    "mexico naturalization",
-    "mexico citizenship requirements",
-    "mexico dual citizenship",
-    "ley de nacionalidad mexico",
-    "mexico citizenship by investment",
-    "mexico rentista visa",
-    "mexico residency visa",
-    "carta de naturalizacion",
-    "mexico second passport",
-    "move to mexico citizenship",
-    "mexico naturalization fee",
-    "mexico citizenship exam",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/mexico-citizenship" },
   openGraph: {
     title,

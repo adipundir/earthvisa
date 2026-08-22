@@ -245,7 +245,6 @@ interface ListData {
   usDelta: CombinedEdge[];
   title: string;
   description: string;
-  keywords: string[];
   faqs: { q: string; a: string }[];
 }
 
@@ -261,7 +260,6 @@ function buildListData(cfg: ListConfig): ListData | null {
   const base = compute([cfg.nat], [], {});
   const usDelta = usVisaUnlocks(cfg.nat);
 
-  const vfCount = base.reachByLevel.visa_free.length;
   const voaCount = base.reachByLevel.visa_on_arrival.length;
   const eCount = base.reachByLevel.eta.length + base.reachByLevel.e_visa.length;
 
@@ -277,16 +275,6 @@ function buildListData(cfg: ListConfig): ListData | null {
     const description = `A valid US visa unlocks ${n} extra destinations for ${cfg.people} in 2026: ${dVf.length} become visa-free including ${joinNames(notableVf)}, plus ${dVoa.length} visa on arrival and ${dE.length} easier e-visas. Conditions from official sources.`;
     return {
       cfg, country, natSlug, adj, base, main, usDelta, title, description,
-      keywords: [
-        `countries ${cfg.people.toLowerCase()} can visit with us visa`,
-        `us visa benefits for ${adj.toLowerCase()} passport`,
-        `visa free countries with us visa for ${cfg.people.toLowerCase()}`,
-        `countries you can visit with a us visa 2026`,
-        `us visa ${adj.toLowerCase()} passport visa free countries`,
-        `travel with us visa ${adj.toLowerCase()} passport`,
-        `mexico with us visa ${adj.toLowerCase()} passport`,
-        `${adj.toLowerCase()} passport us visa holder benefits 2026`,
-      ],
       faqs: [
         {
           q: `How many countries can ${cfg.people} visit with a valid US visa in 2026?`,
@@ -321,15 +309,6 @@ function buildListData(cfg: ListConfig): ListData | null {
     const description = `${n} countries offer visa on arrival to ${cfg.people} in 2026, including ${joinNames(notable)}. The full list with maximum stays and entry conditions from official government sources.`;
     return {
       cfg, country, natSlug, adj, base, main, usDelta, title, description,
-      keywords: [
-        `visa on arrival countries for ${cfg.people.toLowerCase()}`,
-        `visa on arrival for ${adj.toLowerCase()} passport 2026`,
-        `${adj.toLowerCase()} passport visa on arrival list`,
-        `countries with visa on arrival for ${cfg.people.toLowerCase()} 2026`,
-        `visa on arrival ${adj.toLowerCase()} citizens`,
-        `${country.name.toLowerCase()} passport visa on arrival countries`,
-        `where can ${cfg.people.toLowerCase()} get visa on arrival`,
-      ],
       faqs: [
         {
           q: `How many countries offer visa on arrival to ${cfg.people} in 2026?`,
@@ -345,7 +324,9 @@ function buildListData(cfg: ListConfig): ListData | null {
         },
         {
           q: `What is the difference between visa on arrival and visa-free?`,
-          a: `Visa-free means you board and enter with just your passport - no visa is issued at all. Visa on arrival means a visa is still required, but it is issued at the border rather than an embassy. ${adj} passport holders can enter ${vfCount} countries visa-free in 2026 in addition to the ${n} visa on arrival countries on this list.`,
+          // Counts already live in the stats bar and the "No Visa at All"
+          // cross-sell section below - this answer stays qualitative.
+          a: `Visa-free means you board and enter with just your passport - no visa is issued at all. Visa on arrival means a visa is still required, but it is issued at the border rather than an embassy - see the "No Visa at All" section above for how many ${adj} visa-free destinations that adds.`,
         },
         {
           q: `Can a US visa unlock more visa on arrival countries for ${cfg.people}?`,
@@ -365,14 +346,6 @@ function buildListData(cfg: ListConfig): ListData | null {
     const description = `${n} countries let ${cfg.people} apply for a visa entirely online in 2026, including ${joinNames(notable)} - no embassy visit. The full e-visa list with stay limits from official government sources.`;
     return {
       cfg, country, natSlug, adj, base, main, usDelta, title, description,
-      keywords: [
-        `e visa countries for ${cfg.people.toLowerCase()}`,
-        `evisa countries for ${cfg.people.toLowerCase()} 2026`,
-        `e-visa for ${adj.toLowerCase()} passport`,
-        `online visa countries for ${cfg.people.toLowerCase()}`,
-        `countries with e visa for ${cfg.people.toLowerCase()}`,
-        `${adj.toLowerCase()} passport e visa list 2026`,
-      ],
       faqs: [
         {
           q: `How many countries offer an e-visa to ${cfg.people} in 2026?`,
@@ -411,16 +384,6 @@ function buildListData(cfg: ListConfig): ListData | null {
   const description = `${adj} passport holders can visit ${n} countries visa-free in 2026, including ${joinNames(notable)}. Plus ${voaCount} visa on arrival and ${eCount} e-visa destinations. The complete official-source list with stay limits.`;
   return {
     cfg, country, natSlug, adj, base, main, usDelta, title, description,
-    keywords: [
-      `visa free countries for ${cfg.people.toLowerCase()}`,
-      `visa free countries for ${cfg.people.toLowerCase()} 2026 list`,
-      `visa free countries for ${adj.toLowerCase()} passport 2026`,
-      `list of visa free countries for ${cfg.people.toLowerCase()}`,
-      `how many visa free countries for ${cfg.people.toLowerCase()}`,
-      `${adj.toLowerCase()} passport visa free countries 2026`,
-      `countries ${cfg.people.toLowerCase()} can visit without visa`,
-      `no visa countries for ${adj.toLowerCase()} passport`,
-    ],
     faqs: [
       {
         q: `How many visa free countries are there for ${cfg.people} in 2026?`,
@@ -442,8 +405,10 @@ function buildListData(cfg: ListConfig): ListData | null {
       },
       {
         q: `Does a US visa give ${cfg.people} more visa free countries?`,
+        // Exact counts and notable destinations live in the "Beyond Visa
+        // Free" cross-sell section above - this answer stays qualitative.
         a: usVf.length
-          ? `Yes. A valid US visa unlocks ${usDelta.length} additional destinations for ${adj} citizens in 2026, ${usVf.length} of which become fully visa-free - including ${joinNames(pickNotable(usVf, ["MEX", "PER", "ARG", "SRB", "COL"], 5))}. Conditions apply, typically a valid multiple-entry US visa.`
+          ? `Yes. See the "Beyond Visa Free" section above for exactly how many extra destinations a valid US visa unlocks for ${adj} citizens, and which of them become fully visa-free. Conditions apply, typically a valid multiple-entry US visa.`
           : `Holding other visas or residence permits can unlock additional destinations. Use the Earth Visa checker to see what your documents unlock.`,
       },
     ],
@@ -467,7 +432,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: d.title,
     description: d.description,
-    keywords: d.keywords,
     alternates: { canonical: url },
     openGraph: { title: d.title, description: d.description, url, type: "article" },
     twitter: { card: "summary_large_image", title: d.title, description: d.description },

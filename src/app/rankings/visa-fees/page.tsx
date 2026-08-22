@@ -5,7 +5,13 @@ import { fmtDate } from "@/lib/format";
 import { feesFor, fmtFee, type FeeEntry } from "@/lib/fees";
 import FeesTable, { type FeeRow } from "@/components/FeesTable";
 
-const TOTAL_DESTINATIONS = dataset.allCountries.length;
+// Distinct destinations covered by the access data - same computation /rankings
+// uses, so the two Rankings pages agree on how many destinations the site covers
+// (dataset.allCountries.length counts passport-ISSUING countries, not
+// destinations - 3 of the 199 have no inbound access data at all).
+const TOTAL_DESTINATIONS = new Set(
+  Object.values(dataset.passportAccess).flatMap((edges) => edges.map((e) => e.dest)),
+).size;
 
 // ── Fee computation ──────────────────────────────────────────────────────
 // This page answers one question per destination: "what does a standard
@@ -30,7 +36,21 @@ const KIND_LABEL: Record<string, string> = {
   eta: "eTA",
 };
 const NOT_RE = /^not?\s/i; // "No fee", "Not offered" data notes, not real products
-const NARROW_RE = /\bchild\b|\binfant\b|for \w+ nationals\b|\bgroup\b|\bfamily\b|\bcollective\b/i;
+const NARROW_RE = /\binfant\b|for \w+ nationals\b|\bgroup\b|\bfamily\b|\bcollective\b/i;
+// Matched separately from NARROW_RE: a rate that also covers "adults and
+// children" at the same price (Belgium, Norway) is the general rate, not a
+// child discount - only a name with "child(ren)" and no "adult" is narrow.
+const CHILD_ONLY_RE = /\bchild(ren)?\b/i;
+const ADULTS_TOO_RE = /\badults?\b/i;
+// A $0 row is only the general-public headline fee if its `applies` field
+// doesn't read as a privileged-subset exemption - e.g. Australia's free
+// eVisitor applies to "EU/EEA and certain other European passport holders"
+// while everyone else pays AUD 250 for the Visitor visa. Scoped to amount_usd
+// === 0 only: the same "eligible nationalities requiring a visa" phrasing
+// appears on countless genuinely-general PAID fees across the dataset, and
+// applying this check to those would wrongly drop their real headline fee.
+const APPLIES_NARROW_RE =
+  /\beligible\b[\s\S]{0,30}national|\bnationals?\s+of\b|\bdesignated\s+countr|\bwaived\s+for\b|\bcertain\s+other\b|\bwith\s+valid\b/i;
 
 function isGeneralPublicFee(f: FeeEntry): boolean {
   if (!TOURIST_KINDS.has(f.kind)) return false;
@@ -38,6 +58,8 @@ function isGeneralPublicFee(f: FeeEntry): boolean {
   if (f.amount_usd == null) return false;
   if (NOT_RE.test(f.name)) return false;
   if (NARROW_RE.test(f.name)) return false;
+  if (CHILD_ONLY_RE.test(f.name) && !ADULTS_TOO_RE.test(f.name)) return false;
+  if (f.amount_usd === 0 && APPLIES_NARROW_RE.test(f.applies ?? "")) return false;
   return true;
 }
 
@@ -187,20 +209,6 @@ const DESCRIPTION = `What a tourist visa actually costs, destination by destinat
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    "visa fee comparison 2026",
-    "most expensive tourist visa",
-    "cheapest tourist visa countries",
-    "visa fees by country",
-    "how much does a tourist visa cost",
-    "free e-visa countries 2026",
-    "vfs global service fee",
-    "visa on arrival cost",
-    "e-visa cost by country",
-    "eta fee comparison",
-    "cost of a visa 2026",
-    "which country has the most expensive visa",
-  ],
   alternates: { canonical: "https://earthvisa.in/rankings/visa-fees" },
   openGraph: {
     title: TITLE,

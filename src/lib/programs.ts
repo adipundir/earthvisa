@@ -73,6 +73,19 @@ export function isAnnouncedOnly(p: { notes?: string }): boolean {
   );
 }
 
+/**
+ * true when the source notes say a legally-authorized program is currently unusable
+ * (suspended, contested, applications not open) - distinct from isAnnouncedOnly, which
+ * covers programs that were never enacted in the first place. A suspended program can
+ * still carry normal-looking fields (dual citizenship, residency) that read as live if
+ * this status isn't surfaced separately.
+ */
+export function isSuspended(p: { notes?: string; processing_time?: string }): boolean {
+  return /NOT OPERATIONAL|\bsuspended\b|applications are not open/i.test(
+    `${p.notes ?? ""} ${p.processing_time ?? ""}`,
+  );
+}
+
 // --- golden-visa style residency: investment-linked routes only ---
 // Keep routes whose type is investment-flavoured, and drop routes that are really
 // employment / family / retirement / nomad permits even if a keyword overlaps.

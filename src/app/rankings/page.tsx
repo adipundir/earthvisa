@@ -75,23 +75,6 @@ const DESCRIPTION = `Passport index 2026: all ${TOTAL_PASSPORTS} passports ranke
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    "most powerful passport 2026",
-    "strongest passport in the world",
-    "passport index 2026",
-    "passport ranking 2026",
-    "passport ranking",
-    "world passport ranking",
-    "best passport in the world",
-    "top 10 most powerful passports",
-    "weakest passport in the world",
-    "passport strength index",
-    "visa free countries by passport",
-    "passport power rank",
-    "strongest visa in the world",
-    "most powerful visa in the world",
-    "which is the strongest visa",
-  ],
   alternates: { canonical: "https://earthvisa.in/rankings" },
   openGraph: {
     title: TITLE,
@@ -335,33 +318,12 @@ export default function RankingsPage() {
             <p className="mt-3 text-[15px] leading-relaxed text-ink-2">
               Earth Visa builds its passport index from <strong className="font-semibold text-ink">official government sources only</strong>:
               each destination country&apos;s own published visa policy - foreign ministry pages, immigration and border authority
-              portals, and bilateral agreements - inverted into per-passport access lists. For every passport we count four
-              access levels across {destCount} destinations:
+              portals, and bilateral agreements - inverted into per-passport access lists across {destCount} destinations, rather
+              than pulled from a third-party aggregator or airline database.
             </p>
-            <ul className="mt-4 space-y-2">
-              <li className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
-                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
-                <span><strong className="font-semibold text-verdict">Visa-free</strong> - entry with just the passport; no application, no fee.</span>
-              </li>
-              <li className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
-                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
-                <span><strong className="font-semibold text-voa">Visa on arrival</strong> - a visa stamped at the border on landing.</span>
-              </li>
-              <li className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
-                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
-                <span><strong className="font-semibold text-online">eTA</strong> - an electronic travel authorisation approved online before departure.</span>
-              </li>
-              <li className="flex gap-2.5 text-[15px] leading-relaxed text-ink-2">
-                <span aria-hidden="true" className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-ink-3/70" />
-                <span><strong className="font-semibold text-online">e-Visa</strong> - a full visa applied for and issued online, no embassy visit.</span>
-              </li>
-            </ul>
             <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
-              The ranking <strong className="font-semibold text-ink">score counts the first three</strong> - visa-free, visa on arrival, and
-              eTA - the destinations you can head to without applying for a visa first. An e-visa is a real visa application,
-              just submitted online, so e-visa destinations are listed in their own column and never counted toward the score.
-              <strong className="font-semibold text-ink"> Total reach</strong> (all four levels) is shown alongside. Passports with equal
-              scores are listed in sequence, so adjacent ranks can share the same score.
+              Passports with equal scores are listed in sequence, so adjacent ranks can share the same score. The dataset was
+              last refreshed <strong className="font-semibold tabular-nums text-ink">{fmtDate(dataset.meta.lastUpdated)}</strong>.
             </p>
           </section>
 

@@ -50,9 +50,29 @@ export async function POST(req: Request) {
       );
     }
 
-    const updated = await linkPhoneToAccount(account.id, phone);
-    if (!updated) return NextResponse.json({ error: "account not found" }, { status: 404 });
-    return NextResponse.json(updated);
+    const linked = await linkPhoneToAccount(account.id, phone);
+    if (linked.ok) return NextResponse.json(linked.account);
+    if (linked.reason === "no_such_account") {
+      return NextResponse.json({ error: "account not found" }, { status: 404 });
+    }
+    if (linked.reason === "already_linked") {
+      // Idempotent: this number is already on this account. Nothing to do, and
+      // certainly not an error worth making the user retry.
+      return NextResponse.json(account);
+    }
+    // 409, not 503. The number belongs to another account and no amount of
+    // retrying will change that - and each retry costs the user a fresh OTP.
+    // The message has to be actionable, because the only way out is to sign in
+    // as the account that already holds the number.
+    return NextResponse.json(
+      {
+        error:
+          "That number is already linked to a different Earth Visa account. " +
+          "Sign in with the phone number instead, or use a different number.",
+        code: "phone_taken",
+      },
+      { status: 409 },
+    );
   } catch (err) {
     if (err instanceof AuthStoreUnavailableError) {
       return NextResponse.json({ error: "temporarily unavailable" }, { status: 503 });

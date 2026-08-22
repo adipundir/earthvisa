@@ -6,6 +6,7 @@ import {
   cbiMinUsd,
   cheapestUsdOption,
   isAnnouncedOnly,
+  isSuspended,
   passportWorth,
   TOTAL_RANKED_PASSPORTS,
   typeLabel,
@@ -29,7 +30,10 @@ const cheapest = programs
 // Cheapest program that is actually enacted (not merely announced), for headline claims.
 const cheapestEnacted = cheapest.find((x) => !isAnnouncedOnly(x.p)) ?? cheapest[0];
 
+// Suspended programs (legally authorized but not currently usable) are excluded from the
+// "strongest CBI passport" ranking below - the passport isn't obtainable via CBI right now.
 const worth = programs
+  .filter((p) => !isSuspended(p))
   .map((p) => ({ p, w: passportWorth(p.iso3) }))
   .filter((x): x is { p: CbiProgram; w: NonNullable<ReturnType<typeof passportWorth>> } => x.w != null)
   .sort((a, b) => b.w.visaFree - a.w.visaFree);
@@ -90,6 +94,11 @@ const strongestCaveat = worth[0].p.options.every((o) => o.min_amount == null)
   ? ` Note that ${worth[0].p.name}'s route has no published investment schedule and is granted at government discretion per the official source.`
   : "";
 
+const suspendedPrograms = programs.filter((p) => isSuspended(p));
+const suspendedCaveat = suspendedPrograms.length
+  ? ` Of these, ${suspendedPrograms.map((p) => p.name).join(", ")} ${suspendedPrograms.length === 1 ? "is" : "are"} legally authorized but currently suspended, with applications not open - see its entry below.`
+  : "";
+
 // ---------------------------------------------------------------------------
 // SEO
 // ---------------------------------------------------------------------------
@@ -100,19 +109,6 @@ const description = `Full citizenship by investment countries list for 2026: all
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "citizenship by investment",
-    "citizenship by investment countries list",
-    "cheapest citizenship by investment",
-    "citizenship by investment 2026",
-    "cbi programs",
-    "second passport by investment",
-    "buy citizenship",
-    "caribbean citizenship by investment",
-    "citizenship by investment cost",
-    "fastest citizenship by investment",
-    "cbi passport ranking",
-  ],
   alternates: { canonical: "https://earthvisa.in/programs/citizenship-by-investment" },
   openGraph: {
     title,
@@ -138,7 +134,7 @@ const faqs = [
   },
   {
     q: "How many countries offer citizenship by investment in 2026?",
-    a: `Our dataset (last refreshed ${lastUpdated}) tracks ${programs.length} countries with an operating or announced citizenship by investment route: ${programs.map((p) => p.name).join(", ")}.`,
+    a: `Our dataset (last refreshed ${lastUpdated}) tracks ${programs.length} countries with an operating, announced, or legally-authorized citizenship by investment route: ${programs.map((p) => p.name).join(", ")}.${suspendedCaveat}`,
   },
   {
     q: "How long does citizenship by investment take?",
@@ -251,23 +247,33 @@ function ProgramCard({ p }: { p: CbiProgram }) {
       )}
 
       <div className="mono mt-3 flex flex-wrap gap-1.5 text-[11px] uppercase tracking-[0.1em]">
-        {p.residency_required === false && (
-          <span className="rounded-[3px] bg-vfree/10 px-2 py-0.5 text-vfree ring-1 ring-vfree/30">
-            No residency requirement
+        {isSuspended(p) ? (
+          <span className="rounded-[3px] bg-change/10 px-2 py-0.5 text-change ring-1 ring-change/30">
+            Suspended - not currently usable
           </span>
-        )}
-        {p.residency_required === true && (
-          <span className="rounded-[3px] bg-eta/10 px-2 py-0.5 text-eta ring-1 ring-eta/30">Residency required</span>
-        )}
-        {p.dual_citizenship_allowed === true && (
-          <span className="rounded-[3px] bg-voa/10 px-2 py-0.5 text-voa ring-1 ring-voa/30">
-            Dual citizenship allowed
-          </span>
-        )}
-        {isAnnouncedOnly(p) && (
-          <span className="rounded-[3px] bg-stamp/10 px-2 py-0.5 text-stamp ring-1 ring-stamp/30">
-            Announced - not yet enacted per source notes
-          </span>
+        ) : (
+          <>
+            {p.residency_required === false && (
+              <span className="rounded-[3px] bg-vfree/10 px-2 py-0.5 text-vfree ring-1 ring-vfree/30">
+                No residency requirement
+              </span>
+            )}
+            {p.residency_required === true && (
+              <span className="rounded-[3px] bg-eta/10 px-2 py-0.5 text-eta ring-1 ring-eta/30">
+                Residency required
+              </span>
+            )}
+            {p.dual_citizenship_allowed === true && (
+              <span className="rounded-[3px] bg-voa/10 px-2 py-0.5 text-voa ring-1 ring-voa/30">
+                Dual citizenship allowed
+              </span>
+            )}
+            {isAnnouncedOnly(p) && (
+              <span className="rounded-[3px] bg-stamp/10 px-2 py-0.5 text-stamp ring-1 ring-stamp/30">
+                Announced - not yet enacted per source notes
+              </span>
+            )}
+          </>
         )}
       </div>
 
@@ -406,10 +412,16 @@ export default function CitizenshipByInvestmentPage() {
                             <span className="text-lg">{flagFor(p.iso3)}</span>
                             {p.name}
                           </Link>
-                          {isAnnouncedOnly(p) && (
-                            <span className="mono ml-2 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
-                              announced
+                          {isSuspended(p) ? (
+                            <span className="mono ml-2 rounded-[3px] bg-change/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-change ring-1 ring-change/30">
+                              suspended
                             </span>
+                          ) : (
+                            isAnnouncedOnly(p) && (
+                              <span className="mono ml-2 rounded-[3px] bg-stamp/10 px-2 py-0.5 text-[11px] uppercase tracking-[0.1em] text-stamp ring-1 ring-stamp/30">
+                                announced
+                              </span>
+                            )
                           )}
                         </td>
                         <td className="mono py-2 pr-4 text-[11px] text-ink-soft">

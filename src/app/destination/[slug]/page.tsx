@@ -229,19 +229,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // them over 60 chars despite looking "fine" when measured without it.
     title: { absolute: title },
     description,
-    keywords: [
-      `do I need a visa for ${display.toLowerCase()}`,
-      `${display.toLowerCase()} visa requirements`,
-      `${display.toLowerCase()} visa requirements 2026`,
-      `${display.toLowerCase()} entry requirements`,
-      `${display.toLowerCase()} tourist visa`,
-      `${display.toLowerCase()} visa on arrival`,
-      `${country.name.toLowerCase()} visa free countries`,
-      `countries that can visit ${country.name.toLowerCase()} without visa`,
-      `how many countries can visit ${country.name.toLowerCase()} without visa`,
-      `${country.name.toLowerCase()} visa policy 2026`,
-      `${country.name.toLowerCase()} entry requirements 2026`,
-    ],
     openGraph: {
       title,
       description,
@@ -469,13 +456,14 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   {alias ? <>Entry Rules Under {country.name} Visa Policy</> : <>Entry Rules &amp; Visa-Free Access by Passport</>}
                 </span>
               </h1>
-              {/* The openness judgment lives in the intro paragraph below;
-                  stating it here too would say the same thing twice. */}
-              <p className="mono mt-3 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
-                {policyTracked
-                  ? <>{plural(vfCount, "nationality", "nationalities")} admitted visa-free</>
-                  : <>visa policy not published as an enumerated list · not yet tracked</>}
-              </p>
+              {/* The openness judgment lives in the intro paragraph below, and
+                  the visa-free count lives in the stat table below - stating
+                  either here too would say the same thing twice. */}
+              {!policyTracked && (
+                <p className="mono mt-3 text-[11px] font-medium uppercase tracking-[0.15em] text-stamp">
+                  visa policy not published as an enumerated list · not yet tracked
+                </p>
+              )}
             </div>
             {alias && (
               <p className="text-body mt-4 max-w-2xl rounded-[2px] border border-line bg-paper-2/70 px-3.5 py-2.5 text-ink-soft">

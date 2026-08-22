@@ -58,20 +58,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "visa from qatar",
-    "visa from dubai",
-    "uk visa from qatar",
-    "schengen visa from uae",
-    "applying for a visa as an expat",
-    "visa from country of residence",
-    "uk visit visa from qatar",
-    "us visa from saudi arabia",
-    "visa application for gulf residents",
-    "can i apply for a visa where i live",
-    "schengen visa from dubai",
-    "visa for expats gcc",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/applying-from-your-country-of-residence" },
   openGraph: {
     title,

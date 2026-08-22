@@ -80,20 +80,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "thailand visa changes 2026",
-    "thailand 60 day visa free ending",
-    "thailand 30 day visa exemption",
-    "thailand visa free 2026",
-    "thailand visa exemption new rules",
-    "thailand visa for indians 2026",
-    "thailand india visa free 30 days",
-    "thailand visa on arrival countries 2026",
-    "when does thailand 30 day visa start",
-    "thailand royal gazette visa exemption",
-    "thailand 15 day visa exemption",
-    "thailand visa rules july 2026",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/thailand-visa-changes-2026" },
   openGraph: {
     title,

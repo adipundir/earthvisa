@@ -44,21 +44,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "etias",
-    "etias 2026",
-    "etias for us citizens",
-    "what is etias",
-    "etias application",
-    "etias requirements",
-    "is etias a visa",
-    "etias for uk citizens",
-    "etias for canadian citizens",
-    "etias for australian citizens",
-    "etias countries list",
-    "do i need etias",
-    "eu travel authorisation",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/etias" },
   openGraph: {
     title,
@@ -126,15 +111,15 @@ export default function EtiasGuidePage() {
     },
     {
       q: "When does ETIAS start?",
-      a: "No fixed date yet - the rollout follows the EU Entry/Exit System (EES) and has been postponed several times; see the status note above and the EU's tracker at travel-europe.europa.eu for the current timeline.",
+      a: "Not yet fixed - see the status note above for the EU's current rollout timeline.",
     },
     {
       q: "How much does ETIAS cost?",
-      a: "The fee is not yet finalised - the EU has revised it during rollout planning, with exemptions planned for some age groups; see the status note above for where the confirmed figure will appear first.",
+      a: "Not yet finalised - see the status note above for where the confirmed fee will be published first.",
     },
     {
       q: `Which countries will require ETIAS?`,
-      a: `ETIAS will cover the Schengen area - ${schengen.length} countries in our dataset's Schengen group, including France, Germany, Spain, Italy and the Netherlands. Cyprus, an EU member that is not yet part of Schengen, is also on the EU's list.`,
+      a: `The Schengen area - see "Where ETIAS Will Apply" above for the full country list and the Cyprus caveat.`,
     },
     {
       q: "Do I need ETIAS if I already need a Schengen visa?",

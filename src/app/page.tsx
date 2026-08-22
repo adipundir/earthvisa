@@ -1,7 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PassportExplorer from "@/components/PassportExplorer";
-import { dataset } from "@/lib/dataset";
+import { dataset, nameFor } from "@/lib/dataset";
+import type { AccessLevel } from "@/lib/types";
+
+// Score = visa-free + visa on arrival + eTA, e-visa never counted - same rule
+// as /rankings (see that page's buildRows for the full ranking). This FAQ only
+// needs the top of that order, computed here rather than hardcoded so it can
+// never drift from what /rankings actually shows.
+function topPassports() {
+  const scored = Object.entries(dataset.passportAccess)
+    .map(([iso3, edges]) => {
+      const counts: Record<AccessLevel, number> = { visa_free: 0, visa_on_arrival: 0, eta: 0, e_visa: 0 };
+      for (const e of edges) counts[e.level]++;
+      return { name: nameFor(iso3), score: counts.visa_free + counts.visa_on_arrival + counts.eta };
+    })
+    .sort((a, b) => b.score - a.score);
+  const top1 = scored[0];
+  const tied = scored.filter((r) => r.score === top1.score);
+  return { top1, tied };
+}
 
 export const metadata: Metadata = {
   title: {
@@ -47,6 +65,7 @@ export default function Home() {
   const { meta } = dataset;
   // Year for dated FAQ copy/JSON-LD - derived from the dataset so it can't go stale.
   const dataYear = meta.lastUpdated.slice(0, 4);
+  const { top1, tied } = topPassports();
 
   // One QA array feeds the visible accordions AND the FAQPage JSON-LD, so they
   // can never drift apart. Ranking/program questions live on /rankings and
@@ -58,11 +77,11 @@ export default function Home() {
     },
     {
       q: `Which passport gives the most visa-free countries in ${dataYear}?`,
-      a: `As of ${dataYear}, European passports from Luxembourg, Germany, France, Italy, Spain, Denmark, Finland, Netherlands, and several others consistently rank at the top, offering visa-free or visa-on-arrival access to 170+ destinations. Japanese and Singaporean passports are also among the world's strongest.`,
+      a: `As of ${dataYear}, the ${top1.name} passport${tied.length > 1 ? ` (tied with ${tied.length - 1} other${tied.length > 2 ? "s" : ""})` : ""} scores highest in our index, with visa-free, visa-on-arrival and eTA access to ${top1.score} destinations combined. See the full ranking, including how e-visas are tracked separately, at /rankings.`,
     },
     {
       q: "Can holding a US visa increase my travel options?",
-      a: "Yes. Holding a valid US visa (B1/B2 tourist or business visa, or a US Green Card) unlocks additional visa-free or visa-on-arrival access to dozens of countries including Mexico, Costa Rica, Guatemala, Albania, Kosovo, and several others - destinations that may otherwise require a visa for your nationality.",
+      a: "Yes. Holding a valid US visa (B1/B2 tourist or business visa, or a US Green Card) unlocks additional visa-free or visa-on-arrival access to dozens of countries including Mexico, Costa Rica, Guatemala, and Albania - destinations that may otherwise require a visa for your nationality. The exact list depends on your own nationality, since these rules are scoped per passport, not universal.",
     },
     {
       q: "What is the difference between visa-free and visa on arrival?",

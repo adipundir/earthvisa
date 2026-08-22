@@ -80,9 +80,8 @@ export default function PrivacyPage() {
 
           <h3 className="pt-2 text-[16.5px] font-semibold text-ink">When you simply browse the website</h3>
           <p>
-            Our host, Vercel, tells us the two-letter country your request came from so we can guess
-            your passport. We do not store it. We use Vercel Analytics, which counts page views
-            without cookies and without profiling individuals. On some pages we also use Microsoft
+            Our content delivery network, Amazon CloudFront, tells us the two-letter country your
+            request came from so we can guess your passport. We do not store it. On some pages we use Microsoft
             Clarity, which records how people scroll and click and can capture a replay of a browsing
             session, so we can see where the site confuses people. You can opt out of Clarity at{" "}
             <a
@@ -122,12 +121,13 @@ export default function PrivacyPage() {
         <section className="space-y-3">
           <h2 className="text-[20px] font-bold text-ink">Who else processes your data</h2>
           <ul className="ml-5 list-disc space-y-1.5">
-            <li>Vercel, for hosting and privacy-friendly analytics.</li>
-            <li>Neon, for the database that stores accounts, reports and sign-ups.</li>
-            <li>Resend, for sending email such as profile confirmations.</li>
+            <li>
+              Amazon Web Services, for hosting, the database that stores accounts, reports and
+              sign-ups, email such as profile confirmations, and delivery of SMS verification codes.
+              Our servers and database are in the Mumbai (ap-south-1) region.
+            </li>
             <li>Microsoft Clarity, for website behaviour analytics and session replay.</li>
             <li>Apple, if you use Sign in with Apple.</li>
-            <li>An SMS provider, to deliver verification codes to your phone.</li>
           </ul>
           <p>We do not sell your data, and we do not share it for advertising.</p>
         </section>

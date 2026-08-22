@@ -287,7 +287,17 @@ function credId(cr) {
   const isPR = type === "permanent_resident" || type === "residence_permit" ||
     /green card|permanent resident|residence permit|residence card|long-term resident|\bilr\b|settle|residency|\bpr\b/.test(sub);
   if (type === "oci" || /\boci\b|overseas citizen of india/.test(iss + " " + sub)) return "OCI";
-  if (/united states|u\.?s\.?\b|america/.test(iss)) return isPR ? "US_GREEN_CARD" : "US_VISA";
+  // The leading \b is load-bearing. Without it, `u\.?s\.?\b` matches the TAIL of
+  // "cyprus", "belarus" and "mauritius" - and because this test runs before the
+  // EU branch below, seven Cyprus-issued permits and two Belarusian ones were
+  // being published as US visas and US green cards. That is a false-permissive
+  // answer in the worst direction: it told anyone holding a US visa that it
+  // opened a border which in truth only a Cyprus permit opens.
+  //
+  // `a?` is here because the old pattern also FAILED to match a bare "USA"
+  // (the trailing "a" defeated the word boundary), which silently demoted a
+  // real US credential to OTHER_CRED.
+  if (/\bunited states\b|\bu\.?s\.?a?\b|\bamerica/.test(iss)) return isPR ? "US_GREEN_CARD" : "US_VISA";
   if (/canada/.test(iss)) return isPR ? "CA_PR" : "CA_VISA";
   if (/united kingdom|britain|\buk\b/.test(iss)) return isPR ? "UK_PR" : "UK_VISA";
   if (/australia/.test(iss)) return isPR ? "AU_PR" : "AU_VISA";
@@ -638,7 +648,17 @@ for (const f of files) {
     const level = ca.level;
     if (!LEVEL_RANK[level]) continue;
     const conditions = ca.conditions || "";
-    const scope = resolveNatList(ca.eligible_nationalities);
+    let scope = resolveNatList(ca.eligible_nationalities);
+    // "any nationality EXCEPT these" - a credential-basis grant can carve out specific
+    // nationalities via a structured excluded_nationalities list (set by hand once the
+    // exclusion is confirmed from an official source; free text in `conditions` alone
+    // is not enough - the compute engine never reads prose, only nationalityScope). An
+    // "any" grant with an unresolvable/unenumerated exclusion should not appear here at
+    // all - see EGY/JAM (resolvable, listed) vs GTM/SLV (unenumerable, entry omitted).
+    if (scope === null && ca.basis === "credential" && ca.excluded_nationalities) {
+      const excluded = new Set(resolveNatList(ca.excluded_nationalities) || []);
+      if (excluded.size) scope = ALL_ISO3.filter((x) => !excluded.has(x));
+    }
     if (ca.basis === "passport_type") {
       const types = (Array.isArray(ca.passport_types) ? ca.passport_types : []).filter((t) => t !== "ordinary" && t !== "any");
       const pts = types.length ? types : ["diplomatic", "service"];
@@ -671,6 +691,10 @@ for (const f of files) {
   // CBI
   const c = d.cbi || {};
   if (c.has_program) {
+    // structured excluded_nationalities (set by hand once a flat, unconditional ban is
+    // confirmed from an official source - see KNA) keeps a program off a banned nationality's
+    // passport page even though the CBI entry itself is otherwise nationality-agnostic
+    const cbiExcluded = resolveNatList(c.excluded_nationalities);
     cbi.push({
       iso3, name: meta.name, region: meta.region,
       program_name: c.program_name || "Citizenship by Investment",
@@ -679,6 +703,7 @@ for (const f of files) {
       processing_time: c.processing_time || "", dual_citizenship_allowed: c.dual_citizenship_allowed ?? null,
       residency_required: c.residency_required ?? null, notes: c.notes || "",
       verified: c._verified === true,
+      ...(cbiExcluded && cbiExcluded.length ? { excludedNationalities: cbiExcluded } : {}),
     });
   }
   // RBI

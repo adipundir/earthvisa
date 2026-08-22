@@ -22,16 +22,21 @@ export interface RankingRow {
 type SortKey = "rank" | "name" | "visaFree" | "visaOnArrival" | "eta" | "eVisa" | "score" | "total";
 type SortDir = "asc" | "desc";
 
-const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
+// `mobile: false` drops the column below sm. The table is 686px wide inside a
+// 348px viewport, so without this every numeric column - Score included, the one
+// the ranking is ordered by - sat off-screen behind a sideways swipe.
+const COLUMNS: { key: SortKey; label: string; numeric: boolean; mobile?: false }[] = [
   { key: "rank", label: "Rank", numeric: true },
   { key: "name", label: "Passport", numeric: false },
   { key: "visaFree", label: "Visa-free", numeric: true },
-  { key: "visaOnArrival", label: "Visa on arrival", numeric: true },
-  { key: "eta", label: "eTA", numeric: true },
-  { key: "eVisa", label: "e-Visa", numeric: true },
+  { key: "visaOnArrival", label: "Visa on arrival", numeric: true, mobile: false },
+  { key: "eta", label: "eTA", numeric: true, mobile: false },
+  { key: "eVisa", label: "e-Visa", numeric: true, mobile: false },
   { key: "score", label: "Score", numeric: true },
-  { key: "total", label: "Total reach", numeric: true },
+  { key: "total", label: "Total reach", numeric: true, mobile: false },
 ];
+
+const HIDE_SM = "hidden sm:table-cell";
 
 /** Lowercase and strip diacritics so "cote d'ivoire" matches "Côte d'Ivoire". */
 function fold(s: string): string {
@@ -60,8 +65,9 @@ const SEARCH_ALIASES: Record<string, string[]> = {
 // Header underline and sticky-edge rules are box-shadows because collapsed
 // table borders do not travel with position:sticky cells.
 const TH_BASE = "sticky top-0 z-10 bg-surface shadow-[0_1px_0_var(--color-hair-strong)]";
-const TH_STICKY_LEFT = "left-0 z-20 w-20 min-w-20";
-const TH_STICKY_NAME = "left-20 z-20 min-w-44 shadow-[0_1px_0_var(--color-hair-strong),1px_0_0_var(--color-hair)]";
+const TH_STICKY_LEFT = "left-0 z-20 w-12 min-w-12 sm:w-20 sm:min-w-20";
+const TH_STICKY_NAME =
+  "left-12 z-20 w-[150px] max-w-[150px] shadow-[0_1px_0_var(--color-hair-strong),1px_0_0_var(--color-hair)] sm:left-20 sm:w-auto sm:min-w-44 sm:max-w-none";
 const TD_STICKY = "sticky z-[1] bg-surface transition group-hover/row:bg-ground";
 
 /**
@@ -114,8 +120,11 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
         />
       </label>
 
+      {/* Height cap stays on mobile - without it 199 rows expand inline and the
+          page roughly doubles in scroll depth, which is worse than the nested
+          scroll region. The mobile win here is the hidden columns, not this. */}
       <div className="mt-4 max-h-[75vh] overflow-auto rounded-xl border border-hair bg-surface">
-        <table className="w-full min-w-[640px] border-collapse text-left">
+        <table className="w-full table-fixed border-collapse text-left sm:min-w-[640px] sm:table-auto">
           <thead>
             <tr>
               {COLUMNS.map((col) => {
@@ -125,14 +134,14 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
                     key={col.key}
                     scope="col"
                     aria-sort={active ? (sortDir === "asc" ? "ascending" : "descending") : "none"}
-                    className={`${TH_BASE} ${
+                    className={`${TH_BASE} ${col.mobile === false ? HIDE_SM : ""} ${
                       col.key === "rank" ? TH_STICKY_LEFT : col.key === "name" ? TH_STICKY_NAME : ""
                     } ${col.numeric && col.key !== "rank" ? "text-right" : "text-left"}`}
                   >
                     <button
                       type="button"
                       onClick={() => toggleSort(col.key)}
-                      className={`inline-flex min-h-[44px] w-full cursor-pointer items-center gap-1.5 px-3.5 py-2 text-[13px] font-semibold transition hover:text-ink ${
+                      className={`inline-flex min-h-[44px] w-full cursor-pointer items-center gap-1.5 px-2 py-2 text-[13px] font-semibold transition hover:text-ink sm:px-3.5 ${
                         col.numeric && col.key !== "rank" ? "justify-end" : "justify-start"
                       } ${active ? "text-ink" : "text-ink-2"}`}
                     >
@@ -149,24 +158,26 @@ export default function RankingsTable({ rows }: { rows: RankingRow[] }) {
           <tbody className="divide-y divide-hair">
             {visible.map((r) => (
               <tr key={r.iso3} className="group/row transition hover:bg-ground">
-                <td className={`${TD_STICKY} left-0 px-3.5 py-2 text-sm font-medium tabular-nums text-ink-2`}>#{r.rank}</td>
-                <td className={`${TD_STICKY} left-20 px-3.5 py-1 shadow-[1px_0_0_var(--color-hair)]`}>
+                <td className={`${TD_STICKY} left-0 px-2 py-2 text-sm font-medium tabular-nums text-ink-2 sm:px-3.5`}>#{r.rank}</td>
+                <td className={`${TD_STICKY} left-12 px-2 py-1 shadow-[1px_0_0_var(--color-hair)] sm:left-20 sm:px-3.5`}>
                   <Link
                     href={`/passport/${r.slug}`}
-                    className="group flex min-h-[44px] items-center gap-2.5"
+                    className="group flex min-h-[44px] w-full min-w-0 items-center gap-2.5"
                   >
-                    <span className="text-lg">{r.flag}</span>
-                    <span className="text-sm font-semibold text-ink transition group-hover:text-accent">
+                    <span className="shrink-0 text-lg">{r.flag}</span>
+                    {/* Truncated so a long passport name cannot widen the sticky
+                        column and push Score back off a 348px screen. */}
+                    <span className="truncate text-sm font-semibold text-ink transition group-hover:text-accent">
                       {r.name}
                     </span>
                   </Link>
                 </td>
                 <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-verdict">{r.visaFree}</td>
-                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-voa">{r.visaOnArrival}</td>
-                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-online">{r.eta}</td>
-                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-online/80">{r.eVisa}</td>
+                <td className={`${HIDE_SM} px-3.5 py-2 text-right text-sm font-medium tabular-nums text-voa`}>{r.visaOnArrival}</td>
+                <td className={`${HIDE_SM} px-3.5 py-2 text-right text-sm font-medium tabular-nums text-online`}>{r.eta}</td>
+                <td className={`${HIDE_SM} px-3.5 py-2 text-right text-sm font-medium tabular-nums text-online/80`}>{r.eVisa}</td>
                 <td className="px-3.5 py-2 text-right text-sm font-bold tabular-nums text-ink">{r.score}</td>
-                <td className="px-3.5 py-2 text-right text-sm font-medium tabular-nums text-ink-2">{r.total}</td>
+                <td className={`${HIDE_SM} px-3.5 py-2 text-right text-sm font-medium tabular-nums text-ink-2`}>{r.total}</td>
               </tr>
             ))}
             {visible.length === 0 && (

@@ -273,6 +273,17 @@ const detail = {
   // Nationality-scoped process notes for corridors that genuinely require a visa
   // in advance, where no access edge exists at all.
   advanceVisaNotes: dataset.advanceVisaNotes,
+  // Investment migration: citizenship by investment, residency by investment,
+  // and fast-track naturalisation. 22 + 383 + 240 programs, 117KB brotli.
+  //
+  // In DETAIL rather than core, deliberately. compute-core.ts returns these from
+  // computeWith(), but it only FILTERS them (dropping your own country), so they
+  // are not part of the reach computation in any meaningful sense. Carrying them
+  // in core would add 0.57MB to every launch decode for a screen most sessions
+  // never open.
+  cbi: dataset.cbi,
+  rbi: dataset.rbi,
+  fastTrack: dataset.fastTrack,
   visaFees,
   proofOfFunds,
   // Fees are authored in their original currency; this snapshot is what turns

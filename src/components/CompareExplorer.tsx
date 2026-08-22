@@ -13,7 +13,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { isoToFlag, nameToSlug } from "@/lib/format";
 import {
   flagFor,
@@ -24,7 +24,7 @@ import {
   type CoreCountry,
   type ExplorerCore,
 } from "@/lib/explorer-data";
-import { computeWith, type CombinedEdge } from "@/lib/compute-core";
+import { computeWith, type CombinedEdge, type PassportResult } from "@/lib/compute-core";
 import type { AccessLevel } from "@/lib/types";
 
 // Hardcoded so the empty state is fully server-rendered (names must match the
@@ -44,7 +44,7 @@ interface CoreLite {
 
 // ── Grid model (mirrors the landing's tile vocabulary) ───────────────────────
 
-type TileKind = "free" | "voa" | "online" | "req";
+type TileKind = "free" | "fom" | "voa" | "online" | "req";
 
 function levelKind(level: AccessLevel): TileKind {
   if (level === "visa_free") return "free";
@@ -52,8 +52,13 @@ function levelKind(level: AccessLevel): TileKind {
   return "online"; // eta + e_visa
 }
 
+// "fom" gets the same neutral/bordered treatment as PassportExplorer.tsx uses
+// for its free-movement-only tiles - a full green fill would read identically
+// to an ordinary visa-free grant, but the underlying right is broader (and not
+// a bilateral edge at all).
 const ONLY_TILE_CLASS: Record<TileKind, string> = {
   free: "tile tile-free",
+  fom: "tile tile-voa",
   voa: "tile tile-voa",
   online: "tile tile-online",
   req: "tile tile-req",
@@ -291,6 +296,31 @@ function DestGrid({
   );
 }
 
+// Freedom-of-movement destinations (fellow Schengen/CARICOM/EU/... bloc
+// members) are a real grant but never a bilateral access edge, so they never
+// show up in `.reach` - a passport whose access runs through a bloc (e.g.
+// Switzerland via Schengen) had every fellow member silently missing from
+// every stat and grid on this page. Fold freedomOfMovement into each side's
+// destination map before anything downstream reads it, mirroring the
+// reach/fom merge PassportExplorer.tsx already does for its tile list.
+interface DestInfo { edge?: CombinedEdge; isFom: boolean }
+
+function extendedReach(r: PassportResult): Map<string, DestInfo> {
+  const covered = new Set(r.reach.map((e) => e.dest));
+  const map = new Map<string, DestInfo>();
+  for (const e of r.reachByLevel.visa_free) map.set(e.dest, { edge: e, isFom: false });
+  for (const f of r.freedomOfMovement) if (!covered.has(f.dest)) map.set(f.dest, { isFom: true });
+  for (const e of r.reachByLevel.visa_on_arrival) map.set(e.dest, { edge: e, isFom: false });
+  for (const e of [...r.reachByLevel.eta, ...r.reachByLevel.e_visa]) map.set(e.dest, { edge: e, isFom: false });
+  return map;
+}
+
+function destItem(dest: string, info: DestInfo, via: string): GridItem {
+  return info.isFom
+    ? { iso3: dest, via, kind: "fom", sub: { text: "Freedom of movement", cls: "text-verdict" } }
+    : { iso3: dest, edge: info.edge, via, kind: levelKind(info.edge!.level), sub: onlySub(info.edge!) };
+}
+
 // ── Main component ───────────────────────────────────────────────────────────
 
 export default function CompareExplorer() {
@@ -334,35 +364,37 @@ export default function CompareExplorer() {
     if (snap.selected.join("|") !== pair.join("|")) return null;
     const rA = computeWith(snap.data, [a], [], {});
     const rB = computeWith(snap.data, [b], [], {});
-    const setA2 = new Set(rA.reach.map((e) => e.dest));
-    const setB2 = new Set(rB.reach.map((e) => e.dest));
-    const levelA = new Map(rA.reach.map((e) => [e.dest, e.level]));
-    const levelB = new Map(rB.reach.map((e) => [e.dest, e.level]));
+    const mapA = extendedReach(rA);
+    const mapB = extendedReach(rB);
 
-    const onlyA: GridItem[] = rA.reach
-      .filter((e) => !setB2.has(e.dest))
-      .map((e) => ({ iso3: e.dest, edge: e, via: a, kind: levelKind(e.level), sub: onlySub(e) }));
-    const onlyB: GridItem[] = rB.reach
-      .filter((e) => !setA2.has(e.dest))
-      .map((e) => ({ iso3: e.dest, edge: e, via: b, kind: levelKind(e.level), sub: onlySub(e) }));
-    const both: GridItem[] = rA.reach
-      .filter((e) => setB2.has(e.dest))
-      .map((e) => {
-        const bothVf = levelA.get(e.dest) === "visa_free" && levelB.get(e.dest) === "visa_free";
+    const onlyA: GridItem[] = [...mapA.entries()]
+      .filter(([dest]) => !mapB.has(dest))
+      .map(([dest, info]) => destItem(dest, info, a));
+    const onlyB: GridItem[] = [...mapB.entries()]
+      .filter(([dest]) => !mapA.has(dest))
+      .map(([dest, info]) => destItem(dest, info, b));
+    const both: GridItem[] = [...mapA.entries()]
+      .filter(([dest]) => mapB.has(dest))
+      .map(([dest, infoA]) => {
+        const infoB = mapB.get(dest)!;
+        const bothVf = !infoA.isFom && !infoB.isFom && infoA.edge?.level === "visa_free" && infoB.edge?.level === "visa_free";
+        const bothFom = infoA.isFom && infoB.isFom;
         return {
-          iso3: e.dest,
-          edge: e,
+          iso3: dest,
+          edge: infoA.edge,
           via: a,
           kind: "req" as TileKind, // neutral surface for the shared list
           sub: bothVf
             ? { text: "Visa-free for both", cls: "text-verdict" }
+            : bothFom
+            ? { text: "Freedom of movement for both", cls: "text-verdict" }
             : { text: "Both reach", cls: "text-ink-3" },
         };
       });
 
     return {
-      a: { iso3: a, reach: rA.reach.length, vf: rA.reachByLevel.visa_free.length },
-      b: { iso3: b, reach: rB.reach.length, vf: rB.reachByLevel.visa_free.length },
+      a: { iso3: a, reach: mapA.size, vf: rA.reachByLevel.visa_free.length },
+      b: { iso3: b, reach: mapB.size, vf: rB.reachByLevel.visa_free.length },
       onlyA,
       onlyB,
       both,

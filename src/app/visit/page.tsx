@@ -4,11 +4,6 @@ import DestinationExplorer from "@/components/DestinationExplorer";
 export const metadata: Metadata = {
   title: "Entry Check - Do I Need a Visa?",
   description: "Find out instantly if you need a visa for your destination. Enter where you want to go and your passport - get the exact visa requirement, stay duration, and conditions from official sources.",
-  keywords: [
-    "do I need a visa", "visa requirements by destination", "entry requirements checker",
-    "passport visa checker", "need visa for country", "travel visa check",
-    "can I travel without visa", "visa free travel checker"
-  ],
   alternates: { canonical: "https://earthvisa.in/visit" },
   openGraph: {
     title: "Entry Check - Do I Need a Visa? | Earth Visa",

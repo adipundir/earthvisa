@@ -76,18 +76,6 @@ const description = `Work visa and employment permit routes in 2026 across ${cou
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "work visa",
-    "work visa countries",
-    "work permit",
-    "employment visa",
-    "skilled worker visa",
-    "intra-company transfer visa",
-    "work visa 2026",
-    "work visa requirements",
-    "employer sponsored visa",
-    "self employed visa",
-  ],
   alternates: { canonical: "https://earthvisa.in/programs/work-visa" },
   openGraph: {
     title,

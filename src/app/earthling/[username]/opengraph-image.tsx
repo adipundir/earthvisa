@@ -1,5 +1,5 @@
 import { dataset } from "@/lib/dataset";
-import { getEarthling } from "@/lib/earthling/store";
+import { earthlingRank, getEarthling } from "@/lib/earthling/store";
 import { countryOgImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og";
 
 export const alt = "Earthling reach card";
@@ -22,6 +22,7 @@ export default async function Image({ params }: { params: Promise<{ username: st
   }
 
   const primary = dataset.allCountries.find((c) => c.iso3 === e.passports[0]);
+  const rank = await earthlingRank(e.seq);
   return countryOgImage({
     iso2: primary?.iso2 ?? "",
     name: `@${e.username}`,
@@ -29,7 +30,7 @@ export default async function Image({ params }: { params: Promise<{ username: st
     stats: [
       { label: "Destinations", value: e.reach },
       { label: "Beats", value: `${e.percentile}% of passports` },
-      { label: "Earthling", value: `#${e.seq}` },
+      { label: "Earthling", value: `#${rank}` },
     ],
   });
 }

@@ -24,10 +24,12 @@ export default function Navbar() {
           href="/"
           aria-label="Earth Visa - home"
           aria-current={path === "/" ? "page" : undefined}
-          className="flex shrink-0 items-center gap-2 text-ink transition hover:opacity-70"
+          className="flex min-h-[44px] shrink-0 items-center gap-2 text-ink transition hover:opacity-70"
         >
           <BrandMark size={26} className="shrink-0" />
-          <span className="text-[18px] font-bold tracking-tight">Earth Visa</span>
+          {/* The wordmark costs 91px, which on a 390px screen pushed three of the
+              five rail links off-screen. The mark alone still links home. */}
+          <span className="hidden text-[18px] font-bold tracking-tight sm:inline">Earth Visa</span>
         </Link>
 
         {/* Horizontally scrollable link rail (scrollbar hidden; right-edge fade

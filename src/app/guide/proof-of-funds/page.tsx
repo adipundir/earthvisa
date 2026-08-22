@@ -12,20 +12,6 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: { absolute: `${TITLE} | Earth Visa` },
   description: DESCRIPTION,
-  keywords: [
-    "proof of funds for visa",
-    "how much bank balance for schengen visa",
-    "how much money to show for visa",
-    "bank statement for visa",
-    "is 2 lakhs enough for schengen visa",
-    "proof of funds schengen visa",
-    "minimum bank balance for uk visa",
-    "how much bank balance for us visa",
-    "proof of funds for canada visa",
-    "show money for visa application",
-    "financial requirements for visa",
-    "how much savings for schengen visa",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/proof-of-funds" },
   openGraph: { title: TITLE, description: DESCRIPTION, url: "https://earthvisa.in/guide/proof-of-funds", type: "article" },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
@@ -35,7 +21,13 @@ export const metadata: Metadata = {
 const flagIso = (key: string) => (key === "schengen" ? undefined : key);
 
 const schengen = pofFor("schengen");
+// EUR-only: a few members (Czechia CZK, Poland PLN, Switzerland/Liechtenstein
+// CHF) publish their daily rate in their own currency, not euros. Mixing those
+// raw numbers into a euro min/max would overstate the range by 20x+ (Czechia's
+// CZK 1,565 is roughly EUR 60-65, not "EUR 1565") - the per-member table below
+// already shows each country's real currency, so this FAQ range stays EUR-only.
 const schengenDaily = (schengen?.official.per_member ?? [])
+  .filter((m) => m.currency === "EUR")
   .map((m) => m.amount)
   .filter((a): a is number => a != null);
 const schengenLow = schengenDaily.length ? Math.min(...schengenDaily) : null;
@@ -137,7 +129,9 @@ export default function ProofOfFundsHub() {
               </h2>
               <p className="text-body mt-2 max-w-2xl text-ink-soft">
                 Each Schengen country sets its own official daily amount you must prove for the length of your stay.
-                Multiply the daily rate by your number of days for the official minimum.
+                Multiply the daily rate by your number of days for the official minimum. Cyprus is included too -
+                it is an EU member but not yet part of Schengen, and applies the same funds rule to its own
+                national visa.
               </p>
               <p className="mono-chrome mt-4 sm:hidden">
                 Swipe sideways for the notes column <span aria-hidden>→</span>

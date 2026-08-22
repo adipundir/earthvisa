@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { isoToFlag } from "@/lib/format";
 import { buildCredentialGroups, CRED_CHIP_LABEL, GROUP_ISO3 } from "@/components/DestinationExplorer";
 import type { Credential } from "@/lib/types";
@@ -52,7 +52,7 @@ export default function EarthlingClaim({ countries, credentials }: {
   const [claimError, setClaimError] = useState<string | null>(null);
   const [claimed, setClaimed] = useState<
     | { pending: true; username: string; email: string; reach: number; percentile: number }
-    | { pending?: false; username: string; reach: number; percentile: number; seq: number }
+    | { pending?: false; username: string; reach: number; percentile: number; rank: number }
     | null
   >(null);
   const [copied, setCopied] = useState(false);
@@ -187,7 +187,7 @@ export default function EarthlingClaim({ countries, credentials }: {
   if (claimed) {
     return (
       <div className="rounded-xl border border-hair bg-surface px-6 py-10 text-center">
-        <p className="text-[13px] font-semibold text-ink-2">Your Earthling ID - citizen of Earth #{claimed.seq}</p>
+        <p className="text-[13px] font-semibold text-ink-2">Your Earthling ID - citizen of Earth #{claimed.rank}</p>
         <h2 className="mt-2 text-[26px] font-bold tracking-tight text-ink">@{claimed.username}</h2>
         <p className="stat-num mt-6 text-[clamp(56px,9vw,84px)] text-ink">{claimed.reach}</p>
         <p className="mt-2 text-[15px] text-ink-2">destinations reachable - more reach than {claimed.percentile}% of the world&apos;s passports</p>

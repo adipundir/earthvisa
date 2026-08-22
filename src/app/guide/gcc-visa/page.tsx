@@ -50,19 +50,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "gcc unified visa",
-    "gcc grand tours visa",
-    "gcc visa",
-    "unified gulf visa",
-    "gcc tourist visa",
-    "one visa for gulf countries",
-    "gcc unified visa 2026",
-    "gcc unified visa launch",
-    "gulf schengen visa",
-    "uae saudi qatar oman bahrain kuwait visa",
-    "gcc visa for indian",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/gcc-visa" },
   openGraph: {
     title,

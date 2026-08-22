@@ -64,26 +64,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "esta",
-    "esta 2026",
-    "esta application",
-    "esta requirements",
-    "what is esta",
-    "is esta a visa",
-    "esta fee",
-    "esta cost",
-    "visa waiver program",
-    "vwp countries",
-    "esta denied",
-    "esta revoked",
-    "esta cuba",
-    "esta iran travel",
-    "visa waiver program improvement act",
-    "esta dual nationality",
-    "esta validity",
-    "do i need an esta",
-  ],
   alternates: { canonical: "https://earthvisa.in/guide/esta" },
   openGraph: {
     title,
@@ -142,27 +122,27 @@ export default function EstaGuidePage() {
   const faqs = [
     {
       q: "Is ESTA a visa?",
-      a: "No. CBP is explicit that an approved ESTA is not a visa and does not meet the legal or regulatory requirements to serve in place of one where a visa is required. ESTA is an automated eligibility check for travellers who are already visa-exempt under the Visa Waiver Program. If your passport is not in the VWP, ESTA never applies to you and you apply for a visa instead.",
+      a: "No - ESTA is an automated eligibility check, not a visa. See \"ESTA Is Not a Visa\" above for what that distinction actually means.",
     },
     {
       q: "Can travelling to another country stop me from getting an ESTA?",
-      a: "Yes, and this is the single most misunderstood rule in the programme. Under the Visa Waiver Program Improvement and Terrorist Travel Prevention Act of 2015, having been present in Iraq, Syria, Iran, Sudan, Libya, Somalia, Yemen or North Korea at any time on or after 1 March 2011 makes you ineligible to travel under the VWP. CBP applies the same treatment to presence in Cuba on or after 12 January 2021. The trigger is presence, not the purpose of the trip, so tourism, journalism, aid work and a family visit all count the same.",
+      a: "Yes - prior presence in specific countries disqualifies you from the Visa Waiver Program regardless of trip purpose. See \"The Travel History That Disqualifies You\" above for the full list, dates and narrow exceptions.",
     },
     {
       q: "Can an ESTA I already hold be revoked?",
-      a: "Yes. CBP states that an approved ESTA may be revoked at any time. For Cuba specifically CBP says so directly: if an ESTA has already been approved and it is later determined that the traveller was present in Cuba on or after 12 January 2021, or holds dual nationality with both a VWP country and Cuba, the ESTA will be revoked. An authorisation approved before a disqualifying trip is not a shield.",
+      a: "Yes - CBP can revoke an approved ESTA at any time, including over a disqualifying trip taken after approval. See \"An Approved ESTA Can Be Revoked\" above for how that plays out.",
     },
     {
       q: "Does dual nationality affect my ESTA?",
-      a: "It can, and the list is different from the travel list. Nationals of VWP countries who are also nationals of Iraq, Syria, Iran, North Korea or Sudan are ineligible to travel under the VWP, and CBP applies the same to dual nationality with Cuba. Critically, the military and government-official exceptions that exist for the travel restriction do not apply to the dual-nationality restriction at all.",
+      a: "Yes, against a shorter, separate list of countries than the travel-history rule, and without the military/official exceptions. See \"Dual Nationality: A Separate, Shorter List\" above for the full list.",
     },
     {
       q: "How long is an ESTA valid?",
-      a: "CBP states that ESTA approvals are typically granted for a two-year period or until the applicant's passport expires, whichever is sooner, and can be used for multiple trips in that window. The actual dates are shown on your approval, and CBP may issue a shorter term. A brand-new application and a new fee are required if you get a new passport, change your name, change your country of citizenship, or if the answer to any eligibility question changes.",
+      a: "Typically two years, or until your passport expires, whichever comes first. See \"Fee, Validity and When You Need a New One\" above for what triggers a fresh application.",
     },
     {
       q: "My ESTA was denied. What now?",
-      a: "An ESTA denial only closes the Visa Waiver Program route - it is not a bar on travelling to the United States. You apply for a nonimmigrant visa, normally a B-1/B-2 visitor visa, at a US embassy or consulate. CBP suggests keeping a copy of the denial or revocation: a traveller affected by the 2015 Act who has imminent business, medical or humanitarian travel may request an expedited visa appointment, though granting it is at the consulate's discretion.",
+      a: "A denial only closes the Visa Waiver Program route - you can still apply for a US visa. See \"If You Are Affected, You Can Still Travel\" above for the process and CBP's expedited-appointment tip.",
     },
     {
       q: "Do I need an ESTA if I already hold a US visa?",
