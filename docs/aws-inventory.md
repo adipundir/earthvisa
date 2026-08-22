@@ -85,3 +85,56 @@ ECR repositories `earthvisa-web` and `earthvisa-api` exist with scan-on-push.
 6. **Re-point the RDS security group when your IP changes.** The bootstrap rule
    pins one address, and a home connection moves. When the database suddenly
    times out and the app reports zero corridors, this is why — not the data.
+
+## 2026-08-22: what was done, and what is blocked
+
+Done, from a laptop, against the account as root:
+
+- **Schema.** `scripts/migrate.mjs` run against `earthvisa-db`: auth, earthling,
+  reports, subscribers, filing and the new enquiries schema all applied. The
+  filing schema was already there with one open corridor and two applications,
+  so this database is the live one.
+- **Application role.** `earthvisa_app` created in Postgres with a non-rotating
+  password (SELECT/INSERT/UPDATE/DELETE on every table, now and by default on
+  future ones). Its connection string is `/earthvisa/DATABASE_URL`
+  (SecureString); `/earthvisa/EMAIL_FROM` is `noreply@earthvisa.in`. The task
+  definition's Secrets list is therefore satisfiable.
+- **RDS security group.** The stale operator CIDR was replaced with the current
+  one (`122.161.51.157/32`, description "operator bootstrap - remove before
+  launch"). Still owed: remove it, `PubliclyAccessible=false`.
+- **Build pipeline.** `deploy.sh bootstrap` created stack `earthvisa-build`
+  (bucket `earthvisa-build-884681716487`, CodeBuild project
+  `earthvisa-web-build`). The source tree was packaged and uploaded.
+- **Certificates requested, pending DNS validation.** Publish these CNAMEs at
+  the DNS host, then both reach ISSUED on their own:
+
+  | name | value |
+  |---|---|
+  | `_5cad542f0960c6650abc06f553107bff.origin.earthvisa.in` | `_f49bbfbf1b0f6e89406ed153f7612bc5.jkddzztszm.acm-validations.aws` |
+  | `_38d3187630525cc0ce19eed93aea3050.earthvisa.in` | `_927a512b384691b4457c060a75dbe441.jkddzztszm.acm-validations.aws` |
+  | `_6e66783487c3f918c121d722d3cd6ffe.www.earthvisa.in` | `_9b5590513e97d667038c0c0e0632c57b.jkddzztszm.acm-validations.aws` |
+
+  `ORIGIN_CERT_ARN=arn:aws:acm:ap-south-1:884681716487:certificate/6d99f5ec-5f41-45c6-953c-5a3631402905`
+  `VIEWER_CERT_ARN=arn:aws:acm:us-east-1:884681716487:certificate/df6dd266-8cf8-440d-a385-f8e3cff1f73d`
+
+Blocked, and why:
+
+- **No compute.** Every relevant quota is applied at 0 against an AWS default
+  of 1 or more: CodeBuild concurrent builds (all environments), Fargate
+  On-Demand vCPUs, EC2 On-Demand and Spot vCPUs. `StartBuild` fails with
+  "Cannot have more than 0 builds in queue", and `RequestServiceQuotaIncrease`
+  is refused with "Please contact AWS Support". This is a new-account
+  restriction, not a configuration. Support case
+  `case-884681716487-muen-2026-b053967ca9f2aa18` asks for CodeBuild ARM/Large
+  and ARM/Medium to 1, Fargate to 8 vCPUs, EC2 to 8 vCPUs. Only Lambda (10
+  concurrent) is open, and the 2GB standalone image does not fit it.
+
+To resume once the case is answered and the certificates read ISSUED:
+
+```sh
+deploy/deploy.sh build      # the source is already in the bucket; this re-zips and builds
+export ORIGIN_CERT_ARN=... VIEWER_CERT_ARN=...   # the two ARNs above
+deploy/deploy.sh app
+deploy/deploy.sh migrate    # idempotent; the schema is already applied from the laptop
+deploy/deploy.sh edge
+```
