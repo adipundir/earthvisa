@@ -64,6 +64,30 @@ export const DEMONYM: Record<string, string> = {
   KHM: "Cambodian", LAO: "Lao", MNG: "Mongolian", UZB: "Uzbek", TJK: "Tajik",
   KGZ: "Kyrgyz", TKM: "Turkmen", BTN: "Bhutanese", MDV: "Maldivian", BRN: "Bruneian",
   PNG: "Papua New Guinean", FJI: "Fijian",
+  // Remaining tracked countries. Some are deliberately left out even though
+  // they're missing here - the map's own fallback ("Palau passport holders" /
+  // "citizens of Palau") reads fine for them, and a wrong demonym is worse
+  // than that fallback: Hong Kong and Liechtenstein already read naturally as
+  // bare adjectives ("Hong Kong citizens"); New Zealand does too, and its
+  // actual demonym "New Zealander" would break the "{demonym} citizens"
+  // pattern; Dominica's demonym is also "Dominican", which would collide with
+  // the Dominican Republic entry above; the Holy See has no everyday civic
+  // demonym.
+  TCD: "Chadian", NER: "Nigerien", COM: "Comoran", WSM: "Samoan", VUT: "Vanuatuan",
+  PLW: "Palauan", PRK: "North Korean", TLS: "Timorese", STP: "Sao Tomean",
+  MHL: "Marshallese", FSM: "Micronesian", BLZ: "Belizean", BHS: "Bahamian",
+  BRB: "Barbadian", GRD: "Grenadian", LCA: "Saint Lucian", KNA: "Kittitian",
+  VCT: "Vincentian", SLB: "Solomon Islander", GAB: "Gabonese", GMB: "Gambian",
+  GIN: "Guinean", GNB: "Bissau-Guinean", SLE: "Sierra Leonean", LBR: "Liberian",
+  BFA: "Burkinabe", BDI: "Burundian", CAF: "Central African", COD: "Congolese",
+  COG: "Congolese", DJI: "Djiboutian", GNQ: "Equatorial Guinean", SWZ: "Swazi",
+  LSO: "Basotho", MDG: "Malagasy", MWI: "Malawian", MLI: "Malian", MRT: "Mauritanian",
+  AND: "Andorran", ATG: "Antiguan", BEN: "Beninese", BWA: "Batswana",
+  CPV: "Cabo Verdean", GUY: "Guyanese", KIR: "I-Kiribati", XKX: "Kosovar",
+  MAC: "Macanese", MUS: "Mauritian", MCO: "Monegasque", MMR: "Burmese",
+  NRU: "Nauruan", SMR: "Sammarinese", SYC: "Seychellois", SSD: "South Sudanese",
+  SUR: "Surinamese", TGO: "Togolese", TON: "Tongan", TTO: "Trinidadian",
+  TUV: "Tuvaluan",
 };
 
 export function nameToSlug(name: string): string {

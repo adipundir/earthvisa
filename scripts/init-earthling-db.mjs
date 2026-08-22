@@ -1,13 +1,8 @@
-// One-time (idempotent) schema setup for the Earthling store on Neon Postgres.
+// One-time (idempotent) schema setup for the Earthling store on Postgres.
 // Run with: node --env-file=.env.local scripts/init-earthling-db.mjs
-import { neon } from "@neondatabase/serverless";
+import { connect } from "./lib/db.mjs";
 
-const url = process.env.DATABASE_URL;
-if (!url) {
-  console.error("DATABASE_URL is not set - run with: node --env-file=.env.local scripts/init-earthling-db.mjs");
-  process.exit(1);
-}
-const sql = neon(url);
+const [sql, close] = await connect();
 
 // seq is GENERATED ALWAYS AS IDENTITY: assigned at claim time, never reused,
 // even when lapsed pending claims are deleted - member numbers stay unique.
@@ -40,3 +35,4 @@ await sql`CREATE INDEX IF NOT EXISTS claim_attempts_ip_at ON claim_attempts (ip,
 
 const [{ count }] = await sql`SELECT count(*)::int AS count FROM earthlings`;
 console.log(`Schema ready. earthlings table has ${count} record(s).`);
+await close();

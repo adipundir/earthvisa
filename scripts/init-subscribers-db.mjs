@@ -1,14 +1,9 @@
 // One-time (idempotent) schema setup for visa-access change subscribers on Neon
 // Postgres (same database as the reports store).
 // Run with: node --env-file=.env.local scripts/init-subscribers-db.mjs
-import { neon } from "@neondatabase/serverless";
+import { connect } from "./lib/db.mjs";
 
-const url = process.env.DATABASE_URL;
-if (!url) {
-  console.error("DATABASE_URL is not set - run with: node --env-file=.env.local scripts/init-subscribers-db.mjs");
-  process.exit(1);
-}
-const sql = neon(url);
+const [sql, close] = await connect();
 
 await sql`
   CREATE TABLE IF NOT EXISTS subscribers (
@@ -31,3 +26,4 @@ await sql`CREATE INDEX IF NOT EXISTS subscribe_attempts_ip_at ON subscribe_attem
 
 const [{ count }] = await sql`SELECT count(*)::int AS count FROM subscribers`;
 console.log(`Schema ready. subscribers table has ${count} record(s).`);
+await close();

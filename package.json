@@ -18,9 +18,15 @@
     "mobile:fixtures": "node scripts/verify-mobile-bundle.mjs --fixtures"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.1.0",
-    "@vercel/analytics": "^2.0.1",
+    "@aws-sdk/client-pinpoint-sms-voice-v2": "^3.1106.0",
+    "@aws-sdk/client-s3": "^3.1106.0",
+    "@aws-sdk/client-sesv2": "^3.1106.0",
+    "@aws-sdk/s3-request-presigner": "^3.1106.0",
+    "@types/pg": "^8.21.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "next": "16.2.7",
+    "pg": "^8.22.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "server-only": "^0.0.1"

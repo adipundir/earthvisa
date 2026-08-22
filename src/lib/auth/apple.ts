@@ -37,11 +37,52 @@ interface AppleJwk {
 let cachedKeys: { keys: AppleJwk[]; fetchedAt: number } | null = null;
 const KEY_CACHE_MS = 10 * 60_000;
 
+/** Apple's key endpoint could not be reached or did not return a usable key
+ *  set. Distinct from a token that is genuinely invalid, because the two must
+ *  not produce the same HTTP status: one means "try again", the other means
+ *  "your credential was refused". */
+export class AppleKeysUnavailableError extends Error {}
+
 async function appleKeys(): Promise<AppleJwk[]> {
   if (cachedKeys && Date.now() - cachedKeys.fetchedAt < KEY_CACHE_MS) return cachedKeys.keys;
-  const res = await fetch(APPLE_KEYS_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Apple key set unavailable (HTTP ${res.status})`);
-  const body = (await res.json()) as { keys: AppleJwk[] };
+
+  let body: { keys?: AppleJwk[] };
+  try {
+    // A timeout is mandatory here. Without one, a hung connection to Apple
+    // holds the route handler until the ALB gives up at 60s, occupying a
+    // request slot and a database-free task the whole time.
+    const res = await fetch(APPLE_KEYS_URL, {
+      cache: "no-store",
+      signal: AbortSignal.timeout(5_000),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    body = (await res.json()) as { keys?: AppleJwk[] };
+  } catch (err) {
+    // Serve the STALE set rather than failing. Apple rotates on a months-long
+    // cadence, so keys that worked ten minutes ago are almost certainly still
+    // correct - and a transient blip at Apple should not stop everyone signing
+    // in. Only when there is nothing cached at all is this fatal.
+    if (cachedKeys) {
+      console.error("[apple] key refresh failed; serving cached key set", err);
+      return cachedKeys.keys;
+    }
+    throw new AppleKeysUnavailableError(
+      err instanceof Error ? err.message : "Apple key set unavailable",
+    );
+  }
+
+  // Validate BEFORE caching. Caching an unvalidated body was its own bug: a
+  // 200 without a `keys` array stored `keys: undefined`, and every sign-in for
+  // the next ten minutes then threw a TypeError on `.find` - with no self-heal
+  // until the cache expired.
+  if (!Array.isArray(body.keys) || body.keys.length === 0) {
+    if (cachedKeys) {
+      console.error("[apple] key set had no keys; serving cached key set");
+      return cachedKeys.keys;
+    }
+    throw new AppleKeysUnavailableError("Apple key set contained no keys");
+  }
+
   cachedKeys = { keys: body.keys, fetchedAt: Date.now() };
   return body.keys;
 }

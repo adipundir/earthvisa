@@ -1,0 +1,154 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Earth Visa build pipeline: an S3 source bucket and a CodeBuild project that
+  turns the repo into an ARM64 container image in ECR. Separate from the app
+  stack because it outlives any individual deploy and is torn down separately.
+
+Parameters:
+  ProjectName:
+    Type: String
+    Default: earthvisa
+
+Resources:
+  # Where the source zip is uploaded before each build. Versioned so a build is
+  # reproducible from its recorded object version, and lifecycle-expired so the
+  # bucket does not accumulate hundreds of 200MB source trees.
+  BuildBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${ProjectName}-build-${AWS::AccountId}"
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      LifecycleConfiguration:
+        Rules:
+          - Id: expire-old-sources
+            Status: Enabled
+            ExpirationInDays: 30
+            NoncurrentVersionExpirationInDays: 7
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+  # Refuse plaintext HTTP. The source tree is not secret, but a bucket that
+  # accepts unencrypted transport is one an auditor has to ask about.
+  BuildBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref BuildBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: DenyInsecureTransport
+            Effect: Deny
+            Principal: "*"
+            Action: "s3:*"
+            Resource:
+              - !GetAtt BuildBucket.Arn
+              - !Sub "${BuildBucket.Arn}/*"
+            Condition:
+              Bool: { "aws:SecureTransport": "false" }
+
+  CodeBuildRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "${ProjectName}-codebuild"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: codebuild.amazonaws.com }
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals: { "aws:SourceAccount": !Ref "AWS::AccountId" }
+      Policies:
+        - PolicyName: codebuild-inline
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: Logs
+                Effect: Allow
+                Action: [logs:CreateLogGroup, logs:CreateLogStream, logs:PutLogEvents]
+                Resource: !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/${ProjectName}-*"
+              # GetAuthorizationToken is account-wide by design: it takes no
+              # resource. The push actions below are scoped to our two repos.
+              - Sid: EcrAuth
+                Effect: Allow
+                Action: ecr:GetAuthorizationToken
+                Resource: "*"
+              - Sid: EcrPush
+                Effect: Allow
+                Action:
+                  - ecr:BatchCheckLayerAvailability
+                  - ecr:CompleteLayerUpload
+                  - ecr:InitiateLayerUpload
+                  - ecr:PutImage
+                  - ecr:UploadLayerPart
+                  - ecr:BatchGetImage
+                  - ecr:GetDownloadUrlForLayer
+                Resource:
+                  - !Sub "arn:aws:ecr:${AWS::Region}:${AWS::AccountId}:repository/${ProjectName}-web"
+                  - !Sub "arn:aws:ecr:${AWS::Region}:${AWS::AccountId}:repository/${ProjectName}-api"
+              - Sid: SourceBucket
+                Effect: Allow
+                Action: [s3:GetObject, s3:GetObjectVersion, s3:PutObject]
+                Resource: !Sub "${BuildBucket.Arn}/*"
+              # buildspec reads NEXT_PUBLIC_CLARITY_ID from Parameter Store at
+              # build time - it must be inlined into the client bundle, so it
+              # cannot wait until run time.
+              - Sid: ReadBuildConfig
+                Effect: Allow
+                Action: [ssm:GetParameters]
+                Resource: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/*"
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+  WebBuild:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Sub "${ProjectName}-web-build"
+      Description: Builds the Next.js standalone image and pushes it to ECR.
+      ServiceRole: !GetAtt CodeBuildRole.Arn
+      Artifacts: { Type: NO_ARTIFACTS }
+      Source:
+        Type: S3
+        Location: !Sub "${ProjectName}-build-${AWS::AccountId}/source.zip"
+        BuildSpec: deploy/buildspec-web.yml
+      Environment:
+        # ARM64 to match the Fargate runtime platform. An x86 image will not
+        # start on an ARM64 task - it fails at launch, not at build.
+        Type: ARM_CONTAINER
+        # LARGE because the prerender of ~3,000 pages is memory-hungry and the
+        # resulting layer set is multi-gigabyte.
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: aws/codebuild/amazonlinux2-aarch64-standard:3.0
+        # Required to run `docker build` inside the build container.
+        PrivilegedMode: true
+        EnvironmentVariables:
+          - { Name: AWS_ACCOUNT_ID, Value: !Ref "AWS::AccountId" }
+      # The image build is long: standalone Next builds here run well past the
+      # 60-minute default on a first, uncached run.
+      TimeoutInMinutes: 120
+      LogsConfig:
+        CloudWatchLogs:
+          Status: ENABLED
+          GroupName: !Sub "/aws/codebuild/${ProjectName}-web-build"
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+Outputs:
+  BuildBucketName:
+    Value: !Ref BuildBucket
+    Export: { Name: !Sub "${ProjectName}-build-bucket" }
+  WebBuildProject:
+    Value: !Ref WebBuild

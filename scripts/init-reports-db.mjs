@@ -1,14 +1,9 @@
 // One-time (idempotent) schema setup for data-inaccuracy reports on Neon
 // Postgres (same database as the Earthling store).
 // Run with: node --env-file=.env.local scripts/init-reports-db.mjs
-import { neon } from "@neondatabase/serverless";
+import { connect } from "./lib/db.mjs";
 
-const url = process.env.DATABASE_URL;
-if (!url) {
-  console.error("DATABASE_URL is not set - run with: node --env-file=.env.local scripts/init-reports-db.mjs");
-  process.exit(1);
-}
-const sql = neon(url);
+const [sql, close] = await connect();
 
 await sql`
   CREATE TABLE IF NOT EXISTS data_reports (
@@ -34,3 +29,4 @@ await sql`CREATE INDEX IF NOT EXISTS report_attempts_ip_at ON report_attempts (i
 
 const [{ count }] = await sql`SELECT count(*)::int AS count FROM data_reports`;
 console.log(`Schema ready. data_reports table has ${count} record(s).`);
+await close();

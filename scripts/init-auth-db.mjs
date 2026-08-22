@@ -1,4 +1,4 @@
-// Creates the account/auth schema in Neon. Idempotent: safe to re-run.
+// Creates the account/auth schema. Idempotent: safe to re-run.
 //
 //   node scripts/init-auth-db.mjs
 //
@@ -6,23 +6,10 @@
 // feature; this is authentication for the iOS app, and it will grow to carry
 // applications and documents. Keeping the tables apart keeps a mistake in one
 // from reaching the other.
-import { neon } from "@neondatabase/serverless";
-import { readFileSync } from "node:fs";
+import { connect } from "./lib/db.mjs";
 
-// .env.local is not loaded automatically by a bare node script.
-if (!process.env.DATABASE_URL) {
-  try {
-    for (const line of readFileSync(new URL("../.env.local", import.meta.url), "utf8").split("\n")) {
-      const m = /^([A-Z0-9_]+)=(.*)$/.exec(line.trim());
-      if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, "");
-    }
-  } catch { /* no .env.local; rely on the real environment */ }
-}
-if (!process.env.DATABASE_URL) {
-  console.error("DATABASE_URL is not set");
-  process.exit(1);
-}
-const sql = neon(process.env.DATABASE_URL);
+// .env.local loading and the DATABASE_URL check live in the shared helper.
+const [sql, close] = await connect();
 
 await sql`CREATE EXTENSION IF NOT EXISTS pgcrypto`;
 
@@ -82,3 +69,4 @@ const cleanedSess = await sql`DELETE FROM auth_sessions WHERE expires_at < NOW()
 
 console.log("auth schema ready");
 console.log(`  cleaned ${cleaned.length} expired codes, ${cleanedReq.length} old requests, ${cleanedSess.length} expired sessions`);
+await close();

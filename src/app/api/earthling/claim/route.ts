@@ -2,6 +2,7 @@ import { randomBytes } from "node:crypto";
 import { NextResponse } from "next/server";
 import {
   createEarthling,
+  earthlingRank,
   expirePendingClaim,
   isUsernameTaken,
   pendingClaimCount,
@@ -97,7 +98,7 @@ export async function POST(req: Request) {
     verifyUrl: `${origin}/api/earthling/verify?token=${token}`,
   });
 
-  // No RESEND_API_KEY: in development, auto-verify so the flow stays runnable
+  // No EMAIL_FROM: in development, auto-verify so the flow stays runnable
   // end-to-end without email. In production this would silently disable the
   // entire verification system (anyone could publish any username with anyone's
   // email), so there it fails closed instead.
@@ -107,12 +108,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Claims are temporarily unavailable (email verification is not configured)." }, { status: 503 });
     }
     await verifyEarthling(token);
-    console.warn("[earthling] RESEND_API_KEY not set - claim auto-verified (dev-only fallback)");
+    console.warn("[earthling] EMAIL_FROM not set - claim auto-verified (dev-only fallback)");
     return NextResponse.json({
       username: rec.username,
       reach: rec.reach,
       percentile: rec.percentile,
-      seq: rec.seq,
+      rank: await earthlingRank(rec.seq),
       profileUrl: `/earthling/${rec.username}`,
     });
   }
@@ -121,8 +122,11 @@ export async function POST(req: Request) {
     // The claim record would sit as a dead 24h reservation - free the name
     // immediately, then tell the user what actually happened.
     await expirePendingClaim(token);
+    // A fixed sentence. The underlying SES message is in CloudWatch; putting it
+    // here would publish the sender identity, region and account id to anyone
+    // who POSTs to this unauthenticated endpoint.
     return NextResponse.json(
-      { error: `Couldn't send the confirmation email (${sent.error}). The name was not claimed - try again.` },
+      { error: "Couldn't send the confirmation email. The name was not claimed - please try again." },
       { status: 502 },
     );
   }

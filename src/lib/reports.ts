@@ -1,16 +1,15 @@
-import { neon } from "@neondatabase/serverless";
+import { makeSql, type Sql } from "@/lib/db";
 
-// Data-inaccuracy reports - same Neon database and degradation contract as the
+// Data-inaccuracy reports - same database and degradation contract as the
 // Earthling store: writes throw StoreUnavailableError (API maps it to 503).
 // Schema: scripts/init-reports-db.mjs.
 
 export class ReportStoreUnavailableError extends Error {}
 
-type Sql = ReturnType<typeof neon>;
 let sqlClient: Sql | null = null;
 function db(): Sql {
   if (!process.env.DATABASE_URL) throw new ReportStoreUnavailableError("DATABASE_URL is not set");
-  if (!sqlClient) sqlClient = neon(process.env.DATABASE_URL);
+  if (!sqlClient) sqlClient = makeSql();
   return sqlClient;
 }
 

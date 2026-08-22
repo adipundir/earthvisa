@@ -1,8 +1,8 @@
-import { neon } from "@neondatabase/serverless";
+import { makeSql, type Sql } from "@/lib/db";
 import type { Earthling } from "./types";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Earthling store - Neon Postgres via the serverless HTTP driver.
+// Earthling store - Postgres, via the shared wire-protocol client in lib/db.
 //
 // Contract (schema created by scripts/init-earthling-db.mjs):
 //   - username uniqueness is a PRIMARY KEY + INSERT ... ON CONFLICT DO NOTHING,
@@ -18,11 +18,10 @@ import type { Earthling } from "./types";
 /** Thrown when the backing store cannot accept writes; API routes map it to 503. */
 export class StoreUnavailableError extends Error {}
 
-type Sql = ReturnType<typeof neon>;
 let sqlClient: Sql | null = null;
 function db(): Sql {
   if (!process.env.DATABASE_URL) throw new StoreUnavailableError("DATABASE_URL is not set");
-  if (!sqlClient) sqlClient = neon(process.env.DATABASE_URL);
+  if (!sqlClient) sqlClient = makeSql();
   return sqlClient;
 }
 
@@ -91,6 +90,19 @@ export async function earthlingCount(): Promise<number> {
     const rows = (await sql`
       SELECT count(*)::int AS count FROM earthlings WHERE verified = true`) as Row[];
     return rows[0].count as number;
+  }, 0);
+}
+
+/** Genuine public member number for a verified Earthling: how many verified
+ *  rows claimed on or before them, i.e. their position among ACTUAL members.
+ *  Never expose the raw `seq` IDENTITY column publicly - it increments on
+ *  every insert attempt, including lapsed/never-verified pending claims that
+ *  get deleted, so it drifts arbitrarily far above the true member count. */
+export async function earthlingRank(seq: number): Promise<number> {
+  return readQuery(async (sql) => {
+    const rows = (await sql`
+      SELECT count(*)::int AS rank FROM earthlings WHERE verified = true AND seq <= ${seq}`) as Row[];
+    return rows[0].rank as number;
   }, 0);
 }
 

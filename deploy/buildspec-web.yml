@@ -1,0 +1,81 @@
+# CodeBuild: build the website image and push it to ECR.
+#
+# The build happens here rather than on a laptop for two reasons: there is no
+# container runtime on the dev machine at all, and `npm run build` prerenders
+# ~3,000 corridor pages into a ~2.2GB standalone tree, which wants more RAM and
+# a faster disk than a laptop wants to give it.
+#
+# ARM64 throughout. Fargate runs the task on ARM (cheaper per vCPU-hour), and an
+# image built on x86 will not start there - the task simply fails to launch with
+# an exec-format error that reads like a corrupt image.
+version: 0.2
+
+env:
+  variables:
+    # The one value that must be correct at BUILD time. Next inlines every
+    # NEXT_PUBLIC_* into the client bundle, and robots.ts derives Allow vs
+    # Disallow from this - a wrong value here asks Google to drop the site.
+    NEXT_PUBLIC_SITE_URL: "https://earthvisa.in"
+    IMAGE_REPO: "earthvisa-web"
+  # NOTE: deliberately NO `parameter-store:` block. CodeBuild resolves that
+  # section before any phase runs, so naming a parameter that does not exist
+  # aborts the build in DOWNLOAD_SOURCE with "Parameter does not exist" - and
+  # every value below is OPTIONAL to the site. Blocking the entire migration on
+  # an absent analytics id would be absurd, so they are fetched leniently in
+  # pre_build instead and default to empty.
+
+phases:
+  pre_build:
+    commands:
+      - REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
+      # CODEBUILD_RESOLVED_SOURCE_VERSION is empty for S3 sources, so fall back
+      # to the build id. The tag must be unique per build: ECS decides whether
+      # to replace tasks by comparing image references, and a service redeployed
+      # against a moving ":latest" can silently keep running the old image.
+      - TAG="$(echo ${CODEBUILD_RESOLVED_SOURCE_VERSION:-$CODEBUILD_BUILD_NUMBER} | cut -c1-12)"
+      - echo "Building ${IMAGE_REPO}:${TAG}"
+      # Optional build-time values. Each is read leniently: an absent parameter
+      # yields "" and the site builds correctly without it. These are all
+      # BUILD-time by nature - Next inlines NEXT_PUBLIC_* into the client
+      # bundle, and layout.tsx reads the two verification tokens while
+      # prerendering - so supplying them at run time would have no effect.
+      - |
+        ssm_opt() {
+          aws ssm get-parameter --name "$1" --query Parameter.Value --output text 2>/dev/null || echo ""
+        }
+        NEXT_PUBLIC_CLARITY_ID="$(ssm_opt /earthvisa/NEXT_PUBLIC_CLARITY_ID)"
+        GOOGLE_SITE_VERIFICATION="$(ssm_opt /earthvisa/GOOGLE_SITE_VERIFICATION)"
+        BING_SITE_VERIFICATION="$(ssm_opt /earthvisa/BING_SITE_VERIFICATION)"
+        export NEXT_PUBLIC_CLARITY_ID GOOGLE_SITE_VERIFICATION BING_SITE_VERIFICATION
+        echo "clarity:${NEXT_PUBLIC_CLARITY_ID:+set} google:${GOOGLE_SITE_VERIFICATION:+set} bing:${BING_SITE_VERIFICATION:+set}"
+      - aws ecr get-login-password --region "$AWS_DEFAULT_REGION" | docker login --username AWS --password-stdin "$REGISTRY"
+
+  build:
+    commands:
+      # --max-old-space-size: the prerender of 3,076 pages holds a lot of live
+      # objects at once, and Node's default heap on a large CodeBuild container
+      # is well under what that peak needs. The failure without it is an
+      # out-of-memory abort partway through page generation.
+      - |
+        docker build \
+          --build-arg NEXT_PUBLIC_SITE_URL="$NEXT_PUBLIC_SITE_URL" \
+          --build-arg NEXT_PUBLIC_CLARITY_ID="$NEXT_PUBLIC_CLARITY_ID" \
+          --build-arg GOOGLE_SITE_VERIFICATION="$GOOGLE_SITE_VERIFICATION" \
+          --build-arg BING_SITE_VERIFICATION="$BING_SITE_VERIFICATION" \
+          --build-arg NODE_OPTIONS="--max-old-space-size=12288" \
+          -t "${REGISTRY}/${IMAGE_REPO}:${TAG}" \
+          -t "${REGISTRY}/${IMAGE_REPO}:latest" \
+          .
+
+  post_build:
+    commands:
+      - docker push "${REGISTRY}/${IMAGE_REPO}:${TAG}"
+      - docker push "${REGISTRY}/${IMAGE_REPO}:latest"
+      # Written to the build log AND to an artifact so the deploy step can read
+      # back exactly which immutable tag to point the service at.
+      - echo "${REGISTRY}/${IMAGE_REPO}:${TAG}" > image-uri.txt
+      - cat image-uri.txt
+
+artifacts:
+  files:
+    - image-uri.txt

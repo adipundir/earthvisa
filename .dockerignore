@@ -1,0 +1,21 @@
+# Keeps the build context small and keeps host-built artefacts out of the
+# image. A stale local .next copied into the builder is the classic way to
+# deploy code that no longer exists in the repo.
+node_modules
+.next
+.git
+.env*
+npm-debug.log*
+*.tsbuildinfo
+
+# Large source material that the site does not serve.
+video
+videos
+brand-assets
+docs
+
+# Repo furniture.
+AGENTS.md
+CLAUDE.md
+README.md
+DESIGN-SYSTEM.md

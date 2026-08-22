@@ -1,0 +1,330 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Earth Visa website runtime: an ECS Fargate service on ARM64 behind an
+  internet-facing ALB, in the pre-existing VPC. No NAT gateway - tasks sit in
+  public subnets with a public IP so they reach appleid.apple.com and the AWS
+  messaging APIs directly, while RDS stays reachable only through the app
+  security group.
+
+Parameters:
+  ProjectName: { Type: String, Default: earthvisa }
+  VpcId: { Type: AWS::EC2::VPC::Id, Default: vpc-0b5745b845aec711d }
+  PublicSubnetA: { Type: AWS::EC2::Subnet::Id, Default: subnet-0bf3f228cb82083c6 }
+  PublicSubnetB: { Type: AWS::EC2::Subnet::Id, Default: subnet-0860250d011f9afd2 }
+  AppSecurityGroup:
+    Type: AWS::EC2::SecurityGroup::Id
+    Default: sg-0ce1c4755374a4f14
+    Description: Existing earthvisa-app SG - already permits 3000 from inside the VPC.
+  ImageUri:
+    Type: String
+    Description: Full ECR image URI including an immutable tag (NOT :latest).
+  OriginCertificateArn:
+    Type: String
+    Description: ACM cert in THIS region for origin.earthvisa.in, for the ALB HTTPS listener.
+  SiteUrl: { Type: String, Default: "https://earthvisa.in" }
+  DesiredCount: { Type: Number, Default: 1 }
+  CloudFrontPrefixList:
+    Type: String
+    Default: pl-9aa247f3
+    Description: com.amazonaws.global.cloudfront.origin-facing in ap-south-1.
+  VerifyCidr:
+    Type: String
+    Default: ""
+    Description: >
+      Optional operator CIDR allowed to reach the ALB directly for pre-cutover
+      verification. Leave empty in steady state - while it is set, the
+      cloudfront-viewer-address header is spoofable from that address.
+
+Conditions:
+  HasVerifyCidr: !Not [!Equals [!Ref VerifyCidr, ""]]
+
+Resources:
+  # ── Load balancer ──────────────────────────────────────────────────────────
+  # CloudFront ONLY. This is a security control, not a cost or tidiness one.
+  #
+  # clientIp() trusts the `cloudfront-viewer-address` header, and CloudFront
+  # only overwrites a viewer-supplied copy of that header for requests that
+  # actually pass through it. If the ALB accepted 0.0.0.0/0, anyone could
+  # resolve its DNS name and POST to /api/auth/phone/start with a fresh forged
+  # `CloudFront-Viewer-Address` on every request - minting a new rate-limit
+  # bucket each time and turning the OTP endpoint into unmetered paid SMS, and
+  # /api/earthling/claim into an open mail relay that would get the domain
+  # blocklisted.
+  #
+  # So the header is trustworthy exactly because this list is the only way in.
+  # The two controls are one mechanism; do not relax either alone.
+  AlbSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: !Sub "${ProjectName}-alb"
+      GroupDescription: HTTPS from CloudFront edge nodes only.
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          SourcePrefixListId: !Ref CloudFrontPrefixList
+          Description: CloudFront origin-facing edges
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+  # Pre-cutover verification, off by default. Set VerifyCidr to your own /32 to
+  # curl the ALB directly, and set it back to an empty string afterwards. While
+  # it is open, `cloudfront-viewer-address` is spoofable from that address.
+  AlbVerifyIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Condition: HasVerifyCidr
+    Properties:
+      GroupId: !Ref AlbSecurityGroup
+      IpProtocol: tcp
+      FromPort: 443
+      ToPort: 443
+      CidrIp: !Ref VerifyCidr
+      Description: TEMPORARY operator verification - remove before launch
+
+  # The ALB must be allowed to reach the task port. The existing app SG permits
+  # 3000 from the whole VPC CIDR, which already covers the ALB's ENIs; this rule
+  # makes the dependency explicit rather than incidental, so tightening the
+  # VPC-wide rule later does not silently break health checks.
+  AppFromAlb:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref AppSecurityGroup
+      IpProtocol: tcp
+      FromPort: 3000
+      ToPort: 3000
+      SourceSecurityGroupId: !Ref AlbSecurityGroup
+      Description: ALB to task
+
+  LoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Name: !Sub "${ProjectName}-alb"
+      Type: application
+      Scheme: internet-facing
+      Subnets: [!Ref PublicSubnetA, !Ref PublicSubnetB]
+      SecurityGroups: [!Ref AlbSecurityGroup]
+      LoadBalancerAttributes:
+        # Next streams RSC responses; a short idle timeout truncates them.
+        - { Key: idle_timeout.timeout_seconds, Value: "60" }
+        - { Key: routing.http.drop_invalid_header_fields.enabled, Value: "true" }
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+  TargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: !Sub "${ProjectName}-web-tg"
+      VpcId: !Ref VpcId
+      Port: 3000
+      Protocol: HTTP
+      TargetType: ip
+      # A dedicated health endpoint, not "/". The homepage is a full React
+      # render on every probe; at a 30s interval across two AZs that is a
+      # meaningful and permanent waste of a 0.5 vCPU task.
+      HealthCheckPath: /api/health
+      HealthCheckIntervalSeconds: 30
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 2
+      UnhealthyThresholdCount: 3
+      Matcher: { HttpCode: "200" }
+      TargetGroupAttributes:
+        # The image is multi-gigabyte and the process needs a moment; draining
+        # fast is fine, but do not rip connections away mid-response.
+        - { Key: deregistration_delay.timeout_seconds, Value: "30" }
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+  # There is deliberately NO port-80 listener. CloudFront reaches this origin
+  # over HTTPS only, and the security group admits nothing else, so a plaintext
+  # listener would be unreachable furniture that still reads like a supported
+  # entry point. Viewer-side http->https is handled at the edge by
+  # ViewerProtocolPolicy: redirect-to-https.
+  HttpsListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      LoadBalancerArn: !Ref LoadBalancer
+      Port: 443
+      Protocol: HTTPS
+      SslPolicy: ELBSecurityPolicy-TLS13-1-2-2021-06
+      Certificates: [{ CertificateArn: !Ref OriginCertificateArn }]
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup
+
+  # ── Compute ────────────────────────────────────────────────────────────────
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/ecs/${ProjectName}-web"
+      RetentionInDays: 30
+
+  ExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "${ProjectName}-ecs-execution"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: ecs-tasks.amazonaws.com }
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals: { "aws:SourceAccount": !Ref "AWS::AccountId" }
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
+      Policies:
+        - PolicyName: read-config-for-injection
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              # This is the EXECUTION role, not the task role. The ECS agent
+              # uses it to resolve `secrets` before the container starts; the
+              # application itself never assumes it.
+              - Effect: Allow
+                Action: [ssm:GetParameters]
+                Resource: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/*"
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+  TaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: !Sub "${ProjectName}-web"
+      RequiresCompatibilities: [FARGATE]
+      NetworkMode: awsvpc
+      # 0.5 vCPU / 1GB rather than the 0.25/0.5 in the cost table. Node holding
+      # a large route manifest plus an in-process pg pool does not fit
+      # comfortably in 512MB, and an OOM-killed task presents as a flapping
+      # health check rather than an obvious memory error. Costs ~$5/mo more.
+      Cpu: "512"
+      Memory: "1024"
+      RuntimePlatform:
+        CpuArchitecture: ARM64
+        OperatingSystemFamily: LINUX
+      ExecutionRoleArn: !GetAtt ExecutionRole.Arn
+      # The pre-existing earthvisa-task role: SES from one address, SMS, the
+      # documents buckets, the one KMS key, and /earthvisa/* in SSM.
+      TaskRoleArn: !Sub "arn:aws:iam::${AWS::AccountId}:role/${ProjectName}-task"
+      ContainerDefinitions:
+        - Name: web
+          Image: !Ref ImageUri
+          Essential: true
+          PortMappings: [{ ContainerPort: 3000, Protocol: tcp }]
+          Environment:
+            - { Name: NODE_ENV, Value: production }
+            - { Name: PORT, Value: "3000" }
+            - { Name: HOSTNAME, Value: "0.0.0.0" }
+            - { Name: NEXT_PUBLIC_SITE_URL, Value: !Ref SiteUrl }
+            - { Name: AWS_REGION, Value: !Ref "AWS::Region" }
+          # EVERY parameter named here must already exist in SSM. A missing one
+          # is not a warning and not a null value at run time - the ECS agent
+          # fails to resolve it and the task never starts, in a loop, with the
+          # reason only visible in `describe-tasks` stoppedReason.
+          #
+          # So this list is exactly what the WEBSITE needs. The iOS-only auth
+          # configuration is listed below it, commented, because SMS is still
+          # blocked on TRAI sender-ID registration and Apple sign-in on the
+          # paid developer account - wiring them in now would keep the website
+          # down waiting for identifiers that do not exist yet.
+          Secrets:
+            - { Name: DATABASE_URL, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/DATABASE_URL" }
+            - { Name: EMAIL_FROM, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/EMAIL_FROM" }
+            - { Name: AWS_SES_REGION, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/AWS_SES_REGION" }
+            - { Name: AWS_SMS_REGION, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/AWS_SMS_REGION" }
+            # GOOGLE_SITE_VERIFICATION / BING_SITE_VERIFICATION are deliberately
+            # NOT here. layout.tsx reads them while prerendering, so they are
+            # build args (deploy/buildspec-web.yml) - naming them here would
+            # give the container a value with no runtime effect while making a
+            # missing parameter block every task launch.
+            # Uncomment together with the corresponding SSM parameters once the
+            # iOS auth path is unblocked:
+            # - { Name: AWS_SMS_SENDER_ID, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/AWS_SMS_SENDER_ID" }
+            # - { Name: AWS_SMS_ENTITY_ID, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/AWS_SMS_ENTITY_ID" }
+            # - { Name: AWS_SMS_TEMPLATE_ID, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/AWS_SMS_TEMPLATE_ID" }
+            # - { Name: AWS_SMS_CONFIGURATION_SET, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/AWS_SMS_CONFIGURATION_SET" }
+            # - { Name: APPLE_BUNDLE_ID, ValueFrom: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ProjectName}/APPLE_BUNDLE_ID" }
+          LinuxParameters:
+            # `node server.js` would otherwise be PID 1, where it neither reaps
+            # orphaned children nor gets the default signal dispositions it
+            # expects. ECS injects a real init process instead of us adding
+            # tini to the image.
+            InitProcessEnabled: true
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref "AWS::Region"
+              awslogs-stream-prefix: web
+          # Container-level health check as well as the ALB's. This is what
+          # makes ECS itself replace a wedged task even when the ALB has
+          # already stopped sending it traffic.
+          HealthCheck:
+            Command: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+            Interval: 30
+            Timeout: 5
+            Retries: 3
+            StartPeriod: 60
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+  Cluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: !Sub "${ProjectName}"
+      ClusterSettings: [{ Name: containerInsights, Value: enabled }]
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+  Service:
+    Type: AWS::ECS::Service
+    # Without this the service is created before the listener exists and ECS
+    # cannot register targets, which fails the stack after a long timeout.
+    DependsOn: [HttpsListener]
+    Properties:
+      ServiceName: !Sub "${ProjectName}-web"
+      Cluster: !Ref Cluster
+      TaskDefinition: !Ref TaskDefinition
+      DesiredCount: !Ref DesiredCount
+      LaunchType: FARGATE
+      PlatformVersion: LATEST
+      # Pulling a multi-gigabyte image and booting Next takes a while. Without a
+      # grace period the ALB marks the task unhealthy before it has served its
+      # first request and ECS kills it - forever, in a loop.
+      HealthCheckGracePeriodSeconds: 300
+      DeploymentConfiguration:
+        MinimumHealthyPercent: 100
+        MaximumPercent: 200
+        # A bad image rolls itself back instead of leaving the site down.
+        DeploymentCircuitBreaker: { Enable: true, Rollback: true }
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          # ENABLED is load-bearing: there is no NAT gateway, so without a
+          # public IP the task cannot even pull its own image from ECR.
+          AssignPublicIp: ENABLED
+          Subnets: [!Ref PublicSubnetA, !Ref PublicSubnetB]
+          SecurityGroups: [!Ref AppSecurityGroup]
+      LoadBalancers:
+        - ContainerName: web
+          ContainerPort: 3000
+          TargetGroupArn: !Ref TargetGroup
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+Outputs:
+  AlbDnsName:
+    Description: Verify the site against this before any DNS points at it.
+    Value: !GetAtt LoadBalancer.DNSName
+  AlbHostedZoneId:
+    Value: !GetAtt LoadBalancer.CanonicalHostedZoneID
+  ClusterName:
+    Value: !Ref Cluster
+  ServiceName:
+    Value: !GetAtt Service.Name

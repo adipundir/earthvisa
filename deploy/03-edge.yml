@@ -1,0 +1,138 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Earth Visa edge: CloudFront in front of the ALB. Deploy this stack in
+  ap-south-1 like the others - CloudFront is global, only its ACM certificate
+  must live in us-east-1, and that is passed in by ARN.
+
+  CloudFront is not merely a cache here. /api/geo reads cloudfront-viewer-country
+  and clientIp() reads cloudfront-viewer-address; both are injected by the origin
+  request policies below and exist nowhere else in the request path.
+
+Parameters:
+  ProjectName: { Type: String, Default: earthvisa }
+  OriginDomain:
+    Type: String
+    Default: origin.earthvisa.in
+    Description: DNS name that resolves to the ALB. Not the ALB's own *.elb.amazonaws.com name - the ALB certificate is issued for this name.
+  ViewerCertificateArn:
+    Type: String
+    Description: ACM certificate ARN in us-east-1 covering earthvisa.in and www.earthvisa.in.
+
+Mappings:
+  # AWS-managed policy IDs. Stable, account-independent, documented values.
+  Managed:
+    CachePolicy:
+      Optimized: 658327ea-f89d-4fab-a63d-7e88639e58f6      # CachingOptimized
+      Disabled: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad       # CachingDisabled
+    OriginRequestPolicy:
+      AllViewerAndCloudFront: 33f36d7e-f396-46d9-90e0-52428a34d9dc  # AllViewerAndCloudFrontHeaders-2022-06
+    ResponseHeadersPolicy:
+      SecurityHeaders: 67f7725c-6f97-4210-82d7-5512b31e9d03 # SecurityHeadersPolicy
+
+Resources:
+  # Pages and static assets are cached; they must reach the origin WITHOUT
+  # viewer cookies. If cookies were forwarded, a personalised response could be
+  # stored under a cookie-less cache key and then served to everyone.
+  PageOriginRequestPolicy:
+    Type: AWS::CloudFront::OriginRequestPolicy
+    Properties:
+      OriginRequestPolicyConfig:
+        Name: !Sub "${ProjectName}-page-origin"
+        Comment: Cacheable routes - CloudFront geo/IP headers, no cookies.
+        CookiesConfig: { CookieBehavior: none }
+        QueryStringsConfig: { QueryStringBehavior: all }
+        HeadersConfig:
+          HeaderBehavior: whitelist
+          Headers:
+            - cloudfront-viewer-country
+            - cloudfront-viewer-address
+            - accept-language
+
+  Distribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        Comment: !Sub "${ProjectName} website"
+        HttpVersion: http2and3
+        IPV6Enabled: true
+        # PriceClass 200 includes the India edge locations, which is where this
+        # audience actually is. PriceClass_All adds South America and Oceania
+        # for more money than this traffic justifies.
+        PriceClass: PriceClass_200
+        Aliases:
+          - earthvisa.in
+          - www.earthvisa.in
+        ViewerCertificate:
+          AcmCertificateArn: !Ref ViewerCertificateArn
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021
+        Origins:
+          - Id: alb
+            DomainName: !Ref OriginDomain
+            CustomOriginConfig:
+              # https-only, not match-viewer: traffic between the edge and the
+              # ALB carries session cookies and OTP payloads and is encrypted
+              # regardless of how the viewer connected.
+              OriginProtocolPolicy: https-only
+              OriginSSLProtocols: [TLSv1.2]
+              OriginReadTimeout: 60
+              OriginKeepaliveTimeout: 60
+        DefaultCacheBehavior:
+          TargetOriginId: alb
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods: [GET, HEAD, OPTIONS]
+          CachedMethods: [GET, HEAD]
+          Compress: true
+          CachePolicyId: !FindInMap [Managed, CachePolicy, Optimized]
+          OriginRequestPolicyId: !Ref PageOriginRequestPolicy
+          ResponseHeadersPolicyId: !FindInMap [Managed, ResponseHeadersPolicy, SecurityHeaders]
+        CacheBehaviors:
+          # Every API route: never cached, everything forwarded. This is the
+          # behaviour that carries auth, OTP and the filing endpoints, so it
+          # must also pass cookies and the Authorization header through
+          # untouched - AllViewerAndCloudFrontHeaders does exactly that and
+          # adds the viewer-country/viewer-address headers the code reads.
+          - PathPattern: /api/*
+            TargetOriginId: alb
+            ViewerProtocolPolicy: https-only
+            AllowedMethods: [GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE]
+            CachedMethods: [GET, HEAD]
+            Compress: true
+            CachePolicyId: !FindInMap [Managed, CachePolicy, Disabled]
+            OriginRequestPolicyId: !FindInMap [Managed, OriginRequestPolicy, AllViewerAndCloudFront]
+          # Content-addressed build output: the URL changes whenever the bytes
+          # change, so it can be cached as hard as CloudFront allows.
+          - PathPattern: /_next/static/*
+            TargetOriginId: alb
+            ViewerProtocolPolicy: redirect-to-https
+            AllowedMethods: [GET, HEAD]
+            CachedMethods: [GET, HEAD]
+            Compress: true
+            CachePolicyId: !FindInMap [Managed, CachePolicy, Optimized]
+          # The iOS data channel. next.config.ts already sets the correct
+          # cache-control and content-type per URL, and CachingOptimized
+          # honours the origin's Cache-Control - so the 5-minute manifest and
+          # the immutable bundles both behave correctly under one behaviour.
+          #
+          # Compress MUST stay false: these files are brotli archives, not
+          # brotli-encoded JSON. Re-encoding them at the edge would make the
+          # client transparently inflate them and every integrity check would
+          # fail against the manifest hash.
+          - PathPattern: /mobile/*
+            TargetOriginId: alb
+            ViewerProtocolPolicy: redirect-to-https
+            AllowedMethods: [GET, HEAD]
+            CachedMethods: [GET, HEAD]
+            Compress: false
+            CachePolicyId: !FindInMap [Managed, CachePolicy, Optimized]
+      Tags:
+        - { Key: Project, Value: earthvisa }
+        - { Key: ManagedBy, Value: claude }
+
+Outputs:
+  DistributionDomain:
+    Description: Point the apex and www ALIAS records at this.
+    Value: !GetAtt Distribution.DomainName
+  DistributionId:
+    Value: !Ref Distribution

@@ -1,8 +1,8 @@
-import { neon } from "@neondatabase/serverless";
+import { makeSql, type Sql } from "@/lib/db";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Account store - Neon Postgres via the serverless HTTP driver.
+// Account store - Postgres, via the shared wire-protocol client in lib/db.
 //
 // Backs the iOS app's sign-in. Accounts exist ONLY to carry what a server has
 // to hold: application progress across devices, documents, and applications
@@ -28,11 +28,10 @@ import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 export class AuthStoreUnavailableError extends Error {}
 
-type Sql = ReturnType<typeof neon>;
 let sqlClient: Sql | null = null;
 function db(): Sql {
   if (!process.env.DATABASE_URL) throw new AuthStoreUnavailableError("DATABASE_URL is not set");
-  if (!sqlClient) sqlClient = neon(process.env.DATABASE_URL);
+  if (!sqlClient) sqlClient = makeSql();
   return sqlClient;
 }
 
@@ -190,9 +189,23 @@ export const MAX_CODES_PER_IP_PER_HOUR = 20;
 
 export async function upsertAccountByPhone(phone: string): Promise<Account> {
   return writeQuery(async (sql) => {
+    // The `WHERE phone IS NOT NULL` is NOT decoration: it is what makes this
+    // statement legal.
+    //
+    // `accounts_phone_key` is a PARTIAL unique index, and Postgres will not use
+    // a partial index as an ON CONFLICT arbiter unless the conflict target
+    // repeats the index predicate exactly. Without it every insert here raised
+    // 42P10, "no unique or exclusion constraint matching the ON CONFLICT
+    // specification", which `writeQuery` wrapped into AuthStoreUnavailableError
+    // and the route reported as "Sign-in is briefly unavailable".
+    //
+    // So the code was verified, the account was never created, and the failure
+    // named the wrong cause. No account could be made by phone on any
+    // environment.
     const rows = (await sql`
       INSERT INTO accounts (phone) VALUES (${phone})
-      ON CONFLICT (phone) DO UPDATE SET phone = EXCLUDED.phone
+      ON CONFLICT (phone) WHERE phone IS NOT NULL
+      DO UPDATE SET phone = EXCLUDED.phone
       RETURNING *`) as Row[];
     return rowToAccount(rows[0]);
   });
@@ -212,7 +225,8 @@ export async function upsertAccountByApple(
     const rows = (await sql`
       INSERT INTO accounts (apple_sub, email, display_name)
       VALUES (${appleSub}, ${email}, ${displayName})
-      ON CONFLICT (apple_sub) DO UPDATE SET
+      ON CONFLICT (apple_sub) WHERE apple_sub IS NOT NULL
+      DO UPDATE SET
         email = COALESCE(accounts.email, EXCLUDED.email),
         display_name = COALESCE(accounts.display_name, EXCLUDED.display_name)
       RETURNING *`) as Row[];
@@ -220,12 +234,51 @@ export async function upsertAccountByApple(
   });
 }
 
-/** Attaches a verified phone to an existing account. */
-export async function linkPhoneToAccount(accountId: string, phone: string): Promise<Account | null> {
+export type LinkPhoneResult =
+  | { ok: true; account: Account }
+  | { ok: false; reason: "no_such_account" }
+  /** The number already belongs to a DIFFERENT account. */
+  | { ok: false; reason: "phone_taken" }
+  /** Already linked to THIS account - re-running the same link is not an error. */
+  | { ok: false; reason: "already_linked" };
+
+/** Attaches a verified phone to an existing account.
+ *
+ *  `accounts_phone_key` is a partial unique index (init-auth-db.mjs), so a
+ *  number that already belongs to another account raises 23505. That must not
+ *  reach writeQuery: it would be flattened into AuthStoreUnavailableError and
+ *  reported as a 503 "temporarily unavailable" - for a condition that is
+ *  PERMANENT. The user retries for ever, and because verifyPhoneCode consumes
+ *  the code before this runs, every retry burns a fresh OTP and an SMS. They
+ *  end up with two accounts, their filing data split across both.
+ *
+ *  So the conflict is a first-class result, not an exception. */
+export async function linkPhoneToAccount(
+  accountId: string,
+  phone: string,
+): Promise<LinkPhoneResult> {
   return writeQuery(async (sql) => {
-    const rows = (await sql`
-      UPDATE accounts SET phone = ${phone} WHERE id = ${accountId}::uuid RETURNING *`) as Row[];
-    return rows.length ? rowToAccount(rows[0]) : null;
+    const owner = (await sql`
+      SELECT id FROM accounts WHERE phone = ${phone}`) as Row[];
+    if (owner.length && String(owner[0].id) !== accountId) {
+      return { ok: false, reason: "phone_taken" } as const;
+    }
+    if (owner.length) return { ok: false, reason: "already_linked" } as const;
+
+    try {
+      const rows = (await sql`
+        UPDATE accounts SET phone = ${phone} WHERE id = ${accountId}::uuid RETURNING *`) as Row[];
+      if (!rows.length) return { ok: false, reason: "no_such_account" } as const;
+      return { ok: true, account: rowToAccount(rows[0]) } as const;
+    } catch (err) {
+      // The SELECT above is not a lock, so two concurrent links of the same
+      // number can both pass it. Postgres still refuses the second one; treat
+      // that identically rather than as an outage.
+      if ((err as { code?: string })?.code === "23505") {
+        return { ok: false, reason: "phone_taken" } as const;
+      }
+      throw err;
+    }
   });
 }
 

@@ -57,6 +57,7 @@ export interface CbiProgram {
   residency_required: boolean | null;
   notes: string;
   verified: boolean;
+  excludedNationalities?: string[];
 }
 
 export interface RbiProgram {

@@ -1,16 +1,15 @@
-import { neon } from "@neondatabase/serverless";
+import { makeSql, type Sql } from "@/lib/db";
 
-// Visa-access change subscribers - same Neon database and degradation contract
+// Visa-access change subscribers - same database and degradation contract
 // as the reports store: writes throw StoreUnavailableError (API maps it to 503).
 // Schema: scripts/init-subscribers-db.mjs.
 
 export class SubscriberStoreUnavailableError extends Error {}
 
-type Sql = ReturnType<typeof neon>;
 let sqlClient: Sql | null = null;
 function db(): Sql {
   if (!process.env.DATABASE_URL) throw new SubscriberStoreUnavailableError("DATABASE_URL is not set");
-  if (!sqlClient) sqlClient = neon(process.env.DATABASE_URL);
+  if (!sqlClient) sqlClient = makeSql();
   return sqlClient;
 }
 

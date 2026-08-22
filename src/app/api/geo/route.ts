@@ -1,17 +1,22 @@
 import { NextResponse } from "next/server";
 
 // Best-effort country detection from the edge/CDN geo header. No IP database,
-// no third-party call, no browser permission prompt. On Vercel this is
-// `x-vercel-ip-country`; common alternatives are included as fallbacks. Returns
-// the ISO-3166 alpha-2 country code (or null in local dev, where no header exists).
+// no third-party call, no browser permission prompt. Each CDN spells this
+// differently, so every host this might sit behind is listed: whichever one is
+// actually in front supplies its header and the rest are absent. Returns the
+// ISO-3166 alpha-2 country code (or null in local dev, where none exists).
+//
+// CloudFront only sends `cloudfront-viewer-country` when the cache policy or
+// origin request policy is configured to forward it. If this returns null
+// after a move to CloudFront, that policy is what is missing, not this code.
 export const dynamic = "force-dynamic";
 
 export function GET(req: Request) {
   const h = req.headers;
   const cc = (
-    h.get("x-vercel-ip-country") ||
-    h.get("cf-ipcountry") ||           // Cloudflare
-    h.get("x-country-code") ||         // generic / some CDNs
+    h.get("cloudfront-viewer-country") || // CloudFront
+    h.get("cf-ipcountry") ||              // Cloudflare
+    h.get("x-country-code") ||            // generic / some CDNs
     h.get("x-geo-country") ||
     ""
   ).toUpperCase();

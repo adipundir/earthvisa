@@ -1,12 +1,18 @@
-// Transactional email via Resend's REST API - plain fetch, no SDK dependency.
-// Server-only: reads RESEND_API_KEY / EMAIL_FROM from the environment.
-//
-// Sender note: until earthvisa.in is verified as a domain in the Resend
-// dashboard, EMAIL_FROM must stay "onboarding@resend.dev", which Resend only
-// delivers to the account owner's own inbox. Verify the domain, then set
-// EMAIL_FROM='Earth Visa <hello@earthvisa.in>' to email real users.
+import { SESv2Client, SendEmailCommand } from "@aws-sdk/client-sesv2";
 
-const RESEND_URL = "https://api.resend.com/emails";
+// Transactional email via Amazon SES.
+//
+// Server-only. Credentials come from the Fargate task role, not the
+// environment, so there is no API key to leak or rotate - EMAIL_FROM is the
+// only setting, and it must be an address on a domain verified in SES.
+//
+// Two SES facts that decide whether mail actually arrives:
+//
+//   - A new account is in the SES sandbox: 200 messages/day, and delivery ONLY
+//     to verified addresses. Production access is a support request. In the
+//     sandbox a claim by a stranger silently goes nowhere.
+//   - The sandbox is per-region, and so is domain verification. Verify
+//     earthvisa.in in the same region this runs in (ap-south-1).
 
 export type SendResult =
   | { ok: true; id: string }
@@ -20,16 +26,26 @@ export async function sendClaimVerificationEmail(opts: {
   percentile: number;
   verifyUrl: string;
 }): Promise<SendResult> {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) return { ok: false, skipped: true };
-  const from = process.env.EMAIL_FROM || "Earth Visa <onboarding@resend.dev>";
-  // The resend.dev sandbox sender only delivers to the Resend account owner, so
-  // in production it would accept claims whose verification email never reaches
-  // the user. Treat it as "not configured" -> the claim route fails closed (503)
-  // instead of leaving a dead 24h reservation. Set EMAIL_FROM to a verified
-  // earthvisa.in sender to enable real delivery.
-  if (process.env.NODE_ENV === "production" && /@resend\.dev>?\s*$/i.test(from)) {
-    console.error("[earthling] EMAIL_FROM is unset/resend.dev in production - claims fail closed until a verified sender is configured");
+  const from = process.env.EMAIL_FROM;
+  if (!from) return { ok: false, skipped: true };
+  // An unverified sender is accepted by nobody, so a claim would reserve a name
+  // for 24 hours against an email that never arrives. Fail closed instead: the
+  // claim route maps this to a 503 rather than leaving a dead reservation.
+  //
+  // Checked against the EXACT address, not merely the domain. The task role's
+  // policy carries `ses:FromAddress = noreply@earthvisa.in`, a single-address
+  // condition - so `hello@earthvisa.in` passes a domain check, is refused by
+  // IAM at send time, and turns every claim into a 502 with an AccessDenied
+  // behind it. A domain-level check here would report healthy while the
+  // feature was entirely dead. If the IAM condition is ever widened to
+  // `*@earthvisa.in`, widen this in the same commit.
+  const ALLOWED_SENDER = /(^|<)noreply@earthvisa\.in>?\s*$/i;
+  if (process.env.NODE_ENV === "production" && !ALLOWED_SENDER.test(from)) {
+    console.error(
+      `[earthling] EMAIL_FROM (${from}) is not noreply@earthvisa.in, which is the ` +
+        "only sender the task role may use - claims fail closed rather than " +
+        "reserving names against mail that IAM will refuse to send",
+    );
     return { ok: false, skipped: true };
   }
 
@@ -60,20 +76,46 @@ export async function sendClaimVerificationEmail(opts: {
 </div>`;
 
   try {
-    const res = await fetch(RESEND_URL, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        subject: `Confirm @${username} · citizen of Earth with ${reach} destinations`,
-        html,
-      }),
-    });
-    const data = (await res.json().catch(() => ({}))) as { id?: string; message?: string };
-    if (!res.ok) return { ok: false, error: data.message || `Resend responded ${res.status}` };
-    return { ok: true, id: data.id ?? "" };
+    const res = await ses().send(
+      new SendEmailCommand({
+        FromEmailAddress: from,
+        Destination: { ToAddresses: [to] },
+        Content: {
+          Simple: {
+            Subject: {
+              Data: `Confirm @${username} · citizen of Earth with ${reach} destinations`,
+              Charset: "UTF-8",
+            },
+            Body: { Html: { Data: html, Charset: "UTF-8" } },
+          },
+        },
+      })
+    );
+    return { ok: true, id: res.MessageId ?? "" };
   } catch (err) {
-    return { ok: false, error: err instanceof Error ? err.message : "network error" };
+    // Log the real reason, return an opaque one - the same split sms.ts makes.
+    // SES messages are richly informative to an attacker: the sandbox rejection
+    // alone names the sender identity, the region and the account's sandbox
+    // state, and an IAM failure adds the assumed-role ARN and account id. This
+    // endpoint is unauthenticated, so whatever is returned here is public.
+    console.error(
+      "[earthling] SES send failed:",
+      err instanceof Error ? `${err.name}: ${err.message.slice(0, 300)}` : err,
+    );
+    return { ok: false, error: "send_failed" };
   }
+}
+
+/// Reused across warm invocations so the SDK does not re-resolve credentials
+/// and re-open a TLS connection for every claim.
+let client: SESv2Client | null = null;
+function ses(): SESv2Client {
+  if (!client) {
+    client = new SESv2Client({
+      region: process.env.AWS_SES_REGION || process.env.AWS_REGION || "ap-south-1",
+      maxAttempts: 2,
+      requestHandler: { requestTimeout: 10_000 },
+    });
+  }
+  return client;
 }

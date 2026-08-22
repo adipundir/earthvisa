@@ -1,11 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Emits .next/standalone: a self-contained server.js plus only the
+  // node_modules actually traced as reachable. That is what the container
+  // image runs, and it is the difference between a ~200MB image and shipping
+  // the entire dependency tree. Harmless elsewhere - `next dev` ignores it.
+  output: "standalone",
   // The corridor pages and /api/vfs read data/vfs/*.json with readFileSync at
   // request time (ISR fills non-prewarmed corridors on demand). Pin the files
-  // into the serverless bundles explicitly - today they ride along only via
-  // @vercel/nft's wildcard analysis of join(process.cwd(), "data", ...), which
-  // any refactor of that path expression could silently break.
+  // into the server bundle explicitly - they otherwise ride along only via the
+  // tracer's wildcard analysis of join(process.cwd(), "data", ...), which any
+  // refactor of that path expression could silently break.
   outputFileTracingIncludes: {
     "/passport/[slug]/[dest]": ["./data/vfs/**"],
     "/api/vfs": ["./data/vfs/**"],
