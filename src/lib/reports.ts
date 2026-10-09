@@ -1,4 +1,4 @@
-import { makeSql, type Sql } from "@/lib/db";
+import { isDatabaseConfigured, makeSql, type Sql } from "@/lib/db";
 
 // Data-inaccuracy reports - same database and degradation contract as the
 // Earthling store: writes throw StoreUnavailableError (API maps it to 503).
@@ -8,7 +8,7 @@ export class ReportStoreUnavailableError extends Error {}
 
 let sqlClient: Sql | null = null;
 function db(): Sql {
-  if (!process.env.DATABASE_URL) throw new ReportStoreUnavailableError("DATABASE_URL is not set");
+  if (!isDatabaseConfigured()) throw new ReportStoreUnavailableError("Database is not configured");
   if (!sqlClient) sqlClient = makeSql();
   return sqlClient;
 }

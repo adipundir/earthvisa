@@ -101,7 +101,10 @@ function useCountUp(target: number, duration = 700): number {
     if (prev.current === target) return;
     prev.current = target;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) { setVal(target); return; }
+    if (reduced) {
+      const frame = requestAnimationFrame(() => setVal(target));
+      return () => cancelAnimationFrame(frame);
+    }
     let raf = 0;
     const start = performance.now();
     const step = (t: number) => {

@@ -1,4 +1,4 @@
-import { makeSql, type Sql } from "@/lib/db";
+import { isDatabaseConfigured, makeSql, type Sql } from "@/lib/db";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -30,7 +30,7 @@ export class AuthStoreUnavailableError extends Error {}
 
 let sqlClient: Sql | null = null;
 function db(): Sql {
-  if (!process.env.DATABASE_URL) throw new AuthStoreUnavailableError("DATABASE_URL is not set");
+  if (!isDatabaseConfigured()) throw new AuthStoreUnavailableError("Database is not configured");
   if (!sqlClient) sqlClient = makeSql();
   return sqlClient;
 }

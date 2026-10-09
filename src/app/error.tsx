@@ -3,6 +3,7 @@
 // the root layout renders THIS (branded) instead of Next's raw default screen.
 // Keeps the "official records" trust framing intact even when something breaks.
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
@@ -27,9 +28,9 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
           >
             Try again
           </button>
-          <a href="/" className="text-[15px] font-medium text-ink-2 transition hover:text-ink">
+          <Link href="/" className="text-[15px] font-medium text-ink-2 transition hover:text-ink">
             Back to home
-          </a>
+          </Link>
         </div>
         {error.digest && (
           <p className="mt-6 text-[13px] text-ink-3">Reference: {error.digest}</p>

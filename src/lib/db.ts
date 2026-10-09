@@ -1,4 +1,5 @@
 import { Pool } from "pg";
+import { AuthTypes, Connector, IpAddressTypes } from "@google-cloud/cloud-sql-connector";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
@@ -44,56 +45,56 @@ function rdsCa(): string | undefined {
   return caBundle ?? undefined;
 }
 
-let pool: Pool | null = null;
+let poolPromise: Promise<Pool> | null = null;
+let connector: Connector | null = null;
 
-export function makeSql(): Sql {
-  if (!pool) {
-    // TLS is decided here, explicitly, and `sslmode` is stripped from the URL.
-    // node-postgres is mid-way through changing what `sslmode=require` means
-    // (today: encrypt, do not verify; soon: verify-full), and a connection
-    // whose security depends on which driver version is installed is not a
-    // connection anyone can reason about.
-    //
-    // The certificate is VERIFIED, against the RDS CA above when it is present
-    // and the system store otherwise.
+export function isDatabaseConfigured(): boolean {
+  return Boolean(process.env.DATABASE_URL || (
+    process.env.CLOUD_SQL_CONNECTION_NAME && process.env.PGUSER && process.env.PGDATABASE
+  ));
+}
+
+async function createPool(): Promise<Pool> {
+  let pool: Pool;
+  if (process.env.CLOUD_SQL_CONNECTION_NAME) {
+    if (!process.env.PGUSER || !process.env.PGDATABASE) {
+      throw new Error("Cloud SQL user and database are required");
+    }
+    // The connector verifies TLS and refreshes short-lived IAM credentials.
+    // Cloud Run uses its runtime service account; no database password is stored.
+    connector ??= new Connector();
+    const options = await connector.getOptions({
+      instanceConnectionName: process.env.CLOUD_SQL_CONNECTION_NAME,
+      authType: AuthTypes.IAM,
+      ipType: IpAddressTypes.PUBLIC,
+    });
+    pool = new Pool({ ...options, user: process.env.PGUSER,
+      database: process.env.PGDATABASE, max: 5,
+      idleTimeoutMillis: 10_000, connectionTimeoutMillis: 5_000,
+      query_timeout: 15_000, statement_timeout: 15_000 });
+  } else {
     const url = new URL(process.env.DATABASE_URL!);
     url.searchParams.delete("sslmode");
-    pool = new Pool({
-      connectionString: url.toString(),
-      ssl: { rejectUnauthorized: true, ca: rdsCa() },
-      // One long-lived Fargate task, not many single-request Lambdas, so a
-      // slightly wider pool costs nothing and stops unrelated requests
-      // queueing behind each other. db.t4g.micro allows ~112 connections and
-      // this is one container.
-      max: 10,
-      idleTimeoutMillis: 10_000,
-      // Without these, a stalled query is UNBOUNDED. pg-pool only attaches a
-      // timer to a waiting caller when connectionTimeoutMillis is set
-      // (pg-pool/index.js): otherwise the waiter sits in _pendingQueue with no
-      // timer and can never be rejected. The ALB hands the client a 504 at 60s
-      // while the promise stays pending for ever, the queue grows, nothing
-      // throws - so the *StoreUnavailableError -> 503 paths never fire and
-      // CloudWatch records no error at all.
-      connectionTimeoutMillis: 5_000,
-      query_timeout: 15_000,
-    });
-
-    // A Postgres backend can close a connection that is sitting idle in the
-    // pool - RDS maintenance, a failover, storage autoscaling, an idle TCP
-    // reap. pg-pool surfaces that as an 'error' event on the POOL, and an
-    // EventEmitter with no 'error' listener rethrows as an uncaught exception,
-    // which exits the process. That is not one failed request: it is the whole
-    // site, every prerendered corridor page included, down until ECS pulls a
-    // multi-gigabyte image again.
-    //
-    // pg has already removed and destroyed that client by this point, so
-    // logging is the complete and correct handling - the next query checks out
-    // a fresh connection.
-    pool.on("error", (err) => {
-      console.error("[db] idle client error (connection discarded)", err);
-    });
+    pool = new Pool({ connectionString: url.toString(),
+      ssl: { rejectUnauthorized: true, ca: rdsCa() }, max: 10,
+      idleTimeoutMillis: 10_000, connectionTimeoutMillis: 5_000,
+      query_timeout: 15_000 });
   }
-  const p = pool;
+  pool.on("error", (err) => {
+    console.error("[db] idle client error (connection discarded)", err.name);
+  });
+  return pool;
+}
+
+function getPool(): Promise<Pool> {
+  poolPromise ??= createPool().catch((error: unknown) => {
+    poolPromise = null;
+    throw error;
+  });
+  return poolPromise;
+}
+
+export function makeSql(): Sql {
   return async (strings, ...values) => {
     // Interpolations become numbered parameters, never string splices - the
     // same guarantee the Neon template gave, kept under the same syntax.
@@ -101,6 +102,6 @@ export function makeSql(): Sql {
       (sql, part, i) => sql + part + (i < values.length ? `$${i + 1}` : ""),
       ""
     );
-    return (await p.query(text, values)).rows;
+    return (await (await getPool()).query(text, values)).rows;
   };
 }

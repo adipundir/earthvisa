@@ -1,4 +1,4 @@
-import { makeSql, type Sql } from "@/lib/db";
+import { isDatabaseConfigured, makeSql, type Sql } from "@/lib/db";
 import type { Earthling } from "./types";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -20,7 +20,7 @@ export class StoreUnavailableError extends Error {}
 
 let sqlClient: Sql | null = null;
 function db(): Sql {
-  if (!process.env.DATABASE_URL) throw new StoreUnavailableError("DATABASE_URL is not set");
+  if (!isDatabaseConfigured()) throw new StoreUnavailableError("Database is not configured");
   if (!sqlClient) sqlClient = makeSql();
   return sqlClient;
 }

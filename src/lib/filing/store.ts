@@ -1,4 +1,4 @@
-import { makeSql, type Sql } from "@/lib/db";
+import { isDatabaseConfigured, makeSql, type Sql } from "@/lib/db";
 import { randomBytes } from "node:crypto";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -50,7 +50,7 @@ export class FilingStoreUnavailableError extends Error {}
 
 let sqlClient: Sql | null = null;
 function db(): Sql {
-  if (!process.env.DATABASE_URL) throw new FilingStoreUnavailableError("DATABASE_URL is not set");
+  if (!isDatabaseConfigured()) throw new FilingStoreUnavailableError("Database is not configured");
   if (!sqlClient) sqlClient = makeSql();
   return sqlClient;
 }

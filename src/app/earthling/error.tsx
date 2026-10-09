@@ -3,6 +3,7 @@
 // (leaderboard, profiles), so a DB outage throws in a Server Component. This
 // keeps the failure inside the Earthling section with a scoped retry.
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function EarthlingError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
@@ -26,9 +27,9 @@ export default function EarthlingError({ error, reset }: { error: Error & { dige
           >
             Try again
           </button>
-          <a href="/passport" className="text-[15px] font-medium text-ink-2 transition hover:text-ink">
+          <Link href="/passport" className="text-[15px] font-medium text-ink-2 transition hover:text-ink">
             Check a passport
-          </a>
+          </Link>
         </div>
       </div>
     </main>

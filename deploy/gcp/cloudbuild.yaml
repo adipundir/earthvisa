@@ -1,0 +1,9 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '--build-arg', 'NEXT_PUBLIC_SITE_URL=https://earthvisa.in', '-t', 'asia-south1-docker.pkg.dev/$PROJECT_ID/earthvisa/web:$BUILD_ID', '.']
+images:
+  - 'asia-south1-docker.pkg.dev/$PROJECT_ID/earthvisa/web:$BUILD_ID'
+timeout: 3600s
+options:
+  machineType: E2_HIGHCPU_8
+  logging: CLOUD_LOGGING_ONLY
